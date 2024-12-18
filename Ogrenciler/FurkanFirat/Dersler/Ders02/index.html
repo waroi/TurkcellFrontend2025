@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html Tablolar</title>
+</head>
+<style>
+    th,
+    td {
+        border: 1px solid black;
+    }
+</style>
+
+<body>
+    <!-- TABLE -->
+    <table style="margin-bottom: 100px;">
+        <thead>
+            <tr>
+                <th>Ad</th>
+                <th>Soyad</th>
+                <th>Adres</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Furkan</td>
+                <td>Firat</td>
+                <td>220 sokak</td>
+
+            </tr>
+            <tr>
+                <td>Varol</td>
+                <td>Maksutoglu</td>
+                <td>150 cadde</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- FORM -->
+
+    <form action="">
+        <div class="form-container">
+            <div>
+                <label for="name">Ad:</label>
+                <input type="text" id="name">
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password">
+            </div>
+            <div>
+                <label for="email">E-Posta:</label>
+                <input type="email" id="email" name="email">
+            </div>
+            <div>
+                <label for="date">Doğum Tarihi:</label>
+                <input type="date" id="date" name="date">
+            </div>
+            <div>
+                <label for="color">Renk:</label>
+                <input type="color" id="color" name="color">
+            </div>
+            <div><label for="">Cinsiyet:</label>
+                <label for="woman">Kadın</label>
+                <input type="radio" id="woman" name="gender">
+                <label for="man">Erkek</label>
+                <input type="radio" id="man" name="gender">
+            </div>
+            <div>
+                <label for="">Programlama Dilleri:</label>
+                <label for="python">Python</label>
+                <input type="checkbox" id="pyhton" name="python">
+                <label for="javascript">JavaScript</label>
+                <input type="checkbox" id="javascript" name="javascript">
+            </div>
+            <div>
+                <label for="message">Mesaj:</label>
+                <textarea name="message" id="message"></textarea>
+            </div>
+            <div>
+                <button type="">Gönder</button>
+            </div>
+        </div>
+    </form>
+
+</body>
+
+</html>
