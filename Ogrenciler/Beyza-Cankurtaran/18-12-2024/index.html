@@ -6,8 +6,8 @@
     <title>HTML tabloları</title>
 </head>
 <body>
-    <table border="1"cellspacing="0"cellpadding="5">
-       <!--<th>Başlık Kısmı</th>--> 
+    <!-- <table border="1"cellspacing="0"cellpadding="5">
+       <th>Başlık Kısmı</th>
         <th>Ad</th>
         <th>Soyad</th>
         <th>Yaş</th>
@@ -32,6 +32,39 @@
                 <td>Erkek</td>
             </tr>
         </tbody>
-    </table>
+    </table> -->
+    <form>
+        <div>
+            <label for name="ad">Adınızı girin:</label>
+            <input type="text"name="name"id="name"></input>
+        </div>
+        <div>
+            <label for name="password">şifrenizi girin:</label>
+            <input type="password"name="password"id="password"></input>
+        </div>
+        <div>
+            <label for name="email">e-mailinizi girin:</label>
+            <input type="email"name="email"id="email"></input>
+        </div>
+        <div>
+            <label for name="password">şifrenizi girin:</label>
+            <input type="password"name="password"id="password"></input>
+        </div>
+        <div>
+            <label for name="date">tarihii girin:</label>
+            <input type="date"name="date"id="date"></input>
+        </div>
+        <div>
+            <label for name="color">renginizi girin:</label>
+            <input type="color"name="color"id="color"></input>
+        </div>
+        <div>
+            <label >Cinsiyet</label>
+            <label for="woman">Kadın</label>
+            <input type="radio"name="gender"id="woman"></input>
+            <label for="woman">Erkek</label>
+            <input type="radio"name="gender"id="man"></input>
+        </div>
+    </form>
 </body>
 </html>
