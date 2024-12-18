@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+  </head>
+  <body>
+    <form action="./redirect.html">
+      <div>
+        <label for="name">İsim: </label>
+        <input name="name" type="text" placeholder="Ekin Aslan" />
+      </div>
+      <div>
+        <label for="email">E-posta: </label>
+        <input type="email" />
+      </div>
+      <div>
+        <label for="password">Şifre: </label>
+        <input type="password" type="password" />
+      </div>
+      <div>
+        <label for="description">Açıklama: </label>
+        <textarea name="description"></textarea>
+      </div>
+      <div>
+        <label for="color">Renk: </label>
+        <input type="color" name="color" />
+      </div>
+      <div>
+        <label for="date">Tarih: </label>
+        <input type="date" name="date" />
+      </div>
+      <div>
+        <label for="gender">Cinsiyet: </label>
+        <input type="radio" name="gender" id="male" value="male" />
+        <label for="male">Erkek</label>
+        <input type="radio" name="gender" id="female" value="female" />
+        <label for="female">Kadın</label>
+      </div>
+      <div>
+        <input type="checkbox" name="cookie" id="cookie" required />
+        <label for="cookie">I accept cookies.</label>
+      </div>
+      <!-- <input type="submit" /> -->
+      <button type="submit">Gönder</button>
+    </form>
+  </body>
+</html>
