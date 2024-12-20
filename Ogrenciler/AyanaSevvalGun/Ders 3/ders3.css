@@ -1,0 +1,30 @@
+.paragraf{
+    color: blueviolet;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-color: beige;
+}
+/*eğer id için css yazarsak class'ı ezer ve orada yazılan özelliklerde css görünür*/
+/*class tag'i ezer ve class görüntülenir*/
+#p1{
+    color: rgb(79, 145, 68);
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-color: rgb(0, 0, 0);
+}
+#p2{
+    color: aliceblue;
+    background: #000;
+}
+h1{
+    color: blueviolet;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-color: beige;
+}

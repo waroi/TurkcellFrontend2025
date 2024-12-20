@@ -1,0 +1,30 @@
+/*direkt p seçip orada da css yazabilirdim */
+.paragraf{
+    color:red;
+    font-size:20px;
+    font-weight:bold;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-color: aqua;
+}
+/*id her türlü önceliklidir!*/
+#p1{
+    color:blueviolet;
+    font-size: 30px;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: brown;
+}
+#p2{
+    color:aliceblue;
+    background-color: black;
+}
+/*inline-css id den daha önceliklidir.*/
+/*değişken isimlerinde camelCase class isimlerinde PascalCase kullanılıyor*/
+h1{
+    color:red;
+    font-size: 50px;
+    font-weight:bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    background-color: black;
+}
