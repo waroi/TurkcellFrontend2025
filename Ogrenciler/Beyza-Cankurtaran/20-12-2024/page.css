@@ -1,0 +1,41 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+.wrap{
+    width: 900px;
+    margin:0 auto;
+}
+header{
+    height:150px;
+    margin-bottom: 10px;
+    background-color: green;
+    border:3px solid black;
+    border-radius:10px;
+}
+content{
+    width:600px;
+    height:600px;
+    background-color: yellow;
+    border: 3px solid black;
+    border-radius: 10px;
+    float:left;
+}
+sidebar{
+    width:250px;
+    height:600px;
+    background: linear-gradient(to bottom ,red,green);
+    border: 3px solid black;
+    border-radius: 10px;
+    float:right;
+}
+.clear{
+    clear:both;
+}
+footer{
+    height:100px;
+    background-color: aqua;
+    border: 3px solid black;
+    border-radius: 10px;
+}
