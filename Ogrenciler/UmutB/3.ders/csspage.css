@@ -1,58 +1,71 @@
-* {
-    box-sizing: border-box;
+*{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-main {
-    width: 980px;
+
+.wrap{
+    width: 1100px;
     margin: 0 auto;
+    
 }
 
-header {
-    margin-top: 20px;
-    height: 150px;
-    margin-bottom: 10px;
-    background-color: #77cef3;
-    border: 3px solid black;
+header{
+    margin-top: 30px;
+    font-size: 70px;
+    background-color: beige;
+    border: 2px solid rgb(0, 0, 0);
     border-radius: 10px;
-    justify-content: center;
-    display: flex;
+    padding: 20px ;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
 }
-
-article {
-    width: 720px;
-    height: 600px;
-    background: linear-gradient(to bottom, #91ff00, #ffffff);
-    border: 3px solid black;
-    border-radius: 10px;
-    float: left;
-    padding: 10px;
-    justify-content: center;
-    display: flex;
+section{
+    height: 550px;
+    float:left;
+    background-color:pink ;
+    border: 2px solid black;
+    background-image: linear-gradient(to bottom, red, rgb(255, 255, 255));
+    border-radius: 10px ;
+    width:500px;
+    padding: 20px ;
+    margin-bottom: 20px;
 }
-
-aside {
-    width: 250px;
-    height: 600px;
-    background: #7a00ec;
-    border: 3px solid black;
-    border-radius: 10px;
-    float: right;
-    justify-content: center;
-    display: flex;
-}
-
-footer {
-    clear: both;
-    height: 100px;
-    background-color: #5a4baf;
-    border: 3px solid black;
-    border-radius: 10px;
+article{
+    text-align: center;
+    width: 100%;
+    border: 2px solid rgb(0, 0, 0);
     margin-top: 10px;
-    justify-content: center;
-    display: flex;
+    padding: 10px 0px;
+    float: center;
+    font-size: 18px;}
+aside{
+    height: 550px;
+    float:right;
+    background-image: linear-gradient(to top, yellow, rgb(255, 255, 255));
+    border: 2px solid black;
+    border-radius: 10px ;
+    width:500px;
+    padding: 20px ;
+    margin-bottom: 20px;
 }
-.clear{ /* class */
+.clear{
     clear: both;
 }
+
+footer{
+    height: 100px;
+    background-image: linear-gradient(to top, yellow, rgb(255, 255, 255));
+    border: 2px solid black;
+    border-radius: 10px ;
+    text-align: center;
+    padding-top: 40px;
+}
+
+img{
+    width: 100px;
+}
+
+
