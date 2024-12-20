@@ -1,14 +1,22 @@
+*{ /* universal selector (dökümandaki her şeyi seçer) çoğu projede kullanıyorum dedi hoca*/
+    margin: 0px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .p1{  /* class */
     color: red;
     font-size: 20px;
     background-color: yellow;
+    float: right;
 }
 #paragraf{ /* id */
     color: rgb(0, 0, 0);
     font-size: 20px;
-    background-color: rgb(255, 0, 0);
+    background-image: linear-gradient(to bottom, rgb(115, 0, 255) , rgba(0, 195, 255, 0.932));
     text-align: center;
     font-family: 'Courier New', Courier, monospace;
+    float: left;
 }
 
 h1{ /* tag */
@@ -16,4 +24,44 @@ h1{ /* tag */
     font-size: 20px;
     background-color: rgb(255, 44, 192);
     font-weight: bold;
+}
+
+.red{ /* class */
+    background-color: red;
+    margin-left: 50px;
+    padding-top: 20px;
+}
+
+.green{ /* class */
+    background-color: green;
+}
+.box{ /* class */
+    width: 50;
+    height: 200px;
+    margin: 10px;
+}
+.clear{ /* class */
+    clear: both;
+}
+
+.boxdeneme{ /* class */
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    border: 2px solid black;
+    padding: 20px 30px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: 10px;
+}
+.inbox{ /* class */
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    margin: 10px;
+    padding: 20px;
+    border: 4px solid black;
+    border-radius: 20px;
+    margin: auto;
 }
