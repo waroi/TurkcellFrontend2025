@@ -1,0 +1,27 @@
+.paragraf {
+  color: rgb(101, 0, 196);
+  font-weight: bold;
+  font-family: serif;
+  text-align: center;
+  background-color: #f1f105;
+  padding: 5px;
+}
+
+#p1 {
+  color: rgb(5, 5, 5);
+  font-style: 30px;
+  font-size: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: coral;
+  text-align: left;
+}
+
+/*! Yukarıdan aşağıya okunduğu için aşağıda yazılan üsttekini ezer. Id için geçerli değil  */
+/*! Id zaten eşsizdir  */
+
+#p3 {
+  color: rgb(255, 255, 255);
+  background-color: rgb(5, 109, 5);
+  font-style: italic;
+  text-align: right;
+}
