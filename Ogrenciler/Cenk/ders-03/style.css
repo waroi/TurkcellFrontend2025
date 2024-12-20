@@ -1,6 +1,30 @@
-.paragraf {
-    color: red;
+.paragraf{
+    color: rgb(21, 0, 255);
     font-size: 20px;
     font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
     text-align: center;
+    background-color: rgb(220, 220, 220);
+}
+
+#p1{
+    color: rgb(255, 0, 0);
+    text-align: left;
+    font-size: 20px;
+    background-color: rgb(220, 220, 220);
+}
+#p2{
+    color: rgb(0, 255, 0);
+    text-align: right;
+    font-size: 20pt;
+    background-color: rgb(220, 220, 220);
+}
+
+h1{
+    color: rgb(255, 0, 255);
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-color: rgb(220, 220, 220);
 }
