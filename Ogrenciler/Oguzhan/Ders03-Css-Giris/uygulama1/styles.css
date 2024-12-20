@@ -1,78 +1,95 @@
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    color: white;
-  }
-  
-  h2 {
-    text-align: center;
-    margin: 2px 50px 0 50px;
-  }
-  h3 {
-    text-align: center;
-    color: wheat;
-  }
-  
-  .wrap {
-    width: 980px;
-    margin: 0 auto;
-  }
-  .header {
-    background-color: #03045e;
-    border: 5px solid black;
-    border-radius: 10px;
-    height: 150px;
-    margin-bottom: 10px;
-  }
-  
-  .content {
-    background-color: #778da9;
-    border: 5px solid black;
-    border-radius: 10px;
-    width: 720px;
-    height: 600px;
-    float: left;
-    margin: 0 auto;
-  }
-  
-  .clear {
-    clear: both;
-  }
-  
-  .article {
-    width: 500px;
-    height: 196.5px;
-    text-align: center;
-    margin: 0 auto;
-    padding: 15px;
-  }
-  #article1 {
-    background-color: #0d1b2a;
-  }
-  #article2 {
-    background-color: #1b263b;
-  }
-  #article3 {
-    background-color: #415a77;
-    margin-bottom: 0px;
-  }
-  
-  .sidebar {
-    background-color: #0077b6;
-    border: 5px solid black;
-    border-radius: 10px;
-    width: 250px;
-    height: 600px;
-    float: right;
-    color: red;
-  }
-  
-  .footer {
-    background-color: cornflowerblue;
-    border: 5px solid black;
-    border-radius: 10px;
-    height: 100px;
-    margin-top: 10px;
-  }
-  
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  color: white;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+h3 {
+  text-align: center;
+  color: wheat;
+  margin-bottom: 10px;
+  margin-left: 0;
+}
+
+p {
+  background-color: rgb(173, 5, 5);
+  width: 45%;
+  text-align: right;
+  float: right;
+}
+
+.icerik1 {
+  float: left;
+  width: 45%;
+  background-color: red;
+}
+
+.icerik2 {
+  float: right;
+  width: 45%;
+  margin-top: 20px;
+  background-color: #fff;
+  color: black;
+}
+
+.img {
+  background-color: #8ba305;
+  width: 100%;
+  height: 190px;
+  float: left;
+  border-radius: 10px;
+}
+
+.wrap {
+  width: 980px;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+.header {
+  background-color: #03045e;
+  height: 150px;
+  margin-bottom: 10px;
+  margin-top: 0px;
+}
+
+.section {
+  border-radius: 10px;
+  width: 72%;
+  float: left;
+  margin: 0 auto;
+}
+
+.clear {
+  clear: both;
+}
+
+.article {
+  background-color: #1b263b;
+  height: 220px;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+}
+
+.sidebar {
+  background-color: #0077b6;
+  border-radius: 10px;
+  width: 25%;
+  height: 600px;
+  float: right;
+  color: red;
+}
+
+.footer {
+  background-color: cornflowerblue;
+  height: 100px;
+  margin-top: 75px;
+}
