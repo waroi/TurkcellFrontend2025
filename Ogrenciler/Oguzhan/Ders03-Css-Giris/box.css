@@ -1,0 +1,21 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.box{
+    height: 300px;
+    width: 300px;
+    background-color: blue;
+    padding: 100px 100px;
+}
+
+.inbox{
+    height: 100px;
+    width: 100px;
+    background-color: red;
+    border-radius: 10px;
+    border: 5px solid black;
+    margin:auto;
+}
