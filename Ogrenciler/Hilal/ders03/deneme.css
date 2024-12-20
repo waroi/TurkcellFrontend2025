@@ -1,0 +1,32 @@
+body {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+p {
+  padding: 10px;
+  font-size: 1.5rem;
+}
+#ikinciParagraf {
+  color: rgb(203, 15, 15);
+}
+
+div > p:last-child {
+  color: blue;
+}
+.box {
+  width: 30px;
+  height: 30px;
+  margin: 20px;
+}
+.box-wrap {
+  .box:nth-child(1) {
+    background-color: blue;
+    margin-bottom: 100px;
+  }
+  .box:nth-child(2) {
+    background-color: pink;
+    margin-left: 50px;
+  }
+  .box:nth-child(3) {
+    background-color: green;
+  }
+}

@@ -1,0 +1,33 @@
+*{
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+
+}
+.wrap{
+   width: 900px;
+   margin: 0 auto;
+}
+.header{
+   height: 150px;
+   margin-bottom: 10px;
+   background-color: chartreuse;
+   border: 3px solid cornflowerblue;
+   border-radius: 10px;
+}
+.content{
+   width: 700px;
+   height: 600px;
+   background: linear-gradient(to bottom, #0000ff);
+   border: 3pxc solid #000;
+   border-radius: 10px;
+   float: right;
+}
+.sidebar{
+   width: 250px;
+   height: 600px;
+   background: linear-gradient(to bottom, #0000ff);
+   border: 3px solid #000;
+   border-radius: 10px;
+   float: right;
+}
