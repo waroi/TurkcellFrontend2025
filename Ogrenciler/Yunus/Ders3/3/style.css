@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000;
+}
+
+.box {
+  width: 300px;
+  height: 300px;
+  background-color: rgb(196, 114, 20);
+  padding: 20px 30px;
+  margin: 12rem;
+  color: #fff;
+  transform: rotate(45deg);
+  border-radius: 3px;
+}
+
+.inBox {
+  width: 150px;
+  height: 150px;
+  background-color: red;
+  margin: 3rem;
+  border: 5px solid white;
+  border-radius: 3px;
+}

@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box;
+}
+
+.wrap {
+  width: 980px;
+  margin: 0 auto;
+}
+
+.header {
+  height: 150px;
+  padding: 1rem;
+  margin-bottom: 10px;
+  background-color: orange;
+  border: 3px solid black;
+  border-radius: 10px;
+}
+
+.content {
+  width: 720px;
+  padding: 1rem;
+  height: 600px;
+  background: linear-gradient(to bottom, red, blue);
+  border: 3px solid black;
+  border-radius: 10px;
+  float: left;
+}
+
+.sidebar {
+  width: 250px;
+  padding: 1rem;
+  height: 600px;
+  background-color: #f87f00;
+  border: 3px solid black;
+  float: right;
+  border-radius: 10px;
+}
+
+.clear {
+  clear: both;
+}
+
+.footer {
+  height: 100px;
+  background-color: rgb(24, 27, 184);
+  border: 3px solid #000;
+  border-radius: 10px;
+  margin-top: 10px;
+  padding: 1rem;
+}
