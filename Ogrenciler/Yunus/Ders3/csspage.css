@@ -1,5 +1,11 @@
 * {
   box-sizing: border-box;
+  color: #fff;
+  font-family: monospace, sans-serif;
+}
+
+body {
+  background-color: #a7c9da;
 }
 
 .wrap {
@@ -11,7 +17,7 @@
   height: 150px;
   padding: 1rem;
   margin-bottom: 10px;
-  background-color: orange;
+  background-color: #1e6bff;
   border: 3px solid black;
   border-radius: 10px;
 }
@@ -20,17 +26,18 @@
   width: 720px;
   padding: 1rem;
   height: 600px;
-  background: linear-gradient(to bottom, red, blue);
   border: 3px solid black;
   border-radius: 10px;
+  padding-top: 0;
   float: left;
+  padding-bottom: 2.4rem;
 }
 
-.sidebar {
+.aside {
   width: 250px;
   padding: 1rem;
   height: 600px;
-  background-color: #f87f00;
+  background-color: #269a9c;
   border: 3px solid black;
   float: right;
   border-radius: 10px;
@@ -42,9 +49,51 @@
 
 .footer {
   height: 100px;
-  background-color: rgb(24, 27, 184);
+  background-color: #601fff;
   border: 3px solid #000;
   border-radius: 10px;
   margin-top: 10px;
   padding: 1rem;
+  text-align: center;
+}
+
+.inbox {
+  width: 100%;
+  border-radius: 6px;
+  height: 30%;
+}
+
+.left {
+  width: 45%;
+  height: 70%;
+  float: left;
+  margin: 10px;
+  border-radius: 5px;
+  background-color: #3078fd;
+  padding-top: 12px;
+  text-align: center;
+}
+
+.right {
+  width: 45%;
+  height: 70%;
+  text-align: center;
+  padding-top: 12px;
+  float: right;
+  margin: 10px;
+  background-color: orange;
+  border-radius: 5px;
+}
+
+.names {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #223a46;
+  text-align: center;
+}
+
+.inbox_image {
+  height: 90%;
+  margin: auto;
+  border-radius: 5px;
 }
