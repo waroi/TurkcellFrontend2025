@@ -16,6 +16,24 @@
       .sans-serif {
         font-family: sans-serif;
       }
+
+      ul {
+        background-color: navy;
+        color: white;
+        font-size: 30px;
+        padding: 50px;
+        list-style-position: inside;
+        list-style-type: "➤ ";
+        font-family: sans-serif;
+      }
+
+      li.list-item {
+        color: darkred;
+      }
+
+      li#list-item {
+        color: orangered;
+      }
     </style>
   </head>
   <body>
@@ -31,5 +49,12 @@
       temporibus! Maxime, non quod! Omnis quas dolores corporis facilis
       laudantium cupiditate reiciendis voluptatem voluptas porro?
     </p>
+    <ul>
+      <li>Normal List Item</li>
+      <li class="list-item">List Item with Class</li>
+      <li class="list-item" id="list-item">List Item with ID</li>
+      <li>Inline > Internal > External</li>
+      <li>ID cascades over Class</li>
+    </ul>
   </body>
 </html>
