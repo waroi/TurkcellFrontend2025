@@ -1,0 +1,41 @@
+★{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.wrap{
+    width: 980px;
+    margin: 0 auto;
+}
+.header{
+    height: 150px;
+    margin-bottom: 10px;
+    background-color: rgb(127, 127, 62);
+    border: 3px solid #000;
+    border-radius: 10px;
+}
+.content{
+    width: 720px;
+    height: 600px;
+    margin-bottom: 10px;
+    background: linear-gradient(to bottom, red, green);
+    border: 3px solid #000;
+    border-radius: 10px;
+    float: left;
+
+}
+.sidebar{
+    width: 250px;
+    height: 600px;
+    background: #ff6a00;
+    border: 3px solid #000;
+    border-radius: 10px;
+    float: right;
+}
+.footer{
+    height: 100px;
+    background-color: rgb(147, 135, 189);
+    border: 3px solid #000;
+    border-radius: 10px;
+    margin-top: 10px;
+}
