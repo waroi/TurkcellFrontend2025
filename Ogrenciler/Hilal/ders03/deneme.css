@@ -65,8 +65,9 @@ body {
   background-color: beige;
 }
 header {
+  color: #f5de00;
   height: 150px;
-  background-image: linear-gradient(0deg, #d4d1d1 0%, #939e71 100%);
+  background-image: linear-gradient(45deg, #2519d5 0%, #060328 100%);
   margin-bottom: 10px;
   padding: 50px;
   border-radius: 5px;
@@ -77,16 +78,15 @@ header {
 }
 section {
   width: 750px;
-
   background-color: blue;
   float: left;
-  background-image: linear-gradient(0deg, #d4d1d1 0%, #939e71 100%);
+  background-image: linear-gradient(45deg, #2519d5 0%, #060328 100%);
   border-radius: 5px;
 }
 aside {
   width: 220px;
   height: 305px;
-  background-image: linear-gradient(0deg, #d4d1d1 0%, #939e71 100%);
+  background-image: linear-gradient(45deg, #2519d5 0%, #060328 100%);
   float: right;
   padding: 20px;
   text-align: center;
@@ -96,13 +96,14 @@ aside {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: whitesmoke;
 }
 .clear {
   clear: both;
 }
 footer {
   width: 100%;
-  background-image: linear-gradient(0deg, #d4d1d1 0%, #939e71 100%);
+  background-image: linear-gradient(45deg, #2519d5 0%, #060328 100%);
   margin-top: 10px;
   font-weight: bold;
   padding: 20px;
@@ -113,8 +114,9 @@ footer {
 .box {
   padding: 20px;
   margin: 5px;
-  background-color: rgba(255, 255, 255, 0.669);
+  background-color: rgba(255, 255, 255, 0.1);
   border-radius: 5px;
+  color: beige;
 }
 li {
   list-style: none;
