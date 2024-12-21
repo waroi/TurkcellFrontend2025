@@ -5,6 +5,10 @@
   color: white;
 }
 
+body {
+  background-color: #f5efe7;
+}
+
 h1 {
   text-align: center;
 }
@@ -14,7 +18,7 @@ h2 {
 }
 h3 {
   text-align: center;
-  color: wheat;
+  color: #f5efe7;
   margin-bottom: 10px;
   margin-left: 0;
 }
@@ -29,15 +33,13 @@ p {
 .icerik1 {
   float: left;
   width: 45%;
-  background-color: red;
 }
 
 .icerik2 {
   float: right;
   width: 45%;
   margin-top: 20px;
-  background-color: #fff;
-  color: black;
+  color: white;
 }
 
 .img {
@@ -56,9 +58,12 @@ p {
 .header {
   background-color: #03045e;
   height: 150px;
-  margin-bottom: 10px;
-  margin-top: 0px;
-  padding-top: 50px;
+}
+
+.logo {
+  height: 150px;
+  width: 500px;
+  margin-left: 30%;
 }
 
 .section {
@@ -81,16 +86,62 @@ p {
 }
 
 .sidebar {
-  background-color: #0077b6;
+  background-color: #1f509a;
   border-radius: 10px;
   width: 25%;
   height: 600px;
   float: right;
   color: red;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.social-media {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.social-media span {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+}
+
+.fa-linkedin {
+  margin-right: 10px;
+}
+
+.topics {
+  margin-top: 100px;
+}
+
+.kategori {
+  color: black;
+  font-weight: bold;
+  font-family: "Courier New", Courier, monospace;
+  background-color: #c6e7ff;
+  border-radius: 5px;
+  padding: 3px;
+}
+
+li {
+  margin-bottom: 15px;
+  list-style: none;
 }
 
 .footer {
-  background-color: cornflowerblue;
+  background-color: #03045e;
   height: 100px;
   margin-top: 75px;
+}
+
+.members {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 20px;
 }
