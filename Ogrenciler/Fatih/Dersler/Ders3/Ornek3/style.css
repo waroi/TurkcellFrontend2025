@@ -1,0 +1,21 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.box{
+    height: 300px;
+    width: 300px;
+    background-color: silver;
+    padding : 20px 30px;
+}
+
+.inBox{
+    height: 100px;
+    width: 100px;
+    background-color: red;
+    margin: 20px 30px;
+    border: 5px solid black;
+    border-radius: 20%;
+}
