@@ -6,6 +6,7 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
 }
+  
 .img {
     float: left; 
     margin-right: 15px;
@@ -21,7 +22,7 @@ body {
 
 /* Navbar */
 .navbar {
-    background: #6c63ff;
+    background: #8680f1;
     padding: 10px 20px;
     color: white;
 }
@@ -34,9 +35,8 @@ body {
 
 .navbar .logo {
     font-size: 1.5em;
-    font-weight: bold;
-    text-decoration: none;
-    color: white;
+    width: 300px;
+
 }
 
 .navbar .nav-links {
@@ -77,39 +77,6 @@ header p {
     font-style:italic;
 }
 
-/* Sidebar */
-.sidebar {
-    width: 200px;
-    background: linear-gradient(to bottom,#a3f0ab,#fa96ff ,#90bcee,#555 );
-    padding: 20px;
-    border-right: 1px solid #ddd;
-}
-.baslik{
-    padding:10px;
-    font-style: italic;
-}
-
-.sidebar h2 {
-    margin-bottom: 15px;
-}
-
-.sidebar ul {
-    list-style: none;
-    padding: 0;
-}
-
-.sidebar ul li {
-    margin-bottom: 10px;
-}
-
-.sidebar ul li a {
-    text-decoration: none;
-    color: #6c63ff;
-}
-
-.sidebar ul li a:hover {
-    text-decoration: underline;
-}
 
 /* Content */
 .content {
