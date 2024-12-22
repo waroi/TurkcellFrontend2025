@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
   margin: 0;
+  font-family: 'Courier New', Courier, monospace;
   padding: 0;
 }
 
@@ -46,7 +47,6 @@ aside {
   margin-right: 10%;
   height: 770px;
   padding: 10px;
-  font-family: monospace;
   background-color: antiquewhite;
   color: black;
 }
@@ -156,4 +156,38 @@ footer {
   padding-top: 1rem;
   line-height: 21px;
   padding-left: 7px;
+  padding-right: 7px;
+}
+
+.textElements h1 {
+  font-size: 2rem;
+}
+
+.aside-main-title {
+  margin-bottom: 1.5rem;
+}
+
+.aside-content a {
+  display: block;    margin: .5rem 0;
+}
+
+.aside-content a:visited {
+  color: blue;
+}
+
+.aside-content a:hover {
+  color: purple;
+}
+
+.aside-content h3 {
+  margin-top: 2rem;
+}
+
+.main-gob {
+  float: right;
+}
+
+.gelecegi-yazanlar-box{
+  margin-top: 6rem;
+  text-align: center;
 }
