@@ -1,0 +1,201 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace;
+  padding: 0;
+}
+
+body {
+  background-color: rgb(244, 194, 104);
+}
+
+header {
+  border: 3px solid black;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 0;
+  width: 80%;
+  text-align: center;
+  height: 75px;
+  padding: 15px;
+  font-family: sans-serif;
+  background-color: antiquewhite;
+}
+
+section {
+  display: block;
+  border: 3px solid black;
+  border-radius: 10px;
+  width: 48%;
+  height: 250px;
+  margin-left: 10%;
+  margin-right: 1%;
+  margin-top: 10px;
+  float: left;
+  background-color: antiquewhite;
+  padding: 2vh;
+}
+
+aside {
+  border: 3px solid black;
+  border-radius: 10px;
+  float: right;
+  width: 30%;
+  margin-top: 10px;
+  margin-right: 10%;
+  height: 770px;
+  padding: 10px;
+  background-color: antiquewhite;
+  color: black;
+}
+
+footer {
+  border: 3px solid black;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 0;
+  width: 80%;
+  text-align: center;
+  height: 75px;
+  padding: 15px;
+  font-family: sans-serif;
+  background-color: antiquewhite;
+}
+
+.clear {
+  clear: both;
+}
+
+.copyright {
+  margin-top: 8px;
+}
+
+.section-list {
+  padding: 20px;
+}
+
+.pics {
+  width: 40%;
+  float: left;
+  margin-right: 3vh;
+  border-radius: 2vh;
+}
+
+.textElements {
+  font-family: monospace;
+  color: black;
+  text-decoration: none;
+}
+
+.sectionCSS {
+  height: 770px;
+}
+
+.blog-pics {
+  height: auto;
+  width: 70%;
+  max-width: 500px;
+  margin-bottom: 2rem;
+  float: none;
+}
+
+.blog-aside {
+  text-align: center;
+}
+
+.writer-pics {
+  width: 35%;
+  height: auto;
+  border-radius: 50%;
+  border: 1px solid #b68224;
+  padding: 6px;
+}
+
+.blog-image {
+  text-align: center;
+}
+
+.writer-name {
+  margin-top: 1rem;
+}
+
+.writer-desc {
+  margin-top: .5rem;
+  text-align: justify;
+}
+
+.writer-job {
+  font-size: .9rem;
+}
+
+.go-back {
+  background-color: #f4c268;
+  padding: 10px;
+  border: 2px solid #de9410;
+  border-radius: 6px;
+  color: black;
+  text-decoration: none;
+  float: left;
+}
+
+.go-back:hover {
+  background-color: #de9410;
+  border-color: #f4c268;
+}
+
+.go-back-icon {
+  width: 21px;
+  float: left;
+}
+
+.go-back-text {
+  padding-top: 1rem;
+  line-height: 21px;
+  padding-left: 7px;
+  padding-right: 7px;
+}
+
+.textElements h1 {
+  font-size: 2rem;
+}
+
+.aside-main-title {
+  margin-bottom: 1.5rem;
+}
+
+.aside-content a {
+  display: block;    margin: .5rem 0;
+}
+
+.aside-content a:visited {
+  color: blue;
+}
+
+.aside-content a:hover {
+  color: purple;
+}
+
+.aside-content h3 {
+  margin-top: 2rem;
+}
+
+.main-gob {
+  float: right;
+}
+
+.gelecegi-yazanlar-box{
+  margin-top: 6rem;
+  text-align: center;
+}
+
+.ascorederdList{
+  margin-left: 5%;
+}
+
+.ascP{
+  text-align: justify;
+}

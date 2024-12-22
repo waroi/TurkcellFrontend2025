@@ -1,0 +1,166 @@
+/* Genel Ayarlar */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+.img {
+    float: left; 
+    margin-right: 15px;
+    width: 300px; 
+    height: auto; 
+    border-radius: 5px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+.container {
+    display: flex;
+    flex: 1;
+}
+
+/* Navbar */
+.navbar {
+    background: #6c63ff;
+    padding: 10px 20px;
+    color: white;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.navbar .nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1em;
+    padding: 5px 10px;
+    transition: background 0.3s;
+}
+
+.navbar .nav-links li a:hover {
+    background: #574bff;
+    border-radius: 5px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    background: #f8f9fa;
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+header p {
+    margin: 10px 0 0;
+    color: #555;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 200px;
+    background: #f8f9fa;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+}
+
+.sidebar h2 {
+    margin-bottom: 15px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #6c63ff;
+}
+
+.sidebar ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Content */
+.content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px;
+    margin-left: 200px; 
+    margin-right: auto;
+    max-width: calc(100% - 200px); 
+    justify-items: center;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: white;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+.card h2 {
+    margin: 15px 0 10px;
+    font-size: 1.5em;
+}
+
+.card p {
+    margin: 0 15px 15px;
+    color: #555;
+}
+
+.card a {
+    display: inline-block;
+    margin: 10px 0 15px;
+    padding: 10px 15px;
+    background: #6c63ff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.card a:hover {
+    background: #574bff;
+}
+
+/* Footer */
+footer {
+    background: #6c63ff;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: auto;
+}
