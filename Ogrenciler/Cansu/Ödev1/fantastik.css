@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ffffff;
+    line-height: 1.8;
+  }
+  html {
+    width: 100%;
+    background-image: linear-gradient(
+      243deg,
+      rgba(2, 0, 36, 1) 13%,
+      rgba(5, 5, 71, 1) 42%,
+      rgba(0, 212, 255, 1) 100%
+    );
+  }
+  header {
+    background-color: rgba(5, 5, 71, 0.219);
+    height: 100px;
+    margin-bottom: 20px;
+    padding: 20px 0;
+    backdrop-filter: blur(10px);
+  }
+  h1 {
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    color: rgba(0, 212, 255, 1);
+  }
+  .container {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .giris {
+    border: 4px solid rgba(0, 213, 255, 0.27);
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: rgba(2, 0, 36, 0.479);
+  }
+  h3,
+  h4 {
+    margin: 10px 0;
+    color: rgba(0, 212, 255, 1);
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 213, 255, 0.374);
+    padding-bottom: 5px;
+  }
+  
+  .space {
+    width: 5%;
+    height: 600px;
+    float: left;
+  }
+  .card {
+    width: 30%;
+    border: 4px solid rgba(0, 213, 255, 0.27);
+    border-radius: 20px;
+    padding: 15px;
+    margin: 0 auto;
+    height: 900px;
+    float: left;
+    background-color: rgba(2, 0, 36, 0.479);
+    text-align: justify;
+  }
+  .card ol {
+    margin-top: 10px;
+    margin-left: 25px;
+  }
+  .card ol li {
+    margin-bottom: 5px;
+  }
+  .card img {
+    border-radius: 50%;
+    margin: 10px auto;
+    display: block;
+    border: 4px solid rgba(0, 213, 255, 0.27);
+  }
+  .clear {
+    clear: both;
+  }
+  footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    border-top: 1px solid rgba(0, 213, 255, 0.301);
+  }
+  
