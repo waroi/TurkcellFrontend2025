@@ -1,75 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Sitesi</title>
-    <link rel="stylesheet" href="blog.css">
-</head>
-<body>
-    <nav class="navbar">
-        <div class="container">
-            <a href="#" class="logo">Blog Sitesi</a>
-            <ul class="nav-links">
-                <li><a href="#">Ana Sayfa</a></li>
-                <li><a href="#">Hakkımızda</a></li>
-                <li><a href="#">Kategoriler</a></li>
-                <li><a href="#">İletişim</a></li>
-            </ul>
-        </div>
-    </nav>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Blog Sitesi</title>
+		<link rel="stylesheet" href="blog.css" />
+	</head>
+	<body>
+		<nav class="navbar">
+			<div class="container">
+				<a href="#" class="logo">Blog Sitesi</a>
+				<ul class="nav-links">
+					<li><a href="#">Ana Sayfa</a></li>
+					<li><a href="#">Hakkımızda</a></li>
+					<li><a href="#">Kategoriler</a></li>
+					<li><a href="#">İletişim</a></li>
+				</ul>
+			</div>
+		</nav>
 
-    <header>
-        <h1>Blog Sitesi</h1>
-        <p>En son yazılarımızı okuyun</p>
-    </header>
+		<div class="container">
+			<aside class="sidebar">
+				<h2>Kategoriler</h2>
+				<ul>
+					<li><a href="#">Teknoloji</a></li>
+					<li><a href="#">Seyahat</a></li>
+					<li><a href="#">Sağlık</a></li>
+					<li><a href="#">Eğitim</a></li>
+				</ul>
+			</aside>
 
-    <div class="container">
-        <aside class="sidebar">
-            <h2>Kategoriler</h2>
-            <ul>
-                <li><a href="#">Teknoloji</a></li>
-                <li><a href="#">Seyahat</a></li>
-                <li><a href="#">Sağlık</a></li>
-                <li><a href="#">Eğitim</a></li>
-            </ul>
-        </aside>
+			<main>
+				<ul class="breadcrumb">
+					<li><a href="#">Home</a></li>
+				</ul>
+				<section class="content">
+					<div class="card">
+						<img src="https://via.placeholder.com/300x200" alt="Blog görseli" />
+						<h2>Blog Başlık 1</h2>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac
+							sapien id metus laoreet efficitur.
+						</p>
+						<a href="#">Devamını Oku</a>
+					</div>
 
-        <main>
-            <section class="content">
-                <div class="card">
-                    <img src="https://via.placeholder.com/300x200" alt="Blog görseli">
-                    <h2>Blog Başlık 1</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac sapien id metus laoreet efficitur.</p>
-                    <a href="#">Devamını Oku</a>
-                </div>
+					<div class="card">
+						<img
+							src="https://media.licdn.com/dms/image/v2/D4D03AQHHC1bGlUT1_A/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1711468438256?e=1740614400&v=beta&t=bV9I3yS4VHjRRlcbySZWUIvzQ2N9YBqhofrr6YvywDs"
+							width="300"
+							alt="Aybike"
+						/>
 
-                <div class="card">
-                    <img src="https://via.placeholder.com/300x200" alt="Blog görseli">
-                    <h2>Blog Başlık 2</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac sapien id metus laoreet efficitur.</p>
-                    <a href="#">Devamını Oku</a>
-                </div>
+						<h2>Aybike Boran</h2>
+						<p>Merhaba!</p>
+						<p>
+							Ben Aybike. Bilgisayar mühendisliği mezunuyum ve frontend
+							development ile ilgileniyorum..
+						</p>
+						<a href="./detayAybike.html">Devamını Oku</a>
+					</div>
 
-                <div class="card">
-                    <img src="https://via.placeholder.com/300x200" alt="Blog görseli">
-                    <h2>Blog Başlık 3</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac sapien id metus laoreet efficitur.</p>
-                    <a href="#">Devamını Oku</a>
-                </div>
-                <div class="card">
-                    <img src="https://via.placeholder.com/300x200" alt="Blog görseli">
-                    <h2>Blog Başlık 4</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac sapien id metus laoreet efficitur.</p>
-                    <a href="#">Devamını Oku</a>
-                </div>
+					<div class="card">
+						<img src="https://via.placeholder.com/300x200" alt="Blog görseli" />
+						<h2>Blog Başlık 3</h2>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac
+							sapien id metus laoreet efficitur.
+						</p>
+						<a href="#">Devamını Oku</a>
+					</div>
+					<div class="card">
+						<img src="https://via.placeholder.com/300x200" alt="Blog görseli" />
+						<h2>Blog Başlık 4</h2>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac
+							sapien id metus laoreet efficitur.
+						</p>
+						<a href="#">Devamını Oku</a>
+					</div>
+				</section>
+			</main>
+		</div>
 
-            </section>
-        </main>
-    </div>
-
-    <footer>
-        <p>&copy; 2024 Blog Sitesi. Tüm hakları saklıdır.</p>
-    </footer>
-</body>
+		<footer>
+			<p>&copy; 2024 Blog Sitesi. Tüm hakları saklıdır.</p>
+		</footer>
+	</body>
 </html>
