@@ -1,0 +1,147 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  color: white;
+}
+
+body {
+  background-color: #f5efe7;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+h3 {
+  text-align: center;
+  color: #f5efe7;
+  margin-bottom: 10px;
+  margin-left: 0;
+}
+
+p {
+  background-color: rgb(173, 5, 5);
+  width: 45%;
+  text-align: right;
+  float: right;
+}
+
+.icerik1 {
+  float: left;
+  width: 45%;
+}
+
+.icerik2 {
+  float: right;
+  width: 45%;
+  margin-top: 20px;
+  color: white;
+}
+
+.img {
+  background-color: #8ba305;
+  width: 100%;
+  height: 190px;
+  float: left;
+  border-radius: 10px;
+}
+
+.wrap {
+  width: 980px;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+.header {
+  background-color: #03045e;
+  height: 150px;
+}
+
+.logo {
+  height: 150px;
+  width: 500px;
+  margin-left: 30%;
+}
+
+.section {
+  border-radius: 10px;
+  width: 72%;
+  float: left;
+  margin: 0 auto;
+}
+
+.clear {
+  clear: both;
+}
+
+.article {
+  background-color: #1b263b;
+  height: 220px;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+}
+
+.sidebar {
+  background-color: #1f509a;
+  border-radius: 10px;
+  width: 25%;
+  height: 600px;
+  float: right;
+  color: red;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.social-media {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.social-media span {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+}
+
+.fa-linkedin {
+  margin-right: 10px;
+}
+
+.topics {
+  margin-top: 100px;
+}
+
+.kategori {
+  color: black;
+  font-weight: bold;
+  font-family: "Courier New", Courier, monospace;
+  background-color: #c6e7ff;
+  border-radius: 5px;
+  padding: 3px;
+}
+
+li {
+  margin-bottom: 15px;
+  list-style: none;
+}
+
+.footer {
+  background-color: #03045e;
+  height: 100px;
+  margin-top: 75px;
+}
+
+.members {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 20px;
+}
