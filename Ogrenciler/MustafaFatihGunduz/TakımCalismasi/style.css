@@ -46,6 +46,12 @@
   color: white;
 }
 
+.main-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
 .avatarAndName {
   position: absolute;
   width: 100px;
@@ -54,6 +60,11 @@
   left: 16px;
   top: 16px;
   gap: 10px;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
 }
 
 .avatarAndName h5 {
@@ -99,38 +110,62 @@
   gap: 10px;
 }
 
-.blogs{
+.blogs {
   position: relative;
-  background-color: burlywood;
   height: 300px;
 }
 
-.blogContainers{
+.blogs h5 {
+ color: white;
+ font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.blogContainers {
   position: absolute;
   display: flex;
   justify-content: space-between;
-  table-layout: fixed;
 }
 
-.blog-box{
-  width: 300px;
-  padding: 15px;
+.blog-box {
+  width: 315px;
+  margin: 10px auto;
+  margin-right: 20px;
   height: 300px;
   background-color: yellow;
   border: 2px solid black;
   border-radius: 20px;
-  text-align: center;
   display: flex;
-  gap: 50px;
-  }
-
-img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
+  position: relative;
+  overflow: hidden;
 }
+
+.blog-images {
+  height: 300px;
+  object-fit: fill;
+}
+
+.blog-information {
+  position: absolute;
+  width: 100px;
+  margin: 20px;
+  display: flex;
+  left: 16px;
+  white-space: noWrap;
+  top: 160px;
+}
+
+.infos h5{
+  color: white;
+  margin-top: 20px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+
+}
+
 
 .footer {
   background-color: blue;
   height: 200px;
+  margin: 20px auto;
 }
