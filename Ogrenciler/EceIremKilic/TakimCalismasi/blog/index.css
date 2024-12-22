@@ -2,7 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: #FFE6A9;
+    
     font-family: Arial, Helvetica, sans-serif;
 }
 ul {
@@ -33,22 +33,22 @@ section{
 }
 header{
     height: 90px;
-    background-color: #FFE6A9;
-    margin: 20px;
+    background-color: #DEAA79;
+    
 }
 .w{
     width: calc((2*100vw)/3);
-    height: 150px;
+    height: 200px;
     border: 3px solid #659287;
     background-color: #FBE4D8;
-    margin: 20px;
+    margin: 10px;
 }
 .sw{
     width: calc((100vw)/4);
-    height: 100px;
+    height: 200px;
     border: 3px solid #659287;
     background-color: #FBE4D8;
-    margin: 20px;
+    margin: 10px;
 }
 .memoir{
     height: 81px;
@@ -67,18 +67,41 @@ aside{
     padding: 10px;
     font-size:30px;
     float: right;
+    text-align: center;
+    padding-top: 10px;
   }
   .p{
     background-color: #FBE4D8;
-    padding: 10px;
-    font-size:20px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
     float: right;
+    font-size: 22px;
   }
   .wim{
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 195px;
     float: left;
+    background-color: #FBE4D8;
   }
   .blog{
+    display: flex;
+    flex-wrap: wrap;
+    gap:10px;
+    padding-left: 40px;
+    background-color: #FBE4D8;
     
+  }
+
+  .yazar{
+    padding-top: 70px;
+    display: flex;
+    align-items: center;
+    background-color: #FBE4D8;
+  }
+
+  .yazar1{
+    text-align: center;
+    background-color: #FBE4D8;
+
   }
