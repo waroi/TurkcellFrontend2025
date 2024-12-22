@@ -1,0 +1,31 @@
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.person {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.person img {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  margin-right: 1rem;
+}
+.person-info {
+  line-height: 1.4;
+}
+.person-info h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+.person-info p {
+  margin: 0.2rem 0 0;
+  color: #666;
+}
