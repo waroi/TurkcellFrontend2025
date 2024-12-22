@@ -1,0 +1,57 @@
+main {
+  width: 900px;
+  height: 844px;
+  background-color: aqua;
+  margin: 0 auto;
+}
+
+header {
+  height: 100px;
+  background-color: aquamarine;
+  border: 4px solid brown;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+section {
+  height: 560px;
+  width: 594px;
+  background-color: bisque;
+  border: 4px solid brown;
+  border-radius: 20px;
+  float: left;
+  padding: 20px;
+}
+
+article {
+  height: calc(496px / 3);
+  background-color: burlywood;
+  margin-bottom: 20px;
+  border: 4px solid brown;
+  border-radius: 20px;
+}
+
+article:last-child {
+  margin-bottom: 0;
+}
+
+aside {
+  height: 600px;
+  width: 240px;
+  background: linear-gradient(to top, white, black);
+  border: 4px solid brown;
+  border-radius: 20px;
+  float: right;
+}
+
+.clear {
+  clear: both;
+}
+
+footer {
+  height: 100px;
+  background-color: blueviolet;
+  border: 4px solid brown;
+  border-radius: 20px;
+  margin-top: 10px;
+}
