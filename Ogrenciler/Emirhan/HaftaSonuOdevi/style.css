@@ -3,6 +3,7 @@
     padding: 0;
     margin: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
 }
 
 .site-name{
@@ -82,7 +83,7 @@ aside{
     float: right;
     width: 400px;
     height: auto;
-    margin-right: 30px;
+    margin-right: 90px;
 }
 
 .other-blog{
@@ -232,3 +233,26 @@ h5{
 h3{
     margin-top: 20px;
 }
+
+.image-container {
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .image-container img {
+    width: 1380px;
+    height: 400px;
+    display: block; 
+  }
+  
+  .image-container h2 {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    color: white; 
+    font-size: 3rem; 
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5); 
+    padding: 20px;
+  }
