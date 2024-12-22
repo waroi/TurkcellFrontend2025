@@ -79,8 +79,7 @@ footer {
 }
 
 .pics {
-  height: 100%;
-  width: 392px;
+  width: 40%;
   float: left;
   margin-right: 3vh;
   border-radius: 2vh;
@@ -99,6 +98,7 @@ footer {
 .blog-pics {
   height: auto;
   width: 70%;
+  max-width: 500px;
   margin-bottom: 2rem;
   float: none;
 }
