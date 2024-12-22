@@ -12,7 +12,7 @@
       }
 
       body {
-        background-color: bisque;
+        background-color: rgb(244, 194, 104);
       }
 
       header {
@@ -27,7 +27,7 @@
         height: 75px;
         padding: 15px;
         font-family: sans-serif;
-        background-image: repeating-linear-gradient(yellow, red);
+        background-color: antiquewhite;
       }
 
       section {
@@ -40,7 +40,7 @@
         margin-right: 1%;
         margin-top: 10px;
         float: left;
-        background-image: radial-gradient(yellow, red);
+        background-color: antiquewhite;
       }
 
       aside {
@@ -50,14 +50,14 @@
         width: 30%;
         margin-top: 10px;
         margin-right: 10%;
-        height: 510px;
+        height: 770px;
         padding: 10px;
         font-family: monospace;
-        background-color: orange;
-        color:bisque;
+        background-color: antiquewhite;
+        color: black;
       }
 
-      footer{
+      footer {
         border: 3px solid black;
         border-radius: 10px;
         margin-left: auto;
@@ -69,12 +69,19 @@
         height: 75px;
         padding: 15px;
         font-family: sans-serif;
-        background-image: repeating-linear-gradient(yellow, red);
-        
+        background-color: antiquewhite;
       }
 
-      .clear{
-        clear:both
+      .clear {
+        clear: both;
+      }
+
+      .copyright {
+        margin-top: 8px;
+      }
+
+      .section-list {
+        padding: 20px;
       }
     </style>
   </head>
@@ -84,7 +91,21 @@
       <header>
         <h1>HEADER</h1>
       </header>
-      <section></section>
+      <section>
+        <ul class="section-list">
+          <li>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum quis
+            
+          </li>
+          <li>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum quis
+            
+          </li>
+          <li>
+            Lorem ipsum dolor sit amet consectetur adipisicilendus
+          </li>
+        </ul>
+      </section>
       <aside>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
         quas nesciunt amet, voluptatum provident sint aperiam. Voluptate nam
@@ -92,10 +113,11 @@
         iure tenetur.
       </aside>
       <section></section>
+      <section></section>
     </main>
     <div class="clear"></div>
     <footer>
-      deneme
+      <p class="copyright">copyright</p>
     </footer>
   </body>
 </html>
