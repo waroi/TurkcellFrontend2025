@@ -1,0 +1,136 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.wrap {
+  width: 980px;
+  margin: 0 auto;
+}
+
+.header {
+  background-color: white;
+  height: 100px;
+}
+
+.navHeader {
+  width: 100%;
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+}
+
+.navHeader ul {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+.navHeader li {
+  font-size: 20px;
+  color: black;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.navHeader li:hover {
+  color: pink;
+}
+
+.branch {
+  font-weight: bold;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.sectionContainer {
+  position: relative;
+  color: white;
+}
+
+.avatarAndName {
+  position: absolute;
+  width: 100px;
+  margin: 20px;
+  display: flex;
+  left: 16px;
+  top: 16px;
+  gap: 10px;
+}
+
+.avatarAndName h5 {
+  color: white;
+  margin-top: 20px;
+  white-space: noWrap;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.articleTitle {
+  position: absolute;
+  margin: 20px;
+  display: flex;
+  left: 16px;
+  top: 160px;
+  gap: 10px;
+}
+
+.articleInformations {
+  position: absolute;
+  margin: 20px;
+  display: flex;
+  left: 16px;
+  top: 250px;
+  gap: 10px;
+}
+
+.articleInformations h5 {
+  color: white;
+  margin-top: 20px;
+  white-space: noWrap;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.articleSubTitle {
+  position: absolute;
+  margin: 20px;
+  display: flex;
+  left: 16px;
+  top: 350px;
+  gap: 10px;
+}
+
+.blogs{
+  position: relative;
+  background-color: burlywood;
+  height: 300px;
+}
+
+.blogContainers{
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  table-layout: fixed;
+}
+
+.blog-box{
+  width: 300px;
+  padding: 15px;
+  height: 300px;
+  background-color: yellow;
+  border: 2px solid black;
+  border-radius: 20px;
+  text-align: center;
+  display: flex;
+  gap: 50px;
+  }
+
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.footer {
+  background-color: blue;
+  height: 200px;
+}
