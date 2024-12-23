@@ -12,14 +12,7 @@
   u {
     text-decoration: underline;
   }
-  
-  .stack-medium > * + * {
-    margin-top: 2rem;
-  }
-  
-  .stack-small > * + * {
-    margin-top: 1.8rem;
-  }
+
   
   article  {
     margin-top: 1rem;
@@ -50,13 +43,13 @@
   
   .author img {
     border-radius: 50%;
-    width: clamp(1.5rem, 4vw, 3rem);
-    height: clamp(1.5rem, 4vw, 3rem);
+    width: 48px;
+    height: 48px;
     object-fit: cover;
   }
   
   .author-name {
-    font-size: clamp(0.7rem, 1vw, 1.3rem);
+    font-size: 20px;
     margin-bottom: 5px;
   }
   
@@ -66,7 +59,7 @@
   }
   
   .author-bio {
-    font-size: clamp(0.5rem, 1vw, 0.8rem);
+    font-size: 15px;
     color: #8a9eb5;
   }
   
