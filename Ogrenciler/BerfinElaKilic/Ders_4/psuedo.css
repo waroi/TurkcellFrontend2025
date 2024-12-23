@@ -1,0 +1,60 @@
+.paragraf {
+  font-size: 24px;
+}
+.title {
+  font-size: 36px;
+  color: red;
+}
+/* @media screen and (max-width: 768px) {
+  .paragraf {
+    font-size: 16px;
+  }
+  .title {
+    color: blue;
+  }
+} */
+
+/* Pseudo Class */
+.link {
+  color: orange;
+  font-size: 24px;
+  text-decoration: none;
+}
+.link:visited {
+  color: green;
+}
+.link:hover {
+  color: red;
+  font-size: 30px;
+}
+.link:active {
+  color: pink;
+}
+.listItem::before {
+  content: "->";
+  font-size: 18px;
+}
+.listItem:last-child {
+  color: blueviolet;
+}
+/* .listItem:nth-child(2){
+    color: orange;
+} */
+/* .listItem:nth-child(2n+1){
+    color: orange;
+} */
+.listItem:nth-child(even) {
+  color: orange;
+}
+.listItem::after {
+  content: " deneme";
+  font-size: 18px;
+}
+.text::first-letter {
+  font-size: 36px;
+  color: red;
+}
+.text::first-line {
+  font-size: 24px;
+  color: green;
+}

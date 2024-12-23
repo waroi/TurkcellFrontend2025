@@ -1,0 +1,70 @@
+.paragraf{
+    font-size: 24px;
+}
+.title{
+    font-size: 36px;
+    color: red;
+}
+@media screen and (max-width:768px){
+    .paragraf{
+        font-size: 16px;
+    }
+    .title{
+        font-size: 24px;
+        color: blue;
+    }
+}
+/*  Psuedo Class*/
+.link{
+    color: rgb(190, 137, 0);
+    font-size: 24px;
+    text-decoration: none;
+}
+.link:visited{
+    color: green;
+}
+.link:hover{
+    color: red;
+}
+.link:active{
+    color: pink;
+}
+
+/* .listItem:last-child{
+    color: turquoise;
+} */
+
+.listItem:first-child{
+    color: turquoise;
+}
+/* 
+.listItem:nth-child(2){
+    color: turquoise;
+} */
+/* .listItem:nth-child(2n+1){
+    color: turquoise;
+} */
+
+.listItem:nth-child(odd){
+    color: turquoise;
+}
+.listItem:nth-child(even){
+    color: blue;
+}
+/* Psuedo Element */
+.listItem::before{
+    content: ">";
+    font-size: 18px;
+}
+.listItem::after{
+    content: " Deneme";
+    font-size: 18px;
+}
+/* .text::first-letter{
+    font-size: 36px;
+    color: red;
+} */
+.text::first-line{
+    font-size: 24px;
+    color: red;
+}

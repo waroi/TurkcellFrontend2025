@@ -1,0 +1,77 @@
+.paragraf{
+   font: size 24px;
+}
+.title{
+   font-size: 36px;
+   color: rgb(219, 14, 14);
+}
+/*responsive*/
+@media screen and (max-width:768px){ 
+   .paragraf{ 
+      font-size: 24px;
+      color: blue;
+   .title{
+      font-size: 24px;
+      color: coral;
+   }
+}
+}
+.link{
+color: black;
+font-size: 24px;
+text-decoration: none;
+}
+.link:visited{
+color: darkgreen;
+}
+.link:hover{
+color: chartreuse !important;
+font-size: 30px;
+}
+.link:active{
+   color: darkmagenta;
+   font-size: 30px;
+}
+
+
+
+
+/*bunlar seçilmez ekranda, açıklama*/
+
+.listItem:last-child{
+  color: rgb(151, 8, 87);
+}
+.listItem:nth-child(3){
+   color: cornflowerblue;
+}
+.listItem:nth-child(2n+1){
+   color: rgb(186, 160, 15);
+}
+.listItem:nth-child(odd){
+   color: rgb(181, 19, 19);
+}
+.listItem::before{
+   content:"**";
+   font-size: 24px;
+}
+.listItem::after{
+   content:"--";
+   font-size: 24px;
+}
+
+/*pseudo element*/
+.text::first-letter{
+   font-size: 24px;
+   color: aqua;
+}
+.text::first-line{
+   font-size: 27px;
+   color: rgb(53, 159, 73);
+}
+.text::after{
+   font-size: 27px;
+   color: rgb(105, 47, 168);
+}
+
+/*:: ---pseudo elemet 
+:---pseudo class denir.*/
