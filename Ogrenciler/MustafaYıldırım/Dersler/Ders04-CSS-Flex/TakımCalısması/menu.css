@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+header {
+  background-color: #fffdec;
+  height: 200px;
+  font-size: 3rem;
+  text-align: center;
+  font-family: "Playwrite MX Guides", serif;
+}
+.container {
+  margin: 0 auto;
+  background-color: #ffcfcf;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.card {
+  width: 400px;
+  height: 200px;
+  border: 2px solid #86a788;
+  border-radius: 25px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffe2e2;
+}
+
+img {
+  max-width: 200px;
+  max-height: 100px;
+}
