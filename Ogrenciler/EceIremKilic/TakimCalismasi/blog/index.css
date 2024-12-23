@@ -31,7 +31,7 @@ section {
   float: left;
 }
 header {
-  height: 90px;
+  height: 70px;
   background-color: #deaa79;
 }
 .w {
@@ -49,8 +49,9 @@ header {
   margin: 10px;
 }
 .memoir {
-  height: 81px;
-  width: 162px;
+  padding-left: 10px;
+  height: 70px;
+  width: auto;
   float: left;
 }
 aside {
@@ -59,14 +60,14 @@ aside {
 }
 .active {
   background-color: #659287;
-  margin-top: 20px;
+  margin-top: 12px;
 }
 .bg {
   background-color: #fbe4d8;
   padding: 10px;
   font-size: 30px;
   float: right;
-  text-align: center;
+  text-align: start;
   padding-top: 10px;
 }
 .p {
@@ -78,27 +79,25 @@ aside {
   font-size: 22px;
 }
 .wim {
-  width: 200px;
+  width: auto;
   height: 195px;
   float: left;
   background-color: #fbe4d8;
 }
 .blog {
   display: flex;
+  flex-direction: column; /* Öğeleri üst üste yerleştirir */
   flex-wrap: wrap;
   gap: 10px;
   padding-left: 40px;
   background-color: #fbe4d8;
 }
-
 .yazar {
   padding-top: 70px;
   display: flex;
-  align-items: center;
   background-color: #fbe4d8;
 }
 
 .yazar1 {
-  text-align: center;
   background-color: #fbe4d8;
 }
