@@ -22,8 +22,9 @@ body {
 
 /* Navbar */
 .navbar {
-    background: #8680f1;
-    padding: 10px 20px;
+    /*background: #8680f1;*/
+    background: linear-gradient(to right,#97eda0,#e795ec ,#bbd8f9,#f9ae97 );
+    padding: 10px 15px;
     color: white;
 }
 
@@ -34,7 +35,7 @@ body {
 }
 
 .navbar .logo {
-    width: 300px;
+    width: 280px;
 }
 
 .navbar .nav-links {
@@ -52,7 +53,7 @@ body {
 }
 
 .navbar .nav-links li a:hover {
-    background: #574bff;
+    background: #8a84e8;
     border-radius: 5px;
 }
 
@@ -60,8 +61,8 @@ body {
 header {
     text-align: center;
     background: #f8f9fa;
-    padding: 20px 0;
-    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+    border-bottom: 1px solid #f06e6e;
 }
 
 header h1 {
@@ -73,14 +74,13 @@ header p {
     margin: 10px 0 0;
     color: #ec5b5b;
     font-style:italic;
-    background: linear-gradient(to right,#67b26f,#da4ae2 ,#4a90e2,#555 );
 }
 
 
 /* Content */
 .content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 50px;
     padding: 50px;
     margin-left: auto; 
