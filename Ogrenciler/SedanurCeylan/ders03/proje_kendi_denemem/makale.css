@@ -1,0 +1,58 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background: linear-gradient(135deg, rgb(1,1,172), rgb(3,3,44));
+}
+
+.wrap {
+    width: 80%;
+    height: 100vh;
+    background: #ffffff; 
+    margin: 0 auto;
+    padding: 10px;
+}
+
+section {
+    width: 80%;
+    height: 90vh;
+    background: linear-gradient(135deg, #003b73, #005ba1); 
+    float: left;
+    border-radius: 5px;
+    padding: 20px;
+    color: #ffffff;
+}
+
+aside {
+    width: 19%;
+    height: 90vh;
+    float: right;
+    background: linear-gradient(135deg, #005ba1, #003b73); 
+    padding: 30px;
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+.clear {
+    clear: both;
+}
+
+footer {
+    width: 100%;
+    height: 7vh;
+    background: linear-gradient(90deg, #ffc400, #ffda66); 
+    margin-top: 10px;
+    text-align: center;
+    padding-top: 15px;
+    border-radius: 5px;
+}
+
+.baslık {
+    text-align: center;
+    margin: 10px;
+    color: #ffffff;
+}
