@@ -47,7 +47,8 @@ body {
 .navbar .nav-links li a {
     text-decoration: none;
     color: white;
-    font-size: 1em;
+    font-size: 1.1em;
+    font-weight: bold;
     padding: 5px 10px;
 }
 
@@ -60,28 +61,23 @@ body {
 header {
     text-align: center;
     background: #f8f9fa;
-    padding: 10px 0;
-    border-bottom: 1px solid #f06e6e;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 5em;
+    padding: 7px 0;
+    border-bottom: 2px solid #bbd8f9;
 }
 
 header p {
-    margin: 10px 0 0;
-    font-size:25px;
-    color: #f06e6e;
-    font-style:italic;
+
+    color: #6c63ff; 
+    font-size: 1.2rem; 
+    font-weight: bold; 
+    text-align: center;
+
 }
-
-
 
 /* Content */
 .content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
     gap: 50px;
     padding: 50px;
     max-width: 1200px;
@@ -109,8 +105,9 @@ header p {
 
 .card h2 {
     margin-bottom: 12px;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: bold;
+    color: #f37b7b;
 }
 
 .card p {
