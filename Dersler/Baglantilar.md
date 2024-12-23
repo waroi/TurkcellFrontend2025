@@ -9,3 +9,4 @@
 - [Github](https://github.com)
 - [Bizim Proje](https://github.com/waroi/TurkcellFrontend2025)
 - [Can I Use](https://caniuse.com/)
+- [Css Tricks Flex](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
