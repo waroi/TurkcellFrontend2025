@@ -4,14 +4,16 @@
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
 }
-
+body{
+  background-color: #F5EEE6;
+}
 .container {
   max-width: 1000px;
   margin: 2rem auto;
-  background: #fbe4d8;
+  background: #fff;
   padding: 2.2rem;
   border-radius: 8px;
-  border: 3px solid #659287;
+  border: 2px solid #659287;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: space-between;
@@ -19,28 +21,30 @@
   text-align: center;
 }
 header {
-  height: 90px;
+  height: 70px;
   background-color: #deaa79;
 }
 .memoir {
-  height: 81px;
-  width: 162px;
+  height: 70px;
+  width: auto;
   float: left;
 }
 .active {
   background-color: #659287;
-  margin-top: 20px;
+  margin-top: 12px;
 }
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
+
 li {
   display: inline;
   float: right;
   padding-right: 20px;
 }
+
 li a {
   display: block;
   color: white;
@@ -52,7 +56,7 @@ li a {
   width: 24%;
   margin-bottom: 1.5rem;
   text-align: center;
-  border: 3px solid #659287;
+  border: 2px solid #659287;
   border-radius: 8px;
   padding: 1.2rem;
   box-sizing: border-box;
@@ -82,3 +86,13 @@ li a {
   font-size: 2.4rem;
   color: #333;
 }
+footer {
+  background: #444;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+

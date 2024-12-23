@@ -11,10 +11,10 @@ main {
 
 nav {
 	height: 50px;
-	background-color: gray;
+	background-color: rgb(209, 209, 209);
 }
 h3 {
-	color: white;
+	color: black;
 	text-align: center;
 	padding-top: 10px;
 }
@@ -36,6 +36,8 @@ a {
 	text-align: center;
 	text-decoration: none;
 	color: red;
+	margin-left: 170px;
+	margin-top: auto;
 }
 p {
 	text-align: center;
@@ -45,6 +47,7 @@ p {
 h4 {
 	text-align: center;
 	padding-top: 10px;
+	font-size: 25px;
 }
 .profile-img {
 	width: 200px;
@@ -59,8 +62,9 @@ img {
 header {
 	width: 850px;
 	height: 150px;
-	margin-top: 25px;
-	margin-left: 150px;
+	margin-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
 	border: 2px solid black;
 	border-radius: 15px;
 }
@@ -74,37 +78,38 @@ h2 {
 section {
 	width: 850px;
 	height: 800px;
-	margin-left: 150px;
-	margin-top: 25px;
+	margin-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
 	padding: 10px;
 	border: 2px solid black;
 	border-radius: 20px;
 }
 
 .ela {
-	width: 500px;
+	width: 700px;
 	height: 200px;
-	margin: 50px 100px;
+	margin: 50px 50px;
 	border: 1px solid black;
 	border-radius: 10px;
 }
 .beyza {
-	width: 500px;
+	width: 700px;
 	height: 200px;
-	margin: 50px 100px;
+	margin: 50px 50px;
 	border: 1px solid black;
 	border-radius: 10px;
 }
 .hikmet {
-	width: 500px;
+	width: 700px;
 	height: 200px;
-	margin: 50px 100px;
+	margin: 50px 50px;
 	border: 1px solid black;
 	border-radius: 10px;
 }
 
 footer {
 	height: 150px;
-	background-color: gray;
+	background-color: rgb(209, 209, 209);
 	margin-top: 25px;
 }
