@@ -43,8 +43,13 @@
   
   .author img {
     border-radius: 50%;
+<<<<<<< HEAD
     width: 48px;
     height: 48px;
+=======
+    width:4vw;
+    height: 4vw;
+>>>>>>> 0986144df57d2bcaaa39bc93949d54d9b7c4f29f
     object-fit: cover;
   }
   
@@ -108,12 +113,7 @@
     border-radius: 20px;
     transition: transform 0.2s, box-shadow 0.2s;
   }
-  
-  .tag:hover,
-  .tag:focus {
-    transform: scale(1.1);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  }
+
   p{
     font-size: 1rem;
     line-height: 1.5;
