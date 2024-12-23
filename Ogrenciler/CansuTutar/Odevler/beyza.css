@@ -58,7 +58,7 @@ body {
 /* Header */
 header {
     text-align: center;
-    background: linear-gradient(to right,#67b26f,#da4ae2 ,#4a90e2,#555 );
+    background: #ddd;
     padding: 20px 0;
     border-bottom: 1px solid #ddd;
 }
@@ -75,49 +75,6 @@ header p {
     font-size:25px;
     font-style:italic;
 }
-.ikinci-header{
-    background-color: #2d3748;
-}
-
-/* Navbar */
-.navbar {
-    background: #6c63ff;
-    padding: 10px 20px;
-    color: white;
-}
-
-.navbar .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.navbar .logo {
-    font-size: 1.5em;
-    font-weight: bold;
-    text-decoration: none;
-    color: white;
-}
-
-.navbar .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 15px;
-}
-
-.navbar .nav-links li a {
-    text-decoration: none;
-    color: white;
-    font-size: 1em;
-    padding: 5px 10px;
-}
-
-.navbar .nav-links li a:hover {
-    background: #574bff;
-    border-radius: 5px;
-}
-
-
 
 /* Content */
 .content {
