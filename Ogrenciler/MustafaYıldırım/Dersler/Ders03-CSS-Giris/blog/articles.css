@@ -1,0 +1,101 @@
+/* Genel stiler */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FBE4D8;
+    color: #333;
+  }
+  .memoir{
+    padding-left: 10px;
+    height: 70px;
+    width: auto;
+    float: left;
+}
+header{
+    height: 70px;
+    background-color: #DEAA79;
+    
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: inline;
+    float: right;
+    padding-right: 20px;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+.active {
+    background-color: #659287;
+    margin-top: 12px;
+  }
+  /* Makale kapsayıcısı */
+  .article {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffefef;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  
+  /* Başlık */
+  h2 {
+    font-size: 2rem;
+    color: #6b0808;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Paragraf */
+  p {
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: justify;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  /* Link stili */
+  a {
+    color: #4A90E2;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Görsel eklemeyi düşünürsen */
+  img {
+    width: auto;
+    height: 400px;
+    border-radius: 10px;
+  }
+  
+  /* Responsive tasarım */
+  @media (max-width: 600px) {
+    .article {
+      padding: 15px;
+    }
+  
+    h2 {
+      font-size: 1.5rem;
+    }
+  
+    p {
+      font-size: 0.9rem;
+    }
+  }
+  

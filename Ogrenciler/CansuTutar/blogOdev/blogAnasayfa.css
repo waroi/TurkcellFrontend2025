@@ -1,0 +1,134 @@
+/* Genel Ayarlar */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+  
+.img {
+    float: left; 
+    margin-right: 15px;
+    width: 300px; 
+    height: auto; 
+    border-radius: 5px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+.container {
+    display: flex;
+    flex: 1;
+}
+
+/* Navbar */
+.navbar {
+    /*background: #8680f1;*/
+    background: linear-gradient(to left,#97eda0,#e795ec ,#bbd8f9,#f9ae97 );
+    padding: 10px 15px;
+    color: white;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    width: 280px;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.navbar .nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1em;
+    font-weight: bold;
+    padding: 5px 10px;
+}
+
+.navbar .nav-links li a:hover {
+    background: #8a84e8;
+    border-radius: 5px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    background: #f8f9fa;
+    padding: 7px 0;
+    border-bottom: 2px solid #bbd8f9;
+}
+
+header p {
+
+    color: #6c63ff; 
+    font-size: 1.2rem; 
+    font-weight: bold; 
+    text-align: center;
+
+}
+
+/* Content */
+.content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
+    gap: 50px;
+    padding: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+/* Card styles */
+.card {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 16px;
+}
+
+.card h2 {
+    margin-bottom: 12px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #f37b7b;
+}
+
+.card p {
+    margin-bottom: 16px;
+    color: #666;
+}
+
+.card a {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #6c63ff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+/* Footer */
+footer {
+    background: #6c63ff;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: auto;
+}
