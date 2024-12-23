@@ -6,6 +6,7 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
 }
+  
 .img {
     float: left; 
     margin-right: 15px;
@@ -21,8 +22,9 @@ body {
 
 /* Navbar */
 .navbar {
-    background: #6c63ff;
-    padding: 10px 20px;
+    /*background: #8680f1;*/
+    background: linear-gradient(to left,#97eda0,#e795ec ,#bbd8f9,#f9ae97 );
+    padding: 10px 15px;
     color: white;
 }
 
@@ -33,10 +35,7 @@ body {
 }
 
 .navbar .logo {
-    font-size: 1.5em;
-    font-weight: bold;
-    text-decoration: none;
-    color: white;
+    width: 280px;
 }
 
 .navbar .nav-links {
@@ -48,13 +47,13 @@ body {
 .navbar .nav-links li a {
     text-decoration: none;
     color: white;
-    font-size: 1em;
+    font-size: 1.1em;
+    font-weight: bold;
     padding: 5px 10px;
-    transition: background 0.3s;
 }
 
 .navbar .nav-links li a:hover {
-    background: #574bff;
+    background: #8a84e8;
     border-radius: 5px;
 }
 
@@ -62,70 +61,67 @@ body {
 header {
     text-align: center;
     background: #f8f9fa;
-    padding: 20px 0;
-    border-bottom: 1px solid #ddd;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 5em;
+    padding: 7px 0;
+    border-bottom: 2px solid #bbd8f9;
 }
 
 header p {
-    margin: 10px 0 0;
-    color: #000;
-    font-style:italic;
-}
 
+    color: #6c63ff; 
+    font-size: 1.2rem; 
+    font-weight: bold; 
+    text-align: center;
+
+}
 
 /* Content */
 .content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
     gap: 50px;
     padding: 50px;
-    margin-left: 200px; 
-    margin-right: auto;
-    max-width: calc(100% - 400px); 
-    justify-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: center;
 }
 
+/* Card styles */
 .card {
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
     background: white;
-    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
 }
 
 .card img {
     width: 100%;
     height: auto;
+    border-radius: 4px;
+    margin-bottom: 16px;
 }
 
 .card h2 {
-    margin: 15px 0 10px;
-    font-size: 1.5em;
+    margin-bottom: 12px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #f37b7b;
 }
 
 .card p {
-    margin: 0 15px 15px;
-    color: #555;
+    margin-bottom: 16px;
+    color: #666;
 }
 
 .card a {
     display: inline-block;
-    margin: 10px 0 15px;
-    padding: 10px 15px;
-    background: #6c63ff;
+    padding: 8px 16px;
+    background-color: #6c63ff;
     color: white;
     text-decoration: none;
-    border-radius: 5px;
-}
-
-.card a:hover {
-    background: #574bff;
+    border-radius: 4px;
 }
 
 /* Footer */

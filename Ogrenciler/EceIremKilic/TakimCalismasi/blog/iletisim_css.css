@@ -1,31 +1,92 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .container {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 2rem auto;
-  background: white;
-  padding: 2rem;
+  background: #fbe4d8;
+  padding: 2.2rem;
   border-radius: 8px;
+  border: 3px solid #659287;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  text-align: center;
+}
+header {
+  height: 90px;
+  background-color: #deaa79;
+}
+.memoir {
+  height: 81px;
+  width: 162px;
+  float: left;
+}
+.active {
+  background-color: #659287;
+  margin-top: 20px;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+li {
+  display: inline;
+  float: right;
+  padding-right: 20px;
+}
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
 .person {
-  display: flex;
-  align-items: center;
+  width: 24%;
   margin-bottom: 1.5rem;
+  text-align: center;
+  border: 3px solid #659287;
+  border-radius: 8px;
+  padding: 1.2rem;
+  box-sizing: border-box;
 }
 .person img {
   border-radius: 50%;
-  width: 80px;
-  height: 80px;
-  margin-right: 1rem;
+  width: 120px;
+  height: 120px;
+  margin-bottom: 0.75rem;
 }
 .person-info {
-  line-height: 1.4;
+  line-height: 1.6;
 }
 .person-info h3 {
   margin: 0;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   color: #333;
 }
 .person-info p {
-  margin: 0.2rem 0 0;
+  margin: 0.4rem 0 0;
   color: #666;
+}
+.container h1 {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 2.25rem;
+  font-size: 2.4rem;
+  color: #333;
+}
+footer {
+  background: #444;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  position: relative;
+  width: 100%;
 }
