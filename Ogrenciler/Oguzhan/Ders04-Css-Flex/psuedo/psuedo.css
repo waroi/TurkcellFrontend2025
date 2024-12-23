@@ -1,0 +1,38 @@
+.paragraf {
+  font-size: 20px;
+  color: red;
+}
+
+@media screen and (max-width: 768px) {
+  .paragraf {
+    color: blueviolet;
+  }
+}
+
+/* Psuedo Class*/
+
+.link {
+  color: rgb(28, 221, 221);
+  font-size: medium;
+}
+
+.link:visited {
+  color: rgb(56, 135, 10);
+}
+.link:hover {
+  color: rgb(255, 17, 219);
+}
+
+.list:nth-child(2n) {
+  color: darkorchid;
+}
+
+/* Psuedo Element*/
+.list::before {
+  content: "😍😍";
+}
+
+.list::after {
+  content: " Deneme 🚀";
+  font-size: 18px;
+}

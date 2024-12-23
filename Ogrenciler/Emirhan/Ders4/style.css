@@ -1,0 +1,51 @@
+.paragraf {
+    font-size: 24px;
+}
+
+.title {
+    font-size: 36px;
+    color: red;
+}
+
+@media screen and (max-width: 778px) {
+    .paragraf {
+        font-size: 16px;
+    }
+}
+
+.link {
+    color: rgb(18, 1, 255);
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.link:visited {
+    color: rgb(125, 214, 73);
+}
+
+.link:hover {
+    color: rgb(255, 0, 149);
+}
+
+.link:active {
+    color: rgb(255, 196, 0);
+}
+
+.list-item:nth-child(odd) {
+    color: rgb(255, 208, 0);
+}
+
+.list-item::before {
+    content: "+";
+    font-size: 18px;
+}
+
+.list-item::after {
+    content: "-";
+    font-size: 18px;
+}
+
+.text::first-line {
+    font-size: 24px;
+    color: rgb(0, 26, 255);
+}
