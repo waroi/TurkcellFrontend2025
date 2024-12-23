@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.paragraf {
+    font-size: 24px
+}
+
+.title {
+    font-size: 36px;
+    color: red;
+}
+
+.listItem {
+    font-size: 1.5rem;
+}
+
+@media screen and (max-width: 768px) {
+    .title {
+        font-size: 24px;
+        color: blue;
+    }
+
+    .paragraf {
+        font-size: 36px;
+    }
+}
+
+/* Psuedo Class */
+
+.link {
+    color: rgb(255, 136, 0);
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.link:visited {
+    color: green;
+}
+
+.link:hover {
+    color: red;
+    font-size: 28px;
+}
+
+.link:active {
+    color: rgb(186, 32, 107);
+}
+
+/* .listItem:last-child {
+    color: rgb(22, 184, 60);
+} */
+
+/* 
+.listItem:nth-child(2) {
+    color: saddlebrown;
+} */
+/* 
+.listItem:nth-child(2n+1) {
+    color: saddlebrown;
+} */
+
+.listItem:nth-child(odd) {
+    color: saddlebrown;
+}
+
+.listItem:nth-child(even) {
+    color: purple;
+}
+
+/* Psuedo Elements */
+
+.listItem::before {
+    font-size: 19x;
+    content: "👉 🍦🍦";
+    margin-right: 0.5rem;
+}
+
+.listItem::after {
+    font-size: 19px;
+    content: "🍦🍦 👈";
+    margin-left: 0.5rem;
+}
+
+.text::first-letter {
+    font-size: 36px;
+    color: blueviolet;
+}
+
+.text::first-line {
+    font-size: 24px;
+    color: red;
+}
