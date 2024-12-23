@@ -105,13 +105,7 @@
     margin-bottom: 15px;
   }
   
-  .tags-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-  }
-  
+
   .tag {
     text-decoration: none;
     padding: 8px 16px;
@@ -127,8 +121,6 @@
     transform: scale(1.1);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   }
-
-
   p{
     font-size: 1rem;
     line-height: 1.5;
