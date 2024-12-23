@@ -1,0 +1,71 @@
+.paragraf {
+  font-size: 24px;
+}
+
+.title {
+  font-size: 36px;
+  color: red;
+}
+
+@media screen and(max-width:768px) {
+  .paragraf {
+    font-size: 16px;
+  }
+
+  .title {
+    font-size: 24px;
+    color: blue;
+  }
+}
+
+/* pseudo class*/
+
+.link {
+  color: orange;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+.link:visited {
+  color: yellow;
+}
+
+.link:hover {
+  color: blue;
+}
+
+.link:active {
+  color: purple;
+}
+
+.listeItem:last-child {
+  color: red;
+}
+
+.listeItem:nth-child(2) {
+  color: orange;
+}
+
+/* even: çift odd: tek*/
+.listeItem:nth-child(odd) {
+  color: green;
+}
+
+/*psuedo element*/
+.listeItem::before {
+  content: "E>";
+}
+
+.listeItem::after {
+  content: "<3";
+  font-size: 16px;
+}
+
+.paragraf::first-letter {
+  color: brown;
+  font-size: 30px;
+}
+
+.paragraf::first-line {
+  color: pink;
+}
