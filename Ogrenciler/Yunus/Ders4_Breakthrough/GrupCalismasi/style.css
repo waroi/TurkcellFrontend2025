@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    padding: 0;
+    color: #053855;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", serif;
+}
+
+header, main {
+    width: 100%;
+}
+
+nav {
+    margin: 0 auto;
+    padding: 0 3rem;
+    display: flex;
+    max-width: 80%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e2f2ff;
+    margin-top: 1.5rem;
+    border-radius: 21px;
+}
+
+.hero, .products, footer {
+    margin: 0 auto;
+    max-width: 80%;
+}
+
+.hero-bg {
+    background-image: url('https://gelecegiyazanlar.turkcell.com.tr/sites/default/files/slider/2023-01/Turkcell%20GY%20Banner%20Go%CC%88rselleri-05.jpg');
+    background-size: cover;
+    width: 100%;
+    height: 500px;
+    border-radius: 34px;
+    margin-top: 3rem;
+}
+
+.navbar-brand {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+}
+
+.navbar-brand svg {
+    width: 150px;
+}
+
+.navbar-brand a {
+    text-decoration: none;
+    font-size: 2rem;
+}
+
+.list-group {
+    display: flex;
+    gap: 20px;
+    list-style-type: none;
+}
+
+.list-link {
+    text-decoration: none;
+    font-size: 23px;
+}
+
+.products {
+    margin-top: 3rem;
+}
+
+.product {
+    width: 250px;
+    height: auto;
+}
+
+.product-image {
+    width: 100%;
+    height: 250px;
+    height: auto;
+}
+
+.products-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+footer {
+    margin-top: 3rem;
+    padding: 2rem;
+    text-align: center;
+}
