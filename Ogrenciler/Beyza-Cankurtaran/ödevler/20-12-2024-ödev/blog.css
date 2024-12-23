@@ -77,49 +77,16 @@ header p {
     font-style:italic;
 }
 
-/* Sidebar */
-.sidebar {
-    width: 200px;
-    background: linear-gradient(to bottom,#a3f0ab,#fa96ff ,#90bcee,#555 );
-    padding: 20px;
-    border-right: 1px solid #ddd;
-}
-.baslik{
-    padding:10px;
-    font-style: italic;
-}
-
-.sidebar h2 {
-    margin-bottom: 15px;
-}
-
-.sidebar ul {
-    list-style: none;
-    padding: 0;
-}
-
-.sidebar ul li {
-    margin-bottom: 10px;
-}
-
-.sidebar ul li a {
-    text-decoration: none;
-    color: #6c63ff;
-}
-
-.sidebar ul li a:hover {
-    text-decoration: underline;
-}
 
 /* Content */
 .content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
     gap: 50px;
     padding: 50px;
-    margin-left: auto; 
+    margin-left: 200px; 
     margin-right: auto;
-    max-width: calc(100% - 200px); 
+    max-width: calc(100% - 400px); 
     justify-items: center;
 }
 

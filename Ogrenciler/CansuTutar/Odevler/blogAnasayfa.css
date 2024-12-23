@@ -59,7 +59,7 @@ body {
 /* Header */
 header {
     text-align: center;
-    background: #f8f9fa;
+    background: linear-gradient(to right,#67b26f,#da4ae2 ,#4a90e2,#555 );
     padding: 20px 0;
     border-bottom: 1px solid #ddd;
 }
@@ -71,60 +71,61 @@ header h1 {
 
 header p {
     margin: 10px 0 0;
-    color: #ec5b5b;
+    color: #6b6b6b;
+    font-weight:bold;
+    font-size:25px;
     font-style:italic;
-    background: linear-gradient(to right,#67b26f,#da4ae2 ,#4a90e2,#555 );
 }
+
 
 
 /* Content */
 .content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
     gap: 50px;
     padding: 50px;
-    margin-left: auto; 
-    margin-right: auto;
-    max-width: calc(100% - 200px); 
-    justify-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: center;
 }
 
+/* Card styles */
 .card {
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
     background: white;
-    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
 }
 
 .card img {
     width: 100%;
     height: auto;
+    border-radius: 4px;
+    margin-bottom: 16px;
 }
 
 .card h2 {
-    margin: 15px 0 10px;
-    font-size: 1.5em;
+    margin-bottom: 12px;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 .card p {
-    margin: 0 15px 15px;
-    color: #555;
+    margin-bottom: 16px;
+    color: #666;
 }
 
 .card a {
     display: inline-block;
-    margin: 10px 0 15px;
-    padding: 10px 15px;
-    background: #6c63ff;
+    padding: 8px 16px;
+    background-color: #6c63ff;
     color: white;
     text-decoration: none;
-    border-radius: 5px;
-}
-
-.card a:hover {
-    background: #574bff;
+    border-radius: 4px;
 }
 
 /* Footer */
