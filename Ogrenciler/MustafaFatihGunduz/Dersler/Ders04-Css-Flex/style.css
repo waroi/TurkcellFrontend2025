@@ -1,0 +1,17 @@
+.container{
+    background-image: url("https://picsum.photos/200/300");
+    object-fit: contain;
+    width: 300px;
+    height: 300px;
+    color: white;
+}
+
+.paragraf{
+    color: black;
+}
+.paragraf:nth-child(even){
+    background-color: #f0f0f0;
+}
+.paragraf::before{
+    content: "Before Psu Element";
+}
