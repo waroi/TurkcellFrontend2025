@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ffffff;
+    list-style: none;
+}
+html {
+    background-image: linear-gradient(243deg, rgba(2,0,36,1) 13%, rgba(5,5,71,1) 42%, rgba(0,212,255,1) 100%);
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+.wrap {
+    width: 1200px;
+    margin: auto;
+}
+header {
+    background-color: rgba(5, 5, 71, 0.219);
+    height: 100px;
+    margin-bottom: 20px;
+    padding: 20px 0;
+    backdrop-filter: blur(10px);
+}
+h1 {
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    color: rgba(0, 213, 255, 0.8);
+
+}
+main {
+    padding: 20px;
+    margin: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+article {
+    border: 4px solid rgba(0, 213, 255, 0.27);
+    margin: 20px auto;
+    padding: 30px;
+    width: 100%;
+    text-align: left;
+    border-radius: 20px;
+    box-shadow: 10px 5px 12px rgba(40, 27, 36, 0.3);
+    background-color: rgba(2, 0, 36, 0.479);
+}
+aside {
+    border: 4px solid rgba(0, 213, 255, 0.27);
+    margin: 20px 0;
+    padding: 20px;
+    width: 48%;
+    text-align: left;
+    border-radius: 20px;
+    box-shadow: 10px 5px 12px rgba(40, 27, 36, 0.3);
+    background-color: rgba(2, 0, 36, 0.479);
+}
+img {
+    width: 400px;
+    border-radius: 20px;
+    border: 4px solid rgba(0, 213, 255, 0.451);
+    display: block;
+    margin: 20px auto;
+}
+h2 {
+    font-size: 35px;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 213, 255, 0.374);
+    margin: 20px 10px;
+    padding: 10px;
+    color: rgba(0, 213, 255, 0.8);
+
+}
+h3 {
+    font-size: 24px;
+    color: rgba(0, 213, 255, 0.8);
+    margin: 15px 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(0, 213, 255, 0.374);
+}
+p {
+    margin: 20px;
+    text-align: justify;
+    line-height: 1.8;
+    font-size: 18px;
+}
+.clear {
+    clear: both;
+}
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    border-top: 1px solid rgba(0, 213, 255, 0.301);
+}
+button {
+    background-color: rgba(0, 213, 255, 0.322);
+    padding: 20px;
+    border-radius: 20px;
+    border: none;
+    margin: 20px;
+        }
+a {
+    text-decoration: none;
+}
+
+h3 {
+    color: rgba(0, 213, 255, 0.8);
+    margin: 10px 20px;
+}
+ul {
+    list-style: none;
+    margin-left: 20px;
+}
+
+li {
+    margin: 15px 0;
+    padding: 10px;
+    border: 2px solid rgba(0, 213, 255, 0.322);
+}

@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    line-height: 1.8;
+    background-color: #fafafa;
+    color: #333;
+}
+
+.wrap {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.header {
+    background-color: white;
+    height: 100px;
+}
+
+.navHeader {
+    width: 100%;
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+}
+
+.navHeader ul {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+
+.navHeader li {
+    font-size: 20px;
+    color: black;
+}
+
+.navHeader li:hover {
+    color: pink;
+}
+
+.header2 {
+    background-color: #fff;
+    color: #000;
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.navHeader2 h1 {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.avatarAndName {
+
+    width: 100px;
+    margin: 20px;
+    display: flex;
+    left: 16px;
+    top: 16px;
+    gap: 10px;
+}
+
+.avatarAndName h5 {
+    color: white;
+    margin-top: 20px;
+    white-space: noWrap;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.sectionContainer {
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.sectionContainer img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.articleHeader {
+    margin-bottom: 20px;
+}
+
+.avatarAndName {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.infos h5 {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.articleTitle h2 {
+    font-size: 48px;
+    margin: 10px 0;
+    color: #222;
+    font-weight: bold;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.blogContent {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.blogContent p {
+    margin-bottom: 15px;
+    line-height: 1.8;
+    color: #444;
+    font-size: 16px;
+}
+
+ul li {
+    margin-left: 25px;
+}
