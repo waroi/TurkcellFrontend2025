@@ -1,0 +1,112 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  display: inline;
+  float: right;
+  padding-right: 20px;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.clear {
+  clear: both;
+}
+section {
+  margin: 10px;
+  float: left;
+}
+header {
+  height: 70px;
+  background-color: #deaa79;
+}
+.w {
+  width: calc((2 * 100vw) / 3);
+  height: 200px;
+  border: 3px solid #659287;
+  background-color: #fbe4d8;
+  margin: 10px;
+}
+.sw {
+  width: calc((100vw) / 4);
+  height: 200px;
+  border: 3px solid #659287;
+  background-color: #fbe4d8;
+  margin: 10px;
+}
+.memoir {
+  padding-left: 10px;
+  height: 70px;
+  width: auto;
+  float: left;
+}
+aside {
+  float: right;
+  margin: 10px;
+}
+.active {
+  background-color: #659287;
+  margin-top: 12px;
+}
+.bg {
+  background-color: #fbe4d8;
+  padding: 10px;
+  font-size: 30px;
+  float: right;
+  text-align: start;
+  padding-top: 10px;
+}
+.p {
+  background-color: #fbe4d8;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  float: right;
+  font-size: 22px;
+}
+.wim {
+  width: auto;
+  height: 195px;
+  float: left;
+  background-color: #fbe4d8;
+}
+.blog {
+  display: flex;
+  flex-direction: column; /* Öğeleri üst üste yerleştirir */
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-left: 40px;
+  background-color: #fbe4d8;
+}
+.yazar {
+  padding-top: 70px;
+  display: flex;
+  background-color: #fbe4d8;
+}
+
+.yazar1 {
+  background-color: #fbe4d8;
+}
+
+footer {
+  background: #444;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  position: relative;
+  width: 100%;
+}

@@ -1,0 +1,85 @@
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   font-family: Arial, sans-serif;
+   background-color: #f4f4f4;
+}
+
+.wrap {
+   width: 100%;
+   margin: 0 auto;
+   padding: 20px;
+   background-color: #fff;
+   max-width: 1200px;
+}
+
+/* Header */
+.header {
+   background-color: #333;
+   color: white;
+   padding: 20px;
+   text-align: center;
+}
+
+.header h1 {
+   margin-bottom: 10px;
+}
+
+.header p {
+   font-size: 1.2em;
+   color: #ddd;
+}
+
+.content {
+   padding: 20px;
+}
+
+.recipe {
+   background-color: #fff;
+   padding: 20px;
+   margin: 20px 0;
+   border-radius: 8px;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.recipe h3 {
+   color: #333;
+   font-size: 1.5em;
+   margin-bottom: 10px;
+}
+
+.recipe ul, .recipe ol {
+   margin-left: 20px;
+   line-height: 1.8;
+}
+
+.recipe ul li, .recipe ol li {
+   font-size: 1.1em;
+}
+
+/* Geriye dönüş butonu */
+.back-to-home {
+   display: inline-block;
+   margin-top: 20px;
+   background-color: #007BFF;
+   color: white;
+   padding: 10px 20px;
+   text-decoration: none;
+   border-radius: 5px;
+}
+
+.back-to-home:hover {
+   background-color: #0056b3;
+}
+.footer {
+   background-color: #333;
+   color: white;
+   text-align: center;
+   padding: 10px;
+   margin-top: 20px;
+}

@@ -1,0 +1,42 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.wrap{
+    width: 980px;
+    margin: 0 auto;
+}
+.header{
+    height: 150px;
+    margin-bottom: 10px;
+    background-color: blueviolet;
+    border: 3px solid black;
+    border-radius: 10px;
+}
+.content{
+    width: 700px;
+    height: 600px;
+    background: linear-gradient(to bottom, rgb(225, 133, 133), rgb(8, 8, 25));
+    border: 3px solid black;
+    border-radius: 10px;
+    float: left;
+}
+.sidebar{
+    width: 250px;
+    height: 600px;
+    background: orange;
+    border: 3px solid black;
+    border-radius: 10px;
+    float: right;
+}
+.clear{
+    clear: both;
+}
+.footer{
+    height: 100px;
+    background-color: aquamarine;
+    border: 3px solid black;
+    border-radius: 10px;
+    margin-top: 10px;
+}

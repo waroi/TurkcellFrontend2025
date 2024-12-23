@@ -1,0 +1,55 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.paragraf {
+    text-align: center;
+    color: yellow;
+    background-color: red;
+}
+
+/* id öncelikli */
+#p1 {
+    text-align: left;
+    color: aqua;
+    background-color: black;
+}
+
+#p2 {
+    text-align: right;
+    color: antiquewhite;
+    background-color: blueviolet;
+}
+
+h1{
+    text-align: center;
+}
+
+p{
+    margin: 20px;
+}
+
+body{
+    background-color: antiquewhite;
+}
+
+.box {
+    width: 300px;
+    height: 300px;
+    color: black;
+    background-color: red;
+    border: 20px solid black;
+    border-radius: 15%;
+}
+
+.inbox {
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+    margin: auto;
+    margin-top: 30%;
+    border: 10px solid;
+    border-radius: 50%;
+}
+

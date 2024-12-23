@@ -1,0 +1,155 @@
+/* begin: Aybike section */
+.content1 {
+    flex-grow: 1;
+    width: 100%;
+    padding-top: 2.3%;
+    padding-bottom: 2.3%;
+  }
+
+.h-page {
+    padding: 2.8% 9.8%;
+  }
+  
+  u {
+    text-decoration: underline;
+  }
+  
+  .stack-medium > * + * {
+    margin-top: 2rem;
+  }
+  
+  .stack-small > * + * {
+    margin-top: 1.8rem;
+  }
+  
+  article > * + * {
+    margin-top: 1rem;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: minmax(8%, 1fr) minmax(auto, 57rem) minmax(8%, 1fr);
+  }
+  
+  .general {
+    font-size: clamp(0.9rem, 1.3vw, 1.3rem);
+    border-bottom: none !important;
+    text-align: center !important;
+    background: #f8f9fa;
+    padding: 30px;
+  }
+  
+  .author {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 1%;
+    margin-bottom: 5%;
+    padding-left: 10px;
+  }
+  
+  .author img {
+    border-radius: 50%;
+    width: clamp(1.5rem, 4vw, 3rem);
+    height: clamp(1.5rem, 4vw, 3rem);
+    object-fit: cover;
+  }
+  
+  .author-name {
+    font-size: clamp(0.7rem, 1vw, 1.3rem);
+    margin-bottom: 5px;
+  }
+  
+  .author-info {
+    margin-left: 2%;
+    text-align: left;
+  }
+  
+  .author-bio {
+    font-size: clamp(0.5rem, 1vw, 0.8rem);
+    color: #8a9eb5;
+  }
+  
+  time {
+    color: #8a9eb5;
+  }
+  .blog-image{
+    width: 800px;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+  .post-main > *  {
+    grid-column-start: 2;
+    grid-column-end: auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    background: #f8f9fa;
+  }
+  
+  .title {
+    font-size: clamp(0.8rem, 1.8vw, 1.2rem);
+    box-shadow: none !important;
+    border-radius: none !important;
+  }
+  
+  h2 {
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  }
+  
+  .post-meta span {
+    color: #8a9eb5;
+    font-weight: 600;
+    font-size: 0.75em;
+    text-transform: uppercase;
+  }
+  
+  .post-body {
+    width: 100%;
+    font-size: clamp(1rem, 1.8vw, 1.4rem);
+    padding-left: 10px;
+  }
+
+.blog-tags {
+    text-align: center;
+    padding: 20px;
+    border-radius: 12px;
+  }
+  
+  .blog-tags h2 {
+    font-size: 24px;
+    color: #525050;
+    margin-bottom: 15px;
+  }
+  
+  .tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  .tag {
+    text-decoration: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    color: #fff;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    border-radius: 20px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .tag:hover,
+  .tag:focus {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+
+  p{
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333;
+  }
+
+  
