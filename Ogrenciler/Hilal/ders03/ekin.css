@@ -5,12 +5,11 @@
 }
 
 body {
-  font-family: sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   min-height: 100vh;
   background: linear-gradient(135deg, #73d0ff 0%, #4e78e4 100%);
   padding: 50px 0;
   color: #fff;
-  font-weight: 600;
 }
 
 header,
@@ -134,4 +133,44 @@ aside li a {
 footer {
   padding: 25px;
   text-align: center;
+}
+
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  h1 {
+    text-align: center;
+    color: #333;
+  }
+  label {
+    display: block;
+    text-align: center;
+  }
+  input,
+  textarea {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  textarea {
+    min-height: 100px;
+    resize: none;
+  }
+  button {
+    padding: 10px;
+    width: 100%;
+    background-color: #5a67d8;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
 }
