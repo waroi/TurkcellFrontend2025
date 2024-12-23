@@ -8,3 +8,4 @@
 - [Github for Desktop uygulaması](https://desktop.github.com/)
 - [Github](https://github.com)
 - [Bizim Proje](https://github.com/waroi/TurkcellFrontend2025)
+- [Can I Use](https://caniuse.com/)
