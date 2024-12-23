@@ -1,7 +1,84 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
 
+/*header kısmı*/
+/* Header */
+header {
+    background-color: #f8f9fa; /* Açık arka plan rengi */
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 2px solid #eaeaea;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
+    width: 100%;
+    padding: 0 20px;
+    background:linear-gradient(to right,#77cbcf,#ca7ca2,#8669e8);
+}
+
+
+.logo {
+    max-height: 50px; /* Logo boyutu */
+}
+
+header p {
+    font-size: 25px; /* Yazı büyüklüğü */
+    color: #343a40; /* Yazı rengi */
+    margin-top: 20px;
+    font-weight: bold;
+}
+/* Content */
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    padding: 50px;
+    width: (100%-20px);
+    margin: 0 auto;
+    justify-content: space-between;
+}
+/* Card styles */
+.card {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 16px;
+}
 .imgClass{
-    height: 100px;
-    width: auto;
-    border-radius: 20px;
+    margin-right: 15px;
+    width: 150px; 
+    height: auto; 
+    border-radius: 5px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
     border-color: aquamarine 0.3rem solid;
 }
+/*Pseudo class */
+header p::before {
+    content: "✨ ";
+}
+
+header p::after {
+    content: " ✨";
+}
+
