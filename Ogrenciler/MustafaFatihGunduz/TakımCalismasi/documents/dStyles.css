@@ -1,0 +1,97 @@
+.wrap {
+    width: 980px;
+    margin: 0 auto;
+  }
+
+  .header {
+    background-color: white;
+    height: 100px;
+  }
+  
+  .navHeader {
+    width: 100%;
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+  }
+
+  .branch {
+    font-weight: bold;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  }
+
+  .navHeader ul {
+    list-style: none; /* . kaldır*/
+    display: flex;
+    gap: 40px;
+  }
+  
+  .navHeader li {
+    font-size: 20px;
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  
+  .navHeader li:hover { /*  yazının üstüne gelindiğinde */
+    color: pink;
+  }
+  
+  .sectionContainer {
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.blogContent {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.blogContent p {
+    margin-bottom: 15px;
+    line-height: 1.8;
+    color: #444;
+    font-size: 16px;
+}
+
+/* Tasarım başlığına özel arka plan rengi */
+.blogContent.design {
+    background-color: plum; /* Tasarım için arka plan rengi */
+  }
+  
+  /* Proje Öncesi Hazırlık başlığına özel arka plan rengi */
+  .blogContent.preparation {
+    background-color: greenyellow; /* Proje öncesi hazırlık için farklı bir arka plan rengi */
+  }
+  
+  /* Görseller başlığına özel arka plan rengi */
+  .blogContent.images {
+    background-color: burlywood; /* Görseller için farklı bir arka plan rengi */
+  }
+
+.blogContent a:hover {
+    text-decoration: underline; /* Bağlantıya tıklama efektini ekleyebilirsiniz */
+  }
+
+
+.item {
+    display: block; /* Her grup kendi satırında */
+    margin-bottom: 10px; /* Gruplar arasında boşluk */
+}
+
+.h4, a {
+    display: inline; /* Başlık ve link aynı satırda */
+    margin-right: 5px; /* Başlık ve link arasında boşluk */
+}
+
+.picture {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+}

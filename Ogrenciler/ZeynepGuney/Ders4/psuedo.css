@@ -1,0 +1,71 @@
+.paragraf{
+    font-size: 24px;
+}
+.title{
+    font-size: 36px;
+    color: darkgreen;
+}
+@media screen and(max-width: 760px){
+    .paragraf{
+        font-size: 16px;
+    }
+    .title{
+        font-size: 24px;
+        color:hotpink;
+    }
+}
+/* Psuedo Class */
+.link{
+    color: orange;
+    font-size: 24px;
+    text-decoration: none;
+}
+.link:visited{
+    color: blue;
+}
+body .link:hover{
+    color: red;
+}
+.link:active{
+    color: pink;
+}
+/* Psudo Element*/
+/* Son elemana*/
+/* .listItem:last-child{ 
+    color: #c61313;
+} */
+/* 5. elemana*/
+/* .listItem:nth-child(5){ 
+    color: #1913c6;
+} */
+/* .listItem:nth-child(even){
+    color: chartreuse;
+} */
+/* .listItem:nth-child(2n+1){
+    color: chartreuse;
+} */
+.listItem:nth-child(odd){
+    color: chartreuse;
+}
+.listItem::before{
+    content: "***";
+    color: aqua;
+    font-size: 18px;
+}
+.listItem::after{
+    content: "***"; /* Buraya emoji vs gelebilir. */
+    color:blueviolet;
+    font-size: 18px;
+}
+/* .text{
+    font-size: 24px;
+    color: rebeccapurple;
+} */
+/* .text::first-letter{
+    font-size: 24px;
+    color: rebeccapurple;
+} */
+.text::first-line{
+    font-size: 24px;
+    color: rebeccapurple;
+}

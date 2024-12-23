@@ -1,0 +1,108 @@
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #F5EEE6;
+  color: #333;
+}
+
+header {
+  height: 70px;
+  background-color: #deaa79;
+}
+.memoir {
+  height: 70px;
+  width: auto;
+  float: left;
+}
+.active {
+  background-color: #659287;
+  margin-top: 12px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+li {
+  display: inline;
+  float: right;
+  padding-right: 20px;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+header {
+  background-color: #deaa79;
+  color: #fff;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  text-align: center;
+  color:#659287;
+}
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  background: #fff;
+  padding: 20px;
+  border: 2px solid #659287;
+  border-radius: 10px;
+}
+
+.container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+.container p {
+  margin-bottom: 15px;
+}
+
+.wim {
+  height: 100px;
+  width: 100px;
+  padding-left: 50px;
+}
+.wim1 {
+  height: 100px;
+  width: 100px;
+  padding-left: 80px;
+}
+.wim2 {
+  height: 100px;
+  width: 100px;
+  padding-left: 80px;
+}
+.wim3 {
+  height: 100px;
+  width: 100px;
+  padding-left: 110px;
+}
+
+footer {
+  background: #444;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  
+}
+
+footer p {
+  margin: 0;
+}

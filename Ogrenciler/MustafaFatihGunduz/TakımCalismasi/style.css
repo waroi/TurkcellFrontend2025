@@ -1,0 +1,252 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.wrap {
+  width: 980px;
+  margin: 0 auto;
+}
+
+.header {
+  background-color: white;
+  height: 100px;
+}
+
+.navHeader {
+  width: 100%;
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+}
+
+.navHeader ul {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+.navHeader li {
+  font-size: 20px;
+  color: black;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.navHeader li:hover {
+  color: pink;
+}
+
+.branch {
+  font-weight: bold;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.sectionContainer {
+  position: relative;
+  color: white;
+}
+
+.main-image {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.avatarAndName {
+  position: absolute;
+  width: 100px;
+  margin: 20px;
+  display: flex;
+  left: 16px;
+  top: 16px;
+  gap: 10px;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+}
+
+.avatarAndName h5 {
+  color: white;
+  margin-top: 20px;
+  white-space: noWrap;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.articleTitle {
+  position: absolute;
+  margin: 20px;
+  display: flex;
+  left: 16px;
+  top: 160px;
+  gap: 10px;
+}
+
+.articleInformations {
+  position: absolute;
+  margin: 20px;
+  display: flex;
+  left: 16px;
+  top: 250px;
+  gap: 10px;
+}
+
+.articleInformations h5 {
+  color: white;
+  margin-top: 20px;
+  white-space: noWrap;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.articleSubTitle {
+  position: absolute;
+  margin: 20px;
+  display: flex;
+  left: 16px;
+  top: 350px;
+  gap: 10px;
+}
+
+.blogs {
+  position: relative;
+  height: 300px;
+  text-decoration: none;
+}
+
+.blogContainers {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.blog-details{
+  display: flex;
+  gap: 10px;
+}
+
+.blog-box {
+  position: relative;
+  width: 315px;
+  height: 300px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.blog-images {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.blog-overlay {
+  position: relative;
+  z-index: 2; 
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column; 
+  justify-content: space-between;
+  height: 100%;
+}
+
+.avatar-and-info {
+  display: flex; 
+  align-items: center;
+  gap: 10px; 
+}
+
+.avatar-small{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.infos h5 {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.blog-informations {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.6;
+  text-align: left;
+}
+
+
+.footer {
+  background-color: #1D2B34;
+  height: 270px;
+  margin: 20px auto;
+}
+
+.main-titles{
+  display: flex;
+}
+
+.support{
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  margin: 10px auto;
+}
+
+.support p{
+  padding-top: 10px;
+}
+
+.community{
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  margin: 10px auto;
+}
+
+.developers{
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  margin: 10px auto;
+}
+
+.developers p{
+  padding-top: 10px;
+}
+
+.solid{
+  margin: 20px;
+}
+
+.privacy-and-policy {
+  display: flex;
+  gap: 50px;
+  margin: 20px;
+  padding: auto;
+  text-decoration: none;
+}
+
+.privacy-and-policy a:link {
+  text-decoration: none;
+}
+
+.privacy-and-policy p{
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  margin: 10px auto;
+}
+
+.main-titles h3{
+  color: white;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 500;
+  margin: 10px auto;
+}

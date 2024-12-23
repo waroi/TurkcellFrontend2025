@@ -1,0 +1,58 @@
+.card {
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	overflow: hidden;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	background: white;
+	text-align: center;
+
+}
+.content {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0;
+	margin-left: 20px;
+	margin-right: 20px;
+
+}
+.title{ /*kaynak:https://www.geeksforgeeks.org/how-to-add-image-in-text-background-using-html-and-css/*/
+    text-align: center;
+    font-size: 50px;
+    color: rgb(248, 248, 248);
+    background-color: #2f8d46;
+    background-image: url(
+    "https://media.geeksforgeeks.org/wp-content/uploads/20231218222854/1.png");
+      background-repeat: repeat;
+      margin-top: -8px;
+      font-size: 120px;
+      text-align: center;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-family: 'Steelfish Rg', 'helvetica neue', 
+                      helvetica, arial, sans-serif;
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+footer{
+    text-align: center;
+}
+/*
+.bgImg{
+    background-image: url("https://media.istockphoto.com/id/1398289137/tr/vekt%C3%B6r/pixel-game-win-screen-retro-8-bit-video-game-interface-with-you-win-text-computer-game-level.jpg?s=2048x2048&w=is&k=20&c=zHvE5-ipMme61ebAX_E6VLb35w61-XMAU2FbFy4yfOk=") ;
+    background-position-x: center;
+    background-position-y: center;
+    background-size: auto;
+    width: 1500px;
+    height: 100px;
+    display: flex;
+	justify-content: space-between;
+	align-items: center;
+    
+}
+*/
