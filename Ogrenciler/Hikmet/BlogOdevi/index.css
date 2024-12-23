@@ -18,20 +18,24 @@ h3 {
 	text-align: center;
 	padding-top: 10px;
 }
-/* .left-ad {
-	background-color: aqua;
+.ad {
+	height: 600px;
+	width: 225px;
+	margin: 200px 5px 20px 0px;
+	float: right;
+}
+.left-ad {
 	height: 600px;
 	width: 225px;
 	margin: 200px 0px 20px 5px;
 	float: left;
 }
 .right-ad {
-	background-color: aqua;
 	height: 600px;
 	width: 225px;
 	margin: 200px 5px 20px 0px;
 	float: right;
-} */
+}
 a {
 	text-align: center;
 	text-decoration: none;
@@ -61,7 +65,7 @@ img {
 }
 header {
 	width: 850px;
-	height: 150px;
+	height: 200px;
 	margin-top: 10px;
 	margin-left: auto;
 	margin-right: auto;
