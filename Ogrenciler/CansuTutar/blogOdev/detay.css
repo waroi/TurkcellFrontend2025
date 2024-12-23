@@ -1,35 +1,23 @@
 /* begin: Aybike section */
 .content1 {
-    flex-grow: 1;
     width: 100%;
     padding-top: 2.3%;
     padding-bottom: 2.3%;
   }
 
-.h-page {
-    padding: 2.8% 9.8%;
-  }
-  
   u {
     text-decoration: underline;
   }
+
   
-  .stack-medium > * + * {
-    margin-top: 2rem;
-  }
-  
-  .stack-small > * + * {
-    margin-top: 1.8rem;
-  }
-  
-  article > * + * {
+  article  {
     margin-top: 1rem;
   }
   
   .grid {
     display: grid;
     grid-template-rows: auto;
-    grid-template-columns: minmax(8%, 1fr) minmax(auto, 57rem) minmax(8%, 1fr);
+    grid-template-columns: minmax(95px, 1fr) minmax(auto, 910px) minmax(95px, 1fr);
   }
   
   .general {
@@ -51,13 +39,13 @@
   
   .author img {
     border-radius: 50%;
-    width: clamp(1.5rem, 4vw, 3rem);
-    height: clamp(1.5rem, 4vw, 3rem);
+    width: 48px;
+    height: 48px;
     object-fit: cover;
   }
   
   .author-name {
-    font-size: clamp(0.7rem, 1vw, 1.3rem);
+    font-size: 20px;
     margin-bottom: 5px;
   }
   
@@ -67,7 +55,7 @@
   }
   
   .author-bio {
-    font-size: clamp(0.5rem, 1vw, 0.8rem);
+    font-size: 15px;
     color: #8a9eb5;
   }
   
@@ -92,43 +80,21 @@
     box-shadow: none !important;
     border-radius: none !important;
   }
+ 
   
-  h2 {
-    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
-  }
-  
-  .post-meta span {
+   span {
     color: #8a9eb5;
     font-weight: 600;
     font-size: 0.75em;
     text-transform: uppercase;
   }
-  
-  .post-body {
-    width: 100%;
-    font-size: clamp(1rem, 1.8vw, 1.4rem);
-    padding-left: 10px;
-  }
-
-.blog-tags {
-    text-align: center;
-    padding: 20px;
-    border-radius: 12px;
-  }
-  
-  .blog-tags h2 {
+ h2 {
     font-size: 24px;
     color: #525050;
     margin-bottom: 15px;
   }
   
-  .tags-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-  }
-  
+
   .tag {
     text-decoration: none;
     padding: 8px 16px;
@@ -144,8 +110,6 @@
     transform: scale(1.1);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   }
-
-
   p{
     font-size: 1rem;
     line-height: 1.5;
