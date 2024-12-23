@@ -3,22 +3,22 @@ body {
   line-height: 1.6;
   margin: 0;
   padding: 0;
-  background-color: #deaa79;
+  background-color: #F5EEE6;
   color: #333;
 }
 
 header {
-  height: 90px;
+  height: 70px;
   background-color: #deaa79;
 }
 .memoir {
-  height: 81px;
-  width: 162px;
+  height: 70px;
+  width: auto;
   float: left;
 }
 .active {
   background-color: #659287;
-  margin-top: 20px;
+  margin-top: 12px;
 }
 
 ul {
@@ -31,6 +31,7 @@ li {
   float: right;
   padding-right: 20px;
 }
+
 li a {
   display: block;
   color: white;
@@ -38,17 +39,17 @@ li a {
   padding: 14px 16px;
   text-decoration: none;
 }
-
 header {
   background-color: #deaa79;
   color: #fff;
-  padding: 20px 10px;
   text-align: center;
 }
 
-header h1 {
+h1 {
   margin: 0;
   font-size: 2.5rem;
+  text-align: center;
+  color:#659287;
 }
 
 .container {
@@ -56,6 +57,7 @@ header h1 {
   margin: 20px auto;
   background: #fff;
   padding: 20px;
+  border: 2px solid #659287;
   border-radius: 10px;
 }
 
@@ -94,10 +96,11 @@ footer {
   background: #444;
   color: #fff;
   text-align: center;
-  padding: 10px 0;
-  position: relative;
-
+  padding: 10px 0px;
+  position: fixed;
+  bottom: 0;
   width: 100%;
+  
 }
 
 footer p {
