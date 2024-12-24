@@ -45,3 +45,30 @@
     background-size: cover;
     /* width: 980px; */
 }
+
+.categories{
+    background-color: #FFC145;
+    padding: 10px 0;
+    margin-top: 20px;
+    border-radius: 12px;
+}
+
+.categoryList{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.categoryList li {
+    font-size: large;
+}
+
+.categoryList li a:hover{
+    color: white;
+    border-radius: 12px;
+    cursor: pointer;
+
+
+}
