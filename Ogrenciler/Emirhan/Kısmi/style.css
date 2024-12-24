@@ -129,7 +129,7 @@ h3 {
 .buyButton {
   width: 100%;
   padding: 10px;
-  background-color:#fd9861;
+  background-color: #fd9861;
   border: none;
   border-radius: 5px;
   margin-top: 10px;
@@ -182,14 +182,13 @@ footer {
   display: flex;
   justify-content: space-between;
 }
-.jumbotron .jumbotron-inner {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
 
 .jumbotron img {
+  transition: 0.2s ease-in-out;
   width: 60%;
+}
+.jumbotron img:hover {
+  transform: scale(1.1);
 }
 
 .stories {
@@ -231,7 +230,6 @@ div:has(.story):hover {
   height: 100%;
 }
 
-
 .categories {
   cursor: pointer;
   display: flex;
@@ -256,16 +254,19 @@ div:has(.story):hover {
 .category:nth-child(3) {
   background-color: rgb(212, 112, 29);
 }
+.category:hover {
+  font-weight: bold;
+}
 .nav {
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
   align-items: center;
   height: auto;
   width: 100%;
-  background-color: #f6d2be; 
-  box-sizing: border-box; 
+  background-color: #f6d2be;
+  box-sizing: border-box;
   flex-wrap: wrap;
-  gap: 10px; 
+  gap: 10px;
 }
 .logo {
   height: 80px;
@@ -281,7 +282,7 @@ div:has(.story):hover {
   border-radius: 20px;
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  flex-shrink: 1; 
+  flex-shrink: 1;
 }
 .search-bar input {
   flex: 1;
@@ -305,8 +306,8 @@ div:has(.story):hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 15px; 
-  flex-wrap: wrap; 
+  gap: 15px;
+  flex-wrap: wrap;
 }
 .icons img {
   width: 25px;
@@ -317,7 +318,7 @@ div:has(.story):hover {
   margin-right: 15px;
 }
 @media (min-width: 768px) {
-  .menu{
+  .menu {
     display: none;
   }
 }
@@ -333,29 +334,29 @@ div:has(.story):hover {
     height: auto;
     padding: 10px;
   }
-  .logo{
+  .logo {
     height: 70px;
     width: auto;
   }
   .search-bar {
-    width: 100%; 
-    margin-top: 10px; 
+    width: 100%;
+    margin-top: 10px;
   }
   .icons {
-    justify-content: center; 
+    justify-content: center;
     margin-top: 10px;
     gap: 10px;
   }
-  .menu{
+  .menu {
     display: none;
   }
 }
 @media (max-width: 500px) {
   .nav {
     display: flex;
-    justify-content: space-around; 
-    align-items: center; 
-    flex-direction: row; 
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
     height: auto;
     padding: 10px;
     background-color: #f6d2be;
@@ -366,17 +367,17 @@ div:has(.story):hover {
   .icons {
     display: none;
   }
-  .logo{
+  .logo {
     width: auto;
     height: 60px;
     flex-shrink: 1;
   }
-  .menu{
+  .menu {
     display: flex;
     flex-direction: row;
     gap: 10px;
   }
-  .menu img{
+  .menu img {
     width: 25px;
     height: auto;
   }
@@ -387,13 +388,13 @@ div:has(.story):hover {
   }
 }
 @media (max-width: 569px) {
-  .card{
+  .card {
     width: 100%;
   }
-  .image{
+  .image {
     height: 500px;
   }
-  main{
+  main {
     padding: 5px;
   }
 }
