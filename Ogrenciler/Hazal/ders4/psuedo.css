@@ -1,0 +1,72 @@
+.paragraf{
+    font-size: 28;
+}
+
+.title{
+    font-size: 36;
+    color: blueviolet;
+}
+
+
+@media screen and (max-width: 768px) {
+    .paragraf {
+        font-size: 16px;
+      }
+    
+      .title {
+        font-size: 24px;
+        color: blue;
+      }
+  }
+  
+  /* Psuedo Class */
+  .link {
+    color: rgb(7, 193, 100);
+    font-size: 24px;
+    text-decoration: none;
+  }
+  .link:visited {
+    color: rgb(135, 10, 108);
+  }
+  .link:hover {
+    color: rgb(206, 36, 76);
+  }
+  .link:active {
+    color: rgb(4, 113, 147);
+  }
+  
+  /* .listItem:last-child {
+    color: rgb(8, 136, 117);
+  } */
+  
+  /* .listItem:nth-child(2) {
+    color: rgb(182, 73, 4);
+  } */
+  /* .listItem:nth-child(2n+1) {
+    color: rgb(182, 73, 4);
+  } */
+  /* .listItem:nth-child(even) {
+    color: rgb(182, 73, 4);
+  } */
+  .listItem:nth-child(even) {
+    color: rgb(182, 73, 4);
+  }
+  /* Psuedo Element */
+  
+  .listItem::before {
+    content: "👉";
+    font-size: 18px;
+  }
+  .listItem::after {
+    content: " Deneme 🚀";
+    font-size: 18px;
+  }
+  
+  /* .text::first-letter {
+    font-size: 36px;
+    color: red;
+  } */
+  .text::first-letter {
+    font-size: 24px;
+    color: rgb(23, 38, 176);
+  }
