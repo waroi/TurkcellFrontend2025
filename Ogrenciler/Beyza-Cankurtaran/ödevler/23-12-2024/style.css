@@ -15,10 +15,19 @@ header {
 }*/
 
 /* Navbar */
+
+main {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+
+
 .navbar {
     display: flex;
     align-items: center;
-    justify-content:flex-start;
+    justify-content:space-between;
     width: 100%;
     padding: 0 20px;
     background:linear-gradient(to right,#77cbcf,#ca7ca2,#8669e8);
@@ -27,16 +36,16 @@ header {
 
 .logo {
     margin-right: auto;/*buranın çalışması lazım*/
-    max-height: 50px; /* Logo boyutu */
+    max-height: 50px;
 }
 
 header p {
-    font-size: 25px; /* Yazı büyüklüğü */
-    color: #343a40; /* Yazı rengi */
+    font-size: 25px; 
+    color: #343a40; 
     margin-top: 20px;
     font-weight: bold;
 }
-/* Content */
+
 .container {
     display: flex;
     flex-direction: row;
@@ -44,40 +53,69 @@ header p {
     justify-content: center;
     flex-wrap: wrap;
     gap: 50px;
-    padding: 50px;
-    width: (100%-20px);
-    margin: 0 auto;
-    justify-content: space-between;
+    padding: 20px;
+    max-width: 80%;
+   
 }
 
-/* 
-
-.card img{
-    width:100%
+.kategori{
+    display: flex;
+    flex-direction: column; 
+    justify-content: flex-start; 
+    align-items: center; 
+    width: 30%;
+ 
+    border-radius: 5px;
+    color: violet;
+    padding: 20px;
+    margin-top: 30px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
 }
-Böyle bir kısım vardı sildim img widthlerini 100'e ayarlayıp
-Düşey yönde yükseklikleri değiştiriyordu.
-*/
 
-/* Card styles */
+.kategori ul{
+    color: yellowgreen;
+    margin: 5%;
+    
+}
+.kategori ul a:hover{
+    color: rgb(19, 23, 13);
+
+    
+}
+
+
+.kategori ul a{
+    text-decoration: none;
+    color: yellowgreen;
+}
+
+.kategori ul li ul li{
+    margin-left: 5%;
+}
+
+
+
+
 .card {
     width: 100%;
-    max-width: 400px;
+    max-width: 330px;
     margin: 0 auto;
     background: white;
     border-radius: 8px;
-    box-shadow: 0 0 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
     padding: 20px;
 }
 
 .resim{
-    display: flex; /* Resimi tam ortalamak için */
+    display: flex; 
     justify-content: center;
+    object-fit: contain; 
 }
 
 .imgClass{
     margin-right: 15px;
     width: auto; 
+    max-width: 100%;
     height: 15rem; 
     border-radius: 5px; 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -101,13 +139,24 @@ Düşey yönde yükseklikleri değiştiriyordu.
     color: #fff;
 }
 
-/*Pseudo class */
-.card:hover{
-    box-shadow: 0rem 0rem 0.2rem 0.3rem #8ba0ff;
+.button:hover{
+    background-color: #b3c0f9;
 }
 
 
-/*Pseudo elements */
+.card:hover{
+    box-shadow: 0rem 0rem 0.2rem 0.3rem #8ba0ff;
+    transform: scale(1.05); 
+}
+
+.kategori ul li a{
+    font-size: 1.2rem;
+}
+
+
+
+
+
 header p::before {
     content: "✨ ";
 }
@@ -120,13 +169,15 @@ header p::after {
 /*tablo css chatgptden aldım!!!*/
 /* Genel tablo stilleri */
 table {
-    width: 100%; /* Tablonun genişliği */
-    border-collapse: collapse; /* Çift kenarlı sınırları kaldır */
-    margin: 20px 0; /* Üst ve alt boşluk */
+    width: 97%; /* Tablonun genişliği */
+
+    margin: 20px; /* Üst ve alt boşluk */
     font-size: 16px; /* Yazı boyutu */
     font-family: Arial, sans-serif; /* Yazı tipi */
     text-align: left; /* Metin hizalaması */
     background-color: #f9f9f9; /* Hafif arka plan rengi */
+    border-radius: 5px;
+
 }
 
 /* Başlık stili */
@@ -186,7 +237,7 @@ tbody tr:hover {
     text-align: center;
     justify-content: center;
 }
-/* Footer */
+
 footer {
     background: #2d23fb;
     color: white;
@@ -194,4 +245,5 @@ footer {
     padding: 10px 0;
     margin-top: auto;
 }
+
 
