@@ -46,7 +46,7 @@ main {
 
 header p {
   font-size: 25px;
-  color: #343a40;
+  color: #e1f0ff;
   margin-top: 20px;
   font-weight: bold;
 }
@@ -83,14 +83,13 @@ header p {
     align-items: center;
     width: 30%;
     height: auto; 
-    background: #dfeffc;
+    background: rgba(139,160,255,0.3);
     border-radius: 5px;
     color: #4a6579;
     padding: 20px;
     margin-top: 30px;
     box-shadow: 0 0 8px rgba(176, 176, 176, 0.4); 
     overflow: hidden;
-    max-height: 630px;
   }
 
 .kategoriMobile {
@@ -129,12 +128,12 @@ header p {
 }
 .card {
   height: 40rem;
-  width: 22rem;
+  width: 19rem;
   margin: 0 20px;
   background: white;
   border-radius: 8px;
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
-  padding: 2.7rem;
+  padding: 1.8rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -198,6 +197,9 @@ header p::before {
 header p::after {
   content: " ✨";
 }
+.urunAcıklama {
+    flex-grow: 1;
+    }
 
 /* Genel tablo  */
 table {
