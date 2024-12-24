@@ -45,3 +45,19 @@
     background-size: cover;
     /* width: 980px; */
 }
+.products{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.product{
+    width: 350px;
+    height: 400px;
+    border: 1px solid #FFC145;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
