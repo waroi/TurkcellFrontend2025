@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
 }
 
 h2 {
@@ -16,12 +15,13 @@ p {
 body {
   margin-left: auto;
   margin-right: auto;
-  
 }
 
 .container {
+  font-family: sans-serif;
   width: calc(100% - 224px);
   margin: 0 auto;
+  margin-bottom: 50px;
   padding: 20px 0;
   float: right;
   display: flex;
@@ -31,22 +31,20 @@ body {
   flex-wrap: wrap;
   gap: 50px;
   border-radius: 10px;
-  border: 2px solid gainsboro;
+  border: 1px solid gainsboro;
 }
 
 .side-filter {
   padding: 10px;
-
   height: 800px;
   width: 200px;
   border-radius: 10px;
-  border: 2px solid gainsboro;
-  
+  border: 1px solid gainsboro;
 }
 
-.side-filter p{
+.side-filter p {
   display: inline;
-  }
+}
 
 .box {
   width: 200px;
@@ -55,6 +53,7 @@ body {
   background-color: white;
   border-radius: 10px;
   text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .phone-image {
@@ -84,18 +83,18 @@ body {
   font-size: medium;
   height: 30px;
   margin: 10px;
- 
+  border-radius: 10px;
 }
 
 .brands {
   display: inline;
 }
 
-.outer-container{
+.outer-container {
   margin-left: auto;
   margin-right: auto;
   display: flex;
-  
+  max-width: 1500px;
 }
 
 footer {
@@ -106,33 +105,35 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
-  
 }
 
 footer p {
   margin: 0;
 }
 
-
-
-
-@media screen and (max-width: 320px) {
- img{
-  width: 50%;
-
-
- }
+@media screen and (max-width: 440px) {
+  .phone-image {
+    width: 75%;
+  }
 }
 
-.side-filter input{
+.side-filter input {
   box-sizing: content-box;
 }
 
-.btn{
+.buy-button {
   color: rgb(255, 85, 0);
   font-size: medium;
-  position: relative;
   margin: 10px;
+  padding: 5px;
+  border-radius: 10px;
 }
 
+.box p {
+  padding: 10px;
+  font-size: 16px;
+}
 
+.filter-input {
+  cursor: pointer;
+}
