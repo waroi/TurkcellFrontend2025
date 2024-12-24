@@ -98,14 +98,13 @@ footer {
 
 .product-image {
   width: 100%;
-  height: 250px;
   height: auto;
 }
 
 .products-wrapper {
   display: flex;
   justify-content: center;
-  gap: 110px;
+  gap: 100px;
 }
 
 footer {
@@ -142,11 +141,14 @@ footer {
     margin-top: 1rem;
     padding: 12px 45px;
   }
+
+  .products-wrapper {
+    flex-wrap: wrap;
+  }
 }
 
 @media screen and (max-width: 992px) {
   .products-wrapper {
-    flex-wrap: wrap;
     gap: 50px;
   }
 
