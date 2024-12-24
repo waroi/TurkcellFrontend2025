@@ -10,6 +10,22 @@ header {
   text-align: center;
   font-family: "Playwrite MX Guides", serif;
 }
+nav {
+  font-family: "Dancing Script", serif;
+}
+
+nav ul {
+  background-color: #86a788;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 2.5rem;
+}
+nav ul li {
+  display: inline;
+  font-size: 1.5rem;
+}
+
 .container {
   margin: 0 auto;
   background-color: #ffcfcf;
@@ -18,13 +34,14 @@ header {
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 30px;
 }
+
 .card {
-  width: 400px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
   border: 2px solid #86a788;
   border-radius: 25px;
+  margin: 20px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -33,9 +50,25 @@ header {
   background-color: #ffe2e2;
 }
 
+.fav {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding-right: 0.5rem;
+  font-size: 1.5rem;
+}
+
 img {
   max-width: 200px;
   max-height: 100px;
+}
+
+.card_footer {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  border: 2px solid #86a788;
+  border-radius: 25px;
 }
 
 @media screen {
