@@ -2,8 +2,7 @@
     margin:0;
     padding:0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
-}
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
 
 /*header kısmı*/
 /* Header 
@@ -72,6 +71,16 @@ header p {
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
 }
 
+.kategoriMobile{
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+.kategori{
+    display: none;
+}
+  }
+
 .kategori ul{
     color: yellowgreen;
     margin: 5%;
@@ -97,13 +106,16 @@ header p {
 
 
 .card {
-    width: 100%;
-    max-width: 330px;
+    height: 40rem;
+    width: 20rem;
     margin: 0 auto;
     background: white;
     border-radius: 8px;
     box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
-    padding: 20px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
 }
 
 .resim{
@@ -164,6 +176,8 @@ header p::before {
 header p::after {
     content: " ✨";
 }
+
+h2::fir
 
 
 /*tablo css chatgptden aldım!!!*/
