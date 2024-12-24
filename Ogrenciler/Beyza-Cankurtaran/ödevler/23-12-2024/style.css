@@ -1,0 +1,249 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+/*header kısmı*/
+/* Header 
+header {
+    background-color: #f8f9fa; 
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 2px solid #eaeaea;
+}*/
+
+/* Navbar */
+
+main {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    width: 100%;
+    padding: 0 20px;
+    background:linear-gradient(to right,#77cbcf,#ca7ca2,#8669e8);
+}
+
+
+.logo {
+    margin-right: auto;/*buranın çalışması lazım*/
+    max-height: 50px;
+}
+
+header p {
+    font-size: 25px; 
+    color: #343a40; 
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    padding: 20px;
+    max-width: 80%;
+   
+}
+
+.kategori{
+    display: flex;
+    flex-direction: column; 
+    justify-content: flex-start; 
+    align-items: center; 
+    width: 30%;
+ 
+    border-radius: 5px;
+    color: violet;
+    padding: 20px;
+    margin-top: 30px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.kategori ul{
+    color: yellowgreen;
+    margin: 5%;
+    
+}
+.kategori ul a:hover{
+    color: rgb(19, 23, 13);
+
+    
+}
+
+
+.kategori ul a{
+    text-decoration: none;
+    color: yellowgreen;
+}
+
+.kategori ul li ul li{
+    margin-left: 5%;
+}
+
+
+
+
+.card {
+    width: 100%;
+    max-width: 330px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
+    padding: 20px;
+}
+
+.resim{
+    display: flex; 
+    justify-content: center;
+    object-fit: contain; 
+}
+
+.imgClass{
+    margin-right: 15px;
+    width: auto; 
+    max-width: 100%;
+    height: 15rem; 
+    border-radius: 5px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-color: aquamarine 2rem;
+    margin-bottom: 16px;    
+}
+
+.buttonDivClass{
+    display: flex;
+    justify-content:center;
+    gap: 2rem;
+}
+
+.button{
+    background-color: #8ba0ff;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+    border-style: solid;
+    padding: 0.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.button:hover{
+    background-color: #b3c0f9;
+}
+
+
+.card:hover{
+    box-shadow: 0rem 0rem 0.2rem 0.3rem #8ba0ff;
+    transform: scale(1.05); 
+}
+
+.kategori ul li a{
+    font-size: 1.2rem;
+}
+
+
+
+
+
+header p::before {
+    content: "✨ ";
+}
+
+header p::after {
+    content: " ✨";
+}
+
+
+/*tablo css chatgptden aldım!!!*/
+/* Genel tablo stilleri */
+table {
+    width: 97%; /* Tablonun genişliği */
+
+    margin: 20px; /* Üst ve alt boşluk */
+    font-size: 16px; /* Yazı boyutu */
+    font-family: Arial, sans-serif; /* Yazı tipi */
+    text-align: left; /* Metin hizalaması */
+    background-color: #f9f9f9; /* Hafif arka plan rengi */
+    border-radius: 5px;
+
+}
+
+/* Başlık stili */
+thead th {
+    background-color: #4CAF50; /* Başlık arka plan rengi */
+    color: white; /* Yazı rengi */
+    font-weight: bold; /* Kalın yazı */
+    padding: 10px; /* İç boşluk */
+    border: 1px solid #ddd; /* İnce kenar çizgisi */
+}
+
+/* Gövde hücre stili */
+tbody td {
+    padding: 10px; /* Hücre içi boşluk */
+    border: 1px solid #ddd; /* Hücre kenarlığı */
+}
+
+/* Alternatif satır renkleri */
+tbody tr:nth-child(even) {
+    background-color: #fff; /* Açık gri renk */
+}
+/* Alternatif satır renkleri */
+tbody tr:nth-child(odd) {
+    background-color: #ddd; /* Açık gri renk */
+}
+
+/* Satır üzerine gelince renk değişimi */
+tbody tr:hover {
+    background-color: #e8f5e9; /* Hafif yeşil ton */
+    transition: background-color 0.3s ease; /* Geçiş efekti */
+}
+
+/* Mobil uyumlu tasarım */
+@media screen and (max-width: 768px) {
+    table {
+        font-size: 14px; /* Daha küçük yazı boyutu */
+    }
+    thead {
+        display: none; /* Başlığı gizle */
+    }
+    tbody td {
+        display: block; /* Hücreleri dikey yap */
+        text-align: right; /* Metni sağa hizala */
+        position: relative; /* Konumlandırma */
+        padding-left: 50%; /* Sol boşluk */
+    }
+    tbody td::before {
+        content: attr(data-label); /* Başlık metnini göster */
+        position: absolute; /* Başlık konumu */
+        left: 10px; /* Soldan boşluk */
+        top: 10px; /* Üstten boşluk */
+        font-weight: bold; /* Kalın yazı */
+        text-align: left; /* Metni sola hizala */
+    }
+}
+.tablo{
+    text-align: center;
+    justify-content: center;
+}
+
+footer {
+    background: #2d23fb;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: auto;
+}
+
+

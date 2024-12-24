@@ -1,0 +1,1 @@
+10 tane üründen oluşan tek sayfalı bir alışveriş sayfası projesi yap flex kullan

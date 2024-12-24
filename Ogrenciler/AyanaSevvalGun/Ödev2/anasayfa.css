@@ -12,10 +12,10 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-	padding: 20px;
+    padding: 0;
 	margin-left: 20px;
 	margin-right: 20px;
-    gap: 20px;
+
 }
 .title{ /*kaynak:https://www.geeksforgeeks.org/how-to-add-image-in-text-background-using-html-and-css/*/
     text-align: center;
@@ -33,7 +33,15 @@
       font-family: 'Steelfish Rg', 'helvetica neue', 
                       helvetica, arial, sans-serif;
 }
-
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+footer{
+    text-align: center;
+}
 /*
 .bgImg{
     background-image: url("https://media.istockphoto.com/id/1398289137/tr/vekt%C3%B6r/pixel-game-win-screen-retro-8-bit-video-game-interface-with-you-win-text-computer-game-level.jpg?s=2048x2048&w=is&k=20&c=zHvE5-ipMme61ebAX_E6VLb35w61-XMAU2FbFy4yfOk=") ;

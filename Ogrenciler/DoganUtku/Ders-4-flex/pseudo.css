@@ -1,0 +1,63 @@
+.paragraf{
+    font-size: 24px;
+}
+.title{
+    font-size: 36px;
+    color: red;
+}
+/* @media screen and (max-width 768px) {
+    .paragraf {
+        font-size: 16px;
+    }
+    .title {
+        font-size: 24px;
+        color: blue;
+    }
+} */
+
+/*pseudo class*/
+.link {
+    color: orange;
+    font-size: 24px;
+    text-decoration: none;
+}
+.link:visited{
+    color: green;
+}
+.link:hover {
+    font-size: 28px;
+    background-color: yellow;
+}
+.link:active{
+    color: pink;
+}
+
+/* .listItem:last-child {
+    color: rgb(152, 123, 85);
+}
+.listItem:first-child {
+    color: rgb(51, 37, 21); 
+}*/
+.listItem:nth-child(2){
+    color: blue;
+}
+
+
+/*pseudo elemnt*/
+
+.listItem::before {
+    content: "deneme";
+    font-size: 18px;
+}
+.listItem::after {
+    content: "DENEME";
+    font-size: 18px;
+}
+.text::first-letter{
+    font-size: 24px;
+    color: blueviolet;
+}
+.text::first-line{
+    font-size: 24px;
+    color: rgb(67, 118, 131);
+}
