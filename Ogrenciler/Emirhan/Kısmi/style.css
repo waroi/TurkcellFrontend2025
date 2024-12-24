@@ -24,7 +24,7 @@ h3 {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: space-between;
   flex-wrap: wrap;
   flex-direction: row;
   gap: 10px;
@@ -129,19 +129,19 @@ h3 {
 .buyButton {
   width: 100%;
   padding: 10px;
-  background-color: #ffffff;
+  background-color:#fd9861;
   border: none;
   border-radius: 5px;
   margin-top: 10px;
   cursor: pointer;
   font-weight: 500;
-  color: #333;
+  color: #fff;
   transition: 0.3s;
   font-weight: 600;
 }
 
 .buyButton:hover {
-  background-color: #f8f2eb;
+  background-color: #ff7e38;
   transition: 0.3s;
 }
 
@@ -231,14 +231,6 @@ div:has(.story):hover {
   height: 100%;
 }
 
-@media screen and (max-width: 768px) {
-  body {
-    font-size: 0.8rem;
-  }
-  .jumbotron .content {
-    text-align: center;
-  }
-}
 
 .categories {
   cursor: pointer;
@@ -248,7 +240,7 @@ div:has(.story):hover {
   margin-bottom: 10px;
 }
 .category {
-  width: 300px;
+  width: 30%;
   height: 50px;
   display: flex;
   align-items: center;
@@ -263,4 +255,145 @@ div:has(.story):hover {
 }
 .category:nth-child(3) {
   background-color: rgb(212, 112, 29);
+}
+.nav {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  height: auto;
+  width: 100%;
+  background-color: #f6d2be; 
+  box-sizing: border-box; 
+  flex-wrap: wrap;
+  gap: 10px; 
+}
+.logo {
+  height: 80px;
+  width: auto;
+  background-color: #f6d2be;
+}
+.search-bar {
+  display: flex;
+  align-items: center;
+  width: 500px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex-shrink: 1; 
+}
+.search-bar input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 5px;
+  font-size: 16px;
+  flex-wrap: wrap;
+}
+.search-bar button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 5px;
+}
+.search-bar button img {
+  width: 20px;
+  height: 20px;
+}
+.icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px; 
+  flex-wrap: wrap; 
+}
+.icons img {
+  width: 25px;
+  height: auto;
+}
+.icontext {
+  margin-left: 10px;
+  margin-right: 15px;
+}
+@media (min-width: 768px) {
+  .menu{
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  body {
+    font-size: 0.8rem;
+  }
+  .jumbotron .content {
+    text-align: center;
+  }
+  .nav {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+  .logo{
+    height: 70px;
+    width: auto;
+  }
+  .search-bar {
+    width: 100%; 
+    margin-top: 10px; 
+  }
+  .icons {
+    justify-content: center; 
+    margin-top: 10px;
+    gap: 10px;
+  }
+  .menu{
+    display: none;
+  }
+}
+@media (max-width: 500px) {
+  .nav {
+    display: flex;
+    justify-content: space-around; 
+    align-items: center; 
+    flex-direction: row; 
+    height: auto;
+    padding: 10px;
+    background-color: #f6d2be;
+  }
+  .search-bar {
+    display: none;
+  }
+  .icons {
+    display: none;
+  }
+  .logo{
+    width: auto;
+    height: 60px;
+    flex-shrink: 1;
+  }
+  .menu{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+  .menu img{
+    width: 25px;
+    height: auto;
+  }
+}
+@media (min-width: 577px) {
+  .menu {
+    display: none; /* Menü 577px ve üstü ekranlarda gizli kalacak */
+  }
+}
+@media (max-width: 569px) {
+  .card{
+    width: 100%;
+  }
+  .image{
+    height: 500px;
+  }
+  main{
+    padding: 5px;
+  }
 }
