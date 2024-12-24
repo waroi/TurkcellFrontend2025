@@ -40,10 +40,61 @@
     border-radius: 12px;
 }
 
+.products{
+    height: 400px;
+    width: 980px;
+    margin-top: 20px;
+    background-color: #FB4141;
+}
+
 .mainImage{
-    background-image: url("https://www.kodlab.com/modules/ps_imageslider/images/b32aa96f1e747a2c83297d10acafa4175f43a8b7_Yapay%20Zeka%20ile%20Modern%20Web%20Tasar%C4%B1m%C4%B1%20banner%20c%CC%A7%C4%B1kt%C4%B1.jpg");
-    background-size: cover;
-    /* width: 980px; */
+    background-image:url('../Odev04/assets/main-image.jpg');
+    margin-top: 20px;
+    height: 460px;
+    width: 100%;
+}
+
+.categories{
+    background-color: #FFC145;
+    padding: 10px 0;
+    margin-top: 20px;
+    border-radius: 12px;
+}
+
+.categoryList{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.categoryList li {
+    font-size: large;
+}
+
+.categoryList li a:hover{
+    color: white;
+    border-radius: 12px;
+    cursor: pointer;
+
+
+}
+.products{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.product{
+    width: 350px;
+    height: 400px;
+    border: 1px solid #FFC145;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .products{
     display: flex;
