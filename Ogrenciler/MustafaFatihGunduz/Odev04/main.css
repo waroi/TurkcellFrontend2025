@@ -9,9 +9,13 @@
     margin: 0 auto;
 }
 
+.header{
+    /* background-color: #333; */
+}
+
 .logo{
-    width: 64px;
-    height: 64px;
+    width: 48px;
+    height: 48px;
 }
 
 .containerHeader{
@@ -34,4 +38,10 @@
     width: 75px;
     border: 2px solid #FB4141 ;
     border-radius: 12px;
+}
+
+.mainImage{
+    background-image: url("https://www.kodlab.com/modules/ps_imageslider/images/b32aa96f1e747a2c83297d10acafa4175f43a8b7_Yapay%20Zeka%20ile%20Modern%20Web%20Tasar%C4%B1m%C4%B1%20banner%20c%CC%A7%C4%B1kt%C4%B1.jpg");
+    background-size: cover;
+    /* width: 980px; */
 }
