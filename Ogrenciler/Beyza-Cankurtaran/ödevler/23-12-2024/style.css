@@ -56,19 +56,36 @@ header p {
     max-width: 80%;
    
 }
-
+/*
 .kategori{
     display: flex;
     flex-direction: column; 
     justify-content: flex-start; 
     align-items: center; 
     width: 30%;
- 
+    height: auto;
+    background:linear-gradient(to bottom,#ebbfd5,#e6e9aa,#edb3b3);
     border-radius: 5px;
-    color: violet;
+    color: #41989c;
     padding: 20px;
     margin-top: 30px;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}*/
+.kategori {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 30%;
+    height: auto; /* İçeriğe göre yükseklik */
+    background:#8ba0ff;
+    border-radius: 5px;
+    color: #41989c;
+    padding: 20px;
+    margin-top: 30px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden; /* İçeriğin dışına taşmasını engeller */
+    max-height:630px /* Ekstra uzunluğu önler */
 }
 
 .kategoriMobile{
@@ -82,29 +99,30 @@ header p {
   }
 
 .kategori ul{
-    color: yellowgreen;
+    color: #343a40;
     margin: 5%;
-    
 }
+
 .kategori ul li:hover{
     color: rgb(19, 23, 13);
-
-    
 }
 
 
 .kategori ul a{
     text-decoration: none;
-    color: yellowgreen;
+    color:#343a40;
 }
 
 .kategori ul li ul li{
     margin-left: 5%;
 }
 
-
-
-
+.kategori ul li ul li:hover {
+    background-color: #8ba0ff; 
+    color: #fff;
+    box-shadow: 0px 4px 10px rgba(139, 160, 255, 0.5); 
+    transform: translateY(-2px); 
+}
 .card {
     height: 40rem;
     width: 20rem;
@@ -159,15 +177,12 @@ header p {
 .card:hover{
     box-shadow: 0rem 0rem 0.2rem 0.3rem #8ba0ff;
     transform: scale(1.05); 
+    /*CSS'te transform: scale(1.05); bir öğenin boyutunu %5 oranında büyütmek için kullanılır. Bu özellik, bir öğeyi X ve Y eksenlerinde eşit şekilde ölçeklendiren bir dönüşüm uygular.*/
 }
 
 .kategori ul li a{
     font-size: 1.2rem;
 }
-
-
-
-
 
 header p::before {
     content: "✨ ";
@@ -177,11 +192,7 @@ header p::after {
     content: " ✨";
 }
 
-h2::fir
-
-
-/*tablo css chatgptden aldım!!!*/
-/* Genel tablo stilleri */
+/* Genel tablo  */
 table {
     width: 97%; 
     margin: 20px; 
@@ -193,7 +204,7 @@ table {
 
 }
 
-/* Tablo Başlık stili */
+/* Tablo Başlık */
 thead th {
     background-color: #4CAF50; 
     color: white;
@@ -202,17 +213,15 @@ thead th {
     border: 1px solid #ddd;
 }
 
-/* Gövde hücre stili */
+/* Gövde  */
 tbody td {
     padding: 10px; 
     border: 1px solid #ddd; 
 }
 
-/* Alternatif satır renkleri */
 tbody tr:nth-child(even) {
     background-color: #fff; 
 }
-/* Alternatif satır renkleri */
 tbody tr:nth-child(odd) {
     background-color: #ddd; 
 }
@@ -222,8 +231,11 @@ tbody tr:hover {
     background-color: #e8f5e9; 
 }
 
-/* Mobil uyumlu tasarım */
+/* Mobil telefon uyumlu tasarım */
 @media (max-width: 768px) {
+    .tablo{
+        display: none;
+    }
     table {
         display: none; 
     }
@@ -231,11 +243,12 @@ tbody tr:hover {
         display:none;
     }
 }
+
 .tablo{
     text-align: center;
     justify-content: center;
 }
-
+/*footer kısmıı*/
 footer {
     background: #2d23fb;
     color: white;
