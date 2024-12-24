@@ -6,12 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Css Flex</title>
     <link rel="stylesheet" href="styles.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
   </head>
 
   <body>
     <div class="top-bar">
       <h1 class="title">elektronikMarket</h1>
       <input class="search-bar" type="text" placeholder="Search..." />
+      <i class="fa-solid fa-cart-shopping"></i>
+      <i class="fa-solid fa-magnifying-glass"></i>
+
       <nav class="brands">
         <a href="##">Apple</a> | <a href="##">Samsung</a> |
         <a href="##">Xiaomi</a> |
@@ -23,22 +28,41 @@
       <div class="side-filter">
         <h4>Marka</h4>
         <br>
-        <input type="checkbox">Samsung</input>
-        <input type="checkbox">Xiaomi</input>
-        <input type="checkbox">Apple</input>
-        <input type="checkbox">Huawei</input>
-        <input type="checkbox">Honor</input>
+        <label for="samsung"><input id="samsung" class="filter-input" type="checkbox"><p> Samsung</p> </input></label><br>
+        <label for="xiaomi"><input id="xiaomi" class="filter-input" type="checkbox"><p> Xiaomi</p> </input></label><br>
+        <label for="apple"><input id="apple" class="filter-input" type="checkbox"><p> Apple</p> </input></label><br>
+        <label for="huawei"><input id="huawei" class="filter-input" type="checkbox"><p> Huawei</p> </input></label><br>
+        <label for="honor"><input id="honor" class="filter-input" type="checkbox"><p> Honor</p> </input></label><br>
         <br>
         <hr>
         <br>
         <h4>Fiyat</h4>
         <br>
-        <input type="checkbox">70 TL - 3200 TL</input>
-        <input type="checkbox">3200 TL - 11300 TL</input>
-        <input type="checkbox">11300 TL - 26200 TL</input>
-        <input type="checkbox">26200 TL - 59900 TL</input>
-        <input type="checkbox">59900 TL - 109500 TL</input>
-
+        <label for="fiyat1"><input id="fiyat1" class="filter-input" type="checkbox"><p>  70 TL - 3200 TL</p> </input></label><br>
+        <label for="fiyat2"><input id="fiyat2" class="filter-input" type="checkbox"><p> 3200 TL - 11300 TL</p> </input></label><br>
+        <label for="fiyat3"><input id="fiyat3" class="filter-input" type="checkbox"><p> 11300 TL - 26200 TL</p> </input></label><br>
+        <label for="fiyat4"><input id="fiyat4" class="filter-input" type="checkbox"><p> 26200 TL - 59900 TL</p> </input></label><br>
+        <label for="fiyat5"><input id="fiyat5" class="filter-input" type="checkbox"><p> 59900 TL - 109500 TL</p> </input></label><br>
+        <br>
+        <hr>
+        <br>
+        <h4>RAM Kapasitesi</h4>
+        <br>
+        <label for="ram1"><input id="ram1" class="filter-input" type="checkbox"><p>  1 GB</p> </input></label><br>
+        <label for="ram2"><input id="ram2" class="filter-input" type="checkbox"><p> 2 GB</p> </input></label><br>
+        <label for="ram3"><input id="ram3" class="filter-input" type="checkbox"><p> 4 GB</p> </input></label><br>
+        <label for="ram4"><input id="ram4" class="filter-input" type="checkbox"><p> 8 GB</p> </input></label><br>
+        <label for="ram5"><input id="ram5" class="filter-input" type="checkbox"><p> 16 GB</p> </input></label><br>
+        <br>
+        <hr>
+        <br>
+        <h4>Dahili Hafıza</h4>
+        <br>
+        <label for="dahili1"><input id="dahili1" class="filter-input" type="checkbox"><p>  32 GB</p> </input></label><br>
+        <label for="dahili2"><input id="dahili2" class="filter-input" type="checkbox"><p> 64 GB</p> </input></label><br>
+        <label for="dahili3"><input id="dahili3" class="filter-input" type="checkbox"><p> 128 GB</p> </input></label><br>
+        <label for="dahili4"><input id="dahili4" class="filter-input" type="checkbox"><p> 256 GB</p> </input></label><br>
+        <label for="dahili5"><input id="dahili5" class="filter-input" type="checkbox"><p> 512 GB</p> </input></label><br>
       </div>
 
       <div class="container">
@@ -48,8 +72,12 @@
             src="https://productimages.hepsiburada.net/s/189/424-600/110000155170579.jpg"
             alt=""
           />
-          <h2>iPhone 13 128gb</h2>
+          <h2>iPhone 13</h2>
+          <h2>128gb</h2>
+         
           <p>33.000 ₺</p>
+          <button type="button" class="btn">Satın AL</button>
+          <i class="fa-regular fa-heart"></i> 
         </div>
         <div class="box">
           <img
@@ -59,6 +87,8 @@
           />
           <h2>Samsung Galaxy A55 128gb</h2>
           <p>17.500 ₺</p>
+          <button type="button" class="btn">Satın AL</button>
+          <i class="fa-regular fa-heart"></i>
         </div>
         <div class="box">
           <img
@@ -68,6 +98,9 @@
           />
           <h2>Xiaomi redmi 13c 256gb</h2>
           <p>8.000 ₺</p>
+          
+          <button type="button" class="btn">Satın AL</button>
+          <i class="fa-regular fa-heart"></i>
         </div>
         <div class="box">
           <img
@@ -77,6 +110,8 @@
           />
           <h2>Poco x6 pro 5g 512gb</h2>
           <p>33.000 ₺</p>
+          <button type="button" class="btn">Satın AL</button>
+          <i class="fa-regular fa-heart"></i>
         </div>
         <div class="box">
           <img
@@ -86,6 +121,8 @@
           />
           <h2>Samsung galaxy. S24 fe 128gb</h2>
           <p>33.000 ₺</p>
+          <button type="button" class="btn">Satın AL</button>
+          <i class="fa-regular fa-heart"></i>
         </div>
         <div class="box">
           <img
@@ -95,6 +132,8 @@
           />
           <h2>Apple iPhone 16 pro max 256gb</h2>
           <p>93.000 ₺</p>
+          <button type="button" class="btn">Satın AL</button>
+          <i class="fa-regular fa-heart"></i> 
         </div>
         <div class="box">
           <img
@@ -102,8 +141,13 @@
             src="https://productimages.hepsiburada.net/s/777/424-600/110000842259276.jpg"
             alt=""
           />
-          <h2>Honor 200 256gb</h2>
+          <h2>Honor 200 </h2>
+          <h2>256 gb</h2>
           <p>27.500 ₺</p>
+          
+          
+          <button type="button" class="btn">Satın AL</button>
+          <i class="fa-regular fa-heart"></i>
         </div>
         <div class="box">
           <img
@@ -113,6 +157,8 @@
           />
           <h2>Xiaomi redmi note 13 pro</h2>
           <p>9.000 ₺</p>
+          <button type="button" class="btn">Satın AL</button>
+          <i class="fa-regular fa-heart"></i>
         </div>
         <div class="box">
           <img
@@ -122,6 +168,8 @@
           />
           <h2>Samsung galaxy s24 ultra</h2>
           <p>65.000 ₺</p>
+          <button type="button" class="btn">Satın AL</button>
+          <i class="fa-regular fa-heart"></i>
         </div>
         <div class="box">
           <img
@@ -131,8 +179,23 @@
           />
           <h2>Xiaomi redmi 14c 256gb</h2>
           <p>10.000 ₺</p>
+          <button type="button" class="btn">Satın AL</button>
+          <i class="fa-regular fa-heart"></i>
         </div>
       </div>
+
     </div>
+
+
+    <footer>
+      <p>
+        &copy; 2024 Onurcan Kurt, Beyza Sarıdaş, Egemen Aksöz Tüm Hakları Saklıdır.
+      </p>
+    </footer>
+
+   
+    
+
+   
   </body>
 </html>
