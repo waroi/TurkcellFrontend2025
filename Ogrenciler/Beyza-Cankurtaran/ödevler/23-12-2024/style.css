@@ -5,14 +5,6 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/*header kısmı*/
-/* Header 
-header {
-    background-color: #f8f9fa; 
-    text-align: center;
-    padding: 20px 0;
-    border-bottom: 2px solid #eaeaea;
-}*/
 
 /* Navbar */
 
@@ -22,14 +14,6 @@ main {
   padding: 20px;
 }
 
-/* .navbar {
-    display: flex;
-    align-items: center;
-    justify-content:space-between;
-    width: 100%;
-    padding: 0 20px;
-    background:linear-gradient(to right,#77cbcf,#ca7ca2,#8669e8);
-} */
 
 .navbar {
   display: flex;
@@ -47,12 +31,12 @@ main {
 
 .nav-icons i {
   font-size: 24px;
-  color: white; /* İkonları beyaz yapar */
+  color: white; 
   cursor: pointer;
 }
 
 .nav-icons i:hover {
-  color: #000000; /* Hover ile rengi değiştirir (örnek olarak sarı) */
+  color: #000000; 
 }
 
 .logo {
@@ -93,21 +77,21 @@ header p {
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
 }*/
 .kategori {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  width: 30%;
-  height: auto; /* İçeriğe göre yükseklik */
-  background: #8ba0ff;
-  border-radius: 5px;
-  color: #41989c;
-  padding: 20px;
-  margin-top: 30px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
-  overflow: hidden; /* İçeriğin dışına taşmasını engeller */
-  max-height: 630px; /* Ekstra uzunluğu önler */
-}
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 30%;
+    height: auto; 
+    background: #dfeffc;
+    border-radius: 5px;
+    color: #4a6579;
+    padding: 20px;
+    margin-top: 30px;
+    box-shadow: 0 0 8px rgba(176, 176, 176, 0.4); 
+    overflow: hidden;
+    max-height: 630px;
+  }
 
 .kategoriMobile {
   display: none;
@@ -145,12 +129,12 @@ header p {
 }
 .card {
   height: 40rem;
-  width: 20rem;
-  margin: 0 auto;
+  width: 22rem;
+  margin: 0 20px;
   background: white;
   border-radius: 8px;
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
-  padding: 1.5rem;
+  padding: 2.7rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -197,6 +181,10 @@ header p {
   box-shadow: 0rem 0rem 0.2rem 0.3rem #8ba0ff;
   transform: scale(1.05);
   /*CSS'te transform: scale(1.05); bir öğenin boyutunu %5 oranında büyütmek için kullanılır. Bu özellik, bir öğeyi X ve Y eksenlerinde eşit şekilde ölçeklendiren bir dönüşüm uygular.*/
+  transition: 0.6s;
+/*Transition:Bir özelliğin değişimlerini yumuşak bir animasyon ile göstermeye yarar.Delay vererek animasyonu geciktirebiliriz.*/
+    cursor:pointer;
+  
 }
 
 .kategori ul li a {
