@@ -2,7 +2,7 @@
     margin:0;
     padding:0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 
 /*header kısmı*/
@@ -49,6 +49,16 @@ header p {
     margin: 0 auto;
     justify-content: space-between;
 }
+
+/* 
+
+.card img{
+    width:100%
+}
+Böyle bir kısım vardı sildim img widthlerini 100'e ayarlayıp
+Düşey yönde yükseklikleri değiştiriyordu.
+*/
+
 /* Card styles */
 .card {
     width: 100%;
@@ -56,25 +66,48 @@ header p {
     margin: 0 auto;
     background: white;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.1);
     padding: 20px;
 }
 
-.card img {
-    width: 100%;
-    height: auto;
-    border-radius: 4px;
-    margin-bottom: 16px;
+.resim{
+    display: flex; /* Resimi tam ortalamak için */
+    justify-content: center;
 }
+
 .imgClass{
     margin-right: 15px;
-    width: 150px; 
-    height: auto; 
+    width: auto; 
+    height: 15rem; 
     border-radius: 5px; 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
-    border-color: aquamarine 0.3rem solid;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-color: aquamarine 2rem;
+    margin-bottom: 16px;    
 }
+
+.buttonDivClass{
+    display: flex;
+    justify-content:center;
+    gap: 2rem;
+}
+
+.button{
+    background-color: #8ba0ff;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+    border-style: solid;
+    padding: 0.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+
 /*Pseudo class */
+.card:hover{
+    box-shadow: 0rem 0rem 0.2rem 0.3rem #8ba0ff;
+}
+
+
+/*Pseudo elements */
 header p::before {
     content: "✨ ";
 }
@@ -82,6 +115,8 @@ header p::before {
 header p::after {
     content: " ✨";
 }
+
+
 /*tablo css chatgptden aldım!!!*/
 /* Genel tablo stilleri */
 table {
