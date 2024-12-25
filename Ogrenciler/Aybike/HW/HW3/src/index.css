@@ -1,67 +1,104 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
-*{
-    font-family: 'Roboto Slab', serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  font-family: 'Roboto Slab', serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.upstart-logo{
-    width: 105px;
-    height: 24px;
-    margin: 0 auto;
-    display: block;
+.upstart-logo {
+  width: 105px;
+  height: 24px;
 }
 
 .logo {
-    stroke-linecap: round;
-    width: 24px;
-    height: 24px;
-    fill: none;
-    stroke:black;
-    stroke-width: 2px;  
+  stroke-linecap: round;
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: black;
+  stroke-width: 2px;  
 }
 
-  .logo-bg{
-    background-color: white;
-    width: 30px;
-    height: 30px;
-    border: 2px solid black;
-    border-radius: 50%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-  }
-
-  nav {
-    padding: 2%;
-    /* background-color: #F8F9FC; */
-    background-color: black;
-    margin:0 auto;
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-nav> ul> li> a{
-    text-decoration: none;
-    margin: 0px 6px;
-    padding: 12px 8px;
-    font-size: 12px;
-    color:#FFF;
+.logo-bg {
+  background-color: white;
+  width: 30px;
+  height: 30px;
+  border: 2px solid black;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0 5px;
 }
 
-nav> ul {
-    margin-left: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap:30px;
-    list-style: none;
-    
+nav {
+  padding: 20px 60px;
+  background-color: black;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  /*position: fixed;*/
+  top: 0;
+  left: 0;
 }
-.container {
-  background-image: url("https://shreethemes.in/upstart/layouts/images/bg/1.jpg");
+
+nav > ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav > ul > li > a {
+  text-decoration: none;
+  color: #FFF;
+  font-size: 12px;
+  padding: 8px 16px;
+  transition: color 0.3s ease;
+}
+
+nav > ul > li > a:hover {
+  color: #ff6b6b;
+}
+
+nav > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+/* Banner section styling */
+.banner {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.banner-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.banner-text {
+  position: absolute;
+  top: 50%; /* Ortalamak için */
+  left: 20%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7); /* Yazıyı daha okunaklı yapmak için gölge */
+}
+
+.banner-text h1 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.banner-text p {
+  font-size: 17px;
+  letter-spacing: 0.5px;
 }
