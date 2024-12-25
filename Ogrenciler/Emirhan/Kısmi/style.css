@@ -263,12 +263,14 @@ div:has(.story):hover {
   align-items: center;
   height: auto;
   width: 100%;
+  padding: 5px;
   background-color: #f6d2be;
   box-sizing: border-box;
   flex-wrap: wrap;
   gap: 10px;
 }
 .logo {
+  margin-left: 10px;
   height: 80px;
   width: auto;
   background-color: #f6d2be;
