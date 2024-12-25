@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sahisinden.com</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header>
@@ -14,33 +18,39 @@
       </div>
       <div class="search-filter">
         <form class="search-form" action="#" method="get">
-            <input type="text" name="search" placeholder="Ürün arayın...">
-            <button type="submit">Ara</button>
+          <input type="text" name="search" placeholder="Ürün arayın..." />
+          <button type="submit">Ara</button>
         </form>
       </div>
       <div class="filter">
         <label for="price">Fiyat Aralığı:</label>
-                    <select id="price" name="price">
-                        <option value="all">Tümü</option>
-                        <option value="20.000.000-30.000.000 ">20.000.000₺ - 30.000.000 ₺</option>
-                        <option value="30.000.000 -40.000.000 ">30.000.000 ₺ - 40.000.000 ₺</option>
-                        <option value="40.000.000 -90.000.000">40.000.000 ₺ - 90.000.000 ₺</option>
-                    </select>
+        <select id="price" name="price">
+          <option value="all">Tümü</option>
+          <option value="20.000.000-30.000.000 ">
+            20.000.000₺ - 30.000.000 ₺
+          </option>
+          <option value="30.000.000 -40.000.000 ">
+            30.000.000 ₺ - 40.000.000 ₺
+          </option>
+          <option value="40.000.000 -90.000.000">
+            40.000.000 ₺ - 90.000.000 ₺
+          </option>
+        </select>
       </div>
       <nav>
         <ul>
-          <li><a href="index.html" target="_blank">Anasayfa</a></li>
-          <li><a href="hakkımızda.html" target="_blank">Hakkımızda</a></li>
-          <li><a href="#" target="_blank">İletişim</a></li>
+          <li><a href="index.html" target="_self">Anasayfa</a></li>
+          <li><a href="#cars" target="_self">Arabalar</a></li>
+          <li><a href="#footer" target="_self">İletişim</a></li>
         </ul>
       </nav>
     </header>
     <section class="bg">
-        <div class="bg-content">
-            <h1>En Güzel Yol Arkadaşlarımız...</h1>
-        </div>
+      <div class="bg-content">
+        <h1>En Güzel Yol Arkadaşlarımız...</h1>
+      </div>
     </section>
-    <main class="product-list">
+    <main class="product-list" id="cars">
       <div class="product-card">
         <img src="./images/araba1.jpeg" alt="Araba 1" />
         <h2>Ferrari Purosangue</h2>
@@ -80,7 +90,7 @@
       <div class="product-card">
         <img src="./images/araba7.jpeg" alt="Araba 1" />
         <h2>Rolls-Royce Cullinan</h2>
-        <p>Fiyat: 35.000.000₺ </p>
+        <p>Fiyat: 35.000.000₺</p>
         <button>Satın Al</button>
       </div>
       <div class="product-card">
@@ -132,8 +142,22 @@
         <button>Satın Al</button>
       </div>
     </main>
-    <footer>
-      <p>&copy; 2024 Ela Ahmet Beyza - Tüm hakları saklıdır.</p>
+    <footer id="footer">
+      <div class="contact-info">
+        <h3>İletişim</h3>
+        <p>
+          <i class="fas fa-envelope"></i> Email:
+          <a href="mailto:berfinela877@gmail.com">info@sahisinden.com</a>
+        </p>
+        <p>
+          <i class="fas fa-phone-alt"></i> Telefon:
+          <a href="tel:+905312806221">+90 531 280 62 21</a>
+        </p>
+        <p><i class="fas fa-map-marker-alt"></i> Adres: Türkiye</p>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2024 sahisinden.com . Tüm Hakları Saklıdır.</p>
+      </div>
     </footer>
   </body>
 </html>
