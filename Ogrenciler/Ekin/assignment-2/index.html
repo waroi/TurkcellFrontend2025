@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grup No 11</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <nav>
+      <img
+        id="logo"
+        src="https://raw.githubusercontent.com/Xaszanyn/Web-Design-Silver/refs/heads/main/assets/img/logo-black.png"
+        alt="Logo"
+      />
+      <h2><a href="#">Home</a></h2>
+      <h2><a href="#">Store</a></h2>
+      <h2><a href="#">About Us</a></h2>
+      <h2><a href="#">Contact</a></h2>
+      <div class="search">
+        <input type="text" placeholder="Search" />
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+      <i class="fa-solid fa-cart-shopping"></i>
+    </nav>
+    <header>
+      <!-- <img src="https://picsum.photos/300/300" alt="Profile" /> -->
+      <div>
+        <h1>E.C.E Jewelry Store</h1>
+        <a href="#"
+          ><i class="fa-solid fa-envelope"></i> ece.jewelstore@jewel.com</a
+        >
+        <h3>ELEGANCE IS IN THE DETAILS</h3>
+
+        <p>E.C.E -> Ekin, Cansu, Ela kuruluşudur.</p>
+        <p>
+          E.C.E offers a stunning collection of handcrafted jewelry, blending
+          timeless elegance with modern sophistication. Each piece is
+          meticulously crafted to celebrate life's special moments with
+          unmatched beauty and style.
+        </p>
+      </div>
+    </header>
+
+    <ul>
+      <li><a class="rings" href="#">Rings</a></li>
+      <li><a class="necklaces" href="#">Necklaces</a></li>
+      <li><a class="earrings" href="#">Earrings</a></li>
+      <li><a class="bracelets" href="#">Bracelets</a></li>
+      <li><a class="sets" href="#">Sets</a></li>
+    </ul>
+
+    <main>
+      <aside>
+        <form>
+          <h2>Filter</h2>
+          <div>
+            <input type="checkbox" id="on-sale" />
+            <label for="on-sale">Show On Sale</label>
+          </div>
+          <div>
+            <input type="checkbox" id="best-seller" />
+            <label for="best-seller">Best-Seller</label>
+          </div>
+          <div>
+            <input type="checkbox" id="sold-out" />
+            <label for="sold-out">Show Sold Out</label>
+          </div>
+          <div id="price-range">
+            <input type="number" placeholder="Min." />
+            -
+            <input type="number" placeholder="Max." />
+          </div>
+
+          <h2>Order</h2>
+          <div>
+            <input type="radio" id="relevant" name="order" />
+            <label for="relevant">Most Relevant</label>
+          </div>
+          <div>
+            <input type="radio" id="recently" name="order" />
+            <label for="recently">Recently Added</label>
+          </div>
+          <div>
+            <input type="radio" id="price" name="order" />
+            <label for="price">Price</label>
+          </div>
+        </form>
+      </aside>
+      <section>
+        <!-- Rings -->
+        <div class="item rings">
+          <img
+            src="https://raw.githubusercontent.com/Xaszanyn/Web-Design-Silver/refs/heads/main/assets/products/thumbnails/0000.jpg"
+            alt="Handcrafted Opal Ring"
+          />
+          <span><b>Handcrafted Opal Ring</b></span>
+          <span>$129.99 <span class="discount">$169.99</span></span>
+          <button>Add to Cart <i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+        <div class="item rings">
+          <img
+            src="https://raw.githubusercontent.com/Xaszanyn/Web-Design-Silver/refs/heads/main/assets/products/thumbnails/0001.jpg"
+            alt="Square Onyx Ring"
+          />
+          <span><b>Square Onyx Ring</b></span>
+          <span>$99.99 <span class="discount">$129.99</span></span>
+          <button>Add to Cart <i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+        <div class="item rings">
+          <img
+            src="https://raw.githubusercontent.com/Xaszanyn/Web-Design-Silver/refs/heads/main/assets/products/thumbnails/0002.jpg"
+            alt="Sapphire Solitaire Ring"
+          />
+          <span><b>Sapphire Solitaire Ring</b></span>
+          <span>$149.99 <span class="discount">$199.99</span></span>
+          <button>Add to Cart <i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+        <div class="item rings">
+          <img
+            src="https://raw.githubusercontent.com/Xaszanyn/Web-Design-Silver/refs/heads/main/assets/products/thumbnails/0003.jpg"
+            alt="Emerald Twist Ring"
+          />
+          <span><b>Emerald Twist Ring</b></span>
+          <span>$119.99 <span class="discount">$159.99</span></span>
+          <button>Add to Cart <i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+        <div class="item rings">
+          <img
+            src="https://raw.githubusercontent.com/Xaszanyn/Web-Design-Silver/refs/heads/main/assets/products/thumbnails/0004.jpg"
+            alt="Gold Plated Leaf Ring"
+          />
+          <span><b>Gold Plated Leaf Ring</b></span>
+          <span>$89.99 <span class="discount">$119.99</span></span>
+          <button>Add to Cart <i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+        <div class="item rings">
+          <img
+            src="https://raw.githubusercontent.com/Xaszanyn/Web-Design-Silver/refs/heads/main/assets/products/thumbnails/0005.jpg"
+            alt="Garnet and Silver Ring"
+          />
+          <span><b>Garnet and Silver Ring</b></span>
+          <span>$159.99 <span class="discount">$199.99</span></span>
+          <button>Add to Cart <i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+        <div class="item rings">
+          <img
+            src="https://raw.githubusercontent.com/Xaszanyn/Web-Design-Silver/refs/heads/main/assets/products/thumbnails/0006.jpg"
+            alt="Moonstone Vintage Ring"
+          />
+          <span><b>Moonstone Vintage Ring</b></span>
+          <span>$129.99 <span class="discount">$159.99</span></span>
+          <button>Add to Cart <i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+        <div class="item rings">
+          <img
+            src="https://raw.githubusercontent.com/Xaszanyn/Web-Design-Silver/refs/heads/main/assets/products/thumbnails/0007.jpg"
+            alt="Ruby Infinity Ring"
+          />
+          <span><b>Ruby Infinity Ring</b></span>
+          <span>$139.99 <span class="discount">$179.99</span></span>
+          <button>Add to Cart <i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+        <div class="item rings">
+          <img
+            src="https://raw.githubusercontent.com/Xaszanyn/Web-Design-Silver/refs/heads/main/assets/products/thumbnails/0008.jpg"
+            alt="Diamond Halo Ring"
+          />
+          <span><b>Diamond Halo Ring</b></span>
+          <span>$249.99 <span class="discount">$299.99</span></span>
+          <button>Add to Cart <i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+        <div class="item rings">
+          <img
+            src="https://raw.githubusercontent.com/Xaszanyn/Web-Design-Silver/refs/heads/main/assets/products/thumbnails/0009.jpg"
+            alt="Opal Engagement Ring"
+          />
+          <span><b>Opal Engagement Ring</b></span>
+          <span>$199.99 <span class="discount">$249.99</span></span>
+          <button>Add to Cart <i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+        <div class="item rings">
+          <img
+            src="https://raw.githubusercontent.com/Xaszanyn/Web-Design-Silver/refs/heads/main/assets/products/thumbnails/0010.jpg"
+            alt="Silver Knot Ring"
+          />
+          <span><b>Silver Knot Ring</b></span>
+          <span>$79.99 <span class="discount">$99.99</span></span>
+          <button>Add to Cart <i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+
+        <!-- Necklaces -->
+        <div class="item necklaces">
+          <img
+            src="https://raw.githubusercontent.com/Xaszanyn/Web-Design-Silver/refs/heads/main/assets/products/thumbnails/0011.jpg"
+            alt="Opal Pendant Necklace"
+          />
+          <span><b>Opal Pendant Necklace</b></span>
+          <span>$159.99 <span class="discount">$199.99</span></span>
+          <button>Add to Cart <i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+        <div class="item necklaces">
+          <img
+            src="https://raw.githubusercontent.com/Xaszanyn/Web-Design-Silver/refs/heads/main/assets/products/thumbnails/0012.jpg"
+            alt="Silver Heart Necklace"
+          />
+          <span><b>Silver Heart Necklace</b></span>
+          <span>$89.99 <span class="discount">$129.99</span></span>
+          <button>Add to Cart <i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+        <div class="item necklaces">
+          <img
+            src="https://raw.githubusercontent.com/Xaszanyn/Web-Design-Silver/refs/heads/main/assets/products/thumbnails/0013.jpg"
+            alt="Garnet Heart Necklace"
+          />
+          <span><b>Garnet Heart Necklace</b></span>
+          <span>$149.99 <span class="discount">$199.99</span></span>
+          <button>Add to Cart <i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+        <div class="item necklaces">
+          <img
+            src="https://raw.githubusercontent.com/Xaszanyn/Web-Design-Silver/refs/heads/main/assets/products/thumbnails/0014.jpg"
+            alt="Pearl Necklace"
+          />
+          <span><b>Pearl Necklace</b></span>
+          <span>$99.99 <span class="discount">$149.99</span></span>
+          <button>Add to Cart <i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+        <div class="item necklaces">
+          <img
+            src="https://raw.githubusercontent.com/Xaszanyn/Web-Design-Silver/refs/heads/main/assets/products/thumbnails/0015.jpg"
+            alt="Silver Infinity Necklace"
+          />
+          <span><b>Silver Infinity Necklace</b></span>
+          <span>$119.99 <span class="discount">$159.99</span></span>
+          <button>Add to Cart <i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+        <div class="item necklaces">
+          <img
+            src="https://raw.githubusercontent.com/Xaszanyn/Web-Design-Silver/refs/heads/main/assets/products/thumbnails/0016.jpg"
+            alt="Sapphire and Diamond Necklace"
+          />
+          <span><b>Sapphire and Diamond Necklace</b></span>
+          <span>$249.99 <span class="discount">$299.99</span></span>
+          <button>Add to Cart <i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+        <div class="item necklaces">
+          <img
+            src="https://raw.githubusercontent.com/Xaszanyn/Web-Design-Silver/refs/heads/main/assets/products/thumbnails/0017.jpg"
+            alt="Moonstone Necklace"
+          />
+          <span><b>Moonstone Necklace</b></span>
+          <span>$129.99 <span class="discount">$169.99</span></span>
+          <button>Add to Cart <i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+        <div class="item necklaces">
+          <img
+            src="https://raw.githubusercontent.com/Xaszanyn/Web-Design-Silver/refs/heads/main/assets/products/thumbnails/0018.jpg"
+            alt="Ruby Crystal Necklace"
+          />
+          <span><b>Ruby Crystal Necklace</b></span>
+          <span>$139.99 <span class="discount">$179.99</span></span>
+          <button>Add to Cart <i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+        <div class="item necklaces">
+          <img
+            src="https://raw.githubusercontent.com/Xaszanyn/Web-Design-Silver/refs/heads/main/assets/products/thumbnails/0019.jpg"
+            alt="Silver Choker Necklace"
+          />
+          <span><b>Silver Choker Necklace</b></span>
+          <span>$79.99 <span class="discount">$99.99</span></span>
+          <button>Add to Cart <i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+
+        <!-- Earrings -->
+        <div class="item earrings">
+          <img
+            src="https://raw.githubusercontent.com/Xaszanyn/Web-Design-Silver/refs/heads/main/assets/products/thumbnails/0020.jpg"
+            alt="Opal Drop Earrings"
+          />
+          <span><b>Opal Drop Earrings</b></span>
+          <span>$119.99 <span class="discount">$159.99</span></span>
+          <button>Add to Cart <i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+        <div class="item earrings">
+          <img
+            src="https://raw.githubusercontent.com/Xaszanyn/Web-Design-Silver/refs/heads/main/assets/products/thumbnails/0021.jpg"
+            alt="Sapphire Stud Earrings"
+          />
+          <span><b>Sapphire Stud Earrings</b></span>
+          <span>$149.99 <span class="discount">$199.99</span></span>
+          <button>Add to Cart <i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+        <div class="item earrings">
+          <img
+            src="https://raw.githubusercontent.com/Xaszanyn/Web-Design-Silver/refs/heads/main/assets/products/thumbnails/0022.jpg"
+            alt="Gold Leaf Earrings"
+          />
+          <span><b>Gold Leaf Earrings</b></span>
+          <span>$89.99 <span class="discount">$119.99</span></span>
+          <button>Add to Cart <i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+        <div class="item earrings">
+          <img
+            src="https://raw.githubusercontent.com/Xaszanyn/Web-Design-Silver/refs/heads/main/assets/products/thumbnails/0023.jpg"
+            alt="Moonstone Earrings"
+          />
+          <span><b>Moonstone Earrings</b></span>
+          <span>$129.99 <span class="discount">$159.99</span></span>
+          <button>Add to Cart <i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+        <div class="item earrings">
+          <img
+            src="https://raw.githubusercontent.com/Xaszanyn/Web-Design-Silver/refs/heads/main/assets/products/thumbnails/0024.jpg"
+            alt="Garnet Drop Earrings"
+          />
+          <span><b>Garnet Drop Earrings</b></span>
+          <span>$139.99 <span class="discount">$179.99</span></span>
+          <button>Add to Cart <i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+        <div class="item earrings">
+          <img
+            src="https://raw.githubusercontent.com/Xaszanyn/Web-Design-Silver/refs/heads/main/assets/products/thumbnails/0025.jpg"
+            alt="Diamond Hoop Earrings"
+          />
+          <span><b>Diamond Hoop Earrings</b></span>
+          <span>$249.99 <span class="discount">$299.99</span></span>
+          <button>Add to Cart <i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+        <div class="item earrings">
+          <img
+            src="https://raw.githubusercontent.com/Xaszanyn/Web-Design-Silver/refs/heads/main/assets/products/thumbnails/0026.jpg"
+            alt="Silver Feather Earrings"
+          />
+          <span><b>Silver Feather Earrings</b></span>
+          <span>$79.99 <span class="discount">$99.99</span></span>
+          <button>Add to Cart <i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+        <div class="item earrings">
+          <img
+            src="https://raw.githubusercontent.com/Xaszanyn/Web-Design-Silver/refs/heads/main/assets/products/thumbnails/0027.jpg"
+            alt="Ruby Stud Earrings"
+          />
+          <span><b>Ruby Stud Earrings</b></span>
+          <span>$99.99 <span class="discount">$129.99</span></span>
+          <button>Add to Cart <i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+        <div class="item earrings">
+          <img
+            src="https://raw.githubusercontent.com/Xaszanyn/Web-Design-Silver/refs/heads/main/assets/products/thumbnails/0028.jpg"
+            alt="Crystal Drop Earrings"
+          />
+          <span><b>Crystal Drop Earrings</b></span>
+          <span>$89.99 <span class="discount">$119.99</span></span>
+          <button>Add to Cart <i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+        <div class="item earrings">
+          <img
+            src="https://raw.githubusercontent.com/Xaszanyn/Web-Design-Silver/refs/heads/main/assets/products/thumbnails/0029.jpg"
+            alt="Silver Hoop Earrings"
+          />
+          <span><b>Silver Hoop Earrings</b></span>
+          <span>$69.99 <span class="discount">$89.99</span></span>
+          <button>Add to Cart <i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+        <div class="item earrings">
+          <img
+            src="https://raw.githubusercontent.com/Xaszanyn/Web-Design-Silver/refs/heads/main/assets/products/thumbnails/0030.jpg"
+            alt="Pearl Drop Earrings"
+          />
+          <span><b>Pearl Drop Earrings</b></span>
+          <span>$119.99 <span class="discount">$149.99</span></span>
+          <button>Add to Cart <i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+
+        <!-- Bracelets -->
+        <div class="item bracelets">
+          <img
+            src="https://raw.githubusercontent.com/Xaszanyn/Web-Design-Silver/refs/heads/main/assets/products/thumbnails/0031.jpg"
+            alt="Silver Bangle"
+          />
+          <span><b>Silver Bangle</b></span>
+          <span>$69.99 <span class="discount">$89.99</span></span>
+          <button>Add to Cart <i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+        <div class="item bracelets">
+          <img
+            src="https://raw.githubusercontent.com/Xaszanyn/Web-Design-Silver/refs/heads/main/assets/products/thumbnails/0032.jpg"
+            alt="Garnet Cuff Bracelet"
+          />
+          <span><b>Garnet Cuff Bracelet</b></span>
+          <span>$129.99 <span class="discount">$159.99</span></span>
+          <button>Add to Cart <i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+        <div class="item bracelets">
+          <img
+            src="https://raw.githubusercontent.com/Xaszanyn/Web-Design-Silver/refs/heads/main/assets/products/thumbnails/0033.jpg"
+            alt="Diamond Tennis Bracelet"
+          />
+          <span><b>Diamond Tennis Bracelet</b></span>
+          <span>$299.99 <span class="discount">$359.99</span></span>
+          <button>Add to Cart <i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+        <div class="item bracelets">
+          <img
+            src="https://raw.githubusercontent.com/Xaszanyn/Web-Design-Silver/refs/heads/main/assets/products/thumbnails/0034.jpg"
+            alt="Silver Twist Bracelet"
+          />
+          <span><b>Silver Twist Bracelet</b></span>
+          <span>$79.99 <span class="discount">$99.99</span></span>
+          <button>Add to Cart <i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+        <div class="item bracelets">
+          <img
+            src="https://raw.githubusercontent.com/Xaszanyn/Web-Design-Silver/refs/heads/main/assets/products/thumbnails/0035.jpg"
+            alt="Moonstone Cuff Bracelet"
+          />
+          <span><b>Moonstone Cuff Bracelet</b></span>
+          <span>$119.99 <span class="discount">$149.99</span></span>
+          <button>Add to Cart <i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+
+        <!-- Sets -->
+        <div class="item sets">
+          <img
+            src="https://raw.githubusercontent.com/Xaszanyn/Web-Design-Silver/refs/heads/main/assets/products/thumbnails/0036.jpg"
+            alt="Opal Set"
+          />
+          <span><b>Opal Set</b></span>
+          <span>$249.99 <span class="discount">$299.99</span></span>
+          <button>Add to Cart <i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+        <div class="item sets">
+          <img
+            src="https://raw.githubusercontent.com/Xaszanyn/Web-Design-Silver/refs/heads/main/assets/products/thumbnails/0037.jpg"
+            alt="Diamond Set"
+          />
+          <span><b>Diamond Set</b></span>
+          <span>$399.99 <span class="discount">$499.99</span></span>
+          <button>Add to Cart <i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+        <div class="item sets">
+          <img
+            src="https://raw.githubusercontent.com/Xaszanyn/Web-Design-Silver/refs/heads/main/assets/products/thumbnails/0038.jpg"
+            alt="Sapphire Set"
+          />
+          <span><b>Sapphire Set</b></span>
+          <span>$299.99 <span class="discount">$359.99</span></span>
+          <button>Add to Cart <i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+      </section>
+    </main>
+    <footer class="clear">2024 &copy; Tüm hakları saklıdır.</footer>
+  </body>
+</html>

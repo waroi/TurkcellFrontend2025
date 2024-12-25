@@ -1,0 +1,110 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+header {
+  background-color: #fffdec;
+  height: 200px;
+  font-size: 3rem;
+  text-align: center;
+  font-family: "Playwrite MX Guides", serif;
+}
+
+body {
+  background-color: #ffcfcf;
+}
+
+.category {
+  width: 100px;
+  background-color: #4f772d;
+  border-radius: 25px;
+  margin-right: 70px;
+  color: gold;
+  font-size: 1.5rem;
+}
+
+.section-title {
+  transform: rotate(270deg) translate(-120px, 0px);
+}
+
+.container {
+  background-color: #ffcfcf;
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
+.card {
+  width: 300px;
+  height: 300px;
+  border: 3px solid white;
+  border-radius: 25px;
+  margin: 0 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffe2e2;
+  color: black;
+}
+.card_header {
+  height: 20%;
+  margin: auto 0;
+  display: flex;
+  align-items: center;
+}
+
+.img {
+  width: 95%;
+  height: 60%;
+  background-image: url("https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/04ec6dd767bbb83a5b97f7c994a72239/Derivates/009a0e4c88ac4a1fcffe05de641b72edaef56637.jpg");
+
+  background-size: cover;
+
+  border-radius: 5px;
+}
+
+.card_footer {
+  margin: auto;
+  padding: 5px;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-size: medium;
+  font-weight: bold;
+}
+hr {
+  width: 100%;
+  border: 1px solid #86a788;
+}
+
+.category:hover {
+  background-color: gold;
+  color: #4f772d;
+}
+
+.add-btn {
+  width: 100px;
+  height: 25px;
+  margin-top: 5px;
+  visibility: hidden;
+}
+
+.card:hover {
+  background-color: #4f772d;
+
+  .img {
+    border: 1px solid white;
+  }
+
+  .add-btn {
+    visibility: visible;
+  }
+
+  hr {
+    color: white;
+  }
+}
