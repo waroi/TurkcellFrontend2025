@@ -1,70 +1,172 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.wrap{
-    width: 980px;
-    margin: 0 auto;
+body {
+  font-family: "Poppins", serif;
 }
-header{
-    height: 150px;
-    margin-bottom: 10px;
-    background: linear-gradient(to bottom, #AE82FF, #6BFF69);
-    border: 7px solid purple;
-    border-radius: 10px;
+.container {
+  width: 100%;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
-.content{
-    width: 720px;
-    height: 600px;
-    background: linear-gradient(to bottom, #AE82FF, #6BFF69);
-    border: 7px solid purple;
-    border-radius: 10px;
-    float: left;
-    padding: 20px;
+.card {
+  width: 250px;
+  height: auto;
+  background-color: #fbe4d8;
+  border: 0.5px solid #f6d2be;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-around;
+  gap: 6px;
 }
-.sidebar{
-    width: 250px;
-    height: 600px;
-    background: linear-gradient(to bottom, #AE82FF, #6BFF69);
-    border: 7px solid purple;
-    border-radius: 10px;
-    float: right;
+.image {
+  background-image: url("https://img.freepik.com/free-photo/organic-cosmetic-product-with-dreamy-aesthetic-fresh-background_23-2151382816.jpg");
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
-.footer{
-    height: 100px;
-    background: linear-gradient(to bottom, #AE82FF, #6BFF69);
-    border: 7px solid purple;
-    border-radius: 10px;
+.discount {
+  padding: 6px;
+  background-color: rgb(192, 66, 66);
+  font-weight: bold;
+  color: white;
+  border-radius: 2px;
+  font-size: 0.7em;
+  margin-right: 5px;
+}
+.nav {
+  display: flex;
+  justify-content: space-around; 
+  align-items: center;
+  height: auto;
+  width: 100%;
+  background-color: #f6d2be; 
+  box-sizing: border-box; 
+  flex-wrap: wrap;
+  gap: 10px; 
+}
+.logo {
+  height: 80px;
+  width: auto;
+  background-color: #f6d2be;
+}
+.search-bar {
+  display: flex;
+  align-items: center;
+  width: 500px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex-shrink: 1; 
+}
+.search-bar input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 5px;
+  font-size: 16px;
+  flex-wrap: wrap;
+}
+.search-bar button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 5px;
+}
+.search-bar button img {
+  width: 20px;
+  height: 20px;
+}
+.icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px; 
+  flex-wrap: wrap; 
+}
+.icons img {
+  width: 25px;
+  height: auto;
+}
+.icontext {
+  margin-left: 10px;
+  margin-right: 15px;
+}
+@media (min-width: 768px) {
+  .menu{
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+  .logo{
+    height: 70px;
+    width: auto;
+  }
+  .search-bar {
+    width: 100%; 
+    margin-top: 10px; 
+  }
+  .icons {
+    justify-content: center; 
     margin-top: 10px;
+    gap: 10px;
+  }
+  .menu{
+    display: none;
+  }
 }
-.clear{
-    clear: both;
+@media (max-width: 500px) {
+  .nav {
+    display: flex;
+    justify-content: space-around; 
+    align-items: center; 
+    flex-direction: row; 
+    height: auto;
+    padding: 10px;
+    background-color: #f6d2be;
+  }
+  .search-bar {
+    display: none;
+  }
+  .icons {
+    display: none;
+  }
+  .logo{
+    width: auto;
+    height: 60px;
+    flex-shrink: 1;
+  }
+  .menu{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+  .menu img{
+    width: 25px;
+    height: auto;
+  }
 }
-.card1{
-    width:670px;
-    height: 160px;
-    background: linear-gradient(to bottom, #FB00FF, #2B00FF);
-    text-align: center;
-    border-radius: 20px;
-    border: 7px solid purple;
-    margin-bottom: 25px;
-}
-.card2{
-    width:670px;
-    height: 160px;
-    background: linear-gradient(to bottom, #FB00FF, #2B00FF);
-    text-align: center;
-    border: 7px solid purple;
-    margin-bottom: 20px;
-    border-radius: 25px;
-}
-.card3{
-    width:670px;
-    height: 160px;
-    background: linear-gradient(to bottom, #FB00FF, #2B00FF);
-    text-align: center;
-    border: 7px solid purple;
-    margin-bottom: 20px;
-    border-radius: 25px;
+@media (min-width: 577px) {
+  .menu {
+    display: none; /* Menü 577px ve üstü ekranlarda gizli kalacak */
+  }
 }
