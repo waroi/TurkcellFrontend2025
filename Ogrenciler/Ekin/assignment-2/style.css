@@ -47,7 +47,6 @@ nav {
   align-items: center;
   height: 100px;
   gap: 25px;
-  padding: 25px calc((100% - 1200px) / 2);
 }
 
 nav #logo {
@@ -104,6 +103,7 @@ header div {
   justify-content: space-between;
   text-shadow: 0 0 5px var(--black), 0 0 5px var(--shadow),
     0 0 2.5px var(--white);
+  gap: 25px;
 }
 
 header h1 {
@@ -137,8 +137,7 @@ ul a:focus {
   font-weight: 700;
 }
 
-ul:has(.rings:focus)+main section {
-
+ul:has(.rings:focus) + main section {
   .necklaces,
   .earrings,
   .bracelets,
@@ -147,8 +146,7 @@ ul:has(.rings:focus)+main section {
   }
 }
 
-ul:has(.necklaces:focus)+main section {
-
+ul:has(.necklaces:focus) + main section {
   .rings,
   .earrings,
   .bracelets,
@@ -157,8 +155,7 @@ ul:has(.necklaces:focus)+main section {
   }
 }
 
-ul:has(.earrings:focus)+main section {
-
+ul:has(.earrings:focus) + main section {
   .necklaces,
   .rings,
   .bracelets,
@@ -167,8 +164,7 @@ ul:has(.earrings:focus)+main section {
   }
 }
 
-ul:has(.bracelets:focus)+main section {
-
+ul:has(.bracelets:focus) + main section {
   .necklaces,
   .earrings,
   .rings,
@@ -177,8 +173,7 @@ ul:has(.bracelets:focus)+main section {
   }
 }
 
-ul:has(.sets:focus)+main section {
-
+ul:has(.sets:focus) + main section {
   .necklaces,
   .earrings,
   .bracelets,
@@ -232,7 +227,7 @@ section {
   justify-content: space-evenly;
 }
 
-section>div {
+section > div {
   margin: 25px;
   min-width: 250px;
   width: calc((100% - 150px) / 3);
@@ -255,6 +250,7 @@ section>div {
 .item span {
   display: flex;
   align-items: center;
+  text-align: center;
 }
 
 .item .discount {
@@ -265,8 +261,8 @@ section>div {
 }
 
 .item button {
- /* background-color: var(--blue); */
- background: linear-gradient(to right,#0d3487,#27328a ,#0852a7,#1083a0 );
+  /* background-color: var(--blue); */
+  background: linear-gradient(to right, #0d3487, #27328a, #0852a7, #1083a0);
   color: var(--white);
   font-size: 15px;
   text-transform: uppercase;
@@ -278,6 +274,6 @@ section>div {
 }
 
 footer {
-  background: linear-gradient(to right,#0d3487,#545b96 ,#0852a7,#1083a0 );
+  background: linear-gradient(to right, #0d3487, #545b96, #0852a7, #1083a0);
   color: var(--white);
 }
