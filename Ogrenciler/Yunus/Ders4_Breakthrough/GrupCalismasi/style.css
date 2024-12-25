@@ -34,12 +34,13 @@ footer {
 
 .hero-bg {
   background-image: url("https://gelecegiyazanlar.turkcell.com.tr/sites/default/files/slider/2023-01/Turkcell%20GY%20Banner%20Go%CC%88rselleri-05.jpg");
-  background-size: 100% 100%;
+  background-size: cover;
   width: 100%;
   height: auto;
   border-radius: 34px;
   margin-top: 3rem;
   padding: 3rem;
+  background-position: center;
 }
 
 .navbar-brand {
@@ -92,8 +93,13 @@ footer {
 }
 
 .product {
-  width: 250px;
-  height: auto;
+  width: 275px;
+  height: auto;    padding: 25px;
+  border-radius: 10px;
+}
+
+.product:hover{
+  box-shadow:0 .5rem 2rem rgba(0, 0, 0, .175) !important;
 }
 
 .product-image {
