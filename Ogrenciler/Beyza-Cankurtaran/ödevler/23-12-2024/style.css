@@ -24,6 +24,15 @@ main {
   background: linear-gradient(to right, #77cbcf, #ca7ca2, #8669e8);
 }
 
+/* .navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 20px;
+  background: linear-gradient(to bottom, #8ba0ff, #ffffff);
+} */
+
 .nav-icons {
   display: flex;
   gap: 15px;
@@ -42,11 +51,19 @@ main {
 .logo {
   margin-right: auto; /*buranın çalışması lazım*/
   max-height: 50px;
+  border-radius: 50%;
+  border: #fff 1px solid;
+  
 }
+.logoA:hover{
+  transform: scale(1.1);
+}
+
 
 header p {
   font-size: 25px;
-  color: #e1f0ff;
+  /* color: #8ba0ff; */
+  color: #fff;
   margin-top: 20px;
   font-weight: bold;
 }
@@ -209,6 +226,7 @@ form h4{
 .filtrele{
   color: #343a40;
   margin-top: 15%;
+  font-size: 1.2rem;
 }
 
 .filtreleBaslik{
