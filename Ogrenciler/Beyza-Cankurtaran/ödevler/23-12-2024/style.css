@@ -22,15 +22,6 @@ main {
   background: linear-gradient(to right, #77cbcf, #ca7ca2, #8669e8);
 }
 
-/* .navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  padding: 0 20px;
-  background: linear-gradient(to bottom, #8ba0ff, #ffffff);
-} */
-
 .nav-icons {
   display: flex;
   gap: 15px;
@@ -48,7 +39,7 @@ main {
 }
 
 .logo {
-  margin-right: auto; /*buranın çalışması lazım*/
+  margin-right: auto; 
   max-height: 50px;
   border-radius: 50%;
   border: #fff 1px solid;
@@ -60,7 +51,6 @@ main {
 
 header p {
   font-size: 25px;
-  /* color: #8ba0ff; */
   color: #fff;
   margin-top: 20px;
   font-weight: bold;
@@ -76,21 +66,7 @@ header p {
   padding: 20px;
   max-width: 80%;
 }
-/*
-.kategori{
-    display: flex;
-    flex-direction: column; 
-    justify-content: flex-start; 
-    align-items: center; 
-    width: 30%;
-    height: auto;
-    background:linear-gradient(to bottom,#ebbfd5,#e6e9aa,#edb3b3);
-    border-radius: 5px;
-    color: #41989c;
-    padding: 20px;
-    margin-top: 30px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
-}*/
+
 .kategori {
   display: flex;
   flex-direction: column;
@@ -358,7 +334,7 @@ footer {
 .footer-links h4 {
   font-size: 18px;
   margin-bottom: 10px;
-  color: #ffffff; /* Altın rengi */
+  color: #ffffff; 
 }
 
 .footer-links ul {
@@ -373,7 +349,7 @@ footer {
 }
 
 .footer-links li:hover {
-  color: #f2b632; /* Hover rengini altın yap */
+  color: #f2b632; 
   cursor: pointer;
   transition: 0.3s;
 }
