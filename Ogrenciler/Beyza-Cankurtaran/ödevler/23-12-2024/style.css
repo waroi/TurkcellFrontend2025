@@ -199,7 +199,48 @@ header p::after {
 }
 .urunAcıklama {
     flex-grow: 1;
-    }
+}
+
+form h4{
+  text-align: center;
+}
+
+.filtrele{
+  color: #343a40;
+  margin-top: 15%;
+}
+
+.filtreleBaslik{
+  text-align: center;
+}
+
+.filtreUygula{
+  display: flex;
+  justify-content: space-around;
+  gap: 5%;
+  margin: 10px;
+}
+
+.filtreFiyat input{
+  margin: 2%;
+  max-width: 40%;
+
+}
+
+.filtreFiyat , .filtreUygula ,.filtreUygula, .filtreKategori, .filtreMarka{
+  margin-top: 8%;
+}
+
+.filtreUygula button{
+  background-color: #8ba0ff;
+  margin-top: 0.5rem;
+  border-radius: 0.5rem;
+  border-style: solid;
+  padding: 0.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+
 
 /* Genel tablo  */
 table {

@@ -367,31 +367,91 @@
             <h2 class="kategoriBaslik">KATEGORİLER</h2>
             <ul>
                 <li>
-                    <strong><a href="#">Bilgisayar</a>
-                    <ul></strong>
-                        <li><a href="#">Oyun Bilgisayarı</a></li>
-                        <li><a href="#">Dizüstü Bilgisayar</a></li>
-                        <li><a href="#">Masaüstü Bilgisayar</a></li>
-                    </ul>
-                </li>
-                <li><strong><a href="#">Telefon</a></strong>
+                    <strong><a href="#">Bilgisayar</a></strong>
                     <ul>
-                        <li><a href="#">İphone</a></li>
-                        <li><a href="#">Samsung</a></li>
+                        <li><a href="#">Ofis Bilgisayarı</a></li>
+                        <li><a href="#">Oyun Bilgisayarı</a></li>
+                        <li><a href="#">Masaüstü Bilgisayar</a></li>
+                        <li><a href="#">Taşınabilir Bilgisayar</a></li>
                     </ul>
                 </li>
-                <li><strong><a href="#">Bilgisayar Parçaları</a></strong>
+                <li>
+                    <strong><a href="#">Telefon</a></strong>
+                    <ul>
+                        <li><a href="#">iPhone</a></li>
+                        <li><a href="#">Samsung</a></li>
+                        <li><a href="#">Xiaomi</a></li>
+                        <li><a href="#">Huawei</a></li>
+                        <li><a href="#">Oppo</a></li>
+                        <li><a href="#">Realme</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <strong><a href="#">Bilgisayar Parçaları</a></strong>
                     <ul>
                         <li><a href="#">Klavye</a></li>
-                        <li><a href="#">Mause</a></li>
-                        <li><a href="#">Hopörlor</a></li>
+                        <li><a href="#">Mouse</a></li>
+                        <li><a href="#">Hoparlör</a></li>
                         <li><a href="#">Anakart</a></li>
-                        <li><a href="#">Ram</a></li>
+                        <li><a href="#">RAM</a></li>
+                        <li><a href="#">Ekran Kartı</a></li>
+                        <li><a href="#">Güç Kaynağı</a></li>
+                        <li><a href="#">SSD</a></li>
+                        <li><a href="#">HDD</a></li>
+                        <li><a href="#">Kasa</a></li>
+                        <li><a href="#">Soğutucu Sistemler</a></li>
+                        <li><a href="#">Monitör</a></li>
+                        <li><a href="#">CPU (İşlemci)</a></li>
                     </ul>
                 </li>
-
+                <li>
+                    <strong><a href="#">Aksesuarlar</a></strong>
+                    <ul>
+                        <li><a href="#">Kulaklık</a></li>
+                        <li><a href="#">Webcam</a></li>
+                        <li><a href="#">Taşınabilir Şarj Cihazı</a></li>
+                        <li><a href="#">Telefon Kılıfı</a></li>
+                        <li><a href="#">Bilgisayar Çantası</a></li>
+                        <li><a href="#">Mousepad</a></li>
+                        <li><a href="#">USB Bellek</a></li>
+                        <li><a href="#">Harici Hard Disk</a></li>
+                        <li><a href="#">Monitör Standı</a></li>
+                        <li><a href="#">Laptop Soğutucu</a></li>
+                        <li><a href="#">Bluetooth Hoparlör</a></li>
+                    </ul>
+                </li>
             </ul>
-        
+
+            <div class="filtrele">
+                <h2 class="filtreleBaslik">Filtrele</h2>
+                <form>
+    
+                    <div class="filtreKategori">
+                        <h4>Kategoriler</h4>
+                        <label><input type="checkbox" name="kategori" value="bilgisayar"> Bilgisayar</label><br>
+                        <label><input type="checkbox" name="kategori" value="telefon"> Telefon</label><br>
+                        <label><input type="checkbox" name="kategori" value="aksesuarlar"> Aksesuarlar</label><br>
+                        <label><input type="checkbox" name="kategori" value="parcalar"> Bilgisayar Parçaları</label><br>
+                    </div>
+                    <div class="filtreMarka">
+                        <h4>Markalar</h4>
+                        <label><input type="checkbox" name="marka" value="apple"> Apple</label><br>
+                        <label><input type="checkbox" name="marka" value="samsung"> Samsung</label><br>
+                        <label><input type="checkbox" name="marka" value="huawei"> Huawei</label><br>
+                        <label><input type="checkbox" name="marka" value="logitech"> Logitech</label><br>
+                    </div>
+                    <div class="filtreFiyat">
+                        <h4>Fiyat Aralığı</h4>
+                        <input type="number" name="min-fiyat" placeholder="Min Fiyat" min="0"> -
+                        <input type="number" name="max-fiyat" placeholder="Max Fiyat" min="0">
+                    </div>
+                    <div class="filtreUygula">
+                        <button type="submit">Filtrele</button>
+                        <button type="reset">Sıfırla</button>
+                    </div>
+                </form>
+            </div>
+            
         </div>
         
         
