@@ -1,0 +1,21 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.wrap{
+    width:980px ;
+    margin: 0 auto;
+}
+.header{
+    height: 150px;
+    margin-bottom: 10px;
+    background-color: blue;
+    border: 3px solid #000;
+    border-radius: 10px;
+}
+.content{
+    width: 700px;
+    height: 600px;
+    background:linear-gradient(to bottom) ;
+}

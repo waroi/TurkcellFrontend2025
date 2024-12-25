@@ -1,0 +1,279 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+
+  --blue: rgb(28, 28, 124);
+  --black: #222;
+  /*--purple: rebeccapurple;*/
+  --white: #fff;
+
+  --shadow: #2222224d;
+  --fast: 0.2s;
+}
+
+nav,
+header,
+ul,
+main,
+footer {
+  padding: 25px calc((100% - 1200px) / 2);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+input,
+button {
+  font-size: inherit;
+  font-family: inherit;
+  outline: none;
+  border: 2px solid var(--blue);
+  padding: 2.5px 10px;
+  border-radius: 100px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  height: 100px;
+  gap: 25px;
+}
+
+nav #logo {
+  width: 75px;
+  height: 75px;
+  margin-right: 25px;
+}
+
+nav h2 {
+  color: var(--black);
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+nav h2:last-of-type {
+  margin-right: auto;
+}
+
+nav i {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.search {
+  position: relative;
+}
+
+.search i {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+header {
+  background: url("https://raw.githubusercontent.com/Xaszanyn/Web-Design-Silver/refs/heads/main/assets/img/header.jpg");
+  background-size: cover;
+  background-position: center 68%;
+  display: flex;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  color: var(--white);
+}
+
+header img {
+  margin-right: 50px;
+  width: 250px;
+  height: 250px;
+}
+
+header div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-shadow: 0 0 5px var(--black), 0 0 5px var(--shadow),
+    0 0 2.5px var(--white);
+  gap: 25px;
+}
+
+header h1 {
+  font-size: 50px;
+  font-weight: 300;
+}
+
+header a {
+  display: inline-block;
+}
+
+header h3 {
+  font-size: 20px;
+  font-weight: 600;
+  font-style: italic;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  border-bottom: 2px solid var(--blue);
+}
+
+ul a {
+  transition: font-weight var(--fast);
+}
+
+ul a:focus {
+  font-weight: 700;
+}
+
+ul:has(.rings:focus) + main section {
+  .necklaces,
+  .earrings,
+  .bracelets,
+  .sets {
+    display: none;
+  }
+}
+
+ul:has(.necklaces:focus) + main section {
+  .rings,
+  .earrings,
+  .bracelets,
+  .sets {
+    display: none;
+  }
+}
+
+ul:has(.earrings:focus) + main section {
+  .necklaces,
+  .rings,
+  .bracelets,
+  .sets {
+    display: none;
+  }
+}
+
+ul:has(.bracelets:focus) + main section {
+  .necklaces,
+  .earrings,
+  .rings,
+  .sets {
+    display: none;
+  }
+}
+
+ul:has(.sets:focus) + main section {
+  .necklaces,
+  .earrings,
+  .bracelets,
+  .rings {
+    display: none;
+  }
+}
+
+main {
+  display: flex;
+  gap: 50px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+main aside {
+  width: 250px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+form h2 {
+  font-size: 25px;
+  padding-bottom: 5px;
+  font-weight: 700;
+  color: var(--blue);
+  border-bottom: 2px solid var(--blue);
+}
+
+#price-range {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+#price-range input {
+  width: 100%;
+}
+
+section {
+  width: calc(100% - 250px);
+  margin: -25px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+
+section > div {
+  margin: 25px;
+  min-width: 250px;
+  width: calc((100% - 150px) / 3);
+  box-shadow: 0 0 10px var(--shadow);
+  padding-bottom: 10px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.item img {
+  width: 100%;
+  height: 300px;
+}
+
+.item span {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.item .discount {
+  text-decoration-line: line-through;
+  font-size: 15px;
+  margin-left: 10px;
+  color: var(--shadow);
+}
+
+.item button {
+  /* background-color: var(--blue); */
+  background: linear-gradient(to right, #0d3487, #27328a, #0852a7, #1083a0);
+  color: var(--white);
+  font-size: 15px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.item button i {
+  margin-left: 5px;
+}
+
+footer {
+  background: linear-gradient(to right, #0d3487, #545b96, #0852a7, #1083a0);
+  color: var(--white);
+}
