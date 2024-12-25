@@ -1,49 +1,176 @@
 * {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-	font-family: "Roboto Slab", serif;
-	font-optical-sizing: auto;
-	font-style: normal;
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
+
+h6 {
+  color: rgb(255, 87, 21);
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+h4 {
+  color: #24272c;
+  font-size: 28px;
+}
+
+p {
+  color: rgb(138, 151, 170);
+  font-size: 15px;
+  text-align: center;
+}
+
 /* rgb(255, 87, 21) Başlıkların Color
 rgb(138, 151, 170) Yazılar
 Ana başlık Color #24272C
 #FFEEE9 Box Color
 #202942 Footer Color */
 
-
-
-
-/* 
-Footer Kısımı
+/*
+Media Query Tablet = 1400px
+Media Query Telefon = 768px
 */
+
+/*
+Contact Us
+*/
+
+.contact-us {
+  display: flex;
+  background-color: #f8f9fc;
+  align-items: center;
+  flex-direction: column;
+  height: 760px;
+  padding: 100px 0px;
+}
+
+.contact-us-header{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.contact-us-container{
+	display: flex;
+	flex-direction: column;
+	padding: 12px;
+	margin: 114px;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 2;
+  margin-top: 50px;
+}
+
+.input-container-textfield{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 360px;
+	padding: 20px;
+	background-color: #FFFFFF;
+
+}
+
+.input-container2{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	flex-grow: 1;
+	margin: 24px 0px 0px;
+	padding: 8px 12px 0px;
+}
+
+.contact-us-row-container{
+	display: flex;
+	flex-direction: row;
+}
+
+.name-and-email{
+	display: flex;
+	justify-content: space-between;
+	gap: 20px;
+}
+
+.name-and-email > input{
+	width: 100%;
+	padding: 6px 12px;
+	border: 1px solid #dee2e6;
+	border-radius: 6px;
+}
+
+#subject{
+	padding: 6px 12px;
+	border: 1px solid #dee2e6;
+	border-radius: 6px;
+}
+
+
+#message{
+	padding: 6px 12px;
+	border: 1px solid #dee2e6;
+	border-radius: 6px;
+	min-height: 118px;
+}
+
+.input-container button {
+  background-color: #ff5714;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  width: 30%;
+  cursor: pointer;
+}
+/* Footer Kısımı*/
 .footer {
-	background-color: #202942;
-	height: 92px;
-	align-self: center
+  display: flex;
+  background-color: #202942;
+  height: 92px;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
-.footerContainer{
-	display: flex;
-	justify-content: space-evenly;
+.social {
+  display: flex;
+  justify-content: space-evenly;
+  width: 260px;
 }
 
-.social{
-	display: flex;
+.footer ul li {
+  display: flex;
+  list-style: none;
 }
 
-.footer ul li{
-	display: flex;
-	list-style: none;
+.socialContainer {
+  background-color: #202942;
+  border: 1px ridge white;
+  height: 30px;
+  width: 30px;
 }
 
-.socialContainer{
-	background-color: #202942;
-	border: 1px ridge white;
-	height: 30px;
-	width: 30px;
+.back-to-top {
+  position: fixed;
+  z-index: 99;
+  bottom: 30px;
+  right: 30px;
+  display: none;
+  transition: all 0.5s ease;
+  height: 36px;
+  width: 36px;
+  line-height: 34px;
+  text-align: center;
+  background: #ff5714;
+  color: #fff !important;
 }
