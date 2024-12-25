@@ -75,7 +75,6 @@ nav ul li a {
   width: 100%;
 }
 .fav h2 {
-  margin: auto;
   width: 90%;
   margin-left: 30px;
 }
@@ -98,6 +97,9 @@ img {
   flex-direction: row;
   border: 2px solid #86a788;
   border-radius: 25px;
+}
+.card_footer:hover {
+  background-color: #86a788;
 }
 .tasma {
   font-size: 1.25rem;
