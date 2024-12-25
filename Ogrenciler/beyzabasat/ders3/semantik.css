@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+ .header {
+    background-color: limegreen;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    border: 0px solid black;
+}
+
+main {
+    display: flex;
+    margin: 10px 0;
+}
+
+.content {
+    background: linear-gradient(to bottom, red, green);
+    flex: 3;
+    height: 300px;
+    margin-right: 10px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.2em;
+}
+
+.sidebar {
+    background-color: orange;
+    flex: 1;
+    height: 300px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    float: right;
+}
+
+footer .footer {
+    background-color: blue;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.2em;
+    border: 1px solid black;
+}

@@ -1,0 +1,81 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.title{ /*kaynak:https://www.geeksforgeeks.org/how-to-add-image-in-text-background-using-html-and-css/*/
+    text-align: center;
+    font-size: 50px;
+    color: rgb(248, 248, 248);
+    background-color: rgb(24, 118, 26);
+    background-image: url(
+    "https://media.geeksforgeeks.org/wp-content/uploads/20231218222854/1.png");
+      background-repeat: repeat;
+      margin-top: -8px;
+      font-size: 120px;
+      text-align: center;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-family: 'Steelfish Rg', 'helvetica neue', 
+                      helvetica, arial, sans-serif;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+.featured-games {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.game {
+    border-radius: 5px;
+    margin: 10px;
+    padding: 15px;
+    border: 1px solid #ddd;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	background: white;
+	text-align: center;
+    width: 300px;
+    height: 300px;
+
+}
+
+.game img {
+    max-width: 100%;
+    height: auto;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}

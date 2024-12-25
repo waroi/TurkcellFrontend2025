@@ -1,0 +1,313 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+/* Navbar */
+
+main {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 20px;
+  background: linear-gradient(to right, #77cbcf, #ca7ca2, #8669e8);
+}
+
+.nav-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-icons i {
+  font-size: 24px;
+  color: white; 
+  cursor: pointer;
+}
+
+.nav-icons i:hover {
+  color: #000000; 
+}
+
+.logo {
+  margin-right: auto; /*buranın çalışması lazım*/
+  max-height: 50px;
+}
+
+header p {
+  font-size: 25px;
+  color: #e1f0ff;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px;
+  padding: 20px;
+  max-width: 80%;
+}
+/*
+.kategori{
+    display: flex;
+    flex-direction: column; 
+    justify-content: flex-start; 
+    align-items: center; 
+    width: 30%;
+    height: auto;
+    background:linear-gradient(to bottom,#ebbfd5,#e6e9aa,#edb3b3);
+    border-radius: 5px;
+    color: #41989c;
+    padding: 20px;
+    margin-top: 30px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}*/
+.kategori {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 30%;
+    height: auto; 
+    background: rgba(139,160,255,0.3);
+    border-radius: 5px;
+    color: #4a6579;
+    padding: 20px;
+    margin-top: 30px;
+    box-shadow: 0 0 8px rgba(176, 176, 176, 0.4); 
+    overflow: hidden;
+  }
+
+.kategoriMobile {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .kategori {
+    display: none;
+  }
+}
+
+.kategori ul {
+  color: #343a40;
+  margin: 5%;
+}
+
+.kategori ul li:hover {
+  color: rgb(19, 23, 13);
+}
+
+.kategori ul a {
+  text-decoration: none;
+  color: #343a40;
+}
+
+.kategori ul li ul li {
+  margin-left: 5%;
+}
+
+.kategori ul li ul li:hover {
+  background-color: #8ba0ff;
+  color: #fff;
+  box-shadow: 0px 4px 10px rgba(139, 160, 255, 0.5);
+  transform: translateY(-2px);
+  border-radius: 0.5rem;
+}
+.card {
+  height: 40rem;
+  width: 19rem;
+  margin: 0 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.resim {
+  display: flex;
+  justify-content: center;
+  object-fit: contain;
+}
+
+.imgClass {
+  margin-right: 15px;
+  width: auto;
+  max-width: 100%;
+  height: 15rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-color: aquamarine 2rem;
+  margin-bottom: 16px;
+}
+
+.buttonDivClass {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.button {
+  background-color: #8ba0ff;
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+  border-style: solid;
+  padding: 0.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.button:hover {
+  background-color: #b3c0f9;
+}
+
+.card:hover {
+  box-shadow: 0rem 0rem 0.2rem 0.3rem #8ba0ff;
+  transform: scale(1.05);
+  /*CSS'te transform: scale(1.05); bir öğenin boyutunu %5 oranında büyütmek için kullanılır. Bu özellik, bir öğeyi X ve Y eksenlerinde eşit şekilde ölçeklendiren bir dönüşüm uygular.*/
+  transition: 0.6s;
+/*Transition:Bir özelliğin değişimlerini yumuşak bir animasyon ile göstermeye yarar.Delay vererek animasyonu geciktirebiliriz.*/
+    cursor:pointer;
+  
+}
+
+.kategori ul li a {
+  font-size: 1.2rem;
+}
+
+header p::before {
+  content: "✨ ";
+}
+
+header p::after {
+  content: " ✨";
+}
+.urunAcıklama {
+    flex-grow: 1;
+}
+
+form h4{
+  text-align: center;
+}
+
+.filtrele{
+  color: #343a40;
+  margin-top: 15%;
+}
+
+.filtreleBaslik{
+  text-align: center;
+}
+
+.filtreUygula{
+  display: flex;
+  justify-content: space-around;
+  gap: 5%;
+  margin: 10px;
+}
+
+.filtreFiyat input{
+  margin: 2%;
+  max-width: 40%;
+
+}
+
+.filtreFiyat , .filtreUygula ,.filtreUygula, .filtreKategori, .filtreMarka{
+  margin-top: 8%;
+}
+
+.filtreUygula button{
+  background-color: #8ba0ff;
+  margin-top: 0.5rem;
+  border-radius: 0.5rem;
+  border-style: solid;
+  padding: 0.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+
+/* Genel tablo  */
+table {
+  width: 97%;
+  margin: 20px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  text-align: left;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+
+/* Tablo Başlık */
+thead th {
+  background-color: #8ba0ff;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+/* Gövde  */
+tbody td {
+  padding: 10px;
+  border: 1px solid #8ba0ff;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #fff;
+}
+tbody tr:nth-child(odd) {
+  background-color: #e2e6fc;
+}
+
+/* Satır üzerine hover yapınca renk değişimi */
+tbody tr:hover {
+  background-color: #8ba0ff;
+  box-shadow: 0rem 0rem 0.2rem 0.3rem #8ba0ff;
+  color: #fff;
+  transform: scale(1.01);
+  /*CSS'te transform: scale(1.05); bir öğenin boyutunu %5 oranında büyütmek için kullanılır. Bu özellik, bir öğeyi X ve Y eksenlerinde eşit şekilde ölçeklendiren bir dönüşüm uygular.*/
+  transition: 0.2s;
+}
+
+/* Mobil telefon uyumlu tasarım */
+@media (max-width: 768px) {
+  .tablo {
+    display: none;
+  }
+  table {
+    display: none;
+  }
+  .kategori {
+    display: none;
+  }
+}
+
+.tablo {
+  text-align: center;
+  justify-content: center;
+}
+/*footer kısmıı*/
+footer {
+  background: #2d23fb;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: auto;
+}
