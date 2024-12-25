@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+* {
+  font-family: 'Roboto Slab', serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.upstart-logo {
+  width: 105px;
+  height: 24px;
+}
+
+.logo {
+  stroke-linecap: round;
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: black;
+  stroke-width: 2px;  
+}
+
+.logo-bg {
+  background-color: white;
+  width: 30px;
+  height: 30px;
+  border: 2px solid black;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0 5px;
+}
+
+nav {
+  padding: 20px 60px;
+  background-color: black;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+nav > ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav > ul > li > a {
+  text-decoration: none;
+  color: #FFF;
+  font-size: 12px;
+  padding: 8px 16px;
+  transition: color 0.3s ease;
+}
+
+nav > ul > li > a:hover {
+  color: #ff6b6b;
+}
+
+nav > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
