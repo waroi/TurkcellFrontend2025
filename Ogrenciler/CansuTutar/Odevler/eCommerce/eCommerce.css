@@ -10,9 +10,8 @@ body {
   font-family: "Montserrat", sans-serif;
   font-size: 20px;
 
-  --blue: rgb(28, 28, 124);
   --black: #222;
-  /*--purple: rebeccapurple;*/
+  --purple: rebeccapurple;
   --white: #fff;
 
   --shadow: #2222224d;
@@ -37,7 +36,7 @@ button {
   font-size: inherit;
   font-family: inherit;
   outline: none;
-  border: 2px solid var(--blue);
+  border: 2px solid var(--purple);
   padding: 2.5px 10px;
   border-radius: 100px;
 }
@@ -126,7 +125,7 @@ ul {
   display: flex;
   justify-content: center;
   gap: 25px;
-  border-bottom: 2px solid var(--blue);
+  border-bottom: 2px solid var(--purple);
 }
 
 ul a {
@@ -137,8 +136,7 @@ ul a:focus {
   font-weight: 700;
 }
 
-ul:has(.rings:focus)+main section {
-
+ul:has(.rings:focus) + main section {
   .necklaces,
   .earrings,
   .bracelets,
@@ -147,8 +145,7 @@ ul:has(.rings:focus)+main section {
   }
 }
 
-ul:has(.necklaces:focus)+main section {
-
+ul:has(.necklaces:focus) + main section {
   .rings,
   .earrings,
   .bracelets,
@@ -157,8 +154,7 @@ ul:has(.necklaces:focus)+main section {
   }
 }
 
-ul:has(.earrings:focus)+main section {
-
+ul:has(.earrings:focus) + main section {
   .necklaces,
   .rings,
   .bracelets,
@@ -167,8 +163,7 @@ ul:has(.earrings:focus)+main section {
   }
 }
 
-ul:has(.bracelets:focus)+main section {
-
+ul:has(.bracelets:focus) + main section {
   .necklaces,
   .earrings,
   .rings,
@@ -177,8 +172,7 @@ ul:has(.bracelets:focus)+main section {
   }
 }
 
-ul:has(.sets:focus)+main section {
-
+ul:has(.sets:focus) + main section {
   .necklaces,
   .earrings,
   .bracelets,
@@ -208,8 +202,8 @@ form h2 {
   font-size: 25px;
   padding-bottom: 5px;
   font-weight: 700;
-  color: var(--blue);
-  border-bottom: 2px solid var(--blue);
+  color: var(--purple);
+  border-bottom: 2px solid var(--purple);
 }
 
 #price-range {
@@ -232,7 +226,7 @@ section {
   justify-content: space-evenly;
 }
 
-section>div {
+section > div {
   margin: 25px;
   min-width: 250px;
   width: calc((100% - 150px) / 3);
@@ -265,8 +259,7 @@ section>div {
 }
 
 .item button {
- /* background-color: var(--blue); */
- background: linear-gradient(to right,#0d3487,#27328a ,#0852a7,#1083a0 );
+  background-color: var(--purple);
   color: var(--white);
   font-size: 15px;
   text-transform: uppercase;
@@ -278,6 +271,6 @@ section>div {
 }
 
 footer {
-  background: linear-gradient(to right,#0d3487,#545b96 ,#0852a7,#1083a0 );
+  background-color: var(--black);
   color: var(--white);
 }
