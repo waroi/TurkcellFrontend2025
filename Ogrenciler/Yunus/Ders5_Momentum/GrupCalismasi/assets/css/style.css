@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    --main-color: #ff5714;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto Slab", serif;
+}
+
+.wwdo {
+    max-width: 60%;
+    line-height: 1.6;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 15px;
+    color: var(--main-color);
+}
+
+.wwdo-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.wwdo-content h1, .wwdo-content p {
+    max-width: 50%;
+}
+
+.wwdo-title {
+    font-size: 28px;
+}
+
+.wwdo-desc {
+    color: #8492a6;
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+}
+
+.content-jobs-wrapper {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.jobs {
+    border-radius: 30px;
+    padding: 1.5rem;
+    margin-top: 3.5rem;
+}
+
+.icons {
+    display: inline;
+}
+
+.icons i {
+    width: 85px;
+    height: 85px;
+    font-size: 30px;
+    background: rgba(255, 87, 20, 0.1);
+    color: #ff5714;
+    display: block;
+    display: flex;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.jobs-title {
+    transition: all 0.5s ease;
+    font-size: 18px !important;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1rem;
+    font-weight: 500;
+    color: #000;
+}
+
+.jobs-title:hover, .jobs-read-more:hover {
+    color: var(--main-color);
+}
+
+.jobs-desc {
+    margin: 1rem 0;
+}
+
+.jobs-read-more {
+    color: black;
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    color: #24272c;
+}
+
+.jobs:hover, .jobs:nth-child(2n) {
+    box-shadow: 0 25px 25px rgba(36, 39, 44, 0.05);
+}
+
+@media screen and (max-width: 1200px) {
+    .wwdo {
+        max-width: 90%;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .content-jobs-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .content-jobs-wrapper {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
