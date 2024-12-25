@@ -178,7 +178,48 @@ box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     .title{ 
         font-size: 90px;
     }
-
+    .card {
+        width: 200px;
+        height: 200px;   
+    }
+    .container{
+        gap: 10px;
+        justify-content: center;
+    }
+    .content {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+@media screen and (max-width: 640px){
+    .card {
+        width: 140px;
+        height: 140px;
+    
+    }
+    .container{
+        gap: 8px;
+        justify-content: center;
+    }
+    .content {
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+}    
+@media screen and (max-width: 600px){
+    .card {
+        width: 120px;
+        height: 120px;
+    
+    }
+    .container{
+        gap: 6px;
+        justify-content: center;
+    }
+    .content {
+        margin-left: 6px;
+        margin-right: 6px;
+    }    
 }
 @media screen and (max-width: 575px){
     .search input[type="text"] {
