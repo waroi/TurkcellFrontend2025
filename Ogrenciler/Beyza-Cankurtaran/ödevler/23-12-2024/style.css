@@ -83,7 +83,13 @@ header p {
     align-items: center;
     width: 30%;
     height: auto; 
-    background: rgba(139,160,255,0.3);
+    background: radial-gradient(
+        circle,
+rgba(139, 160, 255, 0.3) 0%,
+rgba(255, 255, 255, 0.8) 50%,
+rgba(139, 160, 255, 0.3) 100%
+);
+    /*background: rgba(139,160,255,0.3);*/
     border-radius: 5px;
     color: #4a6579;
     padding: 20px;
