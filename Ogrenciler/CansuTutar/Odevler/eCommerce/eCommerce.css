@@ -10,9 +10,8 @@ body {
   font-family: "Montserrat", sans-serif;
   font-size: 20px;
 
-  --blue: rgb(28, 28, 124);
   --black: #222;
-  /*--purple: rebeccapurple;*/
+  --purple: rebeccapurple;
   --white: #fff;
 
   --shadow: #2222224d;
@@ -37,7 +36,7 @@ button {
   font-size: inherit;
   font-family: inherit;
   outline: none;
-  border: 2px solid var(--blue);
+  border: 2px solid var(--purple);
   padding: 2.5px 10px;
   border-radius: 100px;
 }
@@ -104,7 +103,6 @@ header div {
   justify-content: space-between;
   text-shadow: 0 0 5px var(--black), 0 0 5px var(--shadow),
     0 0 2.5px var(--white);
-  gap: 25px;
 }
 
 header h1 {
@@ -127,7 +125,7 @@ ul {
   display: flex;
   justify-content: center;
   gap: 25px;
-  border-bottom: 2px solid var(--blue);
+  border-bottom: 2px solid var(--purple);
 }
 
 ul a {
@@ -204,8 +202,8 @@ form h2 {
   font-size: 25px;
   padding-bottom: 5px;
   font-weight: 700;
-  color: var(--blue);
-  border-bottom: 2px solid var(--blue);
+  color: var(--purple);
+  border-bottom: 2px solid var(--purple);
 }
 
 #price-range {
@@ -251,7 +249,6 @@ section > div {
 .item span {
   display: flex;
   align-items: center;
-  text-align: center;
 }
 
 .item .discount {
@@ -262,8 +259,7 @@ section > div {
 }
 
 .item button {
-  /* background-color: var(--blue); */
-  background: linear-gradient(to right, #0d3487, #27328a, #0852a7, #1083a0);
+  background-color: var(--purple);
   color: var(--white);
   font-size: 15px;
   text-transform: uppercase;
@@ -275,6 +271,6 @@ section > div {
 }
 
 footer {
-  background: linear-gradient(to right, #0d3487, #545b96, #0852a7, #1083a0);
+  background-color: var(--black);
   color: var(--white);
 }

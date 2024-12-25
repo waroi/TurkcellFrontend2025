@@ -144,6 +144,7 @@ footer {
   background-color: #fff;
   color: #7684ff;
 }
+
 .st0 {
   fill: #ffeea9;
 }
@@ -166,6 +167,17 @@ footer {
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-miterlimit: 10;
+}
+
+.sepet {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.price {
+  font-size: 1.4rem;
+  padding-top: 20px;
 }
 
 @media screen and (max-width: 1200px) {
