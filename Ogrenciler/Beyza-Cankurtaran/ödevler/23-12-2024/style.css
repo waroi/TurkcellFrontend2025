@@ -278,7 +278,7 @@ tbody tr:hover {
   box-shadow: 0rem 0rem 0.2rem 0.3rem #8ba0ff;
   color: #fff;
   transform: scale(1.01);
-  /*CSS'te transform: scale(1.05); bir öğenin boyutunu %5 oranında büyütmek için kullanılır. Bu özellik, bir öğeyi X ve Y eksenlerinde eşit şekilde ölçeklendiren bir dönüşüm uygular.*/
+  /*CSS'te transform: scale(1.05); bir öğenin boyutunu %1 oranında büyütmek için kullanılır. Bu özellik, bir öğeyi X ve Y eksenlerinde eşit şekilde ölçeklendiren bir dönüşüm uygular.*/
   transition: 0.2s;
 }
 
@@ -293,7 +293,72 @@ tbody tr:hover {
   .kategori {
     display: none;
   }
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .card {
+    width: 90%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 15px;
+    background-color: #fff;
+  }
+
+  .resim img.imgClass {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .urunAcıklama {
+    margin-top: 15px;
+  }
+
+  .urunAcıklama ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+  }
+
+  .urunAcıklama ul li {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .buttonDivClass {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+  }
+
+  .buttonDivClass .button {
+    flex: 1;
+    margin: 0 5px;
+    padding: 10px;
+    font-size: 14px;
+    background-color: #8ba0ff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  .buttonDivClass .button:hover {
+    background-color: #6f85d3;
+  }
+
+  .buttonDivClass .button i {
+    margin-right: 5px;
+  }
 }
+
 
 .tablo {
   text-align: center;
