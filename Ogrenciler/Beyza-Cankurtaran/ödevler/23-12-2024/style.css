@@ -125,6 +125,7 @@ header p {
   color: #fff;
   box-shadow: 0px 4px 10px rgba(139, 160, 255, 0.5);
   transform: translateY(-2px);
+  border-radius: 0.5rem;
 }
 .card {
   height: 40rem;
@@ -255,7 +256,7 @@ table {
 
 /* Tablo Başlık */
 thead th {
-  background-color: #4caf50;
+  background-color: #8ba0ff;
   color: white;
   font-weight: bold;
   padding: 10px;
@@ -265,19 +266,24 @@ thead th {
 /* Gövde  */
 tbody td {
   padding: 10px;
-  border: 1px solid #ddd;
+  border: 1px solid #8ba0ff;
 }
 
 tbody tr:nth-child(even) {
   background-color: #fff;
 }
 tbody tr:nth-child(odd) {
-  background-color: #ddd;
+  background-color: #e2e6fc;
 }
 
 /* Satır üzerine hover yapınca renk değişimi */
 tbody tr:hover {
-  background-color: #e8f5e9;
+  background-color: #8ba0ff;
+  box-shadow: 0rem 0rem 0.2rem 0.3rem #8ba0ff;
+  color: #fff;
+  transform: scale(1.01);
+  /*CSS'te transform: scale(1.05); bir öğenin boyutunu %5 oranında büyütmek için kullanılır. Bu özellik, bir öğeyi X ve Y eksenlerinde eşit şekilde ölçeklendiren bir dönüşüm uygular.*/
+  transition: 0.2s;
 }
 
 /* Mobil telefon uyumlu tasarım */
