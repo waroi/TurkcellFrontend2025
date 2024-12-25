@@ -5,7 +5,6 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-
 /* Navbar */
 
 main {
@@ -13,7 +12,6 @@ main {
   gap: 20px;
   padding: 20px;
 }
-
 
 .navbar {
   display: flex;
@@ -24,6 +22,15 @@ main {
   background: linear-gradient(to right, #77cbcf, #ca7ca2, #8669e8);
 }
 
+/* .navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 20px;
+  background: linear-gradient(to bottom, #8ba0ff, #ffffff);
+} */
+
 .nav-icons {
   display: flex;
   gap: 15px;
@@ -31,22 +38,30 @@ main {
 
 .nav-icons i {
   font-size: 24px;
-  color: white; 
+  color: white;
+  transition: color 0.3s;
   cursor: pointer;
 }
 
 .nav-icons i:hover {
-  color: #000000; 
+  color: #000000;
 }
 
 .logo {
   margin-right: auto; /*buranın çalışması lazım*/
   max-height: 50px;
+  border-radius: 50%;
+  border: #fff 1px solid;
+}
+.logoA:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
 }
 
 header p {
   font-size: 25px;
-  color: #e1f0ff;
+  /* color: #8ba0ff; */
+  color: #fff;
   margin-top: 20px;
   font-weight: bold;
 }
@@ -77,26 +92,20 @@ header p {
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
 }*/
 .kategori {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    width: 30%;
-    height: auto; 
-    background: radial-gradient(
-        circle,
-rgba(139, 160, 255, 0.3) 0%,
-rgba(255, 255, 255, 0.8) 50%,
-rgba(139, 160, 255, 0.3) 100%
-);
-    /*background: rgba(139,160,255,0.3);*/
-    border-radius: 5px;
-    color: #4a6579;
-    padding: 20px;
-    margin-top: 30px;
-    box-shadow: 0 0 8px rgba(176, 176, 176, 0.4); 
-    overflow: hidden;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 30%;
+  height: auto;
+  background: rgba(139, 160, 255, 0.3);
+  border-radius: 5px;
+  color: #4a6579;
+  padding: 20px;
+  margin-top: 30px;
+  box-shadow: 0 0 8px rgba(176, 176, 176, 0.4);
+  overflow: hidden;
+}
 
 .kategoriMobile {
   display: none;
@@ -131,6 +140,8 @@ rgba(139, 160, 255, 0.3) 100%
   color: #fff;
   box-shadow: 0px 4px 10px rgba(139, 160, 255, 0.5);
   transform: translateY(-2px);
+  transition: 0.3s;
+  border-radius: 0.5rem;
 }
 .card {
   height: 40rem;
@@ -180,6 +191,8 @@ rgba(139, 160, 255, 0.3) 100%
 
 .button:hover {
   background-color: #b3c0f9;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .card:hover {
@@ -187,9 +200,8 @@ rgba(139, 160, 255, 0.3) 100%
   transform: scale(1.05);
   /*CSS'te transform: scale(1.05); bir öğenin boyutunu %5 oranında büyütmek için kullanılır. Bu özellik, bir öğeyi X ve Y eksenlerinde eşit şekilde ölçeklendiren bir dönüşüm uygular.*/
   transition: 0.6s;
-/*Transition:Bir özelliğin değişimlerini yumuşak bir animasyon ile göstermeye yarar.Delay vererek animasyonu geciktirebiliriz.*/
-    cursor:pointer;
-  
+  /*Transition:Bir özelliğin değişimlerini yumuşak bir animasyon ile göstermeye yarar.Delay vererek animasyonu geciktirebiliriz.*/
+  cursor: pointer;
 }
 
 .kategori ul li a {
@@ -204,8 +216,52 @@ header p::after {
   content: " ✨";
 }
 .urunAcıklama {
-    flex-grow: 1;
-    }
+  flex-grow: 1;
+}
+
+form h4 {
+  text-align: center;
+}
+
+.filtrele {
+  color: #343a40;
+  margin-top: 15%;
+  font-size: 1.2rem;
+}
+
+.filtreleBaslik {
+  text-align: center;
+}
+
+.filtreUygula {
+  display: flex;
+  justify-content: space-around;
+  gap: 5%;
+  margin: 10px;
+}
+
+.filtreFiyat input {
+  margin: 2%;
+  max-width: 40%;
+}
+
+.filtreFiyat,
+.filtreUygula,
+.filtreUygula,
+.filtreKategori,
+.filtreMarka {
+  margin-top: 8%;
+}
+
+.filtreUygula button {
+  background-color: #8ba0ff;
+  margin-top: 0.5rem;
+  border-radius: 0.5rem;
+  border-style: solid;
+  padding: 0.5rem;
+  font-weight: bold;
+  color: #fff;
+}
 
 /* Genel tablo  */
 table {
@@ -220,7 +276,7 @@ table {
 
 /* Tablo Başlık */
 thead th {
-  background-color: #4caf50;
+  background-color: #8ba0ff;
   color: white;
   font-weight: bold;
   padding: 10px;
@@ -230,19 +286,24 @@ thead th {
 /* Gövde  */
 tbody td {
   padding: 10px;
-  border: 1px solid #ddd;
+  border: 1px solid #8ba0ff;
 }
 
 tbody tr:nth-child(even) {
   background-color: #fff;
 }
 tbody tr:nth-child(odd) {
-  background-color: #ddd;
+  background-color: #e2e6fc;
 }
 
 /* Satır üzerine hover yapınca renk değişimi */
 tbody tr:hover {
-  background-color: #e8f5e9;
+  background-color: #8ba0ff;
+  box-shadow: 0rem 0rem 0.2rem 0.3rem #8ba0ff;
+  color: #fff;
+  transform: scale(1.01);
+  /*CSS'te transform: scale(1.05); bir öğenin boyutunu %5 oranında büyütmek için kullanılır. Bu özellik, bir öğeyi X ve Y eksenlerinde eşit şekilde ölçeklendiren bir dönüşüm uygular.*/
+  transition: 0.2s;
 }
 
 /* Mobil telefon uyumlu tasarım */
@@ -264,9 +325,75 @@ tbody tr:hover {
 }
 /*footer kısmıı*/
 footer {
-  background: #2d23fb;
+  background: linear-gradient(to right, #77cbcf, #ca7ca2, #8669e8);
   color: white;
+  padding: 20px 0;
+  font-family: Arial, sans-serif;
   text-align: center;
-  padding: 10px 0;
-  margin-top: auto;
+}
+
+/* Footer container */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+/* Footer içeriği */
+.footer-content h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #ffffff; /* Altın rengi */
+}
+
+.footer-content p {
+  font-size: 14px;
+  color: #605f5f;
+}
+
+/* Footer bağlantılar bölümü */
+.footer-links h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #ffffff; /* Altın rengi */
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  font-size: 14px;
+  color: #464545;
+  margin-bottom: 8px;
+}
+
+.footer-links li:hover {
+  color: #f2b632; /* Hover rengini altın yap */
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Footer alt kısmı */
+.footer-bottom {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #fafafa;
+}
+
+/* Mobil uyumlu düzen */
+@media screen and (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-content,
+  .footer-links {
+    margin-bottom: 20px;
+  }
 }

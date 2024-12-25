@@ -1,0 +1,102 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+header {
+  background-color: #fffdec;
+  height: 200px;
+  color: rgb(100, 109, 109);
+  font-size: 3rem;
+  text-align: center;
+  font-family: "Lavishly Yours", serif;
+}
+nav {
+  font-family: "Dancing Script", serif;
+}
+
+nav ul {
+  background-color: #86a788;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 2.5rem;
+}
+nav ul li {
+  display: inline;
+  font-size: 1.5rem;
+}
+nav ul li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.container {
+  margin: 0 auto;
+  background-color: #ffcfcf;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 250px;
+  height: 250px;
+  border: 2px solid #86a788;
+  border-radius: 25px;
+  margin: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffe2e2;
+}
+
+.fav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.fav h2 {
+  margin: auto;
+}
+.fav i {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+}
+
+img {
+  margin-top: 0.5rem;
+  width: 200px;
+  height: 100px;
+}
+.price {
+  margin-top: 0.5rem;
+}
+
+.card_footer {
+  padding: 0.5rem;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  border: 2px solid #86a788;
+  border-radius: 25px;
+}
+.tasma {
+  font-size: 1.25rem;
+}
+
+.margin {
+  margin-top: 0.25rem;
+}
+
+@media screen {
+}
