@@ -284,15 +284,18 @@ tbody tr:hover {
 
 /* Mobil telefon uyumlu tasarım */
 @media (max-width: 768px) {
+  /*tablo*/
   .tablo {
     display: none;
   }
   table {
     display: none;
   }
+  /*sidebar*/
   .kategori {
     display: none;
   }
+  /*kartlar*/
   .container {
     display: flex;
     flex-direction: column;
