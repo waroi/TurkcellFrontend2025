@@ -1,0 +1,49 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: "Roboto Slab", serif;
+	font-optical-sizing: auto;
+	font-style: normal;
+}
+/* rgb(255, 87, 21) Başlıkların Color
+rgb(138, 151, 170) Yazılar
+Ana başlık Color #24272C
+#FFEEE9 Box Color
+#202942 Footer Color */
+
+
+
+
+/* 
+Footer Kısımı
+*/
+.footer {
+	background-color: #202942;
+	height: 92px;
+	align-self: center
+}
+
+.footerContainer{
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.social{
+	display: flex;
+}
+
+.footer ul li{
+	display: flex;
+	list-style: none;
+}
+
+.socialContainer{
+	background-color: #202942;
+	border: 1px ridge white;
+	height: 30px;
+	width: 30px;
+}
