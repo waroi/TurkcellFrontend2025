@@ -40,7 +40,7 @@ nav {
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
+  /*position: fixed;*/
   top: 0;
   left: 0;
 }
@@ -70,4 +70,35 @@ nav > div {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+/* Banner section styling */
+.banner {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.banner-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.banner-text {
+  position: absolute;
+  top: 50%; /* Ortalamak için */
+  left: 20%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7); /* Yazıyı daha okunaklı yapmak için gölge */
+}
+
+.banner-text h1 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.banner-text p {
+  font-size: 17px;
+  letter-spacing: 0.5px;
 }
