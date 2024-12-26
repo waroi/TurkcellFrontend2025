@@ -7,7 +7,10 @@
 header {
   height: 70px;
   padding: 25px 20px;
-  font-family: "Roboto Slab", serif;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 1;
 }
 
 .header-container {
@@ -104,6 +107,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #f8f9fc;
 }
 
 .bg-img2 {
