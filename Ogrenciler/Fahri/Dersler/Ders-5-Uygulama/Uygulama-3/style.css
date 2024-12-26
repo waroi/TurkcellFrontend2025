@@ -185,6 +185,15 @@ p {
   background-color: #ff5714;
   height: 85px;
   width: 85px;
-  text-align: center;
+}
+
+.cards-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.cards {
+  border: 1px solid black;
   justify-content: center;
 }
