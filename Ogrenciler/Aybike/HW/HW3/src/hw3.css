@@ -199,15 +199,33 @@ color:  #FF5715;
 }
 .service{
     width: 100%;
+    padding: 5% 0;
 
 }
+.serviceHeader {
+padding: 2.6%;
+}
+
 .serviceContent {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background-color: #f8f9fc;
-  padding:100px 0;
+  padding: 0px 100px;
   width: 100%;
-  margin: 0px 200px;
+}
+.serviceContent >p{
+    color: #8492A6;
+}
+.serviceHeader > h2 {
+    font-size: 32px;
+    font-weight: 600;
+    margin: 20px 0;
+    color: #333;
+}
+.serviceHeader > h3 {
+    color: #ff5714;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 16px;
 }
