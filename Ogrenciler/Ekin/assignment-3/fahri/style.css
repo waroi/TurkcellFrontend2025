@@ -1,0 +1,202 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto Slab", serif;
+
+  --white: #fff;
+  --orange: #ff5714;
+  --black: #24272c;
+
+  --shadow: #24272c3d;
+
+  --fast: 0.3s;
+
+  --responsive-padding: 0 calc((100% - 1130px) / 2);
+
+  color: var(--black);
+}
+
+a {
+  text-decoration: none;
+  font-size: inherit;
+  color: inherit;
+}
+
+nav {
+  background-color: var(--white);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  padding: var(--responsive-padding);
+  box-shadow: 0 0 4px var(--shadow);
+  z-index: 10;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-left: auto;
+}
+
+nav li {
+  margin-right: 27px;
+  letter-spacing: 1px;
+  transition: color var(--fast);
+}
+
+nav li:hover {
+  color: var(--orange);
+}
+
+nav #social-media {
+  display: flex;
+  align-items: center;
+  margin-right: 14px;
+  gap: 4px;
+  transform: translateY(-2px);
+}
+
+nav #social-media svg {
+  background-color: var(--orange);
+  border-radius: 100px;
+  color: var(--white);
+  width: 30px;
+  height: 30px;
+  padding: 7px;
+}
+
+/* ================================================================= */
+
+header {
+  background: url("https://shreethemes.in/upstart/layouts/images/bg/1.jpg");
+  background-size: cover;
+  background-position: center center;
+  height: 799px;
+  position: relative;
+  padding: var(--responsive-padding);
+  padding-top: 400px;
+  color: var(--white);
+}
+
+header .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(22, 28, 45, 0.75);
+  opacity: 0.9;
+}
+
+.heading-text {
+  font-size: 42px;
+}
+
+.section-about {
+  background-color: #f8f9fc;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  padding-left: 150px;
+  padding-right: 150px;
+}
+
+.section-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.cards-row {
+  display: flex;
+}
+
+.content {
+  margin-left: 75px;
+}
+
+.resim {
+  height: 526px;
+  width: 451px;
+  border-radius: 10px;
+}
+
+.head-h6 {
+  color: #ff5714;
+  font-size: 15px;
+  margin: 0 0 8px;
+}
+
+.head-h4 {
+  font-size: 28px;
+  margin: 0 0 24px;
+}
+
+p {
+  word-spacing: 1px;
+  font-weight: 400;
+  font-size: 15px;
+  font-family: "Roboto", sans-serif;
+  margin-bottom: 32px;
+  color: #8492a6;
+}
+
+.button {
+  background-color: #ff5714;
+  padding: 8px 20px;
+  border-radius: 6px;
+  font-family: "Roboto" sans-serif;
+  color: white;
+}
+
+.section-service {
+  background-color: #ffff;
+  padding: 100px 150px 0;
+}
+
+.service-head {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding-right: 100px;
+}
+
+.service-p {
+  display: flex;
+  width: 50%;
+}
+
+.card-icon {
+  background-color: #ff5714;
+  height: 85px;
+  width: 85px;
+}
+
+.cards-row {
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.cards {
+  border: 1px solid black;
+}
+
+.card {
+  width: 356px;
+}
