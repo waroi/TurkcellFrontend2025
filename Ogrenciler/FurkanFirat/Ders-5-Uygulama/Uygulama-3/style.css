@@ -20,6 +20,7 @@ body {
   --border-gray: #dee2e6;
 
   --shadow: #24272c3d;
+  --box-shadow: 0 0 3px #24272c26;
 
   --fast: 0.5s;
 
@@ -165,8 +166,6 @@ header p {
   margin-bottom: 32px;
   color: #ffffff80;
 }
-
-/* ============================================================================================================== */
 
 .about-us .lg-5 {
   padding: 0 12px;
@@ -327,7 +326,7 @@ header p {
 
 .pricing > div {
   transition: box-shadow var(--fast), transform var(--fast);
-  box-shadow: 0 0 3px rgba(36, 39, 44, 0.15);
+  box-shadow: var(--box-shadow);
   padding: 48px 24px;
 }
 
@@ -423,5 +422,80 @@ header p {
 
 .blogs .cards .col > div {
   padding: 24px;
-  box-shadow: 0 0 3px rgba(36, 39, 44, 0.15);
+  box-shadow: var(--box-shadow);
+}
+
+.contact-us .container > .row {
+  margin-top: 60px;
+}
+
+.contact-us .row .lg-8 {
+  background-color: var(--white);
+  padding: 24px 24px 0;
+  box-shadow: var(--box-shadow);
+  border-radius: 5px;
+}
+
+.contact-us input,
+.contact-us textarea {
+  font-family: "Roboto", sans-serif;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border-gray);
+  transition: border-color var(--fast);
+  font-size: 14px;
+}
+
+.contact-us input {
+  height: 40px;
+}
+
+.contact-us textarea {
+  height: 191px;
+  line-height: 26px;
+}
+
+.contact-us input:focus,
+.contact-us textarea:focus {
+  border-color: var(--orange);
+}
+
+.contact-us .row .lg-8 div:nth-of-type(1) {
+  padding-right: 12px;
+}
+
+.contact-us .row .lg-8 div:nth-of-type(2) {
+  padding-left: 12px;
+}
+
+.contact-us .row .lg-8 div {
+  margin-bottom: 24px;
+}
+
+.contact-us .row .lg-4 {
+  padding-left: 48px;
+}
+
+.contact-us .row .lg-4 > div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.contact-us .row .lg-4 > div > div {
+  margin-left: 16px;
+}
+
+.contact-us h4 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.contact-us p {
+  cursor: pointer;
+}
+
+.contact-us i {
+  font-size: 20px;
+  transform: translateY(-10px);
 }
