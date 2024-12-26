@@ -523,17 +523,23 @@ p {
 }
 .pricing{
     width: 100%;
-    height: 100vh;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 30px;
+    
 }
 .pricing div{
-    width: 30%;
+    width: 20%;
     height: auto;  
     border-radius:5px;
     box-shadow: 0px 0px 6px 3px rgba(227,227,227,1);
+    padding: 50px 30px;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    
 }
 .div:hover {
     box-shadow: 0 5px 13px rgba(36,39,44,0.2);
@@ -545,17 +551,47 @@ p {
 }
 .div span{
     font-size: 42px;
+    font-family:"Roboto Slab", serif; 
+
 }
 .div span sub,
 .div span sup{
-    font-size: 18px;
-    font-family:"Roboto Slab", serif; 
+    font-size: 18px;  
 }
+.div ul{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+} 
 .div ul li{
 list-style-type: none;
 color: #8492a6;
-list-style-image: url("/Ogrenciler/Emirhan/HazirTemaOdevi/assets/li.png");
-}   
+display: flex;
+align-items: center;
+gap: 5px;
+}  
 .div ul li::before{
-  content: '\e9c2';
+  content: url("https://img.icons8.com/?size=15&id=14298&format=png&color=000000");
 }   
+.div button{
+height: 40px;
+background-color: rgba(255,87,20,0.1);
+border: 1px solid rgba(255, 87, 20, 0.1);
+border-radius: 6px;
+box-shadow: 0 3px 5px 0 rgba(255, 87, 20, 0.1);
+color: #ff5714;
+}
+.div button:hover{
+   background-color:#ff5714 ; 
+   color: #ffffff;
+   transition: 0.2 s;
+   cursor: pointer;
+}
+.portfolio2 {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+}
