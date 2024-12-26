@@ -83,8 +83,8 @@ a {
 }
 
 .overlay + * {
-  z-index: 15;
-  background-color: red;
+  z-index: 5;
+  position: relative;
 }
 
 nav {
@@ -145,7 +145,6 @@ header {
 }
 
 header .container {
-  z-index: 5;
   padding: 0 12px;
 }
 
@@ -195,27 +194,27 @@ header p {
   margin-bottom: 32px;
 }
 
-.our-services .cards a {
+.cards a {
   transition: color var(--fast);
 }
 
-.our-services .cards a i {
+.cards a i {
   font-size: 10px;
   transform: translateY(-2px);
   margin-left: 4px;
 }
 
-.our-services .cards > a:last-of-type {
+.cards > a:last-of-type {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 16px;
 }
 
-.our-services .cards a:hover {
+.cards a:hover {
   color: var(--orange);
 }
 
-.our-services .cards p {
+.cards p {
   margin: 16px 0 32px;
 }
 
@@ -316,4 +315,17 @@ header p {
   height: 380px;
   position: relative;
   color: var(--white);
+}
+
+.portfolio-header .button {
+  margin-top: 30px;
+}
+
+.pricing:hover > div {
+  box-shadow: 0 5px 13px rgba(36, 39, 44, 0.2);
+}
+
+.pricing > div {
+  box-shadow: 0 0 3px rgba(36, 39, 44, 0.15);
+  padding: 20px;
 }
