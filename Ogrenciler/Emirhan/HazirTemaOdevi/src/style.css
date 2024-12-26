@@ -181,6 +181,7 @@ p{
 .business h6{
     color:#ff5714 ;
     font-size: 15px;
+    font-weight: 600;
 }
 .business h4{
     color:#24272c ;
@@ -189,7 +190,7 @@ p{
 
 .business div{
     
-    height: 500px;
+    height: 300px;
     display: flex;
     justify-content: center;
 }
@@ -202,4 +203,48 @@ p{
 .businessdiv2{
     align-items: center;
     width: 50%;
+}
+.businesscard{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-content: space-between;
+    align-items: space-between;
+
+}
+.card{
+    width: 30%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    align-items: flex-start;
+    
+
+}
+.box{
+    width: 85px;
+    height: 85px;
+    border-radius: 10px;
+    background-color: #ff57141A;
+}
+.card h4{
+    color:#24272c ;
+    font-size: 18px;
+    font-weight: 600;
+}
+.card p{
+    font-size: 15px;
+    font-weight: 400;
+    color: #8492a6;
+    font-family: "Roboto",sans-serif;
+    line-height: 24px;
+    margin-bottom: 20px;
+}
+.card button{
+    background-color:transparent;
+    border: none;
+    outline: none;
 }
