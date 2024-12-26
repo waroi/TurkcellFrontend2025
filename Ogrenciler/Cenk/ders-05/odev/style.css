@@ -2,11 +2,30 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    
+}
+
+body{
+    line-height: 1.6;
     font-family: "Roboto Slab",serif;
 }
+
 .topImage{
-    background: url("https://shreethemes.in/upstart/layouts/images/bg/1.jpg") center center;
+    background: url("https://shreethemes.in/upstart/layouts/images/bg/1.jpg") center center ;
     height: 50rem;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    z-index: 1;
+}
+.background{
+    z-index: 3;
+    background: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
 }
 .nav{
     position: fixed;
@@ -14,6 +33,7 @@
     height: 80px;
     margin: 0 auto;
     background-color: rgba(0, 0, 0, 0.6);
+    z-index: 4;
 }
 .logo{
    height: 30px;
@@ -69,4 +89,32 @@
 
 .media-item i{
     color: black;
+}
+
+.AnaEkran{
+    margin-bottom: 1.5rem;
+
+}
+
+
+.anaBaslik{
+    color: white;
+    font-size: 42px;
+    margin-bottom: 1.5rem;
+}
+
+.anaYazi{
+    color: white;
+    width: 600px;
+    font-size: 17px;
+    margin-bottom: 1.5rem;
+}
+
+.btn{
+    padding: 12px 20px;
+    background-color: #ff5714 ;
+    color: white;
+    font-size: 16px;
+    border: 0;
+    border-radius: 6px;
 }
