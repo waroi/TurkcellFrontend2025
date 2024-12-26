@@ -1,3 +1,4 @@
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,10 +8,11 @@
 header {
   height: 70px;
   padding: 25px 20px;
+  font-family: "Roboto Slab", serif;
   position: sticky;
-  top: 0;
   background-color: white;
   z-index: 1;
+  top: 0; 
 }
 
 .header-container {
@@ -107,15 +109,22 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f8f9fc;
+  background-color: #F8F9FC;
+ 
 }
 
 .bg-img2 {
   background-image: url(about.jpg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-repeat: no-repeat;
-  height: 50%;
-  width: 50%;
+  height: 80%;
+  width: 30%;
   background-size: contain;
+  border-radius: 10px;
+  
+  
 }
 
 .section2-h6 {
@@ -127,13 +136,40 @@ header {
 .section2-h4 {
   font-family: "Roboto Slab", serif;
   font-size: 28px;
+  margin-top: 0.3rem;
 }
 
 .section2-p {
   font-size: 15px;
   line-height: 1.6;
   width: 593px;
-  margin-top: 0;
+  margin-top: 1.33rem;
   margin-bottom: 1rem;
   font-family: "Roboto", serif;
+  color: #8492A6;
+}
+
+
+.section2-cover{
+  margin-left: 5rem;
+  margin-bottom: 7rem;
+}
+
+
+.icon{
+  background-color: white;
+  width: 75px;
+  height: 75px;
+  border-radius:50%;
+  margin-bottom: 50px;
+  text-decoration: none;
+}
+
+.icon i{
+  width: 75px;
+  height: 75px;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  
 }
