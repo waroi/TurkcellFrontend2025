@@ -1,0 +1,164 @@
+/* styles.css */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1200px;
+  font-family: "Roboto Slab", serif;
+}
+
+/* Header Styles */
+.header {
+  background-color: #333;
+  color: white;
+  padding: 10px 0;
+}
+
+.logo {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.header .logo img {
+  height: 50px; /* Logonun yüksekliğini sabitleyin */
+}
+.nav {
+  display: inline;
+}
+.header .nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header .nav ul li {
+  margin: 0 1rem;
+}
+
+.header .nav ul li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+  align-items: center;
+}
+
+.header .nav ul li a:hover {
+  color: #00bcd4;
+}
+
+/* Hero Section */
+.hero {
+  background: url("hero-bg.jpg") no-repeat center center/cover;
+  color: white;
+  text-align: center;
+  padding: 100px 0;
+}
+
+.hero h1 {
+  font-size: 2.5em;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.2em;
+  margin-bottom: 25px;
+}
+
+.hero .btn {
+  background-color: #00bcd4;
+  color: white;
+  padding: 10px 25px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.hero .btn:hover {
+  background-color: #028f9a;
+}
+
+/* About Section */
+.about {
+  padding: 50px 0;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.about-text h2 {
+  font-size: 2em;
+  margin-bottom: 15px;
+}
+
+.about-text .btn {
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.about-text .btn:hover {
+  background-color: #555;
+}
+
+/* Services Section */
+.services {
+  background-color: #f4f4f4;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.services h2 {
+  font-size: 2em;
+  margin-bottom: 30px;
+}
+
+.service-items {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.service-item {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 30%;
+  text-align: center;
+}
+
+.service-item h3 {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+}
+
+.service-item p {
+  margin-bottom: 20px;
+}
+
+.service-item a {
+  color: #00bcd4;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.service-item a:hover {
+  color: #028f9a;
+}
