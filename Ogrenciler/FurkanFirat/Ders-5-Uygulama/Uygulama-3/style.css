@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 * {
   margin: 0;
@@ -8,7 +8,7 @@
 }
 
 body {
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
 
   --white: #fff;
   --orange: #ff5714;
@@ -29,7 +29,7 @@ body {
 .button {
   background-color: var(--orange);
   color: var(--white);
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .gray-background {
@@ -56,7 +56,7 @@ h5 {
 }
 
 p {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   color: var(--gray);
   font-size: 15px;
   line-height: 1.6;
@@ -136,7 +136,7 @@ nav .social-media svg {
 }
 
 header {
-  background: url('https://shreethemes.in/upstart/layouts/images/bg/1.jpg');
+  background: url("https://shreethemes.in/upstart/layouts/images/bg/1.jpg");
   background-size: cover;
   background-position: center center;
   height: 799px;
@@ -205,7 +205,7 @@ header p {
 }
 
 .cards > a:last-of-type {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 16px;
 }
@@ -267,7 +267,7 @@ header p {
 }
 
 .our-services .work-process .left::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: 0;
@@ -281,7 +281,7 @@ header p {
 }
 
 .our-services .work-process .left::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: 8px;
@@ -309,7 +309,7 @@ header p {
 }
 
 .portfolio-header {
-  background: url('https://shreethemes.in/upstart/layouts/images/bg/cta.png');
+  background: url("https://shreethemes.in/upstart/layouts/images/bg/cta.png");
   background-size: 135%;
   background-position: center center;
   height: 380px;
@@ -364,7 +364,7 @@ header p {
   list-style-type: none;
   margin-top: 20px;
   color: var(--gray);
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 .pricing ul li {
   margin-bottom: 12px;
@@ -386,4 +386,41 @@ header p {
 .pricing .button:hover {
   background-color: var(--orange);
   color: #fff;
+}
+
+.our-team h4 {
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.our-team p {
+  line-height: 0;
+  text-align: center;
+}
+
+.our-team .lg-2 {
+  padding: 0 50px;
+}
+
+.our-team .lg-2 img {
+  height: 25px;
+}
+
+.blogs .cards {
+  margin-top: 50px;
+}
+
+.blogs .col {
+  padding: 12px;
+}
+
+.blogs .col img {
+  border-radius: 5px 5px 0 0;
+  margin: -24px;
+  width: calc(100% + 48px);
+}
+
+.blogs .cards .col > div {
+  padding: 24px;
+  box-shadow: 0 0 3px rgba(36, 39, 44, 0.15);
 }
