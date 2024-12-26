@@ -18,6 +18,7 @@ body {
   --gray: #8492a6;
   --light-gray: #f8f9fc;
   --border-gray: #dee2e6;
+  --footer-gray: #adb5bd;
 
   --shadow: #24272c3d;
   --box-shadow: 0 0 3px #24272c26;
@@ -498,4 +499,53 @@ header p {
 .contact-us i {
   font-size: 20px;
   transform: translateY(-10px);
+}
+
+footer {
+  background-color: #202942;
+  color: var(--footer-gray);
+}
+
+footer > div {
+  padding: 30px 0;
+}
+
+footer .lg-6 p {
+  text-align: center;
+  color: var(--footer-gray);
+}
+
+footer .social-icons {
+  justify-content: flex-end;
+  gap: 5px;
+}
+
+footer .social-icons i {
+  border: 1px solid #283353;
+  border-radius: 5px;
+  padding: 5px;
+  width: 32px;
+  height: 32px;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color var(--fast), border-color var(--fast),
+    color var(--fast);
+}
+
+footer .social-icons i:hover {
+  color: var(--white) !important;
+  background-color: var(--orange);
+  border-color: var(--orange);
+}
+
+.fa-arrow-up {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: var(--orange);
+  color: var(--light-gray);
+  font-size: 12px;
+  padding: 12px 14px;
+  border-radius: 100%;
+  cursor: pointer;
 }
