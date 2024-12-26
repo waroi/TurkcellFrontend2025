@@ -2,7 +2,10 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    
+}
+
+p {
+    color: #8492a6 ;
 }
 
 body{
@@ -43,7 +46,7 @@ body{
     display: flex;
     align-items: center;
     justify-content:space-between;
-    width: 70%;
+    width: 60%;
     height: 80px;
     margin: 0 auto;
 }
@@ -117,4 +120,61 @@ body{
     font-size: 16px;
     border: 0;
     border-radius: 6px;
+}
+
+/*--------------------------------*/
+
+.about{
+    display: flex;
+    align-items: center;
+    height: 800px;
+    background-color: #f8f9fc;
+}
+
+.about-image{
+    margin-right: 0;
+}
+
+.about img{
+    width: 80%;
+}
+
+.about-text{
+    width: 50%;
+    padding: 0 50px;
+}
+
+.mt1{
+    margin-top: 1rem;
+}
+
+/*** end of about ***/
+
+.what-we-do{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 7rem;
+    height: 900px;
+}
+
+.what-we-do-p{
+    margin-left: 250px;
+    width: 60%;
+}
+
+.what-we-do-h{
+    width: 40%;
+}
+
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card {
+    width: 350px;
+    height: 315px;
+    background-color: black;
+    margin-bottom: 15px;
 }
