@@ -1,16 +1,12 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.wrap{
-    width: 980px;
-    margin: 0 auto;
-}
-
-.header{
-    /* background-color: #333; */
+.wrap {
+  width: 980px;
+  margin: 0 auto;
 }
 
 .logo{
@@ -18,220 +14,279 @@
     height: 48px;
 }
 
-.containerHeader{
-    margin-top: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+.containerHeader {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
 }
 
-.search{
-    height: 50px;
-    width: 40%;
-    border: 1px solid #FFC145;
-    border-radius: 12px;
+.search {
+  height: 50px;
+  width: 40%;
+  border: 1px solid #ffc145;
+  border-radius: 12px;
 }
 
-.searchButton{
-    background-color: #FFC145;
-    height: 50px;
-    width: 75px;
-    border: 2px solid #FB4141 ;
-    border-radius: 12px;
+.searchButton {
+  background-color: #ffc145;
+  height: 50px;
+  width: 75px;
+  border: 2px solid #fb4141;
+  border-radius: 12px;
 }
 
-.mainImage{
-    background-image:url('../Odev04/assets/main-image.jpg');
-    margin-top: 20px;
-    height: 460px;
-    width: 100%;
+.mainImage {
+  background-image: url("../Odev04/assets/main-image.jpg");
+  margin-top: 20px;
+  height: 460px;
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
-.categories{
-    background-color: #FFC145;
-    padding: 10px 0;
-    margin-top: 20px;
-    border-radius: 12px;
+.categories {
+  background-color: #ffc145;
+  padding: 10px 0;
+  margin-top: 20px;
+  border-radius: 12px;
 }
 
-.categoryList{
-    display: flex;
-    justify-content: space-evenly;
-    gap: 20px;
-    list-style: none;
-    flex-wrap: wrap;
+.categoryList {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
+  list-style: none;
+  flex-wrap: wrap;
 }
 
 .categoryList li {
-    font-size: large;
+  font-size: large;
 }
 
-.categoryList li a:hover{
-    color: white;
-    border-radius: 12px;
-    cursor: pointer;
+.categoryList li a:hover {
+  color: white;
+  border-radius: 12px;
+  cursor: pointer;
 }
-.product{
-    width: 230px;
-    height: 370px;
-    border: 1px solid #FFC145;
+.product {
+  width: 230px;
+  height: 370px;
+  border: 1px solid #ffc145;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 10px;
+}
+
+.product h3 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.products {
+  width: 980px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.price {
+  padding: 3px;
+}
+
+.product-price {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: auto;
+}
+
+.add-to-basket {
+  background-color: #ffc145;
+  border: 2px solid #fb4141;
+  border-radius: 10px;
+  padding: 3px;
+}
+
+@media screen and (min-width: 500px) and (max-width: 768px) {
+  .wrap {
+    width: 500px;
+    margin: 0 auto;
+  }
+  .products {
+    width: 490px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  .product {
+    width: 235px;
+    height: 355px;
+    border: 1px solid #ffc145;
     border-radius: 12px;
     display: flex;
     flex-direction: column;
     padding-right: 20px;
     padding-left: 20px;
-    padding-bottom: 10px;
-}
-
-.product h3{
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-.products{
-    width: 980px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+  }
+  .product-title {
+    font-size: 16px;
+  }
+  .mainImage {
+    background-image: url("../Odev04/assets/main-image.jpg");
     margin-top: 20px;
-}
-.price{
-    padding: 3px;
-}
-.product-price{
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: auto;
-}
-.add-to-basket{
-    background-color: #FFC145;
-    border: 2px solid #FB4141 ;
-    border-radius: 10px;
-    padding: 3px;
-}
-@media screen and (min-width:500px) and (max-width: 768px){
-    .wrap{
-        width: 500px;
-        margin: 0 auto;
-    }
-    .products{
-        width: 490px;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        margin-top: 20px;
-    }
-    .product{
-        width: 235px;
-        height: 355px;
-        border: 1px solid #FFC145;
-        border-radius: 12px;
-        display: flex;
-        flex-direction: column;
-        padding-right: 20px;
-        padding-left: 20px;
-    }
-    .product-title{
-        font-size: 16px;
-    }
-    .mainImage{
-        background-image:url('../Odev04/assets/main-image.jpg');
-        margin-top: 20px;
-        height: 460px;
-        width: 100%;
-        object-fit: cover;
-    }
-    .footer{
-        background-color: #FFC145;
-        height: 400px;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-    }
-    .solid{
-        margin: 5px;
-        border-color: black;
-        display: flex;
-      }
-    .support{
-        padding-left: 20px;
-    }
-}
-.footer{
-    background-color: #FFC145;
-    height: 270px;
+    height: 460px;
     width: 100%;
-    margin-top: 50px;
-    display: flex;
-    flex-direction: column;
-
-}
-  .main-titles{
-    display: flex;
+    object-fit: cover;
   }
-  
-  .support{
-    color: black;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 300;
-    margin: 10px auto;
+  .footer {
+    background-color: #ffc145;
+    height: 400px;
+    width: 100%;
     display: flex;
     flex-direction: column;
   }
-.support a{
-    text-decoration: none;
-    color: black;
-}
-  
-  .support p{
-    padding-top: 10px;
-  }
-  
-  .community{
-    color: black;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 300;
-    margin: 10px auto;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .developers{
-    color: black;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 300;
-    margin: 10px auto;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .developers p{
-    padding-top: 10px;
-  }
-  
-  .solid{
-    margin: 20px;
+  .solid {
+    margin: 5px;
     border-color: black;
     display: flex;
   }
-  
-  .privacy-and-policy {
+  .support {
+    padding-left: 20px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .wrap {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .products {
+    width: 100%;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .product {
+    width: 100%;
+    height: auto;
+  }
+
+  .product-title {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .add-to-basket {
+    font-size: 12px;
+    padding: 5px;
+  }
+
+  .product-price {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .categories {
+    padding: 10px;
+    text-align: center;
+  }
+
+  .categoryList {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer {
+    background-color: #ffc145;
+    padding: 20px;
     display: flex;
-    justify-content: space-evenly;
-    margin-left: 20px;
-    text-decoration: none;
-    display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
   }
-  
-  .privacy-and-policy a:link {
-    text-decoration: none;
-  }
-  
-  .privacy-and-policy p{
-    color: black;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 300;
-    margin: 10px auto;
-  }
+}
+
+.footer {
+  background-color: #ffc145;
+  height: auto;
+  width: 100%;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+}
+.main-titles {
+  display: flex;
+}
+
+.support {
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  margin: 10px auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.support a {
+  text-decoration: none;
+  color: black;
+}
+
+.support p {
+  padding-top: 10px;
+}
+
+.community {
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  margin: 10px auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.developers {
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  margin: 10px auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.developers p {
+  padding-top: 10px;
+}
+
+.solid {
+  margin: 20px;
+  border-color: black;
+  display: flex;
+}
+
+.privacy-and-policy {
+  display: flex;
+  justify-content: space-evenly;
+  margin-left: 20px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+}
+
+.privacy-and-policy a:link {
+  text-decoration: none;
+}
+
+.privacy-and-policy p {
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  margin: 10px auto;
+}

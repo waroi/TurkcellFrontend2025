@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+* {
+  font-family: 'Roboto Slab', serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.upstart-logo {
+  width: 105px;
+  height: 24px;
+}
+
+.logo {
+  stroke-linecap: round;
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: black;
+  stroke-width: 2px;  
+}
+
+.logo-bg {
+  background-color: white;
+  width: 30px;
+  height: 30px;
+  border: 2px solid black;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0 5px;
+}
+
+nav {
+  padding: 20px 60px;
+  background-color: black;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  /*position: fixed;*/
+  top: 0;
+  left: 0;
+}
+
+nav > ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav > ul > li > a {
+  text-decoration: none;
+  color: #FFF;
+  font-size: 12px;
+  padding: 8px 16px;
+  transition: color 0.3s ease;
+}
+
+nav > ul > li > a:hover {
+  color: #ff6b6b;
+}
+
+nav > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+/* Banner section styling */
+.banner {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.banner-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.banner-text {
+  max-width: 100%;
+  padding-right: calc(1.5rem* .5);
+  padding-left: calc(1.5rem* .5);
+  margin-top: 0;
+  position: absolute;
+  top: 50%; /* Ortalamak için */
+  left: 20%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7); /* Yazıyı daha okunaklı yapmak için gölge */
+}
+
+.banner-text h1 {
+  font-size: 42px !important;
+  letter-spacing: 0.2px;
+  line-height: 1.5;
+  margin: 0;
+  margin-bottom: 1.5rem;
+  margin-left:10%;
+  text-align: left;
+}
+
+.banner-text p {
+  font-size: 17px;
+  letter-spacing: 0.5px;
+  margin-left:10%;
+  text-align: left;
+  max-width:600px;
+  line-height: 1.6;
+}
+.get-started-btn {
+  padding: 8px 20px;
+  outline: none;
+  text-decoration: none;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  transition: all 0.3s;
+  border-radius: 6px;
+  display: inline-block;
+  text-align: left;
+  color: white;
+  background-color: #ff5714;
+  border: none;
+  cursor: pointer;
+}
+
+
+.get-started-btn:hover {
+  background-color: #ff5714;
+}
+/* About Section */
+.about-section {
+  padding: 60px 0;
+  background-color: #f7f7f7;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.col-left, .col-right {
+  flex: 1;
+  padding: 15px;
+}
+
+.col-left {
+  max-width: 500px;
+}
+
+.col-right {
+  max-width: 700px;
+}
+
+.img-wrapper {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+/*
+.play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}*/
+
+.play-btn {
+  display: inline-block;
+  background-color: #fff;
+  color: #ff5714;
+  border-radius: 50%;
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.play-btn:hover {
+  background-color: #ff5714;
+  color: white;
+}
+
+/* Section Title */
+.section-title {
+  padding: 0;
+}
+
+.text-primary {
+  color: #ff5714;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 600;
+  margin: 20px 0;
+  color: #333;
+}
+
+.text-muted {
+  color: #6c757d;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Button */
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #ff5714;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+  margin-top: 20px;
+}
+
+.btn:hover {
+  background-color: #ff5714;
+}
+.play-icon{
+  position: absolute;
+  bottom: 50%;
+  transform: translateY(50%);
+  right:0;
+  left:0;
+  text-align: center;
+}
+.play-btn {
+  height: 78px;
+  width: 78px;
+  font-size: 30px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+.play-btn i {
+  -webkit-text-stroke: 2px #ff5714;
+  -webkit-text-fill-color: transparent;
+}

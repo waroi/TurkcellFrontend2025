@@ -22,15 +22,6 @@ main {
   background: linear-gradient(to right, #77cbcf, #ca7ca2, #8669e8);
 }
 
-/* .navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  padding: 0 20px;
-  background: linear-gradient(to bottom, #8ba0ff, #ffffff);
-} */
-
 .nav-icons {
   display: flex;
   gap: 15px;
@@ -48,7 +39,7 @@ main {
 }
 
 .logo {
-  margin-right: auto; /*buranın çalışması lazım*/
+  margin-right: auto; 
   max-height: 50px;
   border-radius: 50%;
   border: #fff 1px solid;
@@ -60,7 +51,6 @@ main {
 
 header p {
   font-size: 25px;
-  /* color: #8ba0ff; */
   color: #fff;
   margin-top: 20px;
   font-weight: bold;
@@ -76,21 +66,7 @@ header p {
   padding: 20px;
   max-width: 80%;
 }
-/*
-.kategori{
-    display: flex;
-    flex-direction: column; 
-    justify-content: flex-start; 
-    align-items: center; 
-    width: 30%;
-    height: auto;
-    background:linear-gradient(to bottom,#ebbfd5,#e6e9aa,#edb3b3);
-    border-radius: 5px;
-    color: #41989c;
-    padding: 20px;
-    margin-top: 30px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
-}*/
+
 .kategori {
   display: flex;
   flex-direction: column;
@@ -302,22 +278,90 @@ tbody tr:hover {
   box-shadow: 0rem 0rem 0.2rem 0.3rem #8ba0ff;
   color: #fff;
   transform: scale(1.01);
-  /*CSS'te transform: scale(1.05); bir öğenin boyutunu %5 oranında büyütmek için kullanılır. Bu özellik, bir öğeyi X ve Y eksenlerinde eşit şekilde ölçeklendiren bir dönüşüm uygular.*/
+  /*CSS'te transform: scale(1.05); bir öğenin boyutunu %1 oranında büyütmek için kullanılır. Bu özellik, bir öğeyi X ve Y eksenlerinde eşit şekilde ölçeklendiren bir dönüşüm uygular.*/
   transition: 0.2s;
 }
 
 /* Mobil telefon uyumlu tasarım */
 @media (max-width: 768px) {
+  /*tablo*/
   .tablo {
     display: none;
   }
   table {
     display: none;
   }
+  /*sidebar*/
   .kategori {
     display: none;
   }
+  /*kartlar*/
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .card {
+    width: 90%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 15px;
+    background-color: #fff;
+  }
+
+  .resim img.imgClass {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .urunAcıklama {
+    margin-top: 15px;
+  }
+
+  .urunAcıklama ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+  }
+
+  .urunAcıklama ul li {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .buttonDivClass {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+  }
+
+  .buttonDivClass .button {
+    flex: 1;
+    margin: 0 5px;
+    padding: 10px;
+    font-size: 14px;
+    background-color: #8ba0ff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  .buttonDivClass .button:hover {
+    background-color: #6f85d3;
+  }
+
+  .buttonDivClass .button i {
+    margin-right: 5px;
+  }
 }
+
 
 .tablo {
   text-align: center;
@@ -358,7 +402,7 @@ footer {
 .footer-links h4 {
   font-size: 18px;
   margin-bottom: 10px;
-  color: #ffffff; /* Altın rengi */
+  color: #ffffff; 
 }
 
 .footer-links ul {
@@ -373,7 +417,7 @@ footer {
 }
 
 .footer-links li:hover {
-  color: #f2b632; /* Hover rengini altın yap */
+  color: #f2b632; 
   cursor: pointer;
   transition: 0.3s;
 }
