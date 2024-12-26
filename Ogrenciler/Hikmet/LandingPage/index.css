@@ -10,30 +10,37 @@ body {
   font-style: normal;
 }
 
+h3 {
+  font-size: 30px;
+}
 h5 {
   font-size: 18px;
 }
 
 h6 {
-  color: rgb(255, 87, 21);
-  font-size: 15px;
-  text-transform: uppercase;
+	color: rgb(255, 87, 21);
+	font-size: 18px;
+	text-transform: uppercase;
+	letter-spacing: 1px
 }
 
 h4 {
-  color: #24272c;
-  font-size: 28px;
+	color: #24272c;
+	font-size: 32px;
+	letter-spacing: 1px;
 }
 
 p {
-  color: rgb(138, 151, 170);
-  font-size: 15px;
+	color: rgb(138, 151, 170);
+	font-size: 18px;
+	line-height: 1.5;
+	letter-spacing: 0.8;
 }
 
 /* rgb(255, 87, 21) Başlıkların Color
 rgb(138, 151, 170) Yazılar
 Ana başlık Color #24272C
-#FFEEE9 Box Color
+ #FFEEE9Box Color
 #202942 Footer Color */
 
 /*
@@ -46,11 +53,12 @@ Contact Us
 */
 
 .contact-us {
-  display: flex;
-  background-color: #f8f9fc;
-  align-items: center;
-  flex-direction: column;
-  height: 760px;
+	display: flex;
+	background-color: #f8f9fc;
+	align-items: center;
+	justify-content: space-evenly;
+	flex-direction: column;
+	height: 760px;
 }
 
 .contact-us-header {
@@ -60,19 +68,11 @@ Contact Us
   align-items: center;
 }
 
-.contact-us-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 12px;
-  margin: 114px;
-}
-
 .input-container {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 4;
-  margin-top: 50px;
+	width: 760px;
+	display: flex;
+	flex-direction: column;
+	margin-top: 50px;
 }
 
 .input-container-textfield {
@@ -85,12 +85,13 @@ Contact Us
 }
 
 .input-container2 {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: center;
-  padding: 30px;
-  margin: 0px 0px 0px 24px;
+	width: 380px;
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	justify-content: center;
+	padding: 30px;
+	margin: 0px 0px 0px 24px;
 }
 .contact {
   display: flex;
@@ -209,23 +210,28 @@ Contact Us
 }
 .blogs {
   display: flex;
-  background-color: #f8f9fc;
-  align-items: center;
-  flex-direction: column;
-  height: 829px;
-}
-
-.blogs .heading {
-  display: flex;
-  flex-direction: column;
+  background-color: white;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+
+.heading {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+
+.heading-row p{
+	text-align: start;
+	width: 50%;
 }
 .cards {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  align-items: center;
   justify-content: center;
   gap: 8px;
 }
@@ -265,4 +271,426 @@ Contact Us
   padding-right: 12px;
   margin-left: 114px;
   margin-right: 114px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 25px;
+  justify-content: space-evenly;
+}
+
+.our-team {
+  display: flex;
+  background-color: #f8f9fc;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 905px;
+}
+.img-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.img-row img {
+  width: 261px;
+  height: 261px;
+  border: 1px solid #dee2e6;
+  border-radius: 5px;
+}
+.text-row span {
+  color: rgb(138, 151, 170);
+  font-size: 15px;
+}
+.text-row {
+  display: flex;
+  width: 1140px;
+  flex-direction: row;
+  margin-top: 20px;
+  margin-bottom: 25px;
+  justify-content: space-around;
+}
+.text-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 8px;
+}
+.logo-row {
+  display: flex;
+  width: 1140px;
+  flex-direction: row;
+  margin: 20px;
+  justify-content: space-around;
+}
+.logo-row img {
+  width: 75px;
+  height: 25px;
+}
+
+.plans-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.plans {
+  height: 827px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.plans-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  width: 380px;
+  height: 435px;
+  padding: 48px 24px;
+  margin: 10px;
+}
+
+.plans-card li {
+  list-style: none;
+}
+.plans-card button {
+  background-color: #ffeee9;
+  color: #ff5714;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  width: 50%;
+  cursor: pointer;
+  box-shadow: 0 3px 5px 0 rgba(255, 87, 20, 0.1);
+  border: 1px solid rgba(255, 87, 20, 0.1);
+  padding: 8px 20px;
+  outline: none;
+  text-decoration: none;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  transition: all 0.3s;
+  border-radius: 6px;
+  width: 100%;
+}
+.plans-card button:hover {
+  background-color: #ff5714;
+  color: white;
+}
+
+.ready-to-start{
+	background: url("https://shreethemes.in/upstart/layouts/images/bg/cta.png");
+	height: 380px;
+	background-position: center;
+}
+
+.portfolio {
+	display: flex;
+	background-color: #f8f9fc;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	height: 905px;
+}
+
+.portfolio-row {
+	height: 455px;
+	width: 1140px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.portfolio-card1{
+	background-image: url("https://shreethemes.in/upstart/layouts/images/portfolio/1.jpg");
+	background-size: cover;
+	border: 1px solid #dee2e6;
+	border-radius: 6px;
+	width: 261px;
+	height: 195px;
+}
+
+.portfolio-card2{
+	background-image: url("https://shreethemes.in/upstart/layouts/images/portfolio/2.jpg");
+	background-size: cover;
+	border: 1px solid #dee2e6;
+	border-radius: 6px;
+	width: 261px;
+	height: 195px;
+}
+
+.portfolio-card3{
+	background-image: url("https://shreethemes.in/upstart/layouts/images/portfolio/3.jpg");
+	background-size: cover;
+	border: 1px solid #dee2e6;
+	border-radius: 6px;
+	width: 261px;
+	height: 195px;
+}
+
+.portfolio-card4{
+	background-image: url("https://shreethemes.in/upstart/layouts/images/portfolio/4.jpg");
+	background-size: cover;
+	border: 1px solid #dee2e6;
+	border-radius: 6px;
+	width: 261px;
+	height: 195px;
+}
+
+.portfolio-card5{
+	background-image: url("https://shreethemes.in/upstart/layouts/images/portfolio/5.jpg");
+	background-size: cover;
+	border: 1px solid #dee2e6;
+	border-radius: 6px;
+	width: 261px;
+	height: 195px;
+}
+
+.portfolio-card6{
+	background-image: url("https://shreethemes.in/upstart/layouts/images/portfolio/6.jpg");
+	background-size: cover;
+	border: 1px solid #dee2e6;
+	border-radius: 6px;
+	width: 261px;
+	height: 195px;
+}
+
+.portfolio-card7{
+	background-image: url("https://shreethemes.in/upstart/layouts/images/portfolio/7.jpg");
+	background-size: cover;
+	border: 1px solid #dee2e6;
+	border-radius: 6px;
+	width: 261px;
+	height: 195px;
+}
+
+.portfolio-card8{
+	background-image: url("https://shreethemes.in/upstart/layouts/images/portfolio/8.jpg");
+	background-size: cover;
+	border: 1px solid #dee2e6;
+	border-radius: 6px;
+	width: 261px;
+	height: 195px;
+}
+
+.work-process {
+	display: grid;
+	background-color: white;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	height: 1205px;
+}
+
+
+.what-we-do {
+	display: flex;
+	background-color: white;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	height: 905px;
+}
+
+.what-we-do .heading {
+	width: 1140px;
+	display: flex;
+	flex-direction: column;
+	align-items: start
+}
+
+.what-we-do-heading-row {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.what-we-do-cards {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	width: 1140px;
+	height: 692px;
+}
+
+.what-we-do-card {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: start;
+	justify-content: start;
+	margin-bottom: 8px;
+	width: 356px;
+	height: 312px;
+}
+
+.what-we-do-icon {
+	height: 85px;
+    width: 85px;
+	background-color: #ffeee9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	margin-top: 16px;
+	margin-left: 24px;
+}
+
+.what-we-do-card .content {
+	padding-left: 24px;
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+
+.what-we-do-card:nth-child(even) {
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+	border-radius:  12px;
+}
+
+.who-we-are {
+	display: flex;
+	background-color: #f8f9fc;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	height: 726px;
+}
+
+.who-we-are-row-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	width: 1140px;
+	height: 526px;
+}
+
+.who-we-are-image {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-image: url("https://shreethemes.in/upstart/layouts/images/about.jpg");
+	background-size: cover;
+	width: 451px;
+	height: 526px;
+	border-radius: 5px;
+}
+
+.who-we-are-play-icon{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 78px;
+}
+
+.who-we-are-video-button {
+	background-color: white;
+	border-radius: 50%;
+	width: 75px;
+	height: 75px;
+	cursor: pointer;
+}
+
+.who-we-are-heading {
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: start;
+	gap: 24px;
+}
+
+.who-we-are-heading button {
+	background-color: #ff5714;
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 6px;
+	width: 130px;
+	cursor: pointer;
+}
+
+.who-we-are-heading button p {
+	font-size: 16px;
+	color: white;
+	font-weight: 500;
+}
+
+.header{
+	background: url("https://shreethemes.in/upstart/layouts/images/bg/1.jpg");
+	height: 800px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.bg-overlay {
+	background-color: rgba(22, 28, 45, 0.75);
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.bg-overlay-heading {
+	width: 1140px;
+	height: 278px;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: start;
+}
+
+.bg-overlay-heading h4 {
+	color: white;
+	font-size: 48px;
+}
+
+.bg-overlay button {
+	background-color: #ff5714;
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 6px;
+	width: 137px;
+	height: 42px;
+	cursor: pointer;
+	font-size: 16px;
+	letter-spacing: 1;
+}
+
+.bg-overlay-heading-ready-to-start {
+	width: 1140px;
+	height: 178px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.bg-overlay-heading-ready-to-start h4 {
+	color: white;
+	font-size: 32px;
+}
+
+.bg-overlay-heading-ready-to-start p{
+	text-align: center;
 }

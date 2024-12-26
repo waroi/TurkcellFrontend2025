@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#navbar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    height: 70px;
+    
+}
+.navitem{
+    font-family: "Roboto Slab";
+}
+.logo{
+    height: 24px;
+    width: auto;
+}
+.navbtn{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 0px;
+    background-color: #FF5714;
+}
