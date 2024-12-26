@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+* {
+  font-family: 'Roboto Slab', serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* html:not([data-scroll=true]) nav {
+  background-color: #fff;
+  opacity: 1;
+} */
+
+body{
+  font-family: 'Roboto Slab', serif;
+  font-size: 15px;
+}
+
+.upstart-logo {
+  width: 105px;
+  height: 24px;
+}
+
+.logo {
+  stroke-linecap: round;
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: black;
+  stroke-width: 2px;  
+}
+
+.logo-bg {
+  background-color: white;
+  width: 30px;
+  height: 30px;
+  border: 2px solid black;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0 5px;
+}
+
+nav {
+  padding: 20px 60px;
+  background-color: rgba(22, 28, 45, 0.75);
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+nav > ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav > ul > li > a {
+  text-decoration: none;
+  color: #FFF;
+  font-size: 12px;
+  padding: 8px 16px;
+  transition: color 0.3s ease;
+}
+
+nav > ul > li > a:hover {
+  color: #ff6b6b;
+}
+
+nav > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+section{
+    display: flex; /* or inline-flex */
+}
+
+.bgImage {
+    background-image: url("https://shreethemes.in/upstart/layouts/images/bg/1.jpg");
+    width: 100%;
+    height: 90vh;
+    background-position: center; 
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 20%;
+  }
+
+  .bannerContent >h1 {
+    max-width: 100%;
+    font-size: 42px;
+    letter-spacing: 0.2px;
+    line-height: 1.5;
+    margin: 0;
+    margin-bottom: 1.5rem;
+    margin-left:10%;
+    text-align: left;
+  }
+
+  .bannerContent >p {
+    font-size: 17px;
+    letter-spacing: 0.5px;
+    margin-left:10%;
+    text-align: left;
+    max-width:600px;
+    line-height: 1.6;
+    opacity: 0.6;
+  }
+
+  .orngBtn {
+    background-color: #FF5715;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-left:10%;
+    border: none;
+    margin-top: 20px;
+  }
+
+  .orngBtn:hover {
+    background-color: #E04001;
+  }
+
+  .underlined {
+    text-decoration: underline #FFBF66;
+  }
+  
+  .about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #f8f9fc;
+  }
+
+  .aboutContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    color: white;
+    width: 50%;
+    margin-left: 200px;
+    color: #8492A6;
+  }
+
+.aboutImg {
+  width: 35%;
+  height: auto;
+  border-radius: 8px;
+  max-width: 100%;
+}
+
+.aboutWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  flex-wrap: wrap;
+}
+
+.aboutContent >p {
+  margin-right: 20%;
+  text-align: left;
+  max-width:600px;
+  opacity: 0.6;
+  font-size: 15px;
+  color: #8492A6;
+
+}
+
+.aboutContent>.orngBtn{
+    width: 150px;
+    margin-left:0px;
+}
+
+.aboutContent >h3 {
+color:  #FF5715;
+}
+
+.aboutContent >h2{
+    margin-bottom: 24px;
+    color:#25272C;
+}
+.service{
+    width: 100%;
+
+}
+.serviceContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #f8f9fc;
+  padding:100px 0;
+  width: 100%;
+  margin: 0px 200px;
+}
