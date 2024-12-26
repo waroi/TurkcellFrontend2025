@@ -146,7 +146,6 @@ section{
     align-items: center;
     padding: 20px;
     background-color: #f8f9fc;
-    padding:100px 0;
   }
 
   .aboutContent {
@@ -198,4 +197,17 @@ color:  #FF5715;
     margin-bottom: 24px;
     color:#25272C;
 }
+.service{
+    width: 100%;
 
+}
+.serviceContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #f8f9fc;
+  padding:100px 0;
+  width: 100%;
+  margin: 0px 200px;
+}

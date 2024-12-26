@@ -1,0 +1,135 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  height: 70px;
+  padding: 25px 20px;
+  font-family: "Roboto Slab", serif;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.nav ul li {
+  display: inline;
+}
+
+.nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.nav ul li a:hover {
+  color: #ff5714;
+}
+
+.btn {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: #ff5714;
+  border: none;
+  margin-right: 0.5rem;
+}
+
+.section1 {
+  height: 100vh;
+}
+.bg-img {
+  background-image: url(1.jpg);
+  opacity: 0.9;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.text {
+  margin-left: 12rem;
+}
+
+.section1-h4 {
+  color: white;
+  font-size: 42px;
+  letter-spacing: 0.2px;
+  line-height: 1.5;
+  font-family: "Roboto Slab", serif;
+}
+.underline {
+  text-decoration: underline;
+  text-decoration-color: rgb(255, 191, 102);
+}
+
+.section1-p {
+  color: rgb(255, 255, 255, 0.8);
+  font-size: 17px;
+  font-family: "Roboto", serif;
+}
+
+.section1-btn {
+  background-color: #ff5714;
+  border: 1px solid #ff5714;
+  padding: 8px 20px;
+  outline: none;
+  text-decoration: none;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  transition: all 0.3s;
+  border-radius: 6px;
+  color: #fff;
+  font-family: "Roboto", serif;
+}
+
+.section2 {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bg-img2 {
+  background-image: url(about.jpg);
+  background-repeat: no-repeat;
+  height: 50%;
+  width: 50%;
+  background-size: contain;
+}
+
+.section2-h6 {
+  font-size: 15px;
+  font-family: "Roboto Slab", serif;
+  color: #ff5714;
+}
+
+.section2-h4 {
+  font-family: "Roboto Slab", serif;
+  font-size: 28px;
+}
+
+.section2-p {
+  font-size: 15px;
+  line-height: 1.6;
+  width: 593px;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-family: "Roboto", serif;
+}
