@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#navbar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    height: 70px;
+    
+}
+.navitem{
+    font-size: 12px;
+    letter-spacing: 0.05rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    background-color: transparent;
+    margin: 0px 6px;
+    transition: all 0.3s ease;
+    font-family: "Roboto Slab", serif;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+.logo{
+    height: 24px;
+    width: auto;
+}
+.navbtn{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 0px;
+    background-color: #FF5714;
+}
+.navbtn-logo{
+    width: 16px;
+    height: 16px;
+    color: #fff;
+}
+.container{
+    background-image: url(Image20241226192444.jpg);
+    background-size: cover;
+    width: 100%;
+    height: auto;  
+}
+.heading{
+    font-family: "Roboto Slab", serif;
+    font-size: 42px;
+    margin: 260px;
+    letter-spacing: 0.2px;
+    line-height: 1.5;
+    color: #fff;
+}
+.underlined{
+    color:#fff;
+    font-family: "Roboto Slab", serif;
+    font-size: 42px;
+}
