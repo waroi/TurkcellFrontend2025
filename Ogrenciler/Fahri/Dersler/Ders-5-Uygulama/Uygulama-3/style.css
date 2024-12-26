@@ -166,19 +166,19 @@ p {
 
 .section-service {
   background-color: #ffff;
-  padding-top: 100px;
-  padding-left: 150px;
+  padding: 100px 150px 0;
 }
 
 .service-head {
   display: flex;
   flex-direction: column;
+  width: 50%;
+  padding-right: 100px;
 }
 
 .service-p {
   display: flex;
-  padding-left: 200px;
-  padding-right: 200px;
+  width: 50%;
 }
 
 .card-icon {
@@ -188,12 +188,15 @@ p {
 }
 
 .cards-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 30px;
 }
 
 .cards {
   border: 1px solid black;
-  justify-content: center;
+}
+
+.card {
+  width: 356px;
 }
