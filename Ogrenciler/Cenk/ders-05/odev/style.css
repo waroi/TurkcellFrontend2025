@@ -35,7 +35,7 @@ body{
     width: 100%;
     height: 80px;
     margin: 0 auto;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(22, 28, 45, 0.75);
     z-index: 4;
 }
 .logo{
@@ -429,4 +429,32 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/** end of ready **/
+
+.portfolio{
+    height: 830px;
+    background-color: #f8f9fc;
+}
+
+.portfolio-div{
+    text-align: center;
+    width: 100%;
+}
+
+.portfolio-images img{
+    width: 260px;
+    height: 200px;
+    border-radius: 5px;
+}
+
+.portfolio-images{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.portfolio h4{
+    color: #ff5714;
 }
