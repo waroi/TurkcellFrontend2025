@@ -19,10 +19,9 @@
 .nav-container {
     width: 100%;
     margin: 0 38px;
-    padding: 0 120px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .menu {
@@ -265,8 +264,12 @@ p {
     height: 85px;
     border-radius: 10px;
     background-color: #ff57141A;
+    object-fit: cover;
 }
-
+.box img{
+height: 85px;
+width:85px ;
+}
 .card h4 {
     color: #24272c;
     font-size: 18px;
@@ -434,7 +437,7 @@ p {
     color: #ff5714;
     font-size: 15px;
     font-weight: 600;
-    font-family: "Roboto slab"  , serif;
+    font-family: "Roboto slab", serif;
 }
 
 .portfoliotext h4 {
@@ -504,7 +507,8 @@ p {
 .photocards8 {
     background-image: url("https://shreethemes.in/upstart/layouts/images/portfolio/8.jpg");
 }
-.backgroundimg2{
+
+.backgroundimg2 {
     background-image: url("https://shreethemes.in/upstart/layouts/images/bg/cta.png");
     width: 100%;
     height: 60vh;
@@ -512,7 +516,8 @@ p {
     background-size: cover;
     background-position: center;
 }
-.bgOverlay2{
+
+.bgOverlay2 {
     width: 100%;
     height: 60vh;
     background-color: #161C2DBF;
@@ -523,72 +528,84 @@ p {
     align-items: center;
     text-align: center;
 }
-.pricing{
+
+.pricing {
     width: 100%;
     height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 30px;
-    
+
 }
-.pricingcard{
+
+.pricingcard {
     width: 20%;
-    height: auto;  
-    border-radius:5px;
-    box-shadow: 0px 0px 6px 3px rgba(227,227,227,1);
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0px 0px 6px 3px rgba(227, 227, 227, 1);
     padding: 50px 30px;
     gap: 20px;
     display: flex;
     flex-direction: column;
-    
+
 }
+
 .pricingcard:hover {
-    box-shadow: 0 5px 13px rgba(36,39,44,0.2);
+    box-shadow: 0 5px 13px rgba(36, 39, 44, 0.2);
 }
-.pricingcard h5{
+
+.pricingcard h5 {
     font-size: 18px;
     font-weight: 600;
     font-family: "Roboto Slab", serif;
 }
-.pricingcard span{
+
+.pricingcard span {
     font-size: 42px;
-    font-family:"Roboto Slab", serif; 
+    font-family: "Roboto Slab", serif;
 
 }
+
 .pricingcard span sub,
-.pricingcard span sup{
-    font-size: 18px;  
+.pricingcard span sup {
+    font-size: 18px;
 }
-.pricingcard ul{
+
+.pricingcard ul {
     display: flex;
     flex-direction: column;
     gap: 10px;
-} 
-.pricingcard ul li{
-list-style-type: none;
-color: #8492a6;
-display: flex;
-align-items: center;
-gap: 5px;
-}  
-.pricingcard ul li::before{
-  content: url("https://img.icons8.com/?size=15&id=14298&format=png&color=000000");
-}   
-.pricingcard button{
-height: 40px;
-background-color: rgba(255,87,20,0.1);
-border: 1px solid rgba(255, 87, 20, 0.1);
-border-radius: 6px;
-box-shadow: 0 3px 5px 0 rgba(255, 87, 20, 0.1);
-color: #ff5714;
 }
-.pricingcard button:hover{
-   background-color:#ff5714 ; 
-   color: #ffffff;
-   transition: 0.2 s;
-   cursor: pointer;
+
+.pricingcard ul li {
+    list-style-type: none;
+    color: #8492a6;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
+
+.pricingcard ul li::before {
+    content: url("https://img.icons8.com/?size=15&id=14298&format=png&color=000000");
+}
+
+.pricingcard button {
+    height: 40px;
+    background-color: rgba(255, 87, 20, 0.1);
+    border: 1px solid rgba(255, 87, 20, 0.1);
+    border-radius: 6px;
+    box-shadow: 0 3px 5px 0 rgba(255, 87, 20, 0.1);
+    color: #ff5714;
+}
+
+.pricingcard button:hover {
+    background-color: #ff5714;
+    color: #ffffff;
+    transition: 0.2 s;
+    cursor: pointer;
+}
+
 .portfolio2 {
     width: 100%;
     height: 300px;
@@ -597,6 +614,7 @@ color: #ff5714;
     justify-content: center;
     background-color: #ffffff;
 }
+
 .team {
     width: 100%;
     height: 300px;
@@ -620,7 +638,7 @@ color: #ff5714;
     color: #ff5714;
     font-size: 15px;
     font-weight: 600;
-    font-family: "Roboto slab"  , serif;
+    font-family: "Roboto slab", serif;
 }
 
 .teamText h4 {
@@ -637,6 +655,7 @@ color: #ff5714;
     margin-bottom: 20px;
     text-align: center;
 }
+
 .photo2cards1 {
     background-image: url("../assets/client1.png");
 }
@@ -672,4 +691,213 @@ color: #ff5714;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+.statistics {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #f8f9fc;
+
+
+}
+.statistics h3 {
+    font-size: 30px;
+    font-weight: 600;
+    font-family: "Roboto slab", serif;
+}
+.statistics p {
+    font-size: 15px;
+    font-weight: 400;
+    color: #8492a6;
+    font-family: "Roboto", sans-serif;
+    line-height: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.partner {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #f8f9fc;
+    align-items: center;
+}
+.partner img {
+    width: 5%;
+    height: 80px;
+    object-fit: contain;
+}
+.blogs {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.blog {
+    width: 25%;
+    height: auto;
+
+    border-radius: 15px;
+    overflow: hidden;
+}
+.blog img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+.blog h5 {
+    color: #24272c;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: "Roboto slab", serif;
+}
+.blog p {
+    font-size: 15px;
+    font-weight: 400;
+    color: #8492a6;
+    font-family: "Roboto", sans-serif;
+    line-height: 24px;
+    margin-bottom: 20px;
+}
+.blog button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    display: flex;
+}
+.blogpadding {
+    display: flex;
+    gap: 25px;
+    flex-direction: column;
+    padding: 30px;
+}
+.contact {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    background-color: #f8f9fc;
+    padding-bottom: 100px;
+}
+.userform {
+    width: 45%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 6px;
+}
+.userform div {
+    display: flex;
+    width: 100%;
+    height: auto;
+    gap: 20px;
+}
+.userform div input {
+    width: 50%;
+    height: 40px;
+    background-color: white;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    outline: none;
+    padding-left: 5px;
+}
+.phone {
+    width: 30%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+.phonetext {
+    width: 100%;
+    display: flex;
+}
+.userform textarea {
+    width: 100%;
+    border-radius: 6px;
+    outline: none;
+    border: 1px solid #dee2e6;
+    resize: none;
+    padding-left: 5px;
+}
+.userform input {
+    width: 100%;
+    height: 40px;
+    border-radius: 6px;
+    outline: none;
+    border: 1px solid #dee2e6;
+    padding-left: 5px;
+}
+.userform button {
+    height: 40px;
+    background-color: #ff5714;
+    border-radius: 6px;
+    width: 120px;
+    outline: none;
+    border: none;
+    color: white;
+}
+.phoneicon {
+    width: 100px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.phonenumber {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: calc(100%-100px);
+    gap: 10px;
+}
+.phonenumber h5 {
+    font-size: 18px;
+    font-weight: 600;
+    font-family: "Roboto slab", serif;
+}
+.phonenumber p {
+    font-size: 15px;
+    font-weight: 400;
+    color: #75859b;
+    font-family: "Roboto", sans-serif;
+}
+footer {
+    width: 100%;
+    height: 100px;
+    background-color: #202942;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+footer p {
+    color: #adb5bd;
+}
+.social2{
+    display: flex;
+    gap:10px;
+}
+.social2 .spanicon{
+    border: 1px solid #283353;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #202942;
+    border-radius: 5px;  
 }

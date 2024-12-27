@@ -8,7 +8,6 @@ html {
   scroll-behavior: smooth;
 }
 
-
 body {
   font-family: "Roboto Slab", serif;
   font-optical-sizing: auto;
@@ -665,6 +664,12 @@ section {
   .what-we-do .heading {
     flex-wrap: wrap;
   }
+  .work-process-row {
+    flex-wrap: wrap;
+  }
+  .timeline > div:nth-child(even) {
+    flex-wrap: wrap-reverse !important;
+  }
 }
 
 .heading {
@@ -684,8 +689,8 @@ section {
   align-items: center;
   width: 32px;
   height: 32px;
-  border: 1px ridge gray; 
-  border-radius: 4px; 
+  border: 1px ridge gray;
+  border-radius: 4px;
   transition: all 0.3s ease;
 }
 
@@ -703,14 +708,14 @@ section {
 }
 
 .twitter {
-  background: url("./assets/twitter.png") no-repeat center ;
+  background: url("./assets/twitter.png") no-repeat center;
 }
 
 .linkedIn {
   background: url("./assets/social.png") no-repeat center;
 }
 
-.social-circle { 
+.social-circle {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -754,6 +759,66 @@ nav ul li a {
   text-decoration: none;
   color: white;
   font-weight: bold;
-  
+  font-size: 12px;
 }
 
+.timeline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 60px;
+}
+.timeline img {
+  width: 250px;
+  height: 250px;
+}
+.timeline-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  float: left;
+  padding: 0px 12px;
+  height: 600px;
+}
+.timeline-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  float: right;
+  padding: 0px 12px;
+  height: 600px;
+}
+.timeline-left-content {
+  text-align: right;
+}
+.timeline-left-content {
+  width: 550px;
+}
+.timeline-right-content {
+  width: 550px;
+}
+
+.timeline-dot {
+  width: 20px;
+  height: 20px;
+  background: #ff6b6b;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 20px;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+.work-process-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+}
+.work-process-row div {
+  max-width: 360px;
+}

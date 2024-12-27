@@ -1,4 +1,3 @@
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -12,7 +11,7 @@ header {
   position: sticky;
   background-color: white;
   z-index: 1;
-  top: 0; 
+  top: 0;
 }
 
 .header-container {
@@ -21,7 +20,13 @@ header {
   align-items: center;
 }
 
-.nav ul {
+.nav {
+  display: flex; /* Flexbox aktif edilir */
+  align-items: center; /* Dikeyde hizalar */
+  gap: 20px; /* Navigasyon ve ikonlar arasında boşluk bırakır */
+}
+
+.nav-item {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -35,13 +40,22 @@ header {
 
 .nav ul li a {
   text-decoration: none;
-  color: #333;
   font-size: 16px;
-  transition: color 0.3s;
+  color: #24272c;
+  font-size: 12px;
+  letter-spacing: 0.05rem;
+  font-weight: 600;
+  margin: 0px 6px;
+  font-family: "Roboto Slab", serif;
 }
 
 .nav ul li a:hover {
   color: #ff5714;
+}
+
+.nav-icon {
+  display: flex; /* İkonları yatayda hizalar */
+  gap: 0px; /* İkonlar arasındaki boşluğu azaltır */
 }
 
 .btn {
@@ -50,9 +64,13 @@ header {
   border-radius: 50%;
   background-color: #ff5714;
   border: none;
-  margin-right: 0.5rem;
+  margin-right: 0.25rem;
+  color: white;
 }
 
+.btn i {
+  font-size: 1rem;
+}
 .section1 {
   height: 100vh;
 }
@@ -82,6 +100,7 @@ header {
 .underline {
   text-decoration: underline;
   text-decoration-color: rgb(255, 191, 102);
+  text-underline-offset: 8px;
 }
 
 .section1-p {
@@ -109,8 +128,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #F8F9FC;
- 
+  background-color: #f8f9fc;
 }
 
 .bg-img2 {
@@ -123,8 +141,6 @@ header {
   width: 30%;
   background-size: contain;
   border-radius: 10px;
-  
-  
 }
 
 .section2-h6 {
@@ -146,30 +162,122 @@ header {
   margin-top: 1.33rem;
   margin-bottom: 1rem;
   font-family: "Roboto", serif;
-  color: #8492A6;
+  color: #8492a6;
 }
 
-
-.section2-cover{
+.section2-cover {
   margin-left: 5rem;
   margin-bottom: 7rem;
 }
 
-
-.icon{
+.icon {
   background-color: white;
   width: 75px;
   height: 75px;
-  border-radius:50%;
+  border-radius: 50%;
   margin-bottom: 50px;
   text-decoration: none;
 }
 
-.icon i{
+.icon i {
   width: 75px;
   height: 75px;
   display: flex;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
-  
+}
+
+.section3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 0;
+}
+.section3-h3 {
+  font-size: 15px;
+  font-family: "Roboto Slab", serif;
+  color: #ff5714;
+  margin-left: 0;
+}
+.section3-h2 {
+  font-size: 28px;
+  font-family: "Roboto Slab", serif;
+}
+.section3-cover {
+  margin-left: 5rem;
+  margin-top: 2rem;
+}
+
+.section4 {
+  margin: 0 10%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+}
+
+.card1-icon i {
+  background: rgba(255, 87, 20, 0.1);
+  color: #ff5714;
+  border-radius: 10px;
+  height: 85px;
+  width: 85px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  margin: 1rem;
+  width: 25%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  border-radius: 30px;
+  padding: 1rem;
+}
+
+.card:hover {
+  box-shadow: #24272c;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+.card2,
+.card4,
+.card6 {
+  box-shadow: #24272c;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.section4-content {
+  margin: 1rem 0;
+}
+
+.section4-content a {
+  color: #24272c;
+  text-decoration: none;
+  font-family: "Roboto Slab", serif;
+}
+
+.section4-a {
+  font-size: 18px;
+  margin: 1rem 0;
+}
+.section4-content a:hover {
+  color: #ff5714;
+}
+
+.section4-p {
+  color: #8492a6;
+  font-size: 15px;
+  font-family: "Roboto", serif;
+  margin: 1rem 0;
+}
+
+.section4-a2 {
+  font-family: "Roboto", serif;
+  font-size: 1rem;
 }
