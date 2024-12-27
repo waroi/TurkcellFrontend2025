@@ -477,6 +477,20 @@ svg{
     max-width: 150px;
     margin-bottom: 20px;
   }
+  .card-images {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px; 
+    justify-content: center; 
+    align-items: center; 
+  }
+  
+  .card-image img {
+    width: 261px;
+    height: 196px;
+    object-fit: cover; 
+    border-radius: 6px;
+  }
   
   @media screen and (max-width: 768px) {
     .timeline-item {
