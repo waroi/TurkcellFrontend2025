@@ -47,8 +47,14 @@ body{
     align-items: center;
     justify-content:space-between;
     width: 60%;
-    height: 80px;
     margin: 0 auto;
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    height: 80px;
+    width: 100%;
 }
 
 .content{
@@ -152,18 +158,22 @@ body{
 
 .what-we-do{
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     margin-top: 7rem;
-    height: 900px;
+    height: 2000px;
 }
 
 .what-we-do-p{
     margin-left: 250px;
     width: 60%;
+
+    margin-bottom: 7rem;
 }
 
 .what-we-do-h{
     width: 40%;
+
+    margin-bottom: 7rem;
 }
 
 .cards{
@@ -175,6 +185,34 @@ body{
 .card {
     width: 350px;
     height: 315px;
-    background-color: black;
+    background-color: white;
     margin-bottom: 15px;
+    border-radius: 20px;
+    padding: 25px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
+
+.ikon{
+    width: 85px;
+    height: 85px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255,87,20,0.1);
+    color: #ff5714;
+    border-radius: 10px;
+}
+
+
+.card:nth-child(even) {
+    box-shadow: 0 25px 25px rgba(36, 39, 44, 0.05);
+  }
+
+.card a{
+    text-decoration: none;
+    color: black;
+}
+
