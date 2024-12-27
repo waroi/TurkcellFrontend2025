@@ -82,40 +82,229 @@ nav > div {
   gap: 10px;
 }
 
+section{
+    display: flex; /* or inline-flex */
+}
+
 .bgImage {
     background-image: url("https://shreethemes.in/upstart/layouts/images/bg/1.jpg");
     width: 100%;
-    height: auto;
-    background-position-x: center;
-    background-position-y: center;
-    background-size: contain;
-    position: relative;
+    height: 90vh;
+    background-position: center; 
+    background-size: cover;
     background-repeat: no-repeat;
-
     color: white;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 20%;
   }
 
+  .bannerContent >h1 {
+    max-width: 100%;
+    font-size: 42px;
+    letter-spacing: 0.2px;
+    line-height: 1.5;
+    margin: 0;
+    margin-bottom: 1.5rem;
+    margin-left:10%;
+    text-align: left;
+  }
 
-.banner-text {
+  .bannerContent >p {
+    font-size: 17px;
+    letter-spacing: 0.5px;
+    margin-left:10%;
+    text-align: left;
+    max-width:600px;
+    line-height: 1.6;
+    opacity: 0.6;
+  }
+
+  .orngBtn {
+    background-color: #FF5715;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-left:10%;
+    border: none;
+    margin-top: 20px;
+  }
+
+  .orngBtn:hover {
+    background-color: #E04001;
+  }
+
+  .underlined {
+    text-decoration: underline #FFBF66;
+  }
+  
+  .about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #f8f9fc;
+  }
+
+  .aboutContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    color: white;
+    width: 50%;
+    margin-left: 200px;
+    color: #8492A6;
+  }
+
+.aboutImg {
+  width: 35%;
+  height: auto;
+  border-radius: 8px;
   max-width: 100%;
-  padding-right: calc(1.5rem* .5);
-  padding-left: calc(1.5rem* .5);
-  margin-top: 0;
-  position: absolute;
-  top: 50%; /* Ortalamak için */
-  left: 20%;
-  transform: translate(-50%, -50%);
-  color: white;
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7); /* Yazıyı daha okunaklı yapmak için gölge */
 }
 
-.banner-text h1 {
-  font-size: 42px !important;
-  letter-spacing: 0.2px;
-  line-height: 1.5;
-  margin: 0;
-  margin-bottom: 1.5rem;
-  margin-left:10%;
+.aboutWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  flex-wrap: wrap;
+}
+
+.aboutContent >p {
+  margin-right: 20%;
   text-align: left;
+  max-width:600px;
+  opacity: 0.6;
+  font-size: 15px;
+  color: #8492A6;
+
 }
 
+.aboutContent>.orngBtn{
+    width: 150px;
+    margin-left:0px;
+}
+
+.aboutContent >h3 {
+color:  #FF5715;
+}
+
+.aboutContent >h2{
+    margin-bottom: 24px;
+    color:#25272C;
+}
+.service{
+    width: 100%;
+    padding: 5% 0;
+    display: flex;
+    flex-direction: column;
+}
+.serviceHeader {
+padding: 2.6%;
+}
+
+.serviceContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 100px;
+  width: 100%;
+}
+.serviceContent >p{
+    color: #8492A6;
+}
+.serviceHeader > h2 {
+    font-size: 32px;
+    font-weight: 600;
+    margin: 20px 0;
+    color: #333;
+}
+.serviceHeader > h3 {
+    color: #ff5714;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+.serviceCard{
+    padding: 8px 18px;
+    flex-direction: column;
+    align-items: flex-start;
+    align-content: flex-start;
+    text-align: center;
+    display: flex;
+    border-radius: 30px;
+    width: 350px;
+    height: 271px;
+    margin-bottom: 10px;
+}
+
+.serviceWrapper {
+  align-items: center;
+  padding: 0px 100px;
+}
+
+.wrapper2{
+  padding: 2.6%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.wrapper2 :nth-child(even) {
+  box-shadow:0 25px 25px rgba(36,39,44,0.05);}
+
+  .wrapper2 :nth-child(odd):hover {
+  box-shadow: 0 25px 25px rgba(36,39,44,0.05);
+  transition: 0.5s;
+}
+
+.orangeBox{
+  background-color: #FFEFEB;
+  border-radius: 10px;
+  width: 85px;
+  height: 85px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+}
+
+.cardButton{
+  border: none;
+  margin-top: 20px;
+  background-color: transparent;
+  margin-top: 5%;
+  font-size: 16px;
+}
+
+.cardButton:hover{
+  text-decoration: underline;
+  color:#FF5715;
+}
+
+.cardContent{
+  text-align: left;
+  align-items: center;
+  box-shadow: none !important;
+  margin: 10% 0;
+}
+
+.cardContent p {
+  box-shadow: none !important;
+  margin-top: 5%;
+  color:#8492A6;
+}
+
+.cardContent h3 {
+  color: #333;;
+}
+
+.cardContent h3:hover {
+  color:#FF5715;
+  box-shadow: none !important;
+}

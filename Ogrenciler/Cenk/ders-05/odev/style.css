@@ -3,18 +3,178 @@
     margin: 0;
     padding: 0;
 }
+
+p {
+    color: #8492a6 ;
+}
+
+body{
+    line-height: 1.6;
+    font-family: "Roboto Slab",serif;
+}
+
 .topImage{
-    background: url("https://shreethemes.in/upstart/layouts/images/bg/1.jpg");
+    background: url("https://shreethemes.in/upstart/layouts/images/bg/1.jpg") center center ;
+    height: 50rem;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    z-index: 1;
+}
+.background{
+    z-index: 3;
+    background: rgba(0, 0, 0, 0.6);
     width: 100%;
-    height: 1080px;
-    background-size: contain;
-    background-repeat: no-repeat;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
 }
 .nav{
     position: fixed;
+    width: 100%;
+    height: 80px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 4;
 }
 .logo{
-    background-image: url("https://shreethemes.in/upstart/layouts/images/bg/1.jpg");
-    background-size: contain;
-    background-repeat: no-repeat;
+   height: 30px;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    width: 60%;
+    height: 80px;
+    margin: 0 auto;
+}
+
+.content{
+    display: flex;
+    align-items: center;
+}
+.nav-list{
+    display: flex;
+    list-style: none;
+}
+
+.nav-item{
+    margin: 8px;
+}
+
+.social-media{
+    margin-left: 10px;
+}
+
+.social-media-items{
+    display: flex;
+    list-style: none;
+}
+
+.content a {
+    text-decoration: none;
+    color: white;
+}
+
+.media-item{
+    background-color: white;
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    border-radius: 50%;
+}
+
+.media-item a {
+    text-align: center;
+}
+
+.media-item i{
+    color: black;
+}
+
+.AnaEkran{
+    margin-bottom: 1.5rem;
+
+}
+
+
+.anaBaslik{
+    color: white;
+    font-size: 42px;
+    margin-bottom: 1.5rem;
+}
+
+.anaYazi{
+    color: white;
+    width: 50%;
+    font-size: 17px;
+    margin-bottom: 1.5rem;
+}
+
+.btn{
+    padding: 12px 20px;
+    background-color: #ff5714 ;
+    color: white;
+    font-size: 16px;
+    border: 0;
+    border-radius: 6px;
+}
+
+/*--------------------------------*/
+
+.about{
+    display: flex;
+    align-items: center;
+    height: 800px;
+    background-color: #f8f9fc;
+}
+
+.about-image{
+    margin-right: 0;
+}
+
+.about img{
+    width: 80%;
+}
+
+.about-text{
+    width: 50%;
+    padding: 0 50px;
+}
+
+.mt1{
+    margin-top: 1rem;
+}
+
+/*** end of about ***/
+
+.what-we-do{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 7rem;
+    height: 900px;
+}
+
+.what-we-do-p{
+    margin-left: 250px;
+    width: 60%;
+}
+
+.what-we-do-h{
+    width: 40%;
+}
+
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card {
+    width: 350px;
+    height: 315px;
+    background-color: black;
+    margin-bottom: 15px;
 }
