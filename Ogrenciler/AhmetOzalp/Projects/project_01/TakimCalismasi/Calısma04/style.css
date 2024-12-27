@@ -1,4 +1,4 @@
-*, ::after, ::before {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -114,13 +114,7 @@ svg{
     background-size: cover;
     padding: 0 10%;
 }
-/* .background{
-    background: url('assests/background.jpg') center center;
-    height: 100vh;
-    width: 100%; 
-    position: relative;
-    opacity: 0.9;
-} */
+
 .background .home_container {
     width: 50%;
     height: 100%;
@@ -548,7 +542,58 @@ svg{
     font-size: 12px;
     text-decoration: none;
   }
-  
+
+
+  .banner {
+    background-image: url(img/bannerbg.png); 
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner_cont {
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.banner_cont  h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.banner_cont  p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+.banner_cont button{
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.banner_cont button:hover{
+  background-color: #e55d00;
+}
   
   @media screen and (max-width: 768px) {
     .timeline-item {
