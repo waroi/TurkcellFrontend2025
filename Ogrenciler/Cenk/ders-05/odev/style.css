@@ -297,3 +297,44 @@ body{
     align-items: center;
     gap: 15px;
 }
+.blogs{
+    height: 800px;
+}
+.blogs-div{
+    text-align: center;
+    width: 100%;
+}
+.blogs-div h4{
+    color: #ff5714;
+}
+.latest{
+    text-align: center;
+    margin: 80px;
+}
+.blog-image img{
+    width: 350px;
+    height: 220px;
+    border-top-left-radius: 10px;    
+    border-top-right-radius: 10px;    
+}
+.blog-card{
+    border-radius: 10px;
+    border: rgb(128, 128, 128, 0.3) 0.6px solid;
+    width: 350px;
+    height: 450px;
+    text-align: left;
+}
+.blog-cards{
+    display: flex;
+    justify-content: space-around;
+}
+.blog-card a{
+    text-decoration: none;
+    color: black;
+}
+.card-text{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 10px;
+}
