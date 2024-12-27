@@ -21,25 +21,23 @@ body{
 }
 
 .logo {
-  stroke-linecap: round;
+  position: relative;
+  top:-3px;
+  left: -3px;
   width: 24px;
   height: 24px;
   fill: none;
   stroke: black;
-  stroke-width: 2px;  
+  stroke-width: 1.5px;  
+  margin: 5px;
 }
 
 .logo-bg {
   background-color: white;
   width: 30px;
   height: 30px;
-  border: 2px solid black;
+  border: 1px solid black;
   border-radius: 50%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  margin: 0 5px;
 }
 
 nav {
@@ -413,7 +411,18 @@ padding: 2.6%;
 }
 
 @media screen and (max-width:576px) {
+  .rowWorkProcess{
+    height: 50vh;
+    height: 50vh;
+  }
 
+  .first >p{
+    font-size: 14px;
+  }
+
+  .last >p{
+    font-size: 14px;
+  }
   .workProcess :nth-child(2n+1){
     .middle{
       order: 1;
@@ -423,6 +432,19 @@ padding: 2.6%;
     }
     .last{
       order: 2;
+    }
+    .first>p{
+      text-align: left;
+      margin-right:0%;
+      margin-left:10%;
+
+
+    }
+    .first>h3{
+      text-align: left;
+      margin-right:0%;
+      margin-left:10%;
+
     }
   }
 
@@ -451,4 +473,28 @@ padding: 2.6%;
     }
   }
 
+}
+
+.workProcessHeaderContent > h3 {
+  color: #ff5714;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+.workProcessHeaderContent > h2 {
+  font-size: 32px;
+  font-weight: 600;
+  margin: 20px 0;
+  color: #333;
+}
+
+.workProcessHeaderContent{
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
