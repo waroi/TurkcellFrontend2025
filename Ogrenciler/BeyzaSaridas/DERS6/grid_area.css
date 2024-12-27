@@ -1,0 +1,41 @@
+.container{
+   display: grid;
+   height: 600px;
+   background-color: blueviolet;
+   gap: 5px;
+   grid-template-areas:
+   "header header header" /*3 birim header*/
+   "sidebar section section"/*1 sidebar 2 birim secion, eğer nokta koysaydık orası boş olurdu */
+   "sidebar .."
+   "footer footer"
+   "box1 box2 box3";
+}
+.header{
+   grid-area: header;
+   padding: 20px;
+   background-color:rgb(red, green, blue) ;
+}
+.section{
+   grid-area: section;
+   background-color: aqua;
+   padding: 20px;
+}
+.footer{
+   grid-area: footer;
+   background-color: bisque;
+   padding: 20px;
+}
+.sidebar{
+   grid-area: sidebar;
+   background-color: chartreuse;
+   padding: 20px;
+}
+.box1{
+   background-color: rgb(237, 184, 100);
+}
+.box2{
+   background-color: rgb(194, 237, 100);
+}
+.box3{
+   background-color: rgb(237, 100, 191);
+}

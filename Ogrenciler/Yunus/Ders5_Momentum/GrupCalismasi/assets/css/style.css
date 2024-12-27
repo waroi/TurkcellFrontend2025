@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 :root {
     --main-color: #ff5714;
@@ -11,7 +11,12 @@
     font-family: "Roboto Slab", serif;
 }
 
-nav, .hero-texts, .main-about, .main-cta, .pricing {
+nav,
+.hero-texts,
+.footer-main,
+.main-about,
+.main-cta, .portfolio-img-container,
+.pricing {
     max-width: 60%;
     line-height: 1.6;
     margin: 0 auto;
@@ -25,30 +30,44 @@ nav, .hero-texts, .main-about, .main-cta, .pricing {
     margin: 0 auto;
 }
 
-.section-title, .pricing-title {
+.section-title,
+.pricing-title,
+.portfolio-title,
+.ourteam-title {
     font-size: 15px;
     color: var(--main-color);
 }
-
 
 .wwdo-content {
     display: flex;
     justify-content: space-between;
 }
 
-.wwdo-content h1, .wwdo-content p {
+.wwdo-content h1,
+.wwdo-content p {
     max-width: 50%;
 }
 
-.wwdo-title, .about-title, .cta-title, .pricing-sub-title {
+.wwdo-title,
+.about-title,
+.cta-title,
+.pricing-sub-title,
+.portfolio-sub-title,
+.ourteam-sub-title {
     font-size: 28px;
 }
 
-.about-title, .cta-title, .pricing-sub-title {
-    margin-top: .7rem;
+.about-title,
+.cta-title,
+.pricing-sub-title {
+    margin-top: 0.7rem;
 }
 
-.wwdo-desc, .about-desc, .cta-desc, .pricing-desc {
+.wwdo-desc,
+.about-desc,
+.cta-desc,
+.pricing-desc,
+.portfolio-desc, .ourteam-desc {
     color: #8492a6;
     font-family: "Roboto", sans-serif;
     font-size: 15px;
@@ -93,11 +112,15 @@ nav, .hero-texts, .main-about, .main-cta, .pricing {
     color: #000;
 }
 
-.jobs-title:hover, .jobs-read-more:hover {
+.jobs-title:hover,
+.jobs-read-more:hover {
     color: var(--main-color);
 }
 
-.jobs-desc, .about-desc, .cta-desc, .pricing-desc {
+.jobs-desc,
+.about-desc,
+.cta-desc,
+.pricing-desc {
     margin: 1rem 0;
 }
 
@@ -109,7 +132,8 @@ nav, .hero-texts, .main-about, .main-cta, .pricing {
     color: #24272c;
 }
 
-.jobs:hover, .jobs:nth-child(2n) {
+.jobs:hover,
+.jobs:nth-child(2n) {
     box-shadow: 0 25px 25px rgba(36, 39, 44, 0.05);
 }
 
@@ -124,6 +148,14 @@ nav, .hero-texts, .main-about, .main-cta, .pricing {
     padding-top: 17px;
 }
 
+.hamburger-icon {
+    display: none;
+}
+
+nav {
+    margin-bottom: 0;
+}
+
 .list-group {
     list-style-type: none;
     gap: 1rem;
@@ -132,7 +164,7 @@ nav, .hero-texts, .main-about, .main-cta, .pricing {
 
 .list-link {
     text-decoration: none;
-    color: #fff;
+    color: #000;
     letter-spacing: 0.05rem;
     text-transform: uppercase;
     margin: 0px 6px;
@@ -140,6 +172,10 @@ nav, .hero-texts, .main-about, .main-cta, .pricing {
     font-size: 12px;
     font-weight: 600;
     font-family: "Roboto Slab", serif;
+}
+
+.list-link:hover, .list-link-active {
+    color: #ff5714;
 }
 
 .list-group-box {
@@ -155,13 +191,13 @@ nav, .hero-texts, .main-about, .main-cta, .pricing {
 }
 
 .social-media a svg {
-    color: black;
+    color: white;
     height: 16px;
     font-size: 16px;
 }
 
 .social-media a {
-    background: #fff;
+    background: #ff5714;
     height: 30px;
     width: 30px;
     display: flex;
@@ -170,9 +206,8 @@ nav, .hero-texts, .main-about, .main-cta, .pricing {
     border-radius: 50%;
 }
 
-
 .hero-bg {
-    background-image: url('../images/hero.jpg');
+    background-image: url("../images/hero.jpg");
     background-size: cover;
     width: 100%;
     z-index: 1;
@@ -183,7 +218,7 @@ nav, .hero-texts, .main-about, .main-cta, .pricing {
 }
 
 .overlay-bg {
-    background-color: rgba(22, 28, 45, 0.75)
+    background-color: rgba(22, 28, 45, 0.75);
 }
 
 .hero-title {
@@ -214,6 +249,7 @@ nav, .hero-texts, .main-about, .main-cta, .pricing {
 }
 
 navbar {
+    background-color: #fff;
     position: fixed;
     width: 100%;
     z-index: 553245235;
@@ -225,7 +261,9 @@ navbar {
     position: relative;
 }
 
-.hero-button, .about-button, .cta-button {
+.hero-button,
+.about-button,
+.cta-button {
     padding: 10px 20px;
     outline: none;
     text-decoration: none;
@@ -240,7 +278,9 @@ navbar {
     box-shadow: 0 3px 5px 0 rgba(255, 87, 20, 0.1);
 }
 
-.hero-button:hover, .about-button:hover, .cta-button:hover {
+.hero-button:hover,
+.about-button:hover,
+.cta-button:hover {
     background-color: #e04000;
     border-color: #e04000;
 }
@@ -271,7 +311,9 @@ navbar {
     border-radius: 10px !important;
 }
 
-.about-desc, .cta-desc, .pricing-desc {
+.about-desc,
+.cta-desc,
+.pricing-desc {
     margin-top: 1.2552rem;
     margin-bottom: 1.552rem;
 }
@@ -299,11 +341,11 @@ navbar {
 /* ====================== CTA ====================== */
 
 .cta {
-    background-image: url('../images/cta.png');
+    background-image: url("../images/cta.png");
     background-size: cover;
     background-position: center;
     width: 100%;
-    margin: 3.5rem 0;
+
     position: relative;
     height: 380px;
 }
@@ -329,6 +371,7 @@ navbar {
 }
 
 .pricing-title {
+    margin-top: 3rem;
     font-size: 17px;
     text-align: center;
 }
@@ -389,7 +432,7 @@ navbar {
 }
 
 .price-info p {
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
     font-family: "Roboto", sans-serif;
 }
 
@@ -420,15 +463,208 @@ navbar {
     color: #fff !important;
 }
 
+/* ====================== PORTFOLİO ====================== */
+
+.portfolio-section {
+    background-color: #f8f9fc;
+    padding-bottom: 80px;
+}
+
+.portfolio-title-container {
+    text-align: center;
+    padding-top: 100px;
+}
+
+/* .portfolio-title{
+  font-size: 15px;
+  color: var(--main-color);
+} */
+
+.portfolio-sub-title {
+    letter-spacing: 0.5px;
+    margin: 0.7rem 0 1.2rem 0;
+    /* font-size: 28px; */
+}
+
+.portfolio-desc {
+    padding: 0 300px;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+
+    /* color: #8492a6;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px; */
+}
+
+.portfolio-img-container {
+    justify-content: center;
+    padding: 0 100px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px !important;
+    margin: 0 auto;
+}
+
+.portfolio-img-card {
+    margin: 14px;
+}
+
+.portfolio-img {
+    height: 193.5px;
+    width: 258px;
+    border-radius: 5px;
+}
+
+/* ====================== Our Team ====================== */
+
+.ourteam-section {
+    background-color: #f8f9fc;
+    padding-bottom: 80px;
+}
+
+.ourteam-title-container {
+    text-align: center;
+    padding-top: 100px;
+}
+
+.ourteam-sub-title {
+    letter-spacing: 0.5px;
+    margin: 0.7rem 0 1.2rem 0;
+}
+
+.ourteam-desc {
+    padding: 0 480px;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+}
+
+.ourteam-img-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0 100px;
+}
+
+.ourteam-img-card {
+    margin: 14px;
+}
+
+.ourteam-img {
+    height: 258px;
+    width: 258px;
+    border-radius: 5px;
+}
+
+/*ourteam-number-container*/
+.ourteam-number-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 282px;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    margin: 2.5rem 0;
+}
+
+.ourteam-number {
+    width: 25%;
+}
+
+.oteam-number {
+    font-size: 30px;
+    font-family: "Roboto Slab", serif;
+    line-height: 1.5;
+    font-weight: 600;
+}
+
+.oteam-text {
+    color: #8492a6;
+    font-size: 15px;
+    font-weight: 400;
+    font-family: "Roboto", sans-serif;
+}
+
+.ourteam-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 120px;
+}
+
+.svg {
+    width: 75px;
+    height: 75px;
+}
+
+/* ====================== FOOTER ====================== */
+
+footer {
+    background-color: #202942;
+}
+
+.footer-main {
+    margin-bottom: 0;
+    display: flex;
+    padding: 11px 0;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-main p {
+    color: #adb5bd;
+    font-size: 15px;
+}
+
+.footer-main .social-media a {
+    background-color: transparent;
+    border-radius: 5px;
+}
+
+.footer-main .social-media a svg {
+    color: #adb5bd;
+    border: 1px solid #283353;
+    transition: all 0.5s ease;
+    height: 32px;
+    padding: 6px;
+    border-radius: 5px;
+    width: 32px;
+}
+
+
+.footer-main .social-media a:hover>svg {
+    color: white;
+    background-color: #ff5714;
+}
+
+
+/* ====================== MEDİA SCREEN ====================== */
+
 @media screen and (max-width: 1600px) {
     .pricing {
         max-width: 80%;
     }
 }
 
-@media screen and (max-width: 1200px) {
-    .wwdo, header, .hero-texts, .main-about, .main-cta, .pricing {
+
+@media screen and (max-width: 1300px) {
+    header {
+        max-width: 100%;
+    }
+
+    .wwdo, nav, .hero-texts, .portfolio-img-container, .main-about,
+    .main-cta, .footer-main,
+    .pricing {
         max-width: 90%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .portfolio-desc, .ourteam-desc {
+        padding: 0 200px;
+    }
+
+    .portfolio-img-container {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
@@ -437,11 +673,29 @@ navbar {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .hamburger-icon {
+        display: block;
+        width: 25px;
+    }
+
+    .portfolio-img-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ourteam-number-container {
+        padding: 0 100px;
+    }
+
+    .list-group-box {
+        display: none;
+    }
+
     .hero-desc {
         max-width: 100%;
     }
 
-    .cta-desc, .pricing-desc {
+    .cta-desc,
+    .pricing-desc {
         padding: 0 0;
     }
 }
@@ -449,6 +703,15 @@ navbar {
 @media screen and (max-width: 768px) {
     .about-row {
         flex-direction: column;
+    }
+
+    .footer-main {
+        flex-direction: column;
+        padding: 30px 0;
+    }
+
+    .ourteam-number-container {
+        padding: 0 30px;
     }
 
     .price-wrapper {
@@ -471,16 +734,49 @@ navbar {
         gap: 30px;
     }
 
+    .portfolio-img-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .ourteam-icons {
+        padding: 0 30px;
+    }
+
+    .ourteam-number-container {
+        padding: 0;
+    }
+
+    .oteam-number {
+        font-size: 18px;
+    }
+
+    .portfolio-desc, .ourteam-desc {
+        padding: 0 50px;
+    }
+
+    .about {
+        overflow: hidden;
+    }
+
+    .hero-title {
+        font-size: 28px;
+    }
+
+    .hero-bg {
+        padding: 130px 0;
+    }
+
+    .main-cta {
+        padding: 30px 0 0 0;
+    }
+
     .price-wrapper {
         grid-template-columns: repeat(1, 1fr);
         justify-content: center;
     }
 
-    .price-wrapper .price:nth-child(3) {
-        grid-column: span 1;
-    }
-
-    .wwdo-content h1, .wwdo-content p {
+    .wwdo-content h1,
+    .wwdo-content p {
         max-width: 100%;
     }
 
