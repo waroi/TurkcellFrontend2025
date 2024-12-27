@@ -1,25 +1,171 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+header {
+  background-color: #fffdec;
+  height: 200px;
+  color: rgb(100, 109, 109);
+  font-size: 3rem;
+  text-align: center;
+  font-family: "Lavishly Yours", serif;
+}
+nav {
+  font-family: "Dancing Script", serif;
+}
+nav ul {
+  background-color: #86a788;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 2.5rem;
+}
+nav ul li {
+  display: inline;
+  font-size: 1.5rem;
+}
+nav ul li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.container {
+  margin: 0 auto;
+  background-color: #ffcfcf;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.category {
+  width: 100%;
+  margin-top: 20px;
+}
+.category h2 {
+  font-size: 2rem;
+  color: #6a6a6a;
+  margin-bottom: 10px;
+  font-family: "Dancing Script", serif;
+}
+.card-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.card {
+  width: 350px;
+  height: 350px;
+  border: 2px solid #86a788;
+  border-radius: 25px;
+  margin: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffe2e2;
+}
+.fav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.fav h2 {
+  margin: auto;
+}
+.fav i {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+}
+img {
+  margin-top: 0.5rem;
+  width: 200px;
+  height: 100px;
+}
+.price {
+  margin-top: 0.5rem;
+}
+.card_footer {
+  padding: 0.5rem;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  border: 2px solid #86a788;
+  border-radius: 25px;
+}
+.tasma {
+  font-size: 1.25rem;
+}
+.margin {
+  margin-top: 0.25rem;
+}
+h2 {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+}
+
+.footer {
+  background-color: #fffdec;
+  color: rgb(100, 109, 109);
+  padding: 20px 0;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-section {
+  flex: 1;
+  margin: 10px;
+  min-width: 200px;
+}
+
+.footer-section h4 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #86a788;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 5px 0;
+}
+
+.footer-section ul li a {
+  color: #86a788;
+  text-decoration: none;
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  border-top: 1px solid #444;
+  padding-top: 10px;
+}
+
+@media screen and (max-width: 768px) {
   header {
-    background-color: #fffdec;
-    height: 200px;
-    color: rgb(100, 109, 109);
-    font-size: 3rem;
-    text-align: center;
-    font-family: "Lavishly Yours", serif;
-  }
-  nav {
-    font-family: "Dancing Script", serif;
+    font-size: 2.5rem;
   }
   nav ul {
+    display: block;
     background-color: #86a788;
-    display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
-    height: 2.5rem;
+    height: auto;
   }
   nav ul li {
     display: inline;
@@ -32,127 +178,13 @@
     padding: 14px 16px;
     text-decoration: none;
   }
-  .container {
-    margin: 0 auto;
-    background-color: #ffcfcf;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .category {
-    width: 100%;
-    margin-top: 20px;
-  }
-  .category h2 {
-    font-size: 2rem;
-    color: #6a6a6a;
-    margin-bottom: 10px;
-    font-family: "Dancing Script", serif;
-  }
-  .card-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .card {
-    width: 350px;
-    height: 350px;
-    border: 2px solid #86a788;
-    border-radius: 25px;
-    margin: 20px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #ffe2e2;
-  }
-  .fav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-  }
-  .fav h2 {
-    margin: auto;
-  }
-  .fav i {
-    font-size: 1.5rem;
-    margin-right: 1rem;
-  }
-  img {
-    margin-top: 0.5rem;
-    width: 200px;
-    height: 100px;
-  }
-  .price {
-    margin-top: 0.5rem;
-  }
-  .card_footer {
-    padding: 0.5rem;
-    margin-top: 1rem;
-    display: flex;
-    flex-direction: row;
-    border: 2px solid #86a788;
-    border-radius: 25px;
-  }
-  .tasma {
-    font-size: 1.25rem;
-  }
-  .margin {
-    margin-top: 0.25rem;
-  }
-  h2 {
-    border-top: 1px solid #ccc; 
-    border-bottom: 1px solid #ccc; 
-    padding: 10px 0; 
-  }
+}
 
-  .footer {
-    background-color: #fffdec;
-    color: rgb(100, 109, 109);
-    padding: 20px 0;
-    text-align: center;
-    font-family: Arial, sans-serif;
-  }
-  
-  .footer-container {
+@media screen and (max-width: 600px) {
+  header {
+    font-size: 2rem;
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap; 
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 20px;
+    justify-content: center;
+    align-items: center;
   }
-  
-  .footer-section {
-    flex: 1;
-    margin: 10px;
-    min-width: 200px;
-  }
-  
-  .footer-section h4 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-    color: #86a788; 
-  }
-   
-  .footer-section ul {
-    list-style: none;
-    padding: 0;
-    margin: 5px 0;
-  }
-  
-  .footer-section ul li a {
-    color: #86a788;
-    text-decoration: none;
-  }
-  
-  .footer-bottom {
-    margin-top: 20px;
-    font-size: 0.9rem;
-    border-top: 1px solid #444;
-    padding-top: 10px;
-  }
-  
+}

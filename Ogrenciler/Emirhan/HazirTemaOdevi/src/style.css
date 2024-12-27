@@ -1,0 +1,597 @@
+* {
+    box-sizing: content-box;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar {
+    width: 100%;
+    height: 70px;
+    background-color: #ffffff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    font-family: "Roboto Slab", serif;
+}
+
+.nav-container {
+    width: 100%;
+    margin: 0 38px;
+    padding: 0 120px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.navbar ul li a {
+    color: #24272c;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.navbar ul li a:hover {
+    color: #ff5714;
+
+}
+
+.navbar img {
+    width: 105px;
+    height: 24px;
+}
+
+.social {
+    display: flex;
+    gap: 10px;
+}
+
+.social span {
+    width: 30px;
+    height: 30px;
+    background-color: #ff5714;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social span:hover {
+    background-color: #e6490c;
+    cursor: pointer;
+}
+
+.backgroundimg {
+    background-image: url("../assets/banner.jpg");
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bgOverlay {
+    width: 100%;
+    height: 100vh;
+    background-color: #161C2DBF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+}
+
+.overlaytext {
+    margin-left: 210px;
+}
+
+h4 {
+    font-size: 42px;
+    font-weight: 600;
+    color: #ffffff;
+    font-family: "Roboto Slab", serif;
+}
+
+p {
+    font-size: 17px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, .5);
+    font-family: "Roboto", sans-serif;
+}
+
+.primaryBtn {
+    background-color: #ff5714;
+    color: #ffffff;
+    width: 128px;
+    height: 42px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 1px solid #ff5714;
+}
+
+.underline {
+    text-decoration: underline;
+    text-decoration-color: #FFBF66;
+}
+
+.story {
+    background-color: #f8f9fc;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+
+}
+
+.storyimg {
+    width: 45%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.storytext {
+    width: 55%;
+    height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+.storytext h6 {
+    color: #ff5714;
+    font-size: 15px;
+}
+
+.storytext h4 {
+    color: #24272c;
+    font-size: 28px;
+}
+
+.storytext p {
+    font-size: 15px;
+    font-weight: 400;
+    color: #8492a6;
+    font-family: "Roboto", sans-serif;
+    line-height: 24px;
+    margin-bottom: 20px;
+}
+
+.pstory {
+    width: 70%;
+    height: auto;
+
+}
+
+.business {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.business p {
+    font-size: 15px;
+    font-weight: 400;
+    color: #8492a6;
+    font-family: "Roboto", sans-serif;
+    line-height: 24px;
+    margin-bottom: 20px;
+
+}
+
+.business h6 {
+    color: #ff5714;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.business h4 {
+    color: #24272c;
+    font-size: 28px;
+}
+
+.business div {
+
+    height: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.businessdiv1 {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 30%;
+
+}
+
+.businessdiv2 {
+    align-items: center;
+    width: 50%;
+}
+
+.businesscard {
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.businessInner {
+    width: 80%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-between;
+}
+
+.card {
+    width: 25%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+    border-radius: 30px;
+    padding: 30px 25px;
+}
+
+.card:hover {
+    box-shadow: 0 25px 25px rgba(36, 39, 44, 0.05);
+}
+
+.card:nth-child(even) {
+    box-shadow: 0 25px 25px rgba(36, 39, 44, 0.05);
+}
+
+.box {
+    width: 85px;
+    height: 85px;
+    border-radius: 10px;
+    background-color: #ff57141A;
+}
+
+.card h4 {
+    color: #24272c;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.card p {
+    font-size: 15px;
+    font-weight: 400;
+    color: #8492a6;
+    font-family: "Roboto", sans-serif;
+    line-height: 24px;
+    margin-bottom: 20px;
+}
+
+.card button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.middleSection {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.middleText {
+    width: 30%;
+    gap: 20px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.middleText h6 {
+    color: #ff5714;
+    font-size: 15px;
+}
+
+.middleText h4 {
+    color: #24272c;
+    font-size: 28px;
+}
+
+.middleText p {
+    font-size: 15px;
+    font-weight: 400;
+    color: #8492a6;
+    font-family: "Roboto", sans-serif;
+    line-height: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.process {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.process1 {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    justify-content: flex-start;
+
+}
+
+.process2 {
+    width: 5%;
+    height: 700px;
+    background-image: url(/Ogrenciler/Emirhan/HazirTemaOdevi/assets/process.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.process3 {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin: 25px;
+
+}
+
+.process1 h5 {
+    font-size: 18px;
+    font-weight: 600;
+    text-align: right;
+
+}
+
+.process1 p {
+    font-size: 15px;
+    font-weight: 400;
+    color: #8492a6;
+    font-family: "Roboto", sans-serif;
+    line-height: 24px;
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+.processimg {
+    width: 220px;
+    height: 255px;
+
+}
+
+.process3 h5 {
+    font-size: 18px;
+    font-weight: 600;
+    text-align: left;
+
+}
+
+.process3 p {
+    font-size: 15px;
+    font-weight: 400;
+    color: #8492a6;
+    font-family: "Roboto", sans-serif;
+    line-height: 24px;
+    margin-bottom: 20px;
+    text-align: left;
+
+}
+
+.processtext {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.portfolio {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f9fc;
+}
+
+.portfoliotext {
+    width: 50%;
+    gap: 20px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.portfoliotext h6 {
+    color: #ff5714;
+    font-size: 15px;
+}
+
+.portfoliotext h4 {
+    color: #24272c;
+    font-size: 28px;
+}
+
+.portfoliotext p {
+    font-size: 15px;
+    font-weight: 400;
+    color: #8492a6;
+    font-family: "Roboto", sans-serif;
+    line-height: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.photo {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    background-color: #f8f9fc;
+    padding-bottom: 100px;
+}
+
+.pho {
+    width: 20%;
+    height: 200px;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.photocards1 {
+    background-image: url("https://shreethemes.in/upstart/layouts/images/portfolio/1.jpg");
+}
+
+.photocards2 {
+    background-image: url("https://shreethemes.in/upstart/layouts/images/portfolio/2.jpg");
+}
+
+.photocards3 {
+    background-image: url("https://shreethemes.in/upstart/layouts/images/portfolio/3.jpg");
+}
+
+.photocards4 {
+    background-image: url("https://shreethemes.in/upstart/layouts/images/portfolio/4.jpg");
+}
+
+.photocards5 {
+    background-image: url("https://shreethemes.in/upstart/layouts/images/portfolio/5.jpg");
+}
+
+.photocards6 {
+    background-image: url("https://shreethemes.in/upstart/layouts/images/portfolio/6.jpg");
+}
+
+.photocards7 {
+    background-image: url("https://shreethemes.in/upstart/layouts/images/portfolio/7.jpg");
+}
+
+.photocards8 {
+    background-image: url("https://shreethemes.in/upstart/layouts/images/portfolio/8.jpg");
+}
+.backgroundimg2{
+    background-image: url("https://shreethemes.in/upstart/layouts/images/bg/cta.png");
+    width: 100%;
+    height: 60vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.bgOverlay2{
+    width: 100%;
+    height: 60vh;
+    background-color: #161C2DBF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+    text-align: center;
+}
+.pricing{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    
+}
+.pricing div{
+    width: 20%;
+    height: auto;  
+    border-radius:5px;
+    box-shadow: 0px 0px 6px 3px rgba(227,227,227,1);
+    padding: 50px 30px;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    
+}
+.div:hover {
+    box-shadow: 0 5px 13px rgba(36,39,44,0.2);
+}
+.div h5{
+    font-size: 18px;
+    font-weight: 600;
+    font-family: "Roboto Slab", serif;
+}
+.div span{
+    font-size: 42px;
+    font-family:"Roboto Slab", serif; 
+
+}
+.div span sub,
+.div span sup{
+    font-size: 18px;  
+}
+.div ul{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+} 
+.div ul li{
+list-style-type: none;
+color: #8492a6;
+display: flex;
+align-items: center;
+gap: 5px;
+}  
+.div ul li::before{
+  content: url("https://img.icons8.com/?size=15&id=14298&format=png&color=000000");
+}   
+.div button{
+height: 40px;
+background-color: rgba(255,87,20,0.1);
+border: 1px solid rgba(255, 87, 20, 0.1);
+border-radius: 6px;
+box-shadow: 0 3px 5px 0 rgba(255, 87, 20, 0.1);
+color: #ff5714;
+}
+.div button:hover{
+   background-color:#ff5714 ; 
+   color: #ffffff;
+   transition: 0.2 s;
+   cursor: pointer;
+}
+.portfolio2 {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+}
