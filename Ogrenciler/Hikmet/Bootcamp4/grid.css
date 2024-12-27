@@ -1,0 +1,46 @@
+.container {
+	height: 700px;
+	background-color: aqua;
+	gap: 10px;
+	grid-template-areas:
+		"header header header"
+		"sidebar section section"
+		"sidebar . ."
+		"footer footer footer"
+		". box-1 box-1";
+}
+.header {
+	background-color: red;
+	grid-area: header;
+	padding: 20px;
+}
+.section {
+	background-color: green;
+	grid-area: section;
+	padding: 20px;
+}
+.footer {
+	background-color: yellow;
+	grid-area: footer;
+	padding: 20px;
+}
+.sidebar {
+	background-color: purple;
+	grid-area: sidebar;
+	padding: 20px;
+}
+.box-1 {
+	background-color: blue;
+	grid-area: box-1;
+	padding: 20px;
+}
+.box-2 {
+	background-color: orange;
+	grid-area: box-2;
+	padding: 20px;
+}
+.box-3 {
+	background-color: pink;
+	grid-area: box-3;
+	padding: 20px;
+}
