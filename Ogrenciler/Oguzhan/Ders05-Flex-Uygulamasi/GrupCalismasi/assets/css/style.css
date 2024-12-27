@@ -357,6 +357,7 @@ navbar {
 }
 
 .pricing-title {
+  margin-top: 3rem;
   font-size: 17px;
   text-align: center;
 }
@@ -544,6 +545,7 @@ navbar {
   justify-content: center;
   width: 100%;
   text-align: center;
+  margin: 2.5rem 0;
 }
 
 .ourteam-number {
@@ -561,6 +563,18 @@ navbar {
   font-size: 15px;
   font-weight: 400;
   font-family: "Roboto", sans-serif;
+}
+
+.ourteam-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 120px;
+}
+
+.svg {
+  width: 75px;
+  height: 75px;
 }
 
 /* ====================== MEDİA SCREEN ====================== */
