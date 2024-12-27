@@ -148,6 +148,10 @@ nav,
     padding-top: 17px;
 }
 
+.hamburger-icon {
+    display: none;
+}
+
 nav {
     margin-bottom: 0;
 }
@@ -667,6 +671,11 @@ footer {
 @media screen and (max-width: 992px) {
     .content-jobs-wrapper {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hamburger-icon {
+        display: block;
+        width: 25px;
     }
 
     .portfolio-img-container {
