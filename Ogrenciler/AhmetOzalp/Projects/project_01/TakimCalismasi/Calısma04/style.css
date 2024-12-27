@@ -10,6 +10,7 @@ head {
     display: flex;
     gap: 30px;
     align-items: center;
+    height: 50px;
 }
 .container{
     display: flex;
@@ -360,8 +361,6 @@ svg{
     text-decoration: none;
   }
   
-  .card-link:hover {
-  }
 
   /* son kısım */
 
@@ -425,6 +424,10 @@ svg{
     position: relative;
 
   }
+  /* .icerik{
+    margin-left: 500px;
+    margin-top: 20px;
+  } */
   
   .timeline-item:nth-child(odd) {
     order: -1;
@@ -449,7 +452,7 @@ svg{
   }
   
   .timeline-item:nth-child(even) .timeline-icon {
-    margin-bottom:-80px;
+    margin-bottom:-90px;
   }
   
   .timeline-content {
@@ -473,6 +476,79 @@ svg{
     max-width: 150px;
     margin-bottom: 20px;
   }
+  .card-images {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px; 
+    justify-content: center; 
+    align-items: center; 
+  }
+  
+  .card-image img {
+    width: 261px;
+    height: 196px;
+    object-fit: cover; 
+    border-radius: 6px;
+  }
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+  }
+  
+  .footer-bar {
+    background-color: #202942;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  .footer-container {
+    max-width: 1000px;
+    height: 50px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .footer-logo img {
+    max-height: 40px;
+  }
+  
+  .footer-text {
+    font-size: 14px;
+    margin: 10px 0;
+  }
+  
+  .footer-text a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .footer-text a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer-social {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .social-icon {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background-color: #444;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 12px;
+    text-decoration: none;
+  }
+  
   
   @media screen and (max-width: 768px) {
     .timeline-item {
