@@ -577,6 +577,76 @@ navbar {
   height: 75px;
 }
 
+/* ====================== Blogs ====================== */
+
+.blog-section {
+  background-color: white;
+  padding-bottom: 80px;
+}
+
+.blog-title-container {
+  text-align: center;
+  padding-top: 100px;
+}
+
+.blog-title {
+  color: #ff5714;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.blog-sub-title {
+  font-size: 28px;
+  letter-spacing: 0.5px;
+  margin: 0.7rem 0 1.2rem 0;
+  font-family: "Roboto Slab", serif;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+.blog-desc {
+  color: #8492a6;
+  padding: 0 450px;
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 15px;
+}
+
+.blog-img-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 100px;
+  gap: 10px;
+  height: 600px;
+}
+
+.blog-img-card {
+  background-color: red;
+  width: 353px;
+  height: 205px;
+  box-shadow: 10px black;
+}
+
+.blog-img {
+  height: 220px;
+  width: 353px;
+  border-radius: 5px;
+}
+.blog-text-container {
+  text-align: start;
+  padding: 1.5rem;
+}
+
+.blog-h5 {
+  color: #24272c;
+  font-size: 18px;
+  font-family: "Roboto Slab", serif;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
 /* ====================== MEDİA SCREEN ====================== */
 
 @media screen and (max-width: 1600px) {
