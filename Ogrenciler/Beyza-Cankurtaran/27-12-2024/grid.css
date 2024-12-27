@@ -1,0 +1,57 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+.container{
+    display: grid;
+    height:600px;
+    background-color: gray;
+    padding: 20px;
+    gap:10px;
+    /*sabit değerler verebiliyorum*/
+    /*grid-template-columns: 150px 150px 150px 150px 150px 150px;*/
+
+    /*fazla kalan boşluğu auto dediğimizde dolduruyor
+    grid-template-columns: 150px auto 150px auto 150px auto;*/
+    
+    /*fazla kalan boşluğu fr dediğimde de aynı auto gibi davranıyor!
+    1fr, CSS'deki Grid Layout sisteminde kullanılan bir birimdir ve "1 Fraction" yani "1 birimlik pay" anlamına gelir. Grid Layout'ta sütun ve satır genişliklerini tanımlarken kullanılır ve grid konteynerinin kullanılabilir alanını eşit parçalara bölmek için harika bir yöntemdir.
+    grid-template-columns: 150px 1fr 150px 1fr 150px 1fr;*/
+
+    /*2 döngü şeklinde oluyor 125 bir satırda diğeri alt satırda oluyor
+    grid-template-columns: 1fr 2fr 5fr;*/
+
+    /*grid-template-columns: repeat(3,1fr);
+    grid-template-rows: 2fr 4fr;*/
+
+/*şurası çalışmadı vaktin olursa bak
+    grid-auto-columns: 1fr;
+    grid-auto-rows: 3fr;*/
+
+    /*minmax(100px, 500px):
+
+    Bu sütun, genişliği minimum 100px, maksimum 500px olacak şekilde ayarlanır.
+    Yani:
+    Eğer grid konteyneri daralırsa bu sütun 100px'in altına düşmez.
+    Konteyner genişlerse sütun 500px'i geçmez.
+    200px:
+
+    İkinci sütun sabit 200px genişliktedir. Ne olursa olsun bu genişlikte kalır.
+    200px:
+
+    Üçüncü sütun da sabit 200px genişliktedir.
+    grid-template-columns: minmax(100px,500px)200px 200px;*/
+
+    /*https://defensivecss.dev/img/defensive-16-1.png
+    grid-template-columns: repeat(auto-fill,minmax(200px,1fr));//doldur
+    grid-template-columns: repeat(auto-fit,minmax(200px,300px));//sığdır
+    */
+    justify-content: center;
+    align-content: center;
+    
+}
+.item{
+    background-color: aqua;
+    padding: 20px;
+}
