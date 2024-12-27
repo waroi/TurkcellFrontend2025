@@ -1,5 +1,6 @@
 *, ::after, ::before {
     box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
 }
 head {
     display: none;
@@ -9,7 +10,7 @@ head {
     gap: 30px;
     align-items: center;
 }
-.container{
+.navbar-container{
     display: flex;
     flex-wrap: inherit;
     align-items: center;
@@ -166,4 +167,93 @@ svg{
     background: none;
     border: 1px solid var(--font-color);
     color: var(--font-color);
+}
+.whoweare{
+    background-color: #f8f9fc !important;
+    padding: 100px;
+}
+.whoweare-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.video-img{
+    width: 451px;
+    height: 526.16px;
+    border-radius: 10px !important;
+}
+.whoweare-text{
+    width: 665px;
+    height: 290.1px;
+    padding-left: 72px;
+    font-weight: 15px;
+}
+.whoweare-text h6{
+    color: #ff5714 !important;
+    font-size: 15px;
+    font-family: "Roboto Slab", serif
+}
+.whoweare-text h4{
+    font-size: 28px;
+    font-family: "Roboto Slab", serif
+}
+.whoweare-text p{
+    font-size: 15px;
+    font-family: "Roboto Slab", serif
+}
+.buynow-button{
+    margin: 16px 0px 0px;
+    padding: 8px 20px;
+    font-family: "Roboto Slab", serif
+}
+
+.whatwedo{
+    padding: 100px;
+    
+}
+.whatwedo-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+.whatwedo-lefttext, .whatwedo-righttext{
+    width: 546px;
+    height: 84px;
+}
+.whatwedo-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.whatwedo-card {
+    width: calc(33.33% - 20px); 
+    max-width: 356px; 
+    height: 313.6px;
+    box-sizing: border-box; 
+    border-radius: 30px;
+    padding: 1.5rem;
+    margin-top: 3.5rem;
+}
+.icons {
+    display: inline;
+}
+
+.icons i {
+    width: 85px;
+    height: 85px;
+    font-size: 30px;
+    background: rgba(255, 87, 20, 0.1);
+    color: #ff5714;
+    display: block;
+    display: flex;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.whatwedo-card:hover, .whatwedo-card:nth-child(2n) {
+    box-shadow: 0 25px 25px rgba(36, 39, 44, 0.05);
 }

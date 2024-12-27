@@ -321,11 +321,17 @@ header p {
   margin-top: 30px;
 }
 
-.pricing:hover > div {
-  box-shadow: 0 5px 13px rgba(36, 39, 44, 0.2);
+.pricing {
+  padding: 7px;
 }
 
 .pricing > div {
+  transition: box-shadow var(--fast), transform var(--fast);
   box-shadow: 0 0 3px rgba(36, 39, 44, 0.15);
-  padding: 20px;
+  padding: 15px;
+}
+
+.pricing:hover > div {
+  box-shadow: 0 5px 13px rgba(36, 39, 44, 0.2);
+  transform: translateY(-10px);
 }
