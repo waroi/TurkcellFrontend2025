@@ -327,6 +327,7 @@ body{
 .blog-cards{
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 .blog-card a{
     text-decoration: none;
@@ -337,4 +338,36 @@ body{
     flex-direction: column;
     padding: 20px;
     gap: 10px;
+}
+
+.team-cards{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.team-card{
+    width: 260px;
+    height: 450px;
+}
+
+.team-image img{
+    width: 260px;
+    height: 260px;
+    border-radius: 5px;   
+}
+
+.our-team {
+    background-color: #f8f9fc;
+    height: 900px;
+}
+
+.clients img {
+    width: 75px;
+    height: 25px;
+}
+
+.clients {
+    display: flex;
+    justify-content: space-around;
 }
