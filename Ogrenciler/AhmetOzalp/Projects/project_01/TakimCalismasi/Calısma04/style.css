@@ -415,6 +415,7 @@ svg{
     position: relative;
     margin: 0 auto;
     padding: 0;
+
   }
   
   .timeline-item {
@@ -422,14 +423,19 @@ svg{
     align-items: center;
     margin-bottom: 40px;
     position: relative;
+
   }
+  /* .icerik{
+    margin-left: 500px;
+    margin-top: 20px;
+  } */
   
-  .timeline-item:nth-child(odd) .timeline-content {
+  .timeline-item:nth-child(odd) {
     order: -1;
   }
   
-  .timeline-item:nth-child(even) .timeline-content {
-    order: 3;
+  .timeline-item:nth-child(even)  {
+    order: 1;
   }
   
   .timeline-icon {
@@ -443,11 +449,11 @@ svg{
   }
   
   .timeline-item:nth-child(odd) .timeline-icon {
-    top: -10px;
+    top: 200px;
   }
   
   .timeline-item:nth-child(even) .timeline-icon {
-    bottom: -10px;
+    margin-bottom:-90px;
   }
   
   .timeline-content {

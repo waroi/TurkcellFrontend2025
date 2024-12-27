@@ -6,6 +6,10 @@
   box-sizing: border-box;
   font-family: "Roboto Slab", serif;
 }
+body {
+  width: 100%;
+  height: 100%;
+}
 
 .container {
   width: 100%;
@@ -28,6 +32,7 @@
   top: 0;
   display: flex;
   justify-content: center;
+  background-color: rgba(32, 28, 28, 0.5);
 }
 
 .navbar {
@@ -228,12 +233,17 @@
   display: flex;
   flex-wrap: wrap;
   gap: 5%;
+  justify-content: center;
+}
+#business .card:nth-child(even) {
+  box-shadow: 0 25px 25px rgba(36, 39, 44, 0.05);
 }
 #business .card {
   margin-top: 32px;
   padding: 24px;
   border-radius: 30px;
   width: 30%;
+  min-width: 250px;
 }
 #business .bus-icon {
   width: 85px;
@@ -324,8 +334,248 @@
 .portfolio-cards {
   display: flex;
   flex-wrap: wrap;
+  gap: 1%;
+}
+.portfolio-cards .card-1,
+.card-2,
+.card-3,
+.card-4,
+.card-5,
+.card-6,
+.card-7,
+.card-8 {
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  height: 195px;
+  background-position: center center;
+}
+.portfolio-cards .card-1 {
+  background-image: url(https://shreethemes.in/upstart/layouts/images/portfolio/1.jpg);
+}
+.portfolio-cards .card-2 {
+  background-image: url(https://shreethemes.in/upstart/layouts/images/portfolio/2.jpg);
+}
+.portfolio-cards .card-3 {
+  background-image: url(https://shreethemes.in/upstart/layouts/images/portfolio/3.jpg);
+}
+.portfolio-cards .card-4 {
+  background-image: url(https://shreethemes.in/upstart/layouts/images/portfolio/4.jpg);
+}
+.portfolio-cards .card-5 {
+  background-image: url(https://shreethemes.in/upstart/layouts/images/portfolio/5.jpg);
+}
+.portfolio-cards .card-6 {
+  background-image: url(https://shreethemes.in/upstart/layouts/images/portfolio/6.jpg);
+}
+.portfolio-cards .card-7 {
+  background-image: url(https://shreethemes.in/upstart/layouts/images/portfolio/7.jpg);
+}
+.portfolio-cards .card-8 {
+  background-image: url(https://shreethemes.in/upstart/layouts/images/portfolio/8.jpg);
 }
 .portfolio-card {
-  width: 25%;
+  width: 24%;
   min-width: 250px;
+  border-radius: 10px;
+  margin-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  padding: 24px;
+}
+
+#portfolio .hover-text {
+  align-self: flex-end;
+  opacity: 0;
+}
+#portfolio .hover-text a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 22.5px;
+}
+#portfolio .hover-text p {
+  color: rgb(248, 249, 252);
+  font-size: 15px;
+  font-weight: 400;
+}
+#portfolio .hover-icon {
+  color: #f8f9fc;
+  font-size: 16px;
+  background-color: #ff5714;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+}
+#portfolio .hover-icon svg {
+  width: 16px;
+}
+
+.portfolio-card:hover .hover-text {
+  opacity: 1 !important;
+  z-index: 2 !important;
+}
+.portfolio-card:hover .hover-icon {
+  opacity: 1 !important;
+  z-index: 2 !important;
+}
+.web-project {
+  padding: 100px 0;
+  background-image: linear-gradient(rgba(3, 3, 5, 0.7), rgba(3, 3, 5, 0.7)),
+    url(https://shreethemes.in/upstart/layouts/images/bg/cta.png);
+  width: 100%;
+  background-size: 157%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.web-project div {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.web-project h4 {
+  margin-bottom: 16px;
+  color: rgb(255, 255, 255);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 42px;
+  letter-spacing: 0.5;
+}
+.web-project p {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 24px;
+  max-width: 600px;
+}
+.web-project a {
+  padding: 8px 20px;
+  border: 1px solid #ff5714;
+  text-decoration: none;
+  border-radius: 6px;
+  background-color: #ff5714;
+  color: rgb(255, 255, 255);
+  margin-top: 32px;
+}
+.web-project a:hover {
+  background-color: rgb(212, 73, 17);
+  border-color: rgb(212, 73, 17);
+}
+
+#pricing {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 100px 0;
+}
+.pricing {
+  width: 80%;
+  text-align: center;
+}
+.pricing-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.pricing-text h6 {
+  font-size: 15px;
+  line-height: 22.5px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #ff5714;
+}
+.pricing-text h4 {
+  margin-bottom: 16px;
+  color: rgb(36, 39, 44);
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  line-height: 42px;
+}
+.pricing-text p {
+  max-width: 600px;
+  color: #8492a6;
+}
+.pricing-cards {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 5%;
+}
+.pricing-card {
+  width: 30%;
+  text-align: left;
+  margin-top: 24px;
+  padding: 56px 36px 48px 36px;
+  border-radius: 10px;
+  box-shadow: 0 0 3px rgba(36, 39, 44, 0.15) !important;
+}
+.pricing-card h4 {
+  color: rgb(33, 37, 41);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 27px;
+  margin-bottom: 8px;
+}
+.pricing-card h1 {
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 63px;
+  display: flex;
+  color: rgb(33, 37, 41);
+  margin-bottom: 24px;
+}
+.pricing-card .dolar-sign {
+  color: rgb(33, 37, 41);
+  font-size: 18px !important;
+  font-weight: 600;
+  line-height: 27px;
+  margin-top: 8px;
+}
+.pricing-card .month {
+  align-self: flex-end;
+  font-size: 18px !important;
+  font-weight: 600;
+  line-height: 27px;
+  margin-bottom: 4px;
+}
+.pricing-card ul {
+  list-style-type: none;
+  color: rgba(132, 146, 166);
+}
+.pricing-card ul li {
+  margin-bottom: 8px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 22.5px;
+}
+.pricing-card ul li i {
+  margin-right: 10px;
+}
+.pricing-card a {
+  display: block;
+  text-align: center;
+  width: 100%;
+  padding: 8px 20px;
+  border: 1px solid #ff5714;
+  margin-top: 24px;
+  background-color: rgba(255, 87, 20, 0.1);
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.5;
+  line-height: 24px;
+  color: #ff5714;
 }

@@ -215,4 +215,159 @@ body{
     text-decoration: none;
     color: black;
 }
+.footer{
+    background-color: #202942;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+.footer-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.footer .media-item{
+    background-color: #202942;
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    border-radius: 10%;
+    border: rgba(255, 255, 255, 0.2) 0.3px solid;
+    color: white;
+}
+.contact-div{
+    display: flex;
+    flex-direction: column;
+}
+.contact-us{
+    background-color: #f8f9fc;
+    height: 800px;
+}
+.get-in-touch{
+    text-align: center;
+    margin: 100px;
+}
+.get-in-touch h4{
+    color: #ff5714;
+}
 
+.contact{
+    display: flex;
+    flex-direction: row;
+}
+.contact-form{
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-wrap: wrap;
+    width: 65%;
+    padding: 15px;
+    gap: 4%;
+    height: 400px;
+    border-radius: 5px;
+}
+.name{
+    height: 35px;
+    width: 48%;
+    border-radius: 5px;
+}
+.email{
+    height: 35px;
+    width: 48%;
+    border-radius: 5px;
+}
+.subject{
+    height: 35px;
+    width: 100%;
+    border-radius: 5px;
+}
+.contact-form textarea{
+    height: 180px;
+    width: 100%;
+    border-radius: 5px;
+}
+.contact-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 40px;
+}
+.info{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.blogs{
+    height: 800px;
+}
+.blogs-div{
+    text-align: center;
+    width: 100%;
+}
+.blogs-div h4{
+    color: #ff5714;
+}
+.latest{
+    text-align: center;
+    margin: 80px;
+}
+.blog-image img{
+    width: 350px;
+    height: 220px;
+    border-top-left-radius: 10px;    
+    border-top-right-radius: 10px;    
+}
+.blog-card{
+    border-radius: 10px;
+    border: rgb(128, 128, 128, 0.3) 0.6px solid;
+    width: 350px;
+    height: 450px;
+    text-align: left;
+}
+.blog-cards{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.blog-card a{
+    text-decoration: none;
+    color: black;
+}
+.card-text{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 10px;
+}
+
+.team-cards{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.team-card{
+    width: 260px;
+    height: 450px;
+}
+
+.team-image img{
+    width: 260px;
+    height: 260px;
+    border-radius: 5px;   
+}
+
+.our-team {
+    background-color: #f8f9fc;
+    height: 900px;
+}
+
+.clients img {
+    width: 75px;
+    height: 25px;
+}
+
+.clients {
+    display: flex;
+    justify-content: space-around;
+}
