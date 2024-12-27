@@ -4,6 +4,11 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+
 body {
   font-family: "Roboto Slab", serif;
   font-optical-sizing: auto;
@@ -11,28 +16,28 @@ body {
 }
 
 h3 {
-  font-size: 30px;
+  font-size: 24px;
 }
 h5 {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 h6 {
   color: rgb(255, 87, 21);
-  font-size: 18px;
+  font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
 h4 {
   color: #24272c;
-  font-size: 32px;
+  font-size: 28px;
   letter-spacing: 1px;
 }
 
 p {
   color: rgb(138, 151, 170);
-  font-size: 18px;
+  font-size: 15px;
   line-height: 1.5;
   letter-spacing: 0.8;
 }
@@ -46,10 +51,6 @@ Ana başlık Color #24272C
 /*
 Media Query Tablet = 1400px
 Media Query Telefon = 768px
-*/
-
-/*
-Contact Us
 */
 
 .contact-us {
@@ -175,22 +176,9 @@ Contact Us
   justify-content: space-evenly;
 }
 
-.social {
-  display: flex;
-  justify-content: space-evenly;
-  width: 260px;
-}
-
 .footer ul li {
   display: flex;
   list-style: none;
-}
-
-.socialContainer {
-  background-color: #202942;
-  border: 1px ridge white;
-  height: 30px;
-  width: 30px;
 }
 
 .back-to-top {
@@ -218,7 +206,7 @@ Contact Us
 .heading {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  gap: 16px;
   align-items: center;
 }
 
@@ -636,6 +624,12 @@ section {
   .container {
     max-width: 540px;
   }
+  .who-we-are-row-container {
+    flex-wrap: wrap;
+  }
+  .who-we-are-image {
+    min-width: 100%;
+  }
   .cards .card {
     width: 100% !important;
     max-width: 100% !important;
@@ -654,6 +648,12 @@ section {
     padding-right: 5px;
     padding-left: 5px;
   }
+  .who-we-are-row-container {
+    flex-wrap: wrap;
+  }
+  .who-we-are-image {
+    min-width: 100%;
+  }
   .cards .card {
     width: 100% !important;
     max-width: 100% !important;
@@ -671,3 +671,89 @@ section {
   margin-bottom: 60px;
   text-align: center;
 }
+
+.social-media {
+  display: flex;
+  gap: 4px;
+}
+
+.social-icon {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  border: 1px ridge gray; 
+  border-radius: 4px; 
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  background-color: #ff5714;
+  transform: scale(1.1);
+}
+
+.facebook {
+  background: url("./assets/facebook.png") no-repeat center;
+}
+
+.instagram {
+  background: url("./assets/instagram.png") no-repeat center;
+}
+
+.twitter {
+  background: url("./assets/twitter.png") no-repeat center ;
+}
+
+.linkedIn {
+  background: url("./assets/social.png") no-repeat center;
+}
+
+.social-circle { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #f8f9fc;
+}
+
+.social-circle img {
+  width: 16px;
+  height: 16px;
+}
+
+.navbar {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: transparent;
+  transition: background 0.3s ease;
+  z-index: 1000;
+  height: 70px;
+  padding: 10px 20px;
+  overflow: hidden;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  gap: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  
+}
+
