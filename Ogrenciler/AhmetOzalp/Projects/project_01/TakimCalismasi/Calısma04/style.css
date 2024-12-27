@@ -1,4 +1,4 @@
-*, ::after, ::before {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -114,13 +114,7 @@ svg{
     background-size: cover;
     padding: 0 10%;
 }
-/* .background{
-    background: url('assests/background.jpg') center center;
-    height: 100vh;
-    width: 100%; 
-    position: relative;
-    opacity: 0.9;
-} */
+
 .background .home_container {
     width: 50%;
     height: 100%;
@@ -549,10 +543,9 @@ svg{
     text-decoration: none;
   }
 
-  /*banner*/
 
   .banner {
-    background-image: url(img/bannerbg.png); /* Burada doğru görüntü yolunu belirtin */
+    background-image: url(img/bannerbg.png); 
     background-size: cover;
     background-position: center;
     height: 100vh;
