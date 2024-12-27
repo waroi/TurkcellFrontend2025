@@ -356,7 +356,6 @@ svg{
   }
   
 
-  /* son kısım */
 
   .bodyy {
     font-family: Arial, sans-serif;
@@ -595,13 +594,3 @@ svg{
   background-color: #e55d00;
 }
   
-  @media screen and (max-width: 768px) {
-    .timeline-item {
-      flex-direction: column;
-    }
-  
-    .timeline-content {
-      width: 100%;
-      text-align: center;
-    }
-  }

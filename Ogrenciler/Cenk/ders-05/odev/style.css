@@ -66,8 +66,12 @@ body{
     list-style: none;
 }
 
+
 .nav-item{
     margin: 8px;
+}
+.nav-item a:hover{
+    color: #ff5714;
 }
 
 .social-media{
@@ -130,6 +134,10 @@ body{
     font-size: 16px;
     border: 0;
     border-radius: 6px;
+}
+
+.btn:hover{
+    background-color: rgb(207, 79, 28);
 }
 
 /*--------------------------------*/
@@ -210,7 +218,7 @@ body{
     border-radius: 10px;
 }
 
-
+/**çapraz box shadowlar **/
 .card:nth-child(even) {
     box-shadow: 0 25px 25px rgba(36, 39, 44, 0.05);
   }
@@ -385,12 +393,18 @@ body{
 }
 
 .pricing-card{
-    width: 350px;
+    width: 340px;
     height: 420x;
     border-radius: 10px;
     border: rgb(128, 128, 128, 0.3) 0.6px solid;
     padding: 20px;
     line-height: 2.5;
+    transition: transform 0.3s ease;
+}
+
+.pricing-card:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 }
 
 .plans {
@@ -401,6 +415,8 @@ body{
     content: "\f058";
     font-family: "Font Awesome 5 Free";
 }
+
+
 
 .pricing-card button {
     width: 100%;
