@@ -49,6 +49,7 @@
     font-weight: 700;
     margin: 0px 6px;
     padding: 12px 8px;
+    letter-spacing: 0.5;
 }
 .navbar ul li a:hover {
     color: #ff5714;
@@ -151,6 +152,21 @@
     border-radius: 6px;
     outline: none;
 }
+.bol4{
+    display: flex;
+    justify-content: center;
+
+}
+.wp{
+    display: flex;
+    flex-direction: column;
+    padding: 0px 0px 8px;
+    margin: 0px 0px 24px;
+    justify-content: center;
+    align-items: center;
+    width: 59%;
+
+}
 .bol5{
     display: flex;
     justify-content: center;
@@ -220,6 +236,55 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+}
+.bol7{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0px 0px 8px;
+    margin: 0px 0px 24px;
+
+}
+.plans{
+    padding: 100px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 59%;
+}
+.pricing{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.card-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 24px 0px 0px ;
+    padding: 8px 12px 0px ;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 48px 24px;
+    width: 356px;
+    border: 1px solid black;
+
+}
+.pricing-head{
+    font-family: "Roboto Slab", serif;
+    font-size: 18px;
+    color: #212529;
+    margin: 0px 0px 8px;
+
 }
 .gets{
     display: flex;

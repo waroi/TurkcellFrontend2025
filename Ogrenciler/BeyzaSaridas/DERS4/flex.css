@@ -1,0 +1,50 @@
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+h2{
+   font-size: 20px;
+}
+p{
+   font-size: 14px;
+}
+.container{
+   width: 70%;
+   height: 400px;
+   margin: 0;
+   background-color: gray;
+   display: flex;/*yanyana aldık*/
+   align-items: center;/*dikeyde ortalar*/
+   justify-content:center;/*space-evenly=aralarına eşit mesafe-bütün mesafeler,space-between=ortadaki elemanların araları eşit, end dersek sağa atar(direction yönünde)yatayda hizalar*/
+   flex-direction: row;
+   flex-wrap: wrap; /*daraltınca aşağı iner*/
+   gap: 10px;/*aralarına boşluk*/
+}
+.box1{
+   width: 200px;
+   border: 1px solid rgb(185, 4, 4)
+   order 1;
+}
+.box2{
+   width: 200px;
+   border: 1px solid rgb(190, 221, 17)
+   order 2;
+
+}
+.box3{
+   width: 200px;
+   border: 1px solid rgb(84, 196, 9)
+   order 3;
+}
+@media screen and (max-width:768px){
+   .box1{
+      order: 1;
+   }
+   .box2{
+      order: 2;
+   }
+   .box3{
+      order: 3;
+   }
+}

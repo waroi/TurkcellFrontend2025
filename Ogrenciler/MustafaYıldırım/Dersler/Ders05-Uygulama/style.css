@@ -1,4 +1,3 @@
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -12,7 +11,7 @@ header {
   position: sticky;
   background-color: white;
   z-index: 1;
-  top: 0; 
+  top: 0;
 }
 
 .header-container {
@@ -109,8 +108,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #F8F9FC;
- 
+  background-color: #f8f9fc;
 }
 
 .bg-img2 {
@@ -123,8 +121,6 @@ header {
   width: 30%;
   background-size: contain;
   border-radius: 10px;
-  
-  
 }
 
 .section2-h6 {
@@ -146,30 +142,48 @@ header {
   margin-top: 1.33rem;
   margin-bottom: 1rem;
   font-family: "Roboto", serif;
-  color: #8492A6;
+  color: #8492a6;
 }
 
-
-.section2-cover{
+.section2-cover {
   margin-left: 5rem;
   margin-bottom: 7rem;
 }
 
-
-.icon{
+.icon {
   background-color: white;
   width: 75px;
   height: 75px;
-  border-radius:50%;
+  border-radius: 50%;
   margin-bottom: 50px;
   text-decoration: none;
 }
 
-.icon i{
+.icon i {
   width: 75px;
   height: 75px;
   display: flex;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
-  
+}
+
+.section3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 0;
+}
+.section3-h3 {
+  font-size: 15px;
+  font-family: "Roboto Slab", serif;
+  color: #ff5714;
+  margin-left: 0;
+}
+.section3-h2 {
+  font-size: 28px;
+  font-family: "Roboto Slab", serif;
+}
+.section3-cover {
+  margin-left: 5rem;
+  margin-top: 2rem;
 }
