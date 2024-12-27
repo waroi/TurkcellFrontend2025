@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.portfolio {
+  display: flex;
+  flex-direction: column;
+
+  text-align: center;
+}
+
+.title-h6 {
+  font-size: 15px;
+  color: #ff5714;
+  font-weight: 600;
+  font-family: "Roboto Slab", serif;
+}
+
+.title-h4 {
+  font-size: 24px;
+  margin: 1rem 0;
+  font-weight: 600;
+  font-family: "Roboto Slab", serif;
+}
+
+.p-portfolio {
+  color: #8492a6;
+}
+
+.portfolio-title {
+  padding: 30px;
+  margin-bottom: 50px;
+}
+
+/* images */
+
+.images {
+  height: 1140px;
+  width: 445.5px;
+  display: flex;
+  justify-content: center;
+}
+
+.image-card {
+  height: 100px;
+  width: 50px;
+}
+
+.img {
+  height: 50px;
+  width: 50px;
+}
