@@ -1,14 +1,331 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Slab", serif;
 }
 
-.wrap{
-    width: 100%;
-    margin: 0 auto;
+.container {
+  width: 100%;
+  background-image: linear-gradient(rgba(3, 3, 5, 0.7), rgba(3, 3, 5, 0.7)),
+    url("https://shreethemes.in/upstart/layouts/images/bg/1.jpg");
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.9;
 }
 
-.navbar{
-    display: flex;
+.navbar-bg {
+  width: 100%;
+  height: 70px;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 80%;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+}
+
+.navbar ul li a {
+  margin: 0 10px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: white;
+  text-decoration: none;
+  margin-right: 32px;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.icon-circle {
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner {
+  align-items: flex-start;
+  width: 80%;
+  color: white;
+}
+
+.banner h4 {
+  font-size: 42px;
+  letter-spacing: 0.2px;
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+.banner p {
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.banner button {
+  padding: 8px 20px;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  transition: all 0.3s;
+  background-color: #ff5714;
+  border-radius: 6px;
+  color: white;
+  box-shadow: 0 3px 5px 0 rgba(255, 87, 20, 0.1);
+  outline: none;
+  border: 1px solid #ff5714;
+  margin-top: 24px;
+}
+
+.company-container {
+  width: 100%;
+  background-color: #f8f9fc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 0px;
+}
+
+.company {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  gap: 20px;
+}
+
+.company-image {
+  width: 70%;
+  position: relative;
+}
+
+.company-image img {
+  border-radius: 10px;
+}
+
+.company-image-icon {
+  position: absolute;
+  bottom: 50%;
+  transform: translateY(50%);
+  right: 41%;
+  text-align: center;
+  background-color: white;
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.company-text {
+  width: 100%;
+  margin-left: 48px;
+}
+
+.company-text h6 {
+  color: #ff5714;
+  font-size: 15px;
+  line-height: 1.5;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.company-text h4 {
+  font-size: 28px;
+  letter-spacing: 0.5px;
+  margin-bottom: 24px;
+}
+
+.company-text p {
+  margin-bottom: 16px;
+  font-size: 16px;
+  color: #8492a6;
+  line-height: 1.6;
+}
+
+.company-text button {
+  padding: 8px 20px;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  transition: all 0.3s;
+  background-color: #ff5714;
+  border-radius: 6px;
+  color: white;
+  box-shadow: 0 3px 5px 0 rgba(255, 87, 20, 0.1);
+  outline: none;
+  border: 1px solid #ff5714;
+}
+#business {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 100px 0;
+}
+.business {
+  width: 80%;
+}
+#business h6 {
+  color: #ff5714;
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 8px;
+  line-height: 22.5px;
+}
+#business h4 {
+  font-size: 28px;
+  color: rgb(36, 39, 44);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  line-height: 42px;
+}
+.solution {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: center;
+  padding-bottom: 8px;
+  margin-bottom: 24px;
+}
+.solution-head {
+  width: 50%;
+}
+.solution p {
+  width: 50%;
+  color: rgba(36, 39, 44, 0.5);
+}
+#business .cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5%;
+}
+#business .card {
+  margin-top: 32px;
+  padding: 24px;
+  border-radius: 30px;
+  width: 30%;
+}
+#business .bus-icon {
+  width: 85px;
+  height: 85px;
+  background-color: rgba(255, 87, 20, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  border-radius: 10px;
+}
+#business .bus-text {
+  padding-top: 8px;
+  margin-top: 24px;
+}
+#business .bus-text .title {
+  margin-bottom: 8px;
+  color: rgb(36, 39, 44);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 27px;
+}
+#business .bus-text p {
+  margin: 16px 0;
+  color: rgba(36, 39, 44, 0.5);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 24px;
+}
+#business .bus-text .read {
+  display: block;
+  margin-top: 24px;
+  padding-top: 8px;
+  color: rgb(36, 39, 44);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 22.5px;
+}
+#business .bus-text .read i {
+  color: rgb(36, 39, 44);
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  padding-left: 10px;
+}
+#portfolio {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.portfolio {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  padding: 100px 0;
+}
+.portfolio-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 8px;
+  margin-bottom: 24px;
+}
+.portfolio-text h6 {
+  margin-bottom: 8px;
+  color: #ff5714;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 22.5px;
+  text-transform: uppercase;
+}
+.portfolio-text h4 {
+  margin-bottom: 16px;
+  color: rgb(36, 39, 44);
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  line-height: 42px;
+}
+.portfolio-text p {
+  color: rgba(132, 146, 166);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 24px;
+  max-width: 600px;
+  text-align: center;
+}
+.portfolio-cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+.portfolio-card {
+  width: 25%;
+  min-width: 250px;
 }
