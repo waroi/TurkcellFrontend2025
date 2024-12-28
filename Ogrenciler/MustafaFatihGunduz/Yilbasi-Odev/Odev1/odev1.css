@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
 *{
     box-sizing: border-box;
     margin: 0;
@@ -53,7 +55,7 @@
 p{
     color: white;
     font-size: 14px;
-    font-weight: bold;
+    /* font-weight: bold; */
     margin-left: 10px;
 }
 
@@ -191,7 +193,7 @@ p{
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    height: 62px;
+    height: 59px;
     width: 281px;
     background-color: #FFB91F;
 }
@@ -215,3 +217,144 @@ p{
     letter-spacing: 1.1px;
 }
 
+.banner {
+    display: flex;
+    background: url("https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/08/slide1-2.jpg");
+    height: 745px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner-form-section {
+    height: 479px;
+    width: 420px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 10px;
+}
+
+.banner-form-section form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 25px;
+}
+
+.banner-form-section h2 {
+    color: #202020;
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.banner-form-section select {
+    height: 51px;
+    width: 356px;
+    margin: 0px 0px 15px;
+    padding: 12px 30px 12px 15px;
+    color: #848484;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.banner-form-section button {
+    width: 115px;
+    height: 49px;
+    background-color: #FFB91F;
+    border-radius: 42px;
+    border: none;
+    outline: none;
+    font-weight: bold;
+}
+
+.banner-title {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.banner-title h1 {
+    font-size: 70px;
+}
+
+.banner-title p {
+    font-size: 18px;
+}
+
+.banner-title button {
+    border: none;
+    width: 150px;
+    height: 46px;
+    font-size: 14px;
+    padding: 16px 35px;
+    color: #202020;
+    border-radius: 42px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.banner-row-container {
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+    align-items: center;
+}
+
+.fav-categories {
+    background-color: #FFB91F;
+    height: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fav-categories-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.fav-categories p {
+    color: black;
+    font-size: 17px;
+}
+
+.fav-categories h2 {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.fav-categories-images {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.fav-categories-images img {
+    width: 174px;
+    height: 174px;
+    border-radius: 10px;
+}
+
+.fav-categories-row-container {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    gap: 60px;
+}
+
+.fav-categories-images p {
+    font-size: 17px;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+}
