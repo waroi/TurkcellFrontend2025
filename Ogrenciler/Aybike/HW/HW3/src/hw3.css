@@ -110,13 +110,14 @@ section{
   }
 
   .bannerContent >p {
+    color: #f8f9fc;
     font-size: 17px;
     letter-spacing: 0.5px;
     margin-left:10%;
     text-align: left;
     max-width:600px;
     line-height: 1.6;
-    opacity: 0.6;
+    opacity: 0.8;
   }
 
   .orngBtn {
@@ -411,6 +412,13 @@ padding: 2.6%;
 }
 
 @media screen and (max-width:576px) {
+  .aboutWrapper{
+    display: flex;
+    flex-direction: column;
+  }
+  .aboutContent{
+    margin-left: 0;
+  }
   .rowWorkProcess{
     height: 50vh;
     height: 50vh;

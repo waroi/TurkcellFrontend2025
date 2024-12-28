@@ -1,1 +1,1 @@
-https://shreethemes.in/upstart/layouts/index.html
+https://reethemes.in/upstart/layouts/index.html
