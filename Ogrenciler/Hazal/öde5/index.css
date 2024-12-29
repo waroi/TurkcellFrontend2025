@@ -86,7 +86,9 @@ body {
 .navbar-top ul li a:hover {
   color: var(--orange);
 }
-
+.header-menu{
+  border-bottom: rgb(128, 128, 128, 0.3) 0.6px solid;
+}
 .header-menu .container {
   padding: 26px 15px;
   display: grid;
@@ -166,4 +168,42 @@ body {
 .fa-heart,
 .fa-cart-shopping {
   padding: 14px;
+}
+
+/*.header-bottom{
+  height: 61px;
+}*/
+
+.header-bottom .container{
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  padding: 13px 15px;
+}
+.nav-bottom{
+  display: flex;
+  align-items: center;
+}
+.nav-bottom ul{
+  list-style: none;
+  display: flex;
+}
+.nav-bottom ul li{
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin:20px;
+}
+.fa-chevron-down{
+  font-size: 10px;
+  margin-left: 3px;
+  transform: translateY(-2px);
+}
+.nav-bottom ul li:hover{
+  color: var(--orange);
+  cursor: pointer;
+}
+.contact{
+  background-color: var(--orange);
+  padding: 12px 40px;
+  margin: -14px 0;
 }
