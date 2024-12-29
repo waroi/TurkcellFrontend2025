@@ -358,3 +358,43 @@ p{
     font-weight: bold;
     text-align: center;
 }
+.bestsellers-items{
+height:963px ;
+display: flex;
+justify-content: center;
+align-items: center;
+background-color:white;
+flex-direction: column;
+}
+.bestsellers-title{
+display: flex;
+height: 57px;
+justify-content: center;
+align-items: center;
+}
+.bestsellers-title ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    font-size: 36px;
+    font-weight: bold;
+    list-style: none;
+
+}
+.bestsellers-item{
+
+}
+.title-item1{
+color:#FFB91F ;
+}
+.title-item2{
+    color: #202020;
+}
+.bestsellers-item-container{
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(306px, 235px));
+   height: 600px;
+   background: blue;
+}
+
