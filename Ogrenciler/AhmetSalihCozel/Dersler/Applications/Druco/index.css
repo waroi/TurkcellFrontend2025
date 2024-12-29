@@ -190,7 +190,23 @@
     justify-content: space-between;
     gap:20px;
     background-color: #ffb91f;
-    height: 55px;
+    height: 62px;
+    padding: 16px 40px;
+}
+
+.headerBottomRight a{
+    text-decoration: none;
+}
+
+.call{
+    font-size: 12px;
+    color: #202020;
+}
+
+.phoneNumber{
+    font-size: 22px;
+    color: #202020;
+    font-weight: 700;
 }
 
 .header-nav a {
@@ -271,9 +287,10 @@
 }
 
 .borderHorizontal{
-    width: 100%;
-    border-width: 1px;
-    border-color: rgba(235,235,235,0.3)
+    background: rgba(235, 235, 235, 1);
+    border: 0;
+    height: 1px;
+    outline: 0;
 }
 
 .heroSearchForm {
