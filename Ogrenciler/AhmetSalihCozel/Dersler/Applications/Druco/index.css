@@ -67,6 +67,9 @@
 }
 .search {
   display: flex;
+  background-color: #f8f8f8;
+  height: 48px;
+  border-radius: 24px;
 }
 .search select {
   width: 190px;
@@ -102,6 +105,7 @@
   height: 40px;
   cursor: pointer;
   padding: 9px;
+  right: 0;
 }
 .searchBox svg:hover {
   fill: var(--main-color);
@@ -132,6 +136,8 @@
   list-style-type: none;
   display: flex;
   gap: 35px;
+  align-items: center;
+  padding-bottom: 10px;
 }
 .header-nav a {
   text-decoration: none;
@@ -204,7 +210,6 @@
 .search-form {
   background-color: #fff;
   border-radius: 10px;
-  padding: 38px 32px 40px;
 }
 .hero-text-h3 {
   font-size: 70px;
