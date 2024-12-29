@@ -148,12 +148,19 @@
   color: #000;
 }
 
+.headerBottomLeft{
+    padding: 13px 15px;
+}
+
 .langAndUsers p:hover {
   color: var(--main-color);
 }
 
 .headerBottom {
-  padding: 0 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .langAndUsers svg {
@@ -169,26 +176,38 @@
   display: flex;
   gap: 35px;
   align-items: center;
-  padding-bottom: 16px;
+
+}
+
+.headPhoneIcon{
+    height: 34px;
+    width: 34px;
+}
+
+.headerBottomRight{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap:20px;
+    background-color: #ffb91f;
+    height: 55px;
 }
 
 .header-nav a {
   text-decoration: none;
   color: #202020;
   padding: 4px 0px;
+  font-weight: 600;
 }
 
 .header-nav a:hover,
 .header-link:hover>svg {
   color: #ffb91f;
   fill: #ffb91f;
+  transition: 150ms ease 0s;
 }
 
-.headerBottomMain {
-  border-top: 1px solid;
-  padding-top: 18px;
-  border-color: rgba(235, 235, 235, 1);
-}
+
 
 .header-link {
   display: flex;
@@ -250,6 +269,19 @@
   font-weight: 700;
   color: #fff;
 }
+
+.borderHorizontal{
+    width: 100%;
+    border-width: 1px;
+    border-color: rgba(235,235,235,0.3)
+}
+
+.heroSearchForm {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 38px 32px 40px;
+    text-align: center;
+    }
 
 
 .hero-text-h3 {
