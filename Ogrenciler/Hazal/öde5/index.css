@@ -217,19 +217,23 @@ body {
 }
 
 .contact {
-  background-color: var(--orange);
-  color: rgba(32, 32, 32, 1);
-  display: flex;
-}
-.contact-image{
-  display: flex;
-  align-items: center;
-
-}
-
-.contact-text {
-  padding: 12px 40px;
-  display:flex;
-  flex-direction: column;
-
-}
+    background-color: var(--orange);
+    color: rgba(32, 32, 32, 1);
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .contact-image {
+    display: flex;
+    align-items: center;
+    margin-left: auto; 
+  }
+  
+  .contact-text {
+    display: flex;
+    flex-direction: column;
+    margin-right: auto;
+  }
+  
