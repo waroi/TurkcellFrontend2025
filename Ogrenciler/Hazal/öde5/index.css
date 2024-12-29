@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body{
+    font-family: 'Outfit';
+}
+
 @media (min-width: 768px){
     .container{
         max-width: 100%;
@@ -25,21 +29,65 @@
     }
 }
 
+.container{
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
 .header-top{
-    display: grid;
-    grid-template-columns:1fr 2fr 1fr ;
     height: 45px;
     background-color:  rgba(35,63,146,1);
     min-width: 100%;
+    font-size: 15px;
 }
 
 .header-top .container{
-    position: relative;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr ;
+    height: 100%;
     align-items: center;
+    color: white;
+    padding-top: 9px;
+    padding-bottom: 9px;
+}
+
+.fa-bolt{
+    color: rgba(255,185,31,1);
+    margin-right: 4px;
+}
+
+.header-top strong{
+    color: rgba(255,185,31,1);
 }
 
 .navbar-top ul{
     list-style: none;
     display: flex;
+}
+
+.navbar-top ul li{
+    margin-right: 13px;
+}
+
+.navbar-top ul li a{
+    color: white;
+    text-decoration: none;
+}
+
+.navbar-top ul li a:hover{
+    color: rgba(255,185,31,1);
+    font-size: 93%;
+}
+
+.header-menu .container{
+    padding: 26px 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.header-menu .logo{
+    width: 150px;
+    height: 58px;
 }
