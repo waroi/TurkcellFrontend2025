@@ -3,6 +3,7 @@
 :root {
   --bg-color: #ffffff;
   --light-grey: rgb(119, 119, 119);
+  --bg-navbar: #1246AB
 }
 
 * {
@@ -61,4 +62,51 @@ a {
 }
 .link i {
   color: black;
+}
+.container-elements{
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  max-height: inherit;
+}
+ul{
+  list-style: none;
+  display: grid;
+  grid-template-columns: max-content max-content max-content;
+  align-items: center;
+}
+.menu{
+  display: grid;
+  grid-template-columns: max-content max-content max-content;
+  background-color: var(--bg-navbar);
+  height: 70px;
+}
+.container-search{
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  
+}
+/* .search{
+  position: relative;
+} */
+.icon{
+  display: grid;
+  border: 1px solid rgba(0, 0, 0, 0.105);
+  width: 42px;
+  height: 42px;
+  border-radius: 42px;
+  align-items: center;
+  justify-content: center;
+}
+.icon-count{
+  z-index: 1;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  text-align: center;
+  letter-spacing: 0;
+  font-weight: 300;
+  line-height: 20px;
+  background-color: #ffffff;
 }
