@@ -572,11 +572,66 @@
 }
 
 .littleBanner{
+  width: 100%;
+  height: auto;
+}
+.lb-images{
   display: grid;
   width: 100%;
   height: auto;
   grid-template-columns: repeat(2, 1fr);
   gap: 30px;
+}
+
+.lb-img {
+  overflow: hidden;
+  max-height: 400px;
+  height: 400px;
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+}
+
+
+.lb-img:hover>.lb-img-wrapper {
+  transform: scale(1.1);
+}
+.lb-img:hover .shop-button {
+  color: #ffb91f;
+  background-color:white;
+}
+.lb-img h2{
+  font-size: 52px;
+  color: #fff;
+  margin-bottom: 10px;
+  line-height: 1.2;
+  padding: 7rem 35rem 0 3rem ;
+}
+.lb-img p{
+  font-size: 18px;
+  color: #fff;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  padding-left: 3rem;
+}
+.lb-img:nth-child(2) h2{
+  padding-right: 30rem;
+}
+.yellowColored{
+  color: #ffb91f
+}
+.lb-img-wrapper {
+  background: url("https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/08/banner-1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden;
+  height: 400px;
+  margin-bottom: 50px;
+  width: 100%;
+  transition: all 500ms ease;
+  position: absolute;
+  z-index: -1;
 }
 
 .bannerTitle{
@@ -601,11 +656,6 @@
   transform: scale(1.2);
 }
 
-.bannerImgLast{
-  background-image:url('https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/08/banner-2.jpg') ;
-  background-size: cover;
-  background-position: center;
-}
 
 .best-seller-price p {
   color: #233F92;
@@ -619,6 +669,23 @@
   text-decoration: line-through;
   font-weight: normal;
   line-height: 18px;
+}
+.shop-button{
+  font-size: 15px;
+  background-color: #ffb91f;
+    color: #202020;
+    margin-top: 10px;
+    line-height: 25px;
+  letter-spacing: 0px;
+  font-weight: 600;
+  border: 1px solid #ffb91f;
+  cursor: pointer;
+  padding: 11px 20px;
+  margin-left: 3rem;
+  border-radius: 42px;
+  margin-top: 25px;
+  transition: 350ms ease 0s;
+  width: 132px;
 }
 
 .discount, .hot {
