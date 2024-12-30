@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+:root {
+  --bg-color: #ffffff;
+  --light-grey: rgb(119, 119, 119);
+  --bg-navbar: #1246AB
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Mulish", serif;
+}
+.container {
+  width: 100%;
+  padding: 0 15px;
+}
+a {
+  text-decoration: none;
+  color: var(--light-grey);
+}
+.head {
+  display: grid;
+  grid-template-columns: min-content 1fr min-content;
+  height: 90px;
+  align-items: center;
+}
+.head .logo {
+  padding: 5px 0;
+}
+.head-center {
+  display: grid;
+  grid-template-columns: min-content min-content;
+  justify-content: left;
+  max-height: inherit;
+  padding-left: 40px;
+}
+.store,
+.time {
+  display: grid;
+  grid-template-columns: max-content max-content max-content;
+  align-items: center;
+  gap: 10px;
+  color: var(--light-grey);
+  padding: 0 10px;
+}
+.store strong {
+  font-weight: 800;
+}
+.store i {
+  font-size: 10px;
+  margin-left: -5px;
+}
+.links {
+  display: grid;
+  grid-template-columns: max-content max-content max-content max-content;
+}
+.link {
+  padding: 0 10px;
+  border-right: 1px solid rgba(119, 119, 119, 0.2);
+}
+.link i {
+  color: black;
+}
+.container-elements{
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  max-height: inherit;
+}
+ul{
+  list-style: none;
+  display: grid;
+  grid-template-columns: max-content max-content max-content;
+  align-items: center;
+}
+.menu{
+  display: grid;
+  grid-template-columns: max-content max-content max-content;
+  background-color: var(--bg-navbar);
+  height: 70px;
+}
+.container-search{
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  
+}
+/* .search{
+  position: relative;
+} */
+.icon{
+  display: grid;
+  border: 1px solid rgba(0, 0, 0, 0.105);
+  width: 42px;
+  height: 42px;
+  border-radius: 42px;
+  align-items: center;
+  justify-content: center;
+}
+.icon-count{
+  z-index: 1;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  text-align: center;
+  letter-spacing: 0;
+  font-weight: 300;
+  line-height: 20px;
+  background-color: #ffffff;
+}

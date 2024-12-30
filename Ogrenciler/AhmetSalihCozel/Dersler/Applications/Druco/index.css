@@ -78,6 +78,7 @@
 }
 
 .search select {
+  cursor: pointer;
   width: 190px;
   border-width: 0;
   padding-top: 4px;
@@ -333,7 +334,8 @@
   border-color: #fff;
   border-style: solid;
   border-width: 1px;
-  padding: 11px 20px;
+  cursor: pointer;
+  padding: 11px 40px;
   border-radius: 42px;
   margin-top: 25px;
   background-color: #fff;
@@ -347,6 +349,7 @@
   background-color: #ffb91f;
   border-style: solid;
   border-width: 1px;
+  cursor: pointer;
   padding: 11px 20px;
   border-radius: 42px;
   margin-top: 25px;
@@ -355,10 +358,15 @@
 }
 
 .form-button:hover {
-  color: rgba(255, 185, 31, 1) !important;
-  background: rgba(32, 32, 32, 1) !important;
-  border-color: rgba(32, 32, 32, 1) !important;
+  color: rgba(255, 185, 31, 1);
+  background: rgba(32, 32, 32, 1);
+  border-color: rgba(32, 32, 32, 1);
   transition: 350ms ease 0s;
+}
+
+.hero-button:hover {
+  background-color: #ffb91f;
+  border-color: #ffb91f;
 }
 
 /* ================ CATEGORIES ================ */
@@ -409,6 +417,10 @@
   transform: scale(1.2);
 }
 
+.category-img:hover>p {
+  color: #fff;
+}
+
 .category-img img {
   object-fit: cover;
   width: 100%;
@@ -430,6 +442,10 @@
   border: none;
   border-radius: 50%;
   width: 40px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 40px;
   transition: 300ms ease 0s;
 }
@@ -447,6 +463,7 @@
 
 .arrows {
   margin-top: 20px;
+  display: flex;
 }
 
 .arrows .arrow-button:nth-child(1) {
@@ -481,12 +498,55 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   align-content: center;
+  margin-bottom: 4rem;
 }
 
 .best-sellers-item {
   position: relative;
   border: 1px solid rgba(235, 235, 235, 1);
-  padding: 11px;
+  padding: 17px;
+}
+
+.addCartButton:hover {
+  color: rgba(32, 32, 32, 1);
+  background: rgba(255, 185, 31, 1);
+  transition: 350ms ease;
+}
+
+.addCartButton {
+  padding: 14px 15px;
+  background: rgba(32, 32, 32, 1);
+  border-color: rgba(32, 32, 32, 1);
+  color: rgba(255, 185, 31, 1);
+  font-size: 14px;
+  border-radius: 25px;
+  width: 100%;
+  border: none;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.addCartWrapper {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  display: none;
+  z-index: -1;
+  padding: 0 20px;
+}
+
+.best-sellers-item:hover>.addCartWrapper {
+  display: block;
+  z-index: 50;
+  background-color: #fff;
+  box-shadow: 0 7px 10px rgba(101, 101, 101, 0.16);
+
+
+}
+
+.best-sellers-item:hover {
+  box-shadow: 0 7px 10px rgba(101, 101, 101, 0.16);
 }
 
 .best-sellers-item img {
@@ -512,6 +572,105 @@
   align-items: center;
 }
 
+.littleBanner {
+  width: 100%;
+  height: auto;
+}
+
+.lb-images {
+  margin-bottom: 3rem;
+  display: grid;
+  width: 100%;
+  height: auto;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.lb-img {
+  overflow: hidden;
+  max-height: 400px;
+  height: 400px;
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+}
+
+
+.lb-img:hover>.lb-img-wrapper {
+  transform: scale(1.1);
+}
+
+.lb-img:hover .shop-button {
+  color: #ffb91f;
+  background-color: white;
+}
+
+.lb-img h2 {
+  font-size: 52px;
+  color: #fff;
+  margin-bottom: 10px;
+  line-height: 1.2;
+  padding: 7rem 30rem 0 3rem;
+}
+
+.lb-img p {
+  font-size: 18px;
+  color: #fff;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  padding-left: 3rem;
+}
+
+.lb-img:nth-child(2) h2 {
+  padding-right: 25rem;
+}
+
+.yellowColored {
+  color: #ffb91f
+}
+
+.lb-img-wrapper {
+  background: url("https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/08/banner-1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden;
+  height: 400px;
+  margin-bottom: 50px;
+  width: 100%;
+  transition: all 500ms ease;
+  position: absolute;
+  z-index: -1;
+}
+
+.lb-img:nth-child(2) .lb-img-wrapper {
+  background: url("https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/08/banner-2.jpg");
+}
+
+.bannerTitle {
+  font-size: 48px;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.yellowColored {
+  color: #ffb91f
+}
+
+.bannerImgFirst {
+  /* background-image:url('https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/08/banner-1.jpg') ; */
+  background-size: cover;
+  background-position: center;
+  padding: 7rem 3.5rem;
+  overflow: hidden;
+}
+
+.bannerImgFirst:hover>img {
+  transform: scale(1.2);
+}
+
+
 .best-seller-price p {
   color: #233F92;
   font-size: 18px;
@@ -526,13 +685,31 @@
   line-height: 18px;
 }
 
-.discount {
+.shop-button {
+  font-size: 15px;
+  background-color: #ffb91f;
+  color: #202020;
+  margin-top: 10px;
+  line-height: 25px;
+  letter-spacing: 0px;
+  font-weight: 600;
+  border: 1px solid #ffb91f;
+  cursor: pointer;
+  padding: 11px 20px;
+  margin-left: 3rem;
+  border-radius: 42px;
+  margin-top: 25px;
+  transition: 350ms ease 0s;
+  width: 132px;
+}
+
+.discount, .hot {
   background-color: #CA3501;
   color: #fff;
   width: 55px;
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 17px;
+  left: 17px;
   height: 25px;
   display: inline-block;
   text-align: center;
@@ -543,10 +720,65 @@
   line-height: 15px;
 }
 
+.hot {
+  background-color: rgba(255, 185, 31, 1);
+  top: 48px;
+  font-weight: normal;
+  color: #000;
+}
+
+/* ================ NEW PRODUCTS - SPECİALS - SALE ================ */
+
+.nss-title-box {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.nss-title {
+  font-weight: 700;
+  font-size: 36px;
+  letter-spacing: 0.9px;
+  cursor: pointer;
+}
+
+.nss-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.nss-item {
+  display: flex;
+  align-items: center;
+}
+
+.nss-item img {
+  position: relative;
+}
+
+.nss-item img::before {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  content: "";
+  background: red;
+  opacity: 0;
+  z-index: 3;
+  transition: 350ms ease 0s;
+}
+
+.nss-product-info p {
+  color: #233F92;
+  font-size: 18px;
+  font-weight: 600;
+}
+
 .headerTop,
 .headerMid,
 .headerBottom,
-.hero-content,
+.hero-content, .nss,
 .categories, .best-sellers {
   margin: 0 auto;
   max-width: 65.625%;
@@ -557,9 +789,15 @@
   .headerTop,
   .headerMid,
   .headerBottom,
-  .hero-content,
+  .hero-content, .nss,
   .categories, .best-sellers {
     max-width: 80%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .best-sellers-wrapper {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -567,9 +805,13 @@
 
   .headerTop, .best-sellers,
   .headerMid,
-  .headerBottom,
+  .headerBottom, .nss,
   .hero-content,
   .categories {
     max-width: 100%;
+  }
+
+  .best-sellers-wrapper {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
