@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+:root {
+  --bg-color: #ffffff;
+  --light-grey: rgb(119, 119, 119);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Mulish", serif;
+}
+.container {
+  width: 100%;
+  padding: 0 15px;
+}
+a {
+  text-decoration: none;
+  color: var(--light-grey);
+}
+.head {
+  display: grid;
+  grid-template-columns: min-content 1fr min-content;
+  height: 90px;
+  align-items: center;
+}
+.head .logo {
+  padding: 5px 0;
+}
+.head-center {
+  display: grid;
+  grid-template-columns: min-content min-content;
+  justify-content: left;
+  max-height: inherit;
+  padding-left: 40px;
+}
+.store,
+.time {
+  display: grid;
+  grid-template-columns: max-content max-content max-content;
+  align-items: center;
+  gap: 10px;
+  color: var(--light-grey);
+  padding: 0 10px;
+}
+.store strong {
+  font-weight: 800;
+}
+.store i {
+  font-size: 10px;
+  margin-left: -5px;
+}
+.links {
+  display: grid;
+  grid-template-columns: max-content max-content max-content max-content;
+}
+.link {
+  padding: 0 10px;
+  border-right: 1px solid rgba(119, 119, 119, 0.2);
+}
+.link i {
+  color: black;
+}
