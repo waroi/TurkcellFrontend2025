@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: "Outfit";
+}
+
 .outfit-font {
     font-family: "Outfit";
     font-optical-sizing: auto;
@@ -126,6 +130,11 @@
     padding: 10px;
     background-color: rgba(255,185,31,1);
     border-radius: 50px;
+}
+
+.search-text > img:hover{
+    background-color: rgb(234, 160, 0);
+    cursor: pointer;
 }
 
 .reset-appearance{
@@ -313,4 +322,81 @@
 .search-section-text > button:hover {
     background-color: rgba(255,185,31,1);
     cursor: pointer;
+}
+
+/*------- search section end --------*/
+
+.categories {
+    background-color: rgba(255,185,31,1);
+    padding: 30px;
+}
+
+.category-inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1260px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.category-text > h2{
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.category-buttons > *{
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255,255,255,0.3);
+    border-radius: 50px;
+    padding: 10px;
+    margin-top: 20px;
+    margin-right: 10px;
+    transition: background-color 0.2s ease;
+}
+
+.category-buttons > img:hover {
+    background-color: rgba(255,255,255,0.7);
+    cursor: pointer;
+
+}
+
+.category-options{
+    display: flex;
+    gap: 20px;
+}
+
+.category-card {
+    text-align: center;
+}
+
+.category-card:hover div,
+.category-card:hover p{
+    color: white;
+    cursor: pointer;
+}
+
+.category-card-img {
+    overflow: hidden;
+    height: 173px;
+    width: 173px;
+    border-radius: 10px;
+}
+
+.category-card-img > img {
+    height: 173px;
+    width: 173px;
+    transition: transform .2s ease;
+}
+
+.category-card-img > img:hover {
+    transform: scale(1.2);
+}
+
+.category-card p{
+    margin-top: 5px;
+    font-size: 17px;
 }
