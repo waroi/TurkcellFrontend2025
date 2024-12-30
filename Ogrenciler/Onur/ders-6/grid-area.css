@@ -1,0 +1,11 @@
+.container {
+    height: 600px;
+    background-color: gray;
+    gap: 5px;
+    grid-template-areas: 
+    "header header header"
+    "sidebar section section"
+    "sidebar . ."
+    "footer footer footer"
+    "box1 box2 box3";
+}
