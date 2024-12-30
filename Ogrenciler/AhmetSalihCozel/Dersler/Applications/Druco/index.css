@@ -78,6 +78,7 @@
 }
 
 .search select {
+  cursor: pointer;
   width: 190px;
   border-width: 0;
   padding-top: 4px;
@@ -333,7 +334,8 @@
   border-color: #fff;
   border-style: solid;
   border-width: 1px;
-  padding: 11px 20px;
+  cursor: pointer;
+  padding: 11px 40px;
   border-radius: 42px;
   margin-top: 25px;
   background-color: #fff;
@@ -347,6 +349,7 @@
   background-color: #ffb91f;
   border-style: solid;
   border-width: 1px;
+  cursor: pointer;
   padding: 11px 20px;
   border-radius: 42px;
   margin-top: 25px;
@@ -355,10 +358,15 @@
 }
 
 .form-button:hover {
-  color: rgba(255, 185, 31, 1) !important;
-  background: rgba(32, 32, 32, 1) !important;
-  border-color: rgba(32, 32, 32, 1) !important;
+  color: rgba(255, 185, 31, 1);
+  background: rgba(32, 32, 32, 1);
+  border-color: rgba(32, 32, 32, 1);
   transition: 350ms ease 0s;
+}
+
+.hero-button:hover {
+  background-color: #ffb91f;
+  border-color: #ffb91f;
 }
 
 /* ================ CATEGORIES ================ */
@@ -409,6 +417,10 @@
   transform: scale(1.2);
 }
 
+.category-img:hover>p {
+  color: #fff;
+}
+
 .category-img img {
   object-fit: cover;
   width: 100%;
@@ -430,6 +442,10 @@
   border: none;
   border-radius: 50%;
   width: 40px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 40px;
   transition: 300ms ease 0s;
 }
@@ -447,6 +463,7 @@
 
 .arrows {
   margin-top: 20px;
+  display: flex;
 }
 
 .arrows .arrow-button:nth-child(1) {
@@ -486,7 +503,7 @@
 .best-sellers-item {
   position: relative;
   border: 1px solid rgba(235, 235, 235, 1);
-  padding: 11px;
+  padding: 17px;
 }
 
 .best-sellers-item img {
@@ -526,13 +543,13 @@
   line-height: 18px;
 }
 
-.discount {
+.discount, .hot {
   background-color: #CA3501;
   color: #fff;
   width: 55px;
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 17px;
+  left: 17px;
   height: 25px;
   display: inline-block;
   text-align: center;
@@ -541,6 +558,13 @@
   font-weight: bold;
   font-size: 12px;
   line-height: 15px;
+}
+
+.hot {
+  background-color: rgba(255, 185, 31, 1);
+  top: 48px;
+  font-weight: normal;
+  color: #000;
 }
 
 .headerTop,
@@ -563,6 +587,12 @@
   }
 }
 
+@media screen and (max-width: 992px) {
+  .best-sellers-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 @media screen and (max-width: 576px) {
 
   .headerTop, .best-sellers,
@@ -571,5 +601,9 @@
   .hero-content,
   .categories {
     max-width: 100%;
+  }
+
+  .best-sellers-wrapper {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
