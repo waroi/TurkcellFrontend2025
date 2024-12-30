@@ -498,12 +498,54 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   align-content: center;
+  margin-bottom: 4rem;
 }
 
 .best-sellers-item {
   position: relative;
   border: 1px solid rgba(235, 235, 235, 1);
   padding: 17px;
+}
+
+.addCartButton:hover{
+  color: rgba(32, 32, 32, 1);background: rgba(255, 185, 31, 1);
+  transition: 350ms ease;
+}
+  
+.addCartButton{
+  padding: 14px 15px;
+  background: rgba(32, 32, 32, 1);
+  border-color: rgba(32, 32, 32, 1);
+  color: rgba(255, 185, 31, 1);
+  font-size: 14px;
+  border-radius: 25px;
+  width: 100%;
+  border:none;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.addCartWrapper{
+  position: absolute;
+  width: 100%;
+  left: 0;
+  display: none;
+  z-index: -1;
+  padding: 0 20px;
+}
+
+.best-sellers-item:hover > .addCartWrapper{
+  display: block;
+  z-index: 50;
+  background-color: #fff;
+  box-shadow: 0 7px 10px rgba(101, 101, 101, 0.16);
+
+
+}
+
+.best-sellers-item:hover {
+  box-shadow: 0 7px 10px rgba(101, 101, 101, 0.16);
 }
 
 .best-sellers-item img {
@@ -527,6 +569,42 @@
   display: flex;
   gap: 10px;
   align-items: center;
+}
+
+.littleBanner{
+  display: grid;
+  width: 100%;
+  height: auto;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.bannerTitle{
+  font-size: 48px;
+  color: #fff;    line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.yellowColored{
+  color: #ffb91f
+}
+
+.bannerImgFirst{
+  /* background-image:url('https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/08/banner-1.jpg') ; */
+  background-size: cover;
+  background-position: center;
+  padding: 7rem 3.5rem;
+  overflow: hidden;
+}
+
+.bannerImgFirst:hover > img{
+  transform: scale(1.2);
+}
+
+.bannerImgLast{
+  background-image:url('https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/08/banner-2.jpg') ;
+  background-size: cover;
+  background-position: center;
 }
 
 .best-seller-price p {
