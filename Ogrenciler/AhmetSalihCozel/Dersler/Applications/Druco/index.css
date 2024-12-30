@@ -507,12 +507,13 @@
   padding: 17px;
 }
 
-.addCartButton:hover{
-  color: rgba(32, 32, 32, 1);background: rgba(255, 185, 31, 1);
+.addCartButton:hover {
+  color: rgba(32, 32, 32, 1);
+  background: rgba(255, 185, 31, 1);
   transition: 350ms ease;
 }
-  
-.addCartButton{
+
+.addCartButton {
   padding: 14px 15px;
   background: rgba(32, 32, 32, 1);
   border-color: rgba(32, 32, 32, 1);
@@ -520,13 +521,13 @@
   font-size: 14px;
   border-radius: 25px;
   width: 100%;
-  border:none;
+  border: none;
   margin-top: 40px;
   margin-bottom: 20px;
   font-weight: bold;
 }
 
-.addCartWrapper{
+.addCartWrapper {
   position: absolute;
   width: 100%;
   left: 0;
@@ -535,7 +536,7 @@
   padding: 0 20px;
 }
 
-.best-sellers-item:hover > .addCartWrapper{
+.best-sellers-item:hover>.addCartWrapper {
   display: block;
   z-index: 50;
   background-color: #fff;
@@ -571,11 +572,13 @@
   align-items: center;
 }
 
-.littleBanner{
+.littleBanner {
   width: 100%;
   height: auto;
 }
-.lb-images{
+
+.lb-images {
+  margin-bottom: 3rem;
   display: grid;
   width: 100%;
   height: auto;
@@ -596,30 +599,36 @@
 .lb-img:hover>.lb-img-wrapper {
   transform: scale(1.1);
 }
+
 .lb-img:hover .shop-button {
   color: #ffb91f;
-  background-color:white;
+  background-color: white;
 }
-.lb-img h2{
+
+.lb-img h2 {
   font-size: 52px;
   color: #fff;
   margin-bottom: 10px;
   line-height: 1.2;
-  padding: 7rem 35rem 0 3rem ;
+  padding: 7rem 30rem 0 3rem;
 }
-.lb-img p{
+
+.lb-img p {
   font-size: 18px;
   color: #fff;
   margin-bottom: 20px;
   line-height: 1.2;
   padding-left: 3rem;
 }
-.lb-img:nth-child(2) h2{
-  padding-right: 30rem;
+
+.lb-img:nth-child(2) h2 {
+  padding-right: 25rem;
 }
-.yellowColored{
+
+.yellowColored {
   color: #ffb91f
 }
+
 .lb-img-wrapper {
   background: url("https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/08/banner-1.jpg");
   background-size: cover;
@@ -634,17 +643,22 @@
   z-index: -1;
 }
 
-.bannerTitle{
+.lb-img:nth-child(2) .lb-img-wrapper {
+  background: url("https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/08/banner-2.jpg");
+}
+
+.bannerTitle {
   font-size: 48px;
-  color: #fff;    line-height: 1.2;
+  color: #fff;
+  line-height: 1.2;
   margin-bottom: 10px;
 }
 
-.yellowColored{
+.yellowColored {
   color: #ffb91f
 }
 
-.bannerImgFirst{
+.bannerImgFirst {
   /* background-image:url('https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/08/banner-1.jpg') ; */
   background-size: cover;
   background-position: center;
@@ -652,7 +666,7 @@
   overflow: hidden;
 }
 
-.bannerImgFirst:hover > img{
+.bannerImgFirst:hover>img {
   transform: scale(1.2);
 }
 
@@ -670,12 +684,13 @@
   font-weight: normal;
   line-height: 18px;
 }
-.shop-button{
+
+.shop-button {
   font-size: 15px;
   background-color: #ffb91f;
-    color: #202020;
-    margin-top: 10px;
-    line-height: 25px;
+  color: #202020;
+  margin-top: 10px;
+  line-height: 25px;
   letter-spacing: 0px;
   font-weight: 600;
   border: 1px solid #ffb91f;
@@ -712,10 +727,58 @@
   color: #000;
 }
 
+/* ================ NEW PRODUCTS - SPECİALS - SALE ================ */
+
+.nss-title-box {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.nss-title {
+  font-weight: 700;
+  font-size: 36px;
+  letter-spacing: 0.9px;
+  cursor: pointer;
+}
+
+.nss-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.nss-item {
+  display: flex;
+  align-items: center;
+}
+
+.nss-item img {
+  position: relative;
+}
+
+.nss-item img::before {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  content: "";
+  background: red;
+  opacity: 0;
+  z-index: 3;
+  transition: 350ms ease 0s;
+}
+
+.nss-product-info p {
+  color: #233F92;
+  font-size: 18px;
+  font-weight: 600;
+}
+
 .headerTop,
 .headerMid,
 .headerBottom,
-.hero-content,
+.hero-content, .nss,
 .categories, .best-sellers {
   margin: 0 auto;
   max-width: 65.625%;
@@ -726,7 +789,7 @@
   .headerTop,
   .headerMid,
   .headerBottom,
-  .hero-content,
+  .hero-content, .nss,
   .categories, .best-sellers {
     max-width: 80%;
   }
@@ -742,7 +805,7 @@
 
   .headerTop, .best-sellers,
   .headerMid,
-  .headerBottom,
+  .headerBottom, .nss,
   .hero-content,
   .categories {
     max-width: 100%;
