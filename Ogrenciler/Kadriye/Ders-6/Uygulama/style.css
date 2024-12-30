@@ -3,7 +3,8 @@
 :root {
   --bg-color: #ffffff;
   --light-grey: rgb(119, 119, 119);
-  --bg-navbar: #1246AB
+  --bg-navbar: #1246ab;
+  --slider-img-bg: rgb(169, 170, 154);
 }
 
 * {
@@ -63,44 +64,79 @@ a {
 .link i {
   color: black;
 }
-.container-elements{
+.container-elements,
+.container-categories,
+.container-search {
   display: grid;
   grid-auto-flow: column;
   align-items: center;
   max-height: inherit;
+  padding-inline: 0 10px;
+  font-size: 15px;
+  font-weight: 800;
+  gap: 30px;
 }
-ul{
+.container-categories i {
+  font-size: 10px;
+  margin-left: 4px;
+  color: rgba(255, 255, 255, 0.7);
+}
+.container-categories a {
+  border-right: 1px solid rgba(255, 255, 255, 0.5);
+  padding-right: 20px;
+}
+.menu ul {
   list-style: none;
   display: grid;
   grid-template-columns: max-content max-content max-content;
   align-items: center;
+  gap: 30px;
 }
-.menu{
+.menu {
   display: grid;
-  grid-template-columns: max-content max-content max-content;
+  grid-template-columns: max-content 1fr max-content;
   background-color: var(--bg-navbar);
   height: 70px;
+  gap: 10px;
+  position: sticky;
 }
-.container-search{
-  display: grid;
-  grid-auto-flow: column;
+.menu a {
+  color: var(--bg-color);
+  display: flex;
   align-items: center;
-  
 }
+.nav-img {
+  margin-inline-end: 7px;
+}
+
 /* .search{
   position: relative;
 } */
-.icon{
+.container-search input {
+  min-width: 290px;
+  height: 46px;
+  padding-left: 15px;
+  border: none;
+}
+.container-search form {
   display: grid;
-  border: 1px solid rgba(0, 0, 0, 0.105);
+  grid-auto-flow: column;
+}
+.container-search form i {
+  color: var(--light-grey);
+  margin: auto -30px;
+}
+
+.icon-i {
+  display: grid;
+  border: 1px solid rgba(255, 255, 255, 0.4);
   width: 42px;
   height: 42px;
-  border-radius: 42px;
+  border-radius: 50%;
   align-items: center;
   justify-content: center;
 }
-.icon-count{
-  z-index: 1;
+.icon-count {
   width: 20px;
   height: 20px;
   border-radius: 50%;
@@ -109,4 +145,59 @@ ul{
   font-weight: 300;
   line-height: 20px;
   background-color: #ffffff;
+  font-size: 11px;
+  display: block;
+  margin-bottom: -14px;
+  margin-left: 28px;
+}
+.icon-i i {
+  font-size: 20px;
+  color: var(--bg-color);
+}
+.slider,
+.slider a {
+  height: 500px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 65% 30px auto;
+  position: relative;
+  color: #ffffff;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #2859b8;
+  z-index: -1;
+}
+.banner,
+.promo,
+.model::before {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.model {
+  width: 100%;
+  background-color: rgb(169, 170, 154);
+  margin-left: 10px;
+  position: relative;
+}
+.model::before {
+  content: "";
+  position: absolute;
+  width: 52%;
+  height: 100%;
+  background-color: aqua;
+  top: 0;
+  right: 0;
+  background-image: url(https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2021/12/slider-3-2.jpg);
+}
+.banner {
+  background-image: url(https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/05/banner-servises.jpg.webp);
+}
+.promo {
+  background-image: url(https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2021/12/shipping-banner-x2.jpg.webp);
 }
