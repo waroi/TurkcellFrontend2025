@@ -494,7 +494,7 @@ body {
     position: absolute;
     display: none;
     width: 100%;
-    padding: 30px;
+    padding: 3px 10px 25px;
     background-color: white;
     z-index: 2;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -520,4 +520,74 @@ body {
     background-color: rgba(255, 185, 31, 1);
     color: black;
     margin: 0 auto; 
+}
+
+/*------ bestsellers section end --------*/
+
+.banners-section {
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: 1f 1f;
+  grid-template-rows: 1f;
+  width: 100%;
+  gap: 30px;
+  height: 400px;
+  color: white;
+}
+
+.banner1-bg {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  background: url("https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/08/banner-1.jpg");
+  background-size: 101%;
+  cursor: pointer;
+  background-position: center;
+  transition: background-size 0.2s linear;
+}
+
+.banner1-bg:hover {
+  background-size: 112%;
+}
+
+.banner2-bg {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  background: url("https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/08/banner-2.jpg");
+  background-size: 101%;
+  cursor: pointer;
+  background-position: center;
+  transition: background-size 0.2s linear;
+}
+
+.banner2-bg:hover {
+  background-size: 112%;
+}
+
+.banner-text {
+  padding: 50px;
+  margin-top: 20px;
+}
+
+.banners-section h2 {
+  font-size: 50px;
+}
+
+.banner-text button {
+  background-color: rgba(255, 185, 31, 1);
+  border: none;
+  padding: 17px 27px;
+  border-radius: 50px;
+  margin-top: 35px;
+}
+
+.banner1-bg:hover > .banner-text > button {
+  color: rgba(255, 185, 31, 1);
+  background-color: white;
+  cursor: pointer;
+}
+
+.banner2-bg:hover > .banner-text > button {
+  color: rgba(255, 185, 31, 1);
+  background-color: white;
+  cursor: pointer;
 }
