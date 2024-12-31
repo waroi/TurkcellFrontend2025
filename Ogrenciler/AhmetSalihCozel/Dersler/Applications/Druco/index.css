@@ -1260,7 +1260,7 @@ footer {
     font-size: 15px;
   }
   .category-text h2 {
-    font-size: 32px;
+    font-size: 29px;
   }
 }
 
@@ -1457,6 +1457,10 @@ footer {
 }
 
 @media screen and (max-width: 576px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
   .headerTop,
   .best-sellers,
   .headerMid,
@@ -1481,10 +1485,10 @@ footer {
   .nss-title-box {
     gap: 15px;
   }
-
-  .nss-img-box img {
-    width: 100%;
-    height: 100%;
+  .best-sellers-titles {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   .categories {
     padding: 0 25px;
@@ -1496,6 +1500,9 @@ footer {
   }
   .headerTop p {
     font-size: 10px;
+  }
+  .listWrapper ul {
+    gap: 0;
   }
   .best-sellers-wrapper {
     grid-template-columns: repeat(2, 1fr);
@@ -1510,5 +1517,8 @@ footer {
   }
   .nss-title {
     font-size: 16px;
+  }
+  .hero-text {
+    padding-left: 13px;
   }
 }
