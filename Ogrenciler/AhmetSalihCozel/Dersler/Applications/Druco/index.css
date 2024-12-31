@@ -11,6 +11,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .headerTopWrapper {
   background-color: #233f92;
 }
@@ -1202,6 +1206,7 @@ footer {
   font-size: 16px;
   padding: 10px;
   font-weight: 400;
+  position: relative;
 }
 .footer-flex {
   display: flex;
@@ -1213,6 +1218,34 @@ footer {
 }
 .pay img {
   width: 256px;
+}
+.go-top {
+  background-color: rgba(255, 185, 31, 1);
+  color: rgba(32, 32, 32, 1);
+  display: block;
+  width: 40px;
+  height: 40px;
+  right: 30px;
+  overflow: hidden;
+  text-transform: uppercase;
+  font-size: 0;
+  line-height: 0;
+  letter-spacing: 0;
+  text-decoration: none;
+  color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(36, 36, 36, 0.5);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: absolute;
+}
+.go-top:hover {
+  background-color: #202020;
+}
+
+.go-top:hover > svg {
+  fill: #ffb91f;
 }
 .headerTop,
 .headerMid,
@@ -1231,13 +1264,9 @@ footer {
   margin: 0 auto;
   max-width: 73%;
 }
-
 @media screen and (max-width: 1400px) {
   .brand-logos {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+    overflow-x: auto;
   }
   .lb-img h2,
   .lb-img:nth-child(2) h2 {
