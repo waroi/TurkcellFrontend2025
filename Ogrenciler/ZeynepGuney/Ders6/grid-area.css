@@ -1,0 +1,45 @@
+.container{
+    display: grid;
+    height: 600px;
+    background-color: gray;
+    gap: 5px;
+    grid-template-areas: 
+    "header header header"
+    "sidebar section section"
+    "sidebar . ."
+    "footer footer footer"
+    ". box-1 box-1";
+}
+.header{
+    background-color: blue;
+    padding: 20px;
+    grid-area: header;
+}
+.section{
+    background-color: orange;
+    padding: 20px;
+    grid-area: section;
+}
+.footer{
+    background-color:brown;
+    padding: 20px;
+    grid-area: footer; 
+}
+.sidebar{
+    background-color:aqua;
+    padding: 20px;
+    grid-area: sidebar;
+}
+.box-1{
+    background-color:blueviolet;
+    padding: 20px;
+    grid-area: box-1;
+}
+.box-2{
+    background-color: forestgreen;
+    padding: 20px;
+}
+.box-3{
+    background-color: lightcoral;
+    padding: 20px;
+}

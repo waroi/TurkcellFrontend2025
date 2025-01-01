@@ -1,0 +1,38 @@
+.container {
+    display: grid;
+    grid-template-areas:
+        "section sidebar"
+        "box-1 box-2"
+        "box-3 box-3"
+        "footer footer";
+    grid-gap: 10px;
+}
+
+.section {
+    grid-area: section;
+}
+
+.sidebar {
+    grid-area: sidebar;
+}
+
+.box-1 {
+    grid-area: box-1;
+}
+
+.box-2 {
+    grid-area: box-2;
+}
+
+.box-3 {
+    grid-area: box-3;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+.container>* {
+    padding: 20px;
+    border: 1px solid #ccc;
+}
