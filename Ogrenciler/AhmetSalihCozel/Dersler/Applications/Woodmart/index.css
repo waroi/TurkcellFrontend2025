@@ -97,3 +97,18 @@ hr.vertical {
     width:0px;
     border:0.2px solid rgba(0, 0, 0, 0.2)
 }
+
+.navBottomLeft > ul > li{
+    list-style: none;
+}
+
+.navBottomLeft {
+    display: flex;
+}
+
+.navBottomLeft > ul {
+    display: flex;
+    justify-content: start;
+    gap:20px;
+}
+
