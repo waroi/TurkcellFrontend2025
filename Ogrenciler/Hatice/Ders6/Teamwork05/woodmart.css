@@ -105,15 +105,66 @@ header{
     flex-direction: column;
     gap: 10px;
 }
-.services-right img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.services-right-top {
+    background: url(https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/05/banner-servises.jpg.webp);
+    color: white;
+    min-height: 300px;
+    background-size: cover; 
+    background-position: center;
+}
+.services-right-bottom {
+    background: url(https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2021/12/shipping-banner-x2.jpg.webp);
+    color: white;
+    min-height: 200px;
+    background-size: cover; 
+    background-position: center;
+}
+.popular{
+    margin-top: 80px;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+.popular h1{
+    padding-left: 40px;
+}
+.popular-content {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); 
+    gap: 30px; 
+    justify-items: center; 
+    align-items: center; 
+    padding: 20px;
+}
+.category-image {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+.featured-products{
+    margin-top: 80px;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+.featured-products-content {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); 
+    justify-items: center; 
+    align-items: center; 
+    padding: 20px;
+}
+.featured-products-card {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 768px) {
     .services-section {
-        flex-direction: column; /* Ekran daraldığında tüm bölüm dikey hizalanır */
-        align-items: center; /* Ekranın ortasında hizalar */
+        flex-direction: column; 
+        align-items: center; 
     }
 }
