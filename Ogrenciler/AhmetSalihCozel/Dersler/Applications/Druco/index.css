@@ -1195,6 +1195,94 @@ html {
   color: #000;
   transition: 350ms ease 0s;
 }
+/*================ FOOTER-TOP ================ */
+.footer-top{
+  background-color: #000;
+  width: 100%;
+}
+.footer-top-content{
+  display: flex;
+  justify-content: space-around;
+  padding-top: 81px;
+  padding-bottom: 74px;
+}
+.ft-content{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 64.5%;
+  padding: 10px;
+}
+.say-hello{
+  display: grid;
+  grid-template-rows: repeat(5, minmax(0.8fr,1fr));
+  padding: 10px;
+  height: auto;
+  max-width: 35.5%;
+}
+.say-hello h5{
+  color: white;
+  margin: 0 0 1px;
+  padding: 5px;
+  font-size: 20px;
+  margin-bottom: 17px;
+}
+.say-hello p{
+  color: #AAA;
+  margin: 0 0 1px;
+  padding: 5px;
+  font-size: 15px;
+  margin-bottom: 17px;
+}
+.say-hello h6{
+  color: #AAA;
+  margin: 0 0 1px;
+  padding: 5px 42% 5px 5px;
+  font-size: 15px;
+  margin-bottom: 17px;
+  font-weight: 400;
+}
+.sh-icons{
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+}
+.sh-icons svg{
+  fill: #AAA;
+  height: 18px;
+  width: auto;
+  margin: 11px;
+}
+.ft-column{
+  max-width: 270px;
+}
+.ft-column h2 {
+  font-size: 18px;
+  color: #FFF;
+  margin-bottom: 10px;
+  text-transform: uppercase; 
+  padding: 5px;
+}
+.ft-column ul {
+  list-style: none;
+  padding: 5px;
+  margin: 0;
+}
+.ft-column li {
+  font-size: 14px;
+  margin-bottom: 8px;
+  padding: 9px 0;
+  color: #AAA;
+  cursor: pointer;
+}
+.ft-column li:hover {
+  color: #ffb91f;
+  transition: 150ms ease 0s;
+}
+.say-hello p span:hover{
+  cursor: pointer;
+  color: #ffb91f;
+  transition: 150ms ease 0s;
+}
 
 /*================ FOOTER ================ */
 footer {
@@ -1260,7 +1348,7 @@ footer {
 .blog,
 .brands,
 .nl-content,
-.footer-flex {
+.footer-flex, .footer-top-content {
   margin: 0 auto;
   max-width: 73%;
 }
@@ -1290,6 +1378,9 @@ footer {
   }
   .category-text h2 {
     font-size: 29px;
+  }
+  .say-hello h6{
+    padding: 5px;
   }
 }
 
@@ -1482,6 +1573,25 @@ footer {
   .langAndUsers p:nth-child(1),
   .langAndUsers p:nth-child(2) {
     display: none;
+  }
+  .footer-top-content{
+    display: flex;
+    flex-direction: column;
+    padding: 40px 0 33px;
+    width: 100%;
+  }
+  .say-hello, .say-hello h5, .say-hello h6, .say-hello p{
+    min-width: 100%;
+    margin-bottom: 1px;
+    height: auto;
+  }
+  .ft-content{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+  .ft-column{
+    margin-bottom: 20px;
   }
 }
 
