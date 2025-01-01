@@ -365,6 +365,7 @@ body {
 .category-options {
   display: flex;
   gap: 20px;
+  overflow: hidden;
 }
 
 .category-card {
@@ -527,11 +528,13 @@ body {
 .banners-section {
   margin-top: 80px;
   display: grid;
+  grid-template-areas: "banner1 banner2";
   grid-template-columns: 1f 1f;
   grid-template-rows: 1f;
   width: 100%;
   gap: 30px;
-  height: 400px;
+
+  
   color: white;
 }
 
@@ -539,10 +542,11 @@ body {
   grid-column: 1/2;
   grid-row: 1/2;
   background: url("https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/08/banner-1.jpg");
-  background-size: 101%;
+  background-size: auto;
   cursor: pointer;
   background-position: center;
   transition: background-size 0.2s linear;
+  grid-area: banner1;
 }
 
 .banner1-bg:hover {
@@ -553,10 +557,11 @@ body {
   grid-column: 2/3;
   grid-row: 1/2;
   background: url("https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/08/banner-2.jpg");
-  background-size: 101%;
+  background-size: cover;
   cursor: pointer;
   background-position: center;
   transition: background-size 0.2s linear;
+  grid-area: banner2;
 }
 
 .banner2-bg:hover {
@@ -564,8 +569,8 @@ body {
 }
 
 .banner-text {
-  padding: 50px;
-  margin-top: 20px;
+  padding: 40px;
+  margin: 40px 0;
 }
 
 .banners-section h2 {
@@ -590,4 +595,76 @@ body {
   color: rgba(255, 185, 31, 1);
   background-color: white;
   cursor: pointer;
+}
+
+.orange-text {
+  color: rgba(255, 185, 31, 1)
+}
+
+/*------ banners section end --------*/
+
+.new-products-section {
+  max-width: 1260px;
+  margin: 120px auto;
+}
+
+.topics-section {
+  display: flex;
+}
+
+.topics-section *{
+  width: 33%;
+  font-size: 35px;
+  margin-left: 20px;
+}
+
+
+.item-container {
+  width: 100%;
+  height: 700px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  padding: 20px;
+  float: right;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+
+.border-right {
+  border-right: 1px solid rgba(235, 235, 235, 1);
+}
+
+.border-bottom {
+  border-bottom: 1px solid rgba(235, 235, 235, 1);
+}
+
+.new-product {
+  display: flex;
+  flex-direction: row;
+  width: 360px;
+  flex-flow: row wrap;
+  margin: 20px;
+}
+
+.product-image img{
+  width: 180px;
+  height: 180px;
+}
+
+.product-info {
+  line-height: 2rem;
+  color: rgba(32,32,32,1);
+  font-weight: 300;
+}
+
+.product-info button {
+  border: none;
+  background-color: rgba(255, 185, 31, 1);
+  padding: 8px 15px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 600;
 }
