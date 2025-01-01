@@ -7,7 +7,7 @@ body{
     font-family: "Mulish", serif;
 }
 .container{
-    width: 90%;
+    width: 80%;
 }
 .d-flex-end{
     display: flex;
@@ -73,7 +73,7 @@ nav{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #1246ab;
+    background: rgb(18, 70, 171);
     height: 70px;
     position: sticky;
     top: 0;
@@ -101,7 +101,7 @@ nav{
     gap: 20px;
 }
 
-.icons div {
+.icons .icon-number {
     position: relative;
     display: flex;
     justify-content: center;
@@ -112,6 +112,8 @@ nav{
     height: 40px;
     color: #fff;
 }
+
+
 .search {
     display: flex;
     justify-content: space-between;
@@ -133,13 +135,121 @@ nav{
     display: flex;
     justify-content: center;
     align-items: center;
-    top: 0;
-    right: 0;
-    width: 10px;
-    height: 10px;
+    top: -3px;
+    right: -3px;
+    width: 15px;
+    height: 15px;
+    color: black;
+    font-size: 10px;
     border-radius: 50%;
     background: #fff;
 }
 .fa-magnifying-glass{
     color: #777777;
+}
+
+main{
+    width: 100%;
+
+}
+.slider{
+    width: 100%;
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,1) 35%, rgba(40,89,184,1) 35%);
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.first-grid{
+    display: grid;
+    gap: 20px;
+    height: 520px;
+    width: 100%;
+    grid-template-areas: 
+    "first first second"
+    "first first third";
+}
+
+.first{
+    grid-area: first;
+}
+.second{
+    grid-area: second;
+}
+.third{
+    grid-area: third;
+}
+
+
+.first-grid div{
+    background-color: aqua;
+}
+
+.categories{
+    margin-top: 50px;
+}
+
+.categories h4
+{
+    font-size: 26px ;
+    font-weight: 700;
+    margin-bottom: 50px;
+}
+
+
+.cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+    row-gap: 50px;
+}
+
+.card{
+    text-align: center;
+    line-height: 1.5;
+}
+.card h5{
+ font-size: 18px;
+}
+.card p{
+    color: #777777;
+}
+
+
+.card img{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+
+.products{
+    width: 100%;
+    margin-top: 50px;
+}
+.product-menu{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 30px 0;
+}
+
+.product-menu ul{
+    gap: 40px;
+    list-style: none;
+}
+
+.product-menu ul li{
+    
+}
+
+.product-menu h5{
+    font-size: 26px ;
+    font-weight: 700;
+}
+
+.product-card img{
+    width: 250px;
 }
