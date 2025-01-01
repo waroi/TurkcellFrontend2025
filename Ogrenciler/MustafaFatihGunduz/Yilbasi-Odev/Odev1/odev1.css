@@ -600,3 +600,129 @@ p {
   font-size: 12px;
   color: #202020;
 }
+.popular-parts{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 100px;
+}
+.popular-parts-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+}
+.popular-parts-title h2{
+  font-size: 36px;
+  color:#202020 ;
+  line-height: 1;
+  font-weight: bold;
+
+}
+.popular-parts-list{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 20px;
+
+}
+.popular-parts-list li{
+ list-style: none;
+ border: 1px solid #cbcbcb;
+ width:230px ;
+ height:50px ;
+ font-size:15px ;
+ color:#202020 ;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ border-radius:5px;
+}
+.popular-parts-list li:hover{
+  background-color: #ffb91f;
+  transition: 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+.genuine-parts{
+  background-image: url("https://demothemesky-be87.kxcdn.com/druco/wp-content/uploads/2022/08/banner-3.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.genuine-parts-title{
+  width: 1230px;
+  height: 200px;
+}
+.genuine-parts-title h2{
+  font-size: 90px;
+  color: #ffb91f;
+  line-height: 85px;
+  margin-bottom: 15px;
+}
+.genuine-parts-title p{
+  font-size: 18px;
+  color: #ffffff;
+
+}
+.from-our-blog{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.from-our-blog-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.from-our-blog-content-left{
+  width:640px ;
+  border: 1px solid #cbcbcb;
+  border-radius: 5px;
+}
+.from-our-blog-content-left img{
+  width: 640px;
+  height: 370px;
+}
+.from-our-blog-content-text{
+display: flex;
+justify-content: center;
+align-items: start;
+flex-direction: column;
+padding: 20px;
+gap: 15px;
+}
+.from-our-blog-content-text span{
+color: #afafaf;
+}
+.from-our-blog-content-text p{
+  color: #202020;
+}
+
+
+.from-our-blog-content-left button{
+  width: 150px;
+  height: 42px;
+  background-color: #ffb91f;
+  border-radius: 42px;
+  border: none;
+  outline: none;
+  font-weight: bold;
+}
+.from-our-blog-content-left button:hover{
+  background-color: black;
+  color: #ffb91f;
+  transition: 0.3s ease;
+  
+}
+.from-our-blog-content-text-title{
+  font-size:20px ;
+  color: #202020;
+  font-weight: bold;
+}
