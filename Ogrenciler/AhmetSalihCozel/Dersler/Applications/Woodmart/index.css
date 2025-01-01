@@ -45,6 +45,11 @@
     align-items: center;
 }
 
+.blueColored{
+    color: #1246AB;
+    font-weight: 700;
+}
+
 .navTopEnd{
     display: flex;
     align-items: center;
@@ -58,8 +63,14 @@
     justify-content:space-between;
 }
 
-.navBar{
-
+.navBottom{
+    display: flex;
+    background-color: #1246AB;
+    height: 70px;
+    width: 100%;
+    padding: 0 13.75%;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .navTopEndList{
@@ -73,6 +84,12 @@
     text-decoration: none;
     color: black;
     color: #777777;
+}
+
+.navBottomRight{
+    display: grid;
+    grid-template-columns: 5fr 1fr 1fr 1fr;
+    gap: 10px;
 }
 
 hr.vertical {
