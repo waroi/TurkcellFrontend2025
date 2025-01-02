@@ -87,9 +87,12 @@
 }
 
 .navBottomRight{
+    height: 46px;
+    width: 526px;
     display: grid;
-    grid-template-columns: 5fr 1fr 1fr 1fr;
-    gap: 10px;
+    grid-template-columns: 10fr 1fr 1fr 1fr;
+    gap: 30px;
+    align-items: center;
 }
 
 hr.vertical {
@@ -98,8 +101,9 @@ hr.vertical {
     border:0.2px solid rgba(0, 0, 0, 0.2)
 }
 
-.navBottomLeft > ul > li{
-    list-style: none;
+.navBottomLeft > div{
+    font-weight: 700;
+    color: #fff;
 }
 
 .navBottomLeft {
@@ -113,3 +117,156 @@ hr.vertical {
     gap:20px;
 }
 
+.navBottomLeft > ul > li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    font-weight: 700;
+    color: #fff;
+    list-style: none;
+}
+
+
+.allCategories{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px
+}
+
+.navBottomRight > input{
+    height: 46px;
+    background-image: url('./assets/magnifying-glass-solid.svg');
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    background-position: right center;
+    background-position-x: 98%;
+    padding-left: 10px;
+    border-width: 0;
+    border-style: none;
+}
+
+.buttonIcon{
+    height: 46px;
+    width: 46px;
+    border-radius: 50%;
+    border-style:solid; /* Add border style */
+    border-width: 0.1px;
+    border-color: #bebebe5c;
+    display: inline-block; 
+    overflow: hidden;
+    position: relative; 
+    padding: 12px;
+
+}
+
+.buttonIcon img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* ----------- FOOTER ----------- */
+footer{
+padding: 20px 13.75%;
+}
+.footer-top{
+display: grid;
+grid-template-columns: 1.6fr 1fr 1fr 1fr 1.6fr;
+margin: 0px - 15px;
+padding: 40px 0px 10px;
+justify-content: space-between;
+}
+.footer-bottom{
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+}
+.fb-text{
+display: flex;
+flex-direction: row;
+gap: 2px;
+}
+.icon-ft{
+margin-right: 10px;
+}
+.company-info{
+font-family: "Work Sans", Arial, Helvetica, sans-serif;
+padding: 0px 15px;
+}
+.company-info ul {
+list-style: none;
+padding: 0;
+}
+.company-info p{
+margin: 15px 0px;
+}
+.company-info li {
+margin-bottom: 15px;
+}
+.footer-section {
+display: flex;
+flex-direction: column;
+padding: 0px 15px;
+}
+.footer-section h2, .footer-section h3 {
+margin-bottom: 15px;
+font-size: 1.2em;
+color: #333;
+}
+.footer-section p, .footer-section li {
+font-size: 0.9em;
+color: #666;
+line-height: 1.6;
+}
+.footer-section ul {
+list-style: none;
+padding: 0;
+}
+.footer-section li {
+margin-bottom: 10px;
+}
+.store-buttons img {
+width: 120px;
+margin-right: 10px;
+}
+.social-icons button{
+width: 30px;
+height: 30px;
+border-radius: 50%;
+border: none;
+}
+.social-icons button svg{
+height: 14px;
+}
+.fbtn{
+background-color: #365493;
+}
+.fbtn svg, .xbtn svg, .pbtn svg, .lbtn svg, .tbtn svg{
+fill: #fff;
+}
+.xbtn{
+background-color: #000;
+}
+.pbtn{
+background-color: #cb2027;
+}
+.lbtn{
+background-color: #0274b3;
+}
+.tbtn{
+background-color: #37aee2;
+}
+.social-icons span {
+display: inline-block;
+margin-right: 10px;
+color: #333;
+font-size: 0.9em;
+cursor: pointer;
+}
+.store-buttons{
+display: flex;
+align-items: center;
+gap: 8px;
+margin-bottom: 20px;
+}
