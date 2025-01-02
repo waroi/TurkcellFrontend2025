@@ -169,6 +169,10 @@ hr.vertical {
 /* ----------- FOOTER ----------- */
 footer{
 padding: 20px 13.75%;
+border-top: 1px solid #99999950;
+}
+.links{
+    padding: 20px 13.75%;
 }
 .footer-top{
 display: grid;
@@ -176,6 +180,7 @@ grid-template-columns: 1.6fr 1fr 1fr 1fr 1.6fr;
 margin: 0px - 15px;
 padding: 40px 0px 10px;
 justify-content: space-between;
+font-weight: 600;
 }
 .footer-bottom{
 display: flex;
@@ -185,14 +190,27 @@ justify-content: space-between;
 .fb-text{
 display: flex;
 flex-direction: row;
-gap: 2px;
+gap: 5px;
+font-size: 12.8px;
+color: #333;
+font-weight: 700;
+}
+.fb-text p span{
+    color: red;
+}
+.fb-text p strong{
+    cursor: pointer;
 }
 .icon-ft{
 margin-right: 10px;
 }
+.grey-colored{
+    color: #767676;
+}
 .company-info{
 font-family: "Work Sans", Arial, Helvetica, sans-serif;
 padding: 0px 15px;
+line-height: 1.7;
 }
 .company-info ul {
 list-style: none;
@@ -200,9 +218,12 @@ padding: 0;
 }
 .company-info p{
 margin: 15px 0px;
+font-size: 16px;
+color: #767676;
 }
 .company-info li {
 margin-bottom: 15px;
+color: #767676;
 }
 .footer-section {
 display: flex;
@@ -211,12 +232,12 @@ padding: 0px 15px;
 }
 .footer-section h2, .footer-section h3 {
 margin-bottom: 15px;
-font-size: 1.2em;
+font-size: 16px;
 color: #333;
 }
 .footer-section p, .footer-section li {
-font-size: 0.9em;
-color: #666;
+    font-size: 16px;
+color: #767676;
 line-height: 1.6;
 }
 .footer-section ul {
@@ -225,16 +246,24 @@ padding: 0;
 }
 .footer-section li {
 margin-bottom: 10px;
+cursor: pointer;
+font-size: 16px;
+}
+.footer-section li:hover{
+    color: #1246AB;
+    transition: 250ms ease 0s;
 }
 .store-buttons img {
 width: 120px;
 margin-right: 10px;
+cursor: pointer;
 }
 .social-icons button{
 width: 30px;
 height: 30px;
 border-radius: 50%;
 border: none;
+cursor: pointer;
 }
 .social-icons button svg{
 height: 14px;
@@ -269,4 +298,132 @@ display: flex;
 align-items: center;
 gap: 8px;
 margin-bottom: 20px;
+}
+/* ------------- NEWSLETTER ------------- */
+.newsletter{
+    width: 100%;
+    background-color: #1246AB;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sign-up{
+    width: 72%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.su-wrapper{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 50%;
+}
+.su-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.su-text h4{
+    color: #fff;
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+.su-text p{
+    color: #ffffffcc;
+    font-size: 16px;
+    font-weight: 600;
+}
+.su-wrapper img{
+    height: 52px;
+    width: 71px;
+}
+.su-mail{
+    display: flex;
+    padding: 0 15px;
+    width: 40%;
+    gap: 10px;
+}
+.su-mail input:nth-child(1){
+    padding: 0 15px;
+    height: 42px;
+    width: 80%;
+}
+.su-mail input:nth-child(2){
+    padding: 5 35px;
+    height: 42px;
+    width: 93px;
+    font-weight: 600;
+    background-color: #fff;
+    border: none;
+    box-shadow: none;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.woodmart-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #f1f3f8;
+}
+.wc-text{
+    width: 72%;
+    padding: 0 60px 0 40px;
+}
+.woodmart-container h1 {
+    font-size: 24px;
+    color: #2c54b5;
+    margin-bottom: 20px;
+}
+
+.woodmart-container .woodmart-subtitle {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.woodmart-container p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.woodmart-container p strong {
+    font-weight: bold;
+}
+
+.woodmart-container .woodmart-read-more {
+    display: inline-block;
+    margin-top: 20px;
+    color: #2c54b5;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.woodmart-container .woodmart-read-more:hover {
+    text-decoration: underline;
+}
+@media screen and (max-width: 1400px){
+    .links{
+        padding: 0;
+    }
+    .company-info{
+        max-width: 470px;
+    }
+    .footer-section{
+        min-width: 360px;
+    }
+}
+@media screen and (max-width: 1200px){
+    .footer-top{
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+@media screen and (max-width: 768px){
+    .company-info{
+        width: 100%;
+    }
 }
