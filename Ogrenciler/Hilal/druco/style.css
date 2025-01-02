@@ -39,7 +39,7 @@ p {
 	font-size: 15px;
 }
 .container {
-	max-width: 1300px;
+	width: 1300px;
 	margin: 0 auto;
 	padding: 0 15px;
 }
@@ -47,6 +47,9 @@ p {
 .container .our-blog-h1 {
 	text-align: center;
 	margin: 50px 0;
+}
+.blog-section {
+	margin-bottom: 90px;
 }
 
 .blog-grid {
@@ -129,6 +132,180 @@ p {
 
 button:hover {
 	background: #e5a730;
+}
+
+.genuine-parts {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	height: 250px;
+	object-fit: cover;
+	background-image: url("https://demothemesky-be87.kxcdn.com/druco/wp-content/uploads/2022/08/banner-3.jpg");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.genuine-parts h2 {
+	display: block;
+	font-size: 90px;
+	line-height: 85px;
+	color: #ffb91f;
+}
+.genuine-parts span {
+	color: #ffb91f;
+}
+.genuine-parts p {
+	font-size: 14px;
+	color: #fff;
+}
+.genuine-parts .container {
+	display: flex;
+	flex-direction: column;
+	justify-content: left;
+	position: absolute;
+	padding: 20px 15px 34px 15px;
+}
+
+.support {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 500px;
+	background-image: url(https://demothemesky-be87.kxcdn.com/druco/wp-content/uploads/2022/08/home-about.jpg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin: 0px 0px 78px;
+}
+.support .container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	padding: 20px 15px 34px 15px;
+}
+.support h3 {
+	font-size: 20px;
+	line-height: 40px;
+	color: white;
+}
+.support h2 {
+	font-size: 50px;
+	line-height: 60px;
+	color: white;
+}
+.support-items-row {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	margin-top: 50px;
+}
+.support-item {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 33%;
+	color: white;
+}
+.support-item img {
+	width: 70px;
+	height: 70px;
+}
+.support-item h4 {
+	color: #ffb91f;
+}
+
+.brands .container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 20px 15px 34px 15px;
+}
+
+.footer {
+	background-color: black;
+}
+
+.newsletter {
+	display: flex;
+	flex-direction: column;
+	height: 150px;
+	background-color: #ffb91f;
+	padding: 33px 0px 25px;
+}
+.newsletter .container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.newsletter-form {
+	position: relative;
+	width: 100%;
+	max-width: 500px;
+}
+
+.newsletter-form input {
+	width: 100%;
+	padding: 15px 160px 15px 25px;
+	border-radius: 50px;
+	font-size: 16px;
+	background-color: #ffb91f;
+	outline: none;
+	border: 1px solid black;
+}
+.newsletter-form input::placeholder {
+	color: black;
+	font-weight: 400;
+}
+
+.newsletter-form button {
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+	padding: 12px 25px;
+	background-color: black;
+	color: white;
+	border: none;
+	border-radius: 25px;
+	font-size: 14px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.newsletter-form button:hover {
+	background-color: #333;
+}
+footer h5 {
+	color: rgb(255 255 255);
+	font-size: 20px;
+	line-height: 1.2em;
+}
+footer p {
+	color: rgb(174 173 173);
+	line-height: 22px;
+	padding-top: 9px;
+	padding-bottom: 9px;
+}
+footer {
+	background-color: black;
+}
+footer .container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 81px 0px 74px 0px;
 }
 
 /* Responsive Design */
