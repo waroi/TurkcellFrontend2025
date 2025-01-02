@@ -5,6 +5,8 @@
   --light-grey: rgb(119, 119, 119);
   --bg-navbar: #1246ab;
   --slider-img-bg: rgb(169, 170, 154);
+  --color-gray-300 : #bbb;
+  --color-gray-800 : #333;
 }
 
 * {
@@ -253,4 +255,79 @@ a {
 .promo {
   background-image: url(https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2021/12/shipping-banner-x2.jpg.webp);
   padding: 30px;
+}
+.categories{
+  margin-top: 50px;
+}
+.categories h4{
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 36.4px;
+  margin-bottom: 50px;
+}
+.cards{
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 30px;
+}
+.card{
+  text-align: center;
+}
+.products{
+  width: 100%;
+  margin-top: 50px;
+}
+.product-cards{
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, auto);
+}
+.product-card{
+  display: grid;
+  padding: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.206);
+  gap:12px;
+}
+.product-card h6 a{
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-gray-800);
+}
+.product-card p{
+  color: var(--color-gray-300);
+}
+.product-card p strong{
+  color: var(--color-gray-800);
+}
+.product-card span{
+  color: #1246ab;
+  font-weight: 600;
+}
+.btn-add button, .btn-add input{
+  border: none;
+  background-color: #1246ab;
+  color: white;
+  font-weight: 600;
+  min-height: 48px;
+  text-align: center;
+  font-size: 13px;
+}
+.btn-add{
+  grid-template-columns: 10% 15% 10% 65%;
+}
+.product-card img{
+  width: 220px;
+}
+.product-menu{
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  margin: 30px 0;
+}
+.product-menu h4{
+  font-size: 26px;
+}
+.product-menu ul{
+  gap: 20px;
+  list-style: none;
+  color: rgba(51, 51, 51, 0.7);
 }
