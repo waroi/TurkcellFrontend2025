@@ -6,3 +6,42 @@
 body{
     font-family: "Outfit", serif;
 }
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1260px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+    background-color: #233f92;
+}
+header ul li {
+    display: inline;
+    list-style: none;
+    margin-right: 10px;
+}
+header ul li a{
+    font-size: 14px;
+    color: white;
+    text-decoration: none;
+}
+header ul li a:hover{
+    color: #ffb91f;
+}
+header p span{
+    color: #ffb91f;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 0 5px;
+}
+header p{
+    color: white;
+    font-size: 15px;
+    padding: 0 15px;
+}
