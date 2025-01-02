@@ -46,15 +46,15 @@ h4 {
 p {
 	font-size: 15px;
 }
+
 .container {
-	width: 1300px;
 	margin: 0 auto;
-	padding: 0 15px;
 }
 
 .container > h2 {
 	text-align: center;
 }
+
 .blog-section {
 	margin-bottom: 90px;
 }
@@ -73,6 +73,7 @@ p {
 	border: none;
 	box-shadow: none;
 }
+
 .blog-card:nth-child(2) a.btn {
 	display: none;
 }
@@ -98,6 +99,7 @@ p {
 	height: 100%;
 	object-fit: cover;
 }
+
 .badge {
 	position: absolute;
 	top: 30px;
@@ -141,20 +143,6 @@ p {
 	color: #202020;
 	line-height: 1.6;
 	margin-bottom: 20px;
-}
-
-@media only screen and (max-width: 767px) {
-	.container {
-		padding: 0 15px;
-	}
-	.blog-grid {
-		grid-template-columns: 1fr;
-		gap: 20px;
-	}
-
-	.blog-card h2 {
-		font-size: 20px;
-	}
 }
 
 .genuine-parts {
