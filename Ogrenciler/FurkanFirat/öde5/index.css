@@ -53,7 +53,7 @@ body {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1100px) {
   .container {
     max-width: 100%;
     width: 100%;
@@ -73,9 +73,31 @@ body {
   .header-bottom {
     display: none;
   }
+  .banner-content{
+    order: -1;
+  }
+  .form-container h2{
+    font-size: 15px !important;
+  }
+  .form-container form{
+    flex-direction: row !important;
+  }
+  .form-container form select{
+    width: 130px !important;
+  }
+  .banner .container{
+    display: grid;
+    grid-template-columns: 1fr !important;
+  }
+  .banner-content h6, p{
+    font-size: 15px !important;
+  }
+  .banner-content h1{
+    font-size: 46px !important;
+  }
 }
 
-@media (min-width: 1100px) {
+@media (min-width: 1100px) and (max-width: 1279px) {
   .container {
     max-width: 1084px;
     width: 100%;
@@ -92,6 +114,13 @@ body {
   .header-bottom {
     display: block;
   }
+  .banner-content h6, p{
+    font-size: 15px !important;
+  }
+  .banner-content h1{
+    font-size: 46px !important;
+  }
+
 }
 
 @media (min-width: 1279px) {
@@ -452,6 +481,8 @@ p {
 
 .category-text p{
   font-size: 17px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
 }
 .category-cards{
   display: grid;
@@ -470,9 +501,47 @@ p {
   font-size: 17px;
 }
 .category-text span{
-  width: 40px;
-  height: 40px;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgb(255,199,76);
   border-radius: 50%;
-  font-size: 16px;
+  padding: 10px;
+  margin-right: 10px;
+}
+.fa-arrow-left, 
+.fa-arrow-right{
+  font-size: 20px;
+}
+.popular-items .container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.popular-text{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+}
+.popular-item-cards{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.popular-text h2:nth-of-type(1){
+  color: var(--orange);
+  font-size: 36px;
+  font-weight: 700;
+}
+.popular-text h2:nth-of-type(2){
+  font-size: 36px;
+  font-weight: 700;
+}
+.popular-text h2:nth-of-type(2):hover{
+  color: var(--orange);
+  font-size: 36px;
+  font-weight: 700;
+}
+.popular-item-card{
+  width: 306px;
+}
+.popular-item-card img{
+  width: 100%;
 }
