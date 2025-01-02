@@ -11,7 +11,7 @@ body {
 
 a.btn {
 	font-size: 13px;
-	padding: 10px 20px;
+	padding: 12px 24px;
 	display: inline-block;
 	background: #ffb91f;
 	color: black;
@@ -19,7 +19,13 @@ a.btn {
 	border: 1px solid #ffb91f;
 	border-radius: 42px;
 	font-weight: 600;
-	transition: background 0.3s ease;
+	line-height: 14px;
+	transition: 0.3s ease;
+}
+
+a.btn:hover {
+	background: #202020;
+	color: #ffb91f;
 }
 
 .common-card {
@@ -33,20 +39,25 @@ h2 {
 }
 h4 {
 	font-size: 20px;
+	line-height: 24px;
+	letter-spacing: 0.5px;
 }
 
 p {
 	font-size: 15px;
 }
 .container {
-	max-width: 1300px;
+	width: 1300px;
 	margin: 0 auto;
 	padding: 0 15px;
 }
 
-.container .our-blog-h1 {
+.container > h2 {
 	text-align: center;
 	margin: 50px 0;
+}
+.blog-section {
+	margin-bottom: 90px;
 }
 
 .blog-grid {
@@ -59,6 +70,9 @@ p {
 	border: none;
 	box-shadow: none;
 }
+.blog-card:nth-child(2) a.btn {
+	display: none;
+}
 
 .blog-card:nth-child(2) .blog-details:nth-child(2) {
 	border-bottom: 1px solid rgba(235, 235, 235, 1);
@@ -67,10 +81,6 @@ p {
 
 .blog-card {
 	min-width: 300px;
-	/* border: 1px solid rgba(235, 235, 235, 1);
-	background: #fff;
-	border-radius: 10px;
-	overflow: hidden; */
 }
 
 .blog-image {
@@ -85,16 +95,19 @@ p {
 	height: 100%;
 	object-fit: cover;
 }
+.badge {
+	position: absolute;
+	top: 30px;
+	left: 30px;
+	border-radius: 25px;
+	font-size: 12px;
+	line-height: 18px;
+}
 
 .blog-date {
-	position: absolute;
-	top: 20px;
-	left: 20px;
-	background: #fff;
-	padding: 5px 15px;
-	border-radius: 4px;
-	font-size: 14px;
-	font-weight: bold;
+	background: rgba(255, 255, 255, 1);
+	padding: 6px 18px;
+	box-shadow: 0 0 3px rgb(0, 0, 0, 0.1);
 }
 
 .blog-details {
@@ -102,23 +115,23 @@ p {
 }
 
 .blog-meta {
-	font-size: 14px;
-	color: #666;
+	font-size: 13px;
+	color: #848484;
 	margin-bottom: 15px;
 }
 
 .blog-meta span {
 	margin-right: 10px;
+	font-weight: 400;
 }
 
 .categories {
-	color: #333;
-	font-weight: 600;
+	color: #202020;
 }
 
-.blog-card h2 {
+.blog-card h4 {
 	margin-bottom: 15px;
-	color: #333;
+	color: #202020;
 }
 
 .blog-card p {
@@ -127,8 +140,192 @@ p {
 	margin-bottom: 20px;
 }
 
-button:hover {
-	background: #e5a730;
+@media only screen and (max-width: 767px) {
+	.container {
+		padding: 0 15px;
+	}
+	.blog-grid {
+		grid-template-columns: 1fr;
+		gap: 20px;
+	}
+
+	.blog-card h2 {
+		font-size: 20px;
+	}
+}
+
+.genuine-parts {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	height: 250px;
+	object-fit: cover;
+	background-image: url("https://demothemesky-be87.kxcdn.com/druco/wp-content/uploads/2022/08/banner-3.jpg");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.genuine-parts h2 {
+	display: block;
+	font-size: 90px;
+	line-height: 85px;
+	color: #ffb91f;
+}
+.genuine-parts span {
+	color: #ffb91f;
+}
+.genuine-parts p {
+	font-size: 14px;
+	color: #fff;
+}
+.genuine-parts .container {
+	display: flex;
+	flex-direction: column;
+	justify-content: left;
+	position: absolute;
+	padding: 20px 15px 34px 15px;
+}
+
+.support {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 500px;
+	background-image: url(https://demothemesky-be87.kxcdn.com/druco/wp-content/uploads/2022/08/home-about.jpg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin: 0px 0px 78px;
+}
+.support .container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	padding: 20px 15px 34px 15px;
+}
+.support h3 {
+	font-size: 20px;
+	line-height: 40px;
+	color: white;
+}
+.support h2 {
+	font-size: 50px;
+	line-height: 60px;
+	color: white;
+}
+.support-items-row {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	margin-top: 50px;
+}
+.support-item {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 33%;
+	color: white;
+}
+.support-item img {
+	width: 70px;
+	height: 70px;
+}
+.support-item h4 {
+	color: #ffb91f;
+}
+
+.brands .container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 20px 15px 34px 15px;
+}
+
+.footer {
+	background-color: black;
+}
+
+.newsletter {
+	display: flex;
+	flex-direction: column;
+	height: 150px;
+	background-color: #ffb91f;
+	padding: 33px 0px 25px;
+}
+.newsletter .container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.newsletter-form {
+	position: relative;
+	width: 100%;
+	max-width: 500px;
+}
+
+.newsletter-form input {
+	width: 100%;
+	padding: 15px 160px 15px 25px;
+	border-radius: 50px;
+	font-size: 16px;
+	background-color: #ffb91f;
+	outline: none;
+	border: 1px solid black;
+}
+.newsletter-form input::placeholder {
+	color: black;
+	font-weight: 400;
+}
+
+.newsletter-form button {
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+	padding: 12px 25px;
+	background-color: black;
+	color: white;
+	border: none;
+	border-radius: 25px;
+	font-size: 14px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.newsletter-form button:hover {
+	background-color: #333;
+}
+footer h5 {
+	color: rgb(255 255 255);
+	font-size: 20px;
+	line-height: 1.2em;
+}
+footer p {
+	color: rgb(174 173 173);
+	line-height: 22px;
+	padding-top: 9px;
+	padding-bottom: 9px;
+}
+footer {
+	background-color: black;
+}
+footer .container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 81px 0px 74px 0px;
 }
 
 /* Responsive Design */
@@ -138,23 +335,19 @@ button:hover {
 	}
 }
 
-@media (max-width: 768px) {
+@media (min-width: 1100px) {
 	.container {
-		max-width: 540px;
+		max-width: 1084px;
+		padding: 0 10px;
 	}
 }
 
-@media (max-width: 576px) {
+@media (min-width: 1279px) {
 	.container {
-		padding: 0 10px;
+		max-width: 1304px;
+		padding: 0px;
 	}
-
-	.blog-grid {
-		grid-template-columns: 1fr;
-		gap: 20px;
-	}
-
-	.blog-card h2 {
-		font-size: 20px;
+	.blog-card:nth-child(2) a.btn {
+		display: inline-block;
 	}
 }
