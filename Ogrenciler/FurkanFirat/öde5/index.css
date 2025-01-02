@@ -9,6 +9,15 @@ body {
   --orange: rgba(255, 185, 31, 1);
   --gray: rgba(248, 248, 248, 1);
 }
+.btn {
+  cursor: pointer;
+  line-height: 25px;
+  letter-spacing: 0px;
+  font-weight: 600;
+  border: none;
+  padding: 11px 20px;
+  border-radius: 42px;
+}
 @media (min-width: 0px) and (max-width: 767px) {
   .header-top .container {
     grid-template-columns: 1fr;
@@ -344,4 +353,80 @@ body {
   display: inline-block;
   vertical-align: middle;
   margin-right: 15px;
+}
+.banner {
+  background-image: url(https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/08/slide1-2.jpg);
+  height: 745px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0, 0.5);
+}
+.banner .container {
+  display: grid;
+  grid-template-columns: 4fr 7fr;
+  gap: 70px;
+  align-items: center;
+}
+.form-container {
+  background-color: white;
+  text-align: center;
+  padding: 40px 0px;
+  border-radius: 10px;
+}
+.form-container h2 {
+  color: #202020;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.form-container form select {
+  width: 356px;
+  height: 50px;
+  color: #848484;
+  border: rgb(203, 203, 203) 0.6px solid;
+  border-radius: 8px;
+  font-size: 15px;
+}
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+.form-container form .btn {
+  margin-top: 25px;
+  padding: 11px 45px;
+  background-color: var(--orange);
+  transition: 0.3s;
+}
+.form-container form .btn:hover {
+  background-color: black;
+  color: var(--orange);
+}
+.banner-content {
+  color: white;
+}
+.banner-content h6,
+p {
+  font-size: 18px;
+}
+.banner-content h1 {
+  font-size: 70px;
+}
+.banner-content .btn {
+  padding: 18px 40px;
+  line-height: 14px;
+  transition: 0.3s;
+  margin-top: 30px;
+}
+.banner-content .btn:hover {
+  background-color: var(--orange);
 }
