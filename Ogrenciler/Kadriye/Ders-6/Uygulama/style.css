@@ -17,12 +17,15 @@
   width: 100%;
   padding: 0 15px;
 }
+.d-grid-col {
+  display: grid;
+  grid-auto-flow: column;
+}
 a {
   text-decoration: none;
   color: var(--light-grey);
 }
 .head {
-  display: grid;
   grid-template-columns: min-content 1fr min-content;
   height: 90px;
   align-items: center;
@@ -31,7 +34,6 @@ a {
   padding: 5px 0;
 }
 .head-center {
-  display: grid;
   grid-template-columns: min-content min-content;
   justify-content: left;
   max-height: inherit;
@@ -39,7 +41,6 @@ a {
 }
 .store,
 .time {
-  display: grid;
   grid-template-columns: max-content max-content max-content;
   align-items: center;
   gap: 10px;
@@ -54,7 +55,6 @@ a {
   margin-left: -5px;
 }
 .links {
-  display: grid;
   grid-template-columns: max-content max-content max-content max-content;
 }
 .link {
@@ -67,8 +67,6 @@ a {
 .container-elements,
 .container-categories,
 .container-search {
-  display: grid;
-  grid-auto-flow: column;
   align-items: center;
   max-height: inherit;
   padding-inline: 0 10px;
@@ -87,13 +85,11 @@ a {
 }
 .menu ul {
   list-style: none;
-  display: grid;
   grid-template-columns: max-content max-content max-content;
   align-items: center;
   gap: 30px;
 }
 .menu {
-  display: grid;
   grid-template-columns: max-content 1fr max-content;
   background-color: var(--bg-navbar);
   height: 70px;
@@ -118,10 +114,7 @@ a {
   padding-left: 15px;
   border: none;
 }
-.container-search form {
-  display: grid;
-  grid-auto-flow: column;
-}
+
 .container-search form i {
   color: var(--light-grey);
   margin: auto -30px;
@@ -154,21 +147,57 @@ a {
   font-size: 20px;
   color: var(--bg-color);
 }
-.slider,
-.slider a {
+.slider {
   height: 500px;
   width: 100%;
-  display: grid;
   grid-template-columns: 65% 30px auto;
   position: relative;
   color: #ffffff;
+}
+.model p {
+  height: min-content;
+  font-size: 18px;
+  align-self: end;
+}
+.model h4 {
+  height: min-content;
+  font-size: 46px;
+  width: 40%;
+  line-height: 56px;
+  font-weight: 800;
+}
+.model a {
+  background-color: var(--bg-navbar);
+  padding: 5px 28px;
+  width: max-content;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 16.8px;
+  min-height: 48px;
+  align-items: center;
+  align-self: start;
+}
+.banner a {
+  background-color: var(--bg-navbar);
+  padding: 5px 20px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 16.8px;
+  min-height: 40px;
+  align-items: center;
+  width: max-content;
+}
+.model span {
+  color: var(--bg-navbar);
 }
 
 .slider::before {
   content: "";
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 80%;
   background-color: #2859b8;
   z-index: -1;
 }
@@ -178,12 +207,14 @@ a {
   background-repeat: no-repeat;
   background-size: cover;
 }
-
 .model {
   width: 100%;
   background-color: rgb(169, 170, 154);
   margin-left: 10px;
   position: relative;
+  padding: 60px;
+  display: grid;
+  align-items: center;
 }
 .model::before {
   content: "";
@@ -197,7 +228,29 @@ a {
 }
 .banner {
   background-image: url(https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/05/banner-servises.jpg.webp);
+  padding: 30px;
+}
+.banner h4,
+.promo h4 {
+  font-weight: 800;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+.banner p {
+  color: #dfdada;
+  height: min-content;
+  font-size: 18px;
+  width: 60%;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.promo p {
+  font-size: 18px;
+  width: 60%;
+  font-weight: 600;
+  line-height: 25.6px;
 }
 .promo {
   background-image: url(https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2021/12/shipping-banner-x2.jpg.webp);
+  padding: 30px;
 }
