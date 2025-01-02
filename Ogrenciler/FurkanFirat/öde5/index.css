@@ -430,3 +430,49 @@ p {
 .banner-content .btn:hover {
   background-color: var(--orange);
 }
+.categories{
+  height: 260px;
+  background-color:var(--orange);
+}
+.categories .container{
+  display: grid;
+  grid-template-columns: 3fr 10fr;
+  align-items: center;
+  height: 100%;
+}
+.category-text{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-right: 30px;
+}
+.category-text h2{
+  font-size: 40px;
+}
+
+.category-text p{
+  font-size: 17px;
+}
+.category-cards{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+
+}
+.category-card{
+  width: 173px;  
+}
+.category-card img{
+  width: 100%; 
+  border-radius: 10px; 
+}
+.category-card p{
+  text-align: center;
+  font-size: 17px;
+}
+.category-text span{
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  font-size: 16px;
+}
