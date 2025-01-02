@@ -19,6 +19,20 @@ body {
   .navbar-top {
     display: none;
   }
+  .header-menu .container {
+    grid-template-columns: 1fr 1fr;
+  }
+  .searchbar {
+    display: none !important;
+  }
+  .header-right {
+    margin-left: 0px !important;
+    justify-content: end !important;
+  }
+  .header-right .header-language,
+  .header-currency {
+    display: none;
+  }
   .header-bottom .container {
     grid-template-columns: 1fr;
   }
@@ -40,6 +54,9 @@ body {
   }
   .navbar-top {
     display: none;
+  }
+  .header-menu .container {
+    grid-template-columns: 1fr 2fr 1fr;
   }
   .header-bottom .container .contact {
     display: none;
@@ -155,7 +172,6 @@ body {
 .header-menu .container {
   padding: 26px 15px;
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
 }
 
 .header-menu .logo {
