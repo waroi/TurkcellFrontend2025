@@ -47,10 +47,6 @@ p {
   font-size: 15px;
 }
 
-.container {
-  margin: 0 auto;
-}
-
 .container > h2 {
   text-align: center;
   margin: 50px 0;
@@ -314,41 +310,4 @@ footer .container {
   flex-direction: row;
   justify-content: space-between;
   padding: 81px 0px 74px 0px;
-}
-
-@media only screen and (max-width: 767px) {
-  .container {
-    padding: 0 15px;
-  }
-  .blog-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .blog-card h2 {
-    font-size: 20px;
-  }
-}
-
-@media (min-width: 768px) {
-  .container {
-    padding: 0 10px;
-  }
-}
-
-@media (min-width: 1100px) {
-  .container {
-    max-width: 1084px;
-    padding: 0 10px;
-  }
-}
-
-@media (min-width: 1279px) {
-  .container {
-    max-width: 1304px;
-    padding: 0px;
-  }
-  .blog-card:nth-child(2) a.btn {
-    display: inline-block;
-  }
 }
