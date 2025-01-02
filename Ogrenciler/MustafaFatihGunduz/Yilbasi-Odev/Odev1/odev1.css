@@ -8,6 +8,10 @@
 
 /* FFB91F */
 
+body {
+  font-family: "Outfit", sans-serif;
+}
+
 .container {
   display: flex;
   flex-direction: row;
@@ -55,7 +59,6 @@ p {
   color: white;
   font-size: 14px;
   /* font-weight: bold; */
-  margin-left: 10px;
 }
 
 .header-middle {
@@ -671,31 +674,44 @@ p {
 }
 .from-our-blog{
   display: flex;
-  justify-content: center;
-  align-items: center;
-
-}
-.from-our-blog-container{
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
+.from-our-blog-wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.from-our-blog-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 30px;
+  margin: 60px 0;
+}
+
 .from-our-blog-content-left{
-  width:640px ;
+  width: 50%;
   border: 1px solid #cbcbcb;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 .from-our-blog-content-left img{
-  width: 640px;
-  height: 370px;
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 .from-our-blog-content-text{
 display: flex;
 justify-content: center;
 align-items: start;
 flex-direction: column;
-padding: 20px;
+padding: 36px;
 gap: 15px;
 }
 .from-our-blog-content-text span{
@@ -705,8 +721,7 @@ color: #afafaf;
   color: #202020;
 }
 
-
-.from-our-blog-content-left button{
+.from-our-blog-content button{
   width: 150px;
   height: 42px;
   background-color: #ffb91f;
@@ -715,14 +730,297 @@ color: #afafaf;
   outline: none;
   font-weight: bold;
 }
-.from-our-blog-content-left button:hover{
+.from-our-blog-content button:hover{
   background-color: black;
   color: #ffb91f;
   transition: 0.3s ease;
-  
+  cursor: pointer;
 }
 .from-our-blog-content-text-title{
   font-size:20px ;
   color: #202020;
   font-weight: bold;
 }
+
+.by-admin{
+  margin-right: 10px;
+}
+
+.from-our-blog-content-text a{
+  color: #202020;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.from-our-blog-content-text a:hover{
+  color: #ffb91f;
+}
+
+.from-our-blog-content-right{
+  width: 50%;
+}
+
+.from-our-blog-content-right-item{
+  margin: 0px 10px;
+}
+
+.border-bottom{
+  margin: 0px 30px;
+  border-bottom: 1px solid lightgray;
+}
+
+/*? Professional Team Support CSS*/
+.professional-team-support{
+  background: url("https://demothemesky-be87.kxcdn.com/druco/wp-content/uploads/2022/08/home-about.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  height: 600px;
+}
+
+.professional-team-support-wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+}
+
+.yellow-text{
+  color: #ffb91f;
+  font-size: 24px;
+}
+
+.content-desc{
+  font-size: 16px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.content-desc-title {
+  font-size: 18px;
+  padding-bottom: 10px;
+}
+
+.professional-team-support h2{
+  font-size: 60px;
+  padding-bottom: 25px;
+}
+
+.professional-team-support-content-images{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.professional-team-support-content-images img{
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+
+
+/*! Professional Team Support CSS END*/
+
+/*? FEATURED BRANDS CSS START */
+.featured-brands{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin: 48px 0px;
+}
+
+.featured-brands-wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.featured-brands h2{
+  font-size: 36px;
+  color: #202020;
+}
+
+.car-logos{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+/*! FEATURED BRANDS CSS END*/
+
+/*? NEWSLETTER CSS START */
+.newsletter{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background-color: #ffb91f;
+}
+
+.newsletter-wrapper{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 40px 0px;
+}
+
+.newsletter h2{
+  font-size: 36px;
+  color: #202020;
+  font-weight: bold;
+}
+
+.newsletter p{
+  font-size: 15px;
+  color: #202020;
+}
+
+
+
+.newsletter-form{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+}
+
+.search-bar-newsletter{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 64px;
+  background-color: transparent;
+  border-radius: 60px;
+  border: 1px solid #202020;
+}
+
+.search-input-newsletter{
+  width: 100%;
+  height: 64px;
+  padding: 4px 8px;
+  background-color: transparent;
+  font-size: 14px;
+  border-radius: 60px;
+  border: none;
+  outline: none;
+}
+
+.search-bar-newsletter button{ 
+  width: 150px;
+  height: 90%;
+  margin: 4px 8px;
+  background-color: black;
+  border-radius: 42px;
+  border: none;
+  outline: none;
+  font-weight: bold;
+  color: white;
+}
+/*! NEWSLETTER CSS END */
+
+/*? FOOTER CSS START */
+
+.footer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background-color: #202020;
+  color: white;
+}
+
+.footer-wrapper{
+  margin: 40px 0px;
+}
+
+.footer-first-content{
+  display: grid;
+  grid-template-columns: 1.5fr 1.2fr 1.2fr 1.2fr;
+  gap: 20px;
+}
+
+.social-icons-row ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: start;
+  list-style-type: none;
+  padding-top: 10px;
+}
+
+
+.footer-first-content p{
+  font-size: 15px;
+  color: #AAAAAA;
+  text-align: justify;
+  line-height: 1.5;
+  padding: 8px 0px;
+}
+
+.footer-first-content h5{
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+  padding-bottom: 25px;
+}
+
+.footer-first-content a{
+  font-size: 15px;
+  color: #AAAAAA;
+  text-decoration: none;
+}
+
+.footer-first-content a:hover{
+  color: #ffb91f;
+}
+
+
+.link-contents{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-last-content{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.site-title{
+  color: #ffb91f;
+}
+
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid lightgray;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*! FOOTER CSS END */
