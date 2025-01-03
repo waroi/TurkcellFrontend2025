@@ -14,12 +14,81 @@
     />
 
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
   </head>
   <body>
     <main>
-      <header id="banner"></header>
-      <nav id="nav1"></nav>
-      <nav id="nav2"></nav>
+      <header id="banner">
+        <div class="container">
+          <div class="header-inner-grid">
+            <div class="header-store-notice">
+              <strong>⚡ FLASH SALE: </strong> 60% OFF CAR BATTERIES | USE CODE
+              "BATT60"</span
+            >
+          </div>
+          <div class="header-delivery-note hidden-phone">
+            <p>FREE DELIVERY on all orders.</p>
+          </div>
+            <div class="header-contact-info visible-ipad hidden-phone">
+              <span>Call us 24/7</span><a>+08 9229 8228</a>
+            </div>
+            <div class="header-right hidden-phone">
+              <nav class="header-menu">
+                <ul>
+                  <li>Help</li>
+                  <li>About Us</li>
+                  <li>Contact us</li>
+                  <li>Blog</li>
+                </ul>
+              </nav>
+              <div class="language-curreccy visible-ipad">
+                <div>English</div>
+                <div>USD</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <nav id="nav1" class="top-nav">
+        <div class="container">
+<div class="logo"><img src="https://druco-be87.kxcdn.com/druco/wp-content/themes/druco/images/logo.png" alt="Druco" title="Druco" class="normal-logo"> </div>
+<div class="search-wrapper">
+<form action="/search" method="GET" class="search-form">
+  <div class="search-container">
+    <select class="category-select" name="category">
+      <option value="all">Tüm Kategoriler</option>
+      <option value="category1">Kategori 1</option>
+      <option value="category2">Kategori 2</option>
+      <option value="category3">Kategori 3</option>
+    </select>
+    <div class="border"></div>
+    <div class="input-wrapper"> 
+       <input type="text" class="search-input" name="query" placeholder="Arama yap..." required>
+      <button type="submit" class="search-button"><img src="./assets/search (1).png" alt="user-logo"/></button>
+    </div>
+  </div>
+</form>
+</div>
+<div class="icons">
+<div class="user hidden-phone"><img src="./assets/user.png" alt="user-logo"/></div>
+<div class="favorites"><img src="./assets/love.png" alt="user-logo"/></div>
+<div class="basket"><img src="./assets/cart.png" alt="user-logo"/></div>
+<div class="hamburger"><img src="./assets/hamburger.png" alt="user-logo"/></div>
+</div>  
+</div>
+    </nav>
+    <nav id="nav2" class="bottom-nav hidden-phone">
+      <div class="container">
+      <ul>
+        <li>HOME</li>
+        <li>PAGES</li>
+        <li>SERVICE PARTS</li>
+        <li>BRAKE</li>
+         <li>CAR BATTERIES</li>
+        <li>TOOLS & GARAGE</li>
+      </ul>
+    </div>
+  </nav>
       <section class="img-slider"></section>
       <section class="categories"></section>
       <section class="best-sellers"></section>

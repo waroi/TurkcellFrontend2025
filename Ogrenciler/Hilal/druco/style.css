@@ -47,11 +47,6 @@ p {
   font-size: 15px;
 }
 
-.container {
-  width: 1300px;
-  margin: 0 auto;
-}
-
 .container > h2 {
   text-align: center;
 }
@@ -385,27 +380,4 @@ bdi {
 }
 .star-rating {
   color: rgba(255, 210, 0, 1);
-}
-/* Responsive Design */
-@media (max-width: 992px) {
-  .container {
-    max-width: 720px;
-  }
-}
-
-@media (min-width: 1100px) {
-  .container {
-    max-width: 1084px;
-    padding: 0 10px;
-  }
-}
-
-@media (min-width: 1279px) {
-  .container {
-    max-width: 1304px;
-    padding: 0px;
-  }
-  .blog-card:nth-child(2) a.btn {
-    display: inline-block;
-  }
 }
