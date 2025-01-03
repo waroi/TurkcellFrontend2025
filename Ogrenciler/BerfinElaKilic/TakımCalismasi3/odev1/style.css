@@ -344,7 +344,7 @@ main{
     "img img img project-card project-card project-card"
     ;
     gap: 20px;
-
+ 
     margin-bottom: 80px;
 }
 
@@ -352,8 +352,7 @@ main{
     grid-area: project-cards;
     display: grid;
     grid-template-areas: 
-    "card1 card2 card3"
-    ;
+    "card1 card2 card3";
 
 }
 
