@@ -162,6 +162,7 @@ hr.vertical {
 
 }
 
+
 .buttonIcon img {
     max-width: 100%;
     max-height: 100%;
@@ -769,6 +770,34 @@ footer {
     margin-bottom: 10px;
     color: #777;
 }
+
+.cartWrapper{
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    padding: 0;
+
+}
+
+.cartWrapper img{
+    width: 24px;
+    height: 24px;
+}
+
+.overFlow{
+    overflow: hidden;
+    height: 38px;
+ 
+}
+
+.overFlow > p {
+    transition: 300ms ease 0s; 
+}
+
+.overFlow:hover > p{
+    margin-top: -30px;  
+}
+
 
 
 @media screen and (max-width: 1400px) {
