@@ -5,8 +5,8 @@
   --light-grey: rgb(119, 119, 119);
   --bg-navbar: #1246ab;
   --slider-img-bg: rgb(169, 170, 154);
-  --color-gray-300 : #bbb;
-  --color-gray-800 : #333;
+  --color-gray-300: #bbb;
+  --color-gray-800: #333;
 }
 
 * {
@@ -41,31 +41,36 @@ a {
   max-height: inherit;
   padding-left: 40px;
 }
-.store,
-.time {
+.head .store,
+.head .time {
   grid-template-columns: max-content max-content max-content;
   align-items: center;
   gap: 10px;
   color: var(--light-grey);
   padding: 0 10px;
 }
-.store strong {
+.head .store strong {
   font-weight: 800;
 }
-.store i {
+.head .store i {
   font-size: 10px;
   margin-left: -5px;
 }
-.links {
+.head .links {
   grid-template-columns: max-content max-content max-content max-content;
 }
-.link {
+.head .link {
   padding: 0 10px;
   border-right: 1px solid rgba(119, 119, 119, 0.2);
 }
-.link i {
+.head .link i {
   color: black;
 }
+.menu .link-user,
+.menu .menu-icon {
+  display: none;
+}
+
 .container-elements,
 .container-categories,
 .container-search {
@@ -256,55 +261,64 @@ a {
   background-image: url(https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2021/12/shipping-banner-x2.jpg.webp);
   padding: 30px;
 }
-.categories{
+.categories {
   margin-top: 50px;
 }
-.categories h4{
+.categories h4 {
   font-size: 26px;
   font-weight: 700;
   line-height: 36.4px;
   margin-bottom: 50px;
 }
-.cards{
+.categories .cards {
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: auto;
   grid-auto-flow: row;
   gap: 30px;
 }
-.card{
+.card {
   text-align: center;
 }
-.products{
+.products {
   width: 100%;
   margin-top: 50px;
 }
-.product-cards{
+.product-cards {
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: auto;
   grid-auto-flow: row;
 }
-.product-card{
+.product-card,
+.more .card {
   display: grid;
   padding: 15px;
   border: 1px solid rgba(0, 0, 0, 0.206);
-  gap:12px;
+  gap: 12px;
 }
-.product-card h6 a{
+.product-card h6 a,
+.more .card h6 a {
   font-size: 16px;
   font-weight: 700;
   color: var(--color-gray-800);
 }
-.product-card p{
+.product-card p,
+.more .card p {
   color: var(--color-gray-300);
 }
-.product-card p strong{
+.product-card p strong,
+.more .card p strong {
   color: var(--color-gray-800);
 }
-.product-card span{
+.product-card span,
+.more .card span {
   color: #1246ab;
   font-weight: 600;
 }
-.btn-add button, .btn-add input{
+
+.btn-add button,
+.btn-add input,
+.more .card .btn-add button,
+.more .card .btn-add input {
   border: none;
   background-color: #1246ab;
   color: white;
@@ -313,42 +327,529 @@ a {
   text-align: center;
   font-size: 13px;
 }
-.btn-add{
+.products .btn-add,
+.more .btn-add {
   grid-template-columns: 10% 15% 10% 65%;
 }
-.product-card img{
+.product-card img,
+.more .card img {
   width: 220px;
 }
-.product-menu{
+.product-menu {
   justify-content: space-between;
   align-items: center;
   gap: 30px;
   margin: 30px 0;
 }
-.product-menu h4{
+.product-menu h4 {
   font-size: 26px;
 }
-.product-menu ul{
+.product-menu ul {
   gap: 20px;
   list-style: none;
   color: rgba(51, 51, 51, 0.7);
 }
-.information{
+.information {
   margin-top: 100px;
   grid-template-columns: repeat(4, 1fr);
   margin-bottom: 100px;
 }
-.info{
+.info {
   grid-template-columns: min-content max-content;
   width: 100%;
   gap: 20px;
   justify-self: center;
 }
-.info h4{
+.info h4 {
   font-size: 18px;
 }
-.info p{
+.info p {
   margin-top: 10px;
   font-size: 16px;
   color: rgb(119, 119, 119);
+}
+
+/*--------------------Projects-----------------------*/
+.project {
+  padding-top: 60px;
+  padding-bottom: 70px;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr;
+}
+.project-bg,
+.promotion-bg {
+  background-color: #f1f3f8;
+  width: 100%;
+  height: 100%;
+}
+.project h4 {
+  font-size: 26px;
+  padding-bottom: 10px;
+}
+.project .right .cards {
+  width: 100%;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  grid-auto-flow: row;
+  gap: 0;
+}
+.project .right .cards .card {
+  display: grid;
+  padding: 15px 15px 25px 15px;
+  border: 1px solid rgba(0, 0, 0, 0.206);
+  justify-items: left;
+  row-gap: 10px;
+}
+.project .right .cards .card img {
+  width: 180px;
+}
+.project .card h6,
+.more .cards .card h6 {
+  text-align: left;
+}
+.project .card h6 a {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-gray-800);
+}
+.project .card p {
+  color: var(--color-gray-300);
+}
+.project .card p strong {
+  color: var(--color-gray-800);
+}
+.project .card span {
+  color: #1246ab;
+  font-weight: 800;
+}
+.project .btn-add {
+  width: 100%;
+}
+.project .btn-add button {
+  border: none;
+  background-color: #1246ab;
+  color: white;
+  font-weight: 800;
+  min-height: 48px;
+  text-align: center;
+  font-size: 13px;
+  width: 100%;
+}
+.sevices {
+  padding: 40px;
+  background-color: #ffffff;
+  margin-top: 20px;
+}
+.sevices .text {
+  display: grid;
+  grid-auto-flow: row;
+  gap: 10px;
+}
+.sevices .text h6 {
+  color: #1246ab;
+  font-size: 14px;
+  font-weight: 600;
+}
+.sevices .text h2 {
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.sevices .text p {
+  color: #777;
+}
+.more {
+  grid-template-columns: 23% auto;
+  text-align: left;
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+.more .more-info {
+  display: grid;
+  gap: 10px 10px;
+  grid-auto-flow: row;
+  grid-template-rows: min-content min-content min-content;
+}
+.more .more-info h4 {
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 36.4px;
+}
+.more .more-info p {
+  font-size: 16px;
+}
+.more .cards {
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  grid-auto-flow: row;
+}
+.more .cards .card {
+  display: grid;
+  justify-items: left;
+}
+.more ul {
+  display: grid;
+}
+.more ul li {
+  grid-template-columns: min-content max-content;
+  padding: 10px 0;
+}
+.more ul li p {
+  text-align: left;
+  margin-left: 20px;
+  color: #1246ab;
+  font-weight: 700;
+}
+.advice {
+  width: 100%;
+  padding-bottom: 50px;
+}
+.advice .cards {
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+.advice .cards .card .img {
+  position: relative;
+}
+.advice .cards .card .img .big-img {
+  width: 420px;
+}
+.advice .img-text {
+  padding: 0 20px;
+  justify-content: space-between;
+  color: #ffffff;
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
+  position: absolute;
+  width: 420px;
+  margin-left: 2px;
+  height: 34px;
+  bottom: 3px;
+}
+
+.advice .img-text .name img {
+  border-radius: 50%;
+  margin-right: 5px;
+}
+.advice .img-text .icon i {
+  color: #ffffff;
+  margin-right: 10px;
+}
+.advice .card .time,
+.advice .card .text {
+  color: #777;
+  font-size: 13px;
+  text-align: left;
+  padding-top: 10px;
+}
+.advice .card .text {
+  font-size: 16px;
+  line-height: 25.6px;
+}
+.advice .card h4 {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 30.8px;
+  text-align: left;
+  padding-top: 10px;
+}
+.advice .card a {
+  margin-top: 15px;
+  color: #1246ab;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 13px;
+  display: block;
+  text-align: left;
+}
+.promotion {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.promotion h2 {
+  color: #1246ab;
+  line-height: 42px;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+.promotion h4 {
+  color: rgb(24, 24, 24);
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+.promotion p {
+  color: #777;
+  margin-bottom: 20px;
+}
+.promotion a {
+  color: #333;
+  font-size: 13px;
+  font-weight: 600;
+  padding-bottom: 2px;
+  border-bottom: 2px solid #1246ab;
+}
+/*
+
+.promotion .h4-bg {
+  background: linear-gradient(to bottom, transparent 0px, #861818 40px);
+  width: max-content;
+  height: max-content;
+  z-index: 10;
+  position: absolute;
+}
+.promotion h4 {
+  z-index: 15;
+}
+*/
+
+.newsletter-bg {
+  background-color: #1246ab;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.newsletter .left {
+  grid-template-columns: min-content max-content;
+  gap: 20px;
+  color: #ffffff;
+  align-items: center;
+}
+.newsletter .left h2 {
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 32px;
+}
+.newsletter .left p {
+  margin-top: 10px;
+  color: #ffffffe3;
+}
+.newsletter .right {
+  align-content: center;
+}
+.newsletter .right form {
+  grid-template-columns: 77% 20%;
+  gap: 10px;
+  height: 42px;
+  align-items: center;
+  padding-right: 20px;
+}
+.newsletter .right form input,
+.newsletter .right form button {
+  height: 100%;
+}
+.newsletter .right form input {
+  padding-left: 10px;
+}
+.newsletter .right form button {
+  background-color: #ffffff;
+  border: #ffffff;
+  color: rgb(40, 40, 40);
+  font-size: 13px;
+  font-weight: 800;
+}
+.footer-top {
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 1.5fr;
+  gap: 20px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.footer-top .logo {
+  margin-bottom: 20px;
+}
+.footer-top p {
+  color: #777;
+  margin-bottom: 20px;
+}
+.footer-top ul {
+  list-style: none;
+  color: #777;
+  display: grid;
+  row-gap: 15px;
+}
+.footer-top ul li img {
+  padding-right: 10px;
+}
+.footer-top h3 {
+  margin-bottom: 16px;
+}
+.footer-top .apps {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.footer-top .apps img {
+  margin-right: 15px;
+}
+.footer-top .social-links {
+  gap: 6px;
+  grid-template-columns: repeat(5, min-content);
+}
+.footer-top .link {
+  width: 30px;
+  height: 30px;
+  font-size: 14px;
+  border-radius: 50%;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+.footer-top .facebook {
+  background-color: #3b5998;
+}
+.footer-top .twitter {
+  background-color: black;
+}
+.footer-top .pinterest {
+  background-color: #c8232c;
+}
+.footer-top .linkedln {
+  background-color: #0e76a8;
+}
+.footer-top .telegram {
+  background-color: #0088cc;
+}
+
+.footer-top {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.105);
+}
+.footer-bottom {
+  color: #767676;
+  font-weight: 700;
+  font-size: 12.8px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  align-items: center;
+}
+.footer-bottom .bank {
+  justify-self: right;
+}
+.footer-bottom strong {
+  color: #333;
+}
+.footer-bottom strong span {
+  color: #cd3e3e;
+}
+
+@media screen and (max-width: 1024px) {
+  .head-center,
+  .head .store,
+  .head .time,
+  .head .links {
+    display: none;
+  }
+  .head {
+    height: 60px;
+    justify-content: center;
+    grid-template-columns: min-content;
+  }
+  .head img {
+    max-width: 150px;
+  }
+  .menu .container-categories,
+  .menu .container-elements,
+  .menu .container-search .icon {
+    display: none;
+  }
+  .menu {
+    align-items: center;
+    grid-template-columns: min-content 1fr min-content;
+  }
+  .menu .menu-icon,
+  .menu .link-user {
+    display: inline-block;
+  }
+  .menu .container-search {
+    width: 100%;
+  }
+  .menu .container-search input {
+    width: 100%;
+    position: relative;
+  }
+  .menu .container-search i {
+    margin: 0;
+    position: absolute;
+    right: 70px;
+    top: 27px;
+  }
+  .menu i {
+    font-size: 20px;
+  }
+  .categories .cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .product-menu {
+    grid-auto-flow: row;
+    justify-content: center;
+  }
+  .product-menu h4 {
+    text-align: center;
+  }
+  .product-menu li {
+    font-size: 20px;
+  }
+  .product-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .product-cards .product-card img {
+    width: 100%;
+  }
+  .information {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .info:last-child {
+    display: none;
+  }
+  .project {
+    grid-template-columns: 1fr 1fr;
+  }
+  .project img {
+    width: 100%;
+  }
+  .project .sevices {
+    display: none;
+  }
+  .project .right .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .project .right .cards .card:last-child {
+    display: none;
+  }
+  .more {
+    display: block;
+    text-align: center;
+  }
+  .more .more-info ul {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: center;
+    gap: 30px;
+  }
+  .more .more-info ul li p {
+    margin-left: 10px;
+  }
+  .more .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .more .card:last-child {
+    display: none;
+  }
+  .more .card img,
+  .more .card .btn-add,
+  .advice .cards img,
+  .advice .cards .img-text {
+    width: 100% !important;
+  }
+  .advice .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+  .advice .card:last-child {
+    display: none;
+  }
+  .newsletter {
+    grid-auto-flow: row;
+    width: 55%;
+  }
+  .newsletter h4 {
+    font-size: 24px;
+  }
+  .newsletter .left {
+    margin-bottom: 20px;
+  }
 }

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Megamarket</title>
+    <title>Druco</title>
     <link rel="stylesheet" href="index.css" />
     <link href='https://fonts.googleapis.com/css?family=Outfit' rel='stylesheet'>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
@@ -14,7 +14,7 @@
     <header class="header">
         <div class="header-top">
             <div class="container">
-                <p>FREE DELIVERY on all orders</p>
+                <p class="free-delivery">FREE DELIVERY on all orders</p>
                 <div class="flash">
                     <p>
                         <i class="fas fa-bolt"></i>
@@ -39,7 +39,6 @@
                     </ul>
                 </nav>
             </div>
-        </div>
         </div>
         <div class="header-middle">
             <div class="header-menu">
@@ -70,8 +69,8 @@
                         </div>
                         <div class="header-socials">
                             <i class="fa-regular fa-user"></i>
-                            <i class="fa-regular fa-heart"></i>
-                            <i class="fa-solid fa-cart-shopping"></i>
+                            <i class="fa-regular fa-heart"><span class="icon-number">0</span></i>
+                            <i class="fa-solid fa-cart-shopping"><span class="icon-number">0</span></i>
                         </div>
                     </div>
                 </div>
@@ -91,11 +90,8 @@
                         </nav>
                     </div>
                     <div class="contact">
-                        <div class="contact-image">
-                            <img src="https://druco-be87.kxcdn.com/druco/wp-content/themes/druco/images/phone-icon.png" alt="">
-                        </div>
                         <div class="contact-text">
-                            <p>Call us 24/7</p>
+                            <span>Call us 24/7</span>
                             <a href="tel: +08 9229 8228">+08 9229 8228</a>
                         </div>
                     </div>
@@ -103,7 +99,296 @@
             </div>
         </div>
     </header>
+    <section>
+        <div class="banner">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="form-container">
+                    <form action="">
+                        <h2>SEARCH BY VEHICLE</h2>
+                        <select name="" id="">
+                            <option value="">Select Make</option>
+                            <option value="">BMW</option>
+                            <option value="">Ford</option>
+                            <option value="">Hyundai</option>
+                            <option value="">Lexus</option>
+                            <option value="">Mazda</option>
+                            <option value="">Mercedes</option>
+                            <option value="">Toyota</option>
 
+                        </select>
+                        <select name="" id="">
+                            <option value="">Select Model</option>
+                            <option value="">124 GT</option>
+                            <option value="">124 SPIDER</option>
+                            <option value="">500</option>
+                            <option value="">500C</option>
+                            <option value="">595</option>
+                            <option value="">595C</option>
+                        </select>
+                        <select name="" id="">
+                            <option value="">Select Year</option>
+                            <option value="">2019</option>
+                            <option value="">2020</option>
+                            <option value="">2021</option>
+                            <option value="">2022</option>
+                        </select>
+                        <select name="" id="">
+                            <option value="">Select Engine</option>
+                            <option value="">1.1</option>
+                            <option value="">1.2</option>
+                            <option value="">1.3</option>
+                            <option value="">1.4</option>
+                        </select>
+                        <button class="btn">GO</button>
+                    </form>
+                </div>
+
+                <div class="banner-content">
+                    <h6>EXTRA 26%</h6>
+                    <h1>Check and Maintain</h1>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis, ipsam?</p>
+                    <button class="btn">SHOP NOW</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="categories">
+        <div class="container">
+            <div class="category-text">
+                <h2>Categories</h2>
+                <p>March Favorites</p>
+                <div>
+                    <span>
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </span>
+                    <span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="category-cards">
+                <div class="category-card">
+                    <img src="https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/08/tires-310x310.jpg" alt="">
+                    <p>Whells & Tires</p>
+                </div>
+                <div class="category-card">
+                    <img src="https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/08/interior-310x310.jpg"
+                        alt="">
+                    <p>Interiors</p>
+                </div>
+                <div class="category-card">
+                    <img src="https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/08/entertainment-310x310.jpg"
+                        alt="">
+                    <p>Entertainments</p>
+                </div>
+                <div class="category-card">
+                    <img src="https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/08/oils-310x310.jpg" alt="">
+                    <p>Fluids & Chemicals</p>
+                </div>
+                <div class="category-card">
+                    <img src="https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/08/exteriors-310x310.jpg"
+                        alt="">
+                    <p>Exteriros</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="popular-items">
+        <div class="container">
+            <div class="popular-text">
+                <h2>Bestsellers</h2>
+                <h2>Popular items</h2>
+            </div>
+            <div class="popular-item-cards">
+                <div class="popular-item-card">
+                    <img src="https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/04/28-480x480.jpg" alt="">
+                    <p>Valvoline Oil Stockists</p>
+                    <div class="review-stars">
+                        <span>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </span>
+                    </div>
+                    <p>$106.58</p>
+                </div>
+                <div class="popular-item-card">
+                    <img src="https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/04/06-480x480.jpg" alt="">
+                    <p>Racing Custom Wheels VF577</p>
+                    <div class="review-stars">
+                        <span>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </span>
+                    </div>
+                    <p>$106.58</p>
+                </div>
+                <div class="popular-item-card">
+                    <img src="https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/04/11-480x480.jpg" alt="">
+                    <p>Racing Custom Wheels VF421</p>
+                    <div class="review-stars">
+                        <span>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </span>
+                    </div>
+                    <p>$106.58</p>
+                </div>
+                <div class="popular-item-card">
+                    <img src="https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/04/02-480x480.jpg" alt="">
+                    <p>Kit Brembo GT BMW</p>
+                    <div class="review-stars">
+                        <span>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </span>
+                    </div>
+                    <p>$106.58</p>
+                </div>
+                <div class="popular-item-card">
+                    <img src="https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/04/10-480x480.jpg" alt="">
+                    <p>Valvoline Oil Stockists</p>
+                    <div class="review-stars">
+                        <span>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </span>
+                    </div>
+                    <p>$106.58</p>
+                </div>
+                <div class="popular-item-card">
+                    <img src="https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/04/20-480x480.jpg" alt="">
+                    <p>Valvoline Oil Stockists</p>
+                    <div class="review-stars">
+                        <span>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </span>
+                    </div>
+                    <p>$106.58</p>
+                </div>
+                <div class="popular-item-card">
+                    <img src="https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/04/23-480x480.jpg" alt="">
+                    <p>Valvoline Oil Stockists</p>
+                    <div class="review-stars">
+                        <span>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </span>
+                    </div>
+                    <p>$106.58</p>
+                </div>
+                <div class="popular-item-card">
+                    <img src="https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/04/05-480x480.jpg" alt="">
+                    <p>Valvoline Oil Stockists</p>
+                    <div class="review-stars">
+                        <span>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </span>
+                    </div>
+                    <p>$106.58</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="mid-banner">cenk</section>
+    <section class="products">furkan</section>
+    <section class="shop">furkan</section>
+    <section class="g-parts">
+        <div class="g-parts-text">
+            <div>
+                <h2>GENUINE<br>PARTS</h2>
+            </div>
+            <div>
+                <P>YOU CAN NOW BENEFIT WITH <span class="primary-color">15%</span> SPECIAL DISCOUNT*</P>
+            </div>
+        </div>
+    </section>
+    <section class="blog">
+        <div class="container">
+            <div class="blog-container">
+                <h2>FROM OUR BLOG</h2>
+                <div class="blog-text">
+                    <div class="blog-text-left">
+                        <img src="https://druco-be87.kxcdn.com/druco/wp-content/uploads/2021/03/blog-1-1.jpg" alt="">
+                        <div class="blog-content-text">
+                            <p><span class="admin"><span class="admin">BY</span><a href="">ADMIN</a></span><span
+                                    class="admin">IN</span> <a href="">EXHAUST, WHEELS &
+                                    TIRES</a></p>
+                            <h4 class="blog-content-text-title">How to Check and Maintain Your Suspension</h4>
+                            <p>The small round table in the dinette may be great for casual meals with your family, but
+                                inviting
+                                overnight guests</p>
+                            <button>READ MORE</button>
+                        </div>
+                    </div>
+                    <div class="blog-text-right">
+                        <div class="blog-content-text-right">
+                            <div class="blog-content-text">
+                                <p><span class="admin">JAN 22, 2021</span><span class="admin"><span
+                                            class="admin">BY</span><a href="">ADMIN</a></span> <span
+                                        class="admin">IN</span>
+                                    <a href="">AUTO PARTS, BRAKING, MIRROR</a>
+                                </p>
+                                <h4 class="blog-content-text-title">What Is Car Suspension?</h4>
+                                <p>The small round table in the dinette may be great for casual meals</p>
+                                <button>READ MORE</button>
+                            </div>
+                            <div class="blog-content-text">
+                                <p><span class="admin">JAN 22, 2021</span><span class="admin"><span
+                                            class="admin">BY</span><a href="">ADMIN</a></span> <span
+                                        class="admin">IN</span>
+                                    <a href="">BRAKING, HEADLIGHT, INTERIORS</a>
+                                </p>
+                                <h4 class="blog-content-text-title">What Does A Car Service Include?</h4>
+                                <p>The small round table in the dinette may be great for casual meals</p>
+                                <button>READ MORE</button>
+                            </div>
+                            <div class="blog-content-text">
+                                <p><span class="admin">JAN 22, 2021</span><span class="admin"><span
+                                            class="admin">BY</span><a href="">ADMIN</a></span> <span
+                                        class="admin">IN</span>
+                                    <a href="">AUTO PARTS, EXHAUST, HEADLIGHT</a>
+                                </p>
+                                <h4 class="blog-content-text-title">Wiper Blade Size Guide</h4>
+                                <p>The small round table in the dinette may be great for casual meals</p>
+                                <button>READ MORE</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <section class="why-are-we">hazal</section>
+    <section class="brands">cenk</section>
+    <section class="footer"></section>
 </body>
 
 </html>

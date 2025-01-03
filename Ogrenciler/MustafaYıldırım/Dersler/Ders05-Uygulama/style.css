@@ -215,7 +215,7 @@ header {
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  height: 200vh;
+  height: 100vh;
 }
 
 .card1-icon i {
@@ -242,14 +242,12 @@ header {
 }
 
 .card:hover {
-  box-shadow: #24272c;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 25px 25px rgba(36, 39, 44, 0.05);
 }
 .card2,
 .card4,
 .card6 {
-  box-shadow: #24272c;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 25px 25px rgba(36, 39, 44, 0.05);
 }
 
 .section4-content {
@@ -258,6 +256,7 @@ header {
 
 .section4-content a {
   color: #24272c;
+  font-weight: 600;
   text-decoration: none;
   font-family: "Roboto Slab", serif;
 }
@@ -277,27 +276,22 @@ header {
   margin: 1rem 0;
 }
 
-.section4-a2 {  
+.section4-a2 {
   font-family: "Roboto", serif;
   font-size: 1rem;
 }
 
-.section5{
-
-
-  margin-top: 0px;
+.section5 {
+  margin-top: 100px;
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 }
 
 .section5-h3 {
-  display: block;
   line-height: 1.5;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   font-size: 15px;
   font-family: "Roboto Slab", serif;
   color: #ff5714;
@@ -311,55 +305,231 @@ header {
   margin-bottom: 1rem;
 }
 
-
 .section5-p {
   font-size: 15px;
+  max-width: 600px;
   line-height: 1.6;
-  margin-left: auto;
-  margin-right: auto;
   text-align: center;
   font-family: "Roboto", serif;
   color: #8492a6;
-  display: block;
+}
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-
-.section5-cover {
-  display: flex;
-  flex-direction: column; 
-  align-items: center;    
-  justify-content: center;
-  text-align: center;
-  margin-bottom: 20px;    
-}
-
-
-.bg-img5{
-  display: flex;
+.timeline-item img {
   width: 250px;
   height: 250px;
-  justify-content: center;
-  align-items: center;
 }
 
-.row{
+.section6 {
+  height: 100vh;
+  margin-top: 100px;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section6-img {
   display: flex;
   flex-wrap: wrap;
-  box-sizing: border-box;
-  
-}
-
-.container-section5 {
-  margin: auto;
-  width: 100%;
-  display: flex;
+  margin: 24px 10rem 0 10rem;
+  gap: 16px;
   justify-content: center;
 }
-.section5-image{
-  height: 250px;
-  width: 570px;
-  padding-left: 300px;
-  margin-right: 400px;
-  margin-top: 500px;
 
+.img-item {
+  flex: 1 1 calc(25% - 16px);
+}
+
+.img-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 5px;
+}
+
+.section7 {
+  height: 50vh;
+  background-image: url(https://shreethemes.in/upstart/layouts/images/bg/cta.png);
+  background-position: 50%;
+}
+
+.section7-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.section7-container .section1-p {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.section8-cards {
+  font-family: "Roboto", serif;
+  gap: 1rem;
+  margin: 3rem 10rem 0 10rem;
+}
+
+.section8-card {
+  flex: 1 1 calc(25% - 16px);
+  box-shadow: 0 0 3px rgba(36, 39, 44, 0.15);
+  color: #212529;
+  padding: 3rem 1.5rem;
+}
+.section8-card:hover {
+  box-shadow: 0 5px 13px rgba(36, 39, 44, 0.2);
+}
+.section8-card h5 {
+  font-family: "Roboto Slab", serif;
+  font-size: 18px;
+  margin-bottom: 0.5rem;
+}
+.price {
+  font-family: "Roboto Slab", serif;
+  display: flex;
+  margin-bottom: 1.5rem;
+}
+
+.dolar {
+  margin-top: 0.5rem;
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: 600;
+}
+.fiyat {
+  font-size: 42px;
+  line-height: 1.5;
+  font-weight: 600;
+}
+.ay {
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  align-self: flex-end;
+}
+.section8-ul {
+  list-style: none;
+}
+
+.section8-ul li {
+  margin-bottom: 1.5rem;
+  color: #212529bf;
+}
+
+.section8-btn {
+  width: 100%;
+  background-color: rgba(255, 87, 20, 0.1);
+  border: 1px solid rgba(255, 87, 20, 0.1);
+  color: #ff5714;
+  box-shadow: 0 3px 5px 0 rgba(255, 87, 20, 0.1);
+  margin-top: 1.5rem;
+  padding: 8px 20px;
+  outline: none;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  border-radius: 6px;
+}
+
+.section8-btn:hover {
+  background-color: #ff5714;
+  border-color: #ff5714;
+  color: #fff;
+}
+
+.section9 {
+  background-color: #f8f9fc;
+  height: 120vh;
+  padding: 100px 10rem;
+}
+
+.section9-container {
+  text-align: center;
+}
+
+.section9-img {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+.section9-img-item img {
+  height: 261px;
+  width: 261px;
+  border-radius: 5px;
+}
+.section9-text {
+  display: flex;
+  justify-content: space-around;
+}
+.section9-text h3 {
+  font-family: "Roboto Slab", serif;
+  font-size: 30px;
+  color: #212529;
+  font-weight: 600;
+}
+.section9-text span {
+  font-size: 15px;
+  color: #212529bf;
+  font-family: "Roboto", serif;
+}
+.section9-ortak {
+  padding-top: 3rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.section9-ortak img {
+  height: 25px;
+  opacity: 0.7;
+}
+
+.section10 {
+  padding: 50px 0;
+  height: 100vh;
+}
+
+.section10-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 3rem 10rem 0 10rem;
+}
+.section10-card {
+  flex: 0 0 auto;
+  width: 30%;
+  box-shadow: 0 0 3px rgba(36, 39, 44, 0.15);
+}
+
+.section10-card img {
+  width: 100%;
+  height: auto;
+}
+.section10-card .section4-content {
+  padding: 0.5rem;
+  padding-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .img-item {
+    flex: 1 1 calc(50% - 16px);
+  }
+}
+
+@media (max-width: 480px) {
+  .img-item {
+    flex: 1 1 100%;
+  }
 }
