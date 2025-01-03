@@ -400,7 +400,7 @@ body {
   font-size: 17px;
 }
 
-@media screen and (max-width: 760) {
+@media (max-width: 760) {
   .category-inner {
     display: block;
     flex-direction: column;
@@ -709,17 +709,16 @@ body {
 /*------ popular parts end ------*/
 
 .genuine-parts {
-  background: url("https://demothemesky-be87.kxcdn.com/druco/wp-content/uploads/2022/08/banner-3.jpg");
-  width: 100%;
+  background: url("https://demothemesky-be87.kxcdn.com/druco/wp-content/uploads/2022/08/banner-3.jpg") center center;
   color: white;
   margin: 100px 0;
   padding: 30px 0;
 }
 
 .genuine-text {
-  width: 1260px;
+  max-width: 1260px;
   margin: 10px auto;
-  
+  width: 80%;
 }
 
 .genuine-text h2{
@@ -729,4 +728,126 @@ body {
 .genuine-text p{
   font-size: 18px;
   font-weight: 300;
+}
+/* ------- genuine part end -------*/
+
+.our-blog {
+  max-width: 1260px;
+  margin: 0 auto;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.our-blog > h2{
+  color: #202020;
+  margin-bottom: 50px;
+  font-size: 36px;
+}
+
+.inner-blog {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 70px;
+  text-align: left;
+}
+
+.blog-left {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.article-image img{
+  height: 371px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.article-text {
+  padding: 25px;
+}
+
+.article-text > *{
+  margin: 10px 0;
+}
+
+.blog-button {
+  border: none;
+  background-color: rgba(255, 185, 31, 1);
+  color: #202020;
+  font-size: 14px;
+  margin: 10px 0 0;
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-weight: 600;
+}
+
+.button-hover-effect {
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.button-hover-effect:hover {
+  color: rgba(255, 185, 31, 1);
+  background-color: #202020;
+  cursor: pointer;
+}
+
+.blog-right {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.blog-articles > * {
+  margin: 10px 0;
+}
+
+.blog-gray-text{
+  font-size: 12.75px;
+  color: #AFAFAF;
+}
+
+.blog-small-text{
+  font-size: 12.75px;
+  color: #202020;
+}
+
+/* ------- our blog section end --------*/
+
+.why-us-part{
+  background: url("https://demothemesky-be87.kxcdn.com/druco/wp-content/uploads/2022/08/home-about.jpg");
+  color:white;
+  text-align: center;
+  height: 600px;
+  display: flex;
+  align-content: center;
+}
+
+.why-us-inner {
+  width: 1260px;
+  margin: 130px auto;
+}
+
+.why-us-text{
+  max-width: 730px;
+  margin: 0 auto;
+}
+
+.why-us-text h2{
+  font-size: 60px;
+  margin-bottom: 50px;
+  
+}
+
+.why-us-logos{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  max-width: 1240px;
+  justify-content: space-around;
+}
+
+.why-us-logo{
+  width: 70px;
+  height: 70px;
 }
