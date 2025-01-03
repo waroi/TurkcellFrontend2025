@@ -362,49 +362,111 @@ margin-bottom: 20px;
     font-size: 13px;
     cursor: pointer;
 }
-
+/* ---------EXPERT-ADVICE---------- */
+.expert-advice{
+    width: 100%;
+}
+.ea-wrapper{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.ea-img{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    background-image: url("https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/01/blog-bg-1.jpg.webp");
+    height: 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 25px;
+}
+.ea-author{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.ea-post-acts{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.ea-post-acts img{
+    width: 20px;
+    height: 20px;
+}
+.ea-author p{
+    font-weight: 600;
+    color: #ffffffe6;
+    font-size: 14px;
+}
+.ea-author img{
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+}
+/* ---------WOODMART-CERAMIC---------- */
 .woodmart-container {
     width: 100%;
     display: flex;
     justify-content: center;
     background-color: #f1f3f8;
 }
-.wc-text{
+
+.wc-text, .ea-wrapper {
     width: 72%;
-    padding: 0 60px 0 40px;
+    padding: 60px 0 40px 0;
 }
 .woodmart-container h1 {
-    font-size: 24px;
-    color: #2c54b5;
+    font-size: 32px;
+    color: #1246ab;
     margin-bottom: 20px;
+    font-weight: 800;
 }
 
 .woodmart-container .woodmart-subtitle {
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 15px;
+    color: #242424;
 }
 
 .woodmart-container p {
     line-height: 1.6;
     margin-bottom: 15px;
+    font-size: 16px;
+    color: #777;
 }
 
 .woodmart-container p strong {
     font-weight: bold;
+    font-size: 18px;
+    color: #242424;
 }
 
 .woodmart-container .woodmart-read-more {
     display: inline-block;
     margin-top: 20px;
-    color: #2c54b5;
+    color: #333333;
     text-decoration: none;
     font-weight: bold;
+    font-size: 12px;
+}
+.read-more{
+    border: 1px solid #171EFF;
+}
+.woodmart-container .woodmart-read-more:hover {
+    color: #777;
+    transition: 350ms ease 0s;
 }
 
-.woodmart-container .woodmart-read-more:hover {
-    text-decoration: underline;
+.woodmart-fade {
+    position: relative;
+    margin-top: -70px;
+    height: 50px;
+    background: linear-gradient(to bottom, rgba(248, 249, 252, 0) 0%, #f1f3f8 100%);
 }
+
 @media screen and (max-width: 1400px){
     .links{
         padding: 0;
