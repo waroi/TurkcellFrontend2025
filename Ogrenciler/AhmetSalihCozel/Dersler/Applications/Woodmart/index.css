@@ -839,7 +839,65 @@ footer {
     margin-top: -30px;  
 }
 
+.projectIdeasWrapper{
+    background-color:#f1f3f8;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
 
+}
+
+.projectIdeasWidthGiver{
+    width: 72%;
+}
+
+.projectIdeas img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.projectIdeas{
+    height: 100%;
+    width: 100%;
+}
+
+.ourServicesSub{
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+.projectIdeasImg{
+    background-image: url("https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/05/home-hotspot.jpg.webp");
+   width: 100%;
+   height: 100%;
+   background-repeat: no-repeat;
+    
+}
+
+.similarProductsWrapper{
+    display: grid;
+ 
+    gap: 30px;
+}
+
+.similarProducts{
+    height: 100%;
+    width: 100%;
+    background: #fff;
+}
+
+.ourServices{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    background: #ab3838;
+}
+
+.featured-products-wrapper.new{
+    grid-template-columns: repeat(3, 1fr);
+}
 
 @media screen and (max-width: 1400px) {
     .links {
