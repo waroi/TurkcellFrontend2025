@@ -608,11 +608,13 @@ footer {
 
 .featured-products-wrapper {
     display: grid;
+    margin-top: 10px;
     grid-template-columns: repeat(5, 1fr);
 }
 
 .featured-product {
-    padding: 10px;
+    padding: 15px;
+    border: 1px solid #e4e4e4;
 }
 
 .featured-product h3 {
@@ -628,6 +630,10 @@ footer {
 .featured-product h3 a {
     text-decoration: none;
     color: #242424;
+}
+
+.featured-product img {
+    max-width: 100%;
 }
 
 .featured-stars {
@@ -716,6 +722,19 @@ footer {
 .featured-add-to-cart div:nth-child(2):hover {
     background-color: rgb(16, 64, 156);
 }
+
+.featured-product-foot p {
+    font-size: 14px;
+    color: #333;
+    font-weight: 800;
+    margin-top: 10px;
+}
+
+.featured-product-foot span {
+    color: #a5a5a5;
+    font-weight: 600;
+}
+
 
 @media screen and (max-width: 1400px) {
     .links {
