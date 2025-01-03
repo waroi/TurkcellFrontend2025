@@ -1,0 +1,86 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montez&family=Outfit:wght@100..900&family=Roboto+Slab:wght@100..900&family=Rubik+Glitch&family=Rubik:ital,wght@0,300..900;1,300..900&family=Stalemate&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.nav-blue {
+    display: block;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(36,63,146);
+    padding: 10px 20px;
+}
+.nav-blue > span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font: 15px outfit;
+    padding: 9px 15px;
+    color: white;
+}
+
+.nav-blue > span > span {
+    text-decoration: none;
+    font: 15px outfit;
+    color:rgb(255,185,31);
+}
+
+.free{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    font: 15px outfit;
+    color: white;
+    margin: 0px 30px 0px 0px;
+}
+
+.free > span {
+    font: 12px outfit;
+    margin: 0px 10px 0px 0px;
+}
+
+.free > span > span {
+    font: 16px outfit;
+}
+
+.free > ul {
+    font: 13.95px outfit;
+    display: grid;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+    margin: 0px 0px 0px 0px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+@media (min-width: 768px) {
+    .free > ul {
+        font: 13.95px outfit;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        list-style-type: none;
+        margin: 0;
+    }
+    
+    .free > ul > li {
+        padding: 4px 0;
+    }
+}
+
+.free > ul > li {
+    padding: 4px 0px;
+   
+
+    
+}
+

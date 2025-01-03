@@ -66,6 +66,11 @@ a {
 .head .link i {
   color: black;
 }
+.menu .link-user,
+.menu .menu-icon {
+  display: none;
+}
+
 .container-elements,
 .container-categories,
 .container-search {
@@ -309,6 +314,7 @@ a {
   color: #1246ab;
   font-weight: 600;
 }
+
 .btn-add button,
 .btn-add input,
 .more .card .btn-add button,
@@ -321,7 +327,7 @@ a {
   text-align: center;
   font-size: 13px;
 }
-.product .btn-add,
+.products .btn-add,
 .more .btn-add {
   grid-template-columns: 10% 15% 10% 65%;
 }
@@ -638,4 +644,212 @@ a {
   color: rgb(40, 40, 40);
   font-size: 13px;
   font-weight: 800;
+}
+.footer-top {
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 1.5fr;
+  gap: 20px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.footer-top .logo {
+  margin-bottom: 20px;
+}
+.footer-top p {
+  color: #777;
+  margin-bottom: 20px;
+}
+.footer-top ul {
+  list-style: none;
+  color: #777;
+  display: grid;
+  row-gap: 15px;
+}
+.footer-top ul li img {
+  padding-right: 10px;
+}
+.footer-top h3 {
+  margin-bottom: 16px;
+}
+.footer-top .apps {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.footer-top .apps img {
+  margin-right: 15px;
+}
+.footer-top .social-links {
+  gap: 6px;
+  grid-template-columns: repeat(5, min-content);
+}
+.footer-top .link {
+  width: 30px;
+  height: 30px;
+  font-size: 14px;
+  border-radius: 50%;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+.footer-top .facebook {
+  background-color: #3b5998;
+}
+.footer-top .twitter {
+  background-color: black;
+}
+.footer-top .pinterest {
+  background-color: #c8232c;
+}
+.footer-top .linkedln {
+  background-color: #0e76a8;
+}
+.footer-top .telegram {
+  background-color: #0088cc;
+}
+
+.footer-top {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.105);
+}
+.footer-bottom {
+  color: #767676;
+  font-weight: 700;
+  font-size: 12.8px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  align-items: center;
+}
+.footer-bottom .bank {
+  justify-self: right;
+}
+.footer-bottom strong {
+  color: #333;
+}
+.footer-bottom strong span {
+  color: #cd3e3e;
+}
+
+@media screen and (max-width: 1024px) {
+  .head-center,
+  .head .store,
+  .head .time,
+  .head .links {
+    display: none;
+  }
+  .head {
+    height: 60px;
+    justify-content: center;
+    grid-template-columns: min-content;
+  }
+  .head img {
+    max-width: 150px;
+  }
+  .menu .container-categories,
+  .menu .container-elements,
+  .menu .container-search .icon {
+    display: none;
+  }
+  .menu {
+    align-items: center;
+    grid-template-columns: min-content 1fr min-content;
+  }
+  .menu .menu-icon,
+  .menu .link-user {
+    display: inline-block;
+  }
+  .menu .container-search {
+    width: 100%;
+  }
+  .menu .container-search input {
+    width: 100%;
+    position: relative;
+  }
+  .menu .container-search i {
+    margin: 0;
+    position: absolute;
+    right: 70px;
+    top: 27px;
+  }
+  .menu i {
+    font-size: 20px;
+  }
+  .categories .cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .product-menu {
+    grid-auto-flow: row;
+    justify-content: center;
+  }
+  .product-menu h4 {
+    text-align: center;
+  }
+  .product-menu li {
+    font-size: 20px;
+  }
+  .product-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .product-cards .product-card img {
+    width: 100%;
+  }
+  .information {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .info:last-child {
+    display: none;
+  }
+  .project {
+    grid-template-columns: 1fr 1fr;
+  }
+  .project img {
+    width: 100%;
+  }
+  .project .sevices {
+    display: none;
+  }
+  .project .right .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .project .right .cards .card:last-child {
+    display: none;
+  }
+  .more {
+    display: block;
+    text-align: center;
+  }
+  .more .more-info ul {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: center;
+    gap: 30px;
+  }
+  .more .more-info ul li p {
+    margin-left: 10px;
+  }
+  .more .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .more .card:last-child {
+    display: none;
+  }
+  .more .card img,
+  .more .card .btn-add,
+  .advice .cards img,
+  .advice .cards .img-text {
+    width: 100% !important;
+  }
+  .advice .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+  .advice .card:last-child {
+    display: none;
+  }
+  .newsletter {
+    grid-auto-flow: row;
+    width: 55%;
+  }
+  .newsletter h4 {
+    font-size: 24px;
+  }
+  .newsletter .left {
+    margin-bottom: 20px;
+  }
 }
