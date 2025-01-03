@@ -59,10 +59,11 @@ body {
   justify-content: center;
 }
 
-.flash{
+.flash {
   display: flex;
   justify-content: center;
 }
+
 .header-top strong {
   color: var(--orange);
 }
@@ -86,9 +87,11 @@ body {
 .navbar-top ul li a:hover {
   color: var(--orange);
 }
-.header-menu{
+
+.header-menu {
   border-bottom: rgb(128, 128, 128, 0.3) 0.6px solid;
 }
+
 .header-menu .container {
   padding: 26px 15px;
   display: grid;
@@ -108,6 +111,7 @@ body {
   display: flex;
   align-items: center;
 }
+
 .header-menu .searchbar select {
   width: 190px;
   border-width: 0;
@@ -126,6 +130,7 @@ body {
   font-size: 15px;
   background-color: var(--gray);
 }
+
 .search-button {
   border-radius: 100%;
   width: 70px;
@@ -134,13 +139,16 @@ body {
   border: none;
   transition: 0.3s;
 }
+
 .search-button:hover {
   background-color: black;
   cursor: pointer;
 }
+
 .search-button:hover .fa-magnifying-glass {
   color: var(--orange);
 }
+
 .fa-magnifying-glass {
   font-size: 20px;
 }
@@ -152,10 +160,11 @@ body {
   align-items: center;
 }
 
-.header-socials{
+.header-socials {
   display: flex;
   justify-content: center;
 }
+
 .header-language select,
 .header-currency select {
   border-width: 0;
@@ -170,40 +179,58 @@ body {
   padding: 14px;
 }
 
-/*.header-bottom{
+.header-bottom {
   height: 61px;
-}*/
+}
 
-.header-bottom .container{
+.header-bottom .container {
   display: grid;
   grid-template-columns: 4fr 1fr;
-  padding: 13px 15px;
 }
-.nav-bottom{
+
+.nav-bottom {
   display: flex;
   align-items: center;
 }
-.nav-bottom ul{
+
+.nav-bottom ul {
   list-style: none;
   display: flex;
 }
-.nav-bottom ul li{
+
+.nav-bottom ul li {
   font-size: 15px;
   text-transform: uppercase;
   font-weight: 600;
-  margin:20px;
+  margin: 20px;
 }
-.fa-chevron-down{
+
+.fa-chevron-down {
   font-size: 10px;
   margin-left: 3px;
   transform: translateY(-2px);
 }
-.nav-bottom ul li:hover{
+
+.nav-bottom ul li:hover {
   color: var(--orange);
   cursor: pointer;
 }
-.contact{
+
+.contact {
   background-color: var(--orange);
+  color: rgba(32, 32, 32, 1);
+  display: flex;
+}
+.contact-image{
+  display: flex;
+  align-items: center;
+  float: ;
+
+}
+
+.contact-text {
   padding: 12px 40px;
-  margin: -14px 0;
+  display:flex;
+  flex-direction: column;
+
 }

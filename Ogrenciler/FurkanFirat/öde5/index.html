@@ -4,38 +4,326 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Megamarket</title>
+    <title>Druco</title>
     <link rel="stylesheet" href="index.css" />
+    <link href='https://fonts.googleapis.com/css?family=Outfit' rel='stylesheet'>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
 </head>
 
 <body>
     <header class="header">
         <div class="header-top">
             <div class="container">
-                <p>FREE DELIVERY on all orders</p>
-                <p>FLASH SALE: 60% OFF CAR BATTERIES | USE CODE "BATT60"</p>
+                <p class="free-delivery">FREE DELIVERY on all orders</p>
+                <div class="flash">
+                    <p>
+                        <i class="fas fa-bolt"></i>
+                        <strong>FLASH SALE:</strong>
+                        60% OFF CAR BATTERIES | USE CODE "BATT60"
+                    </p>
+                </div>
                 <nav class="navbar-top">
                     <ul>
-                        <li>Help</li>
-                        <li>About Us</li>
-                        <li>Contact Us</li>
-                        <li>Blog</li>
+                        <li>
+                            <a href="#">Help</a>
+                        </li>
+                        <li>
+                            <a href="#">About Us</a>
+                        </li>
+                        <li>
+                            <a href="#">Contact Us</a>
+                        </li>
+                        <li>
+                            <a href="#">Blog</a>
+                        </li>
                     </ul>
                 </nav>
             </div>
         </div>
-        </div>
         <div class="header-middle">
             <div class="header-menu">
-
+                <div class="container">
+                    <img class="logo" src="./assets/logo.png" alt="">
+                    <div class="searchbar">
+                        <select name="" id="">
+                            <option value=>All Categories</option>
+                            <option value=>Batteries</option>
+                            <option value=>Breka</option>
+                            <option value=>Car Seats</option>
+                        </select>
+                        <input class="search-content" type="text" placeholder="Search for products">
+                        <button class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+                    <div class="header-right">
+                        <div class="header-language">
+                            <select name="" id="">
+                                <option value="en">English</option>
+                                <option value="tr">Turkish</option>
+                            </select>
+                        </div>
+                        <div class="header-currency">
+                            <select name="" id="">
+                                <option value="usd">USD</option>
+                                <option value="try">TRY</option>
+                            </select>
+                        </div>
+                        <div class="header-socials">
+                            <i class="fa-regular fa-user"></i>
+                            <i class="fa-regular fa-heart"><span class="icon-number">0</span></i>
+                            <i class="fa-solid fa-cart-shopping"><span class="icon-number">0</span></i>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="header-bottom">
-
+                <div class="container">
+                    <div class="menu">
+                        <nav class="nav-bottom">
+                            <ul>
+                                <li>Home<i class="fa-solid fa-chevron-down"></i></li>
+                                <li>Pages<i class="fa-solid fa-chevron-down"></i></li>
+                                <li>Service Parts<i class="fa-solid fa-chevron-down"></i></li>
+                                <li>Brake<i class="fa-solid fa-chevron-down"></i></li>
+                                <li>Car Batteries<i class="fa-solid fa-chevron-down"></i></li>
+                                <li>Tools & Garage<i class="fa-solid fa-chevron-down"></i></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="contact">
+                        <div class="contact-text">
+                            <span>Call us 24/7</span>
+                            <a href="tel: +08 9229 8228">+08 9229 8228</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-
     </header>
+    <section>
+        <div class="banner">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="form-container">
+                    <form action="">
+                        <h2>SEARCH BY VEHICLE</h2>
+                        <select name="" id="">
+                            <option value="">Select Make</option>
+                            <option value="">BMW</option>
+                            <option value="">Ford</option>
+                            <option value="">Hyundai</option>
+                            <option value="">Lexus</option>
+                            <option value="">Mazda</option>
+                            <option value="">Mercedes</option>
+                            <option value="">Toyota</option>
 
+                        </select>
+                        <select name="" id="">
+                            <option value="">Select Model</option>
+                            <option value="">124 GT</option>
+                            <option value="">124 SPIDER</option>
+                            <option value="">500</option>
+                            <option value="">500C</option>
+                            <option value="">595</option>
+                            <option value="">595C</option>
+                        </select>
+                        <select name="" id="">
+                            <option value="">Select Year</option>
+                            <option value="">2019</option>
+                            <option value="">2020</option>
+                            <option value="">2021</option>
+                            <option value="">2022</option>
+                        </select>
+                        <select name="" id="">
+                            <option value="">Select Engine</option>
+                            <option value="">1.1</option>
+                            <option value="">1.2</option>
+                            <option value="">1.3</option>
+                            <option value="">1.4</option>
+                        </select>
+                        <button class="btn">GO</button>
+                    </form>
+                </div>
+
+                <div class="banner-content">
+                    <h6>EXTRA 26%</h6>
+                    <h1>Check and Maintain</h1>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis, ipsam?</p>
+                    <button class="btn">SHOP NOW</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="categories">
+        <div class="container">
+            <div class="category-text">
+                <h2>Categories</h2>
+                <p>March Favorites</p>
+                <div>
+                    <span>
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </span>
+                    <span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="category-cards">
+                <div class="category-card">
+                    <img src="https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/08/tires-310x310.jpg" alt="">
+                    <p>Whells & Tires</p>
+                </div> 
+                <div class="category-card">
+                    <img src="https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/08/interior-310x310.jpg"
+                        alt="">
+                    <p>Interiors</p>
+                </div>
+                <div class="category-card">
+                    <img src="https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/08/entertainment-310x310.jpg"
+                        alt="">
+                    <p>Entertainments</p>
+                </div>
+                <div class="category-card">
+                    <img src="https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/08/oils-310x310.jpg" alt="">
+                    <p>Fluids & Chemicals</p>
+                </div>
+                <div class="category-card">
+                    <img src="https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/08/exteriors-310x310.jpg"
+                        alt="">
+                    <p>Exteriros</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="popular-items">
+        <div class="container">
+            <div class="popular-text">
+                <h2>Bestsellers</h2>
+                <h2>Popular items</h2>
+            </div>
+            <div class="popular-item-cards">
+                <div class="popular-item-card">
+                    <img src="https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/04/28-480x480.jpg" alt="">
+                    <p>Valvoline Oil Stockists</p>
+                    <div class="review-stars">
+                        <span>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </span>
+                    </div>
+                    <p>$106.58</p>
+                </div>
+                <div class="popular-item-card">
+                    <img src="https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/04/06-480x480.jpg" alt="">
+                    <p>Racing Custom Wheels VF577</p>
+                    <div class="review-stars">
+                        <span>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </span>
+                    </div>
+                    <p>$106.58</p>
+                </div>
+                <div class="popular-item-card">
+                    <img src="https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/04/11-480x480.jpg" alt="">
+                    <p>Racing Custom Wheels VF421</p>
+                    <div class="review-stars">
+                        <span>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </span>
+                    </div>
+                    <p>$106.58</p>
+                </div>
+                <div class="popular-item-card">
+                    <img src="https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/04/02-480x480.jpg" alt="">
+                    <p>Kit Brembo GT BMW</p>
+                    <div class="review-stars">
+                        <span>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </span>
+                    </div>
+                    <p>$106.58</p>
+                </div>
+                <div class="popular-item-card">
+                    <img src="https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/04/10-480x480.jpg" alt="">
+                    <p>Valvoline Oil Stockists</p>
+                    <div class="review-stars">
+                        <span>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </span>
+                    </div>
+                    <p>$106.58</p>
+                </div>
+                <div class="popular-item-card">
+                    <img src="https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/04/20-480x480.jpg" alt="">
+                    <p>Valvoline Oil Stockists</p>
+                    <div class="review-stars">
+                        <span>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </span>
+                    </div>
+                    <p>$106.58</p>
+                </div>
+                <div class="popular-item-card">
+                    <img src="https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/04/23-480x480.jpg" alt="">
+                    <p>Valvoline Oil Stockists</p>
+                    <div class="review-stars">
+                        <span>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </span>
+                    </div>
+                    <p>$106.58</p>
+                </div>
+                <div class="popular-item-card">
+                    <img src="https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/04/05-480x480.jpg" alt="">
+                    <p>Valvoline Oil Stockists</p>
+                    <div class="review-stars">
+                        <span>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </span>
+                    </div>
+                    <p>$106.58</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="mid-banner">cenk</section>
+    <section class="products">furkan</section>
+    <section class="shop">furkan</section>
+    <section class="g-parts">hazal</section>
+    <section class="blog">hazal</section>
+    <section class="why-are-we">hazal</section>
+    <section class="brands">cenk</section>
+    <section class="footer"></section>
 </body>
 
 </html>

@@ -1,0 +1,286 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+    width: 100%;
+    max-width: 1390px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFFFFF;
+    color: #777777;
+    padding: 10px;
+    width: 100%;
+}
+
+.banner-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.banner-image{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner-icons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    padding: 0px 20px;
+}
+
+.banner-menu{
+    color: #777777;
+}
+
+.banner-image img{
+    width: 225px;
+    height: 50px;
+}
+
+.banner-icons ul li{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    gap: 6px;
+}
+
+.location-icon img{
+    width: 14px;
+    height: 18px;
+}
+
+.find-a-store{
+    color: #777777;
+    font-size: 15px;
+}
+
+.nine-pm{
+    color: #1246ab;
+    font-size: 15px;
+}
+
+.banner-menu ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    gap: 20px;
+}
+
+/*? NAVBAR HEADER CSS START */
+
+.navbar-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1246ab;
+}
+
+.navbar-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 10px;
+}
+
+.all-categories-nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    padding: 0px 10px;
+    gap: 10px;
+}
+
+.all-categories-nav img{
+    width: 16px;
+    height: 16px;
+}
+
+.all-categories{
+    color: #FFFFFF;
+    font-size: 15px;
+}
+
+.header-divider{
+    width: 1px;
+    height: 18px;
+    background-color: #777777;
+}
+
+.other-nav-links{
+    display: flex;
+    width: 666px;
+}
+
+.nav-links{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+}
+
+.nav-links li{
+    padding: 0px 20px;
+}
+
+.nav-links img{
+    width: 18px;
+    height: 18px;
+}
+
+.nav-links span{
+    color: #FFFFFF;
+    font-size: 15px;
+}
+
+.search-input input{
+    width: 310px;
+    height: 46px;
+    padding: 0px 10px;
+    margin: 0px 20px;
+}
+
+.wishlist-and-basket{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.tools-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px ridge #777777;
+}
+/*! NAVBAR HEADER CSS END*/
+
+/*? BANNER SECTİON CSS START*/
+
+.banner-section{
+    display: flex;
+    background: linear-gradient(to bottom, rgb(40, 89, 184), rgb(40, 89, 184) 75%, rgb(255, 255, 255) 75%);
+}
+.banner-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: start;
+    padding: 0px 30px;
+    width: 100%;
+    height: 540px;
+}
+
+.banner-container-left {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: start;
+    width: 100%;
+    height: 520px;
+}
+
+.banner-left-description{
+    width: 50%;
+    background: #ADB89A;
+}
+
+.banner-left-image{
+    background: url("https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2021/12/slider-2-2.jpg");
+    background-position: center;
+    background-size: cover;
+    width: 50%;
+}
+
+.banner-container-right{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.banner-right-first{
+    background: url("https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/05/banner-servises.jpg.webp");
+    background-position: center;
+    background-size: cover;
+    width: 70%;
+    height: 300px;
+}
+.banner-right-second{
+    background: url("https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2021/12/shipping-banner-x2.jpg.webp");
+    background-position: center;
+    background-size: cover;
+    width: 70%;
+    height: 200px;
+}
+/*! BANNER SECTİON CSS END*/
+
+/*? CATEGORİES SECTİON CSS START*/
+
+.popular-items{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.categories-items{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+}
+
+.categories-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.categories-items h3{
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+}
+.categories-items p{
+    font-size: 15px;
+    color: #777777;
+    text-align: center;
+    padding-top: 10px;
+}
+/*! CATEGORİES SECTİON CSS END*/
