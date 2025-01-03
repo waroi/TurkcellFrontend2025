@@ -71,6 +71,9 @@
     padding: 0 13.75%;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 2326532;
 }
 
 .navTopEndList {
@@ -409,16 +412,19 @@ footer {
     width: 72%;
     margin: 0 auto;
 }
+
 .ea-wrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     padding: 60px 0 40px 0;
 }
-.expert-advice h4{
+
+.expert-advice h4 {
     font-size: 26px;
     color: #242424;
 }
+
 .ea-img {
     display: flex;
     align-items: flex-end;
@@ -430,13 +436,16 @@ footer {
     background-size: cover;
     padding: 25px;
 }
-.img1{
+
+.img1 {
     background-image: url("https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/01/blog-bg-1.jpg.webp");
 }
-.img2{
+
+.img2 {
     background-image: url("https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/01/blog-bg-2-450x278.jpg");
 }
-.img3{
+
+.img3 {
     background-image: url("https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/01/blog-bg-3-450x278.jpg");
 }
 
@@ -445,28 +454,56 @@ footer {
     align-items: center;
     gap: 5px;
 }
-.ea-text{
-    color:#a5a5a5;
-    font-size:13px;
+
+.ea-post-acts:nth-child(2) {
+    position: relative;
+}
+
+.ea-post-acts:nth-child(2)::after {
+    position: absolute;
+    content: '0';
+    right: -4px;
+    background-color: rgb(18, 70, 171);
+    text-align: center;
+    font-size: 9px;
+    border-radius: 50%;
+    width: 14px;
+    height: 14px;
+    color: #fff;
+    line-height: 14.3px;
+    top: -4px;
+}
+
+.ea-wrapper .ea-card:nth-child(2) .ea-post-acts:nth-child(2)::after {
+    content: '1';
+}
+
+.ea-text {
+    color: #a5a5a5;
+    font-size: 13px;
     margin: 15px 0;
     font-weight: 600;
 }
-.ea-text h4{
+
+.ea-text h4 {
     color: #242424;
     font-size: 22px;
     margin: 10px 0;
     cursor: pointer;
     transition: 350ms ease 0s;
 }
-.ea-text h4:hover{
+
+.ea-text h4:hover {
     color: rgb(51 51 51 / 65%);
 }
-.ea-text p{
+
+.ea-text p {
     font-weight: 500;
     font-size: 16px;
     line-height: 1.7;
-    color:#777777;
+    color: #777777;
 }
+
 .ea-post-acts {
     display: flex;
     align-items: center;
@@ -489,12 +526,14 @@ footer {
     width: 22px;
     height: 22px;
 }
-.continue-reading{
+
+.continue-reading {
     font-size: 13px;
     color: #1246ab;
     font-weight: 800px;
     margin-top: 15px;
 }
+
 /* ---------WOODMART-CERAMIC---------- */
 .woodmart-container {
     width: 100%;
@@ -562,7 +601,7 @@ footer {
 
 /* ============== POPULAR-PRODUCTS ============== */
 
-.popular-categories, .featured-products {
+.popular-categories, .more-products, .featured-products {
     max-width: 72%;
     padding: 3rem 0;
     margin: 0 auto;
@@ -732,7 +771,6 @@ footer {
 }
 
 .featured-add-to-cart div:nth-child(1) {
-    width: 32%;
     display: flex;
 }
 
@@ -796,8 +834,7 @@ footer {
     display: flex;
     height: 100%;
     flex-direction: column;
-    /* justify-content: space-between; kötü görünüş yüzünden centera çevrildi */
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .wpb-texts h4 {
@@ -812,7 +849,7 @@ footer {
     color: #777;
 }
 
-.cartWrapper{
+.cartWrapper {
     display: inline-block;
     overflow: hidden;
     position: relative;
@@ -820,83 +857,137 @@ footer {
 
 }
 
-.cartWrapper img{
+.cartWrapper img {
+    margin-top: 10px;
     width: 24px;
     height: 24px;
 }
 
-.overFlow{
+.overFlow {
     overflow: hidden;
     height: 38px;
- 
+
 }
 
-.overFlow > p {
-    transition: 300ms ease 0s; 
+.overFlow>p {
+    transition: 300ms ease 0s;
 }
 
-.overFlow:hover > p{
-    margin-top: -30px;  
+.overFlow:hover>p {
+    margin-top: -38px;
 }
 
-.projectIdeasWrapper{
-    background-color:#f1f3f8;
+.projectIdeasWrapper {
+    background-color: #f1f3f8;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
 
 }
 
-.projectIdeasWidthGiver{
+.projectIdeasWidthGiver {
     width: 72%;
 }
 
-.projectIdeas img{
+.projectIdeas img {
     width: 100%;
     object-fit: cover;
 }
 
-.projectIdeas{
+.projectIdeas {
     height: 100%;
     width: 100%;
 }
 
-.ourServicesSub{
+.ourServicesSub {
     display: flex;
     flex-direction: column;
 
     justify-content: center;
 }
 
-.projectIdeasImg{
+.projectIdeasImg {
     background-image: url("https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/05/home-hotspot.jpg.webp");
-   width: 100%;
-   height: 100%;
-   background-repeat: no-repeat;
-    
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+
 }
 
-.similarProductsWrapper{
+.similarProductsWrapper {
     display: grid;
- 
+
     gap: 30px;
 }
 
-.similarProducts{
+.similarProducts {
     height: 100%;
     width: 100%;
     background: #fff;
 }
 
-.ourServices{
+.ourServices {
     display: flex;
     height: 100%;
     width: 100%;
     background: #ab3838;
 }
 
-.featured-products-wrapper.new{
+.featured-products-wrapper.new {
     grid-template-columns: repeat(3, 1fr);
+}
+
+
+/* ============== MORE PRODUCTS ============== */
+
+.more-products-main {
+    display: flex;
+    gap: 50px;
+}
+
+.more-products-main h4 {
+    font-size: 26px;
+    color: #242424;
+}
+
+.more-products-tab {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.more-products-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.more-products-left {
+    width: 20%;
+}
+
+.more-products-left p {
+    line-height: 1.6;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #777;
+}
+
+.more-product-link {
+    color: #1246AB;
+    font-size: 14px;
+    text-transform: uppercase;
+    display: flex;
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 150ms ease-in;
+    align-items: center;
+    gap: 10px;
+}
+
+.mpl-active, .more-product-link:hover {
+    color: #DF2626;
 }
 
 @media screen and (max-width: 1400px) {
