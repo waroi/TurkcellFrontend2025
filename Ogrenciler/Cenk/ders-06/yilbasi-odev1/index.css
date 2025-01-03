@@ -105,6 +105,15 @@ body {
   .popular-parts ul {
     grid-template-columns: repeat(3, 1fr) !important;
   }
+  .category-cards {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .category-card:nth-of-type(3),
+  .category-card:nth-of-type(4),
+  .category-card:nth-of-type(5) {
+    display: none;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 1100px) {
@@ -116,6 +125,11 @@ body {
     display: none;
   }
   .navbar-top {
+    display: none;
+  }
+
+  .header-right .header-language,
+  .header-currency {
     display: none;
   }
   .header-menu .container {
@@ -196,6 +210,13 @@ body {
   .popular-parts ul {
     grid-template-columns: repeat(4, 1fr) !important;
   }
+  .category-cards {
+    grid-template-columns: 1fr 1fr 1fr !important;
+  }
+  .category-card:nth-of-type(4),
+  .category-card:nth-of-type(5) {
+    display: none;
+  }
 }
 
 @media (min-width: 1100px) and (max-width: 1279px) {
@@ -207,6 +228,13 @@ body {
     display: none;
   }
   .navbar-top {
+    display: none;
+  }
+  .header-menu .container {
+    grid-template-columns: 1fr 2fr 1fr;
+  }
+  .header-right .header-language,
+  .header-currency {
     display: none;
   }
   .header-bottom .container .contact {
@@ -245,6 +273,12 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   }
+  .category-cards {
+    grid-template-columns: 1fr 1fr 1fr 1fr !important;
+  }
+  .category-card:nth-of-type(5) {
+    display: none;
+  }
 }
 
 @media (min-width: 1279px) {
@@ -253,7 +287,6 @@ body {
     width: 100%;
   }
   .header-top .container {
-    display: grid;
     grid-template-columns: 1fr 2fr 1fr;
   }
   .free-delivery {
@@ -261,6 +294,9 @@ body {
   }
   .navbar-top {
     display: block;
+  }
+  .header-menu .container {
+    grid-template-columns: 1fr 2fr 1fr;
   }
   .header-bottom .container {
     grid-template-columns: 4fr 1fr;
@@ -614,26 +650,46 @@ p {
 }
 .category-card {
   width: 173px;
+  cursor: pointer;
+}
+.category-card-image-container {
+  overflow: hidden;
+  border-radius: 10px;
+  width: 171px;
+  height: 171px;
+}
+.category-card:hover img {
+  scale: 1.1;
+}
+.category-card:hover p {
+  color: white;
 }
 .category-card img {
   width: 100%;
   border-radius: 10px;
+  transition: 0.2s;
 }
 .category-card p {
   text-align: center;
   font-size: 17px;
+  margin-top: 10px;
 }
 .category-text span {
   background-color: rgb(255, 199, 76);
   border-radius: 50%;
   padding: 10px;
   margin-right: 10px;
+  transition: 0.2s;
+}
+.category-text span:hover {
+  background-color: rgb(255, 232, 182);
+  cursor: pointer;
 }
 .fa-arrow-left,
 .fa-arrow-right {
   font-size: 20px;
 }
-.popular-items{
+.popular-items {
   margin-top: 74px;
   margin-bottom: 86px;
 }
@@ -728,10 +784,10 @@ p {
   display: flex;
   align-items: center;
   margin-right: 15px;
-  transition: 0.3s;
   background-size: fill;
   background-position: center;
   background-repeat: no-repeat;
+  transition: 0.3s;
 }
 .right-banner {
   background-image: url(https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/08/banner-2.jpg);
@@ -893,7 +949,7 @@ p {
   background-color: black;
   color: var(--orange);
 }
-.shop{
+.shop {
   margin-bottom: 40px;
 }
 .shop h2 {
@@ -922,8 +978,8 @@ p {
 .popular-parts ul li:hover {
   background-color: var(--orange);
 }
-.g-parts{
-  background-image: url("https://demothemesky-be87.kxcdn.com/druco/wp-content/uploads/2022/08/banner-3.jpg");
+.g-parts {
+  background-image: url('https://demothemesky-be87.kxcdn.com/druco/wp-content/uploads/2022/08/banner-3.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -933,35 +989,35 @@ p {
   align-items: center;
   margin-bottom: 45px;
 }
-.g-parts-text{
+.g-parts-text {
   width: 1230px;
   height: 200px;
 }
-.g-parts-text h2{
+.g-parts-text h2 {
   font-size: 90px;
   color: var(--orange);
   line-height: 85px;
   margin-bottom: 15px;
 }
-.g-parts-text p{
+.g-parts-text p {
   font-size: 18px;
   color: #ffffff;
 }
-.primary-color{
+.primary-color {
   color: var(--orange);
 }
-.blog{
+.blog {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-.blog-container{
+.blog-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 15px;
 }
-.blog-container h2{
+.blog-container h2 {
   display: flex;
   justify-content: center;
   padding: 5px;
@@ -969,44 +1025,44 @@ p {
   font-weight: 700;
   margin-bottom: 50px;
 }
-.blog-text{
+.blog-text {
   display: flex;
   flex-direction: row;
   justify-content: start;
 }
-.blog-text-left{
+.blog-text-left {
   width: 50%;
   border: 1px solid #cbcbcb;
   border-radius: 10px;
 }
-.blog-text-left img{
+.blog-text-left img {
   width: 100%;
   border: none;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
-.blog-content-text{
+.blog-content-text {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: start;
   padding: 25px 30px 30px;
 }
-.blog-content-text span{
+.blog-content-text span {
   color: #afafaf;
   font-size: 12.75px;
 }
-.blog-content-text h4{
+.blog-content-text h4 {
   color: #202020;
   font-size: 20px;
   margin-bottom: 12px;
 }
-.blog-content-text p{
+.blog-content-text p {
   color: #202020;
   font-size: 15px;
   margin-bottom: 14px;
 }
-.blog-content-text button{
+.blog-content-text button {
   width: 150px;
   height: 42px;
   background-color: var(--orange);
@@ -1016,13 +1072,13 @@ p {
   font-weight: 600;
   margin-top: 10px;
 }
-.blog-content-text button:hover{
+.blog-content-text button:hover {
   background-color: black;
   color: var(--orange);
   cursor: pointer;
   transition: 0.3s;
 }
-.blog-text-right{
+.blog-text-right {
   padding: 0 0 0 74px;
 }
 /*.blog-content-text-right{
@@ -1031,17 +1087,17 @@ p {
   border-width: 0 0 1px;
   border-style: solid;
 }*/
-.admin{
+.admin {
   margin-right: 12px;
 }
-.blog-content-text a{
+.blog-content-text a {
   color: #202020;
   font-size: 12.75px;
   line-height: 18px;
   text-decoration: none;
 }
 .blog-content-text a:hover,
-.blog-content-text h4:hover{
+.blog-content-text h4:hover {
   color: var(--orange);
   cursor: pointer;
 }
