@@ -406,24 +406,38 @@ footer {
 
 /* ---------EXPERT-ADVICE---------- */
 .expert-advice {
-    width: 100%;
+    width: 72%;
+    margin: 0 auto;
 }
-
 .ea-wrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 60px 0 40px 0;
 }
-
+.expert-advice h4{
+    font-size: 26px;
+    color: #242424;
+}
 .ea-img {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    background-image: url("https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/01/blog-bg-1.jpg.webp");
+    width: 100%;
     height: 300px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     padding: 25px;
+}
+.img1{
+    background-image: url("https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/01/blog-bg-1.jpg.webp");
+}
+.img2{
+    background-image: url("https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/01/blog-bg-2-450x278.jpg");
+}
+.img3{
+    background-image: url("https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/01/blog-bg-3-450x278.jpg");
 }
 
 .ea-author {
@@ -431,7 +445,28 @@ footer {
     align-items: center;
     gap: 5px;
 }
-
+.ea-text{
+    color:#a5a5a5;
+    font-size:13px;
+    margin: 15px 0;
+    font-weight: 600;
+}
+.ea-text h4{
+    color: #242424;
+    font-size: 22px;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: 350ms ease 0s;
+}
+.ea-text h4:hover{
+    color: rgb(51 51 51 / 65%);
+}
+.ea-text p{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.7;
+    color:#777777;
+}
 .ea-post-acts {
     display: flex;
     align-items: center;
@@ -454,7 +489,12 @@ footer {
     width: 22px;
     height: 22px;
 }
-
+.continue-reading{
+    font-size: 13px;
+    color: #1246ab;
+    font-weight: 800px;
+    margin-top: 15px;
+}
 /* ---------WOODMART-CERAMIC---------- */
 .woodmart-container {
     width: 100%;
@@ -463,7 +503,7 @@ footer {
     background-color: #f1f3f8;
 }
 
-.wc-text, .ea-wrapper {
+.wc-text {
     width: 72%;
     padding: 60px 0 40px 0;
 }
@@ -749,6 +789,7 @@ footer {
     gap: 30px;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .wpb-texts {
