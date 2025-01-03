@@ -813,3 +813,41 @@ body {
 }
 
 /* ------- our blog section end --------*/
+
+.why-us-part{
+  background: url("https://demothemesky-be87.kxcdn.com/druco/wp-content/uploads/2022/08/home-about.jpg");
+  color:white;
+  text-align: center;
+  height: 600px;
+  display: flex;
+  align-content: center;
+}
+
+.why-us-inner {
+  width: 1260px;
+  margin: 130px auto;
+}
+
+.why-us-text{
+  max-width: 730px;
+  margin: 0 auto;
+}
+
+.why-us-text h2{
+  font-size: 60px;
+  margin-bottom: 50px;
+  
+}
+
+.why-us-logos{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  max-width: 1240px;
+  justify-content: space-around;
+}
+
+.why-us-logo{
+  width: 70px;
+  height: 70px;
+}
