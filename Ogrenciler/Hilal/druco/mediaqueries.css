@@ -1,0 +1,249 @@
+header {
+  background-color: #223f92;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px 0px;
+}
+
+header strong {
+  color: rgba(255, 185, 31, 1);
+}
+.header-inner-grid {
+  width: 100%;
+  display: grid;
+  grid-template-areas:
+    " notice notice notice"
+    "delivery contact right";
+
+  justify-items: center;
+  align-items: center;
+}
+
+.header-store-notice {
+  grid-area: notice;
+}
+.header-delivery-note {
+  grid-area: delivery;
+}
+.header-contact-info {
+  grid-area: contact;
+}
+.header-right {
+  grid-area: right;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+  justify-items: center;
+  align-items: start;
+}
+
+.header-right .header-menu ul {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 7px;
+}
+
+header ul {
+  list-style: none;
+}
+.language-currency div::after {
+  content: "\e874";
+}
+header .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.visible-ipad {
+  display: none;
+}
+
+nav.top-nav,
+nav.bottom-nav {
+  background-color: white;
+}
+
+.bottom-nav ul {
+  display: flex;
+  justify-content: flex-start;
+  gap: 50px;
+  align-items: center;
+  list-style: none;
+  padding: 20px 0px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.top-nav {
+  padding: 25px 0px;
+}
+
+.top-nav .container {
+  display: grid;
+  width: 100%;
+  grid-template-areas: "logo search search search icons";
+  justify-items: center;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+}
+.top-nav .logo {
+  grid-area: logo;
+}
+.top-nav .search-wrapper {
+  grid-area: search;
+  width: 100%;
+}
+.top-nav .icons {
+  grid-area: icons;
+}
+.logo {
+  object-fit: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo img {
+  width: 120px;
+  height: auto;
+}
+
+.search-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 60px;
+  padding: 5px 10px;
+  background-color: #f8f8f8;
+}
+.category-select,
+.search-input {
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  background-color: transparent;
+}
+.input-wrapper {
+  width: 100%;
+}
+.search-input {
+  width: 80%;
+}
+.border {
+  height: 30px;
+  width: 1px;
+  background-color: #c0bdbd;
+  margin-left: 20px;
+}
+.search-button {
+  background-color: #feb91f;
+  color: #202020;
+  padding: 8px 12px;
+  font-size: 18px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s ease-in;
+}
+
+.search-button:hover {
+  background-color: #202020;
+  color: #feb91f;
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icons div {
+  padding: 10px;
+}
+.icons img,
+.search-button img {
+  width: 18px;
+  height: 18px;
+}
+.hamburger {
+  display: none;
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+}
+
+@media only screen and (max-width: 767px) {
+  .container {
+    padding: 0 15px;
+  }
+  .blog-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .blog-card h2 {
+    font-size: 20px;
+  }
+  .hidden-phone {
+    display: none;
+  }
+  .header-store-notice {
+    font-size: 0.8em;
+  }
+  header {
+    padding: 9px 0px;
+  }
+  .top-nav .container {
+    display: grid;
+    grid-template-areas: "logo . icons" "search search search";
+  }
+  .hamburger {
+    display: inline-block;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .container {
+    padding: 0 25px;
+  }
+  .visible-ipad {
+    display: inline-block;
+  }
+}
+
+@media only screen and (min-width: 1100px) {
+  .container {
+    max-width: 1084px;
+    padding: 0 10px;
+  }
+  .header-right .header-menu ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (min-width: 1279px) {
+  .container {
+    max-width: 1304px;
+    padding: 0px;
+  }
+  .blog-card:nth-child(2) a.btn {
+    display: inline-block;
+  }
+  .visible-ipad {
+    display: none;
+  }
+  .header-right {
+    grid-template-columns: 1fr;
+  }
+  .header-inner-grid {
+    grid-template-areas: "delivery notice right"; /* Contact kaybolursa notice doldurur */
+  }
+  .header-right .header-menu ul {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  header {
+    padding: 9px 0px;
+  }
+}
