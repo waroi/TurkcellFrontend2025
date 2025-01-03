@@ -241,8 +241,22 @@ main{
     list-style: none;
 }
 
-.product-menu ul li{
+.product-cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
+    /** önemli **/
+}
+
+.product-card{
+    border: 1px solid #efefef;
+    padding: 20px;
+    line-height: 2;
+}
+
+.bold-blue{
     
+    color: rgb(18, 70, 171);
+    font-weight: 700;
 }
 
 .product-menu h5{
@@ -251,5 +265,127 @@ main{
 }
 
 .product-card img{
-    width: 250px;
+    width: 100%;
+}
+
+.product-card button{
+    width: 100%;
+    height: 40px;
+    border: none;
+    background-color: #1246ab;
+    color: #fff;
+}
+.product-card h4{
+    color: #333333;
+}
+
+.product-card p:not(:first-of-type)
+{
+    color: #a5a5a5;
+}
+
+.product-card strong{
+    color: #333333;
+}
+
+.fa-star{
+    color: #a5a5a5;
+}
+.fa-check{
+    color: #1246ab;
+}
+
+.ın-stock{
+    color: #333333;
+    font-weight: 700;
+}
+
+.tickets{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    margin: 80px 0;
+}
+
+.ticket{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.ticket-text{
+    line-height: 2;
+    margin-left: 20px;
+    font-size: 16px;
+}
+
+.ticket-text p{
+    color: #a5a5a5;
+}
+
+.ticket-text h4{
+    color: #333333;
+}
+
+.projects-title{
+    height: 80px;
+    margin-top: 80px;
+    display: flex;
+    align-items: center;
+}
+.projects-title div{
+    width: 50%;
+}
+
+.project-grid{
+    display: grid;
+    grid-template-areas: 
+    "img img img project-cards project-cards project-cards"
+    "img img img project-cards project-cards project-cards"
+    "img img img project-card project-card project-card"
+    ;
+    gap: 20px;
+ 
+    margin-bottom: 80px;
+}
+
+.project-cards{
+    grid-area: project-cards;
+    display: grid;
+    grid-template-areas: 
+    "card1 card2 card3";
+
+}
+
+.project-img{
+    grid-area: img;
+    height: 100%;
+}
+
+.card1{
+    grid-area: card1;
+    background-color: #fff;
+}
+
+.card2{
+    grid-area: card2;
+    background-color: #fff;
+}
+
+.card3{
+    grid-area: card3;
+    background-color: #fff;
+}
+
+.project{
+    background-color: #f1f3f8;
+
+}
+
+.project-card{
+    grid-area: project-card;
+    background-color: #fff;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
