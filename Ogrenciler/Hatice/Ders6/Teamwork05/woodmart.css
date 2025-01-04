@@ -30,6 +30,13 @@ header{
   display: flex; 
   gap: 250px; 
 }
+.header-tertiary img{
+    width: 20px;
+    height: 20px;
+}
+.header-secondary{
+    padding-left: 250px;
+}
 .navbar{
     background-color: rgba(18, 70, 171, 1);
     height: 70px;
@@ -49,6 +56,7 @@ header{
     box-sizing: border-box;
     padding-left: 80px;
     padding-right: 80px;
+    background: linear-gradient(to bottom, rgb(40, 89, 184), rgb(40, 89, 184) 75%, rgb(255, 255, 255) 75%);
 }
 .services-left {
     flex: 2;
@@ -141,25 +149,81 @@ header{
     padding: 20px;
     text-align: center;
 }
-.featured-products{
-    margin-top: 80px;
-    display: flex; 
+.featured-products {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+.featured-products-head h1 {
+    
+    margin-bottom: 40px;
 }
 .featured-products-content {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); 
-    justify-items: center; 
-    align-items: center; 
-    padding: 20px;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0; 
+    width: 100%;
+    max-width: 1300px; 
 }
 .featured-products-card {
-    background-color: #fff;
-    padding: 20px;
-    border: 1px solid #ccc;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: lef;
+}
+.featured-products-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+.add-to-cart-btn{
+    width: 100%; 
+    padding: 5px;
+    border: none;
+    background-color: #0066cc;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.quantity-control {
+    display: flex;
+    align-items: center;
+    background-color: #004aad;
+}
+.quantity-control button {
+    border: none;
+    background: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+.quantity-control .quantity {
+    color: white;
+    font-size: 18px;
+    margin: 0 10px;
+}
+.featured {
+    display: flex;
+    justify-content: space-between;
+    margin-left:80px;
+    gap: 0; 
+    margin-top: 100px;
+    width: 100%;
+    max-width: 1300px; 
+}
+.featured-card {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 10px;
+    text-align: lef;
+}
+.featured-card h4{
+    font-size: 18px;
+}
+.featured-icon{
+    padding-left: 40px;
 }
 
 @media (max-width: 768px) {
