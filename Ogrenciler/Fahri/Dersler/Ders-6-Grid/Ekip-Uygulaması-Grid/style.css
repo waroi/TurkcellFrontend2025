@@ -214,7 +214,6 @@ p {
   grid-template-columns: repeat(5, 1fr); /* Bir satırda 6 ürün */
   grid-template-rows: repeat(2, auto); /* 2 satır oluştur */
   padding: 25px;
-  /* border: 1px solid; */
 }
 
 .featured-products img {
@@ -325,4 +324,118 @@ h4 {
 .inline-span {
   color: var(--gri-ton);
   font-size: 14.4px;
+}
+
+.banner-card {
+  display: flex;
+}
+
+.banner-card div {
+  margin-left: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.banner-card div h4 {
+  color: var(--gri-ton);
+}
+
+.projects-ideas {
+  background-color: #f1f3f8;
+  gap: 15px;
+  padding: 50px;
+  display: grid;
+  grid-template-areas:
+    "ftitle1 ftitle2"
+    "projects-img projects-cards"
+    "projects-img projects-cards"
+    "projects-img projects-service";
+}
+
+.projects-img {
+  grid-area: projects-img;
+}
+.projects-grid {
+  display: grid;
+  grid-template-areas: "fcard1 fcard2 fcard3";
+}
+
+.ftitle1 {
+  grid-area: ftitle1;
+}
+.ftitle2 {
+  grid-area: ftitle2;
+}
+.fcard1 {
+  grid-area: fcard1;
+}
+.fcard2 {
+  grid-area: fcard2;
+}
+.fcard3 {
+  grid-area: fcard3;
+}
+.projects-card-img {
+  text-align: center;
+}
+.projects-grid img {
+  width: 170px;
+  height: 200px;
+}
+.block {
+  display: block;
+}
+.projects-cards {
+  grid-area: projects-cards;
+  background-color: white;
+}
+
+.projects-service {
+  grid-area: projects-service;
+  background-color: white;
+  padding: 40px;
+  display: flex;
+}
+.blue {
+  color: #1246ab;
+}
+.gri {
+  color: var(--gri-ton);
+}
+.projects-service-text h1 {
+  margin: 12px 0;
+  font-size: 32px;
+}
+
+.category-list {
+  font-family: Mulish, Arial, Helvetica, sans-serif;
+}
+.category-list h1 {
+  margin-bottom: 15px;
+}
+.category-list > h4 {
+  color: rgb(119, 119, 119);
+  font-size: 16px;
+}
+.categories {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+.category {
+  display: flex;
+  margin-bottom: 20px;
+  justify-content: left;
+}
+.category span {
+  margin-left: 10px;
+}
+
+.border-left {
+  border-left: 0.3px solid rgba(0, 0, 0, 0.106);
+}
+
+.border-bot {
+  border-bottom: 0.3px solid rgba(0, 0, 0, 0.106);
 }

@@ -1,66 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Druco</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header>
-      <div class="header-top">
-        <div class="container">
-          <p>FREE DELIVERY on all orders</p>
-          <p>
-            <span><i class="fa-solid fa-bolt"></i>FLASH SALE:</span>60% OFF CAR
-            BATTERIES | USE CODE "BATT60"
-          </p>
-          <ul>
-            <li><a href="#">Help</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Contact Us</a></li>
-            <li><a href="#">Blog</a></li>
-          </ul>
-        </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Druco</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <div class="header-top">
+      <div class="container d-space-between">
+        <p>FREE DELIVERY on all orders</p>
+        <p>
+          <span><i class="fa-solid fa-bolt"></i>FLASH SALE:</span>60% OFF CAR
+          BATTERIES | USE CODE "BATT60"
+        </p>
+        <ul>
+          <li><a href="#">Help</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
       </div>
-      <div class="header-middle">
-        <div class="container">
-          <img
-            src="https://druco-be87.kxcdn.com/druco/wp-content/themes/druco/images/logo.png"
-            alt="logo"
-          />
-          <div class="search">
-            <select name="categories" id="categories" class="categories">
-              <option value="" class="all-categories">All Categories</option>
-            </select>
-            <div class="search-input">
-              <input type="text" placeholder="Search for products" />
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </div>
+    </div>
+    <div class="header-middle">
+      <div class="container d-space-between">
+        <img src="https://druco-be87.kxcdn.com/druco/wp-content/themes/druco/images/logo.png" alt="logo" />
+        <div class="search">
+          <select name="categories" id="categories" class="categories">
+            <option value="" class="all-categories">All Categories</option>
+          </select>
+          <div class="search-input">
+            <input type="text" placeholder="Search for products" />
+            <i class="fa-solid fa-magnifying-glass"></i>
           </div>
-          <div class="icons">
-            <select name="english" id="english" >
-                <option value="">English</option>
+        </div>
+        <div class="icons">
+          <div class="icons-select">
+            <select name="english" id="english">
+              <option value="">English</option>
             </select>
+            <i class="fa-solid fa-angle-down"></i>
             <select name="usd" id="usd">
-                <option value="">USD</option>
+              <option value="">USD</option>
             </select>
+            <i class="fa-solid fa-angle-down"></i>
+          </div>
+          <div class="icons-icon">
             <i class="fa-regular fa-user"></i>
             <i class="fa-regular fa-heart"></i>
             <i class="fa-solid fa-cart-shopping"></i>
           </div>
         </div>
       </div>
-    </header>
-  </body>
+    </div>
+    <div class="header-bottom center">
+      <div class="container d-space-between">
+        <div class="bottom-list-menu">
+          <p>HOME <i class="fa-solid fa-angle-down"></i></p>
+          <p>PAGES <i class="fa-solid fa-angle-down"></i></p>
+          <p>SERVICE PARTS <i class="fa-solid fa-angle-down"></i></p>
+          <p>BRAKE <i class="fa-solid fa-angle-down"></i></p>
+          <p>CAR BATTERIES <i class="fa-solid fa-angle-down"></i></p>
+          <p>TOOLS & GARAGE <i class="fa-solid fa-angle-down"></i></p>
+        </div>
+        <img class="header-bottom-img"
+          src="https://i.ibb.co/j8WYfQx/Opera-Anl-k-G-r-nt-2025-01-04-221353-demo-theme-sky-com.png" alt="">
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="first-img">
+
+      <div class="img-arrow">
+        <div class="arrow-cont">
+          <i class="fa-solid fa-chevron-left"></i>
+        </div>
+      </div>
+      <div class="img-form">
+        <form action="submit">
+          <h1>SEARCH BY VEHICLE</h1>
+          <select name="Select Make" id="make">
+            <option value="">Select Make</option>
+          </select>
+          <select name="Select Model" id="model">
+            <option value="">Select Model</option>
+          </select>
+          <select name="Select Year" id="year">
+            <option value="">Select Year</option>
+          </select>
+          <select name="Select Engine" id="engine">
+            <option value="">Select Engine</option>
+          </select>
+          <button>GO</button>
+        </form>
+      </div>
+      <div class="img-text">
+        <h4>NEVER MISS A SALE</h4>
+        <h1>Rocket Racing Wheels</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio iste consequuntur ipsam perferendis repellat voluptatem dicta.</p>
+        <button>SHOP NOW</button>
+      </div>
+      <div class="img-arrow">
+        <div class="arrow-cont">
+          <i class="fa-solid fa-chevron-right"></i>
+        </div>
+      </div>
+
+
+
+    </section>
+  </main>
+</body>
+
 </html>

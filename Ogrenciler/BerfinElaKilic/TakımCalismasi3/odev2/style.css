@@ -3,17 +3,30 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   font-family: "Outfit", serif;
 }
+
 .container {
+  width: 80%;
+}
+
+.d-space-between {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 1260px;
   padding-left: 5px;
   padding-right: 5px;
+
 }
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .header-top {
   display: flex;
   justify-content: center;
@@ -21,30 +34,36 @@ body {
   height: 45px;
   background-color: #233f92;
 }
+
 .header-top ul li {
   display: inline;
   list-style: none;
   margin-right: 10px;
 }
+
 .header-top ul li a {
   font-size: 14px;
   color: white;
   text-decoration: none;
 }
+
 .header-top ul li a:hover {
   color: #ffb91f;
 }
+
 .header-top p span {
   color: #ffb91f;
   font-size: 15px;
   font-weight: bold;
   padding: 0 5px;
 }
+
 .header-top p {
   color: white;
   font-size: 15px;
   padding: 0 15px;
 }
+
 .header-middle {
   display: flex;
   justify-content: center;
@@ -52,10 +71,12 @@ body {
   height: 111px;
   background-color: white;
 }
+
 .header-middle img {
   width: 150px;
   height: 58px;
 }
+
 .search {
   width: 580px;
   height: 48px;
@@ -65,6 +86,7 @@ body {
   background-color: rgba(248, 248, 248, 1);
   border-radius: 60px;
 }
+
 .categories {
   display: flex;
   justify-content: center;
@@ -81,16 +103,20 @@ body {
   outline: none;
   border: none;
   border-right: 1px solid black;
+  appearance: none;
 }
+
 .all-categories {
   padding: 5px 8px;
   color: black;
 }
+
 .search-input {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .search-input i {
   display: flex;
   align-items: center;
@@ -100,34 +126,219 @@ body {
   background-color: #ffb91f;
   border-radius: 60px;
 }
+
 .search-input input {
   width: 385px;
   height: 48px;
   padding: 12px 60px 12px 18px;
-  border-width: 0;
+  border: none;
+  outline: none;
   background: transparent;
 }
-.icons{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    gap: 10px;
+
+.icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  gap: 10px;
 }
-.icons select{
-    font-size: 15px;
-    height: 19px;
-    color: black;
-    border: none;
-    outline: none;
+
+.icons .icons-select select {
+  appearance: none;
+  font-size: 15px;
+  height: 19px;
+  margin: 0;
+  padding: 0;
+  color: black;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-family: "Outfit", serif;
 }
-.icons i{
-    font-size: 18px;
-    margin-left: 10px;
+
+.icons .icons-select {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
-.icons select:hover{
-    color: #ffb91f;
+
+.icons .icons-select i {
+  font-size: 10px;
+  color: #a7a7a7;
 }
-.icons i:hover{
-    color: #ffb91f;
+
+.icons i {
+  font-size: 18px;
+  margin-left: 10px;
 }
+
+.icons select:hover {
+  color: #ffb91f;
+}
+
+.icons i:hover {
+  color: #ffb91f;
+}
+
+.header-bottom {
+  width: 100%;
+  height: 60px;
+  border-top: 1px solid #e9e9e9;
+  overflow: hidden;
+}
+
+.bottom-list-menu {
+  display: flex;
+  gap: 40px;
+}
+
+.bottom-list-menu p {
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.bottom-list-menu p:hover {
+  color: #ffb91f;
+}
+
+.header-bottom-img{
+  height: 62px;
+}
+
+main{
+  width: 100%;
+  height: auto;
+}
+
+.first-img{
+  width: 100%;
+  height: 80vh;
+  background: url("https://i.ibb.co/2kfNM9q/Ekran-Resmi-2025-01-04-22-32-01.png") no-repeat center center;
+  background-size: cover;
+  display: grid;
+  grid-template-columns: 1fr 3fr 5fr 1fr;
+}
+
+.img-arrow{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow-cont{
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.arrow-cont i{
+  color: white;
+  font-size: 12px;
+}
+
+.img-form{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.img-form form{
+  width: 80%;
+  height: 60vh;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 30px;
+}
+
+.img-form form select{
+  width: 100%;
+  height: 50px;
+  border: 1px solid #dbdbdb;
+  border-radius: 10px;
+  padding: 0 10px;
+  font-family: "Outfit", serif;
+  outline: none;
+}
+
+.img-form form h1{
+  margin-bottom: 20px;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.img-form form button{
+  width: 115px;
+  height: 50px;
+  background-color: #ffb91f;
+  color: black;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  font-weight: 600;
+  margin-top: 20px;
+  font-family: "Outfit", serif;
+  cursor: pointer;
+}
+
+.img-form form button:hover{
+  background-color: black;
+  color: #ffb91f;
+  transition: 0.3s;
+}
+
+.img-text{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.img-text h4{
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+}
+
+.img-text h1{
+  font-size: 70px;
+  font-weight: 600;
+  color: white;
+}
+
+.img-text p{
+  font-size: 18px;
+  font-weight: 400;
+  color: white;
+}
+
+.img-text button{
+  width: 156px;
+  height: 50px;
+  background-color: white;
+  color: black;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  font-weight: 600;
+  margin-top: 20px;
+  font-family: "Outfit", serif;
+  cursor: pointer;
+}
+
+.img-text button:hover{
+  background-color: #ffb91f;
+  transition: 0.3s;
+}
+
+

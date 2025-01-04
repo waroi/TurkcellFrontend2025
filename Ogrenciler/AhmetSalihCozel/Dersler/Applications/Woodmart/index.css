@@ -45,7 +45,7 @@
 
 .blueColored {
   color: #1246ab;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .navTopEnd {
@@ -76,6 +76,7 @@
 
 .navTopEndList {
   display: flex;
+  align-items: center;
   list-style: none;
   text-decoration: none;
   gap: 10px;
@@ -132,7 +133,7 @@ hr.vertical {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
 }
 
 .navBottomRight > input {
@@ -246,19 +247,27 @@ hr.vertical {
 }
 .hero-our-services {
   width: 100%;
-  background: url("https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/05/banner-servises.jpg.webp");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 30px;
   margin-bottom: 23px;
   cursor: pointer;
   transition: 350ms ease 0s;
+  overflow: hidden;
+  position: relative;
+}
+.hos-texts {
+  padding: 30px;
+}
+.hero-our-services img {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  transition: 750ms ease 0s;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
 }
 
-.hero-our-services:hover {
-  color: red;
-  background-size: 115% 115%;
+.hero-our-services:hover > img {
+  transform: scale(1.1);
 }
 
 .hero-our-services h4,
@@ -280,12 +289,28 @@ hr.vertical {
   grid-template-rows: 55% 45%;
 }
 .free-shipping {
-  background: url("https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2021/12/shipping-banner-x2.jpg.webp");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 100%;
-  padding: 30px;
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.fs-texts {
+  padding: 30px;
+}
+
+.free-shipping img {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  transition: 750ms ease 0s;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.free-shipping:hover > img {
+  object-position: right;
+  transform: scale(1.1);
 }
 /* ----------- FOOTER ----------- */
 footer {
@@ -400,13 +425,19 @@ footer {
   margin-right: 10px;
   cursor: pointer;
 }
-
+.social-icons {
+  display: flex;
+  gap: 6px;
+}
 .social-icons button {
   width: 30px;
+  display: flex;
   height: 30px;
   border-radius: 50%;
   border: none;
   cursor: pointer;
+  justify-content: center;
+  align-items: center;
 }
 
 .social-icons button svg {
@@ -458,6 +489,7 @@ footer {
 
 /* ------------- NEWSLETTER ------------- */
 .newsletter {
+  padding-top: 16px;
   width: 100%;
   background-color: #1246ab;
   display: flex;
@@ -518,10 +550,9 @@ footer {
 }
 
 .su-mail input:nth-child(2) {
-  padding: 5 35px;
   height: 42px;
-  width: 93px;
-  font-weight: 600;
+  width: 116px;
+  font-weight: 700;
   background-color: #fff;
   border: none;
   box-shadow: none;
@@ -1004,6 +1035,7 @@ footer {
 }
 
 .projectIdeasWrapper {
+  padding: 50px 13.75% 50px 13.75%;
   background-color: #f1f3f8;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1032,29 +1064,95 @@ footer {
 }
 
 .projectIdeasImg {
+  position: relative;
   background-image: url("https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/05/home-hotspot.jpg.webp");
   width: 100%;
   height: 100%;
   background-repeat: no-repeat;
 }
 
-.similarProductsWrapper {
-  display: grid;
-
-  gap: 30px;
+.point {
+  position: absolute;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  border: #1142a2 solid 4px;
+  background-color: white;
 }
 
+.point.one {
+  top: 55%;
+  left: 36%;
+}
+
+.point.two {
+  top: 76%;
+  left: 30%;
+}
+
+.point.three {
+  top: 40%;
+  left: 75%;
+}
+
+.point.one:hover {
+  position: relative;
+  top: 55%;
+  left: 36%;
+}
+
+.pointOneDiv,
+.pointTwoDiv,
+.pointThreeDiv {
+  display: none;
+  position: absolute;
+  height: 500px;
+  width: 250px;
+  background-color: #fff;
+}
+
+.point:hover > .pointOneDiv,
+.point:hover > .pointTwoDiv,
+.point:hover > .pointThreeDiv {
+  display: block;
+  z-index: 20;
+  left: 25px;
+  top: -70px;
+}
+.similarProductsWrapper {
+  display: grid;
+}
 .similarProducts {
   height: 100%;
   width: 100%;
   background: #fff;
 }
 
+.sm-product {
+  width: 100% !important;
+}
+
 .ourServices {
+  margin-top: 30px;
   display: flex;
+  gap: 19px;
+  align-items: center;
   height: 100%;
   width: 100%;
-  background: #ab3838;
+  background: #fff;
+  padding: 11px 0;
+}
+
+.ourServicesSub h1 {
+  font-weight: 800;
+  margin-top: 10px;
+  font-size: 32px;
+  color: #242424;
+}
+.ourServicesSub p {
+  margin-top: 10px;
+  color: #777777;
+  font-size: 16px;
 }
 
 .featured-products-wrapper.new {
