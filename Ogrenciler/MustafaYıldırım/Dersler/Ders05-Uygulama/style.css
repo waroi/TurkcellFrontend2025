@@ -4,7 +4,7 @@
   padding: 0;
 }
 
-header {
+.header {
   height: 70px;
   padding: 25px 20px;
   font-family: "Roboto Slab", serif;
@@ -522,6 +522,99 @@ header {
   padding-bottom: 0;
 }
 
+.section11 {
+  padding: 100px 0;
+  height: 100vh;
+  background-color: #f8f9fc;
+}
+
+.information {
+  margin: 3rem 10rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  align-items: center; /* Yatay ortalama */
+  justify-content: center; /* Dikey ortalama */
+  height: 70%; /* Yükseklik ayarla */
+}
+
+.contact-form {
+  background-color: white;
+  box-shadow: 0 0 3px rgba(36, 39, 44, 0.15);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 2;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 6px 12px;
+  margin-bottom: 15px;
+  border: 1px solid #dee2e6;
+  font-size: 14px;
+  line-height: 26px;
+  background-color: #fff;
+  border-radius: 6px;
+}
+
+.satir1 {
+  display: flex;
+  gap: 1rem;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  gap: 2rem;
+}
+
+.info1,
+.info2,
+.info3 {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.info-icon {
+  font-size: 24px;
+}
+.text-muted1 {
+  font-size: 18px;
+  font-family: "Roboto Slab", serif;
+}
+.text-muted2 {
+  color: #8492a6;
+  text-decoration: none;
+  font-family: "Roboto", serif;
+  font-size: 15px;
+}
+.footer {
+  background-color: #202942;
+}
+.footer-text {
+  color: #adb5bd;
+  font-size: 15px;
+}
+.kalp {
+  color: red;
+}
+.btn2 {
+  height: 30px;
+  width: 30px;
+  border-radius: 5px;
+  border: 1px solid #283353;
+  background-color: #202942;
+  margin-right: 0.25rem;
+  color: #adb5bd;
+}
+
+.btn2:hover {
+  background-color: #ff5714;
+}
 @media (max-width: 768px) {
   .img-item {
     flex: 1 1 calc(50% - 16px);
