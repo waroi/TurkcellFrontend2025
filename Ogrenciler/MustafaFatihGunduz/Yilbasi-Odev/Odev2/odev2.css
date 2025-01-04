@@ -427,6 +427,50 @@ body{
     color: #777;
 }
 
+.projects-Ideas-Wrapper {
+    background-color: #f1f3f8;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+
+}
+.projects-Ideas {
+    height: 100%;
+    width: 100%;
+}
+
+.projectsIdeasImg {
+    background-image: url(https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/05/home-hotspot.jpg.webp);
+    width: 100%;
+    object-fit: cover;
+    background-repeat: no-repeat;
+}
+.similar-Product-Wrapper {
+    display: grid;
+    gap: 30px;
+}
+
+.similar-Products {
+    height: 100%;
+    width: 100%;
+    background: #fff;
+}
+.ourServices {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    background: #FFFFFF;
+}
+
+.ourServicesSub {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+
+
 
 
 
