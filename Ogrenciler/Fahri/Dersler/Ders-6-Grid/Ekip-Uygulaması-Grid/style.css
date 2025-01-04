@@ -1,0 +1,328 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  --gri-ton: rgb(187, 187, 187);
+}
+
+h1,
+h3,
+h4 {
+  font-family: Mulish, Arial, Helvetica, sans-serif;
+}
+
+p {
+  font-family: "Work Sans", Arial, Helvetica, sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-evenly;
+}
+.header a {
+  text-decoration: none;
+  color: #777777;
+  padding-right: 40px;
+}
+.header a:hover {
+  color: #242424;
+}
+
+.header-location i {
+  margin-right: 10px;
+}
+.header-location a:nth-of-type(2) span {
+  color: #1246ab;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 22px;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: rgba(18, 70, 171, 1);
+  padding: 10px 20px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #ffffff;
+}
+.navbar-content {
+  display: flex;
+  gap: 20px;
+}
+
+.search-input-wrapper {
+  position: relative;
+  margin-left: 50px;
+  width: 100px;
+}
+
+.search-input {
+  padding: 15px 50px 15px 15px;
+  border: 2px solid #ccc;
+  box-sizing: border-box;
+}
+
+.search-icon {
+  position: absolute;
+  left: 200px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: #888;
+  pointer-events: none;
+}
+
+.navbar-content a {
+  font-family: Mulish, Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.shopping-items {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 20px;
+  gap: 20px;
+}
+
+.shopping-items i {
+  border: 0.3px solid;
+  border-radius: 100%;
+  padding: 7px;
+  cursor: pointer;
+}
+
+.product-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* Bir satırda 6 ürün */
+  grid-template-rows: repeat(2, auto); /* 2 satır oluştur */
+  gap: 20px; /* Ürünler arası boşluk */
+  padding: 25px;
+}
+
+.product-card {
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.section1 {
+  display: grid;
+  grid-template-areas:
+    "main-img main-img img2"
+    "main-img main-img img3";
+  gap: 20px;
+  background-color: rgb(40, 89, 184);
+}
+.section1-container {
+  margin-left: 50px;
+}
+.section1 img {
+  width: 65%;
+}
+.main-img {
+  background-color: #d0bea3;
+  grid-area: main-img;
+  width: 900px;
+}
+.main-img-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+}
+.img-text1 {
+  color: white;
+  padding: 20px;
+  margin-right: 75px;
+  font-family: Mulish, Arial, Helvetica, sans-serif;
+}
+.img-text1 span {
+  color: #1246ab;
+}
+.img-text1 h1 {
+  font-size: 45px;
+  font-weight: 800;
+}
+.img-text1 h4 {
+  font-size: 16px;
+  margin-bottom: 25px;
+}
+.button {
+  color: white;
+  background-color: #1246ab;
+  border: none;
+  margin-top: 25px;
+  padding: 15px 30px;
+  font-size: 13px;
+  font-weight: bold;
+  font-family: Mulish, Arial, Helvetica, sans-serif;
+}
+.img1 {
+  width: 450px;
+}
+.img1 img {
+  float: right;
+  width: 100%;
+}
+.img2 {
+  grid-area: img2;
+}
+.img2 img {
+  width: 65%;
+}
+.img3 {
+  grid-area: img3;
+}
+.img3 img {
+  width: 65%;
+}
+.overlay {
+  position: fixed;
+}
+
+.product-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 100px;
+}
+.featured-products {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* Bir satırda 6 ürün */
+  grid-template-rows: repeat(2, auto); /* 2 satır oluştur */
+  padding: 25px;
+  /* border: 1px solid; */
+}
+
+.featured-products img {
+  width: 241px;
+  height: 275px;
+}
+
+.featured-card {
+  padding: 15px;
+}
+
+.featured-card:nth-child(-n + 5) {
+  border-top: 0.3px solid rgba(0, 0, 0, 0.106);
+  border-right: 0.3px solid rgba(0, 0, 0, 0.106);
+}
+
+/* Sadece alt sıradaki kartlara alt border */
+.featured-card:nth-child(n + 6) {
+  border-bottom: 0.3px solid rgba(0, 0, 0, 0.106);
+  border-top: 0.3px solid rgba(0, 0, 0, 0.106);
+  border-right: 0.3px solid rgba(0, 0, 0, 0.106);
+}
+
+/* Sadece ilk sütundaki kartlara sol border */
+.featured-card:nth-child(5n + 1) {
+  border-left: 0.3px solid rgba(0, 0, 0, 0.106);
+  border-top: 0.3px solid rgba(0, 0, 0, 0.106);
+  border-right: 0.3px solid rgba(0, 0, 0, 0.106);
+}
+
+/* Sadece son sütundaki kartlara sağ border */
+.featured-card:nth-child(5n) {
+  border-right: 0.3px solid rgba(0, 0, 0, 0.106);
+}
+
+.filter {
+  display: flex;
+  gap: 20px;
+}
+
+.stars,
+.cost {
+  margin: 15px 0;
+}
+
+.fa-check {
+  margin-right: 5px;
+  color: #1246ab;
+}
+
+.cost h3 {
+  display: inline;
+  font-size: 16px;
+  color: rgb(18, 70, 171);
+  font-family: "Work Sans", Arial, Helvetica, sans-serif;
+}
+.cost h4 {
+  text-decoration: line-through;
+}
+.cost :nth-child(2n + 1) {
+  color: var(--gri-ton);
+}
+h4 {
+  display: inline;
+  font-size: 14px;
+}
+.fa-star {
+  color: #eabe12;
+  font-size: 14px;
+}
+
+.add-to-cart {
+  display: flex;
+  flex-direction: row;
+  color: white;
+  justify-content: space-around;
+  background-color: rgb(18, 70, 171);
+  margin-bottom: 15px;
+  padding: 12px 0;
+}
+.add-to-cart a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  justify-content: space-between;
+}
+.add-to-cart a:hover {
+  background-color: rgb(6, 45, 123);
+}
+.button-left {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  gap: 20px;
+}
+
+.button-right {
+  align-items: center;
+  font-family: Mulish, Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.inline-class {
+  display: inline;
+  font-size: 14.4px;
+}
+.inline-span {
+  color: var(--gri-ton);
+  font-size: 14.4px;
+}

@@ -9,6 +9,10 @@ body {
   font-style: normal;
 }
 
+section:not(.img-slider, .newsletter) {
+  margin-bottom: 30px;
+}
+
 a.btn {
   font-size: 13px;
   padding: 12px 24px;
@@ -50,10 +54,6 @@ p {
 
 .container > h2 {
   text-align: center;
-}
-
-.blog-section {
-  margin-bottom: 90px;
 }
 
 .blog-grid {
@@ -122,7 +122,7 @@ p {
   font-weight: 400;
 }
 
-.categories {
+.blog-categories {
   color: #202020;
 }
 
@@ -138,6 +138,7 @@ p {
 }
 
 .genuine-parts {
+  position: relative;
   height: 300px;
   object-fit: cover;
   background-image: url("https://demothemesky-be87.kxcdn.com/druco/wp-content/uploads/2022/08/banner-3.jpg");
@@ -145,27 +146,26 @@ p {
   background-repeat: no-repeat;
   background-size: cover;
   flex-wrap: wrap;
-  margin-bottom: 90px;
-}
-.genuine-parts h2 {
-  text-align: left;
-  font-size: 90px;
-  line-height: 85px;
-  color: #ffb91f;
-}
-.genuine-parts span {
-  color: #ffb91f;
-}
-.genuine-parts p {
-  font-size: 18px;
-  color: #fff;
+  max-height: 227px;
 }
 .genuine-parts .container {
   display: flex;
   flex-direction: column;
+  gap: 5px;
+  align-items: center;
   justify-content: center;
   height: 100%;
-  padding: 28px 0px 37px 0px;
+  position: relative;
+}
+
+.genuine-parts h2 {
+  font-size: 50px;
+  color: #ffb91f;
+}
+
+.genuine-parts p {
+  font-size: 14px;
+  color: #fff;
 }
 
 .support {
@@ -173,8 +173,7 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 500px;
-  background-image: url(https://demothemesky-be87.kxcdn.com/druco/wp-content/uploads/2022/08/home-about.jpg);
+  background-image: url("https://demothemesky-be87.kxcdn.com/druco/wp-content/uploads/2022/08/home-about.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -185,33 +184,34 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  padding: 20px 15px 34px 15px;
+  padding: 33px 0px;
+  width: 100%;
+}
+.support h3,
+.support h2 {
+  color: white;
+}
+
+.support h2 {
+  font-size: 30px;
 }
 .support h3 {
-  font-size: 20px;
-  line-height: 40px;
-  color: white;
+  font-size: 14px;
+  font-weight: 400;
 }
-.support h2 {
-  font-size: 60px;
-  line-height: 1.16em;
-  color: white;
-}
+
 .support-items-row {
   width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  margin-top: 50px;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 1fr;
+  gap: 15px;
 }
 .support-item {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 33%;
   color: white;
 }
 .support-item img {
@@ -228,8 +228,8 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px 15px 34px 15px;
 }
+
 .brands h2 {
   font-size: 36px;
   margin: 30px 10px;
@@ -238,15 +238,17 @@ p {
 .newsletter {
   display: flex;
   flex-direction: column;
-  height: 150px;
   background-color: #ffb91f;
-  padding: 33px 0px 25px;
+  padding: 33px 0px;
 }
+
 .newsletter .container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .newsletter-form {
@@ -301,25 +303,45 @@ footer p {
 }
 footer {
   background-color: black;
-  padding: 81px 0px 0px;
 }
-footer .container {
+
+footer .wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  justify-items: center;
+  align-items: start;
+  justify-content: space-around;
+  padding: 81px 0px 74px 0px;
+}
+footer .wrapper div {
+  width: 100%;
+}
+
+.footer-sayhello,
+.footer-reader {
+  grid-column: span 4;
+}
+.footer-product,
+.footer-myaccount {
+  grid-column: span 2;
+}
+.reader-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.footer-bottom > .container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
-}
-.footer-bottom {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  border-top: 1px solid #848484;
+  border-top: 1px solid #292828;
   padding: 10px 0px;
 }
 
 .popular-parts {
-  margin-bottom: 90px;
+  margin-top: 30px;
 }
+
 .popular-parts li {
   color: #202020;
   list-style-type: none;
@@ -337,39 +359,55 @@ footer .container {
 
 .popular-parts ul {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));
   gap: 20px;
+  margin-top: 20px;
+}
+.products-columns {
+  margin-top: 30px;
 }
 .products-columns h2 {
-  font-size: 36px;
-  margin: 20px 0px;
-  padding: 30px;
+  font-size: 30px;
 }
 
-.products-columns .container {
+.products-columns .products-wrapper {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr;
   gap: 40px;
-  padding: 20px 15px 34px 15px;
 }
 .products-columns li {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   list-style: none;
-  padding: 0 0 30px 0;
-  margin: 0 0 30px 0;
 }
 
+.products-wrapper ul {
+  padding: 0px 20px;
+}
+.products-wrapper .specials > ul {
+  border-left: 1px solid rgba(235, 235, 235, 1);
+  border-right: 1px solid rgba(235, 235, 235, 1);
+}
+
+.products-wrapper li {
+  border-bottom: 1px solid rgba(235, 235, 235, 1);
+}
 .products-listitem-col {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin: 0px 0px 15px;
-  padding: 0px 0px 0px 12px;
+  padding: 40px 0px;
+  gap: 10px;
 }
+
 .products-listitem-col .btn {
   align-self: flex-start;
 }
+
+.products-columns .products-listitem-col {
+  padding: 40px 0px;
+}
+
 bdi {
   font-size: 18px;
   color: rgba(35, 63, 146, 1);

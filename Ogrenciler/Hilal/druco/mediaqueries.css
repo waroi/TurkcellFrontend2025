@@ -16,7 +16,7 @@ header {
   padding: 25px 0px;
 }
 
-header strong {
+strong {
   color: rgba(255, 185, 31, 1);
 }
 .header-inner-grid {
@@ -58,6 +58,8 @@ header strong {
   gap: 50px;
   justify-items: center;
   align-items: start;
+  font-size: 15px;
+  font-weight: 300;
 }
 
 .header-right .header-menu ul {
@@ -353,6 +355,7 @@ nav.bottom-nav {
   justify-content: flex-start;
   align-items: center;
   gap: 10px;
+  padding: 10px;
 }
 
 .categories-heading .icons img {
@@ -369,29 +372,100 @@ nav.bottom-nav {
   gap: 10px;
 }
 
-.category-cards a {
-  display: inline-block;
+.category-cards img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.category-cards div {
+  max-width: 100%;
   height: 100%;
-  width: auto;
+  display: none;
   border-radius: 10px;
   overflow: hidden;
 }
 
-.category-cards .category-cards img {
-  width: 100%;
-  height: auto;
+.best-sellers-wrapper {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 5px;
 }
 
-.category-cards div {
-  width: 200px;
-  height: 100%;
-  background-color: black;
-  display: none;
+.best-sellers-wrapper a.btn {
+  background-color: #f8f8f8;
+  border: none;
+}
+
+.best-sellers-wrapper a.btn:hover {
+  background-color: #feb91f;
+  color: #202020;
+}
+
+.best-sellers-wrapper > li {
+  position: relative;
+  display: grid;
+  gap: 10px;
+  transition: 0.3s ease;
+  cursor: pointer;
+  padding: 30px;
+  max-width: 300px;
+}
+.best-sellers-wrapper .badge {
+  background-color: #d33712;
+  color: white;
+  padding: 4px 10px;
+}
+
+.best-sellers-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 30px 0px;
+}
+
+.best-sellers-tabs .active {
+  color: #feb91f;
 }
 
 .container {
   margin: 0 auto;
   width: 100%;
+}
+
+.best-sellers-wrapper img,
+.products-columns img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.left-right-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: space-between;
+  gap: 20px;
+  color: white;
+  margin-top: 30px;
+}
+
+.right-card,
+.left-card {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  gap: 15px;
+  padding: 70px 30px;
+  align-items: flex-start;
+}
+.right-card {
+  background-image: url("https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/08/banner-2.jpg");
+}
+.left-card {
+  background-image: url("https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/08/banner-1.jpg");
 }
 
 @media only screen and (max-width: 500px) {
@@ -404,9 +478,22 @@ nav.bottom-nav {
   }
   .categories .wrapper {
     grid-template-columns: 1fr;
+    grid-template-rows: 30% 1fr;
+    gap: 10px;
+    justify-items: center;
+  }
+  .categories .wrapper h2 {
+    font-size: 30px;
+  }
+
+  .categories-heading {
+    align-items: center;
   }
   .category-cards div:nth-child(1) {
     display: inline-block;
+  }
+  .best-sellers-wrapper {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 @media (min-width: 501px) and (max-width: 767px) {
@@ -446,6 +533,16 @@ nav.bottom-nav {
   .slider-search-form a.btn {
     width: 80%;
   }
+  .best-sellers-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .products-columns li {
+    grid-template-columns: 30% 1fr;
+  }
+  .reader-wrapper {
+    max-height: 140px;
+    flex-wrap: wrap;
+  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -457,6 +554,35 @@ nav.bottom-nav {
   }
   .category-cards div:nth-child(-n + 4) {
     display: inline-block;
+  }
+  .best-sellers-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .left-right-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+  .products-columns .products-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .genuine-parts .overlay {
+    display: none;
+  }
+  .genuine-parts .container {
+    align-items: flex-start;
+    font-size: 1.5rem;
+    text-align: start;
+  }
+  .genuine-parts .container h2 {
+    text-align: start;
+  }
+  .support-items-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .footer-sayhello,
+  .footer-reader,
+  .footer-product,
+  .footer-myaccount {
+    grid-column: span 1;
   }
 }
 
@@ -485,8 +611,22 @@ nav.bottom-nav {
   .category-cards div:nth-child(-n + 5) {
     display: inline-block;
   }
+  .best-sellers-wrapper {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .products-columns li {
+    grid-template-columns: repeat(2, 1fr);
+    max-height: 200px;
+  }
+  .support h3 {
+    font-size: 20px;
+    line-height: 40px;
+  }
+  .support h2 {
+    font-size: 60px;
+    line-height: 1.16em;
+  }
 }
-
 @media only screen and (min-width: 1279px) {
   .container {
     max-width: 1304px;
