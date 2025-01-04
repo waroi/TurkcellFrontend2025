@@ -246,19 +246,27 @@ hr.vertical {
 }
 .hero-our-services {
   width: 100%;
-  background: url("https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/05/banner-servises.jpg.webp");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 30px;
   margin-bottom: 23px;
   cursor: pointer;
   transition: 350ms ease 0s;
+  overflow: hidden;
+  position: relative;
+}
+.hos-texts {
+  padding: 30px;
+}
+.hero-our-services img {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  transition: 750ms ease 0s;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
 }
 
-.hero-our-services:hover {
-  color: red;
-  background-size: 115% 115%;
+.hero-our-services:hover > img {
+  transform: scale(1.1);
 }
 
 .hero-our-services h4,
@@ -280,12 +288,28 @@ hr.vertical {
   grid-template-rows: 55% 45%;
 }
 .free-shipping {
-  background: url("https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2021/12/shipping-banner-x2.jpg.webp");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 100%;
-  padding: 30px;
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.fs-texts {
+  padding: 30px;
+}
+
+.free-shipping img {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  transition: 750ms ease 0s;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.free-shipping:hover > img {
+  object-position: right;
+  transform: scale(1.1);
 }
 /* ----------- FOOTER ----------- */
 footer {
@@ -458,6 +482,7 @@ footer {
 
 /* ------------- NEWSLETTER ------------- */
 .newsletter {
+  padding-top: 16px;
   width: 100%;
   background-color: #1246ab;
   display: flex;
