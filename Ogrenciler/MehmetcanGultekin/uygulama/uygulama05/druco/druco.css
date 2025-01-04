@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+.header-top-div {
+    font-family: Outfit;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15px;
+}
+
+header {
+    width: 100%;
+    height: 240px;
+    background-color: aqua;
+}
+
+.header-top {
+    background-color: rgba(35, 63, 146, 1);
+    border-color: rgba(35, 63, 146, 1);
+    color: rgba(255, 255, 255, 1);
+    width: 100%;
+    height: 20%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.header-top-buttons {
+    padding: 5px;
+    font-family: Outfit;
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+.header-middle {
+    background-color: rgba(255,255,255,1);
+    border-color: rgba(235,235,235,1);
+    color: rgba(32,32,32,1);
+    border-width: 0 0 1px;
+    border-style: solid;
+    width: 100%;
+    height: 50%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: center;
+    justify-content: space-around;
+}
+select{
+    
+    color: black;
+}
+.header-left{
+    width: 150px;
+    height: 60px;
+    background-position: center;
+    background-size: cover;
+    background-image: url("https://druco-be87.kxcdn.com/druco/wp-content/themes/druco/images/logo.png");
+}
+
+.header-bottom {
+    background-color: rgba(255,255,255,1);
+  border-color: rgba(235,235,235,1);
+  color: rgba(32,32,32,1);
+    width: 100%;
+    height: 30%;
+}
