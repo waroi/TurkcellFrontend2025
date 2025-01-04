@@ -254,13 +254,13 @@ nav {
     width: 100%;
     display: flex;
     align-items: center;
-    background-color: #1d191960;
+    justify-content: center;
 }
 
 
 .search-container {
     background: white;
-    padding: 24px;
+    padding:50px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: 100%;
@@ -270,8 +270,15 @@ nav {
 
 h2 {
     margin-bottom: 24px;
-    font-size: 1.25rem;
+    font: 30px outfit;
     font-weight: bold;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
 
 .form-grid {
@@ -279,6 +286,16 @@ h2 {
     grid-template-columns: 1fr;
     gap: 20px;
     margin-bottom: 24px;
+}
+
+.form-grid > select{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    width: 50vh;
+    padding: 15px 0px;
+
 }
 
 @media (max-width: 992px) {
@@ -291,6 +308,9 @@ h2 {
         justify-content: center;
         align-items: center;
     }
+    .form-grid > select{
+        width: 80px;
+    }
 }
 
 @media (max-width: 720px) {
@@ -302,6 +322,11 @@ h2 {
         justify-content: center;
         align-items: center;
     }
+
+    .form-grid > select{
+        width: 20vh;
+    }
+
 }
 
 select {
@@ -340,7 +365,7 @@ button:hover {
 .pr-content {
     color: white;
     padding: 40px 0;
-    margin: 50px auto;
+    margin: 50px 50px;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -368,14 +393,17 @@ button:hover {
 }
 
 .shop-now {
-    display: inline-block;
-    padding: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 0px;
     background-color: white;
     color: black;
     text-decoration: none;
     border-radius:30px;
     font-family: 'Outfit', sans-serif;
     font-weight: 500;
+    width: 200px;
 }
 
 @media (max-width: 992px) {
@@ -403,3 +431,149 @@ button:hover {
         font-size: 36px;
     }
 }
+.categories {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0px;
+    background-color: #FFB91F;
+}
+.categories >ul {
+    width: 60%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 8px; /* adds space between grid items */
+    list-style-type: none;
+    background-color: #FFB91F;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media (max-width: 992px) {
+    .categories >ul {
+        grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+    @media (max-width: 576px) {
+        .categories >ul {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+  .categories >ul>li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0px;
+    border-radius: 10px;
+    background-color: #FFB91F;
+    color: #000000;
+    font: 20px outfit;
+    font-weight: 500;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    }
+
+    .categories >ul>li>img {
+        width: 137px;
+        height: 137px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+
+    .categories > ul > li > h3 {
+        font: 40px outfit;
+        font-weight: 500;
+        margin-bottom: 20px;
+        margin-right: 50px;
+    }
+
+    .categories > ul > li > p {
+        font: 15px outfit;
+        font-weight: 500;
+    }
+
+    .bestsellers {
+        display: grid;
+        grid-template-columns: auto;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 0px;
+        text-align: center;
+    }
+
+    .bestsellers > h3 {
+        font: 36px outfit;
+        font-weight: 500;
+        margin-bottom: 20px;
+    }
+.bestsellers > h3 > span {  
+    margin-right: 50px;
+    color: #FFB91F;
+}
+
+    .bestsellergrid {
+        width: 80%;
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        padding: 20px;
+    }
+
+    
+    .bestsellergrid > div {
+        margin-bottom: 10px;
+        border:1px solid rgba(0, 0, 0, 0.153);
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+    }
+
+    .bestsellergrid> div> img {
+        width: 300px;
+        height: 300px;
+    }
+
+    .discount {
+        background-color: #D43812;
+        color: #ffffff;
+        width : 20%;
+        padding: 5px;
+        margin-top: 10px;
+        margin-left: 10px;
+        border-radius: 20px;
+        font: 12px outfit;
+    }
+
+    .bestsellergrid > div > h4 {
+        font: 15px outfit;
+        font-weight: 500;
+        margin-bottom: 20px;
+    }
+
+    .product-info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+        text-align: left;
+        gap: 20px;
+    }
+
+    .product-info > p > span {
+        font: 15px outfit;
+        font-weight: 500;
+        color: #5d5a587f;
+        text-decoration: line-through;
+    }
+
+    .product-info > p {
+
+        font: 20px outfit;
+        font-weight: 500;
+        color: #243F92;
+
+    }
