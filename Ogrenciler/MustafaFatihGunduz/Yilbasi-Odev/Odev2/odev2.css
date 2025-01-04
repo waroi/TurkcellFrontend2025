@@ -284,3 +284,38 @@ body{
     padding-top: 10px;
 }
 /*! CATEGORİES SECTİON CSS END*/
+
+
+
+.featured-products-header{
+    display: flex;
+    align-items: center;
+   justify-content: space-between;
+}
+.featured-products-header-button{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.featured-products-header-button a{
+    font-weight: 700;
+    text-decoration: none;
+    color: #707070;
+    transition: .25s ease;
+}
+.featured-products-header-button a:hover {
+    color: #242424;
+}
+.featured-products-header-buttons a:nth-child(1) {
+    border-bottom: 2px solid #e5e5e5;
+    color: #242424;
+}
+.featured-products-wrapper {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    margin-top: 10px;
+}
+.featured-product {
+    border: 1px solid #e4e4e4;
+    padding: 15px;
+}
