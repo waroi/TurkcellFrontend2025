@@ -302,7 +302,6 @@ h2 {
         justify-content: center;
         align-items: center;
     }
-
 }
 
 select {
@@ -322,19 +321,20 @@ select:focus {
 }
 
 button {
-    width: 100%;
+    width: 25%;
     padding: 12px;
     background-color: #fbbf24;
     border: none;
-    border-radius: 4px;
+    border-radius: 30px;
     color: black;
-    font-size: 1rem;
+    font-size: 15px;
     cursor: pointer;
     transition: background-color 0.2s;
 }
 
 button:hover {
-    background-color: #f59e0b;
+    background-color: #202020;
+    color: #fbbf24;
 }
 
 .pr-content {
@@ -369,11 +369,11 @@ button:hover {
 
 .shop-now {
     display: inline-block;
-    padding: 12px 30px;
+    padding: 12px;
     background-color: white;
     color: black;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius:30px;
     font-family: 'Outfit', sans-serif;
     font-weight: 500;
 }
