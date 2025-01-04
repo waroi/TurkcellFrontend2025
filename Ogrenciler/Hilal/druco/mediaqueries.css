@@ -1,3 +1,12 @@
+a {
+  cursor: pointer;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
 header {
   background-color: #223f92;
   color: white;
@@ -30,6 +39,18 @@ header strong {
 .header-contact-info {
   grid-area: contact;
 }
+
+.header-contact-info span {
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: normal;
+  margin-right: 10px;
+}
+.header-contact-info a {
+  text-decoration: none;
+  font-size: 16px;
+}
+
 .header-right {
   grid-area: right;
   display: grid;
@@ -65,6 +86,14 @@ header .container {
 nav.top-nav,
 nav.bottom-nav {
   background-color: white;
+}
+.bottom-nav {
+  border-top: 1px solid rgba(235, 235, 235, 1);
+}
+.bottom-nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .bottom-nav ul {
@@ -128,10 +157,11 @@ nav.bottom-nav {
 }
 .input-wrapper {
   width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.search-input {
-  width: 80%;
-}
+
 .border {
   height: 30px;
   width: 1px;
@@ -171,11 +201,223 @@ nav.bottom-nav {
   display: none;
 }
 
+.header-contact-info.has-icon {
+  background-color: #feb91f;
+  padding: 12px 40px;
+}
+
+.header-contact-info.has-icon div {
+  display: inline-block;
+}
+
+.header-contact-info.has-icon span {
+  display: block;
+}
+
+.header-contact-info.has-icon a {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.hidden-ipad {
+  display: none;
+}
+
+.header-contact-info.has-icon:before {
+  content: "";
+  width: 34px;
+  height: 34px;
+  background: url("https://druco-be87.kxcdn.com/druco/wp-content/themes/druco/images/phone-icon.png")
+    no-repeat center;
+  background-size: auto;
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.img-slider {
+  background-image: url("./assets/garage.jpg");
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  padding: 100px 0px;
+  position: relative;
+}
+
+.slider-search-form {
+  grid-area: search;
+  padding: 38px 32px 40px;
+}
+
+.slider-search-form h2 {
+  font-size: 24px;
+}
+
+.slider-search-form form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.slider-description {
+  grid-area: description;
+}
+
+.slider-search-form .category-select {
+  line-height: 15px;
+  letter-spacing: 0px;
+  font-weight: 400;
+  font-size: 10px;
+  border-color: rgb(203, 203, 203);
+  border-style: solid;
+  border-width: 1px;
+  padding: 12px 30px 12px 15px;
+  border-radius: 5px;
+  color: #848484;
+  min-width: 125px;
+  max-height: 45px;
+}
+
+.img-slider .wrapper {
+  display: grid;
+  grid-template-areas: "description" "search";
+  justify-items: center;
+  gap: 50px;
+  position: relative;
+  z-index: 1;
+}
+
+.slider-description .blog-details {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  gap: 15px;
+  font-size: 2em;
+  color: white;
+}
+
+.slider-description .blog-details span {
+  color: white;
+}
+
+.slider-description .blog-details p {
+  font-size: 16px;
+}
+
+.slider-description .blog-details a.btn {
+  font-size: 14px;
+  padding: 16px 35px;
+  background-color: white;
+  border: none;
+}
+
+.slider-description .blog-details a.btn:hover {
+  background-color: #feb91f;
+  color: #202020;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #202020;
+  opacity: 0.5;
+}
+
+.categories {
+  padding: 20px 0px;
+  background-color: #feb91f;
+}
+
+.categories .wrapper {
+  display: grid;
+  grid-template-columns: 30% 1fr;
+}
+
+.categories-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 7px;
+}
+
+.categories-heading .icons {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+.categories-heading .icons img {
+  width: 30px;
+  height: 30px;
+  background-color: #f6d595;
+  border-radius: 25px;
+  padding: 5px;
+}
+
+.category-cards {
+  display: flex;
+  overflow: hidden;
+  gap: 10px;
+}
+
+.category-cards a {
+  display: inline-block;
+  height: 100%;
+  width: auto;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.category-cards .category-cards img {
+  width: 100%;
+  height: auto;
+}
+
+.category-cards div {
+  width: 200px;
+  height: 100%;
+  background-color: black;
+  display: none;
+}
+
 .container {
   margin: 0 auto;
   width: 100%;
 }
 
+@media only screen and (max-width: 500px) {
+  .top-nav .container {
+    display: grid;
+    grid-template-areas: "logo . " ".icons" "search search";
+  }
+  .search-container {
+    flex-wrap: wrap;
+  }
+  .categories .wrapper {
+    grid-template-columns: 1fr;
+  }
+  .category-cards div:nth-child(1) {
+    display: inline-block;
+  }
+}
+@media (min-width: 501px) and (max-width: 767px) {
+  .top-nav .container {
+    display: grid;
+    grid-template-areas: "logo . icons" "search search search";
+  }
+  .category-cards div:nth-child(-n + 2) {
+    display: inline-block;
+  }
+}
 @media only screen and (max-width: 767px) {
   .container {
     padding: 0 15px;
@@ -196,19 +438,24 @@ nav.bottom-nav {
   header {
     padding: 9px 0px;
   }
-  .top-nav .container {
-    display: grid;
-    grid-template-areas: "logo . icons" "search search search";
-  }
+
   .hamburger {
     display: inline-block;
   }
+
+  .slider-search-form a.btn {
+    width: 80%;
+  }
 }
+
 @media only screen and (min-width: 768px) {
   .container {
     padding: 0 25px;
   }
   .visible-ipad {
+    display: inline-block;
+  }
+  .category-cards div:nth-child(-n + 4) {
     display: inline-block;
   }
 }
@@ -220,6 +467,23 @@ nav.bottom-nav {
   }
   .header-right .header-menu ul {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .img-slider .wrapper {
+    grid-template-areas: "search description";
+    grid-template-columns: 30% 1fr;
+  }
+  .slider-description .blog-details {
+    align-items: flex-start;
+  }
+  .slider-search-form .category-select {
+    display: block;
+    width: 100%;
+  }
+  .slider-search-form a.btn {
+    width: 100%;
+  }
+  .category-cards div:nth-child(-n + 5) {
+    display: inline-block;
   }
 }
 
@@ -245,5 +509,8 @@ nav.bottom-nav {
   }
   header {
     padding: 9px 0px;
+  }
+  .hidden-ipad {
+    display: inline-block;
   }
 }
