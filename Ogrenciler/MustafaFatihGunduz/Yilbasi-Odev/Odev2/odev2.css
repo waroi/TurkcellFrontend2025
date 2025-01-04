@@ -319,3 +319,38 @@ body{
     border: 1px solid #e4e4e4;
     padding: 15px;
 }
+.featured-product h4{
+    color: #242424;
+    margin-top: 6px;
+    font-size: 16px;
+}
+.featured-product h4 a {
+    color: #242424;
+    text-decoration: none;
+}
+.featured-product h4 a:hover{
+    color: rgb(51 51 51 / 65%);
+}
+.featured-product img {
+    max-width: 100%;
+}
+.price-row{
+    margin-top: 10px;
+}
+.discount-price{
+    font-size: 14px;
+    text-decoration: line-through;
+    color: #c2c2c2;
+    font-weight: 600;
+}
+.main-price{
+    font-size: 16px;
+    color: rgb(18, 70, 171);
+    font-weight: 700;
+}
+.brief{
+    text-decoration: none;
+    font-size: 16px;
+}
+
+
