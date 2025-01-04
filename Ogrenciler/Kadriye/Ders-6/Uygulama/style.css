@@ -927,3 +927,47 @@ a {
     grid-template-columns: 100%;
   }
 }
+@media screen and (max-width: 425px) {
+  .slider {
+    grid-auto-flow: row;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    height: auto;
+    align-items: center;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+  .slider .gap{
+    display: none;
+  }
+  .slider .right {
+    width: 100%;
+    display: block;
+  }
+  .slider .model{
+    display: block;
+    width: 100%;
+    position: relative;
+  }
+  .slider .model::before{
+      content: "";
+      display: block;
+      width: 100%;
+      height: 50%;
+      background-color: aqua;
+      top: 0;
+      right: 0;
+      background-image: url(https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2021/12/slider-3-2.jpg);
+      background-size: cover;
+      background-position: center;
+  }
+  .slider .right .banner,
+  .slider .right .promo {
+    width: 100%;
+    background-position: center;
+  }
+  .slider .right .banner p,
+  .slider .right .promo p {
+    width: auto;
+  }
+}
