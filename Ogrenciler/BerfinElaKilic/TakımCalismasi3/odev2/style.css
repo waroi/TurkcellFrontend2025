@@ -340,5 +340,172 @@ main{
   background-color: #ffb91f;
   transition: 0.3s;
 }
+.categories{
+  width: 100%;
+  background-color: #ffb91f;
+  padding: 20px 0;
+}
+.categories-grid{
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  gap: 10px;
+}
+.categories-text{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+.arrow{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.arrow div{
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  cursor: pointer;
+}
+.arrow div i{
+  font-size: 14px;
+}
+.arrow div:hover{
+  background-color: white;
+  transition: 0.3s ease;
+}
+.categories-text h2{
+  font-size: 45px;
+  font-weight: 700;
+  color: black;
+}
+.categories-text p{
+  font-size: 25px;
+  font-weight: 400;
+}
+.categories-img{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 15px;
+}
+.category{
+  text-align: center;
+}
+.category-img1, .category-img2,
+.category-img3, .category-img4,
+.category-img5{
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  background-size: 100%;
+}
+.category p{
+  margin-top: 5px;
+  font-size: 20px;
+  font-weight: 300;
+}
 
+.category-img1{
+  background: url("https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/08/tires-310x310.jpg") no-repeat center center;
+}
+.category-img2{
+  background: url("https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/08/interior-310x310.jpg") no-repeat center center;
+}
+.category-img3{
+  background: url("https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/08/entertainment-310x310.jpg") no-repeat center center;
+}
+.category-img4{
+  background: url("https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/08/oils-310x310.jpg") no-repeat center center;
+}
+.category-img5{
+  background: url("https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/08/exteriors-310x310.jpg") no-repeat center center;
+}
+.category:hover .category-img1,
+.category:hover .category-img2,
+.category:hover .category-img3,
+.category:hover .category-img4,
+.category:hover .category-img5{
+  background-size: 110%;
+}
+.category:hover p{
+  color: white;
+}
 
+/*FOOTER */
+.footer{
+  width: 100%;
+  padding: 80px 0;
+  background-color: black;
+}
+.footer-grid{
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+}
+.say-hello{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.say-hello h3{
+  color: white;
+  font-size: 25px;
+  font-weight: 600;
+}
+.say-hello p{
+  font-size: 15px;
+  color: #aaaaaa;
+}
+.say-icons{
+  display: flex;
+  gap: 40px;
+}
+.say-icons div{
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border-radius: 50%;
+  color: white;
+}
+.facebook:hover{
+  background-color: #3b5998;
+}
+.twitter:hover{
+  background-color: #2caae1;
+}
+.pinterest:hover{
+  background-color: #d43811;
+}
+.linkedin:hover{
+  background-color: #e30761;
+}
+.footer-content{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.footer-content h3{
+  color: white;
+  font-size: 25px;
+  font-weight: 600;
+}
+.footer-content p{
+  font-size: 15px;
+  color: #aaaaaa;
+}
+.footer-content p:hover{
+  color: #ffb91f;
+}
+.footer-bottom{
+  height: 70px;
+  border-top: 0.5px solid white;
+  background-color: black;
+}
+.footer-bottom p{
+  color: white;
+  font-size: 15px;
+}
+.footer-bottom p span{
+  color: #ffb91f;
+}
+/*FOOTER END*/
