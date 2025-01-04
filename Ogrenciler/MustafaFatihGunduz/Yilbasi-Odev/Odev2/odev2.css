@@ -313,7 +313,7 @@ body{
 
 .featured-products-item-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     border-bottom: lightgray 1px ridge;
@@ -375,6 +375,20 @@ body{
   .product-size{
     color: #BBBBBB;
     font-size: 16px;
+    font-weight: bold;
+  }
+
+  .main-price{
+    color: #a5a5a5;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: line-through;
+  }
+
+  .discount-price{
+    color: #1246ab;
+    font-size: 14px;
+    font-weight: bold;
   }
 
   .sku{
