@@ -290,14 +290,12 @@ header{
     background-color: white;
     color: black;
     padding: 0 25px;
-    transition: background-color 0.2s ease;
+    transition: color 0.2s ease;
   }
   
   .newsletter-search button:hover{
-    background-color: rgba(255, 185, 31, 1);
-    color: black;
+    color: #767676;
     cursor: pointer;
-    border: 1px solid black;
   }
   
   
@@ -324,7 +322,6 @@ header{
   
   .footer-list h3{
     font-size: 16px;
-    margin: 30px 0;
     font-weight: 500;
   }
   
@@ -335,23 +332,12 @@ header{
     margin: 20px 0;
   }
   
-  .social-media-icons {
-    display: flex;
-    max-width: 50%;
-    justify-content: space-around;
-    margin-top: 45px;
-  }
-  
-  .social-media-icons img{
-    width: 25px;
-    height: 25px;
-    background-color: #AAAAAA;
-    border-radius: 5px;
+  .social-links img{
     transition: transform 0.2s ease;
   }
   
-  .social-media-icons img:hover {
-    transform: scale(1.5);
+  .social-links img:hover {
+    transform: scale(1.1);
     cursor: pointer;
   }
   
