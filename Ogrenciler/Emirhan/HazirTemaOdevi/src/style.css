@@ -266,10 +266,12 @@ p {
     background-color: #ff57141A;
     object-fit: cover;
 }
-.box img{
-height: 85px;
-width:85px ;
+
+.box img {
+    height: 85px;
+    width: 85px;
 }
+
 .card h4 {
     color: #24272c;
     font-size: 18px;
@@ -703,11 +705,13 @@ width:85px ;
 
 
 }
+
 .statistics h3 {
     font-size: 30px;
     font-weight: 600;
     font-family: "Roboto slab", serif;
 }
+
 .statistics p {
     font-size: 15px;
     font-weight: 400;
@@ -717,6 +721,7 @@ width:85px ;
     margin-bottom: 20px;
     text-align: center;
 }
+
 .partner {
     width: 100%;
     height: 150px;
@@ -725,11 +730,13 @@ width:85px ;
     background-color: #f8f9fc;
     align-items: center;
 }
+
 .partner img {
     width: 5%;
     height: 80px;
     object-fit: contain;
 }
+
 .blogs {
     width: 100%;
     height: auto;
@@ -738,6 +745,7 @@ width:85px ;
     align-items: center;
     gap: 20px;
 }
+
 .blog {
     width: 25%;
     height: auto;
@@ -745,17 +753,20 @@ width:85px ;
     border-radius: 15px;
     overflow: hidden;
 }
+
 .blog img {
     width: 100%;
     height: 250px;
     object-fit: cover;
 }
+
 .blog h5 {
     color: #24272c;
     font-size: 18px;
     font-weight: 600;
     font-family: "Roboto slab", serif;
 }
+
 .blog p {
     font-size: 15px;
     font-weight: 400;
@@ -764,18 +775,21 @@ width:85px ;
     line-height: 24px;
     margin-bottom: 20px;
 }
+
 .blog button {
     background-color: transparent;
     border: none;
     outline: none;
     display: flex;
 }
+
 .blogpadding {
     display: flex;
     gap: 25px;
     flex-direction: column;
     padding: 30px;
 }
+
 .contact {
     width: 100%;
     display: flex;
@@ -785,6 +799,7 @@ width:85px ;
     background-color: #f8f9fc;
     padding-bottom: 100px;
 }
+
 .userform {
     width: 45%;
     height: auto;
@@ -797,12 +812,14 @@ width:85px ;
     padding: 20px;
     border-radius: 6px;
 }
+
 .userform div {
     display: flex;
     width: 100%;
     height: auto;
     gap: 20px;
 }
+
 .userform div input {
     width: 50%;
     height: 40px;
@@ -812,6 +829,7 @@ width:85px ;
     outline: none;
     padding-left: 5px;
 }
+
 .phone {
     width: 30%;
     height: auto;
@@ -821,10 +839,12 @@ width:85px ;
     flex-direction: column;
     gap: 20px;
 }
+
 .phonetext {
     width: 100%;
     display: flex;
 }
+
 .userform textarea {
     width: 100%;
     border-radius: 6px;
@@ -833,6 +853,7 @@ width:85px ;
     resize: none;
     padding-left: 5px;
 }
+
 .userform input {
     width: 100%;
     height: 40px;
@@ -841,6 +862,7 @@ width:85px ;
     border: 1px solid #dee2e6;
     padding-left: 5px;
 }
+
 .userform button {
     height: 40px;
     background-color: #ff5714;
@@ -850,6 +872,7 @@ width:85px ;
     border: none;
     color: white;
 }
+
 .phoneicon {
     width: 100px;
     height: 40px;
@@ -857,6 +880,7 @@ width:85px ;
     justify-content: center;
     align-items: center;
 }
+
 .phonenumber {
     display: flex;
     justify-content: center;
@@ -865,17 +889,20 @@ width:85px ;
     width: calc(100%-100px);
     gap: 10px;
 }
+
 .phonenumber h5 {
     font-size: 18px;
     font-weight: 600;
     font-family: "Roboto slab", serif;
 }
+
 .phonenumber p {
     font-size: 15px;
     font-weight: 400;
     color: #75859b;
     font-family: "Roboto", sans-serif;
 }
+
 footer {
     width: 100%;
     height: 100px;
@@ -884,14 +911,17 @@ footer {
     align-items: center;
     justify-content: space-evenly;
 }
+
 footer p {
     color: #adb5bd;
 }
-.social2{
+
+.social2 {
     display: flex;
-    gap:10px;
+    gap: 10px;
 }
-.social2 .spanicon{
+
+.social2 .spanicon {
     border: 1px solid #283353;
     width: 32px;
     height: 32px;
@@ -899,5 +929,140 @@ footer p {
     justify-content: center;
     align-items: center;
     background-color: #202942;
-    border-radius: 5px;  
+    border-radius: 5px;
 }
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .nav-container {
+        flex-direction: column;
+        margin: 0;
+    }
+
+    .menu {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .navbar img {
+        width: 80px;
+        height: 20px;
+    }
+
+    .bgOverlay {
+        gap: 20px;
+        justify-content: flex-start;
+        padding: 10px;
+    }
+
+    h4 {
+        font-size: 30px;
+    }
+
+    .story {
+        flex-direction: column;
+    }
+
+    .storyimg {
+        height: 40vh;
+    }
+
+    .storytext {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .primaryBtn {
+        width: 100px;
+        height: 35px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .nav-container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .menu {
+        flex-direction: column;
+    }
+
+    .bgOverlay {
+        gap: 20px;
+    }
+
+    .story {
+        flex-direction: column;
+    }
+
+    .storyimg {
+        height: 45vh;
+    }
+
+    .storytext {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .primaryBtn {
+        width: 120px;
+        height: 40px;
+        font-size: 15px;
+    }
+}
+
+
+@media (min-width: 1200px) {
+    .navbar {
+        justify-content: space-between;
+    }
+
+    .nav-container {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .menu {
+        display: flex;
+        gap: 30px;
+    }
+
+    .navbar img {
+        width: 120px;
+        height: 30px;
+    }
+
+    .bgOverlay {
+        gap: 40px;
+    }
+
+    h4 {
+        font-size: 45px;
+    }
+
+    .storyimg {
+        width: 50%;
+        height: 100vh;
+    }
+
+    .storytext {
+        width: 50%;
+    }
+}
+
+
