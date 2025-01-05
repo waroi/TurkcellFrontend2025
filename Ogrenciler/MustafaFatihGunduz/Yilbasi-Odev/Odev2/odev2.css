@@ -977,143 +977,104 @@ body {
   }
 
   /*! FOOTER SECTİON CSS END */
-  
-@media (max-width: 768px) {
 
-    .container {
-        padding: 0 15px;
-    }
-
-
-    .banner-wrapper {
+  @media (max-width: 768px) {
+    .banner-wrapper, 
+    .navbar-wrapper, 
+    .featured-column-wrap, 
+    .popular-categories-wrapper, 
+    .hot-products-wrapper, 
+    .newsletter-wrapper, 
+    .footer-wrapper {
         flex-direction: column;
         align-items: center;
-        gap: 20px;
+        text-align: center;
     }
 
-    .banner-menu ul {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .banner-icons {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .banner-image img {
-        width: 150px;
-        height: auto;
-    }
-
-
-    .navbar-wrapper {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .nav-links {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .search-input {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .search-input input {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-
-    .wishlist-and-basket {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-
-    .banner-container {
-        flex-direction: column;
-        align-items: center;
-        height: auto;
-    }
-
-    .banner-container-left,
-    .banner-container-right {
-        width: 100%;
-    }
-
-    .banner-left-description,
-    .banner-left-image {
-        width: 100%;
-    }
-
-    .banner-right-first,
-    .banner-right-second {
+    .banner-image img, 
+    .banner-right-first, 
+    .banner-right-second, 
+    .featured-products-item-container img, 
+    .hot-product-wrapper img {
         width: 100%;
         height: auto;
     }
-
 
     .categories-items {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, 1fr);
         gap: 20px;
-    }
-
-    .categories-item {
-        text-align: center;
     }
 
     .featured-products-wrapper {
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
+        grid-template-columns: repeat(2, 1fr);
     }
-
-    .featured-products-item-container img {
-        width: 100%;
-        height: auto;
-    }
-
-    .featured-title-and-links {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 10px;
-    }
-
-
-    .benefits-wrapper {
-        flex-direction: column;
-        gap: 20px;
-    }
-
 
     .hot-products-wrapper {
         grid-template-columns: 1fr;
-        gap: 20px;
     }
 
-    .hot-product-wrapper {
+    .must-product-item-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .expert-advice-items {
         grid-template-columns: 1fr;
-        gap: 20px;
     }
 
-    .hot-products-wrapper h4 {
-        text-align: center;
+    .footer-first-content {
+        grid-template-columns: 1fr;
     }
+}
 
-    .must-products-left {
-        gap: 15px;
-    }
-
-    .must-products-tab {
-        gap: 10px;
-    }
-
-    .featured-products-wrapper,
+@media (min-width: 769px) and (max-width: 1024px) {
     .categories-items {
-        justify-content: center;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .featured-products-wrapper {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .hot-products-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .must-product-item-wrapper {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .expert-advice-items {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-first-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1025px) {
+    .categories-items {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    .featured-products-wrapper {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .hot-products-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .must-product-item-wrapper {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .expert-advice-items {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .footer-first-content {
+        grid-template-columns: 1.5fr 1.2fr 1.2fr 1.2fr 1.2fr;
     }
 }
 
