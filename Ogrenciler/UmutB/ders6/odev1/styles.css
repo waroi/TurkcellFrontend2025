@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font: outfit;
 }
 
 nav {
@@ -222,7 +223,7 @@ nav {
 }
 
 
-/*banner*/ 
+/*banner*/
 
 .banner-container {
     width: 100%;
@@ -239,7 +240,7 @@ nav {
     padding: 40px;
 }
 
-.black-overlay{
+.black-overlay {
     width: 100%;
     height: 100%;
     background-image: rgba(0, 0, 0, 0.219);
@@ -260,7 +261,7 @@ nav {
 
 .search-container {
     background: white;
-    padding:50px;
+    padding: 50px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: 100%;
@@ -274,7 +275,7 @@ h2 {
     font-weight: bold;
 }
 
-form{
+form {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -288,14 +289,14 @@ form{
     margin-bottom: 24px;
 }
 
-.form-grid > select{
+.form-grid>select {
     display: flex;
     flex-direction: column;
     align-items: stretch;
     gap: 10px;
-    width: 50vh;
+    width: 40vh;
     padding: 15px 0px;
-
+    padding-left: 15px;
 }
 
 @media (max-width: 992px) {
@@ -303,12 +304,14 @@ form{
         grid-template-columns: 1fr 1fr 1fr 1fr;
         padding: 0 20px;
     }
+
     .overlay-content {
         flex-direction: column-reverse;
         justify-content: center;
         align-items: center;
     }
-    .form-grid > select{
+
+    .form-grid>select {
         width: 80px;
     }
 }
@@ -317,13 +320,14 @@ form{
     .form-grid {
         grid-template-columns: 1fr 1fr;
     }
+
     .overlay-content {
         flex-direction: column-reverse;
         justify-content: center;
         align-items: center;
     }
 
-    .form-grid > select{
+    .form-grid>select {
         width: 20vh;
     }
 
@@ -400,7 +404,7 @@ button:hover {
     background-color: white;
     color: black;
     text-decoration: none;
-    border-radius:30px;
+    border-radius: 30px;
     font-family: 'Outfit', sans-serif;
     font-weight: 500;
     width: 200px;
@@ -431,6 +435,7 @@ button:hover {
         font-size: 36px;
     }
 }
+
 .categories {
     display: flex;
     justify-content: center;
@@ -438,30 +443,32 @@ button:hover {
     padding: 20px 0px;
     background-color: #FFB91F;
 }
-.categories >ul {
+
+.categories>ul {
     width: 60%;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    gap: 8px; /* adds space between grid items */
+    gap: 8px;
+    /* adds space between grid items */
     list-style-type: none;
     background-color: #FFB91F;
     justify-content: center;
     align-items: center;
-  }
+}
 
-  @media (max-width: 992px) {
-    .categories >ul {
+@media (max-width: 992px) {
+    .categories>ul {
         grid-template-columns: repeat(3, 1fr);
     }
-  }
+}
 
-    @media (max-width: 576px) {
-        .categories >ul {
-            grid-template-columns: repeat(2, 1fr);
-        }
+@media (max-width: 576px) {
+    .categories>ul {
+        grid-template-columns: repeat(2, 1fr);
     }
+}
 
-  .categories >ul>li {
+.categories>ul>li {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -475,105 +482,222 @@ button:hover {
     justify-content: center;
     text-align: center;
     align-items: center;
-    }
+}
 
-    .categories >ul>li>img {
-        width: 137px;
-        height: 137px;
-        border-radius: 10px;
-        margin-bottom: 10px;
-    }
+.categories>ul>li>img {
+    width: 137px;
+    height: 137px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
 
-    .categories > ul > li > h3 {
-        font: 40px outfit;
-        font-weight: 500;
-        margin-bottom: 20px;
-        margin-right: 50px;
-    }
+.categories>ul>li>h3 {
+    font: 40px outfit;
+    font-weight: 500;
+    margin-bottom: 20px;
+    margin-right: 50px;
+}
 
-    .categories > ul > li > p {
-        font: 15px outfit;
-        font-weight: 500;
-    }
+.categories>ul>li>p {
+    font: 15px outfit;
+    font-weight: 500;
+}
 
-    .bestsellers {
-        display: grid;
-        grid-template-columns: auto;
-        justify-content: center;
-        align-items: center;
-        padding: 20px 0px;
-        text-align: center;
-    }
+.bestsellers {
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0px;
+    text-align: center;
+}
 
-    .bestsellers > h3 {
-        font: 36px outfit;
-        font-weight: 500;
-        margin-bottom: 20px;
-    }
-.bestsellers > h3 > span {  
+.bestsellers>h3 {
+    font: 36px outfit;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.bestsellers>h3>span {
     margin-right: 50px;
     color: #FFB91F;
 }
 
+.bestsellergrid {
+    width: 80%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 20px;
+}
+
+@media (max-width: 992px) {
     .bestsellergrid {
-        width: 80%;
-        height: auto;
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        padding: 20px;
+        grid-template-columns: repeat(1, 1fr);
     }
-
+    .bestsellers>h3>span {
+        margin-right: 0px;
+    }
     
-    .bestsellergrid > div {
-        margin-bottom: 10px;
-        border:1px solid rgba(0, 0, 0, 0.153);
-        justify-content: center;
-        text-align: center;
-        align-items: center;
+}
+
+.bestsellergrid>div {
+    border: 1px solid rgba(0, 0, 0, 0.153);
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.bestsellergrid>div>img {
+    width: 300px;
+    height: 300px;
+}
+
+.discount {
+    background-color: #D43812;
+    color: #ffffff;
+    width: 20%;
+    padding: 5px;
+    margin-top: 10px;
+    margin-left: 10px;
+    border-radius: 20px;
+    font: 12px outfit;
+}
+
+.bestsellergrid>div>h4 {
+    font: 15px outfit;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+    text-align: left;
+    gap: 20px;
+}
+
+.product-info>p>span {
+    font: 15px outfit;
+    font-weight: 500;
+    color: #5d5a587f;
+    text-decoration: line-through;
+}
+
+.product-info>p {
+
+    font: 20px outfit;
+    font-weight: 500;
+    color: #243F92;
+}
+
+.banner-down {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.left-banner {
+    background-image: url('https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/08/banner-1.jpg');
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 80px;
+    margin-top: 80px;
+    min-width: 415px;
+}
+
+
+.right-banner {
+    background-image: url('https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/08/banner-2.jpg');
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 80px;
+    margin-top: 80px;
+    min-width: 415px;
+}
+
+
+
+ .box-content {
+    left: 40px;
+    right: auto;
+    top: 50%;
+    bottom: auto;
+    transform: translate(0, -50%);
+}
+
+.ts-banner {
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+}
+
+.button {
+    margin-top: 40px;
+    width: 25%;
+    padding: 12px;
+    padding-inline: 30px;
+    background-color: #fbbf24;
+    border: none;
+    border-radius: 30px;
+    color: black;
+    font: 14px outfit;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    text-decoration: none;
+}
+
+.description > p{
+    margin-bottom: 50px !important;
+}
+
+.box-content h2 {
+    font-size: 48px;
+    color: #fff;
+}
+.ts-banner .box-content>div>* {
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+.description {
+    font-size: 18px;
+    color: #fff;
+}
+
+
+@media (max-width: 1279px) {
+    .box-content {
+        left: 30px;
+        right: auto;
     }
-
-    .bestsellergrid> div> img {
-        width: 300px;
-        height: 300px;
+    .banner-down {
+        grid-template-columns: 1fr;
     }
-
-    .discount {
-        background-color: #D43812;
-        color: #ffffff;
-        width : 20%;
-        padding: 5px;
-        margin-top: 10px;
-        margin-left: 10px;
-        border-radius: 20px;
-        font: 12px outfit;
+    .left-banner,
+    .right-banner{
+        min-width: 100px;
     }
+}
 
-    .bestsellergrid > div > h4 {
-        font: 15px outfit;
-        font-weight: 500;
-        margin-bottom: 20px;
+@media (max-width: 767px) {
+   .box-content h2 {
+        font-size: 25px;
     }
-
-    .product-info {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 15px;
-        text-align: left;
-        gap: 20px;
-    }
-
-    .product-info > p > span {
-        font: 15px outfit;
-        font-weight: 500;
-        color: #5d5a587f;
-        text-decoration: line-through;
-    }
-
-    .product-info > p {
-
-        font: 20px outfit;
-        font-weight: 500;
-        color: #243F92;
-
-    }
+}
