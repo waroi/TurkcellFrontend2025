@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 </head>
 
 <body>
@@ -118,7 +120,7 @@
                 </select>
                 
                 <input type="text" placeholder="Search for products">
-                <button class="search-button"></button>
+                <i class="fa-solid fa-magnifying-glass"></i>
 
             </div>
             <div class="header-currency">
@@ -132,23 +134,95 @@
                     <option value="EUR">EUR</option>
                 </select>
             </div>
-            <div class="header-right">
-                <div class="icon-button">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                  </div>
-                  <div class="icon-button">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
-                    <span class="badge">0</span>
-                  </div>
-                  <div class="icon-button">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
-                    <span class="badge">0</span>
-                  </div>
-            </div>
+            <div class="header-right"></div>
 
         </div>
-        <div class="header-bottom"></div>
+        <div class="header-bottom">
+            <div class="container-bottom">
+                <div class="menu">
+                    <a >HOME</a>
+                    <i class="fa-solid fa-caret-down"></i>
+                    <a >PAGES</a>
+                    <i class="fa-solid fa-caret-down"></i>
+                    <a >SERVICE PARTS</a>
+                    <i class="fa-solid fa-caret-down"></i>
+                    <a >BRAKE</a>
+                    <i class="fa-solid fa-caret-down"></i>
+                    <a >CAR BATTERIES</a>
+                    <i class="fa-solid fa-caret-down"></i>
+                    <a >TOOLS & GARAGE</a>
+                    <i class="fa-solid fa-caret-down"></i>
+                    
+                </div>
+                <div class="menu-call-info">
+                    <i class="fa-solid fa-headset headset" ></i>
+                    <div class="info-right">
+                        <h4 class="call-us">Call Us 24/7</h4><br>
+                    
+                    <a href="tel:+0892298228" class="tel_no">+08 9229 8228</a>
+                   
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
     </header>
+
+    <section class="container-main">
+        <div class="main">
+            <div class="search-vehicle">
+               
+                <form class="search-form">
+                    <h2>SEARCH BY VEHICLE</h2>
+                <div class="select-wrapper">
+                <select>
+                <option value="">Select Make</option>
+                <option value="toyota">Toyota</option>
+                <option value="honda">Honda</option>
+                <option value="ford">Ford</option>
+                <option value="bmw">BMW</option>
+                </select>
+                </div>
+                <div class="select-wrapper">
+                <select>
+                <option value="">Select Model</option>
+                <option value="camry">Camry</option>
+                <option value="civic">Civic</option>
+                <option value="mustang">Mustang</option>
+                <option value="3-series">3 Series</option>
+                </select>
+                </div>
+                <div class="select-wrapper">
+                <select>
+                <option value="">Select Year</option>
+                <option value="2024">2024</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+                </select>
+                </div>
+                <div class="select-wrapper">
+                <select>
+                <option value="">Select Engine</option>
+                <option value="2.0l">2.0L</option>
+                <option value="2.5l">2.5L</option>
+                <option value="3.0l">3.0L</option>
+                <option value="3.5l">3.5L</option>
+                </select>
+                </div>
+                <button type="submit" class="search-button">GO</button>
+                </form>
+
+        </div>
+
+        <div class="main-header">
+            <p class="sale">NEVER MISS A SALE</p>
+            <p class="rocket">Rocket Racing Wheels</p>
+            <p class="lorem">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            placeat illo. Id temporibus illo iste.</p>
+            <button class="shop-button">Shop Now</button>
+        </div>
+    </section>
 
 </body>
 

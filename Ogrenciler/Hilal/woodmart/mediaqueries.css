@@ -1,0 +1,86 @@
+.col {
+  background-color: aqua;
+}
+.container {
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.row {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); /* 12 eşit sütun */
+  gap: 16px; /* Sütunlar arası boşluk */
+}
+
+.col {
+  grid-column: span 12; /* Varsayılan tüm satırı kapla */
+}
+
+/* Kurallar: section-width height vermeyelim,containerlara grid vermeyelim, mümkünse containerın içine wrapper ekleyelim. mümkün olduğunca absolute dan kaçınalım. */
+/* Breakpoints:sm,md,lg */
+
+/* Küçük Ekranlar (sm) */
+@media (max-width: 767) {
+  .col-sm-1 {
+    grid-column: span 1;
+  } /* 1/12 */
+  .col-sm-2 {
+    grid-column: span 2;
+  } /* 2/12 */
+  .col-sm-3 {
+    grid-column: span 3;
+  } /* 3/12 */
+  .col-sm-4 {
+    grid-column: span 4;
+  } /* 4/12 */
+  .col-sm-6 {
+    grid-column: span 6;
+  } /* 6/12 */
+  .col-sm-12 {
+    grid-column: span 12;
+  } /* 12/12 */
+}
+
+/* Orta Ekranlar (md) */
+@media (min-width: 768px) {
+  .col-md-1 {
+    grid-column: span 1;
+  }
+  .col-md-2 {
+    grid-column: span 2;
+  }
+  .col-md-3 {
+    grid-column: span 3;
+  }
+  .col-md-4 {
+    grid-column: span 4;
+  }
+  .col-md-6 {
+    grid-column: span 6;
+  }
+  .col-md-12 {
+    grid-column: span 12;
+  }
+}
+
+/* Büyük Ekranlar (lg) */
+@media (min-width: 992px) {
+  .col-lg-1 {
+    grid-column: span 1;
+  }
+  .col-lg-2 {
+    grid-column: span 2;
+  }
+  .col-lg-3 {
+    grid-column: span 3;
+  }
+  .col-lg-4 {
+    grid-column: span 4;
+  }
+  .col-lg-6 {
+    grid-column: span 6;
+  }
+  .col-lg-12 {
+    grid-column: span 12;
+  }
+}
