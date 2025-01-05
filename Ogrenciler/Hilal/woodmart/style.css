@@ -118,3 +118,22 @@ nav .container {
 		rgb(255, 255, 255) 75%
 	);
 }
+
+.categories-grid {
+	display: grid;
+	grid-template-columns: repeat(6, minmax(0, 1fr));
+	gap: 30px;
+}
+.categories-items {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding: 10px;
+	gap: 10px;
+}
+.popular-categories h4 {
+	font-size: 26px;
+	margin-bottom: 30px;
+	margin-top: 30px; /*TODO: Will be deleted */
+}
