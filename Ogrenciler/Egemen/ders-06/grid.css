@@ -6,13 +6,26 @@
 
 
 .container{
+   
     display: grid;
     height: 600px;
     background-color: blue;
-    padding: 20px;
     gap: 10px;
-    /*grid-template-columns: repeat(5,2fr);*/
-    grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+    /*grid-template-columns:  150px 150px 150px 150px 150px;*/
+    /*grid-template-columns: 150px auto 150px auto 150px 150px; */
+    /*grid-template-columns: 150px 1fr 150px 2fr 150px 150px;  */
+    /*grid-template-columns: 1fr 2fr 5fr 3fr 2fr; */
+    /*grid-template-columns: repeat(6, 1fr);*/
+    /* grid-template-columns: repeat(3, 1fr);*/
+    /*grid-template-rows: 2fr 4fr;*/
+
+     /*grid-template-columns: minmax(100px, 500px) 200px 200px; */
+     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+     justify-content: center;
+     align-content: center;
+
+
+    
 }
 
 
@@ -20,3 +33,4 @@
     background-color: orange;
     padding: 20px;
 }
+
