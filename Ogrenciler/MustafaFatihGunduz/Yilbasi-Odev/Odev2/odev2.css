@@ -1,3 +1,5 @@
+/*? COMMON START*/
+
 *{
     margin: 0;
     padding: 0;
@@ -17,6 +19,9 @@ body{
     margin: 0px auto;
 }
 
+/*! COMMON END*/
+
+/*? BANNER SECTİON CSS START*/
 .banner{
     display: flex;
     justify-content: center;
@@ -91,6 +96,8 @@ body{
     list-style: none;
     gap: 20px;
 }
+
+/*! BANNER SECTİON CSS END*/
 
 /*? NAVBAR HEADER CSS START */
 
@@ -297,7 +304,7 @@ body{
 }
 /*! CATEGORİES SECTİON CSS END*/
 
-
+/*? FEATURED SECTİON CSS START*/
 .featured{
     display: flex;
     padding: 20px 0px;
@@ -315,6 +322,20 @@ body{
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    margin: 20px 0px;
+}
+
+.featured-title-and-links h3{
+    font-size: 26px;
+    color: #242424;
+    font-weight: bold;
+}
+
+.featured-link{
+    font-size: 16px;
+    color: #333333B3;
+    text-decoration: underline;
+    font-weight: bold;
 }
 
 .featured-links{
@@ -428,3 +449,169 @@ body{
   .checked{
     color: #ffb91f;
   }
+
+  /*! FEATURED SECTİON CSS END*/
+
+  /*? BENEFİTS SECTİON CSS START*/
+
+  .benefits-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .benefit{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .benefits-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .benefits-text h4{
+    font-size: 18px;
+    color: #242424;
+    font-weight: bold;
+  }
+
+  .benefits-text p{
+    color: #777777;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 1px;
+  }
+
+  /*! BENEFİTS SECTİON CSS END*/
+
+  /*? HOT PRODUCTS SECTİON CSS START*/
+
+  .hot-products{
+    background-color: #F1F3F8;
+  }
+
+  .hot-products-wrapper{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    width: 100%;
+    gap: 20px;
+    padding: 40px 0px;
+  }
+
+  .hot-product-wrapper{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+  }
+
+  .hot-products-wrapper h4{
+    font-size: 24px;
+    color: #242424;
+    letter-spacing: 1px;
+    padding: 10px 0px;
+  }
+
+  .hot-product-wrapper img{
+    width: 193px;
+    height: 220px;
+  }
+
+  .hot-product-and-our-services{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+  }
+
+  .similar-product-column-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    gap: 45px;
+  }
+
+  .our-service{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFFFFF;
+    padding: 30px 20px;
+    gap: 20px;
+  }
+
+  .our-service-description{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    gap: 10px;
+  }
+
+  .our-service-title{
+    color: #1246ab;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .our-service-description h4{
+    font-size: 32px;
+    font-weight: bold;
+    color: #242424;
+  }
+
+  .our-service-info{
+    font-size: 16px;
+    color: #777777;
+    font-weight: bold;
+  }
+  /*! HOT PRODUCTS SECTİON CSS END*/
+
+  /*? MUST PRODUCTS SECTİON CSS START*/
+
+  .must-products-left{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    gap: 20px;
+  }
+  .must-products-left h4{
+    font-size: 26px;
+    color: #242424;
+    font-weight: bold;
+  }
+
+  .must-products-left p{
+    font-size: 16px;
+    color: #777777;
+    font-weight: normal;
+  }
+
+  .must-products-tab{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    gap: 16px;
+    text-transform: uppercase;
+  }
+
+  .must-products-tab a{
+    color: #1246ab;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    padding-left: 6px;
+  }
+
+  .must-products-tab a:hover{
+    color: #DF2626;
+  }
+  /*! MUST PRODUCTS SECTİON CSS END*/
