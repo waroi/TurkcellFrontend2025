@@ -1,26 +1,31 @@
-.col {
-  background-color: aqua;
-}
 .container {
   width: 100%;
   padding-left: 15px;
   padding-right: 15px;
 }
-.row {
+.row:has(.col) {
   display: grid;
-  grid-template-columns: repeat(12, 1fr); /* 12 eşit sütun */
-  gap: 16px; /* Sütunlar arası boşluk */
+  grid-template-columns: repeat(12, 1fr);
+  gap: 4px; /* Sütunlar arası boşluk */
 }
+/* Grid oluşturma adımları:
+1-row sınıfına sahip bir parent oluşturuyoruz, 
+2-altındaki child elementlere mutlaka col sınıfını ekliyoruz.
+3-Eğer herhangi bir breakpointte kutucukların eşit şekilde satırı paylaşmasını istiyorsan rowun yanına eq-sm,eq-md veya eq-lg eklemen yeterli.Bu durumda child kısmında bu breakpointleri kullanma
+4-Eğer belirli genişlikte kutucuklar oluşturmak istiyorsan her satırda toplamı 12 yi bulacak şekilde col-sm-6 gibi değerleri ver. */
 
-.col {
-  grid-column: span 12; /* Varsayılan tüm satırı kapla */
-}
+/* Genel Kurallar: section-width height vermeyelim,containerlara grid vermeyelim, mümkünse containerın içine wrapper ekleyelim. mümkün olduğunca absolute dan kaçınalım. */
 
-/* Kurallar: section-width height vermeyelim,containerlara grid vermeyelim, mümkünse containerın içine wrapper ekleyelim. mümkün olduğunca absolute dan kaçınalım. */
 /* Breakpoints:sm,md,lg */
 
 /* Küçük Ekranlar (sm) */
-@media (max-width: 767) {
+@media (max-width: 767px) {
+  .row.eq-sm {
+    grid-template-columns: repeat(auto-fit, minmax(0px, 1fr));
+  }
+  .row .eq-sm {
+    grid-column: span 1;
+  }
   .col-sm-1 {
     grid-column: span 1;
   } /* 1/12 */
@@ -62,9 +67,23 @@
     grid-column: span 12;
   }
 }
+@media (min-width: 768px) and (max-width: 992px) {
+  .row.eq-md {
+    grid-template-columns: repeat(auto-fit, minmax(0px, 1fr));
+  }
+  .row .eq-md {
+    grid-column: span 1;
+  }
+}
 
 /* Büyük Ekranlar (lg) */
 @media (min-width: 992px) {
+  .eq-lg .col {
+    grid-column: span 1;
+  }
+  .row.eq-lg {
+    grid-template-columns: repeat(auto-fit, minmax(0px, 1fr));
+  }
   .col-lg-1 {
     grid-column: span 1;
   }
