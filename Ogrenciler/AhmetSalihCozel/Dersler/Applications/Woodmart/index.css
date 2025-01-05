@@ -1069,24 +1069,18 @@ footer {
 }
 
 .projectIdeasWrapper {
-  padding: 50px 0 50px 0;
+  height: 100%;
+  width: 100%;
+  padding: 50px 13.5% 50px 13.5%;
   background-color: #f1f3f8;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 30px;
 }
 
-.projectIdeasWidthGiver {
-  max-width: 73%;
-}
-
-.projectIdeas img {
-  width: 100%;
-  object-fit: cover;
-}
-
-.projectIdeas {
-  height: 100%;
+.projectIdeas{
+  display: flex;
+  flex-direction: column;
   width: 100%;
 }
 
@@ -1100,8 +1094,9 @@ footer {
 .projectIdeasImg {
   position: relative;
   background-image: url("https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/05/home-hotspot.jpg.webp");
-  width: 100%;
-  height: 100%;
+  width: 550px;
+  height: 550px;
+  background-size: contain;
   background-repeat: no-repeat;
 }
 
@@ -1112,27 +1107,22 @@ footer {
   border-radius: 50%;
   border: #1142a2 solid 4px;
   background-color: white;
+  transition: all 350ms 0s ease;
 }
 
 .point.one {
-  top: 55%;
+  top: 51%;
   left: 36%;
 }
 
 .point.two {
-  top: 76%;
-  left: 30%;
+  top: 72%;
+  left: 29%;
 }
 
 .point.three {
-  top: 40%;
-  left: 75%;
-}
-
-.point.one:hover {
-  position: relative;
-  top: 55%;
-  left: 36%;
+  top: 31%;
+  left: 76%;
 }
 
 .pointOneDiv,
@@ -1146,19 +1136,28 @@ footer {
 }
 
 .point:hover>.pointOneDiv,
-.point:hover>.pointTwoDiv,
-.point:hover>.pointThreeDiv {
+.point:hover>.pointTwoDiv
+{
   display: block;
   z-index: 20;
   left: 25px;
   top: -70px;
 }
 
+.point:hover>.pointThreeDiv{
+  display: block;
+  z-index: 20;
+  left: -275px;
+  top: -70px;
+}
+
 .similarProductsWrapper {
-  display: grid;
+  display: flex;
+  flex-direction: column;
 }
 
 .similarProducts {
+  display: flex;
   height: 100%;
   width: 100%;
   background: #fff;
@@ -1257,13 +1256,18 @@ footer {
 .expert-advice,
 .wc-text,
 .sign-up,
-.wbp-main,
-.projectIdeasWrapper {
+.wbp-main {
   max-width: 73%;
   margin: 0 auto;
 }
 
 @media screen and (max-width: 1400px) {
+  .projectIdeasWrapper{
+    grid-template-columns: 1fr;
+  }
+
+
+
   .part2 {
     margin-right: 15px;
   }
@@ -1298,9 +1302,7 @@ footer {
   .featured-products,
   .navBottom,
   .navTop,
-  .projectIdeasWrapper,
   .hero-in,
-  .projectIdeas,
   .wbp-main,
   .newsletter {
     max-width: 100%;
@@ -1450,10 +1452,43 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
+  .pointOneDiv,
+  .pointTwoDiv,
+  .pointThreeDiv {
+  display: none;
+  position: absolute;
+  height: 200px;
+  width: 100px;
+  background-color: #fff;
+}
+
+.point:hover>.pointOneDiv,
+.point:hover>.pointTwoDiv
+{
+  display: block;
+  z-index: 20;
+  left: 25px;
+  top: -70px;
+}
+
+.point:hover>.pointThreeDiv{
+  display: block;
+  z-index: 20;
+  left: -125px;
+  top: -70px;
+}
+  .similarProducts{
+    flex-direction: column;
+  }
   .company-info {
     width: 100%;
   }
 
+  .projectIdeasImg{
+    height: 300px;
+    width: 300px;
+  }
+  
   .more-products-tab {
     grid-template-columns: repeat(5, 33%);
   }
@@ -1484,6 +1519,15 @@ footer {
 }
 
 @media screen and (max-width: 576px) {
+  .projectIdeasWrapper{
+    padding: 50px 3%;
+  }
+  .footer-top{
+    grid-template-columns: 1fr;
+  }
+  .featured-products-header {
+    flex-direction: column;
+  }
   .popular-products {
     grid-template-columns: repeat(2, 1fr);
   }
