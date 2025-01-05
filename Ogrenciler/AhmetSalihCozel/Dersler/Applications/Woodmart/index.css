@@ -35,7 +35,8 @@
 }
 
 .navTop {
-  padding: 0 13.75%;
+  max-width: 73%;
+  margin: 0 auto;
   height: 90px;
   display: flex;
   justify-content: space-between;
@@ -63,15 +64,18 @@
 
 .navBottom {
   display: flex;
-  background-color: #1246ab;
   height: 70px;
-  width: 100%;
-  padding: 0 13.75%;
+  max-width: 73%;
+  margin: 0 auto;
   justify-content: space-between;
   align-items: center;
   position: sticky;
   top: 0;
   z-index: 2326532;
+}
+.nav-bottom-wrapper {
+  background-color: #1246ab;
+  width: 100%;
 }
 
 .navTopEndList {
@@ -182,7 +186,7 @@ hr.vertical {
   z-index: -1;
 }
 .hero-in {
-  width: 72%;
+  max-width: 73%;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 65% 35%;
@@ -318,13 +322,10 @@ footer {
   border-top: 1px solid #99999950;
 }
 
-.links {
-  padding: 20px 13.75%;
-}
 
 .footer-top {
   display: grid;
-  grid-template-columns: 1.6fr 1fr 1fr 1fr 1.6fr;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr 1.4fr;
   margin: 0px - 15px;
   padding: 40px 0px 10px;
   justify-content: space-between;
@@ -498,7 +499,6 @@ footer {
 }
 
 .sign-up {
-  width: 72%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -561,10 +561,7 @@ footer {
 }
 
 /* ---------EXPERT-ADVICE---------- */
-.expert-advice {
-  width: 72%;
-  margin: 0 auto;
-}
+
 
 .ea-wrapper {
   display: grid;
@@ -696,7 +693,6 @@ footer {
 }
 
 .wc-text {
-  width: 72%;
   padding: 60px 0 40px 0;
 }
 
@@ -1035,7 +1031,7 @@ footer {
 }
 
 .projectIdeasWrapper {
-  padding: 50px 13.75% 50px 13.75%;
+  padding: 50px 0 50px 0;
   background-color: #f1f3f8;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1043,7 +1039,7 @@ footer {
 }
 
 .projectIdeasWidthGiver {
-  width: 72%;
+  max-width: 73%;
 }
 
 .projectIdeas img {
@@ -1211,25 +1207,45 @@ footer {
 .more-product-link:hover {
   color: #df2626;
 }
+.links,
+.expert-advice,
+.popular-categories,
+.more-products,
+.featured-products,
+.expert-advice,
+.wc-text,
+.sign-up {
+  max-width: 73%;
+  margin: 0 auto;
+}
 
 @media screen and (max-width: 1400px) {
-  .links {
-    padding: 0;
+  .links,
+  .expert-advice,
+  .popular-categories,
+  .more-products,
+  .featured-products,
+  .navBottom,
+  .navTop,
+  .hero-in,
+  .projectIdeas,
+  .newsletter {
+    max-width: 100%;
+    padding: 15px;
   }
 
   .company-info {
     max-width: 470px;
   }
 
-  .footer-section {
-    min-width: 360px;
+  .footer-top {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
   }
 }
 
 @media screen and (max-width: 1200px) {
   .footer-top {
-    display: flex;
-    flex-wrap: wrap;
   }
 }
 
