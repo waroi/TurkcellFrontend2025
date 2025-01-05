@@ -49,7 +49,7 @@ body {
 
 @media screen and (max-width: 768px) {
   .container {
-    width: 100%;
+    width: 90%;
     justify-content: space-around;
   }
 
@@ -66,7 +66,6 @@ body {
   .head-container .container .head-title {
     display: none;
   }
-
 }
 
 .flash-sale {
@@ -211,6 +210,13 @@ p {
   .header-middle {
     height: 150px;
   }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .search-bar {
+    width: 100%;
+  }
+  
 }
 
 .select-categories {
@@ -433,7 +439,6 @@ p {
     align-items: center;
     padding: 0 100px;
   }
-
 }
 
 .fav-categories {
@@ -528,7 +533,25 @@ p {
   .fav-categories-images .fav-category:nth-child(n+3) {
     display: none;
   }
+}
 
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .fav-categories-images {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .fav-categories-images img {
+    width: 80%;
+    height: 80%;
+  }
+
+  .fav-categories-images p {
+    font-size: 14px;
+  }
+
+  .fav-categories-images .fav-category:nth-child(n+5) {
+    display: none;
+  }
 }
 
 .best-sellers-items {
@@ -572,7 +595,6 @@ p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   gap: 20px;
 }
 
@@ -684,9 +706,14 @@ p {
   .main-price {
     font-size: 12px;
   }
-
 }
 
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .container {
+    width: 100%;
+  }
+
+}
 .middle-banners {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -766,7 +793,6 @@ p {
     margin-left: 0px;
     justify-content: center;
     padding: 0px 20px;
-
   }
 
   .middle-banner-content h2 {
@@ -782,7 +808,22 @@ p {
     height: 40px;
     font-size: 14px;
   }
+}
 
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .middle-banner-content h2 {
+    font-size: 30px;
+  }
+
+  .middle-banner-content p {
+    font-size: 14px;
+  }
+
+  .middle-banner-content button {
+    width: 100px;
+    height: 40px;
+    font-size: 14px;
+  }
 }
 
 .new-products {
@@ -863,6 +904,12 @@ p {
   }
 }
 
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .new-products-item-container {
+    flex-direction: column;
+  }
+}
+
 .popular-parts {
   display: flex;
   justify-content: center;
@@ -920,6 +967,21 @@ p {
   .popular-parts-list li {
     width: 100%;
   }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .popular-parts-list {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .popular-parts-list li {
+    width: 100%;
+  }
+
+  .container {
+    justify-content: center;
+  }
+
 }
 
 .genuine-parts {
@@ -1223,6 +1285,19 @@ p {
   .car-logos img:nth-child(-n+2) {
     display: block;
   }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .car-logos {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .car-logos img {
+    width: 100px;
+    height: 100px;
+  }
+  
 }
 
 /*! FEATURED BRANDS CSS END*/
