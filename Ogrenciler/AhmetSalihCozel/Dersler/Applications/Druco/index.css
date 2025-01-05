@@ -670,6 +670,37 @@ html {
   font-size: 18px;
   font-weight: 600;
 }
+.bs-icons{
+  display: none;
+}
+.bs-icons  button{
+  width: 40px;
+  height: 40px;
+  background-color: rgba(240,240,240,1);
+  border: 1px solid rgba(240,240,240,1);
+  border-radius: 10px;
+  padding: 10px;
+  transform: rotate(0deg);
+  transition: 500ms ease 0s;
+}
+.bs-icons button img{
+  width: 20px;
+  height: 20px;
+  font-size: 5px;
+  padding: 1px;
+  margin: auto auto;
+}
+.best-sellers-item:hover .bs-icons{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  gap: 5px;
+  right: 17px;
+  top: 17px;
+}
+.best-sellers-item:hover .bs-icons button{
+  transform: rotate(360deg);
+}
 
 .best-seller-price span {
   font-size: 14px;
@@ -754,6 +785,8 @@ html {
 
 .listWrapper a:hover {
   background-color: #ffb91f;
+  border: 1px solid #ffb91f;
+  transition: 150ms ease 0s;
 }
 
 .shopByPopular > h2 {
@@ -791,6 +824,7 @@ html {
   position: relative;
   padding: 1rem;
   align-items: center;
+  transition: 500ms ease 0s;
 }
 
 .nss-item:nth-child(3n-1) {
@@ -800,6 +834,7 @@ html {
 
 .nss-img-box {
   position: relative;
+  transition: 500ms ease 0s;
 }
 
 .nss-item::before {
@@ -810,20 +845,23 @@ html {
   background-color: #ebebeb;
   height: 1px;
   left: 32px;
+  transition: 500ms ease 0s;
 }
 
-.nss-item:hover > .nss-img-box::before {
+.nss-img-box::before {
   position: absolute;
   left: 0px;
   right: 7px;
   bottom: 14px;
   top: 0;
   content: "";
-  background: #00000040;
-  z-index: 3;
+  z-index: -1;
   transition: 500ms ease 0s;
 }
-
+.nss-item:hover > .nss-img-box::before{
+  background: #00000040;
+  z-index: 3;
+}
 .nss-img-overlay {
   position: absolute;
   left: 0;
@@ -835,7 +873,7 @@ html {
   content: "";
   background: #000;
   z-index: 3;
-  transition: 350ms ease 0s;
+  transition: 700ms ease 0s;
 }
 
 .nss-addtocart {
@@ -924,7 +962,17 @@ html {
   border-top-right-radius: 10px;
   margin-bottom: -5px;
   cursor: pointer;
+  position: relative;
 }
+.first-entry img::before{
+  position: absolute;
+  width: 100%;
+  height: 500px;
+  z-index: 30;
+  background-color: #00000040;
+  content: '';
+}
+
 .fe-content {
   padding: 25px 30px 30px;
   border: 1px solid rgba(235, 235, 235, 1);
@@ -1568,11 +1616,15 @@ footer {
   .langAndUsers {
     grid-area: lagandusers;
     justify-content: end;
+    position: relative;
   }
 
   .langAndUsers p:nth-child(1),
   .langAndUsers p:nth-child(2) {
     display: none;
+  }
+  .langAndUsers ul {
+    list-style-type: none !important;
   }
   .footer-top-content{
     display: flex;
