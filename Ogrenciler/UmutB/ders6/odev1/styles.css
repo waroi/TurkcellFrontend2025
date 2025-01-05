@@ -814,3 +814,74 @@ button:hover {
         height: 120px;
     }
 }
+
+
+.popular-parts {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.popular-parts h2 {
+    text-align: center;
+    font: 36px outfit;
+    margin-bottom: 40px;
+}
+
+.parts-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+}
+
+.part-button {
+    padding: 15px 10px;
+    background: white;
+    border: 1px solid #e7e7ea;
+    border-radius: 8px;
+    font: 15px outfit;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-align: center;
+}
+
+.part-button:hover {
+    border-color: #ffa726;
+    color: #ffa726;
+}
+
+.part-button.active {
+    background: #ffa726;
+    color: white;
+    border-color: #ffa726;
+}
+
+@media (max-width: 1200px) {
+    .parts-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .parts-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .parts-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .parts-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .popular-parts h2 {
+        font-size: 28px;
+    }
+}
