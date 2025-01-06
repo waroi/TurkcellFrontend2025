@@ -587,7 +587,7 @@ footer {
 
 .ea-wrapper {
   display: grid;
-  grid-template-columns: repeat(4, 33%);
+  grid-template-columns: repeat(4, 32%);
   gap: 20px;
   overflow-x: auto;
   padding: 23px 0 40px 0;
@@ -620,6 +620,8 @@ footer {
   background-repeat: no-repeat;
   background-size: cover;
   padding: 25px;
+  transition: 500ms 0s ease;
+  overflow: hidden;
 }
 
 .img1 {
@@ -637,7 +639,9 @@ footer {
 .img4 {
   background-image: url('https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/01/blog-bg-4-450x278.jpg');
 }
-
+.ea-img:hover {
+  transform: scale(1.1); 
+}
 .ea-author {
   display: flex;
   align-items: center;
@@ -662,6 +666,9 @@ footer {
   line-height: 14.3px;
   top: -4px;
 }
+.ea-card{
+  overflow: hidden;
+}
 
 .ea-wrapper .ea-card:nth-child(2) .ea-post-acts:nth-child(2)::after {
   content: "1";
@@ -672,6 +679,7 @@ footer {
   font-size: 13px;
   margin: 15px 0;
   font-weight: 600;
+  overflow: hidden;
 }
 
 .ea-text h4 {
@@ -856,6 +864,41 @@ footer {
   justify-content: space-between;
 }
 
+.fp-icons {
+  display: none;
+}
+.fp-icons button {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  box-shadow: 0 5px 5px rgba(101, 101, 101, 0.16);
+  border: none;
+  padding: 10px;
+  transition: 500ms ease 0s;
+  cursor: pointer;
+}
+
+.fp-icons button img {
+  width: 20px;
+  height: 20px;
+  font-size: 5px;
+  padding: 1px;
+  margin: auto auto;
+}
+
+.featured-product:hover .fp-icons {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 17px;
+  top: 17px;
+}
+
+.featured-product:hover .fp-icons button {
+  transform: rotate(360deg);
+}
+
+
 .featured-products-header-buttons {
   display: flex;
   align-items: center;
@@ -887,6 +930,7 @@ footer {
 .featured-product {
   padding: 15px;
   border: 1px solid #e4e4e4;
+  position: relative;
 }
 
 .featured-product h3 {
@@ -902,6 +946,7 @@ footer {
 .featured-product h3 a {
   text-decoration: none;
   color: #242424;
+  transition: 250ms ease 0s;
 }
 
 .featured-product img {
@@ -917,8 +962,12 @@ footer {
 .featured-stars svg {
   width: 16px;
   height: 16px;
-  fill: #eabe12;
+  fill: lightgray;
   margin-top: 10px;
+}
+
+.featured-product:nth-child(1) > .featured-stars > svg{
+  fill: #E5BD0A;
 }
 
 .stock {
@@ -1069,24 +1118,14 @@ footer {
 }
 
 .projectIdeasWrapper {
-  padding: 50px 0 50px 0;
-  background-color: #f1f3f8;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
-}
-
-.projectIdeasWidthGiver {
-  max-width: 73%;
-}
-
-.projectIdeas img {
+  height: 100%;
   width: 100%;
-  object-fit: cover;
+  background-color: #f1f3f8;
 }
 
 .projectIdeas {
-  height: 100%;
+  display: flex;
+  flex-direction: column;
   width: 100%;
 }
 
@@ -1098,41 +1137,38 @@ footer {
 }
 
 .projectIdeasImg {
-  position: relative;
   background-image: url("https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/05/home-hotspot.jpg.webp");
+  position: relative;
   width: 100%;
   height: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
 }
 
 .point {
   position: absolute;
-  height: 12px;
-  width: 12px;
+  height: 9px;
+  width: 9px;
+  outline: 6px solid #1142a2;
   border-radius: 50%;
-  border: #1142a2 solid 4px;
   background-color: white;
+  transition: all 350ms 0s ease;
 }
 
 .point.one {
-  top: 55%;
+  top: 51%;
   left: 36%;
 }
 
 .point.two {
-  top: 76%;
-  left: 30%;
+  top: 72%;
+  left: 29%;
 }
 
 .point.three {
-  top: 40%;
-  left: 75%;
-}
-
-.point.one:hover {
-  position: relative;
-  top: 55%;
-  left: 36%;
+  top: 31%;
+  left: 76%;
 }
 
 .pointOneDiv,
@@ -1146,23 +1182,58 @@ footer {
 }
 
 .point:hover>.pointOneDiv,
-.point:hover>.pointTwoDiv,
-.point:hover>.pointThreeDiv {
+.point:hover>.pointTwoDiv {
   display: block;
   z-index: 20;
   left: 25px;
   top: -70px;
 }
 
+.point:hover>.pointThreeDiv {
+  display: block;
+  z-index: 20;
+  left: -275px;
+  top: -70px;
+}
+
 .similarProductsWrapper {
-  display: grid;
+  display: flex;
+  flex-direction: column;
 }
 
 .similarProducts {
+  display: flex;
   height: 100%;
   width: 100%;
   background: #fff;
 }
+
+.sm-add-to-cart{
+  display: flex;
+  margin-top: 10px;
+  width: 100%;
+  height: 36px;
+  text-align: center;
+  justify-content: center;
+  padding: 10px;
+  font-size: 13px;
+  cursor: pointer;
+  background-color: #1246ab;
+  color: #fff;
+  font-weight: 700;
+}
+.sm-overFlow {
+  overflow: hidden;
+  height: 38px;
+}
+
+.sm-overFlow>p {
+  transition: 300ms ease 0s;
+}
+.sm-overFlow:hover p{
+  margin-top: -28px;
+}
+
 
 .sm-product {
   width: 100% !important;
@@ -1219,6 +1290,13 @@ footer {
   grid-template-columns: repeat(4, 1fr);
 }
 
+.projectIdeasMain {
+  display: flex;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  gap: 30px;
+}
+
 .more-products-left {
   width: 20%;
 }
@@ -1257,13 +1335,19 @@ footer {
 .expert-advice,
 .wc-text,
 .sign-up,
-.wbp-main,
-.projectIdeasWrapper {
+.projectIdeasMain,
+.wbp-main {
   max-width: 73%;
   margin: 0 auto;
 }
 
 @media screen and (max-width: 1400px) {
+  .projectIdeasWrapper {
+    grid-template-columns: 1fr;
+  }
+
+
+
   .part2 {
     margin-right: 15px;
   }
@@ -1294,13 +1378,12 @@ footer {
   .links,
   .expert-advice,
   .popular-categories,
+  .projectIdeasMain,
   .more-products,
   .featured-products,
   .navBottom,
   .navTop,
-  .projectIdeasWrapper,
   .hero-in,
-  .projectIdeas,
   .wbp-main,
   .newsletter {
     max-width: 100%;
@@ -1325,6 +1408,10 @@ footer {
 @media screen and (max-width: 1200px) {
   .sign-up {
     flex-direction: column;
+  }
+
+  .ourServices {
+    display: none;
   }
 
   .su-mail {
@@ -1404,6 +1491,12 @@ footer {
     width: 100%;
   }
 
+
+
+  .projectIdeasImg {
+    height: 500px;
+  }
+
   .more-products-tab {
     display: grid;
     grid-template-columns: repeat(5, 25%);
@@ -1447,63 +1540,157 @@ footer {
   .featured-products-wrapper {
     grid-template-columns: repeat(3, 1fr);
   }
-}
 
-@media screen and (max-width: 768px) {
-  .company-info {
-    width: 100%;
+  .similarProducts {
+    display: grid;
+    grid-template-columns: repeat(3, 50%);
+    overflow: auto;
   }
 
-  .more-products-tab {
-    grid-template-columns: repeat(5, 33%);
+  @media screen and (max-width: 768px) {
+
+    .pointOneDiv,
+    .pointTwoDiv,
+    .pointThreeDiv {
+      display: none;
+      position: absolute;
+      height: 200px;
+      width: 100px;
+      background-color: #fff;
+    }
+
+    .point:hover>.pointOneDiv,
+    .point:hover>.pointTwoDiv {
+      display: block;
+      z-index: 20;
+      left: 25px;
+      top: -70px;
+    }
+
+    .point:hover>.pointThreeDiv {
+      display: block;
+      z-index: 20;
+      left: -125px;
+      top: -70px;
+    }
+
+
+    .similarProducts,
+    .projectIdeasMain {
+      flex-direction: column;
+    }
+
+
+    .company-info {
+      width: 100%;
+    }
+
+    .projectIdeasImg {
+      height: 100vw;
+      width: 100%;
+      background-size: cover;
+      background-position: left;
+    }
+
+    .more-products-tab {
+      grid-template-columns: repeat(5, 33%);
+    }
+
+    .more-products-wrapper {
+      grid-template-columns: repeat(4, 50%);
+    }
+
+    .part1 {
+      background-position: 100%;
+    }
+
+    .more-product-link {
+      justify-content: center;
+    }
+
+    .popular-products {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .featured-products-wrapper {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ea-wrapper {
+      grid-template-columns: repeat(4, 100%);
+    }
   }
 
-  .more-products-wrapper {
-    grid-template-columns: repeat(4, 50%);
+  @media screen and (max-width: 576px) {
+    .projectIdeasWrapper {
+      padding: 50px 3%;
+    }
+
+    .su-text h4 {
+      font-size: 1rem;
+    }
+
+    .featured-product {
+      text-align: center;
+    }
+
+    .featured-product h3,
+    .featured-product .featured-pricing,
+    .featured-product p {
+      text-align: start;
+    }
+
+    .featured-products-header-buttons {
+      font-size: .8rem;
+      margin-top: 1rem;
+    }
+
+    .su-text p {
+      font-size: .7rem;
+    }
+
+    .footer-top {
+      grid-template-columns: 1fr;
+    }
+
+    .featured-products-header {
+      flex-direction: column;
+    }
+
+    .popular-products {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .more-products-tab {
+      grid-template-columns: repeat(5, 50%);
+    }
+
+    .featured-products-wrapper {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    .more-products-wrapper,
+    .wpb-wrapper {
+      grid-template-columns: repeat(4, 100%);
+    }
+
+
+    .htitle h2 {
+      font-size: 31px;
+    }
+
+    .htitle {
+      padding: 46px 55px 339px;
+    }
+
+    .part1 {
+      background-position: bottom;
+    }
   }
 
-  .part1 {
-    background-position: 100%;
-  }
-
-  .more-product-link {
-    justify-content: center;
-  }
-
-  .popular-products {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .featured-products-wrapper {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .ea-wrapper {
-    grid-template-columns: repeat(4, 100%);
-  }
-}
-
-@media screen and (max-width: 576px) {
-  .popular-products {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .more-products-tab {
-    grid-template-columns: repeat(5, 50%);
-  }
-
-  .featured-products-wrapper {
-    grid-template-columns: repeat(1, 1fr);
-  }
-
-  .more-products-wrapper,
-  .wpb-wrapper {
-    grid-template-columns: repeat(4, 100%);
-  }
-}
-
-@media screen and (max-width: 350px) {
-  .popular-products {
-    grid-template-columns: repeat(1, 1fr);
+  @media screen and (max-width: 350px) {
+    .popular-products {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 }
