@@ -406,7 +406,6 @@
 /*categories section*/
 .categories-section {
     max-width: 1200px;
-    /*margin: 3rem auto;*/
     padding: 0 4.2%;
 }
 
@@ -418,7 +417,7 @@
 
 .categories-grid {
     display: grid;
-    grid-template-columns: repeat(6, 1fr); /* Değişiklik burada: 6 sütun */
+    grid-template-columns: repeat(6, 1fr); 
     gap: 1.5rem;
 }
 
@@ -489,7 +488,6 @@
     margin: 0 4%;
 }
 
-/* Featured Header */
 .featured-header {
     display: flex;
     justify-content: space-between;
@@ -536,7 +534,6 @@
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Product Badges */
 .product-badges {
     position: absolute;
     top: 1rem;
@@ -562,7 +559,6 @@
     color: white;
 }
 
-/* Product Image */
 .product-image {
     margin-bottom: 1rem;
     aspect-ratio: 1;
@@ -574,7 +570,6 @@
     object-fit: contain;
 }
 
-/* Product Info */
 .product-info h3 {
     margin: 0 0 0.5rem;
     font-size: 1rem;
@@ -619,7 +614,6 @@
     font-size: 0.9rem;
 }
 
-/* Product Actions */
 .product-actions {
     display: flex;
     gap: 0.5rem;
@@ -654,7 +648,6 @@
     font-size: 0.8rem;
 }
 
-/* Features Container */
 .features-container {
     max-width: 1200px;
     margin: 2rem auto;
@@ -691,7 +684,6 @@
     color: #0d47a1;
 }
 
-/* Media Queries */
 @media (max-width: 768px) {
     .featured-header {
         flex-direction: column;
@@ -792,7 +784,6 @@
     flex: 1;
 }
 
-/* Responsive Design */
 @media (max-width: 1200px) {
     .projects-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -838,7 +829,6 @@
     }
 }
 
-/* Additional Styles */
 .product-badge {
     position: absolute;
     top: 10px;
@@ -1273,14 +1263,6 @@
     font-weight: 900;
 }
 
-.shares::before {
-    content: "\f064";
-}
-
-.comments::before {
-    content: "\f075";
-}
-
 .blog-content {
     padding: 20px;
 }
@@ -1319,7 +1301,6 @@
     color: #1557b0;
 }
 
-/* Responsive Styles */
 @media (max-width: 768px) {
     .expert-advice {
         padding: 20px;
