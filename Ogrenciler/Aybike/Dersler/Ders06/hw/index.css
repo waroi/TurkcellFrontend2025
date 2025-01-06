@@ -14,6 +14,14 @@
 .w-100 {
   width: 100%;
 }
+.d-grid-col {
+  display: grid;
+  grid-auto-flow: column;
+}
+.d-grid-row {
+  display: grid;
+  grid-auto-flow: row;
+}
 .header-wrapper {
   display: grid;
   grid-auto-flow: row;
@@ -313,4 +321,56 @@
   width: 160px;
   height: 49px;
   font-weight: 750;
+}
+.categories-bg {
+  background-color: var(--color-yellow);
+  padding: 17px 59px 3px;
+}
+.categories-part {
+  padding: 10px;
+  align-items: center;
+  justify-items: center;
+}
+.categories-part .text {
+  padding-right: 75px;
+}
+.categories-part .text h2 {
+  font-size: 40px;
+  line-height: 36px;
+  letter-spacing: 0.75px;
+}
+.categories-part .text p {
+  margin-top: 10px;
+  font-size: 17px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+.categories-part .text .btns {
+  margin-top: 20px;
+}
+.categories-part .text .btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-right: 10px;
+}
+.categories-part .cards {
+  gap: 20px;
+  grid-template-columns: repeat(5, 1fr);
+}
+.categories-part .cards .card {
+  text-align: center;
+}
+.categories-part .cards .card img {
+  border-radius: 10px;
+}
+.categories-part .cards .card a {
+  text-decoration: none;
+  color: black;
+  margin-top: 10px;
+  display: block;
+  line-height: 24px;
+  font-size: 17px;
 }
