@@ -36,15 +36,28 @@ header{
     height: 20px;
 }
 .header-secondary{
-    padding-left: 250px;
+    
+    margin-right: 200px;
 }
 .navbar{
-    background-color: rgba(18, 70, 171, 1);
-    height: 70px;
+  background-color: rgba(18, 70, 171, 1);
+  height: 70px;
+  width: 100%;
+  position: fixed;
+  top: 90px;
+  left: 0;
+  z-index: 1000;
 }
 .navbar a{
     text-decoration: none;
     color: #ffffff;
+    display: flex;
+    justify-content: center;
+}
+.navbar a img {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 70px;
 }
 .navbar-content{
     display: flex;
@@ -78,16 +91,52 @@ header{
     color: #0066cc;
     margin: 0;
     font-size: 1.2rem;
+    padding-left: 50px;
 }
 .services-left-content h1 {
     margin: 10px 0;
+    padding-left: 50px;
     font-size: 2rem;
     font-weight: bold;
+    color: #ffffff;
+}
+.search-box {
+  position: relative;
+  margin-bottom: 60px;
+  margin-left: 100px;
+}
+.search-input {
+  width: 250px;
+  padding: 0.75rem 1rem;
+  padding-right: 3rem;
+  border: none;
+  font-size: 0.875rem;
+}
+.search-icon {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.action-buttons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.action-btn {
+  position: relative;
+  color: white;
 }
 .shop-button {
     margin-top: 20px;
+    margin-left: 50px;
     padding: 5px 28px;
     height: 48px;
+    width: 150px;
     background-color: #0066cc;
     color: #fff;
     border: none;

@@ -7,7 +7,7 @@
 
 .header-top-div {
     font-family: Outfit;
-    font-weight: 600;
+    font-weight: 700;
     font-style: normal;
     font-size: 15px;
 }
@@ -24,8 +24,6 @@ header {
     color: rgba(255, 255, 255, 1);
     width: 100%;
     height: 20%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -46,14 +44,15 @@ header {
     background-color: rgba(255,255,255,1);
     border-color: rgba(235,235,235,1);
     color: rgba(32,32,32,1);
-    border-width: 0 0 1px;
-    border-style: solid;
     width: 100%;
     height: 50%;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 5fr 1fr 1fr;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
+    padding-left: 9%;
+   
+    
 }
 .header-search{
     width: 100%;
@@ -62,9 +61,9 @@ header {
     align-items: center;
     justify-content: center;
 }
-select{
-    color: black;
-}
+
+
+
 .header-left{
     width: 150px;
     height: 58px;
@@ -84,23 +83,7 @@ select{
     display: flex;
     justify-content: center;
    
-    
-    
-}
-
-
-.header-middle {
-    background-color: rgba(255, 255, 255, 1);
-    border-color: rgba(235, 235, 235, 1);
-    color: rgba(32, 32, 32, 1);
-    position: relative;
-    border-width: 0 0 1px;
-    border-style: solid;
-    padding-left: 9%;
-}
-
-.header-currency{
-    margin-left: 55%;
+  
 }
 
 
@@ -109,10 +92,8 @@ select{
     width: 90%;
     display: flex;
     flex-wrap: wrap;
-    padding-left: 50px;
+    padding-left: 3%;
     
-    
-
 }
 
 .menu{
@@ -137,12 +118,12 @@ select{
     grid-template-areas: 
         "headset info-right";
     margin: 0;
-    padding: 0; /* Remove padding */
-    align-items: center; /* Align items vertically */
-    justify-content: start; /* Align items horizontally */
+    padding: 0; 
+    align-items: center; 
+    justify-content: start; 
     width: 20%;
-    font-family: Outfit, sans-serif; /* Ensure correct font */
-    background-color: rgba(255, 185, 31, 1); /* Background color */
+    font-family: Outfit, sans-serif;
+    background-color: rgba(255, 185, 31, 1); 
 }
 
 .tel_no{
@@ -172,39 +153,36 @@ select{
 
 .search-vehicle {
     display: flex;
-    align-items: center
-    ;
+    align-items: center;
     justify-content: center;
     height: 100%;
-    
 
-    
-   
-    
 }
 
 
 .search-form{
-    width: 65%;
-    height: 100%;
+    width: 60%;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding:1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    background-color: white;
+    color: #4b5563;
+    font-size: 0.875rem;
     
-padding: 0.75rem 1rem;
-border: 1px solid #e5e7eb;
-border-radius: 0.5rem;
-appearance: none;
-background-color: white;
-color: #4b5563;
-font-size: 0.875rem;
-cursor: pointer;
 
 }
 
 
 .main{
     display: grid;
+    width: 100%;
     grid-template-columns: 40% 60%;
-    grid-area: left-side;
-
+   
 }
 
 
@@ -233,7 +211,8 @@ cursor: pointer;
 }
 
 .shop-button{
-    margin-top: 5%;
+    font-weight: 700;
+    margin-top: 2%;
     font-size: 14px;
     font-family: Outfit;
     color: #202020;
@@ -244,3 +223,180 @@ cursor: pointer;
     border-radius: 10px;
 
 }
+
+
+.main-header{
+    width: 100%;
+}
+
+
+.make-select,
+.model-select,
+.year-select,
+.engine-select {
+    width: 300px;
+    height: 50px; 
+    font-size: 1.2rem; 
+    font-weight: 500; 
+    color: #374151;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    padding: 0.5rem;
+    background-color: #f9fafb;
+    
+  }
+  
+ 
+  .search-button{
+    width: 30%;
+    height: 50px;
+    font-size: 1.2rem;
+    font-weight: 500; 
+    color: #374151;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    padding: 0.5rem;
+    background-color: #f9fafb; 
+   
+
+  }
+
+
+  .form-header{
+    font-weight: 700;
+    line-height: 25px;
+    font-size: 30px;
+    font-family: Outfit;
+  }
+
+
+  .container-element{
+    
+    align-items: center;
+    background-color: orange;
+    display: grid;
+    grid-template-columns: 2fr 4fr;
+    
+  }
+
+
+  .element-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 270px;
+    justify-self: center;
+    align-self: center;
+    
+  }
+
+  .big-header{
+    font-size: 40px;
+    font-family: Outfit;
+    font-weight: 700;
+  }
+
+  .small-header{
+    font-size: 17px;
+    font-family: Outfit;
+    font-weight: 400;
+    padding-right: 50px;
+    
+  }
+
+
+  .elements-images{
+    
+    display: grid;
+    grid-template-columns: repeat(6, 0.5fr); 
+    gap: 0px;
+    width: 100%;
+
+  }
+
+
+  .element-1{
+    
+    border-radius: 10px; 
+    background-image: url("https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/08/tires-310x310.jpg");
+    width: 174px;
+    height: 174px;
+    
+    
+  }
+
+  .element-1 p{
+    margin-top: 185px;
+    margin-left: 50px;
+  }
+  .element-2 p{
+    margin-top: 185px;
+    margin-left: 30px;
+  }
+  .element-3 p{
+    margin-top: 185px;
+    margin-left: 50px;
+  }
+  .element-4 p{
+    margin-top: 185px;
+    margin-left: 30px;
+  }
+  .element-5 p{
+    margin-top: 185px;
+    margin-left: 20px;
+  }
+
+  .element-name{
+    font-size: 17px;
+    font-family: Outfit;
+  }
+  .element-2{
+    border-radius: 10px; 
+    background-image: url("https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/08/interior-310x310.jpg");
+    width: 174px;
+    height: 174px;
+    
+    
+  }
+  .element-3{
+    border-radius: 10px; 
+    background-image: url("https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/08/entertainment-310x310.jpg");
+    width: 174px;
+    height: 174px;
+    
+    
+  }
+  .element-4{
+    border-radius: 10px; 
+    background-image: url("https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/08/oils-310x310.jpg");
+    width: 174px;
+    height: 174px;
+    
+    
+  }
+  .element-5{
+    border-radius: 10px; 
+    background-image: url("https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/08/exteriors-310x310.jpg");
+    width: 174px;
+    height: 174px;
+    
+    
+  }
+
+
+  .element{
+    width: 20%;
+    height: 50%;
+  }
+
+  .arrow{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 50px;
+    padding-top: 20px;
+    padding-right: 90px;
+  }
+
+
