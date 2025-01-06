@@ -979,7 +979,6 @@ body {
 
   /*! FOOTER SECTİON CSS END */
 
-
   @media (max-width: 1200px) {
     .navbar-wrapper {
         flex-direction: column;
@@ -1047,57 +1046,6 @@ body {
     .footer-last-content {
         flex-direction: column;
     }
-    .project-ideas-wrapper {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
-        padding: 40px 0;
-    }
-
-    .project-ideas-card {
-        padding: 20px;
-        transition: transform 0.3s;
-    }
-
-    .project-ideas-card:hover {
-        transform: translateY(-5px);
-    }
-
-    .project-ideas-card img {
-        width: 100%;
-        border-radius: 10px;
-    }
-
-    .project-ideas-card h3 {
-        font-size: 18px;
-        margin: 15px 0;
-    }
-
-    .similar-wrapper {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 30px;
-        padding: 40px 0;
-    }
-
-    .similar-card {
-        padding: 20px;
-        transition: transform 0.3s;
-    }
-
-    .similar-card:hover {
-        transform: translateY(-5px);
-    }
-
-    .similar-card img {
-        width: 100%;
-        border-radius: 10px;
-    }
-
-    .similar-card h4 {
-        font-size: 16px;
-        margin-top: 10px;
-    }
 }
 
 
@@ -1162,72 +1110,9 @@ body {
         flex-direction: column;
         align-items: center;
     }
-    
-
-    .hot-products-wrapper {
-        grid-template-columns: 1fr;
-        gap: 20px;
-        padding: 20px 0;
-    }
-    .project-ideas-wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-        padding: 20px 0;
-    }
-
-    .project-ideas-card {
-        width: 100%;
-        text-align: center;
-        padding: 15px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        border-radius: 8px;
-    }
-
-    .project-ideas-card img {
-        width: 100%;
-        height: auto;
-        border-radius: 8px;
-    }
-
-    .project-ideas-card h3 {
-        font-size: 16px;
-        margin: 10px 0;
-    }
-    .similar-wrapper {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        padding: 20px 0;
-    }
-
-    .similar-card {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        padding: 15px;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-    }
-
-    .similar-card img {
-        width: 80%;
-        height: auto;
-        border-radius: 8px;
-    }
-
-    .similar-card h4 {
-        font-size: 14px;
-        margin-top: 10px;
-    }
 }
 
-
-
-
+  
 
 
   
