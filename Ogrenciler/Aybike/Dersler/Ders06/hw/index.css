@@ -502,3 +502,100 @@
   text-align: center;
   font-weight: 700 !important;
 }
+.popular{
+  padding: 59px;
+}
+.popular h2{
+  font-size: 36px;
+  letter-spacing: 0.9px;
+  font-weight: 700;
+  text-align: center;
+  padding-bottom: 50px;
+}
+.popular ul{
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: auto;
+  grid-auto-flow: row;
+  list-style: none;
+  gap: 20px;
+}
+.popular li{
+  display: grid;
+  border: 1px solid #cbcbcb;
+  border-color: rgba(235, 235, 235, 1);
+  border-radius: 8px;
+  line-height: 22px;
+  font-size: 15px;
+  justify-items: center;
+  align-items: center;
+}
+.popular li a{
+  padding: 14px 5px;
+  text-decoration: none;
+  color: black;
+}
+.genuine-bg {
+  background-image: linear-gradient(rgba(3, 3, 5, 0.5), rgba(3, 3, 5, 0.5)),
+    url("https://demothemesky-be87.kxcdn.com/druco/wp-content/uploads/2022/08/banner-3.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 150px 75px;
+  display: grid;
+  align-items: center;
+  margin-top: 0px;
+  margin-bottom: 81px;
+  padding: 28px 0px 37px 0px;
+}
+.genuine-bg h2{
+  font-size: 90px;
+  line-height: 85px;
+  letter-spacing: 0.9px;
+}
+.genuine-bg p{
+  font-size: 18px;
+  color: white;
+}
+.blog h2{
+  padding-top: 50px;
+  font-size: 36px;
+  letter-spacing: 0.9px;
+  font-weight: 700;
+  text-align: center;
+  padding-bottom: 50px;
+}
+.professional-bg {
+  background-image: linear-gradient(rgba(3, 3, 5, 0.5), rgba(3, 3, 5, 0.5)),
+    url("https://demothemesky-be87.kxcdn.com/druco/wp-content/uploads/2022/08/home-about.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  margin-top: 0px;
+  margin-bottom: 78px;
+  padding: 112px 0px 103px 0px;
+}
+.professional-bg p{
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+}
+.professional-bg h2{
+  color: white;
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 1.16em;
+  letter-spacing: 0.9px;
+  text-align: center;
+}
+.professional-bg img{
+  width: 70px;
+  height: 70px;
+}
+.professional-bg .elements{
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  grid-auto-flow: row;
+  gap: 20px;
+
+}
