@@ -137,3 +137,55 @@ nav .container {
 	margin-bottom: 30px;
 	margin-top: 30px; /*TODO: Will be deleted */
 }
+
+.featured-header {
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.featured-header h3 {
+	font-size: 26px;
+	margin-top: 30px; /*TODO: Will be deleted */
+}
+.featured-header ul {
+	display: flex;
+	gap: 15px;
+	list-style: none;
+}
+.featured-products .container {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+.featured-products-item {
+	border: 1px solid rgb(147, 147, 147);
+}
+.featured-products-item img {
+	width: 100%;
+}
+.product {
+	padding: 30px;
+}
+.featured-products-grid {
+	display: grid;
+	grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+.advertisement .container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.ad-item {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	margin: 20px;
+	gap: 20px;
+}
+.ad-content {
+	display: flex;
+	flex-direction: column;
+}
