@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS - Transitions</title>
+
+    <style>
+        .container {
+            width: 100%;
+            height: 700px;
+        }
+
+        .box2 {
+            width: 150px;
+            height: 150px;
+            background-color: greenyellow;
+            animation: boxbox 2s linear infinite normal;
+            transition-property: all;
+
+        }
+
+        @keyframes boxbox {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+
+            25% {
+                transform: translate(0, 780px) rotate(90deg);
+            }
+
+            50% {
+                transform: translate(1750px, 780px) rotate(180deg);
+            }
+
+            75% {
+                transform: translate(1700px, 0) rotate(270deg);
+            }
+
+            100% {
+                transform: translate(0, 0) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="box2"></div>
+
+    </div>
+</body>
+
+</html>
