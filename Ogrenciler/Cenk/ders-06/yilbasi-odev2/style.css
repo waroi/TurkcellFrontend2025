@@ -863,3 +863,12 @@ hr.vertical {
     color: var(--blue-text);
     margin-bottom: 20px;
 }
+.must-left-icon:hover h3{
+    color: #df2626;
+}
+.must-left-icon:hover{
+    cursor: pointer;
+}
+.must-left-icon:nth-of-type(1) h3{
+    color: #df2626;
+}
