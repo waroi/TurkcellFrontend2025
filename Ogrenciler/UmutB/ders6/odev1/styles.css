@@ -647,7 +647,7 @@ button:hover {
     overflow: hidden;
     position: relative;
 }
-
+.add-cart,
 .button {
     margin-top: 40px;
     width: 25%;
@@ -718,8 +718,9 @@ button:hover {
 }
 
 .grid-column h2 {
-    font: 24px outfit;
+    font: 40px outfit !important;
     margin-bottom: 30px;
+    font-weight: bold;
 }
 
 .product-list {
@@ -738,9 +739,8 @@ button:hover {
 }
 
 .product-item img {
-    width: 100px;
-    height: 100px;
-    object-fit: contain;
+    width: 140px;
+    height: auto;
 }
 
 .product-details {
@@ -772,18 +772,10 @@ button:hover {
 }
 
 .add-cart {
-    background-color: #ffa726;
-    color: white;
-    border: none;
     padding: 8px 16px;
-    border-radius: 4px;
     text-decoration: none;
     font: 14px outfit;
     width: fit-content;
-}
-
-.add-cart:hover {
-    background-color: #fb8c00;
 }
 
 @media (max-width: 992px) {
@@ -851,6 +843,10 @@ button:hover {
     background: #ffa726;
     color: white;
     border-color: #ffa726;
+}
+.add-cart:hover{
+    background: #0c0b0b;
+    color: #ffa726;
 }
 
 @media (max-width: 1200px) {
@@ -1052,6 +1048,9 @@ p {
     padding: 40px 20px;
 }
 
+.newsection{
+    margin-top: 200px;
+}
 .newsletter-content {
     max-width: 1200px;
     margin: 0 auto;
