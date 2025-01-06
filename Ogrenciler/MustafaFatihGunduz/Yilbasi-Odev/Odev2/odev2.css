@@ -979,6 +979,7 @@ body {
 
   /*! FOOTER SECTİON CSS END */
 
+
   @media (max-width: 1200px) {
     .navbar-wrapper {
         flex-direction: column;
@@ -1046,6 +1047,57 @@ body {
     .footer-last-content {
         flex-direction: column;
     }
+    .project-ideas-wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        padding: 40px 0;
+    }
+
+    .project-ideas-card {
+        padding: 20px;
+        transition: transform 0.3s;
+    }
+
+    .project-ideas-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .project-ideas-card img {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .project-ideas-card h3 {
+        font-size: 18px;
+        margin: 15px 0;
+    }
+
+    .similar-wrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        padding: 40px 0;
+    }
+
+    .similar-card {
+        padding: 20px;
+        transition: transform 0.3s;
+    }
+
+    .similar-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .similar-card img {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .similar-card h4 {
+        font-size: 16px;
+        margin-top: 10px;
+    }
 }
 
 
@@ -1110,62 +1162,72 @@ body {
         flex-direction: column;
         align-items: center;
     }
-}
+    
 
-@media (max-width: 480px) {
-    .navbar-wrapper {
-        flex-direction: column;
-    }
-
-    .banner-wrapper {
-        flex-direction: column;
-    }
-
-    .banner-container {
-        flex-direction: column;
-        padding: 10px;
-    }
-
-    .banner-left-description,
-    .banner-left-image {
-        width: 100%;
-        height: 200px;
-    }
-
-    .categories-items {
+    .hot-products-wrapper {
         grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px 0;
     }
-
-    .featured-products-wrapper {
-        grid-template-columns: 1fr;
-    }
-
-    .must-product-wrapper {
-        grid-template-columns: 1fr;
-    }
-
-    .must-product-item-wrapper {
-        grid-template-columns: 1fr;
-    }
-
-    .footer-first-content {
-        grid-template-columns: 1fr;
-    }
-
-    .footer-last-content {
+    .project-ideas-wrapper {
+        display: flex;
         flex-direction: column;
         align-items: center;
+        gap: 20px;
+        padding: 20px 0;
     }
 
-    .newsletter-wrapper {
+    .project-ideas-card {
+        width: 100%;
+        text-align: center;
+        padding: 15px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+    }
+
+    .project-ideas-card img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    .project-ideas-card h3 {
+        font-size: 16px;
+        margin: 10px 0;
+    }
+    .similar-wrapper {
+        display: flex;
         flex-direction: column;
+        gap: 20px;
+        padding: 20px 0;
     }
 
-    .newsletter-form {
+    .similar-card {
         width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
     }
 
-    .search-bar-newsletter {
-        width: 100%;
+    .similar-card img {
+        width: 80%;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    .similar-card h4 {
+        font-size: 14px;
+        margin-top: 10px;
     }
 }
+
+
+
+
+
+
+  
