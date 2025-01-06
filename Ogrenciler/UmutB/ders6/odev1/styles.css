@@ -1034,17 +1034,18 @@ p {
 
 .read-more {
     display: inline-block;
-    background: #ffa726;
-    color: white;
+    background: #FFB92A;
+    color: rgb(0, 0, 0);
     text-decoration: none;
     padding: 8px 20px;
-    border-radius: 4px;
+    border-radius: 20px;
     font: 14px outfit;
     transition: background 0.3s ease;
 }
 
 .read-more:hover {
-    background: #fb8c00;
+    background: #000000;
+    color: #FFB92A;
 }
 
 .post-list {
