@@ -375,15 +375,15 @@
   line-height: 24px;
   font-size: 17px;
 }
-.active{
+.active {
   color: rgba(255, 185, 31, 1);
 }
-.products-bg{
+.products-bg {
   padding-left: 59px;
   padding-right: 59px;
   padding-bottom: 86px;
 }
-.products-tabs{
+.products-tabs {
   font-size: 36px;
   letter-spacing: 0.9px;
   padding: 5px 60px 5px 0px;
@@ -397,31 +397,108 @@
   grid-template-rows: auto;
   grid-auto-flow: row;
 }
-.product-card{
+.product-card {
   border: 0.5px solid rgba(235, 235, 235, 1);
 }
-.product-card span{
+.product-card span,
+.new span {
   font-size: 18px;
   font-weight: 600;
   letter-spacing: 0.4px;
   color: var(--color-blue);
 }
-.product-card del{
+.product-card del,
+.new del {
   font-size: 15px;
   font-weight: 600;
   letter-spacing: 0.4px;
   color: rgba(0, 0, 0, 0.206);
 }
-.product-card .text{
+.product-card .text,
+.new .text {
   padding: 25px 20px;
 }
-.product-card .text a{
-  font-size: 20px;
+.product-card .text a,
+.new .text a {
+  font-size: 16px;
   font-weight: 400;
   color: black;
   text-decoration: none;
 }
-.product-card .stars{
+.product-card .stars,
+.new .stars {
   margin-top: 13px;
   margin-bottom: 16px;
+}
+.pipes-sale {
+  gap: 30px;
+}
+.pipes-sale .pipe,
+.pipes-sale .sale {
+  padding: 59px;
+  color: white;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.pipes-sale .pipe h2,
+.pipes-sale .sale h2 {
+  width: 70%;
+  font-size: 48px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+.pipes-sale .pipe a,
+.pipes-sale .sale a,
+.new .btn {
+  width: fit-content;
+  padding: 12px 26px;
+  margin-top: 30px;
+  text-transform: uppercase;
+  line-height: 24px;
+  display: block;
+  font-size: 14px;
+  background: rgba(255, 185, 31, 1);
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 42px;
+  color: black;
+}
+
+.pipes-sale .pipe {
+  background-image: url(https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/08/banner-1.jpg);
+}
+.pipes-sale .sale {
+  background-image: url(https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/08/banner-2.jpg);
+}
+
+.new {
+  padding: 59px;
+}
+.new h2 {
+  margin: 0 0 30px;
+  font-size: 36px;
+  letter-spacing: 0.9px;
+  padding-left: 30px;
+}
+.new .cards {
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: auto;
+}
+.new .specials .cards {
+  border-right: 0.5px solid rgba(235, 235, 235, 1);
+  border-left: 0.5px solid rgba(235, 235, 235, 1);
+}
+.new .cards .card {
+  margin: 30px;
+  align-items: center;
+  border-bottom: 0.5px solid rgba(235, 235, 235, 1);
+}
+.new .btn {
+  padding: 6px;
+  font-size: 12px !important;
+  min-width: 120px;
+  text-align: center;
+  font-weight: 700 !important;
 }
