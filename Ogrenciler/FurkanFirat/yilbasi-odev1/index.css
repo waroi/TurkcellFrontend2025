@@ -140,6 +140,32 @@ body {
   .popular-parts ul {
     grid-template-columns: repeat(3, 1fr) !important;
   }
+  .g-parts-text h2 {
+    font-size: 36px !important;
+    line-height: 40px !important;
+    text-align: center !important;
+  }
+  .g-parts-text p {
+    font-size: 14px;
+    text-align: center !important;
+  }
+  .blog-text-right{
+    padding: 0 0 0 39px !important;
+  }
+  .blog-content-text button{
+    display: none;
+  }
+  .team-support{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: auto;
+  }
+  .team-support-content-images{
+    grid-template-rows: 1fr 1fr 1fr !important;
+    grid-template-columns: 1fr !important;
+  }
   .category-cards {
     grid-template-columns: 1fr !important;
     justify-items: center;
@@ -280,6 +306,45 @@ body {
   .popular-parts ul {
     grid-template-columns: repeat(4, 1fr) !important;
   }
+  .g-parts {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+  }
+  .g-parts-text h2 {
+    font-size: 50px !important;
+    line-height: 60px !important;
+  }
+  .g-parts-text p {
+    font-size: 14px;
+  }
+  .blog{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .blog-container{
+    padding-left: 15px;
+    padding-right: 15px
+  }
+  .blog-text-right{
+    padding: 0 0 0 29px !important;
+  }
+  .blog-content-text button{
+    display: none;
+  }
+  .team-support{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: auto;
+  }
+  .team-support-content-images{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr !important;
+    grid-template-rows: 1fr !important;
+  }
   .category-cards {
     grid-template-columns: 1fr 1fr 1fr !important;
   }
@@ -342,6 +407,17 @@ body {
   .mid-banner {
     height: 350px !important;
   }
+  .team-support{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: auto;
+  }
+  .team-support-content-images{
+    grid-template-columns: 1fr 1fr 1fr !important;
+    grid-template-rows: 1fr !important;
+  }
   .brand-logos {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -379,6 +455,13 @@ body {
   }
   .header-bottom {
     display: block;
+  }
+  .team-support{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: auto;
   }
 }
 
