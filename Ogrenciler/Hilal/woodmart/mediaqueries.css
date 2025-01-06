@@ -249,8 +249,14 @@ footer div.row {
   position: relative;
   overflow: hidden; /* Taşan satırları gizler */
 }
+.expert-advice .row > .col {
+  display: none;
+}
 .expert-advice .read-more > button {
   border-bottom: none;
+}
+.must-products .product-card {
+  display: none;
 }
 .product-card {
   border: 1px solid var(--border-color);
@@ -260,15 +266,17 @@ footer div.row {
   justify-content: center;
 }
 
-/* .expert-advice .row:before {
-  content: "";
-  position: absolute;
-  top: 0px;
-  bottom: 0px;
-  left: -30px;
-  height: 40%;
-  background-image: url("https://icones.pro/wp-content/uploads/2021/06/symbole-fleche-gauche-gris.png");
-} */
+.must-products .tabs a {
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.must-products .tabs img {
+  max-height: 25px;
+}
+
+.must-products .tabs li.active > a {
+  color: red;
+}
 /* Grid oluşturma adımları:
 1-row sınıfına sahip bir parent oluşturuyoruz, 
 2-altındaki child elementlere mutlaka col sınıfını ekliyoruz.
@@ -284,7 +292,7 @@ footer div.row {
   .row.eq-sm {
     grid-template-columns: repeat(auto-fit, minmax(0px, 1fr));
   }
-  .row .eq-sm {
+  .eq-sm .col {
     grid-column: span 1;
   }
 }
@@ -307,9 +315,12 @@ footer div.row {
   }
   .col-sm-12 {
     grid-column: span 12;
-  } /* 12/12 */
-  .d-sm-none {
-    display: none;
+  }
+  .expert-advice .row > .col:nth-child(1) {
+    display: inline-block;
+  }
+  .must-products .product-card:nth-child(-n + 2) {
+    display: inline-block;
   }
 }
 
@@ -333,15 +344,18 @@ footer div.row {
   .col-md-12 {
     grid-column: span 12;
   }
-  .d-md-none {
-    display: none;
+  .expert-advice .row > .col:nth-child(-n + 2) {
+    display: inline-block;
+  }
+  .must-products .product-card:nth-child(-n + 3) {
+    display: inline-block;
   }
 }
-@media (min-width: 768px) and (max-width: 992px) {
+@media (min-width: 768px) and (max-width: 1100px) {
   .row.eq-md {
     grid-template-columns: repeat(auto-fit, minmax(0px, 1fr));
   }
-  .row .eq-md {
+  .eq-md .col {
     grid-column: span 1;
   }
 }
@@ -371,5 +385,11 @@ footer div.row {
   }
   .col-lg-12 {
     grid-column: span 12;
+  }
+  .expert-advice .row > .col:nth-child(-n + 3) {
+    display: inline-block;
+  }
+  .must-products .product-card:nth-child(-n + 3) {
+    display: inline-block;
   }
 }
