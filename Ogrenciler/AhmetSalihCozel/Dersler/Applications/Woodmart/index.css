@@ -8,6 +8,8 @@
   font-style: normal;
 }
 
+/* ----------- HEADER ----------- */
+
 .navTopStartList {
   margin-left: 50px;
   display: grid;
@@ -77,6 +79,9 @@
 .nav-bottom-wrapper {
   background-color: #1246ab;
   width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 4242;
 }
 
 .navTopEndList {
@@ -163,7 +168,6 @@ hr.vertical {
   width: 46px;
   border-radius: 50%;
   border-style: solid;
-  /* Add border style */
   border-width: 0.1px;
   border-color: #bebebe5c;
   display: inline-block;
@@ -388,7 +392,6 @@ footer {
 }
 
 .company-info {
-  font-family: "Work Sans", Arial, Helvetica, sans-serif;
   padding: 0px 15px;
   line-height: 1.7;
 }
@@ -639,9 +642,11 @@ footer {
 .img4 {
   background-image: url('https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/01/blog-bg-4-450x278.jpg');
 }
+
 .ea-img:hover {
-  transform: scale(1.1); 
+  transform: scale(1.1);
 }
+
 .ea-author {
   display: flex;
   align-items: center;
@@ -666,7 +671,8 @@ footer {
   line-height: 14.3px;
   top: -4px;
 }
-.ea-card{
+
+.ea-card {
   overflow: hidden;
 }
 
@@ -867,6 +873,7 @@ footer {
 .fp-icons {
   display: none;
 }
+
 .fp-icons button {
   width: 40px;
   height: 40px;
@@ -897,7 +904,6 @@ footer {
 .featured-product:hover .fp-icons button {
   transform: rotate(360deg);
 }
-
 
 .featured-products-header-buttons {
   display: flex;
@@ -966,7 +972,7 @@ footer {
   margin-top: 10px;
 }
 
-.featured-product:nth-child(1) > .featured-stars > svg{
+.featured-product:nth-child(1)>.featured-stars>svg {
   fill: #E5BD0A;
 }
 
@@ -1157,8 +1163,8 @@ footer {
 }
 
 .point.one {
-  top: 51%;
-  left: 36%;
+  top: 53%;
+  left: 38%;
 }
 
 .point.two {
@@ -1208,7 +1214,7 @@ footer {
   background: #fff;
 }
 
-.sm-add-to-cart{
+.sm-add-to-cart {
   display: flex;
   margin-top: 10px;
   width: 100%;
@@ -1222,6 +1228,7 @@ footer {
   color: #fff;
   font-weight: 700;
 }
+
 .sm-overFlow {
   overflow: hidden;
   height: 38px;
@@ -1230,10 +1237,10 @@ footer {
 .sm-overFlow>p {
   transition: 300ms ease 0s;
 }
-.sm-overFlow:hover p{
+
+.sm-overFlow:hover p {
   margin-top: -28px;
 }
-
 
 .sm-product {
   width: 100% !important;
@@ -1346,8 +1353,6 @@ footer {
     grid-template-columns: 1fr;
   }
 
-
-
   .part2 {
     margin-right: 15px;
   }
@@ -1438,12 +1443,11 @@ footer {
     gap: 22px;
   }
 
-  .featured-products-wrapper {
+  .featured-products-wrapper, .popular-products {
     grid-template-columns: repeat(4, 1fr);
   }
 
   .popular-products {
-    grid-template-columns: repeat(4, 1fr);
     margin-bottom: 2rem;
   }
 }
@@ -1490,8 +1494,6 @@ footer {
   .su-mail {
     width: 100%;
   }
-
-
 
   .projectIdeasImg {
     height: 500px;
@@ -1574,12 +1576,10 @@ footer {
       top: -70px;
     }
 
-
     .similarProducts,
     .projectIdeasMain {
       flex-direction: column;
     }
-
 
     .company-info {
       width: 100%;
@@ -1673,7 +1673,6 @@ footer {
     .wpb-wrapper {
       grid-template-columns: repeat(4, 100%);
     }
-
 
     .htitle h2 {
       font-size: 31px;

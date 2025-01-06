@@ -1,0 +1,38 @@
+body {
+  width: 90%;
+  height: 100%;
+}
+.box {
+  width: 20vh;
+  height: 20vh;
+  background-color: brown;
+  transition: all 2s ease-in-out;
+  animation: odev 4s ease-in-out infinite;
+}
+.box:hover {
+  background-color: aquamarine;
+  animation-play-state: paused;
+  cursor: pointer;
+}
+
+@keyframes odev {
+  0% {
+    transform: translate(0, 0) rotate(0);
+  }
+  25% {
+    transform: translate(0, 60vh) rotate(180deg);
+    background-color: burlywood;
+  }
+  50% {
+    transform: translate(70vw, 60vh) rotate(0);
+    background-color: cadetblue;
+  }
+  75% {
+    transform: translate(70vw, 0) rotate(180deg);
+    background-color: cornflowerblue;
+  }
+  100% {
+    transform: translate(0, 0) rotate(0);
+    background-color: brown;
+  }
+}

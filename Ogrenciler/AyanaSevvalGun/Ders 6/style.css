@@ -1,0 +1,50 @@
+body{
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-color: aqua;
+
+}
+.box{
+    background-color: blueviolet;
+    width: 100px;
+    height: 100px;
+    /*border radius falan eklenebilir*/
+    /*kısa hali
+    transition: all 2s cubic-bezier(0.075, 0.82, 0.165, 1);*/
+    /*uzun hali
+    transition-property: width ,height;
+    transition-duration: 2s;
+    transition-timing-function: ease-in-out;
+    */
+   /* animation-name: aa;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    */
+    animation: aa 2s ease-in-out infinite 1s  alternate-reverse;
+
+}
+.box:hover{
+    background-color: green;
+    width:150px;
+    height:300px;
+    }
+
+@keyframes aa {
+    0%{
+        background-color: brown;
+        transform: translate(0,0);
+    }
+    50%{
+        background-color: rgb(165, 42, 130);
+        transform: translate(100px,-100px) rotate(180deg);
+    }
+    100%{
+        background-color: brown;
+        transform: translate(0,0);
+    }
+}
+/*bir dikdörtgen çizip döne döne tüm köşeleri gezecek bir animasyon*/

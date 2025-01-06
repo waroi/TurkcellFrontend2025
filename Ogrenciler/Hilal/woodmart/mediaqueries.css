@@ -25,7 +25,7 @@ body {
 .col {
   grid-column: span 12;
 }
-section:not(.blog, .newsletter) {
+section:not(.blog, .newsletter, .banner) {
   margin: 60px 0px;
 }
 h1,
@@ -277,6 +277,17 @@ footer div.row {
 .must-products .tabs li.active > a {
   color: red;
 }
+
+.main-ad {
+  background-image: url("https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2021/12/slider-3-2.jpg");
+}
+.service-ad {
+  background-image: url("https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2021/12/slider-3-2.jpg");
+}
+.shipping-ad {
+  background-image: url("https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2021/12/slider-3-2.jpg");
+}
+
 /* Grid oluşturma adımları:
 1-row sınıfına sahip bir parent oluşturuyoruz, 
 2-altındaki child elementlere mutlaka col sınıfını ekliyoruz.
