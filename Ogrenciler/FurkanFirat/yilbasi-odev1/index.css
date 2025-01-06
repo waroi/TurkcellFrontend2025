@@ -347,6 +347,7 @@ body {
   }
   .category-cards {
     grid-template-columns: 1fr 1fr 1fr !important;
+    justify-content: center !important;
   }
   .category-card:nth-of-type(4),
   .category-card:nth-of-type(5) {
@@ -415,6 +416,7 @@ body {
     width: auto;
   }
   .team-support-content-images{
+    display: grid;
     grid-template-columns: 1fr 1fr 1fr !important;
     grid-template-rows: 1fr !important;
   }
