@@ -1,66 +1,665 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Druco</title>
-		<link rel="stylesheet" href="index.css" />
-		<script
-			src="https://kit.fontawesome.com/1618e98dac.js"
-			crossorigin="anonymous"
-		></script>
-	</head>
-	<body>
-		<header class="header-wrapper">
-			<div class="header-top">
-				<div class="container header header-top-container">
-					<div class="header-top-left">FREE DELIVERY on all orders</div>
-					<div class="header-top-mid">
-						<span><i class="fa-solid fa-bolt-lightning"></i>FLASH SALE:</span>
-						60% OFF CAR BATTERIES | USE CODE "BATT60"
-					</div>
-					<div class="header-top-menu">
-						<ul class="d-grid-col">
-							<li>
-								<a>Help</a>
-							</li>
-							<li>
-								<a>About Us</a>
-							</li>
-							<li>
-								<a>Contact Us</a>
-							</li>
-							<li>
-								<a>Blog</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="header-mid">
-				<div class="container header header-mid-container">
-					<div class="logo">
-						<img
-							src="https://druco-be87.kxcdn.com/druco/wp-content/themes/druco/images/logo.png"
-							alt=""
-						/>
-					</div>
-					<div class="search">
-						<div class="categories">All Categories</div>
-						<div class="search-button">
-							<p>Search for products</p>
-							<div class="search-icon">
-								<i class="fa-light fa-magnifying-glass"></i>
-							</div>
-						</div>
-					</div>
-					<div class="languages"></div>
-					<div class="icons"></div>
-				</div>
-			</div>
-			<div class="header-bottom">
-				<div class="container header header-bottom-container"></div>
-			</div>
-		</header>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Druco</title>
+    <link rel="stylesheet" href="index.css" />
+    <script
+      src="https://kit.fontawesome.com/1618e98dac.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header class="header-wrapper">
+      <div class="header-top">
+        <div class="container header header-top-container">
+          <div class="header-top-left">FREE DELIVERY on all orders</div>
+          <div class="header-top-mid">
+            <span><i class="fa-solid fa-bolt-lightning"></i>FLASH SALE:</span>
+            60% OFF CAR BATTERIES | USE CODE "BATT60"
+          </div>
+          <div class="header-top-menu">
+            <ul class="d-grid-col">
+              <li>
+                <a>Help</a>
+              </li>
+              <li>
+                <a>About Us</a>
+              </li>
+              <li>
+                <a>Contact Us</a>
+              </li>
+              <li>
+                <a>Blog</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="header-mid">
+        <div class="container header header-mid-container">
+          <div class="logo">
+            <img
+              src="https://druco-be87.kxcdn.com/druco/wp-content/themes/druco/images/logo.png"
+              alt=""
+            />
+          </div>
+          <div class="search">
+            <div class="categories">
+              All Categories
+              <i class="fa-solid fa-angle-down angle-down-icon"></i>
+            </div>
+            <div class="search-button">
+              <input type="text" placeholder="Search for products" />
+              <div class="search-icon">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </div>
+            </div>
+          </div>
+          <div class="languages">
+            <div class="language">
+              <p>English</p>
+              <i class="fa-solid fa-angle-down angle-down-icon"></i>
+            </div>
+            <div class="language">
+              <p>USD</p>
+              <i class="fa-solid fa-angle-down angle-down-icon"></i>
+            </div>
+          </div>
+          <div class="icons">
+            <div class="icon">
+              <i class="fa-regular fa-user"></i>
+            </div>
+            <div class="icon">
+              <i class="fa-regular fa-heart"></i>
+              <div class="count">0</div>
+            </div>
+            <div class="icon">
+              <i class="fa-solid fa-cart-shopping"></i>
+              <div class="count">1</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header-bottom">
+        <div class="container header header-bottom-container">
+          <div class="header-bottom-menu">
+            <ul>
+              <li>
+                <a>HOME</a>
+                <i class="fa-solid fa-angle-down angle-down-icon"></i>
+              </li>
+              <li>
+                <a>PAGES</a>
+                <i class="fa-solid fa-angle-down angle-down-icon"></i>
+              </li>
+              <li>
+                <a>SERVICE PARTS</a>
+                <i class="fa-solid fa-angle-down angle-down-icon"></i>
+              </li>
+              <li>
+                <a>BRAKE</a>
+                <i
+                  class="fa-solid fa-angle-down angle-down-icon angle-down-icon"
+                ></i>
+              </li>
+              <li>
+                <a>CAR BATTERIES</a>
+                <i class="fa-solid fa-angle-down"></i>
+              </li>
+              <li>
+                <a>TOOLS & GARAGE</a>
+              </li>
+            </ul>
+          </div>
+          <div class="contact-us">
+            <img
+              src="https://druco-be87.kxcdn.com/druco/wp-content/themes/druco/images/phone-icon.png"
+              alt=""
+            />
+            <div class="contact-us-text">
+              <p>Call us 24/7</p>
+              <span>+08 9229 8228</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="banner-bg w-100">
+        <div class="banner w-100">
+          <div class="form w-100">
+            <h2>SEARCH BY VEHICLE</h2>
+            <form action="">
+              <div class="select-item w-100">
+                <select name="make" id="make" class="w-100">
+                  <option value="make">Select Make</option>
+                </select>
+                <i class="fa-solid fa-angle-down angle-down-icon"></i>
+              </div>
+              <div class="select-item w-100">
+                <select name="model" id="model" class="w-100">
+                  <option value="model">Select Model</option>
+                </select>
+                <i class="fa-solid fa-angle-down angle-down-icon"></i>
+              </div>
+              <div class="select-item w-100">
+                <select name="year" id="year" class="w-100">
+                  <option value="year">Select Year</option>
+                </select>
+                <i class="fa-solid fa-angle-down angle-down-icon"></i>
+              </div>
+              <div class="select-item w-100">
+                <select name="engine" id="engine" class="w-100">
+                  <option value="engine">Select Engine</option>
+                </select>
+                <i class="fa-solid fa-angle-down angle-down-icon"></i>
+              </div>
+              <button>GO</button>
+            </form>
+          </div>
+          <div class="text">
+            <h5>NEVER MISS A SALE</h5>
+            <h1>Rocket Racing Wheels</h1>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut,
+              facilis natus. Totam impedit ipsum nemo ut cupiditate numquam
+            </p>
+            <button>SHOP NOW</button>
+          </div>
+        </div>
+      </section>
+      <section class="categories-bg w-100">
+        <div class="categories-part d-grid-col w-100">
+          <div class="text">
+            <h2>Categories</h2>
+            <p>March Favorites</p>
+            <div class="btns">
+              <button class="btn">
+                <i class="fa-solid fa-arrow-left"></i>
+              </button>
+              <button class="btn">
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+          <div class="cards d-grid-col w-100">
+            <div class="card w-100">
+              <img
+                class="w-100"
+                src="https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/08/tires-310x310.jpg"
+                alt=""
+              />
+              <a href="">Wheels & Tires</a>
+            </div>
+            <div class="card">
+              <img
+                class="w-100"
+                src="https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/08/interior-310x310.jpg"
+                alt=""
+              />
+              <a href="">Interiors</a>
+            </div>
+            <div class="card">
+              <img
+                class="w-100"
+                src="	https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/08/entertainment-310x310.jpg"
+                alt=""
+              />
+              <a href="">Entertainments</a>
+            </div>
+            <div class="card">
+              <img
+                class="w-100"
+                src="https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/08/oils-310x310.jpg"
+                alt=""
+              />
+              <a href="">Fluids & Chemicals</a>
+            </div>
+            <div class="card">
+              <img
+                class="w-100"
+                src="https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/08/exteriors-310x310.jpg"
+                alt=""
+              />
+              <a href="">Exteriors</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="products-bg">
+        <div class="products-tabs d-grid-col">
+          <h2 class="active">Bestsellers</h2>
+          <h2>Popular items</h2>
+        </div>
+        <div class="cards d-grid-col">
+          <div class="product-card">
+            <img
+              class="w-100"
+              src="https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/04/28-480x480.jpg"
+            />
+            <div class="text">
+              <h3>
+                <a
+                  href="https://demo.theme-sky.com/druco/shop/valvoline-oil-stockists/"
+                  >Vavoline Oil Stockists</a
+                >
+              </h3>
+              <div class="stars">
+                <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                <i class="fas fa-star-half-stroke" style="color: #ffd43b"></i>
+                <i class="fa-solid fa-star" style="color: #9fa0a3"></i>
+              </div>
+              <p><span>$106.50</span> <del>$202.87</del></p>
+            </div>
+          </div>
+          <div class="product-card">
+            <img
+              class="w-100"
+              src="https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/04/06-480x480.jpg"
+            />
+            <div class="text">
+              <h3>
+                <a
+                  href="https://demo.theme-sky.com/druco/shop/racing-custom-wheels-vf577/"
+                  >Racing Custom Wheels VF577</a
+                >
+              </h3>
+              <div class="stars">
+                <i class="fa-solid fa-star" style="color: #9fa0a3"></i>
+                <i class="fa-solid fa-star" style="color: #9fa0a3"></i>
+                <i class="fa-solid fa-star" style="color: #9fa0a3"></i>
+                <i class="fa-solid fa-star" style="color: #9fa0a3"></i>
+                <i class="fa-solid fa-star" style="color: #9fa0a3"></i>
+              </div>
+              <p><span>$179.49</span> <del>$209.99</del></p>
+            </div>
+          </div>
+          <div class="product-card">
+            <img
+              class="w-100"
+              src="https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/04/11-480x480.jpg"
+            />
+            <div class="text">
+              <h3>
+                <a
+                  href="https://demo.theme-sky.com/druco/shop/racing-custom-wheels-vf421/"
+                  >Racing Custom Wheels VF421</a
+                >
+              </h3>
+              <div class="stars">
+                <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                <i class="fas fa-star-half-stroke" style="color: #ffd43b"></i>
+              </div>
+              <p><span>$38.24</span> <del>$58.47</del></p>
+            </div>
+          </div>
+          <div class="product-card">
+            <img
+              class="w-100"
+              src="https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/04/02-480x480.jpg"
+            />
+            <div class="text">
+              <h3>
+                <a
+                  href="https://demo.theme-sky.com/druco/shop/kit-brembo-gt-bmw/"
+                  >Kit Brembo GT BMW</a
+                >
+              </h3>
+              <div class="stars">
+                <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+              </div>
+              <p><span>$69.75</span> <del>$89.74</del></p>
+            </div>
+          </div>
+          <div class="product-card">
+            <img
+              class="w-100"
+              src="https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/04/10-480x480.jpg"
+            />
+            <div class="text">
+              <h3>
+                <a
+                  href="https://demo.theme-sky.com/druco/shop/kit-brembo-dt-bmw/"
+                  >Kit Brembo DT BMW</a
+                >
+              </h3>
+              <div class="stars">
+                <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+              </div>
+              <p><span>$69.75</span> <del>$98.65</del></p>
+            </div>
+          </div>
+          <div class="product-card">
+            <img
+              class="w-100"
+              src="https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/04/20-480x480.jpg"
+            />
+            <div class="text">
+              <h3>
+                <a
+                  href="https://demo.theme-sky.com/druco/shop/kit-brembo-dt-bmw-2/"
+                  >Kit Brembo DT BMW</a
+                >
+              </h3>
+              <div class="stars">
+                <i class="fa-solid fa-star" style="color: #9fa0a3"></i>
+                <i class="fa-solid fa-star" style="color: #9fa0a3"></i>
+                <i class="fa-solid fa-star" style="color: #9fa0a3"></i>
+                <i class="fa-solid fa-star" style="color: #9fa0a3"></i>
+                <i class="fa-solid fa-star" style="color: #9fa0a3"></i>
+              </div>
+              <p><span>$26.45</span> <del>$38.24</del></p>
+            </div>
+          </div>
+          <div class="product-card">
+            <img
+              class="w-100"
+              src="https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/04/23-480x480.jpg"
+            />
+            <div class="text">
+              <h3>
+                <a
+                  href="https://demo.theme-sky.com/druco/shop/zipp-battery-new-12v/"
+                  >Zipp Battery New 12V</a
+                >
+              </h3>
+              <div class="stars">
+                <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                <i class="fa-solid fa-star" style="color: #9fa0a3"></i>
+              </div>
+              <p><span>$26.45</span> <del>$45.94</del></p>
+            </div>
+          </div>
+          <div class="product-card">
+            <img
+              class="w-100"
+              src="https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/04/05-480x480.jpg"
+            />
+            <div class="text">
+              <h3>
+                <a
+                  href="https://demo.theme-sky.com/druco/shop/racing-custom-wheels-vf493/"
+                  >Racing Custom Wheels</a
+                >
+              </h3>
+              <div class="stars">
+                <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                <i class="fa-solid fa-star" style="color: #9fa0a3"></i>
+              </div>
+              <p><span>$35.38</span> <del>$38.24</del></p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="w-100">
+        <div class="pipes-sale d-grid-col">
+          <div class="pipe w-100">
+            <h2>Car &amp; Truck Exhaust Pipes</h2>
+            <p>Exhaust Pipe - Now <span class="active">15%</span> Savings</p>
+            <a
+              class="button"
+              href="https://demo.theme-sky.com/druco/product-category/exhaust-pipes/"
+              target="_blank"
+              >Shop Now</a
+            >
+          </div>
+          <div class="sale w-100">
+            <h2>Brakes and Rotors for Sale</h2>
+            <p>Take an Extra <span class="active">$5</span> Off Every Monday</p>
+            <a
+              class="button"
+              href="https://demo.theme-sky.com/druco/product-category/exhaust-pipes/"
+              target="_blank"
+              >Shop Now</a
+            >
+          </div>
+        </div>
+      </section>
+      <section class="new d-grid-col">
+        <div class="new-products">
+          <h2>New Products</h2>
+          <div class="cards d-grid-row">
+            <div class="card d-grid-col">
+              <img
+                class="w-100"
+                src="https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/04/01-480x480.jpg"
+              />
+              <div class="text">
+                <h3>
+                  <a
+                    href="https://demo.theme-sky.com/druco/shop/altra-industrial-motion/"
+                    >Altra Industrial Motion</a
+                  >
+                </h3>
+                <div class="stars">
+                  <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                  <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                  <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                  <i class="fas fa-star-half-stroke" style="color: #ffd43b"></i>
+                  <i class="fa-solid fa-star" style="color: #9fa0a3"></i>
+                </div>
+                <p><span>$185.99</span></p>
+                <a href="" class="btn">ADD TO CARD</a>
+              </div>
+            </div>
+            <div class="card d-grid-col">
+              <img
+                class="w-100"
+                src="https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/04/02-480x480.jpg"
+              />
+              <div class="text">
+                <h3>
+                  <a
+                    href="https://demo.theme-sky.com/druco/shop/kit-brembo-gt-bmw/"
+                    >Kit Brembo GT BMW</a
+                  >
+                </h3>
+                <div class="stars">
+                  <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                  <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                  <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                  <i class="fas fa-star-half-stroke" style="color: #ffd43b"></i>
+                  <i class="fa-solid fa-star" style="color: #9fa0a3"></i>
+                </div>
+                <p><span> $69.75</span> <del>$89.74</del></p>
+                <a href="" class="btn">ADD TO CARD</a>
+              </div>
+            </div>
+            <div class="card d-grid-col">
+              <img
+                class="w-100"
+                src="https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/04/03-480x480.jpg"
+              />
+              <div class="text">
+                <h3>
+                  <a
+                    href="https://demo.theme-sky.com/druco/shop/driver-side-headlight/"
+                    >Driver Side Headlight</a
+                  >
+                </h3>
+                <div class="stars">
+                  <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                  <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                  <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                  <i class="fas fa-star-half-stroke" style="color: #ffd43b"></i>
+                  <i class="fa-solid fa-star" style="color: #9fa0a3"></i>
+                </div>
+                <p><span>$53.75</span></p>
+                <a href="" class="btn">ADD TO CARD</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="specials">
+          <h2>Specials</h2>
+          <div class="cards d-grid-row">
+            <div class="card d-grid-col">
+              <img
+                class="w-100"
+                src="https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/04/05-480x480.jpg"
+              />
+              <div class="text">
+                <h3>
+                  <a
+                    href="https://demo.theme-sky.com/druco/shop/racing-custom-wheels-vf493/"
+                    >Racing Custom Wheels</a
+                  >
+                </h3>
+                <div class="stars">
+                  <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                  <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                  <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                  <i class="fas fa-star-half-stroke" style="color: #ffd43b"></i>
+                  <i class="fa-solid fa-star" style="color: #9fa0a3"></i>
+                </div>
+                <p><span>$35.38</span> <del>$38.24 </del></p>
+                <a href="" class="btn">ADD TO CARD</a>
+              </div>
+            </div>
+            <div class="card d-grid-col">
+              <img
+                class="w-100"
+                src="https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/04/27-480x480.jpg"
+              />
+              <div class="text">
+                <h3>
+                  <a
+                    href="https://demo.theme-sky.com/druco/shop/racing-custom-wheels-vf123/"
+                    >Racing Custom Wheels VF123</a
+                  >
+                </h3>
+                <div class="stars">
+                  <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                  <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                  <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                  <i class="fas fa-star-half-stroke" style="color: #ffd43b"></i>
+                  <i class="fa-solid fa-star" style="color: #9fa0a3"></i>
+                </div>
+                <p><span>$38.24</span></p>
+                <a href="" class="btn">ADD TO CARD</a>
+              </div>
+            </div>
+            <div class="card d-grid-col">
+              <img
+                class="w-100"
+                src="https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/04/07-480x480.jpg"
+              />
+              <div class="text">
+                <h3>
+                  <a
+                    href="https://demo.theme-sky.com/druco/shop/dual-stack-powertech/"
+                    >Dual Stack PowerTech</a
+                  >
+                </h3>
+                <div class="stars">
+                  <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                  <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                  <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                  <i class="fas fa-star-half-stroke" style="color: #ffd43b"></i>
+                  <i class="fa-solid fa-star" style="color: #9fa0a3"></i>
+                </div>
+                <p><span>$38.24</span></p>
+                <a href="" class="btn">ADD TO CARD</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sale">
+          <h2>Sale</h2>
+          <div class="cards d-grid-row">
+            <div class="card d-grid-col">
+              <img
+                class="w-100"
+                src="https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/04/02-480x480.jpg"
+              />
+              <div class="text">
+                <h3>
+                  <a
+                    href="https://demo.theme-sky.com/druco/shop/kit-brembo-gt-bmw/"
+                    >Kit Brembo GT BMW</a
+                  >
+                </h3>
+                <div class="stars">
+                  <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                  <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                  <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                  <i class="fas fa-star-half-stroke" style="color: #ffd43b"></i>
+                  <i class="fa-solid fa-star" style="color: #9fa0a3"></i>
+                </div>
+                <p><span>$69.75</span> <del>$89.74 </del></p>
+                <a href="" class="btn">ADD TO CARD</a>
+              </div>
+            </div>
+            <div class="card d-grid-col">
+              <img
+                class="w-100"
+                src="https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/04/04-480x480.jpg"
+              />
+              <div class="text">
+                <h3>
+                  <a
+                    href="https://demo.theme-sky.com/druco/shop/car-seats-s134/"
+                    >Nuna car seats S134</a
+                  >
+                </h3>
+                <div class="stars">
+                  <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                  <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                  <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                  <i class="fas fa-star-half-stroke" style="color: #ffd43b"></i>
+                  <i class="fa-solid fa-star" style="color: #9fa0a3"></i>
+                </div>
+                <p><span>$38.24 </span> <del>$49.99 </del></p>
+                <a href="" class="btn">ADD TO CARD</a>
+              </div>
+            </div>
+            <div class="card d-grid-col">
+              <img
+                class="w-100"
+                src="https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/04/05-480x480.jpg"
+              />
+              <div class="text">
+                <h3>
+                  <a
+                    href="https://demo.theme-sky.com/druco/shop/racing-custom-wheels-vf493/"
+                    >Racing Custom Wheels</a
+                  >
+                </h3>
+                <div class="stars">
+                  <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                  <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                  <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                  <i class="fas fa-star-half-stroke" style="color: #ffd43b"></i>
+                  <i class="fa-solid fa-star" style="color: #9fa0a3"></i>
+                </div>
+                <p><span>$35.38 </span> <del>$38.24 </del></p>
+                <a href="" class="btn">ADD TO CARD</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>

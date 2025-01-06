@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family:"Mulish" ;
+  --work-sans: "Work Sans"
+  --mulish: "Mulish";
+  --gray-text: #777777;
+  --black-text: #242424;
+  --blue-text: rgb(18, 70, 171);
+}
+
+@media (min-width: 0px) and (max-width: 768px) {
+  .container {
+    width: 100%;
+    max-width: 1390px;
+    padding-inline: 15px;
+    margin-inline: auto;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    width: 100%;
+    max-width: 1390px;
+    padding-inline: 15px;
+    margin-inline: auto;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1178px) {
+  .container {
+    width: 100%;
+    max-width: 1390px;
+    padding-inline: 15px;
+    margin-inline: auto;
+  }
+}
+@media (min-width: 1179px) {
+  .container {
+    width: 100%;
+    max-width: 1390px;
+    padding-inline: 15px;
+    margin-inline: auto;
+  }
+}
+
+.expert-advice h4 {
+  margin-bottom: 30px;
+  font-size: 26px;
+  color: var(--black-text);
+  font-weight: 700;
+}
+.advice-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border: 1px solid red;
+}
+.advice-card {
+  padding: 0px 10px;
+}
+.advice-card img {
+  width: 100%;
+}
+.advice-card-date {
+  margin: 10px 0px;
+}
+.advice-card-date span {
+    color: var(--gray-text);
+
+  margin-right: 8px;
+  font-size: 13px;
+}
+.advice-card h3 {
+  color: var(--black-text);
+  font-size: 22px;
+  font-family: var(--mulish);
+  margin-bottom: 10px;
+}
+.advice-card-description {
+  color: var(--gray-text);
+  font-size: 16px;
+  font-family: var(--work-sans);
+  margin-bottom: 15px;
+  letter-spacing: 0.5px;
+}
+.advice-card a {
+  color: var(--blue-text);
+  font-size: 13px;
+  font-family: var(--work-sans);
+  font-weight: 800;
+  text-decoration: none;
+}

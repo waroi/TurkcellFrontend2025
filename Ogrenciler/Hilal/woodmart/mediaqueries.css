@@ -1,56 +1,333 @@
-.col {
-  background-color: aqua;
+/* ortak classlarımız: text-muted,img,content,container,row,col,eq-* ve media queryler burda başlıyor*/
+:root {
+  --primary-color: #1246ab; /* Ana renk */
+  --secondary-color: #ffffff; /* İkinci renk arkaplan banner */
+  --background-color: #f0f3f7; /* Arka plan rengi */
+  --text-color: #242424; /* Başlıkların rengi */
+  --secondary-text-color: #767676; /* Yazı rengi */
+  --border-color: rgba(0, 0, 0, 0.105);
+}
+/* #E4E4E4 */
+body {
+  font-family: "Work Sans", serif;
+  color: var(--secondary-text-color);
 }
 .container {
   width: 100%;
   padding-left: 15px;
   padding-right: 15px;
 }
-.row {
+.row:has(.col) {
   display: grid;
-  grid-template-columns: repeat(12, 1fr); /* 12 eşit sütun */
-  gap: 16px; /* Sütunlar arası boşluk */
+  grid-template-columns: repeat(12, 1fr);
+  gap: 20px; /* Sütunlar arası boşluk */
 }
-
 .col {
-  grid-column: span 12; /* Varsayılan tüm satırı kapla */
+  grid-column: span 12;
+}
+section:not(.blog, .newsletter) {
+  margin: 60px 0px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Mulish", serif;
+  color: var(--text-color);
+  margin-bottom: 10px;
+}
+.main-heading,
+.subheading {
+  margin-bottom: 10px;
+  color: var(--text-color);
+}
+.main-heading {
+  font-size: 3rem;
+}
+.subheading {
+  font-size: 1.15rem;
+}
+.secondary {
+  color: var(--secondary-color);
+}
+.primary {
+  color: var(--primary-color);
+}
+img {
+  width: 100%;
+  height: auto;
+}
+button,
+input {
+  height: 42px;
+  padding: 10px;
+  cursor: pointer;
+}
+button {
+  outline: none;
+  transition: 0.3s ease;
+  border: none;
+  line-height: 18px;
+  font-size: 13px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: bold;
+}
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+}
+.btn-secondary {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+}
+.btn-secondary:hover {
+  color: var(--secondary-text-color);
+}
+.btn-primary:hover {
+  color: var(--secondary-text-color);
+  transform: translateY(150px);
+}
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+a:hover {
+  opacity: 0.8;
+}
+.read-more a {
+  color: var(--primary-color);
+  text-transform: var(--btn-transform, uppercase);
+  font-weight: 800;
+  font-size: 13px;
+  line-height: 1;
+}
+.read-more:has(button) {
+  display: block;
+}
+.read-more button {
+  border: none;
+  padding: 0px;
+  border-bottom: 1px solid var(--primary-color);
+  background-color: transparent;
+  height: auto;
+  margin-top: 30px;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
 }
 
-/* Kurallar: section-width height vermeyelim,containerlara grid vermeyelim, mümkünse containerın içine wrapper ekleyelim. mümkün olduğunca absolute dan kaçınalım. */
+strong {
+  color: var(--text-color);
+}
+p {
+  color: var(--secondary-text-color);
+  font-weight: 400;
+  line-height: 1.5rem;
+}
+ul {
+  list-style: none;
+}
+a:has(img) {
+  object-fit: cover;
+  text-decoration: none;
+  display: inline-flex;
+  justify-content: center; /* Yatayda ortalar */
+  align-items: center;
+  height: 100%;
+}
+.text-muted {
+  font-size: 0.8rem;
+}
+
+/* ortak classlar burda bitiyor */
+
+footer div.row {
+  padding: 30px 0px;
+}
+.store-links {
+  margin-bottom: 10px;
+}
+.store-links a {
+  margin-right: 15px;
+  margin-bottom: 30px;
+}
+.social-links img {
+  max-width: 30px;
+  height: auto;
+}
+.store-links img {
+  max-width: 130px;
+  height: auto;
+}
+.footer-bottom {
+  border-top: 1px solid var(--border-color);
+}
+.creditcard-links {
+  text-align: end;
+}
+.creditcard-links img {
+  max-width: 255px;
+}
+.newsletter {
+  background-color: var(--primary-color);
+  padding: 10px 0px;
+  min-height: 107px;
+}
+
+.newsletter-form form {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.newsletter-form input {
+  width: 60%;
+  height: 42px;
+  padding: 10px;
+}
+.newsletter-header .col:nth-child(2) {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+}
+.newsletter-header {
+  max-height: 120px;
+}
+.blog {
+  padding: 60px 0px;
+  background-color: var(--background-color);
+}
+.blog .wrapper {
+  min-height: 150px;
+  max-height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+.blog .wrapper::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background: linear-gradient(
+    to bottom,
+    rgba(240, 243, 247, 0) 0%,
+    #f0f3f7 100%
+  );
+  pointer-events: none;
+}
+.blog-details {
+  padding: 15px 0px;
+  gap: 5px;
+}
+.blog-details p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-clamp: 3;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.carousel .arrow {
+  padding: 50px;
+}
+.expert-advice article {
+  padding: 15px 0px;
+}
+.expert-advice .row {
+  position: relative;
+  overflow: hidden; /* Taşan satırları gizler */
+}
+.expert-advice .row > .col {
+  display: none;
+}
+.expert-advice .read-more > button {
+  border-bottom: none;
+}
+.must-products .product-card {
+  display: none;
+}
+.product-card {
+  border: 1px solid var(--border-color);
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.must-products .tabs a {
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.must-products .tabs img {
+  max-height: 25px;
+}
+
+.must-products .tabs li.active > a {
+  color: red;
+}
+/* Grid oluşturma adımları:
+1-row sınıfına sahip bir parent oluşturuyoruz, 
+2-altındaki child elementlere mutlaka col sınıfını ekliyoruz.
+3-Eğer herhangi bir breakpointte kutucukların eşit şekilde satırı paylaşmasını istiyorsan rowun yanına eq-sm,eq-md veya eq-lg eklemen yeterli.Bu durumda child kısmında bu breakpointleri kullanma
+4-Eğer belirli genişlikte kutucuklar oluşturmak istiyorsan her satırda toplamı 12 yi bulacak şekilde col-sm-6 gibi değerleri ver. */
+
+/* Genel Kurallar: section-width height vermeyelim,containerlara grid vermeyelim, mümkünse containerın içine wrapper ekleyelim. mümkün olduğunca absolute dan kaçınalım. */
+
 /* Breakpoints:sm,md,lg */
 
 /* Küçük Ekranlar (sm) */
-@media (max-width: 767) {
-  .col-sm-1 {
+@media (max-width: 767px) {
+  .row.eq-sm {
+    grid-template-columns: repeat(auto-fit, minmax(0px, 1fr));
+  }
+  .eq-sm .col {
     grid-column: span 1;
-  } /* 1/12 */
+  }
+}
+@media (min-width: 0px) {
+  /* 1/12 */
   .col-sm-2 {
     grid-column: span 2;
   } /* 2/12 */
-  .col-sm-3 {
-    grid-column: span 3;
-  } /* 3/12 */
   .col-sm-4 {
     grid-column: span 4;
   } /* 4/12 */
   .col-sm-6 {
     grid-column: span 6;
   } /* 6/12 */
+  .col-sm-8 {
+    grid-column: span 8;
+  }
+  .col-sm-10 {
+    grid-column: span 10;
+  }
   .col-sm-12 {
     grid-column: span 12;
-  } /* 12/12 */
+  }
+  .expert-advice .row > .col:nth-child(1) {
+    display: inline-block;
+  }
+  .must-products .product-card:nth-child(-n + 2) {
+    display: inline-block;
+  }
 }
 
 /* Orta Ekranlar (md) */
 @media (min-width: 768px) {
-  .col-md-1 {
-    grid-column: span 1;
-  }
   .col-md-2 {
     grid-column: span 2;
-  }
-  .col-md-3 {
-    grid-column: span 3;
   }
   .col-md-4 {
     grid-column: span 4;
@@ -58,21 +335,41 @@
   .col-md-6 {
     grid-column: span 6;
   }
+  .col-md-8 {
+    grid-column: span 8;
+  }
+  .col-md-10 {
+    grid-column: span 10;
+  }
   .col-md-12 {
     grid-column: span 12;
+  }
+  .expert-advice .row > .col:nth-child(-n + 2) {
+    display: inline-block;
+  }
+  .must-products .product-card:nth-child(-n + 3) {
+    display: inline-block;
+  }
+}
+@media (min-width: 768px) and (max-width: 1100px) {
+  .row.eq-md {
+    grid-template-columns: repeat(auto-fit, minmax(0px, 1fr));
+  }
+  .eq-md .col {
+    grid-column: span 1;
   }
 }
 
 /* Büyük Ekranlar (lg) */
-@media (min-width: 992px) {
-  .col-lg-1 {
+@media (min-width: 1100px) {
+  .eq-lg .col {
     grid-column: span 1;
+  }
+  .row.eq-lg {
+    grid-template-columns: repeat(auto-fit, minmax(0px, 1fr));
   }
   .col-lg-2 {
     grid-column: span 2;
-  }
-  .col-lg-3 {
-    grid-column: span 3;
   }
   .col-lg-4 {
     grid-column: span 4;
@@ -80,7 +377,19 @@
   .col-lg-6 {
     grid-column: span 6;
   }
+  .col-lg-8 {
+    grid-column: span 8;
+  }
+  .col-lg-10 {
+    grid-column: span 10;
+  }
   .col-lg-12 {
     grid-column: span 12;
+  }
+  .expert-advice .row > .col:nth-child(-n + 3) {
+    display: inline-block;
+  }
+  .must-products .product-card:nth-child(-n + 3) {
+    display: inline-block;
   }
 }
