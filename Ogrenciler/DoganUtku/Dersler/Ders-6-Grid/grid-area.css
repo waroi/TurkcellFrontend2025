@@ -1,0 +1,42 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  display: grid;
+  height: 600px;
+  background-color: aqua;
+  gap: 5px;
+  grid-template-areas: "header header header" "sidebar section section" "sidebar . . " "footer footer footer" ". box-1 box-1";
+}
+.header {
+  background-color: blue;
+  padding: 20px;
+  grid-area: header;
+}
+.section {
+  background-color: rgb(130, 130, 145);
+  padding: 20px;
+  grid-area: section;
+}
+.sidebar {
+  background-color: rgb(35, 109, 51);
+  padding: 20px;
+  grid-area: sidebar;
+}
+.box-1 {
+  background-color: rgb(158, 52, 61);
+  padding: 20px;
+  grid-area: box-1;
+}
+.box-2 {
+  background-color: rgb(166, 185, 152);
+  padding: 20px;
+  grid-area: box-2;
+}
+.box-3 {
+  background-color: rgb(222, 231, 91);
+  padding: 20px;
+  grid-area: box-3;
+}

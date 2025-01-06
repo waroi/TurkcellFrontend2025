@@ -1,0 +1,259 @@
+*, ::after, ::before {
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+head {
+    display: none;
+}
+.navbar{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+.navbar-container{
+    display: flex;
+    flex-wrap: inherit;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar-collapse{
+    list-style-type: none;
+    gap: 1rem;
+    display: flex;
+}
+.navbar-logo{
+    font-size: 0;
+    padding: 0;
+}
+.nav-link{
+    text-decoration: none;
+    color: #000;
+    letter-spacing: 0.05rem;
+    text-transform: uppercase;
+    margin: 0px 6px;
+    transition: all 0.3s ease;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: "Roboto Slab", serif;
+}
+.logo-light-mode{
+    display: inline-block;
+}
+.l-light{
+    display: inline-block;
+}
+.l-dark{
+    display: none;
+}
+.logo-dark-mode {
+    display: none;
+}
+.navbar{
+    flex-direction: row;
+}
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+    unicode-bidi: isolate;
+    list-style: none;
+}
+.bg-overlay {
+    background-color: rgba(22, 28, 45, 0.75);
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+svg{
+    width: 24;
+    height: 24;
+    fill: none;
+    stroke: currentcolor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+.btn.btn-icon {
+    height: 36px;
+    width: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+.social-media {
+    align-items: center;
+    display: flex;
+    gap: 3px;
+}
+.social-media a svg {
+    color: black;
+    height: 16px;
+    font-size: 16px;
+}
+.social-media a {
+    background: #fff;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+.background {
+    width: 100%;
+    height: 85vh;
+    background-image: url('assests/background.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0 10%;
+}
+/* .background{
+    background: url('assests/background.jpg') center center;
+    height: 100vh;
+    width: 100%; 
+    position: relative;
+    opacity: 0.9;
+} */
+.background .home_container {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.background .home_container .heading {
+    font-size: 46px;
+    font-family: Merienda;
+    color:white;
+    line-height: 53px;
+}
+.home_section .home_container .heading span {
+    font-family: Merienda;
+    color: white;
+}
+.home_section .home_container p {
+    margin-bottom: 15px;
+    font-size: 14px;
+    line-height: 23px;
+    opacity: 0.9;
+}
+.home_para1{
+    color: #fff;
+}
+.home_section .home_container .home_para2 {
+    margin-bottom: 26px;
+}
+.home_btn {
+    width: 160px;
+    height: 45px;
+    background-color: #ff5714;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    border: 1px solid var(--pr-color);
+    transition: all 0.5s ease;
+}
+.home_btn:hover {
+    background: none;
+    border: 1px solid var(--font-color);
+    color: var(--font-color);
+}
+.whoweare{
+    background-color: #f8f9fc !important;
+    padding: 100px;
+}
+.whoweare-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.video-img{
+    width: 451px;
+    height: 526.16px;
+    border-radius: 10px !important;
+}
+.whoweare-text{
+    width: 665px;
+    height: 290.1px;
+    padding-left: 72px;
+    font-weight: 15px;
+}
+.whoweare-text h6{
+    color: #ff5714 !important;
+    font-size: 15px;
+    font-family: "Roboto Slab", serif
+}
+.whoweare-text h4{
+    font-size: 28px;
+    font-family: "Roboto Slab", serif
+}
+.whoweare-text p{
+    font-size: 15px;
+    font-family: "Roboto Slab", serif
+}
+.buynow-button{
+    margin: 16px 0px 0px;
+    padding: 8px 20px;
+    font-family: "Roboto Slab", serif
+}
+
+.whatwedo{
+    padding: 100px;
+    
+}
+.whatwedo-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+.whatwedo-lefttext, .whatwedo-righttext{
+    width: 546px;
+    height: 84px;
+}
+.whatwedo-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.whatwedo-card {
+    width: calc(33.33% - 20px); 
+    max-width: 356px; 
+    height: 313.6px;
+    box-sizing: border-box; 
+    border-radius: 30px;
+    padding: 1.5rem;
+    margin-top: 3.5rem;
+}
+.icons {
+    display: inline;
+}
+
+.icons i {
+    width: 85px;
+    height: 85px;
+    font-size: 30px;
+    background: rgba(255, 87, 20, 0.1);
+    color: #ff5714;
+    display: block;
+    display: flex;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.whatwedo-card:hover, .whatwedo-card:nth-child(2n) {
+    box-shadow: 0 25px 25px rgba(36, 39, 44, 0.05);
+}

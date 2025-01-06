@@ -1,27 +1,58 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
-
-#navbar{
+.navbar{
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    transition: background-color 0.3s ease-in-out;
     gap: 5px;
     height: 70px;
-    
-}
-.navitem{
-    font-size: 12px;
-    letter-spacing: 0.05rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    background-color: transparent;
-    margin: 0px 6px;
-    transition: all 0.3s ease;
+    position: sticky;
     font-family: "Roboto Slab", serif;
-    padding-top: 12px;
-    padding-bottom: 12px;
+    font-weight: 600;
+    top:0;
+    left:0;
+}
+.navbar::after {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+.navbar.sticky::after {
+    opacity: 1;
+}
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 59%;
+}
+.navbar ul {
+    display: flex;
+    list-style: none;
+}
+.navbar ul li a {
+    color: #24272c;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    margin: 0px 6px;
+    padding: 12px 8px;
+    letter-spacing: 0.5;
+}
+.navbar ul li a:hover {
+    color: #ff5714;
+
 }
 .logo{
     height: 24px;
@@ -33,22 +64,64 @@
     border-radius: 50%;
     border: 0px;
     background-color: #FF5714;
+    margin-left: 3px;
 }
 .navbtn-logo{
     width: 16px;
     height: 16px;
     color: #fff;
 }
-.container{
-    background-image: url(Image20241226192444.jpg);
-    background-size: cover;
-    width: 100%;
-    height: auto;  
+.navB{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin: 0px 0px 0px 8px;
+    padding: 0px 0px 0px 24px;
 }
-.heading{
+.bol1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("Image20241226192444.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 798px;
+}
+.container{
+    width: 100%;
+    background-color: rgba(22, 28, 45, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media (max-width: 768px) {
+    .container{
+        display: flex;
+        flex-shrink: 1;
+        height: auto;
+    }
+}
+.bgText{
+    width: 59%;
+    height: 798px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.bgSText{
+    font-family: "Roboto", sans-serif;
+    font-size: 17px;
+    color: #FFFFFF80;
+    max-width: 600px;
+    letter-spacing: 0.5;
+    line-height: 1.6;
+}
+.imgText{
     font-family: "Roboto Slab", serif;
     font-size: 42px;
-    margin: 260px;
+    margin: 0px 0px 24px;
     letter-spacing: 0.2px;
     line-height: 1.5;
     color: #fff;
@@ -57,4 +130,347 @@
     color:#fff;
     font-family: "Roboto Slab", serif;
     font-size: 42px;
+    text-decoration: underline;
+    text-decoration-color: #F9BE64;
+}
+.bgBtn{
+    margin: 24px 0px 0px;
+    padding: 8px 0px 0px;
+}
+.bgBtn button{
+    background-color: #ff5714; 
+    border: 1px solid #ff5714 ;
+    color: #fff ;
+    box-shadow: 0 3px 5px 0 rgba(255, 87, 20, 0.1);
+    margin-right: .5rem ;
+    padding: 8px 20px;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    transition: all 0.3s;
+    border-radius: 6px;
+    outline: none;
+}
+.bol2{
+    background-color: #f8f9fc;
+    width: 59%;
+    display: flex;
+    flex-direction: row;
+    padding: 100px 0px;
+}
+.bol4{
+    display: flex;
+    justify-content: center;
+
+}
+.wp{
+    display: flex;
+    flex-direction: column;
+    padding: 0px 0px 8px;
+    margin: 0px 0px 24px;
+    justify-content: center;
+    align-items: center;
+    width: 59%;
+
+}
+.bol5{
+    display: flex;
+    justify-content: center;
+    background-color: #f8f9fc;
+}
+.psec{
+    display: flex;
+    flex-direction: column;
+    padding: 100px 0;
+    justify-content: center;
+    align-items: center;
+    width: 59%; 
+}
+.portfolio{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 190px;
+}
+.phead{
+    font-family: "Roboto Slab", serif;
+    font-size: 15px;
+    color: #ff5714;
+    margin: 0px 0px 8px;
+    font-weight: 600;
+}
+.ptitle{
+    font-family: "Roboto Slab", serif;
+    font-size: 28px;
+    letter-spacing: 0.5px;
+    margin: 0px 0px 16px;
+    color:#24272c;
+}
+.ptext{
+    font-family: "Roboto", sans-serif;
+    color: #8492a6;
+    font-size: 15px;
+    margin: 0px 48px;
+    max-width: 600px;
+    text-align: center;
+    line-height: 1.6;
+}
+.srow{
+    display: flex;
+    flex-direction: row;
+    margin: 0px - 12px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.row-img{
+    width: 261px;
+    height: 195.75px;
+    border-radius: 17px;
+    padding: 8px 12px 0px;
+    margin: 24px 0px 0px;
+}
+.bol6{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 380px;
+    background: url("cta.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.bol7{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0px;
+}
+.plans{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 59%;
+    padding: 0px 0px 8px;
+    margin: 0px 0px 24px;
+}
+.pricing{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.card-container-out{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0px - 12px;
+}
+.card-container-in{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 24px 0px 0px ;
+    padding: 8px 12px 0px ;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 48px 24px;
+    width: 356px;
+    border: 1px solid #E0DEDE60;
+    border-radius: 5px;
+
+}
+.pricing-head{
+    font-family: "Roboto Slab", serif;
+    font-size: 18px;
+    color: #212529;
+    margin: 0px 0px 8px;
+
+}
+.price-field{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin: 0px 0px 24px;
+    font-family: "Roboto Slab", serif;
+    color:#212529;
+    font-weight: 600;
+}
+.dollar{
+    font-size: 18px;
+    margin: 8px 0px 0px;
+}
+.price{
+    font-size: 42px;
+}
+.term{
+    font-size: 18px;
+    margin: 0px 0px 4px;
+    align-self: flex-end;
+}
+.features{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.list-item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.features ul li{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0px 0px 8px;
+    font-family: "Roboto", sans-serif;
+    color: #8492a6;
+}
+.list-unstyled{
+    list-style: none;
+}
+.check-circle{
+    content: url("https://img.icons8.com/?size=100&id=114054&format=png&color=A9B1BA");
+    width: 18px;
+    height: 18px;
+}
+.list-icon{
+    margin: 0px 8px 0px 0px;
+}
+.buy-button-area{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 88%;
+}
+.buy-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 24px 0px 0px;
+    padding: 8px 20px;
+    width: 100%;
+    background-color: rgba(255, 87, 20, 0.1);
+    border: 1px solid rgba(255, 87, 20, 0.1);
+    color: #ff5714;
+    box-shadow: 0 3px 5px 0 rgba(255, 87, 20, 0.1);
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    transition: all 0.3s;
+    border-radius: 6px;
+    font-weight: 600;
+}
+.bol8 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 0px 8px;
+    margin: 0px 0px 24px;
+    background-color: #f8f9fc;
+  }
+  .team {
+    padding: 100px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 59%;
+  }
+  .our-team {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .members-card-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 59%;
+    height: auto;
+    margin: 24px 0px 0px;
+    padding: 8px 12px 0px;
+  }
+  .members-img {
+    height: 261px;
+    width: 261px;
+    border-radius: 12px;
+    margin: 24px 0px 0px;
+    padding: 8px 12px 0px;
+  
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      transparent 25%,
+      transparent 35%,
+      rgba(22, 28, 45, 0.9) 100%,
+      padding 8px 12px 0px
+    );
+  }
+  .bol9 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 0px 8px;
+    margin: 0px 0px 24px;
+  }
+  .blogs {
+    padding: 100px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 59%;
+  }
+  .blog-news {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+.gets{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 380px;
+}
+.bolBg{
+    width: 100%;
+    height: 380px;
+    background-color: #161C2dbf;
+}
+.h6{
+    font-family: "Roboto Slab", serif;
+    font-size: 28px;
+    text-align: center;
+    color: #fff;
+    margin: 0px 0px 16px;
+    width: 59%;
+}
+.t6{
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    color: #FFFFFF80;
+    margin: 0px 48px;
+    max-width: 600px;
+    text-align: center;
+    line-height: 1.6;
 }
