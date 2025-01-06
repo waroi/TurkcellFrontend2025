@@ -1,0 +1,48 @@
+body {
+  background-color: gray;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  height: 100vh;
+  padding: 100px;
+}
+.box {
+  width: 50px;
+  height: 100px;
+  background-color: orange;
+  animation: full-spin 0.5s ease infinite;
+}
+.wrapper {
+  animation: spin 3s ease infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  25% {
+    transform: translate(50vw, 0px);
+  }
+
+  50% {
+    transform: translate(50vw, 50vh);
+  }
+  75% {
+    transform: translate(0vw, 50vh);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+@keyframes full-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    background-color: green;
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
