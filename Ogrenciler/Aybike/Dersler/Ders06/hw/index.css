@@ -375,15 +375,15 @@
   line-height: 24px;
   font-size: 17px;
 }
-.active{
+.active {
   color: rgba(255, 185, 31, 1);
 }
-.products-bg{
+.products-bg {
   padding-left: 59px;
   padding-right: 59px;
   padding-bottom: 86px;
 }
-.products-tabs{
+.products-tabs {
   font-size: 36px;
   letter-spacing: 0.9px;
   padding: 5px 60px 5px 0px;
@@ -397,31 +397,209 @@
   grid-template-rows: auto;
   grid-auto-flow: row;
 }
-.product-card{
+.product-card {
   border: 0.5px solid rgba(235, 235, 235, 1);
 }
-.product-card span{
+.product-card span,
+.new span {
   font-size: 18px;
   font-weight: 600;
   letter-spacing: 0.4px;
   color: var(--color-blue);
 }
-.product-card del{
+.product-card del,
+.new del {
   font-size: 15px;
   font-weight: 600;
   letter-spacing: 0.4px;
   color: rgba(0, 0, 0, 0.206);
 }
-.product-card .text{
+.product-card .text,
+.new .text {
   padding: 25px 20px;
 }
-.product-card .text a{
-  font-size: 20px;
+.product-card .text a,
+.new .text a {
+  font-size: 16px;
   font-weight: 400;
   color: black;
   text-decoration: none;
 }
-.product-card .stars{
+.product-card .stars,
+.new .stars {
   margin-top: 13px;
   margin-bottom: 16px;
+}
+.pipes-sale {
+  gap: 30px;
+}
+.pipes-sale .pipe,
+.pipes-sale .sale {
+  padding: 59px;
+  color: white;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.pipes-sale .pipe h2,
+.pipes-sale .sale h2 {
+  width: 70%;
+  font-size: 48px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+.pipes-sale .pipe a,
+.pipes-sale .sale a,
+.new .btn {
+  width: fit-content;
+  padding: 12px 26px;
+  margin-top: 30px;
+  text-transform: uppercase;
+  line-height: 24px;
+  display: block;
+  font-size: 14px;
+  background: rgba(255, 185, 31, 1);
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 42px;
+  color: black;
+}
+
+.pipes-sale .pipe {
+  background-image: url(https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/08/banner-1.jpg);
+}
+.pipes-sale .sale {
+  background-image: url(https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/08/banner-2.jpg);
+}
+
+.new {
+  padding: 59px;
+}
+.new h2 {
+  margin: 0 0 30px;
+  font-size: 36px;
+  letter-spacing: 0.9px;
+  padding-left: 30px;
+}
+.new .cards {
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: auto;
+}
+.new .specials .cards {
+  border-right: 0.5px solid rgba(235, 235, 235, 1);
+  border-left: 0.5px solid rgba(235, 235, 235, 1);
+}
+.new .cards .card {
+  margin: 30px;
+  align-items: center;
+  border-bottom: 0.5px solid rgba(235, 235, 235, 1);
+}
+.new .btn {
+  padding: 6px;
+  font-size: 12px !important;
+  min-width: 120px;
+  text-align: center;
+  font-weight: 700 !important;
+}
+.popular {
+  padding: 59px;
+}
+.popular h2 {
+  font-size: 36px;
+  letter-spacing: 0.9px;
+  font-weight: 700;
+  text-align: center;
+  padding-bottom: 50px;
+}
+.popular ul {
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: auto;
+  grid-auto-flow: row;
+  list-style: none;
+  gap: 20px;
+}
+.popular li {
+  display: grid;
+  border: 1px solid #cbcbcb;
+  border-color: rgba(235, 235, 235, 1);
+  border-radius: 8px;
+  line-height: 22px;
+  font-size: 15px;
+  justify-items: center;
+  align-items: center;
+}
+.popular li a {
+  padding: 14px 5px;
+  text-decoration: none;
+  color: black;
+}
+.genuine-bg {
+  background-image: url("https://demothemesky-be87.kxcdn.com/druco/wp-content/uploads/2022/08/banner-3.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 60px 59px;
+  display: grid;
+  align-items: center;
+  margin-top: 0px;
+  margin-bottom: 81px;
+}
+.genuine-bg h2 {
+  font-size: 90px;
+  line-height: 85px;
+  letter-spacing: 0.9px;
+  margin-bottom: 10px;
+}
+.genuine-bg p {
+  font-size: 18px;
+  color: white;
+}
+.blog h2 {
+  padding-top: 50px;
+  font-size: 36px;
+  letter-spacing: 0.9px;
+  font-weight: 700;
+  text-align: center;
+  padding-bottom: 50px;
+}
+.professional-bg {
+  background-image: linear-gradient(rgba(3, 3, 5, 0.5), rgba(3, 3, 5, 0.5)),
+    url("https://demothemesky-be87.kxcdn.com/druco/wp-content/uploads/2022/08/home-about.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 0px;
+  margin-bottom: 78px;
+  padding: 112px 0px 103px 0px;
+}
+.professional-bg p {
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+}
+.professional-bg h2 {
+  color: white;
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 1.16em;
+  letter-spacing: 0.9px;
+  text-align: center;
+}
+.professional-bg img {
+  width: 70px;
+  height: 70px;
+}
+.professional-bg .elements {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  grid-auto-flow: row;
+  gap: 20px;
+  justify-content: space-evenly;
+}
+.professional-bg .elements .element {
+  display: grid;
+  justify-items: center;
+  text-align: center;
 }
