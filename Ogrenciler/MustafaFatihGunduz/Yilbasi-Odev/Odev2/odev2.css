@@ -378,6 +378,7 @@ body {
 .featured-products-item-meta {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: 10px;
     margin-left: 10px;
 }
@@ -527,6 +528,12 @@ body {
 .hot-product-wrapper img {
     width: 193px;
     height: 220px;
+}
+
+.project-ideas img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
 }
 
 .hot-product-and-our-services {
@@ -979,76 +986,6 @@ body {
 
   /*! FOOTER SECTİON CSS END */
 
-  @media (max-width: 1200px) {
-    .navbar-wrapper {
-        flex-direction: column;
-    }
-
-    .banner-wrapper {
-        flex-direction: column;
-    }
-
-    .banner-container {
-        flex-direction: column;
-    }
-
-    .banner-left-description,
-    .banner-left-image {
-        width: 100%;
-    }
-
-    .banner-right-first,
-    .banner-right-second {
-        width: 100%;
-        height: 250px;
-    }
-
-    .categories-items {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .featured-products-wrapper {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .must-product-wrapper {
-        grid-template-columns: 1fr;
-    }
-
-    .must-product-item-wrapper {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .expert-advice-items {
-        grid-template-columns: 1fr;
-    }
-
-    .big-blog-wrapper {
-        flex-direction: column;
-    }
-
-    .footer-first-content {
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-
-    .newsletter-wrapper {
-        flex-direction: column;
-    }
-
-    .newsletter-form {
-        width: 100%;
-    }
-
-    .search-bar-newsletter {
-        width: 100%;
-    }
-
-    .footer-last-content {
-        flex-direction: column;
-    }
-}
-
-
 @media (max-width: 768px) {
     .navbar-wrapper {
         flex-direction: column;
@@ -1112,7 +1049,168 @@ body {
     }
 }
 
-  
+@media (min-width: 768px) and (max-width: 1200px) {
+    .navbar-wrapper {
+        flex-direction: column;
+    }
+
+    .banner-wrapper {
+        flex-direction: column;
+    }
+
+    .banner-container {
+        flex-direction: column;
+    }
+
+    .banner-left-description,
+    .banner-left-image {
+        width: 100%;
+    }
+
+    .banner-right-first,
+    .banner-right-second {
+        width: 100%;
+        height: 250px;
+    }
+
+    .popular-categories-wrapper {
+        padding: 20px 20px;
+    }
+    
+    .categories-items {
+        gap: 0px;
+    }
+
+    .container {
+        padding: 0px 10px;
+    }
+    .hot-product-wrapper img {
+        width: 100%;
+        height: auto;
+        max-width: 190px;
+        margin: 0 auto;
+    }
+
+    .featured-products-item-container img {
+        width: 100%;
+        height: 160px;
+        max-width: 150px;
+    }
+
+    .must-product-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .must-product-item-wrapper {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .must-products-left {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .must-products-tab {
+        flex-direction: row;
+    }
+
+    .image-meta {
+        width: 100%;
+        height: 200px;
+    }
+
+    .big-blog-wrapper {
+        flex-direction: column;
+    }
+
+    .footer-first-content {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .newsletter-wrapper {
+        flex-direction: column;
+    }
+
+    .newsletter-form {
+        width: 100%;
+    }
+
+    .search-bar-newsletter {
+        width: 100%;
+    }
+
+    .newsletter-form {
+        width: 100%;
+    }
+
+    .search-bar-newsletter {
+        width: 100%;
+    }
+
+    .footer-last-content {
+        flex-direction: column;
+    }
+    .project-ideas-wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        padding: 40px 0;
+    }
+
+    .project-ideas-card {
+        padding: 20px;
+        transition: transform 0.3s;
+    }
+
+    .project-ideas-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .project-ideas-card img {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .project-ideas-card h3 {
+        font-size: 18px;
+        margin: 15px 0;
+    }
+
+    .similar-wrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        padding: 40px 0;
+    }
+
+    .similar-card {
+        padding: 20px;
+        transition: transform 0.3s;
+    }
+
+    .similar-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .similar-card img {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .similar-card h4 {
+        font-size: 16px;
+        margin-top: 10px;
+    }
+
+    .our-service {
+        display: none;
+    }
+}
+
+
+
+
+
 
 
   
