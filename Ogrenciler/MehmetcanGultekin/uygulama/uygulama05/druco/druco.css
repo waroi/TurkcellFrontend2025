@@ -24,7 +24,6 @@ header {
     color: rgba(255, 255, 255, 1);
     width: 100%;
     height: 20%;
-   
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -45,14 +44,15 @@ header {
     background-color: rgba(255,255,255,1);
     border-color: rgba(235,235,235,1);
     color: rgba(32,32,32,1);
-    border-width: 0 0 1px;
-    border-style: solid;
     width: 100%;
     height: 50%;
     display: grid;
     grid-template-columns: 1fr 5fr 1fr 1fr;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
+    padding-left: 9%;
+   
+    
 }
 .header-search{
     width: 100%;
@@ -83,21 +83,8 @@ header {
     display: flex;
     justify-content: center;
    
-    
-    
+  
 }
-
-
-.header-middle {
-    background-color: rgba(255, 255, 255, 1);
-    border-color: rgba(235, 235, 235, 1);
-    color: rgba(32, 32, 32, 1);
-    position: relative;
-    border-width: 0 0 1px;
-    border-style: solid;
-    padding-left: 9%;
-}
-
 
 
 
@@ -105,10 +92,8 @@ header {
     width: 90%;
     display: flex;
     flex-wrap: wrap;
-    padding-left: 50px;
+    padding-left: 3%;
     
-    
-
 }
 
 .menu{
@@ -133,12 +118,12 @@ header {
     grid-template-areas: 
         "headset info-right";
     margin: 0;
-    padding: 0; /* Remove padding */
-    align-items: center; /* Align items vertically */
-    justify-content: start; /* Align items horizontally */
+    padding: 0; 
+    align-items: center; 
+    justify-content: start; 
     width: 20%;
-    font-family: Outfit, sans-serif; /* Ensure correct font */
-    background-color: rgba(255, 185, 31, 1); /* Background color */
+    font-family: Outfit, sans-serif;
+    background-color: rgba(255, 185, 31, 1); 
 }
 
 .tel_no{
@@ -168,9 +153,7 @@ header {
 
 .search-vehicle {
     display: flex;
-    align-items: center
-    ;
-    
+    align-items: center;
     justify-content: center;
     height: 100%;
 
@@ -180,7 +163,6 @@ header {
 .search-form{
     width: 60%;
     height: 450px;
-    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -188,11 +170,10 @@ header {
     padding:1rem;
     border: 1px solid #e5e7eb;
     border-radius: 0.5rem;
-    appearance: none;
     background-color: white;
     color: #4b5563;
     font-size: 0.875rem;
-    cursor: pointer;
+    
 
 }
 
@@ -201,8 +182,7 @@ header {
     display: grid;
     width: 100%;
     grid-template-columns: 40% 60%;
-    grid-area: left-side;
-
+   
 }
 
 
@@ -255,29 +235,29 @@ header {
 .year-select,
 .engine-select {
     width: 300px;
-    height: 50px; /* Yüksekliği artırmak isterseniz */
-    font-size: 1.2rem; /* Yazı boyutunu büyütmek için */
-    font-weight: 500; /* Yazıyı daha belirgin hale getirmek için (isteğe bağlı) */
-    color: #374151; /* Yazı rengini değiştirmek isterseniz */
+    height: 50px; 
+    font-size: 1.2rem; 
+    font-weight: 500; 
+    color: #374151;
     border: 1px solid #d1d5db;
     border-radius: 4px;
     padding: 0.5rem;
-    background-color: #f9fafb; /* Arka plan rengi */
-    appearance: none; /* Varsayılan tarayıcı stilini kaldırmak için */
+    background-color: #f9fafb;
+    
   }
   
  
   .search-button{
     width: 30%;
-    height: 50px; /* Yüksekliği artırmak isterseniz */
-    font-size: 1.2rem; /* Yazı boyutunu büyütmek için */
-    font-weight: 500; /* Yazıyı daha belirgin hale getirmek için (isteğe bağlı) */
-    color: #374151; /* Yazı rengini değiştirmek isterseniz */
+    height: 50px;
+    font-size: 1.2rem;
+    font-weight: 500; 
+    color: #374151;
     border: 1px solid #d1d5db;
     border-radius: 4px;
     padding: 0.5rem;
-    background-color: #f9fafb; /* Arka plan rengi */
-    appearance: none; /* Varsayılan tarayıcı stilini kaldırmak için */
+    background-color: #f9fafb; 
+   
 
   }
 
@@ -330,9 +310,7 @@ header {
   .elements-images{
     
     display: grid;
-    grid-template-columns: repeat(6, 0.5fr); /* 3 sütun eşit genişlikte */
- /* Sabit satır yüksekliği */
-     /* Hücreler arasındaki boşluk */
+    grid-template-columns: repeat(6, 0.5fr); 
     gap: 0px;
     width: 100%;
 

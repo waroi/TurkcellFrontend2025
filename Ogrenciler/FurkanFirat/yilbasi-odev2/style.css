@@ -24,8 +24,16 @@ body {
   .advice-cards:nth-of-type(3) {
     display: none !important;
   }
+  .newsletter .container {
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+  }
 }
 @media (min-width: 769px) and (max-width: 1024px) {
+  .newsletter .container {
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+  }
 }
 @media (min-width: 1025px) and (max-width: 1178px) {
 }
@@ -85,11 +93,12 @@ body {
 
 .newsletter {
   background-color: #1246ab;
-  padding: 20px 80px 0px;
+  padding: 20px 0px;
 }
 .newsletter .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  align-items: center;
 }
 .newsletter h2 {
   font-family: var(--mulish);
@@ -116,6 +125,10 @@ body {
   flex-direction: column;
   gap: 10px;
 }
+.newsletter form {
+  display: flex;
+  gap: 10px;
+}
 .newsletter input {
   padding: 0 15px;
   max-width: 100%;
@@ -125,4 +138,21 @@ body {
   color: var(--black-text);
   vertical-align: middle;
   font-size: 14px;
+  border: none;
+}
+.newsletter input::placeholder {
+  color: var(--gray-text);
+}
+.newsletter-form-container button {
+  padding: 5px 35px;
+  height: 42px;
+  color: var(--black-text);
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+  font-weight: 600;
+}
+.newsletter-form-container button:hover {
+  color: var(--gray-text);
 }

@@ -408,7 +408,7 @@ body {
   font-size: 17px;
 }
 
-@media (max-width: 760) {
+@media (max-width: 1260px) {
   .category-inner {
     display: block;
     flex-direction: column;
@@ -431,6 +431,43 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
+  }
+
+  .article-image > img {
+    width: 100%;
+  }
+
+  
+}
+
+@media (max-width: 575px) {
+  .banners-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    width: 100%;
+    grid-template-areas: "banner1"
+                        "banner2";
+  }
+
+  .banner1-bg {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    background: url("https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/08/banner-1.jpg");
+    cursor: pointer;
+    background-position: center;
+    transition: background-size 0.2s linear;
+    grid-area: banner1;
+  }
+  
+  .banner2-bg {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    background: url("https://druco-be87.kxcdn.com/druco/wp-content/uploads/2022/08/banner-2.jpg");
+    cursor: pointer;
+    background-position: center;
+    transition: background-size 0.2s linear;
+    grid-area: banner2;
   }
 }
 
@@ -458,7 +495,7 @@ body {
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(4, minmax(200px, 1fr));
+  grid-template-columns: repeat(4, minmax(100px, 1fr));
   justify-items: center;
 }
 
@@ -537,12 +574,10 @@ body {
   margin-top: 80px;
   display: grid;
   grid-template-areas: "banner1 banner2";
-  grid-template-columns: 1f 1f;
-  grid-template-rows: 1f;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
   width: 100%;
   gap: 30px;
-
-  
   color: white;
 }
 
@@ -558,7 +593,7 @@ body {
 }
 
 .banner1-bg:hover {
-  background-size: 112%;
+  background-size: 130%;
 }
 
 .banner2-bg {
@@ -573,7 +608,7 @@ body {
 }
 
 .banner2-bg:hover {
-  background-size: 112%;
+  background-size: 130%;
 }
 
 .banner-text {
@@ -641,6 +676,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-flow: row wrap;
+  overflow: auto;
 }
 
 .border-right {
@@ -833,6 +869,7 @@ body {
   font-size: 12.75px;
   color: #202020;
 }
+
 
 /* ------- our blog section end --------*/
 
