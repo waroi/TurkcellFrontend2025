@@ -1,0 +1,19 @@
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background-color: red;
+}
+.box {
+	width: 100px;
+	height: 100px;
+	background-color: blue;
+	transition: 1s ease all;
+}
+.box:hover {
+	background-color: yellow;
+	transform: rotate(360deg);
+	height: 50px;
+	width: 350px;
+}
