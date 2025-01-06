@@ -149,20 +149,20 @@ body {
     font-size: 14px;
     text-align: center !important;
   }
-  .blog-text-right{
+  .blog-text-right {
     padding: 0 0 0 39px !important;
   }
-  .blog-content-text button{
+  .blog-content-text button {
     display: none;
   }
-  .team-support{
+  .team-support {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     height: 100%;
     width: auto;
   }
-  .team-support-content-images{
+  .team-support-content-images {
     grid-template-rows: 1fr 1fr 1fr !important;
     grid-template-columns: 1fr !important;
   }
@@ -342,28 +342,28 @@ body {
   .g-parts-text p {
     font-size: 14px;
   }
-  .blog{
+  .blog {
     padding-left: 10px;
     padding-right: 10px;
   }
-  .blog-container{
+  .blog-container {
     padding-left: 15px;
-    padding-right: 15px
+    padding-right: 15px;
   }
-  .blog-text-right{
+  .blog-text-right {
     padding: 0 0 0 29px !important;
   }
-  .blog-content-text button{
+  .blog-content-text button {
     display: none;
   }
-  .team-support{
+  .team-support {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     height: 100%;
     width: auto;
   }
-  .team-support-content-images{
+  .team-support-content-images {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr !important;
     grid-template-rows: 1fr !important;
@@ -431,14 +431,14 @@ body {
   .mid-banner {
     height: 350px !important;
   }
-  .team-support{
+  .team-support {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     height: 100%;
     width: auto;
   }
-  .team-support-content-images{
+  .team-support-content-images {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr !important;
     grid-template-rows: 1fr !important;
@@ -481,7 +481,7 @@ body {
   .header-bottom {
     display: block;
   }
-  .team-support{
+  .team-support {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -1028,8 +1028,9 @@ p {
   height: auto;
 }
 .brand-logos {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 }
 .h-brand {
   padding: 15px;
@@ -1194,6 +1195,7 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-bottom: 90px;
 }
 .blog-container {
   display: flex;
@@ -1297,7 +1299,7 @@ p {
   font-size: 15px;
   margin-bottom: 14px;
 }
-.blog-content-text button {
+.blog button {
   width: 150px;
   height: 42px;
   background-color: var(--orange);
@@ -1331,8 +1333,8 @@ p {
   color: var(--orange);
   cursor: pointer;
 }
-.team-support{
-  background: url("https://demothemesky-be87.kxcdn.com/druco/wp-content/uploads/2022/08/home-about.jpg");
+.team-support {
+  background: url('https://demothemesky-be87.kxcdn.com/druco/wp-content/uploads/2022/08/home-about.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -1346,41 +1348,39 @@ p {
   margin-bottom: 78px;
   padding: 112px 0 113px 0;
 }
-.team-support-content{
-  width: 1260px;
+.team-support-content {
   margin: 130px auto;
   color: #ffffff;
 }
-.team-support-content-images{
+.team-support-content-images {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   justify-content: space-around;
   text-align: center;
 }
-.team-support-item{
+.team-support-item {
   width: 70px;
   height: 70px;
 }
-.team-support-title{
+.team-support-title {
   font-size: 18px;
   font-weight: 600;
   text-align: center;
 }
-.team-support-content h2{
+.team-support-content h2 {
   font-size: 60px;
   line-height: 1.16em;
   text-align: center;
   padding: 5px 5px 5px 5px;
-
 }
-.orange-text{
+.orange-text {
   color: var(--orange);
   font-size: 24px;
   margin-bottom: 12px;
   font-weight: 600;
 }
-.content-p{
+.content-p {
   font-size: 16px;
   font-weight: 300;
   color: #ffffff;
