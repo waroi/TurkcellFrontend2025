@@ -118,6 +118,10 @@ nav .container {
     rgb(255, 255, 255) 75%
   );
 }
+.banner p,
+h4 {
+  color: var(--secondary-color);
+}
 .popular-categories img {
   max-width: 128px;
 }
