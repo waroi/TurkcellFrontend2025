@@ -4,9 +4,9 @@
   box-sizing: border-box;
 }
 body {
-  font-family:"Mulish" ;
-  --work-sans: "Work Sans"
-  --mulish: "Mulish";
+  font-family: 'Mulish';
+  --work-sans: 'Work Sans';
+  --mulish: 'Mulish';
   --gray-text: #777777;
   --black-text: #242424;
   --blue-text: rgb(18, 70, 171);
@@ -18,6 +18,17 @@ body {
     max-width: 1390px;
     padding-inline: 15px;
     margin-inline: auto;
+  }
+  .advice-cards {
+    grid-template-columns: 1fr !important;
+    gap: 15px !important;
+  }
+
+  .advice-cards:nth-of-type(2) {
+    display: none !important;
+  }
+  .advice-cards:nth-of-type(3) {
+    display: none !important;
   }
 }
 @media (min-width: 769px) and (max-width: 1024px) {
@@ -44,17 +55,16 @@ body {
     margin-inline: auto;
   }
 }
-
 .expert-advice h4 {
   margin-bottom: 30px;
   font-size: 26px;
   color: var(--black-text);
   font-weight: 700;
+  padding-inline: 15px;
 }
 .advice-cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  border: 1px solid red;
 }
 .advice-card {
   padding: 0px 10px;
@@ -66,8 +76,7 @@ body {
   margin: 10px 0px;
 }
 .advice-card-date span {
-    color: var(--gray-text);
-
+  color: var(--gray-text);
   margin-right: 8px;
   font-size: 13px;
 }

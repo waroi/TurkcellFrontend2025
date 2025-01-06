@@ -917,11 +917,12 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 275px;
+  height: auto;
 }
 .brand-logos {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 }
 .h-brand {
   padding: 15px;
