@@ -1043,96 +1043,55 @@ article p {
     display: none;
     
   }
-  .tickets {
-    grid-template-columns: repeat(1, 1fr);
+  .projects-title{
+    margin: 0;
+  }
+  .projects-title div{
+    width: 100%;
   }
   .project-grid{
     grid-template-areas:
-    "img img img project-cards project-cards"
-    "img img img project-cards project-cards";
+    "img img "
+    "img img"
+    "project-cards project-cards"
+    "project-cards project-cards";
     
-  }
-  .project-cards {
-    grid-area: project-cards;
-    display: grid;
-    grid-template-areas: "card1 card2";
   }
   .card3,
   .project-card,
   .must-products > *:first-child,
-  .advice-blogs > *:first-child,
-  .recently-cards > *:first-child,
-  .recently-cards > *:last-child{
+  .must-products > *:last-child,
+  .must-text ul > *:nth-child(n+3),
+  .advice-blogs > *:not(:last-child),
+  .recently-cards > *:not(:nth-child(2)),
+  .projects-title > *:last-child{
     display: none;
   }
   
-  .project-img{
-    width: 100%;
-  }
-  .must-container {
-    display: flex;
-    flex-direction: column;
-  }
-  .must-text ul {
-    display: flex;
-    justify-content: center;
-  }
-  .must-text  {
-    text-align: center;
-  }
   .advice-blogs{
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(1,1fr);
   }
   .recently-cards{
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(1,1fr);
   }
-  .news{
-    height: auto;
-    padding: 20px 0;
-  }
-  .mobil-center{
-    flex-direction: column;
-    align-items: start;
-    gap: 20px;
-  }
-  .news-img,
-  .news-input {
-    width: 100%;
-    justify-content: flex-start;
-  }
+  
   .footer-grid{
     grid-template-areas: 
-            "area1 area1 area2 area2"
-            "area3 area4 area5 area5";
+            "area1" 
+            "area2"
+            "area3"
+            "area4"
+            "area5";
     row-gap: 30px;
   }
+
   .d-flex-between{
     flex-direction: column;
     gap:20px;
+    line-height: 2;
+    text-align: center;
   }
-
-  .header-left > *:not(:first-child),
-  header ul,
-  .navbar ul,
-  .icons{
-    display: none;
-  }
-  header .d-flex{
-    justify-content: center;
-  }
-  .fa-bars{
-    font-size: 30px;
-    color: white;
-  }
-  .nav-right{
-    width: 90%;
-  }
-  .search {
-    width: 100%;
-  }
-  .tablet-user{
-    display: block;
-    color: white;
-    font-size: 30px;
+  .footer-bottom{
+    padding-top: 50px;
   }
 }
