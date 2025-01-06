@@ -1178,6 +1178,60 @@ p {
   color: var(--orange);
   cursor: pointer;
 }
+.team-support{
+  background: url("https://demothemesky-be87.kxcdn.com/druco/wp-content/uploads/2022/08/home-about.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  height: 600px;
+  width: auto;
+  margin-bottom: 78px;
+  padding: 112px 0 113px 0;
+}
+.team-support-content{
+  width: 1260px;
+  margin: 130px auto;
+  color: #ffffff;
+}
+.team-support-content-images{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  justify-content: space-around;
+  text-align: center;
+}
+.team-support-item{
+  width: 70px;
+  height: 70px;
+}
+.team-support-title{
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+}
+.team-support-content h2{
+  font-size: 60px;
+  line-height: 1.16em;
+  text-align: center;
+  padding: 5px 5px 5px 5px;
+
+}
+.orange-text{
+  color: var(--orange);
+  font-size: 24px;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+.content-p{
+  font-size: 16px;
+  font-weight: 300;
+  color: #ffffff;
+}
 .newsletter {
   background-color: #ffb91f;
   padding: 33px 15px 31px 15px;
