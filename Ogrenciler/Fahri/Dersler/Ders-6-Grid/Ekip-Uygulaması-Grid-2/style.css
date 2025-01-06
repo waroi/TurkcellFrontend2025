@@ -50,7 +50,36 @@
   width: 150px;
   height: 58px;
 }
-
+.header-search {
+  color: rgba(32, 32, 32, 1);
+  background-color: rgba(211, 208, 208, 0.274);
+  height: 48px;
+  border-radius: 60px;
+  display: flex;
+  align-items: center;
+}
+.header-search select {
+  width: 190px;
+  border-width: 0;
+  padding: 4px 18px 4px 30px;
+  background-color: transparent;
+  font-size: 15px;
+  cursor: pointer;
+}
+.header-search-content {
+  border-width: 0;
+  width: 100%;
+  font-size: 15px;
+  background-color: rgba(211, 208, 208, 0.274);
+}
+.header-search-btn {
+  border-radius: 50%;
+  width: 65px;
+  height: 40px;
+  background-color: #ffb91f;
+  border: none;
+  transition: 0.3s;
+}
 .account-list {
   display: flex;
   align-items: center;
@@ -105,13 +134,15 @@
 }
 .slider-wrap {
   display: flex;
-  gap: 20px;
+  gap: 50px;
 }
 .slider-search {
   background-color: white;
   display: flex;
   flex-direction: row;
   padding: 20px 20px;
+  border-radius: 20px;
+  width: 350px;
 }
 .slider-buttons {
   display: flex;
