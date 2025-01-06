@@ -1,934 +1,1041 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mega Market</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-      rel="stylesheet"
-    />
-  </head>
 
-  <body>
-    <header>hazal</header>
-    <nav>hazal</nav>
-    <section class="banner">hazal</section>
-    <section class="popular-categories">hazal</section>
-    <section class="featured-products">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mega Market</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+</head>
+
+<body>
+  <header class="header">
+    <div class="header-top">
       <div class="container">
-        <div class="featured-products-header-bar">
-          <div class="featured-products-header-text">
-            <span>Featured Products</span>
+        <div class="header-top-start">
+          <img class="WoodMartLogo"
+            src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2021/12/woodmart-building-supplies-logo.svg"
+            alt="logo">
+          <ul class="start-list">
+            <div class="list1">
+              <li>
+                <img class="Img"
+                  src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/05/map-point.svg" alt="">
+                Find A Store
+              </li>
+            </div>
+            <li> Opened Until <span class="blue-text">9PM</span>
+            </li>
+          </ul>
+        </div>
+        <div class="header-top-end">
+          <ul class="end-list">
+            <li><a href="#">Expert Advice</a></li>
+            <hr class="vertical">
+            <li><a href="#">About Us</a></li>
+            <hr class="vertical">
+            <li><a href="#">Track Order</a></li>
+            <hr class="vertical">
+            <li><i class="fa-regular fa-user"></i></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section class="header-middle">
+    <div class="header-menu">
+      <div class="container">
+        <div class="header-menu-left">
+          <div class="all-categories">
+            <img src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/05/All-Categories-1-1.svg"
+              alt="">
+            <span class="all">All Categories</span>
           </div>
-          <div class="featured-products-category">
-            <ul>
-              <li><span>NEW</span></li>
-              <li><span class="p-gray">FEATURED</span></li>
-              <li><span class="p-gray">TOP SELLERS</span></li>
-            </ul>
+          <ul>
+            <li><img src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2021/12/Services.svg"
+                alt="">Services</li>
+            <li><img src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2021/12/Promotions.svg"
+                alt="">Promotions</li>
+            <li><img src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2021/12/Payment-Delivery.svg"
+                alt="">Payment And Delivery</li>
+          </ul>
+        </div>
+        <div class="header-menu-right">
+          <div class="search">
+            <input type="text" placeholder="Search for product" />
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+          <div class="icons">
+            <i class="fa-regular fa-heart"><span class="icon-number">0</span></i>
+            <i class="fa-solid fa-shuffle"><span class="icon-number">0</span></i>
+            <i class="fa-solid fa-cart-shopping"><span class="icon-number">0</span></i>
           </div>
         </div>
-        <div class="featured-products-content">
-          <div class="featured-products-cards">
-            <div class="product-card">
-              <div class="product-card-img">
-                <img
-                  src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/04/bathroom-product-2.jpg"
-                  alt=""
-                />
-              </div>
-              <div class="product-title">
-                <h3>Rectangular Sink</h3>
-              </div>
-              <div class="star-rating">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-              </div>
-              <div class="product-stock">
-                <i class="fa-solid fa-check"></i>
-                In stock
-              </div>
-              <div class="product-price">
-                <p class="p-blue">$199.00&nbsp;</p>
-                <p class="p-gray">/ each</p>
-              </div>
-              <div class="product-button">
-                <div class="quantity">
-                  <button><i class="fa-solid fa-minus"></i></button>
-                  <p>1</p>
-                  <button><i class="fa-solid fa-plus"></i></button>
-                </div>
-                <div class="add-to-cart"><button>ADD TO CART</button></div>
-              </div>
-              <div class="product-detail">
-                <p class="p-black">SKU:&nbsp;</p>
-                <p class="p-gray">167111</p>
-              </div>
+      </div>
+    </div>
+  </section>
+  <section class="banner">
+    <div class="banner-blue"></div>
+    <div class="container">
+      <div class="banner-grid">
+        <div class="banner-grid-left">
+          <i class="fa-solid fa-chevron-left"></i>
+          <div class="left-text">
+            <p>From <span class="blue-text">the best</span> designers</p>
+            <h4>Check Out <br>Our Expert <br> Advice</h4>
+            <button>EXPERT ADVICE</button>
+          </div>
+        </div>
+        <div class="banner-grid-right">
+          <div class="right-text1">
+            <h2>Our Services</h2>
+            <p>Discover all the ways to <br>get your product.</p>
+            <button>VİEW MORE</button>
+          </div>
+          <div class="right-text2">
+            <h2>Free Shipping!</h2>
+            <p>Free shipping on orders <br>of $100 on more.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+  <section class="popular-categories">
+    <div class="container">
+      <h4>Popular Categories</h4>
+      <div class="popular-products-category">
+        <div class="category">
+          <img src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/04/tiles-and-porcelain.png"
+            alt="Tiles and porcelain" />
+          <h3>Tiles and porcelain</h3>
+          <p>20 products</p>
+        </div>
+        <div class="category">
+          <img src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/04/pipes-and-accessories.png"
+            alt="Pipes & accessories" />
+          <h3>Pipes & accessories</h3>
+          <p>27 products</p>
+        </div>
+        <div class="category">
+          <img src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/04/bath.png" alt="Bath" />
+          <h3>Bath</h3>
+          <p>9 products</p>
+        </div>
+        <div class="category">
+          <img src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/04/mirrors.png"
+            alt="Mirrors" />
+          <h3>Mirrors</h3>
+          <p>15 products</p>
+        </div>
+        <div class="category">
+          <img src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/04/spotlights.png"
+            alt="Spotlights" />
+          <h3>Spotlights</h3>
+          <p>25 products</p>
+        </div>
+        <div class="category">
+          <img src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/04/bathroom-vanities.png"
+            alt="Bathroom Vanities" />
+          <h3>Bathroom Vanities</h3>
+          <p>15 products</p>
+        </div>
+        <div class="category">
+          <img src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/04/bathroom.png"
+            alt="Bathroom" />
+          <h3>Bathroom</h3>
+          <p>29 products</p>
+        </div>
+        <div class="category">
+          <img src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/04/water-heaters.png"
+            alt="Water Heaters" />
+          <h3>Water Heaters</h3>
+          <p>12 products</p>
+        </div>
+        <div class="category">
+          <img src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/04/power-tools.png"
+            alt="Power Tools" />
+          <h3>Power Tools</h3>
+          <p>39 products</p>
+        </div>
+        <div class="category">
+          <img src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/04/toilets-and-compacts.png"
+            alt="Toilets and compacts" />
+          <h3>Toilets and compacts</h3>
+          <p>8 products</p>
+        </div>
+        <div class="category">
+          <img src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/04/warm-floor.png"
+            alt="Warm Floor" />
+          <h3>Warm floor</h3>
+          <p>8 products</p>
+        </div>
+        <div class="category">
+          <img src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/04/insulation.png"
+            alt="Insulation" />
+          <h3>Insulation</h3>
+          <p>6 products</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="featured-products">
+    <div class="container">
+      <div class="featured-products-header-bar">
+        <div class="featured-products-header-text">
+          <span>Featured Products</span>
+        </div>
+        <div class="featured-products-category">
+          <ul>
+            <li><span>NEW</span></li>
+            <li><span class="p-gray">FEATURED</span></li>
+            <li><span class="p-gray">TOP SELLERS</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="featured-products-content">
+        <div class="featured-products-cards">
+          <div class="product-card">
+            <div class="product-card-img">
+              <img src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/04/bathroom-product-2.jpg"
+                alt="" />
             </div>
-            <div class="product-card">
-              <div class="product-card-img">
-                <img
-                  src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/07/flooring-product-25-339x387.jpg"
-                  alt=""
-                />
-              </div>
-              <div class="product-title">
-                <h3>Black Porcelain Tile</h3>
-              </div>
-              <div class="star-rating">
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-              </div>
-              <div class="product-stock">
-                <i class="fa-solid fa-check"></i>
-                In stock
-              </div>
-              <div class="product-price">
-                <p class="p-blue">$13.70&nbsp;</p>
-                <p class="p-gray">/ piece</p>
-              </div>
-              <div class="product-button">
-                <div class="quantity">
-                  <button><i class="fa-solid fa-minus"></i></button>
-                  <p>1</p>
-                  <button><i class="fa-solid fa-plus"></i></button>
-                </div>
-                <div class="add-to-cart"><button>ADD TO CART</button></div>
-              </div>
-              <div class="product-detail">
-                <p class="p-black">SKU:&nbsp;</p>
-                <p class="p-gray">314 526</p>
-              </div>
+            <div class="product-title">
+              <h3>Rectangular Sink</h3>
             </div>
-            <div class="product-card">
-              <div class="product-card-img">
-                <img
-                  src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/04/bathroom-product-20-339x387.jpg"
-                  alt=""
-                />
-              </div>
-              <div class="product-title">
-                <h3>Face Mirror</h3>
-              </div>
-              <div class="star-rating">
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-              </div>
-              <div class="product-stock">
-                <i class="fa-solid fa-check"></i>
-                In stock
-              </div>
-              <div class="product-price">
-                <p class="p-blue">$209.00&nbsp;</p>
-                <p class="p-gray">/ each</p>
-              </div>
-              <div class="product-button">
-                <div class="quantity">
-                  <button><i class="fa-solid fa-minus"></i></button>
-                  <p>1</p>
-                  <button><i class="fa-solid fa-plus"></i></button>
-                </div>
-                <div class="add-to-cart"><button>ADD TO CART</button></div>
-              </div>
-              <div class="product-detail">
-                <p class="p-black">SKU:&nbsp;</p>
-                <p class="p-gray">167654</p>
-              </div>
+            <div class="star-rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
             </div>
-            <div class="product-card">
-              <div class="product-card-img">
-                <img
-                  src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/01/flooring-product-6.jpg"
-                  alt=""
-                />
-              </div>
-              <div class="product-title">
-                <h3>Linoleum Starry Nght</h3>
-              </div>
-              <div class="star-rating">
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-              </div>
-              <div class="product-stock">
-                <i class="fa-solid fa-check"></i>
-                In stock
-              </div>
-              <div class="product-price">
-                <p class="p-blue">$5.94&nbsp;</p>
-                <p class="p-gray">/ foot</p>
-              </div>
-              <div class="product-button">
-                <div class="quantity">
-                  <button><i class="fa-solid fa-minus"></i></button>
-                  <p>1</p>
-                  <button><i class="fa-solid fa-plus"></i></button>
-                </div>
-                <div class="add-to-cart"><button>ADD TO CART</button></div>
-              </div>
-              <div class="product-detail">
-                <p class="p-black">SKU:&nbsp;</p>
-                <p class="p-gray">307825</p>
-              </div>
+            <div class="product-stock">
+              <i class="fa-solid fa-check"></i>
+              In stock
             </div>
-            <div class="product-card">
-              <div class="product-card-img">
-                <img
-                  src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/04/thermal-product-6-339x387.jpg"
-                  alt=""
-                />
-              </div>
-              <div class="product-title">
-                <h3>V510 100 Liters Vertical</h3>
-              </div>
-              <div class="star-rating">
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-              </div>
-              <div class="product-stock">
-                <i class="fa-solid fa-check"></i>
-                In stock
-              </div>
-              <div class="product-price">
-                <p class="p-blue">$278.00&nbsp;</p>
-                <p class="p-gray">/ each</p>
-              </div>
-              <div class="product-button">
-                <div class="quantity">
-                  <button><i class="fa-solid fa-minus"></i></button>
-                  <p>1</p>
-                  <button><i class="fa-solid fa-plus"></i></button>
-                </div>
-                <div class="add-to-cart"><button>ADD TO CART</button></div>
-              </div>
-              <div class="product-detail">
-                <p class="p-black">SKU:&nbsp;</p>
-                <p class="p-gray">839906</p>
-              </div>
+            <div class="product-price">
+              <p class="p-blue">$199.00&nbsp;</p>
+              <p class="p-gray">/ each</p>
             </div>
-            <div class="product-card">
-              <div class="product-card-img">
-                <img
-                  src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/04/bathroom-product-17.jpg"
-                  alt=""
-                />
+            <div class="product-button">
+              <div class="quantity">
+                <button><i class="fa-solid fa-minus"></i></button>
+                <p>1</p>
+                <button><i class="fa-solid fa-plus"></i></button>
               </div>
-              <div class="product-title">
-                <h3>Vanity Cabinet</h3>
-              </div>
-              <div class="star-rating">
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-              </div>
-              <div class="product-stock">
-                <i class="fa-solid fa-check"></i>
-                In stock
-              </div>
-              <div class="product-price">
-                <p class="p-blue">$480.00&nbsp;</p>
-                <p class="p-gray">/ each</p>
-              </div>
-              <div class="product-button">
-                <div class="quantity">
-                  <button><i class="fa-solid fa-minus"></i></button>
-                  <p>1</p>
-                  <button><i class="fa-solid fa-plus"></i></button>
-                </div>
-                <div class="add-to-cart"><button>ADD TO CART</button></div>
-              </div>
-              <div class="product-detail">
-                <p class="p-black">SKU:&nbsp;</p>
-                <p class="p-gray">169874</p>
-              </div>
+              <div class="add-to-cart"><button>ADD TO CART</button></div>
             </div>
-            <div class="product-card">
-              <div class="product-card-img">
-                <img
-                  src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/04/bathroom-product-3-339x387.jpg"
-                  alt=""
-                />
-              </div>
-              <div class="product-title">
-                <h3>Round Bottle</h3>
-              </div>
-              <div class="star-rating">
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-              </div>
-              <div class="product-stock">
-                <i class="fa-solid fa-check"></i>
-                In stock
-              </div>
-              <div class="product-price">
-                <p class="p-blue">$39.99&nbsp;</p>
-                <p class="p-gray">/ each</p>
-              </div>
-              <div class="product-button">
-                <div class="quantity">
-                  <button><i class="fa-solid fa-minus"></i></button>
-                  <p>1</p>
-                  <button><i class="fa-solid fa-plus"></i></button>
-                </div>
-                <div class="add-to-cart"><button>ADD TO CART</button></div>
-              </div>
-              <div class="product-detail">
-                <p class="p-black">SKU:&nbsp;</p>
-                <p class="p-gray">520100</p>
-              </div>
+            <div class="product-detail">
+              <p class="p-black">SKU:&nbsp;</p>
+              <p class="p-gray">167111</p>
             </div>
-            <div class="product-card">
-              <div class="product-card-img">
-                <img
-                  src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/04/bathroom-product-16.jpg"
-                  alt=""
-                />
-              </div>
-              <div class="product-title">
-                <h3>Wall-hung toilet</h3>
-              </div>
-              <div class="star-rating">
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-              </div>
-              <div class="product-stock">
-                <i class="fa-solid fa-check"></i>
-                In stock
-              </div>
-              <div class="product-price">
-                <p class="p-blue">$999.00&nbsp;</p>
-                <p class="p-gray">/ each</p>
-              </div>
-              <div class="product-button">
-                <div class="quantity">
-                  <button><i class="fa-solid fa-minus"></i></button>
-                  <p>1</p>
-                  <button><i class="fa-solid fa-plus"></i></button>
-                </div>
-                <div class="add-to-cart"><button>ADD TO CART</button></div>
-              </div>
-              <div class="product-detail">
-                <p class="p-black">SKU:&nbsp;</p>
-                <p class="p-gray">167777</p>
-              </div>
+          </div>
+          <div class="product-card">
+            <div class="product-card-img">
+              <img
+                src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/07/flooring-product-25-339x387.jpg"
+                alt="" />
             </div>
-            <div class="product-card">
-              <div class="product-card-img">
-                <img
-                  src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/01/flooring-product-1.jpg"
-                  alt=""
-                />
-              </div>
-              <div class="product-title">
-                <h3>Rectangular Sink</h3>
-              </div>
-              <div class="star-rating">
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-              </div>
-              <div class="product-stock">
-                <i class="fa-solid fa-check"></i>
-                In stock
-              </div>
-              <div class="product-price">
-                <p class="p-blue">$21.00&nbsp;</p>
-                <p class="p-gray">/ piece</p>
-              </div>
-              <div class="product-button">
-                <div class="quantity">
-                  <button><i class="fa-solid fa-minus"></i></button>
-                  <p>1</p>
-                  <button><i class="fa-solid fa-plus"></i></button>
-                </div>
-                <div class="add-to-cart"><button>ADD TO CART</button></div>
-              </div>
-              <div class="product-detail">
-                <p class="p-black">SKU:&nbsp;</p>
-                <p class="p-gray">157210</p>
-              </div>
+            <div class="product-title">
+              <h3>Black Porcelain Tile</h3>
             </div>
-            <div class="product-card">
-              <div class="product-card-img">
-                <img
-                  src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/04/bathroom-product-14.jpg"
-                  alt=""
-                />
+            <div class="star-rating">
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+            </div>
+            <div class="product-stock">
+              <i class="fa-solid fa-check"></i>
+              In stock
+            </div>
+            <div class="product-price">
+              <p class="p-blue">$13.70&nbsp;</p>
+              <p class="p-gray">/ piece</p>
+            </div>
+            <div class="product-button">
+              <div class="quantity">
+                <button><i class="fa-solid fa-minus"></i></button>
+                <p>1</p>
+                <button><i class="fa-solid fa-plus"></i></button>
               </div>
-              <div class="product-title">
-                <h3>Matte Black Bath</h3>
+              <div class="add-to-cart"><button>ADD TO CART</button></div>
+            </div>
+            <div class="product-detail">
+              <p class="p-black">SKU:&nbsp;</p>
+              <p class="p-gray">314 526</p>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-card-img">
+              <img
+                src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/04/bathroom-product-20-339x387.jpg"
+                alt="" />
+            </div>
+            <div class="product-title">
+              <h3>Face Mirror</h3>
+            </div>
+            <div class="star-rating">
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+            </div>
+            <div class="product-stock">
+              <i class="fa-solid fa-check"></i>
+              In stock
+            </div>
+            <div class="product-price">
+              <p class="p-blue">$209.00&nbsp;</p>
+              <p class="p-gray">/ each</p>
+            </div>
+            <div class="product-button">
+              <div class="quantity">
+                <button><i class="fa-solid fa-minus"></i></button>
+                <p>1</p>
+                <button><i class="fa-solid fa-plus"></i></button>
               </div>
-              <div class="star-rating">
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
+              <div class="add-to-cart"><button>ADD TO CART</button></div>
+            </div>
+            <div class="product-detail">
+              <p class="p-black">SKU:&nbsp;</p>
+              <p class="p-gray">167654</p>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-card-img">
+              <img src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/01/flooring-product-6.jpg"
+                alt="" />
+            </div>
+            <div class="product-title">
+              <h3>Linoleum Starry Nght</h3>
+            </div>
+            <div class="star-rating">
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+            </div>
+            <div class="product-stock">
+              <i class="fa-solid fa-check"></i>
+              In stock
+            </div>
+            <div class="product-price">
+              <p class="p-blue">$5.94&nbsp;</p>
+              <p class="p-gray">/ foot</p>
+            </div>
+            <div class="product-button">
+              <div class="quantity">
+                <button><i class="fa-solid fa-minus"></i></button>
+                <p>1</p>
+                <button><i class="fa-solid fa-plus"></i></button>
               </div>
-              <div class="product-stock">
-                <i class="fa-solid fa-check"></i>
-                In stock
+              <div class="add-to-cart"><button>ADD TO CART</button></div>
+            </div>
+            <div class="product-detail">
+              <p class="p-black">SKU:&nbsp;</p>
+              <p class="p-gray">307825</p>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-card-img">
+              <img
+                src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/04/thermal-product-6-339x387.jpg"
+                alt="" />
+            </div>
+            <div class="product-title">
+              <h3>V510 100 Liters Vertical</h3>
+            </div>
+            <div class="star-rating">
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+            </div>
+            <div class="product-stock">
+              <i class="fa-solid fa-check"></i>
+              In stock
+            </div>
+            <div class="product-price">
+              <p class="p-blue">$278.00&nbsp;</p>
+              <p class="p-gray">/ each</p>
+            </div>
+            <div class="product-button">
+              <div class="quantity">
+                <button><i class="fa-solid fa-minus"></i></button>
+                <p>1</p>
+                <button><i class="fa-solid fa-plus"></i></button>
               </div>
-              <div class="product-price">
-                <p class="p-blue">$699.00&nbsp;</p>
-                <p class="p-gray">/ each</p>
+              <div class="add-to-cart"><button>ADD TO CART</button></div>
+            </div>
+            <div class="product-detail">
+              <p class="p-black">SKU:&nbsp;</p>
+              <p class="p-gray">839906</p>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-card-img">
+              <img
+                src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/04/bathroom-product-17.jpg"
+                alt="" />
+            </div>
+            <div class="product-title">
+              <h3>Vanity Cabinet</h3>
+            </div>
+            <div class="star-rating">
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+            </div>
+            <div class="product-stock">
+              <i class="fa-solid fa-check"></i>
+              In stock
+            </div>
+            <div class="product-price">
+              <p class="p-blue">$480.00&nbsp;</p>
+              <p class="p-gray">/ each</p>
+            </div>
+            <div class="product-button">
+              <div class="quantity">
+                <button><i class="fa-solid fa-minus"></i></button>
+                <p>1</p>
+                <button><i class="fa-solid fa-plus"></i></button>
               </div>
-              <div class="product-button">
-                <div class="quantity">
-                  <button><i class="fa-solid fa-minus"></i></button>
-                  <p>1</p>
-                  <button><i class="fa-solid fa-plus"></i></button>
-                </div>
-                <div class="add-to-cart"><button>ADD TO CART</button></div>
+              <div class="add-to-cart"><button>ADD TO CART</button></div>
+            </div>
+            <div class="product-detail">
+              <p class="p-black">SKU:&nbsp;</p>
+              <p class="p-gray">169874</p>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-card-img">
+              <img
+                src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/04/bathroom-product-3-339x387.jpg"
+                alt="" />
+            </div>
+            <div class="product-title">
+              <h3>Round Bottle</h3>
+            </div>
+            <div class="star-rating">
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+            </div>
+            <div class="product-stock">
+              <i class="fa-solid fa-check"></i>
+              In stock
+            </div>
+            <div class="product-price">
+              <p class="p-blue">$39.99&nbsp;</p>
+              <p class="p-gray">/ each</p>
+            </div>
+            <div class="product-button">
+              <div class="quantity">
+                <button><i class="fa-solid fa-minus"></i></button>
+                <p>1</p>
+                <button><i class="fa-solid fa-plus"></i></button>
               </div>
-              <div class="product-detail">
-                <p class="p-black">SKU:&nbsp;</p>
-                <p class="p-gray">520202</p>
+              <div class="add-to-cart"><button>ADD TO CART</button></div>
+            </div>
+            <div class="product-detail">
+              <p class="p-black">SKU:&nbsp;</p>
+              <p class="p-gray">520100</p>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-card-img">
+              <img
+                src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/04/bathroom-product-16.jpg"
+                alt="" />
+            </div>
+            <div class="product-title">
+              <h3>Wall-hung toilet</h3>
+            </div>
+            <div class="star-rating">
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+            </div>
+            <div class="product-stock">
+              <i class="fa-solid fa-check"></i>
+              In stock
+            </div>
+            <div class="product-price">
+              <p class="p-blue">$999.00&nbsp;</p>
+              <p class="p-gray">/ each</p>
+            </div>
+            <div class="product-button">
+              <div class="quantity">
+                <button><i class="fa-solid fa-minus"></i></button>
+                <p>1</p>
+                <button><i class="fa-solid fa-plus"></i></button>
               </div>
+              <div class="add-to-cart"><button>ADD TO CART</button></div>
+            </div>
+            <div class="product-detail">
+              <p class="p-black">SKU:&nbsp;</p>
+              <p class="p-gray">167777</p>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-card-img">
+              <img src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/01/flooring-product-1.jpg"
+                alt="" />
+            </div>
+            <div class="product-title">
+              <h3>Rectangular Sink</h3>
+            </div>
+            <div class="star-rating">
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+            </div>
+            <div class="product-stock">
+              <i class="fa-solid fa-check"></i>
+              In stock
+            </div>
+            <div class="product-price">
+              <p class="p-blue">$21.00&nbsp;</p>
+              <p class="p-gray">/ piece</p>
+            </div>
+            <div class="product-button">
+              <div class="quantity">
+                <button><i class="fa-solid fa-minus"></i></button>
+                <p>1</p>
+                <button><i class="fa-solid fa-plus"></i></button>
+              </div>
+              <div class="add-to-cart"><button>ADD TO CART</button></div>
+            </div>
+            <div class="product-detail">
+              <p class="p-black">SKU:&nbsp;</p>
+              <p class="p-gray">157210</p>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-card-img">
+              <img
+                src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/04/bathroom-product-14.jpg"
+                alt="" />
+            </div>
+            <div class="product-title">
+              <h3>Matte Black Bath</h3>
+            </div>
+            <div class="star-rating">
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+            </div>
+            <div class="product-stock">
+              <i class="fa-solid fa-check"></i>
+              In stock
+            </div>
+            <div class="product-price">
+              <p class="p-blue">$699.00&nbsp;</p>
+              <p class="p-gray">/ each</p>
+            </div>
+            <div class="product-button">
+              <div class="quantity">
+                <button><i class="fa-solid fa-minus"></i></button>
+                <p>1</p>
+                <button><i class="fa-solid fa-plus"></i></button>
+              </div>
+              <div class="add-to-cart"><button>ADD TO CART</button></div>
+            </div>
+            <div class="product-detail">
+              <p class="p-black">SKU:&nbsp;</p>
+              <p class="p-gray">520202</p>
             </div>
           </div>
         </div>
       </div>
-    </section>
-    <section class="company-features">
-      <div class="container">
-        <div class="features">
-          <div class="feature">
-            <div class="feature-icon">
-              <img
-                src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2021/12/ready-design.svg"
-                alt=""
-              />
+    </div>
+  </section>
+  <section class="company-features">
+    <div class="container">
+      <div class="features">
+        <div class="feature">
+          <div class="feature-icon">
+            <img src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2021/12/ready-design.svg"
+              alt="" />
+          </div>
+          <div class="feature-text">
+            <div class="feature-title">
+              <h3>500+ Brands</h3>
             </div>
-            <div class="feature-text">
-              <div class="feature-title">
-                <h3>500+ Brands</h3>
-              </div>
-              <div class="feature-description">
-                <p>View our benefits</p>
-              </div>
+            <div class="feature-description">
+              <p>View our benefits</p>
             </div>
           </div>
-          <div class="feature">
-            <div class="feature-icon">
-              <img
-                src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2021/12/delivery.svg"
-                alt=""
-              />
+        </div>
+        <div class="feature">
+          <div class="feature-icon">
+            <img src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2021/12/delivery.svg" alt="" />
+          </div>
+          <div class="feature-text">
+            <div class="feature-title">
+              <h3>Fast Shipping</h3>
             </div>
-            <div class="feature-text">
-              <div class="feature-title">
-                <h3>Fast Shipping</h3>
-              </div>
-              <div class="feature-description">
-                <p>Carrier information</p>
-              </div>
+            <div class="feature-description">
+              <p>Carrier information</p>
             </div>
           </div>
-          <div class="feature">
-            <div class="feature-icon">
-              <img
-                src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2021/12/design.svg"
-                alt=""
-              />
+        </div>
+        <div class="feature">
+          <div class="feature-icon">
+            <img src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2021/12/design.svg" alt="" />
+          </div>
+          <div class="feature-text">
+            <div class="feature-title">
+              <h3>Ready-made solutions</h3>
             </div>
-            <div class="feature-text">
-              <div class="feature-title">
-                <h3>Ready-made solutions</h3>
-              </div>
-              <div class="feature-description">
-                <p>Track or cancel orders</p>
-              </div>
+            <div class="feature-description">
+              <p>Track or cancel orders</p>
             </div>
           </div>
-          <div class="feature">
-            <div class="feature-icon">
-              <img
-                src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2021/12/payment.svg"
-                alt=""
-              />
+        </div>
+        <div class="feature">
+          <div class="feature-icon">
+            <img src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2021/12/payment.svg" alt="" />
+          </div>
+          <div class="feature-text">
+            <div class="feature-title">
+              <h3>Secure Payments</h3>
             </div>
-            <div class="feature-text">
-              <div class="feature-title">
-                <h3>Secure Payments</h3>
-              </div>
-              <div class="feature-description">
-                <p>Payment methods</p>
-              </div>
+            <div class="feature-description">
+              <p>Payment methods</p>
             </div>
           </div>
         </div>
       </div>
-    </section>
-    <section class="projects">
-      <div class="container">
-        <div class="projects-left">
-          <h4>Projects & Ideas</h4>
-          <img
-            src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/05/home-hotspot.jpg.webp"
-            alt=""
-          />
-        </div>
-        <div class="project-right">
-          <h4>Similar Products</h4>
-          <div class="similar-products">
-            <div class="product-card">
-              <div class="product-card-img">
-                <img
-                  src="https://woodmart.xtemos.com/megamarket/wp-content/uploads/sites/6/2022/04/hot-spot-product-1.jpg"
-                  alt=""
-                />
-              </div>
-              <div class="product-title">
-                <h3>Glossy Ceramic</h3>
-              </div>
-              <div class="star-rating">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-              </div>
-              <div class="product-stock">
-                <i class="fa-solid fa-check"></i>
-                In stock
-              </div>
-              <div class="product-price">
-                <p class="p-blue">$29.99&nbsp;</p>
-                <p class="p-gray">/ piece</p>
-              </div>
-              <div class="product-button">
-                <div class="quantity">
-                  <button><i class="fa-solid fa-minus"></i></button>
-                  <p>1</p>
-                  <button><i class="fa-solid fa-plus"></i></button>
-                </div>
-                <div class="add-to-cart"><button>ADD TO CART</button></div>
-              </div>
-              <div class="product-detail">
-                <p class="p-black">SKU:&nbsp;</p>
-                <p class="p-gray">321210</p>
-              </div>
+    </div>
+  </section>
+  <section class="projects">
+    <div class="container">
+      <div class="projects-left">
+        <h4>Projects & Ideas</h4>
+        <img src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/05/home-hotspot.jpg.webp"
+          alt="" />
+      </div>
+      <div class="project-right">
+        <h4>Similar Products</h4>
+        <div class="similar-products">
+          <div class="product-card">
+            <div class="product-card-img">
+              <img
+                src="https://woodmart.xtemos.com/megamarket/wp-content/uploads/sites/6/2022/04/hot-spot-product-1.jpg"
+                alt="" />
             </div>
-            <div class="product-card">
-              <div class="product-card-img">
-                <img
-                  src="https://woodmart.xtemos.com/megamarket/wp-content/uploads/sites/6/2022/04/hot-spot-product-2.jpg"
-                  alt=""
-                />
-              </div>
-              <div class="product-title">
-                <h3>Bathroom Sink</h3>
-              </div>
-              <div class="star-rating">
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-              </div>
-              <div class="product-stock">
-                <i class="fa-solid fa-check"></i>
-                In stock
-              </div>
-              <div class="product-price">
-                <p class="p-blue">$124.00&nbsp;</p>
-                <p class="p-gray">/ each</p>
-              </div>
-              <div class="product-button">
-                <div class="quantity">
-                  <button><i class="fa-solid fa-minus"></i></button>
-                  <p>1</p>
-                  <button><i class="fa-solid fa-plus"></i></button>
-                </div>
-                <div class="add-to-cart"><button>ADD TO CART</button></div>
-              </div>
-              <div class="product-detail">
-                <p class="p-black">SKU:&nbsp;</p>
-                <p class="p-gray">520200</p>
-              </div>
+            <div class="product-title">
+              <h3>Glossy Ceramic</h3>
             </div>
-            <div class="product-card">
-              <div class="product-card-img">
-                <img
-                  src="https://woodmart.xtemos.com/megamarket/wp-content/uploads/sites/6/2022/04/hot-spot-product-3.jpg"
-                  alt=""
-                />
+            <div class="star-rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="product-stock">
+              <i class="fa-solid fa-check"></i>
+              In stock
+            </div>
+            <div class="product-price">
+              <p class="p-blue">$29.99&nbsp;</p>
+              <p class="p-gray">/ piece</p>
+            </div>
+            <div class="product-button">
+              <div class="quantity">
+                <button><i class="fa-solid fa-minus"></i></button>
+                <p>1</p>
+                <button><i class="fa-solid fa-plus"></i></button>
               </div>
-              <div class="product-title">
-                <h3>Black siphon</h3>
-              </div>
-              <div class="star-rating">
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-              </div>
-              <div class="product-stock">
-                <i class="fa-solid fa-check"></i>
-                In stock
-              </div>
-              <div class="product-price">
-                <p class="p-blue">$199.00&nbsp;</p>
-                <p class="p-gray">/ each</p>
-              </div>
-              <div class="product-button">
-                <div class="quantity">
-                  <button><i class="fa-solid fa-minus"></i></button>
-                  <p>1</p>
-                  <button><i class="fa-solid fa-plus"></i></button>
-                </div>
-                <div class="add-to-cart"><button>ADD TO CART</button></div>
-              </div>
-              <div class="product-detail">
-                <p class="p-black">SKU:&nbsp;</p>
-                <p class="p-gray">167111</p>
-              </div>
+              <div class="add-to-cart"><button>ADD TO CART</button></div>
+            </div>
+            <div class="product-detail">
+              <p class="p-black">SKU:&nbsp;</p>
+              <p class="p-gray">321210</p>
             </div>
           </div>
-          <div class="our-services">
-            <div class="our-services-img">
+          <div class="product-card">
+            <div class="product-card-img">
               <img
-                src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/05/services.jpg"
-                alt=""
-              />
+                src="https://woodmart.xtemos.com/megamarket/wp-content/uploads/sites/6/2022/04/hot-spot-product-2.jpg"
+                alt="" />
             </div>
-            <div class="our-services-content">
-              <h4>OUR SERVICES</h4>
-              <h3>Here's what we can do</h3>
-              <p class="p-gray">
-                With us you will build a house from scratch, perform the
-                necessary finishing work and fully complete.
-              </p>
+            <div class="product-title">
+              <h3>Bathroom Sink</h3>
+            </div>
+            <div class="star-rating">
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+            </div>
+            <div class="product-stock">
+              <i class="fa-solid fa-check"></i>
+              In stock
+            </div>
+            <div class="product-price">
+              <p class="p-blue">$124.00&nbsp;</p>
+              <p class="p-gray">/ each</p>
+            </div>
+            <div class="product-button">
+              <div class="quantity">
+                <button><i class="fa-solid fa-minus"></i></button>
+                <p>1</p>
+                <button><i class="fa-solid fa-plus"></i></button>
+              </div>
+              <div class="add-to-cart"><button>ADD TO CART</button></div>
+            </div>
+            <div class="product-detail">
+              <p class="p-black">SKU:&nbsp;</p>
+              <p class="p-gray">520200</p>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-card-img">
+              <img
+                src="https://woodmart.xtemos.com/megamarket/wp-content/uploads/sites/6/2022/04/hot-spot-product-3.jpg"
+                alt="" />
+            </div>
+            <div class="product-title">
+              <h3>Black siphon</h3>
+            </div>
+            <div class="star-rating">
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+            </div>
+            <div class="product-stock">
+              <i class="fa-solid fa-check"></i>
+              In stock
+            </div>
+            <div class="product-price">
+              <p class="p-blue">$199.00&nbsp;</p>
+              <p class="p-gray">/ each</p>
+            </div>
+            <div class="product-button">
+              <div class="quantity">
+                <button><i class="fa-solid fa-minus"></i></button>
+                <p>1</p>
+                <button><i class="fa-solid fa-plus"></i></button>
+              </div>
+              <div class="add-to-cart"><button>ADD TO CART</button></div>
+            </div>
+            <div class="product-detail">
+              <p class="p-black">SKU:&nbsp;</p>
+              <p class="p-gray">167111</p>
+            </div>
+          </div>
+        </div>
+        <div class="our-services">
+          <div class="our-services-img">
+            <img src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/05/services.jpg" alt="" />
+          </div>
+          <div class="our-services-content">
+            <h4>OUR SERVICES</h4>
+            <h3>Here's what we can do</h3>
+            <p class="p-gray">
+              With us you will build a house from scratch, perform the
+              necessary finishing work and fully complete.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="must-products">
+    <div class="container">
+      <div class="must-left">
+        <div class="must-left-header">
+          <h4>Must-have Products and more</h4>
+        </div>
+        <div class="must-left-text">
+          <p class="p-gray">Everything you need for repairs in one place</p>
+        </div>
+        <div class="must-left-icons">
+          <div class="must-left-icon">
+            <img src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2021/12/category-tool.svg"
+              alt="" />
+            <h3>HAND INSTRUMENTS</h3>
+          </div>
+          <div class="must-left-icon">
+            <img src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2021/12/category-lighting.svg"
+              alt="" />
+            <h3>LIGHTING</h3>
+          </div>
+          <div class="must-left-icon">
+            <img src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2021/12/category-flooring.svg"
+              alt="" />
+            <h3>FLOORING</h3>
+          </div>
+          <div class="must-left-icon">
+            <img src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2021/12/category-plumbing.svg"
+              alt="" />
+            <h3>PLUMBING PIPE</h3>
+          </div>
+          <div class="must-left-icon">
+            <img src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2021/12/category-accessories.svg"
+              alt="" />
+            <h3>ACCESSORIES</h3>
+          </div>
+        </div>
+      </div>
+      <div class="must-right">
+        <div class="must-right-products">
+          <div class="product-card">
+            <div class="product-card-img">
+              <img src="https://woodmart.xtemos.com/megamarket/wp-content/uploads/sites/6/2022/04/tools-product-12.jpg"
+                alt="" />
+            </div>
+            <div class="product-title">
+              <h3>1/2-in Drill</h3>
+            </div>
+            <div class="star-rating">
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+            </div>
+            <div class="product-stock">
+              <i class="fa-solid fa-check"></i>
+              In stock
+            </div>
+            <div class="product-price">
+              <p class="p-blue">$198.00&nbsp;</p>
+              <p class="p-gray">/ each</p>
+            </div>
+            <div class="product-button">
+              <div class="quantity">
+                <button><i class="fa-solid fa-minus"></i></button>
+                <p>1</p>
+                <button><i class="fa-solid fa-plus"></i></button>
+              </div>
+              <div class="add-to-cart"><button>ADD TO CART</button></div>
+            </div>
+            <div class="product-detail">
+              <p class="p-black">SKU:&nbsp;</p>
+              <p class="p-gray">811566</p>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-card-img">
+              <img src="https://woodmart.xtemos.com/megamarket/wp-content/uploads/sites/6/2022/07/tools-product-24.jpg"
+                alt="" />
+            </div>
+            <div class="product-title">
+              <h3>1010W Grinder</h3>
+            </div>
+            <div class="star-rating">
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+            </div>
+            <div class="product-stock">
+              <i class="fa-solid fa-check"></i>
+              In stock
+            </div>
+            <div class="product-price">
+              <p class="p-blue">$79.00&nbsp;</p>
+              <p class="p-gray">/ each</p>
+            </div>
+            <div class="product-button">
+              <div class="quantity">
+                <button><i class="fa-solid fa-minus"></i></button>
+                <p>1</p>
+                <button><i class="fa-solid fa-plus"></i></button>
+              </div>
+              <div class="add-to-cart"><button>ADD TO CART</button></div>
+            </div>
+            <div class="product-detail">
+              <p class="p-black">SKU:&nbsp;</p>
+              <p class="p-gray">601043</p>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-card-img">
+              <img src="https://woodmart.xtemos.com/megamarket/wp-content/uploads/sites/6/2022/07/tools-product-27.jpg"
+                alt="" />
+            </div>
+            <div class="product-title">
+              <h3>1200W Grinder</h3>
+            </div>
+            <div class="star-rating">
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+            </div>
+            <div class="product-stock">
+              <i class="fa-solid fa-check"></i>
+              In stock
+            </div>
+            <div class="product-price">
+              <p class="p-blue">$39.00&nbsp;</p>
+              <p class="p-gray">/ each</p>
+            </div>
+            <div class="product-button">
+              <div class="quantity">
+                <button><i class="fa-solid fa-minus"></i></button>
+                <p>1</p>
+                <button><i class="fa-solid fa-plus"></i></button>
+              </div>
+              <div class="add-to-cart"><button>ADD TO CART</button></div>
+            </div>
+            <div class="product-detail">
+              <p class="p-black">SKU:&nbsp;</p>
+              <p class="p-gray">601045</p>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-card-img">
+              <img src="https://woodmart.xtemos.com/megamarket/wp-content/uploads/sites/6/2022/07/tools-product-69.jpg"
+                alt="" />
+            </div>
+            <div class="product-title">
+              <h3>1250W Drill</h3>
+            </div>
+            <div class="star-rating">
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+            </div>
+            <div class="product-stock">
+              <i class="fa-solid fa-check"></i>
+              In stock
+            </div>
+            <div class="product-price">
+              <p class="p-blue">$99.00&nbsp;</p>
+              <p class="p-gray">/ each</p>
+            </div>
+            <div class="product-button">
+              <div class="quantity">
+                <button><i class="fa-solid fa-minus"></i></button>
+                <p>1</p>
+                <button><i class="fa-solid fa-plus"></i></button>
+              </div>
+              <div class="add-to-cart"><button>ADD TO CART</button></div>
+            </div>
+            <div class="product-detail">
+              <p class="p-black">SKU:&nbsp;</p>
+              <p class="p-gray">604508</p>
             </div>
           </div>
         </div>
       </div>
-    </section>
-    <section class="must-products">
-      <div class="container">
-        <div class="must-left">
-          <div class="must-left-header">
-            <h4>Must-have Products and more</h4>
+    </div>
+  </section>
+  <section class="expert-advice">
+    <div class="container">
+      <h4>Expert Advice</h4>
+      <div class="advice-cards">
+        <div class="advice-card">
+          <div class="advice-card-image">
+            <img src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/01/blog-bg-1.jpg.webp"
+              alt="" />
           </div>
-          <div class="must-left-text">
-            <p class="p-gray">Everything you need for repairs in one place</p>
-          </div>
-          <div class="must-left-icons">
-            <div class="must-left-icon">
-              <img
-                src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2021/12/category-tool.svg"
-                alt=""
-              />
-              <h3>HAND INSTRUMENTS</h3>
+          <div class="advice-card-content">
+            <div class="advice-card-date">
+              <span>Inspiration</span> <span>/ </span>
+              <span>04 Jan 2022</span>
             </div>
-            <div class="must-left-icon">
-              <img
-                src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2021/12/category-lighting.svg"
-                alt=""
-              />
-              <h3>LIGHTING</h3>
+            <div class="advice-card-title">
+              <h3>Minimalist Japanese-inspired furniture</h3>
             </div>
-            <div class="must-left-icon">
-              <img
-                src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2021/12/category-flooring.svg"
-                alt=""
-              />
-              <h3>FLOORING</h3>
+            <div class="advice-card-description">
+              If the copy becomes distracting in the design then you are doing
+              something wrong or they are discussing copy changes. It might be
+              a bit...
             </div>
-            <div class="must-left-icon">
-              <img
-                src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2021/12/category-plumbing.svg"
-                alt=""
-              />
-              <h3>PLUMBING PIPE</h3>
-            </div>
-            <div class="must-left-icon">
-              <img
-                src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2021/12/category-accessories.svg"
-                alt=""
-              />
-              <h3>ACCESSORIES</h3>
+            <div class="advice-card-read-more">
+              <a href="">CONTINUE READING</a>
             </div>
           </div>
         </div>
-        <div class="must-right">
-          <div class="must-right-products">
-            <div class="product-card">
-              <div class="product-card-img">
-                <img
-                  src="https://woodmart.xtemos.com/megamarket/wp-content/uploads/sites/6/2022/04/tools-product-12.jpg"
-                  alt=""
-                />
-              </div>
-              <div class="product-title">
-                <h3>1/2-in Drill</h3>
-              </div>
-              <div class="star-rating">
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-              </div>
-              <div class="product-stock">
-                <i class="fa-solid fa-check"></i>
-                In stock
-              </div>
-              <div class="product-price">
-                <p class="p-blue">$198.00&nbsp;</p>
-                <p class="p-gray">/ each</p>
-              </div>
-              <div class="product-button">
-                <div class="quantity">
-                  <button><i class="fa-solid fa-minus"></i></button>
-                  <p>1</p>
-                  <button><i class="fa-solid fa-plus"></i></button>
-                </div>
-                <div class="add-to-cart"><button>ADD TO CART</button></div>
-              </div>
-              <div class="product-detail">
-                <p class="p-black">SKU:&nbsp;</p>
-                <p class="p-gray">811566</p>
-              </div>
+        <div class="advice-card">
+          <div class="advice-card-image">
+            <img src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/01/blog-bg-2.jpg.webp"
+              alt="" />
+          </div>
+          <div class="advice-card-content">
+            <div class="advice-card-date">
+              <span>Decoration</span> <span>/ </span> <span>04 Jan 2022</span>
             </div>
-            <div class="product-card">
-              <div class="product-card-img">
-                <img
-                  src="https://woodmart.xtemos.com/megamarket/wp-content/uploads/sites/6/2022/07/tools-product-24.jpg"
-                  alt=""
-                />
-              </div>
-              <div class="product-title">
-                <h3>1010W Grinder</h3>
-              </div>
-              <div class="star-rating">
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-              </div>
-              <div class="product-stock">
-                <i class="fa-solid fa-check"></i>
-                In stock
-              </div>
-              <div class="product-price">
-                <p class="p-blue">$79.00&nbsp;</p>
-                <p class="p-gray">/ each</p>
-              </div>
-              <div class="product-button">
-                <div class="quantity">
-                  <button><i class="fa-solid fa-minus"></i></button>
-                  <p>1</p>
-                  <button><i class="fa-solid fa-plus"></i></button>
-                </div>
-                <div class="add-to-cart"><button>ADD TO CART</button></div>
-              </div>
-              <div class="product-detail">
-                <p class="p-black">SKU:&nbsp;</p>
-                <p class="p-gray">601043</p>
-              </div>
+            <div class="advice-card-title">
+              <h3>New home decor from John Doerson</h3>
             </div>
-            <div class="product-card">
-              <div class="product-card-img">
-                <img
-                  src="https://woodmart.xtemos.com/megamarket/wp-content/uploads/sites/6/2022/07/tools-product-27.jpg"
-                  alt=""
-                />
-              </div>
-              <div class="product-title">
-                <h3>1200W Grinder</h3>
-              </div>
-              <div class="star-rating">
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-              </div>
-              <div class="product-stock">
-                <i class="fa-solid fa-check"></i>
-                In stock
-              </div>
-              <div class="product-price">
-                <p class="p-blue">$39.00&nbsp;</p>
-                <p class="p-gray">/ each</p>
-              </div>
-              <div class="product-button">
-                <div class="quantity">
-                  <button><i class="fa-solid fa-minus"></i></button>
-                  <p>1</p>
-                  <button><i class="fa-solid fa-plus"></i></button>
-                </div>
-                <div class="add-to-cart"><button>ADD TO CART</button></div>
-              </div>
-              <div class="product-detail">
-                <p class="p-black">SKU:&nbsp;</p>
-                <p class="p-gray">601045</p>
-              </div>
+            <div class="advice-card-description">
+              Authorities in our business will tell in no uncertain terms that
+              Lorem Ipsum is that huge, huge no no to forswear forever. Not so
+              fast,...
             </div>
-            <div class="product-card">
-              <div class="product-card-img">
-                <img
-                  src="https://woodmart.xtemos.com/megamarket/wp-content/uploads/sites/6/2022/07/tools-product-69.jpg"
-                  alt=""
-                />
-              </div>
-              <div class="product-title">
-                <h3>1250W Drill</h3>
-              </div>
-              <div class="star-rating">
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-              </div>
-              <div class="product-stock">
-                <i class="fa-solid fa-check"></i>
-                In stock
-              </div>
-              <div class="product-price">
-                <p class="p-blue">$99.00&nbsp;</p>
-                <p class="p-gray">/ each</p>
-              </div>
-              <div class="product-button">
-                <div class="quantity">
-                  <button><i class="fa-solid fa-minus"></i></button>
-                  <p>1</p>
-                  <button><i class="fa-solid fa-plus"></i></button>
-                </div>
-                <div class="add-to-cart"><button>ADD TO CART</button></div>
-              </div>
-              <div class="product-detail">
-                <p class="p-black">SKU:&nbsp;</p>
-                <p class="p-gray">604508</p>
-              </div>
+            <div class="advice-card-read-more">
+              <a href="">CONTINUE READING</a>
+            </div>
+          </div>
+        </div>
+        <div class="advice-card">
+          <div class="advice-card-image">
+            <img src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/01/blog-bg-3.jpg.webp"
+              alt="" />
+          </div>
+          <div class="advice-card-content">
+            <div class="advice-card-date">
+              <span>Design trends</span> <span>/ </span>
+              <span>04 Jan 2022</span>
+            </div>
+            <div class="advice-card-title">
+              <h3>The big design: Wall likes pictures</h3>
+            </div>
+            <div class="advice-card-description">
+              You made all the required mock ups for commissioned layout, got
+              all the approvals, built a tested code base or had them built,
+              you deci...
+            </div>
+            <div class="advice-card-read-more">
+              <a href="">CONTINUE READING</a>
             </div>
           </div>
         </div>
       </div>
-    </section>
-    <section class="expert-advice">
-      <div class="container">
-        <h4>Expert Advice</h4>
-        <div class="advice-cards">
-          <div class="advice-card">
-            <div class="advice-card-image">
-              <img
-                src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/01/blog-bg-1.jpg.webp"
-                alt=""
-              />
-            </div>
-            <div class="advice-card-content">
-              <div class="advice-card-date">
-                <span>Inspiration</span> <span>/ </span>
-                <span>04 Jan 2022</span>
-              </div>
-              <div class="advice-card-title">
-                <h3>Minimalist Japanese-inspired furniture</h3>
-              </div>
-              <div class="advice-card-description">
-                If the copy becomes distracting in the design then you are doing
-                something wrong or they are discussing copy changes. It might be
-                a bit...
-              </div>
-              <div class="advice-card-read-more">
-                <a href="">CONTINUE READING</a>
-              </div>
-            </div>
-          </div>
-          <div class="advice-card">
-            <div class="advice-card-image">
-              <img
-                src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/01/blog-bg-2.jpg.webp"
-                alt=""
-              />
-            </div>
-            <div class="advice-card-content">
-              <div class="advice-card-date">
-                <span>Decoration</span> <span>/ </span> <span>04 Jan 2022</span>
-              </div>
-              <div class="advice-card-title">
-                <h3>New home decor from John Doerson</h3>
-              </div>
-              <div class="advice-card-description">
-                Authorities in our business will tell in no uncertain terms that
-                Lorem Ipsum is that huge, huge no no to forswear forever. Not so
-                fast,...
-              </div>
-              <div class="advice-card-read-more">
-                <a href="">CONTINUE READING</a>
-              </div>
-            </div>
-          </div>
-          <div class="advice-card">
-            <div class="advice-card-image">
-              <img
-                src="https://woodmart.b-cdn.net/megamarket/wp-content/uploads/sites/6/2022/01/blog-bg-3.jpg.webp"
-                alt=""
-              />
-            </div>
-            <div class="advice-card-content">
-              <div class="advice-card-date">
-                <span>Design trends</span> <span>/ </span>
-                <span>04 Jan 2022</span>
-              </div>
-              <div class="advice-card-title">
-                <h3>The big design: Wall likes pictures</h3>
-              </div>
-              <div class="advice-card-description">
-                You made all the required mock ups for commissioned layout, got
-                all the approvals, built a tested code base or had them built,
-                you deci...
-              </div>
-              <div class="advice-card-read-more">
-                <a href="">CONTINUE READING</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="last-p">furkan</section>
-    <footer>furkan</footer>
-  </body>
+    </div>
+  </section>
+  <section class="last-p">furkan</section>
+  <footer>furkan</footer>
+</body>
+
 </html>
