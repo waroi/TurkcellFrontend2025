@@ -1,0 +1,61 @@
+body{
+    display: flex;
+    height: 100dvh;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(117, 117, 117);
+}
+.box{
+    background-color: blueviolet;
+    width: 150px;
+    height: 150px;
+    /* transition-property: all;
+    transition-duration: 2s;
+    transition-timing-function: ease-in-out; */
+    /* transition: all 2s ease-in-out; */
+
+    /* animation-name: aa;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-delay: 1s; */
+    animation: aa 2s ease-in-out 1s infinite normal ;
+}
+.box:hover{
+    background-color: blue;
+    width: 50px;
+    height: 300px;
+}
+/* @keyframes aa {
+    0%{
+        background-color: blueviolet;
+        width: 150px;
+        height: 150px;
+    }
+    50%{
+        background-color: rgb(20, 9, 169);
+        width: 50px;
+        height: 300px;
+    }
+    100%{
+        background-color: blueviolet;
+        width: 150px;
+        height: 150px;
+    } 
+} */
+
+@keyframes aa {
+    0%{
+        background-color: blueviolet;
+        transform: translate(0,0);
+    }
+    50%{
+        background-color: rgb(20, 9, 169);
+        transform: translate(100px, -100px) rotate(180deg)
+    }
+    100%{
+        background-color: blueviolet;
+        transform: translate(0,0);
+    } 
+}
