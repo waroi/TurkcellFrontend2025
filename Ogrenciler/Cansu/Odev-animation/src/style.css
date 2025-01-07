@@ -71,5 +71,30 @@ header img{
     font-size: 32px;
 }
 .coming-form{
-
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-top: 60px;
+}
+.coming-form .arrow{
+    width: 34px;
+    height: 50px;
+}
+.scooby{
+    position: absolute;
+    display: flex;
+    animation: scooby 10s infinite linear;
+}
+.coming-form input{
+    font-size: 18px;
+    padding: 20px 24px;
+    flex-grow:1 ;
+    margin: 0 16px;
+    outline: none;
+    border: none;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0px 0px 30px 7px #0c7f8640;
+    transition: 0.5s ease;
 }
