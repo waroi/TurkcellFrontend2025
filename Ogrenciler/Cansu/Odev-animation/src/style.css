@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Poppins, sans-serif;
-    
+
 }
 
 body {
@@ -16,6 +16,7 @@ body {
     padding: 0 24px;
     margin: 0 auto;
 }
+
 .bg-shape-1 {
     position: absolute;
     top: 0;
@@ -81,13 +82,9 @@ header img {
     padding-top: 15px;
     font-size: 32px;
 }
-p{
-    font-size: 16px;
-    margin: 0px 0px 24px;
-    color: #084b4f;
-}
+
 .coming-text .wave-image {
-    background-image: url(../igmages/wavy-shape.png);
+    background-image: url(/Ogrenciler/Cansu/Odev-animation/assets/wavy-shape.png);
     width: 100%;
     height: 20px;
     background-size: 645px 20px;
@@ -122,6 +119,36 @@ p{
     transition: 0.5s ease;
 }
 
+.coming-image .body {
+    color: #084b4f;
+    font-size: 16px;
+    margin-bottom: 24px;
+}
+
+.coming-image .subtitle {
+    font-size: 16px;
+    color: #084b4f;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 5px;
+    margin-bottom: 24px;
+
+}
+
+.coming-links a {
+    color: #084b4f;
+    padding: 8px 8px 0px 0px;
+    text-decoration: none;
+    transition: color 0.5s ease;
+}
+
+.caption {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 30px;
+    letter-spacing: 5px;
+}
+
 .btn-filled {
     padding: 25px 24px;
     border-radius: 10px;
@@ -143,10 +170,12 @@ p{
     flex-direction: column;
     align-items: center;
 }
-.coming-image h4{
+
+.coming-image h4 {
     font-size: 32px;
     color: #084b4f;
 }
+
 .coming-image .img-box {
     position: relative;
     margin-bottom: 32px;
@@ -169,7 +198,7 @@ p{
     height: 216px;
 }
 
-.rear-wheel{
+.rear-wheel {
     position: absolute;
     width: 133px;
     border-radius: 50%;
@@ -180,7 +209,8 @@ p{
     animation: wheel 1s infinite linear;
     background-image: url(/Ogrenciler/Cansu/Odev-animation/assets/rear-wheel.png);
 }
-.front-wheel{
+
+.front-wheel {
     position: absolute;
     border-radius: 50%;
     width: 133px;
@@ -191,33 +221,47 @@ p{
     animation: wheel 1s infinite linear;
     background-image: url(/Ogrenciler/Cansu/Odev-animation/assets/front-wheel.png);
 }
-@keyframes scooby{
+
+@keyframes scooby {
     0% {
-        left: -150px; /* Araba başlangıçta ekranın sol dışında */
+        left: -150px;
+        /* Araba başlangıçta ekranın sol dışında */
     }
+
     100% {
-        left: 100%; /* Araba ekranın sağ kenarına kadar hareket eder */
+        left: 100%;
+        /* Araba ekranın sağ kenarına kadar hareket eder */
     }
 }
-@keyframes wheel{
-    0%{
+
+@keyframes wheel {
+    0% {
         transform: rotate(0deg);
     }
-    100%{
+
+    100% {
         transform: rotate(360deg);
     }
-    .dust .particle {
-        animation: dust-move 2s infinite;
 }
+
+@keyframes wavy-motion {
+    0% {
+        background-position-x: 0%;
+    }
+
+    100% {
+        background-position-x: 645px;
+    }
 }
+
 .dust .particle {
-    background-color: #d9cbb6; 
-    width: 0.08rem; 
-    height: 0.08rem; 
-    border-radius: 50%; 
+    background-color: #d9cbb6;
+    width: 0.08rem;
+    height: 0.08rem;
+    border-radius: 50%;
     position: absolute;
-  
-    border: 1px dashed var(--outlines); 
+
+    border: 1px dashed var(--outlines);
     top: calc(50vh + (var(--horse-height) / 2) - 0.05rem);
-    left: calc(50vw - (var(--horse-width) / 2) + (var(--horse-width) * 0.15)); 
+    left: calc(50vw - (var(--horse-width) / 2) + (var(--horse-width) * 0.15));
 }
