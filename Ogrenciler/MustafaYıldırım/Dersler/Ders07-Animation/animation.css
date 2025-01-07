@@ -1,0 +1,63 @@
+body {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: gray;
+}
+
+.box {
+  background-color: orange;
+  width: 150px;
+  height: 150px;
+  /* transition-property: width;
+  transition-duration: 2s;
+  transition-timing-function: ease-in-out; */
+  /* transition: all 2s ease-in-out; */
+  /* animation-name: aa;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-delay: 1s; */
+  animation: aa 2s ease-in-out infinite normal 1s;
+}
+
+/* .box:hover {
+  background-color: greenyellow;
+  width: 50px;
+  height: 300px;
+} */
+
+/* @keyframes aa {
+  0% {
+    background-color: orange;
+    width: 150px;
+    height: 150px;
+  }
+  50% {
+    background-color: greenyellow;
+    width: 50px;
+    height: 300px;
+  }
+  100% {
+    background-color: orange;
+    width: 150px;
+    height: 150px;
+  }
+} */
+
+@keyframes aa {
+  0% {
+    background-color: orange;
+    transform: translate(0, 0);
+  }
+  50% {
+    background-color: greenyellow;
+    transform: translate(100px, -100px) rotate(180deg);
+  }
+  100% {
+    background-color: orange;
+    transform: translate(0, 0);
+  }
+}
