@@ -1,0 +1,208 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: system-ui, -apple-system, sans-serif;
+}
+
+body {
+	background-color: #e0f0f0;
+	min-height: 100vh;
+	display: flex;
+	justify-content: space-between;
+	padding: 2rem;
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+}
+
+.left-content {
+	flex: 1;
+}
+
+.logo {
+	width: 60px;
+	margin-bottom: 2rem;
+}
+
+.title {
+	font-size: 5rem;
+	color: #2d6f6f;
+	margin-bottom: 1rem;
+	line-height: 1;
+}
+
+.loading-container {
+	width: 300px;
+	margin: 2rem 0;
+	position: relative;
+}
+
+.loading-bar {
+	height: 4px;
+	background: #2d6f6f;
+	width: 0;
+	animation: loading 3s ease-in-out infinite;
+	border-radius: 2px;
+}
+
+.loading-text {
+	position: absolute;
+	right: 0;
+	top: -20px;
+	color: #2d6f6f;
+	font-size: 14px;
+	font-weight: 500;
+	animation: loadingText 3s ease-in-out infinite;
+}
+
+.coming-soon {
+	color: #2d6f6f;
+	letter-spacing: 8px;
+	font-size: 1.2rem;
+	margin: 2rem 0;
+}
+
+.subscribe {
+	display: flex;
+	gap: 1rem;
+	margin: 2rem 0;
+}
+
+input[type="email"] {
+	padding: 1rem;
+	border: none;
+	border-radius: 8px;
+	width: 300px;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	outline: none;
+}
+
+.subscribe-btn {
+	background: #2d6f6f;
+	color: white;
+	border: none;
+	padding: 1rem 2rem;
+	border-radius: 8px;
+	cursor: pointer;
+	font-weight: bold;
+}
+
+.right-content {
+	text-align: right;
+}
+
+.profile-img {
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	object-fit: cover;
+	animation: rotate360 5s linear infinite;
+}
+
+.name {
+	font-size: 2rem;
+	color: #2d6f6f;
+	margin: 1rem 0;
+}
+
+.position {
+	color: #2d6f6f;
+	font-size: 1rem;
+	margin-bottom: 1rem;
+}
+
+.description {
+	color: #2d6f6f;
+	max-width: 400px;
+	line-height: 1.6;
+	margin: 1rem 0;
+}
+
+.social-links {
+	margin-top: 2rem;
+}
+
+.social-links a {
+	color: #2d6f6f;
+	text-decoration: none;
+	margin-left: 1rem;
+	font-weight: 500;
+}
+
+@keyframes loading {
+	0% {
+		width: 0;
+	}
+	90% {
+		width: 100%;
+	}
+	100% {
+		width: 100%;
+	}
+}
+
+@keyframes loadingText {
+	0% {
+		content: "0%";
+	}
+	100% {
+		content: "100%";
+	}
+}
+
+@keyframes rotate360 {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.loading-text::after {
+	content: "0%";
+	animation: percentage 3s ease-in-out infinite;
+}
+
+@keyframes percentage {
+	0% {
+		content: "0%";
+	}
+	10% {
+		content: "10%";
+	}
+	20% {
+		content: "20%";
+	}
+	30% {
+		content: "30%";
+	}
+	40% {
+		content: "40%";
+	}
+	50% {
+		content: "50%";
+	}
+	60% {
+		content: "60%";
+	}
+	70% {
+		content: "70%";
+	}
+	80% {
+		content: "80%";
+	}
+	90% {
+		content: "90%";
+	}
+	100% {
+		content: "100%";
+	}
+}
