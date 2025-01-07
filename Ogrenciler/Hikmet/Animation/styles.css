@@ -1,0 +1,47 @@
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-image: url("https://i.ytimg.com/vi/Y_6WprGVP-A/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAOtqMCPZVnZcvb9M6aJYnmq8WNNw");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+img {
+	position: relative;
+	width: 200px;
+	height: 200px;
+	animation: swimmingFish 4s infinite;
+}
+
+.box {
+	display: flex;
+	justify-content: start;
+	align-items: start;
+	width: 700px;
+	height: 700px;
+}
+@keyframes swimmingFish {
+	0% {
+		top: 0;
+		left: 0;
+	}
+	25% {
+		transform: rotate(360deg);
+		top: 0;
+		left: calc(100% - 100px);
+	}
+	50% {
+		top: calc(100% - 100px);
+		left: calc(100% - 100px);
+	}
+	75% {
+		transform: rotate(-360deg);
+		top: calc(100% - 100px);
+		left: 0;
+	}
+	100% {
+		top: 0;
+		left: 0;
+	}
+}
