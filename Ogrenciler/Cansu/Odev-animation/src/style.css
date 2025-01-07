@@ -243,14 +243,17 @@ header img {
         transform: rotate(360deg);
     }
 }
-@keyframes wavy-motion{
+
+@keyframes wavy-motion {
     0% {
         background-position-x: 0%;
     }
+
     100% {
         background-position-x: 645px;
     }
 }
+
 .dust .particle {
     background-color: #d9cbb6;
     width: 0.08rem;
