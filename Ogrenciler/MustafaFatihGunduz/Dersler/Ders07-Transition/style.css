@@ -1,0 +1,55 @@
+body{
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-color: lightslategray;
+}
+
+.box{
+    background-color: orangered;
+    width: 150px;
+    height: 150px;
+    transition-duration: 2s;
+    transition-property: width, height;
+    transition-timing-function: ease-in;
+    /* transition: all 2s ease-in; */
+    animation: animat 2s ease-in-out;
+   
+}
+
+.box:hover{
+    background-color: blue;
+    width: 100px;
+    height: 100px;
+}
+
+@keyframes animat {
+    /* 0%{
+        background-color: orangered;
+        width: 150px;
+        height: 150px;
+    }
+    50%{
+        background-color: blue;
+        width: 200px;
+        height: 200px;
+    }
+    100%{
+        background-color: violet;
+        width: 100px;
+        height: 100px;
+    } */
+    0%{
+        background-color: orangered;
+        transform: translate(0,0);
+    }
+    50%{
+        background-color: blue;
+        transform: translate(0,0);
+    }
+    100%{
+        background-color: violet;
+        transform: translate(0,0);
+    }
+}
