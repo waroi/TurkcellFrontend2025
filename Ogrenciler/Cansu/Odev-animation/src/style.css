@@ -44,7 +44,7 @@ a {
 }
 
 header {
-    padding-top: 10px;
+    padding: 60px 0;
 }
 
 header img {
@@ -186,59 +186,56 @@ header img {
     max-width: 100%;
     border-radius: 50%;
     z-index: 1;
-    padding-top: 40px;
 }
 
-.scooby {
-
-    position: absolute;
+.car-animation {
+    position: relative;
     display: flex;
-    animation: scooby 10s infinite linear;
-    width: 300px;
-    height: 216px;
+    animation: moveCar 10s infinite linear;
+}
+
+.car-body img {
+    width: 150px;
+    position: relative;
+    z-index: 1;
+}
+
+.rear-wheel,
+.front-wheel {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    animation: wheel 1s infinite linear;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .rear-wheel {
-    position: absolute;
-    width: 133px;
-    border-radius: 50%;
-    left: 28px;
-    bottom: 2px;
-    margin: -37px;
-    z-index: -1;
-    animation: wheel 1s infinite linear;
-    background-image: url(/Ogrenciler/Cansu/Odev-animation/assets/rear-wheel.png);
+    left: 10px;
+    bottom: -5px;
+    background-image: url('/path/to/rear-wheel.png');
 }
 
 .front-wheel {
-    position: absolute;
-    border-radius: 50%;
-    width: 133px;
-    margin: -37px;
-    left: 236px;
-    bottom: 2px;
-    z-index: -1;
-    animation: wheel 1s infinite linear;
-    background-image: url(/Ogrenciler/Cansu/Odev-animation/assets/front-wheel.png);
+    right: 10px;
+    bottom: -5px;
+    background-image: url('/path/to/front-wheel.png');
 }
 
-@keyframes scooby {
-    0% {
-        left: -150px;
-        /* Araba başlangıçta ekranın sol dışında */
+@keyframes moveCar {
+        0% {
+            left: -60px; 
+        }
+        100% {
+            left: 100%;
+        }
     }
-
-    100% {
-        left: 100%;
-        /* Araba ekranın sağ kenarına kadar hareket eder */
-    }
-}
 
 @keyframes wheel {
     0% {
         transform: rotate(0deg);
     }
-
     100% {
         transform: rotate(360deg);
     }
