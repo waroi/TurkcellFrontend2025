@@ -10,6 +10,7 @@ body {
     overflow-x: hidden;
 }
 
+
 .container {
     width: 100%;
     max-width: 1200px;
@@ -21,7 +22,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    height: 2000px;
+    height: 1600px;
     width: 40%;
     background-color: #e5fff9;
     z-index: -1;
@@ -32,7 +33,7 @@ body {
     position: absolute;
     top: 0;
     right: 0;
-    height: 2000px;
+    height: 1600px;
     width: 60%;
     background-color: #b8e4da;
     z-index: -1;
@@ -95,9 +96,11 @@ header img {
 
 .coming-form {
     display: flex;
+    width: 100%;
     justify-content: space-between;
     align-items: center;
     margin-top: 60px;
+
 }
 
 .coming-form .arrow {
@@ -106,8 +109,8 @@ header img {
 }
 
 .coming-form input {
+    padding: 24.2px 28.2px;
     font-size: 18px;
-    padding: 20px 24px;
     flex-grow: 1;
     margin: 0 16px;
     outline: none;
@@ -117,6 +120,10 @@ header img {
     background-color: #fff;
     box-shadow: 0px 0px 30px 7px #0c7f8640;
     transition: 0.5s ease;
+}
+
+.coming-form input::placeholder {
+    color: #0c7f86;
 }
 
 .coming-image .body {
@@ -188,44 +195,123 @@ header img {
     z-index: 1;
 }
 
-.car{
+.car {
     position: relative;
-    width: 300px;    
-    height: 150px;   
+    width: 300px;
+    height: 150px;
     border-radius: 10px;
     display: flex;
- 
     animation: car 10s infinite linear;
     z-index: 1;
-    margin-top: 100px; 
+    margin-top: 100px;
 }
-.rear-wheel{
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  animation: wheel 1s infinite linear;
-  z-index: 2;
-  left:20px ;
-  bottom: 15px;
+
+.rear-wheel {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    animation: wheel 1s infinite linear;
+    z-index: 2;
+    left: 20px;
+    bottom: 15px;
 }
-.front-wheel{
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  animation: wheel 1s infinite linear;
-  z-index: 2;
-  bottom: 15px;
-  right: 34px ;
+
+.front-wheel {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    animation: wheel 1s infinite linear;
+    z-index: 2;
+    bottom: 15px;
+    right: 34px;
 }
+
+
+
+.brief-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    margin-top: 100px;
+}
+
+.brief-card {
+    background: #b8e4da;
+    border: 1px solid #b8e4da;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease;
+    padding: 20px;
+}
+
+.brief-card:hover {
+    background-color: #e5fff9;
+    border-color: #e5fff9;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.brief-name2 {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #084b4f;
+    margin-bottom: 10px;
+}
+
+.brief-card h5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #084b4f;
+    border-bottom: 1px solid #084b4f;
+}
+
+.brief3-list {
+    padding: 10px;
+    list-style-type: none;
+    margin: 20px;
+    color: black;
+    list-style: none;
+    text-align: justify;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+.brief3-list span {
+    color: red;
+}
+
+.dust {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.dust .particle {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: rgba(150, 150, 150, 0.5);
+    border-radius: 50%;
+    animation: dustParticle 1.5s infinite ease-out;
+}
+
 
 @keyframes car {
     0% {
         transform: translateX(0);
     }
+
     100% {
-        transform: translateX(100vw); 
+        transform: translateX(100vw);
     }
 }
 
@@ -233,8 +319,26 @@ header img {
     0% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(360deg);
+    }
+}
+
+@keyframes dustParticle {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateY(-15px) scale(1.2);
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: translateY(-30px) scale(1);
+        opacity: 0;
     }
 }
 
@@ -246,16 +350,4 @@ header img {
     100% {
         background-position-x: 645px;
     }
-}
-
-.dust .particle {
-    background-color: #d9cbb6;
-    width: 0.08rem;
-    height: 0.08rem;
-    border-radius: 50%;
-    position: absolute;
-
-    border: 1px dashed var(--outlines);
-    top: calc(50vh + (var(--horse-height) / 2) - 0.05rem);
-    left: calc(50vw - (var(--horse-width) / 2) + (var(--horse-width) * 0.15));
 }
