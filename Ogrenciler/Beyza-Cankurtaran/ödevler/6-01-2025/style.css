@@ -1,25 +1,42 @@
-/* Reset and base styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
   }
-  
   body {
-    font-family: 'Inter', sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
     background-color: #f8f9fa00;
+    background-color: #cdced0;
     color: #2d3436;
-    overflow-x: hidden;
-    position: relative;
   }
-  
+  .bg-shape-1,.bg-shape-2 {
+    position: fixed;
+    border-radius: 50%;
+    z-index: -1;
+  }
+  .bg-shape-1 {
+    width: 800px;
+    height: 800px;
+    background: linear-gradient(45deg, #f3ff74a3, #dc09e351);
+    top: -10px;
+    right: -10px;
+  }
+  .bg-shape-2 {
+    width: 600px;
+    height: 600px;
+    background: linear-gradient(45deg, #4432c8cd, #d8288cb0);
+    bottom: -30px;
+    left: -30px;
+  }
   .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    
   }
   
-  /* Header styles */
+  /* Header stil */
   header {
     padding: 20px 0;
     position: relative;
@@ -27,67 +44,33 @@
   }
   
   header nav img {
-    height: 40px;
+    height: 98px;
   }
-  
-  /* Scooter animation */
-  .scooter {
-    position: relative;
-    height: 200px;
-    margin: 50px 0;
-  }
-  
-  .vespa {
-    position: absolute;
-    width: 300px;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: bounce 2s infinite ease-in-out;
-  }
-  
-  .rear-wheel,
-  .front-wheel {
-    position: absolute;
-    width: 60px;
-    animation: rotate 2s infinite linear;
-  }
-  
-  .rear-wheel {
-    bottom: 30px;
-    left: calc(50% - 80px);
-  }
-  
-  .front-wheel {
-    bottom: 30px;
-    left: calc(50% + 80px);
-  }
-  
   /* Content styles */
   .holder {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 60px;
     padding: 60px 0;
+    justify-content: space-between;
+    align-items: center;
   }
   
   .coming-text h1 {
     font-size: 3.5rem;
     margin-bottom: 20px;
-    color: #2d3436;
-    animation: fadeInUp 1s ease-out;
+    color: #1e2737;
   }
   
   .subtitle {
     font-size: 1.2rem;
     color: #636e72;
     margin-bottom: 30px;
-    animation: fadeInUp 1s ease-out 0.2s backwards;
   }
   
   .coming-form {
     position: relative;
     margin-top: 40px;
-    animation: fadeInUp 1s ease-out 0.4s backwards;
   }
   
   .coming-form input {
@@ -100,18 +83,8 @@
   }
   
   .coming-form input:focus {
-    outline: none;
     border-color: #74b9ff;
   }
-  
-  .arrow {
-    position: absolute;
-    right: 120px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 20px;
-  }
-  
   .sub-btn {
     position: absolute;
     right: 5px;
@@ -119,6 +92,10 @@
     padding: 10px 20px;
     background-color: #0984e3;
     color: white;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 16px;
+    letter-spacing: 4px;
     border: none;
     border-radius: 6px;
     cursor: pointer;
@@ -132,12 +109,11 @@
   /* Image section */
   .coming-image {
     text-align: center;
-    animation: fadeInUp 1s ease-out 0.6s backwards;
   }
   
   .img-box {
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     margin: 0 auto 30px;
     border-radius: 50%;
     overflow: hidden;
@@ -164,45 +140,70 @@
   
   .link {
     text-decoration: none;
-    color: #2d3436;
+    color: #111;
     font-weight: 600;
-    transition: all 0.3s ease;
   }
   
   .link:hover {
     color: #0984e3;
   }
+    
+  /* Scooter animation */
+  .scooter {
+    position: relative;
+    display: flex;
+    height: 200px;
+    margin: 10px 0;
+    left:30px;
+    animation: vespa 10s infinite linear;/*--*/
+  }
   
-  /* Background shapes */
-  .bg-shape-1,
-  .bg-shape-2 {
-    position: fixed;
+  .vespa {
+    position: relative;
+    width: 300px;
+    height: 216px;
+    left:158px;
+    animation: bounce 2s infinite ease-in-out;
+  }
+  
+  .rear-wheel {
+    position: absolute;
+    width: 133px;
     border-radius: 50%;
+    left: 28px;
+    bottom: 2px;
+    margin: -37px;
     z-index: -1;
+    animation: rotate 1s infinite linear;
+    animation: wheel 1s infinite linear;
   }
   
-  .bg-shape-1 {
-    width: 800px;
-    height: 800px;
-    background: linear-gradient(45deg, #ce74ffa3, #dc09e351);
-    top: -400px;
-    right: -400px;
+  .front-wheel {
+    position: absolute;
+    border-radius: 50%;
+    width: 133px;
+    margin: -37px;
+    left: 236px;
+    bottom: 2px;
+    z-index: -1;
+    animation: wheel 1s infinite linear;
+    animation: rotate 1s infinite linear;
   }
-  
-  .bg-shape-2 {
-    width: 600px;
-    height: 600px;
-    background: linear-gradient(45deg, #4432c8cd, #d8288cb0);
-    bottom: -300px;
-    left: -300px;
-  }
-  
   /* Animations */
   @keyframes rotate {
-    from {
+    0% {
       transform: rotate(0deg);
     }
-    to {
+    25% {
+      transform: rotate(90deg);
+    }
+    50% {
+      transform: rotate(180deg);
+    }
+    75% {
+      transform: rotate(270deg);
+    }
+    100% {
       transform: rotate(360deg);
     }
   }
@@ -212,52 +213,28 @@
       transform: translateX(-50%) translateY(0);
     }
     50% {
-      transform: translateX(-50%) translateY(-20px);
+      transform: translateX(-50%) translateY(-10px);
     }
   }
-  
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
+  @keyframes vespa {
+    0% {
+      transform: translateX(-330px);
     }
-    to {
-      opacity: 1;
-      transform: translateY(0);
+    100% {
+      transform: translateX(100%);
     }
   }
-  
-  /* Responsive design */
-  @media (max-width: 768px) {
-    .holder {
-      grid-template-columns: 1fr;
-      gap: 40px;
+  /*
+  @keyframes wheel {
+    0% {
+      transform: rotate(0deg);
     }
   
-    .coming-text h1 {
-      font-size: 2.5rem;
+    100% {
+      transform: rotate(360deg);
     }
-  
-    .vespa {
-      width: 200px;
-    }
-  
-    .rear-wheel,
-    .front-wheel {
-      width: 40px;
-    }
-  
-    .rear-wheel {
-      left: calc(50% - 50px);
-    }
-  
-    .front-wheel {
-      left: calc(50% + 50px);
-    }
-  }
-/* Previous styles remain the same until the media queries */
-
-/* Enhanced responsive design */
+  }*/
+  /*responsiveeeee*/
 @media (max-width: 1200px) {
     .container {
       max-width: 960px;
@@ -296,27 +273,6 @@
       max-width: 400px;
       margin: 40px auto 0;
     }
-  
-    .vespa {
-      width: 200px;
-    }
-  
-    .rear-wheel,
-    .front-wheel {
-      width: 40px;
-    }
-  
-    .rear-wheel {
-      left: calc(50% - 50px);
-    }
-  
-    .front-wheel {
-      left: calc(50% + 50px);
-    }
-  
-    .scooter {
-      height: 150px;
-    }
   }
   
   @media (max-width: 576px) {
@@ -330,6 +286,14 @@
   
     .subtitle {
       font-size: 1rem;
+    }
+    .bg-shape-1{
+      width:400px;
+      height:400px;
+    }
+    .bg-shape-2{
+      width:300px;
+      height:300px;
     }
   
     .coming-form input {
@@ -350,27 +314,5 @@
     .coming-links {
       flex-direction: column;
       gap: 15px;
-    }
-  
-    .vespa {
-      width: 160px;
-    }
-  
-    .rear-wheel,
-    .front-wheel {
-      width: 32px;
-    }
-  
-    .rear-wheel {
-      left: calc(50% - 40px);
-    }
-  
-    .front-wheel {
-      left: calc(50% + 40px);
-    }
-  
-    .scooter {
-      height: 120px;
-      margin: 30px 0;
     }
   }
