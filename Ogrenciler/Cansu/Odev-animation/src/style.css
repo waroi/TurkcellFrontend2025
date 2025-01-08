@@ -225,7 +225,7 @@ header img {
 
 
 
-.gallery-container {
+.brief-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
@@ -233,7 +233,7 @@ header img {
     margin-top: 100px;
 }
 
-.gallery-card {
+.brief-card {
     background: #b8e4da;
     border: 1px solid #b8e4da;
     border-radius: 8px;
@@ -243,21 +243,21 @@ header img {
     padding: 20px;
 }
 
-.gallery-card:hover {
+.brief-card:hover {
     background-color: #e5fff9;
     border-color: #e5fff9;
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.gallery-name2 {
+.brief-name2 {
     text-align: center;
     font-size: 1.2rem;
     color: #084b4f;
     margin-bottom: 10px;
 }
 
-.gallery-card h5 {
+.brief-card h5 {
     display: flex;
     justify-content: center;
     align-items: center;
