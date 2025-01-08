@@ -1,0 +1,41 @@
+body {
+    display: flex;
+    height: 200vh;
+    align-items: start;
+    justify-content: start;
+    padding:200px 200px;
+    background-color: bisque;
+}
+.box {
+    background-color: rgb(17, 122, 87);
+    width: 150px;
+    height: 150px;
+    animation: aa 5s ease-in-out infinite 1s  alternate;
+}
+.box:hover {
+    background-color: aqua;
+    width: 50px;
+    height: 200px;
+}
+@keyframes aa{
+    0%{
+        background-color: red;
+        transform: translate(0,0);
+    }
+    25%{
+        background-color: orange;
+        transform: translate(0px,400px)rotate(360deg);
+    }
+    50%{
+        background-color: yellow;
+        transform: translate(800px,400px)rotate(270deg);
+    }
+    75%{
+        background-color: green;
+        transform: translate(800px,0px)rotate(180deg);
+    }
+    100%{
+        background-color: blue;
+        transform: translate(0px,0px);
+    }
+}

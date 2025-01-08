@@ -1,0 +1,26 @@
+body {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-color: bisque;
+}
+
+.box {
+    background-color: aquamarine;
+    width: 150px;
+    height: 150px;
+    /*transition: all 2s ease-in-out;*/
+    /*transition-duration: 2s;
+    transition-property: all;
+    transition-timing-function: ease-in-out;*/
+}
+
+.box:hover {
+    background-color: aqua;
+    width: 50px;
+    height: 200px;
+}
+@keyframes aa{
+    
+}
