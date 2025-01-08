@@ -154,6 +154,25 @@
   }
 }
 
+@keyframes black-shadow {
+  0% {
+    box-shadow: 0 0 100px var(--black), 0 0 100px var(--black),
+      0 0 100px var(--black), 0 0 100px var(--black) inset,
+      0 0 100px var(--black) inset, 0 0 100px var(--black) inset;
+  }
+
+  50% {
+    box-shadow: 0 0 125px var(--black), 0 0 125px var(--black),
+      0 0 125px var(--black) inset, 0 0 125px var(--black) inset;
+  }
+
+  100% {
+    box-shadow: 0 0 100px var(--black), 0 0 100px var(--black),
+      0 0 100px var(--black), 0 0 100px var(--black) inset,
+      0 0 100px var(--black) inset, 0 0 100px var(--black) inset;
+  }
+}
+
 body {
   --white: #fff;
   --black: #000;
@@ -169,7 +188,7 @@ body {
   animation: background 120s cubic-bezier(0.5, 0, 0.5, 1) infinite;
   color: var(--white);
   text-shadow: 0 0 5px var(--black);
-  padding: 100px 300px 0;
+  padding: 100px 15vw 0;
   overflow-x: hidden;
 }
 
@@ -178,7 +197,7 @@ a {
   text-decoration: none;
 }
 
-img {
+img:not(.planet) {
   max-width: 100%;
   max-height: 100%;
 }
@@ -209,12 +228,12 @@ img {
 }
 
 header {
-  padding-right: 400px;
+  padding-right: 20vw;
 }
 
 header .grid {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 200px auto;
   column-gap: 50px;
   align-items: center;
 }
@@ -223,7 +242,7 @@ header .profile {
   width: 200px;
   height: 200px;
   border-radius: 100%;
-  box-shadow: 0 0 10px var(--transparent-white);
+  box-shadow: 0 0 15px var(--transparent-white);
   border: 5px solid var(--black);
   animation: float 3s cubic-bezier(0.5, 0, 0.5, 1) infinite;
 }
@@ -250,6 +269,7 @@ h2 {
 
 .links {
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-end;
   margin: 50px 0;
   gap: 50px;
@@ -283,6 +303,7 @@ h3:not(.links h3) {
 
 main {
   width: 1000px;
+  max-width: 100%;
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 150px;
@@ -316,6 +337,12 @@ main a:hover {
   color: var(--white);
 }
 
+main img {
+  border-radius: 10px;
+  box-shadow: 0 0 15px var(--transparent-white);
+  border: 5px solid var(--black);
+}
+
 footer {
   height: 200px;
   margin: 0 -300px;
@@ -328,5 +355,22 @@ footer {
   box-shadow: 0 0 100px var(--black), 0 0 100px var(--black),
     0 0 100px var(--black), 0 0 100px var(--black) inset,
     0 0 100px var(--black) inset, 0 0 100px var(--black) inset;
-  animation: black-hole 60s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  animation: black-hole 60s cubic-bezier(0.5, 0, 0.5, 1) infinite,
+    black-shadow 3s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+
+@media (max-width: 1200px) {
+  .links {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  header .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile {
+    margin-bottom: 50px;
+  }
 }
