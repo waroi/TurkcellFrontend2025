@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS</title>
+    <style>
+      body {
+        background-color: dodgerblue;
+        padding: 50px;
+      }
+      p {
+        font-size: 25px;
+      }
+
+      .sans-serif {
+        font-family: sans-serif;
+      }
+
+      ul {
+        background-color: navy;
+        color: white;
+        font-size: 30px;
+        padding: 50px;
+        list-style-position: inside;
+        list-style-type: "➤ ";
+        font-family: sans-serif;
+      }
+
+      li.list-item {
+        color: darkred;
+      }
+
+      li#list-item {
+        color: orangered;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="sans-serif">
+      <b>Inline Styling:</b> Lorem, ipsum dolor sit amet consectetur adipisicing
+      elit. Perspiciatis sit, ad nesciunt ut vero nulla, unde officiis, nihil
+      sunt molestias hic earum inventore ullam consequuntur recusandae accusamus
+      quidem consectetur. Ab!
+    </p>
+    <p style="color: white">
+      <b>Internal Styling:</b> Lorem, ipsum dolor sit amet consectetur
+      adipisicing elit. Perspiciatis ipsa, aperiam in dolores provident eaque
+      temporibus! Maxime, non quod! Omnis quas dolores corporis facilis
+      laudantium cupiditate reiciendis voluptatem voluptas porro?
+    </p>
+    <ul>
+      <li>Normal List Item</li>
+      <li class="list-item">List Item with Class</li>
+      <li class="list-item" id="list-item">List Item with ID</li>
+      <li>Inline > Internal > External</li>
+      <li>ID cascades over Class</li>
+    </ul>
+  </body>
+</html>

@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Mulish';
+  --work-sans: 'Work Sans';
+  --mulish: 'Mulish';
+  --gray-text: #777777;
+  --black-text: #242424;
+  --blue-text: rgb(18, 70, 171);
+}
+
+@media (min-width: 0px) and (max-width: 768px) {
+  .advice-cards {
+    grid-template-columns: 1fr !important;
+    gap: 15px !important;
+  }
+
+  .advice-cards:nth-of-type(2) {
+    display: none !important;
+  }
+  .advice-cards:nth-of-type(3) {
+    display: none !important;
+  }
+  .newsletter .container {
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .newsletter .container {
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1178px) {
+}
+@media (min-width: 1179px) {
+}
+.container {
+  width: 100%;
+  max-width: 1390px;
+  padding-inline: 15px;
+  margin-inline: auto;
+}
+.expert-advice h4 {
+  margin-bottom: 30px;
+  font-size: 26px;
+  color: var(--black-text);
+  font-weight: 700;
+  padding-inline: 15px;
+}
+.advice-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.advice-card {
+  padding: 0px 10px;
+}
+.advice-card img {
+  width: 100%;
+}
+.advice-card-date {
+  margin: 10px 0px;
+}
+.advice-card-date span {
+  color: var(--gray-text);
+  margin-right: 8px;
+  font-size: 13px;
+}
+.advice-card h3 {
+  color: var(--black-text);
+  font-size: 22px;
+  font-family: var(--mulish);
+  margin-bottom: 10px;
+}
+.advice-card-description {
+  color: var(--gray-text);
+  font-size: 16px;
+  font-family: var(--work-sans);
+  margin-bottom: 15px;
+  letter-spacing: 0.5px;
+}
+.advice-card a {
+  color: var(--blue-text);
+  font-size: 13px;
+  font-family: var(--work-sans);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.newsletter {
+  background-color: #1246ab;
+  padding: 20px 0px;
+}
+.newsletter .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+.newsletter h2 {
+  font-family: var(--mulish);
+  color: #fff;
+  font-size: 32px;
+}
+.newsletter p {
+  font-family: var(--work-sans);
+  color: #ffffffc0;
+  font-size: 16px;
+}
+.newsletter img {
+  width: 71px;
+  height: 52px;
+}
+.newsletter .content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.text-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.newsletter form {
+  display: flex;
+  gap: 10px;
+}
+.newsletter input {
+  padding: 0 15px;
+  max-width: 100%;
+  width: 100%;
+  height: 42px;
+  background-color: #fff;
+  color: var(--black-text);
+  vertical-align: middle;
+  font-size: 14px;
+  border: none;
+}
+.newsletter input::placeholder {
+  color: var(--gray-text);
+}
+.newsletter-form-container button {
+  padding: 5px 35px;
+  height: 42px;
+  color: var(--black-text);
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+  font-weight: 600;
+}
+.newsletter-form-container button:hover {
+  color: var(--gray-text);
+}

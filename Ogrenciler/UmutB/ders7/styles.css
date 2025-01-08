@@ -1,0 +1,445 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background: linear-gradient(90deg, #e5fff9 30%, #b8e4da 70%) no-repeat center center fixed;
+    background-size: cover;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #084b4f;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+header {
+    padding-top: 20px;
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 25px;
+    width: 100%;
+}
+
+a>img {
+    width: 100px;
+    height: 60px;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.contentWrapper {
+    display: grid;
+    grid-template-columns: 60% 30%;
+    gap: 10%;
+    align-items: start;
+}
+
+.mainHeading {
+    font-size: 120px;
+    font-weight: 700;
+    line-height: 120px;
+    letter-spacing: 5px;
+    color: #0c7f86;
+    padding-top: 100px;
+    padding-bottom: 20px;
+}
+
+.animatedWave {
+    background-image: url('https://demo.cocobasic.com/seppo-html/demo-5/images/wavy-shape.png');
+    width: 100%;
+    height: 25px;
+    margin: 25px 0;
+    background-size: cover;
+    /*resim tekrarlanacak*/
+    animation: waveMotion 12s linear infinite;
+}
+
+@keyframes waveMotion {
+    from {
+        background-position-x: 0%;
+    }
+
+    to {
+        background-position-x: -800%;
+    }
+}
+
+.comingSoonText {
+    color: #0c7f86;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 35px;
+    letter-spacing: 30px;
+    padding-top: 15px;
+}
+
+.subscribeForm {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 60px;
+}
+
+.formArrow {
+    width: 34px;
+    height: 50px;
+}
+
+.emailInput {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    padding: 20px 25px;
+    flex: 1;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 30px 7px #0c7f8640;
+    transition: 0.5s ease;
+}
+
+.emailInput:focus {
+    /*on click*/
+    border-color: #0c7f86;
+    box-shadow: none;
+    outline: none;
+}
+
+.subscribeButton {
+    font-family: 'Poppins', sans-serif;
+    padding: 25px 25px;
+    border-radius: 10px;
+    color: #fff;
+    background-color: #0c7f86;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.subscribeButton:hover {
+    background-color: #084b4f;
+}
+
+.profileWrapper {
+    text-align: center;
+}
+
+.imageContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    margin: 0 auto 32px;
+    width: 290px;
+    height: 290px;
+    position: relative;
+}
+
+.animatedCircle {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 3px solid #fafafa;
+    animation: circle 10s linear infinite;
+}
+
+@keyframes circle {
+    0% {
+        transform: translate(-30px, -30px);
+    }
+
+    50% {
+        transform: translate(30px, -30px);
+        border-color: #0c7f86;
+    }
+
+    100% {
+        transform: translate(-30px, -30px);
+    }
+}
+
+.largeAnimatedCircle {
+    width: 800px;
+    height: 800px;
+    border-radius: 50%;
+    border: 1px solid;
+    border-color: #fafafa;
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    z-index: -1;
+    animation: largeCircle 6s linear infinite;
+}
+
+@keyframes largeCircle {
+    0% {
+        transform: translate(0, -80px);
+    }
+
+    50% {
+        transform: translate(0, -10px);
+
+        border-color: #0c7f86;
+    }
+
+    100% {
+        transform: translate(0, -80px);
+    }
+}
+
+
+@media (max-width: 600px) {
+    .largeAnimatedCircle {
+        width: 350px;
+        height: 350px;
+        top: -5%;
+    }
+    
+    @keyframes largeCircle {
+        0% {
+            transform: translate(-50%, -40px);
+        }
+        50% {
+            transform: translate(-50%, 30px);
+            border-color: #0c7f86;
+        }
+        100% {
+            transform: translate(-50%, -40px);
+        }
+    }
+}
+
+.animatedCircle,
+.profileImage {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+
+.profileImage {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profileName {
+    font-size: 32px;
+    font-weight: 600;
+    color: #084b4f;
+    margin-bottom: 8px;
+}
+
+.profileTitle {
+    font-size: 16px;
+    letter-spacing: 5px;
+    margin-bottom: 24px;
+}
+
+.profileDescription {
+    line-height: 30px;
+    margin-bottom: 25px;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+}
+
+.socialLinks {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding-bottom: 20px;
+}
+
+.socialLink {
+    color: #084b4f;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    transition: color 0.4s ease;
+}
+
+.socialLink:hover {
+    color: #0c7f86;
+}
+
+@media (max-width: 1200px) {
+    .mainHeading {
+        font-size: 90px;
+        line-height: 110px;
+    }
+
+    .comingSoonText {
+        font-size: 28px;
+        letter-spacing: 25px;
+    }
+}
+
+@media (max-width: 900px) {
+    .contentWrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .mainHeading {
+        padding-top: 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    .headerSection {
+        padding-top: 30px;
+    }
+
+    .mainHeading {
+        font-size: 60px;
+        line-height: 70px;
+    }
+
+    .comingSoonText {
+        font-size: 22px;
+        letter-spacing: 10px;
+    }
+
+    .subscribeForm {
+        flex-direction: column;
+    }
+
+    .formArrow {
+        display: none;
+    }
+
+    .emailInput {
+        box-shadow: none;
+    }
+}
+
+.about-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 24px;
+}
+
+.section-title {
+    font-size: 48px;
+    font-weight: 700;
+    color: #0c7f86;
+    margin-bottom: 40px;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 60px;
+}
+
+.about-text {
+    color: #084b4f;
+    line-height: 1.8;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.skill-card {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 30px 7px #0c7f8620;
+}
+
+.skill-card h3 {
+    color: #0c7f86;
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.skill-list {
+    list-style: none;
+    color: #084b4f;
+}
+
+.skill-list li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.skill-list li::before {
+    content: "";
+    color: #0c7f86;
+    position: absolute;
+    left: 0;
+}
+
+.experience-card {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0px 0px 30px 7px #0c7f8620;
+}
+
+.experience-card h3 {
+    color: #0c7f86;
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.experience-card .role {
+    color: #084b4f;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.experience-card .duration {
+    color: #0c7f86;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.experience-card p {
+    color: #084b4f;
+    line-height: 1.6;
+}
+
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 36px;
+    }
+
+    .about-section {
+        padding: 40px 24px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
