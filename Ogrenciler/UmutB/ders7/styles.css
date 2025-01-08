@@ -176,11 +176,11 @@ main {
 }
 
 .largeAnimatedCircle {
-    width: 700px;
-    height: 700px;
+    width: 800px;
+    height: 800px;
     border-radius: 50%;
     border: 1px solid;
-    border-color: #0c7f86;
+    border-color: #fafafa;
     position: absolute;
     top: 10%;
     left: 5%;
@@ -194,8 +194,9 @@ main {
     }
 
     50% {
-        transform: translate(0, 60px);
-        border-color: #fafafa;
+        transform: translate(0, -10px);
+
+        border-color: #0c7f86;
     }
 
     100% {
@@ -217,7 +218,7 @@ main {
         }
         50% {
             transform: translate(-50%, 30px);
-            border-color: #fafafa;
+            border-color: #0c7f86;
         }
         100% {
             transform: translate(-50%, -40px);
