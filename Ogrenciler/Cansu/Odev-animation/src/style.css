@@ -10,6 +10,7 @@ body {
     overflow-x: hidden;
 }
 
+
 .container {
     width: 100%;
     max-width: 1200px;
@@ -21,7 +22,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    height: 2000px;
+    height: 1600px;
     width: 40%;
     background-color: #e5fff9;
     z-index: -1;
@@ -32,7 +33,7 @@ body {
     position: absolute;
     top: 0;
     right: 0;
-    height: 2000px;
+    height: 1600px;
     width: 60%;
     background-color: #b8e4da;
     z-index: -1;
@@ -188,44 +189,105 @@ header img {
     z-index: 1;
 }
 
-.car{
+.car {
     position: relative;
-    width: 300px;    
-    height: 150px;   
+    width: 300px;
+    height: 150px;
     border-radius: 10px;
     display: flex;
- 
+
     animation: car 10s infinite linear;
     z-index: 1;
-    margin-top: 100px; 
+    margin-top: 100px;
 }
-.rear-wheel{
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  animation: wheel 1s infinite linear;
-  z-index: 2;
-  left:20px ;
-  bottom: 15px;
+
+.rear-wheel {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    animation: wheel 1s infinite linear;
+    z-index: 2;
+    left: 20px;
+    bottom: 15px;
 }
-.front-wheel{
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  animation: wheel 1s infinite linear;
-  z-index: 2;
-  bottom: 15px;
-  right: 34px ;
+
+.front-wheel {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    animation: wheel 1s infinite linear;
+    z-index: 2;
+    bottom: 15px;
+    right: 34px;
 }
+
+
+
+.brief-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    margin-top: 100px;
+}
+
+.brief-card {
+    background: #b8e4da;
+    border: 1px solid #b8e4da;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease;
+    padding: 20px;
+}
+
+.brief-card:hover {
+    background-color: #e5fff9;
+    border-color: #e5fff9;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.brief-name2 {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #084b4f;
+    margin-bottom: 10px;
+}
+
+.brief-card h5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #084b4f;
+    border-bottom: 1px solid #084b4f;
+}
+
+.brief3-list {
+    padding: 10px;
+    list-style-type: none;
+    margin: 20px;
+    color: black;
+    list-style: none;
+    text-align: justify;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+.brief3-list span {
+    color: red;
+}
+
 
 @keyframes car {
     0% {
         transform: translateX(0);
     }
+
     100% {
-        transform: translateX(100vw); 
+        transform: translateX(100vw);
     }
 }
 
@@ -233,6 +295,7 @@ header img {
     0% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(360deg);
     }
