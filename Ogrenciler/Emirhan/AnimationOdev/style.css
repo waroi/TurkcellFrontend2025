@@ -1,0 +1,318 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    background-color: #1230ae;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.bg1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url("./assets/pattern5.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    opacity: 0.1;
+}
+
+.star {
+    position: absolute;
+    top: 200px;
+    left: 160px;
+    width: 100px;
+    height: 100px;
+    background-image: url("./assets/star.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    animation: star 5s linear infinite;
+}
+
+.star2 {
+    position: absolute;
+    bottom: 200px;
+    right: 400px;
+    width: 80px;
+    height: 80px;
+    background-image: url("./assets/star.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    animation: star 5s linear infinite;
+}
+
+@keyframes star {
+    0% {
+
+        transform: rotate(0deg);
+    }
+
+    100% {
+
+        transform: rotate(360deg);
+    }
+}
+
+.astronaut {
+    width: 100%;
+    height: 100vh;
+    background-image: url("./assets/astro.png");
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.rock1 {
+    width: 100%;
+    height: 100vh;
+    background-image: url("./assets/rock10.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: rock 5s linear infinite;
+}
+
+.rock2 {
+    width: 100%;
+    height: 100vh;
+    background-image: url("./assets/rock20.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: rock2 5s linear infinite;
+}
+
+@keyframes rock {
+    0% {
+        top: -20px;
+        transform: scale(1);
+        transform: rotate(0deg);
+    }
+
+    50% {
+        top: 20px;
+        transform: scale(1.03);
+        transform: rotate(3deg);
+    }
+
+    100% {
+        top: -20px;
+        transform: scale(1);
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes rock2 {
+    0% {
+        top: -20px;
+        transform: scale(1);
+        transform: rotate(0deg);
+    }
+
+    50% {
+        top: 20px;
+        transform: scale(0.95);
+        transform: rotate(-3deg);
+    }
+
+    100% {
+        top: -20px;
+        transform: scale(1);
+        transform: rotate(0deg);
+    }
+}
+
+h1 {
+    font-size: 110px;
+    font-family: "Teko", serif;
+    font-weight: 600;
+    color: white;
+    text-align: end;
+    line-height: 0.9;
+}
+
+p {
+    font-family: "Playfair Display", serif;
+    color: white;
+    font-size: 18px;
+    width: 25%;
+    text-align: end;
+}
+
+.input-container {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input-container div {
+    width: 100%;
+    font-family: "Playfair Display", serif;
+    color: white;
+}
+
+.input-container .input-btn {
+    display: flex;
+    gap: 10px;
+
+}
+
+.input-container input {
+    width: 200px;
+    border: none;
+    outline: none;
+    font-family: "Playfair Display", serif;
+    color: black;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 4px;
+}
+
+.input-container button {
+    border: none;
+    outline: none;
+    font-family: "Playfair Display", serif;
+    color: black;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: white;
+}
+
+.input-container button:hover {
+    background-color: #dddddd;
+    transition: 0.3s;
+}
+
+.my-portfolio {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 30px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-family: "Teko", serif;
+    font-weight: 500;
+    color: white;
+}
+
+.social {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 30px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 30px;
+    font-family: "Teko", serif;
+    font-weight: 500;
+    color: white;
+}
+
+.social .media-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.social .media-icon:hover {
+    background-color: #9fb2ff;
+    transition: 0.3s;
+}
+
+.media-icon i {
+    font-size: 18px;
+    color: #1230ae;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+
+    }
+
+    .astronaut {
+        display: none;
+    }
+
+    h1 {
+        font-size: 70px;
+        text-align: center;
+    }
+
+    p {
+        font-family: "Playfair Display", serif;
+        color: white;
+        font-size: 18px;
+        width: 70%;
+        text-align: center;
+    }
+
+    .input-container {
+        bottom: 240px;
+        width: 100%;
+        padding: 0;
+    }
+
+    .input-container>*:first-child {
+        display: none;
+    }
+
+    .input-container .input-btn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .input-container input {
+        width: 250px;
+        padding: 10px;
+    }
+
+    .input-container button {
+        width: 150px;
+        border-radius: 50px;
+    }
+}
