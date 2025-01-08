@@ -75,6 +75,7 @@ input[type="email"] {
 	border-radius: 8px;
 	width: 300px;
 	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	outline: none;
 }
 
 .subscribe-btn {
@@ -96,7 +97,7 @@ input[type="email"] {
 	height: 200px;
 	border-radius: 50%;
 	object-fit: cover;
-	animation: rotate360 5s linear infinite;
+	animation: moveAndRotate 5s linear infinite;
 }
 
 .name {
@@ -119,6 +120,7 @@ input[type="email"] {
 }
 
 .social-links {
+	letter-spacing: 0.5rem;
 	margin-top: 2rem;
 }
 
@@ -249,12 +251,21 @@ input[type="email"] {
 	}
 }
 
-@keyframes rotate360 {
-	from {
-		transform: rotate(0deg);
+@keyframes moveAndRotate {
+	0% {
+		transform: translateX(0) rotate(0deg);
 	}
-	to {
-		transform: rotate(360deg);
+	25% {
+		transform: translateX(100px) rotate(90deg);
+	}
+	50% {
+		transform: translateX(0) rotate(180deg);
+	}
+	75% {
+		transform: translateX(-100px) rotate(270deg);
+	}
+	100% {
+		transform: translateX(0) rotate(360deg);
 	}
 }
 
