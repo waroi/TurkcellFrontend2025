@@ -29,7 +29,7 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: start;
-    gap: 100px;
+    gap: 20px;
 }
 /*! HEADER CSS END*/
 
@@ -40,7 +40,7 @@ body{
     flex-direction: column;
     align-items: start;
     justify-content: space-between;
-    width: 70%;
+    width: 60%;
 }
 
 .work-in-progress {
@@ -117,7 +117,7 @@ body{
 /*? WELCOME İMAGE CSS START*/
 
 .welcome-image {
-    width: 90%;
+    width: 40%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -128,7 +128,7 @@ body{
 .image-container {
     display: flex;
     background: url("./assets/kimlik.jpg") no-repeat center center/cover;
-    width: 100%;
+    width: 75%;
     height: 350px;
     border-radius: 50%;
     
@@ -240,25 +240,60 @@ body{
 
 /*? RESPONSİVE START*/
 
-@media screen and (max-width: 900px){
-    .welcome-wrapper{
-        flex-direction: column;
-        gap: 50px;
-        margin: 0px 20px;
-    }
-
+@media screen and (max-width: 1024px){
     .image-container{
-        width: 50%;
+        width: 100%;
     }
 
     .social-links ul{
         justify-content: space-around;
     }
+
+    .work-in-progress {
+        font-size:90px;
+    }
+    .coming-soon {
+        font-size: 30px;
+    }
+    .image-text h4{
+        font-size: 32px;
+    }
+    
+    .image-text p{
+        font-size: 24px;
+    }
+    .social-links ul li a{
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 900px){
+    .work-in-progress {
+        font-size:80px;
+    }
+    .coming-soon {
+        font-size: 20px;
+    }
+    .image-text h4{
+        font-size: 22px;
+    }
+    
+    .image-text p{
+        font-size: 20px;
+    }
+    .social-links ul li a{
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
 }
 
 @media screen and (max-width: 768px){
+    .welcome-wrapper{
+        flex-direction: column;
+    }
     .image-container{
-        width: 50%;
+        width: 70%;
         height: 300px;
     }
 
@@ -307,9 +342,12 @@ body{
 }
 
 @media screen and (max-width: 430px){
+    .welcome-wrapper{
+        flex-direction: column;
+    }
     .image-container{
-        width: 70%;
-        height: 200px;
+        width: 90%;
+        height: 130px;
     }
 
     .subcribe-field{
