@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <title>The Mystery Machine</title>
 </head>
 
@@ -14,14 +15,22 @@
             <nav>
                 <a href="#"><img src="/Ogrenciler/Cansu/Odev-animation/assets/logo.png" alt=""></a>
             </nav>
-
         </div>
     </header>
-
     <div class="car">
-           <img class="otocar" src="/Ogrenciler/Cansu/Odev-animation/assets/car.png" alt="">
-           <img class="rear-wheel" src="/Ogrenciler/Cansu/Odev-animation/assets/rear-wheel.png" alt="">
-           <img class="front-wheel" src="/Ogrenciler/Cansu/Odev-animation/assets/front-wheel.png" alt="">
+        <img class="otocar" src="/Ogrenciler/Cansu/Odev-animation/assets/car.png" alt="">
+        <img class="rear-wheel" src="/Ogrenciler/Cansu/Odev-animation/assets/rear-wheel.png" alt="">
+        <img class="front-wheel" src="/Ogrenciler/Cansu/Odev-animation/assets/front-wheel.png" alt="">
+        <div class="dust">
+            <div class="particle" style="animation-delay: 0s;   left: 10%;"></div>
+            <div class="particle" style="animation-delay: 0.2s; left: 20%;"></div>
+            <div class="particle" style="animation-delay: 0.4s; left: 30%;"></div>
+            <div class="particle" style="animation-delay: 0.6s; left: 40%;"></div>
+            <div class="particle" style="animation-delay: 0.8s; left: 50%;"></div>
+            <div class="particle" style="animation-delay: 1s;   left: 60%;"></div>
+            <div class="particle" style="animation-delay: 1.2s; left: 70%;"></div>
+            <div class="particle" style="animation-delay: 1.4s; left: 80%;"></div>
+        </div>
     </div>
     <section>
         <div class="container">
@@ -33,21 +42,24 @@
                     <form class="coming-form">
                         <img class="arrow" src="/Ogrenciler/Cansu/Odev-animation/assets/arrow.png" alt="">
 
-                        <input type="text" id="email" placeholder="Enter your email address to subscribe...">
+                        <input id="email" type="text" placeholder="Enter your email address to subscribe..."
+                            data-has-listeners="true">
                         <button class="btn-filled">subscribe</button>
                     </form>
                 </div>
                 <div class="coming-image">
                     <div class="img-box">
-                        <img src="/Ogrenciler/Cansu/Odev-animation/assets/profil.png" width="345.6px" height="345.6px" alt="">
+                        <img src="/Ogrenciler/Cansu/Odev-animation/assets/profil.png" width="345.6px" height="345.6px"
+                            alt="">
                     </div>
                     <div>
                         <h4>Cansu Çevik</h4>
-                        <p class="subtitle">CEO</p>
-                        <p class="body">A full stack all around <b>designer</b> that may or may not include a guide for
-                            specific creative potential methods who framing and evaluating moves.</p>
+                        <p class="subtitle">Web Developer</p>
+                        <p class="body">A web developer <b>builds</b> websites using frontend and backend technologies
+                            to create responsive, efficient, and user-friendly applications.</p>
                         <div class="coming-links">
-                            <a href="https://www.linkedin.com/in/cansu-cevik1/" class="caption" target="_blank">LINKEDIN</a>
+                            <a href="https://www.linkedin.com/in/cansu-cevik1/" class="caption"
+                                target="_blank">LINKEDIN</a>
                             <a href="https://x.com/cnsucevk" class="caption" target="_blank">TWITTER</a>
                             <a href="http://www.instagram.com/cnsucevkk" class="caption" target="_blank">INSTAGRAM</a>
                         </div>
@@ -56,47 +68,47 @@
             </div>
         </div>
     </section>
-<div class="bg-shape-1"></div>
-<div class="bg-shape-2"></div>
-<div class="dust"></div>
-<div class="particle"></div>
-
-
-<div class="gallery-container">
-    <div class="gallery-card">
-        <h5 class="gallery-name2">Education</h5>
-        <ul class="brief3-list">
-            <li>Balıkesir University <br> Electrical and Electronics Engineering <br> (2019-2023)</li>
-            <li>Anadolu University <br> Management Information Systems <br>(on-going)</li>
-            
-
-        </ul>
-    </div>
-    <div class="gallery-card">
-        <h5 class="gallery-name2">My Certificates</h5>
-        <ul class="brief3-list">
-            <li>Bootstrap 5 - BTK Academy <br>(October-2024)</li>
-            <li>Web Programming with REACT - BTK Academy <br>(November-2024)</li>
-            <li>Akbank Deep Learning Project Camp - AI Business School <br>(November-2024)</li>
-            
-        </ul>
-    </div>
-
-
-    <div class="gallery-card">
-        <h5 class="gallery-name2">Parian Marble</h5>
-        <img src="../assets/marbles2.png" alt="">
-        <ul class="brief3-list">
-            <li><span>Source:</span> Paros Island.</li>
-            <li>It has a bright white color, fine texture and a transparent appearance.</li>
-            <li>It was especially preferred by sculptors because it was of very highquality.</li>
-            <li><span>Usage:</span> The statue Aphrodite is made of this marble.</li>
-
-
-        </ul>
-    </div>
-
+    <div class="bg-shape-1"></div>
+    <div class="bg-shape-2"></div>
+    <div class="brief-container">
+        <div class="brief-card">
+            <h5 class="brief-name2">Education</h5>
+            <ul class="brief3-list">
+                <li>Balıkesir University <br><span>Electrical and Electronics Engineering</span> <br> (2019-2023)</li>
+                <li>Anadolu University <br><span>Management Information Systems</span> <br>(on-going)</li>
+            </ul>
+        </div>
+        <div class="brief-card">
+            <h5 class="brief-name2">Certificates</h5>
+            <ul class="brief3-list">
+                <li><a href="https://www.linkedin.com/in/cansu-cevik1/details/certifications/1731015107764/single-media-viewer?type=DOCUMENT&profileId=ACoAADUU2FMBFFfusciux5xjCw_R1AupPP35Sk0&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3B218i2PpWQO2Bcxyz3SQBbQ%3D%3D"
+                        target="_blank"><span>Bootstrap 5</span> - BTK Academy <br>(October-2024)</a></li>
+                <li><a href="https://www.linkedin.com/in/cansu-cevik1/details/certifications/1731015133300/single-media-viewer?type=DOCUMENT&profileId=ACoAADUU2FMBFFfusciux5xjCw_R1AupPP35Sk0&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3B218i2PpWQO2Bcxyz3SQBbQ%3D%3D"
+                        target="_blank"><span>Web Programming with REACT</span> - BTK Academy <br>(November-2024)</a>
+                </li>
+                <li><a href="https://www.linkedin.com/safety/go?url=https%3A%2F%2Flnkd.in%2Fd8xEsxSW%3Ftrk%3Dfeed_main-feed-card-text&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3B69Jxfk4mT4epG4zMqShYng%3D%3D"
+                        target="_blank"><span>Web Programming</span> - Turkcell Future Writers <br>(August-2023)</a>
+                </li>
+                <li><a href="https://courses.10million.ai/saas-certificate/12D36AC3F-12D36AC41-3221635/" target="blank">
+                        <span>Akbank Deep Learning Project Camp</span> - AI Business School <br> (November-2024)</a>
+                </li>
+                <li><a href="https://www.linkedin.com/in/cansu-cevik1/" target="_blank"><span>Click to view all
+                            certificates.</span></a></li>
+            </ul>
+        </div>
+        <div class="brief-card">
+            <h5 class="brief-name2">Projects</h5>
+            <ul class="brief3-list">
+                <li><a href="https://github.com/Cansu126/PenteMarbles" target="_blank"><span>Pente Marbles:</span></a>
+                    It is the e-commerce site of marble merchants living in the ancient
+                    Greek period.</li>
+                <li><a href="https://github.com/Cansu126/Flip-a-coin-game" target="_blank"><span>Flip a Coin
+                            Game:</span></a> In the flip a coin game, the game is started by pressing the spin
+                    button. Each resulting head or tail option is recorded as a score. The game is reset by pressing the
+                    reset button.</li>
+                <li><a href="https://github.com/Cansu126" target="_blank"><span>Click to view all projects.</span></a></li>
+            </ul>
+        </div>
 </body>
-
 
 </html>
