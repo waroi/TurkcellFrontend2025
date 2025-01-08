@@ -211,15 +211,17 @@ main {
         height: 350px;
         top: -5%;
     }
-    
+
     @keyframes largeCircle {
         0% {
             transform: translate(-50%, -40px);
         }
+
         50% {
             transform: translate(-50%, 30px);
             border-color: #0c7f86;
         }
+
         100% {
             transform: translate(-50%, -40px);
         }
@@ -442,4 +444,24 @@ main {
     .skills-grid {
         grid-template-columns: 1fr;
     }
+}
+
+.scale:hover {
+    transform: scale(1.1);
+}
+
+.color:hover {
+    background: #357abd;
+}
+
+.shadow:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.rotate:hover {
+    transform: rotate(5deg);
+}
+
+.moveup:hover {
+    transform: translateY(-10px);
 }
