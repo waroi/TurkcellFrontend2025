@@ -223,7 +223,7 @@ header .profile {
   width: 200px;
   height: 200px;
   border-radius: 100%;
-  box-shadow: 0 0 10px var(--transparent-white);
+  box-shadow: 0 0 15px var(--transparent-white);
   border: 5px solid var(--black);
   animation: float 3s cubic-bezier(0.5, 0, 0.5, 1) infinite;
 }
@@ -314,6 +314,12 @@ main a {
 
 main a:hover {
   color: var(--white);
+}
+
+main img {
+  border-radius: 10px;
+  box-shadow: 0 0 15px var(--transparent-white);
+  border: 5px solid var(--black);
 }
 
 footer {
