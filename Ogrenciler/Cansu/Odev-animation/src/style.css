@@ -21,7 +21,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    height: 2000px;
+    height: 1600px;
     width: 40%;
     background-color: #e5fff9;
     z-index: -1;
@@ -32,7 +32,7 @@ body {
     position: absolute;
     top: 0;
     right: 0;
-    height: 2000px;
+    height: 1600px;
     width: 60%;
     background-color: #b8e4da;
     z-index: -1;
@@ -220,6 +220,58 @@ header img {
   right: 34px ;
 }
 
+
+
+.gallery-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px; 
+    padding: 20px;
+  }
+  .gallery-card {
+    background: #b8e4da;
+    border: 1px solid  #b8e4da ;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease;
+    padding: 20px;
+  }
+  
+  .gallery-card:hover {
+    background-color: #e5fff9; 
+    border-color:#e5fff9 ;
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  .gallery-name2 {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #084b4f;
+    margin-bottom: 10px;
+  }
+  .gallery-card h5{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #084b4f;
+    border-bottom: 1px solid #084b4f ;
+  }
+  .brief3-list{
+    padding: 10px;
+    list-style-type: none;
+    margin: 20px;
+    color: black ;
+    list-style: none;
+    text-align: justify;
+    line-height: 1.6;
+    font-weight: 400;
+  }
+  .brief3-list span{
+    color: red;
+  }
+
+  
 @keyframes car {
     0% {
         transform: translateX(0);
