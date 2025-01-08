@@ -1,0 +1,20 @@
+body {
+  display: flex;
+  background-color: black;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  background-color: aqua;
+  width: 150px;
+  height: 150px;
+  transition: all 1s ease-in-out;
+}
+
+.box:hover {
+  background-color: brown;
+  width: 50px;
+  height: 300px;
+}
