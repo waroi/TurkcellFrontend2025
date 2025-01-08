@@ -203,6 +203,28 @@ main {
     }
 }
 
+
+@media (max-width: 600px) {
+    .largeAnimatedCircle {
+        width: 350px;
+        height: 350px;
+        top: -5%;
+    }
+    
+    @keyframes largeCircle {
+        0% {
+            transform: translate(-50%, -40px);
+        }
+        50% {
+            transform: translate(-50%, 30px);
+            border-color: #fafafa;
+        }
+        100% {
+            transform: translate(-50%, -40px);
+        }
+    }
+}
+
 .animatedCircle,
 .profileImage {
     grid-column: 1;
