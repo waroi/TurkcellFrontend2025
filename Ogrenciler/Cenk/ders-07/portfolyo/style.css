@@ -7,10 +7,8 @@ body{
     --main-font: 'Poppins', sans-serif;
     --main-color: #0c7f86;
     --main-body-color: #084b4f;
-    overflow: hidden;
     color: var(--main-body-color);
     font-family: var(--main-font);  
-    min-height: 100vh;
 }
 .container{
     width: 100%;
@@ -210,6 +208,7 @@ header{
     font-weight: 700;
     line-height: 30px;
     letter-spacing: 5px;
+    z-index: 3;
 }
 .caption:hover{
     color: var(--main-color);
@@ -220,7 +219,7 @@ header{
     left: 0;
     height: 100%;
     width: 40%;
-    position: absolute;
+    position: fixed;
     z-index: -1;
 }
 .bg-shape-2 {
@@ -229,6 +228,61 @@ header{
     right: 0;
     height: 100%;
     width: 60%;
-    position: absolute;
+    position: fixed;
     z-index: -1;
+}
+h2{
+    padding-top: 50px;
+    padding-bottom: 20px;
+    font-size: 48px;
+    font-weight: 700;
+    text-align: left;
+    color: var(--main-color);
+}
+.about-me .subtitle {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 30px;
+}
+.textbox {
+    padding: 20px 24px;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0px 0px 30px 7px #0c7f8640;
+}
+.about-me-text{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 30px;
+    color: var(--main-font);
+    text-align: justify;
+}
+.experience h3, .education h3, .skills h3{
+    font-size: 24px;
+    font-weight: 700;
+    text-align: left;
+    color: var(--main-color);
+    margin-bottom: 10px;
+}
+.experience h4, .education h4, .skills h4{
+    margin-bottom: 10px;
+}
+.date{
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+.experience-text{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 30px;
+    color: var(--main-font);
+    text-align: justify;
+}
+.experiences .textbox, .skills .textbox{
+    margin-bottom: 30px;
+}
+.web-project-portfolio a{
+    text-decoration: none;
+    color: var(--main-color);
 }
