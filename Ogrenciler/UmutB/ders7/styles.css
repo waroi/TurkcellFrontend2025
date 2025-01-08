@@ -5,8 +5,8 @@
 }
 
 html {
-    background: linear-gradient(90deg,#e5fff9 30%,#b8e4da 70%) no-repeat center center fixed;
-    background-size: cover; 
+    background: linear-gradient(90deg, #e5fff9 30%, #b8e4da 70%) no-repeat center center fixed;
+    background-size: cover;
 }
 
 body {
@@ -29,7 +29,7 @@ nav {
     width: 100%;
 }
 
-a > img {
+a>img {
     width: 100px;
     height: 60px;
 }
@@ -65,16 +65,18 @@ main {
     width: 100%;
     height: 25px;
     margin: 25px 0;
-    background-size: cover; /*resim tekrarlanacak*/
+    background-size: cover;
+    /*resim tekrarlanacak*/
     animation: waveMotion 12s linear infinite;
 }
 
 @keyframes waveMotion {
-    from { 
-        background-position-x: 0%; 
+    from {
+        background-position-x: 0%;
     }
-    to { 
-        background-position-x: -800%; 
+
+    to {
+        background-position-x: -800%;
     }
 }
 
@@ -110,7 +112,8 @@ main {
     transition: 0.5s ease;
 }
 
-.emailInput:focus { /*on click*/
+.emailInput:focus {
+    /*on click*/
     border-color: #0c7f86;
     box-shadow: none;
     outline: none;
@@ -146,40 +149,70 @@ main {
     margin: 0 auto 32px;
     width: 290px;
     height: 290px;
+    position: relative;
 }
 
 .animatedCircle {
-    width: 290px;
-    height: 290px;
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
     border: 3px solid #fafafa;
-    transform: translate(-30px, -30px);
-    animation: circle 8s linear infinite;
+    animation: circle 10s linear infinite;
 }
 
-.profileImage {
-    width: 290px;
-    height: 290px;
+@keyframes circle {
+    0% {
+        transform: translate(-30px, -30px);
+    }
+
+    50% {
+        transform: translate(30px, -30px);
+        border-color: #0c7f86;
+    }
+
+    100% {
+        transform: translate(-30px, -30px);
+    }
+}
+
+.largeAnimatedCircle {
+    width: 700px;
+    height: 700px;
     border-radius: 50%;
-    object-fit: cover;
+    border: 1px solid;
+    border-color: #0c7f86;
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    z-index: -1;
+    animation: largeCircle 6s linear infinite;
 }
 
-.animatedCircle, .profileImage {
+@keyframes largeCircle {
+    0% {
+        transform: translate(0, -80px);
+    }
+
+    50% {
+        transform: translate(0, 60px);
+        border-color: #fafafa;
+    }
+
+    100% {
+        transform: translate(0, -80px);
+    }
+}
+
+.animatedCircle,
+.profileImage {
     grid-column: 1;
     grid-row: 1;
 }
 
-@keyframes circle {
-    0% { transform: translate(-30px, -30px); }
-    50% { 
-        transform: translate(30px, -30px);
-        border-color: #0c7f86; 
-    }
-    100% { transform: translate(-30px, -30px); }
-}
+
 .profileImage {
-    width: 290px;
-    height: 290px;
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
     object-fit: cover;
 }
@@ -227,6 +260,7 @@ main {
         font-size: 90px;
         line-height: 110px;
     }
+
     .comingSoonText {
         font-size: 28px;
         letter-spacing: 25px;
@@ -238,6 +272,7 @@ main {
         grid-template-columns: 1fr;
         gap: 40px;
     }
+
     .mainHeading {
         padding-top: 30px;
     }
@@ -247,20 +282,25 @@ main {
     .headerSection {
         padding-top: 30px;
     }
+
     .mainHeading {
         font-size: 60px;
         line-height: 70px;
     }
+
     .comingSoonText {
         font-size: 22px;
         letter-spacing: 10px;
     }
+
     .subscribeForm {
         flex-direction: column;
     }
+
     .formArrow {
         display: none;
     }
+
     .emailInput {
         box-shadow: none;
     }
