@@ -96,9 +96,11 @@ header img {
 
 .coming-form {
     display: flex;
+    width: 100%;
     justify-content: space-between;
     align-items: center;
     margin-top: 60px;
+    
 }
 
 .coming-form .arrow {
@@ -107,7 +109,7 @@ header img {
 }
 
 .coming-form input{
-    padding: 20px 24px;
+    padding: 24.2px 28.2px;
     font-size: 18px;
     flex-grow: 1;
     margin: 0 16px;
@@ -118,6 +120,9 @@ header img {
     background-color: #fff;
     box-shadow: 0px 0px 30px 7px #0c7f8640;
     transition: 0.5s ease;
+}
+.coming-form input::placeholder{
+    color: #0c7f86;
 }
 
 .coming-image .body {
