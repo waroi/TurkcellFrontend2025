@@ -25,6 +25,8 @@ body{
     }
     50%{
         transform: translate(650px,450px) rotate(720deg);
+        border-radius: 50%;
+        box-shadow: 10px 6px 5px 10px rgb(220, 5, 77);
     }
     75%{
         transform: translate(0,450px) rotate(1080deg);

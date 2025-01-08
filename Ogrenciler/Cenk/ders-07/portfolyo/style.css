@@ -57,6 +57,15 @@ header{
     margin: 25px 0;
     background-size: 645px 20px;
     background-repeat: repeat-x;
+    animation: wavy-motion 15s linear infinite;
+}
+@keyframes wavy-motion {
+    from {
+        background-position-x: 0%;
+    }
+    to {
+        background-position-x: 645px;
+    }
 }
 .coming-form{
     display: flex;
@@ -108,20 +117,67 @@ header{
 .btn:hover {
     background-color: var(--main-body-color);
 }
-.coming-image{
+.coming-image {
     width: 30%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.img-box{
+.img-box {
+    position: relative;
     margin-bottom: 32px;
-    width: 350px;
-    height: 350px;
 }
-.img-box img{
+.img-box img {
+    position: relative;
     max-width: 100%;
     border-radius: 50%;
+    z-index: 1;
+}
+.circle-1 {
+    position: absolute;
+    border-radius: 50%;
+    width: 350px;
+    height: 350px;
+    border: 3px solid #fafafa;
+    top: -45px;
+    left: -30px;
+    animation: animate-circle-1 8s linear infinite;
+    z-index: 2;
+}
+.circle-2 {
+    position: absolute;
+    border-radius: 50%;
+    width: 800px;
+    height: 800px;
+    border: 1px solid #fff;
+    top: 0px;
+    right: -420px;
+    animation: animate-circle-2 3s linear infinite alternate;
+    z-index: 0;
+}
+@keyframes animate-circle-1 {
+    0% {
+        top: -20px;
+        left: -20px;
+    }
+    50% {
+        top: -20px;
+        left: 20px;
+        border-color: var(--main-color);
+    }
+    100% {
+        top: -20px;
+        left: -20px;
+    }
+}
+@keyframes animate-circle-2 {
+    from {
+        top: -70px;
+    }
+    to {
+        top: 10px;
+        border-color: var(--main-color);
+    }
 }
 .img-text h4{
     color: var(--main-body-color);
