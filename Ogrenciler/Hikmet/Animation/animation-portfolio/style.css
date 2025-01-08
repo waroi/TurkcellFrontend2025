@@ -20,10 +20,6 @@ body {
 	width: 100%;
 }
 
-.left-content {
-	flex: 1;
-}
-
 .logo {
 	width: 60px;
 	margin-bottom: 2rem;
@@ -100,18 +96,18 @@ input[type="email"] {
 	height: 200px;
 	border-radius: 50%;
 	object-fit: cover;
-	animation: rotate360 20s linear infinite;
+	animation: rotate360 5s linear infinite;
 }
 
 .name {
-	font-size: 2rem;
+	font-size: 3rem;
 	color: rgb(6 182 212);
 	margin: 1rem 0;
 }
 
 .position {
 	color: rgb(6 182 212);
-	font-size: 1rem;
+	font-size: 1.5rem;
 	margin-bottom: 1rem;
 }
 
@@ -132,6 +128,10 @@ input[type="email"] {
 	margin-left: 1rem;
 	font-weight: 500;
 }
+.social-links a:hover {
+	color: rgb(4, 98, 114);
+}
+
 .projects-section {
 	margin: 6rem auto 0;
 }
@@ -181,6 +181,60 @@ input[type="email"] {
 	color: #4a4a4a;
 	line-height: 1.6;
 	font-size: 0.9rem;
+}
+.skills-section {
+	max-width: 1200px;
+	margin: 6rem auto;
+	padding: 1rem;
+}
+
+.skills-title {
+	color: rgb(6 182 212);
+	font-size: 2.5rem;
+	margin-bottom: 3rem;
+	text-align: center;
+}
+
+.skills-grid {
+	display: grid;
+	grid-template-columns: repeat(6, minmax(150px, 1fr));
+	gap: 2rem;
+	justify-items: center;
+}
+
+.skill-card {
+	background: white;
+	border-radius: 12px;
+	padding: 1.5rem;
+	width: 150px;
+	text-align: center;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.skill-icon {
+	width: 70px;
+	height: 70px;
+	margin: 0 auto 1rem;
+	border-radius: 8px;
+	overflow: hidden;
+}
+
+.skill-icon img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.skill-name {
+	color: rgb(6 182 212);
+	font-size: 1rem;
+	font-weight: 600;
 }
 
 @keyframes loading {
@@ -242,5 +296,117 @@ input[type="email"] {
 	}
 	100% {
 		content: "100%";
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.container {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.right-content {
+		text-align: center;
+		margin-top: 2rem;
+	}
+
+	.title {
+		font-size: 3.5rem;
+	}
+
+	.projects-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.skills-grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.description {
+		max-width: 100%;
+		margin: 1rem auto;
+	}
+
+	.social-links a {
+		margin: 0 0.5rem;
+	}
+}
+
+/* Mobil için Media Queries (768px'den küçük) */
+@media screen and (max-width: 768px) {
+	body {
+		padding: 1rem;
+	}
+
+	.title {
+		font-size: 2.5rem;
+	}
+
+	.loading-container {
+		width: 100%;
+		max-width: 300px;
+		margin: 2rem auto;
+	}
+
+	.subscribe {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	input[type="email"] {
+		width: 100%;
+		max-width: 300px;
+	}
+
+	.projects-grid {
+		grid-template-columns: 1fr;
+		gap: 1.5rem;
+	}
+
+	.skills-grid {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1rem;
+	}
+
+	.project-card {
+		padding: 1rem;
+	}
+
+	.project-image {
+		height: 160px;
+	}
+
+	.projects-title,
+	.skills-title {
+		font-size: 2rem;
+	}
+}
+
+/* Çok küçük ekranlar için (400px'den küçük) */
+@media screen and (max-width: 400px) {
+	.title {
+		font-size: 2rem;
+	}
+
+	.skills-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.skill-card {
+		width: 100%;
+	}
+
+	.profile-img {
+		width: 150px;
+		height: 150px;
+	}
+
+	.name {
+		font-size: 1.5rem;
+	}
+
+	.coming-soon {
+		letter-spacing: 4px;
+		font-size: 1rem;
 	}
 }
