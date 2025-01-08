@@ -154,6 +154,26 @@
   }
 }
 
+@keyframes black-shadow {
+  0% {
+    box-shadow: 0 0 100px var(--black), 0 0 100px var(--black),
+      0 0 100px var(--black), 0 0 100px var(--black) inset,
+      0 0 100px var(--black) inset, 0 0 100px var(--black) inset;
+  }
+
+  50% {
+    box-shadow: 0 0 150px var(--black), 0 0 150px var(--black),
+      0 0 150px var(--black), 0 0 150px var(--black) inset,
+      0 0 150px var(--black) inset, 0 0 150px var(--black) inset;
+  }
+
+  100% {
+    box-shadow: 0 0 100px var(--black), 0 0 100px var(--black),
+      0 0 100px var(--black), 0 0 100px var(--black) inset,
+      0 0 100px var(--black) inset, 0 0 100px var(--black) inset;
+  }
+}
+
 body {
   --white: #fff;
   --black: #000;
@@ -336,7 +356,8 @@ footer {
   box-shadow: 0 0 100px var(--black), 0 0 100px var(--black),
     0 0 100px var(--black), 0 0 100px var(--black) inset,
     0 0 100px var(--black) inset, 0 0 100px var(--black) inset;
-  animation: black-hole 60s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  animation: black-hole 60s cubic-bezier(0.5, 0, 0.5, 1) infinite,
+    black-shadow 3s cubic-bezier(0.5, 0, 0.5, 1) infinite;
 }
 
 @media (max-width: 1200px) {
