@@ -163,6 +163,7 @@
 
   50% {
     box-shadow: 0 0 125px var(--black), 0 0 125px var(--black),
+      0 0 125px var(--black), 0 0 125px var(--black) inset,
       0 0 125px var(--black) inset, 0 0 125px var(--black) inset;
   }
 
@@ -356,7 +357,7 @@ footer {
     0 0 100px var(--black), 0 0 100px var(--black) inset,
     0 0 100px var(--black) inset, 0 0 100px var(--black) inset;
   animation: black-hole 60s cubic-bezier(0.5, 0, 0.5, 1) infinite,
-    black-shadow 3s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    black-shadow 1s cubic-bezier(0.5, 0, 0.5, 1) infinite;
 }
 
 @media (max-width: 1200px) {
