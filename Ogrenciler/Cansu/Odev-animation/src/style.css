@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Poppins, sans-serif;
+    font-family: 'Poppins', sans-serif;
 
 }
 
@@ -100,7 +100,7 @@ header img {
     justify-content: space-between;
     align-items: center;
     margin-top: 60px;
-
+    
 }
 
 .coming-form .arrow {
@@ -108,8 +108,8 @@ header img {
     height: 50px;
 }
 
-.coming-form input {
-    padding: 24.2px 28.2px;
+.coming-form input{
+    padding: 20px 24px;
     font-size: 18px;
     flex-grow: 1;
     margin: 0 16px;
@@ -121,8 +121,7 @@ header img {
     box-shadow: 0px 0px 30px 7px #0c7f8640;
     transition: 0.5s ease;
 }
-
-.coming-form input::placeholder {
+.coming-form input::placeholder{
     color: #0c7f86;
 }
 
@@ -213,8 +212,8 @@ header img {
     border-radius: 50%;
     animation: wheel 1s infinite linear;
     z-index: 2;
+    bottom: 17px;
     left: 20px;
-    bottom: 15px;
 }
 
 .front-wheel {
@@ -224,7 +223,7 @@ header img {
     border-radius: 50%;
     animation: wheel 1s infinite linear;
     z-index: 2;
-    bottom: 15px;
+    bottom: 17px;
     right: 34px;
 }
 
@@ -284,7 +283,6 @@ header img {
 .brief3-list span {
     color: red;
 }
-
 .dust {
     position: absolute;
     bottom: 0px;
@@ -292,17 +290,17 @@ header img {
     width: 100%;
     height: 30px;
     pointer-events: none;
-    z-index: 1;
-}
+    z-index: 1; 
+  }
 
-.dust .particle {
+  .dust .particle {
     position: absolute;
     width: 5px;
     height: 5px;
     background-color: rgba(150, 150, 150, 0.5);
     border-radius: 50%;
     animation: dustParticle 1.5s infinite ease-out;
-}
+  }
 
 
 @keyframes car {
@@ -324,23 +322,20 @@ header img {
         transform: rotate(360deg);
     }
 }
-
 @keyframes dustParticle {
     0% {
-        transform: translateY(0) scale(1);
-        opacity: 1;
+      transform: translateY(0) scale(1);
+      opacity: 1;
     }
-
     50% {
-        transform: translateY(-15px) scale(1.2);
-        opacity: 0.7;
+      transform: translateY(-15px) scale(1.2);
+      opacity: 0.7;
     }
-
     100% {
-        transform: translateY(-30px) scale(1);
-        opacity: 0;
+      transform: translateY(-30px)  scale(1);
+      opacity: 0;
     }
-}
+  }
 
 @keyframes wavy-motion {
     0% {
