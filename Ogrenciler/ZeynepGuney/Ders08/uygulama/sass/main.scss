@@ -2,16 +2,20 @@
     font-family: "Nanum Gothic", serif;
 }
 .container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    position: relative;
     a{
         text-decoration: none;
     }
     .header{
+        z-index: 10;
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: center;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
     } 
     .menu, span{
         padding: 12px 20px;
@@ -37,16 +41,18 @@
     }
     .bg{
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
         background-image: url("https://preview.colorlib.com/theme/directoryads/images/hero_2.jpg");
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
-        opacity: 0.5;
+        opacity: 1;
         position:relative;
         height: 100vh;
         width: 100%;
+        z-index: 0;
         h1{
             color: white;
             align-items: center;
