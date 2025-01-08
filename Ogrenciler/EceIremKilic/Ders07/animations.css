@@ -1,0 +1,53 @@
+body{
+    background-color: beige;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box{
+    width: 300px;
+    height: 300px;
+    background-color: orange;
+    /* transition: all 2s ease-in-out; */
+    animation-name: aa;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+}
+.box:hover{
+    width: 50px;
+    height: 500px;
+    background-color: greenyellow;
+}
+/* @keyframes aa{
+    0%{
+        background-color: orange;
+        width: 50px;
+        height: 500px;
+    }
+    50%{
+        background-color: greenyellow;
+        width: 300px;
+        height: 300px;
+    }
+    100%{
+        background-color: orange;
+        width: 50px;
+        height: 500px;
+    }
+} */
+@keyframes aa{
+    0%{
+        background-color: orange;
+        transform: translate(0,0);
+    }
+    50%{
+        background-color: greenyellow;
+        transform: translate(0,500px)rotate(360deg);
+    }
+    100%{
+        background-color: orange;
+        transform: translate(0,0);
+    }
+}
