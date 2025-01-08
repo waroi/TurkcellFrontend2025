@@ -169,7 +169,7 @@ body {
   animation: background 120s cubic-bezier(0.5, 0, 0.5, 1) infinite;
   color: var(--white);
   text-shadow: 0 0 5px var(--black);
-  padding: 100px 300px 0;
+  padding: 100px 15vw 0;
   overflow-x: hidden;
 }
 
@@ -178,7 +178,7 @@ a {
   text-decoration: none;
 }
 
-img {
+img:not(.planet) {
   max-width: 100%;
   max-height: 100%;
 }
@@ -209,12 +209,12 @@ img {
 }
 
 header {
-  padding-right: 400px;
+  padding-right: 20vw;
 }
 
 header .grid {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 200px auto;
   column-gap: 50px;
   align-items: center;
 }
@@ -250,6 +250,7 @@ h2 {
 
 .links {
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-end;
   margin: 50px 0;
   gap: 50px;
@@ -283,6 +284,7 @@ h3:not(.links h3) {
 
 main {
   width: 1000px;
+  max-width: 100%;
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 150px;
@@ -335,4 +337,20 @@ footer {
     0 0 100px var(--black), 0 0 100px var(--black) inset,
     0 0 100px var(--black) inset, 0 0 100px var(--black) inset;
   animation: black-hole 60s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+
+@media (max-width: 1200px) {
+  .links {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  header .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile {
+    margin-bottom: 50px;
+  }
 }
