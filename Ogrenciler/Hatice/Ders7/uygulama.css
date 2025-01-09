@@ -1,0 +1,43 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    width: 500px;
+    height: 500px;
+    position: relative;
+    border: 2px solid #333;
+}
+.box {
+    width: 200px;
+    height: 200px;
+    background-color: #ff5733;
+    position: absolute;
+    animation: moveAround 8s infinite ease-in-out, spin 1s infinite linear;
+
+}
+
+.box:hover{
+    transition: all 2s;
+}
+
+@keyframes moveAround {
+    0% { background-color: blue; top: 100px; left: 100px; ; }
+    25% { background-color: rgb(255, 0, 212); top: 100px; left: calc(100% - 300px); ; }
+    50% { background-color: rgb(212, 255, 0); top: calc(100% - 300px); left: calc(100% - 300px); ; }
+    75% { background-color: rgb(255, 0, 0); top: calc(100% - 300px); left: 100px; ; }
+    100% { background-color: blue ;top: 100px; left: 100px; }
+}
+@keyframes spin {
+    from {
+      transform:rotate(0deg);
+    }
+    to {
+      transform:rotate(360deg);
+    }
+  }

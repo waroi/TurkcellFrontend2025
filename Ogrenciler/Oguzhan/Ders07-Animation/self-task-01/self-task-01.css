@@ -1,0 +1,243 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  color: #0c7f86;
+  font-family: "Poppins", serif;
+  font-size: 16px;
+  background-color: rgb(225, 237, 65);
+}
+
+/* HEADER */
+
+header {
+  padding-top: 60px;
+}
+
+.header-container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 24px;
+  margin: 0 auto;
+}
+
+.logo {
+  display: block;
+  width: 98px;
+  height: 56px;
+  animation: logo-animation 4s infinite ease-in-out;
+}
+
+@keyframes logo-animation {
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(180deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+/* MAİN */
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 24px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
+.main-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* LEFT SECTİON */
+
+.left-section {
+  width: 60%;
+}
+
+h1 {
+  font-size: 120px;
+  font-weight: 700;
+  letter-spacing: -4px;
+  padding-top: 100px;
+  padding-bottom: 20px;
+  text-align: left;
+  color: #0c7f86;
+}
+
+.wave-animation {
+  color: white;
+  height: 20px;
+  width: 100%;
+  background-image: url(assets/wavy-shape.png);
+  background-size: 645px 20px;
+  background-repeat: repeat-x;
+  animation: wave 15s linear infinite;
+  margin: 25px 0;
+}
+
+@keyframes wave {
+  0% {
+    background-position-x: 0%;
+  }
+  100% {
+    background-position-x: 645px;
+  }
+}
+.subtitle {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 35px;
+  letter-spacing: 30px;
+  padding-top: 15px;
+  text-transform: uppercase;
+}
+
+.soon span {
+  display: inline-block;
+  color: #013389;
+  animation: soon-animation 3s infinite ease-in-out;
+}
+
+@keyframes soon-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 60px;
+  transition: 1s ease;
+}
+
+.arrow {
+  width: 34px;
+  height: 50px;
+  transition: 0.7s ease;
+}
+
+.form:hover {
+  .input {
+    margin-left: 70px;
+  }
+  .arrow {
+    transform: translateX(50px);
+  }
+}
+
+.input {
+  font-size: 18px;
+  padding: 20px 24px;
+  margin: 0 16px;
+  flex-grow: 1; /*yükselik ve genişlil belirtilmediğinde genişleyebileceği kadar genişliyor */
+  border: none;
+  outline: none; /* tıkladığında border çizgisi çıkmıyor */
+  border: 1px solid #fff;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0px 0px 30px 7px #0c7f8640;
+  transition: 0.7s ease;
+}
+.input::placeholder {
+  font-size: 18px;
+  color: #0c7f86;
+}
+.input:focus {
+  border-color: #0c7f86;
+  box-shadow: unset;
+}
+
+.subscribe-btn {
+  font-family: var(--main-font);
+  padding: 25px 24px;
+  border-radius: 10px;
+  background-color: #0c7f86;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+
+.subscribe-btn:hover {
+  background-color: #084b4f;
+}
+
+/* RIGHT SECTİON */
+
+.right-section {
+  width: 30%;
+}
+
+.profile-image {
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+}
+
+h4 {
+  color: #084b4f;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 30px;
+  margin-top: 24px;
+}
+
+.profile-subtitle {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 5px;
+  margin-bottom: 24px;
+}
+
+.profile-description {
+  line-height: 30px;
+  margin-bottom: 24px;
+}
+
+.profile-links a {
+  color: #084b4f;
+  padding: 8px 8px 0px 0px;
+  text-decoration: none;
+  transition: color 0.5s ease;
+}
+
+.profile-links a:hover {
+  color: #0c7f86;
+}
+
+.link {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: 5px;
+}

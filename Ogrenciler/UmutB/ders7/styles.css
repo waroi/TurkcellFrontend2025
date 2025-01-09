@@ -211,15 +211,17 @@ main {
         height: 350px;
         top: -5%;
     }
-    
+
     @keyframes largeCircle {
         0% {
             transform: translate(-50%, -40px);
         }
+
         50% {
             transform: translate(-50%, 30px);
             border-color: #0c7f86;
         }
+
         100% {
             transform: translate(-50%, -40px);
         }
@@ -441,5 +443,125 @@ main {
 
     .skills-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+.scale:hover {
+    transform: scale(1.1);
+}
+
+.color:hover {
+    background: #357abd;
+}
+
+.shadow:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.rotate:hover {
+    transform: rotate(5deg);
+}
+
+.moveup:hover {
+    transform: translateY(-10px);
+}
+.sliding-shapes-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+/* Squares */
+.sliding-squares .square {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    background: rgba(12, 127, 134, 0.1);
+    animation: slideSquare 15s linear infinite;
+}
+
+.sliding-squares .square:nth-child(1) {
+    top: 15%;
+    animation-delay: 0s;
+}
+
+.sliding-squares .square:nth-child(2) {
+    top: 35%;
+    animation-delay: 4s;
+}
+
+.sliding-squares .square:nth-child(3) {
+    top: 55%;
+    animation-delay: 8s;
+}
+
+.sliding-squares .square:nth-child(4) {
+    top: 75%;
+    animation-delay: 12s;
+}
+
+/* Circles */
+.sliding-squares-aqua .square {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    animation: slideSquare 12s linear infinite;
+}
+
+.sliding-squares-aqua .square:nth-child(1) {
+    top: 25%;
+    animation-delay: 2s;
+}
+
+.sliding-squares-aqua .square:nth-child(2) {
+    top: 45%;
+    animation-delay: 6s;
+}
+
+.sliding-squares-aqua .square:nth-child(3) {
+    top: 65%;
+    animation-delay: 10s;
+}
+
+/* Triangles */
+.sliding-squares-tri .triangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 30px 52px 30px;
+    border-color: transparent transparent rgba(46, 204, 113, 0.2) transparent;
+    animation: slideSquare 18s linear infinite;
+}
+
+.sliding-squares-tri .triangle:nth-child(1) {
+    top: 20%;
+    animation-delay: 3s;
+}
+
+.sliding-squares-tri .triangle:nth-child(2) {
+    top: 40%;
+    animation-delay: 9s;
+}
+
+.sliding-squares-tri .triangle:nth-child(3) {
+    top: 60%;
+    animation-delay: 15s;
+}
+
+@keyframes slideSquare {
+    0% {
+        left: -100px;
+        transform: rotate(0deg);
+    }
+    100% {
+        left: calc(100% + 100px);
+        transform: rotate(360deg);
     }
 }
