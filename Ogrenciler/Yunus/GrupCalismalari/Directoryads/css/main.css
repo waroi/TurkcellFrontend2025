@@ -8,7 +8,7 @@
 
 header,
 .container {
-  max-width: 64%;
+  max-width: 73%;
   margin: 0 auto;
 }
 header a,
@@ -84,7 +84,7 @@ header .navbar-brand {
 }
 
 .hero {
-  max-width: 64%;
+  max-width: 73%;
   margin: 0 auto;
 }
 .hero .hero-title {
@@ -178,11 +178,49 @@ header .navbar-brand {
   color: #2f89fc;
 }
 
+.featured-add {
+  padding-top: 5em;
+}
 .featured-add .h2 {
   font-weight: 500;
   line-height: 1.2;
   font-size: 1.15rem;
   margin-bottom: 1.5rem;
+}
+.featured-add .featured-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+.featured-add .featured-cards .featured-card img {
+  width: 250px;
+  height: 150px;
+}
+.featured-add .featured-cards .featured-card .featured-cont {
+  padding: 20px;
+  background-color: red;
+}
+.featured-add .featured-cards .featured-card .featured-cont .stars svg {
+  width: 15px;
+  height: 16px;
+}
+.featured-add .featured-cards .featured-card .featured-cont .info {
+  display: flex;
+  justify-content: space-between;
+}
+.featured-add .featured-cards .featured-card .featured-cont .info span {
+  font-size: 11px;
+  display: inline-block;
+  padding: 5px 20px;
+  background: #e9ecef;
+  border-radius: 30px;
+  margin-bottom: 20px;
+  color: #000;
+  font-weight: bold;
+}
+.featured-add .featured-cards .featured-card .featured-cont .info svg {
+  width: 16px;
+  height: 16px;
 }
 
 /*# sourceMappingURL=main.css.map */
