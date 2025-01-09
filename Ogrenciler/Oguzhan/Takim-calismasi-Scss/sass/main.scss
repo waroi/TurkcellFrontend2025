@@ -2,31 +2,176 @@ $textWhite: white;
 $btnBlue: #2f89fc;
 $hoverRed: #f23a2e;
 $bgColor: #000000;
-$CatbgColor: #E9ECEF;
-$CatAddColor: #4d4d4d;
+$formBgColor: #e9ecef;
+$catAddColor: #4d4d4d;
+$textGray: #666666;
 
-
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Nanum Gothic", serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nanum Gothic", serif;
 }
 
-
-
-
-.header-section h1{
-    font-size: 20px;
-    font-weight: 900;
-    text-decoration: none;
-    
+@mixin flex-center($gap, $justify: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: center;
+  gap: $gap;
 }
 
-.nav-section{
-    display: flex;
-    flex-wrap: wrap;
-    margin-right: -15px;
-    margin-left: -15px;   
+@mixin text-props($font-size, $font-weight: 400, $color) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  color: $color;
+}
+
+.header-section {
+  @include flex-center(0px, center);
+
+  background-image: url("../assets/bg-image.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-position: 50% -25px;
+
+  .container {
+    width: 75%;
+
+    .nav-section {
+      @include flex-center(0px, space-between);
+      width: 100%;
+      height: 100px;
+      flex-wrap: wrap;
+
+      .logo {
+        font-size: 20px;
+        text-decoration: none;
+        color: $textWhite;
+        font-weight: 900;
+      }
+
+      ul {
+        @include flex-center(30px, center);
+        list-style: none;
+        margin-left: 200px;
+        color: $textWhite;
+        font-size: 15px;
+      }
+
+      .btn-log {
+        border: none;
+        background-color: transparent;
+        color: $textWhite;
+        padding-left: 1.5rem;
+        border-left: 1px solid #dee2e6;
+      }
+
+      .btn-reg {
+        background-color: $btnBlue;
+        padding: 12px 20px;
+        border-radius: 0.25rem;
+        border: none;
+        outline: none;
+        color: $textWhite;
+      }
+    }
+
+    .nav-text {
+      @include flex-center(20px, center);
+      flex-direction: column;
+      height: calc(100vh - 100px);
+
+      h1 {
+        @include text-props(3rem, 400, $textWhite);
+      }
+
+      p {
+        @include text-props($font-size: 1.2rem, $color: $textWhite);
+      }
+
+      form {
+        @include flex-center(30px, center);
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        border-radius: 4px;
+        width: 100%;
+      }
+
+      input {
+        height: 43px;
+        border-radius: 0.25rem;
+        padding: 0 10px;
+        border: none;
+        outline: none;
+        font-size: 1rem;
+        width: 35%;
+      }
+
+      .location {
+        width: 25%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: white;
+        padding: 0 10px;
+        border-radius: 0.25rem;
+      }
+      #inp-location {
+        padding: 0;
+      }
+
+      #btn-category {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 43px;
+        width: 25%;
+        padding: 0 10px;
+        background-color: white;
+        color: $textGray;
+        border-radius: 0.25rem;
+      }
+
+      button {
+        background-color: $btnBlue;
+        padding: 12px 50px;
+        border-radius: 0.25rem;
+        border: none;
+        outline: none;
+        color: $textWhite;
+        font-size: 18px;
+        cursor: pointer;
+      }
+
+      .nav-trend {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        text-align: start;
+        width: 100%;
+        gap: 5px;
+
+        h2 {
+          @include text-props(1rem, 500, $textWhite);
+          margin-right: 10px;
+        }
+
+        a {
+          @include text-props(13px, 400, $textWhite);
+          text-decoration: none;
+          background-color: rgba(255, 255, 255, 0.2);
+          border: 1px solid #fff;
+          padding: 6px 12px;
+          border-radius: 4px;
+          transition: 0.3s all ease;
+
+          &:hover {
+            color: $btnBlue;
+            background-color: white;
+          }
+        }
+      }
+    }
+  }
 }
