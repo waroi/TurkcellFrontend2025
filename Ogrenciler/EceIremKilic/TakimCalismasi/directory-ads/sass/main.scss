@@ -1,0 +1,66 @@
+$section-width: 62%;
+$white-text: #fff;
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", serif;
+    line-height: 1.7;
+}
+header{
+    width: $section-width;
+    background-color: transparent;
+    margin: 0 auto;
+}
+.banner{
+    background-image: url("https://preview.colorlib.com/theme/directoryads/images/hero_2.jpg.webp");
+    .banner-overlay{
+        background-color: #00000050;
+        height: 100%;
+    }
+    .navbar{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 15px;
+    }
+    .navbar a{
+        text-decoration: none;
+    }
+    .navbar ul li button{
+        width: 96px;
+        height: 39px;
+        background-color: #2f89fc;
+        border: none;
+        box-shadow: none;
+        margin: 0 0 0 30px;
+        border-radius: 0.25rem;
+        font-size: 15px;
+        color: $white-text;
+        font-weight: 300;
+    }
+    header .navbar ul{
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+    }
+    header .navbar ul li{
+        padding: 20px 10px;
+        color: $white-text;
+        font-weight: 300;
+        letter-spacing: 1.1px;
+    }
+    header .navbar ul li .down{
+        padding-left: 8px;
+    }
+    header .navbar ul li .line{
+        margin-right: 20px;
+    }
+    header .navbar ul .contact{
+        margin-right: 48px;
+    }
+    .navbar h1{
+        color: $white-text;
+        font-size: 20px;
+    }
+}
