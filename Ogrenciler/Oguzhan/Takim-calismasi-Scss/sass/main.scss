@@ -240,6 +240,7 @@ address{
 
 }
 
+<<<<<<< Updated upstream
         .card-text {
 
           @include flex-center(0px, space-between);
@@ -292,3 +293,11 @@ address{
 
   }
 }
+=======
+.nav-section{
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;   
+}
+>>>>>>> Stashed changes
