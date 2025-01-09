@@ -1,11 +1,28 @@
 $section-width: 62%;
 $white-text: #fff;
+$x336: 336px;
+$x43: 43px;
+
+
+@mixin boxFunction($width, $height, $color) {
+    width: $width;
+    height: $height;
+    background-color: $color;
+    font-size: 16px;
+    border: none;
+  }
+
+
+
+
+
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: "Roboto", serif;
     line-height: 1.7;
+    
 }
 header{
     width: $section-width;
@@ -63,4 +80,66 @@ header{
         color: $white-text;
         font-size: 20px;
     }
+    .welcome-container{
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+
+
+       .w-text h1{
+        font-size: 48px;
+        margin-bottom: 8px;
+        font-weight: 400;
+        color: $white-text;
+    }
+    .w-text p{
+        font-size: 1.2rem;
+        margin-bottom: 16px;
+        text-align: center;
+        
+        color: $white-text;
+    }
+
+
+    .my-form{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        
+        background-color: #ffffff99;
+
+        
+
+
+        .search-form{
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            gap: 20px;
+            padding: 20px;
+            
+        }
+
+        .form-details{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+    
+        }
+
+
+
+        .box1 input {
+            @include boxFunction($x336, $x336, #ffff);
+          }
+    
+    }
+
+
+    }
+
+    
+  
+   
+   
 }
