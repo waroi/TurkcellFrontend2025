@@ -1,0 +1,104 @@
+$primary-color: #0874fa;
+$dark-primary: #3089fc;
+$text-color: #4d4d4d;
+$main-bg-color: white;
+$white-text-color: white;
+$secondary-bg-color: #f8f9fa;
+$black-color: black;
+$badge: #e9ecef;
+$breakpoint-xs: 0;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$font-family-sans-serif: "Nanum Gothic", -apple-system, BlinkMacSystemFont,
+  "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+  "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+  "Liberation Mono", "Courier New", monospace;
+
+@mixin btnFunction($bg-color, $b-radius, $padd, $clr, $f-size, $f-weight) {
+  background-color: $bg-color;
+  border-radius: $b-radius;
+  padding: $padd;
+  color: $clr;
+  font-size: $f-size;
+  font-weight: $f-weight;
+}
+@mixin hover-effect($color, $bg-color) {
+  background-color: $bg-color;
+  color: $color;
+}
+.btn-primary {
+  @include btnFunction(
+    $primary-color,
+    0.25rem,
+    10px 30px,
+    $white-text-color,
+    1rem,
+    1rem
+  );
+  &:hover {
+    @include hover-effect( $white-text-color, $dark-primary)
+  }
+}
+.btn-secondary {
+  @extend .btn-primary;
+  background-color: $badge;
+  color: $text-color;
+  &:hover {
+    @include hover-effect($black-color, $white-text-color)
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  line-height: 1.7;
+  color: $text-color;
+  font-weight: 400;
+  font-size: 1rem;
+  font-family: $font-family-sans-serif;
+  font-style: normal;
+}
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.d-flex {
+  display: flex;
+}
+.flex-column {
+  flex-direction: column;
+}
+.align-center {
+  align-items: center;
+}
+.justify-center {
+  justify-content: center;
+}
+.justify-start {
+  justify-content: flex-start;
+}
+.align-start {
+  align-items: start;
+}
+
+@media (min-width: $breakpoint-sm) {
+  .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: $breakpoint-md) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: $breakpoint-lg) {
+  .container {
+    max-width: 960px;
+  }
+}
