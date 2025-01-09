@@ -444,4 +444,49 @@ h2 {
   font-size: 12px;
 }
 
+.humansection {
+  display: block;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+.humansection .img {
+  display: inline;
+  width: 100px;
+  height: 100px;
+}
+.humansection .img .header {
+  padding-bottom: 50px;
+  font-size: 32px;
+  color: #2f96fc;
+  font-weight: 700;
+}
+.humansection .img img {
+  display: block;
+  align-self: center;
+  justify-self: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+.humansection .img p {
+  padding-top: 50px;
+  display: block;
+  align-self: center;
+  justify-self: center;
+  margin-bottom: 1rem;
+  display: inline;
+}
+.humansection .img .parag {
+  display: block;
+  font-size: 1.5rem;
+  font-style: italic;
+  max-width: 800px;
+  line-height: 40px;
+}
+
 /*# sourceMappingURL=main.css.map */
