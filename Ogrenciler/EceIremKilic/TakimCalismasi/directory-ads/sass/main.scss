@@ -252,3 +252,25 @@ header {
       }
   }
 }
+
+.popular-categories{
+  .container{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    
+    .small-card{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .card-content{
+        h2{
+
+        }
+        p{
+
+        }
+
+      }
+    }
+  }
+}
