@@ -1,0 +1,335 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  color: #243642;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  position: relative;
+  min-height: 100vh;
+}
+
+header {
+  padding-top: 5rem;
+}
+.container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 1.5rem;
+  margin: 0 auto;
+}
+
+.logo img {
+  width: 6rem;
+  height: 3.5rem;
+}
+.main-holder {
+  display: flex;
+  justify-content: space-between;
+}
+.main-text h1 {
+  padding-top: 100px;
+  padding-bottom: 20px;
+}
+.title {
+  font-size: 120px;
+  font-weight: 700;
+  line-height: 120px;
+  letter-spacing: -4px;
+}
+.dalga {
+  background-image: url(https://demo.cocobasic.com/seppo-html/demo-5/images/wavy-shape.png);
+  width: 100%;
+  height: 20px;
+  background-size: 645px 20px;
+  background-repeat: repeat-x;
+  animation: dalga 15s linear infinite;
+  margin: 25px 0;
+}
+@keyframes dalga {
+  0% {
+    background-position-x: 0%;
+  }
+  100% {
+    background-position-x: 645px;
+  }
+}
+
+.comingsoon {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 35px;
+  letter-spacing: 30px;
+  padding-top: 15px;
+}
+
+.main-form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 5rem;
+}
+
+.main-form .ok {
+  width: 34px;
+  height: 50px;
+}
+
+.main-form input {
+  font-size: 18px;
+  padding: 20px 24px;
+  flex-grow: 1;
+  margin: 0 16px;
+  outline: none;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0px 0px 30px 7px #0c7f8640;
+  transition: 1s ease;
+}
+
+.main-form input:focus {
+  box-shadow: none;
+  border: 1px solid #243642;
+}
+
+.main-form button {
+  padding: 25px 24px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19px;
+  letter-spacing: 4px;
+  cursor: pointer;
+  border: none;
+  transition: 0.5s ease;
+  background-color: #243642;
+}
+.main-form button:hover {
+  background-color: #152027;
+}
+
+.main-img {
+  width: calc(30%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.img-box {
+  position: relative;
+  margin-bottom: 32px;
+}
+.img-box img {
+  position: relative;
+  max-width: 100%;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.circle {
+  position: absolute;
+  width: 100%; /* Sağ ve sol toplamda 100px genişlik */
+  height: 100%;
+  top: -15px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  z-index: 2;
+  animation: moveFrame 7.5s infinite linear;
+}
+
+@keyframes moveFrame {
+  0% {
+    transform: translateX(0);
+    border-color: #387478;
+  }
+  25% {
+    border-color: #243642;
+    transform: translateX(25px);
+  }
+  50% {
+    transform: translateX(0);
+    border-color: #387478;
+  }
+  75% {
+    border-color: #fff;
+    transform: translateX(-25px);
+  }
+  100% {
+    border-color: #387478;
+    transform: translateX(0);
+  }
+}
+
+.name {
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 30px;
+}
+
+.job {
+  line-height: 30px;
+  letter-spacing: 5px;
+  margin-bottom: 24px;
+}
+
+.content {
+  line-height: 30px;
+  margin-bottom: 24px;
+}
+.list {
+  padding-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  list-style: none;
+}
+.list li a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: 5px;
+}
+.bg-1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 40%;
+  background-color: #e2f1e7;
+  z-index: -1;
+}
+
+.bg-2 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 60%;
+  background-color: #387478;
+  z-index: -1;
+}
+
+.cards {
+  display: grid;
+  width: 100%;
+  padding: 5rem 0;
+  gap: 3%;
+  grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+  align-items: center;
+}
+
+.card {
+  height: 50vh;
+  border-radius: 10px;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease-out;
+  box-shadow: 0 10px 20px 0 rgb(0, 0, 0, 0.3);
+}
+.card:hover {
+  transform: rotateY(180deg);
+}
+
+.card-front {
+  padding: 1rem;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  backface-visibility: hidden;
+}
+.card1 .card-front {
+  background-image: url(https://media.istockphoto.com/id/1316195221/tr/vekt%C3%B6r/mezuniyet-kepi-ve-e%C4%9Fitim-diplomas%C4%B1-vekt%C3%B6r-simgesi.jpg?s=612x612&w=0&k=20&c=quYOZn2pw56syce7xeqz9ERDoHQQUI6TA3OttwRNyrQ=);
+  background-size: cover;
+  background-position: top;
+}
+
+.card .card-back ul {
+  margin-top: 25px;
+  padding-left: 25px;
+}
+
+.card2 .card-front {
+  background-image: url(https://c8.alamy.com/comp/2JP20T9/skill-line-icon-self-development-2JP20T9.jpg);
+  background-size: cover;
+  background-position: top;
+}
+
+.card3 .card-front {
+  background-image: url(th.jpeg);
+  background-size: cover;
+  background-position: top;
+}
+
+.card-back {
+  padding: 1rem;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  backface-visibility: hidden;
+  background-color: #629584;
+  transform: rotateY(180deg);
+}
+
+@media (max-width: 768px) {
+  .main-holder {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .main-text {
+    padding: 0;
+  }
+
+  .main-text h1 {
+    padding-top: 50px;
+    font-size: 40px;
+    line-height: 50px;
+  }
+
+  .title {
+    font-size: 60px;
+    line-height: 60px;
+    letter-spacing: -2px;
+  }
+
+  .comingsoon {
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: 10px;
+  }
+
+  .main-img {
+    width: 100%;
+    margin-top: 2rem;
+  }
+
+  .img-box {
+    margin-bottom: 16px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+    width: 70%;
+    gap: 4rem;
+  }
+
+  .card-front {
+    background-size: contain;
+    background-position: center;
+  }
+  .bg-1 {
+    width: 70%;
+  }
+  .bg-2 {
+    width: 30%;
+  }
+}
