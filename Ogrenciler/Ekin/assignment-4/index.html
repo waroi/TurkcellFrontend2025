@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ekin</title>
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+  <body>
+    <div class="comet"></div>
+    <div class="comet"></div>
+    <div class="comet"></div>
+    <img src="./assets/planet.png" alt="Planet" class="planet" />
+    <header>
+      <div class="grid">
+        <img
+          class="profile"
+          src="https://raw.githubusercontent.com/Xaszanyn/Website/refs/heads/main/resources/images/Profile.png"
+          alt="Profile"
+        />
+        <div>
+          <h1>EKİN ASLAN</h1>
+          <h2>
+            Software developer primarily experienced in building websites and
+            web applications, with both corporate, start-up and freelance
+            experience, easily adapting to any work environment and project
+            discipline.
+          </h2>
+        </div>
+      </div>
+      <div class="links">
+        <h3>
+          <a href="https://linkedin.com/in/ekin-aslan-js" target="_blank"
+            >LinkedIn</a
+          >
+        </h3>
+        <h3>
+          <a href="https://github.com/Xaszanyn" target="_blank">GitHub</a>
+        </h3>
+        <h3><a href="https://ekin.codes/cv.pdf" target="_blank">CV</a></h3>
+        <h3>
+          <a href="https://onlinesequencer.net/members/29321">MIDI</a>
+        </h3>
+      </div>
+    </header>
+    <img src="./assets/meteor.png" alt="Meteor" class="meteor" />
+    <h3>Featured Works</h3>
+    <main>
+      <div class="work">
+        <h4>Echorbit Audio</h4>
+        <p>
+          A website, offering professional sound design services and a store for
+          high-quality audio assets.
+        </p>
+        <a href="https://echorbitaudio.com" target="_blank">Website</a>
+        <img
+          src="https://raw.githubusercontent.com/Xaszanyn/Assets/refs/heads/main/Web%20Random%20Assets/echorbit-audio.gif"
+          alt="Echorbit Audio"
+        />
+      </div>
+      <div class="work">
+        <h4>Phoca.io</h4>
+        <p>
+          Website for a hypercasual gaming company, showcasing its collection of
+          simple, engaging mobile games designed for quick play and instant
+          enjoyment.
+        </p>
+        <a href="https://phoca.io" target="_blank">Website</a>
+        <img
+          src="https://raw.githubusercontent.com/Xaszanyn/Assets/refs/heads/main/Web%20Random%20Assets/phoca-io.gif"
+          alt="Phoca.io"
+        />
+      </div>
+      <div class="work">
+        <h4>2023 Election Predicter</h4>
+        <p>
+          Election prediction platform where users can share their forecasts on
+          political outcomes, engage with real-time data, and compare their
+          predictions with others across various races.
+        </p>
+        <a href="https://secim2023tahmin.tr.gg" target="_blank">Website</a>
+        <img
+          src="https://raw.githubusercontent.com/Xaszanyn/Assets/refs/heads/main/Web%20Random%20Assets/secim-2023-tahmin.gif"
+          alt="Election Predict Platform 2023"
+        />
+      </div>
+      <div class="work">
+        <h4>Op. Dr. Burak Bayraktar</h4>
+        <p>
+          Personal website of a plastic surgeon, offering an introduction to
+          their practice, detailed information on services, and before-and-after
+          images highlighting successful procedures and transformations.
+        </p>
+        <a href="https://opdrburakbayraktar.com" target="_blank">Website</a>
+        <img
+          src="https://raw.githubusercontent.com/Xaszanyn/Assets/refs/heads/main/Web%20Random%20Assets/op-dr-burak-bayraktar.gif"
+          alt="Op. Dr. Burak Bayraktar"
+        />
+      </div>
+    </main>
+    <footer></footer>
+    <script>
+      let planet = document.querySelector(".planet");
+      window.addEventListener("scroll", () => {
+        planet.style.top = `-${
+          (scrollY * 250) /
+          (document.documentElement.scrollHeight - innerHeight)
+        }px`;
+      });
+    </script>
+  </body>
+</html>

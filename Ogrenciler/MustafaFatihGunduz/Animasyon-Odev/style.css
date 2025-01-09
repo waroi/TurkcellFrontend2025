@@ -1,0 +1,397 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: -webkit-linear-gradient(left, #e5fff9 50%, #b8e4da 50%);
+  font-family: "Poppins", sans-serif;
+  color: #0c7f86;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 24px;
+  margin: 0 auto;
+}
+
+/*? HEADER CSS START*/
+
+.header {
+  padding: 60px 0;
+}
+
+.welcome-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 20px;
+}
+/*! HEADER CSS END*/
+
+/*? WELCOME TEXT CSS START*/
+
+.welcome-text {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+  width: 60%;
+}
+
+.work-in-progress {
+  font-size: 120px;
+  font-weight: bold;
+}
+
+.coming-soon {
+  font-size: 32px;
+  letter-spacing: 25px;
+  font-weight: bold;
+}
+
+.wave-image {
+  background-image: url("https://demo.cocobasic.com/seppo-html/demo-5/images/wavy-shape.png");
+  width: 100%;
+  height: 20px;
+  background-size: 645px 20px;
+  background-repeat: repeat-x;
+  animation: wavy-motion 5s linear infinite;
+  margin: 25px 0;
+}
+@keyframes wavy-motion {
+  from {
+    background-position-x: 0%;
+  }
+  to {
+    background-position-x: 100%;
+  }
+}
+
+.subcribe-field {
+  display: flex;
+  width: 100%;
+  gap: 20px;
+  height: 60px;
+  margin-top: 60px;
+}
+
+.subcribe-field input {
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: none;
+  width: 100%;
+  border: 1px solid #fff;
+  outline: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  font-size: 18px;
+  padding: 20px 24px;
+  color: #0c7f86;
+}
+
+.subcribe-field input::placeholder {
+  color: #0c7f86;
+}
+
+.subcribe-field img {
+  height: 100%;
+  width: 50px;
+}
+
+.subcribe-field button {
+  background-color: #0c7f86;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 5px;
+  border: none;
+  color: white;
+}
+
+/*! WELCOME TEXT CSS END*/
+
+/*? WELCOME İMAGE CSS START*/
+
+.welcome-image {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  color: #084b4f;
+}
+
+.image-container {
+  display: flex;
+  background: url("./assets/kimlik.jpg") no-repeat center center/cover;
+  width: 75%;
+  height: 350px;
+  border-radius: 50%;
+}
+
+.image-text h4 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 20px;
+  letter-spacing: 2px;
+}
+
+.image-text p {
+  font-size: 16px;
+  margin-top: 20px;
+  line-height: 1.5;
+}
+
+.social-links {
+  width: 100%;
+}
+
+.social-links ul {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  list-style-type: none;
+}
+
+.social-links ul li a {
+  color: #084b4f;
+  font-size: 12px;
+  font-weight: bolder;
+  text-decoration: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+/*! WELCOME İMAGE CSS END*/
+
+/*? IMAGE EFFECTS*/
+
+.welcome-image .image-container {
+  position: relative;
+  margin-bottom: 32px;
+}
+.welcome-image .image-container::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 350px;
+  border-radius: 50%;
+  border: 3px solid #fafafa;
+  animation: animate-small-circle 4s linear infinite;
+}
+@keyframes animate-small-circle {
+  0% {
+    top: -20px;
+    left: -20px;
+  }
+
+  50% {
+    top: -20px;
+    left: 20px;
+    border-color: 1px solid #084b4f;
+  }
+
+  100% {
+    top: 0;
+    left: 0px;
+  }
+}
+.welcome-image .image-container::after {
+  content: "";
+  position: absolute;
+  right: -420px;
+  top: 0;
+  width: 600px;
+  height: 600px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  pointer-events: none;
+  user-select: none;
+  animation: animate-big-circle 3s linear infinite alternate;
+}
+@keyframes animate-big-circle {
+  from {
+    top: -70px;
+    right: -70px;
+  }
+  from {
+    bottom: -200px;
+    left: -170px;
+  }
+  to {
+    top: -20px;
+    border-color: 1px solid #084b4f;
+    right: 30px;
+    width: 100%;
+    height: 350px;
+  }
+}
+
+/*! IMAGE EFFECTS END*/
+
+/*? RESPONSİVE START*/
+
+@media screen and (max-width: 1024px) {
+  .welcome-text {
+    width: 100%;
+  }
+  .image-container {
+    width: 100%;
+  }
+
+  .social-links ul {
+    justify-content: space-around;
+  }
+
+  .work-in-progress {
+    font-size: 90px;
+  }
+  .coming-soon {
+    font-size: 30px;
+  }
+  .image-text h4 {
+    font-size: 32px;
+  }
+
+  .image-text p {
+    font-size: 24px;
+  }
+  .social-links ul li a {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .work-in-progress {
+    font-size: 80px;
+  }
+  .coming-soon {
+    font-size: 20px;
+  }
+  .image-text h4 {
+    font-size: 22px;
+  }
+
+  .image-text p {
+    font-size: 20px;
+  }
+  .social-links ul li a {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .welcome-wrapper {
+    flex-direction: column;
+  }
+  .image-container {
+    width: 70%;
+    height: 300px;
+  }
+
+  .work-in-progress {
+    font-size: 90px;
+  }
+  .coming-soon {
+    font-size: 30px;
+  }
+
+  .subcribe-field {
+    flex-direction: column;
+    height: 150px;
+  }
+
+  .subcribe-field img {
+    display: none;
+  }
+
+  .subcribe-field input {
+    width: 100%;
+    height: 200px;
+  }
+
+  .subcribe-field button {
+    width: 100%;
+    height: 200px;
+  }
+
+  .social-links ul {
+    justify-content: space-around;
+  }
+
+  .image-text h4 {
+    font-size: 32px;
+  }
+
+  .image-text p {
+    font-size: 24px;
+  }
+  .social-links ul li a {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .welcome-wrapper {
+    flex-direction: column;
+  }
+  .image-container {
+    width: 90%;
+    height: 130px;
+  }
+
+  .subcribe-field {
+    flex-direction: column;
+    gap: 20px;
+    height: 150px;
+  }
+
+  .subcribe-field img {
+    display: none;
+  }
+
+  .subcribe-field input {
+    width: 100%;
+    height: 200px;
+  }
+
+  .subcribe-field button {
+    width: 100%;
+    height: 200px;
+  }
+
+  .social-links ul {
+    justify-content: space-around;
+  }
+  .welcome-image .image-container::before {
+    width: 100%;
+    height: 200px;
+  }
+  .work-in-progress {
+    font-size: 50px;
+  }
+  .coming-soon {
+    font-size: 20px;
+  }
+  .image-text h4 {
+    font-size: 28px;
+  }
+
+  .image-text p {
+    font-size: 20px;
+  }
+  .social-links ul li a {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+}
+
+/*! RESPONSİVE END*/

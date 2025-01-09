@@ -1,0 +1,65 @@
+body{
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(117, 117, 117);
+  }
+  
+  .box{
+    background-color: rgb(232, 115, 13);
+    width: 150px;
+    height: 150px;
+    /* transition-property: all;
+    transition-duration: 2s;
+    transition-timing-function: ease-in-out; */
+    /* transition: all 2s cubic-bezier(0, 0, 0.51, -0.22); */
+    /* animation-name: aa;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-delay: 1s; */
+    animation: aa 2s ease-in-out infinite 1s alternate-reverse;
+  }
+  
+  .box:hover{
+    background-color: rgb(31, 232, 13);
+    width: 50px;
+    height: 300px;
+  }
+  
+  /* @keyframes aa{
+    0%{
+      background-color: rgb(232, 115, 13);
+      width: 150px;
+      height: 150px;
+    }
+    50% {
+      background-color: rgb(31, 232, 13);
+      width: 50px;
+      height: 300px;
+    }
+    100% {
+      background-color: rgb(232, 115, 13);
+      width: 150px;
+      height: 150px;
+    }
+  } */
+  
+  @keyframes aa {
+    0% {
+      background-color: rgb(232, 115, 13);
+      transform: translate(0, 0);
+    }
+  
+    50% {
+      background-color: rgb(31, 232, 13);
+      transform: translate(100px, -100px) rotate(180deg);
+    }
+  
+    100% {
+      background-color: rgb(232, 115, 13);
+      transform: translate(0, 0);
+    }
+  }
