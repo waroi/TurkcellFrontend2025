@@ -159,4 +159,185 @@
   background-color: white;
 }
 
+.featured {
+  background-color: #f8f9fa;
+  width: 100%;
+  padding: 50px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.featured .featured-container {
+  width: 80%;
+}
+.featured .featured-container h2 {
+  font-size: 20px;
+  font-weight: 500;
+  color: Black;
+  margin-bottom: 20px;
+}
+.featured .featured-container .scroll {
+  width: 100%;
+  padding: 50px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+.featured .featured-container .card-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+.featured .featured-container .card-container .card {
+  background-color: #fff;
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+  flex-direction: column;
+  align-items: start;
+  border-radius: 10px;
+  box-shadow: 0 2px 20px -2px rgba(0, 0, 0, 0.1);
+}
+.featured .featured-container .card-container .card a {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: #2f89fc;
+}
+.featured .featured-container .card-container .card address {
+  font-size: 13px;
+  font-weight: 400;
+  color: #4d4d4d;
+  font-style: normal;
+}
+.featured .featured-container .card-container .card .star {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 20px;
+}
+.featured .featured-container .card-container .card .star > i:not(:nth-last-child(-n+2)) {
+  color: orange;
+}
+.featured .featured-container .card-container .card .card-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0px;
+  width: 100%;
+  margin-top: 10px;
+}
+.featured .featured-container .card-container .card .card-text span {
+  background-color: #e9ecef;
+  padding: 5px 20px;
+  border-radius: 30px;
+  font-size: 11px;
+  font-weight: 500;
+  color: Black;
+}
+.featured .featured-container .card-container .card .card-text .icon-container {
+  width: 30px;
+  height: 30px;
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  color: #2f89fc;
+  cursor: pointer;
+  font-size: 15px;
+}
+.featured .featured-container .card-container .card .card-text .icon-container:hover {
+  color: white;
+  background-color: #f23a2e;
+}
+.featured .featured-container .card-container .card img {
+  width: 100%;
+}
+.featured .featured-container .card-container .card > *:not(:first-child) {
+  padding: 0 20px;
+}
+
+.popular {
+  width: 100%;
+  padding: 100px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  background-color: white;
+}
+.popular .container-popular {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-direction: column;
+}
+.popular .container-popular h3 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #2f89fc;
+}
+.popular .container-popular p {
+  font-size: 16px;
+  font-weight: 400;
+  color: gray;
+}
+.popular .container-popular .custom-border {
+  width: 100px;
+  height: 3px;
+  background-color: #2f89fc;
+}
+.popular .container-popular .cat-cards {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  margin-top: 30px;
+}
+.popular .container-popular .cat-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  border-radius: 7px;
+  padding: 40px 20px;
+  cursor: pointer;
+}
+.popular .container-popular .cat-card p {
+  font-size: 15px;
+}
+.popular .container-popular .cat-card i {
+  color: #2f89fc;
+  font-size: 30px;
+}
+.popular .container-popular .cat-card span {
+  padding: 2px 20px;
+  background-color: #e9ecef;
+  border-radius: 30px;
+}
+.popular .container-popular .cat-card:hover {
+  transform: scale(1.15);
+  background-color: #2f89fc;
+  transition: 0.4s all ease-in-out;
+}
+.popular .container-popular .cat-card:hover i {
+  color: white;
+}
+.popular .container-popular .cat-card:hover span {
+  background-color: #1c71df;
+  color: white;
+}
+.popular .container-popular .cat-card:hover p {
+  color: white;
+}
+
 /*# sourceMappingURL=main.css.map */

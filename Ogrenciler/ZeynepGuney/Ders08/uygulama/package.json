@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "sass":  "sass -w sass:css"
+    "sass": "sass -w sass:css"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "sass": "^1.83.1"
+    "sass": "^1.83.1",
+    "uygulama": "file:"
   }
 }

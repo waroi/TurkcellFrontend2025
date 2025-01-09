@@ -19,6 +19,7 @@ header,
 .container {
     max-width: $mainW;
     margin: $center;
+    padding: 68px 0;
 
     a {
         text-decoration: none;
@@ -315,10 +316,11 @@ header {
         display: flex;
         justify-content: center;
         align-items: center;
+        gap: 40px;
 
         svg {
-            width: 30px;
-            height: 30px;
+            width: 15px;
+            height: 15px;
         }
 
         .left-arrow:hover {
@@ -435,7 +437,7 @@ header {
 //***********************************************
 
 .trend {
-    //aaaaaa
+
     padding-top: 5em;
     background-color: #F8F9FA;
 
@@ -444,24 +446,23 @@ header {
         line-height: 1.2;
         font-size: 1.15rem;
         margin-bottom: 1.5rem;
-        color: #2F89FC;
+        color: #3089fc;
     }
 
     .trend-cards {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 30px;
 
         .trend-card {
             display: flex;
-            flex-direction: column;
             border-radius: 20px;
             margin-bottom: 30px;
             box-shadow: 0 2px 20px -2px rgba(0, 0, 0, 0.1);
 
             img {
-                width: 100%;
-                height: 150px;
+                width: 50%;
+                height: 100%;
             }
 
             .trend-cont {
@@ -538,7 +539,9 @@ header {
 }
 
 .our-blog {
-    padding-bottom: 2rem;
+    padding: 75px 0;
+    background-color: #F8F9FA;
+
 
     .title {
         text-align: center;
@@ -708,4 +711,107 @@ header {
             }
         }
     }
+}
+
+.testimonials {
+    padding: 55px 0;
+
+    .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        .lorem {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #4d4d4d;
+            text-align: center;
+            width: 75%;
+            word-spacing: 0.4rem;
+            line-height: 2.5rem;
+        }
+
+
+        .test-arrow {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+
+            .arrow-wrap {
+                width: 50px;
+                height: 50px;
+                background-color: #CCCCCC;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &:hover {
+                    background-color: #000;
+
+                    svg {
+                        fill: #2F89FC;
+                    }
+                }
+            }
+
+            svg {
+                width: 16px;
+                height: 16px;
+                fill: #fff;
+            }
+
+        }
+
+
+    }
+
+    .title {
+        text-align: center;
+        position: relative;
+        margin-bottom: 3rem;
+
+        h2 {
+            font-weight: 700;
+            color: #2f89fc;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        span {
+            transform: translate(-50%, 20px);
+            left: 50%;
+            position: absolute;
+            content: "";
+            bottom: 1rem;
+            width: 80px;
+            height: 3px;
+            background: #2f89fc;
+        }
+    }
+
+    .image {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 25px;
+
+        img {
+            width: 9%;
+            height: 9%;
+            border-radius: 50%;
+        }
+
+        p {
+            margin-top: 15px;
+            color: #4d4d4d;
+        }
+
+    }
+
 }

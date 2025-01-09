@@ -1,0 +1,36 @@
+$bgColor: red;
+$x150: 150px;
+$x100: 100px;
+
+@mixin boxFunc($width, $height, $color) {
+  width: $width;
+  height: $height;
+  background-color: $color;
+}
+.container {
+  display: flex;
+  gap: 10px;
+
+  .box1 {
+    background-color: $bgColor;
+    width: 100px;
+    height: 100px;
+    font-size: 30px;
+  }
+
+  .box2 {
+    background-color: $bgColor;
+    width: 100px;
+    height: 100px;
+    font-size: 30px;
+  }
+
+  .box3 {
+    @include boxFunc(100px, 100px, orange);
+  }
+
+  .box4 {
+    @extend .box3;
+    height: 200px;
+  }
+}
