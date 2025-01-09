@@ -284,6 +284,7 @@ header .navbar-brand {
   position: relative;
   text-align: center;
   gap: 10px;
+  margin-bottom: 3rem;
 }
 .popular-categories .popular-wrapper .title h2 {
   font-weight: 700;
@@ -297,7 +298,7 @@ header .navbar-brand {
   color: rgba(0, 0, 0, 0.5);
 }
 .popular-categories .popular-wrapper .title span {
-  transform: translateX(-50%);
+  transform: translate(-50%, 20px);
   left: 50%;
   position: absolute;
   content: "";
@@ -316,11 +317,46 @@ header .navbar-brand {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 20px;
+}
+.popular-categories .popular-wrapper .icons .icon:hover {
+  border-radius: 10px;
+  background: #2f89fc;
+  -webkit-box-shadow: 0 5px 30px -5px rgba(47, 137, 252, 0.5);
+  box-shadow: 0 5px 30px -5px rgba(47, 137, 252, 0.5);
+  z-index: 1;
+  -webkit-transform: scale(1.09);
+  -ms-transform: scale(1.09);
+  transform: scale(1.09);
+  transition: all 0.3s ease;
+}
+.popular-categories .popular-wrapper .icons .icon:hover .icon-logo {
+  fill: #fff;
+}
+.popular-categories .popular-wrapper .icons .icon:hover .icon-text {
+  color: #fff;
+}
+.popular-categories .popular-wrapper .icons .icon:hover .icon-number {
+  background: #046DF4;
+  color: #fff;
+}
+.popular-categories .popular-wrapper .icons .icon-text {
+  text-align: center;
 }
 .popular-categories .popular-wrapper .icons .icon-logo {
   width: 45px;
   height: 45px;
   fill: #4a8afc;
+}
+.popular-categories .popular-wrapper .icons .icon-number {
+  font-size: 11px;
+  display: inline-block;
+  padding: 5px 20px;
+  background: #e9ecef;
+  border-radius: 30px;
+  margin-bottom: 20px;
+  color: #000;
+  font-weight: bold;
 }
 
 /*# sourceMappingURL=main.css.map */

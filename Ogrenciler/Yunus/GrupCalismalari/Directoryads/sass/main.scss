@@ -326,11 +326,13 @@ header {
 
 .popular-categories {
     padding: 5em 0;
+
     .popular-wrapper {
         .title {
             position: relative;
             text-align: center;
             gap: 10px;
+            margin-bottom: 3rem;
             h2 {
                 font-weight: 700;
                 color: #2f89fc ;
@@ -344,7 +346,7 @@ header {
             }
         
             span {
-                transform: translateX(-50%);
+                transform: translate(-50%, 20px);
                 left: 50%;
                 position: absolute;
                 content: "";
@@ -357,18 +359,52 @@ header {
         .icons {
             display: grid;
             grid-template-columns: repeat(6, 1fr);
-
             .icon {
                 padding: 30px 10px;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
+                gap: 20px;
+            }
+            .icon:hover {   
+                border-radius: 10px;
+                background: #2f89fc;
+                -webkit-box-shadow: 0 5px 30px -5px rgba(47, 137, 252, 0.5);
+                box-shadow: 0 5px 30px -5px rgba(47, 137, 252, 0.5);
+                z-index: 1;
+                -webkit-transform: scale(1.09);
+                -ms-transform: scale(1.09);
+                transform: scale(1.09);
+                transition: all 0.3s ease;
+                .icon-logo {
+                    fill: #fff;
+                }
+                .icon-text {
+                    color: #fff;
+                }
+                .icon-number {
+                    background: #046DF4;
+                    color: #fff;
+                }
+            }
+            .icon-text {
+                text-align: center;
             }
             .icon-logo {
                 width: 45px;
                 height: 45px;
                 fill: #4a8afc;
+            }
+            .icon-number {
+                font-size: 11px;
+                display: inline-block;
+                padding: 5px 20px;
+                background: #e9ecef;
+                border-radius: 30px;
+                margin-bottom: 20px;
+                color: #000;
+                font-weight: bold;
             }
         }
     }
