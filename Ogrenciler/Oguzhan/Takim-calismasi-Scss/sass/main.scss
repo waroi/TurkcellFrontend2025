@@ -1,0 +1,32 @@
+$textWhite: white;
+$btnBlue: #2f89fc;
+$hoverRed: #f23a2e;
+$bgColor: #000000;
+$CatbgColor: #E9ECEF;
+$CatAddColor: #4d4d4d;
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Nanum Gothic", serif;
+}
+
+
+
+
+.header-section h1{
+    font-size: 20px;
+    font-weight: 900;
+    text-decoration: none;
+    
+}
+
+.nav-section{
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;   
+}
