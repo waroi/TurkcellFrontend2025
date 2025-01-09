@@ -1,0 +1,22 @@
+body{
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+
+.box{
+    background-color: chocolate;
+    width: 150px;
+    height: 150px;
+    /* transition-property: all;
+    transition-duration: 2s;
+    transition-timing-function: ease-in-out; */
+    transition: all 2s ease-in-out;
+}
+.box:hover{
+    background-color:aquamarine;
+    width: 50px;
+    height: 300px;
+}
