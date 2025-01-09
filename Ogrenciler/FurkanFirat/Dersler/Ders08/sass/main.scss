@@ -1,0 +1,31 @@
+$bgColor: red;
+$x150: 150px;
+$x100: 100px;
+@mixin boxFunction($width, $height, $color) {
+  width: $width;
+  height: $height;
+  background-color: $color;
+}
+.container {
+  display: flex;
+  &:hover {
+    background-color: gray;
+  }
+  .box1 {
+    @include boxFunction($x100, $x150, orange);
+  }
+  .box2 {
+    @include boxFunction(150px, 150px, red);
+  }
+  .box3 {
+    @extend .box1;
+    width: 300px;
+  }
+  .box4 {
+    @extend .box1;
+    width: 300px;
+    &.deneme {
+      background-color: blue;
+    }
+  }
+}
