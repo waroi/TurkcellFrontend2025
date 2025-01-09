@@ -57,6 +57,9 @@ ul {
   justify-content: space-between;
   margin: 0 auto;
 }
+.header .fa-bars {
+  color: #ffffff;
+}
 .header .header-title a {
   width: 100%;
   font-size: 20px;
@@ -121,15 +124,15 @@ ul {
 }
 .banner .form {
   width: 100%;
-  height: 43px;
+  gap: 20px;
 }
 .banner .form-section div {
   width: 100%;
-  height: 43px;
 }
 .banner .input {
-  width: 85%;
+  width: 95%;
   padding: 0.32rem 0.75rem;
+  height: 43px;
   height: 100%;
   color: #495057;
   font-size: 1rem;
@@ -343,9 +346,67 @@ ul {
   gap: 30px;
 }
 
+.testimonials h2 {
+  font-size: 32px;
+  color: #2f89fc;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.testimonials h2:after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  width: 80px;
+  height: 3px;
+  background: #2f89fc;
+}
+.testimonials .content-wrapper {
+  width: 100%;
+  flex-direction: column;
+  text-align: center;
+  margin: 0px 100px;
+}
+.testimonials .testimonials-name {
+  font-size: 16px;
+  color: #4d4d4d;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.testimonials .testimonials-text {
+  font-size: 24px;
+  color: #4d4d4d;
+  margin-bottom: 20px;
+}
+.testimonials .testimonials-image img {
+  max-width: 130px;
+  border-radius: 50%;
+  margin-top: 20px;
+}
+.testimonials .arrow-icon {
+  color: #fff;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.2);
+  justify-content: center;
+}
+
 @media (min-width: 0px) and (max-width: 767px) {
   .container {
     max-width: 540px;
+  }
+  .header-list {
+    display: none;
+  }
+  .form {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .form .input {
+    width: 100%;
+  }
+  .form .btn {
+    width: 100%;
   }
   .featured-ads-cards {
     grid-template-columns: 1fr;
@@ -357,6 +418,19 @@ ul {
 @media (min-width: 768px) and (max-width: 991px) {
   .container {
     max-width: 720px;
+  }
+  .header-list {
+    display: none;
+  }
+  .form {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .form .input {
+    width: 100%;
+  }
+  .form .btn {
+    width: 100%;
   }
   .featured-ads-cards {
     grid-template-columns: 1fr 1fr;
@@ -372,6 +446,19 @@ ul {
   .container {
     max-width: 960px;
   }
+  .header-list {
+    display: none;
+  }
+  .form {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .form .input {
+    width: 100%;
+  }
+  .form .btn {
+    width: 100%;
+  }
   .featured-ads-cards {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -385,6 +472,9 @@ ul {
 @media (min-width: 1200px) {
   .container {
     max-width: 1140px;
+  }
+  .fa-bars {
+    display: none;
   }
   .featured-ads-cards {
     grid-template-columns: 1fr 1fr 1fr 1fr;

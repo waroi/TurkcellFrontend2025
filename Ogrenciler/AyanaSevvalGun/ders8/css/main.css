@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+}
+.container:hover {
+  background-color: rgba(119, 119, 119, 0.4666666667);
+}
+.container .box2 {
+  width: 150px;
+  height: 100px;
+  background-color: red;
+  font-size: 20px;
+}
+.container .box1 {
+  width: 150px;
+  height: 100px;
+  background-color: red;
+  font-size: 20px;
+}
+.container .box3 {
+  width: 150px;
+  height: 200px;
+  background-color: orange;
+  font-size: 20px;
+}
+.container .box4 {
+  width: 150px;
+  height: 400px;
+  background-color: green;
+  font-size: 20px;
+}
+.container .box4.deneme {
+  background-color: blue;
+}
+
+/*# sourceMappingURL=main.css.map */
