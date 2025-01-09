@@ -12,17 +12,12 @@
       href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap"
       rel="stylesheet"
     />
-
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-      rel="stylesheet"
-    />
   </head>
   <body>
     <section class="header-section">
       <div class="container">
         <nav class="nav-section">
-          <h1><a class="logo" href="index.html">DIRECTORYADS </a></h1>
+          <h1><a href="index.html">DirectoryAds </a></h1>
           <ul>
             <li>Home</li>
             <li>Ads</li>
@@ -30,11 +25,11 @@
             <li>Blog</li>
             <li>Contact</li>
           </ul>
-          <button class="btn-log">Log In</button>
-          <button class="btn-reg">Register</button>
+          <button>Log In</button>
+          <button>Register</button>
         </nav>
 
-        <div class="nav-text">
+        <div>
           <h1>Welcome To DirectoryAds</h1>
           <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
 
@@ -45,29 +40,16 @@
               required
             />
 
-            <div class="location">
-              <input
-                id="inp-location"
-                type="text"
-                name="location"
-                placeholder="Location"
-                readonly
-              />
-
-              <i class="fa-solid fa-location-dot"></i>
-            </div>
-
-            <div id="btn-category">
-              All Categories <i class="fa-solid fa-angle-down"></i>
-            </div>
+            <input type="text" placeholder="Location" required />
+            <input type="text" placeholder="All Categories" required />
 
             <button>Search</button>
           </form>
 
-          <div class="nav-trend">
+          <div>
             <h2>Trending Search:</h2>
 
-            <a href="">iPhone</a>
+            <a href="">İphone</a>
             <a href="">Cars</a>
             <a href="">Flowers</a>
             <a href="">House</a>
@@ -75,5 +57,37 @@
         </div>
       </div>
     </section>
+
+    <section class="featured">
+      <div class="container">
+        <div class="card"> 
+          <img src="https://preview.colorlib.com/theme/directoryads/images/img_2.jpg.webp" alt="">
+          <div class="card-text">
+            <span>Car & Vehicles</span>
+   
+            <i class="fa-solid fa-heart"></i>
+            
+          </div>
+          <a href="#">New Black Car</a>
+          
+          <address>Don St, Brooklyn, New York</address>
+          <div>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <p>(3 Rewievs)</p>
+          </div>
+        </div>
+    
+      </div>
+      
+
+    </section>
+
+
+
+
   </body>
 </html>
