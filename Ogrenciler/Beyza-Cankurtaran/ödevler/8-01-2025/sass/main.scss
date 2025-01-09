@@ -19,7 +19,7 @@ $transition: all 0.3s ease;
       
 }
 @mixin container {
-  max-width: 1200px;
+  max-width: 1140px;
   margin: 0 auto;
   padding: 0 1rem;
 }
@@ -40,9 +40,10 @@ body {
 // Header
 .header {
     position: absolute;
+    top: 20px;
     width: 100%;
     z-index: 10;
-    background-color: transparent; // Transparent background
+    background-color: transparent; 
     &__content {
       @include container;
       display: flex;
@@ -56,11 +57,12 @@ body {
       color: $white;
     }
     &__nav {
-      display: none;
-      gap: 2rem;
+      // gap: 2rem;
       @media (min-width: 768px) {
         display: flex;
       }
+      justify-self: flex-end;
+      margin-right: 48px;
     }
     &__nav-link {
       color: $white;
@@ -69,6 +71,8 @@ body {
       &:hover {
         color: rgba($white, 0.8);
       }
+      padding: 20px 10px;
+      font-size: 15px;
     }
     &__auth {
       display: flex;
@@ -84,6 +88,15 @@ body {
       &:hover {
         color: rgba($white, 0.8);
       }
+      padding: 20px 10px;
+      font-size: 15px;
+      margin-left: 16px;
+
+    }
+    .white-line{
+      background-color: white;
+      height: 18px;
+      width: 0.5px;
     }
     &__register {
       background-color: $primary-color;
@@ -96,18 +109,26 @@ body {
       &:hover {
         background-color: ($primary-color, 10%);
       }
+      padding: 12px 20px;
+      font-size: 15px;
+      margin-left: 30px;
+    }
+    &__right{
+      display: flex;
+      line-height: 1.7;
     }
   }
   
 
 // Hero
 .hero {
-  height: 600px;
+  height: 100vh;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("https://preview.colorlib.com/theme/directoryads/images/hero_2.jpg");
   background-size: cover;
   background-position: center;
   position: relative;
+  background-position: 50% -25px;
 
 
   &__content {
@@ -434,20 +455,22 @@ body {
            color:$primary-color;
         }
         p{
-           margin-bottom: 16px; 
+           margin-bottom: 16px;
+           color: rgba(0, 0, 0, 0.5); 
         }
-        
-        
+    }
+    .title{
+      margin-bottom: 8px;
     }
     .line{
         background-color:$primary-color;
         width:80px;
         height:3px;
-
     }
     .popular-card-wrapper{
-        @include flex-center();
         padding:2%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     }
     .popular-card{
         @include flex-center();
@@ -455,8 +478,6 @@ body {
         background: #fff;
         transition: 0.3s ease;
         padding:30px 10px;
-        width: calc(20% - 1rem); // 4 cards per row
-        
         &:hover {
             background-color: $primary-color;
             color:#fff;
@@ -469,7 +490,18 @@ body {
           span{
             color:#333;
           }
-
+          .popular-number{
+            background: #046df4;
+          }
+          .popular-number span{
+            color: #fff;
+          }
+          .title{
+            color: #fff;
+          }
+        }
+        .title{
+            color: #666666;
         }
         .popular-icon {
             display: block;
@@ -477,7 +509,6 @@ body {
             margin-bottom: 10px;
             font-size:45px;
             color:$primary-color;
-
         }
         .popular-number{
             border-radius: 30px;
@@ -485,12 +516,9 @@ body {
             font-size:14px;
             background-color: $light-gray;
         }
-        
+    }
+    @media (max-width: 1024px){
 
     }
-
-
-
-
 }
   
