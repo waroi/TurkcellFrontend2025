@@ -1,0 +1,110 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+$fontFamily: 'Nanum Gothic', sans-serif;
+$mainBgColor: #2f89fc;
+$whiteColor: #ffffff;
+$xWidth100: 100%;
+$h2FontSize: 32px;
+$aNavFontSize:15px;
+$aFontSize: 16px;
+$adressFontSize: 13px;
+
+body{
+    font-family: $fontFamily;
+}
+.flex-center{
+    display: flex;
+    align-items: center;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style-type: none;
+}
+.btn{
+    border: none;
+    background-color: $mainBgColor;
+    color: $whiteColor;
+    padding: 12px 20px;
+    font-size: 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.5s ease; 
+}
+.btn:hover{
+    background-color: #1e77e6;
+}
+header{
+    // background: url("	https://preview.colorlib.com/theme/directoryads/images/hero_2.jpg") no-repeat center center/cover;
+    background-color: orange;
+    .container{
+        justify-content: space-between;
+        margin: 0 auto;
+    }
+    .header-title a{
+        width: $xWidth100;
+        font-size: 20px;
+        color: $whiteColor;
+    }
+    .header-links{
+        width: $xWidth100;
+        justify-content: space-between;
+    }
+    .header-nav{
+        width: $xWidth100;
+        justify-content: flex-end;
+    }
+    .header-list{
+        width: 70%;
+        justify-content: space-between;
+    }
+    .vertical-divider{
+        width: 1px;
+        height: 15px;
+        background-color: $whiteColor;
+        margin: 20px 0px;
+    }
+    .header-list li a{
+        font-size: $aNavFontSize;
+        color: $whiteColor;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+    // .menu-icon{
+    //     display: none;
+    // }
+}

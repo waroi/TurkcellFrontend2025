@@ -1,0 +1,58 @@
+// Değişken tanımlama
+
+$bgColor: #f3513d;
+$xS: 10px;
+$xMid: 20px;
+$xL: 30px;
+$w: 150px;
+$h: 150px;
+
+
+@mixin boxFunction($bgColor, $w, $h){
+    background-color: $bgColor;
+    width: $w;
+    height: $h;
+    font-size: 20px;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+    &:hover{ // --> .container:hover
+        background-color: yellow;
+    }
+
+    .box1{
+        @include boxFunction(orange, 100 * 3, $h);
+    }
+    .box2{
+        @include boxFunction($bgColor, $w, 200px);
+    }
+    
+    .box3{
+        @extend .box1;
+        width: $xL * 3;
+    }
+
+    .box4{
+        @extend .box2;
+        background-color: fuchsia;
+        height: $xMid * 10;
+        &.deneme{ // --> .box4.deneme
+            background-color: burlywood;
+        }
+    }
+
+    // .deneme{
+    //     @include boxFunction(green, $w, $h);
+    // }
+
+    // .box1{
+    //     background-color: $bgColor;
+    //     width: $w150;
+    //     height:$h150;
+    // }
+}

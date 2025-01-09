@@ -1,0 +1,95 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nanum Gothic", sans-serif;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.btn {
+  border: none;
+  background-color: #2f89fc;
+  color: #ffffff;
+  padding: 12px 20px;
+  font-size: 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+
+.btn:hover {
+  background-color: #1e77e6;
+}
+
+header {
+  background-color: orange;
+}
+header .container {
+  justify-content: space-between;
+  margin: 0 auto;
+}
+header .header-title a {
+  width: 100%;
+  font-size: 20px;
+  color: #ffffff;
+}
+header .header-links {
+  width: 100%;
+  justify-content: space-between;
+}
+header .header-nav {
+  width: 100%;
+  justify-content: flex-end;
+}
+header .header-list {
+  width: 70%;
+  justify-content: space-between;
+}
+header .vertical-divider {
+  width: 1px;
+  height: 15px;
+  background-color: #ffffff;
+  margin: 20px 0px;
+}
+header .header-list li a {
+  font-size: 15px;
+  color: #ffffff;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
