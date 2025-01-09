@@ -213,6 +213,7 @@ header {
 .featured-add {
     padding-top: 5em;
     background-color: #F8F9FA;
+
     .h2 {
         font-weight: 500;
         line-height: 1.2;
@@ -231,6 +232,7 @@ header {
             border-radius: 20px;
             margin-bottom: 30px;
             box-shadow: 0 2px 20px -2px rgba(0, 0, 0, 0.1);
+
             img {
                 width: 100%;
                 height: 150px;
@@ -256,6 +258,7 @@ header {
                     display: flex;
                     justify-content: space-between;
                     margin-bottom: 20px;
+
                     span {
                         font-size: 11px;
                         display: inline-block;
@@ -283,14 +286,17 @@ header {
                         align-items: center;
                         background: rgba(0, 0, 0, 0.03);
                     }
+
                     .heart-wrapper:hover {
                         background-color: #F23A2E;
+
                         svg {
                             fill: #fff;
                         }
                     }
 
                 }
+
                 h3 {
                     color: #2F89FC;
                     margin-bottom: 0.5rem;
@@ -309,13 +315,16 @@ header {
         display: flex;
         justify-content: center;
         align-items: center;
+
         svg {
             width: 30px;
             height: 30px;
         }
+
         .left-arrow:hover {
             fill: #2F89FC;
         }
+
         .right-arrow:hover {
             fill: #2F89FC;
         }
@@ -327,24 +336,27 @@ header {
 .popular-categories {
     padding: 5em 0;
 
+
     .popular-wrapper {
         .title {
             position: relative;
             text-align: center;
             gap: 10px;
             margin-bottom: 3rem;
+
             h2 {
                 font-weight: 700;
-                color: #2f89fc ;
-                font-size: 2rem;    margin-bottom: 0.5rem;
+                color: #2f89fc;
+                font-size: 2rem;
+                margin-bottom: 0.5rem;
                 line-height: 1.2;
             }
-        
+
             p {
                 margin-bottom: 1rem;
                 color: rgba(0, 0, 0, 0.5);
             }
-        
+
             span {
                 transform: translate(-50%, 20px);
                 left: 50%;
@@ -356,6 +368,7 @@ header {
                 background: #2f89fc;
             }
         }
+
         .icons {
             display: grid;
             grid-template-columns: repeat(6, 1fr);
@@ -410,3 +423,90 @@ header {
     }
     
 }
+.our-blog {
+    padding-bottom: 2rem;
+    .title {
+    text-align: center;
+    position: relative;
+    margin-bottom: 3rem;
+    h2 {
+    font-weight: 700;
+    color: #2f89fc;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+    }
+    p {
+    margin-bottom: 1rem;
+    color: rgba(0, 0, 0, 0.5);
+    }
+    span {
+    transform: translate(-50%, 20px);
+    left: 50%;
+    position: absolute;
+    content: "";
+    bottom: 0;
+    width: 80px;
+    height: 3px;
+    background: #2f89fc;
+    }
+    }
+    .our-blog-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 0 15px;
+    .blog {
+    margin-bottom: 2rem;
+    img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 30px;
+    }
+    .blog-title {
+    font-size: 20px;
+    color: #000;
+    margin-bottom: 0.5rem;
+    transition: .3s all ease;
+    display: inline-block
+    }
+    .meta {
+    color: #b3b3b3;
+    font-size: 14px;
+    margin-bottom: 1rem !important;
+    }
+    .meta-link {
+    color: #2f89fc;
+    transition: .3s all ease;
+    &:hover {
+    color: #0362db;
+    }
+    }
+    .blog-desc {
+    color: #4d4d4d;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1.7;
+    font-weight: 400;
+    }
+    }
+    }
+    .all-posts {
+    margin-top: 1rem;
+    text-align: center;
+    a {
+    cursor: pointer;
+    color: #fff;
+    padding: 0.7rem 1.4rem;
+    border-radius: 0.25rem;
+    background-color: #2f89fc;
+    border-color: #2f89fc;
+    font-weight: 400;
+    text-align: center;
+    &:hover {
+    background-color: #0974fb;
+    border-color: #046df4;
+    }
+    }
+    }
+    }
