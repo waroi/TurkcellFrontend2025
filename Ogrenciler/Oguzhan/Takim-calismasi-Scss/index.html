@@ -16,43 +16,52 @@
 <body>
   <section class="header-section">
     <div class="container">
-      <nav class="nav-section">
-        <h1><a href="index.html">DirectoryAds </a></h1>
-        <ul>
-          <li>Home</li>
-          <li>Ads</li>
-          <li>About</li>
-          <li>Blog</li>
-          <li>Contact</li>
-        </ul>
-        <button>Log In</button>
-        <button>Register</button>
-      </nav>
-
-      <div>
-        <h1>Welcome To DirectoryAds</h1>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-
-        <form action="">
-          <input type="text" placeholder="What are you looking for?" required />
-
-          <input type="text" placeholder="Location" required />
-          <input type="text" placeholder="All Categories" required />
-
-          <button>Search</button>
-        </form>
-
-        <div>
-          <h2>Trending Search:</h2>
-
-          <a href="">İphone</a>
-          <a href="">Cars</a>
-          <a href="">Flowers</a>
-          <a href="">House</a>
-        </div>
-      </div>
+    <nav class="nav-section">
+    <h1><a class="logo" href="index.html">DIRECTORYADS </a></h1>
+    <ul>
+    <li>Home</li>
+    <li>Ads</li>
+    <li>About</li>
+    <li>Blog</li>
+    <li>Contact</li>
+    </ul>
+    <button class="btn-log">Log In</button>
+    <button class="btn-reg">Register</button>
+    </nav>
+    <div class="nav-text">
+    <h1>Welcome To DirectoryAds</h1>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+    <form action="">
+    <input
+    type="text"
+    placeholder="What are you looking for?"
+    required
+    />
+    <div class="location">
+    <input
+    id="inp-location"
+    type="text"
+    name="location"
+    placeholder="Location"
+    readonly
+    />
+    <i class="fa-solid fa-location-dot"></i>
     </div>
-  </section>
+    <div id="btn-category">
+    All Categories <i class="fa-solid fa-angle-down"></i>
+    </div>
+    <button>Search</button>
+    </form>
+    <div class="nav-trend">
+    <h2>Trending Search:</h2>
+    <a href="">iPhone</a>
+    <a href="">Cars</a>
+    <a href="">Flowers</a>
+    <a href="">House</a>
+    </div>
+    </div>
+    </div>
+    </section>
 
   <section class="featured">
     <div class="featured-container">
