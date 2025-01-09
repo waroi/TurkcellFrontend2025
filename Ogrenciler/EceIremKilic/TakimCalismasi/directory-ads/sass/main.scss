@@ -19,29 +19,35 @@ $x43: 43px;
   font-family: "Roboto", serif;
   line-height: 1.7;
 }
+
 header {
   width: $section-width;
   background-color: transparent;
   margin: 0 auto;
 }
+
 .banner {
   background-image: url("https://preview.colorlib.com/theme/directoryads/images/hero_2.jpg.webp");
   background-size: cover;
   height: 600px;
   background-position: 50% -25px;
+
   .banner-overlay {
     background-color: #00000050;
     height: 100%;
   }
+
   .navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 20px 15px;
   }
+
   .navbar a {
     text-decoration: none;
   }
+
   .navbar ul li button {
     width: 96px;
     height: 39px;
@@ -54,26 +60,32 @@ header {
     color: $white-text;
     font-weight: 300;
   }
+
   header .navbar ul {
     list-style-type: none;
     display: flex;
     align-items: center;
   }
+
   header .navbar ul li {
     padding: 20px 10px;
     color: $white-text;
     font-weight: 300;
     letter-spacing: 1.1px;
   }
+
   header .navbar ul li .down {
     padding-left: 8px;
   }
+
   header .navbar ul li .line {
     margin-right: 20px;
   }
+
   header .navbar ul .contact {
     margin-right: 48px;
   }
+
   .navbar h1 {
     color: $white-text;
     font-size: 20px;
@@ -84,14 +96,17 @@ header {
     flex-direction: column;
     align-items: center;
     margin-top: 49px;
+
     .welcome-container {
       text-align: center;
+
       .w-text h1 {
         font-size: 48px;
         margin-bottom: 8px;
         font-weight: 400;
         color: $white-text;
       }
+
       .w-text p {
         font-size: 1.2rem;
         margin-bottom: 16px;
@@ -106,6 +121,7 @@ header {
         justify-content: space-around;
         background-color: #ffffff99;
         margin-bottom: 16px;
+
         .search-form {
           display: flex;
           flex-direction: row;
@@ -127,14 +143,17 @@ header {
         .box-2 input {
           @include boxFunction(245px, $x43, #ffff);
         }
+
         .box-3 select {
           @include boxFunction(245px, $x43, #ffff);
         }
+
         .box-4 button {
           @include boxFunction(153px, 46px, #2f89fc);
           color: #fff;
         }
       }
+
       .trend {
         display: flex;
         align-items: center;
@@ -163,114 +182,165 @@ header {
     }
   }
 }
+
 .featured-ads {
   background-color: #f8f9fa;
-  .fa{
+
+  .fa {
     width: $section-width;
     padding: 80px 0;
-  margin: 0 auto;
+    margin: 0 auto;
+
     .f-card-wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        .f-text {
-          width: 100%;
-          h2 {
-            font-size: 20px;
-            font-weight: 300;
-            margin-bottom: 20px;
-            padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .f-text {
+        width: 100%;
+
+        h2 {
+          font-size: 20px;
+          font-weight: 300;
+          margin-bottom: 20px;
+          padding: 0 20px;
+        }
+      }
+    }
+
+    .featured-cards {
+      display: grid;
+      grid-template-columns: repeat(4, 250px);
+      justify-content: space-between;
+      gap: 35px;
+      padding: 0 15px;
+
+      .ad-card {
+        box-shadow: 0 2px 20px -2px rgba(0, 0, 0, 0.1);
+        border-radius: 7px;
+
+        .card-img {
+          img {
+            width: 250px;
+            height: 150px;
+          }
+        }
+
+        .card-content {
+          padding: 20px;
+          background-color: #fff;
+
+          .cc1 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .category {
+              font-size: 11px;
+              display: inline-block;
+              padding: 5px 20px;
+              background: #e9ecef;
+              border-radius: 30px;
+              margin-bottom: 20px;
+              color: #000;
+              font-weight: 600;
+            }
+
+            .fav {
+              border-radius: 50%;
+              background-color: #00000008;
+              width: 30px;
+              height: 30px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              margin-bottom: 20px;
+            }
+          }
+
+          h3 {
+            font-size: 16px;
+            color: #2f89fc;
+            font-weight: 400;
+            line-height: 1.2;
+          }
+
+          address {
+            margin-bottom: 16px;
+            color: #4d4d4d;
+            font-style: normal;
+            font-size: 13px;
+          }
+
+          .comments {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            p {
+              font-size: 13px;
+              color: #4d4d4d;
+            }
           }
         }
       }
-      .featured-cards{
-        display: grid;
-        grid-template-columns: repeat(4, 250px);
-        justify-content: space-between;
-        gap: 35px;
-        padding: 0 15px;
-        .ad-card{
-            box-shadow: 0 2px 20px -2px rgba(0, 0, 0, 0.1);
-            border-radius: 7px;
-            .card-img{
-                img{
-                    width: 250px;
-                height: 150px;
-                }
-            }
-            .card-content{
-                padding: 20px;
-                background-color: #fff;
-                .cc1{
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    .category{
-                        font-size: 11px;
-                        display: inline-block;
-                        padding: 5px 20px;
-                        background: #e9ecef;
-                        border-radius: 30px;
-                        margin-bottom: 20px;
-                        color: #000;
-                        font-weight: 600;
-                    }
-                    .fav{
-                        border-radius: 50%;
-                        background-color: #00000008;
-                        width: 30px;
-                        height: 30px;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        margin-bottom: 20px;
-                    }
-                }
-                h3{
-                    font-size: 16px;
-                    color: #2f89fc;
-                    font-weight: 400;
-                    line-height: 1.2;
-                }
-                address{
-                    margin-bottom: 16px;
-                    color: #4d4d4d;
-                    font-style: normal;
-                    font-size: 13px;
-                }
-                .comments{
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    p{
-                        font-size: 13px;
-                        color: #4d4d4d;
-                    }
-                }
-            }
-        }
-      }
+    }
   }
 }
 
-.popular-categories{
-  .container{
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    
-    .small-card{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      .card-content{
-        h2{
+.popular-categories {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 0px;
+  .container {
+    width: $section-width;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    h2{
+      font-size: 32px;
+      color: #2f89fc;
+      margin-bottom: 8px;
+    }
+    p{
+      font-size: 16px;
+      color: #00000080;
+      margin-bottom: 16px;
+    }
 
+    .card {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      width: 100%;
+
+      .small-card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .card-content {
+          padding: 30px 10px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          p{
+            font-size: 15px;
+            margin-bottom: 8px;
+          }
+          span {
+            padding: 2px 20px;
+            border-radius: 30px;
+            display: inline-block;
+            background: #e9ecef;
+            color: #000;
+            font-size: 14px;
+            transition: .1s all ease;
+          }
         }
-        p{
-
-        }
-
       }
     }
+
   }
 }
