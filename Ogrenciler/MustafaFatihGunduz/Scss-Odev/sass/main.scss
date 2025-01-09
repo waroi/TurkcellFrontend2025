@@ -19,6 +19,21 @@ $gray-text-color: #4d4d4d;
   font-weight: bold;
 }
 
+@mixin createTitleWithUnderline() {
+  font-size: $h2FontSize;
+  color: $mainBgColor;
+  font-weight: bold;
+  &:after {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    width: 80px;
+    height: 3px;
+    background: #2f89fc;
+  }
+}
+
+
 @mixin createSubtitle() {
   font-size: $aFontSize;
   color: #00000080;
@@ -357,6 +372,43 @@ ul {
   .trending-today-cards {
     display: grid;
     gap: 30px;
+  }
+}
+
+.testimonials{
+  h2{
+    @include createTitleWithUnderline();
+    margin-bottom: 20px;
+  }
+  .content-wrapper{
+    width: $xWidth100;
+    flex-direction: column;
+    text-align: center;
+    margin: 0px 100px;
+  }
+  .testimonials-name{
+    font-size: 16px;
+    color: $gray-text-color;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  .testimonials-text{
+    font-size: 24px;
+    color: $gray-text-color;
+    margin-bottom: 20px;
+  }
+  .testimonials-image img{
+    max-width: 130px;
+    border-radius: 50%;
+    margin-top: 20px;
+  }
+  .arrow-icon{
+    color: #fff;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.2);
+    justify-content: center;
   }
 }
 
