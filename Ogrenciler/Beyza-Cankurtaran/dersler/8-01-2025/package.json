@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
+    "8-01-2025": "file:",
     "braces": "^3.0.3",
     "chokidar": "^4.0.3",
     "detect-libc": "^1.0.3",
@@ -20,7 +21,7 @@
     "to-regex-range": "^5.0.1"
   },
   "scripts": {
-    "sass" :"sass -w sass:css"
+    "sass": "sass -w sass:css"
   },
   "keywords": [],
   "author": "",

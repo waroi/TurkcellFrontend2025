@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-   "sass": "sass -w sass:css"
+    "sass": "sass -w sass:css"
   },
   "keywords": [],
   "author": "",
@@ -11,6 +11,7 @@
   "type": "commonjs",
   "description": "",
   "dependencies": {
+    "ders08-scss": "file:",
     "sass": "^1.83.1"
   }
 }
