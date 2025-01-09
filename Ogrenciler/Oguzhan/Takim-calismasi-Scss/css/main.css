@@ -1,162 +1,17 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Nanum Gothic", serif;
-}
+/* Error: expected "{".
+ *     ,
+ * 303 | >>>>>>> Stashed changes
+ *     |                        ^
+ *     '
+ *   sass\main.scss 303:24  root stylesheet */
 
-.header-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0px;
-  background-image: url("../assets/bg-image.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 100vh;
-  background-position: 50% -25px;
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: 'Error: expected "{".\a     \2577 \a 303 \2502  >>>>>>> Stashed changes\d\a     \2502                         ^\a     \2575 \a   sass\\main.scss 303:24  root stylesheet';
 }
-.header-section .container {
-  width: 75%;
-}
-.header-section .container .nav-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 0px;
-  width: 100%;
-  height: 100px;
-  flex-wrap: wrap;
-}
-.header-section .container .nav-section .logo {
-  font-size: 20px;
-  text-decoration: none;
-  color: white;
-  font-weight: 900;
-}
-.header-section .container .nav-section ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-  list-style: none;
-  margin-left: 200px;
-  color: white;
-  font-size: 15px;
-}
-.header-section .container .nav-section .btn-log {
-  border: none;
-  background-color: transparent;
-  color: white;
-  padding-left: 1.5rem;
-  border-left: 1px solid #dee2e6;
-}
-.header-section .container .nav-section .btn-reg {
-  background-color: #2f89fc;
-  padding: 12px 20px;
-  border-radius: 0.25rem;
-  border: none;
-  outline: none;
-  color: white;
-}
-.header-section .container .nav-text {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  flex-direction: column;
-  height: calc(100vh - 100px);
-}
-.header-section .container .nav-text h1 {
-  font-size: 3rem;
-  font-weight: 400;
-  color: white;
-}
-.header-section .container .nav-text p {
-  font-size: 1.2rem;
-  font-weight: 400;
-  color: white;
-}
-.header-section .container .nav-text form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 20px;
-  border-radius: 4px;
-  width: 100%;
-}
-.header-section .container .nav-text input {
-  height: 43px;
-  border-radius: 0.25rem;
-  padding: 0 10px;
-  border: none;
-  outline: none;
-  font-size: 1rem;
-  width: 35%;
-}
-.header-section .container .nav-text .location {
-  width: 25%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: white;
-  padding: 0 10px;
-  border-radius: 0.25rem;
-}
-.header-section .container .nav-text #inp-location {
-  padding: 0;
-}
-.header-section .container .nav-text #btn-category {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 43px;
-  width: 25%;
-  padding: 0 10px;
-  background-color: white;
-  color: #666666;
-  border-radius: 0.25rem;
-}
-.header-section .container .nav-text button {
-  background-color: #2f89fc;
-  padding: 12px 50px;
-  border-radius: 0.25rem;
-  border: none;
-  outline: none;
-  color: white;
-  font-size: 18px;
-  cursor: pointer;
-}
-.header-section .container .nav-text .nav-trend {
-  display: flex;
-  align-items: center;
-  justify-content: start;
-  text-align: start;
-  width: 100%;
-  gap: 5px;
-}
-.header-section .container .nav-text .nav-trend h2 {
-  font-size: 1rem;
-  font-weight: 500;
-  color: white;
-  margin-right: 10px;
-}
-.header-section .container .nav-text .nav-trend a {
-  font-size: 13px;
-  font-weight: 400;
-  color: white;
-  text-decoration: none;
-  background-color: rgba(255, 255, 255, 0.2);
-  border: 1px solid #fff;
-  padding: 6px 12px;
-  border-radius: 4px;
-  transition: 0.3s all ease;
-}
-.header-section .container .nav-text .nav-trend a:hover {
-  color: #2f89fc;
-  background-color: white;
-}
-
-/*# sourceMappingURL=main.css.map */
