@@ -250,4 +250,15 @@ header {
   color: #4d4d4d;
 }
 
+.popular-categories .container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  justify-content: space-between;
+}
+.popular-categories .container .small-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /*# sourceMappingURL=main.css.map */
