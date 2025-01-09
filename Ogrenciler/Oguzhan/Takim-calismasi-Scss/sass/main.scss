@@ -5,6 +5,8 @@ $bgColor: #000000;
 $formBgColor: #e9ecef;
 $catAddColor: #4d4d4d;
 $textGray: #666666;
+$bgGray: #f8f9fa;
+
 
 * {
   margin: 0;
@@ -117,6 +119,7 @@ $textGray: #666666;
         padding: 0 10px;
         border-radius: 0.25rem;
       }
+
       #inp-location {
         padding: 0;
       }
@@ -173,5 +176,119 @@ $textGray: #666666;
         }
       }
     }
+  }
+}
+
+.featured {
+  background-color: $bgGray;
+  width: 100%;
+  padding: 50px 0px;
+  @include flex-center(30px, center);
+
+  .featured-container {
+    width: 80%;
+
+    h2 {
+      @include text-props(20px, 500, Black);
+      margin-bottom: 20px;
+
+
+    }
+
+.scroll{
+  width: 100%;
+  padding: 50px 0;
+  @include flex-center(50px, center);
+  
+
+
+}
+
+
+
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+
+
+      .card {
+        background-color: #fff;
+        width: 100%;
+        @include flex-center(10px, start);
+        flex-direction: column;
+        align-items: start;
+        border-radius: 10px;
+        box-shadow: 0 2px 20px -2px rgba(0, 0, 0, 0.1);
+
+        a {
+          text-decoration: none;
+
+          @include text-props(16px, 500, $btnBlue);
+
+        }
+address{
+  @include text-props(13px, 400, $catAddColor);
+  font-style: normal;
+}
+.star{
+  @include flex-center(5px, start);
+  margin-bottom: 20px;
+}
+.star > i:not(:nth-last-child(-n+2)) {
+  color: orange;
+
+}
+
+        .card-text {
+
+          @include flex-center(0px, space-between);
+          width: 100%;
+          margin-top: 10px;
+
+          span {
+            background-color: $formBgColor ;
+            padding: 5px 20px;
+            border-radius: 30px;
+            @include text-props(11px, 500, Black);
+
+          }
+
+          .icon-container {
+            width: 30px;
+            height: 30px;
+            background: rgba(0, 0, 0, 0.03);
+            border-radius: 50%;
+            @include flex-center(0px, center);
+            color: $btnBlue ;
+            cursor: pointer;
+            font-size: 15px;
+           
+
+            &:hover {
+              color: white;
+              background-color: $hoverRed;
+            }
+
+          }
+
+
+
+        }
+
+
+        img {
+
+          width: 100%;
+        }
+      }
+
+      .card>*:not(:first-child) {
+        padding: 0 20px;
+
+      }
+
+    }
+
   }
 }

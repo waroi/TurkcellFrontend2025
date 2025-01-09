@@ -1,93 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="./css/main.css" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <section class="header-section">
-      <div class="container">
-        <nav class="nav-section">
-          <h1><a href="index.html">DirectoryAds </a></h1>
-          <ul>
-            <li>Home</li>
-            <li>Ads</li>
-            <li>About</li>
-            <li>Blog</li>
-            <li>Contact</li>
-          </ul>
-          <button>Log In</button>
-          <button>Register</button>
-        </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/main.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+  <section class="header-section">
+    <div class="container">
+      <nav class="nav-section">
+        <h1><a href="index.html">DirectoryAds </a></h1>
+        <ul>
+          <li>Home</li>
+          <li>Ads</li>
+          <li>About</li>
+          <li>Blog</li>
+          <li>Contact</li>
+        </ul>
+        <button>Log In</button>
+        <button>Register</button>
+      </nav>
+
+      <div>
+        <h1>Welcome To DirectoryAds</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+
+        <form action="">
+          <input type="text" placeholder="What are you looking for?" required />
+
+          <input type="text" placeholder="Location" required />
+          <input type="text" placeholder="All Categories" required />
+
+          <button>Search</button>
+        </form>
 
         <div>
-          <h1>Welcome To DirectoryAds</h1>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+          <h2>Trending Search:</h2>
 
-          <form action="">
-            <input
-              type="text"
-              placeholder="What are you looking for?"
-              required
-            />
-
-            <input type="text" placeholder="Location" required />
-            <input type="text" placeholder="All Categories" required />
-
-            <button>Search</button>
-          </form>
-
-          <div>
-            <h2>Trending Search:</h2>
-
-            <a href="">İphone</a>
-            <a href="">Cars</a>
-            <a href="">Flowers</a>
-            <a href="">House</a>
-          </div>
+          <a href="">İphone</a>
+          <a href="">Cars</a>
+          <a href="">Flowers</a>
+          <a href="">House</a>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="featured">
-      <div class="container">
-        <div class="card"> 
-          <img src="https://preview.colorlib.com/theme/directoryads/images/img_2.jpg.webp" alt="">
+  <section class="featured">
+    <div class="featured-container">
+      <h2>Featured Ads</h2>
+      <div class="card-container">
+        <div class="card">
+          <img src="https://preview.colorlib.com/theme/directoryads/images/img_1.jpg.webp" alt="">
           <div class="card-text">
             <span>Car & Vehicles</span>
-   
-            <i class="fa-solid fa-heart"></i>
-            
+
+            <div class="icon-container"> <i class="fa-solid fa-heart"></i></div>
+
+
           </div>
           <a href="#">New Black Car</a>
-          
+
           <address>Don St, Brooklyn, New York</address>
-          <div>
+          <div class="star">
             <i class="fa-solid fa-star"></i>
             <i class="fa-solid fa-star"></i>
             <i class="fa-solid fa-star"></i>
             <i class="fa-solid fa-star"></i>
             <i class="fa-solid fa-star"></i>
-            <p>(3 Rewievs)</p>
+            <span>(3 Rewievs)</span>
           </div>
+            
+         
         </div>
-    
+
+
+        <div class="card">
+          <img src="https://preview.colorlib.com/theme/directoryads/images/img_2.jpg.webp" alt="">
+          <div class="card-text">
+            <span>Real Estate</span>
+
+            <div class="icon-container"> <i class="fa-solid fa-heart"></i></div>
+
+
+          </div>
+          <a href="#">Own New House</a>
+
+          <address>Don St, Brooklyn, New York</address>
+          <div class="star">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <span>(3 Rewievs)</span>
+          </div>
+            
+         
+        </div>
+
+
+        <div class="card">
+          <img src="https://preview.colorlib.com/theme/directoryads/images/img_3.jpg.webp" alt="">
+          <div class="card-text">
+            <span>Furniture</span>
+
+            <div class="icon-container"> <i class="fa-solid fa-heart"></i></div>
+
+
+          </div>
+          <a href="#">Wooden Chair & Table</a>
+
+          <address>Don St, Brooklyn, New York</address>
+          <div class="star">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <span>(3 Rewievs)</span>
+          </div>
+            
+         
+        </div>
+
+        <div class="card">
+          <img src="https://preview.colorlib.com/theme/directoryads/images/img_4.jpg.webp" alt="">
+          <div class="card-text">
+            <span>Electronics</span>
+
+            <div class="icon-container"> <i class="fa-solid fa-heart"></i></div>
+
+
+          </div>
+          <a href="#">Iphone X Gray</a>
+
+          <address>Don St, Brooklyn, New York</address>
+          <div class="star">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <span>(3 Rewievs)</span>
+          </div>
+            
+         
+        </div>
+
+
       </div>
-      
+      <div class="scroll">
+        <i class="fa-solid fa-chevron-left"></i>
+        <i class="fa-solid fa-chevron-right"></i>
 
-    </section>
+      </div>
+
+    </div>
+
+
+  </section>
 
 
 
 
-  </body>
+</body>
+
 </html>
