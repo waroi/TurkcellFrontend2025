@@ -1,0 +1,34 @@
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.container:hover {
+  background-color: yellow;
+}
+.container .box1, .container .box3 {
+  background-color: orange;
+  width: 300;
+  height: 150px;
+  font-size: 20px;
+  text-align: center;
+}
+.container .box2, .container .box4 {
+  background-color: #f3513d;
+  width: 150px;
+  height: 200px;
+  font-size: 20px;
+  text-align: center;
+}
+.container .box3 {
+  width: 90px;
+}
+.container .box4 {
+  background-color: fuchsia;
+  height: 200px;
+}
+.container .box4.deneme {
+  background-color: burlywood;
+}
+
+/*# sourceMappingURL=main.css.map */

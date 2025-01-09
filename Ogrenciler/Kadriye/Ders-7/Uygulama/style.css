@@ -65,7 +65,7 @@ body .overflow-hidden {
   width: 100%;
 }
 
-@keyframes big-fish-1 {
+/*@keyframes big-fish-1 {
   0% {
     transform: translate(calc(200px * cos(0deg)), calc(200px * sin(0deg)))
       rotate(360deg);
@@ -134,7 +134,7 @@ body .overflow-hidden {
     transform: translate(calc(200px * cos(360deg)), calc(200px * sin(360deg)))
       rotate(0);
   }
-}
+}*/
 
 header {
   padding-top: 30px;
@@ -176,7 +176,6 @@ header {
     transform: translate(0, -10px);
     font-size: 0;
   }
-
   25% {
     font-size: 20px;
     transform: translate(25px, 25px) rotate(30deg);

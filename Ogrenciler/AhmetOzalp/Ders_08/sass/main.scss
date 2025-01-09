@@ -1,0 +1,60 @@
+$bgColor:red;
+$x150:150px;
+$x100:100px;
+
+@mixin boxfunction($width, $height, $color) {
+    width: $width;
+    height: $height;
+    background-color: $color;
+    font-size: 20px;
+}
+
+.container{
+    display: flex;
+    &:hover{
+        background-color: rgb(92, 92, 92)
+    }
+    .box2{
+        @include boxfunction($x150,$x100 ,$bgColor )
+    }
+    .box1{
+        @include boxfunction($x150 , $x100 * 2 , orange );
+    }
+    .box3{
+        @extend .box1; //Box1 i miras aldı.
+        width: $x100*3;
+    }
+    .box4{
+        @include boxfunction($x150 , $x100 * 4 , green );
+        &.deneme{
+            background-color: blue;
+        }
+    }
+
+    // uzun yol
+
+    // .box1{
+    //     background-color: $bgColor;
+    //     width: $x150;
+    //     height: $x100;
+    //     font-size: 20px;
+    // }
+    // .box2{
+    //     background-color: $bgColor;
+    //     width: $x150;
+    //     height: $x100;
+    //     font-size: 20px;
+    // }
+    // .box3{
+    //     background-color: $bgColor;
+    //     width: $x150;
+    //     height: $x100;
+    //     font-size: 20px;
+    // }
+    // .box4{
+    //     background-color: $bgColor;
+    //     width: $x150;
+    //     height: $x100;
+    //     font-size: 20px;
+    // }
+}

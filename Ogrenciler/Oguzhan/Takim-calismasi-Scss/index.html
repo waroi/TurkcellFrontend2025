@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/main.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section class="header-section">
+      <div class="container">
+        <nav class="nav-section">
+          <h1><a class="logo" href="index.html">DIRECTORYADS </a></h1>
+          <ul>
+            <li>Home</li>
+            <li>Ads</li>
+            <li>About</li>
+            <li>Blog</li>
+            <li>Contact</li>
+          </ul>
+          <button class="btn-log">Log In</button>
+          <button class="btn-reg">Register</button>
+        </nav>
+
+        <div class="nav-text">
+          <h1>Welcome To DirectoryAds</h1>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+
+          <form action="">
+            <input
+              type="text"
+              placeholder="What are you looking for?"
+              required
+            />
+
+            <div class="location">
+              <input
+                id="inp-location"
+                type="text"
+                name="location"
+                placeholder="Location"
+                readonly
+              />
+
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+
+            <div id="btn-category">
+              All Categories <i class="fa-solid fa-angle-down"></i>
+            </div>
+
+            <button>Search</button>
+          </form>
+
+          <div class="nav-trend">
+            <h2>Trending Search:</h2>
+
+            <a href="">iPhone</a>
+            <a href="">Cars</a>
+            <a href="">Flowers</a>
+            <a href="">House</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
