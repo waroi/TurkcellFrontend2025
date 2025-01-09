@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+}
+.container .box1 {
+  width: 150px;
+  height: 150px;
+  background-color: red;
+  color: white;
+}
+.container .box2 {
+  width: 100px;
+  height: 100px;
+  background-color: orange;
+  color: white;
+}
+.container .box3 {
+  width: 100px;
+  height: 100px;
+  background-color: yellow;
+  color: white;
+}
+.container .box4 {
+  width: 100px;
+  height: 100px;
+  background-color: green;
+  color: white;
+}
+.container .box4.deneme {
+  background-color: blue;
+}
+
+/*# sourceMappingURL=main.css.map */
