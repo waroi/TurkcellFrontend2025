@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SCSS ÖDEV</title>
+    <link rel="stylesheet" href="./css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-rounded/css/uicons-solid-rounded.css"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="flex-center container">
+        <div class="header-logo">
+          <h1 class="header-title"><a href="#">DIRECTORYADS</a></h1>
+        </div>
+        <div class="flex-center header-links">
+          <nav class="flex-center header-nav">
+            <ul class="flex-center header-list">
+              <li class="header-link"><a href="#">Home</a></li>
+              <li class="header-link"><a href="#">Ads</a></li>
+              <li class="header-link"><a href="#">About</a></li>
+              <li class="header-link"><a href="#">Blog</a></li>
+              <li class="header-link"><a href="#">Contact</a></li>
+              <div class="vertical-divider"></div>
+              <li class="header-link"><a href="#">Login</a></li>
+              <button class="btn">Register</button>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <section class="flex-center banner">
+      <div class="flex-center container">
+        <div class="flex-center banner-content">
+          <h1 class="banner-title">Welcome To DirectoryAds</h1>
+          <p class="banner-text">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          </p>
+        </div>
+        <div class="form-section">
+          <form action="" class="flex-center form">
+            <div class="looking-for">
+              <input
+                type="text"
+                name="text"
+                id="text"
+                placeholder="What are you looking for?"
+                class="input"
+              />
+            </div>
+            <div class="location">
+              <input
+                type="text"
+                name="location"
+                id="location"
+                placeholder="Location"
+                class="input"
+              />
+            </div>
+            <div class="all-categories">
+              <select name="categories" id="categories" class="input">
+                <option value="all">All Categories</option>
+                <option value="1">Real Estate</option>
+                <option value="2">Books & Magazines</option>
+                <option value="3">Furnutire</option>
+                <option value="4">Electronics</option>
+              </select>
+            </div>
+            <button class="btn">Search</button>
+          </form>
+        </div>
+        <div class="flex-center trending-search">
+          <h2>Trending Search:</h2>
+          <div class="trending-search-item">
+            <span class="trending-search-text"><a href="">iPhone</a></span>
+            <span class="trending-search-text"><a href="">Cars</a></span>
+            <span class="trending-search-text"><a href="">Flowers</a></span>
+            <span class="trending-search-text"><a href="">House</a></span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
