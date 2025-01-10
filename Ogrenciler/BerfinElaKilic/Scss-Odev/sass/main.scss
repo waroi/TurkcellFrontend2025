@@ -237,6 +237,107 @@ a {
   }
 }
 
+// ---------------- HEADER START ----------------//
+
+header{
+  background-image: url('.././img/hero_2.jpg.webp');
+  background-size: cover;
+  background-position: center;
+  height: 740px;
+}
+
+.headerOverlay{
+  height: 100%;
+  width: 100%;
+  background-color:rgba(1, 4, 161, 0.308);
+}
+
+.topBar{
+  padding-top: 20px;
+  align-items: center;
+  justify-content: space-between;
+  li{
+    list-style: none;
+  }
+  ul{
+    gap: 30px;
+    margin-right: 100px;
+  }
+  a{
+    color: base.$white-text-color;
+  }
+  h1{
+    font-size: 22px;
+    color: base.$white-text-color;
+    font-weight: 500;
+  }
+}
+
+.botBar{
+  margin-top: 200px;
+  h2{
+    color: base.$white-text-color;
+    font-size: 48px;
+    font-weight: 200  ;
+  }
+  p{
+    color: base.$white-text-color;
+    font-size: 1.5rem;
+    font-weight: 200;
+  }
+}
+
+.searchBar{
+  margin-top: 20px;
+  background-color: rgba(255, 255, 255, 0.75);
+  padding: 20px 0;
+  display: grid;
+  height: 100%;
+  width: 100%;
+  grid-template-columns: 3fr 2fr 2fr 1fr ;
+  gap: 30px;
+  border-radius: 5px;
+  input, button{
+    margin:0 20px;
+    height: 46px;
+    border-radius: 5px;
+    border-width: 0px;
+  }
+}
+
+.buttonWrapper{
+  display: flex;
+  gap: 10px;
+  align-self: left;
+}
+
+.trend{
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  align-self: left;
+  p{
+    color: base.$white-text-color;
+    font-size: 1rem;
+    font-weight: 200;
+    letter-spacing: 1px;
+  }
+  button{
+    color: #ffff;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.3);  
+    border-radius: 5px;
+    border: 1px solid #ffff;
+    &:hover{
+      background-color: rgba(255, 255, 255);
+      color: #2f89fc;
+    }
+  }
+}
+
+// ---------------- HEADER END ----------------//
+
+
 @media (min-width: base.$breakpoint-sm) {
   .container {
     max-width: 540px;
@@ -313,6 +414,7 @@ a {
   .container {
     max-width: 1140px;
   }
+
   .grid-col-3-xl {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -327,5 +429,33 @@ a {
   }
   .carousel-item {
     width: calc(100% / 4);
+  }
+}
+
+
+
+@media (max-width: base.$breakpoint-xl) {
+  .trend{
+    flex-direction: column;
+  }
+  .navbar{
+    display: none;
+  }
+  
+  .botBar{
+    margin-top: 50px;
+    h2{
+      color: base.$white-text-color;
+      font-size: 2rem;
+      font-weight: 200  ;
+    }
+    p{
+      color: base.$white-text-color;
+      font-size: 1rem;
+      font-weight: 200;
+    }
+  }
+  .grid-col-1-xl {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
