@@ -273,3 +273,40 @@ input{
     background-color: #b8e4da;
     z-index: -1;
 }
+.education {
+    padding: 60px 0;
+    background-color: #f7f7f7;
+    text-align: center;
+}
+.education h2 {
+    font-size: 48px;
+    color: #0c7f86;
+    margin-bottom: 50px;
+}
+.cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    width: calc(25% - 20px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card h3 {
+    font-size: 24px;
+    color: #0c7f86;
+    margin-bottom: 10px;
+}
+.card p {
+    font-size: 18px;
+    color: #084b4f;
+}
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
