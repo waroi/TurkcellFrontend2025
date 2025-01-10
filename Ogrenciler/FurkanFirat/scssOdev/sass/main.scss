@@ -157,6 +157,7 @@ ul {
     color: $whiteColor;
     font-size: 48px;
     margin-bottom: 8px;
+    font-weight: 400;
   }
   .banner-text {
     color: $whiteColor;
@@ -524,7 +525,7 @@ ul {
   text-align: center;
 
   .newsletter-container {
-    @include flex-center(row, center, center, 20px);
+    @include flex-center(row, space-between, center, 20px);
     flex-wrap: wrap;
   }
 
