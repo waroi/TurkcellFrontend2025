@@ -448,6 +448,62 @@ ul {
 
 /* --------------- */
 
+.our-blog {
+  padding: 80px 0px;
+  .container {
+    flex-direction: column;
+  }
+  .our-blog-title {
+    @include createTitle();
+    margin: 0px 0px 24px;
+  }
+  .our-blog-subtitle {
+    position: relative;
+    @include createSubtitle();
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 15px;
+  }
+  .our-blog-wrapper {
+    margin-top: 40px;
+    display: grid;
+  }
+  .our-blog-wrapper-item {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 15px;
+    transition: 0.3s;
+    h2 {
+      margin-bottom: 8px;
+      font-size: 20px;
+      font-weight: 500;
+    }
+    div {
+      margin-bottom: 16px;
+      color: #b3b3b3;
+      span {
+        margin: 0px 5px;
+      }
+      a {
+        color: $mainBgColor;
+      }
+    }
+    p {
+      margin-bottom: 16px;
+      color: $gray-text-color;
+      letter-spacing: 0.3px;
+    }
+  }
+  img {
+    margin-bottom: 30px;
+    border-radius: 4px;
+  }
+}
+.wrapper-item span {
+  margin-bottom: 10px;
+}
+
 @mixin flex-center($direction: row, $justify: center, $align: center, $gap: 0) {
   display: flex;
   flex-direction: $direction;
@@ -461,65 +517,6 @@ ul {
   color: $color;
   font-weight: $weight;
 }
-
-.blog-section {
-  padding: 50px 20px;
-  text-align: center;
-  background: #f8f9fa;
-
-  .blog-header {
-    margin-bottom: 30px;
-  }
-
-  .blog-title {
-    @include text-style(2.5rem, #0d6efd, 700);
-    margin-bottom: 10px;
-  }
-
-  .blog-subtitle {
-    @include text-style(1.1rem, #6c757d);
-    margin-bottom: 30px;
-  }
-
-  .blog-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .blog-entry {
-    @include flex-center(column, flex-start, flex-start);
-    background: none;
-    border: none;
-
-    .blog-content {
-      text-align: left;
-      width: 100%;
-    }
-
-    .blog-heading {
-      @include text-style(1.5rem, #212529, 500);
-      margin-bottom: 10px;
-    }
-
-    .blog-meta {
-      @include text-style(0.9rem, #6c757d);
-    }
-
-    .blog-link {
-      color: #0d6efd;
-      font-weight: 500;
-    }
-
-    .blog-description {
-      @include text-style(1rem, #495057);
-      line-height: 1.6;
-    }
-  }
-}
-
 .newsletter {
   background: #007bff;
   color: #fff;
@@ -694,6 +691,9 @@ ul {
   .wrapper {
     grid-template-columns: repeat(3, 1fr);
   }
+  .our-blog-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
@@ -727,6 +727,9 @@ ul {
   .wrapper {
     grid-template-columns: repeat(6, 1fr);
   }
+  .our-blog-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 @media (min-width: 1200px) {
   .container {
@@ -740,7 +743,6 @@ ul {
       display: none;
     }
   }
-
   .featured-ads-cards {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
@@ -749,5 +751,8 @@ ul {
   }
   .wrapper {
     grid-template-columns: repeat(6, 1fr);
+  }
+  .our-blog-wrapper {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
