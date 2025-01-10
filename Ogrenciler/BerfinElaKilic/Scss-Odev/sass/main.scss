@@ -1,0 +1,331 @@
+@use "./partials/base";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  line-height: 1.7;
+  color: base.$text-color;
+  font-weight: 400;
+  font-size: 1rem;
+  font-family: base.$font-family-sans-serif;
+  font-style: normal;
+}
+section {
+  padding: 2.5em 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.d-flex {
+  display: flex;
+  gap: 10px;
+}
+.flex-column {
+  flex-direction: column;
+}
+.align-center {
+  align-items: center;
+}
+.justify-center {
+  justify-content: center;
+}
+.justify-start {
+  justify-content: flex-start;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.align-start {
+  align-items: start;
+}
+.grid {
+  display: grid;
+  gap: 20px;
+}
+.grid-col-1 {
+  grid-template-columns: 1fr;
+}
+.grid-col-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+.grid-col-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+.grid-col-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+.grid-col-5 {
+  grid-template-columns: repeat(5, 1fr);
+}
+.grid-col-6 {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.main-heading {
+  font-size: 32px;
+  font-weight: 700;
+}
+.sub-heading {
+  font-size: 18px;
+}
+button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.1s ease-in;
+}
+.btn-primary {
+  @include base.btnFunction(
+    base.$primary-color,
+    0.25rem,
+    10px 30px,
+    base.$white-text-color,
+    1rem,
+    1rem
+  );
+  &:hover {
+    @include base.hover-effect(base.$white-text-color, base.$dark-primary);
+  }
+}
+.btn-secondary {
+  @extend .btn-primary;
+  background-color: base.$badge;
+  color: base.$text-color;
+  &:hover {
+    @include base.hover-effect(base.$white-text-color, base.$black-color);
+  }
+}
+img {
+  width: 100%;
+  height: auto;
+}
+a {
+  text-decoration: none;
+  color: base.$primary-color;
+}
+.primary-color {
+  color: base.$primary-color;
+}
+.badge {
+  font-size: 11px;
+  display: inline-block;
+  padding: 5px 20px;
+  background: base.$badge;
+  border-radius: 30px;
+  color: base.$black-color;
+  font-weight: bold;
+}
+.text-muted {
+  font-size: 0.85rem;
+  color: base.$muted-text-color;
+}
+.border-primary {
+  position: relative;
+  margin-bottom: 30px;
+  p {
+    margin-bottom: 1rem;
+  }
+}
+.border-primary:after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  width: 80px;
+  height: 3px;
+  background: #2f89fc;
+}
+.card {
+  overflow: hidden;
+  box-shadow: 0 2px 20px -2px rgba(0, 0, 0, 0.1);
+  border-radius: 7px;
+  background-color: base.$main-bg-color;
+  h3 {
+    font-size: 1rem;
+  }
+  p,
+  .small-text {
+    font-size: 0.8rem;
+  }
+  .card-image {
+    object-fit: cover;
+    overflow: hidden;
+    gap: 3px;
+  }
+  .card-image img {
+    min-width: 300px;
+  }
+  .icon {
+    max-width: 20px;
+  }
+  .card-content {
+    padding: 20px;
+  }
+  .card-content > div,
+  .card-content > footer {
+    width: 100%;
+  }
+  .fav {
+    position: relative;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: inline-block;
+    background: rgba(0, 0, 0, 0.03);
+    transition: 0.3s all ease;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    &:hover {
+      background-color: red;
+      svg {
+        fill: white;
+      }
+    }
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 20px;
+      height: 20px;
+      fill: base.$primary-color;
+      color: #2f89fc;
+    }
+  }
+  footer {
+    gap: 3px;
+    & .icon {
+      color: #f89d13;
+      fill: #f89d13;
+    }
+  }
+}
+
+.blog {
+  background-color: base.$secondary-bg-color;
+  .card {
+    background-color: transparent;
+    box-shadow: none;
+  }
+  .card-image img {
+    border-radius: 7px;
+  }
+}
+
+.carousel {
+  padding: 10px;
+  display: flex; /* Kartları yatayda sıralar */
+  overflow-x: auto; /* Yatayda kaydırmayı etkinleştirir */
+  overflow-y: hidden; /* Dikey taşmayı gizler */
+  scroll-snap-type: x mandatory; /* Kartları kaydırırken snap (kilitlenme) efekti ekler */
+  gap: 32px;
+
+  &::-webkit-scrollbar {
+    height: 0px; /* Kaydırma çubuğu yüksekliği */
+  }
+  .carousel-item {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+  }
+}
+
+@media (min-width: base.$breakpoint-sm) {
+  .container {
+    max-width: 540px;
+  }
+  .grid-col-1-sm {
+    grid-template-columns: 1fr;
+  }
+  .grid-col-2-sm {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-col-3-sm {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .carousel-item {
+    width: calc(100%);
+  }
+}
+@media (min-width: base.$breakpoint-md) {
+  .container {
+    max-width: 720px;
+  }
+  section {
+    padding: 5em 0;
+  }
+  .grid-col-1-md {
+    grid-template-columns: 1fr;
+  }
+  .grid-col-2-md {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-col-3-md {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .grid-col-4-md {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .grid-col-5-md {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .grid-col-6-md {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .carousel-item {
+    width: calc(100% / 2);
+  }
+}
+@media (min-width: base.$breakpoint-lg) {
+  .container {
+    max-width: 960px;
+  }
+  .grid-col-1-lg {
+    grid-template-columns: 1fr;
+  }
+  .grid-col-2-lg {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-col-3-lg {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .grid-col-4-lg {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .grid-col-5-lg {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .grid-col-6-lg {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .carousel-item {
+    width: calc(100% / 3);
+  }
+}
+@media (min-width: base.$breakpoint-xl) {
+  .container {
+    max-width: 1140px;
+  }
+  .grid-col-3-xl {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .grid-col-4-xl {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .grid-col-5-xl {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .grid-col-6-xl {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .carousel-item {
+    width: calc(100% / 4);
+  }
+}

@@ -1,0 +1,359 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.7;
+  color: #4d4d4d;
+  font-weight: 400;
+  font-size: 1rem;
+  font-family: "Nanum Gothic", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-style: normal;
+}
+
+section {
+  padding: 2.5em 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.d-flex {
+  display: flex;
+  gap: 10px;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.align-start {
+  align-items: start;
+}
+
+.grid {
+  display: grid;
+  gap: 20px;
+}
+
+.grid-col-1 {
+  grid-template-columns: 1fr;
+}
+
+.grid-col-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-col-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-col-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.grid-col-5 {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.grid-col-6 {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.main-heading {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.sub-heading {
+  font-size: 18px;
+}
+
+button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.1s ease-in;
+}
+
+.btn-primary, .btn-secondary {
+  background-color: #0874fa;
+  border-radius: 0.25rem;
+  padding: 10px 30px;
+  color: white;
+  font-size: 1rem;
+  font-weight: 1rem;
+}
+.btn-primary:hover, .btn-secondary:hover {
+  background-color: #095fc9;
+  color: white;
+}
+
+.btn-secondary {
+  background-color: #e9ecef;
+  color: #4d4d4d;
+}
+.btn-secondary:hover {
+  background-color: black;
+  color: white;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: #0874fa;
+}
+
+.primary-color {
+  color: #0874fa;
+}
+
+.badge {
+  font-size: 11px;
+  display: inline-block;
+  padding: 5px 20px;
+  background: #e9ecef;
+  border-radius: 30px;
+  color: black;
+  font-weight: bold;
+}
+
+.text-muted {
+  font-size: 0.85rem;
+  color: #b3b3b3;
+}
+
+.border-primary {
+  position: relative;
+  margin-bottom: 30px;
+}
+.border-primary p {
+  margin-bottom: 1rem;
+}
+
+.border-primary:after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  width: 80px;
+  height: 3px;
+  background: #2f89fc;
+}
+
+.card {
+  overflow: hidden;
+  box-shadow: 0 2px 20px -2px rgba(0, 0, 0, 0.1);
+  border-radius: 7px;
+  background-color: white;
+}
+.card h3 {
+  font-size: 1rem;
+}
+.card p,
+.card .small-text {
+  font-size: 0.8rem;
+}
+.card .card-image {
+  object-fit: cover;
+  overflow: hidden;
+  gap: 3px;
+}
+.card .card-image img {
+  min-width: 300px;
+}
+.card .icon {
+  max-width: 20px;
+}
+.card .card-content {
+  padding: 20px;
+}
+.card .card-content > div,
+.card .card-content > footer {
+  width: 100%;
+}
+.card .fav {
+  position: relative;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.03);
+  transition: 0.3s all ease;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.card .fav:hover {
+  background-color: red;
+}
+.card .fav:hover svg {
+  fill: white;
+}
+.card .fav svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  fill: #0874fa;
+  color: #2f89fc;
+}
+.card footer {
+  gap: 3px;
+}
+.card footer .icon {
+  color: #f89d13;
+  fill: #f89d13;
+}
+
+.blog {
+  background-color: #f8f9fa;
+}
+.blog .card {
+  background-color: transparent;
+  box-shadow: none;
+}
+.blog .card-image img {
+  border-radius: 7px;
+}
+
+.carousel {
+  padding: 10px;
+  display: flex; /* Kartları yatayda sıralar */
+  overflow-x: auto; /* Yatayda kaydırmayı etkinleştirir */
+  overflow-y: hidden; /* Dikey taşmayı gizler */
+  scroll-snap-type: x mandatory; /* Kartları kaydırırken snap (kilitlenme) efekti ekler */
+  gap: 32px;
+}
+.carousel::-webkit-scrollbar {
+  height: 0px; /* Kaydırma çubuğu yüksekliği */
+}
+.carousel .carousel-item {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+  .grid-col-1-sm {
+    grid-template-columns: 1fr;
+  }
+  .grid-col-2-sm {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-col-3-sm {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .carousel-item {
+    width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+  section {
+    padding: 5em 0;
+  }
+  .grid-col-1-md {
+    grid-template-columns: 1fr;
+  }
+  .grid-col-2-md {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-col-3-md {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .grid-col-4-md {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .grid-col-5-md {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .grid-col-6-md {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .carousel-item {
+    width: 50%;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+  .grid-col-1-lg {
+    grid-template-columns: 1fr;
+  }
+  .grid-col-2-lg {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-col-3-lg {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .grid-col-4-lg {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .grid-col-5-lg {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .grid-col-6-lg {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .carousel-item {
+    width: 33.3333333333%;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+  .grid-col-3-xl {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .grid-col-4-xl {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .grid-col-5-xl {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .grid-col-6-xl {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .carousel-item {
+    width: 25%;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

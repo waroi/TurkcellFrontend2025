@@ -1,0 +1,283 @@
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
+
+$white: #fff;
+$gray: #f8f9fa;
+$dark-gray: #c2d6f0;
+$blue: #2f89fc;
+$dark-blue: #046df4;
+$yellow: #f89d13;
+$gray-star: #6c757d;
+$gray-text: #4d4d4d;
+$black: #000;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nanum Gothic", sans-serif;
+  line-height: 1.7;
+}
+
+h1,
+h2 {
+  line-height: 1.2;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+p {
+  font-size: 16px;
+}
+
+input,
+select {
+  font-family: inherit;
+  line-height: inherit;
+  font-size: inherit;
+  color: inherit;
+  padding: 6px 12px;
+  color: $gray-text;
+  outline: none;
+  border: none;
+}
+
+@mixin flex() {
+  display: flex;
+  align-items: center;
+}
+
+@mixin button($padding) {
+  background-color: $blue;
+  padding: $padding;
+  border-radius: 4px;
+}
+
+.overlay {
+  height: 100%;
+}
+
+.container {
+  margin: auto;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+@keyframes move {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@mixin append-move($delay) {
+  transform: translateY(100px);
+  opacity: 0;
+  animation: move 0.8s cubic-bezier(0, 0, 0, 1) forwards $delay;
+}
+
+header {
+  height: 100vh;
+  background-image: url("https://preview.colorlib.com/theme/directoryads/images/hero_2.jpg.webp");
+  background-size: cover;
+  background-position: 50% -25px;
+  background-repeat: no-repeat;
+  color: $white;
+
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.3);
+    @include flex();
+    justify-content: center;
+
+    .container {
+      width: 100%;
+
+      h2 {
+        text-align: center;
+        font-size: 48px;
+        font-weight: 400;
+        margin-bottom: 8px;
+        @include append-move(0s);
+      }
+
+      p:first-of-type {
+        font-size: 19px;
+        text-align: center;
+        margin-bottom: 48px;
+        @include append-move(0.1s);
+      }
+
+      form {
+        background-color: #ffffffcc;
+        padding: 24px;
+        border-radius: 4px;
+        font-size: 16px;
+        display: grid;
+        grid-template-columns: 4fr 3fr 3fr 2fr;
+        column-gap: 30px;
+        line-height: 1.5;
+        margin-bottom: 16px;
+        @include append-move(0.2s);
+
+        .input-icon {
+          position: relative;
+
+          i {
+            position: absolute;
+            right: 12px;
+            color: $gray-text;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+        }
+
+        input,
+        select {
+          width: 100%;
+          border-radius: 4px;
+          height: 42px;
+        }
+
+        input.button {
+          background-color: $blue;
+          transition: background-color 0.2s;
+          color: $white;
+          cursor: pointer;
+
+          &:hover {
+            background-color: $dark-blue;
+          }
+        }
+      }
+
+      p:last-of-type {
+        @include append-move(0.3s);
+
+        span {
+          background-color: #ffffff33;
+          padding: 6px 10px;
+          border: 1px solid $white;
+          border-radius: 4px;
+          font-size: 13px;
+          margin-left: 3px;
+        }
+      }
+    }
+  }
+
+  nav {
+    @include flex();
+    padding: 0 24px;
+    position: absolute;
+    width: 100%;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    h1 {
+      text-transform: uppercase;
+      font-weight: 800;
+      font-size: 20px;
+    }
+
+    ul {
+      margin-left: auto;
+      @include flex();
+      font-size: 15px;
+
+      a {
+        padding: 20px 10px;
+        display: inline-block;
+
+        span {
+          border-left: 1px solid $white;
+          padding-right: 24px;
+        }
+
+        i {
+          font-size: 10px;
+          transform: translateY(-2px);
+        }
+      }
+
+      .log-in {
+        margin-left: 64px;
+      }
+
+      .register a {
+        @include button(6px 20px);
+        margin-left: 42px;
+      }
+
+      .about {
+        position: relative;
+
+        div {
+          position: absolute;
+          width: 200px;
+          background-color: $white;
+          color: $gray-text;
+          border-top: 2px solid $dark-blue;
+          opacity: 0;
+          transform: translateY(25px);
+          transition: opacity 0.2s, transform 0.2s, clip-path 0s 0.2s;
+
+          clip-path: inset(100%);
+
+          a {
+            display: block;
+            padding: 9px 20px;
+            transition: background-color 0.2s;
+
+            &:hover {
+              background-color: #f4f5f9;
+            }
+          }
+        }
+
+        &:hover div {
+          opacity: 1;
+          transform: translateY(0);
+          clip-path: inset(0%);
+          transition: opacity 0.2s, transform 0.2s;
+        }
+      }
+    }
+  }
+}

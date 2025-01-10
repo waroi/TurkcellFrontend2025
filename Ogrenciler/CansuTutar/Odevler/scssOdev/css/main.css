@@ -486,5 +486,220 @@ ul {
     grid-template-columns: repeat(6, 1fr);
   }
 }
+/* Cansu */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background: #f4f4f4;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.blog-section {
+  padding: 50px 20px;
+  text-align: center;
+  background: #f4f5f9;
+}
+.blog-section .blog-header {
+  margin-bottom: 30px;
+}
+.blog-section .blog-title {
+  font-size: 2.5rem;
+  color: #0d6efd;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.blog-section .blog-subtitle {
+  font-size: 1.1rem;
+  color: #6c757d;
+  font-weight: normal;
+  margin-bottom: 30px;
+}
+.blog-section .blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.blog-section .blog-entry {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0;
+  background: none;
+  border: none;
+}
+.blog-section .blog-entry .blog-content {
+  text-align: left;
+  width: 100%;
+}
+.blog-section .blog-entry .blog-heading {
+  font-size: 1.5rem;
+  color: #212529;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.blog-section .blog-entry .blog-meta {
+  font-size: 0.9rem;
+  color: #6c757d;
+  font-weight: normal;
+}
+.blog-section .blog-entry .blog-link {
+  color: #0d6efd;
+  font-weight: 500;
+}
+.blog-section .blog-entry .blog-description {
+  font-size: 1rem;
+  color: #495057;
+  font-weight: normal;
+  line-height: 1.6;
+}
+
+.btn-view-all {
+    background-color: #0d6efd;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+    border-radius: 5px;
+  }
+
+
+.newsletter {
+  background: #007bff;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+.newsletter .newsletter-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.newsletter .newsletter-text h3 {
+  font-size: 1.5rem;
+  color: #fff;
+  font-weight: normal;
+}
+.newsletter .newsletter-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.newsletter .newsletter-form input {
+  padding: 10px;
+  border: none;
+  border-bottom: 2px solid #fff;
+  background: transparent;
+  color: #fff;
+}
+.newsletter .newsletter-form input::placeholder {
+  color: #ccc;
+}
+.newsletter .newsletter-form button {
+  padding: 10px 20px;
+  background: #fff;
+  color: #007bff;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.newsletter .newsletter-form button:hover {
+  background: #f0f0f0;
+}
+
+.footer {
+  background: #222;
+  padding: 40px 20px;
+  color: #ccc;
+}
+.footer .footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.footer .footer-container h4 {
+  font-size: 1.2rem;
+  color: #fff;
+  font-weight: normal;
+}
+.footer .footer-container p {
+  font-size: 0.9rem;
+  color: #ccc;
+  font-weight: normal;
+  line-height: 1.6;
+}
+.footer .footer-container ul {
+  list-style: none;
+}
+.footer .footer-container ul li {
+  margin-bottom: 10px;
+}
+.footer .footer-container ul li a {
+  font-size: 0.9rem;
+  transition: color 0.3s;
+}
+.footer .footer-container ul li a:hover {
+  color: #fff;
+}
+.footer .footer-container .footer-follow {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0;
+}
+.footer .footer-container .footer-follow .footer-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+.footer .footer-container .footer-follow .footer-icons a {
+  font-size: 1.2rem;
+  color: #bbb;
+  transition: color 0.3s;
+}
+.footer .footer-container .footer-follow .footer-icons a:hover {
+  color: #fff;
+}
+.footer .footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.8rem;
+  color: #888;
+}
+.footer .footer-bottom span {
+  color: red;
+}
+
+@media (max-width: 768px) {
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+  .newsletter-form {
+    flex-direction: column;
+  }
+}
 
 /*# sourceMappingURL=main.css.map */

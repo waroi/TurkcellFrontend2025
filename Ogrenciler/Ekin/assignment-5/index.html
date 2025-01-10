@@ -3,16 +3,198 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SCSS</title>
-    <link rel="stylesheet" href="./css/main.css" />
+    <title>DirectoryAds</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
-    <div class="container">
-      <div class="box1">1</div>
-      <div class="box2">2</div>
-      <div class="box3">3</div>
-      <div class="box4 deneme">4 de</div>
-      <div class="box5">5</div>
-    </div>
+    <header>
+      <div class="overlay">
+        <nav class="container">
+          <h1>DirectoryAds</h1>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Ads</a></li>
+            <li class="about">
+              <a href="#">About <i class="fa-solid fa-chevron-down"></i></a>
+              <div>
+                <a href="#">The Company</a>
+                <a href="#">The Leadership</a>
+                <a href="#">Philosophy</a>
+                <a href="#">Careers</a>
+              </div>
+            </li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact</a></li>
+            <li class="log-in">
+              <a href="#"><span></span> Log In</a>
+            </li>
+            <li class="register"><a href="#">Register</a></li>
+          </ul>
+        </nav>
+        <div class="container">
+          <h2>Welcome To DirectoryAds</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          <form>
+            <input type="text" placeholder="What are you looking for?" />
+            <div class="input-icon">
+              <input type="text" placeholder="Location" /><i
+                class="fa-solid fa-location-dot"
+              ></i>
+            </div>
+            <select>
+              <option selected>All Categories</option>
+              <option>Real Estate</option>
+              <option>Books & Magazines</option>
+              <option>Furniture</option>
+              <option>Electronics</option>
+              <option>Cars & Vehicles</option>
+              <option>Others</option>
+            </select>
+            <input class="button" type="submit" value="Search" />
+          </form>
+          <p>
+            Trending Search: <span>iPhone</span><span>Cars</span
+            ><span>Flowers</span><span>House</span>
+          </p>
+        </div>
+      </div>
+    </header>
+    <section>
+      <div class="container">
+        <h3>Featured Ads</h3>
+        <div class="container">
+          <div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+          </div>
+        </div>
+        <div class="buttons">
+          <i class="fa-solid fa-chevron-left"></i>
+          <i class="fa-solid fa-chevron-right"></i>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <h3>Categories</h3>
+        <p>Lorem Ipsum Dolor Sit Amet</p>
+        <hr />
+        <div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <h3>Trending Today</h3>
+        <div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <h3>Testimonials</h3>
+        <div>
+          <div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <i class="fa-solid fa-chevron-left"></i>
+          <i class="fa-solid fa-chevron-right"></i>
+          <div>
+            <i class="fa-solid fa-circle"></i>
+            <i class="fa-solid fa-circle"></i>
+            <i class="fa-solid fa-circle"></i>
+            <i class="fa-solid fa-circle"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <h3>Our Blog</h3>
+        <p>See Our Daily News & Updates</p>
+        <hr />
+        <div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div>
+          <a class="button" href="#">View All Posts</a>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <div>
+          <h3>Newsletter</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+        <div>
+          <input type="text" placeholder="Email" />
+          <a class="button" href="#">Subscribe</a>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div>
+          <input type="text" placeholder="Search Products..." />
+          <a href="#" class="button">Search</a>
+        </div>
+      </div>
+      <div class="container">
+        <hr />
+        <p>
+          Copyright ©2025 All rights reserved | This template is made with
+          <i class="fa-solid fa-heart"></i> by HME
+        </p>
+      </div>
+    </footer>
+    <script>
+      let header = document.querySelector("header");
+      window.addEventListener(
+        "scroll",
+        () => (header.style.backgroundPositionY = `${scrollY / 2 - 25}px`)
+      );
+    </script>
   </body>
 </html>

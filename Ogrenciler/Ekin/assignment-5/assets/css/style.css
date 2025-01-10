@@ -1,0 +1,238 @@
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nanum Gothic", sans-serif;
+  line-height: 1.7;
+}
+
+h1,
+h2 {
+  line-height: 1.2;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+p {
+  font-size: 16px;
+}
+
+input,
+select {
+  font-family: inherit;
+  line-height: inherit;
+  font-size: inherit;
+  color: inherit;
+  padding: 6px 12px;
+  color: #4d4d4d;
+  outline: none;
+  border: none;
+}
+
+.overlay {
+  height: 100%;
+}
+
+.container {
+  margin: auto;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+@keyframes move {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+header {
+  height: 100vh;
+  background-image: url("https://preview.colorlib.com/theme/directoryads/images/hero_2.jpg.webp");
+  background-size: cover;
+  background-position: 50% -25px;
+  background-repeat: no-repeat;
+  color: #fff;
+}
+header .overlay {
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header .overlay .container {
+  width: 100%;
+}
+header .overlay .container h2 {
+  text-align: center;
+  font-size: 48px;
+  font-weight: 400;
+  margin-bottom: 8px;
+  transform: translateY(100px);
+  opacity: 0;
+  animation: move 0.8s cubic-bezier(0, 0, 0, 1) forwards 0s;
+}
+header .overlay .container p:first-of-type {
+  font-size: 19px;
+  text-align: center;
+  margin-bottom: 48px;
+  transform: translateY(100px);
+  opacity: 0;
+  animation: move 0.8s cubic-bezier(0, 0, 0, 1) forwards 0.1s;
+}
+header .overlay .container form {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 24px;
+  border-radius: 4px;
+  font-size: 16px;
+  display: grid;
+  grid-template-columns: 4fr 3fr 3fr 2fr;
+  column-gap: 30px;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  transform: translateY(100px);
+  opacity: 0;
+  animation: move 0.8s cubic-bezier(0, 0, 0, 1) forwards 0.2s;
+}
+header .overlay .container form .input-icon {
+  position: relative;
+}
+header .overlay .container form .input-icon i {
+  position: absolute;
+  right: 12px;
+  color: #4d4d4d;
+  top: 50%;
+  transform: translateY(-50%);
+}
+header .overlay .container form input,
+header .overlay .container form select {
+  width: 100%;
+  border-radius: 4px;
+  height: 42px;
+}
+header .overlay .container form input.button {
+  background-color: #2f89fc;
+  transition: background-color 0.2s;
+  color: #fff;
+  cursor: pointer;
+}
+header .overlay .container form input.button:hover {
+  background-color: #046df4;
+}
+header .overlay .container p:last-of-type {
+  transform: translateY(100px);
+  opacity: 0;
+  animation: move 0.8s cubic-bezier(0, 0, 0, 1) forwards 0.3s;
+}
+header .overlay .container p:last-of-type span {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 6px 10px;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  font-size: 13px;
+  margin-left: 3px;
+}
+header nav {
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  position: absolute;
+  width: 100%;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+header nav h1 {
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 20px;
+}
+header nav ul {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+}
+header nav ul a {
+  padding: 20px 10px;
+  display: inline-block;
+}
+header nav ul a span {
+  border-left: 1px solid #fff;
+  padding-right: 24px;
+}
+header nav ul a i {
+  font-size: 10px;
+  transform: translateY(-2px);
+}
+header nav ul .log-in {
+  margin-left: 64px;
+}
+header nav ul .register a {
+  background-color: #2f89fc;
+  padding: 6px 20px;
+  border-radius: 4px;
+  margin-left: 42px;
+}
+header nav ul .about {
+  position: relative;
+}
+header nav ul .about div {
+  position: absolute;
+  width: 200px;
+  background-color: #fff;
+  color: #4d4d4d;
+  border-top: 2px solid #046df4;
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.2s, transform 0.2s, clip-path 0s 0.2s;
+  clip-path: inset(100%);
+}
+header nav ul .about div a {
+  display: block;
+  padding: 9px 20px;
+  transition: background-color 0.2s;
+}
+header nav ul .about div a:hover {
+  background-color: #f4f5f9;
+}
+header nav ul .about:hover div {
+  opacity: 1;
+  transform: translateY(0);
+  clip-path: inset(0%);
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+/*# sourceMappingURL=style.css.map */
