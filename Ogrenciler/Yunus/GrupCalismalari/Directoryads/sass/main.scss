@@ -1,6 +1,7 @@
 // Variables
 $container-width: 65%;
 $center: 0 auto;
+$main-color: #2F89FC;
 
 $xxl: 1400px;
 $xl: 1200px;
@@ -28,6 +29,12 @@ $sm: 576px;
     border-radius: 20px;
     margin-bottom: 30px;
     box-shadow: 0 2px 20px -2px rgba(0, 0, 0, 0.1);
+}
+
+@mixin responsive-grid($repeat, $w, $fr) {
+    @media screen and (max-width: $w) {
+        grid-template-columns: repeat($repeat, $fr);
+    }
 }
 
 header,
@@ -128,10 +135,9 @@ header {
                 margin-left: 50px;
                 padding: 12px 20px;
                 border-radius: 0.25rem;
-                background-color: #2f89fc;
+                background-color: $main-color;
             }
         }
-
 
         @media screen and (max-width: $xl) {
             display: none;
@@ -152,7 +158,7 @@ header {
         text-decoration: none;
     }
 
-    @media screen and (max-width: $lg) {
+    @media screen and (max-width: $xl) {
         .hamburger {
             display: block;
         }
@@ -161,12 +167,18 @@ header {
 
 // --> HERO SECTION
 .hero {
+
     max-width: $container-width;
     margin: $center;
     height: calc(100vh);
     justify-content: center;
     display: flex;
     flex-direction: column;
+
+    .hero-animate {
+        animation: moveeUp .5s ease-out;
+        position: relative;
+    }
 
     @media screen and (max-width: $xxl) {
         max-width: 100%;
@@ -247,12 +259,8 @@ header {
         @media screen and (max-width: $xl) {
             flex-direction: column;
             gap: 20px;
-
         }
-
-
     }
-
 
     .hero-trending {
         display: flex;
@@ -282,7 +290,7 @@ header {
 
             &:hover {
                 background: #fff;
-                color: #2f89fc;
+                color: $main-color;
             }
         }
     }
@@ -308,11 +316,7 @@ header {
         margin-top: 20px;
 
         .featured-card {
-            display: flex;
-            flex-direction: column;
-            border-radius: 20px;
-            margin-bottom: 30px;
-            box-shadow: 0 2px 20px -2px rgba(0, 0, 0, 0.1);
+            @include card-style();
 
             img {
                 width: 100%;
@@ -358,7 +362,7 @@ header {
                     svg {
                         width: 16px;
                         height: 16px;
-                        fill: #2F89FC;
+                        fill: $main-color;
                     }
 
                     .heart-wrapper {
@@ -381,11 +385,10 @@ header {
                             fill: #fff;
                         }
                     }
-
                 }
 
                 h3 {
-                    color: #2F89FC;
+                    color: $main-color;
                     margin-bottom: 0.5rem;
                     cursor: pointer;
 
@@ -400,21 +403,13 @@ header {
             }
         }
 
+        @include responsive-grid(4, $xl, 33%);
+        @include responsive-grid(4, $md, 50%);
+        @include responsive-grid(4, $sm, 100%);
+
         @media screen and (max-width: $xl) {
-            grid-template-columns: repeat(4, 33%);
             overflow-x: auto;
         }
-
-        @media screen and (max-width: $md) {
-            grid-template-columns: repeat(4, 50%);
-            overflow-x: auto;
-        }
-
-        @media screen and (max-width: $sm) {
-            grid-template-columns: repeat(4, 100%);
-            overflow-x: auto;
-        }
-
 
     }
 
@@ -435,7 +430,7 @@ header {
 
         .left-arrow:hover,
         .right-arrow:hover {
-            fill: #2F89FC;
+            fill: $main-color;
         }
 
     }
@@ -456,7 +451,7 @@ header {
 
             h2 {
                 font-weight: 700;
-                color: #2f89fc;
+                color: $main-color;
                 font-size: 2rem;
                 margin-bottom: 0.5rem;
                 line-height: 1.2;
@@ -475,7 +470,7 @@ header {
                 bottom: 0;
                 width: 80px;
                 height: 3px;
-                background: #2f89fc;
+                background: $main-color;
             }
         }
 
@@ -496,7 +491,7 @@ header {
 
             .icon:hover {
                 border-radius: 10px;
-                background: #2f89fc;
+                background: $main-color;
                 -webkit-box-shadow: 0 5px 30px -5px rgba(47, 137, 252, 0.5);
                 box-shadow: 0 5px 30px -5px rgba(47, 137, 252, 0.5);
                 z-index: 1;
@@ -539,20 +534,10 @@ header {
                 font-weight: bold;
             }
 
-            @media screen and (max-width: $xl) {
-                grid-template-columns: repeat(3, 1fr);
+            @include responsive-grid(3, $xl, 1fr);
+            @include responsive-grid(2, $md, 1fr);
+            @include responsive-grid(1, $sm, 1fr);
 
-            }
-
-            @media screen and (max-width: $md) {
-                grid-template-columns: repeat(2, 1fr);
-
-            }
-
-            @media screen and (max-width: $sm) {
-                grid-template-columns: repeat(1, 1fr);
-
-            }
         }
     }
 
@@ -642,7 +627,7 @@ header {
                     svg {
                         width: 16px;
                         height: 16px;
-                        fill: #2F89FC;
+                        fill: $main-color;
                     }
 
                     .heart-wrapper {
@@ -670,7 +655,7 @@ header {
                 }
 
                 h3 {
-                    color: #2F89FC;
+                    color: $main-color;
                     margin-bottom: 0.5rem;
                     cursor: pointer;
                     transition: .3s all ease;
@@ -720,14 +705,12 @@ header {
     @media screen and (max-width: $sm) {
         padding: 0;
     }
-
 }
 
 // --> BLOG SECTION
 .our-blog {
     padding-top: 75px;
     background-color: #F8F9FA;
-
 
     .title {
         text-align: center;
@@ -736,7 +719,7 @@ header {
 
         h2 {
             font-weight: 700;
-            color: #2f89fc;
+            color: $main-color;
             font-size: 2rem;
             margin-bottom: 0.5rem;
             line-height: 1.2;
@@ -755,7 +738,7 @@ header {
             bottom: 0;
             width: 80px;
             height: 3px;
-            background: #2f89fc;
+            background: $main-color;
         }
     }
 
@@ -789,7 +772,7 @@ header {
             }
 
             .meta-link {
-                color: #2f89fc;
+                color: $main-color;
                 transition: .3s all ease;
 
                 &:hover {
@@ -824,8 +807,8 @@ header {
             color: #fff;
             padding: 0.7rem 1.4rem;
             border-radius: 0.25rem;
-            background-color: #2f89fc;
-            border-color: #2f89fc;
+            background-color: $main-color;
+            border-color: $main-color;
             font-weight: 400;
             text-align: center;
 
@@ -840,7 +823,7 @@ header {
 // --> NEWSLETTER SECTION
 .newsletter {
     margin-top: 4rem;
-    background-color: #2f89fc;
+    background-color: $main-color;
 
     .news-main {
         display: flex;
@@ -936,6 +919,25 @@ header {
             word-spacing: 0.4rem;
             line-height: 2.5rem;
 
+            .points {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+                margin-top: 30px;
+
+                svg {
+                    width: 10px;
+                    height: 10px;
+                    cursor: pointer;
+                    fill: #DEE2E6;
+                }
+
+                svg:first-child {
+                    fill: $main-color;
+                }
+            }
+
             @media screen and (max-width: $md) {
                 font-size: 1.593285rem;
             }
@@ -963,7 +965,7 @@ header {
                     background-color: #000;
 
                     svg {
-                        fill: #2F89FC;
+                        fill: $main-color;
                     }
                 }
             }
@@ -985,7 +987,7 @@ header {
 
         h2 {
             font-weight: 700;
-            color: #2f89fc;
+            color: $main-color;
             font-size: 2rem;
             margin-bottom: 0.5rem;
             line-height: 1.2;
@@ -999,7 +1001,7 @@ header {
             bottom: 1rem;
             width: 80px;
             height: 3px;
-            background: #2f89fc;
+            background: $main-color;
         }
     }
 
@@ -1212,5 +1214,18 @@ footer {
                 }
             }
         }
+    }
+}
+
+
+@keyframes moveeUp {
+    0% {
+        transform: translateY(150px);
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
     }
 }

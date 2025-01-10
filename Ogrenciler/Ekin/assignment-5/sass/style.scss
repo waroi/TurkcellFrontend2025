@@ -74,34 +74,11 @@ select {
 
 .container {
   margin: auto;
+  max-width: 1140px;
 }
 
 .center {
   text-align: center;
-}
-
-@media (min-width: 576px) {
-  .container {
-    max-width: 540px;
-  }
-}
-
-@media (min-width: 768px) {
-  .container {
-    max-width: 720px;
-  }
-}
-
-@media (min-width: 992px) {
-  .container {
-    max-width: 960px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1140px;
-  }
 }
 
 @keyframes move {
@@ -120,6 +97,10 @@ select {
   transform: translateY(100px);
   opacity: 0;
   animation: move 0.8s cubic-bezier(0, 0, 0, 1) forwards $delay;
+}
+
+@mixin testimonials-circle($delay) {
+  animation: testimonials-circle-blink 16s infinite $delay;
 }
 
 header {
@@ -671,8 +652,14 @@ footer {
 }
 
 .featured-ads {
+  .featured-ads-cards-cover {
+    overflow: hidden;
+  }
+
   .featured-ads-cards {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    animation: featured-ads 24s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    width: 400%;
     padding: 0 15px;
     margin-top: 24px;
 
@@ -714,8 +701,14 @@ footer {
 .testimonials-cover {
   margin-top: 40px;
   position: relative;
+  overflow: hidden;
 
   .testimonials-slider {
+    width: 500%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    animation: testimonials 16s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+
     & > div {
       width: 100%;
       @include flex();
@@ -776,15 +769,236 @@ footer {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
+    color: #dee2e6;
 
     i {
       font-size: 10px;
-      color: #dee2e6;
       margin-right: 4px;
 
-      &:last-of-type {
+      &:nth-of-type(1) {
+        @include testimonials-circle(0s);
+      }
+
+      &:nth-of-type(2) {
+        @include testimonials-circle(4s);
+      }
+
+      &:nth-of-type(3) {
+        @include testimonials-circle(8s);
+      }
+
+      &:nth-of-type(4) {
+        @include testimonials-circle(12s);
         margin-right: 0;
       }
     }
+  }
+}
+
+@keyframes featured-ads {
+  0% {
+    transform: translateX(0);
+  }
+  4.16% {
+    transform: translateX(0);
+  }
+  8.33% {
+    transform: translateX(-6.25%);
+  }
+  12.5% {
+    transform: translateX(-6.25%);
+  }
+  16.66% {
+    transform: translateX(-12.5%);
+  }
+  20.83% {
+    transform: translateX(-12.5%);
+  }
+  25% {
+    transform: translateX(-18.75%);
+  }
+  29.16% {
+    transform: translateX(-18.75%);
+  }
+  33.33% {
+    transform: translateX(-25%);
+  }
+  37.5% {
+    transform: translateX(-25%);
+  }
+  41.66% {
+    transform: translateX(-31.25%);
+  }
+  45.83% {
+    transform: translateX(-31.25%);
+  }
+  50% {
+    transform: translateX(-37.5%);
+  }
+  54.16% {
+    transform: translateX(-37.5%);
+  }
+  58.33% {
+    transform: translateX(-43.75%);
+  }
+  62.5% {
+    transform: translateX(-43.75%);
+  }
+  66.66% {
+    transform: translateX(-50%);
+  }
+  70.83% {
+    transform: translateX(-50%);
+  }
+  75% {
+    transform: translateX(-56.25%);
+  }
+  79.16% {
+    transform: translateX(-56.25%);
+  }
+  83.33% {
+    transform: translateX(-62.5%);
+  }
+  87.5% {
+    transform: translateX(-62.5%);
+  }
+  91.66% {
+    transform: translateX(-68.75%);
+  }
+  95.83% {
+    transform: translateX(-68.75%);
+  }
+  100% {
+    transform: translateX(-75%);
+  }
+}
+
+@keyframes testimonials {
+  0% {
+    transform: translateX(0);
+  }
+  18.75% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-20%);
+  }
+  43.75% {
+    transform: translateX(-20%);
+  }
+  50% {
+    transform: translateX(-40%);
+  }
+  68.75% {
+    transform: translateX(-40%);
+  }
+  75% {
+    transform: translateX(-60%);
+  }
+  93.75% {
+    transform: translateX(-60%);
+  }
+  100% {
+    transform: translateX(-80%);
+  }
+}
+
+@keyframes testimonials-circle-blink {
+  0% {
+    color: $blue;
+  }
+  18.75% {
+    color: $blue;
+  }
+  25% {
+    color: #dee2e6;
+  }
+  93.75% {
+    color: #dee2e6;
+  }
+  100% {
+    color: $blue;
+  }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    max-width: 960px;
+  }
+
+  header .overlay .container form {
+    grid-template-columns: 1fr;
+    row-gap: 30px;
+  }
+
+  .featured-ads .featured-ads-cards {
+    width: 800%;
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    max-width: 720px;
+  }
+
+  .popular-categories-cards {
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 20px;
+  }
+
+  .trending-today-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonials-cover blockquote {
+    padding: 0 !important;
+  }
+
+  .testimonials-cover .fa-chevron-left,
+  .testimonials-cover .fa-chevron-right {
+    display: none;
+  }
+
+  .our-blog .our-blog-cards {
+    grid-template-columns: 1fr;
+    row-gap: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 540px;
+  }
+
+  .featured-ads .featured-ads-cards {
+    width: 1600%;
+  }
+
+  .popular-categories-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .newsletter .container {
+    grid-template-columns: 1fr;
+    row-gap: 25px;
+  }
+
+  footer .container:first-of-type {
+    grid-template-columns: 1fr;
+    row-gap: 10px;
+
+    .social-media {
+      justify-content: flex-start;
+
+      a:not(:last-of-type) {
+        margin-right: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .popular-categories-cards {
+    grid-template-columns: 1fr;
   }
 }

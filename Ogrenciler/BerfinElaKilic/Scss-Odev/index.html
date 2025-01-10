@@ -11,9 +11,13 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/main.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <header class="header ">
+    <header class="header">
       <div class="headerOverlay d-flex justify-center align-start">
         <div class="container">
           <div class="topBar d-flex">
@@ -25,7 +29,7 @@
                 <li class=""><a href="#">About</a></li>
                 <li class=""><a href="#">Blog</a></li>
                 <li class=""><a href="#">Contact</a></li>
-                <li class=""><a href="#">Log In</a> </li>
+                <li class=""><a href="#">Log In</a></li>
               </ul>
               <button class="btn-primary">Register</button>
             </nav>
@@ -35,21 +39,23 @@
               <h2>Welcome To DirectoryAds</h2>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
               <div class="searchBar grid-col-1-xl">
-                <input type="text" placeholder="    What are you looking for?">
-                <input type="text" placeholder="    Location">
-                <input type="text" placeholder="    All categories">
+                <input
+                  type="text"
+                  placeholder="    What are you looking for?"
+                />
+                <input type="text" placeholder="    Location" />
+                <input type="text" placeholder="    All categories" />
                 <button class="btn-primary">Search</button>
               </div>
             </div>
             <div class="trend">
-              <p>Trending Search:  </p>
+              <p>Trending Search:</p>
               <div class="buttonWrapper">
                 <button>iPhone</button>
                 <button>Cars</button>
                 <button>Flowers</button>
                 <button>House</button>
               </div>
-
             </div>
           </div>
         </div>
@@ -556,12 +562,48 @@
           <div
             class="grid grid-col-1 grid-col-3-lg grid-col-2-md grid-col-6-xl"
           >
-            <div>hello</div>
-            <div>hello</div>
-            <div>hello</div>
-            <div>hello</div>
-            <div>hello</div>
-            <div>hello</div>
+            <div
+              class="category d-flex justify-center align-center flex-column"
+            >
+              <div><i class="fa-solid fa-car"></i></div>
+              <p>Car & Vehicles</p>
+              <span class="badge">1.921</span>
+            </div>
+            <div
+              class="category d-flex justify-center align-center flex-column"
+            >
+              <div><i class="fa-solid fa-building"></i></div>
+              <p>Furniture</p>
+              <span class="badge">1.921</span>
+            </div>
+            <div
+              class="category d-flex justify-center align-center flex-column"
+            >
+              <div><i class="fa-solid fa-house"></i></div>
+              <p>Real Estate</p>
+              <span class="badge">1.921</span>
+            </div>
+            <div
+              class="category d-flex justify-center align-center flex-column"
+            >
+              <div><i class="fa-solid fa-book-open"></i></div>
+              <p>Books & Magazines</p>
+              <span class="badge">1.921</span>
+            </div>
+            <div
+              class="category d-flex justify-center align-center flex-column"
+            >
+              <div><i class="fa-solid fa-tv"></i></div>
+              <p>Electronics</p>
+              <span class="badge">1.921</span>
+            </div>
+            <div
+              class="category d-flex justify-center align-center flex-column"
+            >
+              <div><i class="fa-solid fa-pizza-slice"></i></div>
+              <p>Other</p>
+              <span class="badge">1.921</span>
+            </div>
           </div>
         </div>
       </section>
@@ -1152,7 +1194,42 @@
         </div>
       </section>
       <!--trends:Hilal-->
-      <section class="testimonial"></section>
+      <section class="testimonials">
+        <div class="container">
+          <div
+            class="border-primary d-flex align-center justify-center flex-column"
+          >
+            <h2 class="main-heading primary-color">Testimonials</h2>
+          </div>
+          <div class="testimonial d-flex align-center justify-between">
+            <div class="icon d-flex justify-center align-center">
+              <i class="fa-solid fa-chevron-left"></i>
+            </div>
+            <div
+              class="testi-content d-flex align-center flex-column justify-center"
+            >
+              <div class="image">
+                <img
+                  src="https://preview.colorlib.com/theme/directoryads/images/person_3.jpg"
+                  alt=""
+                />
+                <p>John Smith</p>
+              </div>
+              <article>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Dignissimos facilis hic ipsum, mollitia nisi tenetur! Officia
+                  voluptatem nisi fuga cumque reiciendis explicabo nemo dolore
+                  ratione iusto. Dicta repudiandae quae, dolorem,
+                </p>
+              </article>
+            </div>
+            <div class="icon d-flex justify-center align-center">
+              <i class="fa-solid fa-chevron-right"></i>
+            </div>
+          </div>
+        </div>
+      </section>
       <!--testimonials:Ela-->
       <section class="blog">
         <div class="container d-flex flex-column align-center">
@@ -1229,11 +1306,78 @@
         </div>
       </section>
       <!--Blog:Hilal-->
+      <section class="news-letter">
+        <div class="container">
+          <div class="news d-flex align-center justify-between">
+            <div class="letter">
+              <h3>Newsletter</h3>
+              <p>Lorem ipsum dolor sit amet consectetur.</p>
+            </div>
+            <div class="input">
+              <form class="d-flex">
+                <input type="text" class="form-control" placeholder="Email" />
+                <input
+                  type="submit"
+                  value="Subscribe"
+                  class="btn btn-secondary"
+                />
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
-    <footer>
+    <footer class="d-flex align-center justify-center flex-column main-footer">
       <!--footer:Ela-->
-      <div class="footer-top"></div>
-      <div class="footer-bottom"></div>
+      <div class="footer-top">
+        <div class="container">
+          <div
+            class="grid grid-col-1-sm grid-col-4-md grid-col-4-lg grid-col-4-xl"
+          >
+            <div class="about">
+              <h4>About</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Voluptate fugit non rerum quaerat consequuntur dicta rem,
+                veritatis delectus voluptas qui.
+              </p>
+            </div>
+            <div class="navigate">
+              <h4>Navigations</h4>
+              <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Testimonials</a></li>
+                <li><a href="#">Contact Us</a></li>
+              </ul>
+            </div>
+            <div class="social">
+              <h4>Follow Us</h4>
+              <a href="#"><i class="fa-brands fa-facebook"></i></a>
+              <a href="#"><i class="fa-brands fa-twitter"></i></a>
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+            <div class="foot-input">
+              <form class="d-flex">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Search Products..."
+                />
+                <input type="submit" value="Search" class="btn btn-primary" />
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="bottom d-flex justify-center align-center">
+            <p>Copyright &copy;2025 Ela&Hilal&Ahmet</p>
+          </div>
+        </div>
+      </div>
     </footer>
   </body>
 </html>

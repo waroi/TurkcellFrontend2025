@@ -239,7 +239,7 @@ $bgGray: #f8f9fa;
           margin-bottom: 20px;
         }
 
-        .star>i:not(:nth-last-child(-n + 2)) {
+        .star > i:not(:nth-last-child(-n + 2)) {
           color: orange;
         }
 
@@ -277,7 +277,7 @@ $bgGray: #f8f9fa;
         }
       }
 
-      .card>*:not(:first-child) {
+      .card > *:not(:first-child) {
         padding: 0 20px;
       }
     }
@@ -333,7 +333,7 @@ $bgGray: #f8f9fa;
           font-size: 13px;
         }
 
-        .star>i:not(:nth-last-child(-n + 2)) {
+        .star > i:not(:nth-last-child(-n + 2)) {
           color: orange;
         }
 
@@ -375,7 +375,7 @@ $bgGray: #f8f9fa;
         }
       }
 
-      .card>*:not(:first-child) {
+      .card > *:not(:first-child) {
         padding: 0 20px;
       }
     }
@@ -642,7 +642,6 @@ $bgGray: #f8f9fa;
     .news-text {
       width: 50%;
 
-
       h2 {
         @include text-props(18px, 500, white);
       }
@@ -650,7 +649,6 @@ $bgGray: #f8f9fa;
       p {
         @include text-props(16px, 400, rgba(255, 255, 255, 0.7));
       }
-
     }
 
     form {
@@ -674,24 +672,167 @@ $bgGray: #f8f9fa;
 
         &::placeholder {
           color: white;
-
         }
       }
 
       button {
-width:102px ;
-height:43px ;
-border: none;
-outline: none;
-background-color: white;
+        width: 102px;
+        height: 43px;
+        border: none;
+        outline: none;
+        background-color: white;
+      }
+    }
+  }
+}
 
+.footer {
+  background-color: #333333;
+  @include flex-center(15px, center);
+  padding: 30px 0px;
+  flex-direction: column;
 
+  .container {
+    width: 80%;
+    display: grid;
+    padding: 100px 0;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
 
+    grid-template-areas:
+      "about about navigation navigation follow search"
+      "f-copy  f-copy  f-copy  f-copy  f-copy  f-copy";
+    gap: 20px;
 
+    .footer-about {
+      grid-area: about;
+      @include flex-center(18px, start);
+      flex-direction: column;
+      align-items: start;
+
+      h2 {
+        @include text-props(16px, 500, white);
+      }
+
+      p {
+        @include text-props(18px, 500, #737373);
       }
     }
 
+    .footer-nav {
+      grid-area: navigation;
+      @include flex-center(18px, space-between);
+      flex-direction: column;
+      align-items: start;
+
+      h2 {
+        @include text-props(16px, 500, white);
+      }
+
+      a {
+        @include text-props(18px, 500, #999999);
+        background-color: transparent;
+        text-decoration: none;
+      }
+    }
+
+    .footer-follow {
+      grid-area: follow;
+      @include flex-center(15px, space-between);
+      flex-direction: column;
+      align-items: start;
+      h2 {
+        @include text-props(16px, 500, white);
+      }
+
+      i {
+        color: white;
+      }
+    }
+
+    .footer-search {
+      grid-area: search;
+      @include flex-center(0px, flex-end);
+      align-items: start;
+
+      input {
+        background-color: transparent;
+        border: 1px solid #737373;
+        border-right: none;
+        height: 43px;
+        outline: none;
+        overflow: visible;
+        padding: 10px;
+        width: 40%;
+        @include text-props(16px, 400, white);
+        font-style: italic;
+        &::placeholder {
+          color: #737373;
+        }
+      }
+
+      button {
+        width: 85px;
+        height: 43px;
+        border: none;
+        outline: none;
+        color: white;
+        font-size: 18px;
+        background-color: $btnBlue;
+        transition: 0.3s;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #1077fd;
+        }
+      }
+    }
+
+    .footer-copy {
+      grid-area: f-copy;
+      @include text-props(18px, 500, #737373);
+      @include flex-center(0px, center);
+      padding: 50px 0;
+      margin-top: 80px;
+      border-top: 0.5px solid rgb(78, 78, 78);
+
+      .eglence {
+        @include flex-center(0px, center);
+
+        span {
+          margin-left: 15px;
+          color: aqua;
+          font-weight: bold;
+
+          animation: disco 1s infinite;
+
+          @keyframes disco {
+            0% {
+              color: red;
+              text-shadow: 0 0 10px red;
+            }
+            20% {
+              color: orange;
+              text-shadow: 0 0 10px orange;
+            }
+            40% {
+              color: yellow;
+              text-shadow: 0 0 10px yellow;
+            }
+            60% {
+              color: green;
+              text-shadow: 0 0 10px green;
+            }
+            80% {
+              color: blue;
+              text-shadow: 0 0 10px blue;
+            }
+            100% {
+              color: purple;
+              text-shadow: 0 0 10px purple;
+            }
+          }
+        }
+      }
+    }
   }
-
-
 }

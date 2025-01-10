@@ -98,7 +98,7 @@ header nav .auth a:nth-child(2) {
   margin-left: 50px;
   padding: 12px 20px;
   border-radius: 0.25rem;
-  background-color: #2f89fc;
+  background-color: #2F89FC;
 }
 @media screen and (max-width: 1200px) {
   header nav {
@@ -117,7 +117,7 @@ header .navbar-brand {
   color: #fff;
   text-decoration: none;
 }
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1200px) {
   header .hamburger {
     display: block;
   }
@@ -130,6 +130,10 @@ header .navbar-brand {
   justify-content: center;
   display: flex;
   flex-direction: column;
+}
+.hero .hero-animate {
+  animation: moveeUp 0.5s ease-out;
+  position: relative;
 }
 @media screen and (max-width: 1400px) {
   .hero {
@@ -231,7 +235,7 @@ header .navbar-brand {
 }
 .hero .hero-trending a:hover {
   background: #fff;
-  color: #2f89fc;
+  color: #2F89FC;
 }
 
 .featured-add {
@@ -330,18 +334,20 @@ header .navbar-brand {
 @media screen and (max-width: 1200px) {
   .featured-add .featured-cards {
     grid-template-columns: repeat(4, 33%);
-    overflow-x: auto;
   }
 }
 @media screen and (max-width: 768px) {
   .featured-add .featured-cards {
     grid-template-columns: repeat(4, 50%);
-    overflow-x: auto;
   }
 }
 @media screen and (max-width: 576px) {
   .featured-add .featured-cards {
     grid-template-columns: repeat(4, 100%);
+  }
+}
+@media screen and (max-width: 1200px) {
+  .featured-add .featured-cards {
     overflow-x: auto;
   }
 }
@@ -375,7 +381,7 @@ header .navbar-brand {
 }
 .popular-categories .popular-wrapper .title h2 {
   font-weight: 700;
-  color: #2f89fc;
+  color: #2F89FC;
   font-size: 2rem;
   margin-bottom: 0.5rem;
   line-height: 1.2;
@@ -392,7 +398,7 @@ header .navbar-brand {
   bottom: 0;
   width: 80px;
   height: 3px;
-  background: #2f89fc;
+  background: #2F89FC;
 }
 .popular-categories .popular-wrapper .icons {
   display: grid;
@@ -410,7 +416,7 @@ header .navbar-brand {
 }
 .popular-categories .popular-wrapper .icons .icon:hover {
   border-radius: 10px;
-  background: #2f89fc;
+  background: #2F89FC;
   -webkit-box-shadow: 0 5px 30px -5px rgba(47, 137, 252, 0.5);
   box-shadow: 0 5px 30px -5px rgba(47, 137, 252, 0.5);
   z-index: 1;
@@ -611,7 +617,7 @@ header .navbar-brand {
 }
 .our-blog .title h2 {
   font-weight: 700;
-  color: #2f89fc;
+  color: #2F89FC;
   font-size: 2rem;
   margin-bottom: 0.5rem;
   line-height: 1.2;
@@ -628,7 +634,7 @@ header .navbar-brand {
   bottom: 0;
   width: 80px;
   height: 3px;
-  background: #2f89fc;
+  background: #2F89FC;
 }
 .our-blog .our-blog-wrapper {
   display: grid;
@@ -657,7 +663,7 @@ header .navbar-brand {
   margin-bottom: 1rem !important;
 }
 .our-blog .our-blog-wrapper .blog .meta-link {
-  color: #2f89fc;
+  color: #2F89FC;
   transition: 0.3s all ease;
 }
 .our-blog .our-blog-wrapper .blog .meta-link:hover {
@@ -689,8 +695,8 @@ header .navbar-brand {
   color: #fff;
   padding: 0.7rem 1.4rem;
   border-radius: 0.25rem;
-  background-color: #2f89fc;
-  border-color: #2f89fc;
+  background-color: #2F89FC;
+  border-color: #2F89FC;
   font-weight: 400;
   text-align: center;
 }
@@ -701,7 +707,7 @@ header .navbar-brand {
 
 .newsletter {
   margin-top: 4rem;
-  background-color: #2f89fc;
+  background-color: #2F89FC;
 }
 .newsletter .news-main {
   display: flex;
@@ -786,6 +792,22 @@ header .navbar-brand {
   word-spacing: 0.4rem;
   line-height: 2.5rem;
 }
+.testimonials .content .lorem .points {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+.testimonials .content .lorem .points svg {
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
+  fill: #DEE2E6;
+}
+.testimonials .content .lorem .points svg:first-child {
+  fill: #2F89FC;
+}
 @media screen and (max-width: 768px) {
   .testimonials .content .lorem {
     font-size: 1.593285rem;
@@ -825,7 +847,7 @@ header .navbar-brand {
 }
 .testimonials .title h2 {
   font-weight: 700;
-  color: #2f89fc;
+  color: #2F89FC;
   font-size: 2rem;
   margin-bottom: 0.5rem;
   line-height: 1.2;
@@ -838,7 +860,7 @@ header .navbar-brand {
   bottom: 1rem;
   width: 80px;
   height: 3px;
-  background: #2f89fc;
+  background: #2F89FC;
 }
 .testimonials .image {
   width: 100%;
@@ -1003,6 +1025,17 @@ footer .container .footer-bottom p a:hover {
   }
   footer .footer-container .footer-main .footer-right {
     width: 100%;
+  }
+}
+
+@keyframes moveeUp {
+  0% {
+    transform: translateY(150px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
