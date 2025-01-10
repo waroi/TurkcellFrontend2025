@@ -867,4 +867,164 @@ header {
 
 }
 
-x
+footer {
+    background-color: #333333;
+
+    .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 8em 0;
+
+        h2 {
+            font-size: 18px;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .footer-main {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 85px;
+
+            .footer-left {
+                flex: 3;
+
+                .footer-content {
+                    display: grid;
+                    grid-template-columns: 2fr 1fr 1fr;
+                    gap: 20px;
+
+                    .about-section {
+                        padding-right: 30px;
+
+                        p {
+                            line-height: 1.6;
+                            color: #666;
+                        }
+                    }
+
+                    .nav-section {
+
+                        .nav-list {
+                            list-style: none;
+                            padding: 0;
+
+                            li {
+                                margin-bottom: 19px;
+
+                                a {
+                                    text-decoration: none;
+                                    color: #999999;
+
+                                    &:hover {
+                                        color: white;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .social-section {
+
+
+                        .social-links {
+                            display: flex;
+                            gap: 19px;
+
+                            a {
+                                text-decoration: none;
+                                margin-right: 15px;
+                                fill: #999999;
+
+                                svg {
+                                    width: 15px;
+                                    height: 15px;
+                                }
+
+                                &:hover {
+                                    fill: #fff;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .footer-right {
+                flex: 1;
+
+                .search-form {
+                    display: flex;
+
+                    .search-input {
+                        flex: 1;
+                        padding: 8px;
+                        height: 43px;
+                        color: white;
+                        border: 1px solid #6c757d;
+                        background: transparent;
+
+                        &:focus {
+                            outline: none;
+                            border-color: #007bff;
+                        }
+                    }
+
+                    .search-button {
+                        padding: 8px 16px;
+                        background-color: #007bff;
+                        color: white;
+                        border: none;
+                        font-size: 17px;
+                        cursor: pointer;
+                        transition: .3s all ease;
+
+                        &:hover {
+                            background-color: #0056b3;
+                        }
+                    }
+                }
+            }
+        }
+
+        .footer-bottom {
+            margin-top: 50px;
+            padding-top: 20px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+            p {
+                margin: 0;
+                color: #666;
+
+                a {
+                    color: #007bff;
+                    text-decoration: none;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .footer-container {
+            .footer-main {
+                flex-direction: column;
+
+                .footer-left {
+                    .footer-content {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                .footer-right {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
