@@ -565,7 +565,7 @@ body {
 .trending-section{
   .container{
     @include container();
-  
+    margin: 0 auto;
   }
   .title{
     @include title();
