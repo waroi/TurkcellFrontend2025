@@ -69,6 +69,7 @@ body {
     background-color: transparent; 
     &__content {
       @include container;
+      margin: 0 auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -284,13 +285,14 @@ body {
 
 // Trending
 .trending {
+  background-color: #f8f9fa;
   margin-top: 1.5rem;
   display: flex;
   align-items: center;
   gap: 1rem;
   flex-wrap: wrap;
   justify-content: center;
-
+  padding: 80px 0;
   &__label {
     color: $white;
     font-weight: 500;
@@ -487,6 +489,7 @@ body {
     padding: 80px 0;
     .container{
         @include container();
+        margin: 0 auto; 
     }
     .popular-title{
         @include title();
@@ -672,8 +675,10 @@ body {
   }
 }
 .testimonials{
+  padding: 80px 0;
   .container{
     @include container();
+    margin: 0 auto;
   }
   .title{
     @include title();
@@ -705,3 +710,80 @@ body {
     font-style: italic;
   }
 } 
+.blog{
+  padding: 80px 0;
+  background-color: #f8f9fa;
+  .container{
+    @include container();
+    margin: 0 auto;
+  }
+  .blog-title{
+    @include title();
+    margin-bottom: 48px;
+    h2{
+    @include h2Function($primary-color);
+    margin-bottom: 8px;
+    }
+    .line{
+        @include lineFuntion();
+      }
+    p{
+      @include pFunction();
+    }  
+  }
+  .blog-wrapper{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+  .blog-image{
+    margin-bottom: 30px;
+  }
+  .blog-image img{
+    max-width: 100%;
+    border-radius: 0.25rem;
+  }
+  .blog-card{
+    h2{
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+    p{
+      margin-bottom: 16px;
+      font-size: 1rem;
+      color: #4d4d4d;
+      line-height: 1.7;
+      font-weight: 400;
+    }
+    .blog-info{
+      margin-bottom: 16px;
+      color: #b3b3b3;
+      font-size: 14px;
+      line-height: 1.7;
+      a{
+        color: $primary-color;
+        text-decoration: none;
+      }
+      span{
+        margin-left: 0.25rem;
+        margin-right: 0.25rem;
+      }
+    }
+  }
+  .blog-button{
+    text-align: center;
+    margin-top: 1.5rem;
+    padding: 0 15px;
+    button{
+      padding: 8px 24px;
+      background-color: $primary-color;
+      border: 1px solid $primary-color;
+      color: white;
+      border-radius: 4px;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+  }
+}
