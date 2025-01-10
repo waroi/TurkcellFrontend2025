@@ -117,7 +117,7 @@ header .navbar-brand {
   color: #fff;
   text-decoration: none;
 }
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1200px) {
   header .hamburger {
     display: block;
   }
@@ -785,6 +785,22 @@ header .navbar-brand {
   width: 75%;
   word-spacing: 0.4rem;
   line-height: 2.5rem;
+}
+.testimonials .content .lorem .points {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+.testimonials .content .lorem .points svg {
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
+  fill: #DEE2E6;
+}
+.testimonials .content .lorem .points svg:first-child {
+  fill: #2F89FC;
 }
 @media screen and (max-width: 768px) {
   .testimonials .content .lorem {
