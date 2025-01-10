@@ -514,6 +514,7 @@
   background-color: #dee2e6;
   border-radius: 50%;
   color: white;
+  cursor: pointer;
 }
 .test-section .container .content .content-text .test-icon:hover {
   color: #2f89fc;
@@ -535,6 +536,102 @@
 }
 .test-section .container .content .content-circle .circle:first-child {
   background-color: #2f89fc;
+}
+
+.blog {
+  width: 100%;
+  height: auto;
+  padding: 50px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  background-color: #f8f9fa;
+}
+.blog .container {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-direction: column;
+}
+.blog .container button {
+  width: 150px;
+  height: 42px;
+  background-color: #2f89fc;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 400;
+  color: white;
+}
+.blog .container h3 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #2f89fc;
+}
+.blog .container p {
+  font-size: 16px;
+  font-weight: 400;
+  color: #666666;
+}
+.blog .container .custom-border {
+  width: 100px;
+  height: 3px;
+  background-color: #2f89fc;
+}
+.blog .container .blog-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin: 50px 0;
+}
+.blog .container .blog-cards .blog-card {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  align-items: flex-start;
+  flex-direction: column;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.blog .container .blog-cards .blog-card .blog-text {
+  font-size: 16px;
+  font-weight: 400;
+  color: #4d4d4d;
+  line-height: 27px;
+}
+.blog .container .blog-cards .blog-card .blog-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.blog .container .blog-cards .blog-card .blog-info p {
+  font-size: 14px;
+  font-weight: 400;
+  color: #b3b3b3;
+}
+.blog .container .blog-cards .blog-card .blog-info :last-child {
+  color: #2f89fc;
+}
+.blog .container .blog-cards .blog-card .blog-info i {
+  font-size: 5px;
+}
+.blog .container .blog-cards .blog-card img {
+  width: 100%;
+}
+.blog .container .blog-cards .blog-card .title-blog {
+  font-size: 20px;
+  font-weight: 500;
+  color: black;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=main.css.map */
