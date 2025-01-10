@@ -44,7 +44,7 @@ $transition: all 0.3s ease;
   flex-direction: column;
   color: $primary-color;
 }
-.header-trending .checked{
+.trending .checked{
   color: #ffc107;
 }
 
@@ -285,10 +285,11 @@ body {
 }
 
 // Trending
-.header-trending {
+.trending {
+  display: none;
   background-color: #f8f9fa;
   margin-top: 1.5rem;
-  display: flex;
+  //display: flex;
   align-items: center;
   gap: 1rem;
   flex-wrap: wrap;
@@ -561,10 +562,10 @@ body {
 
     }
 }
-.trending{
+.trending-section{
   .container{
     @include container();
-    width: 100%;
+  
   }
   .title{
     @include title();
@@ -901,14 +902,7 @@ footer{
         color:white;
       }
     }
-    @media (min-width: 768px) {
-      .up{
-        display: grid;
-        grid-template-columns: 1fr;
-      }
-      
-      
-  }
+    
   }
   .bottom{
     padding:48px ;
@@ -924,4 +918,11 @@ footer{
       background-color:rgba(255,255,255,0.1);
     }
     }
+}
+@media (max-width: 768px) {
+  footer .up{
+    display: grid;
+    grid-template-columns: 1fr;
+   
+  }
 }
