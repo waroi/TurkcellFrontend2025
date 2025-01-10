@@ -171,6 +171,17 @@ header {
 }
 .banner .banner-overlay .welcome-wrapper .welcome-container {
   text-align: center;
+  animation: moveUp 1.5s;
+}
+@keyframes moveUp {
+  0% {
+    transform: translateY(150px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 @media (max-width: 1200px) {
   .banner .banner-overlay .welcome-wrapper .welcome-container {

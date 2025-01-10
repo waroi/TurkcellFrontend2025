@@ -369,6 +369,129 @@ header {
   color: #2f89fc;
 }
 
+.category {
+  padding: 30px 10px;
+  border-radius: 7px;
+  top: 0;
+  transform: scale(1);
+}
+.category i {
+  color: #0874fa;
+  font-size: 30px;
+}
+.category:hover {
+  background-color: #0874fa;
+}
+.category:hover i {
+  color: white;
+}
+.category:hover p {
+  color: white;
+}
+
+.image img {
+  max-width: 100px;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+
+.testi-content {
+  max-width: 800px;
+}
+
+.testi-content article p {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.testimonials .icon {
+  background-color: #e9ecef;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+}
+
+.testimonials .icon:hover {
+  background-color: black;
+  color: #0874fa;
+}
+
+.news-letter {
+  background-color: #0874fa;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.news h3 {
+  color: #fff;
+  font-size: 18px;
+}
+
+.news p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.newsletter p:last-child {
+  margin-bottom: 0;
+}
+
+.input .form-control {
+  border: none;
+  width: 400px;
+  border-bottom: 1px solid #fff;
+  background: none;
+  padding-left: 0;
+}
+
+.input .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.9);
+  font-style: italic;
+}
+
+.btn {
+  border-radius: 0;
+  border: none;
+  outline: none;
+}
+
+footer.main-footer {
+  padding: 4em 0;
+  background: #333333;
+}
+footer.main-footer .foot-input .form-control {
+  width: 200px;
+  border-bottom: 1px solid #fff;
+  background: none;
+  padding-left: 0;
+}
+footer.main-footer .footer-top .border-top {
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+footer.main-footer .footer-top p {
+  color: #737373;
+}
+footer.main-footer .footer-top h4 {
+  color: #fff;
+}
+footer.main-footer .footer-top a {
+  color: #999999;
+}
+footer.main-footer .footer-top a:hover {
+  color: white;
+}
+footer.main-footer .footer-top ul {
+  list-style: none;
+}
+footer.main-footer .footer-top ul li {
+  margin-bottom: 10px;
+}
+footer.main-footer .footer-bottom {
+  margin-top: 50px;
+  color: white;
+}
+
 @media (min-width: 576px) {
   .container {
     max-width: 540px;

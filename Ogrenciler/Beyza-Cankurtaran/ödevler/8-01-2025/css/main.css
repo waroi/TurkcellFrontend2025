@@ -225,9 +225,9 @@ body {
 }
 
 .trending {
+  display: none;
   background-color: #f8f9fa;
   margin-top: 1.5rem;
-  display: flex;
   align-items: center;
   gap: 1rem;
   flex-wrap: wrap;
@@ -403,6 +403,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0 auto;
   flex-direction: column;
   color: #3b82f6;
 }
@@ -475,86 +476,87 @@ body {
   font-size: 14px;
   background-color: #f3f4f6;
 }
-.trending .container {
+.trending-section .container {
   max-width: 1140px;
   margin: 0 150px;
   padding: 0 1rem;
-  width: 100%;
+  margin: 0 auto;
 }
-.trending .title {
+.trending-section .title {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0 auto;
   flex-direction: column;
   color: #3b82f6;
 }
-.trending .title h2 {
+.trending-section .title h2 {
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 2rem;
   color: #3b82f6;
   align-self: flex-start;
 }
-.trending .title .line {
+.trending-section .title .line {
   background-color: #3b82f6;
   width: 80px;
   height: 3px;
   align-self: flex-start;
 }
-.trending .trending-cards-container {
+.trending-section .trending-cards-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
   gap: 1rem;
   margin-top: 1rem;
 }
-.trending .trending-cards-container .card-image {
+.trending-section .trending-cards-container .card-image {
   width: 230px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
-.trending .trending-cards-container .img-1 {
+.trending-section .trending-cards-container .img-1 {
   background-image: url(https://preview.colorlib.com/theme/directoryads/images/img_2.jpg);
 }
-.trending .trending-cards-container .img-2 {
+.trending-section .trending-cards-container .img-2 {
   background-image: url(https://preview.colorlib.com/theme/directoryads/images/img_1.jpg.webp);
 }
-.trending .trending-cards-container .img-3 {
+.trending-section .trending-cards-container .img-3 {
   background-image: url(https://preview.colorlib.com/theme/directoryads/images/img_3.jpg.webp);
 }
-.trending .trending-cards-container .img-4 {
+.trending-section .trending-cards-container .img-4 {
   background-image: url(https://preview.colorlib.com/theme/directoryads/images/img_2.jpg);
 }
-.trending .trending-cards-container .img-5 {
+.trending-section .trending-cards-container .img-5 {
   background-image: url(https://preview.colorlib.com/theme/directoryads/images/img_4.jpg.webp);
 }
-.trending .trending-cards-container .img-6 {
+.trending-section .trending-cards-container .img-6 {
   background-image: url(https://preview.colorlib.com/theme/directoryads/images/img_3.jpg.webp);
 }
-.trending .trending-card {
+.trending-section .trending-card {
   box-shadow: 0 2px 20px -2px rgba(0, 0, 0, 0.1);
   margin-bottom: 30px;
   border-radius: 7px;
   background: #fff;
   position: relative;
 }
-.trending .trending-card .card-container {
+.trending-section .trending-card .card-container {
   display: flex;
   height: 180px;
   gap: 20px;
   border-top-right-radius: 7px;
   border-bottom-right-radius: 7px;
 }
-.trending .card-content {
+.trending-section .card-content {
   padding: 20px;
 }
-.trending .card-content .category {
+.trending-section .card-content .category {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
 }
-.trending .card-content .category-text {
+.trending-section .card-content .category-text {
   border-radius: 30px;
   padding: 2px 20px;
   font-size: 11px;
@@ -562,7 +564,7 @@ body {
   color: black;
   font-weight: 400;
 }
-.trending .card-content .category-icon {
+.trending-section .card-content .category-icon {
   position: absolute;
   display: flex;
   align-items: center;
@@ -576,23 +578,23 @@ body {
   height: 30px;
   right: 20px;
 }
-.trending .card-content .category-icon:hover {
+.trending-section .card-content .category-icon:hover {
   background-color: #f23a2e;
   color: #ffffff;
   transition: all 0.3s ease;
 }
-.trending .card-content .category-title a {
+.trending-section .card-content .category-title a {
   text-decoration: none;
   font-size: 16px;
   color: #3b82f6;
   margin-bottom: 8px;
   font-weight: 500;
 }
-.trending .card-content p {
+.trending-section .card-content p {
   font-size: 13px;
   margin-bottom: 1rem;
 }
-.trending .card-content .star {
+.trending-section .card-content .star {
   margin-top: 30px;
 }
 
@@ -609,6 +611,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0 auto;
   flex-direction: column;
   color: #3b82f6;
   margin-bottom: 48px;
@@ -658,6 +661,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0 auto;
   flex-direction: column;
   color: #3b82f6;
   margin-bottom: 48px;
@@ -786,6 +790,85 @@ body {
 .newsletter .newsletter-form button:hover {
   background-color: black;
   color: white;
+}
+
+footer {
+  padding: 128px 0;
+  background-color: #333;
+}
+footer .container {
+  max-width: 1140px;
+  margin: 0 150px;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+footer .up {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 30px;
+}
+footer .up h2 {
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 24px;
+}
+footer .up ul {
+  list-style: none;
+}
+footer .up ul a {
+  color: #999999;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+footer .up .about p {
+  color: #999999;
+}
+footer .up .footer-icons i {
+  color: #999999;
+}
+footer .up .footer-icons a {
+  padding: 0 16px;
+}
+footer .up .footer-icons :nth-child(1) {
+  padding-left: 0;
+}
+footer .up .footer-search {
+  display: flex;
+  background-color: transparent;
+}
+footer .up .footer-search input {
+  padding: 6px 12px;
+  border: 1px solid #6c757b;
+  background-color: transparent;
+  height: min-content;
+}
+footer .up .footer-search button {
+  border: 1px solid #3b82f6;
+  padding: 6px 12px;
+  background-color: #3b82f6;
+  height: min-content;
+  color: white;
+}
+footer .bottom {
+  padding: 48px;
+  margin-top: 48px;
+}
+footer .bottom p {
+  padding-top: 48px;
+  color: #999999;
+  text-align: center;
+}
+footer .bottom .big-line {
+  height: 1px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+  footer .up {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -44,7 +44,7 @@ $transition: all 0.3s ease;
   flex-direction: column;
   color: $primary-color;
 }
-.header-trending .checked{
+.trending .checked{
   color: #ffc107;
 }
 
@@ -285,10 +285,11 @@ body {
 }
 
 // Trending
-.header-trending {
+.trending {
+  display: none;
   background-color: #f8f9fa;
   margin-top: 1.5rem;
-  display: flex;
+  //display: flex;
   align-items: center;
   gap: 1rem;
   flex-wrap: wrap;
@@ -561,10 +562,10 @@ body {
 
     }
 }
-.trending{
+.trending-section{
   .container{
     @include container();
-    width: 100%;
+    margin: 0 auto;
   }
   .title{
     @include title();
@@ -842,9 +843,86 @@ body {
   }
 }
 footer{
-  background-color: #007bff;
+  padding: 128px 0;
+  background-color: #333;
   .container{
     @include container();
     margin: 0 auto;
+    
+  }
+  .up{
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap:30px;
+    h2{
+      font-size:16px;
+      color:#fff;
+      margin-bottom: 24px;
+    }
+    ul{
+      list-style: none;
+
+      a{
+      color:#999999;
+      text-decoration:none;
+      margin-bottom:10px;
+    }
+    }
+    .about{
+      p{
+        color:#999999;
+      }
+      
+    }
+    .footer-icons{
+      i{
+        color:#999999;
+      }
+      a{
+        padding:0 16px;
+
+      }:nth-child(1){
+        padding-left:0;
+      }
+    }
+    .footer-search{
+      display:flex;
+      background-color: transparent;
+      input{
+        padding:6px 12px;
+        border:1px solid #6c757b;
+        background-color: transparent;
+        height:min-content;
+      }
+      button{
+        border :1px solid $primary-color;
+        padding:6px 12px;
+        background-color: $primary-color;
+        height: min-content;
+        color:white;
+      }
+    }
+    
+  }
+  .bottom{
+    padding:48px ;
+    margin-top:48px;
+    p{
+      padding-top: 48px;
+      color:#999999;
+      text-align: center;
+    }
+    .big-line{
+      height:1px;
+      width:100%;
+      background-color:rgba(255,255,255,0.1);
+    }
+    }
+}
+@media (max-width: 768px) {
+  footer .up{
+    display: grid;
+    grid-template-columns: 1fr;
+   
   }
 }
