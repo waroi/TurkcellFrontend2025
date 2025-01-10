@@ -40,10 +40,11 @@ $transition: all 0.3s ease;
 }
 @mixin title{
   @include flex-center();
+  margin:0 auto;
   flex-direction: column;
   color: $primary-color;
 }
-.trending .checked{
+.header-trending .checked{
   color: #ffc107;
 }
 
@@ -284,7 +285,7 @@ body {
 }
 
 // Trending
-.trending {
+.header-trending {
   background-color: #f8f9fa;
   margin-top: 1.5rem;
   display: flex;
@@ -838,5 +839,12 @@ body {
         color: white;
       }
     }
+  }
+}
+footer{
+  background-color: #007bff;
+  .container{
+    @include container();
+    margin: 0 auto;
   }
 }
