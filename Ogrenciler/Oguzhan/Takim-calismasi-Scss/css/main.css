@@ -171,6 +171,17 @@
 .featured .featured-container {
   width: 80%;
 }
+.featured .featured-container h3 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #2f89fc;
+}
+.featured .featured-container .custom-border {
+  width: 100px;
+  height: 3px;
+  background-color: #2f89fc;
+  margin-bottom: 50px;
+}
 .featured .featured-container h2 {
   font-size: 20px;
   font-weight: 500;
@@ -439,6 +450,91 @@
 }
 .popular .container-popular .cat-card:hover p {
   color: white;
+}
+
+.test-section {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 30px 50px;
+  flex-direction: column;
+}
+.test-section .container {
+  width: 80%;
+}
+.test-section .container .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-direction: column;
+}
+.test-section .container .content h3 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #2f89fc;
+}
+.test-section .container .content .custom-border {
+  width: 100px;
+  height: 3px;
+  background-color: #2f89fc;
+  margin-bottom: 50px;
+}
+.test-section .container .content img {
+  width: 100px;
+  border-radius: 50%;
+}
+.test-section .container .content p {
+  color: #4d4d4d;
+}
+.test-section .container .content .content-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0px;
+}
+.test-section .container .content .content-text p {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #4d4d4d;
+  font-style: italic;
+  text-align: center;
+  line-height: 41px;
+  width: 70%;
+}
+.test-section .container .content .content-text .test-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  width: 50px;
+  height: 50px;
+  background-color: #dee2e6;
+  border-radius: 50%;
+  color: white;
+}
+.test-section .container .content .content-text .test-icon:hover {
+  color: #2f89fc;
+  background-color: black;
+}
+.test-section .container .content .content-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  height: 50px;
+}
+.test-section .container .content .content-circle .circle {
+  width: 10px;
+  height: 10px;
+  background-color: #dee2e6;
+  border-radius: 50%;
+}
+.test-section .container .content .content-circle .circle:first-child {
+  background-color: #2f89fc;
 }
 
 /*# sourceMappingURL=main.css.map */
