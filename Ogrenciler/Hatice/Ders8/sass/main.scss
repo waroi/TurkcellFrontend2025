@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$mainFontColor: white;
+$mainBgColor: #007bff;
+$inputBgColor: rgba(255, 255, 255, 0.8);
+$borderRadius: none;
+$h2FontSize: 3rem;
+$h3FontSize: 1.5rem;
+
+@mixin createTitle($size, $color) {
+  font-size: $size;
+  color: $color;
+  font-weight: bold;
+}
+
+@mixin createInput() {
+  padding: 0.8rem 1rem;
+  border: none;
+  border-radius: $borderRadius;
+  width: 100%;
+  font-size: 1rem;
+  background-color: $inputBgColor;
+  color: #333;
+}
+
+@mixin createButton($bgColor, $textColor) {
+  padding: 0.8rem 2rem;
+  background-color: $bgColor;
+  color: $textColor;
+  border: none;
+  border-radius: $borderRadius;
+  cursor: pointer;
+  font-size: 1rem;
+
+  &:hover {
+    background-color: darken($bgColor, 10%);
+  }
+}
+
+.hero-section {
+  background-image: url(https://preview.colorlib.com/theme/directoryads/images/hero_2.jpg.webp);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: $mainFontColor;
+
+  .header-title {
+    @include createTitle($h2FontSize, $mainFontColor);
+    margin-bottom: 1rem;
+  }
+
+  .header-subtitle {
+    @include createTitle($h3FontSize, $mainFontColor);
+    margin-bottom: 2rem;
+  }
+
+  .search-bar {
+    display: flex;
+    gap: 1rem;
+    width: 60%;
+
+    input,
+    select {
+      @include createInput();
+    }
+
+    .search-button {
+      @include createButton($mainBgColor, $mainFontColor);
+    }
+  }
+
+  .trending-search {
+    margin-top: 1.5rem;
+
+    span {
+      display: inline-block;
+      margin-right: 1rem;
+      padding: 0.5rem 1rem;
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.4);
+      }
+    }
+  }
+}
