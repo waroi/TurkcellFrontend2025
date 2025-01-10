@@ -67,110 +67,170 @@ $starColor: #f89d13;
   padding: 0;
 }
 
-.header {
-  background-image: url("https://preview.colorlib.com/theme/directoryads/images/hero_2.jpg.webp");
-}
+// .header {
+//   background-image: url("https://preview.colorlib.com/theme/directoryads/images/hero_2.jpg.webp");
+//   .navbar {
+//     h1 {
+//       font-size: 20px;
+//       padding: 0 15px;
+//       color: $whiteColor;
+//     }
+//     .navigations {
+//       margin-left: 30px;
+//     }
+//     .liste {
+//       @include listStyle(flex, row, none, gap);
+//       padding: 0 15px;
+//     }
+//     .login-list {
+//       @include listStyle(flex, row, none, gap);
+//       gap: 50px;
+//       a {
+//         &:nth-child(2) {
+//           background-color: $blueColor;
+//         }
+//       }
+//     }
+//   }
+//   .header-content {
+//     display: flex;
+//     justify-content: center;
+//     .container {
+//       flex-direction: column;
+//       align-items: center;
+//     }
+//     h1 {
+//       font-size: 48px;
+//       font-weight: 400;
+//       color: $whiteColor;
+//       margin: 0 0 8px;
+//     }
+//     p {
+//       text-align: center;
+//       font-size: 19px;
+//       color: $whiteColor;
+//       margin: 0 0 16px;
+//     }
+//     .content-form {
+//       // padding: 20px;
+//       margin: 0 0 16px;
+//       background: #ffffffcc;
+//       color: $greyColor;
+//       border-radius: 3px;
+
+//       .inputs {
+//         display: flex;
+//         flex-direction: row;
+//         align-items: center;
+//       }
+//       .input-rounded {
+//         padding: 6px 12px;
+//       }
+//       input {
+//         border: none;
+//         border-radius: 3px;
+//         color: #495057;
+//         background: $whiteColor;
+//         padding: 10px 30px;
+//         text-align: left;
+//       }
+//       select {
+//         border: none;
+//         border-radius: 3px;
+//         color: #495057;
+//         background: $whiteColor;
+//         padding: 10px 30px;
+//         text-align: left;
+//       }
+//       button {
+//         background-color: $blueColor;
+//         padding: 10px 30px;
+//         color: $whiteColor;
+//         border: none;
+//         border-radius: 3px;
+//       }
+//     }
+//     .search-cards {
+//       p {
+//         font-size: 16px;
+//         margin: 0 10px 8px 0;
+//         color: $whiteColor;
+//         text-align: left;
+//       }
+//       span {
+//         font-size: 13px;
+//         padding: 2px 10px;
+//         background-color: rgba(255, 255, 255, 0.2);
+//         color: $whiteColor;
+//         border: 1px solid $whiteColor;
+//         border-radius: 4px;
+//       }
+//     }
+//   }
+
+// }
 // .container {
 //   @include container(flex, row, space-evenly, 20px 20px);
 // }
 .container {
   @include container(1100px, 75px 0);
 }
-.navbar {
-  h1 {
-    font-size: 20px;
-    padding: 0 15px;
-    color: $whiteColor;
-  }
-  .navigations {
-    margin-left: 30px;
-  }
-  .liste {
-    @include listStyle(flex, row, none, gap);
-    padding: 0 15px;
-  }
-  .login-list {
-    @include listStyle(flex, row, none, gap);
-    gap: 50px;
-    a {
-      &:nth-child(2) {
-        background-color: $blueColor;
-      }
-    }
-  }
-}
-.header-content {
-  display: flex;
-  justify-content: center;
-  .container {
-    flex-direction: column;
-    align-items: center;
-  }
-  h1 {
-    font-size: 48px;
-    font-weight: 400;
-    color: $whiteColor;
-    margin: 0 0 8px;
-  }
-  p {
-    text-align: center;
-    font-size: 19px;
-    color: $whiteColor;
-    margin: 0 0 16px;
-  }
-  .content-form {
-    // padding: 20px;
-    margin: 0 0 16px;
-    background: #ffffffcc;
-    color: $greyColor;
-    border-radius: 3px;
 
-    .inputs {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-    }
-    .input-rounded {
-      padding: 6px 12px;
-    }
-    input {
-      border: none;
-      border-radius: 3px;
-      color: #495057;
-      background: $whiteColor;
-      padding: 10px 30px;
-      text-align: left;
-    }
-    select {
-      border: none;
-      border-radius: 3px;
-      color: #495057;
-      background: $whiteColor;
-      padding: 10px 30px;
-      text-align: left;
-    }
-    button {
-      background-color: $blueColor;
-      padding: 10px 30px;
-      color: $whiteColor;
-      border: none;
-      border-radius: 3px;
-    }
-  }
-  .search-cards {
-    p {
-      font-size: 16px;
-      margin: 0 10px 8px 0;
-      color: $whiteColor;
-      text-align: left;
-    }
-    span {
-      font-size: 13px;
-      padding: 2px 10px;
-      background-color: rgba(255, 255, 255, 0.2);
-      color: $whiteColor;
-      border: 1px solid $whiteColor;
-      border-radius: 4px;
+.header {
+  @include flexCenter(flex, center, start);
+  background-image: url("https://preview.colorlib.com/theme/directoryads/images/hero_2.jpg.webp");
+  height: 1000px;
+  .container {
+    @include container(1100px, 75px 0);
+    margin: 0 auto;
+    padding: 0;
+    .nav {
+      @include flexCenter(flex, space-between, center);
+      height: 100px;
+      gap: 30px;
+      .nav-left{
+        h2{
+          font: optional;
+          @include font(18px, 700, $whiteColor);
+        }
+        
+      }
+      .nav-right{
+        @include flexCenter(flex, center, center);
+        gap: 100px;
+        .nav-list{
+          ul{
+            @include flex(flex, row,20px );
+            li{
+              list-style: none;
+              a{
+                text-decoration: none;
+                @include font(15px, 300, $whiteColor);
+              }
+            }
+          }
+        }
+        .nav-right-buttons{
+          @include flex(flex, row,30px);
+          .login{
+            padding: 10px 0;
+            span{
+              @include font(15px, 400, $whiteColor);
+              padding:0 30px;
+              border-left: 1px solid $whiteColor;
+            }
+           
+          }
+          .register{
+            background-color: $blueColor;
+            padding: 12px 20px;
+            @include font(15px, 400, $whiteColor);
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+          }
+        }
+      }
     }
   }
 }
@@ -433,6 +493,9 @@ $starColor: #f89d13;
       }
     }
   }
+
+
+  
   .btn {
     text-align: center;
 
@@ -443,6 +506,54 @@ $starColor: #f89d13;
       border: none;
       border-radius: 3px;
       cursor: pointer;
+    }
+  }
+}
+
+.navbar-first {
+  @include flexCenter(flex, center, center);
+  background: $blueColor;
+  .first-nav {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 100px;
+    // padding: 20px 0;
+    .f-nav {
+      padding: 45px 75px;
+      h3 {
+        @include font(18px, 500, $whiteColor);
+      }
+      p {
+        @include font(16px, 400, rgba(255, 255, 255, 0.7));
+        margin-top: 10px;
+      }
+    }
+  }
+}
+.navbar-second {
+  @extend .navbar-first;
+  background: #333333;
+  .first-nav {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 20px;
+    padding: 45px 225px;
+    .f-nav {
+      padding: 0;
+      h3 {
+        @include font(16px, 500, $whiteColor);
+      }
+      p {
+        @include font(16px, 400, #737373);
+        margin-top: 20px;
+        line-height: 2;
+      }
+      .nav-list {
+        @include listStyle(display, column, none, 0);
+        li {
+          margin-top: 20px;
+        }
+      }
     }
   }
 }
