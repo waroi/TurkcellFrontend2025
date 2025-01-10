@@ -12,11 +12,13 @@ $aNavFontSize: 15px;
 $aFontSize: 16px;
 $adressFontSize: 13px;
 $gray-text-color: #4d4d4d;
+
 @mixin createTitle() {
   font-size: $h2FontSize;
   color: $mainBgColor;
   font-weight: bold;
 }
+
 @mixin createTitleWithUnderline() {
   font-size: $h2FontSize;
   color: $mainBgColor;
@@ -30,6 +32,7 @@ $gray-text-color: #4d4d4d;
     background: #2f89fc;
   }
 }
+
 @mixin createSubtitle() {
   font-size: $aFontSize;
   color: #00000080;
@@ -42,6 +45,7 @@ $gray-text-color: #4d4d4d;
     background: #2f89fc;
   }
 }
+
 body {
   font-family: $fontFamily;
   position: relative;
@@ -120,6 +124,7 @@ ul {
     color: $whiteColor;
   }
 }
+
 .banner {
   background: url('https://preview.colorlib.com/theme/directoryads/images/hero_2.jpg');
   background-position: top;
@@ -208,6 +213,7 @@ ul {
     font-size: 0.8rem;
   }
 }
+
 .featured-ads {
   padding: 80px 0px;
   background: #f8f9fa;
@@ -228,6 +234,7 @@ ul {
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
   }
+
   .card-content {
     padding: 20px;
   }
@@ -300,6 +307,7 @@ ul {
     cursor: pointer;
   }
 }
+
 .popular-categories {
   padding: 80px 0px;
   .container {
@@ -371,9 +379,11 @@ ul {
     margin-bottom: 10px;
   }
 }
+
 .trending-today {
   padding: 80px 0px;
   background: #f8f9fa;
+
   .card-container {
     display: grid;
     grid-template-columns: 2fr 3fr;
@@ -433,6 +443,9 @@ ul {
     justify-content: center;
   }
 }
+
+/* --------------- */
+
 .our-blog {
   padding: 80px 0px;
   .container {
@@ -488,6 +501,7 @@ ul {
 .wrapper-item span {
   margin-bottom: 10px;
 }
+
 @mixin flex-center($direction: row, $justify: center, $align: center, $gap: 0) {
   display: flex;
   flex-direction: $direction;
@@ -506,17 +520,21 @@ ul {
   color: #fff;
   padding: 20px;
   text-align: center;
+
   .newsletter-container {
     @include flex-center(row, space-between, center, 20px);
     flex-wrap: wrap;
   }
+
   .newsletter-text {
     h3 {
       @include text-style(1.5rem, #fff);
     }
   }
+
   .newsletter-form {
     @include flex-center(row, center, center, 10px);
+
     input {
       padding: 10px;
       border: none;
@@ -528,6 +546,7 @@ ul {
         color: #ccc;
       }
     }
+
     button {
       padding: 10px 20px;
       background: #fff;
@@ -542,6 +561,7 @@ ul {
     }
   }
 }
+
 .footer {
   background: #222;
   padding: 40px 20px;
@@ -553,13 +573,16 @@ ul {
     gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
+
     h4 {
       @include text-style(1.2rem, #fff);
     }
+
     p {
       @include text-style(0.9rem, #ccc);
       line-height: 1.6;
     }
+
     ul {
       list-style: none;
 
@@ -576,6 +599,7 @@ ul {
         }
       }
     }
+
     .footer-follow {
       @include flex-center(row, flex-start, center);
 
@@ -594,6 +618,7 @@ ul {
       }
     }
   }
+
   .footer-bottom {
     text-align: center;
     margin-top: 20px;
@@ -618,7 +643,7 @@ ul {
     gap: 20px;
   }
   .form .input {
-    width: 99%;
+    width: 100%;
   }
   .form .btn {
     width: 100%;
@@ -650,7 +675,7 @@ ul {
     gap: 20px;
   }
   .form .input {
-    width: 99%;
+    width: 100%;
   }
   .form .btn {
     width: 100%;
@@ -686,7 +711,7 @@ ul {
     gap: 20px;
   }
   .form .input {
-    width: 99%;
+    width: 100%;
   }
   .form .btn {
     width: 100%;
