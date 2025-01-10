@@ -22,6 +22,20 @@ $sm: 576px;
     align-items: center;
 }
 
+@mixin card-style {
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 20px -2px rgba(0, 0, 0, 0.1);
+}
+
+@mixin responsive-grid($repeat, $w) {
+    @media screen and (max-width: $w) {
+        grid-template-columns: repeat($repeat, 1fr);
+    }
+}
+
 header,
 .container {
     max-width: $container-width;
@@ -63,7 +77,7 @@ header,
     }
 }
 
-// --> HEADER SECTION
+// --> HEADER
 header {
     justify-content: space-between;
     align-items: center;
@@ -124,10 +138,16 @@ header {
             }
         }
 
-
-        @media screen and (max-width: $xxl) {
+        @media screen and (max-width: $xl) {
             display: none;
         }
+    }
+
+    .hamburger {
+        display: none;
+        width: 24px;
+        height: 24px;
+        fill: #fff;
     }
 
     .navbar-brand {
@@ -135,6 +155,12 @@ header {
         font-weight: 900;
         color: #fff;
         text-decoration: none;
+    }
+
+    @media screen and (max-width: $xl) {
+        .hamburger {
+            display: block;
+        }
     }
 }
 
@@ -226,12 +252,8 @@ header {
         @media screen and (max-width: $xl) {
             flex-direction: column;
             gap: 20px;
-
         }
-
-
     }
-
 
     .hero-trending {
         display: flex;
@@ -287,11 +309,7 @@ header {
         margin-top: 20px;
 
         .featured-card {
-            display: flex;
-            flex-direction: column;
-            border-radius: 20px;
-            margin-bottom: 30px;
-            box-shadow: 0 2px 20px -2px rgba(0, 0, 0, 0.1);
+            @include card-style();
 
             img {
                 width: 100%;
@@ -360,7 +378,6 @@ header {
                             fill: #fff;
                         }
                     }
-
                 }
 
                 h3 {
@@ -393,7 +410,6 @@ header {
             grid-template-columns: repeat(4, 100%);
             overflow-x: auto;
         }
-
 
     }
 
@@ -518,27 +534,16 @@ header {
                 font-weight: bold;
             }
 
-            @media screen and (max-width: $xl) {
-                grid-template-columns: repeat(3, 1fr);
+            @include responsive-grid(3, $xl);
+            @include responsive-grid(2, $md);
+            @include responsive-grid(1, $sm);
 
-            }
-
-            @media screen and (max-width: $md) {
-                grid-template-columns: repeat(2, 1fr);
-
-            }
-
-            @media screen and (max-width: $sm) {
-                grid-template-columns: repeat(1, 1fr);
-
-            }
         }
     }
 
 }
 
 // --> TREND SECTION
-
 .trend {
 
     padding-top: 5em;
@@ -659,7 +664,6 @@ header {
                         color: #0362db;
                     }
 
-
                 }
 
                 p {
@@ -701,15 +705,12 @@ header {
     @media screen and (max-width: $sm) {
         padding: 0;
     }
-
 }
 
 // --> BLOG SECTION
-
 .our-blog {
-    padding: 75px 0;
+    padding-top: 75px;
     background-color: #F8F9FA;
-
 
     .title {
         text-align: center;
@@ -786,6 +787,14 @@ header {
                 line-height: 1.7;
                 font-weight: 400;
             }
+        }
+
+        @media screen and (max-width: $lg) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media screen and (max-width: $md) {
+            grid-template-columns: repeat(1, 1fr);
         }
     }
 
@@ -878,6 +887,16 @@ header {
                 }
             }
         }
+
+        @media screen and (max-width: $sm) {
+            flex-direction: column;
+            gap: 30px;
+
+            .news,
+            .news-sub {
+                width: 100%;
+            }
+        }
     }
 }
 
@@ -899,6 +918,29 @@ header {
             width: 75%;
             word-spacing: 0.4rem;
             line-height: 2.5rem;
+
+            .points {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+                margin-top: 30px;
+
+                svg {
+                    width: 10px;
+                    height: 10px;
+                    cursor: pointer;
+                    fill: #DEE2E6;
+                }
+
+                svg:first-child {
+                    fill: #2F89FC;
+                }
+            }
+
+            @media screen and (max-width: $md) {
+                font-size: 1.593285rem;
+            }
         }
 
 
@@ -935,7 +977,6 @@ header {
             }
 
         }
-
 
     }
 
@@ -976,18 +1017,26 @@ header {
             width: 9%;
             height: 9%;
             border-radius: 50%;
+
+            @media screen and (max-width: $lg) {
+                width: 15%;
+                height: 15%;
+            }
+
+            @media screen and (max-width: $md) {
+                width: 30%;
+                height: 30%;
+            }
         }
 
         p {
             margin-top: 15px;
             color: #4d4d4d;
         }
-
     }
-
 }
 
-// --> FOOTER SECTION
+// --> FOOTER
 footer {
     background-color: #333333;
     padding: 0 40px;
@@ -1112,6 +1161,17 @@ footer {
                     }
                 }
             }
+
+            @media screen and (max-width: $lg) {
+                flex-direction: column;
+
+                .footer-left {
+                    .footer-content {
+                        grid-template-columns: repeat(1, 100%);
+                    }
+                }
+
+            }
         }
 
         .footer-bottom {
@@ -1137,10 +1197,11 @@ footer {
         }
     }
 
-    @media (max-width: $md) {
+    @media (max-width: $lg) {
         .footer-container {
             .footer-main {
                 flex-direction: column;
+
 
                 .footer-left {
                     .footer-content {
