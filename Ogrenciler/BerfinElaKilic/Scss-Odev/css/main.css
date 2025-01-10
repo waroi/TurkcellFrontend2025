@@ -249,7 +249,7 @@ a {
 
 .carousel {
   padding: 10px;
-  display: flex; /* Kartları yatayda sıralar */
+  display: flex;
   overflow-x: auto; /* Yatayda kaydırmayı etkinleştirir */
   overflow-y: hidden; /* Dikey taşmayı gizler */
   scroll-snap-type: x mandatory; /* Kartları kaydırırken snap (kilitlenme) efekti ekler */
@@ -277,12 +277,12 @@ header {
   background-size: cover;
   background-position: center;
   height: 740px;
+  background-attachment: fixed;
 }
 
 .headerOverlay {
   height: 100%;
   width: 100%;
-  background-color: rgba(1, 4, 161, 0.308);
 }
 
 .topBar {
