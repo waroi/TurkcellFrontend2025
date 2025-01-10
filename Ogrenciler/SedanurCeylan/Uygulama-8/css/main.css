@@ -15,7 +15,8 @@
   display: flex;
   justify-content: center;
   align-items: start;
-  background-image: url("https://preview.colorlib.com/theme/directoryads/images/hero_2.jpg.webp");
+  background-image: url("https://preview.colorlib.com/theme/directoryads/images/hero_2.jpg.webp") center center;
+  background-size: cover;
   height: 1000px;
 }
 .header .container {
@@ -146,7 +147,7 @@
   background: red;
   cursor: pointer;
 }
-.featured-ads .featured-card .fa-card .fa-card-content .first-content .span-heart:hover i:hover, .trending .featured-card .fa-card .fa-card-content .first-content .span-heart:hover i:hover {
+.featured-ads .featured-card .fa-card .fa-card-content .first-content .span-heart:hover i, .trending .featured-card .fa-card .fa-card-content .first-content .span-heart:hover i {
   color: white;
 }
 .featured-ads .featured-card .fa-card .fa-card-content .first-content .span-heart i, .trending .featured-card .fa-card .fa-card-content .first-content .span-heart i {
