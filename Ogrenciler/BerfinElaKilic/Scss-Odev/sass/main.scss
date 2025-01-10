@@ -222,7 +222,7 @@ a {
 
 .carousel {
   padding: 10px;
-  display: flex; /* Kartları yatayda sıralar */
+  display: flex;
   overflow-x: auto; /* Yatayda kaydırmayı etkinleştirir */
   overflow-y: hidden; /* Dikey taşmayı gizler */
   scroll-snap-type: x mandatory; /* Kartları kaydırırken snap (kilitlenme) efekti ekler */
@@ -246,20 +246,17 @@ a {
     flex: 0 0 auto;
   }
 }
-
-// ---------------- HEADER START ----------------//
-
 header {
   background-image: url(".././img/hero_2.jpg.webp");
   background-size: cover;
   background-position: center;
   height: 740px;
+  background-attachment: fixed;
 }
 
 .headerOverlay {
   height: 100%;
   width: 100%;
-  background-color: rgba(1, 4, 161, 0.308);
 }
 
 .topBar {
@@ -345,9 +342,6 @@ header {
     }
   }
 }
-
-// ---------------- HEADER END ----------------//
-
 .category {
   padding: 30px 10px;
   border-radius: 7px;
