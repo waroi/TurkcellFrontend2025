@@ -1,0 +1,56 @@
+body{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: grey;
+}
+
+
+
+
+
+.box{
+    height: 100px;
+    width: 150px;
+    background-color: orange;
+    animation-duration: 1s;
+    animation-name: rotateObject;
+    position: relative;
+    animation-iteration-count: infinite;
+    transition: all 5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+
+
+@keyframes rotateObject {
+    0% {
+        background-color: blue;
+        /* left: 0px;
+        right: 0px;
+         */
+    }
+    30% {
+        transform:rotate(360deg);
+        transition-duration: 1s;
+        background-color: brown;
+        left: 0px;
+        bottom: 300px;         
+
+    }
+    60% {
+        transform:rotate(180deg);
+        background-color: yellow;
+        
+        bottom: 300px;   
+        left: 500px;      
+
+    }
+    60% {
+        transform:rotate(360deg);
+        background-color: blue;
+        
+            
+
+    }
+}

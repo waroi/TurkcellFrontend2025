@@ -1,5 +1,12 @@
-$mainW: 73%;
+// Variables
+$container-width: 65%;
 $center: 0 auto;
+
+$xxl: 1400px;
+$xl: 1200px;
+$lg: 992px;
+$md: 768px;
+$sm: 576px;
 
 * {
     padding: 0;
@@ -17,12 +24,17 @@ $center: 0 auto;
 
 header,
 .container {
-    max-width: $mainW;
+    max-width: $container-width;
     margin: $center;
     padding: 68px 0;
 
     a {
         text-decoration: none;
+    }
+
+    @media screen and (max-width: $xxl) {
+        max-width: 100%;
+        padding: 40px;
     }
 }
 
@@ -35,6 +47,7 @@ header,
         background-size: cover;
         width: 100%;
         height: 100%;
+        background-attachment: fixed;
         z-index: -1;
         background-position: 50% -20px;
 
@@ -50,24 +63,44 @@ header,
     }
 }
 
+// --> HEADER SECTION
 header {
     justify-content: space-between;
-    margin-top: 2rem;
     align-items: center;
     display: flex;
+    z-index: 1999;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    border-radius: 4px;
+    padding-top: 35px;
 
     nav {
         @include center();
-        gap: 3rem;
+        gap: 10rem;
 
         .list-group {
             display: flex;
             list-style-type: none;
+            gap: 20px;
 
             a {
                 color: #fff;
                 padding: 20px 10px;
                 font-size: 15px
+            }
+
+            li:nth-child(3) a {
+                padding-right: 3px;
+
+
+            }
+
+            li {
+                cursor: pointer;
+                display: flex;
+                align-items: center;
             }
         }
 
@@ -91,6 +124,10 @@ header {
             }
         }
 
+
+        @media screen and (max-width: $xxl) {
+            display: none;
+        }
     }
 
     .navbar-brand {
@@ -101,13 +138,23 @@ header {
     }
 }
 
+// --> HERO SECTION
 .hero {
-    max-width: $mainW;
+    max-width: $container-width;
     margin: $center;
+    height: calc(100vh);
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (max-width: $xxl) {
+        max-width: 100%;
+        padding: 40px 40px 120px;
+    }
+
 
     .hero-title {
         font-size: 3rem;
-        margin-top: 5rem;
         text-align: center;
         font-weight: 400;
         color: #fff;
@@ -165,6 +212,7 @@ header {
         .search-button {
             color: #fff;
             background-color: #4a8afc;
+            font-size: 18px;
             border: 1px solid #4a8afc;
             padding: 10px 44px;
             border-radius: 0.25rem;
@@ -174,6 +222,14 @@ header {
                 background-color: #0974fb;
             }
         }
+
+        @media screen and (max-width: $xl) {
+            flex-direction: column;
+            gap: 20px;
+
+        }
+
+
     }
 
 
@@ -211,6 +267,7 @@ header {
     }
 }
 
+// --> FEATURED-ADD SECTION
 .featured-add {
     padding-top: 5em;
     background-color: #F8F9FA;
@@ -226,6 +283,8 @@ header {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 30px;
+        padding: 0 15px;
+        margin-top: 20px;
 
         .featured-card {
             display: flex;
@@ -236,12 +295,16 @@ header {
 
             img {
                 width: 100%;
-                height: 150px;
+                height: auto;
+                border-top-left-radius: 7px;
+                border-top-right-radius: 7px;
             }
 
             .featured-cont {
                 padding: 20px;
                 background-color: rgb(255, 255, 255);
+                border-bottom-left-radius: 7px;
+                border-bottom-right-radius: 7px;
 
                 .stars {
                     svg {
@@ -283,6 +346,8 @@ header {
                         border-radius: 15px;
                         background-color: black;
                         display: flex;
+                        transition: .3s all ease;
+                        cursor: pointer;
                         justify-content: center;
                         align-items: center;
                         background: rgba(0, 0, 0, 0.03);
@@ -301,6 +366,11 @@ header {
                 h3 {
                     color: #2F89FC;
                     margin-bottom: 0.5rem;
+                    cursor: pointer;
+
+                    &:hover {
+                        color: #0362db;
+                    }
                 }
 
                 p {
@@ -308,6 +378,23 @@ header {
                 }
             }
         }
+
+        @media screen and (max-width: $xl) {
+            grid-template-columns: repeat(4, 33%);
+            overflow-x: auto;
+        }
+
+        @media screen and (max-width: $md) {
+            grid-template-columns: repeat(4, 50%);
+            overflow-x: auto;
+        }
+
+        @media screen and (max-width: $sm) {
+            grid-template-columns: repeat(4, 100%);
+            overflow-x: auto;
+        }
+
+
     }
 
     .featured-arrows {
@@ -316,17 +403,16 @@ header {
         display: flex;
         justify-content: center;
         align-items: center;
+        cursor: pointer;
         gap: 40px;
 
         svg {
             width: 15px;
             height: 15px;
+            transition: .3s all ease;
         }
 
-        .left-arrow:hover {
-            fill: #2F89FC;
-        }
-
+        .left-arrow:hover,
         .right-arrow:hover {
             fill: #2F89FC;
         }
@@ -335,6 +421,7 @@ header {
 
 }
 
+// --> POPULAR-CATEGORIES SECTION
 .popular-categories {
     padding: 5em 0;
 
@@ -381,6 +468,8 @@ header {
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
+                cursor: pointer;
+                transition: all 0.3s ease;
                 gap: 20px;
             }
 
@@ -393,7 +482,6 @@ header {
                 -webkit-transform: scale(1.09);
                 -ms-transform: scale(1.09);
                 transform: scale(1.09);
-                transition: all 0.3s ease;
 
                 .icon-logo {
                     fill: #fff;
@@ -429,45 +517,79 @@ header {
                 color: #000;
                 font-weight: bold;
             }
+
+            @media screen and (max-width: $xl) {
+                grid-template-columns: repeat(3, 1fr);
+
+            }
+
+            @media screen and (max-width: $md) {
+                grid-template-columns: repeat(2, 1fr);
+
+            }
+
+            @media screen and (max-width: $sm) {
+                grid-template-columns: repeat(1, 1fr);
+
+            }
         }
     }
 
 }
 
-//***********************************************
+// --> TREND SECTION
 
 .trend {
 
     padding-top: 5em;
     background-color: #F8F9FA;
 
-    .h2 {
-        font-weight: 500;
+    h2 {
+        font-weight: 700;
         line-height: 1.2;
-        font-size: 1.15rem;
-        margin-bottom: 1.5rem;
-        color: #3089fc;
+        font-size: 30px;
+        margin-bottom: 2rem;
+        color: #2f83fc;
+        position: relative;
+
+        &::before {
+            height: 3px;
+            width: 80px;
+            content: "";
+            background-color: #2f83fc;
+            bottom: -10px;
+            position: absolute;
+        }
+
     }
 
     .trend-cards {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 30px;
+        margin-top: 20px;
 
         .trend-card {
             display: flex;
             border-radius: 20px;
+            border-top-left-radius: 7px;
+            border-top-right-radius: 7px;
             margin-bottom: 30px;
             box-shadow: 0 2px 20px -2px rgba(0, 0, 0, 0.1);
 
             img {
                 width: 50%;
                 height: 100%;
+                border-top-left-radius: 7px;
+                border-bottom-left-radius: 7px;
             }
 
             .trend-cont {
+                width: 100%;
                 padding: 20px;
                 background-color: rgb(255, 255, 255);
+                border-top-right-radius: 7px;
+                border-bottom-right-radius: 7px;
 
                 .stars {
                     svg {
@@ -511,6 +633,8 @@ header {
                         display: flex;
                         justify-content: center;
                         align-items: center;
+                        transition: .3s all ease;
+                        cursor: pointer;
                         background: rgba(0, 0, 0, 0.03);
                     }
 
@@ -519,6 +643,7 @@ header {
 
                         svg {
                             fill: #fff;
+                            transition: .3s all ease;
                         }
                     }
 
@@ -527,16 +652,59 @@ header {
                 h3 {
                     color: #2F89FC;
                     margin-bottom: 0.5rem;
+                    cursor: pointer;
+                    transition: .3s all ease;
+
+                    &:hover {
+                        color: #0362db;
+                    }
+
+
                 }
 
                 p {
                     margin-bottom: 1rem;
                 }
+
+                @media screen and (max-width:$xl) {
+                    h3 {
+                        font-size: 16px;
+                    }
+
+                    p {
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+
+        @media screen and (max-width: $lg) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        @media screen and (max-width: $md) {
+
+            .trend-card {
+                flex-direction: column;
+
+                img {
+                    width: 100%;
+                }
             }
         }
     }
 
+    @media screen and (max-width: $md) {
+        padding: 0 6rem;
+    }
+
+    @media screen and (max-width: $sm) {
+        padding: 0;
+    }
+
 }
+
+// --> BLOG SECTION
 
 .our-blog {
     padding: 75px 0;
@@ -643,8 +811,8 @@ header {
     }
 }
 
+// --> NEWSLETTER SECTION
 .newsletter {
-    padding: 3rem 0;
     margin-top: 4rem;
     background-color: #2f89fc;
 
@@ -713,6 +881,7 @@ header {
     }
 }
 
+// --> TESTIMONIALS SECTION
 .testimonials {
     padding: 55px 0;
 
@@ -747,6 +916,8 @@ header {
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                transition: .3s all ease;
+                cursor: pointer;
 
                 &:hover {
                     background-color: #000;
@@ -814,4 +985,173 @@ header {
 
     }
 
+}
+
+// --> FOOTER SECTION
+footer {
+    background-color: #333333;
+    padding: 0 40px;
+
+    .container {
+        margin: 0 auto;
+        padding: 8em 0;
+
+        h2 {
+            font-size: 18px;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .footer-main {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 85px;
+
+            .footer-left {
+                flex: 3;
+
+                .footer-content {
+                    display: grid;
+                    grid-template-columns: 2fr 1fr 1fr;
+                    gap: 20px;
+
+                    .about-section {
+                        padding-right: 30px;
+
+                        p {
+                            line-height: 1.6;
+                            color: #666;
+                        }
+                    }
+
+                    .nav-section {
+
+                        .nav-list {
+                            list-style: none;
+                            padding: 0;
+
+                            li {
+                                margin-bottom: 19px;
+
+                                a {
+                                    text-decoration: none;
+                                    color: #999999;
+                                    transition: all .3s ease;
+
+                                    &:hover {
+                                        color: white;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .social-section {
+
+
+                        .social-links {
+                            display: flex;
+                            gap: 19px;
+
+                            a {
+                                text-decoration: none;
+                                margin-right: 15px;
+                                fill: #999999;
+                                transition: all .3s ease;
+                                transition: all .3s ease;
+
+
+                                svg {
+                                    width: 15px;
+                                    height: 15px;
+                                }
+
+                                &:hover {
+                                    fill: #fff;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .footer-right {
+                flex: 1;
+
+                .search-form {
+                    display: flex;
+
+                    .search-input {
+                        flex: 1;
+                        padding: 8px;
+                        font-size: 16px;
+                        height: 43px;
+                        color: white;
+                        border: 1px solid #6c757d;
+                        background: transparent;
+
+                        &:focus {
+                            outline: none;
+                            border-color: #007bff;
+                        }
+                    }
+
+                    .search-button {
+                        padding: 8px 16px;
+                        background-color: #007bff;
+                        color: white;
+                        border: none;
+                        font-size: 17px;
+                        cursor: pointer;
+                        transition: .3s all ease;
+
+                        &:hover {
+                            background-color: #0056b3;
+                        }
+                    }
+                }
+            }
+        }
+
+        .footer-bottom {
+            margin-top: 50px;
+            padding-top: 20px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+            p {
+                margin: 0;
+                color: #737373;
+
+                a {
+                    color: #999999;
+                    text-decoration: none;
+                    transition: all 0.3s ease;
+
+                    &:hover {
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: $md) {
+        .footer-container {
+            .footer-main {
+                flex-direction: column;
+
+                .footer-left {
+                    .footer-content {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                .footer-right {
+                    width: 100%;
+                }
+            }
+        }
+    }
 }

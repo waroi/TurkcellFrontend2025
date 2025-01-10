@@ -1,0 +1,229 @@
+h1 {
+  font-size: 120px;
+  font-weight: 700;
+  line-height: 120px;
+  letter-spacing: -4px;
+  text-align: left;
+  vertical-align: top;
+  color: #0c7f86;
+  font-family: "Poppins";
+
+}
+
+p {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 30px;
+  color: #0c7f86;
+  font-family: "Poppins";
+}
+
+h4 {
+  font-family: "Poppins";
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 30px;
+  color: #0c7f86;
+}
+
+.link {
+  font-family: "Poppins";
+  color: #0c7f86;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: 5px;
+  text-decoration: none;
+
+}
+
+header {
+  margin-left: 100px;
+  margin-top: 50px;
+
+}
+
+header img {
+  width: 100px;
+  height: 50px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr minmax(350px, 1200px) 1fr;
+  grid-template-areas: ". content .";
+}
+
+.container>* {
+  grid-area: content;
+}
+
+.bg-shape-1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2000px;
+  width: 40%;
+  background-color: #e5fff9;
+  z-index: -1;
+}
+
+.bg-shape-2 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 2000px;
+  width: 60%;
+  background-color: #b8e4da;
+  z-index: -1;
+}
+
+.kovala {
+  position: relative;
+  display: flex;
+
+  animation: mcqueen 10s infinite linear;
+}
+
+.mcqueen {
+  position: relative;
+  width: 300px;
+  height: 150px;
+}
+
+.traktör {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  animation: traktör 1s infinite linear;
+}
+
+@keyframes traktör {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(-60deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+  
+}
+
+.rear-wheel {
+  position: absolute;
+  width: 100px;
+  left: 265px;
+  bottom: 110px;
+  margin: -37px;
+  z-index: -1;
+  animation: wheel 1s infinite linear;
+}
+
+.front-wheel {
+  position: absolute;
+  width: 100px;
+  margin: -37px;
+  left: 425px;
+  bottom: 110px;
+  z-index: -1;
+  animation: wheel 1s infinite linear;
+}
+
+@keyframes wheel {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes mcqueen {
+  0% {
+    transform: translateX(-500px);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+input[type="text"] {
+  font-size: 18px;
+  padding: 20px 24px;
+  flex-grow: 1;
+  margin: 0 16px;
+  border: none;
+  outline: none;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0px 0px 30px 7px #0c7f8640;
+  transition: 0.5s ease;
+}
+
+.btn-filled {
+  padding: 25px 24px;
+  border-radius: 10px;
+  color: #fff;
+  background-color: #0c7f86;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  transition: 0.5s ease;
+}
+
+.prof-text {
+  width: calc(60%);
+  overflow: hidden;
+}
+
+.subtitle {
+  color: #0c7f86;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 35px;
+  text-transform: uppercase;
+  padding-top: 15px;
+}
+
+.prof-form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 60px;
+}
+
+.prof-image {
+  width: calc(30%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.prof-image .img-box {
+  position: relative;
+  margin-bottom: 32px;
+  z-index: 1;
+}
+
+.prof-image img {
+  position: relative;
+  max-width: 100%;
+  z-index: 1;
+  padding-top: 40px;
+}
+
+.holder {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

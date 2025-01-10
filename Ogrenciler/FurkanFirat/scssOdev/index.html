@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SCSS ÖDEV</title>
+  <link rel="stylesheet" href="./css/main.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+</head>
+
+<body>
+  <header class="header">
+    <div class="flex-center container">
+      <div class="header-logo">
+        <h1 class="header-title"><a href="#">DIRECTORYADS</a></h1>
+      </div>
+      <div class="flex-center header-links">
+        <nav class="flex-center header-nav">
+          <i class="fa fa-bars"></i>
+          <ul class="flex-center header-list">
+            <li class="header-link"><a href="#">Home</a></li>
+            <li class="header-link"><a href="#">Ads</a></li>
+            <li class="header-link"><a href="#">About</a></li>
+            <li class="header-link"><a href="#">Blog</a></li>
+            <li class="header-link"><a href="#">Contact</a></li>
+            <div class="vertical-divider"></div>
+            <li class="header-link"><a href="#">Login</a></li>
+            <button class="btn">Register</button>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <section class="flex-center banner">
+    <div class="overlay"></div>
+    <div class="flex-center container">
+      <div class="flex-center banner-content">
+        <h1 class="banner-title">Welcome To DirectoryAds</h1>
+        <p class="banner-text">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        </p>
+      </div>
+      <div class="form-section">
+        <form action="" class="flex-center form">
+          <div class="looking-for">
+            <input type="text" name="text" id="text" placeholder="What are you looking for?" class="input" />
+          </div>
+          <div class="location">
+            <input type="text" name="location" id="location" placeholder="Location" class="input" />
+          </div>
+          <div class="all-categories">
+            <select name="categories" id="categories" class="input">
+              <option value="all">All Categories</option>
+              <option value="1">Real Estate</option>
+              <option value="2">Books & Magazines</option>
+              <option value="3">Furnutire</option>
+              <option value="4">Electronics</option>
+            </select>
+          </div>
+          <button class="btn">Search</button>
+        </form>
+      </div>
+      <div class="flex-center trending-search">
+        <h2>Trending Search:</h2>
+        <div class="trending-search-item">
+          <span class="trending-search-text"><a href="">iPhone</a></span>
+          <span class="trending-search-text"><a href="">Cars</a></span>
+          <span class="trending-search-text"><a href="">Flowers</a></span>
+          <span class="trending-search-text"><a href="">House</a></span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="featured-ads">
+    <div class="flex-center container">
+      <h2>Featured Ads</h2>
+      <div class="featured-ads-cards">
+        <div class="featured-ads-card">
+          <div class="card-container">
+            <div class="card-image">
+              <img src="https://preview.colorlib.com/theme/directoryads/images/img_2.jpg" alt="" />
+            </div>
+            <div class="card-content">
+              <div class="flex-center category">
+                <span class="category-text">Real Estate</span>
+                <span class="category-icon"><i class="fa fa-heart"></i></span>
+              </div>
+              <div class="category-title">
+                <h3><a href="">Own New House</a></h3>
+              </div>
+              <address>Don St, Brooklyn, New York</address>
+              <p class="mb-0">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="review">(3 Reviews)</span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="featured-ads-card">
+          <div class="card-container">
+            <div class="card-image">
+              <img src="https://preview.colorlib.com/theme/directoryads/images/img_3.jpg" alt="" />
+            </div>
+            <div class="card-content">
+              <div class="flex-center category">
+                <span class="category-text">Furniture</span>
+                <span class="category-icon"><i class="fa fa-heart"></i></span>
+              </div>
+              <div class="category-title">
+                <h3><a href="">Wooden Chair & Table</a></h3>
+              </div>
+              <address>Don St, Brooklyn, New York</address>
+              <p class="mb-0">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="review">(3 Reviews)</span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="featured-ads-card">
+          <div class="card-container">
+            <div class="card-image">
+              <img src="https://preview.colorlib.com/theme/directoryads/images/img_4.jpg" alt="" />
+            </div>
+            <div class="card-content">
+              <div class="flex-center category">
+                <span class="category-text">Electronics</span>
+                <span class="category-icon"><i class="fa fa-heart"></i></span>
+              </div>
+              <div class="category-title">
+                <h3><a href="">iPhone X gray</a></h3>
+              </div>
+              <address>Don St, Brooklyn, New York</address>
+              <p class="mb-0">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="review">(3 Reviews)</span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="featured-ads-card">
+          <div class="card-container">
+            <div class="card-image">
+              <img src="https://preview.colorlib.com/theme/directoryads/images/img_1.jpg" alt="" />
+            </div>
+            <div class="card-content">
+              <div class="flex-center category">
+                <span class="category-text">Cars & Vehicles</span>
+                <span class="category-icon"><i class="fa fa-heart"></i></span>
+              </div>
+              <div class="category-title">
+                <h3><a href="">New Black Car</a></h3>
+              </div>
+              <address>Don St, Brooklyn, New York</address>
+              <p class="mb-0">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="review">(3 Reviews)</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tabs flex-center">
+      <span><i class="fa fa-less-than"></i></span>
+      <span><i class="fa fa-greater-than"></i></span>
+    </div>
+  </section>
+  <section class="popular-categories">
+    <div class="container flex-center">
+      <h2>Popular Categories</h2>
+      <p class="color-black-opacity-5">Lorem Ipsum Dolor Sit Amet</p>
+      <div class="wrapper">
+        <div class="wrapper-item">
+          <span class="icon"><a href="#"><i class="fa fa-car"></i></a></span>
+          <span class="caption"> Cars & Vehicles </span>
+          <span class="size">1,921</span>
+        </div>
+        <div class="wrapper-item">
+          <span><a href="#"><i class="fa fa-couch"></i></a></span>
+          <span class="caption"> Furniture </span>
+          <span class="size">2,339</span>
+        </div>
+        <div class="wrapper-item">
+          <span><a href="#"><i class="fa fa-home"></i></a></span>
+          <span class="caption"> Real Estate </span>
+          <span class="size">4,398</span>
+        </div>
+        <div class="wrapper-item">
+          <span><a href="#"><i class="fa fa-book"></i></a></span>
+          <span class="caption"> Books & Magazines </span>
+          <span class="size">3,298</span>
+        </div>
+        <div class="wrapper-item">
+          <span><a href="#"><i class="fas fa-tv"></i></a></span>
+          <span class="caption"> Electronics </span>
+          <span class="size">2,932</span>
+        </div>
+        <div class="wrapper-item">
+          <span><a href="#"><i class="fa fa-pizza-slice"></i></a></span>
+          <span class="caption"> Other </span>
+          <span class="size">183</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="featured-ads trending-today">
+    <div class="flex-center container">
+      <h2>Trending Today</h2>
+      <div class="trending-today-cards">
+        <div class="trending-today-card">
+          <div class="card-container flex-center">
+            <div class="card-image">
+              <img src="https://preview.colorlib.com/theme/directoryads/images/img_2.jpg" alt="" />
+            </div>
+            <div class="card-content">
+              <div class="flex-center category">
+                <span class="category-text">Real Estate</span>
+                <span class="category-icon"><i class="fa fa-heart"></i></span>
+              </div>
+              <div class="category-title">
+                <h3><a href="">Own New House</a></h3>
+              </div>
+              <address>Don St, Brooklyn, New York</address>
+              <p class="mb-0">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="review">(3 Reviews)</span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="trending-today-card">
+          <div class="card-container flex-center">
+            <div class="card-image">
+              <img src="https://preview.colorlib.com/theme/directoryads/images/img_1.jpg" alt="" />
+            </div>
+            <div class="card-content">
+              <div class="flex-center category">
+                <span class="category-text">Cars & Vehicles</span>
+                <span class="category-icon"><i class="fa fa-heart"></i></span>
+              </div>
+              <div class="category-title">
+                <h3><a href="">New Black Car</a></h3>
+              </div>
+              <address>Don St, Brooklyn, New York</address>
+              <p class="mb-0">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="review">(3 Reviews)</span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="trending-today-card">
+          <div class="card-container flex-center">
+            <div class="card-image">
+              <img src="https://preview.colorlib.com/theme/directoryads/images/img_3.jpg" alt="" />
+            </div>
+            <div class="card-content">
+              <div class="flex-center category">
+                <span class="category-text">Furniture</span>
+                <span class="category-icon"><i class="fa fa-heart"></i></span>
+              </div>
+              <div class="category-title">
+                <h3><a href="">Wooden Chair & Table</a></h3>
+              </div>
+              <address>Don St, Brooklyn, New York</address>
+              <p class="mb-0">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="review">(3 Reviews)</span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="trending-today-card">
+          <div class="card-container flex-center">
+            <div class="card-image">
+              <img src="https://preview.colorlib.com/theme/directoryads/images/img_2.jpg" alt="" />
+            </div>
+            <div class="card-content">
+              <div class="flex-center category">
+                <span class="category-text">Real Estate</span>
+                <span class="category-icon"><i class="fa fa-heart"></i></span>
+              </div>
+              <div class="category-title">
+                <h3><a href="">Own New House</a></h3>
+              </div>
+              <address>Don St, Brooklyn, New York</address>
+              <p class="mb-0">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="review">(3 Reviews)</span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="trending-today-card">
+          <div class="card-container flex-center">
+            <div class="card-image">
+              <img src="https://preview.colorlib.com/theme/directoryads/images/img_4.jpg" alt="" />
+            </div>
+            <div class="card-content">
+              <div class="flex-center category">
+                <span class="category-text">Electronics</span>
+                <span class="category-icon"><i class="fa fa-heart"></i></span>
+              </div>
+              <div class="category-title">
+                <h3><a href="">iPhone X gray</a></h3>
+              </div>
+              <address>Don St, Brooklyn, New York</address>
+              <p class="mb-0">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="review">(3 Reviews)</span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="trending-today-card">
+          <div class="card-container flex-center">
+            <div class="card-image">
+              <img src="https://preview.colorlib.com/theme/directoryads/images/img_3.jpg" alt="" />
+            </div>
+            <div class="card-content">
+              <div class="flex-center category">
+                <span class="category-text">Furniture</span>
+                <span class="category-icon"><i class="fa fa-heart"></i></span>
+              </div>
+              <div class="category-title">
+                <h3><a href="">Wooden Chair & Table</a></h3>
+              </div>
+              <address>Don St, Brooklyn, New York</address>
+              <p class="mb-0">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="review">(3 Reviews)</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="testimonials">
+    <div class="flex-center container">
+      <span class="flex-center arrow-icon">
+        <span><i class="fa fa-less-than"></i></span>
+      </span>
+      <div class="content-wrapper flex-center">
+        <h2>Testimonials</h2>
+        <div class="testimonials-image">
+          <img src="https://preview.colorlib.com/theme/directoryads/images/person_4.jpg" alt="" />
+        </div>
+        <div class="testimonials-name">
+          <p>Robert Spears</p>
+        </div>
+        <div class="flex-center testemonials-text-container">
+          <p class="testimonials-text">
+            “Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Consectetur unde reprehenderit aperiam quaerat fugiat repudiandae
+            explicabo animi minima fuga beatae illum eligendi incidunt
+            consequatur. Amet dolores excepturi earum unde iusto.”
+          </p>
+        </div>
+      </div>
+      <span class="flex-center arrow-icon">
+        <span><i class="fa fa-greater-than"></i></span>
+      </span>
+    </div>
+  </section>
+
+  <!-- **** !-->
+  <section class="our-blog">
+    <div class="container flex-center">
+      <h2 class="our-blog-title">Our Blog</h2>
+      <p class="our-blog-subtitle">See Our Daily News & Updates</p>
+      <div class="our-blog-wrapper">
+        <div class="our-blog-wrapper-item">
+          <img src="https://preview.colorlib.com/theme/directoryads/images/img_1.jpg" alt="">
+          <h2><a href="#">Many People Selling Online</a></h2>
+          <div>by Mark Spiker<span>•</span> Jan 18, 2019 <span>•</span> <a href="#">News</a></div>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eligendi nobis ea maiores sapiente veritatis
+            reprehenderit suscipit quaerat rerum voluptatibus a eius.</p>
+        </div>
+        <div class="our-blog-wrapper-item">
+          <img src="https://preview.colorlib.com/theme/directoryads/images/img_2.jpg" alt="">
+          <h2><a href="#">Many People Selling Online</a></h2>
+          <div>by Mark Spiker<span>•</span> Jan 18, 2019 <span>•</span> <a href="#">News</a></div>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eligendi nobis ea maiores sapiente veritatis
+            reprehenderit suscipit quaerat rerum voluptatibus a eius.</p>
+        </div>
+        <div class="our-blog-wrapper-item">
+          <img src="https://preview.colorlib.com/theme/directoryads/images/img_3.jpg" alt="">
+          <h2><a href="#">Many People Selling Online</a></h2>
+          <div>by Mark Spiker<span>•</span> Jan 18, 2019 <span>•</span> <a href="#">News</a></div>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eligendi nobis ea maiores sapiente veritatis
+            reprehenderit suscipit quaerat rerum voluptatibus a eius.</p>
+        </div>
+      </div>
+
+
+  </section>
+
+
+  <section class="newsletter">
+    <div class="container">
+      <div class="newsletter-container">
+        <div class="newsletter-text">
+          <h3>Newsletter</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+        <form class="newsletter-form" action="#">
+          <input type="email" placeholder="Email">
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="footer-container">
+
+      <div class="footer-about">
+        <h4>About</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident rerum unde possimus molestias dolorem
+          fuga, illo quis fugiat!</p>
+      </div>
+
+      <div class="footer-nav">
+        <h4>Navigations</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Testimonials</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-right">
+        <div class="footer-follow">
+          <h4>Follow Us</h4>
+          <div class="footer-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      <p>Copyright ©2025 All rights reserved | This template is made with <span>❤️</span> by Colorlib</p>
+    </div>
+  </footer>
+
+
+</body>
+
+</html>
