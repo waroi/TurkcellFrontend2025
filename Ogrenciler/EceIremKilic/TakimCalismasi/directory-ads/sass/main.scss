@@ -199,6 +199,17 @@ header {
 
       .welcome-container {
         text-align: center;
+        @keyframes moveUp {
+          0% {
+          transform: translateY(150px);
+          opacity: 0;
+          }
+          100% {
+          opacity: 1;
+          transform: translateY(0);
+          }
+          }
+        animation: moveUp 1.5s;
         @media (max-width: $xl) {
           width: 80%;
         }
