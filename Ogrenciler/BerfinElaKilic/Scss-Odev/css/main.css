@@ -263,6 +263,102 @@ a {
   scroll-snap-align: start;
 }
 
+header {
+  background-image: url(".././img/hero_2.jpg.webp");
+  background-size: cover;
+  background-position: center;
+  height: 740px;
+}
+
+.headerOverlay {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(1, 4, 161, 0.308);
+}
+
+.topBar {
+  padding-top: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+.topBar li {
+  list-style: none;
+}
+.topBar ul {
+  gap: 30px;
+  margin-right: 100px;
+}
+.topBar a {
+  color: white;
+}
+.topBar h1 {
+  font-size: 22px;
+  color: white;
+  font-weight: 500;
+}
+
+.botBar {
+  margin-top: 200px;
+}
+.botBar h2 {
+  color: white;
+  font-size: 48px;
+  font-weight: 200;
+}
+.botBar p {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 200;
+}
+
+.searchBar {
+  margin-top: 20px;
+  background-color: rgba(255, 255, 255, 0.75);
+  padding: 20px 0;
+  display: grid;
+  height: 100%;
+  width: 100%;
+  grid-template-columns: 3fr 2fr 2fr 1fr;
+  gap: 30px;
+  border-radius: 5px;
+}
+.searchBar input, .searchBar button {
+  margin: 0 20px;
+  height: 46px;
+  border-radius: 5px;
+  border-width: 0px;
+}
+
+.buttonWrapper {
+  display: flex;
+  gap: 10px;
+  align-self: left;
+}
+
+.trend {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  align-self: left;
+}
+.trend p {
+  color: white;
+  font-size: 1rem;
+  font-weight: 200;
+  letter-spacing: 1px;
+}
+.trend button {
+  color: white;
+  padding: 5px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  border: 1px solid white;
+}
+.trend button:hover {
+  background-color: rgb(255, 255, 255);
+  color: #2f89fc;
+}
+
 @media (min-width: 576px) {
   .container {
     max-width: 540px;
@@ -353,6 +449,30 @@ a {
   }
   .carousel-item {
     width: 25%;
+  }
+}
+@media (max-width: 1200px) {
+  .trend {
+    flex-direction: column;
+  }
+  .navbar {
+    display: none;
+  }
+  .botBar {
+    margin-top: 50px;
+  }
+  .botBar h2 {
+    color: white;
+    font-size: 2rem;
+    font-weight: 200;
+  }
+  .botBar p {
+    color: white;
+    font-size: 1rem;
+    font-weight: 200;
+  }
+  .grid-col-1-xl {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
