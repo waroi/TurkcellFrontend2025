@@ -74,6 +74,36 @@ h1 {
   color: #0c7f86;
 }
 
+.up {
+  display: inline-block;
+  animation: up-o 3s infinite ease-in alternate;
+}
+
+@keyframes up-o {
+  0% {
+    transform: translate(0, 0);
+  }
+  20% {
+    transform: translate(0px, 80px);
+  }
+  40% {
+    transform: translate(105px, 80px);
+  }
+  50% {
+    transform: translate(105px, 180px);
+  }
+  60% {
+    transform: translate(105px, 80px);
+  }
+  80% {
+    transform: translate(0px, 80px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+
+}
+
 .wave-animation {
   color: white;
   height: 20px;
