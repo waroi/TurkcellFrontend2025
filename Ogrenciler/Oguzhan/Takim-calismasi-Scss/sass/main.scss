@@ -239,7 +239,7 @@ $bgGray: #f8f9fa;
           margin-bottom: 20px;
         }
 
-        .star > i:not(:nth-last-child(-n + 2)) {
+        .star>i:not(:nth-last-child(-n + 2)) {
           color: orange;
         }
 
@@ -277,7 +277,7 @@ $bgGray: #f8f9fa;
         }
       }
 
-      .card > *:not(:first-child) {
+      .card>*:not(:first-child) {
         padding: 0 20px;
       }
     }
@@ -333,7 +333,7 @@ $bgGray: #f8f9fa;
           font-size: 13px;
         }
 
-        .star > i:not(:nth-last-child(-n + 2)) {
+        .star>i:not(:nth-last-child(-n + 2)) {
           color: orange;
         }
 
@@ -375,7 +375,7 @@ $bgGray: #f8f9fa;
         }
       }
 
-      .card > *:not(:first-child) {
+      .card>*:not(:first-child) {
         padding: 0 20px;
       }
     }
@@ -553,7 +553,7 @@ $bgGray: #f8f9fa;
     @include flex-center(10px, center);
     flex-direction: column;
 
-    button{
+    button {
       width: 150px;
       height: 42px;
       background-color: $btnBlue;
@@ -562,7 +562,7 @@ $bgGray: #f8f9fa;
       border-radius: 5px;
       cursor: pointer;
       @include text-props(16px, 400, white);
-  }
+    }
 
     h3 {
       @include text-props(32px, 700, $btnBlue);
@@ -593,36 +593,105 @@ $bgGray: #f8f9fa;
         border-radius: 4px;
         overflow: hidden;
 
-        .blog-text{
+        .blog-text {
           @include text-props(16px, 400, #4d4d4d);
           line-height: 27px;
         }
 
-        .blog-info{
+        .blog-info {
           @include flex-center(10px, center);
 
-          p{
+          p {
             @include text-props(14px, 400, #b3b3b3);
           }
 
-          & :last-child{
+          & :last-child {
             color: $btnBlue;
           }
 
-          i{
+          i {
             font-size: 5px;
           }
         }
 
-        img{
+        img {
           width: 100%;
         }
 
-        .title-blog{
+        .title-blog {
           @include text-props(20px, 500, black);
           cursor: pointer;
         }
       }
     }
   }
+}
+
+.news {
+  width: 100%;
+  height: auto;
+  padding: 20px 0;
+  @include flex-center(0px, center);
+  background-color: $btnBlue;
+
+  .container {
+    width: 80%;
+    @include flex-center(0px, space-between);
+    padding: 50px 0px;
+
+    .news-text {
+      width: 50%;
+
+
+      h2 {
+        @include text-props(18px, 500, white);
+      }
+
+      p {
+        @include text-props(16px, 400, rgba(255, 255, 255, 0.7));
+      }
+
+    }
+
+    form {
+      width: 50%;
+      @include flex-center(0px, space-between);
+
+      input {
+        background-color: transparent;
+        border-bottom: 2px solid white;
+
+        height: 43px;
+        outline: none;
+        overflow: visible;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        padding: 10px;
+        width: calc(100% - 102px);
+        @include text-props(16px, 400, white);
+        font-style: italic;
+
+        &::placeholder {
+          color: white;
+
+        }
+      }
+
+      button {
+width:102px ;
+height:43px ;
+border: none;
+outline: none;
+background-color: white;
+
+
+
+
+      }
+    }
+
+  }
+
+
 }

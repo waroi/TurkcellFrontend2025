@@ -634,4 +634,69 @@
   cursor: pointer;
 }
 
+.news {
+  width: 100%;
+  height: auto;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  background-color: #2f89fc;
+}
+.news .container {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0px;
+  padding: 50px 0px;
+}
+.news .container .news-text {
+  width: 50%;
+}
+.news .container .news-text h2 {
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+}
+.news .container .news-text p {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+}
+.news .container form {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0px;
+}
+.news .container form input {
+  background-color: transparent;
+  border-bottom: 2px solid white;
+  height: 43px;
+  outline: none;
+  overflow: visible;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  padding: 10px;
+  width: calc(100% - 102px);
+  font-size: 16px;
+  font-weight: 400;
+  color: white;
+  font-style: italic;
+}
+.news .container form input::placeholder {
+  color: white;
+}
+.news .container form button {
+  width: 102px;
+  height: 43px;
+  border: none;
+  outline: none;
+  background-color: white;
+}
+
 /*# sourceMappingURL=main.css.map */
