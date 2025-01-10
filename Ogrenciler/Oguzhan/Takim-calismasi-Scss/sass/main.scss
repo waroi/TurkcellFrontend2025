@@ -512,6 +512,7 @@ $bgGray: #f8f9fa;
           background-color: #dee2e6;
           border-radius: 50%;
           color: white;
+          cursor: pointer;
 
           &:hover {
             color: $btnBlue;
@@ -534,6 +535,92 @@ $bgGray: #f8f9fa;
           &:first-child {
             background-color: $btnBlue;
           }
+        }
+      }
+    }
+  }
+}
+
+.blog {
+  width: 100%;
+  height: auto;
+  padding: 50px 0;
+  @include flex-center(0px, center);
+  background-color: $bgGray;
+
+  .container {
+    width: 80%;
+    @include flex-center(10px, center);
+    flex-direction: column;
+
+    button{
+      width: 150px;
+      height: 42px;
+      background-color: $btnBlue;
+      border: none;
+      outline: none;
+      border-radius: 5px;
+      cursor: pointer;
+      @include text-props(16px, 400, white);
+  }
+
+    h3 {
+      @include text-props(32px, 700, $btnBlue);
+    }
+
+    p {
+      @include text-props(16px, 400, $textGray);
+    }
+
+    .custom-border {
+      width: 100px;
+      height: 3px;
+      background-color: $btnBlue;
+    }
+
+    .blog-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin: 50px 0;
+
+      .blog-card {
+        width: 100%;
+        height: auto;
+        @include flex-center(10px, center);
+        align-items: flex-start;
+        flex-direction: column;
+        border-radius: 4px;
+        overflow: hidden;
+
+        .blog-text{
+          @include text-props(16px, 400, #4d4d4d);
+          line-height: 27px;
+        }
+
+        .blog-info{
+          @include flex-center(10px, center);
+
+          p{
+            @include text-props(14px, 400, #b3b3b3);
+          }
+
+          & :last-child{
+            color: $btnBlue;
+          }
+
+          i{
+            font-size: 5px;
+          }
+        }
+
+        img{
+          width: 100%;
+        }
+
+        .title-blog{
+          @include text-props(20px, 500, black);
+          cursor: pointer;
         }
       }
     }
