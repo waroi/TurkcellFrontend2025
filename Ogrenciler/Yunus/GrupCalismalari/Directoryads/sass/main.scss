@@ -30,6 +30,12 @@ $sm: 576px;
     box-shadow: 0 2px 20px -2px rgba(0, 0, 0, 0.1);
 }
 
+@mixin responsive-grid($repeat, $w) {
+    @media screen and (max-width: $w) {
+        grid-template-columns: repeat($repeat, 1fr);
+    }
+}
+
 header,
 .container {
     max-width: $container-width;
@@ -539,20 +545,12 @@ header {
                 font-weight: bold;
             }
 
-            @media screen and (max-width: $xl) {
-                grid-template-columns: repeat(3, 1fr);
 
-            }
+            @include responsive-grid(3, $xl);
+            @include responsive-grid(2, $md);
+            @include responsive-grid(1, $sm);
 
-            @media screen and (max-width: $md) {
-                grid-template-columns: repeat(2, 1fr);
 
-            }
-
-            @media screen and (max-width: $sm) {
-                grid-template-columns: repeat(1, 1fr);
-
-            }
         }
     }
 
