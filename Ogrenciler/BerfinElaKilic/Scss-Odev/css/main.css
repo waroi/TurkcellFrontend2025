@@ -254,13 +254,22 @@ a {
   overflow-y: hidden; /* Dikey taşmayı gizler */
   scroll-snap-type: x mandatory; /* Kartları kaydırırken snap (kilitlenme) efekti ekler */
   gap: 32px;
+  transition: all 5s ease-in;
+  scroll-behavior: smooth;
 }
 .carousel::-webkit-scrollbar {
-  height: 0px; /* Kaydırma çubuğu yüksekliği */
+  height: 5px;
+}
+.carousel::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 4px;
+  transition: all 5s ease-in;
+}
+.carousel:hover::-webkit-scrollbar-thumb {
+  background: #d1cfcf;
 }
 .carousel .carousel-item {
   flex: 0 0 auto;
-  scroll-snap-align: start;
 }
 
 header {
@@ -322,7 +331,8 @@ header {
   gap: 30px;
   border-radius: 5px;
 }
-.searchBar input, .searchBar button {
+.searchBar input,
+.searchBar button {
   margin: 0 20px;
   height: 46px;
   border-radius: 5px;
