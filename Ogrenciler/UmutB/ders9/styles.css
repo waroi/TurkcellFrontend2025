@@ -1,24 +1,55 @@
 .navbar-nav>li>a:hover{ 
     color: #4285F4; 
 }
+.card {
+    max-width: 400px;
+    background-color: #f8f9fa;
+    border: none;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 32px;
+    position: relative;
+}
 
+.icon-circle {
+    width: 64px;
+    height: 64px;
+    background-color: #4285f4;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    position: absolute;
+    top: -32px;
+    left: 50%;
+    transform: translateX(-50%);
+}
 
-<section class="min-vh-100 d-flex align-items-center mt-5 pt-5">
-        <div class="container">
-            <div class="row align-items-center g-5">
-                <!-- Sol Sütun - Metin İçeriği -->
-                <div class="col-12 col-md-12 col-lg-6 text-center text-lg-start">
-                    <h1 class="fw-bold display-4 mb-4">Make Your Business<br class="d-none d-lg-block"> More Profitable</h1>
-                    <p class="lead text-secondary mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam assumenda ea quo cupiditate facere deleniti fuga officia.</p>
-                    <a href="#" class="btn btn-primary btn-lg rounded-pill px-5 py-3">Get Started</a>
-                </div>
-                
-                <!-- Sağ Sütun - Görsel -->
-                <div class="col-12 col-md-12 col-lg-6">
-                    <div class="d-flex justify-content-center justify-content-lg-end">
-                        <img src="/api/placeholder/800/600" alt="Business Growth Chart" class="img-fluid">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+.icon-circle svg {
+    width: 24px;
+    height: 24px;
+    color: white;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.card-text {
+    color: #6c757d;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.learn-more {
+    color: #4285f4;
+    text-decoration: none;
+}
+
+.learn-more:hover {
+    text-decoration: underline;
+}
