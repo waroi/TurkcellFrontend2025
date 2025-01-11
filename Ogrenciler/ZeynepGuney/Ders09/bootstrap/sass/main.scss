@@ -43,7 +43,7 @@ $black: #000000;
         .navbar-expand-lg,
         .navbar-light {
             @include flex-center(space-between, center);
-            width: 80%;
+            width: 100%;
             margin: 0 auto;
             height: 80px;
             background-color: $white;
@@ -54,8 +54,8 @@ $black: #000000;
             padding-left: 0;
             margin-bottom: 0;
             top: 0;
-            left: 10%;
-            right: 10%;
+            left: 0;
+            right: 0;
             .navbar-brand {
                 font-size: 32px;
                 text-decoration: none;
