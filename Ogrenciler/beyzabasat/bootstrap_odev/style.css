@@ -1,0 +1,16 @@
+body{
+    background-color: white;
+}
+.navbar-brand {
+  font-family: Nunito, -apple-system, "system-ui", "Segoe UI", Roboto, 
+               "Helvetica Neue", Arial, sans-serif, 
+               "Apple Color Emoji", "Segoe UI Emoji", 
+               "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 32px; /* Yazı boyutu */
+  font-weight: 500; /* Yazı kalınlığı */
+  color: black; /* Varsayılan renk */
+}
+.navbar-brand:hover {
+
+color: #4285f4;      
+}

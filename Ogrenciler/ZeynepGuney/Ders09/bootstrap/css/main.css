@@ -1,0 +1,54 @@
+* {
+  font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.header-section {
+  background-image: url("https://preview.colorlib.com/theme/imagine/images/undraw_investing_7u74.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+.header-section .container-fluid {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.header-section .container-fluid .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0px;
+  width: 100%;
+  height: 80px;
+  padding: 0 20px;
+  background-color: #fff;
+  color: #000000;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.header-section .container-fluid .navbar .navbar-brand {
+  font-size: 32px;
+  text-decoration: none;
+  color: #000000;
+  font-weight: 500;
+  line-height: 1.2;
+}
+.header-section .container-fluid .navbar .navbar-nav {
+  display: flex;
+  justify-content: 30px;
+  align-items: center;
+  gap: 0px;
+  list-style: none;
+  margin-left: 200px;
+  color: #000000;
+  font-size: 16px;
+  padding: 15px 20px;
+  background-color: transparent;
+}
+
+/*# sourceMappingURL=main.css.map */
