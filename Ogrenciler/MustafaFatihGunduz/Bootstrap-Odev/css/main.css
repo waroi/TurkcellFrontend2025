@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  background-color: #ffffff;
+}
+
+a {
+  text-decoration: none;
+}
+
+.make-your-business h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #000000;
+  text-align: start;
+}
+.make-your-business p {
+  font-size: 1rem;
+  font-weight: 300;
+  color: #6c757d;
+  text-align: start;
+}
+.make-your-business .btn {
+  border-radius: 20px;
+  box-shadow: 0 4px 20px -5px rgba(66, 133, 244, 0.4);
+  padding: 10px 30px;
+}
+
+.imagine-featured .unit-4 {
+  background: #ffffff;
+  border-radius: 5px;
+  transition: 0.3s all ease;
+  position: relative;
+  text-align: center;
+}
+.imagine-featured .unit-4 .unit-4-icon .icon-wrap {
+  width: 80px;
+  height: 80px;
+  position: relative;
+  border-radius: 50%;
+  top: 50px;
+  z-index: 1;
+  display: inline-block;
+  background-color: #4285f4;
+  box-shadow: 0 4px 20px -5px rgba(66, 133, 244, 0.4);
+}
+.imagine-featured h2 {
+  font-size: 40px;
+  font-weight: bold;
+  color: #000000;
+  text-align: center;
+}
+.imagine-featured .lead {
+  font-size: 20px;
+  font-weight: 300;
+  color: #6c757d;
+  text-align: center;
+}
+.imagine-featured .card-text {
+  font-size: 16px;
+  font-weight: 300;
+  color: #6c757d;
+  text-align: center;
+}
+.imagine-featured .fa-refresh, .imagine-featured .fa-shop, .imagine-featured .fa-basket-shopping, .imagine-featured .fa-plug, .imagine-featured .fa-face-smile, .imagine-featured .fa-rotate-left {
+  position: absolute;
+  font-size: 2rem;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  color: white;
+}
+.imagine-featured .card {
+  background-color: #f1f1f1;
+  padding: 50px 30px 30px;
+  border: none;
+}
+.imagine-featured .unit-4:nth-of-type(1):hover .unit-4-icon .icon-wrap {
+  background-color: #ffffff;
+}
+.imagine-featured .unit-4:nth-of-type(1):hover .unit-4-icon .icon-wrap i {
+  color: #4285f4;
+}
+.imagine-featured .unit-4:nth-of-type(1):hover .card {
+  background-color: #4285f4;
+}
+.imagine-featured .unit-4:nth-of-type(1):hover .card h5, .imagine-featured .unit-4:nth-of-type(1):hover .card p, .imagine-featured .unit-4:nth-of-type(1):hover .card a {
+  color: #ffffff;
+}
+
+/*# sourceMappingURL=main.css.map */

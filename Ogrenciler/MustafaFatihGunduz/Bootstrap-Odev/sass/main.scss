@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap');
+
+$colorWhite: #ffffff;
+$titleTextColor : #000000;
+$subtitleTextColor: #6c757d;
+$cardBgColor: #f1f1f1;
+$hoverBlueColor: #4285f4;
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Nunito', sans-serif;
+    background-color: $colorWhite;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+@mixin textStyle($size, $weight, $color, $textAlign){
+    font-size: $size;
+    font-weight: $weight;
+    color: $color;
+    text-align: $textAlign;
+}
+
+@mixin iconStyle(){
+    position: absolute;
+    font-size: 2rem;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    color: white;
+}
+
+.make-your-business{
+    h1{
+        @include textStyle(3.5rem, bold, $titleTextColor, start);
+    }
+    p{
+        @include textStyle(1rem, 300, $subtitleTextColor, start);
+    }
+    .btn{
+        border-radius: 20px;
+        box-shadow:  0 4px 20px -5px rgba(66, 133, 244, 0.4);
+        padding: 10px 30px;
+    }
+}
+.imagine-featured{
+    .unit-4{
+        background: $colorWhite;
+        border-radius: 5px;
+        transition: .3s all ease; 
+        position: relative;
+        text-align: center;
+    }
+    .unit-4 .unit-4-icon .icon-wrap {
+        width: 80px;
+        height: 80px;
+        position: relative;
+        border-radius: 50%;
+        top: 50px;
+        z-index: 1;
+        display: inline-block;
+        background-color: $hoverBlueColor;
+        box-shadow: 0 4px 20px -5px rgba(66, 133, 244, 0.4);
+    }
+    h2{
+        @include textStyle(40px, bold, $titleTextColor, center);
+    }
+    .lead{
+        @include textStyle(20px, 300, $subtitleTextColor, center);
+    }
+    .card-text{
+        @include textStyle(16px, 300, $subtitleTextColor, center);
+    }
+    .fa-refresh, .fa-shop, .fa-basket-shopping, .fa-plug, .fa-face-smile, .fa-rotate-left {
+        @include iconStyle();
+    }
+    .card{
+        background-color: $cardBgColor;
+        padding: 50px 30px 30px;
+        border: none;
+    }
+    .unit-4:nth-of-type(1):hover{
+        .unit-4-icon .icon-wrap{
+            background-color: $colorWhite;
+        }
+       .unit-4-icon .icon-wrap i{
+            color: $hoverBlueColor;
+        }
+        .card{
+            background-color: $hoverBlueColor;
+        }
+        .card h5, .card p, .card a{
+            color: $colorWhite;
+        }
+    }
+}
