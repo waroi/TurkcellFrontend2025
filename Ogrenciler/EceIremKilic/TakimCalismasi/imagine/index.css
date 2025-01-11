@@ -50,7 +50,7 @@ a{
     font-size: 20px;
     color: #808080;
 }
-.card{
+.if-card{
     position: relative;
     padding: 50px 30px 30px;
     margin-bottom: 64px;
@@ -77,4 +77,12 @@ a{
         height: 32px;
         fill: white;
     }
+}
+.author-card img{
+    max-width: 50px;
+}
+.author-card{
+    padding: 20px;
+    border: 1px solid #eee;
+    border-left: 10px solid #4285f4;
 }
