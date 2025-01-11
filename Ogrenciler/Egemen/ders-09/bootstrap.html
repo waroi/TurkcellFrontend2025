@@ -13,13 +13,11 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header class="bg-white z-3 position-absolute position-fixed w-100">
+    <header>
       <div class="container">
         <nav class="navbar navbar-expand-lg">
           <div class="container-fluid">
-            <a class="navbar-brand" href="#"
-              >imagine<span class="text-primary">.</span></a
-            >
+            <a class="navbar-brand" href="#">imagine</a>
             <!-- Toggler Button -->
             <button
               class="navbar-toggler"
@@ -50,19 +48,16 @@
               <div class="offcanvas-body">
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                   <li class="nav-item">
-                    <a
-                      class="nav-link active px-3 py-2"
-                      aria-current="page"
-                      href="#"
+                    <a class="nav-link active" aria-current="page" href="#"
                       >Home</a
                     >
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link px-3 py-2" href="#">Features</a>
+                    <a class="nav-link" href="#">Features</a>
                   </li>
                   <li class="nav-item dropdown">
                     <a
-                      class="nav-link dropdown-toggle d-flex justify-content-between align-items-center px-3 py-2"
+                      class="nav-link dropdown-toggle"
                       href="#"
                       role="button"
                       data-bs-toggle="dropdown"
@@ -70,7 +65,7 @@
                     >
                       About Us
                     </a>
-                    <ul class="dropdown-menu border-0">
+                    <ul class="dropdown-menu">
                       <li>
                         <a class="dropdown-item" href="#"
                           >More Free Templates</a
@@ -81,7 +76,7 @@
                       </li>
                       <li class="dropdown">
                         <a
-                          class="dropdown-item dropdown-toggle d-flex justify-content-between align-items-center pe-0"
+                          class="dropdown-item dropdown-toggle"
                           href="#"
                           role="button"
                           data-bs-toggle="dropdown"
@@ -103,49 +98,32 @@
                     </ul>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link px-3 py-2" href="#">Testimonials</a>
+                    <a class="nav-link" href="#">Testimonials</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link px-3 py-2" href="#">Blog</a>
+                    <a class="nav-link" href="#">Blog</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link px-3 py-2" href="#">Contact</a>
+                    <a class="nav-link" href="#">Contact</a>
                   </li>
                 </ul>
+                <form class="d-flex mt-3" role="search">
+                  <input
+                    class="form-control me-2"
+                    type="search"
+                    placeholder="Search"
+                    aria-label="Search"
+                  />
+                  <button class="btn btn-outline-success" type="submit">
+                    Search
+                  </button>
+                </form>
               </div>
             </div>
           </div>
         </nav>
       </div>
     </header>
-    <section class="container w-100 overflow-hidden">
-      <div class="container-fluid">
-        <div class="row align-items-center justify-content-center">
-          <div class="col-md-12 overflow-hidden">
-            <img
-              src="https://preview.colorlib.com/theme/imagine/images/undraw_investing_7u74.svg"
-              class="img-fluid position-absolute start-50 main-image"
-              alt="main-photo"
-            />
-
-            <div class="row-mb-4 mt-5 pt-5">
-              <div class="col-lg-6">
-                <h1 class="fs-1">Make Your Business More Profitable</h1>
-                <p class="mb-5">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Quaerat obcaecati illum deleniti, exercitationem quasi dolorum
-                  nulla facilis.
-                </p>
-
-                <div class="our-button">
-                  <a href="#" class="btn btn-primary mr-2 mb-2">Get Started</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
