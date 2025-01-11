@@ -13,13 +13,12 @@ $bgGrayText: #808080;
 $white:#fff;
 $span:#dee2e6;
 $black:#000000;
-@mixin flex-center($justify: space-between, $align: center, $gap: 0px) {
+@mixin flex-center($gap, $justify: center) {
     display: flex;
     justify-content: $justify;
-    align-items: $align;
-    gap: $gap;
+    align-items: center;
+    gap: 0px;
 }
-
 @mixin text-props($font-size, $font-weight: 400, $color) {
     font-size: $font-size;
     font-weight: $font-weight;
@@ -33,26 +32,34 @@ $black:#000000;
 // @include text-props(3rem, 400, $textWhite);
 
 .header-section{
-    // @include flex-center(0px, center);
+    @include flex-center(0px, center);
     background-image: url("https://preview.colorlib.com/theme/imagine/images/undraw_investing_7u74.svg");
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: 50% -25px;
     height: 100vh;
     .container-fluid{
         padding-right: 15px;
         padding-left: 15px;
         margin-right: auto;
         margin-left: auto;
-        .navbar {
-            @include flex-center(space-between, center); 
-            width: 100%; 
-            height: 80px; 
-            padding: 0 20px;
+        .navbar,
+        .navbar-expand-lg, 
+        .navbar-light {
+            @include flex-center(space-between, center);
+            width: 80%; 
+            margin: 0 auto;
+            height: 80px;
             background-color: $white; 
             color: $black; 
-            position: fixed; 
+            position: absolute; 
+            padding: 0 20px;
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 0;
             top: 0;
-            left:0;
+            left:10%;
+            right: 10%;
             .navbar-brand{
                 font-size: 32px;
                 text-decoration: none;
@@ -61,17 +68,26 @@ $black:#000000;
                 line-height: 1.2;
             }
             .navbar-nav {
-                @include flex-center(30px, center);
+                @include flex-center(0px, space-between);
+                margin-left: auto;
                 list-style: none;
-                margin-left: 200px;
-                color: $black;
-                font-size: 16px;
-                padding: 15px 20px;
                 background-color: transparent;
+                .nav-item{
+                    .nav-link{
+                        
+                        font-size: 16px;
+                        text-decoration: none;
+                        padding: 15px 20px;
+                        color: $black;
+                        &:hover{
+                            color: $blue;
+                        }
+                    }
+                }
             }
         }
-        .container-text{
-            
-        }
     }
+    // .container-text{
+
+    // }
 }

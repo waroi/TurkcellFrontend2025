@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Ödev</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/all.min.css" />
+</head>
+<body>
+    <header class="header">
+        <!-- <div class="container">
+            <div class="row align-items-center">
+                <div class="col-6">
+                    <h1 class="mb-0 site-logo">
+                        <a href="#" class="">Imagine</a>
+                        <span class="text-primary">.</span>
+                    </h1>
+                </div> // Imagenin sol tarafinda olmasi icin col-6
+                <div class="col-6"></div> // Nav sag tarafinda olmasi icin col-6
+        </div> -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+              <a class="navbar-brand" href="#">Imagine<span class="text-primary">.</span></a> 
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+                <form class="d-flex">
+                    <div class="collapse navbar-collapse" id="navbarScroll">
+                        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                          <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                          </li>
+                          <li class="nav-item ms-4">
+                            <a class="nav-link" href="#">Featured</a>
+                          </li>
+                          <li class="nav-item dropdown ms-4">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              About Us
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                              <li><a class="dropdown-item" href="#">More Free Templates</a></li>
+                              <li><a class="dropdown-item" href="#">Our Team</a></li>
+                              <li><a class="dropdown-item" href="#">More Links</a></li>
+                            </ul>
+                          </li>
+                          <li class="nav-item ms-4">
+                            <a class="nav-link" href="#">Testimonials</a>
+                          </li>
+                          <li class="nav-item ms-4">
+                            <a class="nav-link" href="#">Blog</a>
+                          </li>
+                          <li class="nav-item ms-4">
+                            <a class="nav-link" href="#">Contact</a>
+                          </li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+          </nav>
+    </header>
+    <section class="make-your-business">
+        <div class="container">
+            <div class="row align-items-center d-flex flex-row-reverse">
+                <div class="col-lg-6">
+                    <img src="https://preview.colorlib.com/theme/imagine/images/undraw_investing_7u74.svg" alt="draw-logo" class="">
+                </div>
+                <div class="col-lg-6">
+                    <h1 class="mb-2">Make Your Business More Profitable</h1>
+                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam assumenda ea quo cupiditate facere deleniti fuga officia.</p>
+                    <button class="btn btn-primary mt-3">Get Started</button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section class="imagine-featured">
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-7 text-align-center">
+                    <h2 class="section-title">Imagine Features</h2>
+                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga quos quaerat sapiente nam, id vero.</p>
+                </div>
+
+                <div class="row align-items-stretch">
+                    <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
+                        <div class="unit-4 d-block">
+                            <div class="unit-4-icon">
+                                <span class="icon-wrap">
+                                    <i class="fa fa-refresh"></i>
+                                </span>
+                            </div>
+                            <div class="card text-center mb-3">
+                                <div class="card-body">
+                                  <h5 class="card-title">Marketing Consulting</h5>
+                                  <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
+                                  <a href="#" class="btn-primary">Learn More</a>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
+                        <div class="unit-4 d-block">
+                            <div class="unit-4-icon">
+                                <span class="icon-wrap">
+                                    <i class="fa fa-shop"></i>
+                                </span>
+                            </div>
+                            <div class="card text-center mb-3">
+                                <div class="card-body">
+                                  <h5 class="card-title">Market Analysis</h5>
+                                  <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
+                                  <a href="#" class="btn-primary">Learn More</a>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
+                        <div class="unit-4 d-block">
+                            <div class="unit-4-icon">
+                                <span class="icon-wrap">
+                                    <i class="fa-solid fa-basket-shopping"></i>
+                                </span>
+                            </div>
+                            <div class="card text-center mb-3">
+                                <div class="card-body">
+                                  <h5 class="card-title">Easy Purchase</h5>
+                                  <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
+                                  <a href="#" class="btn-primary">Learn More</a>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
+                        <div class="unit-4 d-block">
+                            <div class="unit-4-icon">
+                                <span class="icon-wrap">
+                                    <i class="fa-solid fa-plug"></i>
+                                </span>
+                            </div>
+                            <div class="card text-center mb-3">
+                                <div class="card-body">
+                                  <h5 class="card-title">Free Updates</h5>
+                                  <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
+                                  <a href="#" class="btn-primary">Learn More</a>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
+                        <div class="unit-4 d-block">
+                            <div class="unit-4-icon">
+                                <span class="icon-wrap">
+                                    <i class="fa-regular fa-face-smile"></i>
+                                </span>
+                            </div>
+                            <div class="card text-center mb-3">
+                                <div class="card-body">
+                                  <h5 class="card-title">100% Satistified</h5>
+                                  <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
+                                  <a href="#" class="btn-primary">Learn More</a>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
+                        <div class="unit-4 d-block">
+                            <div class="unit-4-icon">
+                                <span class="icon-wrap">
+                                    <i class="fa-solid fa-rotate-left"></i>
+                                </span>
+                            </div>
+                            <div class="card text-center mb-3">
+                                <div class="card-body">
+                                  <h5 class="card-title">Easy Plugin</h5>
+                                  <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
+                                  <a href="#" class="btn-primary">Learn More</a>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/0460a9927e.js"crossorigin="anonymous"></script>
+</html>
