@@ -5,6 +5,7 @@ $titleTextColor : #000000;
 $subtitleTextColor: #6c757d;
 $cardBgColor: #f1f1f1;
 $hoverBlueColor: #4285f4;
+$xWidth100: 100%; 
 
 *{
     padding: 0;
@@ -15,6 +16,11 @@ $hoverBlueColor: #4285f4;
 body{
     font-family: 'Nunito', sans-serif;
     background-color: $colorWhite;
+}
+.container {
+    padding: 80px 0;
+    margin: 0 auto;
+    width: $xWidth100;
 }
 
 a{
@@ -100,5 +106,65 @@ a{
         .card h5, .card p, .card a{
             color: $colorWhite;
         }
+    }
+}
+
+.feedback{
+    h2{
+        @include textStyle(40px,bold,$titleTextColor, start)
+    }
+    p{
+        @include textStyle(16px, 400, $subtitleTextColor, start)
+    }
+    .card{
+        box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+        padding: 20px;
+        border: 1px solid #eee;
+        border-left: 10px solid $hoverBlueColor;
+
+        h5, h6{
+            @include textStyle(16px, 400, $titleTextColor, start);
+        }
+        blockquote{
+            @include textStyle(16px, 400, $subtitleTextColor, start);
+            font-style: italic;
+        }
+    }
+    .img-poz{
+        width: 50px;
+        height: 50px;
+        img{
+            border-radius: 50%;
+            width: 100%;
+        }
+    }
+}
+
+@media (min-width: 0px) and (max-width: 767px) {
+    .container {
+        max-width: 540px;
+    }
+
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .container {
+        max-width: 720px;
+    }
+
+   
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .container {
+        max-width: 960px;
+    }
+
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
     }
 }
