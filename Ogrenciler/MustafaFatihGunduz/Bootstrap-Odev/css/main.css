@@ -74,7 +74,12 @@ a {
   color: #6c757d;
   text-align: center;
 }
-.imagine-featured .fa-refresh, .imagine-featured .fa-shop, .imagine-featured .fa-basket-shopping, .imagine-featured .fa-plug, .imagine-featured .fa-face-smile, .imagine-featured .fa-rotate-left {
+.imagine-featured .fa-refresh,
+.imagine-featured .fa-shop,
+.imagine-featured .fa-basket-shopping,
+.imagine-featured .fa-plug,
+.imagine-featured .fa-face-smile,
+.imagine-featured .fa-rotate-left {
   position: absolute;
   font-size: 2rem;
   transform: translate(-50%, -50%);
@@ -96,7 +101,9 @@ a {
 .imagine-featured .unit-4:nth-of-type(1):hover .card {
   background-color: #4285f4;
 }
-.imagine-featured .unit-4:nth-of-type(1):hover .card h5, .imagine-featured .unit-4:nth-of-type(1):hover .card p, .imagine-featured .unit-4:nth-of-type(1):hover .card a {
+.imagine-featured .unit-4:nth-of-type(1):hover .card h5,
+.imagine-featured .unit-4:nth-of-type(1):hover .card p,
+.imagine-featured .unit-4:nth-of-type(1):hover .card a {
   color: #ffffff;
 }
 
@@ -119,7 +126,8 @@ a {
   border: 1px solid #eee;
   border-left: 10px solid #4285f4;
 }
-.feedback .card h5, .feedback .card h6 {
+.feedback .card h5,
+.feedback .card h6 {
   font-size: 16px;
   font-weight: 400;
   color: #000000;
@@ -139,6 +147,122 @@ a {
 .feedback .img-poz img {
   border-radius: 50%;
   width: 100%;
+}
+
+.testimonials {
+  background-color: #f6f6f6;
+}
+.testimonials h2 {
+  font-size: 40px;
+  font-weight: 700;
+  color: #000000;
+  text-align: center;
+}
+.testimonials img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+.testimonials p {
+  font-size: 24px;
+  font-weight: 400;
+  color: #808080;
+  text-align: center;
+  max-width: 800px;
+}
+.testimonials h6 {
+  font-weight: 700;
+}
+.testimonials .noktalar .nokta i {
+  font-size: 11px;
+  color: #dee2e6;
+}
+.testimonials .noktalar .nokta:first-child i {
+  color: #4285f4;
+}
+
+.blogPosts h2 {
+  font-size: 40px;
+  font-weight: 700;
+  color: #000000;
+  text-align: center;
+}
+.blogPosts .blog-card .blog-body .blog-title {
+  font-size: 30px;
+  font-weight: 400;
+  color: #000000;
+  text-align: start;
+}
+.blogPosts .blog-card .blog-body span {
+  font-size: 14px;
+  font-weight: 300;
+  color: #b3b3b3;
+  text-align: start;
+}
+.blogPosts .blog-card .blog-body p {
+  font-size: 16px;
+  font-weight: 300;
+  color: #808080;
+  text-align: start;
+}
+
+.contact {
+  background-image: url("https://preview.colorlib.com/theme/imagine/images/hero_1.jpg.webp");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  min-height: 200px;
+}
+.contact::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to right, rgba(66, 134, 244, 0.4) 0%, rgba(66, 226, 244, 0.4) 100%);
+  z-index: 1;
+}
+.contact .container {
+  max-width: 550px;
+  position: relative;
+  z-index: 2;
+}
+.contact .container h2 {
+  font-size: 40px;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+}
+.contact .container .btn {
+  width: 180px;
+  height: 45px;
+  background-color: rgb(66, 133, 244);
+  border-radius: 30px;
+  box-shadow: 0 4px 20px -5px rgba(66, 133, 244, 0.4);
+  transition: 0.3s all ease;
+}
+.contact .container .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 30px -5px rgba(66, 133, 244, 0.6);
+}
+
+.footer .icon {
+  font-size: 16px;
+  width: 40px;
+  height: 40px;
+  color: #4285f4;
+  transition: 0.3s;
+}
+.footer .icon:hover {
+  color: #2863c2;
+  cursor: pointer;
+}
+.footer span {
+  color: red;
 }
 
 @media (min-width: 0px) and (max-width: 767px) {

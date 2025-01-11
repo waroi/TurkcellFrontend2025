@@ -1,170 +1,289 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap");
 
 $colorWhite: #ffffff;
-$titleTextColor : #000000;
+$titleTextColor: #000000;
 $subtitleTextColor: #6c757d;
 $cardBgColor: #f1f1f1;
 $hoverBlueColor: #4285f4;
-$xWidth100: 100%; 
+$xWidth100: 100%;
+$testimonialsBg: #f6f6f6;
+$testimonialsContent: #808080;
+$blogrenk:#b3b3b3;
 
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-body{
-    font-family: 'Nunito', sans-serif;
-    background-color: $colorWhite;
+body {
+  font-family: "Nunito", sans-serif;
+  background-color: $colorWhite;
 }
 .container {
-    padding: 80px 0;
-    margin: 0 auto;
-    width: $xWidth100;
+  padding: 80px 0;
+  margin: 0 auto;
+  width: $xWidth100;
 }
 
-a{
-    text-decoration: none;
+a {
+  text-decoration: none;
+}
+
+@mixin textStyle($size, $weight, $color, $textAlign) {
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+  text-align: $textAlign;
+}
+
+@mixin iconStyle() {
+  position: absolute;
+  font-size: 2rem;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  color: white;
 }
 
 
-@mixin textStyle($size, $weight, $color, $textAlign){
-    font-size: $size;
-    font-weight: $weight;
-    color: $color;
-    text-align: $textAlign;
+.make-your-business {
+  h1 {
+    @include textStyle(3.5rem, bold, $titleTextColor, start);
+  }
+  p {
+    @include textStyle(1rem, 300, $subtitleTextColor, start);
+  }
+  .btn {
+    border-radius: 20px;
+    box-shadow: 0 4px 20px -5px rgba(66, 133, 244, 0.4);
+    padding: 10px 30px;
+  }
 }
-
-@mixin iconStyle(){
-    position: absolute;
-    font-size: 2rem;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
-    color: white;
-}
-
-.make-your-business{
-    h1{
-        @include textStyle(3.5rem, bold, $titleTextColor, start);
+.imagine-featured {
+  .unit-4 {
+    background: $colorWhite;
+    border-radius: 5px;
+    transition: 0.3s all ease;
+    position: relative;
+    text-align: center;
+  }
+  .unit-4 .unit-4-icon .icon-wrap {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    border-radius: 50%;
+    top: 50px;
+    z-index: 1;
+    display: inline-block;
+    background-color: $hoverBlueColor;
+    box-shadow: 0 4px 20px -5px rgba(66, 133, 244, 0.4);
+  }
+  h2 {
+    @include textStyle(40px, bold, $titleTextColor, center);
+  }
+  .lead {
+    @include textStyle(20px, 300, $subtitleTextColor, center);
+  }
+  .card-text {
+    @include textStyle(16px, 300, $subtitleTextColor, center);
+  }
+  .fa-refresh,
+  .fa-shop,
+  .fa-basket-shopping,
+  .fa-plug,
+  .fa-face-smile,
+  .fa-rotate-left {
+    @include iconStyle();
+  }
+  .card {
+    background-color: $cardBgColor;
+    padding: 50px 30px 30px;
+    border: none;
+  }
+  .unit-4:nth-of-type(1):hover {
+    .unit-4-icon .icon-wrap {
+      background-color: $colorWhite;
     }
-    p{
-        @include textStyle(1rem, 300, $subtitleTextColor, start);
+    .unit-4-icon .icon-wrap i {
+      color: $hoverBlueColor;
     }
-    .btn{
-        border-radius: 20px;
-        box-shadow:  0 4px 20px -5px rgba(66, 133, 244, 0.4);
-        padding: 10px 30px;
+    .card {
+      background-color: $hoverBlueColor;
+    }
+    .card h5,
+    .card p,
+    .card a {
+      color: $colorWhite;
+    }
+  }
+}
+
+.feedback {
+  h2 {
+    @include textStyle(40px, bold, $titleTextColor, start);
+  }
+  p {
+    @include textStyle(16px, 400, $subtitleTextColor, start);
+  }
+  .card {
+    box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-left: 10px solid $hoverBlueColor;
+
+    h5,
+    h6 {
+      @include textStyle(16px, 400, $titleTextColor, start);
+    }
+    blockquote {
+      @include textStyle(16px, 400, $subtitleTextColor, start);
+      font-style: italic;
+    }
+  }
+  .img-poz {
+    width: 50px;
+    height: 50px;
+    img {
+      border-radius: 50%;
+      width: 100%;
+    }
+  }
+}
+
+.testimonials {
+  background-color: $testimonialsBg;
+  h2 {
+    @include textStyle(40px, 700, $titleTextColor, center);
+  }
+  img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  p {
+    @include textStyle(24px, 400, $testimonialsContent, center);
+    max-width: 800px;
+  }
+  h6 {
+    font-weight: 700;
+  }
+
+  .noktalar {
+    .nokta {
+      i {
+        font-size: 11px;
+        color: #dee2e6;
+      }
+    }
+    .nokta:first-child i {
+      color: $hoverBlueColor; 
+    }
+  }
+}
+
+.blogPosts{
+    h2{
+        @include textStyle(40px, 700, $titleTextColor, center);
+    }
+    .blog-card{
+        .blog-body{
+           .blog-title{
+            @include textStyle(30px, 400, $titleTextColor, start);
+           }
+           span{
+            @include textStyle(14px, 300, $blogrenk, start);
+           }
+           p{
+            @include textStyle(16px, 300, #808080, start);
+           }
+        }
     }
 }
-.imagine-featured{
-    .unit-4{
-        background: $colorWhite;
-        border-radius: 5px;
-        transition: .3s all ease; 
-        position: relative;
-        text-align: center;
-    }
-    .unit-4 .unit-4-icon .icon-wrap {
-        width: 80px;
-        height: 80px;
-        position: relative;
-        border-radius: 50%;
-        top: 50px;
+
+.contact{
+    background-image: url('https://preview.colorlib.com/theme/imagine/images/hero_1.jpg.webp'); 
+    background-attachment: fixed; 
+    background-size: cover; 
+    background-position: center;
+    position: relative; 
+    margin: 0;
+    padding: 0;
+    min-height: 200px; 
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(to right, rgba(66, 134, 244, 0.4) 0%, rgba(66, 226, 244, 0.4) 100%);
+        
         z-index: 1;
-        display: inline-block;
-        background-color: $hoverBlueColor;
-        box-shadow: 0 4px 20px -5px rgba(66, 133, 244, 0.4);
-    }
-    h2{
-        @include textStyle(40px, bold, $titleTextColor, center);
-    }
-    .lead{
-        @include textStyle(20px, 300, $subtitleTextColor, center);
-    }
-    .card-text{
-        @include textStyle(16px, 300, $subtitleTextColor, center);
-    }
-    .fa-refresh, .fa-shop, .fa-basket-shopping, .fa-plug, .fa-face-smile, .fa-rotate-left {
-        @include iconStyle();
-    }
-    .card{
-        background-color: $cardBgColor;
-        padding: 50px 30px 30px;
-        border: none;
-    }
-    .unit-4:nth-of-type(1):hover{
-        .unit-4-icon .icon-wrap{
-            background-color: $colorWhite;
+      }
+    .container{
+        max-width: 550px;
+        position: relative;
+        z-index: 2;
+        h2{
+            @include textStyle(40px, 700, $colorWhite, center);
         }
-       .unit-4-icon .icon-wrap i{
-            color: $hoverBlueColor;
-        }
-        .card{
-            background-color: $hoverBlueColor;
-        }
-        .card h5, .card p, .card a{
-            color: $colorWhite;
+        .btn{
+            width: 180px;
+            height: 45px;
+            background-color: rgb(66, 133, 244);
+            border-radius: 30px;
+            box-shadow: 0 4px 20px -5px rgba(66, 133, 244, 0.4);
+            transition: .3s all ease;
+            &:hover{
+                transform: translateY(-3px);
+                box-shadow: 0 6px 30px -5px rgba(66, 133, 244, 0.6);
+            }
         }
     }
 }
 
-.feedback{
-    h2{
-        @include textStyle(40px,bold,$titleTextColor, start)
-    }
-    p{
-        @include textStyle(16px, 400, $subtitleTextColor, start)
-    }
-    .card{
-        box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.1);
-        border-radius: 4px;
-        padding: 20px;
-        border: 1px solid #eee;
-        border-left: 10px solid $hoverBlueColor;
-
-        h5, h6{
-            @include textStyle(16px, 400, $titleTextColor, start);
-        }
-        blockquote{
-            @include textStyle(16px, 400, $subtitleTextColor, start);
-            font-style: italic;
+.footer{
+    .icon{
+        font-size: 16px;
+        width: 40px;
+        height: 40px;
+        color: #4285f4 ;
+        transition: 0.3s;
+        &:hover{
+            color:#2863c2 ;
+            cursor: pointer;
         }
     }
-    .img-poz{
-        width: 50px;
-        height: 50px;
-        img{
-            border-radius: 50%;
-            width: 100%;
-        }
+    span{
+        color: red ;
     }
 }
+
+
+
 
 @media (min-width: 0px) and (max-width: 767px) {
-    .container {
-        max-width: 540px;
-    }
-
+  .container {
+    max-width: 540px;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-    .container {
-        max-width: 720px;
-    }
-
-   
+  .container {
+    max-width: 720px;
+  }
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
-    .container {
-        max-width: 960px;
-    }
-
+  .container {
+    max-width: 960px;
+  }
 }
 
 @media (min-width: 1200px) {
-    .container {
-        max-width: 1140px;
-    }
+  .container {
+    max-width: 1140px;
+  }
 }
