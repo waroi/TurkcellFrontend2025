@@ -197,7 +197,7 @@ header nav .navbar-nav .dropdown:hover > .dropdown-menu > li > a {
 
 .team h2 {
   color: #000;
-  font-size: 40px;
+  font-size: 2.5rem;
   line-height: 1.2;
   margin-bottom: 0.5rem;
   font-weight: 500;
@@ -238,6 +238,9 @@ header nav .navbar-nav .dropdown:hover > .dropdown-menu > li > a {
 }
 .team .blue-block svg {
   fill: white;
+}
+.team .heading {
+  font-size: 18px;
 }
 
 .testimonials h2 {
@@ -317,6 +320,23 @@ header nav .navbar-nav .dropdown:hover > .dropdown-menu > li > a {
 
 .heading {
   font-size: 28px;
+}
+
+footer {
+  min-height: 200px;
+}
+footer p {
+  color: #808080;
+  font-size: 16px;
+  line-height: 1.7;
+  font-weight: 300;
+  margin: 0px;
+}
+footer svg {
+  fill: #4285f4;
+}
+footer strong {
+  color: #4286f4;
 }
 
 /*# sourceMappingURL=main.css.map */
