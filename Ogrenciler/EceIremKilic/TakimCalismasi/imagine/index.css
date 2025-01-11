@@ -1,0 +1,80 @@
+*{
+    font-family: "Nunito", serif;
+    line-height: 1.2;
+}
+p{
+    line-height: 1.6;
+    font-weight: 300;
+}
+a{
+    text-decoration: none;
+}
+.ctn{
+    padding: 80px 0;
+}
+.sticky-wrap{
+    background-color: white !important;
+    padding: 24px;
+}
+.blue-colored{
+    color: #007bff;
+}
+.navbar-brand{
+    font-size: 32px;
+    font-weight: 400;
+}
+.nav-link{
+    padding: 15px 20px !important;
+}
+.banner-text{
+    font-size: 56px;
+    font-weight: 700;
+    color: black;
+    margin-top: 48px;
+}
+.lorem-text{
+    color: #6c757d;
+    margin-bottom: 48px;
+}
+.btn{
+    padding: 10px 30px ;
+    border-radius: 30px;
+    font-size: 16px;
+}
+.if{
+    font-size: 40px;
+    color: black;
+    font-weight: 700;
+}
+.if-p{
+    font-size: 20px;
+    color: #808080;
+}
+.card{
+    position: relative;
+    padding: 50px 30px 30px;
+    margin-bottom: 64px;
+    border: none;
+    background-color: #f1f1f1;
+    text-align: center;
+}
+.col-4{
+    padding: 0 15px;
+}
+.icon{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4285f4;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    top: -25%;
+    left: 40%;
+    svg{
+        width: 32px;
+        height: 32px;
+        fill: white;
+    }
+}
