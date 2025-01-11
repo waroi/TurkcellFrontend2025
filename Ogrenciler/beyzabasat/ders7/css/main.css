@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+}
+.container .box2 {
+  width: 150px;
+  height: 100px;
+  background-color: red;
+  font-size: 20px;
+}
+.container .box1, .container .box3 {
+  width: 150px;
+  height: 200px;
+  background-color: orange;
+  font-size: 20px;
+}
+.container .box3 {
+  width: 300px;
+}
+.container .box4 {
+  width: 150px;
+  height: 400px;
+  background-color: green;
+  font-size: 20px;
+}
+.container .box4.deneme {
+  background-color: blue;
+}
+
+/*# sourceMappingURL=main.css.map */
