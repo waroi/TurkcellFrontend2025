@@ -21,6 +21,7 @@
   line-height: 1.7;
   font-weight: 300;
 }
+
 .btn {
   border-width: 2px;
   background: #4285f4;
@@ -193,9 +194,11 @@ header {
 
 .about {
   background-color: #f6f6f6;
+
   h2 {
     @include section-title(2.5rem, 700);
   }
+
   p,
   li {
     @include section-description(16px);
@@ -204,46 +207,57 @@ header {
   li {
     list-style: none;
   }
+
   ul {
     span {
       margin-right: 10px;
     }
+
     li {
       margin-bottom: 10px;
     }
   }
+
   li::before {
     content: "";
   }
 }
+
 .team {
   h2 {
     @include section-title(40px, 500);
   }
+
   p {
     @include section-description(1rem);
   }
+
   span {
     font-size: 12px;
     font-weight: 700;
     color: #4285f4;
   }
+
   .img-wrapper {
     position: relative;
     overflow: hidden;
   }
+
   .card:hover {
     .blue-block {
       height: 60px;
       bottom: 0px;
     }
+
     img {
       transform: scale(1.05);
     }
   }
+
   img {
     transition: all 0.3s ease-in-out;
   }
+
   .blue-block {
     position: absolute;
     left: 0px;
@@ -252,11 +266,46 @@ header {
     width: 100%;
     transition: all 0.3s ease-in-out;
     background-color: #4285f4;
+
     svg {
       fill: white;
     }
   }
 }
+
+.testimonials {
+  h2 {
+    @include section-title(40px, 700);
+  }
+
+  .carousel-inner {
+    max-width: 800px;
+
+    .carousel-item {
+      p {
+        @include section-description(1.5rem);
+      }
+
+      .name {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .carousel-indicators button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #dee2e6;
+  }
+
+  .carousel-indicators button.active {
+    background-color: #4285f4;
+  }
+
+}
+
+
 .heading {
   font-size: 28px;
 }
