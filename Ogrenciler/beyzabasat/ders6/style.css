@@ -1,0 +1,51 @@
+body{
+    /* display: flex;
+
+    align-items: center;
+    justify-content: center; */
+    height: 100vh;
+    background-color: rgb(25, 87, 141);
+   
+  }
+  
+  .box{
+    background-color: rgb(100, 50, 7);
+    width: 150px;
+    height: 150px;
+    /* transition-property: all;
+    transition-duration: 1s;
+       transition: all 2s cubic-bezier(0, 0, 0.51, -0.22);
+    transition-timing-function: ease-in-out; */
+ 
+    animation: aa 10s linear 2s infinite;
+  }
+  
+  /* .box:hover{
+    background-color: rgb(16, 3, 1);
+      width: 40px;
+      height: 300px;
+  } */
+  @keyframes aa{
+ 0%{
+    transform:translate(0,0) rotate(0deg);
+  
+ }
+ 25%{
+    transform: translate(0,70vh) rotate(90deg) ;
+   
+ }
+ 50%{
+    transform: translate(70vw,70vh) rotate(180deg);
+  
+ }
+ 75%{
+    transform: translate(70vw,0) rotate(270deg);
+  
+ }
+ 100%{
+    transform: translate(0,0) rotate(360deg);
+   
+ }
+
+
+  }

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wall-Building Pacman</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #000;
+    }
+    .game-container {
+      display: grid;
+      grid-template-columns: repeat(20, 30px);
+      grid-template-rows: repeat(20, 30px);
+      gap: 2px;
+    }
+    .cell {
+      width: 30px;
+      height: 30px;
+      background-color: #111;
+      border: 1px solid #222;
+    }
+    .pacman {
+      background-color: yellow;
+      border-radius: 50%;
+    }
+    .dot {
+      background-color: white;
+      border-radius: 50%;
+    }
+    .wall {
+      background-color: blue;
+    }
+    .ghost {
+      background-color: red;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+  <div class="game-container" id="game"></div>
+
+  <script>
+    const gameContainer = document.getElementById('game');
+    const gridSize = 20;
+    const grid = [];
+    let pacman = { x: 10, y: 10 };
+    let ghosts = [
+      { x: 5, y: 5 },
+      { x: 15, y: 15 }
+    ];
+
+    // Initialize the grid
+    for (let y = 0; y < gridSize; y++) {
+      const row = [];
+      for (let x = 0; x < gridSize; x++) {
+        const cell = document.createElement('div');
+        cell.classList.add('cell');
+        gameContainer.appendChild(cell);
+        row.push(cell);
+      }
+      grid.push(row);
+    }
+
+    // Draw the game
+    function drawGame() {
+      // Clear the grid
+      grid.forEach(row => row.forEach(cell => {
+        cell.className = 'cell';
+      }));
+
+      // Draw Pacman
+      grid[pacman.y][pacman.x].classList.add('pacman');
+
+      // Draw dots
+      for (let y = 0; y < gridSize; y++) {
+        for (let x = 0; x < gridSize; x++) {
+          if (!grid[y][x].classList.contains('wall') && !grid[y][x].classList.contains('pacman') && !grid[y][x].classList.contains('ghost')) {
+            grid[y][x].classList.add('dot');
+          }
+        }
+      }
+
+      // Draw walls
+      grid.forEach(row => row.forEach(cell => {
+        if (cell.isWall) {
+          cell.classList.add('wall');
+        }
+      }));
+
+      // Draw ghosts
+      ghosts.forEach(ghost => {
+        grid[ghost.y][ghost.x].classList.add('ghost');
+      });
+    }
+
+    // Move Pacman
+    function movePacman(dx, dy) {
+      const newX = pacman.x + dx;
+      const newY = pacman.y + dy;
+      if (newX >= 0 && newX < gridSize && newY >= 0 && newY < gridSize && !grid[newY][newX].isWall) {
+        pacman.x = newX;
+        pacman.y = newY;
+      }
+      drawGame();
+    }
+
+    // Place Wall
+    function placeWall() {
+      const cell = grid[pacman.y][pacman.x];
+      if (!cell.isWall) {
+        cell.isWall = true;
+      }
+      drawGame();
+    }
+
+    // Handle keyboard input
+    document.addEventListener('keydown', (e) => {
+      switch (e.key) {
+        case 'ArrowUp':
+          movePacman(0, -1);
+          break;
+        case 'ArrowDown':
+          movePacman(0, 1);
+          break;
+        case 'ArrowLeft':
+          movePacman(-1, 0);
+          break;
+        case 'ArrowRight':
+          movePacman(1, 0);
+          break;
+        case ' ': // Spacebar
+          placeWall();
+          break;
+      }
+    });
+
+    drawGame();
+  </script>
+</body>
+</html>
