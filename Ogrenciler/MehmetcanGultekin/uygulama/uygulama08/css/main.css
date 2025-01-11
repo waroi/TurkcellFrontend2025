@@ -228,6 +228,57 @@ header nav .navbar-nav li a:hover {
   fill: white;
 }
 
+.testimonials h2 {
+  color: #000;
+  font-size: 40px;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+.testimonials .carousel-inner {
+  max-width: 800px;
+}
+.testimonials .carousel-inner .carousel-item p {
+  color: #808080;
+  font-size: 1.5rem;
+  line-height: 1.7;
+  font-weight: 300;
+}
+.testimonials .carousel-inner .carousel-item .name {
+  font-size: 1rem;
+}
+.testimonials .carousel-indicators button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #dee2e6;
+}
+.testimonials .carousel-indicators button.active {
+  background-color: #4285f4;
+}
+
+.blog h2 {
+  color: #000;
+  font-size: 40px;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+.blog .meta {
+  color: #b3b3b3;
+  font-size: 14px;
+}
+.blog p {
+  color: #808080;
+  font-size: 16px;
+  line-height: 1.7;
+  font-weight: 300;
+}
+.blog .blog-title {
+  font-size: 30px;
+  font-weight: 500;
+}
+
 .heading {
   font-size: 28px;
 }
