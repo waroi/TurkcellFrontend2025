@@ -1,0 +1,80 @@
+* {
+  font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.header-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  background-image: url("https://preview.colorlib.com/theme/imagine/images/undraw_investing_7u74.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% -25px;
+  height: 100vh;
+}
+.header-section .container-fluid {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.header-section .container-fluid .navbar,
+.header-section .container-fluid .navbar-expand-lg,
+.header-section .container-fluid .navbar-light {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  width: 80%;
+  margin: 0 auto;
+  height: 80px;
+  background-color: #fff;
+  color: #000000;
+  position: absolute;
+  padding: 0 20px;
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+  top: 0;
+  left: 10%;
+  right: 10%;
+}
+.header-section .container-fluid .navbar .navbar-brand,
+.header-section .container-fluid .navbar-expand-lg .navbar-brand,
+.header-section .container-fluid .navbar-light .navbar-brand {
+  font-size: 32px;
+  text-decoration: none;
+  color: #000000;
+  font-weight: 500;
+  line-height: 1.2;
+}
+.header-section .container-fluid .navbar .navbar-nav,
+.header-section .container-fluid .navbar-expand-lg .navbar-nav,
+.header-section .container-fluid .navbar-light .navbar-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0px;
+  margin-left: auto;
+  list-style: none;
+  background-color: transparent;
+}
+.header-section .container-fluid .navbar .navbar-nav .nav-item .nav-link,
+.header-section .container-fluid .navbar-expand-lg .navbar-nav .nav-item .nav-link,
+.header-section .container-fluid .navbar-light .navbar-nav .nav-item .nav-link {
+  font-size: 16px;
+  text-decoration: none;
+  padding: 15px 20px;
+  color: #000000;
+}
+.header-section .container-fluid .navbar .navbar-nav .nav-item .nav-link:hover,
+.header-section .container-fluid .navbar-expand-lg .navbar-nav .nav-item .nav-link:hover,
+.header-section .container-fluid .navbar-light .navbar-nav .nav-item .nav-link:hover {
+  color: #4285f4;
+}
+
+/*# sourceMappingURL=main.css.map */

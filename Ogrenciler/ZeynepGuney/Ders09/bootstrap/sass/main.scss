@@ -1,0 +1,93 @@
+* {
+    font-family:"Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+$blue:#4285f4;
+$blockBlue : #007bff;
+$pGray: #6c757d;
+$bgCards : #f1f1f1;
+$bgGray: #f6f6f6;
+$bgGrayText: #808080;
+$white:#fff;
+$span:#dee2e6;
+$black:#000000;
+@mixin flex-center($gap, $justify: center) {
+    display: flex;
+    justify-content: $justify;
+    align-items: center;
+    gap: 0px;
+}
+@mixin text-props($font-size, $font-weight: 400, $color) {
+    font-size: $font-size;
+    font-weight: $font-weight;
+    color: $color;
+}
+@mixin align-right($padding: 0) {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: $padding;
+    }
+// @include text-props(3rem, 400, $textWhite);
+
+.header-section{
+    @include flex-center(0px, center);
+    background-image: url("https://preview.colorlib.com/theme/imagine/images/undraw_investing_7u74.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% -25px;
+    height: 100vh;
+    .container-fluid{
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+        .navbar,
+        .navbar-expand-lg, 
+        .navbar-light {
+            @include flex-center(space-between, center);
+            width: 80%; 
+            margin: 0 auto;
+            height: 80px;
+            background-color: $white; 
+            color: $black; 
+            position: absolute; 
+            padding: 0 20px;
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 0;
+            top: 0;
+            left:10%;
+            right: 10%;
+            .navbar-brand{
+                font-size: 32px;
+                text-decoration: none;
+                color: $black;
+                font-weight: 500;
+                line-height: 1.2;
+            }
+            .navbar-nav {
+                @include flex-center(0px, space-between);
+                margin-left: auto;
+                list-style: none;
+                background-color: transparent;
+                .nav-item{
+                    .nav-link{
+                        
+                        font-size: 16px;
+                        text-decoration: none;
+                        padding: 15px 20px;
+                        color: $black;
+                        &:hover{
+                            color: $blue;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // .container-text{
+
+    // }
+}
