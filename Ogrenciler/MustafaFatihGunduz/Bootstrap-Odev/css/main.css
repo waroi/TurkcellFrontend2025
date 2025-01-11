@@ -10,6 +10,12 @@ body {
   background-color: #ffffff;
 }
 
+.container {
+  padding: 80px 0;
+  margin: 0 auto;
+  width: 100%;
+}
+
 a {
   text-decoration: none;
 }
@@ -92,6 +98,68 @@ a {
 }
 .imagine-featured .unit-4:nth-of-type(1):hover .card h5, .imagine-featured .unit-4:nth-of-type(1):hover .card p, .imagine-featured .unit-4:nth-of-type(1):hover .card a {
   color: #ffffff;
+}
+
+.feedback h2 {
+  font-size: 40px;
+  font-weight: bold;
+  color: #000000;
+  text-align: start;
+}
+.feedback p {
+  font-size: 16px;
+  font-weight: 400;
+  color: #6c757d;
+  text-align: start;
+}
+.feedback .card {
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 20px;
+  border: 1px solid #eee;
+  border-left: 10px solid #4285f4;
+}
+.feedback .card h5, .feedback .card h6 {
+  font-size: 16px;
+  font-weight: 400;
+  color: #000000;
+  text-align: start;
+}
+.feedback .card blockquote {
+  font-size: 16px;
+  font-weight: 400;
+  color: #6c757d;
+  text-align: start;
+  font-style: italic;
+}
+.feedback .img-poz {
+  width: 50px;
+  height: 50px;
+}
+.feedback .img-poz img {
+  border-radius: 50%;
+  width: 100%;
+}
+
+@media (min-width: 0px) and (max-width: 767px) {
+  .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
