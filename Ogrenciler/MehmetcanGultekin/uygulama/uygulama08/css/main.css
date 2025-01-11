@@ -28,7 +28,8 @@
 header {
   position: sticky;
   top: 0px;
-  height: 100px;
+  background-color: #fff;
+  height: 80px;
   z-index: 1000;
 }
 header nav .navbar-brand {
@@ -44,6 +45,17 @@ header nav .navbar-nav li a {
 }
 header nav .navbar-nav li a:hover {
   color: #4285f4 !important;
+}
+header nav .navbar-nav .dropdown:hover > .dropdown-menu {
+  padding: 0;
+  display: block;
+}
+header nav .navbar-nav .dropdown:hover > .dropdown-menu > li {
+  padding: 0;
+  margin: 0;
+}
+header nav .navbar-nav .dropdown:hover > .dropdown-menu > li > a {
+  padding: 10px 20px;
 }
 
 .hero .container {
@@ -277,6 +289,30 @@ header nav .navbar-nav li a:hover {
 .blog .blog-title {
   font-size: 30px;
   font-weight: 500;
+}
+
+.contact-us {
+  background-image: url("https://preview.colorlib.com/theme/imagine/images/hero_1.jpg.webp");
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 5em 0;
+  position: relative;
+  overflow: hidden;
+  z-index: 3;
+}
+.contact-us::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  right: 0;
+  background: linear-gradient(to right, #4286f4 0%, #42e2f4 100%);
+  bottom: 0;
+  opacity: 0.7;
+}
+.contact-us form {
+  border-radius: 13px;
 }
 
 .heading {
