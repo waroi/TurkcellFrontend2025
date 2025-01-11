@@ -7,3 +7,9 @@
 .offcanvas {
   --bs-offcanvas-width: 95%;
 }
+.navbar .offcanvas-body .navbar-nav > li > a:hover {
+  color: #4285f4;
+}
+.navbar .offcanvas-body .navbar-nav > li > .active {
+  color: #4285f4;
+}
