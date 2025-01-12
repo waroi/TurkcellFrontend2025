@@ -217,7 +217,6 @@ $black: #000000;
         h2 {
             @include text-props(1.7rem, bold, $black, start);
         }
-    
         p {
             @include text-props(16px, 400, $pGray, start);
         }
