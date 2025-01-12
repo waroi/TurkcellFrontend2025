@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+$primary: #4285f4;
+$font-family-base: "Nunito", sans-serif;
+$h1-font-size: 56px;
+$h2-font-size: 40px;
+$h3-font-size: 18px;
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1140px,
+  // XXL 1140px Alteration
+);
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+.btn-primary {
+  color: $white;
+
+  &:hover {
+    color: $white;
+  }
+}
+
+h1,
+h2 {
+  font-weight: $font-weight-bolder;
+}
+
+p {
+  color: $secondary;
+  font-weight: $font-weight-light;
+}
+
+#features .card {
+  background-color: #f1f1f1;
+
+  i {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+#feedback {
+  .row {
+    margin-bottom: 120px;
+  }
+
+  .card {
+    border-left: 10px solid $primary;
+
+    img {
+      height: 50px;
+    }
+  }
+}

@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap Ödev</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <!-- <div class="container">
+            <div class="row align-items-center">
+                <div class="col-6">
+                    <h1 class="mb-0 site-logo">
+                        <a href="#" class="">Imagine</a>
+                        <span class="text-primary">.</span>
+                    </h1>
+                </div> // Imagenin sol tarafinda olmasi icin col-6
+                <div class="col-6"></div> // Nav sag tarafinda olmasi icin col-6
+        </div> -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container p-0">
+          <a class="navbar-brand" href="#"
+            >Imagine<span class="text-primary">.</span></a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarScroll"
+            aria-controls="navbarScroll"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <form class="d-flex">
+            <div class="collapse navbar-collapse" id="navbarScroll">
+              <ul
+                class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
+                style="--bs-scroll-height: 100px"
+              >
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#"
+                    >Home</a
+                  >
+                </li>
+                <li class="nav-item ms-4">
+                  <a class="nav-link" href="#">Featured</a>
+                </li>
+                <li class="nav-item dropdown ms-4">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    id="navbarScrollingDropdown"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    About Us
+                  </a>
+                  <ul
+                    class="dropdown-menu"
+                    aria-labelledby="navbarScrollingDropdown"
+                  >
+                    <li>
+                      <a class="dropdown-item" href="#">More Free Templates</a>
+                    </li>
+                    <li><a class="dropdown-item" href="#">Our Team</a></li>
+                    <li><a class="dropdown-item" href="#">More Links</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item ms-4">
+                  <a class="nav-link" href="#">Testimonials</a>
+                </li>
+                <li class="nav-item ms-4">
+                  <a class="nav-link" href="#">Blog</a>
+                </li>
+                <li class="nav-item ms-4">
+                  <a class="nav-link" href="#">Contact</a>
+                </li>
+              </ul>
+            </div>
+          </form>
+        </div>
+      </nav>
+    </header>
+    <section class="make-your-business">
+      <div class="container p-0">
+        <div class="row align-items-center d-flex flex-row-reverse">
+          <div class="col-lg-6">
+            <img
+              src="https://preview.colorlib.com/theme/imagine/images/undraw_investing_7u74.svg"
+              alt="draw-logo"
+              class=""
+            />
+          </div>
+          <div class="col-lg-6">
+            <h1 class="mb-2">Make Your Business More Profitable</h1>
+            <p class="mb-4">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Laboriosam assumenda ea quo cupiditate facere deleniti fuga
+              officia.
+            </p>
+            <button class="btn btn-primary mt-3">Get Started</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="imagine-featured">
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-7 text-align-center">
+            <h2 class="section-title">Imagine Features</h2>
+            <p class="lead">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga
+              quos quaerat sapiente nam, id vero.
+            </p>
+          </div>
+
+          <div class="row align-items-stretch">
+            <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
+              <div class="unit-4 d-block">
+                <div class="unit-4-icon">
+                  <span class="icon-wrap">
+                    <i class="fa fa-refresh"></i>
+                  </span>
+                </div>
+                <div class="card text-center mb-3">
+                  <div class="card-body">
+                    <h5 class="card-title">Marketing Consulting</h5>
+                    <p class="card-text">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Perferendis quis molestiae vitae eligendi at.
+                    </p>
+                    <a href="#" class="btn-primary">Learn More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
+              <div class="unit-4 d-block">
+                <div class="unit-4-icon">
+                  <span class="icon-wrap">
+                    <i class="fa fa-shop"></i>
+                  </span>
+                </div>
+                <div class="card text-center mb-3">
+                  <div class="card-body">
+                    <h5 class="card-title">Market Analysis</h5>
+                    <p class="card-text">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Perferendis quis molestiae vitae eligendi at.
+                    </p>
+                    <a href="#" class="btn-primary">Learn More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
+              <div class="unit-4 d-block">
+                <div class="unit-4-icon">
+                  <span class="icon-wrap">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                  </span>
+                </div>
+                <div class="card text-center mb-3">
+                  <div class="card-body">
+                    <h5 class="card-title">Easy Purchase</h5>
+                    <p class="card-text">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Perferendis quis molestiae vitae eligendi at.
+                    </p>
+                    <a href="#" class="btn-primary">Learn More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
+              <div class="unit-4 d-block">
+                <div class="unit-4-icon">
+                  <span class="icon-wrap">
+                    <i class="fa-solid fa-plug"></i>
+                  </span>
+                </div>
+                <div class="card text-center mb-3">
+                  <div class="card-body">
+                    <h5 class="card-title">Free Updates</h5>
+                    <p class="card-text">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Perferendis quis molestiae vitae eligendi at.
+                    </p>
+                    <a href="#" class="btn-primary">Learn More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
+              <div class="unit-4 d-block">
+                <div class="unit-4-icon">
+                  <span class="icon-wrap">
+                    <i class="fa-regular fa-face-smile"></i>
+                  </span>
+                </div>
+                <div class="card text-center mb-3">
+                  <div class="card-body">
+                    <h5 class="card-title">100% Satistified</h5>
+                    <p class="card-text">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Perferendis quis molestiae vitae eligendi at.
+                    </p>
+                    <a href="#" class="btn-primary">Learn More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
+              <div class="unit-4 d-block">
+                <div class="unit-4-icon">
+                  <span class="icon-wrap">
+                    <i class="fa-solid fa-rotate-left"></i>
+                  </span>
+                </div>
+                <div class="card text-center mb-3">
+                  <div class="card-body">
+                    <h5 class="card-title">Easy Plugin</h5>
+                    <p class="card-text">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Perferendis quis molestiae vitae eligendi at.
+                    </p>
+                    <a href="#" class="btn-primary">Learn More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="feedback">
+      <div class="container p-0">
+        <div class="row mb-5">
+          <div class="col-lg-7">
+            <img
+              class="img-fluid"
+              src="https://preview.colorlib.com/theme/imagine/images/undraw_gift_card_6ekc.svg"
+            />
+          </div>
+          <div class="col-lg-5 mt-5">
+            <h2 class="mb-4 mt-3">Communicate and gather feedback</h2>
+            <p class="mb-4">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Voluptatem neque nisi architecto autem molestias corrupti officia
+              veniam.
+            </p>
+            <div class="card">
+              <div class="card-body p-0">
+                <div class="d-flex">
+                  <div class="img-poz mr-3">
+                    <img
+                      src="https://preview.colorlib.com/theme/imagine/images/person_4.jpg"
+                    />
+                  </div>
+                  <div class="ms-2 mb-3">
+                    <h5 class="card-title">Grey Simpson</h5>
+                    <h6 class="card-subtitle mb-2">Co-Founder, XYZ Inc.</h6>
+                  </div>
+                </div>
+                <blockquote class="card-text">
+                  “Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Ducimus vitae ipsa asperiores inventore aperiam iure?”
+                </blockquote>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row flex-row-reverse mb-5">
+          <div class="col-lg-7">
+            <img
+              class="img-fluid"
+              src="https://preview.colorlib.com/theme/imagine/images/undraw_metrics_gtu7.svg"
+            />
+          </div>
+          <div class="col-lg-5 mt-5">
+            <h2 class="mb-4 mt-3">Communicate and gather feedback</h2>
+            <p class="mb-4">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Voluptatem neque nisi architecto autem molestias corrupti officia
+              veniam.
+            </p>
+            <div class="card">
+              <div class="card-body p-0">
+                <div class="d-flex">
+                  <div class="img-poz mr-3">
+                    <img
+                      src="https://preview.colorlib.com/theme/imagine/images/person_1.jpg"
+                    />
+                  </div>
+                  <div class="ms-2 mb-3">
+                    <h5 class="card-title">Kimberly Gush</h5>
+                    <h6 class="card-subtitle mb-2">Co-Founder, XYZ Inc.</h6>
+                  </div>
+                </div>
+                <blockquote class="card-text">
+                  “Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Ducimus vitae ipsa asperiores inventore aperiam iure?”
+                </blockquote>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-5">
+          <div class="col-lg-7">
+            <img
+              class="img-fluid"
+              src="https://preview.colorlib.com/theme/imagine/images/undraw_gift_card_6ekc.svg"
+            />
+          </div>
+          <div class="col-lg-5 mt-5">
+            <h2 class="mb-4 mt-3">Communicate and gather feedback</h2>
+            <p class="mb-4">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Voluptatem neque nisi architecto autem molestias corrupti officia
+              veniam.
+            </p>
+            <div class="card">
+              <div class="card-body p-0">
+                <div class="d-flex">
+                  <div class="img-poz mr-3">
+                    <img
+                      src="https://preview.colorlib.com/theme/imagine/images/person_4.jpg"
+                    />
+                  </div>
+                  <div class="ms-2 mb-3">
+                    <h5 class="card-title">Grey Simpson</h5>
+                    <h6 class="card-subtitle mb-2">Co-Founder, XYZ Inc.</h6>
+                  </div>
+                </div>
+                <blockquote class="card-text">
+                  “Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Ducimus vitae ipsa asperiores inventore aperiam iure?”
+                </blockquote>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row flex-row-reverse mb-5">
+          <div class="col-lg-7">
+            <img
+              class="img-fluid"
+              src="https://preview.colorlib.com/theme/imagine/images/undraw_metrics_gtu7.svg"
+            />
+          </div>
+          <div class="col-lg-5 mt-5">
+            <h2 class="mb-4 mt-3">Communicate and gather feedback</h2>
+            <p class="mb-4">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Voluptatem neque nisi architecto autem molestias corrupti officia
+              veniam.
+            </p>
+            <div class="card">
+              <div class="card-body p-0">
+                <div class="d-flex">
+                  <div class="img-poz mr-3">
+                    <img
+                      src="https://preview.colorlib.com/theme/imagine/images/person_1.jpg"
+                    />
+                  </div>
+                  <div class="ms-2 mb-3">
+                    <h5 class="card-title">Kimberly Gush</h5>
+                    <h6 class="card-subtitle mb-2">Co-Founder, XYZ Inc.</h6>
+                  </div>
+                </div>
+                <blockquote class="card-text">
+                  “Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Ducimus vitae ipsa asperiores inventore aperiam iure?”
+                </blockquote>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="about-us">
+      <div class="container">
+        <div class="row">
+          <h2 class="mb-5 about-us-title">About Us</h2>
+          <div class="col-lg-6">
+            <img
+              class="img-fluid"
+              src="https://preview.colorlib.com/theme/imagine/images/undraw_bookmarks_r6up.svg"
+            />
+          </div>
+          <div class="col-lg-5 ms-auto ps-lg-5">
+            <h2 class="mb-4">Our Mission</h2>
+            <p class="mb-4">
+              Eos cumque optio dolores excepturi rerum temporibus magni
+              recusandae eveniet, totam omnis consectetur maxime quibusdam
+              expedita dolorem dolor nobis dicta labore quaerat esse magnam
+              unde, aperiam delectus! At maiores, itaque.
+            </p>
+            <ul class="mb-5 list-unstyled">
+              <li class="mb-3">
+                <i class="fa-solid fa-check me-3"></i> Laborum enim quasi at
+                modi
+              </li>
+              <li class="mb-3">
+                <i class="fa-solid fa-check me-3"></i> Ad at tempore
+              </li>
+              <li class="mb-3">
+                <i class="fa-solid fa-check me-3"></i> Labore quaerat esse
+              </li>
+            </ul>
+            <p><a class="btn btn-primary" href="#">Learn More</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="team">
+      <div class="container">
+        <div class="row mb-5 justify-content-center text-center">
+          <div class="col-7 mb-5">
+            <h2>Our Team</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga
+              quos quaerat sapiente nam, id vero.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col-lg-4 col-md-6">
+              <div class="card h-100 border-0">
+                <img
+                  src="https://preview.colorlib.com/theme/imagine/images/person_1.jpg"
+                  class="card-img-top rounded-0"
+                  alt="..."
+                />
+                <div class="card-body p-0 mt-4">
+                  <h5 class="card-title mb-2">Cloe Marena</h5>
+                  <h4 class="card-subtitle mb-3 mt-2">President</h4>
+                  <p class="card-text mb-3">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Voluptatum excepturi corporis qui doloribus perspiciatis
+                    ipsa modi accusantium repellat.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="card h-100 border-0">
+                <img
+                  src="https://preview.colorlib.com/theme/imagine/images/person_2.jpg"
+                  class="card-img-top rounded-0"
+                  alt="..."
+                />
+                <div class="card-body p-0 mt-4">
+                  <h5 class="card-title mb-2">John Rooster</h5>
+                  <h4 class="card-subtitle mb-3 mt-2">Marketing</h4>
+                  <p class="card-text mb-3">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Voluptatum excepturi corporis qui doloribus perspiciatis
+                    ipsa modi accusantium repellat.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="card h-100 border-0">
+                <img
+                  src="https://preview.colorlib.com/theme/imagine/images/person_3.jpg"
+                  class="card-img-top rounded-0"
+                  alt="..."
+                />
+                <div class="card-body p-0 mt-4">
+                  <h5 class="card-title mb-2">Will Turner</h5>
+                  <h4 class="card-subtitle mb-3 mt-2">Marketing</h4>
+                  <p class="card-text mb-3">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Voluptatum excepturi corporis qui doloribus perspiciatis
+                    ipsa modi accusantium repellat.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="card h-100 border-0">
+                <img
+                  src="https://preview.colorlib.com/theme/imagine/images/person_4.jpg"
+                  class="card-img-top rounded-0"
+                  alt="..."
+                />
+                <div class="card-body p-0 mt-4">
+                  <h5 class="card-title mb-2">Nicolas Stainer</h5>
+                  <h4 class="card-subtitle mb-3 mt-2">Financing</h4>
+                  <p class="card-text mb-3">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Voluptatum excepturi corporis qui doloribus perspiciatis
+                    ipsa modi accusantium repellat.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="card h-100 border-0">
+                <img
+                  src="https://preview.colorlib.com/theme/imagine/images/person_5.jpg"
+                  class="card-img-top rounded-0"
+                  alt="..."
+                />
+                <div class="card-body p-0 mt-4">
+                  <h5 class="card-title mb-2">George Brook</h5>
+                  <h4 class="card-subtitle mb-3 mt-2">Founder</h4>
+                  <p class="card-text mb-3">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Voluptatum excepturi corporis qui doloribus perspiciatis
+                    ipsa modi accusantium repellat.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="card h-100 border-0">
+                <img
+                  src="https://preview.colorlib.com/theme/imagine/images/person_6.jpg"
+                  class="card-img-top rounded-0"
+                  alt="..."
+                />
+                <div class="card-body p-0 mt-4">
+                  <h5 class="card-title mb-2">Emely Hopson</h5>
+                  <h4 class="card-subtitle mb-3 mt-2">Marketing</h4>
+                  <p class="card-text mb-3">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Voluptatum excepturi corporis qui doloribus perspiciatis
+                    ipsa modi accusantium repellat.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="testimonials">
+      <div class="container d-flex flex-column align-items-center">
+        <h2 class="mb-5">Testimonials</h2>
+        <img
+          class="mb-4 mt-1"
+          src="https://preview.colorlib.com/theme/imagine/images/person_3.jpg"
+          alt="testimonials-img"
+        />
+        <p>
+          <i
+            >"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam
+            laborum deleniti rerum, perspiciatis quam minima fuga architecto
+            facilis eius ipsa nihil facere adipisci id pariatur impedit
+            recusandae hic voluptate vero! Molestias dolores aliquam mollitia
+            corporis quis accusantium blanditiis. Dolorum quas minima dicta
+            sunt.</i
+          >
+        </p>
+        <h6>John Smith</h6>
+        <div class="noktalar mt-3">
+          <span class="nokta me-1"><i class="fa-solid fa-circle"></i></span>
+          <span class="nokta me-1"><i class="fa-solid fa-circle"></i></span>
+          <span class="nokta me-1"><i class="fa-solid fa-circle"></i></span>
+          <span class="nokta"><i class="fa-solid fa-circle"></i></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="blogPosts">
+      <div class="container">
+        <h2 class="mb-5">Blog Posts</h2>
+        <div class="blog-cards row">
+          <div class="blog-card col-lg-4 col-md-6 col-12">
+            <img
+              src="https://preview.colorlib.com/theme/imagine/images/img_1.jpg"
+              class="blog-img img-fluid"
+              alt="1"
+            />
+            <div class="blog-body">
+              <h5 class="blog-title mt-4">
+                Make Your Business More Profitable
+              </h5>
+              <span>Ham Brook • Jan 18, 2019 • <a class="link">News</a></span>
+              <p class="blog-text mt-4">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
+                eligendi nobis ea maiores sapiente veritatis reprehenderit
+                suscipit quaerat rerum voluptatibus a eius.
+              </p>
+              <a href="#" class="link">Continue Reading...</a>
+            </div>
+          </div>
+
+          <div class="blog-card col-lg-4 col-md-6 col-12">
+            <img
+              src="https://preview.colorlib.com/theme/imagine/images/img_2.jpg"
+              class="blog-img img-fluid"
+              alt="1"
+            />
+            <div class="blog-body">
+              <h5 class="blog-title mt-4">
+                Make Your Business More Profitable
+              </h5>
+              <span>Ham Brook • Jan 18, 2019 • <a class="link">News</a></span>
+              <p class="blog-text mt-4">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
+                eligendi nobis ea maiores sapiente veritatis reprehenderit
+                suscipit quaerat rerum voluptatibus a eius.
+              </p>
+              <a href="#" class="link">Continue Reading...</a>
+            </div>
+          </div>
+
+          <div class="blog-card col-lg-4 col-md-6 col-12">
+            <img
+              src="https://preview.colorlib.com/theme/imagine/images/img_3.jpg"
+              class="blog-img img-fluid"
+              alt="1"
+            />
+            <div class="blog-body">
+              <h5 class="blog-title mt-4">
+                Make Your Business More Profitable
+              </h5>
+              <span>Ham Brook • Jan 18, 2019 • <a class="link">News</a></span>
+              <p class="blog-text mt-4">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
+                eligendi nobis ea maiores sapiente veritatis reprehenderit
+                suscipit quaerat rerum voluptatibus a eius.
+              </p>
+              <a href="#" class="link">Continue Reading...</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact py-4">
+      <div class="container">
+        <h2 class="mb-5">Contact Us</h2>
+        <form class="row g-3 bg-white p-5" novalidate>
+          <h4 class="mb-4">Contact Form</h4>
+          <div class="col-md-6 has-validation">
+            <label for="fName" class="form-label">First Name</label>
+            <input
+              type="text"
+              class="form-control is-valid"
+              id="fname"
+              value="seda"
+              required
+            />
+            <div class="valid-feedback">Geçerli Kullanıcı</div>
+            <div class="invalid-feedback">Lütfen bu alanı doldurun</div>
+          </div>
+          <div class="col-md-6">
+            <label for="fLName" class="form-label">Last Name</label>
+            <input 
+            type="text" 
+            class="form-control is-invalid" 
+            id="fName"
+            required/>
+            <div class="invalid-feedback">Lütfen bu alanı doldurun</div>
+          </div>
+          <div class="col-12">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="Email" />
+          </div>
+          <div class="col-12">
+            <label for="subject" class="form-label">Subject</label>
+            <input type="text" class="form-control" id="subject" />
+          </div>
+          <div class="col-12">
+            <label for="message">Message</label>
+            <textarea
+              class="form-control"
+              id="message"
+              rows="7" 
+              placeholder="Leave your message here..."
+            ></textarea>
+          </div>
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <section class="footer">
+      <div class="container text-align-center py-5">
+        <div class="d-flex justify-content-center gap-4">
+          <div class="icon d-flex justify-content-center align-items-center">
+            <i class="fa-brands fa-facebook-f"></i>
+          </div>
+          <div class="icon d-flex justify-content-center align-items-center">
+            <i class="fa-brands fa-twitter"></i>
+          </div>
+          <div class="icon d-flex justify-content-center align-items-center">
+            <i class="fa-brands fa-instagram"></i>
+          </div>
+          <div class="icon d-flex justify-content-center align-items-center">
+            <i class="fa-brands fa-linkedin"></i>
+          </div>
+          <div class="icon d-flex justify-content-center align-items-center">
+            <i class="fa-brands fa-pinterest"></i>
+          </div>
+        </div>
+        <p class="text-center mt-5">
+          Copyright &copy2025 All rights reserved | This template is made with
+          <span><i class="fa-solid fa-heart"></i></span> by
+          <a class="link" href="#">Colorlib</a>
+        </p>
+      </div>
+    </section>
+  </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://kit.fontawesome.com/0460a9927e.js"
+    crossorigin="anonymous"
+  ></script>
+</html>
