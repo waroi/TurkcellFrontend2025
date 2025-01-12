@@ -181,7 +181,15 @@ a{
 .bg{
     background-image: url(https://preview.colorlib.com/theme/imagine/images/hero_1.jpg.webp);
     background-attachment: fixed;
+    width: 100%;
+    background-size: cover;
 }
 .overlay{
     background: linear-gradient(to right, #4286f470 0%, #42e2f470 100%);
+}
+.form-group{
+    margin-bottom: 16px;
+}
+.form-group label{
+    margin-bottom: 8px;
 }
