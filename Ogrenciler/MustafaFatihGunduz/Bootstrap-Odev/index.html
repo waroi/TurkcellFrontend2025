@@ -646,18 +646,31 @@
       </div>
     </section>
 
-    <section class="contact">
+    <section class="contact py-4">
       <div class="container">
         <h2 class="mb-5">Contact Us</h2>
-        <form class="row g-3 bg-white p-5">
+        <form class="row g-3 bg-white p-5" novalidate>
           <h4 class="mb-4">Contact Form</h4>
-          <div class="col-md-6">
+          <div class="col-md-6 has-validation">
             <label for="fName" class="form-label">First Name</label>
-            <input type="text" class="form-control" id="fName" />
+            <input
+              type="text"
+              class="form-control is-valid"
+              id="fname"
+              value="seda"
+              required
+            />
+            <div class="valid-feedback">Geçerli Kullanıcı</div>
+            <div class="invalid-feedback">Lütfen bu alanı doldurun</div>
           </div>
           <div class="col-md-6">
             <label for="fLName" class="form-label">Last Name</label>
-            <input type="text" class="form-control" id="fName" />
+            <input 
+            type="text" 
+            class="form-control is-invalid" 
+            id="fName"
+            required/>
+            <div class="invalid-feedback">Lütfen bu alanı doldurun</div>
           </div>
           <div class="col-12">
             <label for="email" class="form-label">Email</label>
@@ -672,6 +685,7 @@
             <textarea
               class="form-control"
               id="message"
+              rows="7" 
               placeholder="Leave your message here..."
             ></textarea>
           </div>
