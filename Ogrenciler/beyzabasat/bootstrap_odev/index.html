@@ -24,6 +24,31 @@
 			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
 			integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
 			crossorigin="anonymous"></script>
+		<script>
+			// Example starter JavaScript for disabling form submissions if there are invalid fields
+			(() => {
+				"use strict";
+
+				// Fetch all the forms we want to apply custom Bootstrap validation styles to
+				const forms = document.querySelectorAll(".needs-validation");
+
+				// Loop over them and prevent submission
+				Array.from(forms).forEach((form) => {
+					form.addEventListener(
+						"submit",
+						(event) => {
+							if (!form.checkValidity()) {
+								event.preventDefault();
+								event.stopPropagation();
+							}
+
+							form.classList.add("was-validated");
+						},
+						false
+					);
+				});
+			})();
+		</script>
 		<nav class="navbar navbar-expand-lg navbar-light py-3">
 			<div class="container">
 				<a class="navbar-brand text-black" href="#"
@@ -347,7 +372,7 @@
 						<h2 class="section-title mb-3">About Us</h2>
 					</div>
 				</div>
-				<div class="row mb-5">
+				<div class="flex justify-content-between row mb-5">
 					<div class="col-lg-6 aos-init aos-animate" data-aos="fade-right">
 						<img
 							src="https://preview.colorlib.com/theme/imagine/images/undraw_bookmarks_r6up.svg"
@@ -609,6 +634,102 @@
 								<a href="#">Continue Reading</a>
 							</p>
 						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section
+			class="site-section bg-image2"
+			style="
+				background-image: url(https://preview.colorlib.com/theme/imagine/images/hero_1.jpg);
+			">
+			<div class="container">
+				<div class="row mb-5">
+					<div class="col-12 text-center">
+						<h2 class="section-title mb-3 text-black">Contact Us</h2>
+					</div>
+				</div>
+				<div class="row justify-content-center">
+					<div class="col-lg-7 mb-5">
+						<form
+							class="p-5 bg-white needs-validation z-10000 absolute"
+							novalidate>
+							<h2 class="h4 text-black mb-5">Contact Form</h2>
+							<div class="row form-group">
+								<div class="col-md-6 mb-3 mb-md-0">
+									<label class="text-black" for="fname">First Name</label>
+									<input
+										type="text"
+										id="fname"
+										class="form-control rounded-0"
+										required />
+									<div class="valid-feedback">Great!</div>
+									<div class="invalid-feedback">
+										Please enter your first name.
+									</div>
+								</div>
+								<div class="col-md-6">
+									<label class="text-black" for="lname">Last Name</label>
+									<input
+										type="text"
+										id="lname"
+										required
+										class="form-control rounded-0" />
+									<div class="valid-feedback">Great!</div>
+									<div class="invalid-feedback">
+										Please enter your last name.
+									</div>
+								</div>
+							</div>
+							<div class="row form-group">
+								<div class="col-md-12">
+									<label class="text-black" for="email">Email</label>
+									<input
+										type="email"
+										id="email"
+										required
+										class="form-control rounded-0" />
+									<div class="valid-feedback">Great!</div>
+									<div class="invalid-feedback">
+										Please enter a valid email address.
+									</div>
+								</div>
+							</div>
+							<div class="row form-group">
+								<div class="col-md-12">
+									<label class="text-black" for="subject">Subject</label>
+									<input
+										type="subject"
+										id="subject"
+										required
+										class="form-control rounded-0" />
+									<div class="valid-feedback">Great!</div>
+									<div class="invalid-feedback">Please enter a subject.</div>
+								</div>
+							</div>
+							<div class="row form-group">
+								<div class="col-md-12">
+									<label class="text-black" for="message">Message</label>
+									<textarea
+										required
+										name="message"
+										id="message"
+										cols="30"
+										rows="7"
+										class="form-control rounded-0"
+										placeholder="Leave your message here..."></textarea>
+									<div class="valid-feedback">Great!</div>
+								</div>
+							</div>
+							<div class="row form-group">
+								<div class="col-md-12">
+									<input
+										type="submit"
+										value="Send Message"
+										class="btn btn-primary mr-2 mb-2" />
+								</div>
+							</div>
+						</form>
 					</div>
 				</div>
 			</div>
