@@ -201,9 +201,8 @@ $black: #000000;
     }
 }
 
-.site-section {
+.about-section {
     background-color: $bgGray ;
-
     .container {
         width: 100%;
         padding-right: 15px;
@@ -211,23 +210,18 @@ $black: #000000;
         margin-right: auto;
         margin-left: auto;
         
-        }
-
     }
-
-    h2 {
-        @include text-props(40px, bold, $black, start);
-    }
-
-    p {
-        @include text-props(16px, 400, $pGray, start);
-    }
-
-    .mb-5 {
-        padding: 5em 0;
-    }
-    
     .col-lg-5 {
+        h2 {
+            @include text-props(40px, bold, $black, start);
+        }
+    
+        p {
+            @include text-props(16px, 400, $pGray, start);
+        }
+        .mb-5 {
+            padding: 5em 0;
+        }
         .btn.btn-primary  {
             padding: 10px 30px;
             text-align: center;
@@ -236,4 +230,5 @@ $black: #000000;
             cursor: pointer;
             border: none;
         }
+    }
 }
