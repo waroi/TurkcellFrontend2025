@@ -1,3 +1,16 @@
+* {
+  box-sizing: border-box;
+}
+
+.icon {
+  background-color: #4285f4;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  z-index: 10;
+  color: #fff;
+}
+
 .navbar-toggler {
   border: none;
 }
@@ -22,4 +35,72 @@
   font-size: 16px;
   border-radius: 30px;
   padding: 10px 30px;
+}
+
+.feature-card {
+  background-color: #fff;
+}
+
+.text {
+  padding: 15%;
+  background: #f1f1f1;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.text h3 {
+  font-size: 18px;
+  color: #000;
+  font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+.text-color {
+  font-size: 1rem;
+  color: gray;
+  line-height: 1.7;
+}
+
+.container-features {
+  animation: moveUp 1.5s;
+}
+
+@keyframes moveUp {
+  0% {
+    transform: translateY(150px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.feature-card {
+  position: relative;
+  border: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.feature-card:hover .text {
+  background-color: #4285f4;
+
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+.feature-card:hover .text h3 {
+  color: #fff !important;
+}
+.feature-card:hover .text p {
+  color: #fff !important;
+}
+
+.feature-card:hover .icon {
+  background-color: white !important;
+  color: #4285f4 !important;
+  /* Kart arka plan rengi */
 }
