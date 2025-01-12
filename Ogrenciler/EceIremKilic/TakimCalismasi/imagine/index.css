@@ -166,3 +166,30 @@ a{
     color: #000;
     font-size: 16px;
 }
+.h-entry img{
+    margin-bottom: 30px;   
+}
+.h-entry .meta {
+    color: #b3b3b3;
+    font-size: 14px;
+}
+.h-entry p{
+    color: #808080;
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+.bg{
+    background-image: url(https://preview.colorlib.com/theme/imagine/images/hero_1.jpg.webp);
+    background-attachment: fixed;
+    width: 100%;
+    background-size: cover;
+}
+.overlay{
+    background: linear-gradient(to right, #4286f470 0%, #42e2f470 100%);
+}
+.form-group{
+    margin-bottom: 16px;
+}
+.form-group label{
+    margin-bottom: 8px;
+}
