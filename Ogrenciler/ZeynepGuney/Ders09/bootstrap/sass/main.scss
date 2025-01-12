@@ -203,9 +203,11 @@ $black: #000000;
 
 .about-section {
     background-color: $bgGray ;
+
     h2 {
         @include text-props(40px, bold, $black, center);
     }
+
     .container {
         width: 100%;
         padding-right: 15px;
@@ -213,14 +215,17 @@ $black: #000000;
         margin-right: auto;
         margin-left: auto;
     }
+
     .col-lg-5 {
         h2 {
             @include text-props(1.7rem, bold, $black, start);
         }
+
         p {
             @include text-props(16px, 400, $pGray, start);
         }
-        .btn.btn-primary  {
+
+        .btn.btn-primary {
             padding: 10px 30px;
             text-align: center;
             box-shadow: 0 4px 20px -5px rgba(66, 133, 244, 0.4);
@@ -230,49 +235,92 @@ $black: #000000;
         }
     }
 }
-.team-section{
+
+.team-section {
     h2 {
         @include text-props(40px, bold, $black, center);
     }
+
     p {
         @include text-props(1.25rem, 300, $pGray, center);
         margin-top: 0;
     }
-    .person{
+
+    .person {
         h2 {
             @include text-props(18px, 500, $black, start);
         }
-        span{
+
+        span {
             @include text-props(12px, 700, $blue, start);
             letter-spacing: .1em;
             text-transform: uppercase;
         }
-        p{
+
+        p {
             @include text-props(16px, 400, $black, start);
             margin-top: 0;
             margin-bottom: 1rem;
         }
-        .figure{
+
+        .bio-img {
             position: relative;
-            margin-bottom: 0;
-            margin: 0 0 1rem;
-            display: block;
-            .bio-img{
+            overflow: hidden;
+            text-align: center;
+            margin-bottom: 30px;
+
+            figure {
                 position: relative;
-                overflow:visible;
-                text-align: center;
-                margin-bottom: 30px;
-                .social{
-                    z-index: 2;
-                    padding: 10px 0;
+                margin: 0;
+
+                img {
+                    display: block;
                     width: 100%;
-                    position: absolute;
-                    bottom: 0%;
-                    transform: translate(100%);
-                    left: 0;
-                    background: $blue;
+                    height: auto;
+                    transition: transform 0.3s ease-in-out;
                 }
             }
+
+            .social {
+                z-index: 2;
+                padding: 10px 0;
+                width: 100%;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                transform: translateY(100%);
+                background: $blue;
+                display: flex;
+                justify-content: center;
+                gap: 15px;
+                transition: transform 0.3s ease-in-out;
+            }
+
+            &:hover {
+                figure img {
+                transform: scale(1.1);
+                }
+                .social {
+                transform: translateY(0);
+                }
+                }
+                
         }
     }
 }
+
+.testimonials-section{
+    background-color: $bgGray;
+    h2 {
+        @include text-props(40px, bold, $black, center);
+    }
+    p {
+        @include text-props(1.5rem, 300, $black, center);
+        margin-top: 0;
+        font-style: italic;
+    }
+
+
+}
+
+
