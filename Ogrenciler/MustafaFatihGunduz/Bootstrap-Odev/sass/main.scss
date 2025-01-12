@@ -9,6 +9,9 @@ $xWidth100: 100%;
 $testimonialsBg: #f6f6f6;
 $testimonialsContent: #808080;
 $blogrenk:#b3b3b3;
+$iconrenk:#8bc34a;
+$cardsubtitle: #212529;
+
 
 * {
   padding: 0;
@@ -19,6 +22,7 @@ $blogrenk:#b3b3b3;
 body {
   font-family: "Nunito", sans-serif;
   background-color: $colorWhite;
+  line-height: 1.7;
 }
 .container {
   padding: 80px 0;
@@ -120,6 +124,10 @@ a {
 }
 
 .feedback {
+  .row{
+    padding: 80px 0;
+    margin-bottom: 48px
+  }
   h2 {
     @include textStyle(40px, bold, $titleTextColor, start);
   }
@@ -151,6 +159,56 @@ a {
     }
   }
 }
+
+.about-us{
+  background-color: $testimonialsBg;
+  h2:first-of-type{
+    @include textStyle(40px, 700, $titleTextColor, center);
+  }
+  .col-lg-5{
+    h2{
+      @include textStyle(1.75rem, 700, $titleTextColor, start);
+    }
+    p, li{
+      @include textStyle(16px, 400, $testimonialsContent, start);
+    } 
+    
+    i{
+      color: $iconrenk
+    }
+    .btn{
+      padding: 10px 30px;
+      border-radius: 30px;
+      background-color: $hoverBlueColor;
+    }
+  }
+}
+
+.team{
+  .col-7{
+    h2 {
+        @include textStyle(40px, 700, $titleTextColor, center);
+      }
+    p{
+        @include textStyle(20px, 300, $testimonialsContent, center);
+    }
+  }
+  .col-lg-4{
+    .card-title{
+        @include textStyle(18px, 500, $titleTextColor, start);
+    }
+    .card-subtitle{
+        @include textStyle(12px, 700, $hoverBlueColor, start);
+        text-transform: uppercase;
+        letter-spacing: .1em;
+    }
+    .card-text{
+        @include textStyle(16px, 500, $testimonialsContent, start);
+    }
+  }
+
+}
+
 
 .testimonials {
   background-color: $testimonialsBg;
@@ -196,7 +254,7 @@ a {
             @include textStyle(14px, 300, $blogrenk, start);
            }
            p{
-            @include textStyle(16px, 300, #808080, start);
+            @include textStyle(16px, 300, $testimonialsContent, start);
            }
         }
     }

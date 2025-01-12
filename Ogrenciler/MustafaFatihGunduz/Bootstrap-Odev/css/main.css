@@ -8,6 +8,7 @@
 body {
   font-family: "Nunito", sans-serif;
   background-color: #ffffff;
+  line-height: 1.7;
 }
 
 .container {
@@ -107,6 +108,10 @@ a {
   color: #ffffff;
 }
 
+.feedback .row {
+  padding: 80px 0;
+  margin-bottom: 48px;
+}
 .feedback h2 {
   font-size: 40px;
   font-weight: bold;
@@ -147,6 +152,69 @@ a {
 .feedback .img-poz img {
   border-radius: 50%;
   width: 100%;
+}
+
+.about-us {
+  background-color: #f6f6f6;
+}
+.about-us h2:first-of-type {
+  font-size: 40px;
+  font-weight: 700;
+  color: #000000;
+  text-align: center;
+}
+.about-us .col-lg-5 h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #000000;
+  text-align: start;
+}
+.about-us .col-lg-5 p, .about-us .col-lg-5 li {
+  font-size: 16px;
+  font-weight: 400;
+  color: #808080;
+  text-align: start;
+}
+.about-us .col-lg-5 i {
+  color: #8bc34a;
+}
+.about-us .col-lg-5 .btn {
+  padding: 10px 30px;
+  border-radius: 30px;
+  background-color: #4285f4;
+}
+
+.team .col-7 h2 {
+  font-size: 40px;
+  font-weight: 700;
+  color: #000000;
+  text-align: center;
+}
+.team .col-7 p {
+  font-size: 20px;
+  font-weight: 300;
+  color: #808080;
+  text-align: center;
+}
+.team .col-lg-4 .card-title {
+  font-size: 18px;
+  font-weight: 500;
+  color: #000000;
+  text-align: start;
+}
+.team .col-lg-4 .card-subtitle {
+  font-size: 12px;
+  font-weight: 700;
+  color: #4285f4;
+  text-align: start;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.team .col-lg-4 .card-text {
+  font-size: 16px;
+  font-weight: 500;
+  color: #808080;
+  text-align: start;
 }
 
 .testimonials {
