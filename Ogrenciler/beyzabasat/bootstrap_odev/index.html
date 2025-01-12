@@ -25,14 +25,9 @@
 			integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
 			crossorigin="anonymous"></script>
 		<script>
-			// Example starter JavaScript for disabling form submissions if there are invalid fields
 			(() => {
 				"use strict";
-
-				// Fetch all the forms we want to apply custom Bootstrap validation styles to
 				const forms = document.querySelectorAll(".needs-validation");
-
-				// Loop over them and prevent submission
 				Array.from(forms).forEach((form) => {
 					form.addEventListener(
 						"submit",
@@ -41,7 +36,6 @@
 								event.preventDefault();
 								event.stopPropagation();
 							}
-
 							form.classList.add("was-validated");
 						},
 						false
@@ -548,7 +542,107 @@
 				</div>
 			</div>
 		</section>
-		<section class="site-section bg-light"></section>
+		<section class="site-section bg-light">
+			<div class="container">
+				<div class="row mb-5">
+					<div class="col-12 text-center">
+						<h2 class="section-title mb-3">Testimonials</h2>
+					</div>
+				</div>
+			</div>
+			<div id="carouselDotIndicators" class="carousel slide">
+				<div class="carousel-indicators">
+					<button
+						type="button"
+						data-bs-target="#carouselDotIndicators"
+						data-bs-slide-to="0"
+						class="active"
+						aria-current="true"
+						aria-label="Slide 1"></button>
+					<button
+						type="button"
+						data-bs-target="#carouselDotIndicators"
+						data-bs-slide-to="1"
+						aria-label="Slide 2"></button>
+					<button
+						type="button"
+						data-bs-target="#carouselDotIndicators"
+						data-bs-slide-to="2"
+						aria-label="Slide 3"></button>
+				</div>
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+						<div class="testimonial">
+							<figure
+								class="mb-4 d-block align-items-center justify-content-center">
+								<div>
+									<img
+										src="https://preview.colorlib.com/theme/imagine/images/person_1.jpg"
+										alt="Image"
+										class="w-100 img-fluid mb-3 shadow" />
+								</div>
+							</figure>
+							<blockquote class="mb-3">
+								<p>
+									“Lorem ipsum dolor sit amet consectetur adipisicing elit.
+									Consectetur unde reprehenderit aperiam quaerat fugiat
+									repudiandae explicabo animi minima fuga beatae illum eligendi
+									incidunt consequatur. Amet dolores excepturi earum unde
+									iusto.”
+								</p>
+							</blockquote>
+							<p class="text-black"><strong>Kyle McDonald</strong></p>
+						</div>
+					</div>
+					<div class="carousel-item">
+						<div class="testimonial">
+							<figure
+								class="mb-4 d-block align-items-center justify-content-center">
+								<div>
+									<img
+										src="https://preview.colorlib.com/theme/imagine/images/person_2.jpg"
+										alt="Image"
+										class="w-100 img-fluid mb-3 shadow" />
+								</div>
+							</figure>
+							<blockquote class="mb-3">
+								<p>
+									“Lorem ipsum dolor sit amet consectetur adipisicing elit.
+									Consectetur unde reprehenderit aperiam quaerat fugiat
+									repudiandae explicabo animi minima fuga beatae illum eligendi
+									incidunt consequatur. Amet dolores excepturi earum unde
+									iusto.”
+								</p>
+							</blockquote>
+							<p class="text-black"><strong>John Smith</strong></p>
+						</div>
+					</div>
+					<div class="carousel-item">
+						<div class="testimonial">
+							<figure
+								class="mb-4 d-block align-items-center justify-content-center">
+								<div>
+									<img
+										src="https://preview.colorlib.com/theme/imagine/images/person_3.jpg"
+										alt="Image"
+										class="w-100 img-fluid mb-3 shadow" />
+								</div>
+							</figure>
+							<blockquote class="mb-3">
+								<p>
+									“Lorem ipsum dolor sit amet consectetur adipisicing elit.
+									Consectetur unde reprehenderit aperiam quaerat fugiat
+									repudiandae explicabo animi minima fuga beatae illum eligendi
+									incidunt consequatur. Amet dolores excepturi earum unde
+									iusto.”
+								</p>
+							</blockquote>
+							<p class="text-black"><strong>John Smith</strong></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 		<section class="site-section" id="blog-section">
 			<div class="container">
 				<div class="row mb-5">
@@ -764,7 +858,7 @@
 							<script>
 								document.write(new Date().getFullYear());
 							</script>
-							2025 All rights reserved | This template is made with 💖 by Hikmet
+							All rights reserved | This template is made with 💖 by Hikmet
 							Beyza Fatih
 						</p>
 					</div>

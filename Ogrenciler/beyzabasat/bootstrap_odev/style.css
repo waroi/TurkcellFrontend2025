@@ -121,16 +121,31 @@ body {
 	background-attachment: fixed;
 	position: relative;
 }
-.bg-image2.overlay:before {
-	content: "";
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	opacity: 0.7;
-	background: #4285f4;
-}
 .form-group {
 	margin-bottom: 1rem;
+}
+
+.testimonial {
+	max-width: 800px;
+	margin: 0 auto !important;
+	text-align: center;
+}
+.testimonial blockquote {
+	font-size: 1.5rem;
+	font-style: italic;
+}
+.testimonial figure img {
+	max-width: 100px;
+	margin: 0 auto;
+	border-radius: 50%;
+}
+.carousel-indicators button {
+	width: 10px !important;
+	height: 10px !important;
+	border-radius: 50% !important;
+	background-color: #4285f4 !important;
+}
+
+.carousel-item {
+	margin-bottom: 40px;
 }
