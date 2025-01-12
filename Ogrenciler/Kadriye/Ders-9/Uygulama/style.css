@@ -65,6 +65,10 @@
   line-height: 1.7;
 }
 
+.container-team {
+  animation: moveUp 1.5s;
+}
+
 .container-features {
   animation: moveUp 1.5s;
 }
@@ -103,4 +107,24 @@
   background-color: white !important;
   color: #4285f4 !important;
   /* Kart arka plan rengi */
+}
+
+.team-card .team-image:hover .icon-bar {
+  transform: translateY(-100%);
+  z-index: 2;
+  padding: 10px 0;
+  width: 100%;
+  position: absolute;
+  transition: 0.3s all ease;
+  background: #4285f4;
+}
+
+.team-card .team-image:hover {
+  transform: scale(1.01);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.team-card .team-image .person {
+  position: relative;
+  transition: 0.3s all ease-in-out;
 }
