@@ -216,4 +216,62 @@ a {
   border: none;
 }
 
+.team-section h2 {
+  font-size: 40px;
+  font-weight: bold;
+  color: #000000;
+  text-align: center;
+}
+.team-section p {
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: #6c757d;
+  text-align: center;
+  margin-top: 0;
+}
+.team-section .person h2 {
+  font-size: 18px;
+  font-weight: 500;
+  color: #000000;
+  text-align: start;
+}
+.team-section .person span {
+  font-size: 12px;
+  font-weight: 700;
+  color: #4285f4;
+  text-align: start;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.team-section .person p {
+  font-size: 16px;
+  font-weight: 400;
+  color: #000000;
+  text-align: start;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+.team-section .person .figure {
+  position: relative;
+  margin-bottom: 0;
+  margin: 0 0 1rem;
+  display: block;
+}
+.team-section .person .figure .bio-img {
+  position: relative;
+  overflow: visible;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.team-section .person .figure .bio-img .social {
+  z-index: 2;
+  padding: 10px 0;
+  width: 100%;
+  position: absolute;
+  bottom: 0%;
+  transform: translate(100%);
+  left: 0;
+  background: #4285f4;
+}
+
 /*# sourceMappingURL=main.css.map */

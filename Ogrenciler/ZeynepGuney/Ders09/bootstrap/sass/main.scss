@@ -230,3 +230,49 @@ $black: #000000;
         }
     }
 }
+.team-section{
+    h2 {
+        @include text-props(40px, bold, $black, center);
+    }
+    p {
+        @include text-props(1.25rem, 300, $pGray, center);
+        margin-top: 0;
+    }
+    .person{
+        h2 {
+            @include text-props(18px, 500, $black, start);
+        }
+        span{
+            @include text-props(12px, 700, $blue, start);
+            letter-spacing: .1em;
+            text-transform: uppercase;
+        }
+        p{
+            @include text-props(16px, 400, $black, start);
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+        .figure{
+            position: relative;
+            margin-bottom: 0;
+            margin: 0 0 1rem;
+            display: block;
+            .bio-img{
+                position: relative;
+                overflow:visible;
+                text-align: center;
+                margin-bottom: 30px;
+                .social{
+                    z-index: 2;
+                    padding: 10px 0;
+                    width: 100%;
+                    position: absolute;
+                    bottom: 0%;
+                    transform: translate(100%);
+                    left: 0;
+                    background: $blue;
+                }
+            }
+        }
+    }
+}
