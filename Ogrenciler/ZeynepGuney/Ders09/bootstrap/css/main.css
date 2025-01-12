@@ -305,5 +305,69 @@ a {
   margin-top: 0;
   font-style: italic;
 }
+.testimonials-section .mb-5 {
+  padding: 5em 0;
+}
+.testimonials-section .testimonials-container {
+  position: relative;
+  width: 100%;
+}
+.testimonials-section .testimonials-container input[type=radio] {
+  display: none;
+}
+.testimonials-section .testimonials-container .testimonials {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+.testimonials-section .testimonials-container .testimonials .testimonial {
+  flex: 0 0 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+}
+.testimonials-section .testimonials-container .testimonials .testimonial figure {
+  margin-bottom: 20px;
+}
+.testimonials-section .testimonials-container .testimonials .testimonial figure img {
+  max-width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.testimonials-section .testimonials-container input#dot1:checked ~ .testimonials #testimonial1,
+.testimonials-section .testimonials-container input#dot2:checked ~ .testimonials #testimonial2,
+.testimonials-section .testimonials-container input#dot3:checked ~ .testimonials #testimonial3,
+.testimonials-section .testimonials-container input#dot4:checked ~ .testimonials #testimonial4 {
+  opacity: 1;
+  position: relative;
+}
+.testimonials-section .testimonials-container .owl-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.testimonials-section .testimonials-container .owl-dots .owl-dot {
+  margin: 0 5px;
+  cursor: pointer;
+}
+.testimonials-section .testimonials-container .owl-dots .owl-dot i {
+  font-size: 12px;
+  color: #dee2e6;
+  transition: color 0.3s;
+}
+input#dot1:checked ~ .testimonials-section .testimonials-container .owl-dots label[for=dot1] i, input#dot2:checked ~ .testimonials-section .testimonials-container .owl-dots label[for=dot2] i, input#dot3:checked ~ .testimonials-section .testimonials-container .owl-dots label[for=dot3] i, input#dot4:checked ~ .testimonials-section .testimonials-container .owl-dots label[for=dot4] i {
+  color: #4285f4;
+}
+.testimonials-section .testimonials-container .owl-dots label {
+  display: flex;
+  align-items: center;
+}
+input[type=radio]:checked + .testimonials-section .testimonials-container .owl-dots label i {
+  color: #4285f4;
+}
 
 /*# sourceMappingURL=main.css.map */

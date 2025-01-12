@@ -309,7 +309,7 @@ $black: #000000;
     }
 }
 
-.testimonials-section{
+.testimonials-section {
     background-color: $bgGray;
     h2 {
         @include text-props(40px, bold, $black, center);
@@ -319,8 +319,77 @@ $black: #000000;
         margin-top: 0;
         font-style: italic;
     }
+    .mb-5 {
+        padding: 5em 0;
+    }
+    .testimonials-container {
+        position: relative;
+        width: 100%;
 
+        input[type="radio"] {
+            display: none;
+        }
+        .testimonials {
+            display: flex;
+            overflow: hidden;
+            position: relative;
 
+            .testimonial {
+                flex: 0 0 100%;
+                opacity: 0;
+                transition: opacity 0.5s ease-in-out;
+                position: absolute;
+                width: 100%;
+                text-align: center;
+                figure {
+                    margin-bottom: 20px;
+
+                    img {
+                        max-width: 100px;
+                        height: 100px;
+                        object-fit: contain; 
+                        border-radius: 50%; 
+                        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                    }
+                }
+            }
+        }
+        input#dot1:checked~.testimonials #testimonial1,
+        input#dot2:checked~.testimonials #testimonial2,
+        input#dot3:checked~.testimonials #testimonial3,
+        input#dot4:checked~.testimonials #testimonial4 {
+            opacity: 1;
+            position: relative;
+        }
+        .owl-dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+
+            .owl-dot {
+                margin: 0 5px;
+                cursor: pointer;
+
+                i {
+                    font-size: 12px;
+                    color: #dee2e6;
+                    transition: color 0.3s;
+                }
+            }
+            input#dot1:checked~& label[for="dot1"] i,
+            input#dot2:checked~& label[for="dot2"] i,
+            input#dot3:checked~& label[for="dot3"] i,
+            input#dot4:checked~& label[for="dot4"] i {
+                color: #4285f4; 
+            }
+            label {
+                display: flex;
+                align-items: center;
+
+                input[type="radio"]:checked+& i {
+                    color: #4285f4; 
+                }
+            }
+        }
+    }
 }
-
-
