@@ -2,18 +2,61 @@
     font-size:2.5rem;
 
 }
-.unit-4 .unit-4-icon {
-    position: absolute;
-    -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%);
-    left: 50%;
-    top: -50px;
-}
-
 .feedback > img {
     width: 20px !important;
     height: 20px !important;
     border-radius: 50%;
     margin-bottom: 20px;
 }
+.footer {
+    background: #f8f9fa;
+    padding: 20px 0;
+  }
+  
+  .footer .social-icons a {
+    font-size: 18px;
+    color: #6c757d;
+    transition: color 0.3s ease;
+  }
+  
+  .footer .social-icons a:hover {
+    color: #007bff;
+  }
+  .footer p {
+    font-size: 14px;
+    color: #6c757d;
+}
+  .contact-section { 
+    background: linear-gradient(to right, rgba(162, 190, 204, 0.56), rgba(156, 210, 146, 0.555)), url('https://preview.colorlib.com/theme/imagine/images/hero_1.jpg.webp');
+    padding: 50px 0; 
+} 
+.contact-form { 
+    background: white; 
+    padding: 30px; 
+    border-radius: 10px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+} 
+/* Define the animation */
+@keyframes appear {
+    from {
+      opacity: 0;
+      transform: translateX(-100px); 
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0); 
+    }
+  }
+  .animate-on-scroll {
+    opacity: 0; 
+    animation: appear linear; 
+    animation-timeline:view();
+    animation-range: entry 0% cover 80%;
+  }
+  .animate-on-scroll.delay {
+    animation-delay: 0.5s;
+  }
+html {
+    scroll-behavior: smooth;
+}
+  
