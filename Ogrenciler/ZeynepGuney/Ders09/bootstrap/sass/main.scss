@@ -1,16 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-body{
+
+body {
     font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     overflow-x: hidden;
 }
-a{
+
+a {
     text-decoration: none;
 }
+
 $blue: #4285f4;
 $blockBlue : #007bff;
 $pGray: #6c757d;
@@ -27,7 +31,8 @@ $black: #000000;
     color: $color;
     text-align: $text-align;
 }
-@mixin iconStyle(){
+
+@mixin iconStyle() {
     position: absolute;
     font-size: 32px;
     transform: translate(-50%, -50%);
@@ -35,36 +40,41 @@ $black: #000000;
     left: 50%;
     color: $white;
 }
+
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1000; 
-    background-color: #fff; 
+    z-index: 1000;
+    background-color: #fff;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
-.text-bg{
+
+.text-bg {
     h1 {
         @include text-props(3.5rem, bold, $black, start);
         line-height: 1.2;
         margin-bottom: 0.5rem;
         margin-top: 0;
     }
+
     p {
         @include text-props(1rem, 300, $pGray, start);
     }
-    img{
+
+    img {
         max-width: 100%;
         height: auto;
         top: 60%;
-        object-fit:inherit;
+        object-fit: inherit;
         width: 100%;
         height: 100%;
         bottom: 0;
         right: 0;
     }
-    .btn{
+
+    .btn {
         padding: 10px 30px;
         text-align: center;
         box-shadow: 0 4px 20px -5px rgba(66, 133, 244, 0.4);
@@ -72,22 +82,28 @@ $black: #000000;
         cursor: pointer;
     }
 }
-.imagine-featured{
-    h2{
+
+.imagine-featured {
+    h2 {
         @include text-props(40px, bold, $black, center);
     }
-    .section-title{
+
+    .section-title {
         @include text-props(40px, bold, $black, center);
     }
-    .lead{
+
+    .lead {
         @include text-props(20px, 300, $black, center);
     }
-    p{
+
+    p {
         @include text-props(16px, 300, $black, center);
     }
-    .mb-5{
+
+    .mb-5 {
         padding: 5em 0;
     }
+
     .unit-4 {
         background: $white;
         border-radius: 5px;
@@ -95,6 +111,7 @@ $black: #000000;
         position: relative;
         text-align: center;
     }
+
     .unit-4 .unit-4-icon .icon-wrap {
         width: 80px;
         height: 80px;
@@ -106,58 +123,272 @@ $black: #000000;
         box-shadow: 0 4px 20px -5px rgba(66, 133, 244, 0.4);
         z-index: 1;
     }
-    .fa-refresh, .fa-shop, .fa-basket-shopping, .fa-plug, .fa-face-smile, .fa-rotate-left {
+
+    .fa-refresh,
+    .fa-shop,
+    .fa-basket-shopping,
+    .fa-plug,
+    .fa-face-smile,
+    .fa-rotate-left {
         @include iconStyle();
     }
-    .card{
+
+    .card {
         background-color: $bgCards;
         padding: 50px 30px 30px;
         border: none;
     }
-    .unit-4:nth-of-type(1):hover{
-        .unit-4-icon .icon-wrap{
+
+    .unit-4:nth-of-type(1):hover {
+        .unit-4-icon .icon-wrap {
             background-color: $white;
         }
-       .unit-4-icon .icon-wrap i{
+
+        .unit-4-icon .icon-wrap i {
             color: $blue;
         }
-        .card{
+
+        .card {
             background-color: $blue;
         }
-        .card h5, .card p, .card a{
+
+        .card h5,
+        .card p,
+        .card a {
             color: $white;
         }
     }
 }
-.feature-big{
-    h2{
+
+.feature-big {
+    h2 {
         @include text-props(40px, bold, $black, start);
     }
-    p{
+
+    p {
         @include text-props(16px, 400, $pGray, start);
     }
-    .mb-5{
+
+    .mb-5 {
         padding: 5em 0;
     }
-    .author-box{
+
+    .author-box {
         box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.1);
         border-radius: 4px;
         padding: 20px;
         border: 1px solid #eee;
         border-left: 10px solid $blue;
-        .mr-auto{
+
+        .mr-auto {
             @include text-props(16px, 400, $black, start);
         }
-        blockquote{
+
+        blockquote {
             @include text-props(16px, 400, $pGray, start);
             font-style: italic;
         }
-        .mr-3{
+
+        .mr-3 {
             width: 50px;
             height: 50px;
-            img{
+
+            img {
                 border-radius: 50%;
                 width: 100%;
+            }
+        }
+    }
+}
+
+.about-section {
+    background-color: $bgGray ;
+
+    h2 {
+        @include text-props(40px, bold, $black, center);
+    }
+
+    .container {
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .col-lg-5 {
+        h2 {
+            @include text-props(1.7rem, bold, $black, start);
+        }
+
+        p {
+            @include text-props(16px, 400, $pGray, start);
+        }
+
+        .btn.btn-primary {
+            padding: 10px 30px;
+            text-align: center;
+            box-shadow: 0 4px 20px -5px rgba(66, 133, 244, 0.4);
+            border-radius: 50px;
+            cursor: pointer;
+            border: none;
+        }
+    }
+}
+
+.team-section {
+    h2 {
+        @include text-props(40px, bold, $black, center);
+    }
+
+    p {
+        @include text-props(1.25rem, 300, $pGray, center);
+        margin-top: 0;
+    }
+
+    .person {
+        h2 {
+            @include text-props(18px, 500, $black, start);
+        }
+
+        span {
+            @include text-props(12px, 700, $blue, start);
+            letter-spacing: .1em;
+            text-transform: uppercase;
+        }
+
+        p {
+            @include text-props(16px, 400, $black, start);
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .bio-img {
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            margin-bottom: 30px;
+
+            figure {
+                position: relative;
+                margin: 0;
+
+                img {
+                    display: block;
+                    width: 100%;
+                    height: auto;
+                    transition: transform 0.3s ease-in-out;
+                }
+            }
+
+            .social {
+                z-index: 2;
+                padding: 10px 0;
+                width: 100%;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                transform: translateY(100%);
+                background: $blue;
+                display: flex;
+                justify-content: center;
+                gap: 15px;
+                transition: transform 0.3s ease-in-out;
+            }
+
+            &:hover {
+                figure img {
+                transform: scale(1.1);
+                }
+                .social {
+                transform: translateY(0);
+                }
+                }
+                
+        }
+    }
+}
+
+.testimonials-section {
+    background-color: $bgGray;
+    h2 {
+        @include text-props(40px, bold, $black, center);
+    }
+    p {
+        @include text-props(1.5rem, 300, $black, center);
+        margin-top: 0;
+        font-style: italic;
+    }
+    .mb-5 {
+        padding: 5em 0;
+    }
+    .testimonials-container {
+        position: relative;
+        width: 100%;
+
+        input[type="radio"] {
+            display: none;
+        }
+        .testimonials {
+            display: flex;
+            overflow: hidden;
+            position: relative;
+
+            .testimonial {
+                flex: 0 0 100%;
+                opacity: 0;
+                transition: opacity 0.5s ease-in-out;
+                position: absolute;
+                width: 100%;
+                text-align: center;
+                figure {
+                    margin-bottom: 20px;
+
+                    img {
+                        max-width: 100px;
+                        height: 100px;
+                        object-fit: contain; 
+                        border-radius: 50%; 
+                        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                    }
+                }
+            }
+        }
+        input#dot1:checked~.testimonials #testimonial1,
+        input#dot2:checked~.testimonials #testimonial2,
+        input#dot3:checked~.testimonials #testimonial3,
+        input#dot4:checked~.testimonials #testimonial4 {
+            opacity: 1;
+            position: relative;
+        }
+        .owl-dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+
+            .owl-dot {
+                margin: 0 5px;
+                cursor: pointer;
+
+                i {
+                    font-size: 12px;
+                    color: #dee2e6;
+                    transition: color 0.3s;
+                }
+            }
+            input#dot1:checked~& label[for="dot1"] i,
+            input#dot2:checked~& label[for="dot2"] i,
+            input#dot3:checked~& label[for="dot3"] i,
+            input#dot4:checked~& label[for="dot4"] i {
+                color: #4285f4; 
+            }
+            label {
+                display: flex;
+                align-items: center;
+
+                input[type="radio"]:checked+& i {
+                    color: #4285f4; 
+                }
             }
         }
     }

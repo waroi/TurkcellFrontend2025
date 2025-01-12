@@ -102,7 +102,12 @@ a {
   box-shadow: 0 4px 20px -5px rgba(66, 133, 244, 0.4);
   z-index: 1;
 }
-.imagine-featured .fa-refresh, .imagine-featured .fa-shop, .imagine-featured .fa-basket-shopping, .imagine-featured .fa-plug, .imagine-featured .fa-face-smile, .imagine-featured .fa-rotate-left {
+.imagine-featured .fa-refresh,
+.imagine-featured .fa-shop,
+.imagine-featured .fa-basket-shopping,
+.imagine-featured .fa-plug,
+.imagine-featured .fa-face-smile,
+.imagine-featured .fa-rotate-left {
   position: absolute;
   font-size: 32px;
   transform: translate(-50%, -50%);
@@ -124,7 +129,9 @@ a {
 .imagine-featured .unit-4:nth-of-type(1):hover .card {
   background-color: #4285f4;
 }
-.imagine-featured .unit-4:nth-of-type(1):hover .card h5, .imagine-featured .unit-4:nth-of-type(1):hover .card p, .imagine-featured .unit-4:nth-of-type(1):hover .card a {
+.imagine-featured .unit-4:nth-of-type(1):hover .card h5,
+.imagine-featured .unit-4:nth-of-type(1):hover .card p,
+.imagine-featured .unit-4:nth-of-type(1):hover .card a {
   color: #fff;
 }
 
@@ -172,25 +179,195 @@ a {
   width: 100%;
 }
 
-@media (min-width: 0px) and (max-width: 767px) {
-  .container {
-    max-width: 540px;
-  }
+.about-section {
+  background-color: #f6f6f6;
 }
-@media (min-width: 768px) and (max-width: 991px) {
-  .container {
-    max-width: 720px;
-  }
+.about-section h2 {
+  font-size: 40px;
+  font-weight: bold;
+  color: #000000;
+  text-align: center;
 }
-@media (min-width: 992px) and (max-width: 1199px) {
-  .container {
-    max-width: 960px;
-  }
+.about-section .container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
 }
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1140px;
-  }
+.about-section .col-lg-5 h2 {
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: #000000;
+  text-align: start;
+}
+.about-section .col-lg-5 p {
+  font-size: 16px;
+  font-weight: 400;
+  color: #6c757d;
+  text-align: start;
+}
+.about-section .col-lg-5 .btn.btn-primary {
+  padding: 10px 30px;
+  text-align: center;
+  box-shadow: 0 4px 20px -5px rgba(66, 133, 244, 0.4);
+  border-radius: 50px;
+  cursor: pointer;
+  border: none;
+}
+
+.team-section h2 {
+  font-size: 40px;
+  font-weight: bold;
+  color: #000000;
+  text-align: center;
+}
+.team-section p {
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: #6c757d;
+  text-align: center;
+  margin-top: 0;
+}
+.team-section .person h2 {
+  font-size: 18px;
+  font-weight: 500;
+  color: #000000;
+  text-align: start;
+}
+.team-section .person span {
+  font-size: 12px;
+  font-weight: 700;
+  color: #4285f4;
+  text-align: start;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.team-section .person p {
+  font-size: 16px;
+  font-weight: 400;
+  color: #000000;
+  text-align: start;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+.team-section .person .bio-img {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.team-section .person .bio-img figure {
+  position: relative;
+  margin: 0;
+}
+.team-section .person .bio-img figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+.team-section .person .bio-img .social {
+  z-index: 2;
+  padding: 10px 0;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translateY(100%);
+  background: #4285f4;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  transition: transform 0.3s ease-in-out;
+}
+.team-section .person .bio-img:hover figure img {
+  transform: scale(1.1);
+}
+.team-section .person .bio-img:hover .social {
+  transform: translateY(0);
+}
+
+.testimonials-section {
+  background-color: #f6f6f6;
+}
+.testimonials-section h2 {
+  font-size: 40px;
+  font-weight: bold;
+  color: #000000;
+  text-align: center;
+}
+.testimonials-section p {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #000000;
+  text-align: center;
+  margin-top: 0;
+  font-style: italic;
+}
+.testimonials-section .mb-5 {
+  padding: 5em 0;
+}
+.testimonials-section .testimonials-container {
+  position: relative;
+  width: 100%;
+}
+.testimonials-section .testimonials-container input[type=radio] {
+  display: none;
+}
+.testimonials-section .testimonials-container .testimonials {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+.testimonials-section .testimonials-container .testimonials .testimonial {
+  flex: 0 0 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+}
+.testimonials-section .testimonials-container .testimonials .testimonial figure {
+  margin-bottom: 20px;
+}
+.testimonials-section .testimonials-container .testimonials .testimonial figure img {
+  max-width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.testimonials-section .testimonials-container input#dot1:checked ~ .testimonials #testimonial1,
+.testimonials-section .testimonials-container input#dot2:checked ~ .testimonials #testimonial2,
+.testimonials-section .testimonials-container input#dot3:checked ~ .testimonials #testimonial3,
+.testimonials-section .testimonials-container input#dot4:checked ~ .testimonials #testimonial4 {
+  opacity: 1;
+  position: relative;
+}
+.testimonials-section .testimonials-container .owl-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.testimonials-section .testimonials-container .owl-dots .owl-dot {
+  margin: 0 5px;
+  cursor: pointer;
+}
+.testimonials-section .testimonials-container .owl-dots .owl-dot i {
+  font-size: 12px;
+  color: #dee2e6;
+  transition: color 0.3s;
+}
+input#dot1:checked ~ .testimonials-section .testimonials-container .owl-dots label[for=dot1] i, input#dot2:checked ~ .testimonials-section .testimonials-container .owl-dots label[for=dot2] i, input#dot3:checked ~ .testimonials-section .testimonials-container .owl-dots label[for=dot3] i, input#dot4:checked ~ .testimonials-section .testimonials-container .owl-dots label[for=dot4] i {
+  color: #4285f4;
+}
+.testimonials-section .testimonials-container .owl-dots label {
+  display: flex;
+  align-items: center;
+}
+input[type=radio]:checked + .testimonials-section .testimonials-container .owl-dots label i {
+  color: #4285f4;
 }
 
 /*# sourceMappingURL=main.css.map */
