@@ -182,6 +182,12 @@ a {
 .about-section {
   background-color: #f6f6f6;
 }
+.about-section h2 {
+  font-size: 40px;
+  font-weight: bold;
+  color: #000000;
+  text-align: center;
+}
 .about-section .container {
   width: 100%;
   padding-right: 15px;
@@ -190,7 +196,7 @@ a {
   margin-left: auto;
 }
 .about-section .col-lg-5 h2 {
-  font-size: 40px;
+  font-size: 1.7rem;
   font-weight: bold;
   color: #000000;
   text-align: start;
@@ -200,9 +206,6 @@ a {
   font-weight: 400;
   color: #6c757d;
   text-align: start;
-}
-.about-section .col-lg-5 .mb-5 {
-  padding: 5em 0;
 }
 .about-section .col-lg-5 .btn.btn-primary {
   padding: 10px 30px;

@@ -203,24 +203,23 @@ $black: #000000;
 
 .about-section {
     background-color: $bgGray ;
+    h2 {
+        @include text-props(40px, bold, $black, center);
+    }
     .container {
         width: 100%;
         padding-right: 15px;
         padding-left: 15px;
         margin-right: auto;
         margin-left: auto;
-        
     }
     .col-lg-5 {
         h2 {
-            @include text-props(40px, bold, $black, start);
+            @include text-props(1.7rem, bold, $black, start);
         }
     
         p {
             @include text-props(16px, 400, $pGray, start);
-        }
-        .mb-5 {
-            padding: 5em 0;
         }
         .btn.btn-primary  {
             padding: 10px 30px;
