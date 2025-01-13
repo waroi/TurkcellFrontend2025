@@ -1,7 +1,9 @@
 * {
   box-sizing: border-box;
 }
-
+.container {
+  max-width: 1140px;
+}
 .icon {
   background-color: #4285f4;
   width: 80px;
@@ -142,10 +144,27 @@
 
   padding: 80px 0px;
 }
-.contact .container h2 {
-  margin-bottom: 48px;
-}
 
 .blog {
+  padding: 80px 0px;
+}
+.blog .blog-image img {
+  margin-bottom: 30px;
+}
+.blog .blog-title h2 {
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 36px;
+}
+/* .blog .blog-title .blog-info{
+  color: #b3b3b3;
+  font-size: 14px;
+} */
+
+.Testimonials {
+  padding: 80px 0px;
+}
+
+.team {
   padding: 80px 0px;
 }
