@@ -1,7 +1,7 @@
-.header {
+/*.header {
   top: -25px; 
   z-index: 1000;
-}/*
+}
 .banner h1{
     font-size:2.5rem;
 
@@ -17,14 +17,6 @@
   width: 20px !important;
   height: 20px !important;
   border-radius: 50%;
-}
-.team{
-  opacity: 0; 
-  transition: opacity 0.3s;
-}
-.our-team h3:hover{
-  opacity: 1;
-  display: flex;
 }
 
 .footer {
@@ -76,13 +68,13 @@
   height: 10px;
 }
 
-@keyframes appear-left{
-  0% {
+@keyframes appear {
+  from {
     opacity: 0;
-    transform: translateX(-150px);
+    transform: translateX(-100px);
   }
 
-  75% {
+  to {
     opacity: 1;
     transform: translateX(0);
   }
@@ -90,26 +82,9 @@
 
 .animate-on-scroll {
   opacity: 0;
-  animation: appear-left linear;
+  animation: appear linear;
   animation-timeline: view();
-  animation-range: entry 0% cover 90%;
-}
-@keyframes appear-right{
-  0% {
-    opacity: 0;
-    transform: translateX(1500px);
-  }
-
-  75% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-.appear-right{
-  opacity: 0;
-  animation: appear-left linear;
-  animation-timeline: view();
-  animation-range: entry 0% cover 90%;
+  animation-range: entry 0% cover 80%;
 }
 
 .animate-on-scroll.delay {
