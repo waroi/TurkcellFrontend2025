@@ -1,4 +1,4 @@
-.header {
+/*.header {
   top: -25px; 
   z-index: 1000;
 }
@@ -6,71 +6,90 @@
     font-size:2.5rem;
 
 }
-
+*/
 .features-card:hover {
   color: white;
   background-color: #007bff;
   cursor: pointer;
 }
-.feedback > img {
-    width: 20px !important;
-    height: 20px !important;
-    border-radius: 50%;
-    margin-bottom: 20px;
+
+.feedback>img {
+  width: 20px !important;
+  height: 20px !important;
+  border-radius: 50%;
 }
+
 .footer {
-    background: #f8f9fa;
-    padding: 20px 0;
-  }
-  
-  .footer .social-icons a {
-    font-size: 18px;
-    color: #6c757d;
-    transition: color 0.3s ease;
-  }
-  
-  .footer .social-icons a:hover {
-    color: #007bff;
-  }
-  .footer p {
-    font-size: 14px;
-    color: #6c757d;
+  background: #f8f9fa;
 }
-  .contact-section { 
-    background: linear-gradient(to right, rgba(162, 190, 204, 0.56), rgba(156, 210, 146, 0.555)), url('https://preview.colorlib.com/theme/imagine/images/hero_1.jpg.webp');
-    padding: 50px 0; 
-} 
-.contact-form { 
-    background: white; 
-    padding: 30px; 
-    border-radius: 10px; 
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
-} 
+
+.footer .social-icons a {
+  font-size: 18px;
+  color: #6c757d;
+  transition: color 0.3s ease;
+}
+
+.footer .social-icons a:hover {
+  color: #007bff;
+}
+
+.footer p {
+  font-size: 14px;
+  color: #6c757d;
+}
+
+.footer span {
+  color: red;
+}
+
+.contact-section {
+  background: linear-gradient(to right, rgba(162, 190, 204, 0.56), rgba(156, 210, 146, 0.555)), url('https://preview.colorlib.com/theme/imagine/images/hero_1.jpg.webp');
+  
+}
+
+.contact-form {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
 .features-icon {
   top: -50px;
 }
-/* Define the animation */
-@keyframes appear {
-    from {
-      opacity: 0;
-      transform: translateX(-100px); 
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0); 
-    }
-  }
-  .animate-on-scroll {
-    opacity: 0; 
-    animation: appear linear; 
-    animation-timeline:view();
-    animation-range: entry 0% cover 80%;
-  }
-  .animate-on-scroll.delay {
-    animation-delay: 0.5s;
-  }
-html {
-    scroll-behavior: smooth;
+
+.testimonial img {
+  width: 100px;
+  height: 100px;
 }
-  
+
+.testimonaial span {
+  width: 10px;
+  height: 10px;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 80%;
+}
+
+.animate-on-scroll.delay {
+  animation-delay: 0.5s;
+}
+
+html {
+  scroll-behavior: smooth;
+}
