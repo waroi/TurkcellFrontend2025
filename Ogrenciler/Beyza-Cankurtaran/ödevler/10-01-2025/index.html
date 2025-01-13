@@ -22,6 +22,11 @@
         <!-- Toggler Button for Mobile -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
           aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary container">
+      <div class="container-fluid ">
+        <a class="navbar-brand col-12 col-md-3 col-xl-4 " href="#">imagine<span class="text-primary">.</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         
@@ -37,6 +42,7 @@
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#about" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              <a class="nav-link active dropdown-toggle" role="button" data-bs-toggle="dropdown"
                 aria-expanded="false">
                 About Us
               </a>
@@ -49,6 +55,15 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#testimonials">Testimonials</a>
+                <li><a class="dropdown-item" href="#">Our links</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">More Links></a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#testimonials">Testimonials</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#blog">Blog</a>
@@ -80,7 +95,7 @@
   </section>
 
   
-  <section class="imagine-features modal-dialog modal-xl" id="Features">
+  <section class="imagine-features" id="features">
 
     <div class="container">
 
@@ -92,8 +107,9 @@
         <div class="row text-center">
           <!-- Birinci Kart -->
           <div class="features-card col-md-4 col-sm-6 mb-5 animate-on-scroll">
+          <div class="col-md-4 col-sm-6 mb-4 animate-on-scroll">
             <div class="card border-0 shadow">
-              <div class="card-body">
+              <div class="features-card card-body">
                 <div class="features-icon features-icon d-inline-block p-3 mb-3 bg-primary rounded-circle position-relative position-relative">
                   <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#ffff">
                     <path
@@ -110,8 +126,9 @@
           </div>
           <!-- İkinci Kart -->
           <div class="features-card col-md-4 col-sm-6 mb-5 animate-on-scroll">
+          <div class="col-md-4 col-sm-6 mb-4 animate-on-scroll">
             <div class="card border-0 shadow">
-              <div class="card-body">
+              <div class="features-card card-body">
                 <div class="features-icon d-inline-block p-3 mb-3 bg-primary rounded-circle position-relative">
                   <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#ffff"
                     class="d-flex justify-content-center align-self-center">
@@ -129,8 +146,9 @@
           </div>
           <!-- Üçüncü Kart -->
           <div class="features-card col-md-4 col-sm-6 mb-5 animate-on-scroll">
+          <div class="col-md-4 col-sm-6 mb-4 animate-on-scroll">
             <div class="card border-0 shadow">
-              <div class="card-body">
+              <div class="features-card card-body">
                 <div class="features-icon d-inline-block p-3 mb-3 bg-primary rounded-circle position-relative ">
                   <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px"
                     fill="#ffff" class="d-flex justify-content-center align-self-center">
@@ -148,8 +166,9 @@
           </div>
           <!-- --Dördüncü Kart -->
           <div class="features-card col-md-4 col-sm-6 mb-5 animate-on-scroll">
+          <div class="col-md-4 col-sm-6 mb-4">
             <div class="card border-0 shadow">
-              <div class="card-body">
+              <div class="features-card card-body">
                 <div class="features-icon d-inline-block p-3 mb-3 bg-primary rounded-circle position-relative ">
                   <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px"
                     fill="#ffff" class="d-flex justify-content-center align-self-center">
@@ -167,8 +186,9 @@
           </div>
           <!-- --Beşinci Kart -->
           <div class="features-card col-md-4 col-sm-6 mb-5 animate-on-scroll">
+          <div class="col-md-4 col-sm-6 mb-4">
             <div class="card border-0 shadow">
-              <div class="card-body">
+              <div class="features-card card-body">
                 <div class="features-icon d-inline-block p-3 mb-3 bg-primary rounded-circle position-relative ">
                   <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px"
                     fill="#ffff" class="d-flex justify-content-center align-self-center">
@@ -186,8 +206,9 @@
           </div>
           <!-- --Atıncı Kart -->
           <div class="features-card col-md-4 col-sm-6 mb-5 animate-on-scroll">
+          <div class="col-md-4 col-sm-6 mb-4">
             <div class="card border-0 shadow">
-              <div class="card-body">
+              <div class="features-card card-body">
                 <div class="features-icon d-inline-block p-3 mb-3 bg-primary rounded-circle position-relative">
                   <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px"
                     fill="#ffff" class="d-flex justify-content-center align-self-center">
@@ -207,7 +228,7 @@
       </div>
   </section>
   
-  <section class="feedback container modal-dialog modal-xl">
+  <section class="feedback container">
     <!-------------------1.kısım-------------------------------------------------->
     <div class="row">
       <div class="col-12 col-md-6 animate-on-scroll">
@@ -324,6 +345,7 @@
 
   <!-- About Us Section -->
   <section class="py-5 bg-light modal-dialog modal-xl animate-on-scroll">
+  <section class="py-5 bg-light" id="about">
     <div class="container">
       <div class="text-center mb-5">
         <h1 class="display-4 fw-bold">About Us</h1>
@@ -369,6 +391,7 @@
   </section>
   <!--Our team section-->
   <section class="our-team py-5 modal-dialog modal-xl">
+  <section class="py-5">
     <div class="container">
       <div class="text-center mb-5">
         <h2 class="display-4 fw-bold">Our Team</h2>
@@ -446,6 +469,7 @@
   </section>
   <!-- Testimonials Section -->
   <section class="testimonial py-5 bg-light animate-on-scroll">
+  <section class="testimonial py-5 bg-light" id="testimonials">
     <div class="container text-center">
       <h2 class="mb-4">Testimonials</h2>
       <div class="d-flex flex-column align-items-center">
@@ -466,7 +490,7 @@
   </section>
 
     <!-- Blog Posts Section -->
-    <section class="py-5">
+    <section class="py-5" id="blog">
         <div class="container">
           <h2 class="text-center mb-5">Blog Posts</h2>
           <div class="row g-4">
@@ -511,9 +535,11 @@
     </section>
 
     <section class="contact-section position-relative "> 
+    <section class="contact-section position-relative" id="contact"> 
         <div class="container"> 
             <div class="row mb-5 justify-content-center animate-on-scroll"> 
                 <div class="col-lg-7 mb-5"> 
+                    <h2 class="text-center">Contact Us</h2>
                     <div class="contact-form"> 
                         <h2>Contact Form</h2> 
                         <form> 
