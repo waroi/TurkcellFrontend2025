@@ -38,7 +38,9 @@
 }
   .contact-section { 
     background: linear-gradient(to right, rgba(162, 190, 204, 0.56), rgba(156, 210, 146, 0.555)), url('https://preview.colorlib.com/theme/imagine/images/hero_1.jpg.webp');
-    padding: 50px 0; 
+    padding: 50px 0;
+    background-attachment: fixed;
+    background-size: cover;
 } 
 .contact-form { 
     background: white; 
