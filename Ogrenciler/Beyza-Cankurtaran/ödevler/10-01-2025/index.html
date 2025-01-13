@@ -15,50 +15,54 @@
 <body>
   <header class="header site-navbar py-4 js-sticky-header site-navbar-target shrink position-sticky">
     <nav class="navbar navbar-expand-lg bg-body-tertiary container modal-dialog modal-xl">
-      <div class="container-fluid ">
-        <a class="navbar-brand col-12 col-md-3 col-xl-4 " href="#">imagine<span class="text-primary">.</span></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="container">
+        <!-- Logo -->
+        <a class="navbar-brand" href="#">imagine<span class="text-primary">.</span></a>
+        
+        <!-- Toggler Button for Mobile -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse col-12 col-md-9 col-xl-8 main-menu" id="navbarSupportedContent">
-          <ul class="navbar-nav  mb-2 mb-lg-0 ms-auto">
+        
+        <!-- Collapsible Menu -->
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ms-auto">
+            <!-- Menu Items -->
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#home">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#features">Features</a>
+              <a class="nav-link" href="#features">Features</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#about" role="button" data-bs-toggle="dropdown"
+              <a class="nav-link dropdown-toggle" href="#about" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
                 aria-expanded="false">
-                About US
+                About Us
               </a>
-              <ul class="dropdown-menu">
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="#">More Free Template</a></li>
-                <li><a class="dropdown-item" href="#">Our links</a></li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
+                <li><a class="dropdown-item" href="#">Our Links</a></li>
+                <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="#">More Links ></a></li>
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#testimonails">Testimonials</a>
+              <a class="nav-link" href="#testimonials">Testimonials</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#blog">Blog</a>
+              <a class="nav-link" href="#blog">Blog</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#contact">Contact</a>
+              <a class="nav-link" href="#contact">Contact</a>
             </li>
-
           </ul>
         </div>
       </div>
     </nav>
   </header>
-  <section class="banner mb-5" id="home">
+  
+  <section class="banner mb-5 " id="home">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-6 col-md-12 text-center text-lg-start mb-4">
@@ -87,7 +91,7 @@
       <div class="container my-5">
         <div class="row text-center">
           <!-- Birinci Kart -->
-          <div class="features-card col-md-4 col-sm-6 mb-4 animate-on-scroll">
+          <div class="features-card col-md-4 col-sm-6 mb-5 animate-on-scroll">
             <div class="card border-0 shadow">
               <div class="card-body">
                 <div class="features-icon features-icon d-inline-block p-3 mb-3 bg-primary rounded-circle position-relative position-relative">
@@ -105,7 +109,7 @@
             </div>
           </div>
           <!-- İkinci Kart -->
-          <div class="features-card col-md-4 col-sm-6 mb-4 animate-on-scroll">
+          <div class="features-card col-md-4 col-sm-6 mb-5 animate-on-scroll">
             <div class="card border-0 shadow">
               <div class="card-body">
                 <div class="features-icon d-inline-block p-3 mb-3 bg-primary rounded-circle position-relative">
@@ -124,7 +128,7 @@
             </div>
           </div>
           <!-- Üçüncü Kart -->
-          <div class="features-card col-md-4 col-sm-6 mb-4 animate-on-scroll">
+          <div class="features-card col-md-4 col-sm-6 mb-5 animate-on-scroll">
             <div class="card border-0 shadow">
               <div class="card-body">
                 <div class="features-icon d-inline-block p-3 mb-3 bg-primary rounded-circle position-relative ">
@@ -143,7 +147,7 @@
             </div>
           </div>
           <!-- --Dördüncü Kart -->
-          <div class="features-card col-md-4 col-sm-6 mb-4">
+          <div class="features-card col-md-4 col-sm-6 mb-5 animate-on-scroll">
             <div class="card border-0 shadow">
               <div class="card-body">
                 <div class="features-icon d-inline-block p-3 mb-3 bg-primary rounded-circle position-relative ">
@@ -162,7 +166,7 @@
             </div>
           </div>
           <!-- --Beşinci Kart -->
-          <div class="features-card col-md-4 col-sm-6 mb-4">
+          <div class="features-card col-md-4 col-sm-6 mb-5 animate-on-scroll">
             <div class="card border-0 shadow">
               <div class="card-body">
                 <div class="features-icon d-inline-block p-3 mb-3 bg-primary rounded-circle position-relative ">
@@ -181,7 +185,7 @@
             </div>
           </div>
           <!-- --Atıncı Kart -->
-          <div class="features-card col-md-4 col-sm-6 mb-4">
+          <div class="features-card col-md-4 col-sm-6 mb-5 animate-on-scroll">
             <div class="card border-0 shadow">
               <div class="card-body">
                 <div class="features-icon d-inline-block p-3 mb-3 bg-primary rounded-circle position-relative">
@@ -206,17 +210,17 @@
   <section class="feedback container modal-dialog modal-xl">
     <!-------------------1.kısım-------------------------------------------------->
     <div class="row">
-      <div class="col-12 col-md-6">
+      <div class="col-12 col-md-6 animate-on-scroll">
         <img src="https://preview.colorlib.com/theme/imagine/images/undraw_gift_card_6ekc.svg" alt="" class="img-fluid mb-3">
       </div>
-      <div class="col-12 col-md-6">
+      <div class="col-12 col-md-6 animate-on-scroll">
         <div class="row">
           <h2>Communicate and gather feedback</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem neque nisi architecto autem molestias
             corrupti officia veniam.</p>
         </div>
         <div class="row">
-          <div class="card border-start border-4 border-primary shadow-sm">
+          <div class="card border-start border-4 border-primary shadow-sm animate-on-scroll">
             <div class="card-body p-4">
               <div class="d-flex align-items-center mb-3">
                 <img src="https://preview.colorlib.com/theme/imagine/images/person_4.jpg" alt="Profile" class="rounded-circle mb-3 me-3" width="50">
@@ -234,14 +238,14 @@
     </div>
     <!--------------------2.kısım------------------------------------------------->
     <div class="row mt-5 ms-5">
-      <div class="col-12 col-md-6">
+      <div class="col-12 col-md-6 animate-on-scroll">
         <div class="row">
           <h2>Communicate and gather feedback</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem neque nisi architecto autem molestias
             corrupti officia veniam.</p>
         </div>
         <div class="row">
-          <div class="card border-start border-4 border-primary shadow-sm">
+          <div class="card border-start border-4 border-primary shadow-sm animate-on-scroll">
             <div class="card-body p-4">
               <div class="d-flex align-items-center mb-3">
                 <img src="https://preview.colorlib.com/theme/imagine/images/person_1.jpg" alt="Profile" class="rounded-circlemb-3  me-3" width="50">
@@ -256,23 +260,23 @@
           </div>
         </div>
       </div>
-      <div class="col-12 col-lg-6 mb-5">
+      <div class="col-12 col-lg-6 mb-5 animate-on-scroll">
         <img class="img-fluid mb-3" src="https://preview.colorlib.com/theme/imagine/images/undraw_metrics_gtu7.svg" alt="">
       </div>
     </div>
     <!------------------------3.kısım--------------------------------------------->
     <div class="row">
-      <div class="col-12 col-md-6">
+      <div class="col-12 col-md-6 animate-on-scroll">
         <img src="https://preview.colorlib.com/theme/imagine/images/undraw_gift_card_6ekc.svg" alt="" class="img-fluid mb-3">
       </div>
-      <div class="col-12 col-md-6">
+      <div class="col-12 col-md-6 animate-on-scroll">
         <div class="row">
           <h2>Communicate and gather feedback</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem neque nisi architecto autem molestias
             corrupti officia veniam.</p>
         </div>
         <div class="row">
-          <div class="card border-start border-4 border-primary shadow-sm">
+          <div class="card border-start border-4 border-primary shadow-sm animate-on-scroll" >
             <div class="card-body p-4">
               <div class="d-flex align-items-center mb-3">
                 <img src="https://preview.colorlib.com/theme/imagine/images/person_4.jpg" alt="Profile" class="rounded-circle mb-3 me-3" width="50">
@@ -290,14 +294,14 @@
     </div>
     <!--------------------4.kısım------------------------------------------------->
     <div class="row mt-5 ms-5">
-      <div class="col-12 col-md-6">
+      <div class="col-12 col-md-6 animate-on-scroll">
         <div class="row">
           <h2>Communicate and gather feedback</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem neque nisi architecto autem molestias
             corrupti officia veniam.</p>
         </div>
         <div class="row">
-          <div class="card border-start border-4 border-primary shadow-sm">
+          <div class="card border-start border-4 border-primary shadow-sm animate-on-scroll">
             <div class="card-body p-4">
               <div class="d-flex align-items-center mb-3">
                 <img src="https://preview.colorlib.com/theme/imagine/images/person_1.jpg" alt="Profile" class="rounded-circle mb-3 me-3" width="50">
@@ -312,14 +316,14 @@
           </div>
         </div>
       </div>
-      <div class="col-12 col-lg-6 mb-5">
+      <div class="col-12 col-lg-6 mb-5 animate-on-scroll">
         <img class="img-fluid mb-3" src="https://preview.colorlib.com/theme/imagine/images/undraw_metrics_gtu7.svg" alt="">
       </div>
     </div>
   </section>
 
   <!-- About Us Section -->
-  <section class="py-5 bg-light modal-dialog modal-xl">
+  <section class="py-5 bg-light modal-dialog modal-xl animate-on-scroll">
     <div class="container">
       <div class="text-center mb-5">
         <h1 class="display-4 fw-bold">About Us</h1>
@@ -364,7 +368,7 @@
     </div>
   </section>
   <!--Our team section-->
-  <section class="py-5 modal-dialog modal-xl">
+  <section class="our-team py-5 modal-dialog modal-xl">
     <div class="container">
       <div class="text-center mb-5">
         <h2 class="display-4 fw-bold">Our Team</h2>
@@ -373,17 +377,23 @@
       </div>
       <div class="row g-4">
         <!-- Team Member 1 -->
-        <div class="col-lg-4 col-md-6">
+        <div class="col-lg-4 col-md-6 animate-on-scroll">
           <div class="text-center">
             <img src="https://preview.colorlib.com/theme/imagine/images/person_1.jpg" alt="Cloe Marena" class="img-fluid  mb-3">
+            
             <h3 class="h4 mb-2">Cloe Marena</h3>
+            <div class="team position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+              <a href="#" class="text-primary mx-2"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="text-primary mx-2"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="text-primary mx-2"><i class="fab fa-instagram"></i></a>
+            </div>
             <p class="text-primary small text-uppercase mb-3">PRESIDENT</p>
             <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum excepturi
               corporis qui doloribus perspiciatis ipsa modi accusantium repellat.</p>
           </div>
         </div>
         <!-- Team Member 2 -->
-        <div class="col-lg-4 col-md-6">
+        <div class="col-lg-4 col-md-6 animate-on-scroll">
           <div class="text-center">
             <img src="https://preview.colorlib.com/theme/imagine/images/person_2.jpg" alt="John Rooster" class="img-fluid  mb-3">
             <h3 class="h4 mb-2">John Rooster</h3>
@@ -393,7 +403,7 @@
           </div>
         </div>
         <!-- Team Member 3 -->
-        <div class="col-lg-4 col-md-6">
+        <div class="col-lg-4 col-md-6 animate-on-scroll">
           <div class="text-center">
             <img src="https://preview.colorlib.com/theme/imagine/images/person_3.jpg" alt="Will Turner" class="img-fluid  mb-3">
             <h3 class="h4 mb-2">Will Turner</h3>
@@ -403,7 +413,7 @@
           </div>
         </div>
         <!-- Team Member 4 -->
-        <div class="col-lg-4 col-md-6">
+        <div class="col-lg-4 col-md-6 animate-on-scroll">
           <div class="text-center">
             <img src="https://preview.colorlib.com/theme/imagine/images/person_4.jpg" alt="Cloe Marena" class="img-fluid mb-3">
             <h3 class="h4 mb-2">Cloe Marena</h3>
@@ -413,7 +423,7 @@
           </div>
         </div>
         <!-- Team Member 5 -->
-        <div class="col-lg-4 col-md-6">
+        <div class="col-lg-4 col-md-6 animate-on-scroll">
           <div class="text-center">
             <img src="https://preview.colorlib.com/theme/imagine/images/person_5.jpg" alt="John Rooster" class="img-fluid  mb-3">
             <h3 class="h4 mb-2">John Rooster</h3>
@@ -423,7 +433,7 @@
           </div>
         </div>
         <!-- Team Member 6 -->
-        <div class="col-lg-4 col-md-6">
+        <div class="col-lg-4 col-md-6 animate-on-scroll">
           <div class="text-center">
             <img src="https://preview.colorlib.com/theme/imagine/images/person_6.jpg" alt="Will Turner" class="img-fluid  mb-3">
             <h3 class="h4 mb-2">Will Turner</h3>
@@ -435,7 +445,7 @@
     </div>
   </section>
   <!-- Testimonials Section -->
-  <section class="testimonial py-5 bg-light">
+  <section class="testimonial py-5 bg-light animate-on-scroll">
     <div class="container text-center">
       <h2 class="mb-4">Testimonials</h2>
       <div class="d-flex flex-column align-items-center">
@@ -461,7 +471,7 @@
           <h2 class="text-center mb-5">Blog Posts</h2>
           <div class="row g-4">
             <!-- Blog Post 1 -->
-            <div class="col-md-4">
+            <div class="col-md-4 animate-on-scroll">
               <div class="card border-0">
                 <img src="https://preview.colorlib.com/theme/imagine/images/img_1.jpg.webp" class="card-img-top" alt="Blog Post Image">
                 <div class="card-body">
@@ -473,7 +483,7 @@
               </div>
             </div>
             <!-- Blog Post 2 -->
-            <div class="col-md-4">
+            <div class="col-md-4 animate-on-scroll">
               <div class="card border-0">
                 <img src="https://preview.colorlib.com/theme/imagine/images/img_2.jpg.webp" class="card-img-top" alt="Blog Post Image">
                 <div class="card-body">
@@ -485,7 +495,7 @@
               </div>
             </div>
             <!-- Blog Post 3 -->
-            <div class="col-md-4">
+            <div class="col-md-4 animate-on-scroll">
               <div class="card border-0">
                 <img src="https://preview.colorlib.com/theme/imagine/images/img_3.jpg.webp" class="card-img-top" alt="Blog Post Image">
                 <div class="card-body">
@@ -500,9 +510,9 @@
         </div>
     </section>
 
-    <section class="contact-section position-relative"> 
+    <section class="contact-section position-relative "> 
         <div class="container"> 
-            <div class="row mb-5 justify-content-center"> 
+            <div class="row mb-5 justify-content-center animate-on-scroll"> 
                 <div class="col-lg-7 mb-5"> 
                     <div class="contact-form"> 
                         <h2>Contact Form</h2> 
