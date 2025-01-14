@@ -1,0 +1,70 @@
+@mixin textFunc($fontsize, $color, $fontweight, $lineheight) {
+  font-size: $fontsize;
+  color: $color;
+  font-weight: $fontweight;
+  line-height: $lineheight;
+}
+
+$prgBg: #808080;
+$prgBgHover: rgba(255, 255, 255, 0.7);
+
+* {
+  margin: 0;
+  font-family: "Nunito", serif;
+}
+
+p {
+  color: $prgBg;
+}
+.card-link {
+  text-decoration: none;
+}
+
+.card {
+  background: #f1f1f1 !important;
+  border: none !important;
+  transition: 0.2s ease;
+
+  &:hover {
+    background-color: #4285f4 !important;
+
+    transform: translateY(-10px);
+
+    .card-title {
+      @include textFunc(20px, white, 500, 21.6px);
+    }
+
+    .card-text {
+      color: $prgBgHover;
+    }
+
+    .icon-circle {
+      color: #4285f4;
+      background-color: white;
+    }
+    a {
+      color: white;
+    }
+  }
+
+  .card-title {
+    @include textFunc(20px, black, 500, 21.6px);
+    transition: 0.2s ease;
+  }
+
+  .icon-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #4285f4;
+    color: white;
+    font-size: 28px;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.2s ease;
+  }
+}
