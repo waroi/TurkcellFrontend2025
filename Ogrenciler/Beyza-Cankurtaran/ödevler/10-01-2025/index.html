@@ -8,11 +8,13 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
   <link rel="stylesheet" href="style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
 </head>
 
 <body>
-  <header class="site-navbar py-4 js-sticky-header site-navbar-target shrink">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary container ">
+  <header class="header site-navbar py-4 js-sticky-header site-navbar-target shrink position-sticky">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary container">
       <div class="container-fluid ">
         <a class="navbar-brand col-12 col-md-3 col-xl-4 " href="#">imagine<span class="text-primary">.</span></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -28,7 +30,7 @@
               <a class="nav-link active" aria-current="page" href="#features">Features</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#about" role="button" data-bs-toggle="dropdown"
+              <a class="nav-link active dropdown-toggle" role="button" data-bs-toggle="dropdown"
                 aria-expanded="false">
                 About US
               </a>
@@ -38,11 +40,11 @@
                 <li>
                   <hr class="dropdown-divider">
                 </li>
-                <li><a class="dropdown-item" href="#">More Links ></a></li>
+                <li><a class="dropdown-item" href="#">More Links></a></li>
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#testimonails">Testimonials</a>
+              <a class="nav-link active" aria-current="page" href="#testimonials">Testimonials</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#blog">Blog</a>
@@ -56,26 +58,25 @@
       </div>
     </nav>
   </header>
-  <section class="banner">
+  <section class="banner mb-5" id="home">
     <div class="container">
-      <div class="row">
-        <div class="col-4 align-self-center">
-          <h1 class="fs-lg fw-bold text-start mb-15">Make Your Business More Profitable</h1>
-          <p class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam assumenda ea quo
-            cupiditate facere deleniti fuga officia.</p>
+      <div class="row align-items-center">
+        <div class="col-lg-6 col-md-12 text-center text-lg-start mb-4">
+          <h1 class="fs-lg fw-bold mb-3">Make Your Business More Profitable</h1>
+          <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam assumenda ea quo cupiditate facere deleniti fuga officia.</p>
           <div>
             <a href="https://preview.colorlib.com/theme/imagine/#" class="btn btn-primary mr-2 mb-2">Get Started</a>
           </div>
-
         </div>
-        <div class="col-8">
-          <img src="https://preview.colorlib.com/theme/imagine/images/undraw_investing_7u74.svg" alt="">
+        <div class="col-lg-6 col-md-12 text-center">
+          <img class="img-fluid" src="https://preview.colorlib.com/theme/imagine/images/undraw_investing_7u74.svg" alt="Illustration">
         </div>
       </div>
     </div>
   </section>
 
-  <section class="imagine-features">
+  
+  <section class="imagine-features" id="features">
 
     <div class="container">
 
@@ -86,11 +87,11 @@
       <div class="container my-5">
         <div class="row text-center">
           <!-- Birinci Kart -->
-          <div class="col-md-4 mb-4">
+          <div class="col-md-4 col-sm-6 mb-4 animate-on-scroll">
             <div class="card border-0 shadow">
-              <div class="card-body">
-                <div class="icon-wrap d-flex justify-content-center align-items-center mb-3 bg-primary rounded-circle">
-                  <svg xmlns="http://www.w3.org/2000/svg" height="50" viewBox="0 -960 960 960" width="50" fill="#ffff">
+              <div class="features-card card-body">
+                <div class="features-icon features-icon d-inline-block p-3 mb-3 bg-primary rounded-circle position-relative position-relative">
+                  <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#ffff">
                     <path
                       d="M204-318q-22-38-33-78t-11-82q0-134 93-228t227-94h7l-64-64 56-56 160 160-160 160-56-56 64-64h-7q-100 0-170 70.5T240-478q0 26 6 51t18 49l-60 60ZM481-40 321-200l160-160 56 56-64 64h7q100 0 170-70.5T720-482q0-26-6-51t-18-49l60-60q22 38 33 78t11 82q0 134-93 228t-227 94h-7l64 64-56 56Z" />
                   </svg>
@@ -104,11 +105,11 @@
             </div>
           </div>
           <!-- İkinci Kart -->
-          <div class="col-md-4 mb-4">
+          <div class="col-md-4 col-sm-6 mb-4 animate-on-scroll">
             <div class="card border-0 shadow">
-              <div class="card-body">
-                <div class="icon-wrap d-flex justify-content-center align-items-center mb-3 bg-primary rounded-circle">
-                  <svg xmlns="http://www.w3.org/2000/svg" height="50" viewBox="0 -960 960 960" width="50" fill="#ffff"
+              <div class="features-card card-body">
+                <div class="features-icon d-inline-block p-3 mb-3 bg-primary rounded-circle position-relative">
+                  <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#ffff"
                     class="d-flex justify-content-center align-self-center">
                     <path
                       d="M160-720v-80h640v80H160Zm0 560v-240h-40v-80l40-200h640l40 200v80h-40v240h-80v-240H560v240H160Zm80-80h240v-160H240v160Zm-38-240h556-556Zm0 0h556l-24-120H226l-24 120Z" />
@@ -123,11 +124,11 @@
             </div>
           </div>
           <!-- Üçüncü Kart -->
-          <div class="col-md-4 mb-4">
+          <div class="col-md-4 col-sm-6 mb-4 animate-on-scroll">
             <div class="card border-0 shadow">
-              <div class="card-body">
-                <div class="icon-wrap d-flex justify-content-center align-items-center mb-3 bg-primary rounded-circle ">
-                  <svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 -960 960 960" width="50px"
+              <div class="features-card card-body">
+                <div class="features-icon d-inline-block p-3 mb-3 bg-primary rounded-circle position-relative ">
+                  <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px"
                     fill="#ffff" class="d-flex justify-content-center align-self-center">
                     <path
                       d="M221-120q-27 0-48-16.5T144-179L42-549q-5-19 6.5-35T80-600h190l176-262q5-8 14-13t19-5q10 0 19 5t14 13l176 262h192q20 0 31.5 16t6.5 35L816-179q-8 26-29 42.5T739-120H221Zm-1-80h520l88-320H132l88 320Zm260-80q33 0 56.5-23.5T560-360q0-33-23.5-56.5T480-440q-33 0-56.5 23.5T400-360q0 33 23.5 56.5T480-280ZM367-600h225L479-768 367-600Zm113 240Z" />
@@ -142,11 +143,11 @@
             </div>
           </div>
           <!-- --Dördüncü Kart -->
-          <div class="col-md-4 mb-4">
+          <div class="col-md-4 col-sm-6 mb-4">
             <div class="card border-0 shadow">
-              <div class="card-body">
-                <div class="icon-wrap d-flex justify-content-center align-items-center mb-3 bg-primary rounded-circle ">
-                  <svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 -960 960 960" width="50px"
+              <div class="features-card card-body">
+                <div class="features-icon d-inline-block p-3 mb-3 bg-primary rounded-circle position-relative ">
+                  <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px"
                     fill="#ffff" class="d-flex justify-content-center align-self-center">
                     <path
                       d="M480-400q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm0 280q-139 0-241-91.5T122-440h82q14 104 92.5 172T480-200q117 0 198.5-81.5T760-480q0-117-81.5-198.5T480-760q-69 0-129 32t-101 88h110v80H120v-240h80v94q51-64 124.5-99T480-840q75 0 140.5 28.5t114 77q48.5 48.5 77 114T840-480q0 75-28.5 140.5t-77 114q-48.5 48.5-114 77T480-120Z" />
@@ -161,11 +162,11 @@
             </div>
           </div>
           <!-- --Beşinci Kart -->
-          <div class="col-md-4 mb-4">
+          <div class="col-md-4 col-sm-6 mb-4">
             <div class="card border-0 shadow">
-              <div class="card-body">
-                <div class="icon-wrap d-flex justify-content-center align-items-center mb-3 bg-primary rounded-circle ">
-                  <svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 -960 960 960" width="50px"
+              <div class="features-card card-body">
+                <div class="features-icon d-inline-block p-3 mb-3 bg-primary rounded-circle position-relative ">
+                  <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px"
                     fill="#ffff" class="d-flex justify-content-center align-self-center">
                     <path
                       d="M620-520q25 0 42.5-17.5T680-580q0-25-17.5-42.5T620-640q-25 0-42.5 17.5T560-580q0 25 17.5 42.5T620-520Zm-280 0q25 0 42.5-17.5T400-580q0-25-17.5-42.5T340-640q-25 0-42.5 17.5T280-580q0 25 17.5 42.5T340-520Zm140 260q68 0 123.5-38.5T684-400h-66q-22 37-58.5 58.5T480-320q-43 0-79.5-21.5T342-400h-66q25 63 80.5 101.5T480-260Zm0 180q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-400Zm0 320q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Z" />
@@ -180,11 +181,11 @@
             </div>
           </div>
           <!-- --Atıncı Kart -->
-          <div class="col-md-4 mb-4">
+          <div class="col-md-4 col-sm-6 mb-4">
             <div class="card border-0 shadow">
-              <div class="card-body">
-                <div class="icon-wrap d-flex justify-content-center align-items-center mb-3 bg-primary rounded-circle">
-                  <svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 -960 960 960" width="50px"
+              <div class="features-card card-body">
+                <div class="features-icon d-inline-block p-3 mb-3 bg-primary rounded-circle position-relative">
+                  <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px"
                     fill="#ffff" class="d-flex justify-content-center align-self-center">
                     <path
                       d="M460-200h40v-74l140-140v-186H320v186l140 140v74Zm-80 80v-120L240-380v-220q0-33 23.5-56.5T320-680h40l-40 40v-200h80v160h160v-160h80v200l-40-40h40q33 0 56.5 23.5T720-600v220L580-240v120H380Zm100-280Z" />
@@ -201,14 +202,14 @@
         </div>
       </div>
   </section>
-
+  
   <section class="feedback container">
     <!-------------------1.kısım-------------------------------------------------->
     <div class="row">
-      <div class="col">
-        <img src="https://preview.colorlib.com/theme/imagine/images/undraw_gift_card_6ekc.svg" alt="">
+      <div class="col-12 col-md-6">
+        <img src="https://preview.colorlib.com/theme/imagine/images/undraw_gift_card_6ekc.svg" alt="" class="img-fluid mb-3">
       </div>
-      <div class="col">
+      <div class="col-12 col-md-6">
         <div class="row">
           <h2>Communicate and gather feedback</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem neque nisi architecto autem molestias
@@ -218,8 +219,7 @@
           <div class="card border-start border-4 border-primary shadow-sm">
             <div class="card-body p-4">
               <div class="d-flex align-items-center mb-3">
-                <img src="https://preview.colorlib.com/theme/imagine/images/person_4.jpg" alt="Profile"
-                  class="rounded-circle me-3" width="50">
+                <img src="https://preview.colorlib.com/theme/imagine/images/person_4.jpg" alt="Profile" class="rounded-circle mb-3 me-3" width="50">
                 <div>
                   <h5 class="mb-0">Grey Simpson</h5>
                   <small class="text-muted">Co-Founder, XYZ Inc.</small>
@@ -234,7 +234,7 @@
     </div>
     <!--------------------2.kısım------------------------------------------------->
     <div class="row mt-5 ms-5">
-      <div class="col">
+      <div class="col-12 col-md-6">
         <div class="row">
           <h2>Communicate and gather feedback</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem neque nisi architecto autem molestias
@@ -244,8 +244,7 @@
           <div class="card border-start border-4 border-primary shadow-sm">
             <div class="card-body p-4">
               <div class="d-flex align-items-center mb-3">
-                <img src="https://preview.colorlib.com/theme/imagine/images/person_1.jpg" alt="Profile"
-                  class="rounded-circle me-3" width="50">
+                <img src="https://preview.colorlib.com/theme/imagine/images/person_1.jpg" alt="Profile" class="rounded-circlemb-3  me-3" width="50">
                 <div>
                   <h5 class="mb-0">Grey Simpson</h5>
                   <small class="text-muted">Co-Founder, XYZ Inc.</small>
@@ -257,16 +256,16 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-7 ms-5 mb-5">
-        <img class="image-fluid" src="https://preview.colorlib.com/theme/imagine/images/undraw_metrics_gtu7.svg" alt="">
+      <div class="col-12 col-lg-6 mb-5">
+        <img class="img-fluid mb-3" src="https://preview.colorlib.com/theme/imagine/images/undraw_metrics_gtu7.svg" alt="">
       </div>
     </div>
     <!------------------------3.kısım--------------------------------------------->
     <div class="row">
-      <div class="col">
-        <img src="https://preview.colorlib.com/theme/imagine/images/undraw_gift_card_6ekc.svg" alt="">
+      <div class="col-12 col-md-6">
+        <img src="https://preview.colorlib.com/theme/imagine/images/undraw_gift_card_6ekc.svg" alt="" class="img-fluid mb-3">
       </div>
-      <div class="col">
+      <div class="col-12 col-md-6">
         <div class="row">
           <h2>Communicate and gather feedback</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem neque nisi architecto autem molestias
@@ -276,8 +275,7 @@
           <div class="card border-start border-4 border-primary shadow-sm">
             <div class="card-body p-4">
               <div class="d-flex align-items-center mb-3">
-                <img src="https://preview.colorlib.com/theme/imagine/images/person_4.jpg" alt="Profile"
-                  class="rounded-circle me-3" width="50">
+                <img src="https://preview.colorlib.com/theme/imagine/images/person_4.jpg" alt="Profile" class="rounded-circle mb-3 me-3" width="50">
                 <div>
                   <h5 class="mb-0">Grey Simpson</h5>
                   <small class="text-muted">Co-Founder, XYZ Inc.</small>
@@ -292,7 +290,7 @@
     </div>
     <!--------------------4.kısım------------------------------------------------->
     <div class="row mt-5 ms-5">
-      <div class="col">
+      <div class="col-12 col-md-6">
         <div class="row">
           <h2>Communicate and gather feedback</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem neque nisi architecto autem molestias
@@ -302,8 +300,7 @@
           <div class="card border-start border-4 border-primary shadow-sm">
             <div class="card-body p-4">
               <div class="d-flex align-items-center mb-3">
-                <img src="https://preview.colorlib.com/theme/imagine/images/person_1.jpg" alt="Profile"
-                  class="rounded-circle me-3" width="50">
+                <img src="https://preview.colorlib.com/theme/imagine/images/person_1.jpg" alt="Profile" class="rounded-circle mb-3 me-3" width="50">
                 <div>
                   <h5 class="mb-0">Grey Simpson</h5>
                   <small class="text-muted">Co-Founder, XYZ Inc.</small>
@@ -315,14 +312,14 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-7 ms-5 mb-5">
-        <img class="image-fluid" src="https://preview.colorlib.com/theme/imagine/images/undraw_metrics_gtu7.svg" alt="">
+      <div class="col-12 col-lg-6 mb-5">
+        <img class="img-fluid mb-3" src="https://preview.colorlib.com/theme/imagine/images/undraw_metrics_gtu7.svg" alt="">
       </div>
     </div>
   </section>
 
   <!-- About Us Section -->
-  <section class="py-5 bg-light">
+  <section class="py-5 bg-light" id="about">
     <div class="container">
       <div class="text-center mb-5">
         <h1 class="display-4 fw-bold">About Us</h1>
@@ -331,7 +328,7 @@
         <!-- Left side with illustration -->
         <div class="col-lg-6 mb-4 mb-lg-0">
           <img src="https://preview.colorlib.com/theme/imagine/images/undraw_bookmarks_r6up.svg"
-            alt="About Us Illustration" class="img-fluid">
+            alt="About Us Illustration" class="img-fluid ">
         </div>
         <!-- Right side content -->
         <div class="col-lg-6">
@@ -366,6 +363,7 @@
       </div>
     </div>
   </section>
+  <!--Our team section-->
   <section class="py-5">
     <div class="container">
       <div class="text-center mb-5">
@@ -377,8 +375,7 @@
         <!-- Team Member 1 -->
         <div class="col-lg-4 col-md-6">
           <div class="text-center">
-            <img src="https://preview.colorlib.com/theme/imagine/images/person_1.jpg" alt="Cloe Marena" class="img-fluid  mb-3"
-              style="width: 200px; height: 200px; object-fit: cover;">
+            <img src="https://preview.colorlib.com/theme/imagine/images/person_1.jpg" alt="Cloe Marena" class="img-fluid  mb-3">
             <h3 class="h4 mb-2">Cloe Marena</h3>
             <p class="text-primary small text-uppercase mb-3">PRESIDENT</p>
             <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum excepturi
@@ -388,8 +385,7 @@
         <!-- Team Member 2 -->
         <div class="col-lg-4 col-md-6">
           <div class="text-center">
-            <img src="https://preview.colorlib.com/theme/imagine/images/person_2.jpg" alt="John Rooster" class="img-fluid  mb-3"
-              style="width: 200px; height: 200px; object-fit: cover;">
+            <img src="https://preview.colorlib.com/theme/imagine/images/person_2.jpg" alt="John Rooster" class="img-fluid  mb-3">
             <h3 class="h4 mb-2">John Rooster</h3>
             <p class="text-primary small text-uppercase mb-3">MARKETING</p>
             <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum excepturi
@@ -399,8 +395,7 @@
         <!-- Team Member 3 -->
         <div class="col-lg-4 col-md-6">
           <div class="text-center">
-            <img src="https://preview.colorlib.com/theme/imagine/images/person_3.jpg" alt="Will Turner" class="img-fluid  mb-3"
-              style="width: 200px; height: 200px; object-fit: cover;">
+            <img src="https://preview.colorlib.com/theme/imagine/images/person_3.jpg" alt="Will Turner" class="img-fluid  mb-3">
             <h3 class="h4 mb-2">Will Turner</h3>
             <p class="text-primary small text-uppercase mb-3">MARKETING</p>
             <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum excepturi
@@ -410,8 +405,7 @@
         <!-- Team Member 4 -->
         <div class="col-lg-4 col-md-6">
           <div class="text-center">
-            <img src="https://preview.colorlib.com/theme/imagine/images/person_4.jpg" alt="Cloe Marena" class="img-fluid mb-3"
-              style="width: 200px; height: 200px; object-fit: cover;">
+            <img src="https://preview.colorlib.com/theme/imagine/images/person_4.jpg" alt="Cloe Marena" class="img-fluid mb-3">
             <h3 class="h4 mb-2">Cloe Marena</h3>
             <p class="text-primary small text-uppercase mb-3">PRESIDENT</p>
             <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum excepturi
@@ -421,8 +415,7 @@
         <!-- Team Member 5 -->
         <div class="col-lg-4 col-md-6">
           <div class="text-center">
-            <img src="https://preview.colorlib.com/theme/imagine/images/person_5.jpg" alt="John Rooster" class="img-fluid  mb-3"
-              style="width: 200px; height: 200px; object-fit: cover;">
+            <img src="https://preview.colorlib.com/theme/imagine/images/person_5.jpg" alt="John Rooster" class="img-fluid  mb-3">
             <h3 class="h4 mb-2">John Rooster</h3>
             <p class="text-primary small text-uppercase mb-3">MARKETING</p>
             <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum excepturi
@@ -432,8 +425,7 @@
         <!-- Team Member 6 -->
         <div class="col-lg-4 col-md-6">
           <div class="text-center">
-            <img src="https://preview.colorlib.com/theme/imagine/images/person_6.jpg" alt="Will Turner" class="img-fluid  mb-3"
-              style="width: 200px; height: 200px; object-fit: cover;">
+            <img src="https://preview.colorlib.com/theme/imagine/images/person_6.jpg" alt="Will Turner" class="img-fluid  mb-3">
             <h3 class="h4 mb-2">Will Turner</h3>
             <p class="text-primary small text-uppercase mb-3">MARKETING</p>
             <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum excepturi
@@ -442,12 +434,121 @@
       </div>
     </div>
   </section>
+  <!-- Testimonials Section -->
+  <section class="testimonial py-5 bg-light" id="testimonials">
+    <div class="container text-center">
+      <h2 class="mb-4">Testimonials</h2>
+      <div class="d-flex flex-column align-items-center">
+        <div class="rounded-circle overflow-hidden" >
+          <img src="https://preview.colorlib.com/theme/imagine/images/person_3.jpg.webp" alt="Testimonial Image" class="img-fluid">
+        </div>
+        <blockquote class="mt-4 text-muted fst-italic">
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur unde reprehenderit aperiam quae."
+        </blockquote>
+        <p class="fw-bold mb-0">John Smith</p>
+      </div>
+      <div class="d-flex justify-content-center mt-4">
+        <span class="rounded-circle bg-primary mx-1" ></span>
+        <span class="rounded-circle bg-secondary mx-1"></span>
+        <span class="rounded-circle bg-secondary mx-1"></span>
+      </div>
+    </div>
+  </section>
 
+    <!-- Blog Posts Section -->
+    <section class="py-5" id="blog">
+        <div class="container">
+          <h2 class="text-center mb-5">Blog Posts</h2>
+          <div class="row g-4">
+            <!-- Blog Post 1 -->
+            <div class="col-md-4">
+              <div class="card border-0">
+                <img src="https://preview.colorlib.com/theme/imagine/images/img_1.jpg.webp" class="card-img-top" alt="Blog Post Image">
+                <div class="card-body">
+                  <h5 class="card-title">Make Your Business More Profitable</h5>
+                  <p class="text-muted small mb-2">Ham Brook • Jan 18, 2019 • <a href="#" class="text-decoration-none">News</a></p>
+                  <p class="card-text text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eligendi nobis ea maiores sapiente veritatis.</p>
+                  <a href="#" class="text-decoration-none fw-bold">Continue Reading...</a>
+                </div>
+              </div>
+            </div>
+            <!-- Blog Post 2 -->
+            <div class="col-md-4">
+              <div class="card border-0">
+                <img src="https://preview.colorlib.com/theme/imagine/images/img_2.jpg.webp" class="card-img-top" alt="Blog Post Image">
+                <div class="card-body">
+                  <h5 class="card-title">Make Your Business More Profitable</h5>
+                  <p class="text-muted small mb-2">James Phelps • Jan 18, 2019 • <a href="#" class="text-decoration-none">News</a></p>
+                  <p class="card-text text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eligendi nobis ea maiores sapiente veritatis.</p>
+                  <a href="#" class="text-decoration-none fw-bold">Continue Reading...</a>
+                </div>
+              </div>
+            </div>
+            <!-- Blog Post 3 -->
+            <div class="col-md-4">
+              <div class="card border-0">
+                <img src="https://preview.colorlib.com/theme/imagine/images/img_3.jpg.webp" class="card-img-top" alt="Blog Post Image">
+                <div class="card-body">
+                  <h5 class="card-title">Make Your Business More Profitable</h5>
+                  <p class="text-muted small mb-2">James Phelps • Jan 18, 2019 • <a href="#" class="text-decoration-none">News</a></p>
+                  <p class="card-text text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eligendi nobis ea maiores sapiente veritatis.</p>
+                  <a href="#" class="text-decoration-none fw-bold">Continue Reading...</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
 
-
-
-
-  <footer></footer>
+    <section class="contact-section position-relative" id="contact"> 
+        <div class="container"> 
+            <div class="row mb-5 justify-content-center"> 
+                <div class="col-lg-7 mb-5"> 
+                    <h2 class="text-center">Contact  Us</h2>
+                    <div class="contact-form"> 
+                        <h2>Contact Form</h2> 
+                        <form> 
+                            <div class="row form-group"> 
+                                <div class="form-group col-md-6"> 
+                                    <label for="firstName">First Name</label> 
+                                    <input type="text" class="form-control" id="firstName" placeholder="First Name"> 
+                                </div> 
+                                <div class="form-group col-md-6"> 
+                                    <label for="lastName">Last Name</label> 
+                                    <input type="text" class="form-control" id="lastName" placeholder="Last Name"> 
+                                </div> 
+                            </div> 
+                            <div class="form-group"> 
+                                <label for="email">Email</label> 
+                                <input type="email" class="form-control" id="email" placeholder="Email"> 
+                            </div> 
+                            <div class="form-group"> 
+                                <label for="subject">Subject</label> 
+                                <input type="text" class="form-control" id="subject" placeholder="Subject"> 
+                            </div> 
+                            <div class="form-group"> 
+                                <label for="message">Message</label> 
+                                <textarea class="form-control" id="message" rows="4" placeholder="Leave your message here..."></textarea> 
+                            </div> 
+                            <button type="submit" class="btn btn-primary btn-block">Send Message</button> 
+                        </form> 
+                    </div> 
+                </div> 
+            </div> 
+        </div> 
+    </section>
+    <footer class="footer py-3 px-0">
+        <div class="container text-center">
+          <div class="social-icons mb-3">
+            <a href="#" class="text-primary mx-2"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-primary mx-2"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-primary mx-2"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-primary mx-2"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="text-primary mx-2"><i class="fab fa-pinterest"></i></a>
+          </div>
+          <p class="mb-0">&copy; 2025 All rights reserved | This template is made with <span >❤</span> by Colorlib</p>
+        </div>
+      </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>

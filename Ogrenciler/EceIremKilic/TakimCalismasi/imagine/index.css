@@ -78,6 +78,18 @@ a{
         fill: white;
     }
 }
+.bg-gray{
+    background-color: #f6f6f6;
+    width: 100%;
+    p{
+        color: #808080;
+        font-weight: 500;
+        line-height: 1.7;
+    }
+    .col-5{
+        padding-left: 48px;
+    }
+}
 .if2{
     margin-bottom: 30px;
     font-size: 40px;
@@ -96,7 +108,88 @@ a{
 }
 .ul-check li{
     position: relative;
-    padding-left: 35px;
     line-height: 1.5;
     margin-bottom: 15px;
+    color: #808080;
+    span img{
+        margin-right: 15px;
+    }
+}
+.our-team{
+    h2{
+        font-size: 40px;
+        font-weight: 700;
+        color: #000;
+    }
+    p{
+        font-size: 20px;
+        color:#808080;
+    }
+}
+.ot-card{
+    border: none;
+    margin-bottom: 30px;
+    img{
+        margin-bottom: 30px;
+    }
+    .card-body{
+        padding: 0;
+    }
+    h5{
+        font-size: 18px;
+    }
+    h6{
+        font-size: 12px;
+        color: #4285f4;
+        font-weight: 600;
+    }
+    p{
+        font-size: 16px;
+        color: #808080;
+    }
+}
+.t-person{
+    max-width: 100px;
+    border-radius: 50%;
+}
+.testimonial {
+    width: 60%;
+    height: auto;
+}
+.testimonial p{
+    font-size: 24px;
+    font-style: italic;
+    color: #808080;
+}
+.testimonial strong{
+    font-style: normal;
+    color: #000;
+    font-size: 16px;
+}
+.h-entry img{
+    margin-bottom: 30px;   
+}
+.h-entry .meta {
+    color: #b3b3b3;
+    font-size: 14px;
+}
+.h-entry p{
+    color: #808080;
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+.bg{
+    background-image: url(https://preview.colorlib.com/theme/imagine/images/hero_1.jpg.webp);
+    background-attachment: fixed;
+    width: 100%;
+    background-size: cover;
+}
+.overlay{
+    background: linear-gradient(to right, #4286f470 0%, #42e2f470 100%);
+}
+.form-group{
+    margin-bottom: 16px;
+}
+.form-group label{
+    margin-bottom: 8px;
 }

@@ -1,3 +1,18 @@
+* {
+  box-sizing: border-box;
+}
+.container {
+  max-width: 1140px;
+}
+.icon {
+  background-color: #4285f4;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  z-index: 10;
+  color: #fff;
+}
+
 .navbar-toggler {
   border: none;
 }
@@ -22,4 +37,134 @@
   font-size: 16px;
   border-radius: 30px;
   padding: 10px 30px;
+}
+
+.feature-card {
+  background-color: #fff;
+}
+
+.features .text {
+  padding: 15%;
+  background: #f1f1f1;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.features .text h3 {
+  font-size: 18px;
+  color: #000;
+  font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+.text-color {
+  font-size: 1rem;
+  color: gray;
+  line-height: 1.7;
+}
+
+.container-team {
+  animation: moveUp 1.5s;
+}
+
+.container-features {
+  animation: moveUp 1.5s;
+}
+
+@keyframes moveUp {
+  0% {
+    transform: translateY(150px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.feature-card {
+  position: relative;
+  border: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.feature-card:hover .text {
+  background-color: #4285f4;
+
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+.feature-card:hover .text h3 {
+  color: #fff !important;
+}
+.feature-card:hover .text p {
+  color: #fff !important;
+}
+
+.feature-card:hover .icon {
+  background-color: white !important;
+  color: #4285f4 !important;
+  /* Kart arka plan rengi */
+}
+
+.team-card .team-image:hover .icon-bar {
+  transform: translateY(-100%);
+  z-index: 2;
+  padding: 10px 0;
+  width: 100%;
+  position: absolute;
+  transition: 0.3s all ease;
+  background: #4285f4;
+}
+
+.team-card .team-image:hover {
+  transform: scale(1.01);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.team-card .team-image .person {
+  position: relative;
+  transition: 0.3s all ease-in-out;
+}
+
+.contact {
+  background-image: linear-gradient(
+      to right,
+      rgba(66, 134, 244, 0.7) 0%,
+      rgba(66, 226, 244, 0.7) 100%
+    ),
+    url("https://preview.colorlib.com/theme/imagine/images/hero_1.jpg.webp");
+
+  background-attachment: fixed;
+  background-size: cover;
+
+  padding: 80px 0px;
+}
+
+.blog {
+  padding: 80px 0px;
+}
+.blog .blog-image img {
+  margin-bottom: 30px;
+}
+.blog .blog-title h2 {
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 36px;
+}
+/* .blog .blog-title .blog-info{
+  color: #b3b3b3;
+  font-size: 14px;
+} */
+
+.Testimonials {
+  padding: 80px 0px;
+}
+
+.team {
+  padding: 80px 0px;
 }
