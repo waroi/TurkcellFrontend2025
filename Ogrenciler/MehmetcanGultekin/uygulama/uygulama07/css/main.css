@@ -1,4 +1,3 @@
-@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -30,7 +29,6 @@
 
 .hero-section {
   position: relative;
-  /* ::after için konumlandırma gerekli */
   background-image: url(https://preview.colorlib.com/theme/directoryads/images/hero_2.jpg.webp);
   background-size: cover;
   background-repeat: no-repeat;
@@ -218,6 +216,7 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 10px;
   list-style: none;
+  border-top: 3px solid #067de6;
 }
 .navbar nav ul li.has-children .dropdown li {
   margin: 0;
@@ -245,6 +244,11 @@
 }
 .featured-add .container .featured-title {
   padding-left: 220px;
+}
+.featured-add .container .featured-title h2 {
+  font-family: "Nanum Gothic", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 20px;
+  font-weight: 400;
 }
 .featured-add .h2 {
   font-weight: 500;
@@ -362,6 +366,241 @@
 .featured-add .arrows .left-arrow:hover,
 .featured-add .arrows .right-arrow:hover {
   color: blue;
+}
+
+.popular-cat {
+  display: flex;
+  justify-content: center;
+}
+.popular-cat .popular-container {
+  width: 70%;
+  padding: 80px 0;
+  display: flex;
+  flex-direction: column;
+}
+.popular-cat .popular-container .pop-up {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
+}
+.popular-cat .popular-container .pop-up h2 {
+  font-family: "Nanum Gothic", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2f89fc;
+  margin-bottom: 0.5rem;
+}
+.popular-cat .popular-container .pop-up p {
+  font-weight: 400;
+  font-size: 1rem;
+  color: #6c757d;
+  font-family: "Nanum Gothic", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  margin-bottom: 1rem;
+}
+.popular-cat .popular-container .pop-up .pop-line {
+  display: flex;
+  justify-content: center;
+  background-color: #2f89fc;
+  width: 80px;
+  height: 3px;
+}
+.popular-cat .popular-container .pop-down {
+  display: flex;
+}
+.popular-cat .popular-container .pop-down .pop-card .pop-card-info {
+  display: block;
+  text-align: center;
+  padding: 30px 40px;
+  border-radius: 7px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+.popular-cat .popular-container .pop-down .pop-card .pop-card-info:hover {
+  background-color: #2f89fc;
+  color: white;
+  transform: scale(1.09);
+  transition: all 0.3s ease;
+}
+.popular-cat .popular-container .pop-down .pop-card .pop-card-info:hover .icon svg {
+  fill: white;
+}
+.popular-cat .popular-container .pop-down .pop-card .pop-card-info:hover .caption {
+  color: white;
+}
+.popular-cat .popular-container .pop-down .pop-card .pop-card-info:hover .number {
+  background: #046df4;
+  color: white;
+}
+.popular-cat .popular-container .pop-down .pop-card .pop-card-info span {
+  font-family: "Nanum Gothic", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  text-decoration: none;
+  text-align: center;
+  margin-bottom: 16px;
+}
+.popular-cat .popular-container .pop-down .pop-card .pop-card-info .caption {
+  color: #666666;
+}
+.popular-cat .popular-container .pop-down .pop-card .pop-card-info .number {
+  font-size: 14px;
+  padding: 2px 20px;
+  border-radius: 30px;
+  display: inline-block;
+  font-weight: 400;
+  background-color: #e1e1e1;
+  color: black;
+}
+.popular-cat .popular-container .pop-down .pop-card .pop-card-info .icon svg {
+  fill: #2f89fc;
+}
+
+.trending-today {
+  display: flex;
+  justify-content: center;
+  background-color: #f8f9fa;
+}
+.trending-today .trend-container {
+  width: 70%;
+  padding: 80px 0;
+  display: flex;
+  flex-direction: column;
+}
+.trending-today .trend-container .trend-up h2 {
+  font-family: "Nanum Gothic", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2f89fc;
+  margin-bottom: 0.5rem;
+}
+.trending-today .trend-container .trend-up .trend-line {
+  display: flex;
+  justify-content: center;
+  background-color: #2f89fc;
+  width: 80px;
+  height: 3px;
+}
+.trending-today .trend-container .trend-bottom {
+  padding-top: 30px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  justify-content: center;
+}
+.trending-today .trend-container .trend-bottom .trend-left,
+.trending-today .trend-container .trend-bottom .trend-right {
+  display: grid;
+  grid-template-rows: repeat(4, 220px);
+  margin-right: 20px;
+  justify-content: center;
+}
+.trending-today .trend-container .trend-bottom .trend-left .trend-card,
+.trending-today .trend-container .trend-bottom .trend-right .trend-card {
+  display: flex;
+  border-radius: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 20px -2px rgba(0, 0, 0, 0.1);
+}
+.trending-today .trend-container .trend-bottom .trend-left .trend-card .t-c-img,
+.trending-today .trend-container .trend-bottom .trend-right .trend-card .t-c-img {
+  width: 40%;
+  height: auto;
+  cursor: pointer;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.trending-today .trend-container .trend-bottom .trend-left .trend-card .trend-content,
+.trending-today .trend-container .trend-bottom .trend-right .trend-card .trend-content {
+  width: 60%;
+  padding: 20px;
+  background-color: rgb(255, 255, 255);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.trending-today .trend-container .trend-bottom .trend-left .trend-card .trend-content .stars span,
+.trending-today .trend-container .trend-bottom .trend-right .trend-card .trend-content .stars span {
+  font-family: "Nanum Gothic", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 13px;
+}
+.trending-today .trend-container .trend-bottom .trend-left .trend-card .trend-content .stars svg,
+.trending-today .trend-container .trend-bottom .trend-right .trend-card .trend-content .stars svg {
+  width: 15px;
+  height: 16px;
+  fill: #F89D13;
+}
+.trending-today .trend-container .trend-bottom .trend-left .trend-card .trend-content .stars svg:nth-child(5),
+.trending-today .trend-container .trend-bottom .trend-right .trend-card .trend-content .stars svg:nth-child(5) {
+  fill: #6C757D;
+}
+.trending-today .trend-container .trend-bottom .trend-left .trend-card .trend-content .card-content,
+.trending-today .trend-container .trend-bottom .trend-right .trend-card .trend-content .card-content {
+  display: flex;
+  justify-content: space-between;
+}
+.trending-today .trend-container .trend-bottom .trend-left .trend-card .trend-content .card-content span,
+.trending-today .trend-container .trend-bottom .trend-right .trend-card .trend-content .card-content span {
+  font-family: "Nanum Gothic", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 11px;
+  display: inline-block;
+  padding: 5px 20px;
+  background: #e9ecef;
+  border-radius: 30px;
+  margin-bottom: 20px;
+  color: #000;
+  font-weight: bold;
+}
+.trending-today .trend-container .trend-bottom .trend-left .trend-card .trend-content .card-content svg,
+.trending-today .trend-container .trend-bottom .trend-right .trend-card .trend-content .card-content svg {
+  width: 16px;
+  height: 16px;
+}
+.trending-today .trend-container .trend-bottom .trend-left .trend-card .trend-content .card-content .heart,
+.trending-today .trend-container .trend-bottom .trend-right .trend-card .trend-content .card-content .heart {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  fill: rgb(74, 122, 233);
+  display: flex;
+  transition: 0.3s all ease;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  background: rgba(25, 68, 240, 0.03);
+}
+.trending-today .trend-container .trend-bottom .trend-left .trend-card .trend-content .card-content .heart:hover,
+.trending-today .trend-container .trend-bottom .trend-right .trend-card .trend-content .card-content .heart:hover {
+  background-color: #F23A2E;
+}
+.trending-today .trend-container .trend-bottom .trend-left .trend-card .trend-content .card-content .heart:hover svg,
+.trending-today .trend-container .trend-bottom .trend-right .trend-card .trend-content .card-content .heart:hover svg {
+  fill: #fff;
+}
+.trending-today .trend-container .trend-bottom .trend-left .trend-card .trend-content h3,
+.trending-today .trend-container .trend-bottom .trend-right .trend-card .trend-content h3 {
+  font-family: "Nanum Gothic", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  font-weight: 400;
+  color: #0362db;
+  font-size: 16px;
+}
+.trending-today .trend-container .trend-bottom .trend-left .trend-card .trend-content h3:hover,
+.trending-today .trend-container .trend-bottom .trend-right .trend-card .trend-content h3:hover {
+  color: #0362db;
+}
+.trending-today .trend-container .trend-bottom .trend-left .trend-card .trend-content p,
+.trending-today .trend-container .trend-bottom .trend-right .trend-card .trend-content p {
+  font-family: "Nanum Gothic", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 13px;
+  margin-bottom: 1rem;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -60,7 +60,6 @@ $h3FontSize: 1.5rem;
 
 .hero-section {
   position: relative;
-  /* ::after için konumlandırma gerekli */
   background-image: url(https://preview.colorlib.com/theme/directoryads/images/hero_2.jpg.webp);
   background-size: cover;
   background-repeat: no-repeat;
@@ -118,9 +117,11 @@ $h3FontSize: 1.5rem;
       display: flex;
       justify-content: space-between;
       width: 100%;
+
       .input1 {
         padding-right: 150px;
       }
+
       input {
         margin-right: 50px;
         border-radius: 5px;
@@ -129,7 +130,7 @@ $h3FontSize: 1.5rem;
       select {
         margin-right: 50px;
         border-radius: 5px;
-        }
+      }
     }
 
     input,
@@ -141,23 +142,25 @@ $h3FontSize: 1.5rem;
       @include createButton($mainBgColor, $mainFontColor);
     }
   }
-  .left{
+
+  .left {
     text-align: left !important;
     width: 67%;
   }
+
   .trending-search {
     margin-top: 1.5rem;
     display: flex;
     align-items: center;
     text-align: left !important;
-    
+
 
     h2 {
       font-family: $fontfamily;
       font-size: 1rem;
       font-weight: 500;
       margin-right: 10px;
-      
+
     }
 
     a {
@@ -174,7 +177,7 @@ $h3FontSize: 1.5rem;
       font-family: $fontfamily;
 
       &:hover {
-        background-color:white;
+        background-color: white;
         fill: white;
         color: #007bff;
       }
@@ -205,7 +208,7 @@ $h3FontSize: 1.5rem;
   div h1 a {
     text-decoration: none;
     color: white;
-    font-size: 20px;  
+    font-size: 20px;
     font-weight: 900;
     font-family: $fontfamily;
   }
@@ -256,6 +259,7 @@ $h3FontSize: 1.5rem;
           box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
           padding: 10px;
           list-style: none;
+          border-top: 3px solid #067de6;
 
           li {
             margin: 0;
@@ -293,6 +297,12 @@ $h3FontSize: 1.5rem;
 
     .featured-title {
       padding-left: 220px;
+
+      h2 {
+        font-family: $fontfamily;
+        font-size: 20px;
+        font-weight: 400;
+      }
     }
   }
 
@@ -438,4 +448,281 @@ $h3FontSize: 1.5rem;
 
   }
 
+}
+
+.popular-cat {
+  display: flex;
+  justify-content: center;
+
+  .popular-container {
+    width: 70%;
+    padding: 80px 0;
+    display: flex;
+    flex-direction: column;
+
+    .pop-up {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 20px;
+
+      h2 {
+        font-family: $fontfamily;
+        font-size: 2rem;
+        font-weight: 700;
+        color: #2f89fc;
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        font-weight: 400;
+        font-size: 1rem;
+        color: #6c757d;
+        font-family: $fontfamily;
+        margin-bottom: 1rem;
+      }
+
+      .pop-line {
+        display: flex;
+        justify-content: center;
+        background-color: #2f89fc;
+        width: 80px;
+        height: 3px;
+      }
+
+    }
+
+    .pop-down {
+      display: flex;
+
+      .pop-card {
+
+        .pop-card-info {
+          display: block;
+          text-align: center;
+          padding: 30px 40px;
+          border-radius: 7px;
+          text-decoration: none;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          transition: all 0.3s ease;
+
+          &:hover {
+            background-color: #2f89fc;
+            color: white;
+            transform: scale(1.09);
+            transition: all 0.3s ease;
+
+
+
+            .icon {
+              svg {
+                fill: white;
+              }
+            }
+
+            .caption {
+              color: white;
+            }
+
+            .number {
+              background: #046df4;
+              color: white;
+            }
+          }
+
+          span {
+            font-family: $fontfamily;
+            text-decoration: none;
+            text-align: center;
+            margin-bottom: 16px;
+          }
+
+          .caption {
+            color: #666666;
+          }
+
+          .number {
+            font-size: 14px;
+            padding: 2px 20px;
+            border-radius: 30px;
+            display: inline-block;
+            font-weight: 400;
+            background-color: #e1e1e1;
+            color: black;
+
+          }
+
+          .icon {
+            svg {
+              fill: #2f89fc;
+            }
+          }
+        }
+      }
+
+    }
+  }
+}
+
+.trending-today {
+  display: flex;
+  justify-content: center;
+  background-color: #f8f9fa;
+
+  .trend-container {
+    width: 70%;
+    padding: 80px 0;
+    display: flex;
+    flex-direction: column;
+
+    .trend-up {
+
+
+      h2 {
+        font-family: $fontfamily;
+        font-size: 2rem;
+        font-weight: 700;
+        color: #2f89fc;
+        margin-bottom: 0.5rem;
+      }
+
+      .trend-line {
+        display: flex;
+        justify-content: center;
+        background-color: #2f89fc;
+        width: 80px;
+        height: 3px;
+      }
+
+    }
+
+    .trend-bottom {
+      padding-top: 30px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, 50%);
+      justify-content: center;
+
+      .trend-left,
+      .trend-right {
+        display: grid;
+        grid-template-rows: repeat(4, 220px);
+        margin-right: 20px;
+        justify-content: center;
+
+        .trend-card {
+          display: flex;
+          border-radius: 20px;
+          margin-bottom: 30px;
+          box-shadow: 0 2px 20px -2px rgba(0, 0, 0, 0.1);
+
+          .t-c-img {
+            width: 40%;
+            height: auto;
+            cursor: pointer;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            
+
+          }
+
+          .trend-content {
+            width: 60%;
+            padding: 20px;
+            background-color: rgb(255, 255, 255);
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+
+            .stars {
+              span {
+                font-family: $fontfamily;
+                font-size: 13px;
+              }
+
+              svg {
+                width: 15px;
+                height: 16px;
+                fill: #F89D13;
+              }
+
+              svg:nth-child(5) {
+                fill: #6C757D;
+              }
+            }
+
+            .card-content {
+              display: flex;
+              justify-content: space-between;
+
+              span {
+                font-family: $fontfamily;
+                font-size: 11px;
+                display: inline-block;
+                padding: 5px 20px;
+                background: #e9ecef;
+                border-radius: 30px;
+                margin-bottom: 20px;
+                color: #000;
+                font-weight: bold;
+              }
+
+              svg {
+                width: 16px;
+                height: 16px;
+              }
+
+              .heart {
+                width: 30px;
+                height: 30px;
+                border-radius: 15px;
+                fill: rgb(74, 122, 233);
+                display: flex;
+                transition: .3s all ease;
+                cursor: pointer;
+                justify-content: center;
+                align-items: center;
+                background: rgba(25, 68, 240, 0.03);
+              }
+
+              .heart:hover {
+                background-color: #F23A2E;
+
+                svg {
+                  fill: #fff;
+                }
+              }
+            }
+
+            h3 {
+              font-family: $fontfamily;
+              margin-bottom: 0.5rem;
+              cursor: pointer;
+              font-weight: 400;
+              color: #0362db;
+              font-size: 16px;
+
+              &:hover {
+                color: #0362db;
+              }
+            }
+
+            p {
+              font-family: $fontfamily;
+              font-size: 13px;
+              margin-bottom: 1rem;
+            }
+          }
+        }
+      }
+
+    }
+  }
 }
