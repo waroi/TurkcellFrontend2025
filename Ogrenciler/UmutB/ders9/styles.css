@@ -4,7 +4,11 @@
     "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-.navbar-nav > li > a:hover {
+.navbar-nav > li > a:hover{
+  color: #4285f4;
+}
+
+.specialBlue{
   color: #4285f4;
 }
 
@@ -220,6 +224,28 @@
   color: #000;
   font-size: 30px;
 }
-.h-entry a{
+.h-entry a {
   text-decoration: none;
+}
+
+/* Contact Us */
+
+.contact-us {
+  background-image: url(https://preview.colorlib.com/theme/imagine/images/hero_1.jpg);
+  width: 100%;
+  height: 140vh;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.contact-us.overlay:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.7;
+  background: linear-gradient(to right, #4286f4 0%, #42e2f4 100%);
 }

@@ -1,13 +1,15 @@
-/*.header {
-  top: -25px; 
+.header {
+  top: 0; 
   z-index: 1000;
+  background-color: white;
+  align-items: center;
 }
 .banner h1{
     font-size:2.5rem;
 
 }
-*/
-.features-card:hover {
+
+.features-card:hover {    
   color: white;
   background-color: #007bff;
   cursor: pointer;
@@ -20,7 +22,8 @@
 }
 
 .footer {
-  background: #f8f9fa;
+  background: white;
+  margin: 30px 0;
 }
 
 .footer .social-icons a {
@@ -52,6 +55,11 @@
     padding: 30px; 
     border-radius: 10px; 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+
+
+.contact-form > form > *{
+  margin-bottom: 30px;
 } 
 
 .features-icon {
@@ -66,6 +74,12 @@
 .testimonaial span {
   width: 10px;
   height: 10px;
+}
+
+.contact-title{
+  color: white;
+  padding: 20px 0 50px;
+  font-size: 45px;
 }
 
 @keyframes appear {
@@ -93,4 +107,11 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+
+@media (min-width: 1200px) {
+  .container {
+      max-width: 1140px;
+  }
 }
