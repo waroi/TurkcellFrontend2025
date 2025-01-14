@@ -43,6 +43,10 @@
   background-color: #fff;
 }
 
+.features {
+  padding: 80px 0px;
+}
+
 .features .text {
   padding: 15%;
   background: #f1f1f1;
@@ -68,13 +72,34 @@
 }
 
 .container-team {
-  animation: moveUp 1.5s;
+  animation: moveUp 1s;
 }
 
 .container-features {
-  animation: moveUp 1.5s;
+  animation: moveUp 1s;
 }
 
+.feedback-image {
+  animation: LTR 1s;
+}
+
+.feedback-image-2 {
+  animation: RTL 1s;
+}
+.author-box-1 {
+  animation: RTL 1s;
+}
+.author-box-3 {
+  animation: RTL 1s;
+}
+
+.author-box-2 {
+  animation: LTR 1s;
+}
+
+.author-box-4 {
+  animation: LTR 1s;
+}
 @keyframes moveUp {
   0% {
     transform: translateY(150px);
@@ -83,6 +108,28 @@
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes RTL {
+  0% {
+    transform: translateX(150px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes LTR {
+  0% {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
   }
 }
 
@@ -166,5 +213,23 @@
 }
 
 .team {
+  padding: 80px 0px;
+}
+
+.carousel-indicators .btn-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #dee2e6;
+  border: none;
+  margin: 0 5px;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-indicators .btn-indicator.active {
+  background-color: #4285f4;
+}
+
+.feedback {
   padding: 80px 0px;
 }
