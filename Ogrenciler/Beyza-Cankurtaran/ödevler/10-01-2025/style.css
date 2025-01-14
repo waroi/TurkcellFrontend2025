@@ -2,11 +2,9 @@
   top: 0; 
   z-index: 1000;
   background-color: white;
-  align-items: center;
 }
 .banner h1{
     font-size:2.5rem;
-
 }
 
 .features-card:hover {    
@@ -20,7 +18,15 @@
   height: 20px !important;
   border-radius: 50%;
 }
-
+.team-link{
+  display: none;
+  background-color: #007bff;
+  transition:1s all ease-in-out;
+}
+.team:hover .team-link{
+  display: block;
+  
+}
 .footer {
   background: white;
   margin: 30px 0;
@@ -52,12 +58,8 @@
 } 
 .contact-form { 
     background: white; 
-    padding: 30px; 
-    border-radius: 10px; 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
 }
-
-
 .contact-form > form > *{
   margin-bottom: 30px;
 } 
@@ -83,12 +85,12 @@
 }
 
 @keyframes appear {
-  from {
+  0% {
     opacity: 0;
     transform: translateX(-100px);
   }
 
-  to {
+  75% {
     opacity: 1;
     transform: translateX(0);
   }
