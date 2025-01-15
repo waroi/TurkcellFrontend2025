@@ -23,6 +23,63 @@ li {
   text-decoration: none;
 }
 
+.buton, .contact-us .buton, .about-us .buton, .banner-section .buton {
+  background-color: #4285f4;
+  font-size: 16px;
+  border-radius: 30px;
+  padding: 10px 30px;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 20px -5px rgba(66, 133, 244, 0.4);
+}
+.buton:hover {
+  background-color: #4285f4;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 30px -5px rgba(66, 133, 244, 0.7);
+}
+
+.header-section {
+  top: 0;
+  position: fixed;
+  z-index: 100;
+}
+.header-section nav {
+  box-shadow: rgba(0, 0, 0, 0.2) 4px 0px 20px -10px;
+}
+.header-section .header-logo {
+  font-size: 32px;
+  color: 500;
+  font-weight: #000;
+  line-height: 38.4px;
+}
+.header-section ul {
+  gap: 25px;
+}
+.header-section ul .nav-link {
+  color: #000 !important;
+  font-size: 16px;
+  color: 400;
+  font-weight: #000;
+  line-height: 27.2px;
+}
+.header-section ul .active {
+  color: #4285f4 !important;
+}
+
+.banner-section {
+  margin-top: 100px;
+  z-index: 1;
+}
+.banner-section h1 {
+  font-size: 56px;
+  color: #000;
+  font-weight: 700;
+  line-height: 67.2px;
+}
+.banner-section p {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 27.2px;
+}
 .imagine-section .card {
   background: #f1f1f1 !important;
   border: none;
@@ -34,7 +91,7 @@ li {
 }
 .imagine-section .card:hover .card-title {
   font-size: 20px;
-  color: white;
+  color: #fff;
   font-weight: 500;
   line-height: 21.6px;
 }
@@ -43,14 +100,14 @@ li {
 }
 .imagine-section .card:hover .icon-circle {
   color: #4285f4;
-  background-color: white;
+  background-color: #fff;
 }
 .imagine-section .card:hover a {
-  color: white;
+  color: #fff;
 }
 .imagine-section .card .card-title {
   font-size: 20px;
-  color: black;
+  color: #000;
   font-weight: 500;
   line-height: 21.6px;
   transition: 0.2s ease;
@@ -63,7 +120,7 @@ li {
   align-items: center;
   justify-content: center;
   background-color: #4285f4;
-  color: white;
+  color: #fff;
   font-size: 28px;
   top: 0;
   left: 50%;
@@ -73,7 +130,7 @@ li {
 
 .gather-section .card-title {
   font-size: 40px;
-  color: black;
+  color: #000;
   font-weight: 700;
   line-height: 48px;
 }
@@ -90,7 +147,7 @@ li {
 }
 .gather-section .gather-card .gather-content p {
   font-size: 16px;
-  color: black;
+  color: #000;
   font-weight: 400;
   line-height: 27.2px;
 }
@@ -105,7 +162,7 @@ li {
 }
 .about-us h3 {
   font-size: 40px;
-  color: black;
+  color: #000;
   font-weight: 700;
   line-height: 48px;
 }
@@ -114,7 +171,7 @@ li {
 }
 .about-us .about-us-content h4 {
   font-size: 28px;
-  color: black;
+  color: #000;
   font-weight: 700;
   line-height: 48px;
 }
@@ -138,23 +195,9 @@ li {
 .about-us .about-us-content ul li i {
   color: #8bc34a;
 }
-.about-us .buton {
-  background-color: #4285f4;
-  font-size: 16px;
-  border-radius: 30px;
-  padding: 10px 30px;
-  transition: 0.3s ease;
-  box-shadow: 0 4px 20px -5px rgba(66, 133, 244, 0.4);
-}
-.about-us .buton:hover {
-  background-color: #4285f4;
-  transform: translateY(-3px);
-  box-shadow: 0 5px 30px -5px rgba(66, 133, 244, 0.7);
-}
-
 .our-team .card-title {
   font-size: 18px;
-  color: black;
+  color: #000;
   font-weight: 500;
   line-height: 21.6px;
 }
@@ -233,6 +276,15 @@ li {
   overflow: hidden;
   transition: 0.3s ease;
 }
+.our-team .card .card-img-1,
+.our-team .card .card-img-2,
+.our-team .card .card-img-3,
+.our-team .card .card-img-4,
+.our-team .card .card-img-5,
+.our-team .card .card-img-6 {
+  background-size: 120%;
+  transition: background-size 1s ease;
+}
 .our-team .card .social {
   width: 100%;
   height: 57px;
@@ -242,7 +294,7 @@ li {
 }
 .our-team .card .social i {
   font-size: 16px;
-  color: white;
+  color: #fff;
 }
 .our-team .card:hover .social {
   bottom: 0;
@@ -251,12 +303,17 @@ li {
   font-size: 16px;
   color: white;
 }
-.our-team .card:hover .card-img-1 {
-  background-size: 105%;
+.our-team .card:hover .card-img-1,
+.our-team .card:hover .card-img-2,
+.our-team .card:hover .card-img-3,
+.our-team .card:hover .card-img-4,
+.our-team .card:hover .card-img-5,
+.our-team .card:hover .card-img-6 {
+  background-size: 130%;
 }
 .our-team .our-team-header h3 {
   font-size: 40px;
-  color: black;
+  color: #000;
   font-weight: 700;
   line-height: 48px;
 }
@@ -282,7 +339,7 @@ li {
 }
 .testimonials h2 {
   font-size: 40px;
-  color: black;
+  color: #000;
   font-weight: 700;
   line-height: 48px;
 }
@@ -313,7 +370,7 @@ li {
 
 .blog h3 {
   font-size: 40px;
-  color: black;
+  color: #000;
   font-weight: 700;
   line-height: 48px;
 }
@@ -326,7 +383,7 @@ li {
 }
 .blog .card h5 {
   font-size: 30px;
-  color: black;
+  color: #000;
   font-weight: 500;
   line-height: 36px;
 }
@@ -347,6 +404,20 @@ li {
 }
 .blog .card a {
   text-decoration: none;
+}
+
+.contact-us {
+  background-image: url(https://preview.colorlib.com/theme/imagine/images/hero_1.jpg.webp);
+  background-size: cover;
+}
+.contact-us .overlay {
+  background-image: linear-gradient(to right, rgba(66, 134, 244, 0.6) 0%, rgba(66, 226, 244, 0.6) 100%);
+}
+.contact-us h3 {
+  font-size: 40px;
+  color: #fff;
+  font-weight: 700;
+  line-height: 48px;
 }
 
 /*# sourceMappingURL=main.css.map */
