@@ -1,0 +1,462 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    overflow-x: hidden;
+}
+a {
+    text-decoration: none;
+}
+$blue: #4285f4;
+$blockBlue : #007bff;
+$pGray: #6c757d;
+$bgCards : #f1f1f1;
+$bgGray: #f6f6f6;
+$bgGrayText: #808080;
+$white: #fff;
+$span: #dee2e6;
+$black: #000000;
+$metaGray: #b3b3b3;
+$bgOverlay: #42e2f4;
+@mixin text-props($font-size, $font-weight, $color, $text-align) {
+    font-size: $font-size;
+    font-weight: $font-weight;
+    color: $color;
+    text-align: $text-align;
+}
+@mixin icon() {
+    position: absolute;
+    font-size: 32px;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    color: $white;
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.text-bg {
+    h1 {
+        @include text-props(3.5rem, bold, $black, start);
+        line-height: 1.2;
+        margin-bottom: 0.5rem;
+        margin-top: 0;
+    }
+    p {
+        @include text-props(1rem, 300, $pGray, start);
+    }
+    img {
+        max-width: 100%;
+        height: auto;
+        top: 60%;
+        object-fit: inherit;
+        width: 100%;
+        height: 100%;
+        bottom: 0;
+        right: 0;
+    }
+    .btn {
+        padding: 10px 30px;
+        text-align: center;
+        box-shadow: 0 4px 20px -5px rgba(66, 133, 244, 0.4);
+        border-radius: 30px;
+        cursor: pointer;
+    }
+}
+.imagine-featured {
+    h2 {
+        @include text-props(40px, bold, $black, center);
+    }
+    .section-title {
+        @include text-props(40px, bold, $black, center);
+    }
+    .lead {
+        @include text-props(20px, 300, $black, center);
+    }
+    p {
+        @include text-props(16px, 300, $black, center);
+    }
+    .mb-5 {
+        padding: 3em 0 0 0;
+    }
+    .unit-4 {
+        background: $white;
+        border-radius: 5px;
+        transition: .3s all ease;
+        position: relative;
+        text-align: center;
+    }
+    .unit-4 .unit-4-icon .icon-wrap {
+        width: 80px;
+        height: 80px;
+        position: relative;
+        border-radius: 50%;
+        top: 50px;
+        display: inline-block;
+        background-color: $blue;
+        box-shadow: 0 4px 20px -5px rgba(66, 133, 244, 0.4);
+        z-index: 1;
+    }
+    .fa-refresh,
+    .fa-shop,
+    .fa-basket-shopping,
+    .fa-plug,
+    .fa-face-smile,
+    .fa-rotate-left {
+        @include icon();
+    }
+    .card {
+        background-color: $bgCards;
+        padding: 50px 30px 30px;
+        border: none;
+    }
+    .unit-4:nth-of-type(1):hover {
+        .unit-4-icon .icon-wrap {
+            background-color: $white;
+        }
+        .unit-4-icon .icon-wrap i {
+            color: $blue;
+        }
+        .card {
+            background-color: $blue;
+        }
+        .card h5,
+        .card h3,
+        .card p,
+        .card a {
+            color: $white;
+        }
+    }
+}
+.feature-big {
+    h2 {
+        @include text-props(40px, bold, $black, start);
+    }
+    p {
+        @include text-props(16px, 400, $pGray, start);
+    }
+    .mb-5 {
+        padding: 3em 0;
+    }
+    .author-box {
+        box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+        padding: 20px;
+        border: 1px solid #eee;
+        border-left: 10px solid $blue;
+        .mr-auto {
+            @include text-props(16px, 400, $black, start);
+        }
+        blockquote {
+            @include text-props(16px, 400, $pGray, start);
+            font-style: italic;
+        }
+        .mr-3 {
+            width: 50px;
+            height: 50px;
+            img {
+                border-radius: 50%;
+                width: 100%;
+            }
+        }
+    }
+}
+.about-section {
+    background-color: $bgGray ;
+    h2 {
+        margin-top: 2em;
+        @include text-props(40px, bold, $black, center);
+    }
+    .container {
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .col-lg-5 {
+        h2 {
+            @include text-props(1.7rem, bold, $black, start);
+        }
+        p {
+            @include text-props(16px, 400, $pGray, start);
+        }
+        .btn.btn-primary {
+            padding: 10px 30px;
+            text-align: center;
+            box-shadow: 0 4px 20px -5px rgba(66, 133, 244, 0.4);
+            border-radius: 50px;
+            cursor: pointer;
+            border: none;
+        }
+    }
+}
+.team-section {
+    h2 {
+        @include text-props(40px, bold, $black, center);
+    }
+    p {
+        @include text-props(1.25rem, 300, $pGray, center);
+        margin-top: 0;
+    }
+    .person {
+        h2 {
+            @include text-props(18px, 500, $black, start);
+        }
+        span {
+            @include text-props(12px, 700, $blue, start);
+            letter-spacing: .1em;
+            text-transform: uppercase;
+        }
+        p {
+            @include text-props(16px, 400, $pGray, start);
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+        .bio-img {
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            margin-bottom: 30px;
+            figure {
+                position: relative;
+                margin: 0;
+                img {
+                    display: block;
+                    width: 100%;
+                    height: auto;
+                    transition: transform 0.3s ease-in-out;
+                }
+            }
+            .social {
+                z-index: 2;
+                padding: 10px 0;
+                width: 100%;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                transform: translateY(100%);
+                background: $blue;
+                display: flex;
+                justify-content: center;
+                gap: 15px;
+                transition: transform 0.3s ease-in-out;
+            }
+            &:hover {
+                figure img {
+                    transform: scale(1.1);
+                }
+                .social {
+                    transform: translateY(0);
+                }
+            }
+        }
+    }
+}
+.testimonials-section {
+    background-color: $bgGray;
+    h2 {
+        @include text-props(40px, bold, $black, center);
+    }
+    p {
+        @include text-props(1.5rem, 300, $pGray, center);
+        line-height: 1.7;
+        margin-top: 0;
+        font-style: italic;
+    }
+    .mb-5 {
+        padding: 3em 0;
+    }
+    .testimonials-container {
+        position: relative;
+        width: 100%;
+        input[type="radio"] {
+            display: none;
+        }
+        .testimonials {
+            display: flex;
+            overflow: hidden;
+            position: relative;
+            .testimonial {
+                flex: 0 0 100%;
+                opacity: 0;
+                transition: opacity 0.5s ease-in-out;
+                position: absolute;
+                width: 100%;
+                text-align: center;
+                figure {
+                    margin-bottom: 20px;
+                    img {
+                        max-width: 100px;
+                        height: 100px;
+                        object-fit: contain;
+                        border-radius: 50%;
+                        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                    }
+                }
+            }
+        }
+        input#dot1:checked~.testimonials #testimonial1,
+        input#dot2:checked~.testimonials #testimonial2,
+        input#dot3:checked~.testimonials #testimonial3,
+        input#dot4:checked~.testimonials #testimonial4 {
+            opacity: 1;
+            position: relative;
+        }
+        .owl-dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            .owl-dot {
+                margin: 0 5px;
+                margin-bottom: 50px;
+                cursor: pointer;
+                border-radius: 50%;
+                i {
+                    font-size: 12px;
+                    color: #dee2e6;
+                    transition: color 0.3s;
+                }
+                &:hover {
+                background-color: #aaa;
+            }
+            .owl-dot input {
+                display: none; 
+            }
+            &.active {
+                background-color: $blue; 
+
+                i {
+                    color: $blue; 
+                }
+            }
+            }
+            input#dot1:checked~& label[for="dot1"] i,
+            input#dot2:checked~& label[for="dot2"] i,
+            input#dot3:checked~& label[for="dot3"] i,
+            input#dot4:checked~& label[for="dot4"] i {
+                color: $blue;
+            }
+            label {
+                display: flex;
+                align-items: center;
+
+                input[type="radio"]:checked+& i {
+                    color: $blue;
+                }
+            }
+        }
+        #dot1:checked~.owl-dots label[for="dot1"],
+        #dot2:checked~.owl-dots label[for="dot2"],
+        #dot3:checked~.owl-dots label[for="dot3"],
+        #dot4:checked~.owl-dots label[for="dot4"] {
+            background-color: $blue; 
+            i {
+                color: $blue; 
+            }
+        }
+    }
+}
+.blog-section {
+    .container{
+        padding-bottom: 3em;
+    }
+    h2 {
+        @include text-props(40px, bold, $black, center);
+    }
+    .mb-4{
+        margin-bottom: 1.5rem;
+    }
+    .mb-5 {
+        padding: 3em 0;
+    }
+    a {
+        @include text-props(30px, 500, $black, start);
+    }
+    .h-entry{
+        img{
+            margin-bottom: 30px;
+        }
+        h2 {
+            @include text-props(30px, 500, $black, start);
+            line-height: 1.2
+        }
+        p{
+            @include text-props(16px, 400, $pGray, start);
+        }
+        span{
+            a{
+                @include text-props(16px, 400, $blockBlue, start);
+            }
+        }
+        .meta{
+            @include text-props(14px, 500, $metaGray, start);
+            a{
+                @include text-props(14px, 500, $blockBlue, start);
+            }
+        }
+    }
+}
+.contact-section {
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    h2 {
+        padding-top: 2em;
+        @include text-props(40px, bold, $white, center);
+        line-height: 1.2;
+    }
+    &::after{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(to right, $blue 0%, $bgOverlay 100%);
+        z-index: 1;
+        opacity: 0.7;
+    }
+    .container {
+        .mb-5 {
+            padding: 1em 0;
+            .h4{
+                @include text-props(1.5rem, 500, $black, start);
+                line-height: 1.2;
+            }
+            .text-black{
+                padding: 1em 0;
+            }
+        }
+        .btn{
+            padding: 10px 30px;
+            text-align: center;
+            box-shadow: 0 4px 20px -5px rgba(66, 133, 244, 0.4);
+            border-radius: 30px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        z-index: 2;
+        position: relative;
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+.footer{
+    p{
+        @include text-props(16px, 400, $pGray, center);
+    }
+}

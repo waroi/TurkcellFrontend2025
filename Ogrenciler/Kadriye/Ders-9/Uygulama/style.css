@@ -1,0 +1,301 @@
+* {
+  box-sizing: border-box;
+}
+.container {
+  max-width: 1140px;
+}
+.text-secondary {
+  color: rgb(128, 128, 128) !important;
+}
+.text-success {
+  color: #8bc34a !important;
+}
+.border-primary {
+  border-color: #4285f4 !important;
+}
+.btn-primary {
+  background-color: #4285f4;
+  color: #fff;
+  border-color: #4285f4;
+}
+.icon {
+  background-color: #4285f4;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  z-index: 1;
+  color: #fff;
+  font-size: 30px;
+}
+/*---------Header---------------*/
+.navbar-toggler {
+  border: none;
+}
+.navbar-brand h1 {
+  font-size: 32px;
+  font-weight: 400;
+}
+.navbar-toggler .navbar-toggler-icon {
+  background-image: url("https://img.icons8.com/?size=100&id=8113&format=png&color=000000");
+  font-size: 15px;
+  line-height: 38.4px;
+}
+.offcanvas {
+  --bs-offcanvas-width: 95%;
+}
+.navbar .offcanvas-body .navbar-nav > li > a:hover {
+  color: #4285f4;
+}
+.navbar .offcanvas-body .navbar-nav > li > .active {
+  color: #4285f4;
+}
+
+/*--------------------Banner---------------*/
+.banner img {
+  margin-bottom: 30px;
+}
+.banner h1 {
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 38.4px;
+}
+.banner p {
+  line-height: 27.2px;
+}
+
+/*---General Button Style------*/
+.btn {
+  font-size: 16px;
+  border-radius: 30px;
+  padding: 10px 30px;
+}
+/*----------Feature--------------*/
+
+.features {
+  padding: 40px 0px; /*Büyük ekranda 80*/
+}
+.features .feature-title h2 {
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 36px;
+}
+.features .features-title p {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 34px;
+}
+.features .feature-card .text h3 {
+  font-size: 18px;
+  font-weight: 400;
+}
+.features .feature-card .text p {
+  line-height: 27.2px;
+}
+.features .feature-card .text {
+  padding: 50px 30px 30px 30px;
+  background: #f1f1f1;
+  border-radius: 10px;
+  text-align: center;
+}
+.feature-card {
+  position: relative;
+  border: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.feature-card:hover .text {
+  background-color: #4285f4;
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+.feature-card:hover .text h3 {
+  color: #fff !important;
+}
+.feature-card:hover .text p {
+  color: #fff !important;
+}
+.feature-card:hover .text p a {
+  color: #fff !important;
+}
+
+.feature-card:hover .icon {
+  background-color: white !important;
+  color: #4285f4 !important;
+  /* Kart arka plan rengi */
+}
+
+.container-features {
+  animation: moveUp 1s;
+}
+
+@keyframes moveUp {
+  0% {
+    transform: translateY(150px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes RTL {
+  0% {
+    transform: translateX(150px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes LTR {
+  0% {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.contact {
+  background-image: linear-gradient(
+      to right,
+      rgba(66, 134, 244, 0.7) 0%,
+      rgba(66, 226, 244, 0.7) 100%
+    ),
+    url("https://preview.colorlib.com/theme/imagine/images/hero_1.jpg.webp");
+
+  background-attachment: fixed;
+  background-size: cover;
+
+  padding: 80px 0px;
+}
+
+.blog {
+  padding: 80px 0px;
+}
+.blog .blog-image img {
+  margin-bottom: 30px;
+}
+.blog .blog-title h2 {
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 36px;
+}
+/* .blog .blog-title .blog-info{
+  color: #b3b3b3;
+  font-size: 14px;
+} */
+
+.Testimonials {
+  padding: 80px 0px;
+}
+
+.carousel-indicators .btn-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #dee2e6;
+  border: none;
+  margin: 0 5px;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-indicators .btn-indicator.active {
+  background-color: #4285f4;
+}
+
+/*--------------Feedback----------------*/
+.feedback {
+  padding: 80px 0;
+}
+.feedback .feedback-title h2 {
+  font-size: 38px;
+  margin-bottom: 30px;
+}
+.feedback .feedback-title p {
+  line-height: 27.2px;
+  margin-bottom: 24px;
+}
+.person-card {
+  border-left-width: 10px !important;
+  border-radius: 4px;
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+.feedback-image {
+  animation: LTR 1s;
+}
+
+.feedback-image-2 {
+  animation: RTL 1s;
+}
+.author-box-1 {
+  animation: RTL 1s;
+}
+.author-box-3 {
+  animation: RTL 1s;
+}
+
+.author-box-2 {
+  animation: LTR 1s;
+}
+
+.author-box-4 {
+  animation: LTR 1s;
+}
+
+/*------------About-------------------*/
+.about {
+  padding: 40px 0;
+}
+.about {
+  .about-title h2 {
+    font-size: 28px;
+  }
+  .about-title p {
+    line-height: 27.2px;
+  }
+}
+/*--------------Team--------------*/
+.team {
+  padding: 80px 0px;
+  .team-title h2 {
+    font-size: 28px;
+  }
+  .team-title p {
+    line-height: 34px;
+    font-size: 20px;
+  }
+}
+
+.container-team {
+  animation: moveUp 1s;
+}
+.team-card .team-image {
+  margin-bottom: 30px;
+}
+.team-card .team-image:hover .icon-bar {
+  transform: translateY(-100%);
+  z-index: 2;
+  padding: 10px 0;
+  width: 100%;
+  position: absolute;
+  transition: 0.3s all ease;
+  background: #4285f4;
+  opacity: 1 !important;
+}
+
+.team-card .team-image:hover {
+  transform: scale(1.01);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.team-card .team-image .person {
+  position: relative;
+  transition: 0.3s all ease-in-out;
+}

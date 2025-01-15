@@ -1,0 +1,263 @@
+*{
+    font-family: "Nunito", serif;
+    line-height: 1.2;
+}
+p{
+    line-height: 1.6;
+    font-weight: 300;
+}
+a{
+    text-decoration: none;
+}
+.ctn{
+    padding: 80px 0;
+}
+.sticky-wrap{
+    background-color: white !important;
+    padding: 24px;
+}
+.blue-colored{
+    color: #007bff;
+}
+.navbar-brand{
+    font-size: 32px;
+    font-weight: 400;
+}
+.nav-link{
+    padding: 15px 20px !important;
+}
+.banner-text{
+    font-size: 56px;
+    font-weight: 700;
+    color: black;
+    margin-top: 48px;
+}
+.lorem-text{
+    color: #6c757d;
+    margin-bottom: 48px;
+}
+.btn{
+    padding: 10px 30px ;
+    border-radius: 30px;
+    font-size: 16px;
+}
+.if{
+    font-size: 40px;
+    color: black;
+    font-weight: 700;
+}
+.if-p{
+    font-size: 20px;
+    color: #808080;
+}
+.if-card{
+    position: relative;
+    padding: 50px 30px 30px;
+    margin-bottom: 64px;
+    border: none;
+    background-color: #f1f1f1;
+    text-align: center;
+    transition: 750ms ease-in-out 0s;
+}
+.col-4{
+    padding: 0 15px;
+}
+.icon{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4285f4;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    top: -25%;
+    left: 40%;
+    transition: 350ms ease-in-out 0s;
+    svg{
+        width: 32px;
+        height: 32px;
+        fill: white;
+    }
+}
+.if-card:hover{
+    background: #4285f4;
+    box-shadow: 0 4px 20px -5px rgba(66, 133, 244, 0.4);
+    top: -7px;
+    .icon{
+        background-color: white;
+        box-shadow: 0 4px 20px -5px rgba(66, 133, 244, 0.4);
+        svg{
+            fill: #4285f4;
+        }
+    }
+    .card-text{
+        color: rgba(255, 255, 255, 0.7);
+    }
+    a, .card-title{
+    color: white;
+    }
+}
+.bg-gray{
+    background-color: #f6f6f6;
+    width: 100%;
+    p{
+        color: #808080;
+        font-weight: 500;
+        line-height: 1.7;
+    }
+    .col-5{
+        padding-left: 48px;
+    }
+}
+.if2{
+    margin-bottom: 30px;
+    font-size: 40px;
+    font-weight: 700;
+}
+.author-card img{
+    max-width: 50px;
+}
+.author-card{
+    padding: 20px;
+    border: 1px solid #eee;
+    border-left: 10px solid #4285f4;
+}
+.site-section{
+    padding: 80px 0;
+}
+.ul-check li{
+    position: relative;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    color: #808080;
+    span img{
+        margin-right: 15px;
+    }
+}
+.our-team{
+    h2{
+        font-size: 40px;
+        font-weight: 700;
+        color: #000;
+    }
+    p{
+        font-size: 20px;
+        color:#808080;
+    }
+}
+.ot-card{
+    border: none;
+    margin-bottom: 30px;    
+    position: relative;
+    .card-body{
+        padding: 0;
+    }
+    h5{
+        font-size: 18px;
+    }
+    h6{
+        font-size: 12px;
+        color: #4285f4;
+        font-weight: 600;
+    }
+    p{
+        font-size: 16px;
+        color: #808080;
+    }
+}
+.ot-img{
+    overflow: hidden;
+    position: relative;
+    height: 418px;
+    margin-bottom: 30px;
+    img{
+        transition: 350ms ease-in-out 0s;
+    }
+}
+.sm-icons{
+    display: none;
+    z-index: 5112;
+    padding: 10px 0;
+    width: 100%;
+    height: 70px;
+    position: absolute;
+    bottom: 16%;
+    transform: translateY(100%);
+    left: 0;
+    transition: 500ms all ease-in-out;
+    background: #4285f4;
+    padding: 20px 170px;
+    svg{
+        width: 15px;
+        height: 15px;
+        fill: white;
+        margin-right: 7px;
+    }
+}
+.ot-card:hover{
+    .ot-img img{
+        transform: scale(1.1);
+    }
+    .sm-icons{
+        display: block;
+    }
+}
+
+.t-person{
+    max-width: 100px;
+    border-radius: 50%;
+}
+.testimonial {
+    width: 60%;
+    height: auto;
+}
+.testimonial p{
+    font-size: 24px;
+    font-style: italic;
+    color: #808080;
+}
+.testimonial strong{
+    font-style: normal;
+    color: #000;
+    font-size: 16px;
+}
+.h-entry img{
+    margin-bottom: 30px;   
+}
+.h-entry .meta {
+    color: #b3b3b3;
+    font-size: 14px;
+}
+.h-entry p{
+    color: #808080;
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+.bg{
+    background-image: url(https://preview.colorlib.com/theme/imagine/images/hero_1.jpg.webp);
+    background-attachment: fixed;
+    width: 100%;
+    background-size: cover;
+}
+.overlay{
+    background: linear-gradient(to right, #4286f480 0%, #42e2f480 100%);
+}
+.form-group{
+    margin-bottom: 16px;
+}
+.form-group label{
+    margin-bottom: 8px;
+}
+.mb-0 a {
+    color: #007bff;
+    margin: 0 10px;
+    font-size: 20px;
+}
+.mb-0 a:hover {
+    color: #0056b3;
+}
+.heart-icon {
+    color: red;
+    font-size: 16px;
+}

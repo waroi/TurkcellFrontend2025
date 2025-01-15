@@ -510,3 +510,220 @@
     }
   }
   
+  /* Cansu */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    background: #f4f4f4;
+    color: #333;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  @mixin flex-center($direction: row, $justify: center, $align: center, $gap: 0) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    gap: $gap;
+  }
+  
+  @mixin text-style($size, $color, $weight: normal) {
+    font-size: $size;
+    color: $color;
+    font-weight: $weight;
+  }
+  
+  .blog-section {
+    padding: 50px 20px;
+    text-align: center;
+    background: #f4f5f9;
+  
+    .blog-header {
+      margin-bottom: 30px;
+    }
+  
+    .blog-title {
+      @include text-style(2.5rem, #0d6efd, 700);
+      margin-bottom: 10px;
+    }
+  
+    .blog-subtitle {
+      @include text-style(1.1rem, #6c757d);
+      margin-bottom: 30px;
+    }
+  
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  
+    .blog-entry {
+      @include flex-center(column, flex-start, flex-start);
+      background: none;
+      border: none;
+  
+      .blog-content {
+        text-align: left;
+        width: 100%;
+      }
+  
+      .blog-heading {
+        @include text-style(1.5rem, #212529, 500);
+        margin-bottom: 10px;
+      }
+  
+      .blog-meta {
+        @include text-style(0.9rem, #6c757d);
+      }
+  
+      .blog-link {
+        color: #0d6efd;
+        font-weight: 500;
+
+      }
+  
+      .blog-description {
+        @include text-style(1rem, #495057);
+        line-height: 1.6;
+      }
+    }
+  }
+  
+  .newsletter {
+    background: #007bff;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  
+    .newsletter-container {
+      @include flex-center(row, center, center, 20px);
+      flex-wrap: wrap;
+    }
+  
+    .newsletter-text {
+      h3 {
+        @include text-style(1.5rem, #fff);
+      }
+    }
+  
+    .newsletter-form {
+      @include flex-center(row, center, center, 10px);
+  
+      input {
+        padding: 10px;
+        border: none;
+        border-bottom: 2px solid #fff;
+        background: transparent;
+        color: #fff;
+  
+        &::placeholder {
+          color: #ccc;
+        }
+      }
+  
+      button {
+        padding: 10px 20px;
+        background: #fff;
+        color: #007bff;
+        border: none;
+        cursor: pointer;
+        transition: background 0.3s;
+  
+        &:hover {
+          background: #f0f0f0;
+        }
+      }
+    }
+  }
+  
+  .footer {
+    background: #222;
+    padding: 40px 20px;
+    color: #ccc;
+  
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+  
+      h4 {
+        @include text-style(1.2rem, #fff);
+      }
+  
+      p {
+        @include text-style(0.9rem, #ccc);
+        line-height: 1.6;
+      }
+  
+      ul {
+        list-style: none;
+  
+        li {
+          margin-bottom: 10px;
+  
+          a {
+            font-size: 0.9rem;
+            transition: color 0.3s;
+  
+            &:hover {
+              color: #fff;
+            }
+          }
+        }
+      }
+  
+      .footer-follow {
+        @include flex-center(row, flex-start, center);
+  
+        .footer-icons {
+          @include flex-center(row, flex-start, center, 10px);
+  
+          a {
+            font-size: 1.2rem;
+            color: #bbb;
+            transition: color 0.3s;
+  
+            &:hover {
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  
+    .footer-bottom {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.8rem;
+      color: #888;
+  
+      span {
+        color: red;
+      }
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .blog-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .newsletter-form {
+      flex-direction: column;
+    }
+  }
+  

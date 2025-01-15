@@ -6,71 +6,100 @@
     <title>HTML Tablolar</title>
 </head>
 <body>
-    <!-- <table border="1" cellpadding="5" cellspacing="0">
-        <thead>
-            <th>Ad</th>
-            <th>Soyad</th>
-            <th>Yaş</th>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Cenk</td>
-                <td>Aydın</td>
-                <td>22</td>
-            </tr>
-            <tr>
-                <td>Ali</td>
-                <td>Yılmaz</td>
-                <td>25</td>
-            </tr>
-            <tr>
-                <td>Mahmut</td>
-                <td>Haliloğlu</td>
-                <td>35</td>
-            </tr>
+   <!-- Tablolarda tr hem başlık hem de hücersel verileri kapsar
+        th başlık için kullanılır
+        td hücresel veriler için kullanılır
+         -->
+    
+         <!-- <table border="1" cellpadding="5" cellspacing="0">
+            <caption>Öğrenciler</caption>
+            <thead>
+                <tr>
+                    <th>Ad</th>
+                    <th>Soyad</th>
+                    <th>Yas</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Elanur</td>
+                    <td>Toptas</td>
+                    <td>22</td>
+                </tr>
+                <tr>
+                    <td>Edanur</td>
+                    <td colspan="2">Toptas</td>
+                    
+                </tr>
+            </tbody>
+         </table>
 
-        </tbody>
-    </table> -->
+         <table border="1" cellpadding="5" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Ad</th>
+                    <th>Soyad</th>
+                    <th>Yas</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="2">Elanur</td>
+                    <td>Toptas</td>
+                    <td>22</td>
+                </tr>
+                <tr>
+                    
+                    <td>Toptas</td>
+                    <td>21</td>
+                </tr>
+            </tbody>
+         </table> -->
 
-    <!-- <form action="">
+    <!--  <form action =" ">
         <div>
-            <label for="name">Ad:</label>
-            <input type="text" id="name">
+            <label for="name">ad:</label>
+            <input type="text" id="name" name="name" value=" " > 
+        </div>       
+        <div>
+            <label for="password"> Parola:</label>
+            <input type="password"  id="password"  name="password" >
         </div>
         <div>
-            <label for="email">Email:</label>
-            <input type="email" id="email">
+            <label for="email"> E-posta:</label>
+            <input type="email" id="email"  name="email" >
+        </div>
+
+        <div>
+            <label for="date">Doğum Tarihi :</label>
+            <input type="date" id="date" name="date">
         </div>
         <div>
-            <label for="password">Parola:</label>
-            <input type="password" id="password">
+            <label for="color">Renk :</label>
+            <input type="color" id="color" name="color">
         </div>
-        <div>
-            <label for="date">Doğum Tarihi:</label>
-            <input type="date" id="date">
-        </div>
-        <div>
-            <label for="color">Renk:</label>
-            <input type="color" id="color">
-        </div>
+  <hr>
         <div>
             <label>Cinsiyet: </label>
-            <label for="woman">Kadın</label>
-            <input type="radio" id="woman" name="gender">      
+            <label for="woman">Kadin</label>
+            <input type="radio" id="woman" name="gender">
             <label for="man">Erkek</label>
             <input type="radio" id="man" name="gender">
         </div>
+
         <div>
-            <label>Programlama Dilleri: </label>
+            <label> Programlama Dilleri: </label>
             <label for="python">Python</label>
             <input type="checkbox" id="python" name="python">
-            <label for="javascript">Javascript</label>
+            <label for="javascript"> javascript</label>
             <input type="checkbox" id="javascript" name="javascript">
         </div>
+       
         <div>
-            <label for="message">Mesaj: </label>
-            <textarea name="message" id="message"></textarea>
+            <label for="message">mesaj:</label>
+            <textarea id="message" name="message"> </textarea>
         </div>
+
         <div>
             <button type="submit">Gönder</button>
         </div>

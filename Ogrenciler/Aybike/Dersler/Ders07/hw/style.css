@@ -12,6 +12,12 @@ body {
 	padding: 0 70px;
 }
 
+.main-text {
+	font-size: 36px;
+	font-weight: 700;
+	letter-spacing: 4px;
+}
+
 .bg-shape-1 {
 	position: absolute;
 	top: 0;
@@ -41,10 +47,10 @@ header {
 	padding-top: 10px;
 }
 
-.holder {
+.wrapper {
 	display: flex;
-	justify-content: space-between;
 	align-items: center;
+	justify-content: space-between;
 }
 
 h1 {
@@ -73,13 +79,7 @@ h4 {
 	padding-bottom: 15px;
 }
 
-.coming-text {
-	font-size: 36px;
-	font-weight: 700;
-	letter-spacing: 4px;
-}
-
-.coming-form {
+.main-form {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -120,26 +120,26 @@ input[type="text"] {
 	transition: 0.5s ease;
 }
 
-.coming-image {
+.main-image {
 	width: calc(30%);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
 
-.coming-image .img-box {
+.main-image .img-box {
 	position: relative;
 	margin-bottom: 32px;
 	z-index: 1;
 }
 
-.coming-image img {
+.main-image img {
 	position: relative;
 	max-width: 100%;
 	border-radius: 50%;
 }
 
-.coming-text .wave-image {
+.main-text .wave-image {
 	background-image: url(./images/wavy-shape.png);
 	width: 100%;
 	height: 20px;
@@ -158,7 +158,7 @@ input[type="text"] {
 	}
 }
 
-.coming-image .img-box::before {
+.main-image .img-box::before {
 	content: "";
 	position: absolute;
 	top: -45px;
@@ -189,7 +189,7 @@ input[type="text"] {
 	}
 }
 
-.coming-image .img-box::after {
+.main-image .img-box::after {
 	content: "";
 	position: absolute;
 	right: -420px;
@@ -214,6 +214,7 @@ input[type="text"] {
 		border-color: var(--main-color);
 	}
 }
+
 .nyan {
 	width: 105px;
 	height: 68px;

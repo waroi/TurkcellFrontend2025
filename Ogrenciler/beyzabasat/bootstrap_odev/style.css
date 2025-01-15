@@ -1,0 +1,254 @@
+body {
+	background-color: white;
+}
+
+.navbar-brand {
+	font-family: Nunito, -apple-system, "system-ui", "Segoe UI", Roboto,
+		"Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+		"Segoe UI Symbol", "Noto Color Emoji";
+	font-size: 32px;
+	font-weight: 500;
+	color: black;
+}
+
+.navbar-brand:hover {
+	color: #4285f4;
+}
+
+.btn.btn-primary {
+	border-width: 2px;
+	background: #4285f4;
+	border-color: #4285f4;
+	color: #fff;
+	position: relative;
+	top: 0;
+	transition: 0.3s all ease;
+	box-shadow: 0 4px 20px -5px rgba(66, 133, 244, 0.4);
+	border-radius: 30px;
+}
+
+.img-absolute {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	top: 60%;
+	transform: translateY(-50%) translateX(30%);
+}
+
+@media (max-width: 991.98px) {
+	.img-absolute {
+		position: relative;
+		top: auto;
+		transform: translateY(0%) translateX(0%);
+		margin-bottom: 30px;
+	}
+
+	.site-blocks-cover h1 {
+		font-size: 2rem;
+	}
+}
+
+.site-blocks-cover {
+	height: calc(100vh);
+	min-height: 600px;
+	display: flex;
+	align-items: center;
+}
+
+.site-blocks-cover h1 {
+	font-size: 3.5rem;
+	font-weight: 400;
+	color: #000;
+}
+
+.container {
+	max-width: 1140px;
+}
+
+.grid-cards {
+	padding: 30px;
+	background: #f1f1f1;
+	border-radius: 5px;
+	transition: 0.3s all ease;
+	position: relative;
+	top: 0;
+	margin-bottom: 4em;
+	text-align: center;
+	padding-top: 50px;
+}
+
+.grid-cards .grid-cards-icon {
+	position: absolute;
+	transform: translateX(-50%);
+	left: 50%;
+	top: -50px;
+}
+
+.grid-cards .grid-cards-icon .icon-wrap {
+	width: 80px;
+	height: 80px;
+	position: relative;
+	background-color: #4285f4;
+	box-shadow: 0 4px 20px -5px rgba(66, 133, 244, 0.4);
+}
+
+.grid-cards h3 {
+	font-size: 18px;
+	color: #000;
+	transition: 0.3s all ease;
+}
+
+.grid-cards p {
+	font-weight: 300;
+	-webkit-transition: 0.3s all ease;
+	-o-transition: 0.3s all ease;
+	transition: 0.3s all ease;
+}
+
+.grid-cards *:last-child {
+	margin-bottom: 0;
+}
+
+.grid-cards:hover {
+	background: #4285f4;
+	box-shadow: 0 4px 20px -5px rgba(66, 133, 244, 0.4);
+	top: -7px;
+}
+
+.grid-cards:hover .icon-wrap {
+	background-color: #fff;
+	color: #4285f4 !important;
+}
+
+.grid-cards:hover .icon-wrap span {
+	color: #4285f4 !important;
+}
+
+.grid-cards:hover h3 {
+	color: #fff;
+}
+
+.grid-cards:hover p {
+	font-weight: 300;
+	color: rgba(255, 255, 255, 0.7);
+}
+
+.grid-cards:hover p a {
+	color: #fff;
+}
+
+.cards-author {
+	box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.1);
+	border-radius: 4px;
+	padding: 20px;
+	border: 1px solid #eee;
+	border-left: 10px solid #4285f4;
+}
+
+.cards-author *:last-child {
+	margin-bottom: 0;
+}
+
+.cards-author img {
+	max-width: 50px;
+}
+
+.cards-author blockquote {
+	font-style: italic;
+}
+
+.site-section {
+	padding: 2.5em 0;
+}
+
+.bg-image2 {
+	background-size: cover;
+	background-attachment: fixed;
+	position: relative;
+}
+
+.form-group {
+	margin-bottom: 1rem;
+}
+
+.testimonial {
+	max-width: 800px;
+	margin: 0 auto !important;
+	text-align: center;
+}
+
+.testimonial blockquote {
+	font-size: 1.5rem;
+	font-style: italic;
+}
+
+.testimonial figure img {
+	max-width: 100px;
+	margin: 0 auto;
+	border-radius: 50%;
+}
+
+.carousel-indicators button {
+	width: 10px !important;
+	height: 10px !important;
+	border-radius: 50% !important;
+	background-color: #4285f4 !important;
+}
+
+.carousel-item {
+	margin-bottom: 40px;
+}
+
+.people-cards {
+	position: relative;
+	overflow: hidden;
+	border-radius: 8px;
+	transition: transform 0.3s ease-in-out;
+}
+
+.card-image {
+	position: relative;
+	overflow: hidden;
+}
+
+.card-image img {
+	transition: transform 0.3s ease-in-out;
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+.card-image .hover-overlay {
+	position: absolute;
+	bottom: -100%;
+	left: 0;
+	right: 0;
+	height: 15%;
+	background-color: #4285f4;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	transition: bottom 0.3s ease-in-out;
+	color: #fff;
+	font-size: 1.2rem;
+}
+
+.card-image .hover-overlay .social-links a {
+	margin: 0 10px;
+	color: #fff;
+	text-decoration: none;
+	font-size: 1.1rem;
+}
+
+.card-image .hover-overlay .social-links a:hover {
+	color: #f8f9fa;
+}
+
+.people-cards:hover .card-image img {
+	transform: scale(1.1);
+}
+
+.people-cards:hover .hover-overlay {
+	bottom: 0;
+}
