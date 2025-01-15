@@ -1,4 +1,18 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+li {
+  list-style: none !important;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+p {
+  font-size: 14px;
+  color: #777777;
+}
+
 /*!
  * Bootstrap  v5.3.3 (https://getbootstrap.com/)
  * Copyright 2011-2024 The Bootstrap Authors
@@ -11843,6 +11857,162 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important;
   }
+}
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+.section-padding, .pricing-section, .features-section {
+  padding: 120px 0;
+}
+
+.banner-section {
+  background: #6247ea;
+}
+.banner-section .row {
+  padding: 225px 0;
+}
+.banner-section .row h2, .banner-section .row .h2 {
+  font-size: 36px;
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 43.2px;
+  text-transform: uppercase;
+}
+.banner-section .row p {
+  font-weight: 300;
+  color: #f9f9ff;
+  line-height: 24px;
+  opacity: 0.6;
+  max-width: 405px;
+  margin-bottom: 35px;
+}
+.banner-section .row .banner-btn {
+  font-size: 12px;
+  font-weight: 500;
+  color: #fff;
+  line-height: 50px;
+  padding: 0px 50px;
+  background: #ec9d5f;
+  border-radius: 5px;
+  transition: all 300ms linear 0s;
+}
+
+.features-section h2, .features-section .h2 {
+  font-size: 36px;
+  font-weight: 500;
+  color: #222222;
+  line-height: 43.2px;
+}
+.features-section p {
+  font-weight: 300;
+  line-height: 24px;
+}
+.features-section .card .card-body {
+  border: 1px solid #eeeeee;
+  border-radius: 10px;
+  padding: 60px 20px 60px 30px;
+  transition: all 300ms linear 0s;
+}
+
+.pricing-section h2, .pricing-section .h2 {
+  font-size: 36px;
+  font-weight: 500;
+  color: #222222;
+  line-height: 43.2px;
+}
+.pricing-section p {
+  font-weight: 300;
+  line-height: 24px;
+}
+.pricing-section .price_text h3, .pricing-section .price_text .h3 {
+  font-size: 20px;
+  font-weight: 500;
+  color: #222222;
+  line-height: 24px;
+}
+.pricing-section .price_text h4, .pricing-section .price_text .h4 {
+  font-size: 36px;
+  font-weight: 500;
+  color: #222222;
+  line-height: 43.2px;
+}
+.pricing-section .price_text h4 span, .pricing-section .price_text .h4 span {
+  font-size: 14px;
+  font-weight: 300;
+  color: #777777;
+  line-height: 16.8px;
+}
+.pricing-section .price_text li {
+  margin: 0 0 20px;
+}
+.pricing-section .price_text li a {
+  font-size: 14px;
+  font-weight: 400;
+  color: #777777;
+  line-height: 24px;
+}
+
+.custom-section {
+  background: #ec9d5f;
+}
+.custom-section h2, .custom-section .h2 {
+  font-size: 36px;
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 43.2px;
+}
+.custom-section p {
+  font-weight: 300;
+  color: #ffffff;
+  line-height: 24px;
+}
+.custom-section .custom-btn {
+  font-size: 12px;
+  font-weight: 500;
+  color: #222222;
+  line-height: 50px;
+  background: #ffffff;
+  padding: 0px 50px;
+  border-radius: 0px;
+  outline: none !important;
+  box-shadow: none !important;
+  cursor: pointer;
+  transition: all 300ms linear 0s;
+}
+.custom-section .custom-btn:hover {
+  color: #ffffff;
+  background: #6247ea;
+}
+
+.clients-section .card-body {
+  padding: 55px 30px;
+}
+.clients-section .card-body h2, .clients-section .card-body .h2 {
+  font-size: 20px;
+  font-weight: 500;
+  color: #222222;
+  line-height: 24px;
+}
+.clients-section .card-body p {
+  font-weight: 300;
+  color: #777777;
+  line-height: 16.8px;
+}
+.clients-section .left-card {
+  padding: 0;
+}
+.clients-section .left-card h2, .clients-section .left-card .h2 {
+  font-size: 36px;
+  font-weight: 500;
+  color: #222222;
+  line-height: 45px;
+  margin: 30px 0 20px;
+}
+.clients-section .left-card p {
+  font-weight: 300;
+  color: #777777;
+  line-height: 24px;
 }
 
 /*# sourceMappingURL=main.css.map */
