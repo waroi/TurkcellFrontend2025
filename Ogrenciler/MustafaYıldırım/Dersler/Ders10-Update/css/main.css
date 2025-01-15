@@ -4,6 +4,7 @@
  * Copyright 2011-2024 The Bootstrap Authors
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 :root,
 [data-bs-theme=light] {
   --bs-blue: #0d6efd;
@@ -3353,9 +3354,9 @@ textarea.form-control-lg {
   --bs-dropdown-divider-bg: var(--bs-border-color-translucent);
   --bs-dropdown-divider-margin-y: 0.5rem;
   --bs-dropdown-box-shadow: var(--bs-box-shadow);
-  --bs-dropdown-link-color: var(--bs-body-color);
-  --bs-dropdown-link-hover-color: var(--bs-body-color);
-  --bs-dropdown-link-hover-bg: var(--bs-tertiary-bg);
+  --bs-dropdown-link-color: #222222;
+  --bs-dropdown-link-hover-color: #fff;
+  --bs-dropdown-link-hover-bg: #6247ea;
   --bs-dropdown-link-active-color: #fff;
   --bs-dropdown-link-active-bg: #6247ea;
   --bs-dropdown-link-disabled-color: var(--bs-tertiary-color);
@@ -3866,15 +3867,15 @@ textarea.form-control-lg {
 .navbar {
   --bs-navbar-padding-x: 0;
   --bs-navbar-padding-y: 0.5rem;
-  --bs-navbar-color: rgba(var(--bs-emphasis-color-rgb), 0.65);
-  --bs-navbar-hover-color: rgba(var(--bs-emphasis-color-rgb), 0.8);
+  --bs-navbar-color: #222222;
+  --bs-navbar-hover-color: #6247ea;
   --bs-navbar-disabled-color: rgba(var(--bs-emphasis-color-rgb), 0.3);
-  --bs-navbar-active-color: rgba(var(--bs-emphasis-color-rgb), 1);
+  --bs-navbar-active-color: #6247ea;
   --bs-navbar-brand-padding-y: 0.3125rem;
   --bs-navbar-brand-margin-end: 1rem;
   --bs-navbar-brand-font-size: 1.25rem;
-  --bs-navbar-brand-color: rgba(var(--bs-emphasis-color-rgb), 1);
-  --bs-navbar-brand-hover-color: rgba(var(--bs-emphasis-color-rgb), 1);
+  --bs-navbar-brand-color: #6247ea;
+  --bs-navbar-brand-hover-color: #6247ea;
   --bs-navbar-nav-link-padding-x: 0.5rem;
   --bs-navbar-toggler-padding-y: 0.25rem;
   --bs-navbar-toggler-padding-x: 0.75rem;
@@ -11844,13 +11845,98 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-.paragraf {
-  color: red;
-  font-size: 20px;
-  font-weight: bold;
-  text-align: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
+body {
+  line-height: 24px;
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: #777777;
+}
+
+.top-menu a {
+  font-size: 12px;
+  font-weight: 300;
+  color: #fff;
+  text-align: start;
+  line-height: 40px;
+  margin-right: 50px;
+}
+.top-menu .pur-btn {
+  font-size: 12px;
+  font-weight: 500;
+  color: #fff;
+  text-align: start;
+  line-height: 40px;
+  padding: 0 40px;
+  margin: 0;
+}
+
+.navbar {
+  align-items: center;
+}
+.navbar a {
+  font-size: 12px;
+  font-weight: 500;
+  color: #222222;
+  text-align: start;
+  line-height: 80px;
+  font-weight: 500 !important;
+}
+.navbar li {
+  margin-right: 28px;
+}
+.navbar .dropdown li a {
+  font-size: 12px;
+  font-weight: 500;
+  color: #222222;
+  text-align: start;
+  line-height: 45px;
+  padding: 0 30px;
+}
+.navbar .dropdown li a:hover {
+  font-size: 12px;
+  font-weight: 500;
+  color: #fff;
+  text-align: start;
+  line-height: 45px;
+}
+
+@media (max-width: 1619px) {
+  .header_area .navbar .search {
+    margin-left: 40px;
+  }
+}
+@media (max-width: 1199px) {
+  .header_area .navbar .nav .nav-item {
+    margin-right: 28px;
+  }
+}
+@media (max-width: 991px) {
+  .top-menu a {
+    font-size: 12px;
+    font-weight: 300;
+    color: #fff;
+    text-align: start;
+    line-height: 40px;
+    margin-right: 28px;
+  }
+  .navbar li a {
+    line-height: 40px;
+    margin-right: 0px;
+    display: block;
+    border-bottom: 1px solid rgba(237, 237, 237, 0.2);
+    border-radius: 0px;
+  }
+}
+@media (max-width: 575px) {
+  .top-menu {
+    display: none;
+  }
+}
+@media (max-width: 480px) {
+  .header_area .navbar-collapse {
+    max-height: 250px;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
