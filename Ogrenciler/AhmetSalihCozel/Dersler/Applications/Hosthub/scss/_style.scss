@@ -1,3 +1,10 @@
-p{
-    background-color: aqua;
+body{background: #c2c2c2;}
+
+*{margin: 0;
+padding: 0;}
+
+ul{
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    li{list-style: none;}
 }
