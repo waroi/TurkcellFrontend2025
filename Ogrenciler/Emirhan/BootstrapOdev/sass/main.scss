@@ -258,3 +258,30 @@ li {
     border-radius: 50%;
   }
 }
+.blog{
+  h3{
+      @include textFunc(40px, black, 700, 48px);
+  }
+  .card{
+    border: none;
+    img{
+      border-radius: 0;
+      margin-bottom: 30px;
+    }
+    h5{
+      @include textFunc(30px, black, 500, 36px);
+    }
+    .card-info{
+      @include textFunc(14px, #b3b3b3, 400, 23.8px);
+      a{
+        text-decoration: none;
+      }
+    }
+    .card-text{
+      @include textFunc(16px, gray, 400, 27.2px);
+    }
+    a{
+      text-decoration: none;
+    }
+  }
+}

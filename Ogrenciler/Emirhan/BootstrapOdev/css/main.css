@@ -311,4 +311,42 @@ li {
   border-radius: 50%;
 }
 
+.blog h3 {
+  font-size: 40px;
+  color: black;
+  font-weight: 700;
+  line-height: 48px;
+}
+.blog .card {
+  border: none;
+}
+.blog .card img {
+  border-radius: 0;
+  margin-bottom: 30px;
+}
+.blog .card h5 {
+  font-size: 30px;
+  color: black;
+  font-weight: 500;
+  line-height: 36px;
+}
+.blog .card .card-info {
+  font-size: 14px;
+  color: #b3b3b3;
+  font-weight: 400;
+  line-height: 23.8px;
+}
+.blog .card .card-info a {
+  text-decoration: none;
+}
+.blog .card .card-text {
+  font-size: 16px;
+  color: gray;
+  font-weight: 400;
+  line-height: 27.2px;
+}
+.blog .card a {
+  text-decoration: none;
+}
+
 /*# sourceMappingURL=main.css.map */
