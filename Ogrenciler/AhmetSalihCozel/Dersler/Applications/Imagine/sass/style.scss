@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 
 $primary: #4285f4;
-$font-family-base: 'Nunito', sans-serif;
+$font-family-base: "Nunito", sans-serif;
 $h1-font-size: 56px;
 $h2-font-size: 40px;
 $h3-font-size: 18px;
@@ -40,11 +40,11 @@ $carousel-indicator-hit-area-height: 10px;
 $carousel-indicator-active-bg: $primary;
 
 $theme-colors: (
-  'primary': $primary,
-  'section': #f6f6f6,
+  "primary": $primary,
+  "section": #f6f6f6,
 );
 
-@import '../node_modules/bootstrap/scss/bootstrap.scss';
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
 
 body {
   padding-top: 96px;
@@ -66,6 +66,7 @@ body {
 
 header {
   margin-top: -85px;
+  min-height: 800px;
 }
 
 h1,
@@ -101,7 +102,7 @@ p {
   }
 }
 .formContainer {
-  background-image: url('https://preview.colorlib.com/theme/imagine/images/hero_1.jpg');
+  background-image: url("https://preview.colorlib.com/theme/imagine/images/hero_1.jpg");
   background-size: cover;
   background-position: center;
   height: 1080px;
@@ -149,5 +150,62 @@ p {
   h1 {
     margin-top: 50px;
     font-size: 32px !important;
+  }
+}
+
+@keyframes initiate-top {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@mixin initiate($animation, $delay) {
+  animation: $animation 0.5s ease-in-out $delay forwards;
+}
+
+#features h2,
+#features > p,
+#features .col,
+.our-team .col-7 h2,
+.our-team .col-7 p,
+.our-team .col-lg-4 {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+#features h2,
+#features > p,
+.our-team .col-7 h2,
+.our-team .col-7 p {
+  &.visible {
+    @include initiate(initiate-top, 0s);
+  }
+}
+
+#features .col.visible,
+.our-team .col-lg-4.visible {
+  &:nth-of-type(1) {
+    @include initiate(initiate-top, 0.15s);
+  }
+  &:nth-of-type(2) {
+    @include initiate(initiate-top, 0.3s);
+  }
+  &:nth-of-type(3) {
+    @include initiate(initiate-top, 0.45s);
+  }
+  &:nth-of-type(4) {
+    @include initiate(initiate-top, 0.15s);
+  }
+  &:nth-of-type(5) {
+    @include initiate(initiate-top, 0.3s);
+  }
+  &:nth-of-type(6) {
+    @include initiate(initiate-top, 0.45s);
   }
 }
