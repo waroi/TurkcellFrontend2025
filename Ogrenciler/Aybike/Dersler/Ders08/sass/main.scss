@@ -1,0 +1,25 @@
+$bgColor: red;
+$x150: 150px;
+$x100: 150px;
+
+@mixin boxFunction($width, $height, $color){
+    width: $width;
+    height: $height;
+    background-color: $color;
+    font-size: 20px;
+
+}
+
+.container{
+display: flex   ;
+.box1{
+    @include boxFunction($x150, $x150, $bgColor);
+}
+.box2{
+    @include boxFunction($x100, $x100*2, blue);
+}
+.box3{
+    @extend .box1;
+    width: $x100;
+}
+}
