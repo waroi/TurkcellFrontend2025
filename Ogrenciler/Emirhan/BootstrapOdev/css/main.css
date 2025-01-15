@@ -267,4 +267,48 @@ li {
   line-height: 34px;
 }
 
+.testimonials {
+  background: #f6f6f6;
+}
+.testimonials .carousel-item img {
+  height: 100px;
+  width: 100px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 50%;
+  margin-bottom: 24px;
+}
+.testimonials .testimonial {
+  max-width: 800px;
+}
+.testimonials h2 {
+  font-size: 40px;
+  color: black;
+  font-weight: 700;
+  line-height: 48px;
+}
+.testimonials p:first-of-type {
+  font-size: 24px;
+  color: gray;
+  font-weight: 400;
+  line-height: 40.8px;
+  font-style: italic;
+  margin-bottom: 16px;
+}
+.testimonials p {
+  font-size: 16px;
+  color: black;
+  font-weight: bolder;
+  line-height: 27.2px;
+  margin-bottom: 16px;
+}
+.testimonials .carousel {
+  padding-bottom: 40px;
+}
+.testimonials .carousel-indicators button {
+  background-color: #4285f4;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
 /*# sourceMappingURL=main.css.map */

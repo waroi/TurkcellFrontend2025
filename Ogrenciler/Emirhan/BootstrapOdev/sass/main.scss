@@ -224,3 +224,37 @@ li {
     }
   }
 }
+.testimonials{
+  background: $backgroundColor;
+  .carousel-item img{
+    height: 100px;
+    width: 100px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 50%;
+    margin-bottom: 24px;
+  }
+  .testimonial{
+    max-width: 800px;
+  }
+  h2{
+      @include textFunc(40px, black, 700, 48px);
+  }
+  p:first-of-type{
+      @include textFunc(24px, gray, 400, 40.8px);
+      font-style: italic;
+      margin-bottom: 16px
+  }
+  p{
+      @include textFunc(16px, black, bolder, 27.2px);
+      margin-bottom: 16px
+  }
+  .carousel{
+    padding-bottom: 40px;
+  }
+  .carousel-indicators button{
+    background-color: $blue;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+}
