@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 
 $primary: #4285f4;
-$font-family-base: 'Nunito', sans-serif;
+$font-family-base: "Nunito", sans-serif;
 $h1-font-size: 56px;
 $h2-font-size: 40px;
 $h3-font-size: 18px;
@@ -31,10 +31,12 @@ $navbar-light-brand-hover-color: inherit;
 $offcanvas-padding-x: 40px;
 $offcanvas-horizontal-width: 300px;
 
-@import '../node_modules/bootstrap/scss/bootstrap.scss';
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
 body {
   padding-top: 96px;
 }
+
 .navbar-nav {
   .nav-link {
     transition: color 0.3s ease;
@@ -47,6 +49,10 @@ body {
   &:hover {
     color: $white;
   }
+}
+
+header {
+  margin-top: -85px;
 }
 
 h1,
@@ -82,7 +88,7 @@ p {
   }
 }
 .formContainer {
-  background-image: url('https://preview.colorlib.com/theme/imagine/images/hero_1.jpg');
+  background-image: url("https://preview.colorlib.com/theme/imagine/images/hero_1.jpg");
   background-size: cover;
   background-position: center;
   height: 1080px;
@@ -114,4 +120,11 @@ p {
   );
   height: 100%;
   width: 100%;
+}
+
+@media (max-width: 991px) {
+  h1 {
+    margin-top: 50px;
+    font-size: 32px !important;
+  }
 }
