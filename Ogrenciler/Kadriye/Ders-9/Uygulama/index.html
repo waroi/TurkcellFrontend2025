@@ -24,7 +24,7 @@
             <a class="navbar-brand " href="#"
               ><h1 class="m-0">imagine<span class="text-primary">.</span></h1></a
             >
-            <!-- Toggler Button -->
+            
             <button
               class="navbar-toggler"
               type="button"
@@ -36,7 +36,7 @@
             >
               <span class="navbar-toggler-icon"></span>
             </button>
-            <!-- Offcanvas Menu -->
+            
             <div
               class="offcanvas offcanvas-end"
               tabindex="-1"
@@ -958,15 +958,20 @@
     <section class="contact p-5" id="contact">
       <div class="container">
         <h2 class="text-center text-white mb-5">Contact Us</h2>
-
         <div class="row justify-content-center ">
           <div class="col-lg-7 mb-5 px-4">
-            <form action="" class="p-5 bg-white">
+            <form action="" class="p-5 bg-white needs-validation" novalidate>
               <h4 class="text-black mb-5 h4 ">Contact Form</h4>
               <div class="row form-group ">
                 <div class="col-md-6 p-3 ">
-                  <label for="name" class="text-black mb-2">First Name</label>
-                  <input type="text" class="form-control rounded-0" name="name" id="name" />
+                  <label for="name" class="text-black mb-2" class="form-label">First Name</label>
+                  <input type="text" class="form-control rounded-0" name="name" id="name" required/>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                  <div class="invalid-feedback">
+                    Please enter your name.
+                  </div>
                 </div>
                 <div class="col-md-6 p-3">
                   <label for="last-name" class="text-black mb-2">Last Name</label>
@@ -974,8 +979,14 @@
                     type="text"
                     class="form-control rounded-0"
                     name="last-name"
-                    id="last-name"
+                    id="last-name" required
                   />
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                  <div class="invalid-feedback">
+                    Please enter your last name.
+                  </div>
                 </div>
               </div>
               <div class="row form-group p-3">
@@ -984,12 +995,24 @@
                   type="email"
                   class="form-control rounded-0"
                   name="email"
-                  id="email"
+                  id="email" required
                 />
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+                <div class="invalid-feedback">
+                  Please enter your email.
+                </div>
               </div>
               <div class="row form-group p-3">
                 <label for="subject" class="text-black p-0 mb-2">Subject</label>
-                <input type="text" class="form-control rounded-0" name="subject" id="subject" />
+                <input type="text" class="form-control rounded-0" name="subject" id="subject" required/>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+                <div class="invalid-feedback">
+                  Please enter your subject.
+                </div>
               </div>
               <div class="row form-group p-3">
                 <label for="message" class="text-black p-0 mb-2">Message</label>
@@ -1000,10 +1023,17 @@
                   placeholder="Leave your message here ..."
                   cols="30"
                   rows="7"
+                  required
                 ></textarea>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+                <div class="invalid-feedback">
+                  Please enter your message.
+                </div>
               </div>
               <div class="row px-3">
-                <a href="#" class="btn btn-primary w-auto">Send Message</a>
+                <button href="#" class="btn btn-primary w-auto" type="submit">Send Message</button>
               </div>
             </form>
           </div>
@@ -1063,5 +1093,30 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (() => {
+        "use strict";
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        const forms = document.querySelectorAll(".needs-validation");
+
+        // Loop over them and prevent submission
+        Array.from(forms).forEach((form) => {
+          form.addEventListener(
+            "submit",
+            (event) => {
+              if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+
+              form.classList.add("was-validated");
+            },
+            false
+          );
+        });
+      })();
+    </script>
   </body>
 </html>
