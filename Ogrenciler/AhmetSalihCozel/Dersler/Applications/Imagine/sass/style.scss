@@ -1,0 +1,263 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+$primary: #4285f4;
+$font-family-base: "Nunito", sans-serif;
+$h1-font-size: 56px;
+$h2-font-size: 40px;
+$h3-font-size: 18px;
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1140px,
+  // XXL 1140px Alteration
+);
+
+// DROPDOWN
+$dropdown-link-active-bg: inherit;
+$dropdown-link-active-color: $primary;
+$dropdown-bg: #fdfdfd;
+$dropdown-box-shadow: none;
+
+// NAVBAR
+$dropdown-border-width: 0px;
+$navbar-nav-link-padding-x: 1.5rem;
+$navbar-light-color: #000;
+$navbar-light-hover-color: $primary;
+$navbar-light-active-color: $primary;
+$navbar-light-brand-color: inherit;
+$navbar-light-brand-hover-color: inherit;
+$offcanvas-padding-x: 40px;
+$offcanvas-horizontal-width: 300px;
+
+// CAROUSEL
+$carousel-control-opacity: 0;
+$carousel-control-hover-opacity: 0;
+$carousel-indicator-width: 10px;
+$carousel-indicator-height: 10px;
+$carousel-indicator-hit-area-height: 10px;
+$carousel-indicator-active-bg: $primary;
+
+$theme-colors: (
+  "primary": $primary,
+  "section": #f6f6f6,
+);
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+body {
+  padding-top: 96px;
+}
+
+.navbar-nav {
+  .nav-link {
+    transition: color 0.3s ease;
+  }
+}
+
+.btn-primary {
+  color: $white;
+
+  &:hover {
+    color: $white;
+  }
+}
+
+header {
+  margin-top: -85px;
+  min-height: 800px;
+}
+
+h1,
+h2 {
+  font-weight: $font-weight-bolder;
+}
+
+p {
+  color: $secondary;
+  font-weight: $font-weight-light;
+}
+
+#features .card {
+  background-color: #f1f1f1;
+
+  i {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+#feedback {
+  .row {
+    margin-bottom: 120px;
+  }
+
+  .card {
+    border-left: 10px solid $primary;
+
+    img {
+      height: 50px;
+    }
+  }
+}
+.formContainer {
+  background-image: url("https://preview.colorlib.com/theme/imagine/images/hero_1.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 1080px;
+  background-attachment: fixed;
+}
+
+.svgColorPrimary {
+  color: $primary;
+}
+
+.svgColorHeart {
+  color: red;
+}
+
+.txtCenterClass {
+  text-align: center;
+}
+
+.msgButton {
+  box-shadow: 0px 0px 10px 0px #0d6efd;
+}
+
+.formOverlay {
+  background: linear-gradient(
+    90deg,
+    rgba(63, 162, 255, 0.6) 0%,
+    rgba(87, 174, 255, 0.6) 50%,
+    rgba(173, 215, 255, 0.6) 100%
+  );
+  height: 100%;
+  width: 100%;
+}
+.testimonial-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+.testimonial-text {
+  font-size: 1.5rem;
+}
+
+@media (max-width: 991px) {
+  h1 {
+    margin-top: 50px;
+    font-size: 32px !important;
+  }
+}
+
+@keyframes initiate-top {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes initiate-right {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes initiate-left {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@mixin initiate($animation, $delay) {
+  animation: $animation 0.5s ease-in-out $delay forwards;
+}
+
+#features h2,
+#features > p,
+#features .col,
+.our-team .col-7 h2,
+.our-team .col-7 p,
+.our-team .col-lg-4 {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.img-fluid.col-12.col-lg-7:not(.order-1),
+.col-12.col-lg-5.pe-5 .card.p-4.shadow,
+.about-us img {
+  opacity: 0;
+  transform: translateX(-50px);
+}
+
+.img-fluid.col-12.col-lg-7.order-1,
+.col-12.col-lg-5.ps-5 .card.p-4.shadow {
+  opacity: 0;
+  transform: translateX(50px);
+}
+
+#features h2,
+#features > p,
+.our-team .col-7 h2,
+.our-team .col-7 p {
+  &.visible {
+    @include initiate(initiate-top, 0s);
+  }
+}
+
+#features .col.visible,
+.our-team .col-lg-4.visible {
+  &:nth-of-type(1) {
+    @include initiate(initiate-top, 0.15s);
+  }
+  &:nth-of-type(2) {
+    @include initiate(initiate-top, 0.3s);
+  }
+  &:nth-of-type(3) {
+    @include initiate(initiate-top, 0.45s);
+  }
+  &:nth-of-type(4) {
+    @include initiate(initiate-top, 0.15s);
+  }
+  &:nth-of-type(5) {
+    @include initiate(initiate-top, 0.3s);
+  }
+  &:nth-of-type(6) {
+    @include initiate(initiate-top, 0.45s);
+  }
+}
+
+.img-fluid.col-12.col-lg-7:not(.order-1),
+.col-12.col-lg-5.pe-5 .card.p-4.shadow,
+.about-us img {
+  &.visible {
+    @include initiate(initiate-right, 0s);
+  }
+}
+
+.img-fluid.col-12.col-lg-7.order-1,
+.col-12.col-lg-5.ps-5 .card.p-4.shadow {
+  &.visible {
+    @include initiate(initiate-left, 0s);
+  }
+}

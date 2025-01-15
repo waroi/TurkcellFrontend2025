@@ -1,0 +1,360 @@
+@mixin textFunc($fontsize, $color: null, $fontweight, $lineheight) {
+  font-size: $fontsize;
+  color: $color;
+  font-weight: $fontweight;
+  line-height: $lineheight;
+}
+@mixin cardImgFunc {
+  width: 100%;
+  height: 408px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+.py-6 {
+  padding: 5em 0 5em 0;
+}
+
+$prgBg: #808080;
+$prgBgHover: rgba(255, 255, 255, 0.7);
+$backgroundColor: #f6f6f6;
+$blue: #4285f4;
+$white: #fff;
+$black: #000;
+
+* {
+  margin: 0;
+  font-family: "Nunito", serif;
+}
+
+p {
+  color: $prgBg;
+}
+li {
+  list-style: none;
+}
+.container {
+  width: 80% !important;
+}
+.card-link {
+  text-decoration: none;
+}
+.buton {
+  background-color: $blue;
+  font-size: 16px;
+  border-radius: 30px;
+  padding: 10px 30px;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 20px -5px rgba(66, 133, 244, 0.4);
+  &:hover {
+    background-color: $blue;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 30px -5px rgba(66, 133, 244, 0.7);
+  }
+}
+.header-section {
+  top: 0;
+  position: fixed;
+  z-index: 100;
+  nav {
+    box-shadow: rgba(0, 0, 0, 0.2) 4px 0px 20px -10px;
+  }
+  .header-logo {
+    @include textFunc(32px, 500, $black, 38.4px);
+  }
+  ul {
+    gap: 25px;
+    .nav-link {
+      color: $black !important;
+      @include textFunc(16px, 400, $black, 27.2px);
+    }
+    .active {
+      color: $blue !important;
+    }
+  }
+}
+
+.banner-section {
+  margin-top: 100px;
+  h1 {
+    @include textFunc(56px, $black, 700, 67.2px);
+  }
+  p {
+    @include textFunc(16px, null, 300, 27.2px);
+  }
+  .buton {
+    @extend .buton;
+  }
+  // img {
+  z-index: 1;
+  // }
+}
+
+.imagine-section {
+  .card {
+    background: #f1f1f1 !important;
+    border: none;
+    transition: 0.2s ease;
+
+    &:hover {
+      background-color: $blue !important;
+
+      transform: translateY(-10px);
+
+      .card-title {
+        @include textFunc(20px, $white, 500, 21.6px);
+      }
+
+      .card-text {
+        color: $prgBgHover;
+      }
+
+      .icon-circle {
+        color: $blue;
+        background-color: $white;
+      }
+      a {
+        color: $white;
+      }
+    }
+
+    .card-title {
+      @include textFunc(20px, $black, 500, 21.6px);
+      transition: 0.2s ease;
+    }
+
+    .icon-circle {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $blue;
+      color: $white;
+      font-size: 28px;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: 0.2s ease;
+    }
+  }
+}
+.gather-section {
+  .card-title {
+    @include textFunc(40px, $black, 700, 48px);
+  }
+  .gather-card {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    blockquote {
+      @include textFunc(16px, $prgBg, 400, 27.2px);
+    }
+    .gather-content {
+      p {
+        @include textFunc(16px, $black, 400, 27.2px);
+      }
+      img {
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+.about-us {
+  background: $backgroundColor;
+  h3 {
+    @include textFunc(40px, $black, 700, 48px);
+  }
+  .about-us-content {
+    margin-left: auto;
+    h4 {
+      @include textFunc(28px, $black, 700, 48px);
+    }
+    p {
+      @include textFunc(16px, $prgBg, 400, 27.2px);
+    }
+    ul {
+      margin: 0;
+      padding: 0;
+
+      li {
+        @include textFunc(16px, $prgBg, 400, 24px);
+        margin-bottom: 15px;
+
+        i {
+          color: #8bc34a;
+        }
+      }
+    }
+  }
+  .buton {
+    @extend .buton;
+  }
+}
+.our-team {
+  .card-title {
+    @include textFunc(18px, $black, 500, 21.6px);
+  }
+  .card-subtitle {
+    @include textFunc(12px, $blue, 700, 20.4px);
+  }
+  .card-text {
+    @include textFunc(1rem, gray, 400, 27.2px);
+  }
+  .card {
+    border: none;
+    .card-img-1 {
+      background: url("../images/person_1.jpg.webp");
+      @include cardImgFunc();
+    }
+    .card-img-2 {
+      background: url("../images/person_2.jpg.webp");
+      @include cardImgFunc();
+    }
+    .card-img-3 {
+      background: url("../images/person_3.jpg.webp");
+      @include cardImgFunc();
+    }
+    .card-img-4 {
+      background: url("../images/person_4.jpg.webp");
+      @include cardImgFunc();
+    }
+    .card-img-5 {
+      background: url("../images/person_5.jpg.webp");
+      @include cardImgFunc();
+    }
+
+    .card-img-6 {
+      background: url("../images/person_6.jpg.webp");
+      @include cardImgFunc();
+    }
+    .card-img-1,
+    .card-img-2,
+    .card-img-3,
+    .card-img-4,
+    .card-img-5,
+    .card-img-6 {
+      background-size: 120%;
+      transition: background-size 1s ease;
+    }
+    .social {
+      width: 100%;
+      height: 57px;
+      background-color: $blue;
+      transition: 0.3s ease;
+      bottom: -57px;
+      i {
+        font-size: 16px;
+        color: $white;
+      }
+    }
+    &:hover {
+      .social {
+        bottom: 0;
+        i {
+          font-size: 16px;
+          color: white;
+        }
+      }
+      .card-img-1,
+      .card-img-2,
+      .card-img-3,
+      .card-img-4,
+      .card-img-5,
+      .card-img-6 {
+        background-size: 130%;
+      }
+    }
+  }
+  .our-team-header {
+    h3 {
+      @include textFunc(40px, $black, 700, 48px);
+    }
+    p {
+      @include textFunc(1.25rem, gray, 300, 34px);
+    }
+  }
+}
+.testimonials {
+  background: $backgroundColor;
+  .carousel-item img {
+    height: 100px;
+    width: 100px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 50%;
+    margin-bottom: 24px;
+  }
+  .testimonial {
+    max-width: 800px;
+  }
+  h2 {
+    @include textFunc(40px, $black, 700, 48px);
+  }
+  p:first-of-type {
+    @include textFunc(24px, gray, 400, 40.8px);
+    font-style: italic;
+    margin-bottom: 16px;
+  }
+  p {
+    @include textFunc(16px, black, bolder, 27.2px);
+    margin-bottom: 16px;
+  }
+  .carousel {
+    padding-bottom: 40px;
+  }
+  .carousel-indicators button {
+    background-color: $blue;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+}
+.blog {
+  h3 {
+    @include textFunc(40px, $black, 700, 48px);
+  }
+  .card {
+    border: none;
+    img {
+      border-radius: 0;
+      margin-bottom: 30px;
+    }
+    h5 {
+      @include textFunc(30px, $black, 500, 36px);
+    }
+    .card-info {
+      @include textFunc(14px, #b3b3b3, 400, 23.8px);
+      a {
+        text-decoration: none;
+      }
+    }
+    .card-text {
+      @include textFunc(16px, gray, 400, 27.2px);
+    }
+    a {
+      text-decoration: none;
+    }
+  }
+}
+.contact-us {
+  background-image: url(https://preview.colorlib.com/theme/imagine/images/hero_1.jpg.webp);
+  background-size: cover;
+  .overlay {
+    background-image: linear-gradient(
+      to right,
+      rgb(66, 134, 244, 0.6) 0%,
+      rgb(66, 226, 244, 0.6) 100%
+    );
+  }
+  h3 {
+    @include textFunc(40px, $white, 700, 48px);
+  }
+  .buton {
+    @extend .buton;
+  }
+}

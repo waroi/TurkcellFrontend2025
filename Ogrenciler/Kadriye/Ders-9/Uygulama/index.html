@@ -10,19 +10,19 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./css/main.css" />
     <script
       src="https://kit.fontawesome.com/1618e98dac.js"
       crossorigin="anonymous"
     ></script>
   </head>
   <body>
-    <header class="bg-white z-3 position-fixed w-100">
+    <header class="bg-white z-3 position-fixed w-100 py-4">
       <div class="container">
-        <nav class="navbar navbar-expand-lg">
+        <nav class="navbar navbar-expand-lg p-0">
           <div class="container-fluid">
-            <a class="navbar-brand" href="#"
-              >imagine<span class="text-primary">.</span></a
+            <a class="navbar-brand " href="#"
+              ><h1 class="m-0">imagine<span class="text-primary">.</span></h1></a
             >
             <!-- Toggler Button -->
             <button
@@ -55,19 +55,19 @@
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                   <li class="nav-item">
                     <a
-                      class="nav-link active px-3 py-2"
+                      class="nav-link active px-3 py-2 "
                       aria-current="page"
                       href="#"
                       >Home</a
                     >
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link px-3 py-2" href="#">Features</a>
+                    <a class="nav-link px-3 py-2 text-black" href="#features">Features</a>
                   </li>
                   <li class="nav-item dropdown">
                     <a
-                      class="nav-link dropdown-toggle d-flex justify-content-between align-items-center px-3 py-2"
-                      href="#"
+                      class="nav-link dropdown-toggle d-flex justify-content-between align-items-center px-3 py-2 text-black"
+                      href="#about"
                       role="button"
                       data-bs-toggle="dropdown"
                       aria-expanded="false"
@@ -107,13 +107,13 @@
                     </ul>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link px-3 py-2" href="#">Testimonials</a>
+                    <a class="nav-link px-3 py-2 text-black" href="#testimonial">Testimonials</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link px-3 py-2" href="#">Blog</a>
+                    <a class="nav-link px-3 py-2 text-black" href="#blog">Blog</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link px-3 py-2" href="#">Contact</a>
+                    <a class="nav-link px-3 py-2 text-black" href="#contact">Contact</a>
                   </li>
                 </ul>
               </div>
@@ -133,8 +133,8 @@
             />
           </div>
           <div class="col-md-12 col-lg-6">
-            <h1 class="fs-1">Make Your Business More Profitable</h1>
-            <p class="mb-5">
+            <h1 class=" text-black">Make Your Business More Profitable</h1>
+            <p class="mb-5 text-secondary">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat
               obcaecati illum deleniti, exercitationem quasi dolorum nulla
               facilis.
@@ -147,135 +147,136 @@
         </div>
       </div>
     </section>
-    <section class="features">
-      <div class="container">
+    <section class="features" id="features">
+      <div class="container container-features">
         <div class="row features-title text-center mb-5 justify-content-center">
-          <div class="col-7">
-            <h2>Imagine Features</h2>
-            <p>
+          <div class="col-7 mb-5">
+            <h2 class="text-black">Imagine Features</h2>
+            <p class="text-secondary">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
               dolore a, molestiae officia corporis provident.
             </p>
           </div>
         </div>
-        <div class="row feature-cards" style="padding: 0 15px">
+        <div class="row feature-cards gy-5">
           <div
-            class="feature-card col-md-12 col-lg-6 col-xl-4 text-center position-relative"
-            style="
-              padding: 50px 30px 30px 30px;
-              background-color: #f1f1f1;
-              border-radius: 5px;
-            "
+            class="feature-card col-md-6 col-lg-4 mb-4 mb-lg-4 position-relative"
           >
             <div
-              class="icon position-absolute top-0 start-50 translate-middle d-flex justify-content-center align-items-center border rounded-circle"
-              style="background-color: #4285f4; width: 80px; height: 80px"
+              class="icon position-absolute top-0 start-50 translate-middle d-flex justify-content-center align-items-center border rounded-circle mb-3"
             >
-              <i class="fa-solid fa-rotate" style="color: white"></i>
+              <i class="fa-solid fa-rotate"></i>
             </div>
             <div class="text">
-              <h3>Marketing Consulting</h3>
-              <p>
+              <h3 class="text-black">Marketing Consulting</h3>
+              <p class="text-secondary">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
                 dolore a, molestiae officia corporis provident.
               </p>
-            </div>
-            <div class="link">
-              <a href="#">Learn more</a>
+              <p>
+                <a href="#" class="text-decoration-none">Learn More</a>
+              </p>
             </div>
           </div>
           <div
-            class="feature-card col-md-12 col-lg-6 col-xl-4 text-center position-relative"
+            class="feature-card col-md-6 col-lg-4 mb-4 mb-lg-4 position-relative"
           >
-            <div class="icon">
-              <i class="fa-solid fa-shop" style="color: #3f7de9"></i>
+            <div
+              class="icon position-absolute top-0 start-50 translate-middle d-flex justify-content-center align-items-center border rounded-circle mb-3"
+            >
+              <i class="fa-solid fa-shop"></i>
             </div>
             <div class="text">
               <h3>Market Analysis</h3>
-              <p>
+              <p class="text-secondary">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
                 dolore a, molestiae officia corporis provident.
               </p>
-            </div>
-            <div class="link">
-              <a href="#">Learn more</a>
+              <p>
+                <a href="#" class="text-decoration-none">Learn More</a>
+              </p>
             </div>
           </div>
           <div
-            class="feature-card col-md-12 col-lg-6 col-xl-4 text-center position-relative"
+            class="feature-card col-md-6 col-lg-4 mb-4 mb-lg-4 position-relative"
           >
-            <div class="icon">
-              <i class="fa-solid fa-basket-shopping" style="color: #74c0fc"></i>
+            <div
+              class="icon position-absolute top-0 start-50 translate-middle d-flex justify-content-center align-items-center border rounded-circle mb-3"
+            >
+              <i class="fa-solid fa-basket-shopping"></i>
             </div>
             <div class="text">
               <h3>Easy Purchase</h3>
-              <p>
+              <p class="text-secondary">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
                 dolore a, molestiae officia corporis provident.
               </p>
-            </div>
-            <div class="link">
-              <a href="#">Learn more</a>
+              <p>
+                <a href="#" class="text-decoration-none">Learn More</a>
+              </p>
             </div>
           </div>
           <div
-            class="feature-card col-md-12 col-lg-6 col-xl-4 text-center position-relative"
+            class="feature-card col-md-6 col-lg-4 mb-4 mb-lg-4 position-relative"
           >
-            <div class="icon">
-              <i
-                class="fa-solid fa-arrow-rotate-left"
-                style="color: #74c0fc"
-              ></i>
+            <div
+              class="icon position-absolute top-0 start-50 translate-middle d-flex justify-content-center align-items-center border rounded-circle mb-3"
+            >
+              <i class="fa-solid fa-arrow-rotate-left"></i>
             </div>
             <div class="text">
               <h3>Free Updates</h3>
-              <p>
+              <p class="text-secondary">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
                 dolore a, molestiae officia corporis provident.
               </p>
-            </div>
-            <div class="link">
-              <a href="#">Learn more</a>
+              <p>
+                <a href="#" class="text-decoration-none">Learn More</a>
+              </p>
             </div>
           </div>
           <div
-            class="feature-card col-md-12 col-lg-6 col-xl-4 text-center position-relative"
+            class="feature-card col-md-6 col-lg-4 mb-4 mb-lg-4 position-relative"
           >
-            <div class="icon">
-              <i class="fa-regular fa-face-smile" style="color: #b197fc"></i>
+            <div
+              class="icon position-absolute top-0 start-50 translate-middle d-flex justify-content-center align-items-center border rounded-circle mb-3"
+            >
+              <i class="fa-regular fa-face-smile"></i>
             </div>
             <div class="text">
               <h3>100% Satistified</h3>
-              <p>
+              <p class="text-secondary">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
                 dolore a, molestiae officia corporis provident.
               </p>
-            </div>
-            <div class="link">
-              <a href="#">Learn more</a>
+              <p>
+                <a href="#" class="text-decoration-none">Learn More</a>
+              </p>
             </div>
           </div>
           <div
-            class="feature-card col-md-12 col-lg-6 col-xl-4 text-center position-relative"
+            class="feature-card col-md-6 col-lg-4 mb-4 mb-lg-4 position-relative"
           >
-            <div class="icon">
-              <i class="fa-solid fa-plug" style="color: #b197fc"></i>
+            <div
+              class="icon position-absolute top-0 start-50 translate-middle d-flex justify-content-center align-items-center border rounded-circle mb-3"
+            >
+              <i class="fa-solid fa-plug"></i>
             </div>
             <div class="text">
               <h3>Easy Plugin</h3>
-              <p>
+              <p class="text-secondary">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
                 dolore a, molestiae officia corporis provident.
               </p>
-            </div>
-            <div class="link">
-              <a href="#">Learn more</a>
+              <p>
+                <a href="#" class="text-decoration-none">Learn More</a>
+              </p>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <section class="feedback">
+    <section class="feedback" id="feedback">
       <div class="container">
         <div class="row">
           <div class="feedback-image col-md-12 col-lg-7">
@@ -286,36 +287,36 @@
             />
           </div>
           <div class="text col-md-12 col-lg-5">
-            <h2>Communicate and gather feedback</h2>
-            <p>
+            <h2 class="text-black">Communicate and gather feedback</h2>
+            <p class="text-secondary">
               "Lorem, ipsum dolor sit amet consectetur adipisicing elit.
               Explicabo autem eum deserunt ad sit repellendus!"
             </p>
             <div
-              class="author-box border border-start-2 border-secondary-subtle py-3 px-4"
+              class="author-box-1  border-start border-primary  pt-3 pb-4 px-4 person-card"
             >
               <div class="avatar d-flex align-items-center mb-3">
-                <img
+                <img class="avatar-img"
                   src="https://preview.colorlib.com/theme/imagine/images/person_4.jpg"
                   alt="avatar"
-                  style="width: 50px; height: 50px; border-radius: 50%"
+                  
                 />
                 <div
                   class="avatar-title ps-3 d-flex flex-column justify-content-center"
                 >
-                  <h6>Grey Simpson</h6>
+                  <h6 class="text-black m-0">Grey Simpson</h6>
                   <p class="m-0">Co-Founder, XYZ Inc.</p>
                 </div>
               </div>
-              <div class="text">
+              <div class="inner-text text-secondary">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint,
                 minus? Tempore saepe unde repellat dolores.
               </div>
             </div>
           </div>
         </div>
-        <div class="row flex-row-reverse">
-          <div class="feedback-image col-md-12 col-lg-7">
+        <div class="row flex-row-reverse mt-5 mb-5 py-5">
+          <div class="feedback-image-2 col-md-12 col-lg-7">
             <img
               src="https://preview.colorlib.com/theme/imagine/images/undraw_metrics_gtu7.svg"
               class="w-100"
@@ -323,35 +324,35 @@
             />
           </div>
           <div class="text col-md-12 col-lg-5">
-            <h2>Communicate and gather feedback</h2>
-            <p>
+            <h2 class="text-black">Communicate and gather feedback</h2>
+            <p class="text-secondary">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit.
               Explicabo autem eum deserunt ad sit repellendus!
             </p>
             <div
-              class="author-box border border-start-2 border-secondary-subtle py-3 px-4"
+              class="author-box-2 border-start border-primary pt-3 pb-4 px-4 person-card"
             >
               <div class="avatar d-flex align-items-center mb-3">
-                <img
+                <img class="avatar-img"
                   src="https://preview.colorlib.com/theme/imagine/images/person_1.jpg"
                   alt="avatar"
-                  style="width: 50px; height: 50px; border-radius: 50%"
+                  
                 />
                 <div
                   class="avatar-title ps-3 d-flex flex-column justify-content-center"
                 >
-                  <h6>Kimberly Gush</h6>
+                  <h6 class="text-black m-0">Kimberly Gush</h6>
                   <p class="m-0">Co-Founder, XYZ Inc.</p>
                 </div>
               </div>
-              <div class="text">
+              <div class="inner-text text-secondary">
                 "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint,
                 minus? Tempore saepe unde repellat dolores."
               </div>
             </div>
           </div>
         </div>
-        <div class="row">
+        <div class="row mt-5 mb-5 py-5">
           <div class="feedback-image col-md-12 col-lg-7">
             <img
               src="https://preview.colorlib.com/theme/imagine/images/undraw_gift_card_6ekc.svg"
@@ -360,36 +361,36 @@
             />
           </div>
           <div class="text col-md-12 col-lg-5">
-            <h2>Communicate and gather feedback</h2>
-            <p>
+            <h2 class="text-black">Communicate and gather feedback</h2>
+            <p class="text-secondary">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit.
               Explicabo autem eum deserunt ad sit repellendus!
             </p>
             <div
-              class="author-box border border-start-2 border-secondary-subtle py-3 px-4"
+              class="author-box-1 border-start border-primary pt-3 pb-4 px-4 person-card"
             >
               <div class="avatar d-flex align-items-center mb-3">
-                <img
+                <img class="avatar-img"
                   src="https://preview.colorlib.com/theme/imagine/images/person_4.jpg"
                   alt="avatar"
-                  style="width: 50px; height: 50px; border-radius: 50%"
+                  
                 />
                 <div
                   class="avatar-title ps-3 d-flex flex-column justify-content-center"
                 >
-                  <h6>Grey Simpson</h6>
+                  <h6 class="text-black m-0">Grey Simpson</h6>
                   <p class="m-0">Co-Founder, XYZ Inc.</p>
                 </div>
               </div>
-              <div class="text">
+              <div class="inner-text text-secondary">
                 "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint,
                 minus? Tempore saepe unde repellat dolores."
               </div>
             </div>
           </div>
         </div>
-        <div class="row flex-row-reverse">
-          <div class="feedback-image col-md-12 col-lg-7">
+        <div class="row flex-row-reverse mt-5 mb-5 py-5">
+          <div class="feedback-image-2 col-md-12 col-lg-7">
             <img
               src="https://preview.colorlib.com/theme/imagine/images/undraw_metrics_gtu7.svg"
               class="w-100"
@@ -397,28 +398,28 @@
             />
           </div>
           <div class="text col-md-12 col-lg-5">
-            <h2>Communicate and gather feedback</h2>
-            <p>
+            <h2 class="text-black">Communicate and gather feedback</h2>
+            <p class="text-secondary">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit.
               Explicabo autem eum deserunt ad sit repellendus!
             </p>
             <div
-              class="author-box border border-start-2 border-secondary-subtle py-3 px-4"
+              class="author-box-2 border-start border-primary pt-3 pb-4 px-4 person-card"
             >
               <div class="avatar d-flex align-items-center mb-3">
-                <img
+                <img class="avatar-img"
                   src="https://preview.colorlib.com/theme/imagine/images/person_1.jpg"
                   alt="avatar"
-                  style="width: 50px; height: 50px; border-radius: 50%"
+                  
                 />
                 <div
                   class="avatar-title ps-3 d-flex flex-column justify-content-center"
                 >
-                  <h6>Kimberly Gush</h6>
+                  <h6 class="text-black m-0">Kimberly Gush</h6>
                   <p class="m-0">Co-Founder, XYZ Inc.</p>
                 </div>
               </div>
-              <div class="text">
+              <div class="inner-text text-secondary">
                 "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint,
                 minus? Tempore saepe unde repellat dolores."
               </div>
@@ -427,11 +428,11 @@
         </div>
       </div>
     </section>
-    <section class="about">
+    <section class="about bg-light" id="about">
       <div class="container">
-        <h2 class="text-center">About Us</h2>
+        <h2 class="text-center text-black mb-5 pb-3">About Us</h2>
         <div class="row">
-          <div class="about-img col-md-12 col-lg-6">
+          <div class="feedback-image col-md-12 col-lg-6">
             <img
               src="https://preview.colorlib.com/theme/imagine/images/undraw_bookmarks_r6up.svg"
               alt="about-section-image"
@@ -439,24 +440,24 @@
             />
           </div>
           <div class="text col-md-12 col-lg-6">
-            <h2>Our Mission</h2>
-            <p>
+            <h2 class="text-black mb-4">Our Mission</h2>
+            <p class="text-secondary mb-4">
               Eos cumque optio dolores excepturi rerum temporibus magni
               recusandae eveniet, totam omnis consectetur maxime quibusdam
               expedita dolorem dolor nobis dicta labore quaerat esse magnam
               unde, aperiam delectus! At maiores, itaque.
             </p>
-            <ul class="list-unstyled">
-              <li>
-                <i class="fa-solid fa-check pe-2" style="color: #17ab7e"></i>
+            <ul class="list-unstyled mb-5">
+              <li class="text-secondary mb-3">
+                <i class="fa-solid fa-check pe-2 text-success" ></i>
                 Laborum enim quasi at modi
               </li>
-              <li>
-                <i class="fa-solid fa-check pe-2" style="color: #17ab7e"></i> Ad
+              <li class="text-secondary mb-3">
+                <i class="fa-solid fa-check pe-2 text-success" ></i> Ad
                 at tempore
               </li>
-              <li>
-                <i class="fa-solid fa-check pe-2" style="color: #17ab7e"></i>
+              <li class="text-secondary mb-3">
+                <i class="fa-solid fa-check pe-2 text-success" ></i>
                 Labore quaerat esse
               </li>
             </ul>
@@ -465,10 +466,657 @@
         </div>
       </div>
     </section>
+    <section class="team" id="team">
+      <div class="container container-team">
+        <div class="row team-title text-center mb-5 justify-content-center">
+          <div class="col-7">
+            <h2 class="text-black">Our Teams</h2>
+            <p class="text-secondary">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
+              dolore a, molestiae officia corporis provident.
+            </p>
+          </div>
+        </div>
+        <div class="row team-cards">
+          <div class="team-card col-md-12 col-lg-6 col-xl-4 mb-4">
+            <div class="team-image">
+              <img
+                src="https://preview.colorlib.com/theme/imagine/images/person_1.jpg"
+                alt="person-1-img"
+                class="w-100 position-relative person"
+              />
+              <div
+                class="icon-bar position-absolute d-flex justify-content-center opacity-0"
+              >
+                <a href="#">
+                  <span class="mini-icon p-3"
+                    ><img
+                      src="https://img.icons8.com/?size=20&id=118468&format=png&color=ffffff"
+                      alt=""
+                    />
+                    <img
+                      src="https://img.icons8.com/?size=20&id=437&format=png&color=ffffff"
+                      alt=""
+                    />
+                    <img
+                      src="https://img.icons8.com/?size=20&id=32292&format=png&color=ffffff"
+                      alt=""
+                    />
+                  </span>
+                </a>
+              </div>
+            </div>
+            <div class="text bg-white">
+              <h2 class="text-black">Cloe Marena</h2>
+              <p class="text-top text-primary">President</p>
+              <p class="text-bottom text-secondary mb-4">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed,
+                corporis aliquam. Odit reiciendis voluptates itaque! Lorem ipsum
+                dolor sit amet.
+              </p>
+            </div>
+          </div>
+          <div class="team-card col-md-12 col-lg-6 col-xl-4 mb-4">
+            <div class="team-image w-100">
+              <img
+                src="https://preview.colorlib.com/theme/imagine/images/person_2.jpg"
+                alt="person-2-img"
+                class="w-100"
+              />
+              <div
+                class="icon-bar position-absolute d-flex justify-content-center opacity-0"
+              >
+                <a href="#">
+                  <span class="mini-icon p-3"
+                    ><img
+                      src="https://img.icons8.com/?size=20&id=118468&format=png&color=ffffff"
+                      alt=""
+                    />
+                    <img
+                      src="https://img.icons8.com/?size=20&id=437&format=png&color=ffffff"
+                      alt=""
+                    />
+                    <img
+                      src="https://img.icons8.com/?size=20&id=32292&format=png&color=ffffff"
+                      alt=""
+                    />
+                  </span>
+                </a>
+              </div>
+            </div>
+            <div class="text bg-white">
+              <h2 class="text-black">John Rooster</h2>
+              <p class="text-top text-primary">Marketing</p>
+              <p class="text-bottom text-secondary mb-4">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
+                dolore a, molestiae officia corporis provident. Lorem ipsum
+                dolor sit amet.
+              </p>
+            </div>
+          </div>
+          <div class="team-card col-md-12 col-lg-6 col-xl-4 mb-4">
+            <div class="team-image w-100">
+              <img
+                src="https://preview.colorlib.com/theme/imagine/images/person_3.jpg"
+                alt="person-3-img"
+                class="w-100"
+              />
+              <div
+              class="icon-bar position-absolute d-flex justify-content-center opacity-0"
+            >
+              <a href="#">
+                <span class="mini-icon p-3"
+                  ><img
+                    src="https://img.icons8.com/?size=20&id=118468&format=png&color=ffffff"
+                    alt=""
+                  />
+                  <img
+                    src="https://img.icons8.com/?size=20&id=437&format=png&color=ffffff"
+                    alt=""
+                  />
+                  <img
+                    src="https://img.icons8.com/?size=20&id=32292&format=png&color=ffffff"
+                    alt=""
+                  />
+                </span>
+              </a>
+            </div>
+            </div>
+            <div class="text bg-white">
+              <h2 class="text-black">Will Turner</h2>
+              <p class="text-top text-primary">Marketing</p>
+              <p class="text-bottom text-secondary">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
+                dolore a, molestiae officia corporis provident. Lorem ipsum
+                dolor sit amet.
+              </p>
+            </div>
+          </div>
+          <div class="team-card col-md-12 col-lg-6 col-xl-4 mb-4">
+            <div class="team-image w-100">
+              <img
+                src="https://preview.colorlib.com/theme/imagine/images/person_4.jpg"
+                alt="person-4-img"
+                class="w-100"
+              />
+              <div
+                class="icon-bar position-absolute d-flex justify-content-center opacity-0"
+              >
+                <a href="#">
+                  <span class="mini-icon p-3"
+                    ><img
+                      src="https://img.icons8.com/?size=20&id=118468&format=png&color=ffffff"
+                      alt=""
+                    />
+                    <img
+                      src="https://img.icons8.com/?size=20&id=437&format=png&color=ffffff"
+                      alt=""
+                    />
+                    <img
+                      src="https://img.icons8.com/?size=20&id=32292&format=png&color=ffffff"
+                      alt=""
+                    />
+                  </span>
+                </a>
+              </div>
+            </div>
+            <div class="text bg-white">
+              <h2 class="text-black">Nicolas Stainer</h2>
+              <p class="text-top text-primary">Financing</p>
+              <p class="text-bottom text-secondary">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
+                dolore a, molestiae officia corporis provident. Lorem ipsum
+                dolor sit amet.
+              </p>
+            </div>
+          </div>
+          <div class="team-card col-md-12 col-lg-6 col-xl-4 mb-4">
+            <div class="team-image w-100">
+              <img
+                src="https://preview.colorlib.com/theme/imagine/images/person_5.jpg"
+                alt="person-5-img"
+                class="w-100">
+                <div
+                class="icon-bar position-absolute d-flex justify-content-center opacity-0"
+              >
+                <a href="#">
+                  <span class="mini-icon p-3"
+                    ><img
+                      src="https://img.icons8.com/?size=20&id=118468&format=png&color=ffffff"
+                      alt=""
+                    />
+                    <img
+                      src="https://img.icons8.com/?size=20&id=437&format=png&color=ffffff"
+                      alt=""
+                    />
+                    <img
+                      src="https://img.icons8.com/?size=20&id=32292&format=png&color=ffffff"
+                      alt=""
+                    />
+                  </span>
+                </a>
+                </div>
+            </div>
+            <div class="text bg-white">
+              <h2 class="text-black">George Brook</h2>
+              <p class="text-primary">Founder</p>
+              <p class="text-secondary">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
+                dolore a, molestiae officia corporis provident. Lorem ipsum
+                dolor sit amet. Lorem ipsum dolor sit amet.
+              </p>
+            </div>     
+          </div>
+          <div class="team-card col-md-12 col-lg-5 col-xl-4 mb-4">
+              <div class="team-image w-100">
+                <img
+                  src="https://preview.colorlib.com/theme/imagine/images/person_6.jpg"
+                  alt="person-6-img"
+                  class="w-100"
+                />
+                <div
+                  class="icon-bar position-absolute d-flex justify-content-center opacity-0"
+                >
+                  <a href="#">
+                    <span class="mini-icon p-3"
+                      ><img
+                        src="https://img.icons8.com/?size=20&id=118468&format=png&color=ffffff"
+                        alt=""
+                      />
+                      <img
+                        src="https://img.icons8.com/?size=20&id=437&format=png&color=ffffff"
+                        alt=""
+                      />
+                      <img
+                        src="https://img.icons8.com/?size=20&id=32292&format=png&color=ffffff"
+                        alt=""
+                      />
+                    </span>
+                  </a>
+                </div>
+              </div>
+              <div class="text bg-white">
+                <h2 class="text-black">Emely Hopson</h2>
+                <p class="text-top text-primary">Marketing</p>
+                <p class="text-bottom text-secondary">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
+                  dolore a, molestiae officia corporis provident.
+                </p>
+              </div>
+          </div>
+          </div>
+      </div>
+    </section>
+    <section class="Testimonials bg-light" id="testimonial">
+      <div class="container w-100">
+        <div class="row mb-5">
+          <div class="col-12 text-center">
+            <h2 class="mb-3 text-black">Testimonials</h2>
+          </div>
+        </div>
+       
+        <div
+          id="testimonialCarousel"
+          class="carousel slide py-5"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner text-center">
+            <div class="carousel-item active">
+              <div class="d-flex justify-content-center align-items-center">
+                <img c
+                  src="https://preview.colorlib.com/theme/imagine/images/person_3.jpg"
+                  alt="Image"
+                  class="rounded-circle avatar-carousel"
+                  
+                />
+              </div>
+              <blockquote class="blockquote text-center">
+                <p class="fst-italic text-muted">
+                  “Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Consectetur unde reprehenderit aperiam quaerat fugiat
+                  repudiandae explicabo animi minima fuga beatae illum eligendi
+                  incidunt consequatur. Amet dolores excepturi earum unde
+                  iusto.”
+                </p>
+              </blockquote>
+              <footer class="blockquote-footer mt-4">
+                <strong>John Smith</strong>
+              </footer>
+            </div>
+
+            <div class="carousel-item">
+              <div class="d-flex justify-content-center align-items-center">
+                <img
+                  src="https://preview.colorlib.com/theme/imagine/images/person_2.jpg"
+                  alt="Image"
+                  class="rounded-circle avatar-carousel"
+                  
+                />
+              </div>
+              <blockquote class="blockquote text-center">
+                <p class="fst-italic text-muted">
+                  “Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Consectetur unde reprehenderit aperiam quaerat fugiat
+                  repudiandae explicabo animi minima fuga beatae illum eligendi
+                  incidunt consequatur. Amet dolores excepturi earum unde
+                  iusto.”
+                </p>
+              </blockquote>
+              <footer class="blockquote-footer mt-4">
+                <strong>Robert Aguilar</strong>
+              </footer>
+            </div>
+
+            <div class="carousel-item">
+              <div class="d-flex justify-content-center align-items-center">
+                <img
+                  src="https://preview.colorlib.com/theme/imagine/images/person_4.jpg"
+                  alt="Image"
+                  class="rounded-circle avatar-carousel"
+                 
+                />
+              </div>
+              <blockquote class="blockquote text-center">
+                <p class="fst-italic text-muted">
+                  “Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Consectetur unde reprehenderit aperiam quaerat fugiat
+                  repudiandae explicabo animi minima fuga beatae illum eligendi
+                  incidunt consequatur. Amet dolores excepturi earum unde
+                  iusto.”
+                </p>
+              </blockquote>
+              <footer class="blockquote-footer mt-4">
+                <strong>Roger Spears</strong>
+              </footer>
+            </div>
+
+            <div class="carousel-item">
+              <div class="d-flex justify-content-center align-items-center">
+                <img
+                  src="https://preview.colorlib.com/theme/imagine/images/person_1.jpg"
+                  alt="Image"
+                  class="rounded-circle avatar-carousel"
+                  
+                />
+              </div>
+              <blockquote class="blockquote text-center">
+                <p class="fst-italic text-muted">
+                  “Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Consectetur unde reprehenderit aperiam quaerat fugiat
+                  repudiandae explicabo animi minima fuga beatae illum eligendi
+                  incidunt consequatur. Amet dolores excepturi earum unde
+                  iusto.”
+                </p>
+              </blockquote>
+              <footer class="blockquote-footer mt-4">
+                <strong>Kylie McDonald</strong>
+              </footer>
+            </div>
+          </div>
+
+
+          <div class="carousel-indicators mb-3">
+            <button
+              type="button"
+              data-bs-target="#testimonialCarousel"
+              data-bs-slide-to="0"
+              class="btn-indicator active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#testimonialCarousel"
+              data-bs-slide-to="1"
+              class="btn-indicator"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#testimonialCarousel"
+              data-bs-slide-to="2"
+              class="btn-indicator"
+              aria-label="Slide 3"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#testimonialCarousel"
+              data-bs-slide-to="3"
+              class="btn-indicator"
+              aria-label="Slide 4"
+            ></button>
+          </div>
+          
+          
+          </div>
+          
+
+
+        
+        
+        </div>
+      </div>
+    </section>
+    <section class="blog" id="blog">
+      <div class="container">
+        <h2>Blog Posts</h2>
+        <div class="row blog-cards">
+          <div class="col-md-12 col-lg-6 col-xl-4 blog-card">
+            <div class="blog-image">
+              <img
+                src="https://preview.colorlib.com/theme/imagine/images/img_1.jpg"
+                alt="blog-1"
+                class="w-100"
+              />
+            </div>
+            <div class="blog-title">
+              <h2 class="text-black">Make Your Business More Profitable</h2>
+                <div class="blog-info mb-4 text-body-tertiary"><small>
+                  Ham Brook <span class="mx-2">•</span> Jan 18, 2019<span
+                    class="mx-2"
+                    >•</span
+                  >
+                  <a href="#" class="text-decoration-none">News</a></small>
+              </div>
+            </div>
+            <div class="blog-text">
+              <p class="text-secondary">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime
+                cumque unde sequi quasi numquam! Facilis adipisci exercitationem
+                ipsam ea culpa.
+              </p>
+            </div>
+            <div class="blog-btn">
+              <a href="#" class="text-decoration-none">Continue Reading</a>
+            </div>
+          </div>
+          <div class="col-md-12 col-lg-6 col-xl-4 blog-card">
+            <div class="blog-image">
+              <img
+                src="https://preview.colorlib.com/theme/imagine/images/img_2.jpg"
+                alt="blog-1"
+                class="w-100"
+              />
+            </div>
+            <div class="blog-title">
+              <h2 class="text-black">Make Your Business More Profitable</h2>
+              <div class="blog-info mb-4 text-body-tertiary">
+                <small>
+                  James Phelps <span class="mx-2">•</span> Jan 18, 2019<span
+                  class="mx-2"
+                  >•</span
+                >
+                </small>
+                <a href="#" class="text-decoration-none">News</a>
+              </div>
+            </div>
+            <div class="blog-text">
+              <p class="text-secondary">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime
+                cumque unde sequi quasi numquam! Facilis adipisci exercitationem
+                ipsam ea culpa.
+              </p>
+            </div>
+            <div class="blog-btn">
+              <a href="#" class="text-decoration-none">Continue Reading</a>
+            </div>
+          </div>
+          <div class="col-md-12 col-lg-6 col-xl-4 blog-card">
+            <div class="blog-image">
+              <img
+                src="https://preview.colorlib.com/theme/imagine/images/img_3.jpg"
+                alt="blog-1"
+                class="w-100"
+              />
+            </div>
+            <div class="blog-title">
+              <h2 class="text-black">Make Your Business More Profitable</h2>
+              <div class="blog-info mb-4 text-body-tertiary">
+                <small>
+                  James Phelps <span class="mx-2">•</span> Jan 18, 2019<span
+                  class="mx-2"
+                  >•</span
+                >
+                </small>
+                <a href="#" class="text-decoration-none">News</a>
+              </div>
+            </div>
+            <div class="blog-text">
+              <p class="text-secondary">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime
+                cumque unde sequi quasi numquam! Facilis adipisci exercitationem
+                ipsam ea culpa.
+              </p>
+            </div>
+            <div class="blog-btn">
+              <a href="#" class="text-decoration-none">Continue Reading</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="contact p-5" id="contact">
+      <div class="container">
+        <h2 class="text-center text-white mb-5">Contact Us</h2>
+        <div class="row justify-content-center ">
+          <div class="col-lg-7 mb-5 px-4">
+            <form action="" class="p-5 bg-white needs-validation" novalidate>
+              <h4 class="text-black mb-5 h4 ">Contact Form</h4>
+              <div class="row form-group ">
+                <div class="col-md-6 p-3 ">
+                  <label for="name" class="text-black mb-2" class="form-label">First Name</label>
+                  <input type="text" class="form-control rounded-0" name="name" id="name" required/>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                  <div class="invalid-feedback">
+                    Please enter your name.
+                  </div>
+                </div>
+                <div class="col-md-6 p-3">
+                  <label for="last-name" class="text-black mb-2">Last Name</label>
+                  <input
+                    type="text"
+                    class="form-control rounded-0"
+                    name="last-name"
+                    id="last-name" required
+                  />
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                  <div class="invalid-feedback">
+                    Please enter your last name.
+                  </div>
+                </div>
+              </div>
+              <div class="row form-group p-3">
+                <label for="email" class="text-black p-0 mb-2">Email</label>
+                <input
+                  type="email"
+                  class="form-control rounded-0"
+                  name="email"
+                  id="email" required
+                />
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+                <div class="invalid-feedback">
+                  Please enter your email.
+                </div>
+              </div>
+              <div class="row form-group p-3">
+                <label for="subject" class="text-black p-0 mb-2">Subject</label>
+                <input type="text" class="form-control rounded-0" name="subject" id="subject" required/>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+                <div class="invalid-feedback">
+                  Please enter your subject.
+                </div>
+              </div>
+              <div class="row form-group p-3">
+                <label for="message" class="text-black p-0 mb-2">Message</label>
+                <textarea
+                  class="form-control rounded-0"
+                  name="message"
+                  id="message"
+                  placeholder="Leave your message here ..."
+                  cols="30"
+                  rows="7"
+                  required
+                ></textarea>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+                <div class="invalid-feedback">
+                  Please enter your message.
+                </div>
+              </div>
+              <div class="row px-3">
+                <button href="#" class="btn btn-primary w-auto" type="submit">Send Message</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="py-5 text-center">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12">
+            <p class="mb-0">
+              <a href="#" class="text-decoration-none">
+                <span class="mini-icon p-3"
+                  ><i class="fa-brands fa-facebook-f text-primary"></i>
+                </span>
+              </a>
+              <a href="#" class=" text-decoration-none">
+                <span class="mini-icon p-3"
+                  ><i class="fab fa-twitter text-primary"></i
+                ></span>
+              </a>
+              <a href="#" class="text-decoration-none">
+                <span class="mini-icon p-3"
+                  ><i class="fa-brands fa-instagram text-primary"></i>
+                </span>
+              </a>
+              <a href="#" class="text-decoration-none">
+                <span class="mini-icon p-3"
+                  ><i class="fa-brands fa-linkedin-in text-primary"></i>
+                </span>
+              </a>
+              <a href="#" class="text-decoration-none">
+                <span class="mini-icon p-3"
+                  ><i class="fa-brands fa-pinterest text-primary"></i>
+                </span>
+              </a>
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <p class="mb-0">
+              Copyright ©2025 All rights reserved | This template is made with
+              <span
+                ><img
+                  src="https://img.icons8.com/?size=16&id=59805&format=png&color=ff0000"
+                  alt=""
+              /></span>
+              by <a href="#">Colorlib</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (() => {
+        "use strict";
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        const forms = document.querySelectorAll(".needs-validation");
+
+        // Loop over them and prevent submission
+        Array.from(forms).forEach((form) => {
+          form.addEventListener(
+            "submit",
+            (event) => {
+              if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+
+              form.classList.add("was-validated");
+            },
+            false
+          );
+        });
+      })();
+    </script>
   </body>
 </html>
