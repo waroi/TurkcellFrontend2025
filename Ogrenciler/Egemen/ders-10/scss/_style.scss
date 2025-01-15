@@ -1,0 +1,39 @@
+$sitePrimaryColor: #6247ea;
+$siteSecondaryColor: #ec9d5f;
+$pTextColor: #f9f9ff;
+$whiteColor: #ffffff;
+
+@mixin pTextStyle($color, $size, $weight){
+    color: $color;
+    font-size: $size;
+    font-weight: $weight;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Roboto", serif;
+}
+
+.banner-section{
+    background-color: $sitePrimaryColor;
+    padding: 225px 0px;
+    h2{
+        @include pTextStyle($whiteColor, 36px, 500);
+        text-transform: uppercase;
+    }
+    p{
+        @include pTextStyle($pTextColor, 14px, 400);
+    }
+    .btn{
+        color: $whiteColor;
+        border: 5px;
+        font-size: 12px;
+        font-weight: 500;
+        padding: 10px 50px;
+    }
+}
