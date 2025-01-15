@@ -11275,6 +11275,7 @@ textarea.form-control-lg {
 }
 body {
   padding-top: 96px;
+  overflow-x: hidden;
 }
 
 .navbar-nav .nav-link {
@@ -11286,6 +11287,11 @@ body {
 }
 .btn-primary:hover {
   color: #fff;
+}
+
+header {
+  margin-top: -85px;
+  min-height: 800px;
 }
 
 h1, .h1,
@@ -11357,6 +11363,13 @@ p {
 
 .testimonial-text {
   font-size: 1.5rem;
+}
+
+@media (max-width: 991px) {
+  h1, .h1 {
+    margin-top: 50px;
+    font-size: 32px !important;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
