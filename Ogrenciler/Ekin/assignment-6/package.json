@@ -5,12 +5,13 @@
   "scripts": {
     "sass": "sass -w sass:assets/style"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "bootstrap": "^5.3.3",
-    "sass": "^1.83.1"
+    "bootstrap": "^5.3.3"
+  },
+  "devDependencies": {
+    "sass": "1.77.6"
   }
 }
