@@ -1,8 +1,98 @@
-.paragraf{
-    color: red;
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+    line-height: 24px;
+    font-size: 14px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    color: #777777;
+}
+
+@mixin textStyle($size, $weight, $color, $textAlign, $lineHeight) {
+    font-size: $size;
+    font-weight: $weight;
+    color: $color;
+    text-align: $textAlign;
+    line-height: $lineHeight;
+}
+
+.top-menu{
+    a {
+        @include textStyle(12px,300,#fff ,start,40px );
+        margin-right: 50px;
+    }
+
+    .pur-btn{
+        @include textStyle(12px, 500, #fff, start, 40px);
+        padding: 0 40px;
+        margin: 0;
+    }
+}
+.navbar{
+    a {
+        @include textStyle(12px, 500, #222222, start, 80px);
+        font-weight: 500 !important;
+    }
+    align-items: center;
+    li{
+        margin-right: 28px;
+    }
+    .dropdown{
+        li a{
+            @include textStyle(12px, 500, #222222, start, 45px);
+            padding: 0 30px;
+        }
+        li a:hover{
+            @include textStyle(12px, 500, #fff, start, 45px);
+        }
+    }
+}
+
+@media (max-width:1619px) {
+    .header_area .navbar .search {
+        margin-left: 40px;
+    } 
+}
+
+@media (max-width:1199px) {
+    .header_area .navbar .nav .nav-item {
+        margin-right: 28px;
+    }
+
+}
+
+@media (max-width:991px) {
+    .top-menu {
+            a {
+                @include textStyle(12px, 300, #fff, start, 40px);
+                margin-right: 28px;
+            }
+        }
+    .navbar  li a{
+            line-height: 40px;
+            margin-right: 0px;
+            display: block;
+            border-bottom: 1px solid #ededed33;
+            border-radius: 0px;
+        }
+}
+
+@media (max-width:767px) {
+
+}
+
+@media (max-width:600px) {}
+
+@media (max-width:575px) {
+    .top-menu {
+        display: none;
+    }
+}
+
+@media (max-width:480px) {
+
+    .header_area .navbar-collapse {
+        max-height: 250px;
+    }
+
 }
