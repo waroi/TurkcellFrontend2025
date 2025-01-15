@@ -23,39 +23,39 @@ li {
   text-decoration: none;
 }
 
-.card {
+.imagine-section .card {
   background: #f1f1f1 !important;
-  border: none !important;
+  border: none;
   transition: 0.2s ease;
 }
-.card:hover {
+.imagine-section .card:hover {
   background-color: #4285f4 !important;
   transform: translateY(-10px);
 }
-.card:hover .card-title {
+.imagine-section .card:hover .card-title {
   font-size: 20px;
   color: white;
   font-weight: 500;
   line-height: 21.6px;
 }
-.card:hover .card-text {
+.imagine-section .card:hover .card-text {
   color: rgba(255, 255, 255, 0.7);
 }
-.card:hover .icon-circle {
+.imagine-section .card:hover .icon-circle {
   color: #4285f4;
   background-color: white;
 }
-.card:hover a {
+.imagine-section .card:hover a {
   color: white;
 }
-.card .card-title {
+.imagine-section .card .card-title {
   font-size: 20px;
   color: black;
   font-weight: 500;
   line-height: 21.6px;
   transition: 0.2s ease;
 }
-.card .icon-circle {
+.imagine-section .card .icon-circle {
   width: 80px;
   height: 80px;
   border-radius: 50%;
@@ -150,6 +150,121 @@ li {
   background-color: #4285f4;
   transform: translateY(-3px);
   box-shadow: 0 5px 30px -5px rgba(66, 133, 244, 0.7);
+}
+
+.our-team .card-title {
+  font-size: 18px;
+  color: black;
+  font-weight: 500;
+  line-height: 21.6px;
+}
+.our-team .card-subtitle {
+  font-size: 12px;
+  color: #4285f4;
+  font-weight: 700;
+  line-height: 20.4px;
+}
+.our-team .card-text {
+  font-size: 1rem;
+  color: gray;
+  font-weight: 400;
+  line-height: 27.2px;
+}
+.our-team .card {
+  border: none;
+}
+.our-team .card .card-img-1 {
+  background: url("../images/person_1.jpg.webp");
+  width: 100%;
+  height: 408px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+.our-team .card .card-img-2 {
+  background: url("../images/person_2.jpg.webp");
+  width: 100%;
+  height: 408px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+.our-team .card .card-img-3 {
+  background: url("../images/person_3.jpg.webp");
+  width: 100%;
+  height: 408px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+.our-team .card .card-img-4 {
+  background: url("../images/person_4.jpg.webp");
+  width: 100%;
+  height: 408px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+.our-team .card .card-img-5 {
+  background: url("../images/person_5.jpg.webp");
+  width: 100%;
+  height: 408px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+.our-team .card .card-img-6 {
+  background: url("../images/person_6.jpg.webp");
+  width: 100%;
+  height: 408px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+.our-team .card .social {
+  width: 100%;
+  height: 57px;
+  background-color: #4285f4;
+  transition: 0.3s ease;
+  bottom: -57px;
+}
+.our-team .card .social i {
+  font-size: 16px;
+  color: white;
+}
+.our-team .card:hover .social {
+  bottom: 0;
+}
+.our-team .card:hover .social i {
+  font-size: 16px;
+  color: white;
+}
+.our-team .card:hover .card-img-1 {
+  background-size: 105%;
+}
+.our-team .our-team-header h3 {
+  font-size: 40px;
+  color: black;
+  font-weight: 700;
+  line-height: 48px;
+}
+.our-team .our-team-header p {
+  font-size: 1.25rem;
+  color: gray;
+  font-weight: 300;
+  line-height: 34px;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -4,7 +4,15 @@
   font-weight: $fontweight;
   line-height: $lineheight;
 }
-
+@mixin cardImgFunc{
+    width: 100%;
+    height: 408px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+    transition: 0.3s ease;
+}
 .py-6 {
   padding: 5em 0 5em 0;
 }
@@ -31,10 +39,11 @@ li {
 .card-link {
   text-decoration: none;
 }
+.imagine-section{
 
 .card {
   background: #f1f1f1 !important;
-  border: none !important;
+  border: none;
   transition: 0.2s ease;
 
   &:hover {
@@ -80,7 +89,7 @@ li {
     transition: 0.2s ease;
   }
 }
-
+}
 .gather-section {
   .card-title {
     @include textFunc(40px, black, 700, 48px);
@@ -142,6 +151,76 @@ li {
       background-color: $blue;
       transform: translateY(-3px);
       box-shadow: 0 5px 30px -5px rgba(66, 133, 244, 0.7);
+    }
+  }
+}
+.our-team{
+  .card-title{
+    @include textFunc(18px, black, 500, 21.6px);
+  }
+  .card-subtitle{
+    @include textFunc(12px, $blue, 700, 20.4px);
+  }
+  .card-text{
+    @include textFunc(1rem, gray, 400, 27.2px);
+  }
+  .card{
+  border: none;
+  .card-img-1 {
+      background: url("../images/person_1.jpg.webp");
+      @include cardImgFunc();
+    }
+  .card-img-2 {
+    background: url("../images/person_2.jpg.webp");
+    @include cardImgFunc();
+  }
+  .card-img-3 {
+    background: url("../images/person_3.jpg.webp");
+    @include cardImgFunc();
+  }
+  .card-img-4 {
+    background: url("../images/person_4.jpg.webp");
+    @include cardImgFunc();
+  }
+  .card-img-5 {
+    background: url("../images/person_5.jpg.webp");
+    @include cardImgFunc();
+  }
+
+  .card-img-6 {
+    background: url("../images/person_6.jpg.webp");
+    @include cardImgFunc();
+  }
+  .social {
+    width: 100%;
+    height: 57px;
+    background-color: $blue;
+    transition: 0.3s ease;
+    bottom: -57px;
+    i {
+      font-size: 16px;
+      color: white;
+    }
+  }
+  &:hover{
+    .social{
+    bottom: 0;
+    i {
+        font-size: 16px;
+        color: white;
+      }
+    }
+    .card-img-1{
+      background-size: 105%;
+    }
+  }
+  }
+  .our-team-header{
+    h3{
+      @include textFunc(40px, black, 700, 48px);
+    }
+    p{
+      @include textFunc(1.25rem, gray, 300, 34px);
     }
   }
 }
