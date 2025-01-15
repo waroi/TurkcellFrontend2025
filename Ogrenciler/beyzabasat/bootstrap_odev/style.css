@@ -32,13 +32,7 @@ body {
 	bottom: 0;
 	right: 0;
 	top: 60%;
-
 	transform: translateY(-50%) translateX(30%);
-}
-
-.img-fluid {
-	max-width: 100%;
-	height: auto;
 }
 
 @media (max-width: 991.98px) {
@@ -71,7 +65,7 @@ body {
 	max-width: 1140px;
 }
 
-.unit-4 {
+.grid-cards {
 	padding: 30px;
 	background: #f1f1f1;
 	border-radius: 5px;
@@ -83,14 +77,14 @@ body {
 	padding-top: 50px;
 }
 
-.unit-4 .unit-4-icon {
+.grid-cards .grid-cards-icon {
 	position: absolute;
 	transform: translateX(-50%);
 	left: 50%;
 	top: -50px;
 }
 
-.unit-4 .unit-4-icon .icon-wrap {
+.grid-cards .grid-cards-icon .icon-wrap {
 	width: 80px;
 	height: 80px;
 	position: relative;
@@ -98,48 +92,48 @@ body {
 	box-shadow: 0 4px 20px -5px rgba(66, 133, 244, 0.4);
 }
 
-.unit-4 h3 {
+.grid-cards h3 {
 	font-size: 18px;
 	color: #000;
 	transition: 0.3s all ease;
 }
 
-.unit-4 p {
+.grid-cards p {
 	font-weight: 300;
 	-webkit-transition: 0.3s all ease;
 	-o-transition: 0.3s all ease;
 	transition: 0.3s all ease;
 }
 
-.unit-4 *:last-child {
+.grid-cards *:last-child {
 	margin-bottom: 0;
 }
 
-.unit-4:hover {
+.grid-cards:hover {
 	background: #4285f4;
 	box-shadow: 0 4px 20px -5px rgba(66, 133, 244, 0.4);
 	top: -7px;
 }
 
-.unit-4:hover .icon-wrap {
+.grid-cards:hover .icon-wrap {
 	background-color: #fff;
 	color: #4285f4 !important;
 }
 
-.unit-4:hover .icon-wrap span {
+.grid-cards:hover .icon-wrap span {
 	color: #4285f4 !important;
 }
 
-.unit-4:hover h3 {
+.grid-cards:hover h3 {
 	color: #fff;
 }
 
-.unit-4:hover p {
+.grid-cards:hover p {
 	font-weight: 300;
 	color: rgba(255, 255, 255, 0.7);
 }
 
-.unit-4:hover p a {
+.grid-cards:hover p a {
 	color: #fff;
 }
 
