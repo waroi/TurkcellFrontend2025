@@ -1,0 +1,3 @@
+@import "./bt_overrides"; // bootstrapi ezecek her şey ondan önce gelir.
+@import "../node_modules/bootstrap/scss/bootstrap.scss"; //bootstrap css
+@import "./style"; // custom css
