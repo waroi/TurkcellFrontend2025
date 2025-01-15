@@ -1,0 +1,78 @@
+.paragraf{
+    font-size: 24px;
+}
+
+.title{
+    font-size: 36px;
+    color: blueviolet;
+}
+
+@media screen and (max-width:768px) {
+    .paragraf{
+        font-size: 16px;
+    }
+    
+    .title{
+        font-size: 24px;
+        color: palevioletred;
+    }
+}
+
+/* Psudeo Class*/
+.link{
+    color: orange;
+    font-size: 24px;
+    text-decoration: none;
+}
+.link:visited{
+    color: greenyellow;
+}
+.link:hover{
+    color: brown;
+    font-size: 30px;
+}
+.link:active{
+    color: plum;
+}
+
+/* .listItem:last-child{
+    color: aqua;
+}
+
+.listItem:first-child{
+    color: rgb(18, 151, 151);
+}
+
+.listItem:nth-child(2){
+    color: orangered;
+} */
+
+/* .listItem:nth-child(2n+1){
+    color: orangered;
+} */
+/* 
+.listItem:nth-child(even){
+    color: orangered;
+} */
+
+
+/* Psudeo Element*/
+
+.listItem::before{
+    content:"👉";
+    font-size: 18px;
+}
+.listItem::after{
+    content:"🚀";
+    font-size: 18px;
+}
+
+/* .text::first-letter{
+    font-size: 36px;
+    color: red;
+} */
+
+.text::first-line{
+    font-size: 36px;
+    color: red;
+}
