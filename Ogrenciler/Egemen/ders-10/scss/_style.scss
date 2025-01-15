@@ -1,0 +1,80 @@
+$sitePrimaryColor: #6247ea;
+$siteSecondaryColor: #ec9d5f;
+$pTextColor: #f9f9ff;
+$whiteColor: #ffffff;
+$titleColor: #222222;
+$descriptionColor: #777777;
+
+@mixin textStyle($color, $size, $weight) {
+    color: $color;
+    font-size: $size;
+    font-weight: $weight;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", serif;
+    line-height: 24px;
+}
+
+.banner-section {
+    background-color: $sitePrimaryColor;
+    padding: 225px 0px;
+
+    h2 {
+        @include textStyle($whiteColor, 36px, 500);
+        text-transform: uppercase;
+    }
+
+    p {
+        @include textStyle($pTextColor, 14px, 400);
+    }
+
+    .btn {
+        color: $whiteColor;
+        border: 5px;
+        font-size: 12px;
+        font-weight: 500;
+        padding: 10px 50px;
+    }
+}
+
+.features-unique {
+    .titles {
+        h2 {
+            @include textStyle($titleColor, 36px, 500)
+        }
+
+        p {
+            @include textStyle($descriptionColor, 14px, 300);
+            max-width: 570px;
+        }
+    }
+
+    .feature-inner {
+        padding-bottom: 2rem;
+
+        .feature-item {
+            padding: 60px 20px 60px 30px;
+            transition: all 300ms linear 0s;
+
+            &:hover {
+                box-shadow: 0px 10px 30px 0px rgba(98, 71, 234, 0.1);
+                border-color: $border;
+            }
+
+            h4 {
+                @include textStyle($titleColor, 20px, 500)
+            }
+
+            p {
+                @include textStyle($descriptionColor, 14px, 400)
+            }
+        }
+    }
+}
