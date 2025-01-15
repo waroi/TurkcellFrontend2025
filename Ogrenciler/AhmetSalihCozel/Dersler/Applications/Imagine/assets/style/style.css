@@ -11290,6 +11290,7 @@ body {
 
 header {
   margin-top: -85px;
+  min-height: 800px;
 }
 
 h1, .h1,
@@ -11368,6 +11369,103 @@ p {
     margin-top: 50px;
     font-size: 32px !important;
   }
+}
+@keyframes initiate-top {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes initiate-right {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes initiate-left {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+#features h2, #features .h2,
+#features > p,
+#features .col,
+.our-team .col-7 h2,
+.our-team .col-7 .h2,
+.our-team .col-7 p,
+.our-team .col-lg-4 {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.img-fluid.col-12.col-lg-7:not(.order-1),
+.col-12.col-lg-5.pe-5 .card.p-4.shadow,
+.about-us img {
+  opacity: 0;
+  transform: translateX(-50px);
+}
+
+.img-fluid.col-12.col-lg-7.order-1,
+.col-12.col-lg-5.ps-5 .card.p-4.shadow {
+  opacity: 0;
+  transform: translateX(50px);
+}
+
+#features h2.visible, #features .visible.h2,
+#features > p.visible,
+.our-team .col-7 h2.visible,
+.our-team .col-7 .visible.h2,
+.our-team .col-7 p.visible {
+  animation: initiate-top 0.5s ease-in-out 0s forwards;
+}
+
+#features .col.visible:nth-of-type(1),
+.our-team .col-lg-4.visible:nth-of-type(1) {
+  animation: initiate-top 0.5s ease-in-out 0.15s forwards;
+}
+#features .col.visible:nth-of-type(2),
+.our-team .col-lg-4.visible:nth-of-type(2) {
+  animation: initiate-top 0.5s ease-in-out 0.3s forwards;
+}
+#features .col.visible:nth-of-type(3),
+.our-team .col-lg-4.visible:nth-of-type(3) {
+  animation: initiate-top 0.5s ease-in-out 0.45s forwards;
+}
+#features .col.visible:nth-of-type(4),
+.our-team .col-lg-4.visible:nth-of-type(4) {
+  animation: initiate-top 0.5s ease-in-out 0.15s forwards;
+}
+#features .col.visible:nth-of-type(5),
+.our-team .col-lg-4.visible:nth-of-type(5) {
+  animation: initiate-top 0.5s ease-in-out 0.3s forwards;
+}
+#features .col.visible:nth-of-type(6),
+.our-team .col-lg-4.visible:nth-of-type(6) {
+  animation: initiate-top 0.5s ease-in-out 0.45s forwards;
+}
+
+.img-fluid.col-12.col-lg-7:not(.order-1).visible,
+.col-12.col-lg-5.pe-5 .card.p-4.shadow.visible,
+.about-us img.visible {
+  animation: initiate-right 0.5s ease-in-out 0s forwards;
+}
+
+.img-fluid.col-12.col-lg-7.order-1.visible,
+.col-12.col-lg-5.ps-5 .card.p-4.shadow.visible {
+  animation: initiate-left 0.5s ease-in-out 0s forwards;
 }
 
 /*# sourceMappingURL=style.css.map */
