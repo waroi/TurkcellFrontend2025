@@ -1,5 +1,10 @@
-$primary:#6247EA;
-$secondary:#EC9D5F;
+
+$theme-colors: (
+  "primary":    #6247EA,
+  "secondary":  #EC9D5F,
+  "dark-gray":  #222222,
+  "light-gray": #777777,
+);
 
 
 $font-size-base:1rem;
@@ -9,4 +14,6 @@ $font-sizes: (
   36: $font-size-base * 2.25
 );
 
-$line-height-lg: 5;
+
+$line-height-lg: 2.25;
+
