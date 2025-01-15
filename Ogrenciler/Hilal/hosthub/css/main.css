@@ -114,7 +114,7 @@
   --bs-border-radius-pill: 50rem;
   --bs-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   --bs-box-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-  --bs-box-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+  --bs-box-shadow-lg: 0px 10px 30px 0px rgba(98, 71, 234, 0.1);
   --bs-box-shadow-inset: inset 0 1px 2px rgba(0, 0, 0, 0.075);
   --bs-focus-ring-width: 0.25rem;
   --bs-focus-ring-opacity: 0.25;
@@ -223,42 +223,57 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
 }
 
 h1, .h1 {
-  font-size: calc(1.3125rem + 0.75vw);
+  font-size: calc(1.44rem + 2.28vw);
 }
 @media (min-width: 1200px) {
   h1, .h1 {
-    font-size: 1.875rem;
+    font-size: 3.15rem;
   }
 }
 
 h2, .h2 {
-  font-size: calc(1.275rem + 0.3vw);
+  font-size: calc(1.38rem + 1.56vw);
 }
 @media (min-width: 1200px) {
   h2, .h2 {
-    font-size: 1.5rem;
+    font-size: 2.55rem;
   }
 }
 
 h3, .h3 {
-  font-size: calc(1.25625rem + 0.075vw);
+  font-size: calc(1.3125rem + 0.75vw);
 }
 @media (min-width: 1200px) {
   h3, .h3 {
-    font-size: 1.3125rem;
+    font-size: 1.875rem;
   }
 }
 
 h4, .h4 {
-  font-size: 1.125rem;
+  font-size: calc(1.365rem + 1.38vw);
+}
+@media (min-width: 1200px) {
+  h4, .h4 {
+    font-size: 2.4rem;
+  }
 }
 
 h5, .h5 {
-  font-size: 0.9375rem;
+  font-size: calc(1.35rem + 1.2vw);
+}
+@media (min-width: 1200px) {
+  h5, .h5 {
+    font-size: 2.25rem;
+  }
 }
 
 h6, .h6 {
-  font-size: 0.75rem;
+  font-size: calc(1.2525rem + 0.03vw);
+}
+@media (min-width: 1200px) {
+  h6, .h6 {
+    font-size: 1.275rem;
+  }
 }
 
 p {
@@ -8229,27 +8244,27 @@ textarea.form-control-lg {
 }
 
 .fs-1 {
-  font-size: calc(1.3125rem + 0.75vw) !important;
+  font-size: calc(1.44rem + 2.28vw) !important;
 }
 
 .fs-2 {
-  font-size: calc(1.275rem + 0.3vw) !important;
+  font-size: calc(1.38rem + 1.56vw) !important;
 }
 
 .fs-3 {
-  font-size: calc(1.25625rem + 0.075vw) !important;
+  font-size: calc(1.3125rem + 0.75vw) !important;
 }
 
 .fs-4 {
-  font-size: 1.125rem !important;
+  font-size: calc(1.365rem + 1.38vw) !important;
 }
 
 .fs-5 {
-  font-size: 0.9375rem !important;
+  font-size: calc(1.35rem + 1.2vw) !important;
 }
 
 .fs-6 {
-  font-size: 0.75rem !important;
+  font-size: calc(1.2525rem + 0.03vw) !important;
 }
 
 .fst-italic {
@@ -11792,13 +11807,22 @@ textarea.form-control-lg {
 }
 @media (min-width: 1200px) {
   .fs-1 {
-    font-size: 1.875rem !important;
+    font-size: 3.15rem !important;
   }
   .fs-2 {
-    font-size: 1.5rem !important;
+    font-size: 2.55rem !important;
   }
   .fs-3 {
-    font-size: 1.3125rem !important;
+    font-size: 1.875rem !important;
+  }
+  .fs-4 {
+    font-size: 2.4rem !important;
+  }
+  .fs-5 {
+    font-size: 2.25rem !important;
+  }
+  .fs-6 {
+    font-size: 1.275rem !important;
   }
 }
 @media print {
@@ -11836,12 +11860,88 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+p {
+  font-size: 0.88rem;
+  color: #777777;
+}
+
 a {
   color: white;
 }
 
 a.a-secondary-color {
-  color: #222222;
+  color: #6247ea;
+}
+
+section {
+  padding: 100px 0px;
+}
+
+.home-banner p {
+  color: #f9f9ff;
+}
+
+.btn {
+  font-weight: bold;
+}
+
+.btn-primary {
+  color: white;
+}
+.btn-primary:hover {
+  color: #6247ea;
+}
+
+.feature-area .card {
+  border-color: #eeeeee;
+  cursor: pointer;
+  transition: all 300ms linear 0s;
+}
+.feature-area .card h6, .feature-area .card .h6 {
+  margin-bottom: 30px;
+}
+.feature-area .card:hover {
+  box-shadow: 0px 10px 30px 0px rgba(98, 71, 234, 0.1);
+  border-color: #fbf9f9;
+}
+
+.price-area {
+  background: #fafcff;
+}
+.price-area .price-item::after {
+  content: "";
+  width: 1px;
+  background: #eeeeee;
+  height: 336px;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
+.price-area .col::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  text-align: center;
+  background-color: red;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  line-height: 50px;
+  color: white;
+  font-weight: 500;
+  font-size: 12px;
+  height: 40px;
+  z-index: 10;
+}
+.price-area .col {
+  border-top: 2px solid #fff;
+  position: relative;
+}
+.price-area .col:hover {
+  border-top: 2px solid #6247ea;
+}
+.price-area span {
+  font-size: 0.85rem;
 }
 
 /*# sourceMappingURL=main.css.map */

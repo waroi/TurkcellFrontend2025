@@ -1,9 +1,77 @@
-$a-main-color: white;
-$a-secondary-color: #222222;
-
+p {
+  font-size: 0.88rem;
+  color: $info;
+}
 a {
-  color: $a-main-color;
+  color: $light;
 }
 a.a-secondary-color {
-  color: $a-secondary-color;
+  color: $secondary;
+}
+section {
+  padding: 100px 0px;
+}
+.home-banner {
+  p {
+    color: #f9f9ff;
+  }
+}
+.btn {
+  font-weight: bold;
+}
+.btn-primary {
+  color: $light;
+  &:hover {
+    color: $secondary;
+  }
+}
+.feature-area .card {
+  border-color: #eeeeee;
+  cursor: pointer;
+  h6 {
+    margin-bottom: 30px;
+  }
+  &:hover {
+    box-shadow: $box-shadow-lg;
+    border-color: #fbf9f9;
+  }
+  transition: all 300ms linear 0s;
+}
+.price-area {
+  background: #fafcff;
+  .price-item::after {
+    content: "";
+    width: 1px;
+    background: #eeeeee;
+    height: 336px;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+  }
+  .col::after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    text-align: center;
+    background-color: red;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    line-height: 50px;
+    color: $light;
+    font-weight: 500;
+    font-size: 12px;
+    height: 40px;
+    z-index: 10;
+  }
+  .col {
+    border-top: 2px solid #fff;
+    position: relative;
+    &:hover {
+      border-top: 2px solid $secondary;
+    }
+  }
+  span {
+    font-size: 0.85rem;
+  }
 }
