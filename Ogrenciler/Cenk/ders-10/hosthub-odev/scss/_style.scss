@@ -1,0 +1,30 @@
+$orange:#ec9d5f;
+$purple:#6247ea;
+*{
+    font-family: 'Roboto', sans-serif;
+}
+@mixin textFunc($fontsize, $color: null, $fontweight, $lineheight) {
+    font-size: $fontsize;
+    color: $color;
+    font-weight: $fontweight;
+    line-height: $lineheight;
+}
+
+.header-top{
+    background-color: $orange;
+    .container{
+        max-width: 1650px;
+    }
+    .header-top-left a{
+        text-decoration: none;
+        @include textFunc(12px, inherit, 300, 40px);
+        text-transform: uppercase;
+    }
+    .purchase-btn{
+        background-color: $purple;
+        a{
+        @include textFunc(12px, inherit, 500, 40px);
+        text-decoration: none;
+        }
+    }
+}
