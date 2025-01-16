@@ -34,11 +34,15 @@
   --bs-dark-gray: #222222;
   --bs-light-gray: #777777;
   --bs-pColor: #F9F9FF;
+  --bs-price: #fafcff;
+  --bs-solution: #ec9d5f;
   --bs-primary-rgb: 98, 71, 234;
   --bs-secondary-rgb: 236, 157, 95;
   --bs-dark-gray-rgb: 34, 34, 34;
   --bs-light-gray-rgb: 119, 119, 119;
   --bs-pColor-rgb: 249, 249, 255;
+  --bs-price-rgb: 250, 252, 255;
+  --bs-solution-rgb: 236, 157, 95;
   --bs-primary-text-emphasis: rgb(39.2, 28.4, 93.6);
   --bs-secondary-text-emphasis: rgb(94.4, 62.8, 38);
   --bs-success-text-emphasis: rgb(10, 54, 33.6);
@@ -3545,6 +3549,40 @@ textarea.form-control-lg {
   --bs-btn-disabled-border-color: #F9F9FF;
 }
 
+.btn-price {
+  --bs-btn-color: #000;
+  --bs-btn-bg: #fafcff;
+  --bs-btn-border-color: #fafcff;
+  --bs-btn-hover-color: #000;
+  --bs-btn-hover-bg: rgb(250.75, 252.45, 255);
+  --bs-btn-hover-border-color: rgb(250.5, 252.3, 255);
+  --bs-btn-focus-shadow-rgb: 213, 214, 217;
+  --bs-btn-active-color: #000;
+  --bs-btn-active-bg: rgb(251, 252.6, 255);
+  --bs-btn-active-border-color: rgb(250.5, 252.3, 255);
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #000;
+  --bs-btn-disabled-bg: #fafcff;
+  --bs-btn-disabled-border-color: #fafcff;
+}
+
+.btn-solution {
+  --bs-btn-color: #000;
+  --bs-btn-bg: #ec9d5f;
+  --bs-btn-border-color: #ec9d5f;
+  --bs-btn-hover-color: #000;
+  --bs-btn-hover-bg: rgb(238.85, 171.7, 119);
+  --bs-btn-hover-border-color: rgb(237.9, 166.8, 111);
+  --bs-btn-focus-shadow-rgb: 201, 133, 81;
+  --bs-btn-active-color: #000;
+  --bs-btn-active-bg: rgb(239.8, 176.6, 127);
+  --bs-btn-active-border-color: rgb(237.9, 166.8, 111);
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #000;
+  --bs-btn-disabled-bg: #ec9d5f;
+  --bs-btn-disabled-border-color: #ec9d5f;
+}
+
 .btn-outline-primary {
   --bs-btn-color: #6247ea;
   --bs-btn-border-color: #6247ea;
@@ -3627,6 +3665,40 @@ textarea.form-control-lg {
   --bs-btn-disabled-color: #F9F9FF;
   --bs-btn-disabled-bg: transparent;
   --bs-btn-disabled-border-color: #F9F9FF;
+  --bs-gradient: none;
+}
+
+.btn-outline-price {
+  --bs-btn-color: #fafcff;
+  --bs-btn-border-color: #fafcff;
+  --bs-btn-hover-color: #000;
+  --bs-btn-hover-bg: #fafcff;
+  --bs-btn-hover-border-color: #fafcff;
+  --bs-btn-focus-shadow-rgb: 250, 252, 255;
+  --bs-btn-active-color: #000;
+  --bs-btn-active-bg: #fafcff;
+  --bs-btn-active-border-color: #fafcff;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fafcff;
+  --bs-btn-disabled-bg: transparent;
+  --bs-btn-disabled-border-color: #fafcff;
+  --bs-gradient: none;
+}
+
+.btn-outline-solution {
+  --bs-btn-color: #ec9d5f;
+  --bs-btn-border-color: #ec9d5f;
+  --bs-btn-hover-color: #000;
+  --bs-btn-hover-bg: #ec9d5f;
+  --bs-btn-hover-border-color: #ec9d5f;
+  --bs-btn-focus-shadow-rgb: 236, 157, 95;
+  --bs-btn-active-color: #000;
+  --bs-btn-active-bg: #ec9d5f;
+  --bs-btn-active-border-color: #ec9d5f;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #ec9d5f;
+  --bs-btn-disabled-bg: transparent;
+  --bs-btn-disabled-border-color: #ec9d5f;
   --bs-gradient: none;
 }
 
@@ -5234,6 +5306,20 @@ textarea.form-control-lg {
   --bs-alert-link-color: var(--bs-pColor-text-emphasis);
 }
 
+.alert-price {
+  --bs-alert-color: var(--bs-price-text-emphasis);
+  --bs-alert-bg: var(--bs-price-bg-subtle);
+  --bs-alert-border-color: var(--bs-price-border-subtle);
+  --bs-alert-link-color: var(--bs-price-text-emphasis);
+}
+
+.alert-solution {
+  --bs-alert-color: var(--bs-solution-text-emphasis);
+  --bs-alert-bg: var(--bs-solution-bg-subtle);
+  --bs-alert-border-color: var(--bs-solution-border-subtle);
+  --bs-alert-link-color: var(--bs-solution-text-emphasis);
+}
+
 @keyframes progress-bar-stripes {
   0% {
     background-position-x: 1rem;
@@ -5598,6 +5684,32 @@ textarea.form-control-lg {
   --bs-list-group-active-color: var(--bs-pColor-bg-subtle);
   --bs-list-group-active-bg: var(--bs-pColor-text-emphasis);
   --bs-list-group-active-border-color: var(--bs-pColor-text-emphasis);
+}
+
+.list-group-item-price {
+  --bs-list-group-color: var(--bs-price-text-emphasis);
+  --bs-list-group-bg: var(--bs-price-bg-subtle);
+  --bs-list-group-border-color: var(--bs-price-border-subtle);
+  --bs-list-group-action-hover-color: var(--bs-emphasis-color);
+  --bs-list-group-action-hover-bg: var(--bs-price-border-subtle);
+  --bs-list-group-action-active-color: var(--bs-emphasis-color);
+  --bs-list-group-action-active-bg: var(--bs-price-border-subtle);
+  --bs-list-group-active-color: var(--bs-price-bg-subtle);
+  --bs-list-group-active-bg: var(--bs-price-text-emphasis);
+  --bs-list-group-active-border-color: var(--bs-price-text-emphasis);
+}
+
+.list-group-item-solution {
+  --bs-list-group-color: var(--bs-solution-text-emphasis);
+  --bs-list-group-bg: var(--bs-solution-bg-subtle);
+  --bs-list-group-border-color: var(--bs-solution-border-subtle);
+  --bs-list-group-action-hover-color: var(--bs-emphasis-color);
+  --bs-list-group-action-hover-bg: var(--bs-solution-border-subtle);
+  --bs-list-group-action-active-color: var(--bs-emphasis-color);
+  --bs-list-group-action-active-bg: var(--bs-solution-border-subtle);
+  --bs-list-group-active-color: var(--bs-solution-bg-subtle);
+  --bs-list-group-active-bg: var(--bs-solution-text-emphasis);
+  --bs-list-group-active-border-color: var(--bs-solution-text-emphasis);
 }
 
 .btn-close {
@@ -7103,6 +7215,16 @@ textarea.form-control-lg {
   background-color: RGBA(var(--bs-pColor-rgb), var(--bs-bg-opacity, 1)) !important;
 }
 
+.text-bg-price {
+  color: #000 !important;
+  background-color: RGBA(var(--bs-price-rgb), var(--bs-bg-opacity, 1)) !important;
+}
+
+.text-bg-solution {
+  color: #000 !important;
+  background-color: RGBA(var(--bs-solution-rgb), var(--bs-bg-opacity, 1)) !important;
+}
+
 .link-primary {
   color: RGBA(var(--bs-primary-rgb), var(--bs-link-opacity, 1)) !important;
   text-decoration-color: RGBA(var(--bs-primary-rgb), var(--bs-link-underline-opacity, 1)) !important;
@@ -7146,6 +7268,24 @@ textarea.form-control-lg {
 .link-pColor:hover, .link-pColor:focus {
   color: RGBA(250, 250, 255, var(--bs-link-opacity, 1)) !important;
   text-decoration-color: RGBA(250, 250, 255, var(--bs-link-underline-opacity, 1)) !important;
+}
+
+.link-price {
+  color: RGBA(var(--bs-price-rgb), var(--bs-link-opacity, 1)) !important;
+  text-decoration-color: RGBA(var(--bs-price-rgb), var(--bs-link-underline-opacity, 1)) !important;
+}
+.link-price:hover, .link-price:focus {
+  color: RGBA(251, 253, 255, var(--bs-link-opacity, 1)) !important;
+  text-decoration-color: RGBA(251, 253, 255, var(--bs-link-underline-opacity, 1)) !important;
+}
+
+.link-solution {
+  color: RGBA(var(--bs-solution-rgb), var(--bs-link-opacity, 1)) !important;
+  text-decoration-color: RGBA(var(--bs-solution-rgb), var(--bs-link-underline-opacity, 1)) !important;
+}
+.link-solution:hover, .link-solution:focus {
+  color: RGBA(240, 177, 127, var(--bs-link-opacity, 1)) !important;
+  text-decoration-color: RGBA(240, 177, 127, var(--bs-link-underline-opacity, 1)) !important;
 }
 
 .link-body-emphasis {
@@ -7567,6 +7707,14 @@ textarea.form-control-lg {
   --bs-focus-ring-color: rgba(var(--bs-pColor-rgb), var(--bs-focus-ring-opacity));
 }
 
+.focus-ring-price {
+  --bs-focus-ring-color: rgba(var(--bs-price-rgb), var(--bs-focus-ring-opacity));
+}
+
+.focus-ring-solution {
+  --bs-focus-ring-color: rgba(var(--bs-solution-rgb), var(--bs-focus-ring-opacity));
+}
+
 .position-static {
   position: static !important;
 }
@@ -7710,6 +7858,16 @@ textarea.form-control-lg {
 .border-pColor {
   --bs-border-opacity: 1;
   border-color: rgba(var(--bs-pColor-rgb), var(--bs-border-opacity)) !important;
+}
+
+.border-price {
+  --bs-border-opacity: 1;
+  border-color: rgba(var(--bs-price-rgb), var(--bs-border-opacity)) !important;
+}
+
+.border-solution {
+  --bs-border-opacity: 1;
+  border-color: rgba(var(--bs-solution-rgb), var(--bs-border-opacity)) !important;
 }
 
 .border-black {
@@ -9228,6 +9386,10 @@ textarea.form-control-lg {
   font-size: 0.875rem !important;
 }
 
+.fs-20 {
+  font-size: 1.25rem !important;
+}
+
 .fst-italic {
   font-style: italic !important;
 }
@@ -9354,6 +9516,16 @@ textarea.form-control-lg {
 .text-pColor {
   --bs-text-opacity: 1;
   color: rgba(var(--bs-pColor-rgb), var(--bs-text-opacity)) !important;
+}
+
+.text-price {
+  --bs-text-opacity: 1;
+  color: rgba(var(--bs-price-rgb), var(--bs-text-opacity)) !important;
+}
+
+.text-solution {
+  --bs-text-opacity: 1;
+  color: rgba(var(--bs-solution-rgb), var(--bs-text-opacity)) !important;
 }
 
 .text-black {
@@ -9543,6 +9715,16 @@ textarea.form-control-lg {
   text-decoration-color: rgba(var(--bs-pColor-rgb), var(--bs-link-underline-opacity)) !important;
 }
 
+.link-underline-price {
+  --bs-link-underline-opacity: 1;
+  text-decoration-color: rgba(var(--bs-price-rgb), var(--bs-link-underline-opacity)) !important;
+}
+
+.link-underline-solution {
+  --bs-link-underline-opacity: 1;
+  text-decoration-color: rgba(var(--bs-solution-rgb), var(--bs-link-underline-opacity)) !important;
+}
+
 .link-underline {
   --bs-link-underline-opacity: 1;
   text-decoration-color: rgba(var(--bs-link-color-rgb), var(--bs-link-underline-opacity, 1)) !important;
@@ -9619,6 +9801,16 @@ textarea.form-control-lg {
 .bg-pColor {
   --bs-bg-opacity: 1;
   background-color: rgba(var(--bs-pColor-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.bg-price {
+  --bs-bg-opacity: 1;
+  background-color: rgba(var(--bs-price-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.bg-solution {
+  --bs-bg-opacity: 1;
+  background-color: rgba(var(--bs-solution-rgb), var(--bs-bg-opacity)) !important;
 }
 
 .bg-black {
@@ -15517,6 +15709,21 @@ textarea.form-control-lg {
 
 .box-1800 {
   max-width: 1800px;
+}
+
+.price-section .price-item .item-text:hover h2, .price-section .price-item .item-text:hover .h2 {
+  color: #6247ea;
+}
+.price-section .price-item .price-btn {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  display: none;
+}
+.price-section .price-item:hover .price-btn {
+  display: block;
+}
+.price-section .price-item:hover {
+  border-top: 2px solid #6247ea;
 }
 
 /*# sourceMappingURL=main.css.map */

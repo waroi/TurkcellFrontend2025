@@ -3,12 +3,16 @@ $dark-gray: #222222;
 $secondary: #ec9d5f;
 $light-gray: #777777;
 $pColor:#F9F9FF;
+$price: #fafcff;
+$solution : #ec9d5f;
 $theme-colors: (
   'primary': $primary,
   'secondary': $secondary,
   'dark-gray': $dark-gray,
   'light-gray': $light-gray,
-  'pColor':#F9F9FF,
+  'pColor': $pColor,
+  'price' : $price,
+  'solution' : $solution,
 );
 // SPACING
 $spacer: 1rem;
@@ -40,7 +44,7 @@ $spacers: (
   12: $spacer * 3,
   //80px
   20: $spacer * 5,
-  //
+  //120px
   30:$spacer * 7.5,
   //240px
   50:$spacer * 15,
@@ -55,6 +59,7 @@ $font-sizes: (
   12: $font-size-base * 0.75,
   36: $font-size-base * 2.25,
   14: $font-size-base * 0.875,
+  20: $font-size-base * 1.25,
 );
 
 // NAVBAR
@@ -70,3 +75,5 @@ $navbar-light-active-color: $primary;
 
 //card
 $card-border-color: #eeeeee;
+//price
+$price-item-h2-hover-color: $primary;
