@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto", serif;
+}
+
+.header-row {
+  height: 50px;
+
+  .info {
+    p {
+      font-size: 14px;
+      font-weight: 300;
+    }
+  }
+
+  .purchase {
+    p {
+      font-size: 14px;
+      font-weight: 400;
+    }
+  }
+}
+.header-bottom{
+    .link-style{
+        font-size: 14px;
+        font-weight: 500;
+        text-decoration: none;
+      }
+}

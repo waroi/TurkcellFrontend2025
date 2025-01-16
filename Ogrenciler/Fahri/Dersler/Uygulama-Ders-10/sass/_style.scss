@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+$orange: #ec9d5f;
+$purple: #6247ea;
+$pgColorGrey: #777777;
+$white: #ffffff;
+$headColor: #222222;
+
+* {
+  font-family: "Roboto", sans-serif;
+}
+.section-padding {
+  padding: 120px 0;
+}
+@mixin font($font-size: null, $font-weight, $color: null, $line-height) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  color: $color;
+  line-height: $line-height;
+}
+.banner-section {
+  background: $purple;
+
+  .row {
+    padding: 225px 0;
+    h2 {
+      @include font(36px, 500, $white, 43.2px);
+      text-transform: uppercase;
+    }
+    p {
+      @include font(null, 300, #f9f9ff, 24px);
+      opacity: 0.6;
+      max-width: 405px;
+      margin-bottom: 35px;
+    }
+    .banner-btn {
+      @include font(12px, 500, #fff, 50px);
+      padding: 0px 50px;
+      background: #ec9d5f;
+      border-radius: 5px;
+      transition: all 300ms linear 0s;
+    }
+  }
+}
+
+.features-section {
+  @extend .section-padding;
+  h2 {
+    @include font(36px, 500, $headColor, 43.2px);
+  }
+  p {
+    @include font(null, 300, null, 24px);
+  }
+  .card {
+    .card-body {
+      border: 1px solid #eeeeee;
+      border-radius: 10px;
+      padding: 60px 20px 60px 30px;
+      transition: all 300ms linear 0s;
+    }
+  }
+}
+.pricing-section {
+  @extend .section-padding;
+  h2 {
+    @include font(36px, 500, $headColor, 43.2px);
+  }
+  p {
+    @include font(null, 300, null, 24px);
+  }
+  .price_text {
+    h3 {
+      @include font(20px, 500, $headColor, 24px);
+    }
+    h4 {
+      @include font(36px, 500, $headColor, 43.2px);
+      span {
+        @include font(14px, 300, $pgColorGrey, 16.8px);
+      }
+    }
+    li {
+      a {
+        @include font(14px, 400, $pgColorGrey, 24px);
+      }
+      margin: 0 0 20px;
+    }
+  }
+}
+.custom-section {
+  background: $orange;
+  h2 {
+    @include font(36px, 500, $white, 43.2px);
+  }
+  p {
+    @include font(null, 300, $white, 24px);
+  }
+  .custom-btn {
+    @include font(12px, 500, $headColor, 50px);
+    background: $white;
+    padding: 0px 50px;
+    border-radius: 0px;
+    outline: none !important;
+    box-shadow: none !important;
+    cursor: pointer;
+    transition: all 300ms linear 0s;
+    &:hover {
+      color: $white;
+      background: $purple;
+    }
+  }
+}
+.clients-section {
+  .card-body {
+    padding: 55px 30px;
+    h2 {
+      @include font(20px, 500, $headColor, 24px);
+    }
+    p {
+      @include font(null, 300, $pgColorGrey, 16.8px);
+    }
+  }
+  .left-card {
+    padding: 0;
+    h2 {
+      @include font(36px, 500, $headColor, 45px);
+      margin: 30px 0 20px;
+    }
+    p {
+      @include font(null, 300, $pgColorGrey, 24px);
+    }
+  }
+}
