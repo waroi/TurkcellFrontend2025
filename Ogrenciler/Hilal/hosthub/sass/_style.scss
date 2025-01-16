@@ -109,3 +109,72 @@ section {
     font-size: 0.85rem;
   }
 }
+.solution {
+  p {
+    max-width: 770px;
+    margin: 0 auto 35px;
+  }
+  .solution-btn {
+    padding: 0px 50px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 50px;
+    border: none;
+    transition: all 300ms linear 0s;
+    &:hover{
+      background-color: $secondary;
+      color: white;
+    }
+  }
+}
+.client{
+  .says_left {
+    max-width: 335px;
+  }
+  .says_left h3 {
+    line-height: 45px;
+  }
+  .says_item {
+    border: 1px solid #eeeeee;
+    border-radius: 10px;
+    padding: 55px 30px;
+    transition: all 300ms linear 0s;
+  }
+  .says_item:hover {
+    box-shadow: $box-shadow-lg;
+    border-color: $light;
+  }
+}
+.service-area {
+  .service_title p{
+    max-width: 570px;
+  }
+  .service_item {
+    border-color: #eeeeee;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 40px 60px 40px 40px;
+    border: 1px solid #9381eb;
+    transition: all 300ms linear 0s;
+    h4 {
+      font-size: 18px;
+      font-weight: 500;
+      color: $light;
+    }
+    p{
+      color: $light;
+      opacity: .6;
+    } 
+    &:hover{
+      background: $light;
+      box-shadow: $box-shadow-lg;
+      p {
+        color: $info;
+        opacity: 1;
+      }
+      h4{
+        color: $dark;
+      }
+    }
+  } 
+}
