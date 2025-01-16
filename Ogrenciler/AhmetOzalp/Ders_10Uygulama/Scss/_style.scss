@@ -4,6 +4,7 @@ $blueColor: #007bff;
 $indigoColor: #6610f2;
 $pColor: #777777;
 $width: 100%;
+
 * {
   font-family: "Roboto", sans-serif;
   box-sizing: border-box;
@@ -22,6 +23,7 @@ $width: 100%;
     p {
       opacity: 0.6;
     }
+
     .banner_btn {
       background-color: $orangeColor;
       font-size: 12px;
@@ -33,8 +35,7 @@ $width: 100%;
 
 section {
   .container {
-    .text-center {
-    }
+    .text-center {}
   }
 }
 
@@ -42,4 +43,9 @@ p {
   font-size: 14px;
   color: $pColor;
   line-height: 24px;
+}
+
+section {
+  background-color: #fafcff;
+
 }
