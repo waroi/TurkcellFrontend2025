@@ -8306,7 +8306,7 @@ textarea.form-control-lg {
 }
 
 .lh-lg {
-  line-height: 2 !important;
+  line-height: 45px !important;
 }
 
 .text-start {
@@ -11903,6 +11903,38 @@ body {
   font-size: 14px;
 }
 
+.price-area .price-inner .price-item {
+  padding-top: 75px;
+  padding-bottom: 75px;
+  cursor: pointer;
+  padding-left: 55px;
+  border-top: 2px solid #ffffff !important;
+}
+.price-area .price-inner .price-item h5, .price-area .price-inner .price-item .h5 {
+  font-size: 14px;
+}
+.price-area .price-inner .price-item:hover {
+  box-shadow: 0px 10px 30px 0px rgba(98, 71, 234, 0.1);
+  border-color: #fff !important;
+  border-top-color: #6247ea !important;
+}
+.price-area .price-inner .price-item:hover h2, .price-area .price-inner .price-item:hover .h2 {
+  color: #6247ea !important;
+}
+.price-area .price-inner .price-item:hover + .price-btn {
+  opacity: 1;
+}
+.price-area .price-inner .price-btn {
+  background: #6247ea;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  line-height: 50px;
+  font-size: 14px;
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  margin-bottom: -50px;
+  color: red;
+}
 .price-area .main-title h2, .price-area .main-title .h2 {
   font-size: 36px;
 }
@@ -11918,23 +11950,99 @@ body {
 .price-area .list li {
   margin-bottom: 20px;
 }
-.price-area .price-item {
-  padding-top: 75px;
-  padding-bottom: 75px;
-  padding-left: 45px;
-  border: #ffffff;
+
+.custom-solution {
+  background-color: #ec9d5f;
 }
-.price-area .price-item h5, .price-area .price-item .h5 {
+.custom-solution h4, .custom-solution .h4 {
+  font-size: 36px;
+}
+.custom-solution p {
+  max-width: 770px;
+  opacity: 0.6;
   font-size: 14px;
 }
-.price-area .price-item:hover {
-  box-shadow: 0px 10px 30px 0px rgba(98, 71, 234, 0.1);
-  border-color: #fff !important;
-  border-top: 2px solid !important;
-  border-top-color: #6247ea !important;
+.custom-solution a {
+  background: #f9f9ff;
+  padding: 19px 50px;
+  font-size: 12px;
+  transition: all 300ms linear 0s;
 }
-.price-area .price-item:hover h2, .price-area .price-item:hover .h2 {
-  color: #6247ea !important;
+.custom-solution a:hover {
+  color: #fff !important;
+  background-color: #6247ea;
+}
+
+.client-says .client-inner .says-item {
+  transition: all 300ms linear 0s;
+}
+.client-says .client-inner .says-item h4, .client-says .client-inner .says-item .h4 {
+  font-size: 20px;
+}
+.client-says .client-inner .says-item h5, .client-says .client-inner .says-item .h5,
+.client-says .client-inner .says-item p {
+  font-size: 14px;
+}
+.client-says .client-inner .says-item:hover {
+  border-color: #fff !important;
+  box-shadow: 0px 10px 30px 0px rgba(98, 71, 234, 0.1);
+}
+.client-says .client-inner .says-left h3, .client-says .client-inner .says-left .h3 {
+  font-size: 36px;
+}
+.client-says .client-inner .says-left p {
+  font-size: 14px;
+}
+
+.top-services {
+  background-color: #6247ea;
+  padding: 120px 0;
+}
+.top-services::before {
+  content: "";
+  background: url("https://preview.colorlib.com/theme/hosthub/img/map-bg.png.webp") no-repeat scroll center center;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+}
+.top-services .container .service-inner {
+  position: relative;
+  z-index: 1;
+}
+.top-services .container .title h2, .top-services .container .title .h2 {
+  font-size: 36px;
+}
+.top-services .container .title p {
+  font-size: 14px;
+  max-width: 570px;
+  opacity: 0.6;
+}
+.top-services .container .col-xl-4 .service-item {
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #9381eb;
+  transition: all 300ms linear 0s;
+}
+.top-services .container .col-xl-4 .service-item h4, .top-services .container .col-xl-4 .service-item .h4 {
+  font-size: 18px;
+}
+.top-services .container .col-xl-4 .service-item p {
+  opacity: 0.6;
+  font-size: 14px;
+}
+.top-services .container .col-xl-4 .service-item:hover {
+  background-color: #fff;
+}
+.top-services .container .col-xl-4 .service-item:hover h4, .top-services .container .col-xl-4 .service-item:hover .h4 {
+  color: #222222 !important;
+}
+.top-services .container .col-xl-4 .service-item:hover svg {
+  fill: #222222;
+}
+.top-services .container .col-xl-4 .service-item:hover p {
+  color: #777777 !important;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,376 +1,486 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script
-      src="https://kit.fontawesome.com/1618e98dac.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    ;
-    <link rel="preconnect" href="https://fonts.gstatic.com" ; crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-      ;
-      rel="stylesheet"
-    />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="./css/main.css" />
-  </head>
 
-  <body>
-    <header class="bg-white z-3 position-fixed w-100 py-4">
-      <div class="container">
-        <nav class="navbar navbar-expand-lg p-0">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="# ">
-              <img
-                src="https://preview.colorlib.com/theme/hosthub//img/logo.png"
-                alt="logo"
-                class="img-fluid"
-                width="100px"
-              />
-            </a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <script src="https://kit.fontawesome.com/1618e98dac.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" ; crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" ;
+    rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./css/main.css" />
+</head>
 
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="offcanvas"
-              data-bs-target="#offcanvasNavbar"
-              aria-controls="offcanvasNavbar"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
+<body>
+  <header class="bg-white z-3 position-fixed w-100 py-4">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg p-0">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="# ">
+            <img src="https://preview.colorlib.com/theme/hosthub//img/logo.png" alt="logo" class="img-fluid"
+              width="100px" />
+          </a>
 
-            <div
-              class="offcanvas offcanvas-end"
-              tabindex="-1"
-              id="offcanvasNavbar"
-              aria-labelledby="offcanvasNavbarLabel"
-            >
-              <div class="offcanvas-header">
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="offcanvas"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div class="offcanvas-body">
-                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                  <li class="nav-item">
-                    <a
-                      class="nav-link active px-3 py-2"
-                      aria-current="page"
-                      href="#"
-                      >Home</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link px-3 py-2 text-black" href="#features"
-                      >About</a
-                    >
-                  </li>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-                  <li class="nav-item">
-                    <a class="nav-link px-3 py-2 text-black" href="#testimonial"
-                      >Services</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link px-3 py-2 text-black" href="#blog"
-                      >Pages</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link px-3 py-2 text-black" href="#contact"
-                      >Blog</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link px-3 py-2 text-black" href="#contact"
-                      >Contact</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link px-3 py-2 text-black" href="#">
-                      <svg
-                        width="12px"
-                        height="12px"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 512 512"
-                      >
-                        <path
-                          d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"
-                        />
-                      </svg>
-                    </a>
-                  </li>
-                </ul>
-              </div>
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link active px-3 py-2" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link px-3 py-2 text-black" href="#features">About</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link px-3 py-2 text-black" href="#testimonial">Services</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link px-3 py-2 text-black" href="#blog">Pages</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link px-3 py-2 text-black" href="#contact">Blog</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link px-3 py-2 text-black" href="#contact">Contact</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link px-3 py-2 text-black" href="#">
+                    <svg width="12px" height="12px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                      <path
+                        d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+                    </svg>
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
-        </nav>
-      </div>
-    </header>
-    <section class="banner-section">
-      <div class="container">
-        <div class="row d-flex align-items-center justify-content-center">
-          <div class="col-lg-5">
-            <h2 class="text-white fw-bold">
-              We’re Web Hosting <br />
-              Professionals
-            </h2>
-            <p class="opacity-50 text-white fw-semibold">
-              inappropriate behavior is often laughed off as “boys will be
-              boys,” women face higher conduct standards especially in the
-              workplace. That’s why it’s crucial that, as women.
-            </p>
-            <button class="btn btn-primary text-white">
-              Explore Our Features
-            </button>
-          </div>
-          <div class="col-lg-7">
-            <img
-              src="https://preview.colorlib.com/theme/hosthub/img/banner/banner-map.png"
-              alt="banner"
-              class="img-fluid"
-            />
-          </div>
         </div>
-      </div>
-    </section>
-
-    <section class="features-unique">
-      <div class="container">
-        <div class="text-center titles my-5">
-          <h2 class="mb-3 text-black fw-bold">
-            Some Features that Made us Unique
+      </nav>
+    </div>
+  </header>
+  <section class="banner-section">
+    <div class="container">
+      <div class="row d-flex align-items-center justify-content-center">
+        <div class="col-lg-5">
+          <h2 class="text-white fw-bold">
+            We’re Web Hosting <br />
+            Professionals
           </h2>
-          <p class="m-auto text-secondary fw-semibold">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          <p class="opacity-50 text-white fw-semibold">
+            inappropriate behavior is often laughed off as “boys will be
+            boys,” women face higher conduct standards especially in the
+            workplace. That’s why it’s crucial that, as women.
           </p>
+          <button class="btn btn-primary text-white">
+            Explore Our Features
+          </button>
         </div>
+        <div class="col-lg-7">
+          <img src="https://preview.colorlib.com/theme/hosthub/img/banner/banner-map.png" alt="banner"
+            class="img-fluid" />
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="row feature-inner">
-          <div class="col-lg-3">
-            <div class="feature-item border rounded">
-              <h4 class="mb-3 text-black fw-bold">Expert Technicians</h4>
-              <p class="text-secondary fw-medium">
-                Usage of the Internet is becoming more common due to rapid
-                advancement of technology and power of the Internet is becoming
-                more common due to rapid advancement.
-              </p>
-            </div>
+  <!--================ FEATURES UNIQUE =================-->
+  <section class="features-unique">
+    <div class="container">
+      <div class="text-center titles my-5">
+        <h2 class="mb-3 text-black fw-bold">
+          Some Features that Made us Unique
+        </h2>
+        <p class="m-auto text-secondary fw-semibold">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+      </div>
+
+      <div class="row feature-inner">
+        <div class="col-lg-3">
+          <div class="feature-item border rounded">
+            <h4 class="mb-3 text-black fw-bold">Expert Technicians</h4>
+            <p class="text-secondary fw-medium">
+              Usage of the Internet is becoming more common due to rapid
+              advancement of technology and power of the Internet is becoming
+              more common due to rapid advancement.
+            </p>
           </div>
-          <div class="col-lg-3">
-            <div class="feature-item border rounded">
-              <h4 class="mb-3 text-black fw-bold">Expert Technicians</h4>
-              <p class="text-secondary fw-medium">
-                Usage of the Internet is becoming more common due to rapid
-                advancement of technology and power of the Internet is becoming
-                more common due to rapid advancement.
-              </p>
-            </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="feature-item border rounded">
+            <h4 class="mb-3 text-black fw-bold">Expert Technicians</h4>
+            <p class="text-secondary fw-medium">
+              Usage of the Internet is becoming more common due to rapid
+              advancement of technology and power of the Internet is becoming
+              more common due to rapid advancement.
+            </p>
           </div>
-          <div class="col-lg-3">
-            <div class="feature-item border rounded">
-              <h4 class="mb-3 text-black fw-bold">Expert Technicians</h4>
-              <p class="text-secondary fw-medium">
-                Usage of the Internet is becoming more common due to rapid
-                advancement of technology and power of the Internet is becoming
-                more common due to rapid advancement.
-              </p>
-            </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="feature-item border rounded">
+            <h4 class="mb-3 text-black fw-bold">Expert Technicians</h4>
+            <p class="text-secondary fw-medium">
+              Usage of the Internet is becoming more common due to rapid
+              advancement of technology and power of the Internet is becoming
+              more common due to rapid advancement.
+            </p>
           </div>
-          <div class="col-lg-3">
-            <div class="feature-item border rounded">
-              <h4 class="mb-3 text-black fw-bold">Expert Technicians</h4>
-              <p class="text-secondary fw-medium">
-                Usage of the Internet is becoming more common due to rapid
-                advancement of technology and power of the Internet is becoming
-                more common due to rapid advancement.
-              </p>
-            </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="feature-item border rounded">
+            <h4 class="mb-3 text-black fw-bold">Expert Technicians</h4>
+            <p class="text-secondary fw-medium">
+              Usage of the Internet is becoming more common due to rapid
+              advancement of technology and power of the Internet is becoming
+              more common due to rapid advancement.
+            </p>
           </div>
         </div>
       </div>
-    </section>
-    <section class="price-area mt-5 py-5">
-      <div class="container mt-5">
-        <div class="main-title text-center py-5">
-          <h2 class="text-black fw-bold">Choose Your Best Pricing Plans</h2>
-          <p class="m-auto text-secondary">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. In
-            delectus, eaque non necessitatibus vel dolorem nisi similique labore
-            recusandae.
-          </p>
-        </div>
-        <div class="price-inner row bg-white rounded">
-          <div class="col-lg-3 col-sm-6 mb-0 shadow">
-            <div class="price-item">
-              <div class="price-text">
-                <h3 class="mb-2 text-black fw-bold">Basic</h3>
-                <h5 class="mb-3 text-secondary fw-medium">
-                  Individuals/Freelancers
-                </h5>
-                <h2 class="mb-5 text-black fw-bold">£39</h2>
-                <ul class="list">
-                  <li>
-                    <a href="#" class="text-decoration-none text-secondary"
-                      >RAM 1 GB</a
-                    >
-                  </li>
-                  <li>
-                    <a href="#" class="text-decoration-none text-secondary"
-                      >Core CPU 1</a
-                    >
-                  </li>
-                  <li>
-                    <a href="#" class="text-decoration-none text-secondary"
-                      >SSD Storage 20 GB</a
-                    >
-                  </li>
-                  <li>
-                    <a href="#" class="text-decoration-none text-secondary"
-                      >Transfer 1 TB</a
-                    >
-                  </li>
-                  <li>
-                    <a href="#" class="text-decoration-none text-secondary"
-                      >Network In 40 Gb</a
-                    >
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-sm-6 mb-0 shadow">
-            <div class="price-item">
-              <div class="price-text">
-                <h3 class="mb-2 text-black fw-bold">Basic</h3>
-                <h5 class="mb-3 text-secondary fw-medium">
-                  Individuals/Freelancers
-                </h5>
-                <h2 class="mb-5 text-black fw-bold">£39</h2>
-                <ul class="list">
-                  <li>
-                    <a href="#" class="text-decoration-none text-secondary"
-                      >RAM 1 GB</a
-                    >
-                  </li>
-                  <li>
-                    <a href="#" class="text-decoration-none text-secondary"
-                      >Core CPU 1</a
-                    >
-                  </li>
-                  <li>
-                    <a href="#" class="text-decoration-none text-secondary"
-                      >SSD Storage 20 GB</a
-                    >
-                  </li>
-                  <li>
-                    <a href="#" class="text-decoration-none text-secondary"
-                      >Transfer 1 TB</a
-                    >
-                  </li>
-                  <li>
-                    <a href="#" class="text-decoration-none text-secondary"
-                      >Network In 40 Gb</a
-                    >
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
+    </div>
+  </section>
 
-          <div class="col-lg-3 col-sm-6 mb-0 shadow">
-            <div class="price-item">
-              <div class="price-text">
-                <h3 class="mb-2 text-black fw-bold">Basic</h3>
-                <h5 class="mb-3 text-secondary fw-medium">
-                  Individuals/Freelancers
-                </h5>
-                <h2 class="mb-5 text-black fw-bold">£39</h2>
-                <ul class="list">
-                  <li>
-                    <a href="#" class="text-decoration-none text-secondary"
-                      >RAM 1 GB</a
-                    >
-                  </li>
-                  <li>
-                    <a href="#" class="text-decoration-none text-secondary"
-                      >Core CPU 1</a
-                    >
-                  </li>
-                  <li>
-                    <a href="#" class="text-decoration-none text-secondary"
-                      >SSD Storage 20 GB</a
-                    >
-                  </li>
-                  <li>
-                    <a href="#" class="text-decoration-none text-secondary"
-                      >Transfer 1 TB</a
-                    >
-                  </li>
-                  <li>
-                    <a href="#" class="text-decoration-none text-secondary"
-                      >Network In 40 Gb</a
-                    >
-                  </li>
-                </ul>
-              </div>
+  <!--================ PRICE AREA =================-->
+  <section class="price-area my-5 py-5">
+    <div class="container mt-5">
+      <div class="main-title text-center py-5">
+        <h2 class="text-black fw-bold">Choose Your Best Pricing Plans</h2>
+        <p class="m-auto text-secondary">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+          delectus, eaque non necessitatibus vel dolorem nisi similique labore
+          recusandae.
+        </p>
+      </div>
+      <div class="price-inner row bg-white rounded">
+        <div class="col-lg-3 col-sm-6 mb-0 shadow px-0">
+          <div class="price-item">
+            <div class="price-text">
+              <h3 class="mb-2 text-black fw-bold">Basic</h3>
+              <h5 class="mb-3 text-secondary fw-medium">
+                Individuals/Freelancers
+              </h5>
+              <h2 class="mb-5 text-black fw-bold">£39</h2>
+              <ul class="list">
+                <li>
+                  <a href="#" class="text-decoration-none text-secondary">RAM 1 GB</a>
+                </li>
+                <li>
+                  <a href="#" class="text-decoration-none text-secondary">Core CPU 1</a>
+                </li>
+                <li>
+                  <a href="#" class="text-decoration-none text-secondary">SSD Storage 20 GB</a>
+                </li>
+                <li>
+                  <a href="#" class="text-decoration-none text-secondary">Transfer 1 TB</a>
+                </li>
+                <li>
+                  <a href="#" class="text-decoration-none text-secondary">Network In 40 Gb</a>
+                </li>
+              </ul>
             </div>
           </div>
-          <div class="col-lg-3 col-sm-6 mb-0 shadow">
-            <div class="price-item">
-              <div class="price-text">
-                <h3 class="mb-2 text-black fw-bold">Basic</h3>
-                <h5 class="mb-3 text-secondary fw-medium">
-                  Individuals/Freelancers
-                </h5>
-                <h2 class="mb-5 text-black fw-bold">£39</h2>
-                <ul class="list">
-                  <li>
-                    <a href="#" class="text-decoration-none text-secondary"
-                      >RAM 1 GB</a
-                    >
-                  </li>
-                  <li>
-                    <a href="#" class="text-decoration-none text-secondary"
-                      >Core CPU 1</a
-                    >
-                  </li>
-                  <li>
-                    <a href="#" class="text-decoration-none text-secondary"
-                      >SSD Storage 20 GB</a
-                    >
-                  </li>
-                  <li>
-                    <a href="#" class="text-decoration-none text-secondary"
-                      >Transfer 1 TB</a
-                    >
-                  </li>
-                  <li>
-                    <a href="#" class="text-decoration-none text-secondary"
-                      >Network In 40 Gb</a
-                    >
-                  </li>
-                </ul>
-              </div>
+          <a href="#" class="price-btn d-block text-decoration-none text-center text-white fw-bold">Get Started</a>
+        </div>
+        <div class="col-lg-3 col-sm-6 mb-0 shadow px-0">
+          <div class="price-item">
+            <div class="price-text">
+              <h3 class="mb-2 text-black fw-bold">Basic</h3>
+              <h5 class="mb-3 text-secondary fw-medium">
+                Individuals/Freelancers
+              </h5>
+              <h2 class="mb-5 text-black fw-bold">£39</h2>
+              <ul class="list">
+                <li>
+                  <a href="#" class="text-decoration-none text-secondary">RAM 1 GB</a>
+                </li>
+                <li>
+                  <a href="#" class="text-decoration-none text-secondary">Core CPU 1</a>
+                </li>
+                <li>
+                  <a href="#" class="text-decoration-none text-secondary">SSD Storage 20 GB</a>
+                </li>
+                <li>
+                  <a href="#" class="text-decoration-none text-secondary">Transfer 1 TB</a>
+                </li>
+                <li>
+                  <a href="#" class="text-decoration-none text-secondary">Network In 40 Gb</a>
+                </li>
+              </ul>
             </div>
+          </div>
+          <a href="#" class="price-btn d-block text-decoration-none text-center text-white fw-bold">Get Started</a>
+        </div>
+        <div class="col-lg-3 col-sm-6 mb-0 shadow px-0">
+          <div class="price-item">
+            <div class="price-text">
+              <h3 class="mb-2 text-black fw-bold">Basic</h3>
+              <h5 class="mb-3 text-secondary fw-medium">
+                Individuals/Freelancers
+              </h5>
+              <h2 class="mb-5 text-black fw-bold">£39</h2>
+              <ul class="list">
+                <li>
+                  <a href="#" class="text-decoration-none text-secondary">RAM 1 GB</a>
+                </li>
+                <li>
+                  <a href="#" class="text-decoration-none text-secondary">Core CPU 1</a>
+                </li>
+                <li>
+                  <a href="#" class="text-decoration-none text-secondary">SSD Storage 20 GB</a>
+                </li>
+                <li>
+                  <a href="#" class="text-decoration-none text-secondary">Transfer 1 TB</a>
+                </li>
+                <li>
+                  <a href="#" class="text-decoration-none text-secondary">Network In 40 Gb</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <a href="#" class="price-btn d-block text-decoration-none text-center text-white fw-bold">Get Started</a>
+        </div>
+        <div class="col-lg-3 col-sm-6 mb-0 shadow px-0">
+          <div class="price-item">
+            <div class="price-text">
+              <h3 class="mb-2 text-black fw-bold">Basic</h3>
+              <h5 class="mb-3 text-secondary fw-medium">
+                Individuals/Freelancers
+              </h5>
+              <h2 class="mb-5 text-black fw-bold">£39</h2>
+              <ul class="list">
+                <li>
+                  <a href="#" class="text-decoration-none text-secondary">RAM 1 GB</a>
+                </li>
+                <li>
+                  <a href="#" class="text-decoration-none text-secondary">Core CPU 1</a>
+                </li>
+                <li>
+                  <a href="#" class="text-decoration-none text-secondary">SSD Storage 20 GB</a>
+                </li>
+                <li>
+                  <a href="#" class="text-decoration-none text-secondary">Transfer 1 TB</a>
+                </li>
+                <li>
+                  <a href="#" class="text-decoration-none text-secondary">Network In 40 Gb</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <a href="#" class="price-btn d-block text-decoration-none text-center text-white fw-bold">Get Started</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!--================ CUSTOM SOLUTION =================-->
+  <section class="custom-solution mt-5 py-5">
+    <div class="container mt-5 text-center">
+      <h4 class="mb-3 fw-bold text-white">Looking for a Custom Solution?</h4>
+      <p class="mx-auto text-white mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+        incididunt ut
+        labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+      <a href="#" class="inline-block fw-bold text-black text-decoration-none text-center pointer">Request Free
+        Consultation</a>
+    </div>
+  </section>
+
+  <!--================ CLIENT SAYS =================-->
+  <section class="client-says my-5 py-5">
+    <div class="container">
+      <div class="row client-inner">
+        <div class="col-xl-4">
+          <div class="says-left py-4">
+            <h3 class="text-black fw-bold lh-lg mb-3">What our Client’s Say about us</h3>
+            <p class="text-secondary fw-medium">Acres of Diamonds… you’ve read the famous story, or at least had
+              it
+              related to
+              you. A farmer hears tales
+              of diamonds and begins dreaming.</p>
           </div>
         </div>
+        <div class="col-xl-4">
+          <div class="py-5 px-4 says-item border rounded">
+            <h4 class="fw-bold text-black mb-2">Nellie Vega</h4>
+            <h5 class="text-secondary fw-medium mb-4">Head of Marketing, Apple Inc.</h5>
+            <p class="text-secondary fw-medium">“The following article covers a topic that has recently moved to center
+              stage at least it seems that way.
+              If you’ve been”</p>
+          </div>
+        </div>
+        <div class="col-xl-4">
+          <div class="py-5 px-4 says-item border rounded">
+            <h4 class="fw-bold text-black mb-2">Estelle Andrews</h4>
+            <h5 class="text-secondary fw-medium mb-4">Head of Marketing, Apple Inc.</h5>
+            <p class="text-secondary fw-medium">“The following article covers a topic that has recently moved to center
+              stage at least it seems that way.
+              If you’ve been”</p>
+          </div>
+        </div>
+
       </div>
-    </section>
-  </body>
+    </div>
+  </section>
+
+  <!--================ TOP SERVICES =================-->
+  <section class="top-services position-relative">
+
+    <div class="container">
+      <div class="title mb-5 text-center">
+        <h2 class="text-white fw-bold mb-3">Top Services We Provided</h2>
+        <p class="text-white mx-auto fw-medium">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt
+          ut labore et
+          dolore magna aliqua.</p>
+      </div>
+      <div class="row mt-5 service-inner">
+        <div class="col-xl-4 col-lg-6 mb-4">
+          <div class="service-item p-5">
+            <h4 class="text-white fw-bold d-flex mb-4 align-items-center gap-2"><svg width="24" height="24" fill="#fff"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 640 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                <path
+                  d="M0 336c0 79.5 64.5 144 144 144l368 0c70.7 0 128-57.3 128-128c0-61.9-44-113.6-102.4-125.4c4.1-10.7 6.4-22.4 6.4-34.6c0-53-43-96-96-96c-19.7 0-38.1 6-53.3 16.2C367 64.2 315.3 32 256 32C167.6 32 96 103.6 96 192c0 2.7 .1 5.4 .2 8.1C40.2 219.8 0 273.2 0 336z" />
+              </svg>Cloud Hosting
+            </h4>
+            <p class="text-white pe-5">Usage of the Internet is becoming more common due to rapid advancement of
+              technology
+              and power.</p>
+          </div>
+        </div>
+
+        <div class="col-xl-4 col-lg-6 mb-4">
+          <div class="service-item p-5">
+            <h4 class="text-white fw-bold d-flex mb-4 align-items-center gap-2"><svg width="24" height="24" fill="#fff"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                <path
+                  d="M352 256c0 22.2-1.2 43.6-3.3 64l-185.3 0c-2.2-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64l185.3 0c2.2 20.4 3.3 41.8 3.3 64zm28.8-64l123.1 0c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64l-123.1 0c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64zm112.6-32l-116.7 0c-10-63.9-29.8-117.4-55.3-151.6c78.3 20.7 142 77.5 171.9 151.6zm-149.1 0l-176.6 0c6.1-36.4 15.5-68.6 27-94.7c10.5-23.6 22.2-40.7 33.5-51.5C239.4 3.2 248.7 0 256 0s16.6 3.2 27.8 13.8c11.3 10.8 23 27.9 33.5 51.5c11.6 26 20.9 58.2 27 94.7zm-209 0L18.6 160C48.6 85.9 112.2 29.1 190.6 8.4C165.1 42.6 145.3 96.1 135.3 160zM8.1 192l123.1 0c-2.1 20.6-3.2 42-3.2 64s1.1 43.4 3.2 64L8.1 320C2.8 299.5 0 278.1 0 256s2.8-43.5 8.1-64zM194.7 446.6c-11.6-26-20.9-58.2-27-94.6l176.6 0c-6.1 36.4-15.5 68.6-27 94.6c-10.5 23.6-22.2 40.7-33.5 51.5C272.6 508.8 263.3 512 256 512s-16.6-3.2-27.8-13.8c-11.3-10.8-23-27.9-33.5-51.5zM135.3 352c10 63.9 29.8 117.4 55.3 151.6C112.2 482.9 48.6 426.1 18.6 352l116.7 0zm358.1 0c-30 74.1-93.6 130.9-171.9 151.6c25.5-34.2 45.2-87.7 55.3-151.6l116.7 0z" />
+              </svg>Web Hosting
+
+            </h4>
+            <p class="text-white pe-5">Usage of the Internet is becoming more common due to rapid advancement of
+              technology
+              and power.</p>
+          </div>
+        </div>
+
+        <div class="col-xl-4 col-lg-6 mb-4">
+          <div class="service-item p-5">
+            <h4 class="text-white fw-bold d-flex mb-4 align-items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg"
+                height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF">
+                <path
+                  d="M320-120v-80h80v-80H160q-33 0-56.5-23.5T80-360v-400q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v400q0 33-23.5 56.5T800-280H560v80h80v80H320ZM160-360h640v-400H160v400Zm0 0v-400 400Z" />
+              </svg>Cloud
+              Computing
+
+            </h4>
+            <p class="text-white pe-5">Usage of the Internet is becoming more common due to rapid advancement of
+              technology
+              and power.</p>
+          </div>
+        </div>
+
+
+        <div class="col-xl-4 col-lg-6 mb-4">
+          <div class="service-item p-5">
+            <h4 class="text-white fw-bold d-flex mb-4 align-items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                fill="#FFFFFF">
+                <path
+                  d="M160-280h640v-240H160v240Zm520-60q25 0 42.5-17.5T740-400q0-25-17.5-42.5T680-460q-25 0-42.5 17.5T620-400q0 25 17.5 42.5T680-340Zm200-260H767l-80-80H273l-80 80H80l137-137q11-11 25.5-17t30.5-6h414q16 0 30.5 6t25.5 17l137 137ZM160-200q-33 0-56.5-23.5T80-280v-320h800v320q0 33-23.5 56.5T800-200H160Z" />
+              </svg>VPS Hosting
+
+            </h4>
+            <p class="text-white pe-5">Usage of the Internet is becoming more common due to rapid advancement of
+              technology
+              and power.</p>
+          </div>
+        </div>
+
+        <div class="col-xl-4 col-lg-6 mb-4">
+          <div class="service-item p-5">
+            <h4 class="text-white fw-bold d-flex mb-4 align-items-center gap-2">
+              <svg width="24" height="24" fill="#fff" xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                <path
+                  d="M160 80c0-26.5 21.5-48 48-48l32 0c26.5 0 48 21.5 48 48l0 352c0 26.5-21.5 48-48 48l-32 0c-26.5 0-48-21.5-48-48l0-352zM0 272c0-26.5 21.5-48 48-48l32 0c26.5 0 48 21.5 48 48l0 160c0 26.5-21.5 48-48 48l-32 0c-26.5 0-48-21.5-48-48L0 272zM368 96l32 0c26.5 0 48 21.5 48 48l0 288c0 26.5-21.5 48-48 48l-32 0c-26.5 0-48-21.5-48-48l0-288c0-26.5 21.5-48 48-48z" />
+              </svg>Server
+              Analytics
+
+            </h4>
+            <p class="text-white pe-5">Usage of the Internet is becoming more common due to rapid advancement of
+              technology
+              and power.</p>
+          </div>
+        </div>
+
+        <div class="col-xl-4 col-lg-6 mb-4">
+          <div class="service-item p-5">
+            <h4 class="text-white fw-bold d-flex mb-4 align-items-center gap-2">
+              <?xml version="1.0" encoding="iso-8859-1"?>
+              <svg fill="#fff" height="24" width="24" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve">
+                <g>
+                  <g>
+                    <g>
+                      <path d="M287.599,151.117c3.337-3.311,3.354-8.713,0.06-12.058c-2.441-2.483-6.059-7.714-6.059-11.059
+                      c0-20.062,15.659-45.577,34.133-70.98c18.475,25.404,34.133,50.918,34.133,70.98c0,3.337-3.61,8.559-6.05,11.051
+                      c-3.319,3.337-3.311,8.721,0.017,12.049c1.664,1.664,3.849,2.5,6.033,2.5c2.185,0,4.369-0.836,6.033-2.5
+                      c1.126-1.126,11.034-11.366,11.034-23.1c0-25.967-17.741-54.938-44.373-90.453c-3.217-4.301-10.436-4.301-13.653,0
+                      c-26.633,35.516-44.373,64.486-44.373,90.453c0,11.733,9.907,21.973,11.034,23.1
+                      C278.886,154.419,284.254,154.428,287.599,151.117z" />
+                      <path d="M247.467,238.933c4.71,0,8.533-3.823,8.533-8.533v-34.133c0-4.702,3.831-8.533,8.533-8.533h102.4
+                      c4.702,0,8.533,3.831,8.533,8.533V230.4c0,4.71,3.823,8.533,8.533,8.533s8.533-3.823,8.533-8.533v-34.133
+                      c0-14.114-11.486-25.6-25.6-25.6h-102.4c-14.114,0-25.6,11.486-25.6,25.6V230.4C238.933,235.11,242.756,238.933,247.467,238.933z
+                      " />
+                      <path d="M281.6,204.8c-4.71,0-8.533,3.823-8.533,8.533c0,4.71,3.823,8.533,8.533,8.533h68.267c4.71,0,8.533-3.823,8.533-8.533
+                      c0-4.71-3.823-8.533-8.533-8.533H281.6z" />
+                      <path d="M435.2,256H230.4c-4.71,0-8.533,3.823-8.533,8.533c0,4.71,3.823,8.533,8.533,8.533h196.267v196.267
+                      c0,14.114-11.486,25.6-25.6,25.6H213.333c-14.114,0-25.6-11.486-25.6-25.6v-180.77c9.916-3.541,17.067-12.919,17.067-24.03
+                      c0-11.11-7.151-20.489-17.067-24.03V8.533c0-4.71-3.823-8.533-8.533-8.533h-68.267C87.407,0,68.267,19.14,68.267,42.667V230.4
+                      c0,23.526,19.14,42.667,42.667,42.667H128c4.71,0,8.533-3.823,8.533-8.533c0-4.71-3.823-8.533-8.533-8.533h-17.067
+                      c-14.114,0-25.6-11.486-25.6-25.6V42.667c0-14.114,11.486-25.6,25.6-25.6h59.733v223.437
+                      c-9.916,3.541-17.067,12.919-17.067,24.03c0,11.11,7.151,20.489,17.067,24.021v180.779c0,23.526,19.14,42.667,42.667,42.667
+                      h187.733c23.526,0,42.667-19.14,42.667-42.667v-204.8C443.733,259.823,439.91,256,435.2,256z M179.2,273.067
+                      c-4.702,0-8.533-3.831-8.533-8.533c0-4.702,3.831-8.533,8.533-8.533c4.702,0,8.533,3.831,8.533,8.533
+                      C187.733,269.235,183.902,273.067,179.2,273.067z" />
+                    </g>
+                  </g>
+                </g>
+              </svg>Data
+              Mining
+
+            </h4>
+            <p class="text-white pe-5">Usage of the Internet is becoming more common due to rapid advancement of
+              technology
+              and power.</p>
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+
+  </section>
+
+</body>
+
 </html>
