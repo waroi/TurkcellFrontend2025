@@ -74,7 +74,9 @@ $purple:#6247ea;
 }
 .banner{
     background-color: $purple;
-    padding: 225px 0;
+    .bnr{
+        padding: 225px 0;
+    }
     h2{
         @include textFunc(36px, white, 500, 1.2);
         margin-top: 20px;
@@ -96,5 +98,62 @@ $purple:#6247ea;
     }
     .banner-map{
         text-align: right;
+    }
+}
+.p-120{
+    padding: 120px 0;
+}
+.section-bg{
+    background-color: #fafcff;
+}
+.feature, .pricing{
+    .f-text{
+        text-align: center;
+        margin-bottom: 75px;
+        h2{
+            @include textFunc(36px,#222 ,500 ,1.2 );
+        }
+        p{
+            @include textFunc(14px,#777777 ,300 ,24px );
+            max-width: 570px;
+            margin: 0 auto;
+        }
+    }
+}
+.feature{
+    .f-cards{
+        .card{
+            padding: 60px 20px 60px 30px;
+            .card-title{
+                @include textFunc(20px, #222, 500, 1.2)
+            }
+            .card-text{
+                @include textFunc(14px, #777, 300, 24px)
+            }
+        }
+    }
+}
+.pricing{
+    .packages{
+        .package{
+            h3{
+                @include textFunc(20px, #222, 500, 1.2);
+            }
+            h5{
+                @include textFunc(14px, #777, 300, 1.2);
+            }
+            h2{
+                @include textFunc(36px, #222, 500, 1.2);
+                span{
+                    @include textFunc(14px, #777, 300, 1.2);
+                    text-align: end;
+                }
+            }
+            ul{
+                li{
+                    @include textFunc(14px, #777, 400, 1.2)
+                }
+            }
+        }
     }
 }

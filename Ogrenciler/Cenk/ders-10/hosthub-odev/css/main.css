@@ -4294,13 +4294,13 @@ textarea.form-control-lg {
   --bs-card-spacer-y: 1rem;
   --bs-card-spacer-x: 1rem;
   --bs-card-title-spacer-y: 0.5rem;
-  --bs-card-title-color: ;
+  --bs-card-title-color: #222;
   --bs-card-subtitle-color: ;
-  --bs-card-border-width: var(--bs-border-width);
-  --bs-card-border-color: var(--bs-border-color-translucent);
-  --bs-card-border-radius: var(--bs-border-radius);
+  --bs-card-border-width: 1px;
+  --bs-card-border-color: #eeeeee;
+  --bs-card-border-radius: 10px;
   --bs-card-box-shadow: ;
-  --bs-card-inner-border-radius: calc(var(--bs-border-radius) - (var(--bs-border-width)));
+  --bs-card-inner-border-radius: 9px;
   --bs-card-cap-padding-y: 0.5rem;
   --bs-card-cap-padding-x: 1rem;
   --bs-card-cap-bg: rgba(var(--bs-body-color-rgb), 0.03);
@@ -11925,6 +11925,8 @@ textarea.form-control-lg {
 
 .banner {
   background-color: #6247ea;
+}
+.banner .bnr {
   padding: 225px 0;
 }
 .banner h2, .banner .h2 {
@@ -11957,6 +11959,81 @@ textarea.form-control-lg {
 }
 .banner .banner-map {
   text-align: right;
+}
+
+.p-120 {
+  padding: 120px 0;
+}
+
+.section-bg {
+  background-color: #fafcff;
+}
+
+.feature .f-text, .pricing .f-text {
+  text-align: center;
+  margin-bottom: 75px;
+}
+.feature .f-text h2, .feature .f-text .h2, .pricing .f-text h2, .pricing .f-text .h2 {
+  font-size: 36px;
+  color: #222;
+  font-weight: 500;
+  line-height: 1.2;
+}
+.feature .f-text p, .pricing .f-text p {
+  font-size: 14px;
+  color: #777777;
+  font-weight: 300;
+  line-height: 24px;
+  max-width: 570px;
+  margin: 0 auto;
+}
+
+.feature .f-cards .card {
+  padding: 60px 20px 60px 30px;
+}
+.feature .f-cards .card .card-title {
+  font-size: 20px;
+  color: #222;
+  font-weight: 500;
+  line-height: 1.2;
+}
+.feature .f-cards .card .card-text {
+  font-size: 14px;
+  color: #777;
+  font-weight: 300;
+  line-height: 24px;
+}
+
+.pricing .packages .package h3, .pricing .packages .package .h3 {
+  font-size: 20px;
+  color: #222;
+  font-weight: 500;
+  line-height: 1.2;
+}
+.pricing .packages .package h5, .pricing .packages .package .h5 {
+  font-size: 14px;
+  color: #777;
+  font-weight: 300;
+  line-height: 1.2;
+}
+.pricing .packages .package h2, .pricing .packages .package .h2 {
+  font-size: 36px;
+  color: #222;
+  font-weight: 500;
+  line-height: 1.2;
+}
+.pricing .packages .package h2 span, .pricing .packages .package .h2 span {
+  font-size: 14px;
+  color: #777;
+  font-weight: 300;
+  line-height: 1.2;
+  text-align: end;
+}
+.pricing .packages .package ul li {
+  font-size: 14px;
+  color: #777;
+  font-weight: 400;
+  line-height: 1.2;
 }
 
 /*# sourceMappingURL=main.css.map */
