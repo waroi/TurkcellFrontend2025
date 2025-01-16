@@ -33,29 +33,43 @@ $purple:#6247ea;
         }
     }
 }
-.header-menu{
-    background-color: white;
-    .container{
-        max-width: 1650px;
-    }
-    .nav-item{
-        margin-right: 35px;
-        &.submenu ul{
-            border: none;
-            padding: 0px;
-            border-radius: 0px;
-            box-shadow: none;
-            margin: 0px;
-            background: #fff
+.header-area{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left:0;
+    z-index: 99;
+    transition: background 0.4s, all 0.3s linear;
+    .header-menu{
+        background-color: white;
+        .container{
+            max-width: 1650px;
         }
-    }
-    .nav-link{
-        @include textFunc(12px, #222222, 500, 80px);
-        padding: 0px;
-    }
-    .navbar-nav .search{
-        @include textFunc(12px, #222222, 600, 60px);
-        margin-left: 80px;
+        .navbar{
+            background: transparent;
+        }
+        .nav-item{
+            margin-right: 35px;
+            &.submenu ul{
+                border: none;
+                padding: 0px;
+                border-radius: 0px;
+                box-shadow: none;
+                margin: 0px;
+                background: #fff
+            }
+        }
+        .nav-link{
+            @include textFunc(12px, #222222, 500, 80px);
+            padding: 0px;
+            &:hover{
+                color: $purple
+            }
+        }
+        .navbar-nav .search{
+            @include textFunc(12px, #222222, 600, 60px);
+            margin-left: 80px;
+        }
     }
 }
 .banner{

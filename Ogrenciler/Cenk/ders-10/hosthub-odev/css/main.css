@@ -11877,16 +11877,27 @@ textarea.form-control-lg {
   text-decoration: none;
 }
 
-.header-menu {
+.header-area {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  transition: background 0.4s, all 0.3s linear;
+}
+.header-area .header-menu {
   background-color: white;
 }
-.header-menu .container {
+.header-area .header-menu .container {
   max-width: 1650px;
 }
-.header-menu .nav-item {
+.header-area .header-menu .navbar {
+  background: transparent;
+}
+.header-area .header-menu .nav-item {
   margin-right: 35px;
 }
-.header-menu .nav-item.submenu ul {
+.header-area .header-menu .nav-item.submenu ul {
   border: none;
   padding: 0px;
   border-radius: 0px;
@@ -11894,14 +11905,17 @@ textarea.form-control-lg {
   margin: 0px;
   background: #fff;
 }
-.header-menu .nav-link {
+.header-area .header-menu .nav-link {
   font-size: 12px;
   color: #222222;
   font-weight: 500;
   line-height: 80px;
   padding: 0px;
 }
-.header-menu .navbar-nav .search {
+.header-area .header-menu .nav-link:hover {
+  color: #6247ea;
+}
+.header-area .header-menu .navbar-nav .search {
   font-size: 12px;
   color: #222222;
   font-weight: 600;
