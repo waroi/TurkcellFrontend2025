@@ -1,19 +1,30 @@
-// @mixin textStyle($textColor,$fontSize,$fontWeight){
-//     color:$textColor;
-//     font-size:$fontSize;
-//     font-weight:$fontWeight;
+* {
+  font-family: Roboto, sans-serif;
+}
+// body {
+//   height: 4000px;
+//   background-color: aqua;
 // }
-*{
-    // margin: 0;
-    // padding: 0;
-    // box-sizing: border-box;
-    font-family: Roboto, sans-serif;
+.box-1800 {
+  max-width: 1800px;
 }
-body{
-    height: 4000px;
+.price-section {
+    .price-item {
+        .item-text {
+            &:hover h2 {
+                color: $primary;
+            }
+        }
+        .price-btn {
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            display: none;
+        }
+        &:hover .price-btn {
+            display: block;
+        }
+        &:hover {
+            border-top: 2px solid $primary;
+        }
+    }
 }
-.box-1620{
-    max-width: 1650px;
-}
-
-

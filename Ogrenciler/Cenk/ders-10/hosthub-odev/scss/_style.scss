@@ -33,24 +33,127 @@ $purple:#6247ea;
         }
     }
 }
-.header-menu{
-    background-color: white;
-    .container{
-        max-width: 1650px;
+.header-area{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left:0;
+    z-index: 99;
+    transition: background 0.4s, all 0.3s linear;
+    .header-menu{
+        background-color: white;
+        .container{
+            max-width: 1650px;
+        }
+        .navbar{
+            background: transparent;
+        }
+        .nav-item{
+            margin-right: 35px;
+            &.submenu ul{
+                border: none;
+                padding: 0px;
+                border-radius: 0px;
+                box-shadow: none;
+                margin: 0px;
+                background: #fff
+            }
+        }
+        .nav-link{
+            @include textFunc(12px, #222222, 500, 80px);
+            padding: 0px;
+            &:hover{
+                color: $purple
+            }
+        }
+        .navbar-nav .search{
+            @include textFunc(12px, #222222, 600, 60px);
+            margin-left: 80px;
+        }
     }
-    .nav-item{
-        margin-right: 35px;
+}
+.banner{
+    background-color: $purple;
+    .bnr{
+        padding: 225px 0;
     }
-    .nav-link{
-        @include textFunc(12px, #222222, 500, 80px);
-        padding: 0px;
+    h2{
+        @include textFunc(36px, white, 500, 1.2);
+        margin-top: 20px;
+        margin-bottom: 15px;
     }
-    .navbar-nav .search{
-        @include textFunc(12px, #222222, 600, 60px);
-        margin-left: 80px;
-        i{
-            width: 12px;
-            height: 12px;
+    p{
+        @include textFunc(14px, #f9f9ff, 300, 24px);
+        opacity: 0.6;
+        max-width: 405px;
+        margin-bottom: 35px;
+    }
+    .banner-btn{
+        background-color: $orange;
+        @include textFunc(12px, white, 500, 50px);
+        text-decoration: none;
+        padding: 0 50px;
+        display: inline-block;
+        border-radius: 5px;
+    }
+    .banner-map{
+        text-align: right;
+    }
+}
+.p-120{
+    padding: 120px 0;
+}
+.section-bg{
+    background-color: #fafcff;
+}
+.feature, .pricing{
+    .f-text{
+        text-align: center;
+        margin-bottom: 75px;
+        h2{
+            @include textFunc(36px,#222 ,500 ,1.2 );
+        }
+        p{
+            @include textFunc(14px,#777777 ,300 ,24px );
+            max-width: 570px;
+            margin: 0 auto;
+        }
+    }
+}
+.feature{
+    .f-cards{
+        .card{
+            padding: 60px 20px 60px 30px;
+            .card-title{
+                @include textFunc(20px, #222, 500, 1.2)
+            }
+            .card-text{
+                @include textFunc(14px, #777, 300, 24px)
+            }
+        }
+    }
+}
+.pricing{
+    .packages{
+        .package{
+            h3{
+                @include textFunc(20px, #222, 500, 1.2);
+            }
+            h5{
+                @include textFunc(14px, #777, 300, 1.2);
+            }
+            h2{
+                @include textFunc(36px, #222, 500, 1.2);
+                span{
+                    @include textFunc(14px, #777, 300, 1.2);
+                    text-align: end;
+                }
+            }
+            ul{
+                li{
+                    @include textFunc(14px, #777, 400, 1.2)
+                }
+            }
         }
     }
 }

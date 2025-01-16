@@ -5,76 +5,270 @@ $whiteColor: #ffffff;
 $titleColor: #222222;
 $descriptionColor: #777777;
 
-@mixin textStyle($color, $size, $weight) {
-    color: $color;
-    font-size: $size;
-    font-weight: $weight;
-}
-
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: "Roboto", serif;
-    line-height: 24px;
+  font-family: "Roboto", serif;
+  line-height: 24px;
 }
 
 .banner-section {
-    background-color: $sitePrimaryColor;
-    padding: 225px 0px;
+  background-color: $sitePrimaryColor;
+  padding: 225px 0px;
 
-    h2 {
-        @include textStyle($whiteColor, 36px, 500);
-        text-transform: uppercase;
-    }
+  h2 {
+    font-size: 36px;
 
-    p {
-        @include textStyle($pTextColor, 14px, 400);
-    }
+    text-transform: uppercase;
+  }
 
-    .btn {
-        color: $whiteColor;
-        border: 5px;
-        font-size: 12px;
-        font-weight: 500;
-        padding: 10px 50px;
+  p {
+    font-size: 14px;
+  }
+
+  .btn {
+    border: 5px;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 10px 50px;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      color: $sitePrimaryColor !important;
     }
+  }
 }
 
 .features-unique {
-    .titles {
+  .titles {
+    h2 {
+      font-size: 36px;
+    }
+
+    p {
+      font-size: 14px;
+      font-weight: 300;
+      max-width: 570px;
+    }
+  }
+
+  .feature-inner {
+    padding-bottom: 2rem;
+
+    .feature-item {
+      padding: 60px 20px 60px 30px;
+      transition: all 300ms linear 0s;
+
+      &:hover {
+        box-shadow: 0px 10px 30px 0px rgba(98, 71, 234, 0.1);
+        border-color: $border;
+      }
+
+      h4 {
+        font-size: 20px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+.price-area {
+  .price-inner {
+    .price-item {
+      padding-top: 75px;
+      padding-bottom: 75px;
+      cursor: pointer;
+      padding-left: 55px;
+      border-top: 2px solid $whiteColor !important;
+
+      h5 {
+        font-size: 14px;
+      }
+
+      &:hover {
+        box-shadow: 0px 10px 30px 0px rgba(98, 71, 234, 0.1);
+        border-color: $border;
+
         h2 {
-            @include textStyle($titleColor, 36px, 500)
+          color: $sitePrimaryColor !important;
+        }
+
+        border-top-color: $sitePrimaryColor !important;
+
+        +.price-btn {
+          opacity: 1;
+        }
+      }
+
+    }
+
+    .price-btn {
+      background: $sitePrimaryColor;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      line-height: 50px;
+      font-size: 14px;
+      transition: all 0.3s ease-in-out;
+      opacity: 0;
+      margin-bottom: -50px;
+      color: red;
+    }
+  }
+
+  .main-title {
+    h2 {
+      font-size: 36px;
+    }
+
+    p {
+      font-size: 14px;
+      max-width: 570px;
+    }
+  }
+
+  .list {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+
+    li {
+      margin-bottom: 20px;
+    }
+  }
+
+}
+
+.custom-solution {
+  background-color: $siteSecondaryColor;
+
+  h4 {
+    font-size: 36px;
+  }
+
+  p {
+    max-width: 770px;
+    opacity: .6;
+    font-size: 14px;
+  }
+
+  a {
+    background: $pTextColor;
+    padding: 19px 50px;
+    font-size: 12px;
+    transition: all 300ms linear 0s;
+
+    &:hover {
+      color: #fff !important;
+      background-color: $sitePrimaryColor;
+    }
+  }
+}
+
+.client-says {
+  .client-inner {
+    .says-item {
+      transition: all 300ms linear 0s;
+
+      h4 {
+        font-size: 20px;
+      }
+
+      h5,
+      p {
+        font-size: 14px;
+      }
+
+      &:hover {
+        border-color: $border;
+        box-shadow: 0px 10px 30px 0px rgba(98, 71, 234, 0.1);
+      }
+    }
+
+    .says-left {
+      h3 {
+        font-size: 36px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+.top-services {
+  background-color: $sitePrimaryColor;
+  padding: 120px 0;
+
+  &::before {
+    content: "";
+    background: url('https://preview.colorlib.com/theme/hosthub/img/map-bg.png.webp') no-repeat scroll center center;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+  }
+
+  .container {
+    .service-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .title {
+      h2 {
+        font-size: 36px;
+      }
+
+      p {
+        font-size: 14px;
+        max-width: 570px;
+        opacity: .6;
+      }
+    }
+
+    .col-xl-4 {
+
+      .service-item {
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid #9381eb;
+        transition: all 300ms linear 0s;
+
+        h4 {
+          font-size: 18px;
         }
 
         p {
-            @include textStyle($descriptionColor, 14px, 300);
-            max-width: 570px;
+          opacity: .6;
+          font-size: 14px;
         }
-    }
 
-    .feature-inner {
-        padding-bottom: 2rem;
+        &:hover {
+          background-color: #fff;
 
-        .feature-item {
-            padding: 60px 20px 60px 30px;
-            transition: all 300ms linear 0s;
+          h4 {
+            color: $titleColor !important;
+          }
 
-            &:hover {
-                box-shadow: 0px 10px 30px 0px rgba(98, 71, 234, 0.1);
-                border-color: $border;
-            }
+          svg {
+            fill: $titleColor;
+          }
 
-            h4 {
-                @include textStyle($titleColor, 20px, 500)
-            }
-
-            p {
-                @include textStyle($descriptionColor, 14px, 400)
-            }
+          p {
+            color: $descriptionColor !important;
+          }
         }
+      }
     }
+  }
+
 }
