@@ -11846,12 +11846,14 @@ textarea.form-control-lg {
 }
 * {
   font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 .banner {
   z-index: 1;
   background: #6610f2;
-  display: flex;
 }
 .banner .banner_content {
   width: 100%;
@@ -11861,8 +11863,14 @@ textarea.form-control-lg {
   opacity: 0.6;
 }
 .banner .banner_content .banner_btn {
-  background-color: #EC9D5F;
+  background-color: #ec9d5f;
   font-size: 12px;
+}
+
+p {
+  font-size: 14px;
+  color: #777777;
+  line-height: 24px;
 }
 
 /*# sourceMappingURL=main.css.map */
