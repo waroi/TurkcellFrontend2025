@@ -177,4 +177,126 @@ section {
       }
     }
   } 
+
 }
+.blog-card {
+  background-color: #fff; // Kart tamamen beyaz
+  border: none; // Çizgiler kaldırıldı
+  border-radius: 8px; // Köşeler hafif yuvarlatıldı
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // Hafif gölge
+  overflow: hidden;
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: translateY(-5px); // Hover efekt
+  }
+
+  .card-header {
+    padding: 10px;
+    .date {
+      background-color: #ff7f50;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 4px;
+      font-size: 0.85rem;
+    }
+  }
+
+  .card-body {
+    padding: 15px;
+    .card-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    .card-text {
+      font-size: 0.95rem;
+      color: #666;
+    }
+  }
+
+  .card-footer {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: #777;
+
+    span {
+      display: flex;
+      align-items: center;
+
+      i {
+        margin-right: 5px;
+      }
+    }
+  }
+}
+.footer {
+  background-color: #04091e; // Koyu arka plan rengi
+  color: #e5e5e5; // Açık metin rengi
+
+  .footer_title {
+    font-size: 8px;
+    line-height: 24px;
+    font-weight: 500;
+    font-family: "Roboto", sans-serif;
+    color: #fff;
+    margin-bottom: 28px;
+}
+
+  ul {
+    padding: 0;
+    list-style: none;
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .newsletter-form {
+    input {
+      border: none;
+      border-radius: 25px;
+      padding: 10px 15px;
+      font-size: 0.9rem;
+    }
+
+    button {
+      background-color: #6c5ce7;
+      border: none;
+      border-radius: 25px;
+      color: #fff;
+      font-weight: bold;
+      padding: 8px 15px;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+
+      &:hover {
+        background-color: #5a4dcf;
+      }
+    }
+  }
+
+  .instagram-feed {
+    img {
+      border-radius: 8px;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .footer-bottom {
+    margin-top: 2rem;
+
+    a {
+      color: #6c5ce7;
+      text-decoration: none;
+
+      &:hover {
+        color: #5a4dcf;
+      }
+    }
+  }
+}
+
+
