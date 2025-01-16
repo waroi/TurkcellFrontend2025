@@ -11877,21 +11877,36 @@ section {
   padding: 100px 0px;
 }
 
-header .navbar-toggler:focus {
-  outline: none;
+.header-area .navbar-toggler:focus {
+  box-shadow: none;
 }
-header .navbar-toggler-icon {
+.header-area .navbar-toggler-icon {
   display: flex;
   flex-direction: column;
   gap: 4px;
   align-items: center;
   justify-content: center;
   background-image: none;
+  position: relative;
 }
-header .navbar-toggler-icon div {
+.header-area .navbar-toggler-icon div {
   width: 25px;
   height: 3px;
   background-color: #6247ea;
+  transition: all 0.3s ease-out;
+  animation: button-cross 0.3s ease-out;
+}
+
+.navbar .navbar-toggler:focus div:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar .navbar-toggler:focus div:nth-child(1) {
+  transform: rotate(-45deg) translateY(10px);
+}
+
+.navbar .navbar-toggler:focus div:nth-child(3) {
+  transform: rotate(45deg) translateY(-10px);
 }
 
 .home-banner p {

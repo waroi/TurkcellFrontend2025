@@ -11,9 +11,9 @@ a.a-secondary-color {
 section {
   padding: 100px 0px;
 }
-header {
+.header-area {
   .navbar-toggler:focus {
-    outline: none;
+    box-shadow: none;
   }
   .navbar-toggler-icon {
     display: flex;
@@ -22,12 +22,24 @@ header {
     align-items: center;
     justify-content: center;
     background-image: none;
+    position: relative;
   }
   .navbar-toggler-icon div {
     width: 25px;
     height: 3px;
     background-color: $secondary;
+    transition: all 0.3s ease-out;
+    animation: button-cross 0.3s ease-out;
   }
+}
+.navbar .navbar-toggler:focus div:nth-child(2) {
+  opacity: 0;
+}
+.navbar .navbar-toggler:focus div:nth-child(1) {
+  transform: rotate(-45deg) translateY(10px);
+}
+.navbar .navbar-toggler:focus div:nth-child(3) {
+  transform: rotate(45deg) translateY(-10px);
 }
 .home-banner {
   p {
