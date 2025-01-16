@@ -13,6 +13,10 @@ p {
   color: #777777;
 }
 
+.navbar-section .navbar {
+  padding: 0;
+}
+
 /*!
  * Bootstrap  v5.3.3 (https://getbootstrap.com/)
  * Copyright 2011-2024 The Bootstrap Authors
@@ -11862,8 +11866,44 @@ textarea.form-control-lg {
   font-family: "Roboto", sans-serif;
 }
 
-.section-padding, .pricing-section, .features-section {
+.section-padding {
   padding: 120px 0;
+}
+
+.purchase-section {
+  background-color: #ec9d5f;
+}
+.purchase-section a {
+  font-size: 12px;
+  font-weight: 300;
+  color: #ffffff;
+  line-height: 40px;
+}
+.purchase-section .purchase-div {
+  background-color: #6247ea;
+  padding: 0 40px;
+}
+.purchase-section .purchase-div a {
+  font-size: 12px;
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 40px;
+}
+
+.navbar-section .navbar-nav .nav-item {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 80px;
+}
+.navbar-section .navbar-nav .nav-item:first-child .nav-link {
+  color: #6247ea;
+}
+.navbar-section .navbar-nav .nav-item:not(:first-child) .nav-link {
+  color: #222222;
+  transition: 0.3s ease;
+}
+.navbar-section .navbar-nav .nav-item:not(:first-child) .nav-link:hover {
+  color: #6247ea;
 }
 
 .banner-section {
@@ -11897,6 +11937,9 @@ textarea.form-control-lg {
   border-radius: 5px;
   transition: all 300ms linear 0s;
 }
+.banner-section .row .banner-btn:hover {
+  color: #6247ea;
+}
 
 .features-section h2, .features-section .h2 {
   font-size: 36px;
@@ -11908,13 +11951,26 @@ textarea.form-control-lg {
   font-weight: 300;
   line-height: 24px;
 }
-.features-section .card .card-body {
+.features-section .card {
   border: 1px solid #eeeeee;
   border-radius: 10px;
   padding: 60px 20px 60px 30px;
   transition: all 300ms linear 0s;
 }
+.features-section .card:hover {
+  box-shadow: 1px 1px 10px rgba(83, 83, 83, 0.1);
+}
 
+.pricing-section .price-card .price-item {
+  padding: 75px 0 75px 45px;
+}
+.pricing-section .price-card:hover {
+  border-top: #6247ea;
+}
+.pricing-section .price-card:hover h4, .pricing-section .price-card:hover .h4,
+.pricing-section .price-card:hover span {
+  color: #6247ea;
+}
 .pricing-section h2, .pricing-section .h2 {
   font-size: 36px;
   font-weight: 500;
@@ -11925,28 +11981,29 @@ textarea.form-control-lg {
   font-weight: 300;
   line-height: 24px;
 }
-.pricing-section .price_text h3, .pricing-section .price_text .h3 {
+.pricing-section .price-text h3, .pricing-section .price-text .h3 {
   font-size: 20px;
   font-weight: 500;
   color: #222222;
   line-height: 24px;
 }
-.pricing-section .price_text h4, .pricing-section .price_text .h4 {
+.pricing-section .price-text h4, .pricing-section .price-text .h4 {
   font-size: 36px;
   font-weight: 500;
   color: #222222;
   line-height: 43.2px;
+  transition: 0.3s ease;
 }
-.pricing-section .price_text h4 span, .pricing-section .price_text .h4 span {
+.pricing-section .price-text h4 span, .pricing-section .price-text .h4 span {
   font-size: 14px;
   font-weight: 300;
   color: #777777;
   line-height: 16.8px;
 }
-.pricing-section .price_text li {
+.pricing-section .price-text li {
   margin: 0 0 20px;
 }
-.pricing-section .price_text li a {
+.pricing-section .price-text li a {
   font-size: 14px;
   font-weight: 400;
   color: #777777;
@@ -11975,8 +12032,6 @@ textarea.form-control-lg {
   background: #ffffff;
   padding: 0px 50px;
   border-radius: 0px;
-  outline: none !important;
-  box-shadow: none !important;
   cursor: pointer;
   transition: all 300ms linear 0s;
 }
@@ -11999,6 +12054,14 @@ textarea.form-control-lg {
   color: #777777;
   line-height: 16.8px;
 }
+.clients-section .card {
+  border: 1px solid #eeeeee;
+  border-radius: 10px;
+  transition: all 300ms linear 0s;
+}
+.clients-section .card:hover {
+  box-shadow: 1px 1px 10px rgba(83, 83, 83, 0.1);
+}
 .clients-section .left-card {
   padding: 0;
 }
@@ -12013,6 +12076,138 @@ textarea.form-control-lg {
   font-weight: 300;
   color: #777777;
   line-height: 24px;
+}
+
+.services-section {
+  position: relative;
+  background: #6247ea;
+}
+.services-section .overlay {
+  position: absolute;
+}
+.services-section .overlay img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.services-section h2, .services-section .h2 {
+  font-size: 36px;
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 43.2px;
+}
+.services-section p {
+  font-weight: 300;
+  color: #ffffff;
+  line-height: 24px;
+  opacity: 0.6;
+}
+.services-section .card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 40px 60px 40px 40px;
+  border: 1px solid #9381eb;
+  margin-bottom: 30px;
+  transition: all 300ms linear 0s;
+}
+.services-section .card .card-body h3, .services-section .card .card-body .h3 {
+  font-size: 18px;
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 21.6px;
+}
+.services-section .card .card-body h3 i, .services-section .card .card-body .h3 i {
+  margin-right: 10px;
+}
+.services-section .card .card-body p {
+  font-weight: 300;
+  color: #ffffff;
+  line-height: 24px;
+  opacity: 0.6;
+}
+.services-section .card:hover {
+  background: #ffffff;
+}
+.services-section .card:hover h3, .services-section .card:hover .h3 {
+  font-size: 18px;
+  font-weight: 500;
+  color: #222222;
+  line-height: 21.6px;
+}
+.services-section .card:hover p {
+  font-weight: 300;
+  color: #222222;
+  line-height: 24px;
+  opacity: 0.6;
+}
+
+.blog-section h2, .blog-section .h2 {
+  font-size: 36px;
+  font-weight: 500;
+  color: #222222;
+  line-height: 43.2px;
+}
+.blog-section p {
+  font-weight: 300;
+  color: #222222;
+  line-height: 24px;
+}
+.blog-section .card {
+  border: 1px solid #eeeeee;
+  border-radius: 10px;
+  padding: 60px 30px;
+  transition: all 300ms linear 0s;
+}
+.blog-section .card:hover {
+  box-shadow: 1px 1px 10px rgba(83, 83, 83, 0.1);
+}
+.blog-section .card .card-body {
+  padding: 0;
+}
+.blog-section .card .card-body h2, .blog-section .card .card-body .h2 {
+  font-size: 12px;
+  font-weight: 300;
+  color: #ffffff;
+  line-height: 30px;
+  display: inline-block;
+  background: #ec9d5f;
+  padding: 0 20px;
+  border-radius: 3px;
+}
+.blog-section .card .card-body h3 > a, .blog-section .card .card-body .h3 > a {
+  font-size: 20px;
+  font-weight: 500;
+  color: #222222;
+  line-height: 30px;
+  transition: all 300ms linear 0s;
+}
+.blog-section .card .card-body p {
+  font-weight: 300;
+  color: #222222;
+  line-height: 24px;
+  opacity: 0.6;
+}
+.blog-section .card .card-body .view-text {
+  opacity: 0.6;
+}
+.blog-section .card .card-body .view-text a {
+  font-weight: 300;
+  color: #777777;
+  line-height: 24px;
+  margin-right: 25px;
+}
+.blog-section .card .card-body .view-text a i {
+  padding: 0 10px 0;
+}
+.blog-section .card:hover h3 > a, .blog-section .card:hover .h3 > a {
+  color: #6247ea;
+}
+
+.logo-section {
+  background-color: rgb(250, 252, 255);
+}
+.logo-section img {
+  opacity: 0.5;
 }
 
 /*# sourceMappingURL=main.css.map */
