@@ -1,32 +1,213 @@
 <!DOCTYPE html>
-<html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport"content="width-device-width , initial-scale=1.0">
-	<title>Flower.</title>
-	<!--font awseome link-->
-	<link rel="stylesheet"href="https://cdnjs.com/libraries/font-awesome">
-	<link rel="stylesheet"href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Hosting Professionals</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        .banner {
+            background-color: #6c5ce7;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        .banner h1 {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+        .banner p {
+            font-size: 1.2rem;
+            margin: 20px 0;
+        }
+        .banner button {
+            background-color: #fdcb6e;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+        .navbar {
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .navbar-brand {
+            font-weight: bold;
+            color: #6c5ce7;
+        }
+        .navbar-nav .nav-link {
+            color: #333;
+            font-weight: 500;
+        }
+        .navbar-nav .nav-link:hover {
+            color: #6c5ce7;
+        }
+        .contact-bar {
+            background-color: #fdcb6e;
+            color: white;
+            padding: 5px 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        .pricing {
+            padding: 50px 0;
+            background-color: #f8f9fa;
+        }
+        .pricing h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .pricing p {
+            text-align: center;
+            color: #6c757d;
+            margin-bottom: 40px;
+        }
+        .pricing-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .pricing-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .pricing-card h4 {
+            font-size: 2rem;
+            color: #6c5ce7;
+            margin-bottom: 10px;
+        }
+        .pricing-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+        .pricing-card ul li {
+            margin: 10px 0;
+        }
+    </style>
 </head>
 <body>
-	<!--header section-->
-	<header>
-		<a href="#"class="logo">Flower<span>.</span></a>
-		<nav class="navbar">
-			<a href="#home">home</a>
-			<a href="#about">about</a>
-			<a href="#products">products</a>
-			<a href="#review">review</a>
-			<a href="#contact">contact</a>
-		</nav>
-		<div class="icons">
-			<a href="#" class="fas fa-heart"></a>
-			<a href="#" class="fas fa-shopping-cart"></a>
-			<a href="#" class="fas fa-user"></a>
 
-		</div>
-	</header>
+    <!-- Top Contact Bar -->
+    <div class="contact-bar">
+        <span><i class="fas fa-phone"></i> +880 1234 654 953</span> | 
+        <span><i class="fas fa-envelope"></i> support@colorlib.com</span>
+    </div>
 
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#">HOSTHUB</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+                <a href="#" class="btn btn-warning ms-3">Purchase Hosting</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Banner -->
+    <div class="banner">
+        <div class="container">
+            <h1>WE'RE WEB HOSTING PROFESSIONALS</h1>
+            <p>Inappropriate behavior is often laughed off as "boys will be boys," women face higher conduct standards especially in the workplace. That’s why it’s crucial that, as women.</p>
+            <button>Explore Our Features</button>
+        </div>
+    </div>
+
+    <!-- Pricing Section -->
+    <section class="pricing">
+        <div class="container">
+            <h2>Choose Your Best Pricing Plans</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="pricing-card">
+                        <h3>Basic</h3>
+                        <p>Individuals/Freelancers</p>
+                        <h4>&pound;39<span>/mo</span></h4>
+                        <ul>
+                            <li>RAM 1 GB</li>
+                            <li>Core CPU 1</li>
+                            <li>SSD Storage 20 GB</li>
+                            <li>Transfer 1 TB</li>
+                            <li>Network In 40 Gb</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="pricing-card">
+                        <h3>Starter</h3>
+                        <p>Small Companies</p>
+                        <h4>&pound;59<span>/mo</span></h4>
+                        <ul>
+                            <li>RAM 2 GB</li>
+                            <li>Core CPU 2</li>
+                            <li>SSD Storage 50 GB</li>
+                            <li>Transfer 1 TB</li>
+                            <li>Network In 40 Gb</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="pricing-card">
+                        <h3>Business</h3>
+                        <p>Medium Companies</p>
+                        <h4>&pound;79<span>/mo</span></h4>
+                        <ul>
+                            <li>RAM 4 GB</li>
+                            <li>Core CPU 4</li>
+                            <li>SSD Storage 75 GB</li>
+                            <li>Transfer 2 TB</li>
+                            <li>Network In 80 Gb</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="pricing-card">
+                        <h3>Enterprise</h3>
+                        <p>Large Companies</p>
+                        <h4>&pound;99<span>/mo</span></h4>
+                        <ul>
+                            <li>RAM 8 GB</li>
+                            <li>Core CPU 8</li>
+                            <li>SSD Storage 100 GB</li>
+                            <li>Transfer 2 TB</li>
+                            <li>Network In 100 Gb</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
