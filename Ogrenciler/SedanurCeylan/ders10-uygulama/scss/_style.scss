@@ -8,3 +8,23 @@
 .box-1800 {
   max-width: 1800px;
 }
+.price-section {
+    .price-item {
+        .item-text {
+            &:hover h2 {
+                color: $primary;
+            }
+        }
+        .price-btn {
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            display: none;
+        }
+        &:hover .price-btn {
+            display: block;
+        }
+        &:hover {
+            border-top: 2px solid $primary;
+        }
+    }
+}
