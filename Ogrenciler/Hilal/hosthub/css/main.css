@@ -11877,6 +11877,23 @@ section {
   padding: 100px 0px;
 }
 
+header .navbar-toggler:focus {
+  outline: none;
+}
+header .navbar-toggler-icon {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+  background-image: none;
+}
+header .navbar-toggler-icon div {
+  width: 25px;
+  height: 3px;
+  background-color: #6247ea;
+}
+
 .home-banner p {
   color: #f9f9ff;
 }
@@ -11917,28 +11934,31 @@ section {
   right: 0px;
   bottom: 0px;
 }
-.price-area .col::after {
-  content: "";
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
-  text-align: center;
-  background-color: red;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  line-height: 50px;
-  color: white;
-  font-weight: 500;
-  font-size: 12px;
-  height: 40px;
-  z-index: 10;
-}
 .price-area .col {
   border-top: 2px solid #fff;
+  transition: all 300ms ease-in-out 0s;
   position: relative;
 }
 .price-area .col:hover {
   border-top: 2px solid #6247ea;
+}
+.price-area .col:hover .price_btn {
+  opacity: 1;
+}
+.price-area .price_btn {
+  transition: all 300ms ease-in-out 0s;
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: 100%;
+  height: 50px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: #6247ea;
+  text-align: center;
+  color: white;
+  opacity: 0;
 }
 .price-area span {
   font-size: 0.85rem;

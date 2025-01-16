@@ -11,6 +11,24 @@ a.a-secondary-color {
 section {
   padding: 100px 0px;
 }
+header {
+  .navbar-toggler:focus {
+    outline: none;
+  }
+  .navbar-toggler-icon {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+    background-image: none;
+  }
+  .navbar-toggler-icon div {
+    width: 25px;
+    height: 3px;
+    background-color: $secondary;
+  }
+}
 .home-banner {
   p {
     color: #f9f9ff;
@@ -48,28 +66,32 @@ section {
     right: 0px;
     bottom: 0px;
   }
-  .col::after {
-    content: "";
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    text-align: center;
-    background-color: red;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    line-height: 50px;
-    color: $light;
-    font-weight: 500;
-    font-size: 12px;
-    height: 40px;
-    z-index: 10;
-  }
+
   .col {
     border-top: 2px solid #fff;
+    transition: all 300ms ease-in-out 0s;
     position: relative;
     &:hover {
       border-top: 2px solid $secondary;
+      .price_btn {
+        opacity: 1;
+      }
     }
+  }
+  .price_btn {
+    transition: all 300ms ease-in-out 0s;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 50px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: $secondary;
+    text-align: center;
+    color: $light;
+    opacity: 0;
   }
   span {
     font-size: 0.85rem;
