@@ -1,0 +1,51 @@
+$orangeColor: #ec9d5f;
+$purpleColor: #6f42c1;
+$blueColor: #007bff;
+$indigoColor: #6610f2;
+$pColor: #777777;
+$width: 100%;
+
+* {
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.banner {
+  z-index: 1;
+  background: $indigoColor;
+
+  .banner_content {
+    width: $width;
+    padding: 225px 0px;
+
+    p {
+      opacity: 0.6;
+    }
+
+    .banner_btn {
+      background-color: $orangeColor;
+      font-size: 12px;
+    }
+  }
+}
+
+// Section-2
+
+section {
+  .container {
+    .text-center {}
+  }
+}
+
+p {
+  font-size: 14px;
+  color: $pColor;
+  line-height: 24px;
+}
+
+section {
+  background-color: #fafcff;
+
+}

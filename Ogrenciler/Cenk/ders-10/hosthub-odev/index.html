@@ -1,74 +1,283 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HostHub</title>
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HostHub</title>
-  <link rel="stylesheet" href="./css/main.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet" />
-</head>
-
-<body>
-  <div class="header-top text-white">
-    <div class="container d-flex justify-content-between px-3">
-      <div class="header-top-left">
-        <a href="#">+880 1234 654 953</a>
-        <a href="#" class="ms-5">support@colorlib.com</a>
-      </div>
-      <div class="header-top-right">
-        <div class="purchase-btn px-5">
-          <a href="#">Purchase Hosting</a>
+  <body>
+    <header class="header-area">
+      <div class="header-top text-white">
+        <div class="container d-flex justify-content-between px-3">
+          <div class="header-top-left">
+            <a href="#">+880 1234 654 953</a>
+            <a href="#" class="ms-5">support@colorlib.com</a>
+          </div>
+          <div class="header-top-right">
+            <div class="purchase-btn px-5">
+              <a href="#">Purchase Hosting</a>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-  <header class="header-menu">
-    <nav class="navbar navbar-expand-lg navbar-light p-0">
-      <div class="container px-3">
-        <a class="navbar-brand" href="#">
-          <img src="https://preview.colorlib.com/theme/hosthub/img/logo.png" alt="image">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">HOME</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">ABOUT</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">SERVICES</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">PAGES</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">BLOG</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">CONTACT</a>
-            </li>
-          </ul>
-          <ul class="navbar-nav right">
-            <li class="nav-item">
-              <a href="#" class="search">
-                <i class="fa-solid fa-magnifying-glass"></i>
-              </a>
-            </li>
-          </ul>
+      <header class="header-menu">
+        <nav class="navbar navbar-expand-lg navbar-light p-0">
+          <div class="container px-3">
+            <a class="navbar-brand" href="#">
+              <img
+                src="https://preview.colorlib.com/theme/hosthub/img/logo.png"
+                alt="image"
+              />
+            </a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#"
+                    >HOME</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">ABOUT</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">SERVICES</a>
+                </li>
+                <li class="nav-item submenu dropdown">
+                  <a
+                    href="#"
+                    class="nav-link dropdown-toggle"
+                    data-toggle="dropdown"
+                    role="button"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                    >PAGES</a
+                  >
+                  <ul class="dropdown-menu">
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Elements</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">BLOG</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">CONTACT</a>
+                </li>
+              </ul>
+              <ul class="navbar-nav right">
+                <li class="nav-item">
+                  <a href="#" class="search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+    </header>
+
+    <section class="banner">
+      <div class="container bnr">
+        <div class="row banner-content">
+          <div class="col-lg-5">
+            <h2>WE'RE WEB HOSTING<br />PROESSIONALS</h2>
+            <p>
+              inappropriate behavior is often laughed off as “boys will be
+              boys,” women face higher conduct standards especially in the
+              workplace. That’s why it’s crucial that, as women.
+            </p>
+            <a class="banner-btn" href="#">Explore Our Features</a>
+          </div>
+          <div class="col-lg-6">
+            <div class="banner-map">
+              <img
+                src="https://preview.colorlib.com/theme/hosthub/img/banner/banner-map.png.webp"
+                alt="image"
+              />
+            </div>
+          </div>
         </div>
       </div>
-    </nav>
-
-  </header>
-</body>
-
+    </section>
+    <section class="feature p-120 d-flex justify-content-center">
+      <div class="container">
+        <div class="f-text d-flex row align-items-center">
+          <h2 class="mb-3">Some Features that Made us Unique</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+        </div>
+        <div class="d-flex f-cards row">
+          <div class="col-lg-3 col-md-6 col-sm-12 mb-5">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title mb-4">Expert Technicians</h4>
+                <p class="card-text">
+                  Usage of the Internet is becoming more common due to rapid
+                  advancement of technology and power of the Internet is
+                  becoming more common due to rapid advancement.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12 mb-5">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title mb-4">Expert Technicians</h4>
+                <p class="card-text">
+                  Usage of the Internet is becoming more common due to rapid
+                  advancement of technology and power of the Internet is
+                  becoming more common due to rapid advancement.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12 mb-5">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title mb-4">Expert Technicians</h4>
+                <p class="card-text">
+                  Usage of the Internet is becoming more common due to rapid
+                  advancement of technology and power of the Internet is
+                  becoming more common due to rapid advancement.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12 mb-5">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title mb-4">Expert Technicians</h4>
+                <p class="card-text">
+                  Usage of the Internet is becoming more common due to rapid
+                  advancement of technology and power of the Internet is
+                  becoming more common due to rapid advancement.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="pricing p-120 section-bg">
+      <div class="container">
+        <div class="pricing-text f-text">
+          <h2 class="mb-3">Choose Your Best Pricing Plans</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+        </div>
+        <div class="packages row d-flex align-items-center">
+          <div class="col-lg-3 col-md-6 col-sm-12 mb-5">
+            <div class="package d-flex">
+              <div class="package-content w-100">
+                <h3 class="mb-3">Basic</h3>
+                <h5 class="mb-4">Individuals/Freelancers</h5>
+                <h2 class="mb-5">£39 <span>/mo</span></h2>
+                <ul class="list-unstyled">
+                  <li class="mb-4">RAM 1 GB</li>
+                  <li class="mb-4">Core CPU 1</li>
+                  <li class="mb-4">SSD Storage 20 GB</li>
+                  <li class="mb-4">Transfer 1 TB</li>
+                  <li class="mb-4">Network In 40 Gb</li>
+                </ul>
+              </div>
+              <div class="get-started">
+                <a class="price-btn text-decoration-none">Get Started</a>
+              </div>
+              <div class="line"></div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12 mb-5">
+            <div class="package d-flex">
+              <div class="package-content w-100">
+                <h3 class="mb-3">Basic</h3>
+                <h5 class="mb-4">Individuals/Freelancers</h5>
+                <h2 class="mb-5">£39 <span>/mo</span></h2>
+                <ul class="list-unstyled">
+                  <li class="mb-4">RAM 1 GB</li>
+                  <li class="mb-4">Core CPU 1</li>
+                  <li class="mb-4">SSD Storage 20 GB</li>
+                  <li class="mb-4">Transfer 1 TB</li>
+                  <li class="mb-4">Network In 40 Gb</li>
+                </ul>
+              </div>
+              <div class="get-started">
+                <a class="price-btn text-decoration-none">Get Started</a>
+              </div>
+              <div class="line"></div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12 mb-5">
+            <div class="package d-flex">
+              <div class="package-content w-100">
+                <h3 class="mb-3">Basic</h3>
+                <h5 class="mb-4">Individuals/Freelancers</h5>
+                <h2 class="mb-5">£39 <span>/mo</span></h2>
+                <ul class="list-unstyled">
+                  <li class="mb-4">RAM 1 GB</li>
+                  <li class="mb-4">Core CPU 1</li>
+                  <li class="mb-4">SSD Storage 20 GB</li>
+                  <li class="mb-4">Transfer 1 TB</li>
+                  <li class="mb-4">Network In 40 Gb</li>
+                </ul>
+              </div>
+              <div class="get-started">
+                <a class="price-btn text-decoration-none">Get Started</a>
+              </div>
+              <div class="line"></div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12 mb-5">
+            <div class="package d-flex">
+              <div class="package-content w-100">
+                <h3 class="mb-3">Basic</h3>
+                <h5 class="mb-4">Individuals/Freelancers</h5>
+                <h2 class="mb-5">£39 <span>/mo</span></h2>
+                <ul class="list-unstyled">
+                  <li class="mb-4">RAM 1 GB</li>
+                  <li class="mb-4">Core CPU 1</li>
+                  <li class="mb-4">SSD Storage 20 GB</li>
+                  <li class="mb-4">Transfer 1 TB</li>
+                  <li class="mb-4">Network In 40 Gb</li>
+                </ul>
+              </div>
+              <div class="get-started">
+                <a class="price-btn text-decoration-none">Get Started</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
 </html>
