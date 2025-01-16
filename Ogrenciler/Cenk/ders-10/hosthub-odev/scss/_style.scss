@@ -40,6 +40,14 @@ $purple:#6247ea;
     }
     .nav-item{
         margin-right: 35px;
+        &.submenu ul{
+            border: none;
+            padding: 0px;
+            border-radius: 0px;
+            box-shadow: none;
+            margin: 0px;
+            background: #fff
+        }
     }
     .nav-link{
         @include textFunc(12px, #222222, 500, 80px);
@@ -48,9 +56,31 @@ $purple:#6247ea;
     .navbar-nav .search{
         @include textFunc(12px, #222222, 600, 60px);
         margin-left: 80px;
-        i{
-            width: 12px;
-            height: 12px;
-        }
+    }
+}
+.banner{
+    background-color: $purple;
+    padding: 225px 0;
+    h2{
+        @include textFunc(36px, white, 500, 1.2);
+        margin-top: 20px;
+        margin-bottom: 15px;
+    }
+    p{
+        @include textFunc(14px, #f9f9ff, 300, 24px);
+        opacity: 0.6;
+        max-width: 405px;
+        margin-bottom: 35px;
+    }
+    .banner-btn{
+        background-color: $orange;
+        @include textFunc(12px, white, 500, 50px);
+        text-decoration: none;
+        padding: 0 50px;
+        display: inline-block;
+        border-radius: 5px;
+    }
+    .banner-map{
+        text-align: right;
     }
 }

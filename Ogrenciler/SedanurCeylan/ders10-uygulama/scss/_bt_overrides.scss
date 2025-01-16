@@ -2,11 +2,13 @@ $primary: #6247ea;
 $dark-gray: #222222;
 $secondary: #ec9d5f;
 $light-gray: #777777;
+$pColor:#F9F9FF;
 $theme-colors: (
   'primary': $primary,
   'secondary': $secondary,
   'dark-gray': $dark-gray,
   'light-gray': $light-gray,
+  'pColor':#F9F9FF,
 );
 // SPACING
 $spacer: 1rem;
@@ -38,6 +40,12 @@ $spacers: (
   12: $spacer * 3,
   //80px
   20: $spacer * 5,
+  //
+  30:$spacer * 7.5,
+  //240px
+  50:$spacer * 15,
+
+  
 );
 
 // FONST SIZE
@@ -46,9 +54,19 @@ $font-size-base: 1rem;
 $font-sizes: (
   12: $font-size-base * 0.75,
   36: $font-size-base * 2.25,
+  14: $font-size-base * 0.875,
 );
 
 // NAVBAR
 $navbar-light-color: $dark-gray;
 $navbar-light-hover-color: $primary;
 $navbar-light-active-color: $primary;
+
+
+//banner
+
+// $btn-secondary-hover-color: $primary;
+
+
+//card
+$card-border-color: #eeeeee;
