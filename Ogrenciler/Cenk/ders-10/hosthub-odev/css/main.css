@@ -12004,6 +12004,14 @@ textarea.form-control-lg {
   line-height: 24px;
 }
 
+.pricing .packages {
+  background-color: #fff;
+  box-shadow: 0px 10px 30px 0px rgba(98, 71, 234, 0.1);
+  border-radius: 10px;
+}
+.pricing .packages .package {
+  padding: 75px 0 75px 45px;
+}
 .pricing .packages .package h3, .pricing .packages .package .h3 {
   font-size: 20px;
   color: #222;
@@ -12034,6 +12042,38 @@ textarea.form-control-lg {
   color: #777;
   font-weight: 400;
   line-height: 1.2;
+}
+.pricing .packages .package .line {
+  width: 1px;
+  background: #eeeeee;
+  height: 350px;
+}
+.pricing .packages .package .price-btn {
+  display: none;
+  text-align: center;
+  background: #6247ea;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  font-size: 12px;
+  color: #fff;
+  font-weight: 500;
+  line-height: 50px;
+  opacity: 0;
+  margin-bottom: -50px;
+}
+.pricing .packages .package:hover .price-btn {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .packages .line {
+    display: none;
+  }
+}
+@media (max-width: 992px) {
+  .packages .col-lg-3:nth-child(2) .line {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
