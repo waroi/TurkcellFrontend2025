@@ -1,0 +1,100 @@
+$orange:#ec9d5f;
+$purple:#6247ea;
+*{
+    font-family: 'Roboto', sans-serif;
+}
+@mixin textFunc($fontsize, $color: null, $fontweight, $lineheight) {
+    font-size: $fontsize;
+    color: $color;
+    font-weight: $fontweight;
+    line-height: $lineheight;
+}
+
+.header-top{
+    background-color: $orange;
+    .container{
+        max-width: 1650px;
+    }
+    .header-top-left a{
+        text-decoration: none;
+        @include textFunc(12px, inherit, 300, 40px);
+        text-transform: uppercase;
+        transition: all 300ms linear 0s;
+        &:hover{
+            color: $purple;
+        }
+    }
+    
+    .purchase-btn{
+        background-color: $purple;
+        a{
+        @include textFunc(12px, inherit, 500, 40px);
+        text-decoration: none;
+        }
+    }
+}
+.header-area{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left:0;
+    z-index: 99;
+    transition: background 0.4s, all 0.3s linear;
+    .header-menu{
+        background-color: white;
+        .container{
+            max-width: 1650px;
+        }
+        .navbar{
+            background: transparent;
+        }
+        .nav-item{
+            margin-right: 35px;
+            &.submenu ul{
+                border: none;
+                padding: 0px;
+                border-radius: 0px;
+                box-shadow: none;
+                margin: 0px;
+                background: #fff
+            }
+        }
+        .nav-link{
+            @include textFunc(12px, #222222, 500, 80px);
+            padding: 0px;
+            &:hover{
+                color: $purple
+            }
+        }
+        .navbar-nav .search{
+            @include textFunc(12px, #222222, 600, 60px);
+            margin-left: 80px;
+        }
+    }
+}
+.banner{
+    background-color: $purple;
+    padding: 225px 0;
+    h2{
+        @include textFunc(36px, white, 500, 1.2);
+        margin-top: 20px;
+        margin-bottom: 15px;
+    }
+    p{
+        @include textFunc(14px, #f9f9ff, 300, 24px);
+        opacity: 0.6;
+        max-width: 405px;
+        margin-bottom: 35px;
+    }
+    .banner-btn{
+        background-color: $orange;
+        @include textFunc(12px, white, 500, 50px);
+        text-decoration: none;
+        padding: 0 50px;
+        display: inline-block;
+        border-radius: 5px;
+    }
+    .banner-map{
+        text-align: right;
+    }
+}

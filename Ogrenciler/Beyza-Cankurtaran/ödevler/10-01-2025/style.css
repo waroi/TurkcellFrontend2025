@@ -1,119 +1,101 @@
 .header {
-  top: 0; 
+  top: 0;
   z-index: 1000;
   background-color: white;
 }
-.banner h1{
-    font-size:2.5rem;
+.banner h1 {
+  font-size: 2.5rem;
 }
-
-.features-card:hover {    
+.features-card:hover {
   color: white;
   background-color: #007bff;
   cursor: pointer;
 }
-
 .feedback>img {
   width: 20px !important;
   height: 20px !important;
   border-radius: 50%;
 }
-.team-link{
+.team-link {
   display: none;
   background-color: #007bff;
-  transition:1s all ease-in-out;
+  transition: 1s all ease-in-out;
 }
-.team:hover .team-link{
+.team:hover .team-link {
   display: block;
-  
 }
 .footer {
   background: white;
   margin: 30px 0;
 }
-
 .footer .social-icons a {
   font-size: 18px;
   color: #6c757d;
   transition: color 0.3s ease;
 }
-
 .footer .social-icons a:hover {
   color: #007bff;
 }
-
 .footer p {
   font-size: 14px;
   color: #6c757d;
 }
-
 .footer span {
   color: red;
 }
-  .contact-section { 
-    background: linear-gradient(to right, rgba(162, 190, 204, 0.56), rgba(156, 210, 146, 0.555)), url('https://preview.colorlib.com/theme/imagine/images/hero_1.jpg.webp');
-    padding: 50px 0;
-    background-attachment: fixed;
-    background-size: cover;
-} 
-.contact-form { 
-    background: white; 
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+.contact-section {
+  background: linear-gradient(to right, rgba(162, 190, 204, 0.56), rgba(156, 210, 146, 0.555)), url('https://preview.colorlib.com/theme/imagine/images/hero_1.jpg.webp');
+  padding: 50px 0;
+  background-attachment: fixed;
+  background-size: cover;
 }
-.contact-form > form > *{
+.contact-form {
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.contact-form>form>* {
   margin-bottom: 30px;
-} 
-
+}
 .features-icon {
   top: -50px;
 }
-
 .testimonial img {
   width: 100px;
   height: 100px;
 }
-
 .testimonaial span {
   width: 10px;
   height: 10px;
 }
-
-.contact-title{
+.contact-title {
   color: white;
   padding: 20px 0 50px;
   font-size: 45px;
 }
-
 @keyframes appear {
   0% {
     opacity: 0;
     transform: translateX(-100px);
   }
-
-  75% {
+  50% {
     opacity: 1;
     transform: translateX(0);
   }
 }
-
 .animate-on-scroll {
   opacity: 0;
   animation: appear linear;
   animation-timeline: view();
-  animation-range: entry 0% cover 80%;
+  animation-range: entry 0% cover 100%;
 }
-
 .animate-on-scroll.delay {
   animation-delay: 0.5s;
 }
-
 html {
   scroll-behavior: smooth;
 }
-
-
 @media (min-width: 1200px) {
   .container {
-      max-width: 1140px;
+    max-width: 1140px;
   }
 }
