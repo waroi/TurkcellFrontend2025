@@ -135,7 +135,11 @@ $purple:#6247ea;
 }
 .pricing{
     .packages{
+        background-color: #fff;
+        box-shadow: 0px 10px 30px 0px rgba(98, 71, 234, 0.1);
+        border-radius: 10px;
         .package{
+            padding: 75px 0 75px 45px;
             h3{
                 @include textFunc(20px, #222, 500, 1.2);
             }
@@ -154,6 +158,36 @@ $purple:#6247ea;
                     @include textFunc(14px, #777, 400, 1.2)
                 }
             }
+            .line{
+                width: 1px;
+                background: #eeeeee;
+                height: 350px;
+            }
+            .price-btn {
+                    display: none;
+                    text-align: center;
+                    background: #6247ea;
+                    border-bottom-left-radius: 10px;
+                    border-bottom-right-radius: 10px;
+                    @include textFunc(12px, #fff, 500, 50px);
+                    opacity: 0;
+                    margin-bottom: -50px;
+                }
+            &:hover{
+                .price-btn {
+                    display: block;
+                }
+            }
         }
+    }
+}
+@media (max-width: 768px) {
+    .packages .line {
+        display: none;
+    }
+}
+@media (max-width: 992px) {
+    .packages .col-lg-3:nth-child(2) .line {
+        display: none;
     }
 }
