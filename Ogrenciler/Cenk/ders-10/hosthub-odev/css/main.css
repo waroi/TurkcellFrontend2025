@@ -12011,6 +12011,7 @@ section .container {
 
 .feature .f-cards .card {
   padding: 60px 20px 60px 30px;
+  transition: all 300ms linear 0s;
 }
 .feature .f-cards .card .card-title {
   font-size: 20px;
@@ -12024,53 +12025,65 @@ section .container {
   font-weight: 300;
   line-height: 24px;
 }
+.feature .f-cards .card:hover {
+  box-shadow: 0px 10px 30px 0px rgba(98, 71, 234, 0.1);
+  border-color: #fff;
+}
 
 .pricing .packages {
   background-color: #fff;
   box-shadow: 0px 10px 30px 0px rgba(98, 71, 234, 0.1);
   border-radius: 10px;
 }
-.pricing .packages .package {
+.pricing .packages .no-pd {
+  padding: 0;
+}
+.pricing .packages .col-lg-3 {
+  position: relative;
+}
+.pricing .packages .col-lg-3 .package {
   padding: 75px 0 75px 45px;
 }
-.pricing .packages .package h3, .pricing .packages .package .h3 {
+.pricing .packages .col-lg-3 .package h3, .pricing .packages .col-lg-3 .package .h3 {
   font-size: 20px;
   color: #222;
   font-weight: 500;
   line-height: 1.2;
 }
-.pricing .packages .package h5, .pricing .packages .package .h5 {
+.pricing .packages .col-lg-3 .package h5, .pricing .packages .col-lg-3 .package .h5 {
   font-size: 14px;
   color: #777;
   font-weight: 300;
   line-height: 1.2;
 }
-.pricing .packages .package h2, .pricing .packages .package .h2 {
+.pricing .packages .col-lg-3 .package h2, .pricing .packages .col-lg-3 .package .h2 {
   font-size: 36px;
   color: #222;
   font-weight: 500;
   line-height: 1.2;
 }
-.pricing .packages .package h2 span, .pricing .packages .package .h2 span {
+.pricing .packages .col-lg-3 .package h2 span, .pricing .packages .col-lg-3 .package .h2 span {
   font-size: 14px;
   color: #777;
   font-weight: 300;
   line-height: 1.2;
   text-align: end;
 }
-.pricing .packages .package ul li {
+.pricing .packages .col-lg-3 .package ul li {
   font-size: 14px;
   color: #777;
   font-weight: 400;
   line-height: 1.2;
 }
-.pricing .packages .package .line {
+.pricing .packages .col-lg-3 .package .line {
   width: 1px;
   background: #eeeeee;
   height: 350px;
 }
-.pricing .packages .package .price-btn {
+.pricing .packages .col-lg-3 .package .get-started {
   display: none;
+}
+.pricing .packages .col-lg-3 .package .get-started .price-btn {
   text-align: center;
   background: #6247ea;
   border-bottom-left-radius: 10px;
@@ -12079,16 +12092,45 @@ section .container {
   color: #fff;
   font-weight: 500;
   line-height: 50px;
-  opacity: 0;
-  margin-bottom: -50px;
 }
-.pricing .packages .package:hover .price-btn {
-  display: block;
+.pricing .packages .col-lg-3:hover {
+  border-top: 2px solid #6247ea;
+}
+.pricing .packages .col-lg-3:hover .get-started {
+  display: flex;
+  position: absolute;
+  height: 50px;
+  width: 100%;
+  left: 0;
+  bottom: -50px;
+}
+.pricing .packages .col-lg-3:hover .get-started .price-btn {
+  width: 100%;
+  height: 50px;
+}
+.pricing .packages .col-lg-3:hover h2, .pricing .packages .col-lg-3:hover .h2 {
+  color: #6247ea;
 }
 
+@media (max-width: 400px) {
+  .logo-slider {
+    grid-template-columns: repeat(15, 100%) !important;
+  }
+}
+@media (max-width: 576px) {
+  .header-top {
+    display: none;
+  }
+  .logo-slider {
+    grid-template-columns: repeat(15, 50%) !important;
+  }
+}
 @media (max-width: 768px) {
   .packages .line {
     display: none;
+  }
+  .logo-slider {
+    grid-template-columns: repeat(15, 33.3%) !important;
   }
 }
 @media (max-width: 992px) {
@@ -12097,6 +12139,12 @@ section .container {
   }
   .packages .col-lg-3:nth-child(2) .line {
     display: none;
+  }
+  .navbar, .container {
+    padding: 0 20px;
+  }
+  .logo-slider {
+    grid-template-columns: repeat(15, 25%) !important;
   }
 }
 .solution {
@@ -12228,6 +12276,9 @@ section .container {
   color: #777777;
   font-weight: 300;
   line-height: 24px;
+}
+.blog .card .card-body .icons {
+  flex-wrap: wrap;
 }
 .blog .card .card-body .icons svg {
   fill: #aaa;
