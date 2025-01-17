@@ -16,6 +16,12 @@ section,
   padding: 100px 0px;
 }
 .header-area {
+  .nav-link {
+    color: $dark;
+    &.active {
+      color: $secondary;
+    }
+  }
   .navbar-toggler:focus {
     box-shadow: none;
   }
@@ -249,7 +255,6 @@ section,
 .client-logo {
   background-color: #fafcff;
   .img-fluid {
-    max-width: 100%;
     opacity: 0.5;
     margin: 25px;
   }
@@ -309,9 +314,7 @@ section,
   background-color: #04091e;
 }
 .img-fluid {
-  height: 100px;
-  width: 100px;
-  margin: 1px;
+  max-height: 100px;
   padding: auto;
 }
 .instagram-grid {

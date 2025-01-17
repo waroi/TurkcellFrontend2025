@@ -11882,6 +11882,12 @@ section,
   padding: 100px 0px;
 }
 
+.header-area .nav-link {
+  color: #222222;
+}
+.header-area .nav-link.active {
+  color: #6247ea;
+}
 .header-area .navbar-toggler:focus {
   box-shadow: none;
 }
@@ -12111,7 +12117,6 @@ section,
   background-color: #fafcff;
 }
 .client-logo .img-fluid {
-  max-width: 100%;
   opacity: 0.5;
   margin: 25px;
 }
@@ -12178,9 +12183,7 @@ section,
 }
 
 .img-fluid {
-  height: 100px;
-  width: 100px;
-  margin: 1px;
+  max-height: 100px;
   padding: auto;
 }
 
