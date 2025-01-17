@@ -12262,4 +12262,55 @@ section .container {
   opacity: 1;
 }
 
+footer {
+  background-color: #04091e;
+}
+footer h6, footer .h6 {
+  font-size: 20px;
+  color: #fff;
+  font-weight: 500;
+  line-height: 24px;
+}
+footer a {
+  font-size: 14px;
+  color: #fff;
+  font-weight: 300;
+  line-height: 24px;
+}
+footer p {
+  opacity: 0.6;
+  font-size: 14px;
+  color: #fff;
+  font-weight: 300;
+  line-height: 24px;
+}
+footer .subscribe input {
+  max-width: 340px;
+  width: 100%;
+  border: 1px solid #333333;
+  font-size: 13px;
+  line-height: 40px;
+  padding-right: 40px;
+  height: 40px;
+  color: #999999;
+  border-radius: 20px;
+  background: #fff;
+  padding-left: 20px;
+}
+footer .subscribe button {
+  padding: 0px 38px;
+  display: inline-block;
+  cursor: pointer;
+  position: absolute;
+  top: 0px;
+  right: 40px;
+  border: 1px solid #6247ea;
+  border-radius: 20px;
+  background-color: #6247ea;
+  font-size: 12px;
+  color: #fff;
+  font-weight: 500;
+  line-height: 38px;
+}
+
 /*# sourceMappingURL=main.css.map */

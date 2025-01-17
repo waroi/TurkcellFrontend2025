@@ -359,3 +359,43 @@ section{
         }
     }
 }
+footer{
+    background-color: #04091e;
+    h6{
+        @include textFunc(20px, #fff, 500, 24px);
+    }
+    a{
+        @include textFunc(14px, #fff, 300, 24px);
+    }
+    p{
+        opacity: 0.6;
+        @include textFunc(14px, #fff, 300, 24px);
+    }
+    .subscribe{
+        input{
+            max-width: 340px;
+            width: 100%;
+            border: 1px solid #333333;
+            font-size: 13px;
+            line-height: 40px;
+            padding-right: 40px;
+            height: 40px;
+            color: #999999;
+            border-radius: 20px;
+            background: #fff;
+            padding-left: 20px;
+        }
+        button{
+            padding: 0px 38px;
+            display: inline-block;
+            cursor: pointer;
+            position: absolute;
+            top: 0px;
+            right: 40px;
+            border: 1px solid $purple;
+            border-radius: 20px;
+            background-color: $purple;
+            @include textFunc(12px, #fff, 500, 38px);
+        }
+    }
+}
