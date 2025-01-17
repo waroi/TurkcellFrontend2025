@@ -1,43 +1,207 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing:border-box;
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    p {
+        font-size: 14px;
+        opacity: 0.6;
+        max-width: 770px;
+        margin: 0 auto 35px;
+      }
 }
-header{
-    span:hover {color: $secondary;}
+header {
+	span:hover {
+		color: $secondary;
+	}
 }
-.banner{
-    padding:225px 0 ;
-    width:100%;
-    overflow:hidden;
-    background-color:$secondary;
-    .banner-text{
-        color:#f9f9ff;
+.banner {
+	padding: 225px 0;
+	width: 100%;
+	overflow: hidden;
+	background-color: $secondary;
+    .banner_content {
+        .text-white {
+          color: #f9f9ff;
+        }
+    
+        h2 {
+          margin-top: 20px;
+          font-size: 36px;
+          font-weight: 500;
+          font-family: "Roboto", sans-serif;
+          text-transform: uppercase;
+          margin-bottom: 15px;
+        }
+    
+        p {
+          color: #f9f9ff;
+          font-family: "Roboto", sans-serif;
+          font-weight: 300;
+          max-width: 405px;
+          margin-bottom: 35px;
+          opacity: 0.6;
+        }
+      }
+}
+.navbar{
+    .nav-item:hover{
+        color:$secondary;
     }
 }
-.feature-inner{
-    border: 1px solid #eeeeee;
+.feature-inner {
+	border: 1px solid #eeeeee;
+	border-radius: 10px;
+    padding: 60px 20px 60px 30px;
+    transition: all 300ms linear 0s;
+}
+.p_120 {
+	padding-top: 120px;
+	padding-bottom: 120px;
+}
+.main_title {
+    max-width: 680px;
+    margin: auto;
+}
+.feature_area .card:hover {
+	box-shadow: $box-shadow-lg;
+	border-top: 4px solid $secondary;
+}
+.price_area {
+    background: #fafcff;
+    .price_cards {
+      background: #fff;
+      border-bottom: 4px solid #fff;
+      border-radius: 10px;
+  
+      .price_item {
+        border-top: 4px solid #fff;
+        .price_btn {
+          width: 100%;
+          opacity: 0;
+          display: block;
+          line-height: 37px;
+          margin-bottom: -55px;
+        }
+        &:hover {
+          border-top: 4px solid $secondary;
+          .price_btn {
+            opacity: 1;
+            transition: 0.2s;
+          }
+          h2 {
+            color: $secondary;
+          }
+        }
+        .price_text {
+          padding-top: 75px;
+          padding-bottom: 75px;
+          padding-left: 45px;
+          position: relative;
+  
+          &:before {
+            content: "";
+            width: 1px;
+            background: #eeeeee;
+            height: 336px;
+            position: absolute;
+            right: 0px;
+            bottom: 0px;
+          }
+        }
+      }
+    }
+}
+.custom-border-radius {
+    border-radius: 5px !important;
+}   
+.list{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+.price_cards {
     border-radius: 10px;
+    .price-card-hover {
+        border-top: 4px solid #fff;
+    }
+    .price-card-hover:hover {
+        border-top: 4px solid $secondary;
+    }
+    .price_text {
+        padding-top: 75px;
+        padding-bottom: 75px;
+        padding-left: 45px;
+        position: relative;
+    }
 }
-.p_120{
-    padding-top:120px;
-    padding-bottom:120px;
+.solution_area {
+    .btn-light:hover {
+        background-color: $secondary;
+        color: white;
+    }
 }
-.feature_area .card:hover{
-    box-shadow:$box-shadow-lg;
-}
-.price-card-hover{
-    border-top: 4px solid #fff;
-}
-.price-card-hover:hover{
-    border-top:4px solid $secondary;
-    .price_btn{
-    opacity:1;
-}
-} 
-.price_btn{
-    width:100%;
-    opacity:0;
+.clients_logo_area .clients_slider .item img {
+    width: auto;
+    text-align: center;
+    display: block;
+    margin: auto;
+    line-height: 70px;
+    opacity: .5;
+    transition: all 300ms linear 0s;
 }
 
-
+.clients_logo_area {
+    background: #fafcff;
+}
+.service_area:before {
+    content: "";
+    background: url(https://preview.colorlib.com/theme/hosthub/img/map-bg.png.webp) no-repeat scroll center center;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+}
+.footer {
+    .img-thumbnail {
+      width: 50px; // Instagram feed images
+      height: 50px;
+      object-fit: cover;
+      border: none;
+    }
+  
+    form {
+      .form-control {
+        border-radius: 0;
+      }
+  
+      .btn {
+        border-radius: 0;
+      }
+    }
+  
+    p, a {
+      color: #bbb;
+      &:hover {
+        color: #fff;
+      }
+    }
+  
+    .footer-social {
+      i {
+        font-size: 1.25rem;
+      }
+    }
+  }
+@media (max-width: 991px) {
+    .banner_map_img {
+      display: none;
+    }
+  }
+  
+  @media (max-width: 991px) {
+    .header_top {
+      display: none;
+    }
+}
