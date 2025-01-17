@@ -8,8 +8,105 @@
         -o-transition: background 0.4s, all 0.3s linear;
         transition: background 0.4s, all 0.3s linear;
 }
-
-.container{
-    display: grid;
-    
+.home_banner_area .banner_inner {
+    overflow: hidden;
+    width: 100%;
+    padding: 225px 0px;
 }
+section {
+    display: block;
+    unicode-bidi: isolate;
+}
+div {
+    display: block;
+    unicode-bidi: isolate;
+}
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+}
+.p_120 {
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+.feature_item {
+    border: 1px solid #eeeeee;
+    border-radius: 10px;
+    padding: 60px 20px 60px 30px;
+    -webkit-transition: all 300ms linear 0s;
+    -o-transition: all 300ms linear 0s;
+    transition: all 300ms linear 0s;
+}
+.feature_item p {
+    margin-bottom: 0px;
+}
+.main_title p {
+    font-size: 14px;
+    font-family: "Roboto", sans-serif;
+    line-height: 24px;
+    color: #777777;
+    margin-bottom: 0px;
+    max-width: 570px;
+    font-weight: 300;
+    margin: auto;
+}
+.feature_area {
+    padding: 120px 0;
+  
+    .main_title {
+      text-align: center;
+      margin-bottom: 50px;
+  
+      h2 {
+        font-size: 32px;
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 20px;
+      }
+  
+      p {
+        font-size: 16px;
+        color: #777;
+        line-height: 1.8;
+      }
+    }
+  
+    .feature_inner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+  
+      .feature_item {
+        background: #f9f9f9;
+        padding: 30px;
+        border-radius: 8px;
+        text-align: center;
+        transition: all 0.3s ease;
+  
+        h4 {
+          font-size: 20px;
+          font-weight: 600;
+          color: #333;
+          margin-bottom: 15px;
+        }
+  
+        p {
+          font-size: 14px;
+          color: #777;
+          line-height: 1.6;
+        }
+  
+        &:hover {
+          background: #fff;
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+  }
+  
