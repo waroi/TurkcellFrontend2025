@@ -1,3 +1,6 @@
+body {
+  font-family: "Roboto", serif;
+}
 p {
   font-size: 0.88rem;
   color: $info;
@@ -8,10 +11,17 @@ a {
 a.a-secondary-color {
   color: $secondary;
 }
-section {
+section,
+.footer {
   padding: 100px 0px;
 }
 .header-area {
+  .nav-link {
+    color: $dark;
+    &.active {
+      color: $secondary;
+    }
+  }
   .navbar-toggler:focus {
     box-shadow: none;
   }
@@ -121,13 +131,13 @@ section {
     line-height: 50px;
     border: none;
     transition: all 300ms linear 0s;
-    &:hover{
+    &:hover {
       background-color: $secondary;
       color: white;
     }
   }
 }
-.client{
+.client {
   .says_left {
     max-width: 335px;
   }
@@ -146,7 +156,7 @@ section {
   }
 }
 .service-area {
-  .service_title p{
+  .service_title p {
     max-width: 570px;
   }
   .service_item {
@@ -161,23 +171,22 @@ section {
       font-weight: 500;
       color: $light;
     }
-    p{
+    p {
       color: $light;
-      opacity: .6;
-    } 
-    &:hover{
+      opacity: 0.6;
+    }
+    &:hover {
       background: $light;
       box-shadow: $box-shadow-lg;
       p {
         color: $info;
         opacity: 1;
       }
-      h4{
+      h4 {
         color: $dark;
       }
     }
-  } 
-
+  }
 }
 .blog-card {
   background-color: #7777;
@@ -185,7 +194,7 @@ section {
   border-radius: 10px;
   overflow: hidden;
   transition: all 300ms linear 0s;
-  padding: 60px 30px; 
+  padding: 60px 30px;
 
   &:hover {
     background: $light;
@@ -193,7 +202,7 @@ section {
   }
 
   .card-header {
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
     .date {
       background-color: $primary;
       color: white;
@@ -208,12 +217,11 @@ section {
     .card-title {
       font-size: 1.2rem;
       font-weight: bold;
-      padding: 10px; 
-      transition: background-color 0.3s; 
-  
+      padding: 10px;
+      transition: background-color 0.3s;
+
       &:hover {
-  
-        color: $secondary; 
+        color: $secondary;
       }
     }
     .card-text {
@@ -225,10 +233,10 @@ section {
   .card-header,
   .card-body,
   .card-footer {
-    border: none; 
+    border: none;
   }
   .card-footer {
-    margin-top: 20px; 
+    margin-top: 20px;
     display: flex;
     justify-content: space-between;
     font-size: 0.85rem;
@@ -245,60 +253,55 @@ section {
     }
   }
 }
-
 .client-logo {
   background-color: #fafcff;
   .img-fluid {
-    max-width: 100%;
     opacity: 0.5;
     margin: 25px;
-}
+  }
   img {
-    opacity: 0.1; 
-    transition: opacity 0.3s ease; 
+    opacity: 0.1;
+    transition: opacity 0.3s ease;
     margin: 5px;
 
     &:hover {
-      opacity: 1; 
+      opacity: 1;
     }
   }
 }
-
 .footer {
   background-color: #04091e;
-  color: #e5e5e5; 
-  padding: 30px;
+  color: #e5e5e5;
 }
-
 .footer-title {
   font-size: 20px;
   font-weight: bold;
-  padding-top: 120px;
+  margin: 20px 0px;
 }
-
 .footer-text {
   margin-bottom: auto;
   font-size: 14px;
-    font-weight: 300;
-    font-family: "Roboto", sans-serif;
- 
+  font-weight: 300;
+  font-family: "Roboto", sans-serif;
   color: #b3b3b3;
-
 }
 .footer ul li {
-  margin-bottom: 10px; 
+  margin-bottom: 10px;
   font-size: medium;
 }
-
 .newsletter-form input {
   border: none;
   border-radius: 50px;
   padding: 10px 15px;
-  font-size: 0.9rem;
+  font-size: 0.7rem;
   width: 70%;
 }
-
+.newsletter-form {
+  position: relative;
+}
 .newsletter-form button {
+  position: absolute;
+  left: 60%;
   background-color: $secondary;
   border: none;
   border-radius: 50px;
@@ -306,97 +309,68 @@ section {
   font-weight: bold;
   padding: 10px 20px;
   text-transform: uppercase;
-  font-size: 0.9rem;
+  font-size: 0.7rem;
 }
-
 .newsletter-form button:hover {
   background-color: #04091e;
 }
-
 .img-fluid {
-  height: 100px;
-  width: 100px;
-  margin: 1px;
+  max-height: 100px;
   padding: auto;
-
-  
 }
 .instagram-grid {
-
   display: grid;
-  grid-template-columns: repeat(4, 58px); 
+  grid-template-columns: repeat(4, 58px);
   gap: 6px;
-  margin: 16px 0 0 0; 
+  margin: 16px 0 0 0;
   margin: 0 auto;
   padding: 0;
 }
-
 .instagram-item {
-  width: 58px; 
-  height: 58px; 
-  overflow: hidden; 
-  display: flex; 
-  align-items: center; 
+  width: 58px;
+  height: 58px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  margin: 0; 
-  padding: 0; 
+  margin: 0;
+  padding: 0;
 }
-
 .instagram-img {
   margin-top: auto;
   width: 100%;
-  height: 100%; 
+  height: 100%;
   object-fit: cover;
-  display: block; 
+  display: block;
 }
-.footer-title {
-  margin-bottom: 30px;
-}
-
-
-
 .footer-bottom {
-  display: flex;
-  justify-content: space-between; 
-  align-items: center; 
-  padding: 80px 0;
+  padding-top: 80px;
   font-size: 0.9rem;
 }
-
 .footer-bottom p {
   margin: 0;
-  color: #e5e5e5; 
+  color: #e5e5e5;
 }
-
 .social-icons {
   display: flex;
   gap: 10px;
 }
-
 .icon-box {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 30px; 
-  height: 30px; 
-  background-color: #1a1a2e; 
-  transition: background-color 0.3s ease, color 0.3s ease; 
-  text-decoration: none; 
+  width: 30px;
+  height: 30px;
+  background-color: #1a1a2e;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-decoration: none;
 }
-
 .icon-box i {
-  display:flex;
-  font-size: 1 rem; 
-  color: #e5e5e5; 
+  display: flex;
+  font-size: 1 rem;
+  color: #e5e5e5;
 }
-
 .icon-box:hover {
-  background-color:$secondary; 
-  color: #fff; 
+  background-color: $secondary;
+  color: #fff;
 }
-
-
-
-
-
-

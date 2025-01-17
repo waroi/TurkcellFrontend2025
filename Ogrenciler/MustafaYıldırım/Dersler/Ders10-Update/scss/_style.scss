@@ -68,48 +68,58 @@ body {
       }
     }
   }
-  .service_area {
-    background: #6247ea;
-    position: relative;
-    overflow: hidden;
-}
-.service_area:before {
-    content: "";
-    background: url(../img/map-bg.png) no-repeat scroll center center;
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    height: 100%;
-    width: 100%;
-}
-    
-.service_item p {
-    margin-bottom: 0px;
-    color: #fff;
-    opacity: .6;
-}
-.service_item:hover p {
-    color: #777777;
-    opacity: 1;
 }
 
+.service-area {
+  background-image: url("https://preview.colorlib.com/theme/hosthub/img/map-bg.png.webp");
 
+  .service_item {
+    border: 1px solid #9381eb;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: background-color 0.5s;
 
-
-
-
-
-
-  @keyframes scroll {
-    0% {
-      transform: translateX(0);
+    h4 {
+      i {
+        margin-right: 10px;
+      }
+      transition: color 0.5s;
+      font-size: 18px;
     }
 
-    100% {
-      transform: translateX(-100%);
+    p {
+      transition: color 0.5s, opacity 0.5s;
+    }
+
+    &:hover {
+      background-color: $white;
+
+      h4 {
+        color: $black;
+      }
+
+      p {
+        color: #777777;
+        opacity: 1;
+      }
     }
   }
 }
+
+.service_item p {
+  color: #fff;
+  opacity: 0.6;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
 .footer {
   background-color: #04091e;
   h6 {
@@ -248,12 +258,9 @@ body {
   }
 }
 
-.feature-area {
-  .card {
-    border-color: #eeeeee;
-    p {
-      color: #777777;
-    }
+.feature-area.card {
+  p {
+    color: #777777;
   }
 }
 
@@ -336,9 +343,31 @@ body {
 }
 
 .client-area .card {
-  border-color: #eeeeee;
   transition: box-shadow 0.5s;
   &:hover {
     box-shadow: 0px 10px 30px 0px rgba(98, 71, 234, 0.1);
   }
+}
+
+.latest_grid_blog_area .card {
+  transition: border-color 0.5s, box-shadow 0.5s;
+  &:hover {
+    border-color: transparent;
+    box-shadow: 0px 10px 30px 0px rgba(98, 71, 234, 0.1);
+    h4 {
+      color: $primary !important;
+    }
+  }
+  h4 {
+    font-size: 20px;
+    transition: color 0.5s;
+  }
+
+  p {
+    width: unset;
+  }
+}
+
+.card {
+  border-color: #eeeeee;
 }
