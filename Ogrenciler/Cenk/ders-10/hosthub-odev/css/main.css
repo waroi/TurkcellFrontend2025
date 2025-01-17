@@ -12201,6 +12201,7 @@ section .container {
   border: 1px solid #eee;
   border-radius: 10px;
   padding: 60px 30px;
+  transition: 350ms ease-in-out;
 }
 .blog .card .card-body .date {
   background-color: #ec9d5f;
@@ -12220,6 +12221,7 @@ section .container {
   font-weight: 500;
   line-height: 1.2;
   margin-bottom: 13px;
+  transition: 350ms ease-in-out;
 }
 .blog .card .card-body p {
   font-size: 14px;
@@ -12235,11 +12237,22 @@ section .container {
 .blog .card .card-body .icons p {
   margin: 0;
 }
+.blog .card:hover {
+  box-shadow: 0px 10px 30px 0px rgba(98, 71, 234, 0.1);
+  border-color: #fff;
+}
+.blog .card:hover h4, .blog .card:hover .h4 {
+  color: #6247ea;
+}
 
 .logo-area .logo-slider {
   display: grid;
   grid-template-columns: repeat(15, 20%);
-  overflow: auto;
+  overflow-x: auto;
+}
+.logo-area .logo-slider::-webkit-scrollbar {
+  height: 10px;
+  width: 100%;
 }
 .logo-area .logo-slider .logo img {
   opacity: 0.5;

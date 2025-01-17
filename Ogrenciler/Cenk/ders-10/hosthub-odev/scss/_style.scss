@@ -298,6 +298,7 @@ section{
         border: 1px solid #eee;
         border-radius: 10px;
         padding: 60px 30px;
+        transition: 350ms ease-in-out;
         .card-body{
             .date{
                 background-color: $orange;
@@ -311,6 +312,7 @@ section{
             h4{
                 @include textFunc(20px, #222222, 500, 1.2);
                 margin-bottom: 13px;
+                transition: 350ms ease-in-out;
             }
             p{
                @include textFunc(14px, #777777, 300, 24px);
@@ -326,13 +328,24 @@ section{
                 }
             }
         }
+        &:hover{
+            box-shadow: 0px 10px 30px 0px rgba(98, 71, 234, 0.1);
+            border-color: #fff;
+            h4{
+                color: $purple;
+            }
+        }
     }
 }
 .logo-area{
     .logo-slider{
         display: grid;
         grid-template-columns: repeat(15, 20%);
-        overflow: auto;
+        overflow-x: auto;
+        &::-webkit-scrollbar {
+            height: 10px;
+            width: 100%;
+          }
         .logo{
             img{
                 opacity: 0.5;
