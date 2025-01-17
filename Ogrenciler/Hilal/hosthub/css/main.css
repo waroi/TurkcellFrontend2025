@@ -11860,6 +11860,10 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+body {
+  font-family: "Roboto", serif;
+}
+
 p {
   font-size: 0.88rem;
   color: #777777;
@@ -11873,7 +11877,8 @@ a.a-secondary-color {
   color: #6247ea;
 }
 
-section {
+section,
+.footer {
   padding: 100px 0px;
 }
 
@@ -12122,13 +12127,12 @@ section {
 .footer {
   background-color: #04091e;
   color: #e5e5e5;
-  padding: 30px;
 }
 
 .footer-title {
   font-size: 20px;
   font-weight: bold;
-  padding-top: 120px;
+  margin: 20px 0px;
 }
 
 .footer-text {
@@ -12148,11 +12152,17 @@ section {
   border: none;
   border-radius: 50px;
   padding: 10px 15px;
-  font-size: 0.9rem;
+  font-size: 0.7rem;
   width: 70%;
 }
 
+.newsletter-form {
+  position: relative;
+}
+
 .newsletter-form button {
+  position: absolute;
+  left: 60%;
   background-color: #6247ea;
   border: none;
   border-radius: 50px;
@@ -12160,7 +12170,7 @@ section {
   font-weight: bold;
   padding: 10px 20px;
   text-transform: uppercase;
-  font-size: 0.9rem;
+  font-size: 0.7rem;
 }
 
 .newsletter-form button:hover {
@@ -12202,15 +12212,8 @@ section {
   display: block;
 }
 
-.footer-title {
-  margin-bottom: 30px;
-}
-
 .footer-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 80px 0;
+  padding-top: 80px;
   font-size: 0.9rem;
 }
 
