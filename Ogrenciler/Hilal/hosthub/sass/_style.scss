@@ -187,6 +187,16 @@ section,
       }
     }
   }
+  &::before {
+    content: "";
+    background: url("https://preview.colorlib.com/theme/hosthub/img/map-bg.png.webp")
+      no-repeat scroll center center;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+  }
 }
 .blog-card {
   background-color: #7777;
@@ -257,12 +267,10 @@ section,
   background-color: #fafcff;
   .img-fluid {
     opacity: 0.5;
-    margin: 25px;
   }
   img {
     opacity: 0.1;
     transition: opacity 0.3s ease;
-    margin: 5px;
 
     &:hover {
       opacity: 1;
