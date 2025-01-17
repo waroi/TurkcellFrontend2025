@@ -1,5 +1,30 @@
 $primary: #ec9d5f;
 $secondary: #6247ea;
-.btn-warning{
-    color:$primary;
-}
+
+$font-weight-lighter: lighter;
+$font-weight-base: $font-weight-lighter;
+
+// 1 rem 16px e eşit 0.8 rem 12.8 px ediyor
+$font-size-base: 0.8rem;
+
+// price_btn da line height kullandım o yüzden burada override ettim istediğim büyüklük olsun diye
+$line-height-base: 1.7;
+
+// fs-6 font size kullandığım yerlederki size ları override ettim burada normalde fs-6 0.8remdi artık değil!
+$font-sizes: (
+  6: $font-size-base * 1.1,
+);
+
+// normal değerleri aldım sadece 2 yi değiştirdim neden mb-2 kullandım en aşağıdaki li lerde orada daha fazla açıklık istedim için override ettim eğer kullandığım tüm space değerlerini almazsam patlıyor tüm space i override ediyor burada
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * 0.25,
+  2: $spacer * 0.9,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+);
+
+// en alttaki buttonların radiusun ayarlamak için override ettim
+$btn-border-radius: 0 0 10px 10px;
