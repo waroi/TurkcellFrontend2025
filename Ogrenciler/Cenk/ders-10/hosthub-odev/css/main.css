@@ -11848,6 +11848,10 @@ textarea.form-control-lg {
   font-family: "Roboto", sans-serif;
 }
 
+section .container {
+  max-width: 1170px;
+}
+
 .header-top {
   background-color: #ec9d5f;
 }
@@ -11877,14 +11881,6 @@ textarea.form-control-lg {
   text-decoration: none;
 }
 
-.header-area {
-  position: absolute;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 99;
-  transition: background 0.4s, all 0.3s linear;
-}
 .header-area .header-menu {
   background-color: white;
 }
@@ -11896,6 +11892,9 @@ textarea.form-control-lg {
 }
 .header-area .header-menu .nav-item {
   margin-right: 35px;
+}
+.header-area .header-menu .nav-item:last-child {
+  margin-right: 0px;
 }
 .header-area .header-menu .nav-item.submenu ul {
   border: none;
@@ -11926,7 +11925,7 @@ textarea.form-control-lg {
 .banner {
   background-color: #6247ea;
 }
-.banner .bnr {
+.banner .banner-bnr {
   padding: 225px 0;
 }
 .banner h2, .banner .h2 {
@@ -11956,6 +11955,10 @@ textarea.form-control-lg {
   padding: 0 50px;
   display: inline-block;
   border-radius: 5px;
+  transition: all 300ms linear 0s;
+}
+.banner .banner-btn:hover {
+  color: #6247ea;
 }
 .banner .banner-map {
   text-align: right;
@@ -11969,17 +11972,33 @@ textarea.form-control-lg {
   background-color: #fafcff;
 }
 
-.feature .f-text, .pricing .f-text {
-  text-align: center;
+.feature .f-text,
+.pricing .f-text,
+.client .f-text, .service-area .f-text {
+  text-align: left;
   margin-bottom: 75px;
 }
-.feature .f-text h2, .feature .f-text .h2, .pricing .f-text h2, .pricing .f-text .h2 {
+.feature .f-text h2, .feature .f-text .h2,
+.feature .f-text h3,
+.feature .f-text .h3,
+.pricing .f-text h2,
+.pricing .f-text .h2,
+.pricing .f-text h3,
+.pricing .f-text .h3,
+.client .f-text h2,
+.client .f-text .h2,
+.client .f-text h3,
+.client .f-text .h3, .service-area .f-text h2, .service-area .f-text .h2,
+.service-area .f-text h3,
+.service-area .f-text .h3 {
   font-size: 36px;
   color: #222;
   font-weight: 500;
   line-height: 1.2;
 }
-.feature .f-text p, .pricing .f-text p {
+.feature .f-text p,
+.pricing .f-text p,
+.client .f-text p, .service-area .f-text p {
   font-size: 14px;
   color: #777777;
   font-weight: 300;
@@ -12071,9 +12090,109 @@ textarea.form-control-lg {
   }
 }
 @media (max-width: 992px) {
+  .banner-map img {
+    display: none;
+  }
   .packages .col-lg-3:nth-child(2) .line {
     display: none;
   }
+}
+.solution {
+  background-color: #ec9d5f;
+}
+.solution h4, .solution .h4 {
+  font-size: 36px;
+  color: #fff;
+  font-weight: 500;
+  line-height: 1.2;
+}
+.solution p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.3764705882);
+  font-weight: 400;
+  line-height: 1.5;
+  max-width: 770px;
+  margin: 0 auto;
+}
+.solution .white-btn {
+  background-color: #f9f9ff;
+  font-size: 12px;
+  color: #222222;
+  font-weight: 500;
+  line-height: 50px;
+  text-decoration: none;
+  padding: 0 50px;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 300ms linear 0s;
+}
+.solution .white-btn:hover {
+  background-color: #6247ea;
+  color: #fff;
+}
+
+.client .client-item {
+  background: #fff;
+  border: 1px solid #eeeeee;
+  border-radius: 10px;
+  padding: 55px 30px;
+  transition: all 300ms linear 0s;
+}
+.client .client-item h4, .client .client-item .h4 {
+  font-size: 20px;
+  color: #222222;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 13px;
+}
+.client .client-item p, .client .client-item h5, .client .client-item .h5 {
+  font-size: 14px;
+  color: #777777;
+  font-weight: 300;
+  line-height: 24px;
+}
+.client .client-item:hover {
+  box-shadow: 0px 10px 30px 0px rgba(98, 71, 234, 0.1);
+  border-color: #fff;
+}
+
+.service-area {
+  background-color: #6247ea;
+}
+.service-area .service-item {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 40px 60px 40px 40px;
+  border: 1px solid #9381eb;
+  transition: all 300ms linear 0s;
+}
+.service-area .service-item h4, .service-area .service-item .h4 {
+  font-size: 18px;
+  color: #fff;
+  font-weight: 500;
+  line-height: 1.2;
+}
+.service-area .service-item h4 i, .service-area .service-item .h4 i {
+  font-size: 24px;
+  padding-right: 15px;
+}
+.service-area .service-item p {
+  font-size: 14px;
+  color: #fff;
+  font-weight: 300;
+  line-height: 24px;
+  opacity: 0.6;
+}
+.service-area .service-item:hover {
+  background: #fff;
+  color: #fff;
+}
+.service-area .service-item:hover h4, .service-area .service-item:hover .h4 {
+  color: #222;
+}
+.service-area .service-item:hover p {
+  color: #777777;
+  opacity: 1;
 }
 
 /*# sourceMappingURL=main.css.map */
