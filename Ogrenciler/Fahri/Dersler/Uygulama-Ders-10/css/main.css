@@ -1,13 +1,5 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
-li {
-  list-style: none !important;
-}
-
-a {
-  text-decoration: none !important;
-}
-
 p {
   font-size: 14px;
   color: #777777;
@@ -12278,6 +12270,13 @@ footer ul {
   .banner-img {
     display: none;
   }
+}
+li {
+  list-style: none !important;
+}
+
+a {
+  text-decoration: none !important;
 }
 
 /*# sourceMappingURL=main.css.map */
