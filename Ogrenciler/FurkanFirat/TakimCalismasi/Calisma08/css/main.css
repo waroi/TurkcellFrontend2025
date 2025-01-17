@@ -17364,6 +17364,12 @@ textarea.form-control-lg {
 .price-section .price-item {
   border-top: 2px solid transparent;
 }
+.price-section .price-item .item-text h2, .price-section .price-item .item-text .h2 {
+  color: #222222;
+}
+.price-section .price-item .item-text h2 span, .price-section .price-item .item-text .h2 span {
+  color: #777777;
+}
 .price-section .price-item .item-text:hover h2, .price-section .price-item .item-text:hover .h2 {
   color: #6247ea;
 }
