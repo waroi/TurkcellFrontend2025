@@ -138,7 +138,7 @@
                 <p class="text-light-gray fw-light fs-14 mx-auto">Lorem ipsum dolor sit amet, consectetur adipisicing
                     elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
-            <div class="price-cards row bg-white rounded">
+            <div class="price-cards row bg-white rounded shadow">
                 <div class="col-12 col-md-6 col-lg-3 p-0">
                     <div class="price-item">
                         <div class="item-text py-12 ps-11">
@@ -232,14 +232,19 @@
     </section>
     <section class="solution_section py-30 bg-solution">
         <div class="container box-1800">
-            <div class="text-white text-center">
+            <div class="text-white text-center row">
                 <h4 class="fs-36 mb-4">Looking for a Custom Solution?</h4>
-                <p class="fs-14 opacity-50 mb-9">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                <p class="fs-14 opacity-50 mb-9 mx-auto col-lg-5">Lorem ipsum dolor sit amet, consectetur adipisicing
+                    elit, sed do
                     eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
                     exercitation.</p>
-                <a class="btn btn-light text-dark-gray rounded-0 fs-12 px-12 bg-white fw-medium lh-lg" href="#">Request
-                    Free Consultation</a>
             </div>
+            <div class="text-center"><a
+                    class="btn btn-light text-dark-gray rounded-0 fs-12 px-12 bg-white fw-medium lh-lg mx-auto"
+                    href="#">Request
+                    Free Consultation</a></div>
+
+
         </div>
     </section>
     <section class="client_says_area py-30">
@@ -427,13 +432,54 @@ url('https://preview.colorlib.com/theme/hosthub/img/map-bg.png.webp');">
             </div>
         </div>
     </section>
+    <!-- LOGOS -->
+    <section class="clients_logo_area py-30">
+        <div class="container">
+            <div class="clients_slider">
+                <div class="owl-stage-outer">
+                    <div class="owl-stage d-flex flex-wrap gap-8 justify-content-between px-8 opacity-50">
+                        <div class="owl-item">
+                            <div class="item">
+                                <img src="https://preview.colorlib.com/theme/hosthub/img/clients-logo/c-logo-2.png.webp"
+                                    alt="">
+                            </div>
+                        </div>
+                        <div class="owl-item">
+                            <div class="item">
+                                <img src="https://preview.colorlib.com/theme/hosthub/img/clients-logo/c-logo-3.png.webp"
+                                    alt="">
+                            </div>
+                        </div>
+                        <div class="owl-item">
+                            <div class="item">
+                                <img src="https://preview.colorlib.com/theme/hosthub/img/clients-logo/c-logo-4.png.webp"
+                                    alt="">
+                            </div>
+                        </div>
+                        <div class="owl-item">
+                            <div class="item">
+                                <img src="https://preview.colorlib.com/theme/hosthub/img/clients-logo/c-logo-5.png.webp"
+                                    alt="">
+                            </div>
+                        </div>
+                        <div class="owl-item">
+                            <div class="item">
+                                <img src="https://preview.colorlib.com/theme/hosthub/img/clients-logo/c-logo-1.png.webp"
+                                    alt="">
+                            </div>
+                        </div>
 
 
-
-    <section class="footer bg-dark-gray py-30">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FOOTER -->
+    <section class="footer bg-footerbg py-30">
         <div class="container">
             <div class="footer-top row">
-                <div class="top-product col-12 col-md-6 col-lg-4">
+                <div class="top-product col-lg-3 col-md-6 col-sm-6">
                     <h4 class="fs-20 mb-7 fw-semibold text-white">Top Products</h4>
                     <ul class="list-unstyled fs-14">
                         <li class="mb-3"><a class="text-decoration-none text-white" href="#">Managed Website</a></li>
@@ -442,16 +488,24 @@ url('https://preview.colorlib.com/theme/hosthub/img/map-bg.png.webp');">
                         <li class="mb-3"><a class="text-decoration-none text-white" href="#">Marketing Service</a></li>
                     </ul>
                 </div>
-                <div class="newsletter ccol-12 col-md-6 col-lg-4">
+                <div class="newsletter col-lg-5 col-md-6 col-sm-6">
                     <h4 class="fs-20 mb-7 fw-semibold text-white">Newsletter</h4>
                     <p class="text-white fs-14 opacity-50">You can trust us. we only send promo offers, not a single
                         spam.</p>
-                    <div class="search">
-                        <input type="search" class="ps-5 pe-10 py-1 fs-12 rounded-5" placeholder="Email Address">
+                    <form class="search d-flex needs-validation" novalidate>
+                        <input type="search"
+                            class="form-control ps-5 pe-10 py-1 fs-12 rounded-5 w-100 border border-input-border-color text-input form-control-lg me-5"
+                            placeholder="Email Address">
                         <button class="btn btn-primary fs-12 px-9 rounded-5">Subscribe</button>
+                    </form>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please choose a username.
                     </div>
                 </div>
-                <div class="feed col-12 col-md-6 col-lg-4">
+                <div class="feed col-lg-3 col-md-6 col-sm-6 offset-lg-">
                     <h4 class="fs-20 mb-7 fw-semibold text-white">Instagram Feed</h4>
                     <ul class="list-unstyled d-flex flex-wrap gap-3">
                         <li><img src="https://preview.colorlib.com/theme/hosthub/img/instagram/Image-01.jpg"
@@ -480,21 +534,39 @@ url('https://preview.colorlib.com/theme/hosthub/img/map-bg.png.webp');">
                             class="text-primary text-decoration-none" href="">Colorlib</a></p>
                 </div>
                 <div class="social-media">
-                    <a class="bg-primary py-1 px-2" href="#"><i class="fa-brands fa-facebook text-white fs-14"></i></a>
-                    <a class="bg-primary ms-2 py-1 px-2" href="#"><i
+                    <a class="bg-footersocial py-1 px-2" href="#"><i
+                            class="fa-brands fa-facebook text-white fs-14"></i></a>
+                    <a class="bg-footersocial ms-2 py-1 px-2" href="#"><i
                             class="fa-brands fa-twitter text-white fs-14"></i></a>
-                    <a class="bg-primary ms-2 py-1 px-2" href="#"><i
+                    <a class="bg-footersocial ms-2 py-1 px-2" href="#"><i
                             class="fa-brands fa-dribbble text-white fs-14"></i></a>
-                    <a class="bg-primary ms-2 py-1 px-2" href="#"><i
+                    <a class="bg-footersocial ms-2 py-1 px-2" href="#"><i
                             class="fa-brands fa-behance text-white fs-14"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
+    <script>
+        (() => {
+            'use strict'
 
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            const forms = document.querySelectorAll('.needs-validation')
 
+            // Loop over them and prevent submission
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
 
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+    </script>
 </body>
 
 </html>
