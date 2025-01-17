@@ -11974,7 +11974,7 @@ section .container {
 
 .feature .f-text,
 .pricing .f-text,
-.client .f-text, .service-area .f-text {
+.client .f-text, .service-area .f-text, .blog-text .f-text {
   text-align: left;
   margin-bottom: 75px;
 }
@@ -11990,7 +11990,9 @@ section .container {
 .client .f-text h3,
 .client .f-text .h3, .service-area .f-text h2, .service-area .f-text .h2,
 .service-area .f-text h3,
-.service-area .f-text .h3 {
+.service-area .f-text .h3, .blog-text .f-text h2, .blog-text .f-text .h2,
+.blog-text .f-text h3,
+.blog-text .f-text .h3 {
   font-size: 36px;
   color: #222;
   font-weight: 500;
@@ -11998,7 +12000,7 @@ section .container {
 }
 .feature .f-text p,
 .pricing .f-text p,
-.client .f-text p, .service-area .f-text p {
+.client .f-text p, .service-area .f-text p, .blog-text .f-text p {
   font-size: 14px;
   color: #777777;
   font-weight: 300;
@@ -12193,6 +12195,128 @@ section .container {
 .service-area .service-item:hover p {
   color: #777777;
   opacity: 1;
+}
+
+.blog .card {
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 60px 30px;
+  transition: 350ms ease-in-out;
+}
+.blog .card .card-body .date {
+  background-color: #ec9d5f;
+  padding: 0px 20px;
+  width: 112px;
+  border-radius: 3px;
+}
+.blog .card .card-body .date p {
+  font-size: 12px;
+  color: #fff;
+  font-weight: 300;
+  line-height: 30px;
+}
+.blog .card .card-body h4, .blog .card .card-body .h4 {
+  font-size: 20px;
+  color: #222222;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 13px;
+  transition: 350ms ease-in-out;
+}
+.blog .card .card-body p {
+  font-size: 14px;
+  color: #777777;
+  font-weight: 300;
+  line-height: 24px;
+}
+.blog .card .card-body .icons svg {
+  fill: #aaa;
+  width: 14px;
+  height: 14px;
+}
+.blog .card .card-body .icons p {
+  margin: 0;
+}
+.blog .card:hover {
+  box-shadow: 0px 10px 30px 0px rgba(98, 71, 234, 0.1);
+  border-color: #fff;
+}
+.blog .card:hover h4, .blog .card:hover .h4 {
+  color: #6247ea;
+}
+
+.logo-area .logo-slider {
+  display: grid;
+  grid-template-columns: repeat(15, 20%);
+  overflow-x: auto;
+}
+.logo-area .logo-slider::-webkit-scrollbar {
+  height: 10px;
+  width: 100%;
+}
+.logo-area .logo-slider .logo img {
+  opacity: 0.5;
+  transition: 300ms ease-in-out;
+}
+.logo-area .logo-slider .logo:hover img {
+  opacity: 1;
+}
+
+footer {
+  background-color: #04091e;
+}
+footer h6, footer .h6 {
+  font-size: 20px;
+  color: #fff;
+  font-weight: 500;
+  line-height: 24px;
+}
+footer a {
+  font-size: 14px;
+  color: #fff;
+  font-weight: 300;
+  line-height: 24px;
+}
+footer p {
+  opacity: 0.6;
+  font-size: 14px;
+  color: #fff;
+  font-weight: 300;
+  line-height: 24px;
+}
+footer .subscribe input {
+  max-width: 340px;
+  width: 100%;
+  border: 1px solid #333333;
+  font-size: 13px;
+  line-height: 40px;
+  padding-right: 40px;
+  height: 40px;
+  color: #999999;
+  border-radius: 20px;
+  background: #fff;
+  padding-left: 20px;
+}
+footer .subscribe button {
+  padding: 0px 38px;
+  display: inline-block;
+  cursor: pointer;
+  position: absolute;
+  top: 0px;
+  right: 100px;
+  border: 1px solid #6247ea;
+  border-radius: 20px;
+  background-color: #6247ea;
+  font-size: 12px;
+  color: #fff;
+  font-weight: 500;
+  line-height: 38px;
+}
+footer .instagram li {
+  margin: 5px;
+}
+footer .copyright-text i, footer .copyright-text a {
+  color: #6247ea;
 }
 
 /*# sourceMappingURL=main.css.map */

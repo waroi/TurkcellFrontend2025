@@ -121,7 +121,7 @@ section{
 
 .feature,
 .pricing,
-.client, .service-area {
+.client, .service-area, .blog-text {
     .f-text {
         text-align: left;
         margin-bottom: 75px;
@@ -291,5 +291,121 @@ section{
             }
         }
 
+    }
+}
+.blog{
+    .card{
+        border: 1px solid #eee;
+        border-radius: 10px;
+        padding: 60px 30px;
+        transition: 350ms ease-in-out;
+        .card-body{
+            .date{
+                background-color: $orange;
+                padding: 0px 20px;
+                width: 112px;
+                border-radius: 3px;
+                p{
+                    @include textFunc(12px,#fff ,300 ,30px );
+                }
+            }
+            h4{
+                @include textFunc(20px, #222222, 500, 1.2);
+                margin-bottom: 13px;
+                transition: 350ms ease-in-out;
+            }
+            p{
+               @include textFunc(14px, #777777, 300, 24px);
+            }
+            .icons{
+                svg{
+                    fill: #aaa;
+                width: 14px;
+                height: 14px;
+                }
+                p{
+                    margin: 0;
+                }
+            }
+        }
+        &:hover{
+            box-shadow: 0px 10px 30px 0px rgba(98, 71, 234, 0.1);
+            border-color: #fff;
+            h4{
+                color: $purple;
+            }
+        }
+    }
+}
+.logo-area{
+    .logo-slider{
+        display: grid;
+        grid-template-columns: repeat(15, 20%);
+        overflow-x: auto;
+        &::-webkit-scrollbar {
+            height: 10px;
+            width: 100%;
+          }
+        .logo{
+            img{
+                opacity: 0.5;
+                transition: 300ms ease-in-out;
+            }
+            &:hover{
+                img{
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+footer{
+    background-color: #04091e;
+    h6{
+        @include textFunc(20px, #fff, 500, 24px);
+    }
+    a{
+        @include textFunc(14px, #fff, 300, 24px);
+    }
+    p{
+        opacity: 0.6;
+        @include textFunc(14px, #fff, 300, 24px);
+    }
+    .subscribe{
+        input{
+            max-width: 340px;
+            width: 100%;
+            border: 1px solid #333333;
+            font-size: 13px;
+            line-height: 40px;
+            padding-right: 40px;
+            height: 40px;
+            color: #999999;
+            border-radius: 20px;
+            background: #fff;
+            padding-left: 20px;
+        }
+        button{
+            padding: 0px 38px;
+            display: inline-block;
+            cursor: pointer;
+            position: absolute;
+            top: 0px;
+            right: 100px;
+            border: 1px solid $purple;
+            border-radius: 20px;
+            background-color: $purple;
+            @include textFunc(12px, #fff, 500, 38px);
+        }
+    }
+    .instagram{
+        li{
+            margin: 5px;
+        }
+    }
+    .copyright-text{
+        i, a{
+            color: $purple;
+        }
     }
 }

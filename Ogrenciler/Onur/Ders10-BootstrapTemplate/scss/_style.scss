@@ -1,0 +1,56 @@
+* {
+    box-sizing: border-box;
+}
+
+.width-1170 {
+    max-width: 1170px;
+}
+
+header .container {
+    max-width: 1640px;
+}
+
+.purchase {
+    background-color: #6247EA;
+    color: white;
+    font-size: 12px;
+}
+
+.hero .container{
+    padding: 200px 0;
+}
+
+.hero p {
+    color: #f9f9ff;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    max-width: 405px;
+    margin-bottom: 35px;
+    opacity: .6;
+}
+
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.feature_area {
+    padding: 50px 0;
+}
+
+.pricing_area {
+    background: #FAFCFF;
+}
+
+.footer-area {
+    background: #04091e;
+}
+
+.p_120 {
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
