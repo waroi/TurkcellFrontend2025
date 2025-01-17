@@ -5,289 +5,327 @@ $purple: #6247ea;
 $pgColorGrey: #777777;
 $white: #ffffff;
 $headColor: #222222;
+$footerColor: #04091e;
 
 * {
-  font-family: "Roboto", sans-serif;
+	font-family: "Roboto", sans-serif;
 }
 .section-padding {
-  padding: 120px 0;
+	padding: 120px 0;
 }
 @mixin font($font-size: null, $font-weight, $color: null, $line-height) {
-  font-size: $font-size;
-  font-weight: $font-weight;
-  color: $color;
-  line-height: $line-height;
+	font-size: $font-size;
+	font-weight: $font-weight;
+	color: $color;
+	line-height: $line-height;
 }
 
 .purchase-section {
-  background-color: $orange;
-  a {
-    @include font(12px, 300, $white, 40px);
-  }
-  .purchase-div {
-    background-color: $purple;
-    padding: 0 40px;
-    a {
-      @include font(12px, 500, $white, 40px);
-    }
-  }
+	background-color: $orange;
+	a {
+		@include font(12px, 300, $white, 40px);
+	}
+	.purchase-div {
+		background-color: $purple;
+		padding: 0 40px;
+		a {
+			@include font(12px, 500, $white, 40px);
+		}
+	}
 }
 .navbar-section {
-  .navbar-nav {
-    .nav-item {
-      @include font(12px, 500, null, 80px);
-      &:first-child .nav-link {
-        color: $purple;
-      }
-      &:not(:first-child) .nav-link {
-        color: $headColor;
-        transition: 0.3s ease;
-        &:hover {
-          color: $purple;
-        }
-      }
-    }
-  }
+	.navbar-nav {
+		.nav-item {
+			@include font(12px, 500, null, 80px);
+			&:first-child .nav-link {
+				color: $purple;
+			}
+			&:not(:first-child) .nav-link {
+				color: $headColor;
+				transition: 0.3s ease;
+				&:hover {
+					color: $purple;
+				}
+			}
+		}
+	}
 }
 .banner-section {
-  background: $purple;
+	background: $purple;
 
-  .row {
-    padding: 225px 0;
-    h2 {
-      @include font(36px, 500, $white, 43.2px);
-      text-transform: uppercase;
-    }
-    p {
-      @include font(null, 300, #f9f9ff, 24px);
-      opacity: 0.6;
-      max-width: 405px;
-      margin-bottom: 35px;
-    }
-    .banner-btn {
-      @include font(12px, 500, #fff, 50px);
-      padding: 0px 50px;
-      background: #ec9d5f;
-      border-radius: 5px;
-      transition: all 300ms linear 0s;
-      &:hover {
-        color: $purple;
-      }
-    }
-  }
+	.row {
+		padding: 225px 0;
+		h2 {
+			@include font(36px, 500, $white, 43.2px);
+			text-transform: uppercase;
+		}
+		p {
+			@include font(null, 300, #f9f9ff, 24px);
+			opacity: 0.6;
+			max-width: 405px;
+			margin-bottom: 35px;
+		}
+		.banner-btn {
+			@include font(12px, 500, #fff, 50px);
+			padding: 0px 50px;
+			background: #ec9d5f;
+			border-radius: 5px;
+			transition: all 300ms linear 0s;
+			&:hover {
+				color: $purple;
+			}
+		}
+	}
 }
 .features-section {
-  h2 {
-    @include font(36px, 500, $headColor, 43.2px);
-  }
-  p {
-    @include font(null, 300, null, 24px);
-  }
-  .card {
-    border: 1px solid #eeeeee;
-    border-radius: 10px;
-    padding: 60px 20px 60px 30px;
-    transition: all 300ms linear 0s;
-    &:hover {
-      // border: transparent;
-      box-shadow: 1px 1px 10px rgba(83, 83, 83, 0.1);
-    }
-  }
+	h2 {
+		@include font(36px, 500, $headColor, 43.2px);
+	}
+	p {
+		@include font(null, 300, null, 24px);
+	}
+	.card {
+		border: 1px solid #eeeeee;
+		border-radius: 10px;
+		padding: 60px 20px 60px 30px;
+		transition: all 300ms linear 0s;
+		&:hover {
+			// border: transparent;
+			box-shadow: 1px 1px 10px rgba(83, 83, 83, 0.1);
+		}
+	}
 }
 .pricing-section {
-  .price-card {
-    .price-item {
-      padding: 75px 0 75px 45px;
-    }
-    &:hover {
-      h4,
-      span {
-        color: $purple;
-      }
-      border-top: $purple;
-    }
-  }
+	.price-card {
+		.price-item {
+			padding: 75px 0 75px 45px;
+		}
+		&:hover {
+			h4,
+			span {
+				color: $purple;
+			}
+			border-top: $purple;
+		}
+	}
 
-  h2 {
-    @include font(36px, 500, $headColor, 43.2px);
-  }
-  p {
-    @include font(null, 300, null, 24px);
-  }
-  .price-text {
-    h3 {
-      @include font(20px, 500, $headColor, 24px);
-    }
-    h4 {
-      @include font(36px, 500, $headColor, 43.2px);
-      transition: 0.3s ease;
-      span {
-        @include font(14px, 300, $pgColorGrey, 16.8px);
-      }
-    }
-    li {
-      a {
-        @include font(14px, 400, $pgColorGrey, 24px);
-      }
-      margin: 0 0 20px;
-    }
-  }
+	h2 {
+		@include font(36px, 500, $headColor, 43.2px);
+	}
+	p {
+		@include font(null, 300, null, 24px);
+	}
+	.price-text {
+		h3 {
+			@include font(20px, 500, $headColor, 24px);
+		}
+		h4 {
+			@include font(36px, 500, $headColor, 43.2px);
+			transition: 0.3s ease;
+			span {
+				@include font(14px, 300, $pgColorGrey, 16.8px);
+			}
+		}
+		li {
+			a {
+				@include font(14px, 400, $pgColorGrey, 24px);
+			}
+			margin: 0 0 20px;
+		}
+	}
 }
 .custom-section {
-  background: $orange;
-  h2 {
-    @include font(36px, 500, $white, 43.2px);
-  }
-  p {
-    @include font(null, 300, $white, 24px);
-  }
-  .custom-btn {
-    @include font(12px, 500, $headColor, 50px);
-    background: $white;
-    padding: 0px 50px;
-    border-radius: 0px;
-    cursor: pointer;
-    transition: all 300ms linear 0s;
-    &:hover {
-      color: $white;
-      background: $purple;
-    }
-  }
+	background: $orange;
+	h2 {
+		@include font(36px, 500, $white, 43.2px);
+	}
+	p {
+		@include font(null, 300, $white, 24px);
+	}
+	.custom-btn {
+		@include font(12px, 500, $headColor, 50px);
+		background: $white;
+		padding: 0px 50px;
+		border-radius: 0px;
+		cursor: pointer;
+		transition: all 300ms linear 0s;
+		&:hover {
+			color: $white;
+			background: $purple;
+		}
+	}
 }
 .clients-section {
-  .card-body {
-    padding: 55px 30px;
-    h2 {
-      @include font(20px, 500, $headColor, 24px);
-    }
-    p {
-      @include font(null, 300, $pgColorGrey, 16.8px);
-    }
-  }
-  .card {
-    border: 1px solid #eeeeee;
-    border-radius: 10px;
-    transition: all 300ms linear 0s;
-    &:hover {
-      // border: transparent;
-      box-shadow: 1px 1px 10px rgba(83, 83, 83, 0.1);
-    }
-  }
-  .left-card {
-    padding: 0;
-    h2 {
-      @include font(36px, 500, $headColor, 45px);
-      margin: 30px 0 20px;
-    }
-    p {
-      @include font(null, 300, $pgColorGrey, 24px);
-    }
-  }
+	.card-body {
+		padding: 55px 30px;
+		h2 {
+			@include font(20px, 500, $headColor, 24px);
+		}
+		p {
+			@include font(null, 300, $pgColorGrey, 16.8px);
+		}
+	}
+	.card {
+		border: 1px solid #eeeeee;
+		border-radius: 10px;
+		transition: all 300ms linear 0s;
+		&:hover {
+			// border: transparent;
+			box-shadow: 1px 1px 10px rgba(83, 83, 83, 0.1);
+		}
+	}
+	.left-card {
+		padding: 0;
+		h2 {
+			@include font(36px, 500, $headColor, 45px);
+			margin: 30px 0 20px;
+		}
+		p {
+			@include font(null, 300, $pgColorGrey, 24px);
+		}
+	}
 }
 .services-section {
-  position: relative;
-  .overlay {
-    position: absolute;
-    img {
-      object-fit: cover;
-      width: 100%;
-      height: 100%;
-    }
-  }
-  background: #6247ea;
-  h2 {
-    @include font(36px, 500, $white, 43.2px);
-  }
-  p {
-    @include font(null, 300, $white, 24px);
-    opacity: 0.6;
-  }
-  .card {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    padding: 40px 60px 40px 40px;
-    border: 1px solid #9381eb;
-    margin-bottom: 30px;
-    transition: all 300ms linear 0s;
-    .card-body {
-      h3 {
-        @include font(18px, 500, $white, 21.6px);
-        i {
-          margin-right: 10px;
-        }
-      }
-      p {
-        @include font(null, 300, $white, 24px);
-        opacity: 0.6;
-      }
-    }
-    &:hover {
-      background: $white;
-      h3 {
-        @include font(18px, 500, $headColor, 21.6px);
-      }
-      p {
-        @include font(null, 300, $headColor, 24px);
-        opacity: 0.6;
-      }
-    }
-  }
+	position: relative;
+	.overlay {
+		position: absolute;
+		img {
+			object-fit: cover;
+			width: 100%;
+			height: 100%;
+		}
+	}
+	background: #6247ea;
+	h2 {
+		@include font(36px, 500, $white, 43.2px);
+	}
+	p {
+		@include font(null, 300, $white, 24px);
+		opacity: 0.6;
+	}
+	.card {
+		background: rgba(255, 255, 255, 0.1);
+		border-radius: 10px;
+		padding: 40px 60px 40px 40px;
+		border: 1px solid #9381eb;
+		margin-bottom: 30px;
+		transition: all 300ms linear 0s;
+		.card-body {
+			h3 {
+				@include font(18px, 500, $white, 21.6px);
+				i {
+					margin-right: 10px;
+				}
+			}
+			p {
+				@include font(null, 300, $white, 24px);
+				opacity: 0.6;
+			}
+		}
+		&:hover {
+			background: $white;
+			h3 {
+				@include font(18px, 500, $headColor, 21.6px);
+			}
+			p {
+				@include font(null, 300, $headColor, 24px);
+				opacity: 0.6;
+			}
+		}
+	}
 }
 .blog-section {
-  h2 {
-    @include font(36px, 500, $headColor, 43.2px);
-  }
-  p {
-    @include font(null, 300, $headColor, 24px);
-  }
-  .card {
-    border: 1px solid #eeeeee;
-    border-radius: 10px;
-    padding: 60px 30px;
-    transition: all 300ms linear 0s;
-    &:hover {
-      // border: transparent;
-      box-shadow: 1px 1px 10px rgba(83, 83, 83, 0.1);
-    }
-    .card-body {
-      padding: 0;
-      h2 {
-        @include font(12px, 300, $white, 30px);
-        display: inline-block;
-        background: $orange;
-        padding: 0 20px;
-        border-radius: 3px;
-      }
-      h3 > a {
-        @include font(20px, 500, $headColor, 30px);
-        transition: all 300ms linear 0s;
-      }
-      p {
-        @include font(null, 300, $headColor, 24px);
-        opacity: 0.6;
-      }
-      .view-text {
-        opacity: 0.6;
-
-        a {
-          @include font(null, 300, $pgColorGrey, 24px);
-          margin-right: 25px;
-          i {
-            padding: 0 10px 0;
-          }
-        }
-      }
-    }
-    &:hover {
-      h3 > a {
-        color: $purple;
-      }
-    }
-  }
+	h2 {
+		@include font(36px, 500, $headColor, 43.2px);
+	}
+	p {
+		@include font(null, 300, $headColor, 24px);
+	}
+	.card {
+		border: 1px solid #eeeeee;
+		border-radius: 10px;
+		padding: 60px 30px;
+		transition: all 300ms linear 0s;
+		&:hover {
+			// border: transparent;
+			box-shadow: 1px 1px 10px rgba(83, 83, 83, 0.1);
+		}
+		.card-body {
+			padding: 0;
+			h2 {
+				@include font(12px, 300, $white, 30px);
+				display: inline-block;
+				background: $orange;
+				padding: 0 20px;
+				border-radius: 3px;
+			}
+			h3 > a {
+				@include font(20px, 500, $headColor, 30px);
+				transition: all 300ms linear 0s;
+			}
+			p {
+				@include font(null, 300, $headColor, 24px);
+				opacity: 0.6;
+			}
+			.view-text {
+				opacity: 0.6;
+				a {
+					@include font(null, 300, $pgColorGrey, 24px);
+					margin-right: 25px;
+					i {
+						padding: 0 10px 0;
+					}
+				}
+			}
+		}
+		&:hover {
+			h3 > a {
+				color: $purple;
+			}
+		}
+	}
 }
 .logo-section {
-  background-color: rgb(250, 252, 255);
-  img {
-    opacity: 0.5;
-  }
+	background-color: rgb(250, 252, 255);
+	img {
+		opacity: 0.5;
+	}
+}
+
+footer {
+	background-color: $footerColor;
+}
+
+.footer_title {
+	@include font(20px, 500, $white, 24px);
+}
+.footer-bottom {
+	padding-top: 85px;
+}
+.products-list {
+	@include font(14px, 300, $white, 24px);
+	margin-bottom: 10px;
+	text-align: left;
+}
+footer ul {
+	padding: 0;
+	margin: 0;
+}
+.footer-social {
+	text-align: right;
+}
+
+@media (max-width: 992px) {
+	.purchase-section {
+		display: none;
+	}
+	.banner-img {
+		display: none;
+	}
+}
+li {
+	list-style: none !important;
+}
+a {
+	text-decoration: none !important;
 }

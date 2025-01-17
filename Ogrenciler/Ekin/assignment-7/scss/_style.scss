@@ -1,0 +1,372 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+  line-height: 24px;
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: #777777;
+}
+
+@mixin textStyle($size, $weight, $color, $textAlign, $lineHeight) {
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+  text-align: $textAlign;
+  line-height: $lineHeight;
+}
+
+.container {
+  padding: 120px 0;
+}
+
+.card {
+  border-color: #eeeeee;
+}
+
+.section-p {
+  max-width: 570px;
+}
+
+@media (max-width: 1619px) {
+  .header_area .navbar .search {
+    margin-left: 40px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .header_area .navbar .nav .nav-item {
+    margin-right: 28px;
+  }
+}
+
+@media (max-width: 991px) {
+  .top-menu {
+    a {
+      @include textStyle(12px, 300, #fff, start, 40px);
+      margin-right: 28px;
+    }
+  }
+  .navbar li a {
+    line-height: 40px;
+    margin-right: 0px;
+    display: block;
+    border-bottom: 1px solid #ededed33;
+    border-radius: 0px;
+  }
+  .footer .search .btn {
+    right: 0px;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer-end {
+    text-align: center;
+    .social-media {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  .top-menu {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .header_area .navbar-collapse {
+    max-height: 250px;
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.top-menu {
+  a {
+    @include textStyle(12px, 300, #fff, start, 40px);
+    margin-right: 50px;
+    transition: all 300ms linear 0s;
+    &:hover {
+      color: #6247ea;
+      transition: all 300ms linear 0s;
+    }
+  }
+  .pur-btn {
+    @include textStyle(12px, 500, #fff, start, 40px);
+    padding: 0 40px;
+    margin: 0;
+  }
+}
+
+.navbar {
+  a {
+    @include textStyle(12px, 500, #222222, start, 80px);
+  }
+  align-items: center;
+  li {
+    margin-right: 28px;
+  }
+  .dropdown {
+    li a {
+      @include textStyle(12px, 500, #222222, start, 45px);
+      padding: 0 30px;
+      transition: all 300ms linear 0s;
+    }
+    li a:hover {
+      @include textStyle(12px, 500, #fff, start, 45px);
+      transition: all 300ms linear 0s;
+    }
+  }
+}
+
+.banner {
+  padding: 110px 0;
+
+  p {
+    max-width: 405px;
+    opacity: 0.6;
+  }
+
+  button {
+    font-size: 12px;
+  }
+}
+
+.feature-area.card {
+  p {
+    color: #777777;
+  }
+}
+
+.price-area {
+  background-color: #fafcff;
+  .card-group {
+    border-radius: 10px;
+  }
+  .card {
+    padding-top: 30px;
+    border-top: 2px solid transparent !important;
+    transition: border-color 0.2s;
+    &::before {
+      content: "";
+      width: 1px;
+      height: 75%;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      background-color: rgb(238, 238, 238);
+    }
+    &::after {
+      opacity: 0;
+      content: "Get Started";
+      width: 100%;
+      background-color: $primary;
+      color: $white;
+      font-size: 12px;
+      font-weight: 500;
+      padding: 12px 0;
+      text-align: center;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      transition: opacity 0.2s;
+    }
+    &:hover {
+      border-color: $primary !important;
+      &::after {
+        opacity: 1;
+      }
+      .price {
+        color: $primary;
+      }
+    }
+
+    p:not(.price) {
+      color: #777;
+    }
+
+    .price {
+      font-size: 36px;
+      font-weight: 500;
+      transition: color 0.2s;
+      .small {
+        font-size: 14px;
+        font-weight: 300;
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+}
+
+.solutions-area {
+  p {
+    max-width: 770px;
+    opacity: 0.6;
+  }
+
+  .btn {
+    font-size: 12px;
+  }
+}
+
+.client-area .card {
+  transition: box-shadow 0.5s;
+  &:hover {
+    box-shadow: 0px 10px 30px 0px rgba(98, 71, 234, 0.1);
+  }
+}
+
+.latest_grid_blog_area .card {
+  transition: border-color 0.5s, box-shadow 0.5s;
+  &:hover {
+    border-color: transparent;
+    box-shadow: 0px 10px 30px 0px rgba(98, 71, 234, 0.1);
+    h4 {
+      color: $primary !important;
+    }
+  }
+  h4 {
+    font-size: 20px;
+    transition: color 0.5s;
+  }
+
+  p {
+    width: unset;
+  }
+}
+
+.clients-logo-area {
+  background-color: #fafcff;
+  .row {
+    animation: scroll 15s linear infinite;
+    img {
+      line-height: 70px;
+      opacity: 0.5;
+      transition: opacity 0.3s;
+      transition: all 300ms linear 0s;
+      &:hover {
+        opacity: 1;
+        transition: all 300ms linear 0s;
+      }
+    }
+  }
+}
+
+.service-area {
+  background-image: url("https://preview.colorlib.com/theme/hosthub/img/map-bg.png.webp");
+
+  .service_item {
+    border: 1px solid #9381eb;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: background-color 0.5s;
+
+    h4 {
+      i {
+        margin-right: 10px;
+      }
+      transition: color 0.5s;
+      font-size: 18px;
+    }
+
+    p {
+      color: #fff;
+      opacity: 0.6;
+      transition: color 0.5s, opacity 0.5s;
+    }
+
+    &:hover {
+      background-color: $white;
+
+      h4 {
+        color: $black;
+      }
+
+      p {
+        color: #777777;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.footer {
+  background-color: #04091e;
+  h6 {
+    margin-bottom: 28px;
+  }
+  li {
+    margin-bottom: 12px;
+  }
+  .top-products {
+    margin-bottom: 30px;
+  }
+  .search {
+    padding-top: 25px;
+    input {
+      color: #999;
+      padding: 1px 40px 1px 20px;
+      max-width: 340px;
+      border: 1px solid #333333;
+      font-size: 13px;
+      line-height: 40px;
+      height: 40px;
+      &:focus {
+        color: #999;
+      }
+      &::placeholder {
+        color: #999;
+      }
+    }
+    .btn {
+      @include textStyle(12px, 500, #fff, center, 38px);
+      padding: 0 38px;
+      right: 25px;
+      transition: all 300ms linear 0s;
+      &:hover {
+        background-color: transparent;
+        color: #6247ea;
+        transition: all 300ms linear 0s;
+      }
+    }
+  }
+  .insta {
+    li {
+      margin: 5px;
+    }
+  }
+  .heart {
+    @include textStyle(inherit, 300, #6247ea, none, inherit);
+  }
+  .social-media {
+    text-align: end;
+    a {
+      @include textStyle(14px, inherit, #fff, center, 30px);
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      margin-left: 6px;
+      background-color: #1e2235;
+      transition: all 300ms linear 0s;
+      i {
+        font-size: 14px;
+      }
+      &:hover {
+        background-color: #6247ea;
+        transition: all 300ms linear 0s;
+      }
+    }
+  }
+}
