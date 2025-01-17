@@ -1,15 +1,42 @@
 li {
-  list-style: none !important;
+	list-style: none !important;
 }
 a {
-  text-decoration: none !important;
+	text-decoration: none !important;
 }
 p {
-  font-size: 14px;
-  color: #777777; //! burada mı vermeliyiz buna dikkat et
+	font-size: 14px;
+	color: #777777; //! burada mı vermeliyiz buna dikkat et
 }
 .navbar-section {
-  .navbar {
-    padding: 0;
-  }
+	.navbar {
+		padding: 0;
+	}
+}
+
+.single-footer-widget input {
+	max-width: 340px;
+	width: 100%;
+	border: 1px solid #333333 !important;
+	font-size: 13px;
+	padding-right: 40px;
+	height: 40px;
+	color: #999999;
+	border-radius: 20px !important;
+	background: #fff;
+	padding-left: 20px;
+}
+.single-footer-widget .sub-btn {
+	background: #6247ea;
+	color: #fff;
+	line-height: 38px;
+	font-size: 12px;
+	padding: 0px 38px;
+	display: inline-block;
+	cursor: pointer;
+	top: 0px;
+	right: -24px;
+	border: 1px solid #6247ea !important;
+	border-radius: 20px !important;
+	transition: all 300ms linear 0s;
 }
