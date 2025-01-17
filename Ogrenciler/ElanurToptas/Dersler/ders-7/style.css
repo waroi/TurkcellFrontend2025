@@ -1,0 +1,65 @@
+body{
+    direction: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(207, 176, 176);
+}
+
+.box{
+    background-color: orangered;
+    width: 150px;
+    height: 150px;
+    margin: 150px;
+    /* transition-property: width,height;
+    transition-duration: 2s;
+    transition-timing-function: ease-in-out; */
+    /* transition: all 2s ease-in-out; */
+    /* animation-name: aa;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-delay: 2sn; */
+     animation: aa 2s ease-in-out infinite 1s alternate; 
+}
+
+.box:hover{
+    background-color: green;
+    width: 50px;
+    height: 300px;
+    border-radius: 20px;
+    border: 5px solid black;  
+}
+
+@keyframes aa{
+    0%{
+        background-color: orangered;
+        width: 150px;
+        height: 150px;
+    }
+    50%{
+        background-color: green;
+        width: 50px;
+        height: 300px;
+    }
+    100%{
+        background-color: orangered;
+        width: 150px;
+        height: 150px;
+    } 
+}
+
+/* @keyframes aa{
+    0%{
+        background-color: orangered;
+        transform: translate(0,0);
+    }
+    50%{
+        background-color: green;
+        transform: translate(100px,-100px) rotate(200deg) ;
+    }
+    100%{
+        background-color: orangered;
+        transform: translate(0,0);
+    } 
+} */

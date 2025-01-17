@@ -391,11 +391,21 @@ footer{
             cursor: pointer;
             position: absolute;
             top: 0px;
-            right: 40px;
+            right: 100px;
             border: 1px solid $purple;
             border-radius: 20px;
             background-color: $purple;
             @include textFunc(12px, #fff, 500, 38px);
+        }
+    }
+    .instagram{
+        li{
+            margin: 5px;
+        }
+    }
+    .copyright-text{
+        i, a{
+            color: $purple;
         }
     }
 }
