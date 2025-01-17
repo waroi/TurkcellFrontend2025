@@ -5,10 +5,11 @@ $light-gray: #777777;
 $pColor: #f9f9ff;
 $price: #fafcff;
 $solution: #ec9d5f;
-$footerbg:#04091e;
+$footerbg: #04091e;
 $footersocial: #1e2235;
-// $service-card: red;
 $white: #fff;
+$input-border-color: #333;
+$input: #999999;
 $theme-colors: (
   'primary': $primary,
   'secondary': $secondary,
@@ -18,9 +19,10 @@ $theme-colors: (
   'price': $price,
   'solution': $solution,
   'footerbg': $footerbg,
-  'footersocial':$footersocial,
-  // 'service-card': $service-card,
+  'footersocial': $footersocial,
   'white': $white,
+  'input-border-color': $input-border-color,
+  'input': $input,
 );
 // SPACING
 $spacer: 1rem;
@@ -63,7 +65,6 @@ $spacers: (
   //240px
   50: $spacer * 15,
 );
-
 // FONST SIZE
 $line-height-lg: 2.25;
 $font-size-base: 1rem;
@@ -74,18 +75,14 @@ $font-sizes: (
   20: $font-size-base * 1.25,
   36: $font-size-base * 2.25,
 );
-
 // NAVBAR
 $navbar-light-color: $dark-gray;
 $navbar-light-hover-color: $primary;
 $navbar-light-active-color: $primary;
-
-//banner
-
-// $btn-secondary-hover-color: $primary;
-
 //card
 $card-border-color: #eeeeee;
 $card-border-radius: 10px;
 //price
 $price-item-h2-hover-color: $primary;
+
+$input-height-lg: 2.5rem;

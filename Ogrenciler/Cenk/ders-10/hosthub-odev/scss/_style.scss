@@ -147,62 +147,104 @@ section{
             .card-text {
                 @include textFunc(14px, #777, 300, 24px)
             }
+            transition: all 300ms linear 0s;
+            &:hover{
+                box-shadow: 0px 10px 30px 0px rgba(98, 71, 234, 0.1);
+                border-color: #fff;
+            }
         }
     }
 }
 
 .pricing {
     .packages {
+        .no-pd{
+            padding: 0;
+        }
         background-color: #fff;
         box-shadow: 0px 10px 30px 0px rgba(98, 71, 234, 0.1);
         border-radius: 10px;
-        .package {
-            padding: 75px 0 75px 45px;
-            h3 {
-                @include textFunc(20px, #222, 500, 1.2);
-            }
-            h5 {
-                @include textFunc(14px, #777, 300, 1.2);
-            }
-            h2 {
-                @include textFunc(36px, #222, 500, 1.2);
-                span {
+        .col-lg-3{
+            position: relative;
+            .package {
+                padding: 75px 0 75px 45px;
+                h3 {
+                    @include textFunc(20px, #222, 500, 1.2);
+                }
+                h5 {
                     @include textFunc(14px, #777, 300, 1.2);
-                    text-align: end;
                 }
-            }
-            ul {
-                li {
-                    @include textFunc(14px, #777, 400, 1.2)
+                h2 {
+                    @include textFunc(36px, #222, 500, 1.2);
+                    span {
+                        @include textFunc(14px, #777, 300, 1.2);
+                        text-align: end;
+                    }
                 }
-            }
-            .line {
-                width: 1px;
-                background: #eeeeee;
-                height: 350px;
-            }
-            .price-btn {
-                display: none;
-                text-align: center;
-                background: #6247ea;
-                border-bottom-left-radius: 10px;
-                border-bottom-right-radius: 10px;
-                @include textFunc(12px, #fff, 500, 50px);
-                opacity: 0;
-                margin-bottom: -50px;
+                ul {
+                    li {
+                        @include textFunc(14px, #777, 400, 1.2)
+                    }
+                }
+                .line {
+                    width: 1px;
+                    background: #eeeeee;
+                    height: 350px;
+                }
+                .get-started{
+                    display: none;
+                    .price-btn {
+                        
+                        text-align: center;
+                        background: #6247ea;
+                        border-bottom-left-radius: 10px;
+                        border-bottom-right-radius: 10px;
+                        @include textFunc(12px, #fff, 500, 50px);
+                        
+                    }
+                }
+                
             }
             &:hover {
-                .price-btn {
-                    display: block;
+                border-top:2px solid $purple ;
+                .get-started {
+                    display: flex;
+                    position: absolute;
+                    height: 50px;
+                    width: 100%;
+                    left: 0;
+                    bottom: -50px;
+                    .price-btn{
+                        width: 100%;
+                        height: 50px;
+                    }
+                }
+                h2{
+                    color: $purple;
                 }
             }
         }
     }
 }
-
+@media (max-width: 400px) {
+    .logo-slider{
+        grid-template-columns: repeat(15, 100%) !important;
+    }
+}
+@media (max-width: 576px) {
+    .header-top {
+        display: none;
+    }
+    .logo-slider{
+        grid-template-columns: repeat(15, 50%) !important;
+    }
+}
 @media (max-width: 768px) {
     .packages .line {
         display: none;
+    }
+    .logo-slider{
+        grid-template-columns: repeat(15, 33.3%) !important;
     }
 }
 
@@ -212,6 +254,12 @@ section{
     }
     .packages .col-lg-3:nth-child(2) .line {
         display: none;
+    }    
+    .navbar, .container {
+        padding: 0 20px;
+    }
+    .logo-slider{
+        grid-template-columns: repeat(15, 25%) !important;
     }
 }
 
@@ -318,6 +366,7 @@ section{
                @include textFunc(14px, #777777, 300, 24px);
             }
             .icons{
+                flex-wrap: wrap;
                 svg{
                     fill: #aaa;
                 width: 14px;
