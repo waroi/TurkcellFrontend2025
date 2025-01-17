@@ -9,12 +9,50 @@
         max-width: 770px;
         margin: 0 auto 35px;
       }
-}
+}/*
 header {
-	span:hover {
-		color: $secondary;
-	}
+	span {
+        color: white;
+        transition: color 0.3s ease-in-out;
+      
+        &:hover {
+          color: $secondary; 
+        }
+      }
+    nav{
+        .nav-link:hover{
+            color:$secondary;
+        }
+    }
 }
+.nav-link {
+    color: inherit;
+    transition: color 0.3s ease-in-out;
+  
+    &:hover {
+      color: $secondary !important; 
+    }
+  }
+  */
+
+.header_top {
+    .hover-primary:hover {
+      color: $secondary ;
+    }
+    span:hover{
+        color: $secondary ;
+    }
+  }
+  
+  .navbar-nav .nav-link {
+    &:hover {
+      color: $secondary !important; // Hover durumunda yazı rengi
+    }
+  }
+  
+  .sticky-top {
+    z-index: 1030; // Navbar üstte kalması için yüksek z-index değeri
+  }
 .banner {
 	padding: 225px 0;
 	width: 100%;
@@ -39,16 +77,37 @@ header {
           font-family: "Roboto", sans-serif;
           font-weight: 300;
           max-width: 405px;
-          margin-bottom: 35px;
+          //margin-bottom: 35px;
           opacity: 0.6;
         }
-      }
-}
-.navbar{
-    .nav-item:hover{
-        color:$secondary;
     }
 }
+.custom-hover {
+    background-color: transparent;
+    color: white;
+    transition: all 0.3s ease-in-out;
+  
+    &:hover {
+      background-color: white; // Arka plan beyaz
+      color: black; // Yazılar siyah
+  
+      .card-title,
+      .card-text {
+        color: black; // Kart metinleri siyah
+       }
+    }
+}
+  .latest-blog .card {
+    transition: all 0.3s ease-in-out;
+  
+    &:hover {
+      h4 {
+        color: $secondary; // $secondary değişkeni SCSS dosyanızda tanımlı olmalı
+        transition: color 0.3s ease-in-out;
+      }
+    }
+  }  
+
 .feature-inner {
 	border: 1px solid #eeeeee;
 	border-radius: 10px;
@@ -115,11 +174,19 @@ header {
 .custom-border-radius {
     border-radius: 5px !important;
 }   
+.solution_inner {
+    p {
+      font-size: 14px;
+      opacity: 0.6;
+      max-width: 770px;
+      margin: 0 auto 35px;
+    }
+  }
 .list{
     list-style: none;
     margin: 0px;
     padding: 0px;
-}
+}/*
 .price_cards {
     border-radius: 10px;
     .price-card-hover {
@@ -134,7 +201,7 @@ header {
         padding-left: 45px;
         position: relative;
     }
-}
+}*/
 .solution_area {
     .btn-light:hover {
         background-color: $secondary;
