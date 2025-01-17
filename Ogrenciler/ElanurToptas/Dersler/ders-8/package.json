@@ -7,9 +7,10 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "sass" :"sass --watch scss:css"
+    "sass": "sass --watch scss:css"
   },
   "dependencies": {
+    "ders-8": "file:",
     "sass": "^1.83.4"
   }
 }
