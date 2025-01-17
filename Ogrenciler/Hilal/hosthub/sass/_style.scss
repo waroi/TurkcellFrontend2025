@@ -123,7 +123,7 @@ section {
     transition: all 300ms linear 0s;
     &:hover{
       background-color: $secondary;
-      color: $light;
+      color: white;
     }
   }
 }
@@ -154,7 +154,7 @@ section {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     padding: 40px 60px 40px 40px;
-    border: 1px solid $secondary;
+    border: 1px solid #9381eb;
     transition: all 300ms linear 0s;
     h4 {
       font-size: 18px;
@@ -180,46 +180,59 @@ section {
 
 }
 .blog-card {
-  background-color: #fff; // Kart tamamen beyaz
-  border: none; // Çizgiler kaldırıldı
-  border-radius: 8px; // Köşeler hafif yuvarlatıldı
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // Hafif gölge
+  background-color: #7777;
+  border: 1px solid #eeeeee;
+  border-radius: 10px;
   overflow: hidden;
-  transition: transform 0.3s;
+  transition: all 300ms linear 0s;
+  padding: 60px 30px; 
 
   &:hover {
-    transform: translateY(-5px); // Hover efekt
+    background: $light;
+    box-shadow: $box-shadow-lg;
   }
 
   .card-header {
-    padding: 10px;
+    margin-bottom: 20px; 
     .date {
-      background-color: #ff7f50;
+      background-color: $primary;
       color: white;
       padding: 5px 10px;
       border-radius: 4px;
       font-size: 0.85rem;
+      border: none;
     }
   }
 
   .card-body {
-    padding: 15px;
     .card-title {
       font-size: 1.2rem;
       font-weight: bold;
+      padding: 10px; 
+      transition: background-color 0.3s; 
+  
+      &:hover {
+  
+        color: $secondary; 
+      }
     }
     .card-text {
       font-size: 0.95rem;
       color: #666;
     }
   }
-
+  .card-header,
+  .card-body,
   .card-footer {
-    padding: 10px 15px;
+    border: none; 
+  }
+  .card-footer {
+    margin-top: 20px; 
     display: flex;
     justify-content: space-between;
     font-size: 0.85rem;
     color: #777;
+    opacity: 50%;
 
     span {
       display: flex;
@@ -231,72 +244,158 @@ section {
     }
   }
 }
+
+.client-logo {
+  background-color: #fafcff;
+  .img-fluid {
+    max-width: 100%;
+    opacity: 0.5;
+    margin: 25px;
+}
+  img {
+    opacity: 0.1; 
+    transition: opacity 0.3s ease; 
+    margin: 5px;
+
+    &:hover {
+      opacity: 1; 
+    }
+  }
+}
+
 .footer {
-  background-color: #04091e; // Koyu arka plan rengi
-  color: #e5e5e5; // Açık metin rengi
+  background-color: #04091e;
+  color: #e5e5e5; 
+  padding: 30px;
+}
 
-  .footer_title {
-    font-size: 8px;
-    line-height: 24px;
-    font-weight: 500;
+.footer-title {
+  font-size: 20px;
+  font-weight: bold;
+  padding-top: 120px;
+}
+
+.footer-text {
+  margin-bottom: auto;
+  font-size: 14px;
+    font-weight: 300;
     font-family: "Roboto", sans-serif;
-    color: #fff;
-    margin-bottom: 28px;
+ 
+  color: #b3b3b3;
+
+}
+.footer ul li {
+  margin-bottom: 10px; 
+  font-size: medium;
 }
 
-  ul {
-    padding: 0;
-    list-style: none;
-
-    li {
-      margin-bottom: 0.5rem;
-    }
-  }
-
-  .newsletter-form {
-    input {
-      border: none;
-      border-radius: 25px;
-      padding: 10px 15px;
-      font-size: 0.9rem;
-    }
-
-    button {
-      background-color: #6c5ce7;
-      border: none;
-      border-radius: 25px;
-      color: #fff;
-      font-weight: bold;
-      padding: 8px 15px;
-      text-transform: uppercase;
-      font-size: 0.9rem;
-
-      &:hover {
-        background-color: #5a4dcf;
-      }
-    }
-  }
-
-  .instagram-feed {
-    img {
-      border-radius: 8px;
-      width: 100%;
-      height: auto;
-    }
-  }
-
-  .footer-bottom {
-    margin-top: 2rem;
-
-    a {
-      color: #6c5ce7;
-      text-decoration: none;
-
-      &:hover {
-        color: #5a4dcf;
-      }
-    }
-  }
+.newsletter-form input {
+  border: none;
+  border-radius: 50px;
+  padding: 10px 15px;
+  font-size: 0.9rem;
+  width: 70%;
 }
+
+.newsletter-form button {
+  background-color: $secondary;
+  border: none;
+  border-radius: 50px;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.newsletter-form button:hover {
+  background-color: #04091e;
+}
+
+.img-fluid {
+  height: 100px;
+  width: 100px;
+  margin: 1px;
+  padding: auto;
+
+  
+}
+.instagram-grid {
+
+  display: grid;
+  grid-template-columns: repeat(4, 58px); 
+  gap: 6px;
+  margin: 16px 0 0 0; 
+  margin: 0 auto;
+  padding: 0;
+}
+
+.instagram-item {
+  width: 58px; 
+  height: 58px; 
+  overflow: hidden; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  margin: 0; 
+  padding: 0; 
+}
+
+.instagram-img {
+  margin-top: auto;
+  width: 100%;
+  height: 100%; 
+  object-fit: cover;
+  display: block; 
+}
+.footer-title {
+  margin-bottom: 30px;
+}
+
+
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 80px 0;
+  font-size: 0.9rem;
+}
+
+.footer-bottom p {
+  margin: 0;
+  color: #e5e5e5; 
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.icon-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px; 
+  height: 30px; 
+  background-color: #1a1a2e; 
+  transition: background-color 0.3s ease, color 0.3s ease; 
+  text-decoration: none; 
+}
+
+.icon-box i {
+  display:flex;
+  font-size: 1 rem; 
+  color: #e5e5e5; 
+}
+
+.icon-box:hover {
+  background-color:$secondary; 
+  color: #fff; 
+}
+
+
+
+
 
 
