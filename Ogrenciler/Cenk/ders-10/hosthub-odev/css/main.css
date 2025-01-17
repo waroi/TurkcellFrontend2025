@@ -12303,7 +12303,7 @@ footer .subscribe button {
   cursor: pointer;
   position: absolute;
   top: 0px;
-  right: 40px;
+  right: 100px;
   border: 1px solid #6247ea;
   border-radius: 20px;
   background-color: #6247ea;
@@ -12311,6 +12311,12 @@ footer .subscribe button {
   color: #fff;
   font-weight: 500;
   line-height: 38px;
+}
+footer .instagram li {
+  margin: 5px;
+}
+footer .copyright-text i, footer .copyright-text a {
+  color: #6247ea;
 }
 
 /*# sourceMappingURL=main.css.map */
