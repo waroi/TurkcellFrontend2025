@@ -113,7 +113,7 @@
   --bs-border-radius-xxl: 2rem;
   --bs-border-radius-2xl: var(--bs-border-radius-xxl);
   --bs-border-radius-pill: 50rem;
-  --bs-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  --bs-box-shadow: 0px 10px 30px 0px rgba(98, 71, 234, 0.1);
   --bs-box-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
   --bs-box-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
   --bs-box-shadow-inset: inset 0 1px 2px rgba(0, 0, 0, 0.075);
@@ -766,7 +766,7 @@ progress {
 }
 @media (min-width: 1400px) {
   .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
-    max-width: 1320px;
+    max-width: 1140px;
   }
 }
 :root {
@@ -12063,6 +12063,103 @@ body {
   .header_area .navbar-collapse {
     max-height: 250px;
   }
+}
+.banner {
+  padding: 110px 0;
+}
+.banner p {
+  max-width: 405px;
+  opacity: 0.6;
+}
+.banner button {
+  font-size: 12px;
+}
+
+.feature-area .card {
+  border-color: #eeeeee;
+}
+.feature-area .card p {
+  color: #777777;
+}
+
+.price-area {
+  background-color: #fafcff;
+}
+.price-area .card-group {
+  border-radius: 10px;
+}
+.price-area .card {
+  padding-top: 30px;
+  border-top: 2px solid transparent !important;
+  transition: border-color 0.2s;
+}
+.price-area .card::before {
+  content: "";
+  width: 1px;
+  height: 75%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(238, 238, 238);
+}
+.price-area .card::after {
+  opacity: 0;
+  content: "Get Started";
+  width: 100%;
+  background-color: #6247ea;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 12px 0;
+  text-align: center;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  transition: opacity 0.2s;
+}
+.price-area .card:hover {
+  border-color: #6247ea !important;
+}
+.price-area .card:hover::after {
+  opacity: 1;
+}
+.price-area .card:hover .price {
+  color: #6247ea;
+}
+.price-area .card p:not(.price) {
+  color: #777;
+}
+.price-area .card .price {
+  font-size: 36px;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.price-area .card .price .small {
+  font-size: 14px;
+  font-weight: 300;
+}
+.price-area .card a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.section-p {
+  max-width: 570px;
+}
+
+.solutions-area p {
+  max-width: 770px;
+  opacity: 0.6;
+}
+.solutions-area .btn {
+  font-size: 12px;
+}
+
+.client-area .card {
+  border-color: #eeeeee;
+  transition: box-shadow 0.5s;
+}
+.client-area .card:hover {
+  box-shadow: 0px 10px 30px 0px rgba(98, 71, 234, 0.1);
 }
 
 /*# sourceMappingURL=main.css.map */
