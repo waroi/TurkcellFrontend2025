@@ -1,0 +1,17 @@
+{
+	"name": "bootcamp7",
+	"version": "1.0.0",
+	"description": "",
+	"license": "ISC",
+	"author": "",
+	"type": "commonjs",
+	"main": "index.js",
+	"scripts": {
+		"sass": "sass -w scss:css"
+	},
+	"dependencies": {
+		"bootcamp7": "file:",
+		"bootstrap": "^5.3.3",
+		"sass": "^1.83.4"
+	}
+}

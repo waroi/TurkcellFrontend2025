@@ -8,6 +8,9 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>Document</title>
   </head>
   <body>
@@ -33,8 +36,10 @@
           </div>
         </div>
       </div>
+    </header>
+    <header class="header-area bottom-header sticky-top">
       <div class="main-menu text-uppercase">
-        <nav class="navbar navbar-expand-lg fw-bold bg-light">
+        <nav class="navbar navbar-expand-lg fw-bold bg-light ">
           <div class="container">
             <a class="navbar-brand" href="#">
               <img
@@ -58,11 +63,11 @@
               </span>
             </button>
             <div
-              class="collapse navbar-collapse flex-grow-0"
+              class="collapse navbar-collapse flex-grow-0 d-flex flex-column align-items-start"
               id="navbarSupportedContent"
             >
               <ul
-                class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-center align-items-center gap-3"
+                class="nav navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-center align-items-center gap-3 text-dark"
               >
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="#"
@@ -70,30 +75,23 @@
                   >
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">About</a>
+                  <a class="nav-link" href="#about">About</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#"> Services </a>
+                  <a class="nav-link" href="#services"> Services </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#"> Pages </a>
+                  <a class="nav-link" href="#pages"> Pages </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#"> Blog </a>
+                  <a class="nav-link" href="#blog"> Blog </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#"> Contact </a>
+                  <a class="nav-link" href="#contact"> Contact </a>
                 </li>
               </ul>
-              <form class="d-flex ms-5" role="search">
-                <input
-                  class="form-control me-2"
-                  type="search"
-                  placeholder="Search"
-                  aria-label="Search"
-                  hidden
-                />
-                <button class="btn" type="submit">
+              <form class="nav navbar-nav d-flex ms-5" role="search">
+                <button class="nav-item btn" type="submit">
                   <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
               </form>
@@ -278,11 +276,11 @@
           </div>
         </div>
       </section>
-      <section class="solution-area bg-primary text-center">
+      <section class="solution-area bg-primary text-center text-light">
         <div class="container">
           <div class="solution">
             <h2 class="text-light mb-3">Looking for a Custom Solution?</h2>
-            <p>
+            <p class="text-light">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation.
@@ -399,7 +397,7 @@
       <section class="latest-blog-area py-5">
         <div class="container">
           <div class="row">
-            <div class="col-md-4">
+            <div class="col-12 col-lg-4 mb-4">
               <div class="card blog-card bg-light">
                 <div class="card-header bg-light">
                   <span class="date bg-primary">10 April, 2018</span>
@@ -417,7 +415,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-12 col-lg-4 mb-4">
               <div class="card blog-card bg-light">
                 <div class="card-header bg-light">
                   <span class="date bg-primary">10 April, 2018</span>
@@ -435,7 +433,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-12 col-lg-4 mb-4">
               <div class="card blog-card bg-light">
                 <div class="card-header bg-light">
                   <span class="date bg-primary">10 April, 2018</span>
@@ -456,41 +454,31 @@
           </div>
         </div>
       </section>
-      
-      
-      
-      
-      
-
-      
-      
       <section class="client-logo">
         <div class="container">
-          <div class="row justify-content-center align-items-center">
-            <div class="col-md-2 col-6 text-center">
+          <div class="d-flex justify-content-around align-items-center gap-5">
+            <div class="">
               <img src="image/c-logo-1.png.webp" alt="Logo 1" class="img-fluid">
             </div>
-            <div class="col-md-2 col-6 text-center">
+            <div class="">
               <img src="image/c-logo-2.png.webp" alt="Logo 2" class="img-fluid">
             </div>
-            <div class="col-md-2 col-6 text-center">
+            <div class="d-none d-md-block">
               <img src="image/c-logo-3.png (1).webp" alt="Logo 3" class="img-fluid"> 
             </div>
-            <div class="col-md-2 col-6 text-center">
+            <div class="d-none d-lg-block">
               <img src="image/c-logo-4.png.webp" alt="Logo 4" class="img-fluid">
             </div>
-            <div class="col-md-2 col-6 text-center">
+            <div class="d-none d-lg-block">
               <img src="image/c-logo-5.png.webp" alt="Logo 5" class="img-fluid">
             </div>
           </div>
-  
       </div></section>
     </main>
-    <footer class="footer bg-darkfooter text-light py-5">
+    <footer class="footer bg-darkfooter text-light">
       <div class="container">
         <div class="row">
-
-          <div class="col-md-2">
+          <div class="col-12 col-sm-6 col-lg-4">
             <h3 class="footer-title">Top Products</h3>
             <ul class="list-unstyled">
               <li>Managed Website</li>
@@ -499,8 +487,7 @@
               <li>Marketing Service</li>
             </ul>
           </div>
-
-          <div class="col-md-6">
+          <div class="col-12 col-sm-6 col-lg-4">
             <h3 class="footer-title mb-3">Newsletter</h3>
             <p class="footer-text mb-4">
               You can trust us. We only send promo offers, not a single spam.
@@ -514,8 +501,7 @@
               <button class="btn btn-primary rounded-pill">Subscribe</button>
             </div>
           </div>
-          
-          <div class="col-md-4">
+          <div class="col-12 col-sm-6 col-lg-4">
             <h3 class="footer-title">Instagram Feed</h3>
             <div class="instagram-grid">
               <div class="instagram-item">
@@ -544,16 +530,8 @@
               </div>
             </div>
           </div>
-          
-          
-          
-          
-          
-          
-          
         </div>
-    
-        <div class="footer-bottom d-flex justify-content-between align-items-center mt-4">
+        <div class="footer-bottom d-flex justify-content-between align-items-center flex-wrap gap-3">
           <p class="small mb-0">
             Copyright &copy; 2025 All rights reserved | This template is made with
             <span class="text-secondary">&hearts;</span> by
@@ -566,12 +544,7 @@
             <a href="#" class="icon-box text-light"><i class="fab fa-behance"></i></a>
           </div>
         </div>
-        
-        
-        
     </footer>
-    
-    
-    
   </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </html>

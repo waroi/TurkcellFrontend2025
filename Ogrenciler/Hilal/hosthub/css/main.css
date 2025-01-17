@@ -11860,6 +11860,10 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+body {
+  font-family: "Roboto", serif;
+}
+
 p {
   font-size: 0.88rem;
   color: #777777;
@@ -11873,10 +11877,17 @@ a.a-secondary-color {
   color: #6247ea;
 }
 
-section {
+section,
+.footer {
   padding: 100px 0px;
 }
 
+.header-area .nav-link {
+  color: #222222;
+}
+.header-area .nav-link.active {
+  color: #6247ea;
+}
 .header-area .navbar-toggler:focus {
   box-shadow: none;
 }
@@ -12044,6 +12055,15 @@ section {
 .service-area .service_item:hover h4, .service-area .service_item:hover .h4 {
   color: #222222;
 }
+.service-area::before {
+  content: "";
+  background: url("https://preview.colorlib.com/theme/hosthub/img/map-bg.png.webp") no-repeat scroll center center;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+}
 
 .blog-card {
   background-color: rgba(119, 119, 119, 0.4666666667);
@@ -12107,14 +12127,11 @@ section {
   background-color: #fafcff;
 }
 .client-logo .img-fluid {
-  max-width: 100%;
   opacity: 0.5;
-  margin: 25px;
 }
 .client-logo img {
   opacity: 0.1;
   transition: opacity 0.3s ease;
-  margin: 5px;
 }
 .client-logo img:hover {
   opacity: 1;
@@ -12123,13 +12140,12 @@ section {
 .footer {
   background-color: #04091e;
   color: #e5e5e5;
-  padding: 30px;
 }
 
 .footer-title {
   font-size: 20px;
   font-weight: bold;
-  padding-top: 120px;
+  margin: 20px 0px;
 }
 
 .footer-text {
@@ -12149,11 +12165,17 @@ section {
   border: none;
   border-radius: 50px;
   padding: 10px 15px;
-  font-size: 0.9rem;
+  font-size: 0.7rem;
   width: 70%;
 }
 
+.newsletter-form {
+  position: relative;
+}
+
 .newsletter-form button {
+  position: absolute;
+  left: 60%;
   background-color: #6247ea;
   border: none;
   border-radius: 50px;
@@ -12161,7 +12183,7 @@ section {
   font-weight: bold;
   padding: 10px 20px;
   text-transform: uppercase;
-  font-size: 0.9rem;
+  font-size: 0.7rem;
 }
 
 .newsletter-form button:hover {
@@ -12169,9 +12191,7 @@ section {
 }
 
 .img-fluid {
-  height: 100px;
-  width: 100px;
-  margin: 1px;
+  max-height: 100px;
   padding: auto;
 }
 
@@ -12203,15 +12223,8 @@ section {
   display: block;
 }
 
-.footer-title {
-  margin-bottom: 30px;
-}
-
 .footer-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 80px 0;
+  padding-top: 80px;
   font-size: 0.9rem;
 }
 
