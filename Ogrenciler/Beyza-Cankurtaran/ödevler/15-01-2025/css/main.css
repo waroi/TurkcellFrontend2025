@@ -11819,8 +11819,44 @@ textarea.form-control-lg {
   margin: 0 auto 35px;
 }
 
-header span:hover {
+/*
+header {
+	span {
+        color: white;
+        transition: color 0.3s ease-in-out;
+
+        &:hover {
+          color: $secondary; 
+        }
+      }
+    nav{
+        .nav-link:hover{
+            color:$secondary;
+        }
+    }
+}
+.nav-link {
+    color: inherit;
+    transition: color 0.3s ease-in-out;
+
+    &:hover {
+      color: $secondary !important; 
+    }
+  }
+  */
+.header_top .hover-primary:hover {
   color: #6247ea;
+}
+.header_top span:hover {
+  color: #6247ea;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #6247ea !important;
+}
+
+.sticky-top {
+  z-index: 1030;
 }
 
 .banner {
@@ -11845,12 +11881,29 @@ header span:hover {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
   max-width: 405px;
-  margin-bottom: 35px;
   opacity: 0.6;
 }
 
-.navbar .nav-item:hover {
+.custom-hover {
+  background-color: transparent;
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+.custom-hover:hover {
+  background-color: white;
+  color: black;
+}
+.custom-hover:hover .card-title,
+.custom-hover:hover .card-text {
+  color: black;
+}
+
+.latest-blog .card {
+  transition: all 0.3s ease-in-out;
+}
+.latest-blog .card:hover h4, .latest-blog .card:hover .h4 {
   color: #6247ea;
+  transition: color 0.3s ease-in-out;
 }
 
 .feature-inner {
@@ -11923,28 +11976,33 @@ header span:hover {
   border-radius: 5px !important;
 }
 
+.solution_inner p {
+  font-size: 14px;
+  opacity: 0.6;
+  max-width: 770px;
+  margin: 0 auto 35px;
+}
+
 .list {
   list-style: none;
   margin: 0px;
   padding: 0px;
-}
-
+} /*
 .price_cards {
-  border-radius: 10px;
-}
-.price_cards .price-card-hover {
-  border-top: 4px solid #fff;
-}
-.price_cards .price-card-hover:hover {
-  border-top: 4px solid #6247ea;
-}
-.price_cards .price_text {
-  padding-top: 75px;
-  padding-bottom: 75px;
-  padding-left: 45px;
-  position: relative;
-}
-
+    border-radius: 10px;
+    .price-card-hover {
+        border-top: 4px solid #fff;
+    }
+    .price-card-hover:hover {
+        border-top: 4px solid $secondary;
+    }
+    .price_text {
+        padding-top: 75px;
+        padding-bottom: 75px;
+        padding-left: 45px;
+        position: relative;
+    }
+}*/
 .solution_area .btn-light:hover {
   background-color: #6247ea;
   color: white;
