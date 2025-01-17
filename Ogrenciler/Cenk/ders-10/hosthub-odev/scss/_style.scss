@@ -121,7 +121,7 @@ section{
 
 .feature,
 .pricing,
-.client, .service-area {
+.client, .service-area, .blog-text {
     .f-text {
         text-align: left;
         margin-bottom: 75px;
@@ -291,5 +291,58 @@ section{
             }
         }
 
+    }
+}
+.blog{
+    .card{
+        border: 1px solid #eee;
+        border-radius: 10px;
+        padding: 60px 30px;
+        .card-body{
+            .date{
+                background-color: $orange;
+                padding: 0px 20px;
+                width: 112px;
+                border-radius: 3px;
+                p{
+                    @include textFunc(12px,#fff ,300 ,30px );
+                }
+            }
+            h4{
+                @include textFunc(20px, #222222, 500, 1.2);
+                margin-bottom: 13px;
+            }
+            p{
+               @include textFunc(14px, #777777, 300, 24px);
+            }
+            .icons{
+                svg{
+                    fill: #aaa;
+                width: 14px;
+                height: 14px;
+                }
+                p{
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
+.logo-area{
+    .logo-slider{
+        display: grid;
+        grid-template-columns: repeat(15, 20%);
+        overflow: auto;
+        .logo{
+            img{
+                opacity: 0.5;
+                transition: 300ms ease-in-out;
+            }
+            &:hover{
+                img{
+                    opacity: 1;
+                }
+            }
+        }
     }
 }
