@@ -11927,6 +11927,29 @@ body {
   opacity: 1;
   transition: all 300ms linear 0s;
 }
+.clients-logo-area .service_area {
+  background: #6247ea;
+  position: relative;
+  overflow: hidden;
+}
+.clients-logo-area .service_area:before {
+  content: "";
+  background: url(../img/map-bg.png) no-repeat scroll center center;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+}
+.clients-logo-area .service_item p {
+  margin-bottom: 0px;
+  color: #fff;
+  opacity: 0.6;
+}
+.clients-logo-area .service_item:hover p {
+  color: #777777;
+  opacity: 1;
+}
 @keyframes scroll {
   0% {
     transform: translateX(0);
