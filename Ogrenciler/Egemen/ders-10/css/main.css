@@ -11855,6 +11855,20 @@ body {
   line-height: 24px;
 }
 
+header .navbar ul li {
+  margin-left: 20px;
+}
+header .navbar ul li a {
+  font-size: 14px;
+  transition: all 300ms ease;
+}
+header .navbar ul li a:hover {
+  color: #6247ea !important;
+}
+header .navbar ul li:first-child a {
+  color: #6247ea !important;
+}
+
 a {
   text-decoration: none;
 }
@@ -11877,7 +11891,7 @@ ul {
   color: #6247ea;
 }
 .contact-info-header .right-side {
-  width: 200px;
+  width: max-content;
 }
 .contact-info-header .right-side .pur_btn {
   background: #6247ea;
@@ -12114,7 +12128,8 @@ ul {
   margin-top: 20px;
   padding-right: 20px;
 }
-.latest-blog .container .col-xl-4 .view-row i, .latest-blog .container .col-xl-4 .view-row a {
+.latest-blog .container .col-xl-4 .view-row i,
+.latest-blog .container .col-xl-4 .view-row a {
   color: #aaaaaa;
   font-size: 14px;
 }
@@ -12124,6 +12139,16 @@ ul {
 }
 .clients-logo .carousel-inner {
   padding: 120px 0px;
+}
+.clients-logo .carousel-inner::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+.clients-logo .carousel-inner::-webkit-scrollbar-thumb {
+  background: #6247ea;
+}
+.clients-logo .carousel-inner::-webkit-scrollbar-track {
+  background: #05091e;
 }
 .clients-logo .carousel-inner .carousel-item img {
   width: auto;
@@ -12178,14 +12203,21 @@ ul {
   position: absolute;
   right: 80px;
   border: 1px solid #6247ea;
-  border-radius: 20px;
   transition: all 300ms linear 0s;
   overflow: hidden;
+}
+.footer .container .row .input-group button:hover {
+  background: transparent;
+  color: #6247ea !important;
+}
+.footer .container .row .input-group button:focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 .footer .container .footer-bottom {
   padding-bottom: 120px;
 }
-.footer .container .footer-bottom p i, .footer .container a {
+.footer .container .footer-bottom p i,
+.footer .container a {
   color: #6247ea;
   font-size: 14px;
 }
@@ -12202,6 +12234,26 @@ ul {
 }
 .footer .container .footer-social a:hover {
   background: #6247ea;
+}
+
+@media (max-width: 1200px) {
+  .footer .container .row .input-group button {
+    right: 0;
+    padding: 0px 33px;
+  }
+}
+@media (max-width: 992px) {
+  .banner-section {
+    padding: 125px 0;
+  }
+  .banner-section .col-lg-7 {
+    margin-top: 3rem;
+  }
+}
+@media (max-width: 576px) {
+  .banner-section {
+    padding: 60px 0;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

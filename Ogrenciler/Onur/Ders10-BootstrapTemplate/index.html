@@ -7,10 +7,11 @@
   <title>Document</title>
   <link rel="stylesheet" href="./css/main.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
 </head>
 
 <body>
-  <header class="bg-secondary">
+  <div class="top-bar bg-secondary">
     <div class="container d-flex justify-content-between">
       <div class="d-flex align-items-center">
         <a class="text-decoration-none text-white icon-link-hover" href="tel:+8801234654953">+880 1234 654 953</a>
@@ -21,6 +22,7 @@
         <a class="text-decoration-none text-white" href="#">Purchase Hosting</a>
       </div>
     </div>
+  </div>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
       <div class="container">
@@ -72,7 +74,6 @@
         </div>
       </div>
     </nav>
-  </header>
 
   <section class="hero bg-primary">
     <div class="container d-flex justify-content-center align-items-center">
@@ -98,14 +99,14 @@
 <!-- FEATURE SECTION START -->
   <section class="feature_area p_120">
     <div class="container">
-      <div class="main_title text-center my-5 p-5">
+      <div class="text-center my-5 p-5">
         <h2>Some Features that Made us Unique</h2>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
       </div>
-      <div class="row m-auto  feature_inner gap-4 justify-content-center">
+      <div class="row m-auto feature_inner gap-4 justify-content-center">
         <div class="col col-lg-2 col-sm-6 border rounded p-5">
           <div class="feature_item">
             <h4>Expert Technicians</h4>
@@ -151,59 +152,79 @@
   </section>
 <!-- FEATURE SECTION END -->
 <!-- PRICING SECTION START -->
-  <section class="pricing_area p_120">
-    <div class="container width-1170">
-      <div class="main_title text-center my-5 p-5">
-        <h2>Choose Your Best Pricing Plans</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
-      </div>
-      <div class="row m-auto  price_inner gap-4 justify-content-between bg-white">
-        <div class="col-lg-2 col-sm-6">
-          <div class="feature_item">
-            <h4>Expert Technicians</h4>
-            <p>
-              Usage of the Internet is becoming more common due to rapid
-              advancement of technology and power of the Internet is becoming
-              more common due to rapid advancement.
-            </p>
-          </div>
-        </div>
-        <div class="col-lg-2 col-sm-6">
-          <div class="feature_item">
-            <h4>Expert Technicians</h4>
-            <p>
-              Usage of the Internet is becoming more common due to rapid
-              advancement of technology and power of the Internet is becoming
-              more common due to rapid advancement.
-            </p>
-          </div>
-        </div>
-        <div class="col-lg-2 col-sm-6">
-          <div class="feature_item">
-            <h4>Expert Technicians</h4>
-            <p>
-              Usage of the Internet is becoming more common due to rapid
-              advancement of technology and power of the Internet is becoming
-              more common due to rapid advancement.
-            </p>
-          </div>
-        </div>
-        <div class="col-lg-2 col-sm-6">
-          <div class="feature_item">
-            <h4>Expert Technicians</h4>
-            <p>
-              Usage of the Internet is becoming more common due to rapid
-              advancement of technology and power of the Internet is becoming
-              more common due to rapid advancement.
-            </p>
-          </div>
-        </div>
-      </div>
+<section class="pricing_area p_120">
+  <div class="container width-1170">
+    <div class="text-center my-5 p-5">
+      <h2>Choose Your Best Pricing Plans</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+        eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </p>
     </div>
-  </section>
+    <div class="row m-auto price_inner justify-content-around bg-white p-5 shadow rounded">
+      <div class="col-lg-3 col-sm-6 border-end">
+        <div class="feature_item">
+          <h4>Basic</h4>
+          <p>
+            Individuals/Freelancers
+          </p>
+          <h3>£39/mo</h3>
+          <p>RAM 1 GB</p>
+          <p>Core CPU 1</p>
+          <p>SSD Storage 20GB</p>
+          <p>Transfer 1 TB</p>
+          <p>Network In 40 Gb</p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-sm-6 border-end">
+        <div class="feature_item">
+          <h4>Starter</h4>
+          <p>
+            Small Companies
+          </p>
+          <h3>£59/mo</h3>
+          <p>RAM 2 GB</p>
+          <p>Core CPU 2</p>
+          <p>SSD Storage 50GB</p>
+          <p>Transfer 1 TB</p>
+          <p>Network In 40 Gb</p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-sm-6 border-end">
+        <div class="feature_item">
+          <h4>Business</h4>
+          <p>
+            Medium Companies
+          </p>
+          <h3>£79/mo</h3>
+          <p>RAM 4 GB</p>
+          <p>Core CPU 4</p>
+          <p>SSD Storage 75GB</p>
+          <p>Transfer 2 TB</p>
+          <p>Network In 80 Gb</p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-sm-6">
+        <div class="feature_item">
+          <h4>Enterprise</h4>
+          <p>
+            Large Companies
+          </p>
+          <h3>£99/mo</h3>
+          <p>RAM 8 GB</p>
+          <p>Core CPU 8</p>
+          <p>SSD Storage 100GB</p>
+          <p>Transfer 2 TB</p>
+          <p>Network In 100 Gb</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 <!-- PRICING SECTION END -->
 <!-- SOLUTION SECTION START -->
   <section class="solution p_120 bg-secondary">
@@ -216,6 +237,85 @@
 
 
 <!-- SOLUTION SECTION END -->
+
+<!--Client Says Area START-->
+<section class="client_says_area p_120">
+  <div class="container">
+      <div class="row client_says_inner">
+          <div class="col-lg-4">
+              <div class="says_left  pt-5">
+                  <h3>What our Client’s Say about us</h3>
+                  <p>Acres of Diamonds… you’ve read the famous story, or at least had it related to you. A farmer hears tales of diamonds and begins dreaming.</p>
+              </div>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+              <div class="says_item">
+                  <h4>Nellie Vega</h4>
+                  <h5>Head of Marketing, Apple Inc.</h5>
+                  <p>“The following article covers a topic that has recently moved to center stage at least it seems that way. If you’ve been”</p>
+              </div>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+              <div class="says_item"> 
+                  <h4>Estelle Andrews</h4>
+                  <h5>Head of Marketing, Apple Inc.</h5>
+                  <p>“The following article covers a topic that has recently moved to center stage at least it seems that way. If you’ve been”</p>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+<!--Client Says Area END-->
+
+<!--Feature Area Start-->
+  <section class="service_area p_120">
+    <div class="container">
+        <div class="main_title white">
+            <h2>Top Services We Provided</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa deserunt qui nulla enim at sed praesentium odio quaerat vero autem?</p>
+        </div>
+        <div class="row service_inner">
+            <div class="col-lg-4 col-md-6">
+                <div class="service_item">
+                    <h4><i class="lnr lnr-cloud p-2"></i>Cloud Hosting</h4>
+                    <p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="service_item">
+                    <h4><i class="lnr lnr-earth p-2"></i>Web Hosting</h4>
+                    <p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="service_item">
+                    <h4><i class="lnr lnr-screen p-2"></i>Cloud Computing</h4>
+                    <p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="service_item">
+                    <h4><i class="lnr lnr-inbox p-2"></i>VPS Hosting</h4>
+                    <p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="service_item">
+                    <h4><i class="lnr lnr-chart-bars p-2"></i>Server Analytics</h4>
+                    <p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="service_item">
+                    <h4><i class="lnr lnr-lighter p-2"></i>Data Mining</h4>
+                    <p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+<!--Feature Area END-->
+
 <!-- OUR BLOG SECTION START -->
   <section class="p_120">
 

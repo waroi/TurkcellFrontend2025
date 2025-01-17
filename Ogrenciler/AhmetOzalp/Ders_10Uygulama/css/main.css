@@ -11877,4 +11877,90 @@ section {
   background-color: #fafcff;
 }
 
+.looking {
+  background-color: #ec9d5f;
+  text-align: center;
+}
+.looking .container {
+  width: 100%;
+  padding-top: 120px;
+  padding-bottom: 120px;
+  color: #fff;
+}
+.looking .container h4, .looking .container .h4 {
+  margin-top: 0;
+}
+.looking .container p {
+  font-size: 14px;
+  opacity: 0.6;
+  max-width: 770px;
+  margin: 0px auto 35px;
+  color: #fff;
+}
+
+.client {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+.client .left {
+  max-width: 335px;
+}
+.client .left h3, .client .left .h3 {
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 45px;
+  color: #222222;
+}
+.client .item {
+  background: #fff;
+  border: 1px solid #eeeeee;
+  border-radius: 10px;
+}
+.client .item h5, .client .item .h5 {
+  color: #777777;
+  font-weight: 300;
+  font-size: 14px;
+  margin-bottom: 32px;
+}
+
+.services {
+  background: #6247ea;
+  position: relative;
+  overflow: hidden;
+}
+.services .container {
+  width: 100%;
+}
+.services .container .main-title {
+  margin-bottom: 75px;
+}
+.services .container .main-title h2, .services .container .main-title .h2 {
+  color: #fff;
+}
+.services .container .main-title p {
+  color: #fff;
+  opacity: 0.6;
+}
+.services .container .row {
+  margin-bottom: -30px;
+}
+.services .container .row .services-item {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 40px 60px 40px 40px;
+  border: 1px solid #9381eb;
+  margin-bottom: 30px;
+}
+.services .container .row .services-item h4, .services .container .row .services-item .h4 {
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 20px;
+}
+.services .container .row .services-item p {
+  margin-bottom: 0px;
+  color: #fff;
+  opacity: 0.6;
+}
+
 /*# sourceMappingURL=main.css.map */
