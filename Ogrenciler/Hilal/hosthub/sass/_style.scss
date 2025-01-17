@@ -1,0 +1,302 @@
+p {
+  font-size: 0.88rem;
+  color: $info;
+}
+a {
+  color: $light;
+}
+a.a-secondary-color {
+  color: $secondary;
+}
+section {
+  padding: 100px 0px;
+}
+.header-area {
+  .navbar-toggler:focus {
+    box-shadow: none;
+  }
+  .navbar-toggler-icon {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+    background-image: none;
+    position: relative;
+  }
+  .navbar-toggler-icon div {
+    width: 25px;
+    height: 3px;
+    background-color: $secondary;
+    transition: all 0.3s ease-out;
+    animation: button-cross 0.3s ease-out;
+  }
+}
+.navbar .navbar-toggler:focus div:nth-child(2) {
+  opacity: 0;
+}
+.navbar .navbar-toggler:focus div:nth-child(1) {
+  transform: rotate(-45deg) translateY(10px);
+}
+.navbar .navbar-toggler:focus div:nth-child(3) {
+  transform: rotate(45deg) translateY(-10px);
+}
+.home-banner {
+  p {
+    color: #f9f9ff;
+  }
+}
+.btn {
+  font-weight: bold;
+}
+.btn-primary {
+  color: $light;
+  &:hover {
+    color: $secondary;
+  }
+}
+.feature-area .card {
+  border-color: #eeeeee;
+  cursor: pointer;
+  h6 {
+    margin-bottom: 30px;
+  }
+  &:hover {
+    box-shadow: $box-shadow-lg;
+    border-color: #fbf9f9;
+  }
+  transition: all 300ms linear 0s;
+}
+.price-area {
+  background: #fafcff;
+  .price-item::after {
+    content: "";
+    width: 1px;
+    background: #eeeeee;
+    height: 336px;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+  }
+
+  .col {
+    border-top: 2px solid #fff;
+    transition: all 300ms ease-in-out 0s;
+    position: relative;
+    &:hover {
+      border-top: 2px solid $secondary;
+      .price_btn {
+        opacity: 1;
+      }
+    }
+  }
+  .price_btn {
+    transition: all 300ms ease-in-out 0s;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 50px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: $secondary;
+    text-align: center;
+    color: $light;
+    opacity: 0;
+  }
+  span {
+    font-size: 0.85rem;
+  }
+}
+.solution {
+  p {
+    max-width: 770px;
+    margin: 0 auto 35px;
+  }
+  .solution-btn {
+    padding: 0px 50px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 50px;
+    border: none;
+    transition: all 300ms linear 0s;
+    &:hover{
+      background-color: $secondary;
+      color: $light;
+    }
+  }
+}
+.client{
+  .says_left {
+    max-width: 335px;
+  }
+  .says_left h3 {
+    line-height: 45px;
+  }
+  .says_item {
+    border: 1px solid #eeeeee;
+    border-radius: 10px;
+    padding: 55px 30px;
+    transition: all 300ms linear 0s;
+  }
+  .says_item:hover {
+    box-shadow: $box-shadow-lg;
+    border-color: $light;
+  }
+}
+.service-area {
+  .service_title p{
+    max-width: 570px;
+  }
+  .service_item {
+    border-color: #eeeeee;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 40px 60px 40px 40px;
+    border: 1px solid $secondary;
+    transition: all 300ms linear 0s;
+    h4 {
+      font-size: 18px;
+      font-weight: 500;
+      color: $light;
+    }
+    p{
+      color: $light;
+      opacity: .6;
+    } 
+    &:hover{
+      background: $light;
+      box-shadow: $box-shadow-lg;
+      p {
+        color: $info;
+        opacity: 1;
+      }
+      h4{
+        color: $dark;
+      }
+    }
+  } 
+
+}
+.blog-card {
+  background-color: #fff; // Kart tamamen beyaz
+  border: none; // Çizgiler kaldırıldı
+  border-radius: 8px; // Köşeler hafif yuvarlatıldı
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // Hafif gölge
+  overflow: hidden;
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: translateY(-5px); // Hover efekt
+  }
+
+  .card-header {
+    padding: 10px;
+    .date {
+      background-color: #ff7f50;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 4px;
+      font-size: 0.85rem;
+    }
+  }
+
+  .card-body {
+    padding: 15px;
+    .card-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    .card-text {
+      font-size: 0.95rem;
+      color: #666;
+    }
+  }
+
+  .card-footer {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: #777;
+
+    span {
+      display: flex;
+      align-items: center;
+
+      i {
+        margin-right: 5px;
+      }
+    }
+  }
+}
+.footer {
+  background-color: #04091e; // Koyu arka plan rengi
+  color: #e5e5e5; // Açık metin rengi
+
+  .footer_title {
+    font-size: 8px;
+    line-height: 24px;
+    font-weight: 500;
+    font-family: "Roboto", sans-serif;
+    color: #fff;
+    margin-bottom: 28px;
+}
+
+  ul {
+    padding: 0;
+    list-style: none;
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .newsletter-form {
+    input {
+      border: none;
+      border-radius: 25px;
+      padding: 10px 15px;
+      font-size: 0.9rem;
+    }
+
+    button {
+      background-color: #6c5ce7;
+      border: none;
+      border-radius: 25px;
+      color: #fff;
+      font-weight: bold;
+      padding: 8px 15px;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+
+      &:hover {
+        background-color: #5a4dcf;
+      }
+    }
+  }
+
+  .instagram-feed {
+    img {
+      border-radius: 8px;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .footer-bottom {
+    margin-top: 2rem;
+
+    a {
+      color: #6c5ce7;
+      text-decoration: none;
+
+      &:hover {
+        color: #5a4dcf;
+      }
+    }
+  }
+}
+
+

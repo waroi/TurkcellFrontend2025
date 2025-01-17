@@ -1,0 +1,401 @@
+$orange: #ec9d5f;
+$purple: #6247ea;
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+@mixin textFunc($fontsize, $color: null, $fontweight, $lineheight) {
+    font-size: $fontsize;
+    color: $color;
+    font-weight: $fontweight;
+    line-height: $lineheight;
+}
+section{
+    .container{
+        max-width: 1170px;
+    }
+}
+
+.header-top {
+    background-color: $orange;
+    .container {
+        max-width: 1650px;
+    }
+    .header-top-left a {
+        text-decoration: none;
+        @include textFunc(12px, inherit, 300, 40px);
+        text-transform: uppercase;
+        transition: all 300ms linear 0s;
+        &:hover {
+            color: $purple;
+        }
+    }
+    .purchase-btn {
+        background-color: $purple;
+        a {
+            @include textFunc(12px, inherit, 500, 40px);
+            text-decoration: none;
+        }
+    }
+}
+
+.header-area {
+    .header-menu {
+        background-color: white;
+        .container {
+            max-width: 1650px;
+        }
+        .navbar {
+            background: transparent;
+        }
+        .nav-item {
+            margin-right: 35px;
+            &:last-child{
+                margin-right: 0px;
+            }
+            &.submenu ul {
+                border: none;
+                padding: 0px;
+                border-radius: 0px;
+                box-shadow: none;
+                margin: 0px;
+                background: #fff
+            }
+        }
+        .nav-link {
+            @include textFunc(12px, #222222, 500, 80px);
+            padding: 0px;
+            &:hover {
+                color: $purple
+            }
+        }
+        .navbar-nav .search {
+            @include textFunc(12px, #222222, 600, 60px);
+            margin-left: 80px;
+        }
+    }
+}
+
+.banner {
+    background-color: $purple;
+    .banner-bnr {
+        padding: 225px 0;
+    }
+    h2 {
+        @include textFunc(36px, white, 500, 1.2);
+        margin-top: 20px;
+        margin-bottom: 15px;
+    }
+    p {
+        @include textFunc(14px, #f9f9ff, 300, 24px);
+        opacity: 0.6;
+        max-width: 405px;
+        margin-bottom: 35px;
+    }
+    .banner-btn {
+        background-color: $orange;
+        @include textFunc(12px, white, 500, 50px);
+        text-decoration: none;
+        padding: 0 50px;
+        display: inline-block;
+        border-radius: 5px;
+        transition: all 300ms linear 0s;
+        &:hover{
+            color: $purple;
+        }
+    }
+    .banner-map {
+        text-align: right;
+        
+    }
+}
+
+.p-120 {
+    padding: 120px 0;
+}
+
+.section-bg {
+    background-color: #fafcff;
+}
+
+.feature,
+.pricing,
+.client, .service-area, .blog-text {
+    .f-text {
+        text-align: left;
+        margin-bottom: 75px;
+        h2,
+        h3 {
+            @include textFunc(36px, #222, 500, 1.2);
+        }
+        p {
+            @include textFunc(14px, #777777, 300, 24px);
+            max-width: 570px;
+            margin: 0 auto;
+        }
+    }
+}
+
+.feature {
+    .f-cards {
+        .card {
+            padding: 60px 20px 60px 30px;
+            .card-title {
+                @include textFunc(20px, #222, 500, 1.2)
+            }
+            .card-text {
+                @include textFunc(14px, #777, 300, 24px)
+            }
+        }
+    }
+}
+
+.pricing {
+    .packages {
+        background-color: #fff;
+        box-shadow: 0px 10px 30px 0px rgba(98, 71, 234, 0.1);
+        border-radius: 10px;
+        .package {
+            padding: 75px 0 75px 45px;
+            h3 {
+                @include textFunc(20px, #222, 500, 1.2);
+            }
+            h5 {
+                @include textFunc(14px, #777, 300, 1.2);
+            }
+            h2 {
+                @include textFunc(36px, #222, 500, 1.2);
+                span {
+                    @include textFunc(14px, #777, 300, 1.2);
+                    text-align: end;
+                }
+            }
+            ul {
+                li {
+                    @include textFunc(14px, #777, 400, 1.2)
+                }
+            }
+            .line {
+                width: 1px;
+                background: #eeeeee;
+                height: 350px;
+            }
+            .price-btn {
+                display: none;
+                text-align: center;
+                background: #6247ea;
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+                @include textFunc(12px, #fff, 500, 50px);
+                opacity: 0;
+                margin-bottom: -50px;
+            }
+            &:hover {
+                .price-btn {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .packages .line {
+        display: none;
+    }
+}
+
+@media (max-width: 992px) {
+    .banner-map img{
+        display: none;
+    }
+    .packages .col-lg-3:nth-child(2) .line {
+        display: none;
+    }
+}
+
+.solution {
+    background-color: $orange;
+    h4 {
+        @include textFunc(36px, #fff, 500, 1.2);
+    }
+    p {
+        @include textFunc(14px, #ffffff60, 400, 1.5);
+        max-width: 770px;
+        margin: 0 auto;
+    }
+    .white-btn {
+        background-color: #f9f9ff;
+        @include textFunc(12px, #222222, 500, 50px);
+        text-decoration: none;
+        padding: 0 50px;
+        display: inline-block;
+        cursor: pointer;
+        transition: all 300ms linear 0s;
+        &:hover {
+            background-color: $purple;
+            color: #fff;
+        }
+    }
+}
+
+.client {
+    .client-item {
+        background: #fff;
+        border: 1px solid #eeeeee;
+        border-radius: 10px;
+        padding: 55px 30px ;
+        transition: all 300ms linear 0s;
+        h4{
+            @include textFunc(20px, #222222, 500, 1.2);
+            margin-bottom: 13px;
+        }
+        p, h5{
+           @include textFunc(14px, #777777, 300, 24px);
+        }
+        &:hover{
+            box-shadow: 0px 10px 30px 0px rgba(98, 71, 234, 0.1);
+            border-color: #fff;
+        }
+    }
+}
+.service-area{
+    background-color: #6247ea;
+    .service-item{
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        padding: 40px 60px 40px 40px;
+        border: 1px solid #9381eb;
+        transition: all 300ms linear 0s;
+        h4{
+            @include textFunc(18px, #fff, 500, 1.2);
+            i{
+                font-size: 24px;
+                padding-right: 15px;
+            }
+        }
+        p{
+            @include textFunc(14px, #fff, 300, 24px);
+            opacity: 0.6;
+        }
+        &:hover{
+            background: #fff;
+            color: #fff;
+            h4{
+                color: #222;
+            }
+            p{
+                color: #777777;
+                opacity: 1;
+            }
+        }
+
+    }
+}
+.blog{
+    .card{
+        border: 1px solid #eee;
+        border-radius: 10px;
+        padding: 60px 30px;
+        transition: 350ms ease-in-out;
+        .card-body{
+            .date{
+                background-color: $orange;
+                padding: 0px 20px;
+                width: 112px;
+                border-radius: 3px;
+                p{
+                    @include textFunc(12px,#fff ,300 ,30px );
+                }
+            }
+            h4{
+                @include textFunc(20px, #222222, 500, 1.2);
+                margin-bottom: 13px;
+                transition: 350ms ease-in-out;
+            }
+            p{
+               @include textFunc(14px, #777777, 300, 24px);
+            }
+            .icons{
+                svg{
+                    fill: #aaa;
+                width: 14px;
+                height: 14px;
+                }
+                p{
+                    margin: 0;
+                }
+            }
+        }
+        &:hover{
+            box-shadow: 0px 10px 30px 0px rgba(98, 71, 234, 0.1);
+            border-color: #fff;
+            h4{
+                color: $purple;
+            }
+        }
+    }
+}
+.logo-area{
+    .logo-slider{
+        display: grid;
+        grid-template-columns: repeat(15, 20%);
+        overflow-x: auto;
+        &::-webkit-scrollbar {
+            height: 10px;
+            width: 100%;
+          }
+        .logo{
+            img{
+                opacity: 0.5;
+                transition: 300ms ease-in-out;
+            }
+            &:hover{
+                img{
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+footer{
+    background-color: #04091e;
+    h6{
+        @include textFunc(20px, #fff, 500, 24px);
+    }
+    a{
+        @include textFunc(14px, #fff, 300, 24px);
+    }
+    p{
+        opacity: 0.6;
+        @include textFunc(14px, #fff, 300, 24px);
+    }
+    .subscribe{
+        input{
+            max-width: 340px;
+            width: 100%;
+            border: 1px solid #333333;
+            font-size: 13px;
+            line-height: 40px;
+            padding-right: 40px;
+            height: 40px;
+            color: #999999;
+            border-radius: 20px;
+            background: #fff;
+            padding-left: 20px;
+        }
+        button{
+            padding: 0px 38px;
+            display: inline-block;
+            cursor: pointer;
+            position: absolute;
+            top: 0px;
+            right: 40px;
+            border: 1px solid $purple;
+            border-radius: 20px;
+            background-color: $purple;
+            @include textFunc(12px, #fff, 500, 38px);
+        }
+    }
+}

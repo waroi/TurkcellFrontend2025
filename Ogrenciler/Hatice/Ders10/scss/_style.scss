@@ -1,0 +1,54 @@
+.top-bar {
+    background-color: #f7931e;
+    color: white;
+    padding: 5px 0;
+}
+.top-bar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+}
+.btn-purchase {
+    background-color: #6247ea;
+    color: white;
+}
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.hero {
+    background-color: #6c63ff;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    min-height: 100vh;
+}
+.hero h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+.hero p {
+    margin: 20px auto;
+    max-width: 600px;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+.hero button {
+    background-color: #f7931e;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.hero button:hover {
+    background-color: #d87d17;
+}
+.server-image {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
