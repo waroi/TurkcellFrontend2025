@@ -12055,6 +12055,15 @@ section,
 .service-area .service_item:hover h4, .service-area .service_item:hover .h4 {
   color: #222222;
 }
+.service-area::before {
+  content: "";
+  background: url("https://preview.colorlib.com/theme/hosthub/img/map-bg.png.webp") no-repeat scroll center center;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+}
 
 .blog-card {
   background-color: rgba(119, 119, 119, 0.4666666667);
