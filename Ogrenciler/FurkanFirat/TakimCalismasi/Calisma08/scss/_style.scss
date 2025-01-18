@@ -8,12 +8,12 @@
   .price-item {
     border-top: 2px solid transparent;
     .item-text {
-      h2{
+      h2 {
         color: $dark-gray;
-        span{
-            color: $light-gray;
+        span {
+          color: $light-gray;
         }
-    }
+      }
       &:hover h2 {
         color: $primary;
       }
@@ -52,7 +52,6 @@
     }
   }
 }
-
 .search input {
   max-width: 340px;
   outline: none;

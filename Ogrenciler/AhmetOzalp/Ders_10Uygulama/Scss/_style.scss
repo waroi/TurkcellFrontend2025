@@ -3,6 +3,7 @@ $purpleColor: #6f42c1;
 $blueColor: #007bff;
 $indigoColor: #6610f2;
 $pColor: #777777;
+$wColor: #fff;
 $width: 100%;
 
 * {
@@ -51,7 +52,7 @@ section {
 }
 
 .looking {
-  background-color: #ec9d5f;
+  background-color: $orangeColor;
   text-align: center;
 
 
@@ -59,7 +60,7 @@ section {
     width: 100%;
     padding-top: 120px;
     padding-bottom: 120px;
-    color: #fff;
+    color: $wColor;
 
     h4 {
       margin-top: 0;
@@ -71,7 +72,7 @@ section {
       opacity: .6;
       max-width: 770px;
       margin: 0px auto 35px;
-      color: #fff;
+      color: $wColor;
 
 
     }
@@ -94,12 +95,12 @@ section {
   }
 
   .item {
-    background: #fff;
+    background: $wColor;
     border: 1px solid #eeeeee;
     border-radius: 10px;
 
     h5 {
-      color: #777777;
+      color: $pColor;
       font-weight: 300;
       font-size: 14px;
       margin-bottom: 32px;
@@ -119,11 +120,11 @@ section {
       margin-bottom: 75px;
 
       h2 {
-        color: #fff;
+        color: $wColor;
       }
 
       p {
-        color: #fff;
+        color: $wColor;
         opacity: .6;
       }
     }
@@ -141,15 +142,13 @@ section {
         h4 {
           font-size: 18px;
           font-weight: 500;
-          color: #fff;
+          color: $wColor;
           margin-bottom: 20px;
         }
 
-
-
         p {
           margin-bottom: 0px;
-          color: #fff;
+          color: $wColor;
           opacity: .6;
         }
       }
