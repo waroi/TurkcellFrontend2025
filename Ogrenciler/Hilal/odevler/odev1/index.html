@@ -14,19 +14,33 @@
       href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./css/main.css" />
   </head>
-  <body class="d-flex align-items-center justify-content-center">
-    <div class="retro-background"></div>
-    <main
-      class="main-card position-relative overflow-hidden w-100 mx-0 mx-md-5"
-    >
-      <div class="retro-background"></div>
-      <div class="stars light"></div>
-      <header class="p-3 border-bottom ms-3 me-3">
+  <body
+    class="d-flex vh-100 align-items-center justify-content-center text-light"
+  >
+    <main class="main-card border z-0 box-shadow rounded overflow-hidden">
+      <div class="retro-background w-100 h-100 position-absolute z-n1"></div>
+      <div class="stars position-absolute top-0 start-0 bottom-0 end-0">
+        <div class="light"></div>
+      </div>
+      <header class="p-3 ms-3 me-3 text-light">
         <nav class="navbar navbar-expand-lg bg-transparent">
           <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <div class="logo-wrapper">
+              <a class="navbar-brand logo m-0 text-primary fs-4" href="#"
+                >RetroRota</a
+              >
+              <div
+                class="header-border position-relative w-100 box-shadow"
+              ></div>
+            </div>
             <button
               class="navbar-toggler"
               type="button"
@@ -38,41 +52,26 @@
             >
               <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <div
+              class="collapse navbar-collapse flex-grow-0"
+              id="navbarSupportedContent"
+            >
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0 link-light">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#"
+                  <a
+                    class="nav-link link-light active link-light"
+                    aria-current="page"
+                    href="#"
                     >Home</a
                   >
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a
-                    class="nav-link dropdown-toggle"
-                    href="#"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    Dropdown
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li>
-                      <a class="dropdown-item" href="#">Another action</a>
-                    </li>
-                    <li><hr class="dropdown-divider" /></li>
-                    <li>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                    </li>
-                  </ul>
+                  <a class="nav-link link-light" href="#">Link</a>
                 </li>
               </ul>
               <form class="d-flex" role="search">
                 <input
-                  class="form-control me-2 bg-transparent"
+                  class="form-control me-2 bg-transparent text-light"
                   type="search"
                   placeholder="Search"
                   aria-label="Search"
@@ -85,14 +84,13 @@
           </div>
         </nav>
       </header>
-      <section class="main-banner vh-100">
+      <section class="main-banner vh-100 fs-5">
         <div
           class="container d-flex align-items-center justify-content-center flex-column gap-5"
         >
           <div class="content">
             <h1>Zaman Yolcuları İçin Alışveriş</h1>
             <p>
-              Gelecekte sıkıntı çekmeyin, geçmişte fark edilmeden yaşayın!<br />
               Zaman Yolcuları İçin Alışveriş, zamanda yolculuk edenlerin
               geçmişte ya da gelecekte hayatta kalmaları, adapte olmaları ve
               maceralarını kolaylaştırmaları için ürünler sunan eğlenceli ve
@@ -100,25 +98,19 @@
             </p>
           </div>
           <div
-            class="cards d-flex justify-content-around align-items-center gap-4"
+            class="cards d-flex justify-content-around align-items-center gap-4 flex-wrap"
           >
             <div class="future-card">
-              <div class="card m-2 p-3">
+              <div class="card m-2 p-3 btn">
                 <div class="card-body">
                   <h5 class="card-title">Geleceğe gidenler için ürünler</h5>
-                  <button class="btn btn-primary card-link mt-3 w-100">
-                    Card link
-                  </button>
                 </div>
               </div>
             </div>
             <div class="past-card">
-              <div class="card m-2 p-3">
+              <div class="card m-2 p-3 btn">
                 <div class="card-body">
                   <h5 class="card-title">Geçmişe Dönüş Aksesuarları</h5>
-                  <button class="btn btn-primary card-link mt-3 w-100">
-                    Card link
-                  </button>
                 </div>
               </div>
             </div>
@@ -145,7 +137,7 @@
                   <h5 class="card-title">Robot Arkadaşlık Kitabı</h5>
                 </div>
                 <div class="card-body">
-                  <a href="#" class="card-link btn btn-primary">Card link</a>
+                  <a href="#" class="card-link btn">Sepete at</a>
                 </div>
               </div>
             </div>
@@ -456,8 +448,8 @@
           <div class="row mt-4">
             <div class="col-12 col-lg-6 text-center text-lg-start">
               <small
-                >© 2025 Zaman Yolcuları İçin Alışveriş. Tüm Hakları
-                Saklıdır.</small
+                >© 1982 RetroRota.Dikkat bu websitesi gelecek için oldukça banal
+                geçmiş için oldukça sıradışıdır.</small
               ><br />
             </div>
             <div class="col-12 col-lg-6 text-center text-lg-end">
