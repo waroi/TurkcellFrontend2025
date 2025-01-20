@@ -24,7 +24,7 @@
   </head>
   <body class="text-light">
     <main
-      class="main-card position-relative border h-100 z-0 box-shadow m-0 overflow-hidden "
+      class="main-card position-relative border h-100 z-0 box-shadow m-0 overflow-hidden"
     >
       <div
         class="retro-background top-0 start-0 w-100 h-100 position-absolute z-n1"
@@ -118,17 +118,17 @@
         </nav>
       </header>
       <section
-        class="description-section position-relative d-flex align-items-center vh-100"
+        class="description-section position-relative d-flex align-items-center"
       >
         <div class="star position-absolute"></div>
         <div class="star position-absolute"></div>
         <div class="star position-absolute"></div>
         <div class="star position-absolute"></div>
-        <div class="card w-100 bg-transparent flex-row h-100">
-          <div class="text-center overflow-hidden object-fit-cover">
+        <div class="row bg-transparent">
+          <div class="col-12 col-md-8 product-images">
             <div
               id="carouselExampleCaptions"
-              class="carousel slide box-shadow-sm"
+              class="carousel slide box-shadow-sm w-100"
             >
               <div class="carousel-indicators">
                 <button
@@ -153,7 +153,9 @@
                 ></button>
               </div>
               <div class="carousel-inner rounded">
-                </div>
+                <div
+                  class="retro-background top-0 left-0 rounded w-100 h-100 position-absolute z-1"
+                ></div>
                 <div class="carousel-item active">
                   <div class="carousel-img-wrapper">
                     <img
@@ -161,6 +163,13 @@
                       class="d-block w-100"
                       alt="carousel-item"
                     />
+                  </div>
+
+                  <div class="carousel-caption z-1 z-1 d-none d-md-block">
+                    <h5 class="fst-italic fw-light fs-2">
+                      "Orta Çağ belgelerim sayesinde cadı olmadığımı kanıtladım.
+                      Az kalsın yanıyordum!"
+                    </h5>
                   </div>
                 </div>
                 <div class="carousel-item">
@@ -171,6 +180,12 @@
                       alt="carousel-item"
                     />
                   </div>
+                  <div class="carousel-caption z-1 d-none d-md-block">
+                    <h5 class="fst-italic fw-light fs-2">
+                      "Bu taş baltayı aldım, şimdi tüm kabile bana hayran!
+                      Harika bir ürün. ⭐⭐⭐⭐⭐"
+                    </h5>
+                  </div>
                 </div>
                 <div class="carousel-item">
                   <div class="carousel-img-wrapper">
@@ -179,6 +194,12 @@
                       class="d-block w-100"
                       alt="carousel-item"
                     />
+                  </div>
+                  <div class="carousel-caption z-1 d-none d-md-block">
+                    <h5 class="fst-italic fw-light fs-2">
+                      "Bu ışınlanma cihazıyla gezegenler arası tatiller çok
+                      rahat. Tavsiye ederim! ⭐⭐⭐⭐⭐"
+                    </h5>
                   </div>
                 </div>
               </div>
@@ -207,7 +228,9 @@
                 <span class="visually-hidden">Next</span>
               </button>
             </div>
-            <div class="card-body">
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="w-100 p-2 d-flex flex-column">
               <h3 class="card-title">Dinozor Kaçış Seti</h3>
               <p class="product-description text-info">
                 Dinozoru Korkutan Düdük: T-Rex’e özel yüksek frekanslı ses
@@ -222,7 +245,6 @@
               <p class="product-price fs-2 fw-bold text-primary">₺159.99</p>
             </div>
           </div>
-         
         </div>
       </section>
       <footer class="bg-transparent text-white py-5">
