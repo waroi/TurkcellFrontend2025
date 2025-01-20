@@ -112,7 +112,7 @@
   --bs-border-radius-xxl: 2rem;
   --bs-border-radius-2xl: var(--bs-border-radius-xxl);
   --bs-border-radius-pill: 50rem;
-  --bs-box-shadow: 0 0 15px rgba(184, 184, 184, 0.7);
+  --bs-box-shadow: 0 1px 3px rgba(255, 255, 255, 0.3), 0 0 15px rgba(184, 184, 184, 0.7), inset 0 0 10px rgba(255, 255, 255, 0.5);
   --bs-box-shadow-sm: 0 0 5px 1px rgba(184, 184, 184, 0.5);
   --bs-box-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
   --bs-box-shadow-inset: inset 0 1px 2px rgba(0, 0, 0, 0.075);
@@ -11879,12 +11879,24 @@ footer {
 }
 
 .main-card {
-  position: absolute;
-  top: 50px;
-  width: 90%;
   background: linear-gradient(120deg, #61363d, #25323e, #b3b0ca, #301729, #412f2f);
-  animation: sliding-card 0.7s ease-out forwards;
+  box-shadow: 0 1px 3px rgba(255, 255, 255, 0.3), 0 0 15px rgba(184, 184, 184, 0.7), inset 0 0 10px rgba(255, 255, 255, 0.5);
   background-attachment: fixed;
+}
+
+.description-section {
+  min-height: 100vh;
+}
+.description-section .cards div,
+.description-section .content {
+  opacity: 0;
+  animation: sliding-card 1s ease-in forwards;
+}
+.description-section .cards div:nth-child(odd) {
+  animation-delay: 0.5s;
+}
+.description-section .cards div:nth-child(even) {
+  animation-delay: 0.7s;
 }
 
 .search-button {
@@ -11892,7 +11904,7 @@ footer {
 }
 .search-button:hover {
   background-color: transparent;
-  box-shadow: 0 0 15px rgba(184, 184, 184, 0.7);
+  box-shadow: 0 1px 3px rgba(255, 255, 255, 0.3), 0 0 15px rgba(184, 184, 184, 0.7), inset 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
 .search-input {
@@ -11969,8 +11981,10 @@ footer {
 
 .card {
   overflow: hidden;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
   transition: all 0.3s ease;
+  border: 1px solid transparent;
 }
 .card:hover .product-price,
 .card:hover .card-title {
@@ -12036,9 +12050,11 @@ footer {
 }
 @keyframes sliding-card {
   from {
+    opacity: 0;
     transform: translateY(500px);
   }
   to {
+    opacity: 100;
     transform: translateY(0px);
   }
 }

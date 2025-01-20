@@ -24,9 +24,6 @@ footer {
   max-height: 400px;
 } //silincek
 .main-card {
-  position: absolute;
-  top: 50px;
-  width: 90%;
   background: linear-gradient(
     120deg,
     #61363d,
@@ -35,8 +32,25 @@ footer {
     #301729,
     #412f2f
   );
-  animation: sliding-card 0.7s ease-out forwards;
+  box-shadow: $box-shadow; //TODO:normalde bt_override da tanımlandı ama nedense şie yaramadı zaman kalırsa kontrol et.
+  // animation: sliding-card 0.7s ease-out forwards;
   background-attachment: fixed;
+}
+.description-section {
+  min-height: 100vh;
+  .cards div,
+  .content {
+    opacity: 0;
+    animation: sliding-card 1s ease-in forwards;
+  }
+  .cards {
+    div:nth-child(odd) {
+      animation-delay: 0.5s;
+    }
+    div:nth-child(even) {
+      animation-delay: 0.7s;
+    }
+  }
 }
 .search-button {
   transition: all 1s ease-in forwards;
@@ -116,8 +130,10 @@ footer {
 }
 .card {
   overflow: hidden;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
   transition: all 0.3s ease;
+  border: 1px solid transparent;
   &:hover {
     .product-price,
     .card-title {
@@ -137,8 +153,8 @@ footer {
   .btn:not(.navbar .btn, .navbar button) {
     transform: scale(1.05);
   }
-  box-shadow: 0 5px 20px rgba(255, 0, 150, 0.8), 0 0 20px rgba(0, 255, 255, 0.6);
-  border: 1px solid rgba(0, 255, 255, 0.8);
+  box-shadow: 0 5px 20px $danger, 0 0 20px rgba(0, 255, 255, 0.6);
+  border: 1px solid $success;
   .img-wrapper img {
     transform: scale(1.05);
     object-position: center;
@@ -177,9 +193,11 @@ footer {
 }
 @keyframes sliding-card {
   from {
+    opacity: 0;
     transform: translateY(500px);
   }
   to {
+    opacity: 100;
     transform: translateY(0px);
   }
 }

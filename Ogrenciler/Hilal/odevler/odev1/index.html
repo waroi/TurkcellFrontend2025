@@ -22,12 +22,12 @@
     />
     <link rel="stylesheet" href="./css/main.css" />
   </head>
-  <body
-    class="d-flex vh-100 justify-content-center align-items-center text-light"
-  >
-    <main class="main-card border z-0 box-shadow rounded">
+  <body class="text-light">
+    <main
+      class="main-card position-relative border h-100 z-0 box-shadow rounded m-0 mt-md-3 mx-md-5 overflow-hidden"
+    >
       <div
-        class="retro-background rounded w-100 h-100 position-absolute z-n1"
+        class="retro-background top-0 start-0 rounded w-100 h-100 position-absolute z-n1"
       ></div>
       <div
         class="overflow-hidden stars position-absolute top-0 start-0 bottom-0 end-0"
@@ -117,17 +117,22 @@
           </div>
         </nav>
       </header>
-      <section class="position-relative vh-100 fs-5">
+      <section
+        class="description-section position-relative d-flex align-items-center"
+      >
         <div class="star position-absolute"></div>
         <div class="star position-absolute"></div>
         <div class="star position-absolute"></div>
         <div class="star position-absolute"></div>
         <div
-          class="container w-75 d-flex align-items-center justify-content-center flex-column gap-4"
+          class="container d-flex align-items-center justify-content-center flex-column overflow-hidden gap-4"
         >
-          <h1>Zaman Yolcuları İçin Alışveriş</h1>
-          <div class="content">
-            <p>
+          <div class="content px-3">
+            <h1 class="mb-5 text-center">
+              Zaman Yolcuları <br />
+              İçin Alışveriş
+            </h1>
+            <p class="text-center">
               Zaman Yolcuları İçin Alışveriş, zamanda yolculuk edenlerin
               geçmişte ya da gelecekte hayatta kalmaları, adapte olmaları ve
               maceralarını kolaylaştırmaları için ürünler sunan eğlenceli ve
@@ -137,75 +142,75 @@
           <div
             class="cards d-flex justify-content-around align-items-center flex-wrap"
           >
-            <div class="future-card">
+            <div>
               <div class="card m-2 btn">
                 <a
                   href="#gelecek"
                   alt="gelecek-ürünler"
                   class="text-decoration-none"
                 >
-                  <div class="card-body p-2">
+                  <div class="card-body p-1">
                     <h5 class="card-title">Geleceğe gidenler için ürünler</h5>
                   </div>
                 </a>
               </div>
             </div>
-            <div class="past-card">
+            <div>
               <a
                 href="#gecmis"
                 alt="gecmis-ürünler"
                 class="text-decoration-none"
               >
                 <div class="card m-2 btn">
-                  <div class="card-body p-2">
-                    <h5 class="card-title">Geçmişe Dönüş Aksesuarları</h5>
+                  <div class="card-body p-1">
+                    <h5 class="card-title">Geçmise Dönüs Aksesuarları</h5>
                   </div>
                 </div>
               </a>
             </div>
-            <div class="">
+            <div>
               <a
                 href="#dinozor"
                 alt="dinozor-cagi"
                 class="text-decoration-none"
               >
                 <div class="card m-2 btn">
-                  <div class="card-body p-2">
+                  <div class="card-body p-1">
                     <h5 class="card-title">Dinozorlar Çagı</h5>
                   </div>
                 </div>
               </a>
             </div>
-            <div class="">
+            <div>
               <a
                 href="#ronesans"
                 alt="ronesans-urunler"
                 class="text-decoration-none"
               >
                 <div class="card m-2 btn">
-                  <div class="card-body p-2">
+                  <div class="card-body p-1">
                     <h5 class="card-title">Rönesans</h5>
                   </div>
                 </div>
               </a>
             </div>
-            <div class="">
+            <div>
               <a
                 href="#galaktik-gelecek"
                 alt="galaktik-gelecek"
                 class="text-decoration-none"
               >
                 <div class="card m-2 btn">
-                  <div class="card-body p-2">
+                  <div class="card-body p-1">
                     <h5 class="card-title">Galaktik Gelecek</h5>
                   </div>
                 </div>
               </a>
             </div>
-            <div class="">
+            <div>
               <a href="#milenyum" alt="milenyum" class="text-decoration-none">
                 <div class="card m-2 btn">
-                  <div class="card-body p-2">
+                  <div class="card-body p-1">
                     <h5 class="card-title">Milenyum Yılları</h5>
                   </div>
                 </div>
@@ -219,28 +224,28 @@
           <ul class="nav nav-pills mb-3 gap-4" id="pills-tab" role="tablist">
             <li class="nav-item" role="presentation">
               <button
-                class="nav-link bg-transparent btn-outline-success link-success btn border-success"
+                class="nav-link active bg-transparent btn-outline-success link-success btn border-success"
                 id="101-tab"
                 data-bs-toggle="pill"
                 data-bs-target="#101"
                 type="button"
                 role="tab"
                 aria-controls="101"
-                aria-selected="false"
+                aria-selected="true"
               >
                 Zaman yolculugu 101
               </button>
             </li>
             <li class="nav-item" role="presentation">
               <button
-                class="nav-link active bg-transparent btn-outline-secondary link-secondary btn"
+                class="nav-link bg-transparent btn-outline-secondary link-secondary btn"
                 id="gecmis-tab"
                 data-bs-toggle="pill"
                 data-bs-target="#gecmis"
                 type="button"
                 role="tab"
                 aria-controls="gecmis"
-                aria-selected="true"
+                aria-selected="false"
               >
                 Geçmis
               </button>
@@ -558,32 +563,38 @@
               <div class="row cards text-light p-0 justify-items-center">
                 <div class="col-12 col-md-6 col-lg-4 mb-3">
                   <div class="card w-100">
-                    <div
-                      class="img-wrapper text-center overflow-hidden object-fit-cover"
+                    <a
+                      href="./product-1.html"
+                      alt="product-1"
+                      class="text-decoration-none"
                     >
-                      <img
-                        src="./assets/trex.png"
-                        class="card-img-top"
-                        alt="Dinozor Kaçış Seti"
-                      />
-                    </div>
-                    <div class="card-body">
-                      <h3 class="card-title">Dinozor Kaçış Seti</h3>
-                      <p class="product-description text-info">
-                        Dinozoru Korkutan Düdük: T-Rex’e özel yüksek frekanslı
-                        ses çıkarır. Görünmezlik Battaniyesi: Dinozorlar sizi
-                        göremez, insanlar da görmez. Acil Durum Ağaç Tırmanma
-                        Kiti: İçinde bir ip merdiven ve "En sağlam ağaçlar"
-                        rehberi bulunur.
-                      </p>
-                      <p class="star-rating d-flex flex-wrap ga">
-                        <span class="text-secondary">★★★★☆</span>
-                        <strong>(4.8/5) - 300 Yorum</strong>
-                      </p>
-                      <p class="product-price fs-2 fw-bold text-primary">
-                        ₺159.99
-                      </p>
-                    </div>
+                      <div
+                        class="img-wrapper text-center overflow-hidden object-fit-cover"
+                      >
+                        <img
+                          src="./assets/trex.png"
+                          class="card-img-top"
+                          alt="Dinozor Kaçış Seti"
+                        />
+                      </div>
+                      <div class="card-body">
+                        <h3 class="card-title">Dinozor Kaçış Seti</h3>
+                        <p class="product-description text-info">
+                          Dinozoru Korkutan Düdük: T-Rex’e özel yüksek frekanslı
+                          ses çıkarır. Görünmezlik Battaniyesi: Dinozorlar sizi
+                          göremez, insanlar da görmez. Acil Durum Ağaç Tırmanma
+                          Kiti: İçinde bir ip merdiven ve "En sağlam ağaçlar"
+                          rehberi bulunur.
+                        </p>
+                        <p class="star-rating d-flex flex-wrap ga">
+                          <span class="text-secondary">★★★★☆</span>
+                          <strong>(4.8/5) - 300 Yorum</strong>
+                        </p>
+                        <p class="product-price fs-2 fw-bold text-primary">
+                          ₺159.99
+                        </p>
+                      </div>
+                    </a>
                   </div>
                 </div>
                 <div class="col-12 col-md-6 col-lg-4 mb-3">
@@ -744,7 +755,7 @@
               tabindex="0"
             >
               <div class="mb-5">
-                <h1>Geçmişe Dönüş Aksesuarları</h1>
+                <h1>Gelecek Aksesuarları</h1>
                 <p class="text-info">
                   Gelecekte sıkıntı çekmeyin, geçmişte fark edilmeden yaşayın!
                 </p>
@@ -967,7 +978,7 @@
             </div>
             <div class="carousel-inner rounded">
               <div
-                class="retro-background rounded w-100 h-100 position-absolute z-1"
+                class="retro-background top-0 left-0 rounded w-100 h-100 position-absolute z-1"
               ></div>
               <div class="carousel-item active">
                 <div class="carousel-img-wrapper">
