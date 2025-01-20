@@ -1,0 +1,269 @@
+@font-face {
+    font-family: 'RF Dewi Header';
+    src: url('/fonts/rf-dewi-ultrabold.ttf') format('truetype');
+    font-weight: 600;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'RF Dewi';
+    src: url('/fonts/rf-dewi-regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+$font-primary: 'RF Dewi Header', sans-serif;
+$font-secondary: 'RF Dewi', sans-serif;
+$spacing-base: 1rem;
+$grid-gap: 2rem;
+$banner-height: 100vh;
+$overlay-opacity: 0.7;
+$content-max-width: 1200px;
+$yellow:#dfb200;
+$blue:#2A6EB5;
+$breakpoints: (
+  'mobile': 576px,
+  'tablet': 768px,
+  'desktop': 992px
+);
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin grid-responsive {
+  display: grid;
+  gap: $grid-gap;
+  
+  @media (min-width: map-get($breakpoints, 'tablet')) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @media (min-width: map-get($breakpoints, 'desktop')) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@mixin hover-effect {
+  transition: transform 0.3s ease;
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+// Extends
+%card-base {
+  background: #fff;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+%heading-base {
+  font-family: $font-primary;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+
+
+body {
+  font-family: $font-secondary;
+  line-height: 1.6;
+  
+  &.no-scroll {
+    overflow: hidden;
+  }
+}
+
+.banner {
+    position: relative;
+    height: $banner-height;
+    width: 100%;
+    overflow: hidden;
+    background-color: $bg-yellow;
+
+    &__video-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    &__video-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        
+        iframe {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100vw;
+            height: 100vh;
+            transform: translate(-50%, -50%) scale(1.5);
+            pointer-events: none;
+            border: none;
+
+            @media (min-aspect-ratio: 16/9) {
+                height: 56.25vw; // 16:9 aspect ratio
+            }
+            
+            @media (max-aspect-ratio: 16/9) {
+                width: 177.78vh; // 16:9 aspect ratio
+            }
+        }
+    }
+
+    &__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            rgba(0, 0, 0, $overlay-opacity),
+            rgba(0, 0, 0, $overlay-opacity * 0.8)
+        );
+    }
+
+    &__content {
+        position: relative;
+        height: 100%;
+        max-width: $content-max-width;
+        margin: 0 auto;
+        padding: $spacing-base * 2;
+        @include flex-center;
+    }
+
+    &__text {
+        text-align: center;
+        color: #fff;
+        max-width: 800px;
+        padding: $spacing-base * 2;
+        background-color: rgba(0, 0, 0, 0.473);
+        border-radius: 20px;
+    }
+
+    &__title {
+        @extend %heading-base;
+        font-size: 6vw;
+        margin-bottom: $spacing-base;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        color: $yellow;
+        -webkit-text-stroke: 2px  $blue;
+        /*text-shadow:
+        5px 5px 0 $blue,
+        -5px 5px 0 $blue,
+        -5px -5px 0 $blue,
+        5px -5px 0 $blue;
+        didnt work responsiveley :(
+        */
+    }
+
+    
+
+    &__logo {
+        margin: $spacing-base 0;
+        .poke-logo {
+            max-width: 100%;
+            height: auto;
+            filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.3));
+        }
+        .poke-ball{
+            width: 7vw;
+            height: auto;
+        }
+
+    }
+    
+
+
+    &__subtitle {
+        font-size: 1.25rem;
+        margin-bottom: $spacing-base * 2;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    }
+
+    &__cta {
+        padding: $spacing-base $spacing-base * 2;
+        font-size: 1.25rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border-radius: 2rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+    }
+}
+.products-grid {
+  @include grid-responsive;
+  padding: $spacing-base;
+}
+
+.pokemon-card {
+  @extend %card-base;
+  @include hover-effect;
+  
+  &__image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  &__content {
+    padding: $spacing-base * 1.5;
+  }
+  
+  &__title {
+    @extend %heading-base;
+    font-size: 1.5rem;
+  }
+  
+  &__price {
+    color: $primary;
+    font-weight: 600;
+    font-size: 1.25rem;
+  }
+}
+
+// Footer with Flexbox and Grid
+.footer {
+  background: $dark;
+  color: #fff;
+  padding: $spacing-base * 2 0;
+  
+  &__grid {
+    display: grid;
+    gap: $spacing-base * 2;
+    
+    @media (min-width: map-get($breakpoints, 'tablet')) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  &__links {
+    @include flex-center;
+    flex-direction: column;
+    align-items: flex-start;
+    
+    a {
+      color: #fff;
+      text-decoration: none;
+      padding: $spacing-base * 0.5 0;
+      
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+}
