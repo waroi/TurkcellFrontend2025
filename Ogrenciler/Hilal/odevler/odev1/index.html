@@ -23,18 +23,22 @@
     <link rel="stylesheet" href="./css/main.css" />
   </head>
   <body
-    class="d-flex vh-100 align-items-center justify-content-center text-light"
+    class="d-flex vh-100 justify-content-center align-items-center text-light"
   >
-    <main class="main-card border z-0 box-shadow rounded overflow-hidden">
-      <div class="retro-background w-100 h-100 position-absolute z-n1"></div>
-      <div class="stars position-absolute top-0 start-0 bottom-0 end-0">
-        <div class="light"></div>
+    <main class="main-card border z-0 box-shadow rounded">
+      <div
+        class="retro-background rounded w-100 h-100 position-absolute z-n1"
+      ></div>
+      <div
+        class="overflow-hidden stars position-absolute top-0 start-0 bottom-0 end-0"
+      >
+        <div class="wrapper w-100 h-100"><div class="light"></div></div>
       </div>
       <header class="p-3 ms-3 me-3 text-light">
         <nav class="navbar navbar-expand-lg bg-transparent">
           <div class="container-fluid">
             <div class="logo-wrapper">
-              <a class="navbar-brand logo m-0 text-primary fs-4" href="#"
+              <a class="navbar-brand logo m-0 text-primary fs-3" href="#"
                 >RetroRota</a
               >
               <div
@@ -42,54 +46,87 @@
               ></div>
             </div>
             <button
-              class="navbar-toggler"
+              class="navbar-toggler border-0"
               type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasNavbar"
+              aria-controls="offcanvasNavbar"
               aria-label="Toggle navigation"
             >
-              <span class="navbar-toggler-icon"></span>
+              <span class="navbar-toggler-icon w-100 h-10 border-0"
+                ><i class="fa-solid fa-bars fs-3" style="color: #d1d1d1"></i
+              ></span>
             </button>
             <div
-              class="collapse navbar-collapse flex-grow-0"
-              id="navbarSupportedContent"
+              class="offcanvas offcanvas-end flex-grow-0 text-light bg-dark"
+              tabindex="-1"
+              id="offcanvasNavbar"
+              aria-labelledby="offcanvasNavbarLabel"
             >
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0 link-light">
-                <li class="nav-item">
-                  <a
-                    class="nav-link link-light active link-light"
-                    aria-current="page"
-                    href="#"
-                    >Home</a
+              <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+                  RetroRota
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="offcanvas"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                  <li class="nav-item">
+                    <a
+                      class="nav-link link-light active"
+                      aria-current="page"
+                      href="#"
+                      >Home</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link link-light" href="./sso.html">SSO</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link link-light" href="./iletisim.html"
+                      >Iletisim</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link link-light" href="./hakkimizda"
+                      >Hakkımızda</a
+                    >
+                  </li>
+                </ul>
+                <form class="d-flex" role="search">
+                  <input
+                    class="form-control me-2 search-input box-shadow shadow-none outline-0"
+                    type="search"
+                    placeholder="Search"
+                    aria-label="Search"
+                  />
+                  <button
+                    class="search-button btn btn-outline-success text-success"
+                    type="submit"
                   >
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link link-light" href="#">Link</a>
-                </li>
-              </ul>
-              <form class="d-flex" role="search">
-                <input
-                  class="form-control me-2 bg-transparent text-light"
-                  type="search"
-                  placeholder="Search"
-                  aria-label="Search"
-                />
-                <button class="btn btn-outline-success" type="submit">
-                  Search
-                </button>
-              </form>
+                    Search
+                  </button>
+                </form>
+              </div>
             </div>
           </div>
         </nav>
       </header>
-      <section class="main-banner vh-100 fs-5">
+      <section class="position-relative vh-100 fs-5">
+        <div class="star position-absolute"></div>
+        <div class="star position-absolute"></div>
+        <div class="star position-absolute"></div>
+        <div class="star position-absolute"></div>
         <div
-          class="container d-flex align-items-center justify-content-center flex-column gap-5"
+          class="container w-75 d-flex align-items-center justify-content-center flex-column gap-4"
         >
+          <h1>Zaman Yolcuları İçin Alışveriş</h1>
           <div class="content">
-            <h1>Zaman Yolcuları İçin Alışveriş</h1>
             <p>
               Zaman Yolcuları İçin Alışveriş, zamanda yolculuk edenlerin
               geçmişte ya da gelecekte hayatta kalmaları, adapte olmaları ve
@@ -98,243 +135,799 @@
             </p>
           </div>
           <div
-            class="cards d-flex justify-content-around align-items-center gap-4 flex-wrap"
+            class="cards d-flex justify-content-around align-items-center flex-wrap"
           >
             <div class="future-card">
-              <div class="card m-2 p-3 btn">
-                <div class="card-body">
-                  <h5 class="card-title">Geleceğe gidenler için ürünler</h5>
-                </div>
+              <div class="card m-2 btn">
+                <a
+                  href="#gelecek"
+                  alt="gelecek-ürünler"
+                  class="text-decoration-none"
+                >
+                  <div class="card-body p-2">
+                    <h5 class="card-title">Geleceğe gidenler için ürünler</h5>
+                  </div>
+                </a>
               </div>
             </div>
             <div class="past-card">
-              <div class="card m-2 p-3 btn">
-                <div class="card-body">
-                  <h5 class="card-title">Geçmişe Dönüş Aksesuarları</h5>
+              <a
+                href="#gecmis"
+                alt="gecmis-ürünler"
+                class="text-decoration-none"
+              >
+                <div class="card m-2 btn">
+                  <div class="card-body p-2">
+                    <h5 class="card-title">Geçmişe Dönüş Aksesuarları</h5>
+                  </div>
                 </div>
-              </div>
+              </a>
+            </div>
+            <div class="">
+              <a
+                href="#dinozor"
+                alt="dinozor-cagi"
+                class="text-decoration-none"
+              >
+                <div class="card m-2 btn">
+                  <div class="card-body p-2">
+                    <h5 class="card-title">Dinozorlar Çagı</h5>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="">
+              <a
+                href="#ronesans"
+                alt="ronesans-urunler"
+                class="text-decoration-none"
+              >
+                <div class="card m-2 btn">
+                  <div class="card-body p-2">
+                    <h5 class="card-title">Rönesans</h5>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="">
+              <a
+                href="#galaktik-gelecek"
+                alt="galaktik-gelecek"
+                class="text-decoration-none"
+              >
+                <div class="card m-2 btn">
+                  <div class="card-body p-2">
+                    <h5 class="card-title">Galaktik Gelecek</h5>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="">
+              <a href="#milenyum" alt="milenyum" class="text-decoration-none">
+                <div class="card m-2 btn">
+                  <div class="card-body p-2">
+                    <h5 class="card-title">Milenyum Yılları</h5>
+                  </div>
+                </div>
+              </a>
             </div>
           </div>
         </div>
       </section>
       <section>
-        <div class="container d-flex flex-column gap-5">
-          <div>
-            <h1>Geçmişe Dönüş Aksesuarları</h1>
-            <p>Gelecekte sıkıntı çekmeyin, geçmişte fark edilmeden yaşayın!</p>
-          </div>
-          <div class="row cards p-0 justify-items-center">
-            <div class="col-12 col-md-6 col-lg-4 mb-3">
-              <div class="card w-100">
-                <div class="img-wrapper overflow-hidden object-fit-cover">
-                  <img
-                    src="https://picsum.photos/200/300"
-                    class="card-img-top"
-                    alt="product-image"
-                  />
+        <div id="tum" class="container d-flex flex-column gap-5">
+          <ul class="nav nav-pills mb-3 gap-4" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link bg-transparent btn-outline-success link-success btn border-success"
+                id="101-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#101"
+                type="button"
+                role="tab"
+                aria-controls="101"
+                aria-selected="false"
+              >
+                Zaman yolculugu 101
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link active bg-transparent btn-outline-secondary link-secondary btn"
+                id="gecmis-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#gecmis"
+                type="button"
+                role="tab"
+                aria-controls="gecmis"
+                aria-selected="true"
+              >
+                Geçmis
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link bg-transparent btn-outline-primary link-primary border-primary btn"
+                id="gelecek-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#gelecek"
+                type="button"
+                role="tab"
+                aria-controls="gelecek"
+                aria-selected="false"
+              >
+                Gelecek
+              </button>
+            </li>
+          </ul>
+          <div class="tab-content" id="pills-tabContent">
+            <div
+              class="tab-pane fade show active"
+              id="101"
+              role="tabpanel"
+              aria-labelledby="101-tab"
+              tabindex="0"
+            >
+              <div class="mb-5">
+                <h1>Tüm Zamanlara Hazırlık!</h1>
+                <p class="text-info fs-6">Tüm zamanlara hazır olun.</p>
+              </div>
+              <div class="row cards text-light p-0 justify-items-center">
+                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                  <div class="card w-100">
+                    <div
+                      class="img-wrapper text-center overflow-hidden object-fit-cover"
+                    >
+                      <img
+                        src="./assets/passport.png"
+                        class="card-img-top"
+                        alt="Zaman Yolculuğu Pasaportu"
+                      />
+                    </div>
+                    <div class="card-body">
+                      <h3 class="card-title">Zaman Yolculuğu Pasaportu</h3>
+                      <p class="product-description text-info">
+                        Her dönemde kabul edilen, çok damgalı ve hologramlı
+                        pasaport. Bonus: Krallar, imparatorlar ve robot
+                        liderlerden özel damga toplayabilirsiniz! Ekstra
+                        Özellik: "Bu kişi kesinlikle cadı değildir" yazılı
+                        garanti belgesi içerir.
+                      </p>
+                      <p class="star-rating d-flex flex-wrap ga">
+                        <span class="text-secondary">★★★★★</span>
+                        <strong>(5/5) - 500 Yorum</strong>
+                      </p>
+                      <p class="product-price fs-2 fw-bold text-primary">
+                        ₺249.99
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div class="card-body">
-                  <h5 class="card-title">Robot Arkadaşlık Kitabı</h5>
+                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                  <div class="card w-100">
+                    <div
+                      class="img-wrapper text-center overflow-hidden object-fit-cover"
+                    >
+                      <img
+                        src="./assets/trex.png"
+                        class="card-img-top"
+                        alt="Dinozor Kaçış Seti"
+                      />
+                    </div>
+                    <div class="card-body">
+                      <h3 class="card-title">Dinozor Kaçış Seti</h3>
+                      <p class="product-description text-info">
+                        Dinozoru Korkutan Düdük: T-Rex’e özel yüksek frekanslı
+                        ses çıkarır. Görünmezlik Battaniyesi: Dinozorlar sizi
+                        göremez, insanlar da görmez. Acil Durum Ağaç Tırmanma
+                        Kiti: İçinde bir ip merdiven ve "En sağlam ağaçlar"
+                        rehberi bulunur.
+                      </p>
+                      <p class="star-rating d-flex flex-wrap ga">
+                        <span class="text-secondary">★★★★☆</span>
+                        <strong>(4.8/5) - 300 Yorum</strong>
+                      </p>
+                      <p class="product-price fs-2 fw-bold text-primary">
+                        ₺159.99
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div class="card-body">
-                  <a href="#" class="card-link btn">Sepete at</a>
+                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                  <div class="card w-100">
+                    <div
+                      class="img-wrapper text-center overflow-hidden object-fit-cover"
+                    >
+                      <img
+                        src="./assets/stone.jpg"
+                        class="card-img-top"
+                        alt="Taş Devri Kombini"
+                      />
+                    </div>
+                    <div class="card-body">
+                      <h3 class="card-title">Taş Devri Kombini</h3>
+                      <p class="product-description text-info">
+                        Şık Taş Kolye ve Deri Kıyafet Paketi: Göz alıcı bir
+                        mağara tarzı. Kullanıma Hazır El Baltası: Hem dekoratif
+                        hem işlevsel. Mağara Sanatı Kiti: İlk sanat eserlerinizi
+                        yapmak için taş kalem ve boyalar.
+                      </p>
+                      <p class="star-rating d-flex flex-wrap ga">
+                        <span class="text-secondary">★★★★☆</span>
+                        <strong>(4.6/5) - 220 Yorum</strong>
+                      </p>
+                      <p class="product-price fs-2 fw-bold text-primary">
+                        ₺99.99
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                  <div class="card w-100">
+                    <div
+                      class="img-wrapper text-center overflow-hidden object-fit-cover"
+                    >
+                      <img
+                        src="./assets/witch.jpg"
+                        class="card-img-top"
+                        alt="Orta Çağ Hayatta Kalma Rehberi"
+                      />
+                    </div>
+                    <div class="card-body">
+                      <h3 class="card-title">Orta Çağ Hayatta Kalma Rehberi</h3>
+                      <p class="product-description text-info">
+                        Cadı Olmadığınızı Kanıtlayan Belge: Mahkemelerde hayat
+                        kurtarır. Şövalyelere Karşı Zırhlı Eldiven: Tokalaşırken
+                        parmaklarınızı korur. Güvenli Kale Lokasyonları
+                        Haritası: En güvenli kaleleri ve şövalyeleri listeler.
+                      </p>
+                      <p class="star-rating d-flex flex-wrap ga">
+                        <span class="text-secondary">★★★★★</span>
+                        <strong>(5/5) - 350 Yorum</strong>
+                      </p>
+                      <p class="product-price fs-2 fw-bold text-primary">
+                        ₺129.99
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                  <div class="card w-100">
+                    <div
+                      class="img-wrapper text-center overflow-hidden object-fit-cover"
+                    >
+                      <img
+                        src="./assets/alien.png"
+                        class="card-img-top"
+                        alt="Uzaylılarla İletişim Cihazı"
+                      />
+                    </div>
+                    <div class="card-body">
+                      <h3 class="card-title">Uzaylılarla İletişim Cihazı</h3>
+                      <p class="product-description text-info">
+                        Uzaylılarla iletişim kurmak ve güvenli bir ilk temas
+                        sağlamak için ideal. Galaktik sinyalleri çözme, barış
+                        kristali ile dostluk kurma ve acil durumlarda sizi
+                        ışınlayacak bir panik butonu içerir!
+                      </p>
+                      <p class="star-rating d-flex flex-wrap ga">
+                        <span class="text-secondary">★★★★☆</span>
+                        <strong>(4.7/5) - 290 Yorum</strong>
+                      </p>
+                      <p class="product-price fs-2 fw-bold text-primary">
+                        ₺349.99
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                  <div class="card w-100">
+                    <div
+                      class="img-wrapper text-center overflow-hidden object-fit-cover"
+                    >
+                      <img
+                        src="./assets/ear-phone.png"
+                        class="card-img-top"
+                        alt="Evrensel Çeviri Kulaklığı"
+                      />
+                    </div>
+                    <div class="card-body">
+                      <h3 class="card-title">Evrensel Çeviri Kulaklığı</h3>
+                      <p class="product-description text-info">
+                        Geçmişte: Latince, eski Türkçe ve mağara adamlarının
+                        grunting seslerini çevirir. Gelecekte: Robotların 0 ve
+                        1'lerle yaptığı konuşmaları çözer. Eğlence Modu: Tarihi
+                        figürlerin ses tonuyla konuşma seçeneği (ör. Julius
+                        Caesar aksanı).
+                      </p>
+                      <p class="star-rating d-flex flex-wrap ga">
+                        <span class="text-secondary">★★★★★</span>
+                        <strong>(5/5) - 430 Yorum</strong>
+                      </p>
+                      <p class="product-price fs-2 fw-bold text-primary">
+                        ₺199.99
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                  <div class="card w-100">
+                    <div
+                      class="img-wrapper text-center overflow-hidden object-fit-cover"
+                    >
+                      <img
+                        src="./assets/robot.png"
+                        class="card-img-top"
+                        alt="Robot Arkadaşlık Kitabı"
+                      />
+                    </div>
+                    <div class="card-body">
+                      <h3 class="card-title">Robot Arkadaşlık Kitabı</h3>
+                      <p class="product-description text-info">
+                        Robotları güldürmek için en iyi 100 şaka: "Robot neden
+                        çimenleri sevmez? Çünkü hep kısa devre yapar!" Robotik
+                        selamlaşma hareketleri rehberi: Hangi robot modeline
+                        hangi selam uygun? USB Dostluk Paketi: Arkadaşlık
+                        seviyesini artıran özel veri dosyaları.
+                      </p>
+                      <p class="star-rating d-flex flex-wrap ga">
+                        <span class="text-secondary">★★★★☆</span>
+                        <strong>(4.9/5) - 310 Yorum</strong>
+                      </p>
+                      <p class="product-price fs-2 fw-bold text-primary">
+                        ₺149.99
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                  <div class="card w-100">
+                    <div
+                      class="img-wrapper text-center overflow-hidden object-fit-cover"
+                    >
+                      <img
+                        src="./assets/zps.png"
+                        class="card-img-top"
+                        alt="Zaman Tüneli Navigasyonu"
+                      />
+                    </div>
+                    <div class="card-body">
+                      <h3 class="card-title">Zaman Tüneli Navigasyonu (ZPS)</h3>
+                      <p class="product-description text-info">
+                        Geçmişte ve gelecekte en popüler durakları ve güvenli
+                        noktaları bulur. Ek Özellik: "Dinozor tehlikesi", "Cadı
+                        avı risk alanı" gibi uyarılar verir. Sesli Yönlendirme:
+                        "10 metre ileride dev bir T-Rex var, sessiz olun!"
+                      </p>
+                      <p class="star-rating d-flex flex-wrap ga">
+                        <span class="text-secondary">★★★★★</span>
+                        <strong>(5/5) - 380 Yorum</strong>
+                      </p>
+                      <p class="product-price fs-2 fw-bold text-primary">
+                        ₺299.99
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                  <div class="card w-100">
+                    <div
+                      class="img-wrapper text-center overflow-hidden object-fit-cover"
+                    >
+                      <img
+                        src="./assets/protection.png"
+                        class="card-img-top"
+                        alt="Zaman Yolcusuna Yönelik Seyahat Sigortası"
+                      />
+                    </div>
+                    <div class="card-body">
+                      <h3 class="card-title">
+                        Zaman Yolcusuna Yönelik Seyahat Sigortası
+                      </h3>
+                      <p class="product-description text-info">
+                        Geçmiş, bugün ve geleceğe güvenle seyahat etmek için
+                        gerekli olan tek sigorta! Dinozorlar, robot isyanları,
+                        tarihi değişim hataları ve uzay kazalarına karşı tam
+                        koruma!
+                      </p>
+                      <p class="star-rating d-flex flex-wrap ga">
+                        <span class="text-secondary">★★★★★</span>
+                        <strong>(5/5) - 340 Yorum</strong>
+                      </p>
+                      <p class="product-price fs-2 fw-bold text-primary">
+                        ₺499.99
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-4 mb-3">
-              <div class="card w-100">
-                <div class="img-wrapper overflow-hidden object-fit-cover">
-                  <img
-                    src="https://picsum.photos/200/300"
-                    class="card-img-top"
-                    alt="product-image"
-                  />
+            <div
+              class="tab-pane fade"
+              id="gecmis"
+              role="tabpanel"
+              aria-labelledby="gecmis-tab"
+              tabindex="0"
+            >
+              <div class="mb-5">
+                <h1>Geçmişe Dönüş Aksesuarları</h1>
+                <p class="text-info">
+                  Gelecekte sıkıntı çekmeyin, geçmişte fark edilmeden yaşayın!
+                </p>
+              </div>
+              <div class="row cards text-light p-0 justify-items-center">
+                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                  <div class="card w-100">
+                    <div
+                      class="img-wrapper text-center overflow-hidden object-fit-cover"
+                    >
+                      <img
+                        src="./assets/trex.png"
+                        class="card-img-top"
+                        alt="Dinozor Kaçış Seti"
+                      />
+                    </div>
+                    <div class="card-body">
+                      <h3 class="card-title">Dinozor Kaçış Seti</h3>
+                      <p class="product-description text-info">
+                        Dinozoru Korkutan Düdük: T-Rex’e özel yüksek frekanslı
+                        ses çıkarır. Görünmezlik Battaniyesi: Dinozorlar sizi
+                        göremez, insanlar da görmez. Acil Durum Ağaç Tırmanma
+                        Kiti: İçinde bir ip merdiven ve "En sağlam ağaçlar"
+                        rehberi bulunur.
+                      </p>
+                      <p class="star-rating d-flex flex-wrap ga">
+                        <span class="text-secondary">★★★★☆</span>
+                        <strong>(4.8/5) - 300 Yorum</strong>
+                      </p>
+                      <p class="product-price fs-2 fw-bold text-primary">
+                        ₺159.99
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div class="card-body">
-                  <h5 class="card-title">Dinozordan kaçış seti</h5>
+                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                  <div class="card w-100">
+                    <div
+                      class="img-wrapper text-center overflow-hidden object-fit-cover"
+                    >
+                      <img
+                        src="./assets/stone.jpg"
+                        class="card-img-top"
+                        alt="Taş Devri Kombini"
+                      />
+                    </div>
+                    <div class="card-body">
+                      <h3 class="card-title">Taş Devri Kombini</h3>
+                      <p class="product-description text-info">
+                        Şık Taş Kolye ve Deri Kıyafet Paketi: Göz alıcı bir
+                        mağara tarzı. Kullanıma Hazır El Baltası: Hem dekoratif
+                        hem işlevsel. Mağara Sanatı Kiti: İlk sanat eserlerinizi
+                        yapmak için taş kalem ve boyalar.
+                      </p>
+                      <p class="star-rating d-flex flex-wrap ga">
+                        <span class="text-secondary">★★★★☆</span>
+                        <strong>(4.6/5) - 220 Yorum</strong>
+                      </p>
+                      <p class="product-price fs-2 fw-bold text-primary">
+                        ₺99.99
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div class="card-body">
-                  <a href="#" class="card-link btn btn-primary">Card link</a>
+                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                  <div class="card w-100">
+                    <div
+                      class="img-wrapper text-center overflow-hidden object-fit-cover"
+                    >
+                      <img
+                        src="./assets/witch.jpg"
+                        class="card-img-top"
+                        alt="Orta Çağ Hayatta Kalma Rehberi"
+                      />
+                    </div>
+                    <div class="card-body">
+                      <h3 class="card-title">Orta Çağ Hayatta Kalma Rehberi</h3>
+                      <p class="product-description text-info">
+                        Cadı Olmadığınızı Kanıtlayan Belge: Mahkemelerde hayat
+                        kurtarır. Şövalyelere Karşı Zırhlı Eldiven: Tokalaşırken
+                        parmaklarınızı korur. Güvenli Kale Lokasyonları
+                        Haritası: En güvenli kaleleri ve şövalyeleri listeler.
+                      </p>
+                      <p class="star-rating d-flex flex-wrap ga">
+                        <span class="text-secondary">★★★★★</span>
+                        <strong>(5/5) - 350 Yorum</strong>
+                      </p>
+                      <p class="product-price fs-2 fw-bold text-primary">
+                        ₺129.99
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                  <div class="card w-100">
+                    <div
+                      class="img-wrapper text-center overflow-hidden object-fit-cover"
+                    >
+                      <img
+                        src="./assets/ear-phone.png"
+                        class="card-img-top"
+                        alt="Evrensel Çeviri Kulaklığı"
+                      />
+                    </div>
+                    <div class="card-body">
+                      <h3 class="card-title">Evrensel Çeviri Kulaklığı</h3>
+                      <p class="product-description text-info">
+                        Geçmişte: Latince, eski Türkçe ve mağara adamlarının
+                        grunting seslerini çevirir. Gelecekte: Robotların 0 ve
+                        1'lerle yaptığı konuşmaları çözer. Eğlence Modu: Tarihi
+                        figürlerin ses tonuyla konuşma seçeneği (ör. Julius
+                        Caesar aksanı).
+                      </p>
+                      <p class="star-rating d-flex flex-wrap ga">
+                        <span class="text-secondary">★★★★★</span>
+                        <strong>(5/5) - 430 Yorum</strong>
+                      </p>
+                      <p class="product-price fs-2 fw-bold text-primary">
+                        ₺199.99
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                  <div class="card w-100">
+                    <div
+                      class="img-wrapper text-center overflow-hidden object-fit-cover"
+                    >
+                      <img
+                        src="./assets/zps.png"
+                        class="card-img-top"
+                        alt="Zaman Tüneli Navigasyonu"
+                      />
+                    </div>
+                    <div class="card-body">
+                      <h3 class="card-title">Zaman Tüneli Navigasyonu (ZPS)</h3>
+                      <p class="product-description text-info">
+                        Geçmişte ve gelecekte en popüler durakları ve güvenli
+                        noktaları bulur. Ek Özellik: "Dinozor tehlikesi", "Cadı
+                        avı risk alanı" gibi uyarılar verir. Sesli Yönlendirme:
+                        "10 metre ileride dev bir T-Rex var, sessiz olun!"
+                      </p>
+                      <p class="star-rating d-flex flex-wrap ga">
+                        <span class="text-secondary">★★★★★</span>
+                        <strong>(5/5) - 380 Yorum</strong>
+                      </p>
+                      <p class="product-price fs-2 fw-bold text-primary">
+                        ₺299.99
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                  <div class="card w-100">
+                    <div
+                      class="img-wrapper text-center overflow-hidden object-fit-cover"
+                    >
+                      <img
+                        src="./assets/protection.png"
+                        class="card-img-top"
+                        alt="Zaman Yolcusuna Yönelik Seyahat Sigortası"
+                      />
+                    </div>
+                    <div class="card-body">
+                      <h3 class="card-title">
+                        Zaman Yolcusuna Yönelik Seyahat Sigortası
+                      </h3>
+                      <p class="product-description text-info">
+                        Geçmiş, bugün ve geleceğe güvenle seyahat etmek için
+                        gerekli olan tek sigorta! Dinozorlar, robot isyanları,
+                        tarihi değişim hataları ve uzay kazalarına karşı tam
+                        koruma!
+                      </p>
+                      <p class="star-rating d-flex flex-wrap ga">
+                        <span class="text-secondary">★★★★★</span>
+                        <strong>(5/5) - 340 Yorum</strong>
+                      </p>
+                      <p class="product-price fs-2 fw-bold text-primary">
+                        ₺499.99
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-4 mb-3">
-              <div class="card w-100">
-                <div class="img-wrapper overflow-hidden object-fit-cover">
-                  <img
-                    src="https://picsum.photos/200/300"
-                    class="card-img-top"
-                    alt="product-image"
-                  />
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">Dinozordan kaçış seti</h5>
-                </div>
-                <div class="card-body">
-                  <a href="#" class="card-link btn btn-primary">Card link</a>
-                </div>
+            <div
+              class="tab-pane fade"
+              id="gelecek"
+              role="tabpanel"
+              aria-labelledby="gelecek-tab"
+              tabindex="0"
+            >
+              <div class="mb-5">
+                <h1>Geçmişe Dönüş Aksesuarları</h1>
+                <p class="text-info">
+                  Gelecekte sıkıntı çekmeyin, geçmişte fark edilmeden yaşayın!
+                </p>
               </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 mb-3">
-              <div class="card w-100">
-                <div class="img-wrapper overflow-hidden object-fit-cover">
-                  <img
-                    src="https://picsum.photos/200/300"
-                    class="card-img-top"
-                    alt="product-image"
-                  />
+              <div class="row cards text-light p-0 justify-items-center">
+                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                  <div class="card w-100">
+                    <div
+                      class="img-wrapper text-center overflow-hidden object-fit-cover"
+                    >
+                      <img
+                        src="./assets/passport.png"
+                        class="card-img-top"
+                        alt="Zaman Yolculuğu Pasaportu"
+                      />
+                    </div>
+                    <div class="card-body">
+                      <h3 class="card-title">Zaman Yolculuğu Pasaportu</h3>
+                      <p class="product-description text-info">
+                        Her dönemde kabul edilen, çok damgalı ve hologramlı
+                        pasaport. Bonus: Krallar, imparatorlar ve robot
+                        liderlerden özel damga toplayabilirsiniz! Ekstra
+                        Özellik: "Bu kişi kesinlikle cadı değildir" yazılı
+                        garanti belgesi içerir.
+                      </p>
+                      <p class="star-rating d-flex flex-wrap ga">
+                        <span class="text-secondary">★★★★★</span>
+                        <strong>(5/5) - 500 Yorum</strong>
+                      </p>
+                      <p class="product-price fs-2 fw-bold text-primary">
+                        ₺249.99
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div class="card-body">
-                  <h5 class="card-title">Dinozordan kaçış seti</h5>
+                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                  <div class="card w-100">
+                    <div
+                      class="img-wrapper text-center overflow-hidden object-fit-cover"
+                    >
+                      <img
+                        src="./assets/alien.png"
+                        class="card-img-top"
+                        alt="Uzaylılarla İletişim Cihazı"
+                      />
+                    </div>
+                    <div class="card-body">
+                      <h3 class="card-title">Uzaylılarla İletişim Cihazı</h3>
+                      <p class="product-description text-info">
+                        Uzaylılarla iletişim kurmak ve güvenli bir ilk temas
+                        sağlamak için ideal. Galaktik sinyalleri çözme, barış
+                        kristali ile dostluk kurma ve acil durumlarda sizi
+                        ışınlayacak bir panik butonu içerir!
+                      </p>
+                      <p class="star-rating d-flex flex-wrap ga">
+                        <span class="text-secondary">★★★★☆</span>
+                        <strong>(4.7/5) - 290 Yorum</strong>
+                      </p>
+                      <p class="product-price fs-2 fw-bold text-primary">
+                        ₺349.99
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div class="card-body">
-                  <a href="#" class="card-link btn btn-primary">Card link</a>
+                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                  <div class="card w-100">
+                    <div
+                      class="img-wrapper text-center overflow-hidden object-fit-cover"
+                    >
+                      <img
+                        src="./assets/ear-phone.png"
+                        class="card-img-top"
+                        alt="Evrensel Çeviri Kulaklığı"
+                      />
+                    </div>
+                    <div class="card-body">
+                      <h3 class="card-title">Evrensel Çeviri Kulaklığı</h3>
+                      <p class="product-description text-info">
+                        Geçmişte: Latince, eski Türkçe ve mağara adamlarının
+                        grunting seslerini çevirir. Gelecekte: Robotların 0 ve
+                        1'lerle yaptığı konuşmaları çözer. Eğlence Modu: Tarihi
+                        figürlerin ses tonuyla konuşma seçeneği (ör. Julius
+                        Caesar aksanı).
+                      </p>
+                      <p class="star-rating d-flex flex-wrap ga">
+                        <span class="text-secondary">★★★★★</span>
+                        <strong>(5/5) - 430 Yorum</strong>
+                      </p>
+                      <p class="product-price fs-2 fw-bold text-primary">
+                        ₺199.99
+                      </p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 mb-3">
-              <div class="card w-100">
-                <div class="img-wrapper overflow-hidden object-fit-cover">
-                  <img
-                    src="https://picsum.photos/200/300"
-                    class="card-img-top"
-                    alt="product-image"
-                  />
+                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                  <div class="card w-100">
+                    <div
+                      class="img-wrapper text-center overflow-hidden object-fit-cover"
+                    >
+                      <img
+                        src="./assets/robot.png"
+                        class="card-img-top"
+                        alt="Robot Arkadaşlık Kitabı"
+                      />
+                    </div>
+                    <div class="card-body">
+                      <h3 class="card-title">Robot Arkadaşlık Kitabı</h3>
+                      <p class="product-description text-info">
+                        Robotları güldürmek için en iyi 100 şaka: "Robot neden
+                        çimenleri sevmez? Çünkü hep kısa devre yapar!" Robotik
+                        selamlaşma hareketleri rehberi: Hangi robot modeline
+                        hangi selam uygun? USB Dostluk Paketi: Arkadaşlık
+                        seviyesini artıran özel veri dosyaları.
+                      </p>
+                      <p class="star-rating d-flex flex-wrap ga">
+                        <span class="text-secondary">★★★★☆</span>
+                        <strong>(4.9/5) - 310 Yorum</strong>
+                      </p>
+                      <p class="product-price fs-2 fw-bold text-primary">
+                        ₺149.99
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div class="card-body">
-                  <h5 class="card-title">Dinozordan kaçış seti</h5>
+                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                  <div class="card w-100">
+                    <div
+                      class="img-wrapper text-center overflow-hidden object-fit-cover"
+                    >
+                      <img
+                        src="./assets/zps.png"
+                        class="card-img-top"
+                        alt="Zaman Tüneli Navigasyonu"
+                      />
+                    </div>
+                    <div class="card-body">
+                      <h3 class="card-title">Zaman Tüneli Navigasyonu (ZPS)</h3>
+                      <p class="product-description text-info">
+                        Geçmişte ve gelecekte en popüler durakları ve güvenli
+                        noktaları bulur. Ek Özellik: "Dinozor tehlikesi", "Cadı
+                        avı risk alanı" gibi uyarılar verir. Sesli Yönlendirme:
+                        "10 metre ileride dev bir T-Rex var, sessiz olun!"
+                      </p>
+                      <p class="star-rating d-flex flex-wrap ga">
+                        <span class="text-secondary">★★★★★</span>
+                        <strong>(5/5) - 380 Yorum</strong>
+                      </p>
+                      <p class="product-price fs-2 fw-bold text-primary">
+                        ₺299.99
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div class="card-body">
-                  <a href="#" class="card-link btn btn-primary">Card link</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 mb-3">
-              <div class="card w-100">
-                <div class="img-wrapper overflow-hidden object-fit-cover">
-                  <img
-                    src="https://picsum.photos/200/300"
-                    class="card-img-top"
-                    alt="product-image"
-                  />
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">Dinozordan kaçış seti</h5>
-                </div>
-                <div class="card-body">
-                  <a href="#" class="card-link btn btn-primary">Card link</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section>
-        <div class="container container d-flex flex-column gap-5">
-          <div>
-            <h1>Geleceğe Hazırlık Ürünleri</h1>
-            <p>Geleceğin teknolojisine adapte olun, utançtan kurtulun!</p>
-          </div>
-          <div class="row cards p-0 justify-items-center">
-            <div class="col-12 col-md-6 col-lg-4 mb-3">
-              <div class="card w-100">
-                <div class="img-wrapper overflow-hidden object-fit-cover">
-                  <img
-                    src="https://picsum.photos/200/300"
-                    class="card-img-top"
-                    alt="product-image"
-                  />
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">Dinozordan kaçış seti</h5>
-                </div>
-                <div class="card-body">
-                  <a href="#" class="card-link btn btn-primary">Card link</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 mb-3">
-              <div class="card w-100">
-                <div class="img-wrapper overflow-hidden object-fit-cover">
-                  <img
-                    src="https://picsum.photos/200/300"
-                    class="card-img-top"
-                    alt="product-image"
-                  />
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">Dinozordan kaçış seti</h5>
-                </div>
-                <div class="card-body">
-                  <a href="#" class="card-link btn btn-primary">Card link</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 mb-3">
-              <div class="card w-100">
-                <div class="img-wrapper overflow-hidden object-fit-cover">
-                  <img
-                    src="https://picsum.photos/200/300"
-                    class="card-img-top"
-                    alt="product-image"
-                  />
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">Dinozordan kaçış seti</h5>
-                </div>
-                <div class="card-body">
-                  <a href="#" class="card-link btn btn-primary">Card link</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 mb-3">
-              <div class="card w-100">
-                <div class="img-wrapper overflow-hidden object-fit-cover">
-                  <img
-                    src="https://picsum.photos/200/300"
-                    class="card-img-top"
-                    alt="product-image"
-                  />
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">Dinozordan kaçış seti</h5>
-                </div>
-                <div class="card-body">
-                  <a href="#" class="card-link btn btn-primary">Card link</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 mb-3">
-              <div class="card w-100">
-                <div class="img-wrapper overflow-hidden object-fit-cover">
-                  <img
-                    src="https://picsum.photos/200/300"
-                    class="card-img-top"
-                    alt="product-image"
-                  />
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">Dinozordan kaçış seti</h5>
-                </div>
-                <div class="card-body">
-                  <a href="#" class="card-link btn btn-primary">Card link</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 mb-3">
-              <div class="card w-100">
-                <div class="img-wrapper overflow-hidden object-fit-cover">
-                  <img
-                    src="https://picsum.photos/200/300"
-                    class="card-img-top"
-                    alt="product-image"
-                  />
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">Dinozordan kaçış seti</h5>
-                </div>
-                <div class="card-body">
-                  <a href="#" class="card-link btn btn-primary">Card link</a>
+                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                  <div class="card w-100">
+                    <div
+                      class="img-wrapper text-center overflow-hidden object-fit-cover"
+                    >
+                      <img
+                        src="./assets/protection.png"
+                        class="card-img-top"
+                        alt="Zaman Yolcusuna Yönelik Seyahat Sigortası"
+                      />
+                    </div>
+                    <div class="card-body">
+                      <h3 class="card-title">
+                        Zaman Yolcusuna Yönelik Seyahat Sigortası
+                      </h3>
+                      <p class="product-description text-info">
+                        Geçmiş, bugün ve geleceğe güvenle seyahat etmek için
+                        gerekli olan tek sigorta! Dinozorlar, robot isyanları,
+                        tarihi değişim hataları ve uzay kazalarına karşı tam
+                        koruma!
+                      </p>
+                      <p class="star-rating d-flex flex-wrap ga">
+                        <span class="text-secondary">★★★★★</span>
+                        <strong>(5/5) - 340 Yorum</strong>
+                      </p>
+                      <p class="product-price fs-2 fw-bold text-primary">
+                        ₺499.99
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -346,7 +939,10 @@
           <div>
             <h1>Mutlu zaman yolcuları</h1>
           </div>
-          <div id="carouselExampleCaptions" class="carousel slide">
+          <div
+            id="carouselExampleCaptions"
+            class="carousel slide box-shadow-sm"
+          >
             <div class="carousel-indicators">
               <button
                 type="button"
@@ -369,50 +965,54 @@
                 aria-label="Slide 3"
               ></button>
             </div>
-            <div class="carousel-inner">
+            <div class="carousel-inner rounded">
+              <div
+                class="retro-background rounded w-100 h-100 position-absolute z-1"
+              ></div>
               <div class="carousel-item active">
-                <img
-                  src="https://picsum.photos/200/300"
-                  class="d-block w-100"
-                  alt="carousel-item"
-                  style="height: 300px"
-                />
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>First slide label</h5>
-                  <p>
+                <div class="carousel-img-wrapper">
+                  <img
+                    src="./assets/witch-happy.png"
+                    class="d-block w-100"
+                    alt="carousel-item"
+                  />
+                </div>
+
+                <div class="carousel-caption z-1 z-1 d-none d-md-block">
+                  <h5 class="fst-italic fw-light fs-2">
                     "Orta Çağ belgelerim sayesinde cadı olmadığımı kanıtladım.
                     Az kalsın yanıyordum!"
-                  </p>
+                  </h5>
                 </div>
               </div>
               <div class="carousel-item">
-                <img
-                  src="https://picsum.photos/200/300"
-                  class="d-block w-100"
-                  alt="carousel-item"
-                  style="height: 300px"
-                />
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Second slide label</h5>
-                  <p>
+                <div class="carousel-img-wrapper">
+                  <img
+                    src="./assets/stone-selfie.jpeg"
+                    class="d-block w-100"
+                    alt="carousel-item"
+                  />
+                </div>
+                <div class="carousel-caption z-1 d-none d-md-block">
+                  <h5 class="fst-italic fw-light fs-2">
                     "Bu taş baltayı aldım, şimdi tüm kabile bana hayran! Harika
                     bir ürün. ⭐⭐⭐⭐⭐"
-                  </p>
+                  </h5>
                 </div>
               </div>
               <div class="carousel-item">
-                <img
-                  src="https://picsum.photos/200/300"
-                  class="d-block w-100"
-                  alt="carousel-item"
-                  style="height: 300px"
-                />
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Third slide label</h5>
-                  <p>
+                <div class="carousel-img-wrapper">
+                  <img
+                    src="./assets/time-machine.jpeg"
+                    class="d-block w-100"
+                    alt="carousel-item"
+                  />
+                </div>
+                <div class="carousel-caption z-1 d-none d-md-block">
+                  <h5 class="fst-italic fw-light fs-2">
                     "Bu ışınlanma cihazıyla gezegenler arası tatiller çok rahat.
                     Tavsiye ederim! ⭐⭐⭐⭐⭐"
-                  </p>
+                  </h5>
                 </div>
               </div>
             </div>
@@ -467,6 +1067,10 @@
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
       integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/b101dd4247.js"
       crossorigin="anonymous"
     ></script>
   </body>
