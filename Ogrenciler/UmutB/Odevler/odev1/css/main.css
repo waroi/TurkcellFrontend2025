@@ -12070,7 +12070,6 @@ body.no-scroll {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  animation: pulse 2s infinite;
 }
 .pokemon-card .pokeball {
   width: 100%;
@@ -12154,20 +12153,6 @@ body.no-scroll {
   transition-delay: 0.2s;
 }
 
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-    opacity: 0.6;
-  }
-  50% {
-    transform: scale(1.05);
-    opacity: 0.3;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 0.6;
-  }
-}
 @keyframes shake {
   0%, 100% {
     transform: rotate(0);
@@ -12207,7 +12192,7 @@ body.no-scroll {
 
 .featured-products {
   padding: 3rem 0;
-  background-color: #1fc077;
+  background-color: #2A6EB5;
 }
 .featured-products h2, .featured-products .h2 {
   color: #2C3E50;
@@ -12237,37 +12222,6 @@ body.no-scroll {
   background-color: #ff3838;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.footer {
-  background: #2C3E50;
-  color: #fff;
-  padding: 2rem 0;
-}
-.footer__grid {
-  display: grid;
-  gap: 2rem;
-}
-@media (min-width: 768px) {
-  .footer__grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-.footer__links {
-  /*elemanların hem yatayda hem dikeyde ortalanması gereken yerlerde kullanıldı*/
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  align-items: flex-start;
-}
-.footer__links a {
-  color: #fff;
-  text-decoration: none;
-  padding: 0.5rem 0;
-}
-.footer__links a:hover {
-  color: #FF6B6B;
 }
 
 .featured-products {
@@ -12302,6 +12256,36 @@ body.no-scroll {
   100% {
     right: 100%;
   }
+}
+.footer {
+  background: #2C3E50;
+  color: #fff;
+  padding: 2rem 0;
+}
+.footer__grid {
+  display: grid;
+  gap: 2rem;
+}
+@media (min-width: 768px) {
+  .footer__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.footer__links {
+  /*elemanların hem yatayda hem dikeyde ortalanması gereken yerlerde kullanıldı*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.footer__links a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 0;
+}
+.footer__links a:hover {
+  color: #FF6B6B;
 }
 
 /*# sourceMappingURL=main.css.map */
