@@ -16,15 +16,26 @@
 
 $font-primary: 'RF Dewi Header', sans-serif;
 $font-secondary: 'RF Dewi', sans-serif;
+$mobile-width: 576px;
 $tablet-width: 768px;
 $desktop-width: 992px;
 $spacing-base: 1rem;
 $grid-gap: 2rem;
 $banner-height: 100vh;
+$pokemon-red: #E20101;
+$pokemon-blue: #2A6EB5;
+$pokemon-yellow: #FFCB05;
+$dark: #1A1A1A;
+$gray: #666666;
+$light-gray: #F5F5F5;
+$dark-blue: darken($pokemon-blue, 15%);
+$light-yellow: lighten($pokemon-yellow, 15%);
+$light-red: lighten($pokemon-red, 15%);
+$primary: $pokemon-blue;
+$secondary: $pokemon-yellow;
+$accent: $pokemon-red;
 $overlay-opacity: 0.7;
 $content-max-width: 1200px;
-$yellow: #dfb200;
-$blue: #2A6EB5;
 $breakpoints: (
   'mobile': 576px,
   'tablet': 768px,
@@ -74,11 +85,11 @@ $breakpoints: (
 }
 
 %dark-card-base {
-  background-color:$dark;
+  background-color: $dark;
   border-radius: 1rem;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  color:#fff;  
+  color: #fff;
 }
 
 %heading-base {
@@ -95,20 +106,12 @@ body {
     overflow: hidden;
   }
 }
-
 .banner {
-  /*BEM metodolojisi ile birlikte kullanılan iç içe yazım kullandım
-  
-  SOURCE:
-  https://ysoftaoglu.com/post/bem-metodolojisi-nedir/ 
-
-  & işareti üst sınıfı referans alır.*/
-
   position: relative;
   height: $banner-height;
   width: 100%;
   overflow: hidden;
-  background-color: $bg-yellow;
+  background-color: $dark-blue;
 
   &__video-wrapper {
     position: absolute;
@@ -117,6 +120,22 @@ body {
     width: 100%;
     height: 100%;
     overflow: hidden;
+    background: $dark-blue;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        135deg,
+        rgba($dark-blue, 0.8),
+        rgba($dark, 0.9)
+      );
+      z-index: 1;
+    }
   }
 
   &__video-container {
@@ -135,63 +154,67 @@ body {
       border: none;
 
       @media (min-aspect-ratio: 16/9) {
-        height: 56vw; // 16:9 aspect ratio
+        height: 56.25vw;
       }
 
       @media (max-aspect-ratio: 16/9) {
-        width: 177vh; // 16:9 aspect ratio
+        width: 177.78vh;
       }
     }
   }
 
-  &__overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(rgba(0, 0, 0, $overlay-opacity),
-        rgba(0, 0, 0, $overlay-opacity * 0.8));
-  }
-
   &__content {
     position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
     height: 100%;
-    max-width: $content-max-width;
     margin: 0 auto;
-    padding: $spacing-base * 2;
-    @include flex-center;
+    padding: 0 5%;
+    z-index: 2;
+
+    @media (max-width: $tablet-width) {
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      padding: $spacing-base;
+    }
   }
 
   &__text {
+    flex: 0 1 60%;
+    margin-right: 2rem;
     text-align: center;
-    color: #fff;
-    max-width: 800px;
-    padding: $spacing-base * 2;
-    background-color: rgba(0, 0, 0, 0.473);
-    border-radius: 20px;
+    color: #fff; // Paragraf rengi beyaz kalacak
+    animation: slideInLeft 1s ease-out;
+
+    @media (max-width: $tablet-width) {
+      flex: 0 1 auto;
+      margin-right: 0;
+      margin-bottom: 2rem;
+      width: 100%;
+    }
   }
 
-  &__title {
-    @extend %heading-base;
-    font-size: 6vw;
-    margin-bottom: $spacing-base;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    color: $yellow;
-    /*text-shadow:
-        5px 5px 0 $blue,
-        -5px 5px 0 $blue,
-        -5px -5px 0 $blue,
-        5px -5px 0 $blue;
-    // responsive çalışmadı, 
-    // küçük ekranlarda bozulma oldu
-    // o yüzden webkit text stroke kullandım
-    */
-    -webkit-text-stroke: 2px $blue;
+  &__text {
+    flex: 0 1 60%;
+    margin-right: 2rem;
+    text-align: center;
+    color: #fff; // Paragraf rengi beyaz kalacak
+    animation: slideInLeft 1s ease-out;
+
+    @media (max-width: $tablet-width) {
+      flex: 0 1 auto;
+      margin-right: 0;
+      margin-bottom: 2rem;
+      width: 100%;
+    }
   }
 
   &__logo {
     margin: $spacing-base 0;
+    font-size: 8vw;
 
     .poke-logo {
       max-width: 100%;
@@ -206,29 +229,128 @@ body {
   }
 
   &__subtitle {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
+    line-height: 1.4;
     margin-bottom: $spacing-base * 2;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+
+    @media (max-width: $tablet-width) {
+      font-size: 1.2rem;
+    }
   }
 
   &__cta {
+    display: inline-block;
     padding: $spacing-base $spacing-base * 2;
     font-size: 1.25rem;
     text-transform: uppercase;
     letter-spacing: 1px;
     border-radius: 2rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
+    background-color: $pokemon-red;
+    color: #fff;
+    border: none;
 
     &:hover {
       transform: translateY(-2px);
+      background-color: lighten($pokemon-red, 10%);
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
+  }
+
+  &__image {
+    flex: 0 1 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: slideInRight 1s ease-out;
+
+    @media (max-width: $tablet-width) {
+      flex: 0 1 auto;
+      max-width: 70%; // Mobilde daha küçük olacak
+      margin: 0 auto;
+    }
+
+    @media (max-width: $mobile-width) {
+      max-width: 60%; // Daha küçük ekranlarda daha da küçük
+    }
+  }
+
+  .pokedex-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    .pokedex {
+      max-height: 400px;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+
+      @media (max-width: $tablet-width) {
+        max-height: 250px;
+      }
+
+      @media (max-width: $mobile-width) {
+        max-height: 200px;
+      }
+    }
+
+    .pokedex-btn {
+      position: absolute;
+      bottom: 20px;
+      padding: $spacing-base $spacing-base * 2;
+      background-color: $pokemon-red;
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      border: 2px solid $pokemon-yellow;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+      &:hover {
+        transform: translateY(-2px);
+        background-color: darken($pokemon-red, 10%);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+      }
+
+      @media (max-width: $tablet-width) {
+        bottom: 10px;
+        padding: $spacing-base $spacing-base * 1.5;
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 .pokemon-card {
 
   position: relative;
-  height: 300px;  
+  height: 300px;
   padding: $spacing-base * 1.25;
   display: flex;
   flex-direction: column;
@@ -237,9 +359,14 @@ body {
   cursor: pointer;
 
   &:hover {
+    background: linear-gradient(145deg, $dark-blue, $dark);
     height: 500px;
     @include hover-effect;
-    @extend %dark-card-base; 
+    @extend %dark-card-base;
+  }
+
+  .pokemon-card__content {
+    background: linear-gradient(145deg, rgba($dark-blue, 0.95), rgba($dark, 0.95));
   }
 
   .image {
@@ -297,7 +424,7 @@ body {
     transition: all 0.3s ease;
     white-space: nowrap;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    
+
     @media (hover: none) {
       content: "Tap to reveal";
     }
@@ -322,13 +449,16 @@ body {
         opacity: 0;
         animation: none;
       }
+
       .pokemon {
         opacity: 1;
       }
+
       .pokemon-hint {
         opacity: 0;
         transform: translateX(-50%) translateY(10px);
       }
+
       .pokeball-container::before {
         animation: none;
       }
@@ -340,7 +470,7 @@ body {
     top: -120px;
     width: 100%;
     padding: $spacing-base $spacing-base * 1.5;
-    color:#fff;  
+    color: #fff;
     text-align: center;
     visibility: hidden;
     opacity: 0;
@@ -367,35 +497,43 @@ body {
 }
 
 @keyframes shake {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: rotate(0);
   }
+
   25% {
     transform: rotate(-10deg);
   }
+
   75% {
     transform: rotate(10deg);
   }
 }
+
 // Products Grid Layout
 .products-grid {
   @include grid-responsive;
-  padding: $spacing-base;
+  padding: $spacing-base * 2;
   margin: 0 auto;
   max-width: $content-max-width;
 
   @media (min-width: map-get($breakpoints, 'tablet')) {
-    padding: $spacing-base * 2;
+    padding: $spacing-base * 3;
   }
 }
+
 // Featured Products Section
 .featured-products {
   padding: $spacing-base * 3 0;
-  background-color: $blue;
+  background: linear-gradient(145deg, $dark-blue, $dark);
+
 
   h2 {
     @extend %heading-base;
     color: $dark;
+    text-shadow: 2px 2px 4px rgba($pokemon-blue, 0.2);
     text-align: center;
     margin-bottom: $spacing-base * 3;
     font-size: 2.5rem;
@@ -412,7 +550,7 @@ body {
   border-color: darken($background, 10%);
   color: #fff;
   transition: all 0.3s ease;
-  
+
   &:hover {
     background-color: darken($background, 10%);
     transform: translateY(-2px);
@@ -422,13 +560,18 @@ body {
 
 // Button Styles for Cards
 .btn-primary {
-  @include custom-button($primary);
+  @include custom-button($pokemon-red);
   padding: $spacing-base $spacing-base * 1.5;
   border-radius: 2rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 600;
   font-size: 0.9rem;
+
+  &:hover {
+    background-color: $light-red;
+    border-color: $pokemon-red;
+  }
 }
 
 .featured-products {
@@ -457,8 +600,13 @@ body {
 }
 
 @keyframes runBottom {
-  0% { right: -80px; }
-  100% { right: 100%; }
+  0% {
+    right: -80px;
+  }
+
+  100% {
+    right: 100%;
+  }
 }
 
 // Footer with Flexbox and Grid
@@ -487,7 +635,7 @@ body {
       padding: $spacing-base * 0.5 0;
 
       &:hover {
-        color: $primary;
+        color: $pokemon-yellow;
       }
     }
   }
