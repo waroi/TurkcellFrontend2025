@@ -24,7 +24,7 @@
   </head>
   <body class="text-light">
     <main
-      class="main-card position-relative border h-100 z-0 box-shadow m-0 mt-md-3 mx-md-5 rounded overflow-hidden"
+      class="main-card position-relative border h-100 z-0 box-shadow m-0 overflow-hidden"
     >
       <div
         class="retro-background top-0 start-0 w-100 h-100 position-absolute z-n1"
@@ -100,7 +100,7 @@
                 </ul>
                 <form class="d-flex" role="search">
                   <input
-                    class="form-control me-2 search-input box-shadow shadow-none outline-0 bg-light"
+                    class="form-control me-2 search-input box-shadow shadow-none outline-0"
                     type="search"
                     placeholder="Search"
                     aria-label="Search"
@@ -117,48 +117,101 @@
           </div>
         </nav>
       </header>
-      <section class="about-section">
-        <div class="container">
-          <h2 class="text-center mb-4">Hakkımızda</h2>
-          <div class="justify-content-center">
-            <div class="px-5 mx-5">
-              <p class="text-center">
-                RetroRota, geçmişten geleceğe giden yolcular için her şeyi sunan
-                eşsiz bir alışveriş platformudur. Bizimle, zamanın her
-                diliminden en ihtiyacınız olan ürünlere kolayca ulaşabilirsiniz.
-                İster geçmişin nostaljik ürünleri, ister geleceğin inovatif
-                tasarımları olsun, RetroRota her zaman size en iyi çözümleri
-                sunar.
-              </p>
-              <p class="text-center">
-                RetroRota'da, geçmişin vintage koleksiyonlarından, geleceğin
-                teknolojik aksesuvarlarına kadar her şey bir arada! Zaman
-                yolculuğu yaparken ihtiyacınız olan her türlü ürün burada. Bu
-                platformda zamanın sınırlarını aşarak geçmişe ve geleceğe dair
-                her türlü ürünü bulabilir, yolculuklarınızı daha konforlu ve
-                keyifli hale getirebilirsiniz.
-              </p>
-              <p class="text-center">
-                **Gelişmiş Teknoloji**, **Vintage Moda**, **Sonsuz
-                Mümkünlükler**: Geçmişin nostaljik parçalarından, geleceğe dair
-                tasarımlara kadar geniş bir yelpazede koleksiyonlar sunuyoruz.
-                RetroRota, zaman yolculuğunuzu unutulmaz kılmak için size özel
-                bir deneyim sunar.
-              </p>
-              <p class="text-center">
-                Geçmişten geleceğe doğru yolculuğa çıkmaya hazır mısınız?
-                Öyleyse hemen keşfedin ve koleksiyonumuzdaki her bir parçayı
-                sizin için özenle seçtiğimiz koleksiyonlardan keşfedin!
-              </p>
+      <section
+        class="description-section position-relative d-flex align-items-center"
+      >
+        <div class="star position-absolute"></div>
+        <div class="star position-absolute"></div>
+        <div class="star position-absolute"></div>
+        <div class="star position-absolute"></div>
+        <div class="row bg-transparent px-4">
+          <div class="col-12 col-md-8 product-images">
+            <div
+              id="carouselEarPhone"
+              class="carousel slide box-shadow-sm w-100"
+            >
+              <div class="carousel-inner rounded">
+                <div class="carousel-item active">
+                  <div class="carousel-img-wrapper p-5">
+                    <img
+                      src="./assets/ear-phone.png"
+                      class="d-block w-100"
+                      alt="Evrensel Çeviri Kulaklığı"
+                    />
+                  </div>
+                </div>
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselEarPhone"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselEarPhone"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
             </div>
           </div>
-          <div class="text-center mt-5">
-            <a href="#shop" class="btn btn-primary px-5">Basla</a>
+          <div class="col-12 col-md-4">
+            <div class="w-100 p-2 d-flex flex-column gap-3">
+              <h3 class="card-title">Evrensel Çeviri Kulaklığı</h3>
+              <p class="product-description text-info">
+                Geçmişte: Latince, eski Türkçe ve mağara adamlarının grunting
+                seslerini çevirir. Gelecekte: Robotların 0 ve 1'lerle yaptığı
+                konuşmaları çözer. Eğlence Modu: Tarihi figürlerin ses tonuyla
+                konuşma seçeneği (ör. Julius Caesar aksanı).
+              </p>
+              <p class="star-rating d-flex flex-wrap gap-2">
+                <span class="text-secondary">★★★★★</span>
+                <strong>(5/5) - 430 Yorum</strong>
+              </p>
+              <p class="product-price fs-2 fw-bold text-primary">₺199.99</p>
+              <div class="mb-3">
+                <label for="quantityEarPhone" class="form-label fw-bold"
+                  >Adet:</label
+                >
+                <input
+                  type="number"
+                  id="quantityEarPhone"
+                  name="quantity"
+                  class="form-control w-50"
+                  min="1"
+                  value="1"
+                />
+              </div>
+              <div
+                class="d-flex align-items-center justify-content-around gap-3"
+              >
+                <button class="btn btn-primary flex-grow-1">Sepete Ekle</button>
+                <button class="btn outline-primary border-primary flex-grow-1">
+                  Şimdi Al
+                </button>
+                <button
+                  class="btn btn-outline-secondary border-0 d-flex align-items-center gap-2 m-0"
+                >
+                  <i class="fa-regular fa-heart fs-4"></i>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
-
-      <footer class="bg-transparent py-5">
+      <footer class="bg-transparent text-white py-5">
         <div class="container">
           <div class="row mt-4">
             <div class="col-12 col-lg-6 text-center text-lg-start">

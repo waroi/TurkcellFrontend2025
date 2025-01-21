@@ -22,7 +22,14 @@ footer {
 }
 .img-wrapper {
   max-height: 400px;
-} //silincek
+} //silincek mi?
+input {
+  background-color: $light; //TODO: HTMl içine alınabilir
+}
+footer {
+  color: $light; //TODO:footerdaki text-white etiketi silince otomatik olucak zaten.inherit oalrak.
+}
+
 .main-card {
   background: linear-gradient(
     120deg,

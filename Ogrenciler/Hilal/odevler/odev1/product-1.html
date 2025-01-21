@@ -100,7 +100,7 @@
                 </ul>
                 <form class="d-flex" role="search">
                   <input
-                    class="form-control me-2 search-input box-shadow shadow-none outline-0"
+                    class="form-control me-2 search-input box-shadow shadow-none outline-0 bg-light"
                     type="search"
                     placeholder="Search"
                     aria-label="Search"
@@ -124,82 +124,41 @@
         <div class="star position-absolute"></div>
         <div class="star position-absolute"></div>
         <div class="star position-absolute"></div>
-        <div class="row bg-transparent">
+        <div class="row bg-transparent px-3">
           <div class="col-12 col-md-8 product-images">
             <div
               id="carouselExampleCaptions"
               class="carousel slide box-shadow-sm w-100"
             >
-              <div class="carousel-indicators">
-                <button
-                  type="button"
-                  data-bs-target="#carouselExampleCaptions"
-                  data-bs-slide-to="0"
-                  class="active"
-                  aria-current="true"
-                  aria-label="Slide 1"
-                ></button>
-                <button
-                  type="button"
-                  data-bs-target="#carouselExampleCaptions"
-                  data-bs-slide-to="1"
-                  aria-label="Slide 2"
-                ></button>
-                <button
-                  type="button"
-                  data-bs-target="#carouselExampleCaptions"
-                  data-bs-slide-to="2"
-                  aria-label="Slide 3"
-                ></button>
-              </div>
               <div class="carousel-inner rounded">
                 <div
-                  class="retro-background top-0 left-0 rounded w-100 h-100 position-absolute z-1"
+                  class="top-0 left-0 rounded w-100 h-100 position-absolute z-1"
                 ></div>
                 <div class="carousel-item active">
-                  <div class="carousel-img-wrapper">
+                  <div class="carousel-img-wrapper p-5">
                     <img
-                      src="./assets/witch-happy.png"
+                      src="./assets/trex.png"
                       class="d-block w-100"
                       alt="carousel-item"
                     />
-                  </div>
-
-                  <div class="carousel-caption z-1 z-1 d-none d-md-block">
-                    <h5 class="fst-italic fw-light fs-2">
-                      "Orta Çağ belgelerim sayesinde cadı olmadığımı kanıtladım.
-                      Az kalsın yanıyordum!"
-                    </h5>
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <div class="carousel-img-wrapper">
+                  <div class="carousel-img-wrapper p-5">
                     <img
-                      src="./assets/stone-selfie.jpeg"
+                      src="./assets/trex.png"
                       class="d-block w-100"
                       alt="carousel-item"
                     />
-                  </div>
-                  <div class="carousel-caption z-1 d-none d-md-block">
-                    <h5 class="fst-italic fw-light fs-2">
-                      "Bu taş baltayı aldım, şimdi tüm kabile bana hayran!
-                      Harika bir ürün. ⭐⭐⭐⭐⭐"
-                    </h5>
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <div class="carousel-img-wrapper">
+                  <div class="carousel-img-wrapper p-5">
                     <img
-                      src="./assets/time-machine.jpeg"
+                      src="./assets/trex.png"
                       class="d-block w-100"
                       alt="carousel-item"
                     />
-                  </div>
-                  <div class="carousel-caption z-1 d-none d-md-block">
-                    <h5 class="fst-italic fw-light fs-2">
-                      "Bu ışınlanma cihazıyla gezegenler arası tatiller çok
-                      rahat. Tavsiye ederim! ⭐⭐⭐⭐⭐"
-                    </h5>
                   </div>
                 </div>
               </div>
@@ -230,7 +189,7 @@
             </div>
           </div>
           <div class="col-12 col-md-4">
-            <div class="w-100 p-2 d-flex flex-column">
+            <div class="w-100 p-2 d-flex flex-column gap-1">
               <h3 class="card-title">Dinozor Kaçış Seti</h3>
               <p class="product-description text-info">
                 Dinozoru Korkutan Düdük: T-Rex’e özel yüksek frekanslı ses
@@ -238,16 +197,40 @@
                 insanlar da görmez. Acil Durum Ağaç Tırmanma Kiti: İçinde bir ip
                 merdiven ve "En sağlam ağaçlar" rehberi bulunur.
               </p>
-              <p class="star-rating d-flex flex-wrap ga">
+              <p class="star-rating d-flex flex-wrap gap-2">
                 <span class="text-secondary">★★★★☆</span>
                 <strong>(4.8/5) - 300 Yorum</strong>
               </p>
               <p class="product-price fs-2 fw-bold text-primary">₺159.99</p>
+              <div class="mb-3">
+                <label for="quantity" class="form-label fw-bold">Adet:</label>
+                <input
+                  type="number"
+                  id="quantity"
+                  name="quantity"
+                  class="form-control w-50 bg-light"
+                  min="1"
+                  value="1"
+                />
+              </div>
+              <div
+                class="d-flex align-items-center justify-content-around gap-3"
+              >
+                <button class="btn btn-primary flex-grow-1">Sepete Ekle</button>
+                <button class="btn outline-primary border-primary flex-grow-1">
+                  Simdi Al
+                </button>
+                <button
+                  class="btn btn-outline-secondary border-0 d-flex align-items-center gap-2 m-0"
+                >
+                  <i class="fa-regular fa-heart fs-4"></i>
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </section>
-      <footer class="bg-transparent text-white py-5">
+      <footer class="bg-transparent py-5">
         <div class="container">
           <div class="row mt-4">
             <div class="col-12 col-lg-6 text-center text-lg-start">
