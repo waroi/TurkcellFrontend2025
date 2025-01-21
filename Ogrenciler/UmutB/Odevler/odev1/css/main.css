@@ -12721,4 +12721,54 @@ body.no-scroll {
   margin-top: 1rem;
 }
 
+.product-detail {
+  padding: 2rem 0;
+  background: linear-gradient(145deg, #2A6EB5, #1A1A1A);
+  min-height: 80vh;
+  color: white;
+}
+
+.product-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.product-image:hover {
+  transform: scale(1.05);
+}
+
+.product-info {
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+}
+
+.price {
+  font-size: 2rem;
+  color: #FFCB05;
+  font-weight: bold;
+}
+
+.stats {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+}
+
+.btn-add-to-cart {
+  background-color: #DC0A2D;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.btn-add-to-cart:hover {
+  background-color: #ff1f1f;
+  transform: translateY(-2px);
+}
+
 /*# sourceMappingURL=main.css.map */

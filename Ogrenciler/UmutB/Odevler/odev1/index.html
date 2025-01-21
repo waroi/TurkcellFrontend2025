@@ -126,7 +126,7 @@
                             <h3 class="pokemon-card__title">Pikachu</h3>
                             <p>The world's most famous Electric-type Pokémon!</p>
                             <p class="pokemon-card__price" aria-label="Price: 29.99 dollars">$29.99</p>
-                            <a href="product-detail.html" class="btn btn-primary">View Details</a>
+                            <a href="pikachu-product-detail.html" class="btn btn-primary">View Details</a>
                         </div>
                     </article>
 
@@ -144,7 +144,7 @@
                             <h3 class="pokemon-card__title">Charizard</h3>
                             <p>The mighty Fire/Flying type evolution of Charmeleon!</p>
                             <p class="pokemon-card__price" aria-label="Price: 39.99 dollars">$39.99</p>
-                            <a href="product-detail.html" class="btn btn-primary">View Details</a>
+                            <a href="charizard.html" class="btn btn-primary">View Details</a>
                         </div>
                     </article>
 
@@ -403,14 +403,8 @@
                     <form class="needs-validation">
                         <div class="mb-3">
                             <label for="name" class="form-label">Full Name</label>
-                            <input type="text" 
-                                   class="form-control"
-                                   id="name"
-                                   name="name"
-                                   required
-                                   minlength="2"
-                                   pattern="[A-Za-z\s]+"
-                                   placeholder="Enter your full name">
+                            <input type="text" class="form-control" id="name" name="name" required minlength="2"
+                                pattern="[A-Za-z\s]+" placeholder="Enter your full name">
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
@@ -421,12 +415,8 @@
 
                         <div class="mb-3">
                             <label for="email" class="form-label">Email Address</label>
-                            <input type="email"
-                                   class="form-control"
-                                   id="email"
-                                   name="email"
-                                   required
-                                   placeholder="name@example.com">
+                            <input type="email" class="form-control" id="email" name="email" required
+                                placeholder="name@example.com">
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
@@ -437,13 +427,8 @@
 
                         <div class="mb-3">
                             <label for="phone" class="form-label">Phone Number</label>
-                            <input type="tel"
-                                   class="form-control"
-                                   id="phone"
-                                   name="phone"
-                                   pattern="[0-9]{10,}"
-                                   placeholder="Enter your phone number"
-                                   required>
+                            <input type="tel" class="form-control" id="phone" name="phone" pattern="[0-9]{10,}"
+                                placeholder="Enter your phone number" required>
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
@@ -454,10 +439,7 @@
 
                         <div class="mb-3">
                             <label for="subject" class="form-label">Subject</label>
-                            <select class="form-select" 
-                                    id="subject"
-                                    name="subject"
-                                    required>
+                            <select class="form-select" id="subject" name="subject" required>
                                 <option value="">Choose a subject...</option>
                                 <option value="general">General Inquiry</option>
                                 <option value="support">Technical Support</option>
@@ -469,29 +451,18 @@
                             </div>
                         </div>
 
-                        <!-- Message Textarea -->
                         <div class="mb-3">
                             <label for="message" class="form-label">Message</label>
-                            <textarea class="form-control"
-                                      id="message"
-                                      name="message"
-                                      rows="5"
-                                      required
-                                      minlength="10"
-                                      placeholder="Enter your message here..."></textarea>
+                            <textarea class="form-control" id="message" name="message" rows="5" required minlength="10"
+                                placeholder="Enter your message here..."></textarea>
                             <div class="invalid-feedback">
                                 Please enter a message (minimum 10 characters).
                             </div>
                         </div>
 
-                        <!-- Terms Checkbox -->
                         <div class="mb-3">
                             <div class="form-check">
-                                <input class="form-check-input"
-                                       type="checkbox"
-                                       id="terms"
-                                       name="terms"
-                                       required>
+                                <input class="form-check-input" type="checkbox" id="terms" name="terms" required>
                                 <label class="form-check-label" for="terms">
                                     I agree to the Terms and Conditions
                                 </label>
@@ -501,8 +472,7 @@
                             </div>
                         </div>
                         <div>
-                            <button class="btn btn-primary"
-                                    type="submit">
+                            <button class="btn btn-primary" type="submit">
                                 Send Message
                             </button>
                         </div>
@@ -512,64 +482,61 @@
         </section>
     </main>
 
-<footer class="footer py-5" role="contentinfo">
-    <div class="container">
-        <div class="row g-4">
-            <!-- Company Info -->
-            <div class="col-12 col-md-4">
-                <div class="footer__brand mb-4">
-                    <img src="./assets/logo.png" alt="Pokemon Shop Logo" height="50">
-                </div>
-                <p class="mb-3">Your trusted source for authentic Pokemon since 2024. We bring the joy of Pokemon collecting to trainers worldwide.</p>
-            </div>
-
-            <!-- Quick Links -->
-            <div class="col-6 col-md-2">
-                <h5 class="text-white mb-3">Quick Links</h5>
-                <ul class="list-unstyled footer__links">
-                    <li><a href="products.html">Shop Pokemon</a></li>
-                    <li><a href="#featured-products">New Arrivals</a></li>
-                    <li><a href="#about-section">About Us</a></li>
-                    <li><a href="#faq">FAQ</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-
-            <!-- Customer Service -->
-            <div class="col-6 col-md-3">
-                <h5 class="text-white mb-3">Customer Service</h5>
-                <ul class="list-unstyled footer__links">
-                    <li><a href="#">Shipping Information</a></li>
-                    <li><a href="#">Returns & Exchanges</a></li>
-                    <li><a href="#">Size Guide</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                </ul>
-            </div>
-
-            <!-- Newsletter Signup -->
-            <div class="col-12 col-md-3">
-                <h5 class="text-white mb-3">Newsletter</h5>
-                <p class="text-white-50 mb-3">Subscribe to receive updates, access to exclusive deals, and more.</p>
-                <form class="footer__newsletter">
-                    <div class="input-group">
-                        <input type="email" class="form-control" placeholder="Enter your email" aria-label="Email for newsletter">
-                        <button class="btn btn-primary" type="submit">Subscribe</button>
+    <footer class="footer py-5" role="contentinfo">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-12 col-md-4">
+                    <div class="footer__brand mb-4">
+                        <img src="./assets/logo.png" alt="Pokemon Shop Logo" height="50">
                     </div>
-                </form>
-            </div>
-        </div>
+                    <p class="mb-3">Your trusted source for authentic Pokemon since 2024. We bring the joy of Pokemon
+                        collecting to trainers worldwide.</p>
+                </div>
 
-        <!-- Bottom Footer -->
-        <div class="footer__bottom mt-5 pt-4 border-top border-secondary">
-            <div class="row">
-                <div class="col-md-6 text-center text-md-start">
-                    <p class="mb-0 text-white-50">&copy; 2024 Pokemon Shop. All rights reserved.</p>
+                <div class="col-6 col-md-2">
+                    <h5 class="text-white mb-3">Quick Links</h5>
+                    <ul class="list-unstyled footer__links">
+                        <li><a href="products.html">Shop Pokemon</a></li>
+                        <li><a href="#featured-products">New Arrivals</a></li>
+                        <li><a href="#about-section">About Us</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-md-3">
+                    <h5 class="text-white mb-3">Customer Service</h5>
+                    <ul class="list-unstyled footer__links">
+                        <li><a href="#">Shipping Information</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-12 col-md-3">
+                    <h5 class="text-white mb-3">Newsletter</h5>
+                    <p class="text-white-50 mb-3">Subscribe to receive updates, access to exclusive deals, and more.</p>
+                    <form class="footer__newsletter">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Enter your email"
+                                aria-label="Email for newsletter">
+                            <button class="btn btn-primary" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer__bottom mt-5 pt-4 border-top border-secondary">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start">
+                        <p class="mb-0 text-white-50">&copy; 2024 Pokemon Shop. All rights reserved.</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
