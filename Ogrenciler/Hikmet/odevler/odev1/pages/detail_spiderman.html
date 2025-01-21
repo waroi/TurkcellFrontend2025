@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Detail Page</title>
+		<link rel="stylesheet" href="../css/main.css" />
+	</head>
+	<body>
+		<!-- scripts -->
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+			crossorigin="anonymous"></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+			integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+			crossorigin="anonymous"></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+			integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+			crossorigin="anonymous"></script>
+		<!-- scripts -->
+		<div class="discount container-fluid bg-primary">
+			<div
+				class="animatedText d-flex text-align-center justify-content-between align-items-center">
+				<span class="me-4">%50 Discount For all items</span>
+				<span class="me-4">%50 Discount For all items</span>
+				<span class="me-4">%50 Discount For all items</span>
+				<span class="me-4">%50 Discount For all items</span>
+				<span>%50 Discount For all items</span>
+			</div>
+		</div>
+		<!-- navbar -->
+		<section class="container">
+			<nav class="navbar navbar-expand-lg navbar-light">
+				<div class="container-fluid">
+					<img
+						class="navbar-brand"
+						href="#"
+						src="../HERO.svg"
+						style="height: 30px" />
+					<button
+						class="navbar-toggler"
+						type="button"
+						data-bs-toggle="collapse"
+						data-bs-target="#navbarSupportedContent"
+						aria-controls="navbarSupportedContent"
+						aria-expanded="false"
+						aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+							<li class="nav-item">
+								<a class="nav-link active" aria-current="page" href="#">Home</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">Superheros</a>
+							</li>
+							<li class="nav-item dropdown">
+								<a
+									class="nav-link dropdown-toggle"
+									href="#"
+									role="button"
+									data-bs-toggle="dropdown"
+									aria-expanded="false">
+									Dropdown
+								</a>
+								<ul class="dropdown-menu">
+									<li><a class="dropdown-item" href="#">Action</a></li>
+									<li><a class="dropdown-item" href="#">Another action</a></li>
+									<li><hr class="dropdown-divider" /></li>
+									<li>
+										<a class="dropdown-item" href="#">Something else here</a>
+									</li>
+								</ul>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">Contact</a>
+							</li>
+						</ul>
+						<form class="d-flex" role="search">
+							<input
+								class="form-control me-2"
+								type="search"
+								placeholder="Search"
+								aria-label="Search" />
+							<button class="btn btn-outline-success" type="submit">
+								Search
+							</button>
+						</form>
+					</div>
+				</div>
+			</nav>
+		</section>
+		<!-- navbar -->
+
+		<!-- product detail section-->
+		<div class="container my-5">
+			<!-- Ürün Başlık ve Ana Kısım -->
+			<div class="row g-4 mb-5">
+				<!-- Sol Taraf - Ürün Görseli -->
+				<div class="col-lg-6">
+					<div class="product-image-container">
+						<img
+							src="https://picsum.photos/600/600"
+							alt="Product Image"
+							class="main-image img-fluid rounded-3" />
+						<!-- Küçük Görsel Galerisi -->
+						<div class="thumbnail-gallery mt-3 d-flex gap-2">
+							<img
+								src="https://picsum.photos/150/150"
+								class="thumbnail active img-fluid"
+								alt="Thumbnail 1" />
+							<img
+								src="https://picsum.photos/151/150"
+								class="thumbnail img-fluid"
+								alt="Thumbnail 2" />
+							<img
+								src="https://picsum.photos/152/150"
+								class="thumbnail img-fluid"
+								alt="Thumbnail 3" />
+							<img
+								src="https://picsum.photos/153/150"
+								class="thumbnail img-fluid"
+								alt="Thumbnail 4" />
+						</div>
+					</div>
+				</div>
+
+				<!-- Sağ Taraf - Ürün Bilgileri -->
+				<div class="col-lg-6">
+					<div class="product-info">
+						<h1 class="product-title mb-3">Premium Wireless Headphones</h1>
+
+						<!-- Puan ve Değerlendirmeler -->
+						<div class="ratings mb-3">
+							<div class="stars">
+								<i class="bi bi-star-fill"></i>
+								<i class="bi bi-star-fill"></i>
+								<i class="bi bi-star-fill"></i>
+								<i class="bi bi-star-fill"></i>
+								<i class="bi bi-star-half"></i>
+								<span class="rating-text ms-2">(4.5/5)</span>
+							</div>
+							<span class="reviews-count">128 değerlendirme</span>
+						</div>
+
+						<!-- Fiyat -->
+						<div class="price-container mb-4">
+							<span class="current-price">$299.99</span>
+							<span class="original-price">$399.99</span>
+							<span class="discount-badge">25% OFF</span>
+						</div>
+
+						<!-- Kısa Açıklama -->
+						<p class="product-short-desc mb-4">
+							Premium kalitede aktif gürültü önleme özellikli, 30 saat pil
+							ömrüne sahip kablosuz kulaklık.
+						</p>
+
+						<!-- Renk Seçimi -->
+						<div class="color-selection mb-4">
+							<h6 class="option-title">Renk</h6>
+							<div class="color-options">
+								<button
+									class="color-option active"
+									style="background-color: #000000"></button>
+								<button
+									class="color-option"
+									style="background-color: #ffffff"></button>
+								<button
+									class="color-option"
+									style="background-color: #c0c0c0"></button>
+							</div>
+						</div>
+
+						<!-- Adet Seçimi ve Sepete Ekle -->
+						<div class="purchase-section">
+							<div class="quantity-selector mb-3">
+								<button class="qty-btn decrease">-</button>
+								<input type="number" value="1" min="1" class="quantity-input" />
+								<button class="qty-btn increase">+</button>
+							</div>
+							<button class="btn btn-primary add-to-cart-btn">
+								<i class="bi bi-cart-plus"></i>
+								Sepete Ekle
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Detaylı Bilgi Bölümü -->
+			<div class="product-details mt-5">
+				<ul class="nav nav-tabs" id="productTabs" role="tablist">
+					<li class="nav-item">
+						<a
+							class="nav-link active"
+							id="description-tab"
+							data-bs-toggle="tab"
+							href="#description"
+							>Ürün Açıklaması</a
+						>
+					</li>
+					<li class="nav-item">
+						<a
+							class="nav-link"
+							id="specs-tab"
+							data-bs-toggle="tab"
+							href="#specs"
+							>Özellikler</a
+						>
+					</li>
+					<li class="nav-item">
+						<a
+							class="nav-link"
+							id="reviews-tab"
+							data-bs-toggle="tab"
+							href="#reviews"
+							>Değerlendirmeler</a
+						>
+					</li>
+				</ul>
+
+				<div class="tab-content mt-4 h-75" id="productTabsContent">
+					<!-- Açıklama Tab -->
+					<div class="tab-pane fade show active" id="description">
+						<div class="tab-pane fade show active" id="description">
+							<h3>Ürün Açıklaması</h3>
+							<p>Detaylı ürün açıklaması ve özellikleri burada yer alır...</p>
+							<ul class="feature-list">
+								<li>Aktif Gürültü Önleme Teknolojisi</li>
+								<li>30 Saat Pil Ömrü</li>
+								<li>Hızlı Şarj Özelliği</li>
+								<li>Bluetooth 5.0 Bağlantı</li>
+							</ul>
+						</div>
+					</div>
+
+					<!-- Özellikler Tab -->
+					<div class="tab-pane fade" id="specs">
+						<h3>Teknik Özellikler</h3>
+						<div class="spec-item row align-items-center mb-5">
+							<div class="d-flex justify-content-center col-md-6">
+								<div class="spec-image">
+									<img
+										src="https://i.pinimg.com/736x/80/d6/92/80d6923c618c748bc6363593e6185b84.jpg"
+										alt="Özellik 1"
+										class="img-fluid rounded shadow" />
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="spec-content">
+									<h4>
+										Dinamik ve Esnek Ağ Yapısı: Modern Frontend Framework’ler
+									</h4>
+									<p>
+										Spider-Man’in örümcek ağları, tıpkı modern frontend
+										framework’leri (React, Vue, Angular) gibi karmaşık ama
+										düzenli bir yapı sunar. Bu ağlar, dinamik kullanıcı
+										arayüzlerinin temel taşlarını temsil eder. Esnek ve
+										dayanıklı ağ yapısı, tasarımdaki modülerlik ve yeniden
+										kullanılabilir bileşenlerle eşdeğerdir.
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- Özellik 2 - Sağ Resim Sol Açıklama -->
+						<div class="spec-item row align-items-center mb-5">
+							<div class="d-flex justify-content-center col-md-6 order-md-2">
+								<div class="spec-image">
+									<img
+										src="https://i.pinimg.com/736x/02/01/01/0201015fe83f1fcd474e9878157609ea.jpg"
+										alt="Özellik 2"
+										class="img-fluid rounded shadow" />
+								</div>
+							</div>
+							<div class="col-md-6 order-md-1">
+								<div class="spec-content">
+									<h4>
+										Çeviklik ve Uyarlanabilirlik: Kullanıcı Dostu Tasarımlar
+									</h4>
+									<p>
+										Peter Parker’ın çevik hareketleri, frontend geliştiricilerin
+										tasarımlarını kullanıcı ihtiyaçlarına göre hızla optimize
+										etme yeteneğini temsil eder. Kullanıcı deneyimini
+										iyileştirmek için yapılan hızlı prototiplemeler ve
+										düzenlemeler, Spider-Man’in hızını ve esnekliğini simgeler.
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- Özellik 3 - Sol Resim Sağ Açıklama -->
+						<div class="spec-item row align-items-center mb-5">
+							<div class="d-flex justify-content-center col-md-6">
+								<div class="spec-image">
+									<img
+										src="https://thumbor.evrimagaci.org/Av0Wxo5vAqFHEzWuiiz0F5jMXrQ=/825x0/filters:format(webp)/old%2Fcontent_media%2F1c3d01b168fb54a81be251c2f67e7d83.jpeg"
+										alt="Özellik 3"
+										class="img-fluid rounded shadow" />
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="spec-content">
+									<h4>
+										Örümcek Hissi: Kullanıcı Deneyimi İçin Ayrıntılara Dikkat
+									</h4>
+									<p>
+										Spider-Man’in Örümcek Hissi, bir frontend geliştiricinin her
+										pikselin yerini ve her etkileşimi detaylıca düşünmesi
+										gibidir. Kullanıcıların davranışlarını tahmin eden ve her
+										dokunuşun etkisini optimize eden tasarımlar, tıpkı
+										Spider-Man’in hassas duyuları gibi her zaman bir adım
+										öndedir.
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- Özellik 4 - Sağ Resim Sol Açıklama -->
+						<div class="spec-item row align-items-center">
+							<div class="d-flex justify-content-center col-md-6 order-md-2">
+								<div class="spec-image">
+									<img
+										src="https://i.pinimg.com/736x/5d/2d/fa/5d2dfa35dfdd312c9412a3251e64a778.jpg"
+										alt="Özellik 4"
+										class="img-fluid rounded shadow" />
+								</div>
+							</div>
+							<div class="col-md-6 order-md-1">
+								<div class="spec-content">
+									<h4>
+										Renk ve Kontrast: Erişilebilirlik ve Tasarım Prensipleri
+									</h4>
+									<p>
+										Spider-Man’in kostümündeki kırmızı ve mavi renkler,
+										tasarımda kontrast ve erişilebilirlik kurallarına vurgu
+										yapar. Kullanıcı arayüzlerinde renklerin doğru kullanımı,
+										görsel hiyerarşiyi ve kullanıcı deneyimini iyileştirir.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Değerlendirmeler Tab -->
+					<div class="tab-pane fade" id="reviews">
+						<h3>Müşteri Değerlendirmeleri</h3>
+						<!-- Örnek Değerlendirme -->
+						<div class="review-card">
+							<div class="review-header">
+								<div class="stars">
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star-fill"></i>
+								</div>
+								<span class="review-date">15 Ocak 2024</span>
+							</div>
+							<h5 class="reviewer-name">John Doe</h5>
+							<p class="review-text">
+								Harika bir ürün! Ses kalitesi muhteşem...
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- product detail section-->
+	</body>
+</html>
