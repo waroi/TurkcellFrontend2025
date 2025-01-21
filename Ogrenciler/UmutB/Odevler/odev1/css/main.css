@@ -63,7 +63,7 @@
   --bs-info: #0dcaf0;
   --bs-warning: #ffc107;
   --bs-danger: #dc3545;
-  --bs-light: #ECF0F1;
+  --bs-light: #1fc077;
   --bs-dark: #2C3E50;
   --bs-primary-rgb: 255, 107, 107;
   --bs-secondary-rgb: 78, 205, 196;
@@ -71,7 +71,7 @@
   --bs-info-rgb: 13, 202, 240;
   --bs-warning-rgb: 255, 193, 7;
   --bs-danger-rgb: 220, 53, 69;
-  --bs-light-rgb: 236, 240, 241;
+  --bs-light-rgb: 31, 192, 119;
   --bs-dark-rgb: 44, 62, 80;
   --bs-primary-text-emphasis: rgb(102, 42.8, 42.8);
   --bs-secondary-text-emphasis: rgb(31.2, 82, 78.4);
@@ -2042,13 +2042,13 @@ progress {
 
 .table-light {
   --bs-table-color: #000;
-  --bs-table-bg: #ECF0F1;
-  --bs-table-border-color: rgb(188.8, 192, 192.8);
-  --bs-table-striped-bg: rgb(224.2, 228, 228.95);
+  --bs-table-bg: #1fc077;
+  --bs-table-border-color: rgb(24.8, 153.6, 95.2);
+  --bs-table-striped-bg: rgb(29.45, 182.4, 113.05);
   --bs-table-striped-color: #000;
-  --bs-table-active-bg: rgb(212.4, 216, 216.9);
+  --bs-table-active-bg: rgb(27.9, 172.8, 107.1);
   --bs-table-active-color: #000;
-  --bs-table-hover-bg: rgb(218.3, 222, 222.925);
+  --bs-table-hover-bg: rgb(28.675, 177.6, 110.075);
   --bs-table-hover-color: #000;
   color: var(--bs-table-color);
   border-color: var(--bs-table-border-color);
@@ -3098,19 +3098,19 @@ textarea.form-control-lg {
 
 .btn-light {
   --bs-btn-color: #000;
-  --bs-btn-bg: #ECF0F1;
-  --bs-btn-border-color: #ECF0F1;
+  --bs-btn-bg: #1fc077;
+  --bs-btn-border-color: #1fc077;
   --bs-btn-hover-color: #000;
-  --bs-btn-hover-bg: rgb(200.6, 204, 204.85);
-  --bs-btn-hover-border-color: rgb(188.8, 192, 192.8);
-  --bs-btn-focus-shadow-rgb: 201, 204, 205;
+  --bs-btn-hover-bg: rgb(26.35, 163.2, 101.15);
+  --bs-btn-hover-border-color: rgb(24.8, 153.6, 95.2);
+  --bs-btn-focus-shadow-rgb: 26, 163, 101;
   --bs-btn-active-color: #000;
-  --bs-btn-active-bg: rgb(188.8, 192, 192.8);
-  --bs-btn-active-border-color: rgb(177, 180, 180.75);
+  --bs-btn-active-bg: rgb(24.8, 153.6, 95.2);
+  --bs-btn-active-border-color: rgb(23.25, 144, 89.25);
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   --bs-btn-disabled-color: #000;
-  --bs-btn-disabled-bg: #ECF0F1;
-  --bs-btn-disabled-border-color: #ECF0F1;
+  --bs-btn-disabled-bg: #1fc077;
+  --bs-btn-disabled-border-color: #1fc077;
 }
 
 .btn-dark {
@@ -3233,19 +3233,19 @@ textarea.form-control-lg {
 }
 
 .btn-outline-light {
-  --bs-btn-color: #ECF0F1;
-  --bs-btn-border-color: #ECF0F1;
+  --bs-btn-color: #1fc077;
+  --bs-btn-border-color: #1fc077;
   --bs-btn-hover-color: #000;
-  --bs-btn-hover-bg: #ECF0F1;
-  --bs-btn-hover-border-color: #ECF0F1;
-  --bs-btn-focus-shadow-rgb: 236, 240, 241;
+  --bs-btn-hover-bg: #1fc077;
+  --bs-btn-hover-border-color: #1fc077;
+  --bs-btn-focus-shadow-rgb: 31, 192, 119;
   --bs-btn-active-color: #000;
-  --bs-btn-active-bg: #ECF0F1;
-  --bs-btn-active-border-color: #ECF0F1;
+  --bs-btn-active-bg: #1fc077;
+  --bs-btn-active-border-color: #1fc077;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #ECF0F1;
+  --bs-btn-disabled-color: #1fc077;
   --bs-btn-disabled-bg: transparent;
-  --bs-btn-disabled-border-color: #ECF0F1;
+  --bs-btn-disabled-border-color: #1fc077;
   --bs-gradient: none;
 }
 
@@ -6873,8 +6873,8 @@ textarea.form-control-lg {
   text-decoration-color: RGBA(var(--bs-light-rgb), var(--bs-link-underline-opacity, 1)) !important;
 }
 .link-light:hover, .link-light:focus {
-  color: RGBA(240, 243, 244, var(--bs-link-opacity, 1)) !important;
-  text-decoration-color: RGBA(240, 243, 244, var(--bs-link-underline-opacity, 1)) !important;
+  color: RGBA(76, 205, 146, var(--bs-link-opacity, 1)) !important;
+  text-decoration-color: RGBA(76, 205, 146, var(--bs-link-underline-opacity, 1)) !important;
 }
 
 .link-dark {
@@ -11877,6 +11877,7 @@ textarea.form-control-lg {
   src: url("/fonts/rf-dewi-ultrabold.ttf") format("truetype");
   font-weight: 600;
   font-display: swap;
+  /* swap özelliği yazı tipi yüklenene kadar sistem yazı tipinin görüntülenmesini sağlıyor */
 }
 @font-face {
   font-family: "RF Dewi";
@@ -11892,7 +11893,7 @@ textarea.form-control-lg {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.pokemon-card__title, .banner__title {
+.featured-products h2, .featured-products .h2, .pokemon-card__content h3, .pokemon-card__content .h3, .banner__title {
   font-family: "RF Dewi Header", sans-serif;
   font-weight: 600;
   line-height: 1.2;
@@ -11907,6 +11908,12 @@ body.no-scroll {
 }
 
 .banner {
+  /*BEM metodolojisi ile birlikte kullanılan iç içe yazım kullandım
+
+  SOURCE:
+  https://ysoftaoglu.com/post/bem-metodolojisi-nedir/ 
+
+  & işareti üst sınıfı referans alır.*/
   position: relative;
   height: 100vh;
   width: 100%;
@@ -11938,12 +11945,12 @@ body.no-scroll {
 }
 @media (min-aspect-ratio: 16/9) {
   .banner__video-container iframe {
-    height: 56.25vw;
+    height: 56vw;
   }
 }
 @media (max-aspect-ratio: 16/9) {
   .banner__video-container iframe {
-    width: 177.78vh;
+    width: 177vh;
   }
 }
 .banner__overlay {
@@ -11960,6 +11967,7 @@ body.no-scroll {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
+  /*elemanların hem yatayda hem dikeyde ortalanması gereken yerlerde kullanıldı*/
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11977,14 +11985,16 @@ body.no-scroll {
   margin-bottom: 1rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   color: #dfb200;
-  -webkit-text-stroke: 2px #2A6EB5;
   /*text-shadow:
-  5px 5px 0 $blue,
-  -5px 5px 0 $blue,
-  -5px -5px 0 $blue,
-  5px -5px 0 $blue;
-  didnt work responsiveley :(
+      5px 5px 0 $blue,
+      -5px 5px 0 $blue,
+      -5px -5px 0 $blue,
+      5px -5px 0 $blue;
+  // responsive çalışmadı, 
+  // küçük ekranlarda bozulma oldu
+  // o yüzden webkit text stroke kullandım
   */
+  -webkit-text-stroke: 2px #2A6EB5;
 }
 .banner__logo {
   margin: 1rem 0;
@@ -12016,10 +12026,168 @@ body.no-scroll {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
+.pokemon-card {
+  position: relative;
+  height: 300px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+.pokemon-card:hover {
+  height: 500px;
+  /*yükseltme animasyonu sağlayan mixin*/
+  transition: transform 0.3s ease;
+}
+.pokemon-card:hover:hover {
+  transform: translateY(-5px);
+}
+.pokemon-card .image {
+  width: 260px;
+  height: 260px;
+  margin-bottom: 100px;
+  margin-top: -20px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+.pokemon-card .pokeball-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.pokemon-card .pokeball-container::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+.pokemon-card .pokeball {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  padding: 1rem;
+  object-fit: contain;
+  animation: shake 0.5s ease-in-out infinite;
+  transition: opacity 0.3s ease-in-out;
+}
+.pokemon-card .pokemon-hint {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(42, 110, 181, 0.9);
+  color: white;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  opacity: 1;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+@media (hover: none) {
+  .pokemon-card .pokemon-hint {
+    content: "Tap to reveal";
+  }
+}
+.pokemon-card .pokemon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  padding: 1rem;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.pokemon-card:hover .image .pokeball {
+  opacity: 0;
+  animation: none;
+}
+.pokemon-card:hover .image .pokemon {
+  opacity: 1;
+}
+.pokemon-card:hover .image .pokemon-hint {
+  opacity: 0;
+  transform: translateX(-50%) translateY(10px);
+}
+.pokemon-card:hover .image .pokeball-container::before {
+  animation: none;
+}
+.pokemon-card__content {
+  position: relative;
+  top: -120px;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  color: #2C3E50;
+  text-align: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+}
+.pokemon-card__content h3, .pokemon-card__content .h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.pokemon-card__content p {
+  font-family: "RF Dewi", sans-serif;
+  margin-bottom: 1rem;
+}
+.pokemon-card:hover .pokemon-card__content {
+  margin-top: 1rem;
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0.2s;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+}
+@keyframes shake {
+  0%, 100% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  75% {
+    transform: rotate(10deg);
+  }
+}
 .products-grid {
+  /*Mobil ekranlarda: Tek kolon
+  Tablet ekranlarda: İki kolon
+  Masaüstü ekranlarda: Üç kolon*/
   display: grid;
   gap: 2rem;
   padding: 1rem;
+  margin: 0 auto;
+  max-width: 1200px;
 }
 @media (min-width: 768px) {
   .products-grid {
@@ -12031,28 +12199,44 @@ body.no-scroll {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+@media (min-width: 768px) {
+  .products-grid {
+    padding: 2rem;
+  }
+}
 
-.pokemon-card {
-  transition: transform 0.3s ease;
+.featured-products {
+  padding: 3rem 0;
+  background-color: #1fc077;
 }
-.pokemon-card:hover {
-  transform: translateY(-5px);
+.featured-products h2, .featured-products .h2 {
+  color: #2C3E50;
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
 }
-.pokemon-card__image {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
+@media (min-width: 768px) {
+  .featured-products h2, .featured-products .h2 {
+    font-size: 3rem;
+  }
 }
-.pokemon-card__content {
-  padding: 1.5rem;
-}
-.pokemon-card__title {
-  font-size: 1.5rem;
-}
-.pokemon-card__price {
-  color: #FF6B6B;
+
+.btn-primary {
+  background-color: #FF6B6B;
+  border-color: #ff3838;
+  color: #fff;
+  transition: all 0.3s ease;
+  padding: 1rem 1.5rem;
+  border-radius: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   font-weight: 600;
-  font-size: 1.25rem;
+  font-size: 0.9rem;
+}
+.btn-primary:hover {
+  background-color: #ff3838;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .footer {
@@ -12070,6 +12254,7 @@ body.no-scroll {
   }
 }
 .footer__links {
+  /*elemanların hem yatayda hem dikeyde ortalanması gereken yerlerde kullanıldı*/
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12083,6 +12268,40 @@ body.no-scroll {
 }
 .footer__links a:hover {
   color: #FF6B6B;
+}
+
+.featured-products {
+  position: relative;
+  overflow: hidden;
+  padding: 3rem 0;
+}
+
+.pikachu-runner {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+}
+
+.pikachu-runner img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.pikachu-bottom {
+  bottom: 0;
+  animation: runBottom 8s linear infinite;
+  animation-delay: 4s;
+  transform: scaleX(-1);
+}
+
+@keyframes runBottom {
+  0% {
+    right: -80px;
+  }
+  100% {
+    right: 100%;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

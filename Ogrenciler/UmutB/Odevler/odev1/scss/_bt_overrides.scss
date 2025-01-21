@@ -1,12 +1,9 @@
-// _bt_overrides.scss
-
-// SCSS Variables for Bootstrap overrides
 $primary: #FF6B6B;
 $secondary: #4ECDC4;
 $dark: #2C3E50;
-$light: #ECF0F1;
+$light: #1fc077;
 $bg-yellow:#dfb200;
-// Mixins for common Bootstrap patterns
+
 @mixin button-variant($background) {
   background-color: $background;
   border-color: darken($background, 10%);
@@ -17,7 +14,6 @@ $bg-yellow:#dfb200;
   }
 }
 
-// Extend placeholder for common Bootstrap elements
 %bootstrap-card-base {
   border: none;
   border-radius: 1rem;
@@ -25,7 +21,6 @@ $bg-yellow:#dfb200;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-// Nested Bootstrap overrides
 .navbar {
   padding: 1rem 0;
   background-color: $bg-yellow;

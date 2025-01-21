@@ -12,7 +12,6 @@
 </head>
 
 <body>
-    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark" role="navigation" aria-label="Main navigation">
         <div class="container">
             <a class="navbar-brand" href="index.html" aria-label="Pokemon Shop Home">
@@ -48,7 +47,6 @@
     </nav>
 
     <main id="main-content">
-        <!-- Hero Banner -->
         <section class="banner pb-2" aria-label="Welcome banner">
             <div class="banner__video-wrapper">
                 <div class="banner__video-container">
@@ -78,37 +76,169 @@
             </div>
             
         </section>
-
-        <div class="mt-5" style="z-index:40; width:100%; min-height:50px; display: flex; flex-direction: row; align-items:end; justify-content:end;">
-            <span style="display: flex; flex-direction: row; align-items:end; justify-content:end;">
-                <img class="poke-logo" src="./assets/runningpikachu.gif" alt="Running Pikachu Gif" width="auto"
-                    height="80">
-            </span>   
-        </div>
-
-        <!-- Featured Products -->
         <section class="featured-products py-5" aria-labelledby="featured-heading">
+            <div class="pikachu-runner pikachu-bottom">
+                <img src="./assets/runningpikachu.gif" alt="Running Pikachu Gif">
+            </div>
             <div class="container">
                 <h2 id="featured-heading" class="text-center mb-4">BESTSELLERS</h2>
                 <div class="products-grid" role="grid">
-                    <!-- Product Card -->
+                    <!-- Pokemon Card 1 -->
                     <article class="pokemon-card" role="gridcell">
-                        <img src="images/charizard-plush.jpg" alt="Charizard Plush Toy" class="pokemon-card__image">
+                        <div class="image">
+                            <div class="pokeball-container">
+                                <img class="pokeball" src="./assets/pokeball.png" alt="Pokeball containing Pikachu">
+                                <span class="pokemon-hint">Hover to reveal Pikachu!</span>
+                            </div>
+                            <img class="pokemon" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png" alt="Pikachu">
+                        </div>
                         <div class="pokemon-card__content">
-                            <h3 class="pokemon-card__title">Charizard Plush</h3>
-                            <p>Premium quality Charizard plush toy, perfect for Pokemon fans!</p>
+                            <h3 class="pokemon-card__title">Pikachu</h3>
+                            <p>The world's most famous Electric-type Pokémon!</p>
                             <p class="pokemon-card__price" aria-label="Price: 29.99 dollars">$29.99</p>
-                            <a href="product-detail.html" class="btn btn-primary"
-                                aria-label="View details for Charizard Plush">View Details</a>
+                            <a href="product-detail.html" class="btn btn-primary">View Details</a>
                         </div>
                     </article>
-                    <!-- Add more product cards here -->
+                
+                    <!-- Pokemon Card 2 -->
+                    <article class="pokemon-card" role="gridcell">
+                        <div class="image">
+                            <div class="pokeball-container">
+                                <img class="pokeball" src="./assets/pokeball.png" alt="Pokeball containing Charizard">
+                                <span class="pokemon-hint">Hover to reveal Charizard!</span>
+                            </div>
+                            <img class="pokemon" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/006.png" alt="Charizard">
+                        </div>
+                        <div class="pokemon-card__content">
+                            <h3 class="pokemon-card__title">Charizard</h3>
+                            <p>The mighty Fire/Flying type evolution of Charmeleon!</p>
+                            <p class="pokemon-card__price" aria-label="Price: 39.99 dollars">$39.99</p>
+                            <a href="product-detail.html" class="btn btn-primary">View Details</a>
+                        </div>
+                    </article>
+                
+                    <!-- Pokemon Card 3 -->
+                    <article class="pokemon-card" role="gridcell">
+                        <div class="image">
+                            <div class="pokeball-container">
+                                <img class="pokeball" src="./assets/pokeball.png" alt="Pokeball containing Mewtwo">
+                                <span class="pokemon-hint">Hover to reveal Mewtwo!</span>
+                            </div>
+                            <img class="pokemon" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/150.png" alt="Mewtwo">
+                        </div>
+                        <div class="pokemon-card__content">
+                            <h3 class="pokemon-card__title">Mewtwo</h3>
+                            <p>An enhanced Psychic-type Legendary Pokémon!</p>
+                            <p class="pokemon-card__price" aria-label="Price: 49.99 dollars">$49.99</p>
+                            <a href="product-detail.html" class="btn btn-primary">View Details</a>
+                        </div>
+                    </article>
+                
+                    <!-- Pokemon Card 4 -->
+                    <article class="pokemon-card" role="gridcell">
+                        <div class="image">
+                            <div class="pokeball-container">
+                                <img class="pokeball" src="./assets/pokeball.png" alt="Pokeball containing Dragonite">
+                                <span class="pokemon-hint">Hover to reveal Dragonite!</span>
+                            </div>
+                            <img class="pokemon" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/149.png" alt="Dragonite">
+                        </div>
+                        <div class="pokemon-card__content">
+                            <h3 class="pokemon-card__title">Dragonite</h3>
+                            <p>The powerful Dragon/Flying type evolution of Dragonair!</p>
+                            <p class="pokemon-card__price" aria-label="Price: 44.99 dollars">$44.99</p>
+                            <a href="product-detail.html" class="btn btn-primary">View Details</a>
+                        </div>
+                    </article>
+                
+                    <!-- Pokemon Card 5 -->
+                    <article class="pokemon-card" role="gridcell">
+                        <div class="image">
+                            <div class="pokeball-container">
+                                <img class="pokeball" src="./assets/pokeball.png" alt="Pokeball containing Snorlax">
+                                <span class="pokemon-hint">Hover to reveal Snorlax!</span>
+                            </div>
+                            <img class="pokemon" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/143.png" alt="Snorlax">
+                        </div>
+                        <div class="pokemon-card__content">
+                            <h3 class="pokemon-card__title">Snorlax</h3>
+                            <p>The sleepy Normal-type Pokémon for blocking paths!</p>
+                            <p class="pokemon-card__price" aria-label="Price: 34.99 dollars">$34.99</p>
+                            <a href="product-detail.html" class="btn btn-primary">View Details</a>
+                        </div>
+                    </article>
+                
+                    <!-- Pokemon Card 6 -->
+                    <article class="pokemon-card" role="gridcell">
+                        <div class="image">
+                            <div class="pokeball-container">
+                                <img class="pokeball" src="./assets/pokeball.png" alt="Pokeball containing Vaporeon">
+                                <span class="pokemon-hint">Hover to reveal Vaporeon!</span>
+                            </div>
+                            <img class="pokemon" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/134.png" alt="Vaporeon">
+                        </div>
+                        <div class="pokemon-card__content">
+                            <h3 class="pokemon-card__title">Vaporeon</h3>
+                            <p>The Water-type evolution of Eevee!</p>
+                            <p class="pokemon-card__price" aria-label="Price: 32.99 dollars">$32.99</p>
+                            <a href="product-detail.html" class="btn btn-primary">View Details</a>
+                        </div>
+                    </article>
+                
+                    <!-- Pokemon Card 7 -->
+                    <article class="pokemon-card" role="gridcell">
+                        <div class="image">
+                            <div class="pokeball-container">
+                                <img class="pokeball" src="./assets/pokeball.png" alt="Pokeball containing Gengar">
+                                <span class="pokemon-hint">Hover to reveal Gengar!</span>
+                            </div>
+                            <img class="pokemon" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/094.png" alt="Gengar">
+                        </div>
+                        <div class="pokemon-card__content">
+                            <h3 class="pokemon-card__title">Gengar</h3>
+                            <p>The spooky Ghost/Poison type final form of Gastly!</p>
+                            <p class="pokemon-card__price" aria-label="Price: 36.99 dollars">$36.99</p>
+                            <a href="product-detail.html" class="btn btn-primary">View Details</a>
+                        </div>
+                    </article>
+                
+                    <!-- Pokemon Card 8 -->
+                    <article class="pokemon-card" role="gridcell">
+                        <div class="image">
+                            <div class="pokeball-container">
+                                <img class="pokeball" src="./assets/pokeball.png" alt="Pokeball containing Lapras">
+                                <span class="pokemon-hint">Hover to reveal Lapras!</span>
+                            </div>
+                            <img class="pokemon" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/131.png" alt="Lapras">
+                        </div>
+                        <div class="pokemon-card__content">
+                            <h3 class="pokemon-card__title">Lapras</h3>
+                            <p>The gentle Water/Ice type transport Pokémon!</p>
+                            <p class="pokemon-card__price" aria-label="Price: 38.99 dollars">$38.99</p>
+                            <a href="product-detail.html" class="btn btn-primary">View Details</a>
+                        </div>
+                    </article>
+                
+                    <!-- Pokemon Card 9 -->
+                    <article class="pokemon-card" role="gridcell">
+                        <div class="image">
+                            <div class="pokeball-container">
+                                <img class="pokeball" src="./assets/pokeball.png" alt="Pokeball containing Arcanine">
+                                <span class="pokemon-hint">Hover to reveal Arcanine!</span>
+                            </div>
+                            <img class="pokemon" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/059.png" alt="Arcanine">
+                        </div>
+                        <div class="pokemon-card__content">
+                            <h3 class="pokemon-card__title">Arcanine</h3>
+                            <p>The majestic Fire-type evolution of Growlithe!</p>
+                            <p class="pokemon-card__price" aria-label="Price: 35.99 dollars">$35.99</p>
+                            <a href="product-detail.html" class="btn btn-primary">View Details</a>
+                        </div>
+                    </article>
                 </div>
-            </div>
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer__grid">
