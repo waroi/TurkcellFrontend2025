@@ -102,30 +102,66 @@
 			<div class="row g-4 mb-5">
 				<!-- Sol Taraf - Ürün Görseli -->
 				<div class="col-lg-6">
-					<div class="product-image-container">
-						<img
-							src="https://picsum.photos/600/600"
-							alt="Product Image"
-							class="main-image img-fluid rounded-3" />
-						<!-- Küçük Görsel Galerisi -->
-						<div class="thumbnail-gallery mt-3 d-flex gap-2">
-							<img
-								src="https://picsum.photos/150/150"
-								class="thumbnail active img-fluid"
-								alt="Thumbnail 1" />
-							<img
-								src="https://picsum.photos/151/150"
-								class="thumbnail img-fluid"
-								alt="Thumbnail 2" />
-							<img
-								src="https://picsum.photos/152/150"
-								class="thumbnail img-fluid"
-								alt="Thumbnail 3" />
-							<img
-								src="https://picsum.photos/153/150"
-								class="thumbnail img-fluid"
-								alt="Thumbnail 4" />
+					<div id="carouselExampleIndicators" class="carousel slide">
+						<div class="carousel-indicators">
+							<button
+								type="button"
+								data-bs-target="#carouselExampleIndicators"
+								data-bs-slide-to="0"
+								class="active"
+								aria-current="true"
+								aria-label="Slide 1"></button>
+							<button
+								type="button"
+								data-bs-target="#carouselExampleIndicators"
+								data-bs-slide-to="1"
+								aria-label="Slide 2"></button>
+							<button
+								type="button"
+								data-bs-target="#carouselExampleIndicators"
+								data-bs-slide-to="2"
+								aria-label="Slide 3"></button>
 						</div>
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<img
+									src="https://i.pinimg.com/736x/99/35/a3/9935a337042ce68a2b141c682d7d6adf.jpg"
+									class="d-block w-100 carousel-img"
+									alt="..." />
+							</div>
+							<div class="carousel-item">
+								<img
+									src="https://i.pinimg.com/736x/fc/a7/e3/fca7e34843113353d55ad8f59875161f.jpg"
+									class="d-block w-100 carousel-img"
+									alt="..." />
+							</div>
+							<div class="carousel-item">
+								<img
+									src="https://i.pinimg.com/736x/c6/8d/c2/c68dc2cd6d5b869df67c1adfaa083376.jpg"
+									class="d-block w-100 carousel-img"
+									alt="..." />
+							</div>
+						</div>
+						<button
+							class="carousel-control-prev"
+							type="button"
+							data-bs-target="#carouselExampleIndicators"
+							data-bs-slide="prev">
+							<span
+								class="carousel-control-prev-icon"
+								aria-hidden="true"></span>
+							<span class="visually-hidden">Previous</span>
+						</button>
+						<button
+							class="carousel-control-next"
+							type="button"
+							data-bs-target="#carouselExampleIndicators"
+							data-bs-slide="next">
+							<span
+								class="carousel-control-next-icon"
+								aria-hidden="true"></span>
+							<span class="visually-hidden">Next</span>
+						</button>
 					</div>
 				</div>
 
