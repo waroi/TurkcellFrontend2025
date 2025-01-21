@@ -4,3 +4,183 @@ $primary: red;
 	height: 500px;
 	object-fit: cover;
 }
+
+.footer {
+	background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+	color: #fff;
+	padding: 4rem 0 0;
+	position: relative;
+
+	// Sütun Stilleri
+	.footer-column {
+		margin-bottom: 2rem;
+
+		h4 {
+			color: #fff;
+			font-size: 1.25rem;
+			font-weight: 600;
+			margin-bottom: 1.5rem;
+			position: relative;
+			padding-bottom: 0.5rem;
+
+			&::after {
+				content: "";
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				width: 50px;
+				height: 2px;
+				background: #fff;
+				transition: width 0.3s ease;
+			}
+
+			&:hover::after {
+				width: 75px;
+			}
+		}
+	}
+
+	// İletişim Bilgileri
+	.company-info {
+		.company-name h5 {
+			font-weight: 700;
+			color: #fff;
+		}
+
+		.address,
+		.contact {
+			i {
+				margin-right: 10px;
+				color: #4caf50;
+			}
+
+			p {
+				margin-bottom: 0.5rem;
+			}
+		}
+	}
+
+	// Footer Linkleri
+	.footer-links {
+		list-style: none;
+		padding: 0;
+
+		li {
+			margin-bottom: 0.75rem;
+
+			a {
+				color: #fff;
+				text-decoration: none;
+				transition: all 0.3s ease;
+				position: relative;
+				padding-left: 15px;
+
+				&::before {
+					content: "→";
+					position: absolute;
+					left: 0;
+					opacity: 0;
+					transition: all 0.3s ease;
+				}
+
+				&:hover {
+					padding-left: 20px;
+					color: #4caf50;
+
+					&::before {
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+
+	// Bülten Formu
+	.newsletter-form {
+		.input-group {
+			.form-control {
+				border: none;
+				padding: 0.75rem;
+				border-radius: 5px 0 0 5px;
+
+				&:focus {
+					box-shadow: none;
+				}
+			}
+
+			.btn {
+				background-color: #4caf50;
+				border: none;
+				border-radius: 0 5px 5px 0;
+				padding: 0.75rem 1.5rem;
+				transition: all 0.3s ease;
+
+				&:hover {
+					background-color: darken(#4caf50, 10%);
+				}
+			}
+		}
+	}
+
+	// Sosyal Medya İkonları
+	.social-icons {
+		display: flex;
+		gap: 1rem;
+		margin-top: 1rem;
+
+		.social-icon {
+			color: #fff;
+			background: rgba(255, 255, 255, 0.1);
+			width: 40px;
+			height: 40px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border-radius: 50%;
+			transition: all 0.3s ease;
+
+			&:hover {
+				background: #4caf50;
+				transform: translateY(-3px);
+			}
+		}
+	}
+
+	// Alt Kısım
+	.footer-bottom {
+		background: rgba(0, 0, 0, 0.2);
+		padding: 1.5rem 0;
+		margin-top: 3rem;
+
+		.copyright {
+			text-align: center;
+			margin: 0;
+			color: rgba(255, 255, 255, 0.8);
+			font-size: 0.9rem;
+		}
+	}
+}
+
+// Responsive Ayarlar
+@media (max-width: 768px) {
+	.footer {
+		padding: 2rem 0 0;
+
+		.footer-column {
+			text-align: center;
+
+			h4::after {
+				left: 50%;
+				transform: translateX(-50%);
+			}
+		}
+
+		.social-icons {
+			justify-content: center;
+		}
+
+		.footer-links li a::before {
+			display: none;
+		}
+	}
+}
