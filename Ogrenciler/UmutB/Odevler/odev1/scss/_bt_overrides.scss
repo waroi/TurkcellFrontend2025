@@ -1,0 +1,59 @@
+// _bt_overrides.scss
+
+// SCSS Variables for Bootstrap overrides
+$primary: #FF6B6B;
+$secondary: #4ECDC4;
+$dark: #2C3E50;
+$light: #ECF0F1;
+$bg-yellow:#dfb200;
+// Mixins for common Bootstrap patterns
+@mixin button-variant($background) {
+  background-color: $background;
+  border-color: darken($background, 10%);
+  &:hover {
+    background-color: darken($background, 10%);
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+  }
+}
+
+// Extend placeholder for common Bootstrap elements
+%bootstrap-card-base {
+  border: none;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+// Nested Bootstrap overrides
+.navbar {
+  padding: 1rem 0;
+  background-color: $bg-yellow;
+  left:0;
+  top:0;
+  position:fixed;
+  
+  .navbar-brand {
+    font-family: 'RF Dewi Header', sans-serif;
+    font-weight: 600;
+  }
+  
+  .nav-link {
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: $primary;
+      transition: width 0.3s ease;
+    }
+    
+    &:hover::after {
+      width: 100%;
+    }
+  }
+}

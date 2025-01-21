@@ -1,0 +1,27 @@
+$border-radius: 40px;
+$border-width: 3px;
+$border-color: transparent;
+$box-shadow: 0 1px 3px rgba(255, 255, 255, 0.3),
+  0 0 15px rgba(184, 184, 184, 0.7), inset 0 0 10px rgba(255, 255, 255, 0.5);
+
+$box-shadow-sm: 0 0 5px 1px rgba(184, 184, 184, 0.5);
+$btn-transition: all 0.3s ease;
+$btn-box-shadow: $box-shadow-sm; //sorun var
+$btn-font-family: "Orbitron", serif;
+$font-family-base: "Exo 2", serif;
+$primary: orange;
+$secondary: #f1a7c7;
+$success: rgba(0, 255, 255, 0.8);
+$info: #a4a1a1;
+// $warning: $yellow;
+$danger: rgba(255, 0, 150, 0.8);
+$light: #d1d1d1;
+$dark: #19191e;
+$font-size-base: 1rem;
+$h1-font-size: $font-size-base * 4;
+$card-bg: $dark;
+$card-border-width: 0px;
+$card-color: $light;
+$btn-color: $light;
+// $navbar-light-toggler-icon-bg: none;
+// $navbar-light-toggler-border-color: transparent;
