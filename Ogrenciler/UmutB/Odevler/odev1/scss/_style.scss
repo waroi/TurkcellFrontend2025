@@ -73,6 +73,14 @@ $breakpoints: (
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+%dark-card-base {
+  background-color:$dark;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color:#fff;  
+}
+
 %heading-base {
   font-family: $font-primary;
   font-weight: 600;
@@ -218,7 +226,7 @@ body {
   }
 }
 .pokemon-card {
-  @extend %card-base;
+
   position: relative;
   height: 300px;  
   padding: $spacing-base * 1.25;
@@ -230,7 +238,8 @@ body {
 
   &:hover {
     height: 500px;
-    @include hover-effect;    
+    @include hover-effect;
+    @extend %dark-card-base; 
   }
 
   .image {
@@ -331,7 +340,7 @@ body {
     top: -120px;
     width: 100%;
     padding: $spacing-base $spacing-base * 1.5;
-    color: $dark;
+    color:#fff;  
     text-align: center;
     visibility: hidden;
     opacity: 0;

@@ -11886,11 +11886,12 @@ textarea.form-control-lg {
   font-style: normal;
   font-display: swap;
 }
-.pokemon-card {
-  background: #fff;
+.pokemon-card:hover {
+  background-color: #2C3E50;
   border-radius: 1rem;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: #fff;
 }
 
 .featured-products h2, .featured-products .h2, .pokemon-card__content h3, .pokemon-card__content .h3, .banner__title {
@@ -12132,7 +12133,7 @@ body.no-scroll {
   top: -120px;
   width: 100%;
   padding: 1rem 1.5rem;
-  color: #2C3E50;
+  color: #fff;
   text-align: center;
   visibility: hidden;
   opacity: 0;
