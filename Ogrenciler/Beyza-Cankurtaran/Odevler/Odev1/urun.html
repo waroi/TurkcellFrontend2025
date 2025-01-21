@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TB-Urunler</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.css" />
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top mb-5">
+            <div class="container-fluid">
+                <a class="navbar-brand gothic-text hoverText text-white" href="index.html">TimeBazaar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                    <ul class="navbar-nav mb-2 mb-lg-0 text-center fw-bold align-items-center">
+                        <li class="nav-item">
+                            <a class="nav-link active  text-white" aria-current="page" href="index.html">Anasayfa</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  text-white" href="about.html">Hakkımızda</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle  text-white" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Ürünler
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="urun.html" class="ms-3 text-center text-decoration-none">Ürünler</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a href="urun-detay-1.html"
+                                        class="ms-3 text-center text-decoration-none">Anciento</a></li>
+                                <li><a href="urun-detay-2.html"
+                                        class="ms-3 text-center text-decoration-none">Agriculturio</a></li>
+                                <li><a href="urun-detay3.html" class="ms-3 text-center text-decoration-none">Civilio</a>
+                                </li>
+                                <li><a href="urun-detay4.html"
+                                        class="ms-3 text-center text-decoration-none">Renaissence</a></li>
+                                <li><a href="urun-detay5.html"
+                                        class="ms-3 text-center text-decoration-none">Industrio</a></li>
+                                <li><a href="urun-detay6.html"
+                                        class="ms-3 text-center text-decoration-none">Close-history</a></li>
+                                <li><a href="urun-detay7.html" class="ms-3 text-center text-decoration-none">Wow</a>
+                                </li>
+                                <li><a href="urun-detay8.html"
+                                        class="ms-3 text-center text-decoration-none">Close_future</a></li>
+                                <li><a href="urun-detay9.html"
+                                        class="ms-3 text-center text-decoration-none">Cyberpunk</a></li>
+                                <li><a href="urun-detay10.html" class="ms-3 text-center text-decoration-none">Mars</a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  text-white" href="contact.html">İletişim</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  text-white" href="sss.html">SSS</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="d-none d-lg-block me-auto "">
+                    <i class=" fa-solid fa-cart-shopping me-4 text-light"></i>
+                    <i class="fa-regular fa-user me-4 text-light"></i>
+                    <i class="fa-regular fa-heart me-4 text-light"></i>
+                    <i class="fas fa-bars text-light"></i>
+                </div>
+
+            </div>
+        </nav>
+        <br>
+    </header>
+    <div class="container text-center fw-bold py-4">
+        <hr>
+        <h3>OUR PRODUCTS</h3>
+        <hr>
+    </div>
+
+    <section class="categories py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Kategoriler</h2>
+            <!--
+            <div class="row">
+                <div class="col-4">
+                    <nav id="navbar-example3" class="h-100 flex-column align-items-stretch pe-4 border-end">
+                        <nav class="nav nav-pills flex-column">
+                            <a class="nav-link" href="#item-1">Anciento</a>
+                            <a class="nav-link" href="#item-2">Agriculturio</.a>
+                            <a class="nav-link" href="#item-3">Civilio</a>
+                            <a class="nav-link" href="#item-4">Industrio</a>
+                            <a class="nav-link" href="#item-5">Renaissance</a>
+                            <a class="nav-link" href="#item-6">Close History</a>
+                            <a class="nav-link" href="#item-7">Wow</a>
+                            <a class="nav-link" href="#item-8">Close Future</a>
+                            <a class="nav-link" href="#item-9">Cyberpunk</a>
+                            <a class="nav-link" href="#item-10">Marss</a>
+                        </nav>
+                    </nav>
+                </div>
+            
+                <div class="col-8">
+                    <div data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-smooth-scroll="true" class="scrollspy-example-2" tabindex="0">
+                    
+                        <div id="item-1">
+                            <h4>Anciento</h4>
+                            <p>Journey to the dawn of humanity with the Anciento time machine. Travel back to the Stone Age and the early Metal Age, experiencing the world before written history.</p>
+                        </div>
+                    
+                        <div id="item-2">
+                            <h5>Agriculturio</h5>
+                            <p>Step into the era of agricultural revolution. Witness the birth of farming and the shift to a settled lifestyle. Perfect for those interested in the early foundation of civilization.</p>
+                        </div>
+                    
+                        <div id="item-3">
+                            <h5>Civilio</h5>
+                            <p>Experience the rise of ancient civilizations such as Mesopotamia and Egypt. See the building of the first cities and the birth of writing and organized society.</p>
+                        </div>
+            
+                    
+                        <div id="item-4">
+                            <h4>Industrio</h4>
+                            <p>Travel to the Industrial Revolution! Witness the transformation of societies through steam engines, mechanized production, and the advent of modern industry.</p>
+                        </div>
+            
+                    
+                        <div id="item-5">
+                            <h4>Renaissance</h4>
+                            <p>Step into the era of innovation and cultural rebirth. The Renaissance time machine takes you to the 14th-17th centuries, where art, science, and literature flourished.</p>
+                        </div>
+            
+                     
+                        <div id="item-6">
+                            <h5>Close History</h5>
+                            <p>Travel back about 100 years to witness key moments in modern history. Ideal for those interested in events like World War I and II, the Great Depression, and early technological advancements.</p>
+                        </div>
+            
+                     
+                        <div id="item-7">
+                            <h5>Wow</h5>
+                            <p>The Wow machine allows you to return to the present day, offering the ultimate control over time. A must-have for travelers who need to return to the present moment.</p>
+                        </div>
+            
+                       
+                        <div id="item-8">
+                            <h4>Close Future</h4>
+                            <p>Explore a future only 75 years away. The Close Future machine takes you to a time of advanced technology and the societal changes that shape tomorrow's world.</p>
+                        </div>
+            
+                     
+                        <div id="item-9">
+                            <h4>Cyberpunk</h4>
+                            <p>Step into a dystopian future where technology is at its peak, and society is on the edge of collapse. The Cyberpunk time machine offers a glimpse into a high-tech world where humanity struggles to survive.</p>
+                        </div>
+            
+                        
+                        <div id="item-10">
+                            <h4>Marss</h4>
+                            <p>When Earth is no longer habitable, the Marss time machine transports you to a new frontier. Experience life on Mars, the last bastion of humanity after the collapse of Earth's ecosystems.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            -->
+            <div class="row">
+                <div class="card col-lg-6 mb-3">
+                    <div class="row g-0">
+                        <div class="col-md-8">
+                            <img src="pics/forset_ancient.jpg" class="img-fluid rounded-start" alt="Kategori 1">
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card-body">
+                                <h5 class="card-title gothic-text">Anciento</h5>
+                                <p class="card-text">Gidilebilecek en geçmiş zamanın kendisiyle tanışın!</p>
+                            </div>
+                        </div>
+                        <a href="urun-detay-1.html" class="card-hover-link">İncele</a>
+                    </div>
+                </div>
+                <div class="card col-lg-6 mb-3">
+                    <div class="row g-0">
+                        <div class="col-md-8">
+                            <img src="pics/portal.jpeg" class="img-fluid rounded-start" alt="Kategori 1">
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card-body">
+                                <h5 class="card-title gothic-text">Agriculturio</h5>
+                                <p class="card-text">Tarımın keşfedilmesinin etkilerini ve ilk yerleşik düzene
+                                    geçilmesindeki köşe taşlarını detaylıca keşfedin!</p>
+                            </div>
+                        </div>
+                        <a href="urun-detay-2.html" class="card-hover-link">İncele</a>
+                    </div>
+                </div>
+                <div class="card col-lg-6 mb-3">
+                    <div class="row g-0">
+                        <div class="col-md-8">
+                            <img src="pics/mars.png" class="img-fluid rounded-start" alt="Kategori 1">
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card-body">
+                                <h5 class="card-title gothic-text">Civilio</h5>
+                                <p class="card-text">İlk medeniyetlerin içindeki düzeni keşfedin!</p>
+                            </div>
+                        </div>
+                        <a href="urun-detay3.html" class="card-hover-link">İncele</a>
+                    </div>
+                </div>
+                <div class="card col-lg-6 mb-3">
+                    <div class="row g-0">
+                        <div class="col-md-8">
+                            <img src="pics/renaissence.png" class="img-fluid rounded-start" alt="Kategori 1">
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card-body">
+                                <h5 class="card-title gothic-text">Renaissence</h5>
+                                <p class="card-text">İnsanların sanata ve zekaya önem vermeye başlamalarını gözlemleyip
+                                    bu büyülü era içinde yer alabilirsiniz.</p>
+                            </div>
+                        </div>
+                        <a href="urun-detay4.html" class="card-hover-link">İncele</a>
+                    </div>
+                </div>
+                <div class="card col-lg-6 mb-3">
+                    <div class="row g-0">
+                        <div class="col-md-8">
+                            <img src="pics/ssnayi-2.jpeg" class="img-fluid rounded-start" alt="Kategori 1">
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card-body">
+                                <h5 class="card-title gothic-text">Industrio</h5>
+                                <p class="card-text">Sanayileşme ve insanların kapitalizme evrilmeye başladığı dönemi
+                                    tüm karanlık sırlarıyla keşfedebilirsiniz.</p>
+                            </div>
+                        </div>
+                        <a href="urun-detay5.html" class="card-hover-link">İncele</a>
+                    </div>
+                </div>
+                <div class="card col-lg-6 mb-3">
+                    <div class="row g-0">
+                        <div class="col-md-8">
+                            <img src="pics/close-history.jpeg" class="img-fluid rounded-start" alt="Kategori 1">
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card-body">
+                                <h5 class="card-title gothic-text">Close History</h5>
+                                <p class="card-text">Yaklaşık 75 yıl öncesini keşfedebilir ve soylarınızı
+                                    gözlemleyebilirsiniz.</p>
+                            </div>
+                        </div>
+                        <a href="urun-detay6.html" class="card-hover-link">İncele</a>
+                    </div>
+                </div>
+                <div class="card col-lg-6 mb-3">
+                    <div class="row g-0">
+                        <div class="col-md-8">
+                            <img src="pics/cat_1.jpeg" class="img-fluid rounded-start" alt="Kategori 1">
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card-body">
+                                <h5 class="card-title gothic-text">Wow</h5>
+                                <p class="card-text">Geri dönmek istediğiniz an başvurabileceğiniz portalı sakın
+                                    yanınızdan ayırmayın.</p>
+                            </div>
+                        </div>
+                        <a href="urun-detay7.html" class="card-hover-link">İncele</a>
+                    </div>
+                </div>
+                <div class="card col-lg-6 mb-3">
+                    <div class="row g-0">
+                        <div class="col-md-8">
+                            <img src="pics/close_future.png" class="img-fluid rounded-start" alt="Kategori 1">
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card-body">
+                                <h5 class="card-title gothic-text">Close Future</h5>
+                                <p class="card-text">Yakın geleceğe gitmek için bu portalı kullanın!</p>
+                            </div>
+                        </div>
+                        <a href="urun-detay8.html" class="card-hover-link">İncele</a>
+                    </div>
+                </div>
+                <div class="card col-lg-6 mb-3">
+                    <div class="row g-0">
+                        <div class="col-md-8">
+                            <img src="pics/cyberpunk2.jpeg" class="img-fluid rounded-start" alt="Kategori 1">
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card-body">
+                                <h5 class="card-title gothic-text">Cyberpunk</h5>
+                                <p class="card-text">Robotlaşmış ve duygularını kaybetme eşiğindeki insanoğlunu yakından
+                                    gözlemleyebilirsiniz.</p>
+                            </div>
+                        </div>
+                        <a href="urun-detay9.html" class="card-hover-link">İncele</a>
+                    </div>
+                </div>
+                <div class="card col-lg-6 mb-3">
+                    <div class="row g-0">
+                        <div class="col-md-8">
+                            <img src="pics/4.png" class="img-fluid rounded-start" alt="Kategori 1">
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card-body">
+                                <h5 class="card-title gothic-text">Mars</h5>
+                                <p class="card-text">Mars kolonisinin zorlu şartlar altında hayatta kalma mücadelelerini
+                                    yakından gözlemleyebilirsiniz.</p>
+                            </div>
+                        </div>
+                        <a href="urun-detay10.html" class="card-hover-link">İncele</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <section class="quote">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 mb-4">
+                    <div class="card">
+                        <div class="card-header">
+                            Alıntı Köşesi
+                        </div>
+                        <div class="card-body ">
+                            <blockquote class="blockquote mb-0">
+                                <p>"Hayal gücü bilgiden daha önemlidir."</p>
+                                <cite title="source title">Albert Einstein</cite>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 mb-4">
+                    <div class="card">
+                        <div class="card-header">
+                            Alıntı Köşesi
+                        </div>
+                        <div class="card-body ">
+                            <blockquote class="blockquote mb-0">
+                                <p>"Hayal gücü bilgiden daha önemlidir."</p>
+                                <cite title="source title">Albert Einstein</cite>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="testimonials" class="py-5 bg-primary">
+        <div class="container">
+            <h2 class="text-center mb-4">Müşteri Yorumları</h2>
+            <p class="text-center mb-5">Timebazaar'dan zaman yolculuğu makineleri alan kullanıcılarımızın deneyimlerini
+                okuyun!</p>
+
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-touch="true">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="d-flex justify-content-center">
+                            <div class="text-center">
+                                <img src="pics/ancient_.jpeg" class="rounded-circle mb-3" alt="Müşteri 1" width="300"
+                                    height="300">
+                                <p class="font-italic">"Timebazaar sayesinde geçmişe gidip kaybolmuş bir sanat eserini
+                                    buldum. Gerçekten inanılmaz bir deneyimdi!"</p>
+                                <h5>Ahmet Yılmaz</h5>
+                                <p>Eski Eser Koleksiyoncusu</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center">
+                            <div class="text-center">
+                                <img src="pics/about_2.jpeg" class="rounded-circle mb-3" alt="Müşteri 2" width="300"
+                                    height="300">
+                                <p class="font-italic">"Zaman yolculuğunun ne kadar gerçekçi olabileceğini Timebazaar'da
+                                    keşfettim. Şimdi geleceği görmek çok kolay!"</p>
+                                <h5>Mehmet Can</h5>
+                                <p>Teknoloji Meraklısı</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center">
+                            <div class="text-center">
+                                <img src="pics/traveller.png" class="rounded-circle mb-4" alt="Müşteri 3" width="300"
+                                    height="300">
+                                <p class="font-italic">"Timebazaar'ın sunduğu makineler, zamanın ötesinde bir deneyim
+                                    sunuyor. Mükemmel!"</p>
+                                <h5>Fatma Aydın</h5>
+                                <p>Zaman Yolcusu</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Önceki</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Sonraki</span>
+                </button>
+            </div>
+        </div>
+    </section>
+    <section class="ürünler my-5 mx-5">
+        <h2 class="text-center mb-5">Timebazaar'daki Tüm Ürünlerimize Göz Atın!!!</h2>
+        <div class="container">
+            <div class="card-group card-grid my-5">
+                <div class="card">
+                    <div class="card-pic">
+                        <a href="urun-detay-1.html">
+                            <img src="pics/ancient.png" class="card-img-top" alt="ancient times">
+                        </a>
+
+                        <div class="icons-overlay d-flex gap-3">
+                            <i class="fa-regular fa-star"></i>
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <i class="fa-solid fa-code-compare"></i>
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+                        <h5 class="card-title gothic-text">Anciento </h5>
+                        <p class="card-text">This is a new portal.It tkaes you to the first mankind times.It has a 75%
+                            success rate.</p>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <p class="fw-bold fs-large">$200</p>
+                        <span class="badge text-bg-secondary">In-stock</span>
+                        <div class="urun-btn d-flex align-items-center justify-content-center gap-2">
+                            <button class="quantity-btn btn btn-outline-secondary px-1 py-1">-</button>
+                            <input type="number" value="1" min="1" class="quantity-input form-control w-2" />
+                            <button class="quantity-btn btn btn-outline-secondary px-1 py-1">+</button>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Sepete
+                                Ekle!</button>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="card">
+                    <div class="card-pic">
+                        <a href="urun-detay-2.html">
+                            <img src="pics/agriculture.png" class="card-img-top" alt="agricultural times">
+                        </a>
+                        <div class="icons-overlay d-flex flex-column gap-3 align-items-center justify-content-center">
+                            <i class="fa-regular fa-star"></i>
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <i class="fa-solid fa-code-compare"></i>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title gothic-text">Agriculturio</h5>
+                        <p class="card-text">This is a new portal.It has a power to take you to the first agriculture
+                            and settlement times.It has a 60% success rate.</p>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <p class="fw-bold fs-large">$200</p>
+                        <span class="badge text-bg-primary">Not In-stock</span>
+                        <div class="urun-btn d-flex align-items-center justify-content-center gap-2">
+                            <button class="quantity-btn btn btn-outline-secondary px-1 py-1">-</button>
+                            <input type="number" value="1" min="1" class="quantity-input form-control w-2" />
+                            <button class="quantity-btn btn btn-outline-secondary px-1 py-1">+</button>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Sepete
+                                Ekle!</button>
+                        </div>
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Oops</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Daha javascript öğrenmedik :)
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Kapat</button>
+                                        <button type="button" class="btn btn-primary">Mecbur Geri Dön!</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="card">
+                    <div class="card-pic">
+                        <a href="urun-detay3.html">
+                            <img src="pics/19.png" class="card-img-top" alt="ancient times">
+                        </a>
+                        <div class="icons-overlay d-flex flex-column gap-3 align-items-center justify-content-center">
+                            <i class="fa-regular fa-star"></i>
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <i class="fa-solid fa-code-compare"></i>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title gothic-text">Civilio</h5>
+                        <p class="card-text">This is a new portal.It takes you to the first civilization times.Like
+                            mezopotomia and egypt.It has a 90% success rate
+                        </p>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <p class="fw-bold fs-large">$200</p>
+                        <span class="badge text-bg-secondary">In-stock</span>
+                        <div class="urun-btn d-flex align-items-center justify-content-center gap-2">
+                            <button class="quantity-btn btn btn-outline-secondary px-1 py-1">-</button>
+                            <input type="number" value="1" min="1" class="quantity-input form-control w-2" />
+                            <button class="quantity-btn btn btn-outline-secondary px-1 py-1">+</button>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Sepete
+                                Ekle!</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-pic">
+                        <a href="urun-detay4.html">
+                            <img src="pics/renaissence_.png" class="card-img-top" alt="ancient times">
+                        </a>
+
+                        <div class="icons-overlay d-flex flex-column gap-3 align-items-center justify-content-center">
+                            <i class="fa-regular fa-star"></i>
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <i class="fa-solid fa-code-compare"></i>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title gothic-text">Renaissence</h5>
+                        <p class="card-text">This is a new portal.It has a power to take you to the renaissence times.If
+                            you dream about this timeline.Dont miss this opportunity.It has a 80% success rate.</p>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <p class="fw-bold fs-large">$200</p>
+                        <span class="badge text-bg-secondary">In-stock</span>
+                        <div class="urun-btn d-flex align-items-center justify-content-center gap-2">
+                            <button class="quantity-btn btn btn-outline-secondary px-1 py-1">-</button>
+                            <input type="number" value="1" min="1" class="quantity-input form-control w-2" />
+                            <button class="quantity-btn btn btn-outline-secondary px-1 py-1">+</button>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Sepete
+                                Ekle!</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-pic">
+                        <a href="urun-detay5.html">
+                            <img src="pics/sanayi.png" class="card-img-top" alt="ancient times">
+                        </a>
+                        <div class="icons-overlay d-flex flex-column gap-3 align-items-center justify-content-center">
+                            <i class="fa-regular fa-star"></i>
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <i class="fa-solid fa-code-compare"></i>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title gothic-text">Industrio</h5>
+                        <p class="card-text">This is a time portal to take yo to the first ındustrial evolution times
+                            where every big city has a darker smoke background.If you wanna improve this era,dont miss
+                            this opportunity.It has a 40% success rate.</p>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <p class="fw-bold fs-large">$200</p>
+                        <span class="badge text-bg-secondary">In-stock</span>
+                        <div class="urun-btn d-flex align-items-center justify-content-center gap-2">
+                            <button class="quantity-btn btn btn-outline-secondary px-1 py-1">-</button>
+                            <input type="number" value="1" min="1" class="quantity-input form-control w-2" />
+                            <button class="quantity-btn btn btn-outline-secondary px-1 py-1">+</button>
+                            <button class="btn btn-primary">Sepete Ekle!</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-pic">
+                        <a href="urun-detay6.html">
+                            <img src="pics/close-history.jpeg" class="card-img-top" alt="ancient times">
+                        </a>
+                        <div class="icons-overlay d-flex flex-column gap-3 align-items-center justify-content-center">
+                            <i class="fa-regular fa-star"></i>
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <i class="fa-solid fa-code-compare"></i>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title gothic-text">Close History</h5>
+                        <p class="card-text">This is a time portal to take you to the 1950s.If you wanna live a little
+                            back and meet your grandparents this is a perfect opportunity.It has a 95% success rate so
+                            its suitable for a fresher.</p>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <p class="fw-bold fs-large">$200</p>
+                        <span class="badge text-bg-primary">Not In-stock</span>
+                        <div class="urun-btn d-flex align-items-center justify-content-center gap-2">
+                            <button class="quantity-btn btn btn-outline-secondary px-1 py-1">-</button>
+                            <input type="number" value="1" min="1" class="quantity-input form-control w-2" />
+                            <button class="quantity-btn btn btn-outline-secondary px-1 py-1">+</button>
+                            <button class="btn btn-primary">Sepete Ekle!</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-pic">
+                        <a href="urun-detay7.html">
+                            <img src="pics/now.jpeg" class="card-img-top" alt="ancient times">
+                        </a>
+                        <div class="icons-overlay d-flex flex-column gap-3 align-items-center justify-content-center">
+                            <i class="fa-regular fa-star"></i>
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <i class="fa-solid fa-code-compare"></i>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title gothic-text">Wow</h5>
+                        <p class="card-text">This is a time portal to take you home.If you are in any danger and not
+                            comfortable the time you are on , use this to take you back to the time you were in the
+                            first place.Dont lose this item else you are stuck in this time!It has a 100% success rate.
+                        </p>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <p class="fw-bold fs-large">$200</p>
+                        <span class="badge text-bg-secondary">In-stock</span>
+                        <div class="urun-btn d-flex align-items-center justify-content-center gap-2">
+                            <button class="quantity-btn btn btn-outline-secondary px-1 py-1">-</button>
+                            <input type="number" value="1" min="1" class="quantity-input form-control w-2" />
+                            <button class="quantity-btn btn btn-outline-secondary px-1 py-1">+</button>
+                            <button class="btn btn-primary">Sepete Ekle!</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-pic">
+                        <a href="urun-detay8.html">
+                            <img src="pics/close_future.png" class="card-img-top" alt="ancient times">
+                        </a>
+                        <div class="icons-overlay d-flex flex-column gap-3 align-items-center justify-content-center">
+                            <i class="fa-regular fa-star"></i>
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <i class="fa-solid fa-code-compare"></i>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title gothic-text">Close Future</h5>
+                        <p class="card-text">This portal is designed for to mee tyour grandkids kids.It takes yo to the
+                            future about 100 years from the current timeline.Sınce the time is fragile this is the
+                            hardest travel .It has a 20% success rate.</p>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <p class="fw-bold fs-larger">$200</p>
+                        <span class="badge text-bg-secondary">In-stock</span>
+                        <div class="urun-btn d-flex align-items-center justify-content-center gap-2">
+                            <button class="quantity-btn btn btn-outline-secondary px-1 py-1">-</button>
+                            <input type="number" value="1" min="1" class="quantity-input form-control w-2" />
+                            <button class="quantity-btn btn btn-outline-secondary px-1 py-1">+</button>
+                            <button class="btn btn-primary">Sepete Ekle!</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-pic">
+                        <a href="urun-detay9.html">
+                            <img src="pics/cyberpunk.png" class="card-img-top" alt="ancient times">
+                        </a>
+                        <div class="icons-overlay d-flex flex-column gap-3 align-items-center justify-content-center">
+                            <i class="fa-regular fa-star"></i>
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <i class="fa-solid fa-code-compare"></i>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title gothic-text">Cyberpunko</h5>
+                        <p class="card-text">This portal is designed to take you to the time where everything is about
+                            tech.This era has a solution about everything except emotions.This portal has a success rate
+                            of 85% .Be careful in this era.</p>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <p class="fw-bold fs-large">$200</p>
+                        <span class="badge text-bg-primary">Not In-stock</span>
+                        <div class="urun-btn d-flex align-items-center justify-content-center gap-2">
+                            <button class="quantity-btn btn btn-outline-secondary px-1 py-1">-</button>
+                            <input type="number" value="1" min="1" class="quantity-input form-control w-2" />
+                            <button class="quantity-btn btn btn-outline-secondary px-1 py-1">+</button>
+                            <button class="btn btn-primary">Sepete Ekle!</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-pic">
+                        <a href="urun-detay10.html">
+                            <img src="pics/mars-3.jpeg" class="card-img-top" alt="ancient times">
+                        </a>
+                        <div class="icons-overlay d-flex flex-column gap-3 align-items-center justify-content-center">
+                            <i class="fa-regular fa-star"></i>
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <i class="fa-solid fa-code-compare"></i>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title gothic-text">Marss</h5>
+                        <p class="card-text">This portal is the far as we can go in time as humans.In this era world has
+                            demolished and only a mars colony survived.So this era will not just take you to the future
+                            also it will take you to the mars.It has a success rate of 55%.Sınce the resources of this
+                            era is limited be careful!</p>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <p class="fw-bold fs-large">$200</p>
+                        <span class="badge text-bg-secondary">In-stock</span>
+                        <div class="urun-btn d-flex align-items-center justify-content-center gap-2">
+                            <button class="quantity-btn btn btn-outline-secondary px-1 py-1">-</button>
+                            <input type="number" value="1" min="1" class="quantity-input form-control w-2" />
+                            <button class="quantity-btn btn btn-outline-secondary px-1 py-1">+</button>
+                            <button class="btn btn-primary">Sepete Ekle!</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+    </section>
+    <footer class="footer text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h1 class="mb-3 gothic-text">Timebazaar</h1>
+                    <p>Zamanlar arası yolculuk ve zaman makineleri satışında lider olan Timebazaar, geleceği ve geçmişi
+                        keşfetmek isteyen herkes için en iyi ürünleri sunuyor.</p>
+                    <ul class="list-unstyled">
+                        <li><strong>Adres:</strong> 123 Zaman Caddesi, Time City</li>
+                        <li><strong>E-posta:</strong> info@timebazaar.com</li>
+                        <li><strong>Telefon:</strong> +1 800 123 4567</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="mb-3 fw-bold text-center">Hızlı Linkler</h5>
+                    <div class="d-flex flex-row justify-content-around pb-3">
+                        <ul class="list-unstyled me-4">
+                            <li><a href="index.html" class="text-white text-decoration-none">Ana Sayfa</a></li>
+                            <li><a href="about.html" class="text-white text-decoration-none">Hakkımızda</a></li>
+                            <li><a href="urun.html" class="text-white text-decoration-none">Ürünler</a></li>
+                            <li><a href="contact.html" class="text-white text-decoration-none">İletişim</a></li>
+                            <li><a href="sss.html" class="text-white text-decoration-none">SSS</a></li>
+
+                        </ul>
+                        <ul class="list-unstyled">
+                            <li><a href="urun-detay-1.html" class="text-white text-decoration-none">Anciento</a></li>
+                            <li><a href="urun-detay-2.html" class="text-white text-decoration-none">Agriculturio</a>
+                            </li>
+                            <li><a href="urun-detay3.html" class="text-white text-decoration-none">Civilio</a></li>
+                            <li><a href="urun-detay4.html" class="text-white text-decoration-none">Renaissence</a></li>
+                            <li><a href="urun-detay5.html" class="text-white text-decoration-none">Industrio</a></li>
+                            <li><a href="urun-detay6.html" class="text-white text-decoration-none">Close-history</a>
+                            </li>
+                            <li><a href="urun-detay7.html" class="text-white text-decoration-none">Wow</a></li>
+                            <li><a href="urun-detay8.html" class="text-white text-decoration-none">Close_future</a></li>
+                            <li><a href="urun-detay9.html" class="text-white text-decoration-none">Cyberpunk</a></li>
+                            <li><a href="urun-detay10.html" class="text-white text-decoration-none">Mars</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <h5 class="fw-bold">Timebazaar Bülteni'ne Abone Ol</h5>
+                    <p class="mb-3">Zaman yolculuğu, yenilikler ve Timebazaar'dan haberler almak için bültenimize abone
+                        olun!</p>
+                    <form method="post">
+                        <div class="input-group mb-3">
+                            <i class="fa fa-envelope fa-2x me-2"></i>
+                            <input type="email" class="form-control" placeholder="E-posta adresiniz"
+                                aria-label="E-posta adresiniz" required>
+                            <button class="btn btn-primary" type="submit">Abone Ol</button>
+                        </div>
+                    </form>
+                    <h6 class="mb-3 fw-bold ">
+                        <hr>Bizi Takip Edin
+                        <hr>
+                    </h6>
+                    <ul class="list-unstyled d-flex">
+                        <li><a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="#" class="text-white me-3"><i class="fab fa-linkedin-in"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <p>&copy; 2025 Timebazaar. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal, Hero, and Timeline Animation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Tüm sayfa, portal animasyonu için ortalanmış */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #1e1e1e;
+            color: #fff;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        /* Loading ekranı */
+        #loading-screen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+
+        /* Portal Animasyonu */
+        #portal {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border: 5px solid #00ffff;
+            border-radius: 50%;
+            box-shadow: 0 0 20px 5px #00ffff;
+            animation: expandPortal 3s ease-out forwards;
+        }
+
+        #portal-light {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, rgba(0, 255, 255, 0.7), transparent);
+            border-radius: 50%;
+            animation: glowPortal 3s ease-out forwards;
+        }
+
+        @keyframes expandPortal {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(5);
+                opacity: 0.8;
+            }
+            100% {
+                transform: scale(20);
+                opacity: 0;
+            }
+        }
+
+        @keyframes glowPortal {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(5);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(20);
+                opacity: 0;
+            }
+        }
+
+        /* Text animasyonu */
+        .text {
+            opacity: 0;
+            animation: fadeInText 3s ease-out 2.5s forwards;
+        }
+
+        @keyframes fadeInText {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Site içeriği başlangıçta gizli olacak */
+        #content {
+            display: none;
+        }
+
+        /* Loading animasyonu bitince içeriği göster */
+        .loaded #loading-screen {
+            display: none;
+        }
+
+        .loaded #content {
+            display: block;
+            opacity: 0;
+            animation: fadeInText 3s ease-out 3s forwards;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Loading ekranı -->
+    <div id="loading-screen">
+        <div>
+            <div id="portal"></div>
+            <div id="portal-light"></div>
+            <h1 class="text">Welcome to Time Portal</h1>
+        </div>
+    </div>
+
+    <!-- Gerçek İçerik -->
+    <div id="content">
+        <h1 class="text-center text-dark">Main Content of the Website</h1>
+        <p class="text-center text-white">This is your website's content that appears after the portal animation.</p>
+    </div>
+
+    <script>
+        // Portal animasyonu bittikten sonra loading ekranını gizle ve içeriği göster
+        setTimeout(function () {
+            document.body.classList.add('loaded');
+        }, 3000); // 3 saniye sonra (portal animasyon süresi)
+    </script>
+</body>
+</html>
+
