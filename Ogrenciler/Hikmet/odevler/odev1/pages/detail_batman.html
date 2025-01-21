@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Detail Page</title>
+		<title>Batman</title>
 		<link rel="stylesheet" href="../css/main.css" />
 	</head>
 	<body>
@@ -35,11 +35,9 @@
 		<section class="container">
 			<nav class="navbar navbar-expand-lg navbar-light">
 				<div class="container-fluid">
-					<img
-						class="navbar-brand"
-						href="#"
-						src="../HERO.svg"
-						style="height: 30px" />
+					<a href="../index.html">
+						<img class="navbar-brand" src="../HERO.svg" style="height: 30px" />
+					</a>
 					<button
 						class="navbar-toggler"
 						type="button"
@@ -53,10 +51,9 @@
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
 						<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 							<li class="nav-item">
-								<a class="nav-link active" aria-current="page" href="#">Home</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#">Superheros</a>
+								<a class="nav-link" href="../pages/all_superheros.html"
+									>Superheros</a
+								>
 							</li>
 							<li class="nav-item dropdown">
 								<a
@@ -168,16 +165,12 @@
 				<!-- Sağ Taraf - Ürün Bilgileri -->
 				<div class="col-lg-6">
 					<div class="product-info">
-						<h1 class="product-title mb-3">Premium Wireless Headphones</h1>
+						<h1 class="product-title mb-3">Batman - Bruce Wayne</h1>
 
 						<!-- Puan ve Değerlendirmeler -->
 						<div class="ratings mb-3">
 							<div class="stars">
-								<i class="bi bi-star-fill"></i>
-								<i class="bi bi-star-fill"></i>
-								<i class="bi bi-star-fill"></i>
-								<i class="bi bi-star-fill"></i>
-								<i class="bi bi-star-half"></i>
+								🌟 🌟 🌟 🌟 🌟
 								<span class="rating-text ms-2">(4.5/5)</span>
 							</div>
 							<span class="reviews-count">128 değerlendirme</span>
@@ -192,38 +185,27 @@
 
 						<!-- Kısa Açıklama -->
 						<p class="product-short-desc mb-4">
-							Premium kalitede aktif gürültü önleme özellikli, 30 saat pil
-							ömrüne sahip kablosuz kulaklık.
+							Batman, şehri karanlıkta koruduğu gibi, siber güvenlik uzmanları
+							da sistemleri tehditlerden korur. Sürekli plan yapar ve
+							düşmanların (hackerlar) önüne geçer.
 						</p>
 
 						<!-- Renk Seçimi -->
 						<div class="color-selection mb-4">
-							<h6 class="option-title">Renk</h6>
-							<div class="color-options">
-								<button
-									class="color-option active"
-									style="background-color: #000000"></button>
-								<button
-									class="color-option"
-									style="background-color: #ffffff"></button>
-								<button
-									class="color-option"
-									style="background-color: #c0c0c0"></button>
-							</div>
+							<h6 class="option-title">Fiyat Listesi</h6>
+							<ul class="list-group list-group-horizontal">
+								<li class="list-group-item">An item</li>
+								<li class="list-group-item">A second item</li>
+								<li class="list-group-item">A third item</li>
+							</ul>
 						</div>
 
 						<!-- Adet Seçimi ve Sepete Ekle -->
-						<div class="purchase-section">
-							<div class="quantity-selector mb-3">
-								<button class="qty-btn decrease">-</button>
-								<input type="number" value="1" min="1" class="quantity-input" />
-								<button class="qty-btn increase">+</button>
-							</div>
-							<button class="btn btn-primary add-to-cart-btn">
-								<i class="bi bi-cart-plus"></i>
-								Sepete Ekle
-							</button>
-						</div>
+
+						<button class="btn btn-primary add-to-cart-btn">
+							<i class="bi bi-cart-plus"></i>
+							Sepete Ekle
+						</button>
 					</div>
 				</div>
 			</div>
