@@ -1,0 +1,129 @@
+body {
+  font-family: $primary-font;
+  background: linear-gradient(to bottom, $kirmizi, $secondary, $btnColor);
+}
+h1 {
+  font-family: $secondary-font;
+  font-size: x-large;
+
+}
+img {
+  border-radius: 20px;
+}
+.footer {
+  background: linear-gradient(to bottom,$btnColor, $footerBg);
+  a {
+    color: $white;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+}
+.page{
+    height: 100vh;
+    width: 100%;
+}
+.imgBg {
+  background-image: url(../image/indir.jpeg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ .custom-navbar {
+  max-width: 800px; 
+  margin: 20px auto; 
+  border-radius: 20px;
+  padding: 8px 20px;
+  background-color: #f8f9fa;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  .navbar-brand {
+    .logo {
+      width: 40px; 
+      height: 40px;
+      border-radius: 50%;
+    }
+  
+  }
+
+  .navbar-toggler {
+    border: none;
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  .nav-link {
+    color: #333;
+    margin: 0 8px; 
+    font-size: 14px;
+    &:hover {
+      color: #007bff;
+      text-decoration: underline;
+    }
+  }
+}
+.carousel-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+}
+
+.user-review {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  gap: 15px;
+  max-width: 600px;
+  margin: auto;
+}
+
+.review-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.review-content {
+  flex: 1;
+}
+.review-stars {
+  color: #ffc107;
+}
+.reviewer-name {
+  font-weight: bold;
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  color: $primary;
+}
+
+.card {
+  border: none;
+}
+.btn-primary {
+  background-color: $footerBg !important; 
+  border: none;
+
+  &:hover {
+    border: none;
+    color: #fff;
+  }
+}
+
+
+.form-control {
+  background-color: $input;
+  border: none;
+  &:focus {
+    border-color: $dark-blue;
+    box-shadow: 0 0 5px rgba($dark-blue, 0.5);
+  }
+}

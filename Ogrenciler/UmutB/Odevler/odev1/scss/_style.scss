@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 @font-face {
   font-family: 'RF Dewi Header';
   src: url('/fonts/rf-dewi-ultrabold.ttf') format('truetype');
@@ -22,7 +26,7 @@ $desktop-width: 992px;
 $spacing-base: 1rem;
 $grid-gap: 2rem;
 $banner-height: 100vh;
-$pokemon-red: #E20101;
+$pokemon-red: #DC0A2D;
 $pokemon-blue: #2A6EB5;
 $pokemon-yellow: #FFCB05;
 $dark: #1A1A1A;
@@ -106,6 +110,7 @@ body {
     overflow: hidden;
   }
 }
+
 .banner {
   position: relative;
   height: $banner-height;
@@ -129,11 +134,9 @@ body {
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(
-        135deg,
-        rgba($dark-blue, 0.8),
-        rgba($dark, 0.9)
-      );
+      background: linear-gradient(135deg,
+          rgba($dark-blue, 0.8),
+          rgba($dark, 0.9));
       z-index: 1;
     }
   }
@@ -281,7 +284,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+
     .pokedex {
       max-height: 400px;
       width: 100%;
@@ -298,29 +301,25 @@ body {
       }
     }
 
-    .pokedex-btn {
-      position: absolute;
-      bottom: 20px;
-      padding: $spacing-base $spacing-base * 2;
-      background-color: $pokemon-red;
+    .pokedex-music {
+      left: 60%;
       color: white;
       text-decoration: none;
       border-radius: 25px;
       font-weight: bold;
       transition: all 0.3s ease;
-      border: 2px solid $pokemon-yellow;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-
-      &:hover {
-        transform: translateY(-2px);
-        background-color: darken($pokemon-red, 10%);
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-      }
 
       @media (max-width: $tablet-width) {
         bottom: 10px;
         padding: $spacing-base $spacing-base * 1.5;
         font-size: 0.9rem;
+        display: none;
+      }
+
+      .audio {
+        margin-top: 20px;
+        width: 100%;
+        min-width: 200px;
       }
     }
   }
@@ -331,6 +330,7 @@ body {
     opacity: 0;
     transform: translateX(-100px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -342,11 +342,13 @@ body {
     opacity: 0;
     transform: translateX(100px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
   }
 }
+
 .pokemon-card {
 
   position: relative;
@@ -581,7 +583,7 @@ body {
 }
 
 .pikachu-ad {
-  background-color: #E20101;
+  background-color: $pokemon-red;
   width: 100%;
   height: 80px;
   position: absolute;
@@ -592,6 +594,7 @@ body {
   align-items: center;
   padding: 1rem;
   overflow: hidden;
+  z-index: 5;
 
   @media (max-width: 768px) {
     height: 60px;
@@ -610,12 +613,6 @@ body {
   height: 100%;
 }
 
-.pikachu-text-container:nth-child(2) {
-  left: 100%;
-  animation: runBottom 15s linear infinite;
-  animation-delay: 0s;
-}
-
 .running-text {
   color: #fff;
   font-size: 1.2rem;
@@ -623,13 +620,15 @@ body {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   white-space: nowrap;
   margin: 0 2rem;
+
   @media (max-width: 768px) {
     font-size: 0.9rem;
     margin: 0 1rem;
   }
+
   @media (max-width: 480px) {
-    font-size: 0.8rem; 
-    margin: 0 0.5rem; 
+    font-size: 0.8rem;
+    margin: 0 0.5rem;
   }
 }
 
@@ -644,7 +643,7 @@ body {
   }
 
   @media (max-width: 480px) {
-    width: 40px; 
+    width: 40px;
     height: 40px;
   }
 }
@@ -660,6 +659,7 @@ body {
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-100%);
   }
@@ -669,7 +669,7 @@ body {
   .pikachu-text-container:nth-child(2) {
     display: none;
   }
-  
+
   .pikachu-text-container {
     animation-duration: 20s;
   }
@@ -707,18 +707,17 @@ body {
   }
 }
 
-
-// About Us Section
+// About Section Styles
 .about-section {
-  background: linear-gradient(145deg, $light-gray, #fff);
+  background: url('../assets/aboutbg.png') center/cover no-repeat;
   padding: $spacing-base * 4 0;
-  
+
   h2 {
     @extend %heading-base;
     color: $dark;
     font-size: 2.5rem;
     margin-bottom: $spacing-base * 3;
-    
+
     @media (min-width: map-get($breakpoints, 'tablet')) {
       font-size: 3rem;
     }
@@ -729,11 +728,11 @@ body {
   display: grid;
   gap: $spacing-base * 2;
   padding: $spacing-base;
-  
+
   @media (min-width: map-get($breakpoints, 'tablet')) {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   @media (min-width: map-get($breakpoints, 'desktop')) {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -744,27 +743,27 @@ body {
   padding: $spacing-base * 2;
   text-align: center;
   transition: all 0.3s ease;
-  
+
   &:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-    
+
     .about-card__icon {
       background: linear-gradient(145deg, $pokemon-blue, $dark-blue);
-      
+
       img {
         transform: rotate(360deg);
       }
     }
   }
-  
+
   h3 {
     @extend %heading-base;
     color: $dark;
     font-size: 1.5rem;
     margin: $spacing-base 0;
   }
-  
+
   p {
     color: $gray;
     margin-bottom: 0;
@@ -782,11 +781,248 @@ body {
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
-  
+
   img {
     width: 60%;
     height: 60%;
     object-fit: contain;
     transition: all 0.6s ease;
   }
+}
+
+
+// FAQ Section Styles
+.faq-section {
+  background: $pokemon-yellow;
+  padding: $spacing-base * 4 0;
+
+  h2 {
+    @extend %heading-base;
+    color: $dark;
+    font-size: 2.5rem;
+    margin-bottom: $spacing-base * 3;
+
+    @media (min-width: map-get($breakpoints, 'tablet')) {
+      font-size: 3rem;
+    }
+  }
+}
+
+.faq-grid {
+  display: grid;
+  gap: $spacing-base * 2;
+  padding: $spacing-base;
+
+  @media (min-width: map-get($breakpoints, 'tablet')) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: map-get($breakpoints, 'desktop')) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.faq-card {
+  @extend %card-base;
+  padding: $spacing-base * 2;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  }
+
+  h3 {
+    @extend %heading-base;
+    color: $pokemon-blue;
+    font-size: 1.25rem;
+    margin-bottom: $spacing-base;
+  }
+
+  p {
+    color: $gray;
+    margin-bottom: 0;
+    line-height: 1.6;
+  }
+}
+
+// Contact Section Styles
+.contact-section {
+  background: url('../assets/contactbg.jpg') center/cover no-repeat;
+  padding: $spacing-base * 4 0;
+
+  h2 {
+    @extend %heading-base;
+    color: $dark;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba($pokemon-blue, 0.2);
+    margin-bottom: $spacing-base * 3;
+
+    @media (min-width: map-get($breakpoints, 'tablet')) {
+      font-size: 3rem;
+    }
+  }
+}
+
+.contact-grid {
+  display: grid;
+  gap: $spacing-base * 3;
+
+  @media (min-width: map-get($breakpoints, 'tablet')) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.contact-info {
+  display: grid;
+  gap: $spacing-base * 2;
+}
+
+.contact-card {
+  @extend %card-base;
+  padding: $spacing-base * 2;
+  text-align: center;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+
+    .contact-icon {
+      background: linear-gradient(145deg, $pokemon-blue, $dark-blue);
+
+      img {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  h3 {
+    @extend %heading-base;
+    color: $dark;
+    font-size: 1.5rem;
+    margin: $spacing-base 0;
+  }
+
+  p,
+  address {
+    color: $gray;
+    margin-bottom: $spacing-base * 0.5;
+    line-height: 1.6;
+    font-style: normal;
+  }
+
+  a {
+    color: $pokemon-blue;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $dark-blue;
+    }
+  }
+}
+
+.contact-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto $spacing-base;
+  background: linear-gradient(145deg, $pokemon-red, $accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+
+  img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+    transition: all 0.6s ease;
+  }
+}
+
+.contact-form {
+  @extend %card-base;
+  padding: $spacing-base * 2;
+  background: rgba(255, 255, 255, 0.95);
+
+  .form-label {
+    color: $dark;
+    font-weight: 500;
+    margin-bottom: $spacing-base * 0.5;
+  }
+
+  .form-control {
+    border: 2px solid $light-gray;
+    border-radius: 0.5rem;
+    padding: $spacing-base * 0.75;
+    transition: all 0.3s ease;
+
+    &:focus {
+      border-color: $pokemon-blue;
+      box-shadow: 0 0 0 0.2rem rgba($pokemon-blue, 0.25);
+    }
+  }
+
+  textarea.form-control {
+    resize: vertical;
+  }
+
+  .btn-primary {
+    width: 100%;
+    margin-top: $spacing-base;
+  }
+}
+
+// Product Detail Pages Styles
+
+.product-detail {
+  padding: 2rem 0;
+  background: linear-gradient(145deg, #2A6EB5, #1A1A1A);
+  min-height: 80vh;
+  color: white;
+}
+
+.product-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.product-image:hover {
+  transform: scale(1.05);
+}
+
+.product-info {
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+}
+
+.price {
+  font-size: 2rem;
+  color: #FFCB05;
+  font-weight: bold;
+}
+
+.stats {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+}
+
+.btn-add-to-cart {
+  background-color: #DC0A2D;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.btn-add-to-cart:hover {
+  background-color: #ff1f1f;
+  transform: translateY(-2px);
 }
