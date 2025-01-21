@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascripy</title>
+  </head>
+  <body>
+    <h1>Numara tahmin oyunu!</h1>
+    <p>
+      Lütfen tahmin aralığındaki en büyük sayıyı seçin.Örneğin 0-10 istiyorsanız
+      10 seçmelisiniz.
+    </p>
+    <div class="numberRange">
+      <input type="text" id="numberRange" name="numberRange" /><br /><br />
+      <button id="rangeButton">Sayı Aralığı</button>
+    </div>
+    <div class="guess">
+      <input type="text" id="fname" name="fname" /><br /><br />
+      <button id="guessButton">Tahmin Et</button>
+    </div>
+
+    <p id="result"></p>
+    <script>
+      const inputField = document.querySelector("#fname");
+      const guessButton = document.querySelector("#guessButton");
+      const result = document.querySelector("#result");
+      const numberRangeField = document.querySelector("#numberRange");
+      const rangeButton = document.querySelector("#rangeButton");
+      let randomNumber = null;
+      console.log("randomnumber", randomNumber);
+      rangeButton.addEventListener("click", () => {
+        const numberRangeValue = Number(numberRangeField.value);
+        if (numberRangeValue) {
+          randomNumber = Math.floor(Math.random() * numberRangeValue);
+        }
+        console.log("randomnumber", randomNumber);
+      });
+      guessButton.addEventListener("click", () => {
+        console.log("randomnumber", randomNumber);
+        if (randomNumber) {
+          const userGuess = inputField.value;
+          console.log("userGuess", userGuess);
+          if (userGuess > randomNumber) {
+            result.innerHTML = "Daha aşağı bir sayı seçin";
+          } else if (userGuess < randomNumber) {
+            result.innerHTML = "Daha yukarı bir sayı seçin";
+          } else {
+            result.innerHTML = "Tebrikler, doğru tahmin";
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

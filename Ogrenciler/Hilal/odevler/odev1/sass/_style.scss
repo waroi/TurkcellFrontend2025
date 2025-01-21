@@ -1,111 +1,128 @@
-$border: 2px solid transparent;
-$box-shadow: 0 0 15px rgba(184, 184, 184, 0.7);
-$border-radius: 40px;
-
-html,
+$button-border: 1px solid rgba(0, 255, 255, 0.3);
+html {
+  scroll-behavior: smooth;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: bold;
+} //mixinler?
 body {
-  position: relative;
-  color: white;
-  font-size: large;
-  font-family: "Orbitron", serif;
+  background-image: url("../assets/background.png");
+  background-attachment: fixed;
 }
 header {
   font-family: "Orbitron", serif;
 }
-
-body {
-  background-image: url("../assets/background.png");
-  background-attachment: fixed;
-  //   background: linear-gradient(
-  //     135deg,
-  //     #f2b8a0,
-  //     #d68e72,
-  //     #b27f64,
-  //     #f1a7c7,
-  //     #f2994a
-  //   );
-}
 section,
 footer {
-  padding: 100px 0px;
+  padding: 70px 0px;
 }
 .img-wrapper {
-  max-height: 200px;
+  max-height: 400px;
+} //silincek mi?
+input {
+  background-color: $light; //TODO: HTMl içine alınabilir
 }
-.retro-background {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: -1;
+footer {
+  color: $light; //TODO:footerdaki text-white etiketi silince otomatik olucak zaten.inherit oalrak.
 }
-.content {
-  position: relative;
-  z-index: 1;
-  animation: sliding-card 1.2s ease-in-out;
-}
+
 .main-card {
-  position: relative;
-  z-index: 1;
-  border: 2px solid transparent;
-  background-image: linear-gradient(white, white),
-    linear-gradient(135deg, #8a8a8a, #b8b8b8);
-  box-shadow: 0 0 15px rgba(184, 184, 184, 0.7); /* Light silver glow */
-  border-radius: $border-radius;
   background: linear-gradient(
-    60deg,
+    120deg,
     #61363d,
     #25323e,
     #b3b0ca,
-    #571c13,
+    #301729,
     #412f2f
   );
-  margin-top: 100px;
-  animation: sliding-card 0.7s ease-out;
-  &::after {
-    position: absolute;
-    content: "";
-    width: 120%;
-    height: 120%;
-    background: black;
-    overflow: hidden;
-    z-index: 10;
+  box-shadow: $box-shadow; //TODO:normalde bt_override da tanımlandı ama nedense şie yaramadı zaman kalırsa kontrol et.
+  // animation: sliding-card 0.7s ease-out forwards;
+  background-attachment: fixed;
+}
+.description-section {
+  min-height: 100vh;
+  .cards div,
+  .content {
+    opacity: 0;
+    animation: sliding-card 1s ease-in forwards;
+  }
+  .cards {
+    div:nth-child(odd) {
+      animation-delay: 0.5s;
+    }
+    div:nth-child(even) {
+      animation-delay: 0.7s;
+    }
   }
 }
-// .main-wrapper {
-//   position: absolute;
-//   background-image: conic-gradient(#ff0 20deg, transparent 120deg);
-//   width: 170%;
-//   height: 170%;
-//   top: -35%;
-//   left: -35%;
-//   animation: rotation 2s linear infinite;
-//   z-index: 0;
-// }
+.search-button {
+  transition: all 1s ease-in forwards;
+  &:hover {
+    background-color: transparent;
+    box-shadow: $box-shadow;
+  }
+}
+.search-input {
+  transition: all 0.1 ease-in forwards;
+  border-bottom: 1px solid $light;
+  &:focus {
+    transition: all 1s ease-in forwards;
+    border: 1px solid $secondary;
+  }
+  &::placeholder {
+    font-size: smaller;
+    color: rgb(109, 107, 107);
+  }
+}
 .stars {
   background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars.png")
     repeat;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: block;
   z-index: -2;
   background-attachment: fixed;
+}
+.star {
+  width: 5px;
+  height: 5px;
+  background: linear-gradient(45deg, $light, rgba(255, 255, 255, 0.2));
+  border-radius: 50%;
+  box-shadow: 0 0 10px $light, 0 0 20px $light;
+  animation: star-glow 1.3s ease-in forwards;
+  animation: star-glow 2s infinite alternate ease-in-out;
+}
+.star:nth-child(1) {
+  top: 20%;
+  right: 15%;
+  animation: move-star 1.3s ease-in forwards 5s;
+}
+.star:nth-child(2) {
+  animation: move-star 1.3s ease-in forwards 10s;
+  top: 50%;
+  left: 15%;
+}
+.star:nth-child(3) {
+  top: 80%;
+  left: 20%;
+}
+.star:nth-child(4) {
+  top: 10%;
+  left: 80%;
 }
 .light {
   height: 100%;
   width: 100%;
   &:after {
-    animation: moving 30s linear infinite alternate-reverse;
+    animation: moving 10s linear infinite alternate-reverse;
     content: "";
     display: block;
     position: absolute;
     z-index: -1;
     width: 100%;
     height: 100%;
-    top: 50%;
+    top: 20%;
     left: 0px;
     background: radial-gradient(
       48.58% 48.58% at 49.96% 59.07%,
@@ -115,53 +132,79 @@ footer {
     );
   }
 }
-.card {
-  position: relative;
-  background: #19191e;
-  opacity: rba(0, 0, 0, 0.5);
-  color: white;
-  border-radius: $border-radius;
-  transition: box-shadow 0.3s ease; /* Smooth transition */
-  overflow: hidden;
+.retro-background {
   background-color: rgba(0, 0, 0, 0.5);
-  border: none;
 }
-
-// .future-card {
-//   position: relative;
-//   overflow: hidden;
-//   border-radius: $border-radius;
-
-//   //   &::before {
-//   //     content: "";
-//   //     position: absolute;
-//   //     background-image: conic-gradient(#ff0 20deg, transparent 120deg);
-//   //     width: 170%;
-//   //     height: 170%;
-//   //     top: -35%;
-//   //     left: -35%;
-//   //     transition: transform 0.5s ease-in-out;
-//   //   }
-
-//   //   &:hover::before {
-//   //     animation: rotation 0.5s linear;
-//   //   }
-// }
-
-.card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 5px 20px rgba(255, 0, 150, 0.8), 0 0 20px rgba(0, 255, 255, 0.6);
-  border: 1px solid rgba(0, 255, 255, 0.8);
+.card {
+  overflow: hidden;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+  &:hover {
+    .product-price,
+    .card-title {
+      color: $primary;
+    }
+  }
+  img {
+    transition: all 0.3s ease-in;
+  }
 }
-button {
-  border-radius: $border-radius !important;
+.btn {
+  border: $button-border;
+  box-shadow: $box-shadow-sm;
 }
-
+.card:hover,
+.btn:not(.navbar .btn, .navbar button):hover {
+  .btn:not(.navbar .btn, .navbar button) {
+    transform: scale(1.05);
+  }
+  box-shadow: 0 5px 20px $danger, 0 0 20px rgba(0, 255, 255, 0.6);
+  border: 1px solid $success;
+  .img-wrapper img {
+    transform: scale(1.05);
+    object-position: center;
+  }
+}
+.header-border {
+  height: 1px;
+  &::after {
+    position: absolute;
+    content: "";
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 0%;
+    background-color: #f2994a;
+    z-index: 1;
+    animation: loading-border 1s linear forwards;
+  }
+}
+.logo {
+  letter-spacing: 2px;
+  animation: neon-glow 1.5s ease-in-out infinite alternate;
+}
+.carousel-img-wrapper {
+  max-height: 500px;
+}
+@keyframes move-star {
+  from {
+    transform: translateX(0) translateY(0) scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100px) translateY(400px) scale(0.5);
+    opacity: 0;
+  }
+}
 @keyframes sliding-card {
   from {
+    opacity: 0;
     transform: translateY(500px);
   }
   to {
+    opacity: 100;
     transform: translateY(0px);
   }
 }
@@ -169,9 +212,14 @@ button {
   0% {
     transform: translate(0px, 0px) rotate(0deg);
   }
-
+  25% {
+    transform: translate(300px, 100px) rotate(60deg);
+  }
+  50% {
+    transform: translate(500px, 50px) rotate(60deg);
+  }
   100% {
-    transform: translate(200px, 3000px) rotate(60deg);
+    transform: translate(100vh, 100px) rotate(60deg);
   }
 }
 @keyframes rotation {
@@ -179,36 +227,48 @@ button {
     transform: rotate(-360deg);
   }
 }
-// .content {
-//   text-align: center;
-//   color: white;
-//   text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.8); /* Light glowing effect */
-// }
-
-// .title {
-//   font-size: 4rem;
-//   color: #f1a7c7; /* Neon pink */
-//   letter-spacing: 4px;
-// }
-
-// .subtitle {
-//   font-size: 1.5rem;
-//   color: #f2994a; /* Neon orange */
-//   margin-top: 10px;
-//   letter-spacing: 2px;
-// }
-
-// h1,
-// p {
-//   transform: scale(1.1);
-//   animation: neon-glow 1.5s ease-in-out infinite alternate;
-// }
-
-// @keyframes neon-glow {
-//   0% {
-//     text-shadow: 0 0 10px #f1a7c7, 0 0 20px #f1a7c7, 0 0 30px #f1a7c7;
-//   }
-//   100% {
-//     text-shadow: 0 0 20px #f1a7c7, 0 0 30px #f1a7c7, 0 0 40px #f1a7c7;
-//   }
-// }
+@keyframes loading-border {
+  100% {
+    width: 100%;
+  }
+}
+@keyframes neon-glow {
+  0% {
+    text-shadow: 0 0 10px $secondary, 0 0 20px $secondary, 0 0 30px $secondary;
+  }
+  100% {
+    text-shadow: 0 0 20px $secondary, 0 0 30px $secondary, 0 0 40px $secondary;
+  }
+}
+@keyframes star-glow {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 5px $light, 0 0 10px $light, 0 0 20px #f2994a;
+    opacity: 0.9;
+  }
+  20% {
+    transform: scale(1.05);
+    box-shadow: 0 0 8px $light, 0 0 16px #f2994a, 0 0 25px #ffcc99;
+    opacity: 1;
+  }
+  40% {
+    transform: scale(1.03);
+    box-shadow: 0 0 6px $light, 0 0 12px #ffcc99, 0 0 18px #f2994a;
+    opacity: 0.95;
+  }
+  60% {
+    transform: scale(1.07);
+    box-shadow: 0 0 10px $light, 0 0 20px #ffcc99, 0 0 30px #f2994a;
+    opacity: 1;
+  }
+  80% {
+    transform: scale(1.04);
+    box-shadow: 0 0 7px $light, 0 0 15px #f2994a, 0 0 22px #ffcc99;
+    opacity: 0.97;
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 5px $light, 0 0 10px $light, 0 0 20px #f2994a;
+    opacity: 0.9;
+  }
+}

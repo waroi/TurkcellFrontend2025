@@ -1,0 +1,642 @@
+@font-face {
+  font-family: 'RF Dewi Header';
+  src: url('/fonts/rf-dewi-ultrabold.ttf') format('truetype');
+  font-weight: 600;
+  font-display: swap;
+  /* swap özelliği yazı tipi yüklenene kadar sistem yazı tipinin görüntülenmesini sağlıyor */
+}
+
+@font-face {
+  font-family: 'RF Dewi';
+  src: url('/fonts/rf-dewi-regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+$font-primary: 'RF Dewi Header', sans-serif;
+$font-secondary: 'RF Dewi', sans-serif;
+$mobile-width: 576px;
+$tablet-width: 768px;
+$desktop-width: 992px;
+$spacing-base: 1rem;
+$grid-gap: 2rem;
+$banner-height: 100vh;
+$pokemon-red: #E20101;
+$pokemon-blue: #2A6EB5;
+$pokemon-yellow: #FFCB05;
+$dark: #1A1A1A;
+$gray: #666666;
+$light-gray: #F5F5F5;
+$dark-blue: darken($pokemon-blue, 15%);
+$light-yellow: lighten($pokemon-yellow, 15%);
+$light-red: lighten($pokemon-red, 15%);
+$primary: $pokemon-blue;
+$secondary: $pokemon-yellow;
+$accent: $pokemon-red;
+$overlay-opacity: 0.7;
+$content-max-width: 1200px;
+$breakpoints: (
+  'mobile': 576px,
+  'tablet': 768px,
+  'desktop': 992px
+);
+
+// Mixins
+@mixin flex-center {
+  /*elemanların hem yatayda hem dikeyde ortalanması gereken yerlerde kullanıldı*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin grid-responsive {
+  /*Mobil ekranlarda: Tek kolon
+  Tablet ekranlarda: İki kolon
+  Masaüstü ekranlarda: Üç kolon*/
+
+  display: grid;
+  gap: $grid-gap;
+
+  @media (min-width: $tablet-width) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: $desktop-width) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@mixin hover-effect {
+  /*yükseltme animasyonu sağlayan mixin*/
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+// Extends
+%card-base {
+  background: #fff;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+%dark-card-base {
+  background-color: $dark;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: #fff;
+}
+
+%heading-base {
+  font-family: $font-primary;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+body {
+  font-family: $font-secondary;
+  line-height: 1.6;
+
+  &.no-scroll {
+    overflow: hidden;
+  }
+}
+.banner {
+  position: relative;
+  height: $banner-height;
+  width: 100%;
+  overflow: hidden;
+  background-color: $dark-blue;
+
+  &__video-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: $dark-blue;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        135deg,
+        rgba($dark-blue, 0.8),
+        rgba($dark, 0.9)
+      );
+      z-index: 1;
+    }
+  }
+
+  &__video-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    iframe {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100vw;
+      height: 100vh;
+      transform: translate(-50%, -50%) scale(1.5);
+      pointer-events: none;
+      border: none;
+
+      @media (min-aspect-ratio: 16/9) {
+        height: 56.25vw;
+      }
+
+      @media (max-aspect-ratio: 16/9) {
+        width: 177.78vh;
+      }
+    }
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 5%;
+    z-index: 2;
+
+    @media (max-width: $tablet-width) {
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      padding: $spacing-base;
+    }
+  }
+
+  &__text {
+    flex: 0 1 60%;
+    margin-right: 2rem;
+    text-align: center;
+    color: #fff; // Paragraf rengi beyaz kalacak
+    animation: slideInLeft 1s ease-out;
+
+    @media (max-width: $tablet-width) {
+      flex: 0 1 auto;
+      margin-right: 0;
+      margin-bottom: 2rem;
+      width: 100%;
+    }
+  }
+
+  &__text {
+    flex: 0 1 60%;
+    margin-right: 2rem;
+    text-align: center;
+    color: #fff; // Paragraf rengi beyaz kalacak
+    animation: slideInLeft 1s ease-out;
+
+    @media (max-width: $tablet-width) {
+      flex: 0 1 auto;
+      margin-right: 0;
+      margin-bottom: 2rem;
+      width: 100%;
+    }
+  }
+
+  &__logo {
+    margin: $spacing-base 0;
+    font-size: 8vw;
+
+    .poke-logo {
+      max-width: 100%;
+      height: auto;
+      filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.3));
+    }
+
+    .poke-ball {
+      width: 7vw;
+      height: auto;
+    }
+  }
+
+  &__subtitle {
+    font-size: 1.5rem;
+    line-height: 1.4;
+    margin-bottom: $spacing-base * 2;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+
+    @media (max-width: $tablet-width) {
+      font-size: 1.2rem;
+    }
+  }
+
+  &__cta {
+    display: inline-block;
+    padding: $spacing-base $spacing-base * 2;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 2rem;
+    transition: all 0.3s ease;
+    background-color: $pokemon-red;
+    color: #fff;
+    border: none;
+
+    &:hover {
+      transform: translateY(-2px);
+      background-color: lighten($pokemon-red, 10%);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  &__image {
+    flex: 0 1 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: slideInRight 1s ease-out;
+
+    @media (max-width: $tablet-width) {
+      flex: 0 1 auto;
+      max-width: 70%; // Mobilde daha küçük olacak
+      margin: 0 auto;
+    }
+
+    @media (max-width: $mobile-width) {
+      max-width: 60%; // Daha küçük ekranlarda daha da küçük
+    }
+  }
+
+  .pokedex-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    .pokedex {
+      max-height: 400px;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+
+      @media (max-width: $tablet-width) {
+        max-height: 250px;
+      }
+
+      @media (max-width: $mobile-width) {
+        max-height: 200px;
+      }
+    }
+
+    .pokedex-btn {
+      position: absolute;
+      bottom: 20px;
+      padding: $spacing-base $spacing-base * 2;
+      background-color: $pokemon-red;
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      border: 2px solid $pokemon-yellow;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+      &:hover {
+        transform: translateY(-2px);
+        background-color: darken($pokemon-red, 10%);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+      }
+
+      @media (max-width: $tablet-width) {
+        bottom: 10px;
+        padding: $spacing-base $spacing-base * 1.5;
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.pokemon-card {
+
+  position: relative;
+  height: 300px;
+  padding: $spacing-base * 1.25;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    background: linear-gradient(145deg, $dark-blue, $dark);
+    height: 500px;
+    @include hover-effect;
+    @extend %dark-card-base;
+  }
+
+  .pokemon-card__content {
+    background: linear-gradient(145deg, rgba($dark-blue, 0.95), rgba($dark, 0.95));
+  }
+
+  .image {
+    width: 260px;
+    height: 260px;
+    margin-bottom: 100px;
+    margin-top: -20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+  }
+
+  .pokeball-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+    }
+  }
+
+  .pokeball {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    padding: $spacing-base;
+    object-fit: contain;
+    animation: shake 0.5s ease-in-out infinite;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .pokemon-hint {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.37);
+    color: white;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    opacity: 1;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+    @media (hover: none) {
+      content: "Tap to reveal";
+    }
+  }
+
+  .pokemon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    padding: $spacing-base;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  &:hover {
+    .image {
+      .pokeball {
+        opacity: 0;
+        animation: none;
+      }
+
+      .pokemon {
+        opacity: 1;
+      }
+
+      .pokemon-hint {
+        opacity: 0;
+        transform: translateX(-50%) translateY(10px);
+      }
+
+      .pokeball-container::before {
+        animation: none;
+      }
+    }
+  }
+
+  &__content {
+    position: relative;
+    top: -120px;
+    width: 100%;
+    padding: $spacing-base $spacing-base * 1.5;
+    color: #fff;
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+
+    h3 {
+      @extend %heading-base;
+      font-size: 1.5rem;
+      margin-bottom: $spacing-base * 0.5;
+    }
+
+    p {
+      font-family: $font-secondary;
+      margin-bottom: $spacing-base;
+    }
+  }
+
+  &:hover &__content {
+    margin-top: $spacing-base;
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0.2s;
+  }
+}
+
+@keyframes shake {
+
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+
+  25% {
+    transform: rotate(-10deg);
+  }
+
+  75% {
+    transform: rotate(10deg);
+  }
+}
+
+// Products Grid Layout
+.products-grid {
+  @include grid-responsive;
+  padding: $spacing-base * 2;
+  margin: 0 auto;
+  max-width: $content-max-width;
+
+  @media (min-width: map-get($breakpoints, 'tablet')) {
+    padding: $spacing-base * 3;
+  }
+}
+
+// Featured Products Section
+.featured-products {
+  padding: $spacing-base * 3 0;
+  background: linear-gradient(145deg, $dark-blue, $dark);
+
+
+  h2 {
+    @extend %heading-base;
+    color: $dark;
+    text-shadow: 2px 2px 4px rgba($pokemon-blue, 0.2);
+    text-align: center;
+    margin-bottom: $spacing-base * 3;
+    font-size: 2.5rem;
+
+    @media (min-width: map-get($breakpoints, 'tablet')) {
+      font-size: 3rem;
+    }
+  }
+}
+
+// Custom Button Mixin
+@mixin custom-button($background) {
+  background-color: $background;
+  border-color: darken($background, 10%);
+  color: #fff;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: darken($background, 10%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+}
+
+// Button Styles for Cards
+.btn-primary {
+  @include custom-button($pokemon-red);
+  padding: $spacing-base $spacing-base * 1.5;
+  border-radius: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  font-size: 0.9rem;
+
+  &:hover {
+    background-color: $light-red;
+    border-color: $pokemon-red;
+  }
+}
+
+.featured-products {
+  position: relative;
+  overflow: hidden;
+  padding: 3rem 0;
+}
+
+.pikachu-runner {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+}
+
+.pikachu-runner img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.pikachu-bottom {
+  bottom: 0;
+  animation: runBottom 8s linear infinite;
+  animation-delay: 4s;
+  transform: scaleX(-1); // pikachu gifinin yönünü değiştirmek için
+}
+
+@keyframes runBottom {
+  0% {
+    right: -80px;
+  }
+
+  100% {
+    right: 100%;
+  }
+}
+
+// Footer with Flexbox and Grid
+.footer {
+  background: $dark;
+  color: #fff;
+  padding: $spacing-base * 2 0;
+
+  &__grid {
+    display: grid;
+    gap: $spacing-base * 2;
+
+    @media (min-width: map-get($breakpoints, 'tablet')) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__links {
+    @include flex-center;
+    flex-direction: column;
+    align-items: flex-start;
+
+    a {
+      color: #fff;
+      text-decoration: none;
+      padding: $spacing-base * 0.5 0;
+
+      &:hover {
+        color: $pokemon-yellow;
+      }
+    }
+  }
+}

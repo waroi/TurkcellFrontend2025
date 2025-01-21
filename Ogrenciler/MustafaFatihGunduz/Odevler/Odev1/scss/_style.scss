@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Macondo&display=swap");
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Macondo', sans-serif;
+}
+html {
+    cursor: url("../assets/whip.png"), auto;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.banner-section{
+    background: url("../assets/banner.png") no-repeat center center/cover;
+}
+.products-categories{
+    .hot-block::before{
+        content: "\1F525";
+    }
+    .most-sell-block{
+        background-color: $blue-400;
+        &::before{
+            content: "\2713";
+        }
+    }
+    .new-block{
+        top: 0;
+        right: 0;
+    }
+}
+.all-products {
+    .most-block{
+        @extend .most-sell-block;
+        &::before{
+            content: "\1F4A5";
+        }
+    }
+}
+.comments{
+    .checked{
+        color: $yellow-500;
+    }
+}
+.about-us{
+    img{
+        border-radius: 50%;
+        width: 15%;
+    }
+    ul{
+        list-style: disc;
+    }
+}
