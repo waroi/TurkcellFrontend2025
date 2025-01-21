@@ -11886,6 +11886,13 @@ textarea.form-control-lg {
   font-style: normal;
   font-display: swap;
 }
+.about-card {
+  background: #fff;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
 .pokemon-card:hover {
   background-color: #1A1A1A;
   border-radius: 1rem;
@@ -11894,7 +11901,7 @@ textarea.form-control-lg {
   color: #fff;
 }
 
-.featured-products h2, .featured-products .h2, .pokemon-card__content h3, .pokemon-card__content .h3 {
+.about-card h3, .about-card .h3, .about-section h2, .about-section .h2, .featured-products h2, .featured-products .h2, .pokemon-card__content h3, .pokemon-card__content .h3 {
   font-family: "RF Dewi Header", sans-serif;
   font-weight: 600;
   line-height: 1.2;
@@ -12350,31 +12357,103 @@ body.no-scroll {
   padding: 3rem 0;
 }
 
-.pikachu-runner {
-  position: absolute;
-  width: 80px;
+.pikachu-ad {
+  background-color: #E20101;
+  width: 100%;
   height: 80px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1rem;
+  overflow: hidden;
+}
+@media (max-width: 768px) {
+  .pikachu-ad {
+    height: 60px;
+  }
 }
 
-.pikachu-runner img {
+.pikachu-text-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  animation: runBottom 15s linear infinite;
+  will-change: transform;
+  height: 100%;
+}
+
+.pikachu-text-container:nth-child(2) {
+  left: 100%;
+  animation: runBottom 15s linear infinite;
+  animation-delay: 0s;
+}
+
+.running-text {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
+  margin: 0 2rem;
+}
+@media (max-width: 768px) {
+  .running-text {
+    font-size: 0.9rem;
+    margin: 0 1rem;
+  }
+}
+@media (max-width: 480px) {
+  .running-text {
+    font-size: 0.8rem;
+    margin: 0 0.5rem;
+  }
+}
+
+.pikachu-runner-after-text {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+}
+@media (max-width: 768px) {
+  .pikachu-runner-after-text {
+    width: 50px;
+    height: 50px;
+  }
+}
+@media (max-width: 480px) {
+  .pikachu-runner-after-text {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.pikachu-runner-after-text img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-}
-
-.pikachu-bottom {
-  bottom: 0;
-  animation: runBottom 8s linear infinite;
-  animation-delay: 4s;
   transform: scaleX(-1);
 }
 
 @keyframes runBottom {
   0% {
-    right: -80px;
+    transform: translateX(0);
   }
   100% {
-    right: 100%;
+    transform: translateX(-100%);
+  }
+}
+@media (max-width: 360px) {
+  .pikachu-text-container:nth-child(2) {
+    display: none;
+  }
+  .pikachu-text-container {
+    animation-duration: 20s;
   }
 }
 .footer {
@@ -12406,6 +12485,81 @@ body.no-scroll {
 }
 .footer__links a:hover {
   color: #FFCB05;
+}
+
+.about-section {
+  background: linear-gradient(145deg, #F5F5F5, #fff);
+  padding: 4rem 0;
+}
+.about-section h2, .about-section .h2 {
+  color: #1A1A1A;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+}
+@media (min-width: 768px) {
+  .about-section h2, .about-section .h2 {
+    font-size: 3rem;
+  }
+}
+
+.about-grid {
+  display: grid;
+  gap: 2rem;
+  padding: 1rem;
+}
+@media (min-width: 768px) {
+  .about-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 992px) {
+  .about-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.about-card {
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+.about-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+.about-card:hover .about-card__icon {
+  background: linear-gradient(145deg, #2A6EB5, rgb(27.5919282511, 72.264573991, 118.9080717489));
+}
+.about-card:hover .about-card__icon img {
+  transform: rotate(360deg);
+}
+.about-card h3, .about-card .h3 {
+  color: #1A1A1A;
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+.about-card p {
+  color: #666666;
+  margin-bottom: 0;
+  line-height: 1.6;
+}
+
+.about-card__icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1rem;
+  background: linear-gradient(145deg, #E20101, #E20101);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+.about-card__icon img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+  transition: all 0.6s ease;
 }
 
 /*# sourceMappingURL=main.css.map */

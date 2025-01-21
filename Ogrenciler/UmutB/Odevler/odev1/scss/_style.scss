@@ -512,7 +512,7 @@ body {
   }
 }
 
-// Products Grid Layout
+// Products Grid
 .products-grid {
   @include grid-responsive;
   padding: $spacing-base * 2;
@@ -524,7 +524,7 @@ body {
   }
 }
 
-// Featured Products Section
+// Bestsellers Section
 .featured-products {
   padding: $spacing-base * 3 0;
   background: linear-gradient(145deg, $dark-blue, $dark);
@@ -558,7 +558,7 @@ body {
   }
 }
 
-// Button Styles for Cards
+// kart butonları tasarımı
 .btn-primary {
   @include custom-button($pokemon-red);
   padding: $spacing-base $spacing-base * 1.5;
@@ -580,32 +580,98 @@ body {
   padding: 3rem 0;
 }
 
-.pikachu-runner {
-  position: absolute;
-  width: 80px;
+.pikachu-ad {
+  background-color: #E20101;
+  width: 100%;
   height: 80px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1rem;
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    height: 60px;
+  }
 }
 
-.pikachu-runner img {
+.pikachu-text-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  animation: runBottom 15s linear infinite;
+  will-change: transform;
+  height: 100%;
+}
+
+.pikachu-text-container:nth-child(2) {
+  left: 100%;
+  animation: runBottom 15s linear infinite;
+  animation-delay: 0s;
+}
+
+.running-text {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
+  margin: 0 2rem;
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+    margin: 0 1rem;
+  }
+  @media (max-width: 480px) {
+    font-size: 0.8rem; 
+    margin: 0 0.5rem; 
+  }
+}
+
+.pikachu-runner-after-text {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+
+  @media (max-width: 768px) {
+    width: 50px;
+    height: 50px;
+  }
+
+  @media (max-width: 480px) {
+    width: 40px; 
+    height: 40px;
+  }
+}
+
+.pikachu-runner-after-text img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-}
-
-.pikachu-bottom {
-  bottom: 0;
-  animation: runBottom 8s linear infinite;
-  animation-delay: 4s;
-  transform: scaleX(-1); // pikachu gifinin yönünü değiştirmek için
+  transform: scaleX(-1);
 }
 
 @keyframes runBottom {
   0% {
-    right: -80px;
+    transform: translateX(0);
   }
-
   100% {
-    right: 100%;
+    transform: translateX(-100%);
+  }
+}
+
+@media (max-width: 360px) {
+  .pikachu-text-container:nth-child(2) {
+    display: none;
+  }
+  
+  .pikachu-text-container {
+    animation-duration: 20s;
   }
 }
 
@@ -638,5 +704,89 @@ body {
         color: $pokemon-yellow;
       }
     }
+  }
+}
+
+
+// About Us Section
+.about-section {
+  background: linear-gradient(145deg, $light-gray, #fff);
+  padding: $spacing-base * 4 0;
+  
+  h2 {
+    @extend %heading-base;
+    color: $dark;
+    font-size: 2.5rem;
+    margin-bottom: $spacing-base * 3;
+    
+    @media (min-width: map-get($breakpoints, 'tablet')) {
+      font-size: 3rem;
+    }
+  }
+}
+
+.about-grid {
+  display: grid;
+  gap: $spacing-base * 2;
+  padding: $spacing-base;
+  
+  @media (min-width: map-get($breakpoints, 'tablet')) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @media (min-width: map-get($breakpoints, 'desktop')) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.about-card {
+  @extend %card-base;
+  padding: $spacing-base * 2;
+  text-align: center;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    
+    .about-card__icon {
+      background: linear-gradient(145deg, $pokemon-blue, $dark-blue);
+      
+      img {
+        transform: rotate(360deg);
+      }
+    }
+  }
+  
+  h3 {
+    @extend %heading-base;
+    color: $dark;
+    font-size: 1.5rem;
+    margin: $spacing-base 0;
+  }
+  
+  p {
+    color: $gray;
+    margin-bottom: 0;
+    line-height: 1.6;
+  }
+}
+
+.about-card__icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto $spacing-base;
+  background: linear-gradient(145deg, $pokemon-red, $accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  
+  img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+    transition: all 0.6s ease;
   }
 }
