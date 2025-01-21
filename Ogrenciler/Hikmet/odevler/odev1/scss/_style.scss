@@ -1,0 +1,198 @@
+.discount {
+	overflow: hidden;
+	.animatedText {
+		height: 30px;
+		animation: slideLeft 20s linear infinite;
+		white-space: nowrap;
+		display: flex;
+		position: relative;
+	}
+}
+
+.carousel-section {
+	.carousel {
+		height: 100%;
+		.carousel-inner {
+			height: 100%;
+			.carousel-item {
+				height: 100%;
+				img {
+					height: 400px;
+					object-fit: cover;
+				}
+			}
+		}
+	}
+}
+.scrollable-categories {
+	overflow: auto;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+
+	img {
+		border-radius: 50%;
+		width: 100px;
+		height: 100px;
+		object-fit: cover;
+	}
+}
+.superhero-card {
+	.card {
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+		border: 1px solid rgba(0, 0, 0, 0.125);
+
+		&:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+			border: 1px solid rgba(0, 0, 0, 0.125);
+		}
+	}
+	.superhero-card-image {
+		height: 250px;
+		object-fit: cover;
+	}
+}
+
+.product-detail {
+	.product-image {
+		img {
+			width: 75%;
+			border-radius: 8px;
+		}
+	}
+	.product-details {
+		.product-title {
+			margin-bottom: 1rem;
+			font-size: 2rem;
+		}
+
+		.rating {
+			color: gold;
+			font-size: 1.5rem;
+			margin-bottom: 1rem;
+		}
+
+		.product-description {
+			font-size: 1.125rem;
+			color: #666;
+			margin-bottom: 1.25rem;
+		}
+
+		.price {
+			font-size: 1.5rem;
+			font-weight: bold;
+			color: #333;
+		}
+	}
+}
+.animated-btn {
+	position: relative;
+	overflow: hidden;
+	padding: 8px 24px;
+	transition: all 0.3s ease;
+
+	.btn-text {
+		display: inline-block;
+		position: relative;
+		transition: transform 0.3s ease;
+	}
+
+	.hover-text {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, 100%);
+		opacity: 0;
+		transition: all 0.3s ease;
+	}
+
+	&:hover {
+		.btn-text {
+			transform: translateY(-100px);
+		}
+
+		.hover-text {
+			transform: translate(-50%, -50%);
+			opacity: 1;
+		}
+	}
+}
+.card-description {
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	line-clamp: 3;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.card-title {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+
+	.badge {
+		display: inline-flex;
+		align-items: center;
+		padding: 0.25rem 0.5rem;
+		img {
+			width: 20px;
+			height: 20px;
+			object-fit: cover;
+		}
+	}
+	.superman-badge {
+		background-color: rgb(40, 40, 254);
+	}
+	.captain-badge {
+		background-color: #ffff;
+	}
+	.iron-badge {
+		background-color: #898989;
+	}
+	.hulk-badge {
+		background-color: #00ff00;
+	}
+	.spiderman-badge {
+		background-color: #ff0000;
+	}
+	.doctor-badge {
+		background-color: #049125;
+	}
+}
+// Yukarı kayma animasyonu
+@keyframes slideOutTop {
+	0% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+
+	100% {
+		transform: translateY(-100%);
+		opacity: 0;
+	}
+}
+
+// Aşağıdan yukarı kayma animasyonu
+@keyframes slideOutBottom {
+	0% {
+		transform: translateX(-50%) translateY(100%);
+		opacity: 0;
+	}
+
+	100% {
+		transform: translateX(-50%) translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes slideLeft {
+	0% {
+		transform: translateX(100%);
+	}
+	100% {
+		transform: translateX(-100%);
+	}
+}
