@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/main.css" />
+</head>
+
+<body>
+  <header class="sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <a class="navbar-brand" href="./index.html">NEEDFUL THINGS</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <p>never pay here... not with money</p>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#products">Shop</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./faqs.html">FAQS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./about_contact.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./about_contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div id="carouselExampleIndicators" class="carousel slide container" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+        aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+        aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active p-5" id="carousel-one">
+        <h2>Test text</h2>
+        <p>denenem dene</p>
+      </div>
+      <div class="carousel-item p-5" id="carousel-two">
+        <h2>Test text</h2>
+        <p>denenem dene</p>
+      </div>
+      <div class="carousel-item p-5" id="carousel-three">
+        <h2>Test text</h2>
+        <p>denenem dene</p>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <section class="container py-5 g-3" id="products">
+    <div class="row g-3 mb-3">
+      <div class="col-md-4">
+        <div class="product-card d-flex flex-column justify-content-between h-100">
+          <img src="./assets/timelock_clock.jpeg" class="img-fluid" alt="The Time-Lock Watch">
+          <h3>The Time-Lock Watch</h3>
+          <p>A watch that can stop time for the wearer, allowing them to act while everything around them freezes.</p>
+          <a class="btn w-50 mx-auto btn-warning" href="./product_pages/time_lock.html">View Details</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="product-card d-flex flex-column justify-content-between h-100">
+          <img src="./assets/beauty_cream.jpeg" class="img-fluid" alt="Beauty Cream">
+          <h3>Beauty Cream</h3>
+          <p>Beauty cream that makes ugly people beautiful!</p>
+          <a class="btn w-50 mx-auto btn-warning" href="./product_pages/beauty_cream.html">View Details</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="product-card d-flex flex-column justify-content-between h-100">
+          <img src="./assets/boxing_gloves.jpeg" class="img-fluid" alt="Boxing Gloves">
+          <h3>Boxing Gloves</h3>
+          <p>Boxing gloves that will make the user a boxing champion!</p>
+          <a class="btn w-50 mx-auto btn-warning" href="./product_pages/boxing_gloves.html">View Details</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row g-3 mb-3">
+      <div class="col-md-4">
+        <div class="product-card d-flex flex-column justify-content-between h-100">
+          <img src="./assets/dreamcatcher.jpeg" class="img-fluid" alt="Dream Catcher">
+          <h3>Dream Catcher</h3>
+          <p>A dreamcatcher that grants the user vivid, incredible dreams where they can control everything!</p>
+          <a class="btn w-50 mx-auto btn-warning" href="./product_pages/dream_catcher.html">View Details</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="product-card d-flex flex-column justify-content-between h-100">
+          <img src="./assets/enchanted_map.jpeg" class="img-fluid" alt="The Enchanted Map">
+          <h3>The Enchanted Map</h3>
+          <p>A map that leads the user to treasures beyond imagination!</p>
+          <a class="btn w-50 mx-auto btn-warning" href="./product_pages/the_enchanted_map.html">View Details</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="product-card d-flex flex-column justify-content-between h-100">
+          <img src="./assets/eternal_book.jpeg" class="img-fluid" alt="The Eternal Book">
+          <h3>The Eternal Book</h3>
+          <p>A book that writes the most captivating stories, making the reader feel like they’re living in them.</p>
+          <a class="btn w-50 mx-auto btn-warning" href="./product_pages/the_eternal_book.html">View Details</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row g-3 mb-3">
+      <div class="col-md-4">
+        <div class="product-card d-flex flex-column justify-content-between h-100">
+          <img src="./assets/fast_shoe.jpeg" class="img-fluid" alt="Lightning Shoes">
+          <h3>Lightning Shoes</h3>
+          <p>A pair of running shoes that make the wearer the fastest runner in the world!</p>
+          <a class="btn w-50 mx-auto btn-warning" href="./product_pages/lightning_shoes.html">View Details</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="product-card d-flex flex-column justify-content-between h-100">
+          <img src="./assets/kaleidoscope_of_perception.jpeg" class="img-fluid" alt="Kaleidoscope of Perception">
+          <h3>Kaleidoscope of Perception</h3>
+          <p>A kaleidoscope that allows the user to see the world from the perspective of anyone or anything!</p>
+          <a class="btn w-50 mx-auto btn-warning" href="./product_pages/kaleidoscope_of_perception.html">View Details</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="product-card d-flex flex-column justify-content-between h-100">
+          <img src="./assets/microscope.jpeg" class="img-fluid" alt="Golden Microscope">
+          <h3>Golden Microscope</h3>
+          <p>A golden microscope that reveals secrets beyond comprehension,.</p>
+          <a class="btn w-50 mx-auto btn-warning" href="./product_pages/golden_microscope.html">View Details</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row g-3 mb-3">
+      <div class="col-md-4">
+        <div class="product-card d-flex flex-column justify-content-between h-100">
+          <img src="./assets/mirror_of_traps.jpeg" class="img-fluid" alt="The Mirror of Traps">
+          <h3>The Mirror of Traps</h3>
+          <p>A mirror that shows the deepest fears of those who look into it.</p>
+          <a class="btn w-50 mx-auto btn-warning" href="./product_pages/the_mirror_of_traps.html">View Details</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="product-card d-flex flex-column justify-content-between h-100">
+          <img src="./assets/paintbrush.jpeg" class="img-fluid" alt="Magic Paintbrush">
+          <h3>Magic Paintbrush</h3>
+          <p>A paintbrush that brings anything painted to life!</p>
+          <a class="btn w-50 mx-auto btn-warning" href="./product_pages/magic_paintbrush.html">View Details</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="product-card d-flex flex-column justify-content-between h-100">
+          <img src="./assets/symbiotic_tattoo.jpeg" class="img-fluid" alt="Symbiotic Tattoo">
+          <h3>Symbiotic Tattoo</h3>
+          <p>A tattoo that grants the wearer incredible strength and invincibility!</p>
+          <a class="btn w-50 mx-auto btn-warning" href="./product_pages/symbiotic_tattoo.html">View Details</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row g-3 mb-3">
+      <div class="col-md-4">
+        <div class="product-card d-flex flex-column justify-content-between h-100">
+          <img src="./assets/talking_plant.jpeg" class="img-fluid" alt="The Talking Plant">
+          <h3>The Talking Plant</h3>
+          <p>A plant that speaks the truth about anything it’s asked.</p>
+          <a class="btn w-50 mx-auto btn-warning" href="./product_pages/the_talking_plant.html">View Details</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="product-card d-flex flex-column justify-content-between h-100">
+          <img src="./assets/telescope.jpeg" class="img-fluid" alt="Future Telescope">
+          <h3>Future Telescope</h3>
+          <p>A telescope that allows the user to see the future with perfect clarity!</p>
+          <a class="btn w-50 mx-auto btn-warning" href="./product_pages/future_telescope.html">View Details</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="product-card d-flex flex-column justify-content-between h-100">
+          <img src="./assets/typewriter.jpeg" class="img-fluid" alt="Typewriter">
+          <h3>Typewriter</h3>
+          <p>A typewriter that writes best-selling murder mysteries.</p>
+          <a class="btn w-50 mx-auto btn-warning" href="./product_pages/typewriter.html">View Details</a>
+        </div>
+      </div>
+    </div>
+
+
+  </section>
+
+  <footer class="d-flex">
+    <img src="./assets/r_running2.png" alt="">
+    <div class="container">
+      <div class="py-3 my-4">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+          <li class="nav-item"><a href="./index.html" class="nav-link px-2">Home</a></li>
+          <li class="nav-item"><a href="#products" class="nav-link px-2">Features</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2">Pricing</a></li>
+          <li class="nav-item"><a href="./faqs.html" class="nav-link px-2">FAQs</a></li>
+          <li class="nav-item"><a href="./about_contact.html" class="nav-link px-2">About</a></li>
+        </ul>
+        <p class="text-center">© 2025 N33Dful Company, Inc</p>
+      </div>
+    </div>
+    <img class="me-auto" src="./assets/lucius.png" alt="">
+  </footer>
+
+  
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>
