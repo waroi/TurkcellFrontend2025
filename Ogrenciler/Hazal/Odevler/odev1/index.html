@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HoloWorld</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/main.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+    <header class="header-menu">
+        <nav class="navbar navbar-expand-lg" role="navigation" aria-label="Main navigation">
+            <div class="container-lg">
+                <a class="navbar-brand" href="index.html" aria-label="HoloWorld">
+                    <img src="./assets/logo.png" alt="Logo" width="auto" height="50">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu"
+                    aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse nav-underline" id="navbarMenu">
+                    <ul class="navbar-nav ms-auto me-5" role="menubar">
+                        <li class="nav-item" role="none">
+                            <a class="nav-link me-2" href="index.html" role="menuitem" aria-current="page">Home</a>
+                        </li>
+                        <li class="nav-item" role="none">
+                            <a class="nav-link me-2" href="#products" role="menuitem">Products</a>
+                        </li>
+                        <li class="nav-item" role="none">
+                            <a class="nav-link me-2" href="#about" role="menuitem">About</a>
+                        </li>
+                        <li class="nav-item" role="none">
+                            <a class="nav-link me-2" href="#faq" role="menuitem">FAQ</a>
+                        </li>
+                        <li class="nav-item" role="none">
+                            <a class="nav-link me-2" href="#contact" role="menuitem">Contact Us</a>
+                        </li>
+                    </ul>
+                    <div class="user-items d-flex me-2">
+                        <a class="me-2" href="#"><i class="fa-regular fa-user me-2"></i></a>
+                        <a class="me-2" href="#"><i class="fa-regular fa-heart me-2"></i></a>
+                        <a class="me-2" href="#"><i class="fa-solid fa-cart-shopping me-2"></i></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section class="banner p-5">
+        <div class="overlay">
+            <div class="container">
+                <div class="row banner-content">
+                    <div class="col-lg-4">
+                        <h2 class="banner-title mt-5 mb-5 text-white">WELCOME TO HOLOWorld!</h2>
+                        <p class="text-white mb-5">Buy a holographic universe and step into different adventures.</p>
+                        <a href="products.html" class="banner btn btn-secondary">BUY NOW</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="products" class="products p-5">
+        <div class="container">
+            <h2 class=" products-title text-center mt-5 mb-5">PRODUCTS</h2>
+            <div class="product-cards row d-flex">
+                <div class="row d-flex">
+                    <div class="col-lg-4 col-md-8 col-sm-12 mb-4">
+                        <div class="card">
+                            <div class="card-image d-flex justify-content-center pt-5">
+                                <img src="./assets/card1.png" alt="card1" width="200" height="200" class="img-fluid">
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title text-center mb-4">Holo Projector</h4>
+                                <p class="card-text text-center">
+                                    Design yourself as a holographic hero and become the main character of a fantasy story. Add any creatures and enemies you want holographically.
+                                </p>
+                                <p class="card-price text-center">$59.99</p>
+                            </div>
+                            <div class="d-grid gap-2 d-flex justify-content-center mb-3">
+                                <a href="product1.html" class="card btn btn-primary" type="button">View Details</a>
+                                <a class="card btn btn-primary" type="button">Buy</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-8 col-sm-12 mb-5">
+                        <div class="card">
+                            <div class="card-image d-flex justify-content-center pt-5">
+                                <img src="./assets/card2.jpg" alt="card2" width="200" height="200" class="img-fluid">
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title text-center mb-4">Holo Storybook</h4>
+                                <p class="card-text text-center">
+                                    Brings classic and modern fairy tales to life holographically for children. Kids can be part of the story!
+                                </p>
+                                <p class="card-price text-center">$59.99</p>
+                            </div>
+                            <div class="d-grid gap-2 d-flex justify-content-center mb-3">
+                                <a href="product2.html" class="card btn btn-primary" type="button">View Details</a>
+                                <a class="card btn btn-primary" type="button">Buy</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-8 col-sm-12 mb-5">
+                        <div class="card">
+                            <div class="card-image d-flex justify-content-center pt-5">
+                                <img src="./assets/card3.jpg" alt="card3" width="200" height="200" class="img-fluid">
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title text-center mb-4">Holo Adventure Map</h4>
+                                <p class="card-text text-center">
+                                    It allows children to explore the world on a holographic map, such as diving into the depths of the ocean in a submarine or traveling in Antarctica.
+                                </p>
+                                <p class="card-price text-center">$59.99</p>
+                            </div>
+                            <div class="d-grid gap-2 d-flex justify-content-center mb-3">
+                                <a href="product3.html" class="card btn btn-primary" type="button">View Details</a>
+                                <a class="card btn btn-primary" type="button">Buy</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-8 col-sm-12 mb-5">
+                        <div class="card">
+                            <div class="card-image d-flex justify-content-center pt-5">
+                                <img src="./assets/card4.jpg" alt="card4" width="200" height="200" class="img-fluid">
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title text-center mb-4">Holo Dream Simulator </h4>
+                                <p class="card-text text-center">
+                                    Turn your dreams into a holographic experience. Fly with dragons in a fantasy world and wander through giant flower forests.
+                                </p>
+                                <p class="card-price text-center">$39.99</p>
+                            </div>
+                            <div class="d-grid gap-2 d-flex justify-content-center mb-3">
+                                <a href="product4.html" class="card btn btn-primary" type="button">View Details</a>
+                                <a class="card btn btn-primary" type="button">Buy</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-8 col-sm-12 mb-5">
+                        <div class="card">
+                            <div class="card-image d-flex justify-content-center pt-5">
+                                <img src="./assets/card5.jpg" alt="card5" width="200" height="200" class="img-fluid">
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title text-center mb-4">Holo Ghost Simulator</h4>
+                                <p class="card-text text-center">
+                                    An experience where you can encounter holographic ghosts or mythological creatures in historical places. Thrilling fun!
+                                </p>
+                                <p class="card-price text-center">$79.99</p>
+                            </div>
+                            <div class="d-grid gap-2 d-flex justify-content-center mb-3">
+                                <a href="product5.html" class="card btn btn-primary" type="button">View Details</a>
+                                <a class="card btn btn-primary" type="button">Buy</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-8 col-sm-12 mb-5">
+                        <div class="card">
+                            <div class="card-image d-flex justify-content-center pt-5">
+                                <img src="./assets/card6.jpg" alt="card6" width="200" height="200" class="img-fluid">
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title text-center mb-4">Holo Chef</h4>
+                                <p class="card-text text-center">
+                                    A virtual holographic chef teaches you recipes and helps you cook – both classic recipes and creative “space cuisine” themed dishes.
+                                </p>
+                                <p class="card-price text-center">$109.99</p>
+                            </div>
+                            <div class="d-grid gap-2 d-flex justify-content-center mb-3">
+                                <a href="product6.html" class="card btn btn-primary" type="button">View Details</a>
+                                <a class="card btn btn-primary" type="button">Buy</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-8 col-sm-12 mb-5">
+                        <div class="card">
+                            <div class="card-image d-flex justify-content-center pt-5">
+                                <img src="./assets/card7.jpg" alt="card7" width="200" height="200" class="img-fluid">
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title text-center mb-4">Holo Community Simulator</h4>
+                                <p class="card-text text-center">
+                                    Build your own holographic society. Your holographic people can worship you, trade with you, or revolutionize you!
+                                </p>
+                                <p class="card-price text-center">$69.99</p>
+                            </div>
+                            <div class="d-grid gap-2 d-flex justify-content-center mb-3">
+                                <a href="product7.html" class="card btn btn-primary" type="button">View Details</a>
+                                <a class="card btn btn-primary" type="button">Buy</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-8 col-sm-12 mb-5">
+                        <div class="card">
+                            <div class="card-image d-flex justify-content-center pt-5">
+                                <img src="./assets/card8.jpg" alt="card8" width="200" height="200" class="img-fluid">
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title text-center mb-4">Holo Dinner Club</h4>
+                                <p class="card-text text-center">
+                                    Virtual dining experiences with other users worldwide. Each month, a different cuisine is presented holographically, the flavors are simulated.
+                                </p>
+                                <p class="card-price text-center">$49.99</p>
+                            </div>
+                            <div class="d-grid gap-2 d-flex justify-content-center mb-3">
+                                <a href="product8.html" class="card btn btn-primary" type="button">View Details</a>
+                                <a class="card btn btn-primary" type="button">Buy</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-8 col-sm-12 mb-5">
+                        <div class="card">
+                            <div class="card-image d-flex justify-content-center pt-5">
+                                <img src="./assets/card9.jpg" alt="card9" width="200" height="200" class="img-fluid">
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title text-center mb-4">Holo Friend Simulator</h4>
+                                <p class="card-text text-center">
+                                    Holographic friends who tell fun and educational stories to children, play games and teach them science.
+                                </p>
+                                <p class="card-price text-center">$29.99</p>
+                            </div>
+                            <div class="d-grid gap-2 d-flex justify-content-center mb-3">
+                                <a href="product9.html" class="card btn btn-primary" type="button">View Details</a>
+                                <a class="card btn btn-primary" type="button">Buy</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="about" class="about-us p-5">
+        <div class="container">
+            <h2 class=" about-title text-center mt-4 mb-4 text-white">ABOUT US</h2>
+            <p class="text-center mb-5 text-white px-3">At HoloWorld, we’re redefining reality and transforming how you
+                interact with the world around you. Our platform is a futuristic marketplace that combines cutting-edge
+                holographic technology with creativity, innovation, and personalization.
+            </p>
+            <div class="about-cards row d-flex">
+                <div class="col-lg-4 col-md-8 col-sm-12 mb-5">
+                    <div class="about-card">
+                        <h4 class="card-title text-center mb-3">Our Mission</h4>
+                        <p>To create immersive holographic experiences that enhance daily life, spark creativity, and
+                            bring dreams to life. Our products are designed to inspire joy, curiosity, and wonder while
+                            seamlessly integrating with your lifestyle.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-8 col-sm-12 mb-5">
+                    <div class="about-card">
+                        <h4 class="card-title text-center mb-3">Our Vision</h4>
+                        <p>We believe in a world where imagination knows no bounds. Whether it’s stepping into your
+                            dream adventure, experiencing new dimensions, or connecting with others through surreal
+                            holographic products, we strive to make the extraordinary accessible to everyone.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-8 col-sm-12 mb-5">
+                    <div class="about-card">
+                        <h4 class="card-title text-center mb-3">What We Offer</h4>
+                        <p>HoloHaven is more than just a marketplace; it’s your portal to the future. From holographic
+                            personal assistants and interactive storytelling devices to surreal virtual experiences and
+                            revolutionary tools.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="faq" class="faq p-5">
+        <div class="container">
+            <h2 class="faq-title text-center mt-5 mb-5">Frequently Asked Questions</h2>
+            <div class="faq-cards row d-flex">
+                <div class="col-lg-4 col-md-8 col-sm-12 mb-5">
+                    <div class="faq-card">
+                        <h4 class="card-title text-center mb-3 text-white">How do holographic products work?
+                        </h4>
+                        <p class="text-white">Our products use advanced optical projection and AI technology to create
+                            interactive, three-dimensional visuals that blend seamlessly with the real world.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-8 col-sm-12 mb-5">
+                    <div class="faq-card">
+                        <h4 class="card-title text-center mb-3 text-white">How much space do the products take up?
+                        </h4>
+                        <p class="text-white">HoloWorld products are designed to be compact and modern. For instance,
+                            the HoloTale Projector is about the size of a small speaker, and the HoloStory Book is
+                            similar to a tablet in size.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-8 col-sm-12 mb-5">
+                    <div class="faq-card">
+                        <h4 class="card-title text-center mb-3 text-white">Do I need special equipment to use these
+                            products?
+                        </h4>
+                        <p class="text-white">No additional equipment is needed. Our products are standalone devices.
+                            For advanced features, you can connect them to Wi-Fi or use our dedicated mobile app for
+                            seamless integration.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-8 col-sm-12 mb-5">
+                    <div class="faq-card">
+                        <h4 class="card-title text-center mb-3 text-white">Can the products be personalized?
+                        </h4>
+                        <p class="text-white">Absolutely! Many of our holographic devices can be customized to match
+                            your preferences. For instance, the HoloLegend Simulator lets you create your own character
+                            and storyline.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-8 col-sm-12 mb-5">
+                    <div class="faq-card">
+                        <h4 class="card-title text-center mb-3 text-white">How can I order your products? Is it secure?
+                        </h4>
+                        <p class="text-white">You can purchase our products directly through our website using secure
+                            payment methods. Digital products are instantly activated, while physical items will be
+                            delivered to your doorstep. 
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-8 col-sm-12 mb-5">
+                    <div class="faq-card">
+                        <h4 class="card-title text-center mb-3 text-white">Can I get technical support for the products?
+                        </h4>
+                        <p class="text-white">Of course! Our support team is available to assist you before and after
+                            your purchase. Simply visit the Customer Support section on our website to get in touch with
+                            us.
+                        </p>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <section id="contact" class="contact p-5">
+        <div class="container">
+            <h2 class="contact-title mt-5 mb-5 text-center">CONTACT US</h2>
+            <div class="contact row">
+                <form class="col-lg-6 col-md-8 col-sm-12 mb-5 validation">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="name" name="name"
+                            placeholder="Enter your full name">
+                        <div class="valid-feedback">Good!</div>
+                        <div class="invalid-feedback">Please enter a valid name.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+                        <div class="valid-feedback">Good!</div>
+                        <div class="invalid-feedback">Please enter a valid e-mail address.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="subject" class="form-label">Subject</label>
+                        <select class="form-select" id="subject" name="subject">
+                            <option value>Choose an option..</option>
+                            <option value="Technical Support">Technical Support</option>
+                            <option value="General">General</option>
+                            <option value="Feedback">Feedback</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <div class="invalid-feedback">Please select an option.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Message</label>
+                        <input type="text" class="form-control" id="message" name="message" row="10" required
+                            minlength="10" placeholder="Enter your messsage here">
+                        <div class="valid-feedback">Good!</div>
+                        <div class="invalid-feedback">Please enter a valid e-mail address.</div>
+                    </div>
+                    <div>
+                        <button class="btn btn-primary" type="submit">Send</button>
+                    </div>
+                </form>
+                <div class="col-lg-5 col-md-8 col-sm-12 ms-3 mb-5 info-cards">
+                    <div class="info-card mb-3">
+                        <div class="contact-icon d-flex ms-auto me-auto mb-2">
+                            <a class="ms-auto me-auto" href="#"><i class="fa-solid fa-phone"></i></a>
+                        </div>
+                        <h4 class="card-title text-center mb-3">Call Us
+                        </h4>
+                        <p>Tell:
+                            <a href="+12163251729">(216) 325 1729</a>
+                        </p>
+                    </div>
+                    <div class="info-card mb-3">
+                        <div class="contact-icon d-flex ms-auto me-auto mb-2">
+                            <a class="ms-auto me-auto" href="#"><i class="fa-solid fa-at"></i></a>
+                        </div>
+                        <h4 class="card-title text-center mb-3">E-mail Us
+                        </h4>
+                        <p>E-mail:
+                            <a href="mailto:info@holoworld.com">info@holoworld.com</a>
+                        </p>
+                    </div>
+                    <div class="info-card">
+                        <div class="contact-icon d-flex ms-auto me-auto mb-2">
+                            <a class="ms-auto me-auto" href="#"><i class="fa-solid fa-location-dot"></i></a>
+                        </div>
+                        <h4 class="card-title text-center mb-3">Address
+                        </h4>
+                        <p>Cemal Paşa Mahallesi
+                            <br> 124.Sokak Dünya Plaza Kat:5<br>
+                            Maltepe, İstanbul
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <footer class="footer p-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-8 col-sm-12 ">
+                    <div class="footer-brand mb-4">
+                        <img src="./assets/logo.png" alt="HoloWorld" height="50">
+                        <div>
+                            <ul class="list-unstyled footer-links mt-3">
+                                <li class="mb-2"><a class="links" href="#products">Shop HoloWorld</a></li>
+                                <li class="mb-2"><a class="links" href="#about">About Us</a></li>
+                                <li class="mb-2"><a class="links" href="#faq">FAQ</a></li>
+                                <li class="mb-2"><a class="links" href="#contact">Contact Us</a></li>
+                                <li class="mb-2"><a class="links" href="#">Help</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-8 col-sm-12 ">
+                    <h4 class="mb-3 text-white">Newsletter</h4>
+                    <p class="text-white">Subscribe and stay current with our latest products.</p>
+                    <form class="footer-subscribe">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Enter your e-mail"
+                                aria-label="E-mail for subscribe">
+                            <button class="btn btn-secondary" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-end mt-4">
+                <div class="row">
+                    <div class="col-lg-6 col-md-8 col-sm-12 ">
+                        <p class="mb-0 text-white">&copy; 2025 HoloWorld. All rights reserved.</p>
+                    </div>
+                    <div class="col-lg-6 col-md-8 col-sm-12 d-flex">
+                        <div class="footer-social ms-auto">
+                            <a class="me-3" href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a class="me-3" href="#"><i class="fa-brands fa-twitter"></i></a>
+                            <a class="me-3" href="#"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
