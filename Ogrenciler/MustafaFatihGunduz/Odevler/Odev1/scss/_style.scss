@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Macondo&display=swap");
 $span-color: #222222;
+$discountColor : #D99D81;
+$navBarHoverColor : red ;
 @mixin textStyle($size, $weight) {
     font-size: $size;
     font-weight: $weight;
@@ -36,6 +38,10 @@ a{
 }
 .banner-section{
     background: url("../assets/banner.png") no-repeat center center/cover;
+    .bg-overlay{
+        background-color: rgba(0, 0, 0, 0.5);
+        height: 100%;
+    }
 }
 .products-categories{
     .hot-block::before{
@@ -54,7 +60,7 @@ a{
 }
 .all-products {
     .discount-block{
-        background-color: $red-500;
+        background-color: $discountColor;
         &::before{
             content: "\1F4A5";
         }

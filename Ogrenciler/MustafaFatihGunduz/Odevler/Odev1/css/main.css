@@ -34115,6 +34115,10 @@ a:hover {
 .banner-section {
   background: url("../assets/banner.png") no-repeat center center/cover;
 }
+.banner-section .bg-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+}
 
 .products-categories .hot-block::before {
   content: "🔥";
@@ -34131,7 +34135,7 @@ a:hover {
 }
 
 .all-products .discount-block {
-  background-color: #dc3545;
+  background-color: #D99D81;
 }
 .all-products .discount-block::before {
   content: "💥";
