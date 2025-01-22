@@ -109,14 +109,14 @@ $primary: red;
 			}
 
 			.btn {
-				background-color: #4caf50;
+				background-color: $primary;
 				border: none;
 				border-radius: 0 5px 5px 0;
 				padding: 0.75rem 1.5rem;
 				transition: all 0.3s ease;
 
 				&:hover {
-					background-color: darken(#4caf50, 10%);
+					background-color: darken($primary, 10%);
 				}
 			}
 		}
