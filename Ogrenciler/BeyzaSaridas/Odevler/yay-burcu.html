@@ -6,6 +6,62 @@
     <title>Yay Burcu - Burçier</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 1rem;
+            backdrop-filter: blur(10px);
+        }
+        .music-player {
+            display: flex;
+            align-items: center;
+            margin-left: 1.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 2rem;
+            max-width: 300px;
+        }
+        .song-info {
+            display: flex;
+            align-items: center;
+            color: white;
+            margin-right: 1rem;
+        }
+        .song-info i {
+            margin-right: 0.5rem;
+            color: #4a9fff;
+        }
+        .audio-control {
+            display: flex;
+            align-items: center;
+        }
+        .audio-control audio {
+            height: 30px;
+            width: 150px;
+            filter: invert(1) opacity(0.8);
+        }
+        .cart-count {
+            position: absolute;
+            top: 0;
+            right: -8px;
+            background: #4a9fff;
+            color: white;
+            border-radius: 50%;
+            padding: 0.2rem 0.5rem;
+            font-size: 0.8rem;
+        }
+        .cart-dropdown {
+            min-width: 300px;
+            padding: 1rem;
+        }
+        @media (max-width: 991px) {
+            .music-player {
+                margin: 1rem 0;
+                width: 100%;
+                max-width: none;
+            }
+}
+</style>
 </head>
 <body>
    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
@@ -41,6 +97,19 @@
                         </div>
                         <a href="cart.html" class="btn btn-primary w-100">Sepete Git</a>
                     </div>
+                </li>
+                <li class="nav-item">
+                    <div class="music-player">
+                        <div class="song-info">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <div class="audio-control">
+                            <audio controls>
+                                <source src="meditation-music-without-nature-sound-256142.mp3" type="audio/mpeg">
+                                Tarayıcınız audio elementini desteklemiyor.
+                            </audio>
+                        </div>
+                    </div>
                 </li>
               </ul>
           </div>
@@ -139,8 +208,8 @@
       <div class="container">
           <div class="row">
               <div class="col-md-4">
-                  <h5>Burç Dünyası</h5>
-                  <p>Astroloji tutkunları için özel tasarımlar</p>
+                  <h5>Burçier</h5>
+                  <p>Burç seçmek için doğru yerdesiniz</p>
               </div>
               <div class="col-md-4">
                   <h5>Hızlı Linkler</h5>
