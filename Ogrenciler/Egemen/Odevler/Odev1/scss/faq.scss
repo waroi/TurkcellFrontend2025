@@ -1,0 +1,95 @@
+$background-dark: #242424;
+$gray-color: gray;
+$light-gray: #cdcdd7;
+$light-blue: aliceblue;
+$dark-gray: #212529;
+$blue-color: #0d6efd;
+$white-color: white;
+$border-gray: #495057;
+
+@mixin flex-center($direction: row, $gap: 0) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: center;
+  justify-content: center;
+  gap: $gap;
+}
+
+%rounded {
+  border-radius: 50%;
+}
+
+%fluid-image {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $dark-gray;
+  color: $white-color;
+  padding: 30px;
+
+  h1 {
+    color: $blue-color;
+  }
+}
+
+.accordion-button {
+  background-color: #343a40;
+  color: $white-color;
+
+  &:not(.collapsed) {
+    background-color: $border-gray;
+  }
+}
+
+.accordion-item {
+  border: 1px solid $border-gray;
+}
+
+.header-nav {
+  background-color: $background-dark;
+}
+
+.logo {
+  @extend %rounded;
+  width: 50px;
+  height: 50px;
+  background-color: $gray-color;
+}
+
+.footer-logo {
+  width: 200px;
+  height: 200px;
+}
+
+.clients-logo {
+  background-color: $background-dark;
+}
+
+.contact {
+  @include flex-center(column, 30px);
+  margin: 60px 0 0;
+}
+
+.container-fluid {
+  overflow-x: hidden;
+}
+
+.copyright {
+  @include flex-center(column, 100px);
+  margin: 60px 0 0;
+}
+
+.form-control {
+  background-color: $white-color;
+  color: $white-color;
+  border: 1px solid $border-gray;
+}
