@@ -351,7 +351,7 @@ body {
   transition: 0.5s ease-in-out;
   // mobile ve tablet
   @media (max-width: $desktop-width) {
-    height: 500px;
+    height: 600px;
     background: linear-gradient(145deg, $dark-blue, $dark);
     background-color: $dark;
     border-radius: 1rem;
@@ -388,7 +388,7 @@ body {
   @media (min-width: $desktop-width) {
     &:hover {
       background: linear-gradient(145deg, $dark-blue, $dark);
-      height: 500px;
+      height:550px;
       @include hover-effect;
       background-color: $dark;
       border-radius: 1rem;
@@ -490,10 +490,22 @@ body {
       @extend %heading-base;
       font-size: 1.5rem;
       margin-bottom: $spacing-base * 0.5;
+      @media (max-width: 425px) {
+        margin-bottom: $spacing-base * 1.5;
+      }
     }
-    p {
+    p:not(.pokemon-card__price) { // price hep görüneceği için 
       font-family: $font-secondary;
       margin-bottom: $spacing-base;
+      @media (max-width: 425px) {
+        display: none;
+      }
+    }
+    .pokemon-card__price {
+      font-family: $font-secondary;
+      margin-bottom: $spacing-base;
+      font-weight: bold;
+      color: $pokemon-yellow;
     }
   }
 }
@@ -550,8 +562,9 @@ body {
 }
 // kart butonları tasarımı
 .btn-primary {
-  @include custom-button($pokemon-red);
+  @include custom-button($pokemon-yellow);
   padding: $spacing-base $spacing-base * 1.5;
+  margin-top: 10px;
   border-radius: 2rem;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -968,5 +981,52 @@ body {
   }
   .pikachu-text-container {
     animation-duration: 20s;
+  }
+}
+.visually-hidden {// görme engelliler için
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.btn-add-cart {
+  @include custom-button($pokemon-red);
+  padding: $spacing-base $spacing-base * 1.5;
+  margin-top: 10px;
+  border-radius: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  width: auto;
+  min-width: 48px;
+  height: auto;
+  min-height: 48px;
+  @media (max-width: 425px) {
+    font-size: 0.75rem;
+    padding: $spacing-base $spacing-base * 1.25;
+    margin-left: 0;
+    margin-top: 0.5rem;
+    width: 100%;
+  }
+  &:hover {
+    background-color: $light-red;
+    border-color: $pokemon-red;
   }
 }
