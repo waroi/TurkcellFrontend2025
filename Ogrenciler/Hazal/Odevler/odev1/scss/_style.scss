@@ -42,6 +42,7 @@ $dark-blue: rgb(38, 0, 99);
     background-image: url(../assets/arkaplan.jpg);
     background-attachment: fixed;
     background-size: cover;
+    
 
     p {
         @include textFunc(24px, 500, 1.6);

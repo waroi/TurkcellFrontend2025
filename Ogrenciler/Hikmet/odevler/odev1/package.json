@@ -1,0 +1,17 @@
+{
+	"name": "odev1",
+	"version": "1.0.0",
+	"description": "Our first midterm exam",
+	"license": "ISC",
+	"author": "Hikmet Melik FIRAT",
+	"type": "commonjs",
+	"main": "index.js",
+	"scripts": {
+		"sass": "sass -w scss:css"
+	},
+	"dependencies": {
+		"bootstrap": "^5.3.3",
+		"bootstrap-icons": "^1.11.3",
+		"sass": "^1.83.4"
+	}
+}

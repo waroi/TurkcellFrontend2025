@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/sorular.css">
+</head>
+<body>
+    <div class="container">
+      <header class="header">
+        <a class="logo" href="#">
+          <img src="./images/wendy.png" alt="logo" />
+        </a>
+        <nav class="navbar">
+          <a href="index.html" class="">Anasayfa</a>
+          <a href="about.html">Hakkimizda</a>
+          <a href="./iletisim.html">İletişim</a>
+          <a class="active" href="sorular.html">Sorular</a>
+        </nav>
+        <div class="buttons">
+          <button>
+            <i class="fas fa-search"> </i>
+          </button>
+          <button>
+            <i class="fas fa-shopping-cart"> </i>
+          </button>
+          <button id="menu-btn">
+            <i class="fas fa-bars"> </i>
+          </button>
+        </div>
+      </header>
+ <section>
+      <div class="faq-container container py-5">
+        <h1 class="text-center mb-4">Sıkça Sorulan Sorular</h1>
+        <div class="accordion" id="faqAccordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="questionOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#answerOne" aria-expanded="true" aria-controls="answerOne">
+                Soru 1: Olmayan Dünya Nedir?
+              </button>
+            </h2>
+            <div id="answerOne" class="accordion-collapse collapse show" aria-labelledby="questionOne" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Olmayan Dünya, hayal gücünüzle kendi evreninizi yaratmanıza olanak tanıyan büyülü bir deneyimdir.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="questionTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answerTwo" aria-expanded="false" aria-controls="answerTwo">
+                Soru 2: Karakter Seçimi Nasıl Yapılır?
+              </button>
+            </h2>
+            <div id="answerTwo" class="accordion-collapse collapse" aria-labelledby="questionTwo" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Karakter seçimi, dünyanızı oluştururken size sunulan favori karakterlerden yapılabilir.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="questionThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answerThree" aria-expanded="false" aria-controls="answerThree">
+                Soru 3: Peri Tozu Ne İşe Yarar?
+              </button>
+            </h2>
+            <div id="answerThree" class="accordion-collapse collapse" aria-labelledby="questionThree" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Peri tozu, hikayenizde büyülü güçler kazanmanızı sağlayan bir araçtır.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+      <section class="footer">
+        <div class="search">
+          <input type="text" class="search-input" placeholder="search">
+          <button class="btn">search</button>
+        </div>
+        <div class="share">
+          <a href="#" class="fab fa-facebook"></a>
+          <a href="#" class="fab fa-twitter"></a>
+          <a href="#" class="fab fa-linkedin"></a>
+          <a href="#" class="fab fa-pinterest"></a>
+        </div>
+      </section>
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </div>
+</body>
+</html>
