@@ -1,0 +1,109 @@
+@import "./bt_overrides";
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+$hover-color: rgb(255, 221, 0);
+
+@mixin set-font-style($font-family, $font-weight, $font-size, $color) {
+  font-family: $font-family;
+  font-weight: $font-weight;
+  font-size: $font-size;
+  color: $color;
+}
+
+@mixin hover-effect($hover-color, $scale) {
+  &:hover {
+    box-shadow: 0 0 8px $hover-color;
+    transform: scale($scale);
+    transition: all 0.3s ease;
+  }
+}
+
+body {
+  background-position: center center;
+  background-size: contain;
+  background-attachment: fixed;
+  font-family: "Cinzel", monospace;
+  background-image: url("../assets/background_image.png");
+  color: #ffffff;
+}
+
+header {
+  background: rgba(0, 0, 0, 0.8);
+
+  .navbar-brand {
+    @include set-font-style(Cinzel, bold, 2rem, red);
+    text-shadow: 0 4px 8px $hover-color;
+    &:before {
+      content: "🔥";
+    }
+    &:after {
+      content: "🔥";
+    }
+  }
+
+  .nav-link {
+    color: #ffffff;
+    &:hover {
+      color: $hover-color;
+    }
+  }
+}
+
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    text-align: center;
+    padding: 20px;
+    flex-direction: column;
+}
+
+#about {
+    background: #960000;
+}
+
+#contact {
+    background: #960000;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    width: 100%;
+}
+
+form input, form textarea, form button {
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 16px;
+}
+
+form textarea {
+    resize: none;
+}
+
+form button {
+    background: #000000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    @include hover-effect($hover-color, 1.0)
+}
+
+footer {
+    background: rgba(0, 0, 0, 0.8);
+    color: $hover-color;
+    padding: 1rem;
+    text-align: center;
+    img {
+      height: 12em;
+    }
+  
+    a {
+      @include hover-effect($hover-color, 1.02);
+    }
+  }
