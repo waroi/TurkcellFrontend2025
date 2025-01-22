@@ -161,11 +161,10 @@ ul {
 
         border-top-color: $sitePrimaryColor !important;
 
-        +.price-btn {
+        + .price-btn {
           opacity: 1;
         }
       }
-
     }
 
     .price-btn {
@@ -201,7 +200,6 @@ ul {
       margin-bottom: 20px;
     }
   }
-
 }
 
 .custom-solution {
@@ -213,7 +211,7 @@ ul {
 
   p {
     max-width: 770px;
-    opacity: .6;
+    opacity: 0.6;
     font-size: 14px;
   }
 
@@ -268,7 +266,8 @@ ul {
 
   &::before {
     content: "";
-    background: url('https://preview.colorlib.com/theme/hosthub/img/map-bg.png.webp') no-repeat scroll center center;
+    background: url("https://preview.colorlib.com/theme/hosthub/img/map-bg.png.webp")
+      no-repeat scroll center center;
     position: absolute;
     left: 0px;
     top: 0px;
@@ -290,12 +289,11 @@ ul {
       p {
         font-size: 14px;
         max-width: 570px;
-        opacity: .6;
+        opacity: 0.6;
       }
     }
 
     .col-xl-4 {
-
       .service-item {
         border-radius: 10px;
         background: rgba(255, 255, 255, 0.1);
@@ -307,7 +305,7 @@ ul {
         }
 
         p {
-          opacity: .6;
+          opacity: 0.6;
           font-size: 14px;
         }
 
@@ -341,7 +339,7 @@ ul {
       p {
         font-size: 14px;
         max-width: 570px;
-        opacity: .6;
+        opacity: 0.6;
       }
     }
 
@@ -411,7 +409,7 @@ ul {
     .carousel-item {
       img {
         width: auto;
-        opacity: .5;
+        opacity: 0.5;
       }
     }
   }
@@ -430,7 +428,7 @@ ul {
 
       p {
         font-size: 14px;
-        opacity: .5;
+        opacity: 0.5;
       }
 
       .list {
@@ -535,6 +533,5 @@ ul {
 @media (max-width: 576px) {
   .banner-section {
     padding: 60px 0;
-
   }
 }
