@@ -1,0 +1,1022 @@
+html {
+  scroll-behavior: smooth;
+}
+$font-primary: 'RF Dewi Header', sans-serif;
+$font-secondary: 'RF Dewi', sans-serif;
+$mobile-width: 576px;
+$tablet-width: 768px;
+$desktop-width: 992px;
+$spacing-1ram: 1rem;
+$grid-gap: 2rem;
+$banner-height: 120vh;
+$pokemon-red: #DC0A2D;
+$pokemon-blue: #2A6EB5;
+$pokemon-yellow: #FFCB05;
+$dark: #1A1A1A;
+$gray: #666666;
+$light-gray: #F5F5F5;
+$dark-blue: darken($pokemon-blue, 15%);
+$light-yellow: lighten($pokemon-yellow, 15%);
+$light-red: lighten($pokemon-red, 15%);
+$primary: $pokemon-blue;
+$secondary: $pokemon-yellow;
+$accent: $pokemon-red;
+$overlay-opacity: 0.7;
+$content-max-width: 1200px;
+$breakpoints: (
+  'mobile': 576px,
+  'tablet': 768px,
+  'desktop': 992px
+);
+@font-face {
+  font-family: 'RF Dewi Header';
+  src: url('/fonts/rf-dewi-ultrabold.ttf') format('truetype');
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'RF Dewi';
+  src: url('/fonts/rf-dewi-regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+// Mixin ve extendler
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin relative-flex-center {
+  position: relative;
+  @include flex-center;
+}
+@mixin grid-responsive {
+  /*Mobil ekranlarda: Tek kolon
+  Tablet ekranlarda: İki kolon
+  Masaüstü ekranlarda: Üç kolon*/
+  display: grid;
+  gap: $grid-gap;
+  @media (min-width: $tablet-width) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (min-width: $desktop-width) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@mixin hover-effect {
+  transition: transform 0.3s ease;
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+%card-base {
+  background: #fff;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+%dark-card-base {
+  background-color: $dark;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: #fff;
+}
+%heading-base {
+  font-family: $font-primary;
+  font-weight: 600;
+  line-height: 1.2;
+}
+@mixin transition-base($property: all, $duration: 0.3s) {
+  transition: $property $duration ease;
+}
+@mixin flex($direction: row, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+@mixin position-absolute($top: 0, $left: 0, $width: 100%, $height: 100%) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  width: $width;
+  height: $height;
+}
+@mixin responsive-font($mobile-size, $desktop-size) {
+  font-size: $mobile-size;
+  @media (min-width: $tablet-width) {
+    font-size: $desktop-size;
+  }
+}
+@mixin card-hover-effect {
+  @include transition-base;
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  }
+}
+@mixin gradient-background($start-color, $end-color, $angle: 145deg) {
+  background: linear-gradient($angle, $start-color, $end-color);
+}
+%flex-container {
+  display: flex;
+  align-items: center;
+}
+%absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+%interactive-element {
+  @include transition-base;
+}
+%section-padding {
+  padding: $spacing-1ram * 4 0;
+}
+%icon-base {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto $spacing-1ram;
+  border-radius: 50%;
+  @include flex-center;
+  @include transition-base;
+}
+%text-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+body {
+  font-family: $font-secondary;
+  line-height: 1.6;
+  &.no-scroll {
+    overflow: hidden;
+  }
+}
+.banner {
+  position: relative;
+  height: $banner-height;
+  width: 100%;
+  overflow: visible;
+  @include gradient-background($dark-blue, $dark);
+  &__video-wrapper {
+    @include position-absolute;
+    overflow: hidden;
+    background: $dark-blue;
+    &::after {
+      @include position-absolute;
+      content: '';
+      @include gradient-background($dark-blue, $dark, 135deg);
+      opacity: $overlay-opacity;
+      z-index: 1;
+    }
+  }
+  &__video-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    iframe {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100vw;
+      height: 100vh;
+      transform: translate(-50%, -50%) scale(1.5);
+      pointer-events: none;
+      border: none;
+      @media (min-aspect-ratio: 16/9) {
+        height: 56.25vw;
+      }
+      @media (max-aspect-ratio: 16/9) {
+        width: 177.78vh;
+      }
+    }
+  }
+  &__content {
+    position: relative;
+    @extend %flex-container;
+    justify-content: space-between;
+    max-width: 1400px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 5%;
+    z-index: 2;
+    @media (max-width: $tablet-width) {
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      padding: $spacing-1ram;
+      margin-bottom: 100px; 
+    }
+  }
+  &__text {
+    flex: 0 1 60%;
+    margin-right: 2rem;
+    text-align: center;
+    color: #fff;
+    animation: slideInLeft 1s ease-out;
+    @media (max-width: $tablet-width) {
+      flex: 0 1 auto;
+      margin-right: 0;
+      margin-bottom: 2rem;
+      width: 100%;
+    }
+  }
+  &__logo {
+    margin: $spacing-1ram 0;
+    font-size: 8vw;
+    .poke-logo {
+      max-width: 100%;
+      height: auto;
+      filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.3));
+    }
+    .poke-ball {
+      width: 7vw;
+      height: auto;
+    }
+  }
+  &__subtitle {
+    @include responsive-font(1.2rem, 1.5rem);
+    line-height: 1.4;
+    margin-bottom: $spacing-1ram * 2;
+    @extend %text-shadow;
+    @media (max-width: $tablet-width) {
+      font-size: 1.2rem;
+    }
+  }
+  &__cta {
+    @extend %interactive-element;
+    display: inline-block;
+    padding: $spacing-1ram $spacing-1ram * 2;
+    @include responsive-font(1rem, 1.25rem);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 2rem;
+    background-color: $pokemon-red;
+    color: #fff;
+    border: none;
+    &:hover {
+      transform: translateY(-2px);
+      background-color: lighten($pokemon-red, 10%);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+  }
+  &__image {
+    flex: 0 1 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: slideInRight 1s ease-out;
+    @media (max-width: $tablet-width) {
+      flex: 0 1 auto;
+      max-width: 70%;
+      margin: 0 auto;
+      display:none;
+    }
+    @media (max-width: $mobile-width) {
+      max-width: 60%;
+    }
+  }
+  .pokedex-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .pokedex {
+      max-height: 400px;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+      @media (max-width: $tablet-width) {
+        max-height: 250px;
+      }
+      @media (max-width: $mobile-width) {
+        max-height: 200px;
+      }
+    }
+    .pokedex-music {
+      left: 60%;
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+
+      @media (max-width: $tablet-width) {
+        bottom: 10px;
+        padding: $spacing-1ram $spacing-1ram * 1.5;
+        font-size: 0.9rem;
+        display: none;
+      }
+      .audio {
+        margin-top: 20px;
+        width: 100%;
+        min-width: 200px;
+      }
+    }
+  }
+}
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.pokemon-card {
+  position: relative;
+  height: 300px;
+  padding: $spacing-1ram * 1.25;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.5s ease-in-out;
+  // mobile ve tablet
+  @media (max-width: $desktop-width) {
+    height: 600px;
+    background: linear-gradient(145deg, $dark-blue, $dark);
+    background-color: $dark;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    .image {
+      margin-bottom: 100px;
+      margin-top: -20px;
+      .pokeball {
+        opacity: 0;
+        animation: none;
+      }
+      .pokemon {
+        opacity: 1;
+      }
+      .pokemon-hint {
+        display: none;
+      }
+    }
+    .pokemon-card__content {
+      position: relative;
+      top: -120px;
+      width: 100%;
+      padding: $spacing-1ram $spacing-1ram * 1.5;
+      color: #fff;
+      text-align: center;
+      visibility: visible;
+      opacity: 1;;
+      margin-top: $spacing-1ram;
+    }
+  }
+  // Desktop hover ile gözükecek pokemonlar
+  @media (min-width: $desktop-width) {
+    &:hover {
+      background: linear-gradient(145deg, $dark-blue, $dark);
+      height:550px;
+      @include hover-effect;
+      background-color: $dark;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      color: #fff;
+      .image {
+        .pokeball {
+          opacity: 0;
+          animation: none;
+        }
+        .pokemon {
+          opacity: 1;
+        }
+        .pokemon-hint {
+          opacity: 0;
+          transform: translateX(-50%) translateY(10px);
+        }
+        .pokeball-container::before {
+          animation: none;
+        }
+      }
+      .pokemon-card__content {
+        margin-top: $spacing-1ram;
+        visibility: visible;
+        opacity: 1;
+        transition-delay: 0.2s;
+      }
+    }
+  }
+  .image {
+    width: 260px;
+    height: 260px;
+    margin-bottom: 100px;
+    margin-top: -20px;
+    @include relative-flex-center;
+    z-index: 1;
+  }
+  .pokeball-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .pokeball {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    padding: $spacing-1ram;
+    object-fit: contain;
+    animation: shake 0.5s ease-in-out infinite;
+    transition: opacity 0.3s ease-in-out;
+  }
+  .pokemon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    padding: $spacing-1ram;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  .pokemon-hint {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.37);
+    color: white;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    opacity: 1;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    @media (max-width: $desktop-width) {
+      display: none;
+    }
+  }
+  &__content {
+    position: relative;
+    top: -120px;
+    width: 100%;
+    padding: $spacing-1ram $spacing-1ram * 1.5;
+    color: #fff;
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    @include transition-base;
+    h3 {
+      @extend %heading-base;
+      font-size: 1.5rem;
+      margin-bottom: $spacing-1ram * 0.5;
+      @media (max-width: 425px) {
+        margin-bottom: $spacing-1ram * 1.5;
+      }
+    }
+    p:not(.pokemon-card__price) { // price hep görüneceği için not ile engelledim
+      font-family: $font-secondary;
+      margin-bottom: $spacing-1ram;
+      @media (max-width: 425px) {
+        display: none;
+      }
+    }
+    .pokemon-card__price {
+      font-family: $font-secondary;
+      margin-bottom: $spacing-1ram;
+      font-weight: bold;
+      color: $pokemon-yellow;
+    }
+  }
+}
+@keyframes shake {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  75% {
+    transform: rotate(10deg);
+  }
+}
+// Products Grid
+.products-grid {
+  @include grid-responsive;
+  padding: $spacing-1ram * 2;
+  margin: 0 auto;
+  max-width: $content-max-width;
+
+  @media (min-width: map-get($breakpoints, 'tablet')) {
+    padding: $spacing-1ram * 3;
+  }
+}
+// Bestsellers Section
+.featured-products {
+  padding: $spacing-1ram * 3 0;
+  background: linear-gradient(145deg, $dark-blue, $dark);
+  h2 {
+    @extend %heading-base;
+    color: $dark;
+    text-shadow: 2px 2px 4px rgba($pokemon-blue, 0.2);
+    text-align: center;
+    margin-bottom: $spacing-1ram * 3;
+    font-size: 2.5rem;
+    @media (min-width: map-get($breakpoints, 'tablet')) {
+      font-size: 3rem;
+    }
+  }
+}
+// Custom Button Mixin
+@mixin custom-button($background) {
+  background-color: $background;
+  border-color: darken($background, 10%);
+  color: #fff;
+  transition: all 0.3s ease;
+  &:hover {
+    background-color: darken($background, 10%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+}
+// kart butonları tasarımı
+.btn-primary {
+  @include custom-button($pokemon-yellow);
+  padding: $spacing-1ram $spacing-1ram * 1.5;
+  margin-top: 10px;
+  border-radius: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  @media (max-width: $mobile-width) {
+    font-size: 0.75rem;
+    padding: $spacing-1ram $spacing-1ram * 1.25;
+  }
+  &:hover {
+    background-color: $light-red;
+    border-color: $pokemon-red;
+  }
+}
+.featured-products {
+  position: relative;
+  overflow: hidden;
+  padding: 3rem 0;
+}
+// Footer
+.footer {
+  background: $dark;
+  color: #fff;
+  padding: $spacing-1ram * 2 0;
+  &__grid {
+    display: grid;
+    gap: $spacing-1ram * 2;
+    @media (min-width: map-get($breakpoints, 'tablet')) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  &__links {
+    @include flex-center;
+    flex-direction: column;
+    align-items: flex-start;
+    a {
+      color: #fff;
+      text-decoration: none;
+      padding: $spacing-1ram * 0.5 0;
+      &:hover {
+        color: $pokemon-yellow;
+      }
+    }
+  }
+}
+// About Section Styles
+.about-section {
+  background: url('../assets/aboutbg.png') center/cover no-repeat;
+  padding: $spacing-1ram * 4 0;
+  h2 {
+    @extend %heading-base;
+    color: $dark;
+    font-size: 2.5rem;
+    margin-bottom: $spacing-1ram * 3;
+    @media (min-width: map-get($breakpoints, 'tablet')) {
+      font-size: 3rem;
+    }
+  }
+}
+.about-grid {
+  display: grid;
+  gap: $spacing-1ram * 2;
+  padding: $spacing-1ram;
+  @media (min-width: map-get($breakpoints, 'tablet')) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (min-width: map-get($breakpoints, 'desktop')) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.about-card {
+  @extend %card-base;
+  @extend %interactive-element;
+  background: #24212159;
+  color: #fff;
+  padding: $spacing-1ram * 2;
+  text-align: center;
+  &:hover {
+    @include card-hover-effect;
+    .about-card__icon {
+      @include gradient-background($pokemon-blue, $dark-blue);
+      img {
+        transform: rotate(360deg);
+      }
+    }
+  }
+  h3 {
+    @extend %heading-base;
+    color: $pokemon-red;
+    font-size: 1.5rem;
+    margin: $spacing-1ram 0;
+  }
+  p {
+    color: $light;
+    margin-bottom: 0;
+    line-height: 1.6;
+  }
+}
+.about-card__icon {
+  @extend %icon-base;
+  width: 80px;
+  height: 80px;
+  @include gradient-background($pokemon-red, $accent);
+  img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+    transition: all 0.6s ease;
+  }
+}
+// FAQ Section Styles
+.faq-section {
+  background: $pokemon-yellow;
+  padding: $spacing-1ram * 4 0;
+  h2 {
+    @extend %heading-base;
+    color: $dark;
+    font-size: 2.5rem;
+    margin-bottom: $spacing-1ram * 3;
+    @media (min-width: map-get($breakpoints, 'tablet')) {
+      font-size: 3rem;
+    }
+  }
+}
+.faq-grid {
+  display: grid;
+  gap: $spacing-1ram * 2;
+  padding: $spacing-1ram;
+  @media (min-width: map-get($breakpoints, 'tablet')) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (min-width: map-get($breakpoints, 'desktop')) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.faq-card {
+  @extend %card-base;
+  @extend %interactive-element;
+  padding: $spacing-1ram * 2;
+  &:hover {
+    @include card-hover-effect;
+  }
+  h3 {
+    @extend %heading-base;
+    color: $pokemon-blue;
+    font-size: 1.25rem;
+    margin-bottom: $spacing-1ram;
+  }
+  p {
+    color: $gray;
+    margin-bottom: 0;
+    line-height: 1.6;
+  }
+}
+// Contact Section Styles
+.contact-section {
+  background: linear-gradient(145deg, $dark-blue, $dark);
+  padding: $spacing-1ram * 4 0;
+  h2 {
+    @extend %heading-base;
+    color: $dark;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba($pokemon-blue, 0.2);
+    margin-bottom: $spacing-1ram * 3;
+    @media (min-width: map-get($breakpoints, 'tablet')) {
+      font-size: 3rem;
+    }
+  }
+}
+.contact-grid {
+  display: grid;
+  gap: $spacing-1ram * 3;
+
+  @media (min-width: map-get($breakpoints, 'tablet')) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.contact-info {
+  display: grid;
+  gap: $spacing-1ram * 2;
+}
+.contact-card {
+  @extend %card-base;
+  @extend %interactive-element;
+  padding: $spacing-1ram * 2;
+  text-align: center;
+  background: linear-gradient(145deg, $dark-blue, $dark);
+  &:hover {
+    @include card-hover-effect;
+    .contact-icon {
+      @include gradient-background($pokemon-blue, $dark-blue);
+      img {
+        transform: rotate(360deg);
+      }
+    }
+  }
+  h3 {
+    @extend %heading-base;
+    color: $light;
+    font-size: 1.5rem;
+    margin: $spacing-1ram 0;
+  }
+  p,
+  address {
+    color: $light;
+    margin-bottom: $spacing-1ram * 0.5;
+    line-height: 1.6;
+    font-style: normal;
+  }
+  a {
+    color: $pokemon-yellow;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    &:hover {
+      color: $dark-blue;
+    }
+  }
+}
+.contact-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto $spacing-1ram;
+  background: linear-gradient(145deg, $pokemon-red, $accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+    transition: all 0.6s ease;
+  }
+}
+.contact-form {
+  padding: $spacing-1ram * 2;
+  .form-label {
+    color: $light !important;
+    font-weight: 500;
+    margin-bottom: $spacing-1ram * 0.5;
+  }
+  .form-control {
+    border-radius: 0.5rem;
+    padding: $spacing-1ram * 0.75;
+    transition: all 0.3s ease;
+  }
+  textarea.form-control {
+    resize: vertical;
+  }
+  .btn-primary {
+    width: 100%;
+    margin-top: $spacing-1ram;
+  }
+}
+
+// Product Detail
+.product-detail {
+  padding: 2rem 0;
+  background: linear-gradient(145deg, #2A6EB5, #1A1A1A);
+  min-height: 80vh;
+  color: white;
+}
+.product-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  transition: transform 0.3s ease;
+}
+.product-image:hover {
+  transform: scale(1.05);
+}
+.product-info {
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+}
+.price {
+  font-size: 2rem;
+  color: #FFCB05;
+  font-weight: bold;
+}
+.stats {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+}
+.btn-add-to-cart {
+  background-color: #DC0A2D;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+.btn-add-to-cart:hover {
+  background-color: #ff1f1f;
+  transform: translateY(-2px);
+}
+.turtle-ad {
+  width: 100%;
+  height: 180px;
+  min-height: 180px;;
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: start;
+  padding-bottom: 1vh;
+  overflow: hidden;
+  
+  @media (max-width: $tablet-width) {
+    height: 60px;
+  }
+}
+.turtle-runner-after-text {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+  @media (max-width: $tablet-width) {
+    width: 50px;
+    height: 50px;
+  }
+  @media (max-width: $mobile-width) {
+    width: 40px;
+    height: 40px;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transform: scaleX(-1);
+  }
+}
+.pikachu-ad {
+  background-color: $pokemon-red;
+  width: 100%;
+  height: 80px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1rem;
+  overflow: hidden;
+  z-index: 5;
+  @media (max-width: 768px) {
+    height: 60px;
+  }
+}
+.turtle-text-container,
+.pikachu-text-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  animation: runBottom 15s linear infinite;
+  will-change: transform;
+  height: 100%;
+}
+.running-text {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
+  margin: 0 2rem;
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+    margin: 0 1rem;
+  }
+  @media (max-width: 480px) {
+    font-size: 0.8rem;
+    margin: 0 0.5rem;
+  }
+}
+.pikachu-runner-after-text {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+  @media (max-width: 768px) {
+    width: 50px;
+    height: 50px;
+  }
+  @media (max-width: 480px) {
+    width: 40px;
+    height: 40px;
+  }
+}
+.pikachu-runner-after-text img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform: scaleX(-1);
+}
+@keyframes runBottom {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@media (max-width: 360px) {
+  .pikachu-text-container:nth-child(2) {
+    display: none;
+  }
+  .pikachu-text-container {
+    animation-duration: 20s;
+  }
+}
+.visually-hidden {// görme engelliler için
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.btn-add-cart {
+  @include custom-button($pokemon-red);
+  padding: $spacing-1ram $spacing-1ram * 1.5;
+  margin-top: 10px;
+  border-radius: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  width: auto;
+  min-width: 48px;
+  height: auto;
+  min-height: 48px;
+  @media (max-width: 425px) {
+    font-size: 0.75rem;
+    padding: $spacing-1ram $spacing-1ram * 1.25;
+    margin-left: 0;
+    margin-top: 0.5rem;
+    width: 100%;
+  }
+  &:hover {
+    background-color: $light-red;
+    border-color: $pokemon-red;
+  }
+}

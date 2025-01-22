@@ -1,0 +1,287 @@
+.navbar-logo nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; 
+}
+
+body {
+    padding-top: 80px;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    position: relative;
+    }
+
+    .logo-container {
+    position: relative; 
+    display: inline-block; 
+}
+
+.main-logo {
+    width: 50px;
+    height: auto;
+}
+
+.emoji {
+    font-size: 0.5rem; 
+    position: absolute;
+    top: 23px; 
+    left: 78%;
+    transform: translateX(-50%);
+    animation: jump 1s ease-in-out infinite;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    animation: fadeIn 1s ease-in-out 1s forwards;
+    opacity: 0;
+}
+
+@keyframes jump {
+    0%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tooltip-container {
+    position: relative;
+}
+
+.tooltip-text {
+    visibility: hidden;
+    background-color: #888A8A;
+    color: #fff;
+    text-align: left;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    right: 100%;
+    margin-right: 10px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    transform: translateY(-50%);
+    white-space: nowrap;
+}
+
+.tooltip-container:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.welcome-page {
+    color: black;
+    height: 100vh;
+}
+
+.full-height {
+    min-height: 100vh;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.welcome-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    order: 2;
+}
+
+.character-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    order: 1; 
+}
+
+.animated-image {
+    opacity: 0;
+    transform: translateX(-100%);
+    animation: slideIn 1.5s forwards;
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .welcome-page {
+        background-color: #444;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .welcome-page {
+        background-color: #555;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+}
+
+  section.container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-group label {
+    font-weight: bold;
+  }
+  
+  .form-control {
+    border-radius: 4px;
+    border: 1px solid #ced4da;
+    padding: 15px;
+  }
+  
+  textarea.form-control {
+    resize: none;
+  }
+  
+  button.btn {
+    background-color: #343a40;
+    color: white;
+    font-size: 16px;
+    padding: 15px;
+    border-radius: 4px;
+  }
+  
+  button.btn:hover {
+    background-color: #495057;
+  }
+
+  .banner {
+    position: relative;
+    height: 32vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.banner__video-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+  .banner__video-container iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 56.25vw; 
+  
+}
+
+.banner__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.about-section {
+    
+    padding: 50px 20px;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 5vh; 
+}
+
+.about-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #e49fe4;
+}
+
+.about-text {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+}
+     .card {
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    .card-img-top {
+        height: 200px;
+        object-fit: cover;
+    }
+
+button.btn-primary {
+    margin-top: 15px;
+    display: inline-flex;
+    align-items: center;
+}
+
+footer {
+    background-color: #e49fe4; 
+    color: white; 
+}
+
+.accordion-button:hover {
+    background-color: #b30080;
+}
+

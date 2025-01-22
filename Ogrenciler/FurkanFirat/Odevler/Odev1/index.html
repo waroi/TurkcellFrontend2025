@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Pick'em Store — Anasayfa</title>
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg bg-dark-purple fixed-top shadow-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand text-white fs-36 ms-4" href="index.html">pick'em</a>
+            <button class="navbar-toggler btn-white border-0" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle team navigation">
+                <i class="bi bi-list text-white"></i>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title fs-36 text-white" id="offcanvasNavbarLabel">pick'em</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 fw-semibold">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html">Anasayfa</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="oyuncular.html">Oyuncular</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" aria-disabled="true" href="silahlar.html">Silahlar
+                                (Yakında)</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="bombalar.html">Bombalar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="hakkimizda.html">Hakkımızda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="sss.html">S.S.S</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="iletisim.html">İletişim</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- HERO -->
+    <header class="hero mt-20">
+        <div class="container">
+            <div class="header-inner row align-items-center justify-content-evenly">
+                <div class="header-info col-md-4">
+                    <h1 class="fw-bold fs-48 mb-7">YENİ GELEN OYUNCULARA <br> GÖZ ATIN!</h1>
+                    <p class="fs-20 mb-6">Yeni gelen oyuncularla kendi takımınızı oluşturun. Detaylar oyuncular
+                        sayfasında.</p>
+                    <a href="oyuncular.html" class="btn btn-secondary text-white mb-6 fs-20">GÖZ AT</a>
+                </div>
+                <div class="header-carousel col-md-5">
+                    <div id="playerCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000"
+                        data-bs-pause="false">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#playerCarousel" data-bs-slide-to="0"
+                                class="active rounded-circle" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#playerCarousel" data-bs-slide-to="1"
+                                aria-label="Slide 2" class="rounded-circle"></button>
+                            <button type="button" data-bs-target="#playerCarousel" data-bs-slide-to="2"
+                                aria-label="Slide 3" class="rounded-circle"></button>
+                            <button type="button" data-bs-target="#playerCarousel" data-bs-slide-to="3"
+                                aria-label="Slide 4" class="rounded-circle"></button>
+                            <button type="button" data-bs-target="#playerCarousel" data-bs-slide-to="4"
+                                aria-label="Slide 5" class="rounded-circle"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="https://img-cdn.hltv.org/playerbodyshot/zdj4FmASFChD1cChR79TsJ.png?ixlib=java-2.1.0&w=400&s=d90d409432c76b4afaeb35876d802bb3"
+                                    class="d-block w-100" alt="jottAAA">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://img-cdn.hltv.org/playerbodyshot/nnPbCYR8DQQ72C7ibLvahL.png?ixlib=java-2.1.0&w=400&s=00b38017f63176d180291489d0e6ebd1"
+                                    class="d-block w-100" alt="MAJ3R">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://img-cdn.hltv.org/playerbodyshot/_V9cxyb8lJMrdQul0uIEPv.png?ixlib=java-2.1.0&w=400&s=ce24ded87116afd5bf199996bdabe0fa"
+                                    class="d-block w-100" alt="XANTARES">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://img-cdn.hltv.org/playerbodyshot/fF7RSP0vxh6g0SHPVHolsa.png?ixlib=java-2.1.0&w=400&s=efc0d478b8a3e8468aad23b0e77a7eec"
+                                    class="d-block w-100" alt="woxic">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://img-cdn.hltv.org/playerbodyshot/w1S5T63TognCAa7PdQ7Ok7.png?ixlib=java-2.1.0&w=400&s=1346731c3dfb3cc3802302f4fd9e5f9e"
+                                    class="d-block w-100" alt="Wicadia ">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- PRODUCTS -->
+    <section class="new-arrivals">
+        <div class="section-header text-center mb-10">
+            <h1 class="">YENİ <span class="text-header-purple">GELENLER</span> </h1>
+        </div>
+        <div class="container">
+            <div class="player-cards row gy-4">
+
+                <div class="player-card-item col-md-6 col-xxl-4">
+                    <div class="card card-item h-100">
+                        <div class="row g-0 align-items-center">
+                            <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                                <a class="text-decoration-none position-relative" href="jottAAA.html">
+
+                                    <img class="img-fluid"
+                                        src="https://img-cdn.hltv.org/playerbodyshot/zdj4FmASFChD1cChR79TsJ.png?ixlib=java-2.1.0&w=400&s=d90d409432c76b4afaeb35876d802bb3"
+                                        class="card-img-top" alt="jottAAA">
+                                </a>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold d-flex justify-content-between"><a
+                                            class="text-decoration-none" href="jottAAA.html">JottAAA</a>
+                                        <span class="new-badge badge rounded-pill text-bg-primary">YENİ</span>
+                                    </h5>
+                                    <p class="card-subtitle">Prof. CS:2 Oyuncusu
+                                    </p>
+                                    <ul class="list-unstyled">
+                                        <li class="name"><strong>İsim:</strong> Samet Köklü</li>
+                                        <li class="age"><strong>Yaş:</strong> 22</li>
+                                        <li class="country tr"><strong>Ülke:</strong> Türkiye</li>
+                                        <li class="ef"><strong>Takım:</strong> Eternal Fire</li>
+                                        <li class="role"><strong>Rol:</strong> Rifler</li>
+                                    </ul>
+                                    <button href="#" class="btn btn-primary w-100 text-nowrap">Mesaj Gönder</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="player-card-item col-md-6 col-xxl-4">
+                    <div class="card card-item h-100">
+                        <div class="row g-0 align-items-center">
+                            <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                                <a class="text-decoration-none position-relative" href="maj3r.html">
+
+                                    <img class="img-fluid"
+                                        src="https://img-cdn.hltv.org/playerbodyshot/nnPbCYR8DQQ72C7ibLvahL.png?ixlib=java-2.1.0&w=400&s=00b38017f63176d180291489d0e6ebd1"
+                                        class="card-img-top" alt="MAJ3R">
+                                </a>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold d-flex justify-content-between">
+                                        <a class="text-decoration-none" href="maj3r.html">MAJ3R</a>
+                                        <span class="new-badge badge rounded-pill text-bg-primary">YENİ</span>
+                                    </h5>
+                                    <p class="card-subtitle">Prof. CS:2 Oyuncusu</p>
+                                    <ul class="list-unstyled">
+                                        <li class="name"><strong>İsim:</strong> Engin Küpeli</li>
+                                        <li class="age"><strong>Yaş:</strong> 33</li>
+                                        <li class="country tr"><strong>Ülke:</strong> Türkiye</li>
+                                        <li class="ef"><strong>Takım:</strong> Eternal Fire</li>
+                                        <li class="role"><strong>Rol:</strong> IGL, Destek</li>
+                                    </ul>
+                                    <button href="#" class="btn btn-primary w-100 text-nowrap">Mesaj Gönder</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="player-card-item col-md-6 col-xxl-4">
+                    <div class="card card-item h-100">
+                        <div class="row g-0 align-items-center">
+                            <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                                <a class="text-decoration-none position-relative" href="xantares.html">
+
+                                    <img class="img-fluid"
+                                        src="https://img-cdn.hltv.org/playerbodyshot/_V9cxyb8lJMrdQul0uIEPv.png?ixlib=java-2.1.0&w=400&s=ce24ded87116afd5bf199996bdabe0fa"
+                                        class="card-img-top" alt="XANTARES">
+                                </a>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold d-flex justify-content-between">
+                                        <a class="text-decoration-none" href="xantares.html">XANTARES</a>
+                                        <span class="new-badge badge rounded-pill text-bg-primary">YENİ</span>
+                                    </h5>
+                                    <p class="card-subtitle">Prof. CS:2 Oyuncusu</p>
+                                    <ul class="list-unstyled">
+                                        <li class="name"><strong>İsim:</strong> İsmailcan Dörtkardeş</li>
+                                        <li class="age"><strong>Yaş:</strong> 29</li>
+                                        <li class="country tr"><strong>Ülke:</strong> Türkiye</li>
+                                        <li class="ef"><strong>Takım:</strong> Eternal Fire</li>
+                                        <li class="role"><strong>Rol:</strong> Rifler</li>
+                                    </ul>
+                                    <button href="#" class="btn btn-primary w-100 text-nowrap">Mesaj Gönder</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="player-card-item col-md-6 col-xxl-4">
+                    <div class="card card-item h-100">
+                        <div class="row g-0 align-items-center">
+                            <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                                <a class="text-decoration-none position-relative" href="woxic.html">
+
+                                    <img class="img-fluid"
+                                        src="https://img-cdn.hltv.org/playerbodyshot/fF7RSP0vxh6g0SHPVHolsa.png?ixlib=java-2.1.0&w=400&s=efc0d478b8a3e8468aad23b0e77a7eec"
+                                        class="card-img-top" alt="woxic">
+                                </a>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold d-flex justify-content-between">
+                                        <a class="text-decoration-none" href="woxic.html">woxic</a>
+                                        <span class="new-badge badge rounded-pill text-bg-primary">YENİ</span>
+                                    </h5>
+                                    <p class="card-subtitle">Prof. CS:2 Oyuncusu</p>
+                                    <ul class="list-unstyled">
+                                        <li class="name"><strong>İsim:</strong> Özgür Eker</li>
+                                        <li class="age"><strong>Yaş:</strong> 26</li>
+                                        <li class="country tr"><strong>Ülke:</strong> Türkiye</li>
+                                        <li class="ef"><strong>Takım:</strong> Eternal Fire</li>
+                                        <li class="role"><strong>Rol:</strong> AWPer</li>
+                                    </ul>
+                                    <button href="#" class="btn btn-primary w-100 text-nowrap">Mesaj Gönder</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="player-card-item col-md-6 col-xxl-4">
+                    <div class="card card-item h-100">
+                        <div class="row g-0 align-items-center">
+                            <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                                <a class="text-decoration-none position-relative" href="wicadia.html">
+
+                                    <img class="img-fluid"
+                                        src="https://img-cdn.hltv.org/playerbodyshot/w1S5T63TognCAa7PdQ7Ok7.png?ixlib=java-2.1.0&w=400&s=1346731c3dfb3cc3802302f4fd9e5f9e"
+                                        class="card-img-top" alt="Wicadia">
+                                </a>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold d-flex justify-content-between"><a
+                                            class="text-decoration-none" href="wicadia.html">Wicadia</a>
+                                        <span class="new-badge badge rounded-pill text-bg-primary">YENİ</span>
+                                    </h5>
+                                    <p class="card-subtitle">Prof. CS:2 Oyuncusu</p>
+                                    <ul class="list-unstyled">
+                                        <li class="name"><strong>İsim:</strong> Ali Haydar Yalçın</li>
+                                        <li class="age"><strong>Yaş:</strong> 19</li>
+                                        <li class="country tr"><strong>Ülke:</strong> Türkiye</li>
+                                        <li class="ef"><strong>Takım:</strong> Eternal Fire</li>
+                                        <li class="role"><strong>Rol:</strong> Entry Fragger</li>
+                                    </ul>
+                                    <button href="#" class="btn btn-primary w-100 text-nowrap">Mesaj Gönder</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="player-card-item col-md-6 col-xxl-4">
+                    <div class="card card-item h-100">
+                        <div class="row g-0 align-items-center">
+                            <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                                <a class="text-decoration-none position-relative" href="s1mple.html">
+
+                                    <img class="img-fluid"
+                                        src="https://img-cdn.hltv.org/playerbodyshot/FJie4BbfsiM5nurHLjBVZz.png?ixlib=java-2.1.0&w=400&s=5f707403f38dc688c24300cc356e6cbc"
+                                        class="card-img-top" alt="S1mple">
+                                </a>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold d-flex justify-content-between">
+                                        <a class="text-decoration-none" href="s1mple.html">S1mple</a>
+                                        <span class="new-badge badge rounded-pill text-bg-primary">YENİ</span>
+                                    </h5>
+                                    <p class="card-subtitle">Prof. CS:2 Oyuncusu</p>
+                                    <ul class="list-unstyled">
+                                        <li class="name"><strong>İsim:</strong> Oleksandr Kostyliev</li>
+                                        <li class="age"><strong>Yaş:</strong> 27</li>
+                                        <li class="country uk"><strong>Ülke:</strong> Ukrayna</li>
+                                        <li class="team navi"><strong>Takım:</strong> NAVI</li>
+                                        <li class="role"><strong>Rol:</strong> AWPer</li>
+                                    </ul>
+                                    <button href="#" class="btn btn-primary w-100 text-nowrap">Mesaj Gönder</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- MID CONTENT -->
+    <section class="mid-content">
+        <!-- STATS -->
+        <section class="stats section-header card mb-10">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-md-3 align-items-center">
+                        <h2 class="fw-bold text-gold">1000+</h2>
+                        <p class="text-white-gold">Aktif Oyuncu</p>
+                    </div>
+                    <div class="col-md-3">
+                        <h2 class="fw-bold text-gold">500+</h2>
+                        <p class="text-white-gold">Başarılı İşlem</p>
+                    </div>
+                    <div class="col-md-3">
+                        <h2 class="fw-bold text-gold">50+</h2>
+                        <p class="text-white-gold">Takım</p>
+                    </div>
+                    <div class="col-md-3">
+                        <h2 class="fw-bold text-gold">10K+</h2>
+                        <p class="text-white-gold">Mutlu Müşteri</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- WHO ARE WE -->
+        <section class="who-are-we container">
+            <div class="bg-extra-dark-purple text-white card mb-10 p-5">
+                <h2 class="mb-4 fw-bold">BİZ <span class="text-header-purple">KİMİZ?</span></h2>
+                <p>Pick'em Store, 2025 yılında CS:2 tutkunları tarafından kurulmuş, oyun dünyasının
+                    en
+                    büyük pazaryeri olmayı hedefleyen bir platformdur. Profesyonel espor oyuncularının, özel
+                    silahların ve ekipmanların alım-satımını güvenli ve şeffaf bir şekilde gerçekleştiriyoruz.
+                </p>
+            </div>
+        </section>
+        <!-- F.A.Q -->
+        <section class="faq container">
+            <div class="bg-extra-dark-purple text-white card mb-10 p-5">
+                <h2 class="mb-4 fw-bold"><span class="text-header-purple"><i
+                            class="bi bi-question-circle pe-3"></i></span>SIKÇA <span
+                        class="text-header-purple">SORULAN</span>
+                    SORULAR <span class="text-header-purple">(S.S.S)</span>
+                </h2>
+                <div class="sss-inner row g-0">
+                    <div class="sss-image col-md-6">
+                        <img src="https://fossbytes.com/wp-content/uploads/2022/01/All-esports-teams-1024x576.jpg"
+                            alt="E-sport Teams" class="img-fluid">
+                    </div>
+                    <div class=" accordion col-md-6 align-items-center" id="sssAcordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header ">
+                                <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Pick'em Store'da nasıl sipariş verebilirim?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show"
+                                data-bs-parent="#sssAcordion">
+                                <div class="accordion-body">
+                                    Sipariş vermek için bir ürün seçin, ardından <stron text-nowrapg>Mesaj Gönder
+                                    </stron> butonuna
+                                    tıklayın. Sepetinize
+                                    eklediğiniz ürünleri kontrol
+                                    ettikten sonra ödeme adımlarını tamamlayabilirsiniz.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-bold" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
+                                    aria-controls="collapseTwo">
+                                    Aldığım XANTARES adam vuramazsa ne yapabilirim?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#sssAcordion">
+                                <div class="accordion-body">
+                                    Merak etmeyin, <strong>XANTARES</strong>'in PEEK'leri her zaman yerindedir! Ama yine
+                                    de
+                                    olmadıysa damar kontrolü yapın.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-bold" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false"
+                                    aria-controls="collapseThree">
+                                    Hile satışınız var mı?
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#sssAcordion">
+                                <div class="accordion-body">
+                                    <strong>☠️ ☠️ ☠️ ☠️ ☠️ ☠️ ☠️ ☠️ ☠️ ☠️ ☠️ ☠️</strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-bold" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false"
+                                    aria-controls="collapseFour">
+                                    Takım arkadaşım sürekli flash atıyorsa ne yapmalıyım?
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#sssAcordion">
+                                <div class="accordion-body">
+                                    Takım arkadaşınızı en yakın gözlükçüye yönlendirin! Flash’lar sizin için değil,
+                                    rakipler için atılıyor olmalıydı.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-bold" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false"
+                                    aria-controls="collapseFive">
+                                    Destek almak için nasıl iletişim kurabilirim?
+                                </button>
+                            </h2>
+                            <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#sssAcordion">
+                                <div class="accordion-body">
+                                    Bize e-posta veya canlı destek hattından ulaşabilirsiniz.
+                                    <strong>info@pickemstore.com</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- XANTARES PEEK -->
+        <section class="xantares-peek">
+            <div class="section-header text-center mb-10">
+                <h1 class="fs-36"> DİKKAT <span class="text-header-purple">XANTARES
+                    </span>PEEK <span class="text-header-purple">ÇIKABİLİR</span> <i
+                        class="bi bi-exclamation-triangle"></i>
+                </h1>
+            </div>
+            <div class="container text-center position-relative">
+                <img src="./images/xantares-peek.png" alt="XANTARES" class="xantares">
+                <img src="https://community.fastly.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsRVx4MwFo5_T3eAQ3i6DMIW0X7ojiwoHax6egMOKGxj4G68Nz3-jCp4itjFWx-ktqfSmtcwqVx6sT/330x192"
+                    alt="csgo-case" class="box">
+            </div>
+
+        </section>
+    </section>
+
+    <!-- CONTACT US -->
+    <div class="section-header text-center">
+        <h1 class="fs-36"> İLETİŞİM </h1>
+    </div>
+    <section class="contact-us container-fluid py-10 text-white">
+        <div class="d-flex align-items-center justify-content-center flex-column">
+            <form
+                class="contact-us-form needs-validation col-10 col-sm-8 col-xxl-6 p-5 bg-extra-dark-purple rounded shadow"
+                novalidate>
+                <h4 class="mb-4 p-2">İLETİŞİM <span class="text-header-purple">FORMU</span> </h4>
+                <div class="row m-0 p-0">
+                    <div class="col-12 col-md-6 p-2">
+                        <label for="firstName">Ad</label>
+                        <input class="col-12 form-control text-white" type="text" id="firstName" required
+                            style="background-color: transparent;" />
+                        <div class="valid-feedback">İyi görünüyor!</div>
+                        <div class="invalid-feedback">Bu alan boş bırakılamaz.</div>
+                    </div>
+                    <div class="col-md-6 col-12 p-2">
+                        <label for="lastName">Soyad</label>
+                        <input class="col-12 form-control" type="text" id="lastName" required />
+                        <div class="valid-feedback">İyi görünüyor!</div>
+                        <div class="invalid-feedback">Bu alan boş bırakılamaz.</div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-12 p-2">
+                    <label for="email">Email</label>
+                    <input class="col-12 form-control" type="email" id="email" required />
+                    <div class="valid-feedback">İyi görünüyor!</div>
+                    <div class="invalid-feedback">Bu alan boş bırakılamaz.</div>
+                </div>
+                <div class="col-md-12 col-12 p-2">
+                    <label for="subject">Konu</label>
+                    <input class="col-12 form-control" type="subject" id="subject" required />
+                    <div class="valid-feedback">İyi görünüyor!</div>
+                    <div class="invalid-feedback">Bu alan boş bırakılamaz.</div>
+                </div>
+                <div class="col-md-12 col-12 p-2">
+                    <label for="txtMessage">Mesaj</label>
+                    <textarea name="message" cols="30" rows="7" class="col-12 form-control" type="text" id="txtMessage"
+                        placeholder="Mesajınızı buraya yazın..." required></textarea>
+                    <div class="valid-feedback">İyi görünüyor!</div>
+                    <div class="invalid-feedback">Bu alan boş bırakılamaz.</div>
+                </div>
+                <div class="col-12 p-2">
+                    <button class="py-2 px-3 btn btn-primary text-white" type="submit">
+                        Mesaj Gönder
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <!-- FOOTER -->
+    <footer class="bg-extra-dark-purple text-white pt-20">
+        <div class="container">
+            <div class="row">
+                <div class="col-6 col-md-3 mb-3">
+                    <h5>PICK'EM STORE</h5>
+                    <ul class="nav flex-column text-white">
+                        <li class="nav-item mb-2"><a href="index.html" class="nav-link p-0 text-white">Anasayfa</a>
+                        </li>
+                        <li class="nav-item mb-2"><a href="hakkimizda.html"
+                                class="nav-link p-0 text-white">Hakkımızda</a>
+                        </li>
+                        <li class="nav-item mb-2"><a href="sss.html" class="nav-link p-0 text-white">S.S.S</a>
+                        </li>
+                        <li class="nav-item mb-2"><a href="iletisim.html" class="nav-link p-0 text-white">İletişim</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-3 mb-3">
+                    <h5>ÜRÜNLER</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="oyuncular.html" class="nav-link p-0 text-white">Oyuncular</a>
+                        </li>
+                        <li class="nav-item mb-2"><a href="bombalar.html" class="nav-link p-0 text-white">Bombalar</a>
+                        </li>
+                        <li class="nav-item mb-2"><a href="silahlar.html" class="nav-link p-0 disabled">Silahlar
+                                (Yakında)</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-5 offset-md-1 mb-3">
+                    <form class="contact-us-form">
+                        <h5>Pick'em Store'a abone olun.</h5>
+                        <p>Yeni gelen oyunculardan haberdar olmak için abone olun.</p>
+                        <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                            <label for="newsletter" class="visually-hidden">Email</label>
+                            <input id="newsletter" type="text" class="form-control" placeholder="Email">
+                            <button class="btn btn-primary text-nowrap" type="button">Abone ol</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="text-center border-top border-header-purple py-5">
+                <p>© 2025 <span class="fw-bold text-gold">Pick'em Store </span>Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        (() => {
+            'use strict'
+            const forms = document.querySelectorAll('.needs-validation')
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+    </script>
+</body>
+
+</html>
