@@ -1,0 +1,274 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+$primary-color: #0d6efd;
+$secondary-color: #6c757d;
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+h2,
+h5 {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+p {
+  color: var(--secondary-color);
+  font-size: 0.95rem;
+}
+.header {
+  .logo {
+    width: 100px;
+  }
+  .fa-user-circle {
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+    &:hover {
+      background-color: var(--primary-color);
+      color: white;
+      border-radius: 50%;
+      border: white;
+    }
+  }
+}
+.banner {
+  background-image: url("../images/banner.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .container {
+      h2,
+      p {
+        text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.7);
+      }
+    }
+  }
+}
+.searcher {
+  .search-tabs {
+    button {
+      font-weight: bold;
+      &.active {
+        box-shadow: none;
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+      }
+      &:hover {
+        transform: scale(1.05);
+        transition: all 0.2s ease;
+      }
+    }
+  }
+  form {
+    .form-select {
+      padding: 0.75rem;
+    }
+    button {
+      transition: all 0.3s ease;
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+.areas {
+  .area-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    img {
+      height: 150px;
+      object-fit: cover;
+    }
+    h5 {
+      font-weight: bold;
+      color: #333;
+    }
+    p {
+      font-size: 0.9rem;
+      color: $secondary-color;
+    }
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+.latest-estates {
+  .estate-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    a {
+      text-decoration: none;
+    }
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+    img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .estate-info {
+      padding: 15px;
+      background-color: #fff;
+      h5 {
+        font-size: 1rem;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: #333;
+      }
+      p {
+        font-size: 0.9rem;
+        color: $secondary-color;
+      }
+    }
+  }
+}
+.estate-categories {
+  background-color: #f8f9fa;
+  .category-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    img {
+      height: 150px;
+      object-fit: cover;
+    }
+    h5 {
+      font-weight: bold;
+      color: #333;
+    }
+    p {
+      font-size: 0.9rem;
+      color: $secondary-color;
+    }
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+.featured-estates {
+  background-color: #ffffff;
+  .estate-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    img {
+      height: 200px;
+      object-fit: cover;
+    }
+    h5 {
+      font-weight: bold;
+      color: #333;
+    }
+    p {
+      font-size: 0.9rem;
+      color: $secondary-color;
+    }
+    h6 {
+      font-size: 1rem;
+    }
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+.estate-agents {
+  .agent-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    img.agent-photo {
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+    h5 {
+      color: #333;
+    }
+    p {
+      font-size: 0.9rem;
+      &:nth-of-type(2) {
+        font-weight: bold;
+      }
+    }
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+.testimonials {
+  .testimonial-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+    }
+    h5 {
+      color: #333;
+    }
+    p {
+      font-size: 0.9rem;
+      color: $secondary-color;
+    }
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+.contact-us {
+  background-image: url("../images/contact.webp");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  .form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    .form-control {
+      border-radius: 5px;
+      border: 1px solid $secondary-color;
+      &:focus {
+        border-color: $primary-color;
+        box-shadow: 0 0 5px rgba(13, 110, 253, 0.5);
+      }
+    }
+    button {
+      transition: all 0.3s ease;
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+.footer {
+  a {
+    transition: color 0.3s ease;
+    &:hover {
+      color: var(--primary-color);
+    }
+  }
+  i {
+    color: var(--primary-color);
+  }
+  hr {
+    opacity: 0.2;
+  }
+  .fab {
+    transition: transform 0.3s ease;
+    &:hover {
+      transform: scale(1.2);
+      color: var(--primary-color);
+    }
+  }
+}

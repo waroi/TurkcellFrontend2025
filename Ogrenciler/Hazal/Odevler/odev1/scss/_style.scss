@@ -1,0 +1,252 @@
+$blue: rgb(19, 19, 212);
+$dark-blue: rgb(38, 0, 99);
+
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+@mixin textFunc($fontsize, $fontweight, $lineheight) {
+    font-size: $fontsize;
+    font-weight: $fontweight;
+    line-height: $lineheight;
+}
+
+.card-basic {
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.header-menu {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: azure;
+    z-index: 3;
+
+    @media (max-width: 990px) {
+        .user-items {
+            a {
+                display: none;
+            }
+        }
+
+    }
+}
+
+.banner {
+    background-image: url(../assets/arkaplan.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    
+
+    p {
+        @include textFunc(24px, 500, 1.6);
+    }
+}
+
+.products {
+    .product-cards {
+        .card {
+            cursor: pointer;
+            transition: all 0.5s ease;
+            color: $dark-blue;
+
+            &:hover {
+                background-color: $dark-blue;
+                color: white;
+                transform: scale(1.05)
+            }
+        }
+    }
+}
+
+.about-us {
+    background-color: $dark-blue;
+
+    .about-cards {
+        .about-card {
+            @extend .card-basic;
+            box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+
+            &:hover {
+                transform: translateY(-10px);
+            }
+
+        }
+    }
+}
+
+.banner-title,
+.products-title,
+.about-title,
+.faq-title,
+.contact-title {
+    @include textFunc(48px, 700, 1.6);
+
+    @media (max-width: 990px) {
+        @include textFunc(40px, 500, 1.6);
+
+    }
+}
+
+.card-title {
+    @include textFunc(28px, 500, 1.6);
+
+    @media (max-width: 990px) {
+        @include textFunc(20px, 300, 1.6);
+
+    }
+}
+
+.gif {
+    background-color: black;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    .gif-content{
+        animation: walk 15s ease-in-out infinite 3s  alternate;
+        @keyframes walk{
+            0%{
+                background-color: black;
+                transform: translate(0,0);
+            }
+            25%{
+                background-color: black;
+                transform: translate(400px,0px);
+            }
+            50%{
+                background-color: black;
+                transform: translate(800px,0px);
+            }
+            75%{
+                background-color: black;
+                transform: translate(1200px,0px);
+            }
+            100%{
+                background-color: black;
+                transform: translate(1600px,0px);
+            }
+        }
+    }
+}
+
+.faq {
+    .faq-cards {
+        .faq-card {
+            background: $dark-blue;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            overflow: hidden;
+            cursor: pointer;
+
+            &:hover {
+                transform: translateY(-10px);
+            }
+        }
+    }
+}
+
+.contact {
+    .info-card {
+        background: white;
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        overflow: hidden;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $dark-blue;
+            color: white;
+        }
+
+        .contact-icon {
+            font-size: 24px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: $dark-blue;
+            align-items: center;
+        }
+
+        .contact-icon i {
+            color: white;
+        }
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+
+            &:hover {
+                color: white;
+            }
+        }
+    }
+}
+
+.footer {
+    background-color: $dark-blue;
+
+    .footer-brand {
+        .links {
+            text-decoration: none;
+            color: white;
+        }
+    }
+
+    .footer-social {
+        i {
+            color: white;
+
+            @media (max-width: 990px) {
+                display: none;
+
+            }
+        }
+    }
+}
+
+.product-detail {
+    background: linear-gradient(145deg, $dark-blue, $blue);
+    color: white;
+
+    .product-img {
+        border-radius: 20px;
+        transition: transform 0.5s ease-in;
+        margin-bottom: 15px;
+
+        &:hover {
+            transform: scale(1.10);
+        }
+    }
+
+    .product-detail-info {
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 30px;
+
+        h1 {
+            @include textFunc(48px, 900, 1.6);
+
+            @media (max-width: 990px) {
+                @include textFunc(32px, 500, 1.6);
+
+            }
+
+        }
+
+        .price-text {
+            @include textFunc(28px, 900, 1.6);
+            color: rgb(231, 102, 231);
+
+        }
+    }
+}

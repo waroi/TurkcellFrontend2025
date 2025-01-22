@@ -1,0 +1,286 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import "./bt_override";
+
+$main-color: #fffacd;
+$black-color: #0e0e0e;
+$iColor:rgb(199, 231, 133);
+$primaryColor: rgb(62, 110, 213);
+$font: "Poppins", serif;
+$font-size: 16px;
+
+* {
+  font-family: "Poppins", serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: 0.2s ease;
+}
+
+html {
+  overflow: auto;
+  scroll-padding-top: 90px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: $main-color;
+}
+
+section {
+  padding: 35px 7%;
+}
+
+@mixin ButtonFunction {
+  margin-top: 10px;
+  display: inline-block;
+  padding: 15px 35px;
+  border-radius: 300px;
+  font-size: 14px;
+  color: $main-color;
+  background-color: $black-color;
+  cursor: pointer;
+}
+
+@mixin headerFunction{
+  background-color: white;
+  display: flex;
+  align-items: center;
+  padding: 0 7%;
+  margin: 20px 7%;
+  border-radius: 30px;
+  box-shadow: 0px 0px 17px -2px rgba(0, 0, 0, 0.7);
+  top: 0;
+  justify-content: space-between;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+
+    /*iletişim Start*/
+  .contact .row {
+    display: flex;
+    background-color: $iColor;
+    gap: 19px;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    form{
+      flex: 1 1 450px;
+      padding: 50px 20px;
+      text-align: center;
+
+      .inputBox{
+        display: flex;
+        align-items: center;
+        margin: 20px 0;
+        border-radius: 8px;
+        border: 2px solid $black-color;
+
+        i{
+          color: $black-color;
+          font-size:20px;
+          padding-left: 20px;
+        }
+
+        input{
+          width: 100%;
+          padding: 20px;
+          font-size: 17px;
+          color: $black-color;
+          text-transform: none;
+          background: none;
+        }
+      }
+    }
+
+    h3{
+      text-transform: uppercase;
+      font-size: 35px;
+      color: $black-color;
+    }
+  }
+
+  .iHeader {
+    @include headerFunction();
+    background-color: $iColor;
+    position:relative;
+
+    i{
+      font-size:20px;
+    }
+  }
+
+  .btn {
+    @include ButtonFunction();
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+  
+  .iHeader .navbar a {
+    margin: 0 10px;
+    font-size: $font-size;
+    color: $black-color;
+    border-bottom: 3px solid transparent;
+    &:hover,
+    &.active {
+      border-color: $main-color;
+      padding-bottom: 5px;
+    }
+  }
+
+  .iLogo img{
+    height: 120px;
+    margin-right: 25px;
+  }
+
+  .message{
+    display: flex;
+    min-height: 10vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    align-items: center;
+  }
+
+  .map{
+    flex: 1 1 450px;
+    width: 100%;
+    object-fit: cover;
+  }
+  /*İletişim End*/
+
+  .search-input {
+    font-size: 16px;
+    color: $black-color;
+    padding: 10px;
+    text-transform: none;
+    border-radius: 30px;
+  }
+
+  .footer {
+    background-color: $iColor;
+    align-items: center;
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+
+    .search {
+      order: 1;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+
+      .search-input {
+        width: 300px;
+        background-color: $main-color;
+      }
+    }
+    .share {
+      order: 2; 
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      a {
+        display: flex; 
+        justify-content: center; 
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        color: $main-color;
+        font-size: 25px;
+        &:hover {
+          border-radius: 40px;
+          border: 2px solid $main-color;
+        }
+      }
+    }
+  }
+
+   
+  @media (max-width: 992px) {
+
+    flex-direction: column; 
+    align-items: center;
+    gap: 20px; 
+
+    .iLogo img {
+      display: none;
+    }
+    .navbar {
+      padding: 0 40;
+    }
+    .box-container {
+      grid-template-columns: repeat(15, 25%) !important;
+    }
+
+    .search,
+    .share{
+      width: 100%; 
+      justify-content: center;
+    }
+
+    .search .search-input {
+      width: 90%; 
+      max-width: 400px; 
+    }
+
+    .share a {
+      width: 45px; 
+      height: 45px;
+      font-size: 22px; 
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column; 
+    align-items: center;
+    gap: 20px;
+    .box-container {
+      grid-template-columns: repeat(15, 33.3%) !important;
+    }
+
+    .iHeader .navbar a {
+      font-size: 14px;
+    }
+
+    .buttons {
+      display: none;
+    }
+
+    .search,
+    .share {
+      width: 100%; 
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .search .search-input {
+      width: 100%; 
+      max-width: 300px;
+    }
+
+    .share {
+      display: none !important;
+    }
+
+  }
+  @media (max-width: 576px) {
+    flex-direction: column;
+    gap: 15px;
+    .iHeader {
+      display: none;
+    }
+    .box-container {
+      grid-template-columns: repeat(15, 50%) !important;
+    }
+   
+  }
+}

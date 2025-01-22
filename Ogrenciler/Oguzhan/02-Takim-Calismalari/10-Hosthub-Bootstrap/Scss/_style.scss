@@ -1,0 +1,158 @@
+$orangeColor: #ec9d5f;
+$purpleColor: #6f42c1;
+$blueColor: #007bff;
+$indigoColor: #6610f2;
+$pColor: #777777;
+$wColor: #fff;
+$width: 100%;
+
+* {
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.banner {
+  z-index: 1;
+  background: $indigoColor;
+
+  .banner_content {
+    width: $width;
+    padding: 225px 0px;
+
+    p {
+      opacity: 0.6;
+    }
+
+    .banner_btn {
+      background-color: $orangeColor;
+      font-size: 12px;
+    }
+  }
+}
+
+// Section-2
+
+section {
+  .container {
+    .text-center {}
+  }
+}
+
+p {
+  font-size: 14px;
+  color: $pColor;
+  line-height: 24px;
+}
+
+section {
+  background-color: #fafcff;
+
+}
+
+.looking {
+  background-color: $orangeColor;
+  text-align: center;
+
+
+  .container {
+    width: 100%;
+    padding-top: 120px;
+    padding-bottom: 120px;
+    color: $wColor;
+
+    h4 {
+      margin-top: 0;
+    }
+
+
+    p {
+      font-size: 14px;
+      opacity: .6;
+      max-width: 770px;
+      margin: 0px auto 35px;
+      color: $wColor;
+
+
+    }
+  }
+}
+
+.client {
+  padding-top: 120px;
+  padding-bottom: 120px;
+
+  .left {
+    max-width: 335px;
+
+    h3 {
+      font-weight: 500;
+      font-size: 36px;
+      line-height: 45px;
+      color: #222222;
+    }
+  }
+
+  .item {
+    background: $wColor;
+    border: 1px solid #eeeeee;
+    border-radius: 10px;
+
+    h5 {
+      color: $pColor;
+      font-weight: 300;
+      font-size: 14px;
+      margin-bottom: 32px;
+    }
+  }
+}
+
+.services {
+  background: #6247ea;
+  position: relative;
+  overflow: hidden;
+
+  .container {
+    width: 100%;
+
+    .main-title {
+      margin-bottom: 75px;
+
+      h2 {
+        color: $wColor;
+      }
+
+      p {
+        color: $wColor;
+        opacity: .6;
+      }
+    }
+
+    .row {
+      margin-bottom: -30px;
+
+      .services-item {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        padding: 40px 60px 40px 40px;
+        border: 1px solid #9381eb;
+        margin-bottom: 30px;
+
+        h4 {
+          font-size: 18px;
+          font-weight: 500;
+          color: $wColor;
+          margin-bottom: 20px;
+        }
+
+        p {
+          margin-bottom: 0px;
+          color: $wColor;
+          opacity: .6;
+        }
+      }
+    }
+
+  }
+}

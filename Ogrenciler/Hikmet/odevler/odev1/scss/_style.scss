@@ -1,0 +1,226 @@
+@mixin transition($property: all, $duration: 0.3s) {
+	transition: $property $duration ease;
+}
+
+@mixin image-cover {
+	object-fit: cover;
+}
+
+@mixin card-hover {
+	@include transition(transform);
+	&:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	}
+}
+
+@mixin text-clamp($lines: 3) {
+	display: -webkit-box;
+	-webkit-line-clamp: $lines;
+	line-clamp: $lines;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+@mixin flex-center {
+	display: flex;
+	align-items: center;
+}
+
+@mixin badge-style($bg-color) {
+	background-color: $bg-color;
+}
+
+@mixin animation($name, $duration, $timing: linear, $iteration: infinite) {
+	animation: $name $duration $timing $iteration;
+}
+
+@mixin hide-scrollbar {
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
+
+.discount {
+	overflow: hidden;
+	.animatedText {
+		height: 30px;
+		@include animation(slideLeft, 20s);
+		white-space: nowrap;
+		display: flex;
+		position: relative;
+	}
+}
+
+.carousel-section {
+	.carousel {
+		height: 100%;
+		.carousel-inner {
+			height: 100%;
+			.carousel-item {
+				height: 100%;
+				img {
+					height: 400px;
+					@include image-cover;
+				}
+			}
+		}
+	}
+}
+
+.scrollable-categories {
+	overflow: auto;
+	@include hide-scrollbar;
+
+	img {
+		border-radius: 50%;
+		width: 100px;
+		height: 100px;
+		@include image-cover;
+	}
+}
+
+.superhero-card {
+	.card {
+		@include card-hover;
+		border: 1px solid rgba(0, 0, 0, 0.125);
+	}
+	.superhero-card-image {
+		height: 250px;
+		@include image-cover;
+	}
+}
+
+.product-detail {
+	.product-image img {
+		width: 75%;
+		border-radius: 8px;
+	}
+
+	.product-details {
+		.product-title {
+			margin-bottom: 1rem;
+			font-size: 2rem;
+		}
+
+		.rating {
+			color: gold;
+			font-size: 1.5rem;
+			margin-bottom: 1rem;
+		}
+
+		.product-description {
+			font-size: 1.125rem;
+			color: #666;
+			margin-bottom: 1.25rem;
+		}
+
+		.price {
+			font-size: 1.5rem;
+			font-weight: bold;
+			color: #333;
+		}
+	}
+}
+
+.animated-btn {
+	position: relative;
+	overflow: hidden;
+	padding: 8px 24px;
+	@include transition;
+
+	.btn-text {
+		display: inline-block;
+		position: relative;
+		@include transition(transform);
+	}
+
+	.hover-text {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, 100%);
+		opacity: 0;
+		@include transition;
+	}
+
+	&:hover {
+		.btn-text {
+			transform: translateY(-100px);
+		}
+		.hover-text {
+			transform: translate(-50%, -50%);
+			opacity: 1;
+		}
+	}
+}
+
+.card-description {
+	@include text-clamp;
+}
+
+.card-title {
+	@include flex-center;
+	gap: 0.5rem;
+
+	.badge {
+		@include flex-center;
+		padding: 0.25rem 0.5rem;
+		img {
+			width: 20px;
+			height: 20px;
+			@include image-cover;
+		}
+	}
+
+	.superman-badge {
+		@include badge-style(rgb(40, 40, 254));
+	}
+	.captain-badge {
+		@include badge-style(#ffff);
+	}
+	.iron-badge {
+		@include badge-style(#898989);
+	}
+	.hulk-badge {
+		@include badge-style(#00ff00);
+	}
+	.spiderman-badge {
+		@include badge-style(#ff0000);
+	}
+	.doctor-badge {
+		@include badge-style(#049125);
+	}
+}
+
+@keyframes slideOutTop {
+	0% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+	100% {
+		transform: translateY(-100%);
+		opacity: 0;
+	}
+}
+
+@keyframes slideOutBottom {
+	0% {
+		transform: translateX(-50%) translateY(100%);
+		opacity: 0;
+	}
+	100% {
+		transform: translateX(-50%) translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes slideLeft {
+	0% {
+		transform: translateX(100%);
+	}
+	100% {
+		transform: translateX(-100%);
+	}
+}

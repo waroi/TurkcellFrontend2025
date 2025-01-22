@@ -1,0 +1,311 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+$main-color: #fffacd;
+$black-color: #0e0e0e;
+$iColor: rgb(199, 231, 133);
+$primaryColor: rgb(107, 107, 208);
+$secondColor: rgb(216, 113, 147);
+$font: "Poppins", serif;
+$font-size: 16px;
+
+* {
+  font-family: "Poppins", serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: 0.2s ease;
+}
+
+html {
+  overflow: auto;
+  scroll-padding-top: 90px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: $main-color;
+}
+
+section {
+  padding: 35px 7%;
+}
+
+@mixin ButtonFunction {
+  margin-top: 10px;
+  display: inline-block;
+  padding: 15px 35px;
+  border-radius: 300px;
+  font-size: 14px;
+  color: $main-color;
+  background-color: $black-color;
+  cursor: pointer;
+}
+
+@mixin headerFunction {
+  background-color: $secondColor ;
+  display: flex;
+  align-items: center;
+  padding: 0 7%;
+  margin: 20px 7%;
+  border-radius: 30px;
+  box-shadow: 0px 0px 17px -2px rgba(0, 0, 0, 0.7);
+  top: 0;
+  justify-content: space-between;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  .header {
+    @include headerFunction();
+    position: sticky;
+  }
+
+  .header .navbar a {
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: $font-size;
+    color: $black-color;
+    border-bottom: 3px solid transparent;
+    &:hover,
+    &.active {
+      border-color: $main-color;
+      padding-bottom: 5px;
+    }
+  }
+
+  .header .buttons button {
+    cursor: pointer; // El işareti. Tıklanabilir öğeler için kullanılır.
+    font-size: 18px;
+    margin-left: 20px;
+    background-color: transparent;
+  }
+
+  .logo img {
+    height: 80px;
+  }
+
+  .search-input {
+    font-size: 16px;
+    color: $black-color;
+    padding: 10px;
+    text-transform: none;
+    border-radius: 30px;
+  }
+
+  .btn {
+    @include ButtonFunction();
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  .faq-container {
+    max-width: 800px;
+    margin: 0 auto; /* Ortala */
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    color: #333;
+  }
+  
+  .accordion-item {
+    border: none; /* Varsayılan sınırları kaldır */
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+  }
+  
+  .accordion-button {
+    border-radius: 10px; /* Butonları yuvarla */
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: #333;
+  
+    &:focus {
+      box-shadow: none; /* Odaklandığında gölgeyi kaldır */
+    }
+  }
+  
+  .accordion-button:not(.collapsed) {
+    background-color: #ffebcd; /* Açıldığında arka plan */
+    color: #000; /* Yazı rengi */
+  }
+  
+  .accordion-body {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+  }
+
+  .footer {
+    background-color: $secondColor;
+    align-items: center;
+    display: flex; /* Footer elemanlarını yatay sıraya al */
+    flex-direction: row; /* Varsayılan olarak dikey sıralama */
+    justify-content: space-between;
+    width: 100%;
+    .search {
+      order: 2;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+
+      .search-input {
+        width: 300px;
+        background-color: $main-color;
+      }
+    }
+    .share {
+      order: 3; /* Sosyal medya ikonlarını üçüncü sıraya al */
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      a {
+        text-decoration: none;
+        display: flex; 
+        justify-content: center; 
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        color: $main-color;
+        font-size: 25px;
+        &:hover {
+          border-radius: 40px;
+          border: 2px solid $main-color;
+        }
+      }
+    }
+
+    .links {
+      order: 1; /* Linkleri birinci sıraya al */
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      a {
+        text-decoration: none;
+        display: flex; /* Flexbox düzeni */
+        justify-content: center; /* Yatayda ortala */
+        align-items: center; /* Dikeyde ortala */
+        width: 100px; /* Sabit genişlik */
+        height: 50px; /* Sabit yükseklik */
+        background-color:purple;
+        padding: 15px 7px;
+        color: $black-color;
+        font-size: $font-size;
+        border-radius: 40px;
+        &:hover {
+          background-color: $primaryColor;
+          opacity: 0.7;
+          border: 2px solid $main-color;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .home {
+      flex-direction: column; /* Yatay sıralamayı dikey yap */
+      align-items: center; /* Dikeyde ortala */
+      gap: 15px; /* Resim ve yazı arasındaki boşluğu azalt */
+  
+      .content {
+        max-width: 100%; /* Yazı genişliğini tam yap */
+      }
+  
+      img {
+        max-width: 200px; /* Resmi tam genişlik yap */
+      }
+    }
+  }
+  
+  
+  @media (max-width: 992px) {
+
+    flex-direction: column; /* Dikey sıralama */
+    align-items: center;
+    gap: 20px; /* Elemanlar arasında boşluk */
+
+    .logo img {
+      display: none;
+    }
+    .navbar {
+      padding: 0 40;
+    }
+    .box-container {
+      grid-template-columns: repeat(15, 25%) !important;
+    }
+
+    .search,
+    .share{
+      width: 100%; /* Tam genişlik */
+      justify-content: center;
+    }
+
+    .search .search-input {
+      width: 90%; /* Daha küçük genişlik */
+      max-width: 400px; /* Maksimum genişlik */
+    }
+
+    .share a {
+      width: 45px; /* Sosyal medya ikonlarının genişliği */
+      height: 45px;
+      font-size: 22px; /* Daha küçük ikon boyutu */
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column; /* Dikey düzen */
+    align-items: center;
+    gap: 20px;
+    .box-container {
+      grid-template-columns: repeat(15, 33.3%) !important;
+    }
+
+    .header .navbar a {
+      font-size: 14px;
+    }
+
+    .buttons {
+      display: none;
+    }
+
+    .search,
+    .share {
+      width: 100%; /* Tüm elemanlar tam genişlikte */
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .search .search-input {
+      width: 100%; /* Arama çubuğu tam genişlikte */
+      max-width: 300px; /* Maksimum genişlik */
+    }
+
+    .share {
+      display: none !important;
+    }
+
+  }
+  @media (max-width: 576px) {
+    flex-direction: column;
+    gap: 15px;
+    .header {
+      display: none;
+    }
+    .box-container {
+      grid-template-columns: repeat(15, 50%) !important;
+    }
+  }
+
+}

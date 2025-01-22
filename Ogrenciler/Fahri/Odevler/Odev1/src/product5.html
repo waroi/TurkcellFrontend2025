@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Global Market - Ülke Satışı</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../css/main.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">GlobalMarket</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Anasayfa</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="products.html">Ülkeler</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">Hakkımızda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="faq.html">SSS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">İletişim</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="fa-solid fa-cart-shopping"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section class="product-card-section mb-5 py-5">
+      <div class="container p-5">
+        <div class="row">
+          <div
+            class="col-lg-5 d-flex justify-content-center align-items-center animation-card"
+          >
+            <img src="../assets/5.png" class="rounded-5 w-100" alt="" />
+          </div>
+          <div class="col-lg-7 d-flex flex-column flex-wrap shop-card">
+            <div class="my-4">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+            </div>
+            <h1 class="text-warning">Kültür Kültür Kültür!</h1>
+            <p class="mt-3">
+              Kültürü ve ahlakı çok yüksek popülasyona sahip bu ülkede
+              yaşamaktan daha güzel ne var ki?
+            </p>
+            <p class="mt-3">
+              Buradaki insaların tamamı kültür seviyesi çok yüksek insanlardan
+              oluşuyor. İnsanların birbirine duyduğu saygının maksimum olduğu bu
+              ülkede yaşamak sandığınızdan çok daha ucuz.
+            </p>
+            <div class="buttons-group mt-auto">
+              <h3 class="my-3 text-warning"><span>Fiyat: </span>$ 5.000.000</h3>
+              <div class="quantity-group d-flex align-items-center mb-3">
+                <button class="btn btn-secondary">-</button>
+                <input
+                  type="text"
+                  id="quantity"
+                  class="form-control text-center mx-2 text-warning"
+                  value="1"
+                  readonly
+                  style="width: 60px"
+                />
+                <button class="btn btn-secondary">+</button>
+              </div>
+              <button class="btn btn-warning">Satın Al</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="other-products my-5 py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6">
+            <div class="card">
+              <img
+                src="../assets/1.png"
+                class="card-img-top rounded-4"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Minimum İnsan - Maksimum Huzur</h5>
+                <p class="mb-4">$10.000.000</p>
+                <a href="#" class="page-buton rounded-2 p-3">Sepete Ekle</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 my-sm-5 my-lg-0 my-md-0">
+            <div class="card">
+              <img
+                src="../assets/8.png"
+                class="card-img-top rounded-4 object-fit-cover"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Can Dostlar</h5>
+                <p class="mb-4">$3.500.000</p>
+                <a href="#" class="page-buton rounded-2 p-3">Sepete Ekle</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 mt-lg-0 mt-md-5 my-sm-5 mt-sm-0">
+            <div class="card">
+              <img
+                src="../assets/7.png"
+                class="card-img-top rounded-4 object-fit-cover"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Duacıyız</h5>
+                <p class="mb-4">$21.500.000</p>
+                <a href="#" class="page-buton rounded-2 p-3">Sepete Ekle</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 mt-lg-0 mt-md-5">
+            <div class="card">
+              <img
+                src="../assets/6.png"
+                class="card-img-top rounded-4 object-fit-cover"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Müzik Ruhun Gıdasıdır</h5>
+                <p class="mb-4">$8.000.000</p>
+                <a href="#" class="page-buton rounded-2 p-3">Sepete Ekle</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="user-reviews-section py-5">
+      <div class="container">
+        <h3 class="text-center mb-4">Kullanıcı Yorumları</h3>
+        <div class="row">
+          <!-- Yorum Kartı 1 -->
+          <div class="col-md-6 mb-4 bg-warning rounded-3">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-titlet">Fahri Coşkun</h5>
+                <p class="card-text">
+                  Ben kendime 50 milyonluk aldım. Memnunum ama siz 1-2 milyon
+                  fazla alın nüfus yaşlı olabiliyor.
+                </p>
+                <div class="">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-regular fa-star"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <!-- Yorum Kartı 1 -->
+          <div class="col-md-6 mb-4 bg-warning rounded-3">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Ahmet Sezer</h5>
+                <p class="card-text">
+                  Nüfus biraz fazla bağnaz ama onun dışında iyi.
+                </p>
+                <div class="">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-regular fa-star"></i>
+                  <i class="fa-regular fa-star"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Yorum Formu -->
+        <div class="mt-5">
+          <h4 class="text-center">Yorum Yaz</h4>
+          <form>
+            <div class="mb-3">
+              <label for="userName" class="form-label">Adınız</label>
+              <input
+                type="text"
+                class="form-control bg-warning"
+                id="userName"
+                placeholder="Adınızı giriniz"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="userComment" class="form-label">Yorumunuz</label>
+              <textarea
+                class="form-control bg-warning"
+                id="userComment"
+                rows="3"
+                placeholder="Yorumunuzu buraya yazınız"
+              ></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="userRating" class="form-label">Puanınız</label>
+              <select class="form-select bg-warning" id="userRating">
+                <option value="5">5 - Harika</option>
+                <option value="4">4 - İyi</option>
+                <option value="3">3 - Orta</option>
+                <option value="2">2 - Kötü</option>
+                <option value="1">1 - Çok Kötü</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-light">Gönder</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-dark text-light py-4">
+      <div class="container">
+        <div class="row">
+          <!-- Logo ve Hakkımızda -->
+          <div class="col-lg-4 mb-3">
+            <h5 class="text-warning fw-bold">Hakkımızda</h5>
+            <p>
+              Toplumunu seçmek isteyenler için yepyeni fırsatlar sunuyoruz. Daha
+              iyi bir yaşam için bize katılın.
+            </p>
+          </div>
+
+          <!-- Linkler -->
+          <div class="col-lg-4 mb-3">
+            <h5 class="text-warning fw-bold">Hızlı Erişim</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="index.html" class="text-light text-decoration-none"
+                  >Anasayfa</a
+                >
+              </li>
+              <li>
+                <a href="products.html" class="text-light text-decoration-none"
+                  >Ülkeler</a
+                >
+              </li>
+              <li>
+                <a href="about.html" class="text-light text-decoration-none"
+                  >Hakkımızda</a
+                >
+              </li>
+              <li>
+                <a href="contact.html" class="text-light text-decoration-none"
+                  >İletişim</a
+                >
+              </li>
+              <li>
+                <a href="faq.html" class="text-light text-decoration-none"
+                  >SSS</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Sosyal Medya -->
+          <div class="col-lg-4 mb-3">
+            <h5 class="text-warning fw-bold">Bizi Takip Edin</h5>
+            <div class="d-flex">
+              <a
+                href="https://github.com/fahricoskun"
+                target="_blank"
+                class="text-light me-3"
+              >
+                <i class="fa-brands fa-github fa-lg"></i>
+              </a>
+              <a
+                href="https://twitter.com/fahricosskun"
+                target="_blank"
+                class="text-light me-3"
+              >
+                <i class="fa-brands fa-x-twitter fa-lg"></i>
+              </a>
+              <a
+                href="https://instagram.com/fahricosskun"
+                target="_blank"
+                class="text-light me-3"
+              >
+                <i class="fa-brands fa-instagram fa-lg"></i>
+              </a>
+              <a
+                href="https://linkedin.com/in/fahri-coskun"
+                target="_blank"
+                class="text-light"
+              >
+                <i class="fa-brands fa-linkedin fa-lg"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="row">
+          <div class="col text-center mt-3">
+            <p class="mb-0">
+              &copy; 2025 Tüm Hakları Saklıdır.
+              <span class="text-warning">Yaşam Seçimi Platformu</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

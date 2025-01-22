@@ -1,0 +1,245 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  font-family: "Poppins", serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: 0.2s ease;
+}
+
+html {
+  overflow: auto;
+  scroll-padding-top: 90px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #fffacd;
+}
+
+section {
+  padding: 35px 7%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  /*iletişim Start*/
+  /*İletişim End*/
+}
+.container .contact .row {
+  display: flex;
+  background-color: rgb(199, 231, 133);
+  gap: 19px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.container .contact .row form {
+  flex: 1 1 450px;
+  padding: 50px 20px;
+  text-align: center;
+}
+.container .contact .row form .inputBox {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  border-radius: 8px;
+  border: 2px solid #0e0e0e;
+}
+.container .contact .row form .inputBox i {
+  color: #0e0e0e;
+  font-size: 20px;
+  padding-left: 20px;
+}
+.container .contact .row form .inputBox input {
+  width: 100%;
+  padding: 20px;
+  font-size: 17px;
+  color: #0e0e0e;
+  text-transform: none;
+  background: none;
+}
+.container .contact .row h3 {
+  text-transform: uppercase;
+  font-size: 35px;
+  color: #0e0e0e;
+}
+.container .iHeader {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  padding: 0 7%;
+  margin: 20px 7%;
+  border-radius: 30px;
+  box-shadow: 0px 0px 17px -2px rgba(0, 0, 0, 0.7);
+  top: 0;
+  justify-content: space-between;
+  background-color: rgb(199, 231, 133);
+  position: relative;
+}
+.container .iHeader i {
+  font-size: 20px;
+}
+.container .btn {
+  margin-top: 10px;
+  display: inline-block;
+  padding: 15px 35px;
+  border-radius: 300px;
+  font-size: 14px;
+  color: #fffacd;
+  background-color: #0e0e0e;
+  cursor: pointer;
+}
+.container .btn:hover {
+  opacity: 0.7;
+}
+.container .iHeader .navbar a {
+  margin: 0 10px;
+  font-size: 16px;
+  color: #0e0e0e;
+  border-bottom: 3px solid transparent;
+}
+.container .iHeader .navbar a:hover, .container .iHeader .navbar a.active {
+  border-color: #fffacd;
+  padding-bottom: 5px;
+}
+.container .iLogo img {
+  height: 120px;
+  margin-right: 25px;
+}
+.container .message {
+  display: flex;
+  min-height: 10vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  align-items: center;
+}
+.container .map {
+  flex: 1 1 450px;
+  width: 100%;
+  object-fit: cover;
+}
+.container .search-input {
+  font-size: 16px;
+  color: #0e0e0e;
+  padding: 10px;
+  text-transform: none;
+  border-radius: 30px;
+}
+.container .footer {
+  background-color: rgb(199, 231, 133);
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+.container .footer .search {
+  order: 1;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+.container .footer .search .search-input {
+  width: 300px;
+  background-color: #fffacd;
+}
+.container .footer .share {
+  order: 2;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.container .footer .share a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  color: #fffacd;
+  font-size: 25px;
+}
+.container .footer .share a:hover {
+  border-radius: 40px;
+  border: 2px solid #fffacd;
+}
+@media (max-width: 992px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .container .iLogo img {
+    display: none;
+  }
+  .container .navbar {
+    padding: 0 40;
+  }
+  .container .box-container {
+    grid-template-columns: repeat(15, 25%) !important;
+  }
+  .container .search,
+  .container .share {
+    width: 100%;
+    justify-content: center;
+  }
+  .container .search .search-input {
+    width: 90%;
+    max-width: 400px;
+  }
+  .container .share a {
+    width: 45px;
+    height: 45px;
+    font-size: 22px;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .container .box-container {
+    grid-template-columns: repeat(15, 33.3%) !important;
+  }
+  .container .iHeader .navbar a {
+    font-size: 14px;
+  }
+  .container .buttons {
+    display: none;
+  }
+  .container .search,
+  .container .share {
+    width: 100%;
+    justify-content: center;
+    gap: 15px;
+  }
+  .container .search .search-input {
+    width: 100%;
+    max-width: 300px;
+  }
+  .container .share {
+    display: none !important;
+  }
+}
+@media (max-width: 576px) {
+  .container {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .container .iHeader {
+    display: none;
+  }
+  .container .box-container {
+    grid-template-columns: repeat(15, 50%) !important;
+  }
+}
+
+/*# sourceMappingURL=iletisim.css.map */

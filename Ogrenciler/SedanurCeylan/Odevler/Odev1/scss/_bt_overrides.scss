@@ -1,0 +1,66 @@
+$primary: #DFDDEB;
+$secondary: #584D8F;
+$white:#ffffff;
+$bg:#F4F2EE;
+$ask: rgb(232, 69, 60);
+$eglence: #ed70c0;
+$heyecan: #f0965b;
+$huzun: #5970f6;
+$korku: #000000;
+$motivasyon: #56bc6c;
+$ofke:#88251f;
+$sakinlik:#8455f6;
+$mutluluk:  #fadf70;
+$askLight: rgb(235, 116, 110);
+$eglenceLight: #eca2d1;
+$heyecanLight: #edb58f;
+$huzunLight: #8f9ff6;
+$korkuLight: #808080;
+$motivasyonLight: #a2c1a9;
+$ofkeLight:#874642;
+$sakinlikLight:#af90f8;
+$mutlulukLight:  #fdecaa;
+$theme-colors: (
+  'primary': $primary,
+  'secondary': $secondary,
+  'white':$white,
+  'bg':$bg,
+  'ask': $ask,
+  'eglence': $eglence,
+  'heyecan': $heyecan,
+  'huzun': $huzun,
+  'korku': $korku,
+  'motivasyon': $motivasyon,
+  'ofke':$ofke,
+  'sakinlik':$sakinlik,
+  'mutluluk':  $mutluluk,
+  'askLight': $askLight,
+  'eglenceLight': $eglenceLight,
+  'heyecanLight': $heyecanLight,
+  'huzunLight': $huzunLight,
+  'korkuLight': $korkuLight,
+  'motivasyonLight': $motivasyonLight,
+  'ofkeLight':$ofkeLight,
+  'sakinlikLight':$sakinlikLight,
+  'mutlulukLight':  $mutlulukLight,
+
+);
+
+$font-size-base: 1rem;
+$font-sizes: (
+  12: $font-size-base * 0.75,
+  14: $font-size-base * 0.875,
+  16: $font-size-base * 1,
+  20: $font-size-base * 1.25,
+  24: $font-size-base * 1.5,
+  32: $font-size-base * 2,
+  48: $font-size-base * 3,
+  64: $font-size-base * 4,
+  96: $font-size-base * 6,
+);
+
+
+// NAVBAR
+$navbar-light-color: $secondary;
+$navbar-light-hover-color: $primary;
+$navbar-light-active-color: $secondary;
