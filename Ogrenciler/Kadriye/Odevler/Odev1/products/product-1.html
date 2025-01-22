@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wings</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../css/main.css" />
+    <script
+      src="https://kit.fontawesome.com/1618e98dac.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../images/fav-icon-1.png"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-danger sticky-top top-0 py-0">
+      <div class="container align-items-center">
+        <a
+          class="navbar-brand d-flex align-items-center text-white text-uppercase p-0"
+          href="../index.html"
+          ><img src="../images/l-3.png" alt="logo left" />
+          <h2 class="m-0">Wings</h2>
+          <img src="../images/l-2.png" alt="logo right"
+        /></a>
+        <button
+          class="navbar-toggler py-2"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end h-100"
+          id="navbarSupportedContent"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item position-relative">
+              <a
+                class="nav-link text-white text-uppercase h-100 py-3"
+                aria-current="page"
+                href="../index.html"
+                ><i class="fa-solid fa-house me-1"></i> Anasayfa</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link text-white text-uppercase py-3"
+                href="../about_us.html"
+              >
+                <i class="fa-regular fa-address-card me-1"></i>
+                Hakkımızda
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link text-white text-uppercase py-3"
+                href="../index.html#products"
+              >
+                <i class="fa-solid fa-list me-1"></i>
+                Ürünler
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white text-uppercase py-3" href="#"
+                ><i class="fas fa-heart me-1"></i> Favorilerim</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white text-uppercase py-3" href="#"
+                ><i class="fas fa-basket-shopping me-1"></i> Sepet</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white text-uppercase py-3" href="#"
+                ><i class="fas fa-user me-1"></i> Profil
+              </a>
+            </li>
+            <li class="nav-item">
+              <button
+                type="button"
+                class="btn btn-info h-100 rounded-0"
+                data-bs-toggle="modal"
+                data-bs-target="#SSSModal"
+              >
+                <img
+                  src="https://img.icons8.com/?size=100&id=6651&format=png&color=ffffff"
+                  alt="SSS image"
+                />
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="modal fade"
+      id="SSSModal"
+      tabindex="-1"
+      aria-labelledby="SSSModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content bg-light">
+          <div class="modal-header">
+            <h1 class="modal-title text-info" id="SSSModalLabel">
+              Sıkça Sorulan Sorular
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="accordion" id="accordionSSS">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button text-info fw-bold"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne"
+                    aria-expanded="true"
+                    aria-controls="collapseOne"
+                  >
+                    1. Kanatlar nasıl çalışır?
+                  </button>
+                </h2>
+                <div
+                  id="collapseOne"
+                  class="accordion-collapse collapse show"
+                  data-bs-parent="#accordionSSS"
+                >
+                  <div class="accordion-body">
+                    Kanatlar, satın alındıktan sonra size özel bir entegrasyon
+                    süreciyle birleşir. Bu işlem tamamen acısızdır ve kısa
+                    sürer. Kanatlar, vücut kaslarınızla senkronize çalışarak
+                    uçma yeteneği sağlar.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed text-info fw-bold"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo"
+                    aria-expanded="false"
+                    aria-controls="collapseTwo"
+                  >
+                    2. Uçmaya hemen başlayabilir miyim?
+                  </button>
+                </h2>
+                <div
+                  id="collapseTwo"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#accordionSSS"
+                >
+                  <div class="accordion-body">
+                    İlk defa uçacak kullanıcılarımız için bir eğitim rehberi ve
+                    başlangıç ipuçları sunuyoruz. Kanatlarınızı test ederken
+                    güvenli bir alanda pratik yapmanızı öneriyoruz.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed text-info fw-bold"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree"
+                    aria-expanded="false"
+                    aria-controls="collapseThree"
+                  >
+                    3. Kanatlar dayanıklı mı?
+                  </button>
+                </h2>
+                <div
+                  id="collapseThree"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#accordionSSS"
+                >
+                  <div class="accordion-body">
+                    Evet, kanatlar son teknoloji malzemelerden üretilmiştir.
+                    Hava koşullarına dayanıklıdır ve uzun ömürlüdür. Ancak,
+                    bakım kılavuzundaki talimatları takip etmeniz önerilir.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed text-info fw-bold"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseFour"
+                    aria-expanded="false"
+                    aria-controls="collapseFour"
+                  >
+                    4. Kanatların boyutu kişiye özel mi?
+                  </button>
+                </h2>
+                <div
+                  id="collapseFour"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#accordionSSS"
+                >
+                  <div class="accordion-body">
+                    Evet, kanatlar vücut ölçülerinize ve uçuş ihtiyaçlarınıza
+                    göre tasarlanır. Sipariş sırasında gerekli bilgileri
+                    girmeniz yeterlidir.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed text-info fw-bold"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseFive"
+                    aria-expanded="false"
+                    aria-controls="collapseFive"
+                  >
+                    5. Kanatlarla ne kadar yük taşıyabilirim?
+                  </button>
+                </h2>
+                <div
+                  id="collapseFive"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#accordionSSS"
+                >
+                  <div class="accordion-body">
+                    Kanatlarınızın taşıma kapasitesi, seçtiğiniz model ve
+                    tasarıma göre değişir. Standart kanat modellerimiz 10-15 kg
+                    ek yük taşıyabilir.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed text-info fw-bold"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseSix"
+                    aria-expanded="false"
+                    aria-controls="collapseSix"
+                  >
+                    6. Kanatlar güvenli mi?
+                  </button>
+                </h2>
+                <div
+                  id="collapseSix"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#accordionSSS"
+                >
+                  <div class="accordion-body">
+                    Evet, kanatlarımız güvenlik testlerinden geçmiştir. Ancak
+                    uçarken çevre koşullarını dikkate almanız ve güvenlik
+                    kurallarına uymanız önemlidir.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section class="product py-5">
+      <div class="container">
+        <div class="row">
+          <div class="card">
+            <div class="row align-items-center">
+              <div class="col-md-6">
+                <div class="product-image-carousel m-1">
+                  <div id="productCarouselOne" class="carousel slide">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active p-3">
+                        <div class="carousel-img ratio ratio-1x1">
+                          <img
+                            src="../images/angel-wing-1-tra.png"
+                            class="d-block w-100"
+                            alt="angel wing"
+                          />
+                        </div>
+                      </div>
+                      <div class="carousel-item p-3">
+                        <div class="carousel-image ratio ratio-1x1">
+                          <img
+                            src="../images/angel-wing-1-tra.png"
+                            class="d-block w-100"
+                            alt="angel wing"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <button
+                      class="carousel-control-prev justify-content-start"
+                      type="button"
+                      data-bs-target="#productCarouselOne"
+                      data-bs-slide="prev"
+                    >
+                      <span
+                        class="carousel-control-prev-icon"
+                        aria-hidden="true"
+                      ></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button
+                      class="carousel-control-next justify-content-end"
+                      type="button"
+                      data-bs-target="#productCarouselOne"
+                      data-bs-slide="next"
+                    >
+                      <span
+                        class="carousel-control-next-icon"
+                        aria-hidden="true"
+                      ></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <a
+                  href="./product-1.html"
+                  class="text-decoration-none text-info"
+                >
+                  <div class="card-body">
+                    <h5 class="card-title fs-4 text-info fw-bold">
+                      Beyaz Melek Kanadı
+                    </h5>
+                    <div class="mb-1">
+                      <i class="fa-solid fa-star text-warning"></i>
+                      <i class="fa-solid fa-star text-warning"></i>
+                      <i class="fa-solid fa-star text-warning"></i>
+                      <i class="fa-solid fa-star text-warning"></i>
+                      <i class="fa-solid fa-star text-warning"></i>
+                    </div>
+                    <div class="features">
+                      <ul class="list-unstyled fw-medium">
+                        <li
+                          class="text-secondary d-flex align-items-center mb-2"
+                        >
+                          <h6 class="text-info fw-semibold mb-0 me-2">
+                            Ürün Kodu:
+                          </h6>
+                          BMK10023
+                        </li>
+                        <li
+                          class="text-secondary d-flex align-items-center mb-2"
+                        >
+                          <h6 class="text-info fw-semibold mb-0 me-2">Renk:</h6>
+                          Saf beyaz
+                        </li>
+                        <li class="text-secondary d-flex align-items-top mb-2">
+                          <h6 class="text-info fw-semibold mb-0 me-2">
+                            Malzeme:
+                          </h6>
+                          Ultra hafif karbon fiber ve doğal hissiyatlı sentetik
+                        </li>
+                        <li
+                          class="text-secondary d-flex align-items-center mb-2"
+                        >
+                          <h6 class="text-info fw-semibold mb-0 me-2">
+                            Ağırlık:
+                          </h6>
+                          5 kg
+                        </li>
+                        <li class="text-secondary">
+                          <h6 class="text-info fw-semibold">Boyutlar:</h6>
+                          <ul>
+                            <li>Kanat Açıklığı: 2 metre</li>
+                            <li>Yükseklik: 1.2 metre</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                    <p class="fs-5 fw-semibold text-secondary">
+                      29.990,00 <span>₺</span>
+                    </p>
+                    <a href="#" class="btn btn-secondary w-100">Sepete Ekle</a>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="product-details py-5">
+      <div class="container">
+        <h3 class="mb-3 text-info fw-bold">Ürün Detayları</h3>
+        <div class="accordion position-relative" id="accordionProductDetail">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button fw-semibold"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseOne"
+                aria-expanded="true"
+                aria-controls="collapseOne"
+              >
+                Performans Özellikleri
+              </button>
+            </h2>
+            <div
+              id="collapseOne"
+              class="accordion-collapse collapse show"
+              data-bs-parent="#accordionProductDetail"
+            >
+              <div class="accordion-body">
+                <ul class="list-unstyled fw-medium">
+                  <li
+                    class="text-secondary d-flex flex-wrap align-items-center mb-2"
+                  >
+                    <h6 class="text-info fw-semibold mb-0 me-2">
+                      Uçuş Kapasitesi:
+                    </h6>
+                    Maksimum 10.000 fit yükseklik
+                  </li>
+                  <li
+                    class="text-secondary d-flex flex-wrap align-items-center mb-2"
+                  >
+                    <h6 class="text-info fw-semibold mb-0 me-2">
+                      Taşıma Kapasitesi:
+                    </h6>
+                    15 kg’ye kadar ek yük
+                  </li>
+                  <li class="text-secondary d-flex align-items-top mb-2">
+                    <h6 class="text-info fw-semibold mb-0 me-2">
+                      Uçuş Süresi:
+                    </h6>
+                    Ortalama 2 saat
+                  </li>
+                  <li class="text-secondary d-flex align-items-center mb-2">
+                    <h6 class="text-info fw-semibold mb-0 me-2">Hız:</h6>
+                    Maksimum 40 km/s
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed fw-semibold"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo"
+                aria-expanded="false"
+                aria-controls="collapseTwo"
+              >
+                Teknolojik Özellikler
+              </button>
+            </h2>
+            <div
+              id="collapseTwo"
+              class="accordion-collapse collapse"
+              data-bs-parent="#accordionProductDetail"
+            >
+              <div class="accordion-body">
+                <ul class="list-unstyled fw-medium">
+                  <li
+                    class="text-secondary d-flex flex-wrap align-items-center mb-2"
+                  >
+                    <h6 class="text-info fw-semibold mb-0 me-2">
+                      Hava Akımı Yönetimi:
+                    </h6>
+                    Yüksek performanslı aerodinamik yapı
+                  </li>
+                  <li
+                    class="text-secondary d-flex flex-wrap align-items-center mb-2"
+                  >
+                    <h6 class="text-info fw-semibold mb-0 me-2">Estetik:</h6>
+                    Melek tüylerinden ilham alınarak tasarlanmış zarif yapı
+                  </li>
+                  <li
+                    class="text-secondary d-flex flex-wrap align-items-top mb-2"
+                  >
+                    <h6 class="text-info fw-semibold mb-0 me-2">
+                      Bakım Gereksinimi:
+                    </h6>
+                    Ayda bir profesyonel kontrol önerilir.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed fw-semibold text-danger"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseThree"
+                aria-expanded="false"
+                aria-controls="collapseThree"
+              >
+                Özel Notlar!
+              </button>
+            </h2>
+            <div
+              id="collapseThree"
+              class="accordion-collapse collapse"
+              data-bs-parent="#accordionProductDetail"
+            >
+              <div class="accordion-body">
+                <ul class="list-unstyled">
+                  <li class="text-secondary d-flex align-items-center mb-2">
+                    <h6 class="text-info mb-0 me-2">
+                      İlk uçuşta bir eğitmen eşliğinde deneme yapılması tavsiye
+                      edilir.
+                    </h6>
+                  </li>
+                  <li class="text-secondary d-flex align-items-center mb-2">
+                    <h6 class="text-info mb-0 me-2">
+                      Kanatlar, gökyüzünde maksimum konfor ve kontrol sağlamak
+                      üzere geliştirilmiştir.
+                    </h6>
+                  </li>
+                  <li class="text-secondary d-flex align-items-top mb-2">
+                    <h6 class="text-info mb-0 me-2">
+                      Belirtilen sınırlamalar dışarısında kullanmayaınız!
+                    </h6>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="product-advice my-5">
+      <div class="container">
+        <h3 class="text-info fw-bold mb-2">İlginizi Çekebilecek Ürünler</h3>
+        <div class="product-wrap p-2 overflow-scroll d-flex">
+          <div class="card m-1">
+            <div class="product-image-carousel m-1">
+              <div id="productCarouselOne" class="carousel slide">
+                <div class="carousel-inner">
+                  <div class="carousel-item active p-3">
+                    <div class="carousel-img ratio ratio-1x1">
+                      <img
+                        src="../images/angel-wing-1-tra.png"
+                        class="d-block w-100"
+                        alt="angel wing"
+                      />
+                    </div>
+                  </div>
+                  <div class="carousel-item p-3">
+                    <div class="carousel-image ratio ratio-1x1">
+                      <img
+                        src="../images/angel-wing-1-tra.png"
+                        class="d-block w-100"
+                        alt="angel wing"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <button
+                  class="carousel-control-prev justify-content-start"
+                  type="button"
+                  data-bs-target="#productCarouselOne"
+                  data-bs-slide="prev"
+                >
+                  <span
+                    class="carousel-control-prev-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button
+                  class="carousel-control-next justify-content-end"
+                  type="button"
+                  data-bs-target="#productCarouselOne"
+                  data-bs-slide="next"
+                >
+                  <span
+                    class="carousel-control-next-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+            <a href="./product-1.html" class="text-decoration-none">
+              <div class="card-body d-flex flex-column justify-content-between">
+                <h5 class="card-title fs-5 text-info fw-semibold">
+                  Beyaz Melek Kanadı
+                </h5>
+                <div>
+                  <div class="mb-1">
+                    <i class="fa-solid fa-star text-warning"></i>
+                    <i class="fa-solid fa-star text-warning"></i>
+                    <i class="fa-solid fa-star text-warning"></i>
+                    <i class="fa-solid fa-star text-warning"></i>
+                    <i class="fa-solid fa-star text-warning"></i>
+                  </div>
+                  <p class="fw-semibold text-secondary fs-6">
+                    29.990,00 <span>₺</span>
+                  </p>
+                  <a href="#" class="btn btn-secondary w-100">Sepete Ekle</a>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="card m-1">
+            <div class="product-image-carousel m-1">
+              <div id="productCarouselTwo" class="carousel slide">
+                <div class="carousel-inner">
+                  <div class="carousel-item active p-3">
+                    <div class="carousel-img ratio ratio-1x1">
+                      <img
+                        src="../images/angel-wing-2-tra.png"
+                        class="d-block w-100"
+                        alt="angel wing"
+                      />
+                    </div>
+                  </div>
+                  <div class="carousel-item p-3">
+                    <div class="carousel-image ratio ratio-1x1">
+                      <img
+                        src="../images/angel-wing-2-tra.png"
+                        class="d-block w-100"
+                        alt="angel wing"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <button
+                  class="carousel-control-prev justify-content-start"
+                  type="button"
+                  data-bs-target="#productCarouselTwo"
+                  data-bs-slide="prev"
+                >
+                  <span
+                    class="carousel-control-prev-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button
+                  class="carousel-control-next justify-content-end"
+                  type="button"
+                  data-bs-target="#productCarouselTwo"
+                  data-bs-slide="next"
+                >
+                  <span
+                    class="carousel-control-next-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+            <a href="./product-2.html" class="text-decoration-none">
+              <div class="card-body d-flex flex-column justify-content-between">
+                <h5 class="card-title fs-5 text-info fw-semibold">
+                  Gri Melek Kanadı
+                </h5>
+                <div>
+                  <div class="mb-1">
+                    <i class="fa-solid fa-star text-warning"></i>
+                    <i class="fa-solid fa-star text-warning"></i>
+                    <i class="fa-solid fa-star text-warning"></i>
+                    <i class="fa-solid fa-star text-warning"></i>
+                    <i class="fa-solid fa-star text-warning"></i>
+                  </div>
+                  <p class="fs-6 fw-semibold text-secondary">
+                    25.000,00 <span>₺</span>
+                  </p>
+                  <a href="#" class="btn btn-secondary w-100">Sepete Ekle</a>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="card m-1">
+            <div class="product-image-carousel m-1">
+              <div id="productCarouselThree" class="carousel slide">
+                <div class="carousel-inner">
+                  <div class="carousel-item active p-3">
+                    <div class="carousel-img ratio ratio-1x1">
+                      <img
+                        src="../images/butterfly-wing-2-tra.png"
+                        class="d-block w-100"
+                        alt="butterfly wing"
+                      />
+                    </div>
+                  </div>
+                  <div class="carousel-item p-3">
+                    <div class="carousel-image ratio ratio-1x1">
+                      <img
+                        src="../images/butterfly-wing-2-tra.png"
+                        class="d-block w-100"
+                        alt="butterfly wing"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <button
+                  class="carousel-control-prev justify-content-start"
+                  type="button"
+                  data-bs-target="#productCarouselThree"
+                  data-bs-slide="prev"
+                >
+                  <span
+                    class="carousel-control-prev-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button
+                  class="carousel-control-next justify-content-end"
+                  type="button"
+                  data-bs-target="#productCarouselThree"
+                  data-bs-slide="next"
+                >
+                  <span
+                    class="carousel-control-next-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+            <a href="./product-3.html" class="text-decoration-none">
+              <div class="card-body d-flex flex-column justify-content-between">
+                <h5 class="card-title fs-5 text-info fw-semibold">
+                  Mor Kelebek Kanadı
+                </h5>
+                <div>
+                  <div class="mb-1">
+                    <i class="fa-solid fa-star text-warning"></i>
+                    <i class="fa-solid fa-star text-warning"></i>
+                    <i class="fa-solid fa-star text-warning"></i>
+                    <i class="fa-solid fa-star text-warning"></i>
+                    <i class="fa-solid fa-star text-warning"></i>
+                  </div>
+                  <p class="fs-6 fw-semibold text-secondary">
+                    35.000,00 <span>₺</span>
+                  </p>
+                  <a href="#" class="btn btn-secondary w-100">Sepete Ekle</a>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="card m-1">
+            <div class="product-image-carousel m-1">
+              <div id="productCarouselFour" class="carousel slide">
+                <div class="carousel-inner">
+                  <div class="carousel-item active p-3">
+                    <div class="carousel-img ratio ratio-1x1">
+                      <img
+                        src="../images/butterfly-wing-3-tra.png"
+                        class="d-block w-100"
+                        alt="butterfly wing"
+                      />
+                    </div>
+                  </div>
+                  <div class="carousel-item p-3">
+                    <div class="carousel-image ratio ratio-1x1">
+                      <img
+                        src="../images/butterfly-wing-3-tra.png"
+                        class="d-block w-100"
+                        alt="butterfly wing"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <button
+                  class="carousel-control-prev justify-content-start"
+                  type="button"
+                  data-bs-target="#productCarouselFour"
+                  data-bs-slide="prev"
+                >
+                  <span
+                    class="carousel-control-prev-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button
+                  class="carousel-control-next justify-content-end"
+                  type="button"
+                  data-bs-target="#productCarouselFour"
+                  data-bs-slide="next"
+                >
+                  <span
+                    class="carousel-control-next-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+            <a href="./product-4.html" class="text-decoration-none">
+              <div class="card-body d-flex flex-column justify-content-between">
+                <h5 class="card-title fs-5 text-info fw-semibold">
+                  Beyaz Kelebek Kanadı
+                </h5>
+                <div>
+                  <div class="mb-1">
+                    <i class="fa-solid fa-star text-warning"></i>
+                    <i class="fa-solid fa-star text-warning"></i>
+                    <i class="fa-solid fa-star text-warning"></i>
+                    <i class="fa-solid fa-star text-warning"></i>
+                    <i class="fa-solid fa-star text-warning"></i>
+                  </div>
+                  <p class="fs-6 fw-semibold text-secondary">
+                    32.000,00 <span>₺</span>
+                  </p>
+                  <a href="#" class="btn btn-secondary w-100">Sepete Ekle</a>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="card m-1">
+            <div class="product-image-carousel m-1">
+              <div id="productCarouselFive" class="carousel slide">
+                <div class="carousel-inner">
+                  <div class="carousel-item active p-3">
+                    <div class="carousel-img ratio ratio-1x1">
+                      <img
+                        src="../images/colorfull-wing-1-tra.png"
+                        class="d-block w-100"
+                        alt="colorfull angel wing"
+                      />
+                    </div>
+                  </div>
+                  <div class="carousel-item p-3">
+                    <div class="carousel-image ratio ratio-1x1">
+                      <img
+                        src="../images/colorfull-wing-1-tra.png"
+                        class="d-block w-100"
+                        alt="colorfull angel wing"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <button
+                  class="carousel-control-prev justify-content-start"
+                  type="button"
+                  data-bs-target="#productCarouselFive"
+                  data-bs-slide="prev"
+                >
+                  <span
+                    class="carousel-control-prev-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button
+                  class="carousel-control-next justify-content-end"
+                  type="button"
+                  data-bs-target="#productCarouselFive"
+                  data-bs-slide="next"
+                >
+                  <span
+                    class="carousel-control-next-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+            <a href="./product-5.html" class="text-decoration-none">
+              <div class="card-body d-flex flex-column justify-content-between">
+                <h5 class="card-title fs-5 text-info fw-semibold">
+                  Rengarenk Melek Kanadı
+                </h5>
+                <div>
+                  <div class="mb-1">
+                    <i class="fa-solid fa-star text-warning"></i>
+                    <i class="fa-solid fa-star text-warning"></i>
+                    <i class="fa-solid fa-star text-warning"></i>
+                    <i class="fa-solid fa-star text-warning"></i>
+                    <i class="fa-solid fa-star text-warning"></i>
+                  </div>
+                  <p class="fs-6 fw-semibold text-secondary">
+                    45.000,00 <span>₺</span>
+                  </p>
+                  <a href="#" class="btn btn-secondary w-100">Sepete Ekle</a>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="card m-1">
+            <div class="product-image-carousel m-1">
+              <div id="productCarouselSix" class="carousel slide">
+                <div class="carousel-inner">
+                  <div class="carousel-item active p-3">
+                    <div class="carousel-img ratio ratio-1x1">
+                      <img
+                        src="../images/colorfull-wing-2-tra.png"
+                        class="d-block w-100"
+                        alt="colorfull angel wing"
+                      />
+                    </div>
+                  </div>
+                  <div class="carousel-item p-3">
+                    <div class="carousel-image ratio ratio-1x1">
+                      <img
+                        src="../images/colorfull-wing-2-tra.png"
+                        class="d-block w-100"
+                        alt="colorfull angel wing"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <button
+                  class="carousel-control-prev justify-content-start"
+                  type="button"
+                  data-bs-target="#productCarouselSix"
+                  data-bs-slide="prev"
+                >
+                  <span
+                    class="carousel-control-prev-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button
+                  class="carousel-control-next justify-content-end"
+                  type="button"
+                  data-bs-target="#productCarouselSix"
+                  data-bs-slide="next"
+                >
+                  <span
+                    class="carousel-control-next-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+            <a href="./product-6.html" class="text-decoration-none"
+              ><div
+                class="card-body d-flex flex-column justify-content-between"
+              >
+                <h5 class="card-title fs-5 text-info fw-semibold">
+                  Pastel Melek Kanadı
+                </h5>
+                <div>
+                  <div class="mb-1">
+                    <i class="fa-solid fa-star text-warning"></i>
+                    <i class="fa-solid fa-star text-warning"></i>
+                    <i class="fa-solid fa-star text-warning"></i>
+                    <i class="fa-solid fa-star text-warning"></i>
+                    <i class="fa-solid fa-star text-warning"></i>
+                  </div>
+                  <p class="fs-6 fw-semibold text-secondary">
+                    50.000,00 <span>₺</span>
+                  </p>
+                  <a href="#" class="btn btn-secondary w-100">Sepete Ekle</a>
+                </div>
+              </div></a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="bg-secondary pt-5 pb-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-lg-3 text-center text-md-start">
+            <div
+              class="logo mb-4 d-flex align-items-center justify-content-center justify-content-md-start"
+            >
+              <img src="../images/l-4.png" alt="logo left" />
+              <h2 class="m-0 text-white d-inline">Wings</h2>
+              <img src="../images/l-5.png" alt="logo right" />
+            </div>
+            <ul
+              class="contact-info list-unstyled d-flex flex-wrap justify-content-around d-md-block pt-3"
+            >
+              <li class="mb-2 ms-2">
+                <a href="#" class="text-decoration-none text-white"
+                  ><i class="fas fa-phone me-2 me-2 p-2 rounded-circle"></i> +90
+                  555 555 55 55</a
+                >
+              </li>
+              <li class="mb-2 ms-2">
+                <a href="#" class="text-decoration-none text-white"
+                  ><i class="fas fa-envelope me-2 me-2 p-2 rounded-circle"></i>
+                  wings@.gmail.com</a
+                >
+              </li>
+              <li class="mb-2 ms-2">
+                <a href="#" class="text-decoration-none text-white"
+                  ><i class="fas fa-fax me-2 me-2 p-2 rounded-circle"></i> +90
+                  555 555 55 55</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-6 mb-3 text-center text-md-start">
+            <h6 class="text-white mb-3 fs-5">Sorularını Önemsiyoruz.</h6>
+            <p class="text-white-50 mb-4 fw-light">Lütfen bizimle paylaş.</p>
+            <form class="needs-validation" novalidate>
+              <div class="mb-3">
+                <input
+                  type="email"
+                  class="form-control"
+                  required
+                  placeholder="Mailinizi giriniz."
+                />
+                <div class="invalid-feedback">
+                  Lütfen mailinizi kotnrol edin!
+                </div>
+              </div>
+              <div class="mb-3">
+                <textarea
+                  class="form-control"
+                  rows="3"
+                  placeholder="Mesajınızı yazınız."
+                ></textarea>
+              </div>
+              <button class="btn btn-danger text-white" type="submit">
+                Gönder
+              </button>
+            </form>
+          </div>
+          <div class="col-lg-3 text-center text-md-start">
+            <h6 class="text-white fs-5 mb-2">Sosyal Medyalarımız</h6>
+            <div
+              class="social-icons d-flex flex-wrap justify-content-center justify-content-md-start"
+            >
+              <a
+                href="#"
+                class="text-decoration-none me-2 d-flex align-items-center justify-content-center p-2 rounded-circle"
+                ><i class="fab fa-facebook"></i
+              ></a>
+              <a
+                class="text-decoration-none me-2 d-flex align-items-center justify-content-center p-2 rounded-circle"
+                ><i class="fa-brands fa-x-twitter"></i
+              ></a>
+              <a
+                href="#"
+                class="text-decoration-none me-2 d-flex align-items-center justify-content-center p-2 rounded-circle"
+                ><i class="fab fa-pinterest"></i
+              ></a>
+              <a
+                href="#"
+                class="text-decoration-none me-2 d-flex align-items-center justify-content-center p-2 rounded-circle"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </div>
+            <h6 class="text-white fs-5 mb-2 mt-4">Uygulamalarımız</h6>
+            <div
+              class="apps d-flex flex-wrap justify-content-center justify-content-md-start"
+            >
+              <a href="#" class="me-2 mb-2">
+                <img src="../images/google-play.png" alt=" google-play"
+              /></a>
+              <a href="#" class="mb-2"
+                ><img src="../images/app-store.avif" alt="app-store"
+              /></a>
+            </div>
+          </div>
+        </div>
+        <div
+          class="row d-flex footer-bottom justify-content-center align-items-center"
+        >
+          <p class="m-0 text-white-50 text-center fw-light">
+            © 2025 Bütün hakları saklıdır.
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      (() => {
+        "use strict";
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        const forms = document.querySelectorAll(".needs-validation");
+
+        // Loop over them and prevent submission
+        Array.from(forms).forEach((form) => {
+          form.addEventListener(
+            "submit",
+            (event) => {
+              if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+
+              form.classList.add("was-validated");
+            },
+            false
+          );
+        });
+      })();
+    </script>
+  </body>
+</html>

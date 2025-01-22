@@ -11846,6 +11846,277 @@ textarea.form-control-lg {
 }
 * {
   box-sizing: border-box;
+  font-family: "Cormorant Garamond";
+}
+
+.logo {
+  height: 30px;
+  width: auto;
+}
+
+.btn:hover {
+  box-shadow: 0 0 10px #d7bf33;
+}
+
+header {
+  background: url("../assets/home-section.jpg") no-repeat center/cover;
+  height: 100vh;
+  width: 100%;
+}
+
+.header-content {
+  opacity: 0;
+  transform: translateY(-50px);
+  animation: slideIn 2s forwards;
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+h1, .h1 {
+  animation-delay: 0.3s;
+}
+
+p {
+  animation-delay: 0.6s;
+}
+
+a {
+  animation-delay: 0.9s;
+}
+
+/* Image Animation */
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.about .img-fluid {
+  animation: slideInFromLeft 3s ease-in-out forwards;
+}
+
+.contact .img-fluid {
+  animation: slideInFromLeft 3s ease-in-out forwards;
+}
+
+#spells {
+  background: #0c1023;
+}
+#spells .card {
+  background: url("../assets/sky-bg.jpg") no-repeat center/cover;
+  border: none;
+  z-index: 0;
+  color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+#spells .card .card-body {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+#spells .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+  background-color: #1e0734;
+  background-image: none;
+  color: #333;
+}
+
+.contact {
+  background: #0c1023;
+}
+.contact .card {
+  background: #000000;
+}
+
+.product-image {
+  max-height: 400px;
+  object-fit: cover;
+}
+
+.thumbnail {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.thumbnail:hover, .thumbnail.active {
+  opacity: 1;
+}
+
+.ask-buyusu .container {
+  animation: fadeIn 1s ease-in-out;
+}
+.ask-buyusu .ozellikler {
+  color: #9d9a9a;
+}
+.ask-buyusu .product-image {
+  transition: transform 0.3s ease;
+}
+.ask-buyusu .product-image:hover {
+  transform: scale(1.1);
+}
+.ask-buyusu button {
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.ask-buyusu button:hover {
+  transform: translateY(-5px);
+  background-color: #ffffff;
+  color: #000000;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.btn {
+  background-color: #6f42c1;
+  border: none;
+  color: #fff;
+  border-radius: 18px;
+  padding: 0.5rem 1.5rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+.btnbtn:hover {
+  background-color: #5a379d;
+}
+
+.custom-bg {
+  position: relative;
+  background: linear-gradient(45deg, #390161 45%, #6c4293 65%);
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.bg-gradiant {
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+  background: #0c1023;
+}
+
+footer a:hover {
+  color: #ffc107 !important;
+}
+
+.about {
+  background: #0c1023;
+}
+
+.hakkimizda {
+  background: #0c1023;
+}
+
+.iletisim {
+  background: #0c1023;
+}
+
+.sss {
+  background: #0c1023;
+}
+
+.accordion-item {
+  background-color: #ffffff;
+  border: 2px solid #000000;
+}
+
+/* Cauldron Animaton */
+.cauldron-container {
+  position: relative;
+  width: 450px;
+  height: 450px;
+}
+
+.cauldron-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+}
+
+.bubbles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.bubble {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  animation: bubble-rise 4s infinite ease-in-out;
+}
+.bubble.bubble1 {
+  left: 30%;
+  animation-delay: 0s;
+}
+.bubble.bubble2 {
+  left: 50%;
+  animation-delay: 1s;
+}
+.bubble.bubble3 {
+  left: 70%;
+  animation-delay: 2s;
+}
+.bubble.bubble4 {
+  left: 20%;
+  animation-delay: 3s;
+}
+
+@keyframes bubble-rise {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-200px) scale(0.5); /* Baloncukların yükselmesi */
+    opacity: 0; /* Kaybolması */
+  }
+}
+h4, .h4 {
+  color: #4b0082;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+h2, .h2 {
+  color: #848389;
+  font-size: 54px;
+}
+
+p {
+  color: #828088;
+  font-size: 18px;
+}
+
+h5, .h5 {
+  font-size: 36px;
 }
 
 /*# sourceMappingURL=main.css.map */

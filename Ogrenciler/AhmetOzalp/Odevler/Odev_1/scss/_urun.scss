@@ -1,0 +1,26 @@
+body {
+    background-color: #0b132b;
+    color: #fff;
+}
+
+.urun_sayfa {
+
+    h1,
+    h2 {
+        color: #5a6af7;
+    }
+
+    .list-group-item {
+        background: #1d3557;
+        color: #fff;
+    }
+
+    .nav-tabs .nav-link {
+        background: #1d3557;
+        color: #fff;
+
+        &.active {
+            background: #5a6af7;
+        }
+    }
+}

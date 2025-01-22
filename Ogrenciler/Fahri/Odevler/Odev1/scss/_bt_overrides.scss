@@ -8,16 +8,20 @@
   max-height: calc(#{$line-height} * #{$lines}em); // Toplam yükseklik
 }
 
+$borderColor: #ffc107;
+$card-border-color: transparent;
 $body-bg: transparent;
 $border-width: 0;
 $dark: black;
 $light: white;
 $primary: rgba(3, 142, 255, 0.616);
-
+// $card-border-color: $borderColor;
 .card-text {
   @include line-clamp(3, 1.5); // 3 satır ve 1.5 satır yüksekliği
 }
-
+.card-title {
+  @include line-clamp(1, 1.5); // 3 satır ve 1.5 satır yüksekliği
+}
 nav {
   a {
     color: $dark;

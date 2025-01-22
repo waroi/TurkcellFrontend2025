@@ -17,7 +17,7 @@
     />
     <link rel="stylesheet" href="../css/main.css" />
   </head>
-  <body class="text-light" style="background-color: black">
+  <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
@@ -44,12 +44,22 @@
             <li class="nav-item">
               <a class="nav-link" href="contact.html">İletişim</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="fa-solid fa-cart-shopping"></i>
+              </a>
+            </li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <div class="banner-section">
+    <div class="banner-section bg-dark">
       <div class="world-wrapper d-flex">
         <div class="row">
           <h1 class="reveal-1 text-light mt-5">BİZ KİMİZ ?</h1>
@@ -63,32 +73,32 @@
         <div class="row d-flex justify-content-center text-center about-kim">
           <div class="col-lg-12 p-3">
             <i class="fa-solid fa-question"></i>
-            <h2 class="text-light">Tam Destek!</h2>
+            <h2 class="text-warning">Tam Destek!</h2>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="info-section py-5">
+    <section class="info-section bg-dark text-light py-5">
       <div class="container-fluid">
         <div class="row d-flex justify-content-center text-center">
           <div class="col-lg-3 col-md-6 p-3">
-            <i class="fa-solid fa-credit-card"></i>
+            <i class="fa-solid fa-credit-card fs-1 text-warning"></i>
             <h2 class="text-light fs-3">Güvenli Ödeme</h2>
             <p>100% güvenli ödeme</p>
           </div>
           <div class="col-lg-3 col-md-6 p-3">
-            <i class="fa-solid fa-rotate-left"></i>
+            <i class="fa-solid fa-rotate-left fs-1 text-warning"></i>
             <h2 class="text-light fs-3">3 Yıl İade</h2>
             <p>3 yıl boyunca deneme fırsatı</p>
           </div>
           <div class="col-lg-3 col-md-6 p-3">
-            <i class="fa-solid fa-headset"></i>
+            <i class="fa-solid fa-headset fs-1 text-warning"></i>
             <h2 class="text-light fs-3">24/7 Destek</h2>
             <p>Günün her saati destek hizmeti</p>
           </div>
           <div class="col-lg-3 col-md-6 p-3">
-            <i class="fa-regular fa-handshake"></i>
+            <i class="fa-regular fa-handshake fs-1 text-warning"></i>
             <h2 class="text-light fs-3">Ücretsiz İade</h2>
             <p>İade ücreti yok</p>
           </div>
@@ -99,40 +109,141 @@
     <section class="about section-bg py-5">
       <div class="container">
         <div class="row py-5">
-          <div class="col-lg-6 d-flex flex-wrap">
-            <img
-              src="../assets/7.png"
-              class="img-fluid rounded shadow"
-              alt=""
-            />
+          <div class="col-lg-6">
+            <div
+              id="carouselExample"
+              class="carousel slide"
+              data-bs-ride="carousel"
+            >
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img
+                    src="../assets/1.png"
+                    class="d-block w-100 img-fluid rounded shadow"
+                    alt="Resim 1"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="../assets/2.png"
+                    class="d-block w-100 img-fluid rounded shadow"
+                    alt="Resim 2"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="../assets/3.png"
+                    class="d-block w-100 img-fluid rounded shadow"
+                    alt="Resim 3"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="../assets/4.png"
+                    class="d-block w-100 img-fluid rounded shadow"
+                    alt="Resim 1"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="../assets/5.png"
+                    class="d-block w-100 img-fluid rounded shadow"
+                    alt="Resim 1"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="../assets/6.png"
+                    class="d-block w-100 img-fluid rounded shadow"
+                    alt="Resim 1"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="../assets/7.png"
+                    class="d-block w-100 img-fluid rounded shadow"
+                    alt="Resim 1"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="../assets/8.png"
+                    class="d-block w-100 img-fluid rounded shadow"
+                    alt="Resim 1"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="../assets/9.png"
+                    class="d-block w-100 img-fluid rounded shadow"
+                    alt="Resim 1"
+                  />
+                </div>
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselExample"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Önceki</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselExample"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Sonraki</span>
+              </button>
+            </div>
           </div>
+
+          <!-- İçerik Kısmı -->
           <div
+            <div
             class="col-lg-6 p-3 flex-wrap content d-flex flex-column justify-content-center"
           >
-            <h3 class="fw-bold text-light mb-3">
+            <h3 class="fw-bold mb-3 text-warning">
               İnsanlara Yaşama ve Seçme Hakkı Veriyoruz
             </h3>
-            <p class="font-italic">
+            <p>
               Yaşadıkları toplumların dinamiklerini beğenmeyen, kendini oraya
               ait hissetmeyen, birlikte yaşamak istediği kişileri kendisi seçmek
               isteyen kişilere bu fırsatı sunuyoruz.
             </p>
-            <p class="font-italic">
+            <p>
               Siz de size uygun bir ülke arıyorsanız en doğru yerdesiniz. Sadece
               tercihlerinizi belirleyin ve yeni hayatınızın keyfini çıkarın.
             </p>
             <ul class="list-unstyled">
               <li class="d-flex mb-4">
-                <i class="fa-solid fa-people-group text-primary fs-5 me-3"></i>
+                <div class="icon-wraper">
+                  <i
+                    class="fa-solid fa-people-group d-flex justify-content-center align-items-center"
+                  ></i>
+                </div>
                 <div>
-                  <h5 class="fw-semibold text-light">Toplum</h5>
+                  <h5 class="fw-semibold text-warning">Toplum</h5>
                   <p class="text-light">Toplumunu kendin belirle.</p>
                 </div>
               </li>
               <li class="d-flex mb-4">
-                <i class="fa-brands fa-gratipay"></i>
+                <div class="icon-wraper">
+                  <i
+                    class="fa-brands fa-gratipay d-flex justify-content-center align-items-center"
+                  ></i>
+                </div>
                 <div>
-                  <h5 class="fw-semibold text-light">Memnuniyet</h5>
+                  <h5 class="fw-semibold text-warning">Memnuniyet</h5>
                   <p class="text-light">Huzurun keyfini çıkarın.</p>
                 </div>
               </li>
@@ -142,8 +253,91 @@
       </div>
     </section>
 
-    <footer class="bg-dark text-white text-center py-3">
-      <p>© 2025 GlobalMarket. Tüm hakları saklıdır.</p>
+    <footer class="bg-dark text-light py-4">
+      <div class="container">
+        <div class="row">
+          <!-- Logo ve Hakkımızda -->
+          <div class="col-lg-4 mb-3">
+            <h5 class="text-warning fw-bold">Hakkımızda</h5>
+            <p>
+              Toplumunu seçmek isteyenler için yepyeni fırsatlar sunuyoruz. Daha
+              iyi bir yaşam için bize katılın.
+            </p>
+          </div>
+
+          <!-- Linkler -->
+          <div class="col-lg-4 mb-3">
+            <h5 class="text-warning fw-bold">Hızlı Erişim</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="index.html" class="text-light text-decoration-none"
+                  >Anasayfa</a
+                >
+              </li>
+              <li>
+                <a href="products.html" class="text-light text-decoration-none"
+                  >Ülkeler</a
+                >
+              </li>
+              <li>
+                <a href="about.html" class="text-light text-decoration-none"
+                  >Hakkımızda</a
+                >
+              </li>
+              <li>
+                <a href="contact.html" class="text-light text-decoration-none"
+                  >İletişim</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Sosyal Medya -->
+          <div class="col-lg-4 mb-3">
+            <h5 class="text-warning fw-bold">Bizi Takip Edin</h5>
+            <div class="d-flex">
+              <a
+                href="https://github.com/fahricoskun"
+                target="_blank"
+                class="text-light me-3"
+              >
+                <i class="fa-brands fa-github fa-lg"></i>
+              </a>
+              <a
+                href="https://twitter.com/fahricosskun"
+                target="_blank"
+                class="text-light me-3"
+              >
+                <i class="fa-brands fa-x-twitter fa-lg"></i>
+              </a>
+              <a
+                href="https://instagram.com/fahricosskun"
+                target="_blank"
+                class="text-light me-3"
+              >
+                <i class="fa-brands fa-instagram fa-lg"></i>
+              </a>
+              <a
+                href="https://linkedin.com/in/fahri-coskun"
+                target="_blank"
+                class="text-light"
+              >
+                <i class="fa-brands fa-linkedin fa-lg"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="row">
+          <div class="col text-center mt-3">
+            <p class="mb-0">
+              &copy; 2025 Tüm Hakları Saklıdır.
+              <span class="text-warning">Yaşam Seçimi Platformu</span>
+            </p>
+          </div>
+        </div>
+      </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
