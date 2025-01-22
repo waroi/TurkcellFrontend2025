@@ -1,0 +1,136 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+        font-family: "Roboto", sans-serif;
+        background: linear-gradient(135deg, #ffb74d, #ffa726, #fb8c00, #f57c00, #ef6c00);
+        min-height: 100vh; 
+        margin: 0; 
+}
+@mixin gradientAnimation() {
+    background: linear-gradient(135deg, #ffb74d, #ffa726, #fb8c00, #f57c00, #ef6c00);
+    background-size: 200% 200%;
+    @include animation(gradientMove, 6s, 0);
+}
+@mixin animation($name, $duration, $delay) {
+    animation: #{$name} #{$duration} ease-out forwards;
+    animation-delay: $delay;
+}
+@mixin slideIn($delay, $direction: -50%) {
+    @include animation(slideIn, 0.8s, $delay);
+    opacity: 0;
+    transform: translateX($direction);
+}
+@mixin fadeInUp($delay) {
+    @include animation(fadeInUp, 1s, $delay);
+    opacity: 0;
+    transform: translateY(50px);
+}
+.navbar {
+    @include gradientAnimation();
+}
+.navbar-brand, .nav-link {
+    opacity: 0;
+    @include slideIn(0.1s);
+}
+.navbar-brand {
+    font-size: 32px;
+    color: #fff;
+}
+.navbar-nav .nav-link {
+    color: #fff;
+    &:hover {
+        color: #0d6efd;
+        transform: scale(1.1);
+    }
+}
+@keyframes gradientMove {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+@keyframes slideIn {
+    0% { transform: translateX(-50%); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(50px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+.navbar-nav .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
+.nav-link.active {
+    color: #0d6efd !important;
+}
+.card {
+    background: linear-gradient(135deg, #ffb74d, #ffa726, #fb8c00, #f57c00, #ef6c00);
+    color: white !important; 
+}
+.footer{
+    background-color: #ffb74d;
+}
+p{
+    text-align: justify;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.card:hover .overlay {
+    opacity: 1;
+}
+.zoom {
+    transition: transform 0.3s ease;
+}
+.card:hover .zoom {
+    transform: scale(1.05);
+}
+.gradient-bg {
+    background: linear-gradient(135deg, #ffb74d, #ffa726, #fb8c00, #f57c00, #ef6c00);
+  }
+  .card {
+    position: relative;
+    overflow: hidden;
+}
+.rating {
+    position: absolute;
+    bottom: -30px; 
+    left: 50%;
+    transform: translateX(-50%);
+    transition: bottom 0.3s ease-in-out; 
+    opacity: 0; 
+}
+.card:hover .rating {
+    bottom: 10px; 
+    opacity: 1; 
+}
+.card-body h6 {
+    transition: opacity 0.3s ease-in-out; 
+}
+.card:hover .card-body h6 {
+    opacity: 0; 
+}
+.fa-star {
+    font-size: 20px;
+    color: gray; 
+}
+.fa-star.checked {
+    color: gold; 
+}
+.card:hover .fa-star.checked {
+    color: gold; 
+}
