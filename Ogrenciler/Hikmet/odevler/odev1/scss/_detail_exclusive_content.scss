@@ -6,25 +6,18 @@ $light-gray: #f8f9fa;
 $dark-gray: #343a40;
 
 .spec-image {
-	position: relative;
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
-
 	&.rage-hover {
 		video {
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
 		}
-
 		.main-video {
 			position: relative;
 			z-index: 1;
 			opacity: 1;
 			transition: opacity 0.3s ease-in-out;
 		}
-
 		.hover-video {
 			position: absolute;
 			top: 0;
@@ -33,12 +26,10 @@ $dark-gray: #343a40;
 			opacity: 0;
 			transition: opacity 0.3s ease-in-out;
 		}
-
 		&:hover {
 			.main-video {
 				opacity: 0;
 			}
-
 			.hover-video {
 				opacity: 1;
 			}
