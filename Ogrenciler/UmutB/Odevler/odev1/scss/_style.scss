@@ -32,19 +32,16 @@ $breakpoints: (
   font-family: 'RF Dewi Header';
   src: url('/fonts/rf-dewi-ultrabold.ttf') format('truetype');
   font-weight: 600;
-  font-display: swap;
-  /* swap özelliği yazı tipi yüklenene kadar sistem yazı tipinin görüntülenmesini sağlıyor */
 }
 @font-face {
   font-family: 'RF Dewi';
   src: url('/fonts/rf-dewi-regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
-  font-display: swap;
 }
+
 // Mixin ve extendler
 @mixin flex-center {
-  /*elemanların hem yatayda hem dikeyde ortalanması gereken yerlerde kullanıldı*/
   display: flex;
   justify-content: center;
   align-items: center;
@@ -67,7 +64,6 @@ $breakpoints: (
   }
 }
 @mixin hover-effect {
-  /*yükseltme animasyonu sağlayan mixin*/
   transition: transform 0.3s ease;
   &:hover {
     transform: translateY(-5px);
@@ -217,7 +213,7 @@ body {
     flex: 0 1 60%;
     margin-right: 2rem;
     text-align: center;
-    color: #fff; // Paragraf rengi beyaz kalacak
+    color: #fff;
     animation: slideInLeft 1s ease-out;
     @media (max-width: $tablet-width) {
       flex: 0 1 auto;
@@ -273,12 +269,12 @@ body {
     animation: slideInRight 1s ease-out;
     @media (max-width: $tablet-width) {
       flex: 0 1 auto;
-      max-width: 70%; // daha küçük olacak
+      max-width: 70%;
       margin: 0 auto;
       display:none;
     }
     @media (max-width: $mobile-width) {
-      max-width: 60%; // mobil de daha da küçük
+      max-width: 60%;
     }
   }
   .pokedex-container {
@@ -384,7 +380,7 @@ body {
       margin-top: $spacing-base;
     }
   }
-  // Desktop hover
+  // Desktop hover ile gözükecek pokemonlar
   @media (min-width: $desktop-width) {
     &:hover {
       background: linear-gradient(145deg, $dark-blue, $dark);
@@ -494,7 +490,7 @@ body {
         margin-bottom: $spacing-base * 1.5;
       }
     }
-    p:not(.pokemon-card__price) { // price hep görüneceği için 
+    p:not(.pokemon-card__price) { // price hep görüneceği için not ile engelledim
       font-family: $font-secondary;
       margin-bottom: $spacing-base;
       @media (max-width: 425px) {
@@ -584,7 +580,7 @@ body {
   overflow: hidden;
   padding: 3rem 0;
 }
-// Footer with Flexbox and Grid
+// Footer
 .footer {
   background: $dark;
   color: #fff;
@@ -801,7 +797,6 @@ body {
   }
 }
 .contact-form {
-
   padding: $spacing-base * 2;
   .form-label {
     color: $light !important;
@@ -809,14 +804,9 @@ body {
     margin-bottom: $spacing-base * 0.5;
   }
   .form-control {
-    border: 2px solid $light-gray;
     border-radius: 0.5rem;
     padding: $spacing-base * 0.75;
     transition: all 0.3s ease;
-    &:focus {
-      border-color: $pokemon-blue;
-      box-shadow: 0 0 0 0.2rem rgba($pokemon-blue, 0.25);
-    }
   }
   textarea.form-control {
     resize: vertical;
@@ -827,7 +817,7 @@ body {
   }
 }
 
-// Product Detail Pages Styles
+// Product Detail
 .product-detail {
   padding: 2rem 0;
   background: linear-gradient(145deg, #2A6EB5, #1A1A1A);
