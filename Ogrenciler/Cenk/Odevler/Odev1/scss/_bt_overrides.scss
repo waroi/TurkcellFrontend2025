@@ -1,0 +1,61 @@
+:root {
+  --primary-color: #0d6efd;
+  --primary-color-dark: rgba(13, 110, 253, 0.85);
+  --secondary-color: #6c757d;
+  --font-family: "Roboto", sans-serif;
+}
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: #fff;
+  &:hover {
+    background-color: var(--primary-color-dark);
+    border-color: var(--primary-color-dark);
+  }
+  &.active {
+    box-shadow: none;
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    &:hover {
+      background-color: rgba(13, 110, 253, 0.85);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+.btn-outline-primary {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+  &:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+  }
+}
+.form-select {
+  background-color: #fff;
+  border: 1px solid var(--secondary-color);
+  font-size: 1rem;
+  &:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(13, 110, 253, 0.5);
+  }
+}
+.text-muted {
+  color: var(--secondary-color);
+}
+.nav-link.active {
+  background-color: transparent;
+  color: var(--primary-color);
+  font-weight: bold;
+  &:hover {
+    text-decoration: none;
+  }
+}
+.nav-link {
+  color: #000 !important;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+  &:hover {
+    color: #fff !important;
+    background-color: var(--primary-color) !important;
+  }
+}
