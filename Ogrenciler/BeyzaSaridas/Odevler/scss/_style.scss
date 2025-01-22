@@ -1,3 +1,46 @@
+@mixin card-hover-effect {
+    transition: transform $transition-speed ease-in-out;
+    &:hover {
+      transform: $card-hover-transform;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+  }
+  @mixin gradient-text {
+    background: $zodiac-gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  @mixin zodiac-background($image-path) {
+    background: {
+        image: url($image-path);
+        repeat: no-repeat;
+        position: center;
+        size: cover;
+    }
+    @media (min-width: 768px) {
+        background-attachment: fixed;
+    } 
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.4),
+            rgba(0, 0, 0, 0.6)
+        );
+        z-index: 1;
+    }
+    .container {
+        position: relative;
+        z-index: 2;
+    }
+    animation: fadeIn 1s ease-in-out;
+ }
   .navbar {
     background: $zodiac-gradient;
     padding: 1rem 0;
@@ -23,7 +66,7 @@
   .hero-section {
     min-height: 80vh;
     position: relative;
-    background: linear-gradient(45deg, #1a237e, #311b92); 
+    background: linear-gradient(45deg, #1a237e, #311b92);  // Updated gradient for background
     overflow: hidden;
     &::before {
       content: '';
@@ -83,6 +126,17 @@
       &:hover {
         transform: translateY(-2px);
         box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      }
+    }
+  }
+  @media (max-width: 768px) {
+    .zodiac-card {
+      margin-bottom: 1rem;
+      .zodiac-icon {
+        font-size: 2.5rem;
+      }
+      .card-title {
+        font-size: 1.3rem;
       }
     }
   }
@@ -246,6 +300,63 @@
                 color: white;
             }
         }
+    }
+ }
+ .zodiac-header {
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-top: 76px;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.3);
+    }
+ }
+ .zodiac-header {
+    &.koc-bg {
+        @include zodiac-background('../assets/koc.jpg');
+    }
+    &.boga-bg {
+        @include zodiac-background('../assets/boga-bg.jpg');
+    }
+    &.ikizler-bg {
+        @include zodiac-background('../assets/ikizler-bg.jpg');
+    }
+    &.yengec-bg {
+        @include zodiac-background('../assets/yengec-bg.jpg');
+    }
+    &.aslan-bg {
+        @include zodiac-background('../assets/aslan-bg.jpg');
+    } 
+    &.basak-bg {
+        @include zodiac-background('../assets/basak-bg.jpg');
+    }
+    &.terazi-bg {
+        @include zodiac-background('../assets/terazi-bg.jpg');
+    }  
+    &.akrep-bg {
+        @include zodiac-background('../assets/akrep-bg.jpg');
+    }  
+    &.yay-bg {
+        @include zodiac-background('../assets/yay-bg.jpg');
+    }  
+    &.oglak-bg {
+        @include zodiac-background('../assets/oglak-bg.jpg');
+    }  
+    &.kova-bg {
+        @include zodiac-background('../assets/kova-bg.jpg');
+    }
+    &.balik-bg {
+        @include zodiac-background('../assets/balik-bg.jpg');
     }
  }
  .premium-packages {
@@ -516,6 +627,7 @@
     position: relative;
     width: 100%;
     height: 100vh;
+    background: url('image.png') no-repeat center center/cover;
     overflow: hidden;
   }
   .shooting-star {
@@ -560,61 +672,59 @@
     font-size: 1.5rem;
 }
 .special-card-header {
-    background: linear-gradient(#3d3d71, $secondary);
+    background-color:linear-gradient(#3d3d71,$secondary);
     padding: 20px;
     color: white;
     border-radius: 10px 10px 0 0;
     text-align: center;
-
-    .special-icon {
-        font-size: 2rem;
-        margin-bottom: 10px;
-    }
+}
+.special-card-header .special-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
 }
 .special-card-body {
     background-color: #f9f9f9;
     padding: 20px;
     border-radius: 0 0 10px 10px;
     text-align: center;
-    p {
-        font-size: 1.1rem;
-        color: #555;
-        margin-bottom: 15px;
-    }
-    .special-features {
-        list-style-type: none;
-        padding-left: 0;
-        color: #777;
-
-        li {
-            margin-bottom: 10px;
-        }
-    }
+}
+.special-card-body p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+.special-features {
+    list-style-type: none;
+    padding-left: 0;
+    color: #777;
+}
+.special-features li {
+    margin-bottom: 10px;
 }
 .special-price {
     font-size: 1.5rem;
-    color: $primary;
+    color:$primary;
     margin-bottom: 20px;
     font-weight: bold;
 }
 .btn-special {
-    background-color: $primary;
+    background-color:$primary;
     color: white;
     font-weight: 600;
     border-radius: 50px;
     padding: 12px;
     font-size: 1.2rem;
     transition: background-color 0.3s ease-in-out;
-    &:hover {
-        background-color: $primary;
-    }
+}
+.btn-special:hover {
+    background-color:$primary;
+    transition: background-color 0.3s ease-in-out;
 }
 .special-card {
     border-radius: 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    &:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    }
 }
-
+.special-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Smooch+Sans:wght@100..900&display=swap" rel="stylesheet">
+
+  </head>
+  <body>
+    <!-- <section class="nav-top bg-secondary text-primary">
+        <div class="container">
+            <p class="text-center mb-0 py-1 fw-medium">"Aşk, heyecan, huzur ve daha fazlası… Her duygu için özel olarak tasarlanmış kitlerimizi keşfedin!".</p>
+        </div>
+    </section> -->
+
+    <section class="nav-middle bg-secondary">
+      <div class="container">
+        <p class="m-0 py-1 text-center text-primary blinking-text"> MODUNUZ DEĞİŞMEDEN AYNI GÜN KARGO İMKANI!!!</p>
+      </div>
+    </section>
+
+    <nav class="navbar navbar-expand-lg sticky-top bg-bg">
+        <div class="container-fluid mx-3">
+          <a class="navbar-brand" href="#">MoodKit</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">Anasayfa</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./hakkimda.html">Hakkımda</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./iletisim.html">İletişim</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Ürünler
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="./ask.html">Aşk Kiti</a></li>
+                  <li><a class="dropdown-item" href="./heyecan.html">Heyecan Kiti</a></li>
+                  <li><a class="dropdown-item" href="./mutluluk.html">Mutluluk Kiti</a></li>
+                  <li><a class="dropdown-item" href="./ofke.html">Öfke Kiti</a></li>
+                  <li><a class="dropdown-item" href="./huzun.html">Hüzün Kiti</a></li>
+                  <li><a class="dropdown-item" href="./motivasyon.html">Motivasyon Kiti</a></li>
+                  <li><a class="dropdown-item" href="./sakinlik.html">Sakinlik Kiti</a></li>
+                  <li><a class="dropdown-item" href="./korku.html">Korku Kiti</a></li>
+                  <li><a class="dropdown-item" href="./eglence.html">Eğlence Kiti</a></li>
+                </ul>
+              </li>
+            </ul>
+            </ul>
+            <ul class="navbar-nav d-flex align-items-center justify-content-center ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fas fa-user"></i></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fas fa-heart"></i></a>
+              </li>
+              <li class="nav-item">
+                <div class="d-flex flex-column align-items-center justify-content-center ms-4">
+                  <img src="./images/seda.jpeg" class=" border border-secondary rounded-circle" alt="seda">
+                  <span>seda</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <section class="banner ">
+        <div class="container d-flex align-items-center justify-content-center">
+          <div class="content">
+            <div class="banner-left">
+              <h1 class="fs-96 text-white">"Duyguların <br> En Güzel Hali,<br> Şimdi Bir Kutuda!"</h1>
+            </div>
+            <div class="banner-right">
+              <p class="fs-20 text-white">"Sevdiklerinize hislerinizi en özel şekilde ifade etmenin zamanı geldi. Aşkın tutkusunu, heyecanın enerjisini, hüznün zarafetini ve öfkenin gücünü bir araya getirdik. Her kutuda sizi ve sevdiklerinizi büyüleyecek duygular saklı! Özel anlarınızı unutulmaz kılmak için tasarlanmış bu eşsiz kitleri keşfedin. Hislerinizi paylaşmanın en güzel yolu burada seni bekliyor!"</p>
+              <a href="#cards" class="btn btn-white ms-3">Şimdi Keşfet</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slogan bg-bg p-5 my-5">
+        <div class="container">
+            <h3 class="text-center text-secondary">"Duygularınızı Keşfedin: Her Anınıza Özel Kitler!"</h3>
+            <p class="text-center text-secondary">Duygularınızı Keşfe çıkmaya hazır olun! Her anınız için özel olarak tasarlanmış Duygu Kitlerimizle hayatınıza renk katın. Sizi mutlu edecek, motive edecek veya sakinleştirecek bir şey mi arıyorsunuz? Hemen kitlerimizi inceleyin ve kendi hikayenizi yaratın.</p>
+        </div>
+      </section>
+
+      <section class="cards" id="cards">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                  <a class="card h-100 text-decoration-none border border-ask" href="./ask.html">
+                    <img src="./images/ask.png" class="card-img-top p-4" alt="ask">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                      <h5 class="card-title">Aşk Kiti</h5>
+                      <p class="card-text">Kalbinizi ısıtacak bu kit, sevgi dolu anlar yaratmanız için özel olarak tasarlandı. İçerisinde romantik notlar, mumlar ve rahatlatıcı kokular yer alır. Bu kit, sevdiklerinizle daha derin bağlar kurmanızı sağlayacak.</p>
+                      <div class="d-flex flex-wrap align-items-center justify-content-between">
+                        <div>
+                          <button class="btn btn-ask me-2">Sepete Ekle</button>
+                          <i class="fa-solid fa-heart mx-1 text-askLight fs-20"></i>
+                          <i class="fa-solid fa-cart-shopping text-askLight fs-20"></i>
+                        </div>
+                        <div class="me-4">
+                          <span class="fs-24 text-ask">$35.99</span>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="col">
+                  <a class="card h-100 text-decoration-none border border-heyecan" href="./heyecan.html">
+                    <img src="./images/heyecan.png" class="card-img-top p-4" alt="heyecan">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                      <h5 class="card-title">Heyecan kiti</h5>
+                      <p class="card-text">Adrenalin tutkunları için ideal olan Heyecan Kiti, yeni deneyimlere açılmanızı sağlar. Aksiyon dolu oyunlar, cesaret gerektiren aktiviteler ve enerji verici atıştırmalıklar ile doludur.</p>
+                      <div class="d-flex flex-wrap align-items-center justify-content-between">
+                        <div>
+                          <button class="btn btn-heyecan me-2">Sepete Ekle</button>
+                          <i class="fa-solid fa-heart mx-1 text-heyecanLight fs-20"></i>
+                          <i class="fa-solid fa-cart-shopping text-heyecanLight fs-20"></i>
+                        </div>
+                        <div class="me-4">
+                          <span class="fs-24 text-heyecan">$24.99</span>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="col">
+                  <a class="card h-100 text-decoration-none border border-mutluluk"  href="./mutluluk.html">
+                    <img src="./images/mutluluk.png" class="card-img-top p-4" alt="mutluluk">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                      <h5 class="card-title">Mutluluk Kiti</h5>
+                      <p class="card-text">Gülümsemeyi sevenler için tasarlanan Mutluluk Kiti, moralinizi yükseltmek için çeşitli aktiviteler ve tatlı sürprizlerle doludur. Bu kit, sizi her zaman mutlu etmek için yanınızda olacak.
+                      </p>
+                      <div class="d-flex flex-wrap align-items-center justify-content-between">
+                        <div>
+                          <button class="btn btn-mutluluk me-2">Sepete Ekle</button>
+                          <i class="fa-solid fa-heart mx-1 text-mutlulukLight fs-20"></i>
+                          <i class="fa-solid fa-cart-shopping text-mutlulukLight fs-20"></i>
+                        </div>
+                        <div class="me-4">
+                          <span class="fs-24 text-mutluluk">$17.99</span>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="col">
+                  <a class="card h-100 text-decoration-none border border-ofke" href="./ofke.html">
+                    <img src="./images/ofke.png" class="card-img-top p-4" alt="ofke">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                      <h5 class="card-title">Öfke Kiti</h5>
+                      <p class="card-text">Stresi azaltmaya yardımcı olacak Öfke Kiti, duygularınızı kontrol altına almanıza yardımcı olur. Rahatlatıcı nesneler ve nefes egzersizleriyle doludur.</p>
+                      <div class="d-flex flex-wrap align-items-center justify-content-between">
+                        <div>
+                          <button class="btn btn-ofke me-2">Sepete Ekle</button>
+                          <i class="fa-solid fa-heart mx-1 text-ofkeLight fs-20"></i>
+                          <i class="fa-solid fa-cart-shopping text-ofkeLight fs-20"></i>
+                        </div>
+                        <div class="me-4">
+                          <span class="fs-24 text-ofke">$27.99</span>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="col">
+                  <a class="card h-100 text-decoration-none border border-huzun" href="./huzun.html">
+                      <img src="./images/huzun.png" class="card-img-top p-4" alt="huzun">
+                      <div class="card-body d-flex flex-column justify-content-between">
+                        <h5 class="card-title">Hüzün Kiti</h5>
+                        <p class="card-text">Hüzünlü anlarınızda yanınızda olacak Hüzün Kiti, sizi teselli edecek özelliklerle donatılmıştır. Duygusal destek sunan kitapçıklar ve huzur veren ürünlerle doludur.</p>
+                        <div class="d-flex flex-wrap align-items-center justify-content-between">
+                          <div>
+                            <button class="btn btn-huzun me-2">Sepete Ekle</button>
+                            <i class="fa-solid fa-heart mx-1 text-huzunLight fs-20"></i>
+                            <i class="fa-solid fa-cart-shopping text-huzunLight fs-20"></i>
+                          </div>
+                          <div class="me-4">
+                            <span class="fs-24 text-huzun">$19.99</span>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col">
+                    <a class="card h-100 text-decoration-none border border-motivasyon" href="./motivasyon.html">
+                      <img src="./images/motivasyon.png" class="card-img-top p-4" alt="motivasyon">
+                      <div class="card-body d-flex flex-column justify-content-between">
+                        <h5 class="card-title">Motivasyon Kiti</h5>
+                        <p class="card-text">Hedeflerinize ulaşmanızı kolaylaştıracak Motivasyon Kiti, ilham veren sözler ve enerjinizi artıracak atıştırmalıklar içerir. Yeni başarılar için bu kiti kullanın.</p>
+                        <div class="d-flex flex-wrap align-items-center justify-content-between">
+                          <div>
+                            <button class="btn btn-motivasyon me-2">Sepete Ekle</button>
+                            <i class="fa-solid fa-heart mx-1 text-motivasyonLight fs-20"></i>
+                            <i class="fa-solid fa-cart-shopping text-motivasyonLight fs-20"></i>
+                          </div>
+                          <div class="me-4">
+                            <span class="fs-24 text-motivasyon">$24.99</span>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col">
+                    <a class="card h-100 text-decoration-none border border-sakinlik" href="./sakinlik.html">
+                      <img src="./images/sakin.png" class="card-img-top p-4" alt="sakin">
+                      <div class="card-body d-flex flex-column justify-content-between">
+                        <h5 class="card-title">Sakinlik Kiti</h5>
+                        <p class="card-text">Zihninizi dinginleştirecek Sakinlik Kiti, meditasyon ve yoga gereçleriyle doludur. Rahatlamak ve gevşemek için ideal bir set.</p>
+                        <div class="d-flex flex-wrap align-items-center justify-content-between">
+                          <div>
+                            <button class="btn btn-sakinlik me-2">Sepete Ekle</button>
+                            <i class="fa-solid fa-heart mx-1 text-sakinlikLight fs-20"></i>
+                            <i class="fa-solid fa-cart-shopping text-sakinlikLight fs-20"></i>
+                          </div>
+                          <div class="me-4">
+                            <span class="fs-24 text-sakinlik">$19.99</span>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col">
+                    <a class="card h-100 text-decoration-none border border-korku" href="./korku.html">
+                      <img src="./images/korku.png" class="card-img-top p-4" alt="korku">
+                      <div class="card-body d-flex flex-column justify-content-between">
+                        <h5 class="card-title">Korku Kiti</h5>
+                        <p class="card-text">Korkularınızla başa çıkmanıza yardımcı olacak Korku Kiti, güven veren objeler ve cesaret verici mesajlarla doludur. Kendinize olan inancınızı yeniden kazandırır.</p>
+                        <div class="d-flex flex-wrap align-items-center justify-content-between">
+                          <div>
+                            <button class="btn btn-korku me-2">Sepete Ekle</button>
+                            <i class="fa-solid fa-heart mx-1 text-korkuLight fs-20"></i>
+                            <i class="fa-solid fa-cart-shopping text-korkuLight fs-20"></i>
+                          </div>
+                          <div class="me-4">
+                            <span class="fs-24 text-korku">$37.99</span>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col">
+                    <a class="card h-100 text-decoration-none border border-eglence bgKrem" href="./eglence.html">
+                      <img src="./images/eglence.png" class="card-img-top p-4" alt="eglence">
+                      <div class="card-body d-flex flex-column justify-content-between">
+                        <h5 class="card-title">Eğlence Kiti</h5>
+                        <p class="card-text">Arkadaşlarınızla veya tek başına keyifli zamanlar geçirmeniz için tasarlanan Eğlence Kiti, oyunlar ve yaratıcı aktivitelerle doludur. Her anı daha renkli ve eğlenceli hale getirin.</p>
+                        <div class="d-flex flex-wrap align-items-center justify-content-between">
+                          <div>
+                            <button class="btn btn-eglence me-2">Sepete Ekle</button>
+                            <i class="fa-solid fa-heart mx-1 text-eglenceLight fs-20"></i>
+                            <i class="fa-solid fa-cart-shopping text-eglenceLight fs-20"></i>
+                          </div>
+                          <div class="me-4">
+                            <span class="fs-24 text-eglence">$39.99</span>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+              </div>
+        </div>
+      </section>
+
+      <section class="nasılsın test py-5 my-5 d-flex justify-content-center align-items-center">
+        <div class="container d-flex justify-content-between gap-5">
+          <div class="row">
+            <div class="test-left col-12 col-md-6">
+                <h2 class="fs-64 text-secondary">Bugün <br>Kendini Nasıl Hissediyorsun?</h2>
+            </div>
+            <div class="test-right text-center col-md-6">
+                <p class="fs-20"><i>
+                  "Bugün kendini nasıl hissettiğini bilmiyorsan, endişelenme! Duygu durumlarını net tanımlamak bazen zor olabilir. Aşağıdaki testi çözerek ruh halini daha iyi anlayabilir ve gününü daha bilinçli bir şekilde geçirebilirsin. Unutma, duygularını anlamak, onlarla başa çıkmanı kolaylaştırır!""</i></p>
+                <button class="btn btn-secondary fs-20"><a href="./test.html" class="text-decoration-none">Testi çöz</a></button>
+            </div>
+        </div>
+      </div>
+
+      </section>
+
+      <section class="acordion my-4 pb-3">
+        <div class="container">
+          <h2 class="text-secondary">SIKÇA SORULAN SORULAR</h2>
+          <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                  1. Siparişim elime ulaşana kadar duygu durumum değişirse?
+                </button>
+              </h2>
+              <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Hiç merak etmeyin! Kargolarınız, sipariş verilen şehirlerde bulunan ekiplerimiz tarafından oluşturulup 2 saat içinde tarafınıza ulaştırılacaktır.</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                  2. Duygu Kitleri nedir?
+                </button>
+              </h2>
+              <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Duygu Kitleri, farklı duygusal deneyimlerinizi desteklemek üzere tasarlanmış özel setlerdir. Her kit, belirli bir duyguyu teşvik edecek ürünler ve aktiviteler içerir.</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                  3. Duygu Kitleri hangi durumlar için uygundur?
+                </button>
+              </h2>
+              <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Duygu Kitleri, günlük hayatınızda karşılaştığınız farklı duygusal durumlar için tasarlanmıştır. Mutlu anları kutlamak, stresli zamanlarda rahatlamak veya motivasyonunuzu artırmak için kullanılabilir.</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                  4. Hangi kit bana uygun?
+                </button>
+              </h2>
+              <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  Her bir kitin detay sayfasında, içerdiği ürünler ve sunduğu deneyimler açıkça belirtilmiştir. Kendi ihtiyacınıza ve ruh halinize uygun kiti seçebilirsiniz. Ruh halinize tam olarak karar veremediyseniz <a href="test.html">test sayfamıza</a> giderek ruh halinizi keşfedebilirsiniz.
+                  </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                  5. İade ve değişim koşulları nelerdir?
+                </button>
+              </h2>
+              <div id="flush-collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Satın alınan ürünlerin iade ve değişim koşulları, teslimat tarihinden itibaren 14 gün içinde geçerlidir. Detaylı bilgi için iade ve değişim politikamızı inceleyebilirsiniz.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <section class="kullanıcı-yorum bg-bg">
+        <div class="container py-5">
+          <h2 class="text-center mb-5 text-secondary">Kullanıcı Yorumları</h2>
+          <div class="row">
+            <div class="col-lg-8 form-left">
+
+
+              
+              <div id="carouselExample" class="carousel slide">
+                <div class="carousel-inner px-5">
+                  <div class="carousel-item active text-center">
+                    <img src="images/seda.jpeg" alt="seda" class="rounded-circle">
+                    <h4 class="my-3">Ayşe B.</h4>
+                    <p><i>"Arkadaşlarımla düzenlediğimiz bir akşam etkinliği için bu kiti kullandım ve herkes bayıldı! Özellikle oyun kartları çok eğlenceliydi ve bizi saatlerce güldürdü. Ayrıca, mumların ve esansiyel yağların kokusu, ortamı sıcak ve samimi bir hale getirdi. Sadece çiftler için değil, arkadaş grupları için de harika!"</i></p>
+                    <div>
+                      <i class="fa-solid fa-star text-secondary"></i>
+                      <i class="fa-solid fa-star text-secondary"></i>
+                      <i class="fa-solid fa-star text-secondary"></i>
+                      <i class="fa-solid fa-star text-secondary"></i>
+                      <i class="fa-solid fa-star text-primary"></i>
+                    </div>
+                  </div>
+                  <div class="carousel-item text-center">
+                    <img src="images/seda.jpeg" alt="seda" class="rounded-circle">
+                    <h4 class="my-3">Burcu A.</h4>
+                    <p><i>"Kendi başıma keyifli vakit geçirmek için bu kiti aldım ve gerçekten harika bir deneyimdi. Aromaterapi mumlarıyla huzur dolu bir atmosfer yarattım ve rahatlatıcı kokular beni günlük stresimden uzaklaştırdı. Tatlı atıştırmalıklar ise tam bir keyif kaynağı oldu. Kendinizi şımartmak için mükemmel bir seçenek!"</i></p>
+                    <div>
+                      <i class="fa-solid fa-star text-secondary"></i>
+                      <i class="fa-solid fa-star text-secondary"></i>
+                      <i class="fa-solid fa-star text-secondary"></i>
+                      <i class="fa-solid fa-star text-secondary"></i>
+                      <i class="fa-solid fa-star text-secondary"></i>
+                    </div>
+                  </div>
+                  <div class="carousel-item text-center">
+                    <img src="images/seda.jpeg" alt="seda" class="rounded-circle" >
+                    <h4 class="my-3">Seda C.</h4>
+                    <p><i>"Bu kiti hediye olarak aldım ve geri dönüşler muhteşemdi! Özellikle farklı koku seçenekleri ve şık not kartları, hediyeyi alan kişinin çok hoşuna gitti. Kendi başına veya sevdikleriyle keyifli anlar yaşamak isteyenler için mükemmel bir hediye alternatifi. Herkesin beğeneceği bir şey var!"</i></p>
+                    <div>
+                      <i class="fa-solid fa-star text-secondary"></i>
+                      <i class="fa-solid fa-star text-secondary"></i>
+                      <i class="fa-solid fa-star text-secondary"></i>
+                      <i class="fa-solid fa-star text-primary"></i>
+                      <i class="fa-solid fa-star text-primary"></i>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+      
+            <div class="col-lg-4 form-right my-4 text-center border border-secondary p-4">
+              <form class="needs-validation" novalidate>
+                <h4 class="text-start">Yorum Yap</h4>
+                <div class="row g-3 mb-3">
+                  <div class="col">
+                    <input 
+                      type="text" 
+                      class="form-control" 
+                      placeholder="Adınız" 
+                      aria-label="Adınız" 
+                      required>
+                    <div class="invalid-feedback">
+                      Lütfen İsminizi giriniz
+                    </div>
+                  </div>
+                  <div class="col">
+                    <input 
+                      type="text" 
+                      class="form-control" 
+                      placeholder="Soyadınız" 
+                      aria-label="Soyadınız" 
+                      required>
+                    <div class="invalid-feedback">
+                      Lütfen Soyadınızı Giriniz
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-floating">
+                    <textarea 
+                      class="form-control" 
+                      placeholder="Leave a comment here" 
+                      id="floatingTextarea2" 
+                      style="height: 100px" 
+                      required></textarea>
+                    <label for="floatingTextarea2" class="ms-2">Yorum Yap</label>
+                    <div class="invalid-feedback">
+                      Lütfen Yorumunuzu Ekleyiniz.
+                    </div>
+                  </div>
+                </div>
+                <button class="btn btn-primary mt-3" type="submit">Gönder</button>
+              </form>
+            </div>      
+          </div>
+        </div>
+      </section>
+
+      <footer class="bg-secondary">
+        <div class="container">
+          <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 border-top">
+            <div class="col-md-4 d-flex align-items-center">
+              <span class="mb-3 mb-md-0 text-bg">© Sedanur Ceylan</span>
+            </div>
+            <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+              <li class="ms-3"><a href="#"><img src="https://cdn.shopify.com/s/files/1/0702/9017/8333/files/FB_Icon_3x_2bac5f83-7ad5-4e7d-9827-b63a02ac75a9.png?v=1677555274" alt="facebook" style="width: 36px; height: 36px;"></a></li>
+              <li class="ms-3"><a href="#"><img src="https://cdn.shopify.com/s/files/1/0702/9017/8333/files/IG_Icon_3x_489a17ea-3252-4165-a9af-39eab18e5b83.png?v=1677555274" alt="instagram" style="width: 36px; height: 36px;"></a></li>
+              <li class="ms-3"><a href="#"><img src="https://cdn.shopify.com/s/files/1/0702/9017/8333/files/YT_Icon_3x_d592299d-007b-4eeb-a0f4-e070a910f23e.png?v=1677555274" alt="youtube" style="width: 36px; height: 36px;"></a></li>
+            </ul>
+          </footer>
+        </div>
+      </footer>
+
+      
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+      (function () {
+        'use strict';
+        var forms = document.querySelectorAll('.needs-validation');
+        Array.prototype.slice.call(forms).forEach(function (form) {
+          form.addEventListener('submit', function (event) {
+            if (!form.checkValidity()) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+
+            form.classList.add('was-validated');
+          }, false);
+        });
+      })();
+    </script>
+    
+  </body>
+</html>
