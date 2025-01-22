@@ -12168,7 +12168,7 @@ body.no-scroll {
 }
 @media (max-width: 992px) {
   .pokemon-card {
-    height: 500px;
+    height: 600px;
     background: linear-gradient(145deg, rgb(27.5919282511, 72.264573991, 118.9080717489), #1A1A1A);
     background-color: #1A1A1A;
     border-radius: 1rem;
@@ -12205,7 +12205,7 @@ body.no-scroll {
 @media (min-width: 992px) {
   .pokemon-card:hover {
     background: linear-gradient(145deg, rgb(27.5919282511, 72.264573991, 118.9080717489), #1A1A1A);
-    height: 500px;
+    height: 550px;
     /*yükseltme animasyonu sağlayan mixin*/
     transition: transform 0.3s ease;
     background-color: #1A1A1A;
@@ -12316,9 +12316,25 @@ body.no-scroll {
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
 }
-.pokemon-card__content p {
+@media (max-width: 425px) {
+  .pokemon-card__content h3, .pokemon-card__content .h3 {
+    margin-bottom: 1.5rem;
+  }
+}
+.pokemon-card__content p:not(.pokemon-card__price) {
   font-family: "RF Dewi", sans-serif;
   margin-bottom: 1rem;
+}
+@media (max-width: 425px) {
+  .pokemon-card__content p:not(.pokemon-card__price) {
+    display: none;
+  }
+}
+.pokemon-card__content .pokemon-card__price {
+  font-family: "RF Dewi", sans-serif;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  color: #FFCB05;
 }
 
 @keyframes shake {
@@ -12376,11 +12392,12 @@ body.no-scroll {
 }
 
 .btn-primary {
-  background-color: #DC0A2D;
-  border-color: rgb(171.2173913043, 7.7826086957, 35.0217391304);
+  background-color: #FFCB05;
+  border-color: rgb(209, 165.528, 0);
   color: #fff;
   transition: all 0.3s ease;
   padding: 1rem 1.5rem;
+  margin-top: 10px;
   border-radius: 2rem;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -12388,7 +12405,7 @@ body.no-scroll {
   font-size: 0.9rem;
 }
 .btn-primary:hover {
-  background-color: rgb(171.2173913043, 7.7826086957, 35.0217391304);
+  background-color: rgb(209, 165.528, 0);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
@@ -12863,6 +12880,65 @@ body.no-scroll {
   .pikachu-text-container {
     animation-duration: 20s;
   }
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.btn-add-cart {
+  background-color: #DC0A2D;
+  border-color: rgb(171.2173913043, 7.7826086957, 35.0217391304);
+  color: #fff;
+  transition: all 0.3s ease;
+  padding: 1rem 1.5rem;
+  margin-top: 10px;
+  border-radius: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  width: auto;
+  min-width: 48px;
+  height: auto;
+  min-height: 48px;
+}
+.btn-add-cart:hover {
+  background-color: rgb(171.2173913043, 7.7826086957, 35.0217391304);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+@media (max-width: 425px) {
+  .btn-add-cart {
+    font-size: 0.75rem;
+    padding: 1rem 1.25rem;
+    margin-left: 0;
+    margin-top: 0.5rem;
+    width: 100%;
+  }
+}
+.btn-add-cart:hover {
+  background-color: rgb(246.152173913, 60.347826087, 91.3152173913);
+  border-color: #DC0A2D;
 }
 
 /*# sourceMappingURL=main.css.map */
