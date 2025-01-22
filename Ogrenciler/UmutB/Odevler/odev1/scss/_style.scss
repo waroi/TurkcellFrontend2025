@@ -69,7 +69,6 @@ $breakpoints: (
 @mixin hover-effect {
   /*yükseltme animasyonu sağlayan mixin*/
   transition: transform 0.3s ease;
-
   &:hover {
     transform: translateY(-5px);
   }
@@ -124,7 +123,6 @@ $breakpoints: (
 @mixin gradient-background($start-color, $end-color, $angle: 145deg) {
   background: linear-gradient($angle, $start-color, $end-color);
 }
-
 %flex-container {
   display: flex;
   align-items: center;
