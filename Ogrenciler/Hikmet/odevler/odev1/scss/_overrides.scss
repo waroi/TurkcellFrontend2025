@@ -53,7 +53,7 @@ $primary: red;
 		.contact {
 			i {
 				margin-right: 10px;
-				color: #4caf50;
+				color: $primary;
 			}
 
 			p {
@@ -87,7 +87,7 @@ $primary: red;
 
 				&:hover {
 					padding-left: 20px;
-					color: #4caf50;
+					color: $primary;
 
 					&::before {
 						opacity: 1;
@@ -142,7 +142,7 @@ $primary: red;
 			transition: all 0.3s ease;
 
 			&:hover {
-				background: #4caf50;
+				background: $primary;
 				transform: translateY(-3px);
 			}
 		}

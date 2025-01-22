@@ -5,18 +5,62 @@ $success-color: #28a745;
 $light-gray: #f8f9fa;
 $dark-gray: #343a40;
 
+// Mixins
+@mixin flex-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+@mixin hover-transform($y: -2px) {
+	transition: all 0.3s ease;
+	&:hover {
+		transform: translateY($y);
+	}
+}
+
+@mixin hover-scale($scale: 1.1) {
+	transition: all 0.3s ease;
+	&:hover {
+		transform: scale($scale);
+	}
+}
+
+@mixin gradient($direction: 45deg, $start-color: #1e3c72, $end-color: #2a5298) {
+	background: linear-gradient($direction, $start-color, $end-color);
+}
+
+@mixin card-shadow($opacity: 0.05) {
+	box-shadow: 0 4px 20px rgba(0, 0, 0, $opacity);
+}
+
+@mixin transition($property: all, $duration: 0.3s) {
+	transition: $property $duration ease;
+}
+
+@mixin image-cover {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+@mixin responsive-padding($desktop: 2rem, $mobile: 1.5rem) {
+	padding: $desktop;
+	@media (max-width: 768px) {
+		padding: $mobile;
+	}
+}
+
 .spec-image {
 	&.rage-hover {
 		video {
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
+			@include image-cover;
 		}
 		.main-video {
 			position: relative;
 			z-index: 1;
 			opacity: 1;
-			transition: opacity 0.3s ease-in-out;
+			@include transition(opacity);
 		}
 		.hover-video {
 			position: absolute;
@@ -24,7 +68,7 @@ $dark-gray: #343a40;
 			left: 0;
 			z-index: 2;
 			opacity: 0;
-			transition: opacity 0.3s ease-in-out;
+			@include transition(opacity);
 		}
 		&:hover {
 			.main-video {
@@ -36,12 +80,10 @@ $dark-gray: #343a40;
 		}
 	}
 }
-// Product Image Styles
+
 .product-image-container {
 	.main-image {
-		width: 100%;
-		height: auto;
-		object-fit: cover;
+		@include image-cover;
 	}
 
 	.thumbnail-gallery {
@@ -51,11 +93,7 @@ $dark-gray: #343a40;
 			object-fit: cover;
 			border-radius: 8px;
 			cursor: pointer;
-			transition: all 0.3s ease;
-
-			&:hover {
-				transform: translateY(-2px);
-			}
+			@include hover-transform;
 
 			&.active {
 				border: 2px solid $primary-color;
@@ -64,273 +102,6 @@ $dark-gray: #343a40;
 	}
 }
 
-// Product Info Styles
-.product-info {
-	.product-title {
-		font-size: 2rem;
-		font-weight: 600;
-	}
-
-	.ratings {
-		.stars {
-			color: #ffc107;
-			font-size: 1.2rem;
-		}
-
-		.reviews-count {
-			color: $secondary-color;
-			font-size: 0.9rem;
-		}
-	}
-
-	.price-container {
-		.current-price {
-			font-size: 2rem;
-			font-weight: 600;
-			color: $dark-gray;
-		}
-
-		.original-price {
-			text-decoration: line-through;
-			color: $secondary-color;
-			margin-left: 1rem;
-		}
-
-		.discount-badge {
-			background-color: $success-color;
-			color: white;
-			padding: 0.25rem 0.5rem;
-			border-radius: 4px;
-			margin-left: 1rem;
-			font-size: 0.9rem;
-		}
-	}
-
-	.color-options {
-		display: flex;
-		gap: 1rem;
-
-		.color-option {
-			width: 32px;
-			height: 32px;
-			border-radius: 50%;
-			border: 2px solid #dee2e6;
-			cursor: pointer;
-			transition: all 0.3s ease;
-
-			&:hover {
-				transform: scale(1.1);
-			}
-
-			&.active {
-				border: 2px solid $primary-color;
-			}
-		}
-	}
-
-	.quantity-selector {
-		display: flex;
-		align-items: center;
-		max-width: 150px;
-
-		.qty-btn {
-			background: $light-gray;
-			border: none;
-			padding: 0.5rem 1rem;
-			cursor: pointer;
-			transition: all 0.3s ease;
-
-			&:hover {
-				background: darken($light-gray, 5%);
-			}
-		}
-
-		.quantity-input {
-			width: 60px;
-			text-align: center;
-			border: 1px solid #dee2e6;
-			margin: 0 0.5rem;
-		}
-	}
-
-	.add-to-cart-btn {
-		width: 100%;
-		padding: 1rem;
-		font-size: 1.1rem;
-		margin-top: 1rem;
-
-		i {
-			margin-right: 0.5rem;
-		}
-	}
-}
-
-// Product Details Styles
-.product-details {
-	.nav-tabs {
-		border-bottom: 2px solid #dee2e6;
-
-		.nav-link {
-			color: $secondary-color;
-			border: none;
-			padding: 1rem 2rem;
-			font-weight: 500;
-			position: relative;
-
-			&::after {
-				content: "";
-				position: absolute;
-				bottom: -2px;
-				left: 0;
-				width: 100%;
-				height: 2px;
-				background-color: $primary-color;
-				transform: scaleX(0);
-				transition: transform 0.3s ease;
-			}
-
-			&.active {
-				color: $primary-color;
-				background: none;
-
-				&::after {
-					transform: scaleX(1);
-				}
-			}
-		}
-	}
-
-	.tab-content {
-		padding: 2rem 0;
-
-		.feature-list {
-			list-style-type: none;
-			padding-left: 0;
-
-			li {
-				padding: 0.5rem 0;
-				position: relative;
-				padding-left: 1.5rem;
-
-				&::before {
-					content: "✓";
-					color: $success-color;
-					position: absolute;
-					left: 0;
-				}
-			}
-		}
-	}
-
-	.review-card {
-		border: 1px solid #dee2e6;
-		border-radius: 8px;
-		padding: 1.5rem;
-		margin-bottom: 1rem;
-
-		.review-header {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			margin-bottom: 1rem;
-
-			.stars {
-				color: #ffc107;
-			}
-
-			.review-date {
-				color: $secondary-color;
-				font-size: 0.9rem;
-			}
-		}
-
-		.reviewer-name {
-			font-weight: 600;
-			margin-bottom: 0.5rem;
-		}
-
-		.review-text {
-			color: $secondary-color;
-		}
-	}
-}
-.tab-pane {
-	&#specs {
-		.spec-item {
-			.spec-image {
-				position: relative;
-				overflow: hidden;
-				img {
-					height: 300px;
-					transition: transform 0.5s ease;
-
-					&:hover {
-						transform: scale(1.05);
-					}
-				}
-			}
-
-			.spec-content {
-				padding: 2rem;
-
-				h4 {
-					color: $primary-color;
-					margin-bottom: 1.5rem;
-					font-weight: 600;
-					position: relative;
-
-					&::after {
-						content: "";
-						position: absolute;
-						left: 0;
-						bottom: -0.5rem;
-						width: 50px;
-						height: 3px;
-						background-color: $primary-color;
-						border-radius: 2px;
-					}
-				}
-
-				p {
-					color: $secondary-color;
-					line-height: 1.8;
-					margin-bottom: 0;
-				}
-			}
-		}
-	}
-}
-
-@media (max-width: 768px) {
-	.spec-item {
-		.spec-content {
-			padding: 2rem 0 !important;
-		}
-	}
-}
-// Responsive Adjustments
-@media (max-width: 768px) {
-	.product-info {
-		.product-title {
-			font-size: 1.5rem;
-		}
-
-		.price-container {
-			.current-price {
-				font-size: 1.5rem;
-			}
-		}
-	}
-
-	.product-details {
-		.nav-tabs {
-			.nav-link {
-				padding: 0.75rem 1rem;
-				font-size: 0.9rem;
-			}
-		}
-	}
-}
 .exclusive-content {
 	padding: 4rem 0;
 	background: linear-gradient(135deg, #f6f9fc 0%, #f1f4f8 100%);
@@ -340,19 +111,18 @@ $dark-gray: #343a40;
 		margin: 0 auto;
 	}
 
-	// Tab Navigation Styles
 	.nav-pills {
 		gap: 1rem;
 		margin-bottom: 3rem !important;
 
 		.nav-link {
-			padding: 1rem 2rem;
+			@include responsive-padding(1rem 2rem, 0.75rem 1.5rem);
 			border-radius: 50px;
 			color: #555;
 			font-weight: 500;
-			transition: all 0.3s ease;
+			@include transition;
 			background: white;
-			box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+			@include card-shadow;
 
 			i {
 				margin-right: 8px;
@@ -360,19 +130,18 @@ $dark-gray: #343a40;
 			}
 
 			&:hover {
-				transform: translateY(-2px);
-				box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+				@include hover-transform;
+				@include card-shadow(0.1);
 			}
 
 			&.active {
-				background: linear-gradient(45deg, #2193b0, #6dd5ed);
+				@include gradient;
 				color: white;
 				transform: translateY(-2px);
 			}
 		}
 	}
 
-	// Feature Grid Styles
 	.feature-grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -380,18 +149,18 @@ $dark-gray: #343a40;
 		padding: 1rem;
 	}
 
-	// Feature Card Styles
 	.feature-card {
 		background: white;
-		padding: 2rem;
+		@include responsive-padding;
 		border-radius: 15px;
-		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-		transition: all 0.3s ease;
+		@include card-shadow;
+		@include transition;
 		text-align: center;
+		animation: fadeInUp 0.5s ease-out forwards;
 
 		&:hover {
 			transform: translateY(-10px);
-			box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+			@include card-shadow(0.1);
 
 			.icon-wrapper {
 				transform: scale(1.1) rotate(5deg);
@@ -402,12 +171,10 @@ $dark-gray: #343a40;
 			width: 80px;
 			height: 80px;
 			border-radius: 50%;
-			background: linear-gradient(45deg, #2193b0, #6dd5ed);
-			display: flex;
-			align-items: center;
-			justify-content: center;
+			@include gradient;
+			@include flex-center;
 			margin: 0 auto 1.5rem;
-			transition: all 0.3s ease;
+			@include transition;
 
 			i {
 				font-size: 2rem;
@@ -429,7 +196,6 @@ $dark-gray: #343a40;
 		}
 	}
 
-	// Responsive Styles
 	@media (max-width: 768px) {
 		padding: 2rem 0;
 
@@ -437,20 +203,11 @@ $dark-gray: #343a40;
 			flex-wrap: nowrap;
 			overflow-x: auto;
 			padding-bottom: 1rem;
-
-			.nav-link {
-				padding: 0.75rem 1.5rem;
-				white-space: nowrap;
-			}
 		}
 
 		.feature-grid {
 			grid-template-columns: 1fr;
 			gap: 1.5rem;
-		}
-
-		.feature-card {
-			padding: 1.5rem;
 		}
 	}
 
@@ -462,14 +219,12 @@ $dark-gray: #343a40;
 	}
 }
 
-// Tab Transition Animation
 .tab-pane {
 	&.fade {
-		transition: opacity 0.3s ease-in-out;
+		@include transition(opacity);
 	}
 }
 
-// Custom Animation for Feature Cards
 @keyframes fadeInUp {
 	from {
 		opacity: 0;
@@ -479,8 +234,4 @@ $dark-gray: #343a40;
 		opacity: 1;
 		transform: translateY(0);
 	}
-}
-
-.feature-card {
-	animation: fadeInUp 0.5s ease-out forwards;
 }

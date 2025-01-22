@@ -1,34 +1,86 @@
 // Variables
-$primary-color: #007bff;
+$primary-color: black;
 $secondary-color: #6c757d;
 $success-color: #28a745;
 $light-gray: #f8f9fa;
 $dark-gray: #343a40;
 
+// Mixins
+@mixin flex-center {
+	display: flex;
+	align-items: center;
+}
+
+@mixin hover-scale($scale: 1.1) {
+	transition: all 0.3s ease;
+	&:hover {
+		transform: scale($scale);
+	}
+}
+
+@mixin font-style($size, $weight: normal) {
+	font-size: $size;
+	font-weight: $weight;
+}
+
+@mixin underline-animation {
+	position: relative;
+	&::after {
+		content: "";
+		position: absolute;
+		bottom: -2px;
+		left: 0;
+		width: 100%;
+		height: 2px;
+		background-color: $primary-color;
+		transform: scaleX(0);
+		transition: transform 0.3s ease;
+	}
+}
+
+@mixin badge($bg-color, $text-color: white) {
+	background-color: $bg-color;
+	color: $text-color;
+	padding: 0.25rem 0.5rem;
+	border-radius: 4px;
+	font-size: 0.9rem;
+}
+
+@mixin responsive-font($desktop-size, $mobile-size) {
+	font-size: $desktop-size;
+	@media (max-width: 768px) {
+		font-size: $mobile-size;
+	}
+}
+
 // Product Info Styles
 .product-info {
 	.product-title {
-		font-size: 2rem;
-		font-weight: 600;
+		@include font-style(2rem, 600);
+		@media (max-width: 768px) {
+			@include font-style(1.5rem, 600);
+		}
 	}
 
 	.ratings {
 		.stars {
 			color: #ffc107;
-			font-size: 1.2rem;
+			@include font-style(1.2rem);
 		}
 
 		.reviews-count {
 			color: $secondary-color;
-			font-size: 0.9rem;
+			@include font-style(0.9rem);
 		}
 	}
 
 	.price-container {
 		.current-price {
-			font-size: 2rem;
-			font-weight: 600;
+			@include font-style(2rem, 600);
 			color: $dark-gray;
+			@media (max-width: 768px) {
+				@include font-style(1.5rem, 600);
+			}
 		}
 
 		.original-price {
@@ -38,12 +90,8 @@ $dark-gray: #343a40;
 		}
 
 		.discount-badge {
-			background-color: $success-color;
-			color: white;
-			padding: 0.25rem 0.5rem;
-			border-radius: 4px;
+			@include badge($success-color);
 			margin-left: 1rem;
-			font-size: 0.9rem;
 		}
 	}
 
@@ -57,11 +105,7 @@ $dark-gray: #343a40;
 			border-radius: 50%;
 			border: 2px solid #dee2e6;
 			cursor: pointer;
-			transition: all 0.3s ease;
-
-			&:hover {
-				transform: scale(1.1);
-			}
+			@include hover-scale;
 
 			&.active {
 				border: 2px solid $primary-color;
@@ -70,8 +114,7 @@ $dark-gray: #343a40;
 	}
 
 	.quantity-selector {
-		display: flex;
-		align-items: center;
+		@include flex-center;
 		max-width: 150px;
 
 		.qty-btn {
@@ -97,7 +140,7 @@ $dark-gray: #343a40;
 	.add-to-cart-btn {
 		width: 100%;
 		padding: 1rem;
-		font-size: 1.1rem;
+		@include font-style(1.1rem);
 		margin-top: 1rem;
 
 		i {
@@ -116,18 +159,11 @@ $dark-gray: #343a40;
 			border: none;
 			padding: 1rem 2rem;
 			font-weight: 500;
-			position: relative;
+			@include underline-animation;
 
-			&::after {
-				content: "";
-				position: absolute;
-				bottom: -2px;
-				left: 0;
-				width: 100%;
-				height: 2px;
-				background-color: $primary-color;
-				transform: scaleX(0);
-				transition: transform 0.3s ease;
+			@media (max-width: 768px) {
+				padding: 0.75rem 1rem;
+				@include font-style(0.9rem);
 			}
 
 			&.active {
@@ -170,9 +206,8 @@ $dark-gray: #343a40;
 		margin-bottom: 1rem;
 
 		.review-header {
-			display: flex;
+			@include flex-center;
 			justify-content: space-between;
-			align-items: center;
 			margin-bottom: 1rem;
 
 			.stars {
@@ -181,7 +216,7 @@ $dark-gray: #343a40;
 
 			.review-date {
 				color: $secondary-color;
-				font-size: 0.9rem;
+				@include font-style(0.9rem);
 			}
 		}
 
@@ -195,6 +230,7 @@ $dark-gray: #343a40;
 		}
 	}
 }
+
 .tab-pane {
 	&#specs {
 		.spec-item {
@@ -213,6 +249,11 @@ $dark-gray: #343a40;
 
 			.spec-content {
 				padding: 2rem;
+				color: $primary-color;
+
+				@media (max-width: 768px) {
+					padding: 2rem 0 !important;
+				}
 
 				h4 {
 					color: $primary-color;
@@ -237,37 +278,6 @@ $dark-gray: #343a40;
 					line-height: 1.8;
 					margin-bottom: 0;
 				}
-			}
-		}
-	}
-}
-
-@media (max-width: 768px) {
-	.spec-item {
-		.spec-content {
-			padding: 2rem 0 !important;
-		}
-	}
-}
-// Responsive Adjustments
-@media (max-width: 768px) {
-	.product-info {
-		.product-title {
-			font-size: 1.5rem;
-		}
-
-		.price-container {
-			.current-price {
-				font-size: 1.5rem;
-			}
-		}
-	}
-
-	.product-details {
-		.nav-tabs {
-			.nav-link {
-				padding: 0.75rem 1rem;
-				font-size: 0.9rem;
 			}
 		}
 	}
