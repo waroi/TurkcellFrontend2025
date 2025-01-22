@@ -23,6 +23,27 @@
 			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
 			integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
 			crossorigin="anonymous"></script>
+		<script>
+			(() => {
+				"use strict";
+				// Fetch all the forms we want to apply custom Bootstrap validation styles to
+				const forms = document.querySelectorAll(".needs-validation");
+				// Loop over them and prevent submission
+				Array.from(forms).forEach((form) => {
+					form.addEventListener(
+						"submit",
+						(event) => {
+							if (!form.checkValidity()) {
+								event.preventDefault();
+								event.stopPropagation();
+							}
+							form.classList.add("was-validated");
+						},
+						false
+					);
+				});
+			})();
+		</script>
 		<!-- scripts -->
 		<div class="discount container-fluid bg-primary">
 			<div
@@ -96,56 +117,36 @@
 		</section>
 		<!-- navbar -->
 
-		<!-- FAQ-->
+		<!--TODO: Check the form and validation-->
+		<!-- Contact Us-->
 		<section class="container my-5">
-			<div class="row">
-				<div class="col-lg-8 mx-auto text-left">
-					<h2 class="mb-4 text-primary">Hakkımızda</h2>
-					<p class="lead mb-4">
-						Sitemiz, yazılım dünyasının en yaratıcı kahramanlarını bir araya
-						getirerek size ilham veren ve teknolojiyi büyüleyici bir deneyime
-						dönüştüren bir platform sunuyor. Biz sadece bir e-ticaret sitesi
-						değiliz; inovasyonu, yazılımı ve yarışmacı ruhu kutlayan bir
-						topluluğuz. Her bir ürünümüz, hem teknolojik hem de yaratıcı bir
-						çözümü temsil eder. Spider-Man’den Hulk’a, Doctor Strange’den Iron
-						Man’e kadar her kahramanımız, yazılımın farklı alanlarına dokunan
-						benzersiz yetenekleriyle hayatınıza değer katmak için tasarlandı.
-					</p>
-					<h4 class="text-primary">Misyonumuz</h4>
-					<ul class="list-unstyled">
-						<li>
-							Yazılımın karmaşık dünyasını sızın için daha basit, daha eğlenceli
-							ve daha yaratıcı hale getirmek.
-						</li>
-						<li>
-							Teknolojik gelişmelerden ilham alarak yenilikçi ve farklı
-							yaklaşımlar sunmak.
-						</li>
-						<li>
-							Her seviyeden geliştiriciye ilham verecek bir platform yaratmak.
-						</li>
-					</ul>
-					<h4 class="text-primary">Vizyonumuz</h4>
-					<p>
-						Çok yönlülü yazılım çözümlerini herkes için erişilebilir kılmak ve
-						yazılım öğrenimini bir büyükeşere dönüştürmek. Geleceğin
-						teknolojisini bugün kullanılabilir hale getirmek için buradayız.
-					</p>
-					<h4 class="text-primary">Biz Kimiz?</h4>
-					<p>
-						Sitemizin her köşesinde, yazılım tutkusunu bir büyü gibi yayan
-						kahramanlarımız var. Hulk’ın backend gücü, Spider-Man’in frontend
-						çevikligi, Doctor Strange’in algoritma ustalığı ve Iron Man’in
-						teknoloji vizyonu ile, yazılım dünyasının sınırlarını zorluyoruz.
-						Ayrıca, "Exclusive Content" olarak sizlere özel bir kahramanı daha
-						sunuyoruz: Sitenin Yaratıcısı! Hem frontend hem de backend uzmanı
-						olan bu özel ürün, yazılım dünyasında yeni çözümler yaratmak için
-						geliştirildi.
-					</p>
+			<form class="needs-validation" novalidate>
+				<div class="form-floating mb-3">
+					<input
+						type="email"
+						class="form-control"
+						id="floatingInput"
+						placeholder="name@example.com"
+						required />
+					<div class="invalid-feedback">Please enter a valid e-mail.</div>
+					<div class="valid-feedback">Looks good!</div>
+					<label for="floatingInput">Email address</label>
 				</div>
-			</div>
+				<div class="form-floating">
+					<textarea
+						class="form-control"
+						placeholder="Leave a comment here"
+						id="floatingTextarea2"
+						style="height: 100px"
+						required></textarea>
+					<div class="invalid-feedback">Please enter a comment.</div>
+					<div class="valid-feedback">Looks good!</div>
+					<label for="floatingTextarea2">Comments</label>
+				</div>
+				<button type="submit" class="btn btn-primary mt-2">Send!</button>
+			</form>
 		</section>
-		<!-- FAQ-->
+		<!-- Contact Us-->
 
 		<!-- footer -->
 		<footer class="footer">
@@ -186,8 +187,8 @@
 							<li><a href="../index.html">Ana Sayfa</a></li>
 							<li><a href="./all_superheros.html">Superheros</a></li>
 							<li><a href="./faq.html">Sıkça Sorulan Sorular</a></li>
-							<li><a href="#">Hakkımızda</a></li>
-							<li><a href="./contact.html">İletişim</a></li>
+							<li><a href="./about_us.html">Hakkımızda</a></li>
+							<li><a href="#">İletişim</a></li>
 						</ul>
 					</div>
 
