@@ -9,6 +9,8 @@ body {
 .fa-cart-shopping:hover,
 .fa-user:hover {
   color: $primary;
+  content: '\f004';
+  font-weight: 900;
 }
 a {
   text-decoration: none;

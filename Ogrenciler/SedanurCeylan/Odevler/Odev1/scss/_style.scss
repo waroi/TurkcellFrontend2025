@@ -1,0 +1,145 @@
+*{
+    font-family: poppins;
+}
+@mixin hover($scale, $box-shadow) {
+    transform: scale($scale);
+    box-shadow: $box-shadow;
+  }
+
+@mixin boyut($width ,$height) {
+    width: $width;
+    height: $height;
+}
+
+  .banner {
+    position: relative;
+    height: 90vh;
+    overflow: hidden;
+    &::before{
+        content: "";
+        background: url("https://elifyamas.com/wp-content/uploads/2021/10/duygu-du%CC%88s%CC%A7u%CC%88nce3.jpg");
+        background-size: cover;
+        background-position: center;
+        filter: blur(5px) brightness(0.8);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+    .container {
+        position: relative;
+        z-index: 2; 
+        height: 100%;
+    }
+}
+
+.test {
+    background: url("https://mahabis.com/cdn/shop/files/banner-white-3.jpg?v=1721312653") no-repeat center center;
+    background-size: cover;
+    height: 70vh;
+}
+
+.cards {
+    .card {
+        transition: all 0.5s ease-in-out;
+        &:hover {
+            @include hover(1.03, rgba(0, 0, 0, 0.2) 0px 4px 8px);
+        }
+        i{
+            transition: all 0.4s ;
+            &:hover{
+                transform: scale(1.2);
+            }
+        }
+    }
+}
+
+.ask {
+    .urun {
+        img {
+            transition: all 0.4s ;
+            &:hover {
+                @include hover(1.03, rgba(0, 0, 0, 0.2));
+            }
+        }
+        .ikon{
+            i{
+                transition: all 0.4s ;
+                &:hover{
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
+    .diger{
+        .card{
+            transition: all 0.5s ;
+            &:hover{
+                @include hover(1.03, rgba(0, 0, 0, 0.2) 0px 4px 8px);
+            }
+        }
+    }    
+}
+.heyecan{
+    @extend .ask;
+}
+.eglence{
+    @extend .ask;
+}
+.huzun{
+    @extend .ask;
+}
+.korku{
+    @extend .ask;
+}
+.motivasyon{
+    @extend .ask;
+}
+.mutluluk{
+    @extend .ask;
+}
+.ofke{
+    @extend .ask;
+}
+.sakinlik{
+    @extend .ask;
+}
+
+.navbar{
+    img{
+        @include boyut(36px,36px );
+    }
+}
+
+.kullanıcı-yorum{
+    img{
+        @include boyut(50px,50px );
+    }
+}
+
+.hakkimda{
+    .row{
+        height: 90vh;
+    }
+    img{
+        @include boyut(100px,100px );
+    }
+}
+
+@keyframes blink {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .blinking-text {
+    animation: blink 1s infinite;
+  }
