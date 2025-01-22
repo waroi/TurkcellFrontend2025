@@ -6,7 +6,7 @@ $font-secondary: 'RF Dewi', sans-serif;
 $mobile-width: 576px;
 $tablet-width: 768px;
 $desktop-width: 992px;
-$spacing-base: 1rem;
+$spacing-1ram: 1rem;
 $grid-gap: 2rem;
 $banner-height: 120vh;
 $pokemon-red: #DC0A2D;
@@ -32,19 +32,16 @@ $breakpoints: (
   font-family: 'RF Dewi Header';
   src: url('/fonts/rf-dewi-ultrabold.ttf') format('truetype');
   font-weight: 600;
-  font-display: swap;
-  /* swap özelliği yazı tipi yüklenene kadar sistem yazı tipinin görüntülenmesini sağlıyor */
 }
 @font-face {
   font-family: 'RF Dewi';
   src: url('/fonts/rf-dewi-regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
-  font-display: swap;
 }
+
 // Mixin ve extendler
 @mixin flex-center {
-  /*elemanların hem yatayda hem dikeyde ortalanması gereken yerlerde kullanıldı*/
   display: flex;
   justify-content: center;
   align-items: center;
@@ -67,7 +64,6 @@ $breakpoints: (
   }
 }
 @mixin hover-effect {
-  /*yükseltme animasyonu sağlayan mixin*/
   transition: transform 0.3s ease;
   &:hover {
     transform: translateY(-5px);
@@ -137,12 +133,12 @@ $breakpoints: (
   @include transition-base;
 }
 %section-padding {
-  padding: $spacing-base * 4 0;
+  padding: $spacing-1ram * 4 0;
 }
 %icon-base {
   width: 60px;
   height: 60px;
-  margin: 0 auto $spacing-base;
+  margin: 0 auto $spacing-1ram;
   border-radius: 50%;
   @include flex-center;
   @include transition-base;
@@ -209,7 +205,7 @@ body {
       flex-direction: column;
       justify-content: center;
       text-align: center;
-      padding: $spacing-base;
+      padding: $spacing-1ram;
       margin-bottom: 100px; 
     }
   }
@@ -217,7 +213,7 @@ body {
     flex: 0 1 60%;
     margin-right: 2rem;
     text-align: center;
-    color: #fff; // Paragraf rengi beyaz kalacak
+    color: #fff;
     animation: slideInLeft 1s ease-out;
     @media (max-width: $tablet-width) {
       flex: 0 1 auto;
@@ -227,7 +223,7 @@ body {
     }
   }
   &__logo {
-    margin: $spacing-base 0;
+    margin: $spacing-1ram 0;
     font-size: 8vw;
     .poke-logo {
       max-width: 100%;
@@ -242,7 +238,7 @@ body {
   &__subtitle {
     @include responsive-font(1.2rem, 1.5rem);
     line-height: 1.4;
-    margin-bottom: $spacing-base * 2;
+    margin-bottom: $spacing-1ram * 2;
     @extend %text-shadow;
     @media (max-width: $tablet-width) {
       font-size: 1.2rem;
@@ -251,7 +247,7 @@ body {
   &__cta {
     @extend %interactive-element;
     display: inline-block;
-    padding: $spacing-base $spacing-base * 2;
+    padding: $spacing-1ram $spacing-1ram * 2;
     @include responsive-font(1rem, 1.25rem);
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -273,12 +269,12 @@ body {
     animation: slideInRight 1s ease-out;
     @media (max-width: $tablet-width) {
       flex: 0 1 auto;
-      max-width: 70%; // daha küçük olacak
+      max-width: 70%;
       margin: 0 auto;
       display:none;
     }
     @media (max-width: $mobile-width) {
-      max-width: 60%; // mobil de daha da küçük
+      max-width: 60%;
     }
   }
   .pokedex-container {
@@ -309,7 +305,7 @@ body {
 
       @media (max-width: $tablet-width) {
         bottom: 10px;
-        padding: $spacing-base $spacing-base * 1.5;
+        padding: $spacing-1ram $spacing-1ram * 1.5;
         font-size: 0.9rem;
         display: none;
       }
@@ -344,7 +340,7 @@ body {
 .pokemon-card {
   position: relative;
   height: 300px;
-  padding: $spacing-base * 1.25;
+  padding: $spacing-1ram * 1.25;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -376,15 +372,15 @@ body {
       position: relative;
       top: -120px;
       width: 100%;
-      padding: $spacing-base $spacing-base * 1.5;
+      padding: $spacing-1ram $spacing-1ram * 1.5;
       color: #fff;
       text-align: center;
       visibility: visible;
       opacity: 1;;
-      margin-top: $spacing-base;
+      margin-top: $spacing-1ram;
     }
   }
-  // Desktop hover
+  // Desktop hover ile gözükecek pokemonlar
   @media (min-width: $desktop-width) {
     &:hover {
       background: linear-gradient(145deg, $dark-blue, $dark);
@@ -412,7 +408,7 @@ body {
         }
       }
       .pokemon-card__content {
-        margin-top: $spacing-base;
+        margin-top: $spacing-1ram;
         visibility: visible;
         opacity: 1;
         transition-delay: 0.2s;
@@ -440,7 +436,7 @@ body {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    padding: $spacing-base;
+    padding: $spacing-1ram;
     object-fit: contain;
     animation: shake 0.5s ease-in-out infinite;
     transition: opacity 0.3s ease-in-out;
@@ -452,7 +448,7 @@ body {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    padding: $spacing-base;
+    padding: $spacing-1ram;
     object-fit: contain;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
@@ -480,7 +476,7 @@ body {
     position: relative;
     top: -120px;
     width: 100%;
-    padding: $spacing-base $spacing-base * 1.5;
+    padding: $spacing-1ram $spacing-1ram * 1.5;
     color: #fff;
     text-align: center;
     visibility: hidden;
@@ -489,21 +485,21 @@ body {
     h3 {
       @extend %heading-base;
       font-size: 1.5rem;
-      margin-bottom: $spacing-base * 0.5;
+      margin-bottom: $spacing-1ram * 0.5;
       @media (max-width: 425px) {
-        margin-bottom: $spacing-base * 1.5;
+        margin-bottom: $spacing-1ram * 1.5;
       }
     }
-    p:not(.pokemon-card__price) { // price hep görüneceği için 
+    p:not(.pokemon-card__price) { // price hep görüneceği için not ile engelledim
       font-family: $font-secondary;
-      margin-bottom: $spacing-base;
+      margin-bottom: $spacing-1ram;
       @media (max-width: 425px) {
         display: none;
       }
     }
     .pokemon-card__price {
       font-family: $font-secondary;
-      margin-bottom: $spacing-base;
+      margin-bottom: $spacing-1ram;
       font-weight: bold;
       color: $pokemon-yellow;
     }
@@ -524,24 +520,24 @@ body {
 // Products Grid
 .products-grid {
   @include grid-responsive;
-  padding: $spacing-base * 2;
+  padding: $spacing-1ram * 2;
   margin: 0 auto;
   max-width: $content-max-width;
 
   @media (min-width: map-get($breakpoints, 'tablet')) {
-    padding: $spacing-base * 3;
+    padding: $spacing-1ram * 3;
   }
 }
 // Bestsellers Section
 .featured-products {
-  padding: $spacing-base * 3 0;
+  padding: $spacing-1ram * 3 0;
   background: linear-gradient(145deg, $dark-blue, $dark);
   h2 {
     @extend %heading-base;
     color: $dark;
     text-shadow: 2px 2px 4px rgba($pokemon-blue, 0.2);
     text-align: center;
-    margin-bottom: $spacing-base * 3;
+    margin-bottom: $spacing-1ram * 3;
     font-size: 2.5rem;
     @media (min-width: map-get($breakpoints, 'tablet')) {
       font-size: 3rem;
@@ -563,7 +559,7 @@ body {
 // kart butonları tasarımı
 .btn-primary {
   @include custom-button($pokemon-yellow);
-  padding: $spacing-base $spacing-base * 1.5;
+  padding: $spacing-1ram $spacing-1ram * 1.5;
   margin-top: 10px;
   border-radius: 2rem;
   text-transform: uppercase;
@@ -572,7 +568,7 @@ body {
   font-size: 0.9rem;
   @media (max-width: $mobile-width) {
     font-size: 0.75rem;
-    padding: $spacing-base $spacing-base * 1.25;
+    padding: $spacing-1ram $spacing-1ram * 1.25;
   }
   &:hover {
     background-color: $light-red;
@@ -584,14 +580,14 @@ body {
   overflow: hidden;
   padding: 3rem 0;
 }
-// Footer with Flexbox and Grid
+// Footer
 .footer {
   background: $dark;
   color: #fff;
-  padding: $spacing-base * 2 0;
+  padding: $spacing-1ram * 2 0;
   &__grid {
     display: grid;
-    gap: $spacing-base * 2;
+    gap: $spacing-1ram * 2;
     @media (min-width: map-get($breakpoints, 'tablet')) {
       grid-template-columns: repeat(3, 1fr);
     }
@@ -603,7 +599,7 @@ body {
     a {
       color: #fff;
       text-decoration: none;
-      padding: $spacing-base * 0.5 0;
+      padding: $spacing-1ram * 0.5 0;
       &:hover {
         color: $pokemon-yellow;
       }
@@ -613,12 +609,12 @@ body {
 // About Section Styles
 .about-section {
   background: url('../assets/aboutbg.png') center/cover no-repeat;
-  padding: $spacing-base * 4 0;
+  padding: $spacing-1ram * 4 0;
   h2 {
     @extend %heading-base;
     color: $dark;
     font-size: 2.5rem;
-    margin-bottom: $spacing-base * 3;
+    margin-bottom: $spacing-1ram * 3;
     @media (min-width: map-get($breakpoints, 'tablet')) {
       font-size: 3rem;
     }
@@ -626,8 +622,8 @@ body {
 }
 .about-grid {
   display: grid;
-  gap: $spacing-base * 2;
-  padding: $spacing-base;
+  gap: $spacing-1ram * 2;
+  padding: $spacing-1ram;
   @media (min-width: map-get($breakpoints, 'tablet')) {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -640,7 +636,7 @@ body {
   @extend %interactive-element;
   background: #24212159;
   color: #fff;
-  padding: $spacing-base * 2;
+  padding: $spacing-1ram * 2;
   text-align: center;
   &:hover {
     @include card-hover-effect;
@@ -655,7 +651,7 @@ body {
     @extend %heading-base;
     color: $pokemon-red;
     font-size: 1.5rem;
-    margin: $spacing-base 0;
+    margin: $spacing-1ram 0;
   }
   p {
     color: $light;
@@ -678,12 +674,12 @@ body {
 // FAQ Section Styles
 .faq-section {
   background: $pokemon-yellow;
-  padding: $spacing-base * 4 0;
+  padding: $spacing-1ram * 4 0;
   h2 {
     @extend %heading-base;
     color: $dark;
     font-size: 2.5rem;
-    margin-bottom: $spacing-base * 3;
+    margin-bottom: $spacing-1ram * 3;
     @media (min-width: map-get($breakpoints, 'tablet')) {
       font-size: 3rem;
     }
@@ -691,8 +687,8 @@ body {
 }
 .faq-grid {
   display: grid;
-  gap: $spacing-base * 2;
-  padding: $spacing-base;
+  gap: $spacing-1ram * 2;
+  padding: $spacing-1ram;
   @media (min-width: map-get($breakpoints, 'tablet')) {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -703,7 +699,7 @@ body {
 .faq-card {
   @extend %card-base;
   @extend %interactive-element;
-  padding: $spacing-base * 2;
+  padding: $spacing-1ram * 2;
   &:hover {
     @include card-hover-effect;
   }
@@ -711,7 +707,7 @@ body {
     @extend %heading-base;
     color: $pokemon-blue;
     font-size: 1.25rem;
-    margin-bottom: $spacing-base;
+    margin-bottom: $spacing-1ram;
   }
   p {
     color: $gray;
@@ -722,13 +718,13 @@ body {
 // Contact Section Styles
 .contact-section {
   background: linear-gradient(145deg, $dark-blue, $dark);
-  padding: $spacing-base * 4 0;
+  padding: $spacing-1ram * 4 0;
   h2 {
     @extend %heading-base;
     color: $dark;
     font-size: 2.5rem;
     text-shadow: 2px 2px 4px rgba($pokemon-blue, 0.2);
-    margin-bottom: $spacing-base * 3;
+    margin-bottom: $spacing-1ram * 3;
     @media (min-width: map-get($breakpoints, 'tablet')) {
       font-size: 3rem;
     }
@@ -736,7 +732,7 @@ body {
 }
 .contact-grid {
   display: grid;
-  gap: $spacing-base * 3;
+  gap: $spacing-1ram * 3;
 
   @media (min-width: map-get($breakpoints, 'tablet')) {
     grid-template-columns: repeat(2, 1fr);
@@ -744,12 +740,12 @@ body {
 }
 .contact-info {
   display: grid;
-  gap: $spacing-base * 2;
+  gap: $spacing-1ram * 2;
 }
 .contact-card {
   @extend %card-base;
   @extend %interactive-element;
-  padding: $spacing-base * 2;
+  padding: $spacing-1ram * 2;
   text-align: center;
   background: linear-gradient(145deg, $dark-blue, $dark);
   &:hover {
@@ -765,12 +761,12 @@ body {
     @extend %heading-base;
     color: $light;
     font-size: 1.5rem;
-    margin: $spacing-base 0;
+    margin: $spacing-1ram 0;
   }
   p,
   address {
     color: $light;
-    margin-bottom: $spacing-base * 0.5;
+    margin-bottom: $spacing-1ram * 0.5;
     line-height: 1.6;
     font-style: normal;
   }
@@ -786,7 +782,7 @@ body {
 .contact-icon {
   width: 60px;
   height: 60px;
-  margin: 0 auto $spacing-base;
+  margin: 0 auto $spacing-1ram;
   background: linear-gradient(145deg, $pokemon-red, $accent);
   border-radius: 50%;
   display: flex;
@@ -801,33 +797,27 @@ body {
   }
 }
 .contact-form {
-
-  padding: $spacing-base * 2;
+  padding: $spacing-1ram * 2;
   .form-label {
     color: $light !important;
     font-weight: 500;
-    margin-bottom: $spacing-base * 0.5;
+    margin-bottom: $spacing-1ram * 0.5;
   }
   .form-control {
-    border: 2px solid $light-gray;
     border-radius: 0.5rem;
-    padding: $spacing-base * 0.75;
+    padding: $spacing-1ram * 0.75;
     transition: all 0.3s ease;
-    &:focus {
-      border-color: $pokemon-blue;
-      box-shadow: 0 0 0 0.2rem rgba($pokemon-blue, 0.25);
-    }
   }
   textarea.form-control {
     resize: vertical;
   }
   .btn-primary {
     width: 100%;
-    margin-top: $spacing-base;
+    margin-top: $spacing-1ram;
   }
 }
 
-// Product Detail Pages Styles
+// Product Detail
 .product-detail {
   padding: 2rem 0;
   background: linear-gradient(145deg, #2A6EB5, #1A1A1A);
@@ -872,13 +862,13 @@ body {
 }
 .turtle-ad {
   width: 100%;
-  height: 150px;
-  min-height: 150px;;
+  height: 180px;
+  min-height: 180px;;
   position: relative;
   display: flex;
   justify-content: flex-start;
   align-items: start;
-  padding-bottom: 10vh;
+  padding-bottom: 1vh;
   overflow: hidden;
   
   @media (max-width: $tablet-width) {
@@ -1007,7 +997,7 @@ body {
 }
 .btn-add-cart {
   @include custom-button($pokemon-red);
-  padding: $spacing-base $spacing-base * 1.5;
+  padding: $spacing-1ram $spacing-1ram * 1.5;
   margin-top: 10px;
   border-radius: 2rem;
   text-transform: uppercase;
@@ -1020,7 +1010,7 @@ body {
   min-height: 48px;
   @media (max-width: 425px) {
     font-size: 0.75rem;
-    padding: $spacing-base $spacing-base * 1.25;
+    padding: $spacing-1ram $spacing-1ram * 1.25;
     margin-left: 0;
     margin-top: 0.5rem;
     width: 100%;
