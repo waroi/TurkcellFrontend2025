@@ -11916,6 +11916,11 @@ textarea.form-control-lg {
   }
 }
 
+.social-icon, .product-list .card:hover .social i, .product-list .card .social i {
+  font-size: 16px;
+  color: white;
+}
+
 body {
   font-family: "IBM Plex Mono", sans-serif;
   background-color: rgb(28.7956521739, 33.4652173913, 42.8043478261);
@@ -12062,16 +12067,8 @@ a {
   transition: 0.3s ease;
   bottom: -57px;
 }
-.product-list .card .social i {
-  font-size: 16px;
-  color: #fff;
-}
 .product-list .card:hover .social {
   bottom: 0;
-}
-.product-list .card:hover .social i {
-  font-size: 16px;
-  color: white;
 }
 .product-list .card:hover .card-img-1,
 .product-list .card:hover .card-img-2,
@@ -12167,10 +12164,6 @@ a {
   position: relative;
   background-color: black;
   color: white;
-}
-.about-us-section i {
-  font-size: 100px;
-  margin-bottom: 20px;
 }
 .about-us-section ::before {
   content: "";
