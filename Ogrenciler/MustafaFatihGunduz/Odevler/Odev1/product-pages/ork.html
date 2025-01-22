@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>İletişim</title>
-    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <title>Ork</title>
   </head>
   <body>
     <header class="bg-primary z-3 sticky-top w-100 py-4">
@@ -13,7 +13,7 @@
           <div class="container-fluid px-0">
             <a class="navbar-brand" href="# ">
               <img
-                src="assets/logo.png"
+                src="../assets/logo.png"
                 alt="logo"
                 class="img-fluid"
                 width="70px"
@@ -56,35 +56,35 @@
                     <a
                       class="nav-link active px-3 py-2"
                       aria-current="page"
-                      href="#"
+                      href="../index.html"
                       >Anasayfa</a
                     >
                   </li>
                   <li class="nav-item">
                     <a
                       class="nav-link px-3 py-2 text-secondary"
-                      href="#testimonial"
+                      href="../index.html#products"
                       >Ürünler</a
                     >
                   </li>
                   <li class="nav-item">
                     <a
                       class="nav-link px-3 py-2 text-secondary"
-                      href="./about_us.html"
+                      href="../about_us.html"
                       >Hakkımızda</a
                     >
                   </li>
                   <li class="nav-item">
                     <a
                       class="nav-link px-3 py-2 text-secondary"
-                      href="./contact_us.html"
+                      href="../contact_us.html"
                       >İletişim</a
                     >
                   </li>
                   <li class="nav-item">
                     <a
                       class="nav-link px-3 py-2 text-secondary"
-                      href="./s_s_s.html"
+                      href="../s_s_s.html"
                       >S.S.S</a
                     >
                   </li>
@@ -109,66 +109,65 @@
         </nav>
       </div>
     </header>
-    <section class="contact-us-section mt-4">
+    <section class="product-detail">
       <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-            <h4 class="fs-4 text-black">İletişim</h4>
-            <form action="" class="contact-us-form">
-              <div class="input-group d-flex gap-2 mx-2 px-2">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Adınız"
-                  aria-label="Adınız"
-                  aria-describedby="basic-addon1"
-                />
-                <input
-                  type="email"
-                  class="form-control"
-                  placeholder="Email"
-                  aria-label="Email"
-                  aria-describedby="basic-addon1"
-                />
-                <textarea
-                  name="mesaj"
-                  id="mesaj"
-                  cols="60"
-                  rows="14"
-                ></textarea>
-                <button class="btn btn-primary w-100 mt-2 py-2 px-2">
-                  Gönder
-                </button>
+        <div class="row mt-5">
+          <div class="col-md-7">
+            <div class="product-content">
+              <h1 class="text-primary">Börk Ork</h1>
+              <p class="text-secondary">
+                Börk şapkasından hiç ayrılmayan devasa bir ork. Orkların kaba
+                gücünü temsil ediyor ama IQ’su oda sıcaklığını geçemiyor. Her
+                zaman sinirli ve bir şeyleri kırmak için yaşıyor. "Bunu neden
+                kırdın?" sorusuna yanıtı hep aynı: "Çünkü kırılabiliyordu!"
+              </p>
+              <h5 class="text-primary">Irk: <span>Ork</span></h5>
+              <h5 class="text-primary">
+                Model Numarası: <span>4791712682</span>
+              </h5>
+              <h5 class="text-primary">
+                Kullanım Alanı:
+                <span>İnşaat, Ağır yük taşıma, Koruma</span>
+              </h5>
+              <h5 class="text-primary">
+                Dayanıklılık Seviyesi: <span>9/10</span>
+              </h5>
+              <h5 class="text-primary">
+                Enerji Türü:
+                <span>Yüksek kalorili yiyecekler (Günde 3 öğün)</span>
+              </h5>
+              <div class="product-color d-flex gap-3">
+                <span class="text-secondary">Renk:</span>
+                <div class="white-container"></div>
+                <div class="black-container"></div>
+                <div class="brown-container"></div>
+                <div class="blue-container"></div>
+                <div class="green-container"></div>
+                <div class="red-container"></div>
+                <div class="krem-container"></div>
               </div>
-            </form>
-          </div>
-          <div class="col-md-4 bg-dark">
-            <div class="col-md-12">
-              <div
-                class="contact-info d-flex flex-column gap-5 align-items-center py-10"
-              >
-                <div class="contact-info-item">
-                  <span class="text-white">Adres:</span>
-                  <span class="text-secondary">Meram/Konya, Türkiye</span>
-                </div>
-                <div class="contact-info-item">
-                  <span class="text-white">Telefon:</span>
-                  <span class="text-secondary">+90 555 555 55 55</span>
-                </div>
-                <div class="contact-info-item">
-                  <span class="text-white">Email:</span>
-                  <span class="text-secondary"> info@slaverywhip.com</span>
-                </div>
+              <div class="product-price mt-4">
+                <span class="text-secondary">Fiyat(HydraCoin):</span>
+                <span>950♆</span>
+              </div>
+              <div class="product-count mt-2">
+                <span class="text-secondary">Adet:</span>
+                <input
+                  type="number"
+                  class="form-control"
+                  value="1"
+                  min="1"
+                  max="10"
+                />
+              </div>
+              <div class="product-buttons mt-4">
+                <button class="btn btn-primary">Sepete Ekle</button>
+                <button class="btn btn-secondary">Satın Al</button>
               </div>
             </div>
           </div>
-          <div class="col-md-4">
-            <img
-              src="assets/map.png"
-              alt=""
-              class="img-fluid w-100"
-              style="height: 70vh"
-            />
+          <div class="col-md-5 mt-2">
+            <img src="../assets/monster-slave.png" alt="" class="img-fluid" />
           </div>
         </div>
       </div>

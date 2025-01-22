@@ -34133,4 +34133,43 @@ a {
   list-style: disc;
 }
 
+.product-detail .product-color .brown-container, .product-detail .product-color .green-container, .product-detail .product-color .blue-container, .product-detail .product-color .red-container, .product-detail .product-color .white-container, .product-detail .product-color .black-container {
+  width: 50px;
+  height: 50px;
+  background-color: brown;
+}
+.product-detail .product-color .black-container {
+  background-color: black;
+}
+.product-detail .product-color .white-container {
+  border: 1px solid black;
+  background-color: #fff;
+}
+.product-detail .product-color .red-container {
+  background-color: red;
+}
+.product-detail .product-color .blue-container {
+  background-color: blue;
+}
+.product-detail .product-color .green-container {
+  background-color: green;
+}
+.product-detail h1, .product-detail .h1 {
+  font-size: 2.2rem;
+  font-weight: 900;
+}
+.product-detail p {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+.product-detail h5, .product-detail .h5 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.product-detail span {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: #222222;
+}
+
 /*# sourceMappingURL=main.css.map */
