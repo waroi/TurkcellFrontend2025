@@ -1,23 +1,6 @@
 html {
   scroll-behavior: smooth;
 }
-
-@font-face {
-  font-family: 'RF Dewi Header';
-  src: url('/fonts/rf-dewi-ultrabold.ttf') format('truetype');
-  font-weight: 600;
-  font-display: swap;
-  /* swap özelliği yazı tipi yüklenene kadar sistem yazı tipinin görüntülenmesini sağlıyor */
-}
-
-@font-face {
-  font-family: 'RF Dewi';
-  src: url('/fonts/rf-dewi-regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
 $font-primary: 'RF Dewi Header', sans-serif;
 $font-secondary: 'RF Dewi', sans-serif;
 $mobile-width: 576px;
@@ -25,7 +8,7 @@ $tablet-width: 768px;
 $desktop-width: 992px;
 $spacing-base: 1rem;
 $grid-gap: 2rem;
-$banner-height: 100vh;
+$banner-height: 120vh;
 $pokemon-red: #DC0A2D;
 $pokemon-blue: #2A6EB5;
 $pokemon-yellow: #FFCB05;
@@ -45,32 +28,44 @@ $breakpoints: (
   'tablet': 768px,
   'desktop': 992px
 );
-
-// Mixins
+@font-face {
+  font-family: 'RF Dewi Header';
+  src: url('/fonts/rf-dewi-ultrabold.ttf') format('truetype');
+  font-weight: 600;
+  font-display: swap;
+  /* swap özelliği yazı tipi yüklenene kadar sistem yazı tipinin görüntülenmesini sağlıyor */
+}
+@font-face {
+  font-family: 'RF Dewi';
+  src: url('/fonts/rf-dewi-regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+// Mixin ve extendler
 @mixin flex-center {
   /*elemanların hem yatayda hem dikeyde ortalanması gereken yerlerde kullanıldı*/
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
+@mixin relative-flex-center {
+  position: relative;
+  @include flex-center;
+}
 @mixin grid-responsive {
   /*Mobil ekranlarda: Tek kolon
   Tablet ekranlarda: İki kolon
   Masaüstü ekranlarda: Üç kolon*/
-
   display: grid;
   gap: $grid-gap;
-
   @media (min-width: $tablet-width) {
     grid-template-columns: repeat(2, 1fr);
   }
-
   @media (min-width: $desktop-width) {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-
 @mixin hover-effect {
   /*yükseltme animasyonu sağlayan mixin*/
   transition: transform 0.3s ease;
@@ -79,15 +74,12 @@ $breakpoints: (
     transform: translateY(-5px);
   }
 }
-
-// Extends
 %card-base {
   background: #fff;
   border-radius: 1rem;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-
 %dark-card-base {
   background-color: $dark;
   border-radius: 1rem;
@@ -95,57 +87,101 @@ $breakpoints: (
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   color: #fff;
 }
-
 %heading-base {
   font-family: $font-primary;
   font-weight: 600;
   line-height: 1.2;
 }
+@mixin transition-base($property: all, $duration: 0.3s) {
+  transition: $property $duration ease;
+}
+@mixin flex($direction: row, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+@mixin position-absolute($top: 0, $left: 0, $width: 100%, $height: 100%) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  width: $width;
+  height: $height;
+}
+@mixin responsive-font($mobile-size, $desktop-size) {
+  font-size: $mobile-size;
+  @media (min-width: $tablet-width) {
+    font-size: $desktop-size;
+  }
+}
+@mixin card-hover-effect {
+  @include transition-base;
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  }
+}
+@mixin gradient-background($start-color, $end-color, $angle: 145deg) {
+  background: linear-gradient($angle, $start-color, $end-color);
+}
 
+%flex-container {
+  display: flex;
+  align-items: center;
+}
+%absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+%interactive-element {
+  cursor: pointer;
+  @include transition-base;
+}
+%section-padding {
+  padding: $spacing-base * 4 0;
+}
+%icon-base {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto $spacing-base;
+  border-radius: 50%;
+  @include flex-center;
+  @include transition-base;
+}
+%text-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
 body {
   font-family: $font-secondary;
   line-height: 1.6;
-
   &.no-scroll {
     overflow: hidden;
   }
 }
-
 .banner {
   position: relative;
   height: $banner-height;
   width: 100%;
-  overflow: hidden;
-  background-color: $dark-blue;
-
+  overflow: visible;
+  @include gradient-background($dark-blue, $dark);
   &__video-wrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    @include position-absolute;
     overflow: hidden;
     background: $dark-blue;
-
     &::after {
+      @include position-absolute;
       content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg,
-          rgba($dark-blue, 0.8),
-          rgba($dark, 0.9));
+      @include gradient-background($dark-blue, $dark, 135deg);
+      opacity: $overlay-opacity;
       z-index: 1;
     }
   }
-
   &__video-container {
     position: relative;
     width: 100%;
     height: 100%;
-
     iframe {
       position: absolute;
       top: 50%;
@@ -155,43 +191,37 @@ body {
       transform: translate(-50%, -50%) scale(1.5);
       pointer-events: none;
       border: none;
-
       @media (min-aspect-ratio: 16/9) {
         height: 56.25vw;
       }
-
       @media (max-aspect-ratio: 16/9) {
         width: 177.78vh;
       }
     }
   }
-
   &__content {
     position: relative;
-    display: flex;
+    @extend %flex-container;
     justify-content: space-between;
-    align-items: center;
     max-width: 1400px;
     height: 100%;
     margin: 0 auto;
     padding: 0 5%;
     z-index: 2;
-
     @media (max-width: $tablet-width) {
       flex-direction: column;
       justify-content: center;
       text-align: center;
       padding: $spacing-base;
+      margin-bottom: 100px; 
     }
   }
-
   &__text {
     flex: 0 1 60%;
     margin-right: 2rem;
     text-align: center;
     color: #fff; // Paragraf rengi beyaz kalacak
     animation: slideInLeft 1s ease-out;
-
     @media (max-width: $tablet-width) {
       flex: 0 1 auto;
       margin-right: 0;
@@ -199,108 +229,79 @@ body {
       width: 100%;
     }
   }
-
-  &__text {
-    flex: 0 1 60%;
-    margin-right: 2rem;
-    text-align: center;
-    color: #fff; // Paragraf rengi beyaz kalacak
-    animation: slideInLeft 1s ease-out;
-
-    @media (max-width: $tablet-width) {
-      flex: 0 1 auto;
-      margin-right: 0;
-      margin-bottom: 2rem;
-      width: 100%;
-    }
-  }
-
   &__logo {
     margin: $spacing-base 0;
     font-size: 8vw;
-
     .poke-logo {
       max-width: 100%;
       height: auto;
       filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.3));
     }
-
     .poke-ball {
       width: 7vw;
       height: auto;
     }
   }
-
   &__subtitle {
-    font-size: 1.5rem;
+    @include responsive-font(1.2rem, 1.5rem);
     line-height: 1.4;
     margin-bottom: $spacing-base * 2;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-
+    @extend %text-shadow;
     @media (max-width: $tablet-width) {
       font-size: 1.2rem;
     }
   }
-
   &__cta {
+    @extend %interactive-element;
     display: inline-block;
     padding: $spacing-base $spacing-base * 2;
-    font-size: 1.25rem;
+    @include responsive-font(1rem, 1.25rem);
     text-transform: uppercase;
     letter-spacing: 1px;
     border-radius: 2rem;
-    transition: all 0.3s ease;
     background-color: $pokemon-red;
     color: #fff;
     border: none;
-
     &:hover {
       transform: translateY(-2px);
       background-color: lighten($pokemon-red, 10%);
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
   }
-
   &__image {
     flex: 0 1 40%;
     display: flex;
     justify-content: center;
     align-items: center;
     animation: slideInRight 1s ease-out;
-
     @media (max-width: $tablet-width) {
       flex: 0 1 auto;
-      max-width: 70%; // Mobilde daha küçük olacak
+      max-width: 70%; // daha küçük olacak
       margin: 0 auto;
+      display:none;
     }
-
     @media (max-width: $mobile-width) {
-      max-width: 60%; // Daha küçük ekranlarda daha da küçük
+      max-width: 60%; // mobil de daha da küçük
     }
   }
-
   .pokedex-container {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-
     .pokedex {
       max-height: 400px;
       width: 100%;
       height: auto;
       object-fit: contain;
       transition: transform 0.3s ease;
-
       @media (max-width: $tablet-width) {
         max-height: 250px;
       }
-
       @media (max-width: $mobile-width) {
         max-height: 200px;
       }
     }
-
     .pokedex-music {
       left: 60%;
       color: white;
@@ -315,7 +316,6 @@ body {
         font-size: 0.9rem;
         display: none;
       }
-
       .audio {
         margin-top: 20px;
         width: 100%;
@@ -324,33 +324,27 @@ body {
     }
   }
 }
-
 @keyframes slideInLeft {
   from {
     opacity: 0;
     transform: translateX(-100px);
   }
-
   to {
     opacity: 1;
     transform: translateX(0);
   }
 }
-
 @keyframes slideInRight {
   from {
     opacity: 0;
     transform: translateX(100px);
   }
-
   to {
     opacity: 1;
     transform: translateX(0);
   }
 }
-
 .pokemon-card {
-
   position: relative;
   height: 300px;
   padding: $spacing-base * 1.25;
@@ -359,30 +353,84 @@ body {
   align-items: center;
   transition: 0.5s ease-in-out;
   cursor: pointer;
-
-  &:hover {
-    background: linear-gradient(145deg, $dark-blue, $dark);
+  // mobile ve tablet
+  @media (max-width: $desktop-width) {
     height: 500px;
-    @include hover-effect;
-    @extend %dark-card-base;
+    background: linear-gradient(145deg, $dark-blue, $dark);
+    background-color: $dark;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    .image {
+      margin-bottom: 100px;
+      margin-top: -20px;
+      .pokeball {
+        opacity: 0;
+        animation: none;
+      }
+      .pokemon {
+        opacity: 1;
+      }
+      .pokemon-hint {
+        display: none;
+      }
+    }
+    .pokemon-card__content {
+      position: relative;
+      top: -120px;
+      width: 100%;
+      padding: $spacing-base $spacing-base * 1.5;
+      color: #fff;
+      text-align: center;
+      visibility: visible;
+      opacity: 1;;
+      margin-top: $spacing-base;
+    }
   }
-
-  .pokemon-card__content {
-    background: linear-gradient(145deg, rgba($dark-blue, 0.95), rgba($dark, 0.95));
+  // Desktop hover
+  @media (min-width: $desktop-width) {
+    &:hover {
+      background: linear-gradient(145deg, $dark-blue, $dark);
+      height: 500px;
+      @include hover-effect;
+      background-color: $dark;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      color: #fff;
+      .image {
+        .pokeball {
+          opacity: 0;
+          animation: none;
+        }
+        .pokemon {
+          opacity: 1;
+        }
+        .pokemon-hint {
+          opacity: 0;
+          transform: translateX(-50%) translateY(10px);
+        }
+        .pokeball-container::before {
+          animation: none;
+        }
+      }
+      .pokemon-card__content {
+        margin-top: $spacing-base;
+        visibility: visible;
+        opacity: 1;
+        transition-delay: 0.2s;
+      }
+    }
   }
-
   .image {
     width: 260px;
     height: 260px;
     margin-bottom: 100px;
     margin-top: -20px;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include relative-flex-center;
     z-index: 1;
   }
-
   .pokeball-container {
     position: relative;
     width: 100%;
@@ -391,16 +439,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
-    &::before {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-    }
   }
-
   .pokeball {
     width: 100%;
     height: 100%;
@@ -410,7 +449,18 @@ body {
     animation: shake 0.5s ease-in-out infinite;
     transition: opacity 0.3s ease-in-out;
   }
-
+  .pokemon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    padding: $spacing-base;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
   .pokemon-hint {
     position: absolute;
     bottom: -30px;
@@ -426,47 +476,10 @@ body {
     transition: all 0.3s ease;
     white-space: nowrap;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-
-    @media (hover: none) {
-      content: "Tap to reveal";
+    @media (max-width: $desktop-width) {
+      display: none;
     }
   }
-
-  .pokemon {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    padding: $spacing-base;
-    object-fit: contain;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-  }
-
-  &:hover {
-    .image {
-      .pokeball {
-        opacity: 0;
-        animation: none;
-      }
-
-      .pokemon {
-        opacity: 1;
-      }
-
-      .pokemon-hint {
-        opacity: 0;
-        transform: translateX(-50%) translateY(10px);
-      }
-
-      .pokeball-container::before {
-        animation: none;
-      }
-    }
-  }
-
   &__content {
     position: relative;
     top: -120px;
@@ -476,44 +489,30 @@ body {
     text-align: center;
     visibility: hidden;
     opacity: 0;
-    transition: 0.3s ease-in-out;
-
+    @include transition-base;
     h3 {
       @extend %heading-base;
       font-size: 1.5rem;
       margin-bottom: $spacing-base * 0.5;
     }
-
     p {
       font-family: $font-secondary;
       margin-bottom: $spacing-base;
     }
   }
-
-  &:hover &__content {
-    margin-top: $spacing-base;
-    visibility: visible;
-    opacity: 1;
-    transition-delay: 0.2s;
-  }
 }
-
 @keyframes shake {
-
   0%,
   100% {
     transform: rotate(0);
   }
-
   25% {
     transform: rotate(-10deg);
   }
-
   75% {
     transform: rotate(10deg);
   }
 }
-
 // Products Grid
 .products-grid {
   @include grid-responsive;
@@ -525,13 +524,10 @@ body {
     padding: $spacing-base * 3;
   }
 }
-
 // Bestsellers Section
 .featured-products {
   padding: $spacing-base * 3 0;
   background: linear-gradient(145deg, $dark-blue, $dark);
-
-
   h2 {
     @extend %heading-base;
     color: $dark;
@@ -539,27 +535,23 @@ body {
     text-align: center;
     margin-bottom: $spacing-base * 3;
     font-size: 2.5rem;
-
     @media (min-width: map-get($breakpoints, 'tablet')) {
       font-size: 3rem;
     }
   }
 }
-
 // Custom Button Mixin
 @mixin custom-button($background) {
   background-color: $background;
   border-color: darken($background, 10%);
   color: #fff;
   transition: all 0.3s ease;
-
   &:hover {
     background-color: darken($background, 10%);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   }
 }
-
 // kart butonları tasarımı
 .btn-primary {
   @include custom-button($pokemon-red);
@@ -569,19 +561,20 @@ body {
   letter-spacing: 1px;
   font-weight: 600;
   font-size: 0.9rem;
-
+  @media (max-width: $mobile-width) {
+    font-size: 0.75rem;
+    padding: $spacing-base $spacing-base * 1.25;
+  }
   &:hover {
     background-color: $light-red;
     border-color: $pokemon-red;
   }
 }
-
 .featured-products {
   position: relative;
   overflow: hidden;
   padding: 3rem 0;
 }
-
 .pikachu-ad {
   background-color: $pokemon-red;
   width: 100%;
@@ -595,12 +588,10 @@ body {
   padding: 1rem;
   overflow: hidden;
   z-index: 5;
-
   @media (max-width: 768px) {
     height: 60px;
   }
 }
-
 .pikachu-text-container {
   position: absolute;
   bottom: 0;
@@ -612,7 +603,6 @@ body {
   will-change: transform;
   height: 100%;
 }
-
 .running-text {
   color: #fff;
   font-size: 1.2rem;
@@ -620,168 +610,132 @@ body {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   white-space: nowrap;
   margin: 0 2rem;
-
   @media (max-width: 768px) {
     font-size: 0.9rem;
     margin: 0 1rem;
   }
-
   @media (max-width: 480px) {
     font-size: 0.8rem;
     margin: 0 0.5rem;
   }
 }
-
 .pikachu-runner-after-text {
   width: 80px;
   height: 80px;
   flex-shrink: 0;
-
   @media (max-width: 768px) {
     width: 50px;
     height: 50px;
   }
-
   @media (max-width: 480px) {
     width: 40px;
     height: 40px;
   }
 }
-
 .pikachu-runner-after-text img {
   width: 100%;
   height: 100%;
   object-fit: contain;
   transform: scaleX(-1);
 }
-
 @keyframes runBottom {
   0% {
     transform: translateX(0);
   }
-
   100% {
     transform: translateX(-100%);
   }
 }
-
 @media (max-width: 360px) {
   .pikachu-text-container:nth-child(2) {
     display: none;
   }
-
   .pikachu-text-container {
     animation-duration: 20s;
   }
 }
-
 // Footer with Flexbox and Grid
 .footer {
   background: $dark;
   color: #fff;
   padding: $spacing-base * 2 0;
-
   &__grid {
     display: grid;
     gap: $spacing-base * 2;
-
     @media (min-width: map-get($breakpoints, 'tablet')) {
       grid-template-columns: repeat(3, 1fr);
     }
   }
-
   &__links {
     @include flex-center;
     flex-direction: column;
     align-items: flex-start;
-
     a {
       color: #fff;
       text-decoration: none;
       padding: $spacing-base * 0.5 0;
-
       &:hover {
         color: $pokemon-yellow;
       }
     }
   }
 }
-
 // About Section Styles
 .about-section {
   background: url('../assets/aboutbg.png') center/cover no-repeat;
   padding: $spacing-base * 4 0;
-
   h2 {
     @extend %heading-base;
     color: $dark;
     font-size: 2.5rem;
     margin-bottom: $spacing-base * 3;
-
     @media (min-width: map-get($breakpoints, 'tablet')) {
       font-size: 3rem;
     }
   }
 }
-
 .about-grid {
   display: grid;
   gap: $spacing-base * 2;
   padding: $spacing-base;
-
   @media (min-width: map-get($breakpoints, 'tablet')) {
     grid-template-columns: repeat(2, 1fr);
   }
-
   @media (min-width: map-get($breakpoints, 'desktop')) {
     grid-template-columns: repeat(4, 1fr);
   }
 }
-
 .about-card {
   @extend %card-base;
+  @extend %interactive-element;
   padding: $spacing-base * 2;
   text-align: center;
-  transition: all 0.3s ease;
-
   &:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-
+    @include card-hover-effect;
     .about-card__icon {
-      background: linear-gradient(145deg, $pokemon-blue, $dark-blue);
-
+      @include gradient-background($pokemon-blue, $dark-blue);
       img {
         transform: rotate(360deg);
       }
     }
   }
-
   h3 {
     @extend %heading-base;
     color: $dark;
     font-size: 1.5rem;
     margin: $spacing-base 0;
   }
-
   p {
     color: $gray;
     margin-bottom: 0;
     line-height: 1.6;
   }
 }
-
 .about-card__icon {
+  @extend %icon-base;
   width: 80px;
   height: 80px;
-  margin: 0 auto $spacing-base;
-  background: linear-gradient(145deg, $pokemon-red, $accent);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-
+  @include gradient-background($pokemon-red, $accent);
   img {
     width: 60%;
     height: 60%;
@@ -789,81 +743,65 @@ body {
     transition: all 0.6s ease;
   }
 }
-
-
 // FAQ Section Styles
 .faq-section {
   background: $pokemon-yellow;
   padding: $spacing-base * 4 0;
-
   h2 {
     @extend %heading-base;
     color: $dark;
     font-size: 2.5rem;
     margin-bottom: $spacing-base * 3;
-
     @media (min-width: map-get($breakpoints, 'tablet')) {
       font-size: 3rem;
     }
   }
 }
-
 .faq-grid {
   display: grid;
   gap: $spacing-base * 2;
   padding: $spacing-base;
-
   @media (min-width: map-get($breakpoints, 'tablet')) {
     grid-template-columns: repeat(2, 1fr);
   }
-
   @media (min-width: map-get($breakpoints, 'desktop')) {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-
 .faq-card {
   @extend %card-base;
+  @extend %interactive-element;
   padding: $spacing-base * 2;
-  transition: all 0.3s ease;
-
   &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    @include card-hover-effect;
   }
-
   h3 {
     @extend %heading-base;
     color: $pokemon-blue;
     font-size: 1.25rem;
     margin-bottom: $spacing-base;
   }
-
   p {
     color: $gray;
     margin-bottom: 0;
     line-height: 1.6;
   }
 }
-
 // Contact Section Styles
 .contact-section {
   background: url('../assets/contactbg.jpg') center/cover no-repeat;
   padding: $spacing-base * 4 0;
-
   h2 {
     @extend %heading-base;
     color: $dark;
     font-size: 2.5rem;
     text-shadow: 2px 2px 4px rgba($pokemon-blue, 0.2);
     margin-bottom: $spacing-base * 3;
-
     @media (min-width: map-get($breakpoints, 'tablet')) {
       font-size: 3rem;
     }
   }
 }
-
 .contact-grid {
   display: grid;
   gap: $spacing-base * 3;
@@ -872,38 +810,30 @@ body {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
 .contact-info {
   display: grid;
   gap: $spacing-base * 2;
 }
-
 .contact-card {
   @extend %card-base;
+  @extend %interactive-element;
   padding: $spacing-base * 2;
   text-align: center;
-  transition: all 0.3s ease;
-
   &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-
+    @include card-hover-effect;
     .contact-icon {
-      background: linear-gradient(145deg, $pokemon-blue, $dark-blue);
-
+      @include gradient-background($pokemon-blue, $dark-blue);
       img {
         transform: rotate(360deg);
       }
     }
   }
-
   h3 {
     @extend %heading-base;
     color: $dark;
     font-size: 1.5rem;
     margin: $spacing-base 0;
   }
-
   p,
   address {
     color: $gray;
@@ -911,18 +841,15 @@ body {
     line-height: 1.6;
     font-style: normal;
   }
-
   a {
     color: $pokemon-blue;
     text-decoration: none;
     transition: color 0.3s ease;
-
     &:hover {
       color: $dark-blue;
     }
   }
 }
-
 .contact-icon {
   width: 60px;
   height: 60px;
@@ -933,7 +860,6 @@ body {
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
-
   img {
     width: 60%;
     height: 60%;
@@ -941,34 +867,28 @@ body {
     transition: all 0.6s ease;
   }
 }
-
 .contact-form {
   @extend %card-base;
   padding: $spacing-base * 2;
   background: rgba(255, 255, 255, 0.95);
-
   .form-label {
     color: $dark;
     font-weight: 500;
     margin-bottom: $spacing-base * 0.5;
   }
-
   .form-control {
     border: 2px solid $light-gray;
     border-radius: 0.5rem;
     padding: $spacing-base * 0.75;
     transition: all 0.3s ease;
-
     &:focus {
       border-color: $pokemon-blue;
       box-shadow: 0 0 0 0.2rem rgba($pokemon-blue, 0.25);
     }
   }
-
   textarea.form-control {
     resize: vertical;
   }
-
   .btn-primary {
     width: 100%;
     margin-top: $spacing-base;
@@ -976,44 +896,37 @@ body {
 }
 
 // Product Detail Pages Styles
-
 .product-detail {
   padding: 2rem 0;
   background: linear-gradient(145deg, #2A6EB5, #1A1A1A);
   min-height: 80vh;
   color: white;
 }
-
 .product-image {
   max-width: 100%;
   height: auto;
   border-radius: 1rem;
   transition: transform 0.3s ease;
 }
-
 .product-image:hover {
   transform: scale(1.05);
 }
-
 .product-info {
   padding: 2rem;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 1rem;
 }
-
 .price {
   font-size: 2rem;
   color: #FFCB05;
   font-weight: bold;
 }
-
 .stats {
   background: rgba(0, 0, 0, 0.2);
   padding: 1rem;
   border-radius: 0.5rem;
   margin: 1rem 0;
 }
-
 .btn-add-to-cart {
   background-color: #DC0A2D;
   border: none;
@@ -1021,7 +934,6 @@ body {
   font-size: 1.2rem;
   transition: all 0.3s ease;
 }
-
 .btn-add-to-cart:hover {
   background-color: #ff1f1f;
   transform: translateY(-2px);

@@ -11899,18 +11899,36 @@ html {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.pokemon-card:hover {
-  background-color: #1A1A1A;
-  border-radius: 1rem;
-  overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  color: #fff;
-}
-
 .contact-card h3, .contact-card .h3, .contact-section h2, .contact-section .h2, .faq-card h3, .faq-card .h3, .faq-section h2, .faq-section .h2, .about-card h3, .about-card .h3, .about-section h2, .about-section .h2, .featured-products h2, .featured-products .h2, .pokemon-card__content h3, .pokemon-card__content .h3 {
   font-family: "RF Dewi Header", sans-serif;
   font-weight: 600;
   line-height: 1.2;
+}
+
+.banner__content {
+  display: flex;
+  align-items: center;
+}
+
+.contact-card, .faq-card, .about-card, .banner__cta {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.about-card__icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  /*elemanların hem yatayda hem dikeyde ortalanması gereken yerlerde kullanıldı*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.banner__subtitle {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 body {
@@ -11923,10 +11941,10 @@ body.no-scroll {
 
 .banner {
   position: relative;
-  height: 100vh;
+  height: 120vh;
   width: 100%;
-  overflow: hidden;
-  background-color: rgb(27.5919282511, 72.264573991, 118.9080717489);
+  overflow: visible;
+  background: linear-gradient(145deg, rgb(27.5919282511, 72.264573991, 118.9080717489), #1A1A1A);
 }
 .banner__video-wrapper {
   position: absolute;
@@ -11938,13 +11956,14 @@ body.no-scroll {
   background: rgb(27.5919282511, 72.264573991, 118.9080717489);
 }
 .banner__video-wrapper::after {
-  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(27.5919282511, 72.264573991, 118.9080717489, 0.8), rgba(26, 26, 26, 0.9));
+  content: "";
+  background: linear-gradient(135deg, rgb(27.5919282511, 72.264573991, 118.9080717489), #1A1A1A);
+  opacity: 0.7;
   z-index: 1;
 }
 .banner__video-container {
@@ -11974,9 +11993,7 @@ body.no-scroll {
 }
 .banner__content {
   position: relative;
-  display: flex;
   justify-content: space-between;
-  align-items: center;
   max-width: 1400px;
   height: 100%;
   margin: 0 auto;
@@ -11989,21 +12006,7 @@ body.no-scroll {
     justify-content: center;
     text-align: center;
     padding: 1rem;
-  }
-}
-.banner__text {
-  flex: 0 1 60%;
-  margin-right: 2rem;
-  text-align: center;
-  color: #fff;
-  animation: slideInLeft 1s ease-out;
-}
-@media (max-width: 768px) {
-  .banner__text {
-    flex: 0 1 auto;
-    margin-right: 0;
-    margin-bottom: 2rem;
-    width: 100%;
+    margin-bottom: 100px;
   }
 }
 .banner__text {
@@ -12035,10 +12038,14 @@ body.no-scroll {
   height: auto;
 }
 .banner__subtitle {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   line-height: 1.4;
   margin-bottom: 2rem;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+@media (min-width: 768px) {
+  .banner__subtitle {
+    font-size: 1.5rem;
+  }
 }
 @media (max-width: 768px) {
   .banner__subtitle {
@@ -12048,14 +12055,18 @@ body.no-scroll {
 .banner__cta {
   display: inline-block;
   padding: 1rem 2rem;
-  font-size: 1.25rem;
+  font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   border-radius: 2rem;
-  transition: all 0.3s ease;
   background-color: #DC0A2D;
   color: #fff;
   border: none;
+}
+@media (min-width: 768px) {
+  .banner__cta {
+    font-size: 1.25rem;
+  }
 }
 .banner__cta:hover {
   transform: translateY(-2px);
@@ -12074,6 +12085,7 @@ body.no-scroll {
     flex: 0 1 auto;
     max-width: 70%;
     margin: 0 auto;
+    display: none;
   }
 }
 @media (max-width: 576px) {
@@ -12156,17 +12168,77 @@ body.no-scroll {
   transition: 0.5s ease-in-out;
   cursor: pointer;
 }
-.pokemon-card:hover {
-  background: linear-gradient(145deg, rgb(27.5919282511, 72.264573991, 118.9080717489), #1A1A1A);
-  height: 500px;
-  /*yükseltme animasyonu sağlayan mixin*/
-  transition: transform 0.3s ease;
+@media (max-width: 992px) {
+  .pokemon-card {
+    height: 500px;
+    background: linear-gradient(145deg, rgb(27.5919282511, 72.264573991, 118.9080717489), #1A1A1A);
+    background-color: #1A1A1A;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #fff;
+  }
+  .pokemon-card .image {
+    margin-bottom: 100px;
+    margin-top: -20px;
+  }
+  .pokemon-card .image .pokeball {
+    opacity: 0;
+    animation: none;
+  }
+  .pokemon-card .image .pokemon {
+    opacity: 1;
+  }
+  .pokemon-card .image .pokemon-hint {
+    display: none;
+  }
+  .pokemon-card .pokemon-card__content {
+    position: relative;
+    top: -120px;
+    width: 100%;
+    padding: 1rem 1.5rem;
+    color: #fff;
+    text-align: center;
+    visibility: visible;
+    opacity: 1;
+    margin-top: 1rem;
+  }
 }
-.pokemon-card:hover:hover {
-  transform: translateY(-5px);
-}
-.pokemon-card .pokemon-card__content {
-  background: linear-gradient(145deg, rgba(27.5919282511, 72.264573991, 118.9080717489, 0.95), rgba(26, 26, 26, 0.95));
+@media (min-width: 992px) {
+  .pokemon-card:hover {
+    background: linear-gradient(145deg, rgb(27.5919282511, 72.264573991, 118.9080717489), #1A1A1A);
+    height: 500px;
+    /*yükseltme animasyonu sağlayan mixin*/
+    transition: transform 0.3s ease;
+    background-color: #1A1A1A;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #fff;
+  }
+  .pokemon-card:hover:hover {
+    transform: translateY(-5px);
+  }
+  .pokemon-card:hover .image .pokeball {
+    opacity: 0;
+    animation: none;
+  }
+  .pokemon-card:hover .image .pokemon {
+    opacity: 1;
+  }
+  .pokemon-card:hover .image .pokemon-hint {
+    opacity: 0;
+    transform: translateX(-50%) translateY(10px);
+  }
+  .pokemon-card:hover .image .pokeball-container::before {
+    animation: none;
+  }
+  .pokemon-card:hover .pokemon-card__content {
+    margin-top: 1rem;
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0.2s;
+  }
 }
 .pokemon-card .image {
   width: 260px;
@@ -12174,6 +12246,7 @@ body.no-scroll {
   margin-bottom: 100px;
   margin-top: -20px;
   position: relative;
+  /*elemanların hem yatayda hem dikeyde ortalanması gereken yerlerde kullanıldı*/
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12188,13 +12261,6 @@ body.no-scroll {
   align-items: center;
   justify-content: center;
 }
-.pokemon-card .pokeball-container::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-}
 .pokemon-card .pokeball {
   width: 100%;
   height: 100%;
@@ -12202,6 +12268,18 @@ body.no-scroll {
   padding: 1rem;
   object-fit: contain;
   animation: shake 0.5s ease-in-out infinite;
+  transition: opacity 0.3s ease-in-out;
+}
+.pokemon-card .pokemon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  padding: 1rem;
+  object-fit: contain;
+  opacity: 0;
   transition: opacity 0.3s ease-in-out;
 }
 .pokemon-card .pokemon-hint {
@@ -12220,36 +12298,10 @@ body.no-scroll {
   white-space: nowrap;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
-@media (hover: none) {
+@media (max-width: 992px) {
   .pokemon-card .pokemon-hint {
-    content: "Tap to reveal";
+    display: none;
   }
-}
-.pokemon-card .pokemon {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  padding: 1rem;
-  object-fit: contain;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-}
-.pokemon-card:hover .image .pokeball {
-  opacity: 0;
-  animation: none;
-}
-.pokemon-card:hover .image .pokemon {
-  opacity: 1;
-}
-.pokemon-card:hover .image .pokemon-hint {
-  opacity: 0;
-  transform: translateX(-50%) translateY(10px);
-}
-.pokemon-card:hover .image .pokeball-container::before {
-  animation: none;
 }
 .pokemon-card__content {
   position: relative;
@@ -12260,7 +12312,7 @@ body.no-scroll {
   text-align: center;
   visibility: hidden;
   opacity: 0;
-  transition: 0.3s ease-in-out;
+  transition: all 0.3s ease;
 }
 .pokemon-card__content h3, .pokemon-card__content .h3 {
   font-size: 1.5rem;
@@ -12269,12 +12321,6 @@ body.no-scroll {
 .pokemon-card__content p {
   font-family: "RF Dewi", sans-serif;
   margin-bottom: 1rem;
-}
-.pokemon-card:hover .pokemon-card__content {
-  margin-top: 1rem;
-  visibility: visible;
-  opacity: 1;
-  transition-delay: 0.2s;
 }
 
 @keyframes shake {
@@ -12347,6 +12393,12 @@ body.no-scroll {
   background-color: rgb(171.2173913043, 7.7826086957, 35.0217391304);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+@media (max-width: 576px) {
+  .btn-primary {
+    font-size: 0.75rem;
+    padding: 1rem 1.25rem;
+  }
 }
 .btn-primary:hover {
   background-color: rgb(246.152173913, 60.347826087, 91.3152173913);
@@ -12518,10 +12570,12 @@ body.no-scroll {
 .about-card {
   padding: 2rem;
   text-align: center;
-  transition: all 0.3s ease;
 }
 .about-card:hover {
-  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+.about-card:hover:hover {
+  transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 .about-card:hover .about-card__icon {
@@ -12544,13 +12598,7 @@ body.no-scroll {
 .about-card__icon {
   width: 80px;
   height: 80px;
-  margin: 0 auto 1rem;
   background: linear-gradient(145deg, #DC0A2D, #DC0A2D);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
 }
 .about-card__icon img {
   width: 60%;
@@ -12592,9 +12640,11 @@ body.no-scroll {
 
 .faq-card {
   padding: 2rem;
-  transition: all 0.3s ease;
 }
 .faq-card:hover {
+  transition: all 0.3s ease;
+}
+.faq-card:hover:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
@@ -12643,9 +12693,11 @@ body.no-scroll {
 .contact-card {
   padding: 2rem;
   text-align: center;
-  transition: all 0.3s ease;
 }
 .contact-card:hover {
+  transition: all 0.3s ease;
+}
+.contact-card:hover:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
