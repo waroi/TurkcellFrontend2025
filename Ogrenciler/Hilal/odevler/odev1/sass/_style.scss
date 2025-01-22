@@ -1,4 +1,31 @@
 $button-border: 1px solid rgba(0, 255, 255, 0.3);
+$button-box-shadow: 0 5px 20px $danger, 0 0 20px rgba(0, 255, 255, 0.6);
+$button-success-border: 1px solid $success;
+$star-glow-animation: star-glow 2s infinite alternate ease-in-out;
+$move-star-animation: move-star 1s ease-in forwards;
+
+.background-image-common-class {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+@mixin star-animation($delay, $top, $left, $animation) {
+  animation: $animation;
+  animation-delay: $delay;
+  top: $top;
+  left: $left;
+}
+@mixin background-image-common($image) {
+  background-image: url($image);
+}
+.stars {
+  @include background-image-common(
+    "https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars.png"
+  );
+  @extend .background-image-common-class;
+  z-index: -5;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -8,13 +35,31 @@ h3,
 h4,
 h5 {
   font-weight: bold;
-} //mixinler?
+}
 body {
-  background-image: url("../assets/background.png");
-  background-attachment: fixed;
+  @include background-image-common("../assets/background.png");
 }
 header {
   font-family: "Orbitron", serif;
+  .search-button {
+    transition: all 1s ease-in forwards;
+    &:hover {
+      background-color: transparent;
+      box-shadow: $box-shadow;
+    }
+  }
+  .search-input {
+    transition: all 0.1 ease-in forwards;
+    border-bottom: 1px solid $light;
+    &:focus {
+      transition: all 1s ease-in forwards;
+      border: 1px solid $secondary;
+    }
+    &::placeholder {
+      font-size: smaller;
+      color: rgb(109, 107, 107);
+    }
+  }
 }
 section,
 footer {
@@ -22,14 +67,13 @@ footer {
 }
 .img-wrapper {
   max-height: 400px;
-} //silincek mi?
+}
 input {
   background-color: $light; //TODO: HTMl içine alınabilir
 }
 footer {
   color: $light; //TODO:footerdaki text-white etiketi silince otomatik olucak zaten.inherit oalrak.
 }
-
 .main-card {
   background: linear-gradient(
     120deg,
@@ -39,7 +83,7 @@ footer {
     #301729,
     #412f2f
   );
-  box-shadow: $box-shadow; //TODO:normalde bt_override da tanımlandı ama nedense şie yaramadı zaman kalırsa kontrol et.
+  box-shadow: $box-shadow; //TODO:normalde bt_override da tanımlandı ama nedense işe yaramadı zaman kalırsa kontrol et.
   // animation: sliding-card 0.7s ease-out forwards;
   background-attachment: fixed;
 }
@@ -59,58 +103,39 @@ footer {
     }
   }
 }
-.search-button {
-  transition: all 1s ease-in forwards;
-  &:hover {
-    background-color: transparent;
-    box-shadow: $box-shadow;
-  }
-}
-.search-input {
-  transition: all 0.1 ease-in forwards;
-  border-bottom: 1px solid $light;
-  &:focus {
-    transition: all 1s ease-in forwards;
-    border: 1px solid $secondary;
-  }
-  &::placeholder {
-    font-size: smaller;
-    color: rgb(109, 107, 107);
-  }
-}
-.stars {
-  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars.png")
-    repeat;
-  z-index: -2;
-  background-attachment: fixed;
-}
 .star {
   width: 5px;
   height: 5px;
   background: linear-gradient(45deg, $light, rgba(255, 255, 255, 0.2));
   border-radius: 50%;
   box-shadow: 0 0 10px $light, 0 0 20px $light;
-  animation: star-glow 1.3s ease-in forwards;
-  animation: star-glow 2s infinite alternate ease-in-out;
+  animation: $star-glow-animation;
+  z-index: -1;
 }
 .star:nth-child(1) {
-  top: 20%;
-  right: 15%;
-  animation: move-star 1.3s ease-in forwards 5s;
+  @include star-animation(5s, 5%, 70%, none);
 }
+
 .star:nth-child(2) {
-  animation: move-star 1.3s ease-in forwards 10s;
-  top: 50%;
-  left: 15%;
+  @include star-animation(10s, 50%, 15%, $move-star-animation);
 }
+
 .star:nth-child(3) {
-  top: 80%;
-  left: 20%;
+  @include star-animation(7s, 10%, 10%, $move-star-animation);
 }
+
 .star:nth-child(4) {
-  top: 10%;
-  left: 80%;
+  @include star-animation(3s, 10%, 80%, none);
 }
+
+.star:nth-child(5) {
+  @include star-animation(4s, 10%, 20%, $move-star-animation);
+}
+
+.star:nth-child(6) {
+  @include star-animation(6s, 20%, 80%, none);
+}
+
 .light {
   height: 100%;
   width: 100%;
@@ -134,6 +159,54 @@ footer {
 }
 .retro-background {
   background-color: rgba(0, 0, 0, 0.5);
+}
+.retro-girl-overlay {
+  @include background-image-common("../assets/retroGirl.png");
+}
+.retro-girl-overlay,
+.allien {
+  left: 20%;
+  z-index: -2;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center right;
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 87%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  mask-position: bottom;
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+}
+.allien {
+  @include background-image-common("../assets/allien.png");
+}
+.ufo,
+.ball {
+  right: -20%;
+  top: -330px;
+  z-index: -3;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+.ufo {
+  @include background-image-common("../assets/ufo.png");
+  transform: scale(0.7) rotate(-20deg);
+  animation: flyIn 3s ease-in-out forwards;
+  perspective: 1000px;
+}
+.hand {
+  @include background-image-common("../assets/hand.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: -3;
+}
+.ball {
+  @include background-image-common("../assets/ball.png");
+  transform: scale(0.5) translate(450px, 250px) rotate(-40deg);
 }
 .card {
   overflow: hidden;
@@ -160,8 +233,8 @@ footer {
   .btn:not(.navbar .btn, .navbar button) {
     transform: scale(1.05);
   }
-  box-shadow: 0 5px 20px $danger, 0 0 20px rgba(0, 255, 255, 0.6);
-  border: 1px solid $success;
+  box-shadow: $button-box-shadow;
+  border: $button-success-border;
   .img-wrapper img {
     transform: scale(1.05);
     object-position: center;
@@ -185,7 +258,7 @@ footer {
   letter-spacing: 2px;
   animation: neon-glow 1.5s ease-in-out infinite alternate;
 }
-.carousel-img-wrapper {
+.musteri-yorum .carousel-img-wrapper {
   max-height: 500px;
 }
 @keyframes move-star {
@@ -194,7 +267,7 @@ footer {
     opacity: 1;
   }
   to {
-    transform: translateX(-100px) translateY(400px) scale(0.5);
+    transform: translateX(-100px) translateY(300px) scale(0.5);
     opacity: 0;
   }
 }
@@ -270,5 +343,15 @@ footer {
     transform: scale(1);
     box-shadow: 0 0 5px $light, 0 0 10px $light, 0 0 20px #f2994a;
     opacity: 0.9;
+  }
+}
+@keyframes flyIn {
+  0% {
+    transform: translate3d(-1200px, -100px, -1000px) scale(0.1) rotate(10deg);
+    width: 10%;
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(0.7) rotate(-40deg);
+    width: 100%;
   }
 }
