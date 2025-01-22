@@ -1,8 +1,52 @@
+@mixin transition($property: all, $duration: 0.3s) {
+	transition: $property $duration ease;
+}
+
+@mixin image-cover {
+	object-fit: cover;
+}
+
+@mixin card-hover {
+	@include transition(transform);
+	&:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	}
+}
+
+@mixin text-clamp($lines: 3) {
+	display: -webkit-box;
+	-webkit-line-clamp: $lines;
+	line-clamp: $lines;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+@mixin flex-center {
+	display: flex;
+	align-items: center;
+}
+
+@mixin badge-style($bg-color) {
+	background-color: $bg-color;
+}
+
+@mixin animation($name, $duration, $timing: linear, $iteration: infinite) {
+	animation: $name $duration $timing $iteration;
+}
+
+@mixin hide-scrollbar {
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
+
 .discount {
 	overflow: hidden;
 	.animatedText {
 		height: 30px;
-		animation: slideLeft 20s linear infinite;
+		@include animation(slideLeft, 20s);
 		white-space: nowrap;
 		display: flex;
 		position: relative;
@@ -18,50 +62,42 @@
 				height: 100%;
 				img {
 					height: 400px;
-					object-fit: cover;
+					@include image-cover;
 				}
 			}
 		}
 	}
 }
+
 .scrollable-categories {
 	overflow: auto;
-
-	&::-webkit-scrollbar {
-		display: none;
-	}
+	@include hide-scrollbar;
 
 	img {
 		border-radius: 50%;
 		width: 100px;
 		height: 100px;
-		object-fit: cover;
+		@include image-cover;
 	}
 }
+
 .superhero-card {
 	.card {
-		transition: transform 0.3s ease, box-shadow 0.3s ease;
+		@include card-hover;
 		border: 1px solid rgba(0, 0, 0, 0.125);
-
-		&:hover {
-			transform: translateY(-5px);
-			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-			border: 1px solid rgba(0, 0, 0, 0.125);
-		}
 	}
 	.superhero-card-image {
 		height: 250px;
-		object-fit: cover;
+		@include image-cover;
 	}
 }
 
 .product-detail {
-	.product-image {
-		img {
-			width: 75%;
-			border-radius: 8px;
-		}
+	.product-image img {
+		width: 75%;
+		border-radius: 8px;
 	}
+
 	.product-details {
 		.product-title {
 			margin-bottom: 1rem;
@@ -87,16 +123,17 @@
 		}
 	}
 }
+
 .animated-btn {
 	position: relative;
 	overflow: hidden;
 	padding: 8px 24px;
-	transition: all 0.3s ease;
+	@include transition;
 
 	.btn-text {
 		display: inline-block;
 		position: relative;
-		transition: transform 0.3s ease;
+		@include transition(transform);
 	}
 
 	.hover-text {
@@ -105,83 +142,74 @@
 		top: 50%;
 		transform: translate(-50%, 100%);
 		opacity: 0;
-		transition: all 0.3s ease;
+		@include transition;
 	}
 
 	&:hover {
 		.btn-text {
 			transform: translateY(-100px);
 		}
-
 		.hover-text {
 			transform: translate(-50%, -50%);
 			opacity: 1;
 		}
 	}
 }
+
 .card-description {
-	display: -webkit-box;
-	-webkit-line-clamp: 3;
-	line-clamp: 3;
-	-webkit-box-orient: vertical;
-	overflow: hidden;
-	text-overflow: ellipsis;
+	@include text-clamp;
 }
 
 .card-title {
-	display: flex;
-	align-items: center;
+	@include flex-center;
 	gap: 0.5rem;
 
 	.badge {
-		display: inline-flex;
-		align-items: center;
+		@include flex-center;
 		padding: 0.25rem 0.5rem;
 		img {
 			width: 20px;
 			height: 20px;
-			object-fit: cover;
+			@include image-cover;
 		}
 	}
+
 	.superman-badge {
-		background-color: rgb(40, 40, 254);
+		@include badge-style(rgb(40, 40, 254));
 	}
 	.captain-badge {
-		background-color: #ffff;
+		@include badge-style(#ffff);
 	}
 	.iron-badge {
-		background-color: #898989;
+		@include badge-style(#898989);
 	}
 	.hulk-badge {
-		background-color: #00ff00;
+		@include badge-style(#00ff00);
 	}
 	.spiderman-badge {
-		background-color: #ff0000;
+		@include badge-style(#ff0000);
 	}
 	.doctor-badge {
-		background-color: #049125;
+		@include badge-style(#049125);
 	}
 }
-// Yukarı kayma animasyonu
+
 @keyframes slideOutTop {
 	0% {
 		transform: translateY(0);
 		opacity: 1;
 	}
-
 	100% {
 		transform: translateY(-100%);
 		opacity: 0;
 	}
 }
 
-// Aşağıdan yukarı kayma animasyonu
 @keyframes slideOutBottom {
 	0% {
 		transform: translateX(-50%) translateY(100%);
 		opacity: 0;
 	}
-
 	100% {
 		transform: translateX(-50%) translateY(0);
 		opacity: 1;

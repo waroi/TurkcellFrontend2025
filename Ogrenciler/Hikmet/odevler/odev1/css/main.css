@@ -206,7 +206,7 @@
   width: 50px;
   height: 2px;
   background: #fff;
-  transition: width 0.3s ease;
+  transition: all 0.3s ease;
 }
 .footer .footer-column h4:hover::after, .footer .footer-column .h4:hover::after {
   width: 75px;
@@ -234,9 +234,9 @@
 .footer .footer-links li a {
   color: #fff;
   text-decoration: none;
-  transition: all 0.3s ease;
   position: relative;
   padding-left: 15px;
+  transition: all 0.3s ease;
 }
 .footer .footer-links li a::before {
   content: "→";
@@ -287,8 +287,10 @@
   transition: all 0.3s ease;
 }
 .footer .social-icons .social-icon:hover {
-  background: red;
   transform: translateY(-3px);
+}
+.footer .social-icons .social-icon:hover {
+  background: red;
 }
 .footer .footer-bottom {
   background: rgba(0, 0, 0, 0.2);
@@ -12421,13 +12423,12 @@ textarea.form-control-lg {
 }
 
 .superhero-card .card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease;
   border: 1px solid rgba(0, 0, 0, 0.125);
 }
 .superhero-card .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(0, 0, 0, 0.125);
 }
 .superhero-card .superhero-card-image {
   height: 250px;
@@ -12500,7 +12501,7 @@ textarea.form-control-lg {
   gap: 0.5rem;
 }
 .card-title .badge {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   padding: 0.25rem 0.5rem;
 }
