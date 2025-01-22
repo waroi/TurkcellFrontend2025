@@ -34085,8 +34085,17 @@ textarea.form-control-lg {
 
 body {
   font-family: "Macondo", sans-serif;
+  animation: fadeAnimation 1s ease-in-out;
 }
 
+@keyframes fadeAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 html {
   cursor: url("../assets/whip.png"), auto;
 }
@@ -34097,6 +34106,10 @@ ul {
 
 a {
   text-decoration: none;
+  color: #fff;
+}
+a:hover {
+  color: #222222;
 }
 
 .banner-section {
@@ -34106,10 +34119,10 @@ a {
 .products-categories .hot-block::before {
   content: "🔥";
 }
-.products-categories .most-sell-block, .products-categories .all-products .most-block, .all-products .products-categories .most-block {
+.products-categories .most-sell-block {
   background-color: rgb(61.4, 139, 253.4);
 }
-.products-categories .most-sell-block::before, .products-categories .all-products .most-block::before, .all-products .products-categories .most-block::before {
+.products-categories .most-sell-block::before {
   content: "✓";
 }
 .products-categories .new-block {
@@ -34117,7 +34130,10 @@ a {
   right: 0;
 }
 
-.all-products .most-block::before {
+.all-products .discount-block {
+  background-color: #dc3545;
+}
+.all-products .discount-block::before {
   content: "💥";
 }
 
@@ -34170,6 +34186,16 @@ a {
   font-size: 1.2rem;
   font-weight: 300;
   color: #222222;
+}
+
+.card:hover {
+  transform: scale(1.01);
+  transition: transform 0.3s ease-in-out;
+}
+
+.btn:hover {
+  background-color: transparent;
+  transition: background-color 0.3s ease-in-out;
 }
 
 /*# sourceMappingURL=main.css.map */

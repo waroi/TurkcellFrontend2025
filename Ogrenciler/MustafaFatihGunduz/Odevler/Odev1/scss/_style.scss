@@ -11,6 +11,15 @@ $span-color: #222222;
 }
 body{
     font-family: 'Macondo', sans-serif;
+    animation: fadeAnimation 1s ease-in-out;
+}
+@keyframes fadeAnimation {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 html {
     cursor: url("../assets/whip.png"), auto;
@@ -20,6 +29,10 @@ ul{
 }
 a{
     text-decoration: none;
+    color: $white;
+    &:hover{
+        color: $span-color;
+    }
 }
 .banner-section{
     background: url("../assets/banner.png") no-repeat center center/cover;
@@ -40,8 +53,8 @@ a{
     }
 }
 .all-products {
-    .most-block{
-        @extend .most-sell-block;
+    .discount-block{
+        background-color: $red-500;
         &::before{
             content: "\1F4A5";
         }
@@ -103,4 +116,12 @@ a{
         @include textStyle(1.2rem, 300);
         color: $span-color;
     }
+}
+.card:hover {
+    transform: scale(1.01);
+    transition: transform 0.3s ease-in-out;
+}
+.btn:hover{
+    background-color: transparent;
+    transition: background-color 0.3s ease-in-out;
 }
