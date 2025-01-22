@@ -1,6 +1,6 @@
-# Pickem Store
+# [Pick'em Store](https://pickem-store.netlify.app/)
 
-Pickem Store, e-spor tutkunlarına özel olarak tasarlanmış bir platformdur. Takımınızda oyuncu eksikliği yaşıyorsanız, buradan ihtiyaçlarınıza uygun oyuncular bulabilirsiniz.
+[Pick'em Store](https://pickem-store.netlify.app/), e-spor tutkunlarına özel olarak tasarlanmış bir platformdur. Takımınızda oyuncu eksikliği yaşıyorsanız, buradan ihtiyaçlarınıza uygun oyuncular bulabilirsiniz.
 
 ---
 
@@ -44,7 +44,7 @@ Pickem Store, e-spor tutkunlarına özel olarak tasarlanmış bir platformdur. T
 
 - Ana Sayfa:
   ![Ana Sayfa](./images/readme/anasayfa.png)
-- Ürün Detayları:
+- Oyuncular:
   ![Oyuncular](./images/readme/oyuncular.png)
 
 ---

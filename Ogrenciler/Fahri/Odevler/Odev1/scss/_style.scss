@@ -1,0 +1,337 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@mixin font($font-size: null, $font-weight, $color: null, $line-height: null) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  color: $color;
+  line-height: $line-height;
+}
+@mixin backlight($top, $left, $spread, $size, $colorA, $colorB, $duration) {
+  &:after {
+    position: absolute;
+    content: "";
+    top: $top;
+    left: $left;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    transform: scale($size);
+    -webkit-filter: blur($spread);
+    -moz-filter: blur($spread);
+    -ms-filter: blur($spread);
+    filter: blur($spread);
+    background: linear-gradient(270deg, $colorA, $colorB);
+    background-size: 200% 200%;
+    animation: animateGlow $duration ease infinite;
+
+    @keyframes animateGlow {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+  }
+}
+@mixin card-func() {
+  width: 100%;
+  height: 408px;
+  background-size: 100%;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+.animation-card {
+  position: relative;
+  animation: textColor 10s ease infinite;
+  @include backlight(
+    0,
+    5vw,
+    5vw,
+    0.75,
+    #0fffc1,
+    #7e0fff,
+    10s
+  ); //! vw ekranın genişliğinin oranı 5vw %5'i demek
+
+  @keyframes textColor {
+    0% {
+      color: #7e0fff;
+    }
+    50% {
+      color: #0fffc1;
+    }
+    100% {
+      color: #7e0fff;
+    }
+  }
+}
+body {
+  font-family: "IBM Plex Mono", sans-serif;
+  background-color: darken(#252b37, 4%);
+  color: $light;
+}
+h2 {
+  @include font(48px, 500, $light, 60px);
+}
+h3 {
+  @include font(20px, 500, $light, 30px);
+  margin: 20px 0 0;
+}
+p {
+  @include font(16px, $light, 300, 34px);
+}
+a {
+  text-decoration: none;
+}
+
+.card-section {
+  .card {
+    margin: 1em;
+    .card-img-top {
+      z-index: 2;
+      height: 218px;
+      object-fit: cover;
+      transform: translateY(50%);
+      transition: 0.5s;
+    }
+    .card-body {
+      z-index: 1;
+      padding: 1.25em;
+      box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.056),
+        0 6.7px 5.3px rgba(0, 0, 0, 0.081), 0 12.5px 10px rgba(0, 0, 0, 0.1),
+        0 22.3px 17.9px rgba(0, 0, 0, 0.119),
+        0 41.8px 33.4px rgba(0, 0, 0, 0.144), 0 100px 80px rgba(0, 0, 0, 0.2);
+      transform: translateY(-50%);
+      transition: 0.5s;
+      opacity: 0;
+      .card-title {
+        @include line-clamp(1, 1.5); // 1 satır ve 1.5 satır yüksekliği
+      }
+      .btn {
+        transition: 0.5s;
+        &:hover {
+          color: $light;
+          background: $dark;
+        }
+      }
+    }
+    &:hover {
+      .card-img-top {
+        transform: translateY(2%);
+      }
+      .card-body {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  }
+}
+.banner-section {
+  .world-wrapper {
+    overflow: hidden;
+    position: relative;
+    height: 75vh;
+    justify-content: center;
+    .reveal-1 {
+      animation: text 1.8s cubic-bezier(0, 0, 0.2, 1) 1.8s 1 both;
+    }
+    .world {
+      animation: turn-world 360s linear infinite;
+      position: absolute;
+    }
+  }
+}
+.product-list {
+  .card {
+    color: $light;
+    .card-img-1 {
+      background: url("../assets/1.png");
+    }
+    .card-img-2 {
+      background: url("../assets/2.png");
+    }
+    .card-img-3 {
+      background: url("../assets/3.png");
+    }
+    .card-img-4 {
+      background: url("../assets/4.png");
+    }
+    .card-img-5 {
+      background: url("../assets/5.png");
+    }
+    .card-img-6 {
+      background: url("../assets/6.png");
+    }
+    .card-img-7 {
+      background: url("../assets/7.png");
+    }
+    .card-img-8 {
+      background: url("../assets/8.png");
+    }
+    .card-img-9 {
+      background: url("../assets/9.png");
+    }
+    .card-img-1,
+    .card-img-2,
+    .card-img-3,
+    .card-img-4,
+    .card-img-5,
+    .card-img-6,
+    .card-img-7,
+    .card-img-8,
+    .card-img-9 {
+      @include card-func();
+      background-size: 120%;
+      transition: background-size 1s ease;
+      border-radius: 20px;
+    }
+    .social {
+      width: 100%;
+      height: 57px;
+      background-color: $warning;
+      transition: 0.3s ease;
+      bottom: -57px;
+      i {
+        font-size: 16px;
+        color: $white;
+      }
+    }
+    &:hover {
+      .social {
+        bottom: 0;
+        i {
+          font-size: 16px;
+          color: $light;
+        }
+      }
+      .card-img-1,
+      .card-img-2,
+      .card-img-3,
+      .card-img-4,
+      .card-img-5,
+      .card-img-6,
+      .card-img-7,
+      .card-img-8,
+      .card-img-9 {
+        background-size: 130%;
+      }
+    }
+  }
+  .our-team-header {
+    h3 {
+      @include font(40px, $black, 700, 48px);
+    }
+  }
+}
+.about {
+  .content {
+    ul {
+      list-style: none;
+      padding: 0;
+      li {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 35px;
+        &:first-child {
+          margin-top: 35px;
+        }
+        .icon-wraper {
+          background-color: $light;
+          box-shadow: 0px 6px 15px $warning;
+          border-radius: 50%;
+          margin-right: 1rem;
+          i {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 64px;
+            height: 64px;
+            padding: 10px;
+            color: $dark;
+          }
+        }
+      }
+      h5 {
+        font-size: 18px;
+        @include font(18px, 400, $warning, null);
+      }
+      p {
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+.other-products {
+  .card {
+    .card-body {
+      padding: 20px 0;
+      .card-title {
+        @include font(17px, 600, $light, 25.5px);
+        @include line-clamp(1, 1.5);
+      }
+      p {
+        @include font(15px, 600, $light, 24.75px);
+      }
+      a {
+        @include font(15px, 500, $dark, 24.75px);
+        background-color: $light;
+        transition: 0.1s ease;
+      }
+    }
+    &:hover {
+      a {
+        color: $light;
+        background-color: $warning;
+      }
+    }
+  }
+}
+.about-us-section {
+  position: relative;
+  background-color: $dark;
+  color: $light;
+  i {
+    font-size: 100px;
+    margin-bottom: 20px;
+  }
+  ::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: -5px; /* Gölgenin başlangıç genişliği */
+    box-shadow: 0 10px 30px 2px $primary; /* Aşağıya doğru mavi gölge */
+    z-index: 0;
+  }
+}
+
+@keyframes text {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes turn-world {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
