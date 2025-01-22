@@ -5,34 +5,6 @@ $success-color: #28a745;
 $light-gray: #f8f9fa;
 $dark-gray: #343a40;
 
-// Product Image Styles
-.product-image-container {
-	.main-image {
-		width: 100%;
-		height: auto;
-		object-fit: cover;
-	}
-
-	.thumbnail-gallery {
-		.thumbnail {
-			width: 80px;
-			height: 80px;
-			object-fit: cover;
-			border-radius: 8px;
-			cursor: pointer;
-			transition: all 0.3s ease;
-
-			&:hover {
-				transform: translateY(-2px);
-			}
-
-			&.active {
-				border: 2px solid $primary-color;
-			}
-		}
-	}
-}
-
 // Product Info Styles
 .product-info {
 	.product-title {

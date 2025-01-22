@@ -144,26 +144,6 @@
     display: none;
   }
 }
-.product-image-container .main-image {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-.product-image-container .thumbnail-gallery .thumbnail {
-  width: 80px;
-  height: 80px;
-  object-fit: cover;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-.product-image-container .thumbnail-gallery .thumbnail:hover {
-  transform: translateY(-2px);
-}
-.product-image-container .thumbnail-gallery .thumbnail.active {
-  border: 2px solid #007bff;
-}
-
 .product-info .product-title {
   font-size: 2rem;
   font-weight: 600;

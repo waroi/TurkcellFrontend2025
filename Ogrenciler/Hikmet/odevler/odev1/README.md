@@ -37,7 +37,7 @@ Projeyi çalıştırmak için aşağıdaki adımları izleyin:
    ```
 3. **Geliştirme Ortamını Başlatın ve index.html dosyasını Live Preview ile açın:**
    ```bash
-   npm run dev
+   npm run sass
    ```
 4. **Tarayıcıda Açın:**
    [http://127.0.0.1:5500/Ogrenciler/Hikmet/odevler/odev1/index.html](http://127.0.0.1:5500/Ogrenciler/Hikmet/odevler/odev1/index.html)
