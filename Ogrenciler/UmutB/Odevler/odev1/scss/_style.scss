@@ -134,7 +134,6 @@ $breakpoints: (
   transform: translate(-50%, -50%);
 }
 %interactive-element {
-  cursor: pointer;
   @include transition-base;
 }
 %section-padding {
@@ -350,7 +349,6 @@ body {
   flex-direction: column;
   align-items: center;
   transition: 0.5s ease-in-out;
-  cursor: pointer;
   // mobile ve tablet
   @media (max-width: $desktop-width) {
     height: 500px;
