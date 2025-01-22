@@ -11937,6 +11937,38 @@ textarea.form-control-lg {
   }
 }
 
+.gif {
+  background-color: black;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.gif .gif-content {
+  animation: walk 15s ease-in-out infinite 3s alternate;
+}
+@keyframes walk {
+  0% {
+    background-color: black;
+    transform: translate(0, 0);
+  }
+  25% {
+    background-color: black;
+    transform: translate(400px, 0px);
+  }
+  50% {
+    background-color: black;
+    transform: translate(800px, 0px);
+  }
+  75% {
+    background-color: black;
+    transform: translate(1200px, 0px);
+  }
+  100% {
+    background-color: black;
+    transform: translate(1600px, 0px);
+  }
+}
+
 .faq .faq-cards .faq-card {
   background: rgb(38, 0, 99);
   border-radius: 10px;

@@ -1,0 +1,311 @@
+$primary-bg: #f6fafd;
+$text-color: #333;
+$white: #fff;
+$highlight-color: rgba(255, 255, 255, 0.5);
+$hover-border-color: rgba(255, 255, 255, 0.25);
+$transition-duration: 0.3s;
+$radius-small: 10px;
+$radius-large: 30px;
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin box-shadow($x: 0, $y: 6px, $blur: 12px, $color: rgba(0, 0, 0, 0.15)) {
+  box-shadow: $x $y $blur $color;
+}
+
+@mixin card-hover{
+  &:hover {
+    transform: translateY(-5px);
+    @include box-shadow(0,10px,10px);
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $primary-bg;
+  color: $text-color;
+}
+
+ol, ul {
+  padding: 0;
+  list-style: none;
+}
+
+.nav-logo{
+  width: 60px;
+  height: 50px;
+}
+
+.banner {
+  @include flex-center;
+  background-image: url('../images/banner.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  width: 100%;
+  color: $white;
+}
+
+.highlights-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  @include card-hover;
+
+  .highlights-card-image {
+    border-radius: 21px 21px 0 0;
+  }
+}
+
+.card-img {
+  object-fit: cover;
+  border-radius: 21px 21px 0 0;
+}
+
+.cover-container {
+  max-width: 42em;
+}
+
+.nav-masthead {
+  .nav-link {
+    color: $highlight-color;
+    border-bottom: 0.25rem solid transparent;
+    @include transition(border-bottom-color);
+
+    &:hover,
+    &:focus {
+      border-bottom-color: $hover-border-color;
+    }
+
+    & + .nav-link {
+      margin-left: 1rem;
+    }
+  }
+
+  .active {
+    color: $white;
+    border-bottom-color: $white;
+  }
+}
+.inner-banner-image{
+  height: 100%;
+  object-fit: contain;
+}
+
+.detail-wrapper {
+  .detail-content-wrapper{
+    li::before {
+      content: "✨ ";
+      margin-right: 5px;
+    } 
+  }
+  .detail-image {
+    border-radius: $radius-large;
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+  }
+}
+
+
+
+.list-group-item {
+  margin-bottom: 10px;
+}
+
+.text-slider-container {
+  position: relative;
+  height: 20px;
+  overflow: hidden;
+
+  .text-item {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    transform: translateY(100%);
+    animation: slide 6s infinite;
+
+    &:nth-child(1) {
+      animation-delay: 0s;
+    }
+
+    &:nth-child(2) {
+      animation-delay: 3s;
+    }
+  }
+}
+
+@keyframes slide {
+  0% {
+    transform: translateY(100%);
+  }
+  10%,
+  40% {
+    transform: translateY(0);
+  }
+  50%,
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+.price-card {
+  @include card-hover;
+}
+
+.about-card{
+  height: 100%;
+}
+
+.overflow-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 10px;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .comment-card {
+    flex: 0 0 300px;
+    border-radius: $radius-small;
+    position: relative;
+    padding-top: 60px;
+    scroll-snap-align: center;
+    .comment-avatar {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 10px;
+      border: 3px solid $white;
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .comment-text {
+      font-style: italic;
+      font-size: small;
+    }
+  }
+}
+
+.star-rating {
+  font-size: small;
+  .star {
+    color: gold;
+  }
+}
+.text-gradient {
+  background: linear-gradient(118.94deg, #7381fd -12.54%, #76c7ff 105.75%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.animation-text {
+  span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: domino 2s ease-out forwards;
+  }
+}
+
+@keyframes domino {
+  0% {
+    opacity: 0;
+    color: #ff6347;
+  }
+  50% {
+    color: #ffa500;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.best-price::after{
+  content: 'Best Price';
+  position: absolute;
+  top: -5%;
+  left: -7px;
+  background-color: #ffa500;
+  color: #fff;
+  padding: 5px;
+  border-radius: 10px;
+  animation: best-price-animation 2s reverse infinite;
+}
+
+@keyframes best-price-animation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+    background-color: red;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.profile-card {
+  @include card-hover;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+  .overlay{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    color: white;
+  }
+}
+
+.text-gradient{
+  color: rgb(30, 159, 248)
+}
+
+.nyan {
+	width: 105px;
+	height: 68px;
+	background: url(http://ichderfisch.de/wp-content/uploads/2016/01/nyan-5.png);
+	animation: nyan 0.5s infinite steps(6);
+}
+
+@keyframes nyan {
+	100% {
+		background-position: -630px 0;
+	}
+}
+
+
+@media screen and (max-width: 990px) {
+  .navbar-collapse {
+    @include flex-center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .banner {
+    height: 50vh;
+  }
+}

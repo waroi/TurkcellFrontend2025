@@ -11,7 +11,8 @@ $dark-blue: rgb(38, 0, 99);
     font-weight: $fontweight;
     line-height: $lineheight;
 }
-.card-basic{
+
+.card-basic {
     background: white;
     border-radius: 10px;
     padding: 30px;
@@ -28,12 +29,12 @@ $dark-blue: rgb(38, 0, 99);
     z-index: 3;
 
     @media (max-width: 990px) {
-        .user-items{
-            a{
+        .user-items {
+            a {
                 display: none;
             }
         }
-        
+
     }
 }
 
@@ -46,16 +47,18 @@ $dark-blue: rgb(38, 0, 99);
         @include textFunc(24px, 500, 1.6);
     }
 }
-.products{
-    .product-cards{
-        .card{
+
+.products {
+    .product-cards {
+        .card {
             cursor: pointer;
-            transition:all 0.5s ease ;
+            transition: all 0.5s ease;
             color: $dark-blue;
-            &:hover{
+
+            &:hover {
                 background-color: $dark-blue;
                 color: white;
-                transform:scale(1.05)
+                transform: scale(1.05)
             }
         }
     }
@@ -69,6 +72,7 @@ $dark-blue: rgb(38, 0, 99);
             @extend .card-basic;
             box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
+
             &:hover {
                 transform: translateY(-10px);
             }
@@ -83,17 +87,51 @@ $dark-blue: rgb(38, 0, 99);
 .faq-title,
 .contact-title {
     @include textFunc(48px, 700, 1.6);
+
     @media (max-width: 990px) {
         @include textFunc(40px, 500, 1.6);
-        
+
     }
 }
 
 .card-title {
     @include textFunc(28px, 500, 1.6);
+
     @media (max-width: 990px) {
         @include textFunc(20px, 300, 1.6);
-        
+
+    }
+}
+
+.gif {
+    background-color: black;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    .gif-content{
+        animation: walk 15s ease-in-out infinite 3s  alternate;
+        @keyframes walk{
+            0%{
+                background-color: black;
+                transform: translate(0,0);
+            }
+            25%{
+                background-color: black;
+                transform: translate(400px,0px);
+            }
+            50%{
+                background-color: black;
+                transform: translate(800px,0px);
+            }
+            75%{
+                background-color: black;
+                transform: translate(1200px,0px);
+            }
+            100%{
+                background-color: black;
+                transform: translate(1600px,0px);
+            }
+        }
     }
 }
 
@@ -107,14 +145,16 @@ $dark-blue: rgb(38, 0, 99);
             transition: all 0.3s ease;
             overflow: hidden;
             cursor: pointer;
+
             &:hover {
                 transform: translateY(-10px);
             }
         }
     }
 }
-.contact{
-    .info-card{
+
+.contact {
+    .info-card {
         background: white;
         border-radius: 20px;
         padding: 30px;
@@ -122,71 +162,87 @@ $dark-blue: rgb(38, 0, 99);
         transition: all 0.3s ease;
         overflow: hidden;
         cursor: pointer;
+
         &:hover {
             background-color: $dark-blue;
             color: white;
         }
-        .contact-icon{
+
+        .contact-icon {
             font-size: 24px;
             width: 50px;
             height: 50px;
             border-radius: 50%;
             background-color: $dark-blue;
             align-items: center;
-            }
-            .contact-icon i{
-                color: white;
         }
-        a{
+
+        .contact-icon i {
+            color: white;
+        }
+
+        a {
             text-decoration: none;
             cursor: pointer;
-            &:hover{
+
+            &:hover {
                 color: white;
             }
         }
     }
 }
-.footer{
+
+.footer {
     background-color: $dark-blue;
-    .footer-brand{
-        .links{
+
+    .footer-brand {
+        .links {
             text-decoration: none;
             color: white;
         }
     }
-    .footer-social{
-        i{
+
+    .footer-social {
+        i {
             color: white;
+
             @media (max-width: 990px) {
                 display: none;
-                
+
             }
         }
     }
 }
-.product-detail{
+
+.product-detail {
     background: linear-gradient(145deg, $dark-blue, $blue);
     color: white;
-    .product-img{
+
+    .product-img {
         border-radius: 20px;
         transition: transform 0.5s ease-in;
         margin-bottom: 15px;
-        &:hover{
+
+        &:hover {
             transform: scale(1.10);
         }
     }
-    .product-detail-info{
+
+    .product-detail-info {
         background: rgba(255, 255, 255, 0.2);
         border-radius: 30px;
-        h1{
+
+        h1 {
             @include textFunc(48px, 900, 1.6);
+
             @media (max-width: 990px) {
                 @include textFunc(32px, 500, 1.6);
-                
+
             }
 
         }
-        .price-text{
+
+        .price-text {
             @include textFunc(28px, 900, 1.6);
             color: rgb(231, 102, 231);
 
