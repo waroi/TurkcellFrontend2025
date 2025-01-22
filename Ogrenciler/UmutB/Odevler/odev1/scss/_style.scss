@@ -625,6 +625,8 @@ body {
 .about-card {
   @extend %card-base;
   @extend %interactive-element;
+  background: #24212159;
+  color: #fff;
   padding: $spacing-base * 2;
   text-align: center;
   &:hover {
@@ -638,12 +640,12 @@ body {
   }
   h3 {
     @extend %heading-base;
-    color: $dark;
+    color: $pokemon-red;
     font-size: 1.5rem;
     margin: $spacing-base 0;
   }
   p {
-    color: $gray;
+    color: $light;
     margin-bottom: 0;
     line-height: 1.6;
   }
@@ -706,7 +708,7 @@ body {
 }
 // Contact Section Styles
 .contact-section {
-  background: url('../assets/contactbg.jpg') center/cover no-repeat;
+  background: linear-gradient(145deg, $dark-blue, $dark);
   padding: $spacing-base * 4 0;
   h2 {
     @extend %heading-base;
@@ -736,6 +738,7 @@ body {
   @extend %interactive-element;
   padding: $spacing-base * 2;
   text-align: center;
+  background: linear-gradient(145deg, $dark-blue, $dark);
   &:hover {
     @include card-hover-effect;
     .contact-icon {
@@ -747,19 +750,19 @@ body {
   }
   h3 {
     @extend %heading-base;
-    color: $dark;
+    color: $light;
     font-size: 1.5rem;
     margin: $spacing-base 0;
   }
   p,
   address {
-    color: $gray;
+    color: $light;
     margin-bottom: $spacing-base * 0.5;
     line-height: 1.6;
     font-style: normal;
   }
   a {
-    color: $pokemon-blue;
+    color: $pokemon-yellow;
     text-decoration: none;
     transition: color 0.3s ease;
     &:hover {
@@ -785,11 +788,10 @@ body {
   }
 }
 .contact-form {
-  @extend %card-base;
+
   padding: $spacing-base * 2;
-  background: rgba(255, 255, 255, 0.95);
   .form-label {
-    color: $dark;
+    color: $light !important;
     font-weight: 500;
     margin-bottom: $spacing-base * 0.5;
   }

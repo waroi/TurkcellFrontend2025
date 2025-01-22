@@ -11892,7 +11892,7 @@ html {
   font-style: normal;
   font-display: swap;
 }
-.contact-form, .contact-card, .faq-card, .about-card {
+.contact-card, .faq-card, .about-card {
   background: #fff;
   border-radius: 1rem;
   overflow: hidden;
@@ -12472,6 +12472,8 @@ body.no-scroll {
 }
 
 .about-card {
+  background: rgba(36, 33, 33, 0.3490196078);
+  color: #fff;
   padding: 2rem;
   text-align: center;
 }
@@ -12489,12 +12491,12 @@ body.no-scroll {
   transform: rotate(360deg);
 }
 .about-card h3, .about-card .h3 {
-  color: #1A1A1A;
+  color: #DC0A2D;
   font-size: 1.5rem;
   margin: 1rem 0;
 }
 .about-card p {
-  color: #666666;
+  color: #F5F5F5;
   margin-bottom: 0;
   line-height: 1.6;
 }
@@ -12564,7 +12566,7 @@ body.no-scroll {
 }
 
 .contact-section {
-  background: url("../assets/contactbg.jpg") center/cover no-repeat;
+  background: linear-gradient(145deg, rgb(27.5919282511, 72.264573991, 118.9080717489), #1A1A1A);
   padding: 4rem 0;
 }
 .contact-section h2, .contact-section .h2 {
@@ -12597,6 +12599,7 @@ body.no-scroll {
 .contact-card {
   padding: 2rem;
   text-align: center;
+  background: linear-gradient(145deg, rgb(27.5919282511, 72.264573991, 118.9080717489), #1A1A1A);
 }
 .contact-card:hover {
   transition: all 0.3s ease;
@@ -12612,19 +12615,19 @@ body.no-scroll {
   transform: rotate(360deg);
 }
 .contact-card h3, .contact-card .h3 {
-  color: #1A1A1A;
+  color: #F5F5F5;
   font-size: 1.5rem;
   margin: 1rem 0;
 }
 .contact-card p,
 .contact-card address {
-  color: #666666;
+  color: #F5F5F5;
   margin-bottom: 0.5rem;
   line-height: 1.6;
   font-style: normal;
 }
 .contact-card a {
-  color: #2A6EB5;
+  color: #FFCB05;
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -12652,10 +12655,9 @@ body.no-scroll {
 
 .contact-form {
   padding: 2rem;
-  background: rgba(255, 255, 255, 0.95);
 }
 .contact-form .form-label {
-  color: #1A1A1A;
+  color: #F5F5F5 !important;
   font-weight: 500;
   margin-bottom: 0.5rem;
 }
