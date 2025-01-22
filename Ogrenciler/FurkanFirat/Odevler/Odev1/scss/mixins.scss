@@ -1,0 +1,34 @@
+// MIXINS
+@mixin section-style(
+  $bg:
+    linear-gradient(
+      to bottom,
+      $primary 0%,
+      rgb(61, 29, 142) 15%,
+      rgb(61, 29, 142) 85%,
+      $primary 100%
+    ),
+  $padding: 50px 0px,
+  $text-color: $white
+) {
+  background: $bg;
+  padding: $padding;
+  color: $text-color;
+}
+@mixin flag-icon($url, $size: 25px, $transform: 8px) {
+  content: '';
+  display: inline-block;
+  width: $size;
+  height: $size;
+  background-image: url($url);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: translateY($transform);
+  margin-left: 5px;
+}
+
+// PLACEHOLDERS
+%section-header-base {
+  @include section-style($extra-dark-purple, 20px 0, $white);
+}

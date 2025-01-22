@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olmayan Şeyler</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="container-fluid px-0">
+            <div class="d-flex bg-primary d-flex py-4 overflow-hidden position-relative align-items-center">
+                <span class="scrolling-text1">
+                    Süper kampanya! Tüm ürünlerde %50'ye varan indirim - Acele edin!
+                </span>
+                <span class="scrolling-text2">
+                    Süper kampanya! Tüm ürünlerde %50'ye varan indirim - Acele edin!
+                </span>
+                <span class="scrolling-text3">
+                    Süper kampanya! Tüm ürünlerde %50'ye varan indirim - Acele edin!
+                </span>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg bg-transparent">
+            <div class="container">
+                <a class="navbar-brand fw-semibold text-primary fs-4" href="./index.html">olmayanşeyler.</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item ">
+                            <a class="nav-link active" aria-current="page" href="./index.html">Ana Sayfa</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./html/about.html">Hakkımızda</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Kurumsal
+                            </a>
+                            <ul class="dropdown-menu">
+
+                                <li><a class="dropdown-item" href="./html/contact.html">İletişim</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="./html/sss.html">Sık Sorulan Sorular</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="dropdown">
+                        <button class="btn dropdown-toggle outline-none border-0" type="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="./assets/cat.jpeg" class="rounded-circle profile-photo" alt="Profile photo">
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Profil</a></li>
+                            <li><a class="dropdown-item" href="#">Siparişlerim</a></li>
+                            <li><a class="dropdown-item" href="#">Ödeme Bilgileri</a></li>
+                            <li><a class="dropdown-item" href="#">Adres Bilgileri</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Çıkış Yap</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="home-banner">
+            <div class="container-fluid px-0">
+
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                            class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" data-bs-interval="2000">
+                            <img src="./assets/anneterlg.jpg" class="d-block w-100" alt="Banner One">
+                        </div>
+                        <div class="carousel-item" data-bs-interval="2000">
+                            <img src="./assets/banner.jpg" class="d-block w-100" alt="Banner Two">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <div class="row m-0 ml-0 g-5">
+                    <div class="col-12 col-md-3 ps-0">
+                        <div class="row g-3">
+                            <div class="col-md-12 px-0 mt-0">
+                                <div class="input-group">
+                                    <input type="text" class="form-control product-search" placeholder="Ürün ara..."
+                                        aria-label="Search">
+                                    <button class="btn btn-primary" type="button">
+                                        <i class="fa-solid fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <h6 class="p-0 d-none d-md-block">Sırala</h6>
+                            <div class="card p-3 d-none d-md-block">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="sortOptions" id="oldToNew"
+                                        checked>
+                                    <label class="form-check-label" for="oldToNew">Eskiden Yeniye</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="sortOptions" id="newToOld">
+                                    <label class="form-check-label" for="newToOld">Yeniden Eskiye</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="sortOptions" id="priceHighToLow">
+                                    <label class="form-check-label" for="priceHighToLow">Düşük Fiyat</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="sortOptions" id="priceLowToHigh">
+                                    <label class="form-check-label" for="priceLowToHigh">Yüksek Fiyat</label>
+                                </div>
+                            </div>
+                            <h6 class="p-0 d-none d-md-block">Filtrele</h6>
+                            <div class="card p-3 d-none d-md-block">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="oldToNew">
+                                    <label class="form-check-label" for="oldToNew">En Sevilenler</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="newToOld">
+                                    <label class="form-check-label" for="newToOld">En Ucuzlar</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="priceHighToLow">
+                                    <label class="form-check-label" for="priceHighToLow">Şok Edenler</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="priceLowToHigh">
+                                    <label class="form-check-label" for="priceLowToHigh">Yeni Çıkanlar</label>
+                                </div>
+                            </div>
+                            <h6 class="p-0 d-none d-md-block">Kategori</h6>
+                            <div class="card p-3 d-none d-md-block">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="oldToNew">
+                                    <label class="form-check-label" for="oldToNew">En Sevilenler</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="newToOld">
+                                    <label class="form-check-label" for="newToOld">En Ucuzlar</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="priceHighToLow">
+                                    <label class="form-check-label" for="priceHighToLow">Şok Edenler</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="priceLowToHigh">
+                                    <label class="form-check-label" for="priceLowToHigh">Yeni Çıkanlar</label>
+                                </div>
+                            </div>
+                            <div class="col-12 text-end d-none d-md-block">
+                                <button type="button"
+                                    class="btn btn-primary w-100 d-flex align-items-center justify-content-center gap-3">
+                                    <i class="fa-solid fa-filter"></i>
+                                    <span>Filtre Uygula</span>
+                                </button>
+                            </div>
+
+                            <div class="col-12 text-end d-md-none">
+                                <button type="button" data-bs-toggle="modal" data-bs-target="#filterModal"
+                                    class="btn btn-primary w-100 d-flex align-items-center justify-content-center gap-3">
+                                    <i class="fa-solid fa-filter"></i>
+                                    <span>Filtreleme</span>
+                                </button>
+                            </div>
+                            <div class="modal fade" id="filterModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Filtreleme</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h6 class="p-0 d-md-none">Sırala</h6>
+                                            <div class="card p-3 d-md-none mb-3">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="sortOptions"
+                                                        id="oldToNew" checked>
+                                                    <label class="form-check-label" for="oldToNew">Eskiden
+                                                        Yeniye</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="sortOptions"
+                                                        id="newToOld">
+                                                    <label class="form-check-label" for="newToOld">Yeniden
+                                                        Eskiye</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="sortOptions"
+                                                        id="priceHighToLow">
+                                                    <label class="form-check-label" for="priceHighToLow">Düşük
+                                                        Fiyat</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="sortOptions"
+                                                        id="priceLowToHigh">
+                                                    <label class="form-check-label" for="priceLowToHigh">Yüksek
+                                                        Fiyat</label>
+                                                </div>
+                                            </div>
+                                            <h6 class="p-0 d-md-none">Filtrele</h6>
+                                            <div class="card p-3 d-md-none mb-3">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="oldToNew">
+                                                    <label class="form-check-label" for="oldToNew">En Sevilenler</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="newToOld">
+                                                    <label class="form-check-label" for="newToOld">En Ucuzlar</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="priceHighToLow">
+                                                    <label class="form-check-label" for="priceHighToLow">Şok
+                                                        Edenler</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="priceLowToHigh">
+                                                    <label class="form-check-label" for="priceLowToHigh">Yeni
+                                                        Çıkanlar</label>
+                                                </div>
+                                            </div>
+                                            <h6 class="p-0 d-md-none">Kategori</h6>
+                                            <div class="card p-3 d-md-none mb-3">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="oldToNew">
+                                                    <label class="form-check-label" for="oldToNew">En Sevilenler</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="newToOld">
+                                                    <label class="form-check-label" for="newToOld">En Ucuzlar</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="priceHighToLow">
+                                                    <label class="form-check-label" for="priceHighToLow">Şok
+                                                        Edenler</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="priceLowToHigh">
+                                                    <label class="form-check-label" for="priceLowToHigh">Yeni
+                                                        Çıkanlar</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Kapat</button>
+                                            <button type="button" class="btn btn-primary">Uygula</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row g-3 gx-3 col-12 col-md-9 pe-0 ps-0">
+                        <a href="./html/product1.html" class="col-md-6 col-lg-4 col-sm-12 text-decoration-none">
+                            <div class="card border-0 px-0">
+                                <img src="./assets/professor.jpg" class="card-img" alt="Professor">
+                                <div class="card-body px-0">
+                                    <h5 class="card-title fs-5 fw-medium text-line-clamp">Sınırda Kalan Öğrencisini
+                                        Dersten Geçiren Üniversite Profesörü</h5>
+                                    <p class="card-text fs-6 fw-normal m-0 text-body-tertiary">Stokta var</p>
+                                    <p class="card-text fs-6 fw-bold">$982,99</p>
+                                    <button type="button"
+                                        class="btn btn-primary w-100 d-flex align-items-center justify-content-center gap-3">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                        <span>İncele</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="./html/product2.html" class="col-md-6 col-lg-4 col-sm-12 text-decoration-none">
+                            <div class="card border-0 px-0">
+                                <img src="./assets/kaynana.jpg" class="card-img" alt="Kaynana">
+                                <div class="card-body px-0">
+                                    <h5 class="card-title fs-5 fw-medium text-line-clamp">Geliniyle İyi Geçinen Nur
+                                        Yüzlü Melek Kaynana
+                                    </h5>
+                                    <p class="card-text fs-6 fw-normal m-0 text-body-tertiary">Stokta var</p>
+                                    <p class="card-text fs-6 fw-bold">$3580,99</p>
+                                    <button type="button"
+                                        class="btn btn-primary w-100 d-flex align-items-center justify-content-center gap-3">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                        <span>İncele</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="./html/product3.html" class="col-md-6 col-lg-4 col-sm-12 text-decoration-none">
+                            <div class="card border-0 px-0">
+                                <img src="./assets/couple.jpeg" class="card-img" alt="Couple">
+                                <div class="card-body px-0">
+                                    <h5 class="card-title fs-5 fw-medium text-line-clamp">Ghosting & Gaslighting &
+                                        Lovebombing İçermeyen
+                                        İlişki</h5>
+                                    <p class="card-text fs-6 fw-normal text-danger m-0">Tükenmek Üzere</p>
+                                    <p class="card-text fs-6 fw-bold text-body-tertiary">
+                                        <del>$10.350</del> <span class="text-black">$7.950,50</span>
+                                    </p>
+                                    <button type="button"
+                                        class="btn btn-primary w-100 d-flex align-items-center justify-content-center gap-3">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                        <span>İncele</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="./html/product4.html" class="col-md-6 col-lg-4 col-sm-12 text-decoration-none">
+                            <div class="card border-0 px-0">
+                                <img src="./assets/cat.jpeg" class="card-img" alt="Kedi">
+                                <div class="card-body px-0">
+                                    <h5 class="card-title fs-5 fw-medium text-line-clamp">Çay Bile Koyan Sevgi Dolu
+                                        Masrafsız Tekir Kedi
+                                    </h5>
+                                    <p class="card-text fs-6 fw-normal m-0 text-body-tertiary">Stokta var</p>
+                                    <p class="card-text fs-6 fw-bold">$12,99</p>
+                                    <button type="button"
+                                        class="btn btn-primary w-100 d-flex align-items-center justify-content-center gap-3">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                        <span>İncele</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="./html/product5.html" class="col-md-6 col-lg-4 col-sm-12 text-decoration-none">
+                            <div class="card border-0 px-0">
+                                <img src="./assets/terlik.jpg" class="card-img" alt="Terlik">
+                                <div class="card-body px-0">
+                                    <h5 class="card-title fs-5 fw-medium text-line-clamp">Atış Menzili Düşük Hasarı Az
+                                        Acıtmayan Anne
+                                        Terliği</h5>
+                                    <p class="card-text fs-6 fw-normal m-0 text-body-tertiary">Stokta var</p>
+                                    <p class="card-text fs-6 fw-bold">$210.25</p>
+                                    <button type="button"
+                                        class="btn btn-primary w-100 d-flex align-items-center justify-content-center gap-3">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                        <span>İncele</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="./html/product6.html" class="col-md-6 col-lg-4 col-sm-12 text-decoration-none">
+                            <div class="card border-0 px-0">
+                                <img src="./assets/insnkaynak.jpg" class="card-img" alt="İnsan Kaynakları">
+                                <div class="card-body px-0">
+                                    <h5 class="card-title fs-5 fw-medium text-line-clamp">Size Döneceğiz Diyip Gerçekten
+                                        Dönen İnsan
+                                        Kaynakları Müdürü</h5>
+                                    <p class="card-text fs-6 fw-normal m-0 text-body-tertiary">Stokta var</p>
+                                    <p class="card-text fs-6 fw-bold">$1089,99</p>
+                                    <button type="button"
+                                        class="btn btn-primary w-100 d-flex align-items-center justify-content-center gap-3">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                        <span>İncele</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="./html/product7.html" class="col-md-6 col-lg-4 col-sm-12 text-decoration-none">
+                            <div class="card border-0 px-0">
+                                <img src="./assets/akraba.jpg" class="card-img" alt="Akraba">
+                                <div class="card-body px-0">
+                                    <h5 class="card-title fs-5 fw-medium text-line-clamp">Haber Vermeden Gelmeyen
+                                        Dedikodu Yapmayan
+                                        Akrabalar</h5>
+                                    <p class="card-text fs-6 fw-normal m-0 text-danger">Hızla Tükeniyor</p>
+                                    <p class="card-text fs-6 fw-bold text-body-tertiary">
+                                        <del>$3.350</del> <span class="text-black">$2.350,30</span>
+                                    </p>
+                                    <button type="button"
+                                        class="btn btn-primary w-100 d-flex align-items-center justify-content-center gap-3">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                        <span>İncele</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="./html/product8.html" class="col-md-6 col-lg-4 col-sm-12 text-decoration-none">
+                            <div class="card border-0 px-0">
+                                <img src="./assets/yenge.jpeg" class="card-img" alt="Yenge">
+                                <div class="card-body px-0">
+                                    <h5 class="card-title fs-5 fw-medium text-line-clamp">Büyü Yapmayan İyilik Timsali
+                                        Yüreği Sevgi Dolu
+                                        Yenge</h5>
+                                    <p class="card-text fs-6 fw-normal m-0 text-body-tertiary">Stokta Var</p>
+                                    <p class="card-text fs-6 fw-bold">$867,99</p>
+
+                                    <button type="button"
+                                        class="btn btn-primary w-100 d-flex align-items-center justify-content-center gap-3">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                        <span>İncele</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="./html/product9.html" class="col-md-6 col-lg-4 col-sm-12 text-decoration-none">
+                            <div class="card border-0 px-0">
+                                <img src="./assets/isveren.jpg" class="card-img" alt="İşveren">
+                                <div class="card-body px-0">
+                                    <h5 class="card-title fs-5 fw-medium text-line-clamp">Kesinlikle Revize İstemeyen
+                                        Paranızı Anında
+                                        Yatıran İşveren</h5>
+                                    <p class="card-text fs-6 fw-normal m-0 text-danger">Bulunması Zor</p>
+                                    <p class="card-text fs-6 fw-bold text-body-tertiary">
+                                        <del>$30.350</del> <span class="text-black">$28.290,30</span>
+                                    </p>
+                                    <button type="button"
+                                        class="btn btn-primary w-100 d-flex align-items-center justify-content-center gap-3">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                        <span>İncele</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </a>
+                        <nav class="col-12 py-5" aria-label="Page navigation example">
+                            <ul class="pagination pagination-sm justify-content-center">
+                                <li class="page-item"><a class="page-link" href="#">Önceki</a></li>
+                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                <li class="page-item"><a class="page-link" href="#">Sonraki</a></li>
+                            </ul>
+                        </nav>
+                        </>
+                    </div>
+                </div>
+        </section>
+    </main>
+    <footer class="py-5 bg-primary text-white">
+        <div class="container">
+            <div class="row py-5">
+                <div class="col-md-4 pe-32">
+                    <a class="footer-brand text-white fw-semibold fs-3 text-decoration-none" href="#">olmayanşeyler.</a>
+                    <p class="text-secondary fs-5">
+                        Yeni ürünlerden ilk sen haberdar olmak için bültenimize abone ol!
+                    </p>
+                    <div class="input-group mb-5">
+                        <input type="text"
+                            class="form-control bg-primary border border-left-0 text-white footer-input py-2"
+                            placeholder="Abone ol..." aria-label="Search">
+                        <button class="btn btn-light" type="button">
+                            <i class="fa-solid fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5 class="footer-title-custom mb-3 fw-medium">BAĞLANTILAR</h5>
+                    <ul class="footer-nav list-unstyled">
+                        <li class="py-1"><a href="#" class="text-decoration-none">Anasayfa</a></li>
+                        <li class="py-1"><a href="#" class="text-decoration-none">Ürünler</a></li>
+                        <li class="py-1"><a href="#" class="text-decoration-none">Çerez Politikası</a>
+                        </li>
+                        <li class="py-1"><a href="#" class="text-decoration-none">Sık Sorulan Sorular</a>
+                        </li>
+                        <li class="py-1"><a href="#" class="text-decoration-none">İletişim</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5 class="footer-title-custom mb-3 fw-medium">İLETİŞİM</h5>
+                    <address class="text-secondary d-flex flex-column gap-3">
+                        <div class="d-flex align-items-center gap-3">
+                            <i class="fa-solid fa-location-dot fs-5"></i>
+                            Atatürk Mah. Ankara Sok. No:42
+                        </div>
+                        <div class="d-flex align-items-center gap-3">
+                            <i class="fa-solid fa-phone fs-5"></i>
+                            +90 555 555 55 55
+                        </div>
+                        <div class="d-flex align-items-center gap-3">
+                            <i class="fa-solid fa-envelope fs-5"></i>
+                            korhanemirhann@gmail.com
+                        </div>
+                    </address>
+                </div>
+            </div>
+            <div class="d-flex flex-column flex-sm-row justify-content-between mt-3 pt-2">
+                <div class="w-100 d-flex align-items-center justify-content-center justify-content-sm-start">
+                    <p class="small m-0 text-secondary">&copy; 2025 Tüm Hakları Saklıdır. Made by emirkrhan</p>
+                </div>
+                <div
+                    class="footer-social d-flex justify-content-center justify-content-sm-end gap-4 fs-5 text-secondary py-4">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-x-twitter"></i>
+                    <i class="fa-brands fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

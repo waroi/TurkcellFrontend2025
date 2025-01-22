@@ -1,0 +1,212 @@
+* {
+  box-sizing: border-box;
+  font-family: "Gideon Roman", serif;
+  margin: 0;
+  padding: 0;
+}
+@mixin animation($name, $duration: 1s, $timing-function: ease, $iteration: infinite) {
+  animation: $name $duration $timing-function $iteration;
+}
+@mixin transition($properties, $duration: 0.3s, $timing-function: ease) {
+  transition: $properties $duration $timing-function;
+}
+@mixin transform($transformation) {
+  transform: $transformation;
+  transform-origin: center;
+}
+@mixin image-style($width: 100%, $height: auto, $fit: contain) {
+  width: $width;
+  height: $height;
+  object-fit: $fit;
+}
+@mixin card-shadow($color1, $color2, $color3) {
+  box-shadow: 0 0 0 4px $color1, 0 0 0 8px $color2, 0 0 0 12px $color3;
+}
+.audio-player {
+  // width: map-get($spacers, 35);
+  height: map-get($spacers, 10); 
+}
+.lumos {
+  .card-lumos {
+    margin: 0 auto;
+    padding: 2em;
+    width: 100%;
+    max-width: 300px;
+    background-color: $white;
+    color: $black;
+    @include transition(background-color, 0.3s);
+    z-index: 1;
+    &:hover {
+      background-color: #000;
+      color: #fff;
+    }
+  }
+  .card-image {
+    position: absolute;
+    top: 50%;
+    @include transform(translateY(-50%));
+    z-index: -1;
+    @include animation(wave, 2s);
+    img {
+      @include image-style(100px, 100px);
+    }
+  }
+  .left-image {
+    left: 10%;
+    @include animation(slideLeft, 2s);
+  }
+  .right-image {
+    right: 10%;
+    @include animation(slideRight, 2s);
+  }
+  @keyframes wave {
+    0%, 100% {
+      @include transform(translateY(0));
+    }
+    50% {
+      @include transform(translateY(-10px));
+    }
+  }
+  @keyframes slideLeft {
+    0% {
+      @include transform(translateX(0px));
+    }
+    50% {
+      @include transform(translateX(100px));
+    }
+    100% {
+      @include transform(translateX(50px));
+    }
+  }
+  @keyframes slideRight {
+    0% {
+      @include transform(translateX(100px));
+    }
+    50% {
+      @include transform(translateX(0px));
+    }
+    100% {
+      @include transform(translateX(50px));
+    }
+  }
+  @media (max-width: 767px) {
+    .card-image,
+    .left-image,
+    .right-image {
+      animation: none;
+      visibility: hidden;
+    }
+  }
+  .custom-switch .form-check-input {
+    @include transform(rotate(90deg));
+    @include image-style(100px, 50px);
+  }
+  .custom-switch .form-check-input:checked {
+    background-color: $black;
+    border-color: $dark;
+  }
+  .custom-switch .form-check-input {
+    background-color: $white;
+    border-color: $secondary;
+  }
+  .custom-switch .form-check-label {
+    margin-left: 15px;
+    font-size: $font-size-base;
+    color: $secondary;
+  }
+}
+.about-us {
+  height: 700px;
+  background: url("https://media.sketchfab.com/models/52e750df556d4f7bb7b262a65d0353ae/thumbnails/6269579d05f946149fa69df1ca6bb08e/97749352ea0945179284251bf8a451da.jpeg")
+    center / cover no-repeat;
+}
+.products {
+  .card {
+    position: relative;
+    overflow: hidden;
+    @include transition(box-shadow, 0.5s);
+    &:hover {
+      @include card-shadow($black, $red, $yellow);
+    }
+    .image-container {
+      position: relative;
+      width: 100%;
+      max-height: 360px;
+      overflow: hidden;
+      .card-img-top {
+        @include image-style(100%, 360px);
+      }
+      img {
+        @include image-style(100%, 360px);
+        &.hover-image {
+          position: absolute;
+          top: 0;
+          left: 0;
+          opacity: 0;
+          @include transition(opacity, 0.3s);
+        }
+      }
+      &:hover {
+        .hover-image {
+          opacity: 1;
+        }
+        img:not(.hover-image) {
+          opacity: 0;
+        }
+      }
+    }
+  }
+  .carousel-inner {
+    @include image-style(100%, 600px);
+    overflow: hidden;
+    img {
+      @include image-style(100%, 600px);
+    }
+  }
+  .properties {
+    strong {
+      color: $success;
+    }
+    .buy-btn {
+      position: relative;
+      display: inline-block;
+      .fa-cart-shopping {
+        position: absolute;
+        left: 10px;
+        opacity: 0;
+        @include transition(opacity, 0.3s);
+        top: 50%;
+        @include transform(translateY(-50%));
+      }
+      &:hover .fa-cart-shopping {
+        opacity: 1;
+      }
+      &:hover {
+        padding-left: 40px;
+      }
+    }
+  }
+}
+.contact-images{
+  @keyframes shake {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(10deg);
+    }
+    50% {
+        transform: rotate(0);
+    }
+    75% {
+      transform: rotate(-10deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+  }
+  .contact-image {
+    @include animation(shake, 3s, ease-in-out);
+    transform-origin: center; 
+  }
+}

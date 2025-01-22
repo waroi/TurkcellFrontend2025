@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+$danger: rgb(229, 46, 63);
+$info: rgb(25, 67, 93);
+$secondary: rgb(55, 79, 120);
+$primary: rgba(55, 79, 120, 0.1);
+$light: rgb(255, 228, 223);
+$white: rgb(255, 255, 255);
+$font-family-base: "Montserrat", serif;
+$font-size-base: 0.95rem;
+
+$navbar-light-icon-color: $white;
+$navbar-light-toggler-border-color: none;
+$navbar-toggler-focus-width: none;
+
+$carousel-indicator-active-bg: $info;
+$carousel-control-color: $info;
+
+$form-range-track-bg: rgba(55, 79, 120, 0.741);
+$form-range-thumb-bg: $info;
+
+$card-border-color: rgba(55, 79, 120, 0.255);
+
+$btn-hover-bg-shade-amount: 25%;
+$btn-link-hover-color: $danger;
+
+$form-check-input-checked-color: $info;
+$form-check-input-checked-bg-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path fill='none' stroke='#{$form-check-input-checked-color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/></svg>");
+
+$accordion-button-color: $info;
+$accordion-button-active-color: $info;

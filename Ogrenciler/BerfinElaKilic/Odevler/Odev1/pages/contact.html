@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=DM Sans"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-light sticky-top">
+        <div class="container">
+          <a class="navbar-brand fs-2 text-primary fw-bold" href="#"
+            ><i>KendimeHayat</i></a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 fs-6 gap-4 ms-5 ">
+              <li class="nav-item">
+                <a class="nav-link active text-info" aria-current="page" href="../index.html"
+                  >Anasayfa</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-info" href="about.html">Hakkımızda</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-info" href="../index.html"> Ürünler </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-info" href="contact.html">İletişim</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-info" href="sss.html">SSS</a>
+              </li>
+            </ul>
+            <div
+              class="d-flex justify-content-center align-items-center gap-4 fs-5 text-info"
+            >
+              <div><i class="fa-regular fa-heart"></i></div>
+              <div><i class="fa-solid fa-cart-shopping"></i></div>
+              <div><i class="fa-regular fa-user"></i></div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <main>
+        <section class="search-seaction mt-5">
+            <div class="container">
+                <div class="search-content">
+                    <h2 class="mb-4 text-secondary">Sana Nasıl Yardımcı Olabiliriz?</h2>
+                    <form class="d-flex search-bar position-relative" role="search">
+                        <i class="fa-solid fa-magnifying-glass position-absolute text-secondary"></i>
+                        <input class="form-control me-5 text-info search-input" type="search" placeholder="Yardım almak istediğin konuyu ara..." aria-label="Search">
+                        <button class="btn btn-secondary px-5 text-light" type="submit">Ara</button>
+                      </form>
+                </div>                
+            </div>
+        </section>
+        <section class="contact-us overlay w-100 position-relative" id="contact">
+            <div class="container">
+              <div class="mb-5 text-center pt-5">
+                <h2 class="section-title text-white position-relative">
+                  Contact Us
+                </h2>
+              </div>
+    
+              <!-- contact-container -->
+    
+              <div class="row justify-content-center position-relative">
+                <div class="col-lg-7 mb-5">
+                  <form action="#" class="p-5 needs-validation bg-light text-info" novalidate>
+                    <h2 class="h4 text-secondary mb-5">İletişim Formu</h2>
+                    <div class="row form-group">
+                      <div class="col-md-6 mb-3 mb-md-0 pb-3">
+                        <label class="text-black" for="fname">İsim</label>
+                        <input
+                          type="text"
+                          id="fname"
+                          class="form-control rounded-0" required
+                        />
+                        <div class="valid-feedback">Çok iyi!</div>
+                        <div class="invalid-feedback">Lütfen isminizi girin.</div>
+                      </div>
+                      <div class="col-md-6 pb-3">
+                        <label class="text-black" for="lname">Soyisim</label>
+                        <input
+                          type="text"
+                          id="lname"
+                          class="form-control rounded-0" required
+                        />
+                        <div class="valid-feedback">Çok iyi!</div>
+                        <div class="invalid-feedback">Lütfen soyisminizi girin.</div>
+                      </div>
+                    </div>
+                    <div class="row form-group">
+                      <div class="col-md-12 pb-3">
+                        <label class="text-black" for="email">Email</label>
+                        <input
+                          type="email"
+                          id="email"
+                          class="form-control rounded-0" required
+                        />
+                        <div class="valid-feedback">Çok iyi!</div>
+                        <div class="invalid-feedback">Lütfen geçerli mail adresi girin.</div>
+                      </div>
+                    </div>
+                    <div class="row form-group">
+                      <div class="col-md-12 pb-3">
+                        <label class="text-black" for="subject">Konu</label>
+                        <input
+                          type="subject"
+                          id="subject"
+                          class="form-control rounded-0" required
+                        />
+                        <div class="valid-feedback">Çok iyi!</div>
+                        <div class="invalid-feedback">Lütfen konuyu girin.</div>
+                      </div>
+                    </div>
+                    <div class="row form-group">
+                      <div class="col-md-12 pb-3">
+                        <label class="text-black pb-2" for="message">Mesaj</label>
+                        <textarea
+                          name="message"
+                          id="message"
+                          cols="30"
+                          rows="7"
+                          class="form-control rounded-0" required
+                          placeholder="Mesajınızı buraya yazabilirsiniz..."
+                        ></textarea>
+                        <div class="valid-feedback">Çok iyi!</div>
+                        <div class="invalid-feedback">Lütfen mesajınızı yazın.</div>
+                      </div>
+                    </div>
+                    <div class="row form-group">
+                      <div class="col-md-12">
+                        <input
+                          type="submit"
+                          value="Send Message"
+                          class="btn btn-secondary text-light mr-2 mb-2 rounded-pill px-3 py-2 fs-6"
+                        />
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </section>
+      </main>
+      <footer class="bg-primary text-light mt-5 py-5">
+        <div class="container">
+          <div class="row g-4">
+            <div class="social-media col-12 col-lg-4 col-md-4">
+              <h3 class="text-uppercase fs-3 mb-4 fw-bold">Sosyal Medya</h3>
+              <div class="social d-flex align-items-center gap-4">
+                <div
+                  class="instagram d-flex justify-content-center align-items-center"
+                >
+                  <i class="fa-brands fa-instagram"></i>
+                </div>
+                <div
+                  class="twitter d-flex justify-content-center align-items-center"
+                >
+                  <i class="fa-brands fa-twitter"></i>
+                </div>
+                <div
+                  class="linkedin d-flex justify-content-center align-items-center"
+                >
+                  <i class="fa-brands fa-linkedin-in"></i>
+                </div>
+                <div
+                  class="github d-flex justify-content-center align-items-center"
+                >
+                  <i class="fa-brands fa-github"></i>
+                </div>
+              </div>
+            </div>
+            <div class="pages col-12 col-lg-4 col-md-4">
+              <h3 class="text-uppercase fs-3 mb-4 fw-bold">Sayfalar</h3>
+              <p><a class="text-light" href="#">Anasayfa</a></p>
+              <p><a class="text-light" href="#">Hakkımızda</a></p>
+              <p><a class="text-light" href="#">Sıkça Sorulan Sorular</a></p>
+              <p><a class="text-light" href="#">İletişim</a></p>
+            </div>
+            <div class="iletisim col-12 col-lg-4 col-md-4">
+              <h3 class="text-uppercase fs-3 mb-4 fw-bold">İletişim</h3>
+              <p><i class="fa-solid fa-location-dot"></i> Diyarbakır, Türkiye</p>
+              <p><i class="fa-solid fa-envelope"></i> berfinela877@gmail.com</p>
+              <p><i class="fa-solid fa-phone"></i> 0531-280-6221</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        (() => {
+            'use strict'
+            const forms = document.querySelectorAll('.needs-validation')
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+        </script>
+</body>
+</html>

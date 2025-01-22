@@ -1,0 +1,53 @@
+$primary: #62a5997d;
+$secondary: #300b80;
+$danger:#456080;
+$theme1: #c5c6c7;
+$theme2: #456080;
+$hover-color: $theme2;
+$transition-time: 0.3s;
+@mixin hoverText($hover-color: $hover-color, $transition-time: $transition-time) {
+    color: inherit;
+    transition: color $transition-time ease;
+
+    &:hover {
+        color: $hover-color;
+    }
+}
+@mixin hoverCard($shadow-color: rgba(0, 0, 0, 0.2), $scale-factor: 1.05, $transition-time: $transition-time) {
+    transition: transform $transition-time ease, box-shadow $transition-time ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+        transform: scale($scale-factor);
+        box-shadow: 0 8px 16px $shadow-color;
+    }
+}
+nav {
+    background: linear-gradient(to right, grey, $theme1, $theme2 );
+    a{
+        @include hoverText($hover-color, $transition-time);
+    }
+    i{
+        @include hoverText($hover-color, $transition-time);
+    }
+    .nav-item{
+        @include hoverText($hover-color, $transition-time);
+    }
+}
+.card-img-top {
+    object-fit: cover; 
+    height:400px;
+}
+.card-body {
+    flex-grow: 1; 
+}
+.quantity-input {
+    width: 4rem;
+    text-align: center;
+}
+.btn-primary {
+    padding: 0.5rem 2rem;
+}
+
+  
+  

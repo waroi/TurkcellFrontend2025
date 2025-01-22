@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>80's Retro Layout</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body class="text-light">
+    <main
+      class="main-card position-relative border h-100 z-0 box-shadow m-0 overflow-hidden"
+    >
+      <div
+        class="retro-background top-0 start-0 w-100 h-100 position-absolute z-n1"
+      ></div>
+      <div
+        class="overflow-hidden stars position-absolute top-0 start-0 bottom-0 end-0"
+      >
+        <div class="wrapper w-100 h-100"><div class="light"></div></div>
+      </div>
+      <header class="p-3 ms-3 me-3 text-light">
+        <nav class="navbar navbar-expand-lg bg-transparent">
+          <div class="container-fluid">
+            <div class="logo-wrapper">
+              <a class="navbar-brand logo m-0 text-primary fs-3" href="#"
+                >RetroRota</a
+              >
+              <div
+                class="header-border position-relative w-100 box-shadow"
+              ></div>
+            </div>
+            <button
+              class="navbar-toggler border-0"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasNavbar"
+              aria-controls="offcanvasNavbar"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon w-100 h-10 border-0"
+                ><i class="fa-solid fa-bars fs-3" style="color: #d1d1d1"></i
+              ></span>
+            </button>
+            <div
+              class="offcanvas offcanvas-end flex-grow-0 text-light bg-dark"
+              tabindex="-1"
+              id="offcanvasNavbar"
+              aria-labelledby="offcanvasNavbarLabel"
+            >
+              <div class="offcanvas-header">
+                <a href="./index.html"></a>
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+                  RetroRota
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="offcanvas"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                  <li class="nav-item">
+                    <a
+                      class="nav-link link-light active"
+                      aria-current="page"
+                      href="index.html"
+                      >Home</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link link-light" href="./sso.html">SSO</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link link-light" href="./iletisim.html"
+                      >Iletisim</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link link-light" href="./hakkimizda.html"
+                      >Hakkımızda</a
+                    >
+                  </li>
+                </ul>
+                <form class="d-flex" role="search">
+                  <input
+                    class="form-control me-2 search-input box-shadow shadow-none bg-light outline-0"
+                    type="search"
+                    placeholder="Search"
+                    aria-label="Search"
+                  />
+                  <button
+                    class="search-button btn btn-outline-success text-success"
+                    type="submit"
+                  >
+                    Search
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <section
+        class="description-section position-relative d-flex align-items-center"
+      >
+        <div class="star position-absolute"></div>
+        <div class="star position-absolute"></div>
+        <div class="star position-absolute"></div>
+        <div class="star position-absolute"></div>
+        <div class="row bg-transparent px-4">
+          <div class="col-12 col-md-8 product-images">
+            <div
+              id="carouselSigorta"
+              class="carousel slide box-shadow-sm w-100"
+            >
+              <div class="carousel-inner rounded">
+                <div class="carousel-item active">
+                  <div class="carousel-img-wrapper p-5">
+                    <img
+                      src="./assets/protection.png"
+                      class="d-block w-100"
+                      alt="Zaman Yolcusuna Yönelik Seyahat Sigortası"
+                    />
+                  </div>
+                </div>
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselSigorta"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselSigorta"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="w-100 p-2 d-flex flex-column gap-3">
+              <h3 class="card-title">
+                Zaman Yolcusuna Yönelik Seyahat Sigortası
+              </h3>
+              <p class="product-description text-info">
+                Geçmiş, bugün ve geleceğe güvenle seyahat etmek için gerekli
+                olan tek sigorta! Dinozorlar, robot isyanları, tarihi değişim
+                hataları ve uzay kazalarına karşı tam koruma!
+              </p>
+              <p class="star-rating d-flex flex-wrap gap-2">
+                <span class="text-secondary">★★★★★</span>
+                <strong>(5/5) - 340 Yorum</strong>
+              </p>
+              <p class="product-price fs-2 fw-bold text-primary">₺499.99</p>
+              <div class="mb-3">
+                <label for="quantitySigorta" class="form-label fw-bold"
+                  >Adet:</label
+                >
+                <input
+                  type="number"
+                  id="quantitySigorta"
+                  name="quantity"
+                  class="form-control w-50"
+                  min="1"
+                  value="1"
+                />
+              </div>
+              <div
+                class="d-flex align-items-center justify-content-around gap-3"
+              >
+                <button class="btn btn-primary flex-grow-1">Sepete Ekle</button>
+                <button class="btn outline-primary border-primary flex-grow-1">
+                  Şimdi Al
+                </button>
+                <button
+                  class="btn btn-outline-secondary border-0 d-flex align-items-center gap-2 m-0"
+                >
+                  <i class="fa-regular fa-heart fs-4"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer class="bg-transparent text-white py-5">
+        <div class="container">
+          <div class="row mt-4">
+            <div class="col-12 col-lg-6 text-center text-lg-start">
+              <small
+                >© 1982 RetroRota.Dikkat bu websitesi gelecek için oldukça banal
+                geçmiş için oldukça sıradışıdır.</small
+              ><br />
+            </div>
+            <div class="col-12 col-lg-6 text-center text-lg-end">
+              <small>Retro-fütüristik tasarım: Hilal Semercioğlu</small>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </main>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/b101dd4247.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+  <!-- Latest compiled and minified JavaScript -->
+</html>
