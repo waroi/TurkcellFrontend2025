@@ -29,17 +29,13 @@ Projeyi çalıştırmak için aşağıdaki adımları izleyin:
 
 1. **Repository'de İlgili Klasöre Girin:**
    ```bash
-   TurkcellFrontend2025/Ogrenciler/Hikmet/odevler/odev1
+   cd TurkcellFrontend2025/Ogrenciler/Hikmet/odevler/odev1
    ```
-2. **SCSS Dosyalarının Doğru Çalışmasını Garantilemek İçin Bağımlılıları İndirin:**
+2. **SCSS Dosyalarının Doğru Çalışmasını Garantilemek için Bağımlılıları İndirin:**
    ```bash
    npm install
    ```
-3. **Geliştirme Ortamını Başlatın ve index.html dosyasını Live Preview ile açın:**
-   ```bash
-   npm run sass
-   ```
-4. **Tarayıcıda Açın:**
+3. **index.html dosyasını Live Preview ile açın:**
    [http://127.0.0.1:5500/Ogrenciler/Hikmet/odevler/odev1/index.html](http://127.0.0.1:5500/Ogrenciler/Hikmet/odevler/odev1/index.html)
 
 ---
