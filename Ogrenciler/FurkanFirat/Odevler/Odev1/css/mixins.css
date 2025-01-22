@@ -1,0 +1,17 @@
+/* Error: Undefined variable.
+ *    ,
+ * 33 |   @include section-style($extra-dark-purple, 20px 0, $white);
+ *    |                          ^^^^^^^^^^^^^^^^^^
+ *    '
+ *   scss\mixins.scss 33:26  root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Undefined variable.\a    \2577 \a 33 \2502    @include section-style($extra-dark-purple, 20px 0, $white);\d\a    \2502                           ^^^^^^^^^^^^^^^^^^\a    \2575 \a   scss\\mixins.scss 33:26  root stylesheet";
+}

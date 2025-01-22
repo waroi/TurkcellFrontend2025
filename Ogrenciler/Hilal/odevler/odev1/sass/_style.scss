@@ -8,7 +8,6 @@ $move-star-animation: move-star 1s ease-in forwards;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
-
 @mixin star-animation($delay, $top, $left, $animation) {
   animation: $animation;
   animation-delay: $delay;
@@ -104,8 +103,8 @@ footer {
   }
 }
 .star {
-  width: 5px;
-  height: 5px;
+  width: 4px;
+  height: 4px;
   background: linear-gradient(45deg, $light, rgba(255, 255, 255, 0.2));
   border-radius: 50%;
   box-shadow: 0 0 10px $light, 0 0 20px $light;
@@ -314,6 +313,7 @@ footer {
   }
 }
 @keyframes star-glow {
+  //TODO move-star ile çakışıyor, sorunu çözülecek.
   0% {
     transform: scale(1);
     box-shadow: 0 0 5px $light, 0 0 10px $light, 0 0 20px #f2994a;
