@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HP Wands</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gideon+Roman&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png"
+        href="https://upload.wikimedia.org/wikipedia/commons/9/9b/HP_-_Harry_Potter_wordmark.svg">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-black navbar-dark fixed-top" data-bs-theme="dark" id="main-nav">
+        <div class="container">
+            <a class="navbar-brand fs-24" href="index.html">HP WANDS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarC"
+                aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarC">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-4">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html"
+                            data-bs-dismiss="collapse">Anasayfa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about-us" data-bs-dismiss="collapse">Hakkımızda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#products" data-bs-dismiss="collapse">Ürünler</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sss" data-bs-dismiss="collapse">SSS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="iletisim.html" data-bs-dismiss="collapse">İletişim</a>
+                    </li>
+                </ul>
+                <audio class="audio-player me-2" src="Hedwigs-Theme.mp3" controls loop autoplay muted>
+                </audio>
+                <form class="d-flex">
+                    <input class="form-control me-3" type="search" placeholder="Sayfada ara" aria-label="Search">
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="contact-images d-flex justify-content-between mt-20 mx-3">
+        <div class="contact-image flex-start">
+            <img src="https://i.pinimg.com/1200x/06/61/b6/0661b673bddfd8dcd6e41d87132f9463.jpg" alt="" style="height: 120px; width: 100px;">
+        </div>
+        <div class="contact-image  flex-end">
+            <img src="https://i.pinimg.com/1200x/06/61/b6/0661b673bddfd8dcd6e41d87132f9463.jpg" alt="" style="height: 120px; width: 100px;">
+        </div>
+    </div>
+    <section class="container my-20 contact bg-light-green">
+        <div class="d-flex align-items-center justify-content-center flex-column">
+            <h1 class="text-black text-center mt-10">İLETİŞİM</h1>
+            <form class="needs-validation" novalidate>
+                <div class="row">
+                    <div class="form-group col-12 col-md-6">
+                        <label for="firstName">Ad</label>
+                        <input type="text" class="form-control" id="firstName" required>
+                        <div class="invalid-feedback">Bu alan boş bırakılamaz.</div>
+                    </div>
+                    <div class="form-group col-12 col-md-6">
+                        <label for="lastName">Soyad</label>
+                        <input type="text" class="form-control" id="lastName" required>
+                        <div class="invalid-feedback">Bu alan boş bırakılamaz.</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" required>
+                    <div class="invalid-feedback">Geçerli bir email adresi girin.</div>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mesaj</label>
+                    <textarea id="message" class="form-control" rows="4" required></textarea>
+                    <div class="invalid-feedback">Bu alan boş bırakılamaz.</div>
+                </div>
+                <button type="submit" class="btn btn-success my-3">Mesaj Gönder</button>
+            </form>
+        </div>
+    </section>
+    <div class="contact-images d-flex justify-content-between mx-3 my-5">
+        <div class="contact-image flex-start">
+            <img src="https://i.pinimg.com/1200x/06/61/b6/0661b673bddfd8dcd6e41d87132f9463.jpg" alt="" style="height: 120px; width: 100px;">
+        </div>
+        <div class="contact-image  flex-end">
+            <img src="https://i.pinimg.com/1200x/06/61/b6/0661b673bddfd8dcd6e41d87132f9463.jpg" alt="" style="height: 120px; width: 100px;">
+        </div>
+    </div>
+    <footer class=" text-center text-lg-start text-white bg-black">
+        <div class="container d-flex justify-content-between p-4">
+            <div class="">
+                <span>Sosyal ağlar üzerinden bizimle bağlantıda kalın:</span>
+            </div>
+            <div>
+                <ul class="nav justify-content-end list-unstyled d-flex">
+                    <li class="ms-3">
+                        <a class="text-muted" href="#" aria-label="Twitter">
+                            <i class="fab fa-twitter text-white"></i>
+                        </a>
+                    </li>
+                    <li class="ms-3">
+                        <a class="text-muted" href="#" aria-label="Instagram">
+                            <i class="fab fa-instagram text-white"></i>
+                        </a>
+                    </li>
+                    <li class="ms-3">
+                        <a class="text-muted" href="#" aria-label="Facebook">
+                            <i class="fab fa-facebook text-white"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="">
+            <div class="container text-center text-md-start mt-5">
+                <div class="row mt-3">
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <h6 class="text-uppercase fw-bold">HP WANDS</h6>
+                        <hr class="mb-4 mt-0 d-inline-block mx-auto"
+                            style="width: 60px; background-color: #fff; height: 2px" />
+                        <p>
+                            Sihir dünyasına hoş geldiniz!
+                            <br>
+                            Asaların büyülü dünyasını keşfedin.
+                        </p>
+                    </div>
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <h6 class="text-uppercase fw-bold">İletişim</h6>
+                        <hr class="mb-4 mt-0 d-inline-block mx-auto"
+                            style="width: 60px; background-color: #fff; height: 2px" />
+                        <p><i class="fas fa-home mr-3"></i> Balıkesir, Karesi</p>
+                        <p><i class="fas fa-envelope mr-3"></i> hp@wands.com</p>
+                        <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+                        <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+            © 2025 Copyright Company, <strong class="fw-bold">Zeynep Güney</strong> tarafından geliştirilmiştir. 
+        </div>
+    </footer>
+    <script>
+        (() => {
+            'use strict'
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            const forms = document.querySelectorAll('.needs-validation')
+            // Loop over them and prevent submission
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+    </script>
+     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ </body>
+</body>
+</html>
