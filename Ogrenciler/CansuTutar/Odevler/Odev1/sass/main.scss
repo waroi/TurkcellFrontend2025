@@ -1,0 +1,219 @@
+/* Mixins */
+@mixin flex-center($direction: row, $gap: 0) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: center;
+    align-items: center;
+    gap: $gap;
+  }
+  
+  @mixin transition($properties: all, $duration: 0.3s, $easing: ease-in-out) {
+    transition: $properties $duration $easing;
+  }
+  
+  @mixin responsive($breakpoint) {
+    @if $breakpoint == "sm" {
+      @media (max-width: 576px) {
+        @content;
+      }
+    } @else if $breakpoint == "md" {
+      @media (max-width: 768px) {
+        @content;
+      }
+    } @else if $breakpoint == "lg" {
+      @media (max-width: 992px) {
+        @content;
+      }
+    } @else if $breakpoint == "xl" {
+      @media (max-width: 1200px) {
+        @content;
+      }
+    }
+  }
+  
+  /* General Styles */
+  body {
+    padding-top: 80px;
+  }
+  
+  .navbar-logo nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  /* Extendables */
+  %center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  %card-hover {
+    @include transition(transform 0.3s, box-shadow 0.3s);
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+  }
+  
+  /* Navbar */
+  .navbar-brand {
+    @include flex-center(row, 10px);
+    text-decoration: none;
+    position: relative;
+  }
+  
+  .logo-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .main-logo {
+    width: 50px;
+    height: auto;
+  }
+  
+  .emoji {
+    font-size: 0.5rem;
+    position: absolute;
+    top: 23px;
+    left: 78%;
+    transform: translateX(-50%);
+    animation: jump 1s ease-in-out infinite;
+  }
+  
+  .logo-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    animation: fadeIn 1s ease-in-out 1s forwards;
+    opacity: 0;
+  }
+  
+  /* Tooltip */
+  .tooltip-container {
+    position: relative;
+  
+    &:hover .tooltip-text {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+  
+  .tooltip-text {
+    visibility: hidden;
+    background-color: #888a8a;
+    color: #fff;
+    text-align: left;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    right: 100%;
+    margin-right: 10px;
+    opacity: 0;
+    transform: translateY(-50%);
+    white-space: nowrap;
+    @include transition(opacity 0.3s);
+  }
+  
+  /* Cards */
+  .card {
+    @extend %card-hover;
+  
+    .card-img-top {
+      height: 200px;
+      object-fit: cover;
+    }
+  }
+  
+  /* Banner */
+  .banner {
+    position: relative;
+    height: 32vh;
+    overflow: hidden;
+    @include flex-center(column);
+  
+    &__video-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+  
+    &__overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+    }
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #e49fe4;
+    color: white;
+  }
+  
+  /* Animations */
+  @keyframes jump {
+    0%, 100% {
+      transform: translateX(-50%) translateY(0);
+    }
+    50% {
+      transform: translateX(-50%) translateY(-10px);
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive Design */
+  @include responsive("md") {
+    body {
+      padding-top: 60px;
+    }
+  
+    .welcome-page {
+      background-color: #444;
+    }
+  
+    h1 {
+      font-size: 2.5rem;
+    }
+  
+    p {
+      font-size: 1rem;
+    }
+  }
+  
+  @include responsive("sm") {
+    .welcome-page {
+      background-color: #555;
+    }
+  
+    h1 {
+      font-size: 2rem;
+    }
+  
+    p {
+      font-size: 0.9rem;
+    }
+  }
+  
