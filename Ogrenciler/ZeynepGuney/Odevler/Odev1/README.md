@@ -12,7 +12,7 @@ Büyülü bir deneyim sunan bu e-ticaret platformunda, favori karakterlerinizden
   - İleşitim bölümü.
 
 - **Hakkımızda:**
-  - Dückanımızın ilham kaynağı ve asaları gerçekçi bir şekilde hayata geçirme konusundaki adanmışlığımızı keşfedin.
+  - Dükkanımızın ilham kaynağı ve asaları gerçekçi bir şekilde hayata geçirme konusundaki adanmışlığımızı keşfedin.
 
 - **Ürünler:**
   - 12 asadan oluşan özel koleksiyonumuzu inceleyin:
@@ -50,6 +50,14 @@ Büyülü bir deneyim sunan bu e-ticaret platformunda, favori karakterlerinizden
 - Anasayfa üzerinde yaygın soruların yanıtları.
 - Daha detaylı bilgiler için tam bir SSS bölümüne yönlendirme.
 
+## Kullanılan Teknolojiler
+
+- **Frontend:** HTML, CSS, JavaScript, Bootstrap
+
+## Katkı Sağlama
+
+HP Wands'ı geliştirmek için önerilerinize açığız! Önerilerde bulunmak veya hata bildirmek için bir issue açabilir veya pull request gönderebilirsiniz.
+
 ## Kurulum
 
 Web sitesini yerel olarak kurmak için aşağıdaki adımları izleyin:
@@ -77,18 +85,3 @@ Web sitesini yerel olarak kurmak için aşağıdaki adımları izleyin:
    ```bash
    npm start
   ```
-
-6. Tarayıcınızda `http://localhost:3000` adresini ziyaret ederek web sitesini inceleyin.
-
-## Kullanılan Teknolojiler
-
-- **Frontend:** HTML, CSS, JavaScript, Bootstrap
-
-## Katkı Sağlama
-
-HP Wands'ı geliştirmek için önerilerinize açığız! Önerilerde bulunmak veya hata bildirmek için bir issue açabilir veya pull request gönderebilirsiniz.
-
----
-
-HP Wands ile büyülü bir alışveriş yolculuğuna çıkın. İçinizdeki büyücüyü ortaya çıkarın!
-
