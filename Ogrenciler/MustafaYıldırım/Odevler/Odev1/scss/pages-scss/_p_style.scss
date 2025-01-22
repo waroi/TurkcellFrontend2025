@@ -1,0 +1,129 @@
+@mixin textStyle($size, $weight, $color) {
+    font-size: $size;
+    font-weight: $weight;
+    color: $color;
+}
+
+$primary-color: #222222;
+$bg-dark-green: #6a9c89;
+$bg-first: #f6e6d8;
+$logo-title: "Freckle Face", serif;
+$logo-title-color: #fa812f;
+$subtext-color: #22222270;
+
+body {
+    background-color: $bg-first;
+}
+header {
+    img {
+        height: calc(1.5rem + 1.5vw)
+        }
+    .navbar-brand{
+        @include textStyle(calc(1.5rem + 1.5vw), 800, $logo-title-color);
+    }
+    .dropdown {
+        a {
+            color: var(--bs-navbar-color);
+        }
+    }
+}
+.tour-package {
+    .package-title {
+        @include textStyle(calc(1.375rem + 1.5vw), 500, $bg-dark-green);
+    }
+
+    .package-description {
+        @include textStyle(inherit, 300, inherit);
+    }
+
+    .carousel {
+        .carousel-item {
+            height: 400px;
+        }
+
+        .carousel-indicators button {
+            background-color: $bg-dark-green;
+        }
+    }
+
+    .card {
+        .accordion {
+            .accordion-header {
+                button {
+                    background-color: $bg-dark-green;
+                    @include textStyle(16px, 500, white);
+                    &:hover {
+                        background-color: darken($bg-dark-green, 10);
+                    }
+                }
+            }
+        }
+    }
+
+    .pricing {
+        .price {
+            @include textStyle(calc(0.7rem + 1vw), 800, inherit);
+        }
+
+        .btn-primary {
+            background-color: $bg-dark-green;
+            &:hover {
+                background-color: lighten($bg-dark-green, 5);
+            }
+        }
+    }
+}
+.footer {
+    background-color: $bg-dark-green;
+
+    .icon {
+        @include textStyle(16px,300 ,$primary );
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        transition: all 0.3s ease-in;
+        &:hover {
+            background-color: $primary;
+            a {
+                color: $logo-title-color;
+            }
+        }
+    }
+    span {
+        color: $logo-title-color;
+    }
+}
+
+@media (min-width: 992px) {
+    header {
+        .dropdown {
+            &:hover .dropdown-menu {
+                display: block;
+            }
+            a {
+                &::after {
+                    content: none;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    header {
+        .dropdown a {
+            padding-left: 0 !important;
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    body {
+        font-size: 14px;
+    }
+    header {
+        .dropdown a {
+            padding-left: 0 !important;
+        }
+    }
+}
