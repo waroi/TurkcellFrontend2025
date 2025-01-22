@@ -1,0 +1,25 @@
+@mixin line-clamp($lines: 3, $line-height: 1.5) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: #{$lines}; // Satır sayısını dinamik alır
+  overflow: hidden; // Fazlalıkları gizler
+  text-overflow: ellipsis; // Fazlalık yerine "..." koyar
+  line-height: #{$line-height}; // Satır yüksekliği
+  max-height: calc(#{$line-height} * #{$lines}em); // Toplam yükseklik
+}
+
+$body-bg: transparent;
+$border-width: 0;
+$dark: black;
+$light: white;
+$primary: rgba(3, 142, 255, 0.616);
+
+.card-text {
+  @include line-clamp(3, 1.5); // 3 satır ve 1.5 satır yüksekliği
+}
+
+nav {
+  a {
+    color: $dark;
+  }
+}
