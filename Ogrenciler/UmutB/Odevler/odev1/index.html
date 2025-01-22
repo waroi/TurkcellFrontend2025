@@ -22,23 +22,22 @@
                 aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation menu">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
             <div class="collapse navbar-collapse" id="navbarMain">
                 <ul class="navbar-nav ms-auto" role="menubar">
                     <li class="nav-item" role="none">
                         <a class="nav-link active" href="index.html" role="menuitem" aria-current="page">Home</a>
                     </li>
                     <li class="nav-item" role="none">
-                        <a class="nav-link" href="products.html" role="menuitem">Products</a>
+                        <a class="nav-link" href="#featured-products" role="menuitem">Products</a>
                     </li>
                     <li class="nav-item" role="none">
-                        <a class="nav-link" href="faq.html" role="menuitem">FAQ</a>
+                        <a class="nav-link" href="#about-section" role="menuitem">About</a>
                     </li>
                     <li class="nav-item" role="none">
-                        <a class="nav-link" href="about.html" role="menuitem">About</a>
+                        <a class="nav-link" href="#faq" role="menuitem">FAQ</a>
                     </li>
                     <li class="nav-item" role="none">
-                        <a class="nav-link" href="contact.html" role="menuitem">Contact</a>
+                        <a class="nav-link" href="#contact" role="menuitem">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -63,7 +62,8 @@
                 <div class="banner__text">
                     <h1 class="banner__title">
                         <div class="banner__logo" aria-label="Pokemon Shop">
-                            <img class="poke-logo" src="./assets/logo.png" alt="Pokemon Shop Logo" width="800" height="260">
+                            <img class="poke-logo" src="./assets/logo.png" alt="Pokemon Shop Logo" width="800"
+                                height="260">
                             <br>&nbsp;SH<img class="poke-ball" src="./assets/pokeball.png" alt="Pokemon Shop Logo">P
                         </div>
                     </h1>
@@ -74,16 +74,41 @@
                 </div>
                 <div class="banner__image">
                     <div class="pokedex-container">
-                        <img class="pokedex" src="./assets/pokedex.png" alt="Pokemon Shop Pokedex" width="auto" height="300">
-                        <a href="#about-heading" class="pokedex-btn">About Us</a>
+                        <span class="pokedex-music pb-2">
+                            Let's play some music!
+                        </span>
+                        <img class="pokedex" src="./assets/pokedex.png" alt="Pokemon Shop Pokedex" width="auto"
+                            height="300">
+                        <span class="pokedex-music">
+                            <audio class="audio" controls>
+                                <source src="../odev1/assets/openinsong.mp3" type="audio/mpeg">
+                            </audio>
+                        </span>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="featured-products py-5" aria-labelledby="featured-heading">
-            <div class="pikachu-runner pikachu-bottom">
-                <img src="./assets/runningpikachu.gif" alt="Running Pikachu Gif">
+        <section id="featured-products" class="featured-products py-5" aria-labelledby="featured-heading">
+            <div class="pikachu-ad">
+                <div class="pikachu-text-container">
+                    <div class="pikachu-runner-after-text">
+                        <img src="./assets/runningpikachu.gif" alt="Running Pikachu Gif">
+                    </div>
+                    <p class="running-text">Catch them all while stocks last!</p>
+                    <div class="pikachu-runner-after-text">
+                        <img src="./assets/runningpikachu.gif" alt="Running Pikachu Gif">
+                    </div>
+                    <p class="running-text">Buy Any Pokémon, Get One FREE!</p>
+                    <div class="pikachu-runner-after-text">
+                        <img src="./assets/runningpikachu.gif" alt="Running Pikachu Gif">
+                    </div>
+                    <p class="running-text">Don't wait - This epic deal ends March 29th!</p>
+                    <div class="pikachu-runner-after-text">
+                        <img src="./assets/runningpikachu.gif" alt="Running Pikachu Gif">
+                    </div>
+                </div>
             </div>
+
             <div class="container">
                 <h2 id="featured-heading" class="text-center mb-4">BESTSELLERS</h2>
                 <div class="products-grid" role="grid">
@@ -94,16 +119,17 @@
                                 <img class="pokeball" src="./assets/pokeball.png" alt="Pokeball containing Pikachu">
                                 <span class="pokemon-hint">Hover to reveal Pikachu!</span>
                             </div>
-                            <img class="pokemon" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png" alt="Pikachu">
+                            <img class="pokemon" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png"
+                                alt="Pikachu">
                         </div>
                         <div class="pokemon-card__content">
                             <h3 class="pokemon-card__title">Pikachu</h3>
                             <p>The world's most famous Electric-type Pokémon!</p>
                             <p class="pokemon-card__price" aria-label="Price: 29.99 dollars">$29.99</p>
-                            <a href="product-detail.html" class="btn btn-primary">View Details</a>
+                            <a href="pikachu-product-detail.html" class="btn btn-primary">View Details</a>
                         </div>
                     </article>
-                
+
                     <!-- Pokemon Card 2 -->
                     <article class="pokemon-card" role="gridcell">
                         <div class="image">
@@ -111,16 +137,17 @@
                                 <img class="pokeball" src="./assets/pokeball.png" alt="Pokeball containing Charizard">
                                 <span class="pokemon-hint">Hover to reveal Charizard!</span>
                             </div>
-                            <img class="pokemon" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/006.png" alt="Charizard">
+                            <img class="pokemon" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/006.png"
+                                alt="Charizard">
                         </div>
                         <div class="pokemon-card__content">
                             <h3 class="pokemon-card__title">Charizard</h3>
                             <p>The mighty Fire/Flying type evolution of Charmeleon!</p>
                             <p class="pokemon-card__price" aria-label="Price: 39.99 dollars">$39.99</p>
-                            <a href="product-detail.html" class="btn btn-primary">View Details</a>
+                            <a href="charizard.html" class="btn btn-primary">View Details</a>
                         </div>
                     </article>
-                
+
                     <!-- Pokemon Card 3 -->
                     <article class="pokemon-card" role="gridcell">
                         <div class="image">
@@ -128,16 +155,17 @@
                                 <img class="pokeball" src="./assets/pokeball.png" alt="Pokeball containing Mewtwo">
                                 <span class="pokemon-hint">Hover to reveal Mewtwo!</span>
                             </div>
-                            <img class="pokemon" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/150.png" alt="Mewtwo">
+                            <img class="pokemon" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/150.png"
+                                alt="Mewtwo">
                         </div>
                         <div class="pokemon-card__content">
                             <h3 class="pokemon-card__title">Mewtwo</h3>
                             <p>An enhanced Psychic-type Legendary Pokémon!</p>
                             <p class="pokemon-card__price" aria-label="Price: 49.99 dollars">$49.99</p>
-                            <a href="product-detail.html" class="btn btn-primary">View Details</a>
+                            <a href="mewtwo.html" class="btn btn-primary">View Details</a>
                         </div>
                     </article>
-                
+
                     <!-- Pokemon Card 4 -->
                     <article class="pokemon-card" role="gridcell">
                         <div class="image">
@@ -145,16 +173,17 @@
                                 <img class="pokeball" src="./assets/pokeball.png" alt="Pokeball containing Dragonite">
                                 <span class="pokemon-hint">Hover to reveal Dragonite!</span>
                             </div>
-                            <img class="pokemon" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/149.png" alt="Dragonite">
+                            <img class="pokemon" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/149.png"
+                                alt="Dragonite">
                         </div>
                         <div class="pokemon-card__content">
                             <h3 class="pokemon-card__title">Dragonite</h3>
                             <p>The powerful Dragon/Flying type evolution of Dragonair!</p>
                             <p class="pokemon-card__price" aria-label="Price: 44.99 dollars">$44.99</p>
-                            <a href="product-detail.html" class="btn btn-primary">View Details</a>
+                            <a href="dragonite.html" class="btn btn-primary">View Details</a>
                         </div>
                     </article>
-                
+
                     <!-- Pokemon Card 5 -->
                     <article class="pokemon-card" role="gridcell">
                         <div class="image">
@@ -162,16 +191,17 @@
                                 <img class="pokeball" src="./assets/pokeball.png" alt="Pokeball containing Snorlax">
                                 <span class="pokemon-hint">Hover to reveal Snorlax!</span>
                             </div>
-                            <img class="pokemon" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/143.png" alt="Snorlax">
+                            <img class="pokemon" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/143.png"
+                                alt="Snorlax">
                         </div>
                         <div class="pokemon-card__content">
                             <h3 class="pokemon-card__title">Snorlax</h3>
                             <p>The sleepy Normal-type Pokémon for blocking paths!</p>
                             <p class="pokemon-card__price" aria-label="Price: 34.99 dollars">$34.99</p>
-                            <a href="product-detail.html" class="btn btn-primary">View Details</a>
+                            <a href="snorlax.html" class="btn btn-primary">View Details</a>
                         </div>
                     </article>
-                
+
                     <!-- Pokemon Card 6 -->
                     <article class="pokemon-card" role="gridcell">
                         <div class="image">
@@ -179,16 +209,17 @@
                                 <img class="pokeball" src="./assets/pokeball.png" alt="Pokeball containing Vaporeon">
                                 <span class="pokemon-hint">Hover to reveal Vaporeon!</span>
                             </div>
-                            <img class="pokemon" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/134.png" alt="Vaporeon">
+                            <img class="pokemon" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/134.png"
+                                alt="Vaporeon">
                         </div>
                         <div class="pokemon-card__content">
                             <h3 class="pokemon-card__title">Vaporeon</h3>
                             <p>The Water-type evolution of Eevee!</p>
                             <p class="pokemon-card__price" aria-label="Price: 32.99 dollars">$32.99</p>
-                            <a href="product-detail.html" class="btn btn-primary">View Details</a>
+                            <a href="vaporeon.html" class="btn btn-primary">View Details</a>
                         </div>
                     </article>
-                
+
                     <!-- Pokemon Card 7 -->
                     <article class="pokemon-card" role="gridcell">
                         <div class="image">
@@ -196,16 +227,17 @@
                                 <img class="pokeball" src="./assets/pokeball.png" alt="Pokeball containing Gengar">
                                 <span class="pokemon-hint">Hover to reveal Gengar!</span>
                             </div>
-                            <img class="pokemon" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/094.png" alt="Gengar">
+                            <img class="pokemon" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/094.png"
+                                alt="Gengar">
                         </div>
                         <div class="pokemon-card__content">
                             <h3 class="pokemon-card__title">Gengar</h3>
                             <p>The spooky Ghost/Poison type final form of Gastly!</p>
                             <p class="pokemon-card__price" aria-label="Price: 36.99 dollars">$36.99</p>
-                            <a href="product-detail.html" class="btn btn-primary">View Details</a>
+                            <a href="gengar.html" class="btn btn-primary">View Details</a>
                         </div>
                     </article>
-                
+
                     <!-- Pokemon Card 8 -->
                     <article class="pokemon-card" role="gridcell">
                         <div class="image">
@@ -213,16 +245,17 @@
                                 <img class="pokeball" src="./assets/pokeball.png" alt="Pokeball containing Lapras">
                                 <span class="pokemon-hint">Hover to reveal Lapras!</span>
                             </div>
-                            <img class="pokemon" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/131.png" alt="Lapras">
+                            <img class="pokemon" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/131.png"
+                                alt="Lapras">
                         </div>
                         <div class="pokemon-card__content">
                             <h3 class="pokemon-card__title">Lapras</h3>
                             <p>The gentle Water/Ice type transport Pokémon!</p>
                             <p class="pokemon-card__price" aria-label="Price: 38.99 dollars">$38.99</p>
-                            <a href="product-detail.html" class="btn btn-primary">View Details</a>
+                            <a href="lapras.html" class="btn btn-primary">View Details</a>
                         </div>
                     </article>
-                
+
                     <!-- Pokemon Card 9 -->
                     <article class="pokemon-card" role="gridcell">
                         <div class="image">
@@ -230,43 +263,276 @@
                                 <img class="pokeball" src="./assets/pokeball.png" alt="Pokeball containing Arcanine">
                                 <span class="pokemon-hint">Hover to reveal Arcanine!</span>
                             </div>
-                            <img class="pokemon" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/059.png" alt="Arcanine">
+                            <img class="pokemon" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/059.png"
+                                alt="Arcanine">
                         </div>
                         <div class="pokemon-card__content">
                             <h3 class="pokemon-card__title">Arcanine</h3>
                             <p>The majestic Fire-type evolution of Growlithe!</p>
                             <p class="pokemon-card__price" aria-label="Price: 35.99 dollars">$35.99</p>
-                            <a href="product-detail.html" class="btn btn-primary">View Details</a>
+                            <a href="arcanine.html" class="btn btn-primary">View Details</a>
                         </div>
                     </article>
                 </div>
         </section>
+
+        <section id="about-section" class="about-section py-5" aria-labelledby="about-section-heading">
+            <div class="container">
+                <h2 id="about-section-heading" class="text-center mb-5">About Us</h2>
+
+                <div class="about-grid">
+                    <div class="about-card">
+                        <div class="about-card__icon">
+                            <img src="./assets/pokeball.png" alt="Our Mission Icon" class="about-icon">
+                        </div>
+                        <h3>Our Mission</h3>
+                        <p>To bring the joy of Pokemon collecting to trainers worldwide, offering the highest quality
+                            Pokemon at competitive prices.</p>
+                    </div>
+
+                    <div class="about-card">
+                        <div class="about-card__icon">
+                            <img src="./assets/pokeball.png" alt="Quality Guarantee Icon" class="about-icon">
+                        </div>
+                        <h3>Quality Guarantee</h3>
+                        <p>Every Pokemon in our collection is carefully selected and certified by Pokemon experts to
+                            ensure authenticity and satisfaction.</p>
+                    </div>
+
+                    <div class="about-card">
+                        <div class="about-card__icon">
+                            <img src="./assets/pokeball.png" alt="Customer Service Icon" class="about-icon">
+                        </div>
+                        <h3>Customer Service</h3>
+                        <p>Our team of dedicated Pokemon trainers is available 24/7 to assist you with any questions or
+                            concerns about your Pokemon.</p>
+                    </div>
+
+                    <div class="about-card">
+                        <div class="about-card__icon">
+                            <img src="./assets/pokeball.png" alt="Global Community Icon" class="about-icon">
+                        </div>
+                        <h3>Global Community</h3>
+                        <p>Join thousands of Pokemon trainers worldwide who trust Pokemon Shop for their collecting
+                            needs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="faq-section py-5" aria-labelledby="faq-heading">
+            <div class="container">
+                <h2 id="faq-heading" class="text-center mb-5">Frequently Asked Questions</h2>
+
+                <div class="faq-grid">
+                    <div class="faq-card">
+                        <h3>How do I place an order?</h3>
+                        <p>Simply browse our collection, select your desired Pokemon, and click "Add to Cart". Follow
+                            the checkout process to complete your purchase.</p>
+                    </div>
+
+                    <div class="faq-card">
+                        <h3>What payment methods do you accept?</h3>
+                        <p>We accept all major credit cards, PayPal, and Pokemon League coins. All transactions are
+                            secure and encrypted.</p>
+                    </div>
+
+                    <div class="faq-card">
+                        <h3>Do you ship internationally?</h3>
+                        <p>Yes! We ship to trainers worldwide. Shipping costs and delivery times vary by location.</p>
+                    </div>
+
+                    <div class="faq-card">
+                        <h3>What's your return policy?</h3>
+                        <p>If you're not satisfied with your Pokemon, you can return it within 30 days for a full
+                            refund. The Pokemon must be in its original condition.</p>
+                    </div>
+
+                    <div class="faq-card">
+                        <h3>Are your Pokemon authentic?</h3>
+                        <p>All our Pokemon are certified authentic by the Pokemon League and come with a certificate of
+                            authenticity.</p>
+                    </div>
+
+                    <div class="faq-card">
+                        <h3>How do I care for my Pokemon?</h3>
+                        <p>Each Pokemon comes with a detailed care guide. Our support team is also available 24/7 for
+                            any questions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section py-5" aria-labelledby="contact-heading">
+            <div class="container">
+                <h2 id="contact-heading" class="text-center mb-5">Contact Us</h2>
+
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <img src="./assets/pokeball.png" alt="Location Icon" class="contact-icon-img">
+                            </div>
+                            <h3>Visit Us</h3>
+                            <address>
+                                123 Pokemon Avenue<br>
+                                Pallet Town, Kanto Region<br>
+                                Pokemon World
+                            </address>
+                        </div>
+
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <img src="./assets/pokeball.png" alt="Phone Icon" class="contact-icon-img">
+                            </div>
+                            <h3>Call Us</h3>
+                            <p>Phone: <a href="tel:+15551234567">(555) 123-4567</a></p>
+                            <p>PokéDex: <a href="tel:+15559876543">(555) 987-6543</a></p>
+                        </div>
+
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <img src="./assets/pokeball.png" alt="Email Icon" class="contact-icon-img">
+                            </div>
+                            <h3>Email Us</h3>
+                            <p>Email: <a href="mailto:info@pokemonshop.com">info@pokemonshop.com</a></p>
+                            <p>Support: <a href="mailto:support@pokemonshop.com">support@pokemonshop.com</a></p>
+                        </div>
+                    </div>
+
+                    <form class="needs-validation">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="name" name="name" required minlength="2"
+                                pattern="[A-Za-z\s]+" placeholder="Enter your full name">
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Please enter a valid name (letters only).
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="email" name="email" required
+                                placeholder="name@example.com">
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Please enter a valid email address.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="phone" name="phone" pattern="[0-9]{10,}"
+                                placeholder="Enter your phone number" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Please enter a valid phone number (minimum 10 digits).
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="subject" class="form-label">Subject</label>
+                            <select class="form-select" id="subject" name="subject" required>
+                                <option value="">Choose a subject...</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="support">Technical Support</option>
+                                <option value="sales">Sales Question</option>
+                                <option value="feedback">Feedback</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Please select a subject.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" name="message" rows="5" required minlength="10"
+                                placeholder="Enter your message here..."></textarea>
+                            <div class="invalid-feedback">
+                                Please enter a message (minimum 10 characters).
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="terms" name="terms" required>
+                                <label class="form-check-label" for="terms">
+                                    I agree to the Terms and Conditions
+                                </label>
+                                <div class="invalid-feedback">
+                                    You must agree before submitting.
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <button class="btn btn-primary" type="submit">
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer class="footer" role="contentinfo">
+    <footer class="footer py-5" role="contentinfo">
         <div class="container">
-            <div class="footer__grid">
-                <div class="footer__section">
-                    <h4 id="about-heading">About Us</h4>
-                    <p>Your trusted source for Pokemon merchandise since 2024</p>
+            <div class="row g-4">
+                <div class="col-12 col-md-4">
+                    <div class="footer__brand mb-4">
+                        <img src="./assets/logo.png" alt="Pokemon Shop Logo" height="50">
+                    </div>
+                    <p class="mb-3">Your trusted source for authentic Pokemon since 2024. We bring the joy of Pokemon
+                        collecting to trainers worldwide.</p>
                 </div>
 
-                <nav class="footer__links" aria-labelledby="footer-nav-heading">
-                    <h4 id="footer-nav-heading">Quick Links</h4>
-                    <ul class="list-unstyled">
-                        <li><a href="products.html" aria-label="Browse our products">Products</a></li>
-                        <li><a href="faq.html" aria-label="View frequently asked questions">FAQ</a></li>
-                        <li><a href="about.html" aria-label="Learn more about us">About Us</a></li>
-                        <li><a href="contact.html" aria-label="Contact our team">Contact</a></li>
+                <div class="col-6 col-md-2">
+                    <h5 class="text-white mb-3">Quick Links</h5>
+                    <ul class="list-unstyled footer__links">
+                        <li><a href="products.html">Shop Pokemon</a></li>
+                        <li><a href="#featured-products">New Arrivals</a></li>
+                        <li><a href="#about-section">About Us</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
-                </nav>
+                </div>
 
-                <div class="footer__contact">
-                    <h4 id="contact-heading">Contact Us</h4>
-                    <address>
-                        <p>Email: <a href="mailto:info@pokemonshop.com">info@pokemonshop.com</a></p>
-                        <p>Phone: <a href="tel:+15551234567">(555) 123-4567</a></p>
-                    </address>
+                <div class="col-6 col-md-3">
+                    <h5 class="text-white mb-3">Customer Service</h5>
+                    <ul class="list-unstyled footer__links">
+                        <li><a href="#">Shipping Information</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-12 col-md-3">
+                    <h5 class="text-white mb-3">Newsletter</h5>
+                    <p class="text-white-50 mb-3">Subscribe to receive updates, access to exclusive deals, and more.</p>
+                    <form class="footer__newsletter">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Enter your email"
+                                aria-label="Email for newsletter">
+                            <button class="btn btn-primary" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer__bottom mt-5 pt-4 border-top border-secondary">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start">
+                        <p class="mb-0 text-white-50">&copy; 2024 Pokemon Shop. All rights reserved.</p>
+                    </div>
                 </div>
             </div>
         </div>

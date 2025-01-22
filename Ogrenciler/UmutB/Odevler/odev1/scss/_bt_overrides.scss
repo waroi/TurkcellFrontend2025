@@ -1,4 +1,6 @@
-$primary: #E20101;
+// bt_overrides.scss
+
+$primary: #DC0A2D;
 $secondary: #2A6EB5;
 $dark:#1A1A1A;
 $light:#F5F5F5;
@@ -35,6 +37,7 @@ $bg-yellow:#FFCB05;
   
   .nav-link {
     position: relative;
+    color: $secondary;
     
     &::after {
       content: '';
@@ -43,7 +46,8 @@ $bg-yellow:#FFCB05;
       left: 0;
       width: 0;
       height: 2px;
-      background: $primary;
+      background: $secondary;
+      color: #000;
       transition: width 0.3s ease;
     }
     
