@@ -17100,38 +17100,6 @@ textarea.form-control-lg {
   padding-left: 40px;
 }
 
-@keyframes rotate-right {
-  0% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(45deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
-}
-.wand .wand-right {
-  animation: rotate-right 3s ease-in-out infinite;
-  transform-origin: center;
-}
-@keyframes rotate-left {
-  0% {
-    transform: rotate(60deg);
-  }
-  50% {
-    transform: rotate(105deg);
-  }
-  100% {
-    transform: rotate(60deg);
-  }
-}
-.wand .wand-left {
-  transform: rotate(60deg);
-  animation: rotate-left 3s ease-in-out infinite;
-  transform-origin: center;
-}
-
 @keyframes shake {
   0% {
     transform: rotate(0deg);
