@@ -11851,6 +11851,10 @@ textarea.form-control-lg {
 .navbar .navbar-brand {
   font-family: "DM Serif Display", serif;
 }
+.navbar .profile-photo {
+  width: 35px;
+  height: 35px;
+}
 
 .page-link:focus,
 .page-link:active {
@@ -11861,11 +11865,6 @@ textarea.form-control-lg {
 .card-img {
   height: 200px;
   object-fit: cover;
-}
-
-.profile-photo {
-  width: 35px;
-  height: 35px;
 }
 
 .text-line-clamp {
@@ -11881,10 +11880,13 @@ textarea.form-control-lg {
 .scrolling-text2,
 .scrolling-text3 {
   position: absolute;
-  left: 130%;
-  width: 30%;
+  left: 140%;
+  width: 40%;
   font-size: 1rem;
   color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .scrolling-text1 {
@@ -11901,47 +11903,41 @@ textarea.form-control-lg {
 
 @keyframes scroll-left {
   0% {
-    left: 130%;
+    left: 140%;
   }
   100% {
-    left: -30%;
+    left: -40%;
   }
 }
-.footer-title-custom {
-  font-family: "DM Serif Display", serif;
-}
-
-.footer-brand {
-  font-family: "DM Serif Display", serif;
-}
-
-.pe-32 {
-  padding-right: 8rem;
-}
-
-.footer-input::placeholder {
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.footer-input:focus,
 .product-search:focus {
   outline: none;
   box-shadow: none;
 }
 
-.footer-social i {
+footer .footer-brand,
+footer .footer-title-custom {
+  font-family: "DM Serif Display", serif;
+}
+footer .pe-32 {
+  padding-right: 8rem;
+}
+footer .footer-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+footer .footer-input:focus {
+  outline: none;
+  box-shadow: none;
+}
+footer .footer-social i {
   cursor: pointer;
 }
-
-.footer-social i:hover {
+footer .footer-social i:hover {
   color: white;
 }
-
-.footer-nav li a {
+footer .footer-nav li a {
   color: #cacbff;
 }
-
-.footer-nav li a:hover {
+footer .footer-nav li a:hover {
   cursor: pointer;
   color: white;
 }
@@ -11959,6 +11955,58 @@ textarea.form-control-lg {
 .team-member {
   width: 100px;
   height: 100px;
+}
+
+@media (max-width: 1010px) {
+  .scrolling-text1,
+  .scrolling-text2,
+  .scrolling-text3 {
+    left: 150%;
+    width: 50%;
+    font-size: 0.9rem;
+  }
+  @keyframes scroll-left {
+    0% {
+      left: 150%;
+    }
+    100% {
+      left: -50%;
+    }
+  }
+}
+@media (max-width: 730px) {
+  .scrolling-text1,
+  .scrolling-text2,
+  .scrolling-text3 {
+    left: 160%;
+    width: 60%;
+    font-size: 0.8rem;
+  }
+  @keyframes scroll-left {
+    0% {
+      left: 160%;
+    }
+    100% {
+      left: -60%;
+    }
+  }
+}
+@media (max-width: 550px) {
+  .scrolling-text1,
+  .scrolling-text2,
+  .scrolling-text3 {
+    left: 180%;
+    width: 80%;
+    font-size: 0.8rem;
+  }
+  @keyframes scroll-left {
+    0% {
+      left: 180%;
+    }
+    100% {
+      left: -80%;
+    }
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
