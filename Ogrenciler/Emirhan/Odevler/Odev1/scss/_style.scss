@@ -1,0 +1,113 @@
+.navbar {
+  .navbar-brand {
+    font-family: "DM Serif Display", serif;
+  }
+}
+
+.page-link:focus,
+.page-link:active {
+  box-shadow: none;
+  outline: none;
+}
+
+.card-img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.profile-photo {
+  width: 35px;
+  height: 35px;
+}
+
+.text-line-clamp {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}
+
+.scrolling-text1,
+.scrolling-text2,
+.scrolling-text3 {
+  position: absolute;
+  left: 130%;
+  width: 30%;
+  font-size: 1rem;
+  color: white;
+}
+
+.scrolling-text1 {
+  animation: scroll-left 12s linear infinite;
+}
+
+.scrolling-text2 {
+  animation: scroll-left 12s linear 4s infinite;
+}
+
+.scrolling-text3 {
+  animation: scroll-left 12s linear 8s infinite;
+}
+
+@keyframes scroll-left {
+  0% {
+    left: 130%;
+  }
+  100% {
+    left: -30%;
+  }
+}
+
+.footer-title-custom{
+  font-family: "DM Serif Display", serif;
+}
+
+.footer-brand {
+  font-family: "DM Serif Display", serif;
+}
+
+.pe-32{
+  padding-right: 8rem;
+}
+
+.footer-input::placeholder{
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-input:focus,
+.product-search:focus{
+  outline: none;
+  box-shadow: none;
+}
+
+.footer-social i{
+  cursor: pointer;
+}
+
+.footer-social i:hover{
+  color: white;
+}
+.footer-nav li a{
+  color: #cacbff;
+}
+.footer-nav li a:hover{
+  cursor: pointer;
+  color: white;
+}
+
+.product-img{
+  height: 30rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+.contact-textarea{
+  resize: none;
+}
+
+.team-member{
+  width: 100px;
+  height: 100px;
+}
