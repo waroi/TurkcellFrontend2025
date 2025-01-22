@@ -12411,100 +12411,6 @@ body.no-scroll {
   padding: 3rem 0;
 }
 
-.pikachu-ad {
-  background-color: #DC0A2D;
-  width: 100%;
-  height: 80px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 1rem;
-  overflow: hidden;
-  z-index: 5;
-}
-@media (max-width: 768px) {
-  .pikachu-ad {
-    height: 60px;
-  }
-}
-
-.pikachu-text-container {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  align-items: center;
-  white-space: nowrap;
-  animation: runBottom 15s linear infinite;
-  will-change: transform;
-  height: 100%;
-}
-
-.running-text {
-  color: #fff;
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  white-space: nowrap;
-  margin: 0 2rem;
-}
-@media (max-width: 768px) {
-  .running-text {
-    font-size: 0.9rem;
-    margin: 0 1rem;
-  }
-}
-@media (max-width: 480px) {
-  .running-text {
-    font-size: 0.8rem;
-    margin: 0 0.5rem;
-  }
-}
-
-.pikachu-runner-after-text {
-  width: 80px;
-  height: 80px;
-  flex-shrink: 0;
-}
-@media (max-width: 768px) {
-  .pikachu-runner-after-text {
-    width: 50px;
-    height: 50px;
-  }
-}
-@media (max-width: 480px) {
-  .pikachu-runner-after-text {
-    width: 40px;
-    height: 40px;
-  }
-}
-
-.pikachu-runner-after-text img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  transform: scaleX(-1);
-}
-
-@keyframes runBottom {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-@media (max-width: 360px) {
-  .pikachu-text-container:nth-child(2) {
-    display: none;
-  }
-  .pikachu-text-container {
-    animation-duration: 20s;
-  }
-}
 .footer {
   background: #1A1A1A;
   color: #fff;
@@ -12821,6 +12727,142 @@ body.no-scroll {
 .btn-add-to-cart:hover {
   background-color: #ff1f1f;
   transform: translateY(-2px);
+}
+
+.turtle-ad {
+  width: 100%;
+  height: 150px;
+  min-height: 150px;
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: start;
+  padding-bottom: 10vh;
+  overflow: hidden;
+}
+@media (max-width: 768px) {
+  .turtle-ad {
+    height: 60px;
+  }
+}
+
+.turtle-runner-after-text {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+}
+@media (max-width: 768px) {
+  .turtle-runner-after-text {
+    width: 50px;
+    height: 50px;
+  }
+}
+@media (max-width: 576px) {
+  .turtle-runner-after-text {
+    width: 40px;
+    height: 40px;
+  }
+}
+.turtle-runner-after-text img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform: scaleX(-1);
+}
+
+.pikachu-ad {
+  background-color: #DC0A2D;
+  width: 100%;
+  height: 80px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1rem;
+  overflow: hidden;
+  z-index: 5;
+}
+@media (max-width: 768px) {
+  .pikachu-ad {
+    height: 60px;
+  }
+}
+
+.turtle-text-container,
+.pikachu-text-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  animation: runBottom 15s linear infinite;
+  will-change: transform;
+  height: 100%;
+}
+
+.running-text {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
+  margin: 0 2rem;
+}
+@media (max-width: 768px) {
+  .running-text {
+    font-size: 0.9rem;
+    margin: 0 1rem;
+  }
+}
+@media (max-width: 480px) {
+  .running-text {
+    font-size: 0.8rem;
+    margin: 0 0.5rem;
+  }
+}
+
+.pikachu-runner-after-text {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+}
+@media (max-width: 768px) {
+  .pikachu-runner-after-text {
+    width: 50px;
+    height: 50px;
+  }
+}
+@media (max-width: 480px) {
+  .pikachu-runner-after-text {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.pikachu-runner-after-text img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform: scaleX(-1);
+}
+
+@keyframes runBottom {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@media (max-width: 360px) {
+  .pikachu-text-container:nth-child(2) {
+    display: none;
+  }
+  .pikachu-text-container {
+    animation-duration: 20s;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
