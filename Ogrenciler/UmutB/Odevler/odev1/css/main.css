@@ -11882,15 +11882,12 @@ html {
   font-family: "RF Dewi Header";
   src: url("/fonts/rf-dewi-ultrabold.ttf") format("truetype");
   font-weight: 600;
-  font-display: swap;
-  /* swap özelliği yazı tipi yüklenene kadar sistem yazı tipinin görüntülenmesini sağlıyor */
 }
 @font-face {
   font-family: "RF Dewi";
   src: url("/fonts/rf-dewi-regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
-  font-display: swap;
 }
 .contact-card, .faq-card, .about-card {
   background: #fff;
@@ -11919,7 +11916,6 @@ html {
   height: 60px;
   margin: 0 auto 1rem;
   border-radius: 50%;
-  /*elemanların hem yatayda hem dikeyde ortalanması gereken yerlerde kullanıldı*/
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12206,7 +12202,6 @@ body.no-scroll {
   .pokemon-card:hover {
     background: linear-gradient(145deg, rgb(27.5919282511, 72.264573991, 118.9080717489), #1A1A1A);
     height: 550px;
-    /*yükseltme animasyonu sağlayan mixin*/
     transition: transform 0.3s ease;
     background-color: #1A1A1A;
     border-radius: 1rem;
@@ -12244,7 +12239,6 @@ body.no-scroll {
   margin-bottom: 100px;
   margin-top: -20px;
   position: relative;
-  /*elemanların hem yatayda hem dikeyde ortalanması gereken yerlerde kullanıldı*/
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12441,7 +12435,6 @@ body.no-scroll {
   }
 }
 .footer__links {
-  /*elemanların hem yatayda hem dikeyde ortalanması gereken yerlerde kullanıldı*/
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12679,14 +12672,9 @@ body.no-scroll {
   margin-bottom: 0.5rem;
 }
 .contact-form .form-control {
-  border: 2px solid #F5F5F5;
   border-radius: 0.5rem;
   padding: 0.75rem;
   transition: all 0.3s ease;
-}
-.contact-form .form-control:focus {
-  border-color: #2A6EB5;
-  box-shadow: 0 0 0 0.2rem rgba(42, 110, 181, 0.25);
 }
 .contact-form textarea.form-control {
   resize: vertical;
@@ -12748,13 +12736,13 @@ body.no-scroll {
 
 .turtle-ad {
   width: 100%;
-  height: 150px;
-  min-height: 150px;
+  height: 180px;
+  min-height: 180px;
   position: relative;
   display: flex;
   justify-content: flex-start;
   align-items: start;
-  padding-bottom: 10vh;
+  padding-bottom: 1vh;
   overflow: hidden;
 }
 @media (max-width: 768px) {

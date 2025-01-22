@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+</head>
+<body>
+    <header class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container d-flex justify-content-center align-items-center">
+            <a class="navbar-brand" href="index.html">
+                <img src="/assets/logo.png" alt="Cleopatra's Vault Logo" class="rounded-circle" style="width: 60px; height: 60px;">
+            </a>
+    
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#products" id="productsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Products
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="productsDropdown">
+                            <li><a class="dropdown-item" href="#">Royal Gemstones</a></li>
+                            <li><a class="dropdown-item" href="#">Magical Gemstone</a></li>
+                            <li><a class="dropdown-item" href="#">Everyday Gemstones</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="faq.html">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+    
+            <ul class="navbar-nav fs-3 d-flex align-items-center">
+                <li class="nav-item">
+                    <a class="nav-link text-secondary" href="#" data-bs-toggle="tooltip" data-bs-title="Go to cart">
+                        <span class="prfhvr">
+                            <i class="fa-solid fa-cart-plus" style="width: 18px; height: 18px;"></i>
+                        </span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-secondary" href="#" data-bs-toggle="tooltip" data-bs-title="Go to profile">
+                        <span class="carthvr">
+                            <i class="fa-regular fa-user" style="width: 18px; height: 18px;"></i>
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="hero bg-dark text-white" style="background-image: url('/assets/banner.png'); background-size: cover; background-position: center; height: 100vh;">
+        <div class="d-flex justify-content-center align-items-center h-100">
+            <div class="text-center bg-dark bg-opacity-50 p-4 rounded-3">
+                <h1 class="mb-3" style="font-size: 2rem;">Sparkling Stones of Ancient Egypt</h1>
+                <p class="text-warning mb-3" style="font-size: 1rem;">"The timeless elegance of sacred stones is before you! We gather treasures chosen for their beauty, mysticism, and unmatched power, selected by our masters to reflect the divine essence of the ancient gods. Each stone carries a story from the heart of Egypt, embodying the sacred energy that has guided generations of kings and queens. These stones are more than just gems; they are a connection to the past, a link to the mystical, and a symbol of the eternal beauty of the pharaohs' land."</p>
+                <a href="products.html" class="btn btn-primary">Discover Our Products</a>
+            </div>
+        </div>
+    </section>
+
+   
+    <section class="container mt-5 mb-5" id="contact">
+        <div class="row text-center mb-4">
+            <div class="col-12">
+                <h2 class="text-white mt-5" style="font-family: 'Papyrus', sans-serif;">Your Message, Carried by the Winds of Egypt</h2>
+            </div>
+        </div>
+    
+        <div class="row justify-content-center">
+          
+            <div class="col-md-6">
+                <div class="card p-4 border-primary" style="background-color: #fff; border-radius: 15px;">
+                    <h5 class="mb-4 text-center">Get In Touch</h5>
+                    <form class="needs-validation" id="contactForm" novalidate>
+                        <div class="row">
+                            <div class="col-12 col-md-6 mb-3">
+                                <label for="name" class="form-label">Your Name and Surname</label>
+                                <input type="text" class="form-control" id="name" placeholder="Enter Your Name and Surname" required>
+                                <div class="invalid-feedback">Please enter your name and surname.</div>
+                            </div>
+                            <div class="col-12 col-md-6 mb-3">
+                                <label for="email" class="form-label">Your Email Address</label>
+                                <input type="email" class="form-control" id="email" placeholder="Enter Your Email Address" required>
+                                <div class="invalid-feedback">Please enter a valid email address.</div>
+                            </div>
+                        </div>
+    
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Write Your Message Here</label>
+                            <textarea class="form-control" id="message" rows="5" placeholder="Write Your Message" required></textarea>
+                            <div class="invalid-feedback">Please enter your message.</div>
+                        </div>
+    
+                        <button type="submit" class="btn btn-primary btn-sm " style="border-radius: 10px;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+    
+          
+            <div class="col-md-6 d-flex justify-content-center">
+                <div class="card p-4 border-primary" style="background-color: #fff; border-radius: 15px; width: 100%; max-width: 400px;">
+                    <h5 class="text-uppercase mb-4 text-center" style="font-family: 'Papyrus', sans-serif;"><i class="bi bi-phone"></i> Contact</h5>
+                    <div class="d-flex flex-column justify-content-center align-items-center" style="height: 100%; text-align: center;">
+                        <p><i class="bi bi-phone-fill"></i> +20 123 456 7890</p>
+                        <p><i class="bi bi-envelope-fill"></i> info@egyptiangems.com</p>
+                        <p><i class="bi bi-clock-fill"></i> Sunrise to Sunset</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="container-fluid d-flex justify-content-center align-items-center" id="newsletter" style="width: 100%; min-height: 100vh;">
+        <div class="row w-100 justify-content-center">
+            <div class="col-12">
+                <div class="card mx-auto" style="max-width: 90%;  background: linear-gradient(135deg, #ffb74d, #ffa726, #fb8c00, #f57c00, #ef6c00); border: 2px solid #ef6c00; border-radius: 15px;">
+                    <div class="card-body p-5 text-center">
+                        <h5 class="card-title text-dark mb-3" style="font-family: 'Papyrus', sans-serif;">Stay Updated on Royal Jewels!</h5>
+                        <p class="card-text text-dark mb-4 text-center">Sign up to receive exclusive offers and news about our precious stones, handpicked from the heart of Egypt!</p>
+                        <form action="/subscribe" method="POST">
+                            <div class="input-group mb-3" style="max-width: 300px; margin: 0 auto;">
+                                <input type="email" class="form-control" placeholder="Enter your email" aria-label="Email" required style="font-size: 14px; padding: 5px; height: 30px;">
+                                <button class="btn btn-primary" type="submit" style="font-size: 14px; padding: 5px 10px; height: 30px; border-radius: 0 10px 10px 0;">Subscribe</button>
+                            </div>
+                        </form>
+                        <div class="d-flex justify-content-center align-items-center">
+                            <i class="fa-solid fa-ankh me-3" style="font-size: 20px;"></i>           
+                            <i class="fa-solid fa-eye me-3" style="font-size: 20px;"></i>
+                            <i class="fa-solid fa-bug" style="font-size: 20px;"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer style="background: linear-gradient(45deg, #ef6c00, #f57c00, #fb8c00, #ffa726, #ffb74d);" class="text-light py-5 mt-5">
+        <div class="container">
+            <div class="row text-center justify-content-center">
+                <div class="col-md-3 mb-4">
+                    <h5 class="text-uppercase mb-4"><i class="bi bi-pyramid"></i> Ancient Heritage</h5>
+                    <p>Step into the world of Ancient Egypt, where each gemstone carries the essence of gods and Pharaohs. Our collection is a tribute to this eternal legacy.</p>
+                    <p class="mb-0"><i class="bi bi-geo-alt-fill"></i> Thebes, near Karnak Temple</p>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h5 class="text-uppercase mb-4"><i class="bi bi-link"></i> Explore</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light"><i class="bi bi-chevron-right"></i> Home</a></li>
+                        <li><a href="products.html" class="text-light"><i class="bi bi-chevron-right"></i> Shop</a></li>
+                        <li><a href="about.html" class="text-light"><i class="bi bi-chevron-right"></i> About Us</a></li>
+                        <li><a href="contact.html" class="text-light"><i class="bi bi-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h5 class="text-uppercase mb-4"><i class="bi bi-gem"></i> Collection</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="lapis-lazuli.html" class="text-light"><i class="bi bi-chevron-right"></i> Lapis Lazuli</a></li>
+                        <li><a href="emerald.html" class="text-light"><i class="bi bi-chevron-right"></i> Emerald</a></li>
+                        <li><a href="turquosie.html" class="text-light"><i class="bi bi-chevron-right"></i> Turquoise</a></li>
+                        <li><a href="amethyst.html" class="text-light"><i class="bi bi-chevron-right"></i> Amethyst</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h5 class="text-uppercase mb-4"><i class="bi bi-phone"></i> Get in Touch</h5>
+                    <div class="d-flex flex-column align-items-center">
+                        <p><i class="bi bi-phone-fill"></i> +20 123 456 7890</p>
+                        <p><i class="bi bi-envelope-fill"></i> info@egyptiangems.com</p>
+                        <p><i class="bi bi-clock-fill"></i> Sunrise to Sunset</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4 justify-content-center">
+                <div class="col-12 d-flex flex-column align-items-center">
+                    <p>&copy; 2025 Cleopatra's Value. All rights reserved.</p>
+                    <p class="mb-0">May the gods bless your journey through the sands of time, where secrets of the ancients await.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script>
+       
+        (function () {
+            'use strict'
+    
+            
+            var forms = document.querySelectorAll('.needs-validation')
+    
+           
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+    
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+
+        var tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+        var tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+
+    </script>
+</body>
+
+</html>

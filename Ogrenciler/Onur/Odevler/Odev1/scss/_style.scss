@@ -1,0 +1,106 @@
+
+$hover-color: rgb(255, 221, 0);
+
+@mixin set-font-style($font-family, $font-weight, $font-size, $color) {
+  font-family: $font-family;
+  font-weight: $font-weight;
+  font-size: $font-size;
+  color: $color;
+}
+
+@mixin hover-effect($hover-color, $scale) {
+  &:hover {
+    box-shadow: 0 0 8px $hover-color;
+    transform: scale($scale);
+    transition: all 0.3s ease;
+  }
+}
+
+body {
+  background-position: center center;
+  background-size: contain;
+  background-attachment: fixed;
+  font-family: "Cinzel", monospace;
+  background-image: url("../assets/background_image.png");
+  color: #ffffff;
+}
+
+header {
+  background: rgba(0, 0, 0, 0.8);
+
+  .navbar-brand {
+    @include set-font-style(Cinzel, bold, 2rem, red);
+    text-shadow: 0 4px 8px $hover-color;
+    &:before {
+      content: "🔥";
+    }
+    &:after {
+        content: "🔥";
+      }
+  }
+
+  .nav-link {
+    color: #ffffff;
+    &:hover {
+      color: $hover-color;
+    }
+  }
+}
+
+.carousel-inner {
+  .carousel-item {
+    background-image: url("../assets/lucius_face.avif");
+    background-size: auto;
+    background-position: center center;
+    height: 32rem;
+  }
+}
+
+.product-card {
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid $hover-color;
+  border-radius: 8px;
+  text-align: center;
+  padding: 1rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 50px $hover-color;
+  }
+
+  img {
+    border-bottom: 1px solid $hover-color;
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    margin-bottom: 1rem;
+  }
+
+  a{
+    text-decoration: none;
+    @include set-font-style(Cormorant Garamond, bold, 1.5rem, black);
+    @include hover-effect($hover-color, 1.0);
+    background: bg-warning;
+  }
+}
+
+footer {
+  background: rgba(0, 0, 0, 0.8);
+  color: $hover-color;
+  padding: 1rem;
+  text-align: center;
+  img {
+    height: 12em;
+  }
+
+  a {
+    @include hover-effect($hover-color, 1.02);
+  }
+}

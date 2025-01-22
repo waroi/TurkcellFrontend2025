@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>İletişim</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <section class="navbar-logo">
+        <nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <div class="logo-container">
+                        <img src="assets/logo.jpg" class="main-logo" alt="Logo">
+                        <span class="emoji" aria-label="Elma">🍎</span>
+                    </div>
+                    <span class="logo-text">ALSANA</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item me-4"><a class="nav-link" href="giris.html">Anasayfa</a></li>
+                        <li class="nav-item me-4"><a class="nav-link" href="aboutUs.html">Hakkımızda</a></li>
+                        <li class="nav-item me-4"><a class="nav-link" href="products.html">Ürünler</a></li>
+                        <li class="nav-item me-4"><a class="nav-link" href="sss.html">SSS</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle me-4" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">İletişim</a>
+                            <ul class="dropdown-menu">
+                                <li class="tooltip-container">
+                                    <a class="dropdown-item" href="#">📞 Telefon</a>
+                                    <span class="tooltip-text">+90 123 456 7890</span>
+                                </li>
+                                <li class="tooltip-container">
+                                    <a class="dropdown-item" href="#">✉️ Mail</a>
+                                    <span class="tooltip-text">alsana@gmail.com</span>
+                                </li>
+                                <li class="tooltip-container">
+                                    <a class="dropdown-item" href="iletisim.html">Sizi Arayalım</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>                
+        </nav>
+    </section>
+
+  <section class="container my-5">
+    <h2 class="text-center mb-4">Bizimle İletişime Geçin</h2>
+    <form>
+      <div class="form-group">
+        <label for="name">İsim Soyisim*</label>
+        <input type="text" class="form-control" id="name" name="name" required placeholder="İsim Soyisim">
+      </div>
+
+      <div class="form-group">
+        <label for="email">E-posta*</label>
+        <input type="email" class="form-control" id="email" name="email" required placeholder="E-posta">
+      </div>
+
+      <div class="form-group">
+        <label for="message">Mesajınız*</label>
+        <textarea class="form-control" id="message" name="message" rows="4" required placeholder="Mesajınızı yazınız"></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-block">Gönder</button>
+      <p>* işaretli alanlar zorunludur. </p>
+
+    </form>
+  </section>
+
+   <!-- Footer -->
+<footer class="text-white py-4 mt-5">
+    <div class="container">
+        <div class="row">
+
+            <!-- İletişim Bilgileri -->
+            <div class="col-md-6">
+                <h5>İletişim</h5>
+                <ul class="list-unstyled">
+                    <li><i class="fa-solid fa-phone"></i> +90 123 456 7890</li>
+                    <li><i class="fa-solid fa-envelope"></i> alsana@gmail.com</li>
+                    <li><i class="fa-solid fa-map-marker-alt"></i> Antalya, Türkiye</li>
+                </ul>
+            </div>
+
+            <!-- Sosyal Medya Bağlantıları -->
+            <div class="col-md-6">
+                <h5>Sosyal Medya</h5>
+                <ul class="list-unstyled d-flex">
+                    <li class="me-3"><a href="#" class="text-white"><i class="fab fa-facebook fa-2x"></i></a></li>
+                    <li class="me-3"><a href="#" class="text-white"><i class="fab fa-twitter fa-2x"></i></a></li>
+                    <li class="me-3"><a href="#" class="text-white"><i class="fab fa-instagram fa-2x"></i></a></li>
+                    <li class="me-3"><a href="#" class="text-white"><i class="fab fa-linkedin fa-2x"></i></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Telif Hakkı -->
+        <div class="text-center mt-4">
+            <p>&copy; 2025 ALSANA. Tüm hakları saklıdır.</p>
+        </div>
+    </div>
+</footer>
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

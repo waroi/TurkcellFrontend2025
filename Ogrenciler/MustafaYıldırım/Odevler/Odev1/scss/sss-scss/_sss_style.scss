@@ -1,0 +1,93 @@
+@mixin textStyle($size, $weight, $color) {
+    font-size: $size;
+    font-weight: $weight;
+    color: $color;
+}
+
+@mixin flex ($jc, $ai) {
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+}
+
+$bg-dark-green: #6a9c89;
+$bg-first: #f6e6d8;
+$logo-title: "Freckle Face", serif;
+$logo-title-color: #fa812f;
+$subtext-color: #22222270;
+
+body {
+    background-color: $bg-first;
+}
+header {
+    img {
+            height: calc(1.5rem + 1.5vw)
+        }
+    .navbar-brand{
+        @include textStyle(calc(1.5rem + 1.5vw), 800, $logo-title-color);
+    }
+    .dropdown {
+        a {
+            color: var(--bs-navbar-color);
+        }
+    }
+}
+
+.sss{
+    .accordion-button:focus{
+        box-shadow: none;
+    }
+}
+.footer {
+    background-color: $bg-dark-green;
+    .icon {
+        @include textStyle(16px, 300, $primary );
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        transition: all 0.3s ease-in;
+        &:hover {
+            background-color: $primary;
+            a {
+                color: $logo-title-color;
+            }
+        }
+    }
+    span {
+        color: $logo-title-color;
+    }
+}
+
+@media (min-width: 992px) {
+    header {
+        .dropdown {
+            &:hover .dropdown-menu {
+                display: block;
+            }
+            a {
+                &::after {
+                    content: none;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    header {
+        .dropdown a {
+            padding-left: 0 !important;
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    body {
+        font-size: 14px;
+    }
+    header {
+        .dropdown a {
+            padding-left: 0 !important;
+        }
+    }
+}

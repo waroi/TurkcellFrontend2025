@@ -1,0 +1,312 @@
+@mixin flex($direction: row, $justify: flex-start, $align: stretch) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin font-style($size, $weight: normal, $color: $dark) {
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}
+body {
+  height: 100%;
+  margin: 0;
+  font-family: $font-family-base;
+  background-color: $background-light;
+
+  }
+  main {
+    min-height: calc(100vh - 120px); 
+    display: flex;
+    flex-direction: column;
+
+  }
+  
+  .footer {
+    background-color: #6c757d;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+  }
+  .navbar {
+    padding: 1.5rem 1rem;
+    height: 90px; 
+    .navbar-nav .nav-link {
+      font-size: 1.25rem;
+      @include flex(center, center, center);
+    
+    }
+    .navbar-vintage {
+      font-size: 2rem;
+      font-weight:bold; 
+    }
+    .logo-img {
+      margin-left: auto;
+      width: 60px;
+      height: 60px;
+      border-radius: $border-radius;
+    }
+  }
+ 
+  @mixin slide-in {
+    from {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @mixin fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .record-video {
+    width: 100%; 
+    max-width: 100%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); 
+    @include flex(center, center, center);
+    border-radius: $border-radius;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .kategori-resim {
+    width: 100%;
+    height: 200px; 
+    object-fit: cover; 
+    border-radius: $border-radius; 
+  }
+  @keyframes slide-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px); // Hafif aşağıdan başlar
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0); // Yerinde görünür
+    }
+  }
+  
+  .categories {
+    .card {
+      opacity: 0;
+      transform: translateY(20px); 
+      animation: slide-in 0.8s ease forwards; 
+  
+      &:nth-child(1) {
+        animation-delay: 0.4s; 
+        opacity: 50%;
+      }
+  
+      &:nth-child(2) {
+        animation-delay: 0.6s; 
+        opacity: 50%;
+      }
+  
+      &:nth-child(3) {
+        animation-delay: 0.8s; 
+        opacity: 50%;
+      }
+    }
+  }
+  
+  .products {
+    border: 1px solid $light;
+    border-radius: $border-radius;
+    overflow: hidden;
+    padding: 60px 30px;
+  
+    .card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+      &:hover {
+        transform: scale(1.05); 
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
+        z-index: 1; 
+      }
+  
+    
+  
+      .card-title {
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.2rem;
+        margin-top: 10px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 1rem; 
+        text-align: center;
+      }
+  
+      .card-body {
+        text-align: center;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 0.9rem
+      }
+  
+      .image-container {
+        position: relative;
+      }
+      
+      .image-container img {
+        width: 100%;
+        border-radius: $border-radius;
+      }
+      
+      .heart-container {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 10;
+        @include flex(center, center, center);
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+      }
+      
+      .heart-container:hover {
+        transform: scale(1.2);
+      }
+      
+      .heart-icon {
+        color: $light;
+        font-size: 1.5rem;
+        transition: color 0.3s ease-in-out;
+      }
+      
+      .heart-container:hover .heart-icon {
+        color: $light ;
+        content: '\f004';
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+      }
+      
+  }
+  
+  
+  .client-logo {
+    background-color: #fafcff;
+    .img-fluid {
+      opacity: 0.5;
+    }
+    img {
+      opacity: 0.1;
+      transition: opacity 0.3s ease;
+  
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  
+  
+  .yorum-card {
+    max-height: 100px;
+    font-size: 0.9rem;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid $light;
+    border-radius: $border-radius;
+    background-color: $light;
+    overflow-y: auto;
+  }
+  .about-img {
+    max-width: 70%;
+    height: auto; 
+    margin: 20px auto;
+    display: block; 
+    border-radius: $border-radius; 
+  }
+
+}
+//detay sayfaları için
+.urun-gorsel {
+  position: relative;
+h4{
+  margin-top: 20px;
+
+}
+  img {
+    width: 100%;
+    border-radius: $border-radius;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+ 
+  }
+
+  a {
+    position: absolute;
+    top: 40%; 
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    @include flex(center, center, center);
+    text-decoration: none;
+    color: #333;
+    z-index: 2;
+
+    &:hover {
+      color: $light;
+    }
+
+    i {
+      @include font-style(1.2rem, bold, $light);
+    }
+  }
+
+  .onceki-konum {
+    left: 10px; 
+  }
+
+  .sonraki-konum {
+    right: 10px; 
+  }
+}
+
+.about-us {
+  @include flex(center, center, center);
+margin-right: 20px;
+.about-img {
+  width: 100%;
+  max-width: 1000px; 
+  height: auto; 
+  border-radius: $border-radius; 
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); 
+}
+}
+.footer {
+  color: #fff;
+  margin-top: auto;
+  padding: 50px 0px;
+ h5 {
+
+  @include font-style(1.2rem, bold, $light);
+    margin-bottom: 15px;
+  }
+
+  p, a {
+ 
+    font-size: 0.9rem;
+    text-decoration: none;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+  .footer-bottom {
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding-top: 10px;
+    margin-top: 15px;
+    color: $border-color;
+  }
+}

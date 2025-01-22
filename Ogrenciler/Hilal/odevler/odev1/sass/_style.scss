@@ -68,10 +68,10 @@ footer {
   max-height: 400px;
 }
 input {
-  background-color: $light; //TODO: HTMl içine alınabilir
+  background-color: $light; //TODO: HTMl içine alınabilir veya bootstrap overridei,vakit olunca bak.
 }
 footer {
-  color: $light; //TODO:footerdaki text-white etiketi silince otomatik olucak zaten.inherit oalrak.
+  color: $light; //TODO:footerdaki text-white etiketi silince otomatik olucak zaten.inherit olarak.
 }
 .main-card {
   background: linear-gradient(
@@ -347,11 +347,9 @@ footer {
 }
 @keyframes flyIn {
   0% {
-    transform: translate3d(-1200px, -100px, -1000px) scale(0.1) rotate(10deg);
-    width: 10%;
+    transform: translate3d(-400px, -200px, -1000px) scale(0) rotate(10deg);
   }
   100% {
     transform: translate3d(0, 0, 0) scale(0.7) rotate(-40deg);
-    width: 100%;
   }
 }
