@@ -1,0 +1,110 @@
+$primary-color: #5a6af7;
+$secondary-color: #232946;
+$bg-color: #0b132b;
+$wcolor: #fff;
+
+@mixin transition($properties, $duration: 0.3s, $timing: ease) {
+    transition: $properties $duration $timing;
+}
+
+@mixin hover-effect($bg-color) {
+    &:hover {
+        background-color: $bg-color;
+    }
+}
+
+@mixin hero($delay: 0s) {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: hero 1s ease-out forwards;
+    animation-delay: $delay;
+}
+
+%card-hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+%hero-keyframes {
+    @keyframes hero {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+body {
+    background-color: $bg-color;
+    color: $wcolor;
+    font-family: 'Arial', sans-serif;
+}
+
+.hero {
+    background: url('../Images/yıldız.webp') no-repeat center center/cover;
+    height: 100vh;
+
+    h1,
+    p,
+    a {
+        @include hero();
+    }
+
+    h1 {
+        animation-delay: 0.5s;
+    }
+
+    p {
+        animation-delay: 1s;
+    }
+
+    a {
+        animation-delay: 1.5s;
+    }
+
+    @extend %hero-keyframes;
+}
+
+.card {
+    @include transition(transform 0.3s ease, box-shadow 0.3s ease);
+
+    .card-body {
+        ul {
+            li {
+                svg {
+                    width: 15px;
+                    height: 16px;
+                    fill: #F89D13;
+                }
+            }
+        }
+    }
+
+    &:hover {
+        @extend %card-hover;
+    }
+}
+
+.btn-primary {
+    position: relative;
+
+    &:hover::before {
+        width: 200%;
+        height: 200%;
+    }
+}
+
+
+footer p {
+    animation: footer 1s infinite alternate;
+
+    @keyframes footer {
+        from {
+            color: #ffffff;
+        }
+
+        to {
+            color: $primary-color;
+        }
+    }
+}
