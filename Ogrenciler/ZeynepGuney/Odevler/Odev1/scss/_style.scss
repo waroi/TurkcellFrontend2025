@@ -187,39 +187,6 @@
     }
   }
 }
-.wand{
-  @keyframes rotate-right {
-    0% {
-        transform: rotate(0deg);
-    }
-    50% {
-        transform: rotate(45deg);
-    }
-    100% {
-        transform: rotate(0deg);
-    }
-  }
-  .wand-right {
-    @include animation(rotate-right, 3s, ease-in-out);
-    transform-origin: center; 
-  }
-  @keyframes rotate-left {
-    0% {
-        transform: rotate(60deg);
-    }
-    50% {
-        transform: rotate(105deg);
-    }
-    100% {
-        transform: rotate(60deg);
-    }
-  }
-  .wand-left {
-    transform: rotate(60deg);
-    @include animation(rotate-left, 3s, ease-in-out);
-    transform-origin: center; 
-  }
-}
 .contact-images{
   @keyframes shake {
     0% {

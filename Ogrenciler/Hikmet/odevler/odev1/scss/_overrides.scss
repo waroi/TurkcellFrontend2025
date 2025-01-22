@@ -1,0 +1,206 @@
+@import url("https://fonts.googleapis.com/css2?family=Jersey+15&display=swap");
+
+$font-family-base: "Jersey 15", sans-serif;
+$primary: red;
+
+@mixin gradient($start: #1e3c72, $end: #2a5298) {
+	background: linear-gradient(135deg, $start 0%, $end 100%);
+}
+
+@mixin transition {
+	transition: all 0.3s ease;
+}
+
+@mixin hover-transform($y: -3px) {
+	@include transition;
+	&:hover {
+		transform: translateY($y);
+	}
+}
+
+@mixin underline-effect($width: 50px, $hover-width: 75px) {
+	&::after {
+		content: "";
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: $width;
+		height: 2px;
+		background: #fff;
+		@include transition;
+	}
+	&:hover::after {
+		width: $hover-width;
+	}
+}
+
+@mixin flex-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+@mixin link-arrow {
+	position: relative;
+	padding-left: 15px;
+	@include transition;
+
+	&::before {
+		content: "→";
+		position: absolute;
+		left: 0;
+		opacity: 0;
+		@include transition;
+	}
+
+	&:hover {
+		padding-left: 20px;
+		color: $primary;
+
+		&::before {
+			opacity: 1;
+		}
+	}
+}
+
+.carousel-img {
+	height: 500px;
+	object-fit: cover;
+}
+
+.footer {
+	@include gradient;
+	color: #fff;
+	padding: 4rem 0 0;
+	position: relative;
+
+	.footer-column {
+		margin-bottom: 2rem;
+
+		h4 {
+			color: #fff;
+			font-size: 1.25rem;
+			font-weight: 600;
+			margin-bottom: 1.5rem;
+			position: relative;
+			padding-bottom: 0.5rem;
+			@include underline-effect;
+		}
+	}
+
+	.company-info {
+		.company-name h5 {
+			font-weight: 700;
+			color: #fff;
+		}
+
+		.address,
+		.contact {
+			i {
+				margin-right: 10px;
+				color: $primary;
+			}
+
+			p {
+				margin-bottom: 0.5rem;
+			}
+		}
+	}
+
+	.footer-links {
+		list-style: none;
+		padding: 0;
+
+		li {
+			margin-bottom: 0.75rem;
+
+			a {
+				color: #fff;
+				text-decoration: none;
+				@include link-arrow;
+			}
+		}
+	}
+
+	.newsletter-form {
+		.input-group {
+			.form-control {
+				border: none;
+				padding: 0.75rem;
+				border-radius: 5px 0 0 5px;
+
+				&:focus {
+					box-shadow: none;
+				}
+			}
+
+			.btn {
+				background-color: $primary;
+				border: none;
+				border-radius: 0 5px 5px 0;
+				padding: 0.75rem 1.5rem;
+				@include transition;
+
+				&:hover {
+					background-color: darken($primary, 10%);
+				}
+			}
+		}
+	}
+
+	.social-icons {
+		display: flex;
+		gap: 1rem;
+		margin-top: 1rem;
+
+		.social-icon {
+			color: #fff;
+			background: rgba(255, 255, 255, 0.1);
+			width: 40px;
+			height: 40px;
+			@include flex-center;
+			border-radius: 50%;
+			@include hover-transform;
+
+			&:hover {
+				background: $primary;
+			}
+		}
+	}
+
+	.footer-bottom {
+		background: rgba(0, 0, 0, 0.2);
+		padding: 1.5rem 0;
+		margin-top: 3rem;
+
+		.copyright {
+			text-align: center;
+			margin: 0;
+			color: rgba(255, 255, 255, 0.8);
+			font-size: 0.9rem;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.footer {
+		padding: 2rem 0 0;
+
+		.footer-column {
+			text-align: center;
+
+			h4::after {
+				left: 50%;
+				transform: translateX(-50%);
+			}
+		}
+
+		.social-icons {
+			justify-content: center;
+		}
+
+		.footer-links li a::before {
+			display: none;
+		}
+	}
+}
