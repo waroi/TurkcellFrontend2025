@@ -1,0 +1,14 @@
+$primary: #8d6a23;
+$secondary: #ddc594;
+$third: #ffedc968;
+$font-size-base: 1.3rem;
+
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * 1,
+  2: $spacer * 2,
+  3: $spacer * 4,
+  4: $spacer * 6,
+  5: $spacer * 8,
+);
