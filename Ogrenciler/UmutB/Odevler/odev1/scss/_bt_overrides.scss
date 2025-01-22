@@ -1,0 +1,58 @@
+// bt_overrides.scss
+
+$primary: #DC0A2D;
+$secondary: #2A6EB5;
+$dark:#1A1A1A;
+$light:#F5F5F5;
+$bg-yellow:#FFCB05;
+
+@mixin button-variant($background) {
+  background-color: $background;
+  border-color: darken($background, 10%);
+  &:hover {
+    background-color: darken($background, 10%);
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+  }
+}
+
+%bootstrap-card-base {
+  border: none;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.navbar {
+  padding: 1rem 0;
+  background-color: $bg-yellow;
+  left:0;
+  top:0;
+  position:fixed;
+  
+  .navbar-brand {
+    font-family: 'RF Dewi Header', sans-serif;
+    font-weight: 600;
+  }
+  
+  .nav-link {
+    position: relative;
+    color: $secondary;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: $secondary;
+      color: #000;
+      transition: width 0.3s ease;
+    }
+    
+    &:hover::after {
+      width: 100%;
+    }
+  }
+}

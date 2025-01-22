@@ -1,0 +1,124 @@
+$primary: #6b21a8;
+$secondary: #ec4899;
+$thirdary: #a855f7;
+$light-purple: rgb(95 33 252);
+$medium-purple: rgb(86 52 174);
+$dark-purple: rgb(61 29 142);
+$extra-dark-purple: rgb(28 8 79);
+$white: #fff;
+$white-gold: #ffffe0;
+$gold: #ffd700;
+$subtitle: #555;
+$header-purple: rgb(109 40 217);
+$disabled: rgb(156, 138, 199);
+$black: #000;
+$placeholder: rgba(255, 255, 255, 0.5);
+$overlay: #6b21a82c;
+$theme-colors: (
+  'primary': $primary,
+  'secondary': $secondary,
+  'light-purple': $light-purple,
+  'medium-purple': $medium-purple,
+  'dark-purple': $dark-purple,
+  'extra-dark-purple': $extra-dark-purple,
+  'white': $white,
+  'white-gold': $white-gold,
+  'gold': $gold,
+  'subtitle': $subtitle,
+  'header-purple': $header-purple,
+  'black': $black,
+);
+// SPACING
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  //4px
+  1: $spacer * 0.25,
+  //8px
+  2: $spacer * 0.5,
+  //12px
+  3: $spacer * 0.75,
+  //16px
+  4: $spacer,
+  //20px
+  5: $spacer * 1.25,
+  //24px
+  6: $spacer * 1.5,
+  //28px
+  7: $spacer * 1.75,
+  //32px
+  8: $spacer * 2,
+  //36px
+  9: $spacer * 2.25,
+  //40px
+  10: $spacer * 2.5,
+  //44px
+  11: $spacer * 2.75,
+  //46px
+  12: $spacer * 3,
+  //50px
+  13: $spacer * 3.25,
+  //54px
+  14: $spacer * 3.5,
+  //58px
+  15: $spacer * 3.75,
+  //80px
+  20: $spacer * 5,
+  //120px
+  30: $spacer * 7.5,
+);
+// FONST SIZE
+$line-height-lg: 2.25;
+$font-size-base: 1rem;
+$font-sizes: (
+  18: $font-size-base * 1.125,
+  20: $font-size-base * 1.25,
+  28: $font-size-base * 1.75,
+  36: $font-size-base * 2.25,
+  48: $font-size-base * 3,
+);
+// // NAVBAR
+$navbar-nav-link-padding-x: 1.75rem;
+$navbar-toggler-font-size: 2rem;
+$navbar-light-color: $white-gold;
+$navbar-light-hover-color: $gold;
+$navbar-light-active-color: $gold;
+
+$navbar-light-disabled-color: $disabled;
+$offcanvas-bg-color: $medium-purple;
+$offcanvas-horizontal-width: 250px;
+// BTN
+$btn-close-color: $white;
+$btn-padding-x: 2.25rem;
+$btn-font-weight: 600;
+// CAROUSEL
+$carousel-indicator-width: 10px;
+$carousel-indicator-height: 10px;
+$carousel-indicator-active-bg: $secondary;
+$carousel-indicator-transition: opacity 0.3s ease;
+$carousel-transition-duration: 0.3s;
+//CARD
+
+$card-bg: #ddd;
+$card-subtitle-color: $subtitle;
+
+// ACCORDION
+$accordion-color: $white;
+$accordion-bg: #1e293b;
+$accordion-border-radius: 0;
+$accordion-button-color: $white;
+$accordion-button-bg: #4f46e5;
+$accordion-icon-color: $white;
+// BREADCRUMB
+$breadcrumb-divider-color: $white-gold;
+$breadcrumb-active-color: $gold;
+// POSITION VALUES
+$position-values: (
+  0: 0,
+  5: 5%,
+  25: 25%,
+  50: 50%,
+  75: 75%,
+  85: 85%,
+  100: 100%,
+);
