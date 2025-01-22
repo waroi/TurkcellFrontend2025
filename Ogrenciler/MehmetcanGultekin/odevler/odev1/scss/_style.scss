@@ -1,0 +1,300 @@
+$background-1: url('../assets/Adsız\ tasarım\(2\).png');
+$background-2: url('../assets/Adsız\ tasarım\(1\).png');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Pullstar", sans-serif;
+}
+
+@font-face {
+    font-family: 'Pullstar';
+    src: url('../assets/fonts/Fonts/pullstar.woff2') format('woff2'),
+        url('../assets/fonts/Fonts/pullstar.woff') format('woff'),
+        url('../assets/fonts/Fonts/pullstar.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@mixin hover-effect($translateX, $translateY) {
+    &:hover {
+        .şimşekmağaza {
+            transform: translate($translateX, $translateY);
+        }
+    }
+}
+
+
+%base-card {
+    border: none;
+
+    .card-bg {
+        background-image: url("../assets/patlama-bg.jpg");
+        background-size: cover;
+        background-position: center;
+        border-radius: 5px;
+
+        .şimşekmağaza {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+    }
+
+    .card-body {
+        background-color: #AB3126;
+        color: #E78F2F;
+        background-size: cover;
+        background-position: center;
+        border-radius: 5px;
+    }
+}
+
+
+header {
+    position: sticky;
+    top: 0;
+    // background: transparent;
+    z-index: 1000;
+    background:
+        linear-gradient(rgba(37, 79, 87, 0.1), rgba(37, 79, 87, 0.1)),
+        url('../assets/wooden.jpg');
+    background-size: contain;
+    background-size: 1536px 136px;
+}
+
+.navbar {
+    height: 85px;
+    font-size: 1.5rem;
+
+    .navbar-brand {
+        background-image: url("../assets/logo1.png");
+        z-index: 1000;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 150px;
+        height: 100px;
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+
+
+    }
+
+    .navbar-nav {
+        .nav-item {
+            padding: 0.5rem 1rem;
+
+            .nav-link {
+                color: #E78F2F;
+                transition: color 0.3s ease;
+
+                &:hover {
+                    color: #AB3126;
+                }
+            }
+        }
+    }
+
+    .dropdown-menu {
+        margin-top: 0;
+        border-radius: 4px;
+
+        background-image: url("../assets/wooden.jpg");
+        background-size: 160px 82px;
+
+        .dropdown-item {
+            color: #E78F2F;
+        }
+
+
+    }
+
+    @media (max-width: 991.98px) {
+        .navbar-collapse {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 1rem;
+        }
+
+        .navbar-nav {
+            .nav-item {
+                padding: 0.5rem 0;
+                border-bottom: 1px solid #eee;
+
+                &:last-child {
+                    border-bottom: none;
+                }
+            }
+        }
+
+        .dropdown-menu {
+            border: none;
+            box-shadow: none;
+            padding-left: 1rem;
+        }
+    }
+}
+
+.radiator-spring-bg {
+    background-size: cover;
+    background-attachment: fixed;
+    transition: all 0.3s ease;
+    width: auto;
+    height: 100vh;
+    animation: backgroundChange 2s step-start infinite;
+
+    @keyframes backgroundChange {
+        0% {
+            background-image: $background-2;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        85% {
+            background-image: $background-1;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        100% {
+            background-image: $background-2;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+    }
+}
+
+.cars {
+    background-image: url("../assets/wooden.jpg");
+    background-size: cover;
+    background-position: center;
+    transition: all 0.3s ease;
+    width: 100%;
+    height: auto;
+    background-attachment: fixed;
+
+    .card1 {
+        @extend %base-card;
+        @include hover-effect(50px, -20px);
+    }
+
+    .card2,
+    .card4,
+    .card9 {
+        @extend %base-card;
+        @include hover-effect(-50px, 20px);
+    }
+
+    .card3 {
+        @extend %base-card;
+        @include hover-effect(50px, -20px);
+    }
+
+    .card5 {
+        @extend %base-card;
+        @include hover-effect(50px, -20px);
+    }
+
+    .card6 {
+        @extend %base-card;
+        @include hover-effect(50px, -20px);
+    }
+
+    .card7 {
+        @extend %base-card;
+        @include hover-effect(50px, -20px);
+    }
+
+    .card8 {
+        @extend %base-card;
+        @include hover-effect(50px, -20px);
+    }
+
+
+}
+
+footer {
+    background: #254F57;
+
+    input:valid,
+    textarea:valid {
+        border: 2px solid green;
+    }
+
+    input:valid~.valid-feedback,
+    textarea:valid~.valid-feedback {
+        display: block;
+    }
+
+    input:valid~.invalid-feedback,
+    textarea:valid~.invalid-feedback {
+        display: none;
+    }
+
+    input:invalid,
+    textarea:invalid {
+        border: 2px solid red;
+    }
+
+    input:invalid~.invalid-feedback,
+    textarea:invalid~.invalid-feedback {
+        display: block;
+    }
+
+    input:invalid~.valid-feedback,
+    textarea:invalid~.valid-feedback {
+        display: none;
+    }
+
+
+}
+
+.hakkımızda {
+    background: url("../assets/wooden.jpg");
+    background-size: cover;
+
+
+    background-attachment: fixed;
+}
+
+.sss {
+    background: url("../assets/wooden.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    // background: linear-gradient(rgba(37, 79, 87, 0.3), rgba(37, 79, 87, 0.3)), url('../assets/wooden.jpg');    
+}
+
+
+
+
+// .radio {
+//   width: 200px;
+//   height: 200px;
+//   background-image: url("../assets/radio.png");
+//   background-color: transparent;
+//   background-size: cover;
+//   background-position: center;
+//   border-radius: 10px;
+//   cursor: pointer;
+//   display: inline-block;
+//   transition: all 0.3s ease;
+//
+//   &:hover {
+//     transform: scale(1.05);
+//     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+//   }
+// }
+//
+// #audio-player {
+//     width: 70px;
+//     height: 70px;
+// }

@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Macondo&display=swap");
+$span-color: #222222;
+$discountColor : #D99D81;
+$navBarHoverColor : red ;
+@mixin textStyle($size, $weight) {
+    font-size: $size;
+    font-weight: $weight;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Macondo', sans-serif;
+    animation: fadeAnimation 1s ease-in-out;
+}
+@keyframes fadeAnimation {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+html {
+    cursor: url("../assets/whip.png"), auto;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: $white;
+    &:hover{
+        color: $span-color;
+    }
+}
+.banner-section{
+    background: url("../assets/banner.png") no-repeat center center/cover;
+    .bg-overlay{
+        background-color: rgba(0, 0, 0, 0.5);
+        height: 100%;
+    }
+}
+.products-categories{
+    .hot-block::before{
+        content: "\1F525";
+    }
+    .most-sell-block{
+        background-color: $blue-400;
+        &::before{
+            content: "\2713";
+        }
+    }
+    .new-block{
+        top: 0;
+        right: 0;
+    }
+}
+.all-products {
+    .discount-block{
+        background-color: $discountColor;
+        &::before{
+            content: "\1F4A5";
+        }
+    }
+}
+.comments{
+    .checked{
+        color: $yellow-500;
+    }
+}
+.about-us{
+    img{
+        border-radius: 50%;
+        width: 15%;
+    }
+    ul{
+        list-style: disc;
+    }
+}
+.product-detail{
+    .product-color{
+        .brown-container{
+            width: 50px;
+            height: 50px;
+            background-color: brown;
+        }
+        .black-container{
+            @extend .brown-container;
+            background-color: black;
+        }
+        .white-container{
+            @extend .brown-container;
+            border: 1px solid black;
+            background-color: $white;
+        }
+        .red-container{
+            @extend .brown-container;
+            background-color: red;
+        }
+        .blue-container{
+            @extend .brown-container;
+            background-color: blue;
+        }
+        .green-container{
+            @extend .brown-container;
+            background-color: green;
+        }
+    }
+    h1{
+        @include textStyle(2.2rem, 900);
+    }
+    p{
+        @include textStyle(1.2rem, 400);
+    }
+    h5{
+        @include textStyle(1.5rem, 500);
+    }
+    span{
+        @include textStyle(1.2rem, 300);
+        color: $span-color;
+    }
+}
+.card:hover {
+    transform: scale(1.01);
+    transition: transform 0.3s ease-in-out;
+}
+.btn:hover{
+    background-color: transparent;
+    transition: background-color 0.3s ease-in-out;
+}

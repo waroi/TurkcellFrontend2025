@@ -1,0 +1,152 @@
+.navbar {
+  .navbar-brand {
+    font-family: "DM Serif Display", serif;
+  }
+  .profile-photo {
+    width: 35px;
+    height: 35px;
+  }
+}
+.page-link:focus,
+.page-link:active {
+  box-shadow: none;
+  outline: none;
+}
+.card-img {
+  height: 200px;
+  object-fit: cover;
+}
+.text-line-clamp {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}
+.scrolling-text1,
+.scrolling-text2,
+.scrolling-text3 {
+  position: absolute;
+  left: 140%;
+  width: 40%;
+  font-size: 1rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.scrolling-text1 {
+  animation: scroll-left 12s linear infinite;
+}
+.scrolling-text2 {
+  animation: scroll-left 12s linear 4s infinite;
+}
+.scrolling-text3 {
+  animation: scroll-left 12s linear 8s infinite;
+}
+@keyframes scroll-left {
+  0% {
+    left: 140%;
+  }
+  100% {
+    left: -40%;
+  }
+}
+.product-search:focus {
+  outline: none;
+  box-shadow: none;
+}
+footer {
+  .footer-brand,
+  .footer-title-custom {
+    font-family: "DM Serif Display", serif;
+  }
+  .pe-32 {
+    padding-right: 8rem;
+  }
+  .footer-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  .footer-input:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  .footer-social i {
+    cursor: pointer;
+    &:hover {
+      color: white;
+    }
+  }
+  .footer-nav li a {
+    color: #cacbff;
+    &:hover {
+      cursor: pointer;
+      color: white;
+    }
+  }
+}
+.product-img {
+  height: 30rem;
+  width: 100%;
+  object-fit: cover;
+}
+.contact-textarea {
+  resize: none;
+}
+.team-member {
+  width: 100px;
+  height: 100px;
+}
+@media (max-width: 1010px) {
+  .scrolling-text1,
+  .scrolling-text2,
+  .scrolling-text3 {
+    left: 150%;
+    width: 50%;
+    font-size: 0.9rem;
+  }
+  @keyframes scroll-left {
+    0% {
+      left: 150%;
+    }
+    100% {
+      left: -50%;
+    }
+  }
+}
+@media (max-width: 730px) {
+  .scrolling-text1,
+  .scrolling-text2,
+  .scrolling-text3 {
+    left: 160%;
+    width: 60%;
+    font-size: 0.8rem;
+  }
+  @keyframes scroll-left {
+    0% {
+      left: 160%;
+    }
+    100% {
+      left: -60%;
+    }
+  }
+}
+@media (max-width: 550px) {
+  .scrolling-text1,
+  .scrolling-text2,
+  .scrolling-text3 {
+    left: 180%;
+    width: 80%;
+    font-size: 0.8rem;
+  }
+  @keyframes scroll-left {
+    0% {
+      left: 180%;
+    }
+    100% {
+      left: -80%;
+    }
+  }
+}

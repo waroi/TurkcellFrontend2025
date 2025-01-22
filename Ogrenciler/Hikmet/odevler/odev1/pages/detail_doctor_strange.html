@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Doctor Strange</title>
+		<link rel="stylesheet" href="../css/main.css" />
+	</head>
+	<body>
+		<!-- scripts -->
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+			crossorigin="anonymous"></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+			integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+			crossorigin="anonymous"></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+			integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+			crossorigin="anonymous"></script>
+		<!-- scripts -->
+		<div class="discount container-fluid bg-primary">
+			<div
+				class="animatedText d-flex text-align-center justify-content-between align-items-center">
+				<span class="me-4">%50 Discount For all items</span>
+				<span class="me-4">%50 Discount For all items</span>
+				<span class="me-4">%50 Discount For all items</span>
+				<span class="me-4">%50 Discount For all items</span>
+				<span>%50 Discount For all items</span>
+			</div>
+		</div>
+		<!-- navbar -->
+		<section class="container">
+			<nav class="navbar navbar-expand-lg navbar-light">
+				<div class="container-fluid">
+					<a href="../index.html">
+						<img
+							class="navbar-brand"
+							src="../assets/HERO.svg"
+							style="height: 30px" />
+					</a>
+					<button
+						class="navbar-toggler"
+						type="button"
+						data-bs-toggle="collapse"
+						data-bs-target="#navbarSupportedContent"
+						aria-controls="navbarSupportedContent"
+						aria-expanded="false"
+						aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+							<li class="nav-item">
+								<a class="nav-link active" aria-current="page" href="#">Home</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="./all_superheros.html">Superheros</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="./faq.html">FAQ</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="./contact.html">Contact</a>
+							</li>
+						</ul>
+						<form class="d-flex" role="search">
+							<input
+								class="form-control me-2"
+								type="search"
+								placeholder="Search"
+								aria-label="Search" />
+							<button class="btn btn-outline-primary" type="submit">
+								Search
+							</button>
+						</form>
+					</div>
+				</div>
+			</nav>
+		</section>
+		<!-- navbar -->
+
+		<!-- product detail section-->
+		<div class="container my-5">
+			<!-- Ürün Başlık ve Ana Kısım -->
+			<div class="row g-4 mb-5">
+				<!-- Sol Taraf - Ürün Görseli -->
+				<div class="col-lg-6">
+					<div id="carouselExampleIndicators" class="carousel slide">
+						<div class="carousel-indicators">
+							<button
+								type="button"
+								data-bs-target="#carouselExampleIndicators"
+								data-bs-slide-to="0"
+								class="active"
+								aria-current="true"
+								aria-label="Slide 1"></button>
+							<button
+								type="button"
+								data-bs-target="#carouselExampleIndicators"
+								data-bs-slide-to="1"
+								aria-label="Slide 2"></button>
+							<button
+								type="button"
+								data-bs-target="#carouselExampleIndicators"
+								data-bs-slide-to="2"
+								aria-label="Slide 3"></button>
+						</div>
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<img
+									src="https://i.pinimg.com/736x/d6/60/32/d66032d6230d8bf2d714514ba2b7cd64.jpg"
+									class="d-block w-100 carousel-img"
+									alt="..." />
+							</div>
+							<div class="carousel-item">
+								<img
+									src="https://i.pinimg.com/736x/5f/30/8d/5f308d8289c8d8c1003ce443719a7119.jpg"
+									class="d-block w-100 carousel-img"
+									alt="..." />
+							</div>
+							<div class="carousel-item">
+								<img
+									src="https://i.pinimg.com/736x/09/9c/58/099c58326432b37f3702ebfc360df56c.jpg"
+									class="d-block w-100 carousel-img"
+									alt="..." />
+							</div>
+						</div>
+						<button
+							class="carousel-control-prev"
+							type="button"
+							data-bs-target="#carouselExampleIndicators"
+							data-bs-slide="prev">
+							<span
+								class="carousel-control-prev-icon"
+								aria-hidden="true"></span>
+							<span class="visually-hidden">Previous</span>
+						</button>
+						<button
+							class="carousel-control-next"
+							type="button"
+							data-bs-target="#carouselExampleIndicators"
+							data-bs-slide="next">
+							<span
+								class="carousel-control-next-icon"
+								aria-hidden="true"></span>
+							<span class="visually-hidden">Next</span>
+						</button>
+					</div>
+				</div>
+
+				<!-- Sağ Taraf - Ürün Bilgileri -->
+				<div class="col-lg-6">
+					<div class="product-info">
+						<h1 class="product-title mb-3">Doctor Strange</h1>
+
+						<!-- Puan ve Değerlendirmeler -->
+						<div class="ratings mb-3">
+							<div class="stars">
+								<i class="bi bi-star-fill"></i>
+								<i class="bi bi-star-fill"></i>
+								<i class="bi bi-star-fill"></i>
+								<i class="bi bi-star-fill"></i>
+								<i class="bi bi-star-fill"></i>
+								<span class="rating-text ms-2">(5/5)</span>
+							</div>
+							<span class="reviews-count">128 değerlendirme</span>
+						</div>
+
+						<!-- Fiyat -->
+						<div class="price-container mb-4">
+							<span class="current-price">$299.99</span>
+							<span class="original-price">$399.99</span>
+							<span class="discount-badge">25% OFF</span>
+						</div>
+
+						<!-- Kısa Açıklama -->
+						<p class="product-short-desc mb-4">
+							Doctor Strange, zamanı manipüle ederek karmaşık durumları
+							çözebiliyor. Bu, tıpkı en karmaşık algoritmalar ve veri yapılarını
+							kullanarak problemleri çözen bir yazılımcı gibi.
+						</p>
+
+						<!-- Renk Seçimi -->
+						<div class="mb-4">
+							<h6 class="option-title">Çalışma Süresi</h6>
+							<ul class="list-group list-group-horizontal">
+								<li class="list-group-item">6 ay</li>
+								<li class="list-group-item">1 yıl</li>
+								<li class="list-group-item">Özel olarak iletişime geçiniz</li>
+							</ul>
+						</div>
+						<!-- Göreve ÇAĞIR! -->
+						<button
+							type="button"
+							class="btn btn-primary"
+							data-bs-toggle="modal"
+							data-bs-target="#exampleModal"
+							data-bs-whatever="@mdo">
+							SÜPER KAHRAMANINI GÖREVE ÇAĞIR!
+						</button>
+						<div
+							class="modal fade"
+							id="exampleModal"
+							tabindex="-1"
+							aria-labelledby="exampleModalLabel"
+							aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h1 class="modal-title fs-5" id="exampleModalLabel">
+											New message
+										</h1>
+										<button
+											type="button"
+											class="btn-close"
+											data-bs-dismiss="modal"
+											aria-label="Close"></button>
+									</div>
+									<div class="modal-body">
+										<form>
+											<div class="mb-3">
+												<label for="time-name" class="col-form-label"
+													>Görev Süresi:</label
+												>
+												<input
+													type="text"
+													class="form-control"
+													id="time-name" />
+											</div>
+											<div class="mb-3">
+												<label for="message-text" class="col-form-label"
+													>Mesaj:</label
+												>
+												<textarea
+													class="form-control"
+													id="message-text"></textarea>
+											</div>
+										</form>
+									</div>
+									<div class="modal-footer">
+										<button
+											type="button"
+											class="btn btn-secondary"
+											data-bs-dismiss="modal">
+											Close
+										</button>
+										<button type="button" class="btn btn-primary">
+											Send message
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Detaylı Bilgi Bölümü -->
+			<div class="product-details mt-5">
+				<ul class="nav nav-tabs" id="productTabs" role="tablist">
+					<li class="nav-item">
+						<a
+							class="nav-link active"
+							id="description-tab"
+							data-bs-toggle="tab"
+							href="#description"
+							>Ürün Açıklaması</a
+						>
+					</li>
+					<li class="nav-item">
+						<a
+							class="nav-link"
+							id="specs-tab"
+							data-bs-toggle="tab"
+							href="#specs"
+							>Özellikler</a
+						>
+					</li>
+					<li class="nav-item">
+						<a
+							class="nav-link"
+							id="reviews-tab"
+							data-bs-toggle="tab"
+							href="#reviews"
+							>Değerlendirmeler</a
+						>
+					</li>
+				</ul>
+
+				<div class="tab-content mt-4 h-75" id="productTabsContent">
+					<!-- Açıklama Tab -->
+					<div class="tab-pane fade show active" id="description">
+						<div class="tab-pane fade show active" id="description">
+							<h3>Süper Kahramanın Hakkında Detaylı Bilgi Edin</h3>
+							<h4>Algoritma ve Veri Yapılarının Ustası, Yazılımın Büyücüsü</h4>
+							<p>
+								Doctor Strange, yazılım dünyasında algoritmalar ve veri
+								yapılarının ustasıdır. Zaman ve mekânı bükme yeteneği, karmaşık
+								algoritmalarla kaotik bir durumu düzenlemeye benzer. Tıpkı
+								karmaşık veri yapılarını birleştiren etkili bir algoritma gibi,
+								Doctor Strange de her sorunu en verimli çözümle halleder ve her
+								zaman doğru çözümü bulur.
+							</p>
+							<p>
+								Pelerini (Cloak of Levitation), yazılım dünyasında recursion
+								(özyineleme) gibi hem işlevsel hem de zariftir. Karmaşık
+								işlevleri ve döngüleri sorunsuzca halleder, gerektiğinde daha
+								derinlere inerek çözümleri keşfeder. Pelerin, her durumda
+								dengeyi sağlamak için doğru zamanda doğru çözümü sunar.
+							</p>
+							<p>
+								Doctor Strange’in silahı olan Sonsuzluk Taşı (Eye of Agamotto),
+								tıpkı bir hash map gibi, ihtiyacınız olan bilgiye anında erişim
+								sağlar. Algoritmalar, doğru veri yapıları ve hızlı çözümleme
+								becerisi sayesinde Strange, her durumu kontrol edebilir. Bu taş,
+								karmaşık veri kümeleri arasında kaybolmadan doğru veriyi hızlıca
+								elde etmeyi sağlar.
+							</p>
+							<p>
+								Doctor Strange, özellikle karmaşık grafik algoritmaları ve
+								makine öğrenmesi optimizasyonlarında ustadır. Kendi dünyasında
+								olduğu gibi, yazılımda da farklı katmanları bir araya getirir,
+								sistemleri daha verimli hale getirir ve her problemi çözmek için
+								en doğru yolu bulur.
+							</p>
+						</div>
+					</div>
+
+					<!-- Özellikler Tab -->
+					<div class="tab-pane fade" id="specs">
+						<h3>Teknik Özellikler</h3>
+						<div class="spec-item row align-items-center mb-5">
+							<div class="d-flex justify-content-center col-md-6">
+								<div class="spec-image">
+									<img
+										src="https://i.pinimg.com/736x/d6/60/32/d66032d6230d8bf2d714514ba2b7cd64.jpg"
+										alt="Özellik 1"
+										class="img-fluid rounded shadow" />
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="spec-content">
+									<h4>
+										Karmaşıklığı Düzenleyen Algoritmalar: Zaman ve Mekânın
+										Hakimi
+									</h4>
+									<p>
+										Doctor Strange’in zaman ve mekânı bükme gücü, karmaşık
+										algoritmaların kaotik bir durumu düzenleyerek optimize
+										etmesine benzer. Özellikle grafik algoritmaları ve yol
+										optimizasyonları gibi alanlarda, kaosu düzene sokar ve en
+										iyi çözümü sunar.
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- Özellik 2 - Sağ Resim Sol Açıklama -->
+						<div class="spec-item row align-items-center mb-5">
+							<div class="d-flex justify-content-center col-md-6 order-md-2">
+								<div class="spec-image">
+									<img
+										src="https://i.pinimg.com/736x/5f/30/8d/5f308d8289c8d8c1003ce443719a7119.jpg"
+										alt="Özellik 2"
+										class="img-fluid rounded shadow" />
+								</div>
+							</div>
+							<div class="col-md-6 order-md-1">
+								<div class="spec-content">
+									<h4>Cloak of Levitation: Recursion ve Özyinelemenin Gücü</h4>
+									<p>
+										Pelerini (Cloak of Levitation), recursion (özyineleme) gibi
+										işlevsellik ve zarafeti birleştirir. Karmaşık döngüleri ve
+										alt problemleri çözüme ulaştırmak için kullanılan bu yöntem,
+										Doctor Strange’in sorunları çözmek için derinlere inme
+										becerisini yansıtır.
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- Özellik 3 - Sol Resim Sağ Açıklama -->
+						<div class="spec-item row align-items-center mb-5">
+							<div class="d-flex justify-content-center col-md-6">
+								<div class="spec-image">
+									<img
+										src="https://i.pinimg.com/736x/78/e5/90/78e5909a9e7721157e6f38c543c2a4d7.jpg"
+										alt="Özellik 3"
+										class="img-fluid rounded shadow" />
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="spec-content">
+									<h4>
+										Eye of Agamotto: Hash Map ve Doğru Veriye Hızlı Erişim
+									</h4>
+									<p>
+										Doctor Strange’in Sonsuzluk Taşı (Eye of Agamotto), hash map
+										gibi ihtiyacınız olan bilgiye hızlı erişim sağlar. Büyük
+										veri kümeleri arasında, karmaşıklık içinde kaybolmadan doğru
+										veriyi anında bulmak için tasarlanmıştır.
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- Özellik 4 - Sağ Resim Sol Açıklama -->
+						<div class="spec-item row align-items-center">
+							<div class="d-flex justify-content-center col-md-6 order-md-2">
+								<div class="spec-image">
+									<img
+										src="https://i.pinimg.com/736x/09/9c/58/099c58326432b37f3702ebfc360df56c.jpg"
+										alt="Özellik 4"
+										class="img-fluid rounded shadow" />
+								</div>
+							</div>
+							<div class="col-md-6 order-md-1">
+								<div class="spec-content">
+									<h4>
+										Çok Katmanlı Sistemler: Abstraction ve Grafik Algoritmaları
+									</h4>
+									<p>
+										Doctor Strange, farklı boyutları ve katmanları bir araya
+										getirerek karmaşık yapıları çözme ustasıdır. Yazılımda, bu
+										durum abstraction kullanımı ve grafik algoritmalarında
+										farklı katmanları uyumlu bir şekilde birleştirme olarak
+										yansır.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Değerlendirmeler Tab -->
+					<div class="tab-pane fade" id="reviews">
+						<h3>Müşteri Değerlendirmeleri</h3>
+						<!-- Örnek Değerlendirme -->
+						<div class="review-card">
+							<div class="review-header">
+								<div class="stars">
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star-fill"></i>
+								</div>
+								<span class="review-date">15 Ocak 2024</span>
+							</div>
+							<h5 class="reviewer-name">Varol Maksutoğlu</h5>
+							<p class="review-text">
+								Rüyasında bile kod yazıyor. Bu adam durdurulamaz!
+							</p>
+						</div>
+						<div class="review-card">
+							<div class="review-header">
+								<div class="stars">
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star-fill"></i>
+								</div>
+								<span class="review-date">15 Ocak 2024</span>
+							</div>
+							<h5 class="reviewer-name">Emre AKA</h5>
+							<p class="review-text">
+								Adamsın kardeşim, sen bu sporu yapıyorsun.
+							</p>
+						</div>
+						<div class="review-card">
+							<div class="review-header">
+								<div class="stars">
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star-fill"></i>
+								</div>
+								<span class="review-date">15 Ocak 2024</span>
+							</div>
+							<h5 class="reviewer-name">Abdullah Fırat</h5>
+							<p class="review-text">Bu adam bir harika.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- product detail section-->
+
+		<!-- footer -->
+		<footer class="footer">
+			<div class="container">
+				<div class="row">
+					<!-- Adres Bölümü -->
+					<div class="col-md-4 footer-column">
+						<h4>İletişim</h4>
+						<div class="company-info">
+							<div class="company-name mb-3">
+								<h5>HMF Software</h5>
+							</div>
+							<div class="address">
+								<i class="bi bi-geo-alt-fill text-primary"></i>
+								<p>
+									123 Superhero Street <br />
+									New York, NY 10001
+								</p>
+								<p>United States</p>
+							</div>
+							<div class="contact mt-3">
+								<div class="phone mb-2">
+									<i class="bi bi-telephone-fill text-primary"></i>
+									<span>Phone: 537 688 24 16</span>
+								</div>
+								<div class="email">
+									<i class="bi bi-envelope-fill text-primary"></i>
+									<span>Email: hikmetmelik@gmail.com</span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Linkler Bölümü -->
+					<div class="col-md-4 footer-column">
+						<h4>Hızlı Linkler</h4>
+						<ul class="footer-links">
+							<li><a href="../index.html">Ana Sayfa</a></li>
+							<li><a href="./all_superheros.html">Superheros</a></li>
+							<li><a href="./faq.html">Sıkça Sorulan Sorular</a></li>
+							<li><a href="#">Hakkımızda</a></li>
+							<li><a href="./contact.html">İletişim</a></li>
+						</ul>
+					</div>
+
+					<!-- Abone Ol ve Sosyal Medya -->
+					<div class="col-md-4 footer-column">
+						<h4>Bültenimize Abone Olun</h4>
+						<div class="newsletter-form mb-4">
+							<form>
+								<div class="input-group">
+									<input
+										type="email"
+										class="form-control"
+										placeholder="E-posta adresiniz" />
+									<button class="btn btn-primary" type="submit">
+										<i class="bi bi-send-fill"></i>
+									</button>
+								</div>
+							</form>
+						</div>
+						<div class="social-links">
+							<h4>Takip Edin</h4>
+							<div class="social-icons">
+								<a
+									href="https://www.instagram.com/hikmet_melikk/"
+									class="social-icon"
+									><i class="bi bi-instagram"></i
+								></a>
+								<a
+									href="https://www.linkedin.com/in/hikmet-melik-firat-355279203/"
+									class="social-icon"
+									><i class="bi bi-linkedin"></i
+								></a>
+								<a href="https://github.com/HikmetMelikk" class="social-icon"
+									><i class="bi bi-github"></i
+								></a>
+							</div>
+							<a href="https://hikmetmelik.tech" class="my-5"
+								>Kişisel Sitemi Ziyaret Et</a
+							>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<div class="container">
+					<div class="row">
+						<div class="col-12">
+							<p class="copyright">
+								© 2024 Hikmet Melik FIRAT - Tüm hakları saklıdır.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- footer -->
+	</body>
+</html>

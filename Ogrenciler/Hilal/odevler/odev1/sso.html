@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SSO</title>
+    <title>80's Retro Layout</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
       rel="stylesheet"
@@ -14,83 +14,116 @@
       href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./css/main.css" />
   </head>
-  <body class="d-flex align-items-center justify-content-center">
-    <div class="retro-background"></div>
+  <body class="text-light">
     <main
-      class="main-card position-relative overflow-hidden w-100 mx-0 mx-md-5"
+      class="main-card position-relative border h-100 z-0 box-shadow rounded m-0 mt-md-3 mx-md-5 overflow-hidden"
     >
-      <div class="retro-background"></div>
-      <div class="stars light"></div>
-      <header class="p-3 border-bottom ms-3 me-3">
+      <div
+        class="retro-background top-0 start-0 rounded w-100 h-100 position-absolute z-n1"
+      ></div>
+      <div
+        class="overflow-hidden stars position-absolute top-0 start-0 bottom-0 end-0"
+      >
+        <div class="wrapper w-100 h-100"><div class="light"></div></div>
+      </div>
+      <header class="p-3 ms-3 me-3 text-light">
         <nav class="navbar navbar-expand-lg bg-transparent">
           <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <div class="logo-wrapper">
+              <a class="navbar-brand logo m-0 text-primary fs-3" href="#"
+                >RetroRota</a
+              >
+              <div
+                class="header-border position-relative w-100 box-shadow"
+              ></div>
+            </div>
             <button
-              class="navbar-toggler"
+              class="navbar-toggler border-0"
               type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasNavbar"
+              aria-controls="offcanvasNavbar"
               aria-label="Toggle navigation"
             >
-              <span class="navbar-toggler-icon"></span>
+              <span class="navbar-toggler-icon w-100 h-10 border-0"
+                ><i class="fa-solid fa-bars fs-3" style="color: #d1d1d1"></i
+              ></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#"
-                    >Home</a
+            <div
+              class="offcanvas offcanvas-end flex-grow-0 text-light bg-dark"
+              tabindex="-1"
+              id="offcanvasNavbar"
+              aria-labelledby="offcanvasNavbarLabel"
+            >
+              <div class="offcanvas-header">
+                <a href="./index.html"></a>
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+                  RetroRota
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="offcanvas"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                  <li class="nav-item">
+                    <a
+                      class="nav-link link-light active"
+                      aria-current="page"
+                      href="index.html"
+                      >Home</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link link-light" href="./sso.html">SSO</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link link-light" href="./iletisim.html"
+                      >Iletisim</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link link-light" href="./hakkimizda.html"
+                      >Hakkımızda</a
+                    >
+                  </li>
+                </ul>
+                <form class="d-flex" role="search">
+                  <input
+                    class="form-control me-2 search-input box-shadow shadow-none bg-light outline-0"
+                    type="search"
+                    placeholder="Search"
+                    aria-label="Search"
+                  />
+                  <button
+                    class="search-button btn btn-outline-success text-success"
+                    type="submit"
                   >
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a
-                    class="nav-link dropdown-toggle"
-                    href="#"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    Dropdown
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li>
-                      <a class="dropdown-item" href="#">Another action</a>
-                    </li>
-                    <li><hr class="dropdown-divider" /></li>
-                    <li>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-              <form class="d-flex" role="search">
-                <input
-                  class="form-control me-2 bg-transparent"
-                  type="search"
-                  placeholder="Search"
-                  aria-label="Search"
-                />
-                <button class="btn btn-outline-success" type="submit">
-                  Search
-                </button>
-              </form>
+                    Search
+                  </button>
+                </form>
+              </div>
             </div>
           </div>
         </nav>
       </header>
-      <section class="vh-100">
+      <section>
         <div class="px-3 d-flex flex-column gap-5">
           <div>
             <h1 class="section-title">Sıkça Sorulan Sorular</h1>
           </div>
-          <div class="accordion" id="faqAccordion">
+          <div class="accordion bg-transparent" id="ssoAccordion">
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingOne">
                 <button
@@ -108,7 +141,7 @@
                 id="collapseOne"
                 class="accordion-collapse collapse show"
                 aria-labelledby="headingOne"
-                data-bs-parent="#faqAccordion"
+                data-bs-parent="#ssoAccordion"
               >
                 <div class="accordion-body">
                   Tüm ürünlerimiz, satın alındığı tarihten itibaren 2 yıl
@@ -134,7 +167,7 @@
                 id="collapseTwo"
                 class="accordion-collapse collapse"
                 aria-labelledby="headingTwo"
-                data-bs-parent="#faqAccordion"
+                data-bs-parent="#ssoAccordion"
               >
                 <div class="accordion-body">
                   Ürünlerinizin teslimat süresi, teslimat adresinize ve ürünün
@@ -159,7 +192,7 @@
                 id="collapseThree"
                 class="accordion-collapse collapse"
                 aria-labelledby="headingThree"
-                data-bs-parent="#faqAccordion"
+                data-bs-parent="#ssoAccordion"
               >
                 <div class="accordion-body">
                   İade ve değişim işlemleri, ürünün kullanılmamış ve orijinal
@@ -185,7 +218,7 @@
                 id="collapseFour"
                 class="accordion-collapse collapse"
                 aria-labelledby="headingFour"
-                data-bs-parent="#faqAccordion"
+                data-bs-parent="#ssoAccordion"
               >
                 <div class="accordion-body">
                   Evet, kredi kartı ile ödeme yapabilirsiniz. Visa, MasterCard
@@ -197,13 +230,13 @@
           </div>
         </div>
       </section>
-      <footer class="bg-transparent text-white py-5">
+      <footer class="bg-transparent py-5">
         <div class="container">
           <div class="row mt-4">
             <div class="col-12 col-lg-6 text-center text-lg-start">
               <small
-                >© 2025 Zaman Yolcuları İçin Alışveriş. Tüm Hakları
-                Saklıdır.</small
+                >© 1982 RetroRota.Dikkat bu websitesi gelecek için oldukça banal
+                geçmiş için oldukça sıradışıdır.</small
               ><br />
             </div>
             <div class="col-12 col-lg-6 text-center text-lg-end">
@@ -223,5 +256,10 @@
       integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
       crossorigin="anonymous"
     ></script>
+    <script
+      src="https://kit.fontawesome.com/b101dd4247.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
+  <!-- Latest compiled and minified JavaScript -->
 </html>
