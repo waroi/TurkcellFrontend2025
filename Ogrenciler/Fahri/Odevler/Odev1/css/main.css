@@ -11,6 +11,16 @@
   max-height: calc(1.5 * 3em);
 }
 
+.card-title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.5;
+  max-height: calc(1.5 * 1em);
+}
+
 nav a {
   color: black;
 }
@@ -4313,7 +4323,7 @@ textarea.form-control-lg {
   --bs-card-title-color: ;
   --bs-card-subtitle-color: ;
   --bs-card-border-width: var(--bs-border-width);
-  --bs-card-border-color: var(--bs-border-color-translucent);
+  --bs-card-border-color: transparent;
   --bs-card-border-radius: var(--bs-border-radius);
   --bs-card-box-shadow: ;
   --bs-card-inner-border-radius: calc(var(--bs-border-radius) - (var(--bs-border-width)));
@@ -11867,8 +11877,8 @@ textarea.form-control-lg {
 .animation-card:after {
   position: absolute;
   content: "";
-  top: 5vw;
-  left: 0;
+  top: 0;
+  left: 5vw;
   right: 0;
   z-index: -1;
   height: 100%;
@@ -11944,6 +11954,7 @@ a {
 .card-section .card .card-img-top {
   z-index: 2;
   height: 218px;
+  object-fit: cover;
   transform: translateY(50%);
   transition: 0.5s;
 }
@@ -11993,82 +12004,87 @@ a {
   position: absolute;
 }
 
-.our-team .card .card-img-1 {
+.product-list .card {
+  color: white;
+}
+.product-list .card .card-img-1 {
   background: url("../assets/1.png");
 }
-.our-team .card .card-img-2 {
+.product-list .card .card-img-2 {
   background: url("../assets/2.png");
 }
-.our-team .card .card-img-3 {
+.product-list .card .card-img-3 {
   background: url("../assets/3.png");
 }
-.our-team .card .card-img-4 {
+.product-list .card .card-img-4 {
   background: url("../assets/4.png");
 }
-.our-team .card .card-img-5 {
+.product-list .card .card-img-5 {
   background: url("../assets/5.png");
 }
-.our-team .card .card-img-6 {
+.product-list .card .card-img-6 {
   background: url("../assets/6.png");
 }
-.our-team .card .card-img-7 {
+.product-list .card .card-img-7 {
   background: url("../assets/7.png");
 }
-.our-team .card .card-img-8 {
+.product-list .card .card-img-8 {
   background: url("../assets/8.png");
 }
-.our-team .card .card-img-9 {
+.product-list .card .card-img-9 {
   background: url("../assets/9.png");
 }
-.our-team .card .card-img-1,
-.our-team .card .card-img-2,
-.our-team .card .card-img-3,
-.our-team .card .card-img-4,
-.our-team .card .card-img-5,
-.our-team .card .card-img-6,
-.our-team .card .card-img-7,
-.our-team .card .card-img-8,
-.our-team .card .card-img-9 {
+.product-list .card .card-img-1,
+.product-list .card .card-img-2,
+.product-list .card .card-img-3,
+.product-list .card .card-img-4,
+.product-list .card .card-img-5,
+.product-list .card .card-img-6,
+.product-list .card .card-img-7,
+.product-list .card .card-img-8,
+.product-list .card .card-img-9 {
   width: 100%;
   height: 408px;
   background-size: 100%;
+  object-fit: cover;
   background-repeat: no-repeat;
   background-position: center;
   overflow: hidden;
   transition: 0.3s ease;
   background-size: 120%;
   transition: background-size 1s ease;
+  border-radius: 20px;
 }
-.our-team .card .social {
+.product-list .card .social {
   width: 100%;
   height: 57px;
   background-color: #ffc107;
   transition: 0.3s ease;
   bottom: -57px;
 }
-.our-team .card .social i {
+.product-list .card .social i {
   font-size: 16px;
   color: #fff;
 }
-.our-team .card:hover .social {
+.product-list .card:hover .social {
   bottom: 0;
 }
-.our-team .card:hover .social i {
+.product-list .card:hover .social i {
   font-size: 16px;
   color: white;
 }
-.our-team .card:hover .card-img-1,
-.our-team .card:hover .card-img-2,
-.our-team .card:hover .card-img-3,
-.our-team .card:hover .card-img-4,
-.our-team .card:hover .card-img-5,
-.our-team .card:hover .card-img-6,
-.our-team .card:hover .card-img-7,
-.our-team .card:hover .card-img-8,
-.our-team .card:hover .card-img-9 {
+.product-list .card:hover .card-img-1,
+.product-list .card:hover .card-img-2,
+.product-list .card:hover .card-img-3,
+.product-list .card:hover .card-img-4,
+.product-list .card:hover .card-img-5,
+.product-list .card:hover .card-img-6,
+.product-list .card:hover .card-img-7,
+.product-list .card:hover .card-img-8,
+.product-list .card:hover .card-img-9 {
   background-size: 130%;
 }
-.our-team .our-team-header h3, .our-team .our-team-header .h3 {
+.product-list .our-team-header h3, .product-list .our-team-header .h3 {
   font-size: 40px;
   font-weight: #000;
   color: 700;
@@ -12099,8 +12115,8 @@ a {
   align-items: center;
   width: 64px;
   height: 64px;
-  padding: 20px;
-  color: #ffc107;
+  padding: 10px;
+  color: black;
 }
 .about .content ul h5, .about .content ul .h5 {
   font-size: 18px;
@@ -12139,7 +12155,7 @@ a {
   font-weight: 500;
   color: black;
   line-height: 24.75px;
-  background-color: rgb(243, 245, 247);
+  background-color: white;
   transition: 0.1s ease;
 }
 .other-products .card:hover a {
