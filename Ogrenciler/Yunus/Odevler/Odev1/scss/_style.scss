@@ -1,0 +1,486 @@
+// Variables
+$font-primary: 'Inter', serif;
+$font-secondary: 'Gelasio', serif;
+
+// Colors
+$primary-color: #58524F;
+$secondary-color: #121212;
+$background-color: #f4f8e7;
+$border-color: #D4D2D0;
+$highlight-color: #e4b41b;
+
+// Breakpoints
+$xxl: 1400px;
+$xl: 1200px;
+$lg: 992px;
+$md: 768px;
+$sm: 576px;
+
+// Base Mixins
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin transition-all($duration: 300ms) {
+    transition: all $duration ease-in-out;
+}
+
+@mixin responsive($breakpoint) {
+    @media screen and (max-width: $breakpoint) {
+        @content;
+    }
+}
+
+// Typography Mixins
+@mixin typography-base {
+    font-family: $font-primary;
+    color: $primary-color;
+    line-height: 1.5;
+}
+
+@mixin title-style {
+    font-family: $font-secondary;
+    max-width: 800px;
+    font-weight: bold;
+}
+
+// Hover Mixins
+@mixin nav-hover {
+    &:hover {
+        color: $secondary-color !important;
+    }
+}
+
+@mixin footer-link-hover {
+    &:hover {
+        color: #fff !important;
+    }
+}
+
+@mixin button-hover-dark {
+    &:hover {
+        background-color: $secondary-color !important;
+        color: white;
+
+        >svg {
+            fill: white;
+        }
+    }
+}
+
+@mixin button-hover-light {
+    &:hover {
+        background-color: $background-color;
+        color: $secondary-color;
+    }
+}
+
+@mixin timeline-line {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background: $primary-color;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+}
+
+// Card Mixins
+@mixin card-base {
+    border-radius: 14px;
+    background-color: white;
+    @include transition-all;
+}
+
+@mixin product-card {
+    @include card-base;
+    border-radius: 0.375rem;
+    box-shadow: 0 2px 20px -2px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+}
+
+@mixin customer-card {
+    @include card-base;
+    padding: 24px;
+    border: 1px solid $border-color;
+}
+
+@mixin normal-card {
+    @include card-base;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+// Button Mixins
+@mixin button-base {
+    border: 1px solid $primary-color;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    @include transition-all;
+}
+
+@mixin button-hover {
+    &:hover {
+        background-color: $secondary-color;
+        color: white;
+
+        >svg {
+            fill: white;
+        }
+    }
+}
+
+// Extends
+%card-hover {
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    }
+}
+
+%link-style {
+    text-decoration: none;
+    color: $primary-color;
+    @include transition-all;
+
+    &:hover {
+        color: $secondary-color;
+    }
+}
+
+// Base Styles
+* {
+    @include typography-base;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+::selection {
+    background-color: $highlight-color;
+}
+
+body {
+    background-color: $background-color;
+}
+
+// Header Styles
+header {
+    top: 10px;
+    z-index: 30;
+
+    nav {
+        border: 1px solid $primary-color;
+
+        .nav-link {
+            @extend %link-style;
+            @include nav-hover;
+        }
+
+        form {
+            .buy-button {
+                @include button-base;
+
+                &:nth-child(1) {
+                    @include button-hover-dark;
+                }
+
+                &:not(:nth-child(1)) {
+                    @include button-hover-light;
+                }
+            }
+
+            .magic {
+                svg {
+                    @include transition-all()
+                }
+
+                &:hover {
+                    >svg {
+                        fill: $secondary-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Hero Section
+.hero {
+    margin-bottom: 5rem;
+
+    h1 {
+        @include title-style;
+    }
+
+    @include responsive($lg) {
+        .container {
+            @include flex-column;
+            padding-top: 0 !important;
+
+            .text-center {
+                margin-top: 1rem !important;
+            }
+
+            .mt-4 {
+                order: 3;
+            }
+
+            .list-group {
+                @include responsive($lg) {
+                    display: grid;
+                    grid-template-columns: repeat(2, 50%);
+                    margin: auto;
+                }
+
+                @include responsive($md) {
+                    grid-template-columns: repeat(1, 100%);
+                }
+
+                .list-group-item {
+                    @include responsive($lg) {
+                        margin: auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Index Product Section
+.most-popular-products {
+    .row {
+        .product-card {
+            @include product-card;
+            @extend %card-hover;
+        }
+
+        .btn {
+            @include button-base;
+            @include button-hover;
+        }
+
+        img {
+            height: 220px;
+
+            @include responsive($sm) {
+                width: 100%;
+                height: 40%;
+            }
+        }
+
+        p {
+            font-size: 14px;
+        }
+    }
+}
+
+// Saving Section
+.saving {
+    h3 {
+        @include title-style;
+    }
+
+    .row {
+        .col-lg-4:nth-child(2) {
+            @include responsive($lg) {
+                border: {
+                    left: 0 !important;
+                    right: 0 !important;
+                    top: 1px solid $primary-color;
+                    bottom: 1px solid $primary-color;
+                }
+            }
+        }
+    }
+}
+
+// Testimonials Section
+.testimonials {
+    .customer-comment {
+        @include customer-card;
+        @extend %card-hover;
+
+        .comment {
+            font-size: 14px;
+        }
+
+        .jobs {
+            font-size: 12px;
+        }
+    }
+}
+
+// Footer
+.footer {
+    ul {
+        .list-group-item {
+            a {
+                @extend %link-style;
+                font-size: 12px;
+                letter-spacing: 2px;
+                @include transition-all;
+                @include footer-link-hover;
+            }
+        }
+
+        @include responsive($sm) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    input {
+        font-size: 16px;
+        border: 1px solid $primary-color;
+
+        &::placeholder {
+            font-size: 12px;
+            color: $primary-color;
+        }
+    }
+
+    button {
+        @include button-base;
+        @include button-hover-dark;
+
+        &:hover {
+            border: 1px solid $primary-color;
+        }
+    }
+}
+
+// About Us
+.about-us {
+    .summary {
+        @include normal-card;
+    }
+
+    .timeline {
+        position: relative;
+        padding: 2rem 0;
+
+        &::before {
+            @include timeline-line;
+        }
+    }
+
+    .timeline-item {
+        margin-bottom: 2rem;
+    }
+
+    .timeline-content {
+        @include normal-card;
+        padding: 1rem;
+        width: calc(50% - 30px);
+    }
+
+    .timeline-item:nth-child(even) .timeline-content {
+        margin-left: calc(50% + 30px);
+    }
+
+    .timeline-date {
+        margin-bottom: 0.5rem;
+    }
+
+    .timeline-dot {
+        width: 20px;
+        height: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 20px;
+    }
+
+    .vision,
+    .mision {
+        @include normal-card;
+    }
+}
+
+// Products
+.products {
+    .collections {
+        span {
+            border: 1px solid $border-color;
+
+            &:hover {
+                background-color: $secondary-color !important;
+                color: #fff !important;
+            }
+        }
+
+        @include responsive($xxl) {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            overflow-x: auto;
+            padding-bottom: 1rem
+        }
+    }
+
+    .row {
+        .product-card {
+            @include product-card;
+            @extend %card-hover;
+        }
+    }
+
+    .btn {
+        @include button-base;
+        @include button-hover;
+    }
+
+    img {
+        height: 300px;
+        width: 100%;
+        object-fit: cover;
+
+        @include responsive($sm) {
+            width: 100%;
+            height: 40%;
+        }
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+}
+
+// Product
+.product {
+    ul {
+        list-style-type: none;
+
+        li {
+            color: $secondary-color;
+
+            i {
+                font-size: 14px;
+                width: 15px;
+                color: $secondary-color;
+                margin-right: 10px;
+            }
+        }
+    }
+
+    .col-xl-6 {
+        a {
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+// SSS
+.sss,
+.contact {
+    .summary {
+        @include normal-card()
+    }
+}

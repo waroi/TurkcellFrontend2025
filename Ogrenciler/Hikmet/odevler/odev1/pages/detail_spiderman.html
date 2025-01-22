@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Spider-Man</title>
+		<link rel="stylesheet" href="../css/main.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+	</head>
+	<body>
+		<!-- scripts -->
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+			crossorigin="anonymous"></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+			integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+			crossorigin="anonymous"></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+			integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+			crossorigin="anonymous"></script>
+		<!-- scripts -->
+		<div class="discount container-fluid bg-primary">
+			<div
+				class="animatedText d-flex text-align-center justify-content-between align-items-center">
+				<span class="me-4">%50 Discount For all items</span>
+				<span class="me-4">%50 Discount For all items</span>
+				<span class="me-4">%50 Discount For all items</span>
+				<span class="me-4">%50 Discount For all items</span>
+				<span>%50 Discount For all items</span>
+			</div>
+		</div>
+		<!-- navbar -->
+		<section class="container">
+			<nav class="navbar navbar-expand-lg navbar-light">
+				<div class="container-fluid">
+					<a href="../index.html">
+						<img
+							class="navbar-brand"
+							src="../assets/HERO.svg"
+							style="height: 30px" />
+					</a>
+					<button
+						class="navbar-toggler"
+						type="button"
+						data-bs-toggle="collapse"
+						data-bs-target="#navbarSupportedContent"
+						aria-controls="navbarSupportedContent"
+						aria-expanded="false"
+						aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+							<li class="nav-item">
+								<a class="nav-link active" aria-current="page" href="#">Home</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="./all_superheros.html">Superheros</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="./faq.html">FAQ</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="./contact.html">Contact</a>
+							</li>
+						</ul>
+						<form class="d-flex" role="search">
+							<input
+								class="form-control me-2"
+								type="search"
+								placeholder="Search"
+								aria-label="Search" />
+							<button class="btn btn-outline-primary" type="submit">
+								Search
+							</button>
+						</form>
+					</div>
+				</div>
+			</nav>
+		</section>
+		<!-- navbar -->
+
+		<!-- product detail section-->
+		<div class="container my-5">
+			<!-- Ürün Başlık ve Ana Kısım -->
+			<div class="row g-4 mb-5">
+				<!-- Sol Taraf - Ürün Görseli -->
+				<div class="col-lg-6">
+					<div id="carouselExampleIndicators" class="carousel slide">
+						<div class="carousel-indicators">
+							<button
+								type="button"
+								data-bs-target="#carouselExampleIndicators"
+								data-bs-slide-to="0"
+								class="active"
+								aria-current="true"
+								aria-label="Slide 1"></button>
+							<button
+								type="button"
+								data-bs-target="#carouselExampleIndicators"
+								data-bs-slide-to="1"
+								aria-label="Slide 2"></button>
+							<button
+								type="button"
+								data-bs-target="#carouselExampleIndicators"
+								data-bs-slide-to="2"
+								aria-label="Slide 3"></button>
+						</div>
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<img
+									src="https://i.pinimg.com/736x/31/e5/d7/31e5d774a3c79759a7ecb82e35bebfeb.jpg"
+									class="d-block w-100 carousel-img"
+									alt="..." />
+							</div>
+							<div class="carousel-item">
+								<img
+									src="https://i.pinimg.com/736x/ec/87/10/ec871050bca36085ae4cbe3276f40afa.jpg"
+									class="d-block w-100 carousel-img"
+									alt="..." />
+							</div>
+							<div class="carousel-item">
+								<img
+									src="https://i.pinimg.com/736x/8c/f6/15/8cf615aa3f0840e75aa0192fe04c9576.jpg"
+									class="d-block w-100 carousel-img"
+									alt="..." />
+							</div>
+						</div>
+						<button
+							class="carousel-control-prev"
+							type="button"
+							data-bs-target="#carouselExampleIndicators"
+							data-bs-slide="prev">
+							<span
+								class="carousel-control-prev-icon"
+								aria-hidden="true"></span>
+							<span class="visually-hidden">Previous</span>
+						</button>
+						<button
+							class="carousel-control-next"
+							type="button"
+							data-bs-target="#carouselExampleIndicators"
+							data-bs-slide="next">
+							<span
+								class="carousel-control-next-icon"
+								aria-hidden="true"></span>
+							<span class="visually-hidden">Next</span>
+						</button>
+					</div>
+				</div>
+
+				<!-- Sağ Taraf - Ürün Bilgileri -->
+				<div class="col-lg-6">
+					<div class="product-info">
+						<h1 class="product-title mb-3">Spider-Man - Peter Parker</h1>
+
+						<!-- Puan ve Değerlendirmeler -->
+						<div class="ratings mb-3">
+							<div class="stars">
+								<i class="bi bi-star-fill"></i>
+								<i class="bi bi-star-fill"></i>
+								<i class="bi bi-star-fill"></i>
+								<i class="bi bi-star-fill"></i>
+								<i class="bi bi-star-fill"></i>
+								<span class="rating-text ms-2">(5/5)</span>
+							</div>
+							<span class="reviews-count">128 değerlendirme</span>
+						</div>
+
+						<!-- Fiyat -->
+						<div class="price-container mb-4">
+							<span class="current-price">$299.99</span>
+							<span class="original-price">$399.99</span>
+							<span class="discount-badge">25% OFF</span>
+						</div>
+
+						<!-- Kısa Açıklama -->
+						<p class="product-short-desc mb-4">
+							Peter Parker’ın refleksleri ve "örümcek ağı" tasarımı, frontend
+							geliştiricilerin kullanıcı deneyimini kusursuz hale getirme
+							çabasıyla benzerdir. Tüm detayları birleştirerek kullanıcıların
+							hayran olacağı bir "ağ" (arayüz) yaratır.
+						</p>
+
+						<!-- Renk Seçimi -->
+						<div class="mb-4">
+							<h6 class="option-title">Çalışma Süresi</h6>
+							<ul class="list-group list-group-horizontal">
+								<li class="list-group-item">6 ay</li>
+								<li class="list-group-item">1 yıl</li>
+								<li class="list-group-item">Özel olarak iletişime geçiniz</li>
+							</ul>
+						</div>
+						<!-- Göreve ÇAĞIR! -->
+						<button
+							type="button"
+							class="btn btn-primary"
+							data-bs-toggle="modal"
+							data-bs-target="#exampleModal"
+							data-bs-whatever="@mdo">
+							SÜPER KAHRAMANINI GÖREVE ÇAĞIR!
+						</button>
+						<div
+							class="modal fade"
+							id="exampleModal"
+							tabindex="-1"
+							aria-labelledby="exampleModalLabel"
+							aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h1 class="modal-title fs-5" id="exampleModalLabel">
+											New message
+										</h1>
+										<button
+											type="button"
+											class="btn-close"
+											data-bs-dismiss="modal"
+											aria-label="Close"></button>
+									</div>
+									<div class="modal-body">
+										<form>
+											<div class="mb-3">
+												<label for="time-name" class="col-form-label"
+													>Görev Süresi:</label
+												>
+												<input
+													type="text"
+													class="form-control"
+													id="time-name" />
+											</div>
+											<div class="mb-3">
+												<label for="message-text" class="col-form-label"
+													>Mesaj:</label
+												>
+												<textarea
+													class="form-control"
+													id="message-text"></textarea>
+											</div>
+										</form>
+									</div>
+									<div class="modal-footer">
+										<button
+											type="button"
+											class="btn btn-secondary"
+											data-bs-dismiss="modal">
+											Close
+										</button>
+										<button type="button" class="btn btn-primary">
+											Send message
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Detaylı Bilgi Bölümü -->
+			<div class="product-details mt-5">
+				<ul class="nav nav-tabs" id="productTabs" role="tablist">
+					<li class="nav-item">
+						<a
+							class="nav-link active"
+							id="description-tab"
+							data-bs-toggle="tab"
+							href="#description"
+							>Ürün Açıklaması</a
+						>
+					</li>
+					<li class="nav-item">
+						<a
+							class="nav-link"
+							id="specs-tab"
+							data-bs-toggle="tab"
+							href="#specs"
+							>Özellikler</a
+						>
+					</li>
+					<li class="nav-item">
+						<a
+							class="nav-link"
+							id="reviews-tab"
+							data-bs-toggle="tab"
+							href="#reviews"
+							>Değerlendirmeler</a
+						>
+					</li>
+				</ul>
+
+				<div class="tab-content mt-4 h-75" id="productTabsContent">
+					<!-- Açıklama Tab -->
+					<div class="tab-pane fade show active" id="description">
+						<div class="tab-pane fade show active" id="description">
+							<h3>Süper Kahramanın Hakkında Detaylı Bilgi Edin</h3>
+							<h4>Web’in Ustası, Frontend Geliştirmenin Örümcek Ağı.</h4>
+							<p>
+								Spider-Man, yazılım dünyasında frontend geliştirmenin
+								çevikliğini, bağlantılarını ve yaratıcı yönünü temsil eder.
+								Peter Parker’ın hızla tepki verme ve çevresine uyum sağlama
+								yeteneği, kullanıcı arayüzü tasarımında dinamik ve kullanıcı
+								dostu deneyimler yaratmanın önemini gösterir.
+							</p>
+							<p>
+								Örümcek ağları, tıpkı modern frontend framework’leri (React,
+								Vue, Angular) gibi karmaşık ama düzenli bir yapı sunar. Bu
+								ağlar, her noktayı birleştirir ve Spider-Man’in çevik
+								hareketlerini destekler. Kullanıcılar için pürüzsüz bir deneyim
+								sunmak, onun ağlarının dayanıklılığı ve esnekliğiyle benzerlik
+								taşır. Ayrıca, kostümündeki kırmızı ve mavi renkler, tasarımdaki
+								kontrast ve erişilebilirliğe verilen önemi temsil eder.
+							</p>
+							<p>
+								Spider-Man’in Örümcek Hissi, tıpkı bir frontend geliştiricinin
+								her pikselin yerini ve her etkileşimi ince ince düşünmesi
+								gibidir. Kullanıcıların ihtiyaçlarını tahmin eden bir tasarımcı
+								gibi, Spider-Man de her zaman bir adım öndedir. API’lerle olan
+								bağlantısı ve backend ile olan uyumu ise tam bir tam yığın
+								(full-stack) uyumunu temsil eder.
+							</p>
+						</div>
+					</div>
+
+					<!-- Özellikler Tab -->
+					<div class="tab-pane fade" id="specs">
+						<h3>Teknik Özellikler</h3>
+						<div class="spec-item row align-items-center mb-5">
+							<div class="d-flex justify-content-center col-md-6">
+								<div class="spec-image">
+									<img
+										src="https://i.pinimg.com/736x/80/d6/92/80d6923c618c748bc6363593e6185b84.jpg"
+										alt="Özellik 1"
+										class="img-fluid rounded shadow" />
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="spec-content">
+									<h4>
+										Dinamik ve Esnek Ağ Yapısı: Modern Frontend Framework’ler
+									</h4>
+									<p>
+										Spider-Man’in örümcek ağları, tıpkı modern frontend
+										framework’leri (React, Vue, Angular) gibi karmaşık ama
+										düzenli bir yapı sunar. Bu ağlar, dinamik kullanıcı
+										arayüzlerinin temel taşlarını temsil eder. Esnek ve
+										dayanıklı ağ yapısı, tasarımdaki modülerlik ve yeniden
+										kullanılabilir bileşenlerle eşdeğerdir.
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- Özellik 2 - Sağ Resim Sol Açıklama -->
+						<div class="spec-item row align-items-center mb-5">
+							<div class="d-flex justify-content-center col-md-6 order-md-2">
+								<div class="spec-image">
+									<img
+										src="https://i.pinimg.com/736x/02/01/01/0201015fe83f1fcd474e9878157609ea.jpg"
+										alt="Özellik 2"
+										class="img-fluid rounded shadow" />
+								</div>
+							</div>
+							<div class="col-md-6 order-md-1">
+								<div class="spec-content">
+									<h4>
+										Çeviklik ve Uyarlanabilirlik: Kullanıcı Dostu Tasarımlar
+									</h4>
+									<p>
+										Peter Parker’ın çevik hareketleri, frontend geliştiricilerin
+										tasarımlarını kullanıcı ihtiyaçlarına göre hızla optimize
+										etme yeteneğini temsil eder. Kullanıcı deneyimini
+										iyileştirmek için yapılan hızlı prototiplemeler ve
+										düzenlemeler, Spider-Man’in hızını ve esnekliğini simgeler.
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- Özellik 3 - Sol Resim Sağ Açıklama -->
+						<div class="spec-item row align-items-center mb-5">
+							<div class="d-flex justify-content-center col-md-6">
+								<div class="spec-image">
+									<img
+										src="https://thumbor.evrimagaci.org/Av0Wxo5vAqFHEzWuiiz0F5jMXrQ=/825x0/filters:format(webp)/old%2Fcontent_media%2F1c3d01b168fb54a81be251c2f67e7d83.jpeg"
+										alt="Özellik 3"
+										class="img-fluid rounded shadow" />
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="spec-content">
+									<h4>
+										Örümcek Hissi: Kullanıcı Deneyimi İçin Ayrıntılara Dikkat
+									</h4>
+									<p>
+										Spider-Man’in Örümcek Hissi, bir frontend geliştiricinin her
+										pikselin yerini ve her etkileşimi detaylıca düşünmesi
+										gibidir. Kullanıcıların davranışlarını tahmin eden ve her
+										dokunuşun etkisini optimize eden tasarımlar, tıpkı
+										Spider-Man’in hassas duyuları gibi her zaman bir adım
+										öndedir.
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- Özellik 4 - Sağ Resim Sol Açıklama -->
+						<div class="spec-item row align-items-center">
+							<div class="d-flex justify-content-center col-md-6 order-md-2">
+								<div class="spec-image">
+									<img
+										src="https://i.pinimg.com/736x/5d/2d/fa/5d2dfa35dfdd312c9412a3251e64a778.jpg"
+										alt="Özellik 4"
+										class="img-fluid rounded shadow" />
+								</div>
+							</div>
+							<div class="col-md-6 order-md-1">
+								<div class="spec-content">
+									<h4>
+										Renk ve Kontrast: Erişilebilirlik ve Tasarım Prensipleri
+									</h4>
+									<p>
+										Spider-Man’in kostümündeki kırmızı ve mavi renkler,
+										tasarımda kontrast ve erişilebilirlik kurallarına vurgu
+										yapar. Kullanıcı arayüzlerinde renklerin doğru kullanımı,
+										görsel hiyerarşiyi ve kullanıcı deneyimini iyileştirir.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Değerlendirmeler Tab -->
+					<div class="tab-pane fade" id="reviews">
+						<h3>Müşteri Değerlendirmeleri</h3>
+						<!-- Örnek Değerlendirme -->
+						<div class="review-card">
+							<div class="review-header">
+								<div class="stars">
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star-fill"></i>
+								</div>
+								<span class="review-date">15 Ocak 2024</span>
+							</div>
+							<h5 class="reviewer-name">Varol Maksutoğlu</h5>
+							<p class="review-text">
+								Rüyasında bile kod yazıyor. Bu adam durdurulamaz!
+							</p>
+						</div>
+						<div class="review-card">
+							<div class="review-header">
+								<div class="stars">
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star-fill"></i>
+								</div>
+								<span class="review-date">15 Ocak 2024</span>
+							</div>
+							<h5 class="reviewer-name">Emre AKA</h5>
+							<p class="review-text">
+								Adamsın kardeşim, sen bu sporu yapıyorsun.
+							</p>
+						</div>
+						<div class="review-card">
+							<div class="review-header">
+								<div class="stars">
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star-fill"></i>
+								</div>
+								<span class="review-date">15 Ocak 2024</span>
+							</div>
+							<h5 class="reviewer-name">Abdullah Fırat</h5>
+							<p class="review-text">Bu adam bir harika.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- product detail section-->
+
+		<!-- footer -->
+		<footer class="footer">
+			<div class="container">
+				<div class="row">
+					<!-- Adres Bölümü -->
+					<div class="col-md-4 footer-column">
+						<h4>İletişim</h4>
+						<div class="company-info">
+							<div class="company-name mb-3">
+								<h5>HMF Software</h5>
+							</div>
+							<div class="address">
+								<i class="bi bi-geo-alt-fill text-primary"></i>
+								<p>
+									123 Superhero Street <br />
+									New York, NY 10001
+								</p>
+								<p>United States</p>
+							</div>
+							<div class="contact mt-3">
+								<div class="phone mb-2">
+									<i class="bi bi-telephone-fill text-primary"></i>
+									<span>Phone: 537 688 24 16</span>
+								</div>
+								<div class="email">
+									<i class="bi bi-envelope-fill text-primary"></i>
+									<span>Email: hikmetmelik@gmail.com</span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Linkler Bölümü -->
+					<div class="col-md-4 footer-column">
+						<h4>Hızlı Linkler</h4>
+						<ul class="footer-links">
+							<li><a href="../index.html">Ana Sayfa</a></li>
+							<li><a href="./all_superheros.html">Superheros</a></li>
+							<li><a href="./faq.html">Sıkça Sorulan Sorular</a></li>
+							<li><a href="#">Hakkımızda</a></li>
+							<li><a href="./contact.html">İletişim</a></li>
+						</ul>
+					</div>
+
+					<!-- Abone Ol ve Sosyal Medya -->
+					<div class="col-md-4 footer-column">
+						<h4>Bültenimize Abone Olun</h4>
+						<div class="newsletter-form mb-4">
+							<form>
+								<div class="input-group">
+									<input
+										type="email"
+										class="form-control"
+										placeholder="E-posta adresiniz" />
+									<button class="btn btn-primary" type="submit">
+										<i class="bi bi-send-fill"></i>
+									</button>
+								</div>
+							</form>
+						</div>
+						<div class="social-links">
+							<h4>Takip Edin</h4>
+							<div class="social-icons">
+								<a
+									href="https://www.instagram.com/hikmet_melikk/"
+									class="social-icon"
+									><i class="bi bi-instagram"></i
+								></a>
+								<a
+									href="https://www.linkedin.com/in/hikmet-melik-firat-355279203/"
+									class="social-icon"
+									><i class="bi bi-linkedin"></i
+								></a>
+								<a href="https://github.com/HikmetMelikk" class="social-icon"
+									><i class="bi bi-github"></i
+								></a>
+							</div>
+							<a href="https://hikmetmelik.tech" class="my-5"
+								>Kişisel Sitemi Ziyaret Et</a
+							>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<div class="container">
+					<div class="row">
+						<div class="col-12">
+							<p class="copyright">
+								© 2024 Hikmet Melik FIRAT - Tüm hakları saklıdır.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- footer -->
+	</body>
+</html>

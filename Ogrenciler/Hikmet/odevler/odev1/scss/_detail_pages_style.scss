@@ -1,0 +1,284 @@
+// Variables
+$primary-color: black;
+$secondary-color: #6c757d;
+$success-color: #28a745;
+$light-gray: #f8f9fa;
+$dark-gray: #343a40;
+
+// Mixins
+@mixin flex-center {
+	display: flex;
+	align-items: center;
+}
+
+@mixin hover-scale($scale: 1.1) {
+	transition: all 0.3s ease;
+	&:hover {
+		transform: scale($scale);
+	}
+}
+
+@mixin font-style($size, $weight: normal) {
+	font-size: $size;
+	font-weight: $weight;
+}
+
+@mixin underline-animation {
+	position: relative;
+	&::after {
+		content: "";
+		position: absolute;
+		bottom: -2px;
+		left: 0;
+		width: 100%;
+		height: 2px;
+		background-color: $primary-color;
+		transform: scaleX(0);
+		transition: transform 0.3s ease;
+	}
+}
+
+@mixin badge($bg-color, $text-color: white) {
+	background-color: $bg-color;
+	color: $text-color;
+	padding: 0.25rem 0.5rem;
+	border-radius: 4px;
+	font-size: 0.9rem;
+}
+
+@mixin responsive-font($desktop-size, $mobile-size) {
+	font-size: $desktop-size;
+	@media (max-width: 768px) {
+		font-size: $mobile-size;
+	}
+}
+
+// Product Info Styles
+.product-info {
+	.product-title {
+		@include font-style(2rem, 600);
+		@media (max-width: 768px) {
+			@include font-style(1.5rem, 600);
+		}
+	}
+
+	.ratings {
+		.stars {
+			color: #ffc107;
+			@include font-style(1.2rem);
+		}
+
+		.reviews-count {
+			color: $secondary-color;
+			@include font-style(0.9rem);
+		}
+	}
+
+	.price-container {
+		.current-price {
+			@include font-style(2rem, 600);
+			color: $dark-gray;
+			@media (max-width: 768px) {
+				@include font-style(1.5rem, 600);
+			}
+		}
+
+		.original-price {
+			text-decoration: line-through;
+			color: $secondary-color;
+			margin-left: 1rem;
+		}
+
+		.discount-badge {
+			@include badge($success-color);
+			margin-left: 1rem;
+		}
+	}
+
+	.color-options {
+		display: flex;
+		gap: 1rem;
+
+		.color-option {
+			width: 32px;
+			height: 32px;
+			border-radius: 50%;
+			border: 2px solid #dee2e6;
+			cursor: pointer;
+			@include hover-scale;
+
+			&.active {
+				border: 2px solid $primary-color;
+			}
+		}
+	}
+
+	.quantity-selector {
+		@include flex-center;
+		max-width: 150px;
+
+		.qty-btn {
+			background: $light-gray;
+			border: none;
+			padding: 0.5rem 1rem;
+			cursor: pointer;
+			transition: all 0.3s ease;
+
+			&:hover {
+				background: darken($light-gray, 5%);
+			}
+		}
+
+		.quantity-input {
+			width: 60px;
+			text-align: center;
+			border: 1px solid #dee2e6;
+			margin: 0 0.5rem;
+		}
+	}
+
+	.add-to-cart-btn {
+		width: 100%;
+		padding: 1rem;
+		@include font-style(1.1rem);
+		margin-top: 1rem;
+
+		i {
+			margin-right: 0.5rem;
+		}
+	}
+}
+
+// Product Details Styles
+.product-details {
+	.nav-tabs {
+		border-bottom: 2px solid #dee2e6;
+
+		.nav-link {
+			color: $secondary-color;
+			border: none;
+			padding: 1rem 2rem;
+			font-weight: 500;
+			@include underline-animation;
+
+			@media (max-width: 768px) {
+				padding: 0.75rem 1rem;
+				@include font-style(0.9rem);
+			}
+
+			&.active {
+				color: $primary-color;
+				background: none;
+
+				&::after {
+					transform: scaleX(1);
+				}
+			}
+		}
+	}
+
+	.tab-content {
+		padding: 2rem 0;
+
+		.feature-list {
+			list-style-type: none;
+			padding-left: 0;
+
+			li {
+				padding: 0.5rem 0;
+				position: relative;
+				padding-left: 1.5rem;
+
+				&::before {
+					content: "✓";
+					color: $success-color;
+					position: absolute;
+					left: 0;
+				}
+			}
+		}
+	}
+
+	.review-card {
+		border: 1px solid #dee2e6;
+		border-radius: 8px;
+		padding: 1.5rem;
+		margin-bottom: 1rem;
+
+		.review-header {
+			@include flex-center;
+			justify-content: space-between;
+			margin-bottom: 1rem;
+
+			.stars {
+				color: #ffc107;
+			}
+
+			.review-date {
+				color: $secondary-color;
+				@include font-style(0.9rem);
+			}
+		}
+
+		.reviewer-name {
+			font-weight: 600;
+			margin-bottom: 0.5rem;
+		}
+
+		.review-text {
+			color: $secondary-color;
+		}
+	}
+}
+
+.tab-pane {
+	&#specs {
+		.spec-item {
+			.spec-image {
+				position: relative;
+				overflow: hidden;
+				img {
+					height: 300px;
+					transition: transform 0.5s ease;
+
+					&:hover {
+						transform: scale(1.05);
+					}
+				}
+			}
+
+			.spec-content {
+				padding: 2rem;
+				color: $primary-color;
+
+				@media (max-width: 768px) {
+					padding: 2rem 0 !important;
+				}
+
+				h4 {
+					color: $primary-color;
+					margin-bottom: 1.5rem;
+					font-weight: 600;
+					position: relative;
+
+					&::after {
+						content: "";
+						position: absolute;
+						left: 0;
+						bottom: -0.5rem;
+						width: 50px;
+						height: 3px;
+						background-color: $primary-color;
+						border-radius: 2px;
+					}
+				}
+
+				p {
+					color: $secondary-color;
+					line-height: 1.8;
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+}

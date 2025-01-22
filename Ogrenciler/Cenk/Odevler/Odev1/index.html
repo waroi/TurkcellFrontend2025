@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sülün Osman Ticaret</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <header class="header sticky-top bg-light shadow">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg">
+          <div class="container-fluid">
+            <div class="d-flex align-items-center">
+              <img src="./images/logo.png" alt="Logo" class="me-2 logo" />
+              <span class="navbar-brand mb-0 h1">Sülün Osman Ticaret</span>
+            </div>
+
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Anasayfa</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./pages/hakkimizda.html"
+                    >Hakkımızda</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./pages/gayrimenkuller.html"
+                    >Gayrimenkuller</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./pages/sss.html">SSS</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./pages/iletisim.html">İletişim</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="d-flex align-items-center">
+              <span class="me-3">+90 312 160</span>
+              <i class="fas fa-user-circle fa-2x"></i>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <section
+      class="banner d-flex align-items-center justify-content-center text-center"
+    >
+      <div class="overlay">
+        <div class="container">
+          <h2 class="text-white fw-bold mb-3">Hayallerinizdeki Evi Bulun!</h2>
+          <p class="text-white">
+            "Köprüden ev mi satılır?" diyenlere inat: Sülün Osman Ticaret ile
+            her şey mümkün!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="searcher bg-light py-4">
+      <div class="container">
+        <div class="search-tabs d-flex justify-content-center mb-3">
+          <button class="btn btn-outline-primary me-2">Satış</button>
+          <button class="btn btn-outline-primary me-2">Kiralık</button>
+          <button class="btn btn-outline-primary">Hayali Projeler</button>
+        </div>
+        <form class="row g-3 justify-content-center">
+          <div class="col-md-3">
+            <select class="form-select" id="category">
+              <option selected>Kategori</option>
+              <option value="1">Daire</option>
+              <option value="2">Villa</option>
+              <option value="3">Ofis</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <select class="form-select" id="city">
+              <option selected>Şehir</option>
+              <option value="1">İstanbul</option>
+              <option value="2">Ankara</option>
+              <option value="3">İzmir</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <select class="form-select" id="price">
+              <option selected>Fiyat Aralığı</option>
+              <option value="1">0 - 500.000 ₺</option>
+              <option value="2">500.000 ₺ - 1.000.000 ₺</option>
+              <option value="3">1.000.000 ₺ üzeri</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <button type="submit" class="btn btn-primary w-100">Ara</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="areas py-5 bg-light">
+      <div class="container text-center">
+        <h2 class="fw-bold mb-3">Bölgelere Göre Gayrimenkuller</h2>
+        <p class="text-muted mb-5">
+          Türkiye'nin dört bir yanındaki "sahibinden" (!) fırsatlar.
+          Hayallerinizi gerçekleştirin... ya da gerçekleştirdiğinize inanın.
+        </p>
+        <div class="row g-4">
+          <div class="col-md-3 col-sm-6">
+            <div class="area-card">
+              <img
+                src="https://www.onthegotours.com/repository/Istanbul-Highlight--Web-Ready-306161467972129.jpg"
+                alt="İstanbul"
+                class="img-fluid rounded"
+              />
+              <h5 class="mt-3">İstanbul</h5>
+              <p class="text-muted">145 ilan</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="area-card">
+              <img
+                src="https://cdnp.flypgs.com/files/Sehirler-long-tail/Ankara/Ankara_Sehir_Rehberi.jpg"
+                alt="Ankara"
+                class="img-fluid rounded"
+              />
+              <h5 class="mt-3">Ankara</h5>
+              <p class="text-muted">75 ilan</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="area-card">
+              <img
+                src="https://blog.obilet.com/wp-content/uploads/2018/03/izmirgezilecekyerler-min-scaled.jpeg"
+                alt="İzmir"
+                class="img-fluid rounded"
+              />
+              <h5 class="mt-3">İzmir</h5>
+              <p class="text-muted">120 ilan</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="area-card">
+              <img
+                src="https://cdnp.flypgs.com/files/Sehirler-long-tail/Antalya/antalya-sehir-rehberi-sahiller.jpg"
+                alt="Antalya"
+                class="img-fluid rounded"
+              />
+              <h5 class="mt-3">Antalya</h5>
+              <p class="text-muted">95 ilan</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="latest-estates py-5">
+      <div class="container">
+        <h2 class="fw-bold text-center mb-4">Son Eklenen Gayrimenkuller</h2>
+        <div class="row g-4">
+          <div class="col-md-3 col-sm-6">
+            <div class="estate-card">
+              <a href="urunler/avm.html">
+                <img
+                  src="./images/avm.jpg"
+                  alt="Ankara Kızılay AVM"
+                  class="img-fluid rounded"
+                />
+                <div class="estate-info">
+                  <h5>Ankara Kızılay AVM</h5>
+                  <p class="text-muted">
+                    Başkentimizin kalbinde eşsiz bir alışveriş deneyimi.
+                  </p>
+                  <p class="text-muted">Fiyat: 10.000.000₺</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="estate-card">
+              <a href="urunler/bogazici.html">
+                <img
+                  src="./images/bogazici.jpg"
+                  alt="İstanbul Boğaziçi Köprüsü"
+                  class="img-fluid rounded"
+                />
+                <div class="estate-info">
+                  <h5>İstanbul Boğaziçi Köprüsü</h5>
+                  <p class="text-muted">
+                    İki kıtayı birbirine bağlayan tarihi bir simge.
+                  </p>
+                  <p class="text-muted">Fiyat: 5.000.000.000₺</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="estate-card">
+              <a href="urunler/bolu-tunel.html">
+                <img
+                  src="./images/bolu-tunel.jpg"
+                  alt="Bolu Düzce Tüneli"
+                  class="img-fluid rounded"
+                />
+                <div class="estate-info">
+                  <h5>Bolu Düzce Tüneli</h5>
+                  <p class="text-muted">
+                    Karadeniz'in bağrında modern mühendislik harikası.
+                  </p>
+                  <p class="text-muted">Fiyat: 50.000.000₺</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="estate-card">
+              <a href="urunler/dolmabahce-saat.html">
+                <img
+                  src="./images/dolmabahce-saat.jpg"
+                  alt="Dolmabahçe Saat Kulesi"
+                  class="img-fluid rounded"
+                />
+                <div class="estate-info">
+                  <h5>Dolmabahçe Saat Kulesi</h5>
+                  <p class="text-muted">
+                    Tarihi yarımadanın zamana meydan okuyan güzelliği.
+                  </p>
+                  <p class="text-muted">Fiyat: 7.500.000₺</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="estate-card">
+              <a href="urunler/galata.html">
+                <img
+                  src="./images/galata.jpg"
+                  alt="Galata Kulesi"
+                  class="img-fluid rounded"
+                />
+                <div class="estate-info">
+                  <h5>Galata Kulesi</h5>
+                  <p class="text-muted">
+                    İstanbul'un en romantik manzarasına sahip kule.
+                  </p>
+                  <p class="text-muted">Fiyat: 20.000.000₺</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="estate-card">
+              <a href="urunler/giresun-ada.html">
+                <img
+                  src="./images/giresun-ada.jpg"
+                  alt="Giresun Adası"
+                  class="img-fluid rounded"
+                />
+                <div class="estate-info">
+                  <h5>Giresun Adası</h5>
+                  <p class="text-muted">
+                    Karadeniz'in tek adasında huzurlu bir yaşam.
+                  </p>
+                  <p class="text-muted">Fiyat: 12.000.000₺</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="estate-card">
+              <a href="urunler/marmaray.html">
+                <img
+                  src="./images/marmaray.jpg"
+                  alt="İstanbul Marmaray Metrosu"
+                  class="img-fluid rounded"
+                />
+                <div class="estate-info">
+                  <h5>İstanbul Marmaray Metrosu</h5>
+                  <p class="text-muted">
+                    Deniz altından geçen bir ulaşım harikası.
+                  </p>
+                  <p class="text-muted">Fiyat: 1.500.000.000₺</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="estate-card">
+              <a href="urunler/saray.html">
+                <img
+                  src="./images/saray.jpg"
+                  alt="Ankara Cumhurbaşkanlığı Sarayı"
+                  class="img-fluid rounded"
+                />
+                <div class="estate-info">
+                  <h5>Ankara Cumhurbaşkanlığı Sarayı</h5>
+                  <p class="text-muted">
+                    Türkiye'nin en prestijli yapılarından biri.
+                  </p>
+                  <p class="text-muted">Fiyat: 10.000.000.000₺</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="estate-card">
+              <a href="urunler/tophane-saat.html">
+                <img
+                  src="./images/tophane-saat.png"
+                  alt="Tophane Saat Kulesi"
+                  class="img-fluid rounded"
+                />
+                <div class="estate-info">
+                  <h5>Tophane Saat Kulesi</h5>
+                  <p class="text-muted">Beyoğlu'nun simgesi tarihi bir eser.</p>
+                  <p class="text-muted">Fiyat: 6.500.000₺</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="estate-card">
+              <a href="urunler/tramvay.html">
+                <img
+                  src="./images/tramvay.jpeg"
+                  alt="İstanbul Tramvayı"
+                  class="img-fluid rounded"
+                />
+                <div class="estate-info">
+                  <h5>İstanbul Tramvayı</h5>
+                  <p class="text-muted">Nostaljik bir ulaşım keyfi.</p>
+                  <p class="text-muted">Fiyat: 2.500.000₺</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="estate-card">
+              <a href="urunler/vapur.html">
+                <img
+                  src="./images/vapur.jpeg"
+                  alt="İstanbul Vapuru"
+                  class="img-fluid rounded"
+                />
+                <div class="estate-info">
+                  <h5>İstanbul Vapuru</h5>
+                  <p class="text-muted">
+                    Denizle buluşan nostaljik bir yolculuk.
+                  </p>
+                  <p class="text-muted">Fiyat: 3.000.000₺</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="estate-card">
+              <a href="urunler/yali.html">
+                <img
+                  src="./images/yali.jpg"
+                  alt="İstanbul Boğaz Yalısı"
+                  class="img-fluid rounded"
+                />
+                <div class="estate-info">
+                  <h5>İstanbul Boğaz Yalısı</h5>
+                  <p class="text-muted">Boğazın en prestijli mülkü.</p>
+                  <p class="text-muted">Fiyat: 100.000.000₺</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="estate-card">
+              <a href="urunler/yildiz-saat.html">
+                <img
+                  src="./images/yildiz-saat.jpg"
+                  alt="Yıldız Saat Kulesi"
+                  class="img-fluid rounded"
+                />
+                <div class="estate-info">
+                  <h5>Yıldız Saat Kulesi</h5>
+                  <p class="text-muted">
+                    Sarayın yanında zamana meydan okuyan bir eser.
+                  </p>
+                  <p class="text-muted">Fiyat: 8.000.000₺</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="estate-categories py-5 bg-light">
+      <div class="container text-center">
+        <h2 class="fw-bold mb-4">Gayrimenkul Kategorileri</h2>
+        <p class="text-muted mb-5">
+          Sülün Osman Ticaret'in eşsiz kategorilerinde hayalinizdeki mülkü
+          keşfedin.
+        </p>
+        <div class="row g-4">
+          <div class="col-md-3 col-sm-6">
+            <div class="category-card p-3 shadow-sm rounded">
+              <img
+                src="./images/galata.jpg"
+                alt="Tarihi Yapılar"
+                class="img-fluid rounded mb-3"
+              />
+              <h5 class="mb-2">Tarihi Yapılar</h5>
+              <p class="text-muted">
+                Galata Kulesi, Dolmabahçe Saat Kulesi ve daha fazlası.
+              </p>
+              <a href="#" class="btn btn-outline-primary btn-sm mt-2"
+                >Tarihi Yapılar</a
+              >
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="category-card p-3 shadow-sm rounded">
+              <img
+                src="./images/marmaray.jpg"
+                alt="Kentsel Yapılar"
+                class="img-fluid rounded mb-3"
+              />
+              <h5 class="mb-2">Kentsel Yapılar</h5>
+              <p class="text-muted">
+                AVM'ler, Marmaray ve diğer şehir yapıları.
+              </p>
+              <a href="#" class="btn btn-outline-primary btn-sm mt-2"
+                >Kentsel Yapılar</a
+              >
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="category-card p-3 shadow-sm rounded">
+              <img
+                src="./images/yali.jpg"
+                alt="Boğaz Manzaralı"
+                class="img-fluid rounded mb-3"
+              />
+              <h5 class="mb-2">Boğaz Manzaralı</h5>
+              <p class="text-muted">Yalılar, vapurlar ve eşsiz manzaralar.</p>
+              <a href="#" class="btn btn-outline-primary btn-sm mt-2"
+                >Boğaz Manzaralı</a
+              >
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="category-card p-3 shadow-sm rounded">
+              <img
+                src="./images/giresun-ada.jpg"
+                alt="Doğal Alanlar"
+                class="img-fluid rounded mb-3"
+              />
+              <h5 class="mb-2">Doğal Alanlar</h5>
+              <p class="text-muted">Karadeniz'in eşsiz doğası ve adaları.</p>
+              <a href="#" class="btn btn-outline-primary btn-sm mt-2"
+                >Doğal Alanlar</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="featured-estates py-5">
+      <div class="container text-center">
+        <h2 class="fw-bold mb-4">Öne Çıkan Gayrimenkuller</h2>
+        <p class="text-muted mb-5">
+          Sülün Osman Ticaret'in en özel mülklerini keşfedin.
+        </p>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="estate-card p-3 shadow-sm rounded">
+              <img
+                src="./images/yali.jpg"
+                alt="Boğaz Manzaralı Yalı"
+                class="img-fluid rounded mb-3"
+              />
+              <h5 class="mb-2">Boğaz Manzaralı Yalı</h5>
+              <p class="text-muted">
+                Eşsiz boğaz manzarasıyla hayatın tadını çıkarın.
+              </p>
+              <h6 class="text-primary fw-bold">Fiyat: 100.000.000₺</h6>
+              <a
+                href="./urunler/yali.html"
+                class="btn btn-outline-primary btn-sm mt-2"
+                >Detayları Gör</a
+              >
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="estate-card p-3 shadow-sm rounded">
+              <img
+                src="./images/galata.jpg"
+                alt="Galata Kulesi"
+                class="img-fluid rounded mb-3"
+              />
+              <h5 class="mb-2">Galata Kulesi</h5>
+              <p class="text-muted">İstanbul'un kalbinde tarihi bir yapı.</p>
+              <h6 class="text-primary fw-bold">Fiyat: 20.000.000₺</h6>
+              <a
+                href="./urunler/galata.html"
+                class="btn btn-outline-primary btn-sm mt-2"
+                >Detayları Gör</a
+              >
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="estate-card p-3 shadow-sm rounded">
+              <img
+                src="./images/marmaray.jpg"
+                alt="Marmaray Metrosu"
+                class="img-fluid rounded mb-3"
+              />
+              <h5 class="mb-2">Marmaray Metrosu</h5>
+              <p class="text-muted">Deniz altından kıtalar arası ulaşım.</p>
+              <h6 class="text-primary fw-bold">Fiyat: 1.500.000.000₺</h6>
+              <a
+                href="./urunler/marmaray.html"
+                class="btn btn-outline-primary btn-sm mt-2"
+                >Detayları Gör</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="estate-agents py-5 bg-light">
+      <div class="container text-center">
+        <h2 class="fw-bold mb-4">Gayrimenkul Danışmanlarımız</h2>
+        <p class="text-muted mb-5">
+          Sülün Osman Ticaret'in deneyimli ekibiyle tanışın.
+        </p>
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="agent-card p-4 shadow-sm rounded text-center">
+              <img
+                src="./images/cenk.jpg"
+                alt="Mustafa Cenk Aydın"
+                class="img-fluid mb-3 agent-photo"
+              />
+              <h5 class="fw-bold mb-1">Mustafa Cenk Aydın</h5>
+              <p class="text-primary mb-2">Frontend Developer</p>
+              <p class="text-muted">
+                "Modern web tasarımları ve hayallerinizdeki projeler için
+                buradayım."
+              </p>
+              <a
+                href="mailto:mustafa@example.com"
+                class="btn btn-outline-primary btn-sm mt-2"
+                >İletişime Geç</a
+              >
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="agent-card p-4 shadow-sm rounded text-center">
+              <img
+                src="./images/osman.jpeg"
+                alt="Osman Ziya Sülün"
+                class="img-fluid mb-3 agent-photo"
+              />
+              <h5 class="fw-bold mb-1">Osman Ziya Sülün</h5>
+              <p class="text-primary mb-2">CEO ve Gayrimenkul Uzmanı</p>
+              <p class="text-muted">
+                "Boğaz Köprüsü, Galata Kulesi ve daha fazlası! Her şey mümkün."
+              </p>
+              <a
+                href="tel:+901234567890"
+                class="btn btn-outline-primary btn-sm mt-2"
+                >İletişime Geç</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials py-5 bg-light">
+      <div class="container text-center">
+        <h2 class="fw-bold mb-4">Müşteri Yorumları</h2>
+        <p class="text-muted mb-5">
+          Sülün Osman Ticaret'in hayran bırakan hizmetlerinden memnun kalan
+          müşterilerimiz.
+        </p>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="testimonial-card p-4 shadow-sm rounded text-center">
+              <img
+                src="./images/osman.jpeg"
+                alt="Sülün Osman"
+                class="img-fluid rounded-circle mb-3"
+              />
+              <h5 class="fw-bold mb-1">Sülün Osman</h5>
+              <p class="text-muted">
+                "Bu köprü de benden alındı, mükemmel bir hizmet!"
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="testimonial-card p-4 shadow-sm rounded text-center">
+              <img
+                src="./images/feyzo.png"
+                alt="Kibar Feyzo"
+                class="img-fluid rounded-circle mb-3"
+              />
+              <h5 class="fw-bold mb-1">Kibar Feyzo</h5>
+              <p class="text-muted">
+                "O köyü ben aldım! Şimdi herkes kiracı bende."
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="testimonial-card p-4 shadow-sm rounded text-center">
+              <img
+                src="./images/vecihi.webp"
+                alt="Vecihi"
+                class="img-fluid rounded-circle mb-3"
+              />
+              <h5 class="fw-bold mb-1">Vecihi</h5>
+              <p class="text-muted">
+                "Bir uçak pisti almayı düşünüyorum, kesinlikle tavsiye ederim."
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="testimonial-card p-4 shadow-sm rounded text-center">
+              <img
+                src="./images/nasreddin.jpg"
+                alt="Nasreddin Hoca"
+                class="img-fluid rounded-circle mb-3"
+              />
+              <h5 class="fw-bold mb-1">Nasreddin Hoca</h5>
+              <p class="text-muted">
+                "Sattığı göl hala duruyor, bu kadar dürüst birini görmedim!"
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="testimonial-card p-4 shadow-sm rounded text-center">
+              <img
+                src="./images/zugurt.png"
+                alt="Züğürt Ağa"
+                class="img-fluid rounded-circle mb-3"
+              />
+              <h5 class="fw-bold mb-1">Züğürt Ağa</h5>
+              <p class="text-muted">
+                "Ahırımı Sülün Osman sayesinde satabildim, Allah razı olsun!"
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="testimonial-card p-4 shadow-sm rounded text-center">
+              <img
+                src="./images/elon.webp"
+                alt="Elon Musk"
+                class="img-fluid rounded-circle mb-3"
+              />
+              <h5 class="fw-bold mb-1">Elon Musk</h5>
+              <p class="text-muted">
+                "Sülün Osman sayesinde Mars'ta tarla sahibi oldum."
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-us py-5">
+      <div class="container text-center">
+        <h2 class="text-white fw-bold mb-4">Bize Ulaşın</h2>
+        <p class="text-white mb-5">
+          Sülün Osman Ticaret ile iletişime geçin. Hayalinizdeki mülk için doğru
+          adres!
+        </p>
+        <div class="form-container bg-white shadow p-4 rounded mx-auto">
+          <h4 class="fw-bold mb-3">Ekibimizle Randevu Alın</h4>
+          <p class="text-muted mb-4">
+            Osman Bey hayallerinizi gerçekleştirmek için size rehberlik etmeye
+            hazır!
+          </p>
+          <form>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Adınız"
+                  required
+                />
+              </div>
+              <div class="col-md-6">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Telefon"
+                  required
+                />
+              </div>
+              <div class="col-md-6">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="E-posta Adresiniz"
+                  required
+                />
+              </div>
+              <div class="col-md-6">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Şehir"
+                  required
+                />
+              </div>
+              <div class="col-12">
+                <textarea
+                  class="form-control"
+                  rows="5"
+                  placeholder="Mesajınız"
+                  required
+                ></textarea>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary w-100">
+                  Mesaj Gönder
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer bg-dark text-white py-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h5 class="fw-bold">Hızlı Erişim</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#" class="text-white text-decoration-none">Anasayfa</a>
+              </li>
+              <li>
+                <a href="#" class="text-white text-decoration-none"
+                  >Hakkımızda</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-white text-decoration-none"
+                  >Hizmetler</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-white text-decoration-none">İletişim</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4 text-center">
+            <h5 class="fw-bold">İletişim</h5>
+            <p><i class="fas fa-phone-alt me-2"></i>+90 537 883 86 30</p>
+            <p><i class="fas fa-envelope me-2"></i>info@sulunosman.com</p>
+            <p>
+              <i class="fas fa-map-marker-alt me-2"></i>Boğaz Köprüsü, İstanbul
+            </p>
+          </div>
+          <div class="col-md-4 text-end">
+            <h5 class="fw-bold">Bizi Takip Edin</h5>
+            <div class="d-flex justify-content-end gap-3">
+              <a href="#" class="text-white"
+                ><i class="fab fa-facebook fa-2x"></i
+              ></a>
+              <a href="#" class="text-white"
+                ><i class="fab fa-twitter fa-2x"></i
+              ></a>
+              <a href="#" class="text-white"
+                ><i class="fab fa-instagram fa-2x"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <hr class="bg-secondary my-4" />
+        <div class="text-center">
+          <p class="mb-0">© 2025 Sülün Osman Ticaret. Tüm Hakları Saklıdır.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

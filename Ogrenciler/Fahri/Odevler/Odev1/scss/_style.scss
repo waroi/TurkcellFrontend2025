@@ -75,9 +75,13 @@
     }
   }
 }
+.social-icon {
+  font-size: 16px;
+  color: $light;
+}
 body {
   font-family: "IBM Plex Mono", sans-serif;
-  background-color: darken(#252b37, 4%);
+  background-color: darken(#252b37, 4%); // daha koyu font yapıyor
   color: $light;
 }
 h2 {
@@ -202,16 +206,14 @@ a {
       transition: 0.3s ease;
       bottom: -57px;
       i {
-        font-size: 16px;
-        color: $white;
+        @extend .social-icon;
       }
     }
     &:hover {
       .social {
         bottom: 0;
         i {
-          font-size: 16px;
-          color: $light;
+          @extend .social-icon;
         }
       }
       .card-img-1,
@@ -302,10 +304,6 @@ a {
   position: relative;
   background-color: $dark;
   color: $light;
-  i {
-    font-size: 100px;
-    margin-bottom: 20px;
-  }
   ::before {
     content: "";
     position: absolute;
@@ -320,7 +318,9 @@ a {
 
 @keyframes text {
   from {
-    clip-path: inset(0 100% 0 0);
+    clip-path: inset(
+      0 100% 0 0
+    ); // elementin hangi kısmının görünür olacağını belirler
   }
   to {
     clip-path: inset(0 0 0 0);
