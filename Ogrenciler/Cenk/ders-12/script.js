@@ -1,25 +1,26 @@
-// String
+// String Methodları
 
 let value;
 const firstName = "Varol";
 const lastName = "Maksutoğlu";
-const age = 24;
+const age = 25;
 const department = "Bilişim";
 
 value = firstName + " " + lastName;
 
 value = firstName + " ";
+
 value += lastName;
 
 value = firstName.length;
 value = firstName.toLocaleLowerCase();
 value = firstName.toUpperCase();
 value = firstName[0];
-value = firstName[firstName.length -1];
-value = firstName.indexOf('a');
-value = firstName.includes('g');
-value = firstName.slice(0,2);
-value = firstName.concat(" ", lastName , " ", age);
+value = firstName[firstName.length - 1];
+value = firstName.indexOf("a");
+// value = firstName.includes("g");
+value = firstName.slice(0, 2);
+value = firstName.concat(" ", lastName, " ", age);
 
 value =
   "İsim: " +
@@ -49,4 +50,3 @@ value = prompt("Lütfen bir değer giriniz: ");
 document.body.innerHTML = value;
 
 console.log(value);
-
