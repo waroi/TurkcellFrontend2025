@@ -1,0 +1,120 @@
+@import "overwrite";
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import url("https://fonts.googleapis.com/css2?family=Mirza:wght@400;500;600;700&display=swap");
+
+@mixin image() {
+  object-fit: cover;
+  object-position: center;
+  border-radius: $border-radius;
+}
+
+body {
+  font-size: 1.2rem;
+
+  .center {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+  }
+
+  hr {
+    border: 0.1rem solid $black;
+  }
+
+  table {
+    border-collapse: separate;
+    border-spacing: 0.2rem;
+  }
+}
+
+nav .search {
+  width: 20rem;
+}
+
+header {
+  .carousel-item {
+    height: 30rem;
+
+    &:nth-of-type(1) {
+      background-image: url("../img/slider-1.png") !important;
+      background-size: cover;
+      background-position: center;
+    }
+
+    & > div {
+      margin: 0 15%;
+
+      h2 {
+        background-color: #1e1f3169;
+      }
+    }
+  }
+}
+
+main {
+  min-height: 45rem;
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    gap: 0.4rem;
+
+    & > * {
+      background-color: $secondary;
+    }
+
+    .image {
+      grid-column: span 3;
+      width: 100%;
+      @include image();
+
+      &:not(.text-center) {
+        height: 6rem;
+      }
+    }
+    .title {
+      grid-column: span 5;
+
+      &:not(.text-center) {
+        display: flex;
+        align-items: center;
+        padding-left: 1rem;
+        a {
+          text-decoration: none;
+        }
+      }
+    }
+    .age,
+    .area,
+    .price,
+    .region {
+      grid-column: span 2;
+      @extend .center;
+      text-align: center;
+      padding: 1rem;
+
+      i {
+        margin-left: 0.5rem;
+      }
+    }
+  }
+
+  &#about-us img {
+    display: block;
+    width: 40rem;
+    max-width: 100%;
+    max-height: 40rem;
+    margin: 2rem auto;
+    @include image();
+  }
+
+  &#listing {
+    img {
+      height: 25rem;
+      @include image();
+    }
+
+    .row.mt-1.g-5 {
+      align-items: center;
+    }
+  }
+}

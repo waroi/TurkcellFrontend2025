@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>kralından.com</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-secondary">
+      <div class="container">
+        <a class="navbar-brand me-4 text-white" href="#"
+          ><h1>kralından.com</h1></a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbar-collapse"
+          aria-controls="navbar-collapse"
+          aria-expanded="false"
+          aria-label="Toggle Navigation"
+        >
+          <i class="fa-solid fa-bars text-white"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+          <div class="search position-relative">
+            <input
+              class="form-control pe-4"
+              type="search"
+              placeholder="Ülke, yönetim şekli veya millet ara."
+              aria-label="Search"
+            />
+            <i
+              class="fa-solid fa-magnifying-glass btn btn-primary position-absolute top-50 end-0 translate-middle-y h-100 center px-2 rounded-start-0"
+            ></i>
+          </div>
+          <ul class="ms-auto navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link text-white" aria-current="page" href="./"
+                >Ana Sayfa</a
+              >
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link text-white dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Hakkımızda
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="./about-us/"
+                    >Kralından Hakkında</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="./faq"
+                    >Sıkça Sorulan Sorular</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="./contact">İletişim</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Giriş Yap</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Üye Ol</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <header class="bg-body-tertiary">
+      <div class="container">
+        <div id="carousel" class="carousel slide">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="mt-5">
+                <h2 class="text-white py-2 px-3 rounded mt-3 mb-4">
+                  İmparator, Sultan, Dük farketmeksizin tüm hükümdarların
+                  ticaret için buluştuğu platform.
+                </h2>
+                <button class="btn btn-primary">İlanlara Bak</button>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img
+                src="https://newsthump.com/wp-content/uploads/2023/09/King-Charles-using-a-smartphone.jpg"
+                class="d-block w-100"
+                alt="..."
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="https://img.freepik.com/free-photo/thinking-young-superhero-guy-wearing-tie-crown-with-glasses-holding-phone-isolated-orange-background_141793-72198.jpg?t=st=1737552966~exp=1737556566~hmac=e0dd8fd05c4e2d48fe9d90bf0d770b91458457db1ca4e0557e6ea44b652eaa62&w=1380"
+                class="d-block w-100"
+                alt="..."
+              />
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carousel"
+            data-bs-slide="prev"
+          >
+            <i class="fa-solid fa-chevron-left fs-2"></i>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carousel"
+            data-bs-slide="next"
+          >
+            <i class="fa-solid fa-chevron-right fs-2"></i>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <div class="row g-5 pb-5">
+          <div class="col-12 col-md-3 pt-5">
+            <form>
+              <div class="p-3 mb-3 bg-secondary">
+                <h3>Ülke Tipi</h3>
+                <hr />
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="type"
+                    id="empire"
+                  />
+                  <label class="form-check-label" for="empire"
+                    >İmparatorluk</label
+                  >
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="type"
+                    id="kingdom"
+                  />
+                  <label class="form-check-label" for="kingdom"
+                    >Krallık (Devlet)</label
+                  >
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="type"
+                    id="duchy"
+                  />
+                  <label class="form-check-label" for="duchy"
+                    >Dükalık (Beylik)</label
+                  >
+                </div>
+              </div>
+              <div class="p-3 mb-3 bg-secondary">
+                <h3>Dönem</h3>
+                <hr />
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="age"
+                    id="modern-age"
+                  />
+                  <label class="form-check-label" for="modern-age"
+                    >Modern Çağ</label
+                  >
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="age"
+                    id="early-modern-age"
+                  />
+                  <label class="form-check-label" for="early-modern-age"
+                    >Yakın Çağ</label
+                  >
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="age"
+                    id="medieval-age"
+                  />
+                  <label class="form-check-label" for="medieval-age"
+                    >Orta Çağ</label
+                  >
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="age"
+                    id="ancient-age"
+                  />
+                  <label class="form-check-label" for="ancient-age"
+                    >İlk Çağ</label
+                  >
+                </div>
+              </div>
+              <div class="p-3 mb-3 bg-secondary">
+                <h3>Bölge</h3>
+                <hr />
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value="europe"
+                    id="europe"
+                  />
+                  <label class="form-check-label" for="europe">Avrupa</label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value="west-asia"
+                    id="west-asia"
+                  />
+                  <label class="form-check-label" for="west-asia"
+                    >Batı Asya</label
+                  >
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value="far-east"
+                    id="far-east"
+                  />
+                  <label class="form-check-label" for="far-east"
+                    >Uzak Doğu</label
+                  >
+                </div>
+              </div>
+              <div class="p-3 mb-3 bg-secondary">
+                <h3>Fiyat Aralığı</h3>
+                <hr />
+                <div class="input-group mb-2">
+                  <span class="input-group-text text-white bg-primary"
+                    >Minimum</span
+                  >
+                  <input
+                    type="number"
+                    class="form-control"
+                    aria-label="Minimum"
+                    placeholder="0"
+                  />
+                  <span class="input-group-text text-white"
+                    ><i class="fa-solid fa-coins"></i
+                  ></span>
+                </div>
+                <div class="input-group">
+                  <span class="input-group-text text-white bg-primary"
+                    >Maksimum</span
+                  >
+                  <input
+                    type="number"
+                    class="form-control"
+                    aria-label="Maksimum"
+                    placeholder="Örn: 10000"
+                  />
+                  <span class="input-group-text text-white"
+                    ><i class="fa-solid fa-coins"></i
+                  ></span>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="col-12 col-md-9 pt-5">
+            <div class="grid">
+              <div class="text-center px-2 image center">
+                <h3>Görsel</h3>
+              </div>
+              <div class="text-center px-2 title center">
+                <h3>İlan Başlığı</h3>
+              </div>
+              <div class="text-center px-2 age">
+                <h3>Dönem</h3>
+              </div>
+              <div class="text-center px-2 area">
+                <h3>Alan</h3>
+              </div>
+              <div class="text-center px-2 price">
+                <h3>Fiyat</h3>
+              </div>
+              <div class="text-center px-2 region">
+                <h3>Bölge</h3>
+              </div>
+              <img
+                class="image"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDp9KV7yTEztUMvy3-U7j8I1j0Zo4YVf8N-A&s"
+              />
+              <div class="title">
+                <a href="./listings/1.html"
+                  >Kralı gelse bu kadar ucuza veremez! Osmanlı Koruma Garantili
+                  Germiyanoğulları</a
+                >
+              </div>
+              <div class="age">Yakın Çağ</div>
+              <div class="area">18M Dönüm</div>
+              <div class="price">90M <i class="fa-solid fa-coins"></i></div>
+              <div class="region">Batı Asya</div>
+              <img
+                class="image"
+                src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Flag_map_of_Qing_Dynasty_%281644_-_1912%29.png"
+              />
+              <div class="title">
+                <a href="./listings/2.html"
+                  >Çin Hanedanlığı’ndan Ejderha Gibi Fırsat!</a
+                >
+              </div>
+              <div class="age">İlk Çağ</div>
+              <div class="area">60M Dönüm</div>
+              <div class="price">1250M <i class="fa-solid fa-coins"></i></div>
+              <div class="region">Uzak Doğu</div>
+              <img
+                class="image"
+                src="https://www.discoverimages.com/p/251/greetsiel-harbor-sunrise-east-frisia-38403463.jpg.webp"
+              />
+              <div class="title">
+                <a href="./listings/3.html"
+                  >Deniz Manzaralı Fırsat! Frizya Dükalığı</a
+                >
+              </div>
+              <div class="age">Yakın Çağ</div>
+              <div class="area">20M Dönüm</div>
+              <div class="price">450M <i class="fa-solid fa-coins"></i></div>
+              <div class="region">Avrupa</div>
+              <img
+                class="image"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrRB8in1-CFlu_SH_bV4sE6X2mKOifIrEWbw&s"
+              />
+              <div class="title">
+                <a href="./listings/4.html"
+                  >Daha iyisi gelsin, cumhuriyete geçerim. Charlemagne'den
+                  hastasına Kutsal Roma</a
+                >
+              </div>
+              <div class="age">Orta Çağ</div>
+              <div class="area">200M Dönüm</div>
+              <div class="price">1120M <i class="fa-solid fa-coins"></i></div>
+              <div class="region">Avrupa</div>
+              <img
+                class="image"
+                src="https://cdn.britannica.com/58/244358-050-9D2DA45D/Locator-map-kingdom-of-Jerusalem.jpg"
+              />
+              <div class="title">
+                <a href="./listings/5.html"
+                  >Her dinden bol bol var. Kudüs Krallığı’nda Tarihe
+                  Yolculuk!</a
+                >
+              </div>
+              <div class="age">Orta Çağ</div>
+              <div class="area">12M Dönüm</div>
+              <div class="price">180M <i class="fa-solid fa-coins"></i></div>
+              <div class="region">Batı Asya</div>
+              <img
+                class="image"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8DUuvP41yJJVOXo7ZmyRa-rfC6ij5lW1_Jg&s"
+              />
+              <div class="title">
+                <a href="./listings/6.html"
+                  >İttifak için acil satılık Macar Krallığı</a
+                >
+              </div>
+              <div class="age">Yakın Çağ</div>
+              <div class="area">87M Dönüm</div>
+              <div class="price">550M <i class="fa-solid fa-coins"></i></div>
+              <div class="region">Avrupa</div>
+              <img
+                class="image"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlnwOpW8q1i0LG3vCz29pa756W-bswBlvUXQ&s"
+              />
+              <div class="title">
+                <a href="./listings/7.html"
+                  >Rusyayı görmekten bıktık, satılık Polonya</a
+                >
+              </div>
+              <div class="age">Modern Çağ</div>
+              <div class="area">190M Dönüm</div>
+              <div class="price">368M <i class="fa-solid fa-coins"></i></div>
+              <div class="region">Avrupa</div>
+              <img
+                class="image"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKB8ANnJ8M6ARS1AZzoJS7cePxE01qpsnmkw&s"
+              />
+              <div class="title">
+                <a href="./listings/8.html"
+                  >Kuzey Işıkları Dahil İsveç Krallığı</a
+                >
+              </div>
+              <div class="age">Yakın Çağ</div>
+              <div class="area">105M Dönüm</div>
+              <div class="price">550M <i class="fa-solid fa-coins"></i></div>
+              <div class="region">Avrupa</div>
+              <img
+                class="image"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Flag_map_of_the_Kingdom_of_Prussia_%281701–1918%29.png/1200px-Flag_map_of_the_Kingdom_of_Prussia_%281701–1918%29.png"
+              />
+              <div class="title">
+                <a href="./listings/9.html"
+                  >Demir gibi fırsat! Disiplin paket Prusya</a
+                >
+              </div>
+              <div class="age">Yakın Çağ</div>
+              <div class="area">140M Dönüm</div>
+              <div class="price">1430M <i class="fa-solid fa-coins"></i></div>
+              <div class="region">Avrupa</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="bg-body-tertiary text-white text-center mt-5 py-5">
+      <div class="container">
+        <p>kralından.com &copy; 2025. Tüm hakları saklıdır.</p>
+      </div>
+    </footer>
+    <script
+      src="https://kit.fontawesome.com/0460a9927e.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
