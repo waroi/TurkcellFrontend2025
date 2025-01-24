@@ -1,39 +1,41 @@
-const secim=prompt("İşlem seçiniz: (\n1:+, \n2:-, \n3:*, \n4:/, \n5:Çıkış )");
-const sayi1 = prompt("ilk sayı:");
-const sayi2 = prompt("ikinci sayı: ");
-const toplama = (sayi1, sayi2) => {
-    sayi1+sayi2;
-}
-const cikarma = (sayi1, sayi2) => {
-    sayi1-sayi2;
-}
-const carpma = (sayi1, sayi2) => {
-    sayi1*sayi2;
-}
-const bolme = (sayi1, sayi2) => {
-    sayi1/sayi2;
-}
+
+const toplama = (sayi1, sayi2) => console.log(sayi1+sayi2)
+
+const cikarma = (sayi1, sayi2) => sayi1-sayi2;
+const carpma = (sayi1, sayi2) =>  sayi1*sayi2;
+const bolme = (sayi1, sayi2) =>  sayi1/sayi2;
 while(true){
-    let stop = false;
-    switch(secim){
-        case 1:
-            toplama(sayi1, sayi2);
-            break;
-        case 2:
-            cikarma(sayi1, sayi2);
-            break;
-        case 3:
-            carpma(sayi1, sayi2);
-            break;
-        case 4:
-            bolme(sayi1, sayi2);
-            break;
-        case 5: 
-            stop=true;
-            break;
-        default:
-            console.log("Geçersiz işlem girdiniz.");
+    var secim=prompt("İşlem seçiniz: (\n 1:+, \n 2:-, \n 3:*, \n 4:/, \n 5:Çıkış )");
+    console.log(secim !==  "5");
+    if(secim !== "5"){
+        const sayi1 = prompt("ilk sayı:");
+        const intSayi1 = Number(sayi1);
+        const sayi2 = prompt("ikinci sayı: ");
+        const intSayi2 = Number(sayi2);
+        console.log(sayi1 , sayi2);
+        console.log(intSayi1 , intSayi2);
+        switch(secim){
+            case "1":
+                console.log("Case 1", intSayi1 , intSayi2 , sayi1 , sayi2);
+
+                toplama(intSayi1, intSayi2);
+                console.log(toplama());
+                break;
+            case "2":
+                cikarma(intSayi1, intSayi2);
+                break;
+            case "3":
+                carpma(intSayi1, intSayi2);
+                break;
+            case "4":
+                bolme(intSayi1, intSayi2);
+                break;
+            default:
+                console.log("Geçersiz işlem girdiniz.");
+                break;
+    }
+    }
+    else{
         break;
     }
-    if(stop) break;
 }
