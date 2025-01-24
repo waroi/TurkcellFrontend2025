@@ -18,7 +18,7 @@ value = firstName.toUpperCase();
 value = firstName[0];
 value = firstName[firstName.length - 1];
 value = firstName.indexOf("a");
-// value = firstName.includes("g");
+value = firstName.includes("g");
 value = firstName.slice(0, 2);
 value = firstName.concat(" ", lastName, " ", age);
 
@@ -37,16 +37,31 @@ value = `  İsim: ${firstName}
   Soyisim: ${lastName}
   Yaş: ${age}
   Departman: ${department}`;
-
 value = `<ul>
   <li>İsim: ${firstName}</li>
   <li>Soyisim: ${lastName}</li>
   <li>Yaş: ${age}</li>
   <li>Bölüm: ${department}</li>
-</ul>`;
+  </ul>`;
 
-value = prompt("Lütfen bir değer giriniz: ");
+//document.body.innerHTML = value;
+//value = prompt("Lütfen bir değer giriniz: ");
+//console.log(value);
 
-document.body.innerHTML = value;
+let isim = prompt("Lütfen isminizi giriniz..");
+let Soyisim = prompt("Lütfen Soyisminizi giriniz..");
 
-console.log(value);
+console.log(
+  isim[0].toUpperCase() +
+    isim.slice(1).toLowerCase() +
+    " " +
+    Soyisim.toUpperCase()
+);
+
+let fullName = `İsim: ${
+  isim[0].toUpperCase() +
+  isim.slice(1).toLowerCase() +
+  " " +
+  Soyisim.toUpperCase()
+} `;
+console.log(fullName);
