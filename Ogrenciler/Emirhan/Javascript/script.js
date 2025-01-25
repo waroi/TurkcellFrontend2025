@@ -35,5 +35,8 @@ var date = new Date()
 console.log(date)
 console.log(typeof date)
 
+dizi = [0, 1, 2, 3]
+console.log(dizi[-1])
+
 
 

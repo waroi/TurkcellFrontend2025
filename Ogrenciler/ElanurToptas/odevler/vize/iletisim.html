@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>İletisim Sayfasi</title>
+    <link rel="stylesheet" href="css/iletisim.css">
+</head>
+<body>
+    <div class="container">
+        <header class="iHeader">
+            <a class="iLogo" href="#">
+                <img src="./images/tinker-bell.png" alt="logo" />
+              </a>
+              <nav class="navbar">
+                <a href="index.html">Anasayfa</a>
+                <a href="about.html">Hakkimizda</a>
+                <a class="active" href="#">İletişim</a>
+                <a href="sorular.html">Sorular</a>
+              </nav>
+              <i class="fa-solid fa-envelope"></i>
+        </header>
+        <section> 
+            <p><b>"Olmayan Dünya'ya Bağlan!"</b><br>
+                Peter Pan ve arkadaşlarıyla konuşmaya hazır mısınız?
+                Ya da belki Kaptan Hook'a bir mesaj bırakmak istersiniz!
+                Sorularınız, önerileriniz ya da sadece bir selam için aşağıdaki formu doldurun. 
+                Biz, Olmayan Dünya’nın büyüsünden bir parça alıp size geri dönmek için sabırsızlanıyoruz! 🧚✨
+              </p> 
+        </section>
+        <section class="contact">
+            <h1 class="heading">İLETİŞİM</h1>
+        <div class="row">
+            <iframe class="map"
+            src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d751.8166927946901!2d29.048827739811703!3d41.08501755571837!3m2!1i1024!2i768!4f13.1!5e0!3m2!1str!2str!4v1737462734245!5m2!1str!2str"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <form>
+            <h3>mesajini yaz</h3>
+            <div class="inputBox">
+                <i class="fa-solid fa-user"></i>
+                    <input type="text" placeholder="name"/>
+                </i>
+            </div>
+            <div class="inputBox">
+                <i class="fa-solid fa-envelope"></i>
+                    <input type="email" placeholder="message"/>
+                </i>
+            </div>
+            <div class="inputBox">
+                <i class="fa-solid fa-phone"></i>
+                    <input type="number" placeholder="peter pan"/>
+                </i>
+            </div>
+            <input type="submit" class="btn" value="Gönder">
+        </form>
+        </div>
+        </section>
+        <section class="footer">
+            <div class="search">
+              <input type="text" class="search-input" placeholder="search">
+              <button class="btn">search</button>
+            </div>
+            <div class="share">
+              <a href="#" class="fab fa-facebook"></a>
+              <a href="#" class="fab fa-twitter"></a>
+              <a href="#" class="fab fa-linkedin"></a>
+              <a href="#" class="fab fa-pinterest"></a>
+            </div>
+          </section>
+    </div>
+</body>
+</html>

@@ -1,0 +1,275 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  font-family: "Poppins", serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: 0.2s ease;
+}
+
+html {
+  overflow: auto;
+  scroll-padding-top: 90px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #fffacd;
+}
+
+section {
+  padding: 35px 7%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+.container .header {
+  background-color: rgb(107, 107, 208);
+  display: flex;
+  align-items: center;
+  padding: 0 7%;
+  margin: 20px 7%;
+  border-radius: 30px;
+  box-shadow: 0px 0px 17px -2px rgba(0, 0, 0, 0.7);
+  top: 0;
+  justify-content: space-between;
+  position: sticky;
+}
+.container .header .navbar a {
+  margin: 0 10px;
+  font-size: 16px;
+  color: #0e0e0e;
+  border-bottom: 3px solid transparent;
+}
+.container .header .navbar a:hover, .container .header .navbar a.active {
+  border-color: #fffacd;
+  padding-bottom: 5px;
+}
+.container .header .buttons button {
+  cursor: pointer;
+  font-size: 18px;
+  margin-left: 20px;
+  background-color: transparent;
+}
+.container .logo img {
+  height: 80px;
+}
+.container .home {
+  display: flex; /* Yan yana hizalama */
+  flex-direction: row;
+  align-items: center; /* Dikeyde ortala */
+  justify-content: space-between; /* İçeriği iki yana yay */
+  gap: 20px; /* Resim ve yazı arasında boşluk */
+}
+.container .home .content {
+  flex: 1; /* İçeriğin genişliğini esnek yap */
+  max-width: 50%;
+  padding: 20px; /* İçerik etrafına boşluk */
+}
+.container .home .content p {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.8;
+  padding: 10px 0;
+  color: #0e0e0e;
+}
+.container img {
+  flex: 1; /* Resim genişliğini esnek yap */
+  max-width: 400px; /* Resmin maksimum genişliği */
+  height: auto; /* Resim oranını koru */
+  object-fit: contain; /* Resmin düzgün sığmasını sağla */
+  border-radius: 10px; /* Köşeleri yuvarla */
+}
+.container .search-input {
+  font-size: 16px;
+  color: #0e0e0e;
+  padding: 10px;
+  text-transform: none;
+  border-radius: 30px;
+}
+.container .btn {
+  margin-top: 10px;
+  display: inline-block;
+  padding: 15px 35px;
+  border-radius: 300px;
+  font-size: 14px;
+  color: #fffacd;
+  background-color: #0e0e0e;
+  cursor: pointer;
+}
+.container .btn:hover {
+  opacity: 0.7;
+}
+.container .footer {
+  background-color: rgb(107, 107, 208);
+  align-items: center;
+  display: flex; /* Footer elemanlarını yatay sıraya al */
+  flex-direction: row; /* Varsayılan olarak dikey sıralama */
+  justify-content: space-between;
+  width: 100%;
+}
+.container .footer .search {
+  order: 1;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+.container .footer .search .search-input {
+  width: 300px;
+  background-color: #fffacd;
+}
+.container .footer .share {
+  order: 3; /* Sosyal medya ikonlarını üçüncü sıraya al */
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.container .footer .share a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  color: #fffacd;
+  font-size: 25px;
+}
+.container .footer .share a:hover {
+  border-radius: 40px;
+  border: 2px solid #fffacd;
+}
+.container .footer .links {
+  order: 1; /* Linkleri birinci sıraya al */
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+.container .footer .links a {
+  display: flex; /* Flexbox düzeni */
+  justify-content: center; /* Yatayda ortala */
+  align-items: center; /* Dikeyde ortala */
+  width: 100px; /* Sabit genişlik */
+  height: 50px; /* Sabit yükseklik */
+  background-color: rgb(199, 231, 133);
+  padding: 15px 7px;
+  color: #0e0e0e;
+  font-size: 16px;
+  border-radius: 40px;
+}
+.container .footer .links a:hover {
+  background-color: rgb(107, 107, 208);
+  opacity: 0.7;
+  border: 2px solid #fffacd;
+}
+@media (max-width: 768px) {
+  .container .home {
+    flex-direction: column; /* Yatay sıralamayı dikey yap */
+    align-items: center; /* Dikeyde ortala */
+    gap: 15px; /* Resim ve yazı arasındaki boşluğu azalt */
+  }
+  .container .home .content {
+    max-width: 100%; /* Yazı genişliğini tam yap */
+  }
+  .container .home img {
+    max-width: 200px; /* Resmi tam genişlik yap */
+  }
+}
+@media (max-width: 992px) {
+  .container {
+    flex-direction: column; /* Dikey sıralama */
+    align-items: center;
+    gap: 20px; /* Elemanlar arasında boşluk */
+  }
+  .container .logo img {
+    display: none;
+  }
+  .container .navbar {
+    padding: 0 40;
+  }
+  .container .box-container {
+    grid-template-columns: repeat(15, 25%) !important;
+  }
+  .container .search,
+  .container .share,
+  .container .links {
+    width: 100%; /* Tam genişlik */
+    justify-content: center;
+  }
+  .container .search .search-input {
+    width: 90%; /* Daha küçük genişlik */
+    max-width: 400px; /* Maksimum genişlik */
+  }
+  .container .links a {
+    width: 120px; /* Linklerin genişliği */
+    font-size: 14px; /* Daha küçük yazı boyutu */
+  }
+  .container .share a {
+    width: 45px; /* Sosyal medya ikonlarının genişliği */
+    height: 45px;
+    font-size: 22px; /* Daha küçük ikon boyutu */
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Dikey düzen */
+    align-items: center;
+    gap: 20px;
+  }
+  .container .box-container {
+    grid-template-columns: repeat(15, 33.3%) !important;
+  }
+  .container .header .navbar a {
+    font-size: 14px;
+  }
+  .container .buttons {
+    display: none;
+  }
+  .container .search,
+  .container .share,
+  .container .links {
+    width: 100%; /* Tüm elemanlar tam genişlikte */
+    justify-content: center;
+    gap: 15px;
+  }
+  .container .search .search-input {
+    width: 100%; /* Arama çubuğu tam genişlikte */
+    max-width: 300px; /* Maksimum genişlik */
+  }
+  .container .links a {
+    width: 120px; /* Link kutularının genişliği */
+  }
+  .container .share {
+    display: none !important;
+  }
+}
+@media (max-width: 576px) {
+  .container {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .container .header {
+    display: none;
+  }
+  .container .box-container {
+    grid-template-columns: repeat(15, 50%) !important;
+  }
+  .container .search {
+    display: none !important;
+  }
+  .container .share {
+    display: none !important;
+  }
+  .container .links {
+    justify-content: center;
+    width: 100%; /* Linkler tam genişlikte kalsın */
+  }
+}
+
+/*# sourceMappingURL=about.css.map */

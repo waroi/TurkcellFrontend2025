@@ -1,0 +1,113 @@
+.logo {
+  border-radius: 50%;
+}
+
+.products-wrap img, .about-card img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #212529;
+  color: white;
+  padding: 30px;
+}
+body h1 {
+  color: #0d6efd;
+}
+
+.header-nav {
+  background-color: #242424;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  background-color: gray;
+}
+
+.footer-logo {
+  width: 200px;
+  height: 200px;
+}
+
+.clients-logo {
+  background-color: #242424;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin: 60px 0 0;
+}
+
+.container-fluid {
+  overflow-x: hidden;
+}
+
+.copyright {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+  margin: 60px 0 0;
+}
+
+.about-card {
+  height: auto;
+  width: auto;
+  background-color: aliceblue;
+}
+.about-card img {
+  height: 100%;
+}
+
+.about-item {
+  background-color: #cdcdd7;
+  cursor: pointer;
+}
+
+.purchase-card {
+  background-color: #3c3c56;
+  border: 1px solid white;
+  height: auto;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+
+.ch-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10%;
+  width: auto;
+  height: auto;
+}
+
+.btn-flx {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10%;
+  width: auto;
+  height: auto;
+}
+
+/*# sourceMappingURL=buy.css.map */
