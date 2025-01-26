@@ -12,12 +12,15 @@ body {
 .container {
     width: 100%;
     max-width: 1200px;
-    padding: 20px;
     margin: 0 auto;
-    position: relative;
+}
+
+.coming-holder {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start; 
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .bg-shape-1 {
@@ -51,23 +54,26 @@ header {
 }
 
 header img {
+    display: block;
     width: 98px;
-    position: absolute;
-    left: 0; 
-    margin-left: 0; 
+    height: 56px;
 }
 
 .holder {
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    justify-content: space-between;  
+    align-items: center;             
     width: 100%;
+    max-width: 1200px;               
+    margin: 0 auto;                  
+    padding: 0 24px;                 
+    box-sizing: border-box;    
 }
 
 .coming-text {
     width: 60%;
     overflow: hidden;
-    text-align: left; 
+    text-align: left;
 }
 
 .coming-text h1 {
@@ -104,7 +110,7 @@ header img {
 .coming-form {
     display: flex;
     width: 100%;
-    justify-content: flex-start; 
+    justify-content: flex-start;
     align-items: center;
     margin-top: 60px;
 }
@@ -131,12 +137,18 @@ header img {
 .coming-form input::placeholder {
     color: #0c7f86;
 }
+
+.coming-links {
+    display: flex;  
+    gap: 10px; 
+}
+
 .coming-links a {
     padding: 8px 8px 0px 0px;
     text-decoration: none;
-    color:#084b4f;
+    color: #084b4f;
     transition: color 0.5s ease;
-    
+    font-size: 12px;
 }
 .caption {
     font-size: 12px;
@@ -159,26 +171,26 @@ header img {
     border: none;
     transition: 0.5s ease;
 }
+
 .coming-image .body {
     line-height: 30px;
     margin-bottom: 24px;
 }
 
 .coming-image {
-    width: 40%;
+    width: 30%;  
     display: flex;
     flex-direction: column;
-    align-items: flex-start; 
-    text-align: left; 
+    align-items: center;
 }
 
 .coming-image h4 {
     font-size: 32px;
     color: #084b4f;
-    text-align: left;
     font-weight: 600;
     line-height: 30px;
 }
+
 .coming-image .subtitle {
     font-size: 16px;
     font-weight: 400;
@@ -190,13 +202,6 @@ header img {
 .coming-image .img-box {
     position: relative;
     margin-bottom: 32px;
-}
-
-.coming-image img {
-    position: relative;
-    max-width: 100%;
-    border-radius: 50%;
-    z-index: 1;
 }
 
 .car {
@@ -232,9 +237,10 @@ header img {
     right: 34px;
 }
 
+
 .brief-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
     padding: 20px;
     margin-top: 100px;
@@ -305,7 +311,6 @@ header img {
     border-radius: 50%;
     animation: dustParticle 1.5s infinite ease-out;
 }
-
 
 @keyframes car {
     0% {
