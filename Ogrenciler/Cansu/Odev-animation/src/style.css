@@ -358,9 +358,7 @@ header img {
         background-position-x: 645px;
     }
 }
-
 @media (max-width: 768px) {
-
     p {
         text-align: left !important;
         margin: 0 !important;
@@ -429,15 +427,11 @@ header img {
         text-align: left;
     }
 
-
-
     .holder {
         flex-direction: column;
         align-items: center;
         justify-content: center;
     }
-
-
 
     .coming-form {
         display: flex;
@@ -448,30 +442,28 @@ header img {
     }
 
     .coming-form input {
-        width: calc(100% - 40px);
+        width: 100%;
         max-width: 400px;
         padding: 15px;
         margin: 10px 0;
         text-align: center;
+        box-sizing: border-box;
     }
 
     .coming-form button {
-        width: calc(100% - 40px);
+        width: 100%;
         max-width: 400px;
         padding: 15px;
         margin-top: 10px;
         background-color: #0c7f86;
         text-align: center;
         display: block;
+        box-sizing: border-box;
     }
-
-
 
     .coming-image h4 {
         text-align: left;
-
     }
-
 
     .coming-image img {
         border-radius: 50%;
@@ -488,9 +480,12 @@ header img {
         margin-top: 30px;
     }
 
-    .coming-links a {
-        font-size: 14px;
-        margin: 5px 0;
+    .coming-links {
+        display: flex;
+        gap: 10px; /* 600px'deki gap değerini aldım */
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px; /* Üstten boşluk */
     }
 
     .brief-container {
@@ -504,8 +499,8 @@ header img {
         padding: 20px;
         width: 100%;
         box-sizing: border-box;
-        position: relative; 
-        top: 20px; 
+        position: relative;
+        top: 20px;
     }
 
     .brief-name2 {
