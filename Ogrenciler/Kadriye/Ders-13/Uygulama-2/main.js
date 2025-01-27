@@ -28,6 +28,24 @@ if (eh == "e") {
   
 }
 
+//DEVAM EDİLECEK!!
+function elmasYolu (){
+  oyun=[];
+  secenekler=["🛣️", "💎", "🌵","🦂"];
+
+  for(let i=0; i<10; i++){
+      oyunSatiri=[];
+      for (let j=0; j<3; j++){
+          number= Math.floor(Math.random() * 4);
+          if (!oyunSatiri.includes(secenekler[number])) {
+              oyunSatiri.push(secenekler);
+              //DEVAM EDİLECEK
+          }
+          
+      }
+  }
+}
+
 function elmasToplama() {
   alert("1- İlk yok \n 2- İkinci yol \n 3- Üçüncü yol");
   oyun = [
