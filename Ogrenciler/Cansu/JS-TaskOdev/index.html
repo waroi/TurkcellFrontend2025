@@ -3,17 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
     <title>Document</title>
 </head>
 <body>
    
-    <h1>TaskList'e Hoş Geldiniz.</h1>
-    <h3>Menu</h3>
-    <p>Aşağıdaki işlemleri yapabilirsiniz.</p>
-    <p>Görev Ekleme işlemi için lütfen 1 yazın.</p>
-    <p>Görev Silme işlemi için lütfen 2 yazın.</p>
-    <p>Görev güncelleme işlemi için lütfen 3 yazın.</p>
+    <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+          <tr>
+            <th>#</th>
+            <th>İşlem</th>
+            <th>Açıklama</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Görev Ekle</td>
+            <td>Görev Ekleme işlemi için lütfen <strong>1</strong> yazın.</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Görev Sil</td>
+            <td>Görev Silme işlemi için lütfen <strong>2</strong> yazın.</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Görev Güncelle</td>
+            <td>Görev Güncelleme işlemi için lütfen <strong>3</strong> yazın.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
