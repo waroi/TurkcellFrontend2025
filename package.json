@@ -1,18 +1,32 @@
 {
-  "dependencies": {
-    "bootstrap": "^5.3.3"
-  },
   "name": "turkcellfrontend2025",
   "version": "1.0.0",
-  "description": "TurkcellFrontend2025",
   "main": "index.js",
-  "devDependencies": {
-    "sass": "^1.83.4"
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "braces": "^3.0.3",
+    "chokidar": "^4.0.3",
+    "detect-libc": "^1.0.3",
+    "fill-range": "^7.1.1",
+    "immutable": "^5.0.3",
+    "is-extglob": "^2.1.1",
+    "is-glob": "^4.0.3",
+    "is-number": "^7.0.0",
+    "micromatch": "^4.0.8",
+    "node-addon-api": "^7.1.1",
+    "picomatch": "^2.3.1",
+    "readdirp": "^4.1.1",
+    "source-map-js": "^1.2.1",
+    "to-regex-range": "^5.0.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.83.4"
+  },
+  "description": ""
 }

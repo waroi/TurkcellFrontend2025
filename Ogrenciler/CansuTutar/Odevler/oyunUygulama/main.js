@@ -28,56 +28,61 @@ if (eh == "e") {
   
 }
 
-function elmasToplama() {
-  alert("1- İlk yok \n 2- İkinci yol \n 3- Üçüncü yol");
-  oyun = [
-    ["🛣️", "💎", "🌵"],
-    ["🦂", "🛣️", "💎"],
-    ["🛣️", "💎", "🌵"],
-    ["🦂", "🛣️", "💎"],
-    ["🛣️", "💎", "🌵"],
-    ["💎", "🛣️", "🦂"],
-    ["🛣️", "💎", "🌵"],
-    ["🦂", "🛣️", "💎"],
-    ["🛣️", "💎", "🌵"],
-    ["🦂", "🛣️", "💎"],
-  ];
-  for (let i = 0; i < oyun.length; i++) {
-    alert(`${oyun[i]}`);
-    secilen_yol = parseInt(prompt("Terchinizi giriniz:"));
-    switch (secilen_yol) {
-      case 1:
-        yolKontrol(oyun[i], 1);
-        break;
-      case 2:
-        yolKontrol(oyun[i], 2);
-        break;
-      case 3:
-        yolKontrol(oyun[i], 3);
-        break;
-    }
-  }
-  return can;
-}
+function elmasYolu() {
+    oyun = [];
+    secenekler = ["🛣️", "💎", "🌵", "🦂"];
 
-//DEVAM EDİLECEK!!
-function elmasYolu (){
-    oyun=[];
-    secenekler=["🛣️", "💎", "🌵","🦂"];
+    for (let i = 0; i < 10; i++) {
+        oyunSatiri = [];
+        while (oyunSatiri.length < 3) {
+            number = Math.floor(Math.random() * secenekler.length);
+            sembol = secenekler[number];
 
-    for(let i=0; i<10; i++){
-        oyunSatiri=[];
-        for (let j=0; j<3; j++){
-            number= Math.floor(Math.random() * 4);
-            if (!oyunSatiri.includes(secenekler[number])) {
-                oyunSatiri.push(secenekler);
-                //DEVAM EDİLECEK
+            if (!oyunSatiri.includes(sembol)) {
+                oyunSatiri.push(sembol);
             }
         }
+        oyun.push(oyunSatiri);
+    }
+
+    return oyun;
+}
+
+function elmasToplama() {
+    alert("1- İlk yol \n2- İkinci yol \n3- Üçüncü yol");
+    oyun = elmasYolu();
+
+    can = 3;
+    for (let i = 0; i < oyun.length; i++) {
+        alert(oyun[i].join(" "));
+        secilen_yol = parseInt(prompt("Tercihinizi giriniz (1, 2 veya 3):"));
+
+        if (secilen_yol >= 1 && secilen_yol <= 3) {
+            sembol = oyun[i][secilen_yol - 1];
+            if (sembol === "💎") {
+                alert("Tebrikler! Elması topladınız.");
+            } else if (sembol === "🌵" || sembol === "🦂") {
+                can--;
+                alert(`Dikkat! ${sembol} ile karşılaştınız. Kalan can: ${can}`);
+                if (can === 0) {
+                    alert("Oyunu kaybettiniz! Canınız bitti.");
+                    break;
+                }
+            } else {
+                alert("Güvenli bir yoldasınız.");
+            }
+        } else {
+            alert("Geçersiz bir seçim yaptınız. Lütfen 1, 2 veya 3 giriniz.");
+            i--;
+        }
+    }
+
+    if (can > 0) {
+        alert("Oyunu başarıyla tamamladınız! Tebrikler!");
     }
 }
 
-function yolKontrol(yol, secilen_yol) {
+/*function yolKontrol(yol, secilen_yol) {
   secilen_yol -= 1;
   if (yol[secilen_yol] === "🦂" || yol[secilen_yol] == "🌵") {
     can -= 1;
@@ -87,7 +92,7 @@ function yolKontrol(yol, secilen_yol) {
     console.log(elmas);
     alert(`Elmas kazandınız! Kazanılan toplam elmas :  ${elmas}`);
   }
-}
+}*/
 
 function canavariYen() {
   alert("2. levele hoşgeldiniz.");
