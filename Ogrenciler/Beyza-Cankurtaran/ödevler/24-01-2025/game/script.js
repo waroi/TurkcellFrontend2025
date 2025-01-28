@@ -103,7 +103,7 @@ function bill() {
         let deneme = 2; // Number of attempts allowed
         let çözdüm = false;
 
-        while (deneme > 0 && !çözdüm) {
+        while (deneme > 0 && çözdüm!==true) {
             let choice5 = prompt(`Cevabınız nedir? (${deneme} hakkınız kaldı!!!)`);
             choices.push(choice5);
 
@@ -119,7 +119,7 @@ function bill() {
                 deneme--;
             }
         }
-        if (!çözdüm) {
+        if (çözdüm!==true){                              
             outcomes.push("Bilmeceyi çözemediniz ve arabanız olmadığı için yolda öldürüldünüz.");
             console.log("Bilmeceyi çözemediniz. Bill araba tamirinden vazgeçti ve yolunuza yaya devam ettiniz. Tommy'e ulaşmaya çalışırken yol magandaları tarafından öldürüldünüz. Oyun bitti...");
             updateHealth(-100);
