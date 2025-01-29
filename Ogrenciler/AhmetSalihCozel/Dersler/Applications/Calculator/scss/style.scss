@@ -1,0 +1,19 @@
+*{
+    font-family: "Aubrey", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+button{
+    @extend .btn , .btn-outline-dark, .m-0, .p-0;
+    height: 100px;
+    width: auto;
+}
+
+#exterior{
+    width: 500px;
+}
+
+#screen{
+    height: 100px;
+}
