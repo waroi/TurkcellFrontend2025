@@ -114,27 +114,21 @@ footer {
 .star:nth-child(1) {
   @include star-animation(5s, 5%, 70%, none);
 }
-
 .star:nth-child(2) {
   @include star-animation(10s, 50%, 15%, $move-star-animation);
 }
-
 .star:nth-child(3) {
   @include star-animation(7s, 10%, 10%, $move-star-animation);
 }
-
 .star:nth-child(4) {
   @include star-animation(3s, 10%, 80%, none);
 }
-
 .star:nth-child(5) {
   @include star-animation(4s, 10%, 20%, $move-star-animation);
 }
-
 .star:nth-child(6) {
   @include star-animation(6s, 20%, 80%, none);
 }
-
 .light {
   height: 100%;
   width: 100%;
