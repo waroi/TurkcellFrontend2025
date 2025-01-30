@@ -3,14 +3,17 @@ const player_race = prompt("Peki hangi ırktansın? \n(1)İnsan\n(2)Elf\n(3)Cüc
 const player_class = parseInt(
   prompt("Ne iş yaparsın? \n(1)Savaşçı \n(2)Büyücü\n(3)Haydut")
 );
+
 console.log(
   `Bilgilerin aşağıdaki gibi gözüküyor ${player_name}:\nIrkın: ${player_race}\nSınıfın: ${player_class}`
 );
+
 weapons = [
   {name: "Kılıç-Kalkan", damage: 10},
   {name: "Asa", damage: 10},
   {name: "Yay", damage: 10},
 ];
+
 player_attributes = {
   name: player_name,
   race: player_race,
@@ -31,11 +34,13 @@ const place = [
     string: "Mağara girişi gördün. Girmek ister misin? \n(1)Gir\n(2)Girme",
   },
 ];
+
 function random_event(place) {
-  place_num = Math.floor(Math.random() * place.lengt() + 1);
+  place_length = place.length;
+  place_num = Math.floor(Math.random() * place_length);
   return place[place_num].string;
 }
-console.log(random_event(place));
+
 let dead = false;
 while (dead === false) {
   player_choice = prompt(random_event(place));
