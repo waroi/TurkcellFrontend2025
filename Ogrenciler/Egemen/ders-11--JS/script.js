@@ -38,7 +38,8 @@ c = 40;
 // console.log(k);
 
 
-var User = {
-    name: "egemen";
-    surname: "aksoz";
-}
+// var User = {
+//     name: "egemen",
+//     surname: "aksoz"
+// };
+
