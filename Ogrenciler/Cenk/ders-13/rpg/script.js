@@ -20,8 +20,24 @@ player_attributes = {
   weapon: weapons[player_class - 1],
 };
 
-console.log(player_attributes.weapon);
-
+const place = [
+  {
+    name: "Köy",
+    string:
+      "Önünde köy görüyorsun ne yapmak istersin? \n(1) Köye Gir\n(2)Etrafından dolaş",
+  },
+  {
+    name: "Mağara",
+    string: "Mağara girişi gördün. Girmek ister misin? \n(1)Gir\n(2)Girme",
+  },
+];
+function random_event(place) {
+  place_num = Math.floor(Math.random() * place.lengt() + 1);
+  return place[place_num].string;
+}
+console.log(random_event(place));
 let dead = false;
-
-while (dead === false) {}
+while (dead === false) {
+  player_choice = prompt(random_event(place));
+  dead = true;
+}
