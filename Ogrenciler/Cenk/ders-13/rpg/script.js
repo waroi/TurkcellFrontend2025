@@ -14,6 +14,11 @@ weapons = [
   {name: "Yay", damage: 10},
 ];
 
+ const enemies = [
+  { name: "Kurt", health: 30, damage: 5 },
+  { name: "Haydut", health: 50, damage: 8 },
+  ];
+
 player_attributes = {
   name: player_name,
   race: player_race,
@@ -38,11 +43,28 @@ const place = [
 function random_event(place) {
   place_length = place.length;
   place_num = Math.floor(Math.random() * place_length);
-  return place[place_num].string;
+  return place[place_num];
 }
 
 let dead = false;
 while (dead === false) {
-  player_choice = prompt(random_event(place));
+  let olay = random_event(place)
+  console.log(olay)
+  player_choice = prompt(olay.string);
+
+  if (player_choice === "1" &&olay.name === "Köy"){
+    let koy_choice = prompt("Tüccara mı gidersin yoksa hana mı gidersin? (1) Tüccar (2) Han")
+    if (koy_choice === "1") {
+      console.log("Tüccara girdin.")    
+    }
+    else if (koy_choice==="2"){
+      console.log("Hana girdin.")
+    }
+    
+  }
   dead = true;
+
+
+
 }
+
