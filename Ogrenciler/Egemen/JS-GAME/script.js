@@ -212,11 +212,11 @@ for (let i = 0; i < 3; i++) {   // 3 tur karsılasicak
             console.log(random_boss);
 
             flag++;
-            let selection = 0;
 
 
 
-            console.log(flag);
+
+
         }
 
     }
