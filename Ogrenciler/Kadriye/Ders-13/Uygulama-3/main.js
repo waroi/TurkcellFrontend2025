@@ -15,6 +15,12 @@ while (true) {
     case 2:
       duzenleme();
       break;
+    case 3:
+      silme();
+      break;
+    case 4:
+      listele();
+      break;
     case 5:
       alert("Sayfadan ayrılıyorsunuz.");
       break;
@@ -55,4 +61,34 @@ function duzenleme() {
       alert("Geçerisiz sayı girdiniz.");
     }
   }
+}
+function silme() {
+  if (todo_list.length == 0) {
+    alert("Liste boş, silinecek not yok.!");
+  } else {
+    todo_str = "";
+    for (let i = 0; i < todo_list.length; i++) {
+      todo_str += i + 1 + "- " + todo_list[i] + "\n";
+    }
+    let icerik_index =
+      prompt(`Lütfen silmek istediğiniz içeriği seçiniz: \n${todo_str}`) -
+      1;
+    if (icerik_index >= 0 && icerik_index < todo_list.length) {
+      silinen_index = todo_list.splice(icerik_index, 1);
+      alert(`Silinen not : ${silinen_index}`);
+    } else {
+      alert("Geçerisiz sayı girdiniz.");
+    }
+  }
+}
+function listele(){
+  if (todo_list.length == 0) {
+    alert("Liste boş!");
+  } else {
+    todo_str = "";
+    for (let i = 0; i < todo_list.length; i++) {
+      todo_str += i + 1 + "- " + todo_list[i] + "\n";
+    }
+    alert(`Yapılacaklar listesi : \n ${todo_str}`);
+  }  
 }
