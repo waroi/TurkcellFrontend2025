@@ -73,8 +73,16 @@ function gorevGuncelle() {
         if (gorevler[i].id == id) {
             let yeniAd = prompt(`Yeni görev adını giriniz (Eski ad: ${gorevler[i].ad}):`);
             let yeniIcerik = prompt(`Yeni görev içeriğini giriniz (Eski içerik: ${gorevler[i].icerik}):`);
-            gorevler[i].ad = yeniAd || gorevler[i].ad; // Boş geçilirse eski adı koru
-            gorevler[i].icerik = yeniIcerik || gorevler[i].icerik; // Boş geçilirse eski içeriği koru
+            //şu kısmı hocaya sor
+            if(yeniAd===""){
+                gorevler[i].ad=gorevler[i].ad;
+            }
+            gorevler[i].ad = yeniAd ; 
+            
+            gorevler[i].icerik = yeniIcerik ;
+            if(yeniIcerik===""){
+                gorevler[i].icerik=gorevler[i].icerik;
+            }
             console.log(`Göreviniz "${gorevler[i].ad}" adıyla ve "${gorevler[i].icerik}" içeriğiyle güncellendi!`);
             return;
         }
