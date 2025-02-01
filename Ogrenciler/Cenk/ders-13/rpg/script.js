@@ -45,6 +45,26 @@ function random_event(place) {
   place_num = Math.floor(Math.random() * place_length);
   return place[place_num];
 }
+function koy(){
+  let koy_choice = prompt("Tüccara mı gidersin yoksa hana mı gidersin? (1) Tüccar (2) Han")
+    if (koy_choice === "1") {
+      console.log("Tüccara girdin.")    
+    }
+    else if (koy_choice==="2"){
+      console.log("Hana girdin.")
+    }
+    else{koy()}
+}
+function magara(){
+ let magara_event=Math.random(
+ )
+ if (magara_event> 0.5) {
+  console.log("Hazine kazandın.")
+ }
+ else{
+  console.log("Kurtlar saldırdı.")
+ }  
+}
 
 let dead = false;
 while (dead === false) {
@@ -53,16 +73,18 @@ while (dead === false) {
   player_choice = prompt(olay.string);
 
   if (player_choice === "1" &&olay.name === "Köy"){
-    let koy_choice = prompt("Tüccara mı gidersin yoksa hana mı gidersin? (1) Tüccar (2) Han")
-    if (koy_choice === "1") {
-      console.log("Tüccara girdin.")    
-    }
-    else if (koy_choice==="2"){
-      console.log("Hana girdin.")
-    }
+    koy()  
+  }
+  else if(player_choice==="2" &&olay.name==="Köy"){
+
+  }
+  else if (player_choice==="1" &&olay.name==="Mağara") {
+    magara()
+  }
+  else if (player_choice==="1" &&olay.name==="Mağara"){
     
   }
-  dead = true;
+  
 
 
 
