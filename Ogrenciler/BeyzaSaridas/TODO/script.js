@@ -14,6 +14,7 @@ function removeTodo(id){
    let index=todoList.findIndex(task=>task.id==id);
    console.log(`❎"${todoList[index].task}" silindi.`);
    todoList.splice(index,1);
+   console.log("--------------------------------------------------------");
    return listTodo();
 
 }

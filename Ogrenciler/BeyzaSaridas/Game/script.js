@@ -1,102 +1,248 @@
-// Kıyamet Senaryosu: Hayatta Kalma Oyunu
+function createGameState() {
+  return {
+      name: "SELOCAN",
+      health: 100,
+      hunger: 50,
+      energy: 100,
+      day: 1,
+      inventory: {
+          food: 2,
+          water: 2,
+          medicine: 1,
+          weapon: false
+      }
+  };
+}
+function showStatus(state) {
+  console.log("\n========== DURUM RAPORU ==========");
+  console.log(`Gün: ${state.day}`);
+  console.log(`Sağlık: ${state.health}`);
+  console.log(`Açlık: ${state.hunger}`);
+  console.log(`Enerji: ${state.energy}`);
+  console.log("\n---------- ENVANTER ----------");
+  console.log(`Yiyecek: ${state.inventory.food} birim`);
+  console.log(`Su: ${state.inventory.water} birim`);
+  console.log(`İlaç: ${state.inventory.medicine} adet`);
+  console.log(`Silah: ${state.inventory.weapon ? "Var" : "Yok"}`);
+  console.log("================================\n");
+}
+function showDeathMessage(cause) {
+  console.log("\n💀 === OYUN SONU === 💀");
+  switch(cause) {
+      case "health":
+          console.log("Yaraların çok ağırdı ve daha fazla dayanamadın...");
+          break;
+      case "hunger":
+          console.log("Açlığa yenik düştün ve güçsüzlükten öldün...");
+          break;
+      case "zombie":
+          console.log("Zombi sürüsü tarafından parçalandın...");
+          break;
+      case "exhaustion":
+          console.log("Aşırı yorgunluktan dolayı zombilerden kaçamadın...");
+          break;
+      case "victory":
+          console.log("Tebrikler! 7 gün hayatta kalmayı başardın ve kurtarıldın!");
+          break;
+  }
+  console.log(`Toplam hayatta kalınan gün: ${gameState.day}`);
+  console.log("================================\n");
+}
+function visitMarket(state) {
+  console.log("\n>>> MARKETE GİDİLİYOR...");
+  let chance = Math.random();
+  if (chance < 0.4) {
+      console.log("Bir zombi grubuyla karşılaştın!");
+      if (state.inventory.weapon) {
+          console.log("Silahın sayesinde zombileri etkisiz hale getirdin!");
+          state.energy -= 15;
+      } else {
+          console.log("Silahsız olduğun için kaçmak zorunda kaldın!");
+          state.health -= 20;
+          state.energy -= 30;
+          if (state.health < 20 && Math.random() < 0.5) {
+              showDeathMessage("zombie");
+              return false;
+          }
+      }
+  } else {
+      console.log("Kullanılabilir malzemeler buldun!");
+      state.inventory.food += 2;
+      state.inventory.water += 2;
+  }
+  return endTurn(state);
+}
+function visitHouse(state) {
+  console.log("\n>>> TERKEDİLMİŞ EVE GİRİLİYOR...");
+  let chance = Math.random();
+  if (chance < 0.3) {
+      console.log("Evde gizlenmiş zombiler vardı!");
+      state.health -= 15;
+      state.energy -= 20;
+      if (state.health < 20 && Math.random() < 0.5) {
+          showDeathMessage("zombie");
+          return false;
+      }
+  } else {
+      console.log("Güvenli bir dinlenme alanı buldun.");
+      state.energy += 30;
+      if (chance > 0.7) {
+          state.inventory.food += 1;
+          state.inventory.medicine += 1;
+          console.log("Ayrıca bazı malzemeler de buldun!");
+      }
+  }
+  return endTurn(state);
+}
+function visitHospital(state) {
+  console.log("\n>>> HASTANEYE GİRİLİYOR...");
+  let chance = Math.random();
+  if (chance < 0.5) {
+      console.log("Hastanede zombileşmiş sağlık personeliyle karşılaştın!");
+      if (state.inventory.weapon) {
+          console.log("Silahınla kendini savundun!");
+          state.energy -= 20;
+      } else {
+          console.log("Silahsız olmak çok tehlikeliydi!");
+          state.health -= 25;
+          state.energy -= 35;
+          if (state.health < 20 && Math.random() < 0.5) {
+              showDeathMessage("zombie");
+              return false;
+          }
+      }
+  } else {
+      console.log("Tıbbi malzemeler buldun!");
+      state.inventory.medicine += 2;
+      if (chance > 0.8) {
+          console.log("Ayrıca bir silah da buldun!");
+          state.inventory.weapon = true;
+      }
+  }
+  return endTurn(state);
+}
+function visitGasStation(state) {
+  console.log("\n>>> BENZİN İSTASYONUNA GİDİLİYOR...");
+  let chance = Math.random();
+  if (chance < 0.3) {
+      console.log("İstasyonda tehlikeli bir grup var!");
+      state.health -= 10;
+      state.energy -= 25;
+      if (state.health < 20 && Math.random() < 0.5) {
+          showDeathMessage("zombie");
+          return false;
+      }
+  } else {
+      console.log("Market kısmında malzemeler buldun!");
+      state.inventory.food += 1;
+      state.inventory.water += 2;
+      if (chance > 0.7) {
+          console.log("Arka odada kullanışlı şeyler vardı!");
+          state.inventory.medicine += 1;
+      }
+  }
+  return endTurn(state);
+}
+function visitPoliceStation(state) {
+  console.log("\n>>> POLİS MERKEZİNE GİRİLİYOR...");
+  let chance = Math.random();
+  if (chance < 0.4) {
+      console.log("Zombileşmiş polislerle karşılaştın!");
+      if (state.inventory.weapon) {
+          console.log("Silahınla kendini koruyabildin!");
+          state.energy -= 20;
+      } else {
+          console.log("Silahsız olmak büyük dezavantaj!");
+          state.health -= 30;
+          state.energy -= 40;
+          if (state.health < 20 && Math.random() < 0.5) {
+              showDeathMessage("zombie");
+              return false;
+          }
+      }
+  } else {
+      if (!state.inventory.weapon) {
+          console.log("Silah deposunda kullanılabilir bir silah buldun!");
+          state.inventory.weapon = true;
+      }
+      if (chance > 0.6) {
+          console.log("İlk yardım çantası da buldun!");
+          state.inventory.medicine += 1;
+      }
+  }
+  return endTurn(state);
+}
+function endTurn(state) {
+  state.hunger += 10;
+  state.energy -= 10;
+  if (state.hunger >= 80 && state.inventory.food > 0) {
+      state.inventory.food--;
+      state.hunger -= 30;
+      console.log("🍗 Yemek yedin (-1 yiyecek)");
+  }
+  if (state.hunger >= 100) {
+      state.health -= 20;
+      console.log("⚠️ Açlıktan zarar görüyorsun!");
+      if (state.health < 30 && Math.random() < 0.4) {
+          showDeathMessage("hunger");
+          return false;
+      }
+  }
+  if (state.energy <= 0) {
+      state.health -= 15;
+      console.log("⚠️ Yorgunluktan zarar görüyorsun!");
+      if (state.health < 25 && Math.random() < 0.3) {
+          showDeathMessage("exhaustion");
+          return false;
+      }
+  }
+  if (state.health <= 50 && state.inventory.medicine > 0) {
+      state.inventory.medicine--;
+      state.health += 30;
+      console.log("💊 İlaç kullandın (-1 ilaç)");
+  }
+  state.day++;
+  showStatus(state);
+  if (state.health <= 0) {
+      showDeathMessage("health");
+      return false;
+  }
+  if (state.day >= 7) {
+      showDeathMessage("victory");
+      return false;
+  }
+  return state;
+}
+function makeChoice(state, location) {
+  switch(location) {
+      case "market":
+          return visitMarket(state);
+      case "house":
+          return visitHouse(state);
+      case "hospital":
+          return visitHospital(state);
+      case "gasStation":
+          return visitGasStation(state);
+      case "policeStation":
+          return visitPoliceStation(state);
+      default:
+          console.log("Geçersiz lokasyon!");
+          return state;
+  }
+}
 function startGame() {
-   console.clear();
-   let health = 100;
-   let food = false;
-   let water = false;
- 
-   function displayStatus() {
-     console.log(`\nDurum: Sağlık = ${health}, Yiyecek = ${food ? "Var" : "Yok"}, Su = ${water ? "Var" : "Yok"}\n`);
-   }
- 
-   function logDayMessage(day, message, choices) {
-     console.log(`\n🗺️ ${day}. Gün: ${message}`);
-     choices.forEach((choice, index) => {
-       console.log(`${index + 1}) ${choice}`);
-     });
-     console.log("-------------------");
-   }
- 
-   // 1. Gün
-   logDayMessage("1", "Şehir sessiz ama uzaklardan gelen tuhaf sesler var.", [
-     "Market Ara",
-     "Terkedilmiş Ev",
-     "Ormana Git"
-   ]);
-   let day1Choice = 1; // Konsol gösterimi için varsayılan seçim
- 
-   switch (day1Choice) {
-     case 1:
-       console.log("Markete gittin. Yiyecek ve su buldun, ancak bir zombi saldırısına uğradın. Kaçmayı başardın ama sağlığın azaldı.");
-       health -= 30;
-       food = true;
-       water = true;
-       break;
-     case 2:
-       console.log("Terkedilmiş bir eve girdin. Dinlendin ama içeride hasta bir adam vardı. Onu dışarı atarak güvende kaldın.");
-       health += 10;
-       break;
-     case 3:
-       console.log("Ormana gittin. Vahşi hayvanlar gece saldırdı ve sağlığın azaldı.");
-       health -= 20;
-       break;
-     default:
-       console.log("Geçersiz seçim, hiçbir şey yapmadın ve zaman kaybettin.");
-   }
-   displayStatus();
- 
-   // 2. Gün
-   logDayMessage("2", "İşler daha da zorlaşıyor.", [
-     "Başka bir markete git",
-     "Bir araba bul ve çalıştırmaya çalış",
-     "Radyo frekansı aç"
-   ]);
-   let day2Choice = 2; // Konsol gösterimi için varsayılan seçim
- 
-   switch (day2Choice) {
-     case 1:
-       console.log("Markete gittin ama büyük bir zombi sürüsünü yakaladın. Kaçarken sağlığın azaldı.");
-       health -= 40;
-       break;
-     case 2:
-       console.log("Bir araba buldun ve çalıştırmayı başardın. Güvenli bir mesafe katettin.");
-       health += 10;
-       break;
-     case 3:
-       console.log("Radyo frekansı açtın. Güvenli bir bölge hakkında bilgi aldın ama sinyali alan tehlikeli gruplar da olabilir.");
-       break;
-     default:
-       console.log("Geçersiz seçim, hiçbir şey yapmadın ve zaman kaybettin.");
-   }
-   displayStatus();
- 
-   // 3. Gün (Final)
-   logDayMessage("3", "Artık buradan çıkış yolu bulmalısın.", [
-     "Güvenli bölgeye gitmeye çalış",
-     "İşaret fişeği yak",
-     "Yeraltı tüneline gir"
-   ]);
-   let day3Choice = 3; // Konsol gösterimi için varsayılan seçim
- 
-   switch (day3Choice) {
-     case 1:
-       if (health > 50) {
-         console.log("Güvenli bölgeye ulaştın ve kurtuldun! 🎉");
-       } else {
-         console.log("Yolda zombilere yakalandın ve öldün. ☠");
-       }
-       break;
-     case 2:
-       console.log("İşaret fişeği yaktın. Helikopter seni fark etti ama zombiler de üzerine geldi. Kaçmayı başardın mı? Belki... 🎲");
-       break;
-     case 3:
-       console.log("Yeraltı tüneline girdin. Sessizce ilerledin ve güvenli bir çıkış buldun! 🎉");
-       break;
-     default:
-       console.log("Geçersiz seçim, hiçbir şey yapmadın ve kapana kısıldın. ☠");
-   }
-   displayStatus();
-   console.log("Oyun Bitti. Tekrar denemek için sayfayı yenileyin.");
- }
- 
- startGame();
+  console.log("=== 🧟 ZOMBİ KIYAMETİ: HAYATTA KALMA OYUNU ===");
+  console.log("Zombi salgınından sonra hayatta kalmaya çalışıyorsun...");
+  console.log("GİDİLEBİLECEK YERLER:'market','house','hospital','gasStation','policeStation'");
+  console.log('Örnek kullanım şekli:➡️ gameState = makeChoice(gameState, "market");');
+  let initialState = createGameState();
+  showStatus(initialState);
+  return initialState;
+}
+let gameState = startGame();
+/* komutlar
+gameState = makeChoice(gameState, "market");
+gameState = makeChoice(gameState, "house");
+gameState = makeChoice(gameState, "hospital");
+gameState = makeChoice(gameState, "gasStation");
+gameState = makeChoice(gameState, "policeStation");*/
