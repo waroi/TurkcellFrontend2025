@@ -79,7 +79,7 @@ function directAccess() {
         "(1) Kimlik doğrulamasını atlatmak için bir kod yaz\n" +
         "(2) Şirket içinden bir yönetici hesabı kullan\n" +
         "(3) Sunucuya sahte güvenlik güncellemesi yükle\n" +
-        "(5) Yedekleme sunucusuna yönlen"
+        "(4) Yedekleme sunucusuna yönlen"
     );
 
     if (choice === "1") {
@@ -93,7 +93,8 @@ function directAccess() {
             "(4) Sistemi kapatarak zarar büyümeden durdur\n"
         );  
         if (virusChoice === "1") {
-            winnerFunction();
+            console.log("🦠 Virüsü temizleyemedin ancak seni dark web'e yönlendiren bir script buldun");
+            darkWebOperations();
         } else if (virusChoice === "2") {
             console.log("🔎 Virüsü tersine mühendislikle çözmeye çalıştın. Kodda bir zafiyet buldun ve virüsü devre dışı bıraktın!");
             winnerFunction();
@@ -104,12 +105,26 @@ function directAccess() {
             loserFunction();
         }
 
-    } else if (choice === "2") {
+    } 
+    else if (choice === "2") {
         console.log("👤 Bir yöneticinin hesabını kullandın; gizli yetkilerle sisteme girdin. Etik mi bilmiyorsun...");
-    } else if (choice === "4") {
+        let ethicalChoice = prompt(
+            "Ne yapacaksın?\n" +
+            "(1) Sistemi kontrol etmek için yetkileri kullan\n" +
+            "(2) Sistemi kontrol etmek için yetkileri kullanma ve geri çekil\n"
+        );
+        if (ethicalChoice === "1") {
+            console.log("🕵️ Sistemdeki kritik verilere erişim sağladın, saldırıyı durdurdun!");
+            diceFunction() > 3 ? winnerFunction() : (console.log("🚫Yetkisiz ve izinsiz erişimden dolayı kovuldun!"), loserFunction());
+        } else if (ethicalChoice === "2") {
+            console.log("🔙 Geri çekildin veya farklı bir yola yöneldin.");
+        }
+    }
+    else if (choice === "3") {
         console.log("🛠 Sahte güvenlik güncellemesiyle erişimi açtın, saldırgan bunu kısa sürede fark edebilir!");
         diceFunction() > 3 ? winnerFunction() : loserFunction();
-    } else {
+    } 
+    else {
         console.log("🔙 Geri çekildin veya farklı bir yola yöneldin.");
     }
 }
@@ -126,13 +141,63 @@ function hackerForum() {
     );
 
     if (choice === "1") {
-        console.log("💾 Hackerlar sana bir exploit verdi, ama devlet senin peşine düşebilir!");
-    } else if (choice === "2") {
+        console.log("🔓 Eski devlet veri tabanına erişim sağladın, ama bu yasa dışı bir eylem!");
+        let hackerChoice = prompt("Ne yapacaksın?\n" +
+            "(1) Veritabanından kritik bilgileri al\n" +
+            "(2) Veritabanını silerek izleri yok et\n" +
+            "(3) Veritabanına erişimi kapat\n"
+        );
+        if (hackerChoice === "1") {
+            console.log("🔍 Kritik bilgileri aldın, ama bu yasa dışı bir eylem!");
+            diceFunction() > 3 ? winnerFunction() : loserFunction();
+        } else if (hackerChoice === "2") {
+            console.log("🔥 Veritabanını sildin, ancak bu yasa dışı bir eylem!");
+            diceFunction() > 3 ? winnerFunction() : loserFunction();
+        } else {
+            console.log("🚫 Veritabanına erişimi kapattın, ancak bu yasa dışı bir eylem!");
+            diceFunction() > 3 ? winnerFunction() : loserFunction();
+        }
+    } 
+    else if (choice === "2") {
         console.log("🪙 Bir miktar Bitcoin ödedin, karşılığında saldırıyı engelleyebilecek kritik bir kod aldın.");
-    } else if (choice === "3") {
+        let bitcoinChoice = prompt("Ne yapacaksın?\n" +
+            "(1) Kodu kullanarak saldırıyı engelle\n" +
+            "(2) Kodu kullanmamaya karar ver\n"
+        );
+        if (bitcoinChoice === "1") {
+            console.log("🛡 Kodu kullanarak saldırıyı engelledin!");
+            winnerFunction();
+        } else {
+            console.log("🔥 Kodu kullanmadın, saldırı devam ediyor!");
+        }
+    } 
+    else if (choice === "3") {
         console.log("🕵️ Hackerları kandırdın, ancak sahte bilgileri fark ederlerse seni hedef alabilirler.");
+        let fakeChoice = prompt("Ne yapacaksın?\n" +
+            "(1) Onları takip etmek için sahte bilgileri kullan\n" +
+            "(2) İletişimi kesmek ve başka bir yol denemek\n"
+        );
+        if (fakeChoice === "1") {
+            console.log("🕵️ Sahte bilgileri kullandın ve hackerları takip ediyorsun.");
+            console.log("🔍 Sisteme saldıran grubun onlar olduğunu anladın.");
+            winnerFunction();
+        } else {
+            console.log("🔥 Hackerlar sahte bilgileri fark etti ve seni hedef olarak belirledi.");
+            loserFunction();
+        }
     } else {
         console.log("👥 Birebir anlaşmaya çalıştın, ama güvenmeleri için daha fazla kanıt istiyorlar.");
+        let directChoice = prompt("Ne yapacaksın?\n" +
+            "(1) Onlara daha fazla bilgi ver\n" +
+            "(2) Onlara bir görev ver\n"
+        );
+        if (directChoice === "1") {
+            console.log("🤨 Daha fazla bilgi vererek onları ikna ettin.");
+            console.log("🔍 Ellerindeki bilgilerle sistemi geri döndürülemez biçimde tahrip ettiler!");
+            loserFunction();
+        } else {
+            console.log("🔥 Görev vererek onları kandırdın, ancak saldırı devam ediyor.");
+        }
     }
 }
 
@@ -148,11 +213,32 @@ function analyzeLogs() {
 
     if (choice === "1") {
         console.log("💻 Otomatik analiz, 2018’de benzer bir saldırı olduğunu ve aynı IP’lerin kullanıldığını tespit etti!");
+        let autoChoice = prompt("Ne yapacaksın?\n" +
+            "(1) Saldırıyı engellemek için aynı koruma önlemlerini al\n" +
+            "(2) Saldırıyı izlemek için aynı IP’leri engelle\n" +
+            "(3) Saldırıyı engellemek için sunucuyu kapat\n" +
+            "(4) Saldırıyı engellemek için güncel ama riskli bir güvenlik yaması yükle"
+        );
+        if (autoChoice === "1") {
+            diceFunction() > 3 ? (console.log("Aynı koruma önlemlerini alarak saldırıyı engelledin"), winnerFunction()) : (console.log("Koruma önlemi güncel olmadığı için işe yaramadı...") ,loserFunction());
+        }
+        else if (autoChoice === "2") {
+            console.log("🔒 Aynı IP’leri engelledin, ancak saldırgan yeni IP’lerle devam ediyor.");
+        }
+        else if (autoChoice === "3") {
+            console.log("🚫 Sunucuyu kapattın, saldırı durdu ama şirketin operasyonu da durdu!");
+            loserFunction();
+        }
+        else {
+            console.log("🔥 Güvenlik yaması yükledin, ancak yama saldırganın daha önce fark ettiği bir zafiyeti içeriyor!");
+            loserFunction();
+        }
     } else if (choice === "2") {
         console.log("🕵️ Manuel tarama yaparak şüpheli bir çalışanın geçmişte sisteme izinsiz giriş yaptığını buldun.");
         internalSabotage();
     } else {
         console.log("📦 Arşivde çok eski loglar var, belki de saldırı daha uzun süredir planlanıyor.");
+        diceFunction() > 3 ? (console.log("Saldırının kökenini buldun ve saldırıyı engelledin!"), winnerFunction()) : (console.log("Saldırıyı engelleyemedin ama loglarda bir hacker grubunun izine rastladın!"), hackerForum());
     }
 }
 
