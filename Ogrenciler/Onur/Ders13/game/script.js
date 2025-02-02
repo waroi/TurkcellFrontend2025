@@ -1,76 +1,84 @@
 endGame = false;
 
 function startGame() {
-    console.clear();
-    console.log("🚨 **ACİL DURUM**: Şirketin güvenlik sistemleri saldırıya uğradı! Hemen müdahale etmelisin!");
-    console.log("Şirketin en iyi siber güvenlik uzmanı olarak bu krizi çözmek senin görevin.");
-    
-    while (endGame === false) {
-        let choice = prompt(
-            "Ne yapacaksın?\n" +
-            "(1) Şirketin sunucularına doğrudan erişim sağla\n" +
-            "(2) Yeraltı hacker topluluğundan yardım iste\n" +
-            "(3) Şirketin eski loglarını incele\n" +
-            "(4) Şirketin finansal sistemlerini kontrol et\n" +
-            "(5) Devlet istihbarat kurumlarıyla iletişime geç\n" +
-            "(6) Dark Web'den bilgi satın al\n" +
-            "(7) Siber suç gruplarını takip et\n" +
-            "(8) Bir güvenlik açığı yarat ve saldırganı yakalamak için kullan\n" +
-            "(9) İç sabotaj ihtimalini araştır\n"
-        );
+	console.clear();
+	console.log(
+		"🚨 **ACİL DURUM**: Şirketin güvenlik sistemleri saldırıya uğradı! Hemen müdahale etmelisin!"
+	);
+	console.log(
+		"Şirketin en iyi siber güvenlik uzmanı olarak bu krizi çözmek senin görevin."
+	);
+	while (!endGame) {
+		let choice = prompt(
+			"Ne yapacaksın?\n" +
+				"(1) Şirketin sunucularına doğrudan erişim sağla\n" +
+				"(2) Yeraltı hacker topluluğundan yardım iste\n" +
+				"(3) Şirketin eski loglarını incele\n" +
+				"(4) Şirketin finansal sistemlerini kontrol et\n" +
+				"(5) Devlet istihbarat kurumlarıyla iletişime geç\n" +
+				"(6) Dark Web'den bilgi satın al\n" +
+				"(7) Siber suç gruplarını takip et\n" +
+				"(8) Bir güvenlik açığı yarat ve saldırganı yakalamak için kullan\n" +
+				"(9) İç sabotaj ihtimalini araştır\n" +
+				"(0) Çıkış yap"
+		);
 
-        if (choice === "1") {
-            directAccess();
-        } else if (choice === "2") {
-            hackerForum();
-        } else if (choice === "3") {
-            analyzeLogs();
-        } else if (choice === "4") {
-            informIT();
-        } else if (choice === "5") {
-            physicalSecurity();
-        } else if (choice === "6") {
-            networkAnalysis();
-        } else if (choice === "7") {
-            employeeAccounts();
-        } else if (choice === "8") {
-            financialSecurity();
-        } else if (choice === "9") {
-            contactGovernment();
-        } else if (choice === "10") {
-            darkWebOperations();
-        } else if (choice === "11") {
-            aiAnalysis();
-        } else if (choice === "12") {
-            spyInvestigation();
-        } else if (choice === "13") {
-            cyberCrimeGroups();
-        } else if (choice === "14") {
-            createSecurityBait();
-        } else if (choice === "15") {
-            internalSabotage();
-        } else if (choice === "0") {
-            console.log("Oyun sona erdi. Verdiğin kararlar şirketin geleceğini belirledi.");
-            break;
-        } else {
-            console.log("❌ Geçersiz seçim, tekrar dene.");
-        }
-    }
+		switch (choice) {
+			case "1":
+				directAccess();
+				break;
+			case "2":
+				hackerForum();
+				break;
+			case "3":
+				analyzeLogs();
+				break;
+			case "4":
+				financialSecurity();
+				break;
+			case "5":
+				contactGovernment();
+				break;
+			case "6":
+				darkWebOperations();
+				break;
+			case "7":
+				cyberCrimeGroups();
+				break;
+			case "8":
+				createSecurityBait();
+				break;
+			case "9":
+				internalSabotage();
+				break;
+
+			case "0":
+				console.log(
+					"🔚 Oyun sona erdi. Verdiğin kararlar şirketin geleceğini belirledi."
+				);
+				endGame = true;
+				break;
+			default:
+				console.log("❌ Geçersiz seçim, tekrar dene.");
+		}
+	}
 }
 
-function winnerFunction(){
-    console.log("🏆 Oyun sona erdi. Şirketin sistemini büyük ölçüde korudun!");
-    endGame = true;
+function winnerFunction(message) {
+	console.log(`${message}`);
+	console.log("🏆 Oyun sona erdi. Şirketin sistemini büyük ölçüde korudun!");
+	endGame = true;
 }
 
-function loserFunction(){
-    console.log("🔥 Oyun sona erdi! Başarısız oldun.");
-    endGame = true;
+function loserFunction(message) {
+	console.log(`${message}`);
+	console.log("🔥 Oyun sona erdi! Başarısız oldun.");
+	endGame = true;
 }
 
 function diceFunction() {
-    return Math.floor(Math.random() * 6) + 1;
-  }
+	return Math.floor(Math.random() * 6) + 1;
+}
 
 function directAccess() {
     console.log("🔥 Sunuculara erişmeye çalışırken bir güvenlik alarmı tetiklendi!");
@@ -89,20 +97,17 @@ function directAccess() {
             "Virüs seni fark etti, ne yapacaksın?\n" +
             "(1) Virüsü temizlemek için kod kırma algoritmalarını çalıştır\n" +
             "(2) Virüsü tersine mühendislikle (reverse engineering) analiz et\n" +
-            "(3) Honeypot/tuzak kurup virüsü izlemeye devam et\n" +
-            "(4) Sistemi kapatarak zarar büyümeden durdur\n"
+            "(3) Sistemi kapatarak zarar büyümeden durdur\n"
         );  
         if (virusChoice === "1") {
-            console.log("🦠 Virüsü temizleyemedin ancak seni dark web'e yönlendiren bir script buldun");
-            darkWebOperations();
+          
+            darkWebOperations("🦠 Virüsü temizleyemedin ancak seni dark web'e yönlendiren bir script buldun");
         } else if (virusChoice === "2") {
-            console.log("🔎 Virüsü tersine mühendislikle çözmeye çalıştın. Kodda bir zafiyet buldun ve virüsü devre dışı bıraktın!");
-            winnerFunction();
+  
+            winnerFunction("🔎 Virüsü tersine mühendislikle çözmeye çalıştın. Kodda bir zafiyet buldun ve virüsü devre dışı bıraktın!");
+        
         } else if (virusChoice === "3") {
-            console.log("🍯 Bir tuzak kurdun, saldırganın hareketlerini izleyerek daha fazla bilgi topluyorsun. Risk devam ediyor ama büyük resme ulaşabilirsin.");
-        } else if (virusChoice === "4") {
-            console.log("🚫 Sistemi kapattın. Saldırı durdu, fakat şirketin operasyonu da durdu. Veri kaybı veya kesinti yaşanabilir!");
-            loserFunction();
+            loserFunction("🚫 Sistemi kapattın. Saldırı durdu, fakat şirketin operasyonu da durdu. Veri kaybı veya kesinti yaşanabilir!");
         }
 
     } 
@@ -115,14 +120,13 @@ function directAccess() {
         );
         if (ethicalChoice === "1") {
             console.log("🕵️ Sistemdeki kritik verilere erişim sağladın, saldırıyı durdurdun!");
-            diceFunction() > 3 ? winnerFunction() : (console.log("🚫Yetkisiz ve izinsiz erişimden dolayı kovuldun!"), loserFunction());
+            diceFunction() > 3 ? winnerFunction() : ( loserFunction("🚫Yetkisiz ve izinsiz erişimden dolayı kovuldun!"));
         } else if (ethicalChoice === "2") {
             console.log("🔙 Geri çekildin veya farklı bir yola yöneldin.");
         }
     }
     else if (choice === "3") {
-        console.log("🛠 Sahte güvenlik güncellemesiyle erişimi açtın, saldırgan bunu kısa sürede fark edebilir!");
-        diceFunction() > 3 ? winnerFunction() : loserFunction();
+        diceFunction() > 3 ? winnerFunction() : loserFunction("🛠 Sahte güvenlik güncellemesiyle erişimi açtın, saldırgan bunu kısa sürede fark edebilir!");
     } 
     else {
         console.log("🔙 Geri çekildin veya farklı bir yola yöneldin.");
@@ -148,14 +152,14 @@ function hackerForum() {
             "(3) Veritabanına erişimi kapat\n"
         );
         if (hackerChoice === "1") {
-            console.log("🔍 Kritik bilgileri aldın, ama bu yasa dışı bir eylem!");
-            diceFunction() > 3 ? winnerFunction() : loserFunction();
+       
+            diceFunction() > 3 ? winnerFunction() : loserFunction("🔍 Kritik bilgileri aldın, ama bu yasa dışı bir eylem!");
         } else if (hackerChoice === "2") {
-            console.log("🔥 Veritabanını sildin, ancak bu yasa dışı bir eylem!");
-            diceFunction() > 3 ? winnerFunction() : loserFunction();
+           
+            diceFunction() > 3 ? winnerFunction() : loserFunction("🔥 Veritabanını sildin, ancak bu yasa dışı bir eylem!");
         } else {
-            console.log("🚫 Veritabanına erişimi kapattın, ancak bu yasa dışı bir eylem!");
-            diceFunction() > 3 ? winnerFunction() : loserFunction();
+          
+            diceFunction() > 3 ? winnerFunction() : loserFunction("🚫 Veritabanına erişimi kapattın, ancak bu yasa dışı bir eylem!");
         }
     } 
     else if (choice === "2") {
@@ -165,8 +169,8 @@ function hackerForum() {
             "(2) Kodu kullanmamaya karar ver\n"
         );
         if (bitcoinChoice === "1") {
-            console.log("🛡 Kodu kullanarak saldırıyı engelledin!");
-            winnerFunction();
+        
+            winnerFunction("🛡 Kodu kullanarak saldırıyı engelledin!");
         } else {
             console.log("🔥 Kodu kullanmadın, saldırı devam ediyor!");
         }
@@ -179,11 +183,9 @@ function hackerForum() {
         );
         if (fakeChoice === "1") {
             console.log("🕵️ Sahte bilgileri kullandın ve hackerları takip ediyorsun.");
-            console.log("🔍 Sisteme saldıran grubun onlar olduğunu anladın.");
-            winnerFunction();
+            winnerFunction("🔍 Sisteme saldıran grubun onlar olduğunu anladın.");
         } else {
-            console.log("🔥 Hackerlar sahte bilgileri fark etti ve seni hedef olarak belirledi.");
-            loserFunction();
+            loserFunction("🔥 Hackerlar sahte bilgileri fark etti ve seni hedef olarak belirledi.");
         }
     } else {
         console.log("👥 Birebir anlaşmaya çalıştın, ama güvenmeleri için daha fazla kanıt istiyorlar.");
@@ -193,8 +195,8 @@ function hackerForum() {
         );
         if (directChoice === "1") {
             console.log("🤨 Daha fazla bilgi vererek onları ikna ettin.");
-            console.log("🔍 Ellerindeki bilgilerle sistemi geri döndürülemez biçimde tahrip ettiler!");
-            loserFunction();
+         
+            loserFunction("🔍 Ellerindeki bilgilerle sistemi geri döndürülemez biçimde tahrip ettiler!");
         } else {
             console.log("🔥 Görev vererek onları kandırdın, ancak saldırı devam ediyor.");
         }
@@ -220,265 +222,269 @@ function analyzeLogs() {
             "(4) Saldırıyı engellemek için güncel ama riskli bir güvenlik yaması yükle"
         );
         if (autoChoice === "1") {
-            diceFunction() > 3 ? (console.log("Aynı koruma önlemlerini alarak saldırıyı engelledin"), winnerFunction()) : (console.log("Koruma önlemi güncel olmadığı için işe yaramadı...") ,loserFunction());
+            diceFunction() > 3 ? ( winnerFunction("Aynı koruma önlemlerini alarak saldırıyı engelledin")) : (loserFunction("Koruma önlemi güncel olmadığı için işe yaramadı..."));
         }
         else if (autoChoice === "2") {
             console.log("🔒 Aynı IP’leri engelledin, ancak saldırgan yeni IP’lerle devam ediyor.");
         }
         else if (autoChoice === "3") {
-            console.log("🚫 Sunucuyu kapattın, saldırı durdu ama şirketin operasyonu da durdu!");
-            loserFunction();
+            loserFunction("🚫 Sunucuyu kapattın, saldırı durdu ama şirketin operasyonu da durdu!");
         }
         else {
-            console.log("🔥 Güvenlik yaması yükledin, ancak yama saldırganın daha önce fark ettiği bir zafiyeti içeriyor!");
-            loserFunction();
+            
+            loserFunction("🔥 Güvenlik yaması yükledin, ancak yama saldırganın daha önce fark ettiği bir zafiyeti içeriyor!");
         }
     } else if (choice === "2") {
         console.log("🕵️ Manuel tarama yaparak şüpheli bir çalışanın geçmişte sisteme izinsiz giriş yaptığını buldun.");
         internalSabotage();
     } else {
         console.log("📦 Arşivde çok eski loglar var, belki de saldırı daha uzun süredir planlanıyor.");
-        diceFunction() > 3 ? (console.log("Saldırının kökenini buldun ve saldırıyı engelledin!"), winnerFunction()) : (console.log("Saldırıyı engelleyemedin ama loglarda bir hacker grubunun izine rastladın!"), hackerForum());
+        diceFunction() > 3 ? ( winnerFunction("Saldırının kökenini buldun ve saldırıyı engelledin!")) : (console.log("Saldırıyı engelleyemedin ama loglarda bir hacker grubunun izine rastladın!"), hackerForum());
     }
 }
 
-// 4) IT ekibine haber ver
-function informIT() {
-    console.log("👨‍💻 IT ekibine durumu bildirdin, ancak içlerinde saldırıyla bağlantılı biri olabilir.");
-    let choice = prompt(
-        "IT ekibi nasıl tepki veriyor?\n" +
-        "(1) Tüm sistemi kapatarak saldırıyı durdurmak istiyorlar\n" +
-        "(2) Saldırganı izlemek için sisteme tuzak eklemeyi öneriyorlar\n" +
-        "(3) Seni suçlayan bir IT uzmanı var!"
-    );
 
-    if (choice === "1") {
-        console.log("🚫 Sistemi kapatmak veri kaybına yol açabilir, ama saldırı durabilir de.");
-    } else if (choice === "2") {
-        console.log("🪤 Tuzağa düşürülen saldırganın izlerini takip edebilirsin!");
-    } else {
-        console.log("⚠️ IT uzmanı seni suçladı, belki aralarında bir hain var!");
-    }
-}
-
-// 5) Fiziksel güvenliği kontrol et
 function physicalSecurity() {
-    console.log("🔎 Şirketin güvenlik kameralarını ve kart giriş kayıtlarını inceliyorsun...");
-    let choice = prompt(
-        "Ne yapmak istersin?\n" +
-        "(1) Gece vakti sunucu odasına girenleri listele\n" +
-        "(2) Güvenlik kameralarının yedek kayıtlarını kontrol et\n" +
-        "(3) Fiziksel erişim kartlarını iptal et"
-    );
+	console.log(
+		"🔎 Şirketin güvenlik kameralarını ve kart giriş kayıtlarını inceliyorsun..."
+	);
+	let choice = prompt(
+		"Ne yapmak istersin?\n" +
+			"(1) Gece vakti sunucu odasına girenleri listele\n" +
+			"(2) Güvenlik kameralarının yedek kayıtlarını kontrol et\n" +
+			"(3) Fiziksel erişim kartlarını iptal et"
+	);
 
-    if (choice === "1") {
-        console.log("🌃 Bir çalışanın gece yarısı sunucu odasına girdiği tespit edildi.");
-    } else if (choice === "2") {
-        console.log("📹 Yedek kayıtlarda maskeli bir kişinin sunucu raflarında işlem yaptığı görülüyor!");
-    } else {
-        console.log("🔒 Tüm kartları iptal ettin, şirkette erişim kısıtlandı; kısa süreli kaos oluştu!");
-    }
+	if (choice === "1") {
+		console.log("🕵️‍♂️ Gece vakti sunucu odasına giren bir çalışan tespit ettin!");
+		spyInvestigation();
+	} else if (choice === "2") {
+		console.log(
+			"📹 Yedek kayıtlarda maskeli bir kişinin sunucu raflarında işlem yaptığı görülüyor!"
+		);
+		spyInvestigation();
+	} else {
+		loserFunction(
+			"🔒 Tüm kartları iptal ettin, şirkette erişim kısıtlandı; kısa süreli kaos oluştu. Görevden alındın!"
+		);
+	}
 }
 
-// 6) Ağ trafiğini analiz et
-function networkAnalysis() {
-    console.log("🌐 Ağ trafiğinde anormal veri akışını tespit etmeye çalışıyorsun...");
-    let choice = prompt(
-        "Ne yapacaksın?\n" +
-        "(1) Firewall loglarını incele\n" +
-        "(2) VPN bağlantılarının kaynağını ara\n" +
-        "(3) Şüpheli IP adreslerini engelle\n" +
-        "(4) Tüm kullanıcıların bağlantılarını kes"
-    );
 
-    if (choice === "1") {
-        console.log("🔥 Firewall loglarında anormal şifreli trafik tespit ettin. Belki saldırının kaynağını bulursun.");
-    } else if (choice === "3") {
-        console.log("📍 Bazı IP’leri engelledin ama saldırı yeni IP’lerle devam ediyor.");
-    } else {
-        console.log("🔌 Ağ bağlantılarını kestin, şirketin operasyonu durdu!");
-    }
-}
 
-// 7) Çalışan hesaplarını denetle
-function employeeAccounts() {
-    console.log("🔑 Çalışan hesaplarını analiz ediyorsun. Belki birisi yetkilerini kötüye kullanıyor.");
-    let choice = prompt(
-        "Ne yapacaksın?\n" +
-        "(1) Yetkili hesapların hareketlerini kontrol et\n" +
-        "(2) Şifre değiştirme taleplerini gözden geçir\n" +
-        "(3) E-posta trafiğini analiz et"
-    );
 
-    if (choice === "1") {
-        console.log("⚠️ Bir yönetici hesabının çok fazla dosyaya eriştiğini gördün. Bu hesap ele geçirilmiş olabilir!");
-        financialSecurity();
-    } else if (choice === "3") {
-        console.log("✉️ E-posta trafiğinde phishing amaçlı dış adresler tespit ettin.");
-        cyberCrimeGroups();
-    } else {
-        console.log("🔎 Şifre değiştirme taleplerinde bir anormallik bulunamadı.");
-    }
-}
-
-// 8) Şirketin finansal sistemlerini kontrol et
 function financialSecurity() {
     console.log("💰 Şirketin muhasebe ve ödeme sistemlerini inceliyorsun...");
     let choice = prompt(
         "Ne yapmak istersin?\n" +
         "(1) Banka havalelerini kontrol et\n" +
         "(2) Maaş listelerini doğrula\n" +
-        "(3) Kripto para cüzdanlarını incele"
+        "(3) Kripto para cüzdanlarını incele\n" +
+        "(4) Ana menüye dön"
     );
 
     if (choice === "1") {
         console.log("💵 Yüklü miktarda para, bilinmeyen bir hesaba gitmiş. Biri şirketi soyuyor olabilir!");
-    } else if (choice === "3") {
+        
+        let bankChoice = prompt(
+            "Nasıl müdahale edeceksin?\n" +
+            "(1) Bankayı arayıp transferi durdurmaya çalış\n" +
+            "(2) Polise haber ver\n" +
+            "(3) Vakit kaybetmeden sistemi kapat ve zararı önle\n" +
+            "(4) Ana menüye dön"
+        );
+
+        if (bankChoice === "1") {
+            console.log("🏦 Bankayı aradın, transferi dondurdun. Para kurtarıldı! Oyun sonu: Şirketi büyük kayıptan kurtardın.");
+            winnerFunction();
+            } else if (bankChoice === "2") {
+            console.log("👮 Polise haber verdin, hesabın sahibi kısa sürede tespit edildi!");
+            winnerFunction();
+        } else if (bankChoice === "3") {
+            console.log("🚫 Sistemi kapattın, tüm işlemler durdu");
+             loserFunction
+        } else {
+            console.log("Ana menüye dönülüyor...");
+            return;  
+        }
+
+    } else if (choice === "2") {
         console.log("🪙 Şirketin kripto cüzdanından yüksek miktarda para çıkışı var. İçeriden biri kripto hırsızlığı yapıyor olabilir!");
-    } else {
-        console.log("📊 Finansal işlemlerde küçük tutarsızlıklar dışında bir şey yok.");
+        
+        let cryptoChoice = prompt(
+            "Nasıl müdahale edeceksin?\n" +
+            "(1) Cüzdanı anında dondur, şifreleri değiştir\n" +
+            "(2) Blockchain üzerinden transferi izleyerek saldırganı bulmaya çalış\n" 
+        
+        );
+
+        if (cryptoChoice === "1") {
+            console.log("🔒 Cüzdanı dondurdun, hırsızlık durduruldu.");
+        winnerFunction();
+            } else if (cryptoChoice === "2") {
+            console.log("🌐 Transferi izleyerek saldırganın cüzdan adresini buldun, bu adresi polise verdin. Yakalanma ihtimali yüksek!");
+        winnerFunction();
+        } else {
+            console.log("Ana menüye dönülüyor...");
+            return;
+        }
+    
     }
 }
 
-// 9) Devlet istihbarat kurumlarıyla iletişime geç
+
+// Devlet istihbarat kurumlarıyla iletişime geç
 function contactGovernment() {
-    console.log("🏛️ Devlet kurumlarına durumu bildiriyorsun. Ama bu riskli olabilir; seni de izleyebilirler.");
+    console.log(" Devlet kurumuna (FBI) durumu bildirip bildirmemeye karar vermelisin.");
+
     let choice = prompt(
-        "Hangi kurumla iletişime geçeceksin?\n" +
-        "(1) FBI Siber Suçlar Birimi\n" +
-        "(2) Ulusal Güvenlik Ajansı (NSA)\n" +
-        "(3) Interpol Siber Güvenlik Birimi\n" +
-        "(4) Devlet kurumlarına güvenmiyorsan vazgeç"
+        "Ne yapacaksın?\n" +
+        "(1) FBI'yı ara, saldırıyı onlarla çöz\n" +
+        "(2) Devlet kurumlarına güvenmiyorsan vazgeç"
     );
 
     if (choice === "1") {
-        console.log("🚔 FBI olaya el koydu, ancak senin hareketlerini de izliyorlar!");
-    } else if (choice === "2") {
-        console.log("🔎 NSA, saldırının kökünü bulmak için geniş çaplı dinleme yapıyor. Mahremiyet mi?");
-    } else if (choice === "3") {
-        console.log("🌍 Interpol, saldırının uluslararası boyutta olduğunu keşfetti. Büyük bir hacker grubu işin içinde!");
-    } else {
-        console.log("👀 Devlet kurumlarına güvenmeyi reddettin. Belki kendi başına çözebilirsin.");
+     
+        winnerFunction("🚔 FBI kısa sürede saldırganı yakaladı!");
+        } else {
+  
+        loserFunction(" Devlet kurumlarına güvenmeyi reddettin, saldırganı yakalama şansın azaldı!");
     }
 }
 
-// 10) Dark Web’den bilgi satın al
+
+// Dark Web’den bilgi satın al
 function darkWebOperations() {
     console.log("🕵️ Dark Web'e bağlanıyorsun... İz bırakmamaya dikkat etmelisin.");
+
     let choice = prompt(
-        "Ne satın alacaksın?\n" +
-        "(1) Şirketine saldıran hacker'ın kimliği\n" +
-        "(2) Bir fidye yazılımı satın al ve saldırıyı tersine çevir\n" +
-        "(3) Gizli istihbarat bilgileri al\n" +
-        "(4) Dark Web'e girmeden çıkış yap"
+        "Ne yapacaksın?\n" +
+        "(1) Hacker’ın kimliğini satın al\n" +
+        "(2) Fidye yazılımı satın al ve saldırıyı durdur\n" +
+        "(3) Vazgeç"
     );
 
     if (choice === "1") {
-        console.log("🔎 Hacker’ın kimliğini buldun! Şimdi onu takip edebilirsin.");
+    
+        winnerFunction("🔎 Hacker’ın kimliğini satın aldın! Polise haber verdin, saldırgan yakalandı.");
     } else if (choice === "2") {
-        console.log("💀 Fidye yazılımı satın aldın! Bunu ne amaçla kullanacaksın?");
-    } else {
-        console.log("📡 Dark Web’e girmeden çıktın, belki daha güvenli bir yol bulursun.");
+        console.log("💀 Fidye yazılımını satın alıp saldırıyı durdurdun. Yöntem tartışmalı ama sonuç net! ");
+         winnerFunction("💀 Fidye yazılımını satın alıp saldırıyı durdurdun. Yöntem tartışmalı ama sonuç net! ");
+    } else if (choice === "2") {
+        winnerFunction("📡 Dark Web’e girmekten vazgeçtin, saldırganı bulamadın.");
     }
 }
 
-// 11) Yapay zeka destekli bir analiz başlat
-function aiAnalysis() {
-    console.log("🤖 Yapay zeka sistemini başlatıyorsun, bu saldırının izini sürmekte yardımcı olabilir.");
-    let choice = prompt(
-        "Yapay zekayı nasıl kullanacaksın?\n" +
-        "(1) Hacker'ın saldırı modelini analiz et\n" +
-        "(2) Otomatik savunma sistemi kur\n" +
-        "(3) Yapay zeka tabanlı bir güvenlik duvarına yönlendir"
-    );
-
-    if (choice === "1") {
-        console.log("🧠 Saldırının bir iç sabotaj olduğunu tespit ettin!");
-    } else if (choice === "2") {
-        console.log("⚔️ Otomatik savunma devrede, fakat hacker saldırıyı güçlendiriyor!");
-    } else {
-        console.log("🛡 Yapay zeka tabanlı güvenlik duvarı saldırıyı yavaşlatıyor.");
-    }
-}
-
-// 12) Şirketin içindeki casusları araştır
 function spyInvestigation() {
-    console.log("🕵️ Şirket içi casusları bulmak için iç soruşturma başlattın...");
-    let choice = prompt(
-        "Hangi yöntemi kullanacaksın?\n" +
-        "(1) Çalışanların e-posta ve mesajlarını analiz et\n" +
-        "(2) Şirket içi toplantı kayıtlarını incele\n" +
-        "(3) Şüpheli çalışanları sorguya çek\n" +
-        "(4) İç güvenlik ekibiyle operasyon düzenle"
-    );
+	console.log("🕵️ Şirket içi casusları bulmak için iç soruşturma başlattın...");
+	let choice = prompt(
+		"Hangi yöntemi kullanacaksın?\n" +
+			"(1) Çalışanların e-posta ve mesajlarını analiz et\n" +
+			"(2) Şirket içi toplantı kayıtlarını incele\n" +
+			"(3) Şüpheli çalışanları sorguya çek\n"
+	);
 
-    if (choice === "1") {
-        console.log("📩 Bazı çalışanların dışarıyla gizli yazışmalar yaptığını buldun!");
-    } else if (choice === "3") {
-        console.log("⚠️ Yanlış kişiyi sorguladın, şirket içinde güvensizlik oluştu!");
-    } else {
-        console.log("👤 İç güvenlik ekibi bazı casusluk ipuçları buldu.");
-    }
+	if (choice === "1" && choice === "2") {
+		winnerFunction(
+			"🕵️‍♂️ Şirket içindeki casusları açığa çıkardın ve büyük bir veri sızıntısını önledin!"
+		);
+	} else if (choice === "3") {
+		loserFunction(
+			"⚠️ Yanlış kişiyi sorguladın, şirket içinde güvensizlik oluştu! Görevden alındın!"
+		);
+	}
 }
 
-// 13) Siber suç gruplarını takip et
 function cyberCrimeGroups() {
-    console.log("🌍 Siber suç gruplarına dair araştırma yapıyorsun...");
-    let choice = prompt(
-        "Hangi grupları odak noktası alacaksın?\n" +
-        "(1) Fidye yazılımı çeteleri\n" +
-        "(2) Devlet destekli hacker grupları\n" +
-        "(3) Dark Web üzerinde faaliyet gösteren anonim ekipler"
-    );
+	console.log("🌍 Siber suç gruplarına dair araştırma yapıyorsun...");
+	let choice = prompt(
+		"Hangi grupları odak noktası alacaksın?\n" +
+			"(1) Fidye yazılımı çeteleri\n" +
+			"(2) Dark Web üzerinde faaliyet gösteren anonim ekipler"
+	);
 
-    if (choice === "1") {
-        console.log("💰 Fidye yazılımı çeteleri şirketin sunucularını kilitlemiş olabilir.");
-    } else if (choice === "2") {
-        console.log("🏴‍☠️ Devlet destekli bir grup bu saldırıyı yaparak endüstriyel casusluk amaçlıyor.");
-    } else {
-        console.log("💀 Dark Web’deki anonim ekipler, verileri çalarak satmaya çalışıyor.");
-    }
+	if (choice === "1") {
+		console.log(
+			"💰 Fidye yazılımı çeteleri şirketin sunucularını kilitlemiş olabilir."
+		);
+		let choice2 = prompt(
+			"(1) Devlet istihbarat kurumlarıyla iletişime geç\n" +
+				"(2) Yeraltı hacker topluluğundan yardım iste"
+		);
+		if (choice2 === "1") {
+			contactGovernment();
+		} else if (choice2 === "2") {
+			hackerForum();
+		}
+	} else if (choice === "2") {
+		console.log(
+			"💀 Dark Web’deki anonim ekipler, verileri çalarak satmaya çalışıyor. Ne yapacaksin?"
+		);
+		let choice2 = prompt(
+			"(1) Devlet istihbarat kurumlarıyla iletişime geç\n" +
+				"(2) Yeraltı hacker topluluğundan yardım iste"
+		);
+		if (choice2 === "1") {
+			contactGovernment();
+		} else if (choice2 === "2") {
+			hackerForum();
+		}
+	}
 }
 
-// 14) Bir güvenlik açığı yarat ve saldırganı yakalamak için kullan
 function createSecurityBait() {
-    console.log("🎯 Kasten bir güvenlik açığı bırakıp saldırganı tuzağa düşürmeyi planlıyorsun...");
-    let choice = prompt(
-        "Hangi yöntemi kullanacaksın?\n" +
-        "(1) Sahte bir veritabanı oluştur ve iz sürme yazılımı ekle\n" +
-        "(2) Hackerı 'bal küpü' sunucusuna yönlendirmek\n" +
-        "(3) Tersine mühendislik yaparak saldırganın araçlarına tuzak eklemek"
-    );
-
-    if (choice === "1") {
-        console.log("🪤 Saldırgan sahte veritabanına daldı ve kimliği açığa çıktı!");
-    } else if (choice === "2") {
-        console.log("🍯 Bal küpü sunucusuna giren saldırgan izini bıraktı!");
-    } else {
-        console.log("🔍 Saldırganın araçlarını ele geçirip kendi sistemine sızdın!");
-    }
+	console.log(
+		"🎯 Kasten bir güvenlik açığı bırakıp saldırganı tuzağa düşürmeyi planlıyorsun..."
+	);
+	let choice = prompt(
+		"Hangi yöntemi kullanacaksın?\n" +
+			"(1) Sahte bir veritabanı oluştur ve iz sürme yazılımı ekle\n" +
+			"(2) Hackerı 'bal küpü' sunucusuna yönlendirmek\n" +
+			"(3) Tersine mühendislik yaparak saldırganın araçlarına tuzak eklemek"
+	);
+	if (choice === "1") {
+		winnerFunction(
+			"🪤 Saldırgan sahte veritabanına daldı ve kimliği açığa çıktı!"
+		);
+	} else if (choice === "2") {
+		console.log("🍯 Bal küpü sunucusuna giren saldırgan izini bıraktı!");
+		diceFunction() > 4
+			? winnerFunction(
+					"💥 İşinize yaramaz! Saldırgan sadece sunucuyu geçmekle kalmadı, şifrelerini de ele geçirdi!"
+			  )
+			: loserFunction(
+					"🔐 Başarılı! Saldırgan tüm izlerini bırakıp senin sunucuna çekildi."
+			  );
+	} else {
+		winnerFunction(
+			"🔍 Saldırganın araçlarını ele geçirip kendi sistemine sızdın!"
+		);
+	}
 }
 
-// 15) İç sabotaj ihtimalini araştır
 function internalSabotage() {
-    console.log("🤔 Şirket içinde bir sabotaj olabileceğinden şüpheleniyorsun...");
-    let choice = prompt(
-        "Nasıl bir yol izleyeceksin?\n" +
-        "(1) İç denetim ekibiyle koordineli çalış\n" +
-        "(2) Çalışanların maaş/ödül sistemini araştır\n" +
-        "(3) Sabotaj yapabilecek kilit çalışanları yakın takibe al"
-    );
-
-    if (choice === "1") {
-        console.log("✅ İç denetim ekibiyle birçok kanıt topladın, sabotajcının kimliği ortaya çıktı!");
-    } else if (choice === "2") {
-        console.log("💵 Bazı çalışanların ani maaş artışları ve primler dikkat çekiyor. Rüşvet mi var?");
-    } else {
-        console.log("👤 Kilit çalışanların bilgisayarlarında şüpheli kod parçaları bulundu.");
-        employeeAccounts();
-    }
+	console.log(
+		"🤔 Şirket içinde bir sabotaj olabileceğinden şüpheleniyorsun..."
+	);
+	let choice = prompt(
+		"Nasıl bir yol izleyeceksin?\n" +
+			"(1) Fiziksel güvenliği kontrol et\n" +
+			"(2) Çalışanların maaş/ödül sistemini araştır\n" +
+			"(3) Sabotaj yapabilecek kilit çalışanları yakın takibe al"
+	);
+	if (choice === "1") {
+		physicalSecurity();
+	} else if (choice === "2") {
+		console.log(
+			"💵 Bazı çalışanların ani maaş artışları ve primler dikkat çekiyor. Rüşvet mi var?"
+		);
+		spyInvestigation();
+	} else if (choice === "3") {
+		console.log(
+			"👤 Kilit çalışanların bilgisayarlarında şüpheli kod parçaları bulundu."
+		);
+		spyInvestigation();
+	}
 }
 
-
-//  Oyunu başlat
 startGame();
