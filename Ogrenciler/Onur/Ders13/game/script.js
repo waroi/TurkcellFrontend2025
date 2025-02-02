@@ -1,9 +1,11 @@
+endGame = false;
+
 function startGame() {
     console.clear();
     console.log("🚨 **ACİL DURUM**: Şirketin güvenlik sistemleri saldırıya uğradı! Hemen müdahale etmelisin!");
     console.log("Şirketin en iyi siber güvenlik uzmanı olarak bu krizi çözmek senin görevin.");
-
-    while (true) {
+    
+    while (endGame === false) {
         let choice = prompt(
             "Ne yapacaksın?\n" +
             "(1) Şirketin sunucularına doğrudan erişim sağla\n" +
@@ -56,24 +58,57 @@ function startGame() {
     }
 }
 
-// 1) Şirketin sunucularına doğrudan erişim
+function winnerFunction(){
+    console.log("🏆 Oyun sona erdi. Şirketin sistemini büyük ölçüde korudun!");
+    endGame = true;
+}
+
+function loserFunction(){
+    console.log("🔥 Oyun sona erdi! Başarısız oldun.");
+    endGame = true;
+}
+
+function diceFunction() {
+    return Math.floor(Math.random() * 6) + 1;
+  }
+
 function directAccess() {
     console.log("🔥 Sunuculara erişmeye çalışırken bir güvenlik alarmı tetiklendi!");
     let choice = prompt(
         "Ne yapacaksın?\n" +
         "(1) Kimlik doğrulamasını atlatmak için bir kod yaz\n" +
-        "(2) Geri çekil\n" +
-        "(3) Şirket içinden bir yönetici hesabı kullan\n" +
-        "(4) Sunucuya sahte güvenlik güncellemesi yükle\n" +
+        "(2) Şirket içinden bir yönetici hesabı kullan\n" +
+        "(3) Sunucuya sahte güvenlik güncellemesi yükle\n" +
         "(5) Yedekleme sunucusuna yönlen"
     );
 
     if (choice === "1") {
         console.log("✅ Kimlik doğrulamasını başarıyla atlattın! Ancak kötü amaçlı yazılım seni fark etti.");
-    } else if (choice === "3") {
+
+        let virusChoice = prompt(
+            "Virüs seni fark etti, ne yapacaksın?\n" +
+            "(1) Virüsü temizlemek için kod kırma algoritmalarını çalıştır\n" +
+            "(2) Virüsü tersine mühendislikle (reverse engineering) analiz et\n" +
+            "(3) Honeypot/tuzak kurup virüsü izlemeye devam et\n" +
+            "(4) Sistemi kapatarak zarar büyümeden durdur\n"
+        );  
+        if (virusChoice === "1") {
+            winnerFunction();
+        } else if (virusChoice === "2") {
+            console.log("🔎 Virüsü tersine mühendislikle çözmeye çalıştın. Kodda bir zafiyet buldun ve virüsü devre dışı bıraktın!");
+            winnerFunction();
+        } else if (virusChoice === "3") {
+            console.log("🍯 Bir tuzak kurdun, saldırganın hareketlerini izleyerek daha fazla bilgi topluyorsun. Risk devam ediyor ama büyük resme ulaşabilirsin.");
+        } else if (virusChoice === "4") {
+            console.log("🚫 Sistemi kapattın. Saldırı durdu, fakat şirketin operasyonu da durdu. Veri kaybı veya kesinti yaşanabilir!");
+            loserFunction();
+        }
+
+    } else if (choice === "2") {
         console.log("👤 Bir yöneticinin hesabını kullandın; gizli yetkilerle sisteme girdin. Etik mi bilmiyorsun...");
     } else if (choice === "4") {
         console.log("🛠 Sahte güvenlik güncellemesiyle erişimi açtın, saldırgan bunu kısa sürede fark edebilir!");
+        diceFunction() > 3 ? winnerFunction() : loserFunction();
     } else {
         console.log("🔙 Geri çekildin veya farklı bir yola yöneldin.");
     }
@@ -115,6 +150,7 @@ function analyzeLogs() {
         console.log("💻 Otomatik analiz, 2018’de benzer bir saldırı olduğunu ve aynı IP’lerin kullanıldığını tespit etti!");
     } else if (choice === "2") {
         console.log("🕵️ Manuel tarama yaparak şüpheli bir çalışanın geçmişte sisteme izinsiz giriş yaptığını buldun.");
+        internalSabotage();
     } else {
         console.log("📦 Arşivde çok eski loglar var, belki de saldırı daha uzun süredir planlanıyor.");
     }
@@ -190,8 +226,10 @@ function employeeAccounts() {
 
     if (choice === "1") {
         console.log("⚠️ Bir yönetici hesabının çok fazla dosyaya eriştiğini gördün. Bu hesap ele geçirilmiş olabilir!");
+        financialSecurity();
     } else if (choice === "3") {
         console.log("✉️ E-posta trafiğinde phishing amaçlı dış adresler tespit ettin.");
+        cyberCrimeGroups();
     } else {
         console.log("🔎 Şifre değiştirme taleplerinde bir anormallik bulunamadı.");
     }
@@ -351,11 +389,10 @@ function internalSabotage() {
         console.log("💵 Bazı çalışanların ani maaş artışları ve primler dikkat çekiyor. Rüşvet mi var?");
     } else {
         console.log("👤 Kilit çalışanların bilgisayarlarında şüpheli kod parçaları bulundu.");
+        employeeAccounts();
     }
 }
 
-// Oyunun geri kalan tüm fonksiyonları yukarıda tanımlandı,
-// böylece her seçim kendi senaryosuna ve alt seçimlerine sahip.
 
-// 🏆 Oyunu başlat
+//  Oyunu başlat
 startGame();
