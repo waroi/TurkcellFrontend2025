@@ -28,23 +28,7 @@ function startGame() {
     }
 }
 startGame();
-function displayHealth() {
-    console.log(`Sağlığınız:${sağlık}%`);
-    let doluKalp=sağlık/10;
-    let boşKalp=10-doluKalp;
-    console.log(`Sağlık: [${'♥'.repeat(doluKalp)}${'♡'.repeat(boşKalp)}]`);
-}
-function updateHealth(değer) {
-    sağlık += değer;
-    if (sağlık > 100) sağlık = 100; 
-    if (sağlık <= 0) {
-        sağlık = 0;
-        console.log("Sağlığınız tükendi. Oyun bitti!");
-        alert("Sağlığınız tükendi. Oyun bitti!"); 
-        return; 
-    }
-    displayHealth();
-}
+
 function oyunBasladi() {
     console.log(
         "14 yaşında bir yetim olan ellie yi götürmeye söz veriyorsunuz.ellie biraz küstah olsa da kendi başının çaresine bakmayı bilen bir gençtir"
@@ -86,6 +70,23 @@ function askerOldur(){
         bill();
     }
 }
+function displayHealth() {
+    console.log(`Sağlığınız:${sağlık}%`);
+    let doluKalp=sağlık/10;
+    let boşKalp=10-doluKalp;
+    console.log(`Sağlık: [${'♥'.repeat(doluKalp)}${'♡'.repeat(boşKalp)}]`);
+}
+function updateHealth(değer) {
+    sağlık += değer;
+    if (sağlık > 100) sağlık = 100; 
+    if (sağlık <= 0) {
+        sağlık = 0;
+        console.log("Sağlığınız tükendi. Oyun bitti!");
+        alert("Sağlığınız tükendi. Oyun bitti!"); 
+        return; 
+    }
+    displayHealth();
+}
 function bill() {
     console.log("Yolculuğunuz sırasında sana borcu olan arkadaşın Bill'e uğradın.");
     let choice4 = prompt("Ellie buradan kitap ve yiyecek çalmaya çalışırken Bill'e yakalandı. Bill hem araba tamirine devam etmek hem de Ellie'yi affetmek için Ellie'nin bir bilmece çözmesini istiyor. Ne yapacaksın? (type: Kabul et veya kabul etme)");
@@ -94,35 +95,36 @@ function bill() {
     if (choice4 === "kabul etme") {
         outcomes.push("Arabasız yola devam ettiniz ve öldürüldünüz.");
         console.log("Bill arabayı tamir etmekten vazgeçti ve sizi kovdu. Tommy'e ulaşmaya çalışırken yol magandaları tarafından öldürüldünüz. Oyun bitti...");
-        updateHealth(-100); // Lose all health
+        updateHealth(-100);
     } else if (choice4 === "kabul et") {
         outcomes.push("Bill'in bilmecesini sormasını kabul ettin.");
         console.log("Bill bilmecesini sordu. Bilmece şöyle:",
-            "Kaplumbağalar için en kötü durum nedir?");
+            "What did the green grape say to the purple grape?");
 
-        let deneme = 2; // Number of attempts allowed
+        let deneme = 5;
         let çözdüm = false;
 
-        while (deneme > 0 && çözdüm!==true) {
+        while (deneme > 0 && çözdüm === false ) {
             let choice5 = prompt(`Cevabınız nedir? (${deneme} hakkınız kaldı!!!)`);
             choices.push(choice5);
 
-            if (choice5 === "sırt kaşıntısı") {
+            if (choice5 === "breath you idiot") {
                 outcomes.push("Bilmecenizi doğru bilip yolunuza araba ile devam ettiniz.");
                 console.log("Tebrikler doğru bildiniz. Bill size bir araba verdi ve yolunuza onunla devam ettiniz.");
-                solved = true;
+                çözdüm = true
                 araba();
+                return;
             } else {
                 outcomes.push("Bilmeceye yanlış cevap verdiniz.");
                 console.log("Yanlış cevap. Bir hakkınızı kaybettiniz.");
-                updateHealth(-50);
-                deneme--;
+                updateHealth(-20); 
+                deneme--; 
             }
         }
-        if (çözdüm!==true){                              
+        if (!çözdüm) {
             outcomes.push("Bilmeceyi çözemediniz ve arabanız olmadığı için yolda öldürüldünüz.");
             console.log("Bilmeceyi çözemediniz. Bill araba tamirinden vazgeçti ve yolunuza yaya devam ettiniz. Tommy'e ulaşmaya çalışırken yol magandaları tarafından öldürüldünüz. Oyun bitti...");
-            updateHealth(-100);
+            updateHealth(-100); 
         }
     }
 }
@@ -266,8 +268,6 @@ function displayChoicesAndOutcomes() {
     console.log("*************************Oyun boyunca yaptığınız seçimler ve sonuçları:*********************************");
     for (let i = 0; i < choices.length; i++) {
         console.log(`Seçim ${i + 1}: ${choices[i]} ------- Sonuç: ${outcomes[i]}`);
-        console.log(`Sağlığımız:`);
-        displayHealth()
     }
 }
-displayChoicesAndOutcomes();
+displayChoicesAndOutcomes();displayHealth();

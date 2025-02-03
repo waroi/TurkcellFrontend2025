@@ -1,3 +1,10 @@
+body = document.getElementsByTagName("body");
+document.body.style.backgroundImage="url('https://arcadelife.wordpress.com/wp-content/uploads/2012/03/img_2206.jpg')";
+document.body.style.backgroundSize="cover";
+document.body.style.backgroundPosition="center";
+document.body.style.backgroundRepeat="no-repeat";
+document.body.style.height="90vh";
+
 alert("Hoşgeldin Hugo");
 alert(
   "Oyunumuz 3 ayrı levelden oluşmaktadır. \n 1- Elmas Toplama: Amaç en fazla elması toplamaktır. Burada böcek ve bitkilerden kaçınmayı unutmayınız. \n 2- Canavarı Yen: Bu adımda karşılaştığınız canavarı yeniniz. Kaçmak size can kaybettirecektir. \n 3- Kutuları Tahmin Etme: Bu bölümde kazandığınız varlıklarınız koruyunuz."
@@ -24,7 +31,6 @@ if (eh == "e") {
     alert("Game Over");
   }
 }
-
 function elmasYolu() {
   oyun = [];
   secenekler = ["🛣️", "💎", "🌵", "🦂"];
@@ -41,7 +47,6 @@ function elmasYolu() {
   }
   return oyun;
 }
-
 function elmasToplama() {
   alert("1- İlk yol \n2- İkinci yol \n3- Üçüncü yol");
   oyun = elmasYolu();
@@ -71,7 +76,6 @@ function elmasToplama() {
   }
   return can;
 }
-
 function canavariYen() {
   alert("2. levele hoşgeldiniz.");
   alert(
@@ -85,7 +89,6 @@ function canavariYen() {
   }
   return can;
 }
-
 function kac() {
   number = Math.random() * 10;
   if (number >= 5) {
