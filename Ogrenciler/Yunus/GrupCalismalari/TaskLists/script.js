@@ -89,4 +89,4 @@ do {
             alert("Hatalı bir seçim yaptınız, lütfen tekrar deneyin.");
             break;
     }
-} while (devam);
+} while (devam == true);
