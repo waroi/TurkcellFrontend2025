@@ -1,27 +1,58 @@
 let health = 100;
 let fame = 100;
-let items = ["teeth", "bow", "electric", "shield", "sword",  "potion", "armor", "mace", "mysterybox"];
 let player = 0;
-let story = [];
 let isDead = false;
 let isWin = false;
 let isLose = false;
 let isGame = true;
-let isShop = false;
 let isBattle = false;
-
+let currentStoryIndex = 0;
 let choosePlayer = ["Havhav Hasan", "Hedef Şaşıran Sümeyye", "Paslı Hayriye", "Pofuduk Paşa", "Köpek Necmi", "Marslı Mahmut","Sıkıcı Steve", "Börk Ork", "Robo Goril"];
 
 let goblin = { name: "Goblin", health: 100, damage: 10,};
 let troll = { name: "Troll", health: 150, damage: 15,};
 let orc = { name: "Orc", health: 200, damage: 20,};
 let ogre = { name: "Ogre", health: 250, damage: 25,};
-let cyclops = { name: "Cyclops", health: 300, damage: 30,};
+let dragon = { name: "Dragon", health: 300, damage: 30,};
 let hydra = { name: "Hydra", health: 350, damage: 35,};
-let chimera = { name: "Chimera", health: 400, damage: 40,};
-let kraken = { name: "Kraken", health: 450, damage: 45,};
 let boss = { name: "Boss", health: 500, damage: 50,};
+let story = [
+    {
+        story: choosePlayer[player - 1] + ",bir gün deniz altı mağarasında dolaşmaya karar vermiş. Mağarada yürürken bir taraftan ses gelmeye başlamış. Sesin geldiği yöne doğru ilerlemeye başlamış. Sesin geldiği yöne doğru ilerlerken bir goblin ile karşılaşmış. Ne yapacaksın? 1-) Savaş 2-) Umursama",
+        actions: [battleGoblin, ignoreGoblin]
+    },
+    {
+        story: choosePlayer[player - 1] + ", goblin savaşından sonra ün kazanmış bir şekilde diğer kölelerin olduğu topluluğa (KARANLIK) giderken bir troll ile karşılaşmış. Ne yapacaksın? 1-) Savaş 2-) Umursama",
+        actions: [battleTroll, ignoreTroll]
+    },
+    {
+        story: choosePlayer[player - 1] + ", Karanlığa  vardığında diğer köleler ile sohbete başlamış. Köleler ona Parıltı tarafından yeni bir köle gelişimi yaparken labaratuvardan kaçan bir çok başka metabolik canlının olduğunu söylemişler. Eğer kaçan tüm canlıları öldüren olabilirse ödül olarak refah içinde bir yaşam vaad edilmiş. Bunun üzerine " + choosePlayer[player - 1] + " bu canlılar ile savaşmaya karar vermiş. Ve mağaranın derinliklerine doğru ilerlmeye başlamış. Yolda bir orc ile karşılaşmış. Ne yapacaksın? 1-) Savaş 2-) Umursama",
+        actions: [battleOrc, ignoreOrc]
+    },
+    {
+        story: choosePlayer[player - 1] + ", Orc ile savaşından sonra yara almış fakat orc'u öldürmeyi başarmış." + choosePlayer[player - 1] + ", her ne kadar korkmuş olsada yoluna devam etmiş. Yolda bir ogre ile karşılaşmış. Ne yapacaksın? 1-) Savaş 2-) Umursama",
+        actions: [battleOgre, ignoreOgre] 
+    },
+    {
+        story: choosePlayer[player - 1] + ", Yaralanan " + choosePlayer[player - 1] + ", mağarada geceyi geçirmeye karar vermiş. Sabah olduğunda yola devam etmiş. Mağaranın derinliklerine doğru ilerlerken gözlerine inanamamış. Karşısında eski çağlardan kalan insanların bir sürü altını ve mücevheri olan bir sandık görmüş. Sandığı açmaya karar vermiş ve içinden bir ejderha çıkmış. Ne yapacaksın? 1-) Savaş 2-) Umursama",
+        actions: [battleDragon, ignoreDragon]
+    },
+    {
+        story: choosePlayer[player - 1] + ", Ejderha ile savaşından sonra çok ağır yaralar almış fakat ejderhayı öldürmeyi başarmış. " + choosePlayer[player - 1] + ", her ne kadar korkmuş olsada ve takatı kalmamış olsada özgürlüğünü tekrardan kazanmak için yoluna devam etmiş. Yolun sonlarına doğru gelirken bir şapırtı sesi duymuş ve sese doğru gitmeye karar vermiş. Sese doğru gidince karşısında gördüğü şeyden ötürü dehşete düşmüş. 3 başlı dev gibi bir hydra varmış karşısında fakat özgürlüğünü elde etmek için herşeyi yapmaya hazırdı. Ne yapacaksın? 1-) Savaş 2-) Umursama",
+        actions: [battleHydra, ignoreHydra]
+    },
+    {
+        story: choosePlayer[player - 1] + ", artık sona geldiğini bilen " + choosePlayer[player - 1] + ", ileride bir ışıltı görmüş ve ışıltıya doğru gitmeye karar vermiş. Işıltıya doğru gittiğinde karşısında daha önce hiç görmediği bir yaratık varmış. Bu yaratık çok güçlü bir boss'muş. Artık son savaş başlıyordu...",
+        actions: [battleBoss, ignoreBoss]
+    },
+    {
+        story: "Oyun bitti! Bu oyunda " + choosePlayer[player - 1] + " karakteri ile oynadın ve zafer senin oldu!"
+    }
+
+];
+
 choosePlayerName();
+
 function choosePlayerName(){
     console.log("Lütfen hangi oyuncu ile oynamak istediğini seç:\n");
     for (let index = 0; index < choosePlayer.length; index++) {
@@ -45,56 +76,56 @@ function choosePlayerName(){
 }
 
 function startGame(){
-    console.log("Oyun başlıyor...");
-    console.log("Sağlık: " + health);
-    console.log("Eşyalar: " + items);
-    console.log("Oyun başladı!");
-    if (player == 1) {
-        startHavhavHasan();
+    if (player >= 1 && player <= 9) {
         
-    }
-    else if (player == 2) {
-        startHedefSasiranSumeyye();
-        console.log("Hedef Şaşıran Sümeyye ile oyun başladı!");
-    }
-    else if (player == 3) {
-        startPasliHayriye();
-        console.log("Paslı Hayriye ile oyun başladı!");
-    }
-    else if (player == 4) {
-        startPofudukPasa();
-        console.log("Pofuduk Paşa ile oyun başladı!");
-    }
-    else if (player == 5) {
-        startKopekNecmi();
-        console.log("Köpek Necmi ile oyun başladı!");
-    }
-    else if (player == 6) {
-        startMarsliMahmut();
-        console.log("Marslı Mahmut ile oyun başladı!");
-    }
-    else if (player == 7) {
-        startSikiciSteve();
-        console.log("Sıkıcı Steve ile oyun başladı!");
-    }
-    else if (player == 8) {
-        startBorkOrk();
-        console.log("Börk Ork ile oyun başladı!");
-    }
-    else if (player == 9) {
-        startRoboGoril();
-        console.log("Robo Goril ile oyun başladı!");
+        console.log("Oyun başlıyor...");
+        console.log("Sağlık: " + health);
+        console.log("Oyun başladı!");
+        startStory();
+    }else{
+        console.log("Geçersiz karakter! Lütfen 1 ve 9 arasında tercihlerinizi yapınız!");
+        choosePlayerName();
     }
 }
 
-function startHavhavHasan(){
-    console.log("Havhav Hasan ile oyun başladı!");
-    story = ["Havhav Hasan, bir gün ormanda dolaşmaya karar vermiş. Ormanda yürürken bir taraftan ses gelmeye başlamış. Sesin geldiği yöne doğru ilerlemeye başlamış. Sesin geldiği yöne doğru ilerlerken bir goblin ile karşılaşmış. Ne yapacaksın? 1-) Savaş 2-) Umursama", 
-    action = [1, 2], 
-    doAction = [battleGoblin, ignoreGoblin],
-]; 
-    battleGoblin();
-    console.log(story[0]);
+function endGame(){
+    console.log("Oyun bitti! " + choosePlayer[player - 1] + " öldü!" + " Bu oyunda " + fame + " şan kazandın. Kötü bir sonla bitti! Karanlık seni özleyecek...");    
+    isGame = false;
+}
+
+function startStory() {
+    if (fame < 0) {
+        console.log("Şanın - ye düştü. Karanlık seni bir korkak olarak hatırlayacak...");
+        isGame = false;
+        return;
+    }
+    if (!isGame || isDead || isWin || isLose) {
+        return; 
+    }
+    let currentStory = story[currentStoryIndex];
+    console.log(currentStory.story);
+    if (currentStory.actions) {
+        let choice = parseInt(prompt("Bir seçim yap (1 veya 2):"));
+        
+        if (choice === 1) {
+            currentStory.actions[0]();
+            currentStoryIndex++;
+        } else if (choice === 2) {
+            currentStory.actions[1]();
+            currentStoryIndex++;
+        } else {
+            console.log("Geçersiz seçim!");
+            startStory();
+        }
+    } else {
+        console.log(currentStory.story); 
+        return;
+    }
+    if (currentStoryIndex < story.length) {
+        startStory();
+    } else {
+        console.log("Oyun bitti!");
+    }
 }
 
 function battleGoblin() {
@@ -111,7 +142,7 @@ function battleGoblin() {
                     console.log("Goblin öldü!");
                     isBattle = false;
                     fame += 20;
-                    health += 20;
+                    health += health * 2 - 10;
                     break;
                 }
                 goblinDamage = Math.floor(Math.random() * 10);
@@ -121,6 +152,7 @@ function battleGoblin() {
                     console.log(choosePlayer[player - 1] + " öldü!");
                     isDead = true;
                     isBattle = false;
+                    isGame = false;
                     break;
                 }
         }
@@ -146,7 +178,7 @@ function battleTroll(){
                     console.log("Troll öldü!");
                     isBattle = false;
                     fame += 40;
-                    health += 40;
+                    health += health * 2 + 20;
                     break;
                 }
                 trollDamage = Math.floor(Math.random() * 15);
@@ -156,6 +188,7 @@ function battleTroll(){
                     console.log(choosePlayer[player - 1] + " öldü!");
                     isDead = true;
                     isBattle = false;
+                    isGame = false;
                     break;
                 }
         }
@@ -181,7 +214,7 @@ function battleOrc(){
                     console.log("Orc öldü!");
                     isBattle = false;
                     fame += 60;
-                    health += 60;
+                    health += health * 2 + 40;
                     break;
                 }
                 orcDamage = Math.floor(Math.random() * 20);
@@ -191,6 +224,7 @@ function battleOrc(){
                     console.log(choosePlayer[player - 1] + " öldü!");
                     isDead = true;
                     isBattle = false;
+                    isGame = false;
                     break;
                 }
         }
@@ -216,7 +250,7 @@ function battleOgre(){
                     console.log("Ogre öldü!");
                     isBattle = false;
                     fame += 80;
-                    health += 80;
+                    health += health * 2 + 50;
                     break;
                 }
                 ogreDamage = Math.floor(Math.random() * 25);
@@ -226,6 +260,7 @@ function battleOgre(){
                     console.log(choosePlayer[player - 1] + " öldü!");
                     isDead = true;
                     isBattle = false;
+                    isGame = false;
                     break;
                 }
         }
@@ -237,38 +272,39 @@ function ignoreOgre() {
     fame -= 100;
 }
 
-function battleCyclops(){
-    console.log("Cyclops ile savaş başlıyor!");
+function battleDragon(){
+    console.log("Dragon ile savaş başlıyor!");
     isBattle = true;
     while (isBattle) {
-        if (cyclops.health > 0) {
-            console.log("Cyclops canı: " + cyclops.health);
+        if (dragon.health > 0) {
+            console.log("dragon canı: " + dragon.health);
             console.log(choosePlayer[player - 1] + " canı: " + health);
                 let damage = Math.floor(Math.random() * 20);
-                cyclops.health -= damage;
-                console.log("Cyclops'e " + damage + " hasar verdin!");
-                if (cyclops.health <= 0) {
-                    console.log("Cyclops öldü!");
+                dragon.health -= damage;
+                console.log("Dragon'a " + damage + " hasar verdin!");
+                if (dragon.health <= 0) {
+                    console.log("Dragon öldü!");
                     isBattle = false;
                     fame += 100;
-                    health += 100;
+                    health += health * 2 + 80;
                     break;
                 }
-                cyclopsDamage = Math.floor(Math.random() * 30);
-                health -= cyclopsDamage;
-                console.log("Cyclops sana " + cyclopsDamage + " hasar verdi!");
+                dragonDamage = Math.floor(Math.random() * 30);
+                health -= dragonDamage;
+                console.log("Dragon sana " + dragonDamage + " hasar verdi!");
                 if (health <= 0) {
                     console.log(choosePlayer[player - 1] + " öldü!");
                     isDead = true;
                     isBattle = false;
+                    isGame = false;
                     break;
                 }
         }
     }
 }
 
-function ignoreCyclops() {
-    console.log("Cyclops'u umursamadın ve şehirdeki şanın azaldı!");
+function ignoreDragon() {
+    console.log("Dragon'u umursamadın ve şehirdeki şanın azaldı!");
     fame -= 120;
 }
 
@@ -286,7 +322,7 @@ function battleHydra(){
                     console.log("Hydra öldü!");
                     isBattle = false;
                     fame += 120;
-                    health += 120;
+                    health += health * 2 + 90;
                     break;
                 }
                 hydraDamage = Math.floor(Math.random() * 35);
@@ -296,6 +332,7 @@ function battleHydra(){
                     console.log(choosePlayer[player - 1] + " öldü!");
                     isDead = true;
                     isBattle = false;
+                    isGame = false;
                     break;
                 }
         }
@@ -307,76 +344,6 @@ function ignoreHydra() {
     fame -= 140;
 }
 
-function battleChimera(){
-    console.log("Chimera ile savaş başlıyor!");
-    isBattle = true;
-    while (isBattle) {
-        if (chimera.health > 0) {
-            console.log("Chimera canı: " + chimera.health);
-            console.log(choosePlayer[player - 1] + " canı: " + health);
-                let damage = Math.floor(Math.random() * 20);
-                chimera.health -= damage;
-                console.log("Chimera'ya " + damage + " hasar verdin!");
-                if (chimera.health <= 0) {
-                    console.log("Chimera öldü!");
-                    isBattle = false;
-                    fame += 140;
-                    health += 140;
-                    break;
-                }
-                chimeraDamage = Math.floor(Math.random() * 40);
-                health -= chimeraDamage;
-                console.log("Chimera sana " + chimeraDamage + " hasar verdi!");
-                if (health <= 0) {
-                    console.log(choosePlayer[player - 1] + " öldü!");
-                    isDead = true;
-                    isBattle = false;
-                    break;
-                }
-        }
-    }
-}
-
-function ignoreChimera() {
-    console.log("Chimera'yı umursamadın ve şehirdeki şanın azaldı!");
-    fame -= 160;
-}
-
-function battleKraken(){
-    console.log("Kraken ile savaş başlıyor!");
-    isBattle = true;
-    while (isBattle) {
-        if (kraken.health > 0) {
-            console.log("Kraken canı: " + kraken.health);
-            console.log(choosePlayer[player - 1] + " canı: " + health);
-                let damage = Math.floor(Math.random() * 20);
-                kraken.health -= damage;
-                console.log("Kraken'e " + damage + " hasar verdin!");
-                if (kraken.health <= 0) {
-                    console.log("Kraken öldü!");
-                    isBattle = false;
-                    fame += 160;
-                    health += 160;
-                    break;
-                }
-                krakenDamage = Math.floor(Math.random() * 45);
-                health -= krakenDamage;
-                console.log("Kraken sana " + krakenDamage + " hasar verdi!");
-                if (health <= 0) {
-                    console.log(choosePlayer[player - 1] + " öldü!");
-                    isDead = true;
-                    isBattle = false;
-                    break;
-                }
-        }
-    }
-}
-
-function ignoreKraken() {
-    console.log("Kraken'ı umursamadın ve şehirdeki şanın azaldı!");
-    fame -= 180;
-}
-
 function battleBoss(){
     console.log("Boss ile savaş başlıyor!");
     isBattle = true;
@@ -384,14 +351,14 @@ function battleBoss(){
         if (boss.health > 0) {
             console.log("Boss canı: " + boss.health);
             console.log(choosePlayer[player - 1] + " canı: " + health);
-                let damage = Math.floor(Math.random() * 20);
+                let damage = boss.damage * Math.floor(Math.random() * 20);
                 boss.health -= damage;
                 console.log("Boss'a " + damage + " hasar verdin!");
                 if (boss.health <= 0) {
                     console.log("Boss öldü!");
                     isBattle = false;
                     fame += 200;
-                    health += 200;
+                    health += health * 2 + 100;
                     break;
                 }
                 bossDamage = Math.floor(Math.random() * 50);
@@ -401,9 +368,20 @@ function battleBoss(){
                     console.log(choosePlayer[player - 1] + " öldü!");
                     isDead = true;
                     isBattle = false;
+                    isGame = false;
                     break;
                 }
         }
     }
 }
 
+function ignoreBoss() {
+    console.log("Boss'u umursamadın fakat boss seni ezdi geçti savaşarak ölmek yerine korkak gibi ölmeyi tercih ettin!");
+    isGame = false;
+    fame -= 200;
+}
+window.onload = function() {
+    if (isGame) {
+        startStory();
+    }
+}
