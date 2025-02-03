@@ -19,7 +19,7 @@ const gecedeOlanlar = () => {
     let kurbanIndex = Math.floor(Math.random() * oyundaHayattaOlanlar.length);
     let kurban = oyundaHayattaOlanlar[kurbanIndex];
     if (kurban !== katil) {
-        alert(`${kurban} gece öldü 👻`);
+        alert(`${kurban} gece öldü 🧛👻🧛`);
         olenler.push(kurban);
         oyundaHayattaOlanlar.splice(kurbanIndex, 1);
     } else {
@@ -30,54 +30,55 @@ const gecedeOlanlar = () => {
 
 const soruyaCevapVer = (supheli) => {
     const katilCevaplar = [
-        "Beni suçlama ben sadece burada dolaşıyordum",
-        "Gerçekten bir şey bilmiyorum ve o an orada değildim",
-        "Sadece geçiyordum kimseye zarar verme amacım yoktu",
-        "Evet ben de gördüm ama kimseyi suçlamak istemiyorum"
+        "😠 Beni suçlama, ben sadece burada dolaşıyordum",
+        "🤷‍♂️ Gerçekten bir şey bilmiyorum ve o an orada değildim",
+        "🚶‍♂️ Sadece geçiyordum, kimseye zarar verme amacım yoktu",
+        "👀 Evet, ben de gördüm ama kimseyi suçlamak istemiyorum"
     ];
 
     const masumCevaplar = {
         "Ali": [
-            "Benim hiç suçum yok lütfen bana güvenin",
-            "Ben sadece bir yolcuyum hiç bir alakam yok",
-            "Bana bir şey söyleyin ben hepinizden masumum",
+            "😇 Benim hiç suçum yok, lütfen bana güvenin",
+            "🚶‍♂️ Ben sadece bir yolcuyum, hiç bir alakam yok",
+            "🙏 Bana bir şey söyleyin, ben hepinizden masumum",
         ],
         "Ayşe": [
-            "Suçlu olsam bunu kabul ederdim ama ben masumum",
-            "Bunu yapmam gerçekten bilmiyorum ne oldu",
-            "Beni suçlamayın ben sadece bir şüphelim",
+            "🛡️ Suçlu olsam bunu kabul ederdim, ama ben masumum",
+            "🤔 Bunu yapmam, gerçekten bilmiyorum ne oldu",
+            "🙅‍♀️ Beni suçlamayın, ben sadece bir şüphelim",
         ],
         "Mehmet": [
-            "Benim işim değil inanın bana",
-            "Her şey çok karmaşık ama ben buna karışmadım",
-            "Suçlu değilim biri beni yanlış anlamış olabilir",
+            "🧑‍🔧 Benim işim değil, inanın bana",
+            "🤯 Her şey çok karmaşık, ama ben buna karışmadım",
+            "🤦‍♂️ Suçlu değilim, biri beni yanlış anlamış olabilir",
         ],
         "Zeynep": [
-            "Hayır, kesinlikle suçlu değilim",
-            "Beni karıştırmayın olayla ilgim yok",
-            "Herkes masum ben de dahil birini suçlamak kolay değil",
+            "🙅‍♀️ Hayır, kesinlikle suçlu değilim",
+            "✋ Beni karıştırmayın, olayla ilgim yok",
+            "🤷‍♀️ Herkes masum, ben de dahil, birini suçlamak kolay değil",
         ],
         "Emre": [
-            "Ben hiç kimseye zarar veremem masumum",
-            "Hepinizin gözleri önümde ben sadece izliyorum",
-            "Gecenin karanlığında bir şey göremem ki ben çok korkarım",
+            "😇 Ben hiç kimseye zarar veremem, masumum",
+            "👀 Hepinizin gözleri önümde, ben sadece izliyorum",
+            "🌌 Gecenin karanlığında bir şey göremem ki, ben çok korkarım",
         ],
         "Fatma": [
-            "Gerçekten bir şey görmedim sadece korktum",
-            "Suçlu olmadığımı biliyorum biri bana tuzak kuruyor",
-            "Beni suçlamadan önce düşünmelisiniz ben masumum",
+            "😨 Gerçekten bir şey görmedim, sadece korktum",
+            "🪤 Suçlu olmadığımı biliyorum, biri bana tuzak kuruyor",
+            "🤔 Beni suçlamadan önce düşünmelisiniz, ben masumum",
         ],
         "Serkan": [
-            "Kimseyi öldüremem buna cesaretim yok",
-            "Ben burada bir şeyler konuşmak için değilim masumum",
-            "Bir şey bilmiyorum sadece içeri girmeye çalışıyordum",
+            "🙅‍♂️ Kimseyi öldüremem, buna cesaretim yok",
+            "🗨️ Ben burada bir şeyler konuşmak için değilim, masumum",
+            "🚪 Bir şey bilmiyorum, sadece içeri girmeye çalışıyordum",
         ],
         "Meryem": [
-            "Gerçekten ne olduğuna dair bir fikrim yok",
-            "Herkes masum ben de dahil birini suçlamak kolay değil",
-            "Kimseye zarar vermem bana güvenin",
+            "🤷‍♀️ Gerçekten ne olduğuna dair bir fikrim yok",
+            "🤔 Herkes masum, ben de dahil, birini suçlamak kolay değil",
+            "😇 Kimseye zarar vermem, bana güvenin",
         ]
     };
+
 
     if (supheli === katil) {
         return katilCevaplar[Math.floor(Math.random() * katilCevaplar.length)];
@@ -102,7 +103,7 @@ const katiliBulmayaCalis = () => {
 
     while (devam) {
         if (oyundaHayattaOlanlar.length <= 2) {
-            alert(`Oyun bitti! Katil kazandı. Katil ${katil}'idi`);
+            alert(`Oyun bitti ve Katil kazandı 🧛🧛🧛 Katil ${katil}'idi`);
             break;
         }
 
