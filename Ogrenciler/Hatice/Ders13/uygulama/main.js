@@ -1,96 +1,109 @@
-alert("TaskManager' a Hoşgeldiniz")
-const tasks = []; 
-function addTask() {
-    const name = prompt("Görevin adı nedir?");
-    const content = prompt("Görevin içeriği nedir?");
-    if (!name || !content) {
-        console.log("Tüm alanlar doldurulmalıdır.");
-        return;
-    }
-    const task = {
-        id: tasks.length + 1,
-        name: name,
-        content: content,
-        completed: false,
-    };
-    tasks.push(task);
-    console.log(`Görev "${name}" başarıyla eklendi!`);
-}
-function listTasks() {
-    if (tasks.length === 0) {
-        console.log("Hiç görev bulunamadı.");
-        return;
-    }
-    console.log("Görev Listesi:");
-    for (let i = 0; i < tasks.length; i++) {
-        const task = tasks[i];
+alert("Task Manager'a hoşgeldiniz!");
+
+function taskManager() {
+    while (true) {
         console.log(`
-            ID: ${task.id}
-            Adı: ${task.name}
-            İçerik: ${task.content}
+            Seçenekleriniz:
+            1=) Görev Eklemek
+            2=) Görev Listelemek
+            3=) Görev Güncellemek
+            4=) Görev Silmek
+            5=) Çıkış Yapmak
+        `);
+        let secenek = prompt("1-5 arasında bir seçenek girin:");
+        if (secenek == "1") {
+            gorevEkle();
+        } else if (secenek == "2") {
+            gorevListele();
+        } else if (secenek == "3") {
+            gorevGuncelle();
+        } else if (secenek == "4") {
+            gorevSil();
+        } else if (secenek == "5") {
+            console.log("Task Manager'dan çıkıyorsunuz.");
+            break;
+        } else {
+            console.log("Geçersiz seçenek girdiniz!");
+        }
+    }
+}
+
+const gorevler = [];
+
+function gorevEkle() {
+    const ad = prompt("Görevinizin adı nedir?");
+    const icerik = prompt("Görevinizin içeriği nedir?");
+    if (ad === "" || icerik === "") {
+        console.log("Ad ve içerik alanlarını doldurmak zorunludur!");
+        return;
+    }
+    const gorev = {
+        id: gorevler.length + 1,
+        ad: ad,
+        icerik: icerik
+    };
+    gorevler.push(gorev);
+    console.log(`Göreviniz "${gorev.id}" ID ile "${gorev.ad}" adında ve "${gorev.icerik}" içeriğiyle başarıyla eklendi!`);
+}
+
+function gorevListele() {
+    if (gorevler.length === 0) {
+        console.log("Task Manager gösterecek herhangi bir görev bulamadı.");
+        return;
+    }
+    console.log("Task Manager içindeki görev listeniz:");
+    for (let i = 0; i < gorevler.length; i++) {
+        let gorev = gorevler[i];
+        console.log(`
+            ${i + 1}. Görev:
+            ID: ${gorev.id}
+            Ad: ${gorev.ad}
+            İçerik: ${gorev.icerik}
         `);
     }
 }
-function updateTask() {
-    const id = parseInt(prompt("Güncellemek istediğiniz görevin ID'sini girin:"), 10);
-    if (isNaN(id)) {
-        console.log("Geçerli bir ID girilmedi.");
+
+function gorevGuncelle() {
+    let id = prompt("Güncellemek istediğiniz görevin ID'sini girin. (Bu işlemden önce listeleme yapmanız önerilir!)");
+    if (id === "") {
+        console.log("Geçerli bir ID girin!");
         return;
     }
-    for (let i = 0; i < tasks.length; i++) {
-        if (tasks[i].id === id) {
-            const newName = prompt(`Yeni görev adı (${tasks[i].name}):`) || tasks[i].name;
-            const newContent = prompt(`Yeni görev içeriği (${tasks[i].content}):`) || tasks[i].content;
-            tasks[i].name = newName;
-            tasks[i].content = newContent;
-            console.log(`Görev "${tasks[i].name}" başarıyla güncellendi!`);
+    for (let i = 0; i < gorevler.length; i++) {
+        if (gorevler[i].id == id) {
+            let yeniAd = prompt(`Yeni görev adını giriniz (Eski ad: ${gorevler[i].ad}):`);
+            let yeniIcerik = prompt(`Yeni görev içeriğini giriniz (Eski içerik: ${gorevler[i].icerik}):`);
+            //şu kısmı hocaya sor
+            if(yeniAd===""){
+                gorevler[i].ad=gorevler[i].ad;
+            }
+            gorevler[i].ad = yeniAd ; 
+            
+            gorevler[i].icerik = yeniIcerik ;
+            if(yeniIcerik===""){
+                gorevler[i].icerik=gorevler[i].icerik;
+            }
+            console.log(`Göreviniz "${gorevler[i].ad}" adıyla ve "${gorevler[i].icerik}" içeriğiyle güncellendi!`);
             return;
         }
     }
-    console.log(`ID'si ${id} olan görev bulunamadı.`);
+    console.log("Bu ID'ye ait görev bulunamadı!");
 }
-function removeTask() {
-    const id = parseInt(prompt("Silmek istediğiniz görevin ID'sini girin:"), 10);
-    if (isNaN(id)) {
-        console.log("Geçerli bir ID girilmedi.");
+
+function gorevSil() {
+    let id = prompt("Silmek istediğiniz görevin ID'sini girin. (Bu işlemden önce listeleme yapmanız önerilir!)");
+    if (id === "") {
+        console.log("Geçerli bir ID girin!");
         return;
     }
-    for (let i = 0; i < tasks.length; i++) {
-        if (tasks[i].id === id) {
-            const removedTask = tasks.splice(i, 1);
-            console.log(`Görev "${removedTask[0].name}" silindi!`);
+    for (let i = 0; i < gorevler.length; i++) {
+        if (gorevler[i].id == id) {
+            const silinenGorev = gorevler.splice(i, 1)[0];
+            console.log(`"${silinenGorev.ad}" adına ve "${silinenGorev.icerik}" içeriğine sahip görev silindi.`);
             return;
         }
     }
-    console.log(`ID'si ${id} olan görev bulunamadı.`);
-}
-function taskManager() {
-    let running = true;
-    while (running) {
-        console.log(`
-Seçenekler:
-1. Görev Ekle
-2. Görevleri Listele
-3. Görev Güncelle
-4. Görev Sil
-5. Çıkış
-`);
-        const choice = prompt("Bir seçenek girin (1-5):");
-        if (choice === "1") {
-            addTask();
-        } else if (choice === "2") {
-            listTasks();
-        } else if (choice === "3") {
-            updateTask();
-        } else if (choice === "4") {
-            removeTask();
-        } else if (choice === "5") {
-            console.log("TaskManager'dan ayrılıyorsunuz. Hoşça kalın!");
-            running = false;
-        } else {
-            console.log("Geçersiz seçenek. Tekrar deneyin.");
-        }
-    }
+    console.log("Bu ID'ye ait görev bulunamadı!");
 }
 
 taskManager();

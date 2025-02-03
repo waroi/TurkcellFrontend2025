@@ -152,6 +152,37 @@ const sorular = [
     dogruCevap: 1,
   },
 ];
+const yanlisMesajlar = [
+  "Ah, büyü ters tepti! Biraz daha pratik yapmalısın. ⚡📜",
+  "Oops! Asan yanlış hareket etti, belki de tekrar denemelisin. 🪄❌",
+  "Bu büyüyle pek etkileyici olamazsın... Belki bir kitap karıştırmanın vakti gelmiştir? 📖✨",
+  "Profesör Snape olsaydı, kesin gözlerini devirirdi! 😬⚗️",
+  "Bu büyü Hogwarts’ta geçerli değil! Yeniden denemeye ne dersin? 🏰✨",
+  "Bunu Dumbledore’a anlatmasak iyi olur... Bir daha dene! 🌟🔮",
+  "Patronus’un bile hayal kırıklığına uğradı! Tekrar dene! 🦌🌫️",
+  "Bu kadar kötü bir büyüyü en son Gilderoy Lockhart yapmıştı! 😂📚",
+  "Asan biraz küstü galiba... Biraz daha odaklanmalısın! 🪄😅",
+  "Bu büyüyle değil, ancak bir trolü etkileyebilirsin! Tekrar dene! 🧌✨"
+]
+yanlisCevap = () =>{
+  let mesajIndex = Math.floor(Math.random() * yanlisMesajlar.length);
+  console.log(yanlisMesajlar[mesajIndex]);
+  console.log("\n");
+}
+let dogruMesajlar = [
+  "🧙‍♂️ Merlin’in sakalı! Tam isabet! ✨",
+  "📜 Azkaban kaçkını değil misin? Çünkü bu cevap tam bir efsane! 😆",
+  "🪄 Wingardium Leviosa! Cevabın havalara uçtu! 🎇",
+  "⚡ Harry bile bu kadar hızlı çözümler üretemezdi! 🏅",
+  "🔥 Ateş Kadehi bile seni seçerdi! Doğru bildin! 🔮",
+  "🦉 Hedwig bile bu cevabı getiremezdi, harikasın! 💌",
+  "🏰 Hogwarts’ın büyük salonunda alkış tufanı kopuyor! 👏👏👏",
+];
+dogruCevap = () =>{
+  let mesajIndex = Math.floor(Math.random() * dogruMesajlar.length);
+  console.log(dogruMesajlar[mesajIndex]);
+  console.log("\n");
+}
 function soruSor() {
   if (can === 0) {
     console.log("Tüm canlarını kaybettin. Oyun bitti!");
@@ -170,7 +201,7 @@ function soruSor() {
     console.log("\n======================================================================================================================\n");
     rl.question("", function (cevap) {
       if (cevap == soru.dogruCevap) {
-        console.log("Harikasın!!!");
+        dogruCevap();
         anlikSoruIndex++;
         galleon++;
         soruSor();
@@ -184,7 +215,7 @@ function soruSor() {
         if (isValid) {
           can--;
           canKontrol(can);
-          console.log("Üzgünüm... Yanlış cevap verdiniz.");
+          yanlisCevap();
         }
         soruSor();
       }
@@ -217,6 +248,7 @@ function sonSoru() {
     function (cevap) {
       if (cevap === "1") {
         anlikSoruIndex = 0;
+        can = 3;
         soruSor();
       } else {
         const isValid = gecersizGiris(cevap, ikincilCevapSayisi);
