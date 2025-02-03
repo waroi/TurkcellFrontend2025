@@ -1,4 +1,4 @@
-const supheliler = ['Ali', 'Ayşe', 'Mehmet', 'Zeynep', 'Emre', 'Fatma', 'Serkan', 'Meryem'];
+const supheliler = ['Yunus', 'Sedanur', 'Varol Hocam', 'Barış', 'Ahmet', 'Ece', 'Serkan', 'Meryem'];
 var katil, gunduz, gece, devam = true;
 var oyundaHayattaOlanlar = [];
 var olenler = [];
@@ -37,32 +37,32 @@ const soruyaCevapVer = (supheli) => {
     ];
 
     const masumCevaplar = {
-        "Ali": [
+        "Yunus": [
             "😇 Benim hiç suçum yok, lütfen bana güvenin",
             "🚶‍♂️ Ben sadece bir yolcuyum, hiç bir alakam yok",
             "🙏 Bana bir şey söyleyin, ben hepinizden masumum",
         ],
-        "Ayşe": [
+        "Sedanur": [
             "🛡️ Suçlu olsam bunu kabul ederdim, ama ben masumum",
             "🤔 Bunu yapmam, gerçekten bilmiyorum ne oldu",
             "🙅‍♀️ Beni suçlamayın, ben sadece bir şüphelim",
         ],
-        "Mehmet": [
+        "Varol Hocam": [
             "🧑‍🔧 Benim işim değil, inanın bana",
             "🤯 Her şey çok karmaşık, ama ben buna karışmadım",
             "🤦‍♂️ Suçlu değilim, biri beni yanlış anlamış olabilir",
         ],
-        "Zeynep": [
+        "Barış": [
             "🙅‍♀️ Hayır, kesinlikle suçlu değilim",
             "✋ Beni karıştırmayın, olayla ilgim yok",
             "🤷‍♀️ Herkes masum, ben de dahil, birini suçlamak kolay değil",
         ],
-        "Emre": [
+        "Ahmet": [
             "😇 Ben hiç kimseye zarar veremem, masumum",
             "👀 Hepinizin gözleri önümde, ben sadece izliyorum",
             "🌌 Gecenin karanlığında bir şey göremem ki, ben çok korkarım",
         ],
-        "Fatma": [
+        "Ece": [
             "😨 Gerçekten bir şey görmedim, sadece korktum",
             "🪤 Suçlu olmadığımı biliyorum, biri bana tuzak kuruyor",
             "🤔 Beni suçlamadan önce düşünmelisiniz, ben masumum",
@@ -101,9 +101,9 @@ const katiliBulmayaCalis = () => {
     katilBelirle();
     let geceGerceklesecek = true;
 
-    while (devam) {
+    while (devam == true) {
         if (oyundaHayattaOlanlar.length <= 2) {
-            alert(`Oyun bitti ve Katil kazandı 🧛🧛🧛 Katil ${katil}'idi`);
+            alert(`Oyun bitti ve Vampir kazandı 🧛🧛🧛 Katil ${katil}'idi`);
             break;
         }
 
@@ -112,7 +112,7 @@ const katiliBulmayaCalis = () => {
 
         let secim = prompt(`Yapmak istediğiniz işlemi seçin:
 1- Şüpheli Sorgula
-2- Katili Bulmaya Çalış
+2- Vampiri Bulmaya Çalış
 3- Çıkış`);
 
         switch (secim) {
