@@ -1,152 +1,271 @@
-var screen = document.getElementById("screen")
+var screen = document.getElementById("screen");
 
-var AC = document.getElementById("AC")              //
-var square = document.getElementById("square")
-var del = document.getElementById("del")            //
-var division = document.getElementById("division")  
-var one = document.getElementById("one")
-var two = document.getElementById("two")
-var three = document.getElementById("three")
-var multiply = document.getElementById("multiply")
-var four = document.getElementById("four")
-var five = document.getElementById("five")
-var six = document.getElementById("six")
-var subtract = document.getElementById("subtract")
-var seven = document.getElementById("seven")
-var eight = document.getElementById("eight")
-var nine = document.getElementById("nine")
-var plus = document.getElementById("plus")
-var zero = document.getElementById("zero")
-var bracket = document.getElementById("bracket")
-var comma = document.getElementById("comma")
-var equal = document.getElementById("equal")        //
+var AC = document.getElementById("AC"); //
+var square = document.getElementById("square");
+var del = document.getElementById("del"); //
+var division = document.getElementById("division");
+var one = document.getElementById("one");
+var two = document.getElementById("two");
+var three = document.getElementById("three");
+var multiply = document.getElementById("multiply");
+var four = document.getElementById("four");
+var five = document.getElementById("five");
+var six = document.getElementById("six");
+var subtract = document.getElementById("subtract");
+var seven = document.getElementById("seven");
+var eight = document.getElementById("eight");
+var nine = document.getElementById("nine");
+var plus = document.getElementById("plus");
+var zero = document.getElementById("zero");
+var bracket = document.getElementById("bracket");
+var comma = document.getElementById("comma");
+var equal = document.getElementById("equal"); //
 var lB = 0;
-var lBreduced = 0;
-var element = "";
+var rB = 0;
 
 var priority = {
-    "c":1,
-    "t":2,
-    "x":3,
-    "b":4,
-    "l":0,
-    "r":0,
-}
-            
+  c: 1,
+  t: 2,
+  x: 3,
+  b: 4,
+  l: 0,
+  r: 0,
+};
 
-var bracketLeft = 0;
-var bracketRight = 0;
+bracketStack = [];
+
+var arrayToSolve = [];
 
 var operatorStack = [];
 var outputQueue = [];
 
-var screenReplaced = screen.textContent.replaceAll("(","l").replaceAll(")","r").replaceAll("×","x").replaceAll("÷","b").replaceAll("+","t").replaceAll("-","c")
-var screenSplitedArray = screenReplaced.split(/(?=[\srlxbtc]+)|(?<=[\srlxbtc]+)/)
+function getScreen() {
+  var screenReplaced = screen.textContent.trim()
+    .replaceAll("(", "l")
+    .replaceAll(")", "r")
+    .replaceAll("×", "x")
+    .replaceAll("÷", "b")
+    .replaceAll("+", "t")
+    .replaceAll("-", "c");
+  var screenSplitedArray = screenReplaced.split(
+    /(?=[\srlxbtc]+)|(?<=[\srlxbtc]+)/
+  );
+  return screenSplitedArray;
+}
 
-equal.addEventListener("click",()=>{
-    while(screenSplitedArray.length != 0){
-        element = screenSplitedArray.shift()
-        console.log(element)
-        if(element == "r" || element == "l" || element == "x" || element == "b" || element == "t" || element == "c"){
-            operatorStack.push(element)
-        }else {
-            outputQueue.push(element)
-        }
-        if(element == "r") {
-            screenSplitedArray.shift()
-            operatorStack.pop()
-            element = operatorStack.pop()
-            lB = operatorStack.filter((val)=>{return val=="l"}).length
-            console.log(operatorStack)
-            console.log(lB)
+function countOccurrences(arr, val) {
+  return arr.filter((a) => a == val).length;
+}
 
-            lBreduced = lB-1;
-            while(lB >= lBreduced){
-                if(priority[element] < priority[operatorStack[-1]]){
-                    operatorPop = operatorStack.pop()
-                    outputQueue.push(operatorPop)
-                    operatorStack.push(element)
-                } else {
-                    outputQueue.push(operatorPop)
-                    operatorStack.push(element)
-                }
-                operatorStack = removeLastMatch(operatorStack,"l")
-                outputQueue = removeLastMatch(outputQueue,"l")
-                lB = operatorStack.filter((val)=>{return val=="l"}).length
-            }
-
-
-        }
-
-        console.log(outputQueue)
-        console.log(operatorStack)
+// Bir sonraki derse refactor edilecek
+function bracketFinder(arr) {
+  let index = 0;
+  let flag = true;
+  lB = arr.indexOf("l");
+  arr.forEach((element) => {
+    index++;
+    if (element == "l") {
+      bracketStack.push(element);
+    } else if (element == "r") {
+      bracketStack.pop();
+      if (index != 0 && bracketStack.length == 0 && flag == true) {
+        rB = index;
+        flag = false;
+      }
     }
-
-}
-)
-
-
-
-square.addEventListener("click",()=>{screen.textContent+=square.textContent})
-division.addEventListener("click",()=>{screen.textContent+=division.textContent})
-one.addEventListener("click",()=>{screen.textContent+=one.textContent})
-two.addEventListener("click",()=>{screen.textContent+=two.textContent})
-three.addEventListener("click",()=>{screen.textContent+=three.textContent})
-multiply.addEventListener("click",()=>{screen.textContent+=multiply.textContent})
-four.addEventListener("click",()=>{screen.textContent+=four.textContent})
-five.addEventListener("click",()=>{screen.textContent+=five.textContent})
-six.addEventListener("click",()=>{screen.textContent+=six.textContent})
-subtract.addEventListener("click",()=>{screen.textContent+=subtract.textContent})
-seven.addEventListener("click",()=>{screen.textContent+=seven.textContent})
-eight.addEventListener("click",()=>{screen.textContent+=eight.textContent})
-nine.addEventListener("click",()=>{screen.textContent+=nine.textContent})
-plus.addEventListener("click",()=>{screen.textContent+=plus.textContent})
-zero.addEventListener("click",()=>{screen.textContent+=zero.textContent})
-comma.addEventListener("click",()=>{screen.textContent+=comma.textContent})
-
-bracket.addEventListener("click",
-    ()=>{
-        bracketLeft = screen.textContent.split("(").length-1
-        bracketRight = screen.textContent.split(")").length-1
-
-        if(bracketLeft>bracketRight){
-            screen.textContent+=")"
-        } else {
-            screen.textContent+="(" 
-        }
-    }
-)
-
-
-del.addEventListener("click",()=>{screen.textContent=screen.textContent.slice(0,-1)})
-
-function addition(number1,number2){
-    return number1+number2
+  });
+  solve = arr.slice(lB + 1, rB - 1);
+  arr.splice(lB, solve.length + 2, solve);
+  return arr;
 }
 
-function subtract(number1,number2){
-    return number1-number2
+function parseLoop(arr) {
+  if (!Array.isArray(arr)) return arr;
+  while (arr.filter((val) => val == "l").length != 0) {
+    arr = bracketFinder(arr);
+  }
+  arr = arr.map(parseLoop);
+
+  return arr;
 }
 
-function division(number1,number2){
-    return number1/number2
+function parser(arr) {
+  while (arr.filter((val) => val == "l").length != 0) {
+    arr = bracketFinder(arr);
+  }
+  arr = parseLoop(arr);
+  return arr;
 }
 
-function multiply(number1,number2){
-    return number1*number2
+function hasSubArray(arr) {
+  let boolean = false;
+  arr.forEach((element) =>
+    Array.isArray(element) == true ? (boolean = true) : null
+  );
+  return boolean;
 }
 
-function removeLastMatch(arr, val){
-    let lastIndex = arr.lastIndexOf(val);
-    if (lastIndex !== -1){arr.splice(lastIndex, 1);}
-    return arr;
+function evaluateExpression(arr) {
+  if (!Array.isArray(arr)) return arr;
+
+  arr = arr.map(evaluateExpression);
+
+  return tokenPrioritySolver(arr);
 }
 
+function tokenUser(arr, token) {
+  tokenIndex = arr.indexOf(token);
+  num1 = parseFloat(arr[tokenIndex - 1]);
+  num2 = parseFloat(arr[tokenIndex + 1]);
+  let result = 0;
+  let newArr = [];
 
+  switch (token) {
+    case "t":
+      result = toplama(num1, num2);
+      break;
+    case "c":
+      result = cikarma(num1, num2);
+      break;
+    case "x":
+      result = carpma(num1, num2);
+      break;
+    case "b":
+      result = bolme(num1, num2);
+      break;
+  }
+  if (arr.length != 3) {
+    newArr = arr
+      .slice(0, tokenIndex - 1)
+      .concat(arr.slice(tokenIndex + 1, arr.length));
+  } else {
+    newArr = result;
+  }
+  newArr[tokenIndex - 1] = result;
 
+  return newArr;
+}
 
+function tokenPrioritySolver(arr) {
+  let tokenIndex = 0;
+  let tokenArr = [];
+  while (countOccurrences(arr, "x")) {
+    tokenIndex = arr.indexOf("x");
+    tokenArr = [arr[tokenIndex - 1], "x", arr[tokenIndex + 1]];
+    arr.splice(tokenIndex - 1, 3, tokenUser(tokenArr, "x"));
+  }
+  while (countOccurrences(arr, "b")) {
+    tokenIndex = arr.indexOf("b");
+    tokenArr = [arr[tokenIndex - 1], "b", arr[tokenIndex + 1]];
+    arr.splice(tokenIndex - 1, 3, tokenUser(tokenArr, "b"));
+  }
+  while (countOccurrences(arr, "c")) {
+    tokenIndex = arr.indexOf("c");
+    tokenArr = [arr[tokenIndex - 1], "c", arr[tokenIndex + 1]];
+    arr.splice(tokenIndex - 1, 3, tokenUser(tokenArr, "c"));
+  }
+  while (countOccurrences(arr, "t")) {
+    tokenIndex = arr.indexOf("t");
+    tokenArr = [arr[tokenIndex - 1], "t", arr[tokenIndex + 1]];
+    arr.splice(tokenIndex - 1, 3, tokenUser(tokenArr, "t"));
+  }
+  return arr;
+}
 
-AC.addEventListener("click",
-    () => {
-    screen.textContent = "";
-})
+equal.addEventListener("click", () => {
+  let sc = getScreen();
+  console.log(evaluateExpression(parser(sc)))
+  screen.textContent = evaluateExpression(parser(sc));
+});
+
+square.addEventListener("click", () => {
+  // screen.textContent += square.textContent;
+});
+division.addEventListener("click", () => {
+  screen.textContent += "÷";
+});
+one.addEventListener("click", () => {
+  screen.textContent += "1";
+});
+two.addEventListener("click", () => {
+  screen.textContent += "2";
+});
+three.addEventListener("click", () => {
+  screen.textContent += "3";
+});
+multiply.addEventListener("click", () => {
+  screen.textContent += "×";
+});
+four.addEventListener("click", () => {
+  screen.textContent += "4";
+});
+five.addEventListener("click", () => {
+  screen.textContent += "5";
+});
+six.addEventListener("click", () => {
+  screen.textContent += "6";
+});
+subtract.addEventListener("click", () => {
+  screen.textContent += "-";
+});
+seven.addEventListener("click", () => {
+  screen.textContent += "7";
+});
+eight.addEventListener("click", () => {
+  screen.textContent += "8";
+});
+nine.addEventListener("click", () => {
+  screen.textContent += "9";
+});
+plus.addEventListener("click", () => {
+  screen.textContent += "+";
+});
+zero.addEventListener("click", () => {
+  screen.textContent += "0";
+});
+comma.addEventListener("click", () => {
+  screen.textContent += ",";
+});
+
+bracket.addEventListener("click", () => {
+  bracketLeft = screen.textContent.split("(").length - 1;
+  bracketRight = screen.textContent.split(")").length - 1;
+
+  if (bracketLeft > bracketRight) {
+    screen.textContent += ")";
+  } else {
+    screen.textContent += "(";
+  }
+});
+
+del.addEventListener("click", () => {
+  screen.textContent = screen.textContent.slice(0, -1);
+});
+
+function toplama(number1, number2) {
+  return number1 + number2;
+}
+
+function cikarma(number1, number2) {
+  return number1 - number2;
+}
+
+function bolme(number1, number2) {
+  return number1 / number2;
+}
+
+function carpma(number1, number2) {
+  return number1 * number2;
+}
+
+function removeLastMatch(arr, val) {
+  let lastIndex = arr.lastIndexOf(val);
+  if (lastIndex !== -1) {
+    arr.splice(lastIndex, 1);
+  }
+  return arr;
+}
+
+AC.addEventListener("click", () => {
+  screen.textContent = "";
+});
