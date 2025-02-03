@@ -11,6 +11,9 @@ const iksirFiyat = 5;
 let anlikSoruIndex = 0;
 const ikincilCevapSayisi = 2;
 const soruSayisi = 6;
+let karakterAd;
+let karakterBina;
+let canGostergesi;
 
 const canKontrol = (can) => {
   if (can === 0) {
@@ -20,6 +23,7 @@ const canKontrol = (can) => {
     console.log("\n======================================================================================================================\n");
     process.exit(0);
   } else {
+    canGosterge(can);
     console.log(
       `Olamaz, Hatalar yapıldı, ama hâlâ büyücü ruhu var! Unutma sadece ${can} hakkın kaldı.`
     );
@@ -36,7 +40,7 @@ const gecersizGiris = (cevap, cevapSayisi) => {
   }
 };
 function magaza() {
-  console.log(`\n🛍️ Mağazaya hoş geldin! (Galleon: ${galleon}, Can: ${can})`);
+  console.log(`\n🛍️ Mağazaya hoş geldin! (Galleon:🪙  ${galleon}, Can: ${can})`);
   console.log(`1. Can İksiri - ${iksirFiyat} Galleon (Canını +1 artırır)`);
   console.log("2. Çıkış");
   rl.question("Ne almak istersiniz?(1 - 2)", function (cevap) {
@@ -45,8 +49,9 @@ function magaza() {
         galleon -= iksirFiyat;
         can += 1;
         console.log(
-          `🧪 Can İksiri satın alındı! (Yeni Can: ${can}, Kalan Galleon: ${galleon})`
+          `🧪 Can İksiri satın alındı! (Yeni Can: ${can}, Kalan Galleon:🪙  ${galleon})`
         );
+        canGosterge(can); 
         console.log("\n======================================================================================================================\n");
         soruSor();
       } else {
@@ -61,7 +66,60 @@ function magaza() {
     }
   });
 }
-
+function karakterIsim(){
+  rl.question(
+    "Oyuna başlamadan önce karakterin için belirlediğin ismi yazmalısın...\n",
+    function(cevap){
+      if(cevap){
+        karakterAd = cevap;
+        console.log(`Hoş Geldin ${cevap}`);
+        binaSec();
+      }
+    }
+  )
+}
+function binaSec(){
+  const soru= { 
+    soru: "Seçmen Şapka başına yerleşirken, hangi binaya ait olduğunu keşfetmeye hazır mısın? Seçimini yap ve büyülü yolculuğun başlasın! 🏰✨",
+    secenekler: ["🦁 Gryffindor – Cesur, sadık ve gözü pek misin?", "🦅Ravenclaw – Zeki, meraklı ve yaratıcı mısın?", "🦡 Hufflepuff – Adil, çalışkan ve güvenilir misin?", "🐍 Slytherin – Hırslı, kurnaz ve kararlı mısın?"]
+  }
+  console.log(soru.soru);
+    for (let i = 0; i < soru.secenekler.length; i++) {
+      console.log(`${i + 1}. ${soru.secenekler[i]}`);
+    }
+    console.log("\n======================================================================================================================\n");
+    rl.question("", (bina)=>{
+      switch(bina){
+        case "1": 
+          karakterBina = "🦁 Gryffindor";
+          soruSor();
+          break;
+        case "2":
+          karakterBina = "🦅 Ravenclaw";
+          soruSor();
+          break;
+        case "3": 
+          karakterBina = "🦡 Hufflepuff";
+          soruSor();
+          break;
+        case "4":
+          karakterBina = "🐍 Slytherin";
+          soruSor();
+          break;
+        default:
+          console.log("Böyle bir bina yok! Yeniden seç.");
+          binaSec();
+          break;
+      }
+    })
+}
+function canGosterge(can){
+  canGostergesi ="";
+  for(let i=0; i<can; i++){
+    canGostergesi+="❤️  ";
+  }
+}
+canGosterge(can);
 const sorular = [
   {
     soru: "Gece yatakhaneden çıkıp lavaboya gittin fakat geri döndüğünde anahtarını unuttuğunu fark ettin. Kapıyı açıp yatağına dönebilmek için bazı büyülü sözlere ihtiyacın var. Üç seçeneğin var ve bunlardan sadece biri kapıyı açabilecek büyü... Doğru büyüyü bulamazsan kendine uyuyacak başka bir yer bulman gerekecek. İyi şanslar...",
@@ -94,6 +152,37 @@ const sorular = [
     dogruCevap: 1,
   },
 ];
+const yanlisMesajlar = [
+  "Ah, büyü ters tepti! Biraz daha pratik yapmalısın. ⚡📜",
+  "Oops! Asan yanlış hareket etti, belki de tekrar denemelisin. 🪄❌",
+  "Bu büyüyle pek etkileyici olamazsın... Belki bir kitap karıştırmanın vakti gelmiştir? 📖✨",
+  "Profesör Snape olsaydı, kesin gözlerini devirirdi! 😬⚗️",
+  "Bu büyü Hogwarts’ta geçerli değil! Yeniden denemeye ne dersin? 🏰✨",
+  "Bunu Dumbledore’a anlatmasak iyi olur... Bir daha dene! 🌟🔮",
+  "Patronus’un bile hayal kırıklığına uğradı! Tekrar dene! 🦌🌫️",
+  "Bu kadar kötü bir büyüyü en son Gilderoy Lockhart yapmıştı! 😂📚",
+  "Asan biraz küstü galiba... Biraz daha odaklanmalısın! 🪄😅",
+  "Bu büyüyle değil, ancak bir trolü etkileyebilirsin! Tekrar dene! 🧌✨"
+]
+yanlisCevap = () =>{
+  let mesajIndex = Math.floor(Math.random() * yanlisMesajlar.length);
+  console.log(yanlisMesajlar[mesajIndex]);
+  console.log("\n");
+}
+let dogruMesajlar = [
+  "🧙‍♂️ Merlin’in sakalı! Tam isabet! ✨",
+  "📜 Azkaban kaçkını değil misin? Çünkü bu cevap tam bir efsane! 😆",
+  "🪄 Wingardium Leviosa! Cevabın havalara uçtu! 🎇",
+  "⚡ Harry bile bu kadar hızlı çözümler üretemezdi! 🏅",
+  "🔥 Ateş Kadehi bile seni seçerdi! Doğru bildin! 🔮",
+  "🦉 Hedwig bile bu cevabı getiremezdi, harikasın! 💌",
+  "🏰 Hogwarts’ın büyük salonunda alkış tufanı kopuyor! 👏👏👏",
+];
+dogruCevap = () =>{
+  let mesajIndex = Math.floor(Math.random() * dogruMesajlar.length);
+  console.log(dogruMesajlar[mesajIndex]);
+  console.log("\n");
+}
 function soruSor() {
   if (can === 0) {
     console.log("Tüm canlarını kaybettin. Oyun bitti!");
@@ -101,29 +190,32 @@ function soruSor() {
   }
   if (anlikSoruIndex <= soruSayisi - 1) {
     const soru = sorular[anlikSoruIndex];
-    console.log(`Kalan Can: ${can} ------- Mevcut Galleon: ${galleon}`);
-    console.log("Can iksiri satın almak için 9'u tuşlayarak mağazaya gidebilirsin.");
+    console.log(`Karakter: ${karakterAd} ------- Seçilen Bina: ${karakterBina} ------- Kalan Can: ${canGostergesi} ------- Mevcut Galleon:🪙  ${galleon}`);
+    console.log("Can iksiri satın almak için 9'u tuşlayarak mağazaya gidebilirsin.\n");
+    console.log("Oyundan çıkmak için 0'ı tuşlayabilirsin.");
     console.log("\n======================================================================================================================\n");
     console.log(soru.soru);
     for (let i = 0; i < soru.secenekler.length; i++) {
       console.log(`${i + 1}. ${soru.secenekler[i]}`);
     }
     console.log("\n======================================================================================================================\n");
-    rl.question(" ", function (cevap) {
+    rl.question("", function (cevap) {
       if (cevap == soru.dogruCevap) {
-        console.log("Harikasın!!!");
+        dogruCevap();
         anlikSoruIndex++;
         galleon++;
         soruSor();
-      }
-      else if(cevap === "9"){
+      }else if (cevap === "0"){
+        console.log("Çıkış Yapılıyor...");
+        process.exit(0);
+      } else if(cevap === "9"){
         magaza();
       } else {
         const isValid = gecersizGiris(cevap, soru.secenekler.length);
         if (isValid) {
           can--;
           canKontrol(can);
-          console.log("Üzgünüm... Yanlış cevap verdiniz.");
+          yanlisCevap();
         }
         soruSor();
       }
@@ -139,7 +231,7 @@ rl.question(
   function (cevap) {
     if (cevap === "1") {
       console.log("Öyleyse başlıyoruz.");
-      soruSor();
+      karakterIsim();
     } else {
       console.log(
         "Şimdiden pes edenlerin hayattan bir başarı beklentisi olmamalı."
@@ -156,6 +248,7 @@ function sonSoru() {
     function (cevap) {
       if (cevap === "1") {
         anlikSoruIndex = 0;
+        can = 3;
         soruSor();
       } else {
         const isValid = gecersizGiris(cevap, ikincilCevapSayisi);
