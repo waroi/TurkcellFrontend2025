@@ -39,7 +39,7 @@ while (cikisYap === "evet") {
 			continue;
 
 		default:
-			console.log("Lütfen geçerli bir seçenecek seçiniz!");
+			console.log("Lütfen geçerli bir seçenek seçiniz!");
 			break;
 	}
 	console.log(gorevler);
