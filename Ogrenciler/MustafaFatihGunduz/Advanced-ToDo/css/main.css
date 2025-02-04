@@ -6,8 +6,8 @@
   box-sizing: border-box;
 }
 
-.todo-section .card-body button {
-  background-color: #f8f9fa;
+.todo-section .card-lists-container button {
+  background-color: transparent;
   width: 32px;
   height: 32px;
   border: none;
@@ -30,6 +30,16 @@
   background-color: #FBA518;
   color: white;
 }
+.todo-section .in-progress:hover {
+  border-radius: 50%;
+  background-color: #007bff;
+  color: white;
+}
+.todo-section .in-review:hover {
+  border-radius: 50%;
+  background-color: #DD88CF;
+  color: white;
+}
 .todo-section .info {
   font-size: 12px;
 }
@@ -37,6 +47,14 @@
   width: 48px;
   height: 24px;
   border-radius: 50%;
+}
+.todo-section .card-lists-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  min-height: 60px;
 }
 
 /*!

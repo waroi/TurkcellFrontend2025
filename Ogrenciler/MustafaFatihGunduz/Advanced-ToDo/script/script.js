@@ -9,24 +9,23 @@ function addTask() {
     let taskText = taskInput.value.trim();
 
     if (taskText !== "") {
-        let taskList = document.querySelector(".card-list");
+        let taskList = document.querySelector(".to-do-list");
 
         let taskCard = document.createElement("div");
-        taskCard.className = "p-3 mb-2 bg-light";
+        taskCard.className = "p-3 mb-2 rounded-pill";
 
         let taskTextSpan = document.createElement("span");
         taskTextSpan.innerText = taskText;
         taskTextSpan.className = "task-text";
 
         let taskButtonsAndInfo = document.createElement("div");
-        taskButtonsAndInfo.className = "row d-flex justify-content-center align-items-center";
+        taskButtonsAndInfo.className = "row d-flex align-items-center";
 
         let taskComplete = document.createElement("button");
         let taskInReview= document.createElement("button");
         let taskInProgress = document.createElement("button");
         let taskDelete = document.createElement("button");
         let taskEdit = document.createElement("button");
-        let taskInfo = document.createElement("span");
         let taskPhoto = document.createElement("img");
 
         taskInProgress.className = "in-progress";
@@ -34,15 +33,14 @@ function addTask() {
         taskComplete.className = "complete";
         taskDelete.className = "delete";
         taskEdit.className = "edit";
-        taskInfo.className = "info";
         taskPhoto.className = "photo";
         taskPhoto.src = "assets/avatar.jpg";
     
-        let inReviewIcon = document.createElement("i");
-        inReviewIcon.className = "fa-solid fa-check";
+        let taskInReviewIcon = document.createElement("i");
+        taskInReviewIcon.className = "fa-solid fa-book";
 
-        let inProgressIcon = document.createElement("i");
-        inProgressIcon.className = "fa-solid fa-check";
+        let taskInProgressIcon = document.createElement("i");
+        taskInProgressIcon.className = "fa-solid fa-bars-progress";
 
         let taskCompleteIcon = document.createElement("i");
         taskCompleteIcon.className = "fa-solid fa-check";
@@ -53,11 +51,11 @@ function addTask() {
         let taskEditIcon = document.createElement("i");
         taskEditIcon.className = "fa-solid fa-pencil";
 
-        let taskInfoText = document.createTextNode("Task Info");
-
         taskComplete.appendChild(taskCompleteIcon);
         taskDelete.appendChild(taskDeleteIcon);
         taskEdit.appendChild(taskEditIcon);
+        taskInReview.appendChild(taskInReviewIcon);
+        taskInProgress.appendChild(taskInProgressIcon);
         
 
         taskList.appendChild(taskCard);
@@ -65,7 +63,6 @@ function addTask() {
         taskCard.appendChild(taskButtonsAndInfo);
 
         taskButtonsAndInfo.appendChild(taskPhoto);
-        taskButtonsAndInfo.appendChild(taskInfoText);
         taskButtonsAndInfo.appendChild(taskInProgress);
         taskButtonsAndInfo.appendChild(taskInReview);
         taskButtonsAndInfo.appendChild(taskComplete);
@@ -76,7 +73,7 @@ function addTask() {
 
         taskComplete.addEventListener("click", completeTask);
         taskInReview.addEventListener("click", addInReview);
-        taskInProgress.addEventListener("click", addInprogress);
+        taskInProgress.addEventListener("click", addInProgress);
         taskDelete.addEventListener("click", deleteTask);
         taskEdit.addEventListener("click", editTask);
     }
@@ -86,8 +83,8 @@ function completeTask() {
     let taskCard = this.parentElement.parentElement;
     let taskText = taskCard.querySelector(".task-text");
     if (taskText) {
+        taskCard.style.backgroundColor = "#28a745";
         taskText.style.textDecoration = "line-through";
-        taskText.style.color = "green";
         isCompleted = true;
     }
     if(isCompleted){
@@ -96,10 +93,16 @@ function completeTask() {
     }
 }
 
-function adInProgress() {
+function addInProgress() {
     let taskCard = this.parentElement.parentElement;
+    let taskText = taskCard.querySelector(".task-text");
     isInProgress = true;
     if(isInProgress){
+        isCompleted = false;
+        if (!isCompleted) {
+            taskText.style.textDecoration = "none";
+        }
+        taskCard.style.backgroundColor = "#007bff";
         let inProgressList = document.querySelector(".in-progress-list");
         inProgressList.appendChild(taskCard);
     }
@@ -107,8 +110,14 @@ function adInProgress() {
 
 function addInReview() {
     let taskCard = this.parentElement.parentElement;
+    let taskText = taskCard.querySelector(".task-text");
     isInReview = true;
     if(isInProgress){
+        isCompleted = false;
+        if (!isCompleted) {
+            taskText.style.textDecoration = "none";
+        }
+        taskCard.style.backgroundColor = "#DD88CF";
         let inReviewList = document.querySelector(".in-review-list");
         inReviewList.appendChild(taskCard);
     }
