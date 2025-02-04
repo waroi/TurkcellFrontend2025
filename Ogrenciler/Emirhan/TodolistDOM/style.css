@@ -1,3 +1,67 @@
-.completed-task{
-    text-decoration: line-through;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.taskInput {
+  width: calc(100% - 50px);
+  padding: 10px;
+  font-size: large;
+  border-radius: 4px;
+  border: none;
+  padding: 5px 10px;
+}
+
+.completed-task {
+  text-decoration: line-through;
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: large;
+  color: rgb(220, 220, 220);
+}
+
+.liClass {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  background-color: gray;
+  padding: 5px 20px;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.buttonDiv {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.taskP {
+  font-size: large;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.animate {
+  animation: starAnimate 1.2s;
+}
+
+@keyframes starAnimate {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.5) rotate(180deg);
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
+  }
+}
+
+.star,
+.point {
+  width: 30px;
+  height: 50px;
 }
