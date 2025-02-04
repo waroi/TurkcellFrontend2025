@@ -5,9 +5,10 @@ let done = [];
 const save = document
   .getElementById("save")
   .addEventListener("click", saveFunction);
-const edit_btn = document
-  .getElementById("edit")
-  .addEventListener("click", editFunction);
+const save_changes = document
+  .getElementById("save-changes")
+  .addEventListener("click", saveChangesFunction);
+let last_changed_item;
 
 function saveFunction() {
   let task_title = document.getElementById("task-title");
@@ -21,14 +22,27 @@ function saveFunction() {
     createTask(undone);
   }
 }
+function saveChangesFunction() {
+  const modal_body =
+    this.parentElement.parentElement.getElementsByClassName("modal-body")[0];
+  let title = modal_body.querySelector("input").value;
+  let detail = modal_body.querySelector("textarea").value;
+  last_changed_item.getElementsByTagName("h4").textContent = title;
+  last_changed_item.getElementsByTagName("p").textContent = detail;
+  debugger;
+}
 
 function createTask(list) {
+  const ul = document.getElementById("undone");
   let li = document.createElement("li");
   let h4 = document.createElement("h4");
   let p = document.createElement("p");
   let button = document.createElement("a");
+  button.addEventListener("click", editFunction);
   button.id = "edit";
-  button.className = "btn btn-warning";
+  button.className = `.Task-${
+    ul.getElementsByTagName("li").length
+  } btn btn-warning `;
   button.type = "button";
   button.dataset.bsToggle = "modal";
   button.dataset.bsTarget = "#editModal";
@@ -39,7 +53,6 @@ function createTask(list) {
   h4.appendChild(title);
   const detail = document.createTextNode(list[list.length - 1].detail);
   p.appendChild(detail);
-  const ul = document.getElementById("undone");
   ul.appendChild(li);
   li.appendChild(h4);
   li.appendChild(p);
@@ -47,6 +60,12 @@ function createTask(list) {
 }
 
 function editFunction() {
-  let p = this.parentElement;
-  console.log(p);
+  const edit_title = document.getElementById("edit-title");
+  const edit_detail = document.getElementById("edit-detail");
+  let parent = this.parentElement;
+  let title = parent.querySelector("h4").textContent;
+  let detail = parent.querySelector("p").textContent;
+  edit_title.value = title;
+  edit_detail.value = detail;
+  last_changed_item = parent;
 }
