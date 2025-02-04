@@ -5,7 +5,7 @@ const ToDoList = document.querySelector("#list");
 const ToDo = [
     { task: 'JavaScript çalış', completed: false },
     { task: 'Ödev yap', completed: false },
-    { task: 'Finallere Çalış', completed: false },
+    { task: 'Finallere Çalışma', completed: false },
     { task: 'Bütlere Çalış', completed: false },
 ];
 
