@@ -19,9 +19,13 @@ function updateNumbers() {
 }
 
 function addTodo(todoInput, descInput) {
+
+	const ul = document.createElement("ul");
+	ul.className = "list-group";
+	ul.id = "todoList";
 	const li = document.createElement("li");
 	li.className =
-		"list-group-item d-flex justify-content-between align-items-center";
+		"list-group-item d-flex justify-content-between ";
 	let header = document.createElement("h2");
 	header.className = "flex-shrink-1";
 	header.innerText = todoInput;
@@ -84,6 +88,7 @@ function addTodo(todoInput, descInput) {
 			editBtn.className = "btn btn-secondary btn-sm";
 		}
 	};
+
 	li.appendChild(numberSpan);
 	li.appendChild(header);
 	li.appendChild(desc);
@@ -91,6 +96,9 @@ function addTodo(todoInput, descInput) {
 	buttonRow.appendChild(li.appendChild(editBtn));
 	buttonRow.appendChild(li.appendChild(completeBtn));
 	buttonRow.appendChild(li.appendChild(deleteBtn));
-	document.getElementById("todoList").appendChild(li);
+	ul.appendChild(li);
+	const formContainer = document.getElementById("formContainer");
+	formContainer.append(ul);
+	//document.getElementById("todoList").appendChild(li);
 	updateNumbers();
 }
