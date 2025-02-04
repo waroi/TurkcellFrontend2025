@@ -31,25 +31,33 @@ function saveChangesFunction() {
   let detail = modal_body.querySelector("textarea").value;
   last_changed_item.querySelector("h4").textContent = title;
   last_changed_item.querySelector("p").textContent = detail;
-  debugger;
 }
 
 function createTask(list) {
-  const ul = document.getElementById("undone");
+  const ul = document.getElementById("undoneList");
+  document.getElementById("undoneList").className
+   = "list-unstyled";
   let li = document.createElement("li");
   let h4 = document.createElement("h4");
   let p = document.createElement("p");
   let button = document.createElement("a");
   button.addEventListener("click", editFunction);
   button.id = "edit";
-  button.className = `.Task-${
-    ul.getElementsByTagName("li").length
-  } btn btn-warning `;
+  button.className = `btn btn-warning me-2`;
   button.type = "button";
   button.dataset.bsToggle = "modal";
   button.dataset.bsTarget = "#editModal";
   const text = document.createTextNode("Edit");
   button.appendChild(text);
+
+  let donebutton = document.createElement("a");
+  donebutton.addEventListener("click", moveToDone);
+  donebutton.id = "donebtn";
+  donebutton.type = "button";
+  donebutton.className = `btn btn-success`;
+  const text1 = document.createTextNode("Done");
+  donebutton.appendChild(text1);
+
   li.className = "task";
   const title = document.createTextNode(list[list.length - 1].title);
   h4.appendChild(title);
@@ -59,6 +67,7 @@ function createTask(list) {
   li.appendChild(h4);
   li.appendChild(p);
   li.append(button);
+  li.append(donebutton);
 }
 
 function editFunction() {
@@ -70,4 +79,17 @@ function editFunction() {
   edit_title.value = title;
   edit_detail.value = detail;
   last_changed_item = parent;
+}
+
+function moveToDone(){
+  let parent = this.parentElement;
+  done.push({ title: parent.querySelector("h4").textContent, detail: parent.querySelector("p").textContent });
+  const ul = document.getElementById("doneList");
+  document.getElementById("doneList").className
+  = "list-unstyled";
+
+  ul.appendChild(parent);
+
+  parent.parentNode.replaceChild(parent, '');
+  
 }

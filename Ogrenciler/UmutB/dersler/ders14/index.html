@@ -19,37 +19,32 @@
 
   <body>
     <header>
-      <h1>To-do list</h1>
+      <h1 class="my-5 text-center h1">To-do list</h1>
     </header>
     <main>
       <section>
         <div class="container">
           <div class="row">
-            <div class="col-md-6 col-lg-4">
-              <div id="undone">
+            <div class="col-md-6 p-1 mh-100">
+              <div id="undone" class="border p-4 rounded bg-light">
                 <h2>Undone</h2>
+               
+                <ul id="undoneList" class="list-unstyled"></ul>
                 <button
-                  type="button"
-                  class="btn btn-primary"
-                  data-bs-toggle="modal"
-                  data-bs-target="#addModal"
-                >
-                  <i class="fas fa-plus"></i>
-                  Add Task
-                </button>
-                <ul id="undoneList"></ul>
+                type="button"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#addModal"
+              >
+                <i class="fas fa-plus"></i>
+                Add Task
+              </button>
               </div>
             </div>
-            <div class="col-md-6 col-lg-4">
-              <div id="progress">
-                <h2>In Progress</h2>
-                <ul id="progressList"></ul>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-4">
-              <div id="done">
+            <div class="col-md-6 p-1 mh-100">
+                <div id="done" class="border p-4 rounded bg-light">
                 <h2>Done</h2>
-                <ul id="doneList"></ul>
+                <ul id="doneList"class="list-unstyled"></ul>
               </div>
             </div>
           </div>
