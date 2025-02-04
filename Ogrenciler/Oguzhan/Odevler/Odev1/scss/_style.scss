@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.banner {
+  background-image: url(../assets/banner.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.urun-card {
+  .urun-card-body {
+    .urun-card-button {
+      visibility: hidden;
+    }
+  }
+  &:hover {
+    .urun-card-button {
+      visibility: visible;
+    }
+  }
+}
