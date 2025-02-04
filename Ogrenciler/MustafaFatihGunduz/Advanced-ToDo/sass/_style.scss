@@ -6,12 +6,9 @@
     box-sizing: border-box;
 }
 
-body{
-}
-
 .todo-section{
-   .card-body button{
-        background-color: #f8f9fa;
+   .card-lists-container button{
+        background-color: transparent;
         width: 32px;
         height: 32px;
         border: none;
@@ -34,6 +31,16 @@ body{
         background-color: #FBA518;
         color: white;
     }
+    .in-progress:hover{
+        border-radius: 50%;
+        background-color: #007bff;
+        color: white;
+    }
+    .in-review:hover{
+        border-radius: 50%;
+        background-color: #DD88CF;
+        color: white;
+    }
     .info{
         font-size: 12px;
     }
@@ -41,5 +48,13 @@ body{
         width: 48px;
         height: 24px;
         border-radius: 50%;
+    }
+    .card-lists-container{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        min-height: 60px;
     }
 }
