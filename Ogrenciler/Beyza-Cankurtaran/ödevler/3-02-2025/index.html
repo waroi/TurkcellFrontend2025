@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do App</title>
+    <link rel="stylesheet"href="./css/main.css"/>
+
+</head>
+<body>
+    <section>
+        <div class="container mt-5">
+            <img class="img-fluid w-50 mx-auto d-block"src="./header.png" alt="logo"/>
+            <h2 class="primary text-center text-white ">To-Do App'e Hoşgeldiniz!</h2>
+            <div class="input-group">
+                <input type="text" placeholder="Görevinizi buraya yazın"class="form-control"id="input"/>
+                <button class="btn btn-primary" onclick="gorevEkle()">Ekle</button> 
+            </div>
+            <ul>
+                <li>Task1</li>
+                <li>Task2</li>
+                <li>Task3</li>
+            </ul>
+            <ul id="todoList" class="list-group"></ul>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
