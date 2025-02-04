@@ -1,6 +1,34 @@
-.task-list{
-    .task{
-        border: 1px solid #000;
+body {
+  min-height: 100vh;
+  background-color: #4158d0;
+  background-image: linear-gradient(
+    43deg,
+    #4158d0 0%,
+    #c850c0 46%,
+    #ffcc70 100%
+  );
+
+  font-family: "Montserrat", serif;
+
+  section {
+    padding-top: 10rem;
+
+    & > div {
+      box-shadow: 0 0 50px #fff;
     }
 
+    .container {
+      background-color: #ffffff50;
+      border-radius: 2rem;
+    }
+
+    li {
+      transition: background-color 0.2s;
+      background-color: #ffffff50 !important;
+
+      &:has(input:checked) {
+        background-color: #f9e9ff !important;
+      }
+    }
+  }
 }
