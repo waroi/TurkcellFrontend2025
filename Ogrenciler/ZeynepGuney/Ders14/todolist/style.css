@@ -1,0 +1,27 @@
+body{
+    background-color: #e3f2fd;
+}
+.container{
+    max-width: max-content;
+}
+li{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: beige;
+    border-radius: 10px;
+    list-style: none;
+    cursor: pointer;
+    margin: 10px 0;
+}
+li i{
+    height: 30px;
+    width: 30px;
+}
+li check{
+    background-color: pink;
+    height: 30px;
+    width: 30px;
+}
