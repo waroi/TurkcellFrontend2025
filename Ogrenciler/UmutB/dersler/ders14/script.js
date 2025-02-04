@@ -1,3 +1,5 @@
+alert("✵ Hoşgeldiniz ✵");
+
 let undone = [];
 let progress = [];
 let done = [];
@@ -27,8 +29,8 @@ function saveChangesFunction() {
     this.parentElement.parentElement.getElementsByClassName("modal-body")[0];
   let title = modal_body.querySelector("input").value;
   let detail = modal_body.querySelector("textarea").value;
-  last_changed_item.getElementsByTagName("h4").textContent = title;
-  last_changed_item.getElementsByTagName("p").textContent = detail;
+  last_changed_item.querySelector("h4").textContent = title;
+  last_changed_item.querySelector("p").textContent = detail;
   debugger;
 }
 
