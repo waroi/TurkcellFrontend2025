@@ -242,9 +242,7 @@ function startGame() {
   console.log(
     "GİDİLEBİLECEK YERLER:'market','terkedilmiş ev','hastane','benzin istasyonu','polis merkezi'"
   );
-  console.log(
-    'Örnek kullanım şekli:➡️ gameState = makeChoice(gameState, "market");'
-  );
+  console.log('Örnek kullanım şekli:➡️ makeChoice(gameState, "market");');
   let initialState = createGameState();
   showStatus(initialState);
   return initialState;

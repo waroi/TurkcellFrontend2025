@@ -3,10 +3,379 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Optimized Layout</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-CEe1MBSK9WBES5CeCGDNEB6Geub8e1JAYYzIP9wqndeiKRe8U9w6EdKxD7Rh3SLB"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="css/main.css" />
   </head>
+
   <body>
-    <button class="btn btn-primary">Deneme</button>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+        <div class="container-fluid">
+          <div class="d-flex justify-content-around w-100">
+            <div class="text-center py-1 me-5">
+              <a class="navbar-brand" href="#">
+                <img
+                  src="assets/logo_new.png"
+                  alt="Logo"
+                  width="45"
+                  height="30"
+                  class="d-inline-block align-text-top"
+                />
+                UseBrain
+              </a>
+            </div>
+            <div>
+              <form class="d-flex gap-2" role="search">
+                <input
+                  class="form-control"
+                  type="search"
+                  placeholder="İstediğin özelliği ara"
+                  aria-label="Search"
+                />
+                <button class="btn btn-outline-light" type="submit">
+                  Search
+                </button>
+              </form>
+            </div>
+
+            <div>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="nav nav-pills nav-justified">
+                  <a class="nav-link" aria-current="page" href="#">
+                    Anasayfa
+                  </a>
+
+                  <a class="nav-link" href="#">Ürünler</a>
+                  <a class="nav-link" href="#">Hakkımızda</a>
+                  <a class="nav-link" href="#"> İletişim </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Banner -->
+      <section class="banner min-vh-100 d-flex align-items-center bg-warning">
+        <div class="container text-center bg-light opacity-75">
+          <div class="row align-items-center text-black">
+            <div class="col-6">
+              <h1>
+                Beyin Bedava! <br />
+                Ama senin beynin 🫵🏼
+              </h1>
+              <p>
+                UseBrain ile yeni bir beyin almak çok kolay! Albert
+                Einstein'den, Newton'a kadar tüm dahi beyinler peşin fiyatına 6
+                taksit ile senin olsun!
+              </p>
+            </div>
+
+            <div class="card col-6 bg-light">
+              <div class="text-center">
+                <img
+                  src="assets/brain.png"
+                  alt="Brain"
+                  class="brain-image"
+                  width="80%"
+                />
+              </div>
+              <div class="card-body">
+                <p class="card-text mb-1 text-center">
+                  Kliniğimizde üretilen klon beyinlerin garantisi 1 yıldır. 1
+                  yıl içerisinde sorun yaşamanız halinde kliniğimize başvurmanız
+                  gerekmektedir. Ürünlerimiz %100 yerli ve millidir.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Urunler -->
+
+      <section id="Urunler">
+        <!-- İlkKart Grubu -->
+        <section class="bg-secondary py-5">
+          <div class="container">
+            <div class="mb-5 text-center">
+              <h2 class="section-title">Ürünlerimiz</h2>
+            </div>
+
+            <div class="row g-4">
+              <div class="col-md-4 urun-card">
+                <div class="card bg-secondary text-white border-warning">
+                  <div class="old-brain-container text-center">
+                    <h2 class="mt-2">Albert Einstein</h2>
+                    <img
+                      src="assets/old_brain/albert-bg.png"
+                      alt="Brain"
+                      class="old-brain-image"
+                      width="80%"
+                    />
+                  </div>
+                  <div class="card-body urun-card-body d-flex flex-column">
+                    <p class="card-text mb-1 text-center">
+                      Eski ama altın değerinde bir beyin. Dil uzatma hatası
+                      düzeltildi.
+                    </p>
+                    <button class="urun-card-button btn btn-primary">
+                      Satın al
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div
+                  class="card bg-secondary text-white border-warning urun-card"
+                >
+                  <div class="old-brain-container text-center">
+                    <h2 class="mt-2">Albert Einstein</h2>
+                    <img
+                      src="assets/old_brain/albert-bg.png"
+                      alt="Brain"
+                      class="old-brain-image"
+                      width="80%"
+                    />
+                  </div>
+                  <div class="card-body urun-card-body d-flex flex-column">
+                    <p class="card-text mb-1 text-center">
+                      Eski ama altın değerinde bir beyin. Dil uzatma hatası
+                      düzeltildi.
+                    </p>
+                    <button class="urun-card-button btn btn-primary">
+                      Satın al
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div
+                  class="card bg-secondary text-white border-warning urun-card"
+                >
+                  <div class="old-brain-container text-center">
+                    <h2 class="mt-2">Albert Einstein</h2>
+                    <img
+                      src="assets/old_brain/albert-bg.png"
+                      alt="Brain"
+                      class="old-brain-image"
+                      width="80%"
+                    />
+                  </div>
+                  <div class="card-body urun-card-body d-flex flex-column">
+                    <p class="card-text mb-1 text-center">
+                      Eski ama altın değerinde bir beyin. Dil uzatma hatası
+                      düzeltildi.
+                    </p>
+                    <button class="urun-card-button btn btn-primary">
+                      Satın al
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- İkinci Kart Grubu -->
+        <section class="bg-dark py-5">
+          <div class="container">
+            <div class="mb-5 text-center">
+              <h2 class="section-title text-white">Ürünlerimiz</h2>
+            </div>
+
+            <div class="row g-4">
+              <div class="col-md-4">
+                <div
+                  class="card bg-secondary text-white border-warning urun-card"
+                >
+                  <div class="old-brain-container text-center">
+                    <h2 class="mt-2">Albert Einstein</h2>
+                    <img
+                      src="assets/old_brain/albert-bg.png"
+                      alt="Brain"
+                      class="old-brain-image"
+                      width="80%"
+                    />
+                  </div>
+                  <div class="card-body urun-card-body d-flex flex-column">
+                    <p class="card-text mb-1 text-center">
+                      Eski ama altın değerinde bir beyin. Dil uzatma hatası
+                      düzeltildi.
+                    </p>
+                    <button class="urun-card-button btn btn-primary">
+                      Satın al
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div
+                  class="card bg-secondary text-white border-warning urun-card"
+                >
+                  <div class="old-brain-container text-center">
+                    <h2 class="mt-2">Albert Einstein</h2>
+                    <img
+                      src="assets/old_brain/albert-bg.png"
+                      alt="Brain"
+                      class="old-brain-image"
+                      width="80%"
+                    />
+                  </div>
+                  <div class="card-body urun-card-body d-flex flex-column">
+                    <p class="card-text mb-1 text-center">
+                      Eski ama altın değerinde bir beyin. Dil uzatma hatası
+                      düzeltildi.
+                    </p>
+                    <button class="urun-card-button btn btn-primary">
+                      Satın al
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div
+                  class="card bg-secondary text-white border-warning urun-card"
+                >
+                  <div class="old-brain-container text-center">
+                    <h2 class="mt-2">Albert Einstein</h2>
+                    <img
+                      src="assets/old_brain/albert-bg.png"
+                      alt="Brain"
+                      class="old-brain-image"
+                      width="80%"
+                    />
+                  </div>
+                  <div class="card-body urun-card-body d-flex flex-column">
+                    <p class="card-text mb-1 text-center">
+                      Eski ama altın değerinde bir beyin. Dil uzatma hatası
+                      düzeltildi.
+                    </p>
+                    <button class="urun-card-button btn btn-primary">
+                      Satın al
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+<!-- İlkKart Grubu -->
+        <section id="Urunler">
+          <section class="bg-warning py-5">
+            <div class="container">
+              <div class="mb-5 text-center">
+                <h2 class="section-title">Ürünlerimiz</h2>
+              </div>
+  
+              <div class="row g-4">
+                <div class="col-md-4 urun-card">
+                  <div class="card bg-secondary text-white border-warning">
+                    <div class="old-brain-container text-center">
+                      <h2 class="mt-2">Albert Einstein</h2>
+                      <img
+                        src="assets/old_brain/albert-bg.png"
+                        alt="Brain"
+                        class="old-brain-image"
+                        width="80%"
+                      />
+                    </div>
+                    <div class="card-body urun-card-body d-flex flex-column">
+                      <p class="card-text mb-1 text-center">
+                        Eski ama altın değerinde bir beyin. Dil uzatma hatası
+                        düzeltildi.
+                      </p>
+                      <button class="urun-card-button btn btn-primary">
+                        Satın al
+                      </button>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="col-md-4">
+                  <div
+                    class="card bg-secondary text-white border-warning urun-card"
+                  >
+                    <div class="old-brain-container text-center">
+                      <h2 class="mt-2">Albert Einstein</h2>
+                      <img
+                        src="assets/old_brain/albert-bg.png"
+                        alt="Brain"
+                        class="old-brain-image"
+                        width="80%"
+                      />
+                    </div>
+                    <div class="card-body urun-card-body d-flex flex-column">
+                      <p class="card-text mb-1 text-center">
+                        Eski ama altın değerinde bir beyin. Dil uzatma hatası
+                        düzeltildi.
+                      </p>
+                      <button class="urun-card-button btn btn-primary">
+                        Satın al
+                      </button>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="col-md-4">
+                  <div
+                    class="card bg-secondary text-white border-warning urun-card"
+                  >
+                    <div class="old-brain-container text-center">
+                      <h2 class="mt-2">Albert Einstein</h2>
+                      <img
+                        src="assets/old_brain/albert-bg.png"
+                        alt="Brain"
+                        class="old-brain-image"
+                        width="80%"
+                      />
+                    </div>
+                    <div class="card-body urun-card-body d-flex flex-column">
+                      <p class="card-text mb-1 text-center">
+                        Eski ama altın değerinde bir beyin. Dil uzatma hatası
+                        düzeltildi.
+                      </p>
+                      <button class="urun-card-button btn btn-primary">
+                        Satın al
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+      </section>
+    </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
