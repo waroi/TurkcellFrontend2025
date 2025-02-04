@@ -25,26 +25,25 @@
       <section>
         <div class="container">
           <div class="row">
-            <div class="col-md-6 p-1 mh-100">
-              <div id="undone" class="border p-4 rounded bg-light">
+            <div class="col-md-6 p-1">
+              <div id="undone" class="border p-4 rounded bg-light h-100">
                 <h2>Undone</h2>
-               
                 <ul id="undoneList" class="list-unstyled"></ul>
                 <button
-                type="button"
-                class="btn btn-primary"
-                data-bs-toggle="modal"
-                data-bs-target="#addModal"
-              >
-                <i class="fas fa-plus"></i>
-                Add Task
-              </button>
+                  type="button"
+                  class="btn btn-primary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#addModal"
+                >
+                  <i class="fas fa-plus"></i>
+                  Add Task
+                </button>
               </div>
             </div>
-            <div class="col-md-6 p-1 mh-100">
-                <div id="done" class="border p-4 rounded bg-light">
+            <div class="col-md-6 p-1">
+              <div id="done" class="border p-4 rounded bg-light h-100">
                 <h2>Done</h2>
-                <ul id="doneList"class="list-unstyled"></ul>
+                <ul id="doneList" class="list-unstyled"></ul>
               </div>
             </div>
           </div>
@@ -73,11 +72,17 @@
             ></button>
           </div>
           <div class="modal-body">
-            <input type="text" placeholder="Task Title" id="task-title" />
+            <input
+              type="text"
+              placeholder="Task Title"
+              id="task-title"
+              class="d-block m-1 w-100"
+            />
             <textarea
               name="detail"
               placeholder="Detail"
               id="task-detail"
+              class="d-block m-1 w-100"
             ></textarea>
           </div>
           <div class="modal-footer">
@@ -114,12 +119,20 @@
             ></button>
           </div>
           <div class="modal-body">
-            <input type="text" placeholder="Task Title" id="edit-title" />
-            <textarea
-              name="detail"
-              placeholder="Detail"
-              id="edit-detail"
-            ></textarea>
+            <form action="">
+              <input
+                type="text"
+                placeholder="Task Title"
+                id="edit-title"
+                class="d-block m-1 w-100"
+              />
+              <textarea
+                name="detail"
+                placeholder="Detail"
+                id="edit-detail"
+                class="d-block m-1 w-100"
+              ></textarea>
+            </form>
           </div>
           <div class="modal-footer">
             <button
