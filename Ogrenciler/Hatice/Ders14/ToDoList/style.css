@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #F4F4F4;
+  font-family: 'Arial', sans-serif;
+}
+.container {
+  max-width: 900px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+.btn-success {
+  background-color: #198754;
+  border: none;
+}
+.btn-success:hover {
+  background-color: #198754;
+}
+.list-group-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+.done {
+  text-decoration: line-through;
+  background-color: #2E8B57;
+  color: white;
+}
+.editTodo {
+  color: #f62a2a;
+  cursor: pointer;
+}
+.removeTodo {
+  color: #f62a2a;
+  cursor: pointer;
+}
+.doneTodo {
+  background-color: #198754 !important;
+  color: #fff;
+}
