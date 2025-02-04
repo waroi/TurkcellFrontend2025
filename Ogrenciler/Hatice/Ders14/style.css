@@ -90,5 +90,28 @@ ul li.checked::before {
 }
 
 .doneTodo {
-  text-decoration: line-through !important;
+  background-color: green !important;
+  color: #fff;
+}
+
+.doneTodo .editTodo {
+  color: greenyellow;
+}
+
+.editTodo {
+  transition: 300ms all;
+  text-decoration: none;
+}
+
+.editTodo:hover {
+  color: black;
+}
+
+.removeTodo {
+  transform: 300ms all;
+  color: #f3621f;
+}
+
+.removeTodo:hover {
+  color: black;
 }

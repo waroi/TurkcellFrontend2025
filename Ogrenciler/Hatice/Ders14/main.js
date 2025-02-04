@@ -1,13 +1,30 @@
 const task = document.querySelector("#task");
 const btn = document.querySelector("#AddBtn");
 const ToDoList = document.querySelector("#list");
-const ToDo = []
+const ToDo = [
+    {
+        task: 'JavaScript çalış',
+        completed: false,
+    }, {
+        task: 'Ödev yap',
+        completed: false,
+    }, {
+        task: 'Finallere Çalışma',
+        completed: false,
+    }, {
+        task: 'Bütlere Çalış',
+        completed: false,
+    },
+]
 
 btn.addEventListener("click", addtodo);
 
 function addtodo() {
     if (task.value.length !== 0) {
-        ToDo.push(task.value)
+        ToDo.push({
+            task: task.value,
+            completed: false,
+        })
         task.value = ''
 
         showTodos(ToDo)
@@ -22,37 +39,65 @@ function showTodos(todoList) {
     ToDoList.innerHTML = ''
     for (let i = 0; i < todoList.length; i++) {
         let li = document.createElement('li')
-        li.className = 'list-group-item'
-        li.innerHTML = todoList[i]
+        li.className = 'list-group-item d-flex align-items-center justify-content-between'
+        li.innerHTML = todoList[i].task
 
-        li.addEventListener('click', addClass(li))
+        let div = document.createElement('div')
+        div.className = 'icons editTodo'
+        let editLink = document.createElement('a')
+        editLink.href = '#'
+        editLink.className = 'editTodo'
+        editLink.innerHTML = 'Düzenle'
+
+        let removeLink = document.createElement('a')
+        removeLink.href = '#'
+        removeLink.className = 'removeTodo ms-4'
+        removeLink.innerHTML = 'Sil'
+
+        div.appendChild(editLink)
+        div.appendChild(removeLink)
+        li.appendChild(div)
+
+        if (ToDo[i].completed === true) {
+            li.classList.add('doneTodo')
+        }
+
+        editLink.addEventListener('click', function () {
+            editText(i, ToDo[i].completed)
+        })
+
+        removeLink.addEventListener('click', function () {
+            ToDo.splice(i, 1)
+            showTodos(ToDo)
+        })
+
+        li.addEventListener('click', function (event) {
+            if (!event.target.classList.contains('editTodo') && !event.target.classList.contains('removeTodo')) {
+                addClass(li, i);
+            }
+        })
 
         ToDoList.appendChild(li)
-
     }
-
-
 }
 
+function editText(index, check) {
+    let newTask = prompt('Yeni görev ne olsun? (En az 1 karakter)', ToDo[index].task);
+    if (newTask !== '' && newTask.length > 1) {
+        ToDo[index].task = newTask;
+        showTodos(ToDo);
+        ToDo[index].completed = check
+    }
+}
 
-function addClass(li) {
-    // for (let i = 0; i < todos.length; i++) {
-
-    //     todos[i].addEventListener('click', () => {
-    //         console.log(todos[i])
-    //         if (todos[i].classList === 'list-group-item d-flex align-items-center justify-content-between doneTodo') {
-    //             todos[i].classList = 'list-group-item d-flex align-items-center justify-content-between'
-    //         } else {
-    //             todos[i].classList === 'list-group-item d-flex align-items-center justify-content-between doneTodo'
-    //         }
-    //     })
-    // }
-
-    console.log(li)
-    if (li.classList === 'list-group-item d-flex align-items-center justify-content-between doneTodo') {
-        li.classList = 'list-group-item d-flex align-items-center justify-content-between'
+function addClass(li, index) {
+    if (ToDo[index].completed === true) {
+        li.className = 'list-group-item d-flex align-items-center justify-content-between'
+        ToDo[index].completed = false
     } else {
-        li.classList === 'list-group-item d-flex align-items-center justify-content-between doneTodo'
+        li.className = 'list-group-item d-flex align-items-center justify-content-between doneTodo'
+        ToDo[index].completed = true
     }
 }
 
+showTodos(ToDo)
