@@ -89,9 +89,6 @@ ul li.checked::before {
   background-color: #bbb;
 }
 
-.toast {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 1050;
+.doneTodo {
+  text-decoration: line-through !important;
 }

@@ -1,4 +1,48 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Macondo&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Macondo", sans-serif;
+}
+
+.todo-section .card-body button {
+  background-color: #f8f9fa;
+  width: 32px;
+  height: 32px;
+  border: none;
+  color: #343a40;
+  font-size: 0.7rem;
+  cursor: pointer;
+}
+.todo-section .complete:hover {
+  border-radius: 50%;
+  background-color: #28a745;
+  color: white;
+}
+.todo-section .delete:hover {
+  border-radius: 50%;
+  background-color: #dc3545;
+  color: white;
+}
+.todo-section .edit:hover {
+  border-radius: 50%;
+  background-color: #FBA518;
+  color: white;
+}
+.todo-section .info {
+  font-size: 12px;
+}
+.todo-section .photo {
+  width: 48px;
+  height: 24px;
+  border-radius: 50%;
+}
+
 /*!
  * Bootstrap  v5.3.3 (https://getbootstrap.com/)
  * Copyright 2011-2024 The Bootstrap Authors
