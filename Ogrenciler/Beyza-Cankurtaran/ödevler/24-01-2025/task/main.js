@@ -74,10 +74,10 @@ function gorevGuncelle() {
             let yeniAd = prompt(`Yeni görev adını giriniz (Eski ad: ${gorevler[i].ad}):`);
             let yeniIcerik = prompt(`Yeni görev içeriğini giriniz (Eski içerik: ${gorevler[i].icerik}):`);
             //şu kısmı hocaya sor
-            if(yeniAd===""){
-                gorevler[i].ad=gorevler[i].ad;
+            
+            if(yeniAd!==""){
+                gorevler[i].ad = yeniAd ; 
             }
-            gorevler[i].ad = yeniAd ; 
             
             gorevler[i].icerik = yeniIcerik ;
             if(yeniIcerik===""){

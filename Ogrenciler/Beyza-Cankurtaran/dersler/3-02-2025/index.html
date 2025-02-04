@@ -1,0 +1,73 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-DOM</title>
+</head>
+<body>
+    <a href="#" id="deneme">Deneme link</a>
+    <input type="text" id="text-input">
+    
+</body>
+</html>-->
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do Uygulaması</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">To-Do Uygulaması</h2>
+        <div class="input-group mb-3">
+            <input type="text" id="todoInput" class="form-control" placeholder="Yeni görev ekle...">
+            <button class="btn btn-primary" onclick="addTodo()">Ekle</button>
+        </div>
+        <ul id="todoList" class="list-group"></ul>
+    </div>
+    
+    <script>
+        function addTodo() {
+            let todoInput = document.getElementById("todoInput");
+            let todoText = todoInput.value.trim();
+            if (todoText === "") return;
+            
+            let li = document.createElement("li");
+            li.className = "list-group-item d-flex justify-content-between align-items-center";
+            li.innerHTML = `
+                <span>${todoText}</span>
+                <div>
+                    <button class="btn btn-success btn-sm" onclick="completeTodo(this)">Tamamla</button>
+                    <button class="btn btn-warning btn-sm" onclick="editTodo(this)">Düzenle</button>
+                    <button class="btn btn-danger btn-sm" onclick="deleteTodo(this)">Sil</button>
+                </div>
+            `;
+            
+            document.getElementById("todoList").appendChild(li);
+            todoInput.value = "";
+        }
+        
+        function deleteTodo(button) {
+            button.parentElement.parentElement.remove();
+        }
+        
+        function completeTodo(button) {
+            let todoItem = button.parentElement.parentElement;
+            todoItem.classList.toggle("text-decoration-line-through");
+        }
+        
+        function editTodo(button) {
+            let todoItem = button.closest("li");
+            let textSpan = todoItem.querySelector("span");
+            let newText = prompt("Görevi düzenleyin:", textSpan.innerText);
+            
+            if (newText !== null && newText.trim() !== "") {
+                textSpan.innerText = newText.trim();
+            }
+        }
+    </script>
+</body>
+</html>
