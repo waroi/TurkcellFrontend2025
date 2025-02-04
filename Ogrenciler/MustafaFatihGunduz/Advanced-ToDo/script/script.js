@@ -1,6 +1,8 @@
 let addTaskButton = document.querySelector(".add-task-button");
 addTaskButton.addEventListener("click", addTask);
 
+let isCompleted = false;
+
 function addTask() {
     let taskInput = document.getElementById("task-input");
     let taskText = taskInput.value.trim();
@@ -74,6 +76,7 @@ function completeTask() {
     if (taskText) {
         taskText.style.textDecoration = "line-through";
         taskText.style.color = "green";
+        isCompleted = true;
     }
 }
 
