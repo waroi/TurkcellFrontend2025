@@ -226,7 +226,6 @@ function karar(){
         console.log("Bir otorite istiyor diye bir kızını daha kaybetmeyi göze alamayan Joël ve eli mutlu bir yaşam sürerler ve Juel doğal yollarla hayatını kaybeder");
         console.log("tommynin yanına dönüp mutlu bir hayat sürdünüz.Joel öleiye kadar ellie ye kızı gibi davranmaya devam etti.Araları hiç bozulmadı.Oyun bitti!");
     }
-
 }
 function hastane(){
     console.log("sonunda aziz mary hastanesine ulaştınız.Görevliler ellie nin ameliyata hazırlandığını ve her şeyin normal olduğunu söyleyip hastaneden ayrılmamızı istediler.");
