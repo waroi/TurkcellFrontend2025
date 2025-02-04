@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do App</title>
+    <link rel="stylesheet" href="./css/main.css" />
+
+</head>
+
+<body>
+    <section class="bg-light">
+        <div class="container mt-5">
+            <img class="img-fluid w-50 mx-auto d-block" src="./header.png" alt="logo" />
+            <h2 class="primary text-center text-white ">To-Do App'e Hoşgeldiniz!</h2>
+            <div class="input-group mb-3">
+                <input type="text" placeholder="Görevinizi buraya yazın" class="form-control" id="input" />
+                <button class="btn btn-danger" onclick="gorevEkle()">Ekle</button>
+            </div>
+            <ul class="list-unstyled task-list">
+                <li class="list-group-item task p-2 mb-2 rounded bg-light">
+                    <div class="d-flex align-items-center">
+                        <input class="form-check-input me-3" type="checkbox" value="" id="flexCheckDefault">
+                        <p class="mb-0 flex-grow-1">JavaScript Çalış</p>
+                        <div class="btn-group">
+                            <button class="btn btn-warning btn-sm">Güncelle</button>
+                            <button class="btn btn-danger btn-sm">Sil</button>
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item task p-2 mb-2 rounded bg-light">
+                    <div class="d-flex align-items-center">
+                        <input class="form-check-input me-3" type="checkbox" value="" id="flexCheckChecked" checked>
+                        <p class="mb-0 flex-grow-1 text-decoration-line-through ">Alışveriş yap</p>
+                        <div class="btn-group">
+                            <button class="btn btn-warning btn-sm">Güncelle</button>
+                            <button class="btn btn-danger btn-sm">Sil</button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul id="todoList" class="list-group"></ul>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+
+</html>
