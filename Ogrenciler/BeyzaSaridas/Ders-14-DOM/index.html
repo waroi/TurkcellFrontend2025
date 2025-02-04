@@ -1,17 +1,132 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-   <title>DOM-TODO</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        .todo-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        .todo-header {
+            color: #2c3e50;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .input-group {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        .form-control {
+            border: none;
+            padding: 0.8rem;
+        }
+        .form-control:focus {
+            box-shadow: none;
+            border: none;
+        }
+        .btn-primary {
+            background-color: #3498db;
+            border: none;
+            padding: 0.8rem 1.5rem;
+        }
+        .list-group-item {
+            border: none;
+            border-radius: 8px !important;
+            margin-bottom: 0.5rem;
+            background: #f8f9fa;
+            transition: all 0.3s ease;
+        }
+        .list-group-item:hover {
+            transform: translateY(-4px);
+            background: #f1f3f5;
+        }
+        .btn-sm {
+            border-radius: 6px;
+            padding: 0.4rem 0.8rem;
+        }
+        .text-decoration-line-through {
+            color: #6c747c;
+            background: #e9ecef !important;
+        }
+    </style>
 </head>
 <body>
-   <div id="AddButton">Add</div>
-   <div id="EditButton">Edit</div>
-   <div id="DeleteButton">Delete</div>
+    <div class="todo-container">
+        <h2 class="todo-header text-center">✨ Görev Listesi</h2>
+        <div class="input-group mb-4">
+            <input type="text" id="todo-input" class="form-control" placeholder="Yeni görev ekleyin..." autocomplete="off">
+            <button class="btn btn-primary" onclick="addTodo()">
+                <i class="fas fa-plus me-2"></i>Ekle
+            </button>
+        </div>
+        <ul id="todo-list" class="list-group"></ul>
+    </div>
+    <script>
+        function addTodo() {
+            let input = document.getElementById("todo-input");
+            let task = input.value.trim();
+            if (task === "") return;
+            
+            let li = document.createElement("li");
+            li.className = "list-group-item d-flex justify-content-between align-items-center";
+            li.innerHTML = `
+                <span>${task}</span>
+                <div class="d-flex justify-content-center align-items-center">
+                    <div><button class="btn btn-success btn-sm me-2" onclick="completeTodo(this)" title="Tamamla">
+                        <i class="fas fa-check"></i>
+                    </button></div>
+                   <div> <button class="btn btn-warning btn-sm me-2" onclick="editTodo(this)" title="Düzenle">
+                        <i class="fas fa-edit"></i>
+                    </button></div>
+                    <div><button class="btn btn-danger btn-sm" onclick="deleteTodo(this)" title="Sil">
+                        <i class="fas fa-trash"></i>
+                    </button></div>
+                </div>
+            `;
+            document.getElementById("todo-list").appendChild(li);
+            input.value = "";
+        }
 
-   <script src="./script.js"></script>
+        function deleteTodo(button) {
+            button.closest("li").classList.add('fade-out');
+            setTimeout(() => {
+                button.closest("li").remove();
+            }, 300);
+        }
+
+        function editTodo(button) {
+            let li = button.closest("li");
+            let span = li.querySelector("span");
+            let newText = prompt("Görevi düzenleyin:", span.textContent);
+            if (newText !== null && newText.trim() !== "") {
+                span.textContent = newText;
+            }
+        }
+
+        function completeTodo(button) {
+            let li = button.closest("li");
+            li.classList.toggle("text-decoration-line-through");
+        }
+        // Enter tuşu ile görev ekleme
+        document.getElementById("todo-input").addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                addTodo();
+            }
+        });
+    </script>
 </body>
 </html>
