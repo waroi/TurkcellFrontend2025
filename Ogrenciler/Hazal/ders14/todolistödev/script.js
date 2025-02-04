@@ -11,7 +11,11 @@ function addTodo(todo) {
 	const li = document.createElement("li");
 	li.className =
 		"list-group-item d-flex justify-content-between align-items-center";
-	li.innerText = todo;
+	const p = document.createElement("h1");
+	p.innerText = todo;
+
+	const buttonRow = document.createElement("div");
+	buttonRow.className = "d-flex";
 
 	const deleteBtn = document.createElement("button");
 	deleteBtn.className = "btn btn-danger btn-sm";
@@ -29,12 +33,12 @@ function addTodo(todo) {
 	const editBtn = document.createElement("button");
 	editBtn.className = "btn btn-secondary btn-sm";
 	editBtn.innerText = "Düzenle";
-	editBtn.onclick = function () {
-		// li.classList.toggle("list-group-item-success");
-	};
+	editBtn.onclick = function () {};
 
-	li.appendChild(editBtn);
-	li.appendChild(completeBtn);
-	li.appendChild(deleteBtn);
+	li.appendChild(p);
+	li.appendChild(buttonRow);
+	buttonRow.appendChild(li.appendChild(editBtn));
+	buttonRow.appendChild(li.appendChild(completeBtn));
+	buttonRow.appendChild(li.appendChild(deleteBtn));
 	document.getElementById("todoList").appendChild(li);
 }
