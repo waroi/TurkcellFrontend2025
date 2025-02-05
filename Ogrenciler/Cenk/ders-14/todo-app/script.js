@@ -1,48 +1,65 @@
 const form = document.querySelector("form");
 const ul = document.querySelector("ul");
-const addButton = document.getElementById("add");
 const input = document.getElementById("todo-input");
+const deleteSelectedButon = document.getElementById("delete-checked");
+const deleteAllButon = document.getElementById("delete-all");
 
 const listElement = (inputValue) => {
+  // html içinde ul açtık içine burada li elementi oluşturduk
   const li = document.createElement("li");
-  li.textContent = inputValue;
-  ul.appendChild(li);
-
-  const check = document.createElement("input");
-  check.type = "checkbox";
-  li.appendChild(check);
+  li.className =
+    "list-group-item d-flex align-items-center justify-content-between";
 
   const iconDelete = document.createElement("i");
   iconDelete.className = "fa-solid fa-trash";
 
+  const iconEdit = document.createElement("i");
+  iconEdit.className = "fa-solid fa-pencil";
+
+  // Checkbox ekledik
+  const check = document.createElement("input");
+  check.type = "checkbox";
+  check.className = "form-check-input me-2";
+
+  // Görev İçeriği
+  const textGorev = document.createElement("span");
+  textGorev.textContent = inputValue;
+  textGorev.className = "flex-grow-1"; //! metni ortada genişletmek için flex-grow kullandık
+
+  // Delete Butonu
   const deleteButton = document.createElement("button");
-  deleteButton.className = "deleteBtn";
+  deleteButton.className = "btn btn-danger btn-sm ms-2";
   deleteButton.appendChild(iconDelete);
 
   deleteButton.addEventListener("click", function () {
     ul.removeChild(li);
   });
 
-  const iconEdit = document.createElement("i");
-  iconEdit.className = "fa-solid fa-pencil";
-
+  // Edit Butonu
   const editButton = document.createElement("button");
-  editButton.className = "editBtn";
+  editButton.className = "btn btn-warning btn-sm ";
   editButton.appendChild(iconEdit);
 
   editButton.addEventListener("click", function () {
-    let newInput = prompt(
-      `Görevin şu anki hali: ${inputValue}\nYeni görevi giriniz:`
-    );
-    li.textContent = newInput;
-    li.appendChild(check);
-    li.appendChild(deleteButton);
-    li.appendChild(editButton);
-    inputValue = newInput;
+    let newInput;
+    while (true) {
+      newInput = prompt(
+        `Görevin şu anki hali: ${inputValue}\nYeni görevi giriniz:`
+      );
+      if (newInput === null) break;
+      if (newInput !== "") {
+        textGorev.textContent = newInput;
+        inputValue = newInput;
+        break;
+      }
+    }
   });
 
-  li.appendChild(deleteButton);
+  ul.appendChild(li);
+  li.appendChild(check);
+  li.appendChild(textGorev);
   li.appendChild(editButton);
+  li.appendChild(deleteButton);
 };
 
 form.addEventListener("submit", function (e) {
@@ -54,140 +71,27 @@ form.addEventListener("submit", function (e) {
   }
 });
 
-// // DOM elementlerini seçme
-// const todoForm = document.getElementById("todo-form");
-// const todoInput = document.getElementById("todo-input");
-// const todoList = document.getElementById("todo-list");
+// Seçilenleri Silme Butonu
+deleteSelectedButon.addEventListener("click", function () {
+  const checkLists = document.querySelectorAll("ul li input[type='checkbox']");
+  //! ul içindeki li içindeki type checkedbox olan inputları aldık
 
-// // Todo listesi için boş array
-// let todos = [];
+  checkLists.forEach((checkbox) => {
+    if (checkbox.checked) {
+      checkbox.parentElement.remove();
+    }
+  });
+});
 
-// // Form submit olayını dinleme
-// todoForm.addEventListener("submit", function (e) {
-//   e.preventDefault();
+// Hepsini Sil
+deleteAllButon.addEventListener("click", function () {
+  const list = document.querySelectorAll("li");
 
-//   const todoText = todoInput.value.trim();
+  let deleteControl = confirm("Hepsini Silmek İstediğinize Emin Misiniz ?");
 
-//   if (todoText !== "") {
-//     addTodo(todoText);
-//     todoInput.value = "";
-//   }
-// });
-
-// // Yeni todo ekleme fonksiyonu
-// function addTodo(text) {
-//   const todo = {
-//     id: Date.now(),
-//     text: text,
-//     completed: false,
-//   };
-
-//   todos.push(todo);
-//   renderTodo(todo);
-// }
-
-// // Todo öğesini ekrana render etme
-// function renderTodo(todo) {
-//   const li = document.createElement("li");
-//   li.className =
-//     "list-group-item d-flex justify-content-between align-items-center";
-//   li.setAttribute("data-id", todo.id);
-
-//   li.innerHTML = `
-//         <div class="d-flex align-items-center">
-//             <input class="form-check-input me-2" type="checkbox" ${
-//               todo.completed ? "checked" : ""
-//             }>
-//             <span class="todo-text ${
-//               todo.completed ? "text-decoration-line-through" : ""
-//             }">${todo.text}</span>
-//         </div>
-//         <div class="btn-group">
-//             <button class="btn btn-sm btn-outline-primary edit-btn">
-//                 <i class="bi bi-pencil"></i>
-//             </button>
-//             <button class="btn btn-sm btn-outline-danger delete-btn">
-//                 <i class="bi bi-trash"></i>
-//             </button>
-//         </div>
-//     `;
-
-//   // Checkbox değişikliğini dinleme
-//   const checkbox = li.querySelector(".form-check-input");
-//   checkbox.addEventListener("change", function () {
-//     toggleTodo(todo.id);
-//   });
-
-//   // Düzenleme butonunu dinleme
-//   const editBtn = li.querySelector(".edit-btn");
-//   editBtn.addEventListener("click", function () {
-//     editTodo(todo.id);
-//   });
-
-//   // Silme butonunu dinleme
-//   const deleteBtn = li.querySelector(".delete-btn");
-//   deleteBtn.addEventListener("click", function () {
-//     deleteTodo(todo.id);
-//   });
-
-//   todoList.appendChild(li);
-// }
-
-// // Todo durumunu değiştirme
-// function toggleTodo(id) {
-//   const todo = todos.find((t) => t.id === id);
-//   todo.completed = !todo.completed;
-//   const li = todoList.querySelector(`[data-id="${id}"]`);
-//   const span = li.querySelector(".todo-text");
-//   span.classList.toggle("text-decoration-line-through");
-// }
-
-// // Todo düzenleme
-// function editTodo(id) {
-//   const li = todoList.querySelector(`[data-id="${id}"]`);
-//   const todoTextElement = li.querySelector(".todo-text");
-//   const todoText = todoTextElement.textContent;
-
-//   // Mevcut metni input ile değiştir
-//   const input = document.createElement("input");
-//   input.type = "text";
-//   input.className = "form-control";
-//   input.value = todoText;
-
-//   const parent = todoTextElement.parentElement;
-//   parent.replaceChild(input, todoTextElement);
-//   input.focus();
-
-//   // Input'un dışına tıklandığında veya Enter'a basıldığında güncelle
-//   function saveEdit() {
-//     const newText = input.value.trim();
-//     if (newText !== "") {
-//       const todo = todos.find((t) => t.id === id);
-//       todo.text = newText;
-
-//       const span = document.createElement("span");
-//       span.className = `todo-text ${
-//         todo.completed ? "text-decoration-line-through" : ""
-//       }`;
-//       span.textContent = newText;
-
-//       parent.replaceChild(span, input);
-//     }
-//   }
-
-//   input.addEventListener("blur", saveEdit);
-//   input.addEventListener("keyup", function (e) {
-//     if (e.key === "Enter") {
-//       saveEdit();
-//     }
-//   });
-// }
-
-// // Todo silme
-// function deleteTodo(id) {
-//   if (confirm("Bu görevi silmek istediğinizden emin misiniz?")) {
-//     todos = todos.filter((t) => t.id !== id);
-//     const li = todoList.querySelector(`[data-id="${id}"]`);
-//     li.remove();
-//   }
-// }
+  if (deleteControl) {
+    list.forEach((listEach) => {
+      listEach.remove();
+    });
+  }
+});
