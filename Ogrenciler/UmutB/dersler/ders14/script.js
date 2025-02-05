@@ -1,4 +1,4 @@
-alert("✵ Hoşgeldiniz ✵");
+// alert("✵ Hoşgeldiniz ✵");
 
 let undone = [];
 let progress = [];
@@ -22,6 +22,7 @@ function saveFunction() {
     task_title.value = null;
     task_detail.value = null;
     createTask(undone);
+    console.log(undone, progress, done);
   }
 }
 function saveChangesFunction() {
@@ -35,8 +36,7 @@ function saveChangesFunction() {
 
 function createTask(list) {
   const ul = document.getElementById("undoneList");
-  document.getElementById("undoneList").className
-   = "list-unstyled";
+  document.getElementById("undoneList").className = "list-unstyled";
   let li = document.createElement("li");
   let h4 = document.createElement("h4");
   let p = document.createElement("p");
@@ -54,11 +54,19 @@ function createTask(list) {
   donebutton.addEventListener("click", moveToDone);
   donebutton.id = "donebtn";
   donebutton.type = "button";
-  donebutton.className = `btn btn-success`;
+  donebutton.className = `btn btn-success me-2`;
   const text1 = document.createTextNode("Done");
   donebutton.appendChild(text1);
 
+  let deleteButton = document.createElement("a");
+  deleteButton.addEventListener("click", deleteTask);
+  deleteButton.id = "deletebtn";
+  deleteButton.className = `btn btn-danger`;
+  const deleteText = document.createTextNode("Delete");
+  deleteButton.appendChild(deleteText);
+
   li.className = "task";
+  li.setAttribute("draggable", "true");
   const title = document.createTextNode(list[list.length - 1].title);
   h4.appendChild(title);
   const detail = document.createTextNode(list[list.length - 1].detail);
@@ -68,6 +76,7 @@ function createTask(list) {
   li.appendChild(p);
   li.append(button);
   li.append(donebutton);
+  li.append(deleteButton);
 }
 
 function editFunction() {
@@ -81,15 +90,21 @@ function editFunction() {
   last_changed_item = parent;
 }
 
-function moveToDone(){
+function moveToDone() {
   let parent = this.parentElement;
-  done.push({ title: parent.querySelector("h4").textContent, detail: parent.querySelector("p").textContent });
+  done.push({
+    title: parent.querySelector("h4").textContent,
+    detail: parent.querySelector("p").textContent,
+  });
   const ul = document.getElementById("doneList");
-  document.getElementById("doneList").className
-  = "list-unstyled";
+  document.getElementById("doneList").className = "list-unstyled";
 
   ul.appendChild(parent);
 
-  parent.parentNode.replaceChild(parent, '');
-  
+  parent.parentNode.replaceChild(parent, "");
 }
+
+const deleteTask = (e) => {
+  const parentElement = e.target.parentElement;
+  parentElement.parentNode.removeChild(parentElement);
+};

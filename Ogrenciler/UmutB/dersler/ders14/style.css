@@ -1,5 +1,14 @@
-li{
-    padding-bottom: 20px;
-    margin-top: 20px;
-    border-bottom: 1px solid black;
+li {
+  padding: 15px;
+  border-radius: 0.375rem;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  border: none;
+  cursor: pointer;
+}
+
+li:hover {
+  transform: scale(1.01);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
