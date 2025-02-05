@@ -4,6 +4,19 @@ let undone = [];
 let progress = [];
 let done = [];
 
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+function drop(ev) {
+  ev.preventDefault();
+  const data = ev.dataTransfer.getData("text");
+  const draggedElement = document.getElementById(data);
+  ev.target.appendChild(draggedElement);
+}
+
 const save = document
   .getElementById("save")
   .addEventListener("click", saveFunction);
@@ -66,7 +79,9 @@ function createTask(list) {
   deleteButton.appendChild(deleteText);
 
   li.className = "task";
+  li.id = `task-${undone.length}`;
   li.setAttribute("draggable", "true");
+  li.addEventListener("dragstart", drag);
   const title = document.createTextNode(list[list.length - 1].title);
   h4.appendChild(title);
   const detail = document.createTextNode(list[list.length - 1].detail);
