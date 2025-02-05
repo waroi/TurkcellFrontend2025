@@ -10,7 +10,6 @@ function addTask() {
 
     if (taskText !== "") {
         let taskList = document.querySelector(".to-do-list");
-
         let taskCard = document.createElement("div");
         taskCard.className = "p-3 mb-2 rounded-pill";
 
@@ -44,7 +43,7 @@ function addTask() {
 
         let taskCompleteIcon = document.createElement("i");
         taskCompleteIcon.className = "fa-solid fa-check";
-
+        
         let taskDeleteIcon = document.createElement("i");
         taskDeleteIcon.className = "fa-solid fa-trash";
 
@@ -57,7 +56,6 @@ function addTask() {
         taskInReview.appendChild(taskInReviewIcon);
         taskInProgress.appendChild(taskInProgressIcon);
         
-
         taskList.appendChild(taskCard);
         taskCard.appendChild(taskTextSpan);
         taskCard.appendChild(taskButtonsAndInfo);
@@ -123,7 +121,6 @@ function addInReview() {
     }
 }
 
-
 function deleteTask() {
     let taskCard = this.parentElement.parentElement;
     taskCard.remove();
@@ -132,9 +129,7 @@ function deleteTask() {
 function editTask() {
     let taskCard = this.parentElement.parentElement;
     let taskText = taskCard.querySelector(".task-text");
-
     let taskInput = document.getElementById("task-input");
     taskInput.value = taskText.innerText;
     taskCard.remove();
-    
 }
