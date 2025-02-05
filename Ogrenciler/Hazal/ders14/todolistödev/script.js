@@ -25,7 +25,7 @@ function addTodo(todoInput, descInput) {
 	ul.id = "todoList";
 	const li = document.createElement("li");
 	li.className =
-		"list-group-item d-flex justify-content-between ";
+		"list-group-item d-flex justify-content-between mt-3 border border-warning";
 	let header = document.createElement("h2");
 	header.className = "flex-shrink-1";
 	header.innerText = todoInput;
