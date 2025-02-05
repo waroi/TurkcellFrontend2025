@@ -73,9 +73,10 @@ function addTodo(todoInput, descInput) {
 			desc.replaceWith(descInput);
 			editBtn.innerText = "Kaydet";
 			editBtn.className = "btn btn-primary btn-sm";
+			alert("Bu işlemi gerçekleştirmek istediğinize emin misiniz?");
 		} else {
-			const titleInput = li.querySelector("input:first-child");
-			const descInput = li.querySelector("input:last-of-type");
+			const titleInput = li.querySelector("input[type='text']:nth-of-type(1)");
+			const descInput = li.querySelector("input[type='text']:nth-of-type(2)");
 			const newHeader = document.createElement("h2");
 			newHeader.innerText = titleInput.value;
 			const newDesc = document.createElement("div");
@@ -86,8 +87,11 @@ function addTodo(todoInput, descInput) {
 			desc = newDesc;
 			editBtn.innerText = "Düzenle";
 			editBtn.className = "btn btn-secondary btn-sm";
+			alert("Güncellemeler kaydedildi");
+
 		}
 	};
+	
 
 	li.appendChild(numberSpan);
 	li.appendChild(header);

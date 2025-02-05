@@ -26,12 +26,11 @@
         <div class="container">
           <div class="row">
             <div class="col-md-6 p-1">
-              <div id="undone" class="border p-4 rounded bg-light h-100">
-                <h2>Undone</h2>
-                <ul id="undoneList" class="list-unstyled"></ul>
+              <div class="d-flex justify-content-between align-items-center">
+                <h2 class="d-inline-block m-0">TODOS 🔜</h2>
                 <button
                   type="button"
-                  class="btn btn-primary"
+                  class="btn btn-primary d-inline-block"
                   data-bs-toggle="modal"
                   data-bs-target="#addModal"
                 >
@@ -39,10 +38,24 @@
                   Add Task
                 </button>
               </div>
+
+              <div
+                id="undone"
+                ondrop="drop(event)"
+                ondragover="allowDrop(event)"
+                class="border p-4 rounded bg-light mt-3"
+              >
+                <ul id="undoneList" class="list-unstyled"></ul>
+              </div>
             </div>
             <div class="col-md-6 p-1">
-              <div id="done" class="border p-4 rounded bg-light h-100">
-                <h2>Done</h2>
+              <h2 class="m-0">TADAAS ✨</h2>
+              <div
+                id="done"
+                ondrop="drop(event)"
+                ondragover="allowDrop(event)"
+                class="border p-4 rounded bg-light mt-3"
+              >
                 <ul id="doneList" class="list-unstyled"></ul>
               </div>
             </div>
@@ -76,20 +89,27 @@
               type="text"
               placeholder="Task Title"
               id="task-title"
-              class="d-block m-1 w-100"
+              class="d-block m-1 w-100 border p-1 rounded bg-light"
             />
             <textarea
               name="detail"
               placeholder="Detail"
               id="task-detail"
-              class="d-block m-1 w-100"
+              class="d-block m-1 w-100 border p-1 rounded bg-light"
             ></textarea>
           </div>
           <div class="modal-footer">
             <button
               type="button"
-              id="save"
               class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              id="save"
+              class="btn btn-primary"
               data-bs-dismiss="modal"
             >
               Save
