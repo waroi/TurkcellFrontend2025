@@ -17,16 +17,16 @@
 <body>
   <div class="container">
     <div class="row d-flex justify-content-center align-items-center w-100">
-      <div class="col-md-6">
-        <div class="row">
 
+      <div class="col-12 col-md-6 mb-3 mb-md-0">
+        <div class="row">
           <div class="input-group">
             <span class="input-group-text">
               <i class="fas fa-search"></i>
             </span>
             <input type="search" name="search" id="search-bar" class="form-control" placeholder="Search" />
           </div>
-          <div class="image-container">
+          <div class="image-container mt-3">
             <div class="image-circle"><img src="./assets/aybike.jpg" alt=""></div>
             <div class="image-circle"><img src="./assets/fatih.jpg" alt=""></div>
             <div class="image-circle"><img src="./assets/cansu.jpg" alt=""></div>
@@ -34,7 +34,8 @@
         </div>
       </div>
 
-      <div class="col-md-6">
+
+      <div class="col-12 col-md-6">
         <div class="d-flex justify-content-center align-items-center w-100">
           <p class="text-muted text-center fs-6">Filtrele</p>
           <div class="dropdown ms-3">
@@ -45,9 +46,7 @@
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
               <li><a class="dropdown-item" href="#">Küçükten Büyüğe</a></li>
               <li><a class="dropdown-item" href="#">Büyükten Küçüğe</a></li>
-              <li>
-                <a class="dropdown-item" href="#">A-Z</a>
-              </li>
+              <li><a class="dropdown-item" href="#">A-Z</a></li>
               <li><a class="dropdown-item" href="#">Z-A</a></li>
               <li><a class="dropdown-item" href="#">Tarihe Göre</a></li>
             </ul>
@@ -63,9 +62,9 @@
           <div class="card-lists-container">
             <h6 class="text-muted text-center">Yapılacaklar</h6>
             <div class="to-do-list mt-2 mb-2"></div>
-            <div class="card-footer d-flex">
+            <div class="card-footer d-flex flex-column flex-md-row align-items-center">
               <input type="text" name="text" id="task-input" class="form-control" placeholder="Yapılacak Görev ekle" />
-              <button class="btn btn-primary ms-3 add-task-button">
+              <button class="btn btn-primary ms-md-3 add-task-button">
                 <i class="fa fa-plus"></i>
               </button>
             </div>
