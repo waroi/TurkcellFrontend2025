@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sinema Koleksiyonu</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img
+            src="/docs/5.3/assets/brand/bootstrap-logo.svg"
+            alt="Bootstrap"
+            width="30"
+            height="24"
+          />
+        </a>
+      </div>
+    </nav>
+    <main>
+      <section class="form-section">
+        <div class="container row mx-auto">
+          <div class="input-group mb-3 col-xl-4 col-md-6 col-12">
+            <span class="input-group-text" id="basic-addon1">Film Adı</span>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Film adını giriniz..."
+              aria-label="Username"
+              aria-describedby="basic-addon1"
+            />
+          </div>
+          <div class="input-group mb-3 col-xl-4 col-md-6 col-12">
+            <span class="input-group-text" id="basic-addon1">Yılı</span>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Film yılını giriniz..."
+            />
+          </div>
+          <div class="input-group mb-3 col-xl-4 col-md-6 col-12">
+            <span class="input-group-text" id="basic-addon1">Yönetmeni</span>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Username"
+              aria-label="Username"
+              aria-describedby="basic-addon1"
+            />
+          </div>
+          <select
+            class="form-select form-select-lg mb-3 col-xl-4 col-md-6 col-12"
+            aria-label="Large select example"
+          >
+            <option selected>Film Türü</option>
+            <option value="1">Dram</option>
+            <option value="2">Romantik-Komedi</option>
+            <option value="3">Korku</option>
+            <option value="4">Aksiyon</option>
+            <option value="5">Gerilim</option>
+            <option value="6">Bilim Kurgu</option>
+            <option value="7">Belgesel</option>
+            <option value="8">Fantastik</option>
+            <option value="9">Tarih</option>
+          </select>
+          <div class="input-group mb-3 col-xl-4 col-md-6 col-12">
+            <span class="input-group-text" id="basic-addon1">URL</span>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Username"
+              aria-label="Username"
+              aria-describedby="basic-addon1"
+            />
+          </div>
+          <button class="btn btn-primary col-12">Ekle</button>
+        </div>
+      </section>
+      <section class="film-cards">
+        <div class="container row mx-auto">
+          <div class="card col-xl-3 col-lg-4 col-md-6 col-12">
+            <img src="..." class="card-img-top" alt="..." />
+            <div class="card-body">
+              <span class="badge text-bg-secondary">Bilim Kurgu</span>
+              <h5 class="card-title">Card title</h5>
+              <h6 class="card-year"></h6>
+              <h6 class="card-"></h6>
+              <h6 class="card-director"></h6>
+              <button class="btn btn-primary">Sil</button>
+              <button class="btn btn-primary">Güncelle</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
