@@ -19,37 +19,44 @@
 
   <body>
     <header>
-      <h1>To-do list</h1>
+      <h1 class="my-5 text-center h1">To-do list</h1>
     </header>
     <main>
       <section>
         <div class="container">
           <div class="row">
-            <div class="col-md-6 col-lg-4">
-              <div id="undone">
-                <h2>Undone</h2>
+            <div class="col-md-6 p-1">
+              <div class="d-flex justify-content-between align-items-center">
+                <h2 class="d-inline-block m-0">TODOS 🔜</h2>
                 <button
                   type="button"
-                  class="btn btn-primary"
+                  class="btn btn-primary d-inline-block"
                   data-bs-toggle="modal"
                   data-bs-target="#addModal"
                 >
                   <i class="fas fa-plus"></i>
                   Add Task
                 </button>
-                <ul id="undoneList"></ul>
+              </div>
+
+              <div
+                id="undone"
+                ondrop="drop(event)"
+                ondragover="allowDrop(event)"
+                class="border p-4 rounded bg-light mt-3"
+              >
+                <ul id="undoneList" class="list-unstyled"></ul>
               </div>
             </div>
-            <div class="col-md-6 col-lg-4">
-              <div id="progress">
-                <h2>In Progress</h2>
-                <ul id="progressList"></ul>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-4">
-              <div id="done">
-                <h2>Done</h2>
-                <ul id="doneList"></ul>
+            <div class="col-md-6 p-1">
+              <h2 class="m-0">TADAAS ✨</h2>
+              <div
+                id="done"
+                ondrop="drop(event)"
+                ondragover="allowDrop(event)"
+                class="border p-4 rounded bg-light mt-3"
+              >
+                <ul id="doneList" class="list-unstyled"></ul>
               </div>
             </div>
           </div>
@@ -78,18 +85,31 @@
             ></button>
           </div>
           <div class="modal-body">
-            <input type="text" placeholder="Task Title" id="task-title" />
+            <input
+              type="text"
+              placeholder="Task Title"
+              id="task-title"
+              class="d-block m-1 w-100 border p-1 rounded bg-light"
+            />
             <textarea
               name="detail"
               placeholder="Detail"
               id="task-detail"
+              class="d-block m-1 w-100 border p-1 rounded bg-light"
             ></textarea>
           </div>
           <div class="modal-footer">
             <button
               type="button"
-              id="save"
               class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              id="save"
+              class="btn btn-primary"
               data-bs-dismiss="modal"
             >
               Save
@@ -119,12 +139,20 @@
             ></button>
           </div>
           <div class="modal-body">
-            <input type="text" placeholder="Task Title" id="edit-title" />
-            <textarea
-              name="detail"
-              placeholder="Detail"
-              id="edit-detail"
-            ></textarea>
+            <form action="">
+              <input
+                type="text"
+                placeholder="Task Title"
+                id="edit-title"
+                class="d-block m-1 w-100"
+              />
+              <textarea
+                name="detail"
+                placeholder="Detail"
+                id="edit-detail"
+                class="d-block m-1 w-100"
+              ></textarea>
+            </form>
           </div>
           <div class="modal-footer">
             <button
