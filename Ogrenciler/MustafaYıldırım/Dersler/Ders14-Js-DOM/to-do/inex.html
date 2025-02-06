@@ -10,15 +10,41 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <script
+      src="https://kit.fontawesome.com/0460a9927e.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <div class="box">
       <div class="container">
         <div class="row justify-content-center mt-5">
-          <div class="col-8 justify-content-center shadow rounded-2">
-            <h1 class="text-center bg-primary p-2 m-0">To-Do Listesi</h1>
-            <div class="content">
-              <ul></ul>
+          <div class="col-8 justify-content-center shadow rounded-2 p-2">
+            <h1 class="text-center bg-primary p-2 m-0 text-white rounded-2">
+              To-Do Listesi
+            </h1>
+            <div class="input-group my-3">
+              <input
+                type="text"
+                class="input form-control"
+                placeholder="Lütfen Görevlerinizi giriniz.."
+                aria-label="Recipient's username"
+                aria-describedby="button-addon2"
+              />
+              <button
+                class="ekle btn btn-primary"
+                type="button"
+                id="button-addon2"
+              >
+                Ekle
+              </button>
+            </div>
+
+            <div class="content my-3">
+              <ul class="list list-group"></ul>
+            </div>
+            <div class="btn-group d-flex gap-2">
+              <button class="sil btn btn-danger">Tümünü Sil</button>
             </div>
           </div>
         </div>
