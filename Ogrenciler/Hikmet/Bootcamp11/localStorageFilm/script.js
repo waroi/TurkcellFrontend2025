@@ -12,7 +12,17 @@ function addFilm() {
 	};
 
 	let filmler = JSON.parse(localStorage.getItem("filmler")) || [];
-	filmler.push(film);
+	if (
+		filmAdi === "" ||
+		filmYili === "" ||
+		filmYonetmen === "" ||
+		filmImg === ""
+	) {
+		alert("Lütfen tüm alanları doldurunuz.");
+		return;
+	} else {
+		filmler.push(film);
+	}
 	localStorage.setItem("filmler", JSON.stringify(filmler));
 
 	console.log(filmler);
@@ -99,6 +109,9 @@ function deleteFilm(index) {
 	filmler.splice(index, 1);
 	localStorage.setItem("filmler", JSON.stringify(filmler));
 	console.log(filmler);
-
 	filmCardEkle();
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+	filmCardEkle();
+});
