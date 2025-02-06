@@ -5,10 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cinema Collection</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Macondo&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <main>
-      <section class="bg-secondary-subtle mb-5 py-4">
+      <section class="form-section mb-5 py-4 text-white">
         <div class="container">
           <h1 class="mb-3 text-center fs-3">Cinema Collection</h1>
           <form class="row">
@@ -49,6 +55,15 @@
                 <label for="image" class="form-label">Resim URL</label>
                 <input type="text" class="form-control" id="image" required />
               </div>
+              <div class="mb-3">
+                <label for="description" class="form-label">Açıklama</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="description"
+                  required
+                />
+              </div>
               <button type="submit" class="btn btn-primary">Ekle</button>
             </div>
             <div class="col-lg-3"></div>
@@ -59,7 +74,7 @@
         <div class="container"></div>
       </section>
     </main>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <!-- <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script> -->
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
     <script src="https://cdn.rawgit.com/mugifly/jquery-simple-datetimepicker/72933bbe/jquery.simple-dtpicker.js"></script> -->
