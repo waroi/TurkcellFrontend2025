@@ -1,3 +1,35 @@
+
+let films = JSON.parse(localStorage.getItem("films")) || [];
+
+function filmJSONtoStorage() {
+    fetch("./movie.json")
+        .then((res) => {
+            if (!res.ok) {
+                throw new Error("JSON dosyası yüklenemedi!");
+            }
+            return res.json();
+        })
+        .then((movieJSON) => {
+            movieJSON.forEach((movie) => {
+                let filmObj = {
+                    ad: movie.Title,
+                    yonetmen: movie.Director,
+                    yil: movie.Year,
+                    tur: movie.Genre,
+                    afis: movie.Images ? movie.Images[0] : "",
+                };
+
+                films.push(filmObj);
+            });
+
+            localStorage.setItem("films", JSON.stringify(films));
+            console.log("Filmler başarıyla kaydedildi:", films);
+        })
+        .catch((err) => console.error("Hata:", err));
+}
+
+filmJSONtoStorage();
+
 //object olarak kullanımı
 /*let movie={
     name:"Avatar",
@@ -21,9 +53,8 @@ function loadFilms() {
     films.forEach((film, index) => {
         filmListesi.innerHTML += createFilmCard(film, index);
     });
+
 }
-
-
 
 function addFilm(event) {
     event.preventDefault();
