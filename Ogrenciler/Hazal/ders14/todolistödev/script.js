@@ -19,7 +19,6 @@ function updateNumbers() {
 }
 
 function addTodo(todoInput, descInput) {
-
 	const ul = document.createElement("ul");
 	ul.className = "list-group";
 	ul.id = "todoList";
@@ -27,7 +26,6 @@ function addTodo(todoInput, descInput) {
 	li.className =
 		"list-group-item d-flex justify-content-between mt-3 border border-warning";
 	let header = document.createElement("h2");
-	header.className = "flex-shrink-1";
 	header.innerText = todoInput;
 	let desc = document.createElement("div");
 	desc.className =
@@ -87,10 +85,8 @@ function addTodo(todoInput, descInput) {
 			editBtn.innerText = "Düzenle";
 			editBtn.className = "btn btn-secondary btn-sm";
 			alert("Güncellemeler kaydedildi");
-
 		}
 	};
-	
 
 	li.appendChild(numberSpan);
 	li.appendChild(header);

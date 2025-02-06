@@ -4,6 +4,7 @@
  * Copyright 2011-2024 The Bootstrap Authors
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+@import url("https://fonts.googleapis.com/css2?family=Macondo&display=swap");
 :root,
 [data-bs-theme=light] {
   --bs-blue: #0d6efd;
@@ -11844,10 +11845,55 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Macondo", cursive;
+  background-color: #242424;
+}
+
+.form-section {
+  transform: rotateX("180deg");
+  transition: 1.2s all ease-in-out;
+}
+
 .movies .container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 3rem;
+}
+.movies .container .card {
+  min-width: 300px;
+  min-height: 550px;
+}
+.movies .container .card .card-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  position: relative;
+}
+.movies .container .card .card-inner.is-flipped {
+  transform: rotateY(180deg);
+}
+.movies .container .card .card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+}
+.movies .container .card .card-back {
+  overflow: scroll;
+  padding: 10px 10px;
+  transform: rotateY(180deg);
 }
 .movies .container .card .card-body {
   display: flex;

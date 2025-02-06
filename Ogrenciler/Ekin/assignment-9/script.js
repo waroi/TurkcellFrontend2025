@@ -1,4 +1,5 @@
 const movies = document.querySelector(".movies .container");
+const cardFlip = document.querySelector(".card-inner");
 
 const title = document.querySelector("#title");
 const director = document.querySelector("#director");
@@ -6,6 +7,7 @@ const genre = document.querySelector("#genre");
 const year = document.querySelector("#year");
 const image = document.querySelector("#image");
 const add = document.querySelector("form button");
+const description = document.querySelector("#description");
 
 var editCard = false;
 
@@ -18,13 +20,26 @@ add.addEventListener("click", (event) => {
   editCard ? editMovie() : addMovie();
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+  const cardFlip = document.querySelector(".card-inner");
+  if (cardFlip) { // Eğer eleman bulunduysa event ekle
+    cardFlip.addEventListener("click", function(){
+      cardFlip.classList.toggle("is-flipped");
+    });
+  } else {
+    console.error("cardFlip elementi bulunamadı!");
+  }
+});
+
+
 function addMovie() {
   if (
     !title.value ||
     !director.value ||
     !genre.selectedIndex ||
     !year.value ||
-    !image.value
+    !image.value ||
+    !description.value
   ) {
     alert("Lütfen formu eksiksiz doldurunuz.");
     return;
@@ -36,6 +51,7 @@ function addMovie() {
     genre: genre.value,
     year: year.value,
     image: image.value,
+    description: description.value,
   };
 
   localStorage.setItem(
@@ -48,7 +64,7 @@ function addMovie() {
   appendMovie(movie);
 
   genre.selectedIndex = 0;
-  image.value = year.value = director.value = title.value = "";
+  image.value = year.value = director.value = title.value = description.value = "";
 }
 
 function deleteMovie(card, title) {
@@ -67,11 +83,12 @@ function deleteMovie(card, title) {
 function setEdit(card) {
   editCard = card;
 
-  title.value = editCard.children[1].children[0].textContent;
-  director.value = editCard.children[1].children[1].textContent;
-  genre.value = editCard.children[1].children[2].textContent;
-  year.value = editCard.children[1].children[3].textContent;
-  image.value = editCard.children[0].src;
+  title.value = editCard.children[0].children[0].children[1].children[0].textContent;
+  director.value = editCard.children[0].children[0].children[1].children[1].textContent;
+  genre.value = editCard.children[0].children[0].children[1].children[2].textContent;
+  year.value = editCard.children[0].children[0].children[1].children[3].textContent;
+  image.value = editCard.children[0].children[0].children[0].src;
+  description.value = editCard.children[0].children[1].textContent;
 
   add.textContent = "Güncelle";
 
@@ -84,7 +101,8 @@ function editMovie() {
     !director.value ||
     !genre.selectedIndex ||
     !year.value ||
-    !image.value
+    !image.value  ||
+    !description.value
   ) {
     alert("Lütfen formu eksiksiz doldurunuz.");
     return;
@@ -96,34 +114,48 @@ function editMovie() {
     genre: genre.value,
     year: year.value,
     image: image.value,
+    description: description.value,
   };
 
   let array = JSON.parse(localStorage.getItem("movies") ?? "[]");
 
   array[
     array.findIndex(
-      (movie) => movie.title == editCard.children[1].children[0].textContent
+      (movie) => movie.title == editCard.children[0].children[0].children[1].children[0].textContent
     )
   ] = editMovie;
 
   localStorage.setItem("movies", JSON.stringify(array));
-
-  editCard.children[1].children[0].textContent = editMovie.title;
-  editCard.children[1].children[1].textContent = editMovie.director;
-  editCard.children[1].children[2].textContent = editMovie.genre;
-  editCard.children[1].children[3].textContent = editMovie.year;
-  editCard.children[0].src = editMovie.image;
+  console.log(editCard.children[0].children[1].children[1]);
+  editCard.children[0].children[0].children[1].children[0].textContent = editMovie.title;
+  editCard.children[0].children[0].children[1].children[1].textContent = editMovie.director;
+  editCard.children[0].children[0].children[1].children[2].textContent = editMovie.genre;
+  editCard.children[0].children[0].children[1].children[3].textContent = editMovie.year;
+  editCard.children[0].children[0].children[0].src = editMovie.image;
+  editCard.children[0].children[1].textContent = editMovie.description;
+  
 
   editCard = false;
 
   genre.selectedIndex = 0;
-  image.value = year.value = director.value = title.value = "";
+  image.value = year.value = director.value = title.value = description.value = "";
   add.textContent = "Ekle";
 }
 
 function appendMovie(movie) {
   let card = document.createElement("div");
   card.classList.add("card");
+  let cardInner = document.createElement("div");
+  cardInner.classList.add("card-inner");
+  let cardFront = document.createElement("div");
+  cardFront.classList.add("card-front");
+  cardFront.classList.add("card-face");
+  let cardBack = document.createElement("div");
+  cardBack.classList.add("card-back");
+  cardBack.classList.add("card-face");
+  let cardDescription = document.createElement("p");
+  cardDescription.classList.add("card-text");
+  cardDescription.textContent = movie.description;
   let cardImage = document.createElement("img");
   cardImage.classList.add("card-img-top");
   cardImage.classList.add("img-fluid");
@@ -154,7 +186,7 @@ function appendMovie(movie) {
   deleteButton.classList.add("btn-danger");
   deleteButton.textContent = "Sil";
   deleteButton.addEventListener("click", () => deleteMovie(card, movie.title));
-  card.appendChild(cardImage);
+  cardFront.appendChild(cardImage);
   body.appendChild(cardTitle);
   body.appendChild(cardDirector);
   body.appendChild(cardGenre);
@@ -162,7 +194,11 @@ function appendMovie(movie) {
   buttons.appendChild(editButton);
   buttons.appendChild(deleteButton);
   body.appendChild(buttons);
-  card.appendChild(body);
+  cardFront.appendChild(body);
+  cardBack.appendChild(cardDescription);
+  cardInner.appendChild(cardFront);
+  cardInner.appendChild(cardBack);
+  card.appendChild(cardInner);
   movies.appendChild(card);
 }
 
