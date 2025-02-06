@@ -1,7 +1,9 @@
 const task = document.querySelector("#task");
 const btn = document.querySelector("#AddBtn");
 const ToDoList = document.querySelector("#list");
-const ToDo = [
+const todoCounter = document.querySelector('.todo-count')
+const removeButton = document.querySelector('.remove-all-todos')
+let ToDo = [
     {
         task: 'JavaScript çalış',
         completed: false,
@@ -18,6 +20,16 @@ const ToDo = [
 ]
 
 btn.addEventListener("click", addtodo);
+removeButton.addEventListener('click', removeAllTodos)
+
+function removeAllTodos() {
+    if (confirm('Tüm todoları silmek istediğinize emin misiniz?')) {
+
+        ToDo = []
+        todoCounter.innerHTML = ToDo.length
+        showTodos()
+    }
+}
 
 function addtodo() {
     if (task.value.length !== 0) {
@@ -35,6 +47,7 @@ function addtodo() {
 }
 
 function showTodos(todoList) {
+
 
     ToDoList.innerHTML = ''
     for (let i = 0; i < todoList.length; i++) {
@@ -79,6 +92,8 @@ function showTodos(todoList) {
 
         ToDoList.appendChild(li)
     }
+    todoCounter.innerHTML = ToDo.length
+
 }
 
 function editText(index, check) {
