@@ -1,0 +1,86 @@
+// @import "bt_overrides";
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+@import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
+// @import "style";
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: "Macondo", cursive;
+  background-color: #242424;
+}
+
+.form-section{
+  transform: rotateX('180deg');
+  transition: 1.2s all ease-in-out;
+}
+
+.movies .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 3rem;
+
+  .card {
+    min-width: 300px;
+    min-height: 550px;
+    .card-inner{
+      width: 100%;
+      height: 100%;
+      transition: transform 1s;
+      transform-style: preserve-3d;
+      cursor: pointer;
+      position: relative;
+    }
+    .card-inner.is-flipped {
+      transform: rotateY(180deg);
+    }
+    .card-face{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      overflow: hidden;
+      border-radius: 1rem;
+      box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+    }
+    .card-back{
+      overflow: scroll;
+      padding: 10px 10px;
+      transform: rotateY(180deg);
+    }
+    .card-body {
+      display: flex;
+      flex-direction: column;
+
+      div {
+        margin-top: auto;
+      }
+    }
+
+    img {
+      object-fit: cover;
+      height: 20rem;
+    }
+  }
+}
+
+@media (max-width: 1199px) {
+  .movies .container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 991px) {
+  .movies .container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 575px) {
+  .movies .container {
+    grid-template-columns: 1fr;
+  }
+}
