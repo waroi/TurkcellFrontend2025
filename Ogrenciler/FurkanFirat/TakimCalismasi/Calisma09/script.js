@@ -25,9 +25,11 @@ function formCleaner() {
 
 function showMovies() {
   const movieList = document.querySelector(".movie-list");
+  movieList.innerHTML = "";
 
   movies.forEach((movie) => {
     const movieCard = document.createElement("div");
+
     movieCard.classList.add("card", "col-12", "col-md-3");
 
     const movieImg = document.createElement("img");
@@ -70,15 +72,15 @@ function showMovies() {
 
     movieDelete.appendChild(iconDelete);
     movieEdit.appendChild(iconEdit);
-    movieButtons.appendChild(movieDelete, movieEdit);
-    movieBody.appendChild(
+    movieButtons.append(movieEdit, movieDelete);
+    movieBody.append(
       movieName,
       movieDirector,
       movieYear,
       movieType,
       movieButtons
     );
-    movieCard.appendChild(movieImg, movieBody);
+    movieCard.append(movieImg, movieBody);
     movieList.appendChild(movieCard);
   });
 }
