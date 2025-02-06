@@ -26,8 +26,12 @@ function formCleaner() {
 function showMovies() {
   const movieList = document.querySelector(".movie-list");
   movieList.innerHTML = "";
+  
+  for(let i = 0; i <= movies.length; i++){
+    const movie = movies[i];
+    console.log(movies.length, i);
+    debugger;
 
-  movies.forEach((movie) => {
     const movieCard = document.createElement("div");
 
     movieCard.classList.add("card", "col-12", "col-md-3");
@@ -60,9 +64,15 @@ function showMovies() {
 
     const movieDelete = document.createElement("button");
     movieDelete.classList.add("btn", "btn-danger");
+    movieDelete.addEventListener("click", function(e){
+      movieCard.remove();
+      movies.splice(i,1);
+      console.log(e.target);
+      console.log(movies)
+    });
 
     const movieEdit = document.createElement("button");
-    movieEdit.classList.add("btn", "btn-warning");
+    movieEdit.classList.add("btn", "btn-warning", "updateBtn");
 
     const iconDelete = document.createElement("i");
     iconDelete.className = "fa-solid fa-trash";
@@ -82,7 +92,7 @@ function showMovies() {
     );
     movieCard.append(movieImg, movieBody);
     movieList.appendChild(movieCard);
-  });
+  }
 }
 
 const movies = [];
