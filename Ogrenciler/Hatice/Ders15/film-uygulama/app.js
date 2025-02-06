@@ -143,7 +143,38 @@ function showMovies() {
             </div>
             `
         });
-        movieWrap.innerHTML = movieTemplate
+        movieWrap.innerHTML = movieTemplate;
+        showSlider();
     }
 }
+
+function showSlider() {
+    const carouselItems = document.getElementById("carousel-items");
+    let moviesStorage = JSON.parse(localStorage.getItem("movies"));
+    if (moviesStorage !== null) {
+        movies = moviesStorage;
+    }
+
+    if (movies !== null) {
+        let sliderTemplate = '';
+        let numberOfItemsPerSlide = 4;
+
+        for (let i = 0; i < movies.length; i += numberOfItemsPerSlide) {
+            let slideItems = movies.slice(i, i + numberOfItemsPerSlide);
+            sliderTemplate += `
+            <div class="carousel-item ${i === 0 ? 'active' : ''}">
+                <div class="row">
+                    ${slideItems.map(movie => `
+                    <div class="col-3">
+                        <img src="${movie.poster}" class="d-block w-100" alt="Movie poster">
+                    </div>`).join('')}
+                </div>
+            </div>`;
+        }
+
+        carouselItems.innerHTML = sliderTemplate;
+    }
+}
+
+
 showMovies();
