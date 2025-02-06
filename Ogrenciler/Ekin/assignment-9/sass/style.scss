@@ -1,0 +1,43 @@
+// @import "bt_overrides";
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+// @import "style";
+
+.movies .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 3rem;
+
+  .card {
+    .card-body {
+      display: flex;
+      flex-direction: column;
+
+      div {
+        margin-top: auto;
+      }
+    }
+
+    img {
+      object-fit: cover;
+      height: 20rem;
+    }
+  }
+}
+
+@media (max-width: 1199px) {
+  .movies .container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 991px) {
+  .movies .container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 575px) {
+  .movies .container {
+    grid-template-columns: 1fr;
+  }
+}
