@@ -1,8 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Local Storage'dan filmleri yükle
+
   const films = JSON.parse(localStorage.getItem("films")) || [];
-  // Sadece bilim kurgu türündeki filmleri filtrele
-  console.log(films);
 
   const bilimKurguFilmleri = films.filter(
     (film) => film.genre.toLowerCase() === "bilim kurgu"
@@ -10,16 +8,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   console.log(bilimKurguFilmleri);
 
-  // Bilim kurgu filmlerini ekrana yükle
   loadFilms(bilimKurguFilmleri);
 });
-// Filmleri ekrana yükle
 function loadFilms(films) {
   const filmList = document.getElementById("film-list");
   films.forEach(function (film) {
-    // Yeni kartı oluştur
     const filmCard = document.createElement("div");
-    filmCard.className = "col-md-3 mb-4"; // Her kart 3 birim genişlikte (4 kart yan yana)
+    filmCard.className = "col-md-3 mb-4";
     const cardBody = document.createElement("div");
     cardBody.className = "card h-100";
     const filmImg = document.createElement("img");
@@ -39,7 +34,6 @@ function loadFilms(films) {
     const filmGenreType = document.createElement("p");
     filmGenreType.className = "card-text";
     filmGenreType.textContent = `Tür: ${film.genre}`;
-    // Elementleri birleştir
     cardContent.appendChild(filmTitle);
     cardContent.appendChild(filmDirectorName);
     cardContent.appendChild(filmYearDate);
@@ -47,7 +41,6 @@ function loadFilms(films) {
     cardBody.appendChild(filmImg);
     cardBody.appendChild(cardContent);
     filmCard.appendChild(cardBody);
-    // Kartı film listesine ekle
     filmList.appendChild(filmCard);
   });
 }
