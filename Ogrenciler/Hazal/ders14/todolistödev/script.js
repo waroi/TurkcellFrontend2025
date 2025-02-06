@@ -73,7 +73,6 @@ function addTodo(todoInput, descInput) {
 			desc.replaceWith(descInput);
 			editBtn.innerText = "Kaydet";
 			editBtn.className = "btn btn-primary btn-sm";
-			alert("Bu işlemi gerçekleştirmek istediğinize emin misiniz?");
 		} else {
 			const titleInput = li.querySelector("input[type='text']:nth-of-type(1)");
 			const descInput = li.querySelector("input[type='text']:nth-of-type(2)");
