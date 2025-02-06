@@ -3,7 +3,6 @@ document.getElementById("addMovieForm").addEventListener("submit", addMovie);
 
 function addMovie(e) {
   e.preventDefault();
-  console.log(e);
 
   const movieName = document.getElementById("movieName").value;
   const director = document.getElementById("director").value;
@@ -24,13 +23,11 @@ function addMovie(e) {
     poster,
     id,
   };
-
-  console.log(poster);
   movies.push(movie);
   localStorage.setItem("movies", JSON.stringify(movies));
-  e.target.parentElement.remove();
   showMovies();
 }
+
 const editMovie = (id, e) => {
   e.preventDefault();
   const movies = JSON.parse(localStorage.getItem("movies"));
@@ -61,19 +58,18 @@ const editMovie = (id, e) => {
     poster: poster.value,
     ...movie,
   };
+
   const newMovies = movies.filter((movie) => movie.id !== id);
   newMovies.push(newMovie);
   localStorage.setItem("movies", JSON.stringify(newMovies));
-  const movieList = document.getElementById("movieList");
-  movieList.removeChild(e.target.parentElement);
+
   showMovies();
 };
 
 function showMovies() {
   const movies = JSON.parse(localStorage.getItem("movies"));
-
-  console.log("hello", movies);
   const movieList = document.getElementById("movieList");
+  movieList.innerHTML = "";
 
   movies.forEach((movie) => {
     const card = document.createElement("div");
