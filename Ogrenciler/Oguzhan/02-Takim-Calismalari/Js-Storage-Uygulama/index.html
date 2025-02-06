@@ -11,16 +11,14 @@
 			<nav></nav>
 		</header>
 
-		<section
-			class="banner d-flex text-white align-items-center justify-content-center"
-		>
+		<section class="banner d-flex align-items-center justify-content-center">
 			<!-- <div
 				class="overlay position-absolute w-100 h-100 start-0 top-0 z-1"
 			></div> -->
-			<div class="container w-100 h-100 text-center">
+			<div class="container w-100 h-100 d-flex flex-column align-items-center">
 				<!-- Button trigger modal -->
 
-				<h1 class="display-4 fw-bold">
+				<h1 class="display-4 fw-bold text-center text-white">
 					Track films you’ve watched. <br />
 					Save those you want to see. <br />
 					Tell your friends what’s good.
@@ -59,7 +57,7 @@
 
 							<div class="modal-body">
 								<!-- Modal-Body  START-->
-								<form>
+								<form id="addMovieForm">
 									<div class="mb-3">
 										<label for="movieName" class="form-label">Film Adı</label>
 										<input type="text" class="form-control" id="movieName" />
@@ -103,7 +101,7 @@
 
 									<div class="mb-3">
 										<label class="form-label" for="poster">Film Afişi</label>
-										<input type="file" class="form-control" id="poster" />
+										<input type="text" class="form-control" id="poster" />
 									</div>
 
 									<div class="mb-3 form-check">
@@ -125,7 +123,11 @@
 										>
 											İptal
 										</button>
-										<button type="submit" class="btn btn-primary">
+										<button
+											type="submit"
+											class="btn btn-primary"
+											id="addMovieBtn"
+										>
 											Kaydet
 										</button>
 									</div>
@@ -138,22 +140,12 @@
 				</div>
 			</div>
 		</section>
+		<section class="movie-list-section">
+			<div id="movieList"></div>
+		</section>
 		<section class="favourite-section w-100 h-100">
 			<div class="row">
-				<div class="col-6 col-sm">
-					<div class="card text-bg-dark">
-						<img src="..." class="card-img" alt="..." />
-						<div class="card-img-overlay">
-							<h5 class="card-title">Card title</h5>
-							<p class="card-text">
-								This is a wider card with supporting text below as a natural
-								lead-in to additional content. This content is a little bit
-								longer.
-							</p>
-							<p class="card-text"><small>Last updated 3 mins ago</small></p>
-						</div>
-					</div>
-				</div>
+				<div class="col-6 col-sm"></div>
 			</div>
 		</section>
 		<script src="script.js"></script>
