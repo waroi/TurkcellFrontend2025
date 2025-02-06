@@ -18,6 +18,10 @@ function addFilm() {
 	console.log(filmler);
 
 	filmCardEkle();
+	document.getElementById("filmName").value = "";
+	document.getElementById("filmYear").value = "";
+	document.getElementById("filmDirector").value = "";
+	document.getElementById("filmImage").value = "";
 }
 
 function filmCardEkle() {
@@ -26,7 +30,7 @@ function filmCardEkle() {
 	const filmList = document.getElementById("filmList");
 	filmList.innerHTML = "";
 
-	filmler.forEach((film, index) => {
+	filmler.map((film, index) => {
 		const filmCard = document.createElement("div");
 		filmCard.className = "card mb-2";
 
@@ -50,7 +54,7 @@ function filmCardEkle() {
 		filmImg.style.width = "100px";
 		filmImg.style.height = "100px";
 		filmImg.src = film.img;
-		filmImg.className = "card-img-top";
+		filmImg.className = "card-img-top img-fluid";
 
 		const filmSilmeButton = document.createElement("a");
 		filmSilmeButton.className = "btn btn-danger";
@@ -64,17 +68,13 @@ function filmCardEkle() {
 		filmGüncelle.id = "guncelle";
 		filmGüncelle.onclick = () => updateFilm(index);
 
-		
-
-		cardBody.appendChild(filmGüncelle);
-		cardBody.appendChild(filmSilmeButton);
 		cardBody.appendChild(filmImg);
 		cardBody.appendChild(filmAdi);
 		cardBody.appendChild(filmYili);
 		cardBody.appendChild(filmYonetmen);
-
+		cardBody.appendChild(filmGüncelle);
+		cardBody.appendChild(filmSilmeButton);
 		filmCard.appendChild(cardBody);
-
 		filmList.appendChild(filmCard);
 	});
 }
