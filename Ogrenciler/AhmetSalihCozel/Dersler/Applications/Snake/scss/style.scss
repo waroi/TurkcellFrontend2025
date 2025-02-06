@@ -1,0 +1,54 @@
+*{
+    font-family: "Aubrey", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#exterior{
+    width: 700px;
+    height: auto;
+}
+
+.playGround{
+    width: 500px;
+    height: auto;
+}
+
+.rowASC{
+    display: grid;
+    grid-template-columns: repeat(20 ,1fr);
+    gap: 0;
+    div{
+        border: 2px solid $success;
+        height: 30px;
+        width: 30px;
+    }
+}
+
+button{
+    @extend .btn, .btn-outline-primary;
+    width: 300px;
+}
+
+.barOutLine{
+    height: 20px;
+    border: $success solid 1px;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 0;
+    .speedBar ,.cellBar{
+        display: flex;
+        justify-content: left;
+        transition: all 0.3s ease-in-out;
+        height: 100%;
+        width: 0%;
+        background-color: $primary;
+    }
+}
+
+.score{
+    width: 100%;
+    height: 50px;
+    border: $success solid 1px;
+    border-radius: 10px;
+}
