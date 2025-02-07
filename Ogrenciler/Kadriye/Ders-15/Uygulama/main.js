@@ -1,34 +1,37 @@
 const ekle_button = document.getElementById("ekle");
 ekle_button.addEventListener("click", ekleFunction);
-const tur_list = [
-  "Aksiyon",
-  "Macera",
-  "Bilim-Kurgu",
-  "Korku",
-  "Fantastik",
-  "Komedi",
-  "Romantik",
-  "Animasyon",
-  "Gerilim",
-  "Belgesel",
+const genre_list = [
+  "Action",
+  "Adventure",
+  "Science Fiction",
+  "Horror",
+  "Fantastic",
+  "Comedy",
+  "Romantic",
+  "Animation",
+  "Thriller",
+  "Documentary",
   "Drama",
-  "Biyografi",
+  "Biography",
 ];
 let list = JSON.parse(localStorage.getItem("movie_list"));
 if (list == null) {
   localStorage.setItem("movie_list", JSON.stringify([]));
 }
+let movie_name = document.getElementById("movie-name");
+let year = document.getElementById("year");
+let genre = document.getElementById("genre");
+let creator = document.getElementById("creator");
+let Imdb = document.getElementById("imdb");
+let url = document.getElementById("url");
+for (var element of [movie_name, year, genre, creator, Imdb, url]) {
+  console.log(element.value);
+  element.value = "";
+}
 console.log(list);
 createFromLocaleHistory();
 const movie_list = [];
 function ekleFunction() {
-  let movie_name = document.getElementById("movie-name");
-  let year = document.getElementById("year");
-  let genre = document.getElementById("genre");
-  let creator = document.getElementById("creator");
-  let Imdb = document.getElementById("imdb");
-  let url = document.getElementById("url");
-  let list = JSON.parse(localStorage.getItem("movie_list"));
   if (
     movie_name.value !== "" &&
     year.value !== "" &&
@@ -54,41 +57,28 @@ function ekleFunction() {
   } else {
     alert("Your input is wrong!");
   }
-
-  //   for (var element of [movie_name, year, genre, creator, Imdb, url]) {
-  //     if (element == "") {
-  //
-  //     } else {
-  //     }
-  //   }
 }
 
 function createCard() {
-  let list = JSON.parse(localStorage.getItem("movie_list"));
   createElements(list, list.length - 1);
 }
-function createElements(list, item) {
+function createElements(list, index) {
   const row = document.getElementById("row");
   console.log(list);
   const col = document.createElement("div");
   col.className = "col-md-6 col-lg-4";
   const card = document.createElement("div");
   card.className = "card";
-  //const teaser = document.createElement("iframe");
-  //   teaser.src = list[item][5];
-  //   teaser.height = "200";
-  //   teaser.frameBorder = "0";
-  //   teaser.allowFullscreen = true;
   const teaser = document.createElement("video");
   teaser.controls = true;
   const t_source = document.createElement("source");
-  t_source.src = list[item][5];
+  t_source.src = list[index][5];
   t_source.type = "video/mp4";
   teaser.appendChild(t_source);
   const body = document.createElement("div");
   body.className = "card-body";
   const title = document.createElement("h5");
-  let title_text = document.createTextNode(`${list[item][0]}`);
+  let title_text = document.createTextNode(`${list[index][0]}`);
   title.appendChild(title_text);
   title.className = "card-title";
   const ul = document.createElement("ul");
@@ -96,20 +86,68 @@ function createElements(list, item) {
   for (let i = 1; i < 5; i++) {
     const li = document.createElement("li");
     li.className = "list-group-item";
-    const text = document.createTextNode(`${list[item][i]}`);
+    // if(i == 2){
+    //   const text = document.createTextNode(`${list[index][i]}`);
+    // }
+    const text = document.createTextNode(`${list[index][i]}`);
     li.appendChild(text);
     ul.appendChild(li);
   }
   const btn_container = document.createElement("div");
   const delete_btn = document.createElement("button");
   delete_btn.addEventListener("click", function () {
+    list.splice(index, 1);
     col.remove();
+    localStorage.setItem("movie_list", JSON.stringify(list));
   });
   delete_btn.className = "btn btn-danger btn-sm rounded-5";
   const delete_icon = document.createElement("i");
   delete_icon.className = "fas fa-trash";
   delete_btn.appendChild(delete_icon);
   const edit_btn = document.createElement("button");
+  edit_btn.addEventListener("click", function () {
+    window.location.hash = "header";
+    let list = JSON.parse(localStorage.getItem("movie_list"));
+    if (index !== -1) {
+      document.getElementById("movie-name").value = list[index][0];
+      document.getElementById("year").value = list[index][1];
+      document.getElementById("genre").value = list[index][2];
+      document.getElementById("creator").value = list[index][3];
+      document.getElementById("imdb").value = list[index][4];
+      document.getElementById("url").value = list[index][5];
+      ekle_button.textContent = "Update";
+      ekle_button.replaceWith(ekle_button.cloneNode(true));
+      let new_ekle_button = document.getElementById("ekle");
+      new_ekle_button.addEventListener("click", function () {
+        if (
+          movie_name.value !== "" &&
+          year.value !== "" &&
+          genre.value !== "" &&
+          creator.value !== "" &&
+          Imdb.value !== "" &&
+          url.value !== ""
+        ) {
+          let updated_movie = [
+            movie_name.value,
+            year.value,
+            genre.value,
+            creator.value,
+            Imdb.value,
+            url.value,
+          ];
+          list[index] = updated_movie;
+          localStorage.setItem("movie_list", JSON.stringify(list));
+          location.reload();
+          for (var element of [movie_name, year, genre, creator, Imdb, url]) {
+            console.log(element.value);
+            element.value = "";
+          }
+        } else {
+          alert("Your input is wrong!");
+        }
+      });
+    }
+  });
   edit_btn.className = "btn btn-warning btn-sm ms-2  rounded-5";
   const edit_icon = document.createElement("i");
   edit_icon.className = "fas fa-edit";
@@ -138,62 +176,3 @@ function createFromLocaleHistory() {
     }
   }
 }
-
-//----------------------------------------------------------
-// document.addEventListener("DOMContentLoaded", function () {
-//   const ekle_button = document.getElementById("ekle");
-//   ekle_button.addEventListener("click", ekleFunction);
-//   let movie_list = JSON.parse(localStorage.getItem("movie_list")) || [];
-//   function ekleFunction() {
-//     let movie_name = document.getElementById("movie-name").value;
-//     let year = document.getElementById("year").value;
-//     let genre = document.getElementById("genre").value;
-//     let creator = document.getElementById("creator").value;
-//     let imdb = document.getElementById("imdb").value;
-//     let url = document.getElementById("url").value;
-//     if (!movie_name || !year || !genre || !creator || !imdb || !url) {
-//       alert("Lütfen tüm alanları doldurun!");
-//       return;
-//     }
-//     // Yeni filmi listeye ekle
-//     movie_list.push([movie_name, year, genre, creator, imdb, url]);
-//     localStorage.setItem("movie_list", JSON.stringify(movie_list));
-//     createCard(movie_list.length - 1);
-//   }
-//   function createCard(index) {
-//     let list = JSON.parse(localStorage.getItem("movie_list")) || [];
-//     if (list.length === 0) return;
-//     const row = document.getElementById("row");
-//     const col = document.createElement("div");
-//     col.className = "col-md-6 col-lg-4";
-//     const card = document.createElement("div");
-//     card.className = "card";
-//     const teaser = document.createElement("iframe");
-//     teaser.src = list[index][5];
-//     teaser.width = "100%";
-//     teaser.height = "200";
-//     teaser.frameBorder = "0";
-//     teaser.allowFullscreen = true;
-//     const body = document.createElement("div");
-//     body.className = "card-body";
-//     const title = document.createElement("h5");
-//     title.className = "card-title";
-//     title.textContent = list[index][0];
-//     const ul = document.createElement("ul");
-//     ul.className = "list-group list-group-flush";
-//     for (let i = 1; i < 5; i++) {
-//       const li = document.createElement("li");
-//       li.className = "list-group-item";
-//       li.textContent = list[index][i];
-//       ul.appendChild(li);
-//     }
-//     row.appendChild(col);
-//     col.appendChild(card);
-//     card.appendChild(teaser);
-//     card.appendChild(body);
-//     body.appendChild(title);
-//     card.appendChild(ul);
-//   }
-//   // Sayfa yüklendiğinde mevcut verileri göster
-//   movielist.forEach((index) => createCard(index));
-// });
