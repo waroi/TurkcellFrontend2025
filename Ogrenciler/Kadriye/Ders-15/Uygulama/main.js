@@ -52,7 +52,7 @@ function ekleFunction() {
     }
     createCard();
   } else {
-    alert("Lütfen girilen bilgileri kontrol ediniz!");
+    alert("Your input is wrong!");
   }
 
   //   for (var element of [movie_name, year, genre, creator, Imdb, url]) {
