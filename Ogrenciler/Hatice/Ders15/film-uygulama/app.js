@@ -154,7 +154,7 @@ function showMovies() {
         movieWrap.innerHTML = ''
         movies.forEach((movie, index) => {
             movieTemplate += `
-            <div class="col-md-3 mb-5">
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-5 h-100">
             <div class="card h-100">
             <img src="${movie.poster}" class="card-img-top" alt="${movie.title} Poster">
             <div class="card-body h-100">
@@ -162,12 +162,16 @@ function showMovies() {
             <p class="card-text">Yönetmen: ${movie.director} </p>
             <p class="card-text">Yıl: ${movie.year} </p>
             <p class="card-text">Tür: ${movie.type} </p>
-            </div>
-               <div class="card-footer mb-3">
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="updateMovie(${index})" id="update">
-                      Güncelle
+           
+                      <div class="d-flex gap-3">
+                <button type="button" class="btn btn-update gap-3" data-bs-toggle="modal" data-bs-target="#movieModal" onclick="updateMovie(${index})" id="update">
+                    <span class="text">Güncelle</span>
                 </button>
-            <a href="#" class="btn btn-danger" onclick="removeMovie(${index})" >Sil</a></div>
+                <a href="#" class="btn btn-delete d-inline-flex" onclick="removeMovie(${index})" ><span class="text">Sil</span></a>
+            </div>
+
+      
+            </div>
             </div>
             </div>
             `
