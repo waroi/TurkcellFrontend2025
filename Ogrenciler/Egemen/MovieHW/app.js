@@ -5,25 +5,36 @@ document.getElementById("addFilmBtn").onclick = function () {
   const filmDate = document.getElementById("filmDate").value;
   const filmPhoto = document.getElementById("filmPhoto").value;
   if (filmName && filmDirector && filmDate && filmPhoto) {
-    addFilm(filmName, filmDirector, filmDate, filmPhoto);
-    reload();
+    
+    
     let newFilm = {
       fName:filmName, 
       fDirector:filmDirector, 
       fDate:filmDate, 
       fPhoto:filmPhoto
     }
+    addFilm(newFilm);
+    reload();
 
-    let filmArray = [localStorage.getItem("filmArray")];
+
+    let filmArray = JSON.parse(localStorage.getItem("filmArray")) || [];
+
     filmArray.push(newFilm);
-
     localStorage.setItem("filmArray",JSON.stringify(filmArray));
-    let getFilm = JSON.parse(localStorage.getItem("newFilm"));
-    console.log(getFilm);
+    let getFilm = JSON.parse(localStorage.getItem("filmArray"));
+
   }
   
 
 };
+
+function upload() {
+  let getFilm = JSON.parse(localStorage.getItem("filmArray"));
+  getFilm.forEach(film => {
+    addFilm(film)
+  });
+}
+upload();
 
 function reload() {
   document.getElementById("filmName").value = "";
@@ -32,7 +43,7 @@ function reload() {
   document.getElementById("filmPhoto").value = "";
 }
 
-function addFilm(filmName, filmDirector, filmDate, filmPhoto) {
+function addFilm(newFilm) {
   const nameInput = document.getElementById("filmName");
   const directorInput = document.getElementById("filmDirector");
   const dateInput = document.getElementById("filmDate");
@@ -43,17 +54,17 @@ function addFilm(filmName, filmDirector, filmDate, filmPhoto) {
   card.className = "card h-100";
   const filmImage = document.createElement("img");
   filmImage.className = "card-img-top h-75";
-  filmImage.src = filmPhoto;
-  filmImage.alt = filmName;
+  filmImage.src = newFilm.fPhoto;
+  filmImage.alt = newFilm.fName;
   const cardBody = document.createElement("div");
   cardBody.className = "card-body";
   const filmAdi = document.createElement("h3");
   filmAdi.className = "card-title text-uppercase";
-  filmAdi.textContent = filmName;
+  filmAdi.textContent = newFilm.fName;
   const yonetmen = document.createElement("h6");
-  yonetmen.textContent = `Yönetmen: ${filmDirector}`;
+  yonetmen.textContent = `Yönetmen: ${newFilm.fDirector}`;
   const tarih = document.createElement("h6");
-  tarih.textContent = `Çıkış Tarihi: ${filmDate}`;
+  tarih.textContent = `Çıkış Tarihi: ${newFilm.fDate}`;
   const buttonDiv = document.createElement("div");
   buttonDiv.className = "d-flex gap-2 justify-content-center";
   const editBtn = document.createElement("button");
@@ -73,16 +84,20 @@ function addFilm(filmName, filmDirector, filmDate, filmPhoto) {
 
   removeBtn.onclick = function () {
     let confirmDelete = confirm(
-      `"${filmName}" filmini silmek istediğinize emin misiniz?`
+      `"${newFilm.fName}" filmini silmek istediğinize emin misiniz?`
     );
-    if (confirmDelete) filmDiv.remove();
+    if (confirmDelete) {
+      filmDiv.remove();
+      let getFilm = JSON.parse(localStorage.getItem("filmArray"));
+      let filmIndex = getFilm.findIndex()
+    }
   };
 
   editBtn.onclick = function () {
-    document.getElementById("filmName").value = filmName;
-    document.getElementById("filmDirector").value = filmDirector;
-    document.getElementById("filmDate").value = filmDate;
-    document.getElementById("filmPhoto").value = filmPhoto;
+    document.getElementById("filmName").value = newFilm.fName;
+    document.getElementById("filmDirector").value = newFilm.fDirector;
+    document.getElementById("filmDate").value = newFilm.fDate;
+    document.getElementById("filmPhoto").value = newFilm.fPhoto;
 
     const addBtn = document.getElementById("addFilmBtn");
     const butonGroup = document.getElementById("butonGroup");
@@ -96,14 +111,14 @@ function addFilm(filmName, filmDirector, filmDate, filmPhoto) {
     }
 
     saveBtn.onclick = function () {
-      filmName = document.getElementById("filmName").value;
-      filmDirector = document.getElementById("filmDirector").value;
-      filmDate = document.getElementById("filmDate").value;
-      filmPhoto = document.getElementById("filmPhoto").value;
-      filmAdi.textContent = filmName;
-      yonetmen.textContent = `Yönetmen: ${filmDirector}`;
-      tarih.textContent = `Çıkış Tarihi: ${filmDate}`;
-      filmImage.src = filmPhoto;
+      newFilm.fName = document.getElementById("filmName").value;
+      newFilm.fDirector = document.getElementById("filmDirector").value;
+      newFilm.fDate = document.getElementById("filmDate").value;
+      newFilm.fPhoto = document.getElementById("filmPhoto").value;
+      filmAdi.textContent = newFilm.fName;
+      yonetmen.textContent = `Yönetmen: ${newFilm.fDirector}`;
+      tarih.textContent = `Çıkış Tarihi: ${newFilm.fDate}`;
+      filmImage.src = newFilm.fPhoto;
       reload();
 
       saveBtn.replaceWith(addBtn);
