@@ -1,26 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-   <title>Document</title>
-</head>
-<body>
-   <h2>Sinema Koleksiyonu</h2>
-   <div class="container">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous" />
+    <title>LocalStorage Film</title>
+  </head>
+  <body>
+    <div class="container mt-4">
       <div class="mb-3">
-         <input type="text" id="ad" placeholder="Film Adı" class="form-control mb-2">
-         <input type="text" id="yonetmen" placeholder="Yönetmen" class="form-control mb-2">
-         <input type="text" id="tur" placeholder="Tür" class="form-control mb-2">
-         <input type="text" id="yil" placeholder="Yıl" class="form-control mb-2">
-         <input type="text" id="img" placeholder="Afiş URL" class="form-control mb-3">
-         <button onclick="filmEkle()" id="submit" class="btn btn-primary">Ekle</button>
+        <input type="text" id="filmName" class="form-control" placeholder="Film Adı" />
       </div>
-      <div class="film-list" id="filmListesi"></div>
-   </div>
+      <div class="mb-3">
+        <input type="text" id="filmDirector" class="form-control" placeholder="Yönetmen" />
+      </div>
+      <div class="mb-3">
+        <input type="text" id="filmImage" class="form-control" placeholder="Resim" />
+      </div>
+      <div class="mb-3">
+        <input type="number" id="filmYear" class="form-control" placeholder="Yıl" />
+      </div>
+      <button class="btn btn-primary w-100 mb-3" onclick="addFilm()">Film Ekle</button>
+      <h2>Filmlerimiz</h2>
+      <div class="row row-cols-1 row-cols-md-3 g-4" id="filmList"></div>
+    </div>
 
+    <script>
+      function addFilm() {
+        const filmAdi = document.getElementById("filmName").value.trim();
+        const filmYili = document.getElementById("filmYear").value.trim();
+        const filmYonetmen = document.getElementById("filmDirector").value.trim();
+        const filmImg = document.getElementById("filmImage").value.trim();
 
-   <script src="./script.js"></script>
-</body>
+        if (!filmAdi || !filmYili || !filmYonetmen || !filmImg) {
+          alert("Lütfen tüm alanları doldurunuz.");
+          return;
+        }
+
+        const film = { adi: filmAdi, yili: filmYili, yonetmen: filmYonetmen, img: filmImg };
+
+        let filmler = JSON.parse(localStorage.getItem("filmler")) || [];
+        filmler.push(film);
+        localStorage.setItem("filmler", JSON.stringify(filmler));
+
+        clearInputs();
+        filmCardEkle();
+      }
+
+      function clearInputs() {
+        document.getElementById("filmName").value = "";
+        document.getElementById("filmYear").value = "";
+        document.getElementById("filmDirector").value = "";
+        document.getElementById("filmImage").value = "";
+      }
+
+      function filmCardEkle() {
+        const filmler = JSON.parse(localStorage.getItem("filmler")) || [];
+        const filmList = document.getElementById("filmList");
+        filmList.innerHTML = "";
+
+        filmler.forEach((film, index) => {
+          const filmCard = document.createElement("div");
+          filmCard.className = "col mb-4";
+
+          const card = document.createElement("div");
+          card.className = "card h-100";
+
+          const filmImg = document.createElement("img");
+          filmImg.className = "card-img-top img-fluid";
+          filmImg.src = film.img;
+          filmImg.alt = film.adi;
+          filmImg.style.height = "200px";
+          filmImg.style.objectFit = "cover";
+
+          const cardBody = document.createElement("div");
+          cardBody.className = "card-body";
+
+          const filmAdi = document.createElement("h5");
+          filmAdi.className = "card-title";
+          filmAdi.innerText = film.adi;
+
+          const filmYili = document.createElement("p");
+          filmYili.className = "card-text";
+          filmYili.innerText = `Yıl: ${film.yili}`;
+
+          const filmYonetmen = document.createElement("p");
+          filmYonetmen.className = "card-text";
+          filmYonetmen.innerText = `Yönetmen: ${film.yonetmen}`;
+
+          const btnGroup = document.createElement("div");
+          btnGroup.className = "d-flex gap-2 mt-3";
+
+          const deleteBtn = document.createElement("button");
+          deleteBtn.className = "btn btn-danger btn-sm";
+          deleteBtn.innerText = "Filmi Sil";
+          deleteBtn.onclick = () => deleteFilm(index);
+
+          const updateBtn = document.createElement("button");
+          updateBtn.className = "btn btn-warning btn-sm";
+          updateBtn.innerText = "Filmi Güncelle";
+          updateBtn.onclick = () => updateFilm(index);
+
+          btnGroup.appendChild(updateBtn);
+          btnGroup.appendChild(deleteBtn);
+
+          cardBody.appendChild(filmAdi);
+          cardBody.appendChild(filmYili);
+          cardBody.appendChild(filmYonetmen);
+          cardBody.appendChild(btnGroup);
+          card.appendChild(filmImg);
+          card.appendChild(cardBody);
+          filmCard.appendChild(card);
+          filmList.appendChild(filmCard);
+        });
+      }
+
+      function updateFilm(index) {
+        let filmler = JSON.parse(localStorage.getItem("filmler")) || [];
+        const film = filmler[index];
+
+        document.getElementById("filmName").value = film.adi;
+        document.getElementById("filmDirector").value = film.yonetmen;
+        document.getElementById("filmImage").value = film.img;
+        document.getElementById("filmYear").value = film.yili;
+
+        filmler.splice(index, 1);
+        localStorage.setItem("filmler", JSON.stringify(filmler));
+        filmCardEkle();
+      }
+
+      function deleteFilm(index) {
+        let filmler = JSON.parse(localStorage.getItem("filmler")) || [];
+        filmler.splice(index, 1);
+        localStorage.setItem("filmler", JSON.stringify(filmler));
+        filmCardEkle();
+      }
+
+      document.addEventListener("DOMContentLoaded", filmCardEkle);
+    </script>
+  </body>
 </html>
