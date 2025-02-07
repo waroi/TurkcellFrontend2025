@@ -12,8 +12,8 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body class="">
-  <nav class="navbar bg-secondary">
+<body style="background-color: antiquewhite;">
+  <nav class="navbar bg-secondary shadow">
     <div class="container">
       <a class="navbar-brand" href="#">
         <img src="https://github.com/furkan-firat/cinecalm/blob/main/public/logoWhite.png?raw=true" alt="Bootstrap"
@@ -25,35 +25,46 @@
     <div class="container">
       <div class="row g-4">
         <form
-          class="col-12 col-md-4 offset-md-1 bg-body-tertiary p-3 rounded-2 shadow d-flex flex-column justify-content-center">
+          class="col-12 col-md-4 offset-md-1 bg-body-tertiary p-3 rounded-2 shadow d-flex flex-column justify-content-center needs-validation"
+          novalidate>
           <h4 class="mb-3">Film Bilgileri</h4>
           <div class="mb-3">
             <label for="movieName" class="form-label">Film Adı</label>
-            <input type="text" class="form-control" id="movieName" aria-describedby="movieName" />
+            <input type="text" class="form-control" id="movieName" aria-describedby="movieName" required />
+            <div class="valid-feedback"> İyi görünüyor! </div>
+            <div class="invalid-feedback"> Film adı giriniz</div>
           </div>
           <div class="mb-3">
             <label for="director" class="form-label">Yönetmen</label>
-            <input type="text" class="form-control" id="director" />
+            <input type="text" class="form-control" id="director" required />
+            <div class="valid-feedback"> İyi görünüyor! </div>
+            <div class="invalid-feedback"> Lütfen yönetmen giriniz.</div>
           </div>
           <div class="row">
             <div class="mb-3 col-6">
               <label for="year" class="form-label">Yılı</label>
-              <input type="number" min="1895" max="2025" value="2025" class="form-control" id="year" />
+              <input type="number" min="1895" max="2025" value="2025" class="form-control" id="year" required />
+              <div class="valid-feedback">Looks good!</div>
+              <div class="invalid-feedback">Lütfen geçerli bir yıl girin.</div>
             </div>
             <div class="col-6">
               <label for="dummy-label" class="form-label">&nbsp;</label>
-              <select class="form-select category" aria-label="Default select example">
-                <option selected>Kategori</option>
+              <select class="form-select category" id="dummy-label" aria-label="Default select example" required>
+                <option selected disabled value="">Tür</option>
                 <option value="1">Korku</option>
                 <option value="2">Aksiyon</option>
                 <option value="3">Bilim Kurgu</option>
               </select>
+              <div class="valid-feedback"> İyi görünüyor! </div>
+              <div class="invalid-feedback">Tür seçiniz.</div>
             </div>
           </div>
 
           <div class="mb-3 col-12">
             <label for="movie-banner" class="form-label">Afiş Resmi (URL)</label>
-            <input type="text" class="form-control" id="movie-banner" />
+            <input type="text" class="form-control" id="movie-banner" required />
+            <div class="valid-feedback"> İyi görünüyor! </div>
+            <div class="invalid-feedback"> Afiş resmi için URL giriniz</div>
           </div>
           <button type="submit" class="btn btn-success w-100">
             Film Ekle
@@ -65,10 +76,9 @@
               src="./default-poster.jpg" style="height: 300px;">
             <div class="card-body">
               <h5 class="card-title">Film adı giriniz.</h5>
-              <p class="card-text preview-director">Film Yönetmeni giriniz. </p>
-              <p class="card-text preview-year">Çıkış tarihini giriniz</p>
+              <p class="card-text preview-director">Lütfen yönetmen giriniz.</p>
+              <p class="card-text preview-year">Çıkış tarihini giriniz.</p>
               <p class="card-text preview-category">Film türünü giriniz.</p>
-
             </div>
           </div>
         </div>
@@ -77,14 +87,38 @@
 
   <main>
     <div class="container">
-      <div class="movie-list mt-4 row flex-wrap gap-4 justify-content-center">
-
-
+      <div class="movie-list py-5 row flex-wrap gap-4 justify-content-center">
 
       </div>
     </div>
-
   </main>
+
+  <footer class="bg-secondary text-center text-white py-3 mt-3">
+    <div class="container">
+      <p class="mb-0">&copy; 2025 CineCalm. Tüm hakları saklıdır.</p>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      'use strict'
+
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      const forms = document.querySelectorAll('.needs-validation')
+
+      // Loop over them and prevent submission
+      Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+
+          form.classList.add('was-validated')
+        }, false)
+      })
+    })()
+  </script>
 
   <script src="./script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
