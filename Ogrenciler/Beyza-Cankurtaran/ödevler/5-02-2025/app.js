@@ -78,16 +78,17 @@ function addFilm(event) {
 function createFilmCard(film, index) {
 
     let colDiv = document.createElement("div");
-    colDiv.classList.add("col-md-4");
+    colDiv.classList.add("col-md-4", "col-sm-6", "d-flex");
 
     let cardDiv = document.createElement("div");
-    cardDiv.classList.add("card", "mb-3");
+    cardDiv.classList.add("card", "mb-3", "flex-fill");
 
     let img = document.createElement("img");
     img.src = film.afis;
     img.alt = film.ad;
     img.classList.add("card-img-top");
-    img.style.maxHeight="500px";
+    //img.style.maxHeight="500px";
+    img.style.objectFit="cover";
 
     let cardBody = document.createElement("div");
     cardBody.classList.add("card-body");
@@ -108,6 +109,9 @@ function createFilmCard(film, index) {
     genre.classList.add("card-text","text-center");
     genre.innerHTML = `<strong>Tür:</strong> ${film.tur}`;
 
+    let buttonGroup = document.createElement("div");
+    buttonGroup.classList.add("btn-group-responsive", "d-flex", "justify-content-flex-start", "mt-3");
+
     let inceleButton = document.createElement("button");
     inceleButton.classList.add("btn", "btn-success","ms-5","me-5","text-center");
     inceleButton.textContent = "İncele";
@@ -123,14 +127,16 @@ function createFilmCard(film, index) {
     deleteButton.textContent = "Sil";
     deleteButton.onclick = function() { deleteFilm(index); };
 
+    buttonGroup.appendChild(inceleButton);
+    buttonGroup.appendChild(editButton);
+    buttonGroup.appendChild(deleteButton);
+
     cardBody.appendChild(title);
     cardBody.appendChild(director);
     cardBody.appendChild(year);
     cardBody.appendChild(genre);
-    cardBody.appendChild(inceleButton);
-    cardBody.appendChild(editButton);
-    cardBody.appendChild(deleteButton);
-
+    cardBody.appendChild(buttonGroup);
+    
     cardDiv.appendChild(img);
     cardDiv.appendChild(cardBody);
 
@@ -138,6 +144,41 @@ function createFilmCard(film, index) {
 
     return colDiv; 
 }
+
+document.getElementById("searchInput").addEventListener("input", function () {
+    const searchTerm = this.value.toLowerCase();
+    const filteredFilms = films.filter(film =>
+        film.ad.toLowerCase().includes(searchTerm) ||
+        film.tur.toLowerCase().includes(searchTerm) ||
+        film.yil.toString().includes(searchTerm)
+    );
+    renderFilms(filteredFilms);
+});
+
+document.getElementById("sortSelect").addEventListener("change", function () {
+    const sortValue = this.value;
+    let sortedFilms = [...films];
+
+    switch (sortValue) {
+        case "nameAsc":
+            sortedFilms.sort((a, b) => a.ad.localeCompare(b.ad));
+            break;
+        case "nameDesc":
+            sortedFilms.sort((a, b) => b.ad.localeCompare(a.ad));
+            break;
+    }
+
+    renderFilms(sortedFilms);
+});
+
+function renderFilms(filmsToRender) {
+    const filmListesi = document.getElementById("film-listesi");
+    filmListesi.innerHTML = "";
+    filmsToRender.forEach((film, index) => {
+        filmListesi.appendChild(createFilmCard(film, index));
+    });
+}
+
 function inceleFilm(index) {
     let films = JSON.parse(localStorage.getItem("films"));
     let film = films[index];

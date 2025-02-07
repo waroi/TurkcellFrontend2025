@@ -12,7 +12,7 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body class="bg-dark">
+<body class="">
   <nav class="navbar bg-secondary">
     <div class="container">
       <a class="navbar-brand" href="#">
@@ -23,8 +23,10 @@
   </nav>
   <header class="py-5">
     <div class="container">
-      <div class="row">
-        <form class="col-12 col-md-4 offset-md-1 bg-body-tertiary p-3 rounded-2">
+      <div class="row g-4">
+        <form
+          class="col-12 col-md-4 offset-md-1 bg-body-tertiary p-3 rounded-2 shadow d-flex flex-column justify-content-center">
+          <h4 class="mb-3">Film Bilgileri</h4>
           <div class="mb-3">
             <label for="movieName" class="form-label">Film Adı</label>
             <input type="text" class="form-control" id="movieName" aria-describedby="movieName" />
@@ -57,17 +59,26 @@
             Film Ekle
           </button>
         </form>
-        <div class="preview-image-container col-12 col-md-6 offset-md-1 bg-secondary">
-          <h4>image preview</h4>
-          <img class="preview-image img-fluid w-50" src="" alt="Film Afişi" />
+        <div class="preview-image-container col-12 col-md-6 offset-md-1 d-flex flex-column align-items-center">
+          <h4>Film Önizlemesi</h4>
+          <div class="card shadow" style="width: 18rem;"><img class="card-img-top img-fluid object-fit-cover"
+              src="./default-poster.jpg" style="height: 300px;">
+            <div class="card-body">
+              <h5 class="card-title">Film adı giriniz.</h5>
+              <p class="card-text preview-director">Film Yönetmeni giriniz. </p>
+              <p class="card-text preview-year">Çıkış tarihini giriniz</p>
+              <p class="card-text preview-category">Film türünü giriniz.</p>
+
+            </div>
+          </div>
         </div>
       </div>
-    </div>
   </header>
 
   <main>
     <div class="container">
-      <div class="movie-list mt-4 row g-2">
+      <div class="movie-list mt-4 row flex-wrap gap-4 justify-content-center">
+
 
 
       </div>
