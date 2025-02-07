@@ -1,77 +1,55 @@
-const previewIMG = document.querySelector(".preview-image");
+const movieListContainer = document.querySelector('.movie-list');
+const form = document.querySelector('form');
+const movies = [];
 
-previewIMG.onerror = () => {
-  previewIMG.src =
-    "https://github.com/furkan-firat/cinecalm/blob/main/public/defaultPoster.jpg?raw=true";
-};
+function renderMovies() {
+  movieListContainer.innerHTML = '';
 
-function pushMovie({name, director, year, type, image}) {
-  movies.push({name, director, year, type, image});
-  console.log(movies)
-}
+  movies.forEach((movie, index) => {
+    const movieCard = document.createElement('div');
+    //TODO GAP
+    movieCard.classList.add('card', 'col-12', 'col-md-3', 'p-2');
 
-function formCleaner() {
-  document.querySelector("#movieName").value = "";
-  document.querySelector("#director").value = "";
-  document.querySelector("#year").value = "";
-  document.querySelector(".category").value = "";
-  document.querySelector("#movie-banner").value = "";
-}
+    const movieImg = document.createElement('img');
+    movieImg.classList.add('card-img-top', 'h-50');
+    movieImg.src =
+      movie.image ||
+      'https://github.com/furkan-firat/cinecalm/blob/main/public/defaultPoster.jpg?raw=true';
 
-function addMovie({name, director, year, type, image}) {
+    const movieBody = document.createElement('div');
+    movieBody.classList.add('card-body');
 
-  const movieList = document.querySelector(".movie-list");
-  movieList.innerHTML = "";
-  const movieCard = document.createElement("div");
+    const movieName = document.createElement('h5');
+    movieName.classList.add('card-title');
+    movieName.textContent = movie.name;
 
-    movieCard.classList.add("card", "col-12", "col-md-3");
+    const movieDirector = document.createElement('p');
+    movieDirector.classList.add('card-text');
+    movieDirector.textContent = `Yönetmen: ${movie.director}`;
 
-    const movieImg = document.createElement("img");
-    movieImg.classList.add("card-img-top", "img-fluid", "h-50");
-    movieImg.src =image;
+    const movieYear = document.createElement('p');
+    movieYear.classList.add('card-text');
+    movieYear.textContent = `Yıl: ${movie.year}`;
 
-    const movieBody = document.createElement("div");
-    movieBody.classList.add("card-body");
+    const movieType = document.createElement('p');
+    movieType.classList.add('card-text');
+    movieType.textContent = `Tür: ${movie.type}`;
 
-    const movieName = document.createElement("h5");
-    movieName.classList.add("card-title");
-    movieName.textContent = name;
+    const movieButtons = document.createElement('div');
+    movieButtons.classList.add('d-flex', 'gap-2', 'flex-wrap');
 
-    const movieDirector = document.createElement("p");
-    movieDirector.classList.add("card-text");
-    movieDirector.textContent = director;
+    // DELETE ACTION
+    const movieDelete = document.createElement('button');
+    movieDelete.classList.add('btn', 'btn-danger');
+    movieDelete.innerHTML = '<i class="fa-solid fa-trash"></i>';
+    movieDelete.addEventListener('click', () => deleteMovie(index));
 
-    const movieYear = document.createElement("p");
-    movieYear.classList.add("card-text");
-    movieYear.textContent = year;
+    // EDIT ACTION
+    const movieEdit = document.createElement('button');
+    movieEdit.classList.add('btn', 'btn-warning');
+    movieEdit.innerHTML = '<i class="fa-solid fa-pencil"></i>';
+    movieEdit.addEventListener('click', () => editMovie(index));
 
-    const movieType = document.createElement("p");
-    movieType.classList.add("card-text");
-    movieType.textContent = type;
-
-    const movieButtons = document.createElement("div");
-    movieButtons.classList.add("d-flex", "gap-2", "flex-wrap");
-
-    const movieDelete = document.createElement("button");
-    movieDelete.classList.add("btn", "btn-danger", );
-    movieDelete.addEventListener("click", function(e){
-      movieCard.remove();
-      movies.splice(i,1);
-      console.log(e.target);
-      console.log(movies)
-    });
-
-    const movieEdit = document.createElement("button");
-    movieEdit.classList.add("btn", "btn-warning",);
-
-    const iconDelete = document.createElement("i");
-    iconDelete.className = "fa-solid fa-trash";
-
-    const iconEdit = document.createElement("i");
-    iconEdit.className = "fa-solid fa-pencil";
-
-    movieDelete.appendChild(iconDelete);
-    movieEdit.appendChild(iconEdit);
     movieButtons.append(movieEdit, movieDelete);
     movieBody.append(
       movieName,
@@ -81,26 +59,38 @@ function addMovie({name, director, year, type, image}) {
       movieButtons
     );
     movieCard.append(movieImg, movieBody);
-    movieList.appendChild(movieCard);
-
-    pushMovie({name, director, year, type, image})
+    movieListContainer.appendChild(movieCard);
+  });
+}
+// DELETE FUNC
+function deleteMovie(index) {
+  movies.splice(index, 1);
+  console.log(movies);
+  renderMovies();
 }
 
-const movies = [{name: "Film1", director: "Director1", year:1999, type:"Bilim Kurgu", image:"https://picsum.photos/200/300" },{name: "Film2", director: "Director2", year:1999, type:"Korku", image:"https://picsum.photos/seed/picsum/200/300" }];
+// EDIT FUNC
+function editMovie(index) {
+  const movie = movies[index];
+  document.querySelector('#movieName').value = movie.name;
+  document.querySelector('#director').value = movie.director;
+  document.querySelector('#year').value = movie.year;
+  document.querySelector('.category').value = movie.type;
+  document.querySelector('#movie-banner').value = movie.image;
 
-const form = document.querySelector("form");
+  movies.splice(index, 1);
+  renderMovies();
+}
 
-form.addEventListener("submit", (e) => {
+form.addEventListener('submit', (e) => {
   e.preventDefault();
+  const name = document.querySelector('#movieName').value;
+  const director = document.querySelector('#director').value;
+  const year = document.querySelector('#year').value;
+  const type = document.querySelector('.category').value;
+  const image = document.querySelector('#movie-banner').value;
 
-  const name = document.querySelector("#movieName").value;
-  const director = document.querySelector("#director").value;
-  const year = document.querySelector("#year").value;
-  const type = document.querySelector(".category").value;
-  const image = document.querySelector("#movie-banner").value;
-
-  formCleaner();
-  addMovie({name, director, year, type, image});
-  console.log("SUBMIT EDİLDİ",{name, director, year, type, image});
+  movies.push({ name, director, year, type, image });
+  renderMovies();
+  form.reset();
 });
-showMovies();
