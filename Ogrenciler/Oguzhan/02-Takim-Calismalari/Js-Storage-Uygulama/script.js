@@ -49,6 +49,7 @@ const editMovie = (id, e) => {
   poster.value = movie.poster;
 
   const newMovie = {
+    ...movie,
     movieName: movieName.value,
     director: director.value,
     year: year.value,
@@ -56,7 +57,6 @@ const editMovie = (id, e) => {
     isFavourite: isFavourite.checked,
     movieType: movieType.value,
     poster: poster.value,
-    ...movie,
   };
 
   const newMovies = movies.filter((movie) => movie.id !== id);
@@ -72,9 +72,12 @@ function showMovies() {
   movieList.innerHTML = "";
 
   movies.forEach((movie) => {
+    const col = document.createElement("div");
+    col.className = "col d-flex justify-content-center";
+
     const card = document.createElement("div");
-    card.className = "card";
-    card.style.width = "18rem";
+    card.className = "card ";
+    card.style.width = "26rem";
     movieList.appendChild(card);
 
     const image = document.createElement("img");
@@ -130,6 +133,8 @@ function showMovies() {
     cardBody.appendChild(image);
     card.appendChild(deleteButton);
     card.appendChild(editButton);
+    movieList.appendChild(col);
+    col.appendChild(card);
   });
 }
 const deleteMovie = (id, e) => {
