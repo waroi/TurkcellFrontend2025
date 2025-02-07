@@ -1,87 +1,100 @@
-const previewIMG = document.querySelector(".preview-image");
+const movieListContainer = document.querySelector('.movie-list');
+const form = document.querySelector('form');
+document.addEventListener('DOMContentLoaded', loadMoviesFromLocalStorage);
+const movies = [];
 
-previewIMG.onerror = () => {
-  previewIMG.src =
-    "https://github.com/furkan-firat/cinecalm/blob/main/public/defaultPoster.jpg?raw=true";
-};
+function previewMovie() {
+  const name = document.querySelector('#movieName').value;
+  const director = document.querySelector('#director').value;
+  const year = document.querySelector('#year').value;
+  const type = document.querySelector('.category').value;
+  const image = document.querySelector('#movie-banner').value;
 
-function pushMovie() {
-  const name = document.querySelector("#movieName").value;
-  const director = document.querySelector("#director").value;
-  const year = document.querySelector("#year").value;
-  const type = document.querySelector(".category").value;
-  const image = document.querySelector("#movie-banner").value;
+  const previewTitle = document.querySelector(
+    '.preview-image-container .card-title'
+  );
+  const previewDirector = document.querySelector(
+    '.preview-image-container .preview-director'
+  );
+  const previewYear = document.querySelector(
+    '.preview-image-container .preview-year'
+  );
+  const previewCategory = document.querySelector(
+    '.preview-image-container .preview-category'
+  );
+  const previewImage = document.querySelector('.preview-image-container img');
 
-  movies.push({name, director, year, type, image});
+  previewTitle.textContent = name ? name : 'Film adı giriniz.';
+  previewDirector.textContent = director
+    ? `Yönetmen: ${director}`
+    : 'Lütfen yönetmen giriniz.';
+
+  previewYear.textContent = year
+    ? `Çıkış tarihi: ${year}`
+    : 'Çıkış tarihini giriniz.';
+
+  previewCategory.textContent =
+    type !== 'Tür' ? `Tür: ${type}` : 'Film türünü giriniz.';
+
+  if (image) {
+    previewImage.src = image;
+    previewImage.onerror = () => (previewImage.src = './default-poster.jpg');
+  } else {
+    previewImage.src = './default-poster.jpg';
+  }
 }
 
-function formCleaner() {
-  document.querySelector("#movieName").value = "";
-  document.querySelector("#director").value = "";
-  document.querySelector("#year").value = "";
-  document.querySelector(".category").value = "";
-  document.querySelector("#movie-banner").value = "";
-}
+function renderMovies() {
+  movieListContainer.innerHTML = '';
 
-function showMovies() {
-  const movieList = document.querySelector(".movie-list");
-  movieList.innerHTML = "";
-  
-  for(let i = 0; i <= movies.length; i++){
-    const movie = movies[i];
-    console.log(movies.length, i);
-    debugger;
+  movies.forEach((movie, index) => {
+    const movieCard = document.createElement('div');
+    movieCard.classList.add('card', 'col-12', 'col-md-3', 'p-0', 'shadow');
+    movieCard.style = 'width: 18rem';
 
-    const movieCard = document.createElement("div");
-
-    movieCard.classList.add("card", "col-12", "col-md-3");
-
-    const movieImg = document.createElement("img");
-    movieImg.classList.add("card-img-top", "img-fluid", "h-50");
+    const movieImg = document.createElement('img');
+    movieImg.classList.add('card-img-top', 'img-fluid', 'object-fit-cover');
+    movieImg.style = 'height: 300px';
     movieImg.src = movie.image;
+    movieImg.addEventListener(
+      'error',
+      () => (movieImg.src = './default-poster.jpg')
+    );
 
-    const movieBody = document.createElement("div");
-    movieBody.classList.add("card-body");
+    const movieBody = document.createElement('div');
+    movieBody.classList.add('card-body');
 
-    const movieName = document.createElement("h5");
-    movieName.classList.add("card-title");
+    const movieName = document.createElement('h5');
+    movieName.classList.add('card-title');
     movieName.textContent = movie.name;
 
-    const movieDirector = document.createElement("p");
-    movieDirector.classList.add("card-text");
-    movieDirector.textContent = movie.director;
+    const movieDirector = document.createElement('p');
+    movieDirector.classList.add('card-text');
+    movieDirector.textContent = `Yönetmen: ${movie.director}`;
 
-    const movieYear = document.createElement("p");
-    movieYear.classList.add("card-text");
-    movieYear.textContent = movie.year;
+    const movieYear = document.createElement('p');
+    movieYear.classList.add('card-text');
+    movieYear.textContent = `Yıl: ${movie.year}`;
 
-    const movieType = document.createElement("p");
-    movieType.classList.add("card-text");
-    movieType.textContent = movie.type;
+    const movieType = document.createElement('p');
+    movieType.classList.add('card-text');
+    movieType.textContent = `Tür: ${movie.type}`;
 
-    const movieButtons = document.createElement("div");
-    movieButtons.classList.add("d-grid", "gap-2");
+    const movieButtons = document.createElement('div');
+    movieButtons.classList.add('d-flex', 'gap-2', 'flex-wrap');
 
-    const movieDelete = document.createElement("button");
-    movieDelete.classList.add("btn", "btn-danger");
-    movieDelete.addEventListener("click", function(e){
-      movieCard.remove();
-      movies.splice(i,1);
-      console.log(e.target);
-      console.log(movies)
-    });
+    // DELETE ACTION
+    const movieDelete = document.createElement('button');
+    movieDelete.classList.add('btn', 'btn-danger');
+    movieDelete.innerHTML = '<i class="fa-solid fa-trash"></i>';
+    movieDelete.addEventListener('click', () => deleteMovie(index));
 
-    const movieEdit = document.createElement("button");
-    movieEdit.classList.add("btn", "btn-warning", "updateBtn");
+    // EDIT ACTION
+    const movieEdit = document.createElement('button');
+    movieEdit.classList.add('btn', 'btn-warning');
+    movieEdit.innerHTML = '<i class="fa-solid fa-pencil"></i>';
+    movieEdit.addEventListener('click', () => editMovie(index));
 
-    const iconDelete = document.createElement("i");
-    iconDelete.className = "fa-solid fa-trash";
-
-    const iconEdit = document.createElement("i");
-    iconEdit.className = "fa-solid fa-pencil";
-
-    movieDelete.appendChild(iconDelete);
-    movieEdit.appendChild(iconEdit);
     movieButtons.append(movieEdit, movieDelete);
     movieBody.append(
       movieName,
@@ -91,19 +104,69 @@ function showMovies() {
       movieButtons
     );
     movieCard.append(movieImg, movieBody);
-    movieList.appendChild(movieCard);
-  }
+    movieListContainer.appendChild(movieCard);
+  });
+}
+// DELETE FUNC
+function deleteMovie(index) {
+  movies.splice(index, 1);
+  console.log(movies);
+  renderMovies();
 }
 
-const movies = [];
+// EDIT FUNC
+function editMovie(index) {
+  const movie = movies[index];
+  document.querySelector('#movieName').value = movie.name;
+  document.querySelector('#director').value = movie.director;
+  document.querySelector('#year').value = movie.year;
+  document.querySelector('.category').value = movie.type;
+  document.querySelector('#movie-banner').value = movie.image;
 
-const form = document.querySelector("form");
+  movies.splice(index, 1);
+  renderMovies();
+  document.querySelector('#movieName').focus();
+}
 
-form.addEventListener("submit", (e) => {
+form.addEventListener('submit', (e) => {
   e.preventDefault();
+  const name = document.querySelector('#movieName').value;
+  const director = document.querySelector('#director').value;
+  const year = document.querySelector('#year').value;
+  const type = document.querySelector('.category').value;
+  const image = document.querySelector('#movie-banner').value;
+  console.log(type);
 
-  pushMovie();
-  formCleaner();
-  showMovies();
-  console.log(movies);
+  if (!name || !director || !year || !type || type === 'Tür') {
+    return;
+  }
+  movies.push({ name, director, year, type, image });
+  saveMoviesToLocalStorage();
+  const alert = document.createElement('div');
+  alert.classList.add('alert', 'alert-success', 'mt-5');
+  alert.role = 'alert';
+  alert.textContent = 'Film başarıyla eklendi.';
+  form.appendChild(alert);
+  setTimeout(() => {
+    alert.remove();
+  }, 3000);
+  renderMovies();
+  form.reset();
 });
+
+form.addEventListener('input', (e) => {
+  e.preventDefault();
+  previewMovie();
+});
+
+function saveMoviesToLocalStorage() {
+  localStorage.setItem('movies', JSON.stringify(movies));
+}
+
+function loadMoviesFromLocalStorage() {
+  const storedMovies = localStorage.getItem('movies');
+  if (storedMovies) {
+    movies.push(...JSON.parse(storedMovies));
+    renderMovies();
+  }
+}

@@ -47,7 +47,6 @@ console.log(typeof getUser);*/
 
 //bu kod sayfa yüklendiğinde önceki filmlerin yüklenmesini sağlıyormuş
 document.addEventListener("DOMContentLoaded", loadFilms);
-//ekle butonuna basıldığında addFilm fonksiyonu çalışacak
 document.getElementById("film-form").addEventListener("submit", addFilm);
 function loadFilms() {
     let films = JSON.parse(localStorage.getItem("films")) || [];
@@ -77,71 +76,122 @@ function addFilm(event) {
 }
 
 function createFilmCard(film, index) {
-    // Kolon oluştur
+
     let colDiv = document.createElement("div");
-    colDiv.classList.add("col-md-4");
+    colDiv.classList.add("col-md-4", "col-sm-6", "d-flex");
 
-    // Kart oluştur
     let cardDiv = document.createElement("div");
-    cardDiv.classList.add("card", "mb-3");
+    cardDiv.classList.add("card", "mb-3", "flex-fill");
 
-    // Resim oluştur
     let img = document.createElement("img");
     img.src = film.afis;
     img.alt = film.ad;
     img.classList.add("card-img-top");
-    img.style.maxHeight="500px";
+    //img.style.maxHeight="500px";
+    img.style.objectFit="cover";
 
-    // Kart gövdesi
     let cardBody = document.createElement("div");
     cardBody.classList.add("card-body");
 
-    // Başlık
     let title = document.createElement("h5");
-    title.classList.add("card-title");
+    title.classList.add("card-title","text-center");
     title.textContent = film.ad;
 
-    // Yönetmen bilgisi
     let director = document.createElement("p");
-    director.classList.add("card-text");
+    director.classList.add("card-text","text-center");
     director.innerHTML = `<strong>Yönetmen:</strong> ${film.yonetmen}`;
 
-    // Yıl bilgisi
     let year = document.createElement("p");
-    year.classList.add("card-text");
+    year.classList.add("card-text","text-center");
     year.innerHTML = `<strong>Yıl:</strong> ${film.yil}`;
 
-    // Tür bilgisi
     let genre = document.createElement("p");
-    genre.classList.add("card-text");
+    genre.classList.add("card-text","text-center");
     genre.innerHTML = `<strong>Tür:</strong> ${film.tur}`;
 
-    // Güncelle Butonu
+    let buttonGroup = document.createElement("div");
+    buttonGroup.classList.add("btn-group-responsive", "d-flex", "justify-content-flex-start", "mt-3");
+
+    let inceleButton = document.createElement("button");
+    inceleButton.classList.add("btn", "btn-success","ms-5","me-5","text-center");
+    inceleButton.textContent = "İncele";
+    inceleButton.onclick = function() { inceleFilm(index); };
+
     let editButton = document.createElement("button");
-    editButton.classList.add("btn", "btn-warning");
+    editButton.classList.add("btn", "btn-warning","text-center","me-5");
     editButton.textContent = "Güncelle";
     editButton.onclick = function() { editFilm(index); };
 
-    // Silme Butonu
     let deleteButton = document.createElement("button");
-    deleteButton.classList.add("btn", "btn-danger", "ms-2");
+    deleteButton.classList.add("btn", "btn-danger", "text-center");
     deleteButton.textContent = "Sil";
     deleteButton.onclick = function() { deleteFilm(index); };
 
-    // Elemanları birbirine ekle
+    buttonGroup.appendChild(inceleButton);
+    buttonGroup.appendChild(editButton);
+    buttonGroup.appendChild(deleteButton);
+
     cardBody.appendChild(title);
     cardBody.appendChild(director);
     cardBody.appendChild(year);
     cardBody.appendChild(genre);
-    cardBody.appendChild(editButton);
-    cardBody.appendChild(deleteButton);
-
+    cardBody.appendChild(buttonGroup);
+    
     cardDiv.appendChild(img);
     cardDiv.appendChild(cardBody);
 
     colDiv.appendChild(cardDiv);
 
     return colDiv; 
+}
+
+document.getElementById("searchInput").addEventListener("input", function () {
+    const searchTerm = this.value.toLowerCase();
+    const filteredFilms = films.filter(film =>
+        film.ad.toLowerCase().includes(searchTerm) ||
+        film.tur.toLowerCase().includes(searchTerm) ||
+        film.yil.toString().includes(searchTerm)
+    );
+    renderFilms(filteredFilms);
+});
+
+document.getElementById("sortSelect").addEventListener("change", function () {
+    const sortValue = this.value;
+    let sortedFilms = [...films];
+
+    switch (sortValue) {
+        case "nameAsc":
+            sortedFilms.sort((a, b) => a.ad.localeCompare(b.ad));
+            break;
+        case "nameDesc":
+            sortedFilms.sort((a, b) => b.ad.localeCompare(a.ad));
+            break;
+    }
+
+    renderFilms(sortedFilms);
+});
+
+function renderFilms(filmsToRender) {
+    const filmListesi = document.getElementById("film-listesi");
+    filmListesi.innerHTML = "";
+    filmsToRender.forEach((film, index) => {
+        filmListesi.appendChild(createFilmCard(film, index));
+    });
+}
+
+function inceleFilm(index) {
+    let films = JSON.parse(localStorage.getItem("films"));
+    let film = films[index];
+
+    document.getElementById("modalFilmAfis").src = film.afis;
+    document.getElementById("modalFilmAfis").alt = film.ad;
+    document.getElementById("modalFilmAdi").textContent = film.ad;
+    document.getElementById("modalYonetmen").textContent = film.yonetmen;
+    document.getElementById("modalYil").textContent = film.yil;
+    document.getElementById("modalTur").textContent = film.tur;
+
+    let filmModal = new bootstrap.Modal(document.getElementById("filmModal"));
+    filmModal.show();
 }
 
 function editFilm(index) {
