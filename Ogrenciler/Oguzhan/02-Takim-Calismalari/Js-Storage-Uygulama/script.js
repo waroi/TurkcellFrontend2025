@@ -14,21 +14,22 @@ modalForm.addEventListener("submit", addMovie);
 function addMovie(e) {
   e.preventDefault();
   const movies = JSON.parse(localStorage.getItem("movies"));
+  const moviesLength = movies.length;
   const movieName = document.getElementById("movieName");
   const director = document.getElementById("director");
   const year = document.getElementById("year");
   const description = document.getElementById("description");
-  const isFavourite = document.getElementById("addFavorite");
+  const isFavorite = document.getElementById("addFavorite");
   const movieType = document.getElementById("movieType");
   const poster = document.getElementById("poster");
   if (editingMovieId === "") {
     const movie = {
-      id: movieName.value,
+      id: moviesLength + movieName.value,
       movieName: movieName.value,
       director: director.value,
       year: year.value,
       description: description.value,
-      isFavourite: isFavourite.checked,
+      isFavorite: isFavorite.checked,
       movieType: movieType.value,
       poster: poster.value,
     };
@@ -44,7 +45,7 @@ function addMovie(e) {
       director: director.value,
       year: year.value,
       description: description.value,
-      isFavourite: isFavourite.checked,
+      isFavorite: isFavorite.checked,
       movieType: movieType.value,
       poster: poster.value,
     };
@@ -56,8 +57,10 @@ function addMovie(e) {
   director.innerHTML = "";
   year.innerHTML = "";
   description.innerHTML = "";
+  isFavorite.innerHTML = "";
   poster.innerHTML = "";
   showMovies();
+  showFavorites()
 }
 
 const editMovie = (id) => {
@@ -70,14 +73,14 @@ const editMovie = (id) => {
   const director = document.getElementById("director");
   const year = document.getElementById("year");
   const description = document.getElementById("description");
-  const isFavourite = document.getElementById("addFavorite");
+  const isFavorite = document.getElementById("addFavorite");
   const movieType = document.getElementById("movieType");
   const poster = document.getElementById("poster");
   movieName.value = movie.movieName;
   director.value = movie.director;
   year.value = movie.year;
   description.value = movie.description;
-  isFavourite.checked = movie.isFavourite;
+  isFavorite.checked = movie.isFavorite;
   movieType.value = movie.movieType;
   poster.value = movie.poster;
 };
@@ -87,7 +90,13 @@ function showMovies() {
   const movieList = document.getElementById("movieList");
   movieList.innerHTML = "";
 
-  movies.forEach((movie) => {
+  const movieTypeMap = {
+    "1": "Bilim Kurgu",
+    "2": "Dram",
+    "3": "Aksiyon"
+  };
+
+  movies.map((movie) => {
     const col = document.createElement("div");
     col.className = "col d-flex justify-content-center mb-2";
 
@@ -120,13 +129,13 @@ function showMovies() {
     description.className = "card-text";
     description.textContent = movie.description;
 
-    const isFavourite = document.createElement("p");
-    isFavourite.className = "card-text";
-    isFavourite.textContent = movie.isFavourite ? "Favourite" : "";
+    const isFavorite = document.createElement("p");
+    isFavorite.className = "card-text";
+    isFavorite.textContent = movie.isFavorite ? "Favourite" : "";
 
     const movieType = document.createElement("p");
     movieType.className = "card-text";
-    movieType.textContent = movie.movieType;
+    movieType.textContent = movieTypeMap[movie.movieType] || "Bilinmeyen Tür";
 
     const deleteButton = document.createElement("button");
     deleteButton.className = "btn btn-danger mb-2";
@@ -143,7 +152,7 @@ function showMovies() {
     cardBody.appendChild(director);
     cardBody.appendChild(year);
     cardBody.appendChild(description);
-    cardBody.appendChild(isFavourite);
+    cardBody.appendChild(isFavorite);
     cardBody.appendChild(movieType);
     cardBody.appendChild(image);
     card.appendChild(deleteButton);
@@ -161,5 +170,58 @@ const deleteMovie = (id, e) => {
   localStorage.setItem("movies", JSON.stringify(newMovies));
   showMovies();
 };
+
+const showFavorites = () => {
+  const movies = JSON.parse(localStorage.getItem("movies")) || [];
+  const favoriteMovies = movies.filter((movie) => movie.isFavorite === true);
+  const favoriteList = document.getElementById("favoriteList");
+  favoriteList.innerHTML = "";
+
+  favoriteMovies.map((movie) => {
+
+    const card = document.createElement("div");
+    card.className = "card";
+
+    const img = document.createElement("img");
+    img.className = "card-img-top";
+    img.src = movie.poster || "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6GBT9UptUlr6lwozpVfkKhaEMmrnivaY4VQ&s";
+
+    const cardBody = document.createElement("div");
+    cardBody.className = "card-body";
+
+    const title = document.createElement("h5");
+    title.className = "card-title";
+    title.textContent = movie.movieName;
+
+    const text = document.createElement("p");
+    text.className = "card-text";
+    text.textContent = movie.description || "Açıklama yok";
+
+    const removeBtn = document.createElement("a");
+    removeBtn.className = "btn btn-primary";
+    removeBtn.textContent = "Favorilerden Kaldır";
+    removeBtn.addEventListener("click", () => removeFromFavorites(movie.id));
+
+    cardBody.appendChild(title);
+    cardBody.appendChild(text);
+    cardBody.appendChild(removeBtn);
+    card.appendChild(img);
+    card.appendChild(cardBody);
+
+    favoriteList.appendChild(card);
+  });
+};
+
+
+const removeFromFavorites = (id) => {
+  let movies = JSON.parse(localStorage.getItem("movies")) || [];
+  movies = movies.map(movie =>
+    movie.id === id ? { ...movie, isFavorite: false } : movie
+  );
+  localStorage.setItem("movies", JSON.stringify(movies));
+  showFavorites();
+};
+
+showFavorites();
 
 showMovies();
