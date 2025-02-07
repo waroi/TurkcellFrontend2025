@@ -1,3 +1,4 @@
+
 document.getElementById("addFilmBtn").onclick = function () {
   const filmName = document.getElementById("filmName").value;
   const filmDirector = document.getElementById("filmDirector").value;
@@ -6,7 +7,22 @@ document.getElementById("addFilmBtn").onclick = function () {
   if (filmName && filmDirector && filmDate && filmPhoto) {
     addFilm(filmName, filmDirector, filmDate, filmPhoto);
     reload();
+    let newFilm = {
+      fName:filmName, 
+      fDirector:filmDirector, 
+      fDate:filmDate, 
+      fPhoto:filmPhoto
+    }
+
+    let filmArray = [localStorage.getItem("filmArray")];
+    filmArray.push(newFilm);
+
+    localStorage.setItem("filmArray",JSON.stringify(filmArray));
+    let getFilm = JSON.parse(localStorage.getItem("newFilm"));
+    console.log(getFilm);
   }
+  
+
 };
 
 function reload() {
@@ -55,24 +71,6 @@ function addFilm(filmName, filmDirector, filmDate, filmPhoto) {
   const filmGroup = document.querySelector(".film-group");
   filmGroup.appendChild(filmDiv);
 
-  // const ul = document.createElement("ul");
-  // ul.className = "list-group";
-  // ul.id = "todoList";
-  // const li = document.createElement("li");
-  // li.className =
-  // 	"list-group-item d-flex justify-content-between mt-3 border border-warning";
-  // let header = document.createElement("h2");
-  // header.className = "flex-shrink-1";
-  // header.innerText = todoInput;
-  // let desc = document.createElement("div");
-  // desc.className =
-  // 	"d-flex flex-col justify-content-center align-items-center text-center w-50";
-  // desc.innerText = descInput;
-  // const numberSpan = document.createElement("span");
-  // numberSpan.className = "item-number me-2";
-  // const buttonRow = document.createElement("div");
-  // buttonRow.className = "d-flex gap-2";
-
   removeBtn.onclick = function () {
     let confirmDelete = confirm(
       `"${filmName}" filmini silmek istediğinize emin misiniz?`
@@ -111,49 +109,6 @@ function addFilm(filmName, filmDirector, filmDate, filmPhoto) {
       saveBtn.replaceWith(addBtn);
     };
   };
-  // const completeBtn = document.createElement("button");
-  // completeBtn.className = "btn btn-success btn-sm";
-  // completeBtn.innerText = "Tamamla";
-  // completeBtn.onclick = function () {
-  // 	li.classList.toggle("list-group-item-success");
-  // 	header.classList.toggle("text-decoration-line-through");
-  // 	desc.classList.toggle("text-decoration-line-through");
-  // };
 
-  // const editBtn = document.createElement("button");
-  // editBtn.className = "btn btn-secondary btn-sm";
-  // editBtn.innerText = "Düzenle";
-  // editBtn.onclick = function () {
-  // 	if (editBtn.innerText === "Düzenle") {
-  // 		const titleInput = document.createElement("input");
-  // 		titleInput.type = "text";
-  // 		titleInput.className = "form-control mb-2";
-  // 		titleInput.value = header.innerText;
-  // 		const descInput = document.createElement("input");
-  // 		descInput.type = "text";
-  // 		descInput.className = "form-control mb-2";
-  // 		descInput.value = desc.innerText;
-  // 		header.replaceWith(titleInput);
-  // 		desc.replaceWith(descInput);
-  // 		editBtn.innerText = "Kaydet";
-  // 		editBtn.className = "btn btn-primary btn-sm";
-  // 		alert("Bu işlemi gerçekleştirmek istediğinize emin misiniz?");
-  // 	} else {
-  // 		const titleInput = li.querySelector("input[type='text']:nth-of-type(1)");
-  // 		const descInput = li.querySelector("input[type='text']:nth-of-type(2)");
-  // 		const newHeader = document.createElement("h2");
-  // 		newHeader.innerText = titleInput.value;
-  // 		const newDesc = document.createElement("div");
-  // 		newDesc.innerText = descInput.value;
-  // 		titleInput.replaceWith(newHeader);
-  // 		descInput.replaceWith(newDesc);
-  // 		header = newHeader;
-  // 		desc = newDesc;
-  // 		editBtn.innerText = "Düzenle";
-  // 		editBtn.className = "btn btn-secondary btn-sm";
-  // 		alert("Güncellemeler kaydedildi");
 
-  // 	}
-  // };
-  //document.getElementById("todoList").appendChild(li);
 }
