@@ -7,14 +7,17 @@ function renderMovies() {
 
   movies.forEach((movie, index) => {
     const movieCard = document.createElement('div');
-    //TODO GAP
-    movieCard.classList.add('card', 'col-12', 'col-md-3', 'p-2');
+    movieCard.classList.add('card', 'col-12', 'col-md-3', 'p-0', 'shadow');
+    movieCard.style = 'width: 18rem';
 
     const movieImg = document.createElement('img');
-    movieImg.classList.add('card-img-top', 'h-50');
-    movieImg.src =
-      movie.image ||
-      'https://github.com/furkan-firat/cinecalm/blob/main/public/defaultPoster.jpg?raw=true';
+    movieImg.classList.add('card-img-top', 'img-fluid', 'object-fit-cover');
+    movieImg.style = 'height: 300px';
+    movieImg.src = movie.image;
+    movieImg.addEventListener(
+      'error',
+      () => (movieImg.src = './default-poster.jpg')
+    );
 
     const movieBody = document.createElement('div');
     movieBody.classList.add('card-body');
@@ -80,6 +83,7 @@ function editMovie(index) {
 
   movies.splice(index, 1);
   renderMovies();
+  document.querySelector('#movieName').focus();
 }
 
 form.addEventListener('submit', (e) => {
@@ -94,3 +98,8 @@ form.addEventListener('submit', (e) => {
   renderMovies();
   form.reset();
 });
+// TODO
+// local storage
+// validation
+// preview
+// update do not delete card
