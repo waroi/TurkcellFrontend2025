@@ -97,7 +97,6 @@ let movies = [
     },
 
 ];
-localStorage.setItem("movies", JSON.stringify(movies));
 
 changes.addEventListener("click", () => {
     if (indexUp <= 0) {
