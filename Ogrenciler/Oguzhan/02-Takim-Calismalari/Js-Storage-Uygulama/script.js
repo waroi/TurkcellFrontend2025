@@ -1,37 +1,19 @@
-const movies = [];
-document.getElementById("addMovieForm").addEventListener("submit", addMovie);
+const checkInitialStorage = () => {
+  let movies = localStorage.getItem("movies");
+  if (!movies) {
+    movies = [];
+    localStorage.setItem("movies", JSON.stringify(movies));
+  }
+};
+checkInitialStorage();
+
+let editingMovieId = "";
+const modalForm = document.getElementById("addMovieForm");
+modalForm.addEventListener("submit", addMovie);
 
 function addMovie(e) {
   e.preventDefault();
-
-  const movieName = document.getElementById("movieName").value;
-  const director = document.getElementById("director").value;
-  const year = document.getElementById("year").value;
-  const description = document.getElementById("description").value;
-  const isFavourite = document.getElementById("addFavorite").checked;
-  const movieType = document.getElementById("movieType").value;
-  const poster = document.getElementById("poster").value;
-  const id = movieName;
-
-  const movie = {
-    movieName,
-    director,
-    year,
-    description,
-    isFavourite,
-    movieType,
-    poster,
-    id,
-  };
-  movies.push(movie);
-  localStorage.setItem("movies", JSON.stringify(movies));
-  showMovies();
-}
-
-const editMovie = (id, e) => {
-  e.preventDefault();
   const movies = JSON.parse(localStorage.getItem("movies"));
-  const movie = movies.find((movie) => movie.id === id);
   const movieName = document.getElementById("movieName");
   const director = document.getElementById("director");
   const year = document.getElementById("year");
@@ -39,7 +21,58 @@ const editMovie = (id, e) => {
   const isFavourite = document.getElementById("addFavorite");
   const movieType = document.getElementById("movieType");
   const poster = document.getElementById("poster");
+  if (editingMovieId === "") {
+    const movie = {
+      id: movieName.value,
+      movieName: movieName.value,
+      director: director.value,
+      year: year.value,
+      description: description.value,
+      isFavourite: isFavourite.checked,
+      movieType: movieType.value,
+      poster: poster.value,
+    };
+    movies.push(movie);
+    localStorage.setItem("movies", JSON.stringify(movies));
+  } else {
+    const movieIndex = movies.findIndex((movie) => movie.id === editingMovieId);
+    const movie = movies[movieIndex];
 
+    const updatedMovie = {
+      ...movie,
+      movieName: movieName.value,
+      director: director.value,
+      year: year.value,
+      description: description.value,
+      isFavourite: isFavourite.checked,
+      movieType: movieType.value,
+      poster: poster.value,
+    };
+    movies[movieIndex] = updatedMovie;
+    localStorage.setItem("movies", JSON.stringify(movies));
+    editingMovieId = "";
+  }
+  movieName.innerHTML = "";
+  director.innerHTML = "";
+  year.innerHTML = "";
+  description.innerHTML = "";
+  poster.innerHTML = "";
+  showMovies();
+}
+
+const editMovie = (id) => {
+  editingMovieId = id;
+  const movies = JSON.parse(localStorage.getItem("movies"));
+  const movieIndex = movies.findIndex((movie) => movie.id === editingMovieId);
+  const movie = movies[movieIndex];
+  console.log("id", editingMovieId, id);
+  const movieName = document.getElementById("movieName");
+  const director = document.getElementById("director");
+  const year = document.getElementById("year");
+  const description = document.getElementById("description");
+  const isFavourite = document.getElementById("addFavorite");
+  const movieType = document.getElementById("movieType");
+  const poster = document.getElementById("poster");
   movieName.value = movie.movieName;
   director.value = movie.director;
   year.value = movie.year;
@@ -47,23 +80,6 @@ const editMovie = (id, e) => {
   isFavourite.checked = movie.isFavourite;
   movieType.value = movie.movieType;
   poster.value = movie.poster;
-
-  const newMovie = {
-    ...movie,
-    movieName: movieName.value,
-    director: director.value,
-    year: year.value,
-    description: description.value,
-    isFavourite: isFavourite.checked,
-    movieType: movieType.value,
-    poster: poster.value,
-  };
-
-  const newMovies = movies.filter((movie) => movie.id !== id);
-  newMovies.push(newMovie);
-  localStorage.setItem("movies", JSON.stringify(newMovies));
-
-  showMovies();
 };
 
 function showMovies() {
@@ -73,10 +89,10 @@ function showMovies() {
 
   movies.forEach((movie) => {
     const col = document.createElement("div");
-    col.className = "col d-flex justify-content-center";
+    col.className = "col d-flex justify-content-center mb-2";
 
     const card = document.createElement("div");
-    card.className = "card ";
+    card.className = "card bg-transparent text-white border-light p-3";
     card.style.width = "26rem";
     movieList.appendChild(card);
 
@@ -113,7 +129,7 @@ function showMovies() {
     movieType.textContent = movie.movieType;
 
     const deleteButton = document.createElement("button");
-    deleteButton.className = "btn btn-danger";
+    deleteButton.className = "btn btn-danger mb-2";
     deleteButton.textContent = "Delete";
     deleteButton.addEventListener("click", (e) => deleteMovie(movie.id, e));
 
@@ -122,8 +138,7 @@ function showMovies() {
     editButton.textContent = "Edit";
     editButton.setAttribute("data-bs-toggle", "modal");
     editButton.setAttribute("data-bs-target", "#exampleModal");
-    editButton.addEventListener("click", (e) => editMovie(movie.id, e));
-
+    editButton.addEventListener("click", () => editMovie(movie.id));
     cardBody.appendChild(title);
     cardBody.appendChild(director);
     cardBody.appendChild(year);
