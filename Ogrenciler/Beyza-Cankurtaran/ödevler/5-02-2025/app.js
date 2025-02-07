@@ -202,6 +202,7 @@ function editFilm(index) {
     document.getElementById("yil").value = film.yil;
     document.getElementById("tur").value = film.tur;
     document.getElementById("afis").value = film.afis;
+    document.getElementById("film-form").scrollIntoView({ behavior: "smooth" });
     deleteFilm(index);
 
 
