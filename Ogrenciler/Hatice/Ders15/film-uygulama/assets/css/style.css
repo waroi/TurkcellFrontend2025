@@ -37,6 +37,11 @@ header{
     height: 450px;
     object-fit: cover;
 }
+@media (max-width: 768px) {
+  .card img {
+      height: 100%;
+  }
+}
 .card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     background-color: #000000;
