@@ -22,7 +22,7 @@ let movies = [
         title: "Harry Potter Melez Prens",
         year: "2009",
         poster: "https://static.nadirkitap.com/fotograf/746977/23/Efemera_2021051814284274697713.jpg",
-        type: "Bilim Kurgu",
+        type: "Fantastik",
         director: "Alfonso Cuarón",
     },
     {
@@ -67,12 +67,39 @@ let movies = [
         type: "Aksiyon",
         director: "Denis Villeneuve",
     },
+    {
+        title: "Zindan Adası",
+        year: "2010",
+        poster: "https://m.media-amazon.com/images/M/MV5BN2FjNWExYzEtY2YzOC00YjNlLTllMTQtNmIwM2Q1YzBhOWM1XkEyXkFqcGc@._V1_.jpg",
+        type: "Aksiyon",
+        director: "Martin Scorsese",
+    },
+    {
+        title: "Buz Devri ",
+        year: "2002",
+        poster: "https://upload.wikimedia.org/wikipedia/tr/a/ad/Buz_Devri_afis.jpg",
+        type: "Animasyon",
+        director: "Chris Wedge",
+    },
+    {
+        title: "Cinnet",
+        year: "1980",
+        poster: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYD2w9WTpwNY_tvIVts88QyDY_Jj9nJYosxg&s",
+        type: "Korku",
+        director: "Stanley Kubrick",
+    },
+    {
+        title: "Blade Runner 2049",
+        year: "2017",
+        poster: "https://b6s54eznn8xq.merlincdn.net/Uploads/Films/blade-runner-2049-bicak-sirti-201791913625.jpg",
+        type: "Bilim Kurgu",
+        director: "Denis Villeneuve",
+    },
 
 ];
 localStorage.setItem("movies", JSON.stringify(movies));
 
 changes.addEventListener("click", () => {
-
     if (indexUp <= 0) {
         let movie = {
             poster: poster.value,
@@ -84,7 +111,7 @@ changes.addEventListener("click", () => {
         }
         movies.push(movie)
         localStorage.setItem("movies", JSON.stringify(movies));
-        showMovies()
+        showMovies();
     } else {
         movies[indexUp].title = filmname.value
         movies[indexUp].director = director.value
@@ -92,11 +119,15 @@ changes.addEventListener("click", () => {
         movies[indexUp].type = type.value
         movies[indexUp].poster = poster.value
         localStorage.setItem("movies", JSON.stringify(movies));
-        showMovies()
+        showMovies();
     }
 
+    poster.value = "";
+    filmname.value = "";
+    year.value = "";
+    type.value = "";
+    director.value = "";
 });
-
 function updateMovie(index) {
     const movie = movies[index]
 
@@ -108,19 +139,16 @@ function updateMovie(index) {
     indexUp = index
 
 }
-
 function removeMovie(index) {
     movies.splice(index, 1)
     localStorage.setItem("movies", JSON.stringify(movies));
-    showMovies()
+    showMovies();
 }
-
 function showMovies() {
     let moviesStorage = JSON.parse(localStorage.getItem("movies"))
     if (moviesStorage !== null) {
         movies = moviesStorage
     }
-
     if (movies !== null) {
         let movieTemplate = '';
         movieWrap.innerHTML = ''
@@ -129,8 +157,8 @@ function showMovies() {
             <div class="col-md-3 mb-5">
             <div class="card h-100">
             <img src="${movie.poster}" class="card-img-top" alt="${movie.title} Poster">
-            <div class="card-body">
-            <h5 class="card-title">${movie.title}</h5>
+            <div class="card-body h-100">
+            <h5 class="card-title fw-bold">${movie.title}</h5>
             <p class="card-text">Yönetmen: ${movie.director} </p>
             <p class="card-text">Yıl: ${movie.year} </p>
             <p class="card-text">Tür: ${movie.type} </p>
@@ -148,18 +176,15 @@ function showMovies() {
         showSlider();
     }
 }
-
 function showSlider() {
     const carouselItems = document.getElementById("carousel-items");
     let moviesStorage = JSON.parse(localStorage.getItem("movies"));
     if (moviesStorage !== null) {
         movies = moviesStorage;
     }
-
     if (movies !== null) {
         let sliderTemplate = '';
         let numberOfItemsPerSlide = 4;
-
         for (let i = 0; i < movies.length; i += numberOfItemsPerSlide) {
             let slideItems = movies.slice(i, i + numberOfItemsPerSlide);
             sliderTemplate += `
@@ -172,10 +197,7 @@ function showSlider() {
                 </div>
             </div>`;
         }
-
         carouselItems.innerHTML = sliderTemplate;
     }
 }
-
-
 showMovies();
