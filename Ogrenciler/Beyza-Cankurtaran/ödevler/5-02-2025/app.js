@@ -113,12 +113,12 @@ function createFilmCard(film, index) {
     buttonGroup.classList.add("btn-group-responsive", "d-flex", "justify-content-flex-start", "mt-3");
 
     let inceleButton = document.createElement("button");
-    inceleButton.classList.add("btn", "btn-success","ms-5","me-5","text-center");
+    inceleButton.classList.add("btn", "btn-success","text-center");
     inceleButton.textContent = "İncele";
     inceleButton.onclick = function() { inceleFilm(index); };
 
     let editButton = document.createElement("button");
-    editButton.classList.add("btn", "btn-warning","text-center","me-5");
+    editButton.classList.add("btn", "btn-warning","text-center");
     editButton.textContent = "Güncelle";
     editButton.onclick = function() { editFilm(index); };
 
@@ -202,6 +202,7 @@ function editFilm(index) {
     document.getElementById("yil").value = film.yil;
     document.getElementById("tur").value = film.tur;
     document.getElementById("afis").value = film.afis;
+    document.getElementById("film-form").scrollIntoView({ behavior: "smooth" });
     deleteFilm(index);
 
 

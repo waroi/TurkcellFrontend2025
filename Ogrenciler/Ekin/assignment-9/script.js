@@ -22,7 +22,7 @@ add.addEventListener("click", (event) => {
 
 document.addEventListener("DOMContentLoaded", function() {
   const cardFlip = document.querySelector(".card-inner");
-  if (cardFlip) { // Eğer eleman bulunduysa event ekle
+  if (cardFlip) {
     cardFlip.addEventListener("click", function(){
       cardFlip.classList.toggle("is-flipped");
     });
@@ -147,6 +147,9 @@ function appendMovie(movie) {
   card.classList.add("card");
   let cardInner = document.createElement("div");
   cardInner.classList.add("card-inner");
+  cardInner.addEventListener("click", function(){
+    cardInner.classList.toggle("is-flipped");
+  });
   let cardFront = document.createElement("div");
   cardFront.classList.add("card-front");
   cardFront.classList.add("card-face");
