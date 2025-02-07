@@ -127,18 +127,19 @@ function showMovies() {
         movies.forEach((movie, index) => {
             movieTemplate += `
             <div class="col-md-3 mb-5">
-            <div class="card">
+            <div class="card h-100">
             <img src="${movie.poster}" class="card-img-top" alt="${movie.title} Poster">
             <div class="card-body">
             <h5 class="card-title">${movie.title}</h5>
             <p class="card-text">Yönetmen: ${movie.director} </p>
             <p class="card-text">Yıl: ${movie.year} </p>
             <p class="card-text">Tür: ${movie.type} </p>
+            </div>
+               <div class="card-footer mb-3">
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="updateMovie(${index})" id="update">
                       Güncelle
                 </button>
-            <a href="#" class="btn btn-danger" onclick="removeMovie(${index})" >Sil</a>
-            </div>
+            <a href="#" class="btn btn-danger" onclick="removeMovie(${index})" >Sil</a></div>
             </div>
             </div>
             `
