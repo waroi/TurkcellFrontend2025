@@ -36,56 +36,59 @@ function addFilm() {
 
 function filmCardEkle() {
 	const filmler = JSON.parse(localStorage.getItem("filmler")) || [];
-
 	const filmList = document.getElementById("filmList");
 	filmList.innerHTML = "";
 
-	filmler.map((film, index) => {
+	filmler.forEach((film, index) => {
 		const filmCard = document.createElement("div");
-		filmCard.className = "card mb-2 h-100";
+		filmCard.className = "col mb-4";
+
+		const card = document.createElement("div");
+		card.className = "card h-100";
+
+		const filmImg = document.createElement("img");
+		filmImg.className = "card-img-top img-fluid";
+		filmImg.src = film.img;
+		filmImg.alt = film.adi;
+		filmImg.style.height = "200px";
+		filmImg.style.objectFit = "cover";
 
 		const cardBody = document.createElement("div");
 		cardBody.className = "card-body";
 
 		const filmAdi = document.createElement("h5");
 		filmAdi.className = "card-title";
-		filmAdi.innerText = "Film Adı: " + film.adi;
+		filmAdi.innerText = film.adi;
 
 		const filmYili = document.createElement("p");
 		filmYili.className = "card-text";
-		filmYili.innerText = "Yıl: " + film.yili;
+		filmYili.innerText = `Yıl: ${film.yili}`;
 
 		const filmYonetmen = document.createElement("p");
 		filmYonetmen.className = "card-text";
-		filmYonetmen.innerText = "Yönetmen: " + film.yonetmen;
+		filmYonetmen.innerText = `Yönetmen: ${film.yonetmen}`;
 
-		const filmImg = document.createElement("img");
-		filmImg.alt = film.adi;
-		filmImg.style.width = "200px";
-		filmImg.style.height = "200px";
-		filmImg.src = film.img;
-		filmImg.className = "card-img-top";
-		filmImg.style.objectFit = "cover";
+		const btnGroup = document.createElement("div");
+		btnGroup.className = "d-flex gap-2 mt-3";
 
-		const filmSilmeButton = document.createElement("a");
-		filmSilmeButton.className = "btn btn-danger";
-		filmSilmeButton.text = "Filmi Sil";
-		filmSilmeButton.id = "sil";
-		filmSilmeButton.onclick = () => deleteFilm(index);
+		const deleteBtn = document.createElement("button");
+		deleteBtn.className = "btn btn-danger btn-sm";
+		deleteBtn.innerText = "Filmi Sil";
+		deleteBtn.onclick = () => deleteFilm(index);
 
-		const filmGüncelle = document.createElement("a");
-		filmGüncelle.className = "btn btn-warning";
-		filmGüncelle.text = "Filmi Güncelle";
-		filmGüncelle.id = "guncelle";
-		filmGüncelle.onclick = () => updateFilm(index);
-
-		cardBody.appendChild(filmImg);
+		const updateBtn = document.createElement("button");
+		updateBtn.className = "btn btn-warning btn-sm";
+		updateBtn.innerText = "Filmi Güncelle";
+		updateBtn.onclick = () => updateFilm(index);
+		btnGroup.appendChild(updateBtn);
+		btnGroup.appendChild(deleteBtn);
 		cardBody.appendChild(filmAdi);
 		cardBody.appendChild(filmYili);
 		cardBody.appendChild(filmYonetmen);
-		cardBody.appendChild(filmGüncelle);
-		cardBody.appendChild(filmSilmeButton);
-		filmCard.appendChild(cardBody);
+		cardBody.appendChild(btnGroup);
+		card.appendChild(filmImg);
+		card.appendChild(cardBody);
+		filmCard.appendChild(card);
 		filmList.appendChild(filmCard);
 	});
 }
