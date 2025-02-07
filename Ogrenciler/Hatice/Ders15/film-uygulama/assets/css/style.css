@@ -2,6 +2,9 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: "Poppins", serif;
+    font-weight: 400;
+    font-style: normal;
 }
 body {
     background-color: #1c2230;
@@ -32,6 +35,7 @@ header{
 }
 .card img {
     height: 450px;
+    object-fit: cover;
 }
 .card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -44,9 +48,120 @@ header{
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
-.btn-primary {
-    transition: background-color 0.3s ease;
+.btn-update {
+  align-items: center;
+  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: flex;
+  font-size: 16px;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 100%;
+  padding: 3px;
+  text-decoration: none;
+  user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
 }
-.btn-primary:hover {
-    background-color: #0056b3;
+.btn-update:active,
+.btn-update:hover,
+.btn-delete:active,
+.btn-delete:hover {
+  outline: 0;
+}
+.btn-update span {
+  background-color: rgb(5, 6, 45);
+  padding: 8px 16px;
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  transition: 300ms;
+}
+.btn-update:hover span {
+  background: none;
+  color: #fff;
+}
+.btn-delete {
+  align-items: center;
+  background-image: linear-gradient(135deg, #f34079 40%, #fc894d);
+  border: 0;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  padding: 3px;
+  font-size: 16px;
+  font-weight: 700;
+  justify-content: center;
+  letter-spacing: .4px;
+  line-height: 1em;
+  text-decoration: none;
+  user-select: none;
+  touch-action: manipulation;
+}
+.btn-delete span {
+  transition: all 200ms;
+  padding: 8px 16px;
+  width: 100%;
+  height: 100%;
+}
+.btn-delete:hover span {
+  transform: scale(.9);
+  opacity: .75;
+  color: #fff;
+}
+.btn-add {
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  touch-action: manipulation;
+}
+.btn-add:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+.btn-add:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
 }

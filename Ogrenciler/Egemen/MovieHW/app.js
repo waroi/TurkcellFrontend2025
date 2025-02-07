@@ -5,13 +5,13 @@ document.getElementById("addFilmBtn").onclick = function () {
   const filmDate = document.getElementById("filmDate").value;
   const filmPhoto = document.getElementById("filmPhoto").value;
   if (filmName && filmDirector && filmDate && filmPhoto) {
-    
-    
+
+
     let newFilm = {
-      fName:filmName, 
-      fDirector:filmDirector, 
-      fDate:filmDate, 
-      fPhoto:filmPhoto
+      fName: filmName,
+      fDirector: filmDirector,
+      fDate: filmDate,
+      fPhoto: filmPhoto
     }
     addFilm(newFilm);
     reload();
@@ -20,19 +20,22 @@ document.getElementById("addFilmBtn").onclick = function () {
     let filmArray = JSON.parse(localStorage.getItem("filmArray")) || [];
 
     filmArray.push(newFilm);
-    localStorage.setItem("filmArray",JSON.stringify(filmArray));
-    let getFilm = JSON.parse(localStorage.getItem("filmArray"));
+    localStorage.setItem("filmArray", JSON.stringify(filmArray));
 
   }
-  
+
 
 };
 
 function upload() {
   let getFilm = JSON.parse(localStorage.getItem("filmArray"));
-  getFilm.forEach(film => {
-    addFilm(film)
-  });
+
+  if (getFilm != null) {
+    getFilm.forEach(film => {
+      addFilm(film)
+    });
+
+  }
 }
 upload();
 
@@ -44,10 +47,7 @@ function reload() {
 }
 
 function addFilm(newFilm) {
-  const nameInput = document.getElementById("filmName");
-  const directorInput = document.getElementById("filmDirector");
-  const dateInput = document.getElementById("filmDate");
-  const photoInput = document.getElementById("filmPhoto");
+
   const filmDiv = document.createElement("div");
   filmDiv.className = "col";
   const card = document.createElement("div");
@@ -86,14 +86,28 @@ function addFilm(newFilm) {
     let confirmDelete = confirm(
       `"${newFilm.fName}" filmini silmek istediğinize emin misiniz?`
     );
+
     if (confirmDelete) {
       filmDiv.remove();
-      let getFilm = JSON.parse(localStorage.getItem("filmArray"));
-      let filmIndex = getFilm.findIndex()
+
+
+      let getFilm = JSON.parse(localStorage.getItem("filmArray")) || [];
+
+
+      let filmIndex = getFilm.findIndex(film => film.fName === newFilm.fName);
+
+      if (filmIndex !== -1) {
+        getFilm.splice(filmIndex, 1);
+
+        localStorage.setItem("filmArray", JSON.stringify(getFilm));
+      }
     }
   };
 
+
   editBtn.onclick = function () {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+
     document.getElementById("filmName").value = newFilm.fName;
     document.getElementById("filmDirector").value = newFilm.fDirector;
     document.getElementById("filmDate").value = newFilm.fDate;
@@ -102,6 +116,7 @@ function addFilm(newFilm) {
     const addBtn = document.getElementById("addFilmBtn");
     const butonGroup = document.getElementById("butonGroup");
     let saveBtn = butonGroup.querySelector(".save-btn");
+
     if (!saveBtn) {
       saveBtn = document.createElement("button");
       saveBtn.className = "btn btn-success w-100 save-btn";
@@ -110,20 +125,38 @@ function addFilm(newFilm) {
       addBtn.replaceWith(saveBtn);
     }
 
+    let eskiFilmAdi = newFilm.fName;
+
     saveBtn.onclick = function () {
-      newFilm.fName = document.getElementById("filmName").value;
-      newFilm.fDirector = document.getElementById("filmDirector").value;
-      newFilm.fDate = document.getElementById("filmDate").value;
-      newFilm.fPhoto = document.getElementById("filmPhoto").value;
-      filmAdi.textContent = newFilm.fName;
-      yonetmen.textContent = `Yönetmen: ${newFilm.fDirector}`;
-      tarih.textContent = `Çıkış Tarihi: ${newFilm.fDate}`;
-      filmImage.src = newFilm.fPhoto;
+      let getFilm = JSON.parse(localStorage.getItem("filmArray")) || [];
+
+      let filmIndex = getFilm.findIndex(film => film.fName === eskiFilmAdi);
+
+      console.log(filmIndex);
+
+      if (filmIndex !== -1) {
+        let updatedFilm = {
+          fName: document.getElementById("filmName").value,
+          fDirector: document.getElementById("filmDirector").value,
+          fDate: document.getElementById("filmDate").value,
+          fPhoto: document.getElementById("filmPhoto").value
+        };
+
+        getFilm[filmIndex] = updatedFilm;
+
+        localStorage.setItem("filmArray", JSON.stringify(getFilm));
+
+        filmAdi.textContent = updatedFilm.fName;
+        yonetmen.textContent = `Yönetmen: ${updatedFilm.fDirector}`;
+        tarih.textContent = `Çıkış Tarihi: ${updatedFilm.fDate}`;
+        filmImage.src = updatedFilm.fPhoto;
+      }
       reload();
 
       saveBtn.replaceWith(addBtn);
     };
   };
+
 
 
 }
