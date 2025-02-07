@@ -1,0 +1,21 @@
+{
+  "name": "listify-app",
+  "version": "1.0.0",
+  "description": "Listify is a lightweight and intuitive to-do app designed to keep your tasks organized and boost productivity.",
+  "main": "script.js",
+  "scripts": {
+    "sass": "sass -w scss:css"
+  },
+  "keywords": [
+    "todo",
+    "task",
+    "list",
+    "listify"
+  ],
+  "author": "Furkan Fırat",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "sass": "^1.83.4"
+  }
+}
