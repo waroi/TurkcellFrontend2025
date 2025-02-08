@@ -20,6 +20,3 @@ LocalStorage.prototype.updateStorage = function (movie, index) {
     });
     localStorage.setItem('movies', JSON.stringify(this.movies))
 }
-
-
-// ?================== HER PROTOTYPEDA setItem VAR ÇÖZÜM BULUN
