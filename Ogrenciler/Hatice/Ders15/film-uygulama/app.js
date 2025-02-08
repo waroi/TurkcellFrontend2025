@@ -97,6 +97,10 @@ let movies = [
     },
 
 ];
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 
 changes.addEventListener("click", () => {
     if (indexUp <= 0) {
@@ -128,14 +132,13 @@ changes.addEventListener("click", () => {
     director.value = "";
 });
 function updateMovie(index) {
-    const movie = movies[index]
-
+    const movie = movies[index];
     filmname.value = movie.title;
     director.value = movie.director;
     year.value = movie.year;
     type.value = movie.type;
     poster.value = movie.poster;
-    indexUp = index
+    indexUp = index;
 
 }
 function removeMovie(index) {
@@ -149,58 +152,114 @@ function showMovies() {
         movies = moviesStorage
     }
     if (movies !== null) {
-        let movieTemplate = '';
+        var movieTemplate = '';
         movieWrap.innerHTML = ''
         movies.forEach((movie, index) => {
-            movieTemplate += `
-            <div class="col-lg-3 col-md-4 col-sm-6 mb-5 h-100">
-            <div class="card h-100">
-            <img src="${movie.poster}" class="card-img-top" alt="${movie.title} Poster">
-            <div class="card-body h-100">
-            <h5 class="card-title fw-bold">${movie.title}</h5>
-            <p class="card-text">Yönetmen: ${movie.director} </p>
-            <p class="card-text">Yıl: ${movie.year} </p>
-            <p class="card-text">Tür: ${movie.type} </p>
-           
-                      <div class="d-flex gap-3">
-                <button type="button" class="btn btn-update gap-3" data-bs-toggle="modal" data-bs-target="#movieModal" onclick="updateMovie(${index})" id="update">
-                    <span class="text">Güncelle</span>
-                </button>
-                <a href="#" class="btn btn-delete d-inline-flex" onclick="removeMovie(${index})" ><span class="text">Sil</span></a>
-            </div>
+            const colDiv = document.createElement("div");
+            colDiv.className = "col-lg-3 col-md-4 col-sm-6 mb-5"
 
-      
-            </div>
-            </div>
-            </div>
-            `
+            const cardDiv = document.createElement("div");
+            cardDiv.className = "card p-3";
+            
+            const img = document.createElement("img");
+            img.src = movie.poster;
+            img.className = "card-img-top" ;
+            img.alt = `${movie.title} Poster`;
+
+            const cardBody = document.createElement("div");
+            cardBody.className = "card-body";
+
+            const title = document.createElement("h5");
+            cardBody.className = "card-title fw-bold";
+            title.textContent = movie.title;
+
+            const director = document.createElement("p");
+            director.className = "card-text";
+            director.textContent = `Yönetmen : ${movie.director}`;
+
+            const year = document.createElement("p");
+            year.className = "card-text";
+            year.textContent = `Yıl : ${movie.year}`;
+
+            const type = document.createElement("p");
+            type.className = "card-text";
+            type.textContent = `Tür : ${movie.type}`;
+
+            const buttonDiv = document.createElement("div");
+            buttonDiv.className = "d-flex gap-3";
+
+            const deleteLink = document.createElement('a');
+            deleteLink.href = '#';
+            deleteLink.className = 'btn btn-delete d-inline-flex';
+            deleteLink.onclick = () => removeMovie(index);
+
+            const deleteSpan = document.createElement('span');
+            deleteSpan.className = 'text';
+            deleteSpan.textContent = 'Sil';
+
+            deleteLink.appendChild(deleteSpan);
+
+            const updateButton = document.createElement('button');
+            updateButton.type = 'button';
+            updateButton.className = 'btn btn-update';
+            updateButton.setAttribute('data-bs-toggle', 'modal');
+            updateButton.setAttribute('data-bs-target', '#movieModal');
+            updateButton.onclick = () => updateMovie(index);
+
+            const updateSpan = document.createElement('span');
+            updateSpan.className = 'text';
+            updateSpan.textContent = 'Güncelle';
+
+            updateButton.appendChild(updateSpan);
+
+            buttonDiv.append(updateButton, deleteLink);
+
+            cardBody.append(title, director, year, type, buttonDiv);
+            cardDiv.append(img, cardBody);
+
+            colDiv.append(cardDiv);
+            movieWrap.appendChild(colDiv);
+
         });
-        movieWrap.innerHTML = movieTemplate;
         showSlider();
     }
 }
 function showSlider() {
     const carouselItems = document.getElementById("carousel-items");
+    carouselItems.innerHTML = "";
     let moviesStorage = JSON.parse(localStorage.getItem("movies"));
     if (moviesStorage !== null) {
         movies = moviesStorage;
     }
     if (movies !== null) {
-        let sliderTemplate = '';
         let numberOfItemsPerSlide = 4;
         for (let i = 0; i < movies.length; i += numberOfItemsPerSlide) {
             let slideItems = movies.slice(i, i + numberOfItemsPerSlide);
-            sliderTemplate += `
-            <div class="carousel-item ${i === 0 ? 'active' : ''}">
-                <div class="row">
-                    ${slideItems.map(movie => `
-                    <div class="col-3">
-                        <img src="${movie.poster}" class="d-block w-100" alt="Movie poster">
-                    </div>`).join('')}
-                </div>
-            </div>`;
-        }
-        carouselItems.innerHTML = sliderTemplate;
+            
+            const carouselItem = document.createElement("div");
+            carouselItem.className = `carousel-item ${i === 0 ? 'active' : ''}`;
+            
+
+            const rowDiv = document.createElement("div");
+            rowDiv.className = "row";
+
+            slideItems.forEach(movie => {
+                const colDiv = document.createElement("div");
+                colDiv.className = "col-3";
+
+                const img = document.createElement("img");
+                img.src = movie.poster;
+                img.className = "d-block w-100";
+                img.alt = "Movie poster"
+
+                colDiv.append(img);
+                rowDiv.append(colDiv);
+
+                carouselItem.append(rowDiv);
+                carouselItems.append(carouselItem);
+                
+            }); 
+        }  
     }
 }
 showMovies();
