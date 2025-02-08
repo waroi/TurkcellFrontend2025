@@ -1,12 +1,15 @@
-import {storage} from "./storage.js";
+import local_storage from "./storage.js";
+
+const storage = new local_storage();
 
 export default function movieController() {
-  this.movieList = ["abc"];
+  this.movieList = storage.getMovies();
+  console.log(this.movieList);
 }
 
 movieController.prototype.addMovie = function (movie) {
   this.movieList.push(movie);
-  storage.prototype.setMovies(this.movieList);
+  storage.setMovies(this.movieList);
 };
 
 movieController.prototype.getMovieList = function () {
@@ -15,13 +18,10 @@ movieController.prototype.getMovieList = function () {
 
 movieController.prototype.deleteMovie = function (movie) {
   this.movieList = this.movieList.filter((m) => m !== movie);
-  storage.prototype.setMovies(this.movieList);
+  storage.setMovies(this.movieList);
 };
 
 movieController.prototype.editMovie = function (index) {
   alert("Film editlendi...");
   storage.setMovies(this.movieList);
 };
-
-const movie_controller = new movieController();
-export { movie_controller };

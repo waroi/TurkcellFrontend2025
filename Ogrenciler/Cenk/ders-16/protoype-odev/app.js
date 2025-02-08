@@ -5,6 +5,16 @@ import ui from "./ui.js";
 const movie_controller = new movieController();
 const UI = new ui();
 
+const film = new Movie(
+  "The Shawshank Redemption",
+  "Frank Darabont",
+  1994,
+  "Drama",
+  "https://www.imdb.com/title/tt0111161/mediaviewer/rm10105600/"
+);
+
+localStorage.setItem("movies", JSON.stringify(film));
+
 document.addEventListener("DOMContentLoaded", () => {
   UI.renderMovies();
 });

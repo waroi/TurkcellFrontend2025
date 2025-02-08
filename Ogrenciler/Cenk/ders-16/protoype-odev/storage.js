@@ -1,12 +1,9 @@
 export default function local_storage() {}
 
-local_storage.prototype.setMovies = function () {
+local_storage.prototype.setMovies = function (movies) {
   localStorage.setItem("movies", JSON.stringify(movies));
 };
 
 local_storage.prototype.getMovies = function () {
-  return JSON.parse(localStorage.getItem("movies"));
+  return [JSON.parse(localStorage.getItem("movies"))];
 };
-
-const storage = new local_storage();
-export { storage };

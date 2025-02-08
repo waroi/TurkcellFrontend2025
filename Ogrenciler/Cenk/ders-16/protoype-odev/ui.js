@@ -1,4 +1,6 @@
-import {movie_controller} from "./movieController.js";
+import movieController from "./movieController.js";
+
+const movie_controller = new movieController();
 
 export default function ui() {}
 
@@ -70,8 +72,9 @@ ui.prototype.movieCard = function (movie, index) {
 ui.prototype.renderMovies = function () {
   const movieListContainer = document.querySelector(".movie-list");
   movieListContainer.innerHTML = "";
-  console.log(movie_controller.prototype.getMovieList());
-  movie_controller.prototype.getMovieList().forEach((movie, index) => {
+  console.log(movie_controller.getMovieList());
+  const movieList = movie_controller.getMovieList();
+  movieList.forEach((movie, index) => {
     const movieCard = this.movieCard(movie, index);
     movieListContainer.appendChild(movieCard);
   });
