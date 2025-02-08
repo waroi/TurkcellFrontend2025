@@ -1,4 +1,4 @@
-import movieController from "./movieController.js";
+import movie_controller from "./movieController.js";
 
 export default function ui() {}
 
@@ -44,7 +44,7 @@ ui.prototype.movieCard = function (movie, index) {
   movieDelete.classList.add("btn", "btn-danger");
   movieDelete.appendChild(iconDelete);
   movieDelete.addEventListener("click", () =>
-    movieController.deleteMovie(movie)
+    movie_controller.deleteMovie(movie)
   );
 
   const iconEdit = document.createElement("i");
@@ -52,7 +52,7 @@ ui.prototype.movieCard = function (movie, index) {
   const movieEdit = document.createElement("button");
   movieEdit.classList.add("btn", "btn-warning");
   movieEdit.appendChild(iconEdit);
-  movieEdit.addEventListener("click", () => movieController.editMovie(index));
+  movieEdit.addEventListener("click", () => movie_controller.editMovie(index));
 
   movieButtons.append(movieEdit, movieDelete);
   movieBody.append(
@@ -70,7 +70,8 @@ ui.prototype.movieCard = function (movie, index) {
 ui.prototype.renderMovies = function () {
   const movieListContainer = document.querySelector(".movie-list");
   movieListContainer.innerHTML = "";
-  movieController.movieList.forEach((movie, index) => {
+  console.log(movie_controller.prototype.getMovieList());
+  movie_controller.prototype.getMovieList().forEach((movie, index) => {
     const movieCard = this.movieCard(movie, index);
     movieListContainer.appendChild(movieCard);
   });
