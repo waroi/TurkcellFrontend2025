@@ -97,10 +97,6 @@ let movies = [
     },
 
 ];
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
 
 changes.addEventListener("click", () => {
     if (indexUp <= 0) {
