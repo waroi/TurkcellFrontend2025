@@ -10,106 +10,31 @@ const addMovieBtn = document.getElementById("addMovie");
 const movieWrap = document.getElementById("movie-wrap");
 let indexUp = -1;
 
-let movies = [
-    {
-        title: "Komşum Totoro",
-        year: "1988",
-        poster: "https://b6s54eznn8xq.merlincdn.net/Uploads/Films/komsum-totoro-film-gosterimi-20245261443314acb1d274c164489a388c28299131058.png",
-        type: "Animasyon",
-        director: "Hayao Miyazaki",
-    },
-    {
-        title: "Harry Potter Melez Prens",
-        year: "2009",
-        poster: "https://static.nadirkitap.com/fotograf/746977/23/Efemera_2021051814284274697713.jpg",
-        type: "Fantastik",
-        director: "Alfonso Cuarón",
-    },
-    {
-        title: "Leon",
-        year: "1994",
-        poster: "https://www.arthipo.com/image/cache/catalog/poster/movie/1-758/pfilm137-leon-the-professional-profesyonel-poster-movie-film-satisi-753x1100.webp",
-        type: "Aksiyon",
-        director: "Luc Besson",
-    },
-    {
-        title: "Yıldızlararası",
-        year: "2014",
-        poster: "https://i.pinimg.com/736x/09/d5/3d/09d53d45b686ca7e6c39c9e51412ed26.jpg",
-        type: "Bilim Kurgu",
-        director: "Christopher Nolan",
-    },
-    {
-        title: "Yeşil Sokak Holiganları",
-        year: "2005",
-        poster: "https://m.media-amazon.com/images/I/51zRV+F4SVL._AC_UF894,1000_QL80_.jpg",
-        type: "Aksiyon",
-        director: "Lexi Alexander",
-    },
-    {
-        title: "Yaralı Yüz",
-        year: "1983",
-        poster: "https://m.media-amazon.com/images/M/MV5BNDUzYjY0NmUtMDM4OS00Y2Q5LWJiODYtNTk0ZTk0YjZhMTg1XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
-        type: "Aksiyon",
-        director: "Brian De Palma",
-    },
-    {
-        title: "Başlangıç",
-        year: "2010",
-        poster: "https://upload.wikimedia.org/wikipedia/tr/9/94/Ba%C5%9Flang%C4%B1%C3%A7.jpg",
-        type: "Bilim Kurgu",
-        director: "Christopher Nolan",
-    },
-    {
-        title: "Dune",
-        year: "2021",
-        poster: "https://m.media-amazon.com/images/I/61YsswH6vQL.jpg",
-        type: "Aksiyon",
-        director: "Denis Villeneuve",
-    },
-    {
-        title: "Zindan Adası",
-        year: "2010",
-        poster: "https://m.media-amazon.com/images/M/MV5BN2FjNWExYzEtY2YzOC00YjNlLTllMTQtNmIwM2Q1YzBhOWM1XkEyXkFqcGc@._V1_.jpg",
-        type: "Aksiyon",
-        director: "Martin Scorsese",
-    },
-    {
-        title: "Buz Devri ",
-        year: "2002",
-        poster: "https://upload.wikimedia.org/wikipedia/tr/a/ad/Buz_Devri_afis.jpg",
-        type: "Animasyon",
-        director: "Chris Wedge",
-    },
-    {
-        title: "Cinnet",
-        year: "1980",
-        poster: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYD2w9WTpwNY_tvIVts88QyDY_Jj9nJYosxg&s",
-        type: "Korku",
-        director: "Stanley Kubrick",
-    },
-    {
-        title: "Blade Runner 2049",
-        year: "2017",
-        poster: "https://b6s54eznn8xq.merlincdn.net/Uploads/Films/blade-runner-2049-bicak-sirti-201791913625.jpg",
-        type: "Bilim Kurgu",
-        director: "Denis Villeneuve",
-    },
+const storage = new LocalStorage();
 
+let movies = [
+    new Movie("Komşum Totoro", "1988", "https://b6s54eznn8xq.merlincdn.net/Uploads/Films/komsum-totoro-film-gosterimi-20245261443314acb1d274c164489a388c28299131058.png", "Animasyon", "Hayao Miyazaki"),
+    new Movie("Harry Potter Melez Prens", "2009", "https://static.nadirkitap.com/fotograf/746977/23/Efemera_2021051814284274697713.jpg", "Fantastik", "Alfonso Cuarón"),
+    new Movie("Leon", "1994", "https://www.arthipo.com/image/cache/catalog/poster/movie/1-758/pfilm137-leon-the-professional-profesyonel-poster-movie-film-satisi-753x1100.webp", "Aksiyon", "Luc Besson"),
+    new Movie("Yıldızlararası", "2014", "https://i.pinimg.com/736x/09/d5/3d/09d53d45b686ca7e6c39c9e51412ed26.jpg", "Bilim Kurgu", "Christopher Nolan"),
+    new Movie("Yeşil Sokak Holiganları", "2005", "https://m.media-amazon.com/images/I/51zRV+F4SVL._AC_UF894,1000_QL80_.jpg", "Aksiyon", "Lexi Alexander"),
+    new Movie("Yaralı Yüz", "1983", "https://m.media-amazon.com/images/M/MV5BNDUzYjY0NmUtMDM4OS00Y2Q5LWJiODYtNTk0ZTk0YjZhMTg1XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", "Aksiyon", "Brian De Palma"),
+    new Movie("Başlangıç", "2010", "https://upload.wikimedia.org/wikipedia/tr/9/94/Ba%C5%9Flang%C4%B1%C3%A7.jpg", "Bilim Kurgu", "Christopher Nolan"),
+    new Movie("Dune", "2021", "https://m.media-amazon.com/images/I/61YsswH6vQL.jpg", "Aksiyon", "Denis Villeneuve"),
+    new Movie("Zindan Adası", "2010", "https://m.media-amazon.com/images/M/MV5BN2FjNWExYzEtY2YzOC00YjNlLTllMTQtNmIwM2Q1YzBhOWM1XkEyXkFqcGc@._V1_.jpg", "Aksiyon", "Martin Scorsese"),
+    new Movie("Buz Devri", "2002", "https://upload.wikimedia.org/wikipedia/tr/a/ad/Buz_Devri_afis.jpg", "Animasyon", "Chris Wedge"),
+    new Movie("Cinnet", "1980", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYD2w9WTpwNY_tvIVts88QyDY_Jj9nJYosxg&s", "Korku", "Stanley Kubrick"),
+    new Movie("Blade Runner 2049", "2017", "https://b6s54eznn8xq.merlincdn.net/Uploads/Films/blade-runner-2049-bicak-sirti-201791913625.jpg", "Bilim Kurgu", "Denis Villeneuve"),
 ];
+
+if (storage.movies.length < 1) {
+    movies.map(movie => storage.addStorage(movie))
+}
 
 changes.addEventListener("click", () => {
     if (indexUp <= 0) {
-        let movie = {
-            poster: poster.value,
-            title: filmname.value,
-            year: year.value,
-            type: type.value,
-            director: director.value,
-            id: Math.random() * 100,
-        }
-        movies.push(movie)
-        localStorage.setItem("movies", JSON.stringify(movies));
+        let movie = new Movie(filmname.value, year.value, poster.value, director.value, type.value)
+        storage.addStorage(movie)
         showMovies();
     } else {
         movies[indexUp].title = filmname.value
@@ -117,7 +42,7 @@ changes.addEventListener("click", () => {
         movies[indexUp].year = year.value
         movies[indexUp].type = type.value
         movies[indexUp].poster = poster.value
-        localStorage.setItem("movies", JSON.stringify(movies));
+        storage.updateStorage(movies[indexUp], indexUp)
         showMovies();
     }
 
@@ -138,17 +63,15 @@ function updateMovie(index) {
 
 }
 function removeMovie(index) {
-    movies.splice(index, 1)
-    localStorage.setItem("movies", JSON.stringify(movies));
+    storage.removeFromStorage(index)
     showMovies();
 }
 function showMovies() {
-    let moviesStorage = JSON.parse(localStorage.getItem("movies"))
+    let moviesStorage = storage.movies
     if (moviesStorage !== null) {
         movies = moviesStorage
     }
     if (movies !== null) {
-        var movieTemplate = '';
         movieWrap.innerHTML = ''
         movies.forEach((movie, index) => {
             const colDiv = document.createElement("div");
@@ -156,10 +79,10 @@ function showMovies() {
 
             const cardDiv = document.createElement("div");
             cardDiv.className = "card p-3";
-            
+
             const img = document.createElement("img");
             img.src = movie.poster;
-            img.className = "card-img-top" ;
+            img.className = "card-img-top";
             img.alt = `${movie.title} Poster`;
 
             const cardBody = document.createElement("div");
@@ -223,7 +146,7 @@ function showMovies() {
 function showSlider() {
     const carouselItems = document.getElementById("carousel-items");
     carouselItems.innerHTML = "";
-    let moviesStorage = JSON.parse(localStorage.getItem("movies"));
+    let moviesStorage = storage.movies;
     if (moviesStorage !== null) {
         movies = moviesStorage;
     }
@@ -231,10 +154,10 @@ function showSlider() {
         let numberOfItemsPerSlide = 4;
         for (let i = 0; i < movies.length; i += numberOfItemsPerSlide) {
             let slideItems = movies.slice(i, i + numberOfItemsPerSlide);
-            
+
             const carouselItem = document.createElement("div");
             carouselItem.className = `carousel-item ${i === 0 ? 'active' : ''}`;
-            
+
 
             const rowDiv = document.createElement("div");
             rowDiv.className = "row";
@@ -253,9 +176,9 @@ function showSlider() {
 
                 carouselItem.append(rowDiv);
                 carouselItems.append(carouselItem);
-                
-            }); 
-        }  
+
+            });
+        }
     }
 }
 showMovies();
