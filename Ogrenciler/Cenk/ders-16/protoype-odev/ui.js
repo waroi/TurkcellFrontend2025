@@ -1,4 +1,4 @@
-import movie_controller from "./movieController.js";
+import {movie_controller} from "./movieController.js";
 
 export default function ui() {}
 

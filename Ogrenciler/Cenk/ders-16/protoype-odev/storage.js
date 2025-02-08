@@ -9,3 +9,4 @@ local_storage.prototype.getMovies = function () {
 };
 
 const storage = new local_storage();
+export { storage };

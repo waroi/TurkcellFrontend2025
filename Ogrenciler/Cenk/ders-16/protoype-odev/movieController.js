@@ -1,4 +1,4 @@
-import storage from "./storage.js";
+import {storage} from "./storage.js";
 
 export default function movieController() {
   this.movieList = ["abc"];
@@ -10,7 +10,6 @@ movieController.prototype.addMovie = function (movie) {
 };
 
 movieController.prototype.getMovieList = function () {
-  console.log("ab:",this.movieList);
   return this.movieList;
 };
 
@@ -25,4 +24,4 @@ movieController.prototype.editMovie = function (index) {
 };
 
 const movie_controller = new movieController();
- 
+export { movie_controller };
