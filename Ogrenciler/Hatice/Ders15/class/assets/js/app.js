@@ -102,13 +102,17 @@ let movies = [
 
 if (storage.movies.length < 1) {
     movies.map(movie => storage.addStorage(movie))
-}
-addMovie.textContent = "Film Ekle";
+} 
+
+addMovie.addEventListener("click", function () {
+    if (indexUp <= 0) {
+        movieModalLabel.textContent = "Film Ekle";
+    }
+});
 changes.addEventListener("click", () => {
     if (indexUp <= 0) {
         let movie = new Movie(filmname.value, year.value, poster.value, type.value, director.value)
         storage.addStorage(movie)
-        
         showMovies();
     } else {
         movies[indexUp].title = filmname.value
@@ -117,7 +121,6 @@ changes.addEventListener("click", () => {
         movies[indexUp].type = type.value
         movies[indexUp].poster = poster.value
         storage.updateStorage(movies[indexUp], indexUp)
-        movieModal.textContent = "Güncelle";
         showMovies();
     }
 
@@ -131,6 +134,7 @@ function updateMovie(index) {
     type.value = movie.type;
     poster.value = movie.poster;
     indexUp = index;
+    movieModal.textContent = "Güncelle";
 }
 function removeMovie(index) {
     storage.removeFromStorage(index)
