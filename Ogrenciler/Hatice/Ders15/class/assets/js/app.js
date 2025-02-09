@@ -102,22 +102,25 @@ let movies = [
 
 if (storage.movies.length < 1) {
     movies.map(movie => storage.addStorage(movie))
-}
-addMovie.textContent = "Film Ekle";
+} 
+
+addMovie.addEventListener("click", function () {
+    if (indexUp <= 0) {
+        movieModalLabel.textContent = "Film Ekle";
+    }
+});
 changes.addEventListener("click", () => {
     if (indexUp <= 0) {
         let movie = new Movie(filmname.value, year.value, poster.value, type.value, director.value)
         storage.addStorage(movie)
-        
         showMovies();
     } else {
-        movies[indexUp].title = filmname.value
+        movies[indexUp].name = filmname.value
         movies[indexUp].director = director.value
         movies[indexUp].year = year.value
         movies[indexUp].type = type.value
         movies[indexUp].poster = poster.value
         storage.updateStorage(movies[indexUp], indexUp)
-        movieModal.textContent = "Güncelle";
         showMovies();
     }
 
@@ -125,34 +128,24 @@ changes.addEventListener("click", () => {
 });
 function updateMovie(index) {
     const movie = movies[index];
-    filmname.value = movie.title;
+    filmname.value = movie.name;
     director.value = movie.director;
     year.value = movie.year;
     type.value = movie.type;
     poster.value = movie.poster;
     indexUp = index;
+    movieModal.textContent = "Güncelle";
 }
 function removeMovie(index) {
     storage.removeFromStorage(index)
     showMovies();
 }
-function showMovies() {
-    let moviesStorage = storage.movies
-    if (moviesStorage !== null) {
-        movies = moviesStorage
-    }
-    if (movies !== null) {
-        ui.showMovies(movies)
-        showSlider();
-    }
-}
-function showSlider() {
+function getMovies() {
     let moviesStorage = storage.movies;
-    if (moviesStorage !== null) {
-        movies = moviesStorage;
-    }
-    if (movies !== null) {
-        ui.showSlider(movies);
-    }
+    return moviesStorage !== null ? moviesStorage : [];
+}
+function showMovies() {
+    let movies = getMovies();
+    ui.showMovies(movies);
 }
 showMovies();
