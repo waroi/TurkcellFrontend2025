@@ -6,7 +6,8 @@ const year = document.getElementById("film-year");
 const type = document.getElementById("film-type");
 const update = document.getElementById("update");
 const addMovieBtn = document.getElementById("addMovie");
-
+const movieModal = document.getElementById("movieModalLabel");
+const addMovie = document.getElementById("addMovie");
 let indexUp = -1;
 
 const storage = new LocalStorage();
@@ -102,11 +103,12 @@ let movies = [
 if (storage.movies.length < 1) {
     movies.map(movie => storage.addStorage(movie))
 }
-
+addMovie.textContent = "Film Ekle";
 changes.addEventListener("click", () => {
     if (indexUp <= 0) {
         let movie = new Movie(filmname.value, year.value, poster.value, type.value, director.value)
         storage.addStorage(movie)
+        
         showMovies();
     } else {
         movies[indexUp].title = filmname.value
@@ -115,6 +117,7 @@ changes.addEventListener("click", () => {
         movies[indexUp].type = type.value
         movies[indexUp].poster = poster.value
         storage.updateStorage(movies[indexUp], indexUp)
+        movieModal.textContent = "Güncelle";
         showMovies();
     }
 

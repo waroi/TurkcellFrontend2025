@@ -18,8 +18,6 @@ class UI {
             img.className = "card-img-top";
             img.alt = `${movie.name} Poster`;
 
-            console.log(movie);
-
             const cardBody = document.createElement("div");
             cardBody.className = "card-body";
 
