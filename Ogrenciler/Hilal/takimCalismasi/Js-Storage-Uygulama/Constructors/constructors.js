@@ -8,7 +8,6 @@ export function Movie(
   movieType,
   poster
 ) {
-  console.log(id);
   this.id = id;
   this.movieName = movieName;
   this.director = director;
@@ -17,8 +16,25 @@ export function Movie(
   this.isFavorite = isFavorite;
   this.movieType = movieType;
   this.poster = poster;
+
+ 
 }
 
-// Movie.prototype.getDetails = function () {
-//   return `${this.movieName} - ${this.director} - ${this.year}`;
-// };
+Movie.prototype.setStorage = function () {
+  const movies = JSON.parse(localStorage.getItem("movies")) || [];
+  movies.push(this);
+  localStorage.setItem("movies", JSON.stringify(films));
+}
+
+Movie.prototype.editStorage = function () {
+  const movies = JSON.parse(localStorage.getItem("movies")) || [];
+  const index = movies.findIndex((film) => film.id === this.id);
+  movies[index] = this;
+  localStorage.setItem("movies", JSON.stringify(movies));
+}
+
+Movie.prototype.deleteStorage = function () {
+  const movies = JSON.parse(localStorage.getItem("movies")) || [];
+  const newStorage = movies.filter((film) => film.id !== this.id);
+  localStorage.setItem("movies", JSON.stringify(newStorage));
+}
