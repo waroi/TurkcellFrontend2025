@@ -66,9 +66,9 @@ function createElements(list, index) {
   const row = document.getElementById("row");
   console.log(list);
   const col = document.createElement("div");
-  col.className = "col-md-6 col-lg-4";
+  col.className = "col-md-6 col-lg-4 p-3";
   const card = document.createElement("div");
-  card.className = "card";
+  card.className = "card overflow-hidden";
   const teaser = document.createElement("video");
   teaser.controls = true;
   const t_source = document.createElement("source");
@@ -78,6 +78,7 @@ function createElements(list, index) {
   const body = document.createElement("div");
   body.className = "card-body";
   const title = document.createElement("h5");
+  title.title = `${list[index][0]}`;
   let title_text = document.createTextNode(`${list[index][0]}`);
   title.appendChild(title_text);
   title.className = "card-title";
@@ -86,27 +87,33 @@ function createElements(list, index) {
   for (let i = 1; i < 5; i++) {
     const li = document.createElement("li");
     li.className = "list-group-item";
-    // if(i == 2){
-    //   const text = document.createTextNode(`${list[index][i]}`);
-    // }
-    const text = document.createTextNode(`${list[index][i]}`);
+    if (i == 2) {
+      var text = document.createTextNode(
+        `${genre_list[parseInt(list[index][i])]}`
+      );
+    } else {
+      var text = document.createTextNode(`${list[index][i]}`);
+    }
     li.appendChild(text);
     ul.appendChild(li);
   }
   const btn_container = document.createElement("div");
+  btn_container.className = "text-center my-2";
   const delete_btn = document.createElement("button");
   delete_btn.addEventListener("click", function () {
     list.splice(index, 1);
     col.remove();
     localStorage.setItem("movie_list", JSON.stringify(list));
   });
-  delete_btn.className = "btn btn-danger btn-sm rounded-5";
+  delete_btn.className = "btn btn-danger btn-sm rounded-5 ms-2";
   const delete_icon = document.createElement("i");
   delete_icon.className = "fas fa-trash";
   delete_btn.appendChild(delete_icon);
   const edit_btn = document.createElement("button");
+  const a = document.createElement("a");
+  a.href = "#header";
   edit_btn.addEventListener("click", function () {
-    window.location.hash = "header";
+    // window.location.hash = "header";
     let list = JSON.parse(localStorage.getItem("movie_list"));
     if (index !== -1) {
       document.getElementById("movie-name").value = list[index][0];
@@ -151,15 +158,11 @@ function createElements(list, index) {
   edit_btn.className = "btn btn-warning btn-sm ms-2  rounded-5";
   const edit_icon = document.createElement("i");
   edit_icon.className = "fas fa-edit";
-  edit_btn.appendChild(edit_icon);
-  const complete_btn = document.createElement("button");
-  complete_btn.className = "btn btn-success btn-sm ms-2 rounded-5";
-  const complete_icon = document.createElement("i");
-  complete_icon.className = "fas fa-check";
-  complete_btn.appendChild(complete_icon);
-  btn_container.appendChild(delete_btn);
+  a.appendChild(edit_icon);
+  edit_btn.appendChild(a);
+
   btn_container.appendChild(edit_btn);
-  btn_container.appendChild(complete_btn);
+  btn_container.appendChild(delete_btn);
   row.appendChild(col);
   col.appendChild(card);
   card.appendChild(teaser);

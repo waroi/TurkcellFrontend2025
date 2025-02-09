@@ -44,3 +44,9 @@ let getUsers = JSON.parse(localStorage.getItem("users"));
 
 console.log(getUsers);
 
+
+let numbers = [9, 4, 28, 12, 44, 77, 65];
+
+const map1 = numbers.map(function () {
+
+})
