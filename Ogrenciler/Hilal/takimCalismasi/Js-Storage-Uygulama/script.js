@@ -1,3 +1,14 @@
+import { Movie } from "./Constructors/constructors.js";
+import { createID } from "./utils/index.js";
+
+const movieName = document.getElementById("movieName");
+const director = document.getElementById("director");
+const year = document.getElementById("year");
+const description = document.getElementById("description");
+const isFavorite = document.getElementById("addFavorite");
+const movieType = document.getElementById("movieType");
+const poster = document.getElementById("poster");
+
 const checkInitialStorage = () => {
   let movies = localStorage.getItem("movies");
   if (!movies) {
@@ -8,49 +19,40 @@ const checkInitialStorage = () => {
 checkInitialStorage();
 
 let editingMovieId = "";
+
 const modalForm = document.getElementById("addMovieForm");
 modalForm.addEventListener("submit", addMovie);
 
 function addMovie(e) {
   e.preventDefault();
-  const movies = JSON.parse(localStorage.getItem("movies"));
-  const moviesLength = movies.length;
-  const movieName = document.getElementById("movieName");
-  const director = document.getElementById("director");
-  const year = document.getElementById("year");
-  const description = document.getElementById("description");
-  const isFavorite = document.getElementById("addFavorite");
-  const movieType = document.getElementById("movieType");
-  const poster = document.getElementById("poster");
   if (editingMovieId === "") {
-    const movie = {
-      id: moviesLength + movieName.value,
-      movieName: movieName.value,
-      director: director.value,
-      year: year.value,
-      description: description.value,
-      isFavorite: isFavorite.checked,
-      movieType: movieType.value,
-      poster: poster.value,
-    };
-    movies.push(movie);
-    localStorage.setItem("movies", JSON.stringify(movies));
+    const id = createID();
+    const movie = new Movie(
+      id,
+      movieName.value,
+      director.value,
+      year.value,
+      description.value,
+      isFavorite.checked,
+      movieType.value,
+      poster.value
+    );
+    movie.setStorage();
   } else {
-    const movieIndex = movies.findIndex((movie) => movie.id === editingMovieId);
-    const movie = movies[movieIndex];
 
-    const updatedMovie = {
-      ...movie,
-      movieName: movieName.value,
-      director: director.value,
-      year: year.value,
-      description: description.value,
-      isFavorite: isFavorite.checked,
-      movieType: movieType.value,
-      poster: poster.value,
-    };
-    movies[movieIndex] = updatedMovie;
-    localStorage.setItem("movies", JSON.stringify(movies));
+    const updatedMovie = new Movie(
+      editingMovieId,
+      movieName.value,
+      director.value,
+      year.value,
+      description.value,
+      isFavorite.checked,
+      movieType.value,
+      poster.value
+    );
+
+    updatedMovie.editStorage();
+
     editingMovieId = "";
   }
   movieName.innerHTML = "";
@@ -60,7 +62,7 @@ function addMovie(e) {
   isFavorite.innerHTML = "";
   poster.innerHTML = "";
   showMovies();
-  showFavorites()
+  showFavorites();
 }
 
 const editMovie = (id) => {
@@ -69,13 +71,6 @@ const editMovie = (id) => {
   const movieIndex = movies.findIndex((movie) => movie.id === editingMovieId);
   const movie = movies[movieIndex];
   console.log("id", editingMovieId, id);
-  const movieName = document.getElementById("movieName");
-  const director = document.getElementById("director");
-  const year = document.getElementById("year");
-  const description = document.getElementById("description");
-  const isFavorite = document.getElementById("addFavorite");
-  const movieType = document.getElementById("movieType");
-  const poster = document.getElementById("poster");
   movieName.value = movie.movieName;
   director.value = movie.director;
   year.value = movie.year;
@@ -83,7 +78,6 @@ const editMovie = (id) => {
   isFavorite.checked = movie.isFavorite;
   movieType.value = movie.movieType;
   poster.value = movie.poster;
-  showFavorites();
 };
 
 function showMovies() {
@@ -92,9 +86,9 @@ function showMovies() {
   movieList.innerHTML = "";
 
   const movieTypeMap = {
-    "1": "Bilim Kurgu",
-    "2": "Dram",
-    "3": "Aksiyon"
+    1: "Bilim Kurgu",
+    2: "Dram",
+    3: "Aksiyon",
   };
 
   movies.map((movie) => {
@@ -179,13 +173,14 @@ const showFavorites = () => {
   favoriteList.innerHTML = "";
 
   favoriteMovies.map((movie) => {
-
     const card = document.createElement("div");
     card.className = "card";
 
     const img = document.createElement("img");
     img.className = "card-img-top";
-    img.src = movie.poster || "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6GBT9UptUlr6lwozpVfkKhaEMmrnivaY4VQ&s";
+    img.src =
+      movie.poster ||
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6GBT9UptUlr6lwozpVfkKhaEMmrnivaY4VQ&s";
 
     const cardBody = document.createElement("div");
     cardBody.className = "card-body";
@@ -213,10 +208,9 @@ const showFavorites = () => {
   });
 };
 
-
 const removeFromFavorites = (id) => {
   let movies = JSON.parse(localStorage.getItem("movies")) || [];
-  movies = movies.map(movie =>
+  movies = movies.map((movie) =>
     movie.id === id ? { ...movie, isFavorite: false } : movie
   );
   localStorage.setItem("movies", JSON.stringify(movies));
@@ -226,3 +220,4 @@ const removeFromFavorites = (id) => {
 showFavorites();
 
 showMovies();
+

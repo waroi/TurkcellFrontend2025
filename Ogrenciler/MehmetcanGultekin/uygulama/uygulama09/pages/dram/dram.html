@@ -17,7 +17,6 @@
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item active">
@@ -33,9 +32,9 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="../bilim-kurgu/bilim-kurgu.html">Bilimkurgu</a>
-                        <a class="dropdown-item" href="./pages/aksiyon/aksiyon.html">Aksiyon</a>
+                        <a class="dropdown-item" href="../aksiyon/aksiyon.html">Aksiyon</a>
                         <a class="dropdown-item" href="../macera/macera.html">Macera</a>
-                        <a class="dropdown-item" href="../dram/dram.html">Dram</a>
+                        <a class="dropdown-item" href="./dram.html">Dram</a>
                         <a class="dropdown-item" href="../komedi/komedi.html">Komedi</a>
                     </div>
                 </li>
@@ -43,13 +42,13 @@
         </div>
     </nav>
     <section class="container mt-5 filmler">
-        <h1 class="text-center mb-4 text-white">Aksiyon Filmleri</h1>
+        <h1 class="text-center mb-4 text-white">Dram Filmleri</h1>
         <div id="film-list" class="row"></div>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-    <script src="./aksiyon.js"></script>
+    <script src="./dram.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             var dropdownElementList = [].slice.call(document.querySelectorAll('.dropdown-toggle'));
