@@ -28,7 +28,7 @@ UI.prototype.showMovies = function(movies){
 
             const title = document.createElement("h5");
             cardBody.className = "card-title fw-bold";
-            title.textContent = movie.title;
+            title.textContent = movie.name;
 
             const director = document.createElement("p");
             director.className = "card-text";
