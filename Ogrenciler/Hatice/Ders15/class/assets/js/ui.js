@@ -1,34 +1,29 @@
 const movieWrap = document.getElementById("movie-wrap");
 const carouselItems = document.getElementById("carousel-items");
-function UI(){
-}
-
-UI.prototype.clearForm = function (){
-    document.getElementById("movieform").reset();
-}
-UI.prototype.showMovies = function(movies){
-
-    console.log(movies)
-
-    movieWrap.innerHTML = ''
+class UI {
+    clearForm() {
+        document.getElementById("movieform").reset();
+    }
+    showMovies(movies) {
+        movieWrap.innerHTML = ''
         movies.forEach((movie, index) => {
             const colDiv = document.createElement("div");
             colDiv.className = "col-lg-3 col-md-4 col-sm-6 mb-5"
 
             const cardDiv = document.createElement("div");
-            cardDiv.className = "card p-3";
+            cardDiv.className = "card p-3 h-100";
 
             const img = document.createElement("img");
             img.src = movie.poster;
             img.className = "card-img-top";
-            img.alt = `${movie.title} Poster`;
+            img.alt = `${movie.name} Poster`;
 
             const cardBody = document.createElement("div");
             cardBody.className = "card-body";
 
             const title = document.createElement("h5");
-            cardBody.className = "card-title fw-bold";
-            title.textContent = movie.title;
+            cardBody.className = "card-title h-25 fw-bold";
+            title.textContent = movie.name;
 
             const director = document.createElement("p");
             director.className = "card-text";
@@ -43,7 +38,7 @@ UI.prototype.showMovies = function(movies){
             type.textContent = `Tür : ${movie.type}`;
 
             const buttonDiv = document.createElement("div");
-            buttonDiv.className = "d-flex gap-3";
+            buttonDiv.className = "d-flex gap-3 p-0 my-3 card-footer";
 
             const deleteLink = document.createElement('a');
             deleteLink.href = '#';
@@ -71,43 +66,44 @@ UI.prototype.showMovies = function(movies){
 
             buttonDiv.append(updateButton, deleteLink);
 
-            cardBody.append(title, director, year, type, buttonDiv);
-            cardDiv.append(img, cardBody);
+            cardBody.append(title, director, year, type);
+            cardDiv.append(img, cardBody, buttonDiv);
 
             colDiv.append(cardDiv);
             movieWrap.appendChild(colDiv);
-
         });
-}
-UI.prototype.showSlider = function (movies) {
-    carouselItems.innerHTML = "";
-    let numberOfItemsPerSlide = 4;
-    
+        this.showSlider(movies)
+    }
+    showSlider(movies) {
+        carouselItems.innerHTML = "";
+        let numberOfItemsPerSlide = 4;
 
-    for (let i = 0; i < movies.length; i += numberOfItemsPerSlide) {
-        let slideItems = movies.slice(i, i + numberOfItemsPerSlide);
 
-        const carouselItem = document.createElement("div");
-        carouselItem.className = `carousel-item ${i === 0 ? 'active' : ''}`;
+        for (let i = 0; i < movies.length; i += numberOfItemsPerSlide) {
+            let slideItems = movies.slice(i, i + numberOfItemsPerSlide);
 
-        const rowDiv = document.createElement("div");
-        rowDiv.className = "row";
+            const carouselItem = document.createElement("div");
+            carouselItem.className = `carousel-item ${i === 0 ? 'active' : ''}`;
 
-        slideItems.forEach(movie => {
-            const colDiv = document.createElement("div");
-            colDiv.className = "col-3";
+            const rowDiv = document.createElement("div");
+            rowDiv.className = "row";
 
-            const img = document.createElement("img");
-            img.src = movie.poster;
-            img.className = "d-block w-100";
-            img.alt = "Movie poster"
+            slideItems.forEach(movie => {
+                const colDiv = document.createElement("div");
+                colDiv.className = "col-3";
 
-            colDiv.append(img);
-            rowDiv.append(colDiv);
+                const img = document.createElement("img");
+                img.src = movie.poster;
+                img.className = "d-block w-100";
+                img.alt = "Movie poster"
 
-            carouselItem.append(rowDiv);
-            carouselItems.append(carouselItem);
+                colDiv.append(img);
+                rowDiv.append(colDiv);
 
-        });
+                carouselItem.append(rowDiv);
+                carouselItems.append(carouselItem);
+
+            });
+        }
     }
 }
