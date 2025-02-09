@@ -83,6 +83,7 @@ const editMovie = (id) => {
   isFavorite.checked = movie.isFavorite;
   movieType.value = movie.movieType;
   poster.value = movie.poster;
+  showFavorites();
 };
 
 function showMovies() {
