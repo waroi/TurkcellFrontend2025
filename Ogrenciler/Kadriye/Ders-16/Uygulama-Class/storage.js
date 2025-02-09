@@ -6,14 +6,13 @@ export default class Storage {
     }
   }
   saveMovie(movie) {
-    debugger;
     this.list.push({
       name: movie.name,
       year: movie.year,
       director: movie.director,
       imdb: movie.imdb,
-      teaser: movie.teaser,
       genre: movie.genre,
+      teaser: movie.teaser,
     });
     localStorage.setItem("movie_list", JSON.stringify(this.list));
   }
@@ -23,8 +22,8 @@ export default class Storage {
     this.list[index].year = movie.year;
     this.list[index].director = movie.director;
     this.list[index].imdb = movie.imdb;
-    this.list[index].teaser = movie.teaser;
     this.list[index].genre = movie.genre;
+    this.list[index].teaser = movie.teaser;
     localStorage.setItem("movie_list", JSON.stringify(this.list));
   }
 
@@ -32,7 +31,7 @@ export default class Storage {
     this.list.splice(index, 1);
     localStorage.setItem("movie_list", JSON.stringify(this.list));
   }
-  getMovies(){
-    return this.list;
+  getMovies() {
+    return JSON.parse(localStorage.getItem("movie_list"));
   }
 }
