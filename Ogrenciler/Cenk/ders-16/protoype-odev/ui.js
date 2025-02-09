@@ -1,8 +1,8 @@
 import movieController from "./movieController.js";
 
-const movie_controller = new movieController();
-
-export default function ui() {}
+export default function ui() {
+  this.movie_controller = new movieController();
+}
 
 ui.prototype.movieCard = function (movie, index) {
   const movieCard = document.createElement("div");
@@ -40,30 +40,27 @@ ui.prototype.movieCard = function (movie, index) {
   const movieButtons = document.createElement("div");
   movieButtons.classList.add("d-flex", "gap-2", "flex-wrap");
 
-  const iconDelete = document.createElement("i");
-  iconDelete.classList.add("fa-solid", "fa-trash");
-  const movieDelete = document.createElement("button");
-  movieDelete.classList.add("btn", "btn-danger");
-  movieDelete.appendChild(iconDelete);
-  movieDelete.addEventListener("click", () =>
-    movie_controller.deleteMovie(movie)
-  );
+  const deleteIcon = document.createElement("i");
+  deleteIcon.classList.add("fa-solid","fa-trash");
 
-  const iconEdit = document.createElement("i");
-  iconEdit.classList.add("fa-solid", "fa-pencil");
-  const movieEdit = document.createElement("button");
-  movieEdit.classList.add("btn", "btn-warning");
-  movieEdit.appendChild(iconEdit);
-  movieEdit.addEventListener("click", () => movie_controller.editMovie(index));
+  const deleteButton = document.createElement("button");
+  deleteButton.classList.add("btn", "btn-danger");
+  deleteButton.appendChild(deleteIcon);
+  deleteButton.addEventListener("click", () => {
+    this.movie_controller.deleteMovie(index);
+    this.renderMovies();
+  });
 
-  movieButtons.append(movieEdit, movieDelete);
-  movieBody.append(
-    movieName,
-    movieDirector,
-    movieYear,
-    movieType,
-    movieButtons
-  );
+  const editIcon = document.createElement("i");
+  editIcon.classList.add("fa-solid","fa-pencil");
+
+  const editButton = document.createElement("button");
+  editButton.classList.add("btn", "btn-warning");
+  editButton.appendChild(editIcon);
+  editButton.addEventListener("click", () => this.movie_controller.editMovie(index));
+
+  movieButtons.append(editButton, deleteButton);
+  movieBody.append(movieName, movieDirector, movieYear, movieType, movieButtons);
   movieCard.append(movieImg, movieBody);
 
   return movieCard;
@@ -72,8 +69,8 @@ ui.prototype.movieCard = function (movie, index) {
 ui.prototype.renderMovies = function () {
   const movieListContainer = document.querySelector(".movie-list");
   movieListContainer.innerHTML = "";
-  console.log(movie_controller.getMovieList());
-  const movieList = movie_controller.getMovieList();
+  //const movieList = movie_controller.getMovieList();
+  const movieList = this.movie_controller.getMovieList();
   movieList.forEach((movie, index) => {
     const movieCard = this.movieCard(movie, index);
     movieListContainer.appendChild(movieCard);
