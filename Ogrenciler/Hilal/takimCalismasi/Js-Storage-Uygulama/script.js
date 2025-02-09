@@ -1,5 +1,6 @@
 import { Movie } from "./Constructors/constructors.js";
 import { createID } from "./utils/index.js";
+import { getStorage, setStorage } from "./utils/index.js";
 
 const movieName = document.getElementById("movieName");
 const director = document.getElementById("director");
@@ -134,7 +135,7 @@ function showMovies() {
     const deleteButton = document.createElement("button");
     deleteButton.className = "btn btn-danger mb-2";
     deleteButton.textContent = "Delete";
-    deleteButton.addEventListener("click", (e) => deleteMovie(movie.id, e));
+    deleteButton.addEventListener("click", () => deleteMovie(movie.id));
 
     const editButton = document.createElement("button");
     editButton.className = "btn btn-warning";
@@ -155,13 +156,10 @@ function showMovies() {
     col.appendChild(card);
   });
 }
-const deleteMovie = (id, e) => {
-  console.log(e);
-  e.target.parentElement.remove();
-  const movies = JSON.parse(localStorage.getItem("movies"));
-  console.log(movies);
-  const newMovies = movies.filter((movie) => movie.id !== id);
-  localStorage.setItem("movies", JSON.stringify(newMovies));
+const deleteMovie = (id) => {
+  const movies = getStorage();
+  const newStorage = movies.filter((film) => film.id !== id);
+  setStorage(newStorage);
   showMovies();
 };
 
