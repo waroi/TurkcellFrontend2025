@@ -37,9 +37,8 @@ function addMovie(e) {
       movieType.value,
       poster.value
     );
-    movie.setStorage();
+    movie.addToStorage();
   } else {
-
     const updatedMovie = new Movie(
       editingMovieId,
       movieName.value,
@@ -220,4 +219,3 @@ const removeFromFavorites = (id) => {
 showFavorites();
 
 showMovies();
-

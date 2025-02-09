@@ -1,3 +1,5 @@
+import { getStorage, setStorage } from "../utils/index.js";
+
 export function Movie(
   id,
   movieName,
@@ -16,25 +18,23 @@ export function Movie(
   this.isFavorite = isFavorite;
   this.movieType = movieType;
   this.poster = poster;
-
- 
 }
 
-Movie.prototype.setStorage = function () {
-  const movies = JSON.parse(localStorage.getItem("movies")) || [];
+Movie.prototype.addToStorage = function () {
+  const movies = getStorage();
   movies.push(this);
-  localStorage.setItem("movies", JSON.stringify(movies));
-}
+  setStorage(movies);
+};
 
 Movie.prototype.editStorage = function () {
-  const movies = JSON.parse(localStorage.getItem("movies")) || [];
+  const movies = getStorage();
   const index = movies.findIndex((film) => film.id === this.id);
   movies[index] = this;
-  localStorage.setItem("movies", JSON.stringify(movies));
-}
+  setStorage(movies);
+};
 
 Movie.prototype.deleteStorage = function () {
-  const movies = JSON.parse(localStorage.getItem("movies")) || [];
+  const movies = getStorage();
   const newStorage = movies.filter((film) => film.id !== this.id);
-  localStorage.setItem("movies", JSON.stringify(newStorage));
-}
+  setStorage(newStorage);
+};
