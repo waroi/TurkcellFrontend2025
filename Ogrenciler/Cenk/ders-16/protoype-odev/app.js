@@ -3,17 +3,6 @@ import movieController from "./movieController.js";
 import ui from "./ui.js";
 
 const UI = new ui();
-// const movie_controller = new movieController();
-
-// const film = new Movie(
-//   "The Shawshank Redemption",
-//   "Frank Darabont",
-//   1994,
-//   "Drama",
-//   "https://www.imdb.com/title/tt0111161/mediaviewer/rm10105600/"
-// );
-// localStorage.setItem("movies", JSON.stringify(film));
-
 
 const inputs = document.querySelectorAll('input, select');
 inputs.forEach(input => {
@@ -32,6 +21,7 @@ inputs.forEach(input => {
     const previewImage = document.querySelector(".preview-image-container img");
     if (image) {
       previewImage.src = image;
+      previewImage.onerror = () => (previewImage.src = "./assets/default-poster.jpg");
     } else {
       previewImage.src = "./assets/default-poster.jpg";
     }

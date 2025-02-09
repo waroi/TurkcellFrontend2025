@@ -5,6 +5,5 @@ local_storage.prototype.setMovies = function (movies) {
 };
   
   local_storage.prototype.getMovies = function () {
-    //return [JSON.parse(localStorage.getItem("movies"))];
     return localStorage.getItem('movies') ? JSON.parse(localStorage.getItem('movies')): [];
 };
