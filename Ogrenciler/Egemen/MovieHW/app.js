@@ -1,40 +1,32 @@
-
 document.getElementById("addFilmBtn").onclick = function () {
   const filmName = document.getElementById("filmName").value;
   const filmDirector = document.getElementById("filmDirector").value;
   const filmDate = document.getElementById("filmDate").value;
   const filmPhoto = document.getElementById("filmPhoto").value;
   if (filmName && filmDirector && filmDate && filmPhoto) {
-
-
     let newFilm = {
       fName: filmName,
       fDirector: filmDirector,
       fDate: filmDate,
-      fPhoto: filmPhoto
-    }
+      fPhoto: filmPhoto,
+    };
     addFilm(newFilm);
     reload();
-
 
     let filmArray = JSON.parse(localStorage.getItem("filmArray")) || [];
 
     filmArray.push(newFilm);
     localStorage.setItem("filmArray", JSON.stringify(filmArray));
-
   }
-
-
 };
 
 function upload() {
   let getFilm = JSON.parse(localStorage.getItem("filmArray"));
 
   if (getFilm != null) {
-    getFilm.forEach(film => {
-      addFilm(film)
+    getFilm.forEach((film) => {
+      addFilm(film);
     });
-
   }
 }
 upload();
@@ -47,7 +39,6 @@ function reload() {
 }
 
 function addFilm(newFilm) {
-
   const filmDiv = document.createElement("div");
   filmDiv.className = "col";
   const card = document.createElement("div");
@@ -90,11 +81,9 @@ function addFilm(newFilm) {
     if (confirmDelete) {
       filmDiv.remove();
 
-
       let getFilm = JSON.parse(localStorage.getItem("filmArray")) || [];
 
-
-      let filmIndex = getFilm.findIndex(film => film.fName === newFilm.fName);
+      let filmIndex = getFilm.findIndex((film) => film.fName === newFilm.fName);
 
       if (filmIndex !== -1) {
         getFilm.splice(filmIndex, 1);
@@ -103,7 +92,6 @@ function addFilm(newFilm) {
       }
     }
   };
-
 
   editBtn.onclick = function () {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -130,7 +118,7 @@ function addFilm(newFilm) {
     saveBtn.onclick = function () {
       let getFilm = JSON.parse(localStorage.getItem("filmArray")) || [];
 
-      let filmIndex = getFilm.findIndex(film => film.fName === eskiFilmAdi);
+      let filmIndex = getFilm.findIndex((film) => film.fName === eskiFilmAdi);
 
       console.log(filmIndex);
 
@@ -139,8 +127,9 @@ function addFilm(newFilm) {
           fName: document.getElementById("filmName").value,
           fDirector: document.getElementById("filmDirector").value,
           fDate: document.getElementById("filmDate").value,
-          fPhoto: document.getElementById("filmPhoto").value
+          fPhoto: document.getElementById("filmPhoto").value,
         };
+        filmImage.alt = updatedFilm.fName;
 
         getFilm[filmIndex] = updatedFilm;
 
@@ -156,7 +145,4 @@ function addFilm(newFilm) {
       saveBtn.replaceWith(addBtn);
     };
   };
-
-
-
 }

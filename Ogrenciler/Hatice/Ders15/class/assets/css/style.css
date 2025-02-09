@@ -1,56 +1,77 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", serif;
-    font-weight: 400;
-    font-style: normal;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", serif;
+  font-weight: 400;
+  font-style: normal;
 }
+
 body {
-    background-color: #1c2230;
-    color: #fff;
-    font-family: Arial, sans-serif;
+  background-color: #1c2230;
+  color: #fff;
+  font-family: Arial, sans-serif;
 }
+
 .navbar {
-    background-color: #0b0d17;
+  background-color: #0b0d17;
 }
-header{
-    background: url(https://getwallpapers.com/wallpaper/full/a/6/1/1495718-top-4k-movie-wallpapers-3840x2160.jpg) no-repeat center/cover;
-    height: 100vh; 
-    width: 100%; 
+
+header {
+  background: url(https://getwallpapers.com/wallpaper/full/a/6/1/1495718-top-4k-movie-wallpapers-3840x2160.jpg) no-repeat center/cover;
+  height: 100vh;
+  width: 100%;
 }
+
 .carousel-inner, .carousel-item img {
-    width: 100%;
-    height: 100%;  
-    object-fit: cover;  
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
+
 .footer {
-    background-color: #0b0d17;
-    padding: 20px 0;
-    text-align: center;
+  background-color: #0b0d17;
+  padding: 20px 0;
+  text-align: center;
 }
+
 .footer a {
-    color: #fff;
-    text-decoration: none;
+  color: #fff;
+  text-decoration: none;
 }
+
 .card img {
-    height: 450px;
-    object-fit: cover;
+  height: 450px;
+  object-fit: cover;
 }
+
+@media (max-width: 768px) {
+  .card img {
+    height: 100%;
+  }
+
+  .card-title {
+    height: auto !important;
+  }
+}
+
 .card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background-color: #000000;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #000000;
 }
-.card-text, .card-title{
-    color: #ffffff;
+
+.card-text, .card-title {
+  color: #ffffff;
 }
+
 .card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
+
 .btn-update {
   align-items: center;
-  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+  background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
   border: 0;
   border-radius: 8px;
   box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
@@ -68,12 +89,14 @@ header{
   white-space: nowrap;
   cursor: pointer;
 }
+
 .btn-update:active,
 .btn-update:hover,
 .btn-delete:active,
 .btn-delete:hover {
   outline: 0;
 }
+
 .btn-update span {
   background-color: rgb(5, 6, 45);
   padding: 8px 16px;
@@ -82,10 +105,12 @@ header{
   height: 100%;
   transition: 300ms;
 }
+
 .btn-update:hover span {
   background: none;
   color: #fff;
 }
+
 .btn-delete {
   align-items: center;
   background-image: linear-gradient(135deg, #f34079 40%, #fc894d);
@@ -104,19 +129,22 @@ header{
   user-select: none;
   touch-action: manipulation;
 }
+
 .btn-delete span {
   transition: all 200ms;
   padding: 8px 16px;
   width: 100%;
   height: 100%;
 }
+
 .btn-delete:hover span {
   transform: scale(.9);
   opacity: .75;
   color: #fff;
 }
+
 .btn-add {
-  padding: 0.6em 2em;
+  padding: 3px;
   border: none;
   outline: none;
   color: rgb(255, 255, 255);
@@ -128,20 +156,19 @@ header{
   user-select: none;
   touch-action: manipulation;
 }
+
 .btn-add:before {
   content: "";
-  background: linear-gradient(
-    45deg,
-    #ff0000,
-    #ff7300,
-    #fffb00,
-    #48ff00,
-    #00ffd5,
-    #002bff,
-    #7a00ff,
-    #ff00c8,
-    #ff0000
-  );
+  background: linear-gradient(45deg,
+      #ff0000,
+      #ff7300,
+      #fffb00,
+      #48ff00,
+      #00ffd5,
+      #002bff,
+      #7a00ff,
+      #ff00c8,
+      #ff0000);
   position: absolute;
   top: -2px;
   left: -2px;
@@ -154,6 +181,7 @@ header{
   transition: opacity 0.3s ease-in-out;
   border-radius: 10px;
 }
+
 .btn-add:after {
   z-index: -1;
   content: "";
