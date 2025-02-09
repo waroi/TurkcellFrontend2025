@@ -37,7 +37,7 @@ changes.addEventListener("click", () => {
         storage.addStorage(movie)
         showMovies();
     } else {
-        movies[indexUp].title = filmname.value
+        movies[indexUp].name = filmname.value
         movies[indexUp].director = director.value
         movies[indexUp].year = year.value
         movies[indexUp].type = type.value
@@ -56,7 +56,7 @@ changes.addEventListener("click", () => {
 });
 function updateMovie(index) {
     const movie = movies[index];
-    filmname.value = movie.title;
+    filmname.value = movie.name;
     director.value = movie.director;
     year.value = movie.year;
     type.value = movie.type;
@@ -74,15 +74,6 @@ function showMovies() {
     }
     if (movies !== null) {
         ui.showMovies(movies)
-        showSlider();
-    }
-}
-function showSlider() {
-    let moviesStorage = storage.movies;
-    if (moviesStorage !== null) {
-        movies = moviesStorage;
-    }
-    if (movies !== null) {
         ui.showSlider(movies);
     }
 }

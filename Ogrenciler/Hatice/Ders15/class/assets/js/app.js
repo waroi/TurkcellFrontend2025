@@ -115,7 +115,7 @@ changes.addEventListener("click", () => {
         storage.addStorage(movie)
         showMovies();
     } else {
-        movies[indexUp].title = filmname.value
+        movies[indexUp].name = filmname.value
         movies[indexUp].director = director.value
         movies[indexUp].year = year.value
         movies[indexUp].type = type.value
@@ -128,7 +128,7 @@ changes.addEventListener("click", () => {
 });
 function updateMovie(index) {
     const movie = movies[index];
-    filmname.value = movie.title;
+    filmname.value = movie.name;
     director.value = movie.director;
     year.value = movie.year;
     type.value = movie.type;
