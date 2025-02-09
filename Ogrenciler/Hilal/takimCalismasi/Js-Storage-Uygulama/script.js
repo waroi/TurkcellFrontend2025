@@ -1,5 +1,14 @@
 import { Movie } from "./Constructors/constructors.js";
 import { createID } from "./utils/index.js";
+import { getStorage, setStorage } from "./utils/index.js";
+
+const movieName = document.getElementById("movieName");
+const director = document.getElementById("director");
+const year = document.getElementById("year");
+const description = document.getElementById("description");
+const isFavorite = document.getElementById("addFavorite");
+const movieType = document.getElementById("movieType");
+const poster = document.getElementById("poster");
 
 const checkInitialStorage = () => {
   let movies = localStorage.getItem("movies");
@@ -17,14 +26,6 @@ modalForm.addEventListener("submit", addMovie);
 
 function addMovie(e) {
   e.preventDefault();
-  const movies = JSON.parse(localStorage.getItem("movies"));
-  const movieName = document.getElementById("movieName");
-  const director = document.getElementById("director");
-  const year = document.getElementById("year");
-  const description = document.getElementById("description");
-  const isFavorite = document.getElementById("addFavorite");
-  const movieType = document.getElementById("movieType");
-  const poster = document.getElementById("poster");
   if (editingMovieId === "") {
     const id = createID();
     const movie = new Movie(
@@ -37,14 +38,10 @@ function addMovie(e) {
       movieType.value,
       poster.value
     );
-    movies.push(movie);
-    localStorage.setItem("movies", JSON.stringify(movies));
+    movie.addToStorage();
   } else {
-    const movieIndex = movies.findIndex((movie) => movie.id === editingMovieId);
-    const movie = movies[movieIndex];
-
     const updatedMovie = new Movie(
-      ...movie,
+      editingMovieId,
       movieName.value,
       director.value,
       year.value,
@@ -54,10 +51,8 @@ function addMovie(e) {
       poster.value
     );
 
-    // console.log(updatedMovie.getDetails());
+    updatedMovie.editStorage();
 
-    movies[movieIndex] = updatedMovie;
-    localStorage.setItem("movies", JSON.stringify(movies));
     editingMovieId = "";
   }
   movieName.innerHTML = "";
@@ -76,13 +71,6 @@ const editMovie = (id) => {
   const movieIndex = movies.findIndex((movie) => movie.id === editingMovieId);
   const movie = movies[movieIndex];
   console.log("id", editingMovieId, id);
-  const movieName = document.getElementById("movieName");
-  const director = document.getElementById("director");
-  const year = document.getElementById("year");
-  const description = document.getElementById("description");
-  const isFavorite = document.getElementById("addFavorite");
-  const movieType = document.getElementById("movieType");
-  const poster = document.getElementById("poster");
   movieName.value = movie.movieName;
   director.value = movie.director;
   year.value = movie.year;
@@ -147,7 +135,7 @@ function showMovies() {
     const deleteButton = document.createElement("button");
     deleteButton.className = "btn btn-danger mb-2";
     deleteButton.textContent = "Delete";
-    deleteButton.addEventListener("click", (e) => deleteMovie(movie.id, e));
+    deleteButton.addEventListener("click", () => deleteMovie(movie.id));
 
     const editButton = document.createElement("button");
     editButton.className = "btn btn-warning";
@@ -168,13 +156,10 @@ function showMovies() {
     col.appendChild(card);
   });
 }
-const deleteMovie = (id, e) => {
-  console.log(e);
-  e.target.parentElement.remove();
-  const movies = JSON.parse(localStorage.getItem("movies"));
-  console.log(movies);
-  const newMovies = movies.filter((movie) => movie.id !== id);
-  localStorage.setItem("movies", JSON.stringify(newMovies));
+const deleteMovie = (id) => {
+  const movies = getStorage();
+  const newStorage = movies.filter((film) => film.id !== id);
+  setStorage(newStorage);
   showMovies();
 };
 

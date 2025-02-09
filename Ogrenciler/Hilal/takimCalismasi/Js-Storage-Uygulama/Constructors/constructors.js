@@ -1,3 +1,5 @@
+import { getStorage, setStorage } from "../utils/index.js";
+
 export function Movie(
   id,
   movieName,
@@ -8,7 +10,6 @@ export function Movie(
   movieType,
   poster
 ) {
-  console.log(id);
   this.id = id;
   this.movieName = movieName;
   this.director = director;
@@ -19,6 +20,21 @@ export function Movie(
   this.poster = poster;
 }
 
-// Movie.prototype.getDetails = function () {
-//   return `${this.movieName} - ${this.director} - ${this.year}`;
-// };
+Movie.prototype.addToStorage = function () {
+  const movies = getStorage();
+  movies.push(this);
+  setStorage(movies);
+};
+
+Movie.prototype.editStorage = function () {
+  const movies = getStorage();
+  const index = movies.findIndex((film) => film.id === this.id);
+  movies[index] = this;
+  setStorage(movies);
+};
+
+Movie.prototype.deleteStorage = function () {
+  const movies = getStorage();
+  const newStorage = movies.filter((film) => film.id !== this.id);
+  setStorage(newStorage);
+};
