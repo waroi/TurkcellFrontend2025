@@ -37,7 +37,7 @@ function addMovie(e) {
       movieType.value,
       poster.value
     );
-    movie.setItem();
+    movie.setStorage();
   } else {
 
     const updatedMovie = new Movie(

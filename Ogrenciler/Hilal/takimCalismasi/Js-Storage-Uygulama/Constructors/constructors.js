@@ -23,7 +23,7 @@ export function Movie(
 Movie.prototype.setStorage = function () {
   const movies = JSON.parse(localStorage.getItem("movies")) || [];
   movies.push(this);
-  localStorage.setItem("movies", JSON.stringify(films));
+  localStorage.setItem("movies", JSON.stringify(movies));
 }
 
 Movie.prototype.editStorage = function () {
