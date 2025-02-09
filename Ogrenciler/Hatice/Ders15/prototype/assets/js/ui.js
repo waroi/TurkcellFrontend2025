@@ -1,88 +1,87 @@
 const movieWrap = document.getElementById("movie-wrap");
 const carouselItems = document.getElementById("carousel-items");
-function UI(){
+function UI() {
 }
 
-UI.prototype.clearForm = function (){
+UI.prototype.clearForm = function () {
     document.getElementById("movieform").reset();
 }
-UI.prototype.showMovies = function(movies){
-
-    console.log(movies)
+UI.prototype.showMovies = function (movies) {
 
     movieWrap.innerHTML = ''
-        movies.forEach((movie, index) => {
-            const colDiv = document.createElement("div");
-            colDiv.className = "col-lg-3 col-md-4 col-sm-6 mb-5"
+    movies.forEach((movie, index) => {
+        const colDiv = document.createElement("div");
+        colDiv.className = "col-lg-3 col-md-4 col-sm-6 mb-5"
 
-            const cardDiv = document.createElement("div");
-            cardDiv.className = "card p-3";
+        const cardDiv = document.createElement("div");
+        cardDiv.className = "card p-3 h-100";
 
-            const img = document.createElement("img");
-            img.src = movie.poster;
-            img.className = "card-img-top";
-            img.alt = `${movie.title} Poster`;
+        const img = document.createElement("img");
+        img.src = movie.poster;
+        img.className = "card-img-top";
+        img.alt = `${movie.name} Poster`;
 
-            const cardBody = document.createElement("div");
-            cardBody.className = "card-body";
+        console.log(movie);
 
-            const title = document.createElement("h5");
-            cardBody.className = "card-title fw-bold";
-            title.textContent = movie.name;
+        const cardBody = document.createElement("div");
+        cardBody.className = "card-body";
 
-            const director = document.createElement("p");
-            director.className = "card-text";
-            director.textContent = `Yönetmen : ${movie.director}`;
+        const title = document.createElement("h5");
+        cardBody.className = "card-title h-25 fw-bold";
+        title.textContent = movie.name;
 
-            const year = document.createElement("p");
-            year.className = "card-text";
-            year.textContent = `Yıl : ${movie.year}`;
+        const director = document.createElement("p");
+        director.className = "card-text";
+        director.textContent = `Yönetmen : ${movie.director}`;
 
-            const type = document.createElement("p");
-            type.className = "card-text";
-            type.textContent = `Tür : ${movie.type}`;
+        const year = document.createElement("p");
+        year.className = "card-text";
+        year.textContent = `Yıl : ${movie.year}`;
 
-            const buttonDiv = document.createElement("div");
-            buttonDiv.className = "d-flex gap-3";
+        const type = document.createElement("p");
+        type.className = "card-text";
+        type.textContent = `Tür : ${movie.type}`;
 
-            const deleteLink = document.createElement('a');
-            deleteLink.href = '#';
-            deleteLink.className = 'btn btn-delete d-inline-flex';
-            deleteLink.onclick = () => removeMovie(index);
+        const buttonDiv = document.createElement("div");
+        buttonDiv.className = "d-flex gap-3 p-0 my-3 card-footer";
 
-            const deleteSpan = document.createElement('span');
-            deleteSpan.className = 'text';
-            deleteSpan.textContent = 'Sil';
+        const deleteLink = document.createElement('a');
+        deleteLink.href = '#';
+        deleteLink.className = 'btn btn-delete d-inline-flex';
+        deleteLink.onclick = () => removeMovie(index);
 
-            deleteLink.appendChild(deleteSpan);
+        const deleteSpan = document.createElement('span');
+        deleteSpan.className = 'text';
+        deleteSpan.textContent = 'Sil';
 
-            const updateButton = document.createElement('button');
-            updateButton.type = 'button';
-            updateButton.className = 'btn btn-update';
-            updateButton.setAttribute('data-bs-toggle', 'modal');
-            updateButton.setAttribute('data-bs-target', '#movieModal');
-            updateButton.onclick = () => updateMovie(index);
+        deleteLink.appendChild(deleteSpan);
 
-            const updateSpan = document.createElement('span');
-            updateSpan.className = 'text';
-            updateSpan.textContent = 'Güncelle';
+        const updateButton = document.createElement('button');
+        updateButton.type = 'button';
+        updateButton.className = 'btn btn-update';
+        updateButton.setAttribute('data-bs-toggle', 'modal');
+        updateButton.setAttribute('data-bs-target', '#movieModal');
+        updateButton.onclick = () => updateMovie(index);
 
-            updateButton.appendChild(updateSpan);
+        const updateSpan = document.createElement('span');
+        updateSpan.className = 'text';
+        updateSpan.textContent = 'Güncelle';
 
-            buttonDiv.append(updateButton, deleteLink);
+        updateButton.appendChild(updateSpan);
 
-            cardBody.append(title, director, year, type, buttonDiv);
-            cardDiv.append(img, cardBody);
+        buttonDiv.append(updateButton, deleteLink);
 
-            colDiv.append(cardDiv);
-            movieWrap.appendChild(colDiv);
+        cardBody.append(title, director, year, type);
+        cardDiv.append(img, cardBody, buttonDiv);
 
-        });
+        colDiv.append(cardDiv);
+        movieWrap.appendChild(colDiv);
+    });
 }
 UI.prototype.showSlider = function (movies) {
     carouselItems.innerHTML = "";
     let numberOfItemsPerSlide = 4;
-    
+
 
     for (let i = 0; i < movies.length; i += numberOfItemsPerSlide) {
         let slideItems = movies.slice(i, i + numberOfItemsPerSlide);

@@ -11,7 +11,7 @@ class UI {
             colDiv.className = "col-lg-3 col-md-4 col-sm-6 mb-5"
 
             const cardDiv = document.createElement("div");
-            cardDiv.className = "card p-3";
+            cardDiv.className = "card p-3 h-100";
 
             const img = document.createElement("img");
             img.src = movie.poster;
@@ -24,7 +24,7 @@ class UI {
             cardBody.className = "card-body";
 
             const title = document.createElement("h5");
-            cardBody.className = "card-title fw-bold";
+            cardBody.className = "card-title h-25 fw-bold";
             title.textContent = movie.name;
 
             const director = document.createElement("p");
@@ -40,7 +40,7 @@ class UI {
             type.textContent = `Tür : ${movie.type}`;
 
             const buttonDiv = document.createElement("div");
-            buttonDiv.className = "d-flex gap-3";
+            buttonDiv.className = "d-flex gap-3 p-0 my-3 card-footer";
 
             const deleteLink = document.createElement('a');
             deleteLink.href = '#';
@@ -68,8 +68,8 @@ class UI {
 
             buttonDiv.append(updateButton, deleteLink);
 
-            cardBody.append(title, director, year, type, buttonDiv);
-            cardDiv.append(img, cardBody);
+            cardBody.append(title, director, year, type);
+            cardDiv.append(img, cardBody, buttonDiv);
 
             colDiv.append(cardDiv);
             movieWrap.appendChild(colDiv);

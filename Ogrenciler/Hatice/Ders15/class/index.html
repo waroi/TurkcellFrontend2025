@@ -84,9 +84,9 @@
                                 aria-describedby="filmyearFeedback" required>
                         </div>
                         <div class="col-md-4">
-                            <label for="film-type" class="form-label">Type</label>
+                            <label for="film-type" class="form-label">Tür</label>
                             <select class="form-select" id="film-type" aria-describedby="filmtypeFeedback" required>
-                                <option selected disabled value="">Choose...</option>
+                                <option selected disabled value="">Seçiniz...</option>
                                 <option>Aksiyon</option>
                                 <option>Dram</option>
                                 <option>Korku</option>
@@ -102,9 +102,10 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
-                    <button type="button" class="btn btn-primary" id="changes" data-bs-dismiss="modal">Değişiklikleri
-                        Kaydet</button>
+                    <button type='button' href="#" class="btn btn-delete d-inline-flex" data-bs-dismiss="modal"><span
+                            class="text">Kapat</span></button>
+                    <button type="button" class="btn btn-update" id="changes" data-bs-dismiss="modal"
+                        data-bs-target="#movieModal"><span class="text bg-transparent">Kaydet</span></button>
                 </div>
             </div>
         </div>
