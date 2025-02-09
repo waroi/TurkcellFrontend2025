@@ -1,8 +1,11 @@
-import { Movie } from "./Constructors/constructors.js";
+import { Movie } from "./Constructors/movie.js";
 import { createID } from "./utils/index.js";
 import { getStorage, setStorage } from "./utils/index.js";
 import { createCard } from "./ui/ui.js";
 import { Storage } from "./Constructors/storage.js";
+import { movieTypeMap } from "./data.js";
+
+const movieStorage = new Storage("movies");
 
 const movieName = document.getElementById("movieName");
 const director = document.getElementById("director");
@@ -11,6 +14,16 @@ const description = document.getElementById("description");
 const isFavorite = document.getElementById("addFavorite");
 const movieType = document.getElementById("movieType");
 const poster = document.getElementById("poster");
+Object.entries(movieTypeMap).map(([key, value]) => {
+  const optionElement = document.createElement("option");
+  optionElement.innerHTML = value;
+  optionElement.setAttribute("value", key);
+  movieType.append(optionElement);
+});
+
+console.log(
+  "1-clear storaga için button ekle.\n 2-ui.js,storage.js,movie.js utils altına geçir\n 3-toggleFavorite metodunu ekle \n  4-Festival filmine göre exten ettiğimiz yeni constructor ile sayfamızda güncellemeler yap"
+);
 
 const checkInitialStorage = () => {
   let movies = localStorage.getItem("movies");
@@ -19,6 +32,7 @@ const checkInitialStorage = () => {
     localStorage.setItem("movies", JSON.stringify(movies));
   }
 };
+
 checkInitialStorage();
 
 let editingMovieId = "";
@@ -27,7 +41,6 @@ const modalForm = document.getElementById("addMovieForm");
 modalForm.addEventListener("submit", addMovie);
 
 function addMovie(e) {
-  const movieStorage = new Storage("movies");
   e.preventDefault();
   if (editingMovieId === "") {
     const id = createID();
