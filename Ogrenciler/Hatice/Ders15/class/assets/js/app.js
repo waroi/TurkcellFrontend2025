@@ -140,23 +140,12 @@ function removeMovie(index) {
     storage.removeFromStorage(index)
     showMovies();
 }
-function showMovies() {
-    let moviesStorage = storage.movies
-    if (moviesStorage !== null) {
-        movies = moviesStorage
-    }
-    if (movies !== null) {
-        ui.showMovies(movies)
-        showSlider();
-    }
-}
-function showSlider() {
+function getMovies() {
     let moviesStorage = storage.movies;
-    if (moviesStorage !== null) {
-        movies = moviesStorage;
-    }
-    if (movies !== null) {
-        ui.showSlider(movies);
-    }
+    return moviesStorage !== null ? moviesStorage : [];
+}
+function showMovies() {
+    let movies = getMovies();
+    ui.showMovies(movies);
 }
 showMovies();

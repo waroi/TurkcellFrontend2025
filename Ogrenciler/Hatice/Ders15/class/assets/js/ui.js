@@ -72,6 +72,7 @@ class UI {
             colDiv.append(cardDiv);
             movieWrap.appendChild(colDiv);
         });
+        this.showSlider(movies)
     }
     showSlider(movies) {
         carouselItems.innerHTML = "";
