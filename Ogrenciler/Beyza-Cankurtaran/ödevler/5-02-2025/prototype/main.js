@@ -3,7 +3,7 @@ var films = JSON.parse(localStorage.getItem("films")) || [];
 var ui = new UI();
 var storage = new Storage();
 
-storage.filmJSONtoStorage(); // Storage içindeki metodu çağır
+storage.filmJSONtoStorage(); 
 
 var filmListesi = document.getElementById("film-listesi");
 var searchInput = document.getElementById("searchInput");

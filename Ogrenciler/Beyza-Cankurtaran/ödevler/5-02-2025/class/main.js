@@ -19,7 +19,7 @@ class Main {
     }
 
     init() {
-        this.storage.filmJSONToStorage(); // JSON'dan verileri yükle
+        this.storage.filmJSONToStorage(); 
         this.addEventListeners();
     }
 

@@ -1,6 +1,7 @@
 function UI() { }
 
 var ui = new UI();
+//var movieObj=new MovieObj();
 var storage = new Storage();
 
 UI.prototype.createFilmCard = function (film, index) {
@@ -88,7 +89,6 @@ UI.prototype.renderFilms = function (filmsToRender) {
         filmListesi.appendChild(this.createFilmCard(film, index));
     });
 };
-// filterFilms fonksiyonunda renderFilms'ı kullan
 UI.prototype.filterFilms = function () {
     const searchTerm = this.value.toLowerCase();
     const filteredFilms = films.filter(film =>
@@ -99,7 +99,23 @@ UI.prototype.filterFilms = function () {
     ui.renderFilms(filteredFilms);
 }
 
+//bunu denedik çalışmadı :(
+/*UI.prototype.addFilm = function (event) {
+    event.preventDefault();
+    
+    let filmObj = new MovieObj(
+        document.getElementById("filmAdi").value,
+        document.getElementById("yonetmen").value,
+        document.getElementById("yil").value,
+        document.getElementById("tur").value,
+        document.getElementById("afis").value
+    );
 
+    storage.addFilmStorage(filmObj);
+    ui.loadFilms();
+    document.getElementById("film-form").reset();
+};
+ */
 UI.prototype.addFilm = function (event) {
     event.preventDefault();
     let filmObj = {

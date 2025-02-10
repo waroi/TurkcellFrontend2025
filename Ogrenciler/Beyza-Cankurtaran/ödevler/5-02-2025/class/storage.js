@@ -14,15 +14,13 @@ class Storage {
     }
     updateFilmStorage(index, updatedFilm) {
         let films = JSON.parse(localStorage.getItem("films")) || [];
-
-        // **Eğer index hatalıysa, işlemi iptal et**
         if (index < 0 || index >= films.length) {
             console.error("Geçersiz index:", index);
             return;
         }
 
-        films[index] = updatedFilm; // Filmi güncelle
-        localStorage.setItem("films", JSON.stringify(films)); // LocalStorage'ı güncelle
+        films[index] = updatedFilm;
+        localStorage.setItem("films", JSON.stringify(films));
     }
 
 
