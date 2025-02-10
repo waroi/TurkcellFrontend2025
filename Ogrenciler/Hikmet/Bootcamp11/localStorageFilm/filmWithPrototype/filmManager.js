@@ -10,9 +10,8 @@ FilmManager.prototype.saveFilms = function () {
 FilmManager.prototype.renderFilms = function () {
 	const filmList = document.getElementById("filmList");
 	filmList.innerHTML = "";
-	const self = this;
 
-	this.filmler.forEach(function (film, index) {
+	this.filmler.forEach((film, index) => {
 		const filmCard = document.createElement("div");
 		filmCard.className = "col mb-4";
 
@@ -47,15 +46,15 @@ FilmManager.prototype.renderFilms = function () {
 		const updateBtn = document.createElement("button");
 		updateBtn.className = "btn btn-warning btn-sm";
 		updateBtn.innerText = "Filmi Güncelle";
-		updateBtn.onclick = function () {
-			self.prepareUpdateFilm(index);
+		updateBtn.onclick = () => {
+			this.prepareUpdateFilm(index);
 		};
 
 		const deleteBtn = document.createElement("button");
 		deleteBtn.className = "btn btn-danger btn-sm";
 		deleteBtn.innerText = "Filmi Sil";
-		deleteBtn.onclick = function () {
-			self.deleteFilm(index);
+		deleteBtn.onclick = () => {
+			this.deleteFilm(index);
 		};
 
 		btnGroup.appendChild(updateBtn);
@@ -92,7 +91,6 @@ FilmManager.prototype.addFilmFromInput = function () {
 	this.saveFilms();
 	this.renderFilms();
 
-	// Input alanlarını temizle
 	document.getElementById("filmName").value = "";
 	document.getElementById("filmYear").value = "";
 	document.getElementById("filmDirector").value = "";
@@ -108,7 +106,6 @@ FilmManager.prototype.prepareUpdateFilm = function (index) {
 
 	const self = this;
 
-	// Güncelleme butonu yoksa oluştur
 	if (!this.updateButton) {
 		this.updateButton = document.createElement("button");
 		this.updateButton.id = "updateButton";
@@ -127,13 +124,11 @@ FilmManager.prototype.prepareUpdateFilm = function (index) {
 		self.saveFilms();
 		self.renderFilms();
 
-		// Güncelleme butonunu kaldır
 		if (self.updateButton) {
 			self.updateButton.remove();
 			self.updateButton = null;
 		}
 
-		// Input alanlarını temizle
 		document.getElementById("filmName").value = "";
 		document.getElementById("filmYear").value = "";
 		document.getElementById("filmDirector").value = "";
