@@ -167,7 +167,8 @@ class UI {
                 filmForm.onsubmit = (e) => this.addFilm(e);
             }, 100);
             
-        };this.deleteFilm(index);
+        };
+        this.deleteFilm(index);
     }
     
 
