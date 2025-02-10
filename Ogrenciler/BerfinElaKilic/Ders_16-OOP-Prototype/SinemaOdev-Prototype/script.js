@@ -5,9 +5,47 @@ let movieArray = storage.getMovies();
 let ui = new UI();
 addButton.addEventListener("click", addFunction);
 let selectedMovie = "";
+let films = [
+  {
+    movieId: 1,
+    movieName: "The Godfather",
+    movieDirector: "Francis Ford Capolla",
+    movieYear: "1972",
+    movieImg:
+      "https://play-lh.googleusercontent.com/ZucjGxDqQ-cHIN-8YA1HgZx7dFhXkfnz73SrdRPmOOHEax08sngqZMR_jMKq0sZuv5P7-T2Z2aHJ1uGQiys",
+    movieCategory: "1",
+  },
+  {
+    movieId: 2,
+    movieName: "Harry Potter ve Ateş Kadehi",
+    movieDirector: "Mike Newell",
+    movieYear: "2005",
+    movieImg: "https://tr.web.img2.acsta.net/pictures/bzp/01/53756.jpg",
+    movieCategory: "8",
+  },
+  {
+    movieId: 3,
+    movieName: "IT",
+    movieDirector: " Andy Muschietti",
+    movieYear: "2017",
+    movieImg:
+      "https://upload.wikimedia.org/wikipedia/tr/5/58/It_%282017%29.jpg",
+    movieCategory: "3",
+  },
+  {
+    movieId: 4,
+    movieName: "Lucy",
+    movieDirector: "Luc Besson",
+    movieYear: "2014",
+    movieImg:
+      "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p10479310_p_v10_ar.jpg",
+    movieCategory: "6",
+  },
+];
+films.map(m => ui.createCard(m));
 
 function randomTwoDigit() {
-  let whole = Math.floor(Math.random() * 10) + 1;
+  let whole = Math.floor(Math.random() * 4) + 5;
   let decimal = Math.floor(Math.random() * 10);
   return `${whole},${decimal}`;
 }
@@ -23,7 +61,8 @@ navButton.addEventListener("click", () => {
 movieArray.map((m) => ui.createCard(m));
 
 function addFunction() {
-  let maxMovie = movieArray.length > 0 ? Math.max(...movieArray.map((m) => m.movieId)) : 0;
+  let maxMovie =
+  movieArray.length > 0 ? Math.max(...movieArray.map((m) => m.movieId)) : 4;
   
   let movie = new Movie(movieName.value, movieDirector.value , movieYear.value, movieImg.value, movieCategory.value, maxMovie+1);
   movieArray.push(movie);
