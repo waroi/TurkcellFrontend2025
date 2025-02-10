@@ -1,20 +1,20 @@
 // @import "bt_overrides";
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
-@import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Macondo&display=swap");
 // @import "style";
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body{
+body {
   font-family: "Macondo", cursive;
   background-color: #242424;
 }
 
-.form-section{
-  transform: rotateX('180deg');
+.form-section {
+  transform: rotateX("180deg");
   transition: 1.2s all ease-in-out;
 }
 
@@ -26,7 +26,7 @@ body{
   .card {
     min-width: 300px;
     min-height: 550px;
-    .card-inner{
+    .card-inner {
       width: 100%;
       height: 100%;
       transition: transform 1s;
@@ -37,16 +37,15 @@ body{
     .card-inner.is-flipped {
       transform: rotateY(180deg);
     }
-    .card-face{
+    .card-face {
       position: absolute;
       width: 100%;
       height: 100%;
       backface-visibility: hidden;
       overflow: hidden;
-      border-radius: 1rem;
       box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
     }
-    .card-back{
+    .card-back {
       overflow: scroll;
       padding: 10px 10px;
       transform: rotateY(180deg);

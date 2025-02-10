@@ -14,9 +14,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const editingMovie =
         document.getElementById("addFilmBtn").dataset.editing;
       if (editingMovie) {
-        Storage.updateMovie(editingMovie, newMovie);
+        Storage.prototype.clearupdateMovie(editingMovie, newMovie);
       } else {
-        Storage.addMovie(newMovie);
+        Storage.prototype.addMovie(newMovie);
       }
 
       UI.clearForm();
@@ -29,14 +29,16 @@ document.addEventListener("DOMContentLoaded", () => {
     if (event.target.classList.contains("delete-btn")) {
       const movieName = event.target.dataset.name;
       if (confirm(`"${movieName}" filmini silmek istediğinize emin misiniz?`)) {
-        Storage.removeMovie(movieName);
+        Storage.prototype.removeMovie(movieName);
         UI.displayMovies();
       }
     }
 
     if (event.target.classList.contains("edit-btn")) {
       const movieName = event.target.dataset.name;
-      const movie = Storage.getMovies().find((m) => m.name === movieName);
+      const movie = Storage.prototype
+        .getMovies()
+        .find((m) => m.name === movieName);
       if (movie) {
         UI.fillForm(movie);
       }

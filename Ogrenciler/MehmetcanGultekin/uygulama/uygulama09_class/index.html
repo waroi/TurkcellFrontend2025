@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Film Ekleme</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent container">
+        <a class="navbar-brand" href="#">🎬 İzleme Listem</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Filmler</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-bs-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Türler
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="./pages/bilim-kurgu/bilim-kurgu.html">Bilimkurgu</a>
+                        <a class="dropdown-item" href="./pages/aksiyon/aksiyon.html">Aksiyon</a>
+                        <a class="dropdown-item" href="./pages/macera/macera.html">Macera</a>
+                        <a class="dropdown-item" href="./pages/dram/dram.html">Dram</a>
+                        <a class="dropdown-item" href="./pages/komedi/komedi.html">Komedi</a>
+
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="container mt-5 d-flex justify-content-center">
+        <div id="film-card" class="card p-4 shadow-lg text-white bg-dark" style="max-width: 400px;">
+            <h4 class="text-center mb-3">🎬 Film Ekle</h4>
+            <form id="film-form">
+                <div class="mb-2">
+                    <input type="text" id="film-name" placeholder="Filmin Adını Giriniz" class="form-control text-white"
+                        required>
+                </div>
+                <div class="mb-2">
+                    <input type="text" id="film-director" placeholder="Yönetmenin Adını Giriniz"
+                        class="form-control text-white" required>
+                </div>
+                <div class="mb-2">
+                    <input type="number" id="film-year" placeholder="Film çıkış yılını giriniz"
+                        class="form-control text-white" required>
+                </div>
+                <div class="mb-2">
+                    <select id="film-genre" class="form-select text-white" required>
+                        <option value="" selected disabled>Filmin Türünü Seçiniz</option>
+                        <option value="Aksiyon">Aksiyon</option>
+                        <option value="Bilim Kurgu">Bilim Kurgu</option>
+                        <option value="Macera">Macera</option>
+                        <option value="Dram">Dram</option>
+                        <option value="Komedi">Komedi</option>
+                        <option value="Korku">Korku</option>
+                        <option value="Suç">Suç</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <input type="url" id="film-url" placeholder="Film afişi URL'sini giriniz"
+                        class="form-control text-white" required>
+                </div>
+                <button type="submit" id="film-button" class="btn btn-primary w-100">Ekle</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="filmler">
+        <div class="container">
+            <div id="film-list" class="row mt-4"></div>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script type="module" src="./app.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var dropdownElementList = [].slice.call(document.querySelectorAll('.dropdown-toggle'));
+            var dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
+                return new bootstrap.Dropdown(dropdownToggleEl);
+            });
+        });
+    </script>
+</body>
+
+</html>

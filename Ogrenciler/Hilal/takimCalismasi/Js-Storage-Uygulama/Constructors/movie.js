@@ -1,5 +1,3 @@
-import { getStorage, setStorage } from "../utils/index.js";
-
 export function Movie(
   id,
   movieName,
