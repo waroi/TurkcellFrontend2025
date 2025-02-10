@@ -1,208 +1,134 @@
+import Movie from "./movie.js";
 export default class Card {
-  constructor(list, index, ekle_button, local_storage) {
-    const col = document.createElement("div");
-    col.className = "col-md-6 col-lg-4 p-3";
-    const card = document.createElement("div");
-    card.className = "card overflow-hidden";
-    const teaser = document.createElement("video");
-    teaser.controls = true;
-    const t_source = document.createElement("source");
-    t_source.src = list[index].teaser;
-    t_source.type = "video/mp4";
-    teaser.appendChild(t_source);
-    const body = document.createElement("div");
-    body.className = "card-body";
-    const title = document.createElement("h5");
-    title.title = `${list[index].name}`;
-    let title_text = document.createTextNode(`${list[index].name}`);
-    title.appendChild(title_text);
-    title.className = "card-title";
-    const ul = document.createElement("ul");
-    ul.className = "list-group list-group-flush";
-    const keys = Object.keys(list[index]);
-    console.log(keys);
-    for (let i = 1; i < keys.length - 1; i++) {
-      const li = document.createElement("li");
-      li.className = "list-group-item";
-      var text = document.createTextNode(`${list[index][keys[i]]}`);
-      console.log(keys[i]);
-      li.appendChild(text);
-      ul.appendChild(li);
+  constructor(
+    list,
+    index,
+    ekle_button,
+    local_storage,
+    movie_name,
+    year,
+    genre,
+    creator,
+    Imdb,
+    url
+  ) {
+    this.list = list;
+    this.index = index;
+    this.ekle_button = ekle_button;
+    this.local_storage = local_storage;
+    this.movie_name = movie_name;
+    this.year = year;
+    this.genre = genre;
+    this.creator = creator;
+    this.Imdb = Imdb;
+    this.url = url;
+    this.col = document.createElement("div");
+    this.col.className = "col-md-6 col-lg-4 p-3";
+    this.card = document.createElement("div");
+    this.card.className = "card overflow-hidden";
+    this.teaser = document.createElement("video");
+    this.teaser.controls = true;
+    this.t_source = document.createElement("source");
+    this.t_source.src = this.list[this.index].teaser;
+    this.t_source.type = "video/mp4";
+    this.teaser.appendChild(this.t_source);
+    this.body = document.createElement("div");
+    this.body.className = "card-body";
+    this.title = document.createElement("h5");
+    this.title.title = `${this.list[this.index].name}`;
+    let title_text = document.createTextNode(`${this.list[this.index].name}`);
+    this.title.appendChild(title_text);
+    this.title.className = "card-title";
+    this.ul = document.createElement("ul");
+    this.ul.className = "list-group list-group-flush";
+    this.keys = Object.keys(this.list[this.index]);
+    for (let i = 1; i < this.keys.length - 1; i++) {
+      this.li = document.createElement("li");
+      this.li.className = "list-group-item";
+      var text = document.createTextNode(
+        `${this.list[this.index][this.keys[i]]}`
+      );
+      this.li.appendChild(text);
+      this.ul.appendChild(this.li);
     }
-    const btn_container = document.createElement("div");
-    btn_container.className = "text-center my-2";
-    const delete_btn = document.createElement("button");
-    delete_btn.addEventListener("click", function () {
-      col.remove();
-      local_storage.deleteMovie(index);
-    });
-    delete_btn.className = "btn btn-danger btn-sm rounded-5 ms-2";
-    const delete_icon = document.createElement("i");
-    delete_icon.className = "fas fa-trash";
-    delete_btn.appendChild(delete_icon);
-    const edit_btn = document.createElement("button");
-    const a = document.createElement("a");
-    a.href = "#header";
-    edit_btn.addEventListener("click", function () {
-      let list = JSON.parse(localStorage.getItem("movie_list"));
-      if (index !== -1) {
-        document.getElementById("movie-name").value = list[index].name;
-        document.getElementById("year").value = list[index].year;
-        document.getElementById("genre").value = list[index].genre;
-        document.getElementById("creator").value = list[index].director;
-        document.getElementById("imdb").value = list[index].imdb;
-        document.getElementById("url").value = list[index].teaser;
-        ekle_button.textContent = "Update"; // Buton ismini değiştir
-        // Önceki event listener'ı kaldır
-        let new_ekle_button = ekle_button.cloneNode(true);
-        ekle_button.replaceWith(new_ekle_button);
-        new_ekle_button.addEventListener("click", function () {
+    this.btn_container = document.createElement("div");
+    this.btn_container.className = "text-center my-2";
+    this.delete_btn = document.createElement("button");
+    this.delete_btn.addEventListener("click", this.deleteFunction.bind(this));
+    this.delete_btn.className = "btn btn-danger btn-sm rounded-5 ms-2";
+    this.delete_icon = document.createElement("i");
+    this.delete_icon.className = "fas fa-trash";
+    this.delete_btn.appendChild(this.delete_icon);
+    this.edit_btn = document.createElement("button");
+    this.a = document.createElement("a");
+    this.a.href = "#header";
+    this.edit_btn.addEventListener("click", this.editFunction.bind(this));
+    this.edit_btn.className = "btn btn-warning btn-sm ms-2  rounded-5";
+    this.edit_icon = document.createElement("i");
+    this.edit_icon.className = "fas fa-edit";
+    this.a.appendChild(this.edit_icon);
+    this.edit_btn.appendChild(this.a);
+    this.btn_container.appendChild(this.edit_btn);
+    this.btn_container.appendChild(this.delete_btn);
+    this.col.appendChild(this.card);
+    this.card.appendChild(this.teaser);
+    this.card.appendChild(this.body);
+    this.body.appendChild(this.title);
+    this.card.appendChild(this.ul);
+    this.card.appendChild(this.btn_container);
+    return this.col;
+  }
+  deleteFunction() {
+    this.col.remove();
+    this.local_storage.deleteMovie(this.index);
+  }
+  editFunction() {
+    if (this.index !== -1) {
+      document.getElementById("movie-name").value = this.list[this.index].name;
+      document.getElementById("year").value = this.list[this.index].year;
+      document.getElementById("genre").value = this.list[this.index].genre;
+      document.getElementById("creator").value = this.list[this.index].director;
+      document.getElementById("imdb").value = this.list[this.index].imdb;
+      document.getElementById("url").value = this.list[this.index].teaser;
+      this.ekle_button.textContent = "Update";
+      let new_ekle_button = this.ekle_button.cloneNode(true);
+      this.ekle_button.replaceWith(new_ekle_button);
+      new_ekle_button.addEventListener(
+        "click",
+        function () {
           if (
-            movie_name.value !== "" &&
-            year.value !== "" &&
-            genre.value !== "" &&
-            creator.value !== "" &&
-            Imdb.value !== "" &&
-            url.value !== ""
+            this.movie_name.value !== "" &&
+            this.year.value !== "" &&
+            this.genre.value !== "" &&
+            this.creator.value !== "" &&
+            this.Imdb.value !== "" &&
+            this.url.value !== ""
           ) {
-            const movie = new Movie(
-              movie_name.value,
-              year.value,
-              creator.value,
-              Imdb.value,
-              genre.value,
-              url.value
+            this.movie = new Movie(
+              this.movie_name.value,
+              this.year.value,
+              this.creator.value,
+              this.Imdb.value,
+              this.genre.value,
+              this.url.value
             );
-            local_storage.updateMovie(index, movie); // Veriyi güncelle
+            this.local_storage.updateMovie(this.index, this.movie);
             location.reload();
-            // Formu temizle
-            for (var element of [movie_name, year, genre, creator, Imdb, url]) {
+            for (var element of [
+              this.movie_name,
+              this.year,
+              this.genre,
+              this.creator,
+              this.Imdb,
+              this.url,
+            ]) {
               element.value = "";
             }
           } else {
             alert("Your input is wrong!");
           }
-        });
-      }
-    });
-    edit_btn.className = "btn btn-warning btn-sm ms-2  rounded-5";
-    const edit_icon = document.createElement("i");
-    edit_icon.className = "fas fa-edit";
-    a.appendChild(edit_icon);
-    edit_btn.appendChild(a);
-    btn_container.appendChild(edit_btn);
-    btn_container.appendChild(delete_btn);
-    col.appendChild(card);
-    card.appendChild(teaser);
-    card.appendChild(body);
-    body.appendChild(title);
-    card.appendChild(ul);
-    card.appendChild(btn_container);
-    return col;
+        }.bind(this)
+      );
+    }
   }
 }
-
-// function createElements(row, list, index) {
-//   console.log(list);
-//   const col = document.createElement("div");
-//   col.className = "col-md-6 col-lg-4 p-3";
-//   const card = document.createElement("div");
-//   card.className = "card overflow-hidden";
-//   const teaser = document.createElement("video");
-//   teaser.controls = true;
-//   const t_source = document.createElement("source");
-//   t_source.src = list[index].teaser;
-//   t_source.type = "video/mp4";
-//   teaser.appendChild(t_source);
-//   const body = document.createElement("div");
-//   body.className = "card-body";
-//   const title = document.createElement("h5");
-//   title.title = `${list[index].name}`;
-//   let title_text = document.createTextNode(`${list[index].name}`);
-//   title.appendChild(title_text);
-//   title.className = "card-title";
-//   const ul = document.createElement("ul");
-//   ul.className = "list-group list-group-flush";
-//   const keys = Object.keys(list[index]);
-//   console.log(keys);
-//   for (let i = 1; i < keys.length - 1; i++) {
-//     const li = document.createElement("li");
-//     li.className = "list-group-item";
-//     var text = document.createTextNode(`${list[index][keys[i]]}`);
-//     console.log(keys[i]);
-//     li.appendChild(text);
-//     ul.appendChild(li);
-//   }
-//   const btn_container = document.createElement("div");
-//   btn_container.className = "text-center my-2";
-//   const delete_btn = document.createElement("button");
-//   delete_btn.addEventListener("click", function () {
-//     // list.splice(index, 1);
-//     col.remove();
-//     local_storage.deleteMovie(index);
-//   });
-//   delete_btn.className = "btn btn-danger btn-sm rounded-5 ms-2";
-//   const delete_icon = document.createElement("i");
-//   delete_icon.className = "fas fa-trash";
-//   delete_btn.appendChild(delete_icon);
-//   const edit_btn = document.createElement("button");
-//   const a = document.createElement("a");
-//   a.href = "#header";
-//   edit_btn.addEventListener("click", function () {
-//     // window.location.hash = "header";
-//     let list = JSON.parse(localStorage.getItem("movie_list"));
-//     if (index !== -1) {
-//       document.getElementById("movie-name").value = list[index].name;
-//       document.getElementById("year").value = list[index].year;
-//       document.getElementById("genre").value = list[index].genre;
-//       document.getElementById("creator").value = list[index].director;
-//       document.getElementById("imdb").value = list[index].imdb;
-//       document.getElementById("url").value = list[index].teaser;
-//       ekle_button.textContent = "Update";
-//       ekle_button.replaceWith(ekle_button.cloneNode(true));
-//       let new_ekle_button = document.getElementById("ekle");
-//       new_ekle_button.addEventListener("click", function () {
-//         if (
-//           movie_name.value !== "" &&
-//           year.value !== "" &&
-//           genre.value !== "" &&
-//           creator.value !== "" &&
-//           Imdb.value !== "" &&
-//           url.value !== ""
-//         ) {
-//           const movie = new Movie(
-//             movie_name.value,
-//             year.value,
-//             creator.value,
-//             Imdb.value,
-//             genre.value,
-//             url.value
-//           );
-//           local_storage.updateMovie(index, movie);
-//           location.reload();
-//           for (var element of [movie_name, year, genre, creator, Imdb, url]) {
-//             console.log(element.value);
-//             element.value = "";
-//           }
-//         } else {
-//           alert("Your input is wrong!");
-//         }
-//       });
-//     }
-//   });
-//   edit_btn.className = "btn btn-warning btn-sm ms-2  rounded-5";
-//   const edit_icon = document.createElement("i");
-//   edit_icon.className = "fas fa-edit";
-//   a.appendChild(edit_icon);
-//   edit_btn.appendChild(a);
-
-//   btn_container.appendChild(edit_btn);
-//   btn_container.appendChild(delete_btn);
-//   row.appendChild(col);
-//   col.appendChild(card);
-//   card.appendChild(teaser);
-//   card.appendChild(body);
-//   body.appendChild(title);
-//   card.appendChild(ul);
-//   card.appendChild(btn_container);
-// }

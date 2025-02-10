@@ -3,8 +3,10 @@ function UI() {}
 // Filmleri ekrana listeleme
 UI.displayMovies = function () {
   const filmGroup = document.querySelector(".film-group");
-  filmGroup.innerHTML = ""; // Eski içeriği temizle
-  Storage.getMovies().forEach((movie) => UI.addMovieToList(movie));
+  while (filmGroup.firstChild) {
+    filmGroup.removeChild(filmGroup.firstChild);
+  }
+  Storage.prototype.getMovies().forEach((movie) => UI.addMovieToList(movie));
 };
 
 // Filmi listeye ekleme

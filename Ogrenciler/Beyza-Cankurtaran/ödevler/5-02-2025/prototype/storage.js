@@ -1,5 +1,4 @@
 function Storage() {}
-
 Storage.prototype.addFilmStorage = function(film) {
     let films = JSON.parse(localStorage.getItem("films")) || [];
     films.unshift(film);
