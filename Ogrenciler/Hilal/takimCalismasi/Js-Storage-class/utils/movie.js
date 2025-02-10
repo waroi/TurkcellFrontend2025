@@ -39,7 +39,6 @@ export class FestivalMovie extends Movie {
       year,
       description,
       isFavorite,
-      "Festival",
       poster
     );
     this.festivalName = festivalName;
