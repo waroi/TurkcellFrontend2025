@@ -149,22 +149,6 @@ export class MovieApp {
     let cardYear = document.createElement("p");
     cardYear.textContent = movie.year;
     cardYear.classList.add("card-text");
-    // let buttons = document.createElement("div");
-    // let editButton = document.createElement("button");
-    // editButton.classList.add("btn");
-    // editButton.classList.add("btn-primary");
-    // editButton.classList.add("me-3");
-    // editButton.textContent = "Düzenle";
-    // // editButton.addEventListener("click", () => this.setEdit(cardFront, movie));
-    // let deleteButton = document.createElement("button");
-    // deleteButton.classList.add("btn");
-    // deleteButton.classList.add("btn-danger");
-    // deleteButton.textContent = "Sil";
-    // deleteButton.addEventListener("click", () =>
-    //   this.deleteMovie(cardFront, movie.title)
-    // );
-
-    // buttons.append(editButton, deleteButton);
     body.append(cardTitle, cardDirector, cardGenre, cardYear);
     cardFront.append(cardImage, body);
     return cardFront;
