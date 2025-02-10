@@ -1,4 +1,5 @@
-
+import { Movie } from "./movie.js";
+import { Storage } from "./storage.js";
 
 document.getElementById("addFilmBtn").onclick = function () {
     const filmName = document.getElementById("filmName").value;
@@ -10,27 +11,27 @@ document.getElementById("addFilmBtn").onclick = function () {
         addFilm(movie);
         reload();
 
-        let filmArray = JSON.parse(localStorage.getItem("filmArray")) || [];
+        // let filmArray = JSON.parse(localStorage.getItem("filmArray")) || [];
 
-        filmArray.push(movie);
-        localStorage.setItem("filmArray", JSON.stringify(filmArray));
+        // filmArray.push(movie);
+        // localStorage.setItem("filmArray", JSON.stringify(filmArray));
 
         Storage.addFilmToStorage(movie);
     }
 };
 
 
-function upload() {
-    console.log("asdsa");
-    let getFilm = JSON.parse(localStorage.getItem("filmArray"));
+// function upload() {
+//     console.log("asdsa");
+//     let getFilm = JSON.parse(localStorage.getItem("filmArray"));
 
-    if (getFilm != null) {
-        getFilm.forEach((film) => {
-            addFilm(film);
-        });
-    }
-}
-upload();
+//     if (getFilm != null) {
+//         getFilm.forEach((film) => {
+//             addFilm(film);
+//         });
+//     }
+// }
+// upload();
 
 Storage.uploadFilm();
 
@@ -41,7 +42,7 @@ function reload() {
     document.getElementById("filmPhoto").value = "";
 }
 
-function addFilm(newFilm) {
+export function addFilm(newFilm) {
     const filmDiv = document.createElement("div");
     filmDiv.className = "col";
     const card = document.createElement("div");
@@ -91,10 +92,15 @@ function addFilm(newFilm) {
     editBtn.onclick = function () {
         window.scrollTo({ top: 0, behavior: "smooth" });
 
-        document.getElementById("filmName").value = newFilm.fName;
-        document.getElementById("filmDirector").value = newFilm.fDirector;
-        document.getElementById("filmDate").value = newFilm.fDate;
-        document.getElementById("filmPhoto").value = newFilm.fPhoto;
+        let getFilm = Storage.getMyFilm();
+        console.log(getFilm);
+        let eskiFilmAdi = newFilm.fName;
+        let filmIndex = Storage.getFilmIndex(eskiFilmAdi);
+
+        document.getElementById("filmName").value = getFilm[filmIndex].fName;
+        document.getElementById("filmDirector").value = getFilm[filmIndex].fDirector;
+        document.getElementById("filmDate").value = getFilm[filmIndex].fDate;
+        document.getElementById("filmPhoto").value = getFilm[filmIndex].fPhoto;
 
         const addBtn = document.getElementById("addFilmBtn");
         const butonGroup = document.getElementById("butonGroup");
@@ -108,12 +114,13 @@ function addFilm(newFilm) {
             addBtn.replaceWith(saveBtn);
         }
 
-        let eskiFilmAdi = newFilm.fName;
+
 
         saveBtn.onclick = function () {
-
-            Storage.editFilm(newFilm);
+            console.log("Save Tiklandi");
+            //Storage.editFilm(newFilm);
             let getFilm = Storage.getMyFilm();
+            //console.log(getFilm);
 
 
             let filmIndex = Storage.getFilmIndex(eskiFilmAdi);
@@ -131,16 +138,23 @@ function addFilm(newFilm) {
 
                 getFilm[filmIndex] = updatedFilm;
 
+
+                eskiFilmAdi = updatedFilm.fName;
+                console.log(eskiFilmAdi);
+
                 localStorage.setItem("filmArray", JSON.stringify(getFilm));
 
                 filmAdi.textContent = updatedFilm.fName;
                 yonetmen.textContent = `Yönetmen: ${updatedFilm.fDirector}`;
                 tarih.textContent = `Çıkış Tarihi: ${updatedFilm.fDate}`;
                 filmImage.src = updatedFilm.fPhoto;
+
+
             }
             reload();
 
             saveBtn.replaceWith(addBtn);
         };
     };
+
 }
