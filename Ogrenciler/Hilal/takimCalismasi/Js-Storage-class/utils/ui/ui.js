@@ -80,6 +80,22 @@ export const createCard = (parentElement, movie) => {
   createEvents("click", editButton, editMovie, movie.id);
 
 
+
+
+
+  parentElement.appendChild(col);
+  cardBody.appendChild(titleLabel)
+  cardBody.appendChild(title);
+  cardBody.appendChild(directorLabel)
+  cardBody.appendChild(director);
+  cardBody.appendChild(yearLabel)
+  cardBody.appendChild(year);
+  cardBody.appendChild(descriptionLabel)
+  cardBody.appendChild(description);
+  cardBody.appendChild(isFavorite);
+  cardBody.appendChild(movieTypeLabel)
+  cardBody.appendChild(movieType);
+
   if (movieTypeMap[movie.movieType]) {
     const festivalLabel = document.createElement("label");
     festivalLabel.className = "fw-bold fs-5";
@@ -101,19 +117,6 @@ export const createCard = (parentElement, movie) => {
     cardBody.appendChild(awardText);
   }
 
-
-  parentElement.appendChild(col);
-  cardBody.appendChild(titleLabel)
-  cardBody.appendChild(title);
-  cardBody.appendChild(directorLabel)
-  cardBody.appendChild(director);
-  cardBody.appendChild(yearLabel)
-  cardBody.appendChild(year);
-  cardBody.appendChild(descriptionLabel)
-  cardBody.appendChild(description);
-  cardBody.appendChild(isFavorite);
-  cardBody.appendChild(movieTypeLabel)
-  cardBody.appendChild(movieType);
   cardBody.appendChild(image);
   card.appendChild(deleteButton);
   card.appendChild(editButton);
