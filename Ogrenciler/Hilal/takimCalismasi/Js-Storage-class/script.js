@@ -1,8 +1,9 @@
-import { Movie } from "./Constructors/movie.js";
+import { Movie } from "./utils/movie.js"
+import { FestivalMovie } from "./utils/movie.js"
 import { createID } from "./utils/index.js";
 import { getStorage, setStorage } from "./utils/index.js";
-import { createCard } from "./ui/ui.js";
-import { Storage } from "./Constructors/storage.js";
+import { createCard } from "./utils/ui/ui.js";
+import { Storage } from "./utils/storage.js";
 import { movieTypeMap } from "./data.js";
 
 const movieStorage = new Storage("movies");
@@ -14,6 +15,8 @@ const description = document.getElementById("description");
 const isFavorite = document.getElementById("addFavorite");
 const movieType = document.getElementById("movieType");
 const poster = document.getElementById("poster");
+
+
 Object.entries(movieTypeMap).map(([key, value]) => {
   const optionElement = document.createElement("option");
   optionElement.innerHTML = value;
@@ -40,8 +43,21 @@ let editingMovieId = "";
 const modalForm = document.getElementById("addMovieForm");
 modalForm.addEventListener("submit", addMovie);
 
+document.getElementById("movieType").addEventListener("change", function () {
+  const festivalFields = document.getElementById("festivalFields");
+
+  if (this.value === "21") {
+    festivalFields.classList.remove("d-none");
+  } else {
+    festivalFields.classList.add("d-none");
+    document.getElementById("festivalName").value = "";
+    document.getElementById("award").value = "";
+  }
+});
+
 function addMovie(e) {
   e.preventDefault();
+
   if (editingMovieId === "") {
     const id = createID();
     const movie = new Movie(
@@ -71,15 +87,18 @@ function addMovie(e) {
 
     editingMovieId = "";
   }
-  movieName.innerHTML = "";
-  director.innerHTML = "";
-  year.innerHTML = "";
-  description.innerHTML = "";
-  isFavorite.innerHTML = "";
-  poster.innerHTML = "";
+  movieName.value = "";
+  director.value = "";
+  year.value = "";
+  description.value = "";
+  isFavorite.value = false;
+  poster.value = "";
+
   showMovies();
   showFavorites();
 }
+
+
 
 export const editMovie = (id) => {
   editingMovieId = id;
@@ -103,6 +122,7 @@ function showMovies() {
   movies.map((movie) => {
     createCard(movieList, movie);
   });
+
 }
 
 export const deleteMovie = (id) => {
@@ -122,23 +142,33 @@ const showFavorites = () => {
 
   favoriteMovies.map((movie) => {
     createCard(favoriteList, movie);
-
-    const removeBtn = document.createElement("a");
-    removeBtn.className = "btn btn-primary";
-    removeBtn.textContent = "Favorilerden Kaldır";
-    removeBtn.addEventListener("click", () => removeFromFavorites(movie.id));
   });
 };
 
-const removeFromFavorites = (id) => {
-  const movies = getStorage();
+export const toggleFavorite = (id) => {
+  let movies = getStorage();
   movies = movies.map((movie) =>
-    movie.id === id ? { ...movie, isFavorite: false } : movie
+    movie.id === id ? { ...movie, isFavorite: !movie.isFavorite } : movie
   );
-  localStorage.setItem("movies", JSON.stringify(movies));
+  setStorage(movies);
   showFavorites();
+  showMovies();
+};
+
+
+const clearAllMovies = () => {
+  const clearAllBtn = document.getElementById("clearAllMovies");
+  clearAllBtn.addEventListener("click", () => {
+    Storage.clear();
+    showMovies();
+    showFavorites();
+  });
 };
 
 showFavorites();
-
 showMovies();
+clearAllMovies();
+
+
+
+

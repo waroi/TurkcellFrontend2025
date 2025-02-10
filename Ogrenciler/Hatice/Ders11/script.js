@@ -1,26 +1,11 @@
-var a=Math.floor(Math.random()*1000)
-
-
-while(true){
-    var tahmin = prompt("Bir sayı giriniz:")
-    if(tahmin==a){
-        alert("Tebrikler! Doğru tahmin: " + tahmin)
-        break;
-    }
-    else if(tahmin<a){
-        alert("Yukarı çık")
-    }
-    else{
-        alert("Aşağı in")
-    }
-}
-
 // Js Giriş
 // console.log("Merhaba Dünya");
 
 // Değişkenler
 // Değişken tanımlama - Scope
-// var a = 10; // Function scope
+// var a = 10; // var: Function scope
+// let a = 10; // let /const: Block scope
+
 // b = 20; // Kapsam ? global scope
 
 // console.log(a + b);
