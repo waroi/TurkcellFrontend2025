@@ -1,6 +1,5 @@
 import movieController from "./movieController.js";
 
-// const movie_controller = new movieController();
 export default function ui() {
   this.movie_controller = new movieController();
 }
@@ -41,17 +40,23 @@ ui.prototype.movieCard = function (movie, index) {
   const movieButtons = document.createElement("div");
   movieButtons.classList.add("d-flex", "gap-2", "flex-wrap");
 
+  const deleteIcon = document.createElement("i");
+  deleteIcon.classList.add("fa-solid","fa-trash");
+
   const deleteButton = document.createElement("button");
   deleteButton.classList.add("btn", "btn-danger");
-  deleteButton.innerHTML = '<i class="fa-solid fa-trash"></i>';
+  deleteButton.appendChild(deleteIcon);
   deleteButton.addEventListener("click", () => {
     this.movie_controller.deleteMovie(index);
     this.renderMovies();
   });
 
+  const editIcon = document.createElement("i");
+  editIcon.classList.add("fa-solid","fa-pencil");
+
   const editButton = document.createElement("button");
   editButton.classList.add("btn", "btn-warning");
-  editButton.innerHTML = '<i class="fa-solid fa-pencil"></i>';
+  editButton.appendChild(editIcon);
   editButton.addEventListener("click", () => this.movie_controller.editMovie(index));
 
   movieButtons.append(editButton, deleteButton);
