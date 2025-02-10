@@ -1,4 +1,4 @@
-class App {
+class Main {
     constructor() {
         this.films = JSON.parse(localStorage.getItem("films")) || [];
         this.ui = new UI();
@@ -30,4 +30,4 @@ class App {
         this.sortSelect.addEventListener("change", () => this.ui.sortAlphabetical());
     }
 }
-new App();
+new Main();
