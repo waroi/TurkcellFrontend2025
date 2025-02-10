@@ -1,5 +1,5 @@
-import { Movie } from "./utils/movie.js"
-import { FestivalMovie } from "./utils/movie.js"
+import { Movie } from "./utils/movie.js";
+import { FestivalMovie } from "./utils/movie.js";
 import { createID } from "./utils/index.js";
 import { getStorage, setStorage } from "./utils/index.js";
 import { createCard } from "./utils/ui/ui.js";
@@ -15,7 +15,6 @@ const description = document.getElementById("description");
 const isFavorite = document.getElementById("addFavorite");
 const movieType = document.getElementById("movieType");
 const poster = document.getElementById("poster");
-
 
 Object.entries(movieTypeMap).map(([key, value]) => {
   const optionElement = document.createElement("option");
@@ -98,8 +97,6 @@ function addMovie(e) {
   showFavorites();
 }
 
-
-
 export const editMovie = (id) => {
   editingMovieId = id;
   const movies = getStorage();
@@ -122,7 +119,6 @@ function showMovies() {
   movies.map((movie) => {
     createCard(movieList, movie);
   });
-
 }
 
 export const deleteMovie = (id) => {
@@ -155,7 +151,6 @@ export const toggleFavorite = (id) => {
   showMovies();
 };
 
-
 const clearAllMovies = () => {
   const clearAllBtn = document.getElementById("clearAllMovies");
   clearAllBtn.addEventListener("click", () => {
@@ -168,7 +163,3 @@ const clearAllMovies = () => {
 showFavorites();
 showMovies();
 clearAllMovies();
-
-
-
-
