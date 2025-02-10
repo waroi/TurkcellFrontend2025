@@ -78,7 +78,7 @@ function createElements(list, index) {
   const body = document.createElement("div");
   body.className = "card-body";
   const title = document.createElement("h5");
-  title.title=`${list[index][0]}`;
+  title.title = `${list[index][0]}`;
   let title_text = document.createTextNode(`${list[index][0]}`);
   title.appendChild(title_text);
   title.className = "card-title";
@@ -87,17 +87,18 @@ function createElements(list, index) {
   for (let i = 1; i < 5; i++) {
     const li = document.createElement("li");
     li.className = "list-group-item";
-    if(i == 2){
-      var text = document.createTextNode(`${genre_list[parseInt(list[index][i])]}`);
-    }
-    else{
+    if (i == 2) {
+      var text = document.createTextNode(
+        `${genre_list[parseInt(list[index][i])]}`
+      );
+    } else {
       var text = document.createTextNode(`${list[index][i]}`);
     }
     li.appendChild(text);
     ul.appendChild(li);
   }
   const btn_container = document.createElement("div");
-  btn_container.className="text-center my-2"
+  btn_container.className = "text-center my-2";
   const delete_btn = document.createElement("button");
   delete_btn.addEventListener("click", function () {
     list.splice(index, 1);
@@ -109,8 +110,8 @@ function createElements(list, index) {
   delete_icon.className = "fas fa-trash";
   delete_btn.appendChild(delete_icon);
   const edit_btn = document.createElement("button");
-  const a =document.createElement("a");
-  a.href="#header";
+  const a = document.createElement("a");
+  a.href = "#header";
   edit_btn.addEventListener("click", function () {
     // window.location.hash = "header";
     let list = JSON.parse(localStorage.getItem("movie_list"));
@@ -178,3 +179,4 @@ function createFromLocaleHistory() {
     }
   }
 }
+
