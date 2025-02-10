@@ -10,9 +10,8 @@ FilmManager.prototype.saveFilms = function () {
 FilmManager.prototype.renderFilms = function () {
 	const filmList = document.getElementById("filmList");
 	filmList.innerHTML = "";
-	const self = this;
 
-	this.filmler.forEach(function (film, index) {
+	this.filmler.forEach((film, index) => {
 		const filmCard = document.createElement("div");
 		filmCard.className = "col mb-4";
 
@@ -47,15 +46,15 @@ FilmManager.prototype.renderFilms = function () {
 		const updateBtn = document.createElement("button");
 		updateBtn.className = "btn btn-warning btn-sm";
 		updateBtn.innerText = "Filmi Güncelle";
-		updateBtn.onclick = function () {
-			self.prepareUpdateFilm(index);
+		updateBtn.onclick = () => {
+			this.prepareUpdateFilm(index); // Arrow function kullanıldığı için this korunur
 		};
 
 		const deleteBtn = document.createElement("button");
 		deleteBtn.className = "btn btn-danger btn-sm";
 		deleteBtn.innerText = "Filmi Sil";
-		deleteBtn.onclick = function () {
-			self.deleteFilm(index);
+		deleteBtn.onclick = () => {
+			this.deleteFilm(index); // Arrow function kullanıldığı için this korunur
 		};
 
 		btnGroup.appendChild(updateBtn);
