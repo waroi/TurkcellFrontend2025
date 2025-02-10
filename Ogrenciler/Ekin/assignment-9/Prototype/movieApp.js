@@ -93,6 +93,7 @@ MovieApp.prototype.updateMovie = function () {
   this.formElements.addButton.textContent = "Ekle";
 };
 
+//todo hocaya sorulacak - (refresh atmadan state güncelelnmiyor)
 MovieApp.prototype.refreshCard = function (card, movie) {
   const cardBody = card.querySelector(".card-body");
   const cardImage = card.querySelector(".card-img-top");

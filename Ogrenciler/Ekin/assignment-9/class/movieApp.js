@@ -47,6 +47,21 @@ export class MovieApp {
     this.appendMovie(movie);
     this.clearForm();
   }
+  refreshCard(card, movie) {
+    const cardBody = card.querySelector(".card-body");
+    const cardImage = card.querySelector(".card-img-top");
+    if (cardBody && cardImage) {
+      cardImage.src = movie.image;
+      cardBody.querySelector(".card-title").textContent = movie.title;
+      cardBody.querySelectorAll(".card-text")[0].textContent = movie.director;
+      cardBody.querySelectorAll(".card-text")[1].textContent = movie.genre;
+      cardBody.querySelectorAll(".card-text")[2].textContent = movie.year;
+    }
+    const cardBack = card.querySelector(".card-back .card-text");
+    if (cardBack) {
+      cardBack.textContent = movie.description;
+    }
+  }
   updateMovie() {
     const updatedMovie = this.getFormData();
     if (!this.validateForm(updatedMovie)) return;
