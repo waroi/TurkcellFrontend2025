@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moviezz</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #D9AFD9;
+            background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
+        }
+        .btn-group-responsive {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        @media (max-width: 576px) {
+            .btn-group-responsive {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text-center mt-5">Welcome to Moviezz</h1>
+        <div class="row  shadow-lg rounded-lg">
+            <div class="col-md-6 mx-auto">
+                <form id="film-form">
+                    <div class="mb-3 mt-3">
+                        <label for="filmAdi" class="form-label">Film Adı</label>
+                        <input type="text" class="form-control" id="filmAdi" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="yonetmen" class="form-label">Yönetmen</label>
+                        <input type="text" class="form-control" id="yonetmen" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="yil" class="form-label">Yıl</label>
+                        <input type="number" class="form-control" id="yil" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="tur" class="form-label">Tür</label>
+                        <input type="text" class="form-control" id="tur" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="afis" class="form-label">Afiş URL</label>
+                        <input type="url" class="form-control" id="afis" required>
+                    </div>
+                    <div class="mb-3 mt-2">
+                        <div class="d-grid gap-2 col-6 mx-auto">
+                            <button class="btn btn-primary" type="submit">Ekle</button>
+                        </div>
+                        </div>
+                </form>
+            </div>
+        </div>
+
+        <h2 class="text-center mt-5 mb-5 text-underlined">The Movie collection</h2>
+        <div class="row mb-4">
+            <div class="col-md-6 mx-auto">
+                <input type="text" id="searchInput" class="form-control mb-3" placeholder="Film adı veya tür ara...">
+                <select id="sortSelect" class="form-select">
+                    <option value="nameAsc">Ada göre (A-Z)</option>
+                    <option value="nameDesc">Ada göre (Z-A)</option>>
+                </select>
+            </div>
+        </div>
+        <div id="film-listesi" class="row mt-3"></div>
+        <!-- İnceleme Modalı -->
+        <div class="modal fade" id="filmModal" tabindex="-1" aria-labelledby="filmModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="filmModalLabel">Film Detayı</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img id="modalFilmAfis" src="" alt="" class="img-fluid mb-3">
+                        <p><strong>Adı:</strong> <span id="modalFilmAdi"></span></p>
+                        <p><strong>Yönetmen:</strong> <span id="modalYonetmen"></span></p>
+                        <p><strong>Yıl:</strong> <span id="modalYil"></span></p>
+                        <p><strong>Tür:</strong> <span id="modalTur"></span></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="movie.js"></script>
+    <script src="storage.js"></script>
+    <script src="UI.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
