@@ -13,10 +13,19 @@ class Storage {
         localStorage.setItem("films", JSON.stringify(films));
     }
     updateFilmStorage(index, updatedFilm) {
-        let films = this.getFilmsFromStorage();
-        films[index] = updatedFilm; // Güncellenen filmi listeye ekle
-        localStorage.setItem("films", JSON.stringify(films));
+        let films = JSON.parse(localStorage.getItem("films")) || [];
+
+        // **Eğer index hatalıysa, işlemi iptal et**
+        if (index < 0 || index >= films.length) {
+            console.error("Geçersiz index:", index);
+            return;
+        }
+
+        films[index] = updatedFilm; // Filmi güncelle
+        localStorage.setItem("films", JSON.stringify(films)); // LocalStorage'ı güncelle
     }
+
+
     filmJSONToStorage() {
         let films = JSON.parse(localStorage.getItem("films")) || [];
 

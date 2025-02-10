@@ -108,33 +108,71 @@ class UI {
         });
     }
 
-    // Film düzenleme
     editFilm(index) {
-        let films = JSON.parse(localStorage.getItem("films"));
+        let films = JSON.parse(localStorage.getItem("films")) || [];
+        console.log("Tüm Filmler:", films);
+    
         let film = films[index];
-        document.getElementById("inputFilmAdi").value = film.ad;
-        document.getElementById("inputYonetmen").value = film.yonetmen;
-        document.getElementById("inputYil").value = film.yil;
-        document.getElementById("inputTur").value = film.tur;
-        document.getElementById("inputAfis").value = film.afis;
+        console.log("Seçilen Film:", film);
+    
+        if (!film) {
+            console.error("Film bulunamadı! Güncelleme iptal edildi.");
+            alert("Hata: Güncellenecek film bulunamadı!");
+            return;
+        }
+    
+        // Form alanlarını doldur
+        document.getElementById("filmAdi").value = film.ad;
+        document.getElementById("yonetmen").value = film.yonetmen;
+        document.getElementById("yil").value = film.yil;
+        document.getElementById("tur").value = film.tur;
+        document.getElementById("afis").value = film.afis;
         document.getElementById("film-form").scrollIntoView({ behavior: "smooth" });
-
-        // Güncelleme işlemi
-        document.getElementById("film-form").onsubmit = (event) => {
+    
+        let filmForm = document.getElementById("film-form");
+        filmForm.onsubmit = null; // Önceki olayları temizle
+    
+        filmForm.onsubmit = (event) => {
             event.preventDefault();
+    
             let updatedFilm = {
-                ad: document.getElementById("inputFilmAdi").value,
-                yonetmen: document.getElementById("inputYonetmen").value,
-                yil: document.getElementById("inputYil").value,
-                tur: document.getElementById("inputTur").value,
-                afis: document.getElementById("inputAfis").value
+                ad: document.getElementById("filmAdi").value,
+                yonetmen: document.getElementById("yonetmen").value,
+                yil: document.getElementById("yil").value,
+                tur: document.getElementById("tur").value,
+                afis: document.getElementById("afis").value
             };
-
-            this.storage.updateFilmStorage(index, updatedFilm); // Film güncelleme işlemi
-            this.loadFilms();
-            document.getElementById("film-form").reset();
+    
+            console.log("Film Adı:", updatedFilm.ad);
+            console.log("Yönetmen:", updatedFilm.yonetmen);
+            console.log("Yıl:", updatedFilm.yil);
+            console.log("Tür:", updatedFilm.tur);
+            console.log("Afiş:", updatedFilm.afis);
+    
+            console.log("Mevcut Filmler:", JSON.parse(localStorage.getItem("films")));
+    
+            if (!updatedFilm.ad || !updatedFilm.yonetmen || !updatedFilm.yil || !updatedFilm.tur || !updatedFilm.afis) {
+                console.error("Formdaki veriler eksik! Güncelleme iptal edildi.");
+                return;
+            }
+    
+            this.storage.updateFilmStorage(index, updatedFilm);
+            this.loadFilms(); // **Filmleri yeniden yükle**
+    
+            console.log("Güncellenmiş Filmler:", JSON.parse(localStorage.getItem("films")));
+    
+            filmForm.reset();
+    
+            setTimeout(() => {
+                filmForm.onsubmit = (e) => this.addFilm(e);
+            }, 100);
+            
         };
+        this.deleteFilm(index);
     }
+    
+
+
 
     // Film silme
     deleteFilm(index) {
