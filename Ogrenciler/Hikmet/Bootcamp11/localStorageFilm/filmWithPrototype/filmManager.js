@@ -47,14 +47,14 @@ FilmManager.prototype.renderFilms = function () {
 		updateBtn.className = "btn btn-warning btn-sm";
 		updateBtn.innerText = "Filmi Güncelle";
 		updateBtn.onclick = () => {
-			this.prepareUpdateFilm(index); // Arrow function kullanıldığı için this korunur
+			this.prepareUpdateFilm(index);
 		};
 
 		const deleteBtn = document.createElement("button");
 		deleteBtn.className = "btn btn-danger btn-sm";
 		deleteBtn.innerText = "Filmi Sil";
 		deleteBtn.onclick = () => {
-			this.deleteFilm(index); // Arrow function kullanıldığı için this korunur
+			this.deleteFilm(index);
 		};
 
 		btnGroup.appendChild(updateBtn);
@@ -91,7 +91,6 @@ FilmManager.prototype.addFilmFromInput = function () {
 	this.saveFilms();
 	this.renderFilms();
 
-	// Input alanlarını temizle
 	document.getElementById("filmName").value = "";
 	document.getElementById("filmYear").value = "";
 	document.getElementById("filmDirector").value = "";
@@ -107,7 +106,6 @@ FilmManager.prototype.prepareUpdateFilm = function (index) {
 
 	const self = this;
 
-	// Güncelleme butonu yoksa oluştur
 	if (!this.updateButton) {
 		this.updateButton = document.createElement("button");
 		this.updateButton.id = "updateButton";
@@ -126,13 +124,11 @@ FilmManager.prototype.prepareUpdateFilm = function (index) {
 		self.saveFilms();
 		self.renderFilms();
 
-		// Güncelleme butonunu kaldır
 		if (self.updateButton) {
 			self.updateButton.remove();
 			self.updateButton = null;
 		}
 
-		// Input alanlarını temizle
 		document.getElementById("filmName").value = "";
 		document.getElementById("filmYear").value = "";
 		document.getElementById("filmDirector").value = "";

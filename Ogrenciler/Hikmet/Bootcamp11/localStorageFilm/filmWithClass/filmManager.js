@@ -7,7 +7,6 @@ class FilmManager {
 	}
 
 	initEvents() {
-		// Film ekleme butonuna olay ekliyoruz
 		document
 			.getElementById("ekle")
 			.addEventListener("click", () => this.addFilm());
