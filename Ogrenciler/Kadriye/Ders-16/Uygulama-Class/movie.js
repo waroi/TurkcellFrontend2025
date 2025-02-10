@@ -8,7 +8,6 @@ export default class Movie {
     this.teaser = teaser;
   }
   getMovie() {
-    console.log(this.name, this.year, this.genre, "Bilgiler gösteriliyor...");
     return this;
   }
   setMovie(name, year, director, imdb, genre, teaser) {
