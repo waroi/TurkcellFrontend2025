@@ -1,3 +1,5 @@
+import { getStorage, setStorage } from "../utils/index.js";
+
 export function Movie(
   id,
   movieName,
@@ -8,7 +10,6 @@ export function Movie(
   movieType,
   poster
 ) {
-  console.log(id);
   this.id = id;
   this.movieName = movieName;
   this.director = director;
@@ -18,7 +19,3 @@ export function Movie(
   this.movieType = movieType;
   this.poster = poster;
 }
-
-// Movie.prototype.getDetails = function () {
-//   return `${this.movieName} - ${this.director} - ${this.year}`;
-// };
