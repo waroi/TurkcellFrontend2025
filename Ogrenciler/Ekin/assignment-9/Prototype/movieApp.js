@@ -59,6 +59,12 @@ MovieApp.prototype.clearForm = function () {
   this.formElements.addButton.textContent = "Ekle";
 };
 
+MovieApp.prototype.saveMovieToStorage = function (movie) {
+  const movies = JSON.parse(localStorage.getItem("movies") ?? "[]");
+  movies.push(movie);
+  localStorage.setItem("movies", JSON.stringify(movies));
+};
+
 MovieApp.prototype.addMovie = function () {
   const formData = this.getFormData();
   const movie = new Movie(
@@ -70,10 +76,26 @@ MovieApp.prototype.addMovie = function () {
     formData.description
   );
 
-  if (!this.validateForm(movie)) return;
   this.saveMovieToStorage(movie);
   this.appendMovie(movie);
   this.clearForm();
+};
+
+//todo hocaya sorulacak - (refresh atmadan state güncellenmiyor)
+MovieApp.prototype.refreshCard = function (card, movie) {
+  const cardBody = card.querySelector(".card-body");
+  const cardImage = card.querySelector(".card-img-top");
+  if (cardBody && cardImage) {
+    cardImage.src = movie.image;
+    cardBody.querySelector(".card-title").textContent = movie.title;
+    cardBody.querySelectorAll(".card-text")[0].textContent = movie.director;
+    cardBody.querySelectorAll(".card-text")[1].textContent = movie.genre;
+    cardBody.querySelectorAll(".card-text")[2].textContent = movie.year;
+  }
+  const cardBack = card.querySelector(".card-back .card-text");
+  if (cardBack) {
+    cardBack.textContent = movie.description;
+  }
 };
 
 MovieApp.prototype.updateMovie = function () {
@@ -91,22 +113,7 @@ MovieApp.prototype.updateMovie = function () {
   this.editCard = null;
   this.clearForm();
   this.formElements.addButton.textContent = "Ekle";
-};
-
-MovieApp.prototype.refreshCard = function (card, movie) {
-  const cardBody = card.querySelector(".card-body");
-  const cardImage = card.querySelector(".card-img-top");
-  if (cardBody && cardImage) {
-    cardImage.src = movie.image;
-    cardBody.querySelector(".card-title").textContent = movie.title;
-    cardBody.querySelectorAll(".card-text")[0].textContent = movie.director;
-    cardBody.querySelectorAll(".card-text")[1].textContent = movie.genre;
-    cardBody.querySelectorAll(".card-text")[2].textContent = movie.year;
-  }
-  const cardBack = card.querySelector(".card-back .card-text");
-  if (cardBack) {
-    cardBack.textContent = movie.description;
-  }
+  location.href = "";
 };
 
 MovieApp.prototype.deleteMovie = function (card, title) {
