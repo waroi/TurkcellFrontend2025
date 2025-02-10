@@ -1,4 +1,4 @@
-import { Movie } from "./movie";
+import { Movie } from "./movie.js";
 
 export function MovieApp() {
   this.moviesContainer = document.querySelector(".movies .container");
@@ -36,6 +36,29 @@ MovieApp.prototype.addEventListeners = function () {
   });
 };
 
+MovieApp.prototype.getFormData = function () {
+  return new Movie(
+    this.formElements.title.value.trim(),
+    this.formElements.director.value.trim(),
+    this.formElements.genre.value,
+    this.formElements.year.value.trim(),
+    this.formElements.image.value.trim(),
+    this.formElements.description.value.trim()
+  );
+};
+
+MovieApp.prototype.clearForm = function () {
+  const { title, director, genre, year, image, description } =
+    this.formElements;
+  title.value = "";
+  director.value = "";
+  genre.selectedIndex = 0;
+  year.value = "";
+  image.value = "";
+  description.value = "";
+  this.formElements.addButton.textContent = "Ekle";
+};
+
 MovieApp.prototype.addMovie = function () {
   const formData = this.getFormData();
   const movie = new Movie(
@@ -54,20 +77,36 @@ MovieApp.prototype.addMovie = function () {
 };
 
 MovieApp.prototype.updateMovie = function () {
-  const updatedMovie = this.getFormData();
-  if (!this.validateForm(updatedMovie)) return;
+  const updatedMovies = this.getFormData();
   const movies = JSON.parse(localStorage.getItem("movies") ?? "[]");
   const index = movies.findIndex(
     (movie) => movie.title === this.editCard.dataset.title
   );
+
   if (index !== -1) {
-    movies[index] = updatedMovie;
+    movies[index] = updatedMovies;
     localStorage.setItem("movies", JSON.stringify(movies));
-    this.refreshCard(this.editCard, updatedMovie);
+    this.refreshCard(this.editCard, updatedMovies);
   }
   this.editCard = null;
   this.clearForm();
   this.formElements.addButton.textContent = "Ekle";
+};
+
+MovieApp.prototype.refreshCard = function (card, movie) {
+  const cardBody = card.querySelector(".card-body");
+  const cardImage = card.querySelector(".card-img-top");
+  if (cardBody && cardImage) {
+    cardImage.src = movie.image;
+    cardBody.querySelector(".card-title").textContent = movie.title;
+    cardBody.querySelectorAll(".card-text")[0].textContent = movie.director;
+    cardBody.querySelectorAll(".card-text")[1].textContent = movie.genre;
+    cardBody.querySelectorAll(".card-text")[2].textContent = movie.year;
+  }
+  const cardBack = card.querySelector(".card-back .card-text");
+  if (cardBack) {
+    cardBack.textContent = movie.description;
+  }
 };
 
 MovieApp.prototype.deleteMovie = function (card, title) {
@@ -99,12 +138,30 @@ MovieApp.prototype.appendMovie = function (movie) {
   cardInner.addEventListener("click", () =>
     cardInner.classList.toggle("is-flipped")
   );
+  const cardFooter = document.createElement("div");
+  cardFooter.className = "card-footer";
 
   const cardFront = this.createCardFront(movie, card);
   const cardBack = this.createCardBack(movie);
 
+  let buttons = document.createElement("div");
+  let editButton = document.createElement("button");
+  editButton.classList.add("btn");
+  editButton.classList.add("btn-primary");
+  editButton.classList.add("me-3");
+  editButton.textContent = "Düzenle";
+  editButton.addEventListener("click", () => this.setEdit(card, movie));
+  let deleteButton = document.createElement("button");
+  deleteButton.classList.add("btn");
+  deleteButton.classList.add("btn-danger");
+  deleteButton.textContent = "Sil";
+  deleteButton.addEventListener("click", () =>
+    this.deleteMovie(card, movie.title)
+  );
+  buttons.append(editButton, deleteButton);
+  cardFooter.append(buttons);
   cardInner.append(cardFront, cardBack);
-  card.appendChild(cardInner);
+  card.append(cardInner, cardFooter);
   this.moviesContainer.appendChild(card);
 };
 
@@ -135,21 +192,7 @@ MovieApp.prototype.createCardFront = function (movie, card) {
   cardYear.textContent = movie.year;
   cardYear.classList.add("card-text");
 
-  let buttons = document.createElement("div");
-  let editButton = document.createElement("button");
-  editButton.classList.add("btn", "btn-primary", "me-3");
-  editButton.textContent = "Düzenle";
-  editButton.addEventListener("click", () => this.setEdit(card, movie));
-
-  let deleteButton = document.createElement("button");
-  deleteButton.classList.add("btn", "btn-danger");
-  deleteButton.textContent = "Sil";
-  deleteButton.addEventListener("click", () =>
-    this.deleteMovie(card, movie.title)
-  );
-
-  buttons.append(editButton, deleteButton);
-  body.append(cardTitle, cardDirector, cardGenre, cardYear, buttons);
+  body.append(cardTitle, cardDirector, cardGenre, cardYear);
   cardFront.append(cardImage, body);
   return cardFront;
 };
