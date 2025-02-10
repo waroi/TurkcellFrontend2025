@@ -94,7 +94,6 @@ function showMovies() {
 
 export const deleteMovie = (id) => {
   const movies = getStorage();
-
   const newStorage = movies.filter((film) => film.id !== id);
   setStorage(newStorage);
   showMovies();
