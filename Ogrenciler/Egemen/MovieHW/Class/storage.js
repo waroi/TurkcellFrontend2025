@@ -1,4 +1,7 @@
-class Storage {
+
+import { addFilm } from "./class.js";
+export class Storage {
+
     static addFilmToStorage(movie) {
         let filmArray = JSON.parse(localStorage.getItem("filmArray")) || [];
         filmArray.push(movie);
@@ -39,7 +42,7 @@ class Storage {
     }
 
     static getFilmIndex(eskiFilmAdi) {
-        let getFilm = getMyFilm();
+        let getFilm = JSON.parse(localStorage.getItem("filmArray")) || [];
 
         let filmIndex = getFilm.findIndex((film) => film.fName === eskiFilmAdi);
         return filmIndex;

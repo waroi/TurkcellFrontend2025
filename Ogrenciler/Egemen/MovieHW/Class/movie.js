@@ -1,4 +1,4 @@
-class Movie {
+export class Movie {
     constructor(fName, fDirector, fDate, fPhoto) {
         this.fName = fName;
         this.fDirector = fDirector;
@@ -6,3 +6,5 @@ class Movie {
         this.fPhoto = fPhoto;
     }
 }
+
+
