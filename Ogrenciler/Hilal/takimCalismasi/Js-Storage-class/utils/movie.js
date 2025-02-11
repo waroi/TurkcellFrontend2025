@@ -20,7 +20,7 @@ export class Movie {
   }
 }
 
-class FestivalMovie extends Movie {
+export class FestivalMovie extends Movie {
   constructor(
     id,
     movieName,
@@ -39,7 +39,6 @@ class FestivalMovie extends Movie {
       year,
       description,
       isFavorite,
-      "Festival",
       poster
     );
     this.festivalName = festivalName;
