@@ -1,23 +1,14 @@
-class Request {
-  static get(url) {
-    return new Promise((resolve, reject) => {
-      fetch(url)
-        .then((response) => response.json())
-        .then((data) => resolve(data))
-        .catch((err) => reject(err));
-    });
-  }
-}
+import {Request} from "./request.js";
 
 function createCard(data) {
   const card = document.createElement("div");
-  card.className = "card col-12 col-md-3";
+  card.className = "card col-12 col-md-6 col-lg-4 border-success shadow";
 
   const cardBody = document.createElement("div");
   cardBody.className = "card-body";
 
   const cardTitle = document.createElement("h5");
-  cardTitle.className = "card-title";
+  cardTitle.className = "card-title text-success";
   cardTitle.textContent = data.title;
 
   const cardSubtitle = document.createElement("h6");

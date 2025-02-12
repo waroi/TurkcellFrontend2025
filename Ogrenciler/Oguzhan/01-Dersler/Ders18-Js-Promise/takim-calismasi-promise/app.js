@@ -4,8 +4,8 @@ async function getAllPost() {
     if (!response.ok) {
         throw new Error('Bir hata oluştu:', response.status)
     }
-    const data = await response.json()
-    return data
+    const data = await response.json();
+    UI.showPost(data);
 }
-
+getAllPost();
 
