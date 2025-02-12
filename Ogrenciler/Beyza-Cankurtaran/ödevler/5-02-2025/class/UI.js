@@ -1,10 +1,8 @@
 class UI {
     constructor() {
         this.films = JSON.parse(localStorage.getItem("films")) || [];
-        this.storage = new Storage(); // Storage sınıfını başlatıyoruz
+        this.storage = new Storage();
     }
-
-    // Film kartlarını oluşturma
     createFilmCard(film, index) {
         let colDiv = document.createElement("div");
         colDiv.classList.add("col-md-4", "col-sm-6", "d-flex");
@@ -73,7 +71,6 @@ class UI {
         return colDiv;
     }
 
-    // Filmleri filtreleme
     filterFilms() {
         const searchTerm = document.getElementById("searchInput").value.toLowerCase();
         const filteredFilms = this.films.filter(film =>
@@ -84,7 +81,6 @@ class UI {
         this.loadFilms(filteredFilms);
     }
 
-    // Yeni film ekleme
     addFilm(event) {
         event.preventDefault();
         let filmObj = {
@@ -94,12 +90,11 @@ class UI {
             tur: document.getElementById("tur").value,
             afis: document.getElementById("afis").value
         };
-        this.storage.addFilmStorage(filmObj); // Film ekleme işlemi
+        this.storage.addFilmStorage(filmObj); 
         this.loadFilms();
         document.getElementById("film-form").reset();
     }
 
-    // Filmleri yükleme
     loadFilms(films = JSON.parse(localStorage.getItem("films")) || []) {
         const filmListesi = document.getElementById("film-listesi");
         filmListesi.innerHTML = "";
@@ -121,7 +116,6 @@ class UI {
             return;
         }
     
-        // Form alanlarını doldur
         document.getElementById("filmAdi").value = film.ad;
         document.getElementById("yonetmen").value = film.yonetmen;
         document.getElementById("yil").value = film.yil;
@@ -130,7 +124,7 @@ class UI {
         document.getElementById("film-form").scrollIntoView({ behavior: "smooth" });
     
         let filmForm = document.getElementById("film-form");
-        filmForm.onsubmit = null; // Önceki olayları temizle
+        filmForm.onsubmit = null;
     
         filmForm.onsubmit = (event) => {
             event.preventDefault();
@@ -157,7 +151,7 @@ class UI {
             }
     
             this.storage.updateFilmStorage(index, updatedFilm);
-            this.loadFilms(); // **Filmleri yeniden yükle**
+            this.loadFilms(); 
     
             console.log("Güncellenmiş Filmler:", JSON.parse(localStorage.getItem("films")));
     
@@ -172,15 +166,11 @@ class UI {
     }
     
 
-
-
-    // Film silme
     deleteFilm(index) {
-        this.storage.deleteFilmStorage(index); // Film silme işlemi
+        this.storage.deleteFilmStorage(index); 
         this.loadFilms();
     }
 
-    // Filmleri alfabetik sıralama
     sortAlphabetical() {
         const sortValue = document.getElementById("sortSelect").value;
         let sortedFilms = [...this.films];
@@ -196,7 +186,6 @@ class UI {
         this.loadFilms(sortedFilms);
     }
 
-    // Film detayını gösterme
     inceleFilm(index) {
         let films = JSON.parse(localStorage.getItem("films"));
         let film = films[index];

@@ -1,8 +1,9 @@
-import { Movie } from "./Constructors/movie.js";
+import { Movie } from "./utils/movie.js";
+import { FestivalMovie } from "./utils/movie.js";
 import { createID } from "./utils/index.js";
 import { getStorage, setStorage } from "./utils/index.js";
-import { createCard } from "./ui/ui.js";
-import { Storage } from "./Constructors/storage.js";
+import { createCard } from "./utils/ui/ui.js";
+import { Storage } from "./utils/storage.js";
 import { movieTypeMap } from "./data.js";
 
 const movieStorage = new Storage("movies");
@@ -14,6 +15,9 @@ const description = document.getElementById("description");
 const isFavorite = document.getElementById("addFavorite");
 const movieType = document.getElementById("movieType");
 const poster = document.getElementById("poster");
+const festivalName = document.getElementById("movieType");
+const award = document.getElementById("award");
+
 Object.entries(movieTypeMap).map(([key, value]) => {
   const optionElement = document.createElement("option");
   optionElement.innerHTML = value;
@@ -40,43 +44,96 @@ let editingMovieId = "";
 const modalForm = document.getElementById("addMovieForm");
 modalForm.addEventListener("submit", addMovie);
 
+document.getElementById("movieType").addEventListener("change", function () {
+  const festivalFields = document.getElementById("festivalFields");
+
+  if (this.value === "21") {
+    festivalFields.classList.remove("d-none");
+  } else {
+    festivalFields.classList.add("d-none");
+
+  }
+});
+
 function addMovie(e) {
   e.preventDefault();
+
   if (editingMovieId === "") {
     const id = createID();
-    const movie = new Movie(
-      id,
-      movieName.value,
-      director.value,
-      year.value,
-      description.value,
-      isFavorite.checked,
-      movieType.value,
-      poster.value
-    );
-    movieStorage.addToStorage(movie);
-  } else {
-    const updatedMovie = new Movie(
-      editingMovieId,
-      movieName.value,
-      director.value,
-      year.value,
-      description.value,
-      isFavorite.checked,
-      movieType.value,
-      poster.value
-    );
 
-    movieStorage.editStorage(updatedMovie);
+    if (movieType.value === "21") {
+      const movie = new FestivalMovie(
+        id,
+        movieName.value,
+        director.value,
+        year.value,
+        description.value,
+        isFavorite.checked,
+        movieType.value,
+        poster.value,
+        award.value,
+        festivalName.value
+      )
+      movieStorage.addToStorage(movie);
+
+    } else {
+      const movie = new Movie(
+        id,
+        movieName.value,
+        director.value,
+        year.value,
+        description.value,
+        isFavorite.checked,
+        movieType.value,
+        poster.value
+      );
+      movieStorage.addToStorage(movie);
+      // document.getElementById("festivalName").value = "";
+      // document.getElementById("award").value = "";
+    }
+
+
+  } else {
+    const id = createID();
+    if (movieType.value === "21") {
+      const updatedFestivalMovie = new FestivalMovie(
+        id,
+        movieName.value,
+        director.value,
+        year.value,
+        description.value,
+        isFavorite.checked,
+        movieType.value,
+        poster.value,
+        award.value,
+        festivalName.value
+      )
+      movieStorage.editStorage(updatedFestivalMovie);
+    } else {
+      const updatedMovie = new Movie(
+        editingMovieId,
+        movieName.value,
+        director.value,
+        year.value,
+        description.value,
+        isFavorite.checked,
+        movieType.value,
+        poster.value
+      );
+      movieStorage.editStorage(updatedMovie);
+    }
 
     editingMovieId = "";
   }
-  movieName.innerHTML = "";
-  director.innerHTML = "";
-  year.innerHTML = "";
-  description.innerHTML = "";
-  isFavorite.innerHTML = "";
-  poster.innerHTML = "";
+  movieName.value = "";
+  director.value = "";
+  year.value = "";
+  description.value = "";
+  isFavorite.value = false;
+  poster.value = "";
+  award.value = ""
+  festivalName.value = ""
+
   showMovies();
   showFavorites();
 }
@@ -87,13 +144,29 @@ export const editMovie = (id) => {
   const movieIndex = movies.findIndex((movie) => movie.id === editingMovieId);
   const movie = movies[movieIndex];
   console.log("id", editingMovieId, id);
-  movieName.value = movie.movieName;
-  director.value = movie.director;
-  year.value = movie.year;
-  description.value = movie.description;
-  isFavorite.checked = movie.isFavorite;
-  movieType.value = movie.movieType;
-  poster.value = movie.poster;
+
+  if (movieType === 21) {
+    movieName.value = movie.movieName;
+    director.value = movie.director;
+    year.value = movie.year;
+    description.value = movie.description;
+    isFavorite.checked = movie.isFavorite;
+    movieType.value = movie.movieType;
+    poster.value = movie.poster;
+    award.value = movie.award
+    festivalName.value = movie.festivalName
+  } else {
+    movieName.value = movie.movieName;
+    director.value = movie.director;
+    year.value = movie.year;
+    description.value = movie.description;
+    isFavorite.checked = movie.isFavorite;
+    movieType.value = movie.movieType;
+    poster.value = movie.poster;
+  }
+
+
+
 };
 
 function showMovies() {
@@ -122,23 +195,28 @@ const showFavorites = () => {
 
   favoriteMovies.map((movie) => {
     createCard(favoriteList, movie);
-
-    const removeBtn = document.createElement("a");
-    removeBtn.className = "btn btn-primary";
-    removeBtn.textContent = "Favorilerden Kaldır";
-    removeBtn.addEventListener("click", () => removeFromFavorites(movie.id));
   });
 };
 
-const removeFromFavorites = (id) => {
-  const movies = getStorage();
+export const toggleFavorite = (id) => {
+  let movies = getStorage();
   movies = movies.map((movie) =>
-    movie.id === id ? { ...movie, isFavorite: false } : movie
+    movie.id === id ? { ...movie, isFavorite: !movie.isFavorite } : movie
   );
-  localStorage.setItem("movies", JSON.stringify(movies));
+  setStorage(movies);
   showFavorites();
+  showMovies();
+};
+
+const clearAllMovies = () => {
+  const clearAllBtn = document.getElementById("clearAllMovies");
+  clearAllBtn.addEventListener("click", () => {
+    Storage.clear();
+    showMovies();
+    showFavorites();
+  });
 };
 
 showFavorites();
-
 showMovies();
+clearAllMovies();

@@ -1,4 +1,4 @@
-import { Movie } from "./Constructors/constructors.js";
+import { Movie } from "../Js-Storage-class/utils/movie.js";
 import { createID } from "./utils/index.js";
 import { getStorage, setStorage } from "./utils/index.js";
 import { createCard } from "./ui/ui.js";
@@ -94,7 +94,6 @@ function showMovies() {
 
 export const deleteMovie = (id) => {
   const movies = getStorage();
-
   const newStorage = movies.filter((film) => film.id !== id);
   setStorage(newStorage);
   showMovies();
