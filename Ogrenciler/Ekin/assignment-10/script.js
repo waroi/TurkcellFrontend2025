@@ -22,10 +22,10 @@ async function renderPosts() {
     "https://jsonplaceholder.typicode.com/users"
   );
 
-  posts.map((post) => {
+  posts.map((post, index) => {
     let card = document.createElement("div");
     card.className = "card mb-3";
-    card.innerHTML = `<div class="card-header"></div><div class="card-body"><h5 class="card-title"></h5><p class="card-text"></p><a href="#" class="btn btn-primary">Read More</a></div>`;
+    card.innerHTML = `<div class="card-header"></div><img src="https://picsum.photos/1200/200?random=${index}" class="card-img-top" /><div class="card-body"><h5 class="card-title"></h5><p class="card-text"></p><a href="#" class="btn btn-primary">Read More</a></div>`;
     let user = users.find((user) => user.id == post.userId);
     card.querySelector(".card-header").textContent =
       user.username + " | " + user.name;
