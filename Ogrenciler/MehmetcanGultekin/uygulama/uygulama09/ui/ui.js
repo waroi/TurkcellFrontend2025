@@ -5,17 +5,23 @@ UI.prototype.createFilmCard = function (film, filmFunctions) {
   const filmCard = document.createElement("div");
   filmCard.className = "col-md-3 mb-4";
   filmCard.dataset.name = film.name;
+
   const cardDiv = document.createElement("div");
   cardDiv.className = "card h-100";
+
   const filmImg = document.createElement("img");
   filmImg.className = "card-img-top img-fluid";
   filmImg.src = film.url;
+
   const cardBody = document.createElement("div");
   cardBody.className = "card-body";
+
   const title = document.createElement("h5");
   title.className = "card-title";
+
   title.textContent = film.name;
   const director = document.createElement("p");
+  
   director.className = "card-text";
   director.textContent = `Yönetmen: ${film.director}`;
   const year = document.createElement("p");

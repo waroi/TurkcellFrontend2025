@@ -11,27 +11,11 @@ document.getElementById("addFilmBtn").onclick = function () {
         addFilm(movie);
         reload();
 
-        // let filmArray = JSON.parse(localStorage.getItem("filmArray")) || [];
-
-        // filmArray.push(movie);
-        // localStorage.setItem("filmArray", JSON.stringify(filmArray));
 
         Storage.addFilmToStorage(movie);
     }
 };
 
-
-// function upload() {
-//     console.log("asdsa");
-//     let getFilm = JSON.parse(localStorage.getItem("filmArray"));
-
-//     if (getFilm != null) {
-//         getFilm.forEach((film) => {
-//             addFilm(film);
-//         });
-//     }
-// }
-// upload();
 
 Storage.uploadFilm();
 
@@ -95,10 +79,12 @@ export function addFilm(newFilm) {
         let getFilm = Storage.getMyFilm();
         console.log(getFilm);
         let eskiFilmAdi = newFilm.fName;
+        console.log(eskiFilmAdi);
         let filmIndex = Storage.getFilmIndex(eskiFilmAdi);
 
         document.getElementById("filmName").value = getFilm[filmIndex].fName;
-        document.getElementById("filmDirector").value = getFilm[filmIndex].fDirector;
+        document.getElementById("filmDirector").value =
+            getFilm[filmIndex].fDirector;
         document.getElementById("filmDate").value = getFilm[filmIndex].fDate;
         document.getElementById("filmPhoto").value = getFilm[filmIndex].fPhoto;
 
@@ -114,18 +100,14 @@ export function addFilm(newFilm) {
             addBtn.replaceWith(saveBtn);
         }
 
-
-
         saveBtn.onclick = function () {
-            console.log("Save Tiklandi");
-            //Storage.editFilm(newFilm);
+
+
             let getFilm = Storage.getMyFilm();
-            //console.log(getFilm);
 
 
             let filmIndex = Storage.getFilmIndex(eskiFilmAdi);
 
-            console.log(filmIndex);
 
             if (filmIndex !== -1) {
                 let updatedFilm = {
@@ -135,12 +117,10 @@ export function addFilm(newFilm) {
                     fPhoto: document.getElementById("filmPhoto").value,
                 };
                 filmImage.alt = updatedFilm.fName;
-
+                console.log(getFilm[filmIndex]);
                 getFilm[filmIndex] = updatedFilm;
 
-
-                eskiFilmAdi = updatedFilm.fName;
-                console.log(eskiFilmAdi);
+                //eskiFilmAdi = updatedFilm.fName;
 
                 localStorage.setItem("filmArray", JSON.stringify(getFilm));
 
@@ -148,13 +128,10 @@ export function addFilm(newFilm) {
                 yonetmen.textContent = `Yönetmen: ${updatedFilm.fDirector}`;
                 tarih.textContent = `Çıkış Tarihi: ${updatedFilm.fDate}`;
                 filmImage.src = updatedFilm.fPhoto;
-
-
             }
             reload();
 
             saveBtn.replaceWith(addBtn);
         };
     };
-
 }
