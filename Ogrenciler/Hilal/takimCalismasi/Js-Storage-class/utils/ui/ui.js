@@ -93,7 +93,7 @@ export const createCard = (parentElement, movie) => {
   cardBody.appendChild(movieTypeLabel);
   cardBody.appendChild(movieType);
 
-  if (movie.movieType === "festival") {
+  if (movieTypeMap[movie.movieType] === "Festival") {
     const festivalLabel = document.createElement("label");
     festivalLabel.className = "fw-bold ";
     festivalLabel.textContent = "Festival Adı";
