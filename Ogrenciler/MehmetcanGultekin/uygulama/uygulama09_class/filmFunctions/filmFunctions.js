@@ -22,4 +22,4 @@ class FilmFunctions {
     }
 }
 
-export default FilmFunctions;
+    export default FilmFunctions;
