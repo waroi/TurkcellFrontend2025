@@ -1,0 +1,35 @@
+{
+    "posts": [
+      { "id": 1, "title": "json-server", "author": "typicode" }
+    ],
+    "comments": [
+      { "id": 1, "body": "some comment", "postId": 1 }
+    ],
+    "profile": { "name": "typicode" },
+    "users" : [
+        {
+            "name" : "Mustafa",
+            "surname" : "Gündüz",
+            "age" : 26,
+            "salary" : 5000
+        },
+        {
+            "name" : "Hikmet",
+            "surname" : "Melik",
+            "age" : 22,
+            "salary" : 6000
+        },
+        {
+            "name" : "Fahri",
+            "surname" : "Doğan",
+            "age" : 23,
+            "salary" : 7000
+        },
+        {
+            "name" : "Ekin",
+            "surname" : "Yılmaz",
+            "age" : 21,
+            "salary" : 9000
+        }
+    ]
+  }
