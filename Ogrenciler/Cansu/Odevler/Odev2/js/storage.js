@@ -1,5 +1,5 @@
 class Storage {
-    static apiUrl = "http://localhost:3000/games";
+    static apiUrl = "http://localhost:5000/games";
 
     static async fetchGames() {
         const response = await fetch(this.apiUrl);
