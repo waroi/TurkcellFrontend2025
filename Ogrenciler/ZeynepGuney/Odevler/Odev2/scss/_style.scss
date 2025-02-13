@@ -1,0 +1,59 @@
+* {
+    box-sizing: border-box;
+    font-family: "Montserrat", serif;
+    margin: 0;
+    padding: 0;
+}
+@mixin gradient-bg($angle: 135deg, $color1: #21eda0, $color2: #0ad5ed, $color3: #1780f9) {
+    background: linear-gradient($angle, $color1, $color2, $color3);
+}
+.navbar-toggler {
+    border: none;
+    .navbar-toggler-icon {
+        background: transparent;
+        width: 30px;
+        height: 30px;
+        position: relative;
+        &::before, &::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 5px;
+            @include gradient-bg();
+            border-radius: 5px;
+        }
+        &::before {
+            top: 0;
+        }
+        &::after {
+            bottom: 0;
+        }
+        span {
+            display: none;
+        }
+    }
+}
+.home{
+    .home-left{
+        width: 50%;
+        height: 100vh;
+        .gradient-bg{
+            @include gradient-bg();
+        }
+    }
+    .home-right{
+        .slogan-box{
+            @include gradient-bg();
+        }
+    }
+}
+.point {
+    width: 22px;
+    height: 22px;
+    @include gradient-bg();
+}
+.contact{
+    .gradient-bg{
+        @include gradient-bg();
+    }
+}
