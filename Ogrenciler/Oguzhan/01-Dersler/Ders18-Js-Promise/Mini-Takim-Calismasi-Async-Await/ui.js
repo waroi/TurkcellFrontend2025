@@ -8,7 +8,7 @@ class UI {
       cardDiv.className = "card bg-warning mb-4";
       const cardImg = document.createElement("img");
       cardImg.className = "card-img-top";
-      cardImg.src="https://picsum.photos/300/100";
+      cardImg.src = "https://picsum.photos/300/100";
       const cardBody = document.createElement("div");
       cardBody.className = "card-body";
       const title = document.createElement("h5");
