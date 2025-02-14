@@ -18,6 +18,14 @@ export default class GamesClient {
 		}).then((response) => response.json());
 	}
 
+	static async put(game) {
+		return fetch(`${GAME_URL}/${game.id}`, {
+			method: "PUT",
+			body: JSON.stringify(game),
+			headers: { "Content-type": "application/json;" },
+		}).then((response) => response.json());
+	}
+
 	static async delete(id) {
 		return fetch(`${GAME_URL}/${id}`, {
 			method: "DELETE",

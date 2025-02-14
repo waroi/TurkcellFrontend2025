@@ -14,7 +14,7 @@
 	<body>
 		<nav class="navbar navbar-expand-lg bg-body-tertiary">
 			<div class="container-fluid">
-				<a class="navbar-brand" href="#">Navbar</a>
+				<a class="navbar-brand" href="#">Dusty Shelves</a>
 				<button
 					class="navbar-toggler"
 					type="button"
@@ -30,30 +30,14 @@
 						<li class="nav-item">
 							<a class="nav-link active" aria-current="page" href="#">Home</a>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">Link</a>
-						</li>
-						<li class="nav-item dropdown">
-							<a
-								class="nav-link dropdown-toggle"
-								href="#"
-								role="button"
-								data-bs-toggle="dropdown"
-								aria-expanded="false">
-								Dropdown
-							</a>
-							<ul class="dropdown-menu">
-								<li><a class="dropdown-item" href="#">Action</a></li>
-								<li><a class="dropdown-item" href="#">Another action</a></li>
-								<li><hr class="dropdown-divider" /></li>
-								<li>
-									<a class="dropdown-item" href="#">Something else here</a>
-								</li>
-							</ul>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link disabled" aria-disabled="true">Disabled</a>
-						</li>
+						<button
+							type="button"
+							class="btn btn-primary"
+							data-bs-toggle="modal"
+							data-bs-target="#addGameModal"
+							data-bs-whatever="@mdo">
+							Add Game to Archive
+						</button>
 					</ul>
 					<form class="d-flex" role="search">
 						<input
@@ -68,26 +52,17 @@
 				</div>
 			</div>
 		</nav>
-		<button
-			type="button"
-			class="btn btn-primary"
-			data-bs-toggle="modal"
-			data-bs-target="#exampleModal"
-			data-bs-whatever="@mdo">
-			Add Game to Archive
-		</button>
+
 		<div
 			class="modal fade"
-			id="exampleModal"
+			id="addGameModal"
 			tabindex="-1"
-			aria-labelledby="exampleModalLabel"
+			aria-labelledby="addGameLabel"
 			aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h1 class="modal-title fs-5" id="exampleModalLabel">
-							Add a New Game
-						</h1>
+						<h1 class="modal-title fs-5" id="addGameLabel">Add a New Game</h1>
 						<button
 							type="button"
 							class="btn-close"
@@ -184,7 +159,163 @@
 			</div>
 		</div>
 
+		<div
+			class="modal fade"
+			id="updateGameModal"
+			tabindex="-1"
+			aria-labelledby="updateGameModalLabel"
+			aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h1 class="modal-title fs-5" id="updateGameModalLabel">
+							Update Archived Games Info
+						</h1>
+						<button
+							type="button"
+							class="btn-close"
+							data-bs-dismiss="modal"
+							aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<form method="put" name="updateGameForm">
+							<div class="mb-3">
+								<label for="game-name" class="col-form-label">Name:</label>
+								<input
+									type="text"
+									class="form-control"
+									id="name"
+									name="name"
+									required />
+							</div>
+							<div class="mb-3">
+								<label for="game-description" class="col-form-label"
+									>Description:</label
+								>
+								<input
+									type="text"
+									class="form-control"
+									id="desc"
+									name="desc"
+									required />
+							</div>
+							<div class="mb-3">
+								<label for="category-name" class="col-form-label"
+									>category:</label
+								>
+								<input
+									type="text"
+									class="form-control"
+									id="category"
+									name="category"
+									required />
+							</div>
+							<div class="mb-3">
+								<label for="date-name" class="col-form-label">date:</label>
+								<input
+									type="text"
+									class="form-control"
+									id="date"
+									name="date"
+									required />
+							</div>
+							<div class="mb-3">
+								<label for="image-name" class="col-form-label">image:</label>
+								<input
+									type="text"
+									class="form-control"
+									id="image"
+									name="image"
+									required />
+							</div>
+							<div class="mb-3">
+								<label for="developer-name" class="col-form-label"
+									>developer:</label
+								>
+								<input
+									type="text"
+									class="form-control"
+									id="developer"
+									name="developer"
+									required />
+							</div>
+							<div class="mb-3">
+								<label for="steam-name" class="col-form-label"
+									>Steam URL:</label
+								>
+								<input
+									type="text"
+									class="form-control"
+									id="steam"
+									name="steamUrl"
+									required />
+							</div>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button
+							type="button"
+							class="btn btn-secondary"
+							data-bs-dismiss="modal">
+							Close
+						</button>
+						<button type="button" class="btn btn-primary" id="updateForm">
+							Save
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<main class="container mt-2">
+			<section class="d-flex align-items-center">
+				<div class="btn-group">
+					<button
+						class="btn btn-secondary btn-sm dropdown-toggle"
+						type="button"
+						data-bs-toggle="dropdown"
+						aria-expanded="false">
+						Sıralama
+					</button>
+					<ul class="dropdown-menu">
+						<li><a class="dropdown-item" href="#">A-Z</a></li>
+						<li><a class="dropdown-item" href="#">Z-A</a></li>
+						<li><a class="dropdown-item" href="#">Cikis Tarihi</a></li>
+					</ul>
+				</div>
+				<div class="btn-group">
+					<button
+						class="btn btn-secondary btn-sm dropdown-toggle"
+						type="button"
+						data-bs-toggle="dropdown"
+						aria-expanded="false">
+						Filtrele
+					</button>
+					<ul class="dropdown-menu">
+						<div class="form-check">
+							<input
+								class="form-check-input"
+								type="checkbox"
+								value=""
+								id="flexCheckDefault" />
+							<label class="form-check-label" for="flexCheckDefault">
+								Kategori
+							</label>
+						</div>
+						<div class="form-check">
+							<input
+								class="form-check-input"
+								type="checkbox"
+								value=""
+								id="flexCheckChecked"
+								checked />
+							<label class="form-check-label" for="flexCheckChecked">
+								Cikis Tarihi
+							</label>
+						</div>
+					</ul>
+				</div>
+			</section>
 			<section
 				class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4"
 				id="games-grid">
