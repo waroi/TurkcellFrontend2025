@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oyun Arşivi</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Oyun Arşivi</h1>
+        
+        <!-- Oyun Ekleme Butonu -->
+        <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#gameModal">Yeni Oyun Ekle</button>
+        
+        <!-- Oyun Listesi -->
+        <div id="gameList" class="row"></div>
+    </div>
+
+    <!-- Oyun Ekleme Modalı -->
+    <div class="modal fade" id="gameModal" tabindex="-1" aria-labelledby="gameModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="gameModalLabel">Yeni Oyun Ekle</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="gameForm">
+                        <div class="mb-3">
+                            <label for="gameName" class="form-label">Oyun Adı</label>
+                            <input type="text" class="form-control" id="gameName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="gameDesc" class="form-label">Açıklama</label>
+                            <textarea class="form-control" id="gameDesc" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="gameCategory" class="form-label">Kategori</label>
+                            <select class="form-select" id="film-type" aria-describedby="filmtypeFeedback" required>
+                                <option selected disabled value="">Seçiniz...</option>
+                                <option>Aksiyon</option>
+                                <option>Dram</option>
+                                <option>Korku</option>
+                                <option>Komedi</option>
+                                <option>Animasyon</option>
+                                <option>Romantik</option>
+                                <option>Macera</option>
+                                <option>Bilim Kurgu</option>
+                                <option>Gerilim</option>
+                                <option>Fantastik</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="releaseDate" class="form-label">Çıkış Tarihi</label>
+                            <input type="date" class="form-control" id="releaseDate" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="gameImage" class="form-label">Oyun Görseli (URL)</label>
+                            <input type="url" class="form-control" id="gameImage" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="developer" class="form-label">Yapımcı Firma</label>
+                            <input type="text" class="form-control" id="developer" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="steamUrl" class="form-label">Steam URL</label>
+                            <input type="url" class="form-control" id="steamUrl">
+                        </div>
+                        <button type="submit" class="btn btn-success">Kaydet</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
