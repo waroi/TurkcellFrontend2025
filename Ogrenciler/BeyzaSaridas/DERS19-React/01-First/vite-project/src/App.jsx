@@ -1,16 +1,22 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import deneme from './components/deneme'
+import Deneme from './components/Deneme'
+import DenemeClass from './components/DenemeClass'
+ 
 function App() {
+  const [count,setCount]=useState(0);
   return (
     <>
      <h1>React</h1>
       <div className="card">Merhaba React
       </div>
-     <deneme isim="Beyza" yas={23}/>
-     <deneme isim="xccc" yas={20}/>
+     <Deneme isim="Beyza" yas={23}/>
+     <Deneme isim="xccc" yas={20}/>
+    <DenemeClass isim="beyzaaaa"/>
+    <div>{count}</div>
+    <button onClick={()=>setCount(count+1)}>Artır</button>
+    <button onClick={()=>setCount(count-1)}>Azalt</button>
+
     </>
   )
 }
