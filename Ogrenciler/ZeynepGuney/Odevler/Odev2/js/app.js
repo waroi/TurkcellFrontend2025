@@ -2,16 +2,23 @@ import { Request } from './request.js';
 import { UI } from './ui.js';
 
 const gamesSection = document.querySelector('#gamesSection');
-const ui = new UI();
+let ui;
 let games = [];
 let allGames = [];
+let updateIndex = null; 
 
 Request.get("./assets/games.json")
     .then((data) => {
         games = data.games;  
         allGames = [...games]; 
+        ui = new UI(games); 
         ui.createGameCards(games, games);  
         filterGamesByType(); 
+        document.querySelectorAll('.update-button').forEach((button, i) => {
+          button.addEventListener("click", function() {
+              ui.openUpdateModal(i);
+          });
+      });
     })
     .catch((err) => {
         console.error('Veri alınırken hata oluştu:', err);
@@ -27,8 +34,8 @@ function sortGames(option) {
     } else if (option === 'eski') {
         games.sort((gameA, gameB) => new Date(gameA.date) - new Date(gameB.date));  
     } else {
-      games = [...allGames]; 
-  }
+        games = [...allGames]; 
+    }
     ui.createGameCards(games, games);  
 }
 
@@ -76,4 +83,75 @@ document.addEventListener('DOMContentLoaded', () => {
           deleteGame(gameId);  
       });
   });
+});
+
+document.getElementById('changes').addEventListener('click', function() {
+  let updateIndex = ui.getUpdateIndex();
+  if (updateIndex === null) {
+    console.error("Güncellenecek oyun seçilmedi!");
+    return;
+  }
+  // console.log("Güncellenen oyun index:", updateIndex);  
+  // console.log("Güncellemeden önce oyun:", games[updateIndex]);
+  const updatedGame = {
+      poster: document.getElementById('game-poster-url').value,
+      name: document.getElementById('game-name').value,
+      type: document.getElementById('game-type').value,
+      date: document.getElementById('game-year').value,
+      steam: document.getElementById('game-steam-url').value,
+      director: document.getElementById('game-director').value,
+      description: document.getElementById('game-description').value
+  };
+  games[updateIndex] = updatedGame;  
+  // console.log("Güncellemeden sonra oyun:", games[updateIndex]);
+  document.getElementById('games-wrap').innerHTML = "";
+  ui.createGameCards(games, games);  
+  const modal = new bootstrap.Modal(document.getElementById('gameModal'));
+  modal.hide();
+  updateIndex = null;
+});
+
+function openUpdateModal(index) {
+  updateIndex = index; 
+  const game = games[index];  
+  
+  document.getElementById('game-poster-url').value = game.poster || '';
+  document.getElementById('game-name').value = game.name || '';
+  document.getElementById('game-type').value = game.type || '';
+  document.getElementById('game-year').value = game.date || '';
+  document.getElementById('game-steam-url').value = game.steam || '';
+  document.getElementById('game-director').value = game.director || '';
+  document.getElementById('game-description').value = game.description || '';
+
+  const modal = new bootstrap.Modal(document.getElementById('gameModal'));
+  modal.show();
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  createGameControls(); 
+});
+
+function createGameControls() {
+  const modal = new bootstrap.Modal(document.getElementById('gameModal'));
+}
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.update-game').forEach((button, index) => {
+    button.addEventListener('click', () => openUpdateModal(index));
+  });
+});
+
+document.getElementById('searchForm').addEventListener('submit', function(event) {
+  event.preventDefault();  // Sayfanın yenilenmesini engeller
+
+  const searchTerm = document.getElementById('searchInput').value.toLowerCase();  // Arama metnini al
+
+  // Oyunları filtreleme
+  const filteredGames = games.filter(game => {
+      return game.name.toLowerCase().includes(searchTerm) || 
+             game.type.toLowerCase().includes(searchTerm) || 
+             game.director.toLowerCase().includes(searchTerm);
+  });
+
+  // Ekrana sadece eşleşen oyunları yansıtma
+  ui.createGameCards(filteredGames, filteredGames);
 });

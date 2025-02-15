@@ -31,16 +31,13 @@
                     <a class="nav-link active" aria-current="page" href="#about-us">Hakkımızda</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#games">Oyunlar</a>
+                    <a class="nav-link active" aria-current="page" href="#gamesSection">Oyunlar</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#contact">İletişim</a>
                   </li>
                 </ul>
-                <form class="d-flex" role="search">
-                  <input class="form-control me-2" type="search" placeholder="Oyun, kategori, yapımcı arayın" aria-label="Search">
-                  <button class="btn btn-outline-primary" type="submit">Search</button>
-                </form>
+                
               </div>
             </div>
           </nav>
@@ -56,6 +53,10 @@
         <div class="mb-4 text-center">
           <h2 class="section-title fs-50 bold text-primary text-center my-5">OYUNLAR</h2>
           <button class="btn btn-primary me-2 my-3">Oyun Ekle</button>
+          <form class="d-flex my-3" id="searchForm" role="search">
+            <input id="searchInput" class="form-control me-2" type="search" placeholder="Oyun, kategori, yapımcı arayın" aria-label="Search">
+            <button class="btn btn-outline-primary" type="submit">Search</button>
+          </form>          
           <div class="d-flex justify-content-center gap-3 ms-2">
               <select class="form-select me-2" id="filter-category">
                   <option value="">Kategori Seç</option>
@@ -72,7 +73,9 @@
                   <option value="yeni">Çıkış Tarihi (Yeniden Eskiye)</option>
                   <option value="eski">Çıkış Tarihi (Eskiden Yeniye)</option>
               </select>
+              
           </div>
+          
       </div>
         <div class="row" id="games-wrap">
         </div>
@@ -102,8 +105,8 @@
                               <input type="text" class="form-control" id="game-year" placeholder="Oyunun yılını girin" required>
                           </div>
                           <div class="col-md-4">
-                              <label for="game-stream-url" class="form-label">Stream URL</label>
-                              <input type="text" class="form-control" id="game-stream-url" placeholder="Oyunun stream URL'sini ekleyin">
+                              <label for="game-steam-url" class="form-label">Stream URL</label>
+                              <input type="text" class="form-control" id="game-steam-url" placeholder="Oyunun stream URL'sini ekleyin">
                           </div>
                           <div class="col-md-4">
                             <label for="game-director" class="form-label">Yapımcı</label>
@@ -120,7 +123,7 @@
                       <button type="button" class="btn btn-delete d-inline-flex" data-bs-dismiss="modal">
                           <span class="text">Kapat</span>
                       </button>
-                      <button type="button" class="btn btn-update" id="changes" data-bs-dismiss="modal" data-bs-target="#gameModal">
+                      <button type="button" class="btn btn-save" id="changes" data-bs-dismiss="modal" data-bs-target="#gameModal">
                           <span class="text bg-transparent">Kaydet</span>
                       </button>
                   </div>
