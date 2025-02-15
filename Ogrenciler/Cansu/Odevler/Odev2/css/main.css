@@ -11845,11 +11845,19 @@ textarea.form-control-lg {
   }
 }
 body {
-  background-color: #1a1a2e;
-  color: #ffffff;
+  background-color: #ffffff;
+  color: #000000;
   font-family: "Arial", sans-serif;
+  transition: background-color 0.3s, color 0.3s;
 }
 
+/* Karanlık Mod */
+body.dark {
+  background-color: #1a1a2e !important;
+  color: #ffffff;
+}
+
+/* Başlık */
 h1, .h1 {
   text-align: center;
   color: #0d6efd;
@@ -11857,6 +11865,7 @@ h1, .h1 {
   font-weight: bold;
 }
 
+/* Butonlar */
 .btn-primary {
   background-color: #0d6efd;
   border: none;
@@ -11872,13 +11881,15 @@ h1, .h1 {
   background-color: rgb(30.1449275362, 125.8550724638, 52);
 }
 
+/* Arama Çubuğu */
 #searchBar {
   max-width: 350px;
-  background-color: #16213e;
+  background-color: #f8f9fa;
   border: 1px solid #6c757d;
   border-radius: 25px;
   padding: 10px 20px;
-  color: #ffffff;
+  color: #000000;
+  transition: background-color 0.3s, color 0.3s;
 }
 #searchBar::placeholder {
   color: #adb5bd;
@@ -11888,36 +11899,56 @@ h1, .h1 {
   outline: none;
 }
 
+/* Karanlık Mod için Arama Çubuğu */
+body.dark #searchBar {
+  background-color: #16213e;
+  color: #ffffff;
+  border: 1px solid rgb(161.1158798283, 167.8755364807, 173.8841201717);
+}
+
 /* Navbar */
 .navbar {
+  background-color: #ffffff;
+  transition: background-color 0.3s;
+}
+
+body.dark .navbar {
   background-color: #1a1a2e;
 }
 
 .navbar .nav-link {
-  color: #ffffff;
+  color: #000000;
 }
 .navbar .nav-link:hover {
   color: #0d6efd;
 }
 
-/* Button */
-.btn-primary {
-  background-color: #0d6efd;
-  border: none;
-}
-.btn-primary:hover {
-  background-color: rgb(1.762295082, 87.2336065574, 213.237704918);
+body.dark .navbar .nav-link {
+  color: #ffffff;
 }
 
-.btn-success {
-  background-color: #28a745;
-}
-.btn-success:hover {
-  background-color: rgb(30.1449275362, 125.8550724638, 52);
+/* Kayan Yazı */
+.animated-text {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #0d6efd;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  animation: slide 10s linear infinite;
 }
 
+@keyframes slide {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+/* Oyun Kartları */
 #gameList .game-card {
-  background: #16213e;
+  background: #f8f9fa;
   border-radius: 10px;
   padding: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -11942,75 +11973,58 @@ h1, .h1 {
   color: #adb5bd;
 }
 
-body {
-  background-color: #f8f9fa;
-  color: #212529;
+/* Karanlık Mod için Kartlar */
+body.dark #gameList .game-card {
+  background: #16213e;
 }
 
-/* Dark Mode */
-body.dark-mode {
-  background-color: #212529;
-  color: #f8f9fa;
-}
-
-.navbar-dark-mode {
-  background-color: #343a40;
-}
-
-.btn-dark-mode {
-  background-color: #495057;
-  color: #f8f9fa;
-}
-
-.btn-dark-mode:hover {
-  background-color: #6c757d;
-}
-
-/* Modal ve Card'lar için Dark Mode */
-.modal-content.dark-mode {
-  background-color: #343a40;
-  color: #f8f9fa;
-}
-
-.card.dark-mode {
-  background-color: #495057;
-  color: #f8f9fa;
-}
-
-/* Dark Mode için Inputlar */
-input, textarea, select {
-  background-color: #495057;
-  color: #f8f9fa;
-  border: 1px solid #6c757d;
-}
-
-input:focus, textarea:focus, select:focus {
-  border-color: #007bff;
-  outline: none;
-}
-
+/* Modal Stili */
 .modal-content {
+  background: #f8f9fa;
+  color: #000000;
+  border-radius: 8px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark .modal-content {
   background: #16213e;
   color: #ffffff;
-  border-radius: 8px;
 }
 
-.modal-header {
-  border-bottom: 1px solid rgb(133.7553648069, 142.4849785408, 150.2446351931);
-}
-
+/* Modal Input ve Select */
 .modal-body input,
 .modal-body textarea,
 .modal-body select {
+  background: white;
+  color: #000000;
+  border: 1px solid #6c757d;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark .modal-body input,
+body.dark .modal-body textarea,
+body.dark .modal-body select {
   background: rgb(15.3214285714, 22.9821428571, 43.1785714286);
   color: #ffffff;
   border: 1px solid rgb(161.1158798283, 167.8755364807, 173.8841201717);
 }
 
-#sortSelect {
+/* Filtre ve Sıralama */
+#sortSelect,
+#categorySelect {
+  background: #f8f9fa;
+  color: #000000;
+  border: 1px solid #6c757d;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Karanlık Mod için Filtre & Sıralama */
+body.dark #sortSelect,
+body.dark #categorySelect {
   background: #16213e;
   color: #ffffff;
-  border: 1px solid #6c757d;
+  border: 1px solid rgb(161.1158798283, 167.8755364807, 173.8841201717);
 }
 
 /*# sourceMappingURL=main.css.map */
