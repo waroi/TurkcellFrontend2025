@@ -12,7 +12,7 @@ class Storage {
             return games;
         } catch (error) {
             console.error("Oyunlar yüklenirken hata oluştu:", error);
-            return []; // Hata olursa boş liste dön
+            return []; 
         }
     }
 
@@ -28,10 +28,10 @@ class Storage {
                 throw new Error(`Oyun eklenemedi! Hata kodu: ${response.status}`);
             }
 
-            return await response.json(); // Eklenen oyunu geri döndür
+            return await response.json(); 
         } catch (error) {
             console.error("Oyun eklenirken hata oluştu:", error);
-            return null; // Hata olursa null dön
+            return null; 
         }
     }
 
@@ -43,10 +43,10 @@ class Storage {
                 throw new Error(`Oyun silinemedi! Hata kodu: ${response.status}`);
             }
 
-            return true; // Başarıyla silindi
+            return true; 
         } catch (error) {
             console.error("Oyun silinirken hata oluştu:", error);
-            return false; // Silme başarısız oldu
+            return false;
         }
     }
 }

@@ -81,16 +81,15 @@ function setupEventListeners() {
         const games = await Storage.fetchGames();
         UI.renderGames(games);
     });
-    
-    // Oyun Silme İşlemi - UI Güncellemesi
+
     document.getElementById("gameList").addEventListener("click", async (event) => {
         if (event.target.classList.contains("delete-btn")) {
-            const gameId = event.target.dataset.id; // Silinecek oyunun ID'si
+            const gameId = event.target.dataset.id; 
     
-            const isDeleted = await Storage.deleteGame(gameId); // Oyun sil
+            const isDeleted = await Storage.deleteGame(gameId);
             if (isDeleted) {
-                const updatedGames = await Storage.fetchGames(); // Güncellenmiş listeyi al
-                UI.renderGames(updatedGames); // UI'yi yeniden güncelle
+                const updatedGames = await Storage.fetchGames(); 
+                UI.renderGames(updatedGames); 
             }
         }
     });
