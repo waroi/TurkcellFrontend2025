@@ -94,7 +94,15 @@
           />
         </div>
         <button class="btn btn-success" id="searchButton">Ara</button>
-        <button class="btn btn-success" id="orderButton">Sırala</button>
+        <select name="orderGame" id="orderGame">
+          <option value="aToZ" id="orderGamesByAlphabeticalOrder">A-Z</option>
+          <option value="zToA" id="orderGamesByAlphabeticalReverseOrder">
+            Z-A
+          </option>
+          <option value="newToOld" id="orderGamesByReleaseDate">
+            Çıkış Tarihi
+          </option>
+        </select>
         <button
           type="button"
           class="btn btn-primary"

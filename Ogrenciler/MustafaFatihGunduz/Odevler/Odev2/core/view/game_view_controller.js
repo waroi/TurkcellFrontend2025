@@ -135,9 +135,6 @@ class GameViewController {
   }
   async updateGame() { 
     const updatedGame = this.getGameData();
-    console.log("Güncellenen oyun verisi:", updatedGame);
-    console.log("Güncellenen oyun ID:", updatedGame.gameID);
-    console.log("ALL GAMES" , await this.gameController.getAllGames());
     if (!this.validateForm(updatedGame)) return;
     await this.gameController.updateGame(updatedGame.gameID, updatedGame);
     
@@ -145,31 +142,20 @@ class GameViewController {
     this.saveButton.textContent = "Düzenle";
     this.editCard = null;
   }
-  async filterGameByTitleGenrePublisher() {
-    const title = this.search.value.trim();
-    const genre = "";  // Genre için ayrı bir input varsa buraya yaz
-    const publisher = ""; // Publisher için ayrı bir input varsa buraya yaz
-
+  async searchGameByTitleGenrePublisher() {
     try {
-        const filteredGames = await this.gameController.filterGameByTitleGenrePublisher(title, genre, publisher);
-        console.log("Filtrelenen Oyunlar:", filteredGames);
-        
-        // Önce ekranı temizle
-        this.gameContainer.innerHTML = '';
-
-        // Filtrelenen oyunları ekrana ekle
-        filteredGames.forEach(game => {
-            const card = this.addCard(game);
-            this.gameContainer.append(card);
-        });
-
+      const searchValue = this.search.value.trim();
+      const games = await this.gameController.searchGameByTitleGenrePublisher(searchValue);
+      this.gameContainer.innerHTML = '';
+      games.forEach(game => {
+        const card = this.addCard(game);
+        this.gameContainer.append(card);
+      });
     } catch (err) {
-        console.error("GameViewController içinde filterGameByTitleGenrePublisher filtrelenirken hata oluştu:", err);
+      console.error("GameViewController içinde searchGameByTitleGenrePublisher aranırken hata oluştu:", err);
     }
-}
-
+  }
   async orderGamesByAlphabeticalOrder() {
-    //! Bu fonksiyonun çalışması için backend tarafında sıralama işlemi yapılmalıdır. Sıralama işlemi yapıldığında gameContainer içerisi temizlenip sıralanmış oyunlar eklenecek.
     try {
       const games = await this.gameController.orderGamesByAlphabeticalOrder();
       this.gameContainer.innerHTML = '';
@@ -180,7 +166,31 @@ class GameViewController {
         console.log(this.gameContainer);
       });
     } catch (err) {
-      console.error("DBController içinde orderGamesByAlphabeticalOrder sıralanırken hata oluştu:", err);
+      console.error("GameViewController içinde orderGamesByAlphabeticalOrder sıralanırken hata oluştu:", err);
+    }
+  }
+  async orderGamesByAlphabeticalReverseOrder(){
+    try {
+      const games = await this.gameController.orderGamesByAlphabeticalReverseOrder();
+      this.gameContainer.innerHTML = '';
+      games.forEach(game => {
+        const card = this.addCard(game);
+        this.gameContainer.append(card);
+      });
+    } catch (err) {
+      console.error("GameViewController içinde orderGamesByAlphabeticalReverseOrder sıralanırken hata oluştu:", err);
+    }
+  }
+  async orderGamesByReleaseDate(){
+    try {
+      const games = await this.gameController.orderGamesByReleaseDate();
+      this.gameContainer.innerHTML = '';
+      games.forEach(game => {
+        const card = this.addCard(game);
+        this.gameContainer.append(card);
+      });
+    } catch (err) {
+      console.error("GameViewController içinde orderGamesByReleaseDate sıralanırken hata oluştu:", err);
     }
   }
   setEdit(card,game) {

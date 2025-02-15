@@ -44,40 +44,40 @@ class GameController{
         }
     }
 
-    async filterGameByTitleGenrePublisher(title, genre, publisher) {
+    async searchGameByTitleGenrePublisher(searchValue){
         try {
             const gamesArray = await RequestModel.get('http://localhost:3000/games');
-    
-            const filteredGames = gamesArray.filter(game => {
-                console.log("Kontrol Edilen Oyun:", game);
-    
-                const titleMatch = title ? game.gameTitle?.toLowerCase().includes(title.toLowerCase()) : true;
-                const genreMatch = genre ? game.gameGenre?.toLowerCase().includes(genre.toLowerCase()) : true;
-                const publisherMatch = publisher ? game.gamePublisher?.toLowerCase().includes(publisher.toLowerCase()) : true;
-    
-                console.log(`Title: ${title}, Genre: ${genre}, Publisher: ${publisher}`);
-                console.log(`Eşleşmeler -> Title: ${titleMatch}, Genre: ${genreMatch}, Publisher: ${publisherMatch}`);
-    
-                return titleMatch && genreMatch && publisherMatch;
-            });
-    
-            if (filteredGames.length === 0) {
-                alert("Aradığınız kriterlere uygun oyun bulunamadı!");
-                return;
-            }
-    
-            return filteredGames; // Eksik olan return eklendi
+            const filteredGames = gamesArray.filter(game => game.gameTitle.toLowerCase().includes(searchValue.toLowerCase()) || game.gameGenre.toLowerCase().includes(searchValue.toLowerCase()) || game.gamePublisher.toLowerCase().includes(searchValue.toLowerCase()));
+            return filteredGames;
         } catch (error) {
             console.error("Veri filtrelenirken hata oluştu:", error);
-            return [];
         }
     }
-    
 
     async orderGamesByAlphabeticalOrder() {
         try {
             const gamesArray = await RequestModel.get('http://localhost:3000/games');
             const orderedGames = gamesArray.sort((a, b) => a.gameTitle.localeCompare(b.gameTitle));
+            return orderedGames;
+        } catch (error) {
+            console.error("Veri sıralanırken hata oluştu:", error);
+        }
+    }
+
+    async orderGamesByAlphabeticalReverseOrder(){
+        try {
+            const gamesArray = await RequestModel.get('http://localhost:3000/games');
+            const orderedGames = gamesArray.sort((a, b) => b.gameTitle.localeCompare(a.gameTitle));
+            return orderedGames;
+        } catch (error) {
+            console.error("Veri sıralanırken hata oluştu:", error);
+        }
+    }
+
+    async orderGamesByReleaseDate(){
+        try {
+            const gamesArray = await RequestModel.get('http://localhost:3000/games');
+            const orderedGames = gamesArray.sort((a, b) => a.gameReleaseDate.localeCompare(b.gameReleaseDate));
             return orderedGames;
         } catch (error) {
             console.error("Veri sıralanırken hata oluştu:", error);
