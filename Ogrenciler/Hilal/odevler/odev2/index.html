@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game</title>
+    <link rel="stylesheet" href="./src/css/main.css" />
+  </head>
+  <body class="bg-dark">
+    <header>
+      <nav class="navbar bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand text-white">PlayBox</a>
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="carousel-banner mh-25">
+        <div class="card text-bg-dark">
+          <img
+            src="https://images5.alphacoders.com/394/thumb-1920-394511.jpg"
+            class="card-img"
+            alt="banner-image"
+          />
+          <div class="card-img-overlay">
+            <!-- <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                This is a wider card with supporting text below as a natural
+                lead-in to additional content. This content is a little bit
+                longer.
+              </p>
+              <p class="card-text"><small>Last updated 3 mins ago</small></p> -->
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="container">
+          <div class="row popular-games"></div>
+        </div>
+      </section>
+    </main>
+    <script src="./src/js/script.js" type="module"></script>
+  </body>
+</html>
