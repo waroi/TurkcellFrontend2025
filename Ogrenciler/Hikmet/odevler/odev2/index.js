@@ -15,7 +15,7 @@ function getFormData(formName) {
 		name: gameFormElement["name"].value,
 		description: gameFormElement["desc"].value,
 		category: gameFormElement["category"].value,
-		date: gameFormElement["date"].value,
+		releaseDate: gameFormElement["releaseDate"].value,
 		image: gameFormElement["image"].value,
 		developer: gameFormElement["developer"].value,
 		steamUrl: gameFormElement["steamUrl"].value,
@@ -31,7 +31,7 @@ function fillGameDataToInput(gameId) {
 	updateGameFormElement["name"].value = game.name;
 	updateGameFormElement["desc"].value = game.description;
 	updateGameFormElement["category"].value = game.category;
-	updateGameFormElement["date"].value = game.date;
+	updateGameFormElement["releaseDate"].value = game.releaseDate;
 	updateGameFormElement["image"].value = game.image;
 	updateGameFormElement["developer"].value = game.developer;
 	updateGameFormElement["steamUrl"].value = game.steamUrl;
@@ -40,16 +40,19 @@ function fillGameDataToInput(gameId) {
 async function createGame() {
 	const game = getFormData("gameForm");
 	await GamesClient.create(game);
+	await renderGameCards();
 }
 
 async function updateGame() {
 	const editedData = getFormData("updateGameForm");
 	editedData.id = editedGameId;
 	await GamesClient.put(editedData);
+	await renderGameCards();
 }
 
 async function deleteGame(gameId) {
 	await GamesClient.delete(gameId);
+	await renderGameCards();
 }
 
 function createGameCard(game) {
@@ -65,7 +68,7 @@ function createGameCard(game) {
 						<p class="card-text">
       ${game.description}
 						</p>
-						<button
+						<a
 							type="button"
 							class="btn btn-primary"
 							data-bs-toggle="modal"
@@ -73,12 +76,34 @@ function createGameCard(game) {
 							data-bs-whatever="@mdo"
 							id="editGame" data-id="${game.id}">
 							Edit Game 
-						</button>
-      <button class="btn btn-danger" id="deleteGame" data-id="${game.id}">Delete</button>
+						</a>
+      <a class="btn btn-danger" id="deleteGame" data-id="${game.id}">Delete</a>
 					</div>
 				</div>
  </div>
     `;
+}
+
+async function sortByAZ() {
+	const gameGrid = document.getElementById("games-grid");
+	if (!gameGrid) return;
+	const games = await GamesClient.sortByDes();
+	const gameCardsHTML = games?.map((game) => createGameCard(game)).join("");
+	gameGrid.innerHTML = gameCardsHTML;
+}
+async function sortByZA() {
+	const gameGrid = document.getElementById("games-grid");
+	if (!gameGrid) return;
+	const games = await GamesClient.sortByAsc();
+	const gameCardsHTML = games?.map((game) => createGameCard(game)).join("");
+	gameGrid.innerHTML = gameCardsHTML;
+}
+async function sortByReleaseDate() {
+	const gameGrid = document.getElementById("games-grid");
+	if (!gameGrid) return;
+	const games = await GamesClient.sortByReleaseDate();
+	const gameCardsHTML = games?.map((game) => createGameCard(game)).join("");
+	gameGrid.innerHTML = gameCardsHTML;
 }
 
 async function renderGameCards() {
@@ -94,6 +119,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	await renderGameCards();
 	document.querySelectorAll("#deleteGame").forEach((element) =>
 		element.addEventListener("click", (e) => {
+			console.log("delete");
 			e.preventDefault();
 			const gameId = e.target.dataset.id;
 			deleteGame(gameId);
@@ -107,6 +133,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 		})
 	);
 });
+document.getElementById("sortAZ").addEventListener("click", sortByAZ);
+document.getElementById("sortZA").addEventListener("click", sortByZA);
+document
+	.getElementById("sortDate")
+	.addEventListener("click", sortByReleaseDate);
 
 document.getElementById("submitForm").addEventListener("click", createGame);
 document.getElementById("updateForm").addEventListener("click", updateGame);

@@ -10,6 +10,27 @@ export default class GamesClient {
 		}).then((response) => response.json());
 	}
 
+	static async sortByDes() {
+		return fetch(`${GAME_URL}?_sort=name`, {
+			method: "GET",
+			headers: { "Content-type": "application/json;" },
+		}).then((response) => response.json());
+	}
+
+	static async sortByAsc() {
+		return fetch(`${GAME_URL}?_sort=-name`, {
+			method: "GET",
+			headers: { "Content-type": "application/json;" },
+		}).then((response) => response.json());
+	}
+
+	static async sortByReleaseDate() {
+		return fetch(`${GAME_URL}?_sort=releaseDate`, {
+			method: "GET",
+			headers: { "Content-type": "application/json;" },
+		}).then((response) => response.json());
+	}
+
 	static async create(game) {
 		return fetch(GAME_URL, {
 			method: "POST",

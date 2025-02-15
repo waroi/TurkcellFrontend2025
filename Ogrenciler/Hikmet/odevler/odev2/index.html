@@ -53,6 +53,7 @@
 			</div>
 		</nav>
 
+		<!-- Create Game Archive Modal -->
 		<div
 			class="modal fade"
 			id="addGameModal"
@@ -107,8 +108,8 @@
 								<input
 									type="text"
 									class="form-control"
-									id="date"
-									name="date"
+									id="releaseDate"
+									name="releaseDate"
 									required />
 							</div>
 							<div class="mb-3">
@@ -151,7 +152,11 @@
 							data-bs-dismiss="modal">
 							Close
 						</button>
-						<button type="button" class="btn btn-primary" id="submitForm">
+						<button
+							type="button"
+							class="btn btn-primary"
+							id="submitForm"
+							data-bs-dismiss="modal">
 							Save
 						</button>
 					</div>
@@ -159,6 +164,7 @@
 			</div>
 		</div>
 
+		<!-- Update Game Archive Modal -->
 		<div
 			class="modal fade"
 			id="updateGameModal"
@@ -215,8 +221,8 @@
 								<input
 									type="text"
 									class="form-control"
-									id="date"
-									name="date"
+									id="releaseDate"
+									name="releaseDate"
 									required />
 							</div>
 							<div class="mb-3">
@@ -259,7 +265,11 @@
 							data-bs-dismiss="modal">
 							Close
 						</button>
-						<button type="button" class="btn btn-primary" id="updateForm">
+						<button
+							type="button"
+							class="btn btn-primary"
+							id="updateForm"
+							data-bs-dismiss="modal">
 							Save
 						</button>
 					</div>
@@ -278,9 +288,9 @@
 						Sıralama
 					</button>
 					<ul class="dropdown-menu">
-						<li><a class="dropdown-item" href="#">A-Z</a></li>
-						<li><a class="dropdown-item" href="#">Z-A</a></li>
-						<li><a class="dropdown-item" href="#">Cikis Tarihi</a></li>
+						<li><a class="dropdown-item" id="sortAZ">A-Z</a></li>
+						<li><a class="dropdown-item" id="sortZA">Z-A</a></li>
+						<li><a class="dropdown-item" id="sortDate">Cikis Tarihi</a></li>
 					</ul>
 				</div>
 				<div class="btn-group">
