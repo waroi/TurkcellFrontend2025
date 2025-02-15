@@ -16613,29 +16613,8 @@ textarea.form-control-lg {
   padding: 0;
 }
 
-.game-card {
-  transition: transform 0.2s;
-  height: 100%;
-}
-
-.game-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
 .game-image {
   height: 200px;
-  object-fit: cover;
-  width: 100%;
-}
-
-.game-card .card-body {
-  display: flex;
-  flex-direction: column;
-}
-
-.game-card .btn-group {
-  margin-top: auto;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -11,3 +11,13 @@
 - Güncelleme işlemi yapılacak.
 - İstekler JsonServer'a atılacak Fetch kullanılacak.
 - Tasarımı Bootstrap ile yapılacak.
+  steam linkte hata varsa ayıklama yap
+  form validation ekle
+  map set kullanımı gözden geçir
+  card animasyon ekle
+  form, filter category ve developer sayısı gözden geçir
+  silme işlemi onay
+  detay sayfası
+  kategoriler 1 den fazla olabilmeli
+  yeni gelenler slider en üstte
+  scss, overrides
