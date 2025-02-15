@@ -2,10 +2,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const games = await Storage.fetchGames();
 
-  // Game rendering
+
   UI.renderGames(games);
 
-  // Event listeners for adding, sorting, searching, and deleting games
+ 
   setupEventListeners();
 });
 
@@ -34,7 +34,7 @@ function setupEventListeners() {
               steamUrl
           };
 
-          // Add new game to the Storage and render updated list
+        
           await Storage.addGame(newGame);
           const games = await Storage.fetchGames();
           UI.renderGames(games);
@@ -42,7 +42,6 @@ function setupEventListeners() {
       });
   }
 
-  // Search functionality
   document.getElementById('searchBar').addEventListener('input', function (event) {
       const query = event.target.value.toLowerCase();
       const gameCards = document.querySelectorAll('.game-card');
@@ -59,7 +58,7 @@ function setupEventListeners() {
       });
   });
 
-  // Sort functionality
+
   document.getElementById('sortSelect').addEventListener('change', function () {
       const sortOption = this.value;
       const gameList = document.getElementById('gameList');
@@ -82,10 +81,9 @@ function setupEventListeners() {
           }
       });
 
-      games.forEach(game => gameList.appendChild(game)); // Sorted games
+      games.forEach(game => gameList.appendChild(game)); 
   });
 
-  // Delete functionality
   document.getElementById('gameList').addEventListener('click', async (event) => {
       if (event.target.classList.contains('delete-button')) {
           const gameId = event.target.dataset.id;
@@ -95,21 +93,21 @@ function setupEventListeners() {
       }
   });
 
-  // Dark Mode Toggle Button
+ 
   const toggleDarkModeBtn = document.getElementById('toggle-dark-mode');
   const body = document.body;
 
-  // Dark mode transition
+ 
   toggleDarkModeBtn.addEventListener('click', () => {
       body.classList.toggle('dark-mode');
 
       if (body.classList.contains('dark-mode')) {
-          toggleDarkModeBtn.innerHTML = '🌞'; // Sun icon for light mode
+          toggleDarkModeBtn.innerHTML = '🌞'; 
       } else {
-          toggleDarkModeBtn.innerHTML = '🌙'; // Moon icon for dark mode
+          toggleDarkModeBtn.innerHTML = '🌙'; 
       }
 
-      // Navbar and modal dark mode classes
+     
       const navbar = document.querySelector('.navbar');
       navbar.classList.toggle('navbar-dark-mode');
     
