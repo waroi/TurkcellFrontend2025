@@ -12,13 +12,14 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-         
+        <div class="container-fluid d-flex justify-content-between align-items-center">
             <div class="d-flex align-items-center">
                 <form class="d-flex me-3" role="search">
                     <div class="input-group">
-                        <input class="form-control" type="search" id="searchBar" placeholder="Search for a game..." aria-label="Search">
-                        <button class="input-group-text" type="submit"><i class="fa fa-search"></i></button>
+                        <input type="text" class="form-control rounded-pill ps-3" id="searchBar" placeholder="Search for a game..." aria-label="Search">
+                        <button class="btn btn-light rounded-pill ms-2 px-3" type="submit">
+                            <i class="fa fa-search"></i>
+                        </button>
                     </div>
                 </form>
                 <button class="btn btn-outline-light me-3" data-bs-toggle="modal" data-bs-target="#gameModal">➕ Add Game</button>
@@ -26,6 +27,7 @@
             <button class="btn btn-outline-light" id="darkModeToggle">🌙</button>
         </div>
     </nav>
+    
 
     <div class="container text-center mt-5">
         <h1 class="mb-3">🎮 GameShelf App</h1>
