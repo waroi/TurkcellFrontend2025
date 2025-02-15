@@ -25,8 +25,8 @@ class GameController{
     async deleteGame(gameID) {
         try {
             const gamesArray = await RequestModel.get('http://localhost:3000/games');
-            const gameWithID = gamesArray.find(game => game.gameID === gameID);
-            await RequestModel.delete(`http://localhost:3000/games/${gameWithID.gameID}`);
+            const gameWithID = gamesArray.find(game => String(game.gameID) === String(gameID));
+            await RequestModel.delete(`http://localhost:3000/games/${gameWithID.id}`);
             console.log(`Oyun başarıyla silindi: ${gameWithID.gameTitle}`);
         } catch (error) {
             console.error("Veri silinirken hata oluştu:", error);
@@ -38,29 +38,41 @@ class GameController{
             const gamesArray = await RequestModel.get('http://localhost:3000/games');
             const gameWithID = gamesArray.find(game => String(game.gameID) === String(gameID));
             console.log("GAME WITH ID ID :"+ gameWithID.gameID);
-            await RequestModel.update(`http://localhost:3000/games?gameID=${gameWithID.gameID}`, updatedGame);
+            await RequestModel.update(`http://localhost:3000/games/${gameWithID.id}`, updatedGame);
         } catch (error) {
             console.error("Veri güncellenirken hata oluştu:", error);
         }
     }
 
-   async filterGameByTitleGenrePublisher(title, genre, publisher) {
+    async filterGameByTitleGenrePublisher(title, genre, publisher) {
         try {
             const gamesArray = await RequestModel.get('http://localhost:3000/games');
+    
             const filteredGames = gamesArray.filter(game => {
-                if (title) {
-                    return game.gameTitle.toLowerCase().includes(title.toLowerCase());
-                } else if (genre) {
-                    return game.gameGenre.toLowerCase().includes(genre.toLowerCase());
-                } else if (publisher) {
-                    return game.gamePublisher.toLowerCase().includes(publisher.toLowerCase());
-                }
+                console.log("Kontrol Edilen Oyun:", game);
+    
+                const titleMatch = title ? game.gameTitle?.toLowerCase().includes(title.toLowerCase()) : true;
+                const genreMatch = genre ? game.gameGenre?.toLowerCase().includes(genre.toLowerCase()) : true;
+                const publisherMatch = publisher ? game.gamePublisher?.toLowerCase().includes(publisher.toLowerCase()) : true;
+    
+                console.log(`Title: ${title}, Genre: ${genre}, Publisher: ${publisher}`);
+                console.log(`Eşleşmeler -> Title: ${titleMatch}, Genre: ${genreMatch}, Publisher: ${publisherMatch}`);
+    
+                return titleMatch && genreMatch && publisherMatch;
             });
-            return filteredGames;
+    
+            if (filteredGames.length === 0) {
+                alert("Aradığınız kriterlere uygun oyun bulunamadı!");
+                return;
+            }
+    
+            return filteredGames; // Eksik olan return eklendi
         } catch (error) {
             console.error("Veri filtrelenirken hata oluştu:", error);
+            return [];
         }
     }
+    
 
     async orderGamesByAlphabeticalOrder() {
         try {

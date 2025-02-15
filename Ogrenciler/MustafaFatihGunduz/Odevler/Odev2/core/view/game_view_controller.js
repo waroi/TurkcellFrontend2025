@@ -48,10 +48,29 @@ class GameViewController {
     card.classList.add("card");
     const cardInner = document.createElement("div");
     cardInner.className = "card-inner";
+    const cardFooter = document.createElement("div");
+    cardFooter.className = "card-footer";
+    const buttons = document.createElement("div");
+    const editButton = document.createElement("button");
+    const deleteButton = document.createElement("button");
+    buttons.classList.add("buttons");
+    editButton.classList.add("btn", "edit-button");
+    deleteButton.classList.add("btn", "delete-button");
+    editButton.textContent = "Düzenle";
+    editButton.addEventListener("click", () => {
+      this.setEdit(card,game);
+      this.modal.show();
+    });
+    deleteButton.textContent = "Sil";
+    deleteButton.addEventListener("click", () => {
+      this.deleteGame(game);
+    });
+    buttons.append(editButton, deleteButton);
+    cardFooter.append(buttons);
     const cardFront = this.addCardFront(game);
     const cardBack = this.addCardBack(game);
     cardInner.append(cardFront, cardBack);
-    card.append(cardInner);
+    card.append(cardInner,cardFooter);
     return card;
   }
   addCardFront(game) {
@@ -72,9 +91,7 @@ class GameViewController {
     const cardYear = document.createElement("p");
     const cardPublisher = document.createElement("p");
     const cardURL = document.createElement("a");
-    const buttons = document.createElement("div");
-    const editButton = document.createElement("button");
-    const deleteButton = document.createElement("button");
+    
     cardBack.classList.add("card-back");
     cardBody.classList.add("card-body");
     cardTitle.classList.add("card-title");
@@ -83,25 +100,12 @@ class GameViewController {
     cardYear.classList.add("card-year");
     cardPublisher.classList.add("card-publisher");
     cardURL.classList.add("card-url");
-    buttons.classList.add("buttons");
-    editButton.classList.add("btn", "edit-button");
-    deleteButton.classList.add("btn", "delete-button");
     cardTitle.textContent = "Oyun Adı: " + game.gameTitle;
     cardDescription.textContent = "Oyun Açıklaması: " + game.gameDescription;
     cardGenre.textContent = "Oyun Türü: " + game.gameGenre;
     cardYear.textContent = "Yayın Tarihi: " + game.gameReleaseDate;
     cardPublisher.textContent = "Yayıncı: " + game.gamePublisher;
     cardURL.textContent = "Steam URL: " + game.gameSteamURL;
-    editButton.textContent = "Düzenle";
-    editButton.addEventListener("click", () => {
-      this.setEdit(this.card,game);
-      this.modal.show();
-    });
-    deleteButton.textContent = "Sil";
-    deleteButton.addEventListener("click", () => {
-      this.deleteGame(game);
-    });
-    buttons.append(editButton, deleteButton);
     cardBody.append(
       cardTitle,
       cardDescription,
@@ -109,7 +113,6 @@ class GameViewController {
       cardYear,
       cardPublisher,
       cardURL,
-      buttons
     );
     cardBack.append(cardBody);
     return cardBack;
@@ -144,20 +147,27 @@ class GameViewController {
   }
   async filterGameByTitleGenrePublisher() {
     const title = this.search.value.trim();
-    const genre = this.search.value.trim();
-    const publisher = this.search.value.trim();
+    const genre = "";  // Genre için ayrı bir input varsa buraya yaz
+    const publisher = ""; // Publisher için ayrı bir input varsa buraya yaz
+
     try {
-      const filteredGames = await this.gameController.filterGameByTitleGenrePublisher(title, genre, publisher);
-      this.gameContainer.innerHTML = '';
-      for (let index = 0; index < filteredGames.length; index++) {
-        const game = filteredGames[index];
-        const card = this.addCard(game);
-        this.gameContainer.append(card);
-      }
+        const filteredGames = await this.gameController.filterGameByTitleGenrePublisher(title, genre, publisher);
+        console.log("Filtrelenen Oyunlar:", filteredGames);
+        
+        // Önce ekranı temizle
+        this.gameContainer.innerHTML = '';
+
+        // Filtrelenen oyunları ekrana ekle
+        filteredGames.forEach(game => {
+            const card = this.addCard(game);
+            this.gameContainer.append(card);
+        });
+
     } catch (err) {
-      console.error("GameViewController içinde filterGameByTitleGenrePublisher filtrelenirken hata oluştu:", err);
+        console.error("GameViewController içinde filterGameByTitleGenrePublisher filtrelenirken hata oluştu:", err);
     }
-  }
+}
+
   async orderGamesByAlphabeticalOrder() {
     //! Bu fonksiyonun çalışması için backend tarafında sıralama işlemi yapılmalıdır. Sıralama işlemi yapıldığında gameContainer içerisi temizlenip sıralanmış oyunlar eklenecek.
     try {
