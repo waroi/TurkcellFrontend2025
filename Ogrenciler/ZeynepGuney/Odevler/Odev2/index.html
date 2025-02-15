@@ -51,10 +51,30 @@
     <section id="about-us" class="about-us">
 
     </section>
-    <section id="games" class="games">
+    <section id="gamesSection" class="games">
       <div class="container">
+        <div class="mb-4 text-center">
+          <h2 class="section-title fs-50 bold text-primary text-center my-5">OYUNLAR</h2>
+          <button class="btn btn-primary me-2 my-3">Oyun Ekle</button>
+          <div class="d-flex justify-content-center gap-3 ms-2">
+              <select class="form-select me-2" id="filter-category">
+                  <option value="">Kategori Seç</option>
+                  <option value="aksiyon">Aksiyon</option>
+                  <option value="Korku">Korku</option>
+                  <option value="macera">Macera</option>
+                  <option value="rpg">RPG</option>
+                  <option value="strateji">Strateji</option>
+              </select>
+              <select class="form-select" id="sort-option">
+                  <option value="">Sıralama</option>
+                  <option value="a-z">A-Z</option>
+                  <option value="z-a">Z-A</option>
+                  <option value="yeni">Çıkış Tarihi (Yeniden Eskiye)</option>
+                  <option value="eski">Çıkış Tarihi (Eskiden Yeniye)</option>
+              </select>
+          </div>
+      </div>
         <div class="row" id="games-wrap">
-          
         </div>
         <div class="modal fade" id="gameModal" tabindex="-1" aria-labelledby="gameModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-lg">
@@ -65,27 +85,18 @@
                   </div>
                   <div class="modal-body">
                       <form class="row g-3 text-dark" id="gameform">
-                          <!-- Poster URL -->
                           <div class="col-md-4">
                               <label for="game-poster-url" class="form-label">Oyun Afişi URL</label>
                               <input type="text" class="form-control" id="game-poster-url" placeholder="Oyun afişi linkini ekleyin">
                           </div>
-                          <!-- Oyun Adı -->
                           <div class="col-md-4">
                               <label for="game-name" class="form-label">Oyun Adı</label>
                               <input type="text" class="form-control" id="game-name" placeholder="Oyun adını girin" required>
                           </div>
-                          <!-- Oyun Türü -->
                           <div class="col-md-4">
-                              <label for="game-type" class="form-label">Tür</label>
-                              <select class="form-select" id="game-type" aria-describedby="game-typeFeedback" required>
-                                  <option selected disabled value="">Seçiniz...</option>
-                                  <option>Aksiyon</option>
-                                  <option>Korku</option>
-                                  <option>RPG</option>
-                                  <option>Macera</option>
-                              </select>
-                          </div>
+                            <label for="game-type" class="form-label">Tür</label>
+                            <input type="text" class="form-control" id="game-type" placeholder="Oyun türü girin" required>
+                        </div>
                           <div class="col-md-4">
                               <label for="game-year" class="form-label">Yıl</label>
                               <input type="text" class="form-control" id="game-year" placeholder="Oyunun yılını girin" required>
@@ -95,9 +106,14 @@
                               <input type="text" class="form-control" id="game-stream-url" placeholder="Oyunun stream URL'sini ekleyin">
                           </div>
                           <div class="col-md-4">
-                              <label for="game-description" class="form-label">Açıklama</label>
-                              <textarea class="form-control" id="game-description" placeholder="Oyunun açıklamasını girin"></textarea>
-                          </div>
+                            <label for="game-director" class="form-label">Yapımcı</label>
+                            <input type="text" class="form-control" id="game-director" placeholder="Oyun yapımcısını girin">
+                        </div>
+                          <div class="col-md-12">
+                            <label for="game-description" class="form-label">Açıklama</label>
+                            <textarea class="form-control" id="game-description" placeholder="Oyunun açıklamasını girin"></textarea>
+                        </div>
+                          
                       </form>
                   </div>
                   <div class="modal-footer">
