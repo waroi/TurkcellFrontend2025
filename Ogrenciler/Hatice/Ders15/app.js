@@ -42,8 +42,8 @@
 // Array olarak kullanımı
 
 // let users = ["Varol", "Ahmet", "Mehmet"];
-// sessionStorage.setItem("users", JSON.stringify(users));
-// let getUsers = JSON.parse(sessionStorage.getItem("users"));
+// sessionStorage.setItem("users", JSON.stringify(users));  //setlerken JSON.stringify - array ı array olarak setlemek için
+// let getUsers = JSON.parse(sessionStorage.getItem("users"));  // get ile alırken JSON.parse - array ı array olarak getlemek için
 // console.log(getUsers);
 // console.log(typeof getUsers);
 
