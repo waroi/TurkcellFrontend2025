@@ -14,13 +14,12 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
-/* Karanlık Mod */
 body.dark {
     background-color: $background-dark;
     color: $text-dark;
 }
 
-/* Başlık */
+
 h1 {
     text-align: center;
     color: $primary-color;
@@ -28,7 +27,7 @@ h1 {
     font-weight: bold;
 }
 
-/* Butonlar */
+
 .btn-primary {
     background-color: $primary-color;
     border: none;
@@ -44,7 +43,7 @@ h1 {
     }
 }
 
-/* Arama Çubuğu */
+
 #searchBar {
     max-width: 350px;
     background-color: $card-bg-light;
@@ -64,14 +63,13 @@ h1 {
     }
 }
 
-/* Karanlık Mod için Arama Çubuğu */
+
 body.dark #searchBar {
     background-color: $card-bg-dark;
     color: $text-dark;
     border: 1px solid lighten($secondary-color, 20%);
 }
 
-/* Navbar */
 .navbar {
     background-color: $background-light;
     transition: background-color 0.3s;
@@ -92,7 +90,6 @@ body.dark .navbar .nav-link {
     color: $text-dark;
 }
 
-/* Kayan Yazı */
 .animated-text {
     font-size: 1.8rem;
     font-weight: bold;
@@ -112,7 +109,7 @@ body.dark .navbar .nav-link {
     }
 }
 
-/* Oyun Kartları */
+
 #gameList {
     .game-card {
         background: $card-bg-light;
@@ -145,12 +142,12 @@ body.dark .navbar .nav-link {
     }
 }
 
-/* Karanlık Mod için Kartlar */
+
 body.dark #gameList .game-card {
     background: $card-bg-dark;
 }
 
-/* Modal Stili */
+
 .modal-content {
     background: $card-bg-light;
     color: $text-light;
@@ -163,7 +160,7 @@ body.dark .modal-content {
     color: $text-dark;
 }
 
-/* Modal Input ve Select */
+
 .modal-body {
     input,
     textarea,
@@ -183,7 +180,7 @@ body.dark .modal-body select {
     border: 1px solid lighten($secondary-color, 20%);
 }
 
-/* Filtre ve Sıralama */
+
 #sortSelect,
 #categorySelect {
     background: $card-bg-light;
@@ -193,7 +190,7 @@ body.dark .modal-body select {
     transition: background-color 0.3s, color 0.3s;
 }
 
-/* Karanlık Mod için Filtre & Sıralama */
+
 body.dark #sortSelect,
 body.dark #categorySelect {
     background: $card-bg-dark;

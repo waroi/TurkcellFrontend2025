@@ -56,25 +56,24 @@ function setupEventListeners() {
 
     darkModeToggle.addEventListener("click", () => {
         document.body.classList.toggle("dark");
-        // Karanlık mod durumu yerel depolamaya kaydediliyor
+     
         if (document.body.classList.contains("dark")) {
             localStorage.setItem("darkMode", "enabled");
-            // Güneş emojisi yerine ay emojisi ekleniyor
+           
             darkModeToggle.textContent = "🌙";
         } else {
             localStorage.removeItem("darkMode");
-            // Ay emojisi yerine güneş emojisi ekleniyor
+           
             darkModeToggle.textContent = "🌞";
         }
     });
     
-    // Sayfa yüklendiğinde mevcut karanlık mod durumu kontrol ediliyor
+  
     if (localStorage.getItem("darkMode") === "enabled") {
         document.body.classList.add("dark");
-        // Eğer karanlık mod aktifse, ay emojisi gösterilir
+       
         darkModeToggle.textContent = "🌙";
     } else {
-        // Aydınlık moddaysa, güneş emojisi gösterilir
         darkModeToggle.textContent = "🌞";
     }
     

@@ -11851,13 +11851,11 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
-/* Karanlık Mod */
 body.dark {
   background-color: #1a1a2e;
   color: #ffffff;
 }
 
-/* Başlık */
 h1, .h1 {
   text-align: center;
   color: #0d6efd;
@@ -11865,7 +11863,6 @@ h1, .h1 {
   font-weight: bold;
 }
 
-/* Butonlar */
 .btn-primary {
   background-color: #0d6efd;
   border: none;
@@ -11881,7 +11878,6 @@ h1, .h1 {
   background-color: rgb(30.1449275362, 125.8550724638, 52);
 }
 
-/* Arama Çubuğu */
 #searchBar {
   max-width: 350px;
   background-color: #f8f9fa;
@@ -11899,14 +11895,12 @@ h1, .h1 {
   outline: none;
 }
 
-/* Karanlık Mod için Arama Çubuğu */
 body.dark #searchBar {
   background-color: #16213e;
   color: #ffffff;
   border: 1px solid rgb(161.1158798283, 167.8755364807, 173.8841201717);
 }
 
-/* Navbar */
 .navbar {
   background-color: #ffffff;
   transition: background-color 0.3s;
@@ -11927,7 +11921,6 @@ body.dark .navbar .nav-link {
   color: #ffffff;
 }
 
-/* Kayan Yazı */
 .animated-text {
   font-size: 1.8rem;
   font-weight: bold;
@@ -11946,7 +11939,6 @@ body.dark .navbar .nav-link {
     transform: translateX(-100%);
   }
 }
-/* Oyun Kartları */
 #gameList .game-card {
   background: #f8f9fa;
   border-radius: 10px;
@@ -11973,12 +11965,10 @@ body.dark .navbar .nav-link {
   color: #adb5bd;
 }
 
-/* Karanlık Mod için Kartlar */
 body.dark #gameList .game-card {
   background: #16213e;
 }
 
-/* Modal Stili */
 .modal-content {
   background: #f8f9fa;
   color: #000000;
@@ -11991,7 +11981,6 @@ body.dark .modal-content {
   color: #ffffff;
 }
 
-/* Modal Input ve Select */
 .modal-body input,
 .modal-body textarea,
 .modal-body select {
@@ -12009,7 +11998,6 @@ body.dark .modal-body select {
   border: 1px solid rgb(161.1158798283, 167.8755364807, 173.8841201717);
 }
 
-/* Filtre ve Sıralama */
 #sortSelect,
 #categorySelect {
   background: #f8f9fa;
@@ -12019,7 +12007,6 @@ body.dark .modal-body select {
   transition: background-color 0.3s, color 0.3s;
 }
 
-/* Karanlık Mod için Filtre & Sıralama */
 body.dark #sortSelect,
 body.dark #categorySelect {
   background: #16213e;
