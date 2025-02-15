@@ -1,0 +1,183 @@
+
+$primary-color: #0d6efd;
+$secondary-color: #6c757d;
+$background-color: #1a1a2e;
+$card-bg: #16213e;
+$text-color: #ffffff;
+
+
+body {
+    background-color: $background-color;
+    color: $text-color;
+    font-family: 'Arial', sans-serif;
+}
+
+
+h1 {
+    text-align: center;
+    color: $primary-color;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+
+.btn-primary {
+    background-color: $primary-color;
+    border: none;
+    &:hover {
+        background-color: darken($primary-color, 10%);
+    }
+}
+
+.btn-success {
+    background-color: #28a745;
+    &:hover {
+        background-color: darken(#28a745, 10%);
+    }
+}
+#searchBar {
+    max-width: 350px;
+    background-color: $card-bg;
+    border: 1px solid $secondary-color;
+    border-radius: 25px;
+    padding: 10px 20px;
+    color: $text-color;
+
+    &::placeholder {
+        color: #adb5bd;
+    }
+
+    &:focus {
+        border-color: $primary-color;
+        outline: none;
+    }
+}
+
+/* Navbar */
+.navbar {
+    background-color: $background-color;
+}
+
+.navbar .nav-link {
+    color: $text-color;
+    &:hover {
+        color: $primary-color;
+    }
+}
+
+/* Button */
+.btn-primary {
+    background-color: $primary-color;
+    border: none;
+    &:hover {
+        background-color: darken($primary-color, 10%);
+    }
+}
+
+.btn-success {
+    background-color: #28a745;
+    &:hover {
+        background-color: darken(#28a745, 10%);
+    }
+}
+
+#gameList {
+    .game-card {
+        background: $card-bg;
+        border-radius: 10px;
+        padding: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease-in-out;
+        &:hover {
+            transform: scale(1.05);
+        }
+        img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        h5 {
+            color: $primary-color;
+            font-size: 1.3rem;
+            margin-top: 10px;
+        }
+        p {
+            font-size: 0.9rem;
+            color: #adb5bd;
+        }
+    }
+}
+body {
+    background-color: #f8f9fa;
+    color: #212529;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #212529;
+    color: #f8f9fa;
+}
+
+.navbar-dark-mode {
+    background-color: #343a40;
+}
+
+.btn-dark-mode {
+    background-color: #495057;
+    color: #f8f9fa;
+}
+
+.btn-dark-mode:hover {
+    background-color: #6c757d;
+}
+
+/* Modal ve Card'lar için Dark Mode */
+.modal-content.dark-mode {
+    background-color: #343a40;
+    color: #f8f9fa;
+}
+
+.card.dark-mode {
+    background-color: #495057;
+    color: #f8f9fa;
+}
+
+/* Dark Mode için Inputlar */
+input, textarea, select {
+    background-color: #495057;
+    color: #f8f9fa;
+    border: 1px solid #6c757d;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.modal-content {
+    background: $card-bg;
+    color: $text-color;
+    border-radius: 8px;
+}
+
+.modal-header {
+    border-bottom: 1px solid lighten($secondary-color, 10%);
+}
+
+.modal-body {
+    input,
+    textarea,
+    select {
+        background: darken($card-bg, 5%);
+        color: $text-color;
+        border: 1px solid lighten($secondary-color, 20%);
+    }
+}
+
+
+#sortSelect {
+    background: $card-bg;
+    color: $text-color;
+    border: 1px solid $secondary-color;
+}
