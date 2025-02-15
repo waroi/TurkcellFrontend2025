@@ -16,10 +16,11 @@
             <div class="d-flex align-items-center">
                 <form class="d-flex me-3" role="search">
                     <div class="input-group">
-                        <input type="text" class="form-control rounded-pill ps-3" id="searchBar" placeholder="Search for a game..." aria-label="Search">
-                        <button class="btn btn-light rounded-pill ms-2 px-3" type="submit">
-                            <i class="fa fa-search"></i>
-                        </button>
+                        <span class="input-group-text bg-white border-0 rounded-start-pill">
+                            <i class="fa fa-search text-muted"></i>
+                        </span>
+                        <input type="text" class="form-control rounded-end-pill ps-2" id="searchBar"
+                            placeholder="Search for a game..." aria-label="Search">
                     </div>
                 </form>
                 <button class="btn btn-outline-light me-3" data-bs-toggle="modal" data-bs-target="#gameModal">➕ Add Game</button>
@@ -27,6 +28,7 @@
             <button class="btn btn-outline-light" id="darkModeToggle">🌙</button>
         </div>
     </nav>
+    
     
 
     <div class="container text-center mt-5">
