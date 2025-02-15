@@ -1,7 +1,7 @@
 $primary-color: #0d6efd;
 $secondary-color: #6c757d;
 $background-light: #ffffff;
-$background-dark: #1a1a2e;  // Karanlık mod için daha koyu renk
+$background-dark: #1a1a2e;
 $card-bg-light: #f8f9fa;
 $card-bg-dark: #16213e;
 $text-light: #000000;
@@ -16,7 +16,7 @@ body {
 
 /* Karanlık Mod */
 body.dark {
-    background-color: $background-dark !important;  // Karanlık mod arka planı için önemli işareti
+    background-color: $background-dark;
     color: $text-dark;
 }
 
@@ -200,4 +200,5 @@ body.dark #categorySelect {
     color: $text-dark;
     border: 1px solid lighten($secondary-color, 20%);
 }
+
 
