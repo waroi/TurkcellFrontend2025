@@ -9,6 +9,57 @@ let editedGameId = "";
 
 //! HATA YÖNETİMİ YAPILACAK!!!!!
 
+//! Search işlemi daha sonra yapılacak
+function getSearchData() {
+	const searchFormElement = document.forms["searchForm"];
+	const searchInput = searchFormElement.querySelector("input[type='search']");
+	return searchInput.value.trim().toLowerCase();
+}
+function renderGames(games) {
+	const gameGrid = document.getElementById("games-grid");
+	if (!gameGrid) return;
+	const gameCardsHTML = games.map((game) => createGameCard(game)).join("");
+	gameGrid.innerHTML = gameCardsHTML;
+
+	// Yeni oluşturulan elemanlara event listener ekleme:
+	document.querySelectorAll("#deleteGame").forEach((element) =>
+		element.addEventListener("click", (e) => {
+			e.preventDefault();
+			const gameId = e.target.dataset.id;
+			deleteGame(gameId);
+		})
+	);
+	document.querySelectorAll("#editGame").forEach((element) => {
+		element.addEventListener("click", (e) => {
+			const gameId = e.target.dataset.id;
+			editedGameId = gameId;
+			fillGameDataToInput(gameId);
+			gameDetailModalBody(gameId);
+		});
+	});
+}
+
+function searchGames(gamesList) {
+	const searchTerm = getSearchData();
+
+	// Eğer searchTerm boşsa tüm oyunları göster
+	if (!searchTerm) {
+		renderGames(gamesList);
+		return;
+	}
+
+	const filteredGames = gamesList.filter((game) => {
+		return (
+			game.name.toLowerCase().includes(searchTerm) ||
+			game.description.toLowerCase().includes(searchTerm) ||
+			game.category.toLowerCase().includes(searchTerm) ||
+			game.developer.toLowerCase().includes(searchTerm)
+		);
+	});
+
+	renderGames(filteredGames);
+}
+
 function getFormData(formName) {
 	const gameFormElement = document.forms[formName];
 	const game = {
@@ -22,18 +73,6 @@ function getFormData(formName) {
 	};
 	return game;
 }
-
-//! Search işlemi daha sonra yapılacak
-// function getSearchData() {
-// 	const searchFormElement = document.forms["searchForm"];
-// 	const search = {
-// 		id: searchFormElement["search"].value,
-// 	};
-// 	return search;
-// }
-
-// async function getSearchedGame() {
-// }
 
 async function renderGameCards() {
 	const gameGrid = document.getElementById("games-grid");
@@ -76,6 +115,26 @@ async function deleteGame(gameId) {
 	await renderGameCards();
 }
 
+function gameDetailModalBody(gameId) {
+	const game = gamesList.find((i) => i.id === gameId);
+	const gameDetailModalBody = document.getElementById("gameDetailModalBody");
+	gameDetailModalBody.innerHTML = `
+				<div class="row">
+						<div class="col-md-4">
+								<img src="${game.image}" class="img-fluid"	alt="${game.name}">
+						</div>
+						<div class="col-md-8">
+								<h5>${game.name}</h5>
+								<p>${game.description}</p>
+								<p>Category: ${game.category}</p>
+								<p>Release Date: ${game.releaseDate}</p>
+								<p>Developer: ${game.developer}</p>
+								<a href="${game.steamUrl}" target="_blank">Steam Link</a>
+						</div>
+				</div>
+	`;
+}
+
 function createGameCard(game) {
 	return `
  <div class="col h-100">
@@ -89,6 +148,7 @@ function createGameCard(game) {
 						<p class="card-text">
       ${game.description}
 						</p>
+						<div class="row">
 						<a
 							type="button"
 							class="btn btn-primary"
@@ -99,6 +159,16 @@ function createGameCard(game) {
 							Edit Game 
 						</a>
       <a class="btn btn-danger" id="deleteGame" data-id="${game.id}">Delete</a>
+      <a
+							type="button"
+							class="btn btn-primary"
+							data-bs-toggle="modal"
+							data-bs-target="#gameDetailModal"
+							data-bs-whatever="@mdo"
+							id="detailGame" data-id="${game.id}">
+							Show Detail Archived Game
+						</a>
+						</div>
 					</div>
 				</div>
  </div>
@@ -145,17 +215,26 @@ document.addEventListener("DOMContentLoaded", async () => {
 			fillGameDataToInput(gameId);
 		})
 	);
+	document.querySelectorAll("#detailGame").forEach((element) =>
+		element.addEventListener("click", (e) => {
+			const gameId = e.target.dataset.id;
+			gameDetailModalBody(gameId);
+		})
+	);
+
+	document
+		.getElementById("searchForm")
+		.addEventListener("submit", function (e) {
+			e.preventDefault();
+			// gamesList değişkeni globalde tüm oyun verilerini içeriyor varsayılıyor.
+			searchGames(gamesList);
+		});
 });
 document.getElementById("sortAZ").addEventListener("click", sortByAZ);
 document.getElementById("sortZA").addEventListener("click", sortByZA);
 document
 	.getElementById("sortDate")
 	.addEventListener("click", sortByReleaseDate);
-
-document.getElementById("searchForm").addEventListener("submit", (e) => {
-	e.preventDefault();
-	getSearchedGame();
-});
 
 document.getElementById("submitForm").addEventListener("click", createGame);
 document.getElementById("updateForm").addEventListener("click", updateGame);

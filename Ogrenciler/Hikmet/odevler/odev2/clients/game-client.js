@@ -10,12 +10,12 @@ export default class GamesClient {
 		}).then((response) => response.json());
 	}
 
-	static async getGame(id) {
-		return fetch(`${GAME_URL}?id=${id}`, {
-			method: "GET",
-			headers: { "Content-type": "application/json;" },
-		}).then((response) => response.json());
-	}
+	// static async getGame(id) {
+	// 	return fetch(`${GAME_URL}?id=${id}`, {
+	// 		method: "GET",
+	// 		headers: { "Content-type": "application/json;" },
+	// 	}).then((response) => response.json());
+	// }
 
 	static async sortByDes() {
 		return fetch(`${GAME_URL}?_sort=name`, {
