@@ -106,10 +106,10 @@ function applyDarkMode() {
 
     if (darkMode === "enabled") {
         document.body.classList.add("dark-mode");
-        document.getElementById("darkModeToggle").textContent = "🌙"; // Karanlık mod butonu simgesi
+        document.getElementById("darkModeToggle").textContent = "🌙"; 
     } else {
         document.body.classList.remove("dark-mode");
-        document.getElementById("darkModeToggle").textContent = "🌞"; // Aydınlık mod butonu simgesi
+        document.getElementById("darkModeToggle").textContent = "🌞"; 
     }
 }
 
