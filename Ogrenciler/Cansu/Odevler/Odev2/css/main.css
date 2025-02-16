@@ -11977,6 +11977,7 @@ body.dark .modal-body select {
   border: 1px solid rgb(161.1158798283, 167.8755364807, 173.8841201717);
 }
 
+#developerSelect,
 #sortSelect,
 #categorySelect {
   background: #ffffff;
@@ -11986,6 +11987,7 @@ body.dark .modal-body select {
   transition: background-color 0.3s, color 0.3s;
 }
 
+body.dark #developerSelect,
 body.dark #sortSelect,
 body.dark #categorySelect {
   background: #16213e;
@@ -12015,6 +12017,13 @@ body.dark #categorySelect {
   width: 100%;
   height: 250px;
   object-fit: cover;
+}
+
+.form-select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: none;
 }
 
 /*# sourceMappingURL=main.css.map */

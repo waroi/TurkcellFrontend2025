@@ -150,7 +150,7 @@ body.dark .modal-body select {
     border: 1px solid lighten($secondary-color, 20%);
 }
 
-
+#developerSelect,
 #sortSelect,
 #categorySelect {
     background: $light-card;
@@ -159,7 +159,7 @@ body.dark .modal-body select {
     border-radius: 5px;
     transition: background-color 0.3s, color 0.3s;
 }
-
+body.dark #developerSelect,
 body.dark #sortSelect,
 body.dark #categorySelect {
     background: $dark-card;
@@ -191,6 +191,12 @@ body.dark #categorySelect {
     height: 250px;
     object-fit: cover; 
   }
+  .form-select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: none;  
+}
   
 
 

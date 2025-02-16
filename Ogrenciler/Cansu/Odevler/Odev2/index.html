@@ -29,8 +29,6 @@
         </div>
     </nav>
     
-    
-
     <div class="container text-center mt-5">
         <h1 class="mb-3">🎮 GameShelf App</h1>
         <h2 class="animated-text">Discover amazing games in your personal collection! 🎮</h2>
@@ -38,7 +36,20 @@
 
     <div class="container mt-5">
         <div class="d-flex justify-content-between align-items-center mb-3">
-            <button class="btn btn-outline-primary" id="showAllGamesBtn">All Games</button>
+            <select id="developerSelect" class="form-select w-auto">
+                <option value="dvp">Developer</option>
+                <option value="nin">Nintendo</option>
+                <option value="from">FromSoftware</option>
+                <option value="rock">Rockstar Games</option>
+                <option value="beth">Bethesda Game Studios</option>
+                <option value="moj">Mojang Studios</option>
+                <option value="cd">CD Projekt Red</option>
+                <option value="blizz">Blizzard Entertainment</option>
+                <option value="epic">Epic Games</option>
+                <option value="super">Supergiant Games</option>
+                <option value="id">id Software</option>
+                <option value="inner">Innersloth</option>
+            </select>
 
             <select id="categorySelect" class="form-select w-auto">
                 <option value="all">All Genres</option>
@@ -94,6 +105,14 @@
                             <label class="form-label">Image URL</label>
                             <input type="text" class="form-control" id="gameImage" placeholder="Enter image URL">
                         </div>
+                        <div class="mb-3">
+                            <label class="form-label">Developer</label>
+                            <input type="text" class="form-control" id="gameDeveloper" placeholder="Enter game developer" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Steam URL</label>
+                            <input type="url" class="form-control" id="gameSteamURL" placeholder="Enter steam URL" required>
+                        </div>
                         <button type="submit" class="btn btn-success w-100">✅ Save</button>
                     </form>
                 </div>
@@ -109,6 +128,7 @@
 </body>
 
 </html>
+
 
 
 
