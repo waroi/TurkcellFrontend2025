@@ -30,20 +30,21 @@ class UI {
 
             const releaseDate = document.createElement("p");
             releaseDate.classList.add("card-date");
-            releaseDate.textContent = `Çıkış Tarihi: ${game.release_date}`;
+            releaseDate.textContent = `Release Date: ${game.release_date}`;
 
             const developer = document.createElement("p");
-            developer.textContent = `Yapımcı: ${game.developer}`;
+            developer.textContent = `Developer: ${game.developer}`;
+           
 
             const steamLink = document.createElement("a");
             steamLink.href = game.steam_url;
-            steamLink.textContent = "Steam'de Gör";
+            steamLink.textContent = "See on steam";
             steamLink.classList.add("btn", "btn-primary");
             steamLink.target = "_blank";
 
             const btnDelete = document.createElement("button");
             btnDelete.classList.add("btn", "btn-danger", "delete-button");
-            btnDelete.textContent = "Sil";
+            btnDelete.textContent = "Delete";
             btnDelete.dataset.id = game.id;
             btnDelete.addEventListener("click", async () => {
                 await Storage.deleteGame(game.id);

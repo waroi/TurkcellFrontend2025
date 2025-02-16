@@ -11920,19 +11920,23 @@ body.dark .navbar .nav-link {
 
 #gameList .game-card {
   background: #ffffff;
-  border-radius: 10px;
+  border-radius: 12px;
   padding: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease-in-out;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  overflow: hidden;
+  border: none;
 }
 #gameList .game-card:hover {
   transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
 }
 #gameList .game-card img {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  border-radius: 5px;
+  border-radius: 8px;
+  display: block;
 }
 #gameList .game-card h5, #gameList .game-card .h5 {
   color: #0d6efd;
@@ -11946,6 +11950,7 @@ body.dark .navbar .nav-link {
 
 body.dark #gameList .game-card {
   background: #16213e;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
 }
 
 .modal-content {
@@ -12017,6 +12022,8 @@ body.dark #categorySelect {
   width: 100%;
   height: 250px;
   object-fit: cover;
+  border-radius: 8px;
+  display: block;
 }
 
 .form-select {
