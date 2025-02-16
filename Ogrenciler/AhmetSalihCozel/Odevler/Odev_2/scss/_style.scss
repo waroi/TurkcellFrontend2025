@@ -1,0 +1,190 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Doto", serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.modal-dialog *{
+  font-weight: 900;
+}
+
+.cardSection {
+  background-color: rgb(22, 22, 22);
+  overflow: hidden;
+  padding-top:100px;
+}
+
+.card{
+  min-width: 100%;
+}
+
+.card-body{
+  overflow: hidden;
+  &:hover{
+    .steamBtn {
+      top: 0px;
+      right: 0px;
+    }
+    
+    .editBtn {
+      bottom: 0px;
+      left: 0px;
+    }
+    
+    .deleteBtn {
+      bottom: 0px;
+      right: 0px;
+    }
+    
+    .infoBtn {
+      top: 0px;
+      left: 0px;
+    }
+
+  }
+}
+
+.cyberButton {
+  background-color: white;
+  height: 34px;
+  width: 100%;
+}
+
+$steamColor: rgb(255, 255, 255);
+$editColor: rgb(255, 198, 40);
+$deleteColor: rgb(255, 65, 40);
+$infoColor: rgb(40, 255, 87);
+
+@mixin btn($color, $h, $w) {
+  border: 0;
+  transition: all 0.3s ease;
+  opacity: 0.7;
+  background: $color;
+  border-radius: 5px;
+  box-shadow: $h $w 100px 1px $color;
+  &:hover {
+    opacity: 1;
+    background: $color;
+    box-shadow: 0px 0px 2px 2px $color;
+  }
+  &:focus{
+    box-shadow: 0px 0px 2px 2px $color;
+    opacity: 1;
+}
+}
+.searchInput{
+    @include btn($steamColor, -0px, 0px);
+}
+
+.searchButton{
+    @include btn($infoColor, -0px, 0px);
+    opacity: 1;
+    color: black;
+    font-weight: 900;
+}
+.steamBtn {
+  transition: all 0.3s ease;
+  position: relative;
+  top: -50px;
+  right: -50px;
+  @include btn($steamColor, -30px, 20px);
+}
+
+.editBtn {
+  transition: all 0.3s ease;
+  position: relative;
+  bottom: -50px;
+  left: -50px;
+  @include btn($editColor, 30px, -20px);
+}
+
+.deleteBtn {
+  transition: all 0.3s ease;
+  position: relative;
+  bottom: -50px;
+  right: -50px;
+  @include btn($deleteColor, -30px, -20px);
+}
+
+.infoBtn {
+  transition: all 0.3s ease;
+  position: relative;
+  top: -50px;
+  left: -50px;
+  @include btn($infoColor, 30px, 20px);
+}
+
+.root{
+    margin-top: 500px;
+}
+
+.navbar {
+    backdrop-filter: blur(6px);
+    position: fixed;
+    z-index: 50;
+    width: 100%;
+}
+
+.red {
+    box-shadow: 0px 15px 60px 15px $deleteColor;
+  }
+  .green {
+    box-shadow: 0px 15px 60px 15px $infoColor;
+  }
+  .white {
+    box-shadow: 0px 15px 60px 15px $steamColor;
+  }
+  .yellow {
+    box-shadow: 0px 15px 60px 15px $editColor;
+  }
+
+
+.navbar-brand {
+  &:hover {
+    .red {
+        box-shadow: 0px 15px 30px 20px $deleteColor;
+      }
+      .green {
+        box-shadow: 0px 15px 30px 20px $infoColor;
+      }
+      .white {
+        box-shadow: 0px 15px 30px 20px $steamColor;
+      }
+      .yellow {
+        box-shadow: 0px 15px 30px 20px $editColor;
+      }
+  }
+}
+
+.gameAdd, .saveButton{
+    @include btn($infoColor, 0px, 0px);
+    opacity: 1;
+    color: black;
+}
+
+.gameCategories, .navbarTogglerBtn ,.anaSayfa, .closeButton{
+  @include btn($steamColor, 0px, 0px);
+  opacity: 1;
+  color: black;
+}
+
+
+.colors{
+    & div {
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    height: 0px;
+    width: 0px;
+  }
+}
+
+.cardCss{
+  display: flex;
+  align-items: stretch;
+}
+
+.hideCard{
+  display: none;
+}
