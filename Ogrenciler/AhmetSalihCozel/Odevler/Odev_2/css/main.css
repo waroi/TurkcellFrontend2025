@@ -1,0 +1,281 @@
+@import "../node_modules/bootstrap/dist/css/bootstrap.css";
+nav * {
+  color: white;
+}
+
+.nav-link {
+  color: white;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Doto", serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.modal-dialog * {
+  font-weight: 900;
+}
+
+.cardSection {
+  background-color: rgb(22, 22, 22);
+  overflow: hidden;
+  padding-top: 100px;
+}
+
+.card {
+  min-width: 100%;
+}
+
+.card-body {
+  overflow: hidden;
+}
+.card-body:hover .steamBtn {
+  top: 0px;
+  right: 0px;
+}
+.card-body:hover .editBtn {
+  bottom: 0px;
+  left: 0px;
+}
+.card-body:hover .deleteBtn {
+  bottom: 0px;
+  right: 0px;
+}
+.card-body:hover .infoBtn {
+  top: 0px;
+  left: 0px;
+}
+
+.cyberButton {
+  background-color: white;
+  height: 34px;
+  width: 100%;
+}
+
+.searchInput {
+  border: 0;
+  transition: all 0.3s ease;
+  opacity: 0.7;
+  background: rgb(255, 255, 255);
+  border-radius: 5px;
+  box-shadow: 0px 0px 100px 1px rgb(255, 255, 255);
+}
+.searchInput:hover {
+  opacity: 1;
+  background: rgb(255, 255, 255);
+  box-shadow: 0px 0px 2px 2px rgb(255, 255, 255);
+}
+.searchInput:focus {
+  box-shadow: 0px 0px 2px 2px rgb(255, 255, 255);
+  opacity: 1;
+}
+
+.searchButton {
+  border: 0;
+  transition: all 0.3s ease;
+  opacity: 0.7;
+  background: rgb(40, 255, 87);
+  border-radius: 5px;
+  box-shadow: 0px 0px 100px 1px rgb(40, 255, 87);
+  opacity: 1;
+  color: black;
+  font-weight: 900;
+}
+.searchButton:hover {
+  opacity: 1;
+  background: rgb(40, 255, 87);
+  box-shadow: 0px 0px 2px 2px rgb(40, 255, 87);
+}
+.searchButton:focus {
+  box-shadow: 0px 0px 2px 2px rgb(40, 255, 87);
+  opacity: 1;
+}
+
+.steamBtn {
+  transition: all 0.3s ease;
+  position: relative;
+  top: -50px;
+  right: -50px;
+  border: 0;
+  transition: all 0.3s ease;
+  opacity: 0.7;
+  background: rgb(255, 255, 255);
+  border-radius: 5px;
+  box-shadow: -30px 20px 100px 1px rgb(255, 255, 255);
+}
+.steamBtn:hover {
+  opacity: 1;
+  background: rgb(255, 255, 255);
+  box-shadow: 0px 0px 2px 2px rgb(255, 255, 255);
+}
+.steamBtn:focus {
+  box-shadow: 0px 0px 2px 2px rgb(255, 255, 255);
+  opacity: 1;
+}
+
+.editBtn {
+  transition: all 0.3s ease;
+  position: relative;
+  bottom: -50px;
+  left: -50px;
+  border: 0;
+  transition: all 0.3s ease;
+  opacity: 0.7;
+  background: rgb(255, 198, 40);
+  border-radius: 5px;
+  box-shadow: 30px -20px 100px 1px rgb(255, 198, 40);
+}
+.editBtn:hover {
+  opacity: 1;
+  background: rgb(255, 198, 40);
+  box-shadow: 0px 0px 2px 2px rgb(255, 198, 40);
+}
+.editBtn:focus {
+  box-shadow: 0px 0px 2px 2px rgb(255, 198, 40);
+  opacity: 1;
+}
+
+.deleteBtn {
+  transition: all 0.3s ease;
+  position: relative;
+  bottom: -50px;
+  right: -50px;
+  border: 0;
+  transition: all 0.3s ease;
+  opacity: 0.7;
+  background: rgb(255, 65, 40);
+  border-radius: 5px;
+  box-shadow: -30px -20px 100px 1px rgb(255, 65, 40);
+}
+.deleteBtn:hover {
+  opacity: 1;
+  background: rgb(255, 65, 40);
+  box-shadow: 0px 0px 2px 2px rgb(255, 65, 40);
+}
+.deleteBtn:focus {
+  box-shadow: 0px 0px 2px 2px rgb(255, 65, 40);
+  opacity: 1;
+}
+
+.infoBtn {
+  transition: all 0.3s ease;
+  position: relative;
+  top: -50px;
+  left: -50px;
+  border: 0;
+  transition: all 0.3s ease;
+  opacity: 0.7;
+  background: rgb(40, 255, 87);
+  border-radius: 5px;
+  box-shadow: 30px 20px 100px 1px rgb(40, 255, 87);
+}
+.infoBtn:hover {
+  opacity: 1;
+  background: rgb(40, 255, 87);
+  box-shadow: 0px 0px 2px 2px rgb(40, 255, 87);
+}
+.infoBtn:focus {
+  box-shadow: 0px 0px 2px 2px rgb(40, 255, 87);
+  opacity: 1;
+}
+
+.root {
+  margin-top: 500px;
+}
+
+.navbar {
+  backdrop-filter: blur(6px);
+  position: fixed;
+  z-index: 50;
+  width: 100%;
+}
+
+.red {
+  box-shadow: 0px 15px 60px 15px rgb(255, 65, 40);
+}
+
+.green {
+  box-shadow: 0px 15px 60px 15px rgb(40, 255, 87);
+}
+
+.white {
+  box-shadow: 0px 15px 60px 15px rgb(255, 255, 255);
+}
+
+.yellow {
+  box-shadow: 0px 15px 60px 15px rgb(255, 198, 40);
+}
+
+.navbar-brand:hover .red {
+  box-shadow: 0px 15px 30px 20px rgb(255, 65, 40);
+}
+.navbar-brand:hover .green {
+  box-shadow: 0px 15px 30px 20px rgb(40, 255, 87);
+}
+.navbar-brand:hover .white {
+  box-shadow: 0px 15px 30px 20px rgb(255, 255, 255);
+}
+.navbar-brand:hover .yellow {
+  box-shadow: 0px 15px 30px 20px rgb(255, 198, 40);
+}
+
+.gameAdd, .saveButton {
+  border: 0;
+  transition: all 0.3s ease;
+  opacity: 0.7;
+  background: rgb(40, 255, 87);
+  border-radius: 5px;
+  box-shadow: 0px 0px 100px 1px rgb(40, 255, 87);
+  opacity: 1;
+  color: black;
+}
+.gameAdd:hover, .saveButton:hover {
+  opacity: 1;
+  background: rgb(40, 255, 87);
+  box-shadow: 0px 0px 2px 2px rgb(40, 255, 87);
+}
+.gameAdd:focus, .saveButton:focus {
+  box-shadow: 0px 0px 2px 2px rgb(40, 255, 87);
+  opacity: 1;
+}
+
+.gameCategories, .navbarTogglerBtn, .anaSayfa, .closeButton {
+  border: 0;
+  transition: all 0.3s ease;
+  opacity: 0.7;
+  background: rgb(255, 255, 255);
+  border-radius: 5px;
+  box-shadow: 0px 0px 100px 1px rgb(255, 255, 255);
+  opacity: 1;
+  color: black;
+}
+.gameCategories:hover, .navbarTogglerBtn:hover, .anaSayfa:hover, .closeButton:hover {
+  opacity: 1;
+  background: rgb(255, 255, 255);
+  box-shadow: 0px 0px 2px 2px rgb(255, 255, 255);
+}
+.gameCategories:focus, .navbarTogglerBtn:focus, .anaSayfa:focus, .closeButton:focus {
+  box-shadow: 0px 0px 2px 2px rgb(255, 255, 255);
+  opacity: 1;
+}
+
+.colors div {
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  height: 0px;
+  width: 0px;
+}
+
+.cardCss {
+  display: flex;
+  align-items: stretch;
+}
+
+.hideCard {
+  display: none;
+}
+
+/*# sourceMappingURL=main.css.map */

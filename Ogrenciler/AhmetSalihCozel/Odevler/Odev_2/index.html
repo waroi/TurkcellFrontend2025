@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Aubrey&family=Doto:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-xl bg-dark">
+      <div class="container">
+        <a class="navbar-brand me-5" href="#">
+          <div class="colors d-flex justify-content-between">
+            <div class="green"></div>
+            <div class="white"></div>
+            <div class="yellow"></div>
+            <div class="red"></div>
+          </div>
+          <h4>OyunDükkanım:com</h4>
+        </a>
+        <button
+          class="navbarTogglerBtn navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-2">
+            <li class="nav-item">
+              <a
+                class="anaSayfa nav-link"
+                aria-current="page"
+                href="./index.html"
+                >Ana Sayfa</a
+              >
+            </li>
+            <li class="nav-item">
+              <a id="addGameBtn" class="gameAdd nav-link" data-bs-toggle="modal" data-bs-target="#editAddModal" href="#">Oyun Ekle</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="gameCategories nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Oyun Katergorileri
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">RPG</a></li>
+                <li><a class="dropdown-item" href="#">Açık Dünya</a></li>
+                <li><a class="dropdown-item" href="#">Aksiyon</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="#">Tüm Oyunlar</a></li>
+              </ul>
+            </li>
+          </ul>
+          <div class="d-flex gap-3 my-3">
+            <input
+              id="searchInput"
+              class="searchInput form-control me-2"
+              type="search"
+              placeholder="Ara"
+              aria-label="Search"
+            />
+            <button id="searchBtn" class="searchButton btn btn-outline-success">
+              Ara
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="modal fade"
+      id="editAddModal"
+      tabindex="-1"
+      aria-labelledby="editAddModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content bg-dark">
+          <div class="modal-header  d-flex justify-content-between">
+            <h1 id="modalTitle" class="modal-title fs-5 text-white" id="editAddModalLabel">Güncelle</h1>
+            <button
+              type="button"
+              class="btn closeButton"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-x-lg" viewBox="0 0 16 16">
+              <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+            </svg></button>
+          </div>
+          <div id="modalBody" class="modal-body text-white">...</div>
+          <div id="modalFooter" class="modal-footer">
+            <button
+              id = "closeButton"
+              type="button"
+              class="btn closeButton"
+              data-bs-dismiss="modal"
+            >
+              Kapat
+            </button>
+            <button id="saveButton" class="saveButton btn" type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="root"></div>
+    <footer class="bg-dark text-white py-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h5 class="text-center">Sosyal Medya</h5>
+            <div class="d-flex gap-3 justify-content-center">
+              <a href="https://facebook.com" target="_blank" class="text-white" aria-label="Facebook">
+                <i class="bi bi-facebook" style="font-size: 1.5rem;"></i>
+              </a>
+              <a href="https://twitter.com" target="_blank" class="text-white" aria-label="Twitter">
+                <i class="bi bi-twitter" style="font-size: 1.5rem;"></i>
+              </a>
+              <a href="https://instagram.com" target="_blank" class="text-white" aria-label="Instagram">
+                <i class="bi bi-instagram" style="font-size: 1.5rem;"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-4">
+          <p>&copy; 2025 OyunDükkanım.com Tüm hakları saklıdır.</p>
+        </div>
+      </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js
+    "></script>
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>
