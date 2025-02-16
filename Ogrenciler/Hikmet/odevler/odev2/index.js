@@ -56,6 +56,47 @@ function searchGames(gamesList) {
 	renderGames(filteredGames);
 }
 
+function filterFormData() {
+	const gameFilterFormElement = document.forms["filterForm"];
+	const filteredData = {
+		category: gameFilterFormElement["category"].value,
+		releaseDate: gameFilterFormElement["releaseDate"].value,
+		developer: gameFilterFormElement["developer"].value,
+	};
+	return filteredData;
+}
+
+function renderFilteredGames(gamesList) {
+	const filters = filterFormData();
+
+	const filteredGames = gamesList.filter((game) => {
+		// Eğer developer değeri girilmişse, kontrol et
+		if (
+			filters.developer &&
+			!game.developer.toLowerCase().includes(filters.developer.toLowerCase())
+		) {
+			return false;
+		}
+		// Eğer release date değeri girilmişse, kontrol et
+		if (
+			filters.releaseDate &&
+			!game.releaseDate.includes(filters.releaseDate)
+		) {
+			return false;
+		}
+		// Eğer category değeri girilmişse, kontrol et
+		if (
+			filters.category &&
+			!game.category.toLowerCase().includes(filters.category.toLowerCase())
+		) {
+			return false;
+		}
+		return true;
+	});
+
+	renderGames(filteredGames);
+}
+
 function getFormData(formName) {
 	const gameFormElement = document.forms[formName];
 	const game = {
@@ -224,6 +265,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 			e.preventDefault();
 			searchGames(gamesList);
 		});
+	document.getElementById("filterForm").addEventListener("click", function (e) {
+		e.preventDefault();
+		renderFilteredGames(gamesList);
+	});
 });
 document.getElementById("sortZA").addEventListener("click", sortByZA);
 document.getElementById("sortAZ").addEventListener("click", sortByAZ);
