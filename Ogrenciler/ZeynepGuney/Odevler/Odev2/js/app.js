@@ -13,7 +13,6 @@ Request.get("./assets/games.json")
     allGames = [...games];
     ui = new UI(games);
     ui.createGameCards(games, games);
-    filterGamesByType();
     document.querySelectorAll('.update-button').forEach((button, i) => {
       button.addEventListener("click", function () {
         ui.openUpdateModal(i);
@@ -24,20 +23,22 @@ Request.get("./assets/games.json")
     console.error('Veri alınırken hata oluştu:', err);
   });
 
-function sortGames(option) {
-  if (option === 'a-z') {
-    games.sort((gameA, gameB) => gameA.name.localeCompare(gameB.name));
-  } else if (option === 'z-a') {
-    games.sort((gameA, gameB) => gameB.name.localeCompare(gameA.name));
-  } else if (option === 'yeni') {
-    games.sort((gameA, gameB) => new Date(gameB.date) - new Date(gameA.date));
-  } else if (option === 'eski') {
-    games.sort((gameA, gameB) => new Date(gameA.date) - new Date(gameB.date));
-  } else {
-    games = [...allGames];
+  function sortGames(option) {
+    let sortedGames = [...games]; 
+    if (option === 'a-z') {
+      sortedGames.sort((gameA, gameB) => gameA.name.localeCompare(gameB.name));
+    } else if (option === 'z-a') {
+      sortedGames.sort((gameA, gameB) => gameB.name.localeCompare(gameA.name));
+    } else if (option === 'yeni') {
+      sortedGames.sort((gameA, gameB) => new Date(gameB.date) - new Date(gameA.date));
+    } else if (option === 'eski') {
+      sortedGames.sort((gameA, gameB) => new Date(gameA.date) - new Date(gameB.date));
+    } else {
+      sortedGames = [...allGames]; 
+    }
+    games = sortedGames; 
+    ui.createGameCards(games, games); 
   }
-  ui.createGameCards(games, games);
-}
 
 document.getElementById('sort-option').addEventListener('change', (e) => {
   const sortOption = e.target.value;
@@ -46,9 +47,7 @@ document.getElementById('sort-option').addEventListener('change', (e) => {
 
 function filterGamesByType(type) {
   if (type) {
-    games = allGames.filter(game => {
-      return game.type.toLowerCase() === type.toLowerCase();
-    });
+    games = allGames.filter(game => game.type.toLowerCase() === type.toLowerCase());
   } else {
     games = [...allGames];
   }
@@ -62,9 +61,8 @@ document.getElementById('filter-category').addEventListener('change', (e) => {
 
 function deleteGame(gameId) {
   games = games.filter(game => game.id !== parseInt(gameId));
-
   Request.delete(`./assets/games.json/${gameId}`)
-    .then((message) => {
+    .then(() => {
       const gameCard = document.getElementById(`game-card-${gameId}`);
       if (gameCard) {
         gameCard.remove();
@@ -76,8 +74,7 @@ function deleteGame(gameId) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  const deleteButtons = document.querySelectorAll('.delete-game');
-  deleteButtons.forEach((button) => {
+  document.querySelectorAll('.delete-game').forEach((button) => {
     button.addEventListener('click', () => {
       const gameId = button.getAttribute('data-game-id');
       deleteGame(gameId);
@@ -91,65 +88,34 @@ document.getElementById('changes').addEventListener('click', function () {
     console.error("Güncellenecek oyun seçilmedi!");
     return;
   }
-  // console.log("Güncellenen oyun index:", updateIndex);  
-  // console.log("Güncellemeden önce oyun:", games[updateIndex]);
   const updatedGame = {
     poster: document.getElementById('game-poster-url').value,
     name: document.getElementById('game-name').value,
     type: document.getElementById('game-type').value,
     date: document.getElementById('game-year').value,
-    steam: document.getElementById('game-steam-url').value,
+    steam_url: document.getElementById('game-steam-url').value,
     director: document.getElementById('game-director').value,
     description: document.getElementById('game-description').value
   };
-  games[updateIndex] = updatedGame;
-  // console.log("Güncellemeden sonra oyun:", games[updateIndex]);
-  document.getElementById('games-wrap').innerHTML = "";
-  ui.createGameCards(games, games);
-  const modal = new bootstrap.Modal(document.getElementById('gameModal'));
-  modal.hide();
-  updateIndex = null;
+  ui.saveChanges(updatedGame, updateIndex);
+  const modalElement = document.getElementById("gameModal");
+  const modalInstance = bootstrap.Modal.getInstance(modalElement);
+  if (modalInstance) {
+    modalInstance.hide();
+  }
+  ui.setUpdateIndex(null);
 });
 
-function openUpdateModal(index) {
-  updateIndex = index;
-  const game = games[index];
-
-  document.getElementById('game-poster-url').value = game.poster || '';
-  document.getElementById('game-name').value = game.name || '';
-  document.getElementById('game-type').value = game.type || '';
-  document.getElementById('game-year').value = game.date || '';
-  document.getElementById('game-steam-url').value = game.steam || '';
-  document.getElementById('game-director').value = game.director || '';
-  document.getElementById('game-description').value = game.description || '';
-
-  const modal = new bootstrap.Modal(document.getElementById('gameModal'));
-  modal.show();
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-  createGameControls();
-});
-
-function createGameControls() {
-  const modal = new bootstrap.Modal(document.getElementById('gameModal'));
-}
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.update-game').forEach((button, index) => {
-    button.addEventListener('click', () => openUpdateModal(index));
-  });
-});
-
-document.getElementById('searchForm').addEventListener('click', function (event) {
-  // sayfa sürekli yenilenmesin diye gpt önermişti fakat button type düzenlemesi yapınca gerek kalmadı
-  // event.preventDefault(); 
-
-  const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-  const filteredGames = games.filter(game => {
-    return game.name.toLowerCase().includes(searchTerm) ||
-      game.type.toLowerCase().includes(searchTerm) ||
-      game.director.toLowerCase().includes(searchTerm);
-  });
-
+document.getElementById("searchForm").addEventListener("click", function () {
+  const searchTerm = document.getElementById("searchInput").value.toLowerCase();
+  const filteredGames = games.filter(game =>
+    game.name.toLowerCase().includes(searchTerm) ||
+    game.type.toLowerCase().includes(searchTerm) ||
+    game.director.toLowerCase().includes(searchTerm)
+  );
   ui.createGameCards(filteredGames, filteredGames);
+});
+
+document.getElementById("add-game-btn").addEventListener("click", () => {
+  ui.addGame();
 });
