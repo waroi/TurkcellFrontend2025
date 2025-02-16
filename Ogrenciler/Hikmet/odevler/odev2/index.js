@@ -70,21 +70,20 @@ function renderFilteredGames(gamesList) {
 	const filters = filterFormData();
 
 	const filteredGames = gamesList.filter((game) => {
-		// Eğer developer değeri girilmişse, kontrol et
 		if (
 			filters.developer &&
 			!game.developer.toLowerCase().includes(filters.developer.toLowerCase())
 		) {
 			return false;
 		}
-		// Eğer release date değeri girilmişse, kontrol et
+
 		if (
 			filters.releaseDate &&
 			!game.releaseDate.includes(filters.releaseDate)
 		) {
 			return false;
 		}
-		// Eğer category değeri girilmişse, kontrol et
+
 		if (
 			filters.category &&
 			!game.category.toLowerCase().includes(filters.category.toLowerCase())
@@ -285,4 +284,4 @@ document.getElementById("updateForm").addEventListener("click", updateGame);
 //? TODO: cardlara tıklandığında modal açılacak ve detaylar görünecek => YAPILDI!
 //? TODO: sıralama, arama butonları eklendi logic eklenecek. => YAPILDI!
 //? TODO: Güncelleme işlemi yapılacak. => YAPILDI!
-// TODO: Filtreleme yapılacak
+//? TODO: Filtreleme yapılacak => YAPILDI!
