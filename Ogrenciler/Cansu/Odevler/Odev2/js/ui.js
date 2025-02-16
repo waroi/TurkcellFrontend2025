@@ -1,13 +1,13 @@
 class UI {
-    // Oyunları listele
+
     static async renderGames(games) {
         const gameList = document.getElementById("gameList");
-        gameList.textContent = ""; // Listeyi temizle
+        gameList.textContent = ""; 
 
         games.forEach(game => {
             const cardDiv = document.createElement("div");
             cardDiv.classList.add("col-md-4");
-            cardDiv.setAttribute("data-category", game.category); // Kategoriyi ekle
+            cardDiv.setAttribute("data-category", game.category); 
 
             const card = document.createElement("div");
             card.classList.add("card");
@@ -47,7 +47,7 @@ class UI {
             btnDelete.dataset.id = game.id;
             btnDelete.addEventListener("click", async () => {
                 await Storage.deleteGame(game.id);
-                await UI.renderGames(await Storage.fetchGames()); // Silinen oyundan sonra listeyi yeniden render et
+                await UI.renderGames(await Storage.fetchGames()); 
             });
 
             cardBody.append(title, description, releaseDate, developer, steamLink, btnDelete);
