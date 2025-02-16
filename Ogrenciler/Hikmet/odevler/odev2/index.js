@@ -3,9 +3,6 @@ import GamesClient from "./clients/game-client.js";
 // const games = await GamesClient.getAll(); //!SORULACAK
 let gamesList = [];
 let editedGameId = "";
-//! Delete butonuna basıldığında sayfa yenileniyor, neden!!
-
-// console.log(games);
 
 //! HATA YÖNETİMİ YAPILACAK!!!!!
 
@@ -15,13 +12,13 @@ function getSearchData() {
 	const searchInput = searchFormElement.querySelector("input[type='search']");
 	return searchInput.value.trim().toLowerCase();
 }
+
 function renderGames(games) {
 	const gameGrid = document.getElementById("games-grid");
 	if (!gameGrid) return;
 	const gameCardsHTML = games.map((game) => createGameCard(game)).join("");
 	gameGrid.innerHTML = gameCardsHTML;
 
-	// Yeni oluşturulan elemanlara event listener ekleme:
 	document.querySelectorAll("#deleteGame").forEach((element) =>
 		element.addEventListener("click", (e) => {
 			e.preventDefault();
@@ -42,7 +39,6 @@ function renderGames(games) {
 function searchGames(gamesList) {
 	const searchTerm = getSearchData();
 
-	// Eğer searchTerm boşsa tüm oyunları göster
 	if (!searchTerm) {
 		renderGames(gamesList);
 		return;
@@ -141,7 +137,7 @@ function createGameCard(game) {
     <div class="card">
 					<img
 						src="${game.image}"
-						class="card-img-top"
+						class="card-img-top img-fluid"
 						alt="${game.name}" />
 					<div class="card-body">
 						<h5 class="card-title">${game.name}</h5>
@@ -178,7 +174,7 @@ function createGameCard(game) {
 async function sortByAZ() {
 	const gameGrid = document.getElementById("games-grid");
 	if (!gameGrid) return;
-	const games = await GamesClient.sortByDes();
+	const games = await GamesClient.sortByAsc();
 	const gameCardsHTML = games?.map((game) => createGameCard(game)).join("");
 	gameGrid.innerHTML = gameCardsHTML;
 }
@@ -186,7 +182,7 @@ async function sortByAZ() {
 async function sortByZA() {
 	const gameGrid = document.getElementById("games-grid");
 	if (!gameGrid) return;
-	const games = await GamesClient.sortByAsc();
+	const games = await GamesClient.sortByDes();
 	const gameCardsHTML = games?.map((game) => createGameCard(game)).join("");
 	gameGrid.innerHTML = gameCardsHTML;
 }
@@ -226,12 +222,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 		.getElementById("searchForm")
 		.addEventListener("submit", function (e) {
 			e.preventDefault();
-			// gamesList değişkeni globalde tüm oyun verilerini içeriyor varsayılıyor.
 			searchGames(gamesList);
 		});
 });
-document.getElementById("sortAZ").addEventListener("click", sortByAZ);
 document.getElementById("sortZA").addEventListener("click", sortByZA);
+document.getElementById("sortAZ").addEventListener("click", sortByAZ);
 document
 	.getElementById("sortDate")
 	.addEventListener("click", sortByReleaseDate);
@@ -242,6 +237,7 @@ document.getElementById("updateForm").addEventListener("click", updateGame);
 //? Modal yapıldı
 //? Json serverde veriler tutuluyor
 //? Listeme yapıldı.
-// TODO: cardlara tıklandığında modal açılacak ve detaylar görünecek => YAPILDI!
-// TODO: Filtreleme, sıralama, arama butonları eklendi logic eklenecek. => YAPILDI! (arama yapılmadı)
-// TODO: Güncelleme işlemi yapılacak. => YAPILDI!
+//? TODO: cardlara tıklandığında modal açılacak ve detaylar görünecek => YAPILDI!
+//? TODO: sıralama, arama butonları eklendi logic eklenecek. => YAPILDI!
+//? TODO: Güncelleme işlemi yapılacak. => YAPILDI!
+// TODO: Filtreleme yapılacak

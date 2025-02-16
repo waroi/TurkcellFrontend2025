@@ -27,9 +27,56 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" href="#">Home</a>
-						</li>
+						<section class="d-flex align-items-center">
+							<div class="btn-group">
+								<button
+									class="btn btn-secondary btn-sm dropdown-toggle"
+									type="button"
+									data-bs-toggle="dropdown"
+									aria-expanded="false">
+									Sıralama
+								</button>
+								<ul class="dropdown-menu">
+									<li><a class="dropdown-item" id="sortAZ">A-Z</a></li>
+									<li><a class="dropdown-item" id="sortZA">Z-A</a></li>
+									<li>
+										<a class="dropdown-item" id="sortDate">Çıkış Tarihi</a>
+									</li>
+								</ul>
+							</div>
+							<div class="btn-group">
+								<button
+									class="btn btn-secondary btn-sm dropdown-toggle"
+									type="button"
+									data-bs-toggle="dropdown"
+									aria-expanded="false">
+									Filtrele
+								</button>
+								<ul class="dropdown-menu">
+									<div class="form-check">
+										<input
+											class="form-check-input"
+											type="checkbox"
+											value=""
+											id="flexCheckDefault" />
+										<label class="form-check-label" for="flexCheckDefault">
+											Kategori
+										</label>
+									</div>
+									<div class="form-check">
+										<input
+											class="form-check-input"
+											type="checkbox"
+											value=""
+											id="flexCheckChecked"
+											checked />
+										<label class="form-check-label" for="flexCheckChecked">
+											Cikis Tarihi
+										</label>
+									</div>
+								</ul>
+							</div>
+						</section>
 						<button
 							type="button"
 							class="btn btn-primary"
@@ -292,7 +339,7 @@
 			tabindex="-1"
 			aria-labelledby="gameDetailModalLabel"
 			aria-hidden="true">
-			<div class="modal-dialog">
+			<div class="modal-dialog modal-dialog-centered">
 				<div class="modal-content">
 					<div class="modal-header">
 						<h1 class="modal-title fs-5" id="gameDetailModalLabel">
@@ -318,54 +365,6 @@
 		</div>
 
 		<main class="container mt-2">
-			<section class="d-flex align-items-center">
-				<div class="btn-group">
-					<button
-						class="btn btn-secondary btn-sm dropdown-toggle"
-						type="button"
-						data-bs-toggle="dropdown"
-						aria-expanded="false">
-						Sıralama
-					</button>
-					<ul class="dropdown-menu">
-						<li><a class="dropdown-item" id="sortAZ">A-Z</a></li>
-						<li><a class="dropdown-item" id="sortZA">Z-A</a></li>
-						<li><a class="dropdown-item" id="sortDate">Cikis Tarihi</a></li>
-					</ul>
-				</div>
-				<div class="btn-group">
-					<button
-						class="btn btn-secondary btn-sm dropdown-toggle"
-						type="button"
-						data-bs-toggle="dropdown"
-						aria-expanded="false">
-						Filtrele
-					</button>
-					<ul class="dropdown-menu">
-						<div class="form-check">
-							<input
-								class="form-check-input"
-								type="checkbox"
-								value=""
-								id="flexCheckDefault" />
-							<label class="form-check-label" for="flexCheckDefault">
-								Kategori
-							</label>
-						</div>
-						<div class="form-check">
-							<input
-								class="form-check-input"
-								type="checkbox"
-								value=""
-								id="flexCheckChecked"
-								checked />
-							<label class="form-check-label" for="flexCheckChecked">
-								Cikis Tarihi
-							</label>
-						</div>
-					</ul>
-				</div>
-			</section>
 			<section
 				class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4"
 				id="games-grid">

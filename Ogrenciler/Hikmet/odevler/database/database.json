@@ -1,84 +1,104 @@
 {
-  "games": [
-    {
-      "name": "Neon Driver",
-      "description": "Hızlı tempolu yarışlarla neon ışıklar altında geçen futuristik bir deneyim.",
-      "category": "Racing",
-      "releaseDate": "2020-09-30",
-      "image": "https://picsum.photos/200/300",
-      "developer": "Velocity Labs",
-      "steamUrl": "https://store.steampowered.com/app/234567/Neon_Driver",
-      "id": "2"
-    },
-    {
-      "name": "Galactic Frontierr",
-      "description": "Uzayda koloniler kurup, stratejik savaşlara katılın; evrenin yeni kaşifleri siz olun.",
-      "category": "Strategy/Simulation",
-      "releaseDate": "2020-09-30",
-      "image": "https://picsum.photos/200/300",
-      "developer": "Star Innovations",
-      "steamUrl": "https://store.steampowered.com/app/456789/Galactic_Frontier",
-      "id": "4"
-    },
-    {
-      "id": "5",
-      "name": "Mystic Lands",
-      "description": "Büyülü topraklarda keşif yapın ve efsanevi yaratıklarla savaşın.",
-      "category": "Adventure",
-      "releaseDate": "2024-02-18",
-      "image": "https://picsum.photos/200/300",
-      "developer": "Mythic Games",
-      "steamUrl": "https://store.steampowered.com/app/567890/Mystic_Lands"
-    },
-    {
-      "id": "6",
-      "name": "Battle Royale Legends",
-      "description": "Heyecan dolu son hayatta kalma mücadelesi, her anın kritik kararlarla dolu olduğu bir oyun.",
-      "category": "Battle Royale",
-      "releaseDate": "2022-07-10",
-      "image": "https://picsum.photos/200/300",
-      "developer": "Valor Entertainment",
-      "steamUrl": "https://store.steampowered.com/app/678901/Battle_Royale_Legends"
-    },
-    {
-      "name": "Stealth Shadoww",
-      "description": "Gizlilik ve stratejiyi birleştiren, düşman hatlarının ardına sızma aksiyon oyunu.",
-      "category": "Stealth",
-      "date": "undefined",
-      "image": "https://picsum.photos/200/300",
-      "developer": "Silent Strike Studios",
-      "steamUrl": "https://store.steampowered.com/app/789012/Stealth_Shadow",
-      "id": "7"
-    },
-    {
-      "id": "8",
-      "name": "Arcane Tactics",
-      "description": "Sihir ve stratejinin harmanlandığı, sıra tabanlı savaşların öne çıktığı bir oyun.",
-      "category": "Strategy",
-      "releaseDate": "2023-08-01",
-      "image": "https://picsum.photos/200/300",
-      "developer": "Spellbound Interactive",
-      "steamUrl": "https://store.steampowered.com/app/890123/Arcane_Tactics"
-    },
-    {
-      "id": "9",
-      "name": "Rift of Infinity",
-      "description": "Farklı boyutlarda geçen, mitolojik ögelerle süslenmiş aksiyon dolu bir yolculuk.",
-      "category": "Action-Adventure",
-      "releaseDate": "2020-12-05",
-      "image": "https://picsum.photos/200/300",
-      "developer": "Infinite Loop Games",
-      "steamUrl": "https://store.steampowered.com/app/901234/Rift_of_Infinity"
-    },
-    {
-      "id": "10",
-      "name": "Voyage of Valor",
-      "description": "Epik bir deniz macerası, tarihsel dokunuşlar ve aksiyon dolu sahnelerle bezenmiş.",
-      "category": "Adventure",
-      "releaseDate": "2024-06-22",
-      "image": "https://picsum.photos/200/300",
-      "developer": "Maritime Studios",
-      "steamUrl": "https://store.steampowered.com/app/012345/Voyage_of_Valor"
-    }
-  ]
+	"games": [
+		{
+			"id": 1,
+			"name": "Half-Life",
+			"description": "A classic FPS game mixing science fiction and action.",
+			"category": "FPS",
+			"releaseDate": "1998",
+			"image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/70/capsule_616x353.jpg?t=1738795025",
+			"developer": "Valve",
+			"steamUrl": "https://store.steampowered.com/app/70/HalfLife/"
+		},
+		{
+			"id": 2,
+			"name": "Portal",
+			"description": "Innovative puzzle mechanics paired with witty storytelling.",
+			"category": "Puzzle",
+			"releaseDate": "2007",
+			"image": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/400/header.jpg",
+			"developer": "Valve",
+			"steamUrl": "https://store.steampowered.com/app/400/Portal/"
+		},
+		{
+			"id": 3,
+			"name": "Counter-Strike",
+			"description": "A groundbreaking multiplayer FPS known for its competitive gameplay.",
+			"category": "FPS",
+			"releaseDate": "2000",
+			"image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/10/header.jpg?t=1729702322",
+			"developer": "Valve",
+			"steamUrl": "https://store.steampowered.com/app/10/CounterStrike/"
+		},
+		{
+			"id": 4,
+			"name": "Team Fortress Classic",
+			"description": "Team-based action with a focus on tactical gameplay.",
+			"category": "Action",
+			"releaseDate": "1999",
+			"image": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/20/0000000165.1920x1080.jpg?t=1729702194",
+			"developer": "Valve",
+			"steamUrl": "https://store.steampowered.com/app/2320/Team_Fortress_Classic/"
+		},
+		{
+			"id": 5,
+			"name": "Left 4 Dead",
+			"description": "Survival action set in a post-apocalyptic zombie outbreak.",
+			"category": "Action/Survival",
+			"releaseDate": "2008-11-17",
+			"image": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/500/capsule_616x353.jpg?t=1738796049",
+			"developer": "Valve",
+			"steamUrl": "https://store.steampowered.com/app/500/Left_4_Dead/"
+		},
+		{
+			"id": 6,
+			"name": "Age of Empires II",
+			"description": "A classic real-time strategy game focused on building civilizations.",
+			"category": "Strategy",
+			"releaseDate": "1999",
+			"image": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/813780/header.jpg?t=1731939100",
+			"developer": "Ensemble Studios",
+			"steamUrl": "https://store.steampowered.com/app/221380/Age_of_Empires_II_Definitive_Edition/"
+		},
+		{
+			"id": 7,
+			"name": "Diablo II",
+			"description": "A dark and action-packed RPG adventure.",
+			"category": "RPG",
+			"releaseDate": "2000",
+			"image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHXzQ4vjoj-Kq4iuGJaeQb_bd8u1Lxz-8E3A&s",
+			"developer": "Blizzard Entertainment",
+			"steamUrl": "https://store.steampowered.com/app/12210/Diablo_II/"
+		},
+		{
+			"id": 8,
+			"name": "Warcraft III: Reign of Chaos",
+			"description": "Epic battles and legendary heroes in a real-time strategy classic.",
+			"category": "Strategy",
+			"releaseDate": "2002",
+			"image": "https://m.media-amazon.com/images/M/MV5BMjI2NTA0YjAtZGM5MS00YjlkLThlZDktNjliMWUzNzlmOTY0XkEyXkFqcGc@._V1_.jpg",
+			"developer": "Blizzard Entertainment",
+			"steamUrl": "https://store.steampowered.com/app/228/Warcraft_III_Reign_of_Chaos/"
+		},
+		{
+			"id": 9,
+			"name": "The Elder Scrolls III: Morrowind",
+			"description": "An expansive open-world RPG with deep storytelling and exploration.",
+			"category": "RPG",
+			"releaseDate": "2002",
+			"image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/22320/0000009069.1920x1080.jpg?t=1569959880",
+			"developer": "Bethesda Game Studios",
+			"steamUrl": "https://store.steampowered.com/app/22320/The_Elder_Scrolls_III_Morrowind/"
+		},
+		{
+			"id": 10,
+			"name": "Serious Sam: The First Encounter",
+			"description": "Retro-styled FPS featuring intense action and large-scale battles.",
+			"category": "FPS",
+			"releaseDate": "2001",
+			"image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/41050/capsule_616x353.jpg?t=1728688619",
+			"developer": "Croteam",
+			"steamUrl": "https://store.steampowered.com/app/200/Serious_Sam_The_First_Encounter/"
+		}
+	]
 }
