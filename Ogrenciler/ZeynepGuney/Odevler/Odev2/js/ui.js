@@ -1,6 +1,7 @@
 export class UI {
     constructor(games) {
-        this.games = games || [];
+        this.updateIndex = null;
+        this.games = games;
         this.gameWrap = document.getElementById("games-wrap");
         this.createHomeSection();
         this.createAboutSection();
@@ -140,12 +141,18 @@ export class UI {
         const type = document.createElement("p");
         type.className = "card-text";
         type.textContent = `Tür: ${game.type}`;
+
+        const steam_url = document.createElement("a");
+        steam_url.className = "card-text";
+        steam_url.href = game.steam_url; 
+        steam_url.target = "_blank";
+        steam_url.textContent = "Steam";
     
-        const updateButton = this.createButton('btn btn-update', 'Güncelle', () => this.openUpdateModal(index));
+        const updateButton = this.createUpdateButton('btn btn-update btn-primary', 'Güncelle', () => this.openUpdateModal(index));
     
-        const deleteButton = this.createButton('btn btn-delete', 'Sil', () => this.deleteGame(gameId, allGames));
+        const deleteButton = this.createButton('btn btn-delete btn-danger', 'Sil', () => this.deleteGame(gameId, allGames));
     
-        cardBody.append(title, description, director, date, type, updateButton, deleteButton);
+        cardBody.append(title, description, director, date, type, steam_url, updateButton, deleteButton);
         cardDiv.append(img, cardBody);
         colDiv.append(cardDiv);
         return colDiv;
@@ -155,17 +162,67 @@ export class UI {
         button.type = 'button';
         button.className = className;
         button.onclick = onClick;
-
+    
         const span = document.createElement('span');
         span.className = 'text';
         span.textContent = text;
-
+    
         button.append(span);
         return button;
     }
-    openUpdateModal(index) {
-        console.log(`Update modal for game at index ${index}`);
+    createUpdateButton(className, text, onClick) {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = className;
+        button.setAttribute('data-bs-toggle', 'modal');
+        button.setAttribute('data-bs-target', '#gameModal'); 
+        button.onclick = onClick;
+    
+        const span = document.createElement('span');
+        span.className = 'text';
+        span.textContent = text;
+    
+        button.append(span);
+        return button;
     }
+    getUpdateIndex() {
+        return this.updateIndex;
+      }
+    openUpdateModal(index) {
+        console.log('Index:', index); 
+        this.updateIndex = index;
+        console.log("Seçilen oyun index:", this.updateIndex);
+
+        const game = this.games[index];  
+      
+        document.getElementById('game-poster-url').value = game.poster || '';
+        document.getElementById('game-name').value = game.name || '';
+        document.getElementById('game-type').value = game.type || '';
+        document.getElementById('game-year').value = game.date || '';
+        document.getElementById('game-steam-url').value = game.steam_url || '';
+        document.getElementById('game-director').value = game.director || '';
+        document.getElementById('game-description').value = game.description || '';
+
+        const modal = new bootstrap.Modal(document.getElementById('gameModal'));
+        modal.show();
+      }
+      
+    saveChanges(index, game) {
+        const updatedGame = {
+            poster: document.getElementById('game-poster-url').value,
+            name: document.getElementById('game-name').value,
+            type: document.getElementById('game-type').value,
+            date: document.getElementById('game-year').value,
+            steam: document.getElementById('game-steam-url').value,
+            director: document.getElementById('game-director').value,
+            description: document.getElementById('game-description').value
+        };
+        games[index] = updatedGame;
+    
+        this.createGameCards(games, games);
+        console.log('Game updated:', updatedGame);
+    }
+    
     createGameCards(games, allGames) {
         if (!Array.isArray(games)) {
             console.error('Veri bir dizi değil:', games);

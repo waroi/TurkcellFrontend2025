@@ -11845,16 +11845,19 @@ textarea.form-control-lg {
   }
 }
 body {
-  background-color: #1a1a2e;
-  color: #ffffff;
+  background-color: #ffffff;
+  color: #000000;
   font-family: "Arial", sans-serif;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-h1, .h1 {
-  text-align: center;
+body.dark {
+  background-color: #1a1a2e;
+  color: #ffffff;
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   color: #0d6efd;
-  font-size: 2rem;
-  font-weight: bold;
 }
 
 .btn-primary {
@@ -11874,11 +11877,12 @@ h1, .h1 {
 
 #searchBar {
   max-width: 350px;
-  background-color: #16213e;
+  background-color: #ffffff;
   border: 1px solid #6c757d;
   border-radius: 25px;
   padding: 10px 20px;
-  color: #ffffff;
+  color: #000000;
+  transition: background-color 0.3s, color 0.3s;
 }
 #searchBar::placeholder {
   color: #adb5bd;
@@ -11888,36 +11892,34 @@ h1, .h1 {
   outline: none;
 }
 
-/* Navbar */
+body.dark #searchBar {
+  background-color: #16213e;
+  color: #ffffff;
+  border: 1px solid rgb(161.1158798283, 167.8755364807, 173.8841201717);
+}
+
 .navbar {
+  background-color: #ffffff;
+  transition: background-color 0.3s;
+}
+
+body.dark .navbar {
   background-color: #1a1a2e;
 }
 
 .navbar .nav-link {
-  color: #ffffff;
+  color: #000000;
 }
 .navbar .nav-link:hover {
   color: #0d6efd;
 }
 
-/* Button */
-.btn-primary {
-  background-color: #0d6efd;
-  border: none;
-}
-.btn-primary:hover {
-  background-color: rgb(1.762295082, 87.2336065574, 213.237704918);
-}
-
-.btn-success {
-  background-color: #28a745;
-}
-.btn-success:hover {
-  background-color: rgb(30.1449275362, 125.8550724638, 52);
+body.dark .navbar .nav-link {
+  color: #ffffff;
 }
 
 #gameList .game-card {
-  background: #16213e;
+  background: #ffffff;
   border-radius: 10px;
   padding: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -11942,75 +11944,77 @@ h1, .h1 {
   color: #adb5bd;
 }
 
-body {
-  background-color: #f8f9fa;
-  color: #212529;
-}
-
-/* Dark Mode */
-body.dark-mode {
-  background-color: #212529;
-  color: #f8f9fa;
-}
-
-.navbar-dark-mode {
-  background-color: #343a40;
-}
-
-.btn-dark-mode {
-  background-color: #495057;
-  color: #f8f9fa;
-}
-
-.btn-dark-mode:hover {
-  background-color: #6c757d;
-}
-
-/* Modal ve Card'lar için Dark Mode */
-.modal-content.dark-mode {
-  background-color: #343a40;
-  color: #f8f9fa;
-}
-
-.card.dark-mode {
-  background-color: #495057;
-  color: #f8f9fa;
-}
-
-/* Dark Mode için Inputlar */
-input, textarea, select {
-  background-color: #495057;
-  color: #f8f9fa;
-  border: 1px solid #6c757d;
-}
-
-input:focus, textarea:focus, select:focus {
-  border-color: #007bff;
-  outline: none;
+body.dark #gameList .game-card {
+  background: #16213e;
 }
 
 .modal-content {
-  background: #16213e;
-  color: #ffffff;
+  background: #ffffff;
+  color: #000000;
   border-radius: 8px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.modal-header {
-  border-bottom: 1px solid rgb(133.7553648069, 142.4849785408, 150.2446351931);
+body.dark .modal-content {
+  background: #16213e;
+  color: #ffffff;
 }
 
 .modal-body input,
 .modal-body textarea,
 .modal-body select {
+  background: white;
+  color: #000000;
+  border: 1px solid #6c757d;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark .modal-body input,
+body.dark .modal-body textarea,
+body.dark .modal-body select {
   background: rgb(15.3214285714, 22.9821428571, 43.1785714286);
   color: #ffffff;
   border: 1px solid rgb(161.1158798283, 167.8755364807, 173.8841201717);
 }
 
-#sortSelect {
+#sortSelect,
+#categorySelect {
+  background: #ffffff;
+  color: #000000;
+  border: 1px solid #6c757d;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark #sortSelect,
+body.dark #categorySelect {
   background: #16213e;
   color: #ffffff;
-  border: 1px solid #6c757d;
+  border: 1px solid rgb(161.1158798283, 167.8755364807, 173.8841201717);
+}
+
+.animated-text {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #0d6efd;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  animation: slide 10s linear infinite;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
 }
 
 /*# sourceMappingURL=main.css.map */

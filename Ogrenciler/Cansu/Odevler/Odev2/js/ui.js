@@ -1,7 +1,10 @@
 class UI {
-    static renderGames(games) {
+    static async renderGames() {
         const gameList = document.getElementById("gameList");
         gameList.textContent = "";
+
+        const games = await Storage.fetchGames();
+        console.log("Render edilen oyun sayısı:", games.length); // Kontrol amaçlı
 
         games.forEach(game => {
             const cardDiv = document.createElement("div");
@@ -19,19 +22,38 @@ class UI {
             cardBody.classList.add("card-body");
 
             const title = document.createElement("h5");
+            title.classList.add("card-title");
             title.textContent = game.name;
 
-            const btnDelete = document.createElement("button");
-            btnDelete.classList.add("btn", "btn-danger");
-            btnDelete.textContent = "Sil";
-            btnDelete.addEventListener("click", () => Storage.deleteGame(game.id));
+            const description = document.createElement("p");
+            description.classList.add("card-text");
+            description.textContent = game.description;
 
-            cardBody.appendChild(title);
-            cardBody.appendChild(btnDelete);
-            card.appendChild(img);
-            card.appendChild(cardBody);
-            cardDiv.appendChild(card);
-            gameList.appendChild(cardDiv);
+            const releaseDate = document.createElement("p");
+            releaseDate.classList.add("card-date");
+            releaseDate.textContent = `Çıkış Tarihi: ${game.release_date}`;
+
+            const developer = document.createElement("p");
+            developer.textContent = `Yapımcı: ${game.developer}`;
+
+            const steamLink = document.createElement("a");
+            steamLink.href = game.steam_url;
+            steamLink.textContent = "Steam'de Gör";
+            steamLink.classList.add("btn", "btn-primary");
+            steamLink.target = "_blank";
+
+            const btnDelete = document.createElement("button");
+            btnDelete.classList.add("btn", "btn-danger", "delete-button");
+            btnDelete.textContent = "Sil";
+            btnDelete.dataset.id = game.id;
+            btnDelete.addEventListener("click", async () => {
+                await Storage.deleteGame(game.id);
+            });
+
+            cardBody.append(title, description, releaseDate, developer, steamLink, btnDelete);
+            card.append(img, cardBody);
+            cardDiv.append(card);
+            gameList.append(cardDiv);
         });
     }
 }

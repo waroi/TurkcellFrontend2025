@@ -1,120 +1,98 @@
 document.addEventListener("DOMContentLoaded", async () => {
-
-  const games = await Storage.fetchGames();
-
-
-  UI.renderGames(games);
-
- 
-  setupEventListeners();
+    await UI.renderGames();
+    setupEventListeners();
 });
 
 function setupEventListeners() {
- 
-  const addGameForm = document.getElementById('add-game-form');
-  if (addGameForm) {
-      addGameForm.addEventListener('submit', async (event) => {
-          event.preventDefault(); 
+    const addGameForm = document.getElementById("gameForm");
+    if (addGameForm) {
+        addGameForm.addEventListener("submit", async (event) => {
+            event.preventDefault();
 
-          const name = document.getElementById('game-name').value;
-          const description = document.getElementById('game-description').value;
-          const category = document.getElementById('game-category').value;
-          const releaseDate = document.getElementById('game-release').value;
-          const imageUrl = document.getElementById('game-image').value;
-          const producer = document.getElementById('game-producer').value;
-          const steamUrl = document.getElementById('game-steam-url').value;
-    
-          const newGame = {
-              name,
-              description,
-              category,
-              releaseDate,
-              imageUrl,
-              producer,
-              steamUrl
-          };
+            const newGame = {
+                name: document.getElementById("gameName").value,
+                description: document.getElementById("gameDescription").value,
+                category: document.getElementById("gameCategory").value,
+                release_date: document.getElementById("releaseDate").value,
+                image: document.getElementById("gameImage").value,
+                developer: document.getElementById("gameDeveloper").value,
+                steam_url: document.getElementById("gameSteamURL").value,
+            };
 
-        
-          await Storage.addGame(newGame);
-          const games = await Storage.fetchGames();
-          UI.renderGames(games);
-          addGameForm.reset();
-      });
-  }
+            await Storage.addGame(newGame);
+            await UI.renderGames();
+            addGameForm.reset();
+        });
+    }
 
-  document.getElementById('searchBar').addEventListener('input', function (event) {
-      const query = event.target.value.toLowerCase();
-      const gameCards = document.querySelectorAll('.game-card');
+    document.getElementById("searchBar").addEventListener("input", function (event) {
+        const query = event.target.value.toLowerCase();
+        document.querySelectorAll(".game-card").forEach((card) => {
+            const gameName = card.querySelector(".card-title").textContent.toLowerCase();
+            card.style.display = gameName.includes(query) ? "block" : "none";
+        });
+    });
 
-      gameCards.forEach(card => {
-          const gameName = card.querySelector('.card-title').textContent.toLowerCase();
-          const gameDescription = card.querySelector('.card-text').textContent.toLowerCase();
+    document.getElementById("sortSelect").addEventListener("change", function () {
+        const sortOption = this.value;
+        const gameList = document.getElementById("gameList");
+        let games = Array.from(gameList.children);
 
-          if (gameName.includes(query) || gameDescription.includes(query)) {
-              card.style.display = 'block';
-          } else {
-              card.style.display = 'none';
-          }
-      });
-  });
+        games.sort((a, b) => {
+            const nameA = a.querySelector(".card-title").textContent.toLowerCase();
+            const nameB = b.querySelector(".card-title").textContent.toLowerCase();
+            const dateA = new Date(a.querySelector(".card-date").textContent.split(": ")[1]);
+            const dateB = new Date(b.querySelector(".card-date").textContent.split(": ")[1]);
 
+            if (sortOption === "name_asc") return nameA.localeCompare(nameB);
+            if (sortOption === "name_desc") return nameB.localeCompare(nameA);
+            if (sortOption === "date_up") return dateA - dateB;
+            if (sortOption === "date_down") return dateB - dateA;
+        });
 
-  document.getElementById('sortSelect').addEventListener('change', function () {
-      const sortOption = this.value;
-      const gameList = document.getElementById('gameList');
-      let games = Array.from(gameList.children);
+        games.forEach((game) => gameList.appendChild(game));
+    });
+    const darkModeToggle = document.getElementById("darkModeToggle");
 
-      games.sort((a, b) => {
-          const nameA = a.querySelector('.card-title').textContent.toLowerCase();
-          const nameB = b.querySelector('.card-title').textContent.toLowerCase();
-          const dateA = new Date(a.querySelector('.card-date').textContent);
-          const dateB = new Date(b.querySelector('.card-date').textContent);
-
-          if (sortOption === 'name_asc') {
-              return nameA.localeCompare(nameB);
-          } else if (sortOption === 'name_desc') {
-              return nameB.localeCompare(nameA);
-          } else if (sortOption === 'date_up') {
-              return dateA - dateB;
-          } else if (sortOption === 'date_down') {
-              return dateB - dateA;
-          }
-      });
-
-      games.forEach(game => gameList.appendChild(game)); 
-  });
-
-  document.getElementById('gameList').addEventListener('click', async (event) => {
-      if (event.target.classList.contains('delete-button')) {
-          const gameId = event.target.dataset.id;
-          await Storage.deleteGame(gameId);
-          const games = await Storage.fetchGames();
-          UI.renderGames(games);
-      }
-  });
-
- 
-  const toggleDarkModeBtn = document.getElementById('toggle-dark-mode');
-  const body = document.body;
-
- 
-  toggleDarkModeBtn.addEventListener('click', () => {
-      body.classList.toggle('dark-mode');
-
-      if (body.classList.contains('dark-mode')) {
-          toggleDarkModeBtn.innerHTML = '🌞'; 
-      } else {
-          toggleDarkModeBtn.innerHTML = '🌙'; 
-      }
-
+    darkModeToggle.addEventListener("click", () => {
+        document.body.classList.toggle("dark");
      
-      const navbar = document.querySelector('.navbar');
-      navbar.classList.toggle('navbar-dark-mode');
+        if (document.body.classList.contains("dark")) {
+            localStorage.setItem("darkMode", "enabled");
+           
+            darkModeToggle.textContent = "🌙";
+        } else {
+            localStorage.removeItem("darkMode");
+           
+            darkModeToggle.textContent = "🌞";
+        }
+    });
     
-      const modalContent = document.querySelectorAll('.modal-content');
-      modalContent.forEach((modal) => modal.classList.toggle('dark-mode'));
+  
+    if (localStorage.getItem("darkMode") === "enabled") {
+        document.body.classList.add("dark");
+       
+        darkModeToggle.textContent = "🌙";
+    } else {
+        darkModeToggle.textContent = "🌞";
+    }
     
-      const cards = document.querySelectorAll('.card');
-      cards.forEach((card) => card.classList.toggle('dark-mode'));
-  });
+    document.addEventListener("DOMContentLoaded", async () => {
+        const games = await Storage.fetchGames();
+        UI.renderGames(games);
+    });
+
+    document.getElementById("gameList").addEventListener("click", async (event) => {
+        if (event.target.classList.contains("delete-btn")) {
+            const gameId = event.target.dataset.id; 
+    
+            const isDeleted = await Storage.deleteGame(gameId);
+            if (isDeleted) {
+                const updatedGames = await Storage.fetchGames(); 
+                UI.renderGames(updatedGames); 
+            }
+        }
+    });
+    
 }
+
