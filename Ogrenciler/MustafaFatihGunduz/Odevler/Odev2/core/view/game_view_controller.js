@@ -4,9 +4,10 @@ import GameController from "../controller/game_controller.js";
 class GameViewController {
   constructor() {
     this.gameContainer = document.querySelector(".game-container");
+    this.overlay = document.querySelector("#overlay");
+    this.overlayModal = new bootstrap.Modal(document.querySelector(".modal-game"));
+    this.overlayModalContent = document.querySelector(".modal-game-body");
     this.search = document.querySelector("#search");
-    this.card = document.createElement("div");
-    this.card.classList.add("card");
     this.cardTitle = document.querySelector("#gameTitle");
     this.cardDescription = document.querySelector("#gameDescription");
     this.cardGenre = document.querySelector("#gameGenre");
@@ -50,6 +51,7 @@ class GameViewController {
     cardInner.className = "card-inner";
     const cardFooter = document.createElement("div");
     cardFooter.className = "card-footer";
+    cardFooter.classList.add("border-0");
     const buttons = document.createElement("div");
     const editButton = document.createElement("button");
     const deleteButton = document.createElement("button");
@@ -71,14 +73,27 @@ class GameViewController {
     const cardBack = this.addCardBack(game);
     cardInner.append(cardFront, cardBack);
     card.append(cardInner,cardFooter);
+    card.addEventListener("click", () => {
+      cardFooter.style.display = "none";
+      this.openCard(card);
+      this.overlay.addEventListener("click", (event) => {
+        if (event.target === this.overlay) {
+          this.closeCard(card);
+          // CARD FOOTERI TEKRAR GÖSTER FAKAT cardFooter.style.display = "block"; ÇALIŞMIYOR !!!
+
+        }
+      });
+    });
     return card;
   }
   addCardFront(game) {
     const cardFront = document.createElement("div");
-    cardFront.classList.add("card-front");
-    const cardImage = document.createElement("img");
+    cardFront.classList.add("card-front", "border-0", "mt-0");
+    const cardImage = document.createElement("div");
     cardImage.classList.add("card-image");
-    cardImage.src = game.gamePhotoURL;
+    const cardImageURL = document.createElement("img");
+    cardImageURL.src = game.gamePhotoURL;
+    cardImage.append(cardImageURL);
     cardFront.append(cardImage);
     return cardFront;
   }
@@ -91,6 +106,7 @@ class GameViewController {
     const cardYear = document.createElement("p");
     const cardPublisher = document.createElement("p");
     const cardURL = document.createElement("a");
+    cardURL.href = game.gameSteamURL;
     
     cardBack.classList.add("card-back");
     cardBody.classList.add("card-body");
@@ -100,12 +116,12 @@ class GameViewController {
     cardYear.classList.add("card-year");
     cardPublisher.classList.add("card-publisher");
     cardURL.classList.add("card-url");
-    cardTitle.textContent = "Oyun Adı: " + game.gameTitle;
-    cardDescription.textContent = "Oyun Açıklaması: " + game.gameDescription;
-    cardGenre.textContent = "Oyun Türü: " + game.gameGenre;
+    cardTitle.textContent = game.gameTitle;
+    cardDescription.textContent = game.gameDescription;
+    cardGenre.textContent = "Kategori: " + game.gameGenre;
     cardYear.textContent = "Yayın Tarihi: " + game.gameReleaseDate;
     cardPublisher.textContent = "Yayıncı: " + game.gamePublisher;
-    cardURL.textContent = "Steam URL: " + game.gameSteamURL;
+    cardURL.textContent = game.gameSteamURL;
     cardBody.append(
       cardTitle,
       cardDescription,
@@ -116,6 +132,21 @@ class GameViewController {
     );
     cardBack.append(cardBody);
     return cardBack;
+  }
+  
+  openCard(card){
+    this.overlayModalContent.innerHTML = card.innerHTML;
+    this.overlayModal.show();
+  }
+  
+  closeCard(card){
+    this.overlay.style.display = "none";
+    this.overlayModal.style.display = "none";
+    const cardFooter = card.querySelector(".card-footer");
+    if (cardFooter) {
+        cardFooter.style.display = "block";
+    }
+    this.overlayModal.hide();
   }
   async deleteGame(game) {
    await this.gameController.deleteGame(game.gameID);

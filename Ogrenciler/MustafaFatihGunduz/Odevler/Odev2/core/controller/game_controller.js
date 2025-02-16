@@ -37,7 +37,6 @@ class GameController{
         try {
             const gamesArray = await RequestModel.get('http://localhost:3000/games');
             const gameWithID = gamesArray.find(game => String(game.gameID) === String(gameID));
-            console.log("GAME WITH ID ID :"+ gameWithID.gameID);
             await RequestModel.update(`http://localhost:3000/games/${gameWithID.id}`, updatedGame);
         } catch (error) {
             console.error("Veri güncellenirken hata oluştu:", error);
