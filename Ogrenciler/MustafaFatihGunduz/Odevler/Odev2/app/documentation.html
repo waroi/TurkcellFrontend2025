@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GameVault - Dökümasyon</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <main class="uml-diagram">
+      <div class="container">
+        <h4 class="text-white fs-3 text-uppercase mt-4 text-center">
+          GameVault UML Diyagramı
+        </h4>
+        <p class="text-white mt-4">
+          Bu belge, bir oyun veritabanı yönetim sistemi projesi için uygun bir
+          UML diyagramı oluşturma sürecini açıklamaktadır. Proje, json-server
+          kullanarak verilerin tutulduğu bir db.json dosyası ile API istekleri
+          gerçekleştirmektedir. Kullanıcıların yeni oyun ekleyebilmesi için bir
+          arayüz sunulmakta ve MVVM (Model-View-ViewModel) tasarım deseni
+          uygulanmaktadır. Bu belge, projenin ana bileşenlerini ve bunlar
+          arasındaki ilişkileri görselleştiren bir UML diyagramı sunmaktadır.
+        </p>
+        <img
+          src="../assets/uml.png"
+          alt="UML Diagram"
+          class="img-fluid w-100"
+        />
+        <h6 class="text-white mt-4 fs-5 text-uppercase">
+          Aşağıda, projenin temel bileşenlerini ve ilişkilerini gösteren bir UML
+          diyagramı bulunmaktadır
+        </h6>
+        <img src="../assets/mvvm.png" alt="mvvm" class="img-fluid w-100" />
+        <h4 class="text-white fs-3 text-uppercase mt-4 text-center">
+          Projemiz, oyunları yönetmek ve listelemek için tasarlanmış bir web
+          uygulamasıdır. Geliştirme süreci aşağıdaki yaşam döngüsü aşamalarına
+          göre ilerlemektedir:
+        </h4>
+        <h6 class="text-white mt-4 fs-5 text-uppercase">
+          1. Planlama ve Analiz
+        </h6>
+        <p class="text-white mt-4">
+          Bu aşamada, proje için gerekli olan işlevler ve kullanıcı
+          gereksinimleri belirlendi. Kullanıcıların oyun ekleyebileceği,
+          arayabileceği, düzenleyebileceği ve silebileceği bir sistem
+          oluşturulmasına karar verildi.
+        </p>
+        <h6 class="text-white mt-4 fs-5 text-uppercase">2. Tasarım</h6>
+        <ul class="text-white mt-4">
+          <li>UML diyagramları ve veritabanı tasarımı oluşturuldu.</li>
+          <li>Kullanıcı arayüzü için wireframe ve mockup'lar hazırlandı.</li>
+          <li>
+            Teknoloji yığını olarak JavaScript (Vanilla JS), HTML, CSS,
+            Bootstrap ve JSON-SERVER tercih edildi.
+          </li>
+        </ul>
+        <h6 class="text-white mt-4 fs-5 text-uppercase">3. Geliştirme</h6>
+        <ul class="text-white mt-4">
+          <li>
+            Frontend: Arayüz, kullanıcı dostu olacak şekilde tasarlandı. Oyun
+            kartları, arama, sıralama ve filtreleme özellikleri geliştirildi.
+          </li>
+          <li>
+            Backend: JSON-SERVER kullanılarak CRUD işlemleri gerçekleştirildi.
+            API çağrıları ve veritabanı bağlantıları kuruldu.
+          </li>
+        </ul>
+        <h6 class="text-white mt-4 fs-5 text-uppercase">
+          4. Test ve Entegrasyon
+        </h6>
+        <ul class="text-white mt-4">
+          <li>
+            Kullanıcı deneyimi test edildi. Hata ayıklama ve düzeltmeler
+            yapıldı.
+          </li>
+          <li>
+            Uygulama, farklı tarayıcılarda ve cihazlarda test edildi. Uyumluluk
+            sağlandı.
+          </li>
+        </ul>
+        <img
+          src="../assets/life-cycle.png"
+          alt="life-cycle"
+          class="img-fluid w-100"
+        />
+        <h4 class="text-white mt-4 fs-5 text-uppercase">Açıklamalar</h4>
+        <h6 class="text-white mt-4 fs-5 text-uppercase">GameModel</h6>
+        <p class="text-white mt-4">
+          GameModel, oyun verilerini temsil eden bir sınıftır. Bu sınıf, oyun
+          adı, kategori, yapımcı firma ve yayın tarihi gibi özelliklere
+          sahiptir.
+        </p>
+        <h6 class="text-white mt-4 fs-5 text-uppercase">GameController</h6>
+        <p class="text-white mt-4">
+          GameController, oyun verilerini yöneten bir sınıftır. Bu sınıf, yeni
+          oyun eklemek, oyunları listelemek, oyunları düzenlemek ve oyunları
+          silmek gibi işlemleri gerçekleştirmektedir.
+        </p>
+        <h6 class="text-white mt-4 fs-5 text-uppercase">GameViewController</h6>
+        <p class="text-white mt-4">
+          GameViewController, kullanıcı arayüzünü yöneten bir sınıftır. Bu
+          sınıf, kullanıcıdan gelen istekleri karşılamakta ve gerekli işlemleri
+          gerçekleştirmektedir.
+        </p>
+        <img src="../assets/logic.png" alt="logic" class="img-fluid w-100" />
+        <h4 class="text-white mt-4 fs-5 text-uppercase">Sonuç</h4>
+        <p class="text-white mt-4">
+          Bu belge, GameVault projesinin geliştirme sürecini ve UML diyagramını
+          açıklamaktadır. Proje, kullanıcıların oyun ekleyebileceği,
+          arayabileceği, düzenleyebileceği ve silebileceği bir sistem
+          oluşturmayı hedeflemektedir. Proje, MVVM tasarım deseni kullanılarak
+          geliştirilmiştir ve UML diyagramı ile temel bileşenler ve ilişkiler
+          görselleştirilmiştir.
+        </p>
+        <img src="../assets/result.png" alt="result" class="img-fluid w-100" />
+      </div>
+    </main>
+  </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://kit.fontawesome.com/0460a9927e.js"
+    crossorigin="anonymous"
+  ></script>
+</html>

@@ -74,13 +74,10 @@ class GameViewController {
     cardInner.append(cardFront, cardBack);
     card.append(cardInner,cardFooter);
     card.addEventListener("click", () => {
-      cardFooter.style.display = "none";
       this.openCard(card);
       this.overlay.addEventListener("click", (event) => {
         if (event.target === this.overlay) {
           this.closeCard(card);
-          // CARD FOOTERI TEKRAR GÖSTER FAKAT cardFooter.style.display = "block"; ÇALIŞMIYOR !!!
-
         }
       });
     });
@@ -133,19 +130,13 @@ class GameViewController {
     cardBack.append(cardBody);
     return cardBack;
   }
-  
   openCard(card){
     this.overlayModalContent.innerHTML = card.innerHTML;
     this.overlayModal.show();
   }
-  
   closeCard(card){
     this.overlay.style.display = "none";
     this.overlayModal.style.display = "none";
-    const cardFooter = card.querySelector(".card-footer");
-    if (cardFooter) {
-        cardFooter.style.display = "block";
-    }
     this.overlayModal.hide();
   }
   async deleteGame(game) {

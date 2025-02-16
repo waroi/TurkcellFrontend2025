@@ -73,11 +73,13 @@ body {
         }
       }
     }
-    button {
-      height: 50px;
-      border: none;
-      padding: 10px;
-      background-color: transparent;
+    .button-container {
+      button {
+        height: 50px;
+        border: none;
+        padding: 10px;
+        background-color: transparent;
+      }
     }
   }
 }
@@ -129,6 +131,10 @@ body {
       color: white;
       cursor: pointer;
       animation: animateCard 1.2s ease-in-out;
+      transition: 0.5s all ease-in-out;
+      &:hover {
+        animation: animateHoverCard 2.5s ease-in-out;
+      }
       .card-front {
         .card-image {
           width: 100%;
@@ -243,11 +249,11 @@ body {
 }
 @keyframes animateCard {
   0% {
-    transform: translateX(-50%);
+    transform: scale(0.8);
     opacity: 0.4;
   }
   100% {
-    transform: translateX(0);
+    transform: scale(1);
     opacity: 1;
   }
 }
