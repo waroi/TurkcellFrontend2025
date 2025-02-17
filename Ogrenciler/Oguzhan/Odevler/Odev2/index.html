@@ -18,6 +18,7 @@
   </head>
 
   <body>
+    <!-- Header -->
     <header class="header">
       <nav class="navbar bg-body-tertiary sticky-top position-fixed w-100">
         <div class="container">
@@ -58,7 +59,7 @@
                 </select>
               </div>
 
-              <!--Sorting -->
+              <!--Sıralama -->
               <div>
                 <select
                   class="form-select"
@@ -91,131 +92,145 @@
       </div>
     </section>
 
-    <div class="addGameModal">
-      <!-- Modal -->
-      <div
-        class="modal fade"
-        id="addGameModal"
-        tabindex="-1"
-        aria-labelledby="addGameModalLabel"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="addGameModalLabel">Oyun Ekle</h1>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body">
-              <!-- FORM -->
+    <!-- CreateGameCard Modal -->
+    <section>
+      <div class="addGameModal">
+        <div
+          class="modal fade"
+          id="addGameModal"
+          tabindex="-1"
+          aria-labelledby="addGameModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="addGameModalLabel">
+                  Oyun Ekle
+                </h1>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <!-- FORM -->
 
-              <form id="addGameForm">
-                <div class="mb-3 fw-semibold">
-                  <label for="gameName" class="form-label">Oyun Adı</label>
-                  <input type="text" class="form-control" id="gameName" />
-                </div>
+                <form id="addGameForm">
+                  <div class="mb-3 fw-semibold">
+                    <label for="gameName" class="form-label">Oyun Adı</label>
+                    <input type="text" class="form-control" id="gameName" />
+                  </div>
 
-                <div class="mb-3 fw-semibold">
-                  <label for="description" class="form-label"
-                    >Oyun Açıklaması</label
-                  >
-                  <input type="text" class="form-control" id="description" />
-                </div>
-
-                <div class="input-group mb-3 fw-semibold gap-3">
-                  <div>
-                    <label for="releaseDate" class="form-label"
-                      >Çıkış Tarihi</label
+                  <div class="mb-3 fw-semibold">
+                    <label for="description" class="form-label"
+                      >Oyun Açıklaması</label
                     >
-                    <input type="date" class="form-control" id="releaseDate" />
+                    <input type="text" class="form-control" id="description" />
+                  </div>
+
+                  <div class="input-group mb-3 fw-semibold gap-3">
+                    <div>
+                      <label for="releaseDate" class="form-label"
+                        >Çıkış Tarihi</label
+                      >
+                      <input
+                        type="date"
+                        class="form-control"
+                        id="releaseDate"
+                      />
+                    </div>
+
+                    <div>
+                      <label for="developer" class="form-label"
+                        >Geliştirici</label
+                      >
+                      <input type="text" class="form-control" id="developer" />
+                    </div>
+                  </div>
+
+                  <div class="mb-3 fw-semibold">
+                    <label for="category" class="form-label">Kategori</label>
+                    <div class="input-group w-75 gap-3">
+                      <select
+                        class="form-select form-control"
+                        aria-label="Default select example"
+                        id="category"
+                      >
+                        <option selected disabled>Bir kategori seçin</option>
+                      </select>
+
+                      <button
+                        type="button"
+                        class="btn btn-primary border rounded"
+                        id="categoryBtn"
+                      >
+                        Ekle
+                      </button>
+                    </div>
+
+                    <ul
+                      class="list-group form-control w-50"
+                      id="list-group"
+                    ></ul>
                   </div>
 
                   <div>
-                    <label for="developer" class="form-label"
-                      >Geliştirici</label
-                    >
-                    <input type="text" class="form-control" id="developer" />
+                    <input type="hidden" id="categoryIds" name="categoryIds" />
                   </div>
-                </div>
 
-                <div class="mb-3 fw-semibold">
-                  <label for="category" class="form-label">Kategori</label>
-                  <div class="input-group w-75 gap-3">
-                    <select
-                      class="form-select form-control"
-                      aria-label="Default select example"
-                      id="category"
-                    >
-                      <option selected disabled>Bir kategori seçin</option>
-                    </select>
+                  <div class="mb-3 fw-semibold">
+                    <label for="imageUrl" class="form-label">Image Url</label>
+                    <input type="text" class="form-control" id="imageUrl" />
+                  </div>
 
+                  <div class="mb-3 fw-semibold">
+                    <label for="steamUrl" class="form-label">Steam Url</label>
+                    <input type="text" class="form-control" id="steamUrl" />
+                  </div>
+
+                  <div class="input-group d-flex align-items-center gap-3">
+                    <div>
+                      <label for="myPoint" class="form-label">Puanım</label>
+                      <input type="number" class="form-control" id="myPoint" />
+                    </div>
+
+                    <div>
+                      <input
+                        type="checkbox"
+                        class="form-check-input"
+                        id="isCompleted"
+                      />
+                      <label class="form-check-label" for="isCompleted"
+                        >Oyunu Bitirdim</label
+                      >
+                    </div>
+                  </div>
+                  <div class="modal-footer">
                     <button
                       type="button"
-                      class="btn btn-primary border rounded"
-                      id="categoryBtn"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
                     >
-                      Ekle
+                      Close
+                    </button>
+                    <button
+                      type="submit"
+                      class="btn btn-primary"
+                      id="addGameBtn"
+                    >
+                      Save changes
                     </button>
                   </div>
-
-                  <ul class="list-group form-control w-50" id="list-group"></ul>
-                </div>
-
-                <div>
-                  <input type="hidden" id="categoryIds" name="categoryIds" />
-                </div>
-
-                <div class="mb-3 fw-semibold">
-                  <label for="imageUrl" class="form-label">Image Url</label>
-                  <input type="text" class="form-control" id="imageUrl" />
-                </div>
-
-                <div class="mb-3 fw-semibold">
-                  <label for="steamUrl" class="form-label">Steam Url</label>
-                  <input type="text" class="form-control" id="steamUrl" />
-                </div>
-
-                <div class="input-group d-flex align-items-center gap-3">
-                  <div>
-                    <label for="myPoint" class="form-label">Puanım</label>
-                    <input type="number" class="form-control" id="myPoint" />
-                  </div>
-
-                  <div>
-                    <input
-                      type="checkbox"
-                      class="form-check-input"
-                      id="isCompleted"
-                    />
-                    <label class="form-check-label" for="isCompleted"
-                      >Oyunu Bitirdim</label
-                    >
-                  </div>
-                </div>
-                <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
-                <div class="modal-footer">
-                  <button
-                    type="button"
-                    class="btn btn-secondary"
-                    data-bs-dismiss="modal"
-                  >
-                    Close
-                  </button>
-                  <button type="submit" class="btn btn-primary" id="addGameBtn">
-                    Save changes
-                  </button>
-                </div>
-              </form>
+                </form>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer mt-auto bg-dark text-light py-3">

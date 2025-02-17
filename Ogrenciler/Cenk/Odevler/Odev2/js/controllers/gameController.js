@@ -14,6 +14,8 @@ export default class GameController {
 
   setupEventListeners = () => {
     document.querySelector("#addGameBtn").addEventListener("click", () => {
+      document.querySelector("#gameForm").reset();
+      delete document.querySelector("#gameForm").dataset.gameId;
       const modal = new bootstrap.Modal(document.querySelector("#gameModal"));
       modal.show();
     });
@@ -21,20 +23,20 @@ export default class GameController {
     document.querySelector("#gameForm").addEventListener("submit", (event) => {
       event.preventDefault();
       this.addGame();
-      const modal = bootstrap.Modal.getInstance(
-        document.querySelector("#gameModal")
-      );
-      modal.hide();
     });
-
+    document
+      .querySelector("#saveGameBtn")
+      .addEventListener("click", (event) => {
+        event.preventDefault();
+        this.addGame();
+      });
     document.querySelector(".game-list").addEventListener("click", (event) => {
-      if (event.target.classList.contains("edit-game")) {
-        const gameId = event.target.dataset.id;
-        this.editGame(gameId);
+      const target = event.target;
+      if (target.classList.contains("edit-game")) {
+        this.editGame(target.dataset.id);
       }
-      if (event.target.classList.contains("delete-game")) {
-        const gameId = event.target.dataset.id;
-        this.deleteGame(gameId);
+      if (target.classList.contains("delete-game")) {
+        this.deleteGame(target.dataset.id);
       }
     });
 
@@ -65,9 +67,28 @@ export default class GameController {
 
   addGame = () => {
     const gameData = this.modalView.getFormData();
-    GameService.addGame(gameData)
-      .then(() => this.loadGames())
-      .catch((error) => console.error("Oyun eklenirken hata oluştu:", error));
+
+    if (!gameData.name || !gameData.category || !gameData.releaseDate) {
+      alert("Lütfen tüm gerekli alanları doldurun!");
+      return;
+    }
+
+    if (gameData.id) {
+      GameService.updateGame(gameData.id, gameData)
+        .then(() => this.loadGames())
+        .catch((error) =>
+          console.error("Oyun güncellenirken hata oluştu:", error)
+        );
+    } else {
+      GameService.addGame(gameData)
+        .then(() => this.loadGames())
+        .catch((error) => console.error("Oyun eklenirken hata oluştu:", error));
+    }
+
+    const modal = bootstrap.Modal.getInstance(
+      document.querySelector("#gameModal")
+    );
+    modal.hide();
   };
 
   deleteGame = (id) => {
@@ -78,8 +99,10 @@ export default class GameController {
 
   editGame = (id) => {
     const gameToEdit = this.games.find((game) => game.id === parseInt(id));
+
     if (gameToEdit) {
       this.modalView.setFormData(gameToEdit);
+      document.querySelector("#gameForm").dataset.gameId = id;
       const modal = new bootstrap.Modal(document.querySelector("#gameModal"));
       modal.show();
     }

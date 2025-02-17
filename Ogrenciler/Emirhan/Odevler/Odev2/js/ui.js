@@ -4,10 +4,24 @@ class UI {
     this.gameContainer = document.getElementById('gameContainer')
     this.saveGameButton = document.getElementById('saveGame')
     this.newGameModal = document.getElementById('newGameModal')
+    this.searchInput = document.getElementById('searchInput')
+    this.sortRadios = document.querySelectorAll('input[name="sortOptions"]')
+
     this.gameId = null
     this.games = []
+    this.selectedCategories = new Set()
+    this.searchTerm = ''
+    this.sortValue = ''
+
     this.newGameModal.addEventListener('click', () => this.resetForm())
     this.saveGameButton.addEventListener('click', () => this.handleSaveGame())
+    this.searchInput.addEventListener('input', event =>
+      this.updateSearchTerm(event)
+    )
+
+    this.sortRadios.forEach(radio =>
+      radio.addEventListener('change', event => this.updateSort(event))
+    )
 
     this.getAllGames()
   }
@@ -16,23 +30,31 @@ class UI {
     const games = await this.api.getGames()
     this.games = games
     this.renderCategories()
-    this.renderGames(this.games)
+    this.renderGames(this.getSearchedGames())
   }
 
   renderCategories () {
     const categories = new Set(this.games.map(game => game.category))
     const filterContainer = document.getElementById('filterCollapseFilter')
-    console.log(categories)
+    filterContainer.innerHTML = ''
 
     categories.forEach(category => {
       const div = document.createElement('div')
-      div.className = 'form-check mt-'
-      div.innerHTML = `
-        <input class="form-check-input" type="checkbox" id=${category}>
-        <label class="form-check-label fs-6" for=${category}>${category}</label>
-      `
-      const input = div.querySelector('input')
+      div.className = 'form-check mt-3'
+
+      const input = document.createElement('input')
+      input.className = 'form-check-input'
+      input.type = 'checkbox'
+      input.id = category
       input.addEventListener('change', () => this.toggleCategory(category))
+
+      const label = document.createElement('label')
+      label.className = 'form-check-label fs-6'
+      label.htmlFor = category
+      label.textContent = category
+
+      div.appendChild(input)
+      div.appendChild(label)
       filterContainer.appendChild(div)
     })
   }
@@ -112,20 +134,28 @@ class UI {
         return games
     }
   }
-
   getSearchedGames () {
     const filteredAndSortedGames = this.getFilteredAndSortedGames()
-    return filteredAndSortedGames.filter(
-      game =>
+    return filteredAndSortedGames.filter(game => {
+      const searchTermLower = this.searchTerm.toLowerCase()
+      return (
         this.searchTerm === '' ||
-        game.name.toLowerCase().includes(this.searchTerm)
-    )
+        game.name.toLowerCase().includes(searchTermLower) ||
+        game.category.toLowerCase().includes(searchTermLower) ||
+        game.producer.toLowerCase().includes(searchTermLower)
+      )
+    })
+  }
+
+  renderGames (games) {
+    this.gameContainer.innerHTML = ''
+    games.forEach(game => this.createCard(game))
   }
 
   createCard (game) {
     const cardDiv = document.createElement('div')
     cardDiv.className =
-      'card col-4 col-lg-6 rounded-0 bg-dark border-secondary outline-none border-top-0 border-start-0 text-light p-4'
+      'card col-sm-12 col-lg-6 rounded-0 bg-dark border-secondary outline-none border-top-0 border-start-0 text-light p-4'
     cardDiv.id = game.id
 
     const img = document.createElement('img')
@@ -144,6 +174,19 @@ class UI {
     const title = document.createElement('h5')
     title.className = 'card-title mb-1 fs-5 fw-semibold'
     title.textContent = game.name
+
+    title.setAttribute('data-bs-toggle', 'modal')
+    title.setAttribute('data-bs-target', '#detailModal')
+
+    title.addEventListener('click', function () {
+      document.getElementById('modalTitle').textContent = game.name
+      document.getElementById('modalCategory').textContent = game.category
+      document.getElementById('modalYear').textContent = game.year
+      document.getElementById('modalProducer').textContent = game.producer
+      document.getElementById('modalDescription').textContent = game.description
+      document.getElementById('modalImage').src = game.imageUrl
+      document.getElementById('modalImage').alt = game.name
+    })
 
     const description = document.createElement('p')
     description.className = 'card-text mb-0 fs-6'

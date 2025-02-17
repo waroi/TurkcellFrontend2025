@@ -1,4 +1,5 @@
 @import "./variables.scss";
+@import "./button_style.scss";
 
 * {
 	margin: 0;
@@ -12,7 +13,7 @@ body {
 
 .game-card {
 	border-radius: 0;
-	filter: blur(2px);
+	filter: blur(3px);
 
 	.game-card-img {
 		height: 250px;
@@ -50,16 +51,36 @@ body {
 	}
 }
 
+.order-button {
+	@include game-archive-button-style;
+}
+.filter-button {
+	@include game-archive-button-style;
+}
+.create-button {
+	@include game-archive-button-style;
+}
+.search-button {
+	@include game-archive-button-style;
+}
 .delete-button {
+	@include game-archive-button-style;
 	text-underline-position: below;
 	text-decoration: underline;
 	color: red;
 }
 
 .edit-button {
+	@include game-archive-button-style;
 	text-underline-position: below;
 	text-decoration: underline;
 	color: blue;
+}
+.detail-button {
+	@include game-archive-button-style;
+	text-underline-position: below;
+	text-decoration: underline;
+	color: green;
 }
 
 .footer-style {
