@@ -23,16 +23,13 @@ To run the project, you need to first set up JSON Server. Follow the steps below
 1. Install JSON Server
 Install JSON Server globally:
 
-bash
-Kopyala
-Düzenle
+
 npm install -g json-server
 2. Create the Database File
 In the project root directory, create a file named db.json and add the following data:
 
 json
-Kopyala
-Düzenle
+
 {
   "games": [
     {
@@ -60,25 +57,7 @@ Düzenle
 3. Start JSON Server
 Start JSON Server by running the following command:
 
-bash
-Kopyala
-Düzenle
+
 json-server --watch db.json --port 3000
 4. Run the Application
-In the project directory, open your terminal and run the following commands to start the application:
-
-bash
-Kopyala
-Düzenle
-npm install
-npm start
-The app will be accessible at http://localhost:3000.
-
-Contributing
-If you'd like to contribute to this project, please follow these steps:
-
-Fork the project.
-Create a new branch: git checkout -b feature-xyz
-Make your changes and commit them.
-Push your branch: git push origin feature-xyz
-Open a pull request.
+In the project directory, open your terminal and run the following commands to start the application.

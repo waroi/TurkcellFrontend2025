@@ -1,0 +1,22 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url(https://steamuserimages-a.akamaihd.net/ugc/927054170197322754/61C5B8F5612B21905B75EE84F468CBD9D534AE5D/?imw=512&amp;imh=288&amp;ima=fit&amp;impolicy=Letterbox&amp;imcolor=%23000000&amp;letterbox=true);
+
+    .container{
+        text-align: center;
+        margin-top: -60px;
+        .details{
+            background-color: bisque;
+            width: 70%;
+            margin: auto;
+            padding: 20px;
+            border: 5px solid white;
+            border-radius: 50px;
+
+            p{
+                color: black;
+            }
+        }
+    }
+}

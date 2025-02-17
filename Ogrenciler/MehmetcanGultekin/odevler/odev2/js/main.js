@@ -10,7 +10,7 @@ class App {
     loadGames() {
         this.gameService.fetchGames()
             .then(games => this.gameUI.displayGames(games))
-            .catch(error => {
+            .catch(() => {
                 this.gameUI.alertManager.showAlert(
                     'Oyunlar yüklenirken bir hata oluştu', 
                     'danger'

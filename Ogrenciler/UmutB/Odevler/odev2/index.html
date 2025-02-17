@@ -11,27 +11,25 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg fixed-top">
+    <nav class="navbar navbar-expand-lg fixed-top" role="navigation" aria-label="Ana navigasyon">
         <div class="container">
-            <img class="navbar-brand" style="height: 100%; width: 8vw" src="assets/images/logo.png" alt="">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
+            <img class="navbar-brand" style="height: 100%; width: 8vw" src="assets/images/logo.png" alt="Neon Games Logo">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Menüyü aç/kapat">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbar">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#upcoming-section">KEŞFET</a>
+                <ul class="navbar-nav ms-auto" role="menubar">
+                    <li class="nav-item" role="none">
+                        <a class="nav-link" href="#upcoming-section" role="menuitem">KEŞFET</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">ÇOK SATANLAR</a>
-                        <!-- EN ÇOK SATANLAR sectionuna götürmeli -->
+                    <li class="nav-item" role="none">
+                        <a class="nav-link" href="#bestsellers" role="menuitem">ÇOK SATANLAR</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">OYUN LİSTESİ</a>
-                        <!-- OYUNLAR sectionuna götürmeli -->
+                    <li class="nav-item" role="none">
+                        <a class="nav-link" href="#games" role="menuitem">OYUN LİSTESİ</a>
                     </li>
-                    <li class="nav-item">
-                        <button class="btn btn-cyber" data-bs-toggle="modal" data-bs-target="#gameModal">
+                    <li class="nav-item" role="none">
+                        <button class="btn btn-cyber" data-bs-toggle="modal" data-bs-target="#gameModal" role="menuitem" aria-haspopup="dialog">
                             YENİ OYUN EKLE
                         </button>
                     </li>
@@ -39,50 +37,50 @@
             </div>
         </div>
     </nav>
-    <section class="hero-section">
+    <section class="hero-section" role="banner" aria-label="Ana bölüm">
         <div class="video-background">
             <div class="video-overlay"></div>
             <iframe width="1000" height="1000" src="https://www.youtube.com/embed/-Q_WWEv7zDY?mute=1&autoplay=1"
                 title="Inazuma night walk | Genshin Impact" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen aria-label="Arkaplan video"></iframe>
         </div>
         <div class="container position-relative">
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <h1 class="hero-title"> <img class="navbar-brand" style="height: 100%; width: 24vw"
-                            src="assets/images/logo.png" alt="">
+                    <h1 class="hero-title"> 
+                        <img class="navbar-brand" style="height: 100%; width: 24vw" src="assets/images/logo.png" alt="Neon Games büyük logo">
                     </h1>
-                    <p class="hero-subtitle">En yeni oyunları keşfet ve kendi koleksiyonunu oluştur</p>
+                    <p class="hero-subtitle" role="doc-subtitle">En yeni oyunları keşfet ve kendi koleksiyonunu oluştur</p>
                 </div>
                 <div class="col-lg-6">
-                    <div class="weekly-game">
+                    <div class="weekly-game" role="complementary" aria-label="Haftanın oyunu">
                         <h2>Haftanın Oyunu</h2>
-                        <img class="weekly-game-img" src="./assets/images/genshinadd.png" alt="weekly game">
+                        <img class="weekly-game-img" src="./assets/images/genshinadd.png" alt="Haftanın oyunu görseli">
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section id="upcoming-section" class="upcoming-section">
+    <section id="upcoming-section" class="upcoming-section" role="region" aria-label="Yakında çıkacak oyunlar">
         <div class="container">
             <h2 class="section-title">YAKINDA ÇIKACAKLAR</h2>
             <div class="upcoming-grid">
-                <div class="upcoming-card main-card">
+                <div class="upcoming-card main-card" role="article" aria-label="Ana yakında çıkacak oyun">
                     <div class="card-image">
                         <img src="https://images.immediate.co.uk/production/volatile/sites/3/2025/02/GTA-6-release-window-news-84d99c8.jpg?quality=90&resize=980,654"
                             alt="GTA 6">
-                        <div class="release-timer">
+                        <div class="release-timer" role="timer" aria-label="Çıkışa kalan süre">
                             <div class="timer-item">
-                                <span class="number">100</span>
+                                <span class="number" aria-label="Kalan gün">100</span>
                                 <span class="label">GÜN</span>
                             </div>
                             <div class="timer-item">
-                                <span class="number">10</span>
+                                <span class="number" aria-label="Kalan saat">10</span>
                                 <span class="label">SAAT</span>
                             </div>
                             <div class="timer-item">
-                                <span class="number">10</span>
+                                <span class="number" aria-label="Kalan dakika">10</span>
                                 <span class="label">DAKİKA</span>
                             </div>
                         </div>
@@ -93,36 +91,35 @@
                             <p class="game-desc">Vice City'ye dönüş. Yeni nesil grafikler, genişletilmiş oyun dünyası ve
                                 çok daha fazlası.</p>
                         </div>
-                        <a href="https://www.rockstargames.com/VI" target="_blank" class="btn btn-cyber btn-lg">ÖN SİPARİŞ</a>
+                        <a href="https://www.rockstargames.com/VI" target="_blank" class="btn btn-cyber btn-lg" role="button">ÖN SİPARİŞ</a>
                     </div>
                 </div>
                 <div class="upcoming-grid-small">
-                    <div class="upcoming-card small-card">
+                    <div class="upcoming-card small-card" role="article">
                         <img src="https://media.contentapi.ea.com/content/dam/eacom/dragon-age/dragon-age-the-veilguard/common/dragon-age-veilguard-eacom-coming-soon-16x9.jpg.adapt.crop191x100.1200w.jpg"
                             alt="Dragon Age 4">
                         <div class="card-overlay">
                             <h4>DRAGON AGE 4</h4>
-                            <div class="release-date">2025</div>
-                            <a href="https://store.steampowered.com/agecheck/app/1845910/" target="_blank" class="btn btn-cyber-secondary">İNCELE</a>
+                            <div class="release-date" aria-label="Çıkış tarihi">2025</div>
+                            <a href="https://store.steampowered.com/agecheck/app/1845910/" target="_blank" class="btn btn-cyber-secondary" role="button">İNCELE</a>
                         </div>
                     </div>
-                    <div class="upcoming-card small-card">
+                    <div class="upcoming-card small-card" role="article">
                         <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2769570/capsule_616x353.jpg?t=1717960572"
                             alt="Fable">
                         <div class="card-overlay">
                             <h4>FABLE</h4>
-                            <div class="release-date">2025</div>
-                            <a href="https://store.steampowered.com/app/2769570/Fable/" target="_blank" class="btn btn-cyber-secondary">İNCELE</a>
+                            <div class="release-date" aria-label="Çıkış tarihi">2025</div>
+                            <a href="https://store.steampowered.com/app/2769570/Fable/" target="_blank" class="btn btn-cyber-secondary" role="button">İNCELE</a>
                         </div>
                     </div>
-
-                    <div class="upcoming-card small-card">
+                    <div class="upcoming-card small-card" role="article">
                         <img src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/2842040/5275d8f2b9395660b8c14d407651090f0e014587/capsule_616x353.jpg?t=1739293300"
                             alt="Star Wars: Outlaws">
                         <div class="card-overlay">
                             <h4>STAR WARS: OUTLAWS</h4>
-                            <div class="release-date">2025</div>
-                            <a href="https://store.steampowered.com/app/2842040/Star_Wars_Outlaws/" target="_blank" class="btn btn-cyber-secondary">İNCELE</a>
+                            <div class="release-date" aria-label="Çıkış tarihi">2025</div>
+                            <a href="https://store.steampowered.com/app/2842040/Star_Wars_Outlaws/" target="_blank" class="btn btn-cyber-secondary" role="button">İNCELE</a>
                         </div>
                     </div>
                 </div>
@@ -130,23 +127,23 @@
         </div>
     </section>
 
-    <section class="bestsellers-section">
+    <section id="bestsellers" class="bestsellers-section" role="region" aria-label="En çok satan oyunlar">
         <div class="container">
             <h2 class="section-title">EN ÇOK SATANLAR</h2>
-            <div id="bestsellersCarousel" class="carousel slide bestsellers-carousel" data-bs-ride="carousel">
-                <div class="carousel-indicators">
+            <div id="bestsellersCarousel" class="carousel slide bestsellers-carousel" data-bs-ride="carousel" role="region" aria-roledescription="carousel">
+                <div class="carousel-indicators" role="tablist">
                     <button type="button" data-bs-target="#bestsellersCarousel" data-bs-slide-to="0"
-                        class="active"></button>
-                    <button type="button" data-bs-target="#bestsellersCarousel" data-bs-slide-to="1"></button>
-                    <button type="button" data-bs-target="#bestsellersCarousel" data-bs-slide-to="2"></button>
+                        class="active" role="tab" aria-label="Slayt 1" aria-selected="true"></button>
+                    <button type="button" data-bs-target="#bestsellersCarousel" data-bs-slide-to="1" role="tab" aria-label="Slayt 2" aria-selected="false"></button>
+                    <button type="button" data-bs-target="#bestsellersCarousel" data-bs-slide-to="2" role="tab" aria-label="Slayt 3" aria-selected="false"></button>
                 </div>
                 <div class="carousel-inner">
-                    <div class="carousel-item active">
+                    <div class="carousel-item active" role="tabpanel">
                         <div class="bestseller-card">
                             <div class="row align-items-center">
                                 <div class="col-lg-6">
                                     <img src="https://upload.wikimedia.org/wikipedia/en/0/0c/Witcher_3_cover_art.jpg"
-                                        class="bestseller-image" alt="The Witcher 3">
+                                        class="bestseller-image" alt="The Witcher 3 kapak görseli">
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="bestseller-content">
@@ -154,21 +151,21 @@
                                         <p class="neon-text mb-4">Geralt'ın destansı macerasında açık dünyayı keşfedin
                                             ve kaderinizi şekillendirin.</p>
                                         <div class="game-stats mb-4">
-                                            <span class="genre-tag">RPG</span>
-                                            <span class="genre-tag">AÇIK DÜNYA</span>
+                                            <span class="genre-tag" role="note">RPG</span>
+                                            <span class="genre-tag" role="note">AÇIK DÜNYA</span>
                                         </div>
-                                        <a href="https://store.steampowered.com/app/292030/" class="btn btn-cyber">İNCELE</a>
+                                        <a href="https://store.steampowered.com/app/292030/" class="btn btn-cyber" role="button">İNCELE</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="carousel-item">
+                    <div class="carousel-item" role="tabpanel">
                         <div class="bestseller-card">
                             <div class="row align-items-center">
                                 <div class="col-lg-6">
                                     <img src="https://upload.wikimedia.org/wikipedia/en/4/44/Red_Dead_Redemption_II.jpg"
-                                        class="bestseller-image" alt="Red Dead Redemption 2">
+                                        class="bestseller-image" alt="Red Dead Redemption 2 kapak görseli">
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="bestseller-content">
@@ -176,22 +173,22 @@
                                         <p class="neon-text mb-4">Vahşi Batı'nın son günlerinde epik bir hikayeye adım
                                             atın.</p>
                                         <div class="game-stats mb-4">
-                                            <span class="genre-tag">ACTION</span>
-                                            <span class="genre-tag">AÇIK DÜNYA</span>
+                                            <span class="genre-tag" role="note">ACTION</span>
+                                            <span class="genre-tag" role="note">AÇIK DÜNYA</span>
                                         </div>
                                         <a href="https://store.steampowered.com/app/1174180/"
-                                            class="btn btn-cyber">İNCELE</a>
+                                            class="btn btn-cyber" role="button">İNCELE</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="carousel-item">
+                    <div class="carousel-item" role="tabpanel">
                         <div class="bestseller-card">
                             <div class="row align-items-center">
                                 <div class="col-lg-6">
                                     <img src="https://i.ytimg.com/vi/E3Huy2cdih0/hqdefault.jpg"
-                                        class="bestseller-image" alt="Elden Ring">
+                                        class="bestseller-image" alt="Elden Ring kapak görseli">
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="bestseller-content">
@@ -199,11 +196,11 @@
                                         <p class="neon-text mb-4">From Software'den yeni bir başyapıt. Zorlu bir dünyada
                                             kendi hikayenizi yazın.</p>
                                         <div class="game-stats mb-4">
-                                            <span class="genre-tag">ACTION RPG</span>
-                                            <span class="genre-tag">SOULS-LIKE</span>
+                                            <span class="genre-tag" role="note">ACTION RPG</span>
+                                            <span class="genre-tag" role="note">SOULS-LIKE</span>
                                         </div>
                                         <a href="https://store.steampowered.com/app/1245620/"
-                                            class="btn btn-cyber">İNCELE</a>
+                                            class="btn btn-cyber" role="button">İNCELE</a>
                                     </div>
                                 </div>
                             </div>
@@ -211,57 +208,57 @@
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#bestsellersCarousel"
-                    data-bs-slide="prev">
+                    data-bs-slide="prev" aria-label="Önceki">
                     <span class="carousel-control-prev-icon"></span>
                 </button>
                 <button class="carousel-control-next" type="button" data-bs-target="#bestsellersCarousel"
-                    data-bs-slide="next">
+                    data-bs-slide="next" aria-label="Sonraki">
                     <span class="carousel-control-next-icon"></span>
                 </button>
             </div>
         </div>
     </section>
-    <h2 class="section-title">OYUNLAR</h2>
+    <h2 id="games" class="section-title">OYUNLAR</h2>
     <div class="container">
-        <div class="filter-section">
+        <div class="filter-section" role="search" aria-label="Oyun filtreleme">
             <div class="row">
                 <div class="col-md-4 mb-3">
-                    <select class="form-select" id="categoryFilter">
+                    <select class="form-select" id="categoryFilter" aria-label="Kategori filtresi">
                         <option value="">TÜM KATEGORİLER</option>
                     </select>
                 </div>
                 <div class="col-md-4 mb-3">
-                    <select class="form-select" id="sortType">
+                    <select class="form-select" id="sortType" aria-label="Sıralama tipi">
                         <option value="az">A-Z</option>
                         <option value="za">Z-A</option>
                         <option value="date">ÇIKIŞ TARİHİ</option>
                     </select>
                 </div>
                 <div class="col-md-4 mb-3">
-                    <input type="text" class="form-control" id="searchInput" placeholder="Oyun ara...">
+                    <input type="text" class="form-control" id="searchInput" placeholder="Oyun ara..." aria-label="Oyun arama">
                 </div>
                 <div class="col-md-6 mb-3">
-                    <input type="date" class="form-control" id="startDate" placeholder="Başlangıç Tarihi">
+                    <input type="date" class="form-control" id="startDate" placeholder="Başlangıç Tarihi" aria-label="Başlangıç tarihi seçimi">
                 </div>
                 <div class="col-md-6 mb-3">
-                    <input type="date" class="form-control" id="endDate" placeholder="Bitiş Tarihi">
+                    <input type="date" class="form-control" id="endDate" placeholder="Bitiş Tarihi" aria-label="Bitiş tarihi seçimi">
                 </div>
             </div>
         </div>
-        <div class="row" id="gameList">
+        <div class="row" id="gameList" role="list" aria-label="Oyun listesi">
             <!-- Oyunlar -->
         </div>
     </div>
     <!-- Modal -->
-    <div class="modal fade" id="gameModal" tabindex="-1">
-        <div class="modal-dialog modal-lg">
+    <div class="modal fade" id="gameModal" tabindex="-1" role="dialog" aria-labelledby="gameModalTitle" aria-modal="true">
+        <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title text-neon">OYUN EKLE/DÜZENLE</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    <h5 class="modal-title text-neon" id="gameModalTitle">OYUN EKLE/DÜZENLE</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Kapat"></button>
                 </div>
                 <div class="modal-body">
-                    <form id="gameForm" class="cyber-form">
+                    <form id="gameForm" class="cyber-form" role="form">
                         <div class="row">
                             <div class="col-md-8">
                                 <input type="hidden" id="gameId">
@@ -269,60 +266,59 @@
                                     <div class="col-md-6">
                                         <div class="form-group cyber-input">
                                             <input type="text" class="form-control neon-input" id="gameName"
-                                                name="gameName" required>
+                                                name="gameName" required aria-required="true">
                                             <label for="gameName" class="neon-label">OYUN ADI</label>
-                                            <div class="invalid-feedback">Oyun adı zorunludur.</div>
+                                            <div class="invalid-feedback" role="alert">Oyun adı zorunludur.</div>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group cyber-input">
                                             <input type="text" class="form-control neon-input" id="gameCategory"
-                                                name="gameCategory" required>
+                                                name="gameCategory" required aria-required="true">
                                             <label for="gameCategory" class="neon-label">KATEGORİ</label>
-                                            <div class="invalid-feedback">Kategori zorunludur.</div>
+                                            <div class="invalid-feedback" role="alert">Kategori zorunludur.</div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group cyber-input mb-4">
                                     <textarea class="form-control neon-input" id="gameDescription"
-                                        name="gameDescription" rows="3" required></textarea>
+                                        name="gameDescription" rows="3" required aria-required="true"></textarea>
                                     <label for="gameDescription" class="neon-label">AÇIKLAMA</label>
-                                    <div class="invalid-feedback">Açıklama zorunludur.</div>
+                                    <div class="invalid-feedback" role="alert">Açıklama zorunludur.</div>
                                 </div>
                                 <div class="row mb-4">
                                     <div class="col-md-6">
                                         <div class="form-group cyber-input">
                                             <input type="date" class="form-control neon-input" id="gameReleaseDate"
-                                                name="gameReleaseDate" required>
+                                                name="gameReleaseDate" required aria-required="true">
                                             <label for="gameReleaseDate" class="neon-label">ÇIKIŞ TARİHİ</label>
-                                            <div class="invalid-feedback">Çıkış tarihi zorunludur.</div>
+                                            <div class="invalid-feedback" role="alert">Çıkış tarihi zorunludur.</div>
                                         </div>
                                     </div>
-
                                     <div class="col-md-6">
                                         <div class="form-group cyber-input">
                                             <input type="text" class="form-control neon-input" id="gamePublisher"
-                                                name="gamePublisher" required>
+                                                name="gamePublisher" required aria-required="true">
                                             <label for="gamePublisher" class="neon-label">YAPIMCI</label>
-                                            <div class="invalid-feedback">Yapımcı zorunludur.</div>
+                                            <div class="invalid-feedback" role="alert">Yapımcı zorunludur.</div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group cyber-input mb-4">
                                     <input type="url" class="form-control neon-input" id="gameImage" name="gameImage"
-                                        required>
+                                        required aria-required="true">
                                     <label for="gameImage" class="neon-label">OYUN GÖRSELİ URL</label>
-                                    <div class="invalid-feedback">Görsel URL'i zorunludur.</div>
+                                    <div class="invalid-feedback" role="alert">Görsel URL'i zorunludur.</div>
                                 </div>
                                 <div class="form-group cyber-input mb-4">
                                     <input type="url" class="form-control neon-input" id="gameSteamUrl"
-                                        name="gameSteamUrl" required>
+                                        name="gameSteamUrl" required aria-required="true">
                                     <label for="gameSteamUrl" class="neon-label">STEAM URL</label>
-                                    <div class="invalid-feedback">Steam URL'i zorunludur.</div>
+                                    <div class="invalid-feedback" role="alert">Steam URL'i zorunludur.</div>
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <div class="preview-container">
+                                <div class="preview-container" role="region" aria-label="Görsel önizleme">
                                     <h5 class="text-center mb-3">Oyun Görseli Önizleme</h5>
                                     <div class="image-preview">
                                         <img id="imagePreview" src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png" alt="Önizleme"
@@ -340,12 +336,12 @@
             </div>
         </div>
     </div>
-    <div class="help-container">
+    <div class="help-container" role="complementary" aria-label="Yardım menüsü">
         <div class="paimon-container">
-            <img class="paimon" src="./assets/images/paimon.gif" alt="paimon img">
+            <img class="paimon" src="./assets/images/paimon.gif" alt="Paimon yardımcı karakter">
         </div>
-        <div class="help-text">YARDIM</div>
-        <div class="help-overlay">
+        <div class="help-text" role="button" aria-expanded="false" aria-controls="helpOverlay">YARDIM</div>
+        <div class="help-overlay" id="helpOverlay" role="dialog" aria-label="Yardım içeriği">
             <div class="help-content">
                 <h2 class="help-title">NEON GAMES - Kullanım Kılavuzu</h2>
                 <div class="help-section">
@@ -374,43 +370,43 @@
             </div>
         </div>
     </div>
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="footer-top">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4 mb-4">
-                        <h3 class="footer-title"> <img class="navbar-brand" style="height: 100%; width: 8vw"
-                                src="assets/images/logo.png" alt="">
+                        <h3 class="footer-title"> 
+                            <img class="navbar-brand" style="height: 100%; width: 8vw" src="assets/images/logo.png" alt="Neon Games Logo">
                         </h3>
                         <p class="footer-description">
                             Dijital oyun dünyasının merkezi. En yeni ve popüler oyunları keşfedin,
                             koleksiyonunuzu genişletin.
                         </p>
-                        <div class="social-links">
-                            <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-steam"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <div class="social-links" role="navigation" aria-label="Sosyal medya bağlantıları">
+                            <a href="#" class="social-link" aria-label="Discord"><i class="fab fa-discord"></i></a>
+                            <a href="#" class="social-link" aria-label="Steam"><i class="fab fa-steam"></i></a>
+                            <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-link" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-4 mb-4">
                         <h4 class="footer-subtitle">KEŞFET</h4>
-                        <ul class="footer-links">
-                            <li><a href="#">Yeni Çıkanlar</a></li>
-                            <li><a href="#upcoming-section">Yakında</a></li>
+                        <ul class="footer-links" role="list">
+                            <li><a href="#" role="listitem">Yeni Çıkanlar</a></li>
+                            <li><a href="#upcoming-section" role="listitem">Yakında</a></li>
                         </ul>
                     </div>
                     <div class="col-lg-2 col-md-4 mb-4">
                         <h4 class="footer-subtitle">DESTEK</h4>
-                        <ul class="footer-links">
-                            <li><a href="#">İletişim</a></li>
+                        <ul class="footer-links" role="list">
+                            <li><a href="#" role="listitem">İletişim</a></li>
                         </ul>
                     </div>
                     <div class="col-lg-4 col-md-4 mb-4">
                         <h4 class="footer-subtitle">BÜLTEN</h4>
                         <p class="footer-description">En son haberler ve özel teklifler için abone olun</p>
-                        <div class="newsletter-form">
-                            <input type="email" class="footer-input" placeholder="E-posta adresiniz">
+                        <div class="newsletter-form" role="form" aria-label="Bülten kayıt formu">
+                            <input type="email" class="footer-input" placeholder="E-posta adresiniz" aria-label="E-posta adresi">
                             <button class="btn btn-cyber">ABONE OL</button>
                         </div>
                     </div>
@@ -424,9 +420,9 @@
                         <p class="copyright">© 2025 neon. Tüm hakları saklıdır.</p>
                     </div>
                     <div class="col-md-6">
-                        <ul class="legal-links">
-                            <li><a href="#">Gizlilik Politikası</a></li>
-                            <li><a href="#">Kullanım Şartları</a></li>
+                        <ul class="legal-links" role="list">
+                            <li><a href="#" role="listitem">Gizlilik Politikası</a></li>
+                            <li><a href="#" role="listitem">Kullanım Şartları</a></li>
                         </ul>
                     </div>
                 </div>

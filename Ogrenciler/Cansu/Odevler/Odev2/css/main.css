@@ -11946,6 +11946,9 @@ body.dark .navbar .nav-link {
 #gameList .game-card p {
   font-size: 0.9rem;
   color: #adb5bd;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 body.dark #gameList .game-card {
@@ -12000,24 +12003,6 @@ body.dark #categorySelect {
   border: 1px solid rgb(161.1158798283, 167.8755364807, 173.8841201717);
 }
 
-.animated-text {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #0d6efd;
-  white-space: nowrap;
-  overflow: hidden;
-  display: inline-block;
-  animation: slide 10s linear infinite;
-}
-
-@keyframes slide {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
 .card img {
   width: 100%;
   height: 250px;

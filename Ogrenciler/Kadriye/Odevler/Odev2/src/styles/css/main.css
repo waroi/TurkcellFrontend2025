@@ -2972,8 +2972,8 @@ textarea.form-control-lg {
   --bs-btn-bg: #002e28;
   --bs-btn-border-color: #002e28;
   --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: rgb(0, 39.1, 34);
-  --bs-btn-hover-border-color: rgb(0, 36.8, 32);
+  --bs-btn-hover-bg: rgb(0, 27.6, 24);
+  --bs-btn-hover-border-color: rgb(0, 13.8, 12);
   --bs-btn-focus-shadow-rgb: 38, 77, 72;
   --bs-btn-active-color: #fff;
   --bs-btn-active-bg: rgb(0, 36.8, 32);
@@ -2989,8 +2989,8 @@ textarea.form-control-lg {
   --bs-btn-bg: #a07af5;
   --bs-btn-border-color: #a07af5;
   --bs-btn-hover-color: #000;
-  --bs-btn-hover-bg: rgb(174.25, 141.95, 246.5);
-  --bs-btn-hover-border-color: rgb(169.5, 135.3, 246);
+  --bs-btn-hover-bg: rgb(198, 175.2, 249);
+  --bs-btn-hover-border-color: rgb(226.5, 215.1, 252);
   --bs-btn-focus-shadow-rgb: 136, 104, 208;
   --bs-btn-active-color: #000;
   --bs-btn-active-bg: rgb(179, 148.6, 247);
@@ -3006,8 +3006,8 @@ textarea.form-control-lg {
   --bs-btn-bg: #198754;
   --bs-btn-border-color: #198754;
   --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: rgb(21.25, 114.75, 71.4);
-  --bs-btn-hover-border-color: rgb(20, 108, 67.2);
+  --bs-btn-hover-bg: rgb(15, 81, 50.4);
+  --bs-btn-hover-border-color: rgb(7.5, 40.5, 25.2);
   --bs-btn-focus-shadow-rgb: 60, 153, 110;
   --bs-btn-active-color: #fff;
   --bs-btn-active-bg: rgb(20, 108, 67.2);
@@ -3023,8 +3023,8 @@ textarea.form-control-lg {
   --bs-btn-bg: #0dcaf0;
   --bs-btn-border-color: #0dcaf0;
   --bs-btn-hover-color: #000;
-  --bs-btn-hover-bg: rgb(49.3, 209.95, 242.25);
-  --bs-btn-hover-border-color: rgb(37.2, 207.3, 241.5);
+  --bs-btn-hover-bg: rgb(109.8, 223.2, 246);
+  --bs-btn-hover-border-color: rgb(182.4, 239.1, 250.5);
   --bs-btn-focus-shadow-rgb: 11, 172, 204;
   --bs-btn-active-color: #000;
   --bs-btn-active-bg: rgb(61.4, 212.6, 243);
@@ -3040,8 +3040,8 @@ textarea.form-control-lg {
   --bs-btn-bg: rgb(232, 213, 181);
   --bs-btn-border-color: rgb(232, 213, 181);
   --bs-btn-hover-color: #000;
-  --bs-btn-hover-bg: rgb(235.45, 219.3, 192.1);
-  --bs-btn-hover-border-color: rgb(234.3, 217.2, 188.4);
+  --bs-btn-hover-bg: rgb(241.2, 229.8, 210.6);
+  --bs-btn-hover-border-color: rgb(248.1, 242.4, 232.8);
   --bs-btn-focus-shadow-rgb: 197, 181, 154;
   --bs-btn-active-color: #000;
   --bs-btn-active-bg: rgb(236.6, 221.4, 195.8);
@@ -3057,8 +3057,8 @@ textarea.form-control-lg {
   --bs-btn-bg: #dc3545;
   --bs-btn-border-color: #dc3545;
   --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: rgb(187, 45.05, 58.65);
-  --bs-btn-hover-border-color: rgb(176, 42.4, 55.2);
+  --bs-btn-hover-bg: rgb(132, 31.8, 41.4);
+  --bs-btn-hover-border-color: rgb(66, 15.9, 20.7);
   --bs-btn-focus-shadow-rgb: 225, 83, 97;
   --bs-btn-active-color: #fff;
   --bs-btn-active-bg: rgb(176, 42.4, 55.2);
@@ -3074,8 +3074,8 @@ textarea.form-control-lg {
   --bs-btn-bg: #f8f9fa;
   --bs-btn-border-color: #f8f9fa;
   --bs-btn-hover-color: #000;
-  --bs-btn-hover-bg: rgb(210.8, 211.65, 212.5);
-  --bs-btn-hover-border-color: rgb(198.4, 199.2, 200);
+  --bs-btn-hover-bg: rgb(148.8, 149.4, 150);
+  --bs-btn-hover-border-color: rgb(74.4, 74.7, 75);
   --bs-btn-focus-shadow-rgb: 211, 212, 213;
   --bs-btn-active-color: #000;
   --bs-btn-active-bg: rgb(198.4, 199.2, 200);
@@ -3091,8 +3091,8 @@ textarea.form-control-lg {
   --bs-btn-bg: #11021f;
   --bs-btn-border-color: #11021f;
   --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: rgb(52.7, 39.95, 64.6);
-  --bs-btn-hover-border-color: rgb(40.8, 27.3, 53.4);
+  --bs-btn-hover-bg: rgb(112.2, 103.2, 120.6);
+  --bs-btn-hover-border-color: rgb(183.6, 179.1, 187.8);
   --bs-btn-focus-shadow-rgb: 53, 40, 65;
   --bs-btn-active-color: #fff;
   --bs-btn-active-bg: rgb(64.6, 52.6, 75.8);
@@ -4298,7 +4298,7 @@ textarea.form-control-lg {
   --bs-card-title-color: ;
   --bs-card-subtitle-color: ;
   --bs-card-border-width: var(--bs-border-width);
-  --bs-card-border-color: var(--bs-border-color-translucent);
+  --bs-card-border-color: rgba(160, 122, 245, 0.5);
   --bs-card-border-radius: var(--bs-border-radius);
   --bs-card-box-shadow: ;
   --bs-card-inner-border-radius: calc(var(--bs-border-radius) - (var(--bs-border-width)));
@@ -11845,12 +11845,17 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+* {
+  font-weight: 500;
+}
+
 body {
-  background-color: rgb(232, 213, 181);
+  background: linear-gradient(135deg, rgb(232, 213, 181), rgb(255, 238, 211), rgb(204, 235, 255), rgb(204, 204, 255));
+  background-size: cover;
 }
 
 .navbar-brand {
-  text-shadow: 0px 0px 10px #f5b058;
+  animation: h1Animation 3s infinite;
 }
 
 h5, .h5 {
@@ -11865,10 +11870,39 @@ h5, .h5 {
   display: block;
   right: 50px;
   bottom: 50px;
-  transition: all 0.3s linear;
+  transition: all 0.2s linear;
 }
 #upButton:hover {
   transform: scale(1.1);
+}
+
+.card:hover {
+  transition: all 0.2s linear;
+  transform: scale(1.03);
+  box-shadow: 0 0 5px rgba(161, 122, 245, 0.5);
+  border-color: rgba(161, 122, 245, 0.5);
+}
+
+button:hover {
+  transition: all 0.2s linear;
+  transform: scale(1.02);
+}
+
+hr {
+  color: #002e28;
+  font-weight: 500;
+}
+
+@keyframes h1Animation {
+  0% {
+    text-shadow: 0px 0px 1px #f5b058;
+  }
+  50% {
+    text-shadow: 0px 0px 20px #f5b058;
+  }
+  100% {
+    text-shadow: 0px 0px 1px #f5b058;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
