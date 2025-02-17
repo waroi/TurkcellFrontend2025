@@ -53,7 +53,7 @@ class UI {
             games.forEach(async (game) => {
                 let cardHtml = document.querySelector(`[item-id="${game.id}"]`);
                 let searchValue = searchInput.value.replace(/\s+/g, "").toLowerCase();
-                let found = false; // Arama sonucunu takip eden değişken
+                let found = false;
     
                 for (const [key, value] of Object.entries(game)) {
                     let cardValue = String(value).replace(/\s+/g, "").toLowerCase();
