@@ -1,11 +1,11 @@
-import { useState, useEffect } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import NavBar from './components/NavBar';
-import WeatherCard from './components/WeatherCard';
+import { useState, useEffect } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import NavBar from "./components/NavBar";
+import WeatherCard from "./components/WeatherCard";
 
 function App() {
   const [cardData, setCardData] = useState({});
-  const [search, setSearchValue] = useState('bursa');
+  const [search, setSearchValue] = useState("bursa");
 
   const handleSearchButtonClick = () => {
     fetchWeatherData();
@@ -20,7 +20,7 @@ function App() {
       }&units=metric`;
       const response = await fetch(url);
       if (!response.ok) {
-        console.error('Hata Kodu:', response.status);
+        console.error("Hata Kodu:", response.status);
         return;
       }
       const data = await response.json();
@@ -36,7 +36,7 @@ function App() {
       });
       console.log(data);
     } catch (error) {
-      console.error('API çağrısı başarısız:', error);
+      console.error("API çağrısı başarısız:", error);
     }
   };
 
@@ -62,7 +62,9 @@ function App() {
           alt='weather-icon'
         />
       )} */}
-      <WeatherCard cardData={cardData} />
+      <main className="d-flex justify-content-center align-items-center">
+        <WeatherCard cardData={cardData} />
+      </main>
       <footer></footer>
     </>
   );
