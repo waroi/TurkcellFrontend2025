@@ -1,10 +1,15 @@
 import { Request } from "./request.js";
-import { createUi, createGameModal, getModalElements } from "./ui.js";
+import {
+  createUi,
+  createGameModal,
+  getModalElements,
+  createFilteredUi,
+} from "./ui.js";
 import { Game } from "./game.js";
 
 const gameData = [];
 const gameCategories = [
-  "Battle Royale",
+  "Battle",
   "RPG",
   "FPS",
   "Strategy",
@@ -14,13 +19,17 @@ const gameCategories = [
   "Sports",
   "Simulation",
   "Racing",
+  "Fighting",
+  "Action",
+  "Survival",
+  "Utility",
 ];
 let updatedGameId = null;
 
 const fetchGames = () => {
   Request.get("http://localhost:3000/games")
     .then((data) => {
-      createUi(data);
+      createUi(data, gameCategories);
       gameData.push(...data);
       console.log(gameData);
     })
@@ -125,6 +134,51 @@ export const preEditGame = (game) => {
   imageUrl.value = game?.game_image || "";
   price.value = game?.price || "";
   updatedGameId = game.id;
+};
+
+// const filteredGames = (property, value) => {
+//   const filteredGames = gameData.filter((game) => game[property] === value);
+//   return filteredGames;
+// };
+// const filterByCategory = () => {};
+
+export const filterByCategory = (category) => {
+  if (!category) return gameData;
+
+  const filteredItems = gameData.filter(
+    (game) => game.category.toLowerCase() === category.toLowerCase()
+  );
+  createFilteredUi(filteredItems, category);
+};
+
+export const sortAZ = (games) => {
+  return games.sort((a, b) => a.name.localeCompare(b.name));
+};
+
+export const sortZA = (games) => {
+  return games.sort((a, b) => b.name.localeCompare(a.name));
+};
+
+export const sortByReleaseDate = (games) => {
+  return games.sort((a, b) => {
+    const releaseA = new Date(a.release_date);
+    const releaseB = new Date(b.release_date);
+    return releaseB - releaseA; // En yeni oyunlar ilk sırada
+  });
+};
+
+export const searchGames = (inputValue) => {
+  const lowerinputValue = inputValue.toLowerCase();
+
+  const filteredGames = gameData.filter((game) => {
+    return (
+      game.name.toLowerCase().includes(lowerinputValue) ||
+      game.category.toLowerCase().includes(lowerinputValue) ||
+      game.developer.toLowerCase().includes(lowerinputValue)
+    );
+  });
+
+  createFilteredUi(filteredGames);
 };
 
 getInit();
