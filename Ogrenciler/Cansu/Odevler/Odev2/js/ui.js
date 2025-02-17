@@ -41,6 +41,7 @@ class UI {
             steamLink.textContent = "See on steam";
             steamLink.classList.add("btn", "btn-primary");
             steamLink.target = "_blank";
+            steamLink.style.marginRight = "10px";
 
             const btnDelete = document.createElement("button");
             btnDelete.classList.add("btn", "btn-danger", "delete-button");
