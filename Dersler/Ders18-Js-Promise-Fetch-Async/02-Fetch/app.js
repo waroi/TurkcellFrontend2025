@@ -23,7 +23,7 @@
 // getApi();
 
 class Request {
-  static get(url) {
+  get(url) {
     return new Promise((resolve, reject) => {
       fetch(url)
         .then((response) => response.json())
@@ -31,7 +31,7 @@ class Request {
         .catch((err) => reject(err));
     });
   }
-  static post(url, data) {
+  post(url, data) {
     return new Promise((resolve, reject) => {
       fetch(url, {
         method: "POST",
@@ -43,7 +43,7 @@ class Request {
         .catch((err) => reject(err));
     });
   }
-  static put(url, data) {
+  put(url, data) {
     return new Promise((resolve, reject) => {
       fetch(url, {
         method: "PUT",
@@ -55,7 +55,7 @@ class Request {
         .catch((err) => reject(err));
     });
   }
-  static delete(url) {
+  delete(url) {
     return new Promise((resolve, reject) => {
       fetch(url, {
         method: "DELETE",

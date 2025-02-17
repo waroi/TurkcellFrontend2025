@@ -1,0 +1,18 @@
+{
+  "name": "odev2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch assets/sass:assets/css",
+    "server": "json-server --watch database/database.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "json-server": "^1.0.0-beta.3",
+    "sass": "^1.85.0"
+  }
+}

@@ -4,9 +4,10 @@ import GameController from "../controller/game_controller.js";
 class GameViewController {
   constructor() {
     this.gameContainer = document.querySelector(".game-container");
+    this.overlay = document.querySelector("#overlay");
+    this.overlayModal = new bootstrap.Modal(document.querySelector(".modal-game"));
+    this.overlayModalContent = document.querySelector(".modal-game-body");
     this.search = document.querySelector("#search");
-    this.card = document.createElement("div");
-    this.card.classList.add("card");
     this.cardTitle = document.querySelector("#gameTitle");
     this.cardDescription = document.querySelector("#gameDescription");
     this.cardGenre = document.querySelector("#gameGenre");
@@ -50,12 +51,13 @@ class GameViewController {
     cardInner.className = "card-inner";
     const cardFooter = document.createElement("div");
     cardFooter.className = "card-footer";
+    cardFooter.classList.add("border-0");
     const buttons = document.createElement("div");
     const editButton = document.createElement("button");
     const deleteButton = document.createElement("button");
     buttons.classList.add("buttons");
-    editButton.classList.add("btn", "edit-button");
-    deleteButton.classList.add("btn", "delete-button");
+    editButton.classList.add("btn", "edit-button", "border-0", "text-white","me-2");
+    deleteButton.classList.add("btn", "delete-button", "border-0", "text-white");
     editButton.textContent = "Düzenle";
     editButton.addEventListener("click", () => {
       this.setEdit(card,game);
@@ -71,14 +73,24 @@ class GameViewController {
     const cardBack = this.addCardBack(game);
     cardInner.append(cardFront, cardBack);
     card.append(cardInner,cardFooter);
+    cardFront.addEventListener("click", () => {
+      this.openCard(card);
+      this.overlay.addEventListener("click", (event) => {
+        if (event.target === this.overlay) {
+          this.closeCard(card);
+        }
+      });
+    });
     return card;
   }
   addCardFront(game) {
     const cardFront = document.createElement("div");
-    cardFront.classList.add("card-front");
-    const cardImage = document.createElement("img");
+    cardFront.classList.add("card-front", "border-0", "mt-0");
+    const cardImage = document.createElement("div");
     cardImage.classList.add("card-image");
-    cardImage.src = game.gamePhotoURL;
+    const cardImageURL = document.createElement("img");
+    cardImageURL.src = game.gamePhotoURL;
+    cardImage.append(cardImageURL);
     cardFront.append(cardImage);
     return cardFront;
   }
@@ -90,7 +102,10 @@ class GameViewController {
     const cardGenre = document.createElement("p");
     const cardYear = document.createElement("p");
     const cardPublisher = document.createElement("p");
+    const cardURLButton = document.createElement("button");
+    const cardURLIcon = document.createElement("i");
     const cardURL = document.createElement("a");
+    cardURL.href = game.gameSteamURL;
     
     cardBack.classList.add("card-back");
     cardBody.classList.add("card-body");
@@ -99,23 +114,35 @@ class GameViewController {
     cardGenre.classList.add("card-genre");
     cardYear.classList.add("card-year");
     cardPublisher.classList.add("card-publisher");
-    cardURL.classList.add("card-url");
-    cardTitle.textContent = "Oyun Adı: " + game.gameTitle;
-    cardDescription.textContent = "Oyun Açıklaması: " + game.gameDescription;
-    cardGenre.textContent = "Oyun Türü: " + game.gameGenre;
+    cardURLButton.classList.add("btn", "card-url-button", "border-0", "text-white", "mb-2");
+    cardURLIcon.classList.add("fa-brands", "fa-steam" ,"text-white")
+    cardURL.classList.add("card-url","text-white","text-decoration-none","ms-2");
+    cardTitle.textContent = game.gameTitle;
+    cardDescription.textContent = game.gameDescription;
+    cardGenre.textContent = "Kategori: " + game.gameGenre;
     cardYear.textContent = "Yayın Tarihi: " + game.gameReleaseDate;
     cardPublisher.textContent = "Yayıncı: " + game.gamePublisher;
-    cardURL.textContent = "Steam URL: " + game.gameSteamURL;
+    cardURL.textContent = "Steam Linki";
+    cardURLButton.append(cardURLIcon,cardURL);
     cardBody.append(
       cardTitle,
       cardDescription,
       cardGenre,
       cardYear,
       cardPublisher,
-      cardURL,
+      cardURLButton,
     );
     cardBack.append(cardBody);
     return cardBack;
+  }
+  openCard(card){
+    this.overlayModalContent.innerHTML = card.innerHTML;
+    this.overlayModal.show();
+  }
+  closeCard(){
+    this.overlay.style.display = "none";
+    this.overlayModal.style.display = "none";
+    this.overlayModal.hide();
   }
   async deleteGame(game) {
    await this.gameController.deleteGame(game.gameID);
@@ -141,6 +168,21 @@ class GameViewController {
     this.clearForm();
     this.saveButton.textContent = "Düzenle";
     this.editCard = null;
+  }
+  async filterGamesGenreAndReleaseDate() {
+    try {
+      const category = document.querySelector("#category").value;
+      const startYear = document.querySelector("#starterYear").value;
+      const endYear = document.querySelector("#endYear").value;
+      const games = await this.gameController.filterGamesGenreAndReleaseDate(category, startYear, endYear);
+      this.gameContainer.innerHTML = '';
+      games.forEach(game => {
+        const card = this.addCard(game);
+        this.gameContainer.append(card);
+      });
+    } catch (err) {
+      console.error("GameViewController içinde filterGamesGenreAndReleaseDate filtrelenirken hata oluştu:", err);
+    }
   }
   async searchGameByTitleGenrePublisher() {
     try {
@@ -191,6 +233,18 @@ class GameViewController {
       });
     } catch (err) {
       console.error("GameViewController içinde orderGamesByReleaseDate sıralanırken hata oluştu:", err);
+    }
+  }
+  async orderGamesByReleaseDateReverse(){
+    try {
+      const games = await this.gameController.orderGamesByReleaseDateReverse();
+      this.gameContainer.innerHTML = '';
+      games.forEach(game => {
+        const card = this.addCard(game);
+        this.gameContainer.append(card);
+      });
+    } catch (err) {
+      console.error("GameViewController içinde orderGamesByReleaseDateReverse sıralanırken hata oluştu:", err);
     }
   }
   setEdit(card,game) {

@@ -1,0 +1,52 @@
+body {
+  background-color: #101924;
+}
+
+header {
+  background-image: url(https://steamuserimages-a.akamaihd.net/ugc/927054170197322754/61C5B8F5612B21905B75EE84F468CBD9D534AE5D/?imw=512&amp;imh=288&amp;ima=fit&amp;impolicy=Letterbox&amp;imcolor=%23000000&amp;letterbox=true);
+  background-size: cover;
+  background-position: center;
+  height: 600px;
+  padding: 10px;
+}
+header .search-input {
+  height: 40px;
+}
+header .kategori {
+  animation: dropdown 1s infinite alternate;
+}
+@keyframes dropdown {
+  from {
+    color: red;
+  }
+  to {
+    color: #5a6af7;
+  }
+}
+
+.logo {
+  width: 100px;
+}
+
+.input-group {
+  justify-content: center;
+  margin-top: 350px;
+}
+
+.container.mb-4 {
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: white;
+}
+
+p {
+  color: white;
+}
+
+/*# sourceMappingURL=main.css.map */

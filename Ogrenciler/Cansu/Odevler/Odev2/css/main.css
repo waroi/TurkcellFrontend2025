@@ -11851,21 +11851,15 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
-/* Karanlık Mod */
 body.dark {
-  background-color: #1a1a2e !important;
+  background-color: #1a1a2e;
   color: #ffffff;
 }
 
-/* Başlık */
-h1, .h1 {
-  text-align: center;
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   color: #0d6efd;
-  font-size: 2rem;
-  font-weight: bold;
 }
 
-/* Butonlar */
 .btn-primary {
   background-color: #0d6efd;
   border: none;
@@ -11881,10 +11875,9 @@ h1, .h1 {
   background-color: rgb(30.1449275362, 125.8550724638, 52);
 }
 
-/* Arama Çubuğu */
 #searchBar {
   max-width: 350px;
-  background-color: #f8f9fa;
+  background-color: #ffffff;
   border: 1px solid #6c757d;
   border-radius: 25px;
   padding: 10px 20px;
@@ -11899,14 +11892,12 @@ h1, .h1 {
   outline: none;
 }
 
-/* Karanlık Mod için Arama Çubuğu */
 body.dark #searchBar {
   background-color: #16213e;
   color: #ffffff;
   border: 1px solid rgb(161.1158798283, 167.8755364807, 173.8841201717);
 }
 
-/* Navbar */
 .navbar {
   background-color: #ffffff;
   transition: background-color 0.3s;
@@ -11927,41 +11918,25 @@ body.dark .navbar .nav-link {
   color: #ffffff;
 }
 
-/* Kayan Yazı */
-.animated-text {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #0d6efd;
-  white-space: nowrap;
-  overflow: hidden;
-  display: inline-block;
-  animation: slide 10s linear infinite;
-}
-
-@keyframes slide {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-/* Oyun Kartları */
 #gameList .game-card {
-  background: #f8f9fa;
-  border-radius: 10px;
+  background: #ffffff;
+  border-radius: 12px;
   padding: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease-in-out;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  overflow: hidden;
+  border: none;
 }
 #gameList .game-card:hover {
   transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
 }
 #gameList .game-card img {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  border-radius: 5px;
+  border-radius: 8px;
+  display: block;
 }
 #gameList .game-card h5, #gameList .game-card .h5 {
   color: #0d6efd;
@@ -11971,16 +11946,18 @@ body.dark .navbar .nav-link {
 #gameList .game-card p {
   font-size: 0.9rem;
   color: #adb5bd;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-/* Karanlık Mod için Kartlar */
 body.dark #gameList .game-card {
   background: #16213e;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
 }
 
-/* Modal Stili */
 .modal-content {
-  background: #f8f9fa;
+  background: #ffffff;
   color: #000000;
   border-radius: 8px;
   transition: background-color 0.3s, color 0.3s;
@@ -11991,7 +11968,6 @@ body.dark .modal-content {
   color: #ffffff;
 }
 
-/* Modal Input ve Select */
 .modal-body input,
 .modal-body textarea,
 .modal-body select {
@@ -12009,22 +11985,41 @@ body.dark .modal-body select {
   border: 1px solid rgb(161.1158798283, 167.8755364807, 173.8841201717);
 }
 
-/* Filtre ve Sıralama */
+#developerSelect,
 #sortSelect,
 #categorySelect {
-  background: #f8f9fa;
+  background: #ffffff;
   color: #000000;
   border: 1px solid #6c757d;
   border-radius: 5px;
   transition: background-color 0.3s, color 0.3s;
 }
 
-/* Karanlık Mod için Filtre & Sıralama */
+body.dark #developerSelect,
 body.dark #sortSelect,
 body.dark #categorySelect {
   background: #16213e;
   color: #ffffff;
   border: 1px solid rgb(161.1158798283, 167.8755364807, 173.8841201717);
+}
+
+.card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+}
+
+.form-select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: none;
+}
+
+body.dark {
+  background-color: #1a1a2e;
+  color: #ffffff;
 }
 
 /*# sourceMappingURL=main.css.map */

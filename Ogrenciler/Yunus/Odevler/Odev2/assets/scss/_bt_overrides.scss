@@ -1,0 +1,27 @@
+// Colors
+$success-color: #0f0;
+$hover-text-color: #000;
+$background-transparent: transparent;
+
+// Buttons
+.btn-outline-success,
+.btn-outline-primary,
+.btn-outline-danger {
+    color: $success-color;
+    border-color: $success-color;
+    background-color: $background-transparent;
+
+    &:hover {
+        background-color: $success-color;
+        color: $hover-text-color;
+    }
+}
+
+// Texts
+.text-success {
+    color: $success-color;
+}
+
+.border-success {
+    border-color: $success-color;
+}

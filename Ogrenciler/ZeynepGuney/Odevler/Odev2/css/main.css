@@ -9541,28 +9541,12 @@ textarea.form-control-lg {
   font-family: var(--bs-font-monospace) !important;
 }
 
-.fs-12 {
-  font-size: 0.75rem !important;
-}
-
-.fs-14 {
-  font-size: 0.875rem !important;
-}
-
 .fs-18 {
   font-size: 1.125rem !important;
 }
 
 .fs-20 {
   font-size: 1.25rem !important;
-}
-
-.fs-24 {
-  font-size: calc(1.275rem + 0.3vw) !important;
-}
-
-.fs-36 {
-  font-size: calc(1.35rem + 1.2vw) !important;
 }
 
 .fs-50 {
@@ -9622,7 +9606,7 @@ textarea.form-control-lg {
 }
 
 .lh-lg {
-  line-height: 2.25 !important;
+  line-height: 2 !important;
 }
 
 .text-start {
@@ -16877,12 +16861,6 @@ textarea.form-control-lg {
   }
 }
 @media (min-width: 1200px) {
-  .fs-24 {
-    font-size: 1.5rem !important;
-  }
-  .fs-36 {
-    font-size: 2.25rem !important;
-  }
   .fs-50 {
     font-size: 3.125rem !important;
   }
@@ -16968,6 +16946,53 @@ textarea.form-control-lg {
 }
 .home .home-right .slogan-box {
   background: linear-gradient(135deg, #21eda0, #0ad5ed, #1780f9);
+}
+
+@keyframes shoot {
+  from {
+    left: 160%;
+  }
+  to {
+    left: 200%;
+  }
+}
+.bullet {
+  position: absolute;
+  top: 13%;
+  width: 25px;
+  height: 5px;
+  animation: shoot 3s linear infinite;
+}
+.bullet .bullet img {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 1028px) {
+  .bullet {
+    animation: none;
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .home-left {
+    width: 100%;
+  }
+  .home-left .home-img-wrapper {
+    width: 100%;
+  }
+  .home-left .home-img-wrapper .home-img {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.card-body .btn-update {
+  background: linear-gradient(135deg, #21eda0, #0ad5ed, #1780f9);
+}
+.card-body .btn-delete {
+  background: linear-gradient(135deg, #fa5560, #b14bf4, #4d91ff);
 }
 
 .point {

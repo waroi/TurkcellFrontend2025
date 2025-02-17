@@ -4,7 +4,10 @@
     margin: 0;
     padding: 0;
 }
-@mixin gradient-bg($angle: 135deg, $color1: #21eda0, $color2: #0ad5ed, $color3: #1780f9) {
+@mixin gradient-bg($angle: 135deg, $color1: #21eda0, $color2: $primary, $color3: #1780f9) {
+    background: linear-gradient($angle, $color1, $color2, $color3);
+}
+@mixin gradient-2($angle: 135deg, $color1: #fa5560, $color2: #b14bf4, $color3: #4d91ff) {
     background: linear-gradient($angle, $color1, $color2, $color3);
 }
 .navbar-toggler {
@@ -48,6 +51,54 @@
         }
     }
 }
+@keyframes shoot {
+    from {
+        left: 160%;
+    }
+    to {
+        left: 200%; 
+    }
+}
+.bullet {
+    position: absolute;
+    top: 13%;
+    width: 25px;
+    height: 5px; 
+    animation: shoot 3s linear infinite;
+    .bullet img {
+        width: 100%; 
+        height: auto; 
+    }
+}
+@media (max-width: 1028px) {
+    .bullet{
+        animation: none;
+        display: none;
+    }
+}
+@media (max-width: 768px) {
+    .home-left {
+        width: 100%;
+        .home-img-wrapper {
+            width: 100%; 
+            .home-img {
+                width: 100%;
+                max-width: 100%; 
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
+.card-body{
+    .btn-update{
+        @include gradient-bg();
+    }
+    .btn-delete{
+        @include gradient-2();
+    }
+
+}
 .point {
     width: 22px;
     height: 22px;
@@ -58,3 +109,4 @@
         @include gradient-bg();
     }
 }
+
