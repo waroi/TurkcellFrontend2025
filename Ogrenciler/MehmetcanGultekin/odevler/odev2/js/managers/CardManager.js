@@ -64,7 +64,7 @@ export class CardManager {
             releaseDate.appendChild(document.createTextNode(` ${game.releaseDate}`));
 
             const buttonContainer = document.createElement('div');
-            buttonContainer.className = 'd-flex gap-2';
+            buttonContainer.className = 'd-flex flex-column flex-xl-row gap-1';
 
             const detailsButton = document.createElement('button');
             detailsButton.className = 'btn btn-primary';
