@@ -11,13 +11,13 @@ function filter(e) {
     if (oyunList.length > 0) {
         oyunList.forEach(card => {
             const gameTitle = card.querySelector(".card-title"); 
-            if (gameTitle && gameTitle.textContent.toLowerCase().trim().includes(filtervalue)) {
-                card.style.order=-1;
-                card.style.display = "block"; 
+            if ((gameTitle && gameTitle.textContent.toLowerCase().trim().includes(filtervalue) )|| gameTitle.textContent==="") {
+
+                card.parentElement.style.display = "block";
                 
             } else {
-                card.style.order=1;
-                card.style.display = "none"; 
+
+                card.parentElement.style.display = "none"; 
             }
         });
     } else {

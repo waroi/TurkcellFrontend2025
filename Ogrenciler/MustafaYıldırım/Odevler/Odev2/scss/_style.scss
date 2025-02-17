@@ -1,0 +1,377 @@
+$navbar-bg-color: #343a40;
+$navbar-text-color: #fff;
+$search-border-color: #ccc;
+$search-focus-border-color: #c97fcc;
+$search-focus-shadow: #c97fcc50;
+$max-search-width: 400px;
+$min-search-width: 200px;
+$border-radius: 8px;
+$transition-speed: 0.4s;
+
+body {
+  background: linear-gradient(#545480, #50536b);
+}
+.navbar {
+  background-color: $navbar-bg-color !important;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .navbar-brand {
+    color: $navbar-text-color;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+
+    img {
+      border-radius: 50%;
+    }
+
+    span {
+      margin-left: 10px;
+    }
+  }
+
+  .search-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    .search-input {
+      padding: 8px 20px 8px 20px;
+      max-width: $max-search-width;
+      min-width: $min-search-width;
+      border-radius: 25px;
+      border: 1px solid $search-border-color;
+      transition: all 0.3s ease;
+
+      &:focus {
+        outline: none;
+        border-color: $search-focus-border-color;
+        box-shadow: 5px 5px 10px $search-focus-shadow;
+      }
+
+      &.active {
+        background-color: #f0f8ff;
+      }
+    }
+
+    .search-icon {
+      position: absolute;
+      right: 10px;
+      color: #999;
+      transition: transform 0.3s ease;
+
+      &.active {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  .search-results {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    max-height: $min-search-width;
+    overflow-y: auto;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    z-index: 10;
+  }
+}
+
+// Filtreleme ve sıralama kutularını içeren container
+.filters-container {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+
+  .btn-fav {
+    background: linear-gradient(135deg, #b99afb, #8d84fe);
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: $border-radius;
+    transition: all $transition-speed;
+    border: none;
+    i {
+      color: #a21f1f;
+      &:hover {
+        color: white;
+        transition: all $transition-speed;
+      }
+    }
+
+    &:hover {
+      background: linear-gradient(135deg, #aa89f3, #7d75f4);
+      transform: scale(1.05);
+      transition: all $transition-speed;
+    }
+
+    &:active {
+      transform: scale(0.9);
+      transition: all $transition-speed;
+    }
+    // "Yeni Oyun Ekle" butonu için tıklama efekti
+    .clicked {
+      transform: scale(1.2);
+      box-shadow: 0 0 120px rgba(255, 255, 255, 0.5);
+      transition: all $transition-speed;
+    }
+  }
+
+  // Seçim kutularını özelleştiriyoruz
+  .custom-select {
+    width: 220px;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: $border-radius;
+    transition: border-color $transition-speed, box-shadow $transition-speed;
+    background: #f8f9fa;
+    cursor: pointer;
+
+    &:focus {
+      border-color: $primary;
+      box-shadow: 0 0 8px rgba($primary, 0.5);
+      max-height: 200px;
+      outline: none;
+    }
+    option {
+      padding: 8px;
+    }
+  }
+
+  .add-game-btn {
+    background: linear-gradient(135deg, #b99afb, #8d84fe);
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: $border-radius;
+    transition: all $transition-speed;
+    border: none;
+
+    &:hover {
+      background: linear-gradient(135deg, #aa89f3, #7d75f4);
+      transform: scale(1.05);
+      transition: all $transition-speed;
+    }
+
+    &:active {
+      transform: scale(0.9);
+      transition: all $transition-speed;
+    }
+    // "Yeni Oyun Ekle" butonu için tıklama efekti
+    .clicked {
+      transform: scale(1.2);
+      box-shadow: 0 0 120px rgba(255, 255, 255, 0.5);
+      transition: all $transition-speed;
+    }
+  }
+}
+
+.modal {
+  .modal-content {
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    .modal-header {
+      background-color: #343a40;
+      color: white;
+      border-radius: 12px 12px 0 0;
+      .modal-title {
+        font-weight: bold;
+      }
+    }
+    .modal-body {
+      background-color: #393f51;
+
+      .form-label {
+        font-weight: 500;
+        color: white;
+      }
+      .form-control {
+        padding-left: 8px;
+        border-radius: 8px;
+        transition: all 0.3s ease-in-out;
+        border: 1px solid #ced4da;
+
+        &:focus {
+          border-color: #007bff;
+          box-shadow: 0px 0px 8px #b99afb60;
+        }
+      }
+      select.form-select {
+        border-radius: 8px;
+        transition: all 0.3s;
+
+        &:focus {
+          box-shadow: 0px 0px 8px #b99afb60;
+        }
+      }
+    }
+  }
+}
+#game-cards {
+  display: flex;
+  flex-wrap: wrap; // Kartlar taşarsa alt satıra geçer
+}
+
+.card {
+  background-color: $primary;
+  color: white;
+  height: 400px;
+  width: 100%;
+  max-width: 250px;
+  position: relative;
+  overflow: hidden; // Kenarlardan taşmayı önlüyor
+  border-radius: 16px;
+  box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.5); // Sağ üstten ışık vuruyormuş gibi
+  transition: transform $transition-speed ease-in-out;
+
+  &:hover {
+    transform: scale(1.05); // Hover durumunda biraz büyütüyoruz
+  }
+
+  img {
+    width: 100%;
+    height: 275px;
+    border-radius: 16px 16px 0 0;
+  }
+
+  .card-body {
+    padding: 8px;
+    .card-title {
+      font-size: 15px;
+    }
+    .card-text {
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+    .title i {
+      color: #a21f1f;
+      &:hover {
+        color: white;
+        transition: all $transition-speed;
+      }
+    }
+  }
+
+  .dropdown {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+  }
+
+  // Hareketli Border Efekti
+  &::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+      transparent 270deg,
+      rgba(255, 255, 255, 0.8) 300deg,
+      transparent 330deg
+    );
+    animation: rotateBorder 4s linear infinite;
+    border-radius: 75%;
+    z-index: -1;
+  }
+}
+
+// Borderin Dönmesi için Animasyon
+@keyframes rotateBorder {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 1200px) {
+  // Büyük ekranlar (Laptop)
+  .card {
+    max-width: 230px;
+    height: 380px;
+
+    img {
+      height: 260px;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  // Tablet
+  .card {
+    max-width: 210px;
+    height: 360px;
+
+    img {
+      height: 240px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  // Küçük tablet
+  .container-fluid {
+    .search-container {
+      width: 100%;
+      max-width: $min-search-width; // Mobilde fazla geniş olmaması için
+      position: relative;
+    }
+  }
+
+  .filters-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .custom-select {
+    width: 100%;
+  }
+  .card {
+    max-width: 200px;
+    height: 340px;
+
+    img {
+      height: 220px;
+    }
+    .detay {
+      font-size: 14px;
+      padding: 4px 8px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .container-fluid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+  // Telefon
+  .card {
+    max-width: 170px;
+    height: 320px;
+
+    img {
+      height: 200px;
+    }
+  }
+}
