@@ -1,4 +1,4 @@
-export class Data {
+class Data {
   constructor(baseURL) {
     this.baseURL = baseURL;
 }

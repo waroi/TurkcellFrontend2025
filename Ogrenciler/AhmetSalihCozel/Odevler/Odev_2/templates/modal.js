@@ -1,8 +1,4 @@
-import { UI } from "../UI/UI.js";
-import {Data} from '../services/data.js'
-import { Game } from "./game.js";
-
-export function infoModal(gameObj){
+function infoModal(gameObj){
     let modalBody = document.getElementById("modalBody")
 
     while (modalBody.firstChild) {modalBody.removeChild(modalBody.lastChild);}
@@ -45,7 +41,7 @@ export function infoModal(gameObj){
     modalBody.append(img,director,year,genre,gameText)
 }
 
-export function editModal(gameObj){
+function editModal(gameObj){
     let ui = new UI(gameObj);
     let dt = new Data()
     let modalBody = document.getElementById("modalBody")
@@ -101,7 +97,7 @@ export function editModal(gameObj){
     })
 }
 
-export function addModal(){
+function addModal(){
     let modalBody = document.getElementById("modalBody")
     let modalTitle = document.getElementById("modalTitle")
 
@@ -110,41 +106,41 @@ export function addModal(){
     while (modalBody.firstChild) {modalBody.removeChild(modalBody.lastChild);}
 
     let imgInput = document.createElement("input");
-    imgInput.classList.add("steamBtn","mb-1")
+    imgInput.classList.add("inputWhite","mb-1")
     imgInput.value = "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/292030/header.jpg?t=1736424367";
 
     let cardBody = document.createElement("div");
     cardBody.classList.add("card-body","align-left","p-0");
 
     let titleInput = document.createElement("input");
-    titleInput.classList.add("steamBtn","mb-1")
+    titleInput.classList.add("inputWhite","mb-1")
     titleInput.placeholder = "Oyun İsmi"
 
 
     let directorInput = document.createElement("input");
-    directorInput.classList.add("steamBtn","mb-1")
+    directorInput.classList.add("inputWhite","mb-1")
     directorInput.placeholder = "Oyun Yapımcısı"
 
     let yearInput = document.createElement("input");
-    yearInput.classList.add("steamBtn","mb-1")
+    yearInput.classList.add("inputWhite","mb-1")
     yearInput.placeholder = "Çıkış Tarihi"
 
 
     let genreInput = document.createElement("input");
-    genreInput.classList.add("steamBtn","mb-1")
+    genreInput.classList.add("inputWhite","mb-1")
     genreInput.placeholder = "Kategori"
 
     
     let gameTextInput = document.createElement("input");
-    gameTextInput.classList.add("steamBtn","mb-1")
+    gameTextInput.classList.add("inputWhite","mb-1")
     gameTextInput.placeholder = "Açıklama"
 
     let steamURLInput = document.createElement("input");
-    steamURLInput.classList.add("steamBtn","mb-1")
+    steamURLInput.classList.add("inputWhite","mb-1")
     gameTextInput.placeholder = "Steam URL"
 
 
-    modalBody.classList.add("col-8", "d-flex", "flex-column", "justify-content-between","py-4");
+    modalBody.classList.add("col-10", "d-flex", "flex-column", "justify-content-between");
     modalBody.append(imgInput,titleInput,directorInput,yearInput,genreInput,gameTextInput)
 
     let saveButton = document.getElementById("saveButton")
@@ -156,33 +152,20 @@ export function addModal(){
     })
 }
 
-export function deleteModal(card,onConfirm){
+function deleteModal(card,onConfirm){
     let modalBody = document.getElementById("modalBody")
-    let modalFooter = document.getElementById("modalFooter")
 
     while (modalBody.firstChild) {modalBody.removeChild(modalBody.lastChild);}
 
     modalBody.textContent = "Bu oyunu silmek istediğinizden emin misiniz?"
     let yesButton = document.getElementById("saveButton")
-    let noButton = document.getElementById("closeButton")
-
-    yesButton.textContent="Evet"
-
-    noButton.textContent="Hayır"
-    noButton.classList = ""
-    noButton.classList.add("deleteBtn","btn","opacity-100")
-
-    yesButton.remove();
-    noButton.remove();
-
-    // Ters sırayla tekrar ekle (Önce "Hayır", sonra "Evet")
-    modalFooter.appendChild(yesButton);
-    modalFooter.appendChild(noButton);
 
     yesButton.addEventListener("click",()=>{
         console.log(card)
         new Data("http://localhost:3000/games").deleteGame(card.id)
         onConfirm(true)
+
+
     })
     yesButton.setAttribute("data-bs-dismiss","modal")
 }

@@ -6,10 +6,14 @@
     "sass": "sass -w scss:css",
     "server": "json-server --watch db.json --port 3000"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "game",
+    "play",
+    "playard"
+  ],
+  "author": "furkanfirat@live.com",
   "license": "ISC",
-  "description": "",
+  "description": "PlaYard is a website where you can store your favorite games.",
   "dependencies": {
     "bootstrap": "^5.3.3",
     "json-server": "^1.0.0-beta.3"
