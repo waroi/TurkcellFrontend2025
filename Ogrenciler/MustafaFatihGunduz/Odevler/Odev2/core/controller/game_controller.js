@@ -96,7 +96,7 @@ class GameController{
     async orderGamesByReleaseDate(){
         try {
             const gamesArray = await RequestModel.get('http://localhost:3000/games');
-            const orderedGames = gamesArray.sort((a, b) => a.gameReleaseDate.localeCompare(b.gameReleaseDate));
+            const orderedGames = gamesArray.sort((a, b) => a.gameReleaseDate.toString().localeCompare(b.gameReleaseDate));
             return orderedGames;
         } catch (error) {
             console.error("Veri sıralanırken hata oluştu:", error);
@@ -106,7 +106,7 @@ class GameController{
     async orderGamesByReleaseDateReverse(){
         try {
             const gamesArray = await RequestModel.get('http://localhost:3000/games');
-            const orderedGames = gamesArray.sort((a, b) => b.gameReleaseDate.localeCompare(a.gameReleaseDate));
+            const orderedGames = gamesArray.sort((a, b) => b.gameReleaseDate.toString().localeCompare(a.gameReleaseDate));
             return orderedGames;
         } catch (error) {
             console.error("Veri sıralanırken hata oluştu:", error);

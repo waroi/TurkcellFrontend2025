@@ -24,48 +24,47 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark">
-      <a class="navbar-brand" href="#"
-        ><img src="../assets/logo.png" alt=""
-      /></a>
-      <a class="navbar-brand" href="#"
-        ><img src="../assets/site-title.png" alt=""
-      /></a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#gameVaultNavbarContent"
-        aria-controls="gameVaultNavbarContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="gameVaultNavbarContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Anasayfa</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./documentation.html">Dökümantasyon</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              id="gameVaultNavbarDropdown"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Kategoriler
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="gameVaultNavbarDropdown">
-              <li><a class="dropdown-item" href="#">Aksiyon</a></li>
-              <li><a class="dropdown-item" href="#">Simülasyon</a></li>
-            </ul>
-          </li>
-        </ul>
+      <div class="container">
+        <a class="navbar-brand" href="#"
+          ><img src="../assets/logo.png" alt=""
+        /></a>
+        <a class="navbar-brand" href="#"
+          ><img src="../assets/site-title.png" alt=""
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#gameVaultNavbarContent"
+          aria-controls="gameVaultNavbarContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="gameVaultNavbarContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#"
+                >Anasayfa</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./documentation.html">Dökümantasyon</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#trophyWinnerGamesField"
+                >Ödüllü Oyunlar</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#searchField">Oyun Ara</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#gameField">Kütüphanem</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
     <section class="banner-section mt-5">
@@ -89,7 +88,7 @@
         </div>
       </div>
     </section>
-    <section class="trophy-winner-games-field mt-8">
+    <section class="trophy-winner-games-field mt-8" id="trophyWinnerGamesField">
       <div class="container px-5 py-5">
         <div
           class="title-and-icon d-flex align-items-center justify-content-center gap-2"
@@ -126,11 +125,16 @@
                       <p class="card-genre">Kategori: Macera</p>
                       <p class="card-year">Yayın Tarihi: 2015</p>
                       <p class="card-publisher">Yayıncı: CD Projekt</p>
-                      <a
-                        href="https://store.steampowered.com/app/292030/The_Witcher_3_Wild_Hunt/"
-                        class="card-url"
-                        >https://store.steampowered.com/app/292030/The_Witcher_3_Wild_Hunt/</a
-                      >
+                      <button class="btn border-0 text-white">
+                        <span>
+                          <i class="fa-brands fa-steam text-white"></i
+                        ></span>
+                        <a
+                          href="https://store.steampowered.com/app/292030/The_Witcher_3_Wild_Hunt/"
+                          class="card-url text-white text-decoration-none"
+                          >Steam Linki</a
+                        >
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -148,8 +152,10 @@
                         kalma korku oyunudur. Oyun, kurgusal bir şehir olan
                         Villedor'da geçmektedir.,
                       </p>
-                      <button class="btn btn-primary">
-                        <span> <i class="fa-brands fa-steam"></i></span>
+                      <button class="btn border-0 text-white">
+                        <span>
+                          <i class="fa-brands fa-steam text-white"></i
+                        ></span>
                         <a
                           class="text-white text-decoration-none"
                           href="https://store.steampowered.com/app/534380/Dying_Light_2_Stay_Human_Reloaded_Edition/"
@@ -171,7 +177,7 @@
                         Ring'in gücünü kullan ve Lands Between'de bir Elden Lord
                         ol.
                       </p>
-                      <button class="btn btn-primary">
+                      <button class="btn border-0 text-white">
                         <span> <i class="fa-brands fa-steam"></i></span>
                         <a
                           class="text-white text-decoration-none"
@@ -188,7 +194,7 @@
         </div>
       </div>
     </section>
-    <section class="search-field px-5 mt-5">
+    <section class="search-field px-5 mt-5" id="searchField">
       <div class="container">
         <div class="input-container">
           <input
@@ -199,10 +205,10 @@
             class="form-control search-input text-white"
           />
         </div>
-        <button class="btn" id="searchButton">Ara</button>
+        <button class="btn border-0 text-white" id="searchButton">Ara</button>
         <button
           type="button"
-          class="btn btn-primary"
+          class="btn border-0 text-white"
           data-bs-toggle="modal"
           data-bs-target="#addGameBackdrop"
         >
@@ -226,7 +232,7 @@
               </h5>
               <button
                 type="button"
-                class="btn-close"
+                class="btn-close border-0 text-white"
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
@@ -321,12 +327,16 @@
             <div class="modal-footer">
               <button
                 type="button"
-                class="btn btn-danger"
+                class="btn btn-danger text-white border-0"
                 data-bs-dismiss="modal"
               >
                 Kapat
               </button>
-              <button type="button" class="btn btn-primary" id="saveButton">
+              <button
+                type="button"
+                class="btn border-0 text-white"
+                id="saveButton"
+              >
                 Kaydet
               </button>
             </div>
@@ -334,7 +344,7 @@
         </div>
       </div>
     </section>
-    <section class="filter-section mt-3">
+    <section class="filter-section mt-3" id="filterSection">
       <div class="container d-flex align-items-center justify-content-between">
         <select name="orderGame" id="orderGame">
           <option value="">Sırala</option>
@@ -400,11 +410,13 @@
               placeholder="Bitiş Yılı"
             />
           </div>
-          <button class="btn filter-button" id="filterButton">Filtrele</button>
+          <button class="btn border-0 text-white" id="filterButton">
+            Filtrele
+          </button>
         </div>
       </div>
     </section>
-    <section class="game-field mt-5">
+    <section class="game-field mt-5" id="gameField">
       <div class="container">
         <div class="game-container"></div>
         <div id="overlay"></div>
@@ -420,11 +432,18 @@
     >
       <div class="modal-dialog" role="document">
         <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="gameModalLabel"></h5>
+          <div
+            class="modal-header d-flex align-items-center justify-content-between"
+          >
+            <h5
+              class="modal-title text-uppercase text-white fs-6 text-center"
+              id="gameModalLabel"
+            >
+              Oyun İçeriği
+            </h5>
             <button
               type="button"
-              class="closeGameModal"
+              class="closeGameModal border-0 text-white"
               data-dismiss="modal"
               aria-label="Close"
             >

@@ -17,7 +17,7 @@ button {
   transition: 0.5s all ease-in-out;
   cursor: pointer;
   &:hover {
-    color: #8ac926;
+    color: white;
     animation: animateButton 0.5s ease-in-out;
   }
 }
@@ -69,7 +69,7 @@ button {
         height: 200px;
         overflow: hidden;
         img {
-          aspect-ratio: 18 / 9;
+          aspect-ratio: 24 / 8;
           width: 100%;
           object-fit: cover;
         }
@@ -77,9 +77,6 @@ button {
     }
     .card-footer {
       background-color: transparent;
-      button {
-        margin-right: 20px;
-      }
     }
     .card-body {
       padding: 20px;
@@ -170,15 +167,6 @@ button {
     border-radius: 12px;
     padding: 10px 20px;
   }
-  button {
-    background: linear-gradient(135deg, #202124, #2a2d3e, #6b54c6);
-    border: none;
-    color: white;
-    font-size: 1.2rem;
-    padding: 10px;
-    transition: 0.5s all ease-in-out;
-    cursor: pointer;
-  }
 }
 .game-field {
   .game-container {
@@ -211,23 +199,6 @@ button {
       }
       .card-footer {
         background-color: transparent;
-        button {
-          background-color: transparent;
-          border: none;
-          color: white;
-          font-size: 1.2rem;
-          padding: 10px;
-          transition: 0.5s all ease-in-out;
-          cursor: pointer;
-          &:hover:nth-child(1) {
-            color: #8ac926;
-            animation: animateButton 0.5s ease-in-out;
-          }
-          &:hover:nth-child(2) {
-            color: #ff595e;
-            animation: animateButton 0.5s ease-in-out;
-          }
-        }
       }
       .card-body {
         padding: 20px;
@@ -260,6 +231,13 @@ button {
 }
 .modal-game {
   animation: animateActiveModal 2s ease-in-out;
+  .modal-header {
+    border: none;
+  }
+  .modal-content {
+    background-color: $mainColor;
+    color: white;
+  }
 }
 @keyframes glowInput {
   0% {

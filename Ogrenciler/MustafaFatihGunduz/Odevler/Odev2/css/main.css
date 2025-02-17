@@ -34130,7 +34130,7 @@ button {
   cursor: pointer;
 }
 button:hover {
-  color: #8ac926;
+  color: white;
   animation: animateButton 0.5s ease-in-out;
 }
 
@@ -34180,15 +34180,12 @@ button:hover {
   overflow: hidden;
 }
 .trophy-winner-games-field .card .card-front .card-image img {
-  aspect-ratio: 18/9;
+  aspect-ratio: 24/8;
   width: 100%;
   object-fit: cover;
 }
 .trophy-winner-games-field .card .card-footer {
   background-color: transparent;
-}
-.trophy-winner-games-field .card .card-footer button {
-  margin-right: 20px;
 }
 .trophy-winner-games-field .card .card-body {
   padding: 20px;
@@ -34267,15 +34264,6 @@ button:hover {
   border-radius: 12px;
   padding: 10px 20px;
 }
-.filter-section button {
-  background: linear-gradient(135deg, #202124, #2a2d3e, #6b54c6);
-  border: none;
-  color: white;
-  font-size: 1.2rem;
-  padding: 10px;
-  transition: 0.5s all ease-in-out;
-  cursor: pointer;
-}
 
 .game-field .game-container {
   display: grid;
@@ -34308,23 +34296,6 @@ button:hover {
 .game-field .game-container .card .card-footer {
   background-color: transparent;
 }
-.game-field .game-container .card .card-footer button {
-  background-color: transparent;
-  border: none;
-  color: white;
-  font-size: 1.2rem;
-  padding: 10px;
-  transition: 0.5s all ease-in-out;
-  cursor: pointer;
-}
-.game-field .game-container .card .card-footer button:hover:nth-child(1) {
-  color: #8ac926;
-  animation: animateButton 0.5s ease-in-out;
-}
-.game-field .game-container .card .card-footer button:hover:nth-child(2) {
-  color: #ff595e;
-  animation: animateButton 0.5s ease-in-out;
-}
 .game-field .game-container .card .card-body {
   padding: 20px;
 }
@@ -34356,6 +34327,13 @@ button:hover {
 
 .modal-game {
   animation: animateActiveModal 2s ease-in-out;
+}
+.modal-game .modal-header {
+  border: none;
+}
+.modal-game .modal-content {
+  background-color: #202124;
+  color: white;
 }
 
 @keyframes glowInput {

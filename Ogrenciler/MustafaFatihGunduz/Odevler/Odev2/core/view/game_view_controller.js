@@ -56,8 +56,8 @@ class GameViewController {
     const editButton = document.createElement("button");
     const deleteButton = document.createElement("button");
     buttons.classList.add("buttons");
-    editButton.classList.add("btn", "edit-button");
-    deleteButton.classList.add("btn", "delete-button");
+    editButton.classList.add("btn", "edit-button", "border-0", "text-white","me-2");
+    deleteButton.classList.add("btn", "delete-button", "border-0", "text-white");
     editButton.textContent = "Düzenle";
     editButton.addEventListener("click", () => {
       this.setEdit(card,game);
@@ -102,6 +102,8 @@ class GameViewController {
     const cardGenre = document.createElement("p");
     const cardYear = document.createElement("p");
     const cardPublisher = document.createElement("p");
+    const cardURLButton = document.createElement("button");
+    const cardURLIcon = document.createElement("i");
     const cardURL = document.createElement("a");
     cardURL.href = game.gameSteamURL;
     
@@ -112,20 +114,23 @@ class GameViewController {
     cardGenre.classList.add("card-genre");
     cardYear.classList.add("card-year");
     cardPublisher.classList.add("card-publisher");
-    cardURL.classList.add("card-url");
+    cardURLButton.classList.add("btn", "card-url-button", "border-0", "text-white", "mb-2");
+    cardURLIcon.classList.add("fa-brands", "fa-steam" ,"text-white")
+    cardURL.classList.add("card-url","text-white","text-decoration-none","ms-2");
     cardTitle.textContent = game.gameTitle;
     cardDescription.textContent = game.gameDescription;
     cardGenre.textContent = "Kategori: " + game.gameGenre;
     cardYear.textContent = "Yayın Tarihi: " + game.gameReleaseDate;
     cardPublisher.textContent = "Yayıncı: " + game.gamePublisher;
-    cardURL.textContent = game.gameSteamURL;
+    cardURL.textContent = "Steam Linki";
+    cardURLButton.append(cardURLIcon,cardURL);
     cardBody.append(
       cardTitle,
       cardDescription,
       cardGenre,
       cardYear,
       cardPublisher,
-      cardURL,
+      cardURLButton,
     );
     cardBack.append(cardBody);
     return cardBack;
@@ -134,7 +139,7 @@ class GameViewController {
     this.overlayModalContent.innerHTML = card.innerHTML;
     this.overlayModal.show();
   }
-  closeCard(card){
+  closeCard(){
     this.overlay.style.display = "none";
     this.overlayModal.style.display = "none";
     this.overlayModal.hide();
