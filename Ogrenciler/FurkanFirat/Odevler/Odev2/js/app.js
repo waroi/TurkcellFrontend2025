@@ -1,5 +1,6 @@
 import GameController from './controllers/GameController.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-  new GameController();
+  const gameController = new GameController();
+  gameController.loadGames();
 });

@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const selectedCategory = this.getAttribute("data-category"); 
 
-            fetch("http://localhost:5000/games")
+            fetch("http://localhost:3000/games")
                 .then(res => res.json())
                 .then(data => {
                     let filteredGames = selectedCategory
@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
     
-            fetch("http://localhost:5000/games")
+            fetch("http://localhost:3000/games")
                 .then(res => res.json())
                 .then(data => {
                     let filteredGames = data.filter(game => game.releaseDate === selectedDate);
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
     
-            fetch("http://localhost:5000/games")
+            fetch("http://localhost:3000/games")
                 .then(res => res.json())
                 .then(data => {
                     let filteredGames = data.filter(game => game.releaseDate === selectedDate);
@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("sorting").addEventListener("click", function () {
         const sortOption = document.getElementById("sort-select").value;
     
-        fetch("http://localhost:5000/games")
+        fetch("http://localhost:3000/games")
             .then(res => res.json())
             .then(data => {
                 let sortedGames = [...data];
@@ -136,7 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
         function Search() {
             const searchText = searchInput.value.toLowerCase().trim();
     
-            fetch("http://localhost:5000/games")
+            fetch("http://localhost:3000/games")
                 .then(res => res.json())
                 .then(data => {
                     let filteredGames = data.filter(game => {
@@ -151,7 +151,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         );
                     });
     
-                    renderGames(filteredGames); // Sonuçları sayfaya yazdır
+                    renderGames(filteredGames);
                 })
                 .catch(error => console.error("Arama sırasında hata oluştu:", error));
         }

@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     try {
         await UI.renderGames(await Storage.fetchGames());
         setupEventListeners();
-        applyDarkMode(); 
+        applyDarkMode();
     } catch (error) {
         console.error("🔥ERROR: An error occurred during DOMContentLoaded!", error);
     }
@@ -40,27 +40,18 @@ function setupEventListeners() {
         });
     }
 
-    if (categorySelect) {
-        categorySelect.addEventListener("change", async function () {
-            const selectedCategory = this.value;
-            try {
-                const allGames = await Storage.fetchGames();
-                const filteredGames = selectedCategory === "all"
-                    ? allGames
-                    : allGames.filter(game => game.category === selectedCategory);
+    
+    const applyFiltersAndSort = async () => {
+        try {
+            let allGames = await Storage.fetchGames();
 
-                UI.renderGames(filteredGames);
-            } catch (error) {
-                console.error("🔥 ERROR: An error occurred while filtering games by category!", error);
+            const selectedCategory = categorySelect.value;
+            if (selectedCategory !== "all") {
+                allGames = allGames.filter(game => game.category === selectedCategory);
             }
-        });
-    }
 
-    if (developerSelect) {
-        developerSelect.addEventListener("change", async function () {
-            const selectedCode = this.value;
-            
-            
+           
+            const selectedCode = developerSelect.value;
             const developerMap = {
                 "dvp": "Tümü",
                 "nin": "Nintendo",
@@ -75,57 +66,61 @@ function setupEventListeners() {
                 "id": "id Software",
                 "inner": "Innersloth"
             };
-
             const selectedDeveloper = developerMap[selectedCode];
-
-            try {
-                const allGames = await Storage.fetchGames();
-                const filteredGames = (selectedDeveloper === "Tümü")
-                    ? allGames
-                    : allGames.filter(game => game.developer === selectedDeveloper);
-
-                UI.renderGames(filteredGames);
-            } catch (error) {
-                console.error("🔥 ERROR: An error occurred while filtering games by developer!", error);
+            if (selectedDeveloper !== "Tümü") {
+                allGames = allGames.filter(game => game.developer === selectedDeveloper);
             }
-        });
+
+            
+            const sortOption = sortSelect.value;
+            switch (sortOption) {
+                case "name_asc":
+                    allGames.sort((a, b) => a.name.localeCompare(b.name));
+                    break;
+                case "name_desc":
+                    allGames.sort((a, b) => b.name.localeCompare(a.name));
+                    break;
+                case "date_up":
+                    allGames.sort((a, b) => new Date(a.release_date) - new Date(b.release_date));
+                    break;
+                case "date_down":
+                    allGames.sort((a, b) => new Date(b.release_date) - new Date(a.release_date));
+                    break;
+            }
+
+           
+            UI.renderGames(allGames);
+        } catch (error) {
+            console.error("🔥ERROR: An error occurred while applying filters and sorting!", error);
+        }
+    };
+
+    
+    if (categorySelect) {
+        categorySelect.addEventListener("change", applyFiltersAndSort);
+    }
+
+    if (developerSelect) {
+        developerSelect.addEventListener("change", applyFiltersAndSort);
+    }
+
+    if (sortSelect) {
+        sortSelect.addEventListener("change", applyFiltersAndSort);
     }
 
     if (searchBar) {
         searchBar.addEventListener("input", function (event) {
             const query = event.target.value.toLowerCase();
-            document.querySelectorAll(".game-card").forEach((card) => {
+            const allCards = document.querySelectorAll("#gameList .col-md-4");
+
+            allCards.forEach((card) => {
                 const gameName = card.querySelector(".card-title").textContent.toLowerCase();
-                card.style.display = gameName.includes(query) ? "block" : "none";
-            });
-        });
-    }
-
-    if (sortSelect) {
-        sortSelect.addEventListener("change", async function () {
-            const sortOption = this.value;
-            try {
-                let games = await Storage.fetchGames();
-
-                switch (sortOption) {
-                    case "name_asc":
-                        games.sort((a, b) => a.name.localeCompare(b.name));
-                        break;
-                    case "name_desc":
-                        games.sort((a, b) => b.name.localeCompare(a.name));
-                        break;
-                    case "date_up":
-                        games.sort((a, b) => new Date(a.release_date) - new Date(b.release_date));
-                        break;
-                    case "date_down":
-                        games.sort((a, b) => new Date(b.release_date) - new Date(a.release_date));
-                        break;
+                if (gameName.includes(query)) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
                 }
-
-                UI.renderGames(games);
-            } catch (error) {
-                console.error("🔥 ERROR: An error occurred while sorting the games!", error);
-            }
+            });
         });
     }
 
@@ -167,6 +162,7 @@ function toggleDarkMode() {
         console.error("🔥 ERROR: An error occurred while changing Dark Mode!", error);
     }
 }
+
 
 
 

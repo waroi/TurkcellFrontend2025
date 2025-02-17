@@ -24,7 +24,7 @@ export class Game {
   
     createCard() {
       const cardCol = document.createElement("div"); 
-      cardCol.className = "col-md-4 my-2 d-flex justify-content-center"; 
+      cardCol.className = "col-lg-4 col-md-6 my-2 d-flex justify-content-center"; 
   
       const card = document.createElement("div");
       card.className = "card d-flex justify-content-center";
@@ -119,7 +119,7 @@ export class Game {
   
   
     deleteGame(id) {
-      fetch(`http://localhost:5000/games/${id}`, { method: "DELETE" }).then(
+      fetch(`http://localhost:3000/games/${id}`, { method: "DELETE" }).then(
         () => {
           document.getElementById("game-list").textContent = "";
           fetchGames();

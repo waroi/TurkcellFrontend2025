@@ -1,4 +1,14 @@
-import { addEditGameItem } from "./script.js";
+import {
+  addEditGameItem,
+  searchGames,
+  deleteGameItem,
+  preEditGame,
+  filterByCategory,
+  sortByReleaseDate,
+  sortAZ,
+  sortZA,
+} from "./script.js";
+
 //selectors from html
 
 export const getModalElements = () => {
@@ -49,7 +59,7 @@ const createCustomGameCard = (data) => {
 
   const image = document.createElement("img");
   image.classList.add("card-img-top", "flex-grow-1");
-  image.setAttribute = ("alt", "game-image");
+  image.setAttribute("alt", "game-image");
   image.src = data.game_image;
 
   const cardBody = document.createElement("div");
@@ -61,26 +71,41 @@ const createCustomGameCard = (data) => {
     "position-relative"
   );
 
+  const buttonContainer = document.createElement("div");
+  buttonContainer.classList.add("d-flex", "gap-1", "align-items-center");
+
   const editIcon = document.createElement("button");
   editIcon.classList.add(
     "btn",
     "edit-icon",
-    "card-text",
     "bg-transparent",
-    "border-primary",
+    "btn-primary",
     "position-relative",
     "rounded-pill"
   );
 
-  editIcon.innerHTML = "Edit";
-  editIcon.addEventListener("click", (e) => {
-    openModal;
-    addEditGameItem(e, data);
+  editIcon.textContent = "Edit";
+  editIcon.addEventListener("click", () => {
+    openModal();
+    preEditGame(data);
   });
-  // editIcon.setAttribute("data-bs-toggle", "modal");
-  // editIcon.setAttribute("data-bs-target", "#gameProductModal");
-  // editIcon.setAttribute("data-bs-whatever", `@${data.id}`);
 
+  const deleteButton = document.createElement("button");
+  deleteButton.classList.add(
+    "btn",
+    "edit-icon",
+    "bg-transparent",
+    "btn-outline-primary",
+    "position-relative",
+    "ms-1",
+    "rounded-pill"
+  );
+  deleteButton.textContent = "Delete";
+
+  deleteButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    deleteGameItem(data.id);
+  });
   const cardTitle = document.createElement("h5");
   cardTitle.classList.add("card-title");
   cardTitle.textContent = data.name;
@@ -88,6 +113,10 @@ const createCustomGameCard = (data) => {
   const cardSubtitle = document.createElement("p");
   cardSubtitle.classList.add("card-subtitle");
   cardSubtitle.textContent = data.release_date;
+
+  const gameDeveloper = document.createElement("p");
+  gameDeveloper.classList.add("card-text", "d-inline-block", "third");
+  gameDeveloper.textContent = data.developer;
 
   const cardText = document.createElement("div");
   cardText.classList.add(
@@ -104,9 +133,12 @@ const createCustomGameCard = (data) => {
   card.appendChild(overlay);
   cardBody.appendChild(cardTitle);
   cardBody.appendChild(cardSubtitle);
+  cardBody.appendChild(gameDeveloper);
   cardBody.appendChild(cardText);
   cardText.appendChild(price);
-  cardText.appendChild(editIcon);
+  cardText.appendChild(buttonContainer);
+  buttonContainer.appendChild(editIcon);
+  buttonContainer.appendChild(deleteButton);
 
   card.appendChild(cardBody);
 
@@ -118,7 +150,7 @@ const createInputCol = (labelName, inputId, inputType, value, options = []) => {
   const label = document.createElement("label");
   label.className = "form-label";
   label.textContent = labelName;
-  label.setAttribute("for", { inputId });
+  label.setAttribute("for", inputId);
 
   let input;
 
@@ -130,11 +162,6 @@ const createInputCol = (labelName, inputId, inputType, value, options = []) => {
     input.className = "form-select";
     input.id = inputId;
     input.setAttribute("aria-label", "Select Game Category");
-
-    const defaultOption = document.createElement("option");
-    defaultOption.textContent = "Choose";
-    defaultOption.value = "";
-    input.appendChild(defaultOption);
 
     options.forEach((optionItem) => {
       const option = document.createElement("option");
@@ -224,7 +251,7 @@ const createForm = (gameData = {}, gameCategories) => {
     "Game Image Url",
     "imageUrl",
     "text",
-    gameData.game_image || "https://picsum.photos/200/300"
+    gameData.game_image || "https://picsum.photos/200/200"
   );
   col5.classList.add("col-md-6", "mb-2");
   col6.classList.add("col-md-6", "mb-2");
@@ -287,9 +314,6 @@ export const createGameModal = (gameData = {}, gameCategories) => {
   modalContent.appendChild(modalBody);
 
   const form = createForm({}, gameCategories);
-  console.log(form);
-  form.addEventListener("submit", addEditGameItem);
-
   modalBody.appendChild(form);
 
   const modalFooter = document.createElement("div");
@@ -309,11 +333,47 @@ export const createGameModal = (gameData = {}, gameCategories) => {
   modalFooter.appendChild(submitButton);
 
   modalContainer.appendChild(modal);
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    addEditGameItem();
+  });
   getModalElements();
 };
 
-const createPopularGameList = (gameData) => {
+export const createFilteredUi = (filteredGames, category) => {
+  if (filteredGames && filteredGames !== null) {
+    createPopularGameList(filteredGames, category);
+  }
+};
+
+const createCategoryButtons = (gameCategories) => {
+  const categoryContainer = document.querySelector(".category-buttons");
+  categoryContainer.innerHTML = "";
+
+  gameCategories.map((category) => {
+    const button = document.createElement("div");
+    button.classList.add(
+      "btn",
+      "text-light",
+      "category-button",
+      "py-3",
+      "my-2",
+      "text-center",
+      "btn-link"
+    );
+    button.textContent = category;
+    button.addEventListener("click", () => filterByCategory(category));
+    categoryContainer.appendChild(button);
+  });
+};
+
+const createPopularGameList = (gameData, category = "All") => {
+  console.log(category);
   const popularGameList = document.querySelector(".popular-games");
+  const heading = document.querySelector("#category-name");
+  console.log(heading);
+  popularGameList.innerHTML = "";
+  heading.innerHTML = category || "All";
   console.log(popularGameList);
   gameData.map((gameItem) => {
     const card = createCustomGameCard(gameItem);
@@ -325,8 +385,39 @@ const createPopularGameList = (gameData) => {
   });
 };
 
-export const createUi = (gameData) => {
+export const createUi = (gameData, gameCategories) => {
+  console.log(gameCategories);
   createPopularGameList(gameData);
+  createCategoryButtons(gameCategories);
+
+  //Other Uı actions below
+  document.getElementById("sortAZ").addEventListener("click", () => {
+    const sortedGames = sortAZ(gameData);
+    createFilteredUi(sortedGames);
+    document.getElementById("category-name").textContent = "Games Sorted A-Z";
+  });
+
+  document.getElementById("sortZA").addEventListener("click", () => {
+    const sortedGames = sortZA(gameData);
+    createFilteredUi(sortedGames);
+    document.getElementById("category-name").textContent = "Games Sorted Z-A";
+  });
+
+  document.getElementById("sortReleaseDate").addEventListener("click", () => {
+    const sortedGames = sortByReleaseDate(gameData);
+    createFilteredUi(sortedGames);
+    document.getElementById("category-name").textContent =
+      "Games Sorted by Release Date";
+  });
+
+  document.getElementById("search-input").addEventListener("input", (e) => {
+    const inputValue = e.target.value;
+    if (inputValue) {
+      searchGames(inputValue);
+    } else {
+      createFilteredUi(gameData);
+    }
+  });
 };
 
 function openModal() {

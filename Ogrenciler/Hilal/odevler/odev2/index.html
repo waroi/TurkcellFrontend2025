@@ -7,40 +7,35 @@
     <link rel="stylesheet" href="./src/css/main.css" />
   </head>
   <body class="bg-dark bg-gradient">
-    <header>
-      <nav class="navbar bg-dark">
-        <div class="container-fluid">
-          <a class="navbar-brand text-primary fw-bold font-monospace fs-4"
-            >PlayBox</a
-          >
-          <div class="d-flex">
-            <button
-              type="button"
-              class="btn btn-primary rounded-pill me-2"
-              data-bs-toggle="modal"
-              data-bs-target="#gameProductModal"
-              data-bs-whatever="@mdo"
+    <header class="sticky-top">
+      <section class="top-nav">
+        <nav class="navbar bg-dark sticky-top">
+          <div class="container-fluid">
+            <a class="navbar-brand text-primary fw-bold font-monospace fs-4"
+              >PlayBox</a
             >
-              Add new game
-            </button>
-            <form class="d-flex" role="search">
+            <div class="d-flex">
+              <button
+                type="button"
+                class="btn btn-primary rounded-pill me-2"
+                data-bs-toggle="modal"
+                data-bs-target="#gameProductModal"
+                data-bs-whatever="@mdo"
+              >
+                Add new game
+              </button>
+
               <input
-                class="form-control bg-transparent text-light rounded-pill"
+                id="search-input"
+                class="rounded-pill border-primary bg-transparent text-light rounded-pill"
                 type="search"
                 placeholder="Search"
                 aria-label="Search"
               />
-              <button
-                class="btn btn-outline-primary text-light rounded-pill"
-                type="submit"
-                hidden
-              >
-                Search
-              </button>
-            </form>
+            </div>
           </div>
-        </div>
-      </nav>
+        </nav>
+      </section>
     </header>
     <main>
       <section class="carousel-banner mb-4">
@@ -124,17 +119,65 @@
           </button>
         </div>
       </section>
+      <section class="category-filtered">
+        <div class="container">
+          <div
+            class="category-buttons flex-wrap text-light d-flex justify-content-start align-items-center"
+          ></div>
+          <div class="btn-group mb-4" role="group" aria-label="Sorting Options">
+            <button type="button" class="btn btn-primary" id="sortAZ">
+              A-Z
+            </button>
+            <button type="button" class="btn btn-primary" id="sortZA">
+              Z-A
+            </button>
+            <button type="button" class="btn btn-primary" id="sortReleaseDate">
+              Release Date
+            </button>
+          </div>
+        </div>
+      </section>
       <section>
         <div class="container">
+          <h1 id="category-name" class="text-light my-3"></h1>
+
           <div class="row popular-games"></div>
         </div>
       </section>
       <section class="modal-container"></section>
+      <section>
+        <!-- <button type="button" class="btn btn-primary" id="liveToastBtn">
+          Show live toast
+        </button> -->
+
+        <div class="toast-container position-fixed bottom-0 end-0 p-3">
+          <div
+            id="liveToast"
+            class="toast"
+            role="alert"
+            aria-live="assertive"
+            aria-atomic="true"
+          >
+            <div class="toast-header">
+              <img src="..." class="rounded me-2" alt="..." />
+              <strong class="me-auto">Bootstrap</strong>
+              <small>11 mins ago</small>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="toast"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="toast-body">Hello, world! This is a toast message.</div>
+          </div>
+        </div>
+      </section>
     </main>
     <footer>
       <div class="container">
         <div
-          class="d-flex justify-content-center align-items-center w-100 py-3 text-secondary"
+          class="d-flex text-light justify-content-center align-items-center w-100 py-3 text-secondary"
         >
           Made with ❤️ by Hilal
         </div>

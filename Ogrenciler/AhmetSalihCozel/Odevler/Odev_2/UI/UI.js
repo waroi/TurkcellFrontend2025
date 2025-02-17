@@ -8,20 +8,25 @@ class UI {
     }
     infoCard(){
         infoModal(this.game);
+        saveButton.classList.remove("d-flex")
+        saveButton.style.remove("display")
         saveButton.style.display = "none"
     }
     editCard(){
         editModal(this.game);
-        saveButton.style.display = "block"
+        saveButton.classList.add("d-flex")
+        saveButton.style.display = "none"
     }
     deleteCard(cardElement,gameObj) {
         deleteModal(gameObj,(isConfirmed)=>{
             if (isConfirmed){cardElement.remove()}
         })
-        saveButton.style.display = "block"
+        saveButton.classList.add("d-flex")
+        saveButton.style.display = "none"
     }
     textOrInput(text){
         let input = document.createElement("input")
+        input.classList.add("inputWhite")
         input.style.display = "none"
         text.addEventListener("click",()=>{
             text.style.display = "none"
@@ -48,7 +53,7 @@ class UI {
             games.forEach(async (game) => {
                 let cardHtml = document.querySelector(`[item-id="${game.id}"]`);
                 let searchValue = searchInput.value.replace(/\s+/g, "").toLowerCase();
-                let found = false; // Arama sonucunu takip eden değişken
+                let found = false;
     
                 for (const [key, value] of Object.entries(game)) {
                     let cardValue = String(value).replace(/\s+/g, "").toLowerCase();
