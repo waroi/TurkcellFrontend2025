@@ -1,104 +1,114 @@
 {
   "games": [
     {
-      "id": 1,
+      "name": "Cyberpunk 2077",
+      "description": "A narrative-driven RPG set in a dystopian future in Night City.",
+      "category": "RPG",
+      "image": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1091500/header.jpg?t=1734434803",
+      "developer": "CD Projekt Red",
+      "releaseDate": "2020-12-10",
+      "steamUrl": "https://store.steampowered.com/app/1091500/Cyberpunk_2077/",
+      "id": 1
+    },
+    {
+      "name": "Hollow Knight",
+      "description": "An epic action-adventure game in a vast, interconnected world.",
+      "category": "Metroidvania",
+      "image": "https://cdn.akamai.steamstatic.com/steam/apps/367520/header.jpg",
+      "developer": "Team Cherry",
+      "releaseDate": "2017-02-24",
+      "steamUrl": "https://store.steampowered.com/app/367520/Hollow_Knight/",
+      "id": 2
+    },
+    {
       "name": "The Witcher 3: Wild Hunt",
       "description": "A story-driven open world RPG.",
       "category": "RPG",
-      "releaseDate": "2015-05-19",
-      "image": "https://example.com/witcher3.jpg",
+      "image": "https://cdn.akamai.steamstatic.com/steam/apps/292030/header.jpg",
       "developer": "CD Projekt Red",
-      "steamUrl": "https://store.steampowered.com/app/292030/The_Witcher_3_Wild_Hunt/"
+      "releaseDate": "2015-05-19",
+      "steamUrl": "https://store.steampowered.com/app/292030/",
+      "id": 3
     },
     {
-      "id": 3,
+      "id": 4,
       "name": "Red Dead Redemption 2",
       "description": "A cowboy adventure in the Wild West.",
       "category": "Action",
       "releaseDate": "2018-10-26",
-      "image": "https://example.com/rdr2.jpg",
+      "image": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1174180/header.jpg?t=1720558643",
       "developer": "Rockstar Games",
       "steamUrl": "https://store.steampowered.com/app/1174180/Red_Dead_Redemption_2/"
     },
     {
-      "id": 4,
+      "id": 5,
       "name": "Elden Ring",
       "description": "A fantasy action RPG.",
       "category": "RPG",
       "releaseDate": "2022-02-25",
-      "image": "https://example.com/eldenring.jpg",
+      "image": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1245620/header.jpg?t=1738690346",
       "developer": "FromSoftware",
       "steamUrl": "https://store.steampowered.com/app/1245620/ELDEN_RING/"
     },
     {
-      "id": 5,
+      "id": 6,
       "name": "God of War",
       "description": "A Norse mythology-based action game.",
       "category": "Action",
       "releaseDate": "2018-04-20",
-      "image": "https://example.com/godofwar.jpg",
+      "image": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1593500/header.jpg?t=1729030762",
       "developer": "Santa Monica Studio",
       "steamUrl": "https://store.steampowered.com/app/1593500/God_of_War/"
     },
     {
-      "id": 6,
+      "id": 7,
       "name": "The Last of Us Part II",
       "description": "A post-apocalyptic action-adventure game.",
       "category": "Action",
       "releaseDate": "2020-06-19",
-      "image": "https://example.com/tlou2.jpg",
+      "image": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/2531310/header.jpg?t=1738173620",
       "developer": "Naughty Dog",
       "steamUrl": "https://store.steampowered.com/app/1888930/The_Last_of_Us_Part_II/"
     },
     {
-      "id": 8,
+      "name": "Assassin's Creed Valhalla",
+      "description": "Join Eivor, a legendary Viking raider, in the brutal conquest of England.",
+      "category": "Action RPG",
+      "image": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/2208920/header.jpg?t=1736257857",
+      "developer": "Ubisoft",
+      "releaseDate": "2020-11-11",
+      "steamUrl": "https://store.steampowered.com/app/9800/",
+      "id": 8
+    },
+    {
+      "id": 9,
       "name": "Stardew Valley",
       "description": "A farming simulation game.",
       "category": "Simulation",
       "releaseDate": "2016-02-26",
-      "image": "https://example.com/stardewvalley.jpg",
+      "image": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/413150/header.jpg?t=1711128146",
       "developer": "ConcernedApe",
       "steamUrl": "https://store.steampowered.com/app/413150/Stardew_Valley/"
     },
     {
-      "id": 9,
+      "id": 10,
       "name": "Portal 2",
       "description": "A puzzle-platform game.",
       "category": "Puzzle",
       "releaseDate": "2011-04-19",
-      "image": "https://example.com/portal2.jpg",
+      "image": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/620/header.jpg",
       "developer": "Valve",
       "steamUrl": "https://store.steampowered.com/app/620/Portal_2/"
     },
     {
-      "id": 10,
+      "id": 11,
       "name": "Dark Souls III",
       "description": "A challenging action RPG.",
       "category": "RPG",
       "releaseDate": "2016-04-12",
-      "image": "https://example.com/darksouls3.jpg",
+      "image": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/374320/header.jpg?t=1733509027",
       "developer": "FromSoftware",
       "steamUrl": "https://store.steampowered.com/app/374320/DARK_SOULS_III/"
-    },
-    {
-      "name": "Doom Eternal",
-      "description": "\"Doom Eternal\", hızlı tempolu bir nişancı oyunudur. Oyuncular, cehennem güçlerine karşı savaşan bir savaşçı olarak dünya üzerindeki düşmanları alt etmeye çalışır.",
-      "category": "Action",
-      "image": "2020-03-20",
-      "developer": "https://example.com/doometernal.jpg",
-      "releaseDate": " id Software",
-      "steamURL": "https://store.steampowered.com/app/389730/DOOM_Eternal/",
-      "id": 11
-    },
-    {
-      "name": "The Witcher 3: Wild Hunt",
-      "description": "A story-driven open world RPG.",
-      "category": "RPG",
-      "image": "https://example.com/witcher3.jpg",
-      "developer": "CD Projekt Red",
-      "releaseDate": "2016-05-19",
-      "steamURL": "https://store.steampowered.com/app/292030/The_Witcher_3_Wild_Hunt/",
-      "id": 12
     }
   ]
 }
