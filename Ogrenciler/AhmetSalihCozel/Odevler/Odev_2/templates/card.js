@@ -89,7 +89,7 @@ function card(gameObj){
     colThree.append(steamButton,deleteButton)
 
     let row = document.createElement("div");
-    row.classList.add("row","d-flex", "align-items-stretch","h-100");
+    row.classList.add("row","d-flex","h-100");
     row.append(colOne,colTwo,colThree)
 
     cardBody.appendChild(row);

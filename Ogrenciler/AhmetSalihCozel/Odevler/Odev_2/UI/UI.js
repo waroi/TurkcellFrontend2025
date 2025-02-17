@@ -8,20 +8,25 @@ class UI {
     }
     infoCard(){
         infoModal(this.game);
+        saveButton.classList.remove("d-flex")
+        saveButton.style.remove("display")
         saveButton.style.display = "none"
     }
     editCard(){
         editModal(this.game);
-        saveButton.style.display = "block"
+        saveButton.classList.add("d-flex")
+        saveButton.style.display = "none"
     }
     deleteCard(cardElement,gameObj) {
         deleteModal(gameObj,(isConfirmed)=>{
             if (isConfirmed){cardElement.remove()}
         })
-        saveButton.style.display = "block"
+        saveButton.classList.add("d-flex")
+        saveButton.style.display = "none"
     }
     textOrInput(text){
         let input = document.createElement("input")
+        input.classList.add("inputWhite")
         input.style.display = "none"
         text.addEventListener("click",()=>{
             text.style.display = "none"
