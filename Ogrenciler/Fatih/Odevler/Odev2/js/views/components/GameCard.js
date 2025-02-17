@@ -25,10 +25,6 @@ class GameCard {
     const card = document.createElement("div");
     card.classList.add("game-card");
 
-    card.addEventListener("click", () => {
-      this.detailModal.show(this.game);
-    });
-
     const imgWrapper = document.createElement("div");
     imgWrapper.classList.add("game-card__image");
 
@@ -41,6 +37,10 @@ class GameCard {
       this.src =
         "https://static.vecteezy.com/system/resources/previews/027/879/755/non_2x/console-stick-controller-in-pixel-art-style-vector.jpg";
     };
+
+    img.addEventListener("click", () => {
+      this.detailModal.show(this.game);
+    });
 
     const cardBody = document.createElement("div");
     cardBody.classList.add("game-card__content");
