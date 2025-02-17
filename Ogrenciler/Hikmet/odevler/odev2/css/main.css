@@ -19,7 +19,33 @@ body {
 }
 
 .game-card {
+  border-radius: 0px;
   filter: blur(2px);
+}
+
+.icon {
+  height: 16px;
+  width: 16px;
+}
+
+.input-search {
+  border: none;
+}
+
+.navbar-buttons {
+  gap: 10px;
+}
+
+.delete-button {
+  text-underline-position: below;
+  text-decoration: underline;
+  color: red;
+}
+
+.edit-button {
+  text-underline-position: below;
+  text-decoration: underline;
+  color: blue;
 }
 
 /*# sourceMappingURL=main.css.map */

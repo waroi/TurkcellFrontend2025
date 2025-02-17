@@ -186,6 +186,7 @@ function createGameCard(game) {
 						</p>
 						<div class="row">
 						<button
+						class="edit-button"
 							type="button"
 							data-bs-toggle="modal"
 							data-bs-target="#updateGameModal"
@@ -193,7 +194,7 @@ function createGameCard(game) {
 							id="editGame" data-id="${game.id}">
 							Edit Game 
 						</button>
-      <button id="deleteGame" data-id="${game.id}">Delete</button>
+      <button class="delete-button" id="deleteGame" data-id="${game.id}">Delete</button>
       <button
 							type="button"
 							data-bs-toggle="modal"
