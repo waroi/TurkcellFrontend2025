@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oyun Koleksiyonum 🎮</title>
+    <link rel="stylesheet" href="css/main.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+ 
+    <header class="bg-dark text-white">
+        <nav class="navbar navbar-expand-lg navbar-dark container">
+            <a class="navbar-brand" href="#">🎮 Oyun Koleksiyonum</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Ana Sayfa</a></li>
+              
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container text-center my-5">
+        <h1 class="mb-4">Hoş Geldiniz! 🎮</h1>
+        <p>Burada en sevdiğiniz oyunları koleksiyonunuza ekleyebilir, favori oyunlarınızı yönetebilir ve arkadaşlarınızla paylaşabilirsiniz.</p>
+
+
+<div class="container my-3">
+    <div class="row">
+        <div class="col-md-4">
+            <select id="filterCategory" class="form-select">
+                <option value="">Tüm Kategoriler</option>
+                <option value="RPG">RPG</option>
+                <option value="Aksiyon">Aksiyon</option>
+                <option value="FPS">FPS</option>
+            </select>
+        </div>
+        <div class="col-md-4">
+            <select id="filterYear" class="form-select">
+                <option value="">Tüm Yıllar</option>
+                <option value="2022">2022</option>
+                <option value="2020">2020</option>
+                <option value="2018">2018</option>
+                <option value="2015">2015</option>
+            </select>
+        </div>
+        <div class="col-md-4">
+            <button id="applyFilters" class="btn btn-primary">Filtrele</button>
+            <button id="clearFilters" class="btn btn-secondary">Temizle</button>
+        </div>
+    </div>
+</div>
+
+    
+        <div class="container my-5">
+            <button id="openModalBtn" class="btn btn-success my-3">+ Yeni Oyun Ekle</button>
+            
+            <div class="row" id="game-list">
+                <!-- Oyun Kartları Buraya Gelecek -->
+            </div>
+        </div>
+    
+      
+        <div class="modal fade" id="addGameModal" tabindex="-1">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Yeni Oyun Ekle</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <form id="gameForm">
+                  <input type="text" class="form-control mb-2" id="gameName" placeholder="Oyun Adı" required>
+                  <textarea class="form-control mb-2" id="gameDescription" placeholder="Açıklama" required></textarea>
+                  <input type="text" class="form-control mb-2" id="gameCategory" placeholder="Kategori" required>
+                  <input type="text" class="form-control mb-2" id="gameReleaseDate" placeholder="Çıkış Tarihi" required>
+                  <input type="text" class="form-control mb-2" id="gameImage" placeholder="Görsel URL" required>
+                  <input type="text" class="form-control mb-2" id="gameDeveloper" placeholder="Yapımcı Firma" required>
+                  <input type="text" class="form-control mb-2" id="gameSteamUrl" placeholder="Steam URL" required>
+                  <button type="submit" class="btn btn-primary">Kaydet</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+ 
+        <div class="modal fade" id="editGameModal" tabindex="-1">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Oyun Düzenle</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <form id="editGameForm">
+                  <input type="hidden" id="editGameId">
+                  <input type="text" class="form-control mb-2" id="editGameName" placeholder="Oyun Adı" required>
+                  <textarea class="form-control mb-2" id="editGameDescription" placeholder="Açıklama" required></textarea>
+                  <input type="text" class="form-control mb-2" id="editGameCategory" placeholder="Kategori" required>
+                  <input type="text" class="form-control mb-2" id="editGameReleaseDate" placeholder="Çıkış Tarihi" required>
+                  <input type="text" class="form-control mb-2" id="editGameImage" placeholder="Görsel URL" required>
+                  <input type="text" class="form-control mb-2" id="editGameDeveloper" placeholder="Yapımcı Firma" required>
+                  <input type="text" class="form-control mb-2" id="editGameSteamUrl" placeholder="Steam URL" required>
+                  <button type="submit" class="btn btn-primary">Güncelle</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    
+
+    </main>
+
+
+    <footer class="footer bg-dark text-white py-4">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Oyun Koleksiyonum</h5>
+                    <p>En sevdiğin oyunları arşivle, listele ve keşfet!</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Bizi Takip Edin</h5>
+                    <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="col-md-4">
+                    <h5>İletişim</h5>
+                    <p><i class="fas fa-envelope"></i> info@oyunkoleksiyon.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Türkiye</p>
+                </div>
+            </div>
+            <hr class="my-3 border-light">
+            <p class="mb-0">&copy; 2025 Oyun Koleksiyonu | Tüm Hakları Saklıdır</p>
+        </div>
+    </footer>
+
+    <script type="module" src="js/app.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
