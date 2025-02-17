@@ -4,7 +4,7 @@ export default class GameService {
   static async getGames() {
     return fetch(API_URL).then((response) => {
       if (!response.ok) throw new Error(`HTTP Hatası: ${response.status}`);
-      return response.json;
+      return response.json();
     });
   }
   static addGame(game) {
@@ -24,7 +24,7 @@ export default class GameService {
       body: JSON.stringify(game),
     }).then((response) => {
       if (!response.ok) throw new Error("Oyun güncellenemedi.");
-      return response.json;
+      return response.json();
     });
   }
   static deleteGame(id) {
@@ -32,7 +32,7 @@ export default class GameService {
       method: "DELETE",
     }).then((response) => {
       if (!response.ok) throw new Error("Oyun silinemedi.");
-      return response.json;
+      return response.json();
     });
   }
 }
