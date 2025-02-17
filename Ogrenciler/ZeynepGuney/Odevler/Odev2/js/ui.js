@@ -31,6 +31,15 @@ export class UI {
         img.className = "home-img";
         imgWrapper.append(img);
 
+        const bulletWrapper = document.createElement("div");
+        bulletWrapper.className = "bullet"; 
+
+        const bulletImg = document.createElement("img");
+        bulletImg.src = "./assets/bullet.png";
+        bulletWrapper.append(bulletImg);  
+
+        imgWrapper.append(bulletWrapper);
+
         const rightSection = document.createElement("div");
         rightSection.className = "home-right d-flex flex-column justify-content-center align-items-center p-4 col-12 col-lg-6";
 
@@ -95,7 +104,7 @@ export class UI {
             const point = document.createElement("span");
             point.className = "point rounded me-3";
             li.append(point, document.createTextNode(item));
-            textList.appendChild(li);
+            textList.append(li);
         });
 
         rightSection.append(titleWrapper, textList);
@@ -146,7 +155,7 @@ export class UI {
         document.getElementById('modalDescription').textContent = game.description;
 
         const modal = new bootstrap.Modal(document.getElementById('gameModals'));
-        modal.show();   
+        modal.show();
     }
     createCard(game, index) {
         const cardDiv = document.createElement("div");
@@ -293,7 +302,6 @@ export class UI {
             };
 
             this.games[this.updateIndex] = updatedGame;
-
             // this.updateGameCard(this.updateIndex, updatedGame);
             console.log("Oyun güncellendi:", updatedGame);
         } else {
@@ -364,11 +372,11 @@ export class UI {
 
         form.addEventListener("submit", (event) => {
             event.preventDefault();
-    
+
             const nameValue = nameInput.querySelector("input").value.trim();
             const emailValue = emailInput.querySelector("input").value.trim();
             const messageValue = messageInput.querySelector("textarea").value.trim();
-    
+
             if (!nameValue || !emailValue || !messageValue) {
                 errorMessage.textContent = "Lütfen tüm alanları doldurun!";
                 errorMessage.style.display = "block";
@@ -410,7 +418,7 @@ export class UI {
             icon.className = `contact-icon me-3 fas z-2 p-1 ${item.icon}`;
             const text = document.createTextNode(item.text);
             li.append(point, icon, text);
-            list.appendChild(li);
+            list.append(li);
         });
 
         rightSection.append(rightTitle, list);

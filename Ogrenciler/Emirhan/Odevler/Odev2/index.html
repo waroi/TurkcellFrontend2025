@@ -23,62 +23,78 @@
         </nav>
 
     </header> -->
-    <main class="container-fluid gx-0 row h-screen">
-        <div class="col-lg-3 position-fixed bg-dark border-end border-secondary text-light h-screen">
-            <div class="border-bottom border-secondary h-hundred d-flex align-items-center px-4">
-                <img src="./assets/star-2-svgrepo-com.svg" alt="awda" class="size-4">
-                <p class="fs-4 fw-semibold mb-0">hypegame<sup class="fs-6">TM</sup></p>
-            </div>
+    <main class="container-fluid gx-0 row h-screen d-flex d-sm-flex-column">
+        <div class="col-lg-3 col-sm-12 bg-dark border-end border-secondary text-light h-auto">
+            <div class="position-sticky top-0">
+                <div
+                    class="border-bottom border-secondary h-hundred d-flex align-items-center justify-content-between px-3">
+                    <span class="d-flex align-items-center">
+                        <img src="./assets/star-2-svgrepo-com.svg" alt="awda" class="size-4">
+                        <p class="fs-4 fs-sm-3 fs-md-4 fw-semibold mb-0">
+                            hypegame<sup class="fs-6 fs-sm-5 fs-md-6">TM</sup>
+                        </p>
 
-            <div
-                class="card d-none d-md-block border-bottom border-end-0 border-top-0 border-start-0 border-secondary bg-dark text-light py-3 px-4 rounded-0">
-                <h6 class="p-0 d-none d-md-block mb-0" data-bs-toggle="collapse" href="#filterCollapseSearch"
-                    role="button" aria-expanded="false" aria-controls="filterCollapseSearch">
-                    Arama
-                </h6>
-                <div class="collapse" id="filterCollapseSearch">
-
-                    <input type="text" placeholder="Bir şey yaz..."
-                        class="form-control bg-secondary border-0 text-light custom-placeholder fs-6 mt-3"
-                        onkeyup="updateSearchTerm(event)" id="searchInput">
-                </div>
-            </div>
-
-            <div
-                class="card d-none d-md-block border-bottom border-end-0 border-top-0 border-start-0 border-secondary bg-dark text-light py-3 px-4 rounded-0">
-                <h6 class="p-0 d-flex mb-0 justify-content-between" data-bs-toggle="collapse" href="#filterCollapseSort"
-                    role="button" aria-expanded="false" aria-controls="filterCollapseSort">
-                    Sırala
-                    <i class="fa-solid fa-xmark" id="resetButton"></i>
-                </h6>
-                <div class="collapse" id="filterCollapseSort">
-                    <div class="form-check mt-3">
-                        <input class="form-check-input" type="radio" name="sortOptions" id="oldToNew">
-                        <label class="form-check-label fs-6" for="oldToNew">Eskiden Yeniye</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="sortOptions" id="newToOld">
-                        <label class="form-check-label fs-6" for="newToOld">Yeniden Eskiye</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="sortOptions" id="AZsort">
-                        <label class="form-check-label fs-6" for="AZsort">Alfabeye Göre (A-Z)</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="sortOptions" id="ZAsort">
-                        <label class="form-check-label fs-6" for="ZAsort">Alfabeye Göre (Z-A)</label>
+                    </span>
+                    <div
+                        class="border-bottom border-secondary h-hundred position-sticky top-0 z-1 bg-dark d-flex d-lg-none align-items-center">
+                        <button type="button" id="newGameModal" class="btn btn-primary btn-sm" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal">
+                            Yeni Oyun Ekle
+                        </button>
                     </div>
                 </div>
-            </div>
 
-            <div
-                class="card d-none d-md-block border-bottom border-end-0 border-top-0 border-start-0 border-secondary bg-dark text-light py-3 px-4 rounded-0">
-                <h6 class="p-0 d-none d-md-block mb-0" data-bs-toggle="collapse" href="#filterCollapseFilter"
-                    role="button" aria-expanded="false" aria-controls="filterCollapseFilter">
-                    Filtrele
-                </h6>
-                <div class="collapse" id="filterCollapseFilter">
-                    <!-- <div class="form-check mt-3">
+
+                <div
+                    class="card border-bottom border-end-0 border-top-0 border-start-0 border-secondary bg-dark text-light py-3 px-4 rounded-0">
+                    <h6 class="p-0 mb-0" data-bs-toggle="collapse" href="#filterCollapseSearch" role="button"
+                        aria-expanded="false" aria-controls="filterCollapseSearch">
+                        Arama
+                    </h6>
+                    <div class="collapse" id="filterCollapseSearch">
+                        <input type="text" placeholder="Bir şey yaz..."
+                            class="form-control bg-secondary border-0 text-light custom-placeholder fs-6 mt-3"
+                            onkeyup="updateSearchTerm(event)" id="searchInput">
+                    </div>
+
+                </div>
+
+                <div
+                    class="card border-bottom border-end-0 border-top-0 border-start-0 border-secondary bg-dark text-light py-3 px-4 rounded-0">
+                    <h6 class="p-0 d-flex mb-0 justify-content-between" data-bs-toggle="collapse"
+                        href="#filterCollapseSort" role="button" aria-expanded="false"
+                        aria-controls="filterCollapseSort">
+                        Sırala
+
+                    </h6>
+                    <div class="collapse" id="filterCollapseSort">
+                        <div class="form-check mt-3">
+                            <input class="form-check-input" type="radio" name="sortOptions" id="oldToNew">
+                            <label class="form-check-label fs-6" for="oldToNew">Eskiden Yeniye</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="sortOptions" id="newToOld">
+                            <label class="form-check-label fs-6" for="newToOld">Yeniden Eskiye</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="sortOptions" id="AZsort">
+                            <label class="form-check-label fs-6" for="AZsort">Alfabeye Göre (A-Z)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="sortOptions" id="ZAsort">
+                            <label class="form-check-label fs-6" for="ZAsort">Alfabeye Göre (Z-A)</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="card border-bottom border-end-0 border-top-0 border-start-0 border-secondary bg-dark text-light py-3 px-4 rounded-0">
+                    <h6 class="p-0 mb-0" data-bs-toggle="collapse" href="#filterCollapseFilter" role="button"
+                        aria-expanded="false" aria-controls="filterCollapseFilter">
+                        Filtrele
+                    </h6>
+                    <div class="collapse" id="filterCollapseFilter">
+                        <!-- <div class="form-check mt-3">
                         <input class="form-check-input" type="checkbox" id="oldToNew">
                         <label class="form-check-label fs-6" for="oldToNew">En Sevilenler</label>
                     </div>
@@ -94,20 +110,23 @@
                         <input class="form-check-input" type="checkbox" id="priceLowToHigh">
                         <label class="form-check-label fs-6" for="priceLowToHigh">Yeni Çıkanlar</label>
                     </div> -->
+                    </div>
                 </div>
+
             </div>
-
         </div>
-        <div class="col-lg-9 margin-left-25">
-            <div class="border-bottom border-secondary h-hundred position-sticky top-0 z-1 bg-dark">
-                <button type="button" id="newGameModal" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    Launch demo modal
+        <div class="col-sm-12 col-lg-9">
+            <div
+                class="border-bottom border-secondary h-hundred position-sticky top-0 z-1 bg-dark d-none d-lg-flex align-items-center px-5">
+                <button type="button" id="newGameModal" class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">
+                    Yeni Oyun Ekle
                 </button>
-
             </div>
 
             <div class="row w-100 gx-0 min-h-screen z-1" id="gameContainer">
             </div>
+
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
                 <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -119,55 +138,52 @@
                         <div class="modal-body">
                             <form>
                                 <div class="row mb-3">
-                                    <div class="col-6">
+                                    <div class="col-sm-12 col-lg-6 mb-3 mb-lg-0">
                                         <input type="text" placeholder="Oyun adı..."
                                             class="form-control bg-secondary border-0 text-light custom-placeholder fs-6"
                                             id="gameNameInput">
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-sm-12 col-lg-6">
                                         <select class="form-select bg-secondary border-0 text-light fs-6"
                                             aria-label="Small select example" id="gameCategoryInput">
                                             <option selected>Kategori...</option>
-                                            <option value="1">Oynaması Ücretsiz</option>
-                                            <option value="2">Erken Erişim</option>
-                                            <option value="3">Aksiyon</option>
-                                            <option value="5">Bağımsız</option>
-                                            <option value="6">Devasa Çok Oyunculu</option>
-                                            <option value="7">Macera</option>
-                                            <option value="8">RYO</option>
-                                            <option value="9">Simülasyon</option>
-                                            <option value="10">Spor</option>
-                                            <option value="11">Strateji</option>
-                                            <option value="12">Yarış</option>
-                                            <option value="13">Hayatta Kalma</option>
-                                            <option value="14">Korku</option>
-                                            <option value="15">Rol Yapma</option>
-                                            <option value="17">Bulmaca</option>
-                                            <option value="18">Dövüş</option>
-                                            <option value="19">Platform</option>
-                                            <option value="20">MOBA</option>
-                                            <option value="21">Battle Royale</option>
-                                            <option value="22">Kart Oyunu</option>
-                                            <option value="23">Takım Tabanlı</option>
-                                            <option value="24">Tek Oyunculu</option>
-                                            <option value="25">Kooperatif</option>
-                                            <option value="28">Müzik</option>
-                                            <option value="29">Hikaye Tabanlı</option>
-                                            <option value="30">Taktiksel</option>
-                                            <option value="31">Zeka</option>
-
+                                            <option value="Oynaması Ücretsiz">Oynaması Ücretsiz</option>
+                                            <option value="Erken Erişim">Erken Erişim</option>
+                                            <option value="Aksiyon">Aksiyon</option>
+                                            <option value="Bağımsız">Bağımsız</option>
+                                            <option value="Devasa Çok Oyunculu">Devasa Çok Oyunculu</option>
+                                            <option value="Macera">Macera</option>
+                                            <option value="RYO">RYO</option>
+                                            <option value="Simülasyon">Simülasyon</option>
+                                            <option value="Spor">Spor</option>
+                                            <option value="Strateji">Strateji</option>
+                                            <option value="Yarış">Yarış</option>
+                                            <option value="Hayatta Kalma">Hayatta Kalma</option>
+                                            <option value="Korku">Korku</option>
+                                            <option value="Rol Yapma">Rol Yapma</option>
+                                            <option value="Bulmaca">Bulmaca</option>
+                                            <option value="Dövüş">Dövüş</option>
+                                            <option value="Platform">Platform</option>
+                                            <option value="MOBA">MOBA</option>
+                                            <option value="Battle Royale">Battle Royale</option>
+                                            <option value="Kart Oyunu">Kart Oyunu</option>
+                                            <option value="Takım Tabanlı">Takım Tabanlı</option>
+                                            <option value="Tek Oyunculu">Tek Oyunculu</option>
+                                            <option value="Kooperatif">Kooperatif</option>
+                                            <option value="Müzik">Müzik</option>
+                                            <option value="Hikaye Tabanlı">Hikaye Tabanlı</option>
+                                            <option value="Taktiksel">Taktiksel</option>
+                                            <option value="Zeka">Zeka</option>
                                         </select>
                                     </div>
                                 </div>
-
-
                                 <div class="row mb-3">
-                                    <div class="col-6">
+                                    <div class="col-sm-12 col-lg-6 mb-3 mb-lg-0">
                                         <input type="text" placeholder="Yapım yılı..."
                                             class="form-control bg-secondary border-0 text-light custom-placeholder fs-6"
                                             id="gameYearInput">
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-sm-12 col-lg-6">
                                         <input type="text" placeholder="Yapımcı..."
                                             class="form-control bg-secondary border-0 text-light custom-placeholder fs-6"
                                             id="gameProducerInput">
@@ -198,7 +214,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
-    <script src="./js/app.js"></script>
+    <script src="./js/api.js"></script>
     <script src="./js/game.js"></script>
     <script src="./js/ui.js"></script>
     <script src="./project.js"></script>
