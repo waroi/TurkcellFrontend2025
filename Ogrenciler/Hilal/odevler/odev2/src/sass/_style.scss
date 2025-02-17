@@ -46,7 +46,7 @@ header {
 .carousel:hover,
 .card:hover {
   .card-img-overlay {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.5);
   }
   a.btn {
     opacity: 1;
@@ -71,6 +71,14 @@ header {
     color: rgb(224, 221, 221);
   }
 }
-select option {
-  background-color: red !important;
+.filter-btn {
+  width: 50px;
+  height: 50px;
+  font-size: 12px;
+  text-align: center;
+  padding: 5px;
+}
+
+input {
+  color: $light;
 }
