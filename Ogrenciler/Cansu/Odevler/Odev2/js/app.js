@@ -94,12 +94,24 @@ function setupEventListeners() {
     if (searchBar) {
         searchBar.addEventListener("input", function (event) {
             const query = event.target.value.toLowerCase();
-            document.querySelectorAll(".game-card").forEach((card) => {
+    
+           
+            const allCards = document.querySelectorAll("#gameList .col-md-4");
+            
+            allCards.forEach((card) => {
                 const gameName = card.querySelector(".card-title").textContent.toLowerCase();
-                card.style.display = gameName.includes(query) ? "block" : "none";
+                
+               
+                if (gameName.includes(query)) {
+                    card.style.display = "block"; 
+                } else {
+                    card.style.display = "none"; 
+                }
             });
         });
     }
+    
+
 
     if (sortSelect) {
         sortSelect.addEventListener("change", async function () {
