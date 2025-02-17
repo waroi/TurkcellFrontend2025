@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Goldman&display=swap");
+@import "bootstrap";
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+body::-webkit-scrollbar {
+  width: 1.5rem;
+  background-color: $black;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-clip: content-box;
+  border-top-left-radius: 10rem;
+  border-bottom-left-radius: 10rem;
+  box-shadow: inset 0.5rem 0.3rem $black, inset 0.5rem -0.3rem $black;
+  border: none;
+  background-color: $dark;
+}
+
+body::-webkit-scrollbar-thumb:active {
+  background-color: $info;
+}
+
+#style {
+  .flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  nav {
+    z-index: 100;
+
+    img {
+      height: 2rem;
+    }
+
+    .input-group {
+      @include media-breakpoint-up(lg) {
+        width: 25rem !important;
+      }
+    }
+
+    input {
+      border: none;
+
+      &:focus {
+        box-shadow: 0 0 0 0.2rem $info;
+      }
+    }
+
+    button {
+      border: none;
+    }
+  }
+
+  header {
+    height: 50rem;
+    // box-shadow: 0 0 25rem $black inset !important;
+
+    .carousel-item {
+      img {
+        z-index: -10;
+        filter: brightness(50%);
+      }
+
+      .w-50 {
+        @include media-breakpoint-down(lg) {
+          text-align: center;
+          width: 100% !important;
+        }
+      }
+    }
+  }
+
+  main {
+    position: relative;
+
+    section {
+      opacity: 0;
+      transition: opacity 0.2s;
+
+      &.active {
+        transition: opacity 0.2s 0.2s;
+        opacity: 1;
+        z-index: 10;
+      }
+    }
+  }
+
+  #games {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+
+    @include media-breakpoint-down(xl) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include media-breakpoint-down(sm) {
+      grid-template-columns: 1fr;
+    }
+
+    .card-body {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-img-top {
+      height: 10rem;
+    }
+
+    hr {
+      border-radius: 10rem;
+    }
+  }
+}
