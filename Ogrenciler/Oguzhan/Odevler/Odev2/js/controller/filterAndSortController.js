@@ -4,10 +4,8 @@ export class FilterSortAndSearchController {
         const games = await ApiService.fetchGames();
         const categories = await ApiService.fetchCategories();
 
-
         UI.createGameCard(games, categories);
         UI.showCategories(categories);
-
 
         const clearRow = () => {
             const row = document.getElementById("row");
@@ -21,7 +19,6 @@ export class FilterSortAndSearchController {
             sortBy: null
         };
 
-        // Kategori filtresi
         document.getElementById("categoryFilter").addEventListener("change", (e) => {
             clearRow();
             filters.category = e.target.value;
@@ -29,7 +26,6 @@ export class FilterSortAndSearchController {
             UI.createGameCard(filteredGames, categories);
         });
 
-        // Çıkış tarihi filtresi
         document.getElementById("releaseDateFilter").addEventListener("change", (e) => {
             clearRow();
             filters.releaseDate = e.target.value;
@@ -37,7 +33,7 @@ export class FilterSortAndSearchController {
             UI.createGameCard(filteredGames, categories);
         });
 
-        // Arama
+
         const searchForm = document.querySelector('form[role="search"]');
         const searchInput = document.getElementById("searchInput");
 
@@ -49,7 +45,6 @@ export class FilterSortAndSearchController {
             UI.createGameCard(filteredGames, categories);
         });
 
-        // Sıralama
         document.getElementById("sortSelect").addEventListener("change", (e) => {
             clearRow();
             filters.sortBy = e.target.value;
