@@ -13,6 +13,7 @@ class UI {
             card.classList.add("card");
             card.style.backgroundColor = "#FFD300";
             card.style.border = "none";
+          
 
 
             const img = document.createElement("img");
