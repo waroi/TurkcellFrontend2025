@@ -1,0 +1,64 @@
+$primary: #0f172a;
+$secondary: #1E293B;
+$lightblue: #3B82F6;
+$pink: #EC4899 ;
+$gold:#F59E0B;
+$red:#E11D48;
+$textcolor:#E5E7EB;
+$grey:#94A3B8 ;
+
+
+
+
+$theme-colors: (
+  'primary': $primary,
+  'secondary': $secondary,
+  'alightblue':$lightblue,
+  'apink':$pink,
+  'agold':$gold,
+  'ared':$red,
+  'atextcolor':$textcolor,
+  'agrey':$grey,
+
+);
+
+
+// Arka Plan: #0F172A (Koyu Lacivert)
+// Kart Arka Planları: #1E293B (Koyu Mavi-Gri)
+// Kart Kenarlıkları: #3B82F6 (Neon Mavi) veya #EC4899 (Canlı Pembe)
+// Başlık ve Butonlar: #F59E0B (Altın Sarısı)
+// Hover Efektleri: #E11D48 (Parlak Kırmızı-Pembe)
+// Yazı Rengi (Ana): #E5E7EB (Açık Gri)
+// İkincil Yazı Rengi: #94A3B8 (Soluk Gri-Mavi)
+
+
+
+$font-size-base: 1rem;
+$font-sizes: (
+  12: $font-size-base * 0.75,
+  14: $font-size-base * 0.875,
+  16: $font-size-base * 1,
+  20: $font-size-base * 1.25,
+  24: $font-size-base * 1.5,
+  32: $font-size-base * 2,
+  48: $font-size-base * 3,
+  64: $font-size-base * 4,
+  96: $font-size-base * 6,
+);
+
+
+$navbar-light-hover-color:$lightblue;
+
+
+
+//ACORDİON
+
+$accordion-color:$textcolor; // Yazı rengi
+$accordion-bg: $primary;
+$accordion-border-color: $lightblue;
+$accordion-button-color:$textcolor;
+$accordion-button-active-color: $primary;
+$accordion-button-active-bg: $lightblue;
+
+
+$card-height: 100%;
