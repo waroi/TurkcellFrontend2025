@@ -101,6 +101,7 @@ function setupEventListeners() {
         });
     }
 
+
     if (sortSelect) {
         sortSelect.addEventListener("change", async function () {
             const sortOption = this.value;
