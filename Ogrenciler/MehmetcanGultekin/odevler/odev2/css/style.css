@@ -6,16 +6,12 @@
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    border-color: yellow;
 }
 
 .card-img-top {
     height: 200px;
     object-fit: cover;
-}
-
-.card-body {
-    display: flex;
-    flex-direction: column;
 }
 
 .alert {
@@ -28,4 +24,11 @@
 
 .navbar.sticky-top {
     z-index: 1000;
+}
+
+
+body {
+    background-image: url(../assets/images/gaming-background.jpg);
+    background-size: cover;
+    background-attachment: fixed;
 }

@@ -25,17 +25,14 @@ export class GameUI {
         this.gameList = document.getElementById('gameList');
         this.gameForm = document.getElementById('gameForm');
         this.addGameBtn = document.getElementById('addGameBtn');
-        
-        
+         
         this.handleSubmit = this.handleSubmit.bind(this);
         
-        // Oyun ekle butonu
         this.addGameBtn.addEventListener('click', () => {
             this.formManager.clearForm();
             this.modalManager.showGameModal();
         });
         
-        // Kaydet Butonu
         this.gameForm.addEventListener('submit', this.handleSubmit);
     }
 
@@ -48,7 +45,7 @@ export class GameUI {
             this.gameService.addGame(formData);
 
         action.then(() => {
-            //Burada modalın kapanması lazımdı ama bu işi Modal Manager da yapıyoruz
+            
         });
     }
 

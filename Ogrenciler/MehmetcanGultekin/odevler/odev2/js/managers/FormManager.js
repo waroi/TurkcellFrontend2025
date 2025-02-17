@@ -1,6 +1,5 @@
 export class FormManager {
     constructor() {
-        console.log('FormManager constructor called');
         this.gameForm = document.getElementById('gameForm');
         
         this.gameId = document.getElementById('gameId');
@@ -22,13 +21,11 @@ export class FormManager {
     }
 
     clearForm() {
-        console.log('FormManager.clearForm called');
         this.gameForm.reset();
         this.gameId.value = '';
     }
 
     getFormData() {
-        console.log('FormManager.getFormData called');
         const platforms = this.gamePlatforms.value
             ? this.gamePlatforms.value.split(',').map(p => p.trim())
             : ['PC'];
@@ -57,12 +54,10 @@ export class FormManager {
             },
             tags: tags
         };
-        console.log('FormManager.getFormData returning:', formData);
         return formData;
     }
 
     setFormData(game) {
-        console.log('FormManager.setFormData called with:', game);
         if (!game) return;
         
         this.gameId.value = game.id;

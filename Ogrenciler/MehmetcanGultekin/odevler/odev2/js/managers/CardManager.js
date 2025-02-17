@@ -33,7 +33,7 @@ export class CardManager {
             img.src = game.image;
 
             const cardBody = document.createElement('div');
-            cardBody.className = 'card-body';
+            cardBody.className = 'card-body d-flex flex-column';
 
             const title = document.createElement('h5');
             title.className = 'card-title';
