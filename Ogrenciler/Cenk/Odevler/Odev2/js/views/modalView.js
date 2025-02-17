@@ -6,13 +6,14 @@ export default class ModalView {
 
   getFormData() {
     return {
-      name: this.form.name.value,
-      description: this.form.description.value,
-      category: this.form.category.value,
-      releaseDate: this.form.releaseDate.value,
-      imageUrl: this.form.imageUrl.value,
-      developer: this.form.developer.value,
-      steamUrl: this.form.steamUrl.value,
+      id: document.querySelector("#gameForm").dataset.gameId || null,
+      name: this.form.querySelector("#gameName").value,
+      description: this.form.querySelector("#gameDescription").value,
+      category: this.form.querySelector("#gameCategory").value,
+      releaseDate: this.form.querySelector("#gameReleaseDate").value,
+      imageUrl: this.form.querySelector("#gameImageUrl").value,
+      developer: this.form.querySelector("#gameDeveloper").value,
+      steamUrl: this.form.querySelector("#gameSteamUrl").value,
     };
   }
 

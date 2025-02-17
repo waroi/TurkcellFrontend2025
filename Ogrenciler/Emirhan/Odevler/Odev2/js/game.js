@@ -8,17 +8,5 @@ class Game {
       this.imageUrl = imageUrl;
       this.description = description;
     }
-  
-    static fromData(data) {
-      return new Game(
-        data.id,
-        data.name,
-        data.category,
-        data.year,
-        data.producer,
-        data.imageUrl,
-        data.description
-      );
-    }
   }
   

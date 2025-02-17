@@ -26,6 +26,8 @@ export default class GameListView {
     img.src = game.imageUrl;
     img.alt = game.name;
     img.classList.add("card-img-top", "img-fluid", "object-fit-cover");
+    img.style = "height: 400px";
+
     img.addEventListener("error", () => (img.src = "./assets/logo.png"));
 
     const cardBody = document.createElement("div");
@@ -46,7 +48,7 @@ export default class GameListView {
     const steamLink = document.createElement("a");
     steamLink.href = game.steamUrl;
     steamLink.target = "_blank";
-    steamLink.classList.add("btn", "btn-sm", "btn-primary");
+    steamLink.classList.add("btn", "btn-sm", "btn-primary", "me-3");
     steamLink.textContent = " Steam";
 
     const steamIcon = document.createElement("i");
@@ -54,7 +56,7 @@ export default class GameListView {
     steamLink.prepend(steamIcon);
 
     const editBtn = document.createElement("button");
-    editBtn.classList.add("btn", "btn-sm", "btn-warning", "edit-game");
+    editBtn.classList.add("btn", "btn-sm", "btn-warning", "edit-game", "me-3");
     editBtn.dataset.id = game.id;
     editBtn.textContent = " Düzenle";
 
@@ -63,7 +65,13 @@ export default class GameListView {
     editBtn.prepend(editIcon);
 
     const deleteBtn = document.createElement("button");
-    deleteBtn.classList.add("btn", "btn-sm", "btn-danger", "delete-game");
+    deleteBtn.classList.add(
+      "btn",
+      "btn-sm",
+      "btn-danger",
+      "delete-game",
+      "me-3"
+    );
     deleteBtn.dataset.id = game.id;
     deleteBtn.textContent = " Sil";
 

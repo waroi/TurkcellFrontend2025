@@ -30,7 +30,8 @@
 					<ul class="navbar-nav me-auto mb-2 mb-lg-0 navbar-buttons">
 						<section class="d-flex align-items-center  navbar-buttons">
 							<div class="btn-group">
-								<button type="button" data-bs-toggle="dropdown" aria-expanded="false">
+								<button type="button" data-bs-toggle="dropdown" aria-expanded="false"
+									class="order-button">
 									Sıralama
 								</button>
 								<ul class="dropdown-menu ">
@@ -46,7 +47,8 @@
 								</ul>
 							</div>
 							<div class="btn-group">
-								<button type="button" data-bs-toggle="dropdown" aria-expanded="false">
+								<button type="button" data-bs-toggle="dropdown" aria-expanded="false"
+									class="filter-button">
 									<img src="./filter.png" alt="filter" class="icon">
 									Filtrele
 								</button>
@@ -73,7 +75,7 @@
 							</div>
 						</section>
 						<button type="button" data-bs-toggle="modal" data-bs-target="#addGameModal"
-							data-bs-whatever="@mdo">
+							data-bs-whatever="@mdo" class="create-button">
 							<img src="./add.png" alt="plusicon" class="icon">
 							Bir Oyunu Tarihe Göm
 						</button>
@@ -83,7 +85,7 @@
 							<span class="input-group-text"><img src="./search.png" alt="search" class="icon"></span>
 							<input class="input-search me-2" type="search" placeholder="Search" aria-label="Search" />
 						</div>
-						<button type="submit" id="searchButton">
+						<button type="submit" id="searchButton" class="search-button">
 							Search
 						</button>
 					</form>
@@ -220,8 +222,8 @@
 				</div>
 				<div class="modal-body" id="gameDetailModalBody"></div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-						Close
+					<button type="button" data-bs-dismiss="modal">
+						Mezarına Geri Koy
 					</button>
 				</div>
 			</div>
