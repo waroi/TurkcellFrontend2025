@@ -1,5 +1,5 @@
 export class FilterSortAndSearch {
-    //Kategori filtreleme
+    
     static filterByCategory(games, selectedCategory) {
         if (!selectedCategory || selectedCategory === "all") {
             return games;
@@ -10,7 +10,7 @@ export class FilterSortAndSearch {
         });
     }
 
-    //Çıkış tarihi filtreleme
+   
     static filterByReleaseDate(games, releaseDate) {
         if (!releaseDate) return games;
 
@@ -30,7 +30,7 @@ export class FilterSortAndSearch {
         });
     }
 
-    //Arama
+    
     static searchGames(games, searchTerm, categories) {
         if (!searchTerm) return games;
 
@@ -49,7 +49,7 @@ export class FilterSortAndSearch {
         });
     }
 
-    //Sıralama 
+    
     static sortGames(games, sortBy) {
         if (!sortBy || !games) return games;
 
