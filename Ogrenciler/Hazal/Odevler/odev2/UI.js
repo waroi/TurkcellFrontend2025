@@ -45,7 +45,22 @@ class UI {
             <p><strong>Yapımcı:</strong> ${game.developer}</p>
             <a href="${game.steamUrl}" target="_blank" class="btn btn-primary">Steam'de Gör</a>
         `;
-        $('#gameDetailModal').modal('show');
+        const gameDetailModal = new bootstrap.Modal(document.getElementById('gameDetailModal'));
+        gameDetailModal.show();
+    }
+    
+    static showEditGameModal(game) {
+        document.getElementById('gameName').value = game.name;
+        document.getElementById('gameDescription').value = game.description;
+        document.getElementById('gameCategory').value = game.category;
+        document.getElementById('gameReleaseDate').value = game.releaseDate;
+        document.getElementById('gameImage').value = game.image;
+        document.getElementById('gameDeveloper').value = game.developer;
+        document.getElementById('gameSteamUrl').value = game.steamUrl;
+
+        // Düzenleme işlemi için modalı aç
+        const modal = new bootstrap.Modal(document.getElementById('addGameModal'));
+        modal.show();
     }
 
     // Hata mesajı göster
