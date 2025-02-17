@@ -8,73 +8,78 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
 	<script src="./index.js" type="module" defer></script>
+	<link rel="stylesheet" href="./css/main.css" />
 </head>
 
 <body>
-	<nav class="navbar navbar-expand-lg bg-body-tertiary">
-		<div class="container-fluid">
-			<a class="navbar-brand" href="#">Dusty Shelves</a>
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-				data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-				aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-					<section class="d-flex align-items-center">
-						<div class="btn-group">
-							<button class="btn btn-secondary btn-sm dropdown-toggle" type="button"
-								data-bs-toggle="dropdown" aria-expanded="false">
-								Sıralama
-							</button>
-							<ul class="dropdown-menu">
-								<li><a class="dropdown-item" id="sortAZ">A-Z</a></li>
-								<li><a class="dropdown-item" id="sortZA">Z-A</a></li>
-								<li>
-									<a class="dropdown-item" id="sortDate">Çıkış Tarihi</a>
-								</li>
-							</ul>
-						</div>
-						<div class="btn-group">
-							<button class="btn btn-secondary btn-sm dropdown-toggle" type="button"
-								data-bs-toggle="dropdown" aria-expanded="false">
-								Filtrele
-							</button>
-							<ul class="dropdown-menu">
-								<form method="get" name="filterForm">
-									<div class="mb-3">
-										<label for="category-name" class="col-form-label">Category:</label>
-										<input type="text" class="form-control" id="category" name="category" />
-									</div>
-									<div class="mb-3">
-										<label for="date-name" class="col-form-label">Date:</label>
-										<input type="text" class="form-control" id="releaseDate" name="releaseDate" />
-									</div>
-									<div class="mb-3">
-										<label for="developer-name" class="col-form-label">Developer:</label>
-										<input type="text" class="form-control" id="developer" name="developer" />
-									</div>
-								</form>
-								<button type="button" class="btn btn-primary" id="filterForm">
-									Save
+	<div class="container">
+		<nav class="navbar navbar-expand-lg ">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="#">Dusty Shelves</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+					data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+					aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+						<section class="d-flex align-items-center">
+							<div class="btn-group">
+								<button class="btn btn-secondary btn-sm dropdown-toggle" type="button"
+									data-bs-toggle="dropdown" aria-expanded="false">
+									Sıralama
 								</button>
-							</ul>
-						</div>
-					</section>
-					<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addGameModal"
-						data-bs-whatever="@mdo">
-						Add Game to Archive
-					</button>
-				</ul>
-				<form class="d-flex" role="search" name="searchForm" method="get" id="searchForm">
-					<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-					<button class="btn btn-outline-success" type="submit" id="searchButton">
-						Search
-					</button>
-				</form>
+								<ul class="dropdown-menu">
+									<li><a class="dropdown-item" id="sortAZ">A-Z</a></li>
+									<li><a class="dropdown-item" id="sortZA">Z-A</a></li>
+									<li>
+										<a class="dropdown-item" id="sortDate">Çıkış Tarihi</a>
+									</li>
+								</ul>
+							</div>
+							<div class="btn-group">
+								<button class="btn btn-secondary btn-sm dropdown-toggle" type="button"
+									data-bs-toggle="dropdown" aria-expanded="false">
+									Filtrele
+								</button>
+								<ul class="dropdown-menu">
+									<form method="get" name="filterForm">
+										<div class="mb-3">
+											<label for="category-name" class="col-form-label">Category:</label>
+											<input type="text" class="form-control" id="category" name="category" />
+										</div>
+										<div class="mb-3">
+											<label for="date-name" class="col-form-label">Date:</label>
+											<input type="text" class="form-control" id="releaseDate"
+												name="releaseDate" />
+										</div>
+										<div class="mb-3">
+											<label for="developer-name" class="col-form-label">Developer:</label>
+											<input type="text" class="form-control" id="developer" name="developer" />
+										</div>
+									</form>
+									<button type="button" class="btn btn-primary" id="filterForm">
+										Save
+									</button>
+								</ul>
+							</div>
+						</section>
+						<button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal"
+							data-bs-target="#addGameModal" data-bs-whatever="@mdo">
+							Add Game to Archive
+						</button>
+					</ul>
+					<form class="d-flex" role="search" name="searchForm" method="get" id="searchForm">
+						<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+						<button class="btn btn-outline-success" type="submit" id="searchButton">
+							Search
+						</button>
+					</form>
+				</div>
 			</div>
-		</div>
-	</nav>
+		</nav>
+	</div>
+
 
 	<!-- Create Game Archive Modal -->
 	<div class="modal fade" id="addGameModal" tabindex="-1" aria-labelledby="addGameLabel" aria-hidden="true">
@@ -150,19 +155,19 @@
 							<input type="text" class="form-control" id="desc" name="desc" required />
 						</div>
 						<div class="mb-3">
-							<label for="category-name" class="col-form-label">category:</label>
+							<label for="category-name" class="col-form-label">Category:</label>
 							<input type="text" class="form-control" id="category" name="category" required />
 						</div>
 						<div class="mb-3">
-							<label for="date-name" class="col-form-label">date:</label>
+							<label for="date-name" class="col-form-label">Date:</label>
 							<input type="text" class="form-control" id="releaseDate" name="releaseDate" required />
 						</div>
 						<div class="mb-3">
-							<label for="image-name" class="col-form-label">image:</label>
+							<label for="image-name" class="col-form-label">Image:</label>
 							<input type="text" class="form-control" id="image" name="image" required />
 						</div>
 						<div class="mb-3">
-							<label for="developer-name" class="col-form-label">developer:</label>
+							<label for="developer-name" class="col-form-label">Developer:</label>
 							<input type="text" class="form-control" id="developer" name="developer" required />
 						</div>
 						<div class="mb-3">
@@ -172,10 +177,10 @@
 					</form>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+					<button type="button" data-bs-dismiss="modal">
 						Close
 					</button>
-					<button type="button" class="btn btn-primary" id="updateForm" data-bs-dismiss="modal">
+					<button type="button" id="updateForm" data-bs-dismiss="modal">
 						Save
 					</button>
 				</div>

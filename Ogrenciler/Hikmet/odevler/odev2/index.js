@@ -156,7 +156,7 @@ function gameDetailModalBody(gameId) {
 	const gameDetailModalBody = document.getElementById("gameDetailModalBody");
 	gameDetailModalBody.innerHTML = `
 				<div class="row">
-						<div class="col-md-4">
+						<div class="col-md-4 ">
 								<img src="${game.image}" class="img-fluid"	alt="${game.name}">
 						</div>
 						<div class="col-md-8">
@@ -174,36 +174,34 @@ function gameDetailModalBody(gameId) {
 function createGameCard(game) {
 	return `
  <div class="col h-100">
-    <div class="card">
-					<img
+    <div class="card game-card" id="game-card">
+				<img
 						src="${game.image}"
-						class="card-img-top img-fluid"
+						class="card-img-top img-fluid game-card-img"
 						alt="${game.name}" />
 					<div class="card-body">
-						<h5 class="card-title">${game.name}</h5>
-						<p class="card-text">
+						<h5 class="card-title" >${game.name}</h5>
+						<p class="card-text game-description">
       ${game.description}
 						</p>
 						<div class="row">
-						<a
+						<button
 							type="button"
-							class="btn btn-primary"
 							data-bs-toggle="modal"
 							data-bs-target="#updateGameModal"
 							data-bs-whatever="@mdo"
 							id="editGame" data-id="${game.id}">
 							Edit Game 
-						</a>
-      <a class="btn btn-danger" id="deleteGame" data-id="${game.id}">Delete</a>
-      <a
+						</button>
+      <button id="deleteGame" data-id="${game.id}">Delete</button>
+      <button
 							type="button"
-							class="btn btn-primary"
 							data-bs-toggle="modal"
 							data-bs-target="#gameDetailModal"
 							data-bs-whatever="@mdo"
 							id="detailGame" data-id="${game.id}">
 							Show Detail Archived Game
-						</a>
+						</button>
 						</div>
 					</div>
 				</div>
@@ -277,6 +275,12 @@ document
 
 document.getElementById("submitForm").addEventListener("click", createGame);
 document.getElementById("updateForm").addEventListener("click", updateGame);
+document.addEventListener("click", function (e) {
+	const gameCard = e.target.closest(".game-card");
+	if (gameCard) {
+		gameCard.style.filter = "none";
+	}
+});
 
 //? Modal yapıldı
 //? Json serverde veriler tutuluyor
