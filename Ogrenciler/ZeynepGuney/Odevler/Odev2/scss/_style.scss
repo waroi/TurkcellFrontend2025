@@ -51,6 +51,31 @@
         }
     }
 }
+@keyframes shoot {
+    from {
+        left: 160%;
+    }
+    to {
+        left: 200%; 
+    }
+}
+.bullet {
+    position: absolute;
+    top: 13%;
+    width: 25px;
+    height: 5px; 
+    animation: shoot 3s linear infinite;
+    .bullet img {
+        width: 100%; 
+        height: auto; 
+    }
+}
+@media (max-width: 1028px) {
+    .bullet{
+        animation: none;
+        display: none;
+    }
+}
 @media (max-width: 768px) {
     .home-left {
         width: 100%;
@@ -84,3 +109,4 @@
         @include gradient-bg();
     }
 }
+

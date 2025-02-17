@@ -17,12 +17,12 @@ export default class ModalView {
   }
 
   setFormData(game) {
-    this.form.name.value = game.name;
-    this.form.description.value = game.description;
-    this.form.category.value = game.category;
-    this.form.releaseDate.value = game.releaseDate;
-    this.form.imageUrl.value = game.imageUrl;
-    this.form.developer.value = game.developer;
-    this.form.steamUrl.value = game.steamUrl;
+    this.form.querySelector("#gameName").value = game.name || "";
+    this.form.querySelector("#gameDescription").value = game.description || "";
+    this.form.querySelector("#gameCategory").value = game.category || "";
+    this.form.querySelector("#gameReleaseDate").value = game.releaseDate || "";
+    this.form.querySelector("#gameImageUrl").value = game.imageUrl || "";
+    this.form.querySelector("#gameDeveloper").value = game.developer || "";
+    this.form.querySelector("#gameSteamUrl").value = game.steamUrl || "";
   }
 }

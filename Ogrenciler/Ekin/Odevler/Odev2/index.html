@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Equinox</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body id="style" class="bg-black">
+    <nav
+      class="navbar position-fixed w-100 navbar-expand-lg bg-dark text-uppercase"
+    >
+      <div class="container">
+        <a class="navbar-brand text-white" href=""
+          ><h1 class="flex-center">
+            Equinox
+            <img class="ms-3" src="assets/img/logo.png" alt="Logo" /></h1
+        ></a>
+        <button
+          class="navbar-toggler text-white"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navigation"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <section class="collapse navbar-collapse" id="navigation">
+          <div class="input-group input-group-sm ms-auto me-2 my-2">
+            <input
+              type="text"
+              class="form-control text-black"
+              type="search"
+              placeholder="Search Game"
+            />
+          </div>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#main">Games</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">News</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Editor Mode</a>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </nav>
+    <header id="carousel" class="carousel slide">
+      <div class="carousel-inner h-100">
+        <div class="carousel-item active h-100">
+          <img
+            class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover"
+            src="https://img.gsc-game.net/q_85/stalker2/the-game/the-zone/4k/03.jpg"
+          />
+          <div class="container h-100 flex-center justify-content-start">
+            <div class="w-50">
+              <h3 class="mb-5">
+                50% Off! S.T.A.L.K.E.R. 2:<br />Heart of Chornobyl
+              </h3>
+              <p class="mb-4">
+                Explore the dangerous, irradiated world of the Chornobyl
+                Exclusion Zone, battling mutants, rival stalkers, and uncovering
+                dark secrets. With breathtaking visuals, intense survival
+                mechanics, and an open-world full of mystery and danger, this is
+                the perfect time to experience the thrill of the Zone.
+              </p>
+              <button class="btn btn-primary">View Game</button>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item h-100">
+          <img
+            class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover"
+            src="https://wallpapercave.com/wp/wp4001645.png"
+          />
+          <div class="container h-100 flex-center justify-content-start">
+            <div class="w-50">
+              <h3 class="mb-5">
+                Paradox will collaborate with Kaiserreich devs for the upcoming
+                Hearts of Iron V.
+              </h3>
+              <p class="mb-4">
+                Paradox Interactive has announced a collaboration with the
+                Kaiserreich mod developers for the highly anticipated Hearts of
+                Iron V. This partnership promises to bring new, enhanced content
+                to the game, blending Kaiserreich’s alternate history with the
+                official gameplay.
+              </p>
+              <button class="btn btn-primary">View Game</button>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item h-100">
+          <img
+            class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover"
+            src="https://4kwallpapers.com/images/wallpapers/gta-6-official-3840x2160-13626.jpg"
+          />
+          <div class="container h-100 flex-center justify-content-start">
+            <div class="w-50">
+              <h3 class="mb-5">
+                Grand Theft Auto VI's release has been delayed until 2049.
+              </h3>
+              <p class="mb-4">
+                Grand Theft Auto VI's highly anticipated release has been
+                delayed until 2028, leaving fans eager for the next chapter in
+                the iconic open-world series to arrive years later than
+                expected.
+              </p>
+              <button class="btn btn-primary">View Game</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carousel"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carousel"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </header>
+    <main id="main">
+      <section class="position-absolute top-0 start-0 w-100 active">
+        <div class="container py-5">
+          <h2 class="my-5">Games</h2>
+          <div class="row">
+            <form class="games col-12 col-lg-3 mb-5 mb-lg-0">
+              <h4 class="mb-4">Filter</h4>
+              <div class="input-group input-group-sm mb-3">
+                <span class="input-group-text flex-center text-black"
+                  ><i class="fa-solid fa-icons me-2"></i>Category</span
+                >
+                <select class="form-select text-black" name="category">
+                  <option selected value="All">All</option>
+                  <option value="Action">Action</option>
+                  <option value="Adventure">Adventure</option>
+                  <option value="Fighting">Fighting</option>
+                  <option value="Horror">Horror</option>
+                  <option value="MOBA">MOBA</option>
+                  <option value="RPG">RPG</option>
+                  <option value="Sandbox">Sandbox</option>
+                  <option value="Simulation">Simulation</option>
+                  <option value="Strategy">Strategy</option>
+                  <option value="Survival">Survival</option>
+                </select>
+              </div>
+              <div class="input-group input-group-sm mb-4">
+                <span class="input-group-text flex-center text-black"
+                  ><i class="fa-solid fa-calendar-days me-2"></i>Release
+                  Date</span
+                >
+                <select class="form-select text-black" name="release-date">
+                  <option selected value="all">All</option>
+                  <option value="2025">2025</option>
+                  <option value="2024">2024</option>
+                  <option value="2023">2023</option>
+                  <option value="2022">2022</option>
+                  <option value="2021">2021</option>
+                  <option value="2020">2020</option>
+                  <option value="2019">2019</option>
+                  <option value="2018">2018</option>
+                  <option value="2017">2017</option>
+                  <option value="2016">2016</option>
+                  <option value="2015">2015</option>
+                  <option value="2014">2014</option>
+                  <option value="2013">2013</option>
+                  <option value="2012">2012</option>
+                  <option value="2011">2011</option>
+                  <option value="2010">2010</option>
+                  <option value="Before 2010">Before 2010</option>
+                </select>
+              </div>
+              <h4 class="mb-4">Sort</h4>
+              <div class="form-check mb-2">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="sort"
+                  id="ascending"
+                />
+                <label class="form-check-label" for="ascending">
+                  Ascending (A-Z)
+                </label>
+              </div>
+              <div class="form-check mb-2">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="sort"
+                  id="descending"
+                />
+                <label class="form-check-label" for="descending">
+                  Descending (Z-A)
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="sort"
+                  id="release-date"
+                  checked
+                />
+                <label class="form-check-label" for="release-date">
+                  Release Date
+                </label>
+              </div>
+            </form>
+            <div class="col-12 col-lg-9">
+              <button class="btn btn-info w-100 flex-center mb-4 d-none">
+                <i class="fa-solid fa-plus me-2"></i>Add Game
+              </button>
+              <div id="games"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="position-absolute top-0 start-0 w-100">
+        <div class="container py-5">
+          <button class="btn btn-dark flex-center">
+            <i class="fa-solid fa-chevron-left me-2"></i>Back
+          </button>
+          <h2 class="my-5">Edit Game</h2>
+          <div class="row">
+            <div class="col-12 col-lg-3"></div>
+            <div class="form-game col-12 col-lg-6">
+              <input type="hidden" name="id" />
+              <div class="input-group mb-3">
+                <span class="input-group-text flex-center text-black"
+                  ><i class="fa-solid fa-gamepad me-2"></i>Name</span
+                >
+                <input type="text" class="form-control text-black" />
+              </div>
+              <div class="input-group mb-3">
+                <span class="input-group-text flex-center text-black"
+                  ><i class="fa-solid fa-icons me-2"></i>Category</span
+                >
+                <select class="form-select text-black">
+                  <option selected hidden>Select</option>
+                  <option value="Action">Action</option>
+                  <option value="Adventure">Adventure</option>
+                  <option value="Fighting">Fighting</option>
+                  <option value="Horror">Horror</option>
+                  <option value="MOBA">MOBA</option>
+                  <option value="RPG">RPG</option>
+                  <option value="Sandbox">Sandbox</option>
+                  <option value="Simulation">Simulation</option>
+                  <option value="Strategy">Strategy</option>
+                  <option value="Survival">Survival</option>
+                </select>
+              </div>
+              <div class="input-group mb-3">
+                <span class="input-group-text flex-center text-black"
+                  ><i class="fa-solid fa-coins me-2"></i>Price</span
+                >
+                <input
+                  type="number"
+                  class="form-control text-black"
+                  min="0"
+                  max="1000"
+                  step="0.01"
+                />
+              </div>
+              <div class="input-group mb-3">
+                <span class="input-group-text flex-center text-black"
+                  ><i class="fa-solid fa-screwdriver-wrench me-2"></i
+                  >Developer</span
+                >
+                <input type="text" class="form-control text-black" />
+              </div>
+              <div class="input-group mb-3">
+                <span class="input-group-text flex-center text-black"
+                  ><i class="fa-solid fa-calendar-days me-2"></i>Release
+                  Date</span
+                >
+                <select class="form-select text-black">
+                  <option selected hidden>Select</option>
+                  <option value="all">All</option>
+                  <option value="2025">2025</option>
+                  <option value="2024">2024</option>
+                  <option value="2023">2023</option>
+                  <option value="2022">2022</option>
+                  <option value="2021">2021</option>
+                  <option value="2020">2020</option>
+                  <option value="2019">2019</option>
+                  <option value="2018">2018</option>
+                  <option value="2017">2017</option>
+                  <option value="2016">2016</option>
+                  <option value="2015">2015</option>
+                  <option value="2014">2014</option>
+                  <option value="2013">2013</option>
+                  <option value="2012">2012</option>
+                  <option value="2011">2011</option>
+                  <option value="2010">2010</option>
+                  <option value="Before 2010">Before 2010</option>
+                </select>
+              </div>
+              <div class="input-group mb-3">
+                <span class="input-group-text flex-center text-black"
+                  ><i class="fa-solid fa-align-left me-2"></i>Description</span
+                >
+                <textarea class="form-control text-black" rows="3"></textarea>
+              </div>
+              <div class="input-group mb-3">
+                <span class="input-group-text flex-center text-black"
+                  ><i class="fa-solid fa-link me-2"></i>URL</span
+                >
+                <input type="text" class="form-control text-black" />
+              </div>
+              <div class="input-group mb-3">
+                <span class="input-group-text flex-center text-black"
+                  ><i class="fa-solid fa-image me-2"></i>Image URL</span
+                >
+                <input type="text" class="form-control text-black" />
+              </div>
+              <p>Preview</p>
+              <img class="img-fluid mb-5" src="assets/img/error.png" />
+              <button class="btn btn-primary w-100 flex-center">
+                <i class="fa-solid fa-floppy-disk me-2"></i>Save
+              </button>
+            </div>
+            <div class="col-12 col-lg-3"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <section class="modal fade">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-black">Warning</h5>
+            <button type="button" class="btn-close"></button>
+          </div>
+          <div class="modal-body text-black"></div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script
+      src="https://kit.fontawesome.com/0460a9927e.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/js/game.js"></script>
+    <script src="assets/js/database.js"></script>
+    <script src="assets/js/UI.js"></script>
+
+    <script src="assets/js/script.js" type="module"></script>
+  </body>
+</html>

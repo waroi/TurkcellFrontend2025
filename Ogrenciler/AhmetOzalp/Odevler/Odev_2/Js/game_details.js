@@ -1,7 +1,5 @@
 const urlParams = new URLSearchParams(window.location.search);
-const gameId = urlParams.get("id");
 
-if (gameId) {
     fetch(`http://localhost:3000/games/${gameId}`)
         .then(res => {
             if (!res.ok) {
@@ -20,7 +18,6 @@ if (gameId) {
             const iframeContainer = document.getElementById("game-video-iframe");
 
             if (game.videoURL) {
-                console.log("Yüklenen video URL:", game.videoURL);
             
                 if (game.videoURL.includes("youtube.com/watch?v=")) {
                     game.videoURL = game.videoURL.replace("watch?v=", "embed/");
@@ -39,9 +36,5 @@ if (gameId) {
         })
         .catch(error => {
             console.error("Oyun bilgisi yüklenirken hata oluştu:", error);
-            document.body.innerHTML = `<h2>Oyun bulunamadı.</h2><a href="index.html" class="btn btn-secondary">Ana Sayfa</a>`;
         });
-} else {
-    console.error("Oyun ID bulunamadı.");
-    document.body.innerHTML = `<h2>Geçersiz oyun ID'si.</h2><a href="index.html" class="btn btn-secondary">Ana Sayfa</a>`;
-}
+ 

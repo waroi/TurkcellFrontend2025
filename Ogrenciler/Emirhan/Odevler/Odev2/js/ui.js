@@ -4,10 +4,24 @@ class UI {
     this.gameContainer = document.getElementById('gameContainer')
     this.saveGameButton = document.getElementById('saveGame')
     this.newGameModal = document.getElementById('newGameModal')
+    this.searchInput = document.getElementById('searchInput')
+    this.sortRadios = document.querySelectorAll('input[name="sortOptions"]')
+
     this.gameId = null
     this.games = []
+    this.selectedCategories = new Set()
+    this.searchTerm = ''
+    this.sortValue = ''
+
     this.newGameModal.addEventListener('click', () => this.resetForm())
     this.saveGameButton.addEventListener('click', () => this.handleSaveGame())
+    this.searchInput.addEventListener('input', event =>
+      this.updateSearchTerm(event)
+    )
+
+    this.sortRadios.forEach(radio =>
+      radio.addEventListener('change', event => this.updateSort(event))
+    )
 
     this.getAllGames()
   }
@@ -16,20 +30,20 @@ class UI {
     const games = await this.api.getGames()
     this.games = games
     this.renderCategories()
-    this.renderGames(this.games)
+    this.renderGames(this.getSearchedGames())
   }
 
   renderCategories () {
     const categories = new Set(this.games.map(game => game.category))
     const filterContainer = document.getElementById('filterCollapseFilter')
-    console.log(categories)
+    filterContainer.innerHTML = ''
 
     categories.forEach(category => {
       const div = document.createElement('div')
-      div.className = 'form-check mt-'
+      div.className = 'form-check mt-3'
       div.innerHTML = `
-        <input class="form-check-input" type="checkbox" id=${category}>
-        <label class="form-check-label fs-6" for=${category}>${category}</label>
+        <input class="form-check-input" type="checkbox" id="${category}">
+        <label class="form-check-label fs-6" for="${category}">${category}</label>
       `
       const input = div.querySelector('input')
       input.addEventListener('change', () => this.toggleCategory(category))
@@ -122,10 +136,15 @@ class UI {
     )
   }
 
+  renderGames (games) {
+    this.gameContainer.innerHTML = ''
+    games.forEach(game => this.createCard(game))
+  }
+
   createCard (game) {
     const cardDiv = document.createElement('div')
     cardDiv.className =
-      'card col-4 col-lg-6 rounded-0 bg-dark border-secondary outline-none border-top-0 border-start-0 text-light p-4'
+      'card col-sm-12 col-lg-6 rounded-0 bg-dark border-secondary outline-none border-top-0 border-start-0 text-light p-4'
     cardDiv.id = game.id
 
     const img = document.createElement('img')

@@ -13,12 +13,20 @@ export default class GameListView {
 
   createGameCard(game) {
     const card = document.createElement("div");
-    card.classList.add("card", "game-card");
+    card.classList.add(
+      "card",
+      "game-card",
+      "col-12",
+      "col-md-3",
+      "p-0",
+      "shadow"
+    );
 
     const img = document.createElement("img");
     img.src = game.imageUrl;
     img.alt = game.name;
-    img.classList.add("card-img-top");
+    img.classList.add("card-img-top", "img-fluid", "object-fit-cover");
+    img.addEventListener("error", () => (img.src = "./assets/logo.png"));
 
     const cardBody = document.createElement("div");
     cardBody.classList.add("card-body");

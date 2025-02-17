@@ -3,33 +3,95 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Oyun Kütüphanem</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
 
   <body>
-    <h1>Promise</h1>
+    <header class="header">
+      <nav class="navbar bg-body-tertiary sticky-top position-fixed w-100">
+        <div class="container">
+          <a class="navbar-brand">Oyun Kitaplığım</a>
 
-    <div class="container">
-      <div class="row" id="row"></div>
-    </div>
+          <div class="d-flex justify-content-between gap-5">
+            <form class="d-flex" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Oyun Ara"
+                aria-label="Search"
+                id="searchInput"
+              />
+              <button class="btn btn-outline-success" type="submit">Ara</button>
+            </form>
+            <div class="d-flex gap-3">
+              <!-- Kategoriye göre filtreleme -->
+              <div>
+                <select
+                  class="form-select"
+                  aria-label="Default select example"
+                  id="categoryFilter"
+                >
+                  <option selected disabled>Bir kategori seçin</option>
+                </select>
+              </div>
+
+              <div>
+                <select
+                  class="form-select"
+                  aria-label="Default select example"
+                  id="releaseDateFilter"
+                >
+                  <option selected disabled>Bir çıkış tarihi seçin</option>
+                  <option>2020 ve üstü</option>
+                  <option>2020 ve altı</option>
+                </select>
+              </div>
+
+              <!--Sorting -->
+              <div>
+                <select
+                  class="form-select"
+                  aria-label="Sort by"
+                  id="sortSelect"
+                >
+                  <option selected disabled>Sıralama</option>
+                  <option value="name-asc">A-Z</option>
+                  <option value="name-desc">Z-A</option>
+                  <option value="release-asc">Çıkış Tarihi (Artan)</option>
+                  <option value="release-desc">Çıkış Tarihi (Azalan)</option>
+                </select>
+              </div>
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#addGameModal"
+              >
+                + Oyun Ekle
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <section class="py-5">
+      <div class="container">
+        <div class="row" id="row"></div>
+      </div>
+    </section>
 
     <div class="addGameModal">
-      <button
-        type="button"
-        class="btn btn-primary"
-        data-bs-toggle="modal"
-        data-bs-target="#addGameModal"
-      >
-        + Oyun Ekle
-      </button>
-
       <!-- Modal -->
       <div
         class="modal fade"
@@ -51,58 +113,135 @@
             </div>
             <div class="modal-body">
               <!-- FORM -->
-              <form id="addGamesForm">
-                <div class="mb-3">
+
+              <form id="addGameForm">
+                <div class="mb-3 fw-semibold">
                   <label for="gameName" class="form-label">Oyun Adı</label>
                   <input type="text" class="form-control" id="gameName" />
                 </div>
-                <div class="mb-3">
-                  <label for="exampleInputPassword1" class="form-label"
-                    >Password</label
+
+                <div class="mb-3 fw-semibold">
+                  <label for="description" class="form-label"
+                    >Oyun Açıklaması</label
                   >
-                  <input
-                    type="password"
-                    class="form-control"
-                    id="exampleInputPassword1"
-                  />
+                  <input type="text" class="form-control" id="description" />
                 </div>
-                <div class="mb-3 form-check">
-                  <input
-                    type="checkbox"
-                    class="form-check-input"
-                    id="exampleCheck1"
-                  />
-                  <label class="form-check-label" for="exampleCheck1"
-                    >Check me out</label
+
+                <div class="input-group mb-3 fw-semibold gap-3">
+                  <div>
+                    <label for="releaseDate" class="form-label"
+                      >Çıkış Tarihi</label
+                    >
+                    <input type="date" class="form-control" id="releaseDate" />
+                  </div>
+
+                  <div>
+                    <label for="developer" class="form-label"
+                      >Geliştirici</label
+                    >
+                    <input type="text" class="form-control" id="developer" />
+                  </div>
+                </div>
+
+                <div class="mb-3 fw-semibold">
+                  <label for="category" class="form-label">Kategori</label>
+                  <div class="input-group w-75 gap-3">
+                    <select
+                      class="form-select form-control"
+                      aria-label="Default select example"
+                      id="category"
+                    >
+                      <option selected disabled>Bir kategori seçin</option>
+                    </select>
+
+                    <button
+                      type="button"
+                      class="btn btn-primary border rounded"
+                      id="categoryBtn"
+                    >
+                      Ekle
+                    </button>
+                  </div>
+
+                  <ul class="list-group form-control w-50" id="list-group"></ul>
+                </div>
+
+                <div>
+                  <input type="hidden" id="categoryIds" name="categoryIds" />
+                </div>
+
+                <div class="mb-3 fw-semibold">
+                  <label for="imageUrl" class="form-label">Image Url</label>
+                  <input type="text" class="form-control" id="imageUrl" />
+                </div>
+
+                <div class="mb-3 fw-semibold">
+                  <label for="steamUrl" class="form-label">Steam Url</label>
+                  <input type="text" class="form-control" id="steamUrl" />
+                </div>
+
+                <div class="input-group d-flex align-items-center gap-3">
+                  <div>
+                    <label for="myPoint" class="form-label">Puanım</label>
+                    <input type="number" class="form-control" id="myPoint" />
+                  </div>
+
+                  <div>
+                    <input
+                      type="checkbox"
+                      class="form-check-input"
+                      id="isCompleted"
+                    />
+                    <label class="form-check-label" for="isCompleted"
+                      >Oyunu Bitirdim</label
+                    >
+                  </div>
+                </div>
+                <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
                   >
+                    Close
+                  </button>
+                  <button type="submit" class="btn btn-primary" id="addGameBtn">
+                    Save changes
+                  </button>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
               </form>
-            </div>
-            <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-secondary"
-                data-bs-dismiss="modal"
-              >
-                Close
-              </button>
-              <button type="button" class="btn btn-primary">
-                Save changes
-              </button>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <script src="ui.js"></script>
-    <script src="app.js"></script>
+    <!-- Footer -->
+    <footer class="footer mt-auto bg-dark text-light py-3">
+      <div class="container text-center">
+        <div class="row">
+          <div>
+            <p class="mb-0">
+              &copy; 2025 Oyun Kütüphanem
+              <span class="text-muted mx-2">|</span>
+            </p>
+          </div>
+          <div>
+            <a href="">İnstagram</a>
+            <a href="">Facebook</a>
+            <a href="">X</a>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+
+    <script type="module" src="./app.js"></script>
   </body>
 </html>
