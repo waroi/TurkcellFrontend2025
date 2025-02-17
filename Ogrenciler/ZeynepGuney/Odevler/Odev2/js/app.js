@@ -1,7 +1,7 @@
 import { Request } from './request.js';
 import { UI } from './ui.js';
 
-const gamesSection = document.querySelector('#gamesSection');
+// const gamesSection = document.querySelector('#gamesSection');
 let ui;
 let games = [];
 let allGames = [];
@@ -23,22 +23,22 @@ Request.get("./assets/games.json")
     console.error('Veri alınırken hata oluştu:', err);
   });
 
-  function sortGames(option) {
-    let sortedGames = [...games]; 
-    if (option === 'a-z') {
-      sortedGames.sort((gameA, gameB) => gameA.name.localeCompare(gameB.name));
-    } else if (option === 'z-a') {
-      sortedGames.sort((gameA, gameB) => gameB.name.localeCompare(gameA.name));
-    } else if (option === 'yeni') {
-      sortedGames.sort((gameA, gameB) => new Date(gameB.date) - new Date(gameA.date));
-    } else if (option === 'eski') {
-      sortedGames.sort((gameA, gameB) => new Date(gameA.date) - new Date(gameB.date));
-    } else {
-      sortedGames = [...allGames]; 
-    }
-    games = sortedGames; 
-    ui.createGameCards(games, games); 
+function sortGames(option) {
+  let sortedGames = [...games];
+  if (option === 'a-z') {
+    sortedGames.sort((gameA, gameB) => gameA.name.localeCompare(gameB.name));
+  } else if (option === 'z-a') {
+    sortedGames.sort((gameA, gameB) => gameB.name.localeCompare(gameA.name));
+  } else if (option === 'yeni') {
+    sortedGames.sort((gameA, gameB) => new Date(gameB.date) - new Date(gameA.date));
+  } else if (option === 'eski') {
+    sortedGames.sort((gameA, gameB) => new Date(gameA.date) - new Date(gameB.date));
+  } else {
+    sortedGames = [...allGames];
   }
+  games = sortedGames;
+  ui.createGameCards(games, games);
+}
 
 document.getElementById('sort-option').addEventListener('change', (e) => {
   const sortOption = e.target.value;
@@ -114,8 +114,4 @@ document.getElementById("searchForm").addEventListener("click", function () {
     game.director.toLowerCase().includes(searchTerm)
   );
   ui.createGameCards(filteredGames, filteredGames);
-});
-
-document.getElementById("add-game-btn").addEventListener("click", () => {
-  ui.addGame();
 });

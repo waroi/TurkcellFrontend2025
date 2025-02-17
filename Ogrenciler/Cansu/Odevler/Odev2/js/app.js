@@ -1,11 +1,10 @@
 document.addEventListener("DOMContentLoaded", async () => {
     try {
-     
         await UI.renderGames(await Storage.fetchGames());
         setupEventListeners();
         applyDarkMode(); 
     } catch (error) {
-        console.error("Error during DOM content loaded:", error);
+        console.error("🔥ERROR: An error occurred during DOMContentLoaded!", error);
     }
 });
 
@@ -36,12 +35,11 @@ function setupEventListeners() {
                 await UI.renderGames(await Storage.fetchGames());
                 addGameForm.reset();
             } catch (error) {
-                console.error("Error adding game:", error);
+                console.error("🔥 ERROR: An error occurred while adding the game!", error);
             }
         });
     }
 
-   
     if (categorySelect) {
         categorySelect.addEventListener("change", async function () {
             const selectedCategory = this.value;
@@ -53,23 +51,42 @@ function setupEventListeners() {
 
                 UI.renderGames(filteredGames);
             } catch (error) {
-                console.error("Error fetching games by category:", error);
+                console.error("🔥 ERROR: An error occurred while filtering games by category!", error);
             }
         });
     }
 
     if (developerSelect) {
         developerSelect.addEventListener("change", async function () {
-            const selectedDeveloper = this.value;
+            const selectedCode = this.value;
+            
+            
+            const developerMap = {
+                "dvp": "Tümü",
+                "nin": "Nintendo",
+                "from": "FromSoftware",
+                "rock": "Rockstar Games",
+                "beth": "Bethesda Game Studios",
+                "moj": "Mojang Studios",
+                "cd": "CD Projekt Red",
+                "blizz": "Blizzard Entertainment",
+                "epic": "Epic Games",
+                "super": "Supergiant Games",
+                "id": "id Software",
+                "inner": "Innersloth"
+            };
+
+            const selectedDeveloper = developerMap[selectedCode];
+
             try {
                 const allGames = await Storage.fetchGames();
-                const filteredGames = selectedDeveloper === "dvp"
+                const filteredGames = (selectedDeveloper === "Tümü")
                     ? allGames
                     : allGames.filter(game => game.developer === selectedDeveloper);
 
                 UI.renderGames(filteredGames);
             } catch (error) {
-                console.error("Error fetching games by developer:", error);
+                console.error("🔥 ERROR: An error occurred while filtering games by developer!", error);
             }
         });
     }
@@ -107,11 +124,10 @@ function setupEventListeners() {
 
                 UI.renderGames(games);
             } catch (error) {
-                console.error("Error sorting games:", error);
+                console.error("🔥 ERROR: An error occurred while sorting the games!", error);
             }
         });
     }
-
 
     if (darkModeToggle) {
         darkModeToggle.addEventListener("click", toggleDarkMode);
@@ -121,35 +137,37 @@ function setupEventListeners() {
 function applyDarkMode() {
     try {
         const darkMode = localStorage.getItem("darkMode");
+        const darkModeToggle = document.getElementById("darkModeToggle");
 
         if (darkMode === "enabled") {
-            document.body.classList.add("dark"); 
-            document.getElementById("darkModeToggle").textContent = "🌙"; 
+            document.body.classList.add("dark");
+            if (darkModeToggle) darkModeToggle.textContent = "🌙";
         } else {
-            document.body.classList.remove("dark"); 
-            document.getElementById("darkModeToggle").textContent = "🌞"; 
+            document.body.classList.remove("dark");
+            if (darkModeToggle) darkModeToggle.textContent = "🌞";
         }
     } catch (error) {
-        console.error("Error applying dark mode:", error);
+        console.error("🔥 ERROR: An error occurred while applying Dark Mode!", error);
     }
 }
-
 
 function toggleDarkMode() {
     try {
-        document.body.classList.toggle("dark"); 
+        document.body.classList.toggle("dark");
+        const darkModeToggle = document.getElementById("darkModeToggle");
 
         if (document.body.classList.contains("dark")) {
             localStorage.setItem("darkMode", "enabled");
-            document.getElementById("darkModeToggle").textContent = "🌙";
+            if (darkModeToggle) darkModeToggle.textContent = "🌙";
         } else {
             localStorage.removeItem("darkMode");
-            document.getElementById("darkModeToggle").textContent = "🌞";
+            if (darkModeToggle) darkModeToggle.textContent = "🌞";
         }
     } catch (error) {
-        console.error("Error toggling dark mode:", error);
+        console.error("🔥 ERROR: An error occurred while changing Dark Mode!", error);
     }
 }
+
 
 
 

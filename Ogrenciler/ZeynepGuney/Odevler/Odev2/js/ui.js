@@ -8,16 +8,15 @@ export class UI {
         this.saveChangesButton = document.getElementById("changes");
         this.createHomeSection();
         this.createAboutSection();
-        this.createGamesSection();
+        // this.createGamesSection();
+        // this.createGameCards(this.games);
         this.createContactSection();
-        this.createGameCards(this.games);
         this.addGameButton.addEventListener("click", this.openAddGameModal.bind(this));
         this.saveChangesButton.addEventListener("click", () => this.saveChanges());
-
     }
     createHomeSection() {
         const homeSection = document.createElement("section");
-        homeSection.className = "home d-flex flex-wrap h-100";
+        homeSection.className = "home d-flex flex-wrap h-100 mb-20";
 
         const leftSection = document.createElement("div");
         leftSection.className = "home-left position-relative col-12 col-lg-9";
@@ -38,7 +37,7 @@ export class UI {
         const titleWrapper = document.createElement("div");
         titleWrapper.className = "home-title-wrapper mb-4 text-center text-white";
         const title = document.createElement("h1");
-        title.className = "home-title bold fs-128 text-primary";
+        title.className = "home-title fw-bold fs-128 text-primary";
         title.textContent = "Game'Z";
         titleWrapper.append(title);
 
@@ -46,7 +45,7 @@ export class UI {
         sloganBox.className = "slogan-box d-flex align-items-center justify-content-center p-5";
 
         const slogan = document.createElement("p");
-        slogan.className = "slogan-text text-white text-center bold fs-18";
+        slogan.className = "slogan-text text-white text-center fw-bold fs-20";
         slogan.textContent = "Game'Z – Gerçek Oyuncuların Adresi";
 
         sloganBox.append(slogan);
@@ -59,7 +58,7 @@ export class UI {
     }
     createAboutSection() {
         const aboutSection = document.createElement("section");
-        aboutSection.className = "about-us d-flex flex-wrap my-13";
+        aboutSection.className = "about-us d-flex flex-wrap my-20";
 
         const leftSection = document.createElement("div");
         leftSection.className = "about-left col-12 col-lg-4 position-relative";
@@ -75,7 +74,7 @@ export class UI {
         const titleWrapper = document.createElement("div");
         titleWrapper.className = "about-title-wrapper mb-4";
         const title = document.createElement("h2");
-        title.className = "about-title fs-50 bold text-primary";
+        title.className = "about-title fs-50 fw-bold text-primary";
         title.textContent = "HAKKIMIZDA";
         titleWrapper.append(title);
 
@@ -92,7 +91,7 @@ export class UI {
 
         listItems.forEach(item => {
             const li = document.createElement("li");
-            li.className = "about-text-item d-flex align-items-center mb-2";
+            li.className = "about-text-item d-flex align-items-center mb-2 fs-18";
             const point = document.createElement("span");
             point.className = "point rounded me-3";
             li.append(point, document.createTextNode(item));
@@ -104,9 +103,9 @@ export class UI {
 
         document.querySelector("#about-us").append(aboutSection);
     }
-    createGamesSection() {
-        const gamesSection = document.querySelector('#gamesSection');
-    }
+    // createGamesSection() {
+    //     const gamesSection = document.querySelector('#gamesSection');
+    // }
     addGame() {
         const newGame = {
             id: this.games.length + 1,
@@ -136,6 +135,19 @@ export class UI {
         const modal = new bootstrap.Modal(document.getElementById('gameModal'));
         modal.show();
     }
+    openGameModal(game) {
+        document.getElementById('modalTitle').textContent = game.name;
+        document.getElementById('modalPoster').textContent = game.poster;
+        document.getElementById('modalName').textContent = game.name;
+        document.getElementById('modalType').textContent = game.type;
+        document.getElementById('modalPrice').textContent = game.date;
+        document.getElementById('modalSteam').textContent = game.steam_url;
+        document.getElementById('modalDirector').textContent = game.director;
+        document.getElementById('modalDescription').textContent = game.description;
+
+        const modal = new bootstrap.Modal(document.getElementById('gameModals'));
+        modal.show();   
+    }
     createCard(game, index) {
         const cardDiv = document.createElement("div");
         cardDiv.className = "card p-3 h-100";
@@ -150,11 +162,14 @@ export class UI {
         img.alt = `${game.name} Poster`;
 
         const cardBody = document.createElement("div");
-        cardBody.className = "card-body p-5";
+        cardBody.className = "card-body p-3 h-100 d-flex flex-column p-3";
+        cardBody.style.height = "100%";
 
         const title = document.createElement("h5");
         title.className = "card-title h-25 fw-bold";
         title.textContent = game.name;
+        title.style.cursor = 'pointer';
+        title.onclick = () => this.openGameModal(game);
 
         const description = document.createElement("p");
         description.className = "card-text";
@@ -173,16 +188,19 @@ export class UI {
         type.textContent = `Tür: ${game.type}`;
 
         const steam_url = document.createElement("a");
-        steam_url.className = "game-steam-url";
+        steam_url.className = "game-steam-url fw-bold text-black";
         steam_url.href = game.steam_url;
         steam_url.target = "_blank";
         steam_url.textContent = "Steam";
 
-        const updateButton = this.createUpdateButton('btn btn-update btn-primary', 'Güncelle', () => this.openUpdateModal(index));
+        const buttonContainer = document.createElement("div");
+        buttonContainer.className = "d-flex justify-content-center mt-2 w-100";
+
+        const updateButton = this.createUpdateButton('btn btn-update btn-primary mx-2', 'Güncelle', () => this.openUpdateModal(index));
 
         const deleteButton = this.createButton('btn btn-delete btn-purple', 'Sil', () => this.deleteGame(game.id));
-
-        cardBody.append(title, description, director, date, type, steam_url, updateButton, deleteButton);
+        buttonContainer.append(updateButton, deleteButton);
+        cardBody.append(title, description, director, date, type, steam_url, buttonContainer);
         cardDiv.append(img, cardBody);
         colDiv.append(cardDiv);
 
@@ -246,7 +264,7 @@ export class UI {
         const typeElement = gameCard.querySelector('.card-text:nth-of-type(4)');
         const steamUrlElement = gameCard.querySelector('.game-steam-url');
         const posterElement = gameCard.querySelector('.card-img-top');
-    
+
         if (!nameElement || !descriptionElement || !directorElement || !yearElement || !typeElement || !steamUrlElement || !posterElement) {
             console.error("Oyun kartında bazı öğeler eksik!");
             return;
@@ -258,13 +276,11 @@ export class UI {
         typeElement.textContent = `Tür: ${updatedGame.type}`;
         steamUrlElement.href = updatedGame.steam_url;
         posterElement.src = updatedGame.poster;
-    
+
         console.log(`Oyun kartı güncellendi: ${updatedGame.name}`);
     }
-    
     saveChanges() {
         if (this.updateIndex !== null) {
-            //  güncelleme 
             const updatedGame = {
                 id: this.games[this.updateIndex].id,
                 poster: document.getElementById('game-poster-url').value,
@@ -275,13 +291,13 @@ export class UI {
                 director: document.getElementById('game-director').value,
                 description: document.getElementById('game-description').value
             };
+
             this.games[this.updateIndex] = updatedGame;
-            this.updateGameCard(this.updateIndex, updatedGame);
+
+            // this.updateGameCard(this.updateIndex, updatedGame);
+            console.log("Oyun güncellendi:", updatedGame);
         } else {
-            //  yeni oyun 
-            updatedGame.id = this.games.length + 1;
-            this.games.push(updatedGame);
-            this.createGameCards(this.games);
+            this.addGame();
         }
     }
     createGameCards(games) {
@@ -299,6 +315,8 @@ export class UI {
             const index = this.games.indexOf(gameToDelete);
             this.games.splice(index, 1);
             this.createGameCards(this.games);
+            alert('Oyun başarıyla silindi!');
+
         }
     }
     removeGameCard(gameId) {
@@ -310,10 +328,10 @@ export class UI {
         } else {
             console.error(`ID'si game-card-${gameId} olan kart DOM'da bulunamadı.`);
         }
-    }  
+    }
     createContactSection() {
         const contactSection = document.createElement("section");
-        contactSection.className = "contact d-flex flex-wrap mt-13";
+        contactSection.className = "contact d-flex flex-wrap my-20";
 
         const leftSection = document.createElement("div");
         leftSection.className = "contact-left col-12 col-lg-6 position-relative d-flex align-items-center justify-content-center p-5";
@@ -324,6 +342,9 @@ export class UI {
         const formWrapper = document.createElement("div");
         formWrapper.className = "form-wrapper d-flex flex-column justify-content-center align-items-center p-3 bg-white rounded col-12 col-lg-6 z-2";
 
+        const form = document.createElement("form");
+        form.className = "w-100";
+
         const formTitle = document.createElement("h2");
         formTitle.className = "form-title mb-4 text-purple";
         formTitle.textContent = "Bize Ulaşın";
@@ -332,21 +353,47 @@ export class UI {
         const emailInput = this.createInput("E-mail", "email");
         const messageInput = this.createTextarea("Mesaj");
 
+        const errorMessage = document.createElement("div");
+        errorMessage.className = "text-danger mt-2";
+        errorMessage.style.display = "none";
+
         const submitButton = document.createElement("button");
         submitButton.className = "btn btn-purple w-100 mt-4 text-white";
         submitButton.textContent = "Gönder";
+        submitButton.type = "submit";
 
-        formWrapper.append(formTitle, nameInput, emailInput, messageInput, submitButton);
+        form.addEventListener("submit", (event) => {
+            event.preventDefault();
+    
+            const nameValue = nameInput.querySelector("input").value.trim();
+            const emailValue = emailInput.querySelector("input").value.trim();
+            const messageValue = messageInput.querySelector("textarea").value.trim();
+    
+            if (!nameValue || !emailValue || !messageValue) {
+                errorMessage.textContent = "Lütfen tüm alanları doldurun!";
+                errorMessage.style.display = "block";
+            } else {
+                errorMessage.style.display = "none";
+                console.log("Ad Soyad:", nameValue);
+                console.log("E-mail:", emailValue);
+                console.log("Mesaj:", messageValue);
+                form.reset();
+            }
+        });
+
+        form.append(formTitle, nameInput, emailInput, messageInput, errorMessage, submitButton);
+        formWrapper.append(form);
+        leftSection.append(gradientBg, formWrapper);
 
         const rightSection = document.createElement("div");
         rightSection.className = "contact-right col-12 col-lg-6 d-flex flex-column justify-content-center align-items-center p-4";
 
         const rightTitle = document.createElement("h2");
-        rightTitle.className = "right-title text-primary mb-4";
+        rightTitle.className = "right-title text-primary mb-4 fw-bold";
         rightTitle.textContent = "İLETİŞİM BİLGİLERİMİZ";
 
         const list = document.createElement("ul");
-        list.className = "contact-list list-unstyled text-white";
+        list.className = "contact-list list-unstyled text-white fs-18";
 
         const contactItems = [
             { icon: "fa-map-marker-alt", text: "Adres: Balıkesir" },
@@ -373,7 +420,6 @@ export class UI {
 
         document.querySelector("#contact").append(contactSection);
     }
-
     createInput(placeholder, type) {
         const inputWrapper = document.createElement("div");
         inputWrapper.className = "mb-3";

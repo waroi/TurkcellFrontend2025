@@ -4,7 +4,10 @@
     margin: 0;
     padding: 0;
 }
-@mixin gradient-bg($angle: 135deg, $color1: #21eda0, $color2: #0ad5ed, $color3: #1780f9) {
+@mixin gradient-bg($angle: 135deg, $color1: #21eda0, $color2: $primary, $color3: #1780f9) {
+    background: linear-gradient($angle, $color1, $color2, $color3);
+}
+@mixin gradient-2($angle: 135deg, $color1: #fa5560, $color2: #b14bf4, $color3: #4d91ff) {
     background: linear-gradient($angle, $color1, $color2, $color3);
 }
 .navbar-toggler {
@@ -61,6 +64,15 @@
             }
         }
     }
+}
+.card-body{
+    .btn-update{
+        @include gradient-bg();
+    }
+    .btn-delete{
+        @include gradient-2();
+    }
+
 }
 .point {
     width: 22px;

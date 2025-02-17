@@ -9541,28 +9541,12 @@ textarea.form-control-lg {
   font-family: var(--bs-font-monospace) !important;
 }
 
-.fs-12 {
-  font-size: 0.75rem !important;
-}
-
-.fs-14 {
-  font-size: 0.875rem !important;
-}
-
 .fs-18 {
   font-size: 1.125rem !important;
 }
 
 .fs-20 {
   font-size: 1.25rem !important;
-}
-
-.fs-24 {
-  font-size: calc(1.275rem + 0.3vw) !important;
-}
-
-.fs-36 {
-  font-size: calc(1.35rem + 1.2vw) !important;
 }
 
 .fs-50 {
@@ -9622,7 +9606,7 @@ textarea.form-control-lg {
 }
 
 .lh-lg {
-  line-height: 2.25 !important;
+  line-height: 2 !important;
 }
 
 .text-start {
@@ -16877,12 +16861,6 @@ textarea.form-control-lg {
   }
 }
 @media (min-width: 1200px) {
-  .fs-24 {
-    font-size: 1.5rem !important;
-  }
-  .fs-36 {
-    font-size: 2.25rem !important;
-  }
   .fs-50 {
     font-size: 3.125rem !important;
   }
@@ -16984,6 +16962,13 @@ textarea.form-control-lg {
     object-fit: cover;
   }
 }
+.card-body .btn-update {
+  background: linear-gradient(135deg, #21eda0, #0ad5ed, #1780f9);
+}
+.card-body .btn-delete {
+  background: linear-gradient(135deg, #fa5560, #b14bf4, #4d91ff);
+}
+
 .point {
   width: 22px;
   height: 22px;

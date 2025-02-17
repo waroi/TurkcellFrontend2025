@@ -5,17 +5,14 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
-
 body.dark {
     background-color: $dark-bg;
     color: $text-dark;
 }
 
-
 h1, h2, h3, h4, h5, h6 {
     color: $primary-color;
 }
-
 
 .btn-primary {
     background-color: $primary-color;
@@ -31,7 +28,6 @@ h1, h2, h3, h4, h5, h6 {
         background-color: darken(#28a745, 10%);
     }
 }
-
 
 #searchBar {
     max-width: 350px;
@@ -52,7 +48,6 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-
 body.dark #searchBar {
     background-color: $dark-card;
     color: $text-dark;
@@ -68,7 +63,6 @@ body.dark .navbar {
     background-color: $dark-bg;
 }
 
-
 .navbar .nav-link {
     color: $text-light;
     &:hover {
@@ -80,24 +74,27 @@ body.dark .navbar .nav-link {
     color: $text-dark;
 }
 
-
 #gameList {
     .game-card {
-        background: $light-card;
-        border-radius: 10px;
+        background:$primary-color ;  
+        border-radius: 12px;
         padding: 15px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        transition: transform 0.3s ease-in-out;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        overflow: hidden;
+        border: none;
 
         &:hover {
             transform: scale(1.05);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
         }
 
         img {
             width: 100%;
             height: 200px;
             object-fit: cover;
-            border-radius: 5px;
+            border-radius: 8px;
+            display: block;
         }
 
         h5 {
@@ -113,11 +110,10 @@ body.dark .navbar .nav-link {
     }
 }
 
-
 body.dark #gameList .game-card {
-    background: $dark-card;
+    background: darkblue;  // Dark blue background for dark mode
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
 }
-
 
 .modal-content {
     background: $light-card;
@@ -126,12 +122,10 @@ body.dark #gameList .game-card {
     transition: background-color 0.3s, color 0.3s;
 }
 
-
 body.dark .modal-content {
     background: $dark-card;
     color: $text-dark;
 }
-
 
 .modal-body input,
 .modal-body textarea,
@@ -159,6 +153,7 @@ body.dark .modal-body select {
     border-radius: 5px;
     transition: background-color 0.3s, color 0.3s;
 }
+
 body.dark #developerSelect,
 body.dark #sortSelect,
 body.dark #categorySelect {
@@ -166,7 +161,6 @@ body.dark #categorySelect {
     color: $text-dark;
     border: 1px solid lighten($secondary-color, 20%);
 }
-
 
 .animated-text {
     font-size: 1.8rem;
@@ -186,22 +180,28 @@ body.dark #categorySelect {
         transform: translateX(-100%);
     }
 }
+
 .card img {
     width: 100%; 
     height: 250px;
-    object-fit: cover; 
-  }
-  .form-select {
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+}
+
+.form-select {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
     background-image: none;  
 }
-  
+
 body.dark {
     background-color: $dark-bg;
     color: $text-dark;
 }
+
+
 
 
 

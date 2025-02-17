@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ludoteca</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/main.css" />
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="ms-5 navbar-brand pixel-text" href="#">Ludoteca</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <form class="d-flex w-100 justify-content-center" role="search" onsubmit="gameList.searchGames(event)">
+                    <input class="form-control me-2 w-50" type="search" placeholder="Oyun adı  girin..."
+                        aria-label="Search" id="searchInput">
+                    <button class="btn btn-primary" id="searchButton" type="submit">Ara</button>
+                </form>
+
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="deneme.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class=" nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-4">
+        <h1 class="text-center pixel-text my-4">Ludoteca Oyun Arşivi</h1>
+        <div class="d-flex justify-content-between align-items-center">
+            <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#gameModal">
+                + Yeni Oyun Ekle
+            </button>
+
+            <!-- Mario ortalanmış olarak buraya eklendi huhuhuh -->
+            <div class="d-flex justify-content-center align-items-center mario-container">
+                <img src="https://static.ticimax.cloud/cdn-cgi/image/width=518,quality=85/33130/uploads/urunresimleri/buyuk/super-mario-temali-sticker-12-cm-1-ade-c831e6.jpg"
+                    alt="Mario" class="mario">
+                <img src="https://static.ticimax.cloud/cdn-cgi/image/width=518,quality=85/33130/uploads/urunresimleri/buyuk/super-mario-temali-sticker-12-cm-1-ade-c831e6.jpg"
+                    alt="Mario" class="mario">
+                <img src="https://static.ticimax.cloud/cdn-cgi/image/width=518,quality=85/33130/uploads/urunresimleri/buyuk/super-mario-temali-sticker-12-cm-1-ade-c831e6.jpg"
+                    alt="Mario" class="mario">
+            </div>
+
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="sortDropdown"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    Sırala
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="sortDropdown">
+                    <li><button class="dropdown-item" id="sortByNameAsc">İsme Göre (A-Z)</button></li>
+                    <li><button class="dropdown-item" id="sortByNameDesc">İsme Göre (Z-A)</button></li>
+                    <li><button class="dropdown-item" id="sortByDate">Çıkış Tarihine Göre (Önce-Eski)</button></li>
+                </ul>
+            </div>
+        </div>
+
+        <hr>
+        <div class="row">
+            <div class="col-md-3">
+                <h5>Kategoriler</h5>
+                <div id="kategori-filtresi"></div>
+                <h5 class="mt-3">Çıkış Yılı</h5>
+                <div id="yil-filtresi"></div>
+            </div>
+            <div class="col-md-9">
+                <div id="game-list" class="row"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Ekleme ve Güncellemedeki Modal birey-->
+    <div class="modal fade" id="gameModal" tabindex="-1" aria-labelledby="gameModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="gameModalLabel">Oyun Bilgileri</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="gameForm">
+                        <div class="mb-3">
+                            <label for="gameName" class="form-label">Oyun Adı</label>
+                            <input type="text" id="gameName" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="gameDescription" class="form-label">Açıklama</label>
+                            <textarea id="gameDescription" class="form-control" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="gameCategory" class="form-label">Kategori</label>
+                            <input type="text" id="gameCategory" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="gameReleaseDate" class="form-label">Çıkış Tarihi</label>
+                            <input type="date" id="gameReleaseDate" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="gameImageUrl" class="form-label">Resim URL</label>
+                            <input type="url" id="gameImageUrl" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="gameDeveloper" class="form-label">Yapımcı</label>
+                            <input type="text" id="gameDeveloper" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="gameSteamUrl" class="form-label">Steam URL</label>
+                            <input type="url" id="gameSteamUrl" class="form-control">
+                        </div>
+                        <button type="submit" id="saveGameBtn" class="btn btn-success">Kaydet</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--inceleme modal hata var sonra bak!!!-->
+    <div class="modal fade" id="viewGameModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Oyun Detayları</h5>
+                    <!--<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
+                -->
+                </div>
+                <div class="modal-body">
+                    <p><strong>Oyun Adı:</strong> <span id="viewGameName"></span></p>
+                    <p><strong>Açıklama:</strong> <span id="viewGameDescription"></span></p>
+                    <p><strong>Kategori:</strong> <span id="viewGameCategory"></span></p>
+                    <p><strong>Çıkış Tarihi:</strong> <span id="viewGameReleaseDate"></span></p>
+                    <p><strong>Yapımcı Firma:</strong> <span id="viewGameDeveloper"></span></p>
+                    <p><strong>Steam URL:</strong> <a id="viewGameSteamUrl" href="#" target="_blank">Link</a></p>
+                    <img id="viewGameImage" src="" alt="Oyun Görseli" class="img-fluid">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="viewGameBtn" class="btn btn-secondary"
+                        data-bs-dismiss="modal">Tamam</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h1 class="mb-3 gothic-text">Ludoteca</h1>
+                    <p>Oyunların eklenmesi ve herhangi bir görüşünüzü bize bildirmeyi unutmayın!</p>
+                    <ul class="list-unstyled">
+                        <li><strong>Adres:</strong> 42010 Meram/Konya</li>
+                        <li><strong>E-posta:</strong> info@kudotecaHR.com</li>
+                        <li><strong>Telefon:</strong> +1 234 567 890</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="mb-3 fw-bold text-center">Hızlı Linkler</h5>
+                    <div class="d-flex flex-row justify-content-around pb-3">
+                        <ul class="list-unstyled me-4">
+                            <li><a href="deneme.html" class="pixel-text text-decoration-none">Ana Sayfa</a></li>
+                            <li><a href="about.html" class="pixel-text text-decoration-none">Hakkımızda</a></li>
+                            <li><a href="contact.html" class="pixel-text text-decoration-none">İletişim</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <h5 class="fw-bold">Ludoteca Bülteni'ne Abone Ol</h5>
+                    <p class="mb-3">Oyunlar hakkındaki her türlü bilgi iiçin bize ulaşabilirsiniz!
+                        olun!</p>
+                    <form method="post">
+                        <div class="input-group mb-3">
+                            <i class="fa fa-envelope fa-2x me-2"></i>
+                            <input type="email" class="form-control" placeholder="E-posta adresiniz"
+                                aria-label="E-posta adresiniz" required>
+                            <button class="btn btn-primary" type="submit">Abone Ol</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <p>&copy; 2025 Ludoteca. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="request.js"></script>
+    <script src="game.js"></script>
+    <script src="gameList.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
