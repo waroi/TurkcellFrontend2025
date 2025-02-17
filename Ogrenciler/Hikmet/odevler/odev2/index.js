@@ -186,7 +186,7 @@ function createGameCard(game) {
 						</p>
 						<div class="row">
 						<button
-						class="edit-button"
+							class="edit-button game-archive-button-style"
 							type="button"
 							data-bs-toggle="modal"
 							data-bs-target="#updateGameModal"
@@ -194,8 +194,9 @@ function createGameCard(game) {
 							id="editGame" data-id="${game.id}">
 							Oyuna Can Ver
 						</button>
-      <button class="delete-button" id="deleteGame" data-id="${game.id}">Oyunu Tarihe Göm</button>
+      <button class="delete-button game-archive-button-style" id="deleteGame" data-id="${game.id}">Oyunu Tarihe Göm</button>
       <button
+						class="detail-button game-archive-button-style"
 							type="button"
 							data-bs-toggle="modal"
 							data-bs-target="#gameDetailModal"
