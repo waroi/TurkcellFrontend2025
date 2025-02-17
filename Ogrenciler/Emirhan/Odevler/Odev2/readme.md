@@ -2,8 +2,6 @@
 
 Hype Game, eğlenceli ve maceralı oyunları keşfetmek, eklemek ve yönetmek için geliştirilmiş modern bir oyun yönetim panelidir. **Admin sayfası**, oyun ekleme, düzenleme ve silme gibi işlemleri kolaylaştırır.
 
----
-
 ## **Özellikler**
 
 ### 🎮 **Oyun Yönetim Paneli**
