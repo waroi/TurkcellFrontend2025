@@ -28,13 +28,18 @@ PlaYard is a web-based game library application that allows users to manage and 
 Odev2/
 ├── css/
 │   └── main.css
+├── scss/
+│   └── main.scss
 ├── js/
+│   ├── controllers/
+│   │   └── GameController.js
 │   ├── models/
 │   │   └── Game.js
 │   ├── services/
 │   │   └── GameService.js
 │   ├── UI/
-│   │   └── GameCard.js
+│   │   ├── GameCard.js
+│   │   └── ErrorAlert.js
 │   ├── utils/
 │   │   ├── DOMElements.js
 │   │   └── helpers.js
@@ -104,7 +109,7 @@ npm install
 
 ```
 
-4. Start JSON Server
+4. Start JSON Server (PORT:3000)
 
 ```bash
 npm run server
