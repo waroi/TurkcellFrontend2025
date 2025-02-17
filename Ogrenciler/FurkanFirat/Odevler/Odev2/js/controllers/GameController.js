@@ -16,7 +16,6 @@ export default class GameController {
     this.editingGame = null;
 
     this.startEventListeners();
-    this.loadGames();
   }
 
   startEventListeners() {
