@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Game Collection App</title>
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+		/>
+	</head>
+	<body>
+		<header>
+			<nav
+				class="navbar navbar-expand-lg bg-transparent p-3 shadow-sm fixed-top"
+			>
+				<div class="container-fluid">
+					<a href="#">
+						<img class="nav-logo me-5" src="/assets/images/logo.png" alt=""
+					/></a>
+					<button
+						class="navbar-toggler"
+						type="button"
+						data-bs-toggle="collapse"
+						data-bs-target="#navbarNavDropdown"
+						aria-controls="navbarNavDropdown"
+						aria-expanded="false"
+						aria-label="Toggle navigation"
+					>
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarNavDropdown">
+						<ul class="navbar-nav">
+							<li class="nav-item">
+								<a class="nav-link" href="#game-list-section">Oyunlar</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</header>
+
+		<section class="mt-5 pt-5">
+			<div class="row align-items-center text-center">
+				<div
+					class="col-md-4 col-12 mb-3 d-flex justify-content-center justify-content-md-end"
+				>
+					<img src="/assets/images/hi.png" alt="" class="w-75 w-md-50" />
+				</div>
+
+				<div class="col-md-8 col-12">
+					<h1>Oyun Koleksiyonuma Hoş Geldiniz!</h1>
+					<div class="mt-4">
+						<img
+							src="https://yumekawahanachi.neocities.org/angelwing.gif"
+							height="48px"
+						/>
+						<button
+							type="button"
+							class="button m-2"
+							data-bs-toggle="modal"
+							data-bs-target="#newGameModal"
+						>
+							Yeni Oyun Ekle
+						</button>
+						<img
+							src="https://yumekawahanachi.neocities.org/angelwing.gif"
+							style="transform: scaleX(-1)"
+							height="48px"
+						/>
+					</div>
+				</div>
+				<div
+					class="modal fade"
+					id="newGameModal"
+					tabindex="-1"
+					aria-labelledby="newGameModalLabel"
+					aria-hidden="true"
+				>
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<div class="nyan"></div>
+
+								<h1 class="modal-title fs-5 px-5" id="newGameModalLabel">
+									Yeni Oyun Ekle
+								</h1>
+								<button
+									type="button"
+									class="btn-close"
+									data-bs-dismiss="modal"
+									aria-label="Close"
+								></button>
+							</div>
+							<div class="modal-body bg-light-gray">
+								<form id="addGameForm">
+									<div id="gameId"></div>
+
+									<div class="row">
+										<div class="col-md-6 mb-3">
+											<label for="name" class="form-label">Oyun Adı</label>
+											<input
+												type="text"
+												class="form-control"
+												id="name"
+												required
+											/>
+											<div class="invalid-feedback">Bu alan zorunludur.</div>
+										</div>
+										<div class="col-md-6 mb-3">
+											<label class="form-label" for="category"
+												>Oyun Kategorisi</label
+											>
+											<input
+												type="text"
+												class="form-control"
+												id="category"
+												required
+											/>
+											<div class="invalid-feedback">Bu alan zorunludur.</div>
+										</div>
+									</div>
+
+									<div class="row">
+										<div class="col-md-6 mb-3">
+											<label class="form-label" for="releaseDate"
+												>Oyun Çıkış Tarihi</label
+											>
+											<input
+												type="text"
+												class="form-control"
+												id="releaseDate"
+											/>
+										</div>
+										<div class="col-md-6 mb-3">
+											<label class="form-label" for="producer"
+												>Oyun Yapımcısı</label
+											>
+											<input type="text" class="form-control" id="producer" />
+										</div>
+									</div>
+
+									<div class="row">
+										<div class="col-md-6 mb-3">
+											<label class="form-label" for="poster">Oyun Afişi</label>
+											<input type="text" class="form-control" id="poster" />
+										</div>
+										<div class="col-md-6 mb-3">
+											<label class="form-label" for="steamUrl"
+												>Oyun Steam Url'i</label
+											>
+											<input type="text" class="form-control" id="steamUrl" />
+										</div>
+									</div>
+
+									<div class="mb-3">
+										<label for="description" class="form-label"
+											>Oyun Açıklaması</label
+										>
+										<textarea
+											class="form-control"
+											id="description"
+											rows="3"
+											required
+										></textarea>
+										<div class="invalid-feedback">Bu alan zorunludur.</div>
+									</div>
+
+									<div class="modal-footer">
+										<button
+											type="button"
+											class="card-button"
+											data-bs-dismiss="modal"
+										>
+											İptal
+										</button>
+										<button type="submit" class="card-button" id="addGameBtn">
+											Kaydet
+										</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section>
+			<div
+				class="d-flex flex-wrap gap-3 justify-content-center mt-4 position-relative"
+			>
+				<div class="position-relative d-inline-block">
+					<i class="bi bi-search-heart position-absolute search-icon"></i>
+					<input
+						type="text"
+						class="search-input p-2 px-5"
+						id="search-input"
+						placeholder="Oyun ara..."
+					/>
+				</div>
+
+				<div class="dropdown">
+					<button
+						class="btn btn-secondary dropdown-toggle w-100"
+						type="button"
+						data-bs-toggle="dropdown"
+						aria-expanded="false"
+					>
+						Kategori seç
+					</button>
+					<ul class="dropdown-menu">
+						<li>
+							<button class="dropdown-item category-dropdown" data-value="RPG">
+								RPG
+							</button>
+						</li>
+						<li>
+							<button
+								class="dropdown-item category-dropdown"
+								data-value="Adventure"
+							>
+								Adventure
+							</button>
+						</li>
+						<li>
+							<button
+								class="dropdown-item category-dropdown"
+								data-value="horror"
+							>
+								Horror
+							</button>
+						</li>
+						<li>
+							<button
+								class="dropdown-item category-dropdown"
+								data-value="mystery"
+							>
+								Mystery
+							</button>
+						</li>
+					</ul>
+				</div>
+
+				<div class="dropdown">
+					<button
+						class="btn btn-secondary dropdown-toggle"
+						type="button"
+						data-bs-toggle="dropdown"
+						aria-expanded="false"
+					>
+						Tarih seç
+					</button>
+					<ul class="dropdown-menu">
+						<li>
+							<button class="dropdown-item date-dropdown" data-value="2016">
+								2016
+							</button>
+						</li>
+						<li>
+							<button class="dropdown-item date-dropdown" data-value="2017">
+								2017
+							</button>
+						</li>
+						<li>
+							<button class="dropdown-item date-dropdown" data-value="2019">
+								2019
+							</button>
+						</li>
+						<li>
+							<button class="dropdown-item date-dropdown" data-value="2020">
+								2020
+							</button>
+						</li>
+						<li>
+							<button class="dropdown-item date-dropdown" data-value="2023">
+								2023
+							</button>
+						</li>
+					</ul>
+				</div>
+
+				<div class="dropdown">
+					<button
+						class="btn btn-secondary dropdown-toggle"
+						type="button"
+						data-bs-toggle="dropdown"
+						aria-expanded="false"
+					>
+						Sırala
+					</button>
+					<ul class="dropdown-menu">
+						<li>
+							<button class="dropdown-item sorting-dropdown" data-value="A-Z">
+								A-Z
+							</button>
+						</li>
+						<li>
+							<button class="dropdown-item sorting-dropdown" data-value="Z-A">
+								Z-A
+							</button>
+						</li>
+						<li>
+							<button
+								class="dropdown-item sorting-dropdown"
+								data-value="newest"
+							>
+								En Yeni Oyunlar
+							</button>
+						</li>
+						<li>
+							<button
+								class="dropdown-item sorting-dropdown"
+								data-value="oldest"
+							>
+								En Eski Oyunlar
+							</button>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<section class="p-4 m-4" id="game-list-section">
+			<div class="card-container row gap-4 justify-content-center"></div>
+		</section>
+
+		<div
+			class="modal fade"
+			id="gameDetailModal"
+			tabindex="-1"
+			aria-labelledby="gameDetailModalLabel"
+			aria-hidden="true"
+		>
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="modalGameTitle"></h5>
+						<button
+							type="button"
+							class="btn-close"
+							data-bs-dismiss="modal"
+							aria-label="Close"
+						></button>
+					</div>
+					<div class="modal-body d-flex align-items-center bg-light-gray">
+						<div class="modal-image-container text-center">
+							<img
+								id="modalGameImage"
+								src=""
+								alt="Game Image"
+								class="img-fluid game-modal-img rounded shadow-lg"
+							/>
+						</div>
+						<div class="modal-info-container ms-4">
+							<p>
+								<strong>Açıklama:</strong>
+								<span id="modalGameDescription"></span>
+							</p>
+							<p>
+								<strong>Kategori:</strong> <span id="modalGameCategory"></span>
+							</p>
+							<p>
+								<strong>Çıkış Tarihi:</strong>
+								<span id="modalGameReleaseDate"></span>
+							</p>
+							<p>
+								<strong>Yapımcı:</strong> <span id="modalGameProducer"></span>
+							</p>
+							<a id="modalGameSteam" href="#" target="_blank" class="steam-link"
+								>Steam Link</a
+							>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer class="row bg-white border-top">
+			<p class="text-center">
+				<span class="mb-3 mt-3 d-block"
+					>&copy; 2025 GameCollection Company Inc.</span
+				>
+				All Rights Reserved
+			</p>
+		</footer>
+
+		<script type="module" src="../modules/script.js" defer></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+	</body>
+</html>
