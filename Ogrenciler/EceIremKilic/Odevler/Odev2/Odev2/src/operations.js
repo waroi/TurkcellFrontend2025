@@ -11,7 +11,7 @@ window.addEventListener("load", () => {
   );
   console.log("Oyunlar yüklendi:", games);
   Operations.addCatToFilterButton(games);
-  UI.getOnUI(games);
+  
   } catch (error) {
   console.error("Hata oluştu:", error);
   }
@@ -95,3 +95,4 @@ window.addEventListener("load", () => {
   );
   searchBar.addEventListener("input", Operations.searchGame);
   });
+  
