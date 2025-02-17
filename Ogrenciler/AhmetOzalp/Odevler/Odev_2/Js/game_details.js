@@ -2,7 +2,7 @@ const urlParams = new URLSearchParams(window.location.search);
 const gameId = urlParams.get("id");
 
 if (gameId) {
-    fetch(`http://localhost:5000/games/${gameId}`)
+    fetch(`http://localhost:3000/games/${gameId}`)
         .then(res => {
             if (!res.ok) {
                 throw new Error("Oyun bulunamadı!");

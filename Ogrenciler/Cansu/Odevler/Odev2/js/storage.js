@@ -4,14 +4,14 @@ class Storage {
             const response = await fetch("http://localhost:3000/games");
 
             if (!response.ok) {
-                throw new Error(`Sunucu hatası: ${response.status}`);
+                throw new Error(`Server error: ${response.status}`);
             }
 
             const games = await response.json();
-            console.log("Çekilen oyunlar:", games);
+            console.log("Games drawn:", games);
             return games;
         } catch (error) {
-            console.error("Oyunlar yüklenirken hata oluştu:", error);
+            console.error("Error while loading games:", error);
             return []; 
         }
     }
@@ -25,12 +25,12 @@ class Storage {
             });
 
             if (!response.ok) {
-                throw new Error(`Oyun eklenemedi! Hata kodu: ${response.status}`);
+                throw new Error(`Game could not be added! Error code: ${response.status}`);
             }
 
             return await response.json(); 
         } catch (error) {
-            console.error("Oyun eklenirken hata oluştu:", error);
+            console.error("An error occurred while adding the game:", error);
             return null; 
         }
     }
@@ -40,12 +40,12 @@ class Storage {
             const response = await fetch(`http://localhost:3000/games/${id}`, { method: "DELETE" });
 
             if (!response.ok) {
-                throw new Error(`Oyun silinemedi! Hata kodu: ${response.status}`);
+                throw new Error(`The game could not be deleted! Error code: ${response.status}`);
             }
 
             return true; 
         } catch (error) {
-            console.error("Oyun silinirken hata oluştu:", error);
+            console.error("An error occurred while deleting the game:", error);
             return false;
         }
     }

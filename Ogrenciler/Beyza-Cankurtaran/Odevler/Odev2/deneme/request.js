@@ -1,17 +1,17 @@
-// 1. request.js - Handles all API requests
+//db.json bağlantılarını burada yapmam lazımm!!
 class Request {
-    constructor(baseUrl = 'http://localhost:3000') {
-        this.baseUrl = baseUrl;
+    constructor(Url = 'http://localhost:3000') {
+        this.Url = Url;
     }
 
-    async get(endpoint) {
-        const response = await fetch(`${this.baseUrl}${endpoint}`);
+    async get(index) {
+        const response = await fetch(`${this.Url}${index}`);
         if (!response.ok) throw new Error("Veri çekme hatası: " + response.status);
         return await response.json();
     }
 
-    async post(endpoint, data) {
-        const response = await fetch(`${this.baseUrl}${endpoint}`, {
+    async post(index, data) {
+        const response = await fetch(`${this.Url}${index}`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)
@@ -21,8 +21,8 @@ class Request {
         return await response.json();
     }
 
-    async put(endpoint, data) {
-        const response = await fetch(`${this.baseUrl}${endpoint}`, {
+    async put(index, data) {
+        const response = await fetch(`${this.Url}${index}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)
@@ -32,8 +32,8 @@ class Request {
         return await response.json();
     }
 
-    async delete(endpoint) {
-        const response = await fetch(`${this.baseUrl}${endpoint}`, { method: 'DELETE' });
+    async delete(index) {
+        const response = await fetch(`${this.Url}${index}`, { method: 'DELETE' });
         if (!response.ok) throw new Error("Silme hatası: " + response.status);
     }
 }

@@ -1,4 +1,9 @@
-import { addEditGameItem } from "./script.js";
+import {
+  addEditGameItem,
+  putGameItem,
+  deleteGameItem,
+  preEditGame,
+} from "./script.js";
 //selectors from html
 
 export const getModalElements = () => {
@@ -49,7 +54,7 @@ const createCustomGameCard = (data) => {
 
   const image = document.createElement("img");
   image.classList.add("card-img-top", "flex-grow-1");
-  image.setAttribute = ("alt", "game-image");
+  image.setAttribute("alt", "game-image");
   image.src = data.game_image;
 
   const cardBody = document.createElement("div");
@@ -61,26 +66,41 @@ const createCustomGameCard = (data) => {
     "position-relative"
   );
 
+  const buttonContainer = document.createElement("div");
+  buttonContainer.classList.add("d-flex", "gap-1", "align-items-center");
+
   const editIcon = document.createElement("button");
   editIcon.classList.add(
     "btn",
     "edit-icon",
-    "card-text",
     "bg-transparent",
-    "border-primary",
+    "btn-primary",
     "position-relative",
     "rounded-pill"
   );
 
-  editIcon.innerHTML = "Edit";
-  editIcon.addEventListener("click", (e) => {
-    openModal;
-    addEditGameItem(e, data);
+  editIcon.textContent = "Edit";
+  editIcon.addEventListener("click", () => {
+    openModal();
+    preEditGame(data);
   });
-  // editIcon.setAttribute("data-bs-toggle", "modal");
-  // editIcon.setAttribute("data-bs-target", "#gameProductModal");
-  // editIcon.setAttribute("data-bs-whatever", `@${data.id}`);
 
+  const deleteButton = document.createElement("button");
+  deleteButton.classList.add(
+    "btn",
+    "edit-icon",
+    "bg-transparent",
+    "btn-outline-primary",
+    "position-relative",
+    "ms-1",
+    "rounded-pill"
+  );
+  deleteButton.textContent = "Delete";
+
+  deleteButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    deleteGameItem(data.id);
+  });
   const cardTitle = document.createElement("h5");
   cardTitle.classList.add("card-title");
   cardTitle.textContent = data.name;
@@ -106,7 +126,9 @@ const createCustomGameCard = (data) => {
   cardBody.appendChild(cardSubtitle);
   cardBody.appendChild(cardText);
   cardText.appendChild(price);
-  cardText.appendChild(editIcon);
+  cardText.appendChild(buttonContainer);
+  buttonContainer.appendChild(editIcon);
+  buttonContainer.appendChild(deleteButton);
 
   card.appendChild(cardBody);
 
@@ -118,7 +140,7 @@ const createInputCol = (labelName, inputId, inputType, value, options = []) => {
   const label = document.createElement("label");
   label.className = "form-label";
   label.textContent = labelName;
-  label.setAttribute("for", { inputId });
+  label.setAttribute("for", inputId);
 
   let input;
 
@@ -130,11 +152,6 @@ const createInputCol = (labelName, inputId, inputType, value, options = []) => {
     input.className = "form-select";
     input.id = inputId;
     input.setAttribute("aria-label", "Select Game Category");
-
-    const defaultOption = document.createElement("option");
-    defaultOption.textContent = "Choose";
-    defaultOption.value = "";
-    input.appendChild(defaultOption);
 
     options.forEach((optionItem) => {
       const option = document.createElement("option");
@@ -224,7 +241,7 @@ const createForm = (gameData = {}, gameCategories) => {
     "Game Image Url",
     "imageUrl",
     "text",
-    gameData.game_image || "https://picsum.photos/200/300"
+    gameData.game_image || "https://picsum.photos/200/200"
   );
   col5.classList.add("col-md-6", "mb-2");
   col6.classList.add("col-md-6", "mb-2");
@@ -287,9 +304,6 @@ export const createGameModal = (gameData = {}, gameCategories) => {
   modalContent.appendChild(modalBody);
 
   const form = createForm({}, gameCategories);
-  console.log(form);
-  form.addEventListener("submit", addEditGameItem);
-
   modalBody.appendChild(form);
 
   const modalFooter = document.createElement("div");
@@ -309,6 +323,10 @@ export const createGameModal = (gameData = {}, gameCategories) => {
   modalFooter.appendChild(submitButton);
 
   modalContainer.appendChild(modal);
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    addEditGameItem();
+  });
   getModalElements();
 };
 

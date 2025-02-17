@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oyun Detayları</title>
+<style>
+      body {
+          font-family: 'Arial', sans-serif;
+          margin: 0;
+          padding: 0;
+          background: linear-gradient(45deg, #1e1e1e, #434343); 
+          background-size: 400% 400%;
+          animation: gradientBackground 15s ease infinite; 
+          color: white;
+          height: 100vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          animation: fadeIn 2s ease-in-out; 
+      }
+      .game-detail-container {
+          background: rgba(0, 0, 0, 0.7); 
+          padding: 30px;
+          border-radius: 10px;
+          text-align: center;
+          max-width: 600px;
+          width: 100%;
+          box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+          animation: slideUp 1.5s ease-in-out; 
+      }
+      #gameName {
+          font-size: 2.5rem;
+          font-weight: bold;
+          margin-bottom: 20px;
+      }
+      #gameImage {
+          width: 100%;
+          max-width: 500px;
+          height: auto;
+          border: 5px solid #fff;
+          border-radius: 10px;
+          margin-bottom: 20px;
+          transition: transform 0.3s ease;
+      }
+      #gameImage:hover {
+          transform: scale(1.1);
+      }
+      p {
+          font-size: 1.1rem;
+          line-height: 1.6;
+          margin-bottom: 10px;
+      }
+      strong {
+          font-weight: bold;
+      }
+      .btn {
+          padding: 10px 20px;
+          font-size: 1rem;
+          border-radius: 5px;
+          text-decoration: none;
+          transition: background-color 0.3s;
+      }
+      .btn-info {
+          background-color: #e45a8a;
+          color: white;
+      }
+      .btn-info:hover {
+          background-color: #961364;
+      }
+      .btn-sm {
+          padding: 8px 15px;
+      }
+      #loading-message {
+          font-size: 1.2rem;
+          margin-top: 10px;
+          display: block;
+      }
+      #error-message {
+          font-size: 1.2rem;
+          color: red;
+          display: none;
+      }
+      @keyframes fadeIn {
+          0% {
+              opacity: 0;
+          }
+          100% {
+              opacity: 1;
+          }
+      }
+      @keyframes slideUp {
+          0% {
+              transform: translateY(50px);
+              opacity: 0;
+          }
+          100% {
+              transform: translateY(0);
+              opacity: 1;
+          }
+      }
+      @keyframes gradientBackground {
+          0% {
+              background-position: 0% 50%;
+          }
+          50% {
+              background-position: 100% 50%;
+          }
+          100% {
+              background-position: 0% 50%;
+          }
+      }
+  </style>
+
+</head>
+<body>
+    <div class="game-detail-container">
+        <h2 id="gameName">Oyun Adı</h2>
+        <img id="gameImage" src="" alt="Oyun Görseli" class="game-image">
+        <p id="gameDescription">Açıklama</p>
+        <p><strong>Kategori:</strong> <span id="gameCategory">Kategori</span></p>
+        <p><strong>Yapımcı:</strong> <span id="gameDeveloper">Yapımcı</span></p>
+        <p><strong>Yayınlanma Tarihi:</strong> <span id="gameReleaseDate">Tarih</span></p>
+        <a id="gameSteamUrl" href="" target="_blank" class="btn btn-info btn-sm">Steam Sayfasına Git</a>
+        <p id="loading-message">Yükleniyor...</p> 
+        <p id="error-message" style="color: red; display: none;">Oyun bulunamadı!</p> 
+    </div>
+
+    <script>
+        // URL'den ID parametresini alıyoruz.
+        const urlParams = new URLSearchParams(window.location.search);
+        const gameId = urlParams.get('id');
+        console.log(gameId);
+        // JSON Server'dan oyun verilerini çekmek için fetch kullanıyoruz
+        fetch(`http://localhost:3000/games/${gameId}`)
+            .then(response => response.json())
+            .then(game => {
+                if (game) {
+                    document.getElementById('gameName').textContent = game.name;
+                    document.getElementById('gameImage').src = game.image || 'default-image.jpg'; 
+                    document.getElementById('gameDescription').textContent = game.description;
+                    document.getElementById('gameCategory').textContent = game.category;
+                    document.getElementById('gameDeveloper').textContent = game.developer;
+                    document.getElementById('gameReleaseDate').textContent = game.releaseDate;
+                    document.getElementById('gameSteamUrl').href = game.steamUrl;
+                    //hata ve yüklenme mesajlarını gizlemem gerekli.
+                    document.getElementById('loading-message').style.display = 'none'; 
+                    document.getElementById('error-message').style.display = 'none'; 
+                } else {
+                    document.getElementById('error-message').style.display = 'block'; // göster
+                }
+            })
+            .catch(error => {
+                console.error('Veri çekme hatası:', error);
+                document.getElementById('error-message').style.display = 'block'; // Hata mesajını göster
+                document.getElementById('loading-message').style.display = 'none'; // Yükleniyor mesajını gizle
+            });
+    </script>
+</body>
+</html>

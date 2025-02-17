@@ -26,7 +26,13 @@ class EventListenersController {
                 this.gameViewController.orderGamesByAlphabeticalReverseOrder();
             } else if (selectedValue === "newToOld") {
                 this.gameViewController.orderGamesByReleaseDate();
+            } else if (selectedValue === "oldToNew") {
+                this.gameViewController.orderGamesByReleaseDateReverse();
             }
+        });
+
+        document.querySelector("#filterButton").addEventListener("click", () => {
+            this.gameViewController.filterGamesGenreAndReleaseDate();
         });
     }
 }

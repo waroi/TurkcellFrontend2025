@@ -3,16 +3,19 @@ import { createUi, createGameModal, getModalElements } from "./ui.js";
 import { Game } from "./game.js";
 
 const gameData = [];
-const gameCategories = [];
-
-const fetchGameCategories = () => {
-  Request.get("http://localhost:3000/gameCategories")
-    .then((data) => {
-      gameCategories.push(...data);
-      createGameModal({}, gameCategories);
-    })
-    .catch((err) => console.error(err));
-};
+const gameCategories = [
+  "Battle Royale",
+  "RPG",
+  "FPS",
+  "Strategy",
+  "Adventure",
+  "MMORPG",
+  "Survival",
+  "Sports",
+  "Simulation",
+  "Racing",
+];
+let updatedGameId = null;
 
 const fetchGames = () => {
   Request.get("http://localhost:3000/games")
@@ -24,9 +27,9 @@ const fetchGames = () => {
     .catch((err) => console.error(err));
 };
 
-const fetchAll = () => {
+const getInit = () => {
   fetchGames();
-  fetchGameCategories();
+  createGameModal({}, gameCategories);
 };
 
 const postGameItem = (game) => {
@@ -36,26 +39,25 @@ const postGameItem = (game) => {
     })
     .catch((err) => console.error(err));
 };
-const putGameItem = (game) => {
-  Request.put(`http://localhost:3000/games/${game.id}`, game)
+
+export const putGameItem = (id, updatedGame) => {
+  Request.put(`http://localhost:3000/games/${id}`, updatedGame)
     .then((data) => {
       console.log(data);
     })
     .catch((err) => console.error(err));
 };
 
-const deleteElement = (game) => {
-  Request.put(`http://localhost:3000/games/${game.id}`, game)
+export const deleteGameItem = (id) => {
+  Request.delete(`http://localhost:3000/games/${id}`, id)
     .then((data) => {
       console.log(data);
     })
     .catch((err) => console.error(err));
 };
 
-export const addEditGameItem = (e, game) => {
-  e.preventDefault();
+export const addEditGameItem = () => {
   const modalElements = getModalElements();
-  console.log(game);
   const {
     modal,
     modalTitle,
@@ -68,17 +70,10 @@ export const addEditGameItem = (e, game) => {
     imageUrl,
     category,
   } = modalElements;
-  if (game) {
-    gameName.value = game?.name || "";
-    developer.value = game?.developer || "";
-    release.value = game?.release_date || "";
-    description.value = game?.description || "";
-    category.value = game?.category || "";
-    steamUrl.value = game?.steam_url || "";
-    imageUrl.value = game?.game_image || "";
-    price.value = game?.price || "";
+  if (updatedGameId) {
+    console.log(updatedGameId, `http://localhost:3000/games/${updatedGameId}`);
     const updatedGame = {
-      id: game.id,
+      id: updatedGameId,
       name: gameName.value,
       developer: developer.value,
       release_date: release.value,
@@ -88,7 +83,8 @@ export const addEditGameItem = (e, game) => {
       game_image: imageUrl.value,
       price: price.value,
     };
-    putGameItem(updatedGame);
+    putGameItem(updatedGameId, updatedGame);
+    updatedGameId = null;
   } else {
     const game = new Game(
       gameName.value,
@@ -101,8 +97,34 @@ export const addEditGameItem = (e, game) => {
       price.value
     );
     console.log(game, "game");
-    postGameItem(e, game);
+    postGameItem(game);
   }
 };
 
-fetchAll();
+export const preEditGame = (game) => {
+  const modalElements = getModalElements();
+  const {
+    modal,
+    modalTitle,
+    gameName,
+    developer,
+    description,
+    release,
+    price,
+    steamUrl,
+    imageUrl,
+    category,
+  } = modalElements;
+  console.log(category.value, game.category);
+  gameName.value = game?.name || "";
+  developer.value = game?.developer || "";
+  release.value = game?.release_date || "";
+  description.value = game?.description || "";
+  category.value = game?.category || "RPG";
+  steamUrl.value = game?.steam_url || "";
+  imageUrl.value = game?.game_image || "";
+  price.value = game?.price || "";
+  updatedGameId = game.id;
+};
+
+getInit();
