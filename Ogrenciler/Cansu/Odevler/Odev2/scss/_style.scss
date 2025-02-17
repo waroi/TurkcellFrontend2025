@@ -76,7 +76,7 @@ body.dark .navbar .nav-link {
 
 #gameList {
     .game-card {
-        background:$primary-color ;  
+        background: $light-card;
         border-radius: 12px;
         padding: 15px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -111,7 +111,7 @@ body.dark .navbar .nav-link {
 }
 
 body.dark #gameList .game-card {
-    background: darkblue;  // Dark blue background for dark mode
+    background: $dark-card;
     box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
 }
 
@@ -153,7 +153,6 @@ body.dark .modal-body select {
     border-radius: 5px;
     transition: background-color 0.3s, color 0.3s;
 }
-
 body.dark #developerSelect,
 body.dark #sortSelect,
 body.dark #categorySelect {
@@ -195,13 +194,11 @@ body.dark #categorySelect {
     appearance: none;
     background-image: none;  
 }
-
+  
 body.dark {
     background-color: $dark-bg;
     color: $text-dark;
-}
-
-
+} 
 
 
 
