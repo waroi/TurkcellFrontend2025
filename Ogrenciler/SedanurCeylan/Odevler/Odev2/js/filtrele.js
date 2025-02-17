@@ -1,3 +1,5 @@
+
+// Filtreleme işlemi için gerekli olan fonksiyonlar burada yer almaktadır.
 const filterSearch = document.querySelector("#search");
 
 filterSearch.addEventListener("keyup", filter);
@@ -22,3 +24,5 @@ function filter(e) {
         showAlert("warning", "Filtreleme yapmak için eklenmiş oyun bulunmalıdır!");
     }
 }
+
+
