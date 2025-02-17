@@ -9,8 +9,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   await ui.gameList.renderGames();
 
   document.getElementById("add-game-btn").addEventListener("click", () => {
-    console.log("✅ Yeni Oyun Ekle butonuna tıklandı!");
-
     document.getElementById("game-form").reset();
     document.getElementById("game-id").value = "";
 

@@ -1,23 +1,24 @@
-@import './mixins.scss';
 * {
   margin: 0;
   padding: 0;
 }
-
-// .game-card {
-//   transition: transform 0.2s;
-//   height: 100%;
-// }
-
-// .game-card:hover {
-//   transform: translateY(-5px);
-//   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-// }
-
 .game-image {
   height: 200px;
 }
+.game-card {
+  overflow: hidden;
+}
+.game-card:hover .game-image {
+  transform: rotate(4deg);
+  scale: 1.1;
+}
+.game-card .game-image {
+  transition: transform 0.2s ease, scale 0.2s ease;
+}
 
-// .game-card .btn-group {
-//   margin-top: auto;
-// }
+.game-card:hover .card-title {
+  color: orange;
+}
+.game-card .card-title {
+  transition: color 0.5s ease;
+}

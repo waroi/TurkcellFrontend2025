@@ -8,7 +8,8 @@ export default class GameController {
   constructor() {
     this.elements = DOMElements.getElements();
     this.formElements = DOMElements.getFormElements();
-    this.modal = new bootstrap.Modal(this.elements.gameModal);
+    this.formModal = new bootstrap.Modal(this.elements.formModal);
+    this.detailModal = new bootstrap.Modal(this.elements.gameDetailModal);
     this.gameService = new GameService();
     this.games = [];
     this.editingGame = null;
@@ -20,9 +21,6 @@ export default class GameController {
   startEventListeners() {
     this.elements.addGameBtn.addEventListener('click', () =>
       this.openFormModal()
-    );
-    this.elements.saveGameBtn.addEventListener('click', () =>
-      this.handleSaveGame()
     );
     this.elements.categoryFilter.addEventListener('change', () =>
       this.applyFilters()
@@ -37,14 +35,61 @@ export default class GameController {
     this.elements.resetFiltersBtn.addEventListener('click', () =>
       this.resetFilters()
     );
+    // BOOTSTRAP FORM VALIDATION
+    this.elements.gameForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      if (!this.elements.gameForm.checkValidity()) {
+        event.stopPropagation();
+        this.elements.gameForm.classList.add('was-validated');
+        return;
+      }
+
+      await this.handleSaveGame();
+    });
   }
 
   openFormModal() {
-    this.elements.saveGameBtn.textContent = 'Save';
-    this.elements.modalTitle.textContent = 'Add New Game';
+    this.elements.gameForm.classList.remove('was-validated');
     this.elements.gameForm.reset();
+    this.elements.saveGameBtn.textContent = 'Save';
+    this.elements.formModalTitle.textContent = 'Add New Game';
     this.editingGame = null;
-    this.modal.show();
+    this.formModal.show();
+  }
+
+  openDetailModal(game) {
+    const carouselInner =
+      this.elements.gameDetailModal.querySelector('.carousel-inner');
+    carouselInner.replaceChildren();
+    game.images.forEach((image, index) => {
+      const carouselItem = document.createElement('div');
+      carouselItem.className = `carousel-item ${index === 0 ? 'active' : ''}`;
+
+      const img = document.createElement('img');
+      img.src = image;
+      img.className = 'd-block w-100';
+      img.alt = `${game.name} image`;
+
+      img.onerror = () => {
+        img.src =
+          'https://e1.pxfuel.com/desktop-wallpaper/869/163/desktop-wallpaper-1440x900-gaming-controller-minimal-dark-1440x900-resolution-backgrounds-and.jpg';
+      };
+
+      carouselItem.appendChild(img);
+      carouselInner.appendChild(carouselItem);
+    });
+
+    const gameTitle = this.elements.gameDetailModal.querySelector('.gameTitle');
+    gameTitle.textContent = game.name;
+    gameTitle.style.wordBreak = 'break-all';
+
+    const gameDescription =
+      this.elements.gameDetailModal.querySelector('.gameDescription');
+    gameDescription.textContent = game.description;
+    gameDescription.style.wordBreak = 'break-all';
+
+    this.detailModal.show();
   }
 
   async loadGames() {
@@ -73,7 +118,8 @@ export default class GameController {
       const gameCard = GameCard.createGameCard(
         game,
         (game) => this.handleEditGame(game),
-        (id) => this.handleDeleteGame(id)
+        (id) => this.handleDeleteGame(id),
+        (game) => this.openDetailModal(game)
       );
       fragment.appendChild(gameCard);
     });
@@ -92,7 +138,6 @@ export default class GameController {
       );
     }
 
-    // Search filter
     const searchTerm = this.elements.searchInput.value.toLowerCase();
     if (searchTerm) {
       filteredGames = filteredGames.filter((game) =>
@@ -100,7 +145,6 @@ export default class GameController {
       );
     }
 
-    // Sort
     const sortType = this.elements.sortSelect.value;
     filteredGames.sort((a, b) => {
       switch (sortType) {
@@ -140,8 +184,14 @@ export default class GameController {
   }
 
   async handleSaveGame() {
-    console.log(this.editingGame);
     try {
+      const images = [
+        this.formElements.coverImage.value,
+        this.formElements.image1.value,
+        this.formElements.image2.value,
+        this.formElements.image3.value,
+        this.formElements.image4.value,
+      ].filter((url) => url !== '');
       if (this.editingGame) {
         await this.gameService.updateGame(
           new Game(
@@ -150,7 +200,7 @@ export default class GameController {
             this.formElements.description.value,
             this.formElements.category.value,
             this.formElements.releaseDate.value,
-            this.formElements.image.value,
+            images,
             this.formElements.developer.value,
             this.formElements.steamUrl.value
           )
@@ -167,26 +217,27 @@ export default class GameController {
             this.formElements.description.value,
             this.formElements.category.value,
             this.formElements.releaseDate.value,
-            this.formElements.image.value,
+            images,
             this.formElements.developer.value,
             this.formElements.steamUrl.value
           )
         );
+        this.elements.gameForm.classList.remove('was-validated');
+        this.elements.gameForm.reset();
         this.loadGames();
-        this.modal.hide();
+        this.formModal.hide();
       }
     } catch (error) {
-      console.error('Oyun kaydedilirken hata:', error);
+      console.error('handleSaveGame Error:', error);
     }
   }
   async handleDeleteGame(id) {
-    if (confirm('Bu oyunu silmek istediğinizden emin misiniz?')) {
+    if (confirm('Are you sure you want to delete this game?')) {
       try {
-        console.log(id);
         await this.gameService.deleteGame(id);
         this.loadGames();
       } catch (error) {
-        console.error('Oyun silinirken hata:', error);
+        console.error('handleDeleteGame Error:', error);
       }
     }
   }
@@ -196,13 +247,17 @@ export default class GameController {
     this.formElements.description.value = game.description;
     this.formElements.category.value = game.category;
     this.formElements.releaseDate.value = game.releaseDate;
-    this.formElements.image.value = game.image;
+    this.formElements.coverImage.value = game.images[0];
+    this.formElements.image1.value = game.images[1] || '';
+    this.formElements.image2.value = game.images[2] || '';
+    this.formElements.image3.value = game.images[3] || '';
+    this.formElements.image4.value = game.images[4] || '';
     this.formElements.developer.value = game.developer;
     this.formElements.steamUrl.value = game.steamUrl;
 
     this.elements.saveGameBtn.textContent = 'Edit';
-    this.elements.modalTitle.textContent = 'Edit Game';
+    this.elements.formModalTitle.textContent = 'Edit Game';
 
-    this.modal.show();
+    this.formModal.show();
   }
 }
