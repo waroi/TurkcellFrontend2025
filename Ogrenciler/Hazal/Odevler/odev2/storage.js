@@ -1,4 +1,3 @@
-
 class Request {
     static async getGames() {
         const response = await fetch('http://localhost:3000/games');

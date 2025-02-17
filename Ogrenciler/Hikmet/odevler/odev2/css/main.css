@@ -10,7 +10,7 @@ body {
 
 .game-card {
   border-radius: 0;
-  filter: blur(2px);
+  filter: blur(3px);
 }
 .game-card .game-card-img {
   height: 250px;
@@ -44,16 +44,55 @@ body {
   gap: 10px;
 }
 
+.order-button {
+  margin-bottom: 5px;
+  padding: 5px;
+  background-color: #fcb232;
+}
+
+.filter-button {
+  margin-bottom: 5px;
+  padding: 5px;
+  background-color: #fcb232;
+}
+
+.create-button {
+  margin-bottom: 5px;
+  padding: 5px;
+  background-color: #fcb232;
+}
+
+.search-button {
+  margin-bottom: 5px;
+  padding: 5px;
+  background-color: #fcb232;
+}
+
 .delete-button {
+  margin-bottom: 5px;
+  padding: 5px;
+  background-color: #fcb232;
   text-underline-position: below;
   text-decoration: underline;
   color: red;
 }
 
 .edit-button {
+  margin-bottom: 5px;
+  padding: 5px;
+  background-color: #fcb232;
   text-underline-position: below;
   text-decoration: underline;
   color: blue;
+}
+
+.detail-button {
+  margin-bottom: 5px;
+  padding: 5px;
+  background-color: #fcb232;
+  text-underline-position: below;
+  text-decoration: underline;
+  color: green;
 }
 
 .footer-style {

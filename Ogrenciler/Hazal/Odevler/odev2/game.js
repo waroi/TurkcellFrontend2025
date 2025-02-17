@@ -1,12 +1,12 @@
 class Game{
-    constructor(name, description, category, image, developer, releaseDate, steamURL, id){
+    constructor(name, description, category, image, developer, releaseDate, steamUrl, id){
         this.name = name;
         this.description = description;
         this.category = category;
         this.image = image;
         this.developer = developer;
         this.releaseDate = releaseDate;
-        this.steamURL = steamURL;
+        this.steamUrl = steamUrl;
         this.id= id;
     }
 }

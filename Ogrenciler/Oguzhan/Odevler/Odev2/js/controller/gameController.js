@@ -14,6 +14,7 @@ export class GameController {
 
         UI.createGameCard(games, categories);
         UI.showCategories(categories);
+        UI.filterCategories(categories);
 
 
         const clearRow = () => {
@@ -28,7 +29,6 @@ export class GameController {
             sortBy: null
         };
 
-        // Kategori filtresi
         document.getElementById("categoryFilter").addEventListener("change", (e) => {
             clearRow();
             filters.category = e.target.value;
@@ -36,7 +36,6 @@ export class GameController {
             UI.createGameCard(filteredGames, categories);
         });
 
-        // Çıkış tarihi filtresi
         document.getElementById("releaseDateFilter").addEventListener("change", (e) => {
             clearRow();
             filters.releaseDate = e.target.value;
@@ -44,7 +43,6 @@ export class GameController {
             UI.createGameCard(filteredGames, categories);
         });
 
-        // Arama
         const searchForm = document.querySelector('form[role="search"]');
         const searchInput = document.getElementById("searchInput");
 
@@ -56,13 +54,13 @@ export class GameController {
             UI.createGameCard(filteredGames, categories);
         });
 
-        // Sıralama
         document.getElementById("sortSelect").addEventListener("change", (e) => {
             clearRow();
             filters.sortBy = e.target.value;
             const filteredGames = FilterSortAndSearch.applyAllFilters(games, categories, filters);
             UI.createGameCard(filteredGames, categories);
         });
+
     }
 
 
@@ -123,5 +121,9 @@ export class GameController {
                 }
             }
         });
+    }
+
+    static async detailGameEventListener() {
+
     }
 }

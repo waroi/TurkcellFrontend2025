@@ -21,7 +21,6 @@ class UI {
         });
     }
 
-    // Filtreleme dropdown'unu doldur
     static populateFilterCategories(categories) {
         const filterCategory = document.getElementById('filterCategory');
         filterCategory.innerHTML = '<option value="">Tüm Kategoriler</option>';
@@ -33,7 +32,6 @@ class UI {
         });
     }
 
-    // Oyun detaylarını göster
     static showGameDetail(game) {
         const gameDetailContent = document.getElementById('gameDetailContent');
         gameDetailContent.innerHTML = `
@@ -56,14 +54,12 @@ class UI {
         document.getElementById('gameReleaseDate').value = game.releaseDate;
         document.getElementById('gameImage').value = game.image;
         document.getElementById('gameDeveloper').value = game.developer;
-        document.getElementById('gameSteamUrl').value = game.steamUrl;
+        document.getElementById('gameSteamUrl').value = game.steamURL;
+        document.getElementById('gameId').value = game.id || '';
 
-        // Düzenleme işlemi için modalı aç
         const modal = new bootstrap.Modal(document.getElementById('addGameModal'));
         modal.show();
     }
-
-    // Hata mesajı göster
     static showError(message) {
         const errorDiv = document.createElement('div');
         errorDiv.className = 'alert alert-danger';
