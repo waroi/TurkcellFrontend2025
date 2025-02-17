@@ -1,11 +1,15 @@
+
+//sayfa yüklendiğinde oyunları getirme
 document.addEventListener("DOMContentLoaded", () => {
     fetchGames();
 });
 
+//oyunları getirme
 function fetchGames() {
     fetch("./oyun.json")
         .then(response => response.json())
-        .then(games => {
+        .then(data => {
+            const games = data.games; 
             const container = document.querySelector("#oyunlar .container .row");
             container.innerHTML = ""; 
             games.forEach(game => container.appendChild(createCard(game)));
@@ -13,6 +17,7 @@ function fetchGames() {
         .catch(err => console.error("Hata:", err));
 }
 
+//oyun kartı oluşturma
 function createCard(game) {
     const card = document.createElement("div");
     card.className = "col mb-4";
@@ -77,6 +82,7 @@ function createCard(game) {
     return card;
 }
 
+//oyun silme
 function deleteGame(gameId) {
     if (confirm("Bu oyunu silmek istediğinize emin misiniz?")) {
         const card = document.getElementById(`game-${gameId}`);
@@ -87,6 +93,8 @@ function deleteGame(gameId) {
 
 document.getElementById("addFilmBtn").addEventListener("click", addGame);
 
+
+//inputları temizlemek için
 function reload(){
     document.getElementById("oyunName").value = "";
     document.getElementById("oyunDate").value = "";
@@ -97,6 +105,7 @@ function reload(){
     document.getElementById("url").value = "";
 }
 
+//oyun ekleme
 function addGame() {
     console.log("tıklandı");
     const name = document.getElementById("oyunName").value.trim();
@@ -129,7 +138,7 @@ function addGame() {
     reload();
 }
 
-
+//oyun güncelleme
 function updateGame(){
     console.log("Güncelleme tıklandı");
 
