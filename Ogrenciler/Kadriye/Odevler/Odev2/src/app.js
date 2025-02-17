@@ -1,8 +1,7 @@
 import JsonServiceApi from "./services/jsonSeviceApi.js";
 import Card from "./ui/card.js";
 import Game from "./ui/game.js";
-import Modal from "./ui/modal.js";
-// new Modal().addModal();
+
 document.querySelectorAll("input").forEach((i) => (i.value = ""));
 document.querySelector("option").selected = true;
 let category = document.getElementById("category");
@@ -47,8 +46,8 @@ document.getElementById("search").addEventListener("click", () => {
 });
 document.getElementById("clear").addEventListener("click", () => {
   category.value = "";
-  release_start = "";
-  release_end = "";
+  release_start.value = "";
+  release_end.value = "";
   JsonServiceApi.getGames()
     .then((data) => {
       console.log(data);
