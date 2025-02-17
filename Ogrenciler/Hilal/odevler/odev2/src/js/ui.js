@@ -1,9 +1,14 @@
 import {
   addEditGameItem,
-  putGameItem,
+  searchGames,
   deleteGameItem,
   preEditGame,
+  filterByCategory,
+  sortByReleaseDate,
+  sortAZ,
+  sortZA,
 } from "./script.js";
+
 //selectors from html
 
 export const getModalElements = () => {
@@ -109,6 +114,10 @@ const createCustomGameCard = (data) => {
   cardSubtitle.classList.add("card-subtitle");
   cardSubtitle.textContent = data.release_date;
 
+  const gameDeveloper = document.createElement("p");
+  gameDeveloper.classList.add("card-text", "d-inline-block", "third");
+  gameDeveloper.textContent = data.developer;
+
   const cardText = document.createElement("div");
   cardText.classList.add(
     "d-flex",
@@ -124,6 +133,7 @@ const createCustomGameCard = (data) => {
   card.appendChild(overlay);
   cardBody.appendChild(cardTitle);
   cardBody.appendChild(cardSubtitle);
+  cardBody.appendChild(gameDeveloper);
   cardBody.appendChild(cardText);
   cardText.appendChild(price);
   cardText.appendChild(buttonContainer);
@@ -330,8 +340,40 @@ export const createGameModal = (gameData = {}, gameCategories) => {
   getModalElements();
 };
 
-const createPopularGameList = (gameData) => {
+export const createFilteredUi = (filteredGames, category) => {
+  if (filteredGames && filteredGames !== null) {
+    createPopularGameList(filteredGames, category);
+  }
+};
+
+const createCategoryButtons = (gameCategories) => {
+  const categoryContainer = document.querySelector(".category-buttons");
+  categoryContainer.innerHTML = "";
+
+  gameCategories.map((category) => {
+    const button = document.createElement("div");
+    button.classList.add(
+      "btn",
+      "text-light",
+      "category-button",
+      "py-3",
+      "my-2",
+      "text-center",
+      "btn-link"
+    );
+    button.textContent = category;
+    button.addEventListener("click", () => filterByCategory(category));
+    categoryContainer.appendChild(button);
+  });
+};
+
+const createPopularGameList = (gameData, category = "All") => {
+  console.log(category);
   const popularGameList = document.querySelector(".popular-games");
+  const heading = document.querySelector("#category-name");
+  console.log(heading);
+  popularGameList.innerHTML = "";
+  heading.innerHTML = category || "All";
   console.log(popularGameList);
   gameData.map((gameItem) => {
     const card = createCustomGameCard(gameItem);
@@ -343,8 +385,39 @@ const createPopularGameList = (gameData) => {
   });
 };
 
-export const createUi = (gameData) => {
+export const createUi = (gameData, gameCategories) => {
+  console.log(gameCategories);
   createPopularGameList(gameData);
+  createCategoryButtons(gameCategories);
+
+  //Other Uı actions below
+  document.getElementById("sortAZ").addEventListener("click", () => {
+    const sortedGames = sortAZ(gameData);
+    createFilteredUi(sortedGames);
+    document.getElementById("category-name").textContent = "Games Sorted A-Z";
+  });
+
+  document.getElementById("sortZA").addEventListener("click", () => {
+    const sortedGames = sortZA(gameData);
+    createFilteredUi(sortedGames);
+    document.getElementById("category-name").textContent = "Games Sorted Z-A";
+  });
+
+  document.getElementById("sortReleaseDate").addEventListener("click", () => {
+    const sortedGames = sortByReleaseDate(gameData);
+    createFilteredUi(sortedGames);
+    document.getElementById("category-name").textContent =
+      "Games Sorted by Release Date";
+  });
+
+  document.getElementById("search-input").addEventListener("input", (e) => {
+    const inputValue = e.target.value;
+    if (inputValue) {
+      searchGames(inputValue);
+    } else {
+      createFilteredUi(gameData);
+    }
+  });
 };
 
 function openModal() {

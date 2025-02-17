@@ -11,7 +11,7 @@
     />
   </head>
   <body>
-    <header>
+    <header class="header-top">
       <div class="container">
         <nav class="navbar navbar-expand-lg">
           <div class="container-fluid">
@@ -92,31 +92,35 @@
             Binlerce oyun arasından keşfet, koleksiyonunu oluştur ve en sevdiğin
             dünyalara dal! GameNest ile oyun arşivin hep seninle.
           </p>
+
           <div class="row align-items-center mt-5">
             <div class="col-md-4">
               <input
                 type="text"
                 class="form-control search-input"
+                id="searchInput"
                 placeholder="Oyun adı, kategori veya yapımcı firma ara..."
               />
             </div>
 
-            <div class="col-md-4 d-flex justify-content-center">
-              <select class="form-select filter-select me-2">
+            <div class="col-md-2">
+              <select class="form-select filter-select" id="categoryFilter">
                 <option selected>Kategori Seç</option>
-                <option value="aksiyon">Aksiyon</option>
-                <option value="macera">Macera</option>
-                <option value="rpg">RPG</option>
-                <option value="spor">Spor</option>
-                <option value="simulasyon">Simülasyon</option>
-                <option value="strateji">Strateji</option>
-                <option value="yaris">Yarış</option>
-                <option value="korku">Korku</option>
-                <option value="platform">Platform</option>
-                <option value="mmo">MMO</option>
+                <option value="Aksiyon">Aksiyon</option>
+                <option value="Macera">Macera</option>
+                <option value="RPG">RPG</option>
+                <option value="Spor">Spor</option>
+                <option value="Simülasyon">Simülasyon</option>
+                <option value="Strateji">Strateji</option>
+                <option value="Yarış">Yarış</option>
+                <option value="Korku">Korku</option>
+                <option value="Platform">Platform</option>
+                <option value="MMO">MMO</option>
               </select>
+            </div>
 
-              <select class="form-select filter-select">
+            <div class="col-md-2">
+              <select class="form-select filter-select" id="releaseDateFilter">
                 <option selected>Çıkış Tarihi</option>
                 <option value="2024">2024</option>
                 <option value="2023">2023</option>
@@ -129,8 +133,8 @@
               </select>
             </div>
 
-            <div class="col-md-4 d-flex justify-content-end">
-              <select class="form-select sort-select">
+            <div class="col-md-2">
+              <select class="form-select sort-select" id="sortFilter">
                 <option selected>Sırala</option>
                 <option value="a-z">A - Z</option>
                 <option value="z-a">Z - A</option>
@@ -142,6 +146,7 @@
         </div>
       </div>
     </section>
+
     <section class="game-section">
       <div class="container">
         <div
@@ -149,6 +154,120 @@
         ></div>
       </div>
     </section>
+    <div
+      id="gameModal"
+      class="modal fade"
+      tabindex="-1"
+      aria-labelledby="gameModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog text-black">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="gameModalLabel">Oyun Ekle / Düzenle</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Kapat"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="gameForm">
+              <div class="mb-3">
+                <label for="gameName" class="form-label">Oyun Adı</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="gameName"
+                  placeholder="Oyun Adını Girin"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="gameDescription" class="form-label">Açıklama</label>
+                <textarea
+                  class="form-control"
+                  id="gameDescription"
+                  placeholder="Oyun Açıklaması Girin"
+                  required
+                ></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="gameCategory" class="form-label">Kategori</label>
+                <select class="form-select" id="gameCategory" required>
+                  <option value="Aksiyon">Aksiyon</option>
+                  <option value="Macera">Macera</option>
+                  <option value="RPG">RPG</option>
+                  <option value="Spor">Spor</option>
+                  <option value="Simülasyon">Simülasyon</option>
+                  <option value="Strateji">Strateji</option>
+                  <option value="Yarış">Yarış</option>
+                  <option value="Korku">Korku</option>
+                  <option value="Platform">Platform</option>
+                  <option value="MMO">MMO</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="gameReleaseDate" class="form-label"
+                  >Çıkış Tarihi</label
+                >
+                <input
+                  type="date"
+                  class="form-control"
+                  id="gameReleaseDate"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="gameImageUrl" class="form-label">Görsel URL</label>
+                <input
+                  type="url"
+                  class="form-control"
+                  id="gameImageUrl"
+                  placeholder="Görsel URL'si"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="gameDeveloper" class="form-label"
+                  >Yapımcı Firma</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="gameDeveloper"
+                  placeholder="Yapımcı Firma Adı"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="gameSteamUrl" class="form-label">Steam URL</label>
+                <input
+                  type="url"
+                  class="form-control"
+                  id="gameSteamUrl"
+                  placeholder="Steam URL (Varsa Girin)"
+                />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              İptal
+            </button>
+            <button type="submit" class="btn btn-primary" id="saveGameBtn">
+              Kaydet
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <footer class="footer mt-5">
       <div class="container">
         <div class="row py-4">
@@ -193,7 +312,7 @@
         </div>
       </div>
     </footer>
-
+    <script type="module" src="./js/app.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

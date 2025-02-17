@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.photo {
+    background: url("gameimg.png") no-repeat top center/cover;;
+    height: 70vh;
+    width: 100%;
+    position: relative;
+}
+header {
+    background: url("https://projects.kajoo.studio/gamedevs/css/images/bg_menu.png");
+    z-index: 10;
+    margin-top: 50PX;
+}
+.gamebox{
+    height: 90px;
+}
+#searchInput {
+    width: 270px;
+}
+#main{
+    background: #302429 url('https://projects.kajoo.studio/gamedevs/css/images/bg_body.jpg') no-repeat center top;
+}
+#sep_bg {
+    background: url("https://projects.kajoo.studio/gamedevs/css/images/bg_body_top.png") repeat-x center top;
+    height: 52px;
+    margin-top: -50px;
+    position: relative;
+    z-index: 800;
+}

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style/main.css" />
+
+    <title>Steam</title>
+  </head>
+  <body>
+    <header class="header text-white text-center py-5">
+      <div class="overlay d-flex justify-content-center align-items-center">
+        <div class="container text-center">
+          <h1
+            class="display-4 fw-bold text-shadow mt-5"
+            style="font-family: 'Roboto', sans-serif"
+          >
+            Oyun Dünyasına Hoş Geldiniz!
+          </h1>
+          <h5 class="text-shadow mt-4">
+            En yeni ve popüler oyunları keşfedin, hemen başlayın!
+          </h5>
+          <a
+            href="#games"
+            class="btn btn-light btn-lg rounded-pill shadow-sm mt-4 px-4 py-2"
+          >
+            Oyunları Keşfet
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <div class="container p-5">
+      <div class="row g-4 text-center">
+        <div class="col-lg-2 col-md-4 col-sm-6 d-flex justify-content-center">
+          <a
+            href="https://store.steampowered.com/"
+            target="_blank"
+            class="social-link"
+          >
+            <div class="social-media-box steam"></div>
+          </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-6 d-flex justify-content-center">
+          <a href="https://www.ea.com/" target="_blank" class="social-link">
+            <div class="social-media-box ea"></div>
+          </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-6 d-flex justify-content-center">
+          <a
+            href="https://www.ubisoft.com/"
+            target="_blank"
+            class="social-link"
+          >
+            <div class="social-media-box ubisoft"></div>
+          </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-6 d-flex justify-content-center">
+          <a
+            href="https://www.playstation.com/"
+            target="_blank"
+            class="social-link"
+          >
+            <div class="social-media-box playstation"></div>
+          </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-6 d-flex justify-content-center">
+          <a href="https://www.xbox.com/" target="_blank" class="social-link">
+            <div class="social-media-box xbox"></div>
+          </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-6 d-flex justify-content-center">
+          <a
+            href="https://store.epicgames.com/"
+            target="_blank"
+            class="social-link"
+          >
+            <div class="social-media-box epic"></div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="addGameModal"
+      tabindex="-1"
+      aria-labelledby="addGameModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addGameModalLabel">Yeni Oyun Ekle</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="gameForm">
+              <div class="mb-3">
+                <label for="gameName" class="form-label">Oyun Adı</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="gameName"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="gameDescription" class="form-label">Açıklama</label>
+                <textarea
+                  class="form-control"
+                  id="gameDescription"
+                  required
+                ></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="gameCategory" class="form-label">Kategori</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="gameCategory"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="gameReleaseDate" class="form-label"
+                  >Çıkış Tarihi</label
+                >
+                <input
+                  type="date"
+                  class="form-control"
+                  id="gameReleaseDate"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="gameImage" class="form-label"
+                  >Oyun Görsel URL</label
+                >
+                <input
+                  type="url"
+                  class="form-control"
+                  id="gameImage"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="gameDeveloper" class="form-label"
+                  >Yapımcı Firma</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="gameDeveloper"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="gameSteamUrl" class="form-label">Steam URL</label>
+                <input type="url" class="form-control" id="gameSteamUrl" />
+              </div>
+              <button type="submit" class="btn btn-primary">Ekle</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container mt-4">
+      <div
+        class="filter-container d-flex justify-content-between align-items-center mb-4 flex-wrap"
+      >
+        <div class="container">
+          <div class="row g-2 align-items-center">
+            <div class="col-12 col-sm-6 col-md-4">
+              <div class="input-group rounded-pill shadow-sm">
+                <span class="input-group-text bg-primary text-white border-0">
+                  <i class="fas fa-search"></i>
+                </span>
+                <input
+                  type="text"
+                  id="search-input"
+                  class="form-control border-0 shadow-none"
+                  placeholder="Oyun Ara..."
+                  aria-label="Oyun Ara"
+                />
+              </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-4">
+              <div class="input-group rounded-pill shadow-sm">
+                <span class="input-group-text bg-secondary text-white border-0">
+                  <i class="fas fa-layer-group"></i>
+                </span>
+                <select
+                  id="category-filter"
+                  class="form-select border-0 shadow-none"
+                >
+                  <option value="all">Tüm Kategoriler</option>
+                  <option value="Aksiyon">Aksiyon</option>
+                  <option value="Macera">Macera</option>
+                  <option value="RPG">RPG</option>
+                  <option value="Strateji">Strateji</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-4">
+              <div class="input-group rounded-pill shadow-sm">
+                <span class="input-group-text bg-info text-white border-0">
+                  <i class="fas fa-sort"></i>
+                </span>
+                <select id="sortBy" class="form-select border-0 shadow-none">
+                  <option value="name_asc">A-Z</option>
+                  <option value="name_desc">Z-A</option>
+                  <option value="release_date_asc">
+                    Çıkış Tarihi (Eskiye Göre)
+                  </option>
+                  <option value="release_date_desc">
+                    Çıkış Tarihi (Yeniye Göre)
+                  </option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-end w-100 mt-3">
+          <button
+            type="button"
+            class="btn btn-success rounded-pill shadow-sm"
+            data-bs-toggle="modal"
+            data-bs-target="#addGameModal"
+            style="max-width: 200px; width: 100%"
+          >
+            <i class="fas fa-plus-circle"></i> Yeni Oyun Ekle
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" id="games">
+      <div id="game-list"></div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="editGameModal"
+      tabindex="-1"
+      aria-labelledby="editGameModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editGameModalLabel">Oyun Güncelle</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="editGameForm">
+              <input type="hidden" id="editGameId" />
+
+              <div class="mb-3">
+                <label for="editGameName" class="form-label">Oyun Adı</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="editGameName"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="editGameDescription" class="form-label"
+                  >Açıklama</label
+                >
+                <textarea
+                  class="form-control"
+                  id="editGameDescription"
+                  required
+                ></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="editGameCategory" class="form-label"
+                  >Kategori</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="editGameCategory"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="editGameReleaseDate" class="form-label"
+                  >Çıkış Tarihi</label
+                >
+                <input
+                  type="date"
+                  class="form-control"
+                  id="editGameReleaseDate"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="editGameImage" class="form-label"
+                  >Oyun Görsel URL</label
+                >
+                <input
+                  type="url"
+                  class="form-control"
+                  id="editGameImage"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="editGameDeveloper" class="form-label"
+                  >Yapımcı Firma</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="editGameDeveloper"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="editGameUrl" class="form-label">Steam Url</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="editGameUrl"
+                  required
+                />
+              </div>
+              <button type="submit" class="btn btn-primary">Güncelle</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="gameDetailModal"
+      tabindex="-1"
+      aria-labelledby="gameDetailModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content custom-modal">
+          <div class="modal-header">
+            <h5 class="modal-title fw-bold">
+              <i class="fa-solid fa-gamepad"></i>
+              Oyun Detayları
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body text-center">
+            <img
+              id="modalGameImage"
+              src=""
+              class="img-fluid rounded shadow-lg mb-3"
+              alt="Oyun Görseli"
+            />
+
+            <h3 id="modalGameName" class="text-primary fw-bold"></h3>
+            <hr class="my-3" />
+
+            <p id="modalGameDescription" class="text-muted fs-5"></p>
+
+            <p>
+              <strong class="fs-5"
+                ><i class="fa-solid fa-gamepad"></i> Kategori:</strong
+              >
+              <span
+                id="modalGameCategory"
+                class="badge bg-secondary fs-6"
+              ></span>
+            </p>
+            <p>
+              <strong class="fs-5">
+                <i class="fa-solid fa-calendar"></i> Çıkış Tarihi:</strong
+              >
+              <span id="modalGameReleaseDate" class="fs-6"></span>
+            </p>
+            <p>
+              <strong class="fs-5"
+                ><i class="fa-regular fa-building"></i> Yapımcı:</strong
+              >
+              <span id="modalGameDeveloper" class="fs-6"></span>
+            </p>
+
+            <a
+              id="modalGameSteamUrl"
+              href="#"
+              target="_blank"
+              class="btn btn-primary shadow-sm mt-3 steam-btn"
+            >
+              <i class="fab fa-steam"></i> Steam'de Görüntüle
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="scripts/main.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

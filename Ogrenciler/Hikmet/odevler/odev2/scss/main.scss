@@ -1,22 +1,101 @@
-body {
-	background-color: #fcb232;
-	font-family: "Roboto", sans-serif;
+@import "./variables.scss";
+@import "./button_style.scss";
+
+* {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
 
-.game-card-img {
-	height: 250px;
-}
-.game-description {
-	display: -webkit-box;
-	line-clamp: 3;
-	-webkit-line-clamp: 3;
-	-webkit-box-orient: vertical;
-	overflow: hidden;
+body {
+	background-color: $body-bg;
 }
 
 .game-card {
-	filter: blur(2px);
+	border-radius: 0;
+	filter: blur(3px);
+
+	.game-card-img {
+		height: 250px;
+	}
+
+	.game-description {
+		display: -webkit-box;
+		-webkit-line-clamp: 3;
+		line-clamp: 3;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+	}
+}
+
+.icon {
+	height: $icon-size;
+	width: $icon-size;
+}
+
+.input-search {
+	border: none;
+}
+
+.navbar-style {
+	margin-top: 1rem;
+	border: 2px solid $navbar-border;
+
+	.navbar-title {
+		color: $navbar-title-color;
+		font-weight: bold;
+	}
+
+	.navbar-buttons {
+		gap: 10px;
+	}
+}
+
+.order-button {
+	@include game-archive-button-style;
+}
+.filter-button {
+	@include game-archive-button-style;
+}
+.create-button {
+	@include game-archive-button-style;
+}
+.search-button {
+	@include game-archive-button-style;
+}
+.delete-button {
+	@include game-archive-button-style;
+	text-underline-position: below;
+	text-decoration: underline;
+	color: red;
+}
+
+.edit-button {
+	@include game-archive-button-style;
+	text-underline-position: below;
+	text-decoration: underline;
+	color: blue;
+}
+.detail-button {
+	@include game-archive-button-style;
+	text-underline-position: below;
+	text-decoration: underline;
+	color: green;
+}
+
+.footer-style {
+	margin-top: 1rem;
+	padding: 24px;
+	background-color: $footer-bg;
+	color: $footer-text;
+}
+
+#background-video {
+	position: fixed;
+	top: 0;
+	left: 0;
+	min-width: 100%;
+	min-height: 100%;
+	z-index: -1;
+	object-fit: cover;
 }

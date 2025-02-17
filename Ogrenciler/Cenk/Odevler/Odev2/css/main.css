@@ -12000,6 +12000,10 @@ header {
   border-top: 1px solid var(--accent-orange);
 }
 
+.game-section {
+  background: linear-gradient(to right, var(--primary-blue), var(--accent-orange));
+}
+
 :root {
   --primary-blue: #05a5df;
   --secondary-beige: #b7aa90;

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game Collection</title>
+    <link rel="shortcut icon" href="assets/logo.jpg" />
+    <link rel="stylesheet" href="css/main.css" />
+    <script
+      src="https://kit.fontawesome.com/0460a9927e.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <nav class="navbar sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img
+            src="assets/logo.jpg"
+            alt="Logo"
+            width="40"
+            height="40"
+            class="d-inline-block align-text-top"
+          />
+          <span class="ms-2">Game Collection</span>
+        </a>
+        <div class="search-container">
+          <input
+            type="search"
+            class="form-control search-input"
+            aria-label="Search"
+            id="searchInput"
+          />
+          <i class="fa fa-search search-icon"></i>
+        </div>
+        <div id="searchResults" class="search-results"></div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <!-- Arama ve Filtreleme ve Oyun ekleme -->
+      <div class="filters-container mt-3">
+        <button id="fav" class="btn btn-fav">
+          Favoriler <i class="fa-regular fa-heart"></i>
+        </button>
+
+        <select class="form-select custom-select" id="categoryFilter">
+          <option value="" selected>Kategori Seçin</option>
+        </select>
+
+        <select id="sortSelect" class="form-select custom-select">
+          <option value="">Sıralama Seçin</option>
+          <option value="name-asc">A-Z</option>
+          <option value="name-desc">Z-A</option>
+          <option value="date-asc">Çıkış Tarihine Göre Artan</option>
+          <option value="date-desc">Çıkış Tarihine Göre Azalan</option>
+        </select>
+
+        <button
+          type="button"
+          class="btn add-game-btn"
+          data-bs-toggle="modal"
+          data-bs-target="#gameModal"
+        >
+          + Yeni Oyun Ekle
+        </button>
+      </div>
+
+      <!-- Ekle Game Modal -->
+      <div
+        class="modal fade"
+        id="gameModal"
+        tabindex="-1"
+        aria-labelledby="gameModalLabel"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="gameModalLabel">Yeni Oyun Ekle</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form id="gameForm">
+                <div class="mb-3">
+                  <label for="gameName" class="form-label">Oyun İsmi</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="gameName"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="gameContent" class="form-label"
+                    >Oyun Açıklaması</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="gameContent"
+                    required
+                  ></textarea>
+                </div>
+
+                <div class="mb-3">
+                  <select
+                    class="form-select"
+                    id="categorySelect"
+                    aria-label="Kategori Seçin"
+                    required
+                  >
+                    <option value="" selected>Kategori Seçin</option>
+                  </select>
+                </div>
+
+                <div class="mb-3">
+                  <label for="gameDate" class="form-label">Çıkış Tarihi</label>
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="gameDate"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="gamePhoto" class="form-label"
+                    >Oyun Görseli URL</label
+                  >
+                  <input
+                    type="url"
+                    class="form-control"
+                    id="gamePhoto"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="gameDeveloper" class="form-label"
+                    >Yapımcı Firma</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="gameDeveloper"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="gameSteam" class="form-label">Steam URL</label>
+                  <input
+                    type="url"
+                    class="form-control"
+                    id="gameSteam"
+                    required
+                  />
+                </div>
+                <button type="submit" class="btn btn-secondary text-white">
+                  Ekle
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cardlar -->
+      <div
+        id="game-cards"
+        class="row justify-content-center row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4"
+      ></div>
+
+      <!-- Edit Game Modal -->
+      <div
+        class="modal fade"
+        id="editGameModal"
+        tabindex="-1"
+        aria-labelledby="editGameModalLabel"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="editGameModalLabel">Oyun Düzenle</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form id="editGameForm">
+                <div class="mb-3">
+                  <label for="editGameName" class="form-label">Oyun İsmi</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="editGameName"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="editGameContent" class="form-label"
+                    >Oyun Açıklaması</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="editGameContent"
+                    required
+                  ></textarea>
+                </div>
+                <div class="mb-3">
+                  <select class="form-select" id="editGameCategory" required>
+                    <option value="" selected>Kategori Seçin</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label for="editGameDate" class="form-label"
+                    >Çıkış Tarihi</label
+                  >
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="editGameDate"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="editGamePhoto" class="form-label"
+                    >Oyun Görseli URL</label
+                  >
+                  <input
+                    type="url"
+                    class="form-control"
+                    id="editGamePhoto"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="editGameDeveloper" class="form-label"
+                    >Yapımcı Firma</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="editGameDeveloper"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="editGameSteam" class="form-label"
+                    >Steam URL</label
+                  >
+                  <input
+                    type="url"
+                    class="form-control"
+                    id="editGameSteam"
+                    required
+                  />
+                </div>
+                <button type="submit" class="btn btn-secondary text-white">
+                  Düzenle
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Oyun Detayları Modal'ı -->
+      <div
+        class="modal fade"
+        id="gameDetailModal"
+        tabindex="-1"
+        aria-labelledby="gameDetailModalLabel"
+        aria-hidden="true"
+      ></div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>

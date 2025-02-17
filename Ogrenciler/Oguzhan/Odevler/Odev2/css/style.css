@@ -1,0 +1,30 @@
+.header {
+  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.3);
+}
+
+.card .editBtn,
+.card .deleteBtn,
+.card .detailBtn {
+  opacity: 0;
+  display: none;
+}
+
+.card:hover .editBtn,
+.card:hover .deleteBtn,
+.card:hover .detailBtn {
+  opacity: 1;
+  display: block;
+}
+
+.card {
+  display: flex;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 8px;
+  box-shadow: 0px 4px 0px;
+}
+
+.card:hover {
+  box-shadow: 0px 10px 0px;
+  transform: translateY(6px);
+}

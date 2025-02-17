@@ -1,7 +1,7 @@
 import { Game } from "./game.js";
 
 export function fetchGames() {
-    fetch("http://localhost:5000/games")
+    fetch("http://localhost:3000/games")
         .then(res => res.json())
         .then(data => {
             const gameList = document.getElementById("game-list");

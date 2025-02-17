@@ -12,34 +12,44 @@
 </head>
 
 <body>
-	<div class="container">
+
+	<video autoplay loop muted playsinline id="background-video">
+		<source src="./videoplayback.mp4" type="video/mp4">
+		Your browser does not support the video tag.
+	</video>
+	<div class="container navbar-style">
 		<nav class="navbar navbar-expand-lg ">
 			<div class="container-fluid">
-				<a class="navbar-brand" href="#">Dusty Shelves</a>
+				<a class="navbar-brand navbar-title">Tozlu Raflar</a>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
 					data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
 					aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-						<section class="d-flex align-items-center">
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0 navbar-buttons">
+						<section class="d-flex align-items-center  navbar-buttons">
 							<div class="btn-group">
-								<button class="btn btn-secondary btn-sm dropdown-toggle" type="button"
-									data-bs-toggle="dropdown" aria-expanded="false">
+								<button type="button" data-bs-toggle="dropdown" aria-expanded="false"
+									class="order-button">
 									Sıralama
 								</button>
-								<ul class="dropdown-menu">
-									<li><a class="dropdown-item" id="sortAZ">A-Z</a></li>
-									<li><a class="dropdown-item" id="sortZA">Z-A</a></li>
+								<ul class="dropdown-menu ">
+									<li><a class="dropdown-item" id="sortAZ"> <img
+												src="./sort-by-attributes-interface-button-option.png" alt="sort"
+												class="icon">A-Z</a></li>
+									<li><a class="dropdown-item" id="sortZA"><img src="sort-by-attributes.png"
+												alt="sort" class="icon">Z-A</a></li>
 									<li>
-										<a class="dropdown-item" id="sortDate">Çıkış Tarihi</a>
+										<a class="dropdown-item" id="sortDate"> <img src="./ascending-order.png"
+												alt="sort" class="icon">Çıkış Tarihi</a>
 									</li>
 								</ul>
 							</div>
 							<div class="btn-group">
-								<button class="btn btn-secondary btn-sm dropdown-toggle" type="button"
-									data-bs-toggle="dropdown" aria-expanded="false">
+								<button type="button" data-bs-toggle="dropdown" aria-expanded="false"
+									class="filter-button">
+									<img src="./filter.png" alt="filter" class="icon">
 									Filtrele
 								</button>
 								<ul class="dropdown-menu">
@@ -64,14 +74,18 @@
 								</ul>
 							</div>
 						</section>
-						<button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal"
-							data-bs-target="#addGameModal" data-bs-whatever="@mdo">
-							Add Game to Archive
+						<button type="button" data-bs-toggle="modal" data-bs-target="#addGameModal"
+							data-bs-whatever="@mdo" class="create-button">
+							<img src="./add.png" alt="plusicon" class="icon">
+							Bir Oyunu Tarihe Göm
 						</button>
 					</ul>
 					<form class="d-flex" role="search" name="searchForm" method="get" id="searchForm">
-						<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-						<button class="btn btn-outline-success" type="submit" id="searchButton">
+						<div class="input-group">
+							<span class="input-group-text"><img src="./search.png" alt="search" class="icon"></span>
+							<input class="input-search me-2" type="search" placeholder="Search" aria-label="Search" />
+						</div>
+						<button type="submit" id="searchButton" class="search-button">
 							Search
 						</button>
 					</form>
@@ -80,53 +94,59 @@
 		</nav>
 	</div>
 
-
+	<div class="container">
+		<h1 style="text-decoration: underline; font-style: italic;">
+			Tozlu Raflar - Oyun Arşivi Web Sitesi
+		</h1>
+		<p>Bu site tarihin tozlu sayfalarına karışmış oyunları anmak için yapılmıştır. Kartların üzerine tıklayarak
+			oyunları inceleyebilir ve onlara can verebilirsiniz.</p>
+	</div>
 	<!-- Create Game Archive Modal -->
 	<div class="modal fade" id="addGameModal" tabindex="-1" aria-labelledby="addGameLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h1 class="modal-title fs-5" id="addGameLabel">Add a New Game</h1>
+					<h1 class="modal-title fs-5" id="addGameLabel">Tarihe Gömülecek Oyunun Detaylarını Gir</h1>
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				</div>
 				<div class="modal-body">
 					<form method="post" name="gameForm">
 						<div class="mb-3">
-							<label for="game-name" class="col-form-label">Name:</label>
+							<label for="game-name" class="col-form-label">İsmi:</label>
 							<input type="text" class="form-control" id="name" name="name" required />
 						</div>
 						<div class="mb-3">
-							<label for="game-description" class="col-form-label">Description:</label>
+							<label for="game-description" class="col-form-label">Açıklaması:</label>
 							<input type="text" class="form-control" id="desc" name="desc" required />
 						</div>
 						<div class="mb-3">
-							<label for="category-name" class="col-form-label">category:</label>
+							<label for="category-name" class="col-form-label">Kategorisi:</label>
 							<input type="text" class="form-control" id="category" name="category" required />
 						</div>
 						<div class="mb-3">
-							<label for="date-name" class="col-form-label">date:</label>
+							<label for="date-name" class="col-form-label">Milattan Önce Ne Zaman Çıktı:</label>
 							<input type="text" class="form-control" id="releaseDate" name="releaseDate" required />
 						</div>
 						<div class="mb-3">
-							<label for="image-name" class="col-form-label">image:</label>
+							<label for="image-name" class="col-form-label">Oyunun Bir Resmi (eğer varsa):</label>
 							<input type="text" class="form-control" id="image" name="image" required />
 						</div>
 						<div class="mb-3">
-							<label for="developer-name" class="col-form-label">developer:</label>
+							<label for="developer-name" class="col-form-label">Oyunun Yapımcısı:</label>
 							<input type="text" class="form-control" id="developer" name="developer" required />
 						</div>
 						<div class="mb-3">
-							<label for="steam-name" class="col-form-label">Steam URL:</label>
+							<label for="steam-name" class="col-form-label">Tarihi Arşiv Linki:</label>
 							<input type="text" class="form-control" id="steam" name="steamUrl" required />
 						</div>
 					</form>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-						Close
+					<button type="button" data-bs-dismiss="modal">
+						Tarihe Gömmekten Vazgeç
 					</button>
-					<button type="button" class="btn btn-primary" id="submitForm" data-bs-dismiss="modal">
-						Save
+					<button type="button" id="submitForm" data-bs-dismiss="modal">
+						Tarihe Göm
 					</button>
 				</div>
 			</div>
@@ -140,48 +160,49 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<h1 class="modal-title fs-5" id="updateGameModalLabel">
-						Update Archived Games Info
+						Arşivlenmiş Oyunu Güncelle
 					</h1>
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				</div>
 				<div class="modal-body">
 					<form method="put" name="updateGameForm">
 						<div class="mb-3">
-							<label for="game-name" class="col-form-label">Name:</label>
+							<label for="game-name" class="col-form-label">İsmi:</label>
 							<input type="text" class="form-control" id="name" name="name" required />
 						</div>
 						<div class="mb-3">
-							<label for="game-description" class="col-form-label">Description:</label>
+							<label for="game-description" class="col-form-label">Açıklaması (fermanı):</label>
 							<input type="text" class="form-control" id="desc" name="desc" required />
 						</div>
 						<div class="mb-3">
-							<label for="category-name" class="col-form-label">Category:</label>
+							<label for="category-name" class="col-form-label">Kategorisi:</label>
 							<input type="text" class="form-control" id="category" name="category" required />
 						</div>
 						<div class="mb-3">
-							<label for="date-name" class="col-form-label">Date:</label>
+							<label for="date-name" class="col-form-label">Çıkış Tarihi:</label>
 							<input type="text" class="form-control" id="releaseDate" name="releaseDate" required />
 						</div>
 						<div class="mb-3">
-							<label for="image-name" class="col-form-label">Image:</label>
+							<label for="image-name" class="col-form-label">Güncel Bir Resmi:</label>
 							<input type="text" class="form-control" id="image" name="image" required />
 						</div>
 						<div class="mb-3">
-							<label for="developer-name" class="col-form-label">Developer:</label>
+							<label for="developer-name" class="col-form-label">Yapımcı (varsa yeni):</label>
 							<input type="text" class="form-control" id="developer" name="developer" required />
 						</div>
 						<div class="mb-3">
-							<label for="steam-name" class="col-form-label">Steam URL:</label>
+							<label for="steam-name" class="col-form-label">Oyun linki (gelecekteki Steam Mağaza
+								Linki):</label>
 							<input type="text" class="form-control" id="steam" name="steamUrl" required />
 						</div>
 					</form>
 				</div>
 				<div class="modal-footer">
 					<button type="button" data-bs-dismiss="modal">
-						Close
+						Mezarından Çıkarmaktan Vazgeç
 					</button>
 					<button type="button" id="updateForm" data-bs-dismiss="modal">
-						Save
+						Oyuna Can Ver
 					</button>
 				</div>
 			</div>
@@ -195,14 +216,14 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<h1 class="modal-title fs-5" id="gameDetailModalLabel">
-						Game Detail
+						Tarihi Oyun Detayları
 					</h1>
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				</div>
 				<div class="modal-body" id="gameDetailModalBody"></div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-						Close
+					<button type="button" data-bs-dismiss="modal">
+						Mezarına Geri Koy
 					</button>
 				</div>
 			</div>
@@ -214,6 +235,18 @@
 			<!-- GAMES WILL RENDER HERE -->
 		</section>
 	</main>
+
+	<footer>
+		<div class="footer-style">
+			<p class="text-center">
+				&copy; 2021 Tozlu Raflar - Oyun Arşivi Web Sitesi
+			</p>
+		</div>
+	</footer>
+
+
+
+
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
 		crossorigin="anonymous"></script>
