@@ -5,25 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oyun Detayları</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/details.css">
      
 </head>
 <body>
-    <div class="container mt-4">
-        <a href="index.html" class="btn btn-secondary mb-3">
-            <img src="./Images/d4444790-2f99-4817-9272-35cd9ecfc537.webp" alt="logo" class="logo">
-        </a>
-        <h1 id="game-title"></h1>
-        <iframe id="game-video-iframe" width="100%" height="400" frameborder="0" allowfullscreen style="display: none;"></iframe>
-
+<section class="details-body">
+    <a href="index.html" class="btn btn-secondary mb-3">
+        <img src="./Images/d4444790-2f99-4817-9272-35cd9ecfc537.webp" alt="logo" class="logo">
+        <div class="container mt-4">
+            <div class="details">
+                <h1 class="text-white" id="game-title"></h1>
+                <iframe id="game-video-iframe" width="100%" height="300" frameborder="0" allowfullscreen style="display: none;"></iframe>
+                
+                <p id="game-description"></p>
+                <p><strong>Kategori:</strong> <span id="game-category"></span></p>
+                <p><strong>Çıkış Tarihi:</strong> <span id="game-releaseDate"></span></p>
+                <p><strong>Yapımcı:</strong> <span id="game-developer"></span></p>
+                <a id="game-steamURL" class="btn btn-primary" target="_blank">Steam'de Aç</a>
         
-        
-        <p id="game-description"></p>
-        <p><strong>Kategori:</strong> <span id="game-category"></span></p>
-        <p><strong>Çıkış Tarihi:</strong> <span id="game-releaseDate"></span></p>
-        <p><strong>Yapımcı:</strong> <span id="game-developer"></span></p>
-        <a id="game-steamURL" class="btn btn-primary" target="_blank">Steam'de Aç</a>
+                <script src="./Js/game_details.js"></script>
+            </div>
+        </div>
+    </a>
+</section>
 
-        <script src="./Js/game_details.js"></script>
-    </div>
 </body>
 </html>
