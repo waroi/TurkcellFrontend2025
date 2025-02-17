@@ -26,6 +26,8 @@ export default class GameListView {
     img.src = game.imageUrl;
     img.alt = game.name;
     img.classList.add("card-img-top", "img-fluid", "object-fit-cover");
+    img.style = "height: 300px";
+
     img.addEventListener("error", () => (img.src = "./assets/logo.png"));
 
     const cardBody = document.createElement("div");
