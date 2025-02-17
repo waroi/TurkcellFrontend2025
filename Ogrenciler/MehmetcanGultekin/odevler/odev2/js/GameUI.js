@@ -16,17 +16,17 @@ export class GameUI {
         this.alertManager = new AlertManager();
         this.cardManager = new CardManager(gameService, this);
         
+        const uiContext = this;  
+        this.searchManager = new SearchManager(gameService, this.displayGames.bind(uiContext));
+        this.filterManager = new FilterManager(gameService, this.displayGames.bind(uiContext));
+        this.sortManager = new SortManager(gameService, this.displayGames.bind(uiContext));
         
-        this.searchManager = new SearchManager(gameService, this.displayGames.bind(this));
-        this.filterManager = new FilterManager(gameService, this.displayGames.bind(this));
-        this.sortManager = new SortManager(gameService, this.displayGames.bind(this));
-        
-       
         this.gameList = document.getElementById('gameList');
         this.gameForm = document.getElementById('gameForm');
         this.addGameBtn = document.getElementById('addGameBtn');
          
-        this.handleSubmit = this.handleSubmit.bind(this);
+        const formContext = this;
+        this.handleSubmit = this.handleSubmit.bind(formContext);
         
         this.addGameBtn.addEventListener('click', () => {
             this.formManager.clearForm();
