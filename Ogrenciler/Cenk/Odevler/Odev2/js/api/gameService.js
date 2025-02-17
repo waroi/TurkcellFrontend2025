@@ -21,7 +21,7 @@ export default class GameService {
     return fetch(`${API_URL}/${id}`, {
       method: "PUT",
       headers: {"Content-Type": "application/json"},
-      body: JSON.stringify(game),
+      body: JSON.stringify(updatedGame),
     }).then((response) => {
       if (!response.ok) throw new Error("Oyun güncellenemedi.");
       return response.json();
