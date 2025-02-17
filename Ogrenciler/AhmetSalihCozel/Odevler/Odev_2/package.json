@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "scripts": {
     "sass": "sass -w scss:css",
     "start": "json-server --watch games.json --port 3000"

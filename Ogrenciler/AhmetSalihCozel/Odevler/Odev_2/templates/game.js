@@ -1,4 +1,4 @@
-export class Game {
+class Game {
     constructor(gameName, gameText, category, releaseDate, imageURL, producer, steamURL){
         this.gameName = gameName;
         this.gameText = gameText;

@@ -1,6 +1,5 @@
-import { UI } from "../UI/UI.js";
 
-export function card(gameObj){
+function card(gameObj){
     let ui = new UI(gameObj);
     let colDiv = document.createElement("div");
     colDiv.classList.add("col-md-6", "col-lg-4","col-sm-12","d-flex","cardCss");
