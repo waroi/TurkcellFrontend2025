@@ -192,16 +192,16 @@ function createGameCard(game) {
 							data-bs-target="#updateGameModal"
 							data-bs-whatever="@mdo"
 							id="editGame" data-id="${game.id}">
-							Edit Game 
+							Oyuna Can Ver
 						</button>
-      <button class="delete-button" id="deleteGame" data-id="${game.id}">Delete</button>
+      <button class="delete-button" id="deleteGame" data-id="${game.id}">Oyunu Tarihe Göm</button>
       <button
 							type="button"
 							data-bs-toggle="modal"
 							data-bs-target="#gameDetailModal"
 							data-bs-whatever="@mdo"
 							id="detailGame" data-id="${game.id}">
-							Show Detail Archived Game
+							Oyunu Mezarından Çıkar
 						</button>
 						</div>
 					</div>

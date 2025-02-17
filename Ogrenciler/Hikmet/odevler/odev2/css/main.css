@@ -1,26 +1,26 @@
-body {
-  background-color: #fcb232;
-  font-family: "Roboto", sans-serif;
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-.game-card-img {
-  height: 250px;
-}
-
-.game-description {
-  display: -webkit-box;
-  line-clamp: 3;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+body {
+  background-color: #fcb232;
 }
 
 .game-card {
-  border-radius: 0px;
+  border-radius: 0;
   filter: blur(2px);
+}
+.game-card .game-card-img {
+  height: 250px;
+}
+.game-card .game-description {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .icon {
@@ -32,7 +32,15 @@ body {
   border: none;
 }
 
-.navbar-buttons {
+.navbar-style {
+  margin-top: 1rem;
+  border: 2px solid #35322c;
+}
+.navbar-style .navbar-title {
+  color: #35322c;
+  font-weight: bold;
+}
+.navbar-style .navbar-buttons {
   gap: 10px;
 }
 
@@ -46,6 +54,23 @@ body {
   text-underline-position: below;
   text-decoration: underline;
   color: blue;
+}
+
+.footer-style {
+  margin-top: 1rem;
+  padding: 24px;
+  background-color: #35322c;
+  color: #fff;
+}
+
+#background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  object-fit: cover;
 }
 
 /*# sourceMappingURL=main.css.map */
