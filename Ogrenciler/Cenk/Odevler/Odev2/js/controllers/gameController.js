@@ -16,8 +16,9 @@ export default class GameController {
     document.querySelector("#addGameBtn").addEventListener("click", () => {
       document.querySelector("#gameForm").reset();
       delete document.querySelector("#gameForm").dataset.gameId;
-      const modal = new bootstrap.Modal(document.querySelector("#gameModal"));
-      modal.show();
+      const modalElement = document.querySelector("#gameModal");
+      const modalInstance = bootstrap.Modal.getOrCreateInstance(modalElement);
+      modalInstance.show();
     });
 
     document.querySelector("#gameForm").addEventListener("submit", (event) => {
@@ -68,12 +69,16 @@ export default class GameController {
   addGame = () => {
     const gameData = this.modalView.getFormData();
 
+    if (!gameData.id || gameData.id === "null") {
+      gameData.id = Date.now();
+    }
+
     if (!gameData.name || !gameData.category || !gameData.releaseDate) {
       alert("Lütfen tüm gerekli alanları doldurun!");
       return;
     }
 
-    if (gameData.id) {
+    if (document.querySelector("#gameForm").dataset.gameId) {
       GameService.updateGame(gameData.id, gameData)
         .then(() => this.loadGames())
         .catch((error) =>
@@ -98,13 +103,15 @@ export default class GameController {
   };
 
   editGame = (id) => {
-    const gameToEdit = this.games.find((game) => game.id === parseInt(id));
+    const foundId = parseInt(id);
+    const gameToEdit = this.games.find((game) => parseInt(game.id) === foundId);
 
     if (gameToEdit) {
       this.modalView.setFormData(gameToEdit);
       document.querySelector("#gameForm").dataset.gameId = id;
-      const modal = new bootstrap.Modal(document.querySelector("#gameModal"));
-      modal.show();
+      const modalElement = document.querySelector("#gameModal");
+      const modalInstance = bootstrap.Modal.getOrCreateInstance(modalElement);
+      modalInstance.show();
     }
   };
 

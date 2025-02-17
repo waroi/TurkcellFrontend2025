@@ -38,9 +38,16 @@ class UI {
     const filterContainer = document.getElementById('filterCollapseFilter')
     filterContainer.innerHTML = ''
 
+    let isFirstCategory = true
+
     categories.forEach(category => {
       const div = document.createElement('div')
-      div.className = 'form-check mt-3'
+      div.className = 'form-check'
+
+      if (isFirstCategory) {
+        div.classList.add('mt-3')
+        isFirstCategory = false
+      }
 
       const input = document.createElement('input')
       input.className = 'form-check-input'
