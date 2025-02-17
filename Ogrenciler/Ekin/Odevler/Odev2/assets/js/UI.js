@@ -212,7 +212,7 @@ class UI {
         card.querySelector("img").src = game.imageURL;
         card.querySelector(".card-title").textContent = game.name;
         card.querySelector(".card-text:nth-of-type(1) b").textContent =
-          game.price ? game.price : "Free";
+          game.price != "0" ? game.price : "Free";
         card.querySelector(".card-text:nth-of-type(2) span").textContent =
           game.developer;
         card.querySelector(".card-text:nth-of-type(3) span").textContent =
