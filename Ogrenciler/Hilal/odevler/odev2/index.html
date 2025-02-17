@@ -13,20 +13,32 @@
           <a class="navbar-brand text-primary fw-bold font-monospace fs-4"
             >PlayBox</a
           >
-          <form class="d-flex" role="search">
-            <input
-              class="form-control me-2 bg-transparent text-light rounded-pill"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
+          <div class="d-flex">
             <button
-              class="btn btn-outline-primary text-light rounded-pill"
-              type="submit"
+              type="button"
+              class="btn btn-primary rounded-pill me-2"
+              data-bs-toggle="modal"
+              data-bs-target="#gameProductModal"
+              data-bs-whatever="@mdo"
             >
-              Search
+              Add new game
             </button>
-          </form>
+            <form class="d-flex" role="search">
+              <input
+                class="form-control bg-transparent text-light rounded-pill"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button
+                class="btn btn-outline-primary text-light rounded-pill"
+                type="submit"
+                hidden
+              >
+                Search
+              </button>
+            </form>
+          </div>
         </div>
       </nav>
     </header>
@@ -117,8 +129,45 @@
           <div class="row popular-games"></div>
         </div>
       </section>
+      <section class="modal-container"></section>
+      <section>
+        <!-- <button type="button" class="btn btn-primary" id="liveToastBtn">
+          Show live toast
+        </button> -->
+
+        <div class="toast-container position-fixed bottom-0 end-0 p-3">
+          <div
+            id="liveToast"
+            class="toast"
+            role="alert"
+            aria-live="assertive"
+            aria-atomic="true"
+          >
+            <div class="toast-header">
+              <img src="..." class="rounded me-2" alt="..." />
+              <strong class="me-auto">Bootstrap</strong>
+              <small>11 mins ago</small>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="toast"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="toast-body">Hello, world! This is a toast message.</div>
+          </div>
+        </div>
+      </section>
     </main>
-    <footer><div class="container"></div></footer>
+    <footer>
+      <div class="container">
+        <div
+          class="d-flex text-light justify-content-center align-items-center w-100 py-3 text-secondary"
+        >
+          Made with ❤️ by Hilal
+        </div>
+      </div>
+    </footer>
     <script src="./src/js/script.js" type="module"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"

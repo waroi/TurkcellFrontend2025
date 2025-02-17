@@ -1,6 +1,5 @@
-import { UI } from "../UI/UI.js";
 
-export function card(gameObj){
+function card(gameObj){
     let ui = new UI(gameObj);
     let colDiv = document.createElement("div");
     colDiv.classList.add("col-md-6", "col-lg-4","col-sm-12","d-flex","cardCss");
@@ -90,7 +89,7 @@ export function card(gameObj){
     colThree.append(steamButton,deleteButton)
 
     let row = document.createElement("div");
-    row.classList.add("row","d-flex", "align-items-stretch","h-100");
+    row.classList.add("row","d-flex","h-100");
     row.append(colOne,colTwo,colThree)
 
     cardBody.appendChild(row);

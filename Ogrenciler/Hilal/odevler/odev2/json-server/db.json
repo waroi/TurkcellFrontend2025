@@ -1,46 +1,40 @@
 {
   "games": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Counter-Strike 2",
-      "description": "Counter-Strike 2, dünya çapında popüler bir rekabetçi FPS oyunudur.",
-      "category": "Shooter",
-      "release_date": "2023-06-23",
-      "game_image": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/730/header.jpg?t=1729703045",
       "developer": "Valve",
+      "release_date": "2023-06-23",
+      "description": "Counter-Strike 2, dünya çapında popüler bir rekabetçi FPS oyunudur.",
+      "category": "",
       "steam_url": "https://store.steampowered.com/app/730/CounterStrike_2",
-      "price": "Free To Play",
-      "current_players": 1699281,
-      "peak_today": 1744015
+      "game_image": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/730/header.jpg?t=1729703045",
+      "price": "Free To Play"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "PUBG: BATTLEGROUNDS",
+      "developer": "PUBG Corporation",
+      "release_date": "2017-12-20",
       "description": "PUBG, hayatta kalma türünde bir oyun olup, oyuncuların birbirleriyle mücadele ettiği devasa bir arenada geçer.",
       "category": "Battle Royale",
-      "release_date": "2017-12-20",
-      "game_image": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/578080/header.jpg?t=1736389084",
-      "developer": "PUBG Corporation",
       "steam_url": "https://store.steampowered.com/app/578080/PUBG_BATTLEGROUNDS",
-      "price": "Free To Play",
-      "current_players": 726642,
-      "peak_today": 794475
+      "game_image": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/578080/header.jpg?t=1736389084",
+      "price": "Free To Play"
     },
     {
-      "id": 3,
-      "name": "Dota 2",
-      "description": "Dota 2, stratejik bir MOBA oyunudur ve takım tabanlı mücadeleler içerir.",
-      "category": "MOBA",
-      "release_date": "2013-07-09",
-      "game_image": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/570/header.jpg?t=1739210483",
+      "id": "3",
+      "name": "Dota 6",
       "developer": "Valve",
+      "release_date": "2013-07-09",
+      "description": "Dota 2, stratejik bir MOBA oyunudur ve takım tabanlı mücadeleler içerir.",
+      "category": "RPG",
       "steam_url": "https://store.steampowered.com/app/570/Dota_2",
-      "price": "Free To Play",
-      "current_players": 690906,
-      "peak_today": 691868
+      "game_image": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/570/header.jpg?t=1739210483",
+      "price": "Free To Play"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Kingdom Come: Deliverance II",
       "description": "Kingdom Come: Deliverance, Orta Çağ'da geçen bir açık dünya RPG oyunudur.",
       "category": "RPG",
@@ -48,12 +42,10 @@
       "game_image": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1771300/header.jpg?t=1739541387",
       "developer": "Warhorse Studios",
       "steam_url": "https://store.steampowered.com/app/1771300/Kingdom_Come_Deliverance_II/",
-      "price": "$44.99",
-      "current_players": 219521,
-      "peak_today": 219521
+      "price": "$44.99"
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Apex Legends™",
       "description": "Apex Legends, hızlı tempolu bir Battle Royale oyunudur.",
       "category": "Battle Royale",
@@ -61,12 +53,10 @@
       "game_image": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1172470/header.jpg?t=1739493471",
       "developer": "Respawn Entertainment",
       "steam_url": "https://store.steampowered.com/app/1172470/Apex_Legends",
-      "price": "Free To Play",
-      "current_players": 209711,
-      "peak_today": 225077
+      "price": "Free To Play"
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Marvel Rivals",
       "description": "Marvel Rivals, Marvel evrenindeki kahramanların yer aldığı bir arenada mücadele ettikleri bir dövüş oyunudur.",
       "category": "Fighting",
@@ -74,12 +64,10 @@
       "game_image": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/2767030/header.jpg?t=1739520423",
       "developer": "Marvel Studios",
       "steam_url": "https://store.steampowered.com/app/2767030/Marvel_Rivals/",
-      "price": "Free To Play",
-      "current_players": 187550,
-      "peak_today": 324633
+      "price": "Free To Play"
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "Grand Theft Auto V",
       "description": "GTA V, açık dünya tarzında bir aksiyon-macera oyunudur.",
       "category": "Action",
@@ -87,38 +75,32 @@
       "game_image": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/271590/header.jpg?t=1737136276",
       "developer": "Rockstar Games",
       "steam_url": "https://store.steampowered.com/app/271590/Grand_Theft_Auto_V",
-      "price": "$29.98",
-      "current_players": 184231,
-      "peak_today": 185375
+      "price": "$29.98"
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "Rust",
+      "developer": "Facepunch Studios",
+      "release_date": "2013-12-11",
       "description": "Rust, hayatta kalma temalı bir açık dünya oyunudur.",
       "category": "Survival",
-      "release_date": "2013-12-11",
-      "game_image": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/252490/header.jpg?t=1738927718",
-      "developer": "Facepunch Studios",
       "steam_url": "https://store.steampowered.com/app/252490/Rust",
-      "price": "$18.99",
-      "current_players": 183578,
-      "peak_today": 202556
+      "game_image": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/252490/header.jpg?t=1738927718",
+      "price": "$18.99"
     },
     {
-      "id": 9,
+      "id": "9",
       "name": "NARAKA: BLADEPOINT",
       "description": "Naraka: Bladepoint, dövüş ve aksiyon dolu bir Battle Royale oyunudur.",
-      "category": "Battle Royale",
+      "category": "Battle",
       "release_date": "2021-07-23",
       "game_image": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1203220/header.jpg?t=1737540792",
       "developer": "24 Entertainment",
       "steam_url": "https://store.steampowered.com/app/1203220/NARAKA_BLADEPOINT/",
-      "price": "Free To Play",
-      "current_players": 177341,
-      "peak_today": 206120
+      "price": "Free To Play"
     },
     {
-      "id": 10,
+      "id": "10",
       "name": "Wallpaper Engine",
       "description": "Wallpaper Engine, dinamik ve animasyonlu duvar kağıtları oluşturmanıza olanak tanır.",
       "category": "Utility",
@@ -126,9 +108,18 @@
       "game_image": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/431960/header.jpg?t=1739211362",
       "developer": "Wallpaper Engine Team",
       "steam_url": "https://store.steampowered.com/app/431960/Wallpaper_Engine",
-      "price": "$2.99",
-      "current_players": 126038,
-      "peak_today": 12827
+      "price": "$2.99"
+    },
+    {
+      "id": "6524",
+      "name": "New Game",
+      "developer": "Hilal",
+      "release_date": "",
+      "description": "",
+      "category": "Battle Royale",
+      "steam_url": "",
+      "game_image": "https://picsum.photos/200/200",
+      "price": "Free To Play"
     }
   ]
 }

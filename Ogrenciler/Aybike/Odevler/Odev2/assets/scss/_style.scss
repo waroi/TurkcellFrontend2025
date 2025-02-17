@@ -1,0 +1,119 @@
+$primary-button-color: #ffb3cc;
+$base-text-color: rgb(124, 100, 97);
+$modal-bg-color:  #f7f0f3;
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-image: url("../images/bg.png");
+	background-repeat: repeat;
+}
+
+.nav-logo{
+	width: 80px;
+  }
+  
+.bg-light-gray {
+	background-color: $modal-bg-color !important;
+}
+
+@mixin card-hover {
+	&:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	}
+}
+
+@mixin button-base {
+	border: none;
+	padding: 1rem;
+	font-weight: bold;
+	border-radius: 50px;
+	background-color: white;
+	color: $primary-button-color;
+	cursor: pointer;
+	transition: all 0.3s ease;
+
+	&:hover {
+		background-color: $primary-button-color;
+		color: white;
+	}
+}
+
+h1 {
+	color: $base-text-color !important;
+}
+
+.card {
+	@include card-hover;
+	background: linear-gradient(145deg, #fde0e7, #ffc9e9);
+	border-radius: 10px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	padding: 1.5rem;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	.card-title {
+		color: $base-text-color;
+		font-size: 1.5rem;
+		font-weight: bold;
+		text-align: center;
+	}
+	.card-text {
+		color: $base-text-color;
+	}
+}
+
+.card-button {
+	@include button-base;
+	padding: 0.5rem;
+	font-size: 0.8rem;
+}
+
+.button {
+	@include button-base;
+	animation: button-animation 1s ease-in-out infinite 1s alternate-reverse;
+}
+
+@keyframes button-animation {
+	0% {
+		transform: translateY(5px);
+	}
+
+	100% {
+		transform: translateY(-5px);
+	}
+}
+
+.search-input {
+	padding: 0.8rem 1.2rem;
+	border: 2px solid $primary-button-color;
+	border-radius: 25px;
+	outline: none;
+}
+
+.search-icon {
+	left: 20px;
+	top: 25%;
+	color: rgb(124, 100, 97);
+	font-size: 1.2rem;
+}
+
+.search-input {
+	width: 250px;
+}
+
+.nyan {
+	width: 105px;
+	height: 68px;
+	background: url(http://ichderfisch.de/wp-content/uploads/2016/01/nyan-5.png);
+	animation: nyan 0.5s infinite steps(6);
+}
+
+@keyframes nyan {
+	100% {
+		background-position: -630px 0;
+	}
+}

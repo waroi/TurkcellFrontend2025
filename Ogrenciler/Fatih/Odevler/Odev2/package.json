@@ -1,0 +1,19 @@
+{
+  "name": "odev2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch assets/sass:assets/css",
+    "json-server": "json-server --watch db/db.json --port 3000",
+    "dev": "concurrently \"npm run sass\" \"npm run json-server\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "concurrently": "^9.1.2",
+    "sass": "^1.85.0"
+  }
+}
