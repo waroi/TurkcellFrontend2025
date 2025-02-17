@@ -9,6 +9,20 @@ header {
   height: 600px;
   padding: 10px;
 }
+header .search-input {
+  height: 40px;
+}
+header .kategori {
+  animation: dropdown 1s infinite alternate;
+}
+@keyframes dropdown {
+  from {
+    color: red;
+  }
+  to {
+    color: #5a6af7;
+  }
+}
 
 .logo {
   width: 100px;

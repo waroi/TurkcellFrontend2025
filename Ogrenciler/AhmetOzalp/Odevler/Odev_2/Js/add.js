@@ -17,14 +17,14 @@ document.getElementById("add-game-form").addEventListener("submit", function (e)
     };
 
     if (gameId) {
-        fetch(`http://localhost:5000/games/${gameId}`, {
+        fetch(`http://localhost:3000/games/${gameId}`, {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(newGame)
         })
         .then(() => fetchGames());
     } else {
-        fetch("http://localhost:5000/games", {
+        fetch("http://localhost:3000/games", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(newGame)
