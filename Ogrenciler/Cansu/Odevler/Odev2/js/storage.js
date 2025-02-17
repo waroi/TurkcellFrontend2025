@@ -1,62 +1,54 @@
 class Storage {
-    static apiUrl = "http://localhost:5000/games";
-
     static async fetchGames() {
         try {
-            const response = await fetch(this.apiUrl);
+            const response = await fetch("http://localhost:3000/games");
+
             if (!response.ok) {
-                throw new Error(`Error: ${response.statusText}`);
+                throw new Error(`Server error: ${response.status}`);
             }
-            return response.json();
+
+            const games = await response.json();
+            console.log("Games drawn:", games);
+            return games;
         } catch (error) {
-            console.error("Error fetching games:", error);
-            return [];
+            console.error("Error while loading games:", error);
+            return []; 
         }
     }
 
     static async addGame(game) {
         try {
-            const response = await fetch(this.apiUrl, {
+            const response = await fetch("http://localhost:3000/games", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(game)
+                body: JSON.stringify(game),
             });
-            if (!response.ok) {
-                throw new Error("Failed to add game");
-            }
-            return response.json();
-        } catch (error) {
-            console.error("Error adding game:", error);
-        }
-    }
 
-    static async updateGame(id, game) {
-        try {
-            const response = await fetch(`${this.apiUrl}/${id}`, {
-                method: "PUT",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(game)
-            });
             if (!response.ok) {
-                throw new Error("Failed to update game");
+                throw new Error(`Game could not be added! Error code: ${response.status}`);
             }
-            return response.json();
+
+            return await response.json(); 
         } catch (error) {
-            console.error("Error updating game:", error);
+            console.error("An error occurred while adding the game:", error);
+            return null; 
         }
     }
 
     static async deleteGame(id) {
         try {
-            const response = await fetch(`${this.apiUrl}/${id}`, {
-                method: "DELETE"
-            });
+            const response = await fetch(`http://localhost:3000/games/${id}`, { method: "DELETE" });
+
             if (!response.ok) {
-                throw new Error("Failed to delete game");
+                throw new Error(`The game could not be deleted! Error code: ${response.status}`);
             }
-            return response.ok; // true/false dönebilir
+
+            return true; 
         } catch (error) {
-            console.error("Error deleting game:", error);
+            console.error("An error occurred while deleting the game:", error);
+            return false;
         }
     }
 }
+
+

@@ -1,120 +1,176 @@
 document.addEventListener("DOMContentLoaded", async () => {
-
-  const games = await Storage.fetchGames();
-
-
-  UI.renderGames(games);
-
- 
-  setupEventListeners();
+    try {
+        await UI.renderGames(await Storage.fetchGames());
+        setupEventListeners();
+        applyDarkMode(); 
+    } catch (error) {
+        console.error("🔥ERROR: An error occurred during DOMContentLoaded!", error);
+    }
 });
 
 function setupEventListeners() {
- 
-  const addGameForm = document.getElementById('add-game-form');
-  if (addGameForm) {
-      addGameForm.addEventListener('submit', async (event) => {
-          event.preventDefault(); 
+    const addGameForm = document.getElementById("gameForm");
+    const categorySelect = document.getElementById("categorySelect");
+    const searchBar = document.getElementById("searchBar");
+    const sortSelect = document.getElementById("sortSelect");
+    const darkModeToggle = document.getElementById("darkModeToggle");
+    const developerSelect = document.getElementById("developerSelect");
 
-          const name = document.getElementById('game-name').value;
-          const description = document.getElementById('game-description').value;
-          const category = document.getElementById('game-category').value;
-          const releaseDate = document.getElementById('game-release').value;
-          const imageUrl = document.getElementById('game-image').value;
-          const producer = document.getElementById('game-producer').value;
-          const steamUrl = document.getElementById('game-steam-url').value;
-    
-          const newGame = {
-              name,
-              description,
-              category,
-              releaseDate,
-              imageUrl,
-              producer,
-              steamUrl
-          };
+    if (addGameForm) {
+        addGameForm.addEventListener("submit", async (event) => {
+            event.preventDefault();
 
-        
-          await Storage.addGame(newGame);
-          const games = await Storage.fetchGames();
-          UI.renderGames(games);
-          addGameForm.reset();
-      });
-  }
+            const newGame = {
+                name: document.getElementById("gameName").value,
+                description: document.getElementById("gameDescription").value,
+                category: document.getElementById("gameCategory").value,
+                release_date: document.getElementById("releaseDate").value,
+                image: document.getElementById("gameImage").value,
+                developer: document.getElementById("gameDeveloper").value,
+                steam_url: document.getElementById("gameSteamURL").value,
+            };
 
-  document.getElementById('searchBar').addEventListener('input', function (event) {
-      const query = event.target.value.toLowerCase();
-      const gameCards = document.querySelectorAll('.game-card');
+            try {
+                await Storage.addGame(newGame);
+                await UI.renderGames(await Storage.fetchGames());
+                addGameForm.reset();
+            } catch (error) {
+                console.error("🔥 ERROR: An error occurred while adding the game!", error);
+            }
+        });
+    }
 
-      gameCards.forEach(card => {
-          const gameName = card.querySelector('.card-title').textContent.toLowerCase();
-          const gameDescription = card.querySelector('.card-text').textContent.toLowerCase();
+    if (categorySelect) {
+        categorySelect.addEventListener("change", async function () {
+            const selectedCategory = this.value;
+            try {
+                const allGames = await Storage.fetchGames();
+                const filteredGames = selectedCategory === "all"
+                    ? allGames
+                    : allGames.filter(game => game.category === selectedCategory);
 
-          if (gameName.includes(query) || gameDescription.includes(query)) {
-              card.style.display = 'block';
-          } else {
-              card.style.display = 'none';
-          }
-      });
-  });
+                UI.renderGames(filteredGames);
+            } catch (error) {
+                console.error("🔥 ERROR: An error occurred while filtering games by category!", error);
+            }
+        });
+    }
 
+    if (developerSelect) {
+        developerSelect.addEventListener("change", async function () {
+            const selectedCode = this.value;
+            
+            
+            const developerMap = {
+                "dvp": "Tümü",
+                "nin": "Nintendo",
+                "from": "FromSoftware",
+                "rock": "Rockstar Games",
+                "beth": "Bethesda Game Studios",
+                "moj": "Mojang Studios",
+                "cd": "CD Projekt Red",
+                "blizz": "Blizzard Entertainment",
+                "epic": "Epic Games",
+                "super": "Supergiant Games",
+                "id": "id Software",
+                "inner": "Innersloth"
+            };
 
-  document.getElementById('sortSelect').addEventListener('change', function () {
-      const sortOption = this.value;
-      const gameList = document.getElementById('gameList');
-      let games = Array.from(gameList.children);
+            const selectedDeveloper = developerMap[selectedCode];
 
-      games.sort((a, b) => {
-          const nameA = a.querySelector('.card-title').textContent.toLowerCase();
-          const nameB = b.querySelector('.card-title').textContent.toLowerCase();
-          const dateA = new Date(a.querySelector('.card-date').textContent);
-          const dateB = new Date(b.querySelector('.card-date').textContent);
+            try {
+                const allGames = await Storage.fetchGames();
+                const filteredGames = (selectedDeveloper === "Tümü")
+                    ? allGames
+                    : allGames.filter(game => game.developer === selectedDeveloper);
 
-          if (sortOption === 'name_asc') {
-              return nameA.localeCompare(nameB);
-          } else if (sortOption === 'name_desc') {
-              return nameB.localeCompare(nameA);
-          } else if (sortOption === 'date_up') {
-              return dateA - dateB;
-          } else if (sortOption === 'date_down') {
-              return dateB - dateA;
-          }
-      });
+                UI.renderGames(filteredGames);
+            } catch (error) {
+                console.error("🔥 ERROR: An error occurred while filtering games by developer!", error);
+            }
+        });
+    }
 
-      games.forEach(game => gameList.appendChild(game)); 
-  });
+    if (searchBar) {
+        searchBar.addEventListener("input", function (event) {
+            const query = event.target.value.toLowerCase();
+            document.querySelectorAll(".game-card").forEach((card) => {
+                const gameName = card.querySelector(".card-title").textContent.toLowerCase();
+                card.style.display = gameName.includes(query) ? "block" : "none";
+            });
+        });
+    }
 
-  document.getElementById('gameList').addEventListener('click', async (event) => {
-      if (event.target.classList.contains('delete-button')) {
-          const gameId = event.target.dataset.id;
-          await Storage.deleteGame(gameId);
-          const games = await Storage.fetchGames();
-          UI.renderGames(games);
-      }
-  });
+    if (sortSelect) {
+        sortSelect.addEventListener("change", async function () {
+            const sortOption = this.value;
+            try {
+                let games = await Storage.fetchGames();
 
- 
-  const toggleDarkModeBtn = document.getElementById('toggle-dark-mode');
-  const body = document.body;
+                switch (sortOption) {
+                    case "name_asc":
+                        games.sort((a, b) => a.name.localeCompare(b.name));
+                        break;
+                    case "name_desc":
+                        games.sort((a, b) => b.name.localeCompare(a.name));
+                        break;
+                    case "date_up":
+                        games.sort((a, b) => new Date(a.release_date) - new Date(b.release_date));
+                        break;
+                    case "date_down":
+                        games.sort((a, b) => new Date(b.release_date) - new Date(a.release_date));
+                        break;
+                }
 
- 
-  toggleDarkModeBtn.addEventListener('click', () => {
-      body.classList.toggle('dark-mode');
+                UI.renderGames(games);
+            } catch (error) {
+                console.error("🔥 ERROR: An error occurred while sorting the games!", error);
+            }
+        });
+    }
 
-      if (body.classList.contains('dark-mode')) {
-          toggleDarkModeBtn.innerHTML = '🌞'; 
-      } else {
-          toggleDarkModeBtn.innerHTML = '🌙'; 
-      }
-
-     
-      const navbar = document.querySelector('.navbar');
-      navbar.classList.toggle('navbar-dark-mode');
-    
-      const modalContent = document.querySelectorAll('.modal-content');
-      modalContent.forEach((modal) => modal.classList.toggle('dark-mode'));
-    
-      const cards = document.querySelectorAll('.card');
-      cards.forEach((card) => card.classList.toggle('dark-mode'));
-  });
+    if (darkModeToggle) {
+        darkModeToggle.addEventListener("click", toggleDarkMode);
+    }
 }
+
+function applyDarkMode() {
+    try {
+        const darkMode = localStorage.getItem("darkMode");
+        const darkModeToggle = document.getElementById("darkModeToggle");
+
+        if (darkMode === "enabled") {
+            document.body.classList.add("dark");
+            if (darkModeToggle) darkModeToggle.textContent = "🌙";
+        } else {
+            document.body.classList.remove("dark");
+            if (darkModeToggle) darkModeToggle.textContent = "🌞";
+        }
+    } catch (error) {
+        console.error("🔥 ERROR: An error occurred while applying Dark Mode!", error);
+    }
+}
+
+function toggleDarkMode() {
+    try {
+        document.body.classList.toggle("dark");
+        const darkModeToggle = document.getElementById("darkModeToggle");
+
+        if (document.body.classList.contains("dark")) {
+            localStorage.setItem("darkMode", "enabled");
+            if (darkModeToggle) darkModeToggle.textContent = "🌙";
+        } else {
+            localStorage.removeItem("darkMode");
+            if (darkModeToggle) darkModeToggle.textContent = "🌞";
+        }
+    } catch (error) {
+        console.error("🔥 ERROR: An error occurred while changing Dark Mode!", error);
+    }
+}
+
+
+
+
+
+
+

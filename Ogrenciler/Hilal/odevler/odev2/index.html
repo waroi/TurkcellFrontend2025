@@ -6,42 +6,122 @@
     <title>Game</title>
     <link rel="stylesheet" href="./src/css/main.css" />
   </head>
-  <body class="bg-dark">
+  <body class="bg-dark bg-gradient">
     <header>
       <nav class="navbar bg-dark">
         <div class="container-fluid">
-          <a class="navbar-brand text-white">PlayBox</a>
-          <form class="d-flex" role="search">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button class="btn btn-outline-success" type="submit">
-              Search
+          <a class="navbar-brand text-primary fw-bold font-monospace fs-4"
+            >PlayBox</a
+          >
+          <div class="d-flex">
+            <button
+              type="button"
+              class="btn btn-primary rounded-pill me-2"
+              data-bs-toggle="modal"
+              data-bs-target="#gameProductModal"
+              data-bs-whatever="@mdo"
+            >
+              Add new game
             </button>
-          </form>
+            <form class="d-flex" role="search">
+              <input
+                class="form-control bg-transparent text-light rounded-pill"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button
+                class="btn btn-outline-primary text-light rounded-pill"
+                type="submit"
+                hidden
+              >
+                Search
+              </button>
+            </form>
+          </div>
         </div>
       </nav>
     </header>
     <main>
-      <section class="carousel-banner mh-25">
-        <div class="card text-bg-dark">
-          <img
-            src="https://images5.alphacoders.com/394/thumb-1920-394511.jpg"
-            class="card-img"
-            alt="banner-image"
-          />
-          <div class="card-img-overlay">
-            <!-- <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </p>
-              <p class="card-text"><small>Last updated 3 mins ago</small></p> -->
+      <section class="carousel-banner mb-4">
+        <div id="carouselExample" class="carousel slide">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="card text-bg-dark w-100">
+                <img
+                  src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/730/header.jpg?t=1729703045"
+                  class="card-img"
+                  alt="banner-image"
+                />
+                <div
+                  class="card-img-overlay d-flex align-items-center justify-content-center"
+                >
+                  <a
+                    href="https://store.steampowered.com/app/730/CounterStrike_2/"
+                    target="_blank"
+                    class="btn btn-primary rounded-pill shadow"
+                    >Discover</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="card text-bg-dark w-100">
+                <img
+                  src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/578080/header.jpg?t=1736389084"
+                  class="card-img"
+                  alt="banner-image"
+                />
+                <div
+                  class="card-img-overlay d-flex align-items-center justify-content-center"
+                >
+                  <a
+                    href="https://store.steampowered.com/app/578080/PUBG_BATTLEGROUNDS/"
+                    target="_blank"
+                    class="btn btn-primary rounded-pill shadow"
+                    >Discover</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="card text-bg-dark w-100">
+                <img
+                  src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/570/header.jpg?t=1739210483"
+                  class="card-img"
+                  alt="banner-image"
+                />
+                <div
+                  class="card-img-overlay d-flex align-items-center justify-content-center"
+                >
+                  <a
+                    href="https://store.steampowered.com/app/570/Dota_2/"
+                    target="_blank"
+                    class="btn btn-primary rounded-pill shadow"
+                    >Discover</a
+                  >
+                </div>
+              </div>
+            </div>
           </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExample"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExample"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
       </section>
       <section>
@@ -49,7 +129,27 @@
           <div class="row popular-games"></div>
         </div>
       </section>
+      <section class="modal-container"></section>
     </main>
+    <footer>
+      <div class="container">
+        <div
+          class="d-flex justify-content-center align-items-center w-100 py-3 text-secondary"
+        >
+          Made with ❤️ by Hilal
+        </div>
+      </div>
+    </footer>
     <script src="./src/js/script.js" type="module"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

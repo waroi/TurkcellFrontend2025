@@ -5,7 +5,7 @@ class Game {
     description,
     category,
     releaseDate,
-    image,
+    images,
     developer,
     steamUrl
   ) {
@@ -14,7 +14,7 @@ class Game {
     this.description = description;
     this.category = category;
     this.releaseDate = releaseDate;
-    this.image = image;
+    this.images = images;
     this.developer = developer;
     this.steamUrl = steamUrl;
   }

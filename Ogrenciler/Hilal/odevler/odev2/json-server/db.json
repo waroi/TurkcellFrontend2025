@@ -1,104 +1,138 @@
 {
   "games": [
     {
-      "id": "1f7e80d3-8d5f-4f24-9a3e-6357a2e0fc8b",
-      "name": "The Witcher 3: Wild Hunt",
-      "description": "An open-world action RPG where players control Geralt of Rivia in search of his adopted daughter.",
-      "category": "RPG",
-      "releaseDate": "2015-05-19",
-      "image": "https://example.com/images/witcher3.jpg",
-      "developer": "CD Projekt Red",
-      "steamUrl": "https://store.steampowered.com/app/292030/The_Witcher_3_Wild_Hunt/"
+      "id": "1",
+      "name": "Counter-Strike 2",
+      "developer": "Valve",
+      "release_date": "2023-06-23",
+      "description": "Counter-Strike 2, dünya çapında popüler bir rekabetçi FPS oyunudur.",
+      "category": "",
+      "steam_url": "https://store.steampowered.com/app/730/CounterStrike_2",
+      "game_image": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/730/header.jpg?t=1729703045",
+      "price": "Free To Play"
     },
     {
-      "id": "f2d9a7f6-6d69-4902-9a4c-8b98de5ac1c1",
-      "name": "Cyberpunk 2077",
-      "description": "A futuristic RPG set in a dystopian city filled with cybernetic enhancements and crime.",
-      "category": "RPG",
-      "releaseDate": "2020-12-10",
-      "image": "https://example.com/images/cyberpunk2077.jpg",
-      "developer": "CD Projekt Red",
-      "steamUrl": "https://store.steampowered.com/app/1091500/Cyberpunk_2077/"
-    },
-    {
-      "id": "8c217b2a-7d3d-4d7c-9f79-0e9d40b2e7c1",
-      "name": "Minecraft",
-      "description": "A sandbox game where players build, explore, and survive in a blocky, procedurally generated world.",
-      "category": "Sandbox",
-      "releaseDate": "2011-11-18",
-      "image": "https://example.com/images/minecraft.jpg",
-      "developer": "Mojang Studios",
-      "steamUrl": "https://store.steampowered.com/app/22350/Minecraft/"
-    },
-    {
-      "id": "9b7a660e-d579-4ea7-bd23-02ab3e8cd8f9",
-      "name": "The Legend of Zelda: Breath of the Wild",
-      "description": "An action-adventure game where Link must explore Hyrule and defeat Calamity Ganon.",
-      "category": "Action-Adventure",
-      "releaseDate": "2017-03-03",
-      "image": "https://example.com/images/zelda.jpg",
-      "developer": "Nintendo",
-      "steamUrl": "https://www.nintendo.com/games/detail/the-legend-of-zelda-breath-of-the-wild-switch/"
-    },
-    {
-      "id": "c09132a0-ea39-4c0e-b503-b24c1f5d5c7f",
-      "name": "Red Dead Redemption 2",
-      "description": "An action-adventure game set in the late 1800s, where players take on the role of Arthur Morgan, an outlaw.",
-      "category": "Action-Adventure",
-      "releaseDate": "2018-10-26",
-      "image": "https://example.com/images/rdr2.jpg",
-      "developer": "Rockstar Games",
-      "steamUrl": "https://store.steampowered.com/app/1174180/Red_Dead_Redemption_2/"
-    },
-    {
-      "id": "d0d8b8f4-f216-465f-bae6-1b512b48f5c0",
-      "name": "Overwatch",
-      "description": "A team-based multiplayer FPS where players select from a variety of heroes, each with unique abilities.",
-      "category": "FPS",
-      "releaseDate": "2016-05-24",
-      "image": "https://example.com/images/overwatch.jpg",
-      "developer": "Blizzard Entertainment",
-      "steamUrl": "https://playoverwatch.com/en-us/"
-    },
-    {
-      "id": "0d902c92-b764-41bb-bf1f-5eecda58e64e",
-      "name": "Fortnite",
-      "description": "A battle royale game where 100 players fight to be the last one standing on an ever-shrinking island.",
+      "id": "2",
+      "name": "PUBG: BATTLEGROUNDS",
+      "developer": "PUBG Corporation",
+      "release_date": "2017-12-20",
+      "description": "PUBG, hayatta kalma türünde bir oyun olup, oyuncuların birbirleriyle mücadele ettiği devasa bir arenada geçer.",
       "category": "Battle Royale",
-      "releaseDate": "2017-07-25",
-      "image": "https://example.com/images/fortnite.jpg",
-      "developer": "Epic Games",
-      "steamUrl": "https://www.epicgames.com/fortnite"
+      "steam_url": "https://store.steampowered.com/app/578080/PUBG_BATTLEGROUNDS",
+      "game_image": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/578080/header.jpg?t=1736389084",
+      "price": "Free To Play"
     },
     {
-      "id": "bbf7f5d0-74d5-4f5e-9282-d66f2b63f39f",
-      "name": "Among Us",
-      "description": "A multiplayer social deduction game where players work together to identify the imposter among the crew.",
-      "category": "Party",
-      "releaseDate": "2018-06-15",
-      "image": "https://example.com/images/amongus.jpg",
-      "developer": "InnerSloth",
-      "steamUrl": "https://store.steampowered.com/app/945360/Among_Us/"
+      "id": "3",
+      "name": "Dota 2",
+      "description": "Dota 2, stratejik bir MOBA oyunudur ve takım tabanlı mücadeleler içerir.",
+      "category": "MOBA",
+      "release_date": "2013-07-09",
+      "game_image": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/570/header.jpg?t=1739210483",
+      "developer": "Valve",
+      "steam_url": "https://store.steampowered.com/app/570/Dota_2",
+      "price": "Free To Play"
     },
     {
-      "id": "5174985d-189d-4978-a7d2-e8eb7e5fae56",
-      "name": "Hades",
-      "description": "A rogue-like dungeon crawler where players control Zagreus, the son of Hades, in his attempt to escape the Underworld.",
-      "category": "Rogue-like",
-      "releaseDate": "2020-09-17",
-      "image": "https://example.com/images/hades.jpg",
-      "developer": "Supergiant Games",
-      "steamUrl": "https://store.steampowered.com/app/1145360/Hades/"
-    },
-    {
-      "id": "b12e5661-7d36-423f-90c1-2452dca6a9be",
-      "name": "The Elder Scrolls V: Skyrim",
-      "description": "An open-world RPG set in the fantasy world of Tamriel, where players take on the role of the Dragonborn.",
+      "id": "4",
+      "name": "Kingdom Come: Deliverance II",
+      "description": "Kingdom Come: Deliverance, Orta Çağ'da geçen bir açık dünya RPG oyunudur.",
       "category": "RPG",
-      "releaseDate": "2011-11-11",
-      "image": "https://example.com/images/skyrim.jpg",
-      "developer": "Bethesda Game Studios",
-      "steamUrl": "https://store.steampowered.com/app/72850/The_Elder_Scrolls_V_Skyrim/"
+      "release_date": "2023-03-23",
+      "game_image": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1771300/header.jpg?t=1739541387",
+      "developer": "Warhorse Studios",
+      "steam_url": "https://store.steampowered.com/app/1771300/Kingdom_Come_Deliverance_II/",
+      "price": "$44.99"
+    },
+    {
+      "id": "5",
+      "name": "Apex Legends™",
+      "description": "Apex Legends, hızlı tempolu bir Battle Royale oyunudur.",
+      "category": "Battle Royale",
+      "release_date": "2019-02-04",
+      "game_image": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1172470/header.jpg?t=1739493471",
+      "developer": "Respawn Entertainment",
+      "steam_url": "https://store.steampowered.com/app/1172470/Apex_Legends",
+      "price": "Free To Play"
+    },
+    {
+      "id": "6",
+      "name": "Marvel Rivals",
+      "description": "Marvel Rivals, Marvel evrenindeki kahramanların yer aldığı bir arenada mücadele ettikleri bir dövüş oyunudur.",
+      "category": "Fighting",
+      "release_date": "2022-05-15",
+      "game_image": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/2767030/header.jpg?t=1739520423",
+      "developer": "Marvel Studios",
+      "steam_url": "https://store.steampowered.com/app/2767030/Marvel_Rivals/",
+      "price": "Free To Play"
+    },
+    {
+      "id": "7",
+      "name": "Grand Theft Auto V",
+      "description": "GTA V, açık dünya tarzında bir aksiyon-macera oyunudur.",
+      "category": "Action",
+      "release_date": "2013-09-17",
+      "game_image": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/271590/header.jpg?t=1737136276",
+      "developer": "Rockstar Games",
+      "steam_url": "https://store.steampowered.com/app/271590/Grand_Theft_Auto_V",
+      "price": "$29.98"
+    },
+    {
+      "id": "8",
+      "name": "Rust",
+      "description": "Rust, hayatta kalma temalı bir açık dünya oyunudur.",
+      "category": "Survival",
+      "release_date": "2013-12-11",
+      "game_image": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/252490/header.jpg?t=1738927718",
+      "developer": "Facepunch Studios",
+      "steam_url": "https://store.steampowered.com/app/252490/Rust",
+      "price": "$18.99"
+    },
+    {
+      "id": "9",
+      "name": "NARAKA: BLADEPOINT",
+      "description": "Naraka: Bladepoint, dövüş ve aksiyon dolu bir Battle Royale oyunudur.",
+      "category": "Battle Royale",
+      "release_date": "2021-07-23",
+      "game_image": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1203220/header.jpg?t=1737540792",
+      "developer": "24 Entertainment",
+      "steam_url": "https://store.steampowered.com/app/1203220/NARAKA_BLADEPOINT/",
+      "price": "Free To Play"
+    },
+    {
+      "id": "10",
+      "name": "Wallpaper Engine",
+      "description": "Wallpaper Engine, dinamik ve animasyonlu duvar kağıtları oluşturmanıza olanak tanır.",
+      "category": "Utility",
+      "release_date": "2018-10-15",
+      "game_image": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/431960/header.jpg?t=1739211362",
+      "developer": "Wallpaper Engine Team",
+      "steam_url": "https://store.steampowered.com/app/431960/Wallpaper_Engine",
+      "price": "$2.99"
+    },
+    {
+      "id": "9341",
+      "isTrusted": true
+    },
+    {
+      "id": "93c3",
+      "isTrusted": true
+    },
+    {
+      "id": "716e",
+      "isTrusted": true
     }
+  ],
+  "gameCategories": [
+    "Battle Royale",
+    "RPG",
+    "FPS",
+    "Strategy",
+    "Adventure",
+    "MMORPG",
+    "Survival",
+    "Sports",
+    "Simulation",
+    "Racing"
   ]
 }

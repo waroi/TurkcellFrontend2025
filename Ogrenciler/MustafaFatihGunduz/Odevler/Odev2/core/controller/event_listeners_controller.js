@@ -16,12 +16,24 @@ class EventListenersController {
             }
         });
         document.querySelector("#searchButton").addEventListener("click", () => {
-            this.gameViewController.filterGameByTitleGenrePublisher();
+            this.gameViewController.searchGameByTitleGenrePublisher();
         });
-        document.querySelector("#orderButton").addEventListener("click", () => {
-            this.gameViewController.orderGamesByAlphabeticalOrder();
+        document.querySelector("#orderGame").addEventListener("change", (event) => {
+            const selectedValue = event.target.value;
+            if (selectedValue === "aToZ") {
+                this.gameViewController.orderGamesByAlphabeticalOrder();
+            } else if (selectedValue === "zToA") {
+                this.gameViewController.orderGamesByAlphabeticalReverseOrder();
+            } else if (selectedValue === "newToOld") {
+                this.gameViewController.orderGamesByReleaseDate();
+            } else if (selectedValue === "oldToNew") {
+                this.gameViewController.orderGamesByReleaseDateReverse();
+            }
         });
 
+        document.querySelector("#filterButton").addEventListener("click", () => {
+            this.gameViewController.filterGamesGenreAndReleaseDate();
+        });
     }
 }
 
