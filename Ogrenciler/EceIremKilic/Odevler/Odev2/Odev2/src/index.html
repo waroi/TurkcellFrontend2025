@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gamify</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg bg-light fixed-top">
+      <div class="container container-fluid align-items-center">
+        <a class="navbar-brand text-primary" href="#">
+          <p class="navbar__name mb-0 navbar__name--bold">gam<span class="navbar__name navbar__name--thin">ify</span>
+          </p>
+        </a>
+      </div>
+    </nav>
+  </header>
+  <section class="hero bg-primary p-5">
+    <div class="row justify-content-center h-100">
+      <div class="col-3 d-flex align-items-start">
+        <img src="../assets/gamer-02.png" class="w-50 img-fluid" alt="Oyun konsolu">
+      </div>
+      <div class="col-6 d-flex justify-content-center align-items-center">
+        <div class="hero__text">
+          <h1 class="text-white text-center typing" id="hero__text__head"></h1>
+        </div>
+      </div>
+      <div class="col-3 d-flex align-items-end justify-content-end">
+        <img src="../assets/gamer.png" class="w-50 img-fluid" alt="Oyun konsolu">
+      </div>
+    </div>
+  </section>
+  <section class="operation-bar py-4 bg-secondary">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-12 mb-3 justify-content-center">
+          <div class="operation-bar__search">
+            <div class="input-group rounded-pill flex-nowrap">
+              <input type="text" class="form-control py-3 px-4 border-0 rounded-start-pill" placeholder="Aramak istediğiniz kelimeyi giriniz..." id="search-bar">
+              <span class="input-group-text border-0 py-3 px-4 rounded-end-circle" id="addon-wrapping"><i class="fa-solid fa-search"></i></span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-3 col-6 d-flex justify-content-center">
+          <select class="form-select bg-light py-2 px-4 rounded-pill" id="filterSelect">
+            <option>Filtrele</option>
+            <option disabled>Kategoriye Göre</option>
+          </select>
+        </div>
+        <div class="col-lg-2 col-md-3 col-6 d-flex justify-content-center">
+          <select class="form-select bg-light py-2 px-4 rounded-pill" id="sortSelect">
+            <option>Sırala</option>
+            <option value="A-Z">Oyun İsmi Artan</option>
+            <option value="Z-A">Oyun İsmi Azalan</option>
+            <option value="3">Tarih Artan</option>
+            <option value="4">Tarih Azalan</option>
+          </select>
+        </div>
+        <div class="col-lg-2 col-md-3 col-6 d-flex justify-content-center">
+          <button type="button" class="btn btn-light py-2 px-4 rounded-pill" id="addGameBtn" data-bs-toggle="modal" data-bs-target="#addGame">Oyun Ekle<i class="fa-solid fa-plus ms-3"></i></button>
+        </div>
+        <div class="col-lg-2 col-md-3 col-6 d-flex justify-content-center">
+          <button type="button" class="btn btn-light py-2 px-3 w-35 me-3 rounded-pill"><img src="../assets/grid_Çalışma Yüzeyi 1.png" class="img-fluid" alt=""></button>
+          <button type="button" class="btn btn-light py-2 px-3 w-35 rounded-pill"><img src="../assets/grid-02.png" class="img-fluid"  alt=""></button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="game-cards bg-light" id="games">
+    <div class="container py-4">
+      <div class="row" id="game-ctn">
+        
+      </div>
+    </div>
+  </section>
+  <footer class="bg-primary py-3">
+    <div class="container">
+      <p class="text-white text-center mb-0">This website made with <i class="fa-solid fa-heart"></i> by Ece İrem Kılıç</p>
+    </div>
+  </footer>
+  <div class="modal p-3 fade" id="addGame" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Oyun Ekle</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="input-group mb-3">
+            <span class="input-group-text">Oyun Adı</span>
+            <input type="text" class="form-control" id="input-title" placeholder="Minecraft">
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text">Açıklama</span>
+            <input type="text" class="form-control" id="input-description" placeholder="Blokları kullanarak kendi dünyanızı inşa edin...">
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text">Kategori</span>
+            <input type="text" class="form-control" id="input-cat" placeholder="Sandbox">
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text">Yayınlandığı Tarih</span>
+            <input type="date" class="form-control" id="input-date" placeholder="Yayınlandığı Tarih">
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text">Afiş URL'i</span>
+            <input type="text" class="form-control" id="input-img" placeholder="URL">
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text">Yayımcı</span>
+            <input type="text" class="form-control" id="input-pub" placeholder="Mojang Studios">
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text">Steam URL'i</span>
+            <input type="text" class="form-control" id="input-steam" placeholder="URL">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" id="addSaveGameBtn">Ekle</button>
+          <button type="button" class="btn btn-primary" id="updateSaveGameBtn">Güncelle</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="ui.js"></script>
+  <script src="gameApi.js"></script>
+  <script src="operations.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
