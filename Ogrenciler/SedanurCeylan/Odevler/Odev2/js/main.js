@@ -74,7 +74,14 @@ function createCard(game) {
     updateButton.className = "btn btn-agold text-atextcolor";
     updateButton.onclick = () => updateGame(game.id, { name: "Yeni Oyun Adı", description: "Yeni Açıklama" });
 
-    buttons.append(link, deleteButton, updateButton);
+    const detayButton = document.createElement("button");
+    detayButton.textContent = "Detay";
+    detayButton.className = "btn btn-outline-agold text-atextcolor";
+    detayButton.onclick = () => {
+        modalAc(game); 
+    };
+
+    buttons.append(link, deleteButton, updateButton,detayButton);
     cardBody.append(title, date, developer, genre, description, buttons);
     cardContent.append(image, cardBody);
     card.append(cardContent);
@@ -138,8 +145,85 @@ function addGame() {
     reload();
 }
 
-//oyun güncelleme
 function updateGame(){
     console.log("Güncelleme tıklandı");
+}
 
+function modalAc(game) {
+    const modal = document.createElement("div");
+    modal.className = "modal fade d-flex bg-primary";
+    modal.id = `modal-${game.id}`;
+    modal.tabIndex = -1;
+    modal.setAttribute("aria-labelledby", `modalLabel-${game.id}`);
+    modal.setAttribute("aria-hidden", "true");
+
+    const modalDialog = document.createElement("div");
+    modalDialog.className = "modal-dialog modal-lg";
+    
+    const modalContent = document.createElement("div");
+    modalContent.className = "modal-content bg-primary text-atextcolor";
+    
+    const modalHeader = document.createElement("div");
+    modalHeader.className = "modal-header";
+    
+    const modalTitle = document.createElement("h5");
+    modalTitle.className = "modal-title";
+    modalTitle.id = `modalLabel-${game.id}`;
+    modalTitle.textContent = `Detaylar: ${game.name}`;
+
+    const closeButton = document.createElement("button");
+    closeButton.className = "btn-close";
+    closeButton.setAttribute("data-bs-dismiss", "modal");
+    closeButton.setAttribute("aria-label", "Close");
+
+    modalHeader.append(modalTitle, closeButton);
+
+    const modalBody = document.createElement("div");
+    modalBody.className = "modal-body";
+
+    const modalImage = document.createElement("img");
+    modalImage.src = game.image;
+    modalImage.className = "img-fluid mb-4 max-h-500";
+    modalImage.alt = game.name;
+    
+    const modalDescription = document.createElement("p");
+    modalDescription.textContent = game.description;
+
+    const modalDeveloper = document.createElement("p");
+    modalDeveloper.textContent = `Yapımcı: ${game.developer}`;
+
+    const modalDate = document.createElement("p");
+    modalDate.textContent = `Çıkış Tarihi: ${game.date}`;
+
+    const modalCategory = document.createElement("p");
+    modalCategory.textContent = `Kategori: ${game.category}`;
+
+    modalBody.append(modalImage, modalDescription, modalDeveloper, modalDate, modalCategory);
+
+    const modalFooter = document.createElement("div");
+    modalFooter.className = "modal-footer";
+    
+    const closeModalButton = document.createElement("button");
+    closeModalButton.className = "btn btn-ared";
+    closeModalButton.setAttribute("data-bs-dismiss", "modal");
+    closeModalButton.textContent = "Kapat";
+
+    modalFooter.appendChild(closeModalButton);
+
+    modalContent.append(modalHeader, modalBody, modalFooter);
+    modalDialog.appendChild(modalContent);
+    modal.appendChild(modalDialog);
+
+    document.body.appendChild(modal); 
+    const modalInstance = new bootstrap.Modal(modal); 
+    modalInstance.show();
+
+     // Modal kapandıktan sonra event listener'ların doğru çalışması için
+     modal.addEventListener("hidden.bs.modal", function () {
+        modal.remove();
+        modal.addGame();
+        modal.updateGame();
+        modal.reload();
+        modal.detayButton();
+    });
 }
