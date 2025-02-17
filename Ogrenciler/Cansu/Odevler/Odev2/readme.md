@@ -60,18 +60,4 @@ Start JSON Server by running the following command:
 
 json-server --watch db.json --port 3000
 4. Run the Application
-In the project directory, open your terminal and run the following commands to start the application:
-
-
-npm install
-npm start
-The app will be accessible at http://localhost:3000.
-
-Contributing
-If you'd like to contribute to this project, please follow these steps:
-
-Fork the project.
-Create a new branch: git checkout -b feature-xyz
-Make your changes and commit them.
-Push your branch: git push origin feature-xyz
-Open a pull request.
+In the project directory, open your terminal and run the following commands to start the application.
