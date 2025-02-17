@@ -1,0 +1,18 @@
+
+.card {
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: rgba(45, 9, 250, 0.159);
+  max-width: 350px;
+  min-height: 300px;
+}   
+
+.card:hover {
+  transform: scale(1.05);
+  z-index: 10;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
+  // background-color: rgb(220, 233, 221);
+}
+
+
+

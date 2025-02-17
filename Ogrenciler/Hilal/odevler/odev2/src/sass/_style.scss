@@ -1,0 +1,84 @@
+header {
+  .navbar-brand {
+    filter: drop-shadow(0.9px 0.9px);
+  }
+}
+.carousel {
+  img {
+    mask-image: radial-gradient(
+      circle,
+      rgba(0, 0, 0, 1) 40%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  }
+  a.btn {
+    opacity: 0;
+    transition: all 0.4s ease-in;
+  }
+  //   .card-img-overlay {
+  //     transition: all 0.3s ease-in;
+  //     background: linear-gradient(
+  //         135deg,
+  //         rgba(255, 0, 0, 0.1) 0%,
+  //         rgba(255, 0, 0, 0) 30%
+  //       ),
+  //       linear-gradient(-135deg, rgba(255, 0, 0, 0.1) 0%, rgba(255, 0, 0, 0) 30%);
+  //   }
+  //   &:hover {
+  //     .card-img-overlay {
+  //       background-color: rgba(0, 0, 0, 0.4);
+  //     }
+  //     a.btn {
+  //       opacity: 1;
+  //     }
+  //   }
+}
+
+.card-img-overlay {
+  transition: all 0.3s ease-in;
+  background: linear-gradient(
+      135deg,
+      rgba(255, 0, 0, 0.1) 0%,
+      rgba(255, 0, 0, 0) 30%
+    ),
+    linear-gradient(-135deg, rgba(255, 0, 0, 0.1) 0%, rgba(255, 0, 0, 0) 30%);
+}
+.carousel:hover,
+.card:hover {
+  .card-img-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  a.btn {
+    opacity: 1;
+  }
+}
+
+.card {
+  cursor: pointer;
+  transition: all 0.4s ease-in;
+  box-shadow: $box-shadow-sm;
+  &:hover {
+    box-shadow: $box-shadow-lg;
+    img::after {
+      opacity: 1;
+    }
+  }
+  .card-subtitle {
+    font-size: 0.7rem;
+    color: rgb(190, 186, 186);
+  }
+  .card-text {
+    color: rgb(224, 221, 221);
+  }
+}
+.filter-btn {
+  width: 50px;
+  height: 50px;
+  font-size: 12px;
+  text-align: center;
+  padding: 5px;
+}
+
+input {
+  color: $light;
+}

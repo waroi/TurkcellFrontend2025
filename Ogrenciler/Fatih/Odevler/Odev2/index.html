@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamerchive</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body class="bg-light">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                <i class="fas fa-gamepad text-warning me-2"></i>
+                Gamerchive
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-home me-1"></i> Ana Sayfa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#popular"><i class="fas fa-fire me-1"></i>Popüler
+                            Oyunlar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#highlighted"><i class="fas fa-star me-1"></i> Öne Çıkan
+                            Oyunlar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#games"><i class="fas fa-save me-1"></i>Kaydedilen Oyunlar</a>
+                    </li>
+                </ul>
+
+                <form class="d-flex">
+                    <div class="input-group">
+                        <input id="search-input" class="form-control" type="search" placeholder="Oyun Ara...">
+                        <a class="btn btn-warning d-flex align-items-center" type="submit" href="#games">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section position-relative text-white py-5 mb-4">
+        <div class="hero-overlay"></div>
+        <div class="container position-relative z-index-1">
+            <div class="row align-items-center">
+                <div class="col-lg-6 text-center text-lg-start">
+                    <h1 class="display-4 fw-bold mb-4">Gamerchive'e<br>Hoş Geldin!</h1>
+                    <p class="lead mb-4">En sevdiğin oyunları arşivleyerek kendi dijital koleksiyonunu oluştur.</p>
+                    <div class="d-flex gap-3 justify-content-center justify-content-lg-start">
+                        <a href="#popular" class="btn btn-warning btn-lg">
+                            <i class="fas fa-compass me-2"></i>Şimdi Keşfet
+                        </a>
+                        <a href="#games" class="btn btn-outline-light btn-lg">
+                            <i class="fas fa-info-circle me-2"></i>Oyun Listem
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6 d-none d-lg-block">
+                    <img src="https://images.vexels.com/media/users/3/328728/isolated/preview/1f2dbeb62d4e0494d10c305bacfbcf71-purple-pixel-game-controller.png"
+                        alt="Hero Image" class="img-fluid rounded-3">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="container py-5">
+        <section class="container py-5" id="popular">
+            <div class="row justify-content-center mb-5">
+                <div class="col-md-8 text-center">
+                    <h2 class="display-5 fw-bold mb-4">
+                        <i class="fas fa-fire text-danger me-2"></i>
+                        Popüler Oyunlar
+                    </h2>
+                    <p class="lead text-muted">Bu yılın en çok oynanan ve sevilen oyunları!</p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="popular-game-card popular-game-card--large">
+                        <div class="popular-game-card__image">
+                            <img src="https://i.ytimg.com/vi/E3Huy2cdih0/hqdefault.jpg" alt="Elden Ring">
+                        </div>
+                        <div class="popular-game-card__content">
+                            <h3>Elden Ring</h3>
+                            <p>Elden Ring FromSoftware tarafından geliştirilmiş ve Bandai Namco Entertainment tarafından
+                                yayınlanmış olan bir aksiyon-rol yapma oyunudur.</p>
+                            <a href="https://store.steampowered.com/app/1245620/ELDEN_RING/" class="btn-steam"
+                                target="_blank">
+                                <i class="fab fa-steam"></i> Steam'de Görüntüle
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 d-flex flex-column justify-content-between gap-5">
+                    <div class="popular-game-card popular-game-card--medium">
+                        <div class="popular-game-card__image">
+                            <img src="https://assetsio.gnwcdn.com/eurogamer-zjp1vx.jpg?width=1200&height=1200&fit=bounds&quality=70&format=jpg&auto=webp"
+                                alt="GTA 5">
+                        </div>
+                        <div class="popular-game-card__content">
+                            <h4>GTA 5</h4>
+                            <p>Açık dünya aksiyon oyunu, milyonlarca oyuncuya sahip.</p>
+                            <a href="https://store.steampowered.com/app/271590/Grand_Theft_Auto_V/?l=turkish"
+                                class="btn-steam" target="_blank">
+                                <i class="fab fa-steam"></i> Steam'de Görüntüle
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="popular-game-card popular-game-card--small">
+                        <div class="popular-game-card__image">
+                            <img src="https://upload.wikimedia.org/wikipedia/en/9/9f/Cyberpunk_2077_box_art.jpg"
+                                alt="Cyberpunk 2077">
+                        </div>
+                        <div class="popular-game-card__content">
+                            <h4>Cyberpunk 2077</h4>
+                            <p>Geleceğin distopik dünyasında geçen bir açık dünya macerası.</p>
+                            <a href="https://store.steampowered.com/app/1091500/Cyberpunk_2077/?l=turkish"
+                                class="btn-steam" target="_blank">
+                                <i class="fab fa-steam"></i> Steam'de Görüntüle
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container py-5" id="highlighted">
+            <div class="row justify-content-center mb-5">
+                <div class="col-md-8 text-center">
+                    <h2 class="display-5 fw-bold mb-4">
+                        <i class="fas fa-star text-warning me-2"></i>
+                        Öne Çıkan Oyunlar
+                    </h2>
+                    <p class="lead text-muted">Editörlerin seçtiği, en iyi deneyimi sunan oyunlar!</p>
+                </div>
+            </div>
+
+            <div id="featuredGamesCarousel" class="carousel slide shadow-lg rounded" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#featuredGamesCarousel" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#featuredGamesCarousel" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#featuredGamesCarousel" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://cdn1.epicgames.com/b30b6d1b4dfd4dcc93b5490be5e094e5/offer/RDR2476298253_Epic_Games_Wishlist_RDR2_2560x1440_V01-2560x1440-2a9ebe1f7ee202102555be202d5632ec.jpg"
+                            class="d-block w-100 rounded" alt="Red Dead Redemption 2">
+                        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 p-3 rounded">
+                            <h5>Red Dead Redemption 2</h5>
+                            <p>Efsanevi bir açık dünya Western deneyimi!</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202211/0914/TvcIHkYqqln1RGbaFqBeuFp6.jpg"
+                            class="d-block w-100 rounded" alt="The Witcher 3">
+                        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 p-3 rounded">
+                            <h5>The Witcher 3: Wild Hunt</h5>
+                            <p>CD Projekt Red'in ödüllü RPG macerası.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://www.cepkolik.com/wp-content/uploads/2024/10/Hogwarts-Legacy-Definitive-Edition-dlc.jpg"
+                            class="d-block w-100 rounded" alt="Hogwarts Legacy">
+                        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 p-3 rounded">
+                            <h5>Hogwarts Legacy</h5>
+                            <p>Harry Potter evreninde geçen büyü dolu bir macera.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="container py-5">
+            <div class="row justify-content-center mb-5">
+                <div class="col-md-8 text-center">
+                    <h2 class="display-5 fw-bold mb-4">
+                        <i class="fas fa-calendar-alt text-info me-2"></i>
+                        Yakında Çıkacak Oyunlar
+                    </h2>
+                    <p class="lead text-muted">Önümüzdeki aylarda çıkacak en heyecan verici oyunlar.</p>
+                </div>
+            </div>
+
+            <div class="accordion shadow-sm rounded" id="upcomingGamesAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingStarfield">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseStarfield" aria-expanded="true" aria-controls="collapseStarfield">
+                            <strong>Starfield</strong> – 06.09.2025
+                        </button>
+                    </h2>
+                    <div id="collapseStarfield" class="accordion-collapse collapse show"
+                        aria-labelledby="headingStarfield" data-bs-parent="#upcomingGamesAccordion">
+                        <div class="accordion-body">
+                            <p>
+                                Bethesda'nın uzay temalı RPG oyunu <strong>Starfield</strong>, oyunculara geniş bir
+                                evren sunuyor.
+                                Açık dünya keşif, detaylı karakter oluşturma ve sürükleyici görevler ile heyecan verici
+                                bir deneyim vaat ediyor.
+                            </p>
+                            <a href="https://bethesda.net/starfield" class="btn btn-primary btn-sm" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Resmi Site
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFable4">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseFable4" aria-expanded="false" aria-controls="collapseFable4">
+                            <strong>Fable 4</strong> – 2025 Sonbahar
+                        </button>
+                    </h2>
+                    <div id="collapseFable4" class="accordion-collapse collapse" aria-labelledby="headingFable4"
+                        data-bs-parent="#upcomingGamesAccordion">
+                        <div class="accordion-body">
+                            <p>
+                                <strong>Fable 4</strong>, fantastik dünyada geçen eğlenceli bir RPG deneyimi sunuyor.
+                                Oyuncular seçimleriyle hikayeyi şekillendirecek ve efsanevi kahramanlar olacak.
+                            </p>
+                            <a href="https://www.xbox.com/tr-TR/games/fable" class="btn btn-primary btn-sm"
+                                target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Resmi Site
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingGTA6">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseGTA6" aria-expanded="false" aria-controls="collapseGTA6">
+                            <strong>GTA 6</strong> – 2025 Sonları
+                        </button>
+                    </h2>
+                    <div id="collapseGTA6" class="accordion-collapse collapse" aria-labelledby="headingGTA6"
+                        data-bs-parent="#upcomingGamesAccordion">
+                        <div class="accordion-body">
+                            <p>
+                                Rockstar Games'in en çok beklenen oyunlarından <strong>GTA 6</strong>, devasa bir açık
+                                dünya, yeni karakterler ve daha gelişmiş grafiklerle geri dönüyor.
+                            </p>
+                            <a href="https://www.rockstargames.com/" class="btn btn-primary btn-sm" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Resmi Site
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingAvowed">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseAvowed" aria-expanded="false" aria-controls="collapseAvowed">
+                            <strong>Avowed</strong> – 2025
+                        </button>
+                    </h2>
+                    <div id="collapseAvowed" class="accordion-collapse collapse" aria-labelledby="headingAvowed"
+                        data-bs-parent="#upcomingGamesAccordion">
+                        <div class="accordion-body">
+                            <p>
+                                <strong>Avowed</strong>, Obsidian Entertainment tarafından geliştirilen bir fantezi RPG
+                                oyunu.
+                                Kapsamlı büyü sistemi, derin hikaye anlatımı ve savaş mekanikleriyle dikkat çekiyor.
+                            </p>
+                            <a href="https://www.obsidian.net/" class="btn btn-primary btn-sm" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Resmi Site
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </section>
+
+    <section id="games" class="container">
+        <div class="row g-3 mb-4">
+            <div class="col-md-3">
+                <div class="input-group">
+                    <span class="input-group-text bg-white">
+                        <i class="fas fa-filter text-muted"></i>
+                    </span>
+                    <select id="filter-category" class="form-select">
+                        <option value="">Kategori Seç</option>
+                        <option value="RPG">RPG</option>
+                        <option value="FPS">FPS</option>
+                        <option value="Aksiyon">Aksiyon</option>
+                        <option value="Spor">Spor</option>
+                        <option value="Platform">Platform</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="input-group">
+                    <span class="input-group-text bg-white">
+                        <i class="fas fa-calendar text-muted"></i>
+                    </span>
+                    <input type="date" id="filter-release-date" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="input-group">
+                    <span class="input-group-text bg-white">
+                        <i class="fas fa-sort text-muted"></i>
+                    </span>
+                    <select id="sort-games" class="form-select">
+                        <option value="">Sırala</option>
+                        <option value="name-asc">A-Z</option>
+                        <option value="name-desc">Z-A</option>
+                        <option value="date-desc">Yeni → Eski</option>
+                        <option value="date-asc">Eski → Yeni</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-3 d-flex align-items-center">
+                <button id="add-game-btn" class="btn btn-primary w-100">
+                    <i class="fas fa-plus-circle me-2"></i>Yeni Oyun Ekle
+                </button>
+            </div>
+        </div>
+
+        <div id="game-list" class="row g-4"></div>
+    </section>
+
+    <section class="modal fade" id="gameModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title">
+                        <i class="fas fa-gamepad me-2"></i>
+                        Oyun Ekle / Düzenle
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="game-form">
+                        <input type="hidden" id="game-id">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="game-name" class="form-label">Oyun Adı</label>
+                                <input type="text" class="form-control" id="game-name" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="game-category" class="form-label">Kategori</label>
+                                <select class="form-select" id="game-category" required>
+                                    <option value="RPG">RPG</option>
+                                    <option value="FPS">FPS</option>
+                                    <option value="Aksiyon">Aksiyon</option>
+                                    <option value="Spor">Spor</option>
+                                    <option value="Platform">Platform</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <label for="game-description" class="form-label">Açıklama</label>
+                                <textarea class="form-control" id="game-description" rows="3" required></textarea>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="game-releaseDate" class="form-label">Çıkış Tarihi</label>
+                                <input type="date" class="form-control" id="game-releaseDate" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="game-developer" class="form-label">Yapımcı Firma</label>
+                                <input type="text" class="form-control" id="game-developer" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="game-image" class="form-label">Oyun Görseli URL</label>
+                                <input type="text" class="form-control" id="game-image" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="game-steamUrl" class="form-label">Steam URL</label>
+                                <input type="url" class="form-control" id="game-steamUrl" required>
+                            </div>
+                        </div>
+                        <div class="text-end mt-4">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
+                            <button type="submit" class="btn btn-success ms-2">
+                                <i class="fas fa-save me-2"></i>Kaydet
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white py-5 mt-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3">
+                        <i class="fas fa-gamepad text-warning me-2"></i>
+                        Gamerchive
+                    </h5>
+                    <p class="text-white mb-0">Dijital oyun koleksiyonunuzu yönetmenin en kolay yolu.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3">Hızlı Bağlantılar</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-decoration-none">Ana Sayfa</a></li>
+                        <li><a href="#popular" class="text-decoration-none">Popüler Oyunlar</a></li>
+                        <li><a href="#highlighted" class="text-decoration-none">Öne Çıkan Oyunlar</a></li>
+                        <li><a href="#games" class="text-decoration-none">Kaydedilen Oyunlar</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3">Bizi Takip Edin</h5>
+                    <div class="d-flex gap-3">
+                        <a href="https://www.facebook.com" target="_blank" class="text-warning">
+                            <i class="fab fa-facebook fa-lg"></i>
+                        </a>
+                        <a href="https://twitter.com" class="text-warning" target="_blank">
+                            <i class="fab fa-x-twitter fa-lg"></i>
+                        </a>
+                        <a href="https://www.instagram.com" class="text-warning" target="_blank">
+                            <i class="fab fa-instagram fa-lg"></i>
+                        </a>
+                        <a href="https://www.youtube.com" class="text-warning" target="_blank">
+                            <i class="fab fa-youtube fa-lg"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <small>© 2025 Gamerchive | Tüm Hakları Saklıdır</small>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+    <script type="module" src="js/main.js"></script>
+</body>
+
+</html>

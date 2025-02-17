@@ -1,0 +1,17 @@
+{
+  "name": "games",
+  "version": "1.0.0",
+  "description": "This website project offers an archive of popular games for users.",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass -w src/sass:src/css",
+    "server": "json-server --watch json-server/db.json "
+  },
+  "author": "Hilal Semercioğlu",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "json-server": "^1.0.0-beta.3",
+    "sass": "^1.85.0"
+  }
+}

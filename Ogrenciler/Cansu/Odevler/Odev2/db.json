@@ -1,12 +1,42 @@
 {
   "games": [
     {
+      "id": "1",
+      "name": "The Legend of Zelda: Breath of the Wild",
+      "description": "An open-world adventure game where players control Link to explore the kingdom of Hyrule.",
+      "category": "Adventure",
+      "release_date": "2017-03-03",
+      "image": "https://media.wired.com/photos/633c95ef85e7a4cc2f802256/master/pass/Breath-of-the-Wild-Casual-Gamer-Culture.jpg",
+      "developer": "Nintendo",
+      "steam_url": "https://www.nintendo.com/store/products/the-legend-of-zelda-breath-of-the-wild-switch/"
+    },
+    {
+      "id": "2",
+      "name": "Dark Souls III",
+      "description": "A challenging action RPG where players explore a dark fantasy world and battle formidable enemies.",
+      "category": "RPG",
+      "release_date": "2016-04-12",
+      "image": "https://store-images.s-microsoft.com/image/apps.61214.71827372323164480.6e97c7d2-899a-404f-8660-d622a7fc9162.740b1351-e659-486b-9d1c-948e0d928ead?q=90&w=480&h=270",
+      "developer": "FromSoftware",
+      "steam_url": "https://store.steampowered.com/app/374320/DARK_SOULS_III/"
+    },
+    {
+      "id": "3",
+      "name": "Red Dead Redemption 2",
+      "description": "An epic Western action-adventure game set in the late 1800s, following outlaw Arthur Morgan's journey.",
+      "category": "Adventure",
+      "release_date": "2018-10-26",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR37ZpX19YISFEH3Uc40X--F4MVmBI-SPXCGQ&s",
+      "developer": "Rockstar Games",
+      "steam_url": "https://store.steampowered.com/app/1174180/Red_Dead_Redemption_2/"
+    },
+    {
       "id": "4",
       "name": "The Elder Scrolls V: Skyrim",
       "description": "A fantasy RPG where players explore the open world of Skyrim and battle dragons.",
       "category": "RPG",
       "release_date": "2011-11-11",
-      "image": "https://example.com/images/skyrim.jpg",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfeoA8Xu5FAz7KxpooqEdRFFbTS_3T01zCrg&s",
       "developer": "Bethesda Game Studios",
       "steam_url": "https://store.steampowered.com/app/72850/The_Elder_Scrolls_V_Skyrim/"
     },
@@ -14,9 +44,9 @@
       "id": "5",
       "name": "Minecraft",
       "description": "A sandbox game where players build and explore blocky worlds, mine resources, and fight monsters.",
-      "category": "Sandbox",
+      "category": "Action",
       "release_date": "2011-11-18",
-      "image": "https://example.com/images/minecraft.jpg",
+      "image": "https://m.media-amazon.com/images/M/MV5BNjQzMDlkNDctYmE3Yi00ZWFiLTlmOWYtMjI4MzQ4Y2JhZjY2XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
       "developer": "Mojang Studios",
       "steam_url": "https://store.steampowered.com/app/22330/Minecraft/"
     },
@@ -24,19 +54,29 @@
       "id": "6",
       "name": "Grand Theft Auto V",
       "description": "An open-world action game set in the fictional city of Los Santos, featuring three protagonists.",
-      "category": "Action-Adventure",
+      "category": "Adventure",
       "release_date": "2015-04-14",
-      "image": "https://example.com/images/gtav.jpg",
+      "image": "https://upload.wikimedia.org/wikipedia/tr/thumb/b/be/Grand_Theft_Auto_V_oyununun_kapa%C4%9F%C4%B1.jpg/1200px-Grand_Theft_Auto_V_oyununun_kapa%C4%9F%C4%B1.jpg",
       "developer": "Rockstar Games",
       "steam_url": "https://store.steampowered.com/app/271590/Grand_Theft_Auto_V/"
     },
     {
+      "id": "7",
+      "name": "Cyberpunk 2077",
+      "description": "An open-world RPG set in Night City, where players control V, a mercenary with customizable skills.",
+      "category": "RPG",
+      "release_date": "2020-12-10",
+      "image": "https://m.media-amazon.com/images/I/81YptknEr3L._AC_UF1000,1000_QL80_.jpg",
+      "developer": "CD Projekt Red",
+      "steam_url": "https://store.steampowered.com/app/1091500/Cyberpunk_2077/"
+    },
+    {
       "id": "8",
       "name": "Overwatch",
-      "description": "A team-based first-person shooter where players choose from a roster of unique heroes with special abilities.",
-      "category": "FPS",
+      "description": "A team-based FPS where players select heroes with unique abilities.",
+      "category": "Strategy",
       "release_date": "2016-05-24",
-      "image": "https://example.com/images/overwatch.jpg",
+      "image": "https://image.api.playstation.com/vulcan/ap/rnd/202412/0919/2c7122c595bd4133638af52631241c2879db220cd4ce592e.png",
       "developer": "Blizzard Entertainment",
       "steam_url": "https://playoverwatch.com/"
     },
@@ -44,19 +84,19 @@
       "id": "9",
       "name": "Fortnite",
       "description": "A free-to-play battle royale game where 100 players fight to be the last one standing.",
-      "category": "Battle Royale",
+      "category": "Strategy",
       "release_date": "2017-09-26",
-      "image": "https://example.com/images/fortnite.jpg",
+      "image": "https://cdn2.unrealengine.com/ch6s1-ka-4k-1920x1080-eacf069a7f06.jpg",
       "developer": "Epic Games",
       "steam_url": "https://www.epicgames.com/fortnite"
     },
     {
       "id": "10",
       "name": "Hades",
-      "description": "A rogue-like dungeon crawler where players control Zagreus, the son of Hades, as he tries to escape the Underworld.",
+      "description": "A rogue-like dungeon crawler where players control Zagreus, son of Hades, escaping the Underworld.",
       "category": "Action",
       "release_date": "2020-09-17",
-      "image": "https://example.com/images/hades.jpg",
+      "image": "https://image.api.playstation.com/vulcan/ap/rnd/202104/0517/9AcM3vy5t77zPiJyKHwRfnNT.png",
       "developer": "Supergiant Games",
       "steam_url": "https://store.steampowered.com/app/1145360/Hades/"
     },
@@ -64,19 +104,19 @@
       "id": "11",
       "name": "DOOM Eternal",
       "description": "A fast-paced first-person shooter where players take on the role of the Doom Slayer to fight demons.",
-      "category": "FPS",
+      "category": "Adventure",
       "release_date": "2020-03-20",
-      "image": "https://example.com/images/doometernal.jpg",
+      "image": "https://i.ytimg.com/vi/MlhVxN8ltTA/maxresdefault.jpg",
       "developer": "id Software",
       "steam_url": "https://store.steampowered.com/app/782330/DOOM_Eternal/"
     },
     {
       "id": "12",
       "name": "Among Us",
-      "description": "A multiplayer social deduction game where players work together to complete tasks while trying to find the impostors.",
-      "category": "Multiplayer",
+      "description": "A multiplayer game where players complete tasks while identifying impostors.",
+      "category": "Advanture",
       "release_date": "2018-06-15",
-      "image": "https://example.com/images/amongus.jpg",
+      "image": "https://www.innersloth.com/wp-content/uploads/2024/06/2024roles_nologo.png",
       "developer": "Innersloth",
       "steam_url": "https://store.steampowered.com/app/945360/Among_Us/"
     }

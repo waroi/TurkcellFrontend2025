@@ -1,6 +1,6 @@
 import React from 'react'
-
-const deneme = ({isim,yas}) => {
+//import PropTypes from 'prop-types'
+const Deneme = ({isim,yas}) => {
   return (
    <>
     <div>{isim}</div>
@@ -8,5 +8,10 @@ const deneme = ({isim,yas}) => {
     </>
   );
 };
+/*deneme.propTypes ={
+   isim: PropTypes.string.isRequired,
+   yas: PropTypes.number.isRequired,
+};  değişmiş bu
+*/
 
-export default deneme
+export default Deneme;

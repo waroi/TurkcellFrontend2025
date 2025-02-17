@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Oyun Arşivi</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/card.css" />
+  </head>
+  <body>
+
+    <header class="header ">
+      <nav class="navbar navbar-expand-lg sticky-top ">
+          <div class="container-fluid justify-content-around">
+              <a class="navbar-brand d-flex align-items-center" href="index.html">
+                  <img src="./Images/d4444790-2f99-4817-9272-35cd9ecfc537.webp" alt="Logo" class="logo"> 
+              </a>
+
+              
+              <form class="search-form" onsubmit="return false;">
+                <div class="search-box">
+                    <input type="text" class="search-input rounded-4" id="search" placeholder="   Ara...">
+                    <button id="search-button" class="btn btn-outline-light">
+                    <i class="fas fa-search search-icon"></i>
+                    </button>
+                </div>
+            </form>
+            
+              <div class="d-flex align-items-center">
+                  <div class="dropdown">
+                      <button class="kategori btn btn-link dropdown-toggle categories-btn  " type="button" id="categoryDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                          Kategoriler
+                      </button>
+                      <ul class="kategori dropdown-menu bg-dark" aria-labelledby="categoryDropdown">
+                          <li><a class="kategori dropdown-item category-filter"  href="#" data-category="">Tümü</a></li>
+                          <li><a class="kategori dropdown-item category-filter"  href="#" data-category="Aksiyon">Aksiyon</a></li>
+                          <li><a class="kategori dropdown-item category-filter"  href="#" data-category="Macera">Macera</a></li>
+                          <li><a class="kategori dropdown-item category-filter"  href="#" data-category="Strateji">Strateji</a></li>
+                          <li><a class="kategori dropdown-item category-filter"  href="#" data-category="RPG">RPG</a></li>
+                          <li><a class="kategori dropdown-item category-filter"  href="#" data-category="Spor ve Yarış">Spor ve Yarış</a></li>
+                          <li><a class="kategori dropdown-item category-filter"  href="#" data-category="Simulasyon">Simulasyon</a></li>
+                          <li><a class="kategori dropdown-item category-filter"  href="#" data-category="Dövüş">Dövüş</a></li>
+                          <li><a class="kategori dropdown-item category-filter"  href="#" data-category="Korku">Korku</a></li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </nav>
+      <section class="input-group text-center ">
+        <div class="container mt-4">
+          <div class="text-center">
+            <button
+              class="btn btn-primary my-2"
+              data-bs-toggle="modal"
+              data-bs-target="#addGameModal"
+            >
+              Oyun Ekle
+            </button>
+          </div>
+          <div
+            class="modal fade"
+            id="addGameModal"
+            tabindex="-1"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="addGameModalLabel">
+                    Yeni Oyun Ekle
+                  </h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <form id="add-game-form">
+                    <input type="hidden" id="game-id" />
+                    <div class="mb-3">
+                      <label for="game-name" class="form-label">Oyun Adı</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="name"
+                        required
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label for="game-description" class="form-label"
+                        >Açıklama</label
+                      >
+                      <textarea
+                        class="form-control"
+                        id="description"
+                        required
+                      ></textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="game_category" class="form-label"
+                        >Kategori</label
+                      >
+                      <select class="form-select w-100" id="game_category">
+                        <option value="Aksiyon">Aksiyon</option>
+                        <option value="Macera">Macera</option>
+                        <option value="Strateji">Strateji</option>
+                        <option value="RPG">RPG</option>
+                        <option value="Spor ve Yarış">Spor ve Yarış</option>
+                        <option value="Simulasyon">Simulasyon</option>
+                        <option value="Dövüş">Dövüş</option>
+                        <option value="Korku">Korku</option>
+                      </select>
+                    </div>
+                    <div class="mb-3">
+                      <label for="game-release-date" class="form-label"
+                        >Çıkış Tarihi</label
+                      >
+                      <input
+                        type="date"
+                        class="form-control"
+                        id="releaseDate"
+                        required
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label for="game-image" class="form-label"
+                        >Görsel URL</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="image"
+                        required
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label for="videoURL" class="form-label">Video URL</label>
+                      <input type="text" class="form-control" id="videoURL" />
+                    </div>
+  
+                    <div class="mb-3">
+                      <label for="game-developer" class="form-label"
+                        >Geliştirici Firma</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="developer"
+                        required
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label for="game-steam-url" class="form-label"
+                        >Steam URL</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="steamURL"
+                        required
+                      />
+                    </div>
+                    <button type="submit" class="btn btn-success w-100">
+                      Ekle
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+  </header>
+
+
+    <div class="container mb-4 ">
+      <div class="row justify-content-around">
+          <div class="col-md-3 justify-content-start">
+              <h3 class="text-start">Filtreleme</h3>
+  
+              <label for="release" class="form-label mt-2 text-light">Çıkış Tarihi</label>
+              <input type="date" id="release" class="form-control">
+              <button id="filters" class="btn btn-success w-100 mt-3">Filtrele</button>
+  
+              <h3 class="text-start mt-4 ">Sıralama</h3>
+              <label for="sort-select" class="form-label text-light">Sırala</label>
+              <select id="sort-select" class="form-select">
+                  <option value="">Varsayılan</option>
+                  <option value="a-z">İsme Göre (A-Z)</option>
+                  <option value="z-a">İsme Göre (Z-A)</option>
+                  <option value="eski">Çıkış Tarihine Göre (Eski → Yeni)</option>
+                  <option value="yeni">Çıkış Tarihine Göre (Yeni → Eski)</option>
+              </select>
+              <button id="sorting" class="btn btn-primary w-100 mt-3">Sırala</button>
+          </div>
+  
+          <div class="col-md-9">
+              <div class="row" id="game-list"></div>
+          </div>
+      </div>
+  </div>
+  
+
+
+    <script src="Js/app.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

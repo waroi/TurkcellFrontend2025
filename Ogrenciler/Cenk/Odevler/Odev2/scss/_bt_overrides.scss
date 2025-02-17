@@ -1,0 +1,27 @@
+:root {
+  --primary-blue: #05a5df;
+  --secondary-beige: #b7aa90;
+  --neutral-gray: #b7b8b8;
+  --accent-brown: #b9917f;
+  --accent-orange: #bb7146;
+}
+
+.navbar-brand {
+  color: var(--primary-blue);
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.navbar-brand:hover {
+  color: var(--accent-orange);
+}
+
+.btn-primary {
+  background-color: var(--primary-blue);
+  border: none;
+  transition: background 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-orange);
+}

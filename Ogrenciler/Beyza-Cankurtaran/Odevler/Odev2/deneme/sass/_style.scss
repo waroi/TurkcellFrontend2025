@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+.pixel-text {
+    font-family: 'Press Start 2P', cursive;
+}
+.mario-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.mario {
+    width: 50px;
+    animation: jump 1s ease-in-out infinite;
+}
+
+@keyframes jump {
+    0% {
+        transform: translateY(0);
+    }
+
+    25% {
+        transform: translateY(-20px); 
+    }
+
+    50% {
+        transform: translateY(0);
+    }
+
+    75% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.hover-text {
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: #ff5733;
+    }
+}
+
+.hover-button {
+    transition: background-color 0.3s ease, transform 0.2s;
+
+    &:hover {
+        background-color: #ff5733;
+        transform: scale(1.05);
+    }
+}
+
+#game-list {
+    .card {
+        width: 100%;
+        max-width: 18rem;
+        margin: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .mario {
+        width: 30px;
+    }
+
+    .mario-container {
+        flex-direction: column;
+    }
+}
+body{
+    background-color: #FFDEE9;
+background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 50%, #efbddd 100%);
+
+}

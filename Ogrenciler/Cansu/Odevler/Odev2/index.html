@@ -1,20 +1,67 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GameShelf App</title>
-    <link rel="stylesheet" href="./css/main.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
 </head>
+
 <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+                <form class="d-flex me-3" role="search">
+                    <div class="input-group">
+                        <span class="input-group-text bg-white border-0 rounded-start-pill">
+                            <i class="fa fa-search text-muted"></i>
+                        </span>
+                        <input type="text" class="form-control rounded-end-pill ps-2" id="searchBar"
+                            placeholder="Search for a game..." aria-label="Search">
+                    </div>
+                </form>
+                <button class="btn btn-outline-light me-3" data-bs-toggle="modal" data-bs-target="#gameModal">➕ Add
+                    Game</button>
+            </div>
+            <button class="btn btn-outline-light" id="darkModeToggle">🌙</button>
+        </div>
+    </nav>
+
+    <div class="container text-center mt-5">
+        <h1 class="mb-3">🎮 GameShelf App</h1>
+        <h2 class="animated-text">"Discover Your Game World, Every Moment is an Adventure!" 🎮</h2>
+    </div>
+
     <div class="container mt-5">
-        <h1 class="text-center mb-4">🎮 GameShelf App</h1>
-        
-        <div class="d-flex justify-content-between">
-            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#gameModal">Add Game</button>
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <select id="developerSelect" class="form-select w-auto">
+                <option value="dvp">Developer</option>
+                <option value="nin">Nintendo</option>
+                <option value="from">FromSoftware</option>
+                <option value="rock">Rockstar</option>
+                <option value="beth">Bethesda</option>
+                <option value="moj">Mojang</option>
+                <option value="cd">CD Projekt Red</option>
+                <option value="blizz">Blizzard</option>
+                <option value="epic">Epic</option>
+                <option value="super">Supergiant</option>
+                <option value="id">id Software</option>
+                <option value="inner">Innersloth</option>
+            </select>
+
+            <select id="categorySelect" class="form-select w-auto">
+                <option value="all">Category</option>
+                <option value="Action">Action</option>
+                <option value="Adventure">Adventure</option>
+                <option value="RPG">RPG</option>
+                <option value="Strategy">Strategy</option>
+            </select>
+
             <select id="sortSelect" class="form-select w-auto">
+                <option value="sortc">Sort</option>
                 <option value="name_asc">A-Z</option>
                 <option value="name_desc">Z-A</option>
                 <option value="date_up">Date Up</option>
@@ -22,14 +69,14 @@
             </select>
         </div>
 
-        <div id="gameList" class="row mt-3"></div>
+        <div id="gameList" class="row row-cols-1 row-cols-md-2 g-4"></div>
     </div>
 
     <div class="modal fade" id="gameModal" tabindex="-1" aria-labelledby="gameModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="gameModalLabel">Add / Update Game</h5>
+                    <h5 class="modal-title">🎮 Add / Update Game</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
@@ -37,11 +84,13 @@
                         <input type="hidden" id="gameId">
                         <div class="mb-3">
                             <label class="form-label">Game Name</label>
-                            <input type="text" class="form-control" id="gameName" required>
+                            <input type="text" class="form-control" id="gameName" placeholder="Enter game name"
+                                required>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Description</label>
-                            <textarea class="form-control" id="gameDescription"></textarea>
+                            <textarea class="form-control" id="gameDescription"
+                                placeholder="Enter description"></textarea>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Category</label>
@@ -57,10 +106,20 @@
                             <input type="date" class="form-control" id="releaseDate">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Image</label>
-                            <input type="text" class="form-control" id="gameImage">
+                            <label class="form-label">Image URL</label>
+                            <input type="text" class="form-control" id="gameImage" placeholder="Enter image URL">
                         </div>
-                        <button type="submit" class="btn btn-success">Save</button>
+                        <div class="mb-3">
+                            <label class="form-label">Developer</label>
+                            <input type="text" class="form-control" id="gameDeveloper"
+                                placeholder="Enter game developer" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Steam URL</label>
+                            <input type="url" class="form-control" id="gameSteamURL" placeholder="Enter steam URL"
+                                required>
+                        </div>
+                        <button type="submit" class="btn btn-success w-100">✅ Save</button>
                     </form>
                 </div>
             </div>
@@ -71,7 +130,7 @@
     <script src="js/game.js"></script>
     <script src="js/storage.js"></script>
     <script src="js/ui.js"></script>
-    <script src="js/sort.js"></script>
     <script src="js/app.js"></script>
 </body>
+
 </html>
