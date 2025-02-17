@@ -90,7 +90,7 @@ export class GameUI {
 
 	static errorMessageUI = () => {
 		const errorImage = document.createElement("img");
-		errorImage.src = "/assets/images/not-found.png";
+		errorImage.src = "../assets/images/not-found.png";
 		errorImage.className = "w-25";
 
 		const errorText = document.createElement("p");
