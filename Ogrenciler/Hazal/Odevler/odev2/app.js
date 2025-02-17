@@ -9,8 +9,13 @@ class App {
         document.getElementById('sortBy').addEventListener('change', App.sortGames);
         document.getElementById('searchInput').addEventListener('input', App.searchGames);
         document.getElementById('addGameForm').addEventListener('submit', App.addGame);
+        document.getElementById('addGameModal').addEventListener('hidden.bs.modal', () => {
+            document.getElementById('addGameForm').reset();
+            document.getElementById('gameId').value = '';
+        });
         document.getElementById('gameDetailModal').addEventListener('hidden.bs.modal', () => {
-            document.getElementById('gameDetailContent').innerHTML = '';});
+            document.getElementById('gameDetailContent').innerHTML = '';
+        });
     }
 
     static async loadGames() {
@@ -34,12 +39,12 @@ class App {
         const developer = document.getElementById('gameDeveloper').value;
         const steamUrl = document.getElementById('gameSteamUrl').value;
 
-        //let gameid = document.getElementById('gameId').value;
-        const game = new Game(name, description, category, image, developer, releaseDate, steamUrl);
-    
-        if (game.id) {
+        let gameId = document.getElementById('gameId').value;
+        const game = new Game(name, description, category, image, developer, releaseDate, steamUrl, gameId);
+
+        if (gameId) {
             try {
-                await Request.updateGame(game.id, game);
+                await Request.updateGame(gameId, game);
                 await App.loadGames();
                 const modal = new bootstrap.Modal(document.getElementById('addGameModal'));
                 modal.hide();

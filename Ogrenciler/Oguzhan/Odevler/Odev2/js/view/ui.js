@@ -11,7 +11,7 @@ export class UI {
       col.className = "col-lg-6 col-12 g-5"
 
       const cardDiv = createDiv();
-      cardDiv.className = "card border-warning "
+      cardDiv.className = "card "
 
       const divRow = createDiv();
       divRow.className = "row g-0 "
@@ -102,6 +102,19 @@ export class UI {
       categorySelect.appendChild(option)
     })
   }
+
+  static filterCategories(categories) {
+    const categorySelect = document.getElementById("categoryFilter")
+
+    categories.map((category) => {
+      const option = document.createElement("option")
+      option.textContent = category.name
+      option.value = category.id
+
+      categorySelect.appendChild(option)
+    })
+  }
+
 
   static listAddedCategories() {
     const ul = document.getElementById("list-group");
