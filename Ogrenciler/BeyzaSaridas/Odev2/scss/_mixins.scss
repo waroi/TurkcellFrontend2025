@@ -1,0 +1,17 @@
+@mixin card-hover {
+   transition: transform $transition-speed ease;
+   &:hover {
+       transform: translateY(-5px);
+       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+   }
+}
+
+@mixin button-style {
+   padding: 8px 16px;
+   border-radius: $border-radius;
+   transition: all $transition-speed ease;
+   
+   &:hover {
+       opacity: 0.9;
+   }
+}

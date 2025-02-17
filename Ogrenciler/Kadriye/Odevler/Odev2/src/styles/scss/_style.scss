@@ -1,0 +1,22 @@
+body {
+  background-color: rgb(232, 213, 181);
+}
+.navbar-brand {
+  text-shadow: 0px 0px 10px #f5b058;
+}
+h5 {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+#upButton {
+  position: fixed;
+  display: block;
+  right: 50px;
+  bottom: 50px;
+  transition: all 0.3s linear;
+  &:hover {
+    transform: scale(1.1);
+  }
+}

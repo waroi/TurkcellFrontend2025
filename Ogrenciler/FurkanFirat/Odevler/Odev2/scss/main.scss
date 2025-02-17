@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #f8eeee;
+}
+.game-image {
+  height: 200px;
+}
+.game-card {
+  overflow: hidden;
+}
+.game-card:hover .game-image {
+  transform: rotate(4deg);
+  scale: 1.1;
+}
+.game-card .game-image {
+  transition: transform 0.2s ease, scale 0.2s ease;
+}
+.game-card:hover .card-title {
+  color: orange;
+}
+.game-card .card-title {
+  transition: color 0.5s ease;
+}

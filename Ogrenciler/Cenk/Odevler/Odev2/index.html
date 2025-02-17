@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GameNest</title>
+    <link rel="stylesheet" href="./css/main.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header-top">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg">
+          <div class="container-fluid">
+            <div class="d-flex align-items-center">
+              <a
+                href="index.html"
+                class="d-flex align-items-center text-decoration-none"
+              >
+                <img src="./assets/logo.png" alt="Logo" class="me-2 logo" />
+                <span class="navbar-brand mb-0 h1">GameNest</span>
+              </a>
+            </div>
+
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <div class="d-flex mx-auto w-50">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Oyun ara..."
+                />
+              </div>
+              <button class="btn btn-primary me-3" id="addGameBtn">
+                Oyun Ekle
+              </button>
+              <a
+                href="#"
+                class="d-flex align-items-center text-decoration-none user-avatar"
+              >
+                <i class="fas fa-user-circle fa-2x me-2"></i>
+                <span>Hesabım</span>
+              </a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <section class="header-bottom">
+      <div class="header-gradient"></div>
+      <div class="category-nav">
+        <div class="container">
+          <ul class="category-list d-flex justify-content-between">
+            <li><a href="#">Aksiyon</a></li>
+            <li><a href="#">Macera</a></li>
+            <li><a href="#">RPG</a></li>
+            <li><a href="#">Spor</a></li>
+            <li><a href="#">Simülasyon</a></li>
+            <li><a href="#">Strateji</a></li>
+            <li><a href="#">Yarış</a></li>
+            <li><a href="#">Korku</a></li>
+            <li><a href="#">Platform</a></li>
+            <li><a href="#">MMO</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="banner d-flex align-items-center justify-content-center text-center"
+    >
+      <div class="overlay">
+        <div class="container">
+          <h2 class="text-white fw-bold mb-3">
+            Oyunların Evi, Maceranın Başlangıcı!
+          </h2>
+          <p class="text-white mb-5">
+            Binlerce oyun arasından keşfet, koleksiyonunu oluştur ve en sevdiğin
+            dünyalara dal! GameNest ile oyun arşivin hep seninle.
+          </p>
+          <div class="row align-items-center mt-5">
+            <div class="col-md-4">
+              <input
+                type="text"
+                class="form-control search-input"
+                placeholder="Oyun adı, kategori veya yapımcı firma ara..."
+              />
+            </div>
+
+            <div class="col-md-4 d-flex justify-content-center">
+              <select class="form-select filter-select me-2">
+                <option selected>Kategori Seç</option>
+                <option value="aksiyon">Aksiyon</option>
+                <option value="macera">Macera</option>
+                <option value="rpg">RPG</option>
+                <option value="spor">Spor</option>
+                <option value="simulasyon">Simülasyon</option>
+                <option value="strateji">Strateji</option>
+                <option value="yaris">Yarış</option>
+                <option value="korku">Korku</option>
+                <option value="platform">Platform</option>
+                <option value="mmo">MMO</option>
+              </select>
+
+              <select class="form-select filter-select">
+                <option selected>Çıkış Tarihi</option>
+                <option value="2024">2024</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+                <option value="2020">2020</option>
+                <option value="2010-2020">2010-2020</option>
+                <option value="2000-2010">2000-2010</option>
+                <option value="1990-2000">1990-2000</option>
+              </select>
+            </div>
+
+            <div class="col-md-4 d-flex justify-content-end">
+              <select class="form-select sort-select">
+                <option selected>Sırala</option>
+                <option value="a-z">A - Z</option>
+                <option value="z-a">Z - A</option>
+                <option value="cikis-yeni">Çıkış Tarihi (Yeni - Eski)</option>
+                <option value="cikis-eski">Çıkış Tarihi (Eski - Yeni)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="game-section">
+      <div class="container">
+        <div
+          class="game-list py-5 row flex-wrap gap-4 justify-content-center"
+        ></div>
+      </div>
+    </section>
+    <footer class="footer mt-5">
+      <div class="container">
+        <div class="row py-4">
+          <div class="col-md-4">
+            <a href="index.html" class="text-decoration-none">
+              <img
+                src="./assets/logo.png"
+                alt="GameNest Logo"
+                class="logo mb-3"
+              />
+            </a>
+            <p class="footer-text">
+              GameNest, oyun severler için özel olarak hazırlanmış bir
+              koleksiyon ve keşif platformudur.
+            </p>
+          </div>
+
+          <div class="col-md-4">
+            <h5 class="footer-title mb-4">Hızlı Erişim</h5>
+            <ul class="footer-links">
+              <li><a href="#">Ana Sayfa</a></li>
+              <li><a href="#">Hakkımızda</a></li>
+              <li><a href="#">İletişim</a></li>
+              <li><a href="#">Gizlilik Politikası</a></li>
+              <li><a href="#">Kullanım Koşulları</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-4">
+            <h5 class="footer-title">Bizi Takip Edin</h5>
+            <div class="social-icons d-flex gap-3">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center py-3 footer-bottom pt-4 mt-5">
+          <p class="mb-0">© 2025 GameNest. Tüm Hakları Saklıdır.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

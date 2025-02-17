@@ -1,0 +1,60 @@
+// SPACING
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  //4px
+  1: $spacer * 0.25,
+  //8px
+  2: $spacer * 0.5,
+  //12px
+  3: $spacer * 0.75,
+  //16px
+  4: $spacer,
+  //20px
+  5: $spacer * 1.25,
+  //24px
+  6: $spacer * 1.5,
+  //28px
+  7: $spacer * 1.75,
+  //32px
+  8: $spacer * 2,
+  //36px
+  9: $spacer * 2.25,
+  //40px
+  10: $spacer * 2.5,
+  //44px
+  11: $spacer * 2.75,
+  //46px
+  12: $spacer * 3,
+  //50px
+  13: $spacer * 3.25,
+  //54px
+  14: $spacer * 3.5,
+  //58px
+  15: $spacer * 3.75,
+  //80px
+  20: $spacer * 5,
+  //120px
+  30: $spacer * 7.5,
+  //200px
+  35: $spacer * 12.5,
+  //240px
+  50: $spacer * 15,
+);
+// FONST SIZE
+$font-size-base: 1rem;
+$font-sizes: (
+  18: $font-size-base * 1.125,
+  20: $font-size-base * 1.25,
+  50: $font-size-base * 3.125,
+  128: $font-size-base * 8
+);
+$primary : #0ad5ed;
+$purple : #a25bd9;
+$white : #fff;
+$accordion-active-color: $white;
+$theme-colors: (
+  'primary' : $primary,
+  'purple' : $purple,
+  'white': $white,
+);
