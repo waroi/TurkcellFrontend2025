@@ -73,7 +73,7 @@ class GameViewController {
     const cardBack = this.addCardBack(game);
     cardInner.append(cardFront, cardBack);
     card.append(cardInner,cardFooter);
-    card.addEventListener("click", () => {
+    cardFront.addEventListener("click", () => {
       this.openCard(card);
       this.overlay.addEventListener("click", (event) => {
         if (event.target === this.overlay) {
@@ -164,6 +164,21 @@ class GameViewController {
     this.saveButton.textContent = "Düzenle";
     this.editCard = null;
   }
+  async filterGamesGenreAndReleaseDate() {
+    try {
+      const category = document.querySelector("#category").value;
+      const startYear = document.querySelector("#starterYear").value;
+      const endYear = document.querySelector("#endYear").value;
+      const games = await this.gameController.filterGamesGenreAndReleaseDate(category, startYear, endYear);
+      this.gameContainer.innerHTML = '';
+      games.forEach(game => {
+        const card = this.addCard(game);
+        this.gameContainer.append(card);
+      });
+    } catch (err) {
+      console.error("GameViewController içinde filterGamesGenreAndReleaseDate filtrelenirken hata oluştu:", err);
+    }
+  }
   async searchGameByTitleGenrePublisher() {
     try {
       const searchValue = this.search.value.trim();
@@ -213,6 +228,18 @@ class GameViewController {
       });
     } catch (err) {
       console.error("GameViewController içinde orderGamesByReleaseDate sıralanırken hata oluştu:", err);
+    }
+  }
+  async orderGamesByReleaseDateReverse(){
+    try {
+      const games = await this.gameController.orderGamesByReleaseDateReverse();
+      this.gameContainer.innerHTML = '';
+      games.forEach(game => {
+        const card = this.addCard(game);
+        this.gameContainer.append(card);
+      });
+    } catch (err) {
+      console.error("GameViewController içinde orderGamesByReleaseDateReverse sıralanırken hata oluştu:", err);
     }
   }
   setEdit(card,game) {

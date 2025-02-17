@@ -23,66 +23,172 @@
     />
   </head>
   <body>
-    <!-- <div class="loader-container">
-      <div class="loader">
-        <div class="logo"></div>
-        <div class="site-title"></div>
-      </div>
-    </div>
-    //! Loader -->
     <nav class="navbar navbar-expand-lg navbar-dark">
-      <div class="container">
-        <a class="navbar-brand" href="#"
-          ><img src="../assets/logo.png" alt=""
-        /></a>
-        <a class="navbar-brand" href="#"
-          ><img src="../assets/site-title.png" alt=""
-        /></a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#gameVaultNavbarContent"
-          aria-controls="gameVaultNavbarContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="gameVaultNavbarContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#"
-                >Anasayfa</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./documentation.html">Dökümantasyon</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="gameVaultNavbarDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Kategoriler
-              </a>
-              <ul
-                class="dropdown-menu"
-                aria-labelledby="gameVaultNavbarDropdown"
-              >
-                <li><a class="dropdown-item" href="#">Aksiyon</a></li>
-                <li><a class="dropdown-item" href="#">Simülasyon</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
+      <a class="navbar-brand" href="#"
+        ><img src="../assets/logo.png" alt=""
+      /></a>
+      <a class="navbar-brand" href="#"
+        ><img src="../assets/site-title.png" alt=""
+      /></a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#gameVaultNavbarContent"
+        aria-controls="gameVaultNavbarContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="gameVaultNavbarContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Anasayfa</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./documentation.html">Dökümantasyon</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="gameVaultNavbarDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Kategoriler
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="gameVaultNavbarDropdown">
+              <li><a class="dropdown-item" href="#">Aksiyon</a></li>
+              <li><a class="dropdown-item" href="#">Simülasyon</a></li>
+            </ul>
+          </li>
+        </ul>
       </div>
     </nav>
-    <section class="search-field px-5">
+    <section class="banner-section mt-5">
+      <div class="container">
+        <div class="row px-5 py-5">
+          <div class="col-lg-4 mt-5 d-flex align-items-center">
+            <div class="banner-content">
+              <h2 class="text-uppercase text-primary fs-2">
+                GameVault Hizmetinizde
+              </h2>
+              <p class="text-white mt-4">
+                GameVault, oyunlarınızı yönetmek ve listelemek için tasarlanmış
+                bir web uygulamasıdır. Kullanıcılar, oyun ekleyebilir,
+                arayabilir, düzenleyebilir ve silebilir.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-8 mt-5">
+            <div class="banner-image img-fluid w-100"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="trophy-winner-games-field mt-8">
+      <div class="container px-5 py-5">
+        <div
+          class="title-and-icon d-flex align-items-center justify-content-center gap-2"
+        >
+          <i class="fa-solid fa-trophy text-white text-center fs-3"></i>
+          <h2 class="text-uppercase text-white fs-2">Ödüllü Oyunlar</h2>
+        </div>
+        <p class="text-center text-white mt-3">
+          Ödüllü oyunları keşfetmenin şimdi tam zamanı! Hemen sende ödüllü
+          oyunları keşfet ve bağlantıdan oyunun linkine git anında %15 indirimi
+          kap!
+        </p>
+        <div class="col-lg-12 trophy-games">
+          <div class="row d-flex align-items-center justify-content-center">
+            <div class="col-lg-7 big-trophy">
+              <div class="card">
+                <div class="card-inner">
+                  <div class="card-front border-0 mt-0">
+                    <div class="card-image">
+                      <img
+                        src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/292030/header.jpg?t=1734434803"
+                      />
+                    </div>
+                  </div>
+                  <div class="card-back">
+                    <div class="card-body">
+                      <h4 class="card-title">The Witcher 3: Wild Hunt</h4>
+                      <p class="card-description">
+                        The Witcher 3: Wild Hunt, CD Projekt Red tarafından
+                        geliştirilen ve CD Projekt tarafından yayımlanan bir rol
+                        yapma oyunudur. Oyun, kurgusal bir kıta olan Kuzey
+                        Krallıkları'nda geçmektedir.
+                      </p>
+                      <p class="card-genre">Kategori: Macera</p>
+                      <p class="card-year">Yayın Tarihi: 2015</p>
+                      <p class="card-publisher">Yayıncı: CD Projekt</p>
+                      <a
+                        href="https://store.steampowered.com/app/292030/The_Witcher_3_Wild_Hunt/"
+                        class="card-url"
+                        >https://store.steampowered.com/app/292030/The_Witcher_3_Wild_Hunt/</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-5 small-trophy">
+              <div class="card mb-4">
+                <div class="card-inner">
+                  <div class="card-back">
+                    <div class="card-body">
+                      <h4 class="card-title">Dying Light 2</h4>
+                      <p class="card-description">
+                        Dying Light 2, Techland tarafından geliştirilen ve
+                        Techland Publishing tarafından yayımlanan bir hayatta
+                        kalma korku oyunudur. Oyun, kurgusal bir şehir olan
+                        Villedor'da geçmektedir.,
+                      </p>
+                      <button class="btn btn-primary">
+                        <span> <i class="fa-brands fa-steam"></i></span>
+                        <a
+                          class="text-white text-decoration-none"
+                          href="https://store.steampowered.com/app/534380/Dying_Light_2_Stay_Human_Reloaded_Edition/"
+                          >Steam Sayfaına Git</a
+                        >
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-inner">
+                  <div class="card-back">
+                    <div class="card-body">
+                      <h4 class="card-title">Elden Ring</h4>
+                      <p class="card-description">
+                        YENİ FANTASTİK AKSİYON ROL YAPMA OYUNU. Tarnished,
+                        yüksel ve zarafetin seni yönlendirmesine izin ver. Elden
+                        Ring'in gücünü kullan ve Lands Between'de bir Elden Lord
+                        ol.
+                      </p>
+                      <button class="btn btn-primary">
+                        <span> <i class="fa-brands fa-steam"></i></span>
+                        <a
+                          class="text-white text-decoration-none"
+                          href="https://store.steampowered.com/app/1245620/ELDEN_RING/"
+                          >Steam Sayfasına Git</a
+                        >
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="search-field px-5 mt-5">
       <div class="container">
         <div class="input-container">
           <input
@@ -93,18 +199,7 @@
             class="form-control search-input text-white"
           />
         </div>
-        <div class="button-container">
-          <button class="btn btn-success" id="searchButton">Ara</button>
-        </div>
-        <select name="orderGame" id="orderGame">
-          <option value="aToZ" id="orderGamesByAlphabeticalOrder">A-Z</option>
-          <option value="zToA" id="orderGamesByAlphabeticalReverseOrder">
-            Z-A
-          </option>
-          <option value="newToOld" id="orderGamesByReleaseDate">
-            Çıkış Tarihi
-          </option>
-        </select>
+        <button class="btn" id="searchButton">Ara</button>
         <button
           type="button"
           class="btn btn-primary"
@@ -161,6 +256,34 @@
                 <option value="Hayatta Kalma">Hayatta Kalma</option>
                 <option value="RPG">RPG</option>
                 <option value="MMORPG">MMORPG</option>
+                <option value="JRYO">JRYO</option>
+                <option value="Arcade ve Ritim">Arcade ve Ritim</option>
+                <option value="Birinci Şahıs Nişancı">
+                  Birinci Şahıs Nişancı
+                </option>
+                <option value="Dövüş ve Dövüş Sanatları">
+                  Dövüş ve Dövüş Sanatları
+                </option>
+                <option value="Hack & Slash">Hack & Slash</option>
+                <option value="Platform ve Runner">Platform ve Runner</option>
+                <option value="Üçüncü Şahıs Nişancı">
+                  Üçüncü Şahıs Nişancı
+                </option>
+                <option value="Bulmaca">Bulmaca</option>
+                <option value="Strateji">Strateji</option>
+                <option value="Spor">Spor</option>
+                <option value="Yarış">Yarış</option>
+                <option value="Anime">Anime</option>
+                <option value="Korku">Korku</option>
+                <option value="Gerilim">Gerilim</option>
+                <option value="Gizem">Gizem</option>
+                <option value="Komedi">Komedi</option>
+                <option value="Drama">Drama</option>
+                <option value="Fantastik">Fantastik</option>
+                <option value="Bilim Kurgu">Bilim Kurgu</option>
+                <option value="Kıyamet Sonrası">Kıyamet Sonrası</option>
+                <option value="Korku ve Gerilim">Korku ve Gerilim</option>
+                <option value="Açık Dünya">Açık Dünya</option>
               </select>
 
               <label for="gameReleaseDate">Çıkış Tarihi:</label>
@@ -211,7 +334,77 @@
         </div>
       </div>
     </section>
-    <section class="game-field mt-4">
+    <section class="filter-section mt-3">
+      <div class="container d-flex align-items-center justify-content-between">
+        <select name="orderGame" id="orderGame">
+          <option value="">Sırala</option>
+          <option value="aToZ" id="orderGamesByAlphabeticalOrder">A-Z</option>
+          <option value="zToA" id="orderGamesByAlphabeticalReverseOrder">
+            Z-A
+          </option>
+          <option value="newToOld" id="orderGamesByReleaseDate">
+            Çıkış Tarihi (Küçükten Büyüğe)
+          </option>
+          <option value="oldToNew" id="orderGamesByReleaseDate">
+            Çıkış Tarihi (Büyükten Küçüğe)
+          </option>
+        </select>
+        <div
+          class="year-input-container d-flex align-items-center gap-2 justify-content-between px-2"
+        >
+          <select name="category" id="category">
+            <option value="Aksiyon">Aksiyon</option>
+            <option value="Macera">Macera</option>
+            <option value="Simülasyon">Simülasyon</option>
+            <option value="Hayatta Kalma">Hayatta Kalma</option>
+            <option value="RPG">RPG</option>
+            <option value="MMORPG">MMORPG</option>
+            <option value="JRYO">JRYO</option>
+            <option value="Arcade ve Ritim">Arcade ve Ritim</option>
+            <option value="Birinci Şahıs Nişancı">Birinci Şahıs Nişancı</option>
+            <option value="Dövüş ve Dövüş Sanatları">
+              Dövüş ve Dövüş Sanatları
+            </option>
+            <option value="Hack & Slash">Hack & Slash</option>
+            <option value="Platform ve Runner">Platform ve Runner</option>
+            <option value="Üçüncü Şahıs Nişancı">Üçüncü Şahıs Nişancı</option>
+            <option value="Bulmaca">Bulmaca</option>
+            <option value="Strateji">Strateji</option>
+            <option value="Spor">Spor</option>
+            <option value="Yarış">Yarış</option>
+            <option value="Anime">Anime</option>
+            <option value="Korku">Korku</option>
+            <option value="Gerilim">Gerilim</option>
+            <option value="Gizem">Gizem</option>
+            <option value="Komedi">Komedi</option>
+            <option value="Drama">Drama</option>
+            <option value="Fantastik">Fantastik</option>
+            <option value="Bilim Kurgu">Bilim Kurgu</option>
+            <option value="Kıyamet Sonrası">Kıyamet Sonrası</option>
+            <option value="Korku ve Gerilim">Korku ve Gerilim</option>
+            <option value="Açık Dünya">Açık Dünya</option>
+          </select>
+          <div class="input-container">
+            <input
+              type="number"
+              name="number"
+              id="starterYear"
+              placeholder="Başlangıç Yılı"
+            />
+          </div>
+          <div class="input-container">
+            <input
+              type="number"
+              name="number"
+              id="endYear"
+              placeholder="Bitiş Yılı"
+            />
+          </div>
+          <button class="btn filter-button" id="filterButton">Filtrele</button>
+        </div>
+      </div>
+    </section>
+    <section class="game-field mt-5">
       <div class="container">
         <div class="game-container"></div>
         <div id="overlay"></div>
