@@ -1,14 +1,14 @@
-// 2. game.js - Game model and constructor
+//constructor yaz bura
 class Game {
     constructor(data = {}) {
         this.id = data.id;
-        this.name = data.OyunAdı || '';
-        this.description = data.Açıklama || '';
-        this.category = data.Kategori || '';
-        this.releaseDate = data.ÇıkışTarihi || '';
-        this.imageUrl = data.OyunGörseli || '';
-        this.developer = data.YapımcıFirma || '';
-        this.steamUrl = data.SteamURL || '';
+        this.name = data.OyunAdı ;
+        this.description = data.Açıklama ;
+        this.category = data.Kategori ;
+        this.releaseDate = data.ÇıkışTarihi ;
+        this.imageUrl = data.OyunGörseli ;
+        this.developer = data.YapımcıFirma ;
+        this.steamUrl = data.SteamURL ;
     }
 
     toApiFormat() {
