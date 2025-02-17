@@ -4,19 +4,15 @@ import UI from './UI.js';
 
 class App {
     static init() {
-        // Sayfa yüklendiğinde oyunları yükle
         document.addEventListener('DOMContentLoaded', App.loadGames);
-
-        // Filtreleme, sıralama ve arama event'lerini ekle
         document.getElementById('filterCategory').addEventListener('change', App.filterGames);
         document.getElementById('sortBy').addEventListener('change', App.sortGames);
         document.getElementById('searchInput').addEventListener('input', App.searchGames);
-
-        // Oyun ekleme formunu dinle
         document.getElementById('addGameForm').addEventListener('submit', App.addGame);
+        document.getElementById('gameDetailModal').addEventListener('hidden.bs.modal', () => {
+            document.getElementById('gameDetailContent').innerHTML = '';});
     }
 
-    // Oyunları yükle
     static async loadGames() {
         try {
             const games = await Request.getGames();
@@ -28,7 +24,6 @@ class App {
         }
     }
 
-    // Oyun ekle
     static async addGame(e) {
         e.preventDefault();
         const name = document.getElementById('gameName').value;
@@ -39,18 +34,32 @@ class App {
         const developer = document.getElementById('gameDeveloper').value;
         const steamUrl = document.getElementById('gameSteamUrl').value;
 
+        //let gameid = document.getElementById('gameId').value;
         const game = new Game(name, description, category, image, developer, releaseDate, steamUrl);
-        try {
-            await Request.addGame(game);
-            UI.renderGames(await Request.getGames());
-            $('#addGameModal').modal('hide');
-            e.target.reset();
-        } catch (error) {
-            UI.showError('Oyun eklenirken bir hata oluştu.');
+    
+        if (game.id) {
+            try {
+                await Request.updateGame(game.id, game);
+                await App.loadGames();
+                const modal = new bootstrap.Modal(document.getElementById('addGameModal'));
+                modal.hide();
+                e.target.reset();
+            } catch (error) {
+                UI.showError('Oyun güncellenirken bir hata oluştu.');
+            }
+        } else {
+            try {
+                await Request.addGame(game);
+                await App.loadGames();
+                const modal = new bootstrap.Modal(document.getElementById('addGameModal'));
+                modal.hide();
+                e.target.reset();
+            } catch (error) {
+                UI.showError('Oyun eklenirken bir hata oluştu.');
+            }
         }
     }
 
-    // Oyun sil
     static async deleteGame(id) {
         if (confirm('Bu oyunu silmek istediğinize emin misiniz?')) {
             try {
@@ -62,19 +71,16 @@ class App {
         }
     }
 
-    // Oyun düzenle
     static async editGame(id) {
         try {
             const games = await Request.getGames();
             const game = games.find(game => game.id === id);
-            console.log(`Düzenleme işlemi başlatıldı: ${id}`);
-            // Düzenleme işlemleri burada yapılacak
+            UI.showEditGameModal(game);
         } catch (error) {
             console.error('Hata:', error);
         }
     }
 
-    // Oyun detaylarını göster
     static async showGameDetail(id) {
         try {
             const games = await Request.getGames();
@@ -85,7 +91,6 @@ class App {
         }
     }
 
-    // Oyunları filtrele
     static async filterGames() {
         try {
             const games = await Request.getGames();
@@ -97,7 +102,6 @@ class App {
         }
     }
 
-    // Oyunları sırala
     static async sortGames() {
         try {
             const games = await Request.getGames();
@@ -116,7 +120,6 @@ class App {
         }
     }
 
-    // Oyunları ara
     static async searchGames() {
         try {
             const games = await Request.getGames();
@@ -133,8 +136,5 @@ class App {
     }
 }
 
-// Uygulamayı başlat
 App.init();
-
-// Global fonksiyonlar
 window.App = App;
