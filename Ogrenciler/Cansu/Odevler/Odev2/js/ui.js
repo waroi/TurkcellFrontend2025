@@ -11,6 +11,9 @@ class UI {
 
             const card = document.createElement("div");
             card.classList.add("card");
+            card.style.backgroundColor = "#FFD300";
+            card.style.border = "none";
+
 
             const img = document.createElement("img");
             img.classList.add("card-img-top");
