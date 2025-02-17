@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Hype Game</title>
     <link rel="stylesheet" href="./css/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,16 +13,6 @@
 </head>
 
 <body class="bg-dark">
-    <!-- <header>
-        <nav class="navbar fixed-top navbar-expand-lg bg-white border-bottom">
-            <div class="container d-flex justify-content-center">
-                <a class="navbar-brand d-flex align-items-center" href="#">
-                    <img src="./assets/logo.png" alt="Logo" class="me-2">
-                </a>
-            </div>
-        </nav>
-
-    </header> -->
     <main class="container-fluid gx-0 row h-screen d-flex d-sm-flex-column">
         <div class="col-lg-3 col-sm-12 bg-dark border-end border-secondary text-light h-auto">
             <div class="position-sticky top-0">
@@ -33,7 +23,6 @@
                         <p class="fs-4 fs-sm-3 fs-md-4 fw-semibold mb-0">
                             hypegame<sup class="fs-6 fs-sm-5 fs-md-6">TM</sup>
                         </p>
-
                     </span>
                     <div
                         class="border-bottom border-secondary h-hundred position-sticky top-0 z-1 bg-dark d-flex d-lg-none align-items-center">
@@ -43,8 +32,6 @@
                         </button>
                     </div>
                 </div>
-
-
                 <div
                     class="card border-bottom border-end-0 border-top-0 border-start-0 border-secondary bg-dark text-light py-3 px-4 rounded-0">
                     <h6 class="p-0 mb-0" data-bs-toggle="collapse" href="#filterCollapseSearch" role="button"
@@ -56,17 +43,12 @@
                             class="form-control bg-secondary border-0 text-light custom-placeholder fs-6 mt-3"
                             onkeyup="updateSearchTerm(event)" id="searchInput">
                     </div>
-
                 </div>
-
                 <div
                     class="card border-bottom border-end-0 border-top-0 border-start-0 border-secondary bg-dark text-light py-3 px-4 rounded-0">
                     <h6 class="p-0 d-flex mb-0 justify-content-between" data-bs-toggle="collapse"
                         href="#filterCollapseSort" role="button" aria-expanded="false"
-                        aria-controls="filterCollapseSort">
-                        Sırala
-
-                    </h6>
+                        aria-controls="filterCollapseSort">Sırala</h6>
                     <div class="collapse" id="filterCollapseSort">
                         <div class="form-check mt-3">
                             <input class="form-check-input" type="radio" name="sortOptions" id="oldToNew">
@@ -86,33 +68,14 @@
                         </div>
                     </div>
                 </div>
-
                 <div
                     class="card border-bottom border-end-0 border-top-0 border-start-0 border-secondary bg-dark text-light py-3 px-4 rounded-0">
                     <h6 class="p-0 mb-0" data-bs-toggle="collapse" href="#filterCollapseFilter" role="button"
                         aria-expanded="false" aria-controls="filterCollapseFilter">
                         Filtrele
                     </h6>
-                    <div class="collapse" id="filterCollapseFilter">
-                        <!-- <div class="form-check mt-3">
-                        <input class="form-check-input" type="checkbox" id="oldToNew">
-                        <label class="form-check-label fs-6" for="oldToNew">En Sevilenler</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="newToOld">
-                        <label class="form-check-label fs-6" for="newToOld">En Ucuzlar</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="priceHighToLow">
-                        <label class="form-check-label fs-6" for="priceHighToLow">Şok Edenler</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="priceLowToHigh">
-                        <label class="form-check-label fs-6" for="priceLowToHigh">Yeni Çıkanlar</label>
-                    </div> -->
-                    </div>
+                    <div class="collapse" id="filterCollapseFilter"></div>
                 </div>
-
             </div>
         </div>
         <div class="col-sm-12 col-lg-9">
@@ -123,10 +86,7 @@
                     Yeni Oyun Ekle
                 </button>
             </div>
-
-            <div class="row w-100 gx-0 min-h-screen z-1" id="gameContainer">
-            </div>
-
+            <div class="row w-100 gx-0 min-h-screen z-1" id="gameContainer"></div>
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
                 <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -203,13 +163,32 @@
                         </div>
                         <div class="modal-footer border-top-0">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
-                            <button type="button" class="btn btn-primary" id="saveGame"></button>
+                            <button type="button" class="btn btn-primary" id="saveGame">Kaydet</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="detailModal" tabindex="-1" aria-labelledby="modalTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered">
+                    <div class="modal-content bg-dark text-light">
+                        <div class="modal-header border-bottom-0">
+                            <h1 class="modal-title fs-5" id="modalTitle"></h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="mb-3 text-center">
+                                <img src="" id="modalImage" class="img-fluid rounded" alt="Oyun Görseli">
+                            </div>
+                            <p><strong>Kategori:</strong> <span id="modalCategory"></span></p>
+                            <p><strong>Yapım Yılı:</strong> <span id="modalYear"></span></p>
+                            <p><strong>Yapımcı:</strong> <span id="modalProducer"></span></p>
+                            <p><strong>Açıklama:</strong></p>
+                            <p id="modalDescription"></p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
