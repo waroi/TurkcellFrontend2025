@@ -4,6 +4,9 @@ $nav-brand-color: #f5b058;
 @mixin commonTransition() {
   transition: all 0.2s linear;
 }
+* {
+  font-weight: 500;
+}
 body {
   background: linear-gradient(
     135deg,
