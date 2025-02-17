@@ -38,7 +38,6 @@
     <div class="container mt-5">
         <h1 class="text-center mb-5">Oyun Arşiv Projesi</h1>
 
-        <!-- Filtreleme, Sıralama ve Arama -->
         <div class="row mb-3 d-flex justify-content-end">
             <button class=" col-md-1 btn btn-primary mb-3 me-auto ms-3" data-bs-toggle="modal"
                 data-bs-target="#addGameModal">Oyun Ekle</button>
@@ -57,14 +56,10 @@
                 </select>
             </div>
         </div>
-
-        <!-- Oyun Listesi -->
         <div class="row mb-4" id="gameList">
-            <!-- Oyunlar burada listelenecek -->
         </div>
     </div>
 
-    <!-- Oyun Ekle Modal -->
     <div class="modal fade" id="addGameModal" tabindex="-1" aria-labelledby="addGameModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -74,6 +69,7 @@
                 </div>
                 <div class="modal-body">
                     <form id="addGameForm">
+
                         <div class="mb-3">
                             <label for="gameName" class="form-label">Oyun Adı</label>
                             <input type="text" class="form-control" id="gameName" required>
@@ -110,7 +106,6 @@
         </div>
     </div>
 
-    <!-- Oyun Detay Modal -->
     <div class="modal fade" id="gameDetailModal" tabindex="-1" aria-labelledby="gameDetailModalLabel"
         aria-hidden="true">
         <div class="modal-dialog">
@@ -120,7 +115,6 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body" id="gameDetailContent">
-                    <!-- Oyun detayları burada gösterilecek -->
                     <img id="viewgameImage" src="" alt="Oyun Görseli" class="img-fluid">
                     <p><strong>Oyun Adı:</strong> <span id="viewgameName"></span></p>
                     <p><strong>Açıklama:</strong> <span id="viewgameDescription"></span></p>
