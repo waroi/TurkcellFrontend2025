@@ -16,6 +16,8 @@ function setupEventListeners() {
     const darkModeToggle = document.getElementById("darkModeToggle");
     const developerSelect = document.getElementById("developerSelect");
 
+    let editingGameId = null;  
+
     if (addGameForm) {
         addGameForm.addEventListener("submit", async (event) => {
             event.preventDefault();
@@ -31,11 +33,24 @@ function setupEventListeners() {
             };
 
             try {
-                await Storage.addGame(newGame);
+                if (editingGameId) {
+                    
+                    await Storage.updateGame(editingGameId, newGame);
+                    editingGameId = null; 
+                } else {
+                  
+                    await Storage.addGame(newGame);
+                }
+
+     
                 await UI.renderGames(await Storage.fetchGames());
                 addGameForm.reset();
+                
+               
+                const modal = bootstrap.Modal.getInstance(document.getElementById('gameModal'));
+                modal.hide();
             } catch (error) {
-                console.error("🔥 ERROR: An error occurred while adding the game!", error);
+                console.error("🔥ERROR: An error occurred while adding or updating the game!", error);
             }
         });
     }
@@ -50,7 +65,7 @@ function setupEventListeners() {
                 allGames = allGames.filter(game => game.category === selectedCategory);
             }
 
-           
+         
             const selectedCode = developerSelect.value;
             const developerMap = {
                 "dvp": "Tümü",
@@ -71,7 +86,7 @@ function setupEventListeners() {
                 allGames = allGames.filter(game => game.developer === selectedDeveloper);
             }
 
-            
+
             const sortOption = sortSelect.value;
             switch (sortOption) {
                 case "name_asc":
@@ -95,7 +110,6 @@ function setupEventListeners() {
         }
     };
 
-    
     if (categorySelect) {
         categorySelect.addEventListener("change", applyFiltersAndSort);
     }
@@ -107,6 +121,7 @@ function setupEventListeners() {
     if (sortSelect) {
         sortSelect.addEventListener("change", applyFiltersAndSort);
     }
+
 
     if (searchBar) {
         searchBar.addEventListener("input", function (event) {
@@ -124,10 +139,12 @@ function setupEventListeners() {
         });
     }
 
+   
     if (darkModeToggle) {
         darkModeToggle.addEventListener("click", toggleDarkMode);
     }
 }
+
 
 function applyDarkMode() {
     try {
@@ -142,9 +159,10 @@ function applyDarkMode() {
             if (darkModeToggle) darkModeToggle.textContent = "🌞";
         }
     } catch (error) {
-        console.error("🔥 ERROR: An error occurred while applying Dark Mode!", error);
+        console.error("🔥ERROR: An error occurred while applying Dark Mode!", error);
     }
 }
+
 
 function toggleDarkMode() {
     try {
@@ -159,9 +177,12 @@ function toggleDarkMode() {
             if (darkModeToggle) darkModeToggle.textContent = "🌞";
         }
     } catch (error) {
-        console.error("🔥 ERROR: An error occurred while changing Dark Mode!", error);
+        console.error("🔥ERROR: An error occurred while changing Dark Mode!", error);
     }
 }
+
+
+
 
 
 

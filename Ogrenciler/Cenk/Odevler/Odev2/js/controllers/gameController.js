@@ -16,22 +16,21 @@ export default class GameController {
     document.querySelector("#addGameBtn").addEventListener("click", () => {
       document.querySelector("#gameForm").reset();
       delete document.querySelector("#gameForm").dataset.gameId;
-      const modal = new bootstrap.Modal(document.querySelector("#gameModal"));
-      modal.show();
+      const modalElement = document.querySelector("#gameModal");
+      const modalInstance = bootstrap.Modal.getOrCreateInstance(modalElement);
+      modalInstance.show();
     });
 
     document.querySelector("#gameForm").addEventListener("submit", (event) => {
       event.preventDefault();
-      this.saveGame();
+      this.addGame();
     });
     document
       .querySelector("#saveGameBtn")
       .addEventListener("click", (event) => {
         event.preventDefault();
-        console.log("Kaydet Butonuna Basıldı!");
-        this.saveGame();
+        this.addGame();
       });
-
     document.querySelector(".game-list").addEventListener("click", (event) => {
       const target = event.target;
       if (target.classList.contains("edit-game")) {
@@ -67,51 +66,34 @@ export default class GameController {
       );
   };
 
-  saveGame = () => {
+  addGame = () => {
     const gameData = this.modalView.getFormData();
-    const gameId = document.querySelector("#gameForm").dataset.gameId;
 
-    console.log("Kaydet Butonu Çalışıyor!");
-    console.log("Formdan Gelen ID:", gameId);
-    console.log("Formdan Gelen Data:", gameData);
+    if (!gameData.id || gameData.id === "null") {
+      gameData.id = Date.now();
+    }
 
     if (!gameData.name || !gameData.category || !gameData.releaseDate) {
       alert("Lütfen tüm gerekli alanları doldurun!");
       return;
     }
 
-    if (gameId) {
-      console.log("Güncelleme İşlemi Yapılıyor:", gameId);
-      GameService.updateGame(gameId, gameData)
-        .then(() => {
-          console.log("Güncelleme Başarılı!");
-          this.loadGames();
-        })
-        .then(() => {
-          const modal = bootstrap.Modal.getInstance(
-            document.querySelector("#gameModal")
-          );
-          modal.hide();
-        })
+    if (document.querySelector("#gameForm").dataset.gameId) {
+      GameService.updateGame(gameData.id, gameData)
+        .then(() => this.loadGames())
         .catch((error) =>
           console.error("Oyun güncellenirken hata oluştu:", error)
         );
     } else {
-      gameData.id = Date.now();
-      console.log("Yeni Oyun Ekleniyor:", gameData);
       GameService.addGame(gameData)
-        .then(() => {
-          console.log("Oyun Eklendi!");
-          this.loadGames();
-        })
-        .then(() => {
-          const modal = bootstrap.Modal.getInstance(
-            document.querySelector("#gameModal")
-          );
-          modal.hide();
-        })
+        .then(() => this.loadGames())
         .catch((error) => console.error("Oyun eklenirken hata oluştu:", error));
     }
+
+    const modal = bootstrap.Modal.getInstance(
+      document.querySelector("#gameModal")
+    );
+    modal.hide();
   };
 
   deleteGame = (id) => {
@@ -121,13 +103,15 @@ export default class GameController {
   };
 
   editGame = (id) => {
-    const gameToEdit = this.games.find((game) => game.id === parseInt(id));
+    const foundId = parseInt(id);
+    const gameToEdit = this.games.find((game) => parseInt(game.id) === foundId);
 
     if (gameToEdit) {
       this.modalView.setFormData(gameToEdit);
       document.querySelector("#gameForm").dataset.gameId = id;
-      const modal = new bootstrap.Modal(document.querySelector("#gameModal"));
-      modal.show();
+      const modalElement = document.querySelector("#gameModal");
+      const modalInstance = bootstrap.Modal.getOrCreateInstance(modalElement);
+      modalInstance.show();
     }
   };
 
@@ -185,29 +169,10 @@ export default class GameController {
       );
     }
 
-    this.renderFilteredGames(filteredGames);
+    this.gameListView.renderGames(filteredGames);
   };
 
   renderFilteredGames = () => {
-    console.log("Oyunlar Render Ediliyor:", this.games);
     this.gameListView.renderGames(this.games);
-
-    document.querySelectorAll(".edit-game").forEach((button) => {
-      console.log("Düzenleme Butonu Bağlanıyor:", button.dataset.id);
-      button.addEventListener("click", (event) => {
-        const gameId = event.target.dataset.id;
-        console.log("Düzenleme Butonuna Basıldı. ID:", gameId);
-        this.editGame(gameId);
-      });
-    });
-
-    document.querySelectorAll(".delete-game").forEach((button) => {
-      console.log("Silme Butonu Bağlanıyor:", button.dataset.id);
-      button.addEventListener("click", (event) => {
-        const gameId = event.target.dataset.id;
-        console.log("Silme Butonuna Basıldı. ID:", gameId);
-        this.deleteGame(gameId);
-      });
-    });
   };
 }
