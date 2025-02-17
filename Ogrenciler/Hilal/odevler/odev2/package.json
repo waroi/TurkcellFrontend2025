@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "sass": "sass -w src/sass:src/css",
-    "json-server": "json-server --watch json-server/db.json"
+    "server": "json-server --watch json-server/db.json "
   },
   "author": "Hilal Semercioğlu",
   "license": "ISC",
