@@ -1,8 +1,4 @@
-import { UI } from "../UI/UI.js";
-import {Data} from '../services/data.js'
-import { Game } from "./game.js";
-
-export function infoModal(gameObj){
+function infoModal(gameObj){
     let modalBody = document.getElementById("modalBody")
 
     while (modalBody.firstChild) {modalBody.removeChild(modalBody.lastChild);}
@@ -45,7 +41,7 @@ export function infoModal(gameObj){
     modalBody.append(img,director,year,genre,gameText)
 }
 
-export function editModal(gameObj){
+function editModal(gameObj){
     let ui = new UI(gameObj);
     let dt = new Data()
     let modalBody = document.getElementById("modalBody")
@@ -101,7 +97,7 @@ export function editModal(gameObj){
     })
 }
 
-export function addModal(){
+function addModal(){
     let modalBody = document.getElementById("modalBody")
     let modalTitle = document.getElementById("modalTitle")
 
@@ -156,7 +152,7 @@ export function addModal(){
     })
 }
 
-export function deleteModal(card,onConfirm){
+function deleteModal(card,onConfirm){
     let modalBody = document.getElementById("modalBody")
     let modalFooter = document.getElementById("modalFooter")
 

@@ -1,7 +1,4 @@
-import { infoModal,editModal,deleteModal,addModal } from "../templates/modal.js";
-import { Data } from "../services/data.js";
-
-export class UI {
+class UI {
     constructor(gameObj){
         this.game = gameObj
     }

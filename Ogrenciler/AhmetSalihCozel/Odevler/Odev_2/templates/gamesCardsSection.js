@@ -1,10 +1,4 @@
-import { card } from "./card.js";
-import { Data } from "../services/data.js";
-import { UI } from "../UI/UI.js";
-
-
-
-export async function gamesCardSection(){
+async function gamesCardSection(){
     let addGameBtn = document.getElementById("addGameBtn")
     addGameBtn.addEventListener("click",async ()=>{
         let obj = await new Data("http://localhost:3000/games/4a59").get()

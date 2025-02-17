@@ -13,7 +13,7 @@ export default class DOMElements {
       formModalTitle: document.getElementById('formModalTitle'),
 
       gameDetailModal: document.getElementById('gameDetailModal'),
-      gameDetailCarousel: document.querySelector('#gameDetailCarousel'),
+      gameDetailCarousel: document.getElementById('gameDetailCarousel'),
       detailGameName: document.getElementById('detailGameName'),
       detailGameDescription: document.getElementById('detailGameDescription'),
       detailGameCategory: document.getElementById('detailGameCategory'),
