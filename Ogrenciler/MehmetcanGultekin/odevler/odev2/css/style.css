@@ -1,0 +1,37 @@
+.card {
+    transition: transform 0.2s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    border-color: yellow;
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.alert {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1050;
+    min-width: 300px;
+}
+
+.navbar.sticky-top {
+    z-index: 1000;
+}
+.navbar{
+    background-image: url(../assets/images/navbar-background.jpg);
+}
+
+
+body {
+    background-image: url(../assets/images/gaming-background.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}

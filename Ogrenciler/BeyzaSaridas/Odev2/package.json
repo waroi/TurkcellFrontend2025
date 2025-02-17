@@ -1,0 +1,17 @@
+{
+  "name": "odev2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "serve": "json-server --watch db.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "json-server": "^1.0.0-beta.3",
+    "sass": "^1.85.0"
+  },
+  "description": ""
+}

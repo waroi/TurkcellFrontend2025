@@ -11,6 +11,10 @@ class UI {
 
             const card = document.createElement("div");
             card.classList.add("card");
+            card.style.backgroundColor = "#FFD300";
+            card.style.border = "none";
+          
+
 
             const img = document.createElement("img");
             img.classList.add("card-img-top");
@@ -41,6 +45,7 @@ class UI {
             steamLink.textContent = "See on steam";
             steamLink.classList.add("btn", "btn-primary");
             steamLink.target = "_blank";
+            steamLink.style.marginRight = "10px";
 
             const btnDelete = document.createElement("button");
             btnDelete.classList.add("btn", "btn-danger", "delete-button");

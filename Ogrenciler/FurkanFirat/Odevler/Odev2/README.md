@@ -1,5 +1,7 @@
 # PlaYard - Game Library Project
 
+![Homepage](./images/homepage.png)
+
 ## Overview
 
 PlaYard is a web-based game library application that allows users to manage and showcase video games. Users can add, edit, delete, and view detailed information about games, including multiple screenshots, descriptions, and Steam links.
@@ -19,8 +21,8 @@ PlaYard is a web-based game library application that allows users to manage and 
 - **CSS**
 - **SCSS**
 - **JavaScript**
-- **Bootstrap**: For responsive design and UI components
-- **JSON Server**: For mock backend and data storage
+- **Bootstrap**:
+- **JSON Server**
 
 ## Project Structure
 
@@ -28,13 +30,18 @@ PlaYard is a web-based game library application that allows users to manage and 
 Odev2/
 ├── css/
 │   └── main.css
+├── scss/
+│   └── main.scss
 ├── js/
+│   ├── controllers/
+│   │   └── GameController.js
 │   ├── models/
 │   │   └── Game.js
 │   ├── services/
 │   │   └── GameService.js
 │   ├── UI/
-│   │   └── GameCard.js
+│   │   ├── GameCard.js
+│   │   └── ErrorAlert.js
 │   ├── utils/
 │   │   ├── DOMElements.js
 │   │   └── helpers.js
@@ -104,13 +111,13 @@ npm install
 
 ```
 
-4. Start JSON Server
+4. Start JSON Server (PORT:3000)
 
 ```bash
 npm run server
 ```
 
-4. Open `index.html` in your browser or use a local server
+5. Open `index.html` in your browser or use a local server
 
 ## Usage
 

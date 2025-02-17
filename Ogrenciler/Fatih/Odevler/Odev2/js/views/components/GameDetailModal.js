@@ -108,9 +108,12 @@ class GameDetailModal {
 
   show(game) {
     this.modalTitle.textContent = game.name;
-    this.modalImage.src =
-      game.image ||
+    const defaultImage =
       "https://static.vecteezy.com/system/resources/previews/027/879/755/non_2x/console-stick-controller-in-pixel-art-style-vector.jpg";
+    this.modalImage.src = game.image || defaultImage;
+    this.modalImage.onerror = () => {
+      this.modalImage.src = defaultImage;
+    };
     this.modalDescription.textContent = game.description;
     this.modalCategory.querySelector("span").textContent = game.category;
     this.modalReleaseDate.querySelector("span").textContent = this.formatDate(

@@ -11,7 +11,7 @@
     />
   </head>
   <body>
-    <header>
+    <header class="header-top">
       <div class="container">
         <nav class="navbar navbar-expand-lg">
           <div class="container-fluid">
@@ -60,25 +60,259 @@
         </nav>
       </div>
     </header>
+    <section class="header-bottom">
+      <div class="header-gradient"></div>
+      <div class="category-nav">
+        <div class="container">
+          <ul class="category-list d-flex justify-content-between">
+            <li><a href="#">Aksiyon</a></li>
+            <li><a href="#">Macera</a></li>
+            <li><a href="#">RPG</a></li>
+            <li><a href="#">Spor</a></li>
+            <li><a href="#">Simülasyon</a></li>
+            <li><a href="#">Strateji</a></li>
+            <li><a href="#">Yarış</a></li>
+            <li><a href="#">Korku</a></li>
+            <li><a href="#">Platform</a></li>
+            <li><a href="#">MMO</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-    <div class="header-gradient"></div>
-    <div class="category-nav">
+    <section
+      class="banner d-flex align-items-center justify-content-center text-center"
+    >
+      <div class="overlay">
+        <div class="container">
+          <h2 class="text-white fw-bold mb-3">
+            Oyunların Evi, Maceranın Başlangıcı!
+          </h2>
+          <p class="text-white mb-5">
+            Binlerce oyun arasından keşfet, koleksiyonunu oluştur ve en sevdiğin
+            dünyalara dal! GameNest ile oyun arşivin hep seninle.
+          </p>
+
+          <div class="row align-items-center mt-5">
+            <div class="col-md-4">
+              <input
+                type="text"
+                class="form-control search-input"
+                id="searchInput"
+                placeholder="Oyun adı, kategori veya yapımcı firma ara..."
+              />
+            </div>
+
+            <div class="col-md-2">
+              <select class="form-select filter-select" id="categoryFilter">
+                <option selected>Kategori Seç</option>
+                <option value="Aksiyon">Aksiyon</option>
+                <option value="Macera">Macera</option>
+                <option value="RPG">RPG</option>
+                <option value="Spor">Spor</option>
+                <option value="Simülasyon">Simülasyon</option>
+                <option value="Strateji">Strateji</option>
+                <option value="Yarış">Yarış</option>
+                <option value="Korku">Korku</option>
+                <option value="Platform">Platform</option>
+                <option value="MMO">MMO</option>
+              </select>
+            </div>
+
+            <div class="col-md-2">
+              <select class="form-select filter-select" id="releaseDateFilter">
+                <option selected>Çıkış Tarihi</option>
+                <option value="2024">2024</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+                <option value="2020">2020</option>
+                <option value="2010-2020">2010-2020</option>
+                <option value="2000-2010">2000-2010</option>
+                <option value="1990-2000">1990-2000</option>
+              </select>
+            </div>
+
+            <div class="col-md-2">
+              <select class="form-select sort-select" id="sortFilter">
+                <option selected>Sırala</option>
+                <option value="a-z">A - Z</option>
+                <option value="z-a">Z - A</option>
+                <option value="cikis-yeni">Çıkış Tarihi (Yeni - Eski)</option>
+                <option value="cikis-eski">Çıkış Tarihi (Eski - Yeni)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="game-section">
       <div class="container">
-        <ul class="category-list d-flex justify-content-between">
-          <li><a href="#">Aksiyon</a></li>
-          <li><a href="#">Macera</a></li>
-          <li><a href="#">RPG</a></li>
-          <li><a href="#">Spor</a></li>
-          <li><a href="#">Simülasyon</a></li>
-          <li><a href="#">Strateji</a></li>
-          <li><a href="#">Yarış</a></li>
-          <li><a href="#">Korku</a></li>
-          <li><a href="#">Platform</a></li>
-          <li><a href="#">MMO</a></li>
-        </ul>
+        <div
+          class="game-list py-5 row flex-wrap gap-4 justify-content-center"
+        ></div>
+      </div>
+    </section>
+    <div
+      id="gameModal"
+      class="modal fade"
+      tabindex="-1"
+      aria-labelledby="gameModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="gameModalLabel">Oyun Ekle / Düzenle</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Kapat"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="gameForm">
+              <div class="mb-3">
+                <label for="gameName" class="form-label">Oyun Adı</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="gameName"
+                  placeholder="Oyun Adını Girin"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="gameDescription" class="form-label">Açıklama</label>
+                <textarea
+                  class="form-control"
+                  id="gameDescription"
+                  placeholder="Oyun Açıklaması Girin"
+                  required
+                ></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="gameCategory" class="form-label">Kategori</label>
+                <select class="form-select" id="gameCategory" required>
+                  <option value="Aksiyon">Aksiyon</option>
+                  <option value="Macera">Macera</option>
+                  <option value="RPG">RPG</option>
+                  <option value="Spor">Spor</option>
+                  <option value="Simülasyon">Simülasyon</option>
+                  <option value="Strateji">Strateji</option>
+                  <option value="Yarış">Yarış</option>
+                  <option value="Korku">Korku</option>
+                  <option value="Platform">Platform</option>
+                  <option value="MMO">MMO</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="gameReleaseDate" class="form-label"
+                  >Çıkış Tarihi</label
+                >
+                <input
+                  type="date"
+                  class="form-control"
+                  id="gameReleaseDate"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="gameImageUrl" class="form-label">Görsel URL</label>
+                <input
+                  type="url"
+                  class="form-control"
+                  id="gameImageUrl"
+                  placeholder="Görsel URL'si"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="gameDeveloper" class="form-label"
+                  >Yapımcı Firma</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="gameDeveloper"
+                  placeholder="Yapımcı Firma Adı"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="gameSteamUrl" class="form-label">Steam URL</label>
+                <input
+                  type="url"
+                  class="form-control"
+                  id="gameSteamUrl"
+                  placeholder="Steam URL (Varsa Girin)"
+                />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              İptal
+            </button>
+            <button type="submit" class="btn btn-primary" id="saveGameBtn">
+              Kaydet
+            </button>
+          </div>
+        </div>
       </div>
     </div>
 
+    <footer class="footer mt-5">
+      <div class="container">
+        <div class="row py-4">
+          <div class="col-md-4">
+            <a href="index.html" class="text-decoration-none">
+              <img
+                src="./assets/logo.png"
+                alt="GameNest Logo"
+                class="logo mb-3"
+              />
+            </a>
+            <p class="footer-text">
+              GameNest, oyun severler için özel olarak hazırlanmış bir
+              koleksiyon ve keşif platformudur.
+            </p>
+          </div>
+
+          <div class="col-md-4">
+            <h5 class="footer-title mb-4">Hızlı Erişim</h5>
+            <ul class="footer-links">
+              <li><a href="#">Ana Sayfa</a></li>
+              <li><a href="#">Hakkımızda</a></li>
+              <li><a href="#">İletişim</a></li>
+              <li><a href="#">Gizlilik Politikası</a></li>
+              <li><a href="#">Kullanım Koşulları</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-4">
+            <h5 class="footer-title">Bizi Takip Edin</h5>
+            <div class="social-icons d-flex gap-3">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center py-3 footer-bottom pt-4 mt-5">
+          <p class="mb-0">© 2025 GameNest. Tüm Hakları Saklıdır.</p>
+        </div>
+      </div>
+    </footer>
+    <script type="module" src="./js/app.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

@@ -43,6 +43,26 @@ class GameController{
         }
     }
 
+    async filterGamesGenreAndReleaseDate(category,startYear,endYear){
+        try {        
+            let url = "http://localhost:3000/games?_sort=gameReleaseDate&_order=asc";
+
+            if (category) {
+                url += `&gameGenre=${category}`;
+            }
+            if (startYear) {
+                url += `&gameReleaseDate_gte=${startYear}`;
+            }
+            if (endYear) {
+                url += `&gameReleaseDate_lte=${endYear}`;
+            }
+            const gamesArray = await RequestModel.get(url);
+            return gamesArray;
+        } catch (error) {
+            console.error("Veri filtrelenirken hata oluştu:", error);
+        }
+    }
+
     async searchGameByTitleGenrePublisher(searchValue){
         try {
             const gamesArray = await RequestModel.get('http://localhost:3000/games');
@@ -76,7 +96,17 @@ class GameController{
     async orderGamesByReleaseDate(){
         try {
             const gamesArray = await RequestModel.get('http://localhost:3000/games');
-            const orderedGames = gamesArray.sort((a, b) => a.gameReleaseDate.localeCompare(b.gameReleaseDate));
+            const orderedGames = gamesArray.sort((a, b) => a.gameReleaseDate.toString().localeCompare(b.gameReleaseDate));
+            return orderedGames;
+        } catch (error) {
+            console.error("Veri sıralanırken hata oluştu:", error);
+        }
+    }
+    
+    async orderGamesByReleaseDateReverse(){
+        try {
+            const gamesArray = await RequestModel.get('http://localhost:3000/games');
+            const orderedGames = gamesArray.sort((a, b) => b.gameReleaseDate.toString().localeCompare(a.gameReleaseDate));
             return orderedGames;
         } catch (error) {
             console.error("Veri sıralanırken hata oluştu:", error);

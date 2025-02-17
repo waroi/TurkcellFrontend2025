@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+$default-box-shadow: 0 4px 4px rgba(51, 51, 51, 0.7);
+body{
+    padding-top: 100px;
+    .navbar{
+        box-shadow: $default-box-shadow;
+            .navbar__name--bold{
+                font-weight: 800;
+            }
+            .navbar__name--thin{
+                font-weight: 400;
+            }
+    }
+    .hero{
+        height: 500px;
+        .hero__text{
+            width: 800px;
+        }
+        .typing::after {
+            content: "|";
+            animation: blink 0.7s infinite;
+          }
+          @keyframes blink {
+            50% { opacity: 0; }
+          }
+    }
+    .operation-bar{
+        .input-group{
+            box-shadow: $default-box-shadow;
+        }
+        .w-35{
+            width: 35%;
+        }
+        .form-select, .btn{
+            box-shadow: $default-box-shadow;
+            height: 56px;
+        }
+    }
+}

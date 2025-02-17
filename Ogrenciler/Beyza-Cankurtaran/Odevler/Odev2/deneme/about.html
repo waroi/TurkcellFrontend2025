@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LD-About</title>
     <link rel="stylesheet" href="./css/main.css" />
 </head>
+
 <body>
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
                 <a class="ms-5 navbar-brand pixel-text" href="#">Ludoteca</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <form class="d-flex w-100 justify-content-center" role="search" onsubmit="gameList.searchGames(event)">
-                        <input class="form-control me-2 w-50" type="search" placeholder="Oyun adı  girin..."
-                            aria-label="Search" id="searchInput">
-                        <button class="btn btn-primary" id="searchButton" type="submit">Ara</button>
-                    </form>
-    
+                    <div class="pixel-text d-flex mt-2 w-100 justify-content-center">
+                        <p>Your game archive...</p>
+                    </div>
+
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="deneme.html">Home</a>
@@ -44,282 +44,115 @@
             <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active" data-bs-interval="1500">
-                        <img src="./pics/banner-1.jpeg" class="d-block w-100" alt="banner-1">
+                        <img src="./pics/banner-1.jpg" class="d-block w-100" alt="banner-1">
                     </div>
                     <div class="carousel-item" data-bs-interval="1500">
-                        <img src="./pics/banner-2.jpeg" class="d-block w-100" alt="banner-2">
+                        <img src="./pics/banner-2.jpg" class="d-block w-100" alt="banner-2">
                     </div>
                     <div class="carousel-item" data-bs-interval="1500">
-                        <img src="./pics/banner-3.jpeg" class="d-block w-100" alt="banner-3">
+                        <img src="./pics/banner-3.jpg" class="d-block w-100" alt="banner-3">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about mb-5">
+        <div class="container my-5">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active" data-bs-interval="2000">
+                                <img src="pics/abt-2.jpg" class="d-block w-100" alt="abt-3">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="pics/abt-1.jpg" class="d-block w-100" alt="about_1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="pics/abt-3.jpg" class="d-block w-100" alt="about_2">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <hr>
+                    <h4 class="pixel-text">HAKKIMIZDA</h4>
+                    <hr>
+                    <h6 class="fw-bold">Oyunlara Bir Tık ile Ulaşın!</h6>
+                    <p>
+                        Ludoteca, oyun dünyasının en geniş arşivlerinden birini sunarak oyunculara eşsiz bir keşif deneyimi yaşatıyor. 
+                        Klasiklerden modern şaheserlere kadar uzanan geniş koleksiyonumuz sayesinde, oyun tarihinin en önemli anlarına 
+                        tanıklık edebilir ve favori oyunlarınızı yeniden keşfedebilirsiniz.
+                    </p>
+                    <h6 class="fw-bold">Geçmişi Yaşayın, Geleceği Keşfedin.</h6>
+                    <p>
+                        Ludoteca, yalnızca bir oyun arşivi değil; aynı zamanda dijital eğlence dünyasının geçmişini ve geleceğini bir araya getiren bir kütüphanedir.  
+                        Retro efsanelerden en yeni yapımlara kadar uzanan geniş yelpazemiz ile oyun kültürünü koruyor ve her yaştan oyuncuya hitap ediyoruz.
+                    </p>
+                    
+                </div>
+            </div>
+        </div>
+        
+
+    </section>
+    <section class="categories py-5 d-flex justify-content-center align-items-center">
+        
+        <div class="container text-center"><hr>
+            <h2 class="text-center pixel-text mb-4">Ludoteca Özellikleri</h2>
+            <div class="row justify-content-center">
+                <div class="card col-lg-3 mb-3 mx-2">
+                    <div class="row g-0">
+                        <div class="col-md-12">
+                            <div class="card-body py-2">
+                                <h5 class="card-title gothic-text">CRUD İŞLEMLERİ</h5>
+                                <p class="card-text">Create, Read, Update ve Delete işlemlerini rahatça yapabilme özelliği</p>
+                            </div>
+                        </div>
+                        <a class="btn btn-primary" href="deneme.html">İncele</a>
+                    </div>
+                </div>
+                <div class="card col-lg-3 mb-3 mx-2">
+                    <div class="row g-0">
+                        <div class="col-md-12">
+                            <div class="card-body py-2">
+                                <h5 class="card-title gothic-text">Detaylı Bilgilendirme Sayfası</h5>
+                                <p class="card-text">Aklınıza takılan her türlü bilgiyi edinebileceğiniz hakkımızda sayfası.</p>
+                            </div>
+                        </div>
+                        <a class="btn btn-primary " href="about.html" class="card-hover-link">İncele</a>
+                    </div>
+                </div>
+                <div class="card col-lg-3 mb-3 mx-2">
+                    <div class="row g-0">
+                        <div class="col-md-12">
+                            <div class="card-body py-2">
+                                <h5 class="card-title gothic-text">Contact Sayfası</h5>
+                                <p class="card-text">İletişimi rahatça kurabileceğiniz bir iletişim sayfamız bulunmaktadır.</p>
+                            </div>
+                        </div>
+                        <a class="btn btn-primary"href="contact.html">İncele</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     
-    <section class="about mb-5">
-        <div class="container my-5">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <div id="carouselExampleSlidesOnly" class="carousel slide"data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active" data-bs-interval="1500">
-                                <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNnh4Y3U0amZucXZkd2c1MTZwYjdnaG54YzgwcGVjNnY0NG8wcmhudiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/d3yxg15kJppJilnW/giphy.gif" class="d-block w-100" alt="gif-banner">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="pics/about_1.jpeg" class="d-block w-100" alt="about_2">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <hr><h4>About Us</h4><hr>
-
-                    <hr><h6 class="fw-bold">Zamanın Sınırlarını Aşın!</h6><hr>
-                    <p>
-
-                        TimeBazaar, insanlığın zamana olan hayranlığını ve keşif arzusunu bir adım öteye taşıyor. İster geçmişin büyüleyici anlarına tanıklık etmek, ister geleceğin gizemli ufuklarını keşfetmek isteyin, burada aradığınız her şey sizin için tasarlandı.
-                        
-                        Geleceğin teknolojisini bugüne taşıyan portal makinelerimiz ve benzersiz zaman yolculuğu deneyimlerimizle, hayal gücünüzü yeniden tanımlıyoruz. Her yolculuğunuzda güvenliği, konforu ve sınırsız olasılıkları garanti ediyoruz.
-                    </p>    
-                        <hr><h6 class="fw-bold">Geçmişi Değiştirin, Geleceği Şekillendirin.</h6><hr>
-                        <p>TimeBazaar, yalnızca bir zaman yolculuğu platformu değil; aynı zamanda tarih boyunca bir yolculuğunuz için rehberinizdir. Zamanın eşsiz hikayelerini keşfetmek ve bu deneyimi ölümsüz kılmak için doğru yerdesiniz.</p>
-
-                </div>
-            </div>
-        </div>
-
-    </section>
-    <section id="team" class="py-5 bg-primary text-white">
-        <div class="container">
-            <h2 class="text-center mb-5">Timebazaar Takımı</h2>
-            <div id="teamCarousel" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-4 col-md-6 mb-4">
-                                <div class="card text-center bg-light">
-                                    <img src="pics/about_2.jpeg" class="card-img-top" alt="Üye 1">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Ahmet Yılmaz</h5>
-                                        <p class="card-text">Zaman Yolculuğu Uzmanı</p>
-                                        <p>Ahmet, Timebazaar'ın en deneyimli zaman yolculuğu uzmanıdır. Gelecek ve
-                                            geçmiş hakkında derinlemesine bilgisi vardır.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 mb-4">
-                                <div class="card text-center bg-light">
-                                    <img src="pics/about_1.jpeg" class="card-img-top" alt="Üye 2">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Zeynep Kaya</h5>
-                                        <p class="card-text">Teknoloji ve Yenilik Lideri</p>
-                                        <p>Zeynep, Timebazaar'ın teknolojik gelişmelerine yön veren ve zaman makineleri
-                                            için yenilikçi çözümler üreten liderdir.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 mb-4">
-                                <div class="card text-center bg-light">
-                                    <img src="pics/1.png" class="card-img-top" alt="Üye 3">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Mehmet Demir</h5>
-                                        <p class="card-text">Geliştirici ve Mühendis</p>
-                                        <p>Mehmet, zaman makinelerinin mühendisidir. Timebazaar'da ürünlerin teknik
-                                            altyapısının geliştirilmesinde önemli bir rol oynar.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-4 col-md-6 mb-4">
-                                <div class="card text-center bg-light">
-                                    <img src="pics/traveller.png" class="card-img-top" alt="Üye 4">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Ali Vural</h5>
-                                        <p class="card-text">Müşteri İlişkileri Yöneticisi</p>
-                                        <p>Ali, Timebazaar'ın müşteri ilişkileri uzmanıdır ve zaman yolculuğu konusunda
-                                            tüm kullanıcıların sorularını çözmek için çalışır.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 mb-4">
-                                <div class="card text-center bg-light">
-                                    <img src="pics/freepik__the-style-is-candid-image-photography-with-natural__36146.jpeg" class="card-img-top" alt="Üye 5">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Seda Çelik</h5>
-                                        <p class="card-text">Pazarlama ve İletişim Direktörü</p>
-                                        <p>Seda, Timebazaar'ın tanıtımı ve pazarlama stratejilerinden sorumlu liderdir.
-                                            Zamanın değerini anlatmak konusunda büyük bir tutkuya sahiptir.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 mb-4">
-                                <div class="card text-center bg-light">
-                                    <img src="pics/3.png" class="card-img-top" alt="Üye 6">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Efe Kara</h5>
-                                        <p class="card-text">Zaman Araştırmacısı</p>
-                                        <p>Efe, Timebazaar'ın araştırma ve geliştirme departmanında çalışan bir
-                                            uzmandır. O, zamanda yapılan araştırmaları yönlendiriyor.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#teamCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Önceki</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#teamCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Sonraki</span>
-                </button>
-            </div>
-        </div>
-    </section>
-    <section class="categories py-5">
-        <div class="container">
-            <h2 class="text-center mb-4">Kategoriler</h2>
-            <div class="row">
-                <div class="card col-lg-4 mb-3">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="pics/forset_ancient.jpg" class="img-fluid rounded-start" alt="Kategori 1">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title gothic-text">Anciento</h5>
-                                <p class="card-text">Gidilebilecek en geçmiş zamanın kendisiyle tanışın!</p>
-                            </div>
-                        </div>
-                        <a href="urun-detay-1.html" class="card-hover-link">İncele</a>
-                    </div>
-                </div>
-                <div class="card col-lg-4 mb-3">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="pics/portal.jpeg" class="img-fluid rounded-start" alt="Kategori 1">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title gothic-text">Agriculturio</h5>
-                                <p class="card-text">Tarımın keşfedilmesinin etkilerini ve ilk yerleşik düzene geçilmesindeki köşe taşlarını detaylıca keşfedin!</p>
-                            </div>
-                        </div>
-                        <a href="urun-detay3.html" class="card-hover-link">İncele</a>
-                    </div>
-                </div>
-                <div class="card col-lg-4 mb-3">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="pics/mars.png" class="img-fluid rounded-start" alt="Kategori 1">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title gothic-text">Civilio</h5>
-                                <p class="card-text">İlk medeniyetlerin içindeki düzeni keşfedin!</p>
-                            </div>
-                        </div>
-                        <a href="urun-detay3.html" class="card-hover-link">İncele</a>
-                    </div>
-                </div>
-                <div class="card col-lg-4 mb-3">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="pics/renaissence.png" class="img-fluid rounded-start" alt="Kategori 1">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title gothic-text">Renaissence</h5>
-                                <p class="card-text">İnsanların sanata ve zekaya önem vermeye başlamalarını gözlemleyip bu büyülü era içinde yer alabilirsiniz.</p>
-                            </div>
-                        </div>
-                        <a href="urun-detay4.html" class="card-hover-link">İncele</a>
-                    </div>
-                </div>
-                <div class="card col-lg-4 mb-3">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="pics/ssnayi-2.jpeg" class="img-fluid rounded-start" alt="Kategori 1">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title gothic-text">Industrio</h5>
-                                <p class="card-text">Sanayileşme ve insanların kapitalizme evrilmeye başladığı dönemi tüm karanlık sırlarıyla keşfedebilirsiniz.</p>
-                            </div>
-                        </div>
-                        <a href="urun-detay5.html" class="card-hover-link">İncele</a>
-                    </div>
-                </div>
-                <div class="card col-lg-4 mb-3">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="pics/close-history.jpeg" class="img-fluid rounded-start" alt="Kategori 1">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title gothic-text">Close History</h5>
-                                <p class="card-text">Yaklaşık 75 yıl öncesini keşfedebilir ve soylarınızı gözlemleyebilirsiniz.</p>
-                            </div>
-                        </div>
-                        <a href="urun-detay6.html" class="card-hover-link">İncele</a>
-                    </div>
-                </div>
-                <div class="card col-lg-4 mb-3">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="pics/cat_1.jpeg" class="img-fluid rounded-start" alt="Kategori 1">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title gothic-text">Wow</h5>
-                                <p class="card-text">Geri dönmek istediğiniz an başvurabileceğiniz portalı sakın yanınızdan ayırmayın.</p>
-                            </div>
-                        </div>
-                        <a href="urun-detay7.html" class="card-hover-link">İncele</a>
-                    </div>
-                </div>
-                <div class="card col-lg-4 mb-3">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="pics/cyberpunk2.jpeg" class="img-fluid rounded-start" alt="Kategori 1">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title gothic-text">Cyberpunk</h5>
-                                <p class="card-text">Robotlaşmış ve duygularını kaybetme eşiğindeki insanoğlunu yakından gözlemleyebilirsiniz.</p>
-                            </div>
-                        </div>
-                        <a href="urun-detay8.html" class="card-hover-link">İncele</a>
-                    </div>
-                    </div>
-                    <div class="card col-lg-4 mb-3">
-                        <div class="row g-0">
-                            <div class="col-md-4">
-                                <img src="pics/4.png" class="img-fluid rounded-start" alt="Kategori 1">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title gothic-text">Mars</h5>
-                                    <p class="card-text">Mars kolonisinin zorlu şartlar altında hayatta kalma mücadelelerini yakından gözlemleyebilirsiniz.</p>
-                                </div>
-                            </div>
-                            <a href="urun-detay9.html" class="card-hover-link">İncele</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
     <footer class="footer py-4">
+        <hr>
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <h1 class="mb-3 gothic-text">Ludoteca</h1>
+                    <h1 class="mb-3 pixel-text">Ludoteca</h1>
                     <p>Oyunların eklenmesi ve herhangi bir görüşünüzü bize bildirmeyi unutmayın!</p>
                     <ul class="list-unstyled">
                         <li><strong>Adres:</strong> 42010 Meram/Konya</li>
@@ -358,9 +191,10 @@
             </div>
         </div>
     </footer>
-    
+
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
+
 </html>

@@ -1,0 +1,66 @@
+$secondary: rgba(161, 122, 245, 0.5);
+$primary: #002e28;
+$nav-brand-color: #f5b058;
+@mixin commonTransition() {
+  transition: all 0.2s linear;
+}
+* {
+  font-weight: 500;
+}
+body {
+  background: linear-gradient(
+    135deg,
+    rgba(232, 213, 181, 1),
+    rgba(255, 238, 211, 1),
+    rgba(204, 235, 255, 1),
+    rgba(204, 204, 255, 1)
+  );
+  background-size: cover;
+}
+.navbar-brand {
+  animation: h1Animation 3s infinite;
+}
+h5 {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+#upButton {
+  position: fixed;
+  display: block;
+  right: 50px;
+  bottom: 50px;
+  @include commonTransition();
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.card:hover {
+  @include commonTransition();
+  transform: scale(1.03);
+  box-shadow: 0 0 5px $secondary;
+  border-color: $secondary;
+}
+button {
+  &:hover {
+    @include commonTransition();
+    transform: scale(1.02);
+  }
+}
+hr {
+  color: $primary;
+  font-weight: 500;
+}
+@keyframes h1Animation {
+  0% {
+    text-shadow: 0px 0px 1px $nav-brand-color;
+  }
+  50% {
+    text-shadow: 0px 0px 20px $nav-brand-color;
+  }
+  100% {
+    text-shadow: 0px 0px 1px $nav-brand-color;
+  }
+}

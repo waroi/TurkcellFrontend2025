@@ -1,8 +1,9 @@
 import Game from '../models/Game.js';
 import GameService from '../services/GameService.js';
 import GameCard from '../UI/GameCard.js';
+import ErrorAlert from '../UI/ErrorAlert.js';
 import DOMElements from '../utils/DOMElements.js';
-import { debounce, getNextId } from '../utils/helpers.js';
+import { getNextId } from '../utils/helpers.js';
 
 export default class GameController {
   constructor() {
@@ -15,7 +16,6 @@ export default class GameController {
     this.editingGame = null;
 
     this.startEventListeners();
-    this.loadGames();
   }
 
   startEventListeners() {
@@ -28,14 +28,12 @@ export default class GameController {
     this.elements.sortSelect.addEventListener('change', () =>
       this.applyFilters()
     );
-    this.elements.searchInput.addEventListener(
-      'input',
-      debounce(() => this.applyFilters(), 600)
+    this.elements.searchInput.addEventListener('input', () =>
+      this.applyFilters()
     );
     this.elements.resetFiltersBtn.addEventListener('click', () =>
       this.resetFilters()
     );
-    // BOOTSTRAP FORM VALIDATION
     this.elements.gameForm.addEventListener('submit', async (event) => {
       event.preventDefault();
 
@@ -44,7 +42,6 @@ export default class GameController {
         this.elements.gameForm.classList.add('was-validated');
         return;
       }
-
       await this.handleSaveGame();
     });
   }
@@ -98,16 +95,10 @@ export default class GameController {
       this.renderGames(this.games);
     } catch (error) {
       this.elements.gameList.replaceChildren();
-      const alertContainer = document.createElement('div');
-      alertContainer.classList.add('col-12', 'text-center');
-
-      const alert = document.createElement('div');
-      alert.classList.add('alert', 'alert-danger');
-      alert.textContent =
-        'An error occurred while loading games. Please try again later.';
-
-      alertContainer.append(alert);
-      this.elements.gameList.append(alertContainer);
+      const errorAlert = ErrorAlert.createErrorAlert(
+        'An error occurred while loading games. Please try again later.'
+      );
+      this.elements.gameList.append(errorAlert);
     }
   }
 
@@ -162,15 +153,9 @@ export default class GameController {
     });
     if (filteredGames.length === 0) {
       this.elements.gameList.replaceChildren();
-      const alertContainer = document.createElement('div');
-      alertContainer.classList.add('col-12', 'text-center');
+      const errorAlert = ErrorAlert.createErrorAlert('No games found.');
 
-      const alert = document.createElement('div');
-      alert.classList.add('alert', 'alert-danger');
-      alert.textContent = 'No games found.';
-
-      alertContainer.append(alert);
-      this.elements.gameList.append(alertContainer);
+      this.elements.gameList.append(errorAlert);
     } else {
       this.renderGames(filteredGames);
     }
@@ -178,7 +163,7 @@ export default class GameController {
 
   resetFilters() {
     this.elements.categoryFilter.value = '';
-    this.elements.sortSelect.value = 'nameAsc';
+    this.elements.sortSelect.value = '';
     this.elements.searchInput.value = '';
     this.renderGames(this.games);
   }

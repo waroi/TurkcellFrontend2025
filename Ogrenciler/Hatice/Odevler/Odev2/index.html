@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oyun Arşivi</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!--Header START -->
+    <header class="d-flex justify-content-between align-items-center mt-5 bg-dark">
+        <div class="container d-flex justify-content-between align-items-center w-100">
+            <h1 class="text-white">GameBox</h1>
+        </div>
+    </header>
+    <!--Header END -->
+    
+    <section id="main">
+        <div class="container mt-5">
+        
+            <!-- Search-Filter-Order -->
+            <input type="text" id="searchInput" class="form-control mb-3"
+                placeholder="Oyun adı veya yapımcı ara...">
+            <select id="categoryFilter" class="form-select mb-3">
+                <option value="all">Kategori Seç</option>
+                <option value="Macera">Macera</option>
+                <option value="Yarış">Yarış</option>
+                <option value="Aksiyon">Aksiyon</option>
+                <option value="Strateji">Strateji</option>
+                <option value="Spor">Spor</option>
+            </select>
+            <input type="year" id="dateFilter" class="form-control mb-3"
+                placeholder="Yıl giriniz">
+            <select id="sortOrder" class="form-select mb-3">
+                <option value="az">A-Z</option>
+                <option value="za">Z-A</option>
+                <option value="newest">Yeniden Eskiye</option>
+                <option value="oldest">Eskiden Yeniye</option>
+            </select>
+    
+            <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#gameModal">Yeni Oyun Ekle</button>
+    
+            <div id="gameList" class="row"></div>
+        </div>
+    
+        <!-- Oyun Ekleme Modalı -->
+        <div class="modal fade" id="gameModal" tabindex="-1" aria-labelledby="gameModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="gameModalLabel">Oyun Ekle</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="gameForm">
+                            <div class="mb-3">
+                                <label for="gameName" class="form-label">Oyun Adı</label>
+                                <input type="text" class="form-control" id="gameName" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="gameDesc" class="form-label">Açıklama</label>
+                                <textarea class="form-control" id="gameDesc" required></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="gameCategory" class="form-label">Kategori</label>
+                                <input type="text" class="form-control" id="gameCategory" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="release_date" class="form-label">Çıkış Tarihi</label>
+                                <input type="date" class="form-control" id="release_date" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="gameImage" class="form-label">Oyun Görseli (URL)</label>
+                                <input type="url" class="form-control" id="gameImage" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="developer" class="form-label">Yapımcı Firma</label>
+                                <input type="text" class="form-control" id="developer" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="steam_url" class="form-label">Steam URL</label>
+                                <input type="url" class="form-control" id="steam_url">
+                            </div>
+                            <button type="submit" class="btn btn-success">Kaydet</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/game.js"></script>
+    <script src="./js/gameService.js"></script>
+    <script src="./js/ui.js"></script>
+    <script src="./js/app.js"></script>
+</body>
+
+</html>

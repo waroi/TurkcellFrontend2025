@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+    />
+
+    <link rel="stylesheet" href="css/main.css" />
+    <title>Oyun Keşfi</title>
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-lg bg-primary"
+      data-bs-theme="dark"
+      id="main-nav"
+      role="navigation"
+    >
+      <div class="container">
+        <a class="navbar-brand fs-2 fw-bold text-light" href="index.html"
+          >OyunKeşfi</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#gameNav"
+          aria-controls="gameNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse gap-4" id="gameNav">
+          <div class="d-flex ms-auto gap-4">
+            <form
+              class="d-flex my-3"
+              role="search"
+              aria-label="Oyun/Kategori Ara"
+            >
+              <input
+                id="searchOnPage"
+                class="form-control border-secondary me-2 py-2 bg-info"
+                type="search"
+                placeholder="Oyun/Kategori Ara"
+                aria-label="Oyun Kategori"
+              />
+            </form>
+            <form class="d-flex" role="search" aria-label="Yeni Oyun Ekle">
+              <button
+                id="addGame"
+                type="button"
+                class="btn btn-secondary text-light fw-bold"
+                data-bs-toggle="modal"
+                data-bs-target="#createGameModal"
+              >
+                Yeni Oyun Ekle
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <header class="container">
+      <div class="row py-5">
+        <div
+          class="col-md-12 col-lg-8 d-flex flex-column align-items-center justify-content-center p-4"
+        >
+          <h1 class="fw-bold text-primary">
+            OyunKeşfi'ne Bir Sonraki Maceranızı Ekleyin 🎮
+          </h1>
+          <p class="mt-4 fw-normal">
+            "OyunKeşfi'ne hoş geldiniz! Bir sonraki heyecan verici oyun
+            maceranızı eklemenin mükemmel adresi. Favori oyunlarınızı
+            keşfedeceğiniz ve paylaşacağınız, yeni ve heyecan verici oyunlar
+            keşfedeceğiniz bir dünyaya adım atın. OyunKeşfi ile oyun
+            dünyasındaki yolculuğunuz daha da heyecan verici hale geliyor."
+          </p>
+        </div>
+        <div
+          class="col-md-12 col-lg-4 col-md-12 justify-content-center position-relative d-lg-flex d-none"
+        >
+          <img
+            class="w-50 banner-image"
+            src="./images/homeGame.webp"
+            alt="homeGame"
+          />
+        </div>
+      </div>
+    </header>
+
+    <div
+      class="modal fade"
+      id="createGameModal"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="createGameModalLabel"
+      aria-hidden="true"
+      role="dialog"
+    >
+      <div class="modal-dialog modal-lg">
+        <form id="gameForm" class="needs-validation" novalidate>
+          <div class="modal-content bg-secondary">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5 text-light" id="createGameModalLabel">
+                Oyun Ekle - Düzenle
+              </h1>
+              <button
+                type="button"
+                class="btn-close bg-white"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control border-0"
+                  id="img"
+                  placeholder="Oyun Fotoğrafı (URL)"
+                  aria-label="Oyun Fotoğrafı (URL)"
+                  required
+                />
+                <label for="img">Oyun Fotoğrafı (URL)</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control border-0"
+                  id="name"
+                  placeholder="Oyun Adı"
+                  maxlength="100"
+                  aria-label="Oyun Adı"
+                  required
+                />
+                <label for="name">Oyun Adı</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control border-0"
+                  id="releaseDate"
+                  placeholder="Çıkış Tarihi"
+                  aria-label="Çıkış Tarihi"
+                  required
+                />
+                <label for="releaseDate">Çıkış Tarihi</label>
+              </div>
+              <select
+                class="form-select form-select-md mb-3"
+                aria-label="Large select example"
+                id="category"
+              >
+                <option value="0" selected>Oyun Türü</option>
+                <option value="Platform" id="1">Platform</option>
+                <option value="Macera" id="2">Macera</option>
+                <option value="Simülasyon" id="3">Simülasyon</option>
+                <option value="Aksiyon" id="4">Aksiyon</option>
+                <option value="FPS" id="5">FPS</option>
+                <option value="Sosyal Çıkarım" id="6">Sosyal Çıkarım</option>
+                <option value="Korku" id="7">Korku</option>
+                <option value="Yarış" id="8">Yarış</option>
+              </select>
+              <div class="form-floating mb-3">
+                <textarea
+                  class="form-control border-0"
+                  placeholder="Oyun Açıklaması"
+                  id="description"
+                  maxlength="600"
+                  style="height: 150px"
+                  aria-label="Oyun Açıklaması"
+                  required
+                ></textarea>
+                <label for="description">Oyun Açıklaması</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control border-0"
+                  id="producer"
+                  placeholder="Yapımcı Firma"
+                  maxlength="100"
+                  aria-label="Yapımcı Firma"
+                  required
+                />
+                <label for="producer">Yapımcı Firma</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control border-0"
+                  id="url"
+                  placeholder="Oyun URL'i"
+                  aria-label="Oyun URL'i"
+                  required
+                />
+                <label for="url">Oyun URL'i</label>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-light"
+                data-bs-dismiss="modal"
+              >
+                Kapat
+              </button>
+              <button id="saveButton" type="submit" class="btn btn-primary">
+                Kaydet
+              </button>
+              <button
+                id="updateButton"
+                type="submit"
+                class="btn btn-warning"
+                data-bs-dismiss="modal"
+              >
+                Güncelle
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <main class="container mt-4">
+      <section class="row">
+        <aside class="filter-area col-lg-3 col-12">
+          <div class="filter mb-5">
+            <h3 class="fw-bold text-info">
+                <span class="me-5">Filtrele</span>
+                <span id="clearFilter" class="text-light bg-info px-2 rounded-circle ms-5" style="cursor: pointer;">&#10006;</span>
+            </h3>
+            <div class="category-filter">
+              <h5 class="text-primary fw-bold">Kategori</h5>
+              <select
+                name=""
+                id="categoryFilter"
+                class="w-100 border-1 p-2 rounded-1 mb-3"
+              >
+                <option value="all">Tüm Kategoriler</option>
+                <option value="Platform">Platform</option>
+                <option value="Macera">Macera</option>
+                <option value="Simülasyon">Simülasyon</option>
+                <option value="Aksiyon">Aksiyon</option>
+                <option value="FPS">FPS</option>
+                <option value="Sosyal Çıkarım">Sosyal Çıkarım</option>
+                <option value="Korku">Korku</option>
+                <option value="Yarış">Yarış</option>
+              </select>
+            </div>
+            <div>
+              <h5 class="text-primary fw-bold">Çıkış Tarihi</h5>
+              <input
+                type="number"
+                id="yearFilter"
+                class="form-control mb-3"
+                placeholder="Örn: 2020"
+                min="1980"
+                max="2025"
+              />
+            </div>
+            <button id="saveFilter" class="btn btn-primary">Filtrele</button>
+          </div>
+          <hr />
+          <div class="sort mb-3">
+            <h3 class="fw-bold text-info">Sırala</h3>
+            <label for="filter-sort" class="fs-5 text-primary fw-bold"
+              >Sırala :
+            </label>
+            <select
+              name="filter-sort"
+              id="filter-sort"
+              class="px-5 py-1 border ms-3"
+            >
+              <option value="sırala"></option>
+              <option value="a-to-z">A - Z</option>
+              <option value="z-to-a">Z - A</option>
+              <option value="date-oldest">Tarih (Eski)</option>
+              <option value="date-latest">Tarih (Yeni)</option>
+            </select>
+          </div>
+        </aside>
+        <section class="game-list col-lg-9 col-12">
+          <div id="gameCard" class="row mx-auto"></div>
+        </section>
+      </section>
+    </main>
+    <div
+      class="modal fade"
+      id="gameDetailModal"
+      tabindex="-1"
+      aria-labelledby="gameDetailModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title fw-bold text-info" id="gameDetailTitle"></h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <img id="gameDetailImg" class="img-fluid mb-3" src="" alt="" />
+            <p>
+              <strong class="text-primary">Kategori:</strong>
+              <span id="gameDetailCategory"></span>
+            </p>
+            <p>
+              <strong class="text-primary">Çıkış Tarihi:</strong>
+              <span id="gameDetailDate"></span>
+            </p>
+            <p>
+              <strong class="text-primary">Yapımcı:</strong>
+              <span id="gameDetailProducer"></span>
+            </p>
+            <p>
+              <strong class="text-primary">Açıklama:</strong>
+              <span id="gameDetailDescription"></span>
+            </p>
+            <a
+              id="gameDetailURL"
+              href="#"
+              target="_blank"
+              class="btn btn-info text-light"
+              >Resmi Siteye Git</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer py-5 text-center bg-primary text-white mt-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <p class="mb-0">
+              Copyright ©2025 All rights reserved | This website is made with
+              <img
+                src="https://img.icons8.com/?size=20&id=59805&format=png&color=d70000"
+              />
+              by Berfin Ela Kılıç.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/apiCall.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="./js/api.js"></script>
+    <script src="./js/app.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      (() => {
+        "use strict";
+        const forms = document.querySelectorAll(".needs-validation");
+        Array.from(forms).forEach((form) => {
+          form.addEventListener(
+            "submit",
+            (event) => {
+              if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+
+              form.classList.add("was-validated");
+            },
+            false
+          );
+        });
+      })();
+    </script>
+  </body>
+</html>

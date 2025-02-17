@@ -6,7 +6,7 @@ export class Game {
     description,
     category,
     steam_url,
-    image_url,
+    game_image,
     price
   ) {
     this.name = name;
@@ -15,7 +15,7 @@ export class Game {
     this.description = description;
     this.category = category;
     this.steam_url = steam_url;
-    this.image_url = image_url;
+    this.game_image = game_image;
     this.price = price;
   }
 }

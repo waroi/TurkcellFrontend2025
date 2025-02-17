@@ -116,6 +116,24 @@ nav * {
   opacity: 1;
 }
 
+.inputWhite {
+  border: 0;
+  transition: all 0.3s ease;
+  opacity: 0.7;
+  background: rgb(255, 255, 255);
+  border-radius: 5px;
+  box-shadow: -30px 20px 100px 1px rgb(255, 255, 255);
+}
+.inputWhite:hover {
+  opacity: 1;
+  background: rgb(255, 255, 255);
+  box-shadow: 0px 0px 2px 2px rgb(255, 255, 255);
+}
+.inputWhite:focus {
+  box-shadow: 0px 0px 2px 2px rgb(255, 255, 255);
+  opacity: 1;
+}
+
 .editBtn {
   transition: all 0.3s ease;
   position: relative;
@@ -156,6 +174,26 @@ nav * {
   box-shadow: 0px 0px 2px 2px rgb(255, 65, 40);
 }
 .deleteBtn:focus {
+  box-shadow: 0px 0px 2px 2px rgb(255, 65, 40);
+  opacity: 1;
+}
+
+.noButton {
+  transition: all 0.3s ease;
+  position: relative;
+  border: 0;
+  transition: all 0.3s ease;
+  opacity: 0.7;
+  background: rgb(255, 65, 40);
+  border-radius: 5px;
+  box-shadow: -30px -20px 100px 1px rgb(255, 65, 40);
+}
+.noButton:hover {
+  opacity: 1;
+  background: rgb(255, 65, 40);
+  box-shadow: 0px 0px 2px 2px rgb(255, 65, 40);
+}
+.noButton:focus {
   box-shadow: 0px 0px 2px 2px rgb(255, 65, 40);
   opacity: 1;
 }
