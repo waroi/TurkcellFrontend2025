@@ -4,7 +4,6 @@ document.getElementById("add-game-form").addEventListener("submit", function (e)
     const gameId = document.getElementById("game-id").value;
     const categorySelect = document.getElementById("game_category");
     const videoInput = document.getElementById("videoURL").value.trim();
-
     const newGame = {
         name: document.getElementById("name").value,
         description: document.getElementById("description").value,

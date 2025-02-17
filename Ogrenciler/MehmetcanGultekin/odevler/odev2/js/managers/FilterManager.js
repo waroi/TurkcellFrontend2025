@@ -3,9 +3,10 @@ export class FilterManager {
         this.gameService = gameService;
         this.displayCallback = displayCallback;
         this.categoryFilter = document.getElementById('categoryFilter');
-        this.searchInput = document.getElementById('searchInput');  
+        this.searchInput = document.getElementById('searchInput');
         
-        this.categoryFilter.addEventListener('change', this.handleFilter.bind(this));
+        const filterContext = this;  
+        this.categoryFilter.addEventListener('change', this.handleFilter.bind(filterContext));
     }
 
     handleFilter(event) {
