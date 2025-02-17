@@ -11947,6 +11947,8 @@ body.dark .navbar .nav-link {
   font-size: 0.9rem;
   color: #adb5bd;
   overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 body.dark #gameList .game-card {
