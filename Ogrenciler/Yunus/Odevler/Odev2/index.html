@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Küçük Oyun Arşivim</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body class="bg-dark">
+
+    <!-- Header and Game-Area Section -->
+    <div class="container rounded">
+        <header class="text-center my-4">
+            <h1 class="display-4"><i class="bi bi-controller"></i> Küçük Oyun Arşivim</h1>
+            <div class="stats-bar mt-3">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="stat-item">
+                            <i class="bi bi-collection"></i>
+                            <span id="totalGames">0</span> Toplam Oyun
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="stat-item">
+                            <i class="bi bi-tags"></i>
+                            <span id="totalCategories">0</span> Kategori
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="stat-item">
+                            <i class="bi bi-star"></i>
+                            <span id="favoriteGames">0</span> Favori
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <nav class="mb-4">
+            <div class="row g-3">
+                <div class="col-md-3">
+                    <button id="addGameBtn" class="btn w-100" data-bs-toggle="modal" data-bs-target="#addGameModal">
+                        <i class="bi bi-plus-circle"></i> Oyun Ekle
+                    </button>
+                </div>
+                <div class="col-md-3">
+                    <select id="categoryFilter" class="form-select">
+                        <option value="allcategories" selected>Tüm Kategoriler</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <select id="sortBy" class="form-select">
+                        <option value="Sıralama" selected>Sıralama</option>
+                        <option value="name-asc">Sırala A-Z</option>
+                        <option value="name-desc">Sırala Z-A</option>
+                        <option value="releaseDate">Çıkış Tarihi</option>
+                        <option value="rating">Değerlendirme</option>
+                        <option value="recently-added">Yeni Eklenenler</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <div class="input-group">
+                        <span class="input-group-text">
+                            <i class="bi bi-search"></i>
+                        </span>
+                        <input type="text" id="searchInput" class="form-control" placeholder="Oyun Arayın...">
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div id="game-archive-area" class="mt-4">
+            <h3><i class="bi bi-collection"></i> Oyun Arşivi</h3>
+            <div class="row" id="gameList">
+                <!-- Oyunlar buraya -->
+            </div>
+        </div>
+
+        <div id="fav-games-main" class="mt-4 p-3 border rounded">
+            <h3><i class="bi bi-tags"></i> Favori Oyunlar</h3>
+            <div class="fav-games row" id="favGames">
+                <!-- Favori Oyunlar da buraya gelecek -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Game add and edit Modal -->
+    <div class="modal fade" id="addGameModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content bg-dark text-light">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle">Yeni Oyun Ekle</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="gameForm">
+                        <div class="mb-3">
+                            <label for="gameName" class="form-label">Oyun İsmi</label>
+                            <input type="text" class="form-control" id="gameName">
+                        </div>
+                        <div class="mb-3">
+                            <label for="gameCategory" class="form-label">Kategori</label>
+                            <input type="text" class="form-control" id="gameCategory">
+                        </div>
+                        <div class="mb-3">
+                            <label for="gameDescription" class="form-label">Açıklama</label>
+                            <textarea class="form-control" id="gameDescription"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="gameReleaseDate" class="form-label">Çıkış Tarihi</label>
+                            <input type="date" class="form-control" id="gameReleaseDate">
+                        </div>
+                        <div class="mb-3">
+                            <label for="gameDeveloper" class="form-label">Geliştirici</label>
+                            <input type="text" class="form-control" id="gameDeveloper">
+                        </div>
+                        <div class="mb-3">
+                            <label for="gameRating" class="form-label">Değerlendirme (1-5)</label>
+                            <input type="number" class="form-control" id="gameRating" min="1" max="5">
+                        </div>
+                        <div class="mb-3">
+                            <label for="gameImage" class="form-label">Resim URL</label>
+                            <input type="url" class="form-control" id="gameImage">
+                        </div>
+                        <div class="mb-3">
+                            <label for="gameSteamUrl" class="form-label">Steam URL</label>
+                            <input type="url" class="form-control" id="gameSteamUrl">
+                        </div>
+                        <div class="mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="gameFavorite">
+                                <label class="form-check-label" for="gameFavorite">
+                                    Favorilere Ekle
+                                </label>
+                            </div>
+                        </div>
+                        <div class="text-end">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
+                            <button type="submit" id="saveGameBtn" class="btn btn-success">
+                                <i class="bi bi-save"></i> Kaydet
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Mmodal -->
+    <div class="modal fade" id="deleteConfirmModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark text-light">
+                <div class="modal-header">
+                    <h5 class="modal-title">Oyunu Sil</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Bu oyunu silmek istediğinizden emin misiniz?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="cancelDelete" data-bs-dismiss="modal">
+                        <i class="bi bi-x-circle"></i> İptal
+                    </button>
+                    <button type="button" class="btn btn-danger" id="confirmDelete">
+                        <i class="bi bi-trash"></i> Sil
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Details Modal -->
+    <div class="modal fade" id="gameDetailsModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content bg-dark text-light">
+                <div class="modal-header">
+                    <h5 class="modal-title">Oyun Detayları</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img id="detailGameImage" class="img-fluid rounded" src="" alt="">
+                        </div>
+                        <div class="col-md-8">
+                            <h3 id="detailGameName"></h3>
+                            <div id="detailGameRating" class="mb-2"></div>
+                            <p id="detailGameDescription"></p>
+                            <div class="game-info">
+                                <p><b>Geliştirici:</b> <span id="detailGameDeveloper"></span></p>
+                                <p><b>Kategori:</b> <span id="detailGameCategory"></span></p>
+                                <p><b>Çıkış Tarihi:</b> <span id="detailGameReleaseDate"></span></p>
+                                <p><b>Durum:</b> <span id="detailGameStatus"></span></p>
+                            </div>
+                            <div id="detailGameTags" class="mt-2"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a id="detailSteamLink" href="" target="_blank" class="btn">
+                        <i class="bi bi-steam"></i> Steam'de Görüntüle
+                    </a>
+                    <button type="button" class="btn" data-bs-dismiss="modal">Kapat</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Information Section -->
+    <section class="information" id="information">
+        <div class="container mt-4 p-3 border rounded">
+            <h3><i class="bi bi-info-circle"></i> Küçük Oyun Arşivim Hakkında Bilgi</h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>Küçük Oyun Arşivim Tarihçesi</h4>
+                    <p>Oyunlar tarih boyunca insanların eğlencesi, sosyalleşmesi ve öğrenmesi için kullanılan araçlar
+                        olmuştur. İlk dönemlerde el yapımı oyuncaklar ve tahta oyunlar ile başlayan oyun dünyası,
+                        teknolojinin gelişmesiyle birlikte elektronik oyunlara kadar evrilmiştir.</p>
+                </div>
+                <div class="col-md-6">
+                    <h4>Popüler Oyun Türleri</h4>
+                    <ul>
+                        <li>Aksiyon Oyunları</li>
+                        <li>Strateji Oyunları</li>
+                        <li>Rol Yapma Oyunları</li>
+                        <li>Spor Oyunları</li>
+                        <li>Macera Oyunları</li>
+                        <li>Simülasyon Oyunları</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Suggestion Section -->
+    <section class="suggestion" id="suggestion">
+        <div class="container mt-4 p3- border rounded">
+            <h3><i class="bi bi-lightbulb"></i> Oyun Önerileri</h3>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-12 my-3">
+                    <div class="card bg-dark text-light">
+                        <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2073850/header.jpg?t=1736512783"
+                            class="card-img-top img-fluid" alt="The Finals">
+                        <div class="card-body">
+                            <h5 class="card-title">The Finals</h5>
+                            <p class="card-text">Dünyaca ünlü, ücretsiz oynanabilen, savaş merkezli oyun şovu THE
+                                FINALS'a katılın! Değiştirebileceğiniz, faydalanabileceğiniz ve hatta yok edebileceğiniz
+                                sanal arenalarda takım arkadaşlarınızla birlikte savaşın.</p>
+                            <a href="https://store.steampowered.com/app/2073850/THE_FINALS/"
+                                class="btn btn-primary">Daha Fazla Bilgi</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12 my-3">
+                    <div class="card bg-dark text-light">
+                        <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/108600/header.jpg?t=1739309087"
+                            class="card-img-top img-fluid" alt="Project Zomboid">
+                        <div class="card-body">
+                            <h5 class="card-title">Project Zomboid</h5>
+                            <p class="card-text">Project Zomboid, zombi hayatta kalmanın en üst seviyesidir. Tek
+                                başınıza veya MP'de: hayatta kalma mücadelesinde yağmalama, inşa etme, zanaat yapma,
+                                savaşma, çiftçilik yapma ve balık tutma.</p>
+                            <a href="https://store.steampowered.com/app/108600/Project_Zomboid/"
+                                class="btn btn-primary">Daha Fazla Bilgi</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12 my-3">
+                    <div class="card bg-dark text-light">
+                        <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1943950/header.jpg?t=1721158394"
+                            class="card-img-top card-fluid" alt="Escape the Backrooms">
+                        <div class="card-body">
+                            <h5 class="card-title">Escape the Backrooms</h5>
+                            <p class="card-text">Escape the Backrooms, 1-4 oyunculu bir kooperatif korku keşif oyunudur.
+                                Varlıklardan ve diğer tehlikelerden kaçarken ürkütücü arka oda seviyelerinde gezin ve
+                                kaçmaya çalışın.</p>
+                            <a href="https://store.steampowered.com/app/1943950/Escape_the_Backrooms/"
+                                class="btn btn-primary">Daha Fazla Bilgi</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center mt-3 rounded" id="footer">
+        <p>&copy; 2025 Küçük Oyun Arşivim. Tüm Hakları Saklıdır. </p>
+        <div class="text-center">
+            <a href="https://github.com/yunusorak" target="_blank">github</a>
+            <a href="https://yunusorak.com" target="_blank">me</a>
+            <a href="https://www.linkedin.com/in/yunus-orak-258209157/" target="_blank">linkedin</a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/ui.js"></script>
+    <script src="assets/js/game.js"></script>
+    <script src="assets/js/gameService.js"></script>
+    <script src="assets/js/gameArchive.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
