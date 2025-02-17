@@ -72,12 +72,12 @@ class UI {
   static deleteSpeed = 50;
   static delayBetweenTexts = 2000;
   static gameCtn = document.getElementById("game-ctn");
-  
-  static deleteGame(gameId){
-    GameAPI.delete(`http://localhost:3000/games/${gameId}`).catch((err) => console.error("hata oluştu: "+err))
+
+  static deleteGame(gameId) {
+    GameAPI.delete(`http://localhost:3000/games/${gameId}`).catch((err) => console.error("hata oluştu: " + err))
   }
-  
-  static updateGame(game){
+
+  static updateGame(game) {
     selectedGameId = game.id;
     iTitle.value = game.title;
     iDesc.value = game.description;
@@ -97,13 +97,13 @@ class UI {
     const gImg = iImg.value;
     const gPub = iPub.value;
     const gSteam = iSteam.value;
-  
+
     // Formdaki alanların boş olup olmadığını kontrol et
     if (!gTitle || !gDesc || !gCat || !gDate || !gImg || !gPub || !gSteam) {
       alert("Lütfen tüm alanları doldurun.");
       return;
     }
-  
+
     // Güncellemek istediğimiz game objesini oluştur
     const updatedGame = {
       title: gTitle,
@@ -114,7 +114,7 @@ class UI {
       publisher: gPub,
       steamUrl: gSteam,
     };
-  
+
     // API'ye PUT isteği gönder
     GameAPI.put(`http://localhost:3000/games/${gameId}`, updatedGame)
       .then((response) => {
@@ -126,7 +126,7 @@ class UI {
         alert("Oyun güncellenirken bir hata oluştu.");
       });
   };
-  
+
   static createGameCard(game) {
     let cardWrap = document.createElement("div");
     cardWrap.className = "cardWrap col-lg-4";
@@ -183,7 +183,7 @@ class UI {
     editButton.setAttribute("data-bs-target", "#addGame");
     const editIcon = document.createElement("i");
     editIcon.className = "fa-solid fa-edit";
-    editButton.addEventListener("click", ()=>UI.updateGame(game));
+    editButton.addEventListener("click", () => UI.updateGame(game));
     const deleteButton = document.createElement("button");
     deleteButton.className = "btn btn-secondary rounded-end-pill";
     const deleteIcon = document.createElement("i");
@@ -207,9 +207,9 @@ class UI {
         cardWrap.remove();
       }
     });
-    
+
   }
-  
+
 
   static getOnUI(data) {
     console.log("API'den gelen veri:", data);

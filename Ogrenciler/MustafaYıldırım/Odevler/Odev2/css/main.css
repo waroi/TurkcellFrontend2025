@@ -11934,6 +11934,10 @@ body {
 .filters-container .btn-fav i {
   color: #a21f1f;
 }
+.filters-container .btn-fav i:hover {
+  color: white;
+  transition: all 0.4s;
+}
 .filters-container .btn-fav:hover {
   background: linear-gradient(135deg, #aa89f3, #7d75f4);
   transform: scale(1.05);
@@ -12065,6 +12069,10 @@ body {
 }
 .card .card-body .title i {
   color: #a21f1f;
+}
+.card .card-body .title i:hover {
+  color: white;
+  transition: all 0.4s;
 }
 .card .dropdown {
   position: absolute;

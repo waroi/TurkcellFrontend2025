@@ -106,6 +106,10 @@ body {
     border: none;
     i {
       color: #a21f1f;
+      &:hover {
+        color: white;
+        transition: all $transition-speed;
+      }
     }
 
     &:hover {
@@ -255,6 +259,10 @@ body {
     }
     .title i {
       color: #a21f1f;
+      &:hover {
+        color: white;
+        transition: all $transition-speed;
+      }
     }
   }
 

@@ -38,15 +38,30 @@ class UI {
     const filterContainer = document.getElementById('filterCollapseFilter')
     filterContainer.innerHTML = ''
 
+    let isFirstCategory = true
+
     categories.forEach(category => {
       const div = document.createElement('div')
-      div.className = 'form-check mt-3'
-      div.innerHTML = `
-        <input class="form-check-input" type="checkbox" id="${category}">
-        <label class="form-check-label fs-6" for="${category}">${category}</label>
-      `
-      const input = div.querySelector('input')
+      div.className = 'form-check'
+
+      if (isFirstCategory) {
+        div.classList.add('mt-3')
+        isFirstCategory = false
+      }
+
+      const input = document.createElement('input')
+      input.className = 'form-check-input'
+      input.type = 'checkbox'
+      input.id = category
       input.addEventListener('change', () => this.toggleCategory(category))
+
+      const label = document.createElement('label')
+      label.className = 'form-check-label fs-6'
+      label.htmlFor = category
+      label.textContent = category
+
+      div.appendChild(input)
+      div.appendChild(label)
       filterContainer.appendChild(div)
     })
   }
@@ -126,14 +141,17 @@ class UI {
         return games
     }
   }
-
   getSearchedGames () {
     const filteredAndSortedGames = this.getFilteredAndSortedGames()
-    return filteredAndSortedGames.filter(
-      game =>
+    return filteredAndSortedGames.filter(game => {
+      const searchTermLower = this.searchTerm.toLowerCase()
+      return (
         this.searchTerm === '' ||
-        game.name.toLowerCase().includes(this.searchTerm)
-    )
+        game.name.toLowerCase().includes(searchTermLower) ||
+        game.category.toLowerCase().includes(searchTermLower) ||
+        game.producer.toLowerCase().includes(searchTermLower)
+      )
+    })
   }
 
   renderGames (games) {
@@ -163,6 +181,19 @@ class UI {
     const title = document.createElement('h5')
     title.className = 'card-title mb-1 fs-5 fw-semibold'
     title.textContent = game.name
+
+    title.setAttribute('data-bs-toggle', 'modal')
+    title.setAttribute('data-bs-target', '#detailModal')
+
+    title.addEventListener('click', function () {
+      document.getElementById('modalTitle').textContent = game.name
+      document.getElementById('modalCategory').textContent = game.category
+      document.getElementById('modalYear').textContent = game.year
+      document.getElementById('modalProducer').textContent = game.producer
+      document.getElementById('modalDescription').textContent = game.description
+      document.getElementById('modalImage').src = game.imageUrl
+      document.getElementById('modalImage').alt = game.name
+    })
 
     const description = document.createElement('p')
     description.className = 'card-text mb-0 fs-6'
