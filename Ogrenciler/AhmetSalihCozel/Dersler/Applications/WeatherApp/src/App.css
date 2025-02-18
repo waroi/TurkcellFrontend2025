@@ -71,4 +71,12 @@ main {
 }
 
 #result {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: 400;
 }
