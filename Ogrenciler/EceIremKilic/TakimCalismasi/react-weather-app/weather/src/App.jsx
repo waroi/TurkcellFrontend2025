@@ -29,12 +29,24 @@ function App() {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
       const data = await response.json();
-      setWeather(data);
-      console.log(data); // Tüm hava durumu verilerini konsolda görebilirsin
+
+      
+      if (data.list && data.list.length > 0) {
+        const selectedWeather = data.list.find((item) =>
+          item.dt_txt.startsWith(date) 
+        );
+
+        if (selectedWeather) {
+          setWeather(selectedWeather);
+        } else {
+          setWeather(null); 
+        }
+      }
     } catch (error) {
-      console.error(error);
+      console.error("API hatası:", error);
     }
   };
+
 
   useEffect(() => {
     fetchData();
