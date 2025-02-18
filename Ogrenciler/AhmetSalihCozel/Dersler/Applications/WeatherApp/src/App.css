@@ -1,14 +1,14 @@
-svg g path:hover{
+svg g path:hover {
   background-color: blue;
 }
 
-.mainDiv{
+.mainDiv {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.turkeyMap{
+.turkeyMap {
   width: 900px;
   height: 600px;
 }
@@ -19,5 +19,9 @@ svg g path:hover{
 }
 
 #svg-turkiye-haritasi path:hover {
-  fill: #1094F6;
+  fill: #1094f6;
+}
+
+#svg-turkiye-haritasi .selected path {
+  fill: #6bbfff !important;
 }
