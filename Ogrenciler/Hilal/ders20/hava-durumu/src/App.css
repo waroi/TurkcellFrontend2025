@@ -1,0 +1,28 @@
+body {
+  background-image: url(/bg.jpg);
+}
+
+.weather-card {
+  background: rgba(255, 255, 255, 0.8);
+
+  border-radius: 16px;
+}
+
+.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.temperature-display {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.weather-icon {
+  width: 100px;
+  height: 100px;
+}
+
+.blue-icon {
+  color: #0288d1;
+}

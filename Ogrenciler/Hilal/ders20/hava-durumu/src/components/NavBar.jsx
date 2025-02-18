@@ -1,29 +1,51 @@
-import Button from "react-bootstrap/Button";
-import Container from "react-bootstrap/Container";
-import Form from "react-bootstrap/Form";
-import Navbar from "react-bootstrap/Navbar";
+import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
+import Form from 'react-bootstrap/Form';
+import Navbar from 'react-bootstrap/Navbar';
+import InputGroup from 'react-bootstrap/InputGroup';
 
-function NavBar({ setSearchValue, handleSearchButtonClick }) {
+function NavBar({ setSearchValue, handleSearchButtonClick, search }) {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    handleSearchButtonClick();
+  };
+
   return (
-    <>
-      <Navbar expand="lg" className="bg-body-tertiary mb-3">
-        <Container fluid>
-          <Navbar.Brand href="#">Weather App</Navbar.Brand>
-          <Form className="d-flex">
+    <Navbar expand='lg' className='weather-navbar'>
+      <Container>
+        <Navbar.Brand
+          href='#'
+          className='d-flex align-items-center navbar-dark'
+        >
+          <i className='bi bi-cloud-sun fs-3 me-2'></i>
+          <span className='fs-4'>Weather App</span>
+        </Navbar.Brand>
+        <Form onSubmit={handleSubmit} className='d-flex ms-auto'>
+          <InputGroup>
             <Form.Control
-              type="search"
-              placeholder="Search by city name"
-              className="ms-auto me-2"
-              aria-label="Search"
+              className='search-input'
+              type='search'
+              placeholder='Search by city name'
+              aria-label='Search'
+              value={search}
               onChange={(e) => setSearchValue(e.target.value)}
+              style={{
+                backgroundColor: 'transparent',
+                color: 'white',
+              }}
             />
-            <Button onClick={handleSearchButtonClick} variant="outline-success">
-              Search
+            <Button
+              variant='success'
+              onClick={handleSearchButtonClick}
+              type='submit'
+              style={{}}
+            >
+              <span>Search</span>
             </Button>
-          </Form>
-        </Container>
-      </Navbar>
-    </>
+          </InputGroup>
+        </Form>
+      </Container>
+    </Navbar>
   );
 }
 
