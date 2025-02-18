@@ -1,27 +1,71 @@
-import Card from "react-bootstrap/Card";
+import Card from 'react-bootstrap/Card';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 function WeatherCard({ cardData }) {
   return (
-    <Card style={{ width: "18rem" }} className="d-flex flex-row">
-      <Card.Img
-        variant="left"
-        src={cardData.imgURL}
-        className="object-fit-contain"
-      />
+    <Card className={'weather-card p-4'}>
       <Card.Body>
-        <Card.Title className="fs-1">{cardData.cityName}</Card.Title>
-        <Card.Text className="fs-5">{cardData.temperature} &#176;C</Card.Text>
-        <Card.Text>
-          {cardData.minTemp} &#176;C - {cardData.maxTemp} &#176;C
-        </Card.Text>
-        <Card.Text>
-          <i class="bi bi-wind me-2"></i>
-          {cardData.windSpeed}
-        </Card.Text>
-        <Card.Text>
-          <i class="bi bi-moisture me-2"></i> {cardData.humidity}
-        </Card.Text>
-        <Card.Text>{cardData.description}</Card.Text>
+        <Row>
+          <Col xs={12} md={6} className='weather-main-info'>
+            <h2 className='fw-bold'>
+              {cardData.cityName}, {cardData.country}
+            </h2>
+            <div className='temperature'>
+              <img
+                src={cardData.imgURL}
+                alt={cardData.description}
+                className='weather-icon'
+              />
+              <div>
+                <span
+                  className='current-temp display-4 fw-bold'
+                  style={{ color: '#ff5722' }}
+                >
+                  {cardData.temperature}°C
+                </span>
+                <p className='text-capitalize fst-italic mt-2 '>
+                  {cardData.description}
+                </p>
+              </div>
+            </div>
+            <div className='min-max d-flex flex-column'>
+              <span>
+                <i className='bi bi-thermometer-high'></i> {cardData.maxTemp}°C
+              </span>
+              <span>
+                <i className='bi bi-thermometer-low'></i> {cardData.minTemp}°C
+              </span>
+              <span>
+                <i className='bi bi-thermometer-half'></i> Feels like:{' '}
+                {cardData.feelsLike}°C
+              </span>
+            </div>
+          </Col>
+          <Col xs={12} md={6} className='weather-details py-3 px-2 mt-3'>
+            <div className='wind'>
+              <i className='bi bi-wind'></i>
+              <div>
+                <h4>Wind</h4>
+                <p>{cardData.windSpeed} m/s</p>
+              </div>
+            </div>
+            <div className='humidity'>
+              <i className='bi bi-moisture'></i>
+              <div>
+                <h4>Humidity</h4>
+                <p>{cardData.humidity}%</p>
+              </div>
+            </div>
+            <div className='pressure'>
+              <i className='bi bi-speedometer'></i>
+              <div>
+                <h4>Pressure</h4>
+                <p>{cardData.pressure} hPa</p>
+              </div>
+            </div>
+          </Col>
+        </Row>
       </Card.Body>
     </Card>
   );
