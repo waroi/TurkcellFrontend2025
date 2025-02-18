@@ -18,7 +18,7 @@ function App() {
   const fetchData = async () => {
     try {
       const response = await fetch(
-        `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${API_KEY}`
+        `https://api.openweathermap.org/data/2.5/forecast?q=${city}&lang=tr&units=metric&appid=${API_KEY}`
       );
       console.log("API Response Status:", response.status);
 
