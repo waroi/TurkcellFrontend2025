@@ -1,41 +1,46 @@
-import { useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import { Data } from '../fetch'
+import { useEffect, useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
+import { Data } from "../fetch";
+import { TurkeyMap } from "./components/TurkeyMap";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
+  const [weather, setWeather] = useState({});
 
-  useEffect(async()=>{
-    const data = await Data.get()
-    console.log(data)
-  },[])
+  useEffect(() => {
+    async function get() {
+      await fetch(
+        `https://api.openweathermap.org/data/2.5/weather?units=metric&lang=tr&appid=4d8fb5b93d4af21d66a2948710284366&q=Antalya`
+      )
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          setWeather(data);
+          console.log(weather);
+        });
+    }
+    get();
+
+    const sehirler = document.getElementsByTagName("g")[0].childNodes
+    console.log(sehirler)
+    sehirler.map((sehir)=>{
+      console.log(sehir)
+      const ilAdi = sehir.getAttribute("data-iladi")
+      sehir.appendChild(ilAdi)
+    })
+  }, []);
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="mainDiv">
+        <h1>Hava Durumu</h1>
+        <TurkeyMap></TurkeyMap>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
