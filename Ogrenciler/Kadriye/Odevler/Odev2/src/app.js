@@ -33,9 +33,9 @@ document.querySelector("#save").addEventListener("click", () => {
     alert("You cannot enter empty input!");
   }
 });
-// document
-//   .querySelector("#close")
-//   .addEventListener("click", () => clearInput(inputs));
+document
+  .querySelector("#close")
+  .addEventListener("click", () => clearInput(inputs));
 document.getElementById("search").addEventListener("click", () => {
   let input_value = document.getElementById("searchInput").value;
   if (input_value != "") {
