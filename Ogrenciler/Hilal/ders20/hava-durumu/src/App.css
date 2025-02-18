@@ -1,12 +1,11 @@
 body {
-  background-image: url(../public/bg.jpg);
+  background-image: url(/bg.jpg);
 }
 
 .weather-card {
   background: rgba(255, 255, 255, 0.8);
 
   border-radius: 16px;
-  max-width: 400px;
 }
 
 .search-input::placeholder {
@@ -24,7 +23,6 @@ body {
   height: 100px;
 }
 
-.weather-details i {
-  font-size: 30px;
+.blue-icon {
   color: #0288d1;
 }
