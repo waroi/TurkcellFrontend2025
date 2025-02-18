@@ -44,7 +44,6 @@ function App() {
 
   //* On Weather or Range Change
   useEffect(() => {
-    console.log(weather);
     if (weather) setData(weather.list[range - 1]);
   }, [weather, range]);
 
@@ -54,7 +53,7 @@ function App() {
       <input type="range" min="1" max="40" defaultValue="1" />
       <main>
         <TurkeyMap />
-        <WeatherCard data={data} />
+        <WeatherCard data={data} name={weather?.city?.name} />
       </main>
     </>
   );

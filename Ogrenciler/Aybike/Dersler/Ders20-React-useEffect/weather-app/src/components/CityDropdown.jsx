@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { citiesMap } from "../cityData/cities";
+import WeatherImage from "./WeatherImage";
 import APIRequest from "../client/request";
 
 function CityDropdown() {
 	const [selectedCity, setSelectedCity] = useState("");
-	const [weather, setWeather] = useState();
+	const [weather, setWeather] = useState(null);
 	const [latitude, setLatitude] = useState(null);
 	const [longitude, setLongitude] = useState(null);
 
@@ -13,10 +14,9 @@ function CityDropdown() {
 		setSelectedCity(cityId);
 
 		if (citiesMap[cityId]) {
-			const { name, latitude, longitude } = citiesMap[cityId];
+			const { latitude, longitude } = citiesMap[cityId];
 			setLatitude(latitude);
 			setLongitude(longitude);
-			console.log(name, latitude, longitude);
 		} else {
 			console.log("City not found in citiesMap");
 		}
@@ -44,7 +44,16 @@ function CityDropdown() {
 					</option>
 				))}
 			</select>
-			<h1>{weather && Math.floor((weather.main.temp - 32) / 1.8)}</h1>
+
+			{weather && (
+				<>
+				<h1>
+						{Math.floor((weather.main.temp - 32) / 1.8)}°C
+					</h1>
+					<WeatherImage weather={weather} />
+					
+				</>
+			)}
 		</>
 	);
 }
