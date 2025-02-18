@@ -1,10 +1,16 @@
-import { useState ,useEffect} from 'react'
+import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import { Data } from '../fetch'
 
 function App() {
   const [count, setCount] = useState(0)
+
+  useEffect(async()=>{
+    const data = await Data.get()
+    console.log(data)
+  },[])
 
   return (
     <>

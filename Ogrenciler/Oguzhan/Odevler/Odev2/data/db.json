@@ -2,78 +2,80 @@
   "games": [
     {
       "id": "1",
-      "gameName": "Baldur's Gate",
-      "description": "Müthiş Güzel",
+      "gameName": "Baldur's Gate 2",
+      "description": "Dungeons & Dragons evreninde geçen derinlemesine bir rol yapma oyunu.",
       "categoryIds": [
-        3,
-        null,
-        5,
-        2
+        6
       ],
-      "releaseDate": "2020-12-10",
-      "imageUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1086940/header.jpg?t=1737046196",
-      "developer": "EA Games",
-      "steamUrl": false,
-      "status": "",
-      "myPoint": "7"
+      "releaseDate": "2023-08-03",
+      "imageUrl": "https://cdn.cloudflare.steamstatic.com/steam/apps/1086940/header.jpg",
+      "developer": "Larian Studios",
+      "steamUrl": true,
+      "status": "https://store.steampowered.com/app/1086940/Baldurs_Gate_3/",
+      "myPoint": "10"
     },
     {
       "id": "2",
-      "gameName": "Vainglory",
-      "description": "MOBA",
+      "gameName": "Elden Ring",
+      "description": "Açık dünyada geçen, zorlu ve epik bir aksiyon RPG oyunu.",
       "categoryIds": [
         1,
-        4,
-        6
+        2,
+        4
       ],
-      "releaseDate": "2020-12-10",
-      "imageUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1086940/header.jpg?t=1737046196",
-      "developer": "EA Games",
-      "steamUrl": false,
-      "status": "true",
-      "myPoint": "7"
+      "releaseDate": "2022-02-25",
+      "imageUrl": "https://cdn.cloudflare.steamstatic.com/steam/apps/1245620/header.jpg",
+      "developer": "FromSoftware",
+      "steamUrl": "https://store.steampowered.com/app/1245620/ELDEN_RING/",
+      "isCompleted": false,
+      "myPoint": "10"
     },
     {
       "id": "3",
-      "gameName": "Dneme",
-      "description": "typicode",
+      "gameName": "Cyberpunk 2077",
+      "description": "Gelecekte geçen açık dünya rol yapma oyunu.",
       "categoryIds": [
         1,
-        4,
-        5,
+        2,
         8
       ],
-      "releaseDate": "2019-01-10",
-      "imageUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1086940/header.jpg?t=1737046196",
-      "developer": "EA Games",
-      "steamUrl": false,
-      "status": "",
-      "myPoint": "7"
+      "releaseDate": "2020-12-10",
+      "imageUrl": "https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/header.jpg",
+      "developer": "CD Projekt Red",
+      "steamUrl": "https://store.steampowered.com/app/1091500/Cyberpunk_2077/",
+      "isCompleted": true,
+      "myPoint": "9"
     },
     {
       "id": "4",
-      "gameName": "Bal",
-      "description": "typicode",
-      "categoryIds": [],
-      "releaseDate": "2020-12-10",
-      "imageUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1086940/header.jpg?t=1737046196",
-      "developer": "EA Games",
-      "steamUrl": true,
-      "status": "https://store.steampowered.com/app/1086940/Baldurs_Gate_3/",
-      "myPoint": "7"
+      "gameName": "The Witcher 3: Wild Hunt",
+      "description": "Geralt of Rivia'nın destansı hikayesini anlatan bir açık dünya RPG oyunu.",
+      "categoryIds": [
+        1,
+        2,
+        4
+      ],
+      "releaseDate": "2015-05-19",
+      "imageUrl": "https://cdn.cloudflare.steamstatic.com/steam/apps/292030/header.jpg",
+      "developer": "CD Projekt Red",
+      "steamUrl": "https://store.steampowered.com/app/292030/The_Witcher_3_Wild_Hunt/",
+      "isCompleted": true,
+      "myPoint": "10"
     },
     {
       "id": "5",
       "gameName": "Black Myth: Wukong",
       "description": "Çin mitolojisinden esinlenen aksiyon rol yapma oyunu.",
       "categoryIds": [
-        1
+        1,
+        2,
+        4
       ],
       "releaseDate": "2024-08-20",
       "imageUrl": "https://cdn.cloudflare.steamstatic.com/steam/apps/1599340/header.jpg",
-      "developer": "Gamer",
-      "steamUrl": false,
-      "status": "true",
+      "developer": "Game Science",
+      "steamUrl": "https://store.steampowered.com/app/1599340/Black_Myth_Wukong/",
+      "isCompleted": false,
       "myPoint": "9"
     },
     {
@@ -82,7 +84,7 @@
       "description": "Yoğun aksiyon ve iş birliğine dayalı bir nişancı oyunu.",
       "categoryIds": [
         1,
-        7
+        8
       ],
       "releaseDate": "2024-11-30",
       "imageUrl": "https://cdn.cloudflare.steamstatic.com/steam/apps/1643320/header.jpg",
@@ -92,19 +94,146 @@
       "myPoint": "8"
     },
     {
-      "id": "7",
-      "gameName": "Hades II",
-      "description": "Mitolojik temalı aksiyon roguelike oyununun devamı.",
+      "id": "8",
+      "gameName": "God of War",
+      "description": "Kratos ve oğlu Atreus'un İskandinav mitolojisindeki macerası.",
       "categoryIds": [
+        2,
+        4,
+        8
+      ],
+      "releaseDate": "2022-01-14",
+      "imageUrl": "https://cdn.cloudflare.steamstatic.com/steam/apps/1593500/header.jpg",
+      "developer": "Santa Monica Studio",
+      "steamUrl": "https://store.steampowered.com/app/1593500/God_of_War/",
+      "isCompleted": true,
+      "myPoint": "10"
+    },
+    {
+      "id": "9",
+      "gameName": "Red Dead Redemption 2",
+      "description": "Vahşi Batı'da geçen etkileyici bir açık dünya oyunu.",
+      "categoryIds": [
+        1,
         2,
         4
       ],
-      "releaseDate": "2024-12-10",
-      "imageUrl": "https://cdn.cloudflare.steamstatic.com/steam/apps/1643320/header.jpg",
-      "developer": "Supergiant Games",
-      "steamUrl": "https://store.steampowered.com/app/2041200/Hades_II/",
+      "releaseDate": "2018-10-26",
+      "imageUrl": "https://cdn.cloudflare.steamstatic.com/steam/apps/1174180/header.jpg",
+      "developer": "Rockstar Games",
+      "steamUrl": "https://store.steampowered.com/app/1174180/Red_Dead_Redemption_2/",
+      "isCompleted": false,
+      "myPoint": "10"
+    },
+    {
+      "id": "10",
+      "gameName": "Starfield",
+      "description": "Bethesda'nın uzay temalı büyük açık dünya RPG oyunu.",
+      "categoryIds": [
+        1,
+        2,
+        5
+      ],
+      "releaseDate": "2023-09-06",
+      "imageUrl": "https://cdn.cloudflare.steamstatic.com/steam/apps/1716740/header.jpg",
+      "developer": "Bethesda Game Studios",
+      "steamUrl": "https://store.steampowered.com/app/1716740/Starfield/",
+      "isCompleted": false,
+      "myPoint": "8"
+    },
+    {
+      "id": "11",
+      "gameName": "Resident Evil 4 Remake",
+      "description": "Leon S. Kennedy'nin klasik hayatta kalma-korku macerası modern grafiklerle geri döndü.",
+      "categoryIds": [
+        10,
+        8,
+        4
+      ],
+      "releaseDate": "2023-03-24",
+      "imageUrl": "https://cdn.cloudflare.steamstatic.com/steam/apps/2050650/header.jpg",
+      "developer": "Capcom",
+      "steamUrl": "https://store.steampowered.com/app/2050650/Resident_Evil_4/",
       "isCompleted": false,
       "myPoint": "9"
+    },
+    {
+      "id": "12",
+      "gameName": "Hollow Knight",
+      "description": "Büyüleyici bir dünyada geçen, zorlu bir metroidvania platform oyunu.",
+      "categoryIds": [
+        11,
+        4
+      ],
+      "releaseDate": "2017-02-24",
+      "imageUrl": "https://cdn.cloudflare.steamstatic.com/steam/apps/367520/header.jpg",
+      "developer": "Team Cherry",
+      "steamUrl": "https://store.steampowered.com/app/367520/Hollow_Knight/",
+      "isCompleted": false,
+      "myPoint": "10"
+    },
+    {
+      "id": "13",
+      "gameName": "Age of Empires IV",
+      "description": "Tarihi imparatorlukları yönettiğin klasik gerçek zamanlı strateji oyunu.",
+      "categoryIds": [
+        12,
+        5
+      ],
+      "releaseDate": "2021-10-28",
+      "imageUrl": "https://cdn.cloudflare.steamstatic.com/steam/apps/1466860/header.jpg",
+      "developer": "Relic Entertainment",
+      "steamUrl": "https://store.steampowered.com/app/1466860/Age_of_Empires_IV/",
+      "isCompleted": false,
+      "myPoint": "8"
+    },
+    {
+      "id": "14",
+      "gameName": "Devil May Cry 5",
+      "description": "Efsanevi hack & slash serisinin son oyunu, çılgın aksiyon sahneleriyle geliyor!",
+      "categoryIds": [
+        13,
+        4,
+        8
+      ],
+      "releaseDate": "2019-03-08",
+      "imageUrl": "https://cdn.cloudflare.steamstatic.com/steam/apps/601150/header.jpg",
+      "developer": "Capcom",
+      "steamUrl": "https://store.steampowered.com/app/601150/Devil_May_Cry_5/",
+      "isCompleted": false,
+      "myPoint": "9"
+    },
+    {
+      "id": "15",
+      "gameName": "Dead Space Remake",
+      "description": "Karanlık uzay istasyonunda geçen, gerilim dolu bir korku oyunu.",
+      "categoryIds": [
+        10,
+        8,
+        5
+      ],
+      "releaseDate": "2019-05-06",
+      "imageUrl": "https://cdn.cloudflare.steamstatic.com/steam/apps/1693980/header.jpg",
+      "developer": "Motive",
+      "steamUrl": false,
+      "status": "https://store.steampowered.com/app/1693980/Dead_Space/",
+      "myPoint": "9"
+    },
+    {
+      "id": "Drakensang8",
+      "gameName": "Drakensang",
+      "description": "Mmo",
+      "categoryIds": [
+        2,
+        7,
+        5
+      ],
+      "releaseDate": "2025-02-07",
+      "imageUrl": "https://cdn.cloudflare.steamstatic.com/steam/apps/1693980/header.jpg",
+      "developer": "Bigpoint",
+      "steamUrl": false,
+      "status": "true",
+      "myPoint": "8"
     }
   ],
   "categories": [
@@ -143,6 +272,22 @@
     {
       "id": "9",
       "name": "Bulmaca"
+    },
+    {
+      "id": "10",
+      "name": "Korku"
+    },
+    {
+      "id": "11",
+      "name": "Metroidvania"
+    },
+    {
+      "id": "12",
+      "name": "Strateji"
+    },
+    {
+      "id": "13",
+      "name": "Hack and Slash"
     }
   ]
 }
