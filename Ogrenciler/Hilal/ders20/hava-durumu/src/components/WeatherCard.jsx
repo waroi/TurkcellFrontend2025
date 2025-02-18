@@ -42,7 +42,7 @@ function WeatherCard({ cardData }) {
               </span>
             </div>
           </Col>
-          <Col xs={12} md={6} className='weather-details py-3 px-2 mt-3'>
+          <Col xs={12} md={6} className='weather-details'>
             <div className='wind'>
               <i className='bi bi-wind'></i>
               <div>
