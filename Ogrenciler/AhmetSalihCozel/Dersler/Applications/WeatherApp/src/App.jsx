@@ -6,32 +6,38 @@ import { Data } from "../fetch";
 import { TurkeyMap } from "./components/TurkeyMap";
 
 function App() {
-  const [count, setCount] = useState(0);
+  function get(city) {
+    fetch(
+      `https://api.openweathermap.org/data/2.5/weather?units=metric&lang=tr&appid=4d8fb5b93d4af21d66a2948710284366&q=${city.dataset.iladi}`
+    )
+      .then((response) => response.json())
+      .then((data) => setWeather(data));
+  }
+
   const [weather, setWeather] = useState({});
+  const [city, setCity] = useState();
 
   useEffect(() => {
-    async function get() {
-      await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?units=metric&lang=tr&appid=4d8fb5b93d4af21d66a2948710284366&q=Antalya`
-      )
-        .then((response) => {
-          return response.json();
-        })
-        .then((data) => {
-          setWeather(data);
-          console.log(weather);
-        });
-    }
-    get();
-
-    const sehirler = document.getElementsByTagName("g")[0].childNodes
-    console.log(sehirler)
-    sehirler.map((sehir)=>{
-      console.log(sehir)
-      const ilAdi = sehir.getAttribute("data-iladi")
-      sehir.appendChild(ilAdi)
-    })
+    document
+      .querySelectorAll("svg g[data-iladi]")
+      .forEach((sehir) =>
+        sehir.addEventListener("click", () => setCity(sehir))
+      );
   }, []);
+
+  useEffect(() => {
+    if (!city) return;
+
+    city.classList.add("selected");
+
+    get(city);
+
+    return () => city.classList.remove("selected");
+  }, [city]);
+
+  useEffect(() => {
+    console.log(weather);
+  }, [weather]);
 
   return (
     <>
