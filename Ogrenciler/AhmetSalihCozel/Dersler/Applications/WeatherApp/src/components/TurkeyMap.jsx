@@ -1,6 +1,6 @@
 import React from "react";
 
-export const TurkeyMap = () => {
+export default function TurkeyMap() {
   return (
     <div className="turkeyMap">
       <svg
@@ -681,4 +681,4 @@ export const TurkeyMap = () => {
       </svg>
     </div>
   );
-};
+}
