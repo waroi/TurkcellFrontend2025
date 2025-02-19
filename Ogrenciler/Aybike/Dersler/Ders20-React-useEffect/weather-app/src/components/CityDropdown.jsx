@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { citiesMap } from "../cityData/cities";
-import WeatherImage from "./WeatherImage";
 import APIRequest from "../client/request";
+import WeatherImage from "./WeatherImage";
 
 function CityDropdown() {
 	const [selectedCity, setSelectedCity] = useState("");
@@ -44,14 +44,10 @@ function CityDropdown() {
 					</option>
 				))}
 			</select>
-
 			{weather && (
 				<>
-				<h1>
-						{Math.floor((weather.main.temp - 32) / 1.8)}°C
-					</h1>
+					<h1>{Math.floor(weather.main.temp - 273.15)}°C</h1>
 					<WeatherImage weather={weather} />
-					
 				</>
 			)}
 		</>

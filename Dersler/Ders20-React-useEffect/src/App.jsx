@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Button from "./components/Button";
 import "./App.css";
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
       <h1 onClick={() => setCount(count + 1)}>
         React useEffect {count} kez tıklandı
       </h1>
+      <Button />
     </>
   );
 }

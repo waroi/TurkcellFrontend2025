@@ -8,18 +8,18 @@
 	border-radius: 20px;
 	padding: 2rem;
 	margin: 1rem auto;
-	background: linear-gradient(135deg, #00B4DB, #0083B0);
+	background: linear-gradient(135deg, #00b4db, #0083b0);
 	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 	color: white;
 	transition: all 0.3s ease;
-  }
-  
-  .weatherCard:hover {
+}
+
+.weatherCard:hover {
 	transform: translateY(-5px);
 	box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-  }
-  
-  .select {
+}
+
+.select {
 	width: 100%;
 	padding: 0.75rem;
 	border-radius: 10px;
@@ -30,40 +30,40 @@
 	margin-bottom: 1.5rem;
 	cursor: pointer;
 	transition: all 0.3s ease;
-  }
-  
-  .select:hover {
+}
+
+.select:hover {
 	background: rgba(255, 255, 255, 0.2);
-  }
-  
-  .select:focus {
+}
+
+.select:focus {
 	outline: none;
 	border-color: rgba(255, 255, 255, 0.5);
-  }
-  
-  .select option {
-	background: #0083B0;
+}
+
+.select option {
+	background: #0083b0;
 	color: white;
-  }
-  
-  .temperature {
+}
+
+.temperature {
 	font-size: 3.5rem;
 	font-weight: 700;
 	margin: 1rem 0;
 	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  }
-  
-  .imageContainer {
+}
+
+.imageContainer {
 	margin: 1rem 0;
 	padding: 1rem;
 	background: rgba(255, 255, 255, 0.1);
 	border-radius: 15px;
 	backdrop-filter: blur(5px);
-  }
-  
-  .weatherImage {
+}
+
+.weatherImage {
 	width: 150px;
 	height: 150px;
 	object-fit: cover;
 	border-radius: 10px;
-  }
+}
