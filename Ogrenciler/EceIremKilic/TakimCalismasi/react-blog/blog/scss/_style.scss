@@ -35,3 +35,21 @@ body {
     }
   }
 }
+.developers{
+  .avatar{
+    @include avatar;
+  }
+}
+.footer-links{
+  li{
+    a{
+      color: inherit;
+    }
+    transition: 500ms ease-in-out;
+    &:hover{
+      color: $success;
+      transform: translateY(-5px);
+    }
+  }
+  
+}

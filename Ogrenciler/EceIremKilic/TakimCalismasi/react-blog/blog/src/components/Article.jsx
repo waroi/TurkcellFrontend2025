@@ -8,7 +8,7 @@ const Article = () => {
           <div className="col-lg-4">
             <div className="card rounded-5 border-0 bg-white">
               <img
-                src="https://www.innova.com.tr/medias/yapay-zeka-ve-makine-ogrenimi-teknolojisi-gelismeleri.jpg"
+                src="https://mediatrend.mediamarkt.com.tr/wp-content/uploads/2024/04/Yapay-zeka-ve-gunluk-hayat.jpg"
                 className="card-img-top rounded-top-5"
                 alt="..."
               />

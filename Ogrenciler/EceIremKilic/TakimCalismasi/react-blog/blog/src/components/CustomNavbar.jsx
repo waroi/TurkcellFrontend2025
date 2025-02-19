@@ -2,7 +2,7 @@ import React from "react";
 
 const CustomNavbar = () => {
   return (
-      <nav className="navbar fixed-top p-3 navbar-expand-lg bg-body-tertiary">
+      <nav className="navbar fixed-top p-3 navbar-expand-lg bg-info">
         <div className="container">
           <a className="navbar-brand" href="#">
             Navbar
