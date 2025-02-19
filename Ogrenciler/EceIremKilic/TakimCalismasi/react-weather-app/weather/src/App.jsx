@@ -1,7 +1,12 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTemperatureQuarter, faDroplet, faWind } from "@fortawesome/free-solid-svg-icons";
+import {
+  faTemperatureQuarter,
+  faDroplet,
+  faWind,
+} from "@fortawesome/free-solid-svg-icons";
+import { get } from "immutable";
 
 const API_KEY = "58f3c3cbfbb22141a8c7a164b9db122e";
 
@@ -10,14 +15,21 @@ function App() {
   const [date, setDate] = useState("");
   const [weather, setWeather] = useState(null);
   const [forecast, setForecast] = useState([]);
+  const cities = [
+    "Adana", "Adıyaman", "Afyonkarahisar", "Aksaray", "Amasya", "Ankara", "Antalya", "Ardahan", "Artvin", "Aydın",
+    "Balıkesir", "Bartın", "Batman", "Bayburt", "Bilecik", "Bingöl", "Bitlis", "Bolu", "Burdur", "Bursa",
+    "Çanakkale", "Çankırı", "Çorum", "Denizli", "Diyarbakır", "Düzce", "Edirne", "Elazığ", "Erzincan", "Erzurum",
+    "Eskişehir", "Gaziantep", "Giresun", "Gümüşhane", "Hakkari", "Hatay", "Iğdır", "Isparta", "İstanbul", "İzmir",
+    "Kahramanmaraş", "Karabük", "Karaman", "Kastamonu", "Kayseri", "Kırıkkale", "Kırklareli", "Kırşehir", "Kocaeli",
+    "Konya", "Kütahya", "Malatya", "Manisa", "Mardin", "Mersin", "Muğla", "Muş", "Nevşehir", "Niğde",
+    "Ordu", "Osmaniye", "Rize", "Sakarya", "Samsun", "Şanlıurfa", "Siirt", "Sinop", "Sivas", "Şırnak",
+    "Tekirdağ", "Tokat", "Trabzon", "Tunceli", "Uşak", "Van", "Yalova", "Yozgat", "Zonguldak"
+    ];
 
-  const handleInputChange = (e) => {
+  const handleCityChange = (e) => {
     setCity(e.target.value);
   };
 
-  const handleDate = (e) => {
-    setDate(e.target.value);
-  };
 
   const fetchData = async () => {
     try {
@@ -58,24 +70,44 @@ function App() {
   useEffect(() => {
     fetchData();
   }, [date, city]);
+  
+  useEffect(() => {
+    document.body.className = getBackgroundClass();
+  }, [weather]);
+  
+  const getBackgroundClass = () => {
+    if (!weather) return "bg-default";
+    const description = weather.weather[0].description.toLowerCase();
+    if (description.includes("açık")) return "bg-clear-sky"; 
+    if (description.includes("bulut") || description.includes("kapalı")) return "bg-cloudy"; 
+    if (description.includes("yağmur")) return "bg-rainy";
+    if (description.includes("kar")) return "bg-snowy"; 
+    if (description.includes("fırtına")) return "bg-stormy"; 
+    if (description.includes("sis") || description.includes("duman")) return "bg-misty";
+    else return "bg-default"; 
+    };
+   
 
   return (
     <>
-      <div className="container bg-blue-1 p-5 rounded-5">
+      <div className="container bg-1 p-5 rounded-5">
         <h1 className="mb-3">Hava Durumu</h1>
-        <input
-          type="text"
-          placeholder="Şehir giriniz"
+        <select
           value={city}
-          onChange={handleInputChange}
+          onChange={handleCityChange}
           className="mb-3 me-2 rounded-pill p-2 border-0 text-center"
-        />
-
+        >
+          {cities.map((cityOption, index) => (
+            <option key={index} value={cityOption}>
+              {cityOption.charAt(0).toUpperCase() + cityOption.slice(1)}
+            </option>
+          ))}
+        </select>
         {weather ? (
           <div className="weatherCard">
             <h2>{city.toUpperCase()}</h2>
             <div className="row g-3 justify-content-around">
-              <div className="col-lg-5 p-3 rounded-5 bg-blue-2 border-0">
+              <div className="col-lg-5 p-3 rounded-5 bg-2 border-0">
                 <p className="display-2">{Math.floor(weather.main.temp)}°C</p>
                 <h4>
                   {weather.weather[0].description}{" "}
@@ -87,7 +119,7 @@ function App() {
                   </span>
                 </h4>
               </div>
-              <div className="col-lg-5 p-3 rounded-5 bg-blue-2 border-0">
+              <div className="col-lg-5 p-3 rounded-5 bg-2 border-0">
                 <p className="fs-4">{weather.dt_txt.slice(0, 10)}</p>
                 <p className="fs-5">
                   <span className="me-2">
@@ -95,7 +127,9 @@ function App() {
                   </span>
                   Hissedilen Sıcaklık
                 </p>
-                <p className="display-5">{Math.floor(weather.main.feels_like)}°C</p>
+                <p className="display-5">
+                  {Math.floor(weather.main.feels_like)}°C
+                </p>
                 <p className="fs-4">
                   <span className="me-2">
                     <FontAwesomeIcon icon={faDroplet} />
@@ -119,7 +153,7 @@ function App() {
         <div className="d-flex flex-row mt-4">
           {forecast.map((day, index) => (
             <div key={index} className="w-20 p-3">
-              <div className="card bg-blue-2 rounded-5 p-4 h-100">
+              <div className="card bg-3 border-0 rounded-5 text-white p-4 h-100">
                 <p className="fs-4 fw-bold">{day.dt_txt.slice(8, 10)}</p>
                 <p className="display-6">{Math.floor(day.main.temp)}°C</p>
                 <p>
