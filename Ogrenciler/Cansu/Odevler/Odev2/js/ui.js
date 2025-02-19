@@ -2,12 +2,12 @@ class UI {
 
     static async renderGames(games) {
         const gameList = document.getElementById("gameList");
-        gameList.textContent = ""; // Clear the game list before re-rendering
+        gameList.textContent = ""; 
 
         games.forEach(game => {
             const cardDiv = document.createElement("div");
             cardDiv.classList.add("col-md-4");
-            cardDiv.setAttribute("data-category", game.category); // Store category data
+            cardDiv.setAttribute("data-category", game.category); 
 
             const card = document.createElement("div");
             card.classList.add("card");
@@ -44,23 +44,23 @@ class UI {
             steamLink.target = "_blank";
             steamLink.style.marginRight = "10px";
 
-            // Delete Button
+           
             const btnDelete = document.createElement("button");
             btnDelete.classList.add("btn", "btn-danger", "delete-button");
             btnDelete.textContent = "Delete";
             btnDelete.dataset.id = game.id;;
             btnDelete.addEventListener("click", async () => {
                 await Storage.deleteGame(game.id);
-                await UI.renderGames(await Storage.fetchGames()); // Re-render games after deletion
+                await UI.renderGames(await Storage.fetchGames()); 
             });
-
-            // Update Button
+            btnDelete.style.marginRight = "5px";
+           
             const btnUpdate = document.createElement("button");
             btnUpdate.classList.add("btn", "btn-warning", "update-button");
             btnUpdate.textContent = "Update";
             btnUpdate.dataset.id = game.id;
             btnUpdate.addEventListener("click", () => {
-                // Populate the form with the existing game data for update
+              
                 document.getElementById("gameId").value = game.id;
                 document.getElementById("gameName").value = game.name;
                 document.getElementById("gameDescription").value = game.description;
@@ -69,7 +69,7 @@ class UI {
                 document.getElementById("gameImage").value = game.image;
                 document.getElementById("gameDeveloper").value = game.developer;
                 document.getElementById("gameSteamURL").value = game.steam_url;
-                // Open the modal for updating
+             
                 const gameModal = new bootstrap.Modal(document.getElementById("gameModal"));
                 gameModal.show();
             });
