@@ -6,7 +6,6 @@ const Input = ({ setCity }) => {
       type="text"
       placeholder="Şehir giriniz"
       onChange={(e) => {
-        console.log("Gelen değer:", e.target.value);
         setCity(e.target.value);
       }}
     />

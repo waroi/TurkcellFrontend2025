@@ -54,9 +54,7 @@ const ShowResults = ({ selectedWeather }) => {
       <h2>Sıcaklık: {selectedWeather.temp} °C</h2>
       <h3>Hissedilen: {selectedWeather.feels_like} °C</h3>
       <p>
-        <strong>
-          {selectedWeather.city} ({selectedWeather.country})
-        </strong>
+        <strong>{selectedWeather.city}</strong>
       </p>
 
       <div className={styles.textBody}>

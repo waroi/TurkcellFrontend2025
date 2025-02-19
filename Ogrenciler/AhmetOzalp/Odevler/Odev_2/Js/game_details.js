@@ -1,4 +1,6 @@
 const urlParams = new URLSearchParams(window.location.search);
+const gameId = urlParams.get("id");
+
 
     fetch(`http://localhost:3000/games/${gameId}`)
         .then(res => {

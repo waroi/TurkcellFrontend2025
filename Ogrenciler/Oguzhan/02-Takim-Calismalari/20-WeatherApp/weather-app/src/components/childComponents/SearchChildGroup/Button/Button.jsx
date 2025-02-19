@@ -1,6 +1,6 @@
 import styles from "./button.styles.module.css";
 
-const Button = ({ onClick }) => {
+const Button = ({ onClick}) => {
   return (
     <>
       <button className={styles.button} onClick={onClick}>
