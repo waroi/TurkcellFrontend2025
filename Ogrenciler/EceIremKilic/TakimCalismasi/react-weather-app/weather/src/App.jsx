@@ -11,7 +11,7 @@ import { get } from "immutable";
 const API_KEY = "58f3c3cbfbb22141a8c7a164b9db122e";
 
 function App() {
-  const [city, setCity] = useState("istanbul");
+  const [city, setCity] = useState("");
   const [date, setDate] = useState("");
   const [weather, setWeather] = useState(null);
   const [forecast, setForecast] = useState([]);
@@ -24,7 +24,7 @@ function App() {
     "Konya", "Kütahya", "Malatya", "Manisa", "Mardin", "Mersin", "Muğla", "Muş", "Nevşehir", "Niğde",
     "Ordu", "Osmaniye", "Rize", "Sakarya", "Samsun", "Şanlıurfa", "Siirt", "Sinop", "Sivas", "Şırnak",
     "Tekirdağ", "Tokat", "Trabzon", "Tunceli", "Uşak", "Van", "Yalova", "Yozgat", "Zonguldak"
-    ];
+  ];
 
   const handleCityChange = (e) => {
     setCity(e.target.value);
@@ -70,23 +70,23 @@ function App() {
   useEffect(() => {
     fetchData();
   }, [date, city]);
-  
+
   useEffect(() => {
     document.body.className = getBackgroundClass();
   }, [weather]);
-  
+
   const getBackgroundClass = () => {
     if (!weather) return "bg-default";
     const description = weather.weather[0].description.toLowerCase();
-    if (description.includes("açık")) return "bg-clear-sky"; 
-    if (description.includes("bulut") || description.includes("kapalı")) return "bg-cloudy"; 
+    if (description.includes("açık")) return "bg-clear-sky";
+    if (description.includes("bulut") || description.includes("kapalı")) return "bg-cloudy";
     if (description.includes("yağmur")) return "bg-rainy";
-    if (description.includes("kar")) return "bg-snowy"; 
-    if (description.includes("fırtına")) return "bg-stormy"; 
+    if (description.includes("kar")) return "bg-snowy";
+    if (description.includes("fırtına")) return "bg-stormy";
     if (description.includes("sis") || description.includes("duman")) return "bg-misty";
-    else return "bg-default"; 
-    };
-   
+    else return "bg-default";
+  };
+
 
   return (
     <>
@@ -97,6 +97,9 @@ function App() {
           onChange={handleCityChange}
           className="mb-3 me-2 rounded-pill p-2 border-0 text-center"
         >
+          <option value="" disabled selected>
+            Bir şehir seçiniz
+          </option>
           {cities.map((cityOption, index) => (
             <option key={index} value={cityOption}>
               {cityOption.charAt(0).toUpperCase() + cityOption.slice(1)}
@@ -150,9 +153,9 @@ function App() {
         )}
 
         {/* 5 günlük tahmini gösteren kartlar */}
-        <div className="d-flex flex-row mt-4">
+        <div className="row mt-4 g-3 justify-content-center">
           {forecast.map((day, index) => (
-            <div key={index} className="w-20 p-3">
+            <div key={index} className="col-12 col-sm-6 col-md-4 col-lg-2">
               <div className="card bg-3 border-0 rounded-5 text-white p-4 h-100">
                 <p className="fs-4 fw-bold">{day.dt_txt.slice(8, 10)}</p>
                 <p className="display-6">{Math.floor(day.main.temp)}°C</p>
