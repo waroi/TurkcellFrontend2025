@@ -6,7 +6,7 @@ const Article = () => {
       <div className="container">
         <div className="row mx-auto">
           <div className="col-lg-4">
-            <div className="card rounded-5 border-0 bg-secondary">
+            <div className="card rounded-5 border-0 bg-white">
               <img
                 src="https://www.innova.com.tr/medias/yapay-zeka-ve-makine-ogrenimi-teknolojisi-gelismeleri.jpg"
                 className="card-img-top rounded-top-5"
@@ -20,7 +20,10 @@ const Article = () => {
                       className="p-0 img-fluid rounded-circle avatar me-2"
                       alt=""
                     />
-                    <p className="mb-0">Ece</p>
+                    <div className="card-post-detail">
+                    <p className="mb-0">By → Ece</p>
+                    <p className="mb-0 text-muted date-text">13 Ağustos</p>
+                    </div>
                   </div>
                   <div className="col-4">
                     <p className="badge rounded-pill px-3 py-2 text-bg-primary flex-end">
@@ -28,10 +31,10 @@ const Article = () => {
                     </p>
                   </div>
                 </div>
-                <h5 className="card-title">
+                <h5 className="card-title text-dark fw-bolder mt-3">
                   Yapay Zeka: Geleceğin Teknolojisi
                 </h5>
-                <p className="card-text">
+                <p className="card-text text-muted">
                   Yapay zeka (AI), günümüzde hızla gelişen ve birçok sektörde
                   büyük değişimlere...
                 </p>
