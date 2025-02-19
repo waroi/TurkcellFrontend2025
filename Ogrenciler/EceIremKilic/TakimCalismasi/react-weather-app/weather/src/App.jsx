@@ -70,12 +70,6 @@ function App() {
           onChange={handleInputChange}
           className="mb-3 me-2 rounded-pill p-2 border-0 text-center"
         />
-        <input
-          type="date"
-          value={date}
-          onChange={handleDate}
-          className="mb-3 rounded-pill p-2 border-0 text-center"
-        />
 
         {weather ? (
           <div className="weatherCard">
@@ -122,11 +116,11 @@ function App() {
         )}
 
         {/* 5 günlük tahmini gösteren kartlar */}
-        <div className="row mt-4">
+        <div className="d-flex flex-row mt-4">
           {forecast.map((day, index) => (
-            <div key={index} className="col-md-2 p-3">
-              <div className="card bg-blue-2 rounded-5 p-3">
-                <p className="fs-5">{day.dt_txt.slice(0, 10)}</p>
+            <div key={index} className="w-20 p-3">
+              <div className="card bg-blue-2 rounded-5 p-4 h-100">
+                <p className="fs-4 fw-bold">{day.dt_txt.slice(8, 10)}</p>
                 <p className="display-6">{Math.floor(day.main.temp)}°C</p>
                 <p>
                   <img
