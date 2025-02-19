@@ -1,63 +1,60 @@
 import Card from 'react-bootstrap/Card';
 
-function WeatherCard({ currentWeather }) {
-  const {
-    name: cityName,
-    sys: { country },
-    weather,
-    main: { temp, feels_like, temp_min, temp_max, pressure, humidity },
-    wind: { speed: windSpeed },
-  } = currentWeather;
+function WeatherCard({ weatherData, error }) {
+  const { resolvedAddress: cityName, days } = weatherData;
 
-  return (
-    <Card className='weather-card p-4'>
+  const cards = days?.map((day, index) => (
+    <Card key={index} className='weather-card p-4 m-3'>
       <Card.Body className='d-flex align-items-center justify-content-evenly flex-wrap gap-3'>
-        <h2 className='fw-bold'>
-          {cityName}, {country}
-        </h2>
+        <div className='d-flex flex-column align-items-start'>
+          <h2 className='fw-bold'>{cityName}</h2>
+          <p className='fs-5 text-muted'>{day.datetime}</p>
+        </div>{' '}
         <div className='d-flex align-items-center gap-3 flex-wrap'>
           <img
-            src={`https://openweathermap.org/img/wn/${weather[0].icon}@2x.png`}
-            alt={weather[0].description}
+            src={`https://raw.githubusercontent.com/visualcrossing/WeatherIcons/refs/heads/main/PNG/1st%20Set%20-%20Color/${day.icon}.png`}
+            alt={day.icon}
             className='weather-icon'
           />
           <div>
             <p className=' display-5 fw-bold' style={{ color: '#ff6723' }}>
-              {Math.round(temp)}°C
+              {Math.round(day.temp)}°C
             </p>
             <p className='text-capitalize fst-italic fw-semibold  '>
-              {weather[0].description}
+              {day.conditions}
             </p>
           </div>
         </div>
         <div className='d-flex align-items-center gap-4 flex-wrap '>
           <span>
             <i className='bi bi-thermometer-high fs-3'></i>{' '}
-            {Math.round(temp_max)}°C
+            {Math.round(day.tempmax)}°C
           </span>
           <span>
             <i className='bi bi-thermometer-low fs-3'></i>{' '}
-            {Math.round(temp_min)}°C
+            {Math.round(day.tempmin)}°C
           </span>
           <span>
             <i className='bi bi-thermometer-half fs-3'></i> Feels like:{' '}
-            {Math.round(feels_like)}°C
+            {Math.round(day.feelslike)}°C
           </span>
           <span>
-            <i className='bi bi-wind blue-icon fs-3'></i> Wind: {windSpeed}m/s
+            <i className='bi bi-wind blue-icon fs-3'></i> Wind: {day.windspeed}
+            m/s
           </span>
           <span>
             <i className='bi bi-moisture blue-icon fs-3'></i> Humidity:{' '}
-            {humidity}%
+            {day.humidity}%
           </span>
           <span>
             <i className='bi bi-speedometer blue-icon fs-3'></i> Pressure:{' '}
-            {pressure} hPa
+            {day.pressure} hPa
           </span>
         </div>
       </Card.Body>
     </Card>
-  );
+  ));
+  return <> {cards}</>;
 }
 
 export default WeatherCard;

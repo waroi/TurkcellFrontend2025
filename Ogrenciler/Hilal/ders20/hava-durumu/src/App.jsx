@@ -6,17 +6,15 @@ import Container from 'react-bootstrap/esm/Container';
 import Row from 'react-bootstrap/esm/Row';
 import Col from 'react-bootstrap/esm/Col';
 import './App.css';
+import WeatherForm from './components/WeatherForm';
 
 function App() {
-  const [currentWeatherData, setCurrentWeatherData] = useState(null);
-  const [cardData, setCardData] = useState({});
-  const [search, setSearchValue] = useState('bursa');
+  const [weatherData, setWeatherData] = useState({});
+  const [searchValue, setSearchValue] = useState('bursa');
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  const handleSearchButtonClick = () => {
-    fetchWeatherData();
-  };
+  const [error, setError] = useState('null');
+  const [startDate, setStartDate] = useState('2025-02-19');
+  const [endDate, setEndDate] = useState('2025-02-26');
 
   const fetchWeatherData = async () => {
     setLoading(true);
@@ -24,34 +22,22 @@ function App() {
     try {
       const url = `${
         import.meta.env.VITE_WEATHER_API_URL
-      }/data/2.5/weather?q=${search}&appid=${
+      }/${searchValue}/${startDate}/${endDate}?unitGroup=metric&key=${
         import.meta.env.VITE_WEATHER_API_KEY
       }&units=metric`;
-      const response = await fetch(url);
+
+      const response = await fetch(url, {});
+
       if (!response.ok) {
         console.error('Hata Kodu:', response.status);
-        return;
       }
+
       const data = await response.json();
-      setCurrentWeatherData(data);
-      // setCardData({
-      //   cityName: data.city.name,
-      //   country: data.city.country,
-      //   temperature: Math.round(data.list[0].main.temp),
-      //   maxTemp: Math.round(data.list[0].main.temp_max),
-      //   minTemp: Math.round(data.list[0].main.temp_min),
-      //   windSpeed: data.list[0].wind.speed,
-      //   humidity: data.list[0].main.humidity,
-      //   description: data.list[0].weather[0].description,
-      //   main: data.list[0].weather[0].main,
-      //   imgURL: `https://openweathermap.org/img/wn/${data.list[0]?.weather[0].icon}@4x.png`,
-      //   pressure: data.list[0].main.pressure,
-      //   feelsLike: Math.round(data.list[0].main.feels_like),
-      // });
+      setWeatherData(data);
+
       console.log(data);
     } catch (error) {
-      console.error('API çağrısı başarısız:', error);
-      setError('API çağrısı başarısız.');
+      setError(`API çağrısı başarısız: ${error}`);
     } finally {
       setLoading(false);
     }
@@ -61,29 +47,31 @@ function App() {
     fetchWeatherData();
   }, []);
   return (
-    <>
-      <NavBar
-        handleSearchButtonClick={handleSearchButtonClick}
-        search={search}
-        setSearchValue={setSearchValue}
-      />
+    <Container>
+      <NavBar />
 
       <main className='d-flex justify-content-center align-items-center'>
         {loading ? (
           <p>Loading...</p>
         ) : (
-          <Container>
-            <Row className='my-4 justify-content-center'>
-              <Col xs={12}>
-                <WeatherCard currentWeather={currentWeatherData} />
-              </Col>
-            </Row>
-          </Container>
+          <Row className='my-4 justify-content-center'>
+            <Col xs={12}>
+              <WeatherForm
+                handleSearchButtonClick={fetchWeatherData}
+                searchValue={searchValue}
+                setSearchValue={setSearchValue}
+                startDate={startDate}
+                setStartDate={setStartDate}
+                endDate={endDate}
+                setEndDate={setEndDate}
+              />
+              <WeatherCard weatherData={weatherData} error={error} />
+            </Col>
+          </Row>
         )}
-        {error ? <p>{error}</p> : <></>}
       </main>
-      <footer></footer>
-    </>
+      {error && <p className='d-block fw-bold text-danger'>{error}</p>}
+    </Container>
   );
 }
 
