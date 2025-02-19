@@ -5,11 +5,9 @@ import Button from "../../childComponents/SearchChildGroup/Button/Button";
 const SearchParentGroup = ({ setCity, onClick, text }) => {
   return (
     <div className={styles.container}>
-      <Input>setCity={setCity}</Input>
+      <Input setCity={setCity} />
 
-      <Button>
-        onClick={onClick} text={text}
-      </Button>
+      <Button onClick={() => onClick()} text={text} />
     </div>
   );
 };

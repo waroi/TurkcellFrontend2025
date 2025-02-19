@@ -5,7 +5,10 @@ const Input = ({ setCity }) => {
       className={styles.input}
       type="text"
       placeholder="Şehir giriniz"
-      onChange={(e) => setCity(e.target.value)}
+      onChange={(e) => {
+        console.log("Gelen değer:", e.target.value);
+        setCity(e.target.value);
+      }}
     />
   );
 };

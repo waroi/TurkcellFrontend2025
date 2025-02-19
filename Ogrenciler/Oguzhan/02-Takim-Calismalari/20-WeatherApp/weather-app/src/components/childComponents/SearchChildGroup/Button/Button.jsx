@@ -1,10 +1,10 @@
 import styles from "./button.styles.module.css";
 
-const Button = ({ onClick, text }) => {
+const Button = ({ onClick }) => {
   return (
     <>
       <button className={styles.button} onClick={onClick}>
-        Gir
+        Ara
       </button>
     </>
   );
