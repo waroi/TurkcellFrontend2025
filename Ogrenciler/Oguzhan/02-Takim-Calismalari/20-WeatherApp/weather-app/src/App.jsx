@@ -6,39 +6,26 @@ import ShowResults from "./components/ShowResults/ShowResults";
 const API_KEY = "1773352110716adf6ec1a705cf532c04";
 
 function App() {
-  const [selectedWeather, setSelectedWeather] = useState(null);
-  const [city, setCity] = useState("Ankara");
+  const [selectedWeather, setSelectedWeather] = useState();
+  const [city, setCity] = useState();
 
   async function getWeather(city) {
-    if (typeof city !== "string") {
-      console.error("HATA: city bir string değil!", city);
-      return;
-    }
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
-
-    console.log("API Request URL:", url);
 
     await fetch(url)
       .then((response) => response.json())
       .then((data) => {
-        if (data.cod === 200) {
-          setSelectedWeather({
-            date: new Date(data.dt * 1000).toLocaleDateString("tr-TR"),
-            day: new Date(data.dt * 1000).toLocaleDateString("tr-TR", {
-              weekday: "long",
-            }),
-            temp: data.main.temp,
-            feels_like: data.main.feels_like,
-            description: data.weather[0].description,
-            humidity: data.main.humidity,
-            min: data.main.temp_min,
-            max: data.main.temp_max,
-            country: data.sys.country,
-            city: data.name,
-          });
-        } else {
-          setSelectedWeather(null);
-        }
+        setSelectedWeather({
+          date: new Date(data.dt * 1000).toLocaleDateString("tr-TR"),
+          day: new Date(data.dt * 1000).toLocaleDateString("tr-TR", {
+            weekday: "long",
+          }),
+          temp: data.main.temp,
+          feels_like: data.main.feels_like,
+          description: data.weather[0].description,
+          humidity: data.main.humidity,
+          city: data.name,
+        });
       })
       .catch((err) => console.log(err));
   }
@@ -50,7 +37,6 @@ function App() {
         <div className="input-container">
           <SearchParentGroup
             setCity={setCity}
-            city={city}
             onClick={() => getWeather(city)}
           />
         </div>
