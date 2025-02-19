@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  max-width: 100%;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.app-container {
+  margin: 0 auto;
+  background-image: url(assets/hava.webp);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-title {
+  font-size: 40px;
+  margin-bottom: 27px;
+  color: rgb(0, 81, 97);
+}
+
+.input-container {
+  margin-bottom: 60px;
+}

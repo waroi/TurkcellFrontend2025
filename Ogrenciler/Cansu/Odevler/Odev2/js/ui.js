@@ -8,6 +8,7 @@ class UI {
             const cardDiv = document.createElement("div");
             cardDiv.classList.add("col-md-4");
             cardDiv.setAttribute("data-category", game.category); // Store category data
+            cardDiv.id = `game-card-${game.id}`;
 
             const card = document.createElement("div");
             card.classList.add("card");
@@ -48,11 +49,12 @@ class UI {
             const btnDelete = document.createElement("button");
             btnDelete.classList.add("btn", "btn-danger", "delete-button");
             btnDelete.textContent = "Delete";
-            btnDelete.dataset.id = game.id;;
+            btnDelete.dataset.id = game.id;
             btnDelete.addEventListener("click", async () => {
                 await Storage.deleteGame(game.id);
                 await UI.renderGames(await Storage.fetchGames()); // Re-render games after deletion
             });
+            btnDelete.style.marginRight="5px";
 
             // Update Button
             const btnUpdate = document.createElement("button");
@@ -69,7 +71,8 @@ class UI {
                 document.getElementById("gameImage").value = game.image;
                 document.getElementById("gameDeveloper").value = game.developer;
                 document.getElementById("gameSteamURL").value = game.steam_url;
-                // Open the modal for updating
+                
+                editingGameId = game.id;
                 const gameModal = new bootstrap.Modal(document.getElementById("gameModal"));
                 gameModal.show();
             });
@@ -80,7 +83,24 @@ class UI {
             gameList.append(cardDiv);
         });
     }
+
+    static updateGameCard(gameId, updatedGame) {
+        const cardDiv = document.getElementById(`game-card-${gameId}`);
+        if (!cardDiv) return;
+
+        cardDiv.querySelector(".card-title").textContent = updatedGame.name;
+        cardDiv.querySelector(".card-text").textContent = updatedGame.description;
+        cardDiv.querySelector(".card-date").textContent = `Release Date: ${updatedGame.release_date}`;
+        cardDiv.querySelector("img").src = updatedGame.image;
+        cardDiv.querySelector("p").textContent = `Developer: ${updatedGame.developer}`;
+        cardDiv.querySelector("a").href = updatedGame.steam_url;
+    }
 }
+
+
+
+
+
 
 
 
