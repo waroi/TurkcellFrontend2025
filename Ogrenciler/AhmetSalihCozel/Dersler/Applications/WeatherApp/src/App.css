@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap");
+
 * {
   padding: 0;
   margin: 0;
@@ -5,11 +7,16 @@
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: "Lexend", sans-serif;
+  min-height: 100vh;
+  background-image: linear-gradient(160deg, #005dc7 0%, #0088f7 100%);
 
-  --gray: #d8d7e6;
-  --hover: #1094f6;
-  --selected: #3258ff;
+  --white: #ffffff;
+  --light-gray: #cde8ff;
+  --light-blue: #6ab7ff;
+  --dark-blue: #00287e;
+
+  color: var(--white);
 }
 
 #root {
@@ -21,62 +28,99 @@ body {
   gap: 50px;
 }
 
+h1 {
+  font-size: 40px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
 input {
   -webkit-appearance: none;
   width: 50%;
   height: 25px;
-  background: var(--gray);
+  background: var(--light-blue);
   border-radius: 25px;
+  margin-bottom: 50px;
 }
 
 input::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  background: var(--hover);
+  width: 35px;
+  height: 35px;
+  border-radius: 100%;
+  background: var(--dark-blue);
   cursor: pointer;
   transition: background 0.5s;
 }
 
 input::-webkit-slider-thumb:active {
-  background: var(--selected);
+  background: var(--dark-blue);
 }
 
 main {
   width: 100%;
+  padding: 0 100px;
   display: grid;
-  gap: 50px;
+  gap: 100px;
   grid-template-columns: 7fr 3fr;
 }
 
-.turkeyMap {
+#turkish-map {
   width: 100%;
   height: auto;
 }
 
-.turkeyMap path {
+#turkish-map path {
   cursor: pointer;
-  fill: var(--gray);
-  transition: fill 0.3s;
+  fill: var(--light-blue);
+  transform-origin: unset;
+  transition: fill 0.3s, transform 0.3s;
 }
 
-.turkeyMap path:hover {
-  fill: var(--hover);
+#turkish-map path:hover {
+  fill: var(--light-gray);
 }
 
-.turkeyMap .selected path {
-  fill: var(--selected) !important;
+#turkish-map .selected path {
+  transform: translateZ(50px);
+  fill: var(--white) !important;
 }
 
-#result {
+section {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 10px;
 }
 
 h2 {
-  font-size: 30px;
-  font-weight: 400;
+  font-size: 60px;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+h3,
+h4 {
+  font-size: 25px;
+}
+
+span {
+  font-size: 120px;
+  font-weight: 100;
+}
+
+i {
+  font-size: 150px;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 1199px) {
+  input {
+    margin-bottom: 0;
+  }
+
+  main {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
 }

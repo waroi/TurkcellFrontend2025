@@ -1,0 +1,1 @@
+const url = "https://api.openweathermap.org/data/2.5/weather?q=samsun&appid=c3b13fd51e85ce381f9fadd96babb612&units=metric";
