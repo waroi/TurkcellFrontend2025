@@ -48,7 +48,7 @@ function App() {
           }
         });
 
-        setForecast(dailyForecast.slice(0, 5)); 
+        setForecast(dailyForecast.slice(0, 5));
       }
     } catch (error) {
       console.error("API hatası:", error);
@@ -124,7 +124,7 @@ function App() {
         {/* 5 günlük tahmini gösteren kartlar */}
         <div className="row mt-4">
           {forecast.map((day, index) => (
-            <div key={index} className="col-md-3 p-3">
+            <div key={index} className="col-md-2 p-3">
               <div className="card bg-blue-2 rounded-5 p-3">
                 <p className="fs-5">{day.dt_txt.slice(0, 10)}</p>
                 <p className="display-6">{Math.floor(day.main.temp)}°C</p>
