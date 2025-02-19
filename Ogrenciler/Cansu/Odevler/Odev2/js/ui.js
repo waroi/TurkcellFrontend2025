@@ -54,6 +54,7 @@ class UI {
                 await Storage.deleteGame(game.id);
                 await UI.renderGames(await Storage.fetchGames()); // Re-render games after deletion
             });
+            btnDelete.style.marginRight="5px";
 
             // Update Button
             const btnUpdate = document.createElement("button");

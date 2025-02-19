@@ -51,7 +51,7 @@ function setupEventListeners() {
             }
         });
     }
-
+ 
     function applyFiltersAndSort() {
         Storage.fetchGames().then(allGames => {
             const selectedCategory = categorySelect.value;
