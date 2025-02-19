@@ -1,4 +1,4 @@
-let editingGameId = null;  
+let editingGameId = null;  // Global olarak tanımlandı
 
 document.addEventListener("DOMContentLoaded", async () => {
     try {
@@ -33,19 +33,19 @@ function setupEventListeners() {
             };
 
             try {
-                if (editingGameId) { 
+                if (editingGameId) {  // Eğer oyun güncelleniyorsa
                     await Storage.updateGame(editingGameId, newGame);
                     UI.updateGameCard(editingGameId, newGame);
-                    editingGameId = null;  
-                } else { 
+                    editingGameId = null;  // Güncellenmiş ID'yi sıfırla
+                } else {  // Yeni oyun ekleniyorsa
                     const addedGame = await Storage.addGame(newGame);
                     UI.addGameCard(addedGame);
                 }
 
-                await UI.renderGames(await Storage.fetchGames()); 
-                addGameForm.reset(); 
+                await UI.renderGames(await Storage.fetchGames()); // Oyunları yeniden render et
+                addGameForm.reset();  // Formu sıfırla
                 const modal = bootstrap.Modal.getInstance(document.getElementById('gameModal'));
-                modal.hide(); 
+                modal.hide(); // Modal'ı kapat
             } catch (error) {
                 console.error("🔥ERROR: An error occurred while adding or updating the game!", error);
             }
