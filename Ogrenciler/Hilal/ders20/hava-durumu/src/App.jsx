@@ -12,13 +12,19 @@ function App() {
   const [weatherData, setWeatherData] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("null");
-
+  const date = new Date();
+  const currentDate = date.toJSON().slice(0, 10);
+  const laterDate = new Date(
+    `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate() + 5}`
+  )
+    .toJSON()
+    .slice(0, 10);
   const { resolvedAddress: cityName, days } = weatherData;
 
   const fetchWeatherData = async (
     searchValue = "bursa",
-    endDate = "2025-02-26",
-    startDate = "2025-02-19"
+    endDate = laterDate,
+    startDate = currentDate
   ) => {
     setLoading(true);
     setError(null);
@@ -35,7 +41,6 @@ function App() {
       }
       const data = await response.json();
       setWeatherData(data);
-      console.log(data);
     } catch (error) {
       setError(`API çağrısı başarısız: ${error}`);
       console.log(error);
@@ -61,6 +66,8 @@ function App() {
           <Row className="my-4 justify-content-center">
             <Col xs={12}>
               <WeatherForm handleSearchButtonClick={handleSearch} />
+            </Col>
+            <Col xs={12}>
               {days &&
                 days?.map((day, index) => (
                   <WeatherCard
