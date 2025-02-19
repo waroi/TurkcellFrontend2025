@@ -1,0 +1,82 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+
+  --gray: #d8d7e6;
+  --hover: #1094f6;
+  --selected: #3258ff;
+}
+
+#root {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+  gap: 50px;
+}
+
+input {
+  -webkit-appearance: none;
+  width: 50%;
+  height: 25px;
+  background: var(--gray);
+  border-radius: 25px;
+}
+
+input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: var(--hover);
+  cursor: pointer;
+  transition: background 0.5s;
+}
+
+input::-webkit-slider-thumb:active {
+  background: var(--selected);
+}
+
+main {
+  width: 100%;
+  display: grid;
+  gap: 50px;
+  grid-template-columns: 7fr 3fr;
+}
+
+.turkeyMap {
+  width: 100%;
+  height: auto;
+}
+
+.turkeyMap path {
+  cursor: pointer;
+  fill: var(--gray);
+  transition: fill 0.3s;
+}
+
+.turkeyMap path:hover {
+  fill: var(--hover);
+}
+
+.turkeyMap .selected path {
+  fill: var(--selected) !important;
+}
+
+#result {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: 400;
+}

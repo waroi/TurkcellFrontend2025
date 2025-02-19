@@ -35,6 +35,25 @@ class Storage {
         }
     }
 
+    static async updateGame(id, updatedGame) {
+        try {
+            const response = await fetch(`http://localhost:3000/games/${id}`, {
+                method: "PUT", // PUT request for updating an existing resource
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(updatedGame), // New game data to update
+            });
+
+            if (!response.ok) {
+                throw new Error(`Game could not be updated! Error code: ${response.status}`);
+            }
+
+            return await response.json(); // Return the updated game object
+        } catch (error) {
+            console.error("An error occurred while updating the game:", error);
+            return null;
+        }
+    }
+
     static async deleteGame(id) {
         try {
             const response = await fetch(`http://localhost:3000/games/${id}`, { method: "DELETE" });
@@ -50,5 +69,10 @@ class Storage {
         }
     }
 }
+
+
+
+
+
 
 
