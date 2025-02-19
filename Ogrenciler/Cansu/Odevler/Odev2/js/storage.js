@@ -1,4 +1,5 @@
 class Storage {
+   
     static async fetchGames() {
         try {
             const response = await fetch("http://localhost:3000/games");
@@ -8,7 +9,7 @@ class Storage {
             }
 
             const games = await response.json();
-            console.log("Games drawn:", games);
+            console.log("Games fetched:", games);
             return games;
         } catch (error) {
             console.error("Error while loading games:", error);
@@ -16,6 +17,7 @@ class Storage {
         }
     }
 
+   
     static async addGame(game) {
         try {
             const response = await fetch("http://localhost:3000/games", {
@@ -38,19 +40,19 @@ class Storage {
     static async updateGame(id, updatedGame) {
         try {
             const response = await fetch(`http://localhost:3000/games/${id}`, {
-                method: "PUT", // PUT request for updating an existing resource
+                method: "PUT", 
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(updatedGame), // New game data to update
+                body: JSON.stringify(updatedGame), 
             });
 
             if (!response.ok) {
                 throw new Error(`Game could not be updated! Error code: ${response.status}`);
             }
 
-            return await response.json(); // Return the updated game object
+            return await response.json(); 
         } catch (error) {
             console.error("An error occurred while updating the game:", error);
-            return null;
+            return null; 
         }
     }
 
@@ -65,10 +67,11 @@ class Storage {
             return true; 
         } catch (error) {
             console.error("An error occurred while deleting the game:", error);
-            return false;
+            return false; 
         }
     }
 }
+
 
 
 
