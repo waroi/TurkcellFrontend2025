@@ -52,6 +52,32 @@ function App() {
     fetchWeather();
   }, [debouncedCity]);
 
+  const getWeatherEmoji = (description) => {
+    switch (description) {
+      case 'clear sky':
+        return '☀️';
+      case 'few clouds':
+        return '🌤️';
+      case 'scattered clouds':
+        return '🌥️';
+      case 'broken clouds':
+        return '☁️';
+      case 'shower rain':
+        return '🌧️';
+      case 'rain':
+        return '🌧️';
+      case 'thunderstorm':
+        return '⛈️';
+      case 'snow':
+        return '❄️';
+      case 'mist':
+      case 'fog':
+        return '🌫️';
+      default:
+        return '🌈';
+    }
+  };
+
   return (
     <div className="App">
       <h1>Weather App</h1>
@@ -69,7 +95,7 @@ function App() {
         <p className="loading">Yükleniyor...</p>
       ) : weather ? (
         <div className="weather-info">
-          <h2>{weather.name}</h2>
+          <h2>{weather.name}{getWeatherEmoji(weather.weather[0].description)}</h2>
           <p>Sıcaklık: {weather.main.temp}°C</p>
           <p>Açıklama: {weather.weather[0].description}</p>
           <p>Hissedilen: {weather.main.feels_like}°C</p>

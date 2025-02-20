@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.post-card {
+  overflow: hidden;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.post-image {
+  max-width: 200px;
+  object-fit: cover;
+}
+
+.post-description {
+  color: #555;
+}
+
+.post-footer {
+  font-size: 12px;
+  border-bottom: 1px solid #bebdbd;
+}
+
+.sidebar {
+  width: 250px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+.profile-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.description h3 {
+  color: #333;
+}
+
+.description p {
+  color: #666;
+}
+
+.topics h4 {
+  color: #333;
+}
+.topics li {
+  list-style: none;
+  padding: 8px 0;
+  cursor: pointer;
+}
+footer {
+  font-size: 0.8rem;
+  color: #666;
+}

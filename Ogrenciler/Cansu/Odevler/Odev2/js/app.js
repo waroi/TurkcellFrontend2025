@@ -1,3 +1,5 @@
+let editingGameId = null;  // Global olarak tanımlandı
+
 document.addEventListener("DOMContentLoaded", async () => {
     try {
         await UI.renderGames(await Storage.fetchGames());
@@ -16,8 +18,6 @@ function setupEventListeners() {
     const darkModeToggle = document.getElementById("darkModeToggle");
     const developerSelect = document.getElementById("developerSelect");
 
-    let editingGameId = null;  
-
     if (addGameForm) {
         addGameForm.addEventListener("submit", async (event) => {
             event.preventDefault();
@@ -33,39 +33,32 @@ function setupEventListeners() {
             };
 
             try {
-                if (editingGameId) {
-                    
+                if (editingGameId) {  // Eğer oyun güncelleniyorsa
                     await Storage.updateGame(editingGameId, newGame);
-                    editingGameId = null; 
-                } else {
-                  
-                    await Storage.addGame(newGame);
+                    UI.updateGameCard(editingGameId, newGame);
+                    editingGameId = null;  // Güncellenmiş ID'yi sıfırla
+                } else {  // Yeni oyun ekleniyorsa
+                    const addedGame = await Storage.addGame(newGame);
+                    UI.addGameCard(addedGame);
                 }
 
-     
-                await UI.renderGames(await Storage.fetchGames());
-                addGameForm.reset();
-                
-               
+                await UI.renderGames(await Storage.fetchGames()); // Oyunları yeniden render et
+                addGameForm.reset();  // Formu sıfırla
                 const modal = bootstrap.Modal.getInstance(document.getElementById('gameModal'));
-                modal.hide();
+                modal.hide(); // Modal'ı kapat
             } catch (error) {
                 console.error("🔥ERROR: An error occurred while adding or updating the game!", error);
             }
         });
     }
-
-    
-    const applyFiltersAndSort = async () => {
-        try {
-            let allGames = await Storage.fetchGames();
-
+ 
+    function applyFiltersAndSort() {
+        Storage.fetchGames().then(allGames => {
             const selectedCategory = categorySelect.value;
             if (selectedCategory !== "all") {
                 allGames = allGames.filter(game => game.category === selectedCategory);
             }
 
-         
             const selectedCode = developerSelect.value;
             const developerMap = {
                 "dvp": "Tümü",
@@ -86,7 +79,6 @@ function setupEventListeners() {
                 allGames = allGames.filter(game => game.developer === selectedDeveloper);
             }
 
-
             const sortOption = sortSelect.value;
             switch (sortOption) {
                 case "name_asc":
@@ -103,12 +95,11 @@ function setupEventListeners() {
                     break;
             }
 
-           
             UI.renderGames(allGames);
-        } catch (error) {
+        }).catch(error => {
             console.error("🔥ERROR: An error occurred while applying filters and sorting!", error);
-        }
-    };
+        });
+    }
 
     if (categorySelect) {
         categorySelect.addEventListener("change", applyFiltersAndSort);
@@ -122,7 +113,6 @@ function setupEventListeners() {
         sortSelect.addEventListener("change", applyFiltersAndSort);
     }
 
-
     if (searchBar) {
         searchBar.addEventListener("input", function (event) {
             const query = event.target.value.toLowerCase();
@@ -130,56 +120,36 @@ function setupEventListeners() {
 
             allCards.forEach((card) => {
                 const gameName = card.querySelector(".card-title").textContent.toLowerCase();
-                if (gameName.includes(query)) {
-                    card.style.display = "block";
-                } else {
-                    card.style.display = "none";
-                }
+                card.style.display = gameName.includes(query) ? "block" : "none";
             });
         });
     }
 
-   
     if (darkModeToggle) {
         darkModeToggle.addEventListener("click", toggleDarkMode);
     }
 }
 
-
 function applyDarkMode() {
-    try {
-        const darkMode = localStorage.getItem("darkMode");
-        const darkModeToggle = document.getElementById("darkModeToggle");
-
-        if (darkMode === "enabled") {
-            document.body.classList.add("dark");
-            if (darkModeToggle) darkModeToggle.textContent = "🌙";
-        } else {
-            document.body.classList.remove("dark");
-            if (darkModeToggle) darkModeToggle.textContent = "🌞";
-        }
-    } catch (error) {
-        console.error("🔥ERROR: An error occurred while applying Dark Mode!", error);
-    }
+    const darkMode = localStorage.getItem("darkMode");
+    const darkModeToggle = document.getElementById("darkModeToggle");
+    document.body.classList.toggle("dark", darkMode === "enabled");
+    if (darkModeToggle) darkModeToggle.textContent = darkMode === "enabled" ? "🌙" : "🌞";
 }
-
 
 function toggleDarkMode() {
-    try {
-        document.body.classList.toggle("dark");
-        const darkModeToggle = document.getElementById("darkModeToggle");
-
-        if (document.body.classList.contains("dark")) {
-            localStorage.setItem("darkMode", "enabled");
-            if (darkModeToggle) darkModeToggle.textContent = "🌙";
-        } else {
-            localStorage.removeItem("darkMode");
-            if (darkModeToggle) darkModeToggle.textContent = "🌞";
-        }
-    } catch (error) {
-        console.error("🔥ERROR: An error occurred while changing Dark Mode!", error);
+    document.body.classList.toggle("dark");
+    const darkModeToggle = document.getElementById("darkModeToggle");
+    if (document.body.classList.contains("dark")) {
+        localStorage.setItem("darkMode", "enabled");
+        if (darkModeToggle) darkModeToggle.textContent = "🌙";
+    } else {
+        localStorage.removeItem("darkMode");
+        if (darkModeToggle) darkModeToggle.textContent = "🌞";
     }
 }
+
+
 
 
 

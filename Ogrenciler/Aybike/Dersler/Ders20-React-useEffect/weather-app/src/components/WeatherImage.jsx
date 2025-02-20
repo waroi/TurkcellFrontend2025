@@ -1,13 +1,15 @@
-function WeatherImage({ weather = {} }) {
+import styles from "../styles/WeatherCard.module.css";
 
-    const weatherGif = weather.weather[0].main || "";
+function WeatherImage({ weather }) {
+	const weatherGif = weather.weather[0].main || "";
 
-    return (
-        <>
-            <img src={`src/assets/${weatherGif}.gif`} alt={weatherGif} style={{ width: 150, height: 150 }} />
-        </>
-    );
+	return (
+		<img
+			src={`src/assets/${weatherGif}.gif`}
+			alt={weatherGif}
+			className={styles.weatherImage}
+		/>
+	);
 }
 
 export default WeatherImage;
-
