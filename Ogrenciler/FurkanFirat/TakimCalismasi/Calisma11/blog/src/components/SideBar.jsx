@@ -1,19 +1,18 @@
-const SideBar = () => {
+const SideBar = ({ postItem }) => {
+  console.log("Desctiption:", postItem.description);
   return (
     <>
       <div className="profile text-center mb-5">
         <img
-          src="https://picsum.photos/200/300"
+          src={postItem.profile.profile_image}
           alt="Profile Image"
           className="profile-image"
         />
       </div>
+
       <div className="description text-center mb-5">
-        <h3>Ahmet Yılmaz</h3>
-        <p className="fs-6">
-          Yazılım Geliştirici | React ve Node.js tutkunu. Sürekli öğrenmeye ve
-          paylaşmaya devam!
-        </p>
+        <h3>{postItem.author}</h3>
+        <p className="fs-6">{postItem.profile.description}</p>
       </div>
       <div className="topics">
         <h4 className="mb-1 fs-4">İlgi Alanlarım</h4>

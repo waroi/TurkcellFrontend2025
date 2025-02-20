@@ -1,5 +1,6 @@
 import "./App.css";
-import BlogDetail from "./components/BlogDetail/BlogDetail";
+import Banner from "./components/Banner/Banner";
+import Blogs from "./components/BlogCards/Blogs";
 import Footer from "./components/Footer/Footer";
 import Navbar from "./components/Navbar/Navbar";
 
@@ -8,9 +9,9 @@ function App() {
 		<>
 			<main>
 				<Navbar />
-				{/* <Banner />
-			<Blogs /> */}
-				<BlogDetail />
+				<Banner />
+				<Blogs />
+				{/* <BlogDetail /> */}
 			</main>
 			<Footer />
 		</>
