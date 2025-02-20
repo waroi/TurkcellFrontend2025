@@ -1,0 +1,19 @@
+.blogCard {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	border: 1px solid #eaeaea;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+	transition: transform 0.3s;
+}
+.blogCard img {
+	padding: 0.5rem;
+	object-fit: cover;
+	border-radius: 1rem;
+}
+
+.blogCardInfo {
+	padding: 1rem;
+}

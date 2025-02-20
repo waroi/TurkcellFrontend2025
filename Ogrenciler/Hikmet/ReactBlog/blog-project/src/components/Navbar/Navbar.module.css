@@ -1,0 +1,32 @@
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 20px;
+	background-color: #f8f9fa;
+	width: 100%;
+}
+
+.navLinks {
+	display: flex;
+	justify-content: space-between;
+	width: 25%;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.navLinks a {
+	text-decoration: none;
+	color: #000;
+}
+.navLinks a:hover {
+	color: #a3a2a2;
+}
+.navbarSearchField {
+	width: 200px;
+	height: 30px;
+	padding: 5px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	outline: none;
+}
