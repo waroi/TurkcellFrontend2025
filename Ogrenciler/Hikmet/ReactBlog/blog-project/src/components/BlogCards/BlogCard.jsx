@@ -10,7 +10,9 @@ function BlogCard() {
 			/>
 			<div className={styles.blogCardInfo}>
 				<span className=" badge">Category</span>
-				<h2>Blog Title</h2>
+				<a href="/blog">
+					<h2>Blog Title</h2>
+				</a>
 				<p>
 					Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta harum
 					sapiente mollitia quia id quam dolorum, unde aspernatur maiores
