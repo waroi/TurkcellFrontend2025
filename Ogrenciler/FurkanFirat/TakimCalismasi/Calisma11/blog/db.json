@@ -1,0 +1,152 @@
+{
+  "posts": [
+    {
+      "id": "post-1",
+      "title": "İlk Blog Yazısı",
+      "body": "Bu benim ilk blog yazım. Bu yazıda, yazılım geliştirme dünyasına adım atarken karşılaştığım zorluklardan ve bu zorlukları nasıl aştığımdan bahsedeceğim. Yazılım geliştirme, disiplin ve sürekli öğrenme gerektiren bir süreçtir. Bu süreçte, doğru kaynaklara ulaşmak ve doğru adımları atmak oldukça önemlidir.",
+      "author": "Ahmet Yılmaz",
+      "userId": "user-1",
+      "topic": "Yazılım Geliştirme",
+      "created_at": "2023-10-01T10:00:00Z",
+      "image": "https://picsum.photos/300/200"
+    },
+    {
+      "id": "post-2",
+      "title": "React Hakkında",
+      "body": "React, modern web uygulamaları geliştirmek için harika bir kütüphanedir. React, bileşen tabanlı bir yapı sunar ve bu sayede uygulamalarınızı daha modüler ve yönetilebilir hale getirebilirsiniz. Ayrıca, React'in sanal DOM yapısı, performans açısından büyük avantajlar sağlar. Bu yazıda, React'in temel kavramlarından ve nasıl kullanıldığından bahsedeceğim.",
+      "author": "Mehmet Demir",
+      "userId": "user-2",
+      "topic": "Frontend Geliştirme",
+      "created_at": "2023-10-05T14:30:00Z",
+      "image": "https://picsum.photos/300/200"
+    },
+    {
+      "id": "post-3",
+      "title": "JavaScript Temelleri",
+      "body": "JavaScript, web geliştirmenin temel taşlarından biridir. Bu yazıda, JavaScript'in temel kavramlarından ve nasıl kullanıldığından bahsedeceğim. Değişkenler, fonksiyonlar, döngüler ve daha fazlası...",
+      "author": "Ayşe Kaya",
+      "userId": "user-3",
+      "topic": "JavaScript",
+      "created_at": "2023-10-07T09:15:00Z",
+      "image": "https://picsum.photos/300/200"
+    },
+    {
+      "id": "post-4",
+      "title": "Node.js ile Backend Geliştirme",
+      "body": "Node.js, JavaScript kullanarak sunucu tarafında uygulamalar geliştirmek için harika bir platformdur. Bu yazıda, Node.js'in temel kavramlarından ve nasıl kullanıldığından bahsedeceğim.",
+      "author": "Ali Veli",
+      "userId": "user-4",
+      "topic": "Backend Geliştirme",
+      "created_at": "2023-10-08T16:45:00Z",
+      "image": "https://picsum.photos/300/200"
+    },
+    {
+      "id": "post-5",
+      "title": "CSS ile Modern Tasarımlar",
+      "body": "CSS, web sayfalarını stilize etmek için kullanılan güçlü bir araçtır. Bu yazıda, modern web tasarımları oluşturmak için CSS'in nasıl kullanıldığından bahsedeceğim.",
+      "author": "Ahmet Yılmaz",
+      "userId": "user-1",
+      "topic": "Web Tasarım",
+      "created_at": "2023-10-10T11:00:00Z",
+      "image": "https://picsum.photos/300/200"
+    },
+    {
+      "id": "post-6",
+      "title": "Python ile Veri Analizi",
+      "body": "Python, veri analizi ve bilimsel hesaplamalar için popüler bir dildir. Bu yazıda, Python'un veri analizi için nasıl kullanıldığından bahsedeceğim.",
+      "author": "Mehmet Demir",
+      "userId": "user-2",
+      "topic": "Veri Analizi",
+      "created_at": "2023-10-12T13:20:00Z",
+      "image": "https://picsum.photos/300/200"
+    },
+    {
+      "id": "post-7",
+      "title": "Docker ile Containerization",
+      "body": "Docker, uygulamaları container'lar halinde paketlemek ve dağıtmak için kullanılan bir araçtır. Bu yazıda, Docker'ın temel kavramlarından ve nasıl kullanıldığından bahsedeceğim.",
+      "author": "Ayşe Kaya",
+      "userId": "user-3",
+      "topic": "DevOps",
+      "created_at": "2023-10-14T08:50:00Z",
+      "image": "https://picsum.photos/300/200"
+    },
+    {
+      "id": "post-8",
+      "title": "TypeScript ile Daha Güvenli Kod",
+      "body": "TypeScript, JavaScript'e statik tipler ekleyerek daha güvenli ve ölçeklenebilir kod yazmanızı sağlar. Bu yazıda, TypeScript'in temel kavramlarından ve nasıl kullanıldığından bahsedeceğim.",
+      "author": "Ali Veli",
+      "userId": "user-4",
+      "topic": "Frontend Geliştirme",
+      "created_at": "2023-10-16T17:30:00Z",
+      "image": "https://picsum.photos/300/200"
+    },
+    {
+      "id": "post-9",
+      "title": "GraphQL ile Modern API'ler",
+      "body": "GraphQL, REST API'lerine alternatif olarak geliştirilen bir sorgu dilidir. Bu yazıda, GraphQL'in temel kavramlarından ve nasıl kullanıldığından bahsedeceğim.",
+      "author": "Ahmet Yılmaz",
+      "userId": "user-1",
+      "topic": "API Geliştirme",
+      "created_at": "2023-10-18T10:10:00Z",
+      "image": "https://picsum.photos/300/200"
+    },
+    {
+      "id": "post-10",
+      "title": "UI/UX Tasarım İlkeleri",
+      "body": "UI/UX tasarım, kullanıcı deneyimini iyileştirmek için kritik öneme sahiptir. Bu yazıda, UI/UX tasarımının temel ilkelerinden ve nasıl uygulandığından bahsedeceğim.",
+      "author": "Mehmet Demir",
+      "userId": "user-2",
+      "topic": "UI/UX Tasarım",
+      "created_at": "2023-10-20T14:00:00Z",
+      "image": "https://picsum.photos/300/200"
+    }
+  ],
+  "comments": [
+    {
+      "id": "comment-1",
+      "postId": "post-1",
+      "text": "Harika bir yazı! Yazılım geliştirme sürecinde karşılaştığın zorlukları anlatman gerçekten ilham verici.",
+      "author": "Ayşe Kaya",
+      "userId": "user-3",
+      "created_at": "2023-10-02T12:15:00Z"
+    },
+    {
+      "id": "comment-2",
+      "postId": "post-2",
+      "text": "React gerçekten çok güçlü bir kütüphane. Bu yazıda anlattıkların, React'e yeni başlayanlar için çok faydalı olacaktır.",
+      "author": "Ali Veli",
+      "userId": "user-4",
+      "created_at": "2023-10-06T09:45:00Z"
+    }
+  ],
+  "users": [
+    {
+      "id": "user-1",
+      "name": "Ahmet Yılmaz",
+      "email": "ahmet@example.com",
+      "created_at": "2023-09-25T08:00:00Z",
+      "image": "https://picsum.photos/200/300"
+    },
+    {
+      "id": "user-2",
+      "name": "Mehmet Demir",
+      "email": "mehmet@example.com",
+      "created_at": "2023-09-28T11:20:00Z",
+      "image": "https://picsum.photos/200/300"
+    },
+    {
+      "id": "user-3",
+      "name": "Ayşe Kaya",
+      "email": "ayse@example.com",
+      "created_at": "2023-09-30T15:10:00Z",
+      "image": "https://picsum.photos/200/300"
+    },
+    {
+      "id": "user-4",
+      "name": "Ali Veli",
+      "email": "ali@example.com",
+      "created_at": "2023-10-01T17:30:00Z",
+      "image": "https://picsum.photos/200/300"
+    }
+  ]
+}

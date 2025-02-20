@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&display=swap");
+body {
+  font-family: "Montserrat", serif;
+}
+@mixin avatar {
+  width: 50px;
+  height: 50px;
+}
+@mixin postTime {
+  font-size: 0.7rem;
+}
+.articles {
+  margin-top: 72px;
+  .avatar {
+    @include avatar;
+  }
+  .card-post-detail {
+    .date-text {
+      @include postTime;
+    }
+  }
+}
+
+.mainArticleSection {
+  .main-article-logo {
+    aspect-ratio: 16/12;
+    width: 100%;
+  }
+  .avatar {
+    @include avatar;
+  }
+  .articlePostDetail {
+    .date-text {
+      @include postTime;
+    }
+  }
+}
+.developers{
+  .avatar{
+    @include avatar;
+  }
+}
+.footer-links{
+  li{
+    a{
+      color: inherit;
+    }
+    transition: 500ms ease-in-out;
+    &:hover{
+      color: $success;
+      transform: translateY(-5px);
+    }
+  }
+  
+}
