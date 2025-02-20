@@ -1,19 +1,42 @@
-{   "blog":[
+{
+  "blog": [
     {
-        "id":1,
-        "title":"Tac Mahal",
-        "detail":"tac mahal hindistandadır.",
-        "explanation":"Tac Mahal, Hindistan'ın Agra şehrinde, 1631-1654 yıllarında inşa edilmiş anıt mezar.İslam türbe mimarisinin en önemli eserlerinden birisi olarak kabul edilir.Babür İmparatorluğu'nun 5. hükümdarı Şah Cihan'ın 17 Haziran 1631 tarihinde genç yaşta ölen eşi Ercümend Bânû Begüm (Mümtaz Mahal) için o zamanki imparatorluğun başkenti olan Agra'da Yamuna Nehri'nin kıyısında yaptırılmıştır. Mümtaz Mahal'in ve 1666'da ölen imparator Şah Cihan'ın mezarlarını barındırır.",
-        "author":"Hazal",
-        "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Taj_Mahal_N-UP-A28-a.jpg/405px-Taj_Mahal_N-UP-A28-a.jpg",
-        "date":"14 Aralık 2024"
+      "id": 1,
+      "title": "Tac Mahal",
+      "detail": "tac mahal hindistandadır.",
+      "explanation": "Tac Mahal, Hindistan'ın Agra şehrinde, 1631-1654 yıllarında inşa edilmiş anıt mezar.İslam türbe mimarisinin en önemli eserlerinden birisi olarak kabul edilir.Babür İmparatorluğu'nun 5. hükümdarı Şah Cihan'ın 17 Haziran 1631 tarihinde genç yaşta ölen eşi Ercümend Bânû Begüm (Mümtaz Mahal) için o zamanki imparatorluğun başkenti olan Agra'da Yamuna Nehri'nin kıyısında yaptırılmıştır. Mümtaz Mahal'in ve 1666'da ölen imparator Şah Cihan'ın mezarlarını barındırır.",
+      "author": "Hazal",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Taj_Mahal_N-UP-A28-a.jpg/405px-Taj_Mahal_N-UP-A28-a.jpg",
+      "date": "14 Aralık 2024"
+    },
+    {
+      "id": 2,
+      "title": "Eyfel Kulesi",
+      "detail": "eyfel kulesi fransa'dadır.",
+      "explanation": "Eyfel Kulesi, Fransa'nın başkenti Paris'te, 1887-1889 yılları arasında Gustave Eiffel'in firması tarafından inşa edilmiştir. 324 metre yüksekliği ile uzun yıllar dünyanın en yüksek yapısı olmuştur. Paris'in simgesi haline gelen kule, her yıl milyonlarca turist tarafından ziyaret edilmektedir.",
+      "author": "Mehmet",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Tour_Eiffel_Wikimedia_Commons.jpg",
+      "date": "20 Ocak 2025"
+    },
+    {
+      "id": 3,
+      "title": "Kolezyum",
+      "detail": "kolezyum italya'dadır.",
+      "explanation": "Kolezyum, Roma'da MS 70-80 yılları arasında inşa edilmiş bir amfitiyatrodur. Antik Roma döneminde gladyatör dövüşleri ve diğer halka açık etkinlikler için kullanılmıştır. Günümüzde Roma'nın en önemli turistik yapılarından biri olup UNESCO Dünya Mirası Listesi'nde yer almaktadır.",
+      "author": "Ayşe",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/d/de/Colosseo_2020.jpg",
+      "date": "5 Şubat 2025"
     }
-],
-    "posts": [
-      { "id": 1, "title": "json-server", "author": "typicode" }
-    ],
-    "comments": [
-      { "id": 1, "body": "some comment", "postId": 1 }
-    ],
-    "profile": { "name": "typicode" }
-  }
+  ],
+  "posts": [
+    { "id": 1, "title": "json-server", "author": "typicode" },
+    { "id": 2, "title": "REST API", "author": "John Doe" },
+    { "id": 3, "title": "GraphQL", "author": "Jane Smith" }
+  ],
+  "comments": [
+    { "id": 1, "body": "some comment", "postId": 1 },
+    { "id": 2, "body": "interesting post", "postId": 2 },
+    { "id": 3, "body": "nice explanation", "postId": 3 }
+  ],
+  "profile": { "name": "typicode" }
+}

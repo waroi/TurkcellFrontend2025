@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import Navbar from "./components/navbar.jsx";
 import Banner from "./components/banner";
-//import Blog from"./components/blog";
+import Blog from"./components/blog";
 import Footer from "./components/footer";
 
 function App() {
@@ -13,6 +13,7 @@ function App() {
     <>
       <Navbar/>
       <Banner/>
+      <Blog/>
       <Footer/>
       
     </>
