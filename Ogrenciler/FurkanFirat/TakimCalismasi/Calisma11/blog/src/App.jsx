@@ -12,6 +12,7 @@ import "./App.css";
 
 function App() {
   const [blogPosts, setBlogPosts] = useState([]);
+  const [error,setError] = useState("");
 
   const fetchData = async () => {
     const url = "http://localhost:3000";
