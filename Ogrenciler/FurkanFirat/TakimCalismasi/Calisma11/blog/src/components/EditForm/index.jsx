@@ -47,7 +47,7 @@ function EditForm({ handleClose, postItem }) {
   return (
     <Form onSubmit={onSubmit}>
       <Row className='mb-3'>
-        <Col md='12'>
+        <Col md={12}>
           <Form.Group controlId='title'>
             <Form.Label>Title</Form.Label>
             <Form.Control
@@ -70,7 +70,7 @@ function EditForm({ handleClose, postItem }) {
         </Col>
       </Row>
       <Row className='mb-3'>
-        <Col md='12'>
+        <Col md={12}>
           <Form.Group controlId='topic'>
             <Form.Label>Topic</Form.Label>
             <Form.Control
@@ -91,7 +91,7 @@ function EditForm({ handleClose, postItem }) {
       </Row>
 
       <Row className='mb-3'>
-        <Col md='12'>
+        <Col md={12}>
           <Form.Group controlId='content'>
             <Form.Label>Content</Form.Label>
             <Form.Control

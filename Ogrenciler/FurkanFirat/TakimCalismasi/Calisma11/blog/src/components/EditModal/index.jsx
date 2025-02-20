@@ -1,4 +1,3 @@
-import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from '../EditForm';
 function EditModal({ show, handleClose, postItem }) {
