@@ -19,12 +19,17 @@ body {
       @include postTime;
     }
   }
+  .card-img-top{
+    height: 230px;
+    object-fit: cover;
+  }
 }
 
 .mainArticleSection {
   .main-article-logo {
-    aspect-ratio: 16/12;
+    height: 350px;
     width: 100%;
+    object-fit: cover;
   }
   .avatar {
     @include avatar;
