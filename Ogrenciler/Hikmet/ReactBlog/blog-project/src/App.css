@@ -1,3 +1,9 @@
+main {
+	margin: 0 auto;
+	max-width: 1250px;
+	/*!	sorulacak */
+}
+
 .badge {
 	background-color: blue;
 	padding: 0.5rem 0.5rem;
@@ -17,4 +23,9 @@
 	align-items: center;
 	gap: 1rem;
 	font-size: small;
+}
+footer {
+	background-color: #f8f9fa;
+	margin: 0 auto;
+	padding: 1rem 0;
 }
