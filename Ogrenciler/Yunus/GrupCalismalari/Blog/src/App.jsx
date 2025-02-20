@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import './App.css'
+import Hero from './Components/Hero'
 
 const initialBlogData = {
   title: '',
@@ -15,6 +16,7 @@ function App() {
   const [blog, setBlog] = useState(initialBlogData)
   const [blogs, setBlogs] = useState([])
   const baseUrl = 'http://localhost:3000/'
+  let randomPosts = [];
 
 
   const addBlog = async (event) => {
@@ -47,6 +49,11 @@ function App() {
     const response = await fetch(`${baseUrl}blog_posts`)
     const data = await response.json()
     setBlogs(data)
+    //buraya tekrar bakalım
+    // blogs[Math.floor(Math.random()*blogs.length)];
+    const shuffled = data.sort(() => 0.5 - Math.random());
+    randomPosts = shuffled.slice(0, 3);
+    console.log(randomPosts);
   }
 
   return (
@@ -112,7 +119,7 @@ function App() {
             </div>
           </div>
         </div>
-
+        <Hero posts={randomPosts}></Hero>
 
         <div className="row mt-5">
 
