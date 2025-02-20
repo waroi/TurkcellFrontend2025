@@ -42,7 +42,10 @@ function App() {
               ))}
           </Col>
           <Col md={3} className="d-none d-md-block">
-            <SideBar />
+            {blogPosts &&
+              blogPosts.map((postItem) => (
+                <SideBar key={postItem.id} postItem={postItem} />
+              ))}
           </Col>
         </Row>
       </Container>

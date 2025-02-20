@@ -14,7 +14,7 @@ const WeatherApp = () => {
 
   const getWeather = async () => {
     if (!city || !startDate || !endDate) {
-      setError("Please enter a city and select dates.");
+      setError("Lütfen şehri ve tarihi giriniz !.");
       return;
     } else {
       setError(null);
@@ -29,7 +29,6 @@ const WeatherApp = () => {
 
       const data = await response.json();
       setWeather(data);
-      console.log(weather);
     } catch (err) {
       setError(err.message);
     }
