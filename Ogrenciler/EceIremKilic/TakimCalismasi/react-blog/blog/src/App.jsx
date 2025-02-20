@@ -3,6 +3,7 @@ import CustomNavbar from './components/CustomNavbar'
 import Article from './components/Article'
 import MainArticle from './components/MainArticle'
 import Footer from './components/Footer'
+import OperationBar from './components/OperationBar'
 
 function App() {
   
@@ -11,6 +12,7 @@ function App() {
     <>
       <CustomNavbar/>
       <MainArticle/>
+      <OperationBar/>
       <Article/>
       <Footer/>
     </>
