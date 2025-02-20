@@ -29,7 +29,9 @@ function Navbar() {
               </a>
             </li>
             <li className="nav-item dropdown">
-              <button className="btn btn-primary">Blog Ekle</button>
+              <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Blog Ekle
+              </button>
             </li>
           </ul>
           <form className="d-flex" role="search">

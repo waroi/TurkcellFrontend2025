@@ -2,14 +2,21 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import BlogCard from "./components/BlogCard";
 import Fetch from "./api/Fetch";
+import Modal from "./components/Modal";
+
 
 function App() {
 
-  const { posts } = Fetch();
+  const { blogs, setBlog, blog, postBlog } = Fetch();
 
   return (
     <>
       <Navbar />
+      <Modal
+      setBlog = {setBlog}
+      blog = {blog}
+      postBlog = {postBlog}
+      />
       <div className="container">
         <h2 className="mt-5">React Blog</h2>
         <h6 className="mb-5">
@@ -20,7 +27,7 @@ function App() {
           okursanız önemli bir şey kaçırmazsınız.
         </h6>
         <div className="grid-container">
-          {posts.map((p) => (
+          {blogs.map((p) => (
             <BlogCard key={p.id} p={p} />
           ))}
         </div>
