@@ -1,4 +1,4 @@
-//db.json bağlantılarını burada yapmam lazımm!!
+//db.json bağlantılarını burada yapmam lazımm!!contact dene olmazsa locale storage
 class Request {
     constructor(Url = 'http://localhost:3000') {
         this.Url = Url;

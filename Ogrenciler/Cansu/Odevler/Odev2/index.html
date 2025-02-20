@@ -11,22 +11,27 @@
 </head>
 
 <body>
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid d-flex justify-content-between align-items-center">
-            <div class="d-flex align-items-center">
-                <form class="d-flex me-3" role="search">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">🎮 GameShelf</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+                <form class="d-flex flex-grow-1 me-3" role="search">
                     <div class="input-group">
                         <span class="input-group-text bg-white border-0 rounded-start-pill">
                             <i class="fa fa-search text-muted"></i>
                         </span>
-                        <input type="text" class="form-control rounded-end-pill ps-2" id="searchBar"
+                        <input type="text" class="form-control rounded-end-pill" id="searchBar"
                             placeholder="Search for a game..." aria-label="Search">
                     </div>
                 </form>
-                <button class="btn btn-outline-light me-3" data-bs-toggle="modal" data-bs-target="#gameModal">➕ Add
-                    Game</button>
+                <button class="btn btn-outline-light me-2" data-bs-toggle="modal" data-bs-target="#gameModal"
+                    onclick="resetForm()">➕ Add Game</button>
+                <button class="btn btn-outline-light" id="darkModeToggle">🌙</button>
             </div>
-            <button class="btn btn-outline-light" id="darkModeToggle">🌙</button>
         </div>
     </nav>
 
@@ -35,48 +40,52 @@
         <h2 class="animated-text">"Discover Your Game World, Every Moment is an Adventure!" 🎮</h2>
     </div>
 
-    <div class="container mt-5">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-            <select id="developerSelect" class="form-select w-auto">
-                <option value="dvp">Developer</option>
-                <option value="nin">Nintendo</option>
-                <option value="from">FromSoftware</option>
-                <option value="rock">Rockstar</option>
-                <option value="beth">Bethesda</option>
-                <option value="moj">Mojang</option>
-                <option value="cd">CD Projekt Red</option>
-                <option value="blizz">Blizzard</option>
-                <option value="epic">Epic</option>
-                <option value="super">Supergiant</option>
-                <option value="id">id Software</option>
-                <option value="inner">Innersloth</option>
-            </select>
-
-            <select id="categorySelect" class="form-select w-auto">
-                <option value="all">Category</option>
-                <option value="Action">Action</option>
-                <option value="Adventure">Adventure</option>
-                <option value="RPG">RPG</option>
-                <option value="Strategy">Strategy</option>
-            </select>
-
-            <select id="sortSelect" class="form-select w-auto">
-                <option value="sortc">Sort</option>
-                <option value="name_asc">A-Z</option>
-                <option value="name_desc">Z-A</option>
-                <option value="date_up">Date Up</option>
-                <option value="date_down">Date Down</option>
-            </select>
+    <div class="container mt-4">
+        <div class="row g-3">
+            <div class="col-12 col-md-4">
+                <select id="developerSelect" class="form-select">
+                    <option value="dvp">Developer</option>
+                    <option value="nin">Nintendo</option>
+                    <option value="from">FromSoftware</option>
+                    <option value="rock">Rockstar</option>
+                    <option value="beth">Bethesda</option>
+                    <option value="moj">Mojang</option>
+                    <option value="cd">CD Projekt Red</option>
+                    <option value="blizz">Blizzard</option>
+                    <option value="epic">Epic</option>
+                    <option value="super">Supergiant</option>
+                    <option value="id">id Software</option>
+                    <option value="inner">Innersloth</option>
+                </select>
+            </div>
+            <div class="col-12 col-md-4">
+                <select id="categorySelect" class="form-select">
+                    <option value="all">Category</option>
+                    <option value="Action">Action</option>
+                    <option value="Adventure">Adventure</option>
+                    <option value="RPG">RPG</option>
+                    <option value="Strategy">Strategy</option>
+                </select>
+            </div>
+            <div class="col-12 col-md-4">
+                <select id="sortSelect" class="form-select">
+                    <option value="sortc">Sort</option>
+                    <option value="name_asc">A-Z</option>
+                    <option value="name_desc">Z-A</option>
+                    <option value="date_up">Date Up</option>
+                    <option value="date_down">Date Down</option>
+                </select>
+            </div>
         </div>
 
-        <div id="gameList" class="row row-cols-1 row-cols-md-2 g-4"></div>
+        <div id="gameList" class="row row-cols-1 row-cols-md-2 g-4 mt-4"></div>
     </div>
 
     <div class="modal fade" id="gameModal" tabindex="-1" aria-labelledby="gameModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">🎮 Add Game</h5>
+                    <h5 class="modal-title" id="modalTitle">🎮 Add Game</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
@@ -84,13 +93,11 @@
                         <input type="hidden" id="gameId">
                         <div class="mb-3">
                             <label class="form-label">Game Name</label>
-                            <input type="text" class="form-control" id="gameName" placeholder="Enter game name"
-                                required>
+                            <input type="text" class="form-control" id="gameName" placeholder="Enter game name" required>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Description</label>
-                            <textarea class="form-control" id="gameDescription"
-                                placeholder="Enter description"></textarea>
+                            <textarea class="form-control" id="gameDescription" placeholder="Enter description"></textarea>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Category</label>
@@ -111,13 +118,11 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Developer</label>
-                            <input type="text" class="form-control" id="gameDeveloper"
-                                placeholder="Enter game developer" required>
+                            <input type="text" class="form-control" id="gameDeveloper" placeholder="Enter game developer" required>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Steam URL</label>
-                            <input type="url" class="form-control" id="gameSteamURL" placeholder="Enter steam URL"
-                                required>
+                            <input type="url" class="form-control" id="gameSteamURL" placeholder="Enter steam URL" required>
                         </div>
                         <button type="submit" class="btn btn-success w-100">✅ Save</button>
                     </form>
@@ -131,6 +136,9 @@
     <script src="js/storage.js"></script>
     <script src="js/ui.js"></script>
     <script src="js/app.js"></script>
+
 </body>
 
 </html>
+
+
