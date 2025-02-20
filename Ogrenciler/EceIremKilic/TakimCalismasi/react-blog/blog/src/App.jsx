@@ -4,6 +4,7 @@ import Article from './components/Article'
 import MainArticle from './components/MainArticle'
 import Footer from './components/Footer'
 import OperationBar from './components/OperationBar'
+import RequestModel from './core/RequestModel'
 
 function App() {
   
@@ -13,6 +14,7 @@ function App() {
       <CustomNavbar/>
       <MainArticle/>
       <OperationBar/>
+      <RequestModel/>
       <Article/>
       <Footer/>
     </>
