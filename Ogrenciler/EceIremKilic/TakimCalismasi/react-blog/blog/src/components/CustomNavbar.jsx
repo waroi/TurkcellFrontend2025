@@ -1,11 +1,12 @@
 import React from "react";
+import blog from "../assets/blog.png";
 
 const CustomNavbar = () => {
   return (
       <nav className="navbar fixed-top p-3 navbar-expand-lg bg-info">
         <div className="container">
           <a className="navbar-brand" href="#">
-            Navbar
+           <img src={blog} alt="" className="img-fluid nav-blog-img" />
           </a>
           <button
             className="navbar-toggler"
@@ -18,22 +19,25 @@ const CustomNavbar = () => {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div className="collapse navbar-collapse" id="navbarNav">
+          <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul className="navbar-nav">
-              <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
-                  Home
+              <li className="nav-item me-2">
+                <a className="nav-link active" aria-current="page" href="#pop-blog">
+                  Popüler Blog
+                </a>
+              </li>
+              <li className="nav-item me-2">
+                <a className="nav-link" href="#op-bar">
+                  Filtrele/Ara
+                </a>
+              </li>
+              <li className="nav-item me-2">
+                <a className="nav-link" href="#articles">
+                  Bloglar
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Features
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Pricing
-                </a>
+                <button className="btn btn-primary rounded-pill">Yeni Yazı Ekle</button>
               </li>
             </ul>
           </div>

@@ -26,18 +26,18 @@ const Article = () => {
   };
 
   return (
-    <section className="articles bg-light mt-5 py-5">
+    <section className="articles bg-light mt-5 py-5" id="articles">
       <div className="container">
         <div className="row mx-auto">
           {blogs.map((blog) => (
             <div className="col-lg-4" key={blog.blogID}>
-              <div className="card rounded-5 border-0 bg-white">
+              <div className="card mb-5 bg-white d-flex flex-column rounded-5 border-0 ">
                 <img
                   src={blog.blogImage}
                   className="card-img-top rounded-top-5"
                   alt="..."
                 />
-                <div className="card-body">
+                <div className="card-body d-flex flex-column justify-content-between">
                   <div className="row justify-content-between">
                     <div className="col-8 d-flex align-items-center">
                       <img
@@ -81,6 +81,11 @@ const Article = () => {
       <BlogModal
         blogTitle={selectedBlog?.blogTitle}
         blogContent={selectedBlog?.blogContent}
+        blogImage={selectedBlog?.blogImage}
+        blogCategory={selectedBlog?.blogCategory}
+        blogAuthorImg={selectedBlog?.blogAuthorImg}
+        blogAuthorName={selectedBlog?.blogAuthorName}
+        blogReleaseDate={selectedBlog?.blogReleaseDate}
         closeModal={closeModal}
         isOpen={isModalOpen}
       />
