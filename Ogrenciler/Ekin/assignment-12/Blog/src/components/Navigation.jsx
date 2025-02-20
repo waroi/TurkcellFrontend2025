@@ -1,9 +1,9 @@
 export default function Navigation({ openModal }) {
   return (
-    <nav className="navbar position-fixed w-100 top-0 navbar-expand-lg bg-dark text-uppercase z-3">
+    <nav className="navbar position-fixed w-100 top-0 navbar-expand-lg bg-light text-uppercase z-3">
       <div className="container">
         <a className="navbar-brand" href="">
-          <h1 className="flex-center text-white">Blog</h1>
+          <h1 className="flex-center">Blog</h1>
         </a>
         <button
           className="navbar-toggler"
@@ -17,24 +17,24 @@ export default function Navigation({ openModal }) {
           <ul className="navbar-nav align-items-center ms-auto">
             <li className="nav-item">
               <button
-                className="btn btn-primary text-uppercase me-2"
+                className="btn btn-primary text-uppercase"
                 onClick={openModal}
               >
                 <i className="fa-solid fa-plus"></i> Add
               </button>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-white" href="#">
+              <a className="nav-link " href="#">
                 Home
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-white" href="#">
+              <a className="nav-link " href="#">
                 Trend
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-white" href="#">
+              <a className="nav-link " href="#">
                 Contact
               </a>
             </li>
