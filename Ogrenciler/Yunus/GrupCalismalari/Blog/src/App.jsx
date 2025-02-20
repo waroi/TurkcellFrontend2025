@@ -16,7 +16,7 @@ function App() {
   const [blog, setBlog] = useState(initialBlogData)
   const [blogs, setBlogs] = useState([])
   const baseUrl = 'http://localhost:3000/'
-  let randomPosts = [];
+  const [randomPosts, setRandomPosts] = useState([]);
 
 
   const addBlog = async (event) => {
@@ -52,7 +52,7 @@ function App() {
     //buraya tekrar bakalım
     // blogs[Math.floor(Math.random()*blogs.length)];
     const shuffled = data.sort(() => 0.5 - Math.random());
-    randomPosts = shuffled.slice(0, 3);
+    setRandomPosts(shuffled.slice(0, 3))
     console.log(randomPosts);
   }
 
@@ -125,17 +125,19 @@ function App() {
 
           {blogs.map((blog, index) => {
             return (
-              <div key={index} className="col-lg-3 my-3">
-                <div className="card h-100">
-                  <img src={blog.image_url} className="card-img-top" alt="..." />
-                  <div className="card-body d-flex flex-column justify-content-between">
-                    <h5 className="card-title">
-                      {blog.title}
-                    </h5>
-                    <p className="card-text">
-                      {blog.content}
-                    </p>
-                    <a href="#" className="btn btn-primary">Go somewhere</a>
+              <div key={index} className="col-lg-6 my-3">
+                <div class="card mb-3 h-100">
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <img src="https://picsum.photos/200/300" class="img-fluid rounded-start" alt="..."/>
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body d-flex flex-column justify-content-between h-100">
+                        <h3 class="card-title">{blog.title}</h3>
+                        <p class="card-text">{blog.content}</p>
+                        <p class="card-text"><small class="text-body-secondary">Eklenme Tarihi : {blog.date}</small></p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

@@ -1,48 +1,45 @@
 import React from 'react'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser, faCalendarDays } from "@fortawesome/free-solid-svg-icons";
 
-const Hero = ({posts}) => {
+const Hero = ({ posts }) => {
     // posts gelmiyor, boş dönüyor burayı kontrol edelim
-   setTimeout(() => {
-    console.log(posts)
-   }, 2000);
+    //randomPosts'u useState ile tanımlayınca geldi veriler çok anlamadım ama sorun buymuş?
+    setTimeout(() => {
+        console.log("posts", posts)
+    }, 2000);
     return (
-        <div id="carouselExampleCaptions" class="carousel slide">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <div id="carouselExampleCaptions" className="carousel slide">
+            <div className="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="https://websitedemos.net/tech-news-04/wp-content/uploads/sites/903/2021/07/tech-news-post-featured-img-01.jpg" class="d-block w-100" alt="..." />
-                    <div class="carousel-caption d-none d-md-block">
-                        <h1>First slide label</h1>
-                        <p>Some representative placeholder content for the first slide.</p>
+            <div className="carousel-inner">
+                {posts.map((post, index) => (
+                    <div key={index} className="carousel-item active">
+                        <img src="https://websitedemos.net/tech-news-04/wp-content/uploads/sites/903/2021/07/tech-news-post-featured-img-16.jpg" className="d-block w-100" alt="..." />
+                        <div className="position-absolute start-0 top-0 m-3 bg-dark text-white px-3 py-1 rounded">
+                            <h4 className="m-0">{post.category}</h4>
+                        </div>
+                        <div className="carousel-caption d-none d-md-block">
+                            <h1 className='mt-5'>{post.title}</h1>
+                            <div className="d-flex gap-3 justify-content-center">
+                                <p className='bg-secondary text-white px-3 py-1 rounded'><span className='me-2'><FontAwesomeIcon icon={faUser} /></span>{post.author}</p>
+                                <p className='bg-secondary text-white px-3 py-1 rounded'><span className='me-2'><FontAwesomeIcon icon={faCalendarDays} /></span>{post.date}</p>
+                            </div>
+                            <p>{post.content}</p>
+                        </div>
                     </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="https://websitedemos.net/tech-news-04/wp-content/uploads/sites/903/2021/07/tech-news-post-featured-img-01.jpg" class="d-block w-100" alt="..." />
-                    <div class="carousel-caption d-none d-md-block">
-                        <h1>Second slide label</h1>
-                        <p>Some representative placeholder content for the second slide.</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="https://websitedemos.net/tech-news-04/wp-content/uploads/sites/903/2021/07/tech-news-post-featured-img-01.jpg" class="d-block w-100" alt="..." />
-                    <div class="carousel-caption d-none d-md-block">
-
-                        <h1>Third slide label</h1>
-                        <p>Some representative placeholder content for the third slide.</p>
-                    </div>
-                </div>
+                ))}
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
+            <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span className="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
+            <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                <span className="visually-hidden">Next</span>
             </button>
         </div>
 
