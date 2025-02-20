@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Modal = ({blog, setBlog, postBlog}) => {
+const ModalForm = ({blog, setBlog, postBlog}) => {
   return (
     <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
@@ -48,4 +48,4 @@ const Modal = ({blog, setBlog, postBlog}) => {
   )
 }
 
-export default Modal
+export default ModalForm
