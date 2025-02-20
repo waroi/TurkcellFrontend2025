@@ -9,6 +9,8 @@ const Fetch = () => {
     author: "",
   });
 
+  const [selectedId,setSelectedId]=useState("");
+
   useEffect(() => {
     fetch("http://localhost:3000/blogs")
       .then((response) => response.json())
@@ -26,13 +28,20 @@ const Fetch = () => {
     })
       .then((response) => response.json())
       .then((result) => {
-        setBlogs((prevBlogs) => [...prevBlogs, result]); 
+        setBlogs((prevBlogs) => [...prevBlogs, result]);
       })
       .catch((err) => setError(err.message));
   };
 
+  const deleteBlog = (id) => {
+    return fetch(`http://localhost:3000/blogs/${id}`, {
+      method: "DELETE",
+    })
+      .then(() => setBlogs((prev) => prev.filter((blog) => blog.id !== id)))
+      .catch((error) => console.error("Blog silme hatası:", error));
+  };
 
-return { blogs, blog, setBlog, postBlog };
+  return { blogs, blog,selectedId, setBlog, postBlog, deleteBlog,setSelectedId };
 };
 
 export default Fetch;
