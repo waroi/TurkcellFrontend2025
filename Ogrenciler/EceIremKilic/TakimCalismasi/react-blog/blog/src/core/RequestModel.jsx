@@ -1,84 +1,71 @@
-import React, { useState, useEffect } from "react";
+import { useState } from "react";
+const API_URL = "http://localhost:3000/blogs";
 
-
-
-const url = "http://localhost:3005/blog";
-
-const RequestModel = () => {
+export const api = () => {
   const [blogs, setBlogs] = useState([]);
+  const [error, setError] = useState(null);
 
-  const getData = () => {
+  async function getBlogs() {
     try {
-      const response = fetch(url);
-      const bodyData = response.json();
-      return bodyData;
-    } catch (error) {
-      return console.error(error);
-    }
-  };
-
-  const postData = ( data) => {
-    try {
-      const response = fetch(url, {
-        method: "POST",
-        body: JSON.stringify(data),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-      const bodyData = response.json();
-      return bodyData;
-    } catch (error) {
-      return console.error(error);
-    }
-  };
-
-  const updateData = ( data) => {
-    try {
-      const response = fetch(url, {
-        method: "PUT",
-        body: JSON.stringify(data),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-      const bodyData = response.json();
-      return bodyData;
-    } catch (error) {
-      return console.error(error);
-    }
-  };
-
-  const deleteData = () => {
-    try {
-      const response = fetch(url, {
-        method: "DELETE",
-      });
-      if (response.status === 200) {
-        console.log("Silme işlemi başarılı");
-      } else {
-        console.error("Silme işlemi başarısız");
+      const response = await fetch(API_URL);
+      const data = await response.json();
+      if (response.ok) {
+        setBlogs(data);
+        return data;
       }
     } catch (error) {
-      return console.error(error);
+      console.log("Request Model Error: ", error);
+      return null;
     }
-  };
-  useEffect(() => {
-    getData();
-  }, [blogs]);
+  }
 
-  return (
-    <div>
-      {blogs.map((blog) => (
-        <div key={blog.blogID}>
-          <h3>
-            <span>{blog.blogID}</span> {blog.blogTitle}
-          </h3>
-          <p>{blog.blogContent}</p>
-        </div>
-      ))}
-    </div>
-  );
+  async function postBlog() {
+    try {
+      const response = await fetch(API_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(blog),
+      });
+      const data = await response.json();
+      if (response.ok) {
+        setBlogs([...blogs, data]);
+        return data;
+      }
+    } catch (error) {
+      console.log("Request Model Error: ", error);
+      return null;
+    }
+  }
+
+  async function deleteBlog() {
+    try {
+      const response = await fetch(`${API_URL}/${id}`, {
+        method: "DELETE",
+      });
+    } catch (error) {
+      console.log("Request Model Error: ", error);
+      return null;
+    }
+  }
+
+  async function updateBlog() {
+    try {
+      const response = await fetch(API_URL, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(blog),
+      });
+      const data = await response.json();
+      if (response.ok) {
+        return data;
+      }
+    } catch (error) {
+      console.log("Request Model Error: ", error);
+      return null;
+    }
+  }
 };
-
-export default RequestModel;
