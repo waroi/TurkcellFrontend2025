@@ -1,28 +1,16 @@
-import { useEffect, useState } from "react";
-import { BlogService } from "./services/BlogService";
-import Card from "./components/Card";
-
+import Header from "./components/organisms/Header";
+import Main from "./components/organisms/Main";
+import { useState, useEffect } from "react";
 function App() {
-  const [blogs, setBlogs] = useState([]);
-
+  const [category, setCategory] = useState("");
   useEffect(() => {
-    BlogService.getBlogs()
-      .then((data) => {
-        setBlogs(data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    console.log(category);
   }, []);
-
   return (
     <div>
-      {blogs && (
-        blogs.map((blog) => 
-        <Card key={blog.id} blog={blog} />)
-      )}
+      <Header category={category} setCategory={setCategory}></Header>
+      <Main category={category}></Main>
     </div>
   );
 }
-
 export default App;
