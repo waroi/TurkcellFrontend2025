@@ -1,4 +1,4 @@
-import ListItem from "./components/ListItem";
+import ListItem from "./components/ListItem.jsx";
 import "./App.css";
 
 function App() {

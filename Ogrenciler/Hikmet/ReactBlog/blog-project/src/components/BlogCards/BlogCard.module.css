@@ -7,6 +7,7 @@
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 	overflow: hidden;
 	transition: transform 0.3s;
+	cursor: pointer;
 }
 .blogCard img {
 	padding: 0.5rem;
@@ -17,3 +18,10 @@
 .blogCardInfo {
 	padding: 1rem;
 }
+
+.blogCardInfo a {
+	color: black;
+	text-decoration: none;
+}
+
+

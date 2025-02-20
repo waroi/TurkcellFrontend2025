@@ -12,6 +12,7 @@ import "./App.css";
 
 function App() {
   const [blogPosts, setBlogPosts] = useState([]);
+  const [error,setError] = useState("");
 
   const fetchData = async () => {
     const url = "http://localhost:3000";
@@ -42,7 +43,10 @@ function App() {
               ))}
           </Col>
           <Col md={3} className="d-none d-md-block">
-            <SideBar />
+            {blogPosts &&
+              blogPosts.map((postItem) => (
+                <SideBar key={postItem.id} postItem={postItem} />
+              ))}
           </Col>
         </Row>
       </Container>

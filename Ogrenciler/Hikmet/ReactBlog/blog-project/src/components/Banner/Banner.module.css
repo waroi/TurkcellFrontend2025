@@ -9,6 +9,7 @@
 	height: 100%;
 	object-fit: cover;
 	position: absolute;
+	border-radius: 0.5rem;
 }
 
 .bannerContent {
@@ -17,3 +18,9 @@
 	bottom: 0;
 	padding: 2rem;
 }
+
+@media only screen and (max-width: 400px) {
+	.banner h1{
+	  font-size: 1.2rem;
+	}
+  }
