@@ -1,15 +1,11 @@
-import React from "react";
-import { useState, useEffect } from "react";
-import {
-  getBlogs,
-  updateBlog,
-  postBlog,
-  deleteBlog,
-} from "../core/RequestModel";
+import React, { useState, useEffect } from "react";
+import { getBlogs } from "../core/RequestModel";
+import BlogModal from "./BlogModal";
 
 const Article = () => {
   const [blogs, setBlogs] = useState([]);
-  const [error, setError] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedBlog, setSelectedBlog] = useState(null);
 
   useEffect(() => {
     const fetchBlogs = async () => {
@@ -18,15 +14,24 @@ const Article = () => {
     };
     fetchBlogs();
   }, []);
+
+  const openModal = (blog) => {
+    setSelectedBlog(blog);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedBlog(null);
+  };
+
   return (
     <section className="articles bg-light mt-5 py-5">
       <div className="container">
         <div className="row mx-auto">
-          {blogs.map((blog, index) => (
+          {blogs.map((blog) => (
             <div className="col-lg-4" key={blog.blogID}>
-              <div
-                className="card rounded-5 border-0 bg-white"
-              >
+              <div className="card rounded-5 border-0 bg-white">
                 <img
                   src={blog.blogImage}
                   className="card-img-top rounded-top-5"
@@ -57,12 +62,15 @@ const Article = () => {
                     {blog.blogTitle}
                   </h5>
                   <p className="card-text text-muted">
-                    {blog?.blogContent?.split(" ").slice(0, 15).join(" ")}
+                    {blog?.blogContent?.split(" ").slice(0, 15).join(" ")}...
                   </p>
                   <div className="d-flex flex-column">
-                    <a href="#" className="btn btn-primary rounded-pill">
-                      Daha fazlasını oku
-                    </a>
+                    <button
+                      className="btn btn-primary rounded-pill"
+                      onClick={() => openModal(blog)}
+                    >
+                      Detayları Gör
+                    </button>
                   </div>
                 </div>
               </div>
@@ -70,6 +78,12 @@ const Article = () => {
           ))}
         </div>
       </div>
+      <BlogModal
+        blogTitle={selectedBlog?.blogTitle}
+        blogContent={selectedBlog?.blogContent}
+        closeModal={closeModal}
+        isOpen={isModalOpen}
+      />
     </section>
   );
 };
