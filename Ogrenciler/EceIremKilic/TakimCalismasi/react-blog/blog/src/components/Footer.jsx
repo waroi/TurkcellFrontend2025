@@ -59,10 +59,10 @@ const Footer = () => {
       </div>
       <hr />
       <div className="footer-bottom py-2">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <p class="mb-0 pb-3 d-flex justify-content-center">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12">
+              <p className="mb-0 pb-3 d-flex justify-content-center">
                 Copyright ©2025 All rights reserved | This website is made with
                 <img src="https://img.icons8.com/?size=20&id=59805&format=png&color=d70000" />
                 by Ela, Ece and Fatih.
