@@ -3,6 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faCalendarDays } from "@fortawesome/free-solid-svg-icons";
 
 const Hero = ({ posts }) => {
+    // posts gelmiyor, boş dönüyor burayı kontrol edelim
+    //randomPosts'u useState ile tanımlayınca geldi veriler çok anlamadım ama sorun buymuş?
     return (
         <div id="carouselExampleCaptions" className="carousel slide">
             <div className="carousel-indicators">
@@ -23,8 +25,7 @@ const Hero = ({ posts }) => {
                                 <p className='bg-secondary text-white px-3 py-1 rounded'><span className='me-2'><FontAwesomeIcon icon={faUser} /></span>{post.author}</p>
                                 <p className='bg-secondary text-white px-3 py-1 rounded'><span className='me-2'><FontAwesomeIcon icon={faCalendarDays} /></span>{post.date}</p>
                             </div>
-                            <p>{post.description.split(' ').slice(0, 25).join(' ') + '...'}
-                            </p>
+                            <p>{post.content}</p>
                         </div>
                     </div>
                 ))}

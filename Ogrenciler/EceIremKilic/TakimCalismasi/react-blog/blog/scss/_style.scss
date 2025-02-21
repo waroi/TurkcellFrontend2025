@@ -12,22 +12,22 @@ body {
 .avatar {
   @include avatar;
 }
-.nav-blog-img {
+.nav-blog-img{
   height: 60px;
 }
 .articles {
   .avatar {
     @include avatar;
   }
-  .card {
+  .card{
     height: 540px;
-
+    
     .card-post-detail {
       .date-text {
         @include postTime;
       }
     }
-    .card-img-top {
+    .card-img-top{
       height: 230px;
       object-fit: cover;
     }
@@ -49,31 +49,26 @@ body {
     }
   }
 }
-.developers {
-  .avatar {
+.developers{
+  .avatar{
     @include avatar;
   }
 }
-.modal-post-img {
+.modal-post-img{
   width: 100%;
   object-fit: cover;
   max-height: 400px;
 }
-.footer-links {
-  li {
-    a {
+.footer-links{
+  li{
+    a{
       color: inherit;
     }
     transition: 500ms ease-in-out;
-    &:hover {
+    &:hover{
       color: $success;
       transform: translateY(-5px);
     }
   }
-}
-.footer-bottom {
-  img {
-    height: 30px;
-    width: 30px;
-  }
+  
 }

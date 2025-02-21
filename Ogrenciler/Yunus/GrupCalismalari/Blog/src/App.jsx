@@ -7,7 +7,6 @@ import EditDeleteBlogModal from './Components/Modal/EditDeleteBlogModal'
 import ViewBlogModal from './Components/Modal/ViewBlogModal'
 import AddBlogModal from './Components/Modal/AddBlogModal'
 import Footer from './Components/Footer'
-import { getAllBlogs, addBlogPost, updateBlogPost, deleteBlogPost } from './service/blogService'
 
 const initialBlogData = {
   title: '',
@@ -22,72 +21,28 @@ const initialBlogData = {
 function App() {
   const [blog, setBlog] = useState(initialBlogData)
   const [blogs, setBlogs] = useState([])
+  const baseUrl = 'http://localhost:3000/'
   const [randomPosts, setRandomPosts] = useState([]);
   const [activePost, setActivePost] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState('');
 
-  const fetchAllBlogs = async () => {
-    try {
-      const data = await getAllBlogs();
-      setBlogs(data);
-
-      const shuffled = data.sort(() => 0.5 - Math.random());
-      setRandomPosts(shuffled.slice(0, 3));
-    } catch (error) {
-      console.log("Blog verileri çekilirken hata oluştu:", error);
-    }
-  }
-
   const addBlog = async (event) => {
     event.preventDefault()
-    try {
-      const data = await addBlogPost(blog);
-      setBlogs([...blogs, data]);
-      setBlog(initialBlogData);
-
-      const modal = document.getElementById('blogModal');
-      const bsModal = bootstrap.Modal.getInstance(modal);
-      bsModal.hide();
-    } catch (error) {
-      console.log("Blog eklenirken hata oluştu:", error);
-    }
+    await fetch(`${baseUrl}blog_posts`, {
+      method: 'POST',
+      body: JSON.stringify(blog),
+      headers: { "Content-Type": "application/json; charset=UTF-8" }
+    })
+      .then(response => response.json())
+      .then(data => {
+        setBlogs([...blogs, data])
+        setBlog(initialBlogData)
+        const modal = document.getElementById('blogModal')
+        const bsModal = bootstrap.Modal.getInstance(modal)
+        bsModal.hide()
+      })
+      .catch(error => console.log(error))
   }
-
-  const handleUpdateBlog = async (id) => {
-    try {
-      await updateBlogPost(id, activePost);
-
-      const updatedBlogs = blogs.map(blog =>
-        blog.id === id ? activePost : blog
-      );
-      setBlogs(updatedBlogs);
-
-      const modal = document.getElementById('editDeleteModal');
-      const bsModal = bootstrap.Modal.getInstance(modal);
-      bsModal.hide();
-    } catch (error) {
-      console.log("Blog güncellenirken hata oluştu:", error);
-    }
-  };
-
-  const handleDeleteBlog = async (id) => {
-    if (confirm('Bu blog yazısını silmek istediğinizden emin misiniz?')) {
-      try {
-        const response = await deleteBlogPost(id);
-
-        if (response.ok) {
-          const updatedBlogs = blogs.filter(blog => blog.id !== id);
-          setBlogs(updatedBlogs);
-
-          const modal = document.getElementById('editDeleteModal');
-          const bsModal = bootstrap.Modal.getInstance(modal);
-          bsModal.hide();
-        }
-      } catch (error) {
-        console.log("Blog silinirken hata oluştu:", error);
-      }
-    }
-  };
 
   const updateBlog = event => setBlog({ ...blog, [event.target.id]: event.target.value })
 
@@ -96,21 +51,70 @@ function App() {
     setBlog({ ...blog, tags: blog.tags })
   }
 
-  const handleCategoryChange = (category) => {
-    setSelectedCategory(category);
-  };
-
   useEffect(() => {
-    fetchAllBlogs();
+    getAllBlogs()
 
     document.querySelectorAll('.modal').forEach(modalEl => {
       new bootstrap.Modal(modalEl);
     });
   }, [])
 
+  const getAllBlogs = async () => {
+    const response = await fetch(`${baseUrl}blog_posts`)
+    const data = await response.json()
+    setBlogs(data)
+
+    const shuffled = data.sort(() => 0.5 - Math.random());
+    setRandomPosts(shuffled.slice(0, 3))
+  }
+
+  const updateBlogPost = async (id) => {
+    await fetch(`${baseUrl}blog_posts/${id}`, {
+      method: 'PUT',
+      body: JSON.stringify(activePost),
+      headers: { "Content-Type": "application/json; charset=UTF-8" }
+    })
+      .then(response => response.json())
+      .then(data => {
+        const updatedBlogs = blogs.map(blog =>
+          blog.id === id ? activePost : blog
+        );
+        setBlogs(updatedBlogs);
+
+        const modal = document.getElementById('editDeleteModal');
+        const bsModal = bootstrap.Modal.getInstance(modal);
+        bsModal.hide();
+      })
+      .catch(error => console.log(error));
+  };
+
+  const deleteBlogPost = async (id) => {
+    if (confirm('Bu blog yazısını silmek istediğinizden emin misiniz?')) {
+      await fetch(`${baseUrl}blog_posts/${id}`, {
+        method: 'DELETE',
+      })
+        .then(response => {
+          if (response.ok) {
+            const updatedBlogs = blogs.filter(blog => blog.id !== id);
+            setBlogs(updatedBlogs);
+
+            const modal = document.getElementById('editDeleteModal');
+            const bsModal = bootstrap.Modal.getInstance(modal);
+            bsModal.hide();
+          }
+        })
+        .catch(error => console.log(error));
+    }
+  };
+
+  const handleCategoryChange = (category) => {
+    setSelectedCategory(category);
+  };
+
   const filteredBlogs = selectedCategory
     ? blogs.filter(blog => blog.category.toLowerCase() === selectedCategory.toLowerCase())
     : blogs;
+
 
   return (
     <>
@@ -131,8 +135,8 @@ function App() {
         <EditDeleteBlogModal
           activePost={activePost}
           setActivePost={setActivePost}
-          updateBlogPost={handleUpdateBlog}
-          deleteBlogPost={handleDeleteBlog}
+          updateBlogPost={updateBlogPost}
+          deleteBlogPost={deleteBlogPost}
         />
       </div>
       <Footer />

@@ -16,7 +16,7 @@ const PostModal = ({ isOpen, onClose }) => {
   };
 
   const [newPost, setNewPost] = useState({
-    id: Date.now(),
+    id: Date.now(), // ID'nin string olarak gönderilmesi
     blogTitle: "",
     blogContent: "",
     blogCategory: "Teknoloji",
@@ -49,7 +49,7 @@ const PostModal = ({ isOpen, onClose }) => {
       return;
     }
     console.log("newPost:", newPost);
-    await postBlog(newPost);
+    await postBlog(newPost); // Burada veritabanına post yapılıyor
     onClose();
   };
 
@@ -70,10 +70,7 @@ const PostModal = ({ isOpen, onClose }) => {
             ></button>
           </div>
           <div className="modal-body">
-            <label
-              htmlFor="blogTitle"
-              className="form-label text-primary fw-bold"
-            >
+            <label htmlFor="blogTitle" className="form-label text-primary fw-bold">
               Blog Adı
             </label>
             <input
@@ -85,10 +82,7 @@ const PostModal = ({ isOpen, onClose }) => {
               onChange={handleChange}
             />
 
-            <label
-              htmlFor="blogContent"
-              className="form-label text-primary fw-bold"
-            >
+            <label htmlFor="blogContent" className="form-label text-primary fw-bold">
               Blog İçeriği
             </label>
             <input
@@ -102,10 +96,7 @@ const PostModal = ({ isOpen, onClose }) => {
 
             <div className="row mb-3">
               <div className="col-6">
-                <label
-                  htmlFor="blogCategory"
-                  className="form-label text-primary fw-bold"
-                >
+                <label htmlFor="blogCategory" className="form-label text-primary fw-bold">
                   Kategori
                 </label>
                 <select
@@ -126,10 +117,7 @@ const PostModal = ({ isOpen, onClose }) => {
                 </select>
               </div>
               <div className="col-6">
-                <label
-                  htmlFor="blogReleaseDate"
-                  className="form-label text-primary fw-bold"
-                >
+                <label htmlFor="blogReleaseDate" className="form-label text-primary fw-bold">
                   Yayın Tarihi
                 </label>
                 <input
@@ -142,10 +130,7 @@ const PostModal = ({ isOpen, onClose }) => {
               </div>
             </div>
 
-            <label
-              htmlFor="blogImage"
-              className="form-label text-primary fw-bold"
-            >
+            <label htmlFor="blogImage" className="form-label text-primary fw-bold">
               Resim URL
             </label>
             <input
@@ -157,10 +142,7 @@ const PostModal = ({ isOpen, onClose }) => {
               onChange={handleChange}
             />
 
-            <label
-              htmlFor="blogAuthorName"
-              className="form-label text-primary fw-bold"
-            >
+            <label htmlFor="blogAuthorName" className="form-label text-primary fw-bold">
               Yazar Adı
             </label>
             <input

@@ -4,49 +4,27 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Form from "react-bootstrap/Form";
 
-function EditForm({ handleClose, postItem, handleEdit, handleAddPost }) {
-  const initialFormData = {
+function EditForm({ handleClose, postItem, handleEdit }) {
+  const [formData, setFormData] = useState({
     title: postItem?.title || "",
     content: postItem?.body || "",
     topic: postItem?.topic || "",
-  };
-  const [formData, setFormData] = useState(initialFormData);
-  console.log(typeof postItem === "undefined");
+  });
 
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    if (typeof postItem === "undefined") {
-      const created_at = new Date();
-      const author = "Hilal semercioğlu"; //TODO: Dinamik olucak
-
-      const image =
-        "https://images.unsplash.com/photo-1739047855450-27615bc98bc5?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
-      const newPost = {
-        created_at,
-        author,
-        image,
-        title: formData?.title,
-        body: formData?.content,
-        topic: formData?.topic,
-      };
-      handleAddPost(newPost);
-    } else {
-      const updatedPost = {
-        ...postItem,
-        title: formData?.title,
-        body: formData?.content,
-        topic: formData?.topic,
-      };
-      const isEqual = Object.keys(formData).every(
-        (key) => formData[key] === initialFormData[key]
-      );
-      if (isEqual) {
-        return;
-      }
-      console.log(isEqual, formData, initialFormData);
-      handleEdit(updatedPost);
-    }
+    const updatedPost = {
+      ...postItem,
+      title: formData?.title,
+      body: formData?.content,
+      topic: formData?.topic,
+    };
+    const isEqual = Object.entries(formData).every(
+      ([key, value]) => formData[key] === updatedPost[key]
+    );
+    console.log(isEqual, formData, updatedPost);
+    handleEdit(updatedPost);
   };
 
   const handleChange = (e) => {
