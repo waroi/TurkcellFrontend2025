@@ -41,9 +41,10 @@ export const deleteBlog = async (id) => {
       const response = await fetch(`http://localhost:3000/blog/${id}`, {
         method: "DELETE",
       });
-  
-      console.log("Sunucudan gelen yanıt:", response);
-  
+      
+      const responseData = await response.json();
+      console.log("Silme yanıtı:", responseData); // Yanıt verisini logla
+      
       return response;
     } catch (error) {
       console.error("Silme isteği başarısız oldu:", error);
