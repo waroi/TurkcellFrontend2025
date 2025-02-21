@@ -1,0 +1,83 @@
+/* src/index.css */
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+}
+
+.app-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+}
+
+.form-container {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 0.75rem 1.5rem;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:disabled {
+  background-color: #aaa;
+}
+
+.error {
+  margin-top: 1rem;
+  color: red;
+}
+
+.weather-result {
+  margin-top: 1.5rem;
+  background: #f0f8ff;
+  padding: 1rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.weather-icon {
+  font-size: 2.5rem;
+  margin-right: 1rem;
+}
+
+.weather-info p {
+  margin: 0.25rem 0;
+}
