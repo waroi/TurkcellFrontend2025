@@ -6,6 +6,7 @@ import Carousel from "./components/Carousel";
 import Database from "./Database";
 import "./style/App.css";
 import Footer from "./components/Footer";
+import Contact from "./components/Contact";
 
 function App() {
   const [blogs, setBlogs] = useState([]);
@@ -94,7 +95,7 @@ function App() {
       <main className="py-5">
         <div className="container">
           <Carousel blogs={blogs} />
-          <h1>Blogs</h1>
+          <h1 id="Blogs">Blogs</h1>
           {blogs.map((blog) => (
             <Blog
               key={blog.id}
@@ -105,6 +106,7 @@ function App() {
           ))}
         </div>
       </main>
+      <Contact />
       <Footer />
     </>
   );
