@@ -36,19 +36,20 @@ export async function postBlog(blog) {
   }
 }
 
-export async function deleteBlog(id) {
-  try {
-    const response = await fetch(`${API_URL}/${id}`, {
-      method: "DELETE",
-    });
-    if (response.ok) {
-      return true;
+export const deleteBlog = async (id) => {
+    try {
+      const response = await fetch(`http://localhost:3000/blog/${id}`, {
+        method: "DELETE",
+      });
+  
+      console.log("Sunucudan gelen yanıt:", response);
+  
+      return response;
+    } catch (error) {
+      console.error("Silme isteği başarısız oldu:", error);
+      return null;
     }
-  } catch (error) {
-    console.log("Request Model Error: ", error);
-    return null;
-  }
-}
+  };
 
 export async function updateBlog(id, blog) {
   try {
