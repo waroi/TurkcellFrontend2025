@@ -12,6 +12,7 @@
   --shadow-sm: rgba(0, 0, 0, 0.05);
   --shadow: rgba(0, 0, 0, 0.08);
   --font-main: 'Inter', sans-serif;
+  --mint: #b7dfe2;
 }
 
 body {
@@ -335,6 +336,7 @@ body {
 .card .col-md-4,
 .card .card-body {
   cursor: pointer;
+  background-color: #ECF2FF;
 }
 
 #edit-description {
@@ -347,4 +349,17 @@ body {
 
 .cursor {
   cursor: pointer;
+}
+
+.navbar {
+  background-color: var(--mint);
+  z-index: 5;
+}
+
+footer {
+  background: var(--mint);
+}
+
+footer h5, footer p {
+  color: var(--text) !important;
 }

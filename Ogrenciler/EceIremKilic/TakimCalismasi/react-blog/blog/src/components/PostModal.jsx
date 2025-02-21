@@ -16,7 +16,7 @@ const PostModal = ({ isOpen, onClose }) => {
   };
 
   const [newPost, setNewPost] = useState({
-    blogID: Date.now(),  
+    id: Date.now(), // ID'nin string olarak gönderilmesi
     blogTitle: "",
     blogContent: "",
     blogCategory: "Teknoloji",
@@ -31,60 +31,137 @@ const PostModal = ({ isOpen, onClose }) => {
     setNewPost((prevPost) => ({
       ...prevPost,
       [id]: value,
-      blogAuthorImg: id === "blogAuthorName" ? SetAuthorImg(value) : prevPost.blogAuthorImg,
+      blogAuthorImg:
+        id === "blogAuthorName" ? SetAuthorImg(value) : prevPost.blogAuthorImg,
     }));
   };
 
   const savePost = async () => {
-    const requiredFields = ["blogTitle", "blogContent", "blogCategory", "blogReleaseDate", "blogAuthorName"];
+    const requiredFields = [
+      "blogTitle",
+      "blogContent",
+      "blogCategory",
+      "blogReleaseDate",
+      "blogAuthorName",
+    ];
     if (requiredFields.some((field) => !newPost[field])) {
       alert("Lütfen tüm alanları doldurunuz.");
       return;
     }
     console.log("newPost:", newPost);
-    await postBlog(newPost);
+    await postBlog(newPost); // Burada veritabanına post yapılıyor
     onClose();
   };
 
   return (
-    <div className={`post-modal modal fade ${isOpen ? "show d-block" : "d-none"}`}>
+    <div
+      className={`post-modal modal modal-lg fade ${
+        isOpen ? "show d-block" : "d-none"
+      }`}
+    >
       <div className="modal-dialog modal-dialog-scrollable">
-        <div className="modal-content">
+        <div className="modal-content p-3 rounded-5">
           <div className="modal-header">
-            <h5 className="modal-title">Yeni Blog Ekle</h5>
-            <button type="button" className="btn-close" onClick={onClose}></button>
+            <h5 className="modal-title text-primary fw-bold">Yeni Blog Ekle</h5>
+            <button
+              type="button"
+              className="btn-close"
+              onClick={onClose}
+            ></button>
           </div>
           <div className="modal-body">
-            <label htmlFor="blogTitle" className="form-label">Blog Adı</label>
-            <input type="text" className="form-control" id="blogTitle" placeholder="Blog Adı" value={newPost.blogTitle} onChange={handleChange} />
-            
-            <label htmlFor="blogContent" className="form-label">Blog İçeriği</label>
-            <input type="text" className="form-control" id="blogContent" placeholder="Detaylı Açıklama" value={newPost.blogContent} onChange={handleChange} />
-            
-            <label htmlFor="blogCategory" className="form-label">Kategori</label>
-            <select id="blogCategory" className="form-select" value={newPost.blogCategory} onChange={handleChange}>
-              <option value="Teknoloji">Teknoloji</option>
-              <option value="Sağlık">Sağlık</option>
-              <option value="Kitap">Kitap</option>
-              <option value="Yemek">Yemek</option>
-              <option value="Seyahat">Seyahat</option>
-              <option value="Spor">Spor</option>
-              <option value="İş Dünyası">İş Dünyası</option>
-              <option value="Kişisel Gelişim">Kişisel Gelişim</option>
-              <option value="Diğer">Diğer</option>
-            </select>
-            
-            <label htmlFor="blogReleaseDate" className="form-label">Yayın Tarihi</label>
-            <input type="date" className="form-control" id="blogReleaseDate" value={newPost.blogReleaseDate} onChange={handleChange} />
-            
-            <label htmlFor="blogImage" className="form-label">Resim URL</label>
-            <input type="text" className="form-control" id="blogImage" placeholder="Resim URL" value={newPost.blogImage} onChange={handleChange} />
-            
-            <label htmlFor="blogAuthorName" className="form-label">Yazar Adı</label>
-            <input type="text" className="form-control" id="blogAuthorName" placeholder="Blog Yazarı" value={newPost.blogAuthorName} onChange={handleChange} />
+            <label htmlFor="blogTitle" className="form-label text-primary fw-bold">
+              Blog Adı
+            </label>
+            <input
+              type="text"
+              className="form-control mb-3"
+              id="blogTitle"
+              placeholder="Blog Adı"
+              value={newPost.blogTitle}
+              onChange={handleChange}
+            />
+
+            <label htmlFor="blogContent" className="form-label text-primary fw-bold">
+              Blog İçeriği
+            </label>
+            <input
+              type="text"
+              className="form-control mb-3"
+              id="blogContent"
+              placeholder="Detaylı Açıklama"
+              value={newPost.blogContent}
+              onChange={handleChange}
+            />
+
+            <div className="row mb-3">
+              <div className="col-6">
+                <label htmlFor="blogCategory" className="form-label text-primary fw-bold">
+                  Kategori
+                </label>
+                <select
+                  id="blogCategory"
+                  className="form-select"
+                  value={newPost.blogCategory}
+                  onChange={handleChange}
+                >
+                  <option value="Teknoloji">Teknoloji</option>
+                  <option value="Sağlık">Sağlık</option>
+                  <option value="Kitap">Kitap</option>
+                  <option value="Yemek">Yemek</option>
+                  <option value="Seyahat">Seyahat</option>
+                  <option value="Spor">Spor</option>
+                  <option value="İş Dünyası">İş Dünyası</option>
+                  <option value="Kişisel Gelişim">Kişisel Gelişim</option>
+                  <option value="Diğer">Diğer</option>
+                </select>
+              </div>
+              <div className="col-6">
+                <label htmlFor="blogReleaseDate" className="form-label text-primary fw-bold">
+                  Yayın Tarihi
+                </label>
+                <input
+                  type="date"
+                  className="form-control"
+                  id="blogReleaseDate"
+                  value={newPost.blogReleaseDate}
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
+
+            <label htmlFor="blogImage" className="form-label text-primary fw-bold">
+              Resim URL
+            </label>
+            <input
+              type="text"
+              className="form-control mb-3"
+              id="blogImage"
+              placeholder="Resim URL"
+              value={newPost.blogImage}
+              onChange={handleChange}
+            />
+
+            <label htmlFor="blogAuthorName" className="form-label text-primary fw-bold">
+              Yazar Adı
+            </label>
+            <input
+              type="text"
+              className="form-control mb-3"
+              id="blogAuthorName"
+              placeholder="Blog Yazarı"
+              value={newPost.blogAuthorName}
+              onChange={handleChange}
+            />
           </div>
           <div className="modal-footer">
-            <button type="button" className="btn btn-primary" onClick={savePost}>Kaydet</button>
+            <button
+              type="button"
+              className="btn btn-primary rounded-pill"
+              onClick={savePost}
+            >
+              Kaydet
+            </button>
           </div>
         </div>
       </div>

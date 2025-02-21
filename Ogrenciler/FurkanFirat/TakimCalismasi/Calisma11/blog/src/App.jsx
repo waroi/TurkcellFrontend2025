@@ -1,28 +1,28 @@
-import { useEffect, useState } from 'react';
-import PostCard from './components/PostCard';
-import NavBar from './components/Navbar';
-import Footer from './components/Footer';
-import SideBar from './components/SideBar';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import './App.css';
+import { useEffect, useState } from "react";
+import PostCard from "./components/PostCard";
+import NavBar from "./components/Navbar";
+import Footer from "./components/Footer";
+import SideBar from "./components/SideBar";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import "./App.css";
 
 function App() {
   const [blogPosts, setBlogPosts] = useState([]);
   const [user, setUser] = useState({});
   const [postLoading, setPostLoading] = useState(null);
   const [userLoading, setUserLoading] = useState(null);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
 
   const fetchPostData = async () => {
     setPostLoading(true);
     try {
-      const url = 'http://localhost:3000';
-      const query = '/posts';
+      const url = "http://localhost:3000";
+      const query = "/posts";
       const response = await fetch(`${url}${query}`);
       if (!response.ok) {
-        setError('Hata Kodu:', response.status);
+        setError("Hata Kodu:", response.status);
       }
       const data = await response.json();
       setBlogPosts(data);
@@ -32,14 +32,41 @@ function App() {
       setPostLoading(false);
     }
   };
+
+  const handleEdit = async (updatedPost) => {
+    const response = await fetch(
+      `http://localhost:3000/posts/${updatedPost.id}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(updatedPost),
+      }
+    );
+    fetchPostData();
+    if (response.ok) {
+      console.log("Post successfully updated");
+    }
+  };
+  const handleDelete = async (postId) => {
+    const response = await fetch(`http://localhost:3000/posts/${postId}`, {
+      method: "DELETE",
+    });
+    fetchPostData();
+    if (response.ok) {
+      console.log("Post successfully deleted");
+    }
+  };
+
   const fetchUserData = async () => {
     setUserLoading(true);
     try {
-      const url = 'http://localhost:3000';
-      const query = '/user';
+      const url = "http://localhost:3000";
+      const query = "/user";
       const response = await fetch(`${url}${query}`);
       if (!response.ok) {
-        setError('Hata Kodu:', response.status);
+        setError("Hata Kodu:", response.status);
       }
       const data = await response.json();
       setUser(data);
@@ -68,21 +95,27 @@ function App() {
             <Col sm={12} md={9}>
               {blogPosts &&
                 blogPosts.map((postItem) => (
-                  <PostCard key={postItem.id} postItem={postItem} user={user} />
+                  <PostCard
+                    key={postItem.id}
+                    postItem={postItem}
+                    user={user}
+                    handleEdit={handleEdit}
+                    handleDelete={handleDelete}
+                  />
                 ))}
             </Col>
           )}
           {userLoading ? (
-            <Col md={3} className='d-none d-md-block'>
+            <Col md={3} className="d-none d-md-block">
               <p>Loading user...</p>
             </Col>
           ) : (
-            <Col md={3} className='d-none d-md-block'>
+            <Col md={3} className="d-none d-md-block">
               <SideBar user={user} />
             </Col>
           )}
         </Row>
-        {error && <p className='d-block fw-bold text-danger'>{error}</p>}
+        {error && <p className="d-block fw-bold text-danger">{error}</p>}
       </Container>
       <Footer />
     </>

@@ -77,7 +77,7 @@ const Article = () => {
           <div className="row mx-auto">
             {filteredBlogs.length > 0 ? (
               filteredBlogs.map((blog) => (
-                <div className="col-lg-4" key={blog.blogID}>
+                <div className="col-lg-4" key={blog.id}>
                   <div className="card mb-5 bg-white d-flex flex-column rounded-5 border-0">
                     <img
                       src={blog.blogImage}
@@ -85,8 +85,8 @@ const Article = () => {
                       alt="..."
                     />
                     <div className="card-body d-flex flex-column justify-content-between">
-                      <div className="row justify-content-between">
-                        <div className="col-8 d-flex align-items-center">
+                      <div className="row flex-wrap flex-column-reverse flex-md-row justify-content-between">
+                        <div className="col-8 d-flex align-items-center mb-3">
                           <img
                             src={blog.blogAuthorImg}
                             className="p-0 img-fluid rounded-circle avatar me-2"
@@ -130,16 +130,9 @@ const Article = () => {
         </div>
       </section>
       <BlogModal
-        blogID={selectedBlog?.blogID}
-        blogTitle={selectedBlog?.blogTitle}
-        blogContent={selectedBlog?.blogContent}
-        blogImage={selectedBlog?.blogImage}
-        blogCategory={selectedBlog?.blogCategory}
-        blogAuthorImg={selectedBlog?.blogAuthorImg}
-        blogAuthorName={selectedBlog?.blogAuthorName}
-        blogReleaseDate={selectedBlog?.blogReleaseDate}
+        post={selectedBlog} // selectedBlog'u geçiriyoruz
         closeModal={closeModal}
-        isOpen={isModalOpen}
+        isOpen={isModalOpen} // isModalOpen state'ini geçiriyoruz
       />
     </>
   );
