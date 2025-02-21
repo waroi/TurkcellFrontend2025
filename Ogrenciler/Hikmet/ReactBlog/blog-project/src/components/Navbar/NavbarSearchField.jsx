@@ -1,13 +1,20 @@
-import React from "react";
-import styles from "./Navbar.module.css";
+import React, { useState } from "react";
+import CreateBlogModal from "../CreateBlog/CreateBlogModal"; // Modal bileşenini içe aktar
 
 function NavbarSearchField() {
+	const [isModalOpen, setIsModalOpen] = useState(false);
+
+	function handleButtonClick() {
+		setIsModalOpen(true);
+	}
+
 	return (
-		<input
-			type="text"
-			className={styles.navbarSearchField}
-			placeholder="Search Blog"
-		/>
+		<>
+			<button className="badge" onClick={handleButtonClick}>
+				Create Blog
+			</button>
+			{isModalOpen && <CreateBlogModal onClose={() => setIsModalOpen(false)} />}
+		</>
 	);
 }
 

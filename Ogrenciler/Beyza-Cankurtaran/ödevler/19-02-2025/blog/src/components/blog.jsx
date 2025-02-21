@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Card from "./Card/index";
 import Author from "./author";
 import Filter from "./filter";
+import "./blog.css";
 
 const Blog = () => {
   const [blogs, setBlogs] = useState([]);

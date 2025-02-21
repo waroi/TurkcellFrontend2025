@@ -8,7 +8,7 @@ const CustomNavbar = () => {
   const closeModal = () => setIsOpen(false);
 
   return (
-    <nav className="navbar fixed-top p-3 navbar-expand-lg bg-info">
+    <nav className="navbar p-3 navbar-expand-lg bg-info">
       <div className="container">
         <a className="navbar-brand" href="#">
           <img src={blog} alt="" className="img-fluid nav-blog-img" />

@@ -11849,6 +11849,11 @@ body {
   font-family: "Montserrat", serif;
 }
 
+.avatar {
+  width: 50px;
+  height: 50px;
+}
+
 .nav-blog-img {
   height: 60px;
 }
@@ -11868,9 +11873,6 @@ body {
   object-fit: cover;
 }
 
-.mainArticleSection {
-  margin-top: 200px;
-}
 .mainArticleSection .main-article-logo {
   height: 350px;
   width: 100%;
@@ -11904,6 +11906,11 @@ body {
 .footer-links li:hover {
   color: #2F80E4;
   transform: translateY(-5px);
+}
+
+.footer-bottom img {
+  height: 30px;
+  width: 30px;
 }
 
 /*# sourceMappingURL=main.css.map */
