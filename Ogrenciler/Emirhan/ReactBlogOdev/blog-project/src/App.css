@@ -3,3 +3,11 @@
   grid-template-columns: 1fr 1fr;
   gap: 20px;
 }
+body {
+  background-color: #212529; /* Navbar ile aynı renk */
+  color: #f8f9fa;
+  font-family: Arial, sans-serif;
+}
+.navbar, .card-header {
+  background-color: #343a40;
+}
