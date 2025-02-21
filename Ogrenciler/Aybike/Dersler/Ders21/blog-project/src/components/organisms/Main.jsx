@@ -6,11 +6,13 @@ import Card from "../molecules/Card";
 import Container from "react-bootstrap/esm/Container";
 
 const Main = ({ category }) => {
+  console.log(category, "main");
   const [blogs, setBlogs] = useState([]);
   useEffect(() => {
     BlogService.getBlogs(category)
       .then((data) => {
         setBlogs(data);
+        console.log(data);
       })
       .catch((error) => {
         console.log(error);
