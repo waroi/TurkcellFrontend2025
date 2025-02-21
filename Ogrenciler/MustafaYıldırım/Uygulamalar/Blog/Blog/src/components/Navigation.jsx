@@ -29,12 +29,20 @@ export default function Navigation({ openModal }) {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-white" href="#">
+              <a
+                className="nav-link text-white"
+                href="#carouselExampleInterval"
+              >
                 Trend
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-white" href="#">
+              <a className="nav-link text-white" href="#Blogs">
+                Blogs
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link text-white" href="#Contact">
                 Contact
               </a>
             </li>
