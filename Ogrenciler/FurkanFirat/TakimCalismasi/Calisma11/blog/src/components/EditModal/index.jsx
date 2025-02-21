@@ -1,6 +1,6 @@
 import Modal from "react-bootstrap/Modal";
 import Form from "../EditForm";
-function EditModal({ show, handleClose, postItem, handleEdit }) {
+function EditModal({ show, handleClose, postItem, handleEdit, handleAddPost }) {
   return (
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
@@ -11,6 +11,7 @@ function EditModal({ show, handleClose, postItem, handleEdit }) {
           handleClose={handleClose}
           postItem={postItem}
           handleEdit={handleEdit}
+          handleAddPost={handleAddPost}
         />
       </Modal.Body>
     </Modal>

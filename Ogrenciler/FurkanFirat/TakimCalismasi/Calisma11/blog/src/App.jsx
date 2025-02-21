@@ -59,6 +59,21 @@ function App() {
     }
   };
 
+  const handleAddPost = async (postItem) => {
+    console.log(postItem);
+    const response = await fetch(`http://localhost:3000/posts`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(postItem),
+    });
+    fetchPostData();
+    if (response.ok) {
+      console.log("Post successfully updated");
+    }
+  };
+
   const fetchUserData = async () => {
     setUserLoading(true);
     try {
@@ -84,7 +99,7 @@ function App() {
 
   return (
     <>
-      <NavBar />
+      <NavBar handleAddPost={handleAddPost} />
       <Container>
         <Row>
           {postLoading ? (
@@ -99,6 +114,7 @@ function App() {
                     key={postItem.id}
                     postItem={postItem}
                     user={user}
+                    userId={user.id}
                     handleEdit={handleEdit}
                     handleDelete={handleDelete}
                   />
