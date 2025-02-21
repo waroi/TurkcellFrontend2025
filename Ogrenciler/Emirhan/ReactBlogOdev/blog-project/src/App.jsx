@@ -23,7 +23,7 @@ function App() {
       <Navbar handleSearch={handleSearch} search={search} />
       <ModalContent setBlog={setBlog} blog={blog} postBlog={postBlog} deleteBlog={deleteBlog} selectedId={selectedId} setSelectedId={setSelectedId}/>
       <ModalForm setBlog={setBlog} blog={blog} postBlog={postBlog} />
-      <div className="container">
+      <div className="container text-light">
         <h2 className="mt-5">React Blog</h2>
         <h6 className="mb-5">
           Bu blog, React ekibinden gelen güncellemeler için resmi kaynaktır.
