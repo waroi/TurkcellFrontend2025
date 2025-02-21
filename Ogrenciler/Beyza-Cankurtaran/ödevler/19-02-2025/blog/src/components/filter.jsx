@@ -5,8 +5,13 @@ const Filter = ({ setFilter }) => {
 
   const toggleDropdown = () => setIsOpen(!isOpen);
 
-  const yazarFiltre = (author) => {
-    setFilter(author);
+  const yazarFiltre = (authors) => {
+    setFilter(authors);
+    setIsOpen(false);
+  };
+
+  const tumYazarlarFiltre = () => {
+    setFilter("");
     setIsOpen(false);
   };
 
@@ -34,6 +39,11 @@ const Filter = ({ setFilter }) => {
           <li>
             <a className="dropdown-item" onClick={() => yazarFiltre("Beyza")}>
               Beyza
+            </a>
+          </li>
+          <li>
+            <a className="dropdown-item" onClick={tumYazarlarFiltre}>
+              Hepsi
             </a>
           </li>
         </ul>
