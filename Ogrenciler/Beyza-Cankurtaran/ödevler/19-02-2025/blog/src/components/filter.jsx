@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import '../App.css';
 const Filter = ({ setFilter }) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -14,7 +14,7 @@ const Filter = ({ setFilter }) => {
     <div className="btn-group">
       <button
         type="button"
-        className="btn btn-success dropdown-toggle"
+        className="btn btn-lila dropdown-toggle"
         onClick={toggleDropdown}
       >
         Yazara Göre Filtrele
@@ -35,9 +35,6 @@ const Filter = ({ setFilter }) => {
             <a className="dropdown-item" onClick={() => yazarFiltre("Beyza")}>
               Beyza
             </a>
-          </li>
-          <li>
-            <hr className="dropdown-divider" />
           </li>
         </ul>
       )}

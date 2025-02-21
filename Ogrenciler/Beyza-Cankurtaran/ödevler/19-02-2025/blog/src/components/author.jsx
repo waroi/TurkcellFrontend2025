@@ -1,5 +1,5 @@
 import React from 'react'
-import Hazal from '../assets/hazal.jpeg';
+import Hazal from '../assets/hazall.jpg';
 import Beyza from '../assets/beyza.jpg';
 import Oğuzhan from '../assets/oğuzhan.jpg';
 const Author = () => {
