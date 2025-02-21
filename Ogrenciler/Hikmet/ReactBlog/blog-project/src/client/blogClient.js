@@ -9,4 +9,11 @@ export default class BlogClient {
 			headers: { "Content-type": "application/json;" },
 		}).then((response) => response.json());
 	}
+
+	static async get(id) {
+		return fetch(`${BLOG_URL}/${id}`, {
+			method: "GET",
+			headers: { "Content-type": "application/json;" },
+		}).then((response) => response.json());
+	}
 }
