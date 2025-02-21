@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { deleteBlog, updateBlog } from "../core/RequestModel";
 const BlogModal = ({
+  blogID,
   blogTitle,
   blogImage,
   blogCategory,
@@ -15,10 +16,21 @@ const BlogModal = ({
   const [deletePost, setDeletePost] = useState(false);
   const [updatePost, setUpdatePost] = useState(false);
   const deleteThisPost = async (blogID) => {
-    await deleteBlog(blogID);
-    setDeletePost(true);
-    closeModal();
+    try {
+      const response = await deleteBlog(blogID); // blogID'yi burada kullan
+      if (response.status === 200 || response.ok) {
+        console.log("Blog başarıyla silindi");
+        setDeletePost(true);
+        closeModal();
+      } else {
+        console.error(`Silme işlemi başarısız: ${response.status}`);
+      }
+    } catch (error) {
+      console.error("Silme işlemi sırasında hata oluştu:", error);
+    }
   };
+  
+  
 
   const updateThisPost = async () => {
     await updateBlog(newPost);

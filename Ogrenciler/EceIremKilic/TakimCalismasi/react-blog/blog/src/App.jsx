@@ -3,7 +3,6 @@ import CustomNavbar from "./components/CustomNavbar";
 import Article from "./components/Article";
 import MainArticle from "./components/MainArticle";
 import Footer from "./components/Footer";
-import OperationBar from "./components/OperationBar";
 import {getBlogs, updateBlog, postBlog, deleteBlog} from "./core/RequestModel";
 function App() {
   const [blog, setBlog] = useState([]);
@@ -18,7 +17,6 @@ function App() {
     <>
       <CustomNavbar />
       <MainArticle />
-      <OperationBar />
       <Article key={blog.blogID}/>
       <Footer />
     </>
