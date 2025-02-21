@@ -1,7 +1,7 @@
 import Button from "react-bootstrap/Button";
-function SearchButton({ setCategory, categoryInput }) {
+import { BlogService } from "../../services/BlogService";
+export function SearchButton({ setCategory, categoryInput }) {
   function set() {
-    console.log(categoryInput);
     setCategory(categoryInput);
   }
   return (
@@ -11,4 +11,24 @@ function SearchButton({ setCategory, categoryInput }) {
   );
 }
 
-export default SearchButton;
+export function ModalButton({ text, variant, onClickFunction }) {
+  return (
+    <Button className="m-2" variant={variant} onClick={onClickFunction}>
+      {text}
+    </Button>
+  );
+}
+export function DeleteButton({ blogId, setTrigger }) {
+  return (
+    <Button
+      type="button"
+      variant="danger"
+      onClick={() => {
+        BlogService.delete(blogId);
+        setTrigger(true);
+      }}
+    >
+      Sil
+    </Button>
+  );
+}

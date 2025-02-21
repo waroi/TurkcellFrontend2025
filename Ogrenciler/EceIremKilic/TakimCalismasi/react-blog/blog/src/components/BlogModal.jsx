@@ -2,27 +2,27 @@ import React, { useState } from "react";
 import { deleteBlog, updateBlog } from "../core/RequestModel";
 
 const BlogModal = ({
-  post, // Burada post objesini alıyoruz
+  post,
   closeModal,
   isOpen,
 }) => {
   const deleteThisPost = async (post) => {
-    console.log("Silinecek Blog ID:", post.id); // ID'yi konsola yazdırıyoruz
+    console.log("Silinecek Blog ID:", post.id); 
     if (!post.id) {
       console.error("ID geçerli değil!");
       return;
     }
     try {
-      const response = await deleteBlog(post.id); // post.id'yi gönderiyoruz
+      const response = await deleteBlog(post.id); 
       console.log("Silme işlemi başarılı:", response);
-      closeModal(); // Silme işlemi başarılı olduktan sonra modal'ı kapatıyoruz
+      closeModal(); 
     } catch (error) {
       console.error("Silme işlemi sırasında hata oluştu:", error);
     }
   };
 
   const updateThisPost = async (post) => {
-    // Güncelleme işlemini yapıyoruz
+    
     await updateBlog(post);
     closeModal();
   };
@@ -35,7 +35,7 @@ const BlogModal = ({
       <div className="modal-dialog">
         <div className="modal-content p-3 rounded-5">
           <div className="modal-header">
-            <h5 className="modal-title">{post?.blogTitle}</h5>
+            <h5 className="modal-title text-primary fw-bold">{post?.blogTitle}</h5>
             <button type="button" className="btn-close" onClick={closeModal}></button>
           </div>
           <div className="modal-body">
@@ -65,17 +65,10 @@ const BlogModal = ({
           <div className="modal-footer">
             <button
               type="button"
-              className="btn btn-danger"
-              onClick={() => deleteThisPost(post)} // Post objesini buraya gönderiyoruz
+              className="btn btn-secondary rounded-pill px-4 text-white fw-bold"
+              onClick={() => deleteThisPost(post)} 
             >
               Sil
-            </button>
-            <button
-              type="button"
-              className="btn btn-warning"
-              onClick={() => updateThisPost(post)} // Post objesini buraya gönderiyoruz
-            >
-              Güncelle
             </button>
           </div>
         </div>

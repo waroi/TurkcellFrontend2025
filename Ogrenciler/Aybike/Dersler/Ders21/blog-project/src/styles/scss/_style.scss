@@ -7,3 +7,8 @@ img {
   object-fit: cover;
   display: block;
 }
+.card-title {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
