@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Header from './components/Header'
 import Footer from './components/Footer'
 import BlogPosts from './components/BlogPosts'
@@ -6,10 +7,12 @@ import './App.css'
 
 function App() {
 
+  const [searchTerm, setSearchTerm] = useState('');
+
   return (
     <>
-      <Header />
-      <BlogPosts />
+      <Header setSearchTerm={setSearchTerm} />
+      <BlogPosts searchTerm={searchTerm} />
       <Footer />
     </>
   )

@@ -5,7 +5,9 @@ function NavBar() {
   return (
     <Navbar expand="lg" className="bg-transparent">
       <Container>
-        <Navbar.Brand href="#home">BLOGG</Navbar.Brand>
+        <Navbar.Brand className="fw-bold fs-5" href="#home">
+          BLOGG
+        </Navbar.Brand>
       </Container>
     </Navbar>
   );
