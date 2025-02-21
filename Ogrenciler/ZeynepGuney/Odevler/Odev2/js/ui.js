@@ -289,6 +289,8 @@ export class UI {
         console.log(`Oyun kartı güncellendi: ${updatedGame.name}`);
     }
     saveChanges() {
+
+        // bunu incele
         if (this.updateIndex !== null) {
             const updatedGame = {
                 id: this.games[this.updateIndex].id,
@@ -306,6 +308,7 @@ export class UI {
             console.log("Oyun güncellendi:", updatedGame);
         } else {
             this.addGame();
+            console.log("else girdi")
         }
     }
     createGameCards(games) {

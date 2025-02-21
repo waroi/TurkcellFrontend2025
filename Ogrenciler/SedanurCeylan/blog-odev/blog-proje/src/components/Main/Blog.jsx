@@ -48,15 +48,18 @@ function Blog() {
     };
 
 
+
     const DeletePost = (id) => {
         fetch(`http://localhost:5001/blogs/${id}`, {
             method: 'DELETE',
         })
             .then(() => {
-                setPosts(posts.filter(post => post.id !== id));
+                setPosts(prevPosts => prevPosts.filter(post => post.id !== id));
             })
             .catch(error => console.error('Blog silinirken hata oluştu:', error));
     };
+
+
 
     function truncateText(text, maxLength) {
         if (!text) return "";
@@ -66,7 +69,7 @@ function Blog() {
 
 
     return (
-        <div className="container mt-5 pt-5">
+        <div className="container my-5 py-5">
 
             <AddBlogButton toggleModal={toggleModal} />
 
@@ -82,7 +85,7 @@ function Blog() {
                                 <p className="card-text">{truncateText(post.body, 100)}</p>
                             </div>
                             <button className="btn btn-link" >Devamını Gör...</button>
-                            <DeleteBlogButton DeletePost={DeletePost} postId={post.id} />
+                            <DeleteBlogButton DeletePost={DeletePost} id={post.id} />
                             <UpdateBlogButton />
                         </div>
                     </div>
