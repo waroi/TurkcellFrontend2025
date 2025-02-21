@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { deleteBlog, updateBlog } from "../core/RequestModel";
 const BlogModal = ({
-  blogID,
+  id,
   blogTitle,
   blogImage,
   blogCategory,
@@ -15,21 +15,27 @@ const BlogModal = ({
 }) => {
   const [deletePost, setDeletePost] = useState(false);
   const [updatePost, setUpdatePost] = useState(false);
-  const deleteThisPost = async (blogID) => {
+  const deleteThisPost = async (id) => {
     try {
-      const response = await deleteBlog(blogID); // blogID'yi burada kullan
+      const response = await deleteBlog(id);
+      
+      console.log("Gelen yanıt:", response); // Yanıtın içeriğini kontrol et
+  
+      // Yanıt kontrolü yapalım
+      if (!response || !response.ok) {
+        console.error(`Silme işlemi başarısız: ${response ? response.status : 'No response'}`);
+        throw new Error("Silme işlemi başarısız oldu!");
+      }
+  
       if (response.status === 200 || response.ok) {
         console.log("Blog başarıyla silindi");
-        setDeletePost(true);
-        closeModal();
-      } else {
-        console.error(`Silme işlemi başarısız: ${response.status}`);
+        setDeletePost(true);  // Bu state'in doğru şekilde güncellenip güncellenmediğini kontrol et
+        closeModal();  // Modal kapanma işlemi
       }
     } catch (error) {
       console.error("Silme işlemi sırasında hata oluştu:", error);
     }
   };
-  
   
 
   const updateThisPost = async () => {
@@ -79,7 +85,7 @@ const BlogModal = ({
             <button
               type="button"
               className="btn btn-danger"
-              onClick={() => deleteThisPost(blogID)}
+              onClick={() => deleteThisPost(id)}
             >
               Sil
             </button>
