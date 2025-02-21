@@ -6,6 +6,7 @@ import Navbar from './Components/Navbar'
 import EditDeleteBlogModal from './Components/Modal/EditDeleteBlogModal'
 import ViewBlogModal from './Components/Modal/ViewBlogModal'
 import AddBlogModal from './Components/Modal/AddBlogModal'
+import Footer from './Components/Footer'
 
 const initialBlogData = {
   title: '',
@@ -14,7 +15,7 @@ const initialBlogData = {
   tags: [],
   image_url: '',
   author: '',
-  releaseDate: new Date().toLocaleDateString('tr-TR')
+  date: new Date().toLocaleDateString('tr-TR')
 }
 
 function App() {
@@ -117,11 +118,8 @@ function App() {
 
   return (
     <>
-      <Navbar handleCategoryChange={handleCategoryChange} />
-      <div className="container">
-        <button type="button" className="btn btn-primary my-5" data-bs-toggle="modal" data-bs-target="#blogModal">
-          Add New Blog Post
-        </button>
+      <Navbar selectedCategory={selectedCategory} handleCategoryChange={handleCategoryChange} />
+      <div className="container mt-5">
         <AddBlogModal
           setBlog={setBlog}
           blog={blog}
@@ -131,7 +129,7 @@ function App() {
         />
 
         <Hero posts={randomPosts} />
-        <Blogs blogs={filteredBlogs} setActivePost={setActivePost} />
+        <Blogs selectedCategory={selectedCategory} blogs={filteredBlogs} setActivePost={setActivePost} />
 
         <ViewBlogModal activePost={activePost} />
         <EditDeleteBlogModal
@@ -141,6 +139,7 @@ function App() {
           deleteBlogPost={deleteBlogPost}
         />
       </div>
+      <Footer />
     </>
   )
 }

@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Navbar = ({ handleCategoryChange }) => {
+const Navbar = ({ handleCategoryChange, selectedCategory }) => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-mint bg-mint">
+    <nav className="navbar navbar-expand-lg px-3 navbar-mint bg-mint position-sticky top-0">
       <a className="navbar-brand" href="#">Mis Gibi Blog</a>
       <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
@@ -24,9 +24,15 @@ const Navbar = ({ handleCategoryChange }) => {
           <li className="nav-item">
             <button className="nav-link" onClick={() => handleCategoryChange('Mutfak Temizliği')}>Mutfak Temizliği</button>
           </li>
+          <li className="nav-item">
+            {selectedCategory !== '' ? <button className="fw-bold nav-link" onClick={() => handleCategoryChange('')}>Sıfırla</button> : ''}
+          </li>
         </ul>
       </div>
-    </nav>
+      <button type="button" className="btn btn-primary my-3" data-bs-toggle="modal" data-bs-target="#blogModal">
+        Yeni Post Ekle
+      </button>
+    </nav >
   );
 };
 

@@ -47,7 +47,7 @@ const BlogItem = ({ blog, setActivePost }) => {
                                     data-bs-target="#addModal"
                                     onClick={() => setActivePost(blog)}
                                 >
-                                    {blog.description}
+                                    {blog.description.split(' ').slice(0, 25).join(' ') + '...'}
                                 </p>
                                 <p className="card-text">
                                     <small className="text-body-secondary">
