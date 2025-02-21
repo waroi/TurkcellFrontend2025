@@ -1,37 +1,28 @@
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
-import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import './style.css';
 
-function Header() {
+function Header({ setSearchTerm }) {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
-      <Container fluid>
-        <Navbar.Brand href="#">UFC Blog</Navbar.Brand>
-        <Navbar.Toggle aria-controls="navbarScroll" />
-        <Navbar.Collapse id="navbarScroll">
-          <Nav
-            className="me-auto my-2 my-lg-0"
-            style={{ maxHeight: '100px' }}
-            navbarScroll
-          >
-            <Nav.Link href="#action1">Anasayfa</Nav.Link>
-          </Nav>
-          <Form className="d-flex">
+    <Navbar expand='lg' className='navbar-custom px-3'>
+      <Container>
+        <Navbar.Brand href='#' className='brand-logo'>UFC Blog</Navbar.Brand>
+        <Navbar.Toggle aria-controls='navbarScroll' />
+        <Navbar.Collapse id='navbarScroll'>
+          <Form className='d-flex ms-auto' onSubmit={(e) => e.preventDefault()}>
             <Form.Control
-              type="search"
-              placeholder="Arama"
-              className="me-2"
-              aria-label="Search"
+              type='search'
+              placeholder='Ara'
+              className='me-2 search-box'
+              onChange={(e) => setSearchTerm(e.target.value)}
             />
-            <Button variant="outline-success">Arama</Button>
+            <Button variant='outline-light'>Ara</Button>
           </Form>
         </Navbar.Collapse>
       </Container>
     </Navbar>
-
   );
 }
 

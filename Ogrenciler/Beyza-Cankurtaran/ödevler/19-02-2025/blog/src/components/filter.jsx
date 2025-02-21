@@ -1,12 +1,17 @@
 import React, { useState } from "react";
-
+import '../App.css';
 const Filter = ({ setFilter }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => setIsOpen(!isOpen);
 
-  const yazarFiltre = (author) => {
-    setFilter(author);
+  const yazarFiltre = (authors) => {
+    setFilter(authors);
+    setIsOpen(false);
+  };
+
+  const tumYazarlarFiltre = () => {
+    setFilter("");
     setIsOpen(false);
   };
 
@@ -14,7 +19,7 @@ const Filter = ({ setFilter }) => {
     <div className="btn-group">
       <button
         type="button"
-        className="btn btn-success dropdown-toggle"
+        className="btn btn-lila dropdown-toggle"
         onClick={toggleDropdown}
       >
         Yazara Göre Filtrele
@@ -37,7 +42,9 @@ const Filter = ({ setFilter }) => {
             </a>
           </li>
           <li>
-            <hr className="dropdown-divider" />
+            <a className="dropdown-item" onClick={tumYazarlarFiltre}>
+              Hepsi
+            </a>
           </li>
         </ul>
       )}

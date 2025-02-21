@@ -1,5 +1,5 @@
 const EditDeleteBlogModal = ({ activePost, setActivePost, updateBlogPost, deleteBlogPost }) => {
-    if (!activePost) return 'Lütfen bir post seç kanka';
+    if (!activePost) return '';
 
     return (
         <div className="modal fade" id="editDeleteModal" tabIndex="-1" aria-labelledby="editDeleteModalLabel" aria-hidden="true">

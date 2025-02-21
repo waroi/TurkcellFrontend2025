@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Card from "./Card/index";
 import Author from "./author";
 import Filter from "./filter";
+import "./blog.css";
 
 const Blog = () => {
   const [blogs, setBlogs] = useState([]);
@@ -28,11 +29,14 @@ const Blog = () => {
 
   return (
     <>
-      <section className="bg-secondary">
-        <h2 className="text-center text-white pt-3">Yaz Tatili</h2>
-        <section>
-          <Filter setFilter={setFilter} />
+      <section className="bgg">
+        <h2 className="text-center text-white pt-4 ">Bloglarımız</h2>
+        <section className="m-6"> 
+          <div className="container d-flex justify-content-end text-end ">
+            <Filter setFilter={setFilter} />
+          </div>
         </section>
+
         <div className="container p-3">
           <div className="row justify-content-around gap-1">
             {filteredBlogs.map((blog) => (

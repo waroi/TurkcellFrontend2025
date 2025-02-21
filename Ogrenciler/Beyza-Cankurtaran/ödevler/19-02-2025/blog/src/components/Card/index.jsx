@@ -8,10 +8,10 @@ const Card = ({ title, detail, author, img, date, explanation}) => {
   const handleShow = () => setShowModal(true);
   const handleClose = () => setShowModal(false);
   return (
-    <div className="card col-lg-3 col-md-6 col-sm-12">
+    <div className="card mb-3 col-lg-3 col-md-6 col-sm-12">
       <img
         src={img}
-        className="card-img-top"
+        className="card-img-top "
         alt="..."
         width={200}
         height

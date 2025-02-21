@@ -1,10 +1,11 @@
 import React from 'react'
-import Hazal from '../assets/hazal.jpeg';
+import Hazal from '../assets/hazall.jpg';
 import Beyza from '../assets/beyza.jpg';
 import Oğuzhan from '../assets/oğuzhan.jpg';
 const Author = () => {
     return (
-        <div className='container my-3'>
+        <div className='container my-3 pb-5 mb-5'>
+            <h1 className="text-center pt-5 pb-5">Hakkımızda</h1>
             <div className="card-group">
                 <div className="card">
                     <img src={Hazal} className="card-img-top " alt="..." />

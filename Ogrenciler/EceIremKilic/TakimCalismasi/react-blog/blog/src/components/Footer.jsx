@@ -1,4 +1,5 @@
 import React from "react";
+import blog from "../assets/blog.png";
 
 const Footer = () => {
   return (
@@ -6,10 +7,10 @@ const Footer = () => {
       <div className="footer-top pt-5">
         <div className="container">
           <div className="row">
-            <div className="col-lg-3">
-              <img src="#" alt="#" />
+            <div className="col-lg-3 d-flex justify-content-center">
+              <img src={blog} alt="#" className="nav-blog-img" />
             </div>
-            <div className="col-lg-4">
+            <div className="col-lg-4 d-flex justify-content-center">
               <ul className="list-unstyled fs-4 fw-bold footer-links">
                 <li>
                   <a href="#" className="text-decoration-none">
@@ -28,7 +29,7 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-            <div className="col-lg-5">
+            <div className="col-lg-5 d-flex flex-column align-items-center">
               <h5 className="fs-3 fw-bold">Geliştiriciler</h5>
               <div className="d-flex developers">
                 <a href="https://www.linkedin.com/in/ece-irem-kilic/" target="_blank">

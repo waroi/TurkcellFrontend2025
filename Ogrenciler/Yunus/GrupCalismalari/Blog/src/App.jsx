@@ -2,9 +2,11 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import Hero from './Components/Hero'
 import Blogs from './Components/Blogs/Blog'
+import Navbar from './Components/Navbar'
 import EditDeleteBlogModal from './Components/Modal/EditDeleteBlogModal'
 import ViewBlogModal from './Components/Modal/ViewBlogModal'
 import AddBlogModal from './Components/Modal/AddBlogModal'
+import Footer from './Components/Footer'
 
 const initialBlogData = {
   title: '',
@@ -13,7 +15,7 @@ const initialBlogData = {
   tags: [],
   image_url: '',
   author: '',
-  releaseDate: new Date().toLocaleDateString('tr-TR')
+  date: new Date().toLocaleDateString('tr-TR')
 }
 
 function App() {
@@ -21,7 +23,8 @@ function App() {
   const [blogs, setBlogs] = useState([])
   const baseUrl = 'http://localhost:3000/'
   const [randomPosts, setRandomPosts] = useState([]);
-  const [activePost, setActivePost] = useState(null)
+  const [activePost, setActivePost] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState('');
 
   const addBlog = async (event) => {
     event.preventDefault()
@@ -60,8 +63,7 @@ function App() {
     const response = await fetch(`${baseUrl}blog_posts`)
     const data = await response.json()
     setBlogs(data)
-    //buraya tekrar bakalım
-    // blogs[Math.floor(Math.random()*blogs.length)];
+
     const shuffled = data.sort(() => 0.5 - Math.random());
     setRandomPosts(shuffled.slice(0, 3))
   }
@@ -105,13 +107,19 @@ function App() {
     }
   };
 
+  const handleCategoryChange = (category) => {
+    setSelectedCategory(category);
+  };
+
+  const filteredBlogs = selectedCategory
+    ? blogs.filter(blog => blog.category.toLowerCase() === selectedCategory.toLowerCase())
+    : blogs;
+
+
   return (
     <>
-      <div className="container">
-        <button type="button" className="btn btn-primary my-5" data-bs-toggle="modal" data-bs-target="#blogModal">
-          Add New Blog Post
-        </button>
-
+      <Navbar selectedCategory={selectedCategory} handleCategoryChange={handleCategoryChange} />
+      <div className="container mt-5">
         <AddBlogModal
           setBlog={setBlog}
           blog={blog}
@@ -121,7 +129,7 @@ function App() {
         />
 
         <Hero posts={randomPosts} />
-        <Blogs blogs={blogs} setActivePost={setActivePost} />
+        <Blogs selectedCategory={selectedCategory} blogs={filteredBlogs} setActivePost={setActivePost} />
 
         <ViewBlogModal activePost={activePost} />
         <EditDeleteBlogModal
@@ -131,8 +139,9 @@ function App() {
           deleteBlogPost={deleteBlogPost}
         />
       </div>
+      <Footer />
     </>
   )
 }
 
-export default App
+export default App;
