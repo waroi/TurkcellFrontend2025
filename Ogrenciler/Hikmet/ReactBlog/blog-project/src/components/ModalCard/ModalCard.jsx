@@ -1,6 +1,15 @@
+import { useEffect } from "react";
 import styles from "./ModalCard.module.css";
 
 function ModalCard() {
+	useEffect(() => {
+		const overlay = document.getElementById("overlay");
+
+		overlay.addEventListener("click", () => {
+			overlay.style.display = "none";
+		});
+	}, []);
+
 	return (
 		<div id="overlay" className={styles.overlay}>
 			<article className={styles.modalCard}>
