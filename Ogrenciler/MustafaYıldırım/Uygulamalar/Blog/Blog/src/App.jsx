@@ -2,8 +2,10 @@ import { useState, useEffect, useRef } from "react";
 import Navigation from "./components/Navigation";
 import Modal from "./components/Modal";
 import Blog from "./components/Blog";
+import Carousel from "./components/Carousel";
 import Database from "./Database";
 import "./style/App.css";
+import Footer from "./components/Footer";
 
 function App() {
   const [blogs, setBlogs] = useState([]);
@@ -30,10 +32,6 @@ function App() {
   useEffect(() => {
     blogRef.current = blog;
   }, [blog]);
-
-  useEffect(() => {
-    console.log(blogs);
-  }, [blogs]);
 
   function openModal(blog) {
     if (blog) {
@@ -95,6 +93,8 @@ function App() {
       <Modal blog={blog} setBlog={setBlog} action={action} />
       <main className="py-5">
         <div className="container">
+          <Carousel blogs={blogs} />
+          <h1>Blogs</h1>
           {blogs.map((blog) => (
             <Blog
               key={blog.id}
@@ -105,6 +105,7 @@ function App() {
           ))}
         </div>
       </main>
+      <Footer />
     </>
   );
 }
