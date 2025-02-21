@@ -16,4 +16,19 @@ export default class BlogClient {
 			headers: { "Content-type": "application/json;" },
 		}).then((response) => response.json());
 	}
+
+	static async create(blog) {
+		return fetch(BLOG_URL, {
+			method: "POST",
+			headers: { "Content-type": "application/json;" },
+			body: JSON.stringify(blog),
+		}).then((response) => response.json());
+	}
+
+	static async deleteById(id) {
+		return fetch(`${BLOG_URL}/${id}`, {
+			method: "DELETE",
+			headers: { "Content-type": "application/json;" },
+		}).then((response) => response.json());
+	}
 }
