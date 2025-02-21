@@ -5,7 +5,6 @@ export async function getBlogs() {
     const response = await fetch(API_URL);
     const data = await response.json();
     if (response.ok) {
-      console.log("dönen data:", data);
       return data;
     }
   } catch (error) {
@@ -21,9 +20,13 @@ export async function postBlog(blog) {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(blog),
+      body: JSON.stringify({
+        ...blog,
+        id: Date.now(),
+      }),
     });
     const data = await response.json();
+    console.log("data:", data);
     if (response.ok) {
       return data;
     }

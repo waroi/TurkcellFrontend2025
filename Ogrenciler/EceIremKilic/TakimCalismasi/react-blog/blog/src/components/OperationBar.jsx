@@ -2,7 +2,7 @@ import React from 'react'
 
 const OperationBar = () => {
   return (
-    <section className='operation-bar bg-secondary py-4'>
+    <section className='operation-bar bg-secondary py-4' id='op-bar'>
         <div className="container">
             <div className="row align-items-center">
                 <div className="col-lg-5">

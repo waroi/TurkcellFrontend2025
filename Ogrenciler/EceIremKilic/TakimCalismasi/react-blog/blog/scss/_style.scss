@@ -9,23 +9,30 @@ body {
 @mixin postTime {
   font-size: 0.7rem;
 }
+.nav-blog-img{
+  height: 60px;
+}
 .articles {
-  margin-top: 72px;
   .avatar {
     @include avatar;
   }
-  .card-post-detail {
-    .date-text {
-      @include postTime;
+  .card{
+    height: 540px;
+    
+    .card-post-detail {
+      .date-text {
+        @include postTime;
+      }
     }
-  }
-  .card-img-top{
-    height: 230px;
-    object-fit: cover;
+    .card-img-top{
+      height: 230px;
+      object-fit: cover;
+    }
   }
 }
 
 .mainArticleSection {
+  margin-top: 200px;
   .main-article-logo {
     height: 350px;
     width: 100%;
@@ -44,6 +51,11 @@ body {
   .avatar{
     @include avatar;
   }
+}
+.modal-post-img{
+  width: 100%;
+  object-fit: cover;
+  max-height: 400px;
 }
 .footer-links{
   li{
