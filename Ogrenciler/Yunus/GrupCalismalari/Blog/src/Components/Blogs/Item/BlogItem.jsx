@@ -13,7 +13,7 @@ const BlogItem = ({ blog, setActivePost }) => {
                         onClick={() => setActivePost(blog)}
                     >
                         <img
-                            src={blog.postUrl || 'https://picsum.photos/200'}
+                            src={blog.image_url}
                             className="img-fluid rounded-start h-100 w-100"
                             alt={blog.title}
                         />
