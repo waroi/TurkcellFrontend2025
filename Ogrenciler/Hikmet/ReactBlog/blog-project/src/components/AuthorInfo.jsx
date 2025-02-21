@@ -1,11 +1,13 @@
 import React from "react";
 
-function AuthorInfo() {
+function AuthorInfo({ avatar, author }) {
 	return (
 		<div className="bannerAuthorInfo">
-			<span className="bannerAvatar"></span>
-			<span>Hikmet Melik FIRAT</span>
-			<span>August 10, 2025</span>
+			<span className="bannerAvatar">
+				<img alt="avatar" />
+			</span>
+			<span>{author}</span>
+			<span>February 21, 2025</span>
 		</div>
 	);
 }

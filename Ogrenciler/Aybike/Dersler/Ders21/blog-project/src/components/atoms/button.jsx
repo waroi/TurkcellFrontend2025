@@ -1,6 +1,7 @@
 import Button from "react-bootstrap/Button";
 function SearchButton({ setCategory, categoryInput }) {
   function set() {
+    console.log(categoryInput);
     setCategory(categoryInput);
   }
   return (
