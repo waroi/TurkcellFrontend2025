@@ -1,5 +1,6 @@
 import React from "react";
-
+import { useState } from "react";
+import { deleteBlog, updateBlog } from "../core/RequestModel";
 const BlogModal = ({
   blogTitle,
   blogImage,
@@ -11,6 +12,18 @@ const BlogModal = ({
   closeModal,
   isOpen,
 }) => {
+  const [deletePost, setDeletePost] = useState(false);
+  const [updatePost, setUpdatePost] = useState(false);
+  const deleteThisPost = async (blogID) => {
+    await deleteBlog(blogID);
+    setDeletePost(true);
+    closeModal();
+  };
+
+  const updateThisPost = async () => {
+    await updateBlog(newPost);
+    closeModal();
+  };
   return (
     <div
       className={`modal modal-lg fade ${isOpen ? "show d-block" : "d-none"}`}
@@ -49,6 +62,22 @@ const BlogModal = ({
                 </div>
               </div>
             </div>
+          </div>
+          <div className="modal-footer">
+            <button
+              type="button"
+              className="btn btn-danger"
+              onClick={() => deleteThisPost(blogID)}
+            >
+              Sil
+            </button>
+            <button
+              type="button"
+              className="btn btn-warning"
+              onClick={() => updateThisPost()}
+            >
+              Güncelle
+            </button>
           </div>
         </div>
       </div>

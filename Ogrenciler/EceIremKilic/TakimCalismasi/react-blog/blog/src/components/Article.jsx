@@ -17,6 +17,7 @@ const Article = () => {
 
   const openModal = (blog) => {
     setSelectedBlog(blog);
+    console.log(blog);
     setIsModalOpen(true);
   };
 
@@ -79,6 +80,7 @@ const Article = () => {
         </div>
       </div>
       <BlogModal
+        blogID={selectedBlog?.id}
         blogTitle={selectedBlog?.blogTitle}
         blogContent={selectedBlog?.blogContent}
         blogImage={selectedBlog?.blogImage}
