@@ -22,7 +22,7 @@ export async function postBlog(blog) {
       },
       body: JSON.stringify({
         ...blog,
-        id: Date.now(),
+        id: Date.now().toString(),
       }),
     });
     const data = await response.json();
