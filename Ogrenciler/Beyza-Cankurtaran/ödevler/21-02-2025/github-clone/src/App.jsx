@@ -1,52 +1,48 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, use } from "react";
 import fetch from "./util/fetch";
 import SearchBar from "./components/SearchBar";
 import UserCard from "./components/UserCard";
 import Repository from "./components/Repository";
-import styled from "styled-components";
+import { Repositories } from "./util/styled-components";
 import "./App.css";
 
 function App() {
-  const [searchUser, setSearchUser] = useState("");
+  const [searchUser, setSearchUser] = useState();
 
-  const Repositories = styled.section`
-    background-color: var(--white);
-    box-shadow: 0 0 20px var(--shadow);
-    padding: 25px;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    overflow-y: scroll;
-  `;
+  const [user, setUser] = useState();
+  const [repositories, setRepositories] = useState([]);
 
-  // useEffect(() => {
-  //   (async () => {
-  //     setData(await fetch.getUser("zeynepguney"));
-  //   })();
-  // }, []);
+  useEffect(() => {
+    (async () => {
+      if (!searchUser) return;
+
+      try {
+        let user = await fetch.getUser(searchUser);
+        if (user.status != 404) setUser(user);
+      } catch {}
+    })();
+  }, [searchUser]);
+
+  useEffect(() => {
+    (async () => {
+      if (!user) return;
+
+      try {
+        let repositories = await fetch.getRepositories(user.login);
+        if (repositories.status != 404) setRepositories(repositories);
+      } catch {}
+    })();
+  }, [user]);
 
   return (
     <>
       <SearchBar searchUser={searchUser} setSearchUser={setSearchUser} />
       <main>
-        <UserCard />
+        <UserCard user={user} />
         <Repositories>
-          <Repository />
-          <Repository />
-          <Repository /> <Repository />
-          <Repository />
-          <Repository /> <Repository />
-          <Repository />
-          <Repository /> <Repository />
-          <Repository />
-          <Repository /> <Repository />
-          <Repository />
-          <Repository /> <Repository />
-          <Repository />
-          <Repository /> <Repository />
-          <Repository />
-          <Repository />
+          {repositories.map((repository) => (
+            <Repository key={repository.id} repository={repository} />
+          ))}
         </Repositories>
       </main>
     </>

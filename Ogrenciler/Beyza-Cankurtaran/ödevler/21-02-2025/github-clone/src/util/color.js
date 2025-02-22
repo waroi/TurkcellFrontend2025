@@ -1,4 +1,7 @@
 export default {
+  default: {
+    color: "var(--secondary)",
+  },
   "1C Enterprise": {
     color: "#814CCC",
     url: "https://github.com/trending?l=1C-Enterprise",
