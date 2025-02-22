@@ -1,71 +1,71 @@
 import { useEffect, useState } from "react";
 import { getOneUser, getUserRepos } from "../api/useFetch";
-
 import UserCard from "./UserCard";
-function UserModal({ userName }) {
+
+function UserModal({ userx, modalId }) {
   const [user, setUser] = useState(null);
   const [repos, setRepos] = useState(null);
+
   useEffect(() => {
     const fetchUser = async () => {
-      const data = await getOneUser(userName);
-      const repos = await getUserRepos(userName);
+      const data = await getOneUser(userx);
+      const repos = await getUserRepos(userx);
       setUser(data);
       setRepos(repos);
     };
-    if (userName) {
+    if (userx) {
       fetchUser();
     }
-  }, [userName]);
+  }, [userx]);
+
   return (
     <div
       className="modal fade"
-      id="userModal"
+      id={modalId}
       tabIndex="-1"
-      aria-labelledby="userModalLabel"
+      aria-labelledby={`${modalId}-label`}
       aria-hidden="true"
     >
-      {" "}
       <div className="modal-dialog modal-fullscreen">
-        {" "}
         <div className="modal-content">
-          {" "}
           <div className="modal-header">
-            {" "}
             <h1 className="modal-title fs-5" id="userModalLabel">
-              {" "}
-              Github Profili{" "}
-            </h1>{" "}
+              Guthib Profili
+            </h1>
             <button
               type="button"
               className="btn-close"
               data-bs-dismiss="modal"
               aria-label="Close"
-            ></button>{" "}
-          </div>{" "}
+            ></button>
+          </div>
           <div className="modal-body ">
-            {" "}
             <div className=" row ">
-              {" "}
-              <UserCard user={user} /> <div className="col-8"></div>{" "}
-            </div>{" "}
-          </div>{" "}
-          <div className="modal-footer">
-            {" "}
-            <button
-              type="button"
-              className="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              {" "}
-              Close{" "}
-            </button>{" "}
-            <button type="button" className="btn btn-primary">
-              {" "}
-              Save changes{" "}
-            </button>{" "}
-          </div>{" "}
-        </div>{" "}
-      </div>{" "}
+              <UserCard user={user} />
+              <div className="col-8 margin-custom grid-custom">
+                {repos &&
+                  repos.map((repo) => (
+                    <div key={repo.id} className="card p-0 shadow-sm">
+                      <div className="card-header">{repo.language}</div>
+                      <div className="card-body">
+                        <h5 className="card-title">{repo.full_name}</h5>
+                        <p className="card-text">{repo.description}</p>
+                        <p>{repo.created_at}</p>
+                        <a
+                          href={repo.html_url}
+                          target="_blank"
+                          className="btn btn-primary"
+                        >
+                          Git
+                        </a>
+                      </div>
+                    </div>
+                  ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

@@ -2,7 +2,20 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
+
+}
+
+body{
+  font-family: "Poppins", serif;
+}
+/* .search-container{
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+} */
+.no-border:focus {
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 .logo {
@@ -39,4 +52,14 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.margin-custom{
+  margin-left: 33%;
+}
+
+.grid-custom{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 }
