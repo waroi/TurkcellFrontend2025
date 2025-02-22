@@ -1,22 +1,16 @@
-export const UserCard = ({userData}) => {
-    
+import React from 'react'
+
+function userCard() {
     return (
-        <div className="card mb-3" style={{maxWidth: "540px"}} >
-            <div className="row g-0">
-                <div className="col-md-4">
-                    <img src={userData?.avatar_url} className="img-fluid rounded-start" alt={userData.login} />
-                </div>
-                <div className="col-md-8">
-                    <div className="card-body">
-                        <h5 className="card-title">{userData?.login}</h5>
-                        <p className="card-text">Public Repository Sayısı: {userData?.public_repos}</p>
-                        <p className="card-text">
-                            <small className="text-body-secondary">
-                                belki bir şey koyarım
-                            </small></p>
-                    </div>
-                </div>
+        <div className="card">
+            <img src="..." className="card-img-top" alt="..." />
+            <div className="card-body">
+                <h5 className="card-title">{}</h5>
+                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" className="btn btn-primary">Go somewhere</a>
             </div>
         </div>
     )
 }
+
+export default userCard

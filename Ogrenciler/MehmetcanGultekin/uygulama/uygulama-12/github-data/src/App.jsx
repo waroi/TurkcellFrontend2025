@@ -1,76 +1,61 @@
+import { getAllUsers } from './api/useFetch'
 import { useEffect, useState } from 'react'
-import { getAllUsers, searchUsers } from './api/useFetch'
-import { UserCard } from './components/UserCard'
+import { Avatar } from './components/styled'
+import UserModal from './components/userModal'
 import './App.css'
 
+
 function App() {
-  const [users, setUsers] = useState([])
-  const [searchInput, setSearchInput] = useState("")
-  const [loading, setLoading] = useState(false)
+  const [userName, setUserName] = useState('')
+  const [users, setUsers] = useState(null)
 
-  useEffect(() => {
-    const fetchInitialUsers = async () => {
-      setLoading(true)
-      try {
-        const data = await getAllUsers()
-        setUsers(data)
-      } catch (error) {
-        console.error('Failed to fetch initial users:', error)
-      }
-      setLoading(false)
-    }
-    fetchInitialUsers()
-  }, [])
-
-  const handleSearch = async (e) => {
-    const value = e.target.value
-    setSearchInput(value)
-    
-    if (value.trim()) {
-      setLoading(true)
-      try {
-        const searchResults = await searchUsers(value)
-        setUsers(searchResults)
-      } catch (error) {
-        console.error('Search failed:', error)
-      }
-      setLoading(false)
-    } else {
-      const data = await getAllUsers()
-      setUsers(data)
-    }
+  const handleSearch = async () => {
+    const data = await getAllUsers(userName)
+    setUsers(data)
   }
 
+  // useEffect(() => {
+
+  // }, [])
+
+
   return (
-    <div className="container mt-4">
-      <div className="row mb-4">
-        <div className="col">
-          <input 
-            type="text" 
-            className="form-control" 
-            placeholder="Search GitHub users..."
-            value={searchInput}
-            onChange={handleSearch}
-          />
+    <>
+      <div className='row container'>
+        <div className="input-group mb-3">
+          <input onChange={(e) => setUserName(e.target.value)} type="text" className="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2" />
+          <button onClick={handleSearch} className="btn btn-outline-secondary" type="button" id="button-addon2">Ara</button>
         </div>
-      </div>
-      
-      {loading ? (
-        <div className="text-center">Loading...</div>
-      ) : (
-        <div className="row">
-          {users && users.length > 0 ? (
-            users.map(user => (
-              <div key={user.id} className="col-md-6 mb-3">
-                <UserCard userData={user} />
+
+
+        <ul>
+          {users && users.items && users.items.map(user => (
+            
+            <li key={user.id} className="list-group-item d-flex justify-content-between  align-items-center border rounded-2 mb-4 p-3 gap-2">
+              <div className='d-flex gap-2 align-items-center'>
+                <Avatar src={user.avatar_url} className="card-img-top" alt="..." />
+                <p className='mb-0'>{user.login}</p>
               </div>
-            ))
-          ) : (
-            <div className="text-center">No users found</div>
-          )}
-        </div>
-      )}
-    </div>
+              <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#userModal">
+                modal
+              </button>
+              <UserModal userName={user.login}/>
+
+
+            </li>
+
+
+          ))}
+        </ul>
+
+
+      </div>
+
+
+
+    </>
+
+
   )
 }
 
