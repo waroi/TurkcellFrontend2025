@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { getRepos } from "./Services/services";
 import Navbar from "./components/Navbar";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import RepoCard from "./components/RepoCard";
+import "bootstrap/dist/css/bootstrap.min.css";
+import RepoGrid from "./components/RepoGrid";
 
-const MyComponent = () => {
+const App = () => {
   const [repos, setRepos] = useState([]);
   const [search, setSearch] = useState("");
 
@@ -26,17 +26,9 @@ const MyComponent = () => {
   return (
     <>
       <Navbar handleSearch={handleSearch} search={search} />
-      <div>
-        <h2>Repositories</h2>
-      </div>
-
-      <div className="grid-container">
-        {(search ? filteredRepos : repos).map((repo) => (
-          <RepoCard repo={repo} />
-        ))}
-      </div>
+      <RepoGrid repos={filteredRepos} />
     </>
   );
 };
 
-export default MyComponent;
+export default App;
