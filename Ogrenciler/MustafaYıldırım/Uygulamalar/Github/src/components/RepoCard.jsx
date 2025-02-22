@@ -1,64 +1,108 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-const Card = styled.div`
-  width: 100%;
-  max-width: 18rem;
+const CardContainer = styled.div`
+  width: 18rem;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #fff;
   border-radius: 10px;
-  overflow: hidden;
-  transition: transform 0.3s ease-in-out;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+  }
 `;
 
 const CardBody = styled.div`
-  padding: 1rem;
+  padding: 1.2rem;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  flex-grow: 1;
 `;
 
-const CardVisibility = styled.div`
-  font-size: 1rem;
-  font-weight: 500;
+const CardTitle = styled.h5`
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #333;
 `;
 
-const CardTitle = styled.h1`
-  font-size: 1.25rem;
-  font-weight: 600;
+const CardSubtitle = styled.h6`
+  font-size: 0.9rem;
+  font-weight: normal;
+  color: #6c757d;
+  margin-bottom: 0.8rem;
 `;
 
 const CardText = styled.p`
-  font-size: 1rem;
-  font-weight: 500;
+  flex-grow: 1;
+  font-size: 0.95rem;
+  color: #555;
   overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* 3 satırdan fazla gösterme */
+  -webkit-box-orient: vertical;
+`;
+
+const CardLink = styled.a`
+  text-decoration: none;
+  font-weight: bold;
+  color: #007bff;
+  margin-top: auto;
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
 const ListGroup = styled.div`
-  margin-top: 0.5rem;
+  margin-top: 1rem;
   display: flex;
-  gap: 1rem;
+  gap: 0.5rem;
+  flex-wrap: wrap;
 `;
 
 const ListGroupItem = styled.div`
-  margin-top: 0.5rem;
-  display: flex;
-  gap: 1rem;
+  background: #f8f9fa;
+  padding: 0.4rem 0.8rem;
+  border-radius: 5px;
+  font-size: 0.85rem;
+  color: #333;
 `;
 
 function RepoCard({ repo }) {
   return (
-    <Card className="post-card shadow-lg">
-      <CardBody>
-        <CardVisibility>{repo.visibility}</CardVisibility>
-        <CardTitle>{repo.name}</CardTitle>
-        <CardText>{repo.description}</CardText>
-      </CardBody>
-
-      <ListGroup className="list-group-flush">
-        {[repo.language, repo.created_at].map((item, index) => (
-          <ListGroupItem key={index}>{item}</ListGroupItem>
-        ))}
-      </ListGroup>
-    </Card>
+    <div className="col-sm-12 col-md-6 col-lg-3 d-flex justify-content-center align-items-center mb-3">
+      <CardContainer>
+        <CardBody>
+          <CardTitle>{repo.name}</CardTitle>
+          <CardSubtitle>{repo.visibility}</CardSubtitle>
+          <CardText>
+            {repo.description ? repo.description : "Açıklama bulunamadı"}
+          </CardText>
+          <CardLink
+            href={repo.html_url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Github Linki
+          </CardLink>
+          <ListGroup>
+            {[
+              repo.language ? repo.language : "Dil bulunamadı",
+              repo.created_at?.split("T")[0],
+            ].map((item, index) => (
+              <ListGroupItem key={index}>{item}</ListGroupItem>
+            ))}
+          </ListGroup>
+        </CardBody>
+      </CardContainer>
+    </div>
   );
 }
 
