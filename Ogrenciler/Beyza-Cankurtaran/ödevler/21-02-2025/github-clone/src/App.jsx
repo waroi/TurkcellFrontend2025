@@ -1,35 +1,56 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect } from "react";
+import fetch from "./util/fetch";
+import SearchBar from "./components/SearchBar";
+import UserCard from "./components/UserCard";
+import Repository from "./components/Repository";
+import styled from "styled-components";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [searchUser, setSearchUser] = useState("");
+
+  const Repositories = styled.section`
+    background-color: var(--white);
+    box-shadow: 0 0 20px var(--shadow);
+    padding: 25px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    overflow-y: scroll;
+  `;
+
+  // useEffect(() => {
+  //   (async () => {
+  //     setData(await fetch.getUser("zeynepguney"));
+  //   })();
+  // }, []);
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <SearchBar searchUser={searchUser} setSearchUser={setSearchUser} />
+      <main>
+        <UserCard />
+        <Repositories>
+          <Repository />
+          <Repository />
+          <Repository /> <Repository />
+          <Repository />
+          <Repository /> <Repository />
+          <Repository />
+          <Repository /> <Repository />
+          <Repository />
+          <Repository /> <Repository />
+          <Repository />
+          <Repository /> <Repository />
+          <Repository />
+          <Repository /> <Repository />
+          <Repository />
+          <Repository />
+        </Repositories>
+      </main>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

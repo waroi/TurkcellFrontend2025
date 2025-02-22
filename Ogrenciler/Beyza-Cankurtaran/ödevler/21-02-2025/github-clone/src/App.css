@@ -1,42 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 100px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  font-family: "Press Start 2P", serif;
+  height: 100vh;
+
+  --text: #000138;
+  --primary: dodgerblue;
+  --secondary: #a9aae7;
+  --white: #fff;
+  --shadow: rgba(8, 69, 129, 0.2);
+
+  background-image: radial-gradient(#f7f8ff, rgb(241, 248, 255));
+  color: var(--text);
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+#root > * {
+  width: 1020px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+main {
+  display: grid;
+  grid-template-columns: 2fr 5fr;
+  gap: 50px;
+  height: calc(100vh - 335px);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+main > * {
+  height: 100%;
 }
