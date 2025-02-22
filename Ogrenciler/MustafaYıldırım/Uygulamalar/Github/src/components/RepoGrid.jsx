@@ -2,27 +2,27 @@ import { Container, Row, Col } from "react-bootstrap";
 import RepoCard from "./RepoCard";
 import styled from "styled-components";
 
-const BlogSection = styled.div`
+const RepoSection = styled.div`
   background: #f4f4f4;
 `;
 
-const BlogTitle = styled.h2`
+const RepoTitle = styled.h2`
   font-size: 2rem;
   font-weight: bold;
 `;
 
 const RepoGrid = ({ repos }) => {
   return (
-    <BlogSection className="py-5">
+    <RepoSection className="py-5">
       <Container>
-        <BlogTitle className="text-center mb-4">Güncel Blog Yazıları</BlogTitle>
-        <Row className="justify-content-center">
+        <RepoTitle className="text-center mb-4">Güncel Repolar</RepoTitle>
+        <Row className="row justify-content-center">
           {repos.map((repo) => (
-            <RepoCard repo={repo} />
+            <RepoCard key={repo.id} repo={repo} />
           ))}
         </Row>
       </Container>
-    </BlogSection>
+    </RepoSection>
   );
 };
 
