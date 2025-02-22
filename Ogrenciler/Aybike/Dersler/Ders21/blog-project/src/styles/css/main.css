@@ -11855,4 +11855,10 @@ img {
   display: block;
 }
 
+.card-title {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 /*# sourceMappingURL=main.css.map */

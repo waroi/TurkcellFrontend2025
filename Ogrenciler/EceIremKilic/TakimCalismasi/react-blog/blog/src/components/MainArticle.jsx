@@ -2,7 +2,7 @@ import React from "react";
 
 const MainArticle = () => {
   return (
-    <section className="mainArticleSection mt-5 py-5" id="pop-blog">
+    <section className="mainArticleSection mt-1 py-5" id="pop-blog">
       <div className="container d-flex align-items-center justify-content-center">
         <div className="row w-75">
           <div className="col-lg-6 ">

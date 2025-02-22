@@ -9,11 +9,10 @@ function App() {
 	return (
 		<>
 			<main>
-				<ModalCard/>
+				<ModalCard />
 				<Navbar />
 				<Banner />
 				<Blogs />
-				{/* <BlogDetail /> */}
 			</main>
 			<Footer />
 		</>

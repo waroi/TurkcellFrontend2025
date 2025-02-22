@@ -1,7 +1,7 @@
 import AuthorInfo from "../AuthorInfo";
 import styles from "./Banner.module.css";
 
-function Banner() {
+function Banner({ avatar, author }) {
 	return (
 		<section className={styles.banner}>
 			<img
@@ -14,7 +14,7 @@ function Banner() {
 				<h1>
 					The Impact of Technology on the Workplace: How Technology is Changing
 				</h1>
-				<AuthorInfo />
+				<AuthorInfo avatar={avatar} author={author} />
 			</div>
 		</section>
 	);

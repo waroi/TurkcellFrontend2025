@@ -1,6 +1,6 @@
 export default function Navigation({ openModal }) {
   return (
-    <nav className="navbar position-fixed w-100 top-0 navbar-expand-lg bg-dark text-uppercase z-3">
+    <nav className="navbar position-fixed w-100 top-0 navbar-expand-lg bg-dark text-uppercase z-3 shadow ">
       <div className="container">
         <a className="navbar-brand" href="">
           <h1 className="flex-center text-white">Blog</h1>
@@ -29,12 +29,20 @@ export default function Navigation({ openModal }) {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-white" href="#">
+              <a
+                className="nav-link text-white"
+                href="#carouselExampleInterval"
+              >
                 Trend
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-white" href="#">
+              <a className="nav-link text-white" href="#Blogs">
+                Blogs
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link text-white" href="#Contact">
                 Contact
               </a>
             </li>

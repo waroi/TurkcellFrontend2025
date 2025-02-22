@@ -99,10 +99,10 @@ document.getElementById('changes').addEventListener('click', function () {
   };
   ui.saveChanges(updatedGame, updateIndex);
   const modalElement = document.getElementById("gameModal");
-  const modalInstance = bootstrap.Modal.getInstance(modalElement);
-  if (modalInstance) {
-    modalInstance.hide();
-  }
+  // const modalInstance = bootstrap.Modal.getInstance(modalElement);
+  // if (modalInstance) {
+  //   modalInstance.hide();
+  // }
   ui.setUpdateIndex(null);
 });
 

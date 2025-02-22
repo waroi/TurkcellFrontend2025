@@ -10,7 +10,7 @@ const AddBlogModal = ({ showModal, closeModal, addNewPost }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (title && body) {
-            addNewPost({ title, body }); 
+            addNewPost({ title, body });
             setTitle('');
             setBody('');
             closeModal();
@@ -19,7 +19,7 @@ const AddBlogModal = ({ showModal, closeModal, addNewPost }) => {
 
     return (
         <div className={`modal fade ${showModal ? 'show d-block' : 'd-none'}`} tabIndex="-1" role="dialog">
-            <div className="modal-dialog" role="document">
+            <div className="modal-dialog modal-xl" role="document">
                 <div className="modal-content">
                     <div className="modal-header">
                         <h5 className="modal-title">Yeni Blog Yazısı Ekle</h5>

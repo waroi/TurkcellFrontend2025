@@ -3,9 +3,11 @@ import SearchForm from "../molecules/SearchForm";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
-const Header = ({ category, setCategory }) => {
+import AddModal from "../molecules/AddModal";
+
+const Header = ({ category, setCategory, setTrigger }) => {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar expand="lg" className="bg-body-tertiary border-bottom border-dark">
       <Container>
         <Navbar.Brand href="#">
           <H1 />
@@ -17,6 +19,7 @@ const Header = ({ category, setCategory }) => {
               category={category}
               setCategory={setCategory}
             ></SearchForm>
+            <AddModal setTrigger={setTrigger}></AddModal>
           </Nav>
         </Navbar.Collapse>
       </Container>
