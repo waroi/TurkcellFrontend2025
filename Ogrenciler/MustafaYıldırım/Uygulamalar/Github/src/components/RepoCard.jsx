@@ -1,36 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
-
-const Card = styled.div`
-  width: 100%;
-  max-width: 18rem;
-  border-radius: 10px;
-  overflow: hidden;
-  transition: transform 0.3s ease-in-out;
-`;
-
-const CardBody = styled.div`
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-`;
-
-const CardVisibility = styled.div`
-  font-size: 1rem;
-  font-weight: 500;
-`;
-
-const CardTitle = styled.h1`
-  font-size: 1.25rem;
-  font-weight: 600;
-`;
-
-const CardText = styled.p`
-  font-size: 1rem;
-  font-weight: 500;
-  overflow: hidden;
-`;
+import React from "react";
+import styled from "styled-components";
 
 const ListGroup = styled.div`
   margin-top: 0.5rem;
@@ -39,26 +8,40 @@ const ListGroup = styled.div`
 `;
 
 const ListGroupItem = styled.div`
-  margin-top: 0.5rem;
-  display: flex;
-  gap: 1rem;
+  padding: 0.5rem;
+  background-color: #f8f9fa;
+  border-radius: 5px;
 `;
 
 function RepoCard({ repo }) {
   return (
-    <Card className="post-card shadow-lg">
-      <CardBody>
-        <CardVisibility>{repo.visibility}</CardVisibility>
-        <CardTitle>{repo.name}</CardTitle>
-        <CardText>{repo.description}</CardText>
-      </CardBody>
-
-      <ListGroup className="list-group-flush">
-        {[repo.language, repo.created_at].map((item, index) => (
-          <ListGroupItem key={index}>{item}</ListGroupItem>
-        ))}
-      </ListGroup>
-    </Card>
+    <div className="card" style={{ width: "18rem", height: "400px" }}>
+      <div className="card-body">
+        <h5 className="card-title mt-auto">{repo.name}</h5>
+        <h6 className="card-subtitle mb-2 mt-auto text-body-secondary">
+          {repo.visibility}
+        </h6>
+        <p className="card-text mt-auto">
+          {repo.description ? repo.description : "Açıklama bulunamadı"}
+        </p>
+        <a
+          href={repo.html_url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="card-link mt-auto"
+        >
+          Github Linki
+        </a>
+        <ListGroup className="list-group-flush mt-auto">
+          {[
+            repo.language ? repo.language : "Dil bulunamadı",
+            repo.created_at?.split("T")[0],
+          ].map((item, index) => (
+            <ListGroupItem key={index}>{item}</ListGroupItem>
+          ))}
+        </ListGroup>
+      </div>
+    </div>
   );
 }
 

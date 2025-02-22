@@ -18,17 +18,7 @@ const RepoGrid = ({ repos }) => {
         <BlogTitle className="text-center mb-4">Güncel Blog Yazıları</BlogTitle>
         <Row className="justify-content-center">
           {repos.map((repo) => (
-            <Col
-              key={repo.id}
-              xs={12}
-              sm={6}
-              md={6}
-              lg={4}
-              xl={3}
-              className="d-flex justify-content-center mb-5"
-            >
-              <RepoCard repo={repo} />
-            </Col>
+            <RepoCard repo={repo} />
           ))}
         </Row>
       </Container>
