@@ -1,16 +1,23 @@
-import React from 'react'
-
-function userCard() {
-    return (
-        <div className="card">
-            <img src="..." className="card-img-top" alt="..." />
-            <div className="card-body">
-                <h5 className="card-title">{}</h5>
-                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" className="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-    )
+/* eslint-disable react/prop-types */
+import { Avatar } from "./styled";
+function UserCard({ user }) {
+  return (
+    <div className="col-4 d-flex flex-column align-items-center px-5 position-fixed">
+      <Avatar size="200px" src={user?.avatar_url} />
+      <h4>{user?.name}</h4>
+      <h5 className="fw-semibold fs-6">@{user?.login}</h5>
+      <p className="w-75 text-center"> {user?.bio}</p>
+      <div className="d-flex gap-2">
+      <i className="fa-solid fa-user-group"></i>
+        <p>{user?.followers} takipçi</p>
+        <p>{user?.following} takip</p>
+      </div>
+      <p className="d-flex align-items-center gap-2">
+        <i className="fa-solid fa-location-dot"></i>
+        {user?.location || "Lokasyon bulunamadı"}
+      </p>
+      <a href={user?.blog}>{user?.blog || "Blog bulunamadı"}</a>
+    </div>
+  );
 }
-
-export default userCard
+export default UserCard;

@@ -1,30 +1,28 @@
-import styled from "styled-components";
+import { Div, LanguageIcon } from "../util/styled-components";
 import color from "../util/color";
 
-export default function Repository() {
-  const Div = styled.div`
-    & a {
-      display: block;
-      color: var(--primary);
-      margin-bottom: 10px;
-    }
-
-    & span {
-      font-size: 14px;
-
-      &:first-of-type {
-        margin-right: 25px;
-      }
-    }
-  `;
-
+export default function Repository({ repository }) {
   return (
     <Div>
-      <a href="#">Reverse-Engineering-Farm-Merge-Valley</a>
+      <a href={repository.html_url} target="_blank">
+        {repository.name}
+      </a>
       <div>
-        {/* <span>{color["JavaScript"].color}</span> */}
-        <span>Lang++</span>
-        <span>Updated on Jan 10</span>
+        <LanguageIcon
+          style={{
+            backgroundColor: color[repository.language ?? "default"].color,
+          }}
+        />
+        {repository.language ? <span>{repository.language}</span> : ""}
+        <span>
+          {(() =>
+            "Updated " +
+            new Date(repository.updated_at).toLocaleDateString("en-GB", {
+              day: "2-digit",
+              month: "long",
+              year: "numeric",
+            }))()}
+        </span>
       </div>
     </Div>
   );

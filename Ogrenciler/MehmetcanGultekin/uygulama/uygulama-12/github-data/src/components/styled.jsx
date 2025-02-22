@@ -1,7 +1,8 @@
-import styled from 'styled-components';
+import styled from "styled-components"; 
 
-export const Avatar = styled.img`
-width: 50px;
-height: 50px;
-border-radius: 50%;` 
+export const Avatar = styled.img` 
+width: ${(props) => props.size}; 
+height: ${(props) => props.size}; 
+border-radius: 50%;`;
+
 

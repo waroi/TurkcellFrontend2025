@@ -13,10 +13,7 @@ const Profile = ({ user }) => {
   return (
     <>
       <Card p={3}>
-        {/* Profil Fotoğrafı */}
-        <img src={user.avatar_url} className="rounded-circle mx-auto"></img>
-
-        {/* Kullanıcı Bilgileri */}
+        <Card.Img variant="top" src={user.avatar_url} />
         <ul className="list-unstyled mt-3">
           <li>
             <h3>{user.name}</h3>
