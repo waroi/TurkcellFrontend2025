@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getOneUser, getUserRepos } from "../api/useFetch";
+import LanguageIcon from "./LanguageIcon";
 import UserCard from "./UserCard";
 
 function UserModal({ userx, modalId }) {
@@ -45,8 +46,11 @@ function UserModal({ userx, modalId }) {
               <div className="col-8 margin-custom grid-custom">
                 {repos &&
                   repos.map((repo) => (
+                    
                     <div key={repo.id} className="card p-0 shadow-sm">
-                      <div className="card-header">{repo.language}</div>
+                      <div className="card-header"><LanguageIcon className="me-4" language={repo?.language} />
+                      <span className="ms-2 m-0">{repo.language || "Dil bulunamadı"}</span>
+                      </div>
                       <div className="card-body">
                         <h5 className="card-title">{repo.full_name}</h5>
                         <p className="card-text">{repo.description}</p>
