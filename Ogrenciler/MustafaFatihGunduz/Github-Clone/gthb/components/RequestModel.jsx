@@ -46,3 +46,18 @@ export const getUserInfos = async (userLogin) => {
     return;
   }
 };
+
+export const getContrubitons = async (userLogin, repoName) => {
+  try {
+    const response = await fetch(
+      `https://api.github.com/repos/${userLogin}/${repoName}/contributors`
+    );
+    const data = await response.json();
+    const contributor = data.contributor;
+    console.log("Contributor", contributor);
+    return data;
+  } catch (error) {
+    console.log(error);
+    return;
+  }
+};

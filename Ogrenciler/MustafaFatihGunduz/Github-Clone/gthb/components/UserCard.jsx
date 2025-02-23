@@ -30,7 +30,6 @@ const UserCard = ({
           className="row d-flex mb-5 justify-content-between align-items-center"
         >
           <div className="col-lg-3">
-            (
             <UserAvatar
               src={users.avatar_url}
               alt={users.login}
@@ -38,7 +37,7 @@ const UserCard = ({
                 users.avatar_url !== null ? "d-block" : "d-none"
               } `}
             />
-            )
+
             {userInfos.isEmpty ? null : (
               <UserInfos>
                 <h3>{userInfos.name}</h3>
@@ -56,7 +55,7 @@ const UserCard = ({
                 </div>
                 <p>
                   <span>
-                    <i class="fa-solid fa-building me-2"></i>
+                    <i className="fa-solid fa-building me-2"></i>
                   </span>
                   {userInfos.company}
                 </p>
