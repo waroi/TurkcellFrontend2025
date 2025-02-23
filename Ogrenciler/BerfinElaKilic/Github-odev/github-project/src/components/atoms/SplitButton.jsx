@@ -1,11 +1,13 @@
 import Button from "react-bootstrap/Button";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import Dropdown from "react-bootstrap/Dropdown";
+import { FaRegStar } from "react-icons/fa";
+import { StyledSplitButton } from "./CustomButton";
 
 function SplitButton() {
   return (
     <Dropdown as={ButtonGroup}>
-      <Button variant="secondary">Star</Button>
+      <StyledSplitButton><FaRegStar/> Star</StyledSplitButton>
 
       <Dropdown.Toggle split variant="secondary" id="dropdown-split-basic" />
 

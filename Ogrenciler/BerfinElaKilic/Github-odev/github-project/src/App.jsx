@@ -14,8 +14,7 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 function App() {
   const [repos, setRepos] = useState(null);
   const [profileData, setProfileData] = useState(null);
-
-  const userName = "elinoza";
+  const [userName, setUserName] = useState("waroi");
   const fetchPersonalData = async () => {
     const response = await fetch(`https://api.github.com/users/${userName}`);
     const data = await response.json();
@@ -35,9 +34,15 @@ function App() {
     fetchRepos();
   }, []);
 
+  const handleChange = (value) =>{
+    setUserName(value);
+    fetchPersonalData();
+    fetchRepos();
+  }
+
   return (
     <>
-      <NavBar />
+      <NavBar handleChange={handleChange} />
       <Container className="mt-5">
         <Row>
           <Col md={3}>

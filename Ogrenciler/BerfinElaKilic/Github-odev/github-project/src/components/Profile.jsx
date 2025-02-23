@@ -1,5 +1,8 @@
 import Image from 'react-bootstrap/Image';
-import { Button } from './atoms/Button';
+import {  CustomButton } from './atoms/CustomButton';
+import { FaLink } from "react-icons/fa6";
+import { GoPeople } from "react-icons/go";
+import { RiTwitterXFill } from "react-icons/ri";
 
 const Profile = ({ profile }) => {
   console.log(profile)
@@ -8,10 +11,11 @@ const Profile = ({ profile }) => {
     <div className='profile-info mt-4'>
       <h4 className='m-0'>{profile.name}</h4>
       <p className="text-muted">{profile.login}</p>
-      <Button className='w-100 py-1 text-white'>Follow</Button>
+      <CustomButton >Follow</CustomButton>
       <p className="text-muted mt-3">{profile.bio}</p>
 
       <div className="followers d-flex gap-2">
+        <GoPeople/>
         <p>
           {profile.followers} <span className="text-muted">followers</span>
         </p>
@@ -20,14 +24,14 @@ const Profile = ({ profile }) => {
         </p>
       </div>
 
-      <div className="social-media">
+      <div className="social-media d-flex flex-column gap-2">
         {profile.blog && <a href={profile.blog}>
-          {profile.blog}
+          <FaLink/> {profile.blog}
         </a>}
 
         {profile.twitter_username &&
           <a href={`x.com/${profile.twitter_username}`}>
-            {profile.twitter_username}
+            <RiTwitterXFill/> {profile.twitter_username}
           </a>
         }
       </div>
