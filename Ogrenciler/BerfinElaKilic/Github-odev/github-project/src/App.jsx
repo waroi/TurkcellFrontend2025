@@ -14,30 +14,34 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 function App() {
   const [repos, setRepos] = useState(null);
   const [profileData, setProfileData] = useState(null);
-  const [userName, setUserName] = useState("waroi");
+  const [userName, setUserName] = useState("");
   const [error, setError] = useState('')
 
-  const fetchPersonalData = async () => {
+  const fetchPersonalData = async (userName) => {
     setProfileData(null)
     const response = await fetch(`https://api.github.com/users/${userName}`);
-    const data = await response.json();
-    if (response.ok) setProfileData(data);
+    if (!response.ok) {
+      setError(response.status);
+      return }
+      const data = await response.json();
+      setProfileData(data);
   };
 
-  const fetchRepos = async () => {
+  const fetchRepos = async (userName) => {
     setRepos(null)
     const response = await fetch(
       `https://api.github.com/users/${userName}/repos`
     );
-    const data = await response.json();
+    
     if (!response.ok) {
       setError(response?.status)
     }
+    const data = await response.json();
     setRepos(data);
   };
 
   useEffect(() => {
-    if (userName) {
+    if (userName !== "") {
       fetchPersonalData();
       fetchRepos();
     }
@@ -45,8 +49,8 @@ function App() {
 
   const handleChange = async (value) => {
     setUserName(value);
-    fetchPersonalData();
-    fetchRepos();
+    fetchPersonalData(value);
+    fetchRepos(value);
   }
 
   return (
