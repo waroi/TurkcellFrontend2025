@@ -71,6 +71,18 @@ function App() {
     }
   };
 
+  const handleSort = (criteria) => {
+    let sortedRepos = [...filteredRepos]; // Mevcut filtrelenmiş depo dizisini kopyala
+    if (criteria === "updated") {
+      sortedRepos.sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
+    } else if (criteria === "name") {
+      sortedRepos.sort((a, b) => a.name.localeCompare(b.name));
+    } else if (criteria === "stars") {
+      sortedRepos.sort((a, b) => b.stargazers_count - a.stargazers_count);
+    }
+    setFilteredRepos(sortedRepos); // Sıralanmış diziyi güncelle
+  };
+
   return (
     <>
       <Container>
@@ -81,7 +93,7 @@ function App() {
         />
         {error && <div className="alert alert-danger">{error}</div>}
         <LanguageFilter repos={userRepos} onFilterChange={handleFilterChange} />
-        <Sort />
+        <Sort onSort={handleSort} />
         <Row>
           <Col md={4}>
             <Profile user={user}></Profile>
