@@ -8,11 +8,14 @@ import RepoCard from "./components/RepoCard";
 import SearchBar from "./components/SearchBar";
 import LanguageFilter from "./components/LanguageFilter";
 import Sort from "./components/Sort";
+
 function App() {
   const [user, setUser] = useState({});
   const [userRepos, setRepos] = useState([]);
+  const [filteredRepos, setFilteredRepos] = useState([]);
   const [error, setError] = useState("");
   const [username, setUsername] = useState("greenmagican");
+
   const fetchGitUserData = async () => {
     try {
       const response = await fetch(`https://api.github.com/users/${username}`, {
@@ -45,20 +48,29 @@ function App() {
       }
       const data = await response.json();
       setRepos(data);
+      setFilteredRepos(data);
     } catch (error) {
       setError(`fetchGitRepo API çağrısı başarisiz! ${error}`);
     }
-  };
-
-  useEffect(() => {
+  };useEffect(() => {
     fetchGitUserData();
     fetchGitRepo();
   }, [username]);
 
   const handleSearch = () => {
-    fetchGitUserData(username);
-    fetchGitRepo(username);
+    fetchGitUserData();
+    fetchGitRepo();
   };
+
+  const handleFilterChange = (language) => {
+    if (language === "All") {
+      setFilteredRepos(userRepos);
+    } else {
+      const filtered = userRepos.filter(repo => repo.language === language || (repo.language === null && language === "Other"));
+      setFilteredRepos(filtered);
+    }
+  };
+
   return (
     <>
       <Container>
@@ -68,18 +80,18 @@ function App() {
           username={username}
         />
         {error && <div className="alert alert-danger">{error}</div>}
-        <LanguageFilter repos={userRepos}></LanguageFilter>
-        <Sort></Sort>
+        <LanguageFilter repos={userRepos} onFilterChange={handleFilterChange} />
+        <Sort />
         <Row>
           <Col md={4}>
             <Profile user={user}></Profile>
           </Col>
           <Col md={8}>
             <Row>
-              {userRepos.map((repo) => {
+              {filteredRepos.map((repo) => {
                 return (
-                  <Col xs={12} key={repo.id + "col"}>
-                    <RepoCard repo={repo} key={repo.id}></RepoCard>
+                  <Col xs={12} key={repo.id}>
+                    <RepoCard repo={repo}></RepoCard>
                   </Col>
                 );
               })}
