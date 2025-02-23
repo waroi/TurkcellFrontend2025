@@ -6,11 +6,20 @@ import { StyledSplitButton } from "./CustomButton";
 import { useState } from "react";
 
 function SplitButton() {
-  const [starColor, setStarColor] = useState('white')
+  const [starColor, setStarColor] = useState("#9198a1");
 
   return (
     <Dropdown as={ButtonGroup}>
-      <StyledSplitButton onClick={() => starColor === 'white' ? setStarColor('yellow') : setStarColor('white')}><FaRegStar fill={starColor} /> STAR</StyledSplitButton>
+      <StyledSplitButton
+        onClick={() =>
+          starColor === "#9198a1"
+            ? setStarColor("yellow")
+            : setStarColor("#9198a1")
+        }
+      >
+        <FaRegStar fill={starColor} />
+        {starColor === "#9198a1" ? "Star" : "Starred"}
+      </StyledSplitButton>
 
       <Dropdown.Toggle split variant="secondary" id="dropdown-split-basic" />
 

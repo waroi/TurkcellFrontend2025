@@ -16,7 +16,7 @@ function LanguageFilter({ repos, onFilterChange }) {
         throw new Error("GitHub language bulunamadi");
       }
       const data = await response.json();
-      return Object.keys(data)[0]; // İlk dili döndür
+      return Object.keys(data)[0]; 
     } catch (error) {
       setError(`fetchRepoLang API çağrısı başarisiz! ${error}`);
     }
@@ -24,22 +24,22 @@ function LanguageFilter({ repos, onFilterChange }) {
 
   useEffect(() => {
     const fetchLanguages = async () => {
-      const languageSet = new Set(); // Geçici bir Set oluştur
+      const languageSet = new Set();
       for (const repo of repos) {
         const lang = await fetchLanguage(repo);
         if (lang) {
-          languageSet.add(lang); // Set'ye ekle
+          languageSet.add(lang);
         }
       }
-      setLanguages([...languageSet]); // Set'i diziye çevirerek durumu güncelle
+      setLanguages([...languageSet]);
     };
     if (repos.length > 0) {
-      fetchLanguages(); // Repo varsa dilleri fetch et
+      fetchLanguages();
     }
   }, [repos]);
 
   const handleFilterChange = (language) => {
-    onFilterChange(language); // Ana bileşene filtre değişikliğini belirt
+    onFilterChange(language);
   };
 
   return (
@@ -48,6 +48,9 @@ function LanguageFilter({ repos, onFilterChange }) {
         Languages
       </Dropdown.Toggle>
       <Dropdown.Menu>
+        <Dropdown.Item onClick={() => handleFilterChange("All")}>
+          All
+        </Dropdown.Item>
         {languages.map((language) => (
           <Dropdown.Item key={language} onClick={() => handleFilterChange(language)}>
             {language}
