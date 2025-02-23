@@ -3,11 +3,14 @@ import ButtonGroup from "react-bootstrap/ButtonGroup";
 import Dropdown from "react-bootstrap/Dropdown";
 import { FaRegStar } from "react-icons/fa";
 import { StyledSplitButton } from "./CustomButton";
+import { useState } from "react";
 
 function SplitButton() {
+  const [starColor, setStarColor] = useState('white')
+
   return (
     <Dropdown as={ButtonGroup}>
-      <StyledSplitButton><FaRegStar/> Star</StyledSplitButton>
+      <StyledSplitButton onClick={() => starColor === 'white' ? setStarColor('yellow') : setStarColor('white')}><FaRegStar fill={starColor} /> STAR</StyledSplitButton>
 
       <Dropdown.Toggle split variant="secondary" id="dropdown-split-basic" />
 

@@ -17,6 +17,10 @@ export const StyledSplitButton = styled(CustomButton)`
   padding: 0.25rem 1rem;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: .9rem;
+  gap: 8px;
 `
-  
+
