@@ -1,9 +1,19 @@
-img{
-    width: 300px;
-    height: auto;
+img {
+  width: 300px;
+  height: auto;
+}
+#cardWrapper {
+  display: flex;
+}
+.bosDiv {
+  width: 100%;
 }
 @media only screen and (max-width: 1024px) {
-    #cardWrapper {
-      flex-direction: column;
-    }
+  #cardWrapper {
+    flex-direction: column;
   }
+  .bosDiv {
+    width: 0;
+    height: 100%;
+  }
+}
