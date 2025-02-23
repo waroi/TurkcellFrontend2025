@@ -98,11 +98,13 @@ const UserCard = ({
                                <h4 className="card-title text-white">
                                   {repo.name}
                                 </h4>
-                                <h6><span className="badge text-bg-light">{repo.visibility}</span></h6>
+                                <h6><span className="badge rounded-pill text-bg-light">{repo.visibility}</span></h6>
                                </div>
                               </a>
                               <p className="card-text">{repo.description}</p>
-                              <p className="card-text">{repo.langs}</p>
+                              {/* <p className="card-text">{repo.langs[0]}</p> */}
+                              <p className="card-text text-secondary"><i className="fa-solid fa-star me-2"></i>
+                                {repo.stargazers_count} </p> 
                               <p className="card-text text-secondary"><i className="fa-solid fa-calendar-days me-2"></i>{repo.created_at.slice(0, 10)}</p>
                             </div>
                           </div>
@@ -132,10 +134,12 @@ const UserCard = ({
                                <h4 className="card-title text-white">
                                   {repo.name}
                                 </h4>
-                                <h6><span className="badge text-bg-light">{repo.visibility}</span></h6>
+                                <h6><span className="badge rounded-pill text-bg-light">{repo.visibility}</span></h6>
                                </div>
                               </a>
                               <p className="card-text">{repo.description}</p>
+                              <p className="card-text text-secondary"><i className="fa-solid fa-star me-2"></i>
+                                {repo.stargazers_count} </p> 
                               <p className="card-text text-secondary"><i className="fa-solid fa-calendar-days me-2"></i>{repo.created_at.slice(0, 10)}</p>
                             </div>
                           </div>
