@@ -30,3 +30,29 @@ body {
     color: #4493f8 !important;
     fill: #4493f8;
 }
+
+.lang-color {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: block;
+}
+
+.repo-info {
+    font-size: .9rem;
+}
+
+#dropdown-split-basic {
+    background-color: #212830;
+    border-color: #3d444d;
+}
+
+#dropdown-split-basic:hover {
+    background-color: #262c36;
+    transition: 80mscubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.border-bottom,
+.border-top {
+    border-color: rgb(61, 67, 71) !important;
+}
