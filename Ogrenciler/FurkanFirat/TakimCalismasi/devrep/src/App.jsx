@@ -56,8 +56,8 @@ function App() {
           setSearchValue={setSearchValue}
           fetchUserAndRepoData={fetchUserAndRepoData}
         />
-        <UserCard />
-        <RepoCard />
+        <UserCard userData={userData} />
+        <RepoCard repoData={repoData}/>
       </div>
     </>
   );
