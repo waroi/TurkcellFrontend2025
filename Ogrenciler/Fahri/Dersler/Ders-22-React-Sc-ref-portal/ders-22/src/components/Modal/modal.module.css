@@ -1,0 +1,110 @@
+body {
+  background-image: url("../../assets/image3.jpg");
+  background-size: cover;
+  background-position: center;
+  font-family: Arial, sans-serif;
+}
+
+/* Arka planı bulanıklaştıran overlay */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px);
+  z-index: 1;
+}
+
+/* Modal içeriği */
+.modal {
+  background: #ffffff;
+  width: 80%;
+  max-width: 1500px;
+  height: 800px; /* Yüksekliği sabit tutuyoruz */
+  display: flex;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Kapatma butonu */
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.closeButton:hover {
+  background: #cc0000;
+}
+
+/* Avatar */
+.avatar {
+  border-radius: 50%;
+  border: 3px solid #007bff;
+  width: 350px;
+  height: 350px;
+}
+
+/* Sağ taraf - Repos Listesi */
+.repoContainer {
+  height: 700px; /* Sabit bir yükseklik */
+  overflow-y: auto; /* Kaydırılabilir yap */
+  padding-right: 10px;
+  border-left: 3px solid #eee;
+}
+
+.repoList {
+  list-style: none;
+  padding: 0;
+}
+
+.repoItem {
+  background: #e2e2e2;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.repoItem:hover {
+  background: #e0e0e0;
+}
+
+/* Repo linkleri */
+.repoItem a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.repoItem a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Tasarım */
+@media (max-width: 1119px) {
+  .avatar {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 399px) {
+  .avatar {
+    width: 175px;
+    height: 175px;
+  }
+}

@@ -1,7 +1,22 @@
+import { useEffect, useRef, useState } from 'react';
+import Portal from './Portal';
 import './index.css';
-import * as Icon from 'react-bootstrap-icons';
 
 export default function UserCard({ userData }) {
+  const [portalTarget, setPortalTarget] = useState(document.body);
+  const bosDivRef = useRef();
+
+  useEffect(() => {
+    setPortalTarget(document.querySelector('.portalDiv'));
+    console.log(portalTarget);
+  }, []);
+
+  const handleClick = () => {
+    portalTarget.classList[0] === 'bosDiv'
+      ? setPortalTarget(document.querySelector('.portalDiv'))
+      : setPortalTarget(document.querySelector('.bosDiv'));
+  };
+
   return (
     <div id='cardWrapper' className=''>
       <div className=' d-flex flex-column p-3 justify-content-center align-items-center'>
@@ -10,24 +25,11 @@ export default function UserCard({ userData }) {
         <p className='text-secondary'>{userData.login}</p>
       </div>
       <div className='border border-1 my-3'></div>
-      <div className='d-flex justify-content-center align-items-center p-3 w-100'>
-        <ul className='list-group'>
-          <li className='list-group-item d-flex justify-content-between align-items-center'>
-            Followers: {userData.followers}
-            <Icon.PeopleFill className='mx-2' />
-          </li>
-          <li className='list-group-item d-flex justify-content-between align-items-center'>
-            Following: {userData.following}
-            <Icon.PersonFill className='mx-2' />
-          </li>
-          <li className='list-group-item d-flex justify-content-between align-items-center'>
-            Public Repos: {userData.public_repos}
-            <Icon.GlobeAmericas className='mx-2' />
-          </li>
-        </ul>
+      <div className='portalDiv cursor-pointer' onClick={handleClick}>
+        <Portal userData={userData} target={portalTarget} />
       </div>
       <div className='border border-1 my-3'></div>
-      <div className='bosDiv'></div>
+      <div onClick={handleClick} className='bosDiv' ref={bosDivRef}></div>
     </div>
   );
 }
