@@ -21,13 +21,14 @@ const UserCard = ({
   userInfos,
   setRepositories,
   fetchRepositories,
+  langs,
 }) => {
   return (
     <div className="container mt-5">
       <div>
         <div
           key={users.id}
-          className="row d-flex mb-5 justify-content-between align-items-center"
+          className="row d-flex mb-5 justify-content-between"
         >
           <div className="col-lg-3">
             <UserAvatar
@@ -48,10 +49,10 @@ const UserCard = ({
                     <i className="fa-solid fa-users"></i>
                   </span>
                   <p className="followersInfo">
-                    Takipçi: {userInfos.followers}
+                   {userInfos.followers} takipçi
                   </p>
-                  <span></span>
-                  <p>Takip Edilen: {userInfos.following}</p>
+                  <span> <p>|</p></span>
+                  <p>{userInfos.following} takip edilen</p>
                 </div>
                 <p>
                   <span>
@@ -77,7 +78,7 @@ const UserCard = ({
           <div className="col-lg-9">
             <div className="repositories">
               <div className="row">
-                <div className="col-lg-6">
+                <div className="col-lg-6" key={users.id*2}>
                   {repositories?.map((repo, index) => {
                     const odd = Math.abs(index % 2);
                     if (odd) {
@@ -93,11 +94,16 @@ const UserCard = ({
                                 target="_blank"
                                 className="text-decoration-none"
                               >
-                                <h4 className="card-title text-white">
+                                <div className="d-flex justify-content-between">
+                               <h4 className="card-title text-white">
                                   {repo.name}
                                 </h4>
+                                <h6><span className="badge text-bg-light">{repo.visibility}</span></h6>
+                               </div>
                               </a>
                               <p className="card-text">{repo.description}</p>
+                              <p className="card-text">{repo.langs}</p>
+                              <p className="card-text text-secondary"><i className="fa-solid fa-calendar-days me-2"></i>{repo.created_at.slice(0, 10)}</p>
                             </div>
                           </div>
                         </>
@@ -122,11 +128,15 @@ const UserCard = ({
                                 target="_blank"
                                 className="text-decoration-none"
                               >
-                                <h4 className="card-title text-white">
+                               <div className="d-flex justify-content-between">
+                               <h4 className="card-title text-white">
                                   {repo.name}
                                 </h4>
+                                <h6><span className="badge text-bg-light">{repo.visibility}</span></h6>
+                               </div>
                               </a>
                               <p className="card-text">{repo.description}</p>
+                              <p className="card-text text-secondary"><i className="fa-solid fa-calendar-days me-2"></i>{repo.created_at.slice(0, 10)}</p>
                             </div>
                           </div>
                         </>

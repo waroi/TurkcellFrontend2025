@@ -61,3 +61,21 @@ export const getContrubitons = async (userLogin, repoName) => {
     return;
   }
 };
+
+
+
+export const getLangs = async (userLogin, repoName) => {
+  try {
+    const response = await fetch(
+      `https://api.github.com/repos/${userLogin}/${repoName}/languages`
+    );
+    const data = await response.json();
+    const languages = Object.keys(data);
+    
+    console.log("Languages:", languages);
+    return languages;
+  } catch (error) {
+    console.log(error);
+    return [];
+  }
+};

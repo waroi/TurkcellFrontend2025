@@ -11,7 +11,8 @@ const Container = styled.div`
 
 const Logo = styled.img`
   width: 100px;
-  height: 50px;
+  height: 54px;
+   padding: 5px 20px;
 `;
 
 const SearchInput = styled.input`
@@ -34,7 +35,7 @@ const UserSearch = ({ text, setText, fetchUsers }) => {
     <>
       <Container className="container">
         <div className="input-group my-5 w-50">
-          <Logo src={github} alt="github" />
+          <Logo src={github} alt="github" className="bg-light btn rounded-start-pill "/>
           <SearchInput
             type="text"
             className="form-control"

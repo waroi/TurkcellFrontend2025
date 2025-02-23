@@ -3,6 +3,7 @@ import {
   getUsers,
   getUserRepositories,
   getUserInfos,
+  getLangs
 } from "../components/RequestModel";
 import "../css/main.css";
 import UserSearch from "../components/UserSearch";
@@ -13,8 +14,9 @@ function App() {
   const [repositories, setRepositories] = useState([]);
   const [text, setText] = useState("");
   const [userInfos, setUserInfos] = useState({});
+  const [langs, setLangs] = useState({});
 
-  const fetchUsers = async () => {
+  const fetchUsers = async (userLogin, repoName) => {
     const user = await getUsers(text);
     const filteredUser = user?.items?.filter((user) => user.login === text);
     setUsers(filteredUser[0]);
@@ -28,6 +30,10 @@ function App() {
     const filtedRepositories = await getUserRepositories(userLogin);
     setRepositories(filtedRepositories);
     console.log("filtedRepositories", filtedRepositories);
+
+  filtedRepositories.forEach((repo) => {
+    fetchLangs(userLogin, repo.name);
+  });
   };
 
   const fetchUserInfos = async (userLogin) => {
@@ -35,6 +41,17 @@ function App() {
     setUserInfos(userInfos);
     console.log("userInfos", userInfos);
   };
+
+  const fetchLangs = async (userLogin, repoName) => {
+    // const langs = await getLangs(userLogin, repoName);
+    // setLangs(langs);
+    // console.log("langs", langs);
+    const languages = await getLangs(userLogin, repoName);
+  setLangs((prevLangs) => ({
+    ...prevLangs,
+    [repoName]: languages.join(", "), 
+  }));
+  }
 
   return (
     <>
@@ -49,6 +66,7 @@ function App() {
           users={users}
           repositories={repositories}
           userInfos={userInfos}
+          langs={langs}
         ></UserCard>
       )}
     </>
