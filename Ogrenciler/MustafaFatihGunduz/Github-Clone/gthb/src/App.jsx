@@ -25,6 +25,7 @@ function App() {
   const fetchUsers = async (userLogin, repoName) => {
     const user = await getUsers(text);
     const filteredUser = user?.items?.filter((user) => user.login === text);
+    console.log("filteredUser", filteredUser[0]);
     setUsers(filteredUser[0]);
     filteredUser?.forEach((filteredUser) => {
       fetchRepositories(filteredUser.login);
@@ -73,9 +74,13 @@ function App() {
           langs={langs}
         ></UserCard>
       )}
-      <button onClick={scrollToTop}>
-        <i className="fa-solid fa-arrow-up"></i>
-      </button>
+      {users.length === 0 ? null : (
+        <div className="scrollContainer w-100 d-flex justify-content-end px-3 py-3">
+          <button onClick={scrollToTop} className="rounded-circle px-3 py-2">
+            <i className="fa-solid fa-arrow-up"></i>
+          </button>
+        </div>
+      )}
     </>
   );
 }
