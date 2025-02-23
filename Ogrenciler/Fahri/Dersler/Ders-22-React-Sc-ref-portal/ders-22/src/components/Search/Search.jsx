@@ -2,6 +2,10 @@ import React, { useState, useRef } from "react";
 import Modal from "../Modal/Modal";
 import SearchInput from "../SearchInput/SearchInput";
 import styled from "styled-components";
+import {
+  fetchGitHubUser,
+  fetchGitHubUserRepo,
+} from "../../services/apiRequest";
 
 const AppContainer = styled.div`
   background-color: #e0e0e0d6;
@@ -16,22 +20,12 @@ const GitHubSearch = () => {
   const [showModal, setShowModal] = useState(false);
   const inputRef = useRef(null);
 
-  const fetchGitHubUser = async () => {
+  const handleSearch = async () => {
     if (!username) return;
-    const userResponse = await fetch(
-      `https://api.github.com/users/${username}`
-    );
-    const reposResponse = await fetch(
-      `https://api.github.com/users/${username}/repos`
-    );
-    if (!userResponse.ok || !reposResponse.ok)
-      throw new Error("User not found");
-
-    const userData = await userResponse.json();
-    const reposData = await reposResponse.json();
-
-    setUserData(userData);
-    setRepos(reposData);
+    const user = await fetchGitHubUser(username);
+    const repos = await fetchGitHubUserRepo(username);
+    setUserData(user);
+    setRepos(repos);
     setShowModal(true);
   };
 
@@ -42,7 +36,7 @@ const GitHubSearch = () => {
         inputRef={inputRef}
         username={username}
         setUsername={setUsername}
-        fetchGitHubUser={fetchGitHubUser}
+        fetchGitHubUser={handleSearch}
       />
       {showModal && (
         <Modal
