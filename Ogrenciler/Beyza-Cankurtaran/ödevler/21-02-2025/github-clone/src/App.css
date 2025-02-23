@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#root {
+  padding: 100px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  font-family: "Press Start 2P", serif;
+  height: 100vh;
+
+  --text: #000138;
+  --primary: dodgerblue;
+  --secondary: #9e9ebe;
+  --white: #fff;
+  --shadow: rgba(8, 69, 129, 0.2);
+
+  background-image: radial-gradient(#f7f8ff, rgb(241, 248, 255));
+  color: var(--text);
+}
+
+#root > * {
+  width: 1020px;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 2fr 5fr;
+  gap: 50px;
+  height: calc(100vh - 335px);
+}
+
+main > * {
+  height: 100%;
+}
+
+@media (max-width: 1200px) {
+  #root {
+    height: unset;
+    padding: 50px;
+  }
+
+  #root > * {
+    width: 100%;
+  }
+
+  main > * {
+    height: unset;
+  }
+
+  main {
+    grid-template-columns: 1fr;
+    height: unset;
+  }
+
+  main img {
+    width: 300px !important;
+  }
+
+  aside {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 25px;
+  }
+}
+
+@media (max-width: 767px) {
+  aside {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  input {
+    width: 25vw;
+  }
+
+  i {
+    display: none !important;
+  }
+}
