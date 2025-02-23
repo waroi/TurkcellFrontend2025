@@ -38,11 +38,10 @@ function App() {
   return (
     <>
       <NavBar />
-      <Container>
+      <Container className="mt-5">
         <Row>
           <Col md={3}>
-            {" "}
-            <Profile />
+            {profileData && <Profile profile={profileData} />}
           </Col>
           <Col md={9}> {repos && <Repos repos={repos} />}</Col>
         </Row>
