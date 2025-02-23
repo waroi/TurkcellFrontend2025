@@ -11,7 +11,7 @@ function App() {
   const [loading, setLoading] = useState(null);
   const [error, setError] = useState(null);
 
-  const [repoData, setRepoData] = useState({});
+  const [repoData, setRepoData] = useState([]);
 
   const [searchValue, setSearchValue] = useState('furkan-firat');
   const baseUrl = 'https://api.github.com';
@@ -57,7 +57,7 @@ function App() {
           fetchUserAndRepoData={fetchUserAndRepoData}
         />
         <UserCard userData={userData} />
-        <RepoCard repoData={repoData}/>
+        <RepoCard repoData={repoData} />
       </div>
     </>
   );
