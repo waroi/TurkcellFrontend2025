@@ -15,17 +15,6 @@ const UserInfos = styled.div`
   border-radius: 22px;
 `;
 
-/**
- *  // Location
- *  // Email
- * <i className="fa-solid fa-building"></i> // Company
- * <i className="fa-solid fa-userss"></i> // Followers
- * <i className="fa-solid fa-users-plus"></i> // Following
- * <i className="fa-solid fa-users"></i> // Name
- * <i className="fa-solid fa-users"></i> // Login
- * <i className="fa-solid fa-users"></i> // Bio
- */
-
 const UserCard = ({
   users,
   repositories,
@@ -55,20 +44,33 @@ const UserCard = ({
                 <h3>{userInfos.name}</h3>
                 <p>{userInfos.login}</p>
                 <p>{userInfos.bio}</p>
+                <div className="followersCount d-flex gap-2 ">
+                  <span>
+                    <i className="fa-solid fa-users"></i>
+                  </span>
+                  <p className="followersInfo">
+                    Takipçi: {userInfos.followers}
+                  </p>
+                  <span></span>
+                  <p>Takip Edilen: {userInfos.following}</p>
+                </div>
                 <p>
                   <span>
-                    <i className="fa-solid fa-location-dot"></i>
+                    <i class="fa-solid fa-building me-2"></i>
                   </span>
-                  {userInfos.followers}
+                  {userInfos.company}
                 </p>
-                <p>{userInfos.following}</p>
-                <p>{userInfos.company}</p>
-                <p>{userInfos.location}</p>
                 <p>
                   <span>
-                    <i className="fa-solid fa-envelope"></i>
+                    <i className="fa-solid fa-location-dot me-2"></i>
                   </span>
-                  {userInfos.email}
+                  {userInfos.location}
+                </p>
+                <p>
+                  <span>
+                    <i className="fa-solid fa-envelope me-2"></i>
+                  </span>
+                  {userInfos.email ?? `${userInfos.login}@gmail.com`}
                 </p>
               </UserInfos>
             )}
@@ -87,7 +89,15 @@ const UserCard = ({
                             key={repo.id}
                           >
                             <div className="card-body">
-                              <h4 className="card-title">{repo.name}</h4>
+                              <a
+                                href={`https://github.com/${users.login}/${repo.name}`}
+                                target="_blank"
+                                className="text-decoration-none"
+                              >
+                                <h4 className="card-title text-white">
+                                  {repo.name}
+                                </h4>
+                              </a>
                               <p className="card-text">{repo.description}</p>
                             </div>
                           </div>
@@ -108,7 +118,15 @@ const UserCard = ({
                             key={repo.id}
                           >
                             <div className="card-body">
-                              <h4 className="card-title">{repo.name}</h4>
+                              <a
+                                href={`https://github.com/${users.login}/${repo.name}`}
+                                target="_blank"
+                                className="text-decoration-none"
+                              >
+                                <h4 className="card-title text-white">
+                                  {repo.name}
+                                </h4>
+                              </a>
                               <p className="card-text">{repo.description}</p>
                             </div>
                           </div>

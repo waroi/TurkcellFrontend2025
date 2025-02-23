@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import github from "../src/assets/github.svg";
 
 const Container = styled.div`
   display: flex;
@@ -8,7 +9,13 @@ const Container = styled.div`
   justify-content: center;
 `;
 
+const Logo = styled.img`
+  width: 100px;
+  height: 50px;
+`;
+
 const SearchInput = styled.input`
+  width: 100%;
   color: #1a0b2e;
   padding: 13px 20px;
   border-radius: 25px;
@@ -26,8 +33,8 @@ const UserSearch = ({ text, setText, fetchUsers }) => {
   return (
     <>
       <Container className="container">
-        <h1 className="mt-5 text-white">GitHub Clone</h1>
-        <div className="input-group my-5 w-25">
+        <div className="input-group my-5 w-50">
+          <Logo src={github} alt="github" />
           <SearchInput
             type="text"
             className="form-control"
