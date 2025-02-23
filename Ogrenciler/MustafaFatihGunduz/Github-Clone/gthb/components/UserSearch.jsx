@@ -13,6 +13,8 @@ const Logo = styled.img`
   width: 100px;
   height: 54px;
    padding: 5px 20px;
+   border-color: #693b93;
+  box-shadow: -10px 0px 10px 5px #693b93;
 `;
 
 const SearchInput = styled.input`
@@ -20,6 +22,8 @@ const SearchInput = styled.input`
   color: #1a0b2e;
   padding: 13px 20px;
   border-radius: 25px;
+  border-color: #693b93;
+  box-shadow: 0px 0px 10px 7px #693b93;
 `;
 
 const SearchButton = styled.button`
@@ -28,9 +32,16 @@ const SearchButton = styled.button`
   border-radius: 25px;
   padding: 13px 20px;
   color: #1a0b2e;
+  border-color: #693b93;
+  box-shadow: 10px 0px 10px 5px #693b93;
 `;
 
 const UserSearch = ({ text, setText, fetchUsers }) => {
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      fetchUsers(); 
+    }
+  };
   return (
     <>
       <Container className="container">
@@ -42,6 +53,7 @@ const UserSearch = ({ text, setText, fetchUsers }) => {
             placeholder="Kullanıcı adı giriniz."
             value={text}
             onChange={(e) => setText(e.target.value)}
+            onKeyDown={handleKeyDown}
           />
           <SearchButton
             className="btn bg-light rounded-end-pill"

@@ -102,10 +102,12 @@ const UserCard = ({
                                </div>
                               </a>
                               <p className="card-text">{repo.description}</p>
-                              {/* <p className="card-text">{repo.langs[0]}</p> */}
-                              <p className="card-text text-secondary"><i className="fa-solid fa-star me-2"></i>
+                              <div className="d-flex justify-content-between">
+                              <p className="card-text text-secondary mb-0"><i className="fa-solid fa-code me-2"></i>{langs[repo.name]}</p>
+                              <p className="card-text text-secondary mb-0"><i className="fa-solid fa-star me-2"></i>
                                 {repo.stargazers_count} </p> 
-                              <p className="card-text text-secondary"><i className="fa-solid fa-calendar-days me-2"></i>{repo.created_at.slice(0, 10)}</p>
+                              <p className="card-text text-secondary mb-0"><i className="fa-solid fa-calendar-days me-2"></i>{repo.created_at.slice(0, 10)}</p>
+                              </div>
                             </div>
                           </div>
                         </>
@@ -138,9 +140,12 @@ const UserCard = ({
                                </div>
                               </a>
                               <p className="card-text">{repo.description}</p>
-                              <p className="card-text text-secondary"><i className="fa-solid fa-star me-2"></i>
+                              <div className="d-flex justify-content-between">
+                              <p className="card-text text-secondary mb-0"><i className="fa-solid fa-code me-2"></i>{langs[repo.name]}</p>
+                              <p className="card-text text-secondary mb-0"><i className="fa-solid fa-star me-2"></i>
                                 {repo.stargazers_count} </p> 
-                              <p className="card-text text-secondary"><i className="fa-solid fa-calendar-days me-2"></i>{repo.created_at.slice(0, 10)}</p>
+                              <p className="card-text text-secondary mb-0"><i className="fa-solid fa-calendar-days me-2"></i>{repo.created_at.slice(0, 10)}</p>
+                              </div>
                             </div>
                           </div>
                         </>

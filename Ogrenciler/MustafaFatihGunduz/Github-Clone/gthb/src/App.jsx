@@ -49,7 +49,7 @@ function App() {
     const languages = await getLangs(userLogin, repoName);
   setLangs((prevLangs) => ({
     ...prevLangs,
-    [repoName]: languages.join(", "), 
+    [repoName]: languages[0], 
   }));
   }
 
