@@ -1,38 +1,42 @@
-.overlay{
-    align-items: center;
-    justify-content: center;
-    display: none;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: #999999ab;
-    z-index: 50;
+.overlay {
+	align-items: center;
+	justify-content: center;
+	display: none;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: #999999ab;
+	z-index: 999;
 }
 
 .modalCard {
-    overflow: auto;
-    width: 80%;
-    height: 80%;
+	overflow: auto;
+	width: 80%;
+	height: 75%;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
 	border: 1px solid #eaeaea;
 	border-radius: 10px;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-	overflow: hidden;
+	overflow: scroll;
 	transition: transform 0.3s;
-	cursor: pointer;
-    background-color: rgb(255, 255, 255);
+	background-color: rgb(255, 255, 255);
 }
 .modalCard img {
+	align-self: center;
 	padding: 0.5rem;
-	object-fit: cover;
+	width: 500px;
+	object-fit: contain;
 	border-radius: 1rem;
 }
 
 .modalCardInfo {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	padding: 1rem;
 }
 

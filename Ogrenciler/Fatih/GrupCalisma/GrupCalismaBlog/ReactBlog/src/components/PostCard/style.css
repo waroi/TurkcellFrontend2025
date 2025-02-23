@@ -1,0 +1,30 @@
+.post-card {
+  width: 100%;
+  max-width: 18rem;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.post-card:hover {
+  transform: scale(1.03);
+}
+
+.post-image {
+  height: 150px;
+  object-fit: cover;
+}
+
+.post-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.post-text {
+  font-size: 0.9rem;
+}
+
+.post-author,
+.post-date {
+  font-size: 0.85rem;
+}

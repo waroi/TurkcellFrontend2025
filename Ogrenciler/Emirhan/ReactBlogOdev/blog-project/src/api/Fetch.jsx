@@ -9,7 +9,7 @@ const Fetch = () => {
     author: "",
   });
 
-  const [selectedId,setSelectedId]=useState("");
+  const [selectedId, setSelectedId] = useState("");
 
   useEffect(() => {
     fetch("http://localhost:3000/blogs")
@@ -41,7 +41,7 @@ const Fetch = () => {
       .catch((error) => console.error("Blog silme hatası:", error));
   };
 
-  return { blogs, blog,selectedId, setBlog, postBlog, deleteBlog,setSelectedId };
+  return { blogs, blog, selectedId, setBlog, postBlog, deleteBlog, setSelectedId };
 };
 
 export default Fetch;

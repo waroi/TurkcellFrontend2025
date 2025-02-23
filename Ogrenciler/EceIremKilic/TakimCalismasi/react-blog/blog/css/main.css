@@ -11849,20 +11849,34 @@ body {
   font-family: "Montserrat", serif;
 }
 
-.articles {
-  margin-top: 72px;
+.avatar {
+  width: 50px;
+  height: 50px;
 }
+
+.nav-blog-img {
+  height: 60px;
+}
+
 .articles .avatar {
   width: 50px;
   height: 50px;
 }
-.articles .card-post-detail .date-text {
+.articles .card {
+  height: 540px;
+}
+.articles .card .card-post-detail .date-text {
   font-size: 0.7rem;
+}
+.articles .card .card-img-top {
+  height: 230px;
+  object-fit: cover;
 }
 
 .mainArticleSection .main-article-logo {
-  aspect-ratio: 16/12;
+  height: 350px;
   width: 100%;
+  object-fit: cover;
 }
 .mainArticleSection .avatar {
   width: 50px;
@@ -11877,6 +11891,12 @@ body {
   height: 50px;
 }
 
+.modal-post-img {
+  width: 100%;
+  object-fit: cover;
+  max-height: 400px;
+}
+
 .footer-links li {
   transition: 500ms ease-in-out;
 }
@@ -11886,6 +11906,11 @@ body {
 .footer-links li:hover {
   color: #2F80E4;
   transform: translateY(-5px);
+}
+
+.footer-bottom img {
+  height: 30px;
+  width: 30px;
 }
 
 /*# sourceMappingURL=main.css.map */

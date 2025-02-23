@@ -9,22 +9,36 @@ body {
 @mixin postTime {
   font-size: 0.7rem;
 }
+.avatar {
+  @include avatar;
+}
+.nav-blog-img {
+  height: 60px;
+}
 .articles {
-  margin-top: 72px;
   .avatar {
     @include avatar;
   }
-  .card-post-detail {
-    .date-text {
-      @include postTime;
+  .card {
+    height: 540px;
+
+    .card-post-detail {
+      .date-text {
+        @include postTime;
+      }
+    }
+    .card-img-top {
+      height: 230px;
+      object-fit: cover;
     }
   }
 }
 
 .mainArticleSection {
   .main-article-logo {
-    aspect-ratio: 16/12;
+    height: 350px;
     width: 100%;
+    object-fit: cover;
   }
   .avatar {
     @include avatar;
@@ -35,21 +49,31 @@ body {
     }
   }
 }
-.developers{
-  .avatar{
+.developers {
+  .avatar {
     @include avatar;
   }
 }
-.footer-links{
-  li{
-    a{
+.modal-post-img {
+  width: 100%;
+  object-fit: cover;
+  max-height: 400px;
+}
+.footer-links {
+  li {
+    a {
       color: inherit;
     }
     transition: 500ms ease-in-out;
-    &:hover{
+    &:hover {
       color: $success;
       transform: translateY(-5px);
     }
   }
-  
+}
+.footer-bottom {
+  img {
+    height: 30px;
+    width: 30px;
+  }
 }
