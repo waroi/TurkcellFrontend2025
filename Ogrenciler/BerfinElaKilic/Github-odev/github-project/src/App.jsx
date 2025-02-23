@@ -17,8 +17,9 @@ function App() {
   const [profileData, setProfileData] = useState(null);
   const [userName, setUserName] = useState("waroi");
 
-  const token = '11AT2PN4A072jaRlOag1Jl_tCTmefp1LfPHXLGyH7LtTYxlxE4Nrq00cnxmpaX6OeYU4XXLB3Drg2f9z2S'
-  const baseUrl = 'https://api.github.com/users/'
+  const token =
+    "11AT2PN4A072jaRlOag1Jl_tCTmefp1LfPHXLGyH7LtTYxlxE4Nrq00cnxmpaX6OeYU4XXLB3Drg2f9z2S";
+  const baseUrl = "https://api.github.com/users/";
   const fetchPersonalData = async () => {
     setProfileData(null);
 
@@ -27,10 +28,12 @@ function App() {
       headers: {
         Authorization: `token github_pat_${token}`,
       },
-    })
-    if (!response.ok) { return console.log('error') }
-    const data = await response.json()
-    setProfileData(data)
+    });
+    if (!response.ok) {
+      return console.log("error");
+    }
+    const data = await response.json();
+    setProfileData(data);
   };
 
   const fetchRepos = async () => {
@@ -40,8 +43,10 @@ function App() {
       headers: {
         Authorization: `token github_pat_${token}`,
       },
-    })
-    if (!response.ok) { return console.log('error') }
+    });
+    if (!response.ok) {
+      return console.log("error");
+    }
     const data = await response.json();
     setRepos(data);
   };
@@ -60,17 +65,17 @@ function App() {
   return (
     <>
       <NavBar handleChange={handleChange} />
-      {profileData && (<Container className="my-5">
-
-        <Row>
-          <Col md={3}>{profileData && <Profile profile={profileData} />}</Col>
-          <Col md={9}>
-            {" "}
-            {repos && repos.length > 0 && <Repos repos={repos} />}
-          </Col>
-        </Row>
-
-      </Container>) || <Image src="../src/assets/404.png" />}
+      {(profileData && (
+        <Container fluid className="my-5">
+          <Row>
+            <Col md={3}>{profileData && <Profile profile={profileData} />}</Col>
+            <Col md={9}>
+              {" "}
+              {repos && repos.length > 0 && <Repos repos={repos} />}
+            </Col>
+          </Row>
+        </Container>
+      )) || <Image src="../src/assets/404.png" />}
 
       <Footer />
     </>

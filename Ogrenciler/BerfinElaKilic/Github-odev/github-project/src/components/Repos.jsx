@@ -1,22 +1,21 @@
 import RepoItem from "./RepoItem";
 
 const Repos = ({ repos }) => {
-  let sortedData = []
+  let sortedData = [];
   if (repos.length > 0 && repos) {
     sortedData = repos.sort((a, b) => {
-      const aUpdated = new Date(a.pushed_at)
-      const bUpdated = new Date(b.pushed_at)
-      return bUpdated - aUpdated
-    })
+      const aUpdated = new Date(a.pushed_at);
+      const bUpdated = new Date(b.pushed_at);
+      return bUpdated - aUpdated;
+    });
   }
 
   return (
-    <>
-      <h1>REPOS</h1>
-      {sortedData.map((repoItem, index) =>
-        (<RepoItem key={index} repoItem={repoItem} />)
-      )}
-    </>
+    <div className="border-subtle border-bottom">
+      {sortedData.map((repoItem, index) => (
+        <RepoItem key={index} repoItem={repoItem} />
+      ))}
+    </div>
   );
 };
 

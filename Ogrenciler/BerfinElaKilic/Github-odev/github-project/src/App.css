@@ -1,58 +1,77 @@
 * {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans",
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
 }
 
 body {
-    background: #0e1117 !important;
-    color: white !important;
+  background: #0e1117 !important;
+  color: #f0f6fc !important;
 }
 
 .navbar {
-    background-color: #26292e !important;
+  background-color: #010409 !important;
 }
 
 .social-media a {
-    color: #f0f6fc;
-    text-decoration: none;
+  color: #f0f6fc;
+  text-decoration: none;
 }
 
 .social-media a:hover {
-    text-decoration: underline;
-    color: #4493f8;
+  text-decoration: underline;
+  color: #4493f8;
 }
 
 .followers a {
-    cursor: pointer;
+  cursor: pointer;
 }
 
-.followers a:hover>span,
-.followers a:hover>svg {
-    color: #4493f8 !important;
-    fill: #4493f8;
+.followers a:hover > span,
+.followers a:hover > svg {
+  color: #4493f8 !important;
+  fill: #4493f8;
 }
 
 .lang-color {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: block;
 }
 
 .repo-info {
-    font-size: .9rem;
+  font-size: 0.75rem;
 }
 
 #dropdown-split-basic {
-    background-color: #212830;
-    border-color: #3d444d;
+  background-color: #212830;
+  border-color: #3d444d;
 }
 
 #dropdown-split-basic:hover {
-    background-color: #262c36;
-    transition: 80mscubic-bezier(0.33, 1, 0.68, 1);
+  background-color: #262c36;
+  transition: 80mscubic-bezier(0.33, 1, 0.68, 1);
 }
 
 .border-bottom,
 .border-top {
-    border-color: rgb(61, 67, 71) !important;
+  border-color: rgb(61, 67, 71) !important;
+}
+.text-sm {
+  font-size: 0.87rem;
+}
+.text-xs {
+  font-size: 0.75rem;
+}
+.repo-item a {
+  color: #4493f8;
+}
+.text-secondary {
+  color: #9198a1 !important;
+}
+.text-white {
+  color: #f0f6fc !important;
+}
+.profile-image {
+  max-width: 295px;
 }
