@@ -5,16 +5,16 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Profile from "./components/Profile";
 import RepoCard from "./components/RepoCard";
+import SearchBar from "./components/SearchBar";
 
 function App() {
   const [user, setUser] = useState({});
   const [userRepos, setRepos] = useState([]);
   const [error, setError] = useState("");
-
+  const [username, setUsername] = useState("waroi");
   const fetchGitUserData = async () => {
     try {
-      const query = "waroi";
-      const response = await fetch(`https://api.github.com/users/${query}`, {
+      const response = await fetch(`https://api.github.com/users/${username}`, {
         headers: {
           Authorization: `${import.meta.env.TOKEN}`,
         },
@@ -31,9 +31,8 @@ function App() {
 
   const fetchGitRepo = async () => {
     try {
-      const query = "waroi";
       const response = await fetch(
-        `https://api.github.com/users/${query}/repos`,
+        `https://api.github.com/users/${username}/repos`,
         {
           headers: {
             Authorization: `${import.meta.env.TOKEN}`,
@@ -54,9 +53,16 @@ function App() {
     fetchGitUserData();
     fetchGitRepo();
   }, []);
+
+  const handleSearch = () => {
+    fetchGitUserData(username);
+    fetchGitRepo(username);
+  };
   return (
     <>
       <Container>
+        <SearchBar onSearch={handleSearch} setUsername={setUsername} />
+        {error && <div className="alert alert-danger">{error}</div>}
         <Row>
           <Col md={4}>
             <Profile user={user}></Profile>

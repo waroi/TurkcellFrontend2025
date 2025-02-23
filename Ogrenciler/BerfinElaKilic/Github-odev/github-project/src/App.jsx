@@ -8,35 +8,40 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-import "./App.css";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+import Image from "react-bootstrap/esm/Image";
 
 function App() {
   const [repos, setRepos] = useState(null);
   const [profileData, setProfileData] = useState(null);
   const [userName, setUserName] = useState("waroi");
-  const [error, setError] = useState("");
 
+  const token = '11AT2PN4A072jaRlOag1Jl_tCTmefp1LfPHXLGyH7LtTYxlxE4Nrq00cnxmpaX6OeYU4XXLB3Drg2f9z2S'
+  const baseUrl = 'https://api.github.com/users/'
   const fetchPersonalData = async () => {
     setProfileData(null);
-    const response = await fetch(`https://api.github.com/users/${userName}`);
-    if (!response.ok) {
-      setError(response.status);
-      return;
-    }
-    const data = await response.json();
-    setProfileData(data);
+
+    const response = await fetch(`${baseUrl}${userName}`, {
+      method: "GET",
+      headers: {
+        Authorization: `token github_pat_${token}`,
+      },
+    })
+    if (!response.ok) { return console.log('error') }
+    const data = await response.json()
+    setProfileData(data)
   };
 
   const fetchRepos = async () => {
     setRepos(null);
-    const response = await fetch(
-      `https://api.github.com/users/${userName}/repos`
-    );
-
-    if (!response.ok) {
-      setError(response?.status);
-    }
+    const response = await fetch(`${baseUrl}${userName}/repos`, {
+      method: "GET",
+      headers: {
+        Authorization: `token github_pat_${token}`,
+      },
+    })
+    if (!response.ok) { return console.log('error') }
     const data = await response.json();
     setRepos(data);
   };
@@ -55,17 +60,17 @@ function App() {
   return (
     <>
       <NavBar handleChange={handleChange} />
-      <Container className="mt-5">
-        {profileData && (
-          <Row>
-            <Col md={3}>{profileData && <Profile profile={profileData} />}</Col>
-            <Col md={9}>
-              {" "}
-              {repos && repos.length > 0 && <Repos repos={repos} />}
-            </Col>
-          </Row>
-        )}
-      </Container>
+      {profileData && (<Container className="my-5">
+
+        <Row>
+          <Col md={3}>{profileData && <Profile profile={profileData} />}</Col>
+          <Col md={9}>
+            {" "}
+            {repos && repos.length > 0 && <Repos repos={repos} />}
+          </Col>
+        </Row>
+
+      </Container>) || <Image src="../src/assets/404.png" />}
 
       <Footer />
     </>

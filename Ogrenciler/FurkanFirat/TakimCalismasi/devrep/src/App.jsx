@@ -5,6 +5,7 @@ import Navbar from './Navbar';
 import SearchForm from './SearcForm';
 import { useEffect, useState } from 'react';
 import RepoCard from './RepoCard';
+import Loading from './Loading';
 
 function App() {
   const [userData, setUserData] = useState({});
@@ -56,8 +57,15 @@ function App() {
           setSearchValue={setSearchValue}
           fetchUserAndRepoData={fetchUserAndRepoData}
         />
-        <UserCard userData={userData} />
-        <RepoCard repoData={repoData} />
+        {loading ? (
+          <Loading />
+        ) : (
+          <>
+            <UserCard userData={userData} />
+            <RepoCard repoData={repoData} />
+          </>
+        )}
+        {error ? <p>{error}</p> : <></>}
       </div>
     </>
   );
