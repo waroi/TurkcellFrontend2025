@@ -14,27 +14,28 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 function App() {
   const [repos, setRepos] = useState(null);
   const [profileData, setProfileData] = useState(null);
-  const [userName, setUserName] = useState("");
-  const [error, setError] = useState('')
+  const [userName, setUserName] = useState("waroi");
+  const [error, setError] = useState("");
 
-  const fetchPersonalData = async (userName) => {
-    setProfileData(null)
+  const fetchPersonalData = async () => {
+    setProfileData(null);
     const response = await fetch(`https://api.github.com/users/${userName}`);
     if (!response.ok) {
       setError(response.status);
-      return }
-      const data = await response.json();
-      setProfileData(data);
+      return;
+    }
+    const data = await response.json();
+    setProfileData(data);
   };
 
-  const fetchRepos = async (userName) => {
-    setRepos(null)
+  const fetchRepos = async () => {
+    setRepos(null);
     const response = await fetch(
       `https://api.github.com/users/${userName}/repos`
     );
-    
+
     if (!response.ok) {
-      setError(response?.status)
+      setError(response?.status);
     }
     const data = await response.json();
     setRepos(data);
@@ -49,21 +50,21 @@ function App() {
 
   const handleChange = async (value) => {
     setUserName(value);
-    fetchPersonalData(value);
-    fetchRepos(value);
-  }
+  };
 
   return (
     <>
       <NavBar handleChange={handleChange} />
       <Container className="mt-5">
-        {profileData &&
+        {profileData && (
           <Row>
-            <Col md={3}>
-              {profileData && <Profile profile={profileData} />}
+            <Col md={3}>{profileData && <Profile profile={profileData} />}</Col>
+            <Col md={9}>
+              {" "}
+              {repos && repos.length > 0 && <Repos repos={repos} />}
             </Col>
-            <Col md={9}> {repos && repos.length > 0 && <Repos repos={repos} />}</Col>
-          </Row>}
+          </Row>
+        )}
       </Container>
 
       <Footer />
