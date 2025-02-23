@@ -10,17 +10,17 @@ const RepoItem = ({ repoItem }) => {
     <div className="border-top border-bottom d-flex justify-content-between align-items-center py-3">
       <div>
         <div className="d-flex gap-2">
-        <a href={repoItem.html_url} target="_blank" className="fw-bold fs-5 text-decoration-none">{repoItem.name} </a>
-        <Badge bg="" className='me-1 border d-inline rounded-pill' style={{height: "max-content"}} text="dark">
-               Public
-            </Badge>
-        
+          <a href={repoItem.html_url} target="_blank" className="fw-bold fs-5 text-decoration-none">{repoItem.name} </a>
+          <Badge bg="" className='me-1 border d-inline rounded-pill' style={{ height: "max-content" }} text="dark">
+            Public
+          </Badge>
+
         </div>
         <p className="text-secondary w-75">{repoItem.description}</p>
         <div className="tags d-flex gap-2 align-items-center">
           <Stack direction="horizontal" className="w-100" gap={2}>
             {repoItem.topics.map((tag, index) => (
-              
+
               (index < 6) ? <TagItem key={index} tag={tag} /> : ""
             ))}
           </Stack>
@@ -31,7 +31,6 @@ const RepoItem = ({ repoItem }) => {
             <FaRegStar />
             <span>{repoItem.stargazers_count}</span>
           </div>
-          {/* <div>{repoItem.pushed_at.slice(0, 10)}</div> */}
           <div>
             {repoItem.pushed_at &&
               new Date(repoItem.pushed_at).toLocaleDateString("tr-TR")}

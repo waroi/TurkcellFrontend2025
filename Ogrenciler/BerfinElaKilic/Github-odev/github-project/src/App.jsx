@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { use, useEffect, useState } from "react";
 
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
@@ -15,26 +15,35 @@ function App() {
   const [repos, setRepos] = useState(null);
   const [profileData, setProfileData] = useState(null);
   const [userName, setUserName] = useState("waroi");
+  const [error, setError] = useState('')
+
   const fetchPersonalData = async () => {
+    setProfileData(null)
     const response = await fetch(`https://api.github.com/users/${userName}`);
     const data = await response.json();
-    setProfileData(data);
+    if (response.ok) setProfileData(data);
   };
 
   const fetchRepos = async () => {
+    setRepos(null)
     const response = await fetch(
       `https://api.github.com/users/${userName}/repos`
     );
     const data = await response.json();
+    if (!response.ok) {
+      setError(response?.status)
+    }
     setRepos(data);
   };
 
   useEffect(() => {
-    fetchPersonalData();
-    fetchRepos();
-  }, []);
+    if (userName) {
+      fetchPersonalData();
+      fetchRepos();
+    }
+  }, [userName]);
 
-  const handleChange = (value) =>{
+  const handleChange = async (value) => {
     setUserName(value);
     fetchPersonalData();
     fetchRepos();
@@ -44,12 +53,13 @@ function App() {
     <>
       <NavBar handleChange={handleChange} />
       <Container className="mt-5">
-        <Row>
-          <Col md={3}>
-            {profileData && <Profile profile={profileData} />}
-          </Col>
-          <Col md={9}> {repos && <Repos repos={repos} />}</Col>
-        </Row>
+        {profileData &&
+          <Row>
+            <Col md={3}>
+              {profileData && <Profile profile={profileData} />}
+            </Col>
+            <Col md={9}> {repos && repos.length > 0 && <Repos repos={repos} />}</Col>
+          </Row>}
       </Container>
 
       <Footer />
