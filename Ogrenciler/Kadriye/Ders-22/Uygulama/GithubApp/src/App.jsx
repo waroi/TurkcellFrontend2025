@@ -6,12 +6,13 @@ import Col from "react-bootstrap/Col";
 import Profile from "./components/Profile";
 import RepoCard from "./components/RepoCard";
 import SearchBar from "./components/SearchBar";
-
+import LanguageFilter from "./components/LanguageFilter";
+import Sort from "./components/Sort";
 function App() {
   const [user, setUser] = useState({});
   const [userRepos, setRepos] = useState([]);
   const [error, setError] = useState("");
-  const [username, setUsername] = useState("waroi");
+  const [username, setUsername] = useState("greenmagican");
   const fetchGitUserData = async () => {
     try {
       const response = await fetch(`https://api.github.com/users/${username}`, {
@@ -52,7 +53,7 @@ function App() {
   useEffect(() => {
     fetchGitUserData();
     fetchGitRepo();
-  }, []);
+  }, [username]);
 
   const handleSearch = () => {
     fetchGitUserData(username);
@@ -61,8 +62,14 @@ function App() {
   return (
     <>
       <Container>
-        <SearchBar onSearch={handleSearch} setUsername={setUsername} />
+        <SearchBar
+          onSearch={handleSearch}
+          setUsername={setUsername}
+          username={username}
+        />
         {error && <div className="alert alert-danger">{error}</div>}
+        <LanguageFilter repos={userRepos}></LanguageFilter>
+        <Sort></Sort>
         <Row>
           <Col md={4}>
             <Profile user={user}></Profile>

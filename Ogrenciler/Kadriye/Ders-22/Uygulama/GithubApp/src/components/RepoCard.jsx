@@ -35,9 +35,7 @@ function RepoCard({ repo }) {
         </Card.Text>
         <Card.Text>{repo.description}</Card.Text>
         <Card.Text>
-          {language}
-          Updated on
-          {repo.pushed_at.substring(0, 10)}
+          {language} Updated on {repo.pushed_at.substring(0, 10)}
         </Card.Text>
         <a variant="primary" href={repo.html_url} target="_blank">
           Go Repository

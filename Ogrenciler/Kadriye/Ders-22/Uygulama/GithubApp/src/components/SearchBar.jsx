@@ -1,13 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-const SearchBar = ({ onSearch, setUsername }) => {
+const SearchBar = ({ onSearch, setUsername, username }) => {
   const [inputValue, setInputValue] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
     setUsername(inputValue);
-    onSearch();
   };
+  useEffect(() => {
+    if (username) {
+      onSearch();
+    }
+  }, [username]);
   return (
     <Form onSubmit={handleSubmit} className="mb-3">
       <Form.Group controlId="formUsername">
