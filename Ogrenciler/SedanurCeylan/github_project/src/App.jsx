@@ -8,10 +8,10 @@ import GitHubProfile from "./Components/profile";
 function App() {
   const [repos, setRepos] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [username, setUsername] = useState(""); // Kullanıcı adı için state
+  const [username, setUsername] = useState("");
 
   const fetchRepos = (username) => {
-    setUsername(username); // Kullanıcı adını güncelle
+    setUsername(username);
     setLoading(true);
 
     fetch(`https://api.github.com/users/${username}/repos`)
@@ -33,10 +33,9 @@ function App() {
       });
   };
 
-  // Temizleme fonksiyonu
   const clearResults = () => {
-    setRepos([]);       // Repo listesini temizle
-    setUsername("");    // Kullanıcı adını sıfırla
+    setRepos([]);
+    setUsername("");
   };
 
   return (
@@ -44,20 +43,29 @@ function App() {
       <div className="d-flex flex-column justify-content-center align-items-center vh-100">
         <Navbar onSearch={fetchRepos} />
 
+        <div className="d-flex justify-content-center align-items-center">
+          <div className="d-flex flex-column align-items-center">
 
-        {username && <GitHubProfile username={username} />}
+            {username && <GitHubProfile username={username} />}
 
-        {repos.length > 0 && (
-          <button className="btn btn-danger mt-3" onClick={clearResults}>
-            Temizle
-          </button>
-        )}
+            {repos.length > 0 && (
+              <button className="btn btn-danger mt-3" onClick={clearResults}>
+                Temizle
+              </button>
+            )}
+          </div>
 
-        {loading ? (
-          <p className="text-center mt-4">Loading...</p>
-        ) : (
-          <RepoList repos={repos} />
-        )}
+          <div>
+
+            {loading ? (
+              <p className="text-center mt-4">Yükleniyor...</p>
+            ) : (
+              <div className="scroll">
+                <RepoList repos={repos} />
+              </div>
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );

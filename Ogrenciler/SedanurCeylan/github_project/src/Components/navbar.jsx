@@ -11,21 +11,21 @@ function Navbar({ onSearch }) {
   };
 
   return (
-    <div className="navcontainer w-75 ">
-      <nav className="navbar navbar-dark bg-dark p-3 w-75 rounded container-fluid">
+    <div className="navcontainer w-100 mb-5">
+      <nav className="navbar p-3 rounded container-fluid">
         <div className="container d-flex flex-column align-items-between">
-          <h2 className="text-white">GitHub Repo Search</h2>
+          <h2 className="nav-title fs-1">GitHub Repository</h2>
 
           <div className="input-group mt-2">
             <input
               type="text"
               className="form-control"
-              placeholder="Enter GitHub username..."
+              placeholder="GitHub Kullanıcı Adınızı Giriniz..."
               value={username}
               onChange={(e) => setUsername(e.target.value)}
             />
-            <button className="btn btn-success" onClick={handleSearch}>
-              Search
+            <button className="btn btn-primary px-4" onClick={handleSearch}>
+              Ara
             </button>
           </div>
         </div>

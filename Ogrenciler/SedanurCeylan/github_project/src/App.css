@@ -1,58 +1,45 @@
- #root {
-  max-width: 1280px;
+#root {
   margin: 0 auto;
   padding: 2rem;
   text-align: top;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #0ee484;
+  font-family: "Poppins", sans-serif;
+  background-image: url("./assets/bg.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .navbar {
-  background-color: #24292e;
-  color: rgb(198, 16, 16);
-  text-align: top;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: top;
+  background: #2f2f30;
 }
 
-.search-bar {
-  margin-top: 10px;
+.navbar h2 {
+  color: #a789d7;
 }
 
-.search-bar input {
-  width: 300px;
-  padding: 10px;
-  margin-right: 10px;
+.scroll {
+  overflow-y: scroll;
+  height: 500px;
 }
 
-.search-bar button {
-  padding: 10px 15px;
-  background-color: #28a745;
-  color: white;
-  border: none;
-  cursor: pointer;
+.card {
+  background: #2f2f30;
+  color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(47, 47, 48, 0.3);
+  transition: transform 0.3s ease-in-out;
+}
+.card-title a {
+  color: #a789d7;
 }
 
-.repo-list {
-  max-width: 600px;
-  margin: 20px auto;
-  background-color: #24292e;
-
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 12px rgba(255, 255, 255, 0.2);
 }
 
-.repo-item {
-  background-color: #24292e;
-  padding: 15px;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-} 
-
-
+.profil-name {
+  color: #a789d7;
+}
