@@ -9,44 +9,35 @@ const Container = styled.div`
   justify-content: center;
 `;
 
-const Logo = styled.img`
-  width: 100px;
-  height: 54px;
-   padding: 5px 20px;
-   border-color: #693b93;
-  box-shadow: -10px 0px 10px 5px #693b93;
-`;
-
 const SearchInput = styled.input`
   width: 100%;
   color: #1a0b2e;
   padding: 13px 20px;
-  border-radius: 25px;
-  border-color: #693b93;
-  box-shadow: 0px 0px 10px 7px #693b93;
 `;
 
 const SearchButton = styled.button`
-  background-color: #0dcaf0;
   font-weight: 600;
-  border-radius: 25px;
   padding: 13px 20px;
   color: #1a0b2e;
-  border-color: #693b93;
-  box-shadow: 10px 0px 10px 5px #693b93;
 `;
 
 const UserSearch = ({ text, setText, fetchUsers }) => {
   const handleKeyDown = (event) => {
     if (event.key === "Enter") {
-      fetchUsers(); 
+      fetchUsers();
     }
   };
   return (
     <>
-      <Container className="container">
-        <div className="input-group my-5 w-50">
-          <Logo src={github} alt="github" className="bg-light btn rounded-start-pill "/>
+      <Container className="container py-5">
+        <div className="input-group my-5 w-50 search-bar rounded-pill">
+          <span className="input-group-text rounded-start-pill">
+            <img
+              src={github}
+              alt="github"
+              className="img-fluid"
+            />
+          </span>
           <SearchInput
             type="text"
             className="form-control"
@@ -55,14 +46,16 @@ const UserSearch = ({ text, setText, fetchUsers }) => {
             onChange={(e) => setText(e.target.value)}
             onKeyDown={handleKeyDown}
           />
-          <SearchButton
-            className="btn bg-light rounded-end-pill"
-            type="button"
-            id="button-addon2"
-            onClick={fetchUsers}
-          >
-            Ara
-          </SearchButton>
+          <span className="input-group-text rounded-end-pill">
+            <SearchButton
+              className="btn"
+              type="button"
+              id="button-addon2"
+              onClick={fetchUsers}
+            >
+              Ara
+            </SearchButton>
+          </span>
         </div>
       </Container>
     </>

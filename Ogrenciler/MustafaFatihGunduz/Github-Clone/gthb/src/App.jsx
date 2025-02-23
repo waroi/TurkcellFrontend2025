@@ -1,15 +1,21 @@
-import { useState, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import {
   getUsers,
   getUserRepositories,
   getUserInfos,
-  getLangs
+  getLangs,
 } from "../components/RequestModel";
 import "../css/main.css";
 import UserSearch from "../components/UserSearch";
 import UserCard from "../components/UserCard";
 
 function App() {
+  const scrollTopRef = useRef(null);
+
+  const scrollToTop = () => {
+    scrollTopRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
   const [users, setUsers] = useState([]);
   const [repositories, setRepositories] = useState([]);
   const [text, setText] = useState("");
@@ -31,9 +37,9 @@ function App() {
     setRepositories(filtedRepositories);
     console.log("filtedRepositories", filtedRepositories);
 
-  filtedRepositories.forEach((repo) => {
-    fetchLangs(userLogin, repo.name);
-  });
+    filtedRepositories.forEach((repo) => {
+      fetchLangs(userLogin, repo.name);
+    });
   };
 
   const fetchUserInfos = async (userLogin) => {
@@ -43,18 +49,16 @@ function App() {
   };
 
   const fetchLangs = async (userLogin, repoName) => {
-    // const langs = await getLangs(userLogin, repoName);
-    // setLangs(langs);
-    // console.log("langs", langs);
     const languages = await getLangs(userLogin, repoName);
-  setLangs((prevLangs) => ({
-    ...prevLangs,
-    [repoName]: languages[0], 
-  }));
-  }
+    setLangs((prevLangs) => ({
+      ...prevLangs,
+      [repoName]: languages[0],
+    }));
+  };
 
   return (
     <>
+      <div ref={scrollTopRef}></div>
       <UserSearch
         users={users}
         text={text}
@@ -69,6 +73,9 @@ function App() {
           langs={langs}
         ></UserCard>
       )}
+      <button onClick={scrollToTop}>
+        <i className="fa-solid fa-arrow-up"></i>
+      </button>
     </>
   );
 }

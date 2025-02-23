@@ -1,8 +1,11 @@
 const API_URL = "https://api.github.com/search/users?q=";
+const token ="";
 
 export const getUsers = async (user) => {
   try {
-    const response = await fetch(`${API_URL}${user}`);
+    const response = await fetch(`${API_URL}${user}`,{headers: {
+      Authorization: `token ${token}`,
+    }});
     const data = await response.json();
     if (
       response.status === 404 &&
@@ -26,7 +29,9 @@ export const getUsers = async (user) => {
 export const getUserRepositories = async (userLogin) => {
   try {
     const response = await fetch(
-      `https://api.github.com/users/${userLogin}/repos`
+      `https://api.github.com/users/${userLogin}/repos`,{headers: {
+        Authorization: `token ${token}`,
+      }}
     );
     const data = await response.json();
     return data;
@@ -38,7 +43,9 @@ export const getUserRepositories = async (userLogin) => {
 
 export const getUserInfos = async (userLogin) => {
   try {
-    const response = await fetch(`https://api.github.com/users/${userLogin}`);
+    const response = await fetch(`https://api.github.com/users/${userLogin}`,{headers: {
+      Authorization: `token ${token}`,
+    }});
     const data = await response.json();
     return data;
   } catch (error) {
@@ -50,7 +57,9 @@ export const getUserInfos = async (userLogin) => {
 export const getContrubitons = async (userLogin, repoName) => {
   try {
     const response = await fetch(
-      `https://api.github.com/repos/${userLogin}/${repoName}/contributors`
+      `https://api.github.com/repos/${userLogin}/${repoName}/contributors`,{headers: {
+        Authorization: `token ${token}`,
+      }}
     );
     const data = await response.json();
     const contributor = data.contributor;
@@ -67,12 +76,12 @@ export const getContrubitons = async (userLogin, repoName) => {
 export const getLangs = async (userLogin, repoName) => {
   try {
     const response = await fetch(
-      `https://api.github.com/repos/${userLogin}/${repoName}/languages`
+      `https://api.github.com/repos/${userLogin}/${repoName}/languages`,{headers: {
+        Authorization: `token ${token}`,
+      }}
     );
     const data = await response.json();
     const languages = Object.keys(data);
-    
-    console.log("Languages:", languages);
     return languages;
   } catch (error) {
     console.log(error);
