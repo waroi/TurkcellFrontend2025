@@ -5,7 +5,6 @@ import {
   getUserInfos,
 } from "../components/RequestModel";
 import "../css/main.css";
-import styled from "styled-components";
 import UserSearch from "../components/UserSearch";
 import UserCard from "../components/UserCard";
 
@@ -13,29 +12,28 @@ function App() {
   const [users, setUsers] = useState([]);
   const [repositories, setRepositories] = useState([]);
   const [text, setText] = useState("");
-  const [userInfos, setUserInfos] = useState([]);
-
-  useEffect(() => {
-    fetchUsers();
-  }, []);
+  const [userInfos, setUserInfos] = useState({});
 
   const fetchUsers = async () => {
     const user = await getUsers(text);
-    setUsers(user);
-    user?.items?.forEach((user) => {
-      fetchRepositories(user.login);
-      fetchUserInfos(user.login);
+    const filteredUser = user?.items?.filter((user) => user.login === text);
+    setUsers(filteredUser[0]);
+    filteredUser?.forEach((filteredUser) => {
+      fetchRepositories(filteredUser.login);
+      fetchUserInfos(filteredUser.login);
     });
   };
 
-  const fetchRepositories = async (user) => {
-    const repositories = await getUserRepositories(user);
-    setRepositories(repositories);
+  const fetchRepositories = async (userLogin) => {
+    const filtedRepositories = await getUserRepositories(userLogin);
+    setRepositories(filtedRepositories);
+    console.log("filtedRepositories", filtedRepositories);
   };
 
-  const fetchUserInfos = async (user) => {
-    const userInfos = await getUserInfos(user);
+  const fetchUserInfos = async (userLogin) => {
+    const userInfos = await getUserInfos(userLogin);
     setUserInfos(userInfos);
+    console.log("userInfos", userInfos);
   };
 
   return (
@@ -43,19 +41,16 @@ function App() {
       <UserSearch
         users={users}
         text={text}
-        setUsers={setUsers}
         setText={setText}
         fetchUsers={fetchUsers}
-        fetchRepositories={fetchRepositories}
-        fetchUserInfos={fetchUserInfos}
       ></UserSearch>
-      <UserCard
-        users={users}
-        repositories={repositories}
-        userInfos={userInfos}
-        setRepositories={setRepositories}
-        fetchRepositories={fetchRepositories}
-      ></UserCard>
+      {users.length === 0 ? null : (
+        <UserCard
+          users={users}
+          repositories={repositories}
+          userInfos={userInfos}
+        ></UserCard>
+      )}
     </>
   );
 }

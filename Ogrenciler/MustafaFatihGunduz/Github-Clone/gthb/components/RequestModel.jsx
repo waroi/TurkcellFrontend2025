@@ -4,6 +4,18 @@ export const getUsers = async (user) => {
   try {
     const response = await fetch(`${API_URL}${user}`);
     const data = await response.json();
+    if (
+      response.status === 404 &&
+      response.status === 403 &&
+      response.status === 401
+    ) {
+      console.log("No user found");
+      return null;
+    }
+    if (response.status === 422) {
+      console.log("Validation Failed");
+      return null;
+    }
     return data;
   } catch (error) {
     console.log(error);
@@ -11,9 +23,11 @@ export const getUsers = async (user) => {
   }
 };
 
-export const getUserRepositories = async (user) => {
+export const getUserRepositories = async (userLogin) => {
   try {
-    const response = await fetch(`https://api.github.com/users/${user}/repos`);
+    const response = await fetch(
+      `https://api.github.com/users/${userLogin}/repos`
+    );
     const data = await response.json();
     return data;
   } catch (error) {
@@ -22,9 +36,9 @@ export const getUserRepositories = async (user) => {
   }
 };
 
-export const getUserInfos = async (user) => {
+export const getUserInfos = async (userLogin) => {
   try {
-    const response = await fetch(`https://api.github.com/users/${user}`);
+    const response = await fetch(`https://api.github.com/users/${userLogin}`);
     const data = await response.json();
     return data;
   } catch (error) {

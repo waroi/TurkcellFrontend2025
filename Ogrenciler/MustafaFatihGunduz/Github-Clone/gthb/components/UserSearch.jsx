@@ -1,12 +1,11 @@
 import React from "react";
-import { useEffect } from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-y: 10px;
+  justify-content: center;
 `;
 
 const SearchInput = styled.input`
@@ -23,7 +22,7 @@ const SearchButton = styled.button`
   color: #1a0b2e;
 `;
 
-const UserSearch = ({ users, setUsers, text, setText, fetchUsers }) => {
+const UserSearch = ({ text, setText, fetchUsers }) => {
   return (
     <>
       <Container className="container">
@@ -44,7 +43,6 @@ const UserSearch = ({ users, setUsers, text, setText, fetchUsers }) => {
           >
             Ara
           </SearchButton>
-          {console.log(users)}
         </div>
       </Container>
     </>
