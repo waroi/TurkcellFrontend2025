@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
 
 //import Button from "react-bootstrap/Container";
 
@@ -55,4 +56,18 @@ export const StyledButton = styled(Button)`
   &:hover {
     background-color: #0056b3;
   }
+`;
+export const StyledProfileCard = styled(Card)`
+  margin-bottom: 20px;
+  text-align: start; 
+  padding: 20px;
+`;
+
+export const ProfileImage = styled(Card.Img)`
+  border-radius: 50%; 
+  width: 200px;      
+  height: 200px;     
+  object-fit: cover; 
+  margin: auto;
+  margin-top:20px;
 `;
