@@ -1,8 +1,5 @@
-import { useState } from "react";
-import Card from "react-bootstrap/Card";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { StyledProfileCard, ProfileImage } from "./StyledComponents";
-//import { CardImg } from "./components/StyledComponents";
 
 function getDate() {
   const localHours = new Date().getHours();
@@ -15,7 +12,7 @@ const Profile = ({ user }) => {
   return (
     <>
       <StyledProfileCard p={3}>
-        <ProfileImage variant="top" src={user.avatar_url} />
+        <ProfileImage className="img-fluid" variant="top" src={user.avatar_url} />
         <ul className="list-unstyled mt-3">
           <li>
             <h3>{user.name}</h3>

@@ -27,10 +27,11 @@ export const StyledForm = styled(Form)`
   display: flex;
   flex-direction: row;
   gap: 10px;
-  background-color: #f8f9fa;
   padding: 15px;
   border-radius: 8px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+`;
+
+export const StyledForm2 = styled(StyledForm)`
 `;
 
 export const StyledInput = styled(Form.Control)`
@@ -43,6 +44,9 @@ export const StyledInput = styled(Form.Control)`
     outline: none;
     box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.5);
   }
+`;
+
+export const StyledInput2 = styled(StyledInput)`
 `;
 
 export const StyledButton = styled(Button)`
@@ -59,6 +63,10 @@ export const StyledButton = styled(Button)`
     background-color: #0056b3;
   }
 `;
+
+export const StyledButton2= styled(StyledButton)`
+`;
+
 export const StyledProfileCard = styled(Card)`
   margin-bottom: 20px;
   text-align: start;
@@ -72,6 +80,7 @@ export const ProfileImage = styled(Card.Img)`
   object-fit: cover;
   margin: auto;
   margin-top: 20px;
+  border: 1px solid #343a40;
 `;
 export const StyledBadge = styled(Badge)`
   border-radius: 20px;

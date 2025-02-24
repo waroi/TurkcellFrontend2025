@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
-import { StyledForm, StyledInput, StyledButton } from "./StyledComponents"; // Styled bileşenleri import et
+import { StyledForm, StyledInput, StyledButton } from "./StyledComponents"; 
 
 const SearchBar = ({ onSearch, setUsername, username }) => {
   const [inputValue, setInputValue] = useState("");

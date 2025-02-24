@@ -12,6 +12,7 @@ import {
   SearchContainer,
   FilterContainer,
 } from "./components/StyledComponents";
+import RepoSearch from "./components/RepoSearchBar";
 
 function App() {
   const [user, setUser] = useState({});
@@ -67,6 +68,18 @@ function App() {
     fetchGitRepo();
   };
 
+  const handleSearch2 = (inputRepoName) => {
+    if (inputRepoName) {
+      const filtered = userRepos.filter((repo) =>
+        repo.name.toLowerCase().includes(inputRepoName.toLowerCase())
+      );
+      
+      setFilteredRepos(filtered);
+    } else {
+      setFilteredRepos(userRepos); 
+    }
+  };
+
   const handleFilterChange = (language) => {
     if (language === "All") {
       setFilteredRepos(userRepos);
@@ -81,7 +94,7 @@ function App() {
   };
 
   const handleSort = (criteria) => {
-    let sortedRepos = [...filteredRepos]; // Mevcut filtrelenmiş depo dizisini kopyala
+    let sortedRepos = [...filteredRepos];
     if (criteria === "updated") {
       sortedRepos.sort(
         (a, b) => new Date(b.updated_at) - new Date(a.updated_at)
@@ -91,7 +104,7 @@ function App() {
     } else if (criteria === "stars") {
       sortedRepos.sort((a, b) => b.stargazers_count - a.stargazers_count);
     }
-    setFilteredRepos(sortedRepos); // Sıralanmış diziyi güncelle
+    setFilteredRepos(sortedRepos); 
   };
 
   return (
@@ -103,8 +116,11 @@ function App() {
             setUsername={setUsername}
             username={username}
           />
-
           {error && <div className="alert alert-danger">{error}</div>}
+          <RepoSearch
+            onSearch={handleSearch2}
+            setRepos={setRepos}
+            userRepos={userRepos}/>
           <FilterContainer>
             <LanguageFilter
               repos={userRepos}
