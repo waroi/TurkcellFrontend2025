@@ -1,18 +1,12 @@
 import React from "react";
 import { Button } from "react-bootstrap"; 
-const Navbar = ({ userSearch, setUserSearch, handleSearchSubmit }) => {
 
-  const handleKeyDown = (e) => {
-    if (e.key === "Enter") {
-      e.preventDefault(); 
-      handleSearchSubmit();
-    }
-  };
+const Navbar = ({ userSearch, setUserSearch, handleSearchSubmit }) => {
   return (
     <nav className="navbar navbar-dark navbar-expand-lg bg-dark">
       <div className="container-fluid">
         <a className="navbar-brand" href="#">GitHub</a>
-        <form className="d-flex" role="search">
+        <form className="d-flex" role="search" onSubmit={(e) => e.preventDefault()}>
           <input
             className="form-control me-2"
             type="search"
@@ -20,7 +14,6 @@ const Navbar = ({ userSearch, setUserSearch, handleSearchSubmit }) => {
             aria-label="Search"
             value={userSearch}
             onChange={(e) => setUserSearch(e.target.value)}
-            onKeyDown={handleKeyDown} 
           />
           <Button variant="primary" onClick={handleSearchSubmit}>
             Ara
@@ -30,4 +23,5 @@ const Navbar = ({ userSearch, setUserSearch, handleSearchSubmit }) => {
     </nav>
   );
 };
+
 export default Navbar;
