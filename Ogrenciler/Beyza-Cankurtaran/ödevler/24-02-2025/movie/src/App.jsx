@@ -16,7 +16,7 @@ function App() {
     }
   };
 
-  const GetMovieAndActor = async (e) => {
+  const GetMovie = async (e) => {
     e.preventDefault();
     try {//chat şöyle bişi verdi!
       const movieResponse = await fetch(`https://api.themoviedb.org/3/search/movie?query=${query}&include_adult=false&language=en-US&page=1`, options);
