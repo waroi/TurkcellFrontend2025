@@ -69,9 +69,27 @@ const Footer = () => {
         </div>
       </div>
       <div className="d-flex flex-wrap justify-content-center align-items-center madeby gap-2">
-        <a href="https://github.com/elinoza" target="_blank">Hilal</a>
-        <a href="https://github.com/YunusOrak" target="_blank">yunus</a>
-        <a href="https://github.com/ElaKilic" target="_blank">Ela</a>
+        <a
+          className="text-secondary text-decoration-underline text-sm"
+          href="https://github.com/elinoza"
+          target="_blank"
+        >
+          Hilal
+        </a>
+        <a
+          className="text-secondary text-decoration-underline text-sm"
+          href="https://github.com/YunusOrak"
+          target="_blank"
+        >
+          Yunus
+        </a>
+        <a
+          className="text-secondary text-decoration-underline text-sm"
+          href="https://github.com/ElaKilic"
+          target="_blank"
+        >
+          Ela
+        </a>
       </div>
     </footer>
   );
