@@ -10,9 +10,11 @@ export const fetchGitHubUser = async (username) => {
   }
 };
 
-export const fetchGitHubUserRepo = async (username) => {
+export const fetchGitHubUserRepo = async (username, page = 1, perPage = 10) => {
   try {
-    const reposResponse = await fetch(`${api}${username}/repos`);
+    const reposResponse = await fetch(
+      `${api}${username}/repos?page=${page}&per_page=${perPage}`
+    );
 
     if (!reposResponse.ok) throw new Error("Repos not found");
     return await reposResponse.json();

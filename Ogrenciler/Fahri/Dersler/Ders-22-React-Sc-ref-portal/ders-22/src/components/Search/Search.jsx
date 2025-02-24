@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import { useState, useRef } from "react";
 import Modal from "../Modal/Modal";
 import SearchInput from "../SearchInput/SearchInput";
 import styled from "styled-components";
@@ -18,15 +18,23 @@ const GitHubSearch = () => {
   const [userData, setUserData] = useState(null);
   const [repos, setRepos] = useState([]);
   const [showModal, setShowModal] = useState(false);
+  const [page, setPage] = useState(1);
   const inputRef = useRef(null);
 
   const handleSearch = async () => {
     if (!username) return;
     const user = await fetchGitHubUser(username);
-    const repos = await fetchGitHubUserRepo(username);
+    const repos = await fetchGitHubUserRepo(username, page);
     setUserData(user);
     setRepos(repos);
     setShowModal(true);
+  };
+
+  const handleShowMore = async () => {
+    const nextPage = page + 1;
+    const newRepos = await fetchGitHubUserRepo(username, nextPage);
+    setRepos([...repos, ...newRepos]);
+    setPage(nextPage);
   };
 
   return (
@@ -43,6 +51,7 @@ const GitHubSearch = () => {
           userData={userData}
           repos={repos}
           modalKapat={() => setShowModal(false)}
+          handleShowMore={handleShowMore}
         />
       )}
     </AppContainer>
