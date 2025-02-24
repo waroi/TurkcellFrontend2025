@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Card from "react-bootstrap/Card";
 import "bootstrap-icons/font/bootstrap-icons.css";
+//import { CardImg } from "./components/StyledComponents";
 
 function getDate() {
   const localHours = new Date().getHours();
@@ -25,16 +26,14 @@ const Profile = ({ user }) => {
             <p>{user.bio}</p>
           </li>
           <li>
-            <button variant="secondary">
-              <a
-                href={user.html_url}
-                className="btn btn-dark"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                GitHub Profile
-              </a>
-            </button>
+            <a
+              href={user.html_url}
+              className="btn btn-dark "
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub Profile
+            </a>
           </li>
           <li>
             <i className="bi bi-people-fill"></i> {user.followers} followers ·{" "}

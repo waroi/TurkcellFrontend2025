@@ -8,6 +8,10 @@ import RepoCard from "./components/RepoCard";
 import SearchBar from "./components/SearchBar";
 import LanguageFilter from "./components/LanguageFilter";
 import Sort from "./components/Sort";
+import {
+  SearchContainer,
+  FilterContainer,
+} from "./components/StyledComponents";
 
 function App() {
   const [user, setUser] = useState({});
@@ -52,7 +56,8 @@ function App() {
     } catch (error) {
       setError(`fetchGitRepo API çağrısı başarisiz! ${error}`);
     }
-  };useEffect(() => {
+  };
+  useEffect(() => {
     fetchGitUserData();
     fetchGitRepo();
   }, [username]);
@@ -66,7 +71,11 @@ function App() {
     if (language === "All") {
       setFilteredRepos(userRepos);
     } else {
-      const filtered = userRepos.filter(repo => repo.language === language || (repo.language === null && language === "Other"));
+      const filtered = userRepos.filter(
+        (repo) =>
+          repo.language === language ||
+          (repo.language === null && language === "Other")
+      );
       setFilteredRepos(filtered);
     }
   };
@@ -74,7 +83,9 @@ function App() {
   const handleSort = (criteria) => {
     let sortedRepos = [...filteredRepos]; // Mevcut filtrelenmiş depo dizisini kopyala
     if (criteria === "updated") {
-      sortedRepos.sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
+      sortedRepos.sort(
+        (a, b) => new Date(b.updated_at) - new Date(a.updated_at)
+      );
     } else if (criteria === "name") {
       sortedRepos.sort((a, b) => a.name.localeCompare(b.name));
     } else if (criteria === "stars") {
@@ -86,14 +97,22 @@ function App() {
   return (
     <>
       <Container>
-        <SearchBar
-          onSearch={handleSearch}
-          setUsername={setUsername}
-          username={username}
-        />
-        {error && <div className="alert alert-danger">{error}</div>}
-        <LanguageFilter repos={userRepos} onFilterChange={handleFilterChange} />
-        <Sort onSort={handleSort} />
+        <SearchContainer>
+          <SearchBar
+            onSearch={handleSearch}
+            setUsername={setUsername}
+            username={username}
+          />
+
+          {error && <div className="alert alert-danger">{error}</div>}
+          <FilterContainer>
+            <LanguageFilter
+              repos={userRepos}
+              onFilterChange={handleFilterChange}
+            />
+            <Sort onSort={handleSort} />
+          </FilterContainer>
+        </SearchContainer>
         <Row>
           <Col md={4}>
             <Profile user={user}></Profile>
