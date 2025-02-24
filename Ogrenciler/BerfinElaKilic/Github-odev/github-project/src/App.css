@@ -1,4 +1,4 @@
-@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 * {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans",
@@ -28,8 +28,8 @@ body {
   cursor: pointer;
 }
 
-.followers a:hover>span,
-.followers a:hover>svg {
+.followers a:hover > span,
+.followers a:hover > svg {
   color: #4493f8 !important;
   fill: #4493f8;
 }
@@ -88,10 +88,10 @@ body {
   color: #4493f8 !important;
   background-color: #388bfd1a !important;
 }
-.tag:hover{
-    color: white !important;
-    cursor: pointer;
-    background-color: #1f6feb !important;
+.tag:hover {
+  color: white !important;
+  cursor: pointer;
+  background-color: #1f6feb !important;
 }
 
 .madeby a {
@@ -100,4 +100,8 @@ body {
 
 .madeby a:hover {
   text-decoration: underline;
+}
+footer a:hover {
+  color: #4493f8 !important;
+  text-decoration: underline !important;
 }
