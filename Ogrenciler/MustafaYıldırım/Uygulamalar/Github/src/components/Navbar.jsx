@@ -6,7 +6,7 @@ const Navbar = ({ userSearch, setUserSearch, handleSearchSubmit }) => {
     <nav className="navbar navbar-dark navbar-expand-lg bg-dark">
       <div className="container-fluid">
         <a className="navbar-brand" href="#">GitHub</a>
-        <form className="d-flex" role="search" onSubmit={(e) => e.preventDefault()}>
+        <form className="d-flex" role="search">
           <input
             className="form-control me-2"
             type="search"
