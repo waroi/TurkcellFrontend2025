@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getOneUser, getUserRepos } from "../api/useFetch";
 import LanguageIcon from "./LanguageIcon";
-import UserCard from "./UserCard";
+import UserCard from "./userCard";
 
 function UserModal({ userx, modalId }) {
   const [user, setUser] = useState(null);
