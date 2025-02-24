@@ -45,7 +45,7 @@ const RepoItem = ({ repoItem }) => {
           <p className="text-secondary text-sm mb-0">{repoItem?.description}</p>
         )}
         <div className="tags d-flex gap-2 align-items-center">
-          <Stack direction="horizontal" className="w-100" gap={2}>
+          <Stack direction="horizontal" className="w-100 flex-wrap" gap={2}>
             {repoItem.topics.map((tag, index) =>
               index < 6 ? <TagItem key={index} tag={tag} /> : ""
             )}
