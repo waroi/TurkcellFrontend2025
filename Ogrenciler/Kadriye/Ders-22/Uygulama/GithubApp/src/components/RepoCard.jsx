@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Card from "react-bootstrap/Card";
-import { StyledBadge } from "./StyledComponents";
+import { StyledBadge, StyledRepoCard } from "./StyledComponents";
 function RepoCard({ repo }) {
   const [language, setLanguage] = useState();
   const [error, setError] = useState("");
@@ -24,7 +24,7 @@ function RepoCard({ repo }) {
     fetchLanguage();
   }, []);
   return (
-    <Card>
+    <StyledRepoCard>
       <Card.Body>
         <Card.Title>
           {repo.name} <StyledBadge bg="dark"> {repo.visibility}</StyledBadge>
@@ -40,7 +40,7 @@ function RepoCard({ repo }) {
           Go Repository <i class="bi bi-link-45deg"></i>
         </a>
       </Card.Body>
-    </Card>
+    </StyledRepoCard>
   );
 }
 
