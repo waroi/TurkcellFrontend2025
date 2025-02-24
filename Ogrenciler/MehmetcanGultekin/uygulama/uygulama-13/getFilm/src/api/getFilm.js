@@ -36,7 +36,7 @@ async function getFilm() {
       throw new Error("Film bulunamadi");
     }
     const data = await response.json();
-    console.log(data);
+    console.log(data.crew[2].name);
     return data;
   } catch (error) {
     console.error(`getFilm API çağrısı başarisiz! ${error}`);

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getAllFilms } from "./api/getFilm";
+import { getAllFilms, getFilm } from "./api/getFilm";
 import "./App.css";
 import { get } from "immutable";
 import MovieCard from "./components/MovieCard/MovieCard";
