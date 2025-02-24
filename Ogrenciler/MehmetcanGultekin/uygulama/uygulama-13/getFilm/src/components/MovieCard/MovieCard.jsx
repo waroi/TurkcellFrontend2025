@@ -5,7 +5,6 @@ import { getFilm } from "../../api/getFilm";
 //   "https://image.tmdb.org/t/p/w500/7iMBZzVZtG0oBug4TfqDb9ZxAOa.jpg";
 function MovieCard({ movie }) {
   const movie_info = getFilm();
-  console.log(movie_info);
   return (
     <Card style={{ width: "18rem" }}>
       <Card.Img
