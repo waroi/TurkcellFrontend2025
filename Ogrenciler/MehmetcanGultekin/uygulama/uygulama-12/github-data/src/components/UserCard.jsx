@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { Avatar } from "./styled";
 function UserCard({ user }) {
   return (
