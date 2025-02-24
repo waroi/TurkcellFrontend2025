@@ -8,6 +8,11 @@ import RepoCard from "./components/RepoCard";
 import SearchBar from "./components/SearchBar";
 import LanguageFilter from "./components/LanguageFilter";
 import Sort from "./components/Sort";
+import {
+  SearchContainer,
+  FilterContainer,
+} from "./components/StyledComponents";
+import RepoSearch from "./components/RepoSearchBar";
 
 function App() {
   const [user, setUser] = useState({});
@@ -52,7 +57,8 @@ function App() {
     } catch (error) {
       setError(`fetchGitRepo API çağrısı başarisiz! ${error}`);
     }
-  };useEffect(() => {
+  };
+  useEffect(() => {
     fetchGitUserData();
     fetchGitRepo();
   }, [username]);
@@ -62,47 +68,76 @@ function App() {
     fetchGitRepo();
   };
 
+  const handleSearch2 = (inputRepoName) => {
+    if (inputRepoName) {
+      const filtered = userRepos.filter((repo) =>
+        repo.name.toLowerCase().includes(inputRepoName.toLowerCase())
+      );
+      
+      setFilteredRepos(filtered);
+    } else {
+      setFilteredRepos(userRepos); 
+    }
+  };
+
   const handleFilterChange = (language) => {
     if (language === "All") {
       setFilteredRepos(userRepos);
     } else {
-      const filtered = userRepos.filter(repo => repo.language === language || (repo.language === null && language === "Other"));
+      const filtered = userRepos.filter(
+        (repo) =>
+          repo.language === language ||
+          (repo.language === null && language === "Other")
+      );
       setFilteredRepos(filtered);
     }
   };
 
   const handleSort = (criteria) => {
-    let sortedRepos = [...filteredRepos]; // Mevcut filtrelenmiş depo dizisini kopyala
+    let sortedRepos = [...filteredRepos];
     if (criteria === "updated") {
-      sortedRepos.sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
+      sortedRepos.sort(
+        (a, b) => new Date(b.updated_at) - new Date(a.updated_at)
+      );
     } else if (criteria === "name") {
       sortedRepos.sort((a, b) => a.name.localeCompare(b.name));
     } else if (criteria === "stars") {
       sortedRepos.sort((a, b) => b.stargazers_count - a.stargazers_count);
     }
-    setFilteredRepos(sortedRepos); // Sıralanmış diziyi güncelle
+    setFilteredRepos(sortedRepos); 
   };
 
   return (
     <>
       <Container>
-        <SearchBar
-          onSearch={handleSearch}
-          setUsername={setUsername}
-          username={username}
-        />
-        {error && <div className="alert alert-danger">{error}</div>}
-        <LanguageFilter repos={userRepos} onFilterChange={handleFilterChange} />
-        <Sort onSort={handleSort} />
+        <SearchContainer>
+          <SearchBar
+            onSearch={handleSearch}
+            setUsername={setUsername}
+            username={username}
+          />
+          {error && <div className="alert alert-danger">{error}</div>}
+          <RepoSearch
+            onSearch={handleSearch2}
+            setRepos={setRepos}
+            userRepos={userRepos}/>
+          <FilterContainer>
+            <LanguageFilter
+              repos={userRepos}
+              onFilterChange={handleFilterChange}
+            />
+            <Sort onSort={handleSort} />
+          </FilterContainer>
+        </SearchContainer>
         <Row>
-          <Col md={4}>
+          <Col md={4} className="my-2">
             <Profile user={user}></Profile>
           </Col>
           <Col md={8}>
             <Row>
               {filteredRepos.map((repo) => {
                 return (
-                  <Col xs={12} key={repo.id}>
+                  <Col xs={12} key={repo.id} className="my-2">
                     <RepoCard repo={repo}></RepoCard>
                   </Col>
                 );

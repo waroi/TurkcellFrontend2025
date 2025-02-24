@@ -1,3 +1,5 @@
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
 * {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans",
     Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
@@ -57,25 +59,49 @@ body {
 .border-top {
   border-color: rgb(61, 67, 71) !important;
 }
+
 .text-sm {
   font-size: 0.87rem;
 }
+
 .text-xs {
   font-size: 0.75rem;
 }
+
 .repo-item a {
   color: #4493f8;
 }
+
 .text-secondary {
   color: #9198a1 !important;
 }
+
 .text-white {
   color: #f0f6fc !important;
 }
+
 .profile-image {
   max-width: 295px;
 }
+
 .tag {
   color: #4493f8 !important;
   background-color: #388bfd1a !important;
+}
+.tag:hover {
+  color: white !important;
+  cursor: pointer;
+  background-color: #1f6feb !important;
+}
+
+.madeby a {
+  text-decoration: none;
+}
+
+.madeby a:hover {
+  text-decoration: underline;
+}
+footer a:hover {
+  color: #4493f8 !important;
+  text-decoration: underline !important;
 }

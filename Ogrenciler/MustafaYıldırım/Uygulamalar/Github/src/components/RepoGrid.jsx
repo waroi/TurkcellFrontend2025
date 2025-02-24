@@ -1,4 +1,4 @@
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 import RepoCard from "./RepoCard";
 import styled from "styled-components";
 

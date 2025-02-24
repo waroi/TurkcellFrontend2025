@@ -1,6 +1,5 @@
-import { useState } from "react";
-import Card from "react-bootstrap/Card";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import { StyledProfileCard, ProfileImage } from "./StyledComponents";
 
 function getDate() {
   const localHours = new Date().getHours();
@@ -12,8 +11,8 @@ function getDate() {
 const Profile = ({ user }) => {
   return (
     <>
-      <Card p={3}>
-        <Card.Img variant="top" src={user.avatar_url} />
+      <StyledProfileCard p={3}>
+        <ProfileImage className="img-fluid" variant="top" src={user.avatar_url} />
         <ul className="list-unstyled mt-3">
           <li>
             <h3>{user.name}</h3>
@@ -25,16 +24,14 @@ const Profile = ({ user }) => {
             <p>{user.bio}</p>
           </li>
           <li>
-            <button variant="secondary">
-              <a
-                href={user.html_url}
-                className="btn btn-dark"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                GitHub Profile
-              </a>
-            </button>
+            <a
+              href={user.html_url}
+              className="btn btn-dark "
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub Profile
+            </a>
           </li>
           <li>
             <i className="bi bi-people-fill"></i> {user.followers} followers ·{" "}
@@ -62,7 +59,7 @@ const Profile = ({ user }) => {
             </li>
           )}
         </ul>
-      </Card>
+      </StyledProfileCard>
     </>
   );
 };

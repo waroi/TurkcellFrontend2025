@@ -28,7 +28,7 @@ const Profile = ({ profile }) => {
         <CustomButton>Follow</CustomButton>
         <p className="text-secondary mt-3">{profile.bio}</p>
 
-        <div className="followers d-flex gap-2 mb-4 text-sm">
+        <div className="followers flex-wrap d-flex gap-2 mb-4 text-sm">
           <a
             target="_blank"
             href={profile.followers_url}

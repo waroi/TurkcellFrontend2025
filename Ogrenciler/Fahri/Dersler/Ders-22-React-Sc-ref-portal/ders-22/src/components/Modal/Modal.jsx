@@ -1,9 +1,9 @@
-import React from "react";
 import ReactDOM from "react-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "./modal.module.css";
+import RepoCard from "./components/RepoCard";
 
-const UserModal = ({ userData, repos, modalKapat }) => {
+const UserModal = ({ userData, repos, modalKapat, handleShowMore }) => {
   return ReactDOM.createPortal(
     <div className={styles.modalOverlay}>
       <div className={`${styles.modal} container-fluid row`}>
@@ -11,7 +11,7 @@ const UserModal = ({ userData, repos, modalKapat }) => {
           <button className={styles.closeButton} onClick={modalKapat}>
             ✖
           </button>
-          <h1 className="mb-4">
+          <h1 className="mb-4 text-uppercase">
             {userData.name} ({userData.login})
           </h1>
           <img
@@ -28,21 +28,16 @@ const UserModal = ({ userData, repos, modalKapat }) => {
         </div>
 
         <div className="col-lg-6 col-md-6 col-sm-12 p-4">
-          <h3>Repositories</h3>
+          <h3 className="text-primary border-bottom pb-2">Repositories</h3>
           <div className={styles.repoContainer}>
-            <ul className={styles.repoList}>
+            <div className="d-flex flex-column">
               {repos.map((repo) => (
-                <li key={repo.id} className={styles.repoItem}>
-                  <a
-                    href={repo.html_url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {repo.name}
-                  </a>
-                </li>
+                <RepoCard key={repo.id} repo={repo} />
               ))}
-            </ul>
+            </div>
+            <button className="btn btn-primary mt-3" onClick={handleShowMore}>
+              Show More
+            </button>
           </div>
         </div>
       </div>
