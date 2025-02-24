@@ -15,8 +15,8 @@ color: white;
 export const AnimatedText=styled.span`
 background: linear-gradient(45deg, #ff6b6b, #6b6bff, #6bffb3);
 background-size: 200% 200%;
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
+background-clip: text;
+color: transparent;
 animation: ${textGradientAnimation} 5s ease infinite;
 `;
 export const Repositories = styled.section`
