@@ -11,7 +11,10 @@ export default class MovieService {
         Authorization: `Bearer ${accessToken}`,
       },
     };
-    const response = await fetch(baseUrl, options);
+    const response = await fetch(
+      `${baseUrl}/trending/movie/day?language=en-US?api_key=` + apiKey,
+      options
+    );
     const data = await response.json();
     return data;
   }
