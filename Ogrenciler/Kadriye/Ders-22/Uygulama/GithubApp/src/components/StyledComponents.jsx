@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import Badge from "react-bootstrap/Badge";
 
 //import Button from "react-bootstrap/Container";
 
@@ -11,6 +12,7 @@ export const Container = styled.div`
 
 export const SearchContainer = styled.div`
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   gap: 10px;
@@ -59,15 +61,20 @@ export const StyledButton = styled(Button)`
 `;
 export const StyledProfileCard = styled(Card)`
   margin-bottom: 20px;
-  text-align: start; 
+  text-align: start;
   padding: 20px;
 `;
 
 export const ProfileImage = styled(Card.Img)`
-  border-radius: 50%; 
-  width: 200px;      
-  height: 200px;     
-  object-fit: cover; 
+  border-radius: 50%;
+  width: 100%;
+  max-width: 200px;
+  object-fit: cover;
   margin: auto;
-  margin-top:20px;
+  margin-top: 20px;
+`;
+export const StyledBadge = styled(Badge)`
+  border-radius: 20px;
+  color: white;
+  padding: 6px;
 `;

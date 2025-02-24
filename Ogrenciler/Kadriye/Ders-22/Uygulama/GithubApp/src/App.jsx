@@ -114,14 +114,14 @@ function App() {
           </FilterContainer>
         </SearchContainer>
         <Row>
-          <Col md={4}>
+          <Col md={4} className="my-2">
             <Profile user={user}></Profile>
           </Col>
           <Col md={8}>
             <Row>
               {filteredRepos.map((repo) => {
                 return (
-                  <Col xs={12} key={repo.id}>
+                  <Col xs={12} key={repo.id} className="my-2">
                     <RepoCard repo={repo}></RepoCard>
                   </Col>
                 );
