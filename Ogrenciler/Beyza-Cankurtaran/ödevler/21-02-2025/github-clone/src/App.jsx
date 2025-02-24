@@ -3,6 +3,7 @@ import fetch from "./util/fetch";
 import SearchBar from "./components/SearchBar";
 import UserCard from "./components/UserCard";
 import Repository from "./components/Repository";
+import Header from './components/Header';
 import { Repositories } from "./util/styled-components";
 import "./App.css";
 
@@ -36,6 +37,7 @@ function App() {
 
   return (
     <>
+      <Header/>
       <SearchBar searchUser={searchUser} setSearchUser={setSearchUser} />
       <main>
         <UserCard user={user} />

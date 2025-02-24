@@ -1,5 +1,24 @@
-import styled from "styled-components";
-
+import styled, { keyframes } from "styled-components";
+const textGradientAnimation=keyframes`
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+`;
+export const HeaderContainer=styled.header`
+width: 80%;
+padding: 5px;
+text-align: center;
+font-size: 20px;
+font-weight: bold;
+color: white;
+`;
+export const AnimatedText=styled.span`
+background: linear-gradient(45deg, #ff6b6b, #6b6bff, #6bffb3);
+background-size: 200% 200%;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+animation: ${textGradientAnimation} 5s ease infinite;
+`;
 export const Repositories = styled.section`
   background-color: var(--white);
   box-shadow: 0 0 20px var(--shadow);
