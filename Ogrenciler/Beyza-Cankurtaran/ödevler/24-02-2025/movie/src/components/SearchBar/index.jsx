@@ -7,7 +7,6 @@ const SearchBar = ({ query, setQuery, getData }) => {
       <div className="searchbar">
         <input
           type="text"
-          className="form-control"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Film veya oyuncu arayın"

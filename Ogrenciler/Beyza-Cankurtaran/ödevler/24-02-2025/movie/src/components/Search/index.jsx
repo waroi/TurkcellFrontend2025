@@ -14,18 +14,18 @@ const Search = ({ setMovie, setActor }) => {
 
   return (
     <div>
-      <div className="container ">
+      {/* <div className="container-fluid ">
         <div className="banner">
           <img
             src="https://picsum.photos/1200/700"
-            className="d-block "
+            className="d-block img-fluid"
             alt="..."
-          />
-          <div className="align-items-center">
-            <SearchBar query={query} setQuery={setQuery} getData={getData} />
-          </div>
-        </div>
+          /> */}
+      <div className="align-items-center">
+        <SearchBar query={query} setQuery={setQuery} getData={getData} />
       </div>
+      {/* </div>
+      </div> */}
     </div>
   );
 };
