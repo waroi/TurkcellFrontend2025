@@ -7,16 +7,18 @@ import { useEffect, useState } from "react";
 function MovieCard({ movie}) {
   const [movieInfo, setMovieInfo] = useState();
 
-  useEffect(() =>{
-    getFilm()
-    .then((data) => {
-      setMovieInfo(data);
-      console.log(data + "moviecrew"); 
-    })
-    .catch((err) => {
-      console.error(err);
-    });
-  }, []);
+  useEffect(() => {
+    if (movie?.id) {
+      getFilm(movie.id) // movie.id'yi gönderin
+        .then((data) => {
+          setMovieInfo(data);
+          console.log(data + " movie crew");
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    }
+  }, [movie]); // movie değiştiğinde tekrar çalışacak
 
   return (
     <Card style={{ width: "18rem" }}>
@@ -33,7 +35,14 @@ function MovieCard({ movie}) {
         <ListGroup.Item>
           Vote Average: {movie?.vote_average} / {movie?.vote_count}
         </ListGroup.Item>
-        <ListGroup.Item>{movieInfo.crew[2].name}</ListGroup.Item>
+        {movieInfo && movieInfo.crew && (
+        <ListGroup.Item>
+            Writer: {
+              movieInfo.crew.find(member => member.job === 'Writer')?.name
+              || "N/A" // Eğer writer yoksa N/A göster
+            }
+            </ListGroup.Item>
+        )}
       </ListGroup>
       <Card.Body>
         <Card.Link href="#">Card Link</Card.Link>
