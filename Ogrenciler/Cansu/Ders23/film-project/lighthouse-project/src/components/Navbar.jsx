@@ -1,11 +1,11 @@
-import React from 'react';
 import styled from 'styled-components';
 
 const NavbarContainer = styled.nav`
   position: fixed;
+  height: 70px;
   top: 0;
   width: 100%;
-  background-color: rgb(14,14,14);  
+  background-color: #1c1c1c;  
 `;
 
 const NavbarBrand = styled.a`
@@ -46,9 +46,8 @@ const Navbar = ({setMoviename, handleSearch}) => {
     handleSearch()
   }
   return (
-    <NavbarContainer>
-      <nav className="navbar navbar-expand-lg navbar-light">
-        <div className="container-fluid">
+      <NavbarContainer className="navbar navbar-expand-lg navbar-light z-3">
+        <div className="container">
           <NavbarBrand href="#">CineScope</NavbarBrand>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
@@ -56,13 +55,12 @@ const Navbar = ({setMoviename, handleSearch}) => {
           <div className="collapse navbar-collapse" id="navbarNav">
             
             <SearchForm>
-              <SearchInput onChange={(e)=>setMoviename(e.target.value) } type="search" placeholder="Search" aria-label="Search" />
-              <SearchButton onClick={functionSearch} type="submit">Search</SearchButton>
+              <SearchInput onChange={(e)=>setMoviename(e.target.value) } type="search" placeholder="Film ismi..." aria-label="Search" />
+              <SearchButton onClick={functionSearch} type="submit">Ara</SearchButton>
             </SearchForm>
           </div>
         </div>
-      </nav>
-    </NavbarContainer>
+      </NavbarContainer>
   );
 };
 

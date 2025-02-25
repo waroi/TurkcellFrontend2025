@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function SearchCard({ Movie, imageMovieURL }) {
+export default function MovieCard({ Movie, imageMovieURL }) {
   return (
     <>
       <div className="card mb-3 w-100">
@@ -9,7 +9,7 @@ export default function SearchCard({ Movie, imageMovieURL }) {
             <img
               src={`${imageMovieURL}/${Movie.poster_path}`}
               className="img-fluid rounded-start"
-              alt={Movie.original_title}
+              alt={Movie.original_title + " poster"}
             />
           </div>
           <div className="col-md-9">

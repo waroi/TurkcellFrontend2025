@@ -13,7 +13,7 @@ export default function PaginationCom({
         disabled={currentPage === 1}
       />
 
-      {[...Array(totalPages).keys()].slice(0, 5).map((num) => (
+      {[...Array(totalPages).keys()].slice(0, Infinity).map((num) => (
         <Pagination.Item
           key={num + 1}
           active={num + 1 === currentPage}

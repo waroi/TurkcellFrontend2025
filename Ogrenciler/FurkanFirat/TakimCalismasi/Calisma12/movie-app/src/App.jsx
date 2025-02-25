@@ -1,7 +1,10 @@
 import { useState } from "react";
 import "./App.css";
-import SearchCard from "./Components/SearchCard";
+import MovieCard from "./Components/MovieCard";
 import PaginationCom from "./Components/PaginationCom";
+import FormCom from "./Components/FormCom";
+import Navbar from "./Components/Navbar";
+
 function App() {
   const [movieData, setMovieData] = useState([]);
   const [query, setQuery] = useState("");
@@ -51,27 +54,19 @@ function App() {
 
   return (
     <>
+      <Navbar/>
+      <h1 className="header col-12 fs-1">En iyi filmleri keşfet! <br />
+        <img src="https://media.tenor.com/pFuNNH6LO7cAAAAM/munchies-420.gif" alt="" />
+      </h1>
       <div className="container">
-        <form onSubmit={handleSubmit}>
-          <div className="mb-3">
-            <input
-              type="text"
-              className="form-control"
-              id="movieSearchInput"
-              aria-describedby="movieSearchHelp"
-              placeholder="Search..."
-              onChange={(e) => setQuery(e.target.value)}
-            />
-          </div>
-          <button type="submit" className="btn btn-primary">
-            Submit
-          </button>
-        </form>
+        <FormCom 
+          handleSubmit={handleSubmit} 
+          setQuery={setQuery}
+        />
         <div className="row">
-          <div className="col-4"></div>
-          <div className="col-8">
+          <div className="col-12">
             {movieData?.map((movie) => (
-              <SearchCard
+              <MovieCard
                 className="w=100"
                 key={movie.id}
                 Movie={movie}
