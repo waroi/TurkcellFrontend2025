@@ -1,0 +1,10 @@
+@import "override";
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+
+body {
+  font-display: swap;
+
+  header {
+    height: 50vw;
+  }
+}

@@ -34,3 +34,17 @@ export const fetchActors = async () => {
     return null;
   }
 };
+
+export const fetchSeries = async () => {
+  try {
+    const response = await fetch(`${BASE_URL}/tv/popular`, {
+      method: "GET",
+      headers,
+    });
+    if (!response.ok) throw new Error("Dizi verileri alınamadı.");
+    return await response.json();
+  } catch (error) {
+    console.error("Error:", error);
+    return null;
+  }
+}
