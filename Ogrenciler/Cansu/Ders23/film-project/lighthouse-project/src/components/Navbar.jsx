@@ -40,27 +40,50 @@ const SearchButton = styled.button`
     background-color: #c9302c;
   }
 `;
-const Navbar = ({setMoviename, handleSearch}) => {
-  const functionSearch =(e) =>{
+const Navbar = ({ setMoviename, handleSearch, setSelectedOption, selectedOption }) => {
+  const functionSearch = (e) => {
     e.preventDefault()
     handleSearch()
+    console.log(selectedOption)
   }
   return (
-      <NavbarContainer className="navbar navbar-expand-lg navbar-light z-3">
-        <div className="container">
-          <NavbarBrand href="#">CineScope</NavbarBrand>
-          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarNav">
-            
-            <SearchForm>
-              <SearchInput onChange={(e)=>setMoviename(e.target.value) } type="search" placeholder="Film ismi..." aria-label="Search" />
-              <SearchButton onClick={functionSearch} type="submit">Ara</SearchButton>
-            </SearchForm>
+    <NavbarContainer className="navbar navbar-expand-lg navbar-light z-3">
+      <div className="container">
+        <NavbarBrand href="#">CineScope</NavbarBrand>
+        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarNav">
+
+          <div className="dropdown">
+            <button
+              className="btn btn-secondary dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              {selectedOption} 
+            </button>
+            <ul className="dropdown-menu">
+              <li>
+                <button className="dropdown-item" onClick={() => setSelectedOption("Filmler")}>
+                  Filmler
+                </button>
+              </li>
+              <li>
+                <button className="dropdown-item" onClick={() => setSelectedOption("Oyuncular")}>
+                  Oyuncular
+                </button>
+              </li>
+            </ul>
           </div>
+          <SearchForm>
+            <SearchInput onChange={(e) => setMoviename(e.target.value)} type="search" placeholder="Film ismi..." aria-label="Search" />
+            <SearchButton onClick={functionSearch} type="submit">Ara</SearchButton>
+          </SearchForm>
         </div>
-      </NavbarContainer>
+      </div>
+    </NavbarContainer>
   );
 };
 
