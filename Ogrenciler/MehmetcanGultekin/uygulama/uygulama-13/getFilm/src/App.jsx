@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
-import { getAllFilms, getFilm } from "./api/getFilm";
+import { getAllFilms, getSearchedFilm } from "./api/getFilm";
 import "./App.css";
-import { get } from "immutable";
+import { Row, Col } from "react-bootstrap";
 import MovieCard from "./components/MovieCard/MovieCard";
+import SearchMovie from "./components/SearchBar/SearchMovie";
 
 function App() {
   const [movies, setMovies] = useState();
+  const [movieName, setMovieName] = useState("");
 
   useEffect(() =>{
     getAllFilms()
@@ -17,12 +19,30 @@ function App() {
     });
   }, []);
 
+  const handleSearch = () => {
+    getSearchedFilm(movieName)
+    .then((data) => {
+      setMovies(data.results);
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+  }
+
   return (
     <>
-      {movies &&
+    <SearchMovie movieName = {movieName} onSearch={handleSearch}
+            setMovieName={setMovieName}></SearchMovie>
+    <Row className="g-4">
+    {movies &&
         movies.map((movie) => {
-          return <MovieCard movie={movie}></MovieCard>;
+          return (<Col key = {movie.id + "col"} md={4}>
+            <MovieCard  key = {movie.id} movie={movie}></MovieCard>
+
+          </Col>);
         })}
+    </Row>
+      
     </>
   );
 }

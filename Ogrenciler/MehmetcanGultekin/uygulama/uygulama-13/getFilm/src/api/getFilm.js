@@ -36,10 +36,33 @@ async function getFilm() {
       throw new Error("Film bulunamadi");
     }
     const data = await response.json();
-    console.log(data.crew[2].name);
+    // console.log(data.crew[2].name);
     return data;
   } catch (error) {
     console.error(`getFilm API çağrısı başarisiz! ${error}`);
   }
 }
-export { getAllFilms, getFilm };
+
+async function getSearchedFilm(movieName) {
+  try {
+    const response = await fetch(
+      `https://api.themoviedb.org/3/search/movie?query=${movieName}`,
+      {
+        headers: {
+          accept: "application/json",
+          Authorization: `Bearer ${api_key}`,
+        },
+      }
+    );
+    if (!response.ok) {
+      throw new Error("Film bulunamadi");
+    }
+    const data = await response.json();
+    console.log(data);
+    return data;
+  } catch (error) {
+    console.error(`getSearchedFilm API çağrısı başarisiz! ${error}`);
+  }
+}
+
+export { getAllFilms, getFilm ,getSearchedFilm};

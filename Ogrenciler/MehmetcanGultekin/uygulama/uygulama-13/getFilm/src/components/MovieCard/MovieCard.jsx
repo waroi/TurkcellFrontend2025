@@ -2,6 +2,7 @@ import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
 import { getFilm } from "../../api/getFilm";
 import { useEffect, useState } from "react";
+import  CardTitle  from "./styled";
 // const img_url =
 //   "https://image.tmdb.org/t/p/w500/7iMBZzVZtG0oBug4TfqDb9ZxAOa.jpg";
 function MovieCard({ movie}) {
@@ -9,7 +10,7 @@ function MovieCard({ movie}) {
 
   useEffect(() => {
     if (movie?.id) {
-      getFilm(movie.id) // movie.id'yi gönderin
+      getFilm(movie.id) 
         .then((data) => {
           setMovieInfo(data);
           console.log(data + " movie crew");
@@ -18,17 +19,17 @@ function MovieCard({ movie}) {
           console.error(err);
         });
     }
-  }, [movie]); // movie değiştiğinde tekrar çalışacak
+  }, [movie]);
 
   return (
-    <Card style={{ width: "18rem" }}>
+    <Card className = "h-100" style={{ width: "18rem" }}>
       <Card.Img
         variant="top"
         src={`https://image.tmdb.org/t/p/w500/` + movie?.poster_path}
       />
       <Card.Body>
-        <Card.Title>{movie?.original_title}</Card.Title>
-        <Card.Text>{movie?.overview}</Card.Text>
+        <CardTitle>{movie?.original_title}</CardTitle>
+        <Card.Text className="text-start" >{movie?.overview.substring(0,190) }</Card.Text>
       </Card.Body>
       <ListGroup className="list-group-flush">
         <ListGroup.Item>Release Date: {movie?.release_date}</ListGroup.Item>
@@ -39,7 +40,7 @@ function MovieCard({ movie}) {
         <ListGroup.Item>
             Writer: {
               movieInfo.crew.find(member => member.job === 'Writer')?.name
-              || "N/A" // Eğer writer yoksa N/A göster
+              || "N/A" 
             }
             </ListGroup.Item>
         )}
