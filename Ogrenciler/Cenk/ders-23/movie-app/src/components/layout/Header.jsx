@@ -1,28 +1,31 @@
-import Navbar from 'react-bootstrap/Navbar';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import { useEffect, useState } from "react";
+import Navbar from "react-bootstrap/Navbar";
+import Form from "react-bootstrap/Form";
 
-export default function Header() {
+export default function Header({ handleSearch }) {
+  const [searchValue, setSearchValue] = useState("");
+
+  useEffect(() => {
+    if (searchValue) {
+      handleSearch(searchValue);
+    }
+  }, [searchValue]);
+
   return (
-    
-    <Navbar className="px-5 bg-body-tertiary justify-content-between">
-          <Navbar.Brand href="#home">Movie App</Navbar.Brand>
-      <Form inline>
-        <Row>
-          <Col xs="auto">
-            <Form.Control
-              type="text"
-              placeholder="Search"
-              className=" mr-sm-2"
-            />
-          </Col>
-          <Col xs="auto">
-            <Button type="submit">Submit</Button>
-          </Col>
-        </Row>
-      </Form>
+    <Navbar
+      fixed="top"
+      className="px-5 bg-dark justify-content-between text-light"
+    >
+      <Navbar.Brand className="text-warning" href="#home">
+        Movie App
+      </Navbar.Brand>
+      <Form.Control
+        type="text"
+        placeholder="Search"
+        className=" mr-sm-2"
+        value={searchValue}
+        onChange={(e) => setSearchValue(e.target.value)}
+      />
     </Navbar>
   );
 }

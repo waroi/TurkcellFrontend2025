@@ -1,4 +1,5 @@
 const BASE_MOVIE_URL = "https://api.themoviedb.org/3/search/movie";
+const BASE_PERSON_URL = "https://api.themoviedb.org/3/search/person";
 
 export default class MovieClient {
 	constructor() {}
@@ -6,6 +7,18 @@ export default class MovieClient {
 	static async getMovies(movie) {
 		return fetch(
 			`${BASE_MOVIE_URL}?query=${movie}&include_adult=true&language=en-US&page=1`,
+			{
+				method: "GET",
+				headers: {
+					accept: "application/json",
+					Authorization: `${import.meta.env.VITE_TOKEN}`,
+				},
+			}
+		).then((response) => response.json());
+	}
+	static async getPerson(person) {
+		return fetch(
+			`${BASE_PERSON_URL}?query=${person}&include_adult=true&language=en-US&page=1`,
 			{
 				method: "GET",
 				headers: {

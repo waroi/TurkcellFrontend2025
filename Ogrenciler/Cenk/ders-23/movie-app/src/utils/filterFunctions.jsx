@@ -1,14 +1,12 @@
-import MovieService from '../services/MovieService';
+import MovieService from "../services/MovieService";
 
-export class filterMovies {
-	static searchByName = async (query) => {
+export default class FilterMovies {
+  static searchByName = async (query) => {
     try {
-		const lowerQuery = query.toLowerCase();
-		const Movies = await MovieService.getAllMovies();
-		return Movies.filter((Movie) => Movie.name.toLowerCase().includes(lowerQuery));
-      
+      const lowerQuery = query.toLowerCase();
+      //   const movies = await MovieService.getAllMovies();
     } catch (error) {
-      console.log("Error fetching Movies:", error.message);      
+      console.log("Error fetching Movies:", error.message);
     }
-	};
+  };
 }
