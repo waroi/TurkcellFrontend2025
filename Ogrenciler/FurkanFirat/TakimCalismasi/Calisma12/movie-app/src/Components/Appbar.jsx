@@ -1,15 +1,15 @@
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 
-function TextLinkExample() {
+function Appbar() {
   return (
-    <Navbar className="navbar navbar-dark bg-dark">
+    <Navbar className='navbar navbar-dark bg-dark position-sticky'>
       <Container>
-        <Navbar.Brand>Filmler</Navbar.Brand>
+        <Navbar.Brand className='text-white'>Filmler</Navbar.Brand>
         <Navbar.Toggle />
       </Container>
     </Navbar>
   );
 }
 
-export default TextLinkExample;
+export default Appbar;
