@@ -1,0 +1,42 @@
+@mixin card-hover {
+	&:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	}
+}
+
+.cardImage {
+	max-height: 200px;
+	object-fit: cover;
+}
+
+.card {
+	@include card-hover;
+	background-color: white;
+	border-radius: 10px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	margin: 1rem;
+	overflow: hidden;
+}
+
+.modal, .modalHeader, .modalFooter{
+	background-color: var(--background-color);
+}
+
+.modalImageContainer {
+	width: 200px;
+	max-height: 400px;
+	height: auto;
+	margin-bottom: 10px;
+}
+
+.modalImage {
+	width: 100%;
+	max-height: 400px;
+	object-fit: cover;
+	border-radius: 10px;
+}
+
+.modalReleaseDate {
+	color: gray;
+}
