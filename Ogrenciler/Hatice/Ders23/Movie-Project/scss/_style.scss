@@ -1,0 +1,34 @@
+.card-img-top {
+  height: 400px;
+  object-fit: cover;
+}
+
+.card-title {
+  color: #60066b !important;
+}
+.navbar-section {
+  background-color: #52055b;
+}
+.card-desc {
+  font-size: 0.8rem !important;
+}
+.film-card {
+  box-shadow: $box-shadow-lg;
+}
+.person{
+    box-shadow: $box-shadow-lg;   
+}
+.search-section {
+  background: url("../src/assets/header.webp") no-repeat center center/cover;
+  height: 50vh;
+  .search-form {
+    max-width: 600px;
+    margin: 0 auto;
+    button {
+      background: #a106b2;
+      &:hover {
+        background: #52055b;
+      }
+    }
+  }
+}
