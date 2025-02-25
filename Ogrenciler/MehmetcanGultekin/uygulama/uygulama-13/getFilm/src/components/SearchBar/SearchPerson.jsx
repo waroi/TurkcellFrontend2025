@@ -3,17 +3,17 @@ import { useState, useEffect } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
-const SearchMovie = ({ onSearch, setMovieName, movieName }) => {
+const SearchPerson = ({ onSearch, setPersonName, personName }) => {
   const [inputValue, setInputValue] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
-    setMovieName(inputValue);
+    setPersonName(inputValue);
   };
   useEffect(() => {
-    if (movieName) {
+    if (personName) {
       onSearch();
     }
-  }, [movieName]);
+  }, [personName]);
   return (
     <Form onSubmit={handleSubmit} className="d-flex">
       <Form.Control
@@ -23,9 +23,9 @@ const SearchMovie = ({ onSearch, setMovieName, movieName }) => {
         onChange={(e) => setInputValue(e.target.value)}
       />
       <Button className="ms-2" type="submit">
-        Search
+        Filter
       </Button>
     </Form>
   );
 };
-export default SearchMovie;
+export default SearchPerson;
