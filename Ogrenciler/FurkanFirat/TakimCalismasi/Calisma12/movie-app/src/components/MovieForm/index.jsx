@@ -1,6 +1,6 @@
 export default function MovieForm({ setMovieQuery, handleMovieSubmit }) {
   return (
-    <form onSubmit={handleMovieSubmit} className='col-12 col-md-8 mb-3'>
+    <form onSubmit={handleMovieSubmit}>
       <div className='mb-3'>
         <input
           type='text'
@@ -11,7 +11,7 @@ export default function MovieForm({ setMovieQuery, handleMovieSubmit }) {
           onChange={(e) => setMovieQuery(e.target.value)}
         />
       </div>
-      <button type='submit' className='btn btn-primary w-100'>
+      <button type='submit' className='btn btn-primary w-100 mb-3'>
         Film Ara
       </button>
     </form>

@@ -1,6 +1,6 @@
 export default function PersonForm({ handlePersonSubmit, setPersonQuery }) {
   return (
-    <form onSubmit={handlePersonSubmit} className='col-12 col-md-4 mb-3'>
+    <form onSubmit={handlePersonSubmit}>
       <div className='mb-3'>
         <input
           type='text'
@@ -11,7 +11,7 @@ export default function PersonForm({ handlePersonSubmit, setPersonQuery }) {
           onChange={(e) => setPersonQuery(e.target.value)}
         />
       </div>
-      <button type='submit' className='btn btn-primary w-100'>
+      <button type='submit' className='btn btn-primary w-100 mb-3'>
         Oyuncu Ara
       </button>
     </form>
