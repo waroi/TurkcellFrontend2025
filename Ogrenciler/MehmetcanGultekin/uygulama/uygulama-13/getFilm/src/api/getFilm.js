@@ -58,11 +58,32 @@ async function getSearchedFilm(movieName) {
       throw new Error("Film bulunamadi");
     }
     const data = await response.json();
-    console.log(data);
+    // console.log(data);
     return data;
   } catch (error) {
     console.error(`getSearchedFilm API çağrısı başarisiz! ${error}`);
   }
 }
+async function getSearchedPersonFilms(moviePerson) {
+  try {
+    const response = await fetch(
+      `https://api.themoviedb.org/3/search/person?query=${moviePerson}`,
+      {
+        headers: {
+          accept: "application/json",
+          Authorization: `Bearer ${api_key}`,
+        },
+      }
+    );
+    if (!response.ok) {
+      throw new Error("Karakter bulunamadi");
+    }
+    const data = await response.json();
+    // console.log(data);
+    return data;
+  } catch (error) {
+    console.error(`getSearchedPersonFilms API çağrısı başarisiz! ${error}`);
+  }
+}
 
-export { getAllFilms, getFilm ,getSearchedFilm};
+export { getAllFilms, getFilm, getSearchedFilm, getSearchedPersonFilms };

@@ -1,0 +1,17 @@
+.card-img-top {
+    transition: transform 0.3s ease; 
+}
+  
+.card:hover .card-img-top {
+    transform: scale(1.05); 
+}
+.card-body{
+    background-color: rgba(111, 111, 111, 0.6);
+}
+.card-text{
+    display: -webkit-box;
+	line-clamp: 2;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}

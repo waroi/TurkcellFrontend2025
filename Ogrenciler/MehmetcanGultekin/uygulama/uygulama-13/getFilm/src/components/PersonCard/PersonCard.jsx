@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import CardTitle from "./styled";
 // const img_url =
 //   "https://image.tmdb.org/t/p/w500/7iMBZzVZtG0oBug4TfqDb9ZxAOa.jpg";
-function MovieCard({ movie }) {
+function PersonCard({ movie }) {
   const [movieInfo, setMovieInfo] = useState();
 
   useEffect(() => {
@@ -25,13 +25,11 @@ function MovieCard({ movie }) {
     <Card className="h-100" style={{ width: "18rem" }}>
       <Card.Img
         variant="top"
-        src={`https://image.tmdb.org/t/p/w500/` + movie?.backdrop_path}
+        src={`https://image.tmdb.org/t/p/w500/` + movie?.poster_path}
       />
       <Card.Body>
         <CardTitle>{movie?.original_title}</CardTitle>
-        <Card.Text className="text-start">
-          {movie?.overview.substring(0, 140) + "..."}
-        </Card.Text>
+        <Card.Text className="text-start">{movie?.overview}</Card.Text>
       </Card.Body>
       <ListGroup className="list-group-flush">
         <ListGroup.Item>Release Date: {movie?.release_date}</ListGroup.Item>
@@ -47,15 +45,11 @@ function MovieCard({ movie }) {
         )}
       </ListGroup>
       <Card.Body>
-        <Card.Link
-          href={`https://image.tmdb.org/t/p/w500/` + movie?.poster_path}
-          target="_blank"
-        >
-          See Movie Poster
-        </Card.Link>
+        <Card.Link href="#">Card Link</Card.Link>
+        <Card.Link href="#">Another Link</Card.Link>
       </Card.Body>
     </Card>
   );
 }
 
-export default MovieCard;
+export default PersonCard;

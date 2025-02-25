@@ -14,7 +14,6 @@ export const getPerson = async (query) => {
       options
     );
     const data = await response.json();
-    console.log(data);
     return data.results || [];
   } catch (err) {
     console.error(err);
