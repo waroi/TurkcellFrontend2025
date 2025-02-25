@@ -10,8 +10,7 @@ export default class MovieClient {
 				method: "GET",
 				headers: {
 					accept: "application/json",
-					Authorization:
-						"Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxYTJhNDFkMzExN2I3NDA2ODY2NWE4ZmFhMzQ2Njk0MiIsIm5iZiI6MTc0MDQxNzQ5MS4wMDYsInN1YiI6IjY3YmNhOWQyMmFmOTcyZDJkOGE0NzVmNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.iEIDrw4RR2mJ4JMW7wj91_EE7QxlCVMyhCuYvJwM25Y",
+					Authorization: `${import.meta.env.VITE_TOKEN}`,
 				},
 			}
 		).then((response) => response.json());
