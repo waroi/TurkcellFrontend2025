@@ -22,7 +22,7 @@ export const getMovies = async () => {
 
 export const searchMovieActor = async (search) => {
   try {
-    const response = await fetch(`${searchMultiUrl}?query=${search}`, {
+    const response = await fetch(`${searchMultiUrl}?query=${search}&page=1`, {
       headers: {
         accept: "application/json",
         Authorization:
@@ -30,6 +30,8 @@ export const searchMovieActor = async (search) => {
       },
     });
     const data = await response.json();
+    console.log(data?.results);
+    console.log(data?.results?.media_type);
     return data;
   } catch (error) {
     console.log("SearchMovieActor Error: ", error);

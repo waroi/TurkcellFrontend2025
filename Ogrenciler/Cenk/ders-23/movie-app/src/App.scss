@@ -1,0 +1,27 @@
+:root {
+	--background-color: #121212;
+	--text-color: #e0e0e0;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-size: 0.875rem;
+	background-color: var(--background-color);
+	color: var(--text-color);
+}
+
+h1 {
+	font-size: 1.25rem;
+}
+
+@mixin card-hover {
+	&:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	}
+}
