@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, Button } from "react-bootstrap";
 
-const FilmCard = ({ movie, onDetailsClick }) => {
+const FilmCard = ({ movie }) => {
   return (
     <Card>
       <Card.Img
@@ -15,7 +15,7 @@ const FilmCard = ({ movie, onDetailsClick }) => {
           href={`https://www.themoviedb.org/movie/${movie.id}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-decoration-none text-dark"
+          className="text-decoration-none text-dark text-truncate"
         >
           {movie.title}
         </a></Card.Title>

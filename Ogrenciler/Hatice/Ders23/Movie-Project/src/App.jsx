@@ -1,8 +1,10 @@
 import "./App.css";
-import { fetchActors, fetchMovies, fetchSeries } from "./services/services";
+import { fetchActors, fetchMovies, fetchSeries, searchMovies } from "./services/services";
 import { useEffect, useState } from "react";
 import {Container, Form, Button} from "react-bootstrap";
 import FilmGrid from "./components/FilmGrid";
+import Navbar from "./components/Navbar";
+import FilterSearch from "./components/FilterSearch";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -24,23 +26,25 @@ function App() {
     getData();
   }, []);
 
-
+  const handleSearch = (query) => {
+    if (!query) {
+        setMovies([]); // Boş aramada sonuçları temizle
+    } else {
+        searchMovies(query).then((data) => {
+            if (data) setMovies(data.results);
+        });
+    }
+};
+  
   return (
+    <>
+    <Navbar onSearch={handleSearch} />
     <Container>
       <h1 className="my-4 text-center">TMDB Film Listesi</h1>
-      {/* <Form onSubmit={handleSearch} className="mb-4">
-        <Form.Control
-          type="text"
-          placeholder="Film Ara..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-        <Button type="submit" className="mt-2" variant="primary">
-          Ara
-        </Button>
-      </Form> */}
+      <FilterSearch movies={movies}/>
       <FilmGrid movies={movies} />
     </Container>
+    </>
   );
 }
 
