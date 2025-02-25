@@ -3,7 +3,7 @@ const baseUrl = import.meta.env.VITE_BASE_URL;
 const accessToken = import.meta.env.VITE_ACCESS_TOKEN;
 
 export default class MovieService {
-  static async getAllMovies(page) {
+  static async getAllMovies(searchValue = "a", page = 1) {
     const options = {
       method: "GET",
       headers: {
@@ -11,11 +11,14 @@ export default class MovieService {
         Authorization: `Bearer ${accessToken}`,
       },
     };
-    const response = await fetch(`${baseUrl}/trending/movie/day?include_adult=false&language=tr-TR&page=${page}`, options);
+    const response = await fetch(
+      `${baseUrl}/search/movie?query=${searchValue}&include_adult=false&language=tr-TR&page=${page}`,
+      options
+    );
     const data = await response.json();
     return data;
-  } 
-  
+  }
+
   static async getPerson(page) {
     const options = {
       method: "GET",
@@ -24,10 +27,11 @@ export default class MovieService {
         Authorization: `Bearer ${accessToken}`,
       },
     };
-    const response = await fetch(`${baseUrl}/trending/person/day?language=tr-TR&page=${page}`, options);
+    const response = await fetch(
+      `${baseUrl}/trending/person/day?language=tr-TR&page=${page}`,
+      options
+    );
     const data = await response.json();
     return data;
   }
-  
 }
-
