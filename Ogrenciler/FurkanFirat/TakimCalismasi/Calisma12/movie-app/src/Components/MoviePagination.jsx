@@ -1,19 +1,18 @@
-import React from "react";
-import Pagination from "react-bootstrap/Pagination";
+import Pagination from 'react-bootstrap/Pagination';
 
-export default function PaginationCom({
+export default function MoviePagination({
   currentPage,
   totalPages,
   handlePageChange,
 }) {
   return (
-    <Pagination className="mt-3">
+    <Pagination className='mt-3'>
       <Pagination.Prev
         onClick={() => handlePageChange(currentPage - 1)}
         disabled={currentPage === 1}
       />
 
-      {[...Array(totalPages).keys()].slice(0, 5).map((num) => (
+      {[...Array(totalPages).keys()].slice(0, Infinity).map((num) => (
         <Pagination.Item
           key={num + 1}
           active={num + 1 === currentPage}
