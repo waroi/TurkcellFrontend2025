@@ -1,27 +1,39 @@
-import React, { useEffect } from "react";
+// services.jsx
 
-const Services = () => {
-  useEffect(() => {
-    const fetchData = async () => {
-      const API_KEY = "a17d098aa83662acc470d974bf21e392";
-      const url = `https://api.themoviedb.org/3/authentication?api_key=${API_KEY}`;
+const API_KEY = 'a17d098aa83662acc470d974bf21e392';
+const BASE_URL = 'https://api.themoviedb.org/3';
 
-      try {
-        const response = await fetch(url);
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        const data = await response.json();
-        console.log(data);
-      } catch (error) {
-        console.error("Error fetching data:", error);
+const fetchFromTMDB = async (endpoint, params = '') => {
+  try {
+    const response = await fetch(`${BASE_URL}${endpoint}?api_key=${API_KEY}&${params}`, {
+      method: 'GET',
+      headers: {
+        'Accept': 'application/json'
       }
-    };
+    });
 
-    fetchData();
-  }, []);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
 
-  return <div>Fetching data...</div>;
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Fetch error:', error);
+    throw error;
+  }
 };
 
-export default Services;
+export const getPopularMovies = async () => {
+  return await fetchFromTMDB('/movie/popular');
+};
+
+export const searchMovies = async (query) => {
+  return await fetchFromTMDB('/search/movie', `query=${encodeURIComponent(query)}`);
+};
+
+export const getMovieDetails = async (movieId) => {
+  return await fetchFromTMDB(`/movie/${movieId}`);
+};
+
+export default fetchFromTMDB;
