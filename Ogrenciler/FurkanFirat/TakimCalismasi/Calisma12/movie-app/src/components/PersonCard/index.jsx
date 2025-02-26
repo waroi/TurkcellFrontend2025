@@ -6,14 +6,13 @@ export default function PersonCard({ personData, imgURL }) {
       <div className='card mb-3 w-100'>
         <div className='row g-0'>
           <div className='col-md-3'>
-            <img
-              src={
-                personData.profile_path
-                  ? `${imgURL}${personData?.profile_path}`
-                  : defaultPerson
-              }
+          <img
+              src={personData.profile_path ? `${imgURL}${personData?.profile_path}` : defaultPerson}
               className='img-fluid rounded-start'
               alt={personData.original_name + ' poster'}
+              loading="lazy" // lazy loading
+              width="100"
+              height="150"
             />
           </div>
           <div className='col-md-9'>
