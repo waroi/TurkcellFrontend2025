@@ -10,7 +10,7 @@ import Button from "react-bootstrap/Button";
 import MovieCard from "./components/MovieCard/MovieCard";
 import SearchMovie from "./components/SearchBar/SearchMovie";
 import SearchPerson from "./components/SearchBar/SearchPerson";
-import Helmet from "react-helmet";
+import {Helmet} from "react-helmet";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
