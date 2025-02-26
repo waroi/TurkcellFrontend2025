@@ -18,7 +18,7 @@ function Movie({ movieName }) {
 	}, [movieName]);
 
 	return movies.length === 0 ? (
-		<h1 className="text-center">Hoşgeldiniz</h1>
+		<h2 className="text-center">Hoşgeldiniz</h2>
 	) : (
 		<section className="container cinema-container">
 			{movies.length && <h1 className="mt-5">MOVIES</h1>}
