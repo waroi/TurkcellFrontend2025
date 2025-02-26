@@ -22,7 +22,7 @@ function MovieCard({ movie }) {
   }, [movie]);
 
   return (
-    <Card className="h-100" style={{ width: "18rem" }}>
+    <Card className="h-100" style={{ width: "100%" }}>
       <Card.Img
         variant="top"
         src={`https://image.tmdb.org/t/p/w500/` + movie?.backdrop_path}

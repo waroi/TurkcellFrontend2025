@@ -1,9 +1,9 @@
 const api_key = import.meta.env.VITE_API_KEY;
-
-async function getAllFilms() {
+// https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc
+async function getAllFilms(page) {
   try {
     const response = await fetch(
-      `https://api.themoviedb.org/3/discover/movie`,
+      `https://api.themoviedb.org/3/discover/movie?&page=${page}`,
       {
         headers: {
           accept: "application/json",
