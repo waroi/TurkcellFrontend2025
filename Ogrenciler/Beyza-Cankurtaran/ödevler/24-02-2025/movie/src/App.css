@@ -1,42 +1,101 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+body {
+  font-family: "Poppins", sans-serif;
+  background: url("https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=2059&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+    no-repeat center center/cover;
+  color: white;
+  background-attachment: fixed;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
   text-align: center;
+  font-size: 2.5rem;
+  margin: 20px 0;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.movie-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
 }
 
 .card {
-  padding: 2em;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.read-the-docs {
-  color: #888;
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 8px 16px rgba(255, 255, 255, 0.2);
+}
+
+.card img {
+  height: 400px;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.card-body {
+  background: rgba(174, 178, 162, 0.8);
+  color: white;
+  padding: 15px;
+}
+
+.badge {
+  font-size: 1rem;
+  padding: 5px 10px;
+}
+
+.searchbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 500px;
+  margin: 20px auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 12px;
+  border-radius: 10px;
+}
+
+.searchbar input {
+  flex: 1;
+  height: 45px;
+  padding: 12px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  background-color: #222;
+  color: white;
+}
+
+.searchbar button {
+  height: 45px;
+  padding: 0 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ff4500;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.searchbar button:hover {
+  background-color: #d53b00;
 }

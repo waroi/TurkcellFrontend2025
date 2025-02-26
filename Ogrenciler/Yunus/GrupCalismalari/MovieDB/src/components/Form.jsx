@@ -2,7 +2,6 @@ import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
-import InputGroup from "react-bootstrap/InputGroup";
 import Row from "react-bootstrap/Row";
 
 function MovieForm() {
@@ -23,7 +22,7 @@ function MovieForm() {
       <Row className="mb-3">
         <Form.Group as={Col} md="4" controlId="validationCustom01">
           <Form.Label>
-            Serach film with movie name or actors name....
+            Film ya da aktör ismi arayın....
           </Form.Label>
           <Form.Control
             required
@@ -31,11 +30,11 @@ function MovieForm() {
             placeholder="Enter movie or actor name"
             defaultValue="Mark"
           />
-          <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+          <Form.Control.Feedback>İyi Görünüyor!</Form.Control.Feedback>
         </Form.Group>
       </Row>
 
-      <Button type="submit">Submit form</Button>
+      <Button type="submit">Formu gönder</Button>
     </Form>
   );
 }

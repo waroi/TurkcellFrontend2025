@@ -1,1 +1,16 @@
 @import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+.actors {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.actors img {
+    border-radius: 50%;
+    width: 40px;
+    border: 2px solid #f8c10f;
+    height: 40px;
+    object-fit: cover;
+}

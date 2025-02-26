@@ -8,7 +8,7 @@ export default function Header({ selected, database }) {
       (async () => {
         setDetails(await getMovieDetails(selected.id));
         setCast(
-          (await database.getCreditsOfMovie(selected.id)).cast.slice(0, 8)
+          (await database.getCreditsOfMovie(selected.id)).cast.slice(0, 4)
         );
       })();
   }, [selected]);
@@ -31,29 +31,33 @@ export default function Header({ selected, database }) {
     return (
       <header>
         <div className="container">
-          <div className="card mb-3">
+          <div className="card overflow-hidden mb-3">
             <div className="row g-0">
               <div className="col-md-4">
                 <img
                   src={selected.poster}
-                  className="img-fluid rounded-start"
+                  className="img-fluid h-100 rounded-start"
+                  alt="poster"
                 />
               </div>
               <div className="col-md-8">
-                <div className="card-body">
-                  <h3 className="card-title">{selected.originalTitle}</h3>
-                  <p className="card-text">
-                    {details.genres
-                      ? details.genres.map((genre, index) => (
-                          <span
-                            key={index}
-                            className="badge text-bg-primary me-2 text-white"
-                          >
-                            {genre.name}
-                          </span>
-                        ))
-                      : ""}
-                  </p>
+                <div className="card-body h-100 p-4 d-flex flex-column justify-content-between">
+                  <div className="d-flex justify-content-between">
+                    <h3 className="card-title">{selected.originalTitle}</h3>
+                    <p className="card-text">
+                      {details.genres
+                        ? details.genres.map((genre, index) => (
+                            <span
+                              key={index}
+                              className="badge py-2 px-3 text-bg-danger rounded-pill me-2 text-white"
+                            >
+                              <i className="fa-solid fa-film me-2"></i>
+                              {genre.name}
+                            </span>
+                          ))
+                        : ""}
+                    </p>
+                  </div>
                   <p className="card-text">
                     <i className="fa-solid fa-star"></i>{" "}
                     {selected.voteAverage.toFixed(1)}
@@ -77,6 +81,7 @@ export default function Header({ selected, database }) {
                                 : person.profilePicture
                             }
                             className="card-img-top"
+                            alt="profil fotoğrafı"
                           />
                           <div className="card-body">
                             <h5 className="card-title">{person.name}</h5>
@@ -97,7 +102,7 @@ export default function Header({ selected, database }) {
     return (
       <header>
         <div className="container">
-          <div className="card mb-3">
+          <div className="card overflow-hidden mb-3">
             <div className="row g-0">
               <div className="col-md-4">
                 <img
@@ -106,28 +111,34 @@ export default function Header({ selected, database }) {
                       ? baseImageURL + selected.profile_path
                       : "https://static.vecteezy.com/system/resources/previews/009/292/244/non_2x/default-avatar-icon-of-social-media-user-vector.jpg"
                   }
-                  className="img-fluid rounded-start"
+                  className="img-fluid h-100"
+                  alt="profil fotoğrafı"
                 />
               </div>
               <div className="col-md-8">
-                <div className="card-body">
-                  <h3 className="card-title">{selected.name}</h3>
-                  <p className="card-text">
-                    <span className="badge text-bg-primary me-2 text-white">
+                <div className="card-body d-flex flex-column justify-content-between h-100 p-4">
+                  <h3 className="card-title fw-bold d-flex justify-content-between">
+                    {selected.name}{" "}
+                    <span className="badge fs-6 rounded-pill py-2 px-3 text-bg-danger me-2 text-white">
                       Gender: {gender[selected.gender]}
                     </span>
-                  </p>
+                  </h3>
+
                   <h5 className="card-title">Known For</h5>
-                  <div className="row row-cols-5">
+                  <div className="row row-cols-3">
                     {selected.known_for.map((movie, index) => (
                       <div key={index} className="col">
+                        {console.log(movie)}
                         <div className="card">
                           <img
                             src={baseImageURL + movie.poster_path}
                             className="card-img-top"
+                            alt="poster"
                           />
                           <div className="card-body">
-                            <h5 className="card-title">{movie.title}</h5>
+                            <h5 className="card-title">
+                              {movie.title || movie.name}
+                            </h5>
                             <p className="card-text">
                               <i className="fa-solid fa-star"></i>{" "}
                               {movie.vote_average.toFixed(1)}
@@ -147,51 +158,56 @@ export default function Header({ selected, database }) {
   else
     return (
       <header className="mb-5">
-        <div id="carousel" className="carousel slide h-100">
-          <div className="carousel-inner h-100">
-            <div className="carousel-item active h-100">
-              <img
-                src="carousel-1.png"
-                className="d-block w-100 h-100 object-fit-cover"
-              />
+        <div className="container p-3">
+          <div id="carousel" className="carousel slide rounded-5 h-100">
+            <div className="carousel-inner h-100">
+              <div className="carousel-item active h-100">
+                <img
+                  src="carousel-1.png"
+                  className="d-block w-100 rounded-5 h-100 object-fit-cover"
+                  alt="afiş1"
+                />
+              </div>
+              <div className="carousel-item h-100">
+                <img
+                  src="carousel-2.png"
+                  className="d-block w-100 rounded-5 h-100 object-fit-cover"
+                  alt="afiş2"
+                />
+              </div>
+              <div className="carousel-item h-100">
+                <img
+                  src="carousel-3.png"
+                  className="d-block w-100 rounded-5 h-100 object-fit-cover"
+                  alt="afiş3"
+                />
+              </div>
             </div>
-            <div className="carousel-item h-100">
-              <img
-                src="carousel-2.png"
-                className="d-block w-100 h-100 object-fit-cover"
-              />
-            </div>
-            <div className="carousel-item h-100">
-              <img
-                src="carousel-3.png"
-                className="d-block w-100 h-100 object-fit-cover"
-              />
-            </div>
+            <button
+              className="carousel-control-prev"
+              type="button"
+              data-bs-target="#carousel"
+              data-bs-slide="prev"
+            >
+              <span
+                className="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span className="visually-hidden">Previous</span>
+            </button>
+            <button
+              className="carousel-control-next"
+              type="button"
+              data-bs-target="#carousel"
+              data-bs-slide="next"
+            >
+              <span
+                className="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span className="visually-hidden">Next</span>
+            </button>
           </div>
-          <button
-            className="carousel-control-prev"
-            type="button"
-            data-bs-target="#carousel"
-            data-bs-slide="prev"
-          >
-            <span
-              className="carousel-control-prev-icon"
-              aria-hidden="true"
-            ></span>
-            <span className="visually-hidden">Previous</span>
-          </button>
-          <button
-            className="carousel-control-next"
-            type="button"
-            data-bs-target="#carousel"
-            data-bs-slide="next"
-          >
-            <span
-              className="carousel-control-next-icon"
-              aria-hidden="true"
-            ></span>
-            <span className="visually-hidden">Next</span>
-          </button>
         </div>
       </header>
     );

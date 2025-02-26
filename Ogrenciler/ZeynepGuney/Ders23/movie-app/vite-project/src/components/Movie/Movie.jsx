@@ -5,12 +5,21 @@ import "./Movie.css";
 function Movie({ movieName }) {
 	const [movies, setMovies] = useState([]);
 	const [error, setError] = useState(null);
+	const [selectedMovie, setSelectedMovie] = useState(null);
+
+	// Add this function before the return statement
+	const handleMovieClick = (movie) => {
+		setSelectedMovie(movie);
+	};
 
 	async function allMovies(movieName) {
 		try {
+			setError(null);
 			const response = await MovieClient.getMovies(movieName);
-			if (response.results.length === 0){
-				setError("Aranan film bulunamadı.");
+			console.log(response.results);
+			if (response.results.length === 0) {
+				setError("Aranan film ya da oyuncu bulunamadı.");
+				setMovies([]);
 			}
 			setMovies(response.results);
 		} catch (error) {
@@ -18,14 +27,13 @@ function Movie({ movieName }) {
 			setError("Bir hata oluştu, tekrar deneyin.");
 		}
 	}
-
 	useEffect(() => {
 		if (movieName) {
 			allMovies(movieName);
 		}
 	}, [movieName]);
-	if (error){
-		return<h2 className="text-center text-dark mt-5">{error}</h2>
+	if (error) {
+		return <h2 className="text-center text-dark mt-5">{error}</h2>;
 	}
 
 	return movies.length === 0 ? (
@@ -33,7 +41,7 @@ function Movie({ movieName }) {
 	) : (
 		<section className="container cinema-container">
 			{movies.length && <h1 className="mt-5">MOVIES</h1>}
-			<div className="row g-4 mt-5">
+			<div className="row g-4 mt-3">
 				{movies.map((movie) => (
 					<div key={movie.id} className="col-md-4">
 						<div className="card h-100 position-relative overflow-hidden">
@@ -50,9 +58,13 @@ function Movie({ movieName }) {
 								<h5 className="card-title mb-3">{movie.original_title}</h5>
 								<p className="card-text mb-3">{movie.overview}</p>
 								<div className="mt-auto">
-									<p className="mb-1">Release Date: {movie.release_date}</p>
-									<p className="mb-2">Rating: {movie.vote_average}/10</p>
-									<a href="#" className=" button-48">
+									<a
+										type="button"
+										href="#"
+										className="button-48"
+										data-bs-toggle="modal"
+										data-bs-target="#movieModal"
+										onClick={() => handleMovieClick(movie)}>
 										<span className="text">More Details</span>
 									</a>
 								</div>
@@ -60,6 +72,84 @@ function Movie({ movieName }) {
 						</div>
 					</div>
 				))}
+			</div>
+			<div
+				className="modal fade"
+				id="movieModal"
+				tabIndex="-1"
+				aria-labelledby="movieModalLabel"
+				aria-hidden="true">
+				<div className="modal-dialog modal-lg">
+					<div className="modal-content">
+						<div className="modal-header">
+							<h1 className="modal-title fs-5" id="movieModalLabel">
+								{selectedMovie?.original_title}
+							</h1>
+							<button
+								type="button"
+								className="btn-close"
+								data-bs-dismiss="modal"
+								aria-label="Close"></button>
+						</div>
+						<div className="modal-body">
+							{selectedMovie && (
+								<div className="row">
+									<div className="col-md-4">
+										<img
+											src={`https://image.tmdb.org/t/p/w500${selectedMovie.poster_path}`}
+											alt={selectedMovie.title}
+											className="img-fluid rounded"
+										/>
+									</div>
+									<div className="col-md-8">
+										<div className="mb-3">
+											<h5>Overview</h5>
+											<p>{selectedMovie.overview}</p>
+										</div>
+										<div className="row">
+											<div className="col-md-6">
+												<p>
+													<strong>Release Date:</strong>{" "}
+													{selectedMovie.release_date}
+												</p>
+												<p>
+													<strong>Original Language:</strong>{" "}
+													{selectedMovie.original_language.toUpperCase()}
+												</p>
+												<p>
+													<strong>Popularity:</strong>{" "}
+													{selectedMovie.popularity}
+												</p>
+											</div>
+											<div className="col-md-6">
+												<p>
+													<strong>IMDB Point:</strong>{" "}
+													{selectedMovie.vote_average}/10
+												</p>
+												<p>
+													<strong>Vote Count:</strong>{" "}
+													{selectedMovie.vote_count}
+												</p>
+												<p>
+													<strong>Adult Content:</strong>{" "}
+													{selectedMovie.adult ? "Yes" : "No"}
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							)}
+						</div>
+						<div className="modal-footer">
+							<button
+								type="button"
+								className="button-48"
+								data-bs-dismiss="modal">
+								<span className="text">Close</span>
+							</button>
+						</div>
+					</div>
+				</div>
 			</div>
 		</section>
 	);
