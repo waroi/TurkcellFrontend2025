@@ -83,6 +83,7 @@ const ActorDetail = ({ modalId, actor }) => {
               }
               className="img-fluid rounded-start"
               alt="actor image"
+              loading="lazy"
             />
             </div>
             <div className="col-9 d-flex flex-column gap-2">
@@ -108,6 +109,7 @@ const ActorDetail = ({ modalId, actor }) => {
                     src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
                     className="img-fluid rounded-start"
                     alt="film movie banner"
+                    loading="lazy"
                   />
                 ))}
               </div>

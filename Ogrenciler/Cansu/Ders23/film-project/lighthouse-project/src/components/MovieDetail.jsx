@@ -69,6 +69,7 @@ const MovieDetail = ({ modalId, movie, genre }) => {
                 src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
                 className="img-fluid rounded-start"
                 alt="film movie banner"
+                loading="lazy"
               />
             </div>
             <div className="col-8 px-4 d-flex flex-column gap-2">
