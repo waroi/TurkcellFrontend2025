@@ -6,9 +6,12 @@ function Movie({ movieName }) {
 	const [movies, setMovies] = useState([]);
 
 	async function allMovies(movieName) {
-		const response = await MovieClient.getMovies(movieName);
-		setMovies(response.results);
-		console.log("rr", response.results);
+		try {
+			const response = await MovieClient.getMovies(movieName);
+			setMovies(response.results);
+		} catch (error) {
+			console.log(error);
+		}
 	}
 
 	useEffect(() => {
