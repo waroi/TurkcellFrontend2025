@@ -1,4 +1,4 @@
-import { Card, Modal, Button, Image, Row, Col } from "react-bootstrap";
+import { Card, Modal, Image, Row, Col, Button } from "react-bootstrap";
 import { useState } from "react";
 import styles from "../styles/MovieCard.module.scss";
 
@@ -22,6 +22,8 @@ export default function MovieCard({ movie }) {
           src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
           className={styles.cardImage}
           loading="lazy"
+          width={500}
+          height={500}
         />
         <Card.Body className="d-flex flex-column flex-grow-1">
           <Card.Title>{movie.title}</Card.Title>
@@ -43,6 +45,8 @@ export default function MovieCard({ movie }) {
                     alt={movie.title}
                     className={styles.modalImage}
                     loading="lazy"
+                    width={500}
+                    height={500}
                   />
                 </Col>
                 <Col xs={12} md={6} className={styles.modalDetails}>

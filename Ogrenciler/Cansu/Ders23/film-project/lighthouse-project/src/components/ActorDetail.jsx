@@ -1,56 +1,5 @@
-import styled from "styled-components";
+import { CardImg, CardMovieImg, CardTypography, GenderChip } from "./styled"; 
 
-const CardTypography = styled.p`
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 13px;
-  padding: 0;
-  margin-bottom: 0;
-`;
-
-const CardTitle = styled.h5`
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 17px;
-`;
-
-const CardMovieImg = styled.img`
-  width: 30%;
-  height: auto;
-  object-fit: cover;
-`;
-
-const CardImg = styled.img`
-  height: 100%;
-  object-fit: cover;
-`;
-
-const GenreChip = styled.span`
-  padding: 3px 7px;
-  background-color: white;
-  border-radius: 20px;
-  color: black;
-  font-size: 12px;
-  margin-left: 20px;
-`;
-
-const GenderChip = styled.span`
-  padding: 3px 7px;
-  background-color: white;
-  border-radius: 20px;
-  color: black;
-  font-size: 12px;
-  margin-left: 20px;
-`;
-
-const DetailButton = styled.button`
-  background-color: #dbdbdb;
-  color: black;
-  font-size: 13px;
-  border: none;
-  &:hover {
-    background-color: #bebebe;
-    color: black;
-  }
-`;
 const ActorDetail = ({ modalId, actor }) => {
   return (
     <div

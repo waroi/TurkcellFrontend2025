@@ -1,45 +1,3 @@
-import styled from "styled-components";
-
-const NavbarContainer = styled.nav`
-  position: fixed;
-  height: 70px;
-  top: 0;
-  width: 100%;
-  background-color: #1c1c1c;
-`;
-
-const NavbarBrand = styled.a`
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #ffffff;
-  text-decoration: none;
-`;
-
-const SearchForm = styled.form`
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  margin-left: auto;
-`;
-
-const SearchInput = styled.input`
-  padding: 5px 10px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-`;
-
-const SearchButton = styled.button`
-  background-color: #d9534f;
-  color: white;
-  border: none;
-  padding: 5px 15px;
-  border-radius: 4px;
-  cursor: pointer;
-
-  &:hover {
-    background-color: #c9302c;
-  }
-`;
 const Navbar = ({
   setMoviename,
   handleSearch,
@@ -106,7 +64,11 @@ const Navbar = ({
               placeholder="Film ya da oyuncu yaz..."
               aria-label="Search"
             />
-            <button onClick={functionSearch} className="btn btn-outline-success" type="submit">
+            <button
+              onClick={functionSearch}
+              className="btn btn-outline-success"
+              type="submit"
+            >
               Search
             </button>
           </form>
