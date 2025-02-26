@@ -1,10 +1,45 @@
 .searchbar {
-  background-image: url("https://picsum.photos/800/400");
-  object-fit: contain;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; 
+  width: 100%;
+  max-width: 500px;
+  margin: 20px auto;
+  background-color: #444;
+  padding: 10px;
+  border-radius: 8px;
 }
+
+.searchbar input {
+  flex: 1; 
+  height: 40px;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+.searchbar button {
+  height: 40px;
+  padding: 0 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.searchbar button:hover {
+  background-color: #0056b3;
+}
+/*
 .searchbar input {
   width: 300px;
   background-color: #fff;
   color: black;
   padding: 10px;
-}
+}*/

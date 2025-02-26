@@ -17,7 +17,7 @@ function App() {
     fetch(`https://api.github.com/users/${username}/repos`)
       .then((response) => {
         if (!response.ok) {
-          throw new Error("User not found");
+          throw new Error("Kullanıcı Bulunamadı");
         }
         return response.json();
       })
@@ -35,7 +35,7 @@ function App() {
 
   const clearResults = () => {
     setRepos([]);
-    setUsername("");
+    setUsername(" ");
   };
 
   return (

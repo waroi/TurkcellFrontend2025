@@ -1,8 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense, lazy } from "react";
 import TMDB from "themoviedb";
-import Navigation from "./components/Navigation";
-import Movies from "./components/Movies";
-import Header from "./components/Header";
+// import Navigation from "./components/Navigation";
+// import Movies from "./components/Movies";
+// import Header from "./components/Header";
+const Navigation = lazy(() => import("./components/Navigation"));
+const Movies = lazy(() => import("./components/Movies"));
+const Header = lazy(() => import("./components/Header"));
 
 const database = new TMDB("ffa3dd1d22ae47c3e3b7f9c06c8cbb22");
 
@@ -17,9 +20,15 @@ function setMovieOverview(id) {
   })
     .then((response) => response.json())
     .then((response) => {
-      document.querySelector(
-        `[data-movie-id='${id}']`
-      ).textContent = `${response.overview.substring(0, 100)}...`;
+      let element,
+        interval = setInterval(() => {
+          element = document.querySelector(`[data-movie-id='${id}']`);
+
+          if (element) {
+            element.textContent = `${response.overview.substring(0, 100)}...`;
+            clearInterval(interval);
+          }
+        });
     });
 }
 
@@ -84,9 +93,15 @@ function App() {
 
   return (
     <>
-      <Navigation setSearch={setSearch} />
-      <Header selected={selected} database={database} />
-      <Movies movies={movies} />
+      <Suspense fallback={<i className="fa-solid fa-circle-notch fa-spin"></i>}>
+        <Navigation setSearch={setSearch} />
+      </Suspense>
+      <Suspense fallback={<i className="fa-solid fa-circle-notch fa-spin"></i>}>
+        <Header selected={selected} database={database} />
+      </Suspense>
+      <Suspense fallback={<i className="fa-solid fa-circle-notch fa-spin"></i>}>
+        <Movies movies={movies} />
+      </Suspense>
     </>
   );
 }
