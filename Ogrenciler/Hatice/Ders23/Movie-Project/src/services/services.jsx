@@ -36,20 +36,6 @@ export const fetchActors = async () => {
   }
 };
 
-export const fetchSeries = async () => {
-  try {
-    const response = await fetch(`${BASE_URL}/tv/popular`, {
-      method: "GET",
-      headers,
-    });
-    if (!response.ok) throw new Error("Dizi verileri alınamadı.");
-    return await response.json();
-  } catch (error) {
-    console.error("Error:", error);
-    return null;
-  }
-}
-
 export const searchMovies = async (query) => {
   const response = await fetch(`${BASE_URL}/search/movie?api_key=${API_KEY}&query=${query}`);
   if (!response.ok) {
