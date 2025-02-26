@@ -7,7 +7,6 @@ import MovieDetail from "./components/MovieDetail";
 import ActorCard from "./components/ActorCard";
 import MovieCard from "./components/MovieCard";
 
-
 const HomeContainer = styled.section`
   width: 100%;
   background-color: #161616;
@@ -19,9 +18,9 @@ const CardImg = styled.img`
   object-fit: cover;
 `;
 
-const CardTypography = styled.p`
+const MovieResultTypography = styled.p`
   color: rgba(255, 255, 255, 0.6);
-  font-size: 13px;
+  font-size: 17px;
   padding: 0;
   margin-bottom: 0;
 `;
@@ -54,56 +53,53 @@ function App() {
   }, []);
 
   const handleSearch = async () => {
-    if (selectedOption==="Filmler") 
-      
-      {const data = await getSearchMovie(moviename);
+    if (selectedOption === "Filmler") {
+      const data = await getSearchMovie(moviename);
 
       setMovies(data);
-      
-    }
-    else {
+    } else {
       const data = await getSearchActor(moviename);
 
-    setActor(data);
+      setActor(data);
     }
   };
 
-  
   const getGenreName = (genreIds) => {
-    const genre = genres.find((g) => g.id === genreIds[0]); 
-    return genre ? genre.name : "Bilinmeyen"; 
+    const genre = genres.find((g) => g.id === genreIds[0]);
+    return genre ? genre.name : "Bilinmeyen";
   };
-  
 
   return (
     <>
       <HomeContainer className="w-100">
-        <Navbar setSelectedOption={setSelectedOption} selectedOption={selectedOption} setMoviename={setMoviename} handleSearch={handleSearch} />
-        <div className="w-100 text-light">
-          <CardTypography>{movies?.total_results}</CardTypography>
-        </div>
+        <Navbar
+          setSelectedOption={setSelectedOption}
+          selectedOption={selectedOption}
+          setMoviename={setMoviename}
+          handleSearch={handleSearch}
+        />
 
-        <div className="w-100 custom-padding z-2">
-          <div className="container-xxl">
+        <div className="custom-padding z-2">
+          <div className="container">
             <div className="row justify-content-center">
-              {movies &&
-                movies.results &&
-                movies.results.map((movie) => (
-                  <MovieCard
-                  genre={getGenreName(movie.genre_ids)}
-                  key={movie.id} movie={movie}/>
-                  
-                  
-                  
-                ))}
-                {actor &&
-                actor.results &&
-                actor.results.map((actor) => (
-                  <ActorCard
-                  key={actor.id} actor={actor}/>
-                  
-                  
-                ))}
+              {movies?.total_results ? (
+                <div className="row text-light p-3">
+                  <MovieResultTypography className="container">
+                    {movies?.total_results} sonuç bulundu...
+                  </MovieResultTypography>
+                </div>
+              ) : null}
+              {selectedOption === "Filmler"
+                ? movies?.results?.map((movie) => (
+                    <MovieCard
+                      genre={getGenreName(movie.genre_ids)}
+                      key={movie.id}
+                      movie={movie}
+                    />
+                  ))
+                : actor?.results?.map((actor) => (
+                    <ActorCard key={actor.id} actor={actor} />
+                  ))}
             </div>
           </div>
         </div>

@@ -7,7 +7,7 @@ import {
 } from "./services/services";
 import { useEffect, useState } from "react";
 import { Container} from "react-bootstrap";
-import Navbar from "./components/Navbar";
+import NavBar from "./components/NavBar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Search from "./components/Search";
 import Footer from "./components/Footer";
@@ -46,7 +46,7 @@ function App() {
 
   return (
     <>
-      <Navbar />
+      <NavBar />
       <h1 className="card-title text-center mt-5 mb-5" id="home">Film ve Oyuncu Listeleri</h1>
       <Search
         searchTerm={searchTerm}
