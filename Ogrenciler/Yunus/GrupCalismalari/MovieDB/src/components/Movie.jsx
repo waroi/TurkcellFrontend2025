@@ -4,8 +4,8 @@ import { StyledMovieCard } from "./CardStyle";
 const Movie = ({ movie }) => {
   return (
     <>
-      <div className="col-lg-3 mb-3" key={movie.id}>
-        <StyledMovieCard h={100}>
+      <div className="col-lg-3 col-md-4 col-sm-6 mb-3" key={movie.id}>
+        <StyledMovieCard className="h-100">
           <img
             height={450}
             src={
@@ -13,7 +13,7 @@ const Movie = ({ movie }) => {
                 ? `https://image.tmdb.org/t/p/original/${movie.poster_path}`
                 : "https://ih1.redbubble.net/image.4905811447.8675/flat,750x,075,f-pad,750x1000,f8f8f8.jpg"
             }
-            className="card-img-top"
+            className="card-img-top img-fluid"
             alt={movie.original_title}
           />
           <div className="card-body d-flex flex-column justify-content-between">
