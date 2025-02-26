@@ -2,7 +2,9 @@ import React from "react";
 
 const ActorCard = ({ actors }) => {
   console.log("Actor List:", actors);
-
+  const truncateText = (text, limit) => {
+    return text.length > limit ? text.substring(0, limit) + "..." : text;
+  };
   return (
     <div className="row row-cols-1 row-cols-md-2 g-4 mt-5">
       {actors.length > 0 &&
@@ -10,13 +12,28 @@ const ActorCard = ({ actors }) => {
           <div key={actor.id} className="col">
             <div className="card">
               <img
-                src={`https://image.tmdb.org/t/p/w500${actor.profile_path}`}
+                src={
+                  actor.profile_path
+                    ? `https://image.tmdb.org/t/p/w500${actor.profile_path}`
+                    : "https://via.placeholder.com/500x750?text=No+Image"
+                }
                 className="card-img-top"
+                alt={actor.name}
               />
               <div className="card-body">
-                <h5 className="card-title">{actor.original_name}</h5>
+                <h5 className="card-title">{actor.name}</h5>
                 <p className="card-text">
-                  Known For: {actor.known_for[0].title}
+                  <strong>Department:</strong> {actor.known_for_department}
+                </p>
+                <p className="card-text">
+                  <strong>Known For:</strong>{" "}
+                  {truncateText(
+                    actor.known_for.map((work) => work.title || work.original_title).join(", "),
+                    100
+                  )}
+                </p>
+                <p className="card-text">
+                  <strong>Popularity:</strong> {actor.popularity.toFixed(1)}
                 </p>
               </div>
             </div>
@@ -27,3 +44,4 @@ const ActorCard = ({ actors }) => {
 };
 
 export default ActorCard;
+
