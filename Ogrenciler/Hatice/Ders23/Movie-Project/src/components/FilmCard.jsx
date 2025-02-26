@@ -8,7 +8,7 @@ const FilmCard = ({ movie }) => {
         variant="top"
         src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
         alt={movie.title}
-        className="card-img-top"
+        loading="lazy"
       />
       <Card.Body>
         <Card.Title className="text-truncate"><a

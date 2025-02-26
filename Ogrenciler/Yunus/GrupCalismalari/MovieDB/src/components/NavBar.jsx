@@ -1,9 +1,6 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import Form from "react-bootstrap/Form";
-import InputGroup from "react-bootstrap/InputGroup";
-import Button from "react-bootstrap/Button";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import { ButtonStyled } from "./ButtonStyle";
 import { StyledInput, StyledForm } from "./InputStyle";
@@ -16,7 +13,8 @@ const NavBar = ({ movieName, setMovieName, getMovies, getActor }) => {
           <Navbar.Brand href="#home">
             <img
               src="https://img.icons8.com/?size=100&id=12246&format=png&color=000000"
-              alt=""
+              alt="Logo"
+              loading="lazy"
             />
           </Navbar.Brand>
           <StyledForm className="w-50">
