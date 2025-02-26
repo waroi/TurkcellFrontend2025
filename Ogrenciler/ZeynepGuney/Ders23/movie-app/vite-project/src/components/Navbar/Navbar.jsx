@@ -3,7 +3,6 @@ import React, { useState } from "react";
 function Navbar({ onMovieSearch, onPersonSearch }) {
 	const [inputValue, setInputValue] = useState("");
 
-
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		onMovieSearch(inputValue);
@@ -13,7 +12,7 @@ function Navbar({ onMovieSearch, onPersonSearch }) {
 	return (
 		<>
 			<nav className="navbar navbar-expand-lg bg-dark">
-			<div className="container p-4 d-flex justify-content-between align-items-center">
+				<div className="container p-4 d-flex justify-content-between align-items-center">
 					<a className="navbar-brand text-white" href="#">
 						MovieApp
 					</a>
@@ -27,7 +26,9 @@ function Navbar({ onMovieSearch, onPersonSearch }) {
 						aria-label="Toggle navigation">
 						<span className="navbar-toggler-icon"></span>
 					</button>
-					<div className="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+					<div
+						className="collapse navbar-collapse justify-content-end"
+						id="navbarSupportedContent">
 						<form className="d-flex" role="search">
 							<input
 								className="form-control me-2"
@@ -37,7 +38,7 @@ function Navbar({ onMovieSearch, onPersonSearch }) {
 								onChange={(e) => setInputValue(e.currentTarget.value)}
 							/>
 							<button
-								className="btn btn-outline-secondary"
+								className="btn btn-outline-secondary text-white"
 								type="submit"
 								onClick={(e) => handleSubmit(e)}>
 								Search
