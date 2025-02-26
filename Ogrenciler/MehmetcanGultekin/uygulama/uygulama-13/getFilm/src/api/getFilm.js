@@ -36,7 +36,6 @@ async function getFilm(id) {
       throw new Error("Film bulunamadi");
     }
     const data = await response.json();
-    // console.log(data.crew[2].name);
     return data;
   } catch (error) {
     console.error(`getFilm API çağrısı başarisiz! ${error}`);
@@ -58,7 +57,6 @@ async function getSearchedFilm(movieName, page = 1) {
       throw new Error("Film bulunamadi");
     }
     const data = await response.json();
-    // console.log(data);
     return data;
   } catch (error) {
     console.error(`getSearchedFilm API çağrısı başarisiz! ${error}`);
@@ -79,7 +77,6 @@ async function getSearchedPersonFilms(moviePerson) {
       throw new Error("Karakter bulunamadi");
     }
     const data = await response.json();
-    // console.log(data);
     return data;
   } catch (error) {
     console.error(`getSearchedPersonFilms API çağrısı başarisiz! ${error}`);
