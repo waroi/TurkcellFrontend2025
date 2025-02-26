@@ -21,10 +21,10 @@ async function getAllFilms(page) {
     console.error(`getAllFilms API çağrısı başarisiz! ${error}`);
   }
 }
-async function getFilm() {
+async function getFilm(id) {
   try {
     const response = await fetch(
-      `https://api.themoviedb.org/3/movie/950396/credits`,
+      `https://api.themoviedb.org/3/movie/${id}/credits`,
       {
         headers: {
           accept: "application/json",
@@ -43,10 +43,10 @@ async function getFilm() {
   }
 }
 
-async function getSearchedFilm(movieName) {
+async function getSearchedFilm(movieName, page = 1) {
   try {
     const response = await fetch(
-      `https://api.themoviedb.org/3/search/movie?query=${movieName}`,
+      `https://api.themoviedb.org/3/search/movie?query=${movieName}&page=${page}`,
       {
         headers: {
           accept: "application/json",

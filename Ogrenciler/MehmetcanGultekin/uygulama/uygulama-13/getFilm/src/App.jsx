@@ -27,7 +27,8 @@ function App() {
   }, []);
 
   const handleSearch = () => {
-    getSearchedFilm(movieName)
+    setPage(1);
+    getSearchedFilm(movieName, 1)
       .then((data) => {
         setMovies(data.results);
       })
@@ -47,24 +48,43 @@ function App() {
   };
   const nextPage = () => {
     setPage(page + 1);
-    console.log(page);
-    getAllFilms(page + 1)
-      .then((data) => {
-        setMovies(data.results);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
+    if (movieName != "") {
+      getSearchedFilm(movieName, page + 1)
+        .then((data) => {
+          setMovies(data.results);
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    } else {
+      getAllFilms(page + 1)
+        .then((data) => {
+          setMovies(data.results);
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    }
   };
   const prevPage = () => {
     setPage(page - 1);
-    getAllFilms(page - 1)
-      .then((data) => {
-        setMovies(data.results);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
+    if (movieName != "") {
+      getSearchedFilm(movieName, page - 1)
+        .then((data) => {
+          setMovies(data.results);
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    } else {
+      getAllFilms(page - 1)
+        .then((data) => {
+          setMovies(data.results);
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    }
   };
   return (
     <>

@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import CardTitle from "./styled";
 // const img_url =
 //   "https://image.tmdb.org/t/p/w500/7iMBZzVZtG0oBug4TfqDb9ZxAOa.jpg";
+
+//data.crew[2].name
 function MovieCard({ movie }) {
   const [movieInfo, setMovieInfo] = useState();
 
@@ -13,7 +15,6 @@ function MovieCard({ movie }) {
       getFilm(movie.id)
         .then((data) => {
           setMovieInfo(data);
-          // console.log(data + " movie crew");
         })
         .catch((err) => {
           console.error(err);
