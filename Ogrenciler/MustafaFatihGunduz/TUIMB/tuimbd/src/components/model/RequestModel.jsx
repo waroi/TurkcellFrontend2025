@@ -1,8 +1,9 @@
-const url = "https://api.themoviedb.org/3/person"; // Oyuncuların listelendiği API
-const searchMultiUrl = "https://api.themoviedb.org/3/search/multi";
-const listActorMoviesUrl =
-  "https://api.themoviedb.org/3/person/personid/movie_credits";
 const moviesUrl = "https://api.themoviedb.org/3/movie/popular?page=1";
+const searchMultiUrl = "https://api.themoviedb.org/3/search/multi";
+
+// const url = "https://api.themoviedb.org/3/person"; 
+// const listActorMoviesUrl =
+//   "https://api.themoviedb.org/3/person/personid/movie_credits";
 
 export const getMovies = async () => {
   try {
@@ -30,8 +31,8 @@ export const searchMovieActor = async (search) => {
       },
     });
     const data = await response.json();
-    console.log(data?.results);
-    console.log(data?.results?.media_type);
+    console.log(data);
+
     return data;
   } catch (error) {
     console.log("SearchMovieActor Error: ", error);
