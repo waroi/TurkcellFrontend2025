@@ -12,7 +12,7 @@ function App() {
 
   return (
     <>
-      <h1>Movie</h1>
+      <h1>Movie/Actor Search</h1>
       <Search setMovie={setMovie} setActor={setActor} />
       <MovieCard movies={movies} />
       <ActorCard actors={actors} />
