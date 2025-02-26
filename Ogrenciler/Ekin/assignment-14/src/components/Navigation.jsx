@@ -14,7 +14,10 @@ export default Navigation = ({ setSearch }) => {
             className="form-control rounded-pill me-2"
             type="search"
             placeholder="Search"
-            onInput={(event) => setSearch(event.target.value)}
+            // onInput={(event) => setSearch(event.target.value)}
+            onKeyDown={(event) =>
+              event.key == "Enter" ? setSearch(event.target.value) : ""
+            }
           />
         </form>
         <button

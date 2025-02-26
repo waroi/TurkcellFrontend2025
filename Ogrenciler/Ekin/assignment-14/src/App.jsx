@@ -63,10 +63,11 @@ function App() {
         return;
       }
 
-      let selectedMovie = (await database.searchMovies(search))[0],
+      //* Bubble :/
+      let selectedMovie = (await database.searchMovies(search)).sort(
+          (previous, current) => current.popularity - previous.popularity
+        )[0],
         selectedPerson = await getPerson(search);
-
-      console.log(selectedPerson);
 
       if (selectedMovie) {
         if (selectedPerson)
