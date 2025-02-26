@@ -8,7 +8,8 @@ const PersonCard = ({ person }) => {
         variant="top"
         src={`https://image.tmdb.org/t/p/w500${person.profile_path}`}
         alt={person.name}
-        className=" mx-auto mt-3 card-img-top"
+        loading="lazy"
+        className=" mx-auto mt-3"
       />
       <Card.Body>
         <Card.Title className="fw-bold"><a
