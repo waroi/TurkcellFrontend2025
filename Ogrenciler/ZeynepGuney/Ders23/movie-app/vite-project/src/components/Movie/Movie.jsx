@@ -4,13 +4,18 @@ import "./Movie.css";
 
 function Movie({ movieName }) {
 	const [movies, setMovies] = useState([]);
+	const [error, setError] = useState(null);
 
 	async function allMovies(movieName) {
 		try {
 			const response = await MovieClient.getMovies(movieName);
+			if (response.results.length === 0){
+				setError("Aranan film bulunamadı.");
+			}
 			setMovies(response.results);
 		} catch (error) {
 			console.log(error);
+			setError("Bir hata oluştu, tekrar deneyin.");
 		}
 	}
 
@@ -19,9 +24,12 @@ function Movie({ movieName }) {
 			allMovies(movieName);
 		}
 	}, [movieName]);
+	if (error){
+		return<h2 className="text-center text-dark mt-5">{error}</h2>
+	}
 
 	return movies.length === 0 ? (
-		<h2 className="text-center">Hoşgeldiniz</h2>
+		<h2 className="text-center mt-5">Hoşgeldiniz</h2>
 	) : (
 		<section className="container cinema-container">
 			{movies.length && <h1 className="mt-5">MOVIES</h1>}
