@@ -5,7 +5,11 @@ export default Navigation = ({ setSearch }) => {
     <nav className="navbar navbar-expand-lg bg-primary navbar-dark py-4">
       <div className="container">
         <a className="navbar-brand">MovieBox</a>
-        <form className="d-flex" role="search">
+        <form
+          className="d-flex"
+          role="search"
+          onSubmit={(event) => event.preventDefault()}
+        >
           <input
             className="form-control rounded-pill me-2"
             type="search"

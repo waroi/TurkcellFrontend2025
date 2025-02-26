@@ -66,6 +66,8 @@ function App() {
       let selectedMovie = (await database.searchMovies(search))[0],
         selectedPerson = await getPerson(search);
 
+      console.log(selectedPerson);
+
       if (selectedMovie) {
         if (selectedPerson)
           setSelected(
