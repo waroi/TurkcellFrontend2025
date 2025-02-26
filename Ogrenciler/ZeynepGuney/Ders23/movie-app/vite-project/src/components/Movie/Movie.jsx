@@ -41,7 +41,7 @@ function Movie({ movieName }) {
 	) : (
 		<section className="container cinema-container">
 			{movies.length && <h1 className="mt-5">MOVIES</h1>}
-			<div className="row g-4 mt-5">
+			<div className="row g-4 mt-3">
 				{movies.map((movie) => (
 					<div key={movie.id} className="col-md-4">
 						<div className="card h-100 position-relative overflow-hidden">

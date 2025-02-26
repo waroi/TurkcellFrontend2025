@@ -27,7 +27,7 @@ function Navbar({ onMovieSearch, onPersonSearch }) {
 						<span className="navbar-toggler-icon"></span>
 					</button>
 					<div
-						className="collapse navbar-collapse justify-content-end"
+						className="collapse navbar-collapse justify-content-end my-5"
 						id="navbarSupportedContent">
 						<form className="d-flex" role="search">
 							<input
