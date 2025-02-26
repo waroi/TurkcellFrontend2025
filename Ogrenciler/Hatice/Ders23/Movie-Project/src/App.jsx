@@ -2,7 +2,6 @@ import "./App.css";
 import {
   fetchActors,
   fetchMovies,
-  fetchSeries,
   searchMovies,
   searchActors,
 } from "./services/services";
@@ -18,17 +17,14 @@ import SortByActors from "./components/SortByActors";
 function App() {
   const [movies, setMovies] = useState([]);
   const [actors, setActors] = useState([]);
-  const [series, setSeries] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
   const getData = async () => {
     const movieData = await fetchMovies();
     const actorData = await fetchActors();
-    const serieData = await fetchSeries();
 
     if (movieData) setMovies(movieData.results);
     if (actorData) setActors(actorData.results);
-    if (serieData) setSeries(serieData.results);
   };
   useEffect(() => {
     getData();

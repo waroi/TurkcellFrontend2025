@@ -4,11 +4,19 @@ import "./Person.css";
 
 function Movie({ personName }) {
 	const [person, setPerson] = useState([]);
+	const [error, setError] = useState(null);
 
 	async function allUSers(personName) {
-		const response = await MovieClient.getPerson(personName);
-		setPerson(response.results);
-		console.log(response.results);
+		try {
+			const response = await MovieClient.getPerson(personName);
+			if (response.results.length === 0) {
+				setError("Aranan oyuncu bulunamadı.");
+			}
+			setPerson(response.results);
+			console.log(response.results);
+		} catch (error) {
+			setError("Bir hata oluştu, tekrar deneyin.");
+		}
 	}
 
 	useEffect(() => {
@@ -16,6 +24,10 @@ function Movie({ personName }) {
 			allUSers(personName);
 		}
 	}, [personName]);
+
+	if (error) {
+		return <h2 className="text-center text-dark mt-5">{error}</h2>
+	}
 	return (
 		<section className="container cinema-container">
 			{person.length > 0 && <h1 className="mt-5">PERSON</h1>}
@@ -32,14 +44,13 @@ function Movie({ personName }) {
 								className="card-img-top h-100 object-fit-cover"
 								alt={person.title}
 							/>
-							<div className="card-body position-absolute top-40 start-0 end-0 bottom-0 text-white p-3 d-flex flex-column justify-content-between rounded-5 m-3 h-50">
-								<h5 className="card-title mb-3">{person.name}</h5>
-								<p className="card-text mb-3"></p>
+							<div className="card-body position-absolute top-40 start-0 end-0 bottom-0 text-white p-3 d-flex flex-column justify-content-between rounded-3 m-3">
+								<h5 className="card-title">{person.name}</h5>
 								<div className="mt-auto">
 									<p className="mb-1">Original Name: {person.original_name}</p>
 									<p className="mb-2">Popularity: {person.popularity}</p>
-									<a href="#" className="btn btn-outline-dark text-white">
-										More Details
+									<a href="#" className="button-48">
+										<span className="text">More Details</span>
 									</a>
 								</div>
 							</div>
