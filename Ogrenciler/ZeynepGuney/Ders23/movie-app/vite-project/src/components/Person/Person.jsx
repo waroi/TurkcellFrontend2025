@@ -54,8 +54,8 @@ function Movie({ personName }) {
 			{person.length > 0 && <h1 className="mt-5">PERSON</h1>}
 			<div className="row g-4 mt-5">
 				{person.map((person) => (
-					<div className="card mb-3 g-0 m-0 p-0" key={person.id}>
-						<div className="row g-0">
+					<div className="card mb-3 g-0 p-0" key={person.id}>
+						<div className="row g-0 ">
 							<div className="col-md-4">
 								<img
 									src={

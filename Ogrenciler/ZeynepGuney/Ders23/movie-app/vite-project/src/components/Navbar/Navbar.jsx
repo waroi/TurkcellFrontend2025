@@ -12,10 +12,10 @@ function Navbar({ onMovieSearch, onPersonSearch }) {
 	return (
 		<>
 			<nav className="navbar navbar-expand-lg bg-dark">
-				<div className="container p-4 d-flex justify-content-between align-items-center">
-					<a className="navbar-brand text-white" href="#">
-						MovieApp
-					</a>
+				<div className="container">
+					<h3 className="text-white">
+						<strong>MovieApp</strong>
+					</h3>
 					<button
 						className="navbar-toggler bg-light"
 						type="button"
@@ -27,7 +27,7 @@ function Navbar({ onMovieSearch, onPersonSearch }) {
 						<span className="navbar-toggler-icon"></span>
 					</button>
 					<div
-						className="collapse navbar-collapse justify-content-end"
+						className="collapse navbar-collapse justify-content-end my-5"
 						id="navbarSupportedContent">
 						<form className="d-flex" role="search">
 							<input
