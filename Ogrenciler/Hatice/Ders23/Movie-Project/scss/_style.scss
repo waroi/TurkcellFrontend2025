@@ -6,17 +6,12 @@
 .card-title {
   color: #60066b !important;
 }
-.navbar-section {
+.navbar-section , 
+footer {
   background-color: #52055b;
 }
 .card-desc {
   font-size: 0.8rem !important;
-}
-.film-card {
-  box-shadow: $box-shadow-lg;
-}
-.person{
-    box-shadow: $box-shadow-lg;   
 }
 .search-section {
   background: url("../src/assets/header.webp") no-repeat center center/cover;

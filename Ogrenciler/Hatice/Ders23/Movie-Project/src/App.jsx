@@ -7,12 +7,13 @@ import {
   searchActors,
 } from "./services/services";
 import { useEffect, useState } from "react";
-import { Container, Form, Button } from "react-bootstrap";
+import { Container} from "react-bootstrap";
 import Navbar from "./components/Navbar";
-import SortBy from "./components/SortBy";
 import "bootstrap/dist/css/bootstrap.min.css";
-import PersonGrid from "./components/PersonGrid";
 import Search from "./components/Search";
+import Footer from "./components/Footer";
+import SortByMovie from "./components/SortByMovie";
+import SortByActors from "./components/SortByActors";
 
 function App() {
   const [movies, setMovies] = useState([]);
@@ -57,11 +58,12 @@ function App() {
         handleSearch={handleSearch}
       />
       <Container>
-        <h2 className="my-4 text-center card-title" id="filmler">Film Listesi</h2>
-        <SortBy movies={movies} />
-        <h2 className="mt-5 mb-3 text-center card-title" id="oyuncular">Popüler Kişiler</h2>
-        <PersonGrid persons={actors} />
+        <h2 className="my-4 text-center card-title fw-bold" id="filmler">Film Listesi</h2>
+        <SortByMovie movies={movies} />
+        <h2 className="mt-5 mb-3 text-center card-title fw-bold" id="oyuncular">Popüler Kişiler</h2>
+        <SortByActors actors= {actors}/>
       </Container>
+      <Footer/>
     </>
   );
 }
