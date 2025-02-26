@@ -54,7 +54,7 @@ const Navbar = ({
   return (
     <nav className="navbar fixed-top navbar-expand-lg bg-body-tertiary positi">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
+        <a className="navbar-brand" href="https://www.imdb.com/">
           CineScope
         </a>
         <button
@@ -113,42 +113,6 @@ const Navbar = ({
         </div>
       </div>
     </nav>
-    //     <NavbarContainer className="navbar navbar-expand-lg navbar-light z-3">
-    //       <div className="container gap-5">
-    //         <NavbarBrand href="#" className="d-flex gap-4">CineScope</NavbarBrand>
-    //         <button
-    //   className="navbar-toggler"
-    //   type="button"
-    //   data-bs-toggle="collapse"
-    //   data-bs-target="#navbarNav" // Burada doğru ID kullanıldı
-    //   aria-controls="navbarNav"
-    //   aria-expanded="false"
-    //   aria-label="Toggle navigation"
-    // >
-    //   <span className="navbar-toggler-icon"></span>
-    // </button>
-
-    //         <div
-    //           className="collapse navbar-collapse d-flex align-items-center"
-    //           id="navbarNav"
-    //         >
-    //
-
-    //           <SearchForm className="d-flex flex-grow-1">
-    //             <SearchInput
-    //               className="form-control me-2"
-    //               onChange={(e) => setMoviename(e.target.value)}
-    //               type="search"
-    //               placeholder="Film ismi..."
-    //               aria-label="Search"
-    //             />
-    //             <SearchButton onClick={functionSearch} type="submit">
-    //               Ara
-    //             </SearchButton>
-    //           </SearchForm>
-    //         </div>
-    //       </div>
-    //     </NavbarContainer>
   );
 };
 

@@ -49,6 +49,7 @@ const ActorCard = ({ actor }) => {
               }
               className="img-fluid rounded-start"
               alt="actor image"
+              loading="lazy"
             />
           </div>
           <div className="col-md-8">
