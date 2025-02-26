@@ -5,8 +5,17 @@
 }
 
 body {
-  background: url('/bg-cinema.png');
+  background: rgb(131,58,180);
+  background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+}
+
+@font-face {
+  font-family:'Courier New', Courier, monospace;
+  src: url('/fonts/CourierNew-Regular.ttf') format('truetype');
+  font-display: swap;
+  font-weight: normal;
+  font-style: normal;
 }
