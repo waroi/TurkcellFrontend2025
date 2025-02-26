@@ -11,7 +11,14 @@ const PersonCard = ({ person }) => {
         className=" mx-auto mt-3 card-img-top"
       />
       <Card.Body>
-        <Card.Title className="fw-bold">{person.name}</Card.Title>
+        <Card.Title className="fw-bold"><a
+          href={`https://www.themoviedb.org/person/${person.id}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-decoration-none card-title fw-bold"
+        >
+          {person.name}
+        </a></Card.Title>
         <Card.Text className="text-muted">Popülerlik: {Math.round(person.popularity)}</Card.Text>
       </Card.Body>
     </Card>

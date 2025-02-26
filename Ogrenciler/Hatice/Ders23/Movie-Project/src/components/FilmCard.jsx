@@ -3,7 +3,7 @@ import { Card, Button } from "react-bootstrap";
 
 const FilmCard = ({ movie }) => {
   return (
-    <Card className="film-card">
+    <Card>
       <Card.Img
         variant="top"
         src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
