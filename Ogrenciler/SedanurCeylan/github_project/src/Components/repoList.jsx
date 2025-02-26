@@ -14,7 +14,7 @@ function RepoList({ repos }) {
                       {repo.name}
                     </a>
                   </h5>
-                  <p className="card-text">{repo.description || "No description available."}</p>
+                  <p className="card-text">{repo.description || "Açıklama Buunamadı."}</p>
                   <span className="badge bg-primary">⭐ {repo.stargazers_count} Stars</span>
                 </div>
               </div>
