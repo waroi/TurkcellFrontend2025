@@ -1,11 +1,12 @@
-import { useEffect, useState } from "react";
+import { lazy, useEffect, useState } from "react";
 import "./App.css";
-import Movie from "./components/Movie";
 import NavBar from "./components/NavBar";
 import { searchActors, searchMovies } from "./services/movieService";
 
+const Movie = lazy(() => import("./components/Movie"));
+
 function App() {
-  const [movieName, setMovieName] = useState("superman");
+  const [movieName, setMovieName] = useState("");
   const [pages, setPages] = useState(1);
   const [movies, setMovies] = useState([]);
   const [actors, setActors] = useState([]);
@@ -16,15 +17,17 @@ function App() {
   }, [pages]);
 
   const getMovies = async () => {
-    setActors(null);
-    setIsLoading(true);
-    try {
-      const moviesData = await searchMovies(movieName, pages);
-      setMovies(moviesData);
-    } catch (err) {
-      console.error("Film çekerken bi hata oluştu");
-    } finally {
-      setIsLoading(false);
+    if (movies !== '') {
+      setActors(null);
+      setIsLoading(true);
+      try {
+        const moviesData = await searchMovies(movieName, pages);
+        setMovies(moviesData);
+      } catch (err) {
+        console.error("Film çekerken bi hata oluştu");
+      } finally {
+        setIsLoading(false);
+      }
     }
   };
 

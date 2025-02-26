@@ -13,7 +13,8 @@ const NavBar = ({ movieName, setMovieName, getMovies, getActor }) => {
           <Navbar.Brand href="#home">
             <img
               src="https://img.icons8.com/?size=100&id=12246&format=png&color=000000"
-              alt=""
+              alt="Logo"
+              loading="lazy"
             />
           </Navbar.Brand>
           <StyledForm className="w-50">
