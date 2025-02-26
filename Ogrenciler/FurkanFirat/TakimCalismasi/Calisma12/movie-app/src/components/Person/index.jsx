@@ -1,14 +1,14 @@
-import { useState } from 'react';
-import PersonForm from '../PersonForm';
-import PersonCard from '../PersonCard';
-import PageControl from '../PageControl';
-import { fetchPersons, IMG_URL } from '../../service/api';
-import Header from '../../components/Header';
+import { lazy, useState } from "react";
+import PersonForm from "../PersonForm";
+const PersonCard = lazy(() => import("../PersonCard"));
+const PageControl = lazy(() => import("../PageControl"));
+import { fetchPersons, IMG_URL } from "../../service/api";
+import Header from "../../components/Header";
 
 export default function Person() {
   const [personData, setPersonData] = useState([]);
 
-  const [personQuery, setPersonQuery] = useState('');
+  const [personQuery, setPersonQuery] = useState("");
 
   const [currentPersonPage, setCurrentPersonPage] = useState(1);
   const [personPages, setPersonPages] = useState(1);
@@ -34,7 +34,7 @@ export default function Person() {
         handlePersonSubmit={handlePersonSubmit}
         setPersonQuery={setPersonQuery}
       />
-      <Header text={'Oyuncular'} />
+      <Header text={"Oyuncular"} />
 
       {personData?.map((person) => (
         <PersonCard key={person.id} personData={person} imgURL={IMG_URL} />
