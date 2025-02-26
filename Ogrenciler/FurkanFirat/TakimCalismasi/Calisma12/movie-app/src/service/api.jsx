@@ -1,5 +1,5 @@
 const API_BASE_URL = 'https://api.themoviedb.org/3';
-const IMG_URL = 'https://image.tmdb.org/t/p/original';
+const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 
 const options = {
   method: 'GET',
