@@ -3,7 +3,6 @@ import { NavLink } from "react-router";
 import products from "../data.json";
 
 const Home = () => {
-  console.log("Products data:", products);
   return (
     <>
       <header className="header-section position-relative">
