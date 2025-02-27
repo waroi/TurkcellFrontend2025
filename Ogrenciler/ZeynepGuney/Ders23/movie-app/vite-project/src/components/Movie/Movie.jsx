@@ -7,7 +7,6 @@ function Movie({ movieName }) {
 	const [error, setError] = useState(null);
 	const [selectedMovie, setSelectedMovie] = useState(null);
 
-	// Add this function before the return statement
 	const handleMovieClick = (movie) => {
 		setSelectedMovie(movie);
 	};

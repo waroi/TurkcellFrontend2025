@@ -13,6 +13,7 @@ const Movie = ({ movie }) => {
           src={movie.poster_path ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}` : placeholderImage}
           className="card-img-top img-fluid"
           alt={`${movie.original_title} Film posteri`}
+          loading="lazy"
         />
         <div className="card-body d-flex flex-column justify-content-between">
           <h5 className="card-title">{movie.original_title}</h5>
