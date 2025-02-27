@@ -1,5 +1,5 @@
-import Router from "./routers/Router";
 import { NavLink } from "react-router";
+import Router from "./routes/Router";
 import "./App.css";
 
 function App() {
@@ -10,10 +10,7 @@ function App() {
           <NavLink to="/">Anasayfa</NavLink>
         </li>
         <li>
-          <NavLink to="/user">Kullanici</NavLink>
-        </li>
-        <li>
-          <NavLink to="/parametre/101">Parametre</NavLink>
+          <NavLink to="/user">Kullanıcı</NavLink>
         </li>
       </ul>
       <Router />

@@ -1,13 +1,10 @@
 import { useRoutes } from "react-router";
+import UserView from "../views/UserView";
 import HomeView from "../views/HomeView";
-import ParametreView from "../views/ParametreView";
-import userRouter from "./UserRouter";
-
 const Router = () => {
   const routes = useRoutes([
     { path: "/", element: <HomeView /> },
-    userRouter,
-    { path: "/parametre/:id", element: <ParametreView /> },
+    { path: "/user", element: <UserView /> },
   ]);
   return routes;
 };

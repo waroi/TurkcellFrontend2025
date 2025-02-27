@@ -1,0 +1,9 @@
+@import "./bt-override";
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+@import "./style";
+
+$primary-color: blue;
+
+body {
+  background-color: $primary-color;
+}
