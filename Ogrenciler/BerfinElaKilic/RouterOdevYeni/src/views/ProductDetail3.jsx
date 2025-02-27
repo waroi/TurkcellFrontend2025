@@ -1,6 +1,4 @@
-import { NavLink } from "react-router";
-import Photo from "/components/Photo";
-const ProductDetail1 = () => {
+const ProductDetail3 = () => {
   return (
     <main>
       <section class="product-detail">
@@ -8,7 +6,7 @@ const ProductDetail1 = () => {
           <div class="row">
             <div class="col-md-12 col-12 col-lg-6">
               <img
-                src="../images/prenses.webp"
+                src="/src/assets/hollywood.webp"
                 alt="Ürün Görseli"
                 class="product-image img-fluid"
               />
@@ -22,17 +20,18 @@ const ProductDetail1 = () => {
                   <i class="fa-solid fa-star"></i>
                   <i class="fa-solid fa-star"></i>
                 </div>
-                <h1 class="product-title">İngiltere Prensesi</h1>
-                <p class="product-price text-primary fs-2">$100.000.000</p>
+                <h1 class="product-title">Hollywood Yıldızı</h1>
+                <p class="product-price text-primary fs-2">$50.000.000</p>
                 <p class="product-description fs-5">
-                  Merhaba gelin hep beraber İlgiltere Prensesini inceleyelim...
-                  Bu yüzyılda paşalık mı krallık mı kaldı diyenlere, "Hayırdır
-                  İngiltere Prensesi ile mi konuşuyorum?" tarzı alaylı biçimde
-                  konuşan kişilere unutamayacağı dersi verin. Yanlış duymadınız
-                  İngiltere prensesi olmak tek tıkla artık çok kolay. İngiltere
-                  krallığının yüzyıllardır süregelen krallık tahtının sahibi
-                  olacaksınız. Lüks yaşantının yanında soylu bir ailenin ferdi
-                  olmak sizin de tüylerinizi ürpertiyordur mutlaka.
+                  Merhaba gelin hep beraber Hollywood yıldızını inceleyelim...
+                  Yetenekli ve parmakla gösterilen güzelliği olan biri neden siz
+                  olmayasınız? Gişe rekorları kıran filmler sayesinde
+                  Arjantin'in Patagonya sularından, Uzak Doğunun yağmur
+                  ormanlarına; Kuzey'in eskimolarından, Safarinin yamyamlarına
+                  kadar herkesin tanıdığı, ülkenin her sokağındaki bilbordlarda
+                  fotoğraflarınızın boy boy gösterildiği ve tabi ödül
+                  törenlerinin ve moda kapaklarının vazgeçilmezi olmak istemez
+                  misiniz? Bence çok istersiniz.
                 </p>
                 <button class="btn btn-primary btn-lg mt-3">Sepete Ekle</button>
               </div>
@@ -165,4 +164,4 @@ const ProductDetail1 = () => {
   );
 };
 
-export default ProductDetail1;
+export default ProductDetail3;
