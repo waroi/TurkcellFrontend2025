@@ -38,7 +38,7 @@ const Footer = () => {
               <p className="text-white-50 mb-4 fw-light">
                 Lütfen bizimle paylaş.
               </p>
-              <form className="needs-validation" novalidate>
+              <form className="needs-validation" noValidate>
                 <div className="mb-3">
                   <input
                     type="email"
