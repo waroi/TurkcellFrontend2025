@@ -23,7 +23,7 @@ export default function Footer() {
                   </a>
                 </li>
                 <li class="list-group-item">
-                  <a href="#about-us" class="text-decoration-none text-white">
+                  <a href="#aboutUs" class="text-decoration-none text-white">
                     Hakkımızda
                   </a>
                 </li>
@@ -43,7 +43,7 @@ export default function Footer() {
                   </a>
                 </li>
                 <li class="list-group-item">
-                  <a href="#contact-us" class="text-decoration-none text-white">
+                  <a href="#contactUs" class="text-decoration-none text-white">
                     Bize Ulaşın
                   </a>
                 </li>

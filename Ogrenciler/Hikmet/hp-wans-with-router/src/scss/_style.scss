@@ -41,10 +41,10 @@
 		color: $black;
 		@include transition(background-color, 0.3s);
 		z-index: 1;
-		&:hover {
-			background-color: #000;
-			color: #fff;
-		}
+		// &:hover {
+		// 	background-color: #000;
+		// 	color: #fff;
+		// }
 	}
 	.card-image {
 		position: absolute;
@@ -106,19 +106,6 @@
 	.custom-switch .form-check-input {
 		@include transform(rotate(90deg));
 		@include image-style(100px, 50px);
-	}
-	.custom-switch .form-check-input:checked {
-		background-color: $black;
-		border-color: $dark;
-	}
-	.custom-switch .form-check-input {
-		background-color: $white;
-		border-color: $secondary;
-	}
-	.custom-switch .form-check-label {
-		margin-left: 15px;
-		font-size: $font-size-base;
-		color: $secondary;
 	}
 }
 .about-us {
