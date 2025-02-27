@@ -1,8 +1,10 @@
 import { NavLink } from "react-router";
-import Router from "./routes/Router";
 import './scss/main.scss';
 import Header from "./components/Header/header";
 import Banner from "./components/Banner/Banner";
+import About from "./components/About/about";
+import BestSeller from "./components/BestSeller/bestSeller";
+import Product from "./components/Product/product";
 
 
 
@@ -12,7 +14,9 @@ function App() {
     <>
       <Header/>
       <Banner/>
-      <Router />
+      <About/>
+      <BestSeller/>
+      <Product/>
     </>
   )
 }

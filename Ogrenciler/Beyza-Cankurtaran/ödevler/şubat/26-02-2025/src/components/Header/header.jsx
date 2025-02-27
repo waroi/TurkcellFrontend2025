@@ -1,8 +1,10 @@
 import React from 'react'
 import {NavLink} from 'react-router';
+
 import Logo from '../../assets/logo.png';
+import Router from '../../routes/Router';
 const Header = () => {
-    return (
+    return (<>
         <header  >
             <nav className="navbar navbar-expand-lg fixed-top navbar-dark mx-auto">
                 <div className="container container-fluid">
@@ -28,7 +30,7 @@ const Header = () => {
                                 <NavLink className="nav-link" href="index.html#products">Ürünler</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink className="nav-link" href="index.html#faq">Sıkça Sorulan Sorular</NavLink>
+                                <NavLink className="nav-link" to="/sss">Sıkça Sorulan Sorular</NavLink>
                             </li>
                             <li className="nav-item">
                                 <NavLink className="nav-link" href="index.html#contact-us">Bize Ulaşın</NavLink>
@@ -59,8 +61,10 @@ const Header = () => {
                     </div>
                 </div>
             </nav>
+            
         </header>
-    )
+        
+    </>)
 }
 
 export default Header;
