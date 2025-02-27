@@ -1,5 +1,4 @@
 import { NavLink } from "react-router";
-//import prenses from "/src/assets/prenses.webp";
 
 const Home = () => {
   return (
@@ -72,7 +71,7 @@ const Home = () => {
                   className="card product bg-light text-info product-2"
                 >
                   <div className="product-img">
-                    <img src="./assets/CEO.webp" alt="" className="img-fluid" />
+                    <img src="/src/assets/CEO.webp" alt="" className="img-fluid" />
                   </div>
                   <div className="my-3 mx-2">
                     <div className="d-flex justify-content-between">
@@ -105,7 +104,7 @@ const Home = () => {
                 >
                   <div className="product-img">
                     <img
-                      src="./assets/hollywood.webp"
+                      src="/src/assets/hollywood.webp"
                       alt=""
                       className="img-fluid"
                     />
@@ -141,7 +140,7 @@ const Home = () => {
                 >
                   <div className="product-img">
                     <img
-                      src="./assets/ressam.jpeg"
+                      src="/src/assets/ressam.jpeg"
                       alt=""
                       className="img-fluid"
                     />
@@ -177,7 +176,7 @@ const Home = () => {
                 >
                   <div className="product-img">
                     <img
-                      src="./assets/adada-yasayan.jpeg"
+                      src="/src/assets/adada-yasayan.jpeg"
                       alt=""
                       className="img-fluid"
                     />
@@ -213,7 +212,7 @@ const Home = () => {
                 >
                   <div className="product-img">
                     <img
-                      src="./assets/yatla-gezen.jpeg"
+                      src="/src/assets/yatla-gezen.jpeg"
                       alt=""
                       className="img-fluid"
                     />
@@ -249,7 +248,7 @@ const Home = () => {
                 >
                   <div className="product-img">
                     <img
-                      src="./assets/sarkici.jpeg"
+                      src="/src/assets/sarkici.jpeg"
                       alt=""
                       className="img-fluid"
                     />
@@ -285,7 +284,7 @@ const Home = () => {
                 >
                   <div className="product-img">
                     <img
-                      src="./assets/araba-koleksiyon.jpeg"
+                      src="/src/assets/araba-koleksiyon.jpeg"
                       alt=""
                       className="img-fluid"
                     />
@@ -321,7 +320,7 @@ const Home = () => {
                 >
                   <div className="product-img">
                     <img
-                      src="./assets/casinocu.jpeg"
+                      src="/src/assets/casinocu.jpeg"
                       alt=""
                       className="img-fluid"
                     />

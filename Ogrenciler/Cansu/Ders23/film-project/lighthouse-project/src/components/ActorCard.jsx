@@ -21,7 +21,6 @@ const ActorCard = ({ actor }) => {
           <div className="col-md-8">
             <div className="card-body d-flex flex-column justify-content-between h-100">
               <CardTitle className="card-title">{actor.name}</CardTitle>
-
               <CardTypography className="d-flex align-items-center gap-1 py-3">
                 <i
                   className="fa-solid fa-star"
