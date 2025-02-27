@@ -1,14 +1,12 @@
 import { useEffect, useState } from "react";
 import { getMovies, searchMovieActor } from "./components/model/RequestModel";
 import "./App.css";
-// import "bootstrap/dist/css/bootstrap.min.css";
 import FilmModal from "./components/FilmModal";
 
 
 function App() {
   const [movies, setMovies] = useState([]);
   const [search, setSearch] = useState("");
-
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedMovies, setSelectedMovies] = useState(null);
 
@@ -66,8 +64,8 @@ function App() {
               <div className="card h-100" key={movie.id}>
                 <div className="card-body h-100">
                   <img className="my-4"
-                    src={movie.poster_path
-                      ? `https://image.tmdb.org/t/p/w185/${movie.poster_path}`
+                    src={movie.profile_path
+                      ? `https://image.tmdb.org/t/p/w185/${movie.profile_path}`
                       : "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg "}
                     alt={movie.title}
                   />
