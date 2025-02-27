@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router";
 import Logo from "../../assets/logo.png";
-const Header = () => {
+const Header = ({ scrollToSection }) => {
   return (
     <>
       <nav className="navbar navbar-expand-lg fixed-top navbar-dark mx-auto">
@@ -31,19 +31,19 @@ const Header = () => {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/#about-us">
+                <a className="nav-link" href="#aboutUs">
                   Hakkımızda
-                </NavLink>
+                </a>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/#bestseller">
+                <a className="nav-link" href="#bestseller">
                   Çok Satanlar
-                </NavLink>
+                </a>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/#products">
+                <a className="nav-link" href="#products">
                   Ürünler
-                </NavLink>
+                </a>
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/sss">

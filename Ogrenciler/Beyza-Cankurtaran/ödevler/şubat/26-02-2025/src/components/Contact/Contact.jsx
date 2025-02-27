@@ -3,78 +3,84 @@ import React from "react";
 export default function Contact() {
   return (
     <>
-      <section class="contact-us" id="contact-us">
-        <div class="overlay">
-          <div class="container py-4">
-            <div class="row justify-content-center">
-              <div class="col-lg-8">
+      <section className="contact-us" id="contactUs">
+        <div className="overlay">
+          <div className="container py-4">
+            <div className="row justify-content-center">
+              <div className="col-lg-8">
                 <form
                   action="#"
-                  class="p-3 bg-white needs-validation"
+                  className="p-3 bg-white needs-validation"
                   novalidate
                 >
-                  <h2 class="h4 text-primary text-center mb-3">Bize Ulaşın</h2>
-                  <div class="row form-group">
-                    <div class="col-md-6 mb-2 mb-md-0">
-                      <label class="text-black" for="fname">
+                  <h2 className="h4 text-primary text-center mb-3">
+                    Bize Ulaşın
+                  </h2>
+                  <div className="row form-group">
+                    <div className="col-md-6 mb-2 mb-md-0">
+                      <label className="text-black" for="fname">
                         Adınız
                       </label>
                       <input
                         type="text"
                         id="fname"
-                        class="form-control rounded-0"
+                        className="form-control rounded-0"
                         required
                       />
-                      <div class="invalid-feedback">Lütfen adınızı girin.</div>
+                      <div className="invalid-feedback">
+                        Lütfen adınızı girin.
+                      </div>
                     </div>
-                    <div class="col-md-6">
-                      <label class="text-black" for="lname">
+                    <div className="col-md-6">
+                      <label className="text-black" for="lname">
                         Soyadınız
                       </label>
                       <input
                         type="text"
                         id="lname"
-                        class="form-control rounded-0"
+                        className="form-control rounded-0"
                         required
                       />
-                      <div class="invalid-feedback">
+                      <div className="invalid-feedback">
                         Lütfen soyadınızı girin.
                       </div>
                     </div>
                   </div>
-                  <div class="row form-group">
-                    <div class="col-md-12 mb-2">
-                      <label class="text-black" for="email">
+                  <div className="row form-group">
+                    <div className="col-md-12 mb-2">
+                      <label className="text-black" for="email">
                         Mail Adresiniz
                       </label>
                       <input
                         type="email"
                         id="email"
-                        class="form-control rounded-0"
+                        className="form-control rounded-0"
                         required
                       />
-                      <div class="invalid-feedback">
+                      <div className="invalid-feedback">
                         Lütfen geçerli bir e-posta adresi girin.
                       </div>
                     </div>
                   </div>
-                  <div class="row form-group">
-                    <div class="col-md-12 mb-2">
-                      <label class="text-black" for="subject">
+                  <div className="row form-group">
+                    <div className="col-md-12 mb-2">
+                      <label className="text-black" for="subject">
                         Konu
                       </label>
                       <input
                         type="text"
                         id="subject"
-                        class="form-control rounded-0"
+                        className="form-control rounded-0"
                         required
                       />
-                      <div class="invalid-feedback">Lütfen konuyu girin.</div>
+                      <div className="invalid-feedback">
+                        Lütfen konuyu girin.
+                      </div>
                     </div>
                   </div>
-                  <div class="row form-group">
-                    <div class="col-md-12 mb-2">
-                      <label class="text-black" for="message">
+                  <div className="row form-group">
+                    <div className="col-md-12 mb-2">
+                      <label className="text-black" for="message">
                         Mesaj
                       </label>
                       <textarea
@@ -82,21 +88,21 @@ export default function Contact() {
                         id="message"
                         cols="30"
                         rows="7"
-                        class="form-control rounded-0"
+                        className="form-control rounded-0"
                         placeholder="Mesajınızı buraya yazabilirsiniz..."
                         required
                       ></textarea>
-                      <div class="invalid-feedback">
+                      <div className="invalid-feedback">
                         Lütfen mesajınızı yazın.
                       </div>
                     </div>
                   </div>
-                  <div class="row form-group">
-                    <div class="col-md-12">
+                  <div className="row form-group">
+                    <div className="col-md-12">
                       <input
                         type="submit"
                         value="Gönder"
-                        class="btn btn-primary mr-2 mb-2"
+                        className="btn btn-primary mr-2 mb-2"
                       />
                     </div>
                   </div>
