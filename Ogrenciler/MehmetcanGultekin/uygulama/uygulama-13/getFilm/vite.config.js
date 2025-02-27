@@ -6,14 +6,14 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   build: {
-    minify: 'terser', // Daha iyi sıkıştırma için 'terser' kullan
+    minify: 'terser', 
     terserOptions: {
       compress: {
-        drop_console: true, // Konsol loglarını kaldırır
+        drop_console: true, 
         drop_debugger: true,
       },
       format: {
-        comments: false, // Yorumları kaldır
+        comments: false, 
       },
     },
   },
