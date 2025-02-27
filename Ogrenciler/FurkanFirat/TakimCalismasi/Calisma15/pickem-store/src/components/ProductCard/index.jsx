@@ -7,7 +7,7 @@ export default function ProductCard({ player }) {
         <div className="row g-0 align-items-center">
           <div className="col-lg-6 d-flex justify-content-center align-items-center">
             <NavLink
-              to="/oyuncu/:playerName"
+               to={`/oyuncu/${player.playerName}`}
               className="text-decoration-none position-relative"
             >
               <img className="img-fluid" src={player.playerImg} alt={player} />
@@ -17,7 +17,7 @@ export default function ProductCard({ player }) {
             <div className="card-body">
               <h5 className="card-title fw-bold d-flex justify-content-between">
                 <NavLink
-                  to="/oyuncu/:playerName"
+                  to={`/oyuncu/${player.playerName}`}
                   className="text-decoration-none"
                 >
                   {player.playerName}

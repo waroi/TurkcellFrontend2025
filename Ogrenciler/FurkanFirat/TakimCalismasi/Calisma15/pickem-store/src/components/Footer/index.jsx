@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router";
 
-function index() {
+function Footer() {
   return (
     <>
       <footer className="bg-extra-dark-purple text-white pt-20">
@@ -80,4 +80,4 @@ function index() {
   );
 }
 
-export default index;
+export default Footer;
