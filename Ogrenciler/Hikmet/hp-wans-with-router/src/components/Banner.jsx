@@ -1,4 +1,13 @@
+import { useState } from "react";
+
 function Banner() {
+
+	const [active, setActive] = useState( true);
+
+	function handleSwitch(){
+		setActive((prev) => !prev);
+	}
+
 	return (
 		<section className="container lumos mt-50 mb-50">
 			<div className="row">
@@ -8,16 +17,17 @@ function Banner() {
 					</div>
 				</div>
 				<div className="col-12 col-sm-6 col-md-4 d-flex justify-content-center align-items-center mb-4">
-					<div className="card card-lumos d-flex justify-content-center align-items-center text-center rounded-3">
+					<div className={active ? `bg-black text-white card card-lumos d-flex justify-content-center align-items-center text-center rounded-3`:`bg-white text-black card card-lumos d-flex justify-content-center align-items-center text-center rounded-3`}>
 						<div className="container d-flex flex-column justify-content-center align-items-center text-center">
 							<h2>Lumos</h2>
 							<div className="custom-switch d-flex justify-content-center align-items-center">
 								<div className="form-check form-switch mt-20 mb-20">
 									<input
-										className="form-check-input"
+										className={ active ? "form-check-input bg-white": "form-check-input bg-black"}
 										type="checkbox"
 										id="customSwitch"
-										defaultChecked
+										onClick={handleSwitch}
+										checked={active}
 									/>
 									<label
 										className="form-check-label"

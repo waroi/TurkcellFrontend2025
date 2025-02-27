@@ -30,11 +30,11 @@ function Products() {
 								</p>
 							</div>
 							<div className="card-footer">
-								<a
-									href="product-1.html"
+								<NavLink
+									to="/product-1"
 									className="btn btn-success d-flex justify-content-center align-items-center">
 									Detaylar
-								</a>
+								</NavLink>
 							</div>
 						</div>
 					</div>
@@ -59,11 +59,11 @@ function Products() {
 								</p>
 							</div>
 							<div className="card-footer">
-								<a
-									href="product-2.html"
+								<NavLink
+									to="/product-2"
 									className="btn btn-success d-flex justify-content-center align-items-center">
 									Detaylar
-								</a>
+								</NavLink>
 							</div>
 						</div>
 					</div>
@@ -89,11 +89,11 @@ function Products() {
 								</p>
 							</div>
 							<div className="card-footer">
-								<a
-									href="product-3.html"
+								<NavLink
+									to="/product-3"
 									className="btn btn-success d-flex justify-content-center align-items-center">
 									Detaylar
-								</a>
+								</NavLink>
 							</div>
 						</div>
 					</div>
