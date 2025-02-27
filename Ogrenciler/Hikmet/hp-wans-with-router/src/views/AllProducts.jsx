@@ -522,11 +522,11 @@ function AllProducts() {
 								</p>
 							</div>
 							<div className="card-footer">
-								<a
+								<NavLink
 									to="/product-10"
 									className="btn btn-success d-flex justify-content-center align-items-center">
 									Detaylar
-								</a>
+								</NavLink>
 							</div>
 						</div>
 					</div>
@@ -552,11 +552,11 @@ function AllProducts() {
 								</p>
 							</div>
 							<div className="card-footer">
-								<a
+								<NavLink
 									to="/product-11"
 									className="btn btn-success d-flex justify-content-center align-items-center">
 									Detaylar
-								</a>
+								</NavLink>
 							</div>
 						</div>
 					</div>
@@ -582,11 +582,11 @@ function AllProducts() {
 								</p>
 							</div>
 							<div className="card-footer">
-								<a
+								<NavLink
 									to="/product-12"
 									className="btn btn-success d-flex justify-content-center align-items-center">
 									Detaylar
-								</a>
+								</NavLink>
 							</div>
 						</div>
 					</div>
