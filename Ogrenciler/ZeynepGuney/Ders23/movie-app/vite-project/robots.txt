@@ -1,19 +1,3 @@
 User-agent: *
 Allow: /
 
-# Disallow access to development and build files
-Disallow: /node_modules/
-Disallow: /src/
-Disallow: /public/
-Disallow: /.vite/
-Disallow: /dist/
-
-# Disallow access to specific resource types
-Disallow: *.jsx$
-Disallow: *.tsx$
-Disallow: *.js.map$
-Disallow: *.css.map$
-
-# Prevent indexing of client module files
-Disallow: /@vite/client
-Disallow: /@react-refresh
