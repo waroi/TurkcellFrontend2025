@@ -1,10 +1,8 @@
-import React from 'react'
-import logoLeft from "../../assets/images/l-3.png"; // Doğrudan import et
-import logoRight from "../../assets/images/l-2.png";
+import logoLeft from "../../../public/images/l-3.png";
+import logoRight from "../../../public/images/l-2.png";
 
 const index = () => {
   return (
-
     <nav className="navbar navbar-expand-lg bg-danger sticky-top top-0 py-0">
       <div className="container align-items-center">
         <a
@@ -92,8 +90,7 @@ const index = () => {
         </div>
       </div>
     </nav>
-  )
-}
+  );
+};
 
-export default index
-
+export default index;

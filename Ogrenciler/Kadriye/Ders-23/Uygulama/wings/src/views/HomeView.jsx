@@ -1,16 +1,13 @@
-import React from 'react'
-import Navbar from '../components/Navbar'
-import CarouselComponent from '../components/Carousel'
-import Card from '../components/Card'
+import CarouselComponent from "../components/Carousel";
+import CardList from "../components/CardList";
 
 const HomeView = () => {
-    return (
-        <>
-            <Navbar />
-            <CarouselComponent />
-            <Card />
-        </>
-    )
-}
+  return (
+    <>
+      <CarouselComponent />
+      <CardList />
+    </>
+  );
+};
 
-export default HomeView
+export default HomeView;
