@@ -377,7 +377,7 @@ function AllProducts() {
 							</div>
 							<div className="card-footer">
 								<NavLink
-									href="/product-5"
+									to="/product-5"
 									className="btn btn-success d-flex justify-content-center align-items-center">
 									Detaylar
 								</NavLink>
