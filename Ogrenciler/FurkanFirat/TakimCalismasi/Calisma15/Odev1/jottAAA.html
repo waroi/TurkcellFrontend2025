@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Pick'em Store — jottAAA</title>
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg bg-dark-purple fixed-top shadow-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand text-white fs-36 ms-4" href="index.html">pick'em</a>
+            <button class="navbar-toggler btn-white border-0" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle team navigation">
+                <i class="bi bi-list text-white"></i>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title fs-36 text-white" id="offcanvasNavbarLabel">pick'em</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 fw-semibold">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html">Anasayfa</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="oyuncular.html">Oyuncular</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link disabled" aria-disabled="true" href="silahlar.html">Silahlar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="bombalar.html">Bombalar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="hakkimizda.html">Hakkımızda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="sss.html">S.S.S</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="iletisim.html">İletişim</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-section mt-20">
+        <div>
+            <div class="container-fluid container-lg">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a class="text-decoration-none text-white-gold"
+                                href="index.html">Anasayfa</a>
+                        </li>
+                        <li class="breadcrumb-item"><a class="text-decoration-none text-white-gold"
+                                href="oyuncular.html">Oyuncular</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">jottAAA</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <section class="player-detail-section">
+            <div class="container-fluid container-lg">
+                <!-- Player Card -->
+                <div class="player-detail-card card bg-extra-dark-purple p-4 pt-15 text-white position-relative">
+                    <span class="new-badge badge rounded-pill text-bg-primary top-5 position-absolute">YENİ</span>
+                    <div class="row g-0">
+                        <!-- Player Image -->
+                        <div class="col-lg-4">
+                            <div class="player-image text-center">
+                                <img src="https://img-cdn.hltv.org/playerbodyshot/zdj4FmASFChD1cChR79TsJ.png?ixlib=java-2.1.0&w=400&s=d90d409432c76b4afaeb35876d802bb3"
+                                    alt="jottAAA" class="img-fluid">
+                            </div>
+                        </div>
+
+                        <!-- Player Info -->
+                        <div class="col-lg-8">
+                            <div class="row">
+                                <div class="player-info col-lg-6">
+                                    <h2 class="player-name mb-4 fw-bold">JottAAA</h2>
+                                    <div class="player-details mb-4">
+                                        <ul class="list-unstyled">
+                                            <li class="mb-2"><strong>İsim:</strong> Samet Köklü</li>
+                                            <li class="mb-2"><strong>Yaş:</strong> 22</li>
+                                            <li class="mb-2 country tr"><strong>Ülke:</strong> Türkiye</li>
+                                            <li class="mb-2 ef"><strong>Takım:</strong> Eternal Fire</li>
+                                            <li class="mb-2"><strong>Rol:</strong> Rifler</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- ACHIEVEMENTS -->
+                                <div class="achievements-section col-lg-6 mb-4">
+                                    <h3 class="section-title fw-bold mb-4">Başarılar</h3>
+                                    <div class="row g-1">
+                                        <div class="achievememt-item bg-light-purple p-2 rounded w-25 text-center">
+                                            <div class="achievement-image">
+                                                <img class="img-fluid"
+                                                    src="https://www.hltv.org/img/static/faceit/fpl-trophy.png"
+                                                    alt="FPL CSGO EU - June 2023">
+                                            </div>
+                                            <div class="achievement-info"><small>FPL CSGO EU - June 2023</small></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- PLAYER STATS -->
+                                <div class="player-stats mb-4">
+                                    <h3 class="mb-4 fw-bold">İstatistikler</h3>
+                                    <div class="row g-3">
+                                        <div class="col-12 col-sm-6 col-md-3">
+                                            <div class="stat-item border border-light-purple text-center p-3 rounded">
+                                                <h4>K/D</h4>
+                                                <span class="stat-value">1.15</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-6 col-md-3">
+                                            <div class="stat-item border border-light-purple text-center p-3 rounded">
+                                                <h4>HS</h4>
+                                                <span class="stat-value">58.2%</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 col-sm-6 col-md-3">
+                                            <div class="stat-item border border-light-purple text-center p-3 rounded">
+                                                <h4>ADR</h4>
+                                                <span class="stat-value">87.2</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-6 col-md-3">
+                                            <div class="stat-item border border-light-purple text-center p-3 rounded">
+                                                <h4>Rating</h4>
+                                                <span class="stat-value">2.1</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="btn btn-secondary text-white w-100">Mesaj Gönder</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </section>
+    </main>
+
+
+
+
+    <!-- FOOTER -->
+    <footer class="bg-extra-dark-purple text-white pt-20">
+        <div class="container">
+            <div class="row">
+                <div class="col-6 col-md-3 mb-3">
+                    <h5>PICK'EM STORE</h5>
+                    <ul class="nav flex-column text-white">
+                        <li class="nav-item mb-2"><a href="index.html" class="nav-link p-0 text-white">Anasayfa</a>
+                        </li>
+                        <li class="nav-item mb-2"><a href="hakkimizda.html"
+                                class="nav-link p-0 text-white">Hakkımızda</a>
+                        </li>
+                        <li class="nav-item mb-2"><a href="sss.html" class="nav-link p-0 text-white">S.S.S</a>
+                        </li>
+                        <li class="nav-item mb-2"><a href="iletisim.html" class="nav-link p-0 text-white">İletişim</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-3 mb-3">
+                    <h5>ÜRÜNLER</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="oyuncular.html" class="nav-link p-0 text-white">Oyuncular</a>
+                        </li>
+                        <li class="nav-item mb-2"><a href="bombalar.html" class="nav-link p-0 text-white">Bombalar</a>
+                        </li>
+                        <li class="nav-item mb-2"><a href="silahlar.html" class="nav-link p-0 disabled">Silahlar
+                                (Yakında)</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-5 offset-md-1 mb-3">
+                    <form class="contact-us-form">
+                        <h5>Pick'em Store'a abone olun.</h5>
+                        <p>Yeni gelen oyunculardan haberdar olmak için abone olun.</p>
+                        <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                            <label for="newsletter" class="visually-hidden">Email</label>
+                            <input id="newsletter" type="text" class="form-control" placeholder="Email">
+                            <button class="btn btn-primary text-nowrap" type="button">Abone ol</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="text-center border-top border-header-purple py-5">
+                <p>© 2025 <span class="fw-bold text-gold">Pick'em Store </span>Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
