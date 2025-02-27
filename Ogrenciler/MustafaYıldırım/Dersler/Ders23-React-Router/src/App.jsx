@@ -13,7 +13,7 @@ function App() {
           <NavLink to="/user">Kullanici</NavLink>
         </li>
         <li>
-          <NavLink to="/parametre">Parametre</NavLink>
+          <NavLink to="/parametre/101">Parametre</NavLink>
         </li>
       </ul>
       <Router />
