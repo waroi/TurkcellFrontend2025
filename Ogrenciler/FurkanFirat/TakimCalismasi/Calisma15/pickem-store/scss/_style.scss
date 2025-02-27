@@ -1,4 +1,4 @@
-@import './mixins.scss';
+@import "./mixins.scss";
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +6,8 @@
 .hero,
 .new-arrivals,
 .contact-us,
-.main-section {
+.main-section,
+.mid-content {
   @include section-style;
 }
 .section-header {
@@ -14,33 +15,33 @@
 }
 .ef::after {
   @include flag-icon(
-    'https://img-cdn.hltv.org/teamlogo/Tafdq71X3B_-73b73bAixr.png?ixlib=java-2.1.0&w=50&s=f1505e0f7e03bed0d0d2b4c809768198'
+    "https://img-cdn.hltv.org/teamlogo/Tafdq71X3B_-73b73bAixr.png?ixlib=java-2.1.0&w=50&s=f1505e0f7e03bed0d0d2b4c809768198"
   );
 }
 .faze::after {
   @include flag-icon(
-    'https://img-cdn.hltv.org/teamlogo/CwYPtX9fBbYvesZgGhUR7v.png?ixlib=java-2.1.0&w=50&s=372e434b0599d852b41bc98cbf12495e'
+    "https://img-cdn.hltv.org/teamlogo/CwYPtX9fBbYvesZgGhUR7v.png?ixlib=java-2.1.0&w=50&s=372e434b0599d852b41bc98cbf12495e"
   );
 }
 .navi::after {
   @include flag-icon(
-    'https://img-cdn.hltv.org/teamlogo/9iMirAi7ArBLNU8p3kqUTZ.svg?ixlib=java-2.1.0&s=4dd8635be16122656093ae9884675d0c'
+    "https://img-cdn.hltv.org/teamlogo/9iMirAi7ArBLNU8p3kqUTZ.svg?ixlib=java-2.1.0&s=4dd8635be16122656093ae9884675d0c"
   );
 }
 .tr::after {
-  @include flag-icon('https://www.hltv.org/img/static/flags/30x20/TR.gif');
+  @include flag-icon("https://www.hltv.org/img/static/flags/30x20/TR.gif");
 }
 .uk::after {
-  @include flag-icon('https://www.hltv.org/img/static/flags/30x20/UA.gif');
+  @include flag-icon("https://www.hltv.org/img/static/flags/30x20/UA.gif");
 }
 .denmark::after {
-  @include flag-icon('https://www.hltv.org/img/static/flags/30x20/DK.gif');
+  @include flag-icon("https://www.hltv.org/img/static/flags/30x20/DK.gif");
 }
 .sk::after {
-  @include flag-icon('https://www.hltv.org/img/static/flags/30x20/SK.gif');
+  @include flag-icon("https://www.hltv.org/img/static/flags/30x20/SK.gif");
 }
 .lv::after {
-  @include flag-icon('https://www.hltv.org/img/static/flags/30x20/LV.gif');
+  @include flag-icon("https://www.hltv.org/img/static/flags/30x20/LV.gif");
 }
 .contact-us-form {
   .form-control {
@@ -161,7 +162,7 @@ footer li a:hover {
     }
   }
   .container-fluid::after {
-    content: '';
+    content: "";
     position: fixed;
     top: 0;
     left: 0;
