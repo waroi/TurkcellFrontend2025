@@ -1,14 +1,20 @@
-function Navbar() {
+import React from 'react'
+import logoLeft from "../../assets/images/l-3.png"; // Doğrudan import et
+import logoRight from "../../assets/images/l-2.png";
+
+const index = () => {
   return (
+
     <nav className="navbar navbar-expand-lg bg-danger sticky-top top-0 py-0">
       <div className="container align-items-center">
         <a
           className="navbar-brand d-flex align-items-center text-white text-uppercase p-0"
           href="./index.html"
         >
-          <img src="../assets/images/l-3.png" alt="logo left" />
+          <img src={logoLeft} alt="logo left" height={50} />
+
           <h2 className="m-0">Wings</h2>
-          <img src="./images/l-2.png" alt="logo right" />
+          <img src={logoRight} alt="logo right" height={50} />
         </a>
         <button
           className="navbar-toggler py-2"
@@ -78,6 +84,7 @@ function Navbar() {
                 <img
                   src="https://img.icons8.com/?size=100&id=6651&format=png&color=ffffff"
                   alt="SSS image"
+                  height={50}
                 />
               </button>
             </li>
@@ -85,6 +92,8 @@ function Navbar() {
         </div>
       </div>
     </nav>
-  );
+  )
 }
-export default Navbar;
+
+export default index
+
