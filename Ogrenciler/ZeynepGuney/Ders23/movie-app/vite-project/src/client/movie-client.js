@@ -7,7 +7,7 @@ export default class MovieClient {
 
 	static async getMovies(movie) {
 		return fetch(
-			`${BASE_MOVIE_URL}?query=${movie}&include_adult=true&language=en-US&page=1`,
+			`${BASE_MOVIE_URL}?query=${movie}&include_adult=false&language=en-US&page=1`,
 			{
 				method: "GET",
 				headers: {
@@ -19,7 +19,7 @@ export default class MovieClient {
 	}
 	static async getPerson(person) {
 		return fetch(
-			`${BASE_PERSON_URL}?query=${person}&include_adult=true&language=en-US&page=1`,
+			`${BASE_PERSON_URL}?query=${person}&include_adult=false&language=en-US&page=1`,
 			{
 				method: "GET",
 				headers: {
