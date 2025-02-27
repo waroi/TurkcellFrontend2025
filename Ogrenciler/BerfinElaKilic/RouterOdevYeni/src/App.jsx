@@ -1,13 +1,13 @@
 import "./App.css";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
-import Home from "./views/Home";
+import Router from "./routes/Router";
 
 function App() {
   return (
     <>
       <NavBar />
-      <Home />
+      <Router/>
       <Footer />
     </>
   );
