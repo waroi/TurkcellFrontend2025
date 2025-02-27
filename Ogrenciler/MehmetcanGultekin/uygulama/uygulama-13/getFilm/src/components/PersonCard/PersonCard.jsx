@@ -3,8 +3,6 @@ import ListGroup from "react-bootstrap/ListGroup";
 import { getFilm } from "../../api/getFilm";
 import { useEffect, useState } from "react";
 import CardTitle from "./styled";
-// const img_url =
-//   "https://image.tmdb.org/t/p/w500/7iMBZzVZtG0oBug4TfqDb9ZxAOa.jpg";
 function PersonCard({ movie }) {
   const [movieInfo, setMovieInfo] = useState();
 
@@ -13,7 +11,6 @@ function PersonCard({ movie }) {
       getFilm(movie.id)
         .then((data) => {
           setMovieInfo(data);
-          // console.log(data + " movie crew");
         })
         .catch((err) => {
           console.error(err);
@@ -23,9 +20,9 @@ function PersonCard({ movie }) {
 
   return (
     <Card className="h-100" style={{ width: "18rem" }}>
-      <Card.Img
+      <Card.Img width={220} height={124} className="img-fluid"
         variant="top"
-        src={`https://image.tmdb.org/t/p/w500/` + movie?.poster_path}
+        src={`https://image.tmdb.org/t/p/w500/` + movie?.poster_path} alt={movie?.original_title} loading="lazy" fetchPriority="network-only"
       />
       <Card.Body>
         <CardTitle>{movie?.original_title}</CardTitle>
