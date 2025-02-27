@@ -1,4 +1,4 @@
-import React from "react";
+import { NavLink } from "react-router";
 
 function Navbar() {
 	return (
@@ -7,9 +7,9 @@ function Navbar() {
 			data-bs-theme="dark"
 			id="main-nav">
 			<div className="container">
-				<a className="navbar-brand fs-24" href="index.html">
+				<NavLink className="navbar-brand fs-24" to="/">
 					HP WANDS
-				</a>
+				</NavLink>
 				<button
 					className="navbar-toggler"
 					type="button"
@@ -23,13 +23,13 @@ function Navbar() {
 				<div className="collapse navbar-collapse" id="navbarC">
 					<ul className="navbar-nav mx-auto mb-2 mb-lg-0 gap-4">
 						<li className="nav-item">
-							<a
+							<NavLink
 								className="nav-link active"
 								aria-current="page"
-								href="index.html"
+								to="/"
 								data-bs-dismiss="collapse">
 								Anasayfa
-							</a>
+							</NavLink>
 						</li>
 						<li className="nav-item">
 							<a
@@ -53,12 +53,12 @@ function Navbar() {
 							</a>
 						</li>
 						<li className="nav-item">
-							<a
+							<NavLink
 								className="nav-link"
-								href="iletisim.html"
+								to="/contact"
 								data-bs-dismiss="collapse">
 								İletişim
-							</a>
+							</NavLink>
 						</li>
 					</ul>
 					<form className="d-flex">
