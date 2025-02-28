@@ -1,8 +1,7 @@
-import { useState, useEffect } from "react";
-import Header from "../src/components/Header";
-import ProductCard from "../src/components/ProductCard";
-import { fetchPlayers } from "../service/api";
-import Footer from "../src/components/Footer";
+import { useState, useEffect } from 'react';
+import Header from '../src/components/Header';
+import ProductCard from '../src/components/ProductCard';
+import { fetchPlayers } from '../service/api';
 
 export default function PlayersView() {
   const [players, setPlayers] = useState([]);
@@ -17,13 +16,13 @@ export default function PlayersView() {
   }, []);
   return (
     <>
-      <main className="main-section">
-        <div className="my-20">
-          <Header text={"OYUNCULAR"} />
+      <main className='main-section'>
+        <div className='my-20'>
+          <Header text={'OYUNCULAR'} />
         </div>
-        <section class="players">
-          <div class="container">
-            <div class="player-cards row gy-4">
+        <section className='players'>
+          <div className='container'>
+            <div className='player-cards row gy-4'>
               {players.length > 0 ? (
                 players.map((player) => (
                   <ProductCard key={player.playerName} player={player} />
@@ -35,7 +34,6 @@ export default function PlayersView() {
           </div>
         </section>
       </main>
-      <Footer />
     </>
   );
 }

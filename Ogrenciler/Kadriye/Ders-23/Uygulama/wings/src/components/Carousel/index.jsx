@@ -1,7 +1,6 @@
 import angelWing1 from "../../../public/images/angel-wing-1-tra.png";
 import butterflyWing1 from "../../../public/images/butterfly-wing-1-tra.png";
 import fairyWing1 from "../../../public/images/fairy-wing-1-t.png";
-import "./style.css";
 
 const CarouselComponent = () => {
   return (
@@ -13,7 +12,7 @@ const CarouselComponent = () => {
               type="button"
               data-bs-target="#wingsCarousel"
               data-bs-slide-to="0"
-              className="active bg-black"
+              className="active"
               aria-current="true"
               aria-label="Slide 1"
             ></button>
@@ -22,13 +21,11 @@ const CarouselComponent = () => {
               data-bs-target="#wingsCarousel"
               data-bs-slide-to="1"
               aria-label="Slide 2"
-              className="bg-black"
             ></button>
             <button
               type="button"
               data-bs-target="#wingsCarousel"
               data-bs-slide-to="2"
-              className="bg-black"
               aria-label="Slide 3"
             ></button>
           </div>
@@ -113,7 +110,7 @@ const CarouselComponent = () => {
             data-bs-slide="prev"
           >
             <span
-              className="carousel-control-prev-icon bg-black"
+              className="carousel-control-prev-icon"
               aria-hidden="true"
             ></span>
             <span className="visually-hidden">Previous</span>
@@ -125,7 +122,7 @@ const CarouselComponent = () => {
             data-bs-slide="next"
           >
             <span
-              className="carousel-control-next-icon btn-primary bg-black"
+              className="carousel-control-next-icon btn-primary"
               aria-hidden="true"
             ></span>
             <span className="visually-hidden">Next</span>

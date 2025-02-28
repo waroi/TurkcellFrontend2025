@@ -1,0 +1,169 @@
+{
+  "pokemons": [
+    {
+      "id": "pikachu",
+      "name": "Pikachu",
+      "description": "The world's most famous Electric-type Pokémon!",
+      "price": 29.99,
+      "image": "pikachu.webp"
+    },
+    {
+      "id": "charizard",
+      "name": "Charizard",
+      "description": "The mighty Fire/Flying type evolution of Charmeleon!",
+      "price": 39.99,
+      "image": "charizard.webp"
+    },
+    {
+      "id": "mewtwo",
+      "name": "Mewtwo",
+      "description": "An enhanced Psychic-type Legendary Pokémon!",
+      "price": 49.99,
+      "image": "mewtwo.webp"
+    },
+    {
+      "id": "dragonite",
+      "name": "Dragonite",
+      "description": "The powerful Flying type evolution!",
+      "price": 44.99,
+      "image": "dragonite.webp"
+    },
+    {
+      "id": "snorlax",
+      "name": "Snorlax",
+      "description": "The sleepy Normal-type Pokémon!",
+      "price": 34.99,
+      "image": "snorlax.webp"
+    },
+    {
+      "id": "vaporeon",
+      "name": "Vaporeon",
+      "description": "The Water-type evolution of Eevee!",
+      "price": 24.99,
+      "image": "vaporeon.webp"
+    },
+    {
+      "id": "gengar",
+      "name": "Gengar",
+      "description": "The spooky Ghost/Poison type final form of Gastly!",
+      "price": 19.99,
+      "image": "gengar.webp"
+    },
+    {
+      "id": "lapras",
+      "name": "Lapras",
+      "description": "The gentle Water/Ice type transport Pokémon!",
+      "price": 14.99,
+      "image": "lapras.webp"
+    },
+    {
+      "id": "arcanine",
+      "name": "Arcanine",
+      "description": "The majestic Fire-type evolution of Growlithe!",
+      "price": 54.99,
+      "image": "arcanine.webp"
+    }
+  ],
+
+  "pokemon-details": [
+    {
+      "id": "pikachu",
+      "name": "Pikachu",
+      "description": "Pikachu is an Electric-type Pokémon introduced in Generation I. When several of these Pokémon gather, their electricity can cause lightning storms. It keeps its tail raised to monitor its surroundings.",
+      "price": 29.99,
+      "image": "pikachu.webp",
+      "type": "Electric",
+      "height": 0.4,
+      "weight": 6,
+      "abilities": ["Static", "Lightning Rod (Hidden)"]
+    },
+    {
+      "id": "charizard",
+      "name": "Charizard",
+      "description": "Charizard is a Fire/Flying type Pokémon and the final evolution of Charmander. It spits fire that is hot enough to melt boulders. Known to cause forest fires unintentionally. When expelling a blast of super hot fire, the red flame at the tip of its tail burns more intensely.",
+      "price": 39.99,
+      "image": "charizard.webp",
+      "type": "Fire/Flying",
+      "height": 1.7,
+      "weight": 90.5,
+      "abilities": ["Blaze", "Solar Power (Hidden)"]
+    },
+    {
+      "id": "mewtwo",
+      "name": "Mewtwo",
+      "description": "Mewtwo is a Psychic-type Legendary Pokémon created by genetic manipulation. Its DNA is almost the same as Mew's. However, its size and disposition are vastly different. Its battle abilities have been radically enhanced to exceed Mew's.",
+      "price": 49.99,
+      "image": "mewtwo.webp",
+      "type": "Psychic",
+      "height": 2,
+      "weight": 122,
+      "abilities": ["Pressure", "Unnerve (Hidden)"]
+    },
+    {
+      "id": "dragonite",
+      "name": "Dragonite",
+      "description": "Dragonite is a Dragon/Flying type Pokémon and the final evolution of Dratini. Very few people ever see this Pokémon. Its intelligence matches that of humans, and it has a gentle nature despite its large size and immense power.",
+      "price": 44.99,
+      "image": "dragonite.webp",
+      "type": "Dragon/Flying",
+      "height": 2.2,
+      "weight": 210,
+      "abilities": ["Inner Focus", "Multiscale (Hidden)"]
+    },
+    {
+      "id": "snorlax",
+      "name": "Snorlax",
+      "description": "Snorlax is a Normal-type Pokémon known for its huge appetite and lazy lifestyle. Not satisfied unless it eats over 880 pounds of food every day. When it is done eating, it goes promptly to sleep, which is why it is such a peaceful Pokémon.",
+      "price": 34.99,
+      "image": "snorlax.webp",
+      "type": "Normal",
+      "height": 2.1,
+      "weight": 460,
+      "abilities": ["Immunity", "Thick Fat", "Gluttony (Hidden)"]
+    },
+    {
+      "id": "vaporeon",
+      "name": "Vaporeon",
+      "description": "Vaporeon is a Water-type evolution of Eevee. When Vaporeon's fins begin to vibrate, it is a sign that rain will come within a few hours. Its body's cellular structure is similar to water molecules, enabling it to melt into water at will.",
+      "price": 24.99,
+      "image": "vaporeon.webp",
+      "type": "Water",
+      "height": 1,
+      "weight": 29,
+      "abilities": ["Water Absorb", "Hydration (Hidden)"]
+    },
+    {
+      "id": "gengar",
+      "name": "Gengar",
+      "description": "Gengar is a Ghost/Poison type Pokémon and the final evolution of Gastly. Sometimes, on a dark night, your shadow thrown by a streetlight will suddenly and startlingly overtake you. It is actually a Gengar running past you, pretending to be your shadow.",
+      "price": 19.99,
+      "image": "gengar.webp",
+      "type": "Ghost/Poison",
+      "height": 1.5,
+      "weight": 40.5,
+      "abilities": ["Cursed Body", "Levitate (Hidden)"]
+    },
+    {
+      "id": "lapras",
+      "name": "Lapras",
+      "description": "Lapras is a Water/Ice type Pokémon. A gentle soul that can read the minds of humans. It can ferry people across the sea on its back. It may sing an enchanting cry if it is in a good mood.",
+      "price": 14.99,
+      "image": "lapras.webp",
+      "type": "Electric",
+      "height": 0.4,
+      "weight": 6,
+      "abilities": ["Static", "Lightning Rod (Hidden)"]
+    },
+    {
+      "id": "arcanine",
+      "name": "Arcanine",
+      "description": "Arcanine is a Fire-type Pokémon and the evolved form of Growlithe. The sight of it running over 6,200 miles in a single day and night has captivated many people. Its proud and regal appearance has earned it the nickname \"the Legendary Pokémon.\"",
+      "price": 54.99,
+      "image": "arcanine.webp",
+      "type": "Water/Ice",
+      "height": 2.5,
+      "weight": 220,
+      "abilities": ["Water Absorb", "Shell Armor", "Hydration (Hidden)"]
+    }
+  ]
+}

@@ -1,9 +1,7 @@
-import { useEffect, useState } from "react";
-import { fetchPlayers } from "../../../service/api";
-import Header from "../Header";
-import ProductCard from "../ProductCard";
-
-
+import { useEffect, useState } from 'react';
+import { fetchPlayers } from '../../../service/api';
+import Header from '../Header';
+import ProductCard from '../ProductCard';
 
 export default function Products() {
   const [players, setPlayers] = useState([]);
@@ -19,10 +17,9 @@ export default function Products() {
 
   return (
     <>
-      <Header text={"YENİ GELENLER"} />
-      <section className="new-arrivals">
-        <div className="container">
-          <div className="player-cards row gy-4">
+      <section className='new-arrivals'>
+        <div className='container'>
+          <div className='player-cards row gy-4'>
             {players.length > 0 ? (
               players.map((player) => (
                 <ProductCard key={player.playerName} player={player} />

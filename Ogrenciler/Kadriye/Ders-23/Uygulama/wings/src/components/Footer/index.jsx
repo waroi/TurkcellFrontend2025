@@ -1,5 +1,6 @@
 import "./style.css";
-
+import logoLeft from "../../../public/images/l-4.png";
+import logoRight from "../../../public/images/l-5.png";
 const Footer = () => {
   return (
     <>
@@ -8,9 +9,9 @@ const Footer = () => {
           <div className="row">
             <div className="col-md-6 col-lg-3 text-center text-md-start">
               <div className="logo mb-4 d-flex align-items-center justify-content-center justify-content-md-start">
-                <img src="./images/l-4.png" alt="logo left" height={50} />
+                <img src={logoLeft} alt="logo left" height={50} />
                 <h2 className="m-0 text-white d-inline">Wings</h2>
-                <img src="./images/l-5.png" alt="logo right" height={50} />
+                <img src={logoRight} alt="logo right" height={50} />
               </div>
               <ul className="contact-info list-unstyled d-flex flex-wrap justify-content-around d-md-block pt-3">
                 <li className="mb-2 ms-2">
@@ -38,7 +39,7 @@ const Footer = () => {
               <p className="text-white-50 mb-4 fw-light">
                 Lütfen bizimle paylaş.
               </p>
-              <form className="needs-validation" novalidate>
+              <form className="needs-validation" noValidate>
                 <div className="mb-3">
                   <input
                     type="email"

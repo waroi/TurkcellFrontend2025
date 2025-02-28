@@ -1,5 +1,5 @@
 import React from "react";
-import gazete from "../../assets/gazete-1.png";
+import gazete from "../../assets/gazete-1.webp";
 
 const About = () => {
   return (

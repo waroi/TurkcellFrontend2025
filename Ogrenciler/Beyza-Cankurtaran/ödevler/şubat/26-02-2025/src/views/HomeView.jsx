@@ -5,28 +5,14 @@ import BestSeller from "../components/BestSeller/bestSeller";
 import Product from "../components/Product/product";
 import Footer from "../components/Footer/Footer";
 import { useRef } from "react";
-const HomeView = () => {
-  const aboutRef = useRef(null);
-  const productsRef = useRef(null);
-  const contactRef = useRef(null);
-
-  const scrollToSection = (section) => {
-    const sectionRef = {
-      about: aboutRef,
-      products: productsRef,
-      contact: contactRef,
-    }[section];
-
-    sectionRef?.current?.scrollIntoView({ behavior: "smooth" });
-  };
-
+const HomeView = ({ getirProduct, setSelector }) => {
   return (
     <>
-      <Header scrollToSection={scrollToSection} />
+      <Header />
       <Banner />
-      <About scrollToSection={scrollToSection} />
-      <BestSeller scrollToSection={scrollToSection} />
-      <Product scrollToSection={scrollToSection} />
+      <About />
+      <BestSeller />
+      <Product getirProduct={getirProduct} setSelector={setSelector} />
       <Footer />
     </>
   );
