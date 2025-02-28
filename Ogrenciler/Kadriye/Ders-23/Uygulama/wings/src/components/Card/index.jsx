@@ -53,11 +53,11 @@ const Card = ({ wing }) => {
       </div>
       <NavLink
         to={"/product-detail-view/" + wing.id}
-        className="text-decoration-none"
+        className="text-decoration-none h-100"
       >
-        <div className="card-body d-flex flex-column justify-content-between">
+        <div className="card-body d-flex flex-column justify-content-between h-100">
           <h5 className="card-title fs-5 text-info fw-semibold">{wing.name}</h5>
-          <div>
+          <div className="mt-auto">
             <div className="mb-1">
               <i className="fa-solid fa-star text-warning"></i>
               <i className="fa-solid fa-star text-warning"></i>
@@ -68,9 +68,9 @@ const Card = ({ wing }) => {
             <p className="fs-6 fw-semibold text-secondary">
               {wing.price} <span>₺</span>
             </p>
-            {/* <a href="#" className="btn btn-secondary w-100">
+            <a href="#" className="btn btn-secondary w-100 ">
               Sepete Ekle
-            </a> */}
+            </a>
           </div>
         </div>
       </NavLink>

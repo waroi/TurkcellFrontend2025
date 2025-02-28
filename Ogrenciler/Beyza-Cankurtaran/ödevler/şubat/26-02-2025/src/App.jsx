@@ -4,7 +4,7 @@ import { useState } from "react";
 import products from "./data/data.json";
 
 function App() {
-  const [selector, setSelector] = useState();
+  const [selector, setSelector] = useState("");
   const getirProduct = () =>
     selector
       ? products.filter((product) => product.category[0].name === selector)

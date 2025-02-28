@@ -1,0 +1,270 @@
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+@import '../node_modules/bootstrap-icons/font/bootstrap-icons.css';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --primary: rgb(38, 0, 99);
+  --secondary: rgb(105, 105, 185);
+}
+
+* {
+  font-family: 'Roboto', sans-serif;
+  font-family: "Poppins", sans-serif;
+
+}
+
+.card-basic {
+  background: white;
+  border-radius: 10px;
+  padding: 30px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.header-menu {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: azure;
+  z-index: 3;
+}
+
+@media (max-width: 990px) {
+  .header-menu .user-items a {
+    display: none;
+  }
+}
+
+.banner {
+  background-image: url('src/assets/arkaplan.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.banner p {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.products .product-cards .card {
+  cursor: pointer;
+  transition: all 0.5s ease;
+  color: var(--primary);
+}
+
+.products .product-cards .card:hover {
+  background-color: var(--primary);
+  color: white;
+  transform: scale(1.05);
+}
+
+.about-us {
+  background-color: var(--primary);
+}
+
+.about-us .about-cards .about-card {
+  background: white;
+  border-radius: 10px;
+  padding: 30px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.about-us .about-cards .about-card:hover {
+  transform: translateY(-10px);
+}
+
+.banner-title,
+.products-title,
+.about-title,
+.faq-title,
+.contact-title {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+@media (max-width: 990px) {
+
+  .banner-title,
+  .products-title,
+  .about-title,
+  .faq-title,
+  .contact-title {
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 1.6;
+  }
+}
+
+.card-title {
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+@media (max-width: 990px) {
+  .card-title {
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.6;
+  }
+}
+
+.gif {
+  background-color: black;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.gif .gif-content {
+  animation: walk 15s ease-in-out infinite 3s alternate;
+}
+
+.gif .container-fluid {
+  overflow: hidden;
+}
+
+@keyframes walk {
+  0% {
+    background-color: black;
+    transform: translate(0, 0);
+  }
+
+  25% {
+    background-color: black;
+    transform: translate(400px, 0px);
+  }
+
+  50% {
+    background-color: black;
+    transform: translate(800px, 0px);
+  }
+
+  75% {
+    background-color: black;
+    transform: translate(1200px, 0px);
+  }
+
+  100% {
+    background-color: black;
+    transform: translate(1600px, 0px);
+  }
+}
+
+.faq .faq-cards .faq-card {
+  background: var(--primary);
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  cursor: pointer;
+  user-select: none;
+}
+
+.faq .faq-cards .faq-card:hover {
+  transform: translateY(-10px);
+}
+
+.contact .info-card {
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.contact .info-card:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+.contact .info-card .contact-icon {
+  font-size: 24px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  align-items: center;
+}
+
+.contact .info-card .contact-icon i {
+  color: white;
+}
+
+.contact .info-card a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.contact .info-card a:hover {
+  color: white;
+}
+
+.footer {
+  background-color: var(--primary);
+}
+
+.footer .footer-brand .links {
+  text-decoration: none;
+  color: white;
+}
+
+.footer .footer-social i {
+  color: white;
+}
+
+@media (max-width: 990px) {
+  .footer .footer-social i {
+    display: none;
+  }
+}
+
+.product-detail {
+  background: linear-gradient(145deg, var(--primary), var(--secondary));
+  color: white;
+}
+
+.product-detail .product-img {
+  border-radius: 20px;
+  transition: transform 0.5s ease-in;
+  margin-bottom: 15px;
+}
+
+.product-detail .product-img:hover {
+  transform: scale(1.10);
+}
+
+.product-detail .product-detail-info {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 30px;
+}
+
+.product-detail .product-detail-info h1 {
+  font-size: 48px;
+  font-weight: 900;
+  line-height: 1.6;
+}
+
+@media (max-width: 990px) {
+  .product-detail .product-detail-info h1 {
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 1.6;
+  }
+}
+
+.product-detail .product-detail-info .price-text {
+  font-size: 28px;
+  font-weight: 900;
+  line-height: 1.6;
+  color: rgb(231, 102, 231);
+}

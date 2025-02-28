@@ -11,8 +11,6 @@ const ProductDetailView = () => {
   const [wings, setWings] = useState([]);
 
   useEffect(() => {
-    console.log("lannn");
-
     const fetchWings = async () => {
       try {
         const fetch = await getWings();

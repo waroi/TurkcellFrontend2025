@@ -21,7 +21,7 @@ const CustomHeader = () => {
         <nav class="navbar navbar-expand-lg bg-transparent">
           <div class="container">
             <a
-              class="navbar-brand fw-semibold text-primary fs-4"
+              class="navbar-brand fw-semibold text-primary fs-3 me-5"
               href="./index.html"
             >
               olmayanşeyler.
@@ -38,12 +38,12 @@ const CustomHeader = () => {
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item ">
-                  <NavLink to="/">Anasayfa</NavLink>
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex align-items-center gap-4 fs-5">
+                <li class="nav-item nav-oge">
+                  <NavLink to="/" className={"text-decoration-none p-1 nav-oge-a"}>Anasayfa</NavLink>
                 </li>
-                <li class="nav-item">
-                  <NavLink to="/about">Hakkımızda</NavLink>
+                <li class="nav-item nav-oge">
+                  <NavLink to="/about" className={"text-decoration-none p-1 nav-oge-a"}>Hakkımızda</NavLink>
                 </li>
                 <li class="nav-item dropdown">
                   <a
@@ -55,9 +55,11 @@ const CustomHeader = () => {
                   >
                     Kurumsal
                   </a>
-                  <ul class="dropdown-menu">
+                  <ul class="dropdown-menu ">
                     <li>
-                      <NavLink to="/contact">İletişim</NavLink>
+                      <a class="dropdown-item" href="">
+                        <NavLink to="/contact">İletişim</NavLink>
+                      </a>
                     </li>
                     <li>
                       <hr class="dropdown-divider" />

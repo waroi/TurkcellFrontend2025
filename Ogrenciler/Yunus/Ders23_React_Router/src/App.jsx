@@ -19,6 +19,15 @@ function App() {
         <li>
           <NavLink to="/comments">Yorumlar</NavLink>
         </li>
+        <li>
+          <NavLink to="/news">Haberler</NavLink>
+        </li>
+        <li>
+          <NavLink to="/news/sport">Spor Haberleri</NavLink>
+        </li>
+        <li>
+          <NavLink to="/news/economy">Ekonomi Haberleri</NavLink>
+        </li>
       </ul>
       <Router />
     </>
