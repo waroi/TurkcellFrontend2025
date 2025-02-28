@@ -4,6 +4,9 @@ import Contact from "../views/Contact";
 import FaqView from "../views/Faq";
 import Home from "../views/Home";
 import Product1 from "../views/Product1";
+import Product10 from "../views/Product10";
+import Product11 from "../views/Product11";
+import Product12 from "../views/Product12";
 import Product2 from "../views/Product2";
 import Product3 from "../views/Product3";
 import Product4 from "../views/Product4";
@@ -12,22 +15,26 @@ import Product6 from "../views/Product6";
 import Product7 from "../views/Product7";
 import Product8 from "../views/Product8";
 import Product9 from "../views/Product9";
-import Product10 from "../views/Product10";
-import Product11 from "../views/Product11";
-import Product12 from "../views/Product12";
-
 
 function Router() {
 	const router = useRoutes([
-		{ path: "/", element: <Home /> },
+		{
+			path: "/",
+			element: (
+				<>
+					{/* <ScrollRestoration /> */}
+					<Home />
+				</>
+			),
+		},
 		{ path: "/faq", element: <FaqView /> },
 		{ path: "/contact", element: <Contact /> },
 		{ path: "/all-products", element: <AllProducts /> },
 
 		//? Products Routes
 		{ path: "/product-1", element: <Product1 /> },
-		{ path: "/product-2", element: <Product2/> },
-		{ path: "/product-3", element: <Product3/> },
+		{ path: "/product-2", element: <Product2 /> },
+		{ path: "/product-3", element: <Product3 /> },
 		{ path: "/product-4", element: <Product4 /> },
 		{ path: "/product-5", element: <Product5 /> },
 		{ path: "/product-6", element: <Product6 /> },
