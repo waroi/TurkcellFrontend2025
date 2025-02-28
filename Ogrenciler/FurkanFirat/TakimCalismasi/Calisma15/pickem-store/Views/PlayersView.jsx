@@ -2,8 +2,6 @@ import { useState, useEffect } from 'react';
 import Header from '../src/components/Header';
 import ProductCard from '../src/components/ProductCard';
 import { fetchPlayers } from '../service/api';
-import Footer from '../src/components/Footer';
-import Navbar from '../src/components/Navbar';
 
 export default function PlayersView() {
   const [players, setPlayers] = useState([]);
@@ -18,8 +16,6 @@ export default function PlayersView() {
   }, []);
   return (
     <>
-      <Navbar />
-
       <main className='main-section'>
         <div className='my-20'>
           <Header text={'OYUNCULAR'} />
@@ -38,7 +34,6 @@ export default function PlayersView() {
           </div>
         </section>
       </main>
-      <Footer />
     </>
   );
 }

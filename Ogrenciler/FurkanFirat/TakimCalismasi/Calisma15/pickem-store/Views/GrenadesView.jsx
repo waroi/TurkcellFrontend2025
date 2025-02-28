@@ -1,11 +1,8 @@
 import Header from '../src/components/Header';
-import Footer from '../src/components/Footer';
-import Navbar from '../src/components/Navbar';
 
 export default function GrenadesView() {
   return (
     <>
-      <Navbar />
       <main className='main-section vh-100 py-20'>
         <section className='grenades position-relative overflow-hidden'>
           <Header text={'BOMBALAR'} />
@@ -18,7 +15,6 @@ export default function GrenadesView() {
           </div>
         </section>
       </main>
-      <Footer />
     </>
   );
 }
