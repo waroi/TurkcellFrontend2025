@@ -5,13 +5,13 @@ import products from "./data/data.json";
 
 function App() {
   const [selector, setSelector] = useState();
-  const getirProduct = selector
-    ? products.filter((product) => product.category === selector)
-    : products;
-
+  const getirProduct = () =>
+    selector
+      ? products.filter((product) => product.category[0].name === selector)
+      : products;
   return (
     <>
-      <Router getirProduct={getirProduct} />
+      <Router getirProduct={getirProduct} setSelector={setSelector} />
     </>
   );
 }
