@@ -35,16 +35,12 @@ nav {
 .banner {
   background-image: linear-gradient(to right top, #e0ce7f, #ffedfb, #e0ce7f);
 }
-.products {
-  .filters {
-    @extend .red-box-shadow;
-  }
-  .product-cards {
-    .card {
-      &:hover {
-        @extend .info-box-shadow;
-      }
-    }
+.filters {
+  @extend .red-box-shadow;
+}
+.card {
+  &:hover {
+    @extend .info-box-shadow;
   }
 }
 .contact {
