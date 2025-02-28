@@ -15,11 +15,11 @@ const Router = () => {
         {path: "/haberler/" , element: <NewView/>,
           children: [
             {index: true, element: <Navigate to = "spor"/>},
-            {path: "spor",}
+            {path: "spor", element: <SportsNewsView/>},
           ]
         },
 
-        //userRouter
+      
 
     
   ])
