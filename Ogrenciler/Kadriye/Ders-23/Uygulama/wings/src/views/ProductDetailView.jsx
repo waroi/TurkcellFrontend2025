@@ -11,6 +11,8 @@ const ProductDetailView = () => {
   const [wings, setWings] = useState([]);
 
   useEffect(() => {
+    console.log("lannn");
+
     const fetchWings = async () => {
       try {
         const fetch = await getWings();
@@ -20,6 +22,10 @@ const ProductDetailView = () => {
       }
     };
 
+    fetchWings();
+  }, []);
+
+  useEffect(() => {
     const fetchWing = async () => {
       try {
         const fetch = await getWing(id);
@@ -30,13 +36,12 @@ const ProductDetailView = () => {
     };
 
     fetchWing();
-    fetchWings();
-  }, [id]); // Bu dizinin içinde id'yi bağımlılık olarak eklemelisiniz
+  }, [id]);
 
   return (
     <>
       <DetailCard wing={wing} />
-      <DetailContent />
+      <DetailContent wing={wing} />
       <ProductAdvice wings={wings} />
     </>
   );

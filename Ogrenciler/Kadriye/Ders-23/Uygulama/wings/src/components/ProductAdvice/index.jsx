@@ -1,6 +1,11 @@
 import React from "react";
+import Card from "../Card";
 
 const ProductAdvice = ({ wings }) => {
+  if (!wings) {
+    return <p>Yükleniyor</p>;
+  }
+
   return (
     <section className="product-advice my-5">
       <div className="container">
