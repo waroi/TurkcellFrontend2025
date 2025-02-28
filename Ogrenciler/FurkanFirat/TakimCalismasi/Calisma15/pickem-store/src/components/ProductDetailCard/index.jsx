@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router';
 
 function ProductDetailCard({ player }) {
   return (
@@ -9,20 +10,20 @@ function ProductDetailCard({ player }) {
             <nav aria-label='breadcrumb'>
               <ol className='breadcrumb'>
                 <li className='breadcrumb-item'>
-                  <a
+                  <NavLink
+                    to='/'
                     className='text-decoration-none text-white-gold'
-                    href='index.html'
                   >
                     Anasayfa
-                  </a>
+                  </NavLink>
                 </li>
                 <li className='breadcrumb-item'>
-                  <a
+                  <NavLink
+                    to='/oyuncular'
                     className='text-decoration-none text-white-gold'
-                    href='oyuncular.html'
                   >
                     Oyuncular
-                  </a>
+                  </NavLink>
                 </li>
                 <li className='breadcrumb-item active' aria-current='page'>
                   {player.playerName}
@@ -62,11 +63,11 @@ function ProductDetailCard({ player }) {
                           <li className='mb-2'>
                             <strong>Yaş:</strong> {player.age}
                           </li>
-                          <li className='mb-2 country tr'>
+                          <li className='mb-2 country'>
                             <strong>Ülke: </strong>
                             {player.country}
                           </li>
-                          <li className='mb-2 ef'>
+                          <li className='mb-2'>
                             <strong>Takım:</strong> {player.team}
                           </li>
                           <li className='mb-2'>
