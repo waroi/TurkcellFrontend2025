@@ -1,8 +1,9 @@
 import { useRoutes } from "react-router";
+import { lazy } from "react";
 import HomeView from "../views/HomeView";
-import SssView from "../views/SssView";
-import ContactView from "../views/ContactView";
-import ProductDetailView from "../views/ProductDetailView";
+const SssView = lazy(() => import("../views/SssView"));
+const ContactView = lazy(() => import("../views/ContactView"));
+const ProductDetailView = lazy(() => import("../views/ProductDetailView"));
 
 const Router = ({ getirProduct, setSelector }) => {
   const routes = useRoutes([
