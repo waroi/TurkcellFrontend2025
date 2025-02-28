@@ -64,19 +64,19 @@ export default function Footer() {
             <div className="col-lg-3 px-2 text-light">
               <h4 className="mb-2">Bizi Takip Edin</h4>
               <div className="icons">
-                <a href="">
+                <a href="/" alt="instagram">
                   <img
                     src="https://img.icons8.com/?size=50&id=32323&format=png&color=000000"
                     alt=""
                   />
                 </a>
-                <a href="">
+                <a href="/" alt="twitter">
                   <img
                     src="https://img.icons8.com/?size=50&id=6Fsj3rv2DCmG&format=png&color=ffffff"
                     alt=""
                   />
                 </a>
-                <a href="">
+                <a href="/" alt="posta">
                   <img
                     src="https://img.icons8.com/?size=50&id=OumT4lIcOllS&format=png&color=000000"
                     alt=""

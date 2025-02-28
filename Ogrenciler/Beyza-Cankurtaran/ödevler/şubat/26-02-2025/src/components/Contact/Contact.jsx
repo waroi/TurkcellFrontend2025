@@ -11,14 +11,14 @@ export default function Contact() {
                 <form
                   action="#"
                   className="p-3 bg-white needs-validation"
-                  novalidate
+                  noValidate
                 >
                   <h2 className="h4 text-primary text-center mb-3">
                     Bize Ulaşın
                   </h2>
                   <div className="row form-group">
                     <div className="col-md-6 mb-2 mb-md-0">
-                      <label className="text-black" for="fname">
+                      <label className="text-black" htmlFor="fname">
                         Adınız
                       </label>
                       <input
@@ -32,7 +32,7 @@ export default function Contact() {
                       </div>
                     </div>
                     <div className="col-md-6">
-                      <label className="text-black" for="lname">
+                      <label className="text-black" htmlFor="lname">
                         Soyadınız
                       </label>
                       <input
@@ -48,7 +48,7 @@ export default function Contact() {
                   </div>
                   <div className="row form-group">
                     <div className="col-md-12 mb-2">
-                      <label className="text-black" for="email">
+                      <label className="text-black" htmlFor="email">
                         Mail Adresiniz
                       </label>
                       <input
@@ -64,7 +64,7 @@ export default function Contact() {
                   </div>
                   <div className="row form-group">
                     <div className="col-md-12 mb-2">
-                      <label className="text-black" for="subject">
+                      <label className="text-black" htmlFor="subject">
                         Konu
                       </label>
                       <input
@@ -80,7 +80,7 @@ export default function Contact() {
                   </div>
                   <div className="row form-group">
                     <div className="col-md-12 mb-2">
-                      <label className="text-black" for="message">
+                      <label className="text-black" htmlFor="message">
                         Mesaj
                       </label>
                       <textarea

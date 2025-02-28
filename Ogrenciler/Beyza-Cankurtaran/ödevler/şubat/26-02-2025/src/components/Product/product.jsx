@@ -6,7 +6,6 @@ const Product = ({ getirProduct, setSelector }) => {
   const categories = [
     ...new Set(products.map((product) => product.category[0].name)),
   ];
-  console.log(getirProduct());
 
   return (
     <section className="products bg-light" id="products">
@@ -15,7 +14,7 @@ const Product = ({ getirProduct, setSelector }) => {
         <div className="categories mb-2 d-flex justify-content-between flex-wrap">
           <button
             type="button"
-            className="btn btn-outline-secondary mb-1"
+            className="btn btn-outline-primary mb-1"
             onClick={() => setSelector(null)}
           >
             Tüm Ürünler
@@ -24,10 +23,9 @@ const Product = ({ getirProduct, setSelector }) => {
             <button
               key={index}
               type="button"
-              className="btn btn-outline-success mb-1"
+              className="btn btn-outline-primary mb-1"
               onClick={() => {
                 setSelector(category);
-                console.log(getirProduct());
               }}
             >
               {category}

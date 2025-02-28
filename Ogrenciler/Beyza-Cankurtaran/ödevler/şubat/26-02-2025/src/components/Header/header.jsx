@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router";
-import Logo from "../../assets/logo.png";
-const Header = ({ scrollToSection }) => {
+import Logo from "../../assets/logo.webp";
+const Header = () => {
   return (
     <>
       <nav className="navbar navbar-expand-lg fixed-top navbar-dark mx-auto">
