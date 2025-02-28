@@ -20,9 +20,9 @@ export default function PlayersView() {
         <div className='my-20'>
           <Header text={'OYUNCULAR'} />
         </div>
-        <section class='players'>
-          <div class='container'>
-            <div class='player-cards row gy-4'>
+        <section className='players'>
+          <div className='container'>
+            <div className='player-cards row gy-4'>
               {players.length > 0 ? (
                 players.map((player) => (
                   <ProductCard key={player.playerName} player={player} />
