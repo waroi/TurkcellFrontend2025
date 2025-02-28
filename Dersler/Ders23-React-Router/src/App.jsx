@@ -15,6 +15,9 @@ function App() {
         <li>
           <NavLink to="/parametre/101">Parametre</NavLink>
         </li>
+        <li>
+          <NavLink to="/haberler/">Haberler</NavLink>
+        </li>
       </ul>
       <Router />
     </>

@@ -15,6 +15,15 @@ function App() {
         <li>
           <NavLink to="/parametre/101">Parametre</NavLink>
         </li>
+        <li>
+          <NavLink to="/haberler/">Haberler</NavLink>
+        </li>
+        <li>
+          <NavLink to="/haberler/sports">Spor Haberleri</NavLink>
+        </li>
+        <li>
+          <NavLink to="/haberler/economy">Ekonomi Haberleri</NavLink>
+        </li>
       </ul>
       <Router />
     </>
