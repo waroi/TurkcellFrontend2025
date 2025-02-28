@@ -5,7 +5,7 @@ import BestSeller from "../components/BestSeller/bestSeller";
 import Product from "../components/Product/product";
 import Footer from "../components/Footer/Footer";
 import { useRef } from "react";
-const HomeView = () => {
+const HomeView = (getirProduct) => {
   const aboutRef = useRef(null);
   const productsRef = useRef(null);
   const contactRef = useRef(null);
@@ -26,7 +26,7 @@ const HomeView = () => {
       <Banner />
       <About scrollToSection={scrollToSection} />
       <BestSeller scrollToSection={scrollToSection} />
-      <Product scrollToSection={scrollToSection} />
+      <Product getirProduct={getirProduct} scrollToSection={scrollToSection} />
       <Footer />
     </>
   );

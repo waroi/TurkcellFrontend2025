@@ -2,34 +2,23 @@ import React from "react";
 import products from "../../data/data.json";
 import { Link } from "react-router";
 
-const Product = () => {
+const Product = (getirProduct) => {
   return (
     <>
       <section className="products bg-light" id="products">
         <div className="container py-4">
           <h2 className="text-center my-2">Ürünler</h2>
           <div className="categories mb-2 d-flex justify-content-between flex-wrap">
-            <button type="button" className="btn btn-outline-success mb-1">
-              Haritalar & Günlükler
-            </button>
-            <button type="button" className="btn btn-outline-success mb-1">
-              Değerli Taşlar
-            </button>
-            <button type="button" className="btn btn-outline-success mb-1">
-              İksirler
-            </button>
-            <button type="button" className="btn btn-outline-success mb-1">
-              Büyülü Giysiler
-            </button>
-            <button type="button" className="btn btn-outline-success mb-1">
-              Uçan Süpürgeler
-            </button>
-            <button type="button" className="btn btn-outline-success mb-1">
-              Quidditch
-            </button>
-            <button type="button" className="btn btn-outline-success mb-1">
-              Kim Olduğunu Bilirsin Sen'in Eşyaları
-            </button>
+            {products.map((product, index) => (
+              <button
+                key={index}
+                type="button"
+                className="btn btn-outline-success mb-1"
+                onClick={() => getirProduct(product.category)}
+              >
+                {product.category}
+              </button>
+            ))}
           </div>
           <div className="row">
             {products.map((product, index) => (
