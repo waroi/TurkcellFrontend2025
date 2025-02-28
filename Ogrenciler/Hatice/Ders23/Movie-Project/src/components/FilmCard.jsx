@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Button } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 
 const FilmCard = ({ movie }) => {
   return (
@@ -8,24 +8,24 @@ const FilmCard = ({ movie }) => {
         variant="top"
         src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
         alt={movie.title}
-        className="card-img-top"
+        loading="lazy"
       />
       <Card.Body>
-        <Card.Title><a
+        <Card.Title className="text-truncate"><a
           href={`https://www.themoviedb.org/movie/${movie.id}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-decoration-none text-dark text-truncate"
+          className="text-decoration-none card-title fw-bold"
         >
           {movie.title}
         </a></Card.Title>
-        <Card.Text>
+        <Card.Text className="text-secondary card-desc">
           {movie.overview.length > 100
-            ? `${movie.overview.substring(0, 100)}...`
+            ? `${movie.overview.substring(0, 70)}...`
             : movie.overview}
         </Card.Text>
-        <Card.Text> {movie.release_date}</Card.Text>
-        <Card.Text> {Math.round(movie.vote_average * 10)}% </Card.Text>
+        <Card.Text>Çıkış Tarihi: {movie.release_date}</Card.Text>
+        <Card.Text className="fw-bold">Puan: {Math.round(movie.vote_average * 10)}% </Card.Text>
       </Card.Body>
     </Card>
   );

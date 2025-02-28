@@ -1,9 +1,15 @@
-import React from 'react'
+import React from "react";
 
 function Footer() {
-  return (
-    <div className='text-center bg-dark text-white py-3 mt-5 fixed-bottom'>© 2025 MovieApp. All Rights Reserved by Hikmet Melik and Zeynep Güney</div>
-  )
+	return (
+		<footer className="text-center bg-dark text-white py-2 mt-3">
+			<div className="container">
+				<small>
+					© 2025 MovieApp. All Rights Reserved by Hikmet Melik and Zeynep Güney
+				</small>
+			</div>
+		</footer>
+	);
 }
 
-export default Footer
+export default Footer;

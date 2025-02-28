@@ -1,0 +1,29 @@
+.footer-wrapper {
+  background-color: rgb(55, 79, 120);
+}
+
+.contact-info i {
+  transition: all 0.3s ease-in;
+  border: 1px solid white;
+  background-color: rgb(25, 67, 93);
+  color: white;
+}
+
+.contact-info i:hover {
+  border-color: rgb(229, 46, 63);
+  color: rgb(229, 46, 63);
+  background-color: white;
+}
+
+.social-icons a {
+  transition: all 0.3s ease-in;
+  border: 1px solid white;
+  background-color: white;
+  color: rgb(229, 46, 63);
+}
+
+.social-icons a:hover {
+  border-color: white;
+  color: white;
+  background-color: rgb(25, 67, 93);
+}

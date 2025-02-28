@@ -1,39 +1,33 @@
-import { useState } from "react";
-import { Navbar, Container, Form, FormControl, Button } from "react-bootstrap";
+import { Navbar, Container, Nav } from "react-bootstrap";
 
-const NavBar = ({ onSearch }) => {
-    const [searchTerm, setSearchTerm] = useState("");
-
-    const handleSearchSubmit = () => {
-        if (searchTerm.trim() === "") {
-            fetchMovies(); 
-        } else {
-            onSearch(searchTerm); 
-        }
-        setSearchTerm(""); 
-    };
-    
-
-    return (
-        <Navbar bg="dark" variant="dark" expand="lg" className="mb-4">
-            <Container>
-                <Navbar.Brand href="#">HdFilmCehennemi</Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <Form className="d-flex ms-auto" onSubmit={(e) => { e.preventDefault(); handleSearchSubmit(); }}>
-                        <FormControl
-                            type="search"
-                            placeholder="Film Ara..."
-                            className="me-2"
-                            value={searchTerm}
-                            onChange={(e) => setSearchTerm(e.target.value)}
-                        />
-                        <Button variant="outline-light" type="submit">Ara</Button>
-                    </Form>
-                </Navbar.Collapse>
-            </Container>
-        </Navbar>
-    );
+const NavBar = () => {
+  return (
+    <Navbar
+      expand="lg"
+      data-bs-theme="light"
+      className="mb-4 navbar-section sticky-top"
+    >
+      <Container>
+        <Navbar.Brand href="#home" className="text-white fw-bold fs-3">
+          HdFilmCehennemi
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="ms-auto">
+            <Nav.Link className="text-white fw-bold" href="#home">
+              Home
+            </Nav.Link>
+            <Nav.Link className="text-white fw-bold" href="#filmler">
+              Filmler
+            </Nav.Link>
+            <Nav.Link className="text-white fw-bold" href="#oyuncular">
+              Oyuncular
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  );
 };
 
 export default NavBar;

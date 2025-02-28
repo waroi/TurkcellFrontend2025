@@ -5,9 +5,17 @@
 }
 
 body {
-  background: url('https://img.freepik.com/free-photo/assortment-cinema-elements-red-background-with-copy-space_23-2148457848.jpg?t=st=1740497121~exp=1740500721~hmac=1500157a3244141349460b87be4cc05be4e05b2d0f42c35143b66367200cf577&w=1380')
-    no-repeat center center/cover;
+  background: rgb(131,58,180);
+  background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+}
+
+@font-face {
+  font-family:'Courier New', Courier, monospace;
+  src: url('/fonts/CourierNew-Regular.ttf') format('truetype');
+  font-display: swap;
+  font-weight: normal;
+  font-style: normal;
 }

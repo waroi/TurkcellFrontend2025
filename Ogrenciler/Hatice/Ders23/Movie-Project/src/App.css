@@ -1,4 +1,23 @@
-.card-img-top {
-  height: 400px;
-  object-fit: cover;
-}
+.card-title {
+    color: #60066b !important;
+  }
+  
+  .navbar-section,
+  footer {
+    background-color: #52055b;
+  }
+  
+  .card-desc {
+    font-size: 0.8rem !important;
+  }
+
+  .search-section .search-form {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .search-section .search-form button {
+    background: #a106b2;
+  }
+  .search-section .search-form button:hover {
+    background: #52055b;
+  }

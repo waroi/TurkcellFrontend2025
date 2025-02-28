@@ -31,8 +31,7 @@ export const StyledForm = styled(Form)`
   border-radius: 8px;
 `;
 
-export const StyledForm2 = styled(StyledForm)`
-`;
+export const StyledForm2 = styled(StyledForm)``;
 
 export const StyledInput = styled(Form.Control)`
   padding: 10px;
@@ -46,8 +45,7 @@ export const StyledInput = styled(Form.Control)`
   }
 `;
 
-export const StyledInput2 = styled(StyledInput)`
-`;
+export const StyledInput2 = styled(StyledInput)``;
 
 export const StyledButton = styled(Button)`
   background-color: #343a40;
@@ -64,8 +62,7 @@ export const StyledButton = styled(Button)`
   }
 `;
 
-export const StyledButton2= styled(StyledButton)`
-`;
+export const StyledButton2 = styled(StyledButton)``;
 
 export const StyledProfileCard = styled(Card)`
   margin-bottom: 20px;
@@ -78,8 +75,7 @@ export const StyledProfileCard = styled(Card)`
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 `;
 
-export const StyledRepoCard = styled(StyledProfileCard)`
-`; 
+export const StyledRepoCard = styled(StyledProfileCard)``;
 
 export const ProfileImage = styled(Card.Img)`
   border-radius: 50%;

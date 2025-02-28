@@ -1,6 +1,89 @@
 #root {
-  max-width: 1280px;
+  /* max-width: 5000px; */
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  background-color: #0f172a;
+}
+
+.baslik {
+  color: #e5e7eb;
+}
+.card {
+  border: 2px solid #ff5c5c !important;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  min-height: auto;
+}
+.card:hover {
+  box-shadow: 0 0 10px rgba(255, 92, 92, 0.8);
+  transform: scale(1.02);
+}
+
+.card-body {
+  background-color: #1e293b;
+  border-radius: 8px;
+  color: #e5e7eb;
+  border: none;
+}
+.card-body img {
+  width: 70%;
+}
+
+.card-body h2 {
+  color: #ff5c5c;
+}
+.card-body p {
+  color: #e5e7eb;
+}
+
+.search input {
+  width: 500px;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.search input:focus {
+  border-color: #ff5c5c;
+  box-shadow: 0 0 8px rgba(255, 92, 92, 0.5);
+}
+
+.search button,
+.filmleri {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #ff5c5c;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.search .temizle {
+  background-color: #fff;
+  color: #ff5c5c;
+}
+
+.search .temizle:hover {
+  background-color: #ff5c5c;
+  color: #fff;
+}
+
+.search button:hover {
+  background-color: #e04b4b;
+  box-shadow: 0 4px 8px rgba(255, 92, 92, 0.3);
+}
+
+.search button:active {
+  transform: scale(0.95);
+}
+
+/* MODAL*/
+
+.modal-body {
+  background-color: #0f172a;
+  color: #e5e7eb;
+  border: 2px solid #fff;
 }

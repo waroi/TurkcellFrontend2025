@@ -2,17 +2,11 @@ import React from "react";
 
 export default Navigation = ({ setSearch }) => {
   return (
-    <nav className="navbar navbar-expand-lg bg-primary navbar-dark py-4">
-      <div className="container">
-        <a className="navbar-brand">MovieBox</a>
-        <form className="d-flex" role="search">
-          <input
-            className="form-control rounded-pill me-2"
-            type="search"
-            placeholder="Search"
-            onInput={(event) => setSearch(event.target.value)}
-          />
-        </form>
+    <div className="container p-4">
+      <nav className="navbar navbar-expand-lg bg-light rounded-5 px-4 py-3 d-flex justify-content-between">
+
+        <a className="navbar-brand fs-3 text-primary">Movie<strong>Box</strong></a>
+        
         <button
           className="navbar-toggler"
           type="button"
@@ -21,26 +15,28 @@ export default Navigation = ({ setSearch }) => {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
+        <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link active" href="#">
-                Home
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                Features
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                Pricing
-              </a>
+            <form
+          className="d-flex"
+          role="search"
+          onSubmit={(event) => event.preventDefault()}
+        >
+          <input
+            className="form-control rounded-pill border-1 border-secondary me-2 search-input"
+            type="search"
+            placeholder="Search"
+            onKeyDown={(event) =>
+              event.key == "Enter" ? setSearch(event.target.value) : ""
+            }
+          />
+        </form>
             </li>
           </ul>
         </div>
-      </div>
+
     </nav>
+    </div>
   );
 };

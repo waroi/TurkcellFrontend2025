@@ -1,36 +1,5 @@
-import styled from "styled-components";
+import { CardTypography, GenreChip } from "./styled";
 
-const CardTypography = styled.p`
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 13px;
-  padding: 0;
-  margin-bottom: 0;
-`;
-
-const CardTitle = styled.h5`
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 17px;
-`;
-
-const GenreChip = styled.span`
-  padding: 3px 7px;
-  background-color: white;
-  border-radius: 20px;
-  color: black;
-  font-size: 12px;
-  margin-left: 20px;
-`;
-
-const DetailButton = styled.button`
-  background-color: #dbdbdb;
-  color: black;
-  font-size: 13px;
-  border: none;
-  &:hover {
-    background-color: #bebebe;
-    color: black;
-  }
-`;
 const MovieDetail = ({ modalId, movie, genre }) => {
   const formatDate = (dateString) => {
     return new Date(dateString).toLocaleDateString("tr-TR", {
@@ -51,10 +20,8 @@ const MovieDetail = ({ modalId, movie, genre }) => {
         <div className="modal-content bg-dark p-2">
           <div className="modal-header border-0">
             <h1 className="modal-title fs-5" id="exampleModalLabel">
-              {movie.title} 
-              <GenreChip>
-              {genre}
-              </GenreChip>
+              {movie.title}
+              <GenreChip>{genre}</GenreChip>
             </h1>
             <button
               type="button"
@@ -69,6 +36,7 @@ const MovieDetail = ({ modalId, movie, genre }) => {
                 src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
                 className="img-fluid rounded-start"
                 alt="film movie banner"
+                loading="lazy"
               />
             </div>
             <div className="col-8 px-4 d-flex flex-column gap-2">

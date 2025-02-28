@@ -1,0 +1,65 @@
+export const productsData = [
+    {
+        id: 1,
+        image: "card1.png",
+        title: "Holo Projector",
+        description: "Design yourself as a holographic hero and become the main character of a fantasy story. Add any creatures and enemies you want holographically.",
+        price: "59.99",
+    },
+    {
+        id: 2,
+        image: "card2.jpg",
+        title: "Holo Storybook",
+        description: "Brings classic and modern fairy tales to life holographically for children. Kids can be part of the story!",
+        price: "59.99",
+    },
+    {
+        id: 3,
+        image: "card3.jpg",
+        title: "Holo Adventure Map",
+        description: "It allows children to explore the world on a holographic map, such as diving into the depths of the ocean in a submarine or traveling in Antarctica.",
+        price: "59.99",
+    },
+    {
+        id: 4,
+        image: "card4.jpg",
+        title: "Holo Dream Simulator",
+        description: "Turn your dreams into a holographic experience. Fly with dragons in a fantasy world and wander through giant flower forests.",
+        price: "39.99",
+    },
+    {
+        id: 5,
+        image: "card5.jpg",
+        title: "Holo Ghost Simulator",
+        description: "An experience where you can encounter holographic ghosts or mythological creatures in historical places. Thrilling fun!",
+        price: "79.99",
+    },
+    {
+        id: 6,
+        image: "card6.jpg",
+        title: "Holo Chef",
+        description: "A virtual holographic chef teaches you recipes and helps you cook – both classic recipes and creative space cuisine themed dishes.",
+        price: "109.99",
+    },
+    {
+        id: 7,
+        image: "card7.jpg",
+        title: "Holo Community Simulator",
+        description: "Build your own holographic society. Your holographic people can worship you, trade with you, or revolutionize you!",
+        price: "69.99",
+    },
+    {
+        id: 8,
+        image: "card8.jpg",
+        title: "Holo Dinner Club",
+        description: "Virtual dining experiences with other users worldwide. Each month, a different cuisine is presented holographically, the flavors are simulated.",
+        price: "49.99",
+    },
+    {
+        id: 9,
+        image: "card9.jpg",
+        title: "Holo Friend Simulator",
+        description: "Holographic friends who tell fun and educational stories to children, play games and teach them science.",
+        price: "29.99",
+    }
+];

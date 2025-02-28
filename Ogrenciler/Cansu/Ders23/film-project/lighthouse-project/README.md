@@ -1,8 +1,22 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# CineScope
 
-Currently, two official plugins are available:
+![Resim Açıklaması](./public/lighthouse1.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Başlangıçta Lighthouse performans skorlarımız oldukça düşüktü (29 puan). Ancak, aşağıdaki optimizasyonları uygulayarak skorlarımızı yükselttik.
+
+* Meta Etiketleri Ekledik
+* Resimlere alt Etiketi Ekledik
+* Favicon ekledik
+* Resimlerde lazy loading kullandık.
+
+![Resim Açıklaması](./public/lighthouse2.png)
+
+Daha sonra puanımız bu şekilde yükseldi. Ardından şunları yaptık.
+
+* Kullanılmayan CSS kodlarını sildik.
+* Yorum satırlarını kaldırdık.
+* Styled component'ları ayrı bir dosyaya taşıdık.
+
+![Resim Açıklaması](./public/lighthouse3.png)
+

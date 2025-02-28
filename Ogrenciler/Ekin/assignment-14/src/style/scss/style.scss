@@ -1,10 +1,33 @@
 @import "override";
 @import "../../../node_modules/bootstrap/scss/bootstrap";
-
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&display=swap");
 body {
   font-display: swap;
+  font-family: "Montserrat", serif;
+  font-weight: 500;
+  background-image: linear-gradient(
+    0deg,
+    #0f1939 0%,
+    #26428b 26%,
+    #516ac8 53%,
+    #faebd7 79%,
+    #e3af64 100%
+  );
 
-  header {
-    height: 50vw;
+  .navbar {
+    box-shadow: 0px 0px 5px 3px #ff7124;
+    .navbar-collapse {
+      max-width: 500px;
+      .search-input {
+        min-width: 200px;
+      }
+    }
+  }
+  .movie-card {
+    background-color: #ffffff60;
+    .card-img-top {
+      width: 302px;
+      height: 453px;
+    }
   }
 }

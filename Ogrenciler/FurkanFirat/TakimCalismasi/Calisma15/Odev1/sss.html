@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Pick'em Store — S.S.S</title>
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg bg-dark-purple fixed-top shadow-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand text-white fs-36 ms-4" href="index.html">pick'em</a>
+            <button class="navbar-toggler btn-white border-0" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle team navigation">
+                <i class="bi bi-list text-white"></i>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title fs-36 text-white" id="offcanvasNavbarLabel">pick'em</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 fw-semibold">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html">Anasayfa</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="oyuncular.html">Oyuncular</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link disabled" aria-disabled="true" href="silahlar.html">Silahlar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="bombalar.html">Bombalar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="hakkimizda.html">Hakkımızda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="sss.html">S.S.S</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="iletisim.html">İletişim</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- MAIN -->
+    <main class="main-section">
+        <!-- HERO -->
+        <header class="mt-20">
+            <div class="container-fluid p-5 text-white text-center">
+                <h1 class="fw-bold"><i class="bi bi-question-circle"></i> SIKÇA SORULAN SORULAR (S.S.S)</h1>
+            </div>
+        </header>
+        <div class="container">
+            <div class="bg-extra-dark-purple text-white card mb-10 p-10">
+                <div class="sss-inner row gy-4">
+                    <div class="sss-image col-12 text-center">
+                        <img src="https://fossbytes.com/wp-content/uploads/2022/01/All-esports-teams-1024x576.jpg"
+                            alt="E-sport Teams" class="img-fluid">
+                    </div>
+                    <div class=" accordion col-12 align-items-center" id="sssAcordion">
+                        <div class="accordion-item mb-4">
+                            <h2 class="accordion-header ">
+                                <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Pick'em Store'da nasıl sipariş verebilirim?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show"
+                                data-bs-parent="#sssAcordion">
+                                <div class="accordion-body">
+                                    Sipariş vermek için bir ürün seçin, ardından <strong>Sepete Ekle</strong> butonuna
+                                    tıklayın. Sepetinize
+                                    eklediğiniz ürünleri kontrol
+                                    ettikten sonra ödeme adımlarını tamamlayabilirsiniz.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-4">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-bold" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
+                                    aria-controls="collapseTwo">
+                                    Aldığım XANTARES adam vuramazsa ne yapabilirim?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#sssAcordion">
+                                <div class="accordion-body">
+                                    Merak etmeyin, <strong>XANTARES</strong>'in PEEK'leri her zaman yerindedir! Ama yine
+                                    de
+                                    olmadıysa damar kontrolü yapın.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-4">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-bold" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false"
+                                    aria-controls="collapseThree">
+                                    Hile satışınız var mı?
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#sssAcordion">
+                                <div class="accordion-body">
+                                    <strong>☠️ ☠️ ☠️ ☠️ ☠️ ☠️ ☠️ ☠️ ☠️ ☠️ ☠️ ☠️</strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-4">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-bold" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false"
+                                    aria-controls="collapseFour">
+                                    Takım arkadaşım sürekli flash atıyorsa ne yapmalıyım?
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#sssAcordion">
+                                <div class="accordion-body">
+                                    Takım arkadaşınızı en yakın gözlükçüye yönlendirin! Flash’lar sizin için değil,
+                                    rakipler için atılıyor olmalıydı.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-4">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-bold" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false"
+                                    aria-controls="collapseFive">
+                                    Destek almak için nasıl iletişim kurabilirim?
+                                </button>
+                            </h2>
+                            <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#sssAcordion">
+                                <div class="accordion-body">
+                                    Bize e-posta veya canlı destek hattından ulaşabilirsiniz.
+                                    <strong>info@pickemstore.com</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-extra-dark-purple text-white pt-20">
+        <div class="container">
+            <div class="row">
+                <div class="col-6 col-md-3 mb-3">
+                    <h5>PICK'EM STORE</h5>
+                    <ul class="nav flex-column text-white">
+                        <li class="nav-item mb-2"><a href="index.html" class="nav-link p-0 text-white">Anasayfa</a>
+                        </li>
+                        <li class="nav-item mb-2"><a href="hakkimizda.html"
+                                class="nav-link p-0 text-white">Hakkımızda</a>
+                        </li>
+                        <li class="nav-item mb-2"><a href="sss.html" class="nav-link p-0 text-white">S.S.S</a>
+                        </li>
+                        <li class="nav-item mb-2"><a href="iletisim.html" class="nav-link p-0 text-white">İletişim</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-3 mb-3">
+                    <h5>ÜRÜNLER</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="oyuncular.html" class="nav-link p-0 text-white">Oyuncular</a>
+                        </li>
+                        <li class="nav-item mb-2"><a href="bombalar.html" class="nav-link p-0 text-white">Bombalar</a>
+                        </li>
+                        <li class="nav-item mb-2"><a href="silahlar.html" class="nav-link p-0 disabled">Silahlar
+                                (Yakında)</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-5 offset-md-1 mb-3">
+                    <form class="contact-us-form">
+                        <h5>Pick'em Store'a abone olun.</h5>
+                        <p>Yeni gelen oyunculardan haberdar olmak için abone olun.</p>
+                        <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                            <label for="newsletter" class="visually-hidden">Email</label>
+                            <input id="newsletter" type="text" class="form-control" placeholder="Email">
+                            <button class="btn btn-primary text-nowrap" type="button">Abone ol</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="text-center border-top border-header-purple py-5">
+                <p>© 2025 <span class="fw-bold text-gold">Pick'em Store </span>Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

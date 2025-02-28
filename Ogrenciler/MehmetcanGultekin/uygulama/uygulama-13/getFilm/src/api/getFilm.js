@@ -1,9 +1,9 @@
 const api_key = import.meta.env.VITE_API_KEY;
-
-async function getAllFilms() {
+// https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc
+async function getAllFilms(page) {
   try {
     const response = await fetch(
-      `https://api.themoviedb.org/3/discover/movie`,
+      `https://api.themoviedb.org/3/discover/movie?&page=${page}`,
       {
         headers: {
           accept: "application/json",
@@ -21,10 +21,10 @@ async function getAllFilms() {
     console.error(`getAllFilms API çağrısı başarisiz! ${error}`);
   }
 }
-async function getFilm() {
+async function getFilm(id) {
   try {
     const response = await fetch(
-      `https://api.themoviedb.org/3/movie/950396/credits`,
+      `https://api.themoviedb.org/3/movie/${id}/credits`,
       {
         headers: {
           accept: "application/json",
@@ -36,17 +36,16 @@ async function getFilm() {
       throw new Error("Film bulunamadi");
     }
     const data = await response.json();
-    // console.log(data.crew[2].name);
     return data;
   } catch (error) {
     console.error(`getFilm API çağrısı başarisiz! ${error}`);
   }
 }
 
-async function getSearchedFilm(movieName) {
+async function getSearchedFilm(movieName, page = 1) {
   try {
     const response = await fetch(
-      `https://api.themoviedb.org/3/search/movie?query=${movieName}`,
+      `https://api.themoviedb.org/3/search/movie?query=${movieName}&page=${page}`,
       {
         headers: {
           accept: "application/json",
@@ -58,7 +57,6 @@ async function getSearchedFilm(movieName) {
       throw new Error("Film bulunamadi");
     }
     const data = await response.json();
-    // console.log(data);
     return data;
   } catch (error) {
     console.error(`getSearchedFilm API çağrısı başarisiz! ${error}`);
@@ -79,7 +77,6 @@ async function getSearchedPersonFilms(moviePerson) {
       throw new Error("Karakter bulunamadi");
     }
     const data = await response.json();
-    // console.log(data);
     return data;
   } catch (error) {
     console.error(`getSearchedPersonFilms API çağrısı başarisiz! ${error}`);
