@@ -14,7 +14,7 @@ const BestSeller = () => {
                     src="https://img.icons8.com/?size=35&id=P6ZYIof6BwLW&format=png&color=400106"
                     alt=""
                   />
-                  <a href="map.html">
+                  <a href="map.html" alt="map">
                     <img
                       src="https://img.icons8.com/?size=35&id=132&format=png&color=400106"
                       alt=""
@@ -57,7 +57,7 @@ const BestSeller = () => {
                     src="https://img.icons8.com/?size=35&id=P6ZYIof6BwLW&format=png&color=400106"
                     alt=""
                   />
-                  <a href="nimbus.html">
+                  <a href="nimbus.html" alt="nimbus">
                     <img
                       src="https://img.icons8.com/?size=35&id=132&format=png&color=400106"
                       alt=""
@@ -100,7 +100,7 @@ const BestSeller = () => {
                     src="https://img.icons8.com/?size=35&id=P6ZYIof6BwLW&format=png&color=400106"
                     alt=""
                   />
-                  <a href="hat.html">
+                  <a href="hat.html" alt="hat">
                     <img
                       src="https://img.icons8.com/?size=35&id=132&format=png&color=400106"
                       alt=""

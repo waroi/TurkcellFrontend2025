@@ -1,5 +1,5 @@
 import React from "react";
-import candle from "../../assets/candle.png";
+import candle from "../../assets/candle.webp";
 import hp from "../../assets/hp.webp";
 
 const Banner = () => {
