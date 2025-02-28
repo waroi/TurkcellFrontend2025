@@ -4,9 +4,14 @@ import SssView from "../views/SssView";
 import ContactView from "../views/ContactView";
 import ProductDetailView from "../views/ProductDetailView";
 
-const Router = (getirProduct) => {
+const Router = ({ getirProduct, setSelector }) => {
   const routes = useRoutes([
-    { path: "/", element: <HomeView getirProduct={getirProduct} /> },
+    {
+      path: "/",
+      element: (
+        <HomeView getirProduct={getirProduct} setSelector={setSelector} />
+      ),
+    },
     { path: "/sss", element: <SssView /> },
     { path: "/contact-us", element: <ContactView /> },
     { path: "/urunDetay/:id", element: <ProductDetailView /> },
