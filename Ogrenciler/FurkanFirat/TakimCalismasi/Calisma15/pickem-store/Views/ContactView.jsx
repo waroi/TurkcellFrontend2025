@@ -1,10 +1,6 @@
-import Footer from '../src/components/Footer';
-import Navbar from '../src/components/Navbar';
-
 export default function ContactView() {
   return (
     <>
-      <Navbar />
       <main class='main-section'>
         <header class='mt-20'>
           <div class='container-fluid text-white p-5 text-center'>
@@ -95,7 +91,6 @@ export default function ContactView() {
           </div>
         </div>
       </main>
-      <Footer />
     </>
   );
 }

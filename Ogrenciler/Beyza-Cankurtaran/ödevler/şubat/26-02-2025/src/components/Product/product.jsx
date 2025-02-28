@@ -3,9 +3,13 @@ import products from "../../data/data.json";
 import { Link } from "react-router";
 
 const Product = ({ getirProduct, setSelector }) => {
-  const categories = [
-    ...new Set(products.map((product) => product.category[0].name)),
-  ];
+  const categories = products.reduce((categoryList, product) => {
+    const categoryName = product.category[0]?.name;
+    if (categoryName && !categoryList.includes(categoryName)) {
+      categoryList.push(categoryName);
+    }
+    return categoryList;
+  }, []);
 
   return (
     <section className="products bg-light" id="products">

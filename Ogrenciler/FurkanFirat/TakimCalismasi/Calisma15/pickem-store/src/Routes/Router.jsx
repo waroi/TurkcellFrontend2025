@@ -10,7 +10,7 @@ export default function Router() {
   const routes = useRoutes([
     { path: '/', element: <HomeView /> },
     { path: '/oyuncular', element: <PlayersView /> },
-    { path: '/oyuncu/:playerName', element: <PlayerView /> },
+    { path: '/oyuncu/:id', element: <PlayerView /> },
     { path: '/bombalar', element: <GrenadesView /> },
     { path: '/hakkimizda', element: <AboutView /> },
     { path: '/sss', element: <FaqView /> },

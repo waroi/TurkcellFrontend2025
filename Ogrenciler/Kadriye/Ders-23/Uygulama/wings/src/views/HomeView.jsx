@@ -7,7 +7,7 @@ const HomeView = () => {
   return (
     <>
       <CarouselComponent />
-      <div className="row w-100">
+      <div className="row w-100  m-0 p-2">
         <div className="col-md-3 order-md-2 ">
           <Filter setFilters={setFilters} />
         </div>
