@@ -1,3 +1,4 @@
+import "./style.css";
 const DetailContent = ({ wing }) => {
   console.log(wing);
 
