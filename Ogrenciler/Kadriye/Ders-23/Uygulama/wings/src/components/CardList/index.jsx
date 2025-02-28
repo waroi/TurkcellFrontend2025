@@ -15,25 +15,29 @@ const CardList = () => {
       }
     };
 
-    return () => {
-      fetchWings();
-    };
+    fetchWings();
   }, []);
 
   return (
     <>
       <div className="container">
         <div className="row">
-          {wings.map((wing) => {
-            return (
-              <div
-                className="col-sm-6 col-md-4 col-lg-3 my-2 px-2"
-                key={wing.id}
-              >
-                <Card wing={wing} />
+          {wings.length === 0 ? (
+            <p>Ürün bulunamadı veya yükleniyor...</p>
+          ) : (
+            <div className="container">
+              <div className="row">
+                {wings.map((wing) => (
+                  <div
+                    className="col-sm-6 col-md-4 col-lg-3 my-2 px-2"
+                    key={wing.id}
+                  >
+                    <Card wing={wing} />
+                  </div>
+                ))}
               </div>
-            );
-          })}
+            </div>
+          )}
         </div>
       </div>
     </>

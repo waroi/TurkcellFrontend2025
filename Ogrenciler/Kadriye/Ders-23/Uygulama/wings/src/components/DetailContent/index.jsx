@@ -1,6 +1,10 @@
-import React from "react";
-
 const DetailContent = ({ wing }) => {
+  console.log(wing);
+
+  if (!wing) {
+    return <p>Yükleniyor</p>;
+  }
+
   return (
     <section className="product-details py-5">
       <div className="container">

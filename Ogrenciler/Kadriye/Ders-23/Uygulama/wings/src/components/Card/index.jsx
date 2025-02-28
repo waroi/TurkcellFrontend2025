@@ -1,8 +1,6 @@
 import { NavLink } from "react-router";
 
 const Card = ({ wing }) => {
-  console.log("aaa", wing.images[0]);
-
   return (
     <div className="card h-100">
       <div className="product-image-carousel m-1">

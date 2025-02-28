@@ -1,6 +1,8 @@
-import React from "react";
-
 const DetailCard = ({ wing }) => {
+  if (!wing) {
+    return <p>Yükleniyor</p>;
+  }
+
   return (
     <section className="product py-5">
       <div className="container">
@@ -94,7 +96,7 @@ const DetailCard = ({ wing }) => {
                           <h6 className="text-info fw-semibold mb-0 me-2">
                             Ağırlık:
                           </h6>
-                          {wing.metarial}
+                          {wing.weight}
                         </li>
                         <li className="text-secondary">
                           <h6 className="text-info fw-semibold">Boyutlar:</h6>
