@@ -1,16 +1,15 @@
 import { useState } from 'react'
+import { newsService } from './api/newService'
 import './App.css'
-import { fetchNews } from './api/newService'
 
 function App() {
 
-  const [news, setNews] = useState([])
+  const [news, setNews] = useState()
   // const [page, setPage] = useState(1)
 
   useState( async () => {
-    const newss = await setNews(fetchNews(1));
-    console.log(newss);
-    setNews(newss);
+    const response = await newsService.getNews(1);
+    setNews(response);
   },[])
 
 
