@@ -1,6 +1,6 @@
 import { NavLink } from "react-router";
-import "./App.css";
 import Router from "./routes/Router";
+import "./App.css";
 
 function App() {
   return (
@@ -14,6 +14,9 @@ function App() {
         </li>
         <li>
           <NavLink to="/parametre/101">Parametre</NavLink>
+        </li>
+        <li>
+          <NavLink to="/haberler/">Haberler</NavLink>
         </li>
       </ul>
       <Router />
