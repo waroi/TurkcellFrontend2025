@@ -1,15 +1,17 @@
-import { useState } from "react";
-import NewsClient from "./service/service";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import HomePage from "./components/HomePage";
+import NewsPage from "./components/NewsPage";
 
-function App() {
-  const [news, setNews] = useState([]);
-  async function getNews() {
-    NewsClient.getNews().then((data) => {
-      setNews(data);
-      console.log(data);
-    });
-  }
-  return <></>;
-}
+const App = () => (
+  <Router>
+    <Navbar />
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/news" element={<NewsPage />} />
+      <Route path="/news/:category" element={<NewsPage />} />
+    </Routes>
+  </Router>
+);
 
 export default App;
