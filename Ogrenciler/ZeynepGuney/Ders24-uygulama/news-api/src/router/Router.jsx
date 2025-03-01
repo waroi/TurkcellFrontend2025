@@ -5,15 +5,17 @@ import EconomyView from "../view/EconomyView";
 import WorldView from "../view/WorldView";
 import HealthView from "../view/HealthView";
 import MagazineView from "../view/MagazineView";
+import SportView from "../view/SportView";
 const Router = () => {
   const routes = useRoutes([
     {
-      path: "/home",
+      path: "/home/",
       element: <Home />,
       children: [
-        { index: true, element: <Navigate to="/genel" /> },
+        { index: true, element: <Navigate to="genel" /> },
         { path: "genel", element: <GeneralView /> },
         { path: "ekonomi", element: <EconomyView /> },
+        { path: "spor", element: <SportView /> },
         { path: "dunya", element: <WorldView /> },
         { path: "saglik", element: <HealthView /> },
         { path: "magazin", element: <MagazineView /> },

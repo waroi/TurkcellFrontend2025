@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import fetchData from "../services/service";
 import Slider from "../components/Slider/Slider";
 import Categories from "../components/Categories/Categories";
+import { Outlet } from "react-router";
 const Home = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -22,6 +23,7 @@ const Home = () => {
     <div className="container">
       <Slider news={data}></Slider>
       <Categories />
+      <Outlet />
     </div>
   );
 };

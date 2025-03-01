@@ -10,22 +10,22 @@ const Categories = () => {
         </a>
       </li>
       <li className="nav-item">
-        <NavLink className="nav-link" to="/home/ekonomi">
+        <NavLink className="nav-link" to="ekonomi">
           Ekonomi
         </NavLink>
       </li>
       <li className="nav-item">
-        <NavLink className="nav-link" to="/home/spor">
+        <NavLink className="nav-link" to="spor">
           Spor
         </NavLink>
       </li>
       <li className="nav-item">
-        <NavLink to="/home/saglik" className="nav-link" aria-disabled="true">
+        <NavLink to="saglik" className="nav-link" aria-disabled="true">
           Sağlık
         </NavLink>
       </li>
       <li className="nav-item">
-        <NavLink to="/home/magazin" className="nav-link" aria-disabled="true">
+        <NavLink to="magazin" className="nav-link" aria-disabled="true">
           Magazin
         </NavLink>
       </li>
