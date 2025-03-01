@@ -1,9 +1,11 @@
 const baseUrl = import.meta.env.VITE_API_URL;
 const apiKey = import.meta.env.VITE_API_KEY;
-export const fetchNews = async (page) => {
 
-        const response = await fetch(baseUrl + `?q=sport&page=${page}&apiKey=${apiKey}&language=jp`)
+
+export class newsService {
+    static async getNews(page) {
+        const response = await fetch(baseUrl + `?q=anime&page=${page}&apiKey=${apiKey}&language=jp&pageSize=12`)
         const data = await response.json()
-        // console.log(data.articles);
-        return data.articles    
+        return data
+    }
 }
