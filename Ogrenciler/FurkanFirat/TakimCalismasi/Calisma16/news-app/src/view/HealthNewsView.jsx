@@ -1,6 +1,7 @@
- 
-export default function HealthNewsView() {
+ import CardList from "../components/CardList"
+
+ export default function HealthNewsView() {
   return (
-    <div>HealthNewsView</div>
+    <CardList category="health"/>
   )
 }

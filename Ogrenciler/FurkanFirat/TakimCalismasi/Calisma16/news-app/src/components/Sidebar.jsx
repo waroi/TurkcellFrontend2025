@@ -15,8 +15,8 @@ export default function Sidebar() {
       <NavLink className='list-group-item' to='/news/health'>
         Health
       </NavLink>
-      <NavLink className='list-group-item' to='/news/economy'>
-        Economy
+      <NavLink className='list-group-item' to='/news/business'>
+        Business
       </NavLink>
     </ul>
   );

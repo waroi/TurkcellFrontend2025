@@ -1,8 +1,16 @@
-export const fetchNews = async (category = 'general') => {
+const BASE_URL = "https://newsapi.org/v2/top-headlines";
+const API_KEY = "6f612dd450f844eb9ab7c1956417339b";
+
+export const fetchNews = async (category, query = "") => {
   const response = await fetch(
-    `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=6f612dd450f844eb9ab7c1956417339b`
+    `${BASE_URL}?country=us&category=${category}&q=${query}`,
+    {
+      method: "GET",
+      headers: {
+        Authorization: API_KEY,
+      },
+    }
   );
   const data = await response.json();
-  console.log(data);
-  return data.articles;
+  return data.articles || [];
 };

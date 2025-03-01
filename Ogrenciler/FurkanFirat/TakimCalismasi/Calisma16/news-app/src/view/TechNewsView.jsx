@@ -1,6 +1,7 @@
- 
-export default function TechNewsView() {
+ import CardList from "../components/CardList";
+
+ export default function TechNewsView() {
   return (
-    <div>TechNewsView</div>
-  )
+    <CardList category="technology"/>
+  );
 }
