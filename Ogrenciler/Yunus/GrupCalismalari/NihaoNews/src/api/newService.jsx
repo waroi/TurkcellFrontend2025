@@ -1,9 +1,10 @@
-import { useState } from "react"
+const baseUrl = import.meta.env.VITE_API_URL;
+const apiKey = import.meta.env.VITE_API_KEY;
 
-const [page, setPage] = useState(1)
-
-const baseUrl = `${process.env.API_URL}`
-
-fetch(baseUrl)
-    .then(response => response.json())
-    .then(data => console.log(data))
+export class newsService {
+    static async getNews(page) {
+        const response = await fetch(baseUrl + `?q=sport&page=${page}&apiKey=${apiKey}&language=jp&pageSize=10`)
+        const data = await response.json()
+        return data
+    }
+}
