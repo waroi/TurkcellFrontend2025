@@ -1,17 +1,11 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import HomePage from "./components/HomePage";
-import NewsPage from "./components/NewsPage";
+import Routers from "./routers/Routers";
 
 const App = () => (
-  <Router>
+  <>
     <Navbar />
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/news" element={<NewsPage />} />
-      <Route path="/news/:category" element={<NewsPage />} />
-    </Routes>
-  </Router>
+    <Routers />
+  </>
 );
 
 export default App;
