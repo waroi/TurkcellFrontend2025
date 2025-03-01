@@ -32,7 +32,7 @@ const CardList = ({ filters }) => {
     <>
       <div className="container py-5">
         <h2 className="text-info fw-semibold">Ürünler</h2>
-        <div className="row m-0 p-2">
+        <div className="row">
           {wings.length === 0 ? (
             <p>Ürün bulunamadı veya yükleniyor...</p>
           ) : (
