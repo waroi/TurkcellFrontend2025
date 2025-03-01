@@ -11,7 +11,6 @@ const SportNewView = () => {
       setNews(fetchNews);
     })();
   }, []);
-  console.log("aa", news);
 
   return (
     <>

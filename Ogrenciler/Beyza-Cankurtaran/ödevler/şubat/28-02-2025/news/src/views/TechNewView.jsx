@@ -11,7 +11,6 @@ const TechNewView = () => {
       setNews(fetchNews);
     })();
   }, []);
-  console.log("aa", news);
 
   return (
     <>
