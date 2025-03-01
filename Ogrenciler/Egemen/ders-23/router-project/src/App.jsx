@@ -5,9 +5,14 @@ import "./App.css";
 function App() {
   return (
     <>
-    <ul>
-      <li><NavLink to="/">Anasayfa</NavLink></li>
-    </ul>
+      <ul>
+        <li>
+          <NavLink to="/">Anasayfa</NavLink>
+        </li>
+        <li>
+          <NavLink to="/parametre/101">Param</NavLink>
+        </li>
+      </ul>
       <Router />
     </>
   );
