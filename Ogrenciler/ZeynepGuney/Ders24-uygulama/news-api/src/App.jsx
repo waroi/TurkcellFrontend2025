@@ -1,14 +1,17 @@
 import './App.css'
 // import Home from '../src/view/Home';
-// import Navbar from '../src/components/Navbar';
-// import Footer from '../src/components/Footer';
+import Navbar from './components/Navbar/Navbar';
+import Footer from './components/Footer/Footer';
 import fetchData from '../src/services/service';
+import  Router  from './router/Router';
 
 function App() {
   fetchData();
   return (
     <>
-
+    <Navbar></Navbar>
+    <Router></Router>
+    <Footer></Footer>
     </>
   )
 }
