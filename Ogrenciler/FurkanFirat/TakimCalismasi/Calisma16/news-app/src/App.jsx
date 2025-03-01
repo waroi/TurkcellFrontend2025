@@ -1,11 +1,11 @@
 import Router from './Router/Router';
 import './App.css';
-import { fetchNews } from './service/api';
+import Navbar from './components/Navbar';
 
 function App() {
-  fetchNews();
   return (
     <>
+      <Navbar />
       <Router />
     </>
   );
