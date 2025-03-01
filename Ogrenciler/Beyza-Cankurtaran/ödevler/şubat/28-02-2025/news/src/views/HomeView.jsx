@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getNews } from "../services/api";
 import Card from "../components/Card";
-
+import Banner from "../components/Banner";
 const HomeView = () => {
   const [news, setNews] = useState([]);
 
@@ -15,6 +15,7 @@ const HomeView = () => {
   return (
     <>
       <h1>Trend News</h1>
+      <Banner news={news}/>
       <div>
         {news.length === 0 ? (
           <p>Yükleniyor...</p>
