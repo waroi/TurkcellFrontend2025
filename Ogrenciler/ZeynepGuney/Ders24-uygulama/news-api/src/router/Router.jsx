@@ -6,11 +6,16 @@ import WorldView from "../view/WorldView";
 import HealthView from "../view/HealthView";
 import MagazineView from "../view/MagazineView";
 import SportView from "../view/SportView";
+import NewsView from "../view/NewsView";
 const Router = () => {
   const routes = useRoutes([
     {
-      path: "/home/",
+      path: "/",
       element: <Home />,
+    },
+    {
+      path: "/haberler/",
+      element: <NewsView />,
       children: [
         { index: true, element: <Navigate to="genel" /> },
         { path: "genel", element: <GeneralView /> },

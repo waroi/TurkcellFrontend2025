@@ -15,37 +15,55 @@ const Footer = () => {
 
       <ul className="nav col-md-4">
         <li className="nav-item">
-          <NavLink to={""} className="nav-link px-2 text-body-secondary">
+          <NavLink to="/" className="nav-link px-2 text-body-secondary">
             Anasayfa
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink to={""} className="nav-link px-2 text-body-secondary">
+          <NavLink
+            to="/haberler/spor"
+            className="nav-link px-2 text-body-secondary"
+          >
             Spor
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink to={""} className="nav-link px-2 text-body-secondary">
-            Economi
+          <NavLink
+            to="/haberler/ekonomi"
+            className="nav-link px-2 text-body-secondary"
+          >
+            Ekonomi
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink to={""} className="nav-link px-2 text-body-secondary">
+          <NavLink
+            to="/haberler/saglik"
+            className="nav-link px-2 text-body-secondary"
+          >
             Sağlık
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink to={""} className="nav-link px-2 text-body-secondary">
+          <NavLink
+            to="/haberler/magazin"
+            className="nav-link px-2 text-body-secondary"
+          >
             Magazin
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink to={""} className="nav-link px-2 text-body-secondary">
+          <NavLink
+            to="/haberler/genel"
+            className="nav-link px-2 text-body-secondary"
+          >
             Genel
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink to={""} className="nav-link px-2 text-body-secondary">
+          <NavLink
+            to="/haberler/dunya"
+            className="nav-link px-2 text-body-secondary"
+          >
             Dünya
           </NavLink>
         </li>
