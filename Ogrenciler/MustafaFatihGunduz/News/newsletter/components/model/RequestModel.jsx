@@ -1,16 +1,5 @@
 const url =
-  "https://api.collectapi.com/news/getNews?country=tr&paging=1&apiKey=0yzrr97R7JWRvN5jAIbkot:0fTuYi7ukS5aN8Z8HyP6zJ";
-
-export const getNewsletter = async (tag) => {
-  try {
-    const response = await fetch(`${url}&tag=${tag}`);
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.log("Request Model GetNewsLetter Error: ", error);
-    return null;
-  }
-};
+  "https://api.collectapi.com/news/getNews?country=tr&apiKey=0yzrr97R7JWRvN5jAIbkot:0fTuYi7ukS5aN8Z8HyP6zJ";
 
 export const getSportNews = async () => {
   try {
@@ -23,24 +12,35 @@ export const getSportNews = async () => {
   }
 };
 
-export const getTechnologyNews = async () => {
+export const getHealthNews = async () => {
   try {
-    const response = await fetch(`${url}&tag=technology`);
+    const response = await fetch(`${url}&tag=health`);
     const data = await response.json();
     return data;
   } catch (error) {
-    console.log("Request Model GetTechnologyNews Error: ", error);
+    console.log("Request Model GetTecHealthogyNews Error: ", error);
     return null;
   }
 };
 
 export const getGeneralNews = async () => {
   try {
-    const response = await fetch(`${url}&tag=general`);
+    const response = await fetch(`${url}&tag=general&paging=1`);
     const data = await response.json();
     return data;
   } catch (error) {
     console.log("Request Model GetGeneralNews Error: ", error);
+    return null;
+  }
+};
+
+export const getEconomyNews = async () => {
+  try {
+    const response = await fetch(`${url}&tag=economy`);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.log("Request Model GetEconomyNews Error: ", error);
     return null;
   }
 };
