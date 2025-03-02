@@ -1,40 +1,51 @@
-import React from 'react';
+// styled.jsx
 import styled from 'styled-components';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
-const Root = styled.div`
+
+// Root Style
+export const Root = styled.div`
   background: #fad1d8;
 `;
 
-const LogoImg = styled.img`
-  width: 100px;
-  height: 100px;
+// Navbar Style
+export const NavbarNews = styled.nav`
+  background: #f3a9b2 !important;
 `;
 
-const NewsCard = styled.div`
+// News Card Style
+export const NewsCard = styled.div`
   background-color: #fbe9e7;
 `;
 
-const NewItem = styled.div`
+// New Item Style with Transition
+export const NewItem = styled.div`
   transition: all 300ms ease-in-out;
-
   &:hover {
     transform: translateY(-7px);
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   }
 `;
 
-const NewImage = styled.div`
+// Image Style
+export const NewImage = styled.div`
   height: 250px;
 `;
 
-const NewItemText = styled.p`
+// Text Styles (Paragraph, h3, a)
+export const Text = styled.p`
   color: black;
   text-decoration: none;
   font-size: 1rem;
 `;
 
-const NewItemAnchor = styled.a`
+export const Header = styled.h3`
+  color: black;
+  text-decoration: none;
+  font-size: 1rem;
+`;
+
+export const Link = styled.a`
   color: black;
   text-decoration: none;
   font-size: 1rem;
@@ -45,31 +56,21 @@ const NewItemAnchor = styled.a`
   }
 `;
 
-const NewsDetail = styled.div`
+// Image Style for Image in Card
+export const NewImageContent = styled.img`
+  border-radius: 7px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+`;
+
+// News Detail Section
+export const NewsDetail = styled.div`
   max-width: 700px;
 `;
 
-const App = () => {
-  return (
-    <Root>
-      <NewsCard>
-        <NewItem>
-          <NewImage>
-            <img src="your-image-url.jpg" alt="news-item" style={{ borderRadius: '7px', width: '100%', height: '100%', objectFit: 'cover' }} />
-          </NewImage>
-          <NewItemText>
-            <NewItemAnchor href="#">
-              <h4>News Title</h4>
-            </NewItemAnchor>
-            <p>Short description of the news item...</p>
-          </NewItemText>
-        </NewItem>
-      </NewsCard>
-      <NewsDetail>
-        <p>Some additional details...</p>
-      </NewsDetail>
-    </Root>
-  );
-};
+// Footer Style
+export const FooterNews = styled.footer`
+  background: #f3a9b2;
+`;
 
-export default App;
