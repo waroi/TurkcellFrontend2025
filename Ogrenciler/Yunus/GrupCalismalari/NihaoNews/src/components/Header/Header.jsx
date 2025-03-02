@@ -1,4 +1,3 @@
-import CategoryBar from "./CategoryBar"
 import NavBar from "./Navbar"
 
 const Header = () => {
@@ -6,7 +5,7 @@ const Header = () => {
     <>
     <div className="navbar-news position-sticky sticky-top ">
       <NavBar />
-      <CategoryBar />
+   
     </div>
     </>
   )
