@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react'
 import { getNews } from '../api/getNews'
 import NewsCard from '../components/NewsCard' 
 
-const NewsView = () => {
+const PopNews = () => {
   const [news,setNews] = useState([]);
     useEffect(() => {
       getNews().then((data) => {
@@ -37,4 +37,4 @@ const NewsView = () => {
   )
 }
 
-export default NewsView
+export default PopNews
