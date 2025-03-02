@@ -4,7 +4,7 @@ import NavBar from "./Navbar"
 const Header = () => {
   return (
     <>
-    <div className="position-sticky sticky-top bg-body-tertiary">
+    <div className="navbar-news position-sticky sticky-top ">
       <NavBar />
       <CategoryBar />
     </div>
