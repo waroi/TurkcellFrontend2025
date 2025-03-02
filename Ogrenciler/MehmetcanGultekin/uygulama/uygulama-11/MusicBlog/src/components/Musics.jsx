@@ -1,7 +1,7 @@
 import React from 'react'
 import MusicCard from './MusicCard'
 import { useState, useEffect } from 'react'
-import getMusic from '../api/getMusic'
+import {getMusic} from '../api/getMusic'
 import { Col, Container ,Row } from 'react-bootstrap'
 
 export default function Musics() {
@@ -10,6 +10,7 @@ export default function Musics() {
     useEffect(() => {
         const fetchMusics = async ()=> {
             const data = await getMusic()
+            console.log(data)
             setMusics(data)
         }
         fetchMusics()

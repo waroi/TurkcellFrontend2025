@@ -1,25 +1,16 @@
-const Blog_URL = "http://localhost:3000/musics"
-
-async function getMusic() {
+export const getMusic = async () => {
   try {
-    const response = await fetch(
-      Blog_URL,
-      {
-        headers: {
-          accept: "application/json",
-        },
+      const response = await fetch('http://localhost:3000/musics')
+      if (!response.ok) {
+          throw new Error('Failed to fetch music data')
       }
-    );
-    if (!response.ok) {
-      throw new Error("Müzik bulunamadi");
-    }
-    const data = await response.json();
-    console.log(data);
-    return data;
+      return await response.json()
+      
   } catch (error) {
-    console.error(`getMusic API çağrısı başarisiz! ${error}`);
+      console.error('Error fetching music data:', error)
+      return []
   }
 }
 
-export default getMusic;
+
 
