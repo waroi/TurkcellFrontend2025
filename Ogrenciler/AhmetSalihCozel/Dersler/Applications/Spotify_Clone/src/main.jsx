@@ -10,7 +10,6 @@ document.getElementById('root').style.height = "100vh"
 
 
 const theme = createTheme(themeOptions())
-console.log(theme)
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <ThemeProvider theme={theme}>
