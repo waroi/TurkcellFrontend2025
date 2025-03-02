@@ -1,6 +1,16 @@
 @import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
-
+#root{
+    background:  #FAD1D8;
+}
+.news-card{
+    background-color:#FBE9E7 ;
+    
+}
+.logo-img{
+    width: 100px;
+    height: 100px;
+}
 .new-item {
     transition: all 300ms ease-in-out;
 }

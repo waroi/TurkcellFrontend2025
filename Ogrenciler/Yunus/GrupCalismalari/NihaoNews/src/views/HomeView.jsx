@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { newsService } from "../api/newService";
 import { NavLink } from "react-router";
+import Card from "../components/Card";
 function HomeView() {
 	const [news, setNews] = useState();
 	const defaultImgUrl =
@@ -15,34 +16,15 @@ function HomeView() {
 	return (
 		<>
 			{news ? (
-				<div className="container-fluid px-lg-5">
-					<div className="row news-wrapper mx-lg-5">
+				<div className="container-fluid px-lg-5 ">
+					<div className="row news-wrapper mx-lg-2 d-flex justify-content-center ">
 						{news.map((item, index) => {
 							return (
 								<div
 									key={index}
-									className="col-lg-3 new-item my-4 rounded col-md-4 col-sm-6 col-12"
+									className="news-card mx-2 col-lg-3 new-item my-4 rounded col-md-4 col-sm-6 col-12"
 								>
-									<NavLink
-										to={`/news/${item.id}`}
-										className="h-100 d-flex flex-column"
-									>
-										<div className="new-image">
-											<img
-												src={item.urlToImage}
-												onError={({ currentTarget }) => {
-													currentTarget.onerror = null;
-													currentTarget.src = defaultImgUrl;
-												}}
-												className="img-fluid h-100 w-100 object-fit-cover"
-												alt={item.title}
-											/>
-										</div>
-										<h4 className="my-3">{item.title}</h4>
-										<p className="new-description">
-											{item.description.split("").slice(0, 40).join("")}
-										</p>
-									</NavLink>
+								<Card item={item}/> 
 								</div>
 							);
 						})}
