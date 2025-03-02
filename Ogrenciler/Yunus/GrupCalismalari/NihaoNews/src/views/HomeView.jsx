@@ -40,7 +40,7 @@ function HomeView() {
 										</div>
 										<h4 className="my-3">{item.title}</h4>
 										<p className="new-description">
-											{item.description.split("").slice(0, 40).join(" ")}
+											{item.description.split("").slice(0, 40).join("")}
 										</p>
 									</NavLink>
 								</div>
