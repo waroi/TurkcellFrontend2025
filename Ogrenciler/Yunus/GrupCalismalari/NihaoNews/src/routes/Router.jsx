@@ -1,6 +1,5 @@
 import { useRoutes } from 'react-router'
 import HomeView from '../views/HomeView'
-import Header from '../components/Header/Header'
 
 const Router = () => {
     const routes = useRoutes([
