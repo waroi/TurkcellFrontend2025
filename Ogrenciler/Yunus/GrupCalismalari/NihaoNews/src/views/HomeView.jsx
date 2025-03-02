@@ -13,9 +13,9 @@ function HomeView() {
 		getnews();
 	}, []);
 	return (
-		<div className="mt-5 pt-5">
+		<>
 			{news ? (
-				<div className="container-fluid px-lg-5 mt-5">
+				<div className="container-fluid px-lg-5">
 					<div className="row news-wrapper mx-lg-5">
 						{news.map((item, index) => {
 							return (
@@ -24,7 +24,7 @@ function HomeView() {
 									className="col-lg-3 new-item my-4 rounded col-md-4 col-sm-6 col-12"
 								>
 									<NavLink
-										to={`/news/${item.title}`}
+										to={`/news/${item.id}`}
 										className="h-100 d-flex flex-column"
 									>
 										<div className="new-image">
@@ -51,7 +51,7 @@ function HomeView() {
 			) : (
 				<h1>Bulunamadı</h1>
 			)}
-		</div>
+		</>
 	);
 }
 export default HomeView;

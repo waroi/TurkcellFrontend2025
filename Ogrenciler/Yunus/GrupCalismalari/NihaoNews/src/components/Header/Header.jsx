@@ -3,9 +3,9 @@ import NavBar from "./Navbar"
 
 const Header = () => {
   return (
-    <div className="position-fixed fixed-top bg-body-tertiary">
-    <NavBar />
-        <CategoryBar />
+    <div className="position-sticky sticky-top bg-body-tertiary">
+      <NavBar />
+      <CategoryBar />
     </div>
   )
 }
