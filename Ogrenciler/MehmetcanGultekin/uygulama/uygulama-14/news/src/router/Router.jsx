@@ -1,27 +1,25 @@
-import {useRoutes} from 'react-router'
-import HomeView from '../views/HomeView'
-import UserView from '../views/UserView'
-import userRouter from './userRouter'
-import ParametreView from '../views/ParametreView'
-
-import NewView from '../views/NewView'
+import {useRoutes, Navigate} from 'react-router'
+import HomeNewsView from '../views/HomeNewsView'
+import NewsView from '../views/NewsView'
+import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
+import EconomyNewView from '../../../../../../../Dersler/Ders23-React-Router/src/views/EconomyNewView'
+import SportNewView from '../../../../../../../Dersler/Ders23-React-Router/src/views/SportNewView'
 const Router = () => {
     
     const routes = useRoutes([
-        {path: '/', element: <HomeView/>},
-        {path: "/user" , element: <UserView/>},
-        {path: "/parametre/:id" , element: <ParametreView/>},
-
-        {path: "/haberler/" , element: <NewView/>,
+        {path: "/Navbar" , element: <Navbar/>},
+        {path: "/Footer" , element: <Footer/>},
+        {path: "/" , element: <HomeNewsView/>},
+        {path: "/haberler/", element: <NewsView/>,
           children: [
-            {index: true, element: <Navigate to = "spor"/>},
-            {path: "spor", element: <SportsNewsView/>},
-          ]
+            {index: true, element: <Navigate to="spor" />},
+            {path: "spor", element: <SportNewView/>},
+            {path: "ekonomi", element: <EconomyNewView/>},
+            
+          ],
         },
-
-      
-
-    
+           
   ])
   return routes
 }
