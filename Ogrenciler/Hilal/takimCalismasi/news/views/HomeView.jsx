@@ -1,55 +1,9 @@
 import React, { useEffect, useState } from "react";
 
-const HomeView = () => {
-  const [news, setNews] = useState([]);
-  const [country, setCountry] = useState("tr");
-  const [topic, setTopic] = useState("general");
-
-  useEffect(() => {
-    fetchNews(country,topic);
-  }, []);
-  useEffect(() => {
-    fetchNews(country,topic);
-  }, [country,topic]);
-
-  const fetchNews = (country,topic) => {
-    fetch(
-      `https://api.collectapi.com/news/getNews?country=${country}&tag=${topic}`,
-      {
-        method: "GET",
-        headers: {
-          accept: "application/json",
-          Authorization: "apikey 3v5NN9t6MJdnyc03bxe3sl:52MlUT5x0QEWCCA3PiURTZ",
-        },
-      }
-    )
-      .then((response) => response.json()) // response.json() return edilmeli
-      .then((result) => {
-        console.log("API Response:", result);
-        setNews(result.result); // Eğer veri "result" içinde geliyorsa
-      })
-      .catch((error) => {
-        console.error("API Hatası:", error);
-      });
-  };
+const HomeView = ({news}) => {
 
   return (
     <div>
-      <select className="form-select" aria-label="Default select example" onChange={(event)=>{setCountry(event.target.value)}}>
-        <option selected>Ülke Seç</option>
-        <option value="tr">Türkiye</option>
-        <option value="de">Almanya</option>
-        <option value="ru">Rusya</option>
-        <option value="en">İngiltere</option>
-      </select>
-      <select className="form-select" aria-label="Default select example" onChange={(event)=>{setTopic(event.target.value)}}>
-        <option selected>Kategori</option>
-        <option value="general">Genel</option>
-        <option value="sport">Spor</option>
-        <option value="technology">Teknoloji</option>
-        <option value="economy">Ekonomi</option>
-      </select>
-
       <h2>Haberler</h2>
       <div id="carouselExampleIndicators" className="carousel slide">
         <div className="carousel-indicators">
