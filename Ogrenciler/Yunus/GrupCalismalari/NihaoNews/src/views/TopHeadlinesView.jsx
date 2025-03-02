@@ -6,6 +6,7 @@ function TopHeadlinesView() {
     const [news, setNews] = useState();
     const defaultImgUrl =
         "https://img.freepik.com/free-psd/3d-rendering-news-sales-background_23-2150732563.jpg?t=st=1740909615~exp=1740913215~hmac=e24e8489fcda35d4d46b0bab5e7e7c30b3b2975224599f03f94e00f11eddf16c&w=2000";
+
     useEffect(() => {
         const getnews = async () => {
             const response = await newsService.getTopHeadlines();
@@ -13,6 +14,7 @@ function TopHeadlinesView() {
         };
         getnews();
     }, []);
+
     return (
         <>
             {news ? (
