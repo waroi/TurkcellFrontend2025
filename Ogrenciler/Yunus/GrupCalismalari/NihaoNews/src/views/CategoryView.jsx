@@ -18,12 +18,12 @@ const CategoryView = () => {
     <>
       {news ? (
         <div className="container-fluid px-lg-5">
-          <div className="row news-wrapper mx-lg-5">
-            {news.map((item, index) => {
+					<div className="row news-wrapper mx-lg-2 d-flex justify-content-center ">
+          {news.map((item, index) => {
               return (
                 <div
                   key={index}
-                  className="col-lg-3 new-item my-4 rounded col-md-4 col-sm-6 col-12"
+									className="news-card mx-2 col-lg-3 new-item my-4 rounded col-md-4 col-sm-6 col-12"
                 >
                   <Card item={item}/>
                 </div>

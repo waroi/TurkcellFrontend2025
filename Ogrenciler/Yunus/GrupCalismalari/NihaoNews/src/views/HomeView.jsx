@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { newsService } from "../api/newService";
-import { NavLink } from "react-router";
 import Card from "../components/Card";
 function HomeView() {
 	const [news, setNews] = useState();
@@ -16,7 +15,7 @@ function HomeView() {
 		<>
 			{news ? (
 				<div className="container-fluid px-lg-5 ">
-					<div className="row news-wrapper mx-lg-2 d-flex justify-content-center ">
+					<div className="row news-wrapper mx-lg-2 d-flex justify-content-center">
 						{news.map((item, index) => {
 							return (
 								<div
@@ -30,7 +29,7 @@ function HomeView() {
 					</div>
 				</div>
 			) : (
-				<h1>Bulunamadı</h1>
+				<h1>Yükleniyor...</h1>
 			)}
 		</>
 	);
