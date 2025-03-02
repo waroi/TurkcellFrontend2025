@@ -22,4 +22,8 @@ async function getAllNews(category = "general") {
   }
 }
 
-export { getAllNews };
+const getNewsById = (newsId) => {
+  return getAllNews().find((news) => news.id === newsId);
+};
+
+export { getAllNews, getNewsById };

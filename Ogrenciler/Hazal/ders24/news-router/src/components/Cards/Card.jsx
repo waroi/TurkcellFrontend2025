@@ -1,12 +1,12 @@
 import React from 'react';
 import { Card, Col } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 
-const Card = ({ news }) => {
+const NewsCard = ({ news }) => {
     return (
-        <Col md={4}>
+        <Col md={6}>
             <Card>
-                <Card.Img variant="top" src={news.image} />
+                <Card.Img variant="top" src={news.urlToImage} />
                 <Card.Body>
                     <Card.Title>{news.title}</Card.Title>
                     <Card.Text>{news.description}</Card.Text>
@@ -17,4 +17,4 @@ const Card = ({ news }) => {
     );
 }
 
-export default Card;
+export default NewsCard;
