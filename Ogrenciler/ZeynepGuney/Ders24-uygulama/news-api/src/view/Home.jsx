@@ -22,8 +22,6 @@ const Home = () => {
   ) : (
     <div className="container">
       <Slider news={data}></Slider>
-      <Categories />
-      <Outlet />
     </div>
   );
 };
