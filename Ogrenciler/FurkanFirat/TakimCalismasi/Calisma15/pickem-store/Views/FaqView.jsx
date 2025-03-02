@@ -1,11 +1,6 @@
-import Footer from '../src/components/Footer';
-import Navbar from '../src/components/Navbar';
-
 export default function FaqView() {
   return (
     <>
-      <Navbar />
-
       <main class='main-section'>
         <header class='mt-20'>
           <div class='container-fluid p-5 text-white text-center'>
@@ -157,8 +152,6 @@ export default function FaqView() {
           </div>
         </div>
       </main>
-
-      <Footer />
     </>
   );
 }

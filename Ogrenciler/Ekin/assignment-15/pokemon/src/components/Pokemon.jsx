@@ -17,7 +17,6 @@ export default function Pokemon() {
     } catch {}
   }, []);
 
-  // return <h1>pokemon name: {name}</h1>;
   if (pokemon)
     return (
       <section id="pokemon">

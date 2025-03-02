@@ -1,3 +1,4 @@
+import React from 'react'
 import MusicCard from './MusicCard'
 import { useState, useEffect } from 'react'
 import getMusic from '../api/getMusic'

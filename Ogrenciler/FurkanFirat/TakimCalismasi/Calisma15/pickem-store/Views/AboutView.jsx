@@ -1,10 +1,6 @@
-import Footer from '../src/components/Footer';
-import Navbar from '../src/components/Navbar';
-
 export default function AboutView() {
   return (
     <>
-      <Navbar />
       <main className='main-section'>
         <header className='mt-20'>
           <div className='container-fluid py-5 text-white text-center'>
@@ -129,7 +125,6 @@ export default function AboutView() {
           </section>
         </section>
       </main>
-      <Footer />
     </>
   );
 }

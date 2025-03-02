@@ -1,0 +1,27 @@
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+
+.new-item {
+    transition: all 300ms ease-in-out;
+}
+
+.new-image {
+    height: 250px;
+}
+
+.new-item p,
+h3,
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.new-item a:hover>h4 {
+    text-decoration: underline;
+    color: blue;
+}
+
+.new-item:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
