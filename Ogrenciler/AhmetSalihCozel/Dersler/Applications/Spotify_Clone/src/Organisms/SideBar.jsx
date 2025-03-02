@@ -7,6 +7,7 @@ import ListItemText from "@mui/material/ListItemText";
 import Divider from "@mui/material/Divider";
 import { ThumbUp } from "@mui/icons-material";
 import AutoStoriesIcon from "@mui/icons-material/AutoStories";
+import { grey } from "@mui/material/colors";
 
 
 function SideBar() {
@@ -17,8 +18,9 @@ function SideBar() {
   };
 
   return (
-    <Box  sx={{ width: "fit-content", height:"auto", minWidth: "360px", bgcolor: "secondary.main", color:"primary.main"}}>
-      <List component="nav" aria-label="main mailbox folders">
+    <Box sx={{height:"100%", bgcolor: grey[800], p:1.5}}>
+      <Box sx={{height:"100%", bgcolor: "secondary.main" , color:"primary.main",borderRadius:3}}>
+      <List sx={{display:"flex", justifyContent:"space-betweens"}} component="nav" aria-label="main mailbox folders">
         <ListItemButton
           selected={selectedIndex === 0}
           onClick={(event) => handleListItemClick(event, 0)}
@@ -38,22 +40,9 @@ function SideBar() {
           <ListItemText primary="Kitaplik" />
         </ListItemButton>
       </List>
-      <Divider />
-      <List component="nav" aria-label="secondary mailbox folder">
-        <ListItemButton
-          selected={selectedIndex === 2}
-          onClick={(event) => handleListItemClick(event, 2)}
-        >
-          <ListItemText primary="Trash" />
-        </ListItemButton>
-        <ListItemButton
-          selected={selectedIndex === 3}
-          onClick={(event) => handleListItemClick(event, 3)}
-        >
-          <ListItemText primary="Spam" />
-        </ListItemButton>
-      </List>
     </Box>
+    </Box>
+
   );
 }
 

@@ -6,6 +6,7 @@ import App from './App.jsx'
 import { CssBaseline } from '@mui/material'
 import themeOptions from '../themeOptions.js'
 
+document.getElementById('root').style.height = "100vh"
 
 
 const theme = createTheme(themeOptions())
@@ -13,8 +14,8 @@ console.log(theme)
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <ThemeProvider theme={theme}>
-      <CssBaseline/>
-      <App />
-      </ThemeProvider >
+      <CssBaseline />
+      <App/>
+    </ThemeProvider>
   </StrictMode>
 )

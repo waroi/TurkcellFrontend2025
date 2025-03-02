@@ -21,7 +21,6 @@ const Products = () => {
                                 title={product.title}
                                 description={product.description}
                                 price={product.price}
-                                productLink={product.productLink}
                             />
                         ))}
                     </div>

@@ -1,0 +1,37 @@
+.playBarInner{
+    width:10%;
+    height:5px;
+    background-color:white;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.playBarThumb{
+    position: relative;
+    left: -5px;;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.playBar{
+    padding: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    height: 6px;
+    width: 100%;
+    border-radius: 5px;
+    background-color: #6868688a;
+}
+
+.currentTime{
+    margin: 0;
+}
+
+.totalTime{
+    margin: 0;
+}
+
