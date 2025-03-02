@@ -4,9 +4,11 @@ import { Outlet } from "react-router";
 const NewsView = () => {
   return (
     <>
-      <div className="mt-5">NewsView</div>
-      <Categories />
-      <Outlet />
+      <div className="mt-5 pt-3 container">
+        <h2>Popüler Konular</h2>
+        <Categories />
+        <Outlet />
+      </div>
     </>
   );
 };
