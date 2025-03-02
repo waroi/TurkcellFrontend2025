@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import {getAllNews} from "./api/getNews";
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
+import Footer from "./components/Footer/Footer";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
   return (
     <>
     <Navbar/>
+    <Footer/>
     </>
   )
 }
