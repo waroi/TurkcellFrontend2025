@@ -13,11 +13,9 @@ const fetchData = async (category = "general") => {
       throw new Error("Haber bulunamadı");
     }
     const data = await response.json();
-    //   setUser(data);
-    console.log(data);
     return data.result;
   } catch (error) {
-    //   setError(`Haber API çağrısı başarisiz! ${error}`);
+    console.log(`Haber API çağrısı başarisiz! ${error}`);
   }
 };
 export default fetchData;

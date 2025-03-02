@@ -4,19 +4,19 @@ const CardContainer = ({ news }) => {
       <div className="row ">
         {news.map((neww, index) => {
           return (
-            <div className="col-md-6 col-lg-4 mb-3">
-              <div key={index} class="card h-100">
+            <div key={index} className="col-md-6 col-lg-4 mb-3">
+              <div className="card h-100">
                 <img
                   src={neww.image}
                   className="card-img-top  ratio ratio-4x3"
                   alt={neww.name}
                 />
-                <div class="card-body d-flex flex-column justify-content-between">
+                <div className="card-body d-flex flex-column justify-content-between">
                   <div>
-                    <h5 class="card-title" title={neww.name}>
+                    <h5 className="card-title" title={neww.name}>
                       {neww.name}
                     </h5>
-                    <p class="card-text">{neww.description}</p>
+                    <p className="card-text">{neww.description}</p>
                   </div>
                   <div>
                     <p className="card-text">

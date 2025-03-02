@@ -10,7 +10,6 @@ const Home = () => {
       try {
         const fetch = await fetchData();
         setData(fetch);
-        console.log("ff" + fetch);
       } catch (error) {
         console.log(error);
       }
