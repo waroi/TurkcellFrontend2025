@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
 import NewsClient from "../service/newsService";
 
-function TechnologyView() {
+function GeneralView() {
 	const [news, setNews] = useState([]);
-	const fallbackImage = "https://placehold.co/600x400?text=Teknoloji+Haberi";
+	const fallbackImage = "https://placehold.co/600x400?text=Genel+Haber";
 
 	useEffect(() => {
-		const fetchTechnologyNews = async () => {
-			const data = await NewsClient.getNews("technology");
+		const fetchGeneralNews = async () => {
+			const data = await NewsClient.getNews("general");
 			setNews(data.result || []);
 		};
 
-		fetchTechnologyNews();
+		fetchGeneralNews();
 	}, []);
 
 	const handleImageError = (e) => {
@@ -20,7 +20,7 @@ function TechnologyView() {
 
 	return (
 		<>
-			<h2>Teknoloji Haberleri</h2>
+			<h2>Genel Haberler</h2>
 			<div className="row">
 				{news.map((item, index) => (
 					<div key={index} className="col-md-4 mb-4">
@@ -39,7 +39,7 @@ function TechnologyView() {
 									href={item.url}
 									target="_blank"
 									rel="noopener noreferrer"
-									className="btn btn-info">
+									className="btn btn-primary">
 									Habere Git
 								</a>
 							</div>
@@ -51,4 +51,4 @@ function TechnologyView() {
 	);
 }
 
-export default TechnologyView;
+export default GeneralView;
