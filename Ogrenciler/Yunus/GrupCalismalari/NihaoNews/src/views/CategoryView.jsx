@@ -1,9 +1,11 @@
+import { useParams } from 'react-router';
 
-// const CategoryView = (category) => {
-//     const { category } = useParams();
-//   return (
-//     <div>CategoryView</div>
-//   )
-// }
+const CategoryView = () => {
+    const { categoryName } = useParams();
+    console.log(categoryName)
+  return (
+    <div>{categoryName}</div>
+  )
+}
 
-// export default CategoryView
+export default CategoryView

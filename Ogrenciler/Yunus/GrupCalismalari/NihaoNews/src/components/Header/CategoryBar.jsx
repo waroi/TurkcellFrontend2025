@@ -6,7 +6,7 @@ const CategoryBar = () => {
         <div className="category-bar d-flex text-center gap-3 align-items-center justify-content-center">
         {Categories.map((category) => (
 
-            <NavLink  to={`/news/${category.name}`}  key={category.id} className = "">
+            <NavLink to={`/news/category/${category.name}`}  key={category.id} className = "">
                 <p>{category.name}</p>
             </NavLink>
         ))}

@@ -1,13 +1,14 @@
 import { useRoutes } from 'react-router'
 import HomeView from '../views/HomeView'
+import CategoryView from '../views/CategoryView'
 
 const Router = () => {
     const routes = useRoutes([
         { path: '/', element: <HomeView /> },
         {
             path: '/news/', element: <h1>SADIKJASFJKASFSAŞD</h1>, children: [
-                { path: ':categoryName', element: <h1>category VİEW GELİR</h1> },
-                { path: ':newsId', element: <h3>asdsadsa</h3> }
+                { path: 'category/:categoryName', element: <CategoryView />},
+                // { path: ':newsId', element: <h3>asdsadsa</h3> }
             ]
         },
     ])
