@@ -11,7 +11,7 @@ export default function Router() {
   const routes = useRoutes([
     { path: '/', element: <HomeView /> },
     {
-      path: '/haberler/',
+      path: '/haberler',
       element: <NewsView />,
       children: [
         { index: true, element: <Navigate to='genel' /> },

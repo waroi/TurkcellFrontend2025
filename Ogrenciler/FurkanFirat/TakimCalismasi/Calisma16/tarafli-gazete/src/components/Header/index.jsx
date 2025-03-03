@@ -1,6 +1,6 @@
 export default function Header() {
   return (
-    <div className='bg-primary text-white py-4'>
+    <div className='bg-primary text-white py-4 mb-3'>
       <div className='container'>
         <h1 className='display-5 text-center fw-bold'>
           HABER DÜNYASI
