@@ -1,3 +1,16 @@
+:root {
+  --primary: #211C84;
+  --light: #B5A8D5;
+  --white: #ffffff;
+  --accent: #4D55CC;
+  --neutral: #7A73D1;
+  --text-light: #5A6875;
+  --border: #E2E8F0;
+  --shadow-sm: rgba(0, 0, 0, 0.05);
+  --shadow: rgba(0, 0, 0, 0.08);
+  --font-main: 'Inter', sans-serif;
+  --mint: #b7dfe2;
+}
 h5 {
   width: 100%;
   overflow: hidden;
@@ -5,6 +18,9 @@ h5 {
   text-overflow: ellipsis;
 }
 
+.btn{
+  background-color: var(--neutral);
+}
 /* #root {
   max-width: 1280px;
   margin: 0 auto;

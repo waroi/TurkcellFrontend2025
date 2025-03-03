@@ -6,15 +6,14 @@ import {NavLink} from "react-router";
 
 const NavbarNews = () => {
   return (
-    <div>
-      <Navbar expand="lg" className="bg-body-tertiary">
+    <div className="d-flex justify-content-center bg-dark">
+      <Navbar expand="lg">
         <Container>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-              <NavLink to="/haberler/" className="outfit" >Haber Portalı</NavLink>
-            </Nav>
-          </Navbar.Collapse>
+          <Nav className="me-auto">
+            <NavLink to="/haberler/" className="outfit">
+              Haber Portalı
+            </NavLink>
+          </Nav>
         </Container>
       </Navbar>
     </div>

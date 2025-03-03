@@ -13,6 +13,7 @@ const HealthNewsView = () => {
   }, []);
   return (
     <div>
+      <h1 className="mb-3 mt-3">Sağlık Haberleri</h1>
       <Row md={4}>{news.map((item) => NewsCard(item))}</Row>
     </div>
   );
