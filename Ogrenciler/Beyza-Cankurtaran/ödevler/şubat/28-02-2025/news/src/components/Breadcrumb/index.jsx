@@ -1,14 +1,11 @@
-import React from "react";
 import { Link, useLocation } from "react-router";
 
 const Breadcrumb = () => {
   const paths = useLocation().pathname.split("/").filter(Boolean);
 
   return (
-    
-
-<nav aria-label="breadcrumb">
-  <ol className="breadcrumb">
+    <nav aria-label="breadcrumb">
+      <ol className="breadcrumb">
         <li className="breadcrumb-item">
           <Link to="/">Anasayfa</Link>
         </li>
@@ -23,8 +20,8 @@ const Breadcrumb = () => {
             )}
           </li>
         ))}
-  </ol>
-</nav>
+      </ol>
+    </nav>
   );
 };
 export default Breadcrumb;

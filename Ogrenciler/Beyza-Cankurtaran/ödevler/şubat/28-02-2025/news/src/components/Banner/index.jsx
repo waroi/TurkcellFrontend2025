@@ -1,5 +1,3 @@
-import React from "react";
-
 const Banner = ({ news }) => {
   return (
     <div id="carouselExampleCaptions" className="carousel slide">
