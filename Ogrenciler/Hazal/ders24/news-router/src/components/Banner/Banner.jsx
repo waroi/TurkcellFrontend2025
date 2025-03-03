@@ -1,34 +1,34 @@
-import Carousel from 'react-bootstrap/Carousel';
-import ExampleCarouselImage from 'components/ExampleCarouselImage';
+import React from 'react';
+import { Carousel } from 'react-bootstrap';
+import styled from 'styled-components';
 
-function CarouselFadeExample() {
+const StyledCarousel = styled(Carousel)`
+  margin-bottom: 30px;
+`;
+
+const CarouselImage = styled.img`
+  height: 600px;
+  object-fit: cover;
+`;
+
+function Banner({ news }) {
   return (
-    <Carousel fade>
-      <Carousel.Item>
-        <CarouselImage text="First slide" />
-        <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <ExampleCarouselImage text="Second slide" />
-        <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <ExampleCarouselImage text="Third slide" />
-        <Carousel.Caption>
-          <h3>Third slide label</h3>
-          <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
-        </Carousel.Caption>
-      </Carousel.Item>
-    </Carousel>
+    <StyledCarousel>
+      {news && news.slice(0, 3).map((item, index) => (
+        <Carousel.Item key={index}>
+          <CarouselImage
+            className="d-block w-100"
+            src={item.urlToImage}
+            alt={item.title}
+          />
+          <Carousel.Caption>
+            <h3>{item.title}</h3>
+            <p>{item.description}</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+      ))}
+    </StyledCarousel>
   );
 }
 
-export default CarouselFadeExample;
+export default Banner;

@@ -1,29 +1,16 @@
 const api_key = import.meta.env.VITE_API_KEY;
+const BASE_URL = 'https://newsapi.org/v2';
 
-async function getAllNews(category = "general") {
-  try {
-    const response = await fetch(
-      `https://newsapi.org/v2/top-headlines?country=us&category=${category}`,
-      {
-        headers: {
-          accept: "application/json",
-          Authorization: `Bearer ${api_key}`,
-        },
-      }
-    );
-    if (!response.ok) {
-      throw new Error("Haber bulunamadi");
-    }
-    const data = await response.json();
-    console.log(data);
-    return data;
-  } catch (error) {
-    console.error(`getAllNews API çağrısı başarisiz! ${error}`);
-  }
-}
-
-const getNewsById = (newsId) => {
-  return getAllNews().find((news) => news.id === newsId);
+export const fetchNews = async (category = 'general') => {
+  const response = await fetch(
+    `${BASE_URL}/top-headlines?category=${category}`,
+    {
+      method: 'GET',
+      headers: {
+        accept: 'application/json',
+        Authorization: `Bearer ${api_key}`,
+      },
+    });
+  const data = await response.json();
+  return data.articles;
 };
-
-export { getAllNews, getNewsById };
