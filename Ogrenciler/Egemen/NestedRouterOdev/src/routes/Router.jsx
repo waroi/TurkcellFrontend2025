@@ -8,7 +8,7 @@ const Router = () => {
       path: "home",
       element: <Home />,
       children: [
-        { index: true, element: <CategoryView category="general" /> },
+        { index: true, element: <CategoryView/> },
         { path: ":categoryName", element: <CategoryView /> },
       ],
     },

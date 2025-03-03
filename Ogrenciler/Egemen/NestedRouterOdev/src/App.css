@@ -1,0 +1,36 @@
+.news-image {
+    height: 20rem;
+    object-fit: cover;
+}
+
+.news-image {
+    transition: transform 0.3s ease-in-out;
+}
+
+.news-card:hover .news-image {
+    transform: scale(1.05);
+}
+
+.news-card {
+    cursor: pointer;
+}
+
+.custom-line {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.padding-custom {
+    padding-top: 5rem;
+}
+
+.news-card:hover .card-title {
+    color: rgb(76, 76, 241);
+}
+
+.nav-link:hover {
+    color: rgb(76, 76, 241);
+    font-weight: 600;
+}

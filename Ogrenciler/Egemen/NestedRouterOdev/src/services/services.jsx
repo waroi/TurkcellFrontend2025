@@ -1,6 +1,5 @@
 const fetchArticles = async (category) => {
   try {
-    console.log("xx", category);
     const response = await fetch(
       `https://api.collectapi.com/news/getNews?country=tr&tag=${category}&language=en`,
       {
@@ -16,6 +15,8 @@ const fetchArticles = async (category) => {
     const data = await response.json();
 
     return data.result;
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
 };
 export default fetchArticles;

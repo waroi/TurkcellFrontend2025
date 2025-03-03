@@ -1,11 +1,12 @@
 import { useParams } from "react-router";
 import { useState, useEffect } from "react";
 import fetchArticles from "../services/services";
+import NewCard from "../components/NewCard";
 
-const CategoryView = ({ category = null }) => {
+const CategoryView = () => {
   const { categoryName } = useParams();
   const [articles, setArticles] = useState([]);
-  const currentCategory = category || categoryName || "general"; // Varsayılan: "general"
+  const currentCategory = categoryName || "general";
 
   useEffect(() => {
     const getArticles = async () => {
@@ -20,26 +21,14 @@ const CategoryView = ({ category = null }) => {
   }, [currentCategory]);
 
   return (
-    <div className="cotainer">
-      <div className="mt-4 d-flex justify-content-center">
-        <h1>{currentCategory.toUpperCase()} NEWS</h1>
+    <div className="container">
+      <div className="mt-5 d-flex align-items-center gap-3">
+        <h1 className="fs-2 fw-semibold">{currentCategory.toUpperCase()} NEWS</h1>
+        <p className="mb-0 fs-5">{articles.length} results found</p>
       </div>
-      <div className="row p-5 g-5 mx-4">
+      <div className="row pt-5 g-5 min-vh-100">
         {articles?.map((article) => (
-          <div key={article.id} className="card mb-3 col-6">
-            <img
-              src={article?.image}
-              className="card-img-top"
-              alt="News image"
-            />
-            <div className="card-body">
-              <h5 className="card-title">{article?.name}</h5>
-              <p className="card-text">{article?.description}</p>
-              <p className="card-text">
-                <small className="text-body-secondary">{article?.date}</small>
-              </p>
-            </div>
-          </div>
+         <NewCard article={article} key={article.key}/>
         ))}
       </div>
     </div>
