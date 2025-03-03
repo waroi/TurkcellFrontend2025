@@ -11,9 +11,12 @@ const Router = () => {
         {path: "/Navbar" , element: <Navbar/>},
         {path: "/Footer" , element: <Footer/>},
         {path: "/" , element: <HomeNewsView/>},
+        {path: "/spor", element: <SportNewView/>},
+        
         {path: "/haberler/", element: <NewsView/>,
           children: [
-            {index: true, element: <Navigate to="spor" />},
+            {index: true, element: <Navigate to="popüler" />},
+            {path: "popüler", element: <PopNews/>},
             {path: "spor", element: <SportNewView/>},
             {path: "ekonomi", element: <EconomyNewView/>},
             
