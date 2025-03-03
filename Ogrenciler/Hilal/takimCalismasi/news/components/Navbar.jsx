@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router";
 
-const Navbar = ({ setCategory }) => {
+const Navbar = ({ handleCategory }) => {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container">
@@ -23,9 +23,9 @@ const Navbar = ({ setCategory }) => {
           <ul className="navbar-nav">
             <li className="nav-item">
               <NavLink
-                to="/kategori/spor"
+                to="/sport"
                 className="nav-link"
-                onClick={() => setCategory("spor")}
+                onClick={() => handleCategory("sport")}
               >
                 Spor
               </NavLink>
@@ -34,25 +34,25 @@ const Navbar = ({ setCategory }) => {
               <NavLink
                 to="/kategori/teknoloji"
                 className="nav-link"
-                onClick={() => setCategory("teknoloji")}
+                onClick={() => handleCategory("teknoloji")}
               >
                 Teknoloji
               </NavLink>
             </li>
             <li className="nav-item">
               <NavLink
-                to="/kategori/ekonomi"
+                to="/economy"
                 className="nav-link"
-                onClick={() => setCategory("ekonomi")}
+                onClick={() => handleCategory("economy")}
               >
                 Ekonomi
               </NavLink>
             </li>
             <li className="nav-item">
               <NavLink
-                to="/kategori/siyaset"
+                to="/siyaset"
                 className="nav-link"
-                onClick={() => setCategory("siyaset")}
+                onClick={() => handleCategory("siyaset")}
               >
                 Siyaset
               </NavLink>

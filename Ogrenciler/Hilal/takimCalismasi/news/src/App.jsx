@@ -7,18 +7,26 @@ function App() {
   const [category, setCategory] = useState("general");
 
   useEffect(() => {
-    // Yeni kategori seçildiğinde haberleri çekiyoruz
-    fetchNews(category);
+    fetchNews();
   }, [category]);
 
-  const fetchNews = (category) => {
+  const handleCategory = (categoryValue) => {
+    setCategory(categoryValue);
+  };
+
+  const fetchNews = () => {
+    console.log(
+      "kategorri",
+      category,
+      `https://api.collectapi.com/news/getNews?country=tr&tag=${category}`
+    );
     fetch(
       `https://api.collectapi.com/news/getNews?country=tr&tag=${category}`,
       {
         method: "GET",
         headers: {
           accept: "application/json",
-          Authorization: "apikey 3v5NN9t6MJdnyc03bxe3sl:52MlUT5x0QEWCCA3PiURTZ",
+          Authorization: "apikey 3x7QIiA38neH7W9ejpRlNC:6EVQkSZqQPzQMlgvTQA14N",
         },
       }
     )
@@ -39,8 +47,8 @@ function App() {
 
   return (
     <>
-      <Navbar setCategory={setCategory} />
-      <Routes category={category} setCategory={setCategory} news={news} />
+      <Navbar handleCategory={handleCategory} />
+      <Routes news={news} handleCategory={handleCategory} />
     </>
   );
 }
