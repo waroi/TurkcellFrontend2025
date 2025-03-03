@@ -1,16 +1,23 @@
-import { useRoutes } from 'react-router'
+import { Navigate, useRoutes } from 'react-router'
 import HomeView from '../views/HomeView'
-import Header from '../components/Header/Header'
+import CategoryView from '../views/CategoryView'
+import NewsView from '../views/NewsView'
+import TopHeadlinesView from '../views/TopHeadlinesView'
+import NewsDetailView from '../views/NewsDetailView'
+
 
 const Router = () => {
     const routes = useRoutes([
         { path: '/', element: <HomeView /> },
         {
-            path: '/news/', element: <h1>SADIKJASFJKASFSAŞD</h1>, children: [
-                { path: ':categoryName', element: <h1>category VİEW GELİR</h1> },
-                { path: ':newsId', element: <h3>asdsadsa</h3> }
+            path: '/news/', element: <NewsView />, children: [
+                { index: true, element: <Navigate to={'/top-headlines'} /> },
+                { path: 'category/:categoryName', element: <CategoryView /> },
+                { path: 'category/:categoryName/:newsId', element: <NewsDetailView /> },
+                { path: ':newsId', element: <NewsDetailView/> },
             ]
         },
+        { path: '/top-headlines', element: <TopHeadlinesView /> },
     ])
     return routes
 }

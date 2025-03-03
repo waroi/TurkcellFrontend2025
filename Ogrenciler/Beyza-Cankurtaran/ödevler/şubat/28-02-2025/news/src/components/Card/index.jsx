@@ -12,11 +12,12 @@ const Card = ({ newsItem }) => {
         </div>
         <div className="col-md-8">
           <div className="card-body">
-            <h5 className="card-title">{newsItem?.title}</h5>
-            <p className="card-text">{newsItem?.description}</p>
+            <h5 className="card-title mt-2 mb-4">{newsItem?.title}</h5>
+            <p className="card-text mt-2">{newsItem?.description}</p>
+            <p className="card-text mt-2">{newsItem?.content}</p>
             <p className="card-text">
-              <small className="text-body-secondary">
-                {newsItem?.publishedAt || "Tarih bilgisi yok"}
+              <small className="mt-2text-body-secondary">
+                {"Published At:  "+newsItem?.publishedAt || "Tarih bilgisi yok"}
               </small>
             </p>
           </div>

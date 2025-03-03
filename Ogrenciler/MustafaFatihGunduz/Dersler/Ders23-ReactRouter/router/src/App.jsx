@@ -12,6 +12,9 @@ function App() {
         <li>
           <NavLink to="/user">Kullanıcı</NavLink>
         </li>
+        <li>
+          <NavLink to="/haberler">Haberler</NavLink>
+        </li>
       </ul>
       <Router />
     </>

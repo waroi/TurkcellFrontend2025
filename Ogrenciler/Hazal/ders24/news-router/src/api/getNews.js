@@ -1,9 +1,9 @@
 const api_key = import.meta.env.VITE_API_KEY;
 
-async function getAllNews(page) {
+async function getAllNews(category = "general") {
   try {
     const response = await fetch(
-      `https://newsapi.org/v2/top-headlines?country=us&page=${page}`,
+      `https://newsapi.org/v2/top-headlines?country=us&category=${category}`,
       {
         headers: {
           accept: "application/json",
@@ -22,4 +22,8 @@ async function getAllNews(page) {
   }
 }
 
-export { getAllNews };
+const getNewsById = (newsId) => {
+  return getAllNews().find((news) => news.id === newsId);
+};
+
+export { getAllNews, getNewsById };

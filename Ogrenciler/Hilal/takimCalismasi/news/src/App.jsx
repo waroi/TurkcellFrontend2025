@@ -1,35 +1,56 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect } from "react";
+import Navbar from "../components/Navbar";
+import Routes from "./routes/Routes";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [news, setNews] = useState([]);
+  const [category, setCategory] = useState("general");
+
+  useEffect(() => {
+    fetchNews();
+  }, [category]);
+
+  const handleCategory = (categoryValue) => {
+    setCategory(categoryValue);
+  };
+
+  const fetchNews = () => {
+    console.log(
+      "kategorri",
+      category,
+      `https://api.collectapi.com/news/getNews?country=tr&tag=${category}`
+    );
+    fetch(
+      `https://api.collectapi.com/news/getNews?country=tr&tag=${category}`,
+      {
+        method: "GET",
+        headers: {
+          accept: "application/json",
+          Authorization: import.meta.env.VITE_API_KEY,
+        },
+      }
+    )
+      .then((response) => response.json())
+      .then((result) => {
+        console.log("API Sonucu:", result); // Yanıtı kontrol et
+        if (result.success && result.result.length > 0) {
+          setNews(result.result); // Başarılıysa haberleri ayarla
+        } else {
+          console.log("Bu kategoriye ait haber bulunamadı.");
+          setNews([]); // Haber yoksa boş dizi set et
+        }
+      })
+      .catch((error) => {
+        console.error("API Hatası:", error);
+      });
+  };
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Navbar handleCategory={handleCategory} />
+      <Routes news={news} handleCategory={handleCategory} />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

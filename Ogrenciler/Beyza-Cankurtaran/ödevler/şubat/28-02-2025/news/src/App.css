@@ -4,7 +4,66 @@
   padding: 2rem;
   text-align: center;
 }
+.banner-image {
+  height: 400px;
+  width: 100%;
+  object-fit: cover;
+}
+.navbar {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
 
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #93caa0;
+  transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+  color: #a296c5;
+}
+
+.navbar-nav .nav-link {
+  font-size: 1.1rem;
+  color: #333;
+  padding: 10px 15px;
+  transition: all 0.3s ease-in-out;
+  border-radius: 8px;
+}
+
+.navbar-nav .nav-link:hover {
+  background: #4abfcb;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.navbar-toggler {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.navbar-toggler-icon {
+  filter: invert(40%);
+  transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 992px) {
+  .navbar-nav {
+    text-align: center;
+  }
+  .navbar-nav .nav-link {
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+  }
+}
+
+/*
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -39,4 +98,4 @@
 
 .read-the-docs {
   color: #888;
-}
+}*/

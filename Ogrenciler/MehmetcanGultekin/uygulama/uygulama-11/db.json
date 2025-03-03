@@ -1,18 +1,22 @@
 {
-    "musics": [
-      {
-        "id": 1,
-        "title": "Sample Music 1",
-        "img": "https://picsum.photos/200",
-        "description": "This is sample music 1",
-        "category": "Rock"
-      },
-      {
-        "id": 2,
-        "title": "Sample Music 2",
-        "img": "https://picsum.photos/200",
-        "description": "This is sample music 2",
-        "category": "Jazz"
-      }
-    ]
-  }
+  "musics": [
+    {
+      "id": "1",
+      "title": "Sample Music 1",
+      "img": "https://picsum.photos/200",
+      "description": "This is sample music 1",
+      "category": "Rock",
+      "author": "John Doe",
+      "authorImg": "https://picsum.photos/200"
+    },
+    {
+      "id": "2",
+      "title": "Sample Music 2",
+      "img": "https://picsum.photos/200",
+      "description": "This is sample music 2",
+      "category": "Jazz",
+      "author": "Jane Doe",
+      "authorImg": "https://picsum.photos/200"
+    }
+  ]
+}

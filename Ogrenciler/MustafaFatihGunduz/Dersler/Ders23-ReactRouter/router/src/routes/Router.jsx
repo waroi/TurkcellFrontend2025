@@ -5,6 +5,15 @@ const Router = () => {
   const routes = useRoutes([
     { path: "/", element: <HomeView /> },
     { path: "/user", element: <UserView /> },
+    {
+      path: "/haberler/",
+      element: <NewViews />,
+      children: [
+        { index: true, element: <SporView /> },
+        { path: "spor", element: <SporView /> },
+        { path: "ekonomi", element: <EkonomiView /> },
+      ],
+    },
   ]);
   return routes;
 };
