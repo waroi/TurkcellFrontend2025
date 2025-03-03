@@ -7,12 +7,14 @@ import Nav from "react-bootstrap/Nav";
 const NewsView = () => {
   return (
     <div>
-      <Navbar expand="lg" className="bg-body-tertiary">
+      <Navbar expand="lg" className="bg-light py-3">
         <Container>
-          <Navbar.Brand href="#home">Kategoriler: </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
+          <Navbar.Collapse
+            id="basic-navbar-nav"
+            className="justify-content-center"
+          >
+            <Nav className="w-100 justify-content-between">
               <NavLink to="/haberler/spor">Spor Haberleri</NavLink>
               <NavLink to="/haberler/ekonomi">Ekonomi Haberleri</NavLink>
               <NavLink to="/haberler/magazin">Magazin Haberleri</NavLink>

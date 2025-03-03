@@ -1,7 +1,6 @@
 #root {
-  max-width: 1280px;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
 }
 
@@ -10,12 +9,29 @@
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
+  font-size: 36px;
 }
-
-
-
 
 .card {
-  padding: 2em;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.10);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
 }
 
+.bg-img{
+  background-image: url("./assets/bg3.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+}
