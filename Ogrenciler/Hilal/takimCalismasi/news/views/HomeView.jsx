@@ -4,9 +4,8 @@ import { Outlet, NavLink } from "react-router";
 const HomeView = ({ news }) => {
   return (
     <div className="container py-5">
-      <h2 className="text-center mb-4">Türkiye Genel Haberler</h2>
       <Outlet />
-      <div id="newsCarousel" className="carousel carousel-dark p-5 slide">
+      {/* <div id="newsCarousel" className="carousel carousel-dark p-5 slide">
         <div className="carousel-indicators">
           {news?.map((_, index) => (
             <button
@@ -78,7 +77,7 @@ const HomeView = ({ news }) => {
           ></span>
           <span className="visually-hidden">Next</span>
         </button>
-      </div>
+      </div> */}
     </div>
   );
 };
