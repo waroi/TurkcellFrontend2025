@@ -16,7 +16,7 @@ function App() {
 
   const fetchNews = () => {
     console.log(
-      "kategorri",
+      "kategori",
       category,
       `https://api.collectapi.com/news/getNews?country=tr&tag=${category}`
     );
@@ -32,12 +32,12 @@ function App() {
     )
       .then((response) => response.json())
       .then((result) => {
-        console.log("API Sonucu:", result); // Yanıtı kontrol et
+        console.log("API Sonucu:", result);
         if (result.success && result.result.length > 0) {
-          setNews(result.result); // Başarılıysa haberleri ayarla
+          setNews(result.result);
         } else {
           console.log("Bu kategoriye ait haber bulunamadı.");
-          setNews([]); // Haber yoksa boş dizi set et
+          setNews([]);
         }
       })
       .catch((error) => {
