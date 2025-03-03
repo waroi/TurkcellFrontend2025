@@ -27,7 +27,7 @@ const NewsSlider = ({ news }) => {
             >
               <a href={newsItem.url} target='_blank'>
                 <img
-                  src={newsItem.urlToImage}
+                  src={newsItem.urlToImage || "https://admin.kolpobd.com/images/news/news.png"}
                   className='d-block w-100'
                   alt={newsItem.title}
                 />
