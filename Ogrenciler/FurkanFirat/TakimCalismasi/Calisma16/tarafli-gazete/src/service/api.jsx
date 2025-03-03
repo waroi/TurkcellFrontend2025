@@ -1,6 +1,6 @@
 
 const BASE_URL = 'https://newsapi.org/v2/top-headlines';
-const API_KEY = import.meta.env.VITE_API_KEY;
+const API_KEY = "71a9b81b167343738dfd6bb4bb2fa41d";
 
 export const fetchNews = async (category, query = '') => {
   const response = await fetch(
