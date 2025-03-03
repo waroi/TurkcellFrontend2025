@@ -5,14 +5,14 @@ import CategoryView from "../views/CategoryView";
 const Router = () => {
   const routes = useRoutes([
     {
-      path: "home",
+      path: "/home",
       element: <Home />,
       children: [
         { index: true, element: <CategoryView/> },
         { path: ":categoryName", element: <CategoryView /> },
       ],
     },
-    { path: "/", element: <Navigate to="home" /> },
+    { path: "/", element: <Navigate to="/home" /> },
   ]);
   return routes;
 };
