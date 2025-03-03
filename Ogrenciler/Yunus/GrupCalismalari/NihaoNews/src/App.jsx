@@ -1,4 +1,3 @@
-import React from "react";
 import { NavLink } from "react-router";  
 import Header from "./components/Header/Header"; 
 import Router from "./routes/Router";  

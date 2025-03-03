@@ -6,6 +6,7 @@ import Card from '../components/Card';
 const CategoryView = () => {
   const [news, setNews] = useState();
   const { categoryName } = useParams();
+  console.log(categoryName); 
   
   useEffect(() => {
     const getnews = async () => {
@@ -32,7 +33,7 @@ const CategoryView = () => {
           </div>
         </div>
       ) : (
-        <h1>Yükleniyor...</h1>
+        <h1>Loading...</h1>
       )}
     </>
   )

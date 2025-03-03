@@ -1,7 +1,9 @@
-import React from "react";
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 
 const Navbar = () => {
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
+
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
@@ -26,31 +28,36 @@ const Navbar = () => {
                 Anasayfa
               </Link>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/haberler">
-                Haberler
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/haberler/spor">
-                Spor Haberleri
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/haberler/ekonomi">
-                Ekonomi Haberleri
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/haberler/tech">
-                Teknoloji Haberleri
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/haberler/health">
-                Sağlık Haberleri
-              </Link>
-            </li>
+            {isHomePage ? (
+              <li className="nav-item">
+                <Link className="nav-link" to="/haberler">
+                  Haberler
+                </Link>
+              </li>
+            ) : (
+              <>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/haberler/spor">
+                    Spor Haberleri
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/haberler/ekonomi">
+                    Ekonomi Haberleri
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/haberler/tech">
+                    Teknoloji Haberleri
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/haberler/health">
+                    Sağlık Haberleri
+                  </Link>
+                </li>
+              </>
+            )}
           </ul>
         </div>
       </div>

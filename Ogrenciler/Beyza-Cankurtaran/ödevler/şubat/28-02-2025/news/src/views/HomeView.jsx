@@ -15,12 +15,12 @@ const HomeView = () => {
   return (
     <>
       <h1>Trend News</h1>
-      <Banner news={news}/>
+      <Banner news={news} />
       <div>
         {news.length === 0 ? (
           <p>Yükleniyor...</p>
         ) : (
-          <div className="container">
+          <div className="container mt-5">
             <div className="row">
               {news.map((newsItem, index) => (
                 <Card key={index} newsItem={newsItem} />

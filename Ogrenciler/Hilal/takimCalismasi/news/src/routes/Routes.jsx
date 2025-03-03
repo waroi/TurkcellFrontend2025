@@ -1,19 +1,24 @@
 import React from "react";
-import { useRoutes } from "react-router";
+import { useRoutes, Navigate } from "react-router"; // Make sure to use react-router-dom
 import HomeView from "../../views/HomeView";
-import LanguageView from "../../views/LanguageView";
+import CategoryView from "../../views/CategoryView";
 
-const Routes = () => {
+const Routes = ({ news, handleCategory }) => {
   const routes = useRoutes([
     {
       path: "/",
-      element: <HomeView />,
+      element: <HomeView news={news} />,
       children: [
-        { index: true, element: <Navigate to="tr" /> },
-        { path: ":lang", element: <LanguageView /> },
+        { index: true, element: <Navigate to="general" /> },
+        {
+          path: ":categoryName",
+          element: <CategoryView news={news} handleCategory={handleCategory} />,
+        },
       ],
     },
   ]);
+
   return routes;
 };
+
 export default Routes;

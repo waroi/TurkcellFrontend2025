@@ -1,32 +1,14 @@
 import React from "react";
-import { useNavigate } from "react-router";
+import { NavLink } from "react-router";
 
-const Navbar = () => {
-  const navigate = useNavigate();
-
-  const handleCountryChange = (event) => {
-    const selectedCountry = event.target.value;
-    setCountry(selectedCountry);
-    if (selectedCountry) {
-      navigate(`/${selectedCountry}/${topic}`);
-    }
-  };
-
-  const handleTopicChange = (event) => {
-    const selectedTopic = event.target.value;
-    setTopic(selectedTopic);
-    if (selectedTopic) {
-      navigate(`/${country}/${selectedTopic}`);
-    }
-  };
-
+const Navbar = ({ handleCategory }) => {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container">
         <a className="navbar-brand" href="#">
-          Navbar
+          News
         </a>
-        {/* <button
+        <button
           className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
@@ -36,60 +18,47 @@ const Navbar = () => {
           aria-label="Toggle navigation"
         >
           <span className="navbar-toggler-icon"></span>
-        </button> */}
-        {/* <div className="collapse navbar-collapse" id="navbarNav">
+        </button>
+        <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">
-                Anasayfa
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
+              <NavLink
+                to="/sport"
+                className="nav-link"
+                onClick={() => handleCategory("sport")}
+              >
                 Spor
-              </a>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <NavLink
+                to="/kategori/teknoloji"
+                className="nav-link"
+                onClick={() => handleCategory("teknoloji")}
+              >
                 Teknoloji
-              </a>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <NavLink
+                to="/economy"
+                className="nav-link"
+                onClick={() => handleCategory("economy")}
+              >
                 Ekonomi
-              </a>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <NavLink
+                to="/siyaset"
+                className="nav-link"
+                onClick={() => handleCategory("siyaset")}
+              >
                 Siyaset
-              </a>
+              </NavLink>
             </li>
           </ul>
-        </div> */}
-        <select
-          className="form-select"
-          aria-label="Default select example"
-          onChange={handleCountryChange}
-        >
-          <option selected defaultValue="tr">
-            Türkiye
-          </option>
-          <option value="de">Almanya</option>
-          <option value="ru">Rusya</option>
-          <option value="en">İngiltere</option>
-        </select>
-        {/* <select
-          className="form-select"
-          aria-label="Default select example"
-          onChange={handleTopicChange}
-        >
-          <option selected defaultValue="general">
-            Genel
-          </option>
-          <option value="sport">Spor</option>
-          <option value="technology">Teknoloji</option>
-          <option value="economy">Ekonomi</option>
-        </select> */}
+        </div>
       </div>
     </nav>
   );
