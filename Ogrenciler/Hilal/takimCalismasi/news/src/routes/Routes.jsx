@@ -1,7 +1,8 @@
 import React from "react";
-import { useRoutes, Navigate } from "react-router"; // Make sure to use react-router-dom
+import { useRoutes, Navigate } from "react-router";
 import HomeView from "../../views/HomeView";
 import CategoryView from "../../views/CategoryView";
+import NewDetailView from "../../views/NewDetailView";
 
 const Routes = ({ news, handleCategory }) => {
   const routes = useRoutes([
@@ -13,6 +14,12 @@ const Routes = ({ news, handleCategory }) => {
         {
           path: ":categoryName",
           element: <CategoryView news={news} handleCategory={handleCategory} />,
+          children: [
+            {
+              path: ":id",
+              element: <NewDetailView news={news} />,
+            },
+          ],
         },
       ],
     },

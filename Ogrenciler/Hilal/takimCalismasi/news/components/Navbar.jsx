@@ -3,9 +3,9 @@ import { NavLink } from "react-router";
 
 const Navbar = ({ handleCategory }) => {
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+    <nav className="navbar navbar-expand-lg py-4 bg-white">
       <div className="container">
-        <a className="navbar-brand" href="#">
+        <a className="navbar-brand display-6 fs-4 fw-bold" href="/">
           News
         </a>
         <button
@@ -19,12 +19,15 @@ const Navbar = ({ handleCategory }) => {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
+        <div
+          className="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
           <ul className="navbar-nav">
             <li className="nav-item">
               <NavLink
                 to="/sport"
-                className="nav-link"
+                className="nav-link display-6 fs-5"
                 onClick={() => handleCategory("sport")}
               >
                 Spor
@@ -32,17 +35,17 @@ const Navbar = ({ handleCategory }) => {
             </li>
             <li className="nav-item">
               <NavLink
-                to="/kategori/teknoloji"
-                className="nav-link"
-                onClick={() => handleCategory("teknoloji")}
+                to="/technology"
+                className="nav-link display-6 fs-5"
+                onClick={() => handleCategory("technology")}
               >
                 Teknoloji
               </NavLink>
             </li>
-            <li className="nav-item">
+            <li className="nav-item ">
               <NavLink
                 to="/economy"
-                className="nav-link"
+                className="nav-link display-6 fs-5"
                 onClick={() => handleCategory("economy")}
               >
                 Ekonomi
@@ -50,11 +53,11 @@ const Navbar = ({ handleCategory }) => {
             </li>
             <li className="nav-item">
               <NavLink
-                to="/siyaset"
-                className="nav-link"
-                onClick={() => handleCategory("siyaset")}
+                to="/magazine"
+                className="nav-link display-6 fs-5"
+                onClick={() => handleCategory("magazine")}
               >
-                Siyaset
+                Magazin
               </NavLink>
             </li>
           </ul>

@@ -30,7 +30,7 @@ export default function NewsCard({ article }) {
                         }
                       )}
                     </span>
-                    <span className='badge bg-primary'>
+                    <span className='badge bg-primary px-3 py-2 rounded-pill'>
                       {article.source?.name || 'News'}
                     </span>
                   </div>
