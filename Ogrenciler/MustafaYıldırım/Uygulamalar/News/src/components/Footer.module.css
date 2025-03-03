@@ -1,80 +1,81 @@
 .footer {
-	background-color: #343a40;
-	color: #f8f9fa;
-	padding: 50px 0 20px;
-	margin-top: 50px;
+  background-color: #343a40;
+  color: #f8f9fa;
+  padding: 50px 0 20px;
+  margin-top: 50px;
 }
 
 .footerTitle {
-	color: #ffc107;
-	font-weight: 600;
-	margin-bottom: 20px;
-	padding-bottom: 10px;
-	border-bottom: 2px solid #ffc107;
-	display: inline-block;
+  color: #ffc107;
+  font-weight: 600;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #ffc107;
+  display: inline-block;
 }
 
 .footerText {
-	color: #adb5bd;
-	line-height: 1.6;
-	margin-bottom: 20px;
+  color: #adb5bd;
+  line-height: 1.6;
+  margin-bottom: 20px;
 }
 
 .footerLinks {
-	list-style: none;
-	padding: 0;
-	margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .footerLinks li {
-	margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .footerLink {
-	color: #adb5bd;
-	text-decoration: none;
-	transition: color 0.3s ease;
-	display: block;
-	padding: 5px 0;
+  color: #adb5bd;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: block;
+  padding: 5px 0;
 }
 
 .footerLink:hover {
-	color: #ffc107;
-	text-decoration: none;
+  color: #ffc107;
+  text-decoration: none;
 }
 
 .socialLinks {
-	display: flex;
-	gap: 15px;
-	margin-top: 20px;
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
 }
 
 .socialLink {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 40px;
-	height: 40px;
-	border-radius: 50%;
-	background-color: #495057;
-	color: #f8f9fa;
-	transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #495057;
+  color: #f8f9fa;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
 .socialLink:hover {
-	background-color: #ffc107;
-	color: #343a40;
-	transform: translateY(-3px);
+  background-color: #ffc107;
+  color: #343a40;
+  transform: translateY(-3px);
 }
 
 .footerBottom {
-	margin-top: 30px;
-	padding-top: 20px;
-	border-top: 1px solid #495057;
-	text-align: center;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #495057;
+  text-align: center;
 }
 
 .copyright {
-	color: #adb5bd;
-	font-size: 0.9rem;
+  color: #adb5bd;
+  font-size: 0.9rem;
 }

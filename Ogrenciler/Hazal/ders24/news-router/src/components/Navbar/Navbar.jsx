@@ -1,61 +1,28 @@
-import React from "react";
-import { Link } from "react-router";
+import React from 'react';
+import { Link } from 'react-router';
+import { Navbar, Nav, Container } from 'react-bootstrap';
 
-const Navbar = () => {
+
+function NavBar() {
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
-      <div className="container-fluid">
-        <Link className="navbar-brand" to="/">
-          News
-        </Link>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li className="nav-item">
-              <Link className="nav-link" to="/">
-                Anasayfa
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/haberler">
-                Haberler
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/haberler/spor">
-                Spor Haberleri
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/haberler/ekonomi">
-                Ekonomi Haberleri
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/haberler/tech">
-                Teknoloji Haberleri
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/haberler/health">
-                Sağlık Haberleri
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    <Navbar expand="lg">
+      <Container>
+        <Navbar.Brand as={Link} to="/">Gazette</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto justify-content-end" style={{ width: "100%" }}>
+            <Nav.Link as={Link} to="/">Home</Nav.Link>
+            <Nav.Link as={Link} to="/news">All News</Nav.Link>
+            <Nav.Link as={Link} to="/news/general">General</Nav.Link>
+            <Nav.Link as={Link} to="/news/business">Business</Nav.Link>
+            <Nav.Link as={Link} to="/news/health">Health</Nav.Link>
+            <Nav.Link as={Link} to="/news/sports">Sports</Nav.Link>
+            <Nav.Link as={Link} to="/news/tech">Tech</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
-};
+}
 
-export default Navbar;
+export default NavBar;

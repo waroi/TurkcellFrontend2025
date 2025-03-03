@@ -13,7 +13,7 @@ const HeaderView = () => {
         <hr />
         <div>
           <span>
-            <em>Fatih, Fahri, Seda tarafından oluşturulmuştur</em>
+            <em>Fatih ve Fahri tarafından oluşturulmuştur</em>
           </span>
           <span>
             <em> 3 Mart 2025</em>

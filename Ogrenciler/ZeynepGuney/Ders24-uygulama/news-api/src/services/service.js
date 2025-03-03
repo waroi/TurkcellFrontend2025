@@ -17,10 +17,10 @@ const fetchData = async (category = "general") => {
     console.log(`Haber API çağrısı başarisiz! ${error}`);
   }
 };
-const fetchTime = async () => {
+const fetchTime = async (city) => {
   try {
     const response = await fetch(
-      `https://api.collectapi.com/pray/all?data.city=balikesir`,
+      `https://api.collectapi.com/pray/all?data.city=${city}`,
       {
         headers: {
           Authorization: "apikey 58e1Vowpjao0t9n5aWAOfZ:306w3hPFnZgnpF38SsZN51",
@@ -36,4 +36,4 @@ const fetchTime = async () => {
     console.log(`Ezan API çağrısı başarisiz! ${error}`);
   }
 };
-export {fetchTime, fetchData};
+export { fetchTime, fetchData };
