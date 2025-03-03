@@ -1,9 +1,17 @@
-import React from 'react'
+import {useState, useEffect} from "react";
+import {getNews, getNewsCategory} from "../api/getNews";
+import NewsCard from "../components/NewsCard";
+import {Row} from "react-bootstrap";
 
 const HomeNewsView = () => {
-  return (
-    <div>HomeNewsView</div>
-  )
-}
+  const [news, setNews] = useState([]);
+  useEffect(() => {
+    getNews().then((data) => {
+      setNews(data.result);
+    });
+  }, []);
 
-export default HomeNewsView
+  return <Row md={4}>{news.map((item) => NewsCard(item))}</Row>;
+};
+
+export default HomeNewsView;
