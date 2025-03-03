@@ -1,0 +1,33 @@
+.banner-container {
+  width: 100%;
+  overflow: hidden;
+  height: 300px;
+  display: flex;
+  align-items: center;
+
+}
+
+.banner-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  animation: slideRight 7s linear infinite;
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translate(-100%, 0);
+  }
+  25% {
+    transform: translate(-75%, 0);
+  }
+  50% {
+    transform: translate(-50%, 0);
+  }
+  75% {
+    transform: translate(-25%, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}

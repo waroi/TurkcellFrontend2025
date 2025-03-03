@@ -1,6 +1,7 @@
+import './Slider.css';
 const Slider = ({ news }) => {
   return (
-    <div id="carouselExampleCaptions" className="carousel slide">
+    <div id="carouselExampleCaptions" className="carousel slide mt-5">
       <div className="carousel-inner w-100">
         {news.map((neww, index) => (
           <div

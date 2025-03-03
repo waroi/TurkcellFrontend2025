@@ -1,5 +1,5 @@
 import React from "react";
-import {Row} from "react-bootstrap";
+import {Container, Row} from "react-bootstrap";
 import {useState, useEffect} from "react";
 import {getNewsCategory} from "../api/getNews";
 import NewsCard from "../components/NewsCard";
@@ -12,8 +12,11 @@ const EntertainmentNewsView = () => {
     });
   }, []);
   return (
-    <div>
-      <Row md={4}>{news.map((item) => NewsCard(item))}</Row>
+    <div className="bg-img">
+      <h1 className="py-3 text-light">Eğlence Haberleri</h1>
+      <Container>
+        <Row md={4}>{news.map((item) => NewsCard(item))}</Row>
+      </Container>
     </div>
   );
 };

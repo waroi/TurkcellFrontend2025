@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import fetchData from "../services/service";
+import {fetchData} from "../services/service";
 import CardContainer from "../components/CardContainer/CardContainer";
 
 const GeneralView = () => {
@@ -17,7 +17,7 @@ const GeneralView = () => {
     getData();
   }, []);
   return data.length === 0 ? (
-    <p>Ürün bulunamadı veya yükleniyor...</p>
+    <p>Haberler yükleniyor...</p>
   ) : (
     <CardContainer news={data} />
   );

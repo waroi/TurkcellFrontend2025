@@ -4,9 +4,10 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
-          Navbar
-        </a>
+        <NavLink to="/" className="navbar-brand d-flex align-items-center">
+          <img src="/logo.png" alt="logo" style={{height : "50px", width:"50px"}}/>
+          <h4 className="display-inline m-0 p-0 ms-3">Özet Haber</h4>        
+        </NavLink>
         <button
           className="navbar-toggler"
           type="button"
@@ -19,10 +20,10 @@ const Navbar = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+          <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
             <li className="nav-item">
               <NavLink className="nav-link active" aria-current="page" to="/">
-                Home
+                Anasayfa
               </NavLink>
             </li>
             <li className="nav-item">

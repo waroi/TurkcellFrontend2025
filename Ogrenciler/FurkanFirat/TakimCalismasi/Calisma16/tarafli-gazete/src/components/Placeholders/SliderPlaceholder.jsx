@@ -3,7 +3,7 @@ const SliderPlaceholder = () => {
     <>
       <div className='carousel slide'>
         <div className='carousel-inner'>
-          <div className='carousel-item active'>
+          <div className='carousel-item active placeholder-glow'>
             <div
               className='placeholder col-12 bg-secondary'
               style={{ height: '600px' }}
