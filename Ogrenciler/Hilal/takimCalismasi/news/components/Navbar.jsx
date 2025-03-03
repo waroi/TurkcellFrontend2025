@@ -1,9 +1,10 @@
 import React from "react";
 import { NavLink } from "react-router";
+import "../src/App.css";
 
 const Navbar = ({ handleCategory }) => {
   return (
-    <nav className="navbar navbar-expand-lg py-4 bg-white">
+    <nav className="navbar fixed-top navbar-expand-lg py-4 bg-white">
       <div className="container">
         <a className="navbar-brand display-6 fs-4 fw-bold" href="/">
           News
