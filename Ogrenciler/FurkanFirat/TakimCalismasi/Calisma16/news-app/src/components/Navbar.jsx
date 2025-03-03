@@ -2,10 +2,10 @@ import { NavLink } from 'react-router';
 
 export default function Navbar() {
   return (
-    <nav className='navbar navbar-expand-lg navbar-dark bg-dark'>
-      <div className='container-fluid'>
-        <NavLink className='navbar-brand' to='/'>
-          Haber Sitesi
+    <nav className='navbar navbar-expand-lg bg-light'>
+      <div className='container'>
+        <NavLink className='navbar-brand fs-2 text-primary fw-bold' to='/'>
+          Taraflı Gazete
         </NavLink>
         <button
           className='navbar-toggler'
@@ -19,14 +19,14 @@ export default function Navbar() {
           <span className='navbar-toggler-icon'></span>
         </button>
         <div className='collapse navbar-collapse' id='navbarNav'>
-          <ul className='navbar-nav'>
+          <ul className='navbar-nav ms-auto'>
             <li className='nav-item'>
-              <NavLink className='nav-link active' aria-current='page' to='/'>
+              <NavLink className='nav-link active fs-5 me-3' aria-current='page' to='/'>
                 Home
               </NavLink>
             </li>
             <li className='nav-item'>
-              <NavLink className='nav-link' to='/news'>
+              <NavLink className='nav-link fs-5' to='/news'>
                 News
               </NavLink>
             </li>
