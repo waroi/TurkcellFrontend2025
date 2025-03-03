@@ -1,40 +1,32 @@
-import React from 'react'
-import { Outlet, NavLink } from 'react-router'
-import { Row, Col, Card } from 'react-bootstrap'
-import { useState, useEffect } from 'react'
-import { getNews } from '../api/getNews'
-import NewsCard from '../components/NewsCard' 
+import React from "react";
+import {Outlet, NavLink} from "react-router";
+import Navbar from "react-bootstrap/Navbar";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
 
 const NewsView = () => {
-  const [news,setNews] = useState([]);
-    useEffect(() => {
-      getNews().then((data) => {
-        setNews(data.result)
-      });
-    }, [])
   return (
     <div>
-        <h1>Childlı</h1>
-        <Row md = {4}>
-
-        {news.map((item) => (
-          
-          NewsCard(item)
-       
-          
-        ))}
-    </Row>
+      <Navbar expand="lg" className="bg-body-tertiary">
+        <Container>
+          <Navbar.Brand href="#home">Kategoriler: </Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="me-auto">
+              <NavLink to="/haberler/spor">Spor Haberleri</NavLink>
+              <NavLink to="/haberler/ekonomi">Ekonomi Haberleri</NavLink>
+              <NavLink to="/haberler/magazin">Magazin Haberleri</NavLink>
+              <NavLink to="/haberler/teknoloji">Teknoloji Haberleri</NavLink>
+              <NavLink to="/haberler/global">Global Haberler</NavLink>
+              <NavLink to="/haberler/saglik">Sağlık Haberleri</NavLink>
+              <NavLink to="/haberler/eglence">Eğlence Haberleri</NavLink>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
       <Outlet />
-      <ul>
-        <li>
-          <NavLink to="/haberler/spor">Spor Haberleri</NavLink>
-        </li>
-        <li>
-          <NavLink to="/haberler/ekonomi">Ekonomi Haberleri</NavLink>
-        </li>
-      </ul>
     </div>
-  )
-}
+  );
+};
 
-export default NewsView
+export default NewsView;

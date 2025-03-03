@@ -4,10 +4,10 @@ import {useState, useEffect} from "react";
 import {getNewsCategory} from "../api/getNews";
 import NewsCard from "../components/NewsCard";
 
-const EconomyNewsView = () => {
+const EntertainmentNewsView = () => {
   const [news, setNews] = useState([]);
   useEffect(() => {
-    getNewsCategory("economy").then((data) => {
+    getNewsCategory("entertainment").then((data) => {
       setNews(data.result);
     });
   }, []);
@@ -18,4 +18,4 @@ const EconomyNewsView = () => {
   );
 };
 
-export default EconomyNewsView;
+export default EntertainmentNewsView;
