@@ -23,10 +23,24 @@
 }
 
 .bg-img{
+  position: relative;
   background-image: url("./assets/bg3.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  backdrop-filter: blur(  10px );
+  z-index: 0;
+  
+}
+.bg-img::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); 
+  backdrop-filter: blur(2px);
   z-index: -1;
 }
 
