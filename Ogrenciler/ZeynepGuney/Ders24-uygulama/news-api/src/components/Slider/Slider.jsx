@@ -1,3 +1,4 @@
+import './Slider.css';
 const Slider = ({ news }) => {
   return (
     <div id="carouselExampleCaptions" className="carousel slide">
