@@ -1,5 +1,5 @@
 import React from "react";
-import { useRoutes, Navigate } from "react-router";
+import { useRoutes } from "react-router";
 import HomeView from "../../views/HomeView";
 import LanguageView from "../../views/LanguageView";
 
@@ -16,5 +16,4 @@ const Routes = () => {
   ]);
   return routes;
 };
-
 export default Routes;

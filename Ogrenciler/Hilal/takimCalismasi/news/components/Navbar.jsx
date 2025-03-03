@@ -6,19 +6,19 @@ const Navbar = () => {
 
   const handleCountryChange = (event) => {
     const selectedCountry = event.target.value;
-    // setCountry(selectedCountry);
+    setCountry(selectedCountry);
     if (selectedCountry) {
-      navigate(`/${selectedCountry}`);
+      navigate(`/${selectedCountry}/${topic}`);
     }
   };
 
-  // const handleTopicChange = (event) => {
-  //   const selectedTopic = event.target.value;
-  //   setTopic(selectedTopic);
-  //   if (selectedTopic) {
-  //     navigate(`/${country}/${selectedTopic}`);
-  //   }
-  // };
+  const handleTopicChange = (event) => {
+    const selectedTopic = event.target.value;
+    setTopic(selectedTopic);
+    if (selectedTopic) {
+      navigate(`/${country}/${selectedTopic}`);
+    }
+  };
 
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
