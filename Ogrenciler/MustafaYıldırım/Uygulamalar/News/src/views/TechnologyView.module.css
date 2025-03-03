@@ -1,0 +1,28 @@
+.newsImage {
+	height: 200px;
+	object-fit: cover;
+}
+
+.newsTitle {
+	font-weight: bold;
+	margin-bottom: 10px;
+	color: #17a2b8;
+}
+
+.newsDescription {
+	margin-bottom: 15px;
+}
+
+.newsLink {
+	text-decoration: none;
+}
+
+.newsCard {
+	transition: transform 0.3s ease;
+	border-color: #17a2b8;
+}
+
+.newsCard:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 5px 15px rgba(23, 162, 184, 0.3);
+}
