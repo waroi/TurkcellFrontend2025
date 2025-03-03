@@ -1,7 +1,7 @@
 import {useState, useEffect} from "react";
 import {getNews, getNewsCategory} from "../api/getNews";
 import NewsCard from "../components/NewsCard";
-import {Row} from "react-bootstrap";
+import {Row, Container} from "react-bootstrap";
 
 const HomeNewsView = () => {
   const [news, setNews] = useState([]);
@@ -11,7 +11,14 @@ const HomeNewsView = () => {
     });
   }, []);
 
-  return <Row md={4}>{news.map((item) => NewsCard(item))}</Row>;
+  return (
+    <div className="bg-img">
+      <h1 className="py-3 text-light">Günün Haberleri</h1>
+      <Container>
+        <Row md={4}>{news.map((item) => NewsCard(item))}</Row>
+      </Container>
+    </div>
+  );
 };
 
 export default HomeNewsView;

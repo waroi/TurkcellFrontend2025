@@ -1,3 +1,15 @@
+body {
+  background-color: #e8e8eb;
+}
 .newCard {
-  height: 400px;
+  height: 500px;
+}
+.multiline-truncate {
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* Kaç satırda kırpılacağını belirler */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.new-img {
+  height: 250px;
 }

@@ -21,7 +21,7 @@ const CardContainer = ({ news }) => {
                   <div>
                     <p className="card-text">
                       <small className="text-body-secondary">
-                        Tarih: {neww.date.slice(0, 11)}
+                        Tarih: {neww.date.slice(0, 10)}
                       </small>
                     </p>
                     <a

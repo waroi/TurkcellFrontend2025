@@ -17,7 +17,7 @@ const Router = () => {
   const routes = useRoutes([
     {path: "/Navbar", element: <Navbar />},
     {path: "/Footer", element: <Footer />},
-
+    {path: "/", element: <HomeNewsView />},
     {
       path: "/haberler/",
       element: <NewsView />,

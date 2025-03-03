@@ -11,7 +11,7 @@ export default function NewsCard({ article }) {
                     article.urlToImage ||
                     'https://admin.kolpobd.com/images/news/news.png'
                   }
-                  className='img-fluid rounded-start h-100 image-hover-effect news-card-img'
+                  className='img-fluid rounded-start w-100 image-hover-effect news-card-img'
                   alt={article.title || 'Default Image'}
                 />
               </div>

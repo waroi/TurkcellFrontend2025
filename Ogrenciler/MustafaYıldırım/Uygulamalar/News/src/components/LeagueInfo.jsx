@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Leagues from "../service/sportsLeagueService"; // Mevcut Leagues servisinizin yolunu ayarlamanız gerekir
+import Leagues from "../service/sportsLeagueService";
 
 const SportsLeagues = () => {
   const [leagues, setLeagues] = useState([]);
@@ -122,7 +122,7 @@ const SportsLeagues = () => {
                         <div className="d-flex justify-content-between align-items-center mb-2">
                           <strong className="text-primary">{match.home}</strong>
                           <span className="badge bg-dark">
-                            {isMatchPlayed ? match.skor : "Oynanamadı"}
+                            {isMatchPlayed ? match.skor : "Oynanmadı"}
                           </span>
                           <strong className="text-danger">{match.away}</strong>
                         </div>
