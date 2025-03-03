@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
-import { newsService } from '../api/newService';
+import { newsService } from '../api/newsService';
 import Card from '../components/Card';
 
 const CategoryView = () => {
   const [news, setNews] = useState();
   const { categoryName } = useParams();
-  console.log(categoryName); 
   
   useEffect(() => {
     const getnews = async () => {

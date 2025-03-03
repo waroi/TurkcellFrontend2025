@@ -8,16 +8,15 @@ const Footer = () => {
 
         <div className="social-links mb-3">
           <a className="text-dark me-3">
-            <i class="fa-brands fa-twitter"></i>
+            <i className="fa-brands fa-twitter"></i>
           </a>
           <a className="text-dark me-3">
-            <i class="fa-brands fa-facebook-f"></i>
+            <i className="fa-brands fa-facebook-f"></i>
           </a>
           <a className="text-dark">
-            <i class="fa-brands fa-instagram"></i>
+            <i className="fa-brands fa-instagram"></i>
           </a>
         </div>
-
 
         <p className="mb-0">
           <NavLink to="/" className="text-dark me-3">About US</NavLink>

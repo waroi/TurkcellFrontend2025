@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { newsService } from "../api/newService";
-import Card from "../components/Card";
+import { newsService } from "../../api/newsService";
+import TopHeadLinesCard from "./TopHeadLinesCard";
 
-function TopHeadlinesView() {
+function TopHeadlinesComponent() {
     const [news, setNews] = useState();
   
     useEffect(() => {
@@ -15,25 +15,27 @@ function TopHeadlinesView() {
 
     return (
         <>
+        <hr />
+        <h4 className="text-muted px-3"> Top Headlines </h4>
             {news ? (
                 <div className="container-fluid px-lg-5">
-					<div className="row news-wrapper mx-lg-2 d-flex justify-content-center">
+					<div className="justify-row mx-lg-2 d-flex justify-content-center overflow-hidden">
                     {news.map((item, index) => {
                             return (
                                 <div
                                     key={index}
-									className="news-card mx-2 col-lg-3 new-item my-4 rounded col-md-4 col-sm-6 col-12"
+									className="top-headlines-card mx-2 new-item my-4 rounded overflow-hidden"
                                 >
-                                   <Card item={item} />
+                                   <TopHeadLinesCard item={item} />
                                 </div>
                             );
                         })}
                     </div>
                 </div>
             ) : (
-                <h1>Bulunamadı</h1>
+                <h1>Loading...</h1>
             )}
         </>
     );
 }
-export default TopHeadlinesView;
+export default TopHeadlinesComponent;
