@@ -1,17 +1,35 @@
 import React from "react";
 import { NavLink, Outlet } from "react-router";
 
-const NewsletterView = ({ sports, economys, generals, healths }) => {
+const NewsletterView = () => {
   return (
     <>
-      <h1>Haberler</h1>
+      <h1 className="text-black">Haberler</h1>
+
       <Outlet />
-      <div className="row">
+      <ul className="align-items-center justify-content-center list-unstyled d-flex gap-4 fs-2">
+        <li>
+          <NavLink to="/haberler/spor">Spor</NavLink>
+        </li>
+        <li>
+          <NavLink to="/haberler/ekonomi">Ekonomi</NavLink>
+        </li>
+        <li>
+          <NavLink to="/haberler/sağlık">Sağlık</NavLink>
+        </li>
+        <li>
+          <NavLink to="/haberler/genel">Genel</NavLink>
+        </li>
+      </ul>
+      {/* <div className="row">
         <div className="col-lg-3">
           <h4 className="fs-3 text-black text-center mb-3">
-            <a href="" className="text-decoration-none text-black">
+            <NavLink
+              to="/haberler/spor"
+              className="text-decoration-none text-black"
+            >
               Spor Kategorisi
-            </a>
+            </NavLink>
           </h4>
           {sports?.result?.length > 0 ? (
             sports.result.map((sport) => (
@@ -145,7 +163,7 @@ const NewsletterView = ({ sports, economys, generals, healths }) => {
             <p>Yükleniyor veya sağlık haberleri bulunamadı.</p>
           )}
         </div>
-      </div>
+      </div> */}
     </>
   );
 };

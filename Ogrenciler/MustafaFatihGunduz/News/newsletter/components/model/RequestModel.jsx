@@ -1,5 +1,5 @@
 const url =
-  "https://api.collectapi.com/news/getNews?country=tr&apiKey=0yzrr97R7JWRvN5jAIbkot:0fTuYi7ukS5aN8Z8HyP6zJ";
+  "https://api.collectapi.com/news/getNews?country=tr&apiKey=2nr27F9Gj4J6yHhDmW8KkH:2Jns09a45S1ucA85dC9znu";
 
 export const getSportNews = async () => {
   try {

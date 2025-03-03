@@ -17,7 +17,7 @@ const SportController = () => {
     fetchSports();
   }, []);
 
-  return <SportNewsView sports={sports} />;
+  return <SportNewsView sport={sports} />;
 };
 
 export default SportController;

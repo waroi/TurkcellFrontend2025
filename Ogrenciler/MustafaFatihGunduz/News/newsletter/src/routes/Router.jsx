@@ -10,17 +10,15 @@ const Router = () => {
     {
       path: "/",
       element: <HomeView />,
+    },
+    {
+      path: "/haberler/",
+      element: <NewsletterController />,
       children: [
-        {
-          path: "/haberler/",
-          element: <NewsletterController />,
-          children: [
-            { path: "spor", element: <SportController /> },
-            { path: "ekonomi", element: <EconomyController /> },
-            { path: "sağlık", element: <HealthController /> },
-            { path: "genel", element: <GeneralController /> },
-          ],
-        },
+        { path: "spor", element: <SportController /> },
+        { path: "ekonomi", element: <EconomyController /> },
+        { path: "sağlık", element: <HealthController /> },
+        { path: "genel", element: <GeneralController /> },
       ],
     },
   ]);
