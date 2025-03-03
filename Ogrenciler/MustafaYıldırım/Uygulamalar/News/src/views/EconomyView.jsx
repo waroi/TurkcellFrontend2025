@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
+import Kur from "../components/Kur";
 import NewsClient from "../service/newsService";
+import styles from "./EconomyView.module.css";
 
 function EconomyView() {
 	const [news, setNews] = useState([]);
@@ -20,26 +22,33 @@ function EconomyView() {
 
 	return (
 		<>
-			<h2>Ekonomi Haberleri</h2>
+			<h2 className={styles.sectionTitle}>Ekonomi Haberleri</h2>
+
+			{/* Döviz Kurları Bölümü */}
+			<Kur />
+
 			<div className="row">
 				{news.map((item, index) => (
 					<div key={index} className="col-md-4 mb-4">
-						<div className="card h-100">
+						<div className={`card h-100 ${styles.newsCard}`}>
 							<img
 								src={item.image || fallbackImage}
-								className="card-img-top"
+								className={`card-img-top ${styles.newsImage}`}
 								alt={item.name}
 								onError={handleImageError}
-								style={{ height: "200px", objectFit: "cover" }}
 							/>
 							<div className="card-body">
-								<h5 className="card-title">{item.name}</h5>
-								<p className="card-text">{item.description}</p>
+								<h5 className={`card-title ${styles.newsTitle}`}>
+									{item.name}
+								</h5>
+								<p className={`card-text ${styles.newsDescription}`}>
+									{item.description}
+								</p>
 								<a
 									href={item.url}
 									target="_blank"
 									rel="noopener noreferrer"
-									className="btn btn-warning">
+									className={`btn btn-warning ${styles.newsLink}`}>
 									Habere Git
 								</a>
 							</div>

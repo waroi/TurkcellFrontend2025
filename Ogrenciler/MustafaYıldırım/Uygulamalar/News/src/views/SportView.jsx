@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { NavLink, Outlet } from "react-router";
 import NewsClient from "../service/newsService";
+import styles from "./SportView.module.css";
 
 function SportView() {
 	const [news, setNews] = useState([]);
@@ -16,12 +17,16 @@ function SportView() {
 
 	return (
 		<>
-			<h2>Başlıca Spor Haberleri</h2>
-			<div className="btn-group my-3">
-				<NavLink to="/news/sport/sportnews" className="btn btn-outline-primary">
+			<h2 className={styles.title}>Başlıca Spor Haberleri</h2>
+			<div className={`btn-group my-3 ${styles.navButtons}`}>
+				<NavLink
+					to="/news/sport/sportnews"
+					className={`btn btn-outline-primary ${styles.navLink}`}>
 					Spor Haberleri
 				</NavLink>
-				<NavLink to="/news/sport/leaguage" className="btn btn-outline-success">
+				<NavLink
+					to="/news/sport/leaguage"
+					className={`btn btn-outline-success ${styles.navLink}`}>
 					Lig Durumlari
 				</NavLink>
 			</div>

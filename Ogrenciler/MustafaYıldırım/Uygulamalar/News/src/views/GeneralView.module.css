@@ -1,0 +1,25 @@
+.newsImage {
+	height: 200px;
+	object-fit: cover;
+}
+
+.newsTitle {
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+.newsDescription {
+	margin-bottom: 15px;
+}
+
+.newsLink {
+	text-decoration: none;
+}
+
+.newsCard {
+	transition: transform 0.3s ease;
+}
+
+.newsCard:hover {
+	transform: translateY(-5px);
+}
