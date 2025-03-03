@@ -15,7 +15,7 @@ export class newsService {
     }
 
     static async getTopHeadlines() {
-        const response = await fetch(baseUrl + `top-headlines?country=us&apiKey=${apiKey}`)
+        const response = await fetch(baseUrl + `top-headlines?country=us&apiKey=${apiKey}&pageSize=3`)
         const data = await response.json()
         data.articles.map((article) => {
             article.id = Math.random().toString(36).substring(2, 10);
