@@ -9,8 +9,7 @@ const FooterView = () => {
             <div className="col-md-12">
               <p className="mb-0 pb-3 d-flex justify-content-center">
                 Copyright ©2025 All rights reserved | This website is made with
-                <img src="https://img.icons8.com/?size=20&id=59805&format=png&color=d70000" />
-                by Fatih,Fahri ve Seda
+                by Fatih and Fahri
               </p>
             </div>
           </div>
