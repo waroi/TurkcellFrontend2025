@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router';
+import { FaRegNewspaper } from "react-icons/fa";
 
 export default function Navbar() {
   return (
@@ -6,6 +7,7 @@ export default function Navbar() {
       <div className='container'>
         <NavLink className='navbar-brand fs-2 text-primary fw-bold' to='/'>
           Taraflı Gazete
+          <FaRegNewspaper className='ms-2 fs-1'/>
         </NavLink>
         <button
           className='navbar-toggler'
