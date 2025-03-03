@@ -14,7 +14,7 @@ const NewsView = () => {
             id="basic-navbar-nav"
             className="justify-content-center"
           >
-            <Nav className="w-100 justify-content-between">
+            <Nav className="w-100 justify-content-between category-font">
               <NavLink to="/haberler/spor">Spor Haberleri</NavLink>
               <NavLink to="/haberler/ekonomi">Ekonomi Haberleri</NavLink>
               <NavLink to="/haberler/magazin">Magazin Haberleri</NavLink>

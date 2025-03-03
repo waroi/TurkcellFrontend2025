@@ -13,7 +13,7 @@ const EconomyNewsView = () => {
   }, []);
   return (
     <div className="bg-img">
-      <h1 className="py-3">Ekonomi Haberleri</h1>
+      <h1 className="py-3 text-light">Ekonomi Haberleri</h1>
       <Container>
         <Row md={4}>{news.map((item) => NewsCard(item))}</Row>
       </Container>

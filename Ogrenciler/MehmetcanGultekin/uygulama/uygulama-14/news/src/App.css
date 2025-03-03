@@ -5,16 +5,16 @@
 }
 
 .outfit{
-  font-family: "Outfit", sans-serif;
+  font-family: "Lobster", sans-serif;
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
-  font-size: 36px;
+  font-size: 60px;
 }
 
 .card {
   transition: transform 0.1s ease, box-shadow 0.1s ease;
-
+    font-family: "Newsreader", sans-serif;
   &:hover {
     cursor: pointer;
     transform: scale(1.10);
@@ -48,4 +48,14 @@ h1 {
   font-size: 2.5rem;
   font-weight: 700;
   margin: 0;
+  font-family: "Lobster", sans-serif;
+}
+
+.category-font{
+    font-family: "Newsreader", sans-serif;
+  font-size: 1.25rem;}
+
+.footer p{
+  font-family: "Newsreader", sans-serif;
+  font-size: 1.25rem;
 }
