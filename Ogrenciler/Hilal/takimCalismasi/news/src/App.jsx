@@ -26,7 +26,7 @@ function App() {
         method: "GET",
         headers: {
           accept: "application/json",
-          Authorization: "apikey 3x7QIiA38neH7W9ejpRlNC:6EVQkSZqQPzQMlgvTQA14N",
+          Authorization: import.meta.env.VITE_API_KEY,
         },
       }
     )
