@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import {fetchData} from "../services/service";
-import Time from "../components/Time/Time"
+import Time from "../components/Time/Time";
 import Slider from "../components/Slider/Slider";
 import CardContainer from "../components/CardContainer/CardContainer";
 import Banner from "../components/Banner/Banner";

@@ -1,6 +1,5 @@
 const fetchData = async (category = "general") => {
   try {
-    console.log("xx", category);
     const response = await fetch(
       `https://api.collectapi.com/news/getNews?country=tr&tag=${category}`,
       {
@@ -20,7 +19,6 @@ const fetchData = async (category = "general") => {
 };
 const fetchTime = async () => {
   try {
-    console.log("xx", category);
     const response = await fetch(
       `https://api.collectapi.com/pray/all?data.city=balikesir`,
       {
