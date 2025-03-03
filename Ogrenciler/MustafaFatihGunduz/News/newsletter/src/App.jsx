@@ -1,9 +1,10 @@
 import "./App.css";
-import NewsletterController from "../components/controller/NewsletterController";
+import HomeView from "../components/views/HomeView";
+import Router from "./routes/Router";
 function App() {
   return (
     <>
-      <NewsletterController />
+      <Router />
     </>
   );
 }
