@@ -1,0 +1,23 @@
+.carousel-item img {
+  height: 600px;
+  object-fit: cover;
+}
+
+.card-img-top {
+  height: 400px;
+  object-fit: cover;
+}
+
+.carousel-info {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9));
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
+}
+
+.image-hover-effect {
+  transition: transform 0.3s ease-in-out;
+}
+
+.image-hover-effect:hover {
+  transform: scale(1.05);
+}

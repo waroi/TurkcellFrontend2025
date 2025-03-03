@@ -3,7 +3,8 @@ import HomeView from '../views/HomeView'
 import CategoryView from '../views/CategoryView'
 import NewsView from '../views/NewsView'
 import TopHeadlinesView from '../views/TopHeadlinesView'
-import NewsDetailVİew from '../views/NewsDetailVİew'
+import NewsDetailView from '../views/NewsDetailView'
+
 
 const Router = () => {
     const routes = useRoutes([
@@ -12,7 +13,8 @@ const Router = () => {
             path: '/news/', element: <NewsView />, children: [
                 { index: true, element: <Navigate to={'/top-headlines'} /> },
                 { path: 'category/:categoryName', element: <CategoryView /> },
-                { path: ':newsId', element: <NewsDetailVİew /> },
+                { path: 'category/:categoryName/:newsId', element: <NewsDetailView /> },
+                { path: ':newsId', element: <NewsDetailView/> },
             ]
         },
         { path: '/top-headlines', element: <TopHeadlinesView /> },

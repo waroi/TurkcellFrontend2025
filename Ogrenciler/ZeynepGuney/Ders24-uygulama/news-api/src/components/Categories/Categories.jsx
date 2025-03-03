@@ -5,9 +5,9 @@ const Categories = () => {
   return (
     <ul className="nav nav-tabs">
       <li className="nav-item">
-        <a className="nav-link active" aria-current="page" href="#">
+        <NavLink className="nav-link " aria-current="page" to="genel">
           Genel
-        </a>
+        </NavLink>
       </li>
       <li className="nav-item">
         <NavLink className="nav-link" to="ekonomi">
@@ -27,6 +27,11 @@ const Categories = () => {
       <li className="nav-item">
         <NavLink to="magazin" className="nav-link" aria-disabled="true">
           Magazin
+        </NavLink>
+      </li>
+      <li className="nav-item">
+        <NavLink to="dunya" className="nav-link" aria-disabled="true">
+          Dünya
         </NavLink>
       </li>
     </ul>

@@ -1,25 +1,32 @@
+import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { Container, Nav, Navbar } from 'react-bootstrap'
 import './App.css'
 import Musics from './components/Musics'
+import NavigationBar from './components/NavigationBar'
+import backgroundImage from '../src/assets/music-background.jpg'
+
 
 function App() {
+  const [refreshTrigger, setRefreshTrigger] = useState(0);
+  
+  const refreshMusics = () => {
+    setRefreshTrigger(prev => prev + 1);
+  };
   
   return (
-    <>
-       <Navbar bg='dark' variant='dark'>
-        <Container>
-          <Navbar.Brand href="#home">Music Blog</Navbar.Brand>
-          <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#music">Music</Nav.Link>  
-          </Nav>
-        </Container>
-      </Navbar> 
-      <Container>
-      <Musics />
-      </Container> 
-    </>
+    <div className="d-flex flex-column min-vh-100" style={{ 
+      backgroundImage: `url(${backgroundImage})`, 
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'center',
+      backgroundAttachment: 'fixed'
+    }}>
+
+      <NavigationBar refreshMusics={refreshMusics} />
+      <div className="flex-grow-1 py-3">
+        <Musics key={refreshTrigger} />
+      </div>
+    </div>
   )
 }
 
