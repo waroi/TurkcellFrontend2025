@@ -15,15 +15,18 @@ const CategoryView = ({ news, handleCategory }) => {
   };
 
   return (
-    <div className="container py-5">
-      <h2 className="display-6 text-center mb-4">
+    <div className="container py-4 mt-5">
+      <h2 className="display-6 text-center mb-3">
         Türkiye {categoryName?.charAt(0).toUpperCase() + categoryName?.slice(1)}{" "}
         Haberleri
       </h2>
       <Outlet /> {/* 🔥 Burada detay sayfası render edilecek */}
       {/* 🔥 Eğer `id` varsa (detay sayfasındaysak), aşağıdaki carousel'i gösterme */}
       {!id && (
-        <div id="newsCarousel" className="carousel carousel-dark p-5 slide">
+        <div
+          id="newsCarousel"
+          className="carousel carousel-dark p-5 mb-3 slide"
+        >
           <div className="carousel-indicators">
             {news?.map((_, index) => (
               <button
@@ -46,7 +49,7 @@ const CategoryView = ({ news, handleCategory }) => {
                 }`}
                 key={item.key}
               >
-                <div className="card newCard mb-3 rounded-5 mx-5">
+                <div className="card newCard mb-3 rounded-5 bg-light border-0 mx-5">
                   <div className="row g-0 h-100">
                     <div className="col-md-5">
                       <img
@@ -68,7 +71,7 @@ const CategoryView = ({ news, handleCategory }) => {
                         >
                           <h2 className="card-title mb-5">{item?.name}</h2>
                         </a>
-                        <p className="card-text fs-4 text-truncate">
+                        <p className="card-text fs-4 multiline-truncate">
                           {item?.description}
                         </p>
                         <p className="card-text fs-5">
@@ -77,7 +80,7 @@ const CategoryView = ({ news, handleCategory }) => {
                           </span>
                         </p>
                         <button
-                          className="btn btn-success rounded-pill"
+                          className="btn btn-info rounded-pill text-white"
                           onClick={() => handleReadMore(item.key)}
                         >
                           Devamını Oku
@@ -116,6 +119,36 @@ const CategoryView = ({ news, handleCategory }) => {
           </button>
         </div>
       )}
+      <div className="row">
+        {news?.map((item, index) => (
+          <div className="col-lg-4">
+            <div className="card bg-light border-0 rounded-5 mb-4">
+              <img
+                src={item?.image}
+                className="card-img-top new-img object-fit-cover rounded-top-5"
+                alt="..."
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src =
+                    "https://img.freepik.com/free-photo/worker-reading-news-with-tablet_1162-83.jpg?t=st=1741002811~exp=1741006411~hmac=143d56d5aeb08d4c58f740a7b3d6b0e238331a7f66d53e9baf32affd29454558&w=1060"; // Yedek görsel
+                }}
+              />
+              <div className="card-body">
+                <h5 className="card-title">{item?.name}</h5>
+                <p className="card-text multiline-truncate">
+                  {item?.description}
+                </p>
+                <button
+                  className="btn btn-info text-white rounded-pill"
+                  onClick={() => handleReadMore(item.key)}
+                >
+                  Devamını Oku
+                </button>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
