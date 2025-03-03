@@ -1,0 +1,26 @@
+.container {
+	padding: 20px;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.title {
+	margin-bottom: 20px;
+	text-align: center;
+	font-size: 2rem;
+}
+
+.navButtons {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 30px;
+}
+
+.navLink {
+	margin: 0 5px;
+	transition: all 0.3s ease;
+}
+
+.navLink:hover {
+	transform: scale(1.05);
+}

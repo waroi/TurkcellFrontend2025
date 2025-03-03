@@ -1,0 +1,37 @@
+.newsImage {
+	height: 200px;
+	object-fit: cover;
+}
+
+.newsTitle {
+	font-weight: bold;
+	margin-bottom: 10px;
+	color: #ffc107;
+}
+
+.newsDescription {
+	margin-bottom: 15px;
+}
+
+.newsLink {
+	text-decoration: none;
+}
+
+.newsCard {
+	transition: transform 0.3s ease;
+	border-color: #ffc107;
+}
+
+.newsCard:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 5px 15px rgba(255, 193, 7, 0.3);
+}
+
+.sectionTitle {
+	color: #ffc107;
+	font-size: 2rem;
+	margin-bottom: 20px;
+	text-align: center;
+	border-bottom: 2px solid #ffc107;
+	padding-bottom: 10px;
+}

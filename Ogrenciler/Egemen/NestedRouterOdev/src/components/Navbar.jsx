@@ -2,11 +2,11 @@ import { NavLink } from "react-router";
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary ">
-      <div className="container-fluid">
+    <nav className="navbar fixed-top navbar-expand-lg bg-body-tertiary ">
+      <div className="container-fluid justify-content-between">
         <NavLink className="navbar-brand" to="/home">
           <img
-            src="https://img.icons8.com/?size=100&id=10itr2437PQG&format=png&color=000000"
+            src="https://img.icons8.com/?size=50&id=10itr2437PQG&format=png&color=000000"
             alt=""
           />
           TurkeysNews
@@ -16,20 +16,15 @@ const Navbar = () => {
           className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
+          data-bs-target="#myCustomNavbar"
+          aria-controls="myCustomNavbar"
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <div className="collapse navbar-collapse ms-4" id="myCustomNavbar">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            {/* <li className="nav-item">
-              <NavLink className="nav-link" to="home/genel">
-                General
-              </NavLink>
-            </li> */}
             <li className="nav-item">
               <NavLink className="nav-link" to="economy">
                 Economy
