@@ -1,0 +1,62 @@
+
+
+.bookcard {
+    text-align: center;
+    margin: auto;
+    width: 50rem;
+   
+}
+
+.geeks {
+    color: green;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+
+    
+}
+
+.flip-card {
+    perspective: 1000px;
+    width: 200px;
+    height: 300px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+.flip-card.flipped {
+    transform: rotateY(180deg);
+}
+
+.flip-card-inner {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+
+.flip-card-front,
+.flip-card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.flip-card-front {
+    color: green;
+}
+
+.flip-card-back {
+    background-color: #fff;
+    color: blue;
+    transform: rotateY(180deg);
+}
+
+.card-content {
+    text-align: center;
+}
+
+
