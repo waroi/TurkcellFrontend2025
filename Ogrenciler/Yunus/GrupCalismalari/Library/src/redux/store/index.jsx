@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-// import todoReducer from '../slice/todoSlice'
+import libraryReducer from '../slice/librarySlice'
 
 const store = configureStore({
     reducer: {
-        todo: todoReducer
+        books: libraryReducer
     }
 })
 

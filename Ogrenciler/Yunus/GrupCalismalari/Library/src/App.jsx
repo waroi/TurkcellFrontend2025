@@ -1,11 +1,18 @@
+import Footer from './components/Footer/Footer'
+import Header from './components/Header/Header'
+import Router from './routes/Router'
 import './App.css'
-import BookLibrary from './components/BookLibrary'
 
 function App() {
 
+
   return (
     <>
-      <BookLibrary />
+      <Header />
+      <main className='my-5'>
+        <Router />
+      </main>
+      <Footer />
     </>
   )
 }
