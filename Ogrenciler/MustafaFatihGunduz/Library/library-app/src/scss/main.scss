@@ -1,0 +1,26 @@
+* {
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.special-offer-section {
+	background-attachment: fixed;
+	background-size: cover;
+	background-image: url("https://www.rily.co.uk/images/sale_thumbs/sale_books.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 100%;
+	height: 300px;
+}
+
+.offer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+}
+
+.subscribe {
+	background-color: #f7f7f7;
+}
