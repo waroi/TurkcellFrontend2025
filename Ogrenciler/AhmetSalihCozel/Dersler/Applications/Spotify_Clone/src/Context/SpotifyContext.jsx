@@ -1,55 +1,110 @@
-import { createContext, useState,useContext } from "react";
+import { createContext, useState, useContext, useEffect } from "react";
 
 const SpotifyContext = createContext();
 
 export const SpotifyProvider = ({ children }) => {
-    const [track, setTrack] = useState(null);
-    const [playClick, setPlayClick] = useState(false);
-    const [previousClick, setPreviousClick] = useState(false)
-    const [nextClick, setNextClick] = useState(false)
+  const [player, setPlayer] = useState(null);
+  const [playClick, setPlayClick] = useState(false);
+  const [previousClick, setPreviousClick] = useState(false)
+  const [nextClick, setNextClick] = useState(false)
+
+  const tracknull = {
+    name: "",
+    album: {
+        images: [
+            { url: "" }
+        ]
+    },
+    artists: [
+        { name: "" }
+    ]
+}
+
+const [track, setTrack] = useState(tracknull);
 
 
+  // useEffect(() => {
+  //   if(player){
+  //     console.log(playClick)
+  //     player.togglePlay();
+  //     console.log(player)
+  //   }
+  // }, [playClick])
 
-    const token = import.meta.env.VITE_SPOTIFY_TOKEN;
-    const player = new Spotify.Player({
-      name: "Web Playback SDK Quick Start Player",
-      getOAuthToken: (cb) => {
-        cb(token);
-      },
-      volume: 0.5,
-    });
+  // useEffect(() => {
+  //   if(player){
+  //     console.log(previousClick)
+  //     player.previousTrack();
+  //     console.log(player)
+  //   }
+  // }, [previousClick])
 
-    player.addListener("ready", ({ device_id }) => {
-        console.log("Ready with Device ID", device_id);
-        setDeviceForPlayback(device_id);
-    });
+  // useEffect(() => {
+  //   if(player){
+  //     console.log(nextClick)
+  //     player.nextTrack();
+  //     console.log(player)
+  //   }
+  // }, [nextClick])
 
-    player.connect().then((success) => {
-        if (success) {
-          console.log("The Web Playback SDK successfully connected to Spotify!");
-        }
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://sdk.scdn.co/spotify-player.js";
+    script.async = true;
+    document.body.appendChild(script);
+  
+    window.onSpotifyWebPlaybackSDKReady = async () => {
+      const token = import.meta.env.VITE_SPOTIFY_TOKEN;
+      const newPlayer = new Spotify.Player({
+        name: "Web Playback SDK Player",
+        getOAuthToken: (cb) => cb(token),
+        volume: 0.5,
       });
-
-    player.addListener('player_state_changed', ({
-    position,
-    duration,
-    track_window: { current_track }
-    }) => {
-    setTrack(track)
-    console.log('Currently Playing', current_track);
-    console.log('Position in Song', position);
-    console.log('Duration of Song', duration);
-    });        
-
-    const values = {
-        track, setTrack,
-        playClick, setPlayClick,
-        previousClick, setPreviousClick,
-        nextClick, setNextClick,
+  
+      newPlayer.addListener("ready", async ({ device_id }) => {
+        console.log("Ready with Device ID", device_id);
+        await setDeviceForPlayback(device_id);
+        setPlayer(newPlayer); // **Player gerçekten hazır olduktan sonra set ediyoruz**
+      });
+  
+      newPlayer.addListener("not_ready", ({ device_id }) => {
+        console.log("Device has gone offline", device_id);
+      });
+  
+      newPlayer.addListener("player_state_changed", ({
+        position,
+        duration,
+        track_window: { current_track },
+      }) => {
+        setTrack(current_track);
+        console.log("Currently Playing", current_track);
+        console.log("Position in Song", position);
+        console.log("Duration of Song", duration);
+      });
+  
+      const success = await newPlayer.connect();
+      if (success) {
+        console.log("The Web Playback SDK successfully connected to Spotify!");
+      }
     };
-    return (
-        <SpotifyContext.Provider value={values}>{children}</SpotifyContext.Provider>
-    );
+  }, []);
+  
+
+
+
+
+  const values = {
+    track, setTrack,
+    // playClick, setPlayClick,
+    // previousClick, setPreviousClick,
+    // nextClick, setNextClick,
+     player,
+  };
+
+
+  return (
+    <SpotifyContext.Provider value={values}>{children}</SpotifyContext.Provider>
+  );
 };
 export const useSpotify = () => useContext(SpotifyContext);
 
@@ -76,4 +131,8 @@ async function setDeviceForPlayback(deviceId) {
   } else {
     console.log('Successfully set device for playback');
   }
+}
+
+function playSongFetch() {
+  fetch()
 }
