@@ -14,6 +14,7 @@ const PopularityView = () => {
     const getPopularBooks = () => getBooks(searchTerm)
 
 
+
     return (
         <>
             <div className="container">
@@ -38,6 +39,7 @@ const PopularityView = () => {
                         </div>
                     ))}
                 </div>
+
             </div>
 
         </>
