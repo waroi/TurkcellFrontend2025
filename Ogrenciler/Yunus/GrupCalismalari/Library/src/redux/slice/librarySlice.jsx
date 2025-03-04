@@ -1,25 +1,31 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { books } from '../../data/books'
+import { Storage } from '../../utils/storage'
 
-const initialState = JSON.parse(localStorage.getItem('library')) || books
+
+const initialState = Storage.getBooks()
 
 export const librarySlice = createSlice({
-    name: library,
+    name: "library",
     initialState,
     reducers: {
-        addBook: (state, actions) => {
-            state.library = [...state.library, actions.payload]
-            localStorage.setItem('library', JSON.stringify(state.library))
+        addBook: (state, action) => {
+            state.books = [...state.books, action.payload]
+            Storage.addBooks(state.books)
         },
 
-        removeBook: (state, actions) => {
-            state.library = state.library.filter(book => book.id !== actions.payload)
-            localStorage.setItem('library', JSON.stringify(state.library))
+        removeBook: (state, action) => {
+            state.books = state.books.filter(book => book.id.toString() !== action.payload.toString())
+            Storage.addBooks(state.books)
         },
 
-        updateBook: (state, actions) => {
-            // state.library.indexOf(actions.payload.id)
-            // const  state.library.find(book => actions.payload.id === book.id)
+        updateBook: (state, action) => {
+            const bookIndex = state.books.findIndex(book => book.id === action.payload.id);
+            if (bookIndex !== -1) {
+                state.books[bookIndex] = { ...state.books[bookIndex], ...action.payload };
+            }
+
+            Storage.addBooks(state.books)
+
         }
     }
 })

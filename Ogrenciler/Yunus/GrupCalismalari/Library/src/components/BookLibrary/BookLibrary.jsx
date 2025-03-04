@@ -1,28 +1,21 @@
 import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { books } from '../data/books';
+import { Outlet, useNavigate } from 'react-router';
+import { useDispatch, useSelector } from 'react-redux';
+import { addBook } from './../../redux/slice/librarySlice'
+import { newBookInitialState } from '../../utils/variables';
 
 
 const BookLibrary = () => {
-    const [selectedBook, setSelectedBook] = useState(null);
+    const navigate = useNavigate();
+    const dispatch = useDispatch()
+    const books = useSelector(state => state.books.books)
+
     const [showModal, setShowModal] = useState(false);
     const [searchTerm, setSearchTerm] = useState('');
-    const [newBook, setNewBook] = useState({
-        id: "",
-        title: "",
-        author: "",
-        posterUrl: "",
-        description: "",
-        publishedYear: "",
-        genre: ""
-    });
+    const [newBook, setNewBook] = useState(newBookInitialState);
     const [bookList, setBookList] = useState(books);
     const [showAddModal, setShowAddModal] = useState(false);
-
-    // const openBookDetails = (book) => {
-    //     setSelectedBook(book);
-    //     setShowModal(true);
-    // };
 
     const closeModal = () => {
         setShowModal(false);
@@ -47,18 +40,11 @@ const BookLibrary = () => {
         e.preventDefault();
         const bookToAdd = {
             ...newBook,
-            id: (bookList.length + 1).toString()
+            id: self.crypto.randomUUID()
         };
-        setBookList([...bookList, bookToAdd]);
-        setNewBook({
-            id: "",
-            title: "",
-            author: "",
-            posterUrl: "",
-            description: "",
-            publishedYear: "",
-            genre: ""
-        });
+        dispatch(addBook(bookToAdd))
+        setBookList([...books, bookToAdd]);
+        setNewBook(newBookInitialState);
         setShowAddModal(false);
     };
 
@@ -68,10 +54,11 @@ const BookLibrary = () => {
     };
 
     return (
-        <div className="container py-5">
+        <div className="container">
+            <Outlet />
             <div className="row mb-4">
                 <div className="col">
-                    <h1 className="text-center mb-4">Balığın Kütüphanesi</h1>
+                    <h1 className="text-center mb-4">Balığın Kütüphane Dünyası</h1>
                     <div className="d-flex justify-content-between align-items-center mb-4">
                         <div className="search-container">
                             <input
@@ -94,9 +81,11 @@ const BookLibrary = () => {
 
             <div className="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
                 {filteredBooks.map((book) => (
-                    <div className="col" key={book.id}>
-                        <div className="card h-100 book-card" onClick={() => openBookDetails(book)}>
-                            <div className="card-img-container">
+                    <div className="col-lg-3" key={book.id}>
+                        <div className="card h-100 book-card" onClick={() => {
+                            navigate(`/books/${book.id}`)
+                        }}>
+                            <div className="card-img-container h-100">
                                 {
                                     <img src={book.posterUrl} className="card-img-top img-fluid" alt={book.title} />
                                 }
@@ -111,61 +100,13 @@ const BookLibrary = () => {
                 ))}
             </div>
 
-            {filteredBooks.length === 0 && (
-                <div className="alert alert-info mt-4">
-                    Arama kriterlerinize uygun kitap bulunamadı.
-                </div>
-            )}
-
-            {selectedBook && (
-                <div className={`modal fade ${showModal ? 'show' : ''}`} style={{ display: showModal ? 'block' : 'none' }}>
-                    <div className="modal-dialog modal-lg">
-                        <div className="modal-content">
-                            <div className="modal-header bg-primary text-white">
-                                <h5 className="modal-title">{selectedBook.title}</h5>
-                                <button type="button" className="btn-close btn-close-white" onClick={closeModal}></button>
-                            </div>
-                            <div className="modal-body">
-                                <div className="row">
-                                    <div className="col-md-4">
-                                        {
-                                            <img src={selectedBook.posterUrl} className="img-fluid rounded" alt={selectedBook.title} />
-                                        }
-                                    </div>
-                                    <div className="col-md-8">
-                                        <div className="mb-3">
-                                            <span className="fw-bold">Yazar: </span>
-                                            <span>{selectedBook.author}</span>
-                                        </div>
-                                        <div className="mb-3">
-                                            <span className="fw-bold">Yayın Yılı: </span>
-                                            <span>{selectedBook.publishedYear}</span>
-                                        </div>
-                                        <div className="mb-3">
-                                            <span className="fw-bold">Tür: </span>
-                                            <span className="badge bg-secondary">{selectedBook.genre}</span>
-                                        </div>
-                                        <div className="mb-3">
-                                            <span className="fw-bold">Açıklama: </span>
-                                            <p>{selectedBook.description}</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="modal-footer">
-                                <button
-                                    type="button"
-                                    className="btn btn-danger"
-                                    onClick={() => handleDeleteBook(selectedBook.id)}
-                                >
-                                    Kitabı Sil
-                                </button>
-                                <button type="button" className="btn btn-secondary" onClick={closeModal}>Kapat</button>
-                            </div>
-                        </div>
+            {
+                filteredBooks.length === 0 && (
+                    <div className="alert alert-info mt-4">
+                        Arama kriterlerinize uygun kitap bulunamadı.
                     </div>
-                </div>
-            )}
+                )
+            }
 
             <div className={`modal fade ${showAddModal ? 'show' : ''}`} style={{ display: showAddModal ? 'block' : 'none' }}>
                 <div className="modal-dialog modal-lg">
@@ -256,10 +197,12 @@ const BookLibrary = () => {
                 </div>
             </div>
 
-            {(showModal || showAddModal) && (
-                <div className="modal-backdrop fade show"></div>
-            )}
-        </div>
+            {
+                (showModal || showAddModal) && (
+                    <div className="modal-backdrop fade show"></div>
+                )
+            }
+        </div >
     );
 };
 
