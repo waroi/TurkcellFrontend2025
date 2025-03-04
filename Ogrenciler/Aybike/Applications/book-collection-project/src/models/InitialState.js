@@ -1,14 +1,14 @@
-export const defaultInitialState = {
+const InitialState = {
     books: [
       {
         id: 1,
-        title: "The Great Gatsby",
+        title: "Mülksüzler",
         genre: "Classic",
-        author: "F. Scott Fitzgerald",
+        author: "Ursula K. Le Guin",
         description: "A novel set in the Roaring Twenties, exploring themes of wealth and the American Dream.",
-        posterUrl: "https://example.com/gatsby.jpg",
+        posterUrl: "https://img.kitapyurdu.com/v1/getImage/fn:11944068/wh:true/miw:200/mih:200",
         publishedYear: "1925",
-        isFavourite: false
+        isFavourite: true
       },
       {
         id: 2,
@@ -16,7 +16,7 @@ export const defaultInitialState = {
         genre: "Dystopian",
         author: "George Orwell",
         description: "A chilling vision of a totalitarian regime that uses surveillance and propaganda to control its citizens.",
-        posterUrl: "https://example.com/1984.jpg",
+        posterUrl: "https://i.dr.com.tr/cache/500x400-0/originals/0000000328984-1.jpg",
         publishedYear: "1949",
         isFavourite: true
       },
@@ -26,7 +26,7 @@ export const defaultInitialState = {
         genre: "Fiction",
         author: "Harper Lee",
         description: "A powerful novel about racial injustice and moral growth in the American South.",
-        posterUrl: "https://example.com/mockingbird.jpg",
+        posterUrl: "https://i.dr.com.tr/cache/500x400-0/originals/0000000328984-1.jpg",
         publishedYear: "1960",
         isFavourite: false
       },
@@ -36,7 +36,7 @@ export const defaultInitialState = {
         genre: "Fantasy",
         author: "J.R.R. Tolkien",
         description: "A fantasy adventure following Bilbo Baggins on his quest to reclaim a stolen treasure.",
-        posterUrl: "https://example.com/hobbit.jpg",
+        posterUrl: "https://i.dr.com.tr/cache/500x400-0/originals/0000000328984-1.jpg",
         publishedYear: "1937",
         isFavourite: true
       },
@@ -46,9 +46,22 @@ export const defaultInitialState = {
         genre: "Romance",
         author: "Jane Austen",
         description: "A timeless novel exploring themes of love, class, and societal expectations.",
-        posterUrl: "https://example.com/pride.jpg",
+        posterUrl: "https://i.dr.com.tr/cache/500x400-0/originals/0000000328984-1.jpg",
+        publishedYear: "1813",
+        isFavourite: false
+      },
+      {
+        id: 6,
+        title: "Pride and Prejudice",
+        genre: "Romance",
+        author: "Jane Austen",
+        description: "A timeless novel exploring themes of love, class, and societal expectations.",
+        posterUrl: "https://i.dr.com.tr/cache/500x400-0/originals/0000000328984-1.jpg",
         publishedYear: "1813",
         isFavourite: false
       }
     ],
+    book:[{}]
   };
+
+export default InitialState;
