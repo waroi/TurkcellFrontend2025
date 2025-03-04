@@ -1,9 +1,10 @@
 import "./App.css";
+import NavbarView from "./components/NavbarView";
 import BannerView from "./components/BannerView";
-import NavbarView from "./components/NavBarView";
 import BooksView from "./components/BooksView";
 import SpecialOfferView from "./components/SpecialOfferView";
 import SubscribeView from "./components/SubscribeView";
+import FooterView from "./components/FooterView";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <BooksView />
       <SpecialOfferView />
       <SubscribeView />
+      <FooterView />
     </>
   );
 }

@@ -8,8 +8,8 @@ const initialState = {
       author: "Arthur Conan Doyle",
       page: 200,
       image:
-        "https://images-na.ssl-images-amazon.com/images/I/51Q7W9zrJjL._SX331_BO1,204,203,200_.jpg",
-      releaseDate: 2015,
+        "https://m.media-amazon.com/images/I/81tNnqcHxlL._AC_UF1000,1000_QL80_.jpg",
+      releaseDate: "2015-03-04",
       description: "Merhaba ben kitap açıklaması",
     },
     {
@@ -18,8 +18,8 @@ const initialState = {
       author: "Arthur Conan Doyle",
       page: 250,
       image:
-        "https://images-na.ssl-images-amazon.com/images/I/51Q7W9zrJjL._SX331_BO1,204,203,200_.jpg",
-      releaseDate: 2017,
+        "https://m.media-amazon.com/images/I/81tNnqcHxlL._AC_UF1000,1000_QL80_.jpg",
+      releaseDate: "2017-10-25",
       description: "Merhaba ben kitap açıklaması",
     },
     {
@@ -28,8 +28,8 @@ const initialState = {
       author: "Arthur Conan Doyle",
       page: 300,
       image:
-        "https://images-na.ssl-images-amazon.com/images/I/51Q7W9zrJjL._SX331_BO1,204,203,200_.jpg",
-      releaseDate: 2019,
+        "https://m.media-amazon.com/images/I/81tNnqcHxlL._AC_UF1000,1000_QL80_.jpg",
+      releaseDate: "2019-09-25",
       description: "Merhaba ben kitap açıklaması",
     },
   ],

@@ -6,7 +6,7 @@ const BannerView = () => {
   return (
     <div className="w-100">
       <img src={banner} alt="banner-logo" className="w-100" />
-      <div className="d-flex justify-content-between mt-4 bg-light container">
+      <div className="d-flex justify-content-between p-4 mt-4 bg-light container">
         <div className="offer">
           <img
             src="https://bookly-theme.myshopify.com/cdn/shop/files/icon-4.png?v=1613723084&width=275"
