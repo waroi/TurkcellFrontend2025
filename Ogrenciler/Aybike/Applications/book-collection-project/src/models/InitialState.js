@@ -1,4 +1,4 @@
-export const initialState = {
+export const defaultInitialState = {
     books: [
       {
         id: 1,

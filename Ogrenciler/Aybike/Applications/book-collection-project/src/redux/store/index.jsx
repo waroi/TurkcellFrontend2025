@@ -1,9 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
-import libraryReducer from "../slice/librarySlice";
+import libraryReducer from '../slice/librarySlice';  
+
 
 const store = configureStore({
   reducer: {
-    library: libraryReducer,
+    library: libraryReducer, 
   },
 });
+
 export default store;
+
+
