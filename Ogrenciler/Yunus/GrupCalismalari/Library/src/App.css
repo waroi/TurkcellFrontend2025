@@ -1,0 +1,57 @@
+@import "./../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
+.book-card {
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-container {
+  height: 240px;
+  overflow: hidden;
+  background-color: #f5f5f5;
+}
+
+.card-img-top {
+  height: 100%;
+  object-fit: cover;
+}
+
+.placeholder-img {
+  height: 100%;
+  background-color: #e9ecef;
+  color: #6c757d;
+}
+
+.placeholder-img-large {
+  height: 300px;
+  background-color: #e9ecef;
+  color: #6c757d;
+  border-radius: 0.25rem;
+}
+
+.modal.show {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.search-container {
+  width: 70%;
+}
+
+.modal-content {
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.modal-header {
+  border-bottom: none;
+}
+
+.modal-footer {
+  border-top: none;
+}
