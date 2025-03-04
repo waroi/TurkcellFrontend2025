@@ -1,26 +1,47 @@
 * {
-	padding: 0;
-	box-sizing: border-box;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+$primary-color: #7886c7;
+$footer-color: #2d336b;
+
+nav {
+  background-color: $primary-color;
 }
 
 .special-offer-section {
-	background-attachment: fixed;
-	background-size: cover;
-	background-image: url("https://www.rily.co.uk/images/sale_thumbs/sale_books.jpg");
-	background-repeat: no-repeat;
-	background-position: center;
-	width: 100%;
-	height: 300px;
+  background-attachment: fixed;
+  background-size: cover;
+  background-image: url("https://www.rily.co.uk/images/sale_thumbs/sale_books.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 300px;
+  h4 {
+    color: #872341;
+  }
 }
 
-.offer {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	gap: 20px;
+.offer-section {
+  background-color: $primary-color;
 }
 
 .subscribe {
-	background-color: #f7f7f7;
+  background-color: $primary-color;
+  input {
+    height: 40px;
+    padding: 10px 20px;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    &:focus {
+      outline: none;
+    }
+    outline: none;
+  }
+}
+
+footer {
+  background-color: $footer-color;
 }
