@@ -9,9 +9,23 @@ import {
   SkipPrevious,
 } from "@mui/icons-material";
 import { useEffect } from "react";
+import { useSpotify } from "../Context/SpotifyContext";
 
 function PlayButtons() {
+  const { player } = useSpotify();
+  // const { setPlayClick, setPreviousClick, setNextClick, } = useSpotify();
 
+  // const handlePlayClick = () => {
+  //   setPlayClick((prevPlayClick) => !prevPlayClick);
+  // };
+
+  // const handleNextClick = () => {
+  //   setPreviousClick((prevPlayClick) => !prevPlayClick);
+  // };
+
+  // const handlePreviousClick = () => {
+  //   setNextClick((prevPlayClick) => !prevPlayClick);
+  // };
   return (
     <Box
       className="btnGroup"
@@ -20,13 +34,13 @@ function PlayButtons() {
       <IconButton>
         <Shuffle />
       </IconButton>
-      <IconButton id="skipPreviousButton">
+      <IconButton onClick={()=>{player.previousTrack()}} id="skipPreviousButton">
         <SkipPrevious />
       </IconButton>
-      <IconButton id="toggleButton" sx={{ width: "50px", height: "50px" }}>
+      <IconButton onClick={()=>{player.togglePlay()}} id="toggleButton" sx={{ width: "50px", height: "50px" }}>
         <PlayCircleFilled sx={{ height: "50px", width: "50px" }} />
       </IconButton>
-      <IconButton id="skipNextButton">
+      <IconButton onClick={()=>{player.nextTrack()}} id="skipNextButton">
         <SkipNextRounded />
       </IconButton>
       <IconButton>

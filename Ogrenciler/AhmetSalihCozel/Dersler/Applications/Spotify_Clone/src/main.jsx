@@ -5,6 +5,7 @@ import './index.css'
 import App from './App.jsx'
 import { CssBaseline } from '@mui/material'
 import themeOptions from '../themeOptions.js'
+import { SpotifyProvider } from './Context/SpotifyContext.jsx';
 
 document.getElementById('root').style.height = "100vh"
 
@@ -14,7 +15,9 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <ThemeProvider theme={theme}>
       <CssBaseline />
+      <SpotifyProvider>
       <App/>
+      </SpotifyProvider>
     </ThemeProvider>
   </StrictMode>
 )

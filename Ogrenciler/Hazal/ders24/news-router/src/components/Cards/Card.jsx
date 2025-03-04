@@ -1,20 +1,17 @@
 import React from 'react';
-import { Card, Col } from 'react-bootstrap';
-import { Link } from 'react-router';
+import { Card} from 'react-bootstrap';
 
-const NewsCard = ({ news }) => {
+const NewsCard =({ newsItem }) => {
     return (
-        <Col md={6}>
-            <Card>
-                <Card.Img variant="top" src={news.urlToImage} />
-                <Card.Body>
-                    <Card.Title>{news.title}</Card.Title>
-                    <Card.Text>{news.description}</Card.Text>
-                    <Card.Link as={Link} to={`/news/${news.id}`}>Habere Git</Card.Link>
-                </Card.Body>
-            </Card>
-        </Col>
+        <Card className='h-100'>
+          <Card.Img variant="top" src={newsItem?.urlToImage} />
+          <Card.Body>
+            <Card.Title>{newsItem?.title}</Card.Title>
+            <Card.Text>{newsItem?.description}</Card.Text>
+            <Card.Link className='btn btn-primary' href={newsItem?.url} target="_blank" rel="noopener noreferrer">Read More</Card.Link>
+          </Card.Body>
+        </Card>
     );
-}
-
-export default NewsCard;
+  }
+  
+  export default NewsCard;
