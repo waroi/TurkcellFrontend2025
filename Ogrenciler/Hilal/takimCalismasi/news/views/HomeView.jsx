@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Outlet, NavLink } from "react-router";
+import { Outlet } from "react-router";
 
 const HomeView = ({ news }) => {
   return (
