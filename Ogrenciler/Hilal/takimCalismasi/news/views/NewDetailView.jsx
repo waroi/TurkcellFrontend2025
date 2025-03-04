@@ -26,7 +26,19 @@ const NewDetailView = ({ news }) => {
           <div className="col-md-8 p-4">
             <div className="card-body">
               <h5 className="card-title display-6 mb-5">{haber?.name}</h5>
-              <p className="card-text display-6 fs-4">{haber?.description}</p>
+              <p className="card-text display-6 fs-4">
+                {haber?.description} Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Reprehenderit fuga, rerum nam aliquam nihil
+                facilis sunt praesentium in dolore a id vero ipsam sint. Velit
+                nisi ullam optio hic quas eum aut possimus quod facere,
+                aspernatur et doloremque voluptatibus temporibus ex quos neque,
+                officiis laboriosam molestias quibusdam! Atque, iusto? Quo odit
+                officiis architecto dolore libero. Dolorum consectetur eius,
+                totam, voluptate perspiciatis voluptates fugit tempore
+                inventore, ea natus harum quidem velit dolore quisquam
+                blanditiis eaque recusandae cumque corrupti maxime distinctio
+                ab!
+              </p>
             </div>
           </div>
         </div>

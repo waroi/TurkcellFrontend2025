@@ -1,0 +1,11 @@
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+main .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 2rem;
+
+  .card img {
+    height: 15rem;
+  }
+}
