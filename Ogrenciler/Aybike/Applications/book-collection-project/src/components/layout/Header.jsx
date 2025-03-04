@@ -3,12 +3,12 @@ import { NavLink } from "react-router";
 const Header = () => {
 	return (
     <nav className="navbar-books navbar navbar-expand-lg position-sticky sticky-top bg-white">
-			<div class="container-fluid">
+			<div className="container-fluid">
       <NavLink className="navbar-brand" to="/">
 						<img className="logo" src="/src/assets/logo.png" alt="logo" />
 					</NavLink>
       <button
-					class="navbar-toggler"
+					className="navbar-toggler"
 					type="button"
 					data-bs-toggle="collapse"
 					data-bs-target="#navbarNav"
@@ -16,9 +16,9 @@ const Header = () => {
 					aria-expanded="false"
 					aria-label="Toggle navigation"
 				>
-					<span class="navbar-toggler-icon"></span>
+					<span className="navbar-toggler-icon"></span>
 				</button>
-				<div class="collapse navbar-collapse" id="navbarNav">
+				<div className="collapse navbar-collapse" id="navbarNav">
           <NavLink className="nav-link" to="/" >Library</NavLink>
           <NavLink className="nav-link px-2" to="/">Categories</NavLink>
           <NavLink className="nav-link" to="/">About Us</NavLink>

@@ -1,12 +1,12 @@
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import AppRouter from "./routes/Router";
-import { BrowserRouter as Router } from "react-router"; // Router buraya taşındı
+import { BrowserRouter as Router } from "react-router"; 
 import './App.css';
 
 function App() {
   return (
-    <Router> {/* Router burada tanımlandı */}
+    <Router> 
       <Navbar />
       <AppRouter />
       <Footer />
