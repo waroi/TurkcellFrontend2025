@@ -3,7 +3,8 @@ import HomeView from "../views/HomeView";
 import CategoryView from "../views/CategoryView";
 import LibraryView from "../views/LibraryView";
 import BookDetailView from "../views/BookDetailView";
-import Layout from "../components/layout/Layout"
+import Layout from "../components/layout/Layout";
+
 
 const Router = () => {
   const routes = useRoutes([
@@ -22,7 +23,6 @@ const Router = () => {
             { path: ":bookId", element: <BookDetailView /> },
           ],
         },
-        
       ],
     },
   ]);

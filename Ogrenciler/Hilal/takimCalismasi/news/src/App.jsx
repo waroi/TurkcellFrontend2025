@@ -15,11 +15,6 @@ function App() {
   };
 
   const fetchNews = () => {
-    console.log(
-      "kategori",
-      category,
-      `https://api.collectapi.com/news/getNews?country=tr&tag=${category}`
-    );
     fetch(
       `https://api.collectapi.com/news/getNews?country=tr&tag=${category}`,
       {
@@ -49,6 +44,9 @@ function App() {
     <>
       <Navbar handleCategory={handleCategory} />
       <Routes news={news} handleCategory={handleCategory} />
+      <footer className="p-2 d-flex justify-content-center align-items-center">
+        Hilal - Ece İrem - Ahmet Salih
+      </footer>
     </>
   );
 }
