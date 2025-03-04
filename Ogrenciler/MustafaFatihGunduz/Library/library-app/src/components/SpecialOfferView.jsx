@@ -2,7 +2,7 @@ import React from "react";
 
 const SpecialOfferView = () => {
   return (
-    <div className="row mt-4 p-4 special-offer-section">
+    <div className="row mx-0 mt-4 p-4 special-offer-section">
       <div className="col-lg-6"></div>
       <div className="col-lg-6">
         <h4 className="text-uppercase fs-3 text-black fw-bold">

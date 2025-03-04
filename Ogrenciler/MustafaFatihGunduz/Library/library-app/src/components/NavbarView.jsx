@@ -2,7 +2,7 @@ import React from "react";
 
 const NavbarView = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light position-sticky top-0 d-flex justify-content-between">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light position-sticky top-0 d-flex justify-content-between z-2 shadow-sm">
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
           Navbar
@@ -68,6 +68,14 @@ const NavbarView = () => {
               </ul>
             </li>
           </ul>
+          <button
+            type="button"
+            className="btn btn-success"
+            data-bs-toggle="modal"
+            data-bs-target="#bookEvent"
+          >
+            Kitap Ekle
+          </button>
         </div>
       </div>
     </nav>
