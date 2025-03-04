@@ -4,6 +4,7 @@ import { Outlet, useNavigate } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { addBook } from './../../redux/slice/librarySlice'
 import { newBookInitialState } from '../../utils/variables';
+import Categories from '../Categories/Categories';
 
 
 const BookLibrary = () => {
@@ -17,16 +18,30 @@ const BookLibrary = () => {
     const [bookList, setBookList] = useState(books);
     const [showAddModal, setShowAddModal] = useState(false);
 
+    //kategorik filtre için ekledim
+    const [selectedCategory, setSelectedCategory] = useState("");
+
     const closeModal = () => {
         setShowModal(false);
         setShowAddModal(false);
     };
 
-    const filteredBooks = bookList.filter(book =>
-        book.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        book.author.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        book.genre.toLowerCase().includes(searchTerm.toLowerCase())
+    // const filteredBooks = bookList.filter(book =>
+    //     book.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    //     book.author.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    //     book.genre.toLowerCase().includes(searchTerm.toLowerCase())
+    // );
+
+    //kategorik filtre için değiştirdim
+
+    const filteredBooks = books.filter(
+        (book) =>
+            (selectedCategory === "" || book.genre === selectedCategory) &&
+            (book.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                book.author.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                book.genre.toLowerCase().includes(searchTerm.toLowerCase()))
     );
+
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -48,6 +63,8 @@ const BookLibrary = () => {
         setShowAddModal(false);
     };
 
+
+    //BU FONKSİYON KULLANILMIYOR GİBİ!!!!!
     const handleDeleteBook = (id) => {
         setBookList(bookList.filtesr(book => book.id !== id));
         setShowModal(false);
@@ -60,7 +77,7 @@ const BookLibrary = () => {
                 <div className="col">
                     <h1 className="text-center mb-4">Balığın Kütüphane Dünyası</h1>
                     <div className="d-flex justify-content-between align-items-center mb-4">
-                        <div className="search-container">
+                        <div className="search-container w-100 me-3">
                             <input
                                 type="text"
                                 className="form-control"
@@ -70,7 +87,7 @@ const BookLibrary = () => {
                             />
                         </div>
                         <button
-                            className="btn btn-primary"
+                            className="btn btn-primary w-25"
                             onClick={() => setShowAddModal(true)}
                         >
                             Yeni Kitap Ekle
@@ -78,7 +95,7 @@ const BookLibrary = () => {
                     </div>
                 </div>
             </div>
-
+            <Categories books={books} selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
             <div className="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
                 {filteredBooks.map((book) => (
                     <div className="col-lg-3" key={book.id}>

@@ -1,22 +1,18 @@
 
 import { createSlice } from "@reduxjs/toolkit";
-import { loadBooksFromLocalStorage, saveBooksToLocalStorage } from "../../utils/storage";
-import { defaultInitialState } from "../../models/InitialState"; 
-
-
-const stateFromLocalStorage = loadBooksFromLocalStorage();
-
-const updatedState = {
-  ...defaultInitialState, 
-  books: stateFromLocalStorage.length > 0 ? stateFromLocalStorage : defaultInitialState.books, 
-};
+import { saveBooksToLocalStorage} from "../../utils/storage";
+import initialState from "../../models/InitialState"
 
 export const librarySlice = createSlice({
   name: "library",
-  initialState: updatedState, 
+  initialState, 
   reducers: {
-
-   
+    getLibrary: (state) => {
+     saveBooksToLocalStorage(state.books);
+    },
+    getBookById: (state, action) => {
+      state.book = state.books.find((book) => book.id === Number(action.payload));
+    },
     addBook: (state, action) => {
       state.books.push(action.payload);
       saveBooksToLocalStorage(state.books); 
@@ -35,7 +31,7 @@ export const librarySlice = createSlice({
   },
 });
 
-export const { addBook, deleteBook, updateBook } = librarySlice.actions;
+export const { addBook, deleteBook, updateBook, getLibrary, getBookById} = librarySlice.actions;
 
 export default librarySlice.reducer;
 
