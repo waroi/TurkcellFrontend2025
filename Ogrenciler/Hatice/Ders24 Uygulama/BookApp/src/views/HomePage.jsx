@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { addBook, deleteBook, filterBooks, sortBooks } from "../redux/slice/booksSlice";
+import { addBook, deleteBook } from "../redux/slice/booksSlice";
 import BookCard from "../components/BookCard";
 
 const HomePage = () => {
@@ -9,63 +9,56 @@ const HomePage = () => {
 
     const [newBook, setNewBook] = useState({ title: "", author: "", year: "" });
 
-    const filteredBooks = books.filter((book) =>
-        book.title.toLowerCase().includes(filter.toLowerCase())
-    );
+    const filteredBooks = books
+        .filter((book) => book.title.toLowerCase().includes(filter.toLowerCase()))
+        .sort((a, b) =>
+            sort === "asc" ? a.title.localeCompare(b.title) : b.title.localeCompare(a.title)
+        );
 
     return (
         <div className="container mt-4">
             <h2 className="mb-4">📚 Kitaplar</h2>
 
-            <div className="mb-4">
-                <input 
-                    type="text" 
-                    placeholder="Kitap Adı" 
-                    value={newBook.title} 
+            <div className="mb-3 d-flex gap-2 align-items-center">
+                <input
+                    type="text"
+                    placeholder="Kitap Adı"
+                    className="form-control"
+                    value={newBook.title}
                     onChange={(e) => setNewBook({ ...newBook, title: e.target.value })}
                 />
-                <input 
-                    type="text" 
-                    placeholder="Yazar" 
-                    value={newBook.author} 
+                <input
+                    type="text"
+                    placeholder="Yazar"
+                    className="form-control"
+                    value={newBook.author}
                     onChange={(e) => setNewBook({ ...newBook, author: e.target.value })}
                 />
-                <input 
-                    type="number" 
-                    placeholder="Yıl" 
-                    value={newBook.year} 
+                <input
+                    type="number"
+                    placeholder="Yıl"
+                    className="form-control"
+                    value={newBook.year}
                     onChange={(e) => setNewBook({ ...newBook, year: e.target.value })}
                 />
-                <button 
-                    className="btn btn-success" 
+                <button
+                    className="btn btn-success"
                     onClick={() => dispatch(addBook({ ...newBook, id: Date.now() }))}
                 >
-                    Kitap Ekle
+                    ➕ Kitap Ekle
                 </button>
             </div>
 
-            {/* Filtre ve Sıralama */}
-            <div className="mb-4">
-                <input 
-                    type="text" 
-                    placeholder="Kitap Ara..." 
-                    onChange={(e) => dispatch(filterBooks(e.target.value))}
-                />
-                <button 
-                    className="btn btn-primary ms-2" 
-                    onClick={() => dispatch(sortBooks(sort === "asc" ? "desc" : "asc"))}
-                >
-                    {sort === "asc" ? "Z-A Sırala" : "A-Z Sırala"}
-                </button>
-            </div>
-
-            {/* Kitap Listesi */}
             <div className="row">
-                {filteredBooks.map((book) => (
-                    <div className="col-md-4 mb-4" key={book.id}>
-                        <BookCard book={book} onDelete={() => dispatch(deleteBook(book.id))} />
-                    </div>
-                ))}
+                {filteredBooks.length > 0 ? (
+                    filteredBooks.map((book) => (
+                        <div className="col-md-4 mb-4" key={book.id}>
+                            <BookCard book={book} onDelete={() => dispatch(deleteBook(book.id))} />
+                        </div>
+                    ))
+                ) : (
+                    <p className="text-center">📭 Aradığınız kriterlere uygun kitap bulunamadı.</p>
+                )}
             </div>
         </div>
     );

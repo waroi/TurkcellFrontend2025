@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import booksReducer from "../slice/booksSlice"; // booksSlice'i içe aktar
+import booksReducer from "../slice/booksSlice";
 
 const store = configureStore({
   reducer: {
-    books: booksReducer, // booksSlice ile reducer bağlandı
+    books: booksReducer, 
   },
 });
 

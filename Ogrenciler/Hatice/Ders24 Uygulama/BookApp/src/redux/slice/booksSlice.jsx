@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
-import booksData from "../../db/books"; // db'deki books arrayini kullan
+import booksData from "../../db/books";
 
 const initialState = {
-  books: booksData, // Başlangıç kitapları
+  books: booksData, 
   filter: "",
   sort: "asc",
 };

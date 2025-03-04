@@ -1,7 +1,20 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { filterBooks, sortBooks } from '../redux/slice/booksSlice';
 import Button from './Button';
 
 const Navbar = () => {
+    const dispatch = useDispatch();
+    const sort = useSelector((state) => state.books.sort);
+
+    const handleSearch = (event) => {
+        dispatch(filterBooks(event.target.value)); 
+    };
+
+    const handleSort = () => {
+        dispatch(sortBooks(sort === "asc" ? "desc" : "asc")); 
+    };
+
     return (
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
             <div className="container-fluid">
@@ -19,10 +32,24 @@ const Navbar = () => {
                         <Button />
                     </div>
 
-                    <form className="d-flex" role="search">
-                        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                        <button className="btn btn-outline-success" type="submit">Search</button>
+                    <form className="d-flex align-items-center" role="search">
+                        <input
+                            className="form-control me-2"
+                            type="search"
+                            placeholder="Search"
+                            aria-label="Search"
+                            onChange={handleSearch} 
+                        />
                     </form>
+                    <button
+                        className="btn btn-primary ms-2 text-nowrap px-2 py-1"
+                        type="button"
+                        style={{ fontSize: "0.875rem", minWidth: "100px" }} 
+                        onClick={handleSort}
+                    >
+                        {sort === "asc" ? "Z-A Sırala" : "A-Z Sırala"}
+                    </button>
+
                 </div>
             </div>
         </nav>
