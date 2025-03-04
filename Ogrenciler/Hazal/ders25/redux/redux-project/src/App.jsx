@@ -10,6 +10,10 @@ function App() {
 
   return (
     <>
+    <h1>Todo App</h1>
+    <form onSubmit={handleSubmit}></form>
+      <input type="text" value={todo} onChange={(e) => setTodo(e.target.value)} />
+      <button type="submit">Add Todo</button>
  
     </>
   )
