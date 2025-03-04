@@ -1,13 +1,10 @@
-
 import './App.css'
-import AdminButton from './components/AdminButton'
+import Router from "./routes/Router";
 
 function App() {
 
   return (
-    <>
-    <AdminButton></AdminButton>
-    </>
+    <Router/>
   )
 }
 

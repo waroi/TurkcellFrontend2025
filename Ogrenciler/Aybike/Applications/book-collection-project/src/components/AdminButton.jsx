@@ -5,9 +5,9 @@ const AdminButton = () => {
     <>
       <h2>Aktif Kullanıcı: {user}</h2>
 
-      <AdminButton onClick={() => setUser(user === "true" ? "true" : "false")}>
+      <button onClick={() => setUser(user === "User" ? "Admin": "User")}>
         Yetki Değiştir
-      </AdminButton>
+      </button>
     </>
   );
 };
