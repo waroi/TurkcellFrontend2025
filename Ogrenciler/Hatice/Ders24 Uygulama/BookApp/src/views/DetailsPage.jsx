@@ -4,7 +4,10 @@ import books from "../db/books";
 
 const DetailsPage = () => {
     const { id } = useParams();
-    const book = books.find((b) => b.id === Number(id)); // id'yi Number'a çevirdik
+    console.log("URL'den gelen id:", id);
+    console.log("Mevcut kitap listesi:", books);
+
+    const book = books.find((b) => b.id === Number(id));
 
     if (!book) {
         return <h2>Kitap bulunamadı.</h2>;
