@@ -1,5 +1,9 @@
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import {app} from "../../firebaseConfig";
+import setError from "react";
+
 /*
 1-auth component yapılacak
 2-kullanıcı adı ve şifre girilecek gönderilecek
@@ -10,6 +14,17 @@ import Form from "react-bootstrap/Form";
 
 */
 const AuthView = () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError("");
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      console.log("Kullanıcı oluşturuldu:", userCredential.user);
+    } catch (err) {
+      setError(err.message);
+    }
+  };
+
   return (
     <div className="d-flex align-items-center justify-content-center vh-100   ">
       <Form onSubmit={handleSubmit}>
