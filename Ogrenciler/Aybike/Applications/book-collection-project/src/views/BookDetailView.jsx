@@ -27,11 +27,12 @@ const BookDetailView = () => {
 			author: item.author,
 			posterUrl: item.posterUrl,
 		});
+		console.log(item);
 		console.log(editedBook);
 	}, [item]);
 
-	const editBook = () => {
-		dispatch(updateBook({ id: item.id, ...editedBook }));
+	const editBook = (book) => {
+		dispatch(updateBook({ id: item.id, ...book }));
 	};
 
 	const handleChange = (e) => {
@@ -39,8 +40,11 @@ const BookDetailView = () => {
 	};
 
 	const handleSubmit = (e) => {
+		console.log(editedBook);
 		e.preventDefault();
-		editBook();
+		editBook(editedBook);
+		getBook(bookId);
+		document.getElementById("closeModal").click();
 	};
 
 	return (
@@ -62,16 +66,15 @@ const BookDetailView = () => {
 							{item.author} | {item.publishedYear}
 						</p>
 						<p>Genre: {item.genre}</p>
-            <button
-						type="button"
-						className="btn bg-white"
-						data-bs-toggle="modal"
-						data-bs-target="#editModal"
-					>
-						Edit Book
-					</button>
+						<button
+							type="button"
+							className="btn bg-white"
+							data-bs-toggle="modal"
+							data-bs-target="#editModal"
+						>
+							Edit Book
+						</button>
 					</div>
-					
 				</div>
 			</div>
 
@@ -94,14 +97,15 @@ const BookDetailView = () => {
 									className="btn-close"
 									data-bs-dismiss="modal"
 									aria-label="Close"
-								></button>
+									id="closeModal"
+								/>
 							</div>
 							<div className="modal-body">
 								<form onSubmit={handleSubmit}>
 									<input
 										type="text"
 										className="form-control mb-2"
-										value={editedBook.title}
+										value={editedBook.title || ""}
 										placeholder="Title"
 										onChange={handleChange}
 										name="title"
@@ -109,16 +113,16 @@ const BookDetailView = () => {
 									<input
 										type="text"
 										className="form-control mb-2"
-										value={editedBook.description}
+										value={editedBook.description || ""}
 										placeholder="Description"
 										onChange={handleChange}
 										name="description"
 									/>
-									
+
 									<input
 										type="text"
 										className="form-control mb-2"
-										value={editedBook.genre}
+										value={editedBook.genre || ""}
 										placeholder="Genre"
 										onChange={handleChange}
 										name="genre"
@@ -126,7 +130,7 @@ const BookDetailView = () => {
 									<input
 										type="text"
 										className="form-control mb-2"
-										value={editedBook.posterUrl}
+										value={editedBook.posterUrl || ""}
 										placeholder="Poster Url"
 										onChange={handleChange}
 										name="posterUrl"
@@ -134,7 +138,7 @@ const BookDetailView = () => {
 									<input
 										type="text"
 										className="form-control mb-2"
-										value={editedBook.author}
+										value={editedBook.author || ""}
 										placeholder="Author"
 										onChange={handleChange}
 										name="author"
@@ -149,6 +153,7 @@ const BookDetailView = () => {
 									type="button"
 									className="btn btn-secondary"
 									data-bs-dismiss="modal"
+									id="closeModal"
 								>
 									Close
 								</button>
