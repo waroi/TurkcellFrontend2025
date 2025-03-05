@@ -55,8 +55,9 @@ function App() {
 
   return (
     <>
-    <UpdateModal isOpen={open} onClose={handleClose}/>
-    <BookCard handleOpen = {handleOpen}/>
+    <Navbar />
+    <UpdateModal isOpen={open} onClose={handleClose} book={selectedBook}/>
+    <BookCard handleOpen = {handleOpen} />
       {/* <button onClick={() => handleFilterBook("fantastik")}>
         Fantastik olanları getir
       </button>
@@ -94,8 +95,7 @@ function App() {
         Değiştir
       </button>
       <button onClick={() => handleDelete("1")}>sil</button> */}
-      <Navbar />
-      <BookCard />
+      
       <Footer />
     </>
   );

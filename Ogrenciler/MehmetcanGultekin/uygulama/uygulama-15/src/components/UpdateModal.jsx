@@ -4,13 +4,15 @@ import { updateBook } from '../redux/slices/bookSlice';
 
 
 
-const UpdateModal = ({ isOpen, onClose }) => {
+const UpdateModal = ({ isOpen, onClose,book }) => {
     const booksFromStore = useSelector((state) => state.book.books);
-    if (!isOpen) return null;
     const dispatch = useDispatch();
+    if (!isOpen) return null;
+    
+
     const handleUpdateBook = (event) => {
         event.preventDefault();
-        const form = document.getElementById('addBookForm');
+        const form = document.getElementById('updateBookForm');
         const formData = new FormData(form);
         const title = formData.get("title").trim();
         const author = formData.get("Yazar").trim();
@@ -23,7 +25,7 @@ const UpdateModal = ({ isOpen, onClose }) => {
 
         if (!title || !author) return alert("Tüm alanları doldurun!");
 
-        dispatch(updateBook({ id: Date.now(), title, author, category, created_at, description_short, description_long, img_url }));
+        dispatch(updateBook({ id: book.id, title, author, category, created_at, description_short, description_long, img_url }));
         onClose();
     };
 
@@ -41,20 +43,20 @@ const UpdateModal = ({ isOpen, onClose }) => {
                             </button>
                         </div>
                         <div className="modal-body">
-                            <form id='addBookForm' onSubmit={handleUpdateBook}>
-                                <input name='title' value={book.title} type="text" placeholder='Kitap adı:' />
-                                <input name='Kategori' value={book.category} type="text" placeholder='Kitap Kategori:' />
-                                <input name='created-at' value={book.created_at} type="date" placeholder='Kitap Tarih:' />
-                                <input name='Kısa-Tanım' value={book.description_short} type="text" placeholder='Kitap Kısa Tanım:' />
-                                <input name='Uzun-Tanım' value={book.description_long} type="text" placeholder='Kitap Uzun Tanım:' />
-                                <input name='Img-Url' value={book.img_url} type="text" placeholder='Kitap Url:' />
-                                <input name='Yazar' value={book.author} type="text" placeholder='Kitap Yazar:' />
+                            <form id='updateBookForm' onSubmit={handleUpdateBook}>
+                                <input name='title' defaultValue={book.title} type="text" placeholder='Kitap adı:' />
+                                <input name='Kategori' defaultValue={book.category} type="text" placeholder='Kitap Kategori:' />
+                                <input name='created-at' defaultValue={book.created_at.split("T")[0]} type="date" placeholder='Kitap Tarih:' />
+                                <input name='Kısa-Tanım' defaultValue={book.description_short} type="text" placeholder='Kitap Kısa Tanım:' />
+                                <input name='Uzun-Tanım' defaultValue={book.description_long} type="text" placeholder='Kitap Uzun Tanım:' />
+                                <input name='Img-Url' defaultValue={book.img_url} type="text" placeholder='Kitap Url:' />
+                                <input name='Yazar' defaultValue={book.author} type="text" placeholder='Kitap Yazar:' />
                             </form>
 
                         </div>
                         <div className="modal-footer">
                             <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
-                            <button onClick={(e) => handleUpdateBook(e)} type="submit" form='addBookForm' className="btn btn-primary">Kaydet</button>
+                            <button onClick={(e) => handleUpdateBook(e)} type="submit" form='updateBookForm' className="btn btn-primary">Kaydet</button>
                         </div>
                     </div>
                 </div>
