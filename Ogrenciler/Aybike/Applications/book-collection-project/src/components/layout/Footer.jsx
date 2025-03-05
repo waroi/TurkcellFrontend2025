@@ -2,7 +2,7 @@ import { NavLink } from "react-router";
 
 const Footer = () => {
   return (
-    <footer className="library-news py-4 bg-light">
+    <footer className="library-news py-4 shadow-lg">
       <div className="container text-center">
         <p className="mb-1 text-dark">&copy; 2025 BookNest Library. - All rights reserved.</p>
 
