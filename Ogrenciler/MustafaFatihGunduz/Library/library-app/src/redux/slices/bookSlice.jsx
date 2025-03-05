@@ -33,6 +33,7 @@ const initialState = {
       description: "Merhaba ben kitap açıklaması",
     },
   ],
+  keyword: "",
 };
 
 export const bookSlice = createSlice({
@@ -45,11 +46,26 @@ export const bookSlice = createSlice({
       state.books = [...state.books, action.payload];
       localStorage.setItem("books", JSON.stringify(state.books));
     },
+    sortingBook: (state, action) => {
+      state.books = [
+        ...state.books.sort((a, b) =>
+          action.payload === "asc"
+            ? new Date(a.releaseDate) - new Date(b.releaseDate)
+            : new Date(b.releaseDate) - new Date(a.releaseDate)
+        ),
+      ];
+    },
     updateBook: (state, action) => {
       const index = state.books.findIndex(
         (book) => book.id === action.payload.id
       );
-      state.books[index] = action.payload;
+      if (index !== -1) {
+        state.books[index] = action.payload;
+        localStorage.setItem("books", JSON.stringify(state.books));
+      }
+    },
+    searchBook: (state, action) => {
+      state.keyword = action.payload;
     },
     deleteBook: (state, action) => {
       state.books = state.books.filter((book) => book.id !== action.payload);
@@ -58,6 +74,7 @@ export const bookSlice = createSlice({
   },
 });
 
-export const { addBook, deleteBook, updateBook } = bookSlice.actions;
+export const { addBook, deleteBook, updateBook, sortingBook, searchBook } =
+  bookSlice.actions;
 
 export default bookSlice.reducer;

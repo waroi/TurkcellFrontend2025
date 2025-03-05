@@ -1,5 +1,3 @@
-@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-
 #root {
 	margin: 0 auto;
 	text-align: center;
@@ -19,12 +17,20 @@
 }
 
 .app.light {
-	background-color: #fff;
+	background-color: #d3ccf3;
 	color: #333;
 }
 
 .logo {
 	width: 100px;
+}
+.navbar-books {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0;
+	margin: 0;
 }
 
 .card {
@@ -41,4 +47,25 @@
 	height: 300px;
 	object-fit: cover;
 	overflow: hidden;
+}
+
+.library-news {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0;
+	margin: 0;
+}
+
+.library-banner {
+	background: url("src/assets/library-banner.jpg") no-repeat center center/cover;
+}
+
+.modal-backdrop {
+	position: relative !important;
+}
+
+.detail-img {
+	max-height: 400px;
 }

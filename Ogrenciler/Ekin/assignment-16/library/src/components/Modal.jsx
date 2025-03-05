@@ -1,38 +1,34 @@
-import { useState, useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
+
+import { useSelector, useDispatch } from "react-redux";
+import { setModal } from "../redux/slices/modalSlice";
+
 import { Modal, Button, Form, FloatingLabel } from "react-bootstrap";
 
-export default function ModalComponent({ show, setShow, modalProperties }) {
-  const id = useRef();
-  const name = useRef();
-  const author = useRef();
-  const desc = useRef();
-  const image = useRef();
+export default function ModalComponent() {
+  const dispatch = useDispatch();
+  const hideModal = () => dispatch(setModal({ show: false }));
 
-  const { mode, book, action } = modalProperties;
+  const { show, mode, book, action } = useSelector((state) => state.modal);
+
+  const id = useRef();
+  const title = useRef();
+  const author = useRef();
+  const description = useRef();
+  const image = useRef();
 
   useEffect(() => {
     if (mode != "delete" && book) {
       id.current.value = book.id;
-      name.current.value = book.name;
+      title.current.value = book.title;
       author.current.value = book.author;
-      desc.current.value = book.desc;
+      description.current.value = book.description;
       image.current.value = book.image;
     }
-  }, [modalProperties]);
-
-  // useEffect(() => {
-  //   if (mode != "delete" && book) {
-  //     console.log(book);
-  //     id.current.value = book.id;
-  //     name.current.value = book.name;
-  //     author.current.value = book.author;
-  //     desc.current.value = book.desc;
-  //     image.current.value = book.image;
-  //   }
-  // }, []);
+  }, [mode, book, action]);
 
   return (
-    <Modal show={show} onHide={() => setShow(false)}>
+    <Modal show={show} onHide={hideModal} centered>
       <Modal.Header closeButton>
         <Modal.Title>
           {mode == "add"
@@ -50,13 +46,13 @@ export default function ModalComponent({ show, setShow, modalProperties }) {
             {" "}
             <input type="hidden" ref={id} />
             <FloatingLabel label="Name" className="mb-3">
-              <Form.Control type="text" placeholder="" ref={name} />
+              <Form.Control type="text" placeholder="" ref={title} />
             </FloatingLabel>
             <FloatingLabel label="Author" className="mb-3">
               <Form.Control type="text" placeholder="" ref={author} />
             </FloatingLabel>
             <FloatingLabel label="Description" className="mb-3">
-              <Form.Control as="textarea" placeholder="" ref={desc} />
+              <Form.Control as="textarea" placeholder="" ref={description} />
             </FloatingLabel>
             <FloatingLabel label="Image URL" className="mb-3">
               <Form.Control type="text" placeholder="" ref={image} />
@@ -65,30 +61,31 @@ export default function ModalComponent({ show, setShow, modalProperties }) {
         )}
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="secondary" onClick={() => setShow(false)}>
+        <Button variant="secondary" onClick={hideModal}>
           Close
         </Button>
         <Button
           variant="primary"
+          className="text-white"
           onClick={() => {
             if (mode == "edit")
               action({
                 id: id.current.value,
-                name: name.current.value,
+                title: title.current.value,
                 author: author.current.value,
-                desc: desc.current.value,
+                description: description.current.value,
                 image: image.current.value,
               });
             else if (mode == "add")
               action({
-                name: name.current.value,
+                title: title.current.value,
                 author: author.current.value,
-                desc: desc.current.value,
+                description: description.current.value,
                 image: image.current.value,
               });
             else action();
 
-            setShow(false);
+            hideModal();
           }}
         >
           {mode == "delete" ? "Delete" : "Save"}
