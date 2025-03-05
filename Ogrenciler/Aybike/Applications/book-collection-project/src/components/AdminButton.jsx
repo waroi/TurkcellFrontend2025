@@ -3,11 +3,9 @@ const AdminButton = () => {
   const { user, setUser } = useUser();
   return (
     <>
-      <h2>Aktif Kullanıcı: {user}</h2>
-
-      <AdminButton onClick={() => setUser(user === "true" ? "true" : "false")}>
-        Yetki Değiştir
-      </AdminButton>
+    <div className="px-2" onClick={() => setUser(user === "User" ? "Admin": "User")}>
+      {user ==="Admin" ? <i className="fa-solid fa-user-tie" />: <i className="fa-solid fa-user"></i>}
+    </div>
     </>
   );
 };

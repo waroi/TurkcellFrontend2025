@@ -2,7 +2,7 @@ import React from "react";
 
 function Footer() {
   return (
-    <footer className="bg-light mt-4 pt-4 pb-4">
+    <footer className="pt-4 pb-4 text-white" id="contact">
       <div className="container">
         <div className="row">
           <div className="col-md-4">
@@ -15,29 +15,29 @@ function Footer() {
 
           <div className="col-md-4">
             <h5>Hızlı Erişim</h5>
-            <ul className="list-unstyled">
+            <ul className="list-unstyled text-white">
               <li>
-                <a href="/" className="text-dark text-decoration-none">
+                <a href="/" className="text-white text-decoration-none">
                   Ana Sayfa
                 </a>
               </li>
               <li>
-                <a href="/books" className="text-dark text-decoration-none">
+                <a href="/books" className="text-white text-decoration-none">
                   Kitaplar
                 </a>
               </li>
               <li>
-                <a href="/pricing" className="text-dark  text-decoration-none">
+                <a href="/pricing" className="text-white  text-decoration-none">
                   Fiyatlar
                 </a>
               </li>
               <li>
-                <a href="/authors" className="text-dark text-decoration-none">
+                <a href="/authors" className="text-white text-decoration-none">
                   Yazarlar
                 </a>
               </li>
               <li>
-                <a href="/contact" className="text-dark text-decoration-none">
+                <a href="/contact" className="text-white text-decoration-none">
                   İletişim
                 </a>
               </li>
@@ -48,13 +48,15 @@ function Footer() {
             <h5>İletişim</h5>
             <address>
               <p>
-                <i class="fa-solid fa-location-dot"></i> Türkiye
+                <i className="fa-solid fa-location-dot text-white"></i> Türkiye
               </p>
               <p>
-                <i class="fa-solid fa-envelope"></i> info@kitapdunyasi.com
+                <i className="fa-solid fa-envelope text-white"></i>{" "}
+                info@kitapdunyasi.com
               </p>
               <p>
-                <i class="fa-solid fa-phone"></i> +90 212 123 45 67
+                <i className="fa-solid fa-phone text-white"></i> +90 212 123 45
+                67
               </p>
             </address>
             <div>
@@ -63,28 +65,28 @@ function Footer() {
                 className="text-dark text-decoration-none me-3"
                 aria-label="facebook"
               >
-                <i className="fa-brands fa-facebook-f"></i>
+                <i className="fa-brands fa-facebook-f text-white"></i>
               </a>
               <a
                 href="#"
                 className="text-dark text-decoration-none me-3"
                 aria-label="twitter"
               >
-                <i className="fa-brands fa-twitter"></i>
+                <i className="fa-brands fa-twitter text-white"></i>
               </a>
               <a
                 href="#"
                 className="text-dark text-decoration-none me-3"
                 aria-label="instagram"
               >
-                <i className="fa-brands fa-instagram"></i>
+                <i className="fa-brands fa-instagram text-white"></i>
               </a>
               <a
                 href="#"
                 className="text-dark text-decoration-none"
                 aria-label="linkedin"
               >
-                <i className="fa-brands fa-linkedin-in"></i>
+                <i className="fa-brands fa-linkedin-in text-white"></i>
               </a>
             </div>
           </div>

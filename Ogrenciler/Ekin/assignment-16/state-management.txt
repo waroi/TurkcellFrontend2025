@@ -1,0 +1,134 @@
+Redux Slice [State Management] (To Do Example)
+————————————————————————————————————————————————————————————————————————————————————————————————————
+
+*** main.jsx ***
+
+import { Provider } from "react-redux";
+import store from "./redux/store";
+...
+<Provider store={store}>
+  <App />
+</Provider>
+...
+
+----------------------------------------------------------------------------------------------------
+
+*** App.jsx ***
+
+import { useSelector, useDispatch } from "react-redux";
+import { addTodo, deleteTodo } from "./redux/slices/todoSlice";
+...
+const todos = useSelector((state) => state.todo.todos);
+const dispatch = useDispatch();
+const handleDelete = (id) => dispatch(deleteTodo(id));
+const handleAddTodo = (todo) => dispatch(addTodo(todo));
+...
+
+----------------------------------------------------------------------------------------------------
+
+*** redux/store/index.jsx ***
+
+import { configureStore } from "@reduxjs/toolkit";
+import todoReducer from "../slices/todoSlice";
+
+export default store = configureStore({
+  reducer: {
+    todo: todoReducer,
+  },
+});
+
+----------------------------------------------------------------------------------------------------
+
+*** redux/slices/todoSlice.jsx
+
+import { createSlice } from "@reduxjs/toolkit";
+
+const initialState = {
+  todos: [
+    { id: 1, title: "Todo 1" },
+    { id: 2, title: "Todo 2" },
+    { id: 3, title: "Todo 3" },
+  ],
+};
+
+export const todoSlice = createSlice({
+  name: "todo",
+  initialState,
+  reducers: {
+    addTodo: (state, action) => {
+      state.todos = [...state.todos, action.payload];
+    },
+    deleteTodo: (state, action) => {
+      state.todos = state.todos.filter((todo) => todo.id !== action.payload);
+    },
+  },
+});
+
+export const { addTodo, deleteTodo } = todoSlice.actions;
+
+export default todoSlice.reducer;
+
+
+
+====================================================================================================
+
+
+
+React Context [State Management] (To Do Example)
+————————————————————————————————————————————————————————————————————————————————————————————————————
+
+*** main.jsx ***
+
+import { ThemeProvider } from "./context/ThemeContext";
+...
+<ThemeProvider>
+  <App />
+</ThemeProvider>
+
+----------------------------------------------------------------------------------------------------
+
+*** App.jsx ***
+
+import { useTheme } from "./context/ThemeContext";
+...
+const { theme } = useTheme();
+...
+<div className={`app ${theme}`}>
+  <Button />
+</div>
+
+----------------------------------------------------------------------------------------------------
+
+*** context/ThemeContext.jsx ***
+
+import { createContext, useState, useEffect, useContext } from "react";
+
+const ThemeContext = createContext();
+
+export const ThemeProvider = ({ children }) => {
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+  const values = {
+    theme,
+    setTheme,
+  };
+  return (
+    <ThemeContext.Provider value={values}>{children}</ThemeContext.Provider>
+  );
+};
+
+export const useTheme = () => useContext(ThemeContext);
+
+----------------------------------------------------------------------------------------------------
+
+*** components/Button.jsx ***
+
+import { useTheme } from "../context/ThemeContext";
+...
+const { theme, setTheme } = useTheme();
+...
+<button onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
+  Tema Değiştir
+</button>

@@ -12,6 +12,6 @@ export class Storage {
 
     static getBooks() {
         const storageBooks = JSON.parse(localStorage.getItem('books'))
-        return storageBooks.length > 0 ? { books: storageBooks } : books
+        return (storageBooks && storageBooks.length > 0) ? { books: storageBooks } : books
     }
 }
