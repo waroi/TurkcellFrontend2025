@@ -28,7 +28,7 @@ export default function ModalComponent() {
   }, [mode, book, action]);
 
   return (
-    <Modal show={show} onHide={hideModal}>
+    <Modal show={show} onHide={hideModal} centered>
       <Modal.Header closeButton>
         <Modal.Title>
           {mode == "add"
