@@ -150,8 +150,15 @@ const Navbar = () => {
                     type="search"
                     placeholder="Search"
                     aria-label="Search"
-                    defaultValue={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
+                    defaultValue={searchTerm || ""} // Change defaultValue to value for controlled component
+                    onChange={(e) => {
+                      setSearchTerm(e.target.value);
+                      if (e.target.value === "") {
+                        // Clear filters and show all books when search input is empty
+                        dispatch(clearFilters());
+                      }
+                    }}
+                    //onBlur={handleClearFilters}
                   />
                   <button
                     className="btn btn-outline-success rounded-pill"
@@ -166,7 +173,7 @@ const Navbar = () => {
                   onClick={handleOpen}
                   className="btn btn-success rounded-pill ms-2"
                 >
-                  ekle
+                  Kitap Ekle
                 </button>
                 <Modal isOpen={open} onClose={handleClose} />
               </li>

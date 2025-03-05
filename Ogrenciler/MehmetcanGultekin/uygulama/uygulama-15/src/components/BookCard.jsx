@@ -3,8 +3,14 @@ import "../components/BookCard.css";
 import "../App.css";
 import { useSelector, useDispatch } from "react-redux";
 import { deleteBook } from "../redux/slices/bookSlice";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faTrash,
+  faPenToSquare,
+  faEye,
+} from "@fortawesome/free-solid-svg-icons";
 
-const BookCard = ({ handleOpen }) => {
+const BookCard = ({ handleOpen, handleOpenDetail }) => {
   const [isFlippedCards, setFlippedCards] = useState(false);
   const BooksFromStore = useSelector((state) => state.book.books);
   const handleFlip = (bookId) => {
@@ -41,27 +47,39 @@ const BookCard = ({ handleOpen }) => {
                     </div>
                   </div>
                   <div className="flip-card-back">
-                    <div className="card-content p-3">
-                      <p>{book.title}</p>
-                      <p>{book.author}</p>
-                      <p>{book.description_short}</p>
-                      <h5>
-                        <span className="badge text-bg-secondary">
+                    <div className="card-content p-4">
+                      <p className="d-flex justify-content-between mb-5">
+                        <span className="badge px-3 py-2 rounded-pill fs-6 text-bg-orange">
                           {book.category}
                         </span>
-                      </h5>
-                      <button
-                        onClick={() => handleDelete(book.id)}
-                        className="btn btn-warning rounded-pill me-2"
-                      >
-                        sil
-                      </button>
-                      <button
-                        onClick={() => handleOpen(book)}
-                        className="btn btn-warning rounded-pill"
-                      >
-                        güncelle
-                      </button>
+                        <span className="badge px-3 py-2 rounded-pill fs-6 text-bg-orange">
+                          {book.created_at.slice(0, 4)}
+                        </span>
+                      </p>
+                      <h4 className="mb-3">{book.title}</h4>
+                      <p className="mb-3">{book.author}</p>
+                      <p className="mb-3">{book.description_short}</p>
+
+                      <div className="btns d-flex align-items-endbtns d-flex justify-content-center pt-5 mt-5">
+                        <button
+                          onClick={() => handleDelete(book.id)}
+                          className="btn outlined-green rounded-circle me-2"
+                        >
+                          <FontAwesomeIcon icon={faTrash} />
+                        </button>
+                        <button
+                          onClick={() => handleOpen(book)}
+                          className="btn outlined-green rounded-circle me-2"
+                        >
+                          <FontAwesomeIcon icon={faPenToSquare} />
+                        </button>
+                        <button
+                          onClick={() => handleOpenDetail(book)}
+                          className="btn outlined-green rounded-circle"
+                        >
+                          <FontAwesomeIcon icon={faEye} />
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
