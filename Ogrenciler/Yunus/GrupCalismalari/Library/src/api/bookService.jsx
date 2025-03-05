@@ -7,7 +7,6 @@ export class BookService {
     static async getBooks(query = 'Türkiye') {
         const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}`)
         const data = await response.json()
-        console.log(data.items)
         return data.items
     }
 }
