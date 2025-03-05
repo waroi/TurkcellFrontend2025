@@ -1,25 +1,39 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getLibrary } from "../../database";
+import { getBooks } from "../../database";
 
 export const librarySlice = createSlice({
   name: "library",
   initialState: {
-    books: await getLibrary(),
+    books: await getBooks(),
   },
   reducers: {
     addBook: (state, action) => {
-      //   state.push({ id: "adsads", name: "NAAAAME" });
-      console.log(state);
+      action.payload.id = 12345;
       state.books = [...state.books, action.payload];
     },
-    editBook: () => {},
-    deleteBook: () => {},
-    // addTodo: (state, action) => {
-    //   state.todos = [...state.todos, action.payload];
-    // },
-    // deleteTodo: (state, action) => {
-    //   state.todos = state.todos.filter((todo) => todo.id !== action.payload);
-    // },
+    editBook: (state, action) => {
+      console.log(state.books);
+      console.log(action.payload);
+      const { id } = action.payload;
+      const index = state.books.findIndex((book) => book.id === id);
+
+      if (index !== -1) {
+        state.books[index] = action.payload;
+      }
+
+      //   console.log(state.books);
+      //   console.log(action.payload);
+      //   const { id, updatedBook } = action.payload;
+      //   const index = state.books.findIndex((book) => book.id === id);
+
+      //   if (index !== -1) {
+      //     // Update the book at the specified index
+      //     state.books[index] = { ...state.books[index], ...updatedBook };
+      //   }
+    },
+    deleteBook: (state, action) => {
+      state.books = state.books.filter((book) => book.id != action.payload);
+    },
   },
 });
 

@@ -42,9 +42,11 @@ const HomePage = () => {
         setShowForm(false); 
     };
 
-    const filteredBooks = books.filter((book) =>
-        book.title.toLowerCase().includes(filter.toLowerCase())
-    );
+    const filteredBooks = books
+        .filter((book) => book.title.toLowerCase().includes(filter.toLowerCase()))
+        .sort((a, b) =>
+            sort === "asc" ? a.title.localeCompare(b.title) : b.title.localeCompare(a.title)
+        );
 
     return (
         <div className="container mt-4">
@@ -125,11 +127,15 @@ const HomePage = () => {
             )}
 
             <div className="row">
-                {filteredBooks.map((book) => (
-                    <div className="col-md-4 mb-4" key={book.id}>
-                        <BookCard book={book} onDelete={() => dispatch(deleteBook(book.id))} />
-                    </div>
-                ))}
+                {filteredBooks.length > 0 ? (
+                    filteredBooks.map((book) => (
+                        <div className="col-md-4 mb-4" key={book.id}>
+                            <BookCard book={book} onDelete={() => dispatch(deleteBook(book.id))} />
+                        </div>
+                    ))
+                ) : (
+                    <p className="text-center">📭 Aradığınız kriterlere uygun kitap bulunamadı.</p>
+                )}
             </div>
         </div>
     );

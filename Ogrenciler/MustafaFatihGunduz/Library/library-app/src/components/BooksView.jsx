@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import Modal from "./module/Modal";
+import { useDispatch, useSelector } from "react-redux";
 import { deleteBook } from "../redux/slices/bookSlice";
+import Modal from "./module/Modal";
 
 const BooksView = () => {
   const books = useSelector((state) => state.book.books);
@@ -29,10 +29,10 @@ const BooksView = () => {
       <div id="books" className="row ">
         {books.length > 0 ? (
           books.map((book) => (
-            <div key={book.id} className="col-md-3">
-              <div className="card mb-3">
+            <div key={book.id} className="col-lg-3 col-md-6 col-sm-12 mb-2">
+              <div className="card mb-3 h-100">
                 <img src={book.image} className="card-img-top" alt="..." />
-                <div className="card-body">
+                <div className="card-body w-100">
                   <h5 className="card-title">{book.title}</h5>
                   <p className="card-text">{book.description}</p>
                   <p className="card-text">{book.author}</p>

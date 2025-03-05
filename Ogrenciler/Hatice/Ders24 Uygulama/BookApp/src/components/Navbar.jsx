@@ -2,11 +2,11 @@ import React from "react";
 import { Link } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import Button from "./Button";
-import { sortBooks, filterBooks } from "../redux/slice/booksSlice";
+import { sortBooks } from "../redux/slice/booksSlice";
 
 const Navbar = () => {
     const dispatch = useDispatch();
-    const { sort, filter } = useSelector((state) => state.books);
+    const { sort } = useSelector((state) => state.books);
 
     return (
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -32,14 +32,7 @@ const Navbar = () => {
                         </button>
                     </div>
                     <form className="d-flex" role="search">
-                        <input
-                            className="form-control me-2"
-                            type="search"
-                            placeholder="Search"
-                            aria-label="Search"
-                            value={filter}
-                            onChange={(e) => dispatch(filterBooks(e.target.value))}
-                        />
+                        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
                     </form>
                 </div>
             </div>

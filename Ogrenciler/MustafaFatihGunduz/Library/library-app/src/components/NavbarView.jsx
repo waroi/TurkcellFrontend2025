@@ -2,10 +2,10 @@ import React from "react";
 
 const NavbarView = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light position-sticky top-0 d-flex justify-content-between z-2 shadow-sm">
+    <nav className="navbar navbar-expand-lg navbar-light position-sticky top-0 z-2 shadow-sm py-3">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
-          Navbar
+        <a className="navbar-brand text-white" href="#">
+          Kitap Dünyası
         </a>
         <button
           className="navbar-toggler"
@@ -18,54 +18,29 @@ const NavbarView = () => {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarNavDropdown">
+        <div
+          className="collapse navbar-collapse justify-content-end"
+          id="navbarNavDropdown"
+        >
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">
-                Home
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                Features
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                Pricing
-              </a>
-            </li>
-            <li className="nav-item dropdown">
               <a
-                className="nav-link dropdown-toggle"
+                className="nav-link active text-white"
+                aria-current="page"
                 href="#"
-                id="navbarDropdownMenuLink"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
               >
-                Dropdown link
+                Anasayfa
               </a>
-              <ul
-                className="dropdown-menu"
-                aria-labelledby="navbarDropdownMenuLink"
-              >
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Action
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Another action
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Something else here
-                  </a>
-                </li>
-              </ul>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link text-white" href="#books">
+                Kitaplar
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link text-white" href="#contact">
+                İletişim
+              </a>
             </li>
           </ul>
           <button

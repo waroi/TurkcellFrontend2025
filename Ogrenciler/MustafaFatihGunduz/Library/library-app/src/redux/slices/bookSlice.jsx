@@ -37,10 +37,13 @@ const initialState = {
 
 export const bookSlice = createSlice({
   name: "book",
-  initialState,
+  initialState: localStorage.getItem("books")
+    ? { books: JSON.parse(localStorage.getItem("books")) }
+    : initialState,
   reducers: {
     addBook: (state, action) => {
       state.books = [...state.books, action.payload];
+      localStorage.setItem("books", JSON.stringify(state.books));
     },
     updateBook: (state, action) => {
       const index = state.books.findIndex(
@@ -50,6 +53,7 @@ export const bookSlice = createSlice({
     },
     deleteBook: (state, action) => {
       state.books = state.books.filter((book) => book.id !== action.payload);
+      localStorage.setItem("books", JSON.stringify(state.books));
     },
   },
 });
