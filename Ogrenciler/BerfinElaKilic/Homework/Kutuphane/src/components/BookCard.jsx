@@ -5,6 +5,8 @@ import UpdateModal from "./UpdateModal";
 import { deleteBooks } from "../services/Api";
 import { MdEdit } from "react-icons/md";
 import { MdDeleteForever } from "react-icons/md";
+import { MdVisibility } from "react-icons/md";
+import ReviewBook from "./ReviewBook";
 
 const BookCard = ({ book }) => {
   const dispatch = useDispatch();
@@ -15,8 +17,12 @@ const BookCard = ({ book }) => {
     dispatch(deleteBook(book.id));
     deleteBooks(book.id);
   };
+
+  const handleReview = () => {
+    dispatch(setBook(book));
+  };
   return (
-    <div className="col-lg-6 mb-4">
+    <div className="col-lg-6 mb-4 book-card">
       <div className="card border-0 shadow-sm hover-card h-100">
         <div className="row g-0">
           <div className="col-md-5">
@@ -59,8 +65,19 @@ const BookCard = ({ book }) => {
                   >
                     <MdDeleteForever />
                   </button>
+
+                  <button
+                    className="btn btn-primary text-white fs-5 d-flex align-items-center justify-content-center p-2"
+                    onClick={handleReview}
+                    data-bs-toggle="modal"
+                    data-bs-target={`#reviewModal-${book.id}`}
+                  >
+                    <MdVisibility />
+                  </button>
                 </div>
               </div>
+              <ReviewBook />
+
               <UpdateModal />
             </div>
           </div>

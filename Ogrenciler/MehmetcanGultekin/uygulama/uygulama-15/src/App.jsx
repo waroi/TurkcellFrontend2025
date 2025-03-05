@@ -7,6 +7,7 @@ import BookCard from "./components/BookCard";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { books as booksData } from "../books.json";
+import BookDetailsModal from "./components/BookDetailsModal";
 
 /* 1-book data oluştur
 2-local storage at
@@ -15,7 +16,8 @@ import { books as booksData } from "../books.json";
  */
 
 function App() {
-  const [open, setOpen] = useState(false);
+  const [openUpdateModal, setOpenUpdateModal] = useState(false); // Güncelleme modalı
+  const [openDetailModal, setOpenDetailModal] = useState(false);
   const [selectedBook, setSelectedBook] = useState(null);
 
   const booksFromStore = useSelector((state) => state.book.books);
@@ -44,20 +46,32 @@ function App() {
   }, []);
   const handleOpen = (book) => {
     setSelectedBook(book);
-    setOpen(true);
-};
+    setOpenUpdateModal(true);
+  };
+  const handleOpenDetail = (book) => {
+    setSelectedBook(book);
+    setOpenDetailModal(true);
+  };
   const handleClose = () => {
     setSelectedBook(null);
-    setOpen(false);
-};
-
-
+    setOpenDetailModal(false);
+    setOpenUpdateModal(false);
+  };
 
   return (
     <>
-    <Navbar />
-    <UpdateModal isOpen={open} onClose={handleClose} book={selectedBook}/>
-    <BookCard handleOpen = {handleOpen} />
+      <Navbar />
+      <UpdateModal
+        isOpen={openUpdateModal}
+        onClose={handleClose}
+        book={selectedBook}
+      />
+      <BookCard handleOpen={handleOpen} handleOpenDetail={handleOpenDetail} />
+      <BookDetailsModal
+        isOpen={openDetailModal}
+        onClose={handleClose}
+        book={selectedBook}
+      />
       {/* <button onClick={() => handleFilterBook("fantastik")}>
         Fantastik olanları getir
       </button>
@@ -95,7 +109,7 @@ function App() {
         Değiştir
       </button>
       <button onClick={() => handleDelete("1")}>sil</button> */}
-      
+
       <Footer />
     </>
   );
