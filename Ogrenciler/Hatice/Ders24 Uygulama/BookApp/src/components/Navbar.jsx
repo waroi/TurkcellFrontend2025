@@ -1,7 +1,13 @@
-import React from 'react';
-import Button from './Button';
+import React from "react";
+import { Link } from "react-router";
+import { useDispatch, useSelector } from "react-redux";
+import Button from "./Button";
+import { sortBooks, filterBooks } from "../redux/slice/booksSlice";
 
 const Navbar = () => {
+    const dispatch = useDispatch();
+    const { sort, filter } = useSelector((state) => state.books);
+
     return (
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
             <div className="container-fluid">
@@ -12,16 +18,28 @@ const Navbar = () => {
                 <div className="collapse navbar-collapse d-flex justify-content-between align-items-center" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Books</a>
+                            <Link className="nav-link" to="/">Books</Link>
                         </li>
                     </ul>
-                    <div className="d-flex justify-content-center w-100">
+                    <div className="d-flex justify-content-center w-100 align-items-center">
                         <Button />
-                    </div>
 
+                        <button
+                            className="btn btn-primary ms-2 me-3"
+                            onClick={() => dispatch(sortBooks(sort === "asc" ? "desc" : "asc"))}
+                        >
+                            {sort === "asc" ? "Z-A Sırala" : "A-Z Sırala"}
+                        </button>
+                    </div>
                     <form className="d-flex" role="search">
-                        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                        <button className="btn btn-outline-success" type="submit">Search</button>
+                        <input
+                            className="form-control me-2"
+                            type="search"
+                            placeholder="Search"
+                            aria-label="Search"
+                            value={filter}
+                            onChange={(e) => dispatch(filterBooks(e.target.value))}
+                        />
                     </form>
                 </div>
             </div>
