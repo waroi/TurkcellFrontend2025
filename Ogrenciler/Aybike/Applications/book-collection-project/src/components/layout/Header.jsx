@@ -1,13 +1,11 @@
 import { NavLink } from "react-router";
 import ThemeButton from '../ThemeButton';
-import { useUser } from '../../context/UserContext';
 import AdminButton from '../AdminButton';
 
 const Header = () => {
-	const {user} = useUser()
 
 	return (
-		<nav className="navbar-books navbar navbar-expand-lg position-sticky sticky-top bg-white">
+		<nav className="navbar-books navbar navbar-expand-lg shadow">
 			<div className="container-fluid">
 				<NavLink className="navbar-brand" to="/">
 					<img className="logo" src="/src/assets/logo.png" alt="logo" />
@@ -24,7 +22,7 @@ const Header = () => {
 					<span className="navbar-toggler-icon"></span>
 				</button>
 				<div className="collapse navbar-collapse" id="navbarNav">
-					<NavLink className="nav-link" to="/library">
+					<NavLink className="nav-link" to="/">
 						Library
 					</NavLink>
 					<NavLink className="nav-link px-2" to="/">
@@ -35,8 +33,7 @@ const Header = () => {
 					</NavLink>
 				</div>
 				<ThemeButton/>
-				<AdminButton/>    <p>{user }</p>
-
+				<AdminButton/>
 
 			</div>
 		</nav>
