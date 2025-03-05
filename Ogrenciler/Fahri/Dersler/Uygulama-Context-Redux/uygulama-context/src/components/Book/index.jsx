@@ -28,7 +28,7 @@ const Book = ({ book, handleDeleteBook }) => {
           >
             Sil
           </button>
-          <NavLink to={`/books/${book.id}`} className="btn btn-outline-primary">
+          <NavLink to={`/${book.id}`} className="btn btn-outline-primary">
             <i className="bi bi-eye"></i> İncele
           </NavLink>
           <a

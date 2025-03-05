@@ -4,8 +4,8 @@ import BookDetail from "../components/BookDetail";
 
 const Router = () => {
   const routes = useRoutes([
-    { path: "/books", element: <BookList /> },
-    { path: "/books/:id", element: <BookDetail /> },
+    { path: "/", element: <BookList /> },
+    { path: "/:id", element: <BookDetail /> },
   ]);
   return routes;
 };

@@ -6,7 +6,6 @@ const BookDetail = () => {
   const [book, setBook] = useState(null);
   const navigate = useNavigate();
 
-  // Kitap bilgilerini fetch etme
   useEffect(() => {
     const fetchBookDetails = async () => {
       const response = await fetch(`http://localhost:5000/books/${id}`);
@@ -25,7 +24,6 @@ const BookDetail = () => {
       </div>
     );
 
-  // Kitap detaylarını render etme
   return (
     <div className="container mt-4">
       <div className="card shadow-lg rounded-3">
@@ -41,8 +39,9 @@ const BookDetail = () => {
             <div className="card-body">
               <h1 className="card-title fw-bold text-primary">{book.title}</h1>
               <p className="card-text mb-2 fs-3">
-                <strong>Yazar:</strong>{" "}
-                <span className="text-dark">{book.author}</span>
+                <strong>Yazar:</strong>
+                {book.author}
+                <span className="text-dark"></span>
               </p>
               <p className="card-text mb-2 fs-3">
                 <strong>Tür:</strong> {book.genre}
@@ -54,7 +53,7 @@ const BookDetail = () => {
               <div className="d-flex justify-content-between">
                 <button
                   className="btn btn-secondary"
-                  onClick={() => navigate(-1)}
+                  onClick={() => navigate(-1)} // bir sayfa geri yönlendirdik
                 >
                   Geri Dön
                 </button>
