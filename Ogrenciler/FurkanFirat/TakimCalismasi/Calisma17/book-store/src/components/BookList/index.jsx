@@ -1,22 +1,41 @@
-import React from "react";
-import BookCard from "../BookCard";
-import { useSelector } from "react-redux";
+import React from 'react';
+import BookCard from '../BookCard';
+import { useDispatch, useSelector } from 'react-redux';
+import { setSearchTerm } from '../../redux/slices/booksSlice';
+import { Form } from 'react-bootstrap';
 
 export default function BookList() {
-  const { books, category } = useSelector((state) => state.books);
+  const dispatch = useDispatch();
 
-  const filteredBooks =
-    category === "All Books"
-      ? books
-      : books.filter((book) => book.category === category);
+  const { books, category, searchTerm } = useSelector((state) => state.books);
+
+  const filteredBooks = books
+    .filter((book) =>
+      category !== 'All Books' ? book.category === category : true
+    )
+    .filter((book) =>
+      book.title.toLowerCase().includes(searchTerm.toLowerCase())
+    );
 
   return (
-    <div className="row">
-      {filteredBooks.length > 0 ? (
-        filteredBooks.map((book) => <BookCard key={book.id} book={book} />)
-      ) : (
-        <p>İlgili kategoriye ait kitap bulunamadı.</p>
-      )}
-    </div>
+    <>
+      <Form.Group className='mb-3'>
+        <Form.Control
+          type='text'
+          name='title'
+          value={searchTerm}
+          placeholder='Search by title...'
+          onChange={(e) => dispatch(setSearchTerm(e.target.value))}
+          required
+        />
+      </Form.Group>
+      <div className='row'>
+        {filteredBooks.length > 0 ? (
+          filteredBooks.map((book) => <BookCard key={book.id} book={book} />)
+        ) : (
+          <p className='text-muted'>No matches.</p>
+        )}
+      </div>
+    </>
   );
 }

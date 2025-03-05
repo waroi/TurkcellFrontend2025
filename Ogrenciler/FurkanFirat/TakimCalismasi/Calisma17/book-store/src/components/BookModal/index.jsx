@@ -1,68 +1,128 @@
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { addBook } from "../../redux/slices/booksSlice";
-import { Modal, Button, Form } from "react-bootstrap";
+import { useState, useEffect } from 'react';
+import { Modal, Button, Form } from 'react-bootstrap';
+import { useDispatch } from 'react-redux';
+import { addBook, editBook } from '../../redux/slices/booksSlice';
 
-const BookModal = ({ show, handleClose }) => {
+export default function BookModal({ show, handleClose, initialBook }) {
   const dispatch = useDispatch();
+  const [bookData, setBookData] = useState({
+    id: '',
+    title: '',
+    author: '',
+    price: '',
+    coverImage: '',
+    category: '',
+  });
 
-  const [title, setTitle] = useState("");
-  const [author, setAuthor] = useState("");
+  useEffect(() => {
+    if (initialBook) {
+      setBookData(initialBook);
+    } else {
+      setBookData({
+        id: '',
+        title: '',
+        author: '',
+        price: '',
+        coverImage: '',
+        category: '',
+      });
+    }
+  }, [initialBook, show]);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setBookData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!title || !author) {
-      alert("Lütfen tüm alanları doldurun!");
-      return;
+    if (initialBook) {
+      dispatch(
+        editBook({
+          id: initialBook.id,
+          updatedBook: bookData,
+        })
+      );
+    } else {
+      dispatch(
+        addBook({
+          ...bookData,
+          id: Date.now(),
+        })
+      );
     }
-
-    const newBook = {
-      id: Date.now(),
-      title,
-      author,
-    };
-
-    dispatch(addBook(newBook));
+    console.log(bookData);
     handleClose();
-    setTitle("");
-    setAuthor("");
   };
 
   return (
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
-        <Modal.Title>Yeni Kitap Ekle</Modal.Title>
+        <Modal.Title>{initialBook ? 'Edit Book' : 'Add New Book'}</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form onSubmit={handleSubmit}>
-          <Form.Group className="mb-3">
-            <Form.Label>Kitap Adı</Form.Label>
+          <Form.Group className='mb-3'>
+            <Form.Label>Title</Form.Label>
             <Form.Control
-              type="text"
-              placeholder="Kitap adını girin"
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
+              type='text'
+              name='title'
+              value={bookData.title}
+              onChange={handleChange}
+              required
+            />
+          </Form.Group>
+          <Form.Group className='mb-3'>
+            <Form.Label>Category</Form.Label>
+            <Form.Control
+              type='text'
+              name='category'
+              value={bookData.category}
+              onChange={handleChange}
+              required
             />
           </Form.Group>
 
-          <Form.Group className="mb-3">
-            <Form.Label>Yazar</Form.Label>
+          <Form.Group className='mb-3'>
+            <Form.Label>Author</Form.Label>
             <Form.Control
-              type="text"
-              placeholder="Yazar adını girin"
-              value={author}
-              onChange={(e) => setAuthor(e.target.value)}
+              type='text'
+              name='author'
+              value={bookData.author}
+              onChange={handleChange}
+              required
             />
           </Form.Group>
 
-          <Button variant="primary" type="submit">
-            Ekle
+          <Form.Group className='mb-3'>
+            <Form.Label>Cover Image URL</Form.Label>
+            <Form.Control
+              type='text'
+              name='coverImage'
+              value={bookData.coverImage}
+              onChange={handleChange}
+            />
+          </Form.Group>
+          <Form.Group className='mb-3'>
+            <Form.Label>Price</Form.Label>
+            <Form.Control
+              type='number'
+              name='price'
+              value={bookData.price}
+              onChange={handleChange}
+              required
+            />
+          </Form.Group>
+
+          <Button variant='primary' type='submit'>
+            {initialBook ? 'Update Book' : 'Add Book'}
           </Button>
         </Form>
       </Modal.Body>
     </Modal>
   );
-};
-
-export default BookModal;
+}
