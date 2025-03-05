@@ -45,19 +45,17 @@ function App() {
   const handleOpen = (book) => {
     setSelectedBook(book);
     setOpen(true);
-};
+  };
   const handleClose = () => {
     setSelectedBook(null);
     setOpen(false);
-};
-
-
+  };
 
   return (
     <>
-    <Navbar />
-    <UpdateModal isOpen={open} onClose={handleClose} book={selectedBook}/>
-    <BookCard handleOpen = {handleOpen} />
+      <Navbar />
+      <UpdateModal isOpen={open} onClose={handleClose} book={selectedBook} />
+      <BookCard handleOpen={handleOpen} />
       {/* <button onClick={() => handleFilterBook("fantastik")}>
         Fantastik olanları getir
       </button>
@@ -95,7 +93,7 @@ function App() {
         Değiştir
       </button>
       <button onClick={() => handleDelete("1")}>sil</button> */}
-      
+
       <Footer />
     </>
   );

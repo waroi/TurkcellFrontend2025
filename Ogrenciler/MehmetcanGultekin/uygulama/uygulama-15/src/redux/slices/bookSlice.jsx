@@ -9,6 +9,7 @@ const initialState = {
 export const bookSlice = createSlice({
   name: "book",
   initialState,
+  searchTerm: "",
   reducers: {
     addBook: (state, action) => {
       state.books = [...state.books, action.payload];
@@ -64,11 +65,30 @@ export const bookSlice = createSlice({
     clearFilters: (state) => {
       state.books = [...initialState.books];
     },
+    searchBooks: (state, action) => {
+      searchTerm = action.payload;
+      console.log("search", action.payload);
+      console.log("searcht", searchTerm);
+      state.books = state.books.filter(
+        (book) =>
+          book.title.includes(action.payload) ||
+          book.author.includes(action.payload) ||
+          book.category.includes(action.payload)
+      );
+    },
   },
+});
 
-},
-);
-
-export const { addBook, deleteBook, updateBook, filterBooks, sortBooksByStringAZ, sortBooksByStringZA, sortBooksByDate, clearFilters } = bookSlice.actions;
+export const {
+  addBook,
+  deleteBook,
+  updateBook,
+  filterBooks,
+  sortBooksByStringAZ,
+  sortBooksByStringZA,
+  sortBooksByDate,
+  clearFilters,
+  searchBooks,
+} = bookSlice.actions;
 
 export default bookSlice.reducer;
