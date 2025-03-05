@@ -36,35 +36,9 @@ export const bookSlice = createSlice({
       //   );
       localStorage.setItem("books", JSON.stringify(state.books));
     },
-    filterBooks: (state, action) => {
-      state.books = state.books.filter((book) => {
-        const variable = action.payload;
-        console.log(book.category, action.payload);
-        book.category.toLowerCase() === action.payload.toLowerCase();
-      });
-      console.log(state.books);
-    },
-    sortBooksByDate: (state, action) => {
-      state.books = state.books.sort(
-        (a, b) => new Date(b[action.payload]) - new Date(a[action.payload])
-      );
-    },
-
-    sortBooksByString: (state, action) => {
-      state.books = state.books.sort((a, b) =>
-        a[action.payload].localCompare(b)
-      );
-    },
   },
 });
 
-export const {
-  addBook,
-  deleteBook,
-  updateBook,
-  filterBooks,
-  sortBooksByString,
-  sortBooksByDate,
-} = bookSlice.actions;
+export const { addBook, deleteBook, updateBook } = bookSlice.actions;
 
 export default bookSlice.reducer;

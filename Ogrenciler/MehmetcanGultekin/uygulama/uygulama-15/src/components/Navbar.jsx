@@ -1,7 +1,32 @@
 import React from "react";
+import { useSelector, useDispatch } from "react-redux";
 import "../App.css";
+import {
+  filterBooks,
+  sortBooksByDate,
+  sortBooksByStringAZ,
+  sortBooksByStringZA,
+  clearFilters,
+} from "../redux/slices/FilteredBookSlice";
+
+import { addBook } from "../redux/slices/bookSlice";
 
 const Navbar = () => {
+  const booksFromStore = useSelector((state) => state.book.books);
+  const filteredBookFromStore = useSelector(
+    (state) => state.filteredBook.books
+  );
+  const dispatch = useDispatch();
+  const handleFilterBook = (category) => dispatch(filterBooks(category));
+  const handleClearFilters = () => dispatch(clearFilters());
+  const handleSortbyStringAZ = (sortParameter) =>
+    dispatch(sortBooksByStringAZ(sortParameter));
+  const handleSortbyStringZA = (sortParameter) =>
+    dispatch(sortBooksByStringZA(sortParameter));
+  const handleSortbyDate = (created_at) =>
+    dispatch(sortBooksByDate(created_at));
+
+  const handleAddBook = (book) => dispatch(addBook(book));
   return (
     <>
       <nav className="navbar navbr navbar-expand-lg">
@@ -42,19 +67,28 @@ const Navbar = () => {
                 </a>
                 <ul className="dropdown-menu">
                   <li>
-                    <a className="dropdown-item" href="#">
+                    <button
+                      className="dropdown-item"
+                      onClick={() => handleSortbyStringAZ("title")}
+                    >
                       A-Z
-                    </a>
+                    </button>
                   </li>
                   <li>
-                    <a className="dropdown-item" href="#">
+                    <button
+                      className="dropdown-item"
+                      onClick={() => handleSortbyStringZA("title")}
+                    >
                       Z-A
-                    </a>
+                    </button>
                   </li>
                   <li>
-                    <a className="dropdown-item" href="#">
+                    <button
+                      className="dropdown-item"
+                      onClick={() => handleSortbyDate("created_at")}
+                    >
                       Son Çıkan Kitaplar
-                    </a>
+                    </button>
                   </li>
                 </ul>
               </li>
@@ -70,9 +104,12 @@ const Navbar = () => {
                 </a>
                 <ul className="dropdown-menu">
                   <li>
-                    <a className="dropdown-item" href="#">
-                      Action
-                    </a>
+                    <button
+                      className="dropdown-item"
+                      // onClick={() => handleFilterBook("title")}
+                    >
+                      Kategoriye Göre
+                    </button>
                   </li>
                   <li>
                     <a className="dropdown-item" href="#">
