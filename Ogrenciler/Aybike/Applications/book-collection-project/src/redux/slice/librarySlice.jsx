@@ -13,25 +13,36 @@ export const librarySlice = createSlice({
     getBookById: (state, action) => {
       state.book = state.books.find((book) => book.id === Number(action.payload));
     },
+    deleteBook: (state, action) => {
+      state.books = state.books.filter((book) => book.id !== Number(action.payload));
+      saveBooksToLocalStorage(state.books); 
+    },
     addBook: (state, action) => {
       state.books.push(action.payload);
       saveBooksToLocalStorage(state.books); 
-    },
-    deleteBook: (state, action) => {
-      state.books = state.books.filter((book) => book.id !== action.payload);
-      saveBooksToLocalStorage(state.books); 
-    },
-    updateBook: (state, action) => {
-      const index = state.books.findIndex((book) => book.id === action.payload.id);
+    },updateBook: (state, action) => {
+      const updatedBook = action.payload; 
+      const index = state.books.findIndex((book) => book.id === updatedBook.id);
       if (index !== -1) {
-        state.books.splice(index, 1, action.payload);
-        saveBooksToLocalStorage(state.books); 
+          state.books[index] = { ...state.books[index], ...updatedBook };
+          saveBooksToLocalStorage(state.books);
       }
-    },
+  },
+    orderBooks: (state, action) => {
+      const { order } = action.payload;
+      state.books.sort((a, b) => {
+        if (order === 'asc') {
+          return a.title.localeCompare(b.title);
+        } else {
+          return b.title.localeCompare(a.title);
+        }
+      });
+      saveBooksToLocalStorage(state.books);
+    }
   },
 });
 
-export const { addBook, deleteBook, updateBook, getLibrary, getBookById} = librarySlice.actions;
+export const { addBook, deleteBook, updateBook, getLibrary, getBookById, orderBooks} = librarySlice.actions;
 
 export default librarySlice.reducer;
 

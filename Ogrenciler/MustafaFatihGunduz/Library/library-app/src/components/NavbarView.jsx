@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ThemeContext } from "../context/ThemeContext";
 
-const NavbarView = () => {
+const NavbarView = ({ setEditingBookId }) => {
+  const { theme, toggleTheme } = useContext(ThemeContext);
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light position-sticky top-0 z-2 shadow-sm py-3">
       <div className="container-fluid">
@@ -48,8 +51,17 @@ const NavbarView = () => {
             className="btn btn-success"
             data-bs-toggle="modal"
             data-bs-target="#bookEvent"
+            onClick={() => setEditingBookId}
           >
             Kitap Ekle
+          </button>
+          <button
+            className={`btn btn-secondary ms-3 ${
+              theme === "light" ? "bg-dark text-light" : "bg-white text-dark"
+            }`}
+            onClick={toggleTheme}
+          >
+            {theme === "light" ? "🌙 Karanlık Mod" : "☀️ Aydınlık Mod"}
           </button>
         </div>
       </div>
