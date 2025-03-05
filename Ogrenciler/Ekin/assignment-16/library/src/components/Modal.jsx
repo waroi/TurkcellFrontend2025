@@ -1,8 +1,9 @@
 import { useRef, useEffect } from "react";
-import { Modal, Button, Form, FloatingLabel } from "react-bootstrap";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
+
+import { useSelector, useDispatch } from "react-redux";
 import { setModal } from "../redux/slices/modalSlice";
+
+import { Modal, Button, Form, FloatingLabel } from "react-bootstrap";
 
 export default function ModalComponent() {
   const dispatch = useDispatch();

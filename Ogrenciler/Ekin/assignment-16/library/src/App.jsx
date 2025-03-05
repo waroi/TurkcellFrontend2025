@@ -1,12 +1,11 @@
-import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { addBook } from "./redux/slices/librarySlice";
+import { setModal } from "./redux/slices/modalSlice";
+
+import { Container, Button } from "react-bootstrap";
 import Navigation from "./components/Navigation";
 import Card from "./components/Card";
 import Modal from "./components/Modal";
-import { Container, Button } from "react-bootstrap";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
-import { addBook } from "./redux/slices/librarySlice";
-import { setModal } from "./redux/slices/modalSlice";
 
 export default function App() {
   const dispatch = useDispatch();

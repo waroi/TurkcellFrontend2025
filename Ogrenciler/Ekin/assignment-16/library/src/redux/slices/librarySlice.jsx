@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+
 import {
   getBooks,
   addBook as addBookToServer,
@@ -20,9 +21,11 @@ export const librarySlice = createSlice({
       state.books.push(action.payload);
 
       //! Cannot perform "GET" on a proxy.
-      // addBookToServer(action.payload).then((response) =>
-      //   state.books.push({ ...action.payload, id: response.id })
-      // );
+      /*
+        addBookToServer(action.payload).then((response) =>
+          state.books.push({ ...action.payload, id: response.id })
+        );
+      */
     },
 
     editBook: (state, action, index) => {

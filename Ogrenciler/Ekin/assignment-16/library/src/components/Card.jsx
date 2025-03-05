@@ -1,9 +1,10 @@
-import { Card, ButtonGroup, Button } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { editBook, deleteBook } from "../redux/slices/librarySlice";
 import { setModal } from "../redux/slices/modalSlice";
 
-export default function CardComponent({ book, setShow, setModalProperties }) {
+import { Card, ButtonGroup, Button } from "react-bootstrap";
+
+export default function CardComponent({ book }) {
   const dispatch = useDispatch();
 
   return (
