@@ -1,5 +1,5 @@
-.bookcard {
-}
+/* .bookcard {
+} */
 
 .geeks {
   color: green;
@@ -12,8 +12,8 @@
 
 .flip-card {
   perspective: 1000px;
-  width: 400px;
-  height: 600px;
+  width: 300px;
+  height: 450px;
   position: relative;
   transform-style: preserve-3d;
   transition: transform 0.5s;
@@ -42,9 +42,14 @@
   color: green;
 }
 
+.book-img{
+  width:300px !important;
+  height:450px !important;
+}
+
 .flip-card-back {
-  background-color: #fff;
-  color: blue;
+  background-color: #c7ceea;
+  color: #8b2fa8;
   transform: rotateY(180deg);
 }
 

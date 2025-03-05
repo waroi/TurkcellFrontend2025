@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import "../App.css";
+
 import {
   filterBooks,
   sortBooksByDate,
@@ -8,14 +9,12 @@ import {
   sortBooksByStringZA,
   clearFilters,
 } from "../redux/slices/FilteredBookSlice";
-
-import { addBook } from "../redux/slices/bookSlice";
+import Modal from "./Modal";
 
 const Navbar = () => {
+  const [open, setOpen] = React.useState(false);
   const booksFromStore = useSelector((state) => state.book.books);
-  const filteredBookFromStore = useSelector(
-    (state) => state.filteredBook.books
-  );
+ 
   const dispatch = useDispatch();
   const handleFilterBook = (category) => dispatch(filterBooks(category));
   const handleClearFilters = () => dispatch(clearFilters());
@@ -26,7 +25,13 @@ const Navbar = () => {
   const handleSortbyDate = (created_at) =>
     dispatch(sortBooksByDate(created_at));
 
-  const handleAddBook = (book) => dispatch(addBook(book));
+    const handleClose = () => {
+        setOpen(false);
+    };
+
+    const handleOpen = () => {
+        setOpen(true);
+    };
   return (
     <>
       <nav className="navbar navbr navbar-expand-lg">
@@ -106,7 +111,7 @@ const Navbar = () => {
                   <li>
                     <button
                       className="dropdown-item"
-                      // onClick={() => handleFilterBook("title")}
+                    // onClick={() => handleFilterBook("title")}
                     >
                       Kategoriye Göre
                     </button>
@@ -141,6 +146,12 @@ const Navbar = () => {
                     Search
                   </button>
                 </form>
+              </li>
+              <li>
+                <button
+                  onClick={handleOpen}
+                >ekle</button>
+                <Modal isOpen={open} onClose={handleClose}/>
               </li>
             </ul>
           </div>
