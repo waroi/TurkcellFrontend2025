@@ -10,7 +10,8 @@ const Navbar = () => {
     const dispatch = useDispatch();
     const { sort, filter } = useSelector((state) => state.books);
 
-    const consthandleLoginClick = () => { navigate("/signup"); };
+    const consthandleSignupClick = () => { navigate("/signup"); };
+    const consthandleLoginClick = () => { navigate("/login"); };
 
     return (
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -45,6 +46,7 @@ const Navbar = () => {
                             onChange={(e) => dispatch(filterBooks(e.target.value))}
                         />
 
+                        <button className="btn btn-outline-success" type="button" onClick={consthandleSignupClick}>Kaydol</button>
                         <button className="btn btn-outline-success" type="button" onClick={consthandleLoginClick}>Giriş Yap</button>
                     </form>
                 </div>
