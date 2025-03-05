@@ -1,5 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getBooks } from "../../database";
+import {
+  getBooks,
+  addBook as addBookToServer,
+  editBook as editBookToServer,
+  deleteBook as deleteBookFromServer,
+} from "../../database";
 
 export const librarySlice = createSlice({
   name: "library",
@@ -8,31 +13,30 @@ export const librarySlice = createSlice({
   },
   reducers: {
     addBook: (state, action) => {
-      action.payload.id = 12345;
-      state.books = [...state.books, action.payload];
+      action.payload.id = Math.random().toString(36).substring(5);
+
+      addBookToServer(action.payload);
+
+      state.books.push(action.payload);
+
+      //! Cannot perform "GET" on a proxy.
+      // addBookToServer(action.payload).then((response) =>
+      //   state.books.push({ ...action.payload, id: response.id })
+      // );
     },
-    editBook: (state, action) => {
-      console.log(state.books);
-      console.log(action.payload);
-      const { id } = action.payload;
-      const index = state.books.findIndex((book) => book.id === id);
 
-      if (index !== -1) {
-        state.books[index] = action.payload;
-      }
+    editBook: (state, action, index) => {
+      index = state.books.findIndex((book) => book.id === action.payload.id);
 
-      //   console.log(state.books);
-      //   console.log(action.payload);
-      //   const { id, updatedBook } = action.payload;
-      //   const index = state.books.findIndex((book) => book.id === id);
+      if (index == -1) return;
 
-      //   if (index !== -1) {
-      //     // Update the book at the specified index
-      //     state.books[index] = { ...state.books[index], ...updatedBook };
-      //   }
+      state.books[index] = action.payload;
+      editBookToServer(action.payload);
     },
+
     deleteBook: (state, action) => {
       state.books = state.books.filter((book) => book.id != action.payload);
+      deleteBookFromServer(action.payload);
     },
   },
 });
