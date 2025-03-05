@@ -30,7 +30,6 @@ const AdminHeader = () => {
 		};
 		addNewBook(bookToAdd)
 		setNewBook({ title: "", description: "", publishedYear: "", genre: "", author: "" }); 
-
 		document.getElementById("closeModal").click();
 	};
 

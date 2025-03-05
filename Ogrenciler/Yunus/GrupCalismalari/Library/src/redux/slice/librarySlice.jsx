@@ -1,7 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { Storage } from '../../utils/storage'
 
-
 const initialState = Storage.getBooks()
 
 export const librarySlice = createSlice({
@@ -19,13 +18,11 @@ export const librarySlice = createSlice({
         },
 
         updateBook: (state, action) => {
-            const bookIndex = state.books.findIndex(book => book.id === action.payload.id);
+            const bookIndex = state.books.findIndex(book => book.id === action.payload.id)
             if (bookIndex !== -1) {
-                state.books[bookIndex] = { ...state.books[bookIndex], ...action.payload };
+                state.books[bookIndex] = { ...state.books[bookIndex], ...action.payload }
             }
-
             Storage.addBooks(state.books)
-
         }
     }
 })

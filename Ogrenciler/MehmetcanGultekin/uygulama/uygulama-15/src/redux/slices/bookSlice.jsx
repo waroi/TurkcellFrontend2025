@@ -4,8 +4,6 @@ const initialState = {
   books: JSON.parse(localStorage.getItem("books")),
 };
 
-//TODO:delete,filter, sort actionları sonra yazlacak.
-//TODO:initial state çalıştıktan sonra güncellenecek.
 export const bookSlice = createSlice({
   name: "book",
   initialState,
@@ -32,9 +30,6 @@ export const bookSlice = createSlice({
           ...action.payload,
         };
       }
-      //   state.books = state.books.map((book) =>
-      //     book.id === action.payload.id ? { ...book, ...action.payload } : book
-      //   );
       localStorage.setItem("books", JSON.stringify(state.books));
     },
     filterBooks: (state, action) => {

@@ -4,11 +4,11 @@ import { updateBook } from '../../redux/slice/librarySlice';
 
 const EditModal = ({ book, setRefreshTrigger, refreshTrigger }) => {
     const dispatch = useDispatch()
-    const [newBook, setNewBook] = useState(book);
+    const [newBook, setNewBook] = useState(book)
 
     useEffect(() => {
-        setNewBook(book);
-    }, [book]);
+        setNewBook(book)
+    }, [book])
 
     const handleAddBook = (event) => {
         event.preventDefault();
@@ -17,7 +17,7 @@ const EditModal = ({ book, setRefreshTrigger, refreshTrigger }) => {
     };
 
     const handleInputChange = (event) => {
-        const { name, value } = event.target;
+        const { name, value } = event.target
         setNewBook({
             ...newBook,
             [name]: value,
