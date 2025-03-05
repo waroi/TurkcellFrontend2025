@@ -1,13 +1,7 @@
 import { useState, useEffect } from "react";
+import UpdateModal from "./components/UpdateModal";
 import { useSelector, useDispatch } from "react-redux";
-import {
-  addBook,
-  deleteBook,
-  updateBook,
-  filterBooks,
-  sortBooksByDate,
-  sortBooksByString,
-} from "./redux/slices/bookSlice";
+import { deleteBook, updateBook } from "./redux/slices/bookSlice";
 import "./App.css";
 import BookCard from "./components/BookCard";
 import Navbar from "./components/Navbar";
@@ -21,18 +15,25 @@ import { books as booksData } from "../books.json";
  */
 
 function App() {
+  const [open, setOpen] = useState(false);
+  const [selectedBook, setSelectedBook] = useState(null);
+
   const booksFromStore = useSelector((state) => state.book.books);
+  const filteredBookFromStore = useSelector(
+    (state) => state.filteredBook.books
+  );
   const dispatch = useDispatch();
   const handleDelete = (id) => dispatch(deleteBook(id));
-  const handleAddBook = (book) => dispatch(addBook(book));
-  const handleFilterBook = (category) => dispatch(filterBooks(category));
+
   const handleUpdateBook = (id, book) => {
     (book = { id, ...book }), dispatch(updateBook(book));
   };
 
-  console.log("from store", booksFromStore);
   console.log("booksData", booksData);
-
+  useEffect(() => {
+    console.log("books:", booksFromStore);
+    console.log("filtered books", filteredBookFromStore);
+  });
   useEffect(() => {
     if ("books" in localStorage) {
       return;
@@ -41,11 +42,31 @@ function App() {
       localStorage.setItem("books", JSON.stringify(booksData));
     }
   }, []);
+  const handleOpen = (book) => {
+    setSelectedBook(book);
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setSelectedBook(null);
+    setOpen(false);
+  };
 
   return (
     <>
-      <button onClick={() => handleFilterBook("fantastic")}>
+      <Navbar />
+      <UpdateModal isOpen={open} onClose={handleClose} book={selectedBook} />
+      <BookCard handleOpen={handleOpen} />
+      {/* <button onClick={() => handleFilterBook("fantastik")}>
         Fantastik olanları getir
+      </button>
+      <button onClick={() => handleClearFilters()}>Filtreleri Temizle</button>
+      <button onClick={() => handleSortbyStringAZ("title")}>Sırala a-z</button>
+      <button
+        onClick={() => {
+          handleSortbyStringZA("title");
+        }}
+      >
+        Sırala z-a
       </button>
       <button
         onClick={() =>
@@ -71,9 +92,8 @@ function App() {
       >
         Değiştir
       </button>
-      <button onClick={() => handleDelete("1")}>sil</button>
-      <Navbar />
-      <BookCard />
+      <button onClick={() => handleDelete("1")}>sil</button> */}
+
       <Footer />
     </>
   );

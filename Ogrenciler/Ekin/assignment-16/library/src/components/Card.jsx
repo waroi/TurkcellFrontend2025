@@ -35,10 +35,7 @@ export default function CardComponent({ book, setShow, setModalProperties }) {
                 setModalProperties({
                   mode: "delete",
                   book: null,
-                  action: () => {
-                    handleDeleteBook(book.id);
-                    console.log("deleted");
-                  },
+                  action: () => handleDeleteBook(book.id),
                 });
 
                 setShow(true);

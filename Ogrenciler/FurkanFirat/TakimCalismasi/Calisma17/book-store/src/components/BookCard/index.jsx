@@ -1,20 +1,40 @@
 export default function BookCard({ book }) {
+  const discountedPrice = book.price * 0.8;
+  const defaultImage =
+    'https://peoplesblog.co.in/sri-vedanta-swarajya-sangam/assets/img/books/default.jpeg';
+  const imageSrc = book.coverImage || defaultImage;
+
   return (
-    <div className="col-lg-3 col-md-4 col-sm-6 col-xs-12 d-flex justify-content-center align-items-center">
-      <div className="bookCard">
-        <div className="object-fit-cover">
+    <div className='col-lg-3 col-md-4 col-sm-6 col-xs-12 gy-3 '>
+      <div className='bookCard shadow-sm h-100'>
+        <div className='book-cover position-relative'>
+          <span className='badge bg-secondary position-absolute'>
+            {book.category}
+          </span>
           <img
-            src="https://img.kitapyurdu.com/v1/getImage/fn:12016505/wh:true/wi:220"
-            alt=""
+            src={imageSrc}
+            alt={`Cover of ${book.title}`}
+            className='object-fit-cover w-100 h-100'
+            onError={(e) =>
+              (e.target.src =
+                'https://peoplesblog.co.in/sri-vedanta-swarajya-sangam/assets/img/books/default.jpeg')
+            }
           />
         </div>
-        <p>{book.title}</p>
-        <p>
-          <span className="text-secondary text-decoration-line-through">
-            {book.author}
-          </span>
-          <span> 99₺</span>
-        </p>
+        <div className='book-details p-2'>
+          <h5 className='book-title mb-1'>{book.title}</h5>
+          <p className='book-author text-muted mb-2'>{book.author}</p>
+          <div className='book-pricing'>
+            <div>
+              <span className='original-price text-secondary text-decoration-line-through me-2'>
+                {book.price}₺
+              </span>
+              <span className='discounted-price fw-bold text-primary'>
+                {Math.round(discountedPrice)}₺
+              </span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

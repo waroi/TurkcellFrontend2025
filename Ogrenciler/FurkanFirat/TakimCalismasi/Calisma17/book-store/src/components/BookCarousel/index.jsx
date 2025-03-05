@@ -27,7 +27,7 @@ export default function BookCarousel() {
         <div className='carousel-inner'>
           <div className='carousel-item active'>
             <img
-              src='https://picsum.photos/seed/picsum/1920/300'
+              src='https://picsum.photos/seed/picsum/1920/400'
               className='d-block w-100'
               alt='...'
             />
@@ -41,7 +41,7 @@ export default function BookCarousel() {
           </div>
           <div className='carousel-item'>
             <img
-              src='https://picsum.photos/seed/picsum/1920/300'
+              src='https://picsum.photos/seed/picsum/1920/400'
               className='d-block w-100'
               alt='...'
             />

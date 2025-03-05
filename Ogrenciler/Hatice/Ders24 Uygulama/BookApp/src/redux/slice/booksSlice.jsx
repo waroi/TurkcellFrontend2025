@@ -1,8 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-import booksData from "../../db/books";
+import booksData from "../../db/books"; 
+
+const storedBooks = JSON.parse(localStorage.getItem("books")) || booksData;
 
 const initialState = {
-  books: booksData, 
+  books: storedBooks,
   filter: "",
   sort: "asc",
 };
@@ -13,9 +15,11 @@ const booksSlice = createSlice({
   reducers: {
     addBook: (state, action) => {
       state.books.push(action.payload);
+      localStorage.setItem("books", JSON.stringify(state.books)); // 📌 LocalStorage'a kaydet
     },
     deleteBook: (state, action) => {
       state.books = state.books.filter((book) => book.id !== action.payload);
+      localStorage.setItem("books", JSON.stringify(state.books)); // 📌 Güncellenmiş listeyi kaydet
     },
     filterBooks: (state, action) => {
       state.filter = action.payload;
@@ -31,3 +35,4 @@ const booksSlice = createSlice({
 
 export const { addBook, deleteBook, filterBooks, sortBooks } = booksSlice.actions;
 export default booksSlice.reducer;
+
