@@ -6,7 +6,7 @@ import NavbarView from "./components/NavbarView";
 import SpecialOfferView from "./components/SpecialOfferView";
 import SubscribeView from "./components/SubscribeView";
 import { ThemeProvider } from "./context/ThemeContext";
-
+import LoginScreen from "./components/LoginScreen";
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
@@ -33,12 +33,13 @@ function App() {
   return (
     <>
       <ThemeProvider>
-        <NavbarView />
+        {/* <NavbarView />
         <BannerView />
         <BooksView />
         <SpecialOfferView />
         <SubscribeView />
-        <FooterView />
+        <FooterView /> */}
+        <LoginScreen />
       </ThemeProvider>
     </>
   );

@@ -2,7 +2,7 @@ import React from "react";
 
 const LoginScreen = () => {
   return (
-    <div>
+    <div className="container">
       <div className="form-action sign-up">
         <h1>Hesap Oluştur</h1>
         <div className="social-icons">
