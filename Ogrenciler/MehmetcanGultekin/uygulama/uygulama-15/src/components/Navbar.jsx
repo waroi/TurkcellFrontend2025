@@ -1,21 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import "../App.css";
+
 import {
   filterBooks,
   sortBooksByDate,
   sortBooksByStringAZ,
   sortBooksByStringZA,
   clearFilters,
-} from "../redux/slices/FilteredBookSlice";
-
-import { addBook } from "../redux/slices/bookSlice";
+  searchBooks,
+} from "../redux/slices/bookSlice";
+import Modal from "./Modal";
 
 const Navbar = () => {
+  const [open, setOpen] = React.useState(false);
+  const [searchTerm, setSearchTerm] = useState();
   const booksFromStore = useSelector((state) => state.book.books);
-  const filteredBookFromStore = useSelector(
-    (state) => state.filteredBook.books
-  );
+
   const dispatch = useDispatch();
   const handleFilterBook = (category) => dispatch(filterBooks(category));
   const handleClearFilters = () => dispatch(clearFilters());
@@ -25,8 +26,17 @@ const Navbar = () => {
     dispatch(sortBooksByStringZA(sortParameter));
   const handleSortbyDate = (created_at) =>
     dispatch(sortBooksByDate(created_at));
+  const handleSearch = (event) => {
+    event.preventDefault();
+    dispatch(searchBooks(searchTerm));
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
 
-  const handleAddBook = (book) => dispatch(addBook(book));
+  const handleOpen = () => {
+    setOpen(true);
+  };
   return (
     <>
       <nav className="navbar navbr navbar-expand-lg">
@@ -102,27 +112,34 @@ const Navbar = () => {
                 >
                   Filtrele
                 </a>
+
                 <ul className="dropdown-menu">
+                  {booksFromStore
+                    ?.reduce((currentCats, book) => {
+                      if (!currentCats.includes(book.category)) {
+                        currentCats.push(book.category);
+                      }
+                      return currentCats;
+                    }, [])
+                    .map((category, index) => (
+                      <li key={index}>
+                        <button
+                          className="dropdown-item"
+                          onClick={() => {
+                            handleFilterBook(category);
+                          }}
+                        >
+                          {category}
+                        </button>
+                      </li>
+                    ))}
                   <li>
                     <button
                       className="dropdown-item"
-                      // onClick={() => handleFilterBook("title")}
+                      onClick={handleClearFilters}
                     >
-                      Kategoriye Göre
+                      Temizle
                     </button>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Another action
-                    </a>
-                  </li>
-                  <li>
-                    <hr className="dropdown-divider" />
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Something else here
-                    </a>
                   </li>
                 </ul>
               </li>
@@ -133,14 +150,25 @@ const Navbar = () => {
                     type="search"
                     placeholder="Search"
                     aria-label="Search"
+                    defaultValue={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
                   />
                   <button
                     className="btn btn-outline-success rounded-pill"
-                    type="submit"
+                    onClick={(e) => handleSearch(e)}
                   >
                     Search
                   </button>
                 </form>
+              </li>
+              <li>
+                <button
+                  onClick={handleOpen}
+                  className="btn btn-success rounded-pill ms-2"
+                >
+                  ekle
+                </button>
+                <Modal isOpen={open} onClose={handleClose} />
               </li>
             </ul>
           </div>

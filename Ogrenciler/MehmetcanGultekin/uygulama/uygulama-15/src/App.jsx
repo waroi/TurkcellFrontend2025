@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
+import UpdateModal from "./components/UpdateModal";
 import { useSelector, useDispatch } from "react-redux";
 import { deleteBook, updateBook } from "./redux/slices/bookSlice";
-
 import "./App.css";
 import BookCard from "./components/BookCard";
 import Navbar from "./components/Navbar";
@@ -15,6 +15,9 @@ import { books as booksData } from "../books.json";
  */
 
 function App() {
+  const [open, setOpen] = useState(false);
+  const [selectedBook, setSelectedBook] = useState(null);
+
   const booksFromStore = useSelector((state) => state.book.books);
   const filteredBookFromStore = useSelector(
     (state) => state.filteredBook.books
@@ -39,9 +42,20 @@ function App() {
       localStorage.setItem("books", JSON.stringify(booksData));
     }
   }, []);
+  const handleOpen = (book) => {
+    setSelectedBook(book);
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setSelectedBook(null);
+    setOpen(false);
+  };
 
   return (
     <>
+      <Navbar />
+      <UpdateModal isOpen={open} onClose={handleClose} book={selectedBook} />
+      <BookCard handleOpen={handleOpen} />
       {/* <button onClick={() => handleFilterBook("fantastik")}>
         Fantastik olanları getir
       </button>
@@ -79,8 +93,7 @@ function App() {
         Değiştir
       </button>
       <button onClick={() => handleDelete("1")}>sil</button> */}
-      <Navbar />
-      <BookCard />
+
       <Footer />
     </>
   );
