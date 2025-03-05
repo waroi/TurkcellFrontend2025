@@ -13,7 +13,7 @@ export default function CardComponent({ book }) {
       <Card.Body className="d-flex flex-column">
         <Card.Title>{book.name}</Card.Title>
         <Card.Text>{book.desc}</Card.Text>
-        <div className="w-100 d-flex justify-content-center mt-auto">
+        <div className="w-100 d-flex justify-content-end mt-auto">
           <ButtonGroup>
             <Button
               variant="warning"
@@ -32,6 +32,7 @@ export default function CardComponent({ book }) {
             </Button>
             <Button
               variant="danger"
+              className="text-white"
               onClick={() =>
                 dispatch(
                   setModal({

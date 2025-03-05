@@ -66,6 +66,7 @@ export default function ModalComponent() {
         </Button>
         <Button
           variant="primary"
+          className="text-white"
           onClick={() => {
             if (mode == "edit")
               action({
