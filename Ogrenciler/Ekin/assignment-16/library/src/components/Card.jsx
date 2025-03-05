@@ -1,11 +1,10 @@
 import { Card, ButtonGroup, Button } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { editBook, deleteBook } from "../redux/slices/librarySlice";
+import { setModal } from "../redux/slices/modalSlice";
 
 export default function CardComponent({ book, setShow, setModalProperties }) {
   const dispatch = useDispatch();
-  const handleDeleteBook = (id) => dispatch(deleteBook(id));
-  const handleEditBook = (book) => dispatch(editBook(book));
 
   return (
     <Card>
@@ -17,29 +16,30 @@ export default function CardComponent({ book, setShow, setModalProperties }) {
           <ButtonGroup>
             <Button
               variant="warning"
-              onClick={() => {
-                setModalProperties({
-                  mode: "edit",
-                  book,
-                  action: handleEditBook,
-                });
-
-                setShow(true);
-              }}
+              onClick={() =>
+                dispatch(
+                  setModal({
+                    show: true,
+                    mode: "edit",
+                    book,
+                    action: (book) => dispatch(editBook(book)),
+                  })
+                )
+              }
             >
               <i className="fa-solid fa-pen-to-square"></i>
             </Button>
             <Button
               variant="danger"
-              onClick={() => {
-                setModalProperties({
-                  mode: "delete",
-                  book: null,
-                  action: () => handleDeleteBook(book.id),
-                });
-
-                setShow(true);
-              }}
+              onClick={() =>
+                dispatch(
+                  setModal({
+                    show: true,
+                    mode: "delete",
+                    action: () => dispatch(deleteBook(book.id)),
+                  })
+                )
+              }
             >
               <i className="fa-solid fa-trash-can"></i>
             </Button>

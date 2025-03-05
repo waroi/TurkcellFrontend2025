@@ -1,14 +1,20 @@
-import { useState, useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import { Modal, Button, Form, FloatingLabel } from "react-bootstrap";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { setModal } from "../redux/slices/modalSlice";
 
-export default function ModalComponent({ show, setShow, modalProperties }) {
+export default function ModalComponent() {
+  const dispatch = useDispatch();
+  const hideModal = () => dispatch(setModal({ show: false }));
+
+  const { show, mode, book, action } = useSelector((state) => state.modal);
+
   const id = useRef();
   const name = useRef();
   const author = useRef();
   const desc = useRef();
   const image = useRef();
-
-  const { mode, book, action } = modalProperties;
 
   useEffect(() => {
     if (mode != "delete" && book) {
@@ -18,21 +24,10 @@ export default function ModalComponent({ show, setShow, modalProperties }) {
       desc.current.value = book.desc;
       image.current.value = book.image;
     }
-  }, [modalProperties]);
-
-  // useEffect(() => {
-  //   if (mode != "delete" && book) {
-  //     console.log(book);
-  //     id.current.value = book.id;
-  //     name.current.value = book.name;
-  //     author.current.value = book.author;
-  //     desc.current.value = book.desc;
-  //     image.current.value = book.image;
-  //   }
-  // }, []);
+  }, [mode, book, action]);
 
   return (
-    <Modal show={show} onHide={() => setShow(false)}>
+    <Modal show={show} onHide={hideModal}>
       <Modal.Header closeButton>
         <Modal.Title>
           {mode == "add"
@@ -65,7 +60,7 @@ export default function ModalComponent({ show, setShow, modalProperties }) {
         )}
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="secondary" onClick={() => setShow(false)}>
+        <Button variant="secondary" onClick={hideModal}>
           Close
         </Button>
         <Button
@@ -88,7 +83,7 @@ export default function ModalComponent({ show, setShow, modalProperties }) {
               });
             else action();
 
-            setShow(false);
+            hideModal();
           }}
         >
           {mode == "delete" ? "Delete" : "Save"}
