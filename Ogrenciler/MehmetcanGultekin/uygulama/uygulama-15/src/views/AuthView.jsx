@@ -1,7 +1,8 @@
+import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import {app} from "../../firebaseConfig";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+
 import setError from "react";
 
 /*
@@ -14,14 +15,24 @@ import setError from "react";
 
 */
 const AuthView = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError("");
+    const auth = getAuth();
+    console.log("submitting");
+    // setError("");
     try {
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-      console.log("Kullanıcı oluşturuldu:", userCredential.user);
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+
+      console.log("Kullanıcı oluşturuldu:", userCredential);
     } catch (err) {
-      setError(err.message);
+      //   setError(err.message);
     }
   };
 
@@ -30,7 +41,11 @@ const AuthView = () => {
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
-          <Form.Control type="email" placeholder="Enter email" />
+          <Form.Control
+            type="email"
+            placeholder="Enter email"
+            onChange={(e) => setEmail(e.target.value)}
+          />
           <Form.Text className="text-muted">
             We'll never share your email with anyone else.
           </Form.Text>
@@ -38,7 +53,11 @@ const AuthView = () => {
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>
-          <Form.Control type="password" placeholder="Password" />
+          <Form.Control
+            type="password"
+            placeholder="Password"
+            onChange={(e) => setPassword(e.target.value)}
+          />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
           <Form.Check type="checkbox" label="Check me out" />
