@@ -12,23 +12,23 @@ export default function ModalComponent() {
   const { show, mode, book, action } = useSelector((state) => state.modal);
 
   const id = useRef();
-  const name = useRef();
+  const title = useRef();
   const author = useRef();
-  const desc = useRef();
+  const description = useRef();
   const image = useRef();
 
   useEffect(() => {
     if (mode != "delete" && book) {
       id.current.value = book.id;
-      name.current.value = book.name;
+      title.current.value = book.title;
       author.current.value = book.author;
-      desc.current.value = book.desc;
+      description.current.value = book.description;
       image.current.value = book.image;
     }
   }, [mode, book, action]);
 
   return (
-    <Modal show={show} onHide={hideModal}>
+    <Modal show={show} onHide={hideModal} centered>
       <Modal.Header closeButton>
         <Modal.Title>
           {mode == "add"
@@ -46,13 +46,13 @@ export default function ModalComponent() {
             {" "}
             <input type="hidden" ref={id} />
             <FloatingLabel label="Name" className="mb-3">
-              <Form.Control type="text" placeholder="" ref={name} />
+              <Form.Control type="text" placeholder="" ref={title} />
             </FloatingLabel>
             <FloatingLabel label="Author" className="mb-3">
               <Form.Control type="text" placeholder="" ref={author} />
             </FloatingLabel>
             <FloatingLabel label="Description" className="mb-3">
-              <Form.Control as="textarea" placeholder="" ref={desc} />
+              <Form.Control as="textarea" placeholder="" ref={description} />
             </FloatingLabel>
             <FloatingLabel label="Image URL" className="mb-3">
               <Form.Control type="text" placeholder="" ref={image} />
@@ -71,16 +71,16 @@ export default function ModalComponent() {
             if (mode == "edit")
               action({
                 id: id.current.value,
-                name: name.current.value,
+                title: title.current.value,
                 author: author.current.value,
-                desc: desc.current.value,
+                description: description.current.value,
                 image: image.current.value,
               });
             else if (mode == "add")
               action({
-                name: name.current.value,
+                title: title.current.value,
                 author: author.current.value,
-                desc: desc.current.value,
+                description: description.current.value,
                 image: image.current.value,
               });
             else action();

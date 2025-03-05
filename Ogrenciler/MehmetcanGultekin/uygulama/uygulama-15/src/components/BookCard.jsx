@@ -20,14 +20,19 @@ const BookCard = ({ handleOpen, handleOpenDetail }) => {
     }));
   };
   const dispatch = useDispatch();
-  const handleDelete = (id) => dispatch(deleteBook(id));
+  const handleDelete = (id) => {
+    
+    const isConfirmed = window.confirm("Bu kitabı silmek istediğinize emin misiniz?");
+  if (isConfirmed) {
+    dispatch(deleteBook(id));
+  }}
 
   return (
     <div className="bookcard">
       <div className="container py-4">
         <div className="row w-100">
-          {BooksFromStore?.map((book) => (
-            <div className="col col-lg-3 " key={book.id}>
+          {BooksFromStore?.map( (book) => (
+            <div className="col container col-xl-3 col-lg-4 col-md-6 col-12 " key={book.id}>
               <div
                 className={`flip-card mb-3 ${
                   isFlippedCards[book.id] ? "flipped" : ""
@@ -38,9 +43,9 @@ const BookCard = ({ handleOpen, handleOpenDetail }) => {
                   className="flip-card-inner"
                 >
                   <div className="flip-card-front">
-                    <div className="card-content">
+                    <div className="card-content overflow-hidden">
                       <img
-                        className="w-100 h-100 img-fluid object-fit-cover book-img"
+                        className=" img-fluid object-fit-cover book-img"
                         src={book.img_url}
                         alt={book.title}
                       />
@@ -64,6 +69,7 @@ const BookCard = ({ handleOpen, handleOpenDetail }) => {
                         <button
                           onClick={() => handleDelete(book.id)}
                           className="btn outlined-green rounded-circle me-2"
+                         
                         >
                           <FontAwesomeIcon icon={faTrash} />
                         </button>

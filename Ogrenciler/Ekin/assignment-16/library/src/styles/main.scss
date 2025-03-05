@@ -1,6 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap");
+
+$font-family-base: "Funnel Display";
+
 $primary: #2571ff;
 $secondary: #211875;
-$warning: #ff9900;
+$warning: #ffbb00;
 $danger: #e21c1c;
 
 @import "../../node_modules/bootstrap/scss/bootstrap";
@@ -12,6 +16,22 @@ main .container {
 
   .card img {
     height: 15rem;
+  }
+
+  @include media-breakpoint-down(xl) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @include media-breakpoint-down(lg) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include media-breakpoint-down(sm) {
+    grid-template-columns: 1fr;
+
+    .card img {
+      height: 30rem;
+    }
   }
 }
 

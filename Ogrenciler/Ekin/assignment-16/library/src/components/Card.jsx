@@ -11,8 +11,9 @@ export default function CardComponent({ book }) {
     <Card>
       <Card.Img variant="top" src={book.image} className="object-fit-cover" />
       <Card.Body className="d-flex flex-column">
-        <Card.Title>{book.name}</Card.Title>
-        <Card.Text>{book.desc}</Card.Text>
+        <Card.Title>{book.title}</Card.Title>
+        <Card.Text className="fst-italic">{book.author}</Card.Text>
+        <Card.Text>{book.description}</Card.Text>
         <div className="w-100 d-flex justify-content-end mt-auto">
           <ButtonGroup>
             <Button

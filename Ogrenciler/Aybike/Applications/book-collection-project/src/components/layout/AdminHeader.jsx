@@ -12,6 +12,7 @@ const AdminHeader = () => {
 	const [newBook, setNewBook] = useState({
 		title: "",
 		description: "",
+		posterUrl: "",
 		publishedYear: "",
 		genre: "",
 		author: "",
@@ -43,12 +44,12 @@ const AdminHeader = () => {
 					<span className="navbar-toggler-icon"></span>
 				</button>
 				<div className="collapse navbar-collapse" id="navbarNav">
-					<NavLink className="nav-link" to="/">Library</NavLink>
-					<button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addBookModal">
+					<NavLink className="nav-link px-2" to="/">Library</NavLink>
+					<button type="button" className="btn bg-white" data-bs-toggle="modal" data-bs-target="#addModal">
 						Add New Book
 					</button>
 
-					<div className="modal fade" id="addBookModal" tabIndex="-1" aria-labelledby="addBookModalLabel" aria-hidden="true">
+					<div className="modal fade" id="addModal" tabIndex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
 						<div className="modal-dialog">
 							<div className="modal-content">
 								<div className="modal-header">
@@ -60,6 +61,7 @@ const AdminHeader = () => {
 										<input type="text" className="form-control mb-2" name="title" placeholder="Title" value={newBook.title} onChange={handleChange} required />
 										<input type="text" className="form-control mb-2" name="description" placeholder="Description" value={newBook.description} onChange={handleChange} />
 										<input type="date" className="form-control mb-2" name="publishedYear" value={newBook.publishedYear} onChange={handleChange} />
+										<input type="text" className="form-control mb-2" name="posterUrl" placeholder="Poster Url" value={newBook.posterUrl} onChange={handleChange} />
 										<input type="text" className="form-control mb-2" name="genre" placeholder="Genre" value={newBook.genre} onChange={handleChange} />
 										<input type="text" className="form-control mb-2" name="author" placeholder="Author" value={newBook.author} onChange={handleChange} />
 										<button type="submit" className="btn btn-primary w-100">Submit</button>

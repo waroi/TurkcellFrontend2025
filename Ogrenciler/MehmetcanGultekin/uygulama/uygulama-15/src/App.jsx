@@ -21,9 +21,7 @@ function App() {
   const [selectedBook, setSelectedBook] = useState(null);
 
   const booksFromStore = useSelector((state) => state.book.books);
-  const filteredBookFromStore = useSelector(
-    (state) => state.filteredBook.books
-  );
+  
   const dispatch = useDispatch();
   const handleDelete = (id) => dispatch(deleteBook(id));
 
@@ -34,7 +32,7 @@ function App() {
   console.log("booksData", booksData);
   useEffect(() => {
     console.log("books:", booksFromStore);
-    console.log("filtered books", filteredBookFromStore);
+    
   });
   useEffect(() => {
     if ("books" in localStorage) {
