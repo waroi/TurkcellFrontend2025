@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { addBook } from "../redux/slices/bookSlice";
+import "../App.css";
 
 const Modal = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
@@ -41,7 +42,7 @@ const Modal = ({ isOpen, onClose }) => {
         style={{ display: isOpen ? "block" : "none" }}
       >
         <div className="modal-dialog">
-          <div className="modal-content">
+          <div className="modal-content p-4 border-0 rounded-5 bg-lightPink">
             <div className="modal-header">
               <h5 className="modal-title">Kitap Ekle</h5>
               <button
@@ -53,46 +54,39 @@ const Modal = ({ isOpen, onClose }) => {
             </div>
             <div className="modal-body">
               <form id="addBookForm" onSubmit={handleAddBook}>
-                <input name="title" type="text" placeholder="Kitap adı:" />
+                <input className="form-control mb-2 rounded-pill" name="title" type="text" placeholder="Kitap adı:" />
                 <input
+                  className="form-control mb-2 rounded-pill"
                   name="Kategori"
                   type="text"
                   placeholder="Kitap Kategori:"
                 />
+                
                 <input
-                  name="created-at"
-                  type="date"
-                  placeholder="Kitap Tarih:"
-                />
-                <input
+                    className = "form-control mb-2 rounded-pill"
                   name="Kısa-Tanım"
                   type="text"
                   placeholder="Kitap Kısa Tanım:"
                 />
                 <input
+                    className= "form-control mb-2 rounded-pill"
                   name="Uzun-Tanım"
                   type="text"
                   placeholder="Kitap Uzun Tanım:"
                 />
-                <input name="Img-Url" type="text" placeholder="Kitap Url:" />
-                <input name="Yazar" type="text" placeholder="Kitap Yazar:" />
+                <input className="form-control mb-2 rounded-pill" name="Img-Url" type="text" placeholder="Kitap Url:" />
+                <input className="form-control mb-2 rounded-pill" name="Yazar" type="text" placeholder="Kitap Yazar:" />
+                <input className="form-control mb-2 rounded-pill" name="created-at" type="date" placeholder="Kitap Tarih:" />
               </form>
             </div>
             <div className="modal-footer">
               <button
-                type="button"
-                className="btn btn-secondary"
-                data-bs-dismiss="modal"
-              >
-                Kapat
-              </button>
-              <button
                 onClick={(e) => handleAddBook(e)}
                 type="submit"
                 form="addBookForm"
-                className="btn btn-primary"
+                className="btn bg-pink rounded-pill"
               >
-                Kaydet
+                Ekle
               </button>
             </div>
           </div>

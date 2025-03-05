@@ -56,15 +56,11 @@ const Navbar = () => {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div
-            className="collapse navbar-collapse d-flex w-100 justify-content-end"
+            className="collapse navbar-collapse "
             id="navbarSupportedContent"
           >
-            <ul className="navbar-nav mb-2 mb-lg-0">
-              <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
-                  Home
-                </a>
-              </li>
+            <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+              
               <li className="nav-item dropdown">
                 <a
                   className="nav-link dropdown-toggle"
@@ -113,7 +109,7 @@ const Navbar = () => {
                   Filtrele
                 </a>
 
-                <ul className="dropdown-menu">
+                <ul className="dropdown-menu mb-2">
                   {booksFromStore
                     ?.reduce((currentCats, book) => {
                       if (!currentCats.includes(book.category)) {
@@ -146,19 +142,17 @@ const Navbar = () => {
               <li>
                 <form className="d-flex" role="search">
                   <input
-                    className="form-control me-2 rounded-pill"
+                    className="form-control mb-2 me-2 rounded-pill"
                     type="search"
                     placeholder="Search"
                     aria-label="Search"
-                    defaultValue={searchTerm || ""} // Change defaultValue to value for controlled component
+                    defaultValue={searchTerm || ""} 
                     onChange={(e) => {
                       setSearchTerm(e.target.value);
                       if (e.target.value === "") {
-                        // Clear filters and show all books when search input is empty
                         dispatch(clearFilters());
                       }
                     }}
-                    //onBlur={handleClearFilters}
                   />
                   <button
                     className="btn btn-outline-success rounded-pill"

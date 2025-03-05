@@ -21,19 +21,19 @@ const BookDetailsModal = ({ isOpen, onClose, book }) => {
                 ></button>
               </div>
               <div className="modal-body">
-                <div class="card bg-lightPink border-0 mb-3">
-                  <div class="row g-0">
-                    <div class="col-md-4">
+                <div className="card bg-lightPink border-0 mb-3">
+                  <div className="row g-0">
+                    <div className="col-md-4">
                       <img
                         src={book?.img_url}
-                        class="img-fluid rounded"
+                        className="img-fluid rounded"
                         alt={book?.title}
                       />
                     </div>
-                    <div class="col-md-8 px-3  ">
-                      <div class="card-body d-flex flex-column  justify-content-between h-100">
-                        <h5 class="card-title">{book?.title}</h5>
-                        <p class="card-text">{book?.description_long}</p>
+                    <div className="col-md-8 px-3  ">
+                      <div className="card-body d-flex flex-column  justify-content-between h-100">
+                        <h5 className="card-title">{book?.title}</h5>
+                        <p className="card-text">{book?.description_long}</p>
                         <div className="d-flex justify-content-between">
                           <p className="badge px-3 py-2 rounded-pill fs-6 text-bg-orange">
                             {book?.author}
