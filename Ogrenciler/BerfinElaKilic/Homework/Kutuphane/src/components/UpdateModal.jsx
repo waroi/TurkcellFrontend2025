@@ -1,5 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
-import { resetBook, setUpdateBook, updateBook } from "../redux/slices/bookSlice";
+import {
+  resetBook,
+  setUpdateBook,
+  updateBook,
+} from "../redux/slices/bookSlice";
 import { updateBooks } from "../services/Api";
 
 function UpdateModal() {
@@ -41,7 +45,8 @@ function UpdateModal() {
                 <label htmlFor="title" className="form-label fw-semibold">
                   Kitap İsmi:
                 </label>
-                <input onChange={handleUpdateForm} 
+                <input
+                  onChange={handleUpdateForm}
                   type="text"
                   className="form-control rounded-3 p-2 shadow-sm"
                   id="title"
@@ -54,7 +59,8 @@ function UpdateModal() {
                 <label htmlFor="author" className="form-label fw-semibold">
                   Kitap Yazarı:
                 </label>
-                <input onChange={handleUpdateForm} 
+                <input
+                  onChange={handleUpdateForm}
                   type="text"
                   className="form-control rounded-3 p-2 shadow-sm"
                   id="author"
@@ -68,7 +74,8 @@ function UpdateModal() {
                   <label htmlFor="year" className="form-label fw-semibold">
                     Kitap Yılı:
                   </label>
-                  <input onChange={handleUpdateForm} 
+                  <input
+                    onChange={handleUpdateForm}
                     type="number"
                     className="form-control rounded-3 p-2 shadow-sm"
                     id="year"
@@ -78,10 +85,14 @@ function UpdateModal() {
                   />
                 </div>
                 <div className="col-md-6 mb-3">
-                  <label htmlFor="printCount" className="form-label fw-semibold">
+                  <label
+                    htmlFor="printCount"
+                    className="form-label fw-semibold"
+                  >
                     Baskı Sayısı:
                   </label>
-                  <input onChange={handleUpdateForm} 
+                  <input
+                    onChange={handleUpdateForm}
                     type="number"
                     className="form-control rounded-3 p-2 shadow-sm"
                     id="printCount"
@@ -95,7 +106,8 @@ function UpdateModal() {
                 <label htmlFor="imgUrl" className="form-label fw-semibold">
                   Kitap Kapağı URL:
                 </label>
-                <input onChange={handleUpdateForm} 
+                <input
+                  onChange={handleUpdateForm}
                   type="text"
                   className="form-control rounded-3 p-2 shadow-sm"
                   id="imgUrl"
@@ -109,7 +121,8 @@ function UpdateModal() {
                   <label htmlFor="paperType" className="form-label fw-semibold">
                     Hamur Tipi:
                   </label>
-                  <input onChange={handleUpdateForm} 
+                  <input
+                    onChange={handleUpdateForm}
                     type="text"
                     className="form-control rounded-3 p-2 shadow-sm"
                     id="paperType"
@@ -122,7 +135,8 @@ function UpdateModal() {
                   <label htmlFor="size" className="form-label fw-semibold">
                     Boyutu:
                   </label>
-                  <input onChange={handleUpdateForm} 
+                  <input
+                    onChange={handleUpdateForm}
                     type="text"
                     className="form-control rounded-3 p-2 shadow-sm"
                     id="size"
@@ -136,7 +150,8 @@ function UpdateModal() {
                 <label htmlFor="description" className="form-label fw-semibold">
                   Kitap Açıklaması:
                 </label>
-                <textarea onChange={handleUpdateForm}
+                <textarea
+                  onChange={handleUpdateForm}
                   className="form-control rounded-3 p-2 shadow-sm"
                   id="description"
                   name="description"

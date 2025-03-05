@@ -1,9 +1,4 @@
-/* .bookcard {
-} */
 
-.geeks {
-  color: green;
-}
 
 .container {
   display: flex;
@@ -42,17 +37,19 @@
   color: green;
 }
 
-.book-img{
-  width:300px !important;
-  height:450px !important;
+.book-img {
+  width: 300px !important;
+  height: 450px !important;
+  
 }
 
 .flip-card-back {
-  background-color: #c7ceea;
+  background-color: #e8edfd;
   color: #8b2fa8;
   transform: rotateY(180deg);
 }
 
-.card-content {
-  text-align: center;
+.text-bg-orange {
+  background-color: #fdc29b;
+  color: #8b2fa8;
 }

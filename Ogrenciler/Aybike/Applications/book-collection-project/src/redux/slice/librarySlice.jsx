@@ -13,16 +13,16 @@ export const librarySlice = createSlice({
     getBookById: (state, action) => {
       state.book = state.books.find((book) => book.id === Number(action.payload));
     },
+    deleteBook: (state, action) => {
+      state.books = state.books.filter((book) => book.id !== Number(action.payload));
+      saveBooksToLocalStorage(state.books); 
+    },
     addBook: (state, action) => {
       state.books.push(action.payload);
       saveBooksToLocalStorage(state.books); 
     },
-    deleteBook: (state, action) => {
-      state.books = state.books.filter((book) => book.id !== action.payload);
-      saveBooksToLocalStorage(state.books); 
-    },
     updateBook: (state, action) => {
-      const index = state.books.findIndex((book) => book.id === action.payload.id);
+      const index = state.books.findIndex((book) => book.id === Number(action.payload));
       if (index !== -1) {
         state.books.splice(index, 1, action.payload);
         saveBooksToLocalStorage(state.books); 

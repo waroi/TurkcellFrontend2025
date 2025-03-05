@@ -66,14 +66,15 @@ export const bookSlice = createSlice({
       state.books = [...initialState.books];
     },
     searchBooks: (state, action) => {
-      searchTerm = action.payload;
+      const searchTerm = action.payload.toLowerCase();
+      state.searchTerm = searchTerm;
       console.log("search", action.payload);
       console.log("searcht", searchTerm);
       state.books = state.books.filter(
         (book) =>
-          book.title.includes(action.payload) ||
-          book.author.includes(action.payload) ||
-          book.category.includes(action.payload)
+          book.title.toLowerCase().includes(searchTerm) ||
+          book.author.toLowerCase().includes(searchTerm) ||
+          book.category.toLowerCase().includes(searchTerm)
       );
     },
   },

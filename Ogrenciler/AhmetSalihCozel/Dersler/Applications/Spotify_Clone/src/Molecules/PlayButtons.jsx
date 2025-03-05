@@ -8,24 +8,27 @@ import {
   SkipNextRounded,
   SkipPrevious,
 } from "@mui/icons-material";
-import { useEffect } from "react";
+import { useEffect,useState } from "react";
 import { useSpotify } from "../Context/SpotifyContext";
 
 function PlayButtons() {
-  const { player } = useSpotify();
-  // const { setPlayClick, setPreviousClick, setNextClick, } = useSpotify();
+  const [isPlayerFullyReady, setIsPlayerFullyReady] = useState(false);
+  const { player, isPlayerReady } = useSpotify();
 
-  // const handlePlayClick = () => {
-  //   setPlayClick((prevPlayClick) => !prevPlayClick);
-  // };
+  useEffect(() => {
+    if (isPlayerReady && player) {
+      const checkPlayer = setInterval(() => {
+        if (player.nextTrack && player.previousTrack && player.togglePlay) {
+          setIsPlayerFullyReady(true);
+          clearInterval(checkPlayer);
+        }
+      }, 100);
+      return () => clearInterval(checkPlayer);
+    }
+  }, [isPlayerReady, player]);
 
-  // const handleNextClick = () => {
-  //   setPreviousClick((prevPlayClick) => !prevPlayClick);
-  // };
+  if (!isPlayerFullyReady) return null;
 
-  // const handlePreviousClick = () => {
-  //   setNextClick((prevPlayClick) => !prevPlayClick);
-  // };
   return (
     <Box
       className="btnGroup"
@@ -34,13 +37,17 @@ function PlayButtons() {
       <IconButton>
         <Shuffle />
       </IconButton>
-      <IconButton onClick={()=>{player.previousTrack()}} id="skipPreviousButton">
+      <IconButton onClick={() => player.previousTrack()}>
         <SkipPrevious />
       </IconButton>
-      <IconButton onClick={()=>{player.togglePlay()}} id="toggleButton" sx={{ width: "50px", height: "50px" }}>
+      <IconButton
+        onClick={() => player.togglePlay()}
+        id="toggleButton"
+        sx={{ width: "50px", height: "50px" }}
+      >
         <PlayCircleFilled sx={{ height: "50px", width: "50px" }} />
       </IconButton>
-      <IconButton onClick={()=>{player.nextTrack()}} id="skipNextButton">
+      <IconButton onClick={() => player.nextTrack()} id="skipNextButton">
         <SkipNextRounded />
       </IconButton>
       <IconButton>
