@@ -1,0 +1,71 @@
+#root {
+	margin: 0 auto;
+	text-align: center;
+	box-sizing: border-box;
+}
+
+.app {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+
+.app.dark {
+	background-color: #333;
+	color: #fff;
+}
+
+.app.light {
+	background-color: #d3ccf3;
+	color: #333;
+}
+
+.logo {
+	width: 100px;
+}
+.navbar-books {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0;
+	margin: 0;
+}
+
+.card {
+	width: 350px;
+	height: 300px;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.image-wrapper img {
+	height: 300px;
+	object-fit: cover;
+	overflow: hidden;
+}
+
+.library-news {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0;
+	margin: 0;
+}
+
+.library-banner {
+	background: url("src/assets/library-banner.jpg") no-repeat center center/cover;
+}
+
+.modal-backdrop {
+	position: relative !important;
+}
+
+.detail-img {
+	max-height: 400px;
+}

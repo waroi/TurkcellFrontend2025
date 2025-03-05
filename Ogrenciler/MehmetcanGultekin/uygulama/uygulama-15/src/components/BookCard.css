@@ -1,0 +1,55 @@
+
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.flip-card {
+  perspective: 1000px;
+  width: 300px;
+  height: 450px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+  /* box-shadow: 0px 0px 0px 5px 5px #b5ead7; */
+}
+
+.flip-card.flipped {
+  transform: rotateY(180deg);
+}
+
+.flip-card-inner {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+.flip-card-front,
+.flip-card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  color: green;
+}
+
+.book-img {
+  width: 300px !important;
+  height: 450px !important;
+  
+}
+
+.flip-card-back {
+  background-color: #e8edfd;
+  color: #8b2fa8;
+  transform: rotateY(180deg);
+}
+
+.text-bg-orange {
+  background-color: #fdc29b;
+  color: #8b2fa8;
+}

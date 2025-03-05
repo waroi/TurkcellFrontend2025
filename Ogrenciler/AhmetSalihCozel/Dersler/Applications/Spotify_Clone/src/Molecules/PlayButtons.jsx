@@ -8,9 +8,26 @@ import {
   SkipNextRounded,
   SkipPrevious,
 } from "@mui/icons-material";
-import { useEffect } from "react";
+import { useEffect,useState } from "react";
+import { useSpotify } from "../Context/SpotifyContext";
 
 function PlayButtons() {
+  const [isPlayerFullyReady, setIsPlayerFullyReady] = useState(false);
+  const { player, isPlayerReady } = useSpotify();
+
+  useEffect(() => {
+    if (isPlayerReady && player) {
+      const checkPlayer = setInterval(() => {
+        if (player.nextTrack && player.previousTrack && player.togglePlay) {
+          setIsPlayerFullyReady(true);
+          clearInterval(checkPlayer);
+        }
+      }, 100);
+      return () => clearInterval(checkPlayer);
+    }
+  }, [isPlayerReady, player]);
+
+  if (!isPlayerFullyReady) return null;
 
   return (
     <Box
@@ -20,13 +37,17 @@ function PlayButtons() {
       <IconButton>
         <Shuffle />
       </IconButton>
-      <IconButton id="skipPreviousButton">
+      <IconButton onClick={() => player.previousTrack()}>
         <SkipPrevious />
       </IconButton>
-      <IconButton id="toggleButton" sx={{ width: "50px", height: "50px" }}>
+      <IconButton
+        onClick={() => player.togglePlay()}
+        id="toggleButton"
+        sx={{ width: "50px", height: "50px" }}
+      >
         <PlayCircleFilled sx={{ height: "50px", width: "50px" }} />
       </IconButton>
-      <IconButton id="skipNextButton">
+      <IconButton onClick={() => player.nextTrack()} id="skipNextButton">
         <SkipNextRounded />
       </IconButton>
       <IconButton>

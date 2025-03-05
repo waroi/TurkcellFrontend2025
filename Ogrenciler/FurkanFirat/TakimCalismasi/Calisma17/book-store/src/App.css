@@ -1,0 +1,15 @@
+.bookCard {
+  width: 220px;
+  border: 1px solid #3333337c;
+  transition: all 0.3s ease;
+}
+.book-cover {
+  height: 340px;
+  overflow: hidden;
+}
+
+.badge {
+  z-index: 10;
+  top: 10px;
+  left: 10px;
+}

@@ -3,7 +3,7 @@ import { useParams, useNavigate, Outlet } from "react-router";
 import "../src/App.css";
 
 const CategoryView = ({ news, handleCategory }) => {
-  const { categoryName, id } = useParams(); // 🔥 ID varsa detay sayfasındayız demektir!
+  const { categoryName, id } = useParams();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -20,8 +20,7 @@ const CategoryView = ({ news, handleCategory }) => {
         Türkiye {categoryName?.charAt(0).toUpperCase() + categoryName?.slice(1)}{" "}
         Haberleri
       </h2>
-      <Outlet /> {/* 🔥 Burada detay sayfası render edilecek */}
-      {/* 🔥 Eğer `id` varsa (detay sayfasındaysak), aşağıdaki carousel'i gösterme */}
+      <Outlet />
       {!id && (
         <div
           id="newsCarousel"
@@ -121,7 +120,7 @@ const CategoryView = ({ news, handleCategory }) => {
       )}
       <div className="row">
         {news?.map((item, index) => (
-          <div className="col-lg-4">
+          <div key={index} className="col-lg-4">
             <div className="card bg-light border-0 rounded-5 mb-4">
               <img
                 src={item?.image}
