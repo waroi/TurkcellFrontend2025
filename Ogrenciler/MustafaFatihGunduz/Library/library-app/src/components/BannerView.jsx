@@ -6,7 +6,7 @@ const BannerView = () => {
   return (
     <section className="w-100 ">
       <img src={banner} alt="banner-logo" className="w-100" />
-      <div className="p-4 mb-4 offer-section w-100 ">
+      <div className="p-4 offer-section w-100 ">
         <div className="container d-flex align-items-center justify-content-around">
           <div className="offer text-white d-flex flex-column align-items-center justify-content-center gap-2">
             <img

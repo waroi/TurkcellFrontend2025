@@ -11,7 +11,7 @@ const SubscribeView = () => {
       <div className="row">
         <div className="col-12 align-items-center d-flex justify-content-center">
           <input type="email" name="email" id="email" className="me-0" />
-          <button type="submit" className="btn btn-primary ms-0 py-2 b-0">
+          <button type="submit" className="btn btn-primary ms-0 py-2 ms-2 b-0">
             Abone Ol
           </button>
         </div>
