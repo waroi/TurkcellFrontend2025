@@ -5,21 +5,18 @@ import FooterView from "./components/FooterView";
 import NavbarView from "./components/NavbarView";
 import SpecialOfferView from "./components/SpecialOfferView";
 import SubscribeView from "./components/SubscribeView";
-import { ThemeProvider } from "./context/ThemeContext";
 
 function App() {
-  return (
-    <>
-      <ThemeProvider>
-        <NavbarView />
-        <BannerView />
-        <BooksView />
-        <SpecialOfferView />
-        <SubscribeView />
-        <FooterView />
-      </ThemeProvider>
-    </>
-  );
+	return (
+		<>
+			<NavbarView />
+			<BannerView />
+			<BooksView />
+			<SpecialOfferView />
+			<SubscribeView />
+			<FooterView />
+		</>
+	);
 }
 
 export default App;
