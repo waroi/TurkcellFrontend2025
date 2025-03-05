@@ -1,15 +1,20 @@
 import './App.css';
-import { Provider } from 'react-redux';  // Redux Provider importu
-import Router from './routes/Router';    // Router bileşenini import et
-import store from './redux/store';             // Redux store'u import et
+import { Provider } from "react-redux";
+import Router from './routes/Router';
+import store from './redux/store';
+import { useTheme } from "./context/ThemeContext";
 
 function App() {
+  const {theme} = useTheme()
+
   return (
-    <Provider store={store}>  {/* Redux store'u sağla */}
-      <Router />              {/* Router bileşenini render et */}
+    
+    <Provider store={store}>  
+        <div className={`app ${theme}`}>
+      <Router />
+      </div>
     </Provider>
   );
 }
 
 export default App;
-

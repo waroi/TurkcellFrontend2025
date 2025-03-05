@@ -2,16 +2,16 @@ import React from "react";
 
 const SubscribeView = () => {
   return (
-    <div className="d-flex flex-column justify-content-center align-items-center subscribe">
-      <h4 className="text-uppercase fs-3 text-black fw-bold">Abone Ol</h4>
-      <h6 className="fs-5 text-black fw-semi">
+    <div className="d-flex flex-column justify-content-center align-items-center subscribe py-4">
+      <h4 className="text-uppercase fs-3 text-white fw-bold">Abone Ol</h4>
+      <p className="text-white fw-semi">
         Kaçırılmıyacak fırsatlar için sizde hemen abone olun ve size özel
-        indirimlerden faydalanın!!
-      </h6>
+        indirimlerden faydalanın
+      </p>
       <div className="row">
-        <div className="col-12">
-          <input type="email" name="email" id="email" />
-          <button type="submit" className="btn btn-primary">
+        <div className="col-12 align-items-center d-flex justify-content-center">
+          <input type="email" name="email" id="email" className="me-0" />
+          <button type="submit" className="btn btn-primary ms-0 py-2 b-0">
             Abone Ol
           </button>
         </div>

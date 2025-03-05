@@ -1,7 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import "../App.css";
 
+import {
+  filterBooks,
+  sortBooksByDate,
+  sortBooksByStringAZ,
+  sortBooksByStringZA,
+  clearFilters,
+  searchBooks,
+} from "../redux/slices/bookSlice";
+import Modal from "./Modal";
+
 const Navbar = () => {
+  const [open, setOpen] = React.useState(false);
+  const [searchTerm, setSearchTerm] = useState();
+  const booksFromStore = useSelector((state) => state.book.books);
+
+  const dispatch = useDispatch();
+  const handleFilterBook = (category) => dispatch(filterBooks(category));
+  const handleClearFilters = () => dispatch(clearFilters());
+  const handleSortbyStringAZ = (sortParameter) =>
+    dispatch(sortBooksByStringAZ(sortParameter));
+  const handleSortbyStringZA = (sortParameter) =>
+    dispatch(sortBooksByStringZA(sortParameter));
+  const handleSortbyDate = (created_at) =>
+    dispatch(sortBooksByDate(created_at));
+  const handleSearch = (event) => {
+    event.preventDefault();
+    dispatch(searchBooks(searchTerm));
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
   return (
     <>
       <nav className="navbar navbr navbar-expand-lg">
@@ -42,19 +77,28 @@ const Navbar = () => {
                 </a>
                 <ul className="dropdown-menu">
                   <li>
-                    <a className="dropdown-item" href="#">
+                    <button
+                      className="dropdown-item"
+                      onClick={() => handleSortbyStringAZ("title")}
+                    >
                       A-Z
-                    </a>
+                    </button>
                   </li>
                   <li>
-                    <a className="dropdown-item" href="#">
+                    <button
+                      className="dropdown-item"
+                      onClick={() => handleSortbyStringZA("title")}
+                    >
                       Z-A
-                    </a>
+                    </button>
                   </li>
                   <li>
-                    <a className="dropdown-item" href="#">
+                    <button
+                      className="dropdown-item"
+                      onClick={() => handleSortbyDate("created_at")}
+                    >
                       Son Çıkan Kitaplar
-                    </a>
+                    </button>
                   </li>
                 </ul>
               </li>
@@ -68,24 +112,34 @@ const Navbar = () => {
                 >
                   Filtrele
                 </a>
+
                 <ul className="dropdown-menu">
+                  {booksFromStore
+                    ?.reduce((currentCats, book) => {
+                      if (!currentCats.includes(book.category)) {
+                        currentCats.push(book.category);
+                      }
+                      return currentCats;
+                    }, [])
+                    .map((category, index) => (
+                      <li key={index}>
+                        <button
+                          className="dropdown-item"
+                          onClick={() => {
+                            handleFilterBook(category);
+                          }}
+                        >
+                          {category}
+                        </button>
+                      </li>
+                    ))}
                   <li>
-                    <a className="dropdown-item" href="#">
-                      Action
-                    </a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Another action
-                    </a>
-                  </li>
-                  <li>
-                    <hr className="dropdown-divider" />
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Something else here
-                    </a>
+                    <button
+                      className="dropdown-item"
+                      onClick={handleClearFilters}
+                    >
+                      Temizle
+                    </button>
                   </li>
                 </ul>
               </li>
@@ -96,14 +150,25 @@ const Navbar = () => {
                     type="search"
                     placeholder="Search"
                     aria-label="Search"
+                    defaultValue={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
                   />
                   <button
                     className="btn btn-outline-success rounded-pill"
-                    type="submit"
+                    onClick={(e) => handleSearch(e)}
                   >
                     Search
                   </button>
                 </form>
+              </li>
+              <li>
+                <button
+                  onClick={handleOpen}
+                  className="btn btn-success rounded-pill ms-2"
+                >
+                  ekle
+                </button>
+                <Modal isOpen={open} onClose={handleClose} />
               </li>
             </ul>
           </div>
