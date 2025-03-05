@@ -26,6 +26,14 @@
 .logo {
 	width: 100px;
 }
+.navbar-books{
+	width: 100%; 
+	display: flex;
+	justify-content: center;
+	align-items: center; 
+	padding: 0;
+	margin: 0; 
+}
 
 .card {
 	width: 350px;
@@ -42,3 +50,11 @@
 	object-fit: cover;
 	overflow: hidden;
 }
+.library-news {
+	width: 100%; 
+	display: flex;
+	justify-content: center;
+	align-items: center; 
+	padding: 0;
+	margin: 0; 
+  }
