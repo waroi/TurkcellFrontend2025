@@ -4,25 +4,35 @@ import { auth, db } from "./firebase";
 
 export const signInWithGoogle = async () => {
   const provider = new GoogleAuthProvider();
-  const result = signInWithPopup(auth, provider);
-  const user = result.user;
+  try {
+    const result = await signInWithPopup(auth, provider);
+    const user = result.user;
 
-  const userRef = doc(db, "users", user.uid);
-  const userSnap = await getDoc(userRef);
+    const userRef = doc(db, "users", user.uid);
+    const userSnap = await getDoc(userRef);
 
-  if (!userSnap.exists()) {
-    // Kullanıcı yoksa, yeni kullanıcı olarak kaydet
-    await setDoc(userRef, {
-      name: user.displayName,
-      email: user.email,
-      role: "editor", // Varsayılan olarak 'editor' atıyoruz
-      category: "books", // Örnek kategori
-    });
-    console.log("Yeni kullanıcı Firestore'a kaydedildi.", userSnap.data());
-  } else {
-    console.log("Kullanıcı zaten kayıtlı:", userSnap.data());
+    if (!userSnap.exists()) {
+      await setDoc(userRef, {
+        name: user.displayName || "Anonim Kullanıcı",
+        email: user.email || "Bilinmeyen E-posta",
+        role: "editor", 
+        category: "xx", 
+      });
+      console.log("Yeni kullanıcı Firestore'a kaydedildi.");
+      const newUserSnap = await getDoc(userRef);
+      if (newUserSnap.exists()) {
+        console.log("Yeni Kullanıcı Verisi:", newUserSnap.data());
+      } else {
+        console.log("Kullanıcı verisi kaydedilemedi!");
+      }
+    } else {
+      console.log("Kullanıcı zaten kayıtlı:", userSnap.data());
+    }
+  } catch (error) {
+    console.error("Google ile giriş hatası:", error);
   }
 };
+
 
 async function getUserRole() {
   const user = auth.currentUser;
@@ -43,19 +53,22 @@ async function getUserRole() {
   }
 }
 
-signInWithGoogle().then(() => {
-  getUserRole().then((user) => {
-    if (user) {
-      if (user.role === "admin") {
-        console.log("Admin yetkisi var, tüm kategorilere erişebilir.");
-      } else {
-        console.log(
-          `Editor yetkisi var, sadece ${user.category} kategorisini yönetebilir.`
-        );
+signInWithGoogle().then((user) => {
+  if (user) {
+    getUserRole().then((userData) => {
+      if (userData) {
+        if (userData.role === "admin") {
+          console.log("Admin yetkisi var, tüm kategorilere erişebilir.");
+        } else {
+          console.log(
+            `Editor yetkisi var, sadece ${userData.category} kategorisini yönetebilir.`
+          );
+        }
       }
-    }
-  });
+    });
+  }
 });
+
 
 export const signOut = async () => {
   return auth.signOut();
