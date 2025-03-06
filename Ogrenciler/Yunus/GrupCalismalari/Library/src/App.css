@@ -109,7 +109,11 @@ body {
   color: var(--secondary-coral) !important;
 }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   font-family: 'Playfair Display', serif;
 }
 
@@ -263,6 +267,10 @@ h1, h2, h3, h4, h5 {
     max-height: 400px;
     object-fit: cover;
   }
+
+  .form-signin {
+    width: 100%;
+  }
 }
 
 .breadcrumb {
@@ -290,4 +298,9 @@ h1, h2, h3, h4, h5 {
 
 .book-details-container {
   animation: fadeIn 0.5s ease-out;
+}
+
+.form-signin {
+  max-width: 500px;
+  margin: 0 auto;
 }
