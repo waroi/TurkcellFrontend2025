@@ -1,9 +1,10 @@
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, fetchSignInMethodsForEmail } from "firebase/auth";
+import { auth } from "../../firebase-config";
+import { useNavigate } from "react-router";
 
-import setError from "react";
 
 /*
 1-auth component yapılacak
@@ -12,33 +13,65 @@ import setError from "react";
 4-önce kayıt olcak , tekrar bu ekrandayız, 
 5-tekrar login
 6-
-
 */
 const AuthView = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-  const handleSubmit = async (e) => {
+  const navigation = useNavigate();
+  let methods = [];
+  const handleSignIn = async (e) => {
     e.preventDefault();
-    const auth = getAuth();
-    console.log("submitting");
-    // setError("");
-    try {
-      const userCredential = await createUserWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
-
-      console.log("Kullanıcı oluşturuldu:", userCredential);
-    } catch (err) {
-      //   setError(err.message);
+    if (password && email) {
+      signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          const user = userCredential.user;
+          setEmail("");
+          setPassword("");
+          navigation("/app");
+        })
     }
+    console.log("submitting");
+
   };
+
+  const handleSignUp = async (e) => {
+    e.preventDefault();
+    if (password && email) {
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          setEmail("");
+          setPassword("");
+          navigation("/app");
+        })
+
+    }
+
+  };
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+      try {
+         methods  = await fetchSignInMethodsForEmail(auth, email);
+       
+        if (methods.length > 0) {
+          handleSignIn(e);
+          console.log("✅ Giriş başarılı!");
+        } else {
+          handleSignUp(e);
+          console.log("✅ Kayıt başarılı!");
+        }
+      } catch (error) {
+        console.error("❌ Hata:", error.message);
+      }
+      console.log("submitting");
+      console.log(methods);
+    }
+    
+
+ 
 
   return (
     <div className="d-flex align-items-center justify-content-center vh-100   ">
-      <Form onSubmit={handleSubmit}>
+      <Form onSubmit={(e) => handleSubmit(e)}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control
