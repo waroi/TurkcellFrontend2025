@@ -8,13 +8,13 @@ import { BrowserRouter } from "react-router";
 import Router from "./router/Router.jsx";
 
 createRoot(document.getElementById("root")).render(
-	<StrictMode>
-		<ThemeProvider>
-			<Provider store={store}>
-				<BrowserRouter>
-					<Router />
-				</BrowserRouter>
-			</Provider>
-		</ThemeProvider>
-	</StrictMode>
+  <StrictMode>
+    <ThemeProvider>
+      <Provider store={store}>
+        <BrowserRouter>
+          <Router />
+        </BrowserRouter>
+      </Provider>
+    </ThemeProvider>
+  </StrictMode>
 );
