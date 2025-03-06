@@ -223,7 +223,14 @@ $footer-color: #2d336b;
 nav {
 	background-color: $primary-color;
 }
-
+.avatar {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background-image: url('../../public/avatar.png');
+	background-size: cover;
+	background-position: center;
+}
 .special-offer-section {
 	background-attachment: fixed;
 	background-size: cover;

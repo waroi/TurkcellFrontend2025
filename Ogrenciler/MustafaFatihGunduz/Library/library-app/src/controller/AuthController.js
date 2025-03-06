@@ -31,10 +31,18 @@ export const createWithEmailAndPassword = async (email,password,publishing) => {
     }
 }
 
+export const getCurrentUser = () => {
+    if (auth.currentUser !== null) {
+        return auth.currentUser;
+    }
+    else {
+        return null;
+    }
+}
+
 export const logOut = async () => {
     try {
         await auth.signOut();
-        navigate("/login");
     } catch (error) {
         console.log("Error in logOut: ", error);
     }

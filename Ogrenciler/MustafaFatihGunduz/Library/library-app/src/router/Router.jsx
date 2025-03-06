@@ -3,7 +3,7 @@ import App from '../App';
 import LoginScreen from '../components/LoginScreen';
 const Router = () => {
     const routes = useRoutes([
-        {path: "/home", element: <App />},
+        {path: "/", element: <App />},
         {path: "/login", element: <LoginScreen />},
     ])
     return routes;

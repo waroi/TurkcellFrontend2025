@@ -1,9 +1,31 @@
-import React, { useContext } from "react";
+import { useContext,useState,useEffect } from "react";
 import { ThemeContext } from "../context/ThemeContext";
-
+import { NavLink, useNavigate } from "react-router";
+import { getCurrentUser, logOut,} from "../controller/AuthController";
+import { readUser } from "../controller/DBController";
 const NavbarView = ({ setEditingBookId }) => {
   const { theme, toggleTheme } = useContext(ThemeContext);
-
+  const [user, setUser] = useState(null);
+  const navigate =  useNavigate();
+  useEffect(() => {
+    handleUser();
+  }, []);
+  const handleUser = async () => {
+    const currentUser = getCurrentUser();
+    if (currentUser !== null) {
+      const user = await readUser(currentUser.uid);
+      setUser(user);
+    }
+  }
+  const handleLogOut = async () => {
+    try {
+      await logOut();
+      navigate("/login");
+      setUser(null);
+    } catch (error) {
+      console.log("Error in handleLogOut: ", error);
+    }
+  }
   return (
     <nav className="navbar navbar-expand-lg navbar-light position-sticky top-0 z-2 shadow-sm py-3">
       <div className="container-fluid">
@@ -46,6 +68,35 @@ const NavbarView = ({ setEditingBookId }) => {
               </a>
             </li>
           </ul>
+          <li class="nav-item dropdown text-decoration-none">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <div className="avatar ms-2 me-2"></div>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                {user !== null ? (
+                 <div>
+                   <a class="dropdown-item" href="#">
+                    {user.email}
+                  </a>
+                  <a class="dropdown-item" href="#" onClick={handleLogOut}>
+                    Çıkış Yap
+                  </a>
+                 </div>
+                ) : (
+                  <NavLink to="/login" className="dropdown-item text-dark text-decoration-none">
+                    Giriş Yap
+                  </NavLink>
+                )}
+              </li>
+            </ul>
+          </li>
           <button
             type="button"
             className="btn btn-success"

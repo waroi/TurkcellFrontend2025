@@ -40,7 +40,7 @@ const LoginScreen = () => {
 		event.preventDefault(); 
 		const user = await signWithEmailAndPassword(email, password);
 		if (user) {
-		  navigate("/home");
+		  navigate("/");
 		} else {
 		  alert("Kullanıcı Bilgileri Hatalı Lütfen Tekrar Deneyin");
 		}
@@ -50,7 +50,7 @@ const LoginScreen = () => {
 		event.preventDefault(); 
 		const user = await createWithEmailAndPassword(email, password,publishing);
 		if (user) {
-		  navigate("/home");
+		  navigate("/");
 		} else {
 		  alert("Kullanıcı Bilgileri Hatalı Lütfen Tekrar Deneyin");
 		}
