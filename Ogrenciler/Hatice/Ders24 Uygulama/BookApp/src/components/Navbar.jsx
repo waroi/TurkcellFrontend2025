@@ -3,10 +3,15 @@ import { Link } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import Button from "./Button";
 import { sortBooks, filterBooks } from "../redux/slice/booksSlice";
+import { useNavigate } from "react-router";
 
 const Navbar = () => {
+    const navigate = useNavigate();
     const dispatch = useDispatch();
     const { sort, filter } = useSelector((state) => state.books);
+
+    const consthandleSignupClick = () => { navigate("/signup"); };
+    const consthandleLoginClick = () => { navigate("/login"); };
 
     return (
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -40,6 +45,9 @@ const Navbar = () => {
                             value={filter}
                             onChange={(e) => dispatch(filterBooks(e.target.value))}
                         />
+
+                        <button className="btn btn-outline-success" type="button" onClick={consthandleSignupClick}>Kaydol</button>
+                        <button className="btn btn-outline-success" type="button" onClick={consthandleLoginClick}>Giriş Yap</button>
                     </form>
                 </div>
             </div>

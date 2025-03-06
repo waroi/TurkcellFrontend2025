@@ -1,23 +1,49 @@
-import { getAuth,signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../firebase";
+import { readUser, saveUser } from "./DBController";
+import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
 
 export const signWithEmailAndPassword = async (email,password) => {
     try {
-        const auth = getAuth();
         const userCredential = await signInWithEmailAndPassword(auth,email,password);
-        const user = userCredential.user;
-        return user;
+       if (userCredential.user !== null) {
+              const user = await readUser(userCredential.user.uid);
+              return user;
+       }
     } catch (error) {
         console.log("Error in signWithEmailAndPassword: ", error);
     }
 }
 
-export const createWithEmailAndPassword = async (email,password) => {
+export const createWithEmailAndPassword = async (email,password,publishing) => {
     try {
-        const auth = getAuth();
         const userCredential = await createUserWithEmailAndPassword(auth,email,password);
-        const user = userCredential.user;
-        return user;
+        if (userCredential.user !== null) {
+            const user = {
+                uid: userCredential.user.uid,
+                email: userCredential.user.email,
+                publishing: publishing,
+            }
+            await saveUser(user);
+            return user;
+        }
     } catch (error) {
         console.log("Error in signWithEmailAndPassword: ", error);
+    }
+}
+
+export const getCurrentUser = () => {
+    if (auth.currentUser !== null) {
+        return auth.currentUser;
+    }
+    else {
+        return null;
+    }
+}
+
+export const logOut = async () => {
+    try {
+        await auth.signOut();
+    } catch (error) {
+        console.log("Error in logOut: ", error);
     }
 }
