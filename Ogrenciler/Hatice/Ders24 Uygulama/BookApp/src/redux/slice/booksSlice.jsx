@@ -1,8 +1,16 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { db, collection, getDocs, addDoc, deleteDoc, doc } from "../../firebase/firebaseConfig";
+import { db } from "../../firebase/firebaseConfig";
+import { collection, getDocs, addDoc, deleteDoc, doc, query, orderBy, where } from "../../firebase/firebaseConfig";
 
-export const fetchBooks = createAsyncThunk("books/fetchBooks", async () => {
-    const querySnapshot = await getDocs(collection(db, "books"));
+export const fetchBooks = createAsyncThunk("books/fetchBooks", async ({ sort, filter }) => {
+    let q = query(collection(db, "books"));
+    if (sort) {
+        q = query(collection(db, "books"), orderBy("title", sort)); 
+    }
+    if (filter) {
+        q = query(collection(db, "books"), where("title", ">=", filter), where("title", "<=", filter + "\uf8ff"));
+    }
+    const querySnapshot = await getDocs(q);
     return querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
 });
 
@@ -15,14 +23,22 @@ export const deleteBookFromFirestore = createAsyncThunk("books/deleteBook", asyn
     await deleteDoc(doc(db, "books", id));
     return id;
 });
-
 const booksSlice = createSlice({
     name: "books",
     initialState: {
         books: [],
-        status: "idle", 
+        filter: "",
+        sort: "asc",
+        status: "idle",
     },
-    reducers: {},
+    reducers: {
+        setFilter: (state, action) => {
+            state.filter = action.payload;
+        },
+        setSort: (state, action) => {
+            state.sort = action.payload;
+        },
+    },
     extraReducers: (builder) => {
         builder
             .addCase(fetchBooks.pending, (state) => {
@@ -40,5 +56,5 @@ const booksSlice = createSlice({
             });
     },
 });
-
+export const { setFilter, setSort } = booksSlice.actions;
 export default booksSlice.reducer;
