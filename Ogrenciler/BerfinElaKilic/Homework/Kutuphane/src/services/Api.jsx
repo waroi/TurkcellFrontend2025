@@ -1,8 +1,13 @@
 const API_URL = "http://localhost:3000/books";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
-import app from '../firebase/firebase'
+const FIRE_URL = "http://localhost:3000/user";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+import app from "../firebase/firebase";
 
-export const registerUser = async (email, password) => {
+export const registerUser = async (email, password, publisher) => {
   const auth = getAuth();
   try {
     const userCredential = await createUserWithEmailAndPassword(
@@ -11,14 +16,30 @@ export const registerUser = async (email, password) => {
       password
     );
     console.log("Kullanıcı kaydedildi:", userCredential.user);
-    return userCredential.user;
+
+    const response = await fetch(FIRE_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email,
+        password,
+        publisher,
+      }),
+    });
+    const data = await response.json();
+    console.log("data:", data);
+    if (response.ok) {
+      return data;
+    }
   } catch (error) {
     console.error("Hata:", error.message);
-    throw error; 
+    throw error;
   }
 };
 
-export const SignIn = async  (email, password) => {
+export const SignIn = async (email, password) => {
   const auth = getAuth();
   try {
     const userCredential = await signInWithEmailAndPassword(
@@ -32,7 +53,7 @@ export const SignIn = async  (email, password) => {
     console.error("Hata:", error.message);
     throw error;
   }
-}
+};
 export async function getBooks() {
   try {
     const response = await fetch(API_URL);
@@ -91,6 +112,19 @@ export async function updateBooks(id, book) {
       },
       body: JSON.stringify(book),
     });
+    const data = await response.json();
+    if (response.ok) {
+      return data;
+    }
+  } catch (error) {
+    console.log("Request Model Error: ", error);
+    return null;
+  }
+}
+
+export async function getOneUser(id) {
+  try {
+    const response = await fetch(`${FIRE_URL}/${id}`);
     const data = await response.json();
     if (response.ok) {
       return data;

@@ -2,13 +2,18 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   books: [],
+  user: {
+    id: "",
+    email: "",
+    password: "",
+    publisher: "",
+  },
   book: {
     id: "",
     title: "",
     author: "",
     year: "",
-    description:
-      "",
+    description: "",
     available: true,
     imgUrl: "",
     paperType: "",
@@ -21,6 +26,9 @@ export const bookSlice = createSlice({
   name: "book",
   initialState,
   reducers: {
+    addOneUser: (state, action) => {
+      state.user = action.payload;
+    },
     addBook: (state, action) => {
       state.books = [...state.books, state.book];
     },
@@ -40,8 +48,7 @@ export const bookSlice = createSlice({
         title: "",
         author: "",
         year: "",
-        description:
-          "",
+        description: "",
         available: true,
         imgUrl: "",
         paperType: "",
@@ -61,14 +68,13 @@ export const bookSlice = createSlice({
         title: "",
         author: "",
         year: "",
-        description:
-          "",
+        description: "",
         available: true,
         imgUrl: "",
         paperType: "",
         size: "",
         printCount: "",
-      }
+      };
     },
   },
 });
@@ -81,6 +87,7 @@ export const {
   setBook,
   setUpdateBook,
   resetBook,
+  addOneUser,
 } = bookSlice.actions;
 
 export default bookSlice.reducer;

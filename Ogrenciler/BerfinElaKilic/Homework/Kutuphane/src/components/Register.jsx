@@ -1,10 +1,15 @@
-import { registerUser , SignIn} from "../services/Api";
+import { registerUser, SignIn } from "../services/Api";
 import { useState } from "react";
-import {NavLink} from 'react-router'
+import { NavLink, useNavigate } from "react-router";
 
 const Register = () => {
-  const [user, setUser] = useState({ mail: "", password: "" });
+  const [user, setUser] = useState({ mail: "", password: "", publisher: "" });
+  const navigate = useNavigate();
+  const handleUser = async () => {
+    const myUser = await registerUser(user.mail, user.password, user.publisher);
 
+    navigate(`/publisher/${myUser.id}`);
+  };
   return (
     <>
       <div className="input-group mb-3">
@@ -37,9 +42,22 @@ const Register = () => {
         </span>
       </div>
 
-      <button onClick={() => registerUser(user.mail, user.password)}>
-        Ekle
-      </button>
+      <div className="input-group mb-3">
+        <input
+          value={user.publisher}
+          onChange={(e) => setUser({ ...user, publisher: e.target.value })}
+          type="text"
+          className="form-control"
+          placeholder="Recipient's username"
+          aria-label="Recipient's username"
+          aria-describedby="basic-addon2"
+        />
+        <span className="input-group-text" id="basic-addon2">
+          @example.com
+        </span>
+      </div>
+
+      <button onClick={handleUser}>Ekle</button>
       <NavLink to="/login">Log In</NavLink>
     </>
   );
