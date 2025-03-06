@@ -19,6 +19,7 @@ const initialState = {
     paperType: "",
     size: "",
     printCount: "",
+    publisher: "",
   },
 };
 
@@ -29,8 +30,21 @@ export const bookSlice = createSlice({
     addOneUser: (state, action) => {
       state.user = action.payload;
     },
-    addBook: (state, action) => {
+    addBook: (state) => {
       state.books = [...state.books, state.book];
+      state.book = {
+        ...state.book,
+        id: "",
+        title: "",
+        author: "",
+        year: "",
+        description: "",
+        available: true,
+        imgUrl: "",
+        paperType: "",
+        size: "",
+        printCount: "",
+      };
     },
     deleteBook: (state, action) => {
       state.books = state.books.filter((book) => book.id !== action.payload);
@@ -38,12 +52,13 @@ export const bookSlice = createSlice({
     addAllBook: (state, action) => {
       state.books = action.payload;
     },
-    updateBook: (state, action) => {
+    updateBook: (state) => {
       const bookIndex = state.books.findIndex(
         (book) => book.id === state.book.id
       );
       state.books[bookIndex] = { ...state.books[bookIndex], ...state.book };
       state.book = {
+        ...state.book,
         id: "",
         title: "",
         author: "",
@@ -64,6 +79,7 @@ export const bookSlice = createSlice({
     },
     resetBook: (state) => {
       state.book = {
+        ...state.book,
         id: "",
         title: "",
         author: "",

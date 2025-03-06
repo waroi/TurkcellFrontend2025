@@ -134,3 +134,16 @@ export async function getOneUser(id) {
     return null;
   }
 }
+
+export async function getPublisherBooks(id) {
+  try {
+    const response = await fetch(`${API_URL}/?publisher=${id}`);
+    const data = await response.json();
+    if (response.ok) {
+      return data;
+    }
+  } catch (error) {
+    console.log("Request Model Error: ", error);
+    return null;
+  }
+}

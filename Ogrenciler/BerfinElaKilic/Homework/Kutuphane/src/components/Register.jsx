@@ -7,7 +7,6 @@ const Register = () => {
   const navigate = useNavigate();
   const handleUser = async () => {
     const myUser = await registerUser(user.mail, user.password, user.publisher);
-
     navigate(`/publisher/${myUser.id}`);
   };
   return (

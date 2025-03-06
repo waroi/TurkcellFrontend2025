@@ -3,13 +3,14 @@ import { useDispatch } from "react-redux";
 import { addBook } from "../redux/slices/bookSlice";
 import AddModal from "./AddModal";
 import { FaUser } from "react-icons/fa";
-import { NavLink } from "react-router";
+import { NavLink, useParams } from "react-router";
 
 const NavBar = () => {
   const dispatch = useDispatch();
   const handleAddBook = () => {
     dispatch(addBook());
   };
+
   return (
     <>
       <nav className="navbar bg-body-tertiary mb-3">
@@ -28,13 +29,15 @@ const NavBar = () => {
             Kitabevi
           </a>
           <button
-            className="btn btn-success"
-            data-bs-toggle="modal"
-            data-bs-target="#exampleModal2"
-          >
-            Yeni Kitap Ekle
-          </button>
-          <NavLink to="/login"><FaUser/></NavLink>
+              className="btn btn-success"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal2"
+            >
+              Yeni Kitap Ekle
+            </button>
+          <NavLink to="/login">
+            <FaUser />
+          </NavLink>
         </div>
       </nav>
       <AddModal />

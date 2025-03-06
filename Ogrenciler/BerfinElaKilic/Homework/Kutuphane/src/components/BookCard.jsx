@@ -8,7 +8,7 @@ import { MdDeleteForever } from "react-icons/md";
 import { MdVisibility } from "react-icons/md";
 import ReviewBook from "./ReviewBook";
 
-const BookCard = ({ book }) => {
+const BookCard = ({ book, isAdmin }) => {
   const dispatch = useDispatch();
   const handleUpdate = () => {
     dispatch(setBook(book));
@@ -51,20 +51,24 @@ const BookCard = ({ book }) => {
               </div>
               <div className="mt-auto">
                 <div className="d-flex justify-content-end gap-2 mt-3">
-                  <button
-                    className="btn btn-warning text-white fs-5 d-flex align-items-center justify-content-center p-2"
-                    onClick={handleUpdate}
-                    data-bs-toggle="modal"
-                    data-bs-target="#exampleModal"
-                  >
-                    <MdEdit />
-                  </button>
-                  <button
-                    className="btn btn-danger fs-5 d-flex align-items-center justify-content-center p-2"
-                    onClick={handleDelete}
-                  >
-                    <MdDeleteForever />
-                  </button>
+                  {isAdmin ? (
+                    <>
+                      <button
+                        className="btn btn-warning text-white fs-5 d-flex align-items-center justify-content-center p-2"
+                        onClick={handleUpdate}
+                        data-bs-toggle="modal"
+                        data-bs-target="#exampleModal"
+                      >
+                        <MdEdit />
+                      </button>{" "}
+                      <button
+                        className="btn btn-danger fs-5 d-flex align-items-center justify-content-center p-2"
+                        onClick={handleDelete}
+                      >
+                        <MdDeleteForever />
+                      </button>
+                    </>
+                  ) : null}
 
                   <button
                     className="btn btn-primary text-white fs-5 d-flex align-items-center justify-content-center p-2"

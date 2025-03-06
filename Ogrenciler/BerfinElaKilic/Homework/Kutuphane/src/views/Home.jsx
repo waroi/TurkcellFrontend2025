@@ -22,7 +22,7 @@ const Home = () => {
    <div className="container">
     <div className="row g-3">
       {books?.map((book) => (
-        <BookCard key={self.crypto.randomUUID()} book={book} />
+        <BookCard key={self.crypto.randomUUID()} book={book} isAdmin={false}/>
       ))}
     </div>
   </div>
