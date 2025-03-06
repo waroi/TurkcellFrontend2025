@@ -13,6 +13,10 @@ export const librarySlice = createSlice({
     books: await getBooks(),
   },
   reducers: {
+    setUser: (state, action) => {
+      state.user = action.payload;
+    },
+
     addBook: (state, action) => {
       action.payload.id = Math.random().toString(36).substring(5);
 

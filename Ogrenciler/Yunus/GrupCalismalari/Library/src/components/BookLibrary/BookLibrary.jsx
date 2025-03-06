@@ -12,27 +12,18 @@ const BookLibrary = () => {
     const dispatch = useDispatch()
     const books = useSelector(state => state.books.books)
 
-    const [showModal, setShowModal] = useState(false);
-    const [searchTerm, setSearchTerm] = useState('');
-    const [newBook, setNewBook] = useState(newBookInitialState);
-    const [bookList, setBookList] = useState(books);
-    const [showAddModal, setShowAddModal] = useState(false);
+    const [showModal, setShowModal] = useState(false)
+    const [searchTerm, setSearchTerm] = useState('')
+    const [newBook, setNewBook] = useState(newBookInitialState)
+    const [bookList, setBookList] = useState(books)
+    const [showAddModal, setShowAddModal] = useState(false)
 
-    //kategorik filtre için ekledim
-    const [selectedCategory, setSelectedCategory] = useState("");
+    const [selectedCategory, setSelectedCategory] = useState("")
 
     const closeModal = () => {
-        setShowModal(false);
-        setShowAddModal(false);
+        setShowModal(false)
+        setShowAddModal(false)
     };
-
-    // const filteredBooks = bookList.filter(book =>
-    //     book.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    //     book.author.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    //     book.genre.toLowerCase().includes(searchTerm.toLowerCase())
-    // );
-
-    //kategorik filtre için değiştirdim
 
     const filteredBooks = books.filter(
         (book) =>
@@ -42,9 +33,8 @@ const BookLibrary = () => {
                 book.genre.toLowerCase().includes(searchTerm.toLowerCase()))
     );
 
-
     const handleInputChange = (e) => {
-        const { name, value } = e.target;
+        const { name, value } = e.target
         setNewBook({
             ...newBook,
             [name]: name === "publishedYear" ? parseInt(value) : value
@@ -52,22 +42,15 @@ const BookLibrary = () => {
     };
 
     const handleAddBook = (e) => {
-        e.preventDefault();
+        e.preventDefault()
         const bookToAdd = {
             ...newBook,
             id: self.crypto.randomUUID()
         };
         dispatch(addBook(bookToAdd))
-        setBookList([...books, bookToAdd]);
-        setNewBook(newBookInitialState);
-        setShowAddModal(false);
-    };
-
-
-    //BU FONKSİYON KULLANILMIYOR GİBİ!!!!!
-    const handleDeleteBook = (id) => {
-        setBookList(bookList.filtesr(book => book.id !== id));
-        setShowModal(false);
+        setBookList([...books, bookToAdd])
+        setNewBook(newBookInitialState)
+        setShowAddModal(false)
     };
 
     return (
@@ -76,7 +59,7 @@ const BookLibrary = () => {
             <div className="row mb-4">
                 <div className="col">
                     <h1 className="text-center mb-4">Balığın Kütüphane Dünyası</h1>
-                    <div className="d-flex justify-content-between align-items-center mb-4">
+                    <div className="d-flex search-bar justify-content-between align-items-center mb-4">
                         <div className="search-container w-100 me-3">
                             <input
                                 type="text"

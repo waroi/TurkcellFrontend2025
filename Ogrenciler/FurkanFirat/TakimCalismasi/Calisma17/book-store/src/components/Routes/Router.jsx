@@ -1,13 +1,13 @@
-import { useRoutes } from 'react-router';
-import HomeView from '../../views/HomeView';
-import AdminView from '../../views/AdminView';
-import BookDetailsView from '../../views/BookDetailsView';
+import { useRoutes } from "react-router";
+import HomeView from "../../views/HomeView";
+import AdminView from "../../views/AdminView";
+import LoginView from "../../views/LoginView";
 
 export default function Router() {
   const router = useRoutes([
-    { path: '/', element: <HomeView /> },
-    { path: '/admin', element: <AdminView /> },
-    { path: '/book/:id', element: <BookDetailsView /> },
+    { path: "/", element: <HomeView /> },
+    { path: "/login", element: <LoginView /> },
+    { path: "/admin", element: <AdminView /> },
   ]);
   return router;
 }

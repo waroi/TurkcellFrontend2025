@@ -15,6 +15,7 @@ const Modal = ({ editingBookId, setEditingBookId }) => {
     page: "",
     image: "",
     releaseDate: "",
+    category: "",
     description: "",
   };
 
@@ -124,6 +125,19 @@ const Modal = ({ editingBookId, setEditingBookId }) => {
                   id="bookDate"
                   name="releaseDate"
                   value={bookData.releaseDate}
+                  onChange={handleChange}
+                />
+              </div>
+              <div className="mb-3">
+                <label htmlFor="bookCategory" className="col-form-label">
+                  Kitap kategorisi:
+                </label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="bookCategory"
+                  name="category"
+                  value={bookData.category}
                   onChange={handleChange}
                 />
               </div>

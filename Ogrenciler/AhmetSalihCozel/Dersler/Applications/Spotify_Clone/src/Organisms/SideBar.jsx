@@ -10,15 +10,26 @@ import { ThumbUp } from "@mui/icons-material";
 import AutoStoriesIcon from "@mui/icons-material/AutoStories";
 import { grey } from "@mui/material/colors";
 import { useSpotify } from "../Context/SpotifyContext";
+import api from "../api/api";
+
 
 
 function  SideBar() {
-  const {fetchPlayLists} = useSpotify();
-  const [playList, setPlayList] = useState(false);
+  const [playList, setPlayList] = useState();
   const [selectedIndex, setSelectedIndex] = useState(1);
 
-  fetchPlayLists().then((resp)=>{setPlayList(resp)});
+  const token = import.meta.env.VITE_SPOTIFY_TOKEN;
 
+  api(token, "https://api.spotify.com/v1/me/playlists", "GET").then((resp)=>{
+    console.log(resp.items[0])}
+    // setPlayList(resp)}
+    )
+
+  // useEffect(()=>{
+  //   response
+  //     console.log(resp)
+  //   })
+  // },[playList])
 
   const handleListItemClick = (event, index) => {
     setSelectedIndex(index);
@@ -47,7 +58,8 @@ function  SideBar() {
           <ListItemText primary="Kitaplik" />
         </ListItemButton>
       </List>
-      {playList?.track?.name}
+      <div>{null}</div>
+
 
     </Box>
 

@@ -2,10 +2,14 @@
 body {
   font-family: "Headland One", serif;
   background-color: #f7f8f6;
+  min-height: 100vh;
 }
-.navbr , .dropdown-menu {
+#root {
+  min-height: 100vh;
+}
+.navbr,
+.dropdown-menu {
   background-color: #e9f5d5;
-  
 }
 .bg-pink {
   background-color: #ff9aa2;

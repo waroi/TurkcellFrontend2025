@@ -27,29 +27,29 @@ export const SpotifyProvider = ({ children }) => {
 
   async  function fetchPlayLists(params) {
     let playlists = [];
-    api(token, "https://api.spotify.com/v1/me/playlists", "GET").then(resp => 
-      resp.items.forEach(
+    api(token, "https://api.spotify.com/v1/me/playlists", "GET")
+      // resp.items.forEach(
 
-        (item) => {
-          fetch(`https://api.spotify.com/v1/playlists/${item.id}`, {
-            method: "GET",
-            headers: {
-              "Authorization": `Bearer ${token}`,
-              "Content-Type": "application/json"
-            }
-          })
-          .then((resp) => {
-            // console.log(resp)
-             return resp.json()
-             })
-          .then((playlistObject) => {
-            // console.log(playlistObject)
-              return playlistObject
-            })
-            // return playlists
-        }
-      )
-    )
+      //   (item) => {
+      //     fetch(`https://api.spotify.com/v1/playlists/${item.id}`, {
+      //       method: "GET",
+      //       headers: {
+      //         "Authorization": `Bearer ${token}`,
+      //         "Content-Type": "application/json"
+      //       }
+      //     })
+      //     .then((resp) => {
+      //       // console.log(resp)
+      //        return resp.json()
+      //        })
+      //     .then((playlistObject) => {
+      //       // setPlaylistArr(playlistArr.push(playlistObject))
+      //       // console.log(playlistObject)
+      //       })
+      //       // return playlists
+      //   }
+      // )
+
   }
 
 

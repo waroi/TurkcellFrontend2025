@@ -1,61 +1,293 @@
 @import "./../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
+:root {
+  --primary-blue: #1A5F7A;
+  --secondary-coral: #FF6B6B;
+  --seafoam-green: #2AB3A5;
+  --sand-beige: #F0E6D2;
+  --background-white: #F9F9F9;
+  --dark-charcoal: #333333;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: var(--background-white);
+  color: var(--dark-charcoal);
+}
+
+.navbar {
+  background-color: rgba(26, 95, 122, 0.05) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-brand img {
+  transition: transform 0.3s ease;
+}
+
+.navbar-brand img:hover {
+  transform: scale(1.05);
+}
+
+.nav-link {
+  color: var(--primary-blue) !important;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--secondary-coral) !important;
+}
+
 .book-card {
-  transition: all 0.3s ease;
-  cursor: pointer;
+  border: none;
+  border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  overflow: hidden;
 }
 
 .book-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
 }
 
-.card-img-container {
-  height: 240px;
+.book-card .card-img-container {
   overflow: hidden;
-  background-color: #f5f5f5;
-}
-
-.card-img-top {
-  height: 100%;
-  object-fit: cover;
-}
-
-.placeholder-img {
-  height: 100%;
-  background-color: #e9ecef;
-  color: #6c757d;
-}
-
-.placeholder-img-large {
   height: 300px;
-  background-color: #e9ecef;
-  color: #6c757d;
-  border-radius: 0.25rem;
 }
 
-.modal.show {
-  background-color: rgba(0, 0, 0, 0.5);
+.book-card .card-img-top {
+  object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
-.search-container {
-  width: 70%;
+.book-card:hover .card-img-top {
+  transform: scale(1.1);
 }
 
-.modal-content {
-  border-radius: 0.5rem;
-  overflow: hidden;
+.categories-container .btn {
+  border-radius: 20px;
+  transition: all 0.3s ease;
 }
 
-.modal-header {
-  border-bottom: none;
+.categories-container .btn-primary {
+  background-color: var(--primary-blue);
+  border-color: var(--primary-blue);
 }
 
-.modal-footer {
-  border-top: none;
+.categories-container .btn-outline-primary {
+  color: var(--primary-blue);
+  border-color: var(--primary-blue);
+}
+
+.categories-container .btn:hover {
+  background-color: var(--secondary-coral);
+  border-color: var(--secondary-coral);
+  color: white;
 }
 
 .footer-library {
-  background-color: #145da0;
+  background-color: var(--primary-blue);
+  color: white;
+}
+
+.footer-library a {
+  color: var(--sand-beige);
+  transition: color 0.3s ease;
+}
+
+.footer-library a:hover {
+  color: var(--secondary-coral);
+}
+
+.social-links a {
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.social-links a:hover {
+  transform: scale(1.2);
+  color: var(--secondary-coral) !important;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Playfair Display', serif;
+}
+
+.form-control {
+  border-radius: 8px;
+  border-color: var(--seafoam-green);
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 0.2rem rgba(26, 95, 122, 0.25);
+}
+
+.badge {
+  background-color: var(--seafoam-green) !important;
+}
+
+@media (max-width: 768px) {
+  .book-card .card-img-container {
+    height: 250px;
+  }
+}
+
+@keyframes wave {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.book-card:hover {
+  animation: wave 1s ease infinite;
+}
+
+.book-buttons {
+  margin-bottom: 20px;
+}
+
+.book-buttons .btn-danger {
+  background-color: var(--secondary-coral);
+  border-color: var(--secondary-coral);
+  transition: all 0.3s ease;
+}
+
+.book-buttons .btn-danger:hover {
+  background-color: #ff4f4f;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.book-buttons .btn-primary {
+  background-color: var(--primary-blue);
+  border-color: var(--primary-blue);
+  transition: all 0.3s ease;
+}
+
+.book-buttons .btn-primary:hover {
+  background-color: #156785;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.book-details-container {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin-top: 20px;
+}
+
+.book-details-container img {
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.book-details-container img:hover {
+  transform: scale(1.05);
+}
+
+.book-details-container h1 {
+  color: var(--primary-blue);
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.book-details-container p {
+  line-height: 1.6;
+  color: var(--dark-charcoal);
+}
+
+.book-details-container p:first-of-type {
+  font-style: italic;
+  color: var(--seafoam-green);
+}
+
+#deleteModal .modal-header {
+  background-color: var(--secondary-coral);
+  color: white;
+}
+
+#deleteModal .modal-title {
+  color: white;
+  font-family: 'Playfair Display', serif;
+}
+
+#deleteModal .btn-danger {
+  background-color: var(--secondary-coral);
+  border-color: var(--secondary-coral);
+  transition: all 0.3s ease;
+}
+
+#deleteModal .btn-danger:hover {
+  background-color: #ff3333;
+  transform: scale(1.05);
+}
+
+#deleteModal .btn-secondary {
+  transition: all 0.3s ease;
+}
+
+#deleteModal .btn-secondary:hover {
+  background-color: #6c757d;
+  color: white;
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .book-details-container {
+    padding: 15px;
+  }
+
+  .search-bar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .search-bar button {
+    width: 100% !important;
+  }
+
+  .book-details-container img {
+    max-height: 400px;
+    object-fit: cover;
+  }
+}
+
+.breadcrumb {
+  background-color: transparent;
+  padding: 10px 0;
+}
+
+.breadcrumb-item {
+  color: var(--primary-blue);
+}
+
+.breadcrumb-item.active {
+  color: var(--secondary-coral);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.book-details-container {
+  animation: fadeIn 0.5s ease-out;
 }
