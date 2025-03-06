@@ -4,7 +4,7 @@ import { deleteBook, searchBook, sortingBook } from "../redux/slices/bookSlice";
 import Modal from "./module/Modal";
 import { ThemeContext } from "../context/ThemeContext";
 
-const BooksView = () => {
+const BooksView = ({ category }) => {
   const { books, keyword } = useSelector((state) => state.book);
   const dispatch = useDispatch();
 
@@ -24,9 +24,16 @@ const BooksView = () => {
       year: "numeric",
     });
   };
-  const filteredItems = books.filter((book) =>
+  //eger donen category varsa ona gore filter et. yoksa books don.
+  const filteredBooks = category
+    ? books.filter((book) => book.category === category)
+    : books;
+
+  // filter edilen booksarda searche gore filter et
+  const filteredItems = filteredBooks.filter((book) =>
     book.title.toLowerCase().includes((keyword || "").toLowerCase())
   );
+
   const { theme } = useContext(ThemeContext);
   console.log(theme);
   return (
@@ -63,15 +70,26 @@ const BooksView = () => {
                         : "bg-white text-dark"
                     }`}
                   >
-                    <img src={book.image} className="card-img-top" alt="..." />
-                    <div className="card-body w-100">
-                      <h5 className="card-title">{book.title}</h5>
-                      <p className="card-text">{book.description}</p>
-                      <p className="card-text">{book.author}</p>
-                      <p className="card-text">
-                        {formatDate(book.releaseDate)}
+                    <div className="card-img-div">
+                      <img
+                        src={book.image}
+                        className="card-img-top"
+                        alt="..."
+                      />
+                    </div>
+                    <div className="card-body w-100 gap-2 d-flex flex-column justify-content-between">
+                      <div>
+                        <h5 className="card-title">{book.title}</h5>
+                        <p className="card-text">{book.description}</p>
+                      </div>
+                      <p className="card-text fst-italic">
+                        Yazar: {book.author}
                       </p>
-                      <p className="card-text">{book.page}</p>
+                      <p className="card-text">
+                        Çıkış Tarihi: {formatDate(book.releaseDate)}
+                      </p>
+                      <p className="card-text">Kategori: {book.category}</p>
+                      <p className="card-text"> Sayfa Sayısı: {book.page}</p>
                       <div className="btn-group gap-2 w-100">
                         <button
                           className="btn btn-warning w-50"

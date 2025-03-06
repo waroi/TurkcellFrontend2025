@@ -1,12 +1,20 @@
-import { useContext,useState,useEffect } from "react";
+import { useContext, useState, useEffect } from "react";
 import { ThemeContext } from "../context/ThemeContext";
 import { NavLink, useNavigate } from "react-router";
-import { getCurrentUser, logOut,} from "../controller/AuthController";
+import { getCurrentUser, logOut } from "../controller/AuthController";
 import { readUser } from "../controller/DBController";
+import { useSelector } from "react-redux";
+
 const NavbarView = ({ setEditingBookId }) => {
   const { theme, toggleTheme } = useContext(ThemeContext);
+  {
+    /* dropdown kategorileri dinamik hale getirmek icin useSelector kullandim */
+  }
+  const books = useSelector((state) => state.book.books);
+  const categories = [...new Set(books.map((book) => book.category))];
+
   const [user, setUser] = useState(null);
-  const navigate =  useNavigate();
+  const navigate = useNavigate();
   useEffect(() => {
     handleUser();
   }, []);
@@ -16,7 +24,7 @@ const NavbarView = ({ setEditingBookId }) => {
       const user = await readUser(currentUser.uid);
       setUser(user);
     }
-  }
+  };
   const handleLogOut = async () => {
     try {
       await logOut();
@@ -25,7 +33,7 @@ const NavbarView = ({ setEditingBookId }) => {
     } catch (error) {
       console.log("Error in handleLogOut: ", error);
     }
-  }
+  };
   return (
     <nav className="navbar navbar-expand-lg navbar-light position-sticky top-0 z-2 shadow-sm py-3">
       <div className="container-fluid">
@@ -49,18 +57,49 @@ const NavbarView = ({ setEditingBookId }) => {
         >
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a
+              <NavLink
                 className="nav-link active text-white"
                 aria-current="page"
                 href="#"
+                to="/"
               >
                 Anasayfa
-              </a>
+              </NavLink>
             </li>
             <li className="nav-item">
               <a className="nav-link text-white" href="#books">
                 Kitaplar
               </a>
+            </li>
+            {/* Kategoriler */}
+            <li className="nav-item dropdown ">
+              <a
+                className="nav-link dropdown-toggle text-white"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Kategoriler
+              </a>
+              <ul className="dropdown-menu">
+                {categories.length > 0 ? (
+                  categories.map((category) => (
+                    <li key={category}>
+                      <NavLink
+                        className="dropdown-item"
+                        to={`/kategori/${category}`}
+                      >
+                        {category}
+                      </NavLink>
+                    </li>
+                  ))
+                ) : (
+                  <li>
+                    <span className="dropdown-item">Kategori yok</span>
+                  </li>
+                )}
+              </ul>
             </li>
             <li className="nav-item">
               <a className="nav-link text-white" href="#contact">
@@ -68,35 +107,44 @@ const NavbarView = ({ setEditingBookId }) => {
               </a>
             </li>
           </ul>
-          <li class="nav-item dropdown text-decoration-none">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              <div className="avatar ms-2 me-2"></div>
-            </a>
-            <ul class="dropdown-menu">
-              <li>
-                {user !== null ? (
-                 <div>
-                   <a class="dropdown-item" href="#">
-                    {user.email}
-                  </a>
-                  <a class="dropdown-item" href="#" onClick={handleLogOut}>
-                    Çıkış Yap
-                  </a>
-                 </div>
+
+          <ul className="navbar-nav">
+            <li className="nav-item dropdown">
+              <a
+                className="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <div className="avatar ms-2 me-2"></div>
+              </a>
+              {/*user vasrsa cikis yap yoksa login yap */}
+              <ul className="dropdown-menu">
+                {user ? (
+                  <>
+                    <li>
+                      <span className="dropdown-item">{user.email}</span>
+                    </li>
+                    <li>
+                      <button className="dropdown-item" onClick={handleLogOut}>
+                        Çıkış Yap
+                      </button>
+                    </li>
+                  </>
                 ) : (
-                  <NavLink to="/login" className="dropdown-item text-dark text-decoration-none">
-                    Giriş Yap
-                  </NavLink>
+                  <li>
+                    <NavLink
+                      to="/login"
+                      className="dropdown-item text-dark text-decoration-none"
+                    >
+                      Giriş Yap
+                    </NavLink>
+                  </li>
                 )}
-              </li>
-            </ul>
-          </li>
+              </ul>
+            </li>
+          </ul>
           <button
             type="button"
             className="btn btn-success"
