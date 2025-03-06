@@ -15,24 +15,40 @@ import {
 const BookCard = ({ handleOpen, handleOpenDetail }) => {
   const [isFlippedCards, setFlippedCards] = useState(false);
   const [yayin, setYayin] = useState(null);
-  const BooksFromStore = useSelector((state) => state.book.books);
   const dispatch = useDispatch();
-  const [filteredBooks, setFilteredBooks] = useState(null);
+  const [filteredBooks, setFilteredBooks] = useState([]);
+  const BooksFromStore = useSelector((state) => state.book.books);
+  const [difference, setDifference] = useState([]);
   const userRef = collection(db, "admins");
+
 
   useEffect(() => {
     getUserInfo();
+
     setFilteredBooks(BooksFromStore);
+
   }, []);
 
   useEffect(() => {
     if (yayin !== "all") {
       const filtered = BooksFromStore.filter((book) => book.yayin === yayin);
       setFilteredBooks(filtered);
+
     } else {
       setFilteredBooks(BooksFromStore);
     }
   }, [yayin, BooksFromStore]);
+
+  useEffect(() => {
+    if (filteredBooks.length > 0) {
+      const diff = BooksFromStore.filter(book => !filteredBooks.some(fBook => fBook.id === book.id));
+      setDifference(diff);
+    } else {
+      setDifference(BooksFromStore);
+    }
+  }, [filteredBooks, BooksFromStore]);
+
+
 
   const getUserInfo = async () => {
     try {
@@ -72,6 +88,7 @@ const BookCard = ({ handleOpen, handleOpenDetail }) => {
 
   return (
     <div className="bookcard">
+
       <div className="container flex-column py-4">
         <h1>Yayınevine Ait Kitaplar</h1>
         <div className="row w-100">
@@ -82,9 +99,8 @@ const BookCard = ({ handleOpen, handleOpenDetail }) => {
                 key={book.id}
               >
                 <div
-                  className={`flip-card mb-3 ${
-                    isFlippedCards[book.id] ? "flipped" : ""
-                  }`}
+                  className={`flip-card mb-3 ${isFlippedCards[book.id] ? "flipped" : ""
+                    }`}
                 >
                   <div
                     onClick={() => handleFlip(book.id)}
@@ -147,28 +163,26 @@ const BookCard = ({ handleOpen, handleOpenDetail }) => {
           )}
         </div>
       </div>
+      
       <div className="container flex-column py-4">
         <h1>Tüm Kitaplar</h1>
-        <div className="row w-100">
-          {BooksFromStore && BooksFromStore.length > 0 ? (
-            BooksFromStore?.map((book) => (
+        <div className="overflow-auto" style={{ whiteSpace: "nowrap" }}>
+          {difference && difference.length > 0 ? (
+            difference.map((book) => (
               <div
-                className="col container col-xl-3 col-lg-4 col-md-6 col-12 "
+                className="d-inline-block me-3"
+                style={{ width: "300px" }}
                 key={book.id}
               >
-                <div
-                  className={`flip-card mb-3 ${
-                    isFlippedCards[book.id] ? "flipped" : ""
-                  }`}
-                >
+                <div className="flip-card mb-3">
                   <div
                     onClick={() => handleFlip(book.id)}
-                    className="flip-card-inner"
+                    className={`flip-card-inner ${isFlippedCards[book.id] ? "flipped" : ""}`}
                   >
                     <div className="flip-card-front">
                       <div className="card-content overflow-hidden">
                         <img
-                          className=" img-fluid object-fit-cover book-img"
+                          className="img-fluid object-fit-cover book-img"
                           src={book.img_url}
                           alt={book.title}
                         />
@@ -188,8 +202,7 @@ const BookCard = ({ handleOpen, handleOpenDetail }) => {
                         <p className="mb-3">{book.author}</p>
                         <p className="mb-3">{book.description_short}</p>
                         <p className="mb-3">{book?.yayin}</p>
-
-                        <div className="btns d-flex align-items-end btns d-flex justify-content-center pt-5 mt-5">
+                        <div className="btns d-flex justify-content-center pt-5 mt-5">
                           {yayin === book.yayin && (
                             <button
                               onClick={() => handleDelete(book.id)}
@@ -198,12 +211,6 @@ const BookCard = ({ handleOpen, handleOpenDetail }) => {
                               <FontAwesomeIcon icon={faTrash} />
                             </button>
                           )}
-                          <button
-                            onClick={() => handleOpen(book)}
-                            className="btn outlined-green rounded-circle me-2"
-                          >
-                            <FontAwesomeIcon icon={faPenToSquare} />
-                          </button>
                           <button
                             onClick={() => handleOpenDetail(book)}
                             className="btn outlined-green rounded-circle"
@@ -218,12 +225,11 @@ const BookCard = ({ handleOpen, handleOpenDetail }) => {
               </div>
             ))
           ) : (
-            <div className="text-center">
-              Yayınevinize ait hiçbir kitap bulunamadı.
-            </div>
+            <div className="text-center">Yayınevinize ait hiçbir kitap bulunamadı.</div>
           )}
         </div>
       </div>
+
     </div>
   );
 };
