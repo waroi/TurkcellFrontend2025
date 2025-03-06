@@ -21,7 +21,7 @@ export const addBookToFirestore = createAsyncThunk("books/addBook", async (book)
 
 export const deleteBookFromFirestore = createAsyncThunk("books/deleteBook", async (id) => {
     await deleteDoc(doc(db, "books", id));
-    return id;
+    return id; 
 });
 const booksSlice = createSlice({
     name: "books",
