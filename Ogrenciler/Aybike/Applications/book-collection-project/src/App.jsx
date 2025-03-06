@@ -3,7 +3,8 @@ import { Provider } from "react-redux";
 import Router from './routes/Router';
 import store from './redux/store';
 import { useTheme } from "./context/ThemeContext";
-import app from "../firebase";
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
 
 function App() {
   const {theme} = useTheme()
