@@ -1,17 +1,24 @@
-import { useState, useEffect } from 'react';
-import { Modal, Button, Form } from 'react-bootstrap';
-import { useDispatch } from 'react-redux';
-import { addBook, editBook } from '../../redux/slices/booksSlice';
+import {useState, useEffect} from "react";
+import {Modal, Button, Form} from "react-bootstrap";
+import {useDispatch} from "react-redux";
+import {addBook, editBook} from "../../redux/slices/booksSlice";
+import {
+  addSingleBookToFirestore,
+  editSingleBookToFirestore,
+} from "../../firebase/firebaseBooksService";
 
-export default function BookModal({ show, handleClose, initialBook }) {
+export default function BookModal({show, handleClose, initialBook}) {
   const dispatch = useDispatch();
+
   const [bookData, setBookData] = useState({
-    id: '',
-    title: '',
-    author: '',
-    price: '',
-    coverImage: '',
-    category: '',
+    id: "",
+    title: "",
+    author: "",
+    category: "",
+    coverImage: "",
+    price: "",
+    releaseDate: "",
+    publisher: "",
   });
 
   useEffect(() => {
@@ -19,107 +26,134 @@ export default function BookModal({ show, handleClose, initialBook }) {
       setBookData(initialBook);
     } else {
       setBookData({
-        id: '',
-        title: '',
-        author: '',
-        price: '',
-        coverImage: '',
-        category: '',
+        id: "",
+        title: "",
+        author: "",
+        category: "",
+        coverImage: "",
+        price: "",
+        releaseDate: "",
+        publisher: "",
       });
     }
   }, [initialBook, show]);
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const {name, value} = e.target;
     setBookData((prev) => ({
       ...prev,
       [name]: value,
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (initialBook) {
-      dispatch(
-        editBook({
-          id: initialBook.id,
-          updatedBook: bookData,
-        })
-      );
+      dispatch(editBook({id: initialBook.id, updatedBook: bookData}));
+      try {
+        await editSingleBookToFirestore({...bookData, id: initialBook.id});
+      } catch (error) {
+        alert("Kitap Firestore'da güncellenirken hata oluştu: " + error);
+      }
     } else {
-      dispatch(
-        addBook({
-          ...bookData,
-          id: Date.now(),
-        })
-      );
+      const newBook = {...bookData, id: Date.now()};
+      dispatch(addBook(newBook));
+
+      try {
+        await addSingleBookToFirestore(newBook);
+      } catch (error) {
+        alert("Kitap Firestore'a eklenirken hata oluştu: " + error);
+      }
     }
-    console.log(bookData);
+
+    console.log("Local store'a eklendi ve Firestore'a da gönderildi.");
     handleClose();
   };
 
   return (
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
-        <Modal.Title>{initialBook ? 'Edit Book' : 'Add New Book'}</Modal.Title>
+        <Modal.Title>{initialBook ? "Edit Book" : "Add New Book"}</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form onSubmit={handleSubmit}>
-          <Form.Group className='mb-3'>
+          <Form.Group className="mb-3">
             <Form.Label>Title</Form.Label>
             <Form.Control
-              type='text'
-              name='title'
+              type="text"
+              name="title"
               value={bookData.title}
               onChange={handleChange}
               required
             />
           </Form.Group>
-          <Form.Group className='mb-3'>
+
+          <Form.Group className="mb-3">
             <Form.Label>Category</Form.Label>
             <Form.Control
-              type='text'
-              name='category'
+              type="text"
+              name="category"
               value={bookData.category}
               onChange={handleChange}
               required
             />
           </Form.Group>
 
-          <Form.Group className='mb-3'>
+          <Form.Group className="mb-3">
             <Form.Label>Author</Form.Label>
             <Form.Control
-              type='text'
-              name='author'
+              type="text"
+              name="author"
               value={bookData.author}
               onChange={handleChange}
               required
             />
           </Form.Group>
 
-          <Form.Group className='mb-3'>
+          <Form.Group className="mb-3">
             <Form.Label>Cover Image URL</Form.Label>
             <Form.Control
-              type='text'
-              name='coverImage'
+              type="text"
+              name="coverImage"
               value={bookData.coverImage}
               onChange={handleChange}
             />
           </Form.Group>
-          <Form.Group className='mb-3'>
+
+          <Form.Group className="mb-3">
             <Form.Label>Price</Form.Label>
             <Form.Control
-              type='number'
-              name='price'
+              type="number"
+              name="price"
               value={bookData.price}
               onChange={handleChange}
               required
             />
           </Form.Group>
 
-          <Button variant='primary' type='submit'>
-            {initialBook ? 'Update Book' : 'Add Book'}
+          <Form.Group className="mb-3">
+            <Form.Label>Release Date</Form.Label>
+            <Form.Control
+              type="text"
+              name="releaseDate"
+              value={bookData.releaseDate}
+              onChange={handleChange}
+            />
+          </Form.Group>
+
+          <Form.Group className="mb-3">
+            <Form.Label>Publisher</Form.Label>
+            <Form.Control
+              type="text"
+              name="publisher"
+              value={bookData.publisher}
+              onChange={handleChange}
+            />
+          </Form.Group>
+
+          <Button variant="primary" type="submit">
+            {initialBook ? "Update Book" : "Add Book"}
           </Button>
         </Form>
       </Modal.Body>
