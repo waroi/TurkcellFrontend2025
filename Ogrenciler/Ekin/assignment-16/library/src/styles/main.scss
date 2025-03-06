@@ -2,6 +2,8 @@
 
 $font-family-base: "Funnel Display";
 
+$h1-font-size: 5rem;
+
 $primary: #2571ff;
 $secondary: #211875;
 $warning: #ffbb00;
@@ -9,28 +11,36 @@ $danger: #e21c1c;
 
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
-main .container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 2rem;
+main {
+  min-height: 45rem;
 
-  .card img {
-    height: 15rem;
-  }
-
-  @include media-breakpoint-down(xl) {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-
-  @include media-breakpoint-down(lg) {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  @include media-breakpoint-down(sm) {
-    grid-template-columns: 1fr;
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2rem;
 
     .card img {
-      height: 30rem;
+      height: 15rem;
+    }
+
+    center {
+      grid-column: span 4;
+    }
+
+    @include media-breakpoint-down(xl) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @include media-breakpoint-down(lg) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include media-breakpoint-down(sm) {
+      grid-template-columns: 1fr;
+
+      .card img {
+        height: 30rem;
+      }
     }
   }
 }

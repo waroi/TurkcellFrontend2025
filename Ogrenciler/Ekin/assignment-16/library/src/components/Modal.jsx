@@ -1,9 +1,12 @@
 import { useRef, useEffect } from "react";
 
 import { useSelector, useDispatch } from "react-redux";
+import { setUser, setBooks } from "../redux/slices/librarySlice";
 import { setModal } from "../redux/slices/modalSlice";
 
 import { Modal, Button, Form, FloatingLabel } from "react-bootstrap";
+
+import { getBooks } from "../firebase/firebase";
 
 export default function ModalComponent() {
   const dispatch = useDispatch();
@@ -17,8 +20,19 @@ export default function ModalComponent() {
   const description = useRef();
   const image = useRef();
 
+  const email = useRef();
+  const password = useRef();
+  const remember = useRef();
+
   useEffect(() => {
-    if (mode != "delete" && book) {
+    if (mode == "add") {
+      id.current.value =
+        title.current.value =
+        author.current.value =
+        description.current.value =
+        image.current.value =
+          "";
+    } else if (mode == "edit" && book) {
       id.current.value = book.id;
       title.current.value = book.title;
       author.current.value = book.author;
@@ -31,19 +45,21 @@ export default function ModalComponent() {
     <Modal show={show} onHide={hideModal} centered>
       <Modal.Header closeButton>
         <Modal.Title>
-          {mode == "add"
-            ? "Add Book"
-            : mode == "edit"
-            ? "Edit Book"
-            : "Delete Book"}
+          {
+            {
+              add: "Add Book",
+              edit: "Edit Book",
+              delete: "Delete Book",
+              register: "Register",
+              login: "Login",
+              logout: "Logout",
+            }[mode]
+          }
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        {mode == "delete" ? (
-          "Are you sure you want to delete this book?"
-        ) : (
+        {mode == "add" || mode == "edit" ? (
           <>
-            {" "}
             <input type="hidden" ref={id} />
             <FloatingLabel label="Name" className="mb-3">
               <Form.Control type="text" placeholder="" ref={title} />
@@ -58,6 +74,24 @@ export default function ModalComponent() {
               <Form.Control type="text" placeholder="" ref={image} />
             </FloatingLabel>
           </>
+        ) : mode == "delete" ? (
+          "Are you sure you want to delete this book?"
+        ) : mode == "register" || mode == "login" ? (
+          <>
+            <FloatingLabel label="Email" className="mb-3">
+              <Form.Control type="email" placeholder="" ref={email} />
+            </FloatingLabel>
+            <FloatingLabel label="Password" className="mb-3">
+              <Form.Control type="password" placeholder="" ref={password} />
+            </FloatingLabel>
+            {mode == "login" ? (
+              <Form.Check type="switch" label="Remember Me" ref={remember} />
+            ) : (
+              ""
+            )}
+          </>
+        ) : (
+          "Are you sure you want to logout?"
         )}
       </Modal.Body>
       <Modal.Footer>
@@ -68,27 +102,65 @@ export default function ModalComponent() {
           variant="primary"
           className="text-white"
           onClick={() => {
-            if (mode == "edit")
-              action({
-                id: id.current.value,
-                title: title.current.value,
-                author: author.current.value,
-                description: description.current.value,
-                image: image.current.value,
-              });
-            else if (mode == "add")
-              action({
-                title: title.current.value,
-                author: author.current.value,
-                description: description.current.value,
-                image: image.current.value,
-              });
-            else action();
+            switch (mode) {
+              case "add":
+                action({
+                  title: title.current.value,
+                  author: author.current.value,
+                  description: description.current.value,
+                  image: image.current.value,
+                });
+                break;
+              case "edit":
+                action({
+                  id: id.current.value,
+                  title: title.current.value,
+                  author: author.current.value,
+                  description: description.current.value,
+                  image: image.current.value,
+                });
+                break;
+              case "delete":
+                action();
+                break;
+              case "register":
+                action(email.current.value, password.current.value).then(
+                  (credential) => dispatch(setUser(credential.user.uid))
+                );
+                break;
+              case "login":
+                action(
+                  email.current.value,
+                  password.current.value,
+                  remember.current.checked
+                ).then((credential) => {
+                  dispatch(setUser(credential.user.uid));
+                  getBooks(credential.user.uid).then((books) =>
+                    dispatch(setBooks(books))
+                  );
+                });
+
+                break;
+              case "logout":
+                action().then(() => {
+                  dispatch(setUser(null));
+                  dispatch(setBooks([]));
+                });
+                break;
+            }
 
             hideModal();
           }}
         >
-          {mode == "delete" ? "Delete" : "Save"}
+          {mode == "add" || mode == "edit"
+            ? "Save"
+            : mode == "delete"
+            ? "Delete"
+            : mode == "register"
+            ? "Register"
+            : mode == "login"
+            ? "Login"
+            : "Logout"}
         </Button>
       </Modal.Footer>
     </Modal>
