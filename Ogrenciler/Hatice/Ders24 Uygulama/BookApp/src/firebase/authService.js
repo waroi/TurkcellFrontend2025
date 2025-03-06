@@ -9,7 +9,7 @@ export const createUser = async (email, password) => {
     console.log("User signed up:", user);
     return user;
   } catch (error) {
-    console.error("Signup error:", error.message);
+    console.error("Signup error:", error.message, error.message);
     throw error;
   }
 };
@@ -28,15 +28,15 @@ export const login = async (email, password) => {
 }
 
 
-const user = auth.currentUser;
+// const user = auth.currentUser;
 
-if (user) {
-  console.log("User:", user);
+// if (user) {
+//   console.log("User:", user);
 
-} else {
-  console.log("Kullanıcı yok:", user);
+// } else {
+//   console.log("Kullanıcı yok:", user);
 
-}
+// }
 
 
 

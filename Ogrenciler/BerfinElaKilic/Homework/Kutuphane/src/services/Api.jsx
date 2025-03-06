@@ -1,5 +1,23 @@
 const API_URL = "http://localhost:3000/books";
 
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+
+export const registerUser = async (email, password) => {
+  const auth = getAuth();
+  try {
+    const userCredential = await createUserWithEmailAndPassword(
+      auth,
+      email,
+      password
+    );
+    console.log("Kullanıcı kaydedildi:", userCredential.user);
+    return userCredential.user;
+  } catch (error) {
+    console.error("Hata:", error.message);
+    throw error; // Hata fırlat
+  }
+};
+
 export async function getBooks() {
   try {
     const response = await fetch(API_URL);
