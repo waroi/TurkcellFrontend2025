@@ -2,7 +2,7 @@ import { useContext, useState, useEffect } from "react";
 import { ThemeContext } from "../context/ThemeContext";
 import { NavLink, useNavigate } from "react-router";
 import { getCurrentUser, logOut } from "../controller/AuthController";
-import { readUser } from "../controller/DBController";
+import { readUser, checkIsHeAdmin } from "../controller/DBController";
 import { useSelector } from "react-redux";
 
 const NavbarView = ({ setEditingBookId }) => {
@@ -34,6 +34,8 @@ const NavbarView = ({ setEditingBookId }) => {
       console.log("Error in handleLogOut: ", error);
     }
   };
+
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light position-sticky top-0 z-2 shadow-sm py-3">
       <div className="container-fluid">
@@ -70,6 +72,9 @@ const NavbarView = ({ setEditingBookId }) => {
               <a className="nav-link text-white" href="#books">
                 Kitaplar
               </a>
+            </li>
+            <li className="nav-item">
+              <button onClick={async () => await handleAdmin()}></button>
             </li>
             {/* Kategoriler */}
             <li className="nav-item dropdown ">

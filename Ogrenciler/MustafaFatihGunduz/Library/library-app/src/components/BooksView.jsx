@@ -1,16 +1,21 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteBook, searchBook, sortingBook } from "../redux/slices/bookSlice";
+import { checkIsHeAdmin } from "../controller/DBController";
 import Modal from "./module/Modal";
 import { ThemeContext } from "../context/ThemeContext";
 
 const BooksView = ({ category }) => {
   const { books, keyword } = useSelector((state) => state.book);
   const dispatch = useDispatch();
-
   const handleDelete = (id) => dispatch(deleteBook(id));
-
+  const { theme } = useContext(ThemeContext);
   const [editingBookId, setEditingBookId] = useState(null);
+  const [admin,setAdmin] = useState("");
+  useEffect(()=> {
+    const fetchAdmin = async () => {await handleAdmin()}
+    return () => fetchAdmin()
+  },[],);
   const openEditModal = (id) => {
     setEditingBookId(id);
     const modal = new bootstrap.Modal(document.getElementById("bookEvent"));
@@ -24,26 +29,34 @@ const BooksView = ({ category }) => {
       year: "numeric",
     });
   };
-  //eger donen category varsa ona gore filter et. yoksa books don.
+
   const filteredBooks = category
     ? books.filter((book) => book.category === category)
     : books;
 
-  // filter edilen booksarda searche gore filter et
   const filteredItems = filteredBooks.filter((book) =>
     book.title.toLowerCase().includes((keyword || "").toLowerCase())
   );
 
-  const { theme } = useContext(ThemeContext);
-  console.log(theme);
+  const handleAdmin = async () => {
+    try {
+      const adminUser = await checkIsHeAdmin();
+      console.log(adminUser);
+      setAdmin(adminUser);
+      console.log(admin,"Null gelmem ben efendiyim");
+    } catch (error) {
+      console.log("IsAdmin Error",error)
+    }
+  }
+
   return (
     <>
-      <div
+    <div
         className={`${
           theme === "light" ? "bg-dark text-light" : "bg-white text-dark"
         }`}
       >
-        <div className="container">
+        {admin ? <div className="container">
           <div className="d-flex gap-5 justify-content-center py-4">
             <select
               onChange={(e) => dispatch(sortingBook(e.target.value))}
@@ -116,10 +129,16 @@ const BooksView = ({ category }) => {
               setEditingBookId={setEditingBookId}
             />
           </div>
-        </div>
+        </div> : <div className="sadece">
+          <h5>Sadece Adminler Görür</h5>
+        </div> }
       </div>
     </>
   );
 };
 
 export default BooksView;
+
+/**
+ * 
+ */
