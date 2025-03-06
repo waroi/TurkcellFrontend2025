@@ -1,8 +1,12 @@
 import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
-import auth from '../firebase/firebase'
+import { auth } from '../firebase/firebase'
+import { FireStore } from "./fireStore";
+import { useNavigate } from "react-router";
 
 export class Auth {
-  static signIn(email = 'email3336352352342345333333333@gmail.com', password = '12345678') {
+  static currentUser = null;
+
+  static signIn(email, password) {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
@@ -14,13 +18,12 @@ export class Auth {
       });
   }
 
-  static signUp(email = 'email3336352352342345333333333@gmail.com', password = '12345678') {
+  static signUp(email, password) {
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        // Signed up 
         const user = userCredential.user;
-        // console.log(user)
-        // ...
+        const { uid } = user
+        FireStore.addUser({ uid, email, password, publisherName: '', admin: false })
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -30,28 +33,29 @@ export class Auth {
   }
 
   static authOnStateChanged() {
-    onAuthStateChanged(auth, (user) => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
-        // https://firebase.google.com/docs/reference/js/auth.user
         const uid = user.uid;
-        console.log(uid)
-        // ...
+        console.log("Kullanıcı UID:", uid);
+        Auth.currentUser = user;
       } else {
-        // User is signed out
-        console.log('FUHASIDFJASOK')
-        // ...
+        console.log("Kullanıcı çıkış yaptı: FUHASIDFJASOK");
+        Auth.currentUser = null;
       }
     });
+    return unsubscribe;
+  }
+
+  static getCurrentUser() {
+    Auth.authOnStateChanged()
+    return Auth.currentUser;
   }
 
   static signout() {
     signOut(auth).then(() => {
-      // Sign-out successful.
+      console.log('Çıkış yapıldı')
     }).catch((error) => {
       // An error happened.
     });
   }
-
 }
-
-

@@ -10,7 +10,12 @@ const Footer = () => {
           <div className="col-md-12">
             <p className="mb-0 py-3 d-flex justify-content-center align-items-center">
               Copyright 2025 All rights reserved | This website is made with
-              <FontAwesomeIcon className="mx-1" icon={faHeart} size="1.9x" color="brown" />
+              <FontAwesomeIcon
+                className="mx-1"
+                icon={faHeart}
+                size="1.9x"
+                color="brown"
+              />
               by Mehmetcan, Ece and Hilal.
             </p>
           </div>

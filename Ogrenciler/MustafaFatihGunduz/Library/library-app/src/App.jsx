@@ -1,33 +1,10 @@
 import "./App.scss";
-import LoginScreen from "./Pages/LoginScreen";
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import Home from "./Pages/Home";
-import { Route } from "react-router";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyCbpY9awbFIBhcB45nn6vlZfiaDikV5u0o",
-  authDomain: "kitapdunyasi-4853e.firebaseapp.com",
-  projectId: "kitapdunyasi-4853e",
-  storageBucket: "kitapdunyasi-4853e.firebasestorage.app",
-  messagingSenderId: "778458505902",
-  appId: "1:778458505902:web:122e1c56a7aeb72a58833f",
-  measurementId: "G-W3K46KQGWB",
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+import Router from "./router/Router";
 
 function App() {
   return (
     <>
-      <Route />
+      <Router />
     </>
   );
 }

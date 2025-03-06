@@ -11,34 +11,53 @@ import Footer from "./components/Footer";
 export default function App() {
   const dispatch = useDispatch();
 
-  const books = useSelector((state) => state.library.books);
+  const { user, books } = useSelector((state) => state.library);
 
   return (
     <>
       <Navigation />
-      <Container className="d-flex justify-content-center mb-5">
-        <Button
-          className="text-white"
-          onClick={() => {
-            dispatch(
-              setModal({
-                show: true,
-                mode: "add",
-                action: (book) => dispatch(addBook(book)),
-              })
-            );
-          }}
-        >
-          <i className="fa-solid fa-plus"></i> Add Book
-        </Button>
-      </Container>
       <main className="mb-5">
-        <Container>
-          {books?.map((book) => (
-            <Card key={book.id} book={book} />
-          ))}
-        </Container>
+        {user ? (
+          <>
+            <Container className="d-flex justify-content-center mb-5">
+              <Button
+                className="text-white"
+                onClick={() => {
+                  dispatch(
+                    setModal({
+                      show: true,
+                      mode: "add",
+                      action: (book) => dispatch(addBook(book)),
+                    })
+                  );
+                }}
+              >
+                <i className="fa-solid fa-plus"></i> Add Book
+              </Button>
+            </Container>
+            <Container>
+              {books && books.length ? (
+                books.map((book) => <Card key={book.id} book={book} />)
+              ) : (
+                <center className="py-5 opacity-25">
+                  <i className="fa-solid fa-face-frown-open fs-1 mb-3"></i>
+                  <p className="fs-5 fw-bold">There are no books here.</p>
+                </center>
+              )}
+            </Container>
+          </>
+        ) : (
+          <Container>
+            <center className="py-5 opacity-25">
+              <i className="fa-solid fa-book fs-1 mb-3"></i>
+              <p className="fs-5 fw-bold">
+                Please register to access the library.
+              </p>
+            </center>
+          </Container>
+        )}
       </main>
+
       <Footer />
       <Modal />
     </>

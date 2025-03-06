@@ -1,133 +1,87 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { addBook, deleteBook } from "../redux/slice/booksSlice";
+import { fetchBooks, addBookToFirestore, deleteBookFromFirestore } from "../redux/slice/booksSlice";
 import BookCard from "../components/BookCard";
 
 const HomePage = () => {
     const dispatch = useDispatch();
-    const { books, filter } = useSelector((state) => state.books);
-    const [showForm, setShowForm] = useState(false); 
+    const { books, status } = useSelector((state) => state.books);
+    const [newBook, setNewBook] = useState({ title: "", author: "", posterUrl: "", description: "",releaseDate: "",category: "",yayınevi: "" });
 
-    const [newBook, setNewBook] = useState({
-        title: "",
-        author: "",
-        year: "",
-        posterUrl: "",
-        description: "",
-        category: ""
-    });
+    useEffect(() => {
+        dispatch(fetchBooks());
+    }, [dispatch]);
 
     const handleAddBook = () => {
-        if (!newBook.title || !newBook.author || !newBook.year || !newBook.posterUrl || !newBook.description || !newBook.category) {
-            alert("Lütfen tüm alanları doldurun!");
-            return;
-        }
-
-        const bookToAdd = {
-            ...newBook,
-            id: Date.now()
-        };
-
-        dispatch(addBook(bookToAdd));
-
-        setNewBook({
-            title: "",
-            author: "",
-            year: "",
-            posterUrl: "",
-            description: "",
-            category: ""
-        });
-
-        setShowForm(false); 
+        dispatch(addBookToFirestore({ ...newBook }));
+        setNewBook({ title: "", author: "", description: "",releaseDate: "",category: "", yayınevi: ""});
     };
-
-    const filteredBooks = books.filter((book) =>
-        book.title.toLowerCase().includes(filter.toLowerCase())
-    );
 
     return (
         <div className="container mt-4">
             <h2 className="mb-4">📚 Kitaplar</h2>
 
-            <button
-                className="btn btn-primary mb-3"
-                onClick={() => setShowForm(!showForm)}
-            >
-                {showForm ? "➖ Formu Kapat" : "➕ Yeni Kitap Ekle"}
-            </button>
+            <div className="mb-4 d-flex gap-2">
+                <input
+                    className="form-control"
+                    type="text"
+                    placeholder="Kitap Adı"
+                    value={newBook.title}
+                    onChange={(e) => setNewBook({ ...newBook, title: e.target.value })}
+                />
+                <input
+                    className="form-control"
+                    type="text"
+                    placeholder="Yazar"
+                    value={newBook.author}
+                    onChange={(e) => setNewBook({ ...newBook, author: e.target.value })}
+                />
+                <input
+                    className="form-control"
+                    type="text"
+                    placeholder="URL"
+                    value={newBook.posterUrl}
+                    onChange={(e) => setNewBook({ ...newBook, posterUrl: e.target.value })}
+                />
+                <input
+                    className="form-control"
+                    type="text"
+                    placeholder="Açıklama"
+                    value={newBook.description}
+                    onChange={(e) => setNewBook({ ...newBook, description: e.target.value })}
+                />
+                <input
+                    className="form-control"
+                    type="number"
+                    placeholder="Yıl"
+                    value={newBook.releaseDate}
+                    onChange={(e) => setNewBook({ ...newBook, releaseDate: e.target.value })}
+                />
+                <input
+                    className="form-control"
+                    type="text"
+                    placeholder="Kategori"
+                    value={newBook.category}
+                    onChange={(e) => setNewBook({ ...newBook, category: e.target.value })}
+                />
+                <input
+                    className="form-control"
+                    type="text"
+                    placeholder="Yayınevi"
+                    value={newBook.yayinevi}
+                    onChange={(e) => setNewBook({ ...newBook, yayinevi: e.target.value })}
+                />
+                <button className="btn btn-success" onClick={handleAddBook}>
+                    Kitap Ekle
+                </button>
+            </div>
 
-            {showForm && (
-                <div className="mb-4 p-4 rounded shadow-sm">
-                    <h4 className="mb-3">📚 Yeni Kitap Ekle</h4>
-                    <div className="row">
-                        <div className="col-md-6 mb-3">
-                            <input
-                                type="text"
-                                className="form-control"
-                                placeholder="Kitap Adı"
-                                value={newBook.title}
-                                onChange={(e) => setNewBook({ ...newBook, title: e.target.value })}
-                            />
-                        </div>
-                        <div className="col-md-6 mb-3">
-                            <input
-                                type="text"
-                                className="form-control"
-                                placeholder="Yazar"
-                                value={newBook.author}
-                                onChange={(e) => setNewBook({ ...newBook, author: e.target.value })}
-                            />
-                        </div>
-                        <div className="col-md-4 mb-3">
-                            <input
-                                type="number"
-                                className="form-control"
-                                placeholder="Yıl"
-                                value={newBook.year}
-                                onChange={(e) => setNewBook({ ...newBook, year: e.target.value })}
-                            />
-                        </div>
-                        <div className="col-md-8 mb-3">
-                            <input
-                                type="text"
-                                className="form-control"
-                                placeholder="Afiş URL"
-                                value={newBook.posterUrl}
-                                onChange={(e) => setNewBook({ ...newBook, posterUrl: e.target.value })}
-                            />
-                        </div>
-                        <div className="col-md-12 mb-3">
-                            <input
-                                type="text"
-                                className="form-control"
-                                placeholder="Açıklama"
-                                value={newBook.description}
-                                onChange={(e) => setNewBook({ ...newBook, description: e.target.value })}
-                            />
-                        </div>
-                        <div className="col-md-6 mb-3">
-                            <input
-                                type="text"
-                                className="form-control"
-                                placeholder="Kategori"
-                                value={newBook.category}
-                                onChange={(e) => setNewBook({ ...newBook, category: e.target.value })}
-                            />
-                        </div>
-                        <div className="col-md-6 mb-3 d-flex align-items-center">
-                            <button className="btn btn-success w-100" onClick={handleAddBook}>
-                                📖 Kitap Ekle
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            )}
+            {status === "loading" && <p>Kitaplar yükleniyor...</p>}
 
             <div className="row">
-                {filteredBooks.map((book) => (
+                {books.map((book) => (
                     <div className="col-md-4 mb-4" key={book.id}>
-                        <BookCard book={book} onDelete={() => dispatch(deleteBook(book.id))} />
+                        <BookCard book={book} onDelete={() => dispatch(deleteBookFromFirestore(book.id))} />
                     </div>
                 ))}
             </div>

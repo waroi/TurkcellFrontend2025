@@ -22,6 +22,7 @@ export const createWithEmailAndPassword = async (email,password,publishing) => {
                 uid: userCredential.user.uid,
                 email: userCredential.user.email,
                 publishing: publishing,
+                isAdmin:false
             }
             await saveUser(user);
             return user;

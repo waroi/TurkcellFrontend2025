@@ -2,6 +2,8 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { addBook } from "../redux/slices/bookSlice";
 import AddModal from "./AddModal";
+import { FaUser } from "react-icons/fa";
+import { NavLink } from "react-router";
 
 const NavBar = () => {
   const dispatch = useDispatch();
@@ -32,9 +34,10 @@ const NavBar = () => {
           >
             Yeni Kitap Ekle
           </button>
+          <NavLink to="/login"><FaUser/></NavLink>
         </div>
       </nav>
-      <AddModal/>
+      <AddModal />
     </>
   );
 };

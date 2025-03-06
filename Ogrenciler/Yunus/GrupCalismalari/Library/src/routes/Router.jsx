@@ -4,6 +4,9 @@ import HomeView from '../views/HomeView'
 import BookView from '../views/BookView'
 import PopularityView from '../views/PopularityView'
 import BooksView from '../views/BooksView'
+import RegisterView from '../views/RegisterView'
+import LoginView from '../views/LoginView'
+import Publisher from '../components/Publisher/Publisher'
 
 
 const Router = () => {
@@ -16,7 +19,10 @@ const Router = () => {
                 { path: ':bookId', element: <BookView /> }
             ]
         },
-        { path: '/popular-books', element: <PopularityView /> }
+        { path: '/popular-books', element: <PopularityView /> },
+        { path: '/login', element: <LoginView /> },
+        { path: '/register', element: <RegisterView /> },
+        { path: '/publisher', element: <Publisher /> }
     ])
 
     return routes
