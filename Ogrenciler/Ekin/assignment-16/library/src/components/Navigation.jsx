@@ -1,26 +1,22 @@
-import { Navbar, Container, Nav, NavDropdown, Image } from "react-bootstrap";
+import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
 
 export default function Navigation() {
   return (
-    <Navbar expand="lg" className="bg-primary mb-5" data-bs-theme="dark">
+    <Navbar expand="lg" className="bg-secondary mb-5" data-bs-theme="dark">
       <Container>
-        <Navbar.Brand href="#">Library</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
+        <Navbar.Brand href="/">
+          <h1 className="fs-3">Library</h1>
+        </Navbar.Brand>
+        <Navbar.Toggle />
+        <Navbar.Collapse>
+          <Nav className="ms-auto">
+            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/">About Us</Nav.Link>
+            <NavDropdown title="Services">
+              <NavDropdown.Item href="/">Registration</NavDropdown.Item>
+              <NavDropdown.Item href="/">Book Request</NavDropdown.Item>
             </NavDropdown>
+            <Nav.Link href="/">Contact</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import List from "@mui/material/List";
 import ListItemButton from "@mui/material/ListItemButton";
@@ -8,10 +9,27 @@ import Divider from "@mui/material/Divider";
 import { ThumbUp } from "@mui/icons-material";
 import AutoStoriesIcon from "@mui/icons-material/AutoStories";
 import { grey } from "@mui/material/colors";
+import { useSpotify } from "../Context/SpotifyContext";
+import api from "../api/api";
 
 
-function SideBar() {
-  const [selectedIndex, setSelectedIndex] = React.useState(1);
+
+function  SideBar() {
+  const [playList, setPlayList] = useState();
+  const [selectedIndex, setSelectedIndex] = useState(1);
+
+  const token = import.meta.env.VITE_SPOTIFY_TOKEN;
+
+  api(token, "https://api.spotify.com/v1/me/playlists", "GET").then((resp)=>{
+    console.log(resp.items[0])}
+    // setPlayList(resp)}
+    )
+
+  // useEffect(()=>{
+  //   response
+  //     console.log(resp)
+  //   })
+  // },[playList])
 
   const handleListItemClick = (event, index) => {
     setSelectedIndex(index);
@@ -40,7 +58,11 @@ function SideBar() {
           <ListItemText primary="Kitaplik" />
         </ListItemButton>
       </List>
+      <div>{null}</div>
+
+
     </Box>
+
     </Box>
 
   );

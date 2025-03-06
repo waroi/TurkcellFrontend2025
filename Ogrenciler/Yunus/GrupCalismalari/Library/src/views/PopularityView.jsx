@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react"
 import { BookService } from "../api/bookService"
-import { useNavigate } from "react-router"
 
 const PopularityView = () => {
     const [popularBooks, setPopularBooks] = useState([])
@@ -13,14 +12,12 @@ const PopularityView = () => {
 
     const getPopularBooks = () => getBooks(searchTerm)
 
-
-
     return (
         <>
             <div className="container">
                 <div className="row">
                     <div className="d-flex gap-3">
-                        <input type="text" className="form-control" defaultValue={searchTerm} onChange={(event) => setSearchTerm(event.target.value)} />
+                        <input type="text" className="form-control" placeholder="Kitap ara... Balıkçı" defaultValue={searchTerm} onChange={(event) => setSearchTerm(event.target.value)} />
                         <button onClick={getPopularBooks} className="btn btn-success">Ara</button>
                     </div>
                     {popularBooks.map((book) => (

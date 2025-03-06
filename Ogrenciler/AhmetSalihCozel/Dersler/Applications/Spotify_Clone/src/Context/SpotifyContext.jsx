@@ -1,9 +1,13 @@
+import api from "../api/api";
 import { createContext, useState, useContext, useEffect } from "react";
 
 const SpotifyContext = createContext();
 
 export const SpotifyProvider = ({ children }) => {
+  const [isPlayerReady, setIsPlayerReady] = useState(false);
   const [player, setPlayer] = useState(null);
+  const [playlistArr, setPlaylistArr] = useState([]);
+  const [userInfo, setUserInfo] = useState(null);
   const [playClick, setPlayClick] = useState(false);
   const [previousClick, setPreviousClick] = useState(false)
   const [nextClick, setNextClick] = useState(false)
@@ -11,66 +15,70 @@ export const SpotifyProvider = ({ children }) => {
   const tracknull = {
     name: "",
     album: {
-        images: [
-            { url: "" }
-        ]
+      images: [
+        { url: "" }
+      ]
     },
     artists: [
-        { name: "" }
+      { name: "" }
     ]
-}
+  }
+  const token = import.meta.env.VITE_SPOTIFY_TOKEN;
 
-const [track, setTrack] = useState(tracknull);
+  async  function fetchPlayLists(params) {
+    let playlists = [];
+    api(token, "https://api.spotify.com/v1/me/playlists", "GET")
+      // resp.items.forEach(
+
+      //   (item) => {
+      //     fetch(`https://api.spotify.com/v1/playlists/${item.id}`, {
+      //       method: "GET",
+      //       headers: {
+      //         "Authorization": `Bearer ${token}`,
+      //         "Content-Type": "application/json"
+      //       }
+      //     })
+      //     .then((resp) => {
+      //       // console.log(resp)
+      //        return resp.json()
+      //        })
+      //     .then((playlistObject) => {
+      //       // setPlaylistArr(playlistArr.push(playlistObject))
+      //       // console.log(playlistObject)
+      //       })
+      //       // return playlists
+      //   }
+      // )
+
+  }
 
 
-  // useEffect(() => {
-  //   if(player){
-  //     console.log(playClick)
-  //     player.togglePlay();
-  //     console.log(player)
-  //   }
-  // }, [playClick])
-
-  // useEffect(() => {
-  //   if(player){
-  //     console.log(previousClick)
-  //     player.previousTrack();
-  //     console.log(player)
-  //   }
-  // }, [previousClick])
-
-  // useEffect(() => {
-  //   if(player){
-  //     console.log(nextClick)
-  //     player.nextTrack();
-  //     console.log(player)
-  //   }
-  // }, [nextClick])
+  const [track, setTrack] = useState(tracknull);
 
   useEffect(() => {
     const script = document.createElement("script");
     script.src = "https://sdk.scdn.co/spotify-player.js";
     script.async = true;
     document.body.appendChild(script);
-  
+
     window.onSpotifyWebPlaybackSDKReady = async () => {
-      const token = import.meta.env.VITE_SPOTIFY_TOKEN;
-      const newPlayer = new Spotify.Player({
+      const newPlayer = await new Spotify.Player({
         name: "Web Playback SDK Player",
         getOAuthToken: (cb) => cb(token),
         volume: 0.5,
       });
-  
+
+      await getUserObject(token, setUserInfo);
+
       newPlayer.addListener("ready", async ({ device_id }) => {
         console.log("Ready with Device ID", device_id);
         await setDeviceForPlayback(device_id);
-        setPlayer(newPlayer); // **Player gerçekten hazır olduktan sonra set ediyoruz**
       });
-  
+
       newPlayer.addListener("not_ready", ({ device_id }) => {
         console.log("Device has gone offline", device_id);
       });
-  
+
       newPlayer.addListener("player_state_changed", ({
         position,
         duration,
@@ -81,24 +89,24 @@ const [track, setTrack] = useState(tracknull);
         console.log("Position in Song", position);
         console.log("Duration of Song", duration);
       });
-  
+
       const success = await newPlayer.connect();
       if (success) {
         console.log("The Web Playback SDK successfully connected to Spotify!");
+        setIsPlayerReady(true);
+        setPlayer(newPlayer);
       }
+
     };
   }, []);
-  
+
 
 
 
 
   const values = {
     track, setTrack,
-    // playClick, setPlayClick,
-    // previousClick, setPreviousClick,
-    // nextClick, setNextClick,
-     player,
+    player, isPlayerReady, fetchPlayLists,
   };
 
 
@@ -109,7 +117,19 @@ const [track, setTrack] = useState(tracknull);
 export const useSpotify = () => useContext(SpotifyContext);
 
 
+async function getUserObject(token, setUserInfo) {
+  const userObject = await fetch("https://api.spotify.com/v1/me", {
+    method: "GET",
+    headers: {
+      "Authorization": `Bearer ${token}`,
+      "Content-Type": "application/json"
+    }
+  });
 
+  const userData = await userObject.json();
+  console.log(userData)
+  setUserInfo(userData)
+}
 
 
 async function setDeviceForPlayback(deviceId) {
@@ -131,8 +151,4 @@ async function setDeviceForPlayback(deviceId) {
   } else {
     console.log('Successfully set device for playback');
   }
-}
-
-function playSongFetch() {
-  fetch()
 }

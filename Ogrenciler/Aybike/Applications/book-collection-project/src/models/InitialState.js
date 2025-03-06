@@ -7,7 +7,7 @@ const InitialState = {
         author: "Ursula K. Le Guin",
         description: "A novel set in the Roaring Twenties, exploring themes of wealth and the American Dream.",
         posterUrl: "https://img.kitapyurdu.com/v1/getImage/fn:11944068/wh:true/miw:200/mih:200",
-        publishedYear: "1925",
+        publishedYear: "1925-12-12",
         isFavourite: true
       },
       {
