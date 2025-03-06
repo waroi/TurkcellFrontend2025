@@ -2,35 +2,38 @@ import { createUser } from "../firebase/authService";
 import { useState } from "react";
 import { db } from "../firebase/firebaseConfig";
 import { collection, doc, setDoc } from "firebase/firestore";
-import { useNavigate } from "react-router";
 
 const SignUp = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [ad, setAd] = useState("");
     const [soyad, setSoyad] = useState("");
-    const navigate = useNavigate();
 
     const onSubmit = async (e) => {
         e.preventDefault();
         try {
-            const userCredential = await createUser(email, password);
-            const user = userCredential.user;
-ü
-            await setDoc(doc(db, "users"), {
-                ad,
-                soyad,
-                email,
-                role: "admin", 
-                createdAt: new Date(),
-            });
-
-            console.log("Kullanıcı başarıyla kaydedildi!");
-            navigate("/login");
+          const user = await createUser(email, password);
+          if (!user) {
+            throw new Error("Kullanıcı oluşturulamadı!");
+          }
+          
+          console.log("Yeni Kullanıcı UID:", user.uid);
+      
+          // Firestore'da kullanıcı belgesini oluştur
+          const userRef = doc(db, "users", user.uid);
+          await setDoc(userRef, {
+            ad,
+            soyad,
+            email,
+            role: "admin",
+            createdAt: new Date(),
+          });
+      
+          console.log("Kullanıcı Firestore'a kaydedildi!");
         } catch (error) {
-            console.error("Kayıt işlemi başarısız:", error.message);
+          console.error("Kayıt işlemi başarısız:", error.code, error.message);
         }
-    };
+      };
 
     return (
         <>
