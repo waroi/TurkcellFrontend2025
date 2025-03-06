@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Headland+One&display=swap");
 body {
   font-family: "Headland One", serif;
-  background-color: #f7f8f6;
+  background-color: #f5f5dc;
   min-height: 100vh;
 }
 #root {
@@ -9,7 +9,8 @@ body {
 }
 .navbr,
 .dropdown-menu {
-  background-color: #e9f5d5;
+  background-color: #cbb799;
+  box-shadow: 0px 0px 7px 3px #432818;
 }
 .bg-pink {
   background-color: #ff9aa2;
@@ -21,4 +22,11 @@ body {
   background: transparent;
   border: 2px solid #b297da;
   color: #b297da;
+}
+.bg-brown {
+  background-color: #432818cc;
+}
+.loginscreen {
+  background: url(../public/hogwarts-lib.png) no-repeat center;
+  background-size: cover;
 }
