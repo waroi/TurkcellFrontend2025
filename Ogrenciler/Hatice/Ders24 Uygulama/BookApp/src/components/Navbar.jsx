@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import Button from "./Button";
-import { sortBooks, filterBooks } from "../redux/slice/booksSlice";
+// // import { sortBooks, filterBooks } from "../redux/slice/booksSlice";
 import { useNavigate } from "react-router";
 
 const Navbar = () => {
@@ -16,7 +16,7 @@ const Navbar = () => {
     return (
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
             <div className="container-fluid">
-                <a className="navbar-brand" href="#">Library</a>
+                <Link className="navbar-brand" to="/">Library</Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -45,10 +45,10 @@ const Navbar = () => {
                             value={filter}
                             onChange={(e) => dispatch(filterBooks(e.target.value))}
                         />
-
                         <button className="btn btn-outline-success" type="button" onClick={consthandleSignupClick}>Kaydol</button>
-                        <button className="btn btn-outline-success" type="button" onClick={consthandleLoginClick}>Giriş Yap</button>
+                        <button className="btn btn-outline-success ms-2 " type="button" onClick={consthandleLoginClick}>Giriş Yap</button>
                     </form>
+                    
                 </div>
             </div>
         </nav>
