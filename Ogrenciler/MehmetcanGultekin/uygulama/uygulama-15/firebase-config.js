@@ -7,7 +7,7 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  apiKey: "AIzaSyBMaP86S-qVKfv8IJ-OZbHe8K6H4RvoQf8",
   authDomain: "bookstore-f209d.firebaseapp.com",
   projectId: "bookstore-f209d",
   storageBucket: "bookstore-f209d.firebasestorage.app",
@@ -19,3 +19,4 @@ const app = initializeApp(firebaseConfig);
 // Initialize Firebase
 // Initialize Firebase Authentication and get a reference to the service
 const auth = getAuth(app);
+export {auth};
