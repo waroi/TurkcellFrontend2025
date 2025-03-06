@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { use, useState } from "react";
 import "../components/BookCard.css";
 import "../App.css";
 import { useSelector, useDispatch } from "react-redux";
 import { deleteBook } from "../redux/slices/bookSlice";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { auth, db } from "../../firebase-config";
+import { collection, doc, getDocs } from "firebase/firestore";
 import {
   faTrash,
   faPenToSquare,
@@ -12,7 +14,33 @@ import {
 
 const BookCard = ({ handleOpen, handleOpenDetail }) => {
   const [isFlippedCards, setFlippedCards] = useState(false);
+  const [yayin, setYayin] = useState(null);
   const BooksFromStore = useSelector((state) => state.book.books);
+  let filteredBooks = [];
+
+  const userRef = collection(db, "admins");
+
+  const getUserInfo = async () => {
+    try {
+      const userSnap = await getDocs(userRef);
+
+      if (!userSnap.empty && auth.currentUser) {
+        userSnap.forEach((doc) => {
+          const userID = doc.data().adminID;
+          if (userID === auth.currentUser.uid) {
+            console.log("Kullanıcı eşleşti, yayin alanı:", doc.data().yayin);
+            setYayin(doc.data().yayin);
+          }
+        });
+      } else {
+        console.log("Belge bulunamadı veya kullanıcı giriş yapmamış!");
+      }
+    } catch (error) {
+      console.error("Belge alınırken hata oluştu:", error);
+    }
+  };
+  getUserInfo();
+
   const handleFlip = (bookId) => {
     setFlippedCards((prev) => ({
       ...prev,
@@ -21,18 +49,27 @@ const BookCard = ({ handleOpen, handleOpenDetail }) => {
   };
   const dispatch = useDispatch();
   const handleDelete = (id) => {
-    
-    const isConfirmed = window.confirm("Bu kitabı silmek istediğinize emin misiniz?");
-  if (isConfirmed) {
-    dispatch(deleteBook(id));
-  }}
-
+    const isConfirmed = window.confirm(
+      "Bu kitabı silmek istediğinize emin misiniz?"
+    );
+    if (isConfirmed) {
+      dispatch(deleteBook(id));
+    }
+  };
+  if (auth.currentUser.yayin === "all") {
+    filteredBooks = BooksFromStore;
+  } else {
+    filteredBooks = BooksFromStore.filter((book) => book.yayin === yayin);
+  }
   return (
     <div className="bookcard">
       <div className="container py-4">
         <div className="row w-100">
-          {BooksFromStore?.map( (book) => (
-            <div className="col container col-xl-3 col-lg-4 col-md-6 col-12 " key={book.id}>
+          {filteredBooks?.map((book) => (
+            <div
+              className="col container col-xl-3 col-lg-4 col-md-6 col-12 "
+              key={book.id}
+            >
               <div
                 className={`flip-card mb-3 ${
                   isFlippedCards[book.id] ? "flipped" : ""
@@ -64,12 +101,12 @@ const BookCard = ({ handleOpen, handleOpenDetail }) => {
                       <h4 className="mb-3">{book.title}</h4>
                       <p className="mb-3">{book.author}</p>
                       <p className="mb-3">{book.description_short}</p>
+                      <p className="mb-3">{book?.yayin}</p>
 
                       <div className="btns d-flex align-items-endbtns d-flex justify-content-center pt-5 mt-5">
                         <button
                           onClick={() => handleDelete(book.id)}
                           className="btn outlined-green rounded-circle me-2"
-                         
                         >
                           <FontAwesomeIcon icon={faTrash} />
                         </button>

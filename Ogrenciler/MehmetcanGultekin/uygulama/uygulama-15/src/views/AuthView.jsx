@@ -4,7 +4,6 @@ import Form from "react-bootstrap/Form";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  fetchSignInMethodsForEmail,
 } from "firebase/auth";
 import { auth } from "../../firebase-config";
 import { useNavigate } from "react-router";
@@ -39,20 +38,14 @@ const AuthView = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      handleSignUp();
+      await handleSignUp();
       console.log("✅ Kayıt başarılı!");
-      setEmail("");
-      setPassword("");
-      navigate("/app");
     } catch (signupError) {
       console.error("❌ Kayıt başarısız:", signupError.message);
-      if ((signupError.message = "auth/email-already-in-use")) {
+      if (signupError.code === "auth/email-already-in-use") {
         console.log("📌 Giriş deneniyor:", email);
-        handleSignIn();
+        await handleSignIn();
         console.log("✅ Giriş başarılı!");
-        setEmail("");
-        setPassword("");
-        navigate("/app");
       }
     }
   };
