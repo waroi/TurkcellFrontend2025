@@ -4,6 +4,7 @@ import { setBooks, deleteBook } from "../../redux/slices/bookSlice";
 import AddBook from "../AddBook/AddBook";
 import FilteredBookList from "../FilteredBook";
 import "./BookList.css";
+import SignIn from "../SignIn";
 
 const BookList = () => {
   const dispatch = useDispatch();
@@ -49,6 +50,7 @@ const BookList = () => {
         </div>
         <hr />
         <h2 className="text-center">Kitap Listesi</h2>
+        <SignIn />
         <hr />
         <FilteredBookList
           filteredBooks={filteredBooks}
