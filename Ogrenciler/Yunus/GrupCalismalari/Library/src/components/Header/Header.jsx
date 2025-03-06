@@ -1,7 +1,27 @@
-import React from 'react'
-import { NavLink } from 'react-router'
+import { onAuthStateChanged } from 'firebase/auth';
+import { use, useEffect, useState } from 'react';
+import { Navigate, NavLink, useNavigate } from 'react-router'
+import { auth } from '../../firebase/firebase';
+import { Auth } from '../../api/auth';
 
 const Header = () => {
+    const [login, setLogin] = useState(false)
+    const navigate = useNavigate()
+    useEffect(() => {
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                setLogin(true)
+                return navigate('/')
+            }
+        });
+    }, [])
+
+    const signOut = () => {
+        Auth.signout()
+        setLogin(false)
+        navigate('/login')
+    }
+
     return (
         <>
             <nav className="navbar py-3 navbar-expand-lg bg-body-tertiary">
@@ -21,6 +41,21 @@ const Header = () => {
                             <li className="nav-item">
                                 <NavLink className="nav-link active" to="/popular-books">Kitap Ara</NavLink>
                             </li>
+                            <li className="nav-item">
+                                <NavLink className="nav-link active" to="/publisher">Yayınevi Sayfası</NavLink>
+                            </li>
+                            {!login ?
+                                <>
+                                    <li className="nav-item">
+                                        <NavLink className="nav-link active" to="/login">Giriş yap</NavLink>
+                                    </li>
+                                    <li className="nav-item">
+                                        <NavLink className="nav-link active" to="/register">Kayıt ol</NavLink>
+                                    </li>
+                                </> : <li className="nav-item">
+                                    <a className="nav-link active" href="#" onClick={signOut}>ÇIKIŞ YAP BROOOOO</a>
+                                </li>
+                            }
                         </ul>
                     </div>
                 </div>

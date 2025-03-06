@@ -7,3 +7,8 @@ export const newBookInitialState = {
     publishedYear: "",
     genre: ""
 }
+
+export const userInitialState = {
+    email: '',
+    password: ''
+}

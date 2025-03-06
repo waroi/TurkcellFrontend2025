@@ -8,8 +8,12 @@ export const librarySlice = createSlice({
     initialState,
     reducers: {
         addBook: (state, action) => {
+
             state.books = [...state.books, action.payload]
-            Storage.addBooks(state.books)
+
+            console.log(action.payload)
+            // Storage.addBooks(state.books)
+
         },
 
         removeBook: (state, action) => {
