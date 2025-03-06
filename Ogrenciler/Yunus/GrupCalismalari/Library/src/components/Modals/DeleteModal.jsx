@@ -12,7 +12,6 @@ const DeleteModal = ({ book }) => {
         navigate('/')
     }
 
-    console.log(book)
     return (
         <>
             <div className="modal fade" id="deleteModal" tabIndex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">

@@ -6,7 +6,7 @@ import BookCard from "../components/BookCard";
 const HomePage = () => {
     const dispatch = useDispatch();
     const { books, status } = useSelector((state) => state.books);
-    const [newBook, setNewBook] = useState({ title: "", author: "", posterUrl: "", description: "",releaseDate: "",category: "" });
+    const [newBook, setNewBook] = useState({ title: "", author: "", posterUrl: "", description: "",releaseDate: "",category: "",yayınevi: "" });
 
     useEffect(() => {
         dispatch(fetchBooks());
@@ -14,7 +14,7 @@ const HomePage = () => {
 
     const handleAddBook = () => {
         dispatch(addBookToFirestore({ ...newBook }));
-        setNewBook({ title: "", author: "", description: "",releaseDate: "",category: ""});
+        setNewBook({ title: "", author: "", description: "",releaseDate: "",category: "", yayınevi: ""});
     };
 
     return (
@@ -63,6 +63,13 @@ const HomePage = () => {
                     placeholder="Kategori"
                     value={newBook.category}
                     onChange={(e) => setNewBook({ ...newBook, category: e.target.value })}
+                />
+                <input
+                    className="form-control"
+                    type="text"
+                    placeholder="Yayınevi"
+                    value={newBook.yayinevi}
+                    onChange={(e) => setNewBook({ ...newBook, yayinevi: e.target.value })}
                 />
                 <button className="btn btn-success" onClick={handleAddBook}>
                     Kitap Ekle

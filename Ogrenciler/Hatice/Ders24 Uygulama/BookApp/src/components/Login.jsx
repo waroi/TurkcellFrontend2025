@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router";
 import { login } from "../firebase/authService"
 import { useState } from 'react';
 
@@ -7,11 +8,13 @@ const Login = () => {
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const navigate = useNavigate();
 
 
     const onSubmit = async (e) => {
         e.preventDefault()
         await login(email, password)
+        navigate("/")
     }
 
     return (
