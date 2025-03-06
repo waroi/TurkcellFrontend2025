@@ -8,6 +8,8 @@ import Card from "./components/Card";
 import Modal from "./components/Modal";
 import Footer from "./components/Footer";
 
+import "./firebase/firestore";
+
 export default function App() {
   const dispatch = useDispatch();
 
