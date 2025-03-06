@@ -2,7 +2,7 @@ import { registerUser , SignIn} from "../services/Api";
 import { useState } from "react";
 import {NavLink} from 'react-router'
 
-const Login = () => {
+const Register = () => {
   const [user, setUser] = useState({ mail: "", password: "" });
 
   return (
@@ -14,7 +14,7 @@ const Login = () => {
         <input
           value={user.mail}
           onChange={(e) => setUser({ ...user, mail: e.target.value })}
-          type="text"
+          type="email"
           className="form-control"
           placeholder="Username"
           aria-label="Username"
@@ -37,12 +37,12 @@ const Login = () => {
         </span>
       </div>
 
-      <button onClick={() => SignIn(user.mail, user.password)}>
+      <button onClick={() => registerUser(user.mail, user.password)}>
         Ekle
       </button>
-      <NavLink to="/register">Create Account</NavLink>
+      <NavLink to="/login">Log In</NavLink>
     </>
   );
 };
 
-export default Login;
+export default Register;
