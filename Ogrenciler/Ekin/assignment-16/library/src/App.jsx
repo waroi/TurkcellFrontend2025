@@ -39,18 +39,20 @@ export default function App() {
               {books && books.length ? (
                 books.map((book) => <Card key={book.id} book={book} />)
               ) : (
-                <center className="py-5 opacity-50">
+                <center className="py-5 opacity-25">
                   <i className="fa-solid fa-face-frown-open fs-1 mb-3"></i>
-                  <p className="fs-5">There are no books here.</p>
+                  <p className="fs-5 fw-bold">There are no books here.</p>
                 </center>
               )}
             </Container>
           </>
         ) : (
           <Container>
-            <center className="py-5 opacity-50">
+            <center className="py-5 opacity-25">
               <i className="fa-solid fa-book fs-1 mb-3"></i>
-              <p className="fs-5">Please register to access the library.</p>
+              <p className="fs-5 fw-bold">
+                Please register to access the library.
+              </p>
             </center>
           </Container>
         )}
