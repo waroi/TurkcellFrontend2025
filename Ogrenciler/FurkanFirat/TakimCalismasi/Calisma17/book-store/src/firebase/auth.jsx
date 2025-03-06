@@ -1,28 +1,27 @@
-import { auth } from "./firebase.config";
+import { auth } from './firebase.config';
 import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
-} from "firebase/auth";
+  sendPasswordResetEmail,
+  updatePassword,
+} from 'firebase/auth';
 
-createUserWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-    // Signed up
-    const user = userCredential.user;
-    // ...
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    // ..
-  });
+export const doCreateUserWithEmailAndPassword = async (email, password) => {
+  return createUserWithEmailAndPassword(auth, email, password);
+};
 
-signInWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-    // Signed in
-    const user = userCredential.user;
-    // ...
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-  });
+export const doSignInWithEmailAndPassword = async (email, password) => {
+  return signInWithEmailAndPassword(auth, email, password);
+};
+
+export const doSignOut = () => {
+  return auth.signOut();
+};
+
+export const doPasswordReset = (email) => {
+  return sendPasswordResetEmail(auth, email);
+};
+
+export const doPasswordChange = (password) => {
+  return updatePassword(auth.currentUser, password);
+};

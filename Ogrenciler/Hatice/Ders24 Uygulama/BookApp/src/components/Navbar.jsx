@@ -44,6 +44,8 @@ const Navbar = () => {
                         />
                         <button className="btn btn-outline-success" type="button" onClick={() => navigate("/signup")}>Kaydol</button>
                         <button className="btn btn-outline-success ms-2" type="button" onClick={() => navigate("/login")}>Giriş Yap</button>
+
+                        <p> { }</p>
                     </form>
                 </div>
             </div>
