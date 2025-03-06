@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { doSignInWithEmailAndPassword } from '../firebase/auth';
+import { doCreateUserWithEmailAndPassword } from '../firebase/auth';
 import { useAuth } from '../context/authContext';
 import { Navigate } from 'react-router';
 
-const LoginView = () => {
+const RegisterView = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isLogginIng, setIsLoggingIn] = useState(false);
@@ -15,15 +15,15 @@ const LoginView = () => {
     e.preventDefault();
     if (!isLogginIng) {
       setIsLoggingIn(true);
-      await doSignInWithEmailAndPassword(email, password);
+      await doCreateUserWithEmailAndPassword(email, password);
     }
   };
 
   return (
     <>
-      {isLoggedIn && <Navigate to='/' replace={true} />}
+      {isLoggedIn && <Navigate to='/login' replace={true} />}
       <div>
-        LOGIN
+        REGISTER
         <form onSubmit={handleSubmit}>
           <input
             type='email'
@@ -37,11 +37,11 @@ const LoginView = () => {
             onChange={(e) => setPassword(e.target.value)}
             placeholder='Password'
           />
-          <button type='submit'>Login</button>
+          <button type='submit'>Register</button>
         </form>
       </div>
     </>
   );
 };
 
-export default LoginView;
+export default RegisterView;
