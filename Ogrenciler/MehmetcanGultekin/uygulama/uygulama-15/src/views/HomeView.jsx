@@ -49,7 +49,7 @@ function HomeView() {
   };
 
   return (
-    <>
+    <div className="d-flex flex-column justify-content-between min-vh-100">
       <Navbar />
       <UpdateModal
         isOpen={openUpdateModal}
@@ -64,7 +64,7 @@ function HomeView() {
       />
 
       <Footer />
-    </>
+    </div>
   );
 }
 

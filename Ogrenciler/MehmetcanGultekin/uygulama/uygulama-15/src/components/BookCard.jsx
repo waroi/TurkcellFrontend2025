@@ -1,4 +1,4 @@
-import React, { use, useState } from "react";
+import React, { use, useEffect, useState } from "react";
 import "../components/BookCard.css";
 import "../App.css";
 import { useSelector, useDispatch } from "react-redux";
@@ -16,9 +16,22 @@ const BookCard = ({ handleOpen, handleOpenDetail }) => {
   const [isFlippedCards, setFlippedCards] = useState(false);
   const [yayin, setYayin] = useState(null);
   const BooksFromStore = useSelector((state) => state.book.books);
-  let filteredBooks = [];
-
+  const dispatch = useDispatch();
+  const [filteredBooks, setFilteredBooks] = useState([]);
   const userRef = collection(db, "admins");
+
+  useEffect(() => {
+    getUserInfo();
+    setFilteredBooks(BooksFromStore);
+  }, []);
+
+  useEffect(() => {
+    console.log("data", yayin);
+    if (yayin !== "all") {
+      const filtered = BooksFromStore.filter((book) => book.yayin === yayin);
+      setFilteredBooks(filtered);
+    }
+  }, [yayin]);
 
   const getUserInfo = async () => {
     try {
@@ -39,7 +52,6 @@ const BookCard = ({ handleOpen, handleOpenDetail }) => {
       console.error("Belge alınırken hata oluştu:", error);
     }
   };
-  getUserInfo();
 
   const handleFlip = (bookId) => {
     setFlippedCards((prev) => ({
@@ -47,7 +59,7 @@ const BookCard = ({ handleOpen, handleOpenDetail }) => {
       [bookId]: !prev[bookId],
     }));
   };
-  const dispatch = useDispatch();
+
   const handleDelete = (id) => {
     const isConfirmed = window.confirm(
       "Bu kitabı silmek istediğinize emin misiniz?"
@@ -56,79 +68,81 @@ const BookCard = ({ handleOpen, handleOpenDetail }) => {
       dispatch(deleteBook(id));
     }
   };
-  if (auth.currentUser.yayin === "all") {
-    filteredBooks = BooksFromStore;
-  } else {
-    filteredBooks = BooksFromStore.filter((book) => book.yayin === yayin);
-  }
+
   return (
     <div className="bookcard">
       <div className="container py-4">
         <div className="row w-100">
-          {filteredBooks?.map((book) => (
-            <div
-              className="col container col-xl-3 col-lg-4 col-md-6 col-12 "
-              key={book.id}
-            >
+          {filteredBooks.length > 0 ? (
+            filteredBooks?.map((book) => (
               <div
-                className={`flip-card mb-3 ${
-                  isFlippedCards[book.id] ? "flipped" : ""
-                }`}
+                className="col container col-xl-3 col-lg-4 col-md-6 col-12 "
+                key={book.id}
               >
                 <div
-                  onClick={() => handleFlip(book.id)}
-                  className="flip-card-inner"
+                  className={`flip-card mb-3 ${
+                    isFlippedCards[book.id] ? "flipped" : ""
+                  }`}
                 >
-                  <div className="flip-card-front">
-                    <div className="card-content overflow-hidden">
-                      <img
-                        className=" img-fluid object-fit-cover book-img"
-                        src={book.img_url}
-                        alt={book.title}
-                      />
+                  <div
+                    onClick={() => handleFlip(book.id)}
+                    className="flip-card-inner"
+                  >
+                    <div className="flip-card-front">
+                      <div className="card-content overflow-hidden">
+                        <img
+                          className=" img-fluid object-fit-cover book-img"
+                          src={book.img_url}
+                          alt={book.title}
+                        />
+                      </div>
                     </div>
-                  </div>
-                  <div className="flip-card-back">
-                    <div className="card-content p-4">
-                      <p className="d-flex justify-content-between mb-5">
-                        <span className="badge px-3 py-2 rounded-pill fs-6 text-bg-orange">
-                          {book.category}
-                        </span>
-                        <span className="badge px-3 py-2 rounded-pill fs-6 text-bg-orange">
-                          {book.created_at.slice(0, 4)}
-                        </span>
-                      </p>
-                      <h4 className="mb-3">{book.title}</h4>
-                      <p className="mb-3">{book.author}</p>
-                      <p className="mb-3">{book.description_short}</p>
-                      <p className="mb-3">{book?.yayin}</p>
+                    <div className="flip-card-back">
+                      <div className="card-content p-4">
+                        <p className="d-flex justify-content-between mb-5">
+                          <span className="badge px-3 py-2 rounded-pill fs-6 text-bg-orange">
+                            {book?.category}
+                          </span>
+                          <span className="badge px-3 py-2 rounded-pill fs-6 text-bg-orange">
+                            {book?.created_at.slice(0, 4)}
+                          </span>
+                        </p>
+                        <h4 className="mb-3">{book.title}</h4>
+                        <p className="mb-3">{book.author}</p>
+                        <p className="mb-3">{book.description_short}</p>
+                        <p className="mb-3">{book?.yayin}</p>
 
-                      <div className="btns d-flex align-items-endbtns d-flex justify-content-center pt-5 mt-5">
-                        <button
-                          onClick={() => handleDelete(book.id)}
-                          className="btn outlined-green rounded-circle me-2"
-                        >
-                          <FontAwesomeIcon icon={faTrash} />
-                        </button>
-                        <button
-                          onClick={() => handleOpen(book)}
-                          className="btn outlined-green rounded-circle me-2"
-                        >
-                          <FontAwesomeIcon icon={faPenToSquare} />
-                        </button>
-                        <button
-                          onClick={() => handleOpenDetail(book)}
-                          className="btn outlined-green rounded-circle"
-                        >
-                          <FontAwesomeIcon icon={faEye} />
-                        </button>
+                        <div className="btns d-flex align-items-endbtns d-flex justify-content-center pt-5 mt-5">
+                          <button
+                            onClick={() => handleDelete(book.id)}
+                            className="btn outlined-green rounded-circle me-2"
+                          >
+                            <FontAwesomeIcon icon={faTrash} />
+                          </button>
+                          <button
+                            onClick={() => handleOpen(book)}
+                            className="btn outlined-green rounded-circle me-2"
+                          >
+                            <FontAwesomeIcon icon={faPenToSquare} />
+                          </button>
+                          <button
+                            onClick={() => handleOpenDetail(book)}
+                            className="btn outlined-green rounded-circle"
+                          >
+                            <FontAwesomeIcon icon={faEye} />
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
+            ))
+          ) : (
+            <div className="text-center">
+              Yayınevinize ait hiçbir kitap bulunamadı.
             </div>
-          ))}
+          )}
         </div>
       </div>
     </div>
