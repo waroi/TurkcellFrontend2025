@@ -1,13 +1,24 @@
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { doc, getDoc, setDoc } from "firebase/firestore";
 import { auth, db } from "./firebase";
+import { getUserBooks } from "../firebase/dbController";
 
 // Google ile giriş yapma fonksiyonu
-export const signInWithGoogle = async () => {
+export const signInWithGoogle = async (publisherId) => {
   try {
     const provider = new GoogleAuthProvider();
     const result = await signInWithPopup(auth, provider);
     const user = result.user;
+    const userRef = doc(db, "users", user.uid);
+    const userSnap = await getDoc(userRef);
+    if (!userSnap.exists()) {
+      await setDoc(userRef, {
+        name: user.displayName,
+        email: user.email,
+        role: "editor", // Varsayılan rol
+        publisherId: publisherId, // Kullanıcının seçtiği kategori
+      });
+    }
     console.log("User:", user); // Kullanıcı bilgilerini logluyoruz
     return user; // Kullanıcıyı geri döndürüyoruz
   } catch (error) {
@@ -15,7 +26,6 @@ export const signInWithGoogle = async () => {
     return null; // Eğer hata oluşursa null döndürüyoruz
   }
 };
-
 async function getUserRole() {
   const user = auth.currentUser;
   if (user) {
@@ -34,25 +44,27 @@ async function getUserRole() {
     return null;
   }
 }
-
-// Google ile giriş yaptıktan sonra rolü kontrol etme
-export const handleSignInAndGetRole = async () => {
-  const user = await signInWithGoogle(); // Google ile giriş yapıyoruz
-  if (user) {
-    const userData = await getUserRole(user); // Kullanıcı rolünü alıyoruz
-    console.log("user", userData);
-    if (userData) {
-      if (userData.role === "admin") {
-        console.log("Admin yetkisi var, tüm kategorilere erişebilir.");
-      } else {
-        console.log(
-          `Editor yetkisi var, sadece ${userData.category} kategorisini yönetebilir.`
-        );
+export const handleSignInAndGetRole = async (publisherId) => {
+  if (publisherId == "") {
+    alert("Lütfen yayınevi id giriniz.");
+  } else {
+    const user = await signInWithGoogle(publisherId);
+    if (user) {
+      getUserBooks(publisherId);
+      const userData = await getUserRole(user);
+      console.log("user", userData);
+      if (userData) {
+        if (userData.role === "admin") {
+          console.log("Admin yetkisi var, tüm kategorilere erişebilir.");
+        } else {
+          console.log(
+            `Editor yetkisi var, sadece ${userData.publisherId} kategorisini yönetebilir.`
+          );
+        }
       }
     }
   }
 };
-
 export const signOut = async () => {
   return auth.signOut();
 };
