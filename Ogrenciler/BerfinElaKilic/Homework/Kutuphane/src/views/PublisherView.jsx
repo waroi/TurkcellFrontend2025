@@ -30,6 +30,7 @@ const PublisherView = () => {
     <>
     <NavBar isAdmin={true}/>
     <div className="container">
+      <h2 className="text-center fw-bold mb-3 p-3">{user.publisher}</h2>
       <div className="row g-3">
         {books?.map((book) => (
           <BookCard key={self.crypto.randomUUID()} book={book} isAdmin={true} />
