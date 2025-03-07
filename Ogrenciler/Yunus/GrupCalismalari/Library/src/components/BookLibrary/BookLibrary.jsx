@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Outlet, useNavigate } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { addBook } from './../../redux/slice/librarySlice'
 import { newBookInitialState } from '../../utils/variables';
 import Categories from '../Categories/Categories';
+import { FireStore } from '../../api/fireStore';
 
 
 const BookLibrary = () => {
@@ -78,9 +79,11 @@ const BookLibrary = () => {
                     </div>
                 </div>
             </div>
+
             <Categories books={books} selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
+
             <div className="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
-                {filteredBooks.map((book) => (
+                {filteredBooks && filteredBooks.map((book) => (
                     <div className="col-lg-3" key={book.id}>
                         <div className="card h-100 book-card" onClick={() => {
                             navigate(`/books/${book.id}`)

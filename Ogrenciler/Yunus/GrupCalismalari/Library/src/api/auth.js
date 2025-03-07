@@ -15,6 +15,7 @@ export class Auth {
       .catch((error) => {
         const errorCode = error.code
         const errorMessage = error.message
+        // ekrana hata basılabilir
       });
   }
 
@@ -28,7 +29,7 @@ export class Auth {
       .catch((error) => {
         const errorCode = error.code
         const errorMessage = error.message
-        // ..
+        // ekrana hata basılabilir
       });
   }
 
@@ -38,7 +39,7 @@ export class Auth {
         const uid = user.uid
         Auth.currentUser = user
       } else {
-        console.log("Kullanıcı çıkış yaptı: FUHASIDFJASOK")
+        console.log("çıkış FUHASIDFJASOK")
         Auth.currentUser = null
       }
     });
@@ -54,6 +55,7 @@ export class Auth {
     signOut(auth).then(() => {
       console.log('Çıkış yapıldı')
     }).catch((error) => {
+      console.log('Çıkış yapılırken bir hata oluştu')
     });
   }
 
@@ -67,11 +69,11 @@ export class Auth {
         // console.log("User data:", userData)
         return userData
       } else {
-        console.log("No such document!")
+        console.log("Döküman yokk")
         return null
       }
     } catch (error) {
-      console.error("Error fetching document:", error)
+      console.error("Döküman alllınırken bir hata oluştu", error)
       return null
     }
   };

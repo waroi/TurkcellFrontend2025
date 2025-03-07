@@ -7,6 +7,7 @@ import BooksView from '../views/BooksView'
 import RegisterView from '../views/RegisterView'
 import LoginView from '../views/LoginView'
 import Publisher from '../components/Publisher/Publisher'
+import AdminView from '../views/AdminView'
 
 
 const Router = () => {
@@ -22,7 +23,8 @@ const Router = () => {
         { path: '/popular-books', element: <PopularityView /> },
         { path: '/login', element: <LoginView /> },
         { path: '/register', element: <RegisterView /> },
-        { path: '/publisher', element: <Publisher /> }
+        { path: '/publisher', element: <Publisher /> },
+        { path: '/admin', element: <AdminView /> },
     ])
 
     return routes

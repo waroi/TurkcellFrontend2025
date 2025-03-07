@@ -304,3 +304,15 @@ h5 {
   max-width: 500px;
   margin: 0 auto;
 }
+
+.fw-bold {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.list-group-item:hover {
+  color: white;
+  align-items: center;
+  background-color: #1A5F7A;
+  cursor: pointer;
+}

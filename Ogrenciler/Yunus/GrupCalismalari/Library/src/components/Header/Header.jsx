@@ -7,6 +7,8 @@ import { Auth } from '../../api/auth';
 const Header = () => {
     const [login, setLogin] = useState(false)
     const [publisherName, setPublisherName] = useState('')
+    const [state, setState] = useState('user')
+
     const navigate = useNavigate()
     useEffect(() => {
         onAuthStateChanged(auth, async (user) => {
@@ -14,13 +16,10 @@ const Header = () => {
                 setLogin(true)
                 const userData = await Auth.fetchUserByUid(user.uid)
                 setPublisherName(userData.publisherName)
+                setState(userData.state)
                 return navigate('/')
             }
         });
-
-
-
-
     }, [])
 
     const signOut = () => {
@@ -35,7 +34,6 @@ const Header = () => {
                 <div className="container flex-column">
                     <NavLink className="navbar-brand" to="/">
                         <img src="../logo.png" width={200} className='img-fluid' alt="Balığın Kütüphanesi" />
-                        {/* Balığın Kütüphanesi */}
                     </NavLink>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
@@ -63,6 +61,10 @@ const Header = () => {
                                     <a className="nav-link active" href="#" onClick={signOut}>ÇIKIŞ YAP BROOOOO</a>
                                 </li>
                             }
+
+                            {state === 'admin' && <li className="nav-item">
+                                <NavLink className="nav-link active fw-bold" to='/admin'>Kullanıcı Listesi</NavLink>
+                            </li>}
                         </ul>
                     </div>
                 </div>

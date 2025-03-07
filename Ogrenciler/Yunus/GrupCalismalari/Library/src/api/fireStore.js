@@ -1,4 +1,4 @@
-import { addDoc, collection, doc, getDoc, getDocs, setDoc } from "firebase/firestore";
+import { addDoc, collection, deleteDoc, doc, getDoc, getDocs, setDoc } from "firebase/firestore";
 import { db } from "../firebase/firebase";
 
 export class FireStore {
@@ -10,8 +10,18 @@ export class FireStore {
             const docData = doc.data();
             booksData.push(docData);
         });
-
         return booksData;
+    }
+
+    static async getAllUsers() {
+        const usersData = [];
+        const querySnapshot = await getDocs(collection(db, "users"));
+
+        querySnapshot.forEach((doc) => {
+            const docData = doc.data();
+            usersData.push(docData);
+        });
+        return usersData;
     }
 
     static async getPublisherBooks(publisherName) {
@@ -43,11 +53,11 @@ export class FireStore {
 
     static async addUser(user) {
         try {
-            const docRef = doc(db, "users", user.uid);
-            await setDoc(docRef, user);
-            console.log("Document written with ID: ", user.uid);
-        } catch (e) {
-            console.error("Error adding document: ", e);
+            const docRef = doc(db, "users", user.uid)
+            await setDoc(docRef, user)
+            console.log("Document written with ID: ", user.uid)
+        } catch (event) {
+            console.error("Error adding document: ", event)
         }
     }
 
