@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 #root {
 	margin: 0 auto;
 	text-align: center;
 	box-sizing: border-box;
+	font-family: 'Roboto', sans-serif;
 }
 
 .app {
@@ -69,3 +72,30 @@
 .detail-img {
 	max-height: 400px;
 }
+
+  .library-banner {
+	font-size: 36px;
+	font-weight: bold;
+	color: #fff;  
+	display: inline-block;
+	animation: glow 1.5s ease-in-out infinite; 
+	padding: 20px;
+	background: linear-gradient(to left, #ff00ff, #00ffff, #ff00ff);
+	background-size: 200% auto;
+	animation: glow 2s infinite alternate;
+	text-transform: uppercase; 
+	letter-spacing: 3px; 
+  }
+  @keyframes glow {
+	0% {
+	  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff00ff, 0 0 20px #ff00ff, 0 0 25px #ff00ff, 0 0 30px #ff00ff, 0 0 35px #ff00ff;
+	}
+	50% {
+	  text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff;
+	}
+	100% {
+	  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff00ff, 0 0 20px #ff00ff, 0 0 25px #ff00ff, 0 0 30px #ff00ff, 0 0 35px #ff00ff;
+	}
+  }
+  
+  
