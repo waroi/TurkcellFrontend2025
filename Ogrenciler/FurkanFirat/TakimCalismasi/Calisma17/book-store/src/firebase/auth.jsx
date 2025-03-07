@@ -1,28 +1,68 @@
-import { auth } from "./firebase.config";
+import { doc, getDoc, setDoc } from "firebase/firestore";
+import { auth, db } from "./firebase.config";
 import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
+  sendPasswordResetEmail,
+  updatePassword,
 } from "firebase/auth";
 
-createUserWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-    // Signed up
-    const user = userCredential.user;
-    // ...
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    // ..
-  });
+const saveUserToFirestore = async (user, publisher) => {
+  if (!user) return;
 
-signInWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-    // Signed in
-    const user = userCredential.user;
-    // ...
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-  });
+  const userRef = doc(db, "users", user.uid);
+  const userSnap = await getDoc(userRef);
+
+  if (!userSnap.exists()) {
+    const userData = {
+      uid: user.uid,
+      email: user.email,
+      publisher: publisher || "Publisher",
+      displayName: user.displayName || "Anonim",
+      photoURL: user.photoURL || null,
+      createdAt: new Date(),
+      role: "admin",
+    };
+
+    await setDoc(userRef, userData);
+  }
+};
+
+export const doCreateUserWithEmailAndPassword = async (
+  email,
+  password,
+  publisher
+) => {
+  const userCredential = await createUserWithEmailAndPassword(
+    auth,
+    email,
+    password
+  );
+  const user = userCredential.user;
+
+  await saveUserToFirestore(user, publisher);
+  return user;
+};
+
+export const doSignInWithEmailAndPassword = async (email, password) => {
+  const userCredential = await signInWithEmailAndPassword(
+    auth,
+    email,
+    password
+  );
+  const user = userCredential.user;
+  await saveUserToFirestore(user);
+  return user;
+};
+
+export const doSignOut = () => {
+  return auth.signOut();
+};
+
+export const doPasswordReset = (email) => {
+  return sendPasswordResetEmail(auth, email);
+};
+
+export const doPasswordChange = (password) => {
+  return updatePassword(auth.currentUser, password);
+};

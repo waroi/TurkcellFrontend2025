@@ -1,57 +1,79 @@
 import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
-import auth from '../firebase/firebase'
+import { auth, db } from '../firebase/firebase'
+import { FireStore } from "./fireStore";
+import { doc, getDoc } from "firebase/firestore";
 
 export class Auth {
-  static signIn(email = 'email3336352352342345333333333@gmail.com', password = '12345678') {
+  static currentUser = null
+
+  static signIn(email, password) {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        const user = userCredential.user;
-        console.log(user)
+        const user = userCredential.user
+        // state geçilince state basıcaz inş3
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
+        const errorCode = error.code
+        const errorMessage = error.message
+        // ekrana hata basılabilir
       });
   }
 
-  static signUp(email = 'email3336352352342345333333333@gmail.com', password = '12345678') {
+  static signUp(email, password) {
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        // Signed up 
-        const user = userCredential.user;
-        // console.log(user)
-        // ...
+        const user = userCredential.user
+        const { uid } = user
+        FireStore.addUser({ uid, email, password, publisherName: '', state: 'user' })
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        // ..
+        const errorCode = error.code
+        const errorMessage = error.message
+        // ekrana hata basılabilir
       });
   }
 
   static authOnStateChanged() {
-    onAuthStateChanged(auth, (user) => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
-        // https://firebase.google.com/docs/reference/js/auth.user
-        const uid = user.uid;
-        console.log(uid)
-        // ...
+        const uid = user.uid
+        Auth.currentUser = user
       } else {
-        // User is signed out
-        console.log('FUHASIDFJASOK')
-        // ...
+        console.log("çıkış FUHASIDFJASOK yapıldı")
+        Auth.currentUser = null
       }
     });
+    return Auth.currentUser
+  }
+
+  static getCurrentUser() {
+    Auth.authOnStateChanged()
+    return Auth.currentUser
   }
 
   static signout() {
     signOut(auth).then(() => {
-      // Sign-out successful.
+      console.log('Çıkış yapıldı')
     }).catch((error) => {
-      // An error happened.
+      console.log('Çıkış yapılırken bir hata oluştu')
     });
   }
 
+  static async fetchUserByUid(uid) {
+    try {
+      const userDocRef = doc(db, "users", uid);
+      const userDoc = await getDoc(userDocRef)
+
+      if (userDoc.exists()) {
+        const userData = userDoc.data()
+        return userData
+      } else {
+        console.log("Döküman yokk")
+        return null
+      }
+    } catch (error) {
+      console.error("Döküman alllınırken bir hata oluştu", error)
+      return null
+    }
+  };
 }
-
-

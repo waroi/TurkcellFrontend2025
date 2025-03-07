@@ -3,6 +3,7 @@ import { Link } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import { setSort, setFilter, fetchBooks } from "../redux/slice/booksSlice";
 import { useNavigate } from "react-router";
+import Button from "./Button";
 const Navbar = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -24,6 +25,7 @@ const Navbar = () => {
                         </li>
                     </ul>
                     <div className="d-flex justify-content-center w-100 align-items-center">
+                        <Button />
                         <button
                             className="btn btn-primary ms-2 me-3"
                             onClick={() => dispatch(setSort(sort === "asc" ? "desc" : "asc"))}
@@ -42,6 +44,8 @@ const Navbar = () => {
                         />
                         <button className="btn btn-outline-success" type="button" onClick={() => navigate("/signup")}>Kaydol</button>
                         <button className="btn btn-outline-success ms-2" type="button" onClick={() => navigate("/login")}>Giriş Yap</button>
+
+                        <p> { }</p>
                     </form>
                 </div>
             </div>

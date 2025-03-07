@@ -14,6 +14,7 @@ const BookCard = ({ book }) => {
                 <li className="list-group-item">Yazar: {book.author}</li>
                 <li className="list-group-item">Yıl: {book.releaseDate}</li>
                 <li className="list-group-item">Kategori: {book.category}</li>
+                <li className="list-group-item">Yayınevi: {book.yayinevi}</li>
             </ul>
             <div className="card-body">
                 <a href={`/books/${book.id}`} className="card-link">Detaylar</a>

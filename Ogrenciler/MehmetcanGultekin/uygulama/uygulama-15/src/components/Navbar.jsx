@@ -10,6 +10,7 @@ import {
   clearFilters,
   searchBooks,
 } from "../redux/slices/bookSlice";
+import { useNavigate } from "react-router";
 import Modal from "./Modal";
 
 const Navbar = () => {
@@ -37,12 +38,17 @@ const Navbar = () => {
   const handleOpen = () => {
     setOpen(true);
   };
+  const navigate = useNavigate();
   return (
     <>
       <nav className="navbar navbr navbar-expand-lg">
         <div className="container">
           <a className="navbar-brand w-25" href="#">
-            <img src="../../bookify.png" className="w-75 img-fluid" alt="" />
+            <img
+              src="../../bookify-new.png"
+              className="w-75 img-fluid"
+              alt=""
+            />
           </a>
           <button
             className="navbar-toggler"
@@ -60,7 +66,6 @@ const Navbar = () => {
             id="navbarSupportedContent"
           >
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-              
               <li className="nav-item dropdown">
                 <a
                   className="nav-link dropdown-toggle"
@@ -146,7 +151,7 @@ const Navbar = () => {
                     type="search"
                     placeholder="Search"
                     aria-label="Search"
-                    defaultValue={searchTerm || ""} 
+                    defaultValue={searchTerm || ""}
                     onChange={(e) => {
                       setSearchTerm(e.target.value);
                       if (e.target.value === "") {
@@ -155,7 +160,7 @@ const Navbar = () => {
                     }}
                   />
                   <button
-                    className="btn btn-outline-success rounded-pill"
+                    className="btn btn-light rounded-pill"
                     onClick={(e) => handleSearch(e)}
                   >
                     Search
@@ -165,11 +170,19 @@ const Navbar = () => {
               <li>
                 <button
                   onClick={handleOpen}
-                  className="btn btn-success rounded-pill ms-2"
+                  className="btn btn-dark rounded-pill ms-2 p-2"
                 >
                   Kitap Ekle
                 </button>
                 <Modal isOpen={open} onClose={handleClose} />
+              </li>
+              <li>
+                <button
+                  className="btn btn-danger rounded-pill ms-2 p-2"
+                  onClick={() => navigate("/")}
+                >
+                  Çıkış Yap
+                </button>
               </li>
             </ul>
           </div>

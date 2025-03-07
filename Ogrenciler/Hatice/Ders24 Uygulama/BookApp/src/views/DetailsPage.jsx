@@ -40,7 +40,7 @@ const DetailsPage = () => {
             <h2>{book.title}</h2>
             <img src={book.posterUrl} alt={book.title} className="img-fluid mb-3" />
             <p><strong>Yazar:</strong> {book.author}</p>
-            <p><strong>Yıl:</strong> {book.year}</p>
+            <p><strong>Yıl:</strong> {book.releaseDate}</p>
             <p><strong>Kategori:</strong> {book.category}</p>
             <p>{book.description}</p>
             <button className="btn btn-danger" onClick={handleDelete}>
