@@ -10,7 +10,7 @@ import { Auth } from '../api/auth'
 const BookView = () => {
     const { bookId } = useParams()
     const [book, setBook] = useState({})
-    const [refreshTrigger, setRefreshTrigger] = useState(0);
+    const [refreshTrigger, setRefreshTrigger] = useState(0)
     const [userData, setUserData] = useState(null)
     const [publisherName, setPublisherName] = useState('')
 
@@ -33,15 +33,12 @@ const BookView = () => {
         getUserData()
     }, []);
 
-    const getBookDetails = async () => {
-        setBook(await FireStore.getBookWithId(bookId))
-        console.log(book)
-    }
+    const getBookDetails = async () => setBook(await FireStore.getBookWithId(bookId))
+
 
     useEffect(() => {
         getBookDetails()
     }, [bookId, refreshTrigger])
-
 
     return (
         <div className='container'>
@@ -53,8 +50,6 @@ const BookView = () => {
                     <button data-bs-toggle="modal" data-bs-target="#editModal" className="btn btn-primary">Düzenle</button>
                 </div>
             }
-
-
 
             <div className="flex-wrap d-flex justify-content-between align-items-centers"></div>
             <div className="d-flex flex-column">

@@ -8,7 +8,6 @@ const AdminView = () => {
         const getAllUsers = async () => {
             const ullist = await FireStore.getAllUsers()
             setUserList(ullist)
-            console.log(ullist)
         }
         getAllUsers()
     }, [])
@@ -38,14 +37,17 @@ const AdminView = () => {
                     <li className="list-group-item gap-3 d-flex flex-wrap">
                         Kullanıcı Durumunu değiştir:
                         <button
+                            disabled={user.state === 'admin'}
                             className={`btn ${user.state === 'admin' ? 'btn-primary' : 'btn-outline-primary'}`}>
                             Admin yap
                         </button>
                         <button
+                            disabled={user.state === 'publisher'}
                             className={`btn ${user.state === 'publisher' ? 'btn-primary' : 'btn-outline-primary'}`}>
                             Yayınevi ata
                         </button>
                         <button
+                            disabled={user.state === 'user'}
                             className={`btn ${user.state === 'user' ? 'btn-primary' : 'btn-outline-primary'}`}>
                             User durumuna getir
                         </button>
