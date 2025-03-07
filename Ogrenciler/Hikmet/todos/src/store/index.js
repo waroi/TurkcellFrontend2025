@@ -6,15 +6,12 @@ export const useStore = create((set) => ({
 		set((state) => ({
 			todo: [
 				...state.todo,
-				{ id: state.todo.length, text: string, done: false },
+				{ id: state.todo.length + 1, text: string, done: false },
 			],
 		})),
 	toggleTodo: (id) => set((state) => ({ todo: state.todo })),
 	deleteTodo: (id) =>
 		set((state) => ({
-			todo: state.todo.splice(
-				state.todo.findIndex((obj) => obj.id === id),
-				1
-			),
+			todo: state.todo.filter((todo) => todo.id === id),
 		})),
 }));

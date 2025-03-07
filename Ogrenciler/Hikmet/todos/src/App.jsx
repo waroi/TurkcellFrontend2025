@@ -9,20 +9,25 @@ function App() {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		addTodo(inputTodo);
+		console.log(todo);
 	};
 	return (
 		<>
 			<section>
 				<h1>Yapılmışlar Listesi</h1>
 				<form onSubmit={handleSubmit}>
-					<input type="text" onChange={(e) => setInputTodo(e.target.value)} />
+					<input
+						type="text"
+						value={inputTodo}
+						onChange={(e) => setInputTodo(e.target.value)}
+					/>
 					<button>Ekle</button>
 				</form>
 				<div>
 					{todo.map((todo) => (
 						<div key={todo.id}>
 							<h1>{todo.text}</h1>
-							<p onClick={() => toggleTodo(todo.id)}>{todo.id}</p>
+							<p>{todo.id}</p>
 							<button onClick={deleteTodo}>Sil</button>
 						</div>
 					))}
