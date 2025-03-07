@@ -1,21 +1,24 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router";
-
+import { getBook } from "../../../firebase/dbController";
 const BookDetail = () => {
   const { id } = useParams();
-  const [book, setBook] = useState(null);
+  const [booksFirebase, setBooksFirebase] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
-    const fetchBookDetails = async () => {
-      const response = await fetch(`http://localhost:5000/books/${id}`);
-      const data = await response.json();
-      setBook(data);
-    };
-    fetchBookDetails();
-  }, [id]);
+      const fetchBooks = async () => {
+        const data = await getBook(id);
+        if (data) {
+          setBooksFirebase(data);
+        }
+        console.log("firabasee", data);
+        console.log("kitap listesi", booksFirebase);
+      };
+      fetchBooks();
+    }, [id]);
 
-  if (!book)
+  if (!booksFirebase)
     return (
       <div className="d-flex justify-content-center align-items-center">
         <div className="spinner-border text-primary" role="status">
@@ -30,26 +33,26 @@ const BookDetail = () => {
         <div className="row g-0">
           <div className="col-md-4">
             <img
-              src={book.img}
+              src={booksFirebase.img}
               className="card-img-top rounded-3"
-              alt={book.title}
+              alt={booksFirebase.title}
             />
           </div>
           <div className="col-md-8">
             <div className="card-body">
-              <h1 className="card-title fw-bold text-primary">{book.title}</h1>
+              <h1 className="card-title fw-bold text-primary">{booksFirebase.title}</h1>
               <p className="card-text mb-2 fs-3">
                 <strong>Yazar:</strong>
-                {book.author}
+                {booksFirebase.author}
                 <span className="text-dark"></span>
               </p>
               <p className="card-text mb-2 fs-3">
-                <strong>Tür:</strong> {book.genre}
+                <strong>Tür:</strong> {booksFirebase.genre}
               </p>
               <p className="card-text mb-2 fs-3">
-                <strong>Yıl:</strong> {book.publicYear}
+                <strong>Yıl:</strong> {booksFirebase.publicYear}
               </p>
-              <p className="card-text mb-3 fs-3">{book.description}</p>
+              <p className="card-text mb-3 fs-3">{booksFirebase.description}</p>
               <div className="d-flex justify-content-between">
                 <button
                   className="btn btn-secondary"
@@ -58,7 +61,7 @@ const BookDetail = () => {
                   Geri Dön
                 </button>
                 <a
-                  href={`https://www.google.com/search?q=${book.title}`}
+                  href={`https://www.google.com/search?q=${booksFirebase.title}`}
                   className="btn btn-info"
                   target="_blank"
                   rel="noopener noreferrer"

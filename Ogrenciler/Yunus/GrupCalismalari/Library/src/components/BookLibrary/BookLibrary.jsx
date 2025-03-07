@@ -21,7 +21,6 @@ const BookLibrary = () => {
                 book.genre.toLowerCase().includes(searchTerm.toLowerCase()))
     )
 
-
     return (
         <div className="container">
             <Outlet />
@@ -46,7 +45,7 @@ const BookLibrary = () => {
 
             <div className="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
                 {filteredBooks && filteredBooks.map((book) => (
-                    <div className="col-lg-3" key={book.id}>
+                    <div className="col-lg-3 book-div" key={book.id}>
                         <div className="card h-100 book-card" onClick={() => {
                             navigate(`/books/${book.id}`)
                         }}>
