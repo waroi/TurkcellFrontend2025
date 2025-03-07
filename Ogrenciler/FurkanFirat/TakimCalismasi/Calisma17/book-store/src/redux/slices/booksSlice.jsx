@@ -1,15 +1,18 @@
-import { createSlice } from '@reduxjs/toolkit';
-import data from '../../data.json';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { fetchBooksFromFirestore } from '../../firebase/firebaseBooksService';
 
-const storedBooks = localStorage.getItem('books');
-const parsedBooks = storedBooks ? JSON.parse(storedBooks) : [];
+export const loadBooks = createAsyncThunk('books/loadBooks', async () => {
+  return await fetchBooksFromFirestore();
+});
 
 const booksSlice = createSlice({
   name: 'books',
   initialState: {
-    books: parsedBooks.length > 0 ? parsedBooks : data,
+    books: [],
     category: 'All Books',
     searchTerm: '',
+    loading: false,
+    error: null,
   },
   reducers: {
     addBook: (state, action) => {
@@ -35,6 +38,20 @@ const booksSlice = createSlice({
     setSearchTerm: (state, action) => {
       state.searchTerm = action.payload;
     },
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(loadBooks.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(loadBooks.fulfilled, (state, action) => {
+        state.loading = false;
+        state.books = action.payload;
+      })
+      .addCase(loadBooks.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message;
+      });
   },
 });
 

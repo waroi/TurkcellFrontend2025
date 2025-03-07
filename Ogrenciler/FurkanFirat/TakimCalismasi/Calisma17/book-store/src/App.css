@@ -1,15 +1,136 @@
-.bookCard {
-  width: 220px;
-  border: 1px solid #3333337c;
-  transition: all 0.3s ease;
-}
-.book-cover {
-  height: 340px;
-  overflow: hidden;
+:root {
+  --primary-orange: #ff8a00;
+  --secondary-orange: #ff6a00;
+  --dark-orange: #e05f00;
+  --light-orange: #ffb980;
 }
 
-.badge {
-  z-index: 10;
-  top: 10px;
-  left: 10px;
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #edf5fd;
+}
+
+.text-orange {
+  color: var(--primary-orange);
+}
+
+.bg-orange {
+  background-color: var(--primary-orange);
+}
+.navbar-style {
+  background: linear-gradient(135deg, orange 0%, var(--dark-orange) 100%);
+}
+
+.bookCard {
+  width: 220px;
+}
+
+.bookCard:hover .book-cover {
+  transform: scale(1.1) rotate(3deg);
+}
+
+.book-cover {
+  height: 340px;
+  transition: all 0.3s ease;
+}
+
+.book-cover-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.bookCard:hover .book-cover-overlay {
+  opacity: 0.5;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.action-buttons {
+  bottom: 15px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.bookCard:hover .action-buttons {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.action-buttons .btn {
+  width: 36px;
+  height: 36px;
+}
+
+.btn-orange {
+  background-color: var(--primary-orange);
+  border-color: var(--primary-orange);
+  color: white;
+}
+
+.btn-orange:hover {
+  background-color: var(--dark-orange);
+  border-color: var(--dark-orange);
+  color: white;
+}
+
+.category-active {
+  background: linear-gradient(
+    135deg,
+    var(--primary-orange) 0%,
+    var(--dark-orange) 100%
+  );
+}
+
+.category-inactive {
+  background-color: white;
+  border: 1px solid #e5e5e5;
+}
+
+.category-inactive:hover {
+  background-color: #ddeaf8;
+  border-color: #ddd;
+}
+
+.profile-circle {
+  width: 40px;
+  height: 40px;
+}
+
+/* scroll */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--light-orange);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-orange);
+}
+
+.width-50px {
+  width: 50;
+}
+.width-80px {
+  width: 80;
+}
+
+.edit-button {
+  background-color: rgba(255, 138, 0, 0.1);
+  width: 32px;
+  height: 32px;
+}
+.delete-button {
+  background-color: rgba(255, 0, 0, 0.1);
+  width: 32px;
+  height: 32px;
 }
