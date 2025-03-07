@@ -1,10 +1,10 @@
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { ThemeContext } from "../context/ThemeContext";
 import { deleteBook, searchBook, sortingBook } from "../redux/slices/bookSlice";
 import Modal from "./module/Modal";
 
-const BooksView = ({ category }) => {
+const BooksView = ({ publishing }) => {
 	const { books, keyword } = useSelector((state) => state.book);
 	const dispatch = useDispatch();
 	const handleDelete = (id) => dispatch(deleteBook(id));
@@ -25,8 +25,8 @@ const BooksView = ({ category }) => {
 		});
 	};
 
-	const filteredBooks = category
-		? books.filter((book) => book.category === category)
+	const filteredBooks = publishing
+		? books.filter((book) => book.publishing === publishing)
 		: books;
 
 	const filteredItems = filteredBooks.filter((book) =>
@@ -83,6 +83,7 @@ const BooksView = ({ category }) => {
 												Çıkış Tarihi: {formatDate(book.releaseDate)}
 											</p>
 											<p className="card-text">Kategori: {book.category}</p>
+											<p className="card-text">Yayınevi: {book.publishing}</p>
 											<p className="card-text"> Sayfa Sayısı: {book.page}</p>
 											<div className="btn-group gap-2 w-100">
 												<button

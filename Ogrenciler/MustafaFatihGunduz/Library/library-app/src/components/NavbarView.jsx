@@ -7,11 +7,8 @@ import { readUser } from "../controller/DBController";
 
 const NavbarView = ({ setEditingBookId }) => {
 	const { theme, toggleTheme } = useContext(ThemeContext);
-	{
-		/* dropdown kategorileri dinamik hale getirmek icin useSelector kullandim */
-	}
 	const books = useSelector((state) => state.book.books);
-	const categories = [...new Set(books.map((book) => book.category))];
+	const publishers = [...new Set(books.map((book) => book.publishing))];
 
 	const [user, setUser] = useState(null);
 	const navigate = useNavigate();
@@ -70,7 +67,7 @@ const NavbarView = ({ setEditingBookId }) => {
 							</a>
 						</li>
 
-						{/* Kategoriler */}
+						{/* Yayınevleri */}
 						<li className="nav-item dropdown ">
 							<a
 								className="nav-link dropdown-toggle text-white"
@@ -78,22 +75,22 @@ const NavbarView = ({ setEditingBookId }) => {
 								role="button"
 								data-bs-toggle="dropdown"
 								aria-expanded="false">
-								Kategoriler
+								Yayınevleri
 							</a>
 							<ul className="dropdown-menu">
-								{categories.length > 0 ? (
-									categories.map((category) => (
-										<li key={category}>
+								{publishers.length > 0 ? (
+									publishers.map((publisher) => (
+										<li key={publisher}>
 											<NavLink
 												className="dropdown-item"
-												to={`/kategori/${category}`}>
-												{category}
+												to={`/yayinevi/${publisher}`}>
+												{publisher}
 											</NavLink>
 										</li>
 									))
 								) : (
 									<li>
-										<span className="dropdown-item">Kategori yok</span>
+										<span className="dropdown-item">Yayınevi yok</span>
 									</li>
 								)}
 							</ul>
