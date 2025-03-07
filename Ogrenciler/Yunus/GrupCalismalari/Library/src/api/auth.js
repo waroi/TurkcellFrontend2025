@@ -10,7 +10,7 @@ export class Auth {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user
-        console.log(user)
+        // state geçilince state basıcaz inş3
       })
       .catch((error) => {
         const errorCode = error.code
@@ -39,7 +39,7 @@ export class Auth {
         const uid = user.uid
         Auth.currentUser = user
       } else {
-        console.log("çıkış FUHASIDFJASOK")
+        console.log("çıkış FUHASIDFJASOK yapıldı")
         Auth.currentUser = null
       }
     });
@@ -66,7 +66,6 @@ export class Auth {
 
       if (userDoc.exists()) {
         const userData = userDoc.data()
-        // console.log("User data:", userData)
         return userData
       } else {
         console.log("Döküman yokk")

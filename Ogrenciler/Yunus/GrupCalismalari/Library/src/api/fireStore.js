@@ -3,33 +3,33 @@ import { db } from "../firebase/firebase";
 
 export class FireStore {
     static async getAllBooks() {
-        const booksData = [];
-        const querySnapshot = await getDocs(collection(db, "books"));
+        const booksData = []
+        const querySnapshot = await getDocs(collection(db, "books"))
 
         querySnapshot.forEach((doc) => {
-            const docData = doc.data();
-            booksData.push(docData);
+            const docData = doc.data()
+            booksData.push(docData)
         });
         return booksData;
     }
 
     static async getAllUsers() {
-        const usersData = [];
-        const querySnapshot = await getDocs(collection(db, "users"));
+        const usersData = []
+        const querySnapshot = await getDocs(collection(db, "users"))
 
         querySnapshot.forEach((doc) => {
-            const docData = doc.data();
-            usersData.push(docData);
+            const docData = doc.data()
+            usersData.push(docData)
         });
-        return usersData;
+        return usersData
     }
 
     static async getPublisherBooks(publisherName) {
-        const querySnapshot = await getDocs(collection(db, "books"));
+        const querySnapshot = await getDocs(collection(db, "books"))
         const booksData = querySnapshot.docs
             .map((doc) => doc.data())
-            .filter((book) => book.publisherName === publisherName);
-        return booksData;
+            .filter((book) => book.publisherName === publisherName)
+        return booksData
     };
 
     static async getBookWithId(id) {
@@ -46,7 +46,7 @@ export class FireStore {
                 return null
             }
         } catch (error) {
-            console.error("Kitap çekerken hata oluştu", error)
+            console.error("Kitap çekerken bir hata oluştu", error)
             return null
         }
     }
@@ -61,6 +61,7 @@ export class FireStore {
         }
     }
 
+    // inş eklenecek
     static async addPublisher() {
         try {
             const docRef = await addDoc(collection(db, "publisher"), {
@@ -68,9 +69,9 @@ export class FireStore {
                 last: "KÜT KÜTTTTTTTTTTTTTT",
                 born: 1815
             });
-            console.log("Document written with ID: ", docRef.id);
+            console.log("Document written with ID: ", docRef.id)
         } catch (e) {
-            console.error("Error adding document: ", e);
+            console.error("Error adding document: ", e)
         }
     }
 
@@ -94,30 +95,31 @@ export class FireStore {
 
             console.log("Kitap eklendi, ID:", id)
         } catch (error) {
-            console.error("Kitap eklenirken hata:", error)
+            console.error("Kitap eklenirken bir hata olluştu:", error)
         }
     }
 
     static async deleteBook(bookId) {
-        const bookRef = doc(db, "books", bookId);
+        const bookRef = doc(db, "books", bookId)
         try {
-            await deleteDoc(bookRef);
-            console.log("Kitap silindi");
+            await deleteDoc(bookRef)
+            console.log("Kitap silindi")
         } catch (error) {
-            console.error("Hata:", error);
+            console.error("Kitap silinirken bir hata olluştu:", error)
         }
     }
 
+    // inş eklenecek2
     static async updateBook(bookId, newData) {
-        const bookRef = doc(db, "books", bookId);
+        const bookRef = doc(db, "books", bookId)
         try {
             await updateDoc(bookRef, {
                 ...newData,
                 updatedAt: new Date().toISOString()
             });
-            console.log("Kitap güncellendi");
+            console.log("Kitap güncellendi")
         } catch (error) {
-            console.error("Hata:", error);
+            console.error("Kitap güncellerken bir hata oluştu:", error)
         }
     }
 }

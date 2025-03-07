@@ -2,8 +2,6 @@ import { useEffect, useState } from 'react'
 import { newBookInitialState } from '../../utils/variables'
 import { useDispatch } from 'react-redux'
 import { addBook } from '../../redux/slice/librarySlice'
-import { db } from '../../firebase/firebase'
-import { collection, doc, getDocs } from 'firebase/firestore'
 import { Auth } from '../../api/auth'
 import { FireStore } from '../../api/fireStore'
 import { useNavigate } from 'react-router'
@@ -32,10 +30,10 @@ const Publisher = () => {
                     const books = await FireStore.getPublisherBooks(publisherNameValue)
                     setBookList(books)
                 } else {
-                    console.log('KULLANICI YOK KANKA')
+                    console.log("Böyle bir id'ye sahip kullanıcı yok")
                 }
             } catch (error) {
-                console.error("Kullanıcı verisi alınırken hataaaaaaaaa", error)
+                console.error("Kullanıcı verisi alınırken bir hata oluştu", error)
             } finally {
                 setIsLoading(false)
             }
@@ -81,7 +79,7 @@ const Publisher = () => {
 
     return (
         <>
-            {isLoading ? <div className='container'>kitapların yükleniyor kanka</div> :
+            {isLoading ? <div className='container'>Kitaplar yükleniyor...</div> :
 
                 <div className="container">
                     <div className="row mb-4">
