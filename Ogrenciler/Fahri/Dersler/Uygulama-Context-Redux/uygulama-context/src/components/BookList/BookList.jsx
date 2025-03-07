@@ -1,40 +1,42 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, use } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setBooks, deleteBook } from "../../redux/slices/bookSlice";
 import AddBook from "../AddBook/AddBook";
 import FilteredBookList from "../FilteredBook";
 import "./BookList.css";
 import { useParams } from "react-router";
 import { getUserBooks } from "../../../firebase/dbController";
+import { setBooks } from "../../redux/slices/bookSlice";
 const BookList = () => {
   const dispatch = useDispatch();
-  const books = useSelector((state) => state.books.books);
+  const booksFirebase = useSelector((state) => state.books.books);
   const [searchText, setSearchText] = useState("");
-  const filteredBooks = books.filter(
+  // const [booksFirebase, setBooksFirebase] = useState([]);
+  const { id } = useParams();
+
+  const filteredBooks = booksFirebase.filter(
     (book) =>
       book.title.toLowerCase().includes(searchText.toLowerCase()) ||
       book.author.toLowerCase().includes(searchText.toLowerCase()) ||
       book.genre.toLowerCase().includes(searchText.toLowerCase())
   );
-  const { id } = useParams();
-  const [booksFirebase, setBooksFirebase] = useState([]);
+
   useEffect(() => {
     const fetchBooks = async () => {
       const data = await getUserBooks();
       if (data) {
-        setBooksFirebase(data);
+        dispatch(setBooks(data));
+        // setBooksFirebase(data);
       }
-      console.log("firabasee", data);
-      console.log("kitap listesi", booksFirebase);
     };
     fetchBooks();
   }, [id]);
-  useEffect(() => {
-    console.log("Firebase'den gelen kitaplar:", booksFirebase);
-  }, [booksFirebase]);
+
   return (
     <>
-      <AddBook />
+      <AddBook
+      // booksFirebase={booksFirebase}
+      // setBooksFirebase={setBooksFirebase}
+      />
       <div className="container mt-4">
         <div className="row">
           <div className="col-md-6">
@@ -53,11 +55,8 @@ const BookList = () => {
         {booksFirebase.length === 0 ? (
           <p>Ürün bulunamadı veya yükleniyor...</p>
         ) : (
-          <FilteredBookList
-            filteredBooks={booksFirebase}
-          />
+          <FilteredBookList filteredBooks={booksFirebase} />
         )}
-
       </div>
     </>
   );
