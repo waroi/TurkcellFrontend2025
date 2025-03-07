@@ -1,9 +1,22 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { fetchBooksFromFirestore } from '../../firebase/firebaseBooksService';
+import {
+  deleteBookFromFirestore,
+  fetchBooksFromFirestore,
+} from '../../firebase/firebaseBooksService';
 
 export const loadBooks = createAsyncThunk('books/loadBooks', async () => {
   return await fetchBooksFromFirestore();
 });
+
+export const deleteBook = createAsyncThunk(
+  'books/deleteBook',
+  async (bookId) => {
+    const isDeleted = await deleteBookFromFirestore(bookId);
+    if (isDeleted) {
+      return bookId;
+    }
+  }
+);
 
 const booksSlice = createSlice({
   name: 'books',
@@ -49,6 +62,18 @@ const booksSlice = createSlice({
         state.books = action.payload;
       })
       .addCase(loadBooks.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message;
+      })
+      .addCase(deleteBook.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(deleteBook.fulfilled, (state, action) => {
+        state.loading = false;
+        state.books = state.books.filter((book) => book.id !== action.payload);
+        localStorage.setItem('books', JSON.stringify(state.books));
+      })
+      .addCase(deleteBook.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error.message;
       });

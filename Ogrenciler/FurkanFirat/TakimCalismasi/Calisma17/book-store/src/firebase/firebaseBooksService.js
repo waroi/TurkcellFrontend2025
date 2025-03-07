@@ -5,6 +5,7 @@ import {
   updateDoc,
   collection,
   getDocs,
+  deleteDoc,
 } from 'firebase/firestore';
 
 export async function addSingleBookToFirestore(book) {
@@ -43,5 +44,17 @@ export async function fetchBooksFromFirestore() {
     return booksList;
   } catch (error) {
     console.error('fetchBooksFromFirestore hata', error);
+  }
+}
+
+export async function deleteBookFromFirestore(bookId) {
+  try {
+    const docRef = doc(db, 'books', bookId);
+    await deleteDoc(docRef);
+
+    console.log('Kitap silindi');
+    return true;
+  } catch (error) {
+    console.error('deleteBookFromFirestore hata', error);
   }
 }

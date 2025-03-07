@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { removeBook } from '../redux/slices/booksSlice';
+import { deleteBook, loadBooks } from '../redux/slices/booksSlice';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faEdit,
@@ -8,7 +8,7 @@ import {
   faBook,
 } from '@fortawesome/free-solid-svg-icons';
 import BookModal from '../components/BookModal';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function AdminView() {
   const dispatch = useDispatch();
@@ -27,9 +27,17 @@ export default function AdminView() {
     setShowModal(true);
   };
 
+  const handleDeleteBook = (bookId) => {
+    dispatch(deleteBook(bookId));
+  };
+
+  useEffect(() => {
+    dispatch(loadBooks());
+  }, [dispatch]);
+
   return (
     <div className='container py-4'>
-      <div className='category-container shadow-sm mb-4'>
+      <div className='bg-white rounded-3 p-4 mb-5 shadow-sm mb-4'>
         <div className='d-flex justify-content-between align-items-center mb-4'>
           <div className='d-flex align-items-center'>
             <FontAwesomeIcon
@@ -64,7 +72,7 @@ export default function AdminView() {
                 className='d-flex justify-content-between border-bottom p-3 align-items-center'
               >
                 <div className='d-flex gap-5'>
-                  <div className='width-50px'>{book.id}</div>
+                  <div className='width-50px'>{String(book.id)}</div>
                   <div className='fw-medium'>{book.title}</div>
                 </div>
                 <div className='d-flex gap-3'>
@@ -76,7 +84,7 @@ export default function AdminView() {
                   </button>
                   <button
                     className='btn btn-sm rounded-circle delete-button'
-                    onClick={() => dispatch(removeBook(book.id))}
+                    onClick={() => handleDeleteBook(String(book.id))}
                   >
                     <FontAwesomeIcon icon={faTrash} color='#d9534f' />
                   </button>
@@ -91,7 +99,7 @@ export default function AdminView() {
               className='text-orange mb-3'
               size='2x'
             />
-            <p className='mb-0'>Veri bulunamadı...</p>
+            <p className='mb-0'>No Data.</p>
           </div>
         )}
       </div>
