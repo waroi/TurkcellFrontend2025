@@ -4,8 +4,10 @@ import { addBook } from "../redux/slices/bookSlice";
 import AddModal from "./AddModal";
 import { FaUser } from "react-icons/fa";
 import { NavLink, useParams } from "react-router";
+import { AiOutlineLogin } from "react-icons/ai";
+import ScrollingText from "./ScrollingText";
 
-const NavBar = () => {
+const NavBar = ({ isAdmin }) => {
   const dispatch = useDispatch();
   const handleAddBook = () => {
     dispatch(addBook());
@@ -13,6 +15,7 @@ const NavBar = () => {
 
   return (
     <>
+      <ScrollingText/>
       <nav className="navbar bg-body-tertiary mb-3">
         <div className="container d-flex justify-content-between">
           <a
@@ -28,16 +31,26 @@ const NavBar = () => {
             />
             Kitabevi
           </a>
-          <button
-              className="btn btn-success"
-              data-bs-toggle="modal"
-              data-bs-target="#exampleModal2"
-            >
-              Yeni Kitap Ekle
-            </button>
-          <NavLink to="/login">
-            <FaUser />
-          </NavLink>
+          <div className="gap-3 d-flex align-items-center">
+            {isAdmin ? (
+              <button
+                className="btn btn-success"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal2"
+              >
+                Yeni Kitap Ekle
+              </button>
+            ) : null}
+            {isAdmin ? (
+              <NavLink to="/" className="fs-3 text-danger">
+                <AiOutlineLogin />
+              </NavLink>
+            ) : (
+              <NavLink to="/login" className="fs-3 text-dark">
+                <FaUser />
+              </NavLink>
+            )}
+          </div>
         </div>
       </nav>
       <AddModal />

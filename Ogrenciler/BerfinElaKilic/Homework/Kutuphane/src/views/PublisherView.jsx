@@ -9,6 +9,7 @@ import {
   setUpdateBook,
 } from "../redux/slices/bookSlice";
 import BookCard from "../components/BookCard";
+import NavBar from "../components/NavBar";
 const PublisherView = () => {
   const { id } = useParams();
   const user = useSelector((state) => state.book.user);
@@ -17,15 +18,17 @@ const PublisherView = () => {
   useEffect(() => {
     const fetchOneUser = async () => {
       const data = await getOneUser(id);
-      const books2 = await getPublisherBooks(id);
+      const books2 = await getPublisherBooks(data.publisher);
       dispatch(addOneUser(data));
       dispatch(addAllBook(books2));
-      dispatch(setUpdateBook({ publisher: id }));
+      dispatch(setUpdateBook({ publisher: data.publisher }));
     };
     fetchOneUser();
   }, []);
 
   return (
+    <>
+    <NavBar isAdmin={true}/>
     <div className="container">
       <div className="row g-3">
         {books?.map((book) => (
@@ -33,6 +36,7 @@ const PublisherView = () => {
         ))}
       </div>
     </div>
+    </>
   );
 };
 

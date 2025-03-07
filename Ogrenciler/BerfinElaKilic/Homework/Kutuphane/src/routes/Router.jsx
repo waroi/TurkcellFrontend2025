@@ -1,7 +1,7 @@
 import { useRoutes, Navigate } from "react-router";
 import Home from "../views/Home";
-import Login from "../components/Login";
-import Register from "../components/Register";
+import Login from "../views/Login";
+import Register from "../views/Register";
 import PublisherView from "../views/PublisherView";
 
 const Router = () => {

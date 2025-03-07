@@ -4,15 +4,15 @@ import { postBooks } from "../services/Api";
 import { useEffect } from "react";
 import { useParams } from "react-router";
 
-const AddModal = ({ publisherId }) => {
+const AddModal = () => {
   const dispatch = useDispatch();
   const book = useSelector((state) => state.book.book);
   const handleUpdateForm = (e) => {
     dispatch(setUpdateBook({ [e.target.name]: e.target.value }));
   };
-  const handleSave = () => {
-    dispatch(addBook());
-    postBooks(book);
+  const handleSave = async() => {
+    const books = await postBooks(book);
+    dispatch(addBook(books));
   };
 
   return (

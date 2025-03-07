@@ -30,8 +30,8 @@ export const bookSlice = createSlice({
     addOneUser: (state, action) => {
       state.user = action.payload;
     },
-    addBook: (state) => {
-      state.books = [...state.books, state.book];
+    addBook: (state, action) => {
+      state.books = [...state.books, action.payload];
       state.book = {
         ...state.book,
         id: "",
