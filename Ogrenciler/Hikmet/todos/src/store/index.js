@@ -10,5 +10,11 @@ export const useStore = create((set) => ({
 			],
 		})),
 	toggleTodo: (id) => set((state) => ({ todo: state.todo })),
-	deleteTodo: (state) => set({ todo: [...state.todo] }),
+	deleteTodo: (id) =>
+		set((state) => ({
+			todo: state.todo.splice(
+				state.todo.findIndex((obj) => obj.id === id),
+				1
+			),
+		})),
 }));
