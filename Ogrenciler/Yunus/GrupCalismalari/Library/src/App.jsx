@@ -13,7 +13,7 @@ function App() {
     // FireStore.addUser()
     // FireStore.addBook('hazal', 'hazal.com', 'hazalın dünyası', 'hazal', '1886', 'dram', 'hazalın evi', 'hazalınidsi')
 
-    FireStore.getBooks()
+    // FireStore.getBooks()
 
   }, [])
 

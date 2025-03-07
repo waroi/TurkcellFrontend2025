@@ -1,31 +1,46 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { newBookInitialState } from '../../utils/variables'
 import { useDispatch } from 'react-redux'
 import { addBook } from '../../redux/slice/librarySlice'
 import { db } from '../../firebase/firebase'
 import { collection, doc, getDocs } from 'firebase/firestore'
 import { Auth } from '../../api/auth'
+import { FireStore } from '../../api/fireStore'
+import { useNavigate } from 'react-router'
 
 const Publisher = () => {
     const dispatch = useDispatch()
+    const navigate = useNavigate()
 
     const [searchTerm, setSearchTerm] = useState('')
     const [showModal, setShowModal] = useState(false)
     const [showAddModal, setShowAddModal] = useState(false)
     const [newBook, setNewBook] = useState(newBookInitialState)
     const [bookList, setBookList] = useState([])
+    const [user, setUser] = useState(null)
+    const [publisherName, setPublisherName] = useState({})
 
+    useEffect(() => {
+        const getUserData = async () => {
+            try {
+                const user = await Auth.getCurrentUser()
+                if (user) {
+                    setUser(user);
+                    const userData = await Auth.fetchUserByUid(user.uid)
+                    const publisherNameValue = userData.publisherName;
+                    setPublisherName(publisherNameValue)
+                    const books = await FireStore.getPublisherBooks(publisherNameValue)
+                    setBookList(books)
+                } else {
+                    console.log('KULLANICI YOK KANKA')
+                }
+            } catch (error) {
+                console.error("Kullanıcı verisi alınırken hataaaaaaaaa", error)
+            }
+        };
 
-    const getCurUser = async () => {
-        const user = Auth.getCurrentUser()
-        if (user) {
-            console.log("Alınan UID:", user.uid)
-        } else {
-            console.log("Kullanıcı yok")
-        }
-
-    }
-    getCurUser()
+        getUserData()
+    }, []);
 
     const closeModal = () => {
         setShowModal(false)
@@ -40,20 +55,31 @@ const Publisher = () => {
         });
     };
 
-    const handleAddBook = (e) => {
-        e.preventDefault()
+    const handleAddBook = async (event) => {
+        event.preventDefault()
+
         const bookToAdd = {
             ...newBook,
-            id: self.crypto.randomUUID()
+            id: self.crypto.randomUUID(),
+            publisherName: publisherName
         };
-        dispatch(addBook(bookToAdd))
-        setBookList([bookToAdd])
-        setNewBook(newBookInitialState)
+        await FireStore.addBook(bookToAdd)
         setShowAddModal(false)
+        setBookList([bookToAdd])
+        // dispatch(addBook(bookToAdd))
+        setNewBook(newBookInitialState)
     };
+
+    const filteredBooks = bookList.filter(
+        (book) =>
+        (book.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            book.author.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            book.genre.toLowerCase().includes(searchTerm.toLowerCase()))
+    );
 
     return (
         <div className="container">
+
             <div className="row mb-4">
                 <div className="col">
                     <h1 className="text-center mb-4">Balığın Kütüphane Dünyası</h1>
@@ -77,7 +103,34 @@ const Publisher = () => {
                 </div>
             </div>
 
+            <div className="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
+                {filteredBooks.map((book) => (
+                    <div className="col-lg-3" key={book.id}>
+                        <div className="card h-100 book-card" onClick={() => {
+                            navigate(`/books/${book.id}`)
+                        }}>
+                            <div className="card-img-container h-100">
+                                {
+                                    <img src={book.posterUrl} className="card-img-top img-fluid" alt={book.title} />
+                                }
+                            </div>
+                            <div className="card-body">
+                                <h5 className="card-title">{book.title}</h5>
+                                <p className="card-text text-muted">{book.author}</p>
+                                <span className="badge bg-secondary">{book.genre}</span>
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </div>
 
+            {
+                filteredBooks.length === 0 && (
+                    <div className="alert alert-info mt-4">
+                        Arama kriterlerinize uygun kitap bulunamadı.
+                    </div>
+                )
+            }
             <div className={`modal fade ${showAddModal ? 'show' : ''}`} style={{ display: showAddModal ? 'block' : 'none' }}>
                 <div className="modal-dialog modal-lg">
                     <div className="modal-content">
