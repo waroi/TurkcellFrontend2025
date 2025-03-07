@@ -7,16 +7,14 @@ const BookDetail = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-      const fetchBooks = async () => {
-        const data = await getBook(id);
-        if (data) {
-          setBooksFirebase(data);
-        }
-        console.log("firabasee", data);
-        console.log("kitap listesi", booksFirebase);
-      };
-      fetchBooks();
-    }, [id]);
+    const fetchBooks = async () => {
+      const data = await getBook(id);
+      if (data) {
+        setBooksFirebase(data);
+      }
+    };
+    fetchBooks();
+  }, [id]);
 
   if (!booksFirebase)
     return (
@@ -40,7 +38,9 @@ const BookDetail = () => {
           </div>
           <div className="col-md-8">
             <div className="card-body">
-              <h1 className="card-title fw-bold text-primary">{booksFirebase.title}</h1>
+              <h1 className="card-title fw-bold text-primary">
+                {booksFirebase.title}
+              </h1>
               <p className="card-text mb-2 fs-3">
                 <strong>Yazar:</strong>
                 {booksFirebase.author}

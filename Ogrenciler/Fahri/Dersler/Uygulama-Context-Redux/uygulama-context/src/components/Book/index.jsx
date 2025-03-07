@@ -5,11 +5,11 @@ import { useDispatch } from "react-redux";
 import { removeBook } from "../../redux/slices/bookSlice";
 
 const Book = ({ book }) => {
-  //const dispatch = useDispatch();
-  // function handleDelete() {
-  //   deleteBook(`${book.id}`);
-  //   // dispatch(removeBook(book.id));
-  // }
+  const dispatch = useDispatch();
+  function handleDelete() {
+    deleteBook(`${book.id}`);
+    dispatch(removeBook(book.id));
+  }
   return (
     <div className="card shadow-lg rounded-3 h-100">
       <div className="row">
@@ -34,12 +34,7 @@ const Book = ({ book }) => {
             </p>
             <p className="card-text text-truncate">{book.description}</p>
             <div className="d-flex justify-content-between align-items-center">
-              <button
-                className="btn btn-outline-danger"
-                onClick={() => {
-                  deleteBook(`${book.id}`);
-                }}
-              >
+              <button className="btn btn-outline-danger" onClick={handleDelete}>
                 Sil
               </button>
               <NavLink to={`/${book.id}`} className="btn btn-outline-primary">

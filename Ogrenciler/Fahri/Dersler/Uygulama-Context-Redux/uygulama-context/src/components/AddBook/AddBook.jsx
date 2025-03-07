@@ -1,8 +1,12 @@
 import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { addedBook, getPublisherId } from "../../../firebase/dbController";
+import {
+  addedBook,
+  getPublisherId,
+  getUserBooks,
+} from "../../../firebase/dbController";
 import { useDispatch } from "react-redux";
-import { addBook } from "../../redux/slices/bookSlice";
+import { setBooks } from "../../redux/slices/bookSlice";
 
 const AddBook = () => {
   const [title, setTitle] = useState("");
@@ -27,7 +31,7 @@ const AddBook = () => {
         publisherId: await getPublisherId(),
       };
       addedBook(newBook);
-      dispatch(addBook(newBook));
+      dispatch(setBooks(await getUserBooks()));
       setTitle("");
       setAuthor("");
       setGenre("");

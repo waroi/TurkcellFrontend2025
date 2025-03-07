@@ -19,7 +19,6 @@ const BookList = () => {
       book.author.toLowerCase().includes(searchText.toLowerCase()) ||
       book.genre.toLowerCase().includes(searchText.toLowerCase())
   );
-
   useEffect(() => {
     const fetchBooks = async () => {
       const data = await getUserBooks();

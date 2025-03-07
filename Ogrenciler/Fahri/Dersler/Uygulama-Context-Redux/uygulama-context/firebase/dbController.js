@@ -1,6 +1,6 @@
 import { addDoc, collection, query, where } from "firebase/firestore";
 import { db } from "./firebase";
-import { doc, getDoc, getDocs, deleteDoc } from "firebase/firestore";
+import { doc, getDoc, getDocs, deleteDoc, updateDoc } from "firebase/firestore";
 import { auth } from "../firebase/firebase";
 
 export async function getUserBooks() {
@@ -44,4 +44,13 @@ export async function getPublisherId() {
   const userSnap = await getDoc(userRef);
   const publisherId = userSnap.data().publisherId;
   return publisherId;
+}
+
+export async function updateBook(id, book) {
+  try {
+    const bookRef = doc(db, "books", id);
+    await updateDoc(bookRef, book);
+  } catch (error) {
+    console.error("Güncelleme hatası:", error);
+  }
 }
