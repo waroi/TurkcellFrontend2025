@@ -1,24 +1,20 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { Storage } from '../../utils/storage'
+import { FireStore } from '../../api/fireStore'
+import { books } from '../../data/books'
 
-const initialState = Storage.getBooks()
+const initialState = { books: await FireStore.getAllBooks() } || books
 
 export const librarySlice = createSlice({
     name: "library",
     initialState,
     reducers: {
         addBook: (state, action) => {
-
             state.books = [...state.books, action.payload]
-
-            console.log(action.payload)
-            // Storage.addBooks(state.books)
-
         },
 
         removeBook: (state, action) => {
-            state.books = state.books.filter(book => book.id.toString() !== action.payload.toString())
-            Storage.addBooks(state.books)
+            state.books = state.books.filter(book => book.id !== action.payload)
         },
 
         updateBook: (state, action) => {
