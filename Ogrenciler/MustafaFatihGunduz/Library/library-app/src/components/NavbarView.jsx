@@ -137,14 +137,16 @@ const NavbarView = ({ setEditingBookId }) => {
 							</ul>
 						</li>
 					</ul>
-					<button
-						type="button"
-						className="btn btn-success"
-						data-bs-toggle="modal"
-						data-bs-target="#bookEvent"
-						onClick={() => setEditingBookId}>
-						Kitap Ekle
-					</button>
+					{user && (
+						<button
+							type="button"
+							className="btn btn-success"
+							data-bs-toggle="modal"
+							data-bs-target="#bookEvent"
+							onClick={() => setEditingBookId}>
+							Kitap Ekle
+						</button>
+					)}
 					<button
 						className={`btn btn-secondary ms-3 ${
 							theme === "light" ? "bg-dark text-light" : "bg-white text-dark"
