@@ -1,12 +1,14 @@
-// src/views/AdminView.jsx
-import {useSelector, useDispatch} from "react-redux";
-import {removeBook} from "../redux/slices/booksSlice";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faEdit, faTrash} from "@fortawesome/free-solid-svg-icons";
-import BookModal from "../components/BookModal";
-import {useState} from "react";
-
-import {uploadBooksToFirestore} from "../firebase/firebaseBooksService";
+import { useSelector, useDispatch } from 'react-redux';
+import { deleteBook, loadBooks } from '../redux/slices/booksSlice';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faEdit,
+  faTrash,
+  faPlus,
+  faBook,
+} from '@fortawesome/free-solid-svg-icons';
+import BookModal from '../components/BookModal';
+import { useEffect, useState } from 'react';
 
 export default function AdminView() {
   const dispatch = useDispatch();
@@ -25,54 +27,82 @@ export default function AdminView() {
     setShowModal(true);
   };
 
-  const handleUploadBooks = async () => {
-    try {
-      await uploadBooksToFirestore();
-      alert("Veriler Firestore'a başarıyla yüklendi!");
-    } catch (error) {
-      alert("Veri yüklenirken hata oluştu. Detay: " + error.message);
-    }
+  const handleDeleteBook = (bookId) => {
+    dispatch(deleteBook(bookId));
   };
 
+  useEffect(() => {
+    dispatch(loadBooks());
+  }, [dispatch]);
+
   return (
-    <div className="container">
-      <div className="d-flex justify-content-between p-2">
-        <h2>Admin Panel</h2>
-        <div className="d-flex gap-3">
-          <button className="btn btn-success" onClick={handleUploadBooks}>
-            JSON'daki Verileri Firebase'e Aktar
-          </button>
-          <button className="btn btn-primary" onClick={handleAddBook}>
+    <div className='container py-4'>
+      <div className='bg-white rounded-3 p-4 mb-5 shadow-sm mb-4'>
+        <div className='d-flex justify-content-between align-items-center mb-4'>
+          <div className='d-flex align-items-center'>
+            <FontAwesomeIcon
+              icon={faBook}
+              className='text-orange me-2'
+              size='lg'
+            />
+            <h2 className='m-0 text-orange'>Admin Panel</h2>
+          </div>
+          <button
+            className='btn btn-orange d-flex align-items-center gap-2 px-3 py-2'
+            onClick={handleAddBook}
+          >
+            <FontAwesomeIcon icon={faPlus} />
             Add Book
           </button>
         </div>
-      </div>
 
-      <div className="d-flex justify-content-end "></div>
+        {books.length > 0 ? (
+          <div className='bg-white rounded-3 overflow-hidden'>
+            <div className='d-flex justify-content-between border-bottom p-3 bg-light'>
+              <div className='d-flex gap-5 fw-bold'>
+                <div className='width-50px'>ID</div>
+                <div>Title</div>
+              </div>
+              <div className='width-80px'>Actions</div>
+            </div>
 
-      {books.length > 0 ? (
-        books.map((book) => (
-          <div
-            key={book.id}
-            className="d-flex justify-content-between border p-2"
-          >
-            <div className="d-flex gap-3">
-              <div>{book.id}</div>
-              <div>{book.title}</div>
-            </div>
-            <div className="d-flex gap-2">
-              <button onClick={() => handleEditBook(book)}>
-                <FontAwesomeIcon icon={faEdit} color="orange" />
-              </button>
-              <button onClick={() => dispatch(removeBook(book.id))}>
-                <FontAwesomeIcon icon={faTrash} color="red" />
-              </button>
-            </div>
+            {books.map((book) => (
+              <div
+                key={book.id}
+                className='d-flex justify-content-between border-bottom p-3 align-items-center'
+              >
+                <div className='d-flex gap-5'>
+                  <div className='width-50px'>{String(book.id)}</div>
+                  <div className='fw-medium'>{book.title}</div>
+                </div>
+                <div className='d-flex gap-3'>
+                  <button
+                    className='btn btn-sm rounded-circle edit-button'
+                    onClick={() => handleEditBook(book)}
+                  >
+                    <FontAwesomeIcon icon={faEdit} color='#ff8a00' />
+                  </button>
+                  <button
+                    className='btn btn-sm rounded-circle delete-button'
+                    onClick={() => handleDeleteBook(String(book.id))}
+                  >
+                    <FontAwesomeIcon icon={faTrash} color='#d9534f' />
+                  </button>
+                </div>
+              </div>
+            ))}
           </div>
-        ))
-      ) : (
-        <p>Veri bulunamadı...</p>
-      )}
+        ) : (
+          <div className='text-center p-5 bg-light rounded-3'>
+            <FontAwesomeIcon
+              icon={faBook}
+              className='text-orange mb-3'
+              size='2x'
+            />
+            <p className='mb-0'>No Data.</p>
+          </div>
+        )}
+      </div>
 
       <BookModal
         show={showModal}
