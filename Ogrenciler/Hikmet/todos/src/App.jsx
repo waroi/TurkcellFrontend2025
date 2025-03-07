@@ -28,7 +28,7 @@ function App() {
 						<div key={todo.id}>
 							<h1>{todo.text}</h1>
 							<p>{todo.id}</p>
-							<button onClick={deleteTodo}>Sil</button>
+							<button onClick={() => deleteTodo(todo.id)}>Sil</button>
 						</div>
 					))}
 				</div>
