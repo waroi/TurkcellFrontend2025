@@ -35,7 +35,7 @@ const NavbarView = ({ setEditingBookId }) => {
 	return (
 		<nav className="navbar navbar-expand-lg navbar-light position-sticky top-0 z-2 shadow-sm py-3">
 			<div className="container-fluid">
-				<a className="navbar-brand text-white" href="#">
+				<a className="navbar-brand text-white fw-bold" href="#">
 					Kitap Dünyası
 				</a>
 				<button
