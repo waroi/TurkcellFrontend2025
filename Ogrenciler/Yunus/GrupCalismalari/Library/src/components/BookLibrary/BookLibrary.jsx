@@ -69,12 +69,12 @@ const BookLibrary = () => {
                                 onChange={(e) => setSearchTerm(e.target.value)}
                             />
                         </div>
-                        <button
+                        {/* <button
                             className="btn btn-primary w-25"
                             onClick={() => setShowAddModal(true)}
                         >
                             Yeni Kitap Ekle
-                        </button>
+                        </button> */}
                     </div>
                 </div>
             </div>

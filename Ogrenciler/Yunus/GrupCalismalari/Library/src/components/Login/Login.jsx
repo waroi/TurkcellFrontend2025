@@ -1,11 +1,11 @@
 import { useState } from "react"
-import { NavLink } from "react-router"
+import { NavLink, useNavigate } from "react-router"
 import { Auth } from "../../api/auth";
 import { userInitialState } from "../../utils/variables";
 
 const Login = () => {
     const [user, setUser] = useState(userInitialState)
-
+    const navigate = useNavigate()
     const handleInputChange = (e) => {
         const { name, value } = e.target
         setUser({

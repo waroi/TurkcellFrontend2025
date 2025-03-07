@@ -4,6 +4,7 @@ import { Storage } from '../utils/storage'
 import BreadCrumb from '../components/BreadCrumb/BreadCrumb'
 import DeleteModal from '../components/Modals/DeleteModal'
 import EditModal from '../components/Modals/EditModal'
+import { FireStore } from '../api/fireStore'
 
 const BookView = () => {
     const { bookId } = useParams()
@@ -11,7 +12,7 @@ const BookView = () => {
     const [refreshTrigger, setRefreshTrigger] = useState(0);
 
     const getBookDetails = () => {
-        setBook(Storage.getBook(bookId))
+        FireStore.getBookWithId(bookId)
     }
 
     useEffect(() => {

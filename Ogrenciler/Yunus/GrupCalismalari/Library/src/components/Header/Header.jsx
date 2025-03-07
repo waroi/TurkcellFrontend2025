@@ -6,14 +6,21 @@ import { Auth } from '../../api/auth';
 
 const Header = () => {
     const [login, setLogin] = useState(false)
+    const [publisherName, setPublisherName] = useState('')
     const navigate = useNavigate()
     useEffect(() => {
-        onAuthStateChanged(auth, (user) => {
+        onAuthStateChanged(auth, async (user) => {
             if (user) {
                 setLogin(true)
+                const userData = await Auth.fetchUserByUid(user.uid)
+                setPublisherName(userData.publisherName)
                 return navigate('/')
             }
         });
+
+
+
+
     }, [])
 
     const signOut = () => {
@@ -41,9 +48,9 @@ const Header = () => {
                             <li className="nav-item">
                                 <NavLink className="nav-link active" to="/popular-books">Kitap Ara</NavLink>
                             </li>
-                            <li className="nav-item">
+                            {publisherName !== '' && <li className="nav-item">
                                 <NavLink className="nav-link active" to="/publisher">Yayınevi Sayfası</NavLink>
-                            </li>
+                            </li>}
                             {!login ?
                                 <>
                                     <li className="nav-item">
