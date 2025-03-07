@@ -15,7 +15,7 @@ const NavBar = ({ isAdmin }) => {
 
   return (
     <>
-      <ScrollingText/>
+      <ScrollingText />
       <nav className="navbar bg-body-tertiary mb-3">
         <div className="container d-flex justify-content-between">
           <a

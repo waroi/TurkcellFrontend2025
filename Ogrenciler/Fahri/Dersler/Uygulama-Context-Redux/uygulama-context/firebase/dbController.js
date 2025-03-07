@@ -1,22 +1,27 @@
-import { useCollection } from "react-firebase-hooks/firestore";
-import { collection, query } from "firebase/firestore";
-import { db } from "../../../firebase/firebase";
+import { collection, query, where } from "firebase/firestore";
+import { db } from "./firebase";
+import { doc, getDoc, getDocs } from "firebase/firestore";
+import { auth } from "../firebase/firebase";
 
-const booksRef = collection(db, "users");
-const [books] = useCollection(query(booksRef));
-
-// const db = firebase.firestore();
-// const collectionRef = db.collection("your_collection_name");
-
-// const query = collectionRef.where("status", "==", "active");
-
-// query
-//   .get()
-//   .then((snapshot) => {
-//     snapshot.forEach((doc) => {
-//       console.log(doc.id, "=>", doc.data());
-//     });
-//   })
-//   .catch((error) => {
-//     console.error("Error fetching filtered data:", error);
-//   });
+export async function getUserBooks() {
+  const user = auth.currentUser;
+  if (!user) {
+    console.error("Kullanıcı oturum açmamış!");
+    return;
+  }
+  const userRef = doc(db, "users", user.uid);
+  const userSnap = await getDoc(userRef);
+  if (!userSnap.exists()) {
+    console.error("Kullanıcı bilgisi bulunamadı!");
+    return;
+  }
+  const publisherId = userSnap.data().publisherId;
+  const booksRef = collection(db, "books");
+  const q = query(booksRef, where("publisherId", "==", publisherId));
+  const querySnapshot = await getDocs(q);
+  const books = querySnapshot.docs.map((doc) => ({
+    id: doc.id,
+    ...doc.data(),
+  }));
+  console.log("Kullanıcının yayınevine ait kitaplar:", books);
+}
