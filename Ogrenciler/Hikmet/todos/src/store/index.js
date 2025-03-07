@@ -12,6 +12,6 @@ export const useStore = create((set) => ({
 	toggleTodo: (id) => set((state) => ({ todo: state.todo })),
 	deleteTodo: (id) =>
 		set((state) => ({
-			todo: state.todo.filter((todo) => todo.id === id),
+			todo: state.todo.filter((todo) => todo.id !== id),
 		})),
 }));
