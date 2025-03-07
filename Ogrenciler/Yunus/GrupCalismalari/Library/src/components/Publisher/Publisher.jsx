@@ -84,7 +84,7 @@ const Publisher = () => {
                 <div className="container">
                     <div className="row mb-4">
                         <div className="col">
-                            <h1 className="text-center mb-4">{publisherName}'un' Yayınevinin Yayınları</h1>
+                            <h1 className="text-center mb-4">{publisherName} adlı yayınevinin yayınları</h1>
                             <div className="d-flex search-bar justify-content-between align-items-center mb-4">
                                 <div className="search-container w-100 me-3">
                                     <input
@@ -107,7 +107,7 @@ const Publisher = () => {
 
                     <div className="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
                         {filteredBooks.map((book) => (
-                            <div className="col-lg-3" key={book.id}>
+                            <div className="col-lg-3 book-div" key={book.id}>
                                 <div className="card h-100 book-card" onClick={() => {
                                     navigate(`/books/${book.id}`)
                                 }}>
