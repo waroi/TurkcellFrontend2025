@@ -6,7 +6,7 @@ const Router = () => {
 	const routes = useRoutes([
 		{ path: "/", element: <Home /> },
 		{ path: "/login", element: <LoginScreen /> },
-		{ path: "/kategori/:category", element: <CategoryPage /> },
+		{ path: "/yayinevi/:publishing", element: <CategoryPage /> },
 	]);
 	return routes;
 };

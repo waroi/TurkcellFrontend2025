@@ -7,7 +7,7 @@ const FilteredBookList = ({ filteredBooks, handleDeleteBook }) => {
       <div className="row g-4">
         {filteredBooks.map((book) => (
           <div key={book.id} className=" col-md-6 col-sm-12">
-            <Book book={book} handleDeleteBook={handleDeleteBook} />
+            <Book book={book} />
           </div>
         ))}
       </div>

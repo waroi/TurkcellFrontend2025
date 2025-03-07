@@ -2,6 +2,11 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addBook } from "../../redux/slices/bookSlice";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { addedBook } from "../../../firebase/dbController";
+import { current } from "@reduxjs/toolkit";
+import { auth } from "../../../firebase/firebase";
+
+
 
 const AddBook = () => {
   const dispatch = useDispatch();
@@ -25,15 +30,16 @@ const AddBook = () => {
           "https://static.wikia.nocookie.net/villains/images/3/35/Learning-language-without-grammar-education-online.jpg/revision/latest?cb=20180825053447",
         publicYear: new Date().getFullYear() || "Belirtilmemiş",
         description,
+        publisherId : auth.currentUser.publisherId
       };
 
-      const response = await fetch("http://localhost:5000/books", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(newBook),
-      });
-      const addedBook = await response.json();
-      dispatch(addBook(addedBook)); // Redux'a yeni kitabı ekle
+      // const response = await fetch("http://localhost:5000/books", {
+      //   method: "POST",
+      //   headers: { "Content-Type": "application/json" },
+      //   body: JSON.stringify(newBook),
+      // });
+      // const addedBook = await response.json();
+      addedBook(newBook);
 
       setTitle("");
       setAuthor("");

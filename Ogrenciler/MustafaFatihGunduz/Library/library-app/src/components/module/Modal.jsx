@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { auth } from "../../../firebase";
 import { checkIsHeAdmin, checkPublishing } from "../../controller/DBController";
@@ -199,7 +199,7 @@ const Modal = ({ editingBookId, setEditingBookId }) => {
 									disabled={!admin}>
 									<option value="kodlab">KodLab</option>
 									<option value="papatya">Papatya</option>
-									<option value="abaküs">Abaküs</option>
+									<option value="abakus">Abaküs</option>
 									<option value="pusula">Pusula</option>
 								</select>
 							</div>
