@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router";
+import { deleteBook } from "../../../firebase/dbController";
 
 const Book = ({ book, handleDeleteBook }) => {
   return (
@@ -28,7 +29,7 @@ const Book = ({ book, handleDeleteBook }) => {
             <div className="d-flex justify-content-between align-items-center">
               <button
                 className="btn btn-outline-danger"
-                onClick={() => handleDeleteBook(book.id)}
+                onClick={() => deleteBook(book.id)}
               >
                 Sil
               </button>
