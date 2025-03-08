@@ -15,7 +15,7 @@ const BookList = () => {
         book.genre.toLowerCase().includes(searchText.toLowerCase())
     );
     setFilteredBooks(books);
-  }, [searchText]);
+  }, [searchText, booksFirebase]);
 
   return (
     <>

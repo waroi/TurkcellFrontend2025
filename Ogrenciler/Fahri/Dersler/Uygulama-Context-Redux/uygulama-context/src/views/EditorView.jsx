@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import BookList from "../components/BookList/BookList";
 import { getUserBooks } from "../../firebase/dbController";
-import { setBooks } from "../redux/slices/bookSlice";
+import { clearBooks, setBooks } from "../redux/slices/bookSlice";
 import { changeButton } from "../redux/slices/buttonSlice";
 import { useDispatch, useSelector } from "react-redux";
 import AddBook from "../components/AddBook/AddBook";
@@ -10,7 +10,7 @@ const EditorView = () => {
   const booksFirebase = useSelector((state) => state.books.books);
   dispatch(changeButton("d-block"));
   useEffect(() => {
-    dispatch(setBooks([]));
+    dispatch(clearBooks());
     const fetchBooks = async () => {
       const data = await getUserBooks();
       console.log(data);
@@ -20,7 +20,6 @@ const EditorView = () => {
     };
     fetchBooks();
   }, []);
-
   return (
     <>
       <AddBook />

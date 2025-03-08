@@ -16,7 +16,7 @@ const HomeView = () => {
       }
     };
     fetchBooks();
-  }, []);
+  }, [dispatch]);
 
   return (
     <>
@@ -26,7 +26,7 @@ const HomeView = () => {
       {booksFirebase.length == 0 ? (
         <p>Kitaplar yükleniyor veya bulunamadı</p>
       ) : (
-        <BookList></BookList>
+        <BookList key="home"></BookList>
       )}
     </>
   );

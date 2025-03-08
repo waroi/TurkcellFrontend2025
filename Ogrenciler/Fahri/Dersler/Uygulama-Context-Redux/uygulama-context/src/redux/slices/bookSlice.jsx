@@ -22,9 +22,13 @@ const bookSlice = createSlice({
         }
       });
     },
+    clearBooks: (state) => {
+      state.books = [];
+    },
   },
 });
 
-export const { setBooks, addBook, removeBook, changeBook } = bookSlice.actions;
+export const { setBooks, addBook, removeBook, changeBook, clearBooks } =
+  bookSlice.actions;
 
 export default bookSlice.reducer;
