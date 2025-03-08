@@ -1,18 +1,35 @@
-import { initializeApp } from 'firebase/app';
-import { getAuth } from 'firebase/auth';
+
+import { initializeApp, getApp, getApps } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+import { getAuth } from "firebase/auth";
+import { getAnalytics } from "firebase/analytics";
 
 const firebaseConfig = {
-  apiKey: 'YOUR_API_KEY',
-  authDomain: 'YOUR_PROJECT_ID.firebaseapp.com',
-  projectId: 'YOUR_PROJECT_ID',
-  storageBucket: 'YOUR_PROJECT_ID.appspot.com',
-  messagingSenderId: 'YOUR_MESSAGING_SENDER_ID',
-  appId: 'YOUR_APP_ID',
+  apiKey: "AIzaSyAbpg0vQ35O4g9kK7_NVbW5p4AQ6R1c-RU",
+  authDomain: "my-project-182d7.firebaseapp.com",
+  projectId: "my-project-182d7",
+  storageBucket: "my-project-182d7.firebasestorage.app",
+  messagingSenderId: "22778947805",
+  appId: "1:22778947805:web:b58472da1935c314f4d334",
+  measurementId: "G-DZBL5RLF49"
 };
 
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
+let app;
+if (getApps().length === 0) {
 
-export { auth };
+  app = initializeApp(firebaseConfig);
+} else {
+
+  app = getApp();
+}
+
+
+const analytics = getAnalytics(app);
+const auth = getAuth(app);
+const db = getFirestore(app);
+
+
+export { app, auth, db, analytics };
+
 
 
