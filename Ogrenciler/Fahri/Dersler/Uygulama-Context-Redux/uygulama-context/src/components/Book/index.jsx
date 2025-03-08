@@ -1,11 +1,12 @@
 import React from "react";
 import { NavLink } from "react-router";
 import { deleteBook } from "../../../firebase/dbController";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { removeBook } from "../../redux/slices/bookSlice";
 
 const Book = ({ book }) => {
   const dispatch = useDispatch();
+  const button = useSelector((state) => state.button.button);
   function handleDelete() {
     deleteBook(`${book.id}`);
     dispatch(removeBook(book.id));
@@ -34,7 +35,10 @@ const Book = ({ book }) => {
             </p>
             <p className="card-text text-truncate">{book.description}</p>
             <div className="d-flex justify-content-between align-items-center">
-              <button className="btn btn-outline-danger" onClick={handleDelete}>
+              <button
+                className={`btn btn-outline-danger ${button}`}
+                onClick={handleDelete}
+              >
                 Sil
               </button>
               <NavLink to={`/${book.id}`} className="btn btn-outline-primary">
@@ -42,7 +46,7 @@ const Book = ({ book }) => {
               </NavLink>
               <NavLink
                 to={`/update/${book.id}`}
-                className="btn btn-outline-info"
+                className={`btn btn-outline-info ${button}`}
               >
                 <i className="bi bi-search"></i> Edit
               </NavLink>

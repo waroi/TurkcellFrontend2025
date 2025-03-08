@@ -23,7 +23,6 @@ export async function getUserBooks() {
     id: doc.id,
     ...doc.data(),
   }));
-  console.log("Kullanıcının yayınevine ait kitaplar:", books);
   return books;
 }
 export async function getBook(id) {
@@ -50,6 +49,20 @@ export async function updateBook(id, book) {
   try {
     const bookRef = doc(db, "books", id);
     await updateDoc(bookRef, book);
+  } catch (error) {
+    console.error("Güncelleme hatası:", error);
+  }
+}
+export async function getBooks() {
+  try {
+    const booksRef = collection(db, "books");
+    const q = query(booksRef, where("publisherId", "!=", ""));
+    const querySnapshot = await getDocs(q);
+    const books = querySnapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+    }));
+    return books;
   } catch (error) {
     console.error("Güncelleme hatası:", error);
   }
