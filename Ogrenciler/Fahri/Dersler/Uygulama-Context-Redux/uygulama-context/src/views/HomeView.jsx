@@ -20,9 +20,7 @@ const HomeView = () => {
 
   return (
     <>
-      <NavLink to="/login" className="btn btn-primary">
-        Login
-      </NavLink>
+
       {booksFirebase.length == 0 ? (
         <p>Kitaplar yükleniyor veya bulunamadı</p>
       ) : (
