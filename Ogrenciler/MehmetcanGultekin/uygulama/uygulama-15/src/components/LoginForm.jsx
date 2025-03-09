@@ -9,6 +9,7 @@ import { auth, db } from "../../firebase-config";
 import { useNavigate } from "react-router";
 import "../App.css";
 import { doc, setDoc } from "firebase/firestore";
+import { useAuthStore } from "../store";
 
 const LoginForm = ({ handleSignIn }) => {
   const [email, setEmail] = useState("");
@@ -18,7 +19,8 @@ const LoginForm = ({ handleSignIn }) => {
 
   const handleStates = (e) => {
     e.preventDefault();
-    handleSignIn(password, email);
+    const userInfo = { email, password, yayinevi, adminName };
+    addUserInfo(userInfo);
   };
   return (
     <div className="container flex-column w-25 p-5 bg-brown text-white rounded-5">

@@ -1,6 +1,8 @@
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import { useAuthStore } from "../store";
+
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -15,10 +17,12 @@ const SignUpForm = ({ handleSubmit }) => {
   const [password, setPassword] = useState("");
   const [adminName, setAdminName] = useState("");
   const [yayinevi, setYayinevi] = useState("");
+  const { addUserInfo } = useAuthStore();
 
   const handleStates = (e) => {
     e.preventDefault();
-    handleSubmit(password, email, adminName, yayinevi);
+    const userInfo = { email, password, yayinevi, adminName };
+    addUserInfo(userInfo);
   };
   return (
     <div className="container flex-column w-25 p-5 bg-brown text-white rounded-5">
