@@ -1,9 +1,6 @@
-import React from "react";
-import "./footer.css";
-
 const Footer = () => {
   return (
-    <footer className="mt-5">
+    <footer className="mt-5 position-absolute bottom-0 end-0 start-0 w-100">
       <div className="footer-container">
         <div className="footer-info">
           <h3>Book Collector</h3>

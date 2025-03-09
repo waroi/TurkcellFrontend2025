@@ -29,6 +29,7 @@ export const registerWithGoogle = async (publisherId) => {
     });
   }
   alert("Kaydınız tamamlandı!");
+  return user;
 };
 export const signOut = async () => {
   return auth.signOut();

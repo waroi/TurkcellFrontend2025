@@ -48,7 +48,9 @@ const BookDetail = () => {
               <p className="card-text mb-2 fs-3">
                 <strong>Yıl:</strong> {booksFirebase.publicYear}
               </p>
-              <p className="card-text mb-3 fs-3">{booksFirebase.description}</p>
+              <p className="card-text mb-3 fs-3">
+                {booksFirebase?.description?.substring(0, 350) + "..."}
+              </p>
             </div>
 
             <div className="d-flex justify-content-between">
