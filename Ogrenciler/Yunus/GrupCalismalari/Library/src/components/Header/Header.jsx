@@ -15,7 +15,7 @@ const Header = () => {
             if (user) {
                 setLogin(true)
                 const userData = await Auth.fetchUserByUid(user.uid)
-                setPublisherName(userData.publisherName)
+                setPublisherName(userData.state)
                 setState(userData.state)
                 return navigate('/')
             }
