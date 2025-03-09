@@ -1,0 +1,22 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app.dark {
+  background-color: gray;
+  color: white;
+}
+
+.app.light {
+  background-color: white;
+  color: black;
+}
