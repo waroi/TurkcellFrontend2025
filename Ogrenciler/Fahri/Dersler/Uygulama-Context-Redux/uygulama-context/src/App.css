@@ -10,8 +10,13 @@
   --pink: #f14658;
   --light-green: #004875;
   --light-pink: #dc2537;
+  --dark-green: #6A9C89;
+  --blue-bg:#e1efff;
 }
-
+body{
+  background-color: var(--blue-bg);
+  /* background-image: ; */
+}
 .card {
   padding: 2em;
   background-image: linear-gradient(to right, var(--red), var(--yellow));
@@ -24,7 +29,7 @@
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 h4,
-p {
+* {
   font-family: var(--fonts);
 }
 
@@ -170,4 +175,14 @@ footer .footer-bottom a:hover {
   footer {
     text-align: center;
   }
+}
+.btn-green {
+  background: var(--green);
+  border: none;
+  z-index: 1;
+}
+
+.btn-green:after {
+  background: var(--dark-green);
+  color: var(--green);
 }
