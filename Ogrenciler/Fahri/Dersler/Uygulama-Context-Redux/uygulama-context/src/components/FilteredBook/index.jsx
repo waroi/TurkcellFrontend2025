@@ -1,7 +1,6 @@
-import React from "react";
 import Book from "../Book";
 
-const FilteredBookList = ({ filteredBooks, handleDeleteBook }) => {
+const FilteredBookList = ({ filteredBooks }) => {
   return (
     <>
       <div className="row g-4">

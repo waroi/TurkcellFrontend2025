@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { updateBook } from "../../redux/slices/bookSlice";
+import { changeBook } from "../../redux/slices/bookSlice";
 import { useNavigate, useParams } from "react-router";
+import { getBook, updateBook } from "../../../firebase/dbController";
 
 const BookUpdate = () => {
   const { id } = useParams();
@@ -12,17 +13,18 @@ const BookUpdate = () => {
   const [publicYear, setPublicYear] = useState("");
   const [description, setDescription] = useState("");
   const [img, setImg] = useState("");
+  const [publisherId, setPublisherId] = useState("");
   const navigate = useNavigate();
   useEffect(() => {
     const fetchBookDetails = async () => {
-      const response = await fetch(`http://localhost:5000/books/${id}`);
-      const data = await response.json();
+      const data = await getBook(id);
       setTitle(data.title);
       setAuthor(data.author);
       setGenre(data.genre);
       setPublicYear(data.publicYear);
       setDescription(data.description);
       setImg(data.img);
+      setPublisherId(data.publisherId);
     };
     fetchBookDetails();
   }, [id]);
@@ -30,23 +32,18 @@ const BookUpdate = () => {
     e.preventDefault();
     if (id && title && author && publicYear && description) {
       const newBook = {
-        id,
-        title,
-        author,
-        genre,
+        title: title,
+        author: author,
+        genre: genre,
         img:
           img ||
           "https://static.wikia.nocookie.net/villains/images/3/35/Learning-language-without-grammar-education-online.jpg/revision/latest?cb=20180825053447",
-        publicYear: new Date().getFullYear() || "Belirtilmemiş",
-        description,
+        publicYear: publicYear || "Belirtilmemiş",
+        description: description,
+        publisherId: publisherId,
       };
-      const response = await fetch("http://localhost:5000/books/" + id, {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(newBook),
-      });
-      const updatedBook = await response.json();
-      dispatch(updateBook(updatedBook));
+      updateBook(id, newBook);
+      dispatch(changeBook(newBook));
       setTitle("");
       setAuthor("");
       setGenre("");

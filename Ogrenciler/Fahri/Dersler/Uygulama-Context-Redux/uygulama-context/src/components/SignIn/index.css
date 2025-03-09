@@ -1,0 +1,20 @@
+.sign-in-card {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+input.form-control {
+  border-radius: 50px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding-left: 20px;
+}
+
+input.form-control:focus {
+  border-color: var(--orange);
+}
+@media (max-width: 576px) {
+  .sign-in-card {
+    width: 90%;
+  }
+}

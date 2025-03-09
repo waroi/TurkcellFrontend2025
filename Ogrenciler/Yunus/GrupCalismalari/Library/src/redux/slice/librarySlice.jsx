@@ -22,7 +22,8 @@ export const librarySlice = createSlice({
             if (bookIndex !== -1) {
                 state.books[bookIndex] = { ...state.books[bookIndex], ...action.payload }
             }
-            Storage.addBooks(state.books)
+
+            FireStore.updateBook(action.payload.id, { ...action.payload })
         }
     }
 })

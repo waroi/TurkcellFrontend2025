@@ -4,8 +4,94 @@
 	box-sizing: border-box;
 }
 
-$primary-color: #7886c7;
-$footer-color: #2d336b;
+$white: #fff;
+$icon-color: #cfcaca;
+$primary-color: #461e07;
+$secondary-color: #5F2222;
+$button-color: #BB6826;
+
+@mixin box-design{
+	border-radius: 25px;
+	background: #ffffff;
+	box-shadow:  5px 5px 30px #d9d9d9,
+				 -5px -5px 30px #ffffff;
+}
+
+@mixin image-design{
+	object-fit: contain;
+	width: 100%;
+	height: 200px;
+}
+.section{
+	@include box-design;
+	#book-stack{
+		width: 200px;
+		height: 200px;
+	}
+}
+
+input{
+	border: 1px solid #ccc;
+	background-color: $icon-color;
+	border-radius: 20px;
+	padding: 10px 20px;
+	width: 100%;
+	min-width: 280px;
+	&:focus{
+		outline: none;
+	}
+
+}
+
+button{
+	background-color: $button-color;
+	color: $white;
+	border: 1px solid transparent;
+	border-radius: 20px;
+	padding: 10px 20px;
+	transition: all 0.3s ease;
+	&:hover{
+		transform: translateY(-5px);
+	}
+	
+}
+
+.card{
+	.card-image{
+		img{
+			@include image-design;
+		}
+	}
+}
+.checked {
+	color: orange;
+  }
+
+.right-side{
+	color: $white;
+	background-color: $secondary-color;
+	height: 100%;
+	img{
+		@include image-design;
+	}
+}
+
+.left-side{
+	color: $white;
+	background-color: $secondary-color;
+	height: 100%;
+}
+
+.card-first{
+	background-color: $secondary-color;
+	color: $white;
+	border: 1px solid transparent;
+	border-radius: 10px;
+	padding: 10px 20px;
+	img{
+		@include image-design;
+	}
+}
 
 .loginSection {
 	background-color: #c9d6ff;
@@ -221,9 +307,28 @@ $footer-color: #2d336b;
 	}
 }
 
-nav {
-	background-color: $primary-color;
+.wrapper {
+	display: grid;
+	grid-template-columns: 1fr 5fr 1fr;
+
 }
+
+.nav-item{
+
+	.fa{
+		color: $icon-color;
+		&:hover{
+			color: $primary-color;
+		}
+	}
+	.nav-link{
+		color: $icon-color;
+		&:hover{
+			color: $primary-color;
+		}
+	}
+}
+
 .avatar {
 	width: 30px;
 	height: 30px;
@@ -245,12 +350,8 @@ nav {
 	}
 }
 
-.offer-section {
-	background-color: $primary-color;
-}
 
 .subscribe {
-	background-color: $primary-color;
 	input {
 		height: 40px;
 		padding: 10px 20px;
@@ -269,8 +370,4 @@ nav {
 	img {
 		height: 320px;
 	}
-}
-
-footer {
-	background-color: $footer-color;
 }

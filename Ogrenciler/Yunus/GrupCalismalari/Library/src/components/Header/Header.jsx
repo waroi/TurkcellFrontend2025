@@ -15,7 +15,7 @@ const Header = () => {
             if (user) {
                 setLogin(true)
                 const userData = await Auth.fetchUserByUid(user.uid)
-                setPublisherName(userData.publisherName)
+                setPublisherName(userData.state)
                 setState(userData.state)
                 return navigate('/')
             }
@@ -46,7 +46,7 @@ const Header = () => {
                             <li className="nav-item">
                                 <NavLink className="nav-link active" to="/popular-books">Kitap Ara</NavLink>
                             </li>
-                            {publisherName !== '' && <li className="nav-item">
+                            {(publisherName == 'publisher' || publisherName === 'admin') && <li className="nav-item">
                                 <NavLink className="nav-link active" to="/publisher">Yayınevi Sayfası</NavLink>
                             </li>}
                             {!login ?
