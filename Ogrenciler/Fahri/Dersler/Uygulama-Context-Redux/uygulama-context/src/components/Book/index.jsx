@@ -6,7 +6,8 @@ import { removeBook } from "../../redux/slices/bookSlice";
 
 const Book = ({ book }) => {
   const dispatch = useDispatch();
-  const button = useSelector((state) => state.button.button);
+  const button = useSelector((state) => state.cardButton.cardButton);
+  console.log("buton durumu: ", button);
   function handleDelete() {
     deleteBook(`${book.id}`);
     dispatch(removeBook(book.id));

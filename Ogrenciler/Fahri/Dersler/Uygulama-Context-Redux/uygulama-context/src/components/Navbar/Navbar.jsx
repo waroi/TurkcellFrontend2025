@@ -2,17 +2,25 @@ import { NavLink } from "react-router";
 import { signOut } from "../../../firebase/authControl";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleButton } from "../../redux/slices/buttonSlice";
+import { setCardButton } from "../../redux/slices/cardButtonSlice";
 const Navbar = () => {
   const button = useSelector((state) => state.button.button);
   const dispatch = useDispatch();
+
   const handleLogout = () => {
     signOut();
     dispatch(toggleButton());
+    dispatch(setCardButton("d-none"));
   };
+
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
-        <NavLink to={"/"} className="navbar-brand d-flex align-items-center">
+        <NavLink
+          to={"/"}
+          className="navbar-brand d-flex align-items-center"
+          onClick={() => dispatch(setCardButton("d-none"))}
+        >
           <img src="/cat.png" width={"70px"}></img>
           <h2 className="">Book</h2>
         </NavLink>
@@ -33,9 +41,18 @@ const Navbar = () => {
               <NavLink
                 to={"/"}
                 className="nav-link active text-decoration-none"
-                aria-current="page"
+                onClick={() => dispatch(setCardButton("d-none"))}
               >
                 Home
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                to={"/editor"}
+                className="nav-link active text-decoration-none"
+                onClick={() => dispatch(setCardButton("d-block"))}
+              >
+                Editor
               </NavLink>
             </li>
           </ul>

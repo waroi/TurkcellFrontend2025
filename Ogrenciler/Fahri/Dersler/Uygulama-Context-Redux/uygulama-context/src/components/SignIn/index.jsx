@@ -7,17 +7,21 @@ import { useNavigate } from "react-router-dom";
 import "./index.css";
 import { useDispatch } from "react-redux";
 import { toggleButton } from "../../redux/slices/buttonSlice";
+import { setUser } from "../../redux/slices/userSlice";
+import { setCardButton } from "../../redux/slices/cardButtonSlice";
 
 const SignIn = () => {
   const navigate = useNavigate();
-  const [publisherId, setPublisherId] = useState("");
   const dispatch = useDispatch();
+  const [publisherId, setPublisherId] = useState("");
 
   const handleClick = async () => {
     const user = await signInWithGoogle();
     if (user) {
       navigate("/editor");
       dispatch(toggleButton());
+      dispatch(setCardButton("d-block"));
+      dispatch(setUser(user));
     }
   };
 
@@ -26,6 +30,8 @@ const SignIn = () => {
     if (user) {
       navigate(`/editor`);
       dispatch(toggleButton());
+      dispatch(setCardButton("d-block"));
+      dispatch(setUser(user));
     }
   };
 

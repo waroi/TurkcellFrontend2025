@@ -19,7 +19,6 @@ const HomeView = () => {
 
   return (
     <>
-
       {booksFirebase.length == 0 ? (
         <p>Kitaplar yükleniyor veya bulunamadı</p>
       ) : (
