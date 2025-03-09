@@ -3,8 +3,8 @@ import React from "react";
 const SubscribeView = () => {
   return (
     <div className="d-flex flex-column justify-content-center align-items-center subscribe py-4">
-      <h4 className="text-uppercase fs-3 text-white fw-bold">Abone Ol</h4>
-      <p className="text-white fw-semi">
+      <h4 className="text-uppercase fs-3  fw-bold">Abone Ol</h4>
+      <p className=" fw-semi">
         Kaçırılmıyacak fırsatlar için sizde hemen abone olun ve size özel
         indirimlerden faydalanın
       </p>

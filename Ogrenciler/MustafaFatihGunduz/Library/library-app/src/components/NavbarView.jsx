@@ -1,39 +1,43 @@
-import { useContext, useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-import { NavLink, useNavigate } from "react-router";
-import { ThemeContext } from "../context/ThemeContext";
-import { getCurrentUser, logOut } from "../controller/AuthController";
-import { readUser } from "../controller/DBController";
+import  book  from "../../public/books.png";
+import { auth } from "../../firebase";
+const NavbarView = () => {
+  return (
+    <div className="container-fluid">
+      <div className="d-flex align-items-center justify-content-between">
+        <div className="d-flex align-items-center justify-content-center gap-3">
+          <img src={book} alt="" />
+          <a className="navbar-brand text-black fw-bold" href="#">
+            Kitap Dünyası
+          </a>
+        </div>
+        <div className="search-field">
+          <input
+            type="search"
+            name="search"
+            id="search"
+            placeholder="Kitap adı veya yazar ara"
+          />
+        </div>
+        <div className="user-field d-flex align-items-center justify-content-center">
+          <div className="avatar"></div>
+          <p className="text-center">
+            {auth.currentUser !== null
+              ? auth.currentUser.displayName
+              : "Giriş yap"}
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
 
-const NavbarView = ({ setEditingBookId }) => {
-	const { theme, toggleTheme } = useContext(ThemeContext);
-	const books = useSelector((state) => state.book.books);
-	const publishers = [...new Set(books.map((book) => book.publishing))];
+export default NavbarView;
 
-	const [user, setUser] = useState(null);
-	const navigate = useNavigate();
-	useEffect(() => {
-		handleUser();
-	}, []);
-	const handleUser = async () => {
-		const currentUser = getCurrentUser();
-		if (currentUser !== null) {
-			const user = await readUser(currentUser.uid);
-			setUser(user);
-		}
-	};
-	const handleLogOut = async () => {
-		try {
-			await logOut();
-			navigate("/login");
-			setUser(null);
-		} catch (error) {
-			console.log("Error in handleLogOut: ", error);
-		}
-	};
-
-	return (
-		<nav className="navbar navbar-expand-lg navbar-light position-sticky top-0 z-2 shadow-sm py-3">
+/**
+ *
+ */
+/**
+ * 		<nav className="navbar navbar-expand-lg navbar-light position-sticky top-0 z-2 shadow-sm py-3">
 			<div className="container-fluid">
 				<a className="navbar-brand text-white fw-bold" href="#">
 					Kitap Dünyası
@@ -67,7 +71,6 @@ const NavbarView = ({ setEditingBookId }) => {
 							</a>
 						</li>
 
-						{/* Yayınevleri */}
 						<li className="nav-item dropdown ">
 							<a
 								className="nav-link dropdown-toggle text-white"
@@ -112,7 +115,6 @@ const NavbarView = ({ setEditingBookId }) => {
 								aria-expanded="false">
 								<div className="avatar ms-2 me-2"></div>
 							</a>
-							{/*user vasrsa cikis yap yoksa login yap */}
 							<ul className="dropdown-menu">
 								{user ? (
 									<>
@@ -157,7 +159,4 @@ const NavbarView = ({ setEditingBookId }) => {
 				</div>
 			</div>
 		</nav>
-	);
-};
-
-export default NavbarView;
+ */
