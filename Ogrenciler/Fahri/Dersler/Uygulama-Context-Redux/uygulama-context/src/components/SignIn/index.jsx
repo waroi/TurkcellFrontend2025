@@ -4,40 +4,62 @@ import {
 } from "../../../firebase/authControl";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./index.css";
+
 const SignIn = () => {
   const navigate = useNavigate();
   const [publisherId, setPublisherId] = useState("");
+
   const handleClick = async () => {
     const user = await signInWithGoogle();
     if (user) {
       navigate("/editor");
     }
   };
+
   const handleRegister = async () => {
     const user = await registerWithGoogle();
     if (user) {
       navigate(`/editor/${publisherId}`);
     }
   };
+
   return (
-    <div className="vh-100 justify-content-center align-items-center d-flex">
-      <div className="row justify-content-center gap-2 border p-5 border-primary rounded-3 border-3 bg-primary bg-opacity-10">
-        <input
-          className="col-6 form-control w-50"
-          type="text"
-          placeholder="Yayın Evi ID Giriniz"
-          value={publisherId}
-          onChange={(e) => setPublisherId(e.target.value)}
-        />
-        <button className="col-6 btn btn-primary my-3" onClick={handleRegister}>
+    <div className="d-flex justify-content-center align-items-center min-vh-100">
+      <div className="sign-in-card p-4 shadow-lg rounded-4">
+        <h2 className="text-center mb-4 text-dark">Giriş Yap veya Kaydol</h2>
+
+        <div className="mb-3">
+          <input
+            className="form-control form-control-lg shadow-sm"
+            type="text"
+            placeholder="Yayın Evi ID Giriniz"
+            value={publisherId}
+            onChange={(e) => setPublisherId(e.target.value)}
+          />
+        </div>
+
+        <button
+          className="btn btn-blue card-btn w-100 my-3 shadow-sm"
+          onClick={handleRegister}
+        >
           Kaydol
         </button>
-        <hr className="w-50" />
-        <button className="col-6 btn btn-secondary" onClick={handleClick}>
-          Giriş
-        </button>
+
+        <hr className="my-4" />
+
+        <div className="text-center mt-4">
+          <p>Veya</p>
+          <button
+            className="btn btn-red card-btn w-100 shadow-sm"
+            onClick={handleClick}
+          >
+            Google ile Giriş Yap
+          </button>
+        </div>
       </div>
     </div>
   );
 };
+
 export default SignIn;
