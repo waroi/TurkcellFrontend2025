@@ -9,7 +9,7 @@ function App() {
   const [isCompleted, setIsCompleted] = useState(false);
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(e)
+    console.log(e);
     if (e.key === "Enter") {
       addTodo(todo);
       setTodo(" ");
@@ -18,7 +18,7 @@ function App() {
   };
   useEffect(() => {
     console.log(todos);
-  } , [todo])
+  }, [todo]);
   return (
     <>
       <div className="input-group mb-3">
@@ -38,8 +38,8 @@ function App() {
               <input
                 className="form-check-input mt-0"
                 type="checkbox"
-                value={todo.isCompleted}
-                onChange={toggleComplete}
+                checked={todo.isCompleted}
+                onChange={() => toggleComplete(todo.id)}
                 aria-label="Checkbox for following text input"
               />
             </div>
