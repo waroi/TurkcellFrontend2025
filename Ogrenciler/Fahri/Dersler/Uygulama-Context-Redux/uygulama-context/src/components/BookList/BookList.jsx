@@ -19,23 +19,28 @@ const BookList = () => {
 
   return (
     <>
-      <div className="container mt-4">
+      <div className="container mt-5">
         <div className="row">
-          <div className="col-md-6">
-            <input
-              type="text"
-              className="form-control"
-              value={searchText}
-              onChange={(e) => setSearchText(e.target.value)}
-              placeholder="🔍 Kitap Ara"
-            />
+          <div className="col-md-6 mx-auto">
+            <div className="input-group mb-4">
+              <input
+                type="text"
+                className="form-control border-light shadow-sm my-4"
+                value={searchText}
+                onChange={(e) => setSearchText(e.target.value)}
+                placeholder="🔍 Kitap Ara"
+              />
+              <span className="input-group-text bg-light border-light">
+                <i className="bi bi-search text-muted"></i>
+              </span>
+            </div>
           </div>
         </div>
-        <hr />
-        <h2 className="text-center">Kitap Listesi</h2>
-        <hr />
+
         {booksFirebase.length === 0 ? (
-          <p>Ürün bulunamadı veya yükleniyor...</p>
+          <div className="text-center text-muted">
+            <p>Ürün bulunamadı veya yükleniyor...</p>
+          </div>
         ) : (
           <FilteredBookList filteredBooks={filteredBooks} />
         )}
