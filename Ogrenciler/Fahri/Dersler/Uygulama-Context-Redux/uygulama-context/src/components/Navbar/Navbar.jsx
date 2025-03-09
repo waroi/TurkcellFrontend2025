@@ -1,16 +1,22 @@
 import { NavLink } from "react-router";
 import { signOut } from "../../../firebase/authControl";
-import { useSelector } from "react-redux";
-
+import { useDispatch, useSelector } from "react-redux";
+import { toggleButton } from "../../redux/slices/buttonSlice";
+import SignIn from "../SignIn";
 const Navbar = () => {
   const button = useSelector((state) => state.button.button);
+  const dispatch = useDispatch();
+  const handleLogout = () => {
+    signOut();
+    dispatch(toggleButton());
+  };
   return (
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
-        <a class="navbar-brand d-flex align-items-center" href="#">
+        <NavLink to={"/"} className="navbar-brand d-flex align-items-center" >
           <img src="/cat.png" width={"70px"}></img>
           <h2 className="">Book</h2>
-        </a>
+        </NavLink>
         <button
           class="navbar-toggler"
           type="button"
@@ -33,17 +39,16 @@ const Navbar = () => {
           <form class="d-flex" role="search">
             <NavLink
               to="/login"
-              className={`btn btn-blue card-btn ${
-                button == "d-none" ? "d-flex" : "d-none"
-              }`}
+              className={`btn btn-blue card-btn ${button == "d-none" ? "d-flex" : "d-none"
+                }`}
             >
               Login
             </NavLink>
             <NavLink
-              to={"/"}
+              to="/"
               className={`btn btn-outline-danger ${button}`}
-              type="submit"
-              onClick={signOut}
+              type="button"
+              onClick={handleLogout}
             >
               Log Out
             </NavLink>
@@ -53,5 +58,4 @@ const Navbar = () => {
     </nav>
   );
 };
-
 export default Navbar;

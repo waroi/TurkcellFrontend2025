@@ -106,7 +106,7 @@ const AddBook = () => {
         ></textarea>
       </div>
 
-      <button type="submit" className="btn btn-success mt-3 w-100">
+      <button type="submit" className="btn btn-green card-btn mt-3 w-100">
         ➕ Kitap Ekle
       </button>
     </form>

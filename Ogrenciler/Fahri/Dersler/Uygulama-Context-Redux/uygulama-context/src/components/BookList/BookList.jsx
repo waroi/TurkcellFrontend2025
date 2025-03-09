@@ -30,9 +30,9 @@ const BookList = () => {
                 onChange={(e) => setSearchText(e.target.value)}
                 placeholder="🔍 Kitap Ara"
               />
-              <span className="input-group-text bg-light border-light">
+              {/* <span className="input-group-text bg-light border-light">
                 <i className="bi bi-search text-muted"></i>
-              </span>
+              </span> */}
             </div>
           </div>
         </div>
