@@ -46,7 +46,7 @@ const Header = () => {
                             <li className="nav-item">
                                 <NavLink className="nav-link active" to="/popular-books">Kitap Ara</NavLink>
                             </li>
-                            {publisherName !== '' && <li className="nav-item">
+                            {publisherName !== 'user' && <li className="nav-item">
                                 <NavLink className="nav-link active" to="/publisher">Yayınevi Sayfası</NavLink>
                             </li>}
                             {!login ?
