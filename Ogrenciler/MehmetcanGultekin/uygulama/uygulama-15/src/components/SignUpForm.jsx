@@ -10,7 +10,7 @@ import { useNavigate } from "react-router";
 import "../App.css";
 import { doc, setDoc } from "firebase/firestore";
 
-const LoginForm = ({ handleSignIn }) => {
+const SignUpForm = ({ handleSubmit }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [adminName, setAdminName] = useState("");
@@ -18,7 +18,7 @@ const LoginForm = ({ handleSignIn }) => {
 
   const handleStates = (e) => {
     e.preventDefault();
-    handleSignIn(password, email);
+    handleSubmit(password, email, adminName, yayinevi);
   };
   return (
     <div className="container flex-column w-25 p-5 bg-brown text-white rounded-5">
@@ -44,6 +44,26 @@ const LoginForm = ({ handleSignIn }) => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </Form.Group>
+        <Form.Group className="mb-3" controlId="formAdminName">
+          <Form.Label>Admin Adı</Form.Label>
+          <Form.Control
+            type="text"
+            className="rounded-pill py-2 mb-3"
+            placeholder="Admin adınızı giriniz."
+            value={adminName}
+            onChange={(e) => setAdminName(e.target.value)}
+          />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formYayinevi">
+          <Form.Label>Yayınevi</Form.Label>
+          <Form.Control
+            type="text"
+            className="rounded-pill py-2 mb-5"
+            placeholder="Yayınevi giriniz."
+            value={yayinevi}
+            onChange={(e) => setYayinevi(e.target.value)}
+          />
+        </Form.Group>
         <Button variant="light" className="rounded-pill" type="submit">
           Submit
         </Button>
@@ -51,4 +71,4 @@ const LoginForm = ({ handleSignIn }) => {
     </div>
   );
 };
-export default LoginForm;
+export default SignUpForm;
