@@ -20,6 +20,7 @@ export default function BookModal({ show, handleClose, initialBook }) {
       publisher: currentUser?.publisher || "",
       price: "",
       coverImage: "",
+      releaseDate: "",
     }
   );
 
@@ -59,7 +60,7 @@ export default function BookModal({ show, handleClose, initialBook }) {
   };
 
   return (
-    <Modal show={show} onHide={handleClose} centered backdrop="static">
+    <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
         <Modal.Title>{initialBook ? "Edit Book" : "Add Book"}</Modal.Title>
       </Modal.Header>
@@ -123,12 +124,11 @@ export default function BookModal({ show, handleClose, initialBook }) {
             />
           </Form.Group>
           <Form.Group className="mb-3">
-            <Form.Label>Description</Form.Label>
+            <Form.Label>Release Date</Form.Label>
             <Form.Control
-              as="textarea"
-              rows={3}
-              name="description"
-              value={book.description}
+              type="text"
+              name="releaseDate"
+              value={book.releaseDate}
               onChange={handleChange}
             />
           </Form.Group>
@@ -137,11 +137,15 @@ export default function BookModal({ show, handleClose, initialBook }) {
             <Button
               variant="secondary"
               onClick={handleClose}
-              className="me-2 bg-"
+              className="btn btn-outline-light rounded-pill me-2"
             >
               Cancel
             </Button>
-            <Button variant="primary" type="submit" className="bg-orange">
+            <Button
+              variant="primary"
+              type="submit"
+              className="btn btn-outline-light rounded-pill bg-orange"
+            >
               {initialBook ? "Save Changes" : "Add Book"}
             </Button>
           </div>
