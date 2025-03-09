@@ -1,43 +1,22 @@
-import "bootstrap/dist/css/bootstrap.css";
 import React from "react";
-import banner from "../assets/banner.png";
+import { auth } from "../../firebase";
+import bookStack from "../assets/book-stack.png";
 
 const BannerView = () => {
   return (
-    <section className="w-100 ">
-      <img src={banner} alt="banner-logo" className="w-100" />
-      <div className="p-4 offer-section w-100 ">
-        <div className="container d-flex align-items-center justify-content-around">
-          <div className="offer text-white d-flex flex-column align-items-center justify-content-center gap-2">
-            <img
-              src="https://bookly-theme.myshopify.com/cdn/shop/files/icon-4.png?v=1613723084&width=275"
-              alt="free-shipping"
-            />
-            <p>Bedava Kargo</p>
-          </div>
-          <div className="offer text-white d-flex flex-column align-items-center justify-content-center gap-2">
-            <img
-              src="https://bookly-theme.myshopify.com/cdn/shop/files/icon-3.png?v=1613723084&width=275"
-              alt="secure-payment"
-            />
-            <p>Güvenli Ödeme</p>
-          </div>
-          <div className="offer text-white d-flex flex-column align-items-center justify-content-center gap-2">
-            <img
-              src="https://bookly-theme.myshopify.com/cdn/shop/files/icon-2.png?v=1613723084&width=275"
-              alt="best-price"
-            />
-            <p>En iyi Fiyat</p>
-          </div>
-          <div className="offer text-white d-flex flex-column align-items-center justify-content-center gap-2">
-            <img
-              src="https://bookly-theme.myshopify.com/cdn/shop/files/icon-1.png?v=1613723084&width=275"
-              alt="free-return"
-            />
-            <p>Ücretsiz İade</p>
-          </div>
+    <section className="w-100 mx-4">
+      <div className="container section py-5 mt-5 mb-5 d-flex flex-column">
+       <div className="row">
+        <div className="col-md-7 d-flex flex-column justify-content-center px-5 gap-2">
+        <h4>Hoşgeldin, {auth.currentUser !== null ? auth.currentUser.displayName : "Kullanıcı"}</h4>
+        <h6>Senin için en iyi kitapları seçtik! Göz atmaya hazır mısın?</h6>
+        <button className="w-25">Hadi Başlayalım</button>
         </div>
-      </div>
+        <div className="col-md-5">
+          <img src={bookStack} id="book-stack" />
+        </div>
+       </div>
+       </div>
     </section>
   );
 };

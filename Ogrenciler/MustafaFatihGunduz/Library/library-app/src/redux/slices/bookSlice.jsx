@@ -99,9 +99,7 @@ const initialState = {
 
 export const bookSlice = createSlice({
 	name: "book",
-	initialState: localStorage.getItem("books")
-		? { books: JSON.parse(localStorage.getItem("books")) }
-		: initialState,
+	initialState:  initialState,
 	reducers: {
 		addBook: (state, action) => {
 			state.books = [...state.books, action.payload];
