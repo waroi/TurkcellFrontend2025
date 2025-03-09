@@ -22,9 +22,9 @@ const SignIn = () => {
   };
 
   const handleRegister = async () => {
-    const user = await registerWithGoogle();
+    const user = await registerWithGoogle(publisherId);
     if (user) {
-      navigate(`/editor/${publisherId}`);
+      navigate(`/editor`);
       dispatch(toggleButton());
     }
   };
@@ -34,7 +34,9 @@ const SignIn = () => {
       <div className="row w-100">
         <div className="col-md-6 d-flex justify-content-center">
           <div className="sign-in-card p-4 shadow-lg rounded-4 w-75 bg-white">
-            <h2 className="text-center mb-4 text-dark">Giriş Yap veya Kaydol</h2>
+            <h2 className="text-center mb-4 text-dark">
+              Giriş Yap veya Kaydol
+            </h2>
 
             <div className="mb-3">
               <input
@@ -67,7 +69,11 @@ const SignIn = () => {
           </div>
         </div>
         <div className="col-md-6 d-flex justify-content-center align-items-center">
-          <img src="/bookcat.png" alt="Login Illustration" className="img-fluid w-50" />
+          <img
+            src="/bookcat.png"
+            alt="Login Illustration"
+            className="img-fluid w-50"
+          />
         </div>
       </div>
     </div>

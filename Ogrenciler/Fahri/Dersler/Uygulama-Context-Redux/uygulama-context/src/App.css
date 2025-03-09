@@ -10,12 +10,16 @@
   --pink: #f14658;
   --light-green: #004875;
   --light-pink: #dc2537;
-  --dark-green: #6A9C89;
-  --blue-bg:#e1efff;
+  --dark-green: #6a9c89;
+  --blue-bg: #e1efff;
 }
-body{
+#root {
+  min-height: 100vh;
+}
+body {
+  position: relative;
   background-color: var(--blue-bg);
-  /* background-image: ; */
+  padding-bottom: 300px;
 }
 .card {
   padding: 2em;
