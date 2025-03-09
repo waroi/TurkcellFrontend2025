@@ -1,17 +1,25 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { db } from "../../firebase/firebaseConfig";
+import { db, auth } from "../../firebase/firebaseConfig";
 import { collection, getDocs, addDoc, deleteDoc, doc, query, orderBy, where } from "../../firebase/firebaseConfig";
-export const fetchBooks = createAsyncThunk("books/fetchBooks", async ({ sort, filter }) => {
-    let q = query(collection(db, "books"));
-    if (sort) {
-        q = query(collection(db, "books"), orderBy("title", sort));
+
+
+export const fetchBooks = createAsyncThunk("books/fetchBooks", async () => {
+    try {
+        const user = auth.currentUser; 
+        if (!user) throw new Error("Kullanıcı giriş yapmamış!");
+        const booksCollection = collection(db, "books");
+        const q = query(booksCollection, where("publisherId", "==", user.uid)); 
+        const querySnapshot = await getDocs(q);
+        if (querySnapshot.empty) {
+            console.log("No books found for the publisher.");
+        }
+        return querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+    } catch (error) {
+        console.error("Kitapları çekerken hata oluştu:", error.message);
+        throw error;
     }
-    if (filter) {
-        q = query(collection(db, "books"), where("title", ">=", filter), where("title", "<=", filter + "\uf8ff"));
-    }
-    const querySnapshot = await getDocs(q);
-    return querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
 });
+
 export const addBookToFirestore = createAsyncThunk("books/addBook", async (book) => {
     const docRef = await addDoc(collection(db, "books"), book);
     return { id: docRef.id, ...book };
