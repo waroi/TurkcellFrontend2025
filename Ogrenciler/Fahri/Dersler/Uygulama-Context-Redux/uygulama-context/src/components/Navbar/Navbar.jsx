@@ -3,9 +3,11 @@ import { signOut } from "../../../firebase/authControl";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleButton } from "../../redux/slices/buttonSlice";
 import { setCardButton } from "../../redux/slices/cardButtonSlice";
+import { auth } from "../../../firebase/firebase";
 const Navbar = () => {
   const button = useSelector((state) => state.button.button);
   const dispatch = useDispatch();
+  const user = auth.currentUser;
 
   const handleLogout = () => {
     signOut();
@@ -46,15 +48,27 @@ const Navbar = () => {
                 Home
               </NavLink>
             </li>
-            <li className="nav-item">
-              <NavLink
-                to={"/editor"}
-                className="nav-link active text-decoration-none"
-                onClick={() => dispatch(setCardButton("d-block"))}
-              >
-                Editor
-              </NavLink>
-            </li>
+            {user?.role == "admin" ? (
+              <li className="nav-item">
+                <NavLink
+                  to={"/admin"}
+                  className="nav-link active text-decoration-none"
+                  onClick={() => dispatch(setCardButton("d-block"))}
+                >
+                  Admin
+                </NavLink>
+              </li>
+            ) : (
+              <li className="nav-item">
+                <NavLink
+                  to={"/editor"}
+                  className="nav-link active text-decoration-none"
+                  onClick={() => dispatch(setCardButton("d-block"))}
+                >
+                  Editor
+                </NavLink>
+              </li>
+            )}
           </ul>
           <form className="d-flex" role="search">
             <NavLink
