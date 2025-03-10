@@ -1,33 +1,22 @@
-import Link from "next/link";
+import styles from "./footer.module.css";
 import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="container">
-      <div className="container">
-        <div className="row">
-          <div>
-            <h5>Blog</h5>
-            <p className="text-muted">Travel Blog</p>
+    <footer className="footer mt-5">
+      <div className="container ">
+        <div className="row ">
+          <div className="col-md-6 align-items-center">
+            @2025 by MEF Turizm. Powered and security by Turkcell Atmosware{" "}
           </div>
-
-          <div className="col-md-4">
-            <h5>Linkler</h5>
-            <ul>
-              <li>Ana sayfa</li>
-              <li>Blog</li>
-            </ul>
+          <div className="col-md-3">
+            <h1>MEF Turizm</h1>
           </div>
-
-          <div className="col-md-4">
-            <h5>Sosyal Medya</h5>
-            <div className="d-flex">
-              <Link href="#" />
+          <div className="col-md-3">
+            <div className="social-icons d-flex justify-content-around gap-2">
+              <i className={`${styles.brands} fa-brands fa-instagram`}></i>
+              <i className={`${styles.brands} fa-brands fa-linkedin`}></i>
             </div>
-          </div>
-
-          <div>
-            <p>Blog. Tüm Hakları Saklıdır.</p>
           </div>
         </div>
       </div>

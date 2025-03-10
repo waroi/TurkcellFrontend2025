@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import AddBootstrap from "./AddBootstrap";
+import Head from "next/head";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,9 +22,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <Head>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/all.min.css" precedence="default" />
+      </Head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <AddBootstrap />
         {children}
+        <script src="https://kit.fontawesome.com/0460a9927e.js" crossOrigin="anonymous"></script>
       </body>
     </html>
   );
