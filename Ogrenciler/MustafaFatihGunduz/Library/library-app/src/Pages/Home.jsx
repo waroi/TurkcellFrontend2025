@@ -1,4 +1,5 @@
 import "../App.scss";
+import { ThemeProvider } from "../context/ThemeContext";
 import BannerView from "../components/BannerView";
 import BooksView from "../components/BooksView";
 import Footer from "../components/FooterView";
@@ -13,6 +14,7 @@ import Sidebar from "../Pages/Sidebar";
 const Home = () => {
   return (
     <>
+      <ThemeProvider>
       <NavbarView />
       <div className="wrapper">
         <div className="side-left">
@@ -31,6 +33,7 @@ const Home = () => {
 			<RightSide />
 		</div>
       </div>
+      </ThemeProvider>
     </>
   );
 };
