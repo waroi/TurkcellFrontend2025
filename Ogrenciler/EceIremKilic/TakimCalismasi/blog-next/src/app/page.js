@@ -3,6 +3,8 @@ import Navbar from "@/components/Navbar";
 import Banner from "@/components/Banner";
 import Latest from "@/components/Latest";
 import Posts from "@/components/Posts";
+import TripOfTheWeek from "@/components/TripOfTheWeek";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -10,7 +12,9 @@ export default function Home() {
       <Navbar />
       <Banner />
       <Latest />
+      <TripOfTheWeek />
       <Posts />
+      <Footer />
     </div>
   );
 }
