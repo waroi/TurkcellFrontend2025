@@ -53,7 +53,7 @@ const Navbar = () => {
           onClick={() => dispatch(setCardButton("d-none"))}
         >
           <img src="/cat.png" width={"70px"}></img>
-          <h2 className="">Book</h2>
+          <h2 className="">Purrfect Book</h2>
         </NavLink>
         <button
           className="navbar-toggler"

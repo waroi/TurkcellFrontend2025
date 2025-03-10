@@ -1,16 +1,19 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router";
+import { Link } from "react-router"; 
 import { useDispatch, useSelector } from "react-redux";
 import { setSort, setFilter, fetchBooks } from "../redux/slice/booksSlice";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router"; 
 import Button from "./Button";
+
 const Navbar = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const { sort, filter } = useSelector((state) => state.books);
+
     useEffect(() => {
         dispatch(fetchBooks({ sort, filter }));
     }, [sort, filter, dispatch]);
+
     return (
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
             <div className="container-fluid">
@@ -44,12 +47,12 @@ const Navbar = () => {
                         />
                         <button className="btn btn-outline-success" type="button" onClick={() => navigate("/signup")}>Kaydol</button>
                         <button className="btn btn-outline-success ms-2" type="button" onClick={() => navigate("/login")}>Giriş Yap</button>
-
-                        <p> { }</p>
                     </form>
                 </div>
             </div>
         </nav>
     );
 };
+
 export default Navbar;
+

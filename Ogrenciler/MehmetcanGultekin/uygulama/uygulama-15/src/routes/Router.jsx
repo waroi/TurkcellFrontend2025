@@ -25,7 +25,7 @@ const Router = ({ handleSignIn, handleSubmit }) => {
       element: <AuthView />,
       children: [
         { index: true, element: <Navigate to="/login" /> },
-        { path: "/login", element: <LoginForm handleSignIn={handleSignIn} /> },
+        { path: "/login", element: <LoginForm /> },
         {
           path: "/signup",
           element: <SignUpForm handleSubmit={handleSubmit} />,
