@@ -1,17 +1,15 @@
 import { useRef, useEffect } from "react";
 
-import { useDispatch } from "react-redux";
-import { setUser, setBooks } from "../redux/slices/librarySlice";
+import { getBooks } from "../firebase";
+
 import modal from "../modal";
+import library from "../library";
 
 import { Modal, Button, Form, FloatingLabel } from "react-bootstrap";
 
-import { getBooks } from "../firebase/firebase";
-
 export default function ModalComponent() {
   const { setModal, show, mode, book, action } = modal();
-
-  const dispatch = useDispatch();
+  const { setUser, setBooks } = library();
 
   const id = useRef();
   const title = useRef();
@@ -124,7 +122,7 @@ export default function ModalComponent() {
                 break;
               case "register":
                 action(email.current.value, password.current.value).then(
-                  (credential) => dispatch(setUser(credential.user.uid))
+                  (credential) => setUser(credential.user.uid)
                 );
                 break;
               case "login":
@@ -133,17 +131,17 @@ export default function ModalComponent() {
                   password.current.value,
                   remember.current.checked
                 ).then((credential) => {
-                  dispatch(setUser(credential.user.uid));
+                  setUser(credential.user.uid);
                   getBooks(credential.user.uid).then((books) =>
-                    dispatch(setBooks(books))
+                    setBooks(books)
                   );
                 });
 
                 break;
               case "logout":
                 action().then(() => {
-                  dispatch(setUser(null));
-                  dispatch(setBooks([]));
+                  setUser(null);
+                  setBooks([]);
                 });
                 break;
             }
@@ -151,15 +149,16 @@ export default function ModalComponent() {
             setModal({ show: false });
           }}
         >
-          {mode == "add" || mode == "edit"
-            ? "Save"
-            : mode == "delete"
-            ? "Delete"
-            : mode == "register"
-            ? "Register"
-            : mode == "login"
-            ? "Login"
-            : "Logout"}
+          {
+            {
+              add: "Save",
+              edit: "Save",
+              delete: "Delete",
+              register: "Register",
+              login: "Login",
+              logout: "Logout",
+            }[mode]
+          }
         </Button>
       </Modal.Footer>
     </Modal>

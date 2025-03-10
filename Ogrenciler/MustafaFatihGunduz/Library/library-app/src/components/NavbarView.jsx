@@ -1,59 +1,57 @@
-import book from "../../public/books.png";
-import { auth } from "../../firebase";
 import { NavLink } from "react-router";
+import { auth } from "../../firebase";
+import book from "../../public/books.png";
 const NavbarView = () => {
-  return (
-    <div className="container-fluid">
-      <div className="d-flex align-items-center justify-content-between">
-        <div className="d-flex align-items-center justify-content-center gap-3">
-          <img src={book} alt="" />
-          <NavLink to="/" className="navbar-brand text-black fw-bold" href="#">
-            Kitap Dünyası
-          </NavLink>
-        </div>
-        <div className="search-field">
-          <input
-            type="search"
-            name="search"
-            id="search"
-            placeholder="Kitap adı veya yazar ara"
-          />
-        </div>
-        <div className="user-field d-flex align-items-center justify-content-center">
-          <div className="dropdown">
-            <button
-              className="btn btn-secondary dropdown-toggle"
-              type="button"
-              id="dropdownMenuButton"
-              data-bs-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="true"
-            ></button>
-            <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a className="dropdown-item" href="#">
-                Türkçe
-              </a>
-              <a className="dropdown-item" href="#">
-                İngilizce
-              </a>
-            </div>
-          </div>
-          <p
-            className="text-center"
-            style={({ display: "contents" }, { margin: 4 })}
-          >
-            {auth.currentUser !== null ? (
-              auth.currentUser.email.slice(0, 5)
-            ) : (
-              <NavLink to="/login" className="navbar-brand text-black fw-bold">
-                Giriş Yap
-              </NavLink>
-            )}
-          </p>
-        </div>
-      </div>
-    </div>
-  );
+	return (
+		<div className="container-fluid">
+			<div className="d-flex align-items-center justify-content-between">
+				<div className="d-flex align-items-center justify-content-center gap-3">
+					<img src={book} alt="" />
+					<NavLink to="/" className="navbar-brand text-black fw-bold" href="#">
+						Kitap Dünyası
+					</NavLink>
+				</div>
+				<div className="search-field">
+					<input
+						type="search"
+						name="search"
+						id="search"
+						placeholder="Kitap adı veya yazar ara"
+					/>
+				</div>
+				<div className="user-field d-flex align-items-center justify-content-center">
+					<div className="dropdown">
+						<button
+							className="btn btn-secondary dropdown-toggle"
+							type="button"
+							id="dropdownMenuButton"
+							data-bs-toggle="dropdown"
+							aria-haspopup="true"
+							aria-expanded="true"></button>
+						<div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+							<a className="dropdown-item" href="#">
+								Türkçe
+							</a>
+							<a className="dropdown-item" href="#">
+								İngilizce
+							</a>
+						</div>
+					</div>
+					<p
+						className="text-center"
+						style={({ display: "contents" }, { margin: 4 })}>
+						{auth.currentUser !== null ? (
+							auth.currentUser.email.slice(0, 5)
+						) : (
+							<NavLink to="/login" className="navbar-brand text-black fw-bold">
+								Giriş Yap
+							</NavLink>
+						)}
+					</p>
+				</div>
+			</div>
+		</div>
+	);
 };
 
 export default NavbarView;

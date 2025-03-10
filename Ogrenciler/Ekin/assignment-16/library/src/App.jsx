@@ -1,6 +1,5 @@
-import { useSelector, useDispatch } from "react-redux";
-import { addBook } from "./redux/slices/librarySlice";
 import modal from "./modal";
+import library from "./library";
 
 import { Container, Button } from "react-bootstrap";
 import Navigation from "./components/Navigation";
@@ -10,9 +9,7 @@ import Footer from "./components/Footer";
 
 export default function App() {
   const { setModal } = modal();
-  const dispatch = useDispatch();
-
-  const { user, books } = useSelector((state) => state.library);
+  const { user, books, addBook } = library();
 
   return (
     <>
@@ -27,7 +24,7 @@ export default function App() {
                   setModal({
                     show: true,
                     mode: "add",
-                    action: (book) => dispatch(addBook(book)),
+                    action: (book) => addBook(book),
                   });
                 }}
               >

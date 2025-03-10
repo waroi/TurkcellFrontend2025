@@ -43,13 +43,13 @@ const EditorView = () => {
         <>
           <AddBook />
           {booksFirebase.length == 0 ? (
-            <p>Kitaplar yükleniyor veya bulunamadı</p>
+            <p className="p-5 m-5">Kitaplar yükleniyor veya bulunamadı</p>
           ) : (
             <BookList></BookList>
           )}
         </>
       ) : (
-        <p>Lütfen Giriş Yapınız</p>
+        <p className="p-5 m-5">Lütfen Giriş Yapınız</p>
       )}
     </>
   );
