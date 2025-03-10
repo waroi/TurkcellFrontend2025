@@ -10,6 +10,7 @@ const Navbar = () => {
   const button = useSelector((state) => state.button.button);
   const dispatch = useDispatch();
   const [userRole, setUserRole] = useState(null);
+  const [userAuth, setUserAuth] = useState();
 
   useEffect(() => {
     const userRole = async () => {
@@ -20,19 +21,22 @@ const Navbar = () => {
     };
     userRole();
   }, [auth.currentUser]);
+
   useEffect(() => {
-    const userRole = async () => {
-      const data = await getUser();
-      if (data) {
+    const unsubscribe = auth.onAuthStateChanged((userAuth) => {
+      if (userAuth) {
+        setUserAuth(userAuth);
         dispatch(setButton("d-block"));
         console.log("block--");
       } else {
+        setUserAuth(null);
         dispatch(setButton("d-none"));
         console.log("none--");
       }
-    };
-    userRole();
-  });
+    });
+
+    return () => unsubscribe();
+  }, []);
 
   const handleLogout = () => {
     signOut();
@@ -98,9 +102,8 @@ const Navbar = () => {
           <form className="d-flex" role="search">
             <NavLink
               to="/login"
-              className={`btn btn-blue card-btn ${
-                button == "d-none" ? "d-flex" : "d-none"
-              }`}
+              className={`btn btn-blue card-btn ${button == "d-none" ? "d-flex" : "d-none"
+                }`}
             >
               Login
             </NavLink>
