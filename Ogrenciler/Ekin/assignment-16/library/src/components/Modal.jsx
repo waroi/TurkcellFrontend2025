@@ -149,15 +149,16 @@ export default function ModalComponent() {
             setModal({ show: false });
           }}
         >
-          {mode == "add" || mode == "edit"
-            ? "Save"
-            : mode == "delete"
-            ? "Delete"
-            : mode == "register"
-            ? "Register"
-            : mode == "login"
-            ? "Login"
-            : "Logout"}
+          {
+            {
+              add: "Save",
+              edit: "Save",
+              delete: "Delete",
+              register: "Register",
+              login: "Login",
+              logout: "Logout",
+            }[mode]
+          }
         </Button>
       </Modal.Footer>
     </Modal>
