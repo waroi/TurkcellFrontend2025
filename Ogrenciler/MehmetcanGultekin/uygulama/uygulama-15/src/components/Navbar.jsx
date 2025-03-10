@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import "../App.css";
-
 import {
   filterBooks,
   sortBooksByDate,
@@ -12,25 +10,35 @@ import {
 } from "../redux/slices/bookSlice";
 import { useNavigate } from "react-router";
 import Modal from "./Modal";
+import { useAuthStore } from "../store";
+import { signOut } from "firebase/auth";
+import { auth } from "../../firebase-config";
 
 const Navbar = () => {
-  const [open, setOpen] = React.useState(false);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const [open, setOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState();
+  const { clearUserInfo, addAuthenticatedUser } = useAuthStore();
   const booksFromStore = useSelector((state) => state.book.books);
 
-  const dispatch = useDispatch();
   const handleFilterBook = (category) => dispatch(filterBooks(category));
   const handleClearFilters = () => dispatch(clearFilters());
+
   const handleSortbyStringAZ = (sortParameter) =>
     dispatch(sortBooksByStringAZ(sortParameter));
+
   const handleSortbyStringZA = (sortParameter) =>
     dispatch(sortBooksByStringZA(sortParameter));
+
   const handleSortbyDate = (created_at) =>
     dispatch(sortBooksByDate(created_at));
+
   const handleSearch = (event) => {
     event.preventDefault();
     dispatch(searchBooks(searchTerm));
   };
+
   const handleClose = () => {
     setOpen(false);
   };
@@ -38,7 +46,20 @@ const Navbar = () => {
   const handleOpen = () => {
     setOpen(true);
   };
-  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    signOut(auth)
+      .then(() => {
+        console.log("Çıkış başarılı");
+        clearUserInfo();
+        navigate("/");
+        addAuthenticatedUser();
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
   return (
     <>
       <nav className="navbar navbr navbar-expand-lg">
@@ -179,7 +200,7 @@ const Navbar = () => {
               <li>
                 <button
                   className="btn btn-danger rounded-pill ms-2 p-2"
-                  onClick={() => navigate("/")}
+                  onClick={handleLogout}
                 >
                   Çıkış Yap
                 </button>

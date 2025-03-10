@@ -1,11 +1,9 @@
 import React, { use, useEffect, useState } from "react";
 import "../components/BookCard.css";
-import "../App.css";
+import { useAuthStore } from "../store";
 import { useSelector, useDispatch } from "react-redux";
 import { deleteBook } from "../redux/slices/bookSlice";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { auth, db } from "../../firebase-config";
-import { collection, doc, getDocs } from "firebase/firestore";
 import {
   faTrash,
   faPenToSquare,
@@ -20,14 +18,16 @@ const BookCard = ({ handleOpen, handleOpenDetail }) => {
   const BooksFromStore = useSelector((state) => state.book.books);
   const [difference, setDifference] = useState([]);
   const [userName, setUserName] = useState("");
-
-  const userRef = collection(db, "admins");
+  const { authenticatedUser } = useAuthStore();
 
   useEffect(() => {
-    getUserInfo();
-
     setFilteredBooks(BooksFromStore);
   }, []);
+
+  useEffect(() => {
+    setYayin(authenticatedUser.yayin);
+    setUserName(authenticatedUser.adminName);
+  }, [authenticatedUser]);
 
   useEffect(() => {
     if (yayin !== "all") {
@@ -48,27 +48,6 @@ const BookCard = ({ handleOpen, handleOpenDetail }) => {
       setDifference(BooksFromStore);
     }
   }, [filteredBooks, BooksFromStore]);
-
-  const getUserInfo = async () => {
-    try {
-      const userSnap = await getDocs(userRef);
-
-      if (!userSnap.empty && auth.currentUser) {
-        userSnap.forEach((doc) => {
-          const userID = doc.data().adminID;
-          if (userID === auth.currentUser.uid) {
-            console.log("Kullanıcı eşleşti, yayin alanı:", doc.data().yayin);
-            setUserName(doc.data().adminName);
-            setYayin(doc.data().yayin);
-          }
-        });
-      } else {
-        console.log("Belge bulunamadı veya kullanıcı giriş yapmamış!");
-      }
-    } catch (error) {
-      console.error("Belge alınırken hata oluştu:", error);
-    }
-  };
 
   const handleFlip = (bookId) => {
     setFlippedCards((prev) => ({
