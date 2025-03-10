@@ -1,14 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import {
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-} from "firebase/auth";
-import { auth, db } from "../../firebase-config";
-import { useNavigate } from "react-router";
+import { NavLink, useNavigate } from "react-router";
 import "../App.css";
-import { doc, setDoc } from "firebase/firestore";
 import { useAuthStore } from "../store";
 
 const LoginForm = ({ handleSignIn }) => {
@@ -16,15 +10,24 @@ const LoginForm = ({ handleSignIn }) => {
   const [password, setPassword] = useState("");
   const [adminName, setAdminName] = useState("");
   const [yayinevi, setYayinevi] = useState("");
+  const { addUserInfo, userInfo } = useAuthStore();
+
+  useEffect(() => {
+    console.log(userInfo);
+    if (userInfo.password !== "") {
+      handleSignIn();
+    }
+  }, [userInfo]);
 
   const handleStates = (e) => {
     e.preventDefault();
     const userInfo = { email, password, yayinevi, adminName };
     addUserInfo(userInfo);
   };
+
   return (
-    <div className="container flex-column w-25 p-5 bg-brown text-white rounded-5">
-      <h2 className="mb-5 text-center">Giriş Yap / Kayıt Ol</h2>
+    <div className="flex-column w-50 p-5 bg-brown text-white rounded-5">
+      <h2 className="mb-5 text-center">Giriş Yap </h2>
       <Form onSubmit={(e) => handleStates(e)}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email</Form.Label>
@@ -50,6 +53,9 @@ const LoginForm = ({ handleSignIn }) => {
           Submit
         </Button>
       </Form>
+      <span>
+        Hesabınız yok mu? <NavLink to="/signup">Hemen oluşturun.</NavLink>
+      </span>
     </div>
   );
 };

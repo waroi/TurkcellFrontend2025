@@ -1,6 +1,6 @@
 function Footer() {
 	return (
-		<footer className="pt-4 pb-4 " id="contact">
+		<footer className="pt-4 pb-4 w-100 mt-5 " id="contact">
 			<div className="container">
 				<div className="row">
 					<div className="col-md-4">

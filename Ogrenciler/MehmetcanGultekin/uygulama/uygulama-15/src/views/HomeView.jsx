@@ -7,11 +7,14 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { books as booksData } from "../../books.json";
 import BookDetailsModal from "../components/BookDetailsModal";
+import { useAuthStore } from "../store";
 
 function HomeView() {
   const [openUpdateModal, setOpenUpdateModal] = useState(false); // Güncelleme modalı
   const [openDetailModal, setOpenDetailModal] = useState(false);
   const [selectedBook, setSelectedBook] = useState(null);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const { authenticatedUser } = useAuthStore();
 
   const booksFromStore = useSelector((state) => state.book.books);
 
@@ -23,9 +26,7 @@ function HomeView() {
   };
 
   console.log("booksData", booksData);
-  useEffect(() => {
-    console.log("books:", booksFromStore);
-  });
+
   useEffect(() => {
     if ("books" in localStorage) {
       return;
@@ -34,6 +35,13 @@ function HomeView() {
       localStorage.setItem("books", JSON.stringify(booksData));
     }
   }, []);
+
+  useEffect(() => {
+    if (authenticatedUser.isAuthenticated) {
+      setIsAuthenticated(authenticatedUser.isAuthenticated);
+    }
+  }, [authenticatedUser]);
+
   const handleOpen = (book) => {
     setSelectedBook(book);
     setOpenUpdateModal(true);
@@ -48,7 +56,7 @@ function HomeView() {
     setOpenUpdateModal(false);
   };
 
-  return (
+  return isAuthenticated ? (
     <div className="d-flex flex-column justify-content-between min-vh-100">
       <Navbar />
       <UpdateModal
@@ -62,9 +70,10 @@ function HomeView() {
         onClose={handleClose}
         book={selectedBook}
       />
-
       <Footer />
     </div>
+  ) : (
+    <p className="">Please log in to access the content.</p>
   );
 }
 

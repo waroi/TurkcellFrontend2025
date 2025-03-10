@@ -10,6 +10,11 @@ $primary-color: #461e07;
 $secondary-color: #5F2222;
 $button-color: #BB6826;
 
+$icon-color-dark: #333;
+$primary-color-dark: #1f1f1f;
+$secondary-color-dark: #272727;
+$button-color-dark: #9e5f28;
+
 @mixin box-design{
 	border-radius: 25px;
 	background: #ffffff;
@@ -30,6 +35,16 @@ $button-color: #BB6826;
 	}
 }
 
+.theme-switch{
+	input{
+		width: 40px;
+		height: 20px;
+	}
+}
+.theme-icon{
+	width: 30px;
+	height: 30px;
+}
 input{
 	border: 1px solid #ccc;
 	background-color: $icon-color;
@@ -42,7 +57,6 @@ input{
 	}
 
 }
-
 button{
 	background-color: $button-color;
 	color: $white;
@@ -55,7 +69,13 @@ button{
 	}
 	
 }
-
+li a{
+	text-decoration: none;
+	color: $white;
+	&:hover{
+		color: $button-color;
+	}
+}
 .card{
 	.card-image{
 		img{
@@ -65,9 +85,63 @@ button{
 }
 .checked {
 	color: orange;
-  }
-
-.right-side{
+}
+.about-container {
+	background-color: $primary-color;
+	color: $white;
+	padding: 50px;
+	border-radius: 15px;
+	text-align: center;
+	@include box-design;
+  
+	h1, h2 {
+	  color: $button-color;
+	}
+  
+	p {
+	  font-size: 18px;
+	  line-height: 1.6;
+	}
+} 
+.services {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	margin-top: 30px;
+  
+	.service-card {
+	  background-color: $secondary-color;
+	  color: $white;
+	  padding: 20px;
+	  border-radius: 10px;
+	  width: 30%;
+	  text-align: center;
+	  transition: transform 0.3s ease-in-out;
+  
+	  &:hover {
+		transform: scale(1.05);
+	  }
+	}
+}
+.contact-info {
+	margin-top: 40px;
+	background-color: $icon-color;
+	padding: 20px;
+	border-radius: 10px;
+	text-align: center;
+  
+	a {
+	  color: $primary-color;
+	  font-weight: bold;
+	  text-decoration: none;
+	  transition: color 0.3s;
+	  
+	  &:hover {
+		color: $button-color;
+	  }
+	}
+}
+.right-side.light{
 	color: $white;
 	background-color: $secondary-color;
 	height: 100%;
@@ -75,13 +149,24 @@ button{
 		@include image-design;
 	}
 }
-
-.left-side{
+.right-side.dark{
+	color: $white;
+	background-color: $secondary-color-dark;
+	height: 100%;
+	img{
+		@include image-design;
+	}
+}
+.left-side.light{
 	color: $white;
 	background-color: $secondary-color;
 	height: 100%;
 }
-
+.left-side.dark{
+	color: $white;
+	background-color: $secondary-color-dark;
+	height: 100%;
+}
 .card-first{
 	background-color: $secondary-color;
 	color: $white;
@@ -91,6 +176,70 @@ button{
 	img{
 		@include image-design;
 	}
+}
+
+.wrapper {
+	display: grid;
+	grid-template-columns: 1fr 5fr 1fr;
+
+}
+.nav-item{
+
+	.fa{
+		color: $icon-color;
+		&:hover{
+			color: $primary-color;
+		}
+	}
+	.nav-link{
+		color: $icon-color;
+		&:hover{
+			color: $primary-color;
+		}
+	}
+}
+.dropdown-toggle {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	background-image: url("../../public/avatar.png");
+	background-size: contain;
+	background-position: center;
+}
+.special-offer-section {
+	background-attachment: fixed;
+	background-size: cover;
+	background-image: url("https://www.rily.co.uk/images/sale_thumbs/sale_books.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 100%;
+	height: 300px;
+	h4 {
+		color: #872341;
+	}
+}
+.subscribe {
+	input {
+		height: 40px;
+		padding: 10px 20px;
+		background-color: #ccc;
+		border: none;
+		border-radius: 10px;
+		&:focus {
+			outline: none;
+		}
+		outline: none;
+	}
+}
+.card-img-div {
+	width: 100%;
+	img {
+		height: 320px;
+	}
+}
+footer{
+	background-color: $primary-color;
+	color: $white;
 }
 
 .loginSection {
@@ -304,70 +453,5 @@ button{
 
 	.container.active .toggle-right {
 		transform: translateX(200%);
-	}
-}
-
-.wrapper {
-	display: grid;
-	grid-template-columns: 1fr 5fr 1fr;
-
-}
-
-.nav-item{
-
-	.fa{
-		color: $icon-color;
-		&:hover{
-			color: $primary-color;
-		}
-	}
-	.nav-link{
-		color: $icon-color;
-		&:hover{
-			color: $primary-color;
-		}
-	}
-}
-
-.avatar {
-	width: 30px;
-	height: 30px;
-	border-radius: 50%;
-	background-image: url("../../public/avatar.png");
-	background-size: cover;
-	background-position: center;
-}
-.special-offer-section {
-	background-attachment: fixed;
-	background-size: cover;
-	background-image: url("https://www.rily.co.uk/images/sale_thumbs/sale_books.jpg");
-	background-repeat: no-repeat;
-	background-position: center;
-	width: 100%;
-	height: 300px;
-	h4 {
-		color: #872341;
-	}
-}
-
-
-.subscribe {
-	input {
-		height: 40px;
-		padding: 10px 20px;
-		background-color: white;
-		border: none;
-		border-radius: 10px;
-		&:focus {
-			outline: none;
-		}
-		outline: none;
-	}
-}
-
-.card-img-div {
-	width: 100%;
-	img {
-		height: 320px;
 	}
 }

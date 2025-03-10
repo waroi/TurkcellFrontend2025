@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { addBook } from "./redux/slices/librarySlice";
-import { setModal } from "./redux/slices/modalSlice";
+import modal from "./modal";
 
 import { Container, Button } from "react-bootstrap";
 import Navigation from "./components/Navigation";
@@ -9,6 +9,7 @@ import Modal from "./components/Modal";
 import Footer from "./components/Footer";
 
 export default function App() {
+  const { setModal } = modal();
   const dispatch = useDispatch();
 
   const { user, books } = useSelector((state) => state.library);
@@ -23,13 +24,11 @@ export default function App() {
               <Button
                 className="text-white"
                 onClick={() => {
-                  dispatch(
-                    setModal({
-                      show: true,
-                      mode: "add",
-                      action: (book) => dispatch(addBook(book)),
-                    })
-                  );
+                  setModal({
+                    show: true,
+                    mode: "add",
+                    action: (book) => dispatch(addBook(book)),
+                  });
                 }}
               >
                 <i className="fa-solid fa-plus"></i> Add Book

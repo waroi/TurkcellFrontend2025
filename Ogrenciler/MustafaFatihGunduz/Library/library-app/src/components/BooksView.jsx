@@ -1,6 +1,5 @@
 import { useContext, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { ThemeContext } from "../context/ThemeContext";
 import { deleteBook, searchBook, sortingBook } from "../redux/slices/bookSlice";
 import Modal from "./module/Modal";
 
@@ -8,7 +7,6 @@ const BooksView = ({ publishing }) => {
 	const { books, keyword } = useSelector((state) => state.book);
 	const dispatch = useDispatch();
 	const handleDelete = (id) => dispatch(deleteBook(id));
-	const { theme } = useContext(ThemeContext);
 	const [editingBookId, setEditingBookId] = useState(null);
 
 	const openEditModal = (id) => {
@@ -35,10 +33,7 @@ const BooksView = ({ publishing }) => {
 
 	return (
 		<>
-			<div
-				className={`${
-					theme === "light" ? "bg-dark text-light" : "bg-white text-dark"
-				}`}>
+			<div id="books">
 				<div className="container">
 					<div className="d-flex gap-5 justify-content-center py-4">
 						<select
@@ -58,12 +53,7 @@ const BooksView = ({ publishing }) => {
 						{filteredItems.length > 0 ? (
 							filteredItems.map((book) => (
 								<div key={book.id} className="col-lg-3 col-md-6 col-sm-12 pb-5">
-									<div
-										className={`card mb-3 h-100 ${
-											theme === "light"
-												? "bg-secondary text-light"
-												: "bg-white text-dark"
-										}`}>
+									<div>
 										<div className="card-img-div">
 											<img
 												src={book.image}

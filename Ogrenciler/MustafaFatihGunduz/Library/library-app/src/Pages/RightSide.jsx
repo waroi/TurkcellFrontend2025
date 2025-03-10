@@ -1,7 +1,9 @@
-import React, { useState, useEffect, use } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
+import { useTheme } from "../context/ThemeContext";
 
 const RightSide = () => {
+  const { theme } = useTheme();
   const { books } = useSelector((state) => state.book);
   const [book, setBook] = useState([]);
   useEffect(() => {
@@ -12,7 +14,7 @@ const RightSide = () => {
     setBook(book);
   };
   return (
-    <aside className="right-side">
+    <aside className={`right-side ${theme === "light" ? "light" : "dark"} `}>
       <div className="container py-5 px-3 mt-5 mb-5 d-flex flex-column align-items-center">
         {book.length > 0 ? (
           book.map((oneBook) => (

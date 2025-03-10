@@ -1,23 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useAuthStore } from "../store";
-
-import {
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-} from "firebase/auth";
-import { auth, db } from "../../firebase-config";
-import { useNavigate } from "react-router";
-import "../App.css";
-import { doc, setDoc } from "firebase/firestore";
+import { NavLink, useNavigate } from "react-router";
 
 const SignUpForm = ({ handleSubmit }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [adminName, setAdminName] = useState("");
   const [yayinevi, setYayinevi] = useState("");
-  const { addUserInfo } = useAuthStore();
+  const { addUserInfo, userInfo } = useAuthStore();
+
+  useEffect(() => {
+    if (userInfo.password !== "") {
+      handleSubmit();
+    }
+  }, [userInfo]);
 
   const handleStates = (e) => {
     e.preventDefault();
@@ -72,6 +70,10 @@ const SignUpForm = ({ handleSubmit }) => {
           Submit
         </Button>
       </Form>
+      <span>
+        Zaten hesabınız var mı?{" "}
+        <NavLink to="/login">Burdan giriş yapın.</NavLink>
+      </span>
     </div>
   );
 };

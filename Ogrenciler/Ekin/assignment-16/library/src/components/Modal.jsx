@@ -1,18 +1,17 @@
 import { useRef, useEffect } from "react";
 
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setUser, setBooks } from "../redux/slices/librarySlice";
-import { setModal } from "../redux/slices/modalSlice";
+import modal from "../modal";
 
 import { Modal, Button, Form, FloatingLabel } from "react-bootstrap";
 
 import { getBooks } from "../firebase/firebase";
 
 export default function ModalComponent() {
-  const dispatch = useDispatch();
-  const hideModal = () => dispatch(setModal({ show: false }));
+  const { setModal, show, mode, book, action } = modal();
 
-  const { show, mode, book, action } = useSelector((state) => state.modal);
+  const dispatch = useDispatch();
 
   const id = useRef();
   const title = useRef();
@@ -42,7 +41,7 @@ export default function ModalComponent() {
   }, [mode, book, action]);
 
   return (
-    <Modal show={show} onHide={hideModal} centered>
+    <Modal show={show} onHide={() => setModal({ show: false })} centered>
       <Modal.Header closeButton>
         <Modal.Title>
           {
@@ -95,7 +94,7 @@ export default function ModalComponent() {
         )}
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="secondary" onClick={hideModal}>
+        <Button variant="secondary" onClick={() => setModal({ show: false })}>
           Close
         </Button>
         <Button
@@ -149,7 +148,7 @@ export default function ModalComponent() {
                 break;
             }
 
-            hideModal();
+            setModal({ show: false });
           }}
         >
           {mode == "add" || mode == "edit"
