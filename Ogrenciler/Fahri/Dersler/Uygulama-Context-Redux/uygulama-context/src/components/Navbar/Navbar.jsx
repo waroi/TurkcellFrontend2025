@@ -1,17 +1,42 @@
 import { NavLink } from "react-router";
 import { signOut } from "../../../firebase/authControl";
 import { useDispatch, useSelector } from "react-redux";
-import { toggleButton } from "../../redux/slices/buttonSlice";
+import { setButton } from "../../redux/slices/buttonSlice";
 import { setCardButton } from "../../redux/slices/cardButtonSlice";
+import { getUser } from "../../../firebase/dbController";
+import { useEffect, useState } from "react";
 import { auth } from "../../../firebase/firebase";
 const Navbar = () => {
   const button = useSelector((state) => state.button.button);
   const dispatch = useDispatch();
-  const user = auth.currentUser;
+  const [userRole, setUserRole] = useState(null);
+
+  useEffect(() => {
+    const userRole = async () => {
+      const data = await getUser();
+      if (data) {
+        dispatch(setUserRole(data.role));
+      }
+    };
+    userRole();
+  }, [auth.currentUser]);
+  useEffect(() => {
+    const userRole = async () => {
+      const data = await getUser();
+      if (data) {
+        dispatch(setButton("d-block"));
+        console.log("block--");
+      } else {
+        dispatch(setButton("d-none"));
+        console.log("none--");
+      }
+    };
+    userRole();
+  });
 
   const handleLogout = () => {
     signOut();
-    dispatch(toggleButton());
+    dispatch(setButton("d-none"));
     dispatch(setCardButton("d-none"));
   };
 
@@ -48,7 +73,7 @@ const Navbar = () => {
                 Home
               </NavLink>
             </li>
-            {user?.role == "admin" ? (
+            {userRole == "admin" ? (
               <li className="nav-item">
                 <NavLink
                   to={"/admin"}

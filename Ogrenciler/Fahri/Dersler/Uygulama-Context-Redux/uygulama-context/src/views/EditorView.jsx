@@ -5,7 +5,8 @@ import { clearBooks, setBooks } from "../redux/slices/bookSlice";
 import { useDispatch, useSelector } from "react-redux";
 import AddBook from "../components/AddBook/AddBook";
 import { auth } from "../../firebase/firebase";
-import { toggleButton } from "../redux/slices/buttonSlice";
+//import { toggleButton } from "../redux/slices/buttonSlice";
+import { setCardButton } from "../redux/slices/cardButtonSlice";
 const EditorView = () => {
   const dispatch = useDispatch();
   const [userAuth, setUserAuth] = useState();
@@ -18,7 +19,7 @@ const EditorView = () => {
       console.log(data);
       if (data) {
         dispatch(setBooks(data));
-        dispatch(toggleButton());
+        dispatch(setCardButton("d-block"));
       }
     };
     fetchBooks();

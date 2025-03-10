@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import BookList from "../components/BookList/BookList";
-import { getBooks } from "../../firebase/dbController";
+import { getBooks, getUser } from "../../firebase/dbController";
 import { setBooks } from "../redux/slices/bookSlice";
 import { useDispatch, useSelector } from "react-redux";
 

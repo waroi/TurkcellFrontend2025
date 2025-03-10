@@ -7,7 +7,6 @@ import { removeBook } from "../../redux/slices/bookSlice";
 const Book = ({ book }) => {
   const dispatch = useDispatch();
   const button = useSelector((state) => state.cardButton.cardButton);
-  console.log("buton durumu: ", button);
   function handleDelete() {
     deleteBook(`${book.id}`);
     dispatch(removeBook(book.id));
@@ -42,7 +41,10 @@ const Book = ({ book }) => {
               >
                 Sil
               </button>
-              <NavLink to={`/${book.id}`} className="btn btn-orange card-btn">
+              <NavLink
+                to={`/book-detail/${book.id}`}
+                className="btn btn-orange card-btn"
+              >
                 <i className="bi bi-eye"></i> İncele
               </NavLink>
               <NavLink

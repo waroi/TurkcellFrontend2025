@@ -1,12 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 const buttonSlice = createSlice({
   name: "button",
-  initialState: { button: "d-none", status: "idle", error: null },
+  initialState: { button: "d-block", status: "idle", error: null },
   reducers: {
-    toggleButton: (state) => {
-      state.button = state.button === "d-none" ? "d-flex" : "d-none";
+    setButton: (state, action) => {
+      state.button = action.payload;
     },
   },
 });
-export const { toggleButton } = buttonSlice.actions;
+export const { setButton } = buttonSlice.actions;
 export default buttonSlice.reducer;

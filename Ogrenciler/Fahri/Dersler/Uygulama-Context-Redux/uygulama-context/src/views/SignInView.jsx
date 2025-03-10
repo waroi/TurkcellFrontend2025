@@ -1,17 +1,16 @@
 import {
   registerWithGoogle,
   signInWithGoogle,
-} from "../../../firebase/authControl";
+} from "../../firebase/authControl";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./index.css";
 import { useDispatch } from "react-redux";
-import { toggleButton } from "../../redux/slices/buttonSlice";
-import { setUser } from "../../redux/slices/userSlice";
-import { setCardButton } from "../../redux/slices/cardButtonSlice";
-import { getUser } from "../../../firebase/dbController";
+import { setButton } from "../redux/slices/buttonSlice";
+import { setUser } from "../redux/slices/userSlice";
+import { setCardButton } from "../redux/slices/cardButtonSlice";
+import { getUser } from "../../firebase/dbController";
 
-const SignIn = () => {
+const SignInView = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [publisherId, setPublisherId] = useState("");
@@ -19,8 +18,9 @@ const SignIn = () => {
   const handleClick = async () => {
     const user = await signInWithGoogle();
     if (user) {
-      navigate("/" + (await getUser()));
-      dispatch(toggleButton());
+      let user = await getUser();
+      navigate("/" + user.role);
+      dispatch(setButton("d-block"));
       dispatch(setCardButton("d-block"));
       dispatch(setUser(user));
     }
@@ -29,8 +29,9 @@ const SignIn = () => {
   const handleRegister = async () => {
     const user = await registerWithGoogle(publisherId);
     if (user) {
-      navigate("/" + (await getUser()));
-      dispatch(toggleButton());
+      let user = await getUser();
+      navigate("/" + user.role);
+      dispatch(setButton("d-block"));
       dispatch(setCardButton("d-block"));
       dispatch(setUser(user));
     }
@@ -87,4 +88,4 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+export default SignInView;

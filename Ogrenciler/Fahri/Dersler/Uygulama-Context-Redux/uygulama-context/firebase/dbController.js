@@ -67,3 +67,13 @@ export async function getBooks() {
     console.error("Güncelleme hatası:", error);
   }
 }
+export async function getUser() {
+  const user = auth.currentUser;
+  if (user) {
+    const userRef = doc(db, "users", user.uid);
+    const userSnap = await getDoc(userRef);
+    return userSnap.data();
+  } else {
+    return null;
+  }
+}
