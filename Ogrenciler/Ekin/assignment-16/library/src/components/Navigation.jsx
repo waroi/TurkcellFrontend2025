@@ -1,13 +1,13 @@
-import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
-import { useSelector } from "react-redux";
-import modal from "../modal";
+import { register, login, logout } from "../firebase";
 
-import { register, login, logout } from "../firebase/firebase";
+import modal from "../modal";
+import library from "../library";
+
+import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
 
 export default function Navigation() {
   const { setModal } = modal();
-
-  const user = useSelector((state) => state.library.user);
+  const { user } = library();
 
   return (
     <Navbar expand="lg" className="bg-secondary mb-5" data-bs-theme="dark">
