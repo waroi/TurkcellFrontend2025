@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { useNavigate } from "react-router";
+import { NavLink, useNavigate } from "react-router";
 import { getCurrentUser, logOut } from "../controller/AuthController";
 import { readUser } from "../controller/DBController";
 import { useTheme } from "../context/ThemeContext";
@@ -51,9 +51,9 @@ const Sidebar = () => {
       <div className="container py-5 px-3 mt-5 mb-5 d-flex flex-column">
         <ul className="nav flex-column">
           <li className="nav-item">
-            <a className="nav-link text-gray">
+            <NavLink to="/" className="nav-link text-gray">
               <i className="fa fa-home  me-2 py-2 px-3 mb-2"></i>Anasayfa
-            </a>
+            </NavLink>
           </li>
           <li className="nav-item">
             <a className="nav-link" onClick={() => handleScroll("books")}>
@@ -102,7 +102,7 @@ const Sidebar = () => {
           </div>
           <li className="nav-item">
             <a className="nav-link" onClick={async () => await handleLogOut()}>
-              <i class="fa-solid fa-right-from-bracket me-2 py-2 px-3 mb-2"></i>
+              <i className="fa-solid fa-right-from-bracket me-2 py-2 px-3 mb-2"></i>
               Çıkış yap
             </a>
           </li>

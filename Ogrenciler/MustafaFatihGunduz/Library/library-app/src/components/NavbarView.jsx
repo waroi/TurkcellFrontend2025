@@ -7,9 +7,9 @@ const NavbarView = () => {
       <div className="d-flex align-items-center justify-content-between">
         <div className="d-flex align-items-center justify-content-center gap-3">
           <img src={book} alt="" />
-          <a className="navbar-brand text-black fw-bold" href="#">
+          <NavLink to="/" className="navbar-brand text-black fw-bold" href="#">
             Kitap Dünyası
-          </a>
+          </NavLink>
         </div>
         <div className="search-field">
           <input
@@ -20,30 +20,34 @@ const NavbarView = () => {
           />
         </div>
         <div className="user-field d-flex align-items-center justify-content-center">
-          <div class="dropdown">
+          <div className="dropdown">
             <button
-              class="btn btn-secondary dropdown-toggle"
+              className="btn btn-secondary dropdown-toggle"
               type="button"
               id="dropdownMenuButton"
               data-bs-toggle="dropdown"
               aria-haspopup="true"
               aria-expanded="true"
-            >
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">
+            ></button>
+            <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a className="dropdown-item" href="#">
                 Türkçe
               </a>
-			  <a class="dropdown-item" href="#">
-				İngilizce
-			  </a>
+              <a className="dropdown-item" href="#">
+                İngilizce
+              </a>
             </div>
           </div>
-          <p className="ms-2 text-center">
+          <p
+            className="text-center"
+            style={({ display: "contents" }, { margin: 4 })}
+          >
             {auth.currentUser !== null ? (
               auth.currentUser.email.slice(0, 5)
             ) : (
-              <NavLink to="/login">Giriş Yap</NavLink>
+              <NavLink to="/login" className="navbar-brand text-black fw-bold">
+                Giriş Yap
+              </NavLink>
             )}
           </p>
         </div>
@@ -54,9 +58,6 @@ const NavbarView = () => {
 
 export default NavbarView;
 
-/**
- *
- */
 /**
  * 		<nav className="navbar navbar-expand-lg navbar-light position-sticky top-0 z-2 shadow-sm py-3">
 			<div className="container-fluid">

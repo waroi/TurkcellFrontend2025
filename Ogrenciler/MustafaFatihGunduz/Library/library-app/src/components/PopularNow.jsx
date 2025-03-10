@@ -18,10 +18,11 @@ const PopularNow = () => {
         <div className="row">
           {threeBook.length > 0 ? (
             threeBook.map((book, index) => (
-              <div className="col-md-4">
+              <div className="col-md-4 h-100" key={book.id}>
                 <div
-                  className={`${index % 2 === 0 ? "card-first py-3" : "card"}`}
-                  key={book.id}
+                  className={`${
+                    index % 2 === 0 ? "card-first py-3" : "card rounded-3"
+                  }`}
                 >
                   <div className="card-body">
                     <div className="row">
@@ -30,12 +31,11 @@ const PopularNow = () => {
                           <img src={book.image} alt="" />
                         </div>
                       </div>
-                      <div className="col-md-8">
+                      <div className="col-md-8 py-3 d-flex flex-column justify-content-between">
                         <h6 className="card-title">{book.title}</h6>
                         <p className="card-text py-2">
                           <span>{book.author}</span>
-                          <span className="mx-2">○</span>
-                          <span>{book.releaseDate}</span>
+                          <span className="d-block">{book.releaseDate}</span>
                         </p>
                         <div className="star">
                           <span>
