@@ -23,7 +23,7 @@ const SignUpForm = ({ handleSubmit }) => {
     addUserInfo(userInfo);
   };
   return (
-    <div className="container flex-column w-25 p-5 bg-brown text-white rounded-5">
+    <div className="container flex-column w-50 p-5 bg-brown text-white rounded-5">
       <h2 className="mb-5 text-center">Giriş Yap / Kayıt Ol</h2>
       <Form onSubmit={(e) => handleStates(e)}>
         <Form.Group className="mb-3" controlId="formBasicEmail">

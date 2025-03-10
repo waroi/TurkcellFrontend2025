@@ -7,6 +7,7 @@ import { useAuthStore } from "../store";
 import { auth, db } from "../../firebase-config";
 import { doc, setDoc, collection, getDocs, getDoc } from "firebase/firestore";
 import { signInWithEmailAndPassword } from "firebase/auth";
+
 const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -18,11 +19,11 @@ const LoginForm = () => {
   const userRef = collection(db, "admins");
 
   useEffect(() => {
-    console.log(userInfo);
-    if (userInfo.password !== "") {
-      handleSignIn();
+    console.log(authenticatedUser);
+    if (authenticatedUser.isAuthenticated) {
+      navigate("/app");
     }
-  }, [userInfo]);
+  }, [authenticatedUser]);
 
   const handleStates = (e) => {
     e.preventDefault();
