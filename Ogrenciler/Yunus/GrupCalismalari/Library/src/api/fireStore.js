@@ -123,6 +123,7 @@ export class FireStore {
             await updateDoc(bookRef, {
                 ...userData,
                 state: userData.state,
+                publisherName: userData.email,
                 updatedAt: new Date().toISOString()
             });
             console.log("Kullanıcı güncellemesi başarılı")
