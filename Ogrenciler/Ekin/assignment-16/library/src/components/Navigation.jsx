@@ -1,10 +1,11 @@
 import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
-import { useSelector, useDispatch } from "react-redux";
-import { setModal } from "../redux/slices/modalSlice";
+import { useSelector } from "react-redux";
+import modal from "../modal";
+
 import { register, login, logout } from "../firebase/firebase";
 
 export default function Navigation() {
-  const dispatch = useDispatch();
+  const { setModal } = modal();
 
   const user = useSelector((state) => state.library.user);
 
@@ -21,9 +22,11 @@ export default function Navigation() {
             {user ? (
               <Nav.Link
                 onClick={() =>
-                  dispatch(
-                    setModal({ show: true, mode: "logout", action: logout })
-                  )
+                  setModal({
+                    show: true,
+                    mode: "logout",
+                    action: logout,
+                  })
                 }
               >
                 Logout
@@ -32,22 +35,22 @@ export default function Navigation() {
               <>
                 <Nav.Link
                   onClick={() =>
-                    dispatch(
-                      setModal({
-                        show: true,
-                        mode: "register",
-                        action: register,
-                      })
-                    )
+                    setModal({
+                      show: true,
+                      mode: "register",
+                      action: register,
+                    })
                   }
                 >
                   Register
                 </Nav.Link>
                 <Nav.Link
                   onClick={() =>
-                    dispatch(
-                      setModal({ show: true, mode: "login", action: login })
-                    )
+                    setModal({
+                      show: true,
+                      mode: "login",
+                      action: login,
+                    })
                   }
                 >
                   Login
