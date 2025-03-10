@@ -3,13 +3,15 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchBooks, addBookToFirestore, deleteBookFromFirestore } from "../redux/slice/booksSlice";
 import BookCard from "../components/BookCard";
 import { auth } from "../firebase/firebaseConfig";
+
 const HomePage = () => {
     const dispatch = useDispatch();
-    const { books, status } = useSelector((state) => state.books);
+    const { books, status, sort, filter } = useSelector((state) => state.books);
     const [newBook, setNewBook] = useState({
         title: "", author: "", posterUrl: "", description: "", releaseDate: "", category: "", publisherId: ""
     });
     const [user, setUser] = useState(null);
+
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged((currentUser) => {
             if (currentUser) {
@@ -21,6 +23,7 @@ const HomePage = () => {
         });
         return () => unsubscribe();
     }, [dispatch]);
+
     const handleAddBook = () => {
         if (!user) {
             alert("Kitap ekleyebilmek için giriş yapmalısınız!");
@@ -29,6 +32,12 @@ const HomePage = () => {
         dispatch(addBookToFirestore({ ...newBook, publisherId: user.uid }));
         setNewBook({ title: "", author: "", posterUrl: "", description: "", releaseDate: "", category: "", publisherId: "" });
     };
+
+    const filteredBooks = books
+        .filter((book) => book.publisherId === user?.uid) // Kullanıcıya ait kitapları göster
+        .filter((book) => book.title.toLowerCase().includes(filter.toLowerCase())) // Arama filtresi
+        .sort((a, b) => sort === "asc" ? a.title.localeCompare(b.title) : b.title.localeCompare(a.title)); // Sıralama
+
     return (
         <div className="container mt-4">
             <h2 className="mb-4">📚 Kitaplar</h2>
@@ -50,17 +59,16 @@ const HomePage = () => {
                     </div>
                     {status === "loading" && <p>Kitaplar yükleniyor...</p>}
                     <div className="row">
-                        {books
-                            .filter((book) => book.publisherId === user.uid)
-                            .map((book) => (
-                                <div className="col-md-4 mb-4" key={book.id}>
-                                    <BookCard book={book} onDelete={() => dispatch(deleteBookFromFirestore(book.id))} />
-                                </div>
-                            ))}
+                        {filteredBooks.map((book) => (
+                            <div className="col-md-4 mb-4" key={book.id}>
+                                <BookCard book={book} onDelete={() => dispatch(deleteBookFromFirestore(book.id))} />
+                            </div>
+                        ))}
                     </div>
                 </>
             )}
         </div>
     );
 };
+
 export default HomePage;
