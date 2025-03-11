@@ -112,7 +112,7 @@ const BookCard = ({ handleOpen, handleOpenDetail }) => {
                         <p className="mb-3">{book.description_short}</p>
                         <p className="mb-3">{book?.yayin}</p>
 
-                        <div className="btns d-flex align-items-endbtns d-flex justify-content-center pt-5 mt-5">
+                        <div className="btns d-flex align-items-endbtns d-flex justify-content-center mt-5">
                           <button
                             onClick={() => handleDelete(book.id)}
                             className="btn outlined-green rounded-circle me-2"
