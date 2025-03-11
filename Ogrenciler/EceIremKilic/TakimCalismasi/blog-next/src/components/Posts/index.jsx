@@ -2,12 +2,31 @@
 import React, { useEffect, useState } from "react";
 import data from "../../data/data.json";
 import styles from "./posts.module.css";
+import useBlogStore from "../../store/useBlogStore";
 
 const Posts = () => {
   const [blogs, setBlogs] = useState([]);
   const [isMounted, setIsMounted] = useState(false);
+  const { posts, addPosts } = useBlogStore();
+
+  console.log("123", posts);
+
+  const handleAddPosts = () => {
+    const data = {
+      title: "Giresun Kalesi: Tarihin ve Manzaranın Buluştuğu Zirve",
+      content:
+        "Giresun’un en önemli tarihi yapılarından biri olan Giresun Kalesi, şehrin merkezinde yüksek bir tepede yer alır. Antik çağlardan günümüze kadar uzanan bu kale, Pontus Krallığı döneminden kalma izler taşımaktadır. Şehri ve Karadeniz’i kuşbakışı görebileceğiniz bu eşsiz nokta, ziyaretçilere hem tarihi hem de doğal güzellikleri bir arada sunar. Özellikle gün batımında etkileyici manzarasıyla fotoğrafçılar ve doğa severler için vazgeçilmez bir noktadır.",
+      image: "https://www.example.com/giresun-kalesi.jpg",
+      releaseDate: "2025-03-11",
+      author: "Ece İrem",
+    };
+
+    addPosts(data);
+  };
+
   useEffect(() => {
     setBlogs(data);
+    handleAddPosts();
   }, []);
   useEffect(() => {
     setIsMounted(true);

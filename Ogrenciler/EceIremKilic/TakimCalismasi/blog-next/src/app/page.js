@@ -1,4 +1,3 @@
-import styles from "./page.module.css";
 import Navbar from "@/components/Navbar";
 import Banner from "@/components/Banner";
 import Latest from "@/components/Latest";
