@@ -18,7 +18,6 @@ const Header = () => {
                 const userData = await Auth.fetchUserByUid(user.uid)
                 setPublisherName(userData.state)
                 setState(userData.state)
-                return navigate('/')
             }
         });
     }, [navigate])
