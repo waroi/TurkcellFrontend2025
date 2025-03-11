@@ -4,19 +4,29 @@ import styles from "./page.module.css";
 import { getBlog } from "../../services/Api";
 import { useState, useEffect } from "react";
 import Card from "../app/components/Card";
+import { useDispatch } from "react-redux";
+import { addAllBlog } from "../app/redux/slices/blogSlice";
+import { useSelector } from "react-redux";
+
+
 
 export default function Home() {
-  const [blogs, setBlogs] = useState([]);
+  //const [blogs, setBlogs] = useState([]);
+  const blogs = useSelector((state) => state.blog.blogs);
+  const dispatch = useDispatch();
+
+
 
   useEffect(() => {
-    async function fetchData() {
+    async function fetchBlog() {
       const data = await getBlog();
       if (data) {
         console.log("Blog Verisi:", data); // Konsolda JSON verisini görebilirsin.
-        setBlogs(data);
+        dispatch(addAllBlog(data));
+
       }
     }
-    fetchData();
+    fetchBlog();
   }, []);
 
   return (
