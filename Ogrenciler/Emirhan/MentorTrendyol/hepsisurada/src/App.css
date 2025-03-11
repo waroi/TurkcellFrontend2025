@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+.custom-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.home-grid{
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+.add-cart-text{
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.custom-font{
+  font-size: 13px;
+  font-weight: 700;
+}
