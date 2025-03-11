@@ -1,0 +1,64 @@
+[
+	{
+		"id": 1,
+		"title": "JavaScript: Web Geliştiricileri İçin Temel Araç",
+		"description": "JavaScript, web geliştirme dünyasının bel kemiğidir. Bu dil, web sayfalarına dinamik içerik eklemek ve kullanıcı etkileşimlerini yönetmek için kullanılır. JavaScript, HTML ve CSS ile birlikte çalışarak, modern web sitelerinin ve uygulamalarının temelini oluşturur. Bu dil, tarayıcı tarafında çalışan bir betik dili olarak başladı, ancak günümüzde Node.js gibi platformlar sayesinde sunucu tarafında da kullanılabilmektedir. JavaScript'in esnekliği ve geniş kütüphane desteği, onu öğrenilmesi gereken bir dil haline getiriyor. Ayrıca, JavaScript'in asenkron programlama modeli, modern web uygulamalarının performansını artırmak için kritik öneme sahiptir. Bu dil, nesne yönelimli, fonksiyonel ve olay tabanlı programlama paradigmalarını destekler. JavaScript'in popülerliği, sürekli gelişen ekosistemi ve topluluk desteği ile daha da artmaktadır. Frameworks ve kütüphaneler, JavaScript'in yeteneklerini genişletir ve geliştiricilere daha hızlı ve etkili çözümler sunar. Öğrenme eğrisi nispeten düşük olan JavaScript, yeni başlayanlar için ideal bir seçimdir. Ancak, derinlemesine bilgi sahibi olmak, karmaşık uygulamalar geliştirmek için gereklidir. JavaScript, modern web standartlarının bir parçasıdır ve gelecekte de önemini koruyacak gibi görünüyor.",
+		"imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
+		"releaseDate": "2021-10-01"
+	},
+	{
+		"id": 2,
+		"title": "HTML: Web'in Yapı Taşı",
+		"description": "HTML, web sayfalarının yapısını oluşturmak için kullanılan standart bir işaretleme dilidir. Bu dil, web tarayıcılarına içeriğin nasıl görüntüleneceğini söyler. HTML, etiketler ve öznitelikler kullanarak metin, resim, bağlantı ve diğer içerik türlerini düzenler. Her web sayfası, HTML kodunu içerir ve bu kod, sayfanın iskeletini oluşturur. HTML5, dilin en son sürümüdür ve multimedya öğelerini destekler, bu da geliştiricilere daha zengin içerikler oluşturma imkanı tanır. HTML, CSS ve JavaScript ile birlikte kullanılarak, etkileşimli ve görsel olarak çekici web siteleri oluşturulabilir. Öğrenmesi kolay olan HTML, web geliştiriciliğine başlamak isteyenler için temel bir adımdır. Ayrıca, HTML'in semantik yapısı, arama motoru optimizasyonu (SEO) için önemlidir ve web sitelerinin daha erişilebilir olmasını sağlar. HTML, sürekli olarak gelişmekte ve yeni özellikler eklenmektedir, bu da onu modern web geliştirme için vazgeçilmez kılar.",
+		"imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg",
+		"releaseDate": "2021-10-01"
+	},
+	{
+		"id": 3,
+		"title": "CSS: Web'in Görsel Tasarımı",
+		"description": "CSS, web sayfalarının görsel stilini ve düzenini tanımlamak için kullanılan bir stil dilidir. Bu dil, HTML ile birlikte kullanılarak, web sayfalarının renklerini, yazı tiplerini, boşluklarını ve diğer görsel özelliklerini kontrol eder. CSS, web geliştiricilerine, sayfaların farklı cihazlarda ve ekran boyutlarında nasıl görüneceğini belirleme imkanı tanır. Responsive tasarım, CSS'in en önemli özelliklerinden biridir ve bu, web sitelerinin mobil cihazlarda da iyi görünmesini sağlar. CSS3, dilin en son sürümüdür ve animasyonlar, geçişler ve diğer gelişmiş özellikleri destekler. CSS, ayrıca, grid ve flexbox gibi düzen modelleri sunarak, karmaşık sayfa düzenlerini kolayca oluşturmayı mümkün kılar. Öğrenmesi nispeten kolay olan CSS, web tasarımının temel bir parçasıdır ve her web geliştiricisinin bilmesi gereken bir beceridir. CSS'in gücü, onu modern web tasarımı için vazgeçilmez kılar ve sürekli gelişen özellikleri, web geliştiricilerine yeni olanaklar sunar.",
+		"imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg",
+		"releaseDate": "2021-10-01"
+	},
+	{
+		"id": 4,
+		"title": "Tanstack Query: Modern Veri Yönetimi",
+		"description": "Tanstack Query, modern web uygulamalarında veri yönetimini kolaylaştıran bir kütüphanedir. Bu kütüphane, sunucudan veri çekme, önbellekleme, senkronizasyon ve güncelleme gibi işlemleri basitleştirir. Tanstack Query, React, Vue, Svelte ve Solid gibi popüler JavaScript framework'leri ile uyumlu çalışır. Bu kütüphane, geliştiricilere daha az kod yazarak daha fazla işlevsellik sağlar ve uygulamaların performansını artırır. Tanstack Query, ayrıca, hata yönetimi, yeniden deneme mekanizmaları ve optimistik güncellemeler gibi gelişmiş özellikler sunar. Bu kütüphane, özellikle büyük ölçekli uygulamalarda veri yönetimini daha yönetilebilir hale getirir. Tanstack Query'nin esnek yapısı, geliştiricilere özelleştirilmiş çözümler oluşturma imkanı tanır. Ayrıca, bu kütüphane, TypeScript ile tam uyumlu çalışır ve güçlü tip güvenliği sağlar. Tanstack Query, modern web geliştirme için vazgeçilmez bir araç haline gelmiştir ve sürekli olarak geliştirilmektedir.",
+		"imageUrl": "https://tanstack.com/query/v4/docs/react/logo.png",
+		"releaseDate": "2021-10-01"
+	},
+	{
+		"id": 5,
+		"title": "Next.js: React için Güçlü Bir Framework",
+		"description": "Next.js, React tabanlı web uygulamaları geliştirmek için kullanılan bir framework'tür. Bu framework, sunucu taraflı render (SSR), statik site oluşturma (SSG) ve API rotaları gibi özellikler sunar. Next.js, geliştiricilere daha hızlı ve daha etkili web uygulamaları oluşturma imkanı tanır. Bu framework, ayrıca, otomatik kod bölme ve optimizasyon gibi özelliklerle uygulama performansını artırır. Next.js, TypeScript ile tam uyumlu çalışır ve güçlü tip güvenliği sağlar. Bu framework, ayrıca, entegre CSS ve Sass desteği sunarak, stil yönetimini kolaylaştırır. Next.js, büyük ölçekli uygulamalar için idealdir ve sürekli olarak geliştirilmektedir. Bu framework, modern web geliştirme için vazgeçilmez bir araç haline gelmiştir ve geniş bir topluluk tarafından desteklenmektedir. Next.js, geliştiricilere daha az kod yazarak daha fazla işlevsellik sağlar ve uygulama geliştirme sürecini hızlandırır.",
+		"imageUrl": "https://assets.vercel.com/image/upload/v1607554385/repositories/next-js/next-logo.png",
+		"releaseDate": "2021-10-01"
+	},
+	{
+		"id": 6,
+		"title": "React: Kullanıcı Arayüzü Geliştirme için Güçlü Bir Kütüphane",
+		"description": "React, kullanıcı arayüzleri oluşturmak için kullanılan popüler bir JavaScript kütüphanesidir. Bu kütüphane, Facebook tarafından geliştirilmiştir ve büyük ölçekli uygulamalarda kullanılmak üzere tasarlanmıştır. React, bileşen tabanlı bir yapı sunar ve bu, geliştiricilere yeniden kullanılabilir ve modüler kod yazma imkanı tanır. Bu kütüphane, sanal DOM kullanarak, uygulama performansını artırır ve kullanıcı deneyimini iyileştirir. React, ayrıca, JSX adı verilen bir sözdizimi kullanır ve bu, HTML benzeri bir yapıda JavaScript kodu yazmayı mümkün kılar. React, büyük bir topluluk tarafından desteklenir ve sürekli olarak geliştirilmektedir. Bu kütüphane, ayrıca, Redux ve Context API gibi state yönetim araçları ile uyumlu çalışır. React, modern web geliştirme için vazgeçilmez bir araç haline gelmiştir ve geniş bir ekosisteme sahiptir. Bu kütüphane, geliştiricilere daha hızlı ve daha etkili kullanıcı arayüzleri oluşturma imkanı tanır.",
+		"imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
+		"releaseDate": "2021-10-01"
+	},
+	{
+		"id": 7,
+		"title": "Zustand: Basit ve Etkili State Yönetimi",
+		"description": "Zustand, React uygulamalarında state yönetimini kolaylaştıran bir kütüphanedir. Bu kütüphane, basit ve minimal bir API sunar ve geliştiricilere daha az kod yazarak daha fazla işlevsellik sağlar. Zustand, küçük ve orta ölçekli uygulamalar için idealdir ve karmaşık state yönetimi ihtiyaçlarını karşılar. Bu kütüphane, ayrıca, TypeScript ile tam uyumlu çalışır ve güçlü tip güvenliği sağlar. Zustand, React'in Context API'sine alternatif olarak kullanılabilir ve daha basit bir çözüm sunar. Bu kütüphane, ayrıca, middleware desteği sunar ve bu, geliştiricilere state yönetimini özelleştirme imkanı tanır. Zustand, modern React uygulamaları için vazgeçilmez bir araç haline gelmiştir ve sürekli olarak geliştirilmektedir. Bu kütüphane, geliştiricilere daha hızlı ve daha etkili state yönetimi imkanı tanır ve uygulama geliştirme sürecini hızlandırır.",
+		"imageUrl": "https://github.com/pmndrs/zustand/raw/main/bear.png"
+	},
+	{
+		"id": 8,
+		"title": "Redux: Tahmin Edilebilir State Yönetimi",
+		"description": "Redux, JavaScript uygulamalarında state yönetimini kolaylaştıran bir kütüphanedir. Bu kütüphane, özellikle React uygulamalarında yaygın olarak kullanılır ve tahmin edilebilir bir state yönetimi modeli sunar. Redux, tek bir merkezi store kullanarak, uygulamanın state'ini yönetir ve bu, state'in tutarlı ve yönetilebilir olmasını sağlar. Bu kütüphane, ayrıca, middleware desteği sunar ve bu, geliştiricilere state yönetimini özelleştirme imkanı tanır. Redux, büyük ölçekli uygulamalar için idealdir ve karmaşık state yönetimi ihtiyaçlarını karşılar. Bu kütüphane, ayrıca, TypeScript ile tam uyumlu çalışır ve güçlü tip güvenliği sağlar. Redux, modern web geliştirme için vazgeçilmez bir araç haline gelmiştir ve geniş bir topluluk tarafından desteklenmektedir. Bu kütüphane, geliştiricilere daha hızlı ve daha etkili state yönetimi imkanı tanır ve uygulama geliştirme sürecini hızlandırır.",
+		"imageUrl": "https://redux.js.org/img/redux-logo-landscape.png",
+		"releaseDate": "2021-10-01"
+	},
+	{
+		"id": 9,
+		"title": "useContext: React'te State Paylaşımı",
+		"description": "useContext, React uygulamalarında state paylaşımını kolaylaştıran bir hook'tur. Bu hook, Context API'sini kullanarak, bileşenler arasında state paylaşımını mümkün kılar. useContext, özellikle küçük ve orta ölçekli uygulamalar için idealdir ve karmaşık state yönetimi ihtiyaçlarını karşılar. Bu hook, ayrıca, TypeScript ile tam uyumlu çalışır ve güçlü tip güvenliği sağlar. useContext, Redux gibi state yönetim kütüphanelerine alternatif olarak kullanılabilir ve daha basit bir çözüm sunar. Bu hook, ayrıca, React'in bileşen tabanlı yapısı ile uyumlu çalışır ve geliştiricilere daha modüler ve yeniden kullanılabilir kod yazma imkanı tanır. useContext, modern React uygulamaları için vazgeçilmez bir araç haline gelmiştir ve sürekli olarak geliştirilmektedir. Bu hook, geliştiricilere daha hızlı ve daha etkili state paylaşımı imkanı tanır ve uygulama geliştirme sürecini hızlandırır.",
+		"imageUrl": "https://reactjs.org/docs/context-api/context-api.png",
+		"releaseDate": "2021-10-01"
+	}
+]

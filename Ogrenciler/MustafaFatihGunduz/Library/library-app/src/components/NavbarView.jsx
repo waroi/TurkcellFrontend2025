@@ -1,39 +1,63 @@
-import { useContext, useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-import { NavLink, useNavigate } from "react-router";
-import { ThemeContext } from "../context/ThemeContext";
-import { getCurrentUser, logOut } from "../controller/AuthController";
-import { readUser } from "../controller/DBController";
-
-const NavbarView = ({ setEditingBookId }) => {
-	const { theme, toggleTheme } = useContext(ThemeContext);
-	const books = useSelector((state) => state.book.books);
-	const publishers = [...new Set(books.map((book) => book.publishing))];
-
-	const [user, setUser] = useState(null);
-	const navigate = useNavigate();
-	useEffect(() => {
-		handleUser();
-	}, []);
-	const handleUser = async () => {
-		const currentUser = getCurrentUser();
-		if (currentUser !== null) {
-			const user = await readUser(currentUser.uid);
-			setUser(user);
-		}
-	};
-	const handleLogOut = async () => {
-		try {
-			await logOut();
-			navigate("/login");
-			setUser(null);
-		} catch (error) {
-			console.log("Error in handleLogOut: ", error);
-		}
-	};
-
+import { NavLink } from "react-router";
+import { auth } from "../../firebase";
+import book from "../../public/books.png";
+const NavbarView = () => {
 	return (
-		<nav className="navbar navbar-expand-lg navbar-light position-sticky top-0 z-2 shadow-sm py-3">
+		<div className="container-fluid">
+			<div className="d-flex align-items-center justify-content-between">
+				<div className="d-flex align-items-center justify-content-center gap-3">
+					<img src={book} alt="" />
+					<NavLink to="/" className="navbar-brand text-black fw-bold" href="#">
+						Kitap Dünyası
+					</NavLink>
+				</div>
+				<div className="search-field">
+					<input
+						type="search"
+						name="search"
+						id="search"
+						placeholder="Kitap adı veya yazar ara"
+					/>
+				</div>
+				<div className="user-field d-flex align-items-center justify-content-center">
+					<div className="dropdown">
+						<button
+							className="btn btn-secondary dropdown-toggle"
+							type="button"
+							id="dropdownMenuButton"
+							data-bs-toggle="dropdown"
+							aria-haspopup="true"
+							aria-expanded="true"></button>
+						<div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+							<a className="dropdown-item" href="#">
+								Türkçe
+							</a>
+							<a className="dropdown-item" href="#">
+								İngilizce
+							</a>
+						</div>
+					</div>
+					<p
+						className="text-center"
+						style={({ display: "contents" }, { margin: 4 })}>
+						{auth.currentUser !== null ? (
+							auth.currentUser.email.slice(0, 5)
+						) : (
+							<NavLink to="/login" className="navbar-brand text-black fw-bold">
+								Giriş Yap
+							</NavLink>
+						)}
+					</p>
+				</div>
+			</div>
+		</div>
+	);
+};
+
+export default NavbarView;
+
+/**
+ * 		<nav className="navbar navbar-expand-lg navbar-light position-sticky top-0 z-2 shadow-sm py-3">
 			<div className="container-fluid">
 				<a className="navbar-brand text-white fw-bold" href="#">
 					Kitap Dünyası
@@ -67,7 +91,6 @@ const NavbarView = ({ setEditingBookId }) => {
 							</a>
 						</li>
 
-						{/* Yayınevleri */}
 						<li className="nav-item dropdown ">
 							<a
 								className="nav-link dropdown-toggle text-white"
@@ -112,7 +135,6 @@ const NavbarView = ({ setEditingBookId }) => {
 								aria-expanded="false">
 								<div className="avatar ms-2 me-2"></div>
 							</a>
-							{/*user vasrsa cikis yap yoksa login yap */}
 							<ul className="dropdown-menu">
 								{user ? (
 									<>
@@ -137,14 +159,16 @@ const NavbarView = ({ setEditingBookId }) => {
 							</ul>
 						</li>
 					</ul>
-					<button
-						type="button"
-						className="btn btn-success"
-						data-bs-toggle="modal"
-						data-bs-target="#bookEvent"
-						onClick={() => setEditingBookId}>
-						Kitap Ekle
-					</button>
+					{user && (
+						<button
+							type="button"
+							className="btn btn-success"
+							data-bs-toggle="modal"
+							data-bs-target="#bookEvent"
+							onClick={() => setEditingBookId}>
+							Kitap Ekle
+						</button>
+					)}
 					<button
 						className={`btn btn-secondary ms-3 ${
 							theme === "light" ? "bg-dark text-light" : "bg-white text-dark"
@@ -155,7 +179,4 @@ const NavbarView = ({ setEditingBookId }) => {
 				</div>
 			</div>
 		</nav>
-	);
-};
-
-export default NavbarView;
+ */

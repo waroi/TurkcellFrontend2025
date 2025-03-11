@@ -12,6 +12,17 @@ const AdminView = () => {
         getAllUsers()
     }, [])
 
+    const changeUpdateUserState = (user, event) => {
+        const newState = event.target.name;
+
+        FireStore.updateUser(user.uid, { ...user, state: newState })
+
+        setUserList((prevUserList) =>
+            prevUserList.map((u) =>
+                u.uid === user.uid ? { ...u, state: newState } : u
+            )
+        );
+    }
 
     return (
         <div className="container">
@@ -37,17 +48,21 @@ const AdminView = () => {
                     <li className="list-group-item gap-3 d-flex flex-wrap">
                         Kullanıcı Durumunu değiştir:
                         <button
+                            onClick={(event) => changeUpdateUserState(user, event)}
+                            name='admin'
                             disabled={user.state === 'admin'}
                             className={`btn ${user.state === 'admin' ? 'btn-primary' : 'btn-outline-primary'}`}>
                             Admin yap
                         </button>
                         <button
+                            name='publisher' onClick={(event) => changeUpdateUserState(user, event)}
                             disabled={user.state === 'publisher'}
                             className={`btn ${user.state === 'publisher' ? 'btn-primary' : 'btn-outline-primary'}`}>
                             Yayınevi ata
                         </button>
                         <button
-                            disabled={user.state === 'user'}
+                            name='user'
+                            disabled={user.state === 'user'} onClick={(event) => changeUpdateUserState(user, event)}
                             className={`btn ${user.state === 'user' ? 'btn-primary' : 'btn-outline-primary'}`}>
                             User durumuna getir
                         </button>

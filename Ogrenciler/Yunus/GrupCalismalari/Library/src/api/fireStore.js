@@ -1,4 +1,4 @@
-import { addDoc, collection, deleteDoc, doc, getDoc, getDocs, setDoc } from "firebase/firestore";
+import { addDoc, collection, deleteDoc, doc, getDoc, getDocs, setDoc, updateDoc } from "firebase/firestore";
 import { db } from "../firebase/firebase";
 
 export class FireStore {
@@ -61,14 +61,9 @@ export class FireStore {
         }
     }
 
-    // inş eklenecek
-    static async addPublisher() {
+    static async addPublisher(data) {
         try {
-            const docRef = await addDoc(collection(db, "publisher"), {
-                first: "HAzalllllllll",
-                last: "KÜT KÜTTTTTTTTTTTTTT",
-                born: 1815
-            });
+            const docRef = await addDoc(collection(db, "publisher"), data);
             console.log("Document written with ID: ", docRef.id)
         } catch (e) {
             console.error("Error adding document: ", e)
@@ -109,7 +104,7 @@ export class FireStore {
         }
     }
 
-    // inş eklenecek2
+
     static async updateBook(bookId, newData) {
         const bookRef = doc(db, "books", bookId)
         try {
@@ -117,9 +112,23 @@ export class FireStore {
                 ...newData,
                 updatedAt: new Date().toISOString()
             });
-            console.log("Kitap güncellendi")
+            console.log("Kitap güncellendi brooooooooooooooooo")
         } catch (error) {
             console.error("Kitap güncellerken bir hata oluştu:", error)
+        }
+    }
+    static async updateUser(userId, userData) {
+        const bookRef = doc(db, "users", userId)
+        try {
+            await updateDoc(bookRef, {
+                ...userData,
+                state: userData.state,
+                publisherName: userData.email,
+                updatedAt: new Date().toISOString()
+            });
+            console.log("Kullanıcı güncellemesi başarılı")
+        } catch (error) {
+            console.error("Kullanıcı güncellenirken bir hata oluştu:", error)
         }
     }
 }

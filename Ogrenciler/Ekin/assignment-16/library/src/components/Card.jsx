@@ -1,11 +1,11 @@
-import { useDispatch } from "react-redux";
-import { editBook, deleteBook } from "../redux/slices/librarySlice";
-import { setModal } from "../redux/slices/modalSlice";
+import modal from "../modal";
+import library from "../library";
 
 import { Card, ButtonGroup, Button } from "react-bootstrap";
 
 export default function CardComponent({ book }) {
-  const dispatch = useDispatch();
+  const { setModal } = modal();
+  const { editBook, deleteBook } = library();
 
   return (
     <Card>
@@ -19,14 +19,12 @@ export default function CardComponent({ book }) {
             <Button
               variant="warning"
               onClick={() =>
-                dispatch(
-                  setModal({
-                    show: true,
-                    mode: "edit",
-                    book,
-                    action: (book) => dispatch(editBook(book)),
-                  })
-                )
+                setModal({
+                  show: true,
+                  mode: "edit",
+                  book,
+                  action: (book) => editBook(book),
+                })
               }
             >
               <i className="fa-solid fa-pen-to-square"></i>
@@ -35,13 +33,11 @@ export default function CardComponent({ book }) {
               variant="danger"
               className="text-white"
               onClick={() =>
-                dispatch(
-                  setModal({
-                    show: true,
-                    mode: "delete",
-                    action: () => dispatch(deleteBook(book.id)),
-                  })
-                )
+                setModal({
+                  show: true,
+                  mode: "delete",
+                  action: () => deleteBook(book.id),
+                })
               }
             >
               <i className="fa-solid fa-trash-can"></i>

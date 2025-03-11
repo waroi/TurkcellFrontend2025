@@ -12,22 +12,12 @@ import { useEffect,useState } from "react";
 import { useSpotify } from "../Context/SpotifyContext";
 
 function PlayButtons() {
-  const [isPlayerFullyReady, setIsPlayerFullyReady] = useState(false);
-  const { player, isPlayerReady } = useSpotify();
+  const { player } = useSpotify();
 
   useEffect(() => {
-    if (isPlayerReady && player) {
-      const checkPlayer = setInterval(() => {
-        if (player.nextTrack && player.previousTrack && player.togglePlay) {
-          setIsPlayerFullyReady(true);
-          clearInterval(checkPlayer);
-        }
-      }, 100);
-      return () => clearInterval(checkPlayer);
-    }
-  }, [isPlayerReady, player]);
+    console.log(player)
+  }, [player]);
 
-  if (!isPlayerFullyReady) return null;
 
   return (
     <Box

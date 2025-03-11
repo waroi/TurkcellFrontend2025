@@ -1,10 +1,18 @@
 import React from "react";
 import { NavLink } from "react-router";
 import { deleteBook } from "../../../firebase/dbController";
+import { useDispatch, useSelector } from "react-redux";
+import { removeBook } from "../../redux/slices/bookSlice";
 
-const Book = ({ book, handleDeleteBook }) => {
+const Book = ({ book }) => {
+  const dispatch = useDispatch();
+  const button = useSelector((state) => state.cardButton.cardButton);
+  function handleDelete() {
+    deleteBook(`${book.id}`);
+    dispatch(removeBook(book.id));
+  }
   return (
-    <div className="card shadow-lg rounded-3 h-100">
+    <div className="card shadow-lg rounded-5 h-100">
       <div className="row">
         <div className="col-md-4">
           <img
@@ -14,7 +22,7 @@ const Book = ({ book, handleDeleteBook }) => {
           />
         </div>
         <div className="col-md-8">
-          <div className="card-body d-flex flex-column">
+          <div className="card-body d-flex flex-column ">
             <h4 className="card-title fw-bold">{book.title}</h4>
             <p className="card-text text-muted">
               ✍️ <strong className="text-black">{book.author}</strong>
@@ -26,21 +34,24 @@ const Book = ({ book, handleDeleteBook }) => {
               <strong>Yıl:</strong> {book.publicYear}
             </p>
             <p className="card-text text-truncate">{book.description}</p>
-            <div className="d-flex justify-content-between align-items-center">
+            <div className="d-flex flex-wrap justify-content-center align-items-center">
               <button
-                className="btn btn-outline-danger"
-                onClick={() => deleteBook(book.id)}
+                className={`btn btn-red card-btn ${button}`}
+                onClick={handleDelete}
               >
                 Sil
               </button>
-              <NavLink to={`/${book.id}`} className="btn btn-outline-primary">
+              <NavLink
+                to={`/book-detail/${book.id}`}
+                className="btn btn-orange card-btn"
+              >
                 <i className="bi bi-eye"></i> İncele
               </NavLink>
               <NavLink
                 to={`/update/${book.id}`}
-                className="btn btn-outline-info"
+                className={`btn btn-blue card-btn ${button}`}
               >
-                <i className="bi bi-search"></i> Edit
+                Edit
               </NavLink>
             </div>
           </div>

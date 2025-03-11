@@ -1,7 +1,7 @@
 import { onAuthStateChanged } from "firebase/auth";
 import Register from "../components/Login/Register"
 import { auth } from "../firebase/firebase";
-import { Navigate, useNavigate } from "react-router";
+import { useNavigate } from "react-router";
 import { useEffect } from "react";
 
 const RegisterView = () => {

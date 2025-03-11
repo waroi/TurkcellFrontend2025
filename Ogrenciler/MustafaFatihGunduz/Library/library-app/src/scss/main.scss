@@ -4,8 +4,249 @@
 	box-sizing: border-box;
 }
 
-$primary-color: #7886c7;
-$footer-color: #2d336b;
+$white: #fff;
+$icon-color: #cfcaca;
+$primary-color: #461e07;
+$secondary-color: #5f2222;
+$button-color: #bb6826;
+
+$icon-color-dark: #333;
+$primary-color-dark: #1f1f1f;
+$secondary-color-dark: #272727;
+$button-color-dark: #9e5f28;
+
+@mixin box-design {
+	border-radius: 25px;
+	background: #ffffff;
+	box-shadow: 5px 5px 30px #d9d9d9;
+}
+
+@mixin image-design {
+	object-fit: contain;
+	width: 100%;
+	height: 200px;
+}
+.section {
+	@include box-design;
+	#book-stack {
+		width: 200px;
+		height: 200px;
+	}
+}
+
+.theme-switch {
+	input {
+		width: 40px;
+		height: 20px;
+	}
+}
+.theme-icon {
+	width: 30px;
+	height: 30px;
+}
+input {
+	border: 1px solid #ccc;
+	background-color: $icon-color;
+	border-radius: 20px;
+	padding: 10px 20px;
+	width: 100%;
+	min-width: 225px;
+	&:focus {
+		outline: none;
+	}
+}
+button {
+	background-color: $button-color;
+	color: $white;
+	border: 1px solid transparent;
+	border-radius: 20px;
+	padding: 10px 20px;
+	transition: all 0.3s ease;
+	&:hover {
+		transform: translateY(-5px);
+	}
+}
+li a {
+	text-decoration: none;
+	color: $white;
+	&:hover {
+		color: $button-color;
+	}
+}
+.card {
+	height: 250;
+	.card-image {
+		img {
+			@include image-design;
+		}
+	}
+}
+.checked {
+	color: orange;
+}
+.about-container {
+	background-color: $primary-color;
+	color: $white;
+	padding: 50px;
+	text-align: center;
+
+	h1,
+	h2 {
+		color: $button-color;
+	}
+
+	p {
+		font-size: 18px;
+		line-height: 1.6;
+	}
+}
+.services {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	margin-top: 30px;
+
+	.service-card {
+		background-color: $secondary-color;
+		color: $white;
+		padding: 20px;
+		border-radius: 8px;
+		width: 30%;
+		text-align: center;
+		transition: transform 0.3s ease-in-out;
+
+		&:hover {
+			transform: scale(1.05);
+		}
+	}
+}
+.contact-info {
+	margin-top: 40px;
+	background-color: $button-color;
+	padding: 20px;
+	border-radius: 10px;
+	text-align: center;
+
+	a {
+		color: $primary-color;
+		font-weight: bold;
+		text-decoration: none;
+		transition: color 0.3s;
+
+		&:hover {
+			color: $button-color;
+		}
+	}
+}
+.right-side.light {
+	color: $white;
+	background-color: $secondary-color;
+	height: 100%;
+	img {
+		@include image-design;
+	}
+}
+.right-side.dark {
+	color: $white;
+	background-color: $secondary-color-dark;
+	height: 100%;
+	img {
+		@include image-design;
+	}
+}
+.left-side.light {
+	color: $white;
+	background-color: $secondary-color;
+	height: 100%;
+}
+.left-side.dark {
+	color: $white;
+	background-color: $secondary-color-dark;
+	height: 100%;
+}
+.card-first {
+	background-color: $secondary-color;
+	height: 270px;
+	color: $white;
+	border: 1px solid transparent;
+	border-radius: 8px;
+	padding: 10px 20px;
+	img {
+		@include image-design;
+	}
+}
+.card-text {
+	display: -webkit-box;
+	line-clamp: 4;
+	-webkit-line-clamp: 4;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+.wrapper {
+	display: grid;
+	grid-template-columns: 1fr 5fr 2fr;
+}
+.nav-item {
+	.fa {
+		color: $icon-color;
+		&:hover {
+			color: $primary-color;
+
+			cursor: pointer;
+		}
+	}
+	.nav-link {
+		color: $icon-color;
+		&:hover {
+			color: $primary-color;
+			cursor: pointer;
+		}
+	}
+}
+.dropdown-toggle {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	background-image: url("../../public/avatar.png");
+	background-size: contain;
+	background-position: center;
+}
+.special-offer-section {
+	background-attachment: fixed;
+	background-size: cover;
+	background-image: url("https://www.rily.co.uk/images/sale_thumbs/sale_books.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 100%;
+	height: 300px;
+	h4 {
+		color: #872341;
+	}
+}
+.subscribe {
+	input {
+		height: 40px;
+		padding: 10px 20px;
+		background-color: #ccc;
+		border: none;
+		border-radius: 10px;
+		&:focus {
+			outline: none;
+		}
+		outline: none;
+	}
+}
+.card-img-div {
+	width: 100%;
+	img {
+		height: 320px;
+	}
+}
+footer {
+	background-color: $primary-color;
+	color: $white;
+}
 
 .loginSection {
 	background-color: #c9d6ff;
@@ -22,7 +263,6 @@ $footer-color: #2d336b;
 		overflow: hidden;
 		width: 1200px;
 		max-width: 100%;
-		// min-height: 768px; tasma oluyordu
 		height: 90vh;
 		min-height: 400px;
 	}
@@ -220,58 +460,4 @@ $footer-color: #2d336b;
 	.container.active .toggle-right {
 		transform: translateX(200%);
 	}
-}
-
-nav {
-	background-color: $primary-color;
-}
-.avatar {
-	width: 30px;
-	height: 30px;
-	border-radius: 50%;
-	background-image: url("../../public/avatar.png");
-	background-size: cover;
-	background-position: center;
-}
-.special-offer-section {
-	background-attachment: fixed;
-	background-size: cover;
-	background-image: url("https://www.rily.co.uk/images/sale_thumbs/sale_books.jpg");
-	background-repeat: no-repeat;
-	background-position: center;
-	width: 100%;
-	height: 300px;
-	h4 {
-		color: #872341;
-	}
-}
-
-.offer-section {
-	background-color: $primary-color;
-}
-
-.subscribe {
-	background-color: $primary-color;
-	input {
-		height: 40px;
-		padding: 10px 20px;
-		background-color: white;
-		border: none;
-		border-radius: 10px;
-		&:focus {
-			outline: none;
-		}
-		outline: none;
-	}
-}
-
-.card-img-div {
-	width: 100%;
-	img {
-		height: 320px;
-	}
-}
-
-footer {
-	background-color: $footer-color;
 }
