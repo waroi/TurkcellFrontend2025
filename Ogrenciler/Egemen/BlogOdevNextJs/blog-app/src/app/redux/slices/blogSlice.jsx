@@ -8,7 +8,7 @@ const initialState = {
     author: "",
     body: "",
     image: "",
-    created_at: "",
+    created_at: new Date().getFullYear(),
     topic: "",
     id: "",
   },
@@ -26,7 +26,7 @@ export const blogSlice = createSlice({
         author: "",
         body: "",
         image: "",
-        created_at: "",
+        created_at: new Date().getFullYear(),
         topic: "",
         id: "",
       };
@@ -48,25 +48,25 @@ export const blogSlice = createSlice({
         author: "",
         body: "",
         image: "",
-        created_at: "",
+        created_at: new Date().getFullYear(),
         topic: "",
         id: "",
       };
     },
-    setblog: (state, action) => {
+    setBlog: (state, action) => {
       state.blog = action.payload;
     },
-    setupdateBlog: (state, action) => {
+    setUpdateBlog: (state, action) => {
       state.blog = { ...state.blog, ...action.payload };
     },
-    resetblog: (state) => {
+    resetBlog: (state) => {
       state.blog = {
         ...state.blog,
         title: "",
         author: "",
         body: "",
         image: "",
-        created_at: "",
+        created_at: new Date().getFullYear(),
         topic: "",
         id: "",
       };

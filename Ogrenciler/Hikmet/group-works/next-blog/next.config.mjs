@@ -8,6 +8,8 @@ const nextConfig = {
 			"github.com",
 			"redux.js.org",
 			"reactjs.org",
+			"cdn.hashnode.com",
+			"tanstack.com"
 		],
 	},
 };

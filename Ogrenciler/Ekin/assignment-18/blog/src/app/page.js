@@ -1,32 +1,33 @@
 "use client";
 
-import Image from "next/image";
-import styles from "./page.module.css";
 import Navigation from "./components/Navigation";
 import Card from "./components/Card";
 import Footer from "./components/Footer";
 
-import { useState, useEffect } from "react";
-
-import { getBlogs } from "./database";
+import blog from "./blogs";
 
 import "./main.scss";
-// import "bootstrap/dist/css/bootstrap.css";
+import { useEffect } from "react";
 
 export default function Home() {
-  const [blogs, setBlogs] = useState([]);
+  const blogState = blog();
 
   useEffect(() => {
-    getBlogs().then((response) => setBlogs(response));
+    blogState.getBlogs(); // Blogları store'a çekiyoruz
   }, []);
+
+  console.log(blogState);
 
   return (
     <>
+      <button onClick={() => blogState.deleteBlog("metafizik-nedir")}>
+        HELLOOO
+      </button>
       <Navigation />
       <main>
         <div className="container py-5">
-          {blogs.map((blog) => (
-            <Card key={blog.id} blog={blog} />
+          {blogState.blogs.map((blog, index) => (
+            <Card key={index} blog={blog} />
           ))}
         </div>
       </main>
