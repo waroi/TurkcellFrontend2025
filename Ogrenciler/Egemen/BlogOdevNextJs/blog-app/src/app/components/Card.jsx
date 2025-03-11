@@ -1,7 +1,18 @@
 import { MdEdit } from "react-icons/md";
 import { MdDeleteForever } from "react-icons/md";
+import { useDispatch } from "react-redux";
+import { deleteBlog } from "../redux/slices/blogSlice";
+import { deleteApiBlog } from "../../../services/Api";
 
 const Card = ({ card }) => {
+  const dispatch = useDispatch();
+
+  const handleDelete = () => {
+    dispatch(deleteBlog(card.id));
+    deleteApiBlog(card.id);
+    console.log("Silindi");
+  };
+
   return (
     <>
       <div className="card mb-3 position-relative">
@@ -20,7 +31,7 @@ const Card = ({ card }) => {
               <p className="card-text">{card.author}</p>
               <p className="card-text">
                 {" "}
-                <small>{card.created_at.slice(0, 4)}</small>
+                <small>{card.created_at}</small>
               </p>
             </div>
             <div className="card-footer p-2 d-flex justify-content-between align-items-center">
@@ -28,7 +39,7 @@ const Card = ({ card }) => {
                 <button className="btn btn-primary me-2">
                   <MdEdit />
                 </button>
-                <button className="btn btn-danger">
+                <button onClick={handleDelete} className="btn btn-danger">
                   <MdDeleteForever />
                 </button>
               </div>
