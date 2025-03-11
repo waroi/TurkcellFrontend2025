@@ -17,30 +17,8 @@ function App() {
   const userRef = collection(db, "admins");
 
   useEffect(() => {
-    getUserInfo();
-  }, []);
-  useEffect(() => {
     console.log("authe user", authenticatedUser);
   }, [authenticatedUser]);
-
-  console.log(userInfo);
-  const handleSignIn = async () => {
-    try {
-      const userCredential = await signInWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
-      console.log("response", userCredential);
-
-      navigate("/app");
-    } catch (signinError) {
-      if (signinError.code === "auth/user-not-found") {
-        console.error(signinError);
-        navigate("/signUp");
-      }
-    }
-  };
 
   const handleSignUp = async () => {
     const userCredential = await createUserWithEmailAndPassword(
@@ -56,7 +34,7 @@ function App() {
           adminName: adminName,
           yayin: yayinevi,
         });
-        navigate("/app");
+        navigate("/");
       } catch (error) {
         console.error("Firestore'a veri yazma hatası:", error);
       }
@@ -77,41 +55,9 @@ function App() {
     }
   };
 
-  const getUserInfo = async () => {
-    try {
-      const userSnap = await getDocs(userRef);
-
-      if (!userSnap.empty && auth.currentUser) {
-        userSnap.forEach((doc) => {
-          const userID = doc.data().adminID;
-          if (userID === auth.currentUser.uid) {
-            console.log(
-              "Kullanıcı eşleşti, yayin alanı from app:",
-              doc.data().yayin
-            );
-            // setUserName(doc.data().adminName);
-            // setYayin(doc.data().yayin);
-            const user = {
-              userId: userID,
-              yayin: doc.data().yayin,
-              adminName: doc.data().adminName,
-              isAuthenticated: true,
-            };
-            console.log("user from app", user);
-            addAuthenticatedUser(user);
-          }
-        });
-      } else {
-        console.log("Belge bulunamadı veya kullanıcı giriş yapmamış!");
-      }
-    } catch (error) {
-      console.error("Belge alınırken hata oluştu:", error);
-    }
-  };
-
   return (
     <>
-      <Router handleSignIn={handleSignIn} handleSubmit={handleSubmit} />
+      <Router handleSubmit={handleSubmit} />
     </>
   );
 }
