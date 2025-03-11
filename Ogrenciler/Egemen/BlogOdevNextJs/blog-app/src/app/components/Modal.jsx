@@ -78,7 +78,7 @@ const Modal = () => {
         data-bs-toggle="modal"
         data-bs-target="#exampleModal"
       >
-        Blog Ekle
+        📚 Blog Ekle
       </button>
 
       <div
@@ -88,11 +88,11 @@ const Modal = () => {
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
       >
-        <div className="modal-dialog">
-          <div className="modal-content">
-            <div className="modal-header">
+        <div className="modal-dialog modal-lg">
+          <div className="modal-content p-3 rounded-4 shadow-lg border-0">
+            <div className="modal-header rounded-top-4">
               <h1 className="modal-title fs-5" id="exampleModalLabel">
-                Modal title
+                📚 Blog Ekle
               </h1>
               <button
                 type="button"
@@ -185,19 +185,20 @@ const Modal = () => {
                   ></textarea>
                   <label htmlFor="floatingTextarea">İçerik</label>
                 </div>
-                <button
-                  onClick={handleClick}
-                  type="submit"
-                  className="btn btn-primary"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                >
-                  Save changes
-                </button>
               </form>
             </div>
 
-            <div className="modal-footer"></div>
+            <div className="modal-footer d-flex justify-content-center">
+              <button
+                onClick={handleClick}
+                type="submit"
+                className="btn btn-warning px-4 py-2 rounded-3 fw-bold shadow"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              >
+                Save changes
+              </button>
+            </div>
           </div>
         </div>
       </div>
