@@ -37,7 +37,7 @@ export async function postBlog(blog) {
   }
 }
 
-export async function deleteBlog(id) {
+export async function deleteApiBlog(id) {
   try {
     const response = await fetch(`${API_URL}/${id}`, {
       method: "DELETE",

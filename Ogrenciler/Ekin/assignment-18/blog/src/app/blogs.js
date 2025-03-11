@@ -1,33 +1,48 @@
-import { create } from "zustand";
-import { getBlogs, addBlog, editBlog } from "./database";
+import { createStore, useStore } from "zustand";
 
-const initial = await (async () => ({ blogs: await getBlogs() }))();
+import {
+  getBlogs as getBlogsFromServer,
+  addBlog as addBlogToServer,
+  editBlog as editBlogToServer,
+  deleteBlog as deleteBlogFromServer,
+} from "./database";
 
-const state = create((set) => ({
-  ...initial,
+const state = createStore((set) => ({
+  blogs: [],
 
-  addBlog: (blog) =>
-    set((state) => {
-      blog.id = Math.random().toString(36).substring(2);
+  getBlogs: async () => {
+    set({ blogs: await getBlogsFromServer() });
+  },
 
-      addBlog(blog);
+  addBlog: (blog) => {
+    blog.id = Math.random().toString(36).substring(2);
 
-      return {
-        blogs: [...state.blogs, blog],
-      };
-    }),
+    addBlogToServer(blog);
 
-  editBlog: (blog) =>
+    set((state) => ({
+      blogs: [...state.blogs, blog],
+    }));
+  },
+
+  editBlog: (blog) => {
+    editBlogToServer(blog);
+
     set((state) => ({
       blogs: state.blogs.map((selected) =>
         blog.id == selected.id ? blog : selected
       ),
-    })),
+    }));
+  },
 
-  deleteBlog: (id) =>
+  deleteBlog: (id) => {
+    deleteBlogFromServer(id);
+
     set((state) => ({
       blogs: state.blogs.filter((blog) => id != blog.id),
-    })),
+    }));
+  },
 }));
 
-export default state;
+const useBookStore = () => useStore(state);
+
+export default useBookStore;

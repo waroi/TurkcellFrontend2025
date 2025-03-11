@@ -22,8 +22,8 @@ export function editBlog(blog) {
   });
 }
 
-export function deleteBlog(blog) {
-  return fetch(`${URL}/blogs/${blog.id}`, {
+export function deleteBlog(id) {
+  return fetch(`${URL}/blogs/${id}`, {
     method: "DELETE",
   });
 }

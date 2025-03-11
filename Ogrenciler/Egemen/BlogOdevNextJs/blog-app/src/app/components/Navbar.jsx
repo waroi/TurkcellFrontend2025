@@ -1,4 +1,5 @@
 import React from "react";
+import Modal from "./Modal";
 
 const Navbar = () => {
   return (
@@ -16,9 +17,7 @@ const Navbar = () => {
             Search
           </button>
         </form>
-        <button className="btn btn-outline-success" type="submit">
-          Blog Ekle
-        </button>
+        <Modal />
       </div>
     </nav>
   );
