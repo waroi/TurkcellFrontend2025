@@ -34,9 +34,9 @@ const HomePage = () => {
     };
 
     const filteredBooks = books
-        .filter((book) => book.publisherId === user?.uid) // Kullanıcıya ait kitapları göster
-        .filter((book) => book.title.toLowerCase().includes(filter.toLowerCase())) // Arama filtresi
-        .sort((a, b) => sort === "asc" ? a.title.localeCompare(b.title) : b.title.localeCompare(a.title)); // Sıralama
+        .filter((book) => book.publisherId === user?.uid) 
+        .filter((book) => book.title.toLowerCase().includes(filter.toLowerCase())) 
+        .sort((a, b) => sort === "asc" ? a.title.localeCompare(b.title) : b.title.localeCompare(a.title)); 
 
     return (
         <div className="container mt-4">
