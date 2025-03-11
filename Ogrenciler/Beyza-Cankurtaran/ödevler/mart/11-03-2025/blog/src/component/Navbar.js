@@ -1,6 +1,6 @@
 'use client';
 import { useSearch } from '@/searchContext';
-
+import Link from 'next/link';
 const Navbar = () => {
   const { searchQuery, setSearchQuery } = useSearch();
   return (
@@ -22,10 +22,10 @@ const Navbar = () => {
         </button>
         <div className='collapse navbar-collapse' id='navbarSupportedContent'>
           <ul className='navbar-nav me-auto mb-2 mb-lg-0'>
-            <li className='nav-item'>
-              <a className='nav-link active' aria-current='page' href='#'>
+          <li className='nav-item'>
+              <Link className='nav-link active' href='/'>
                 Anasayfa
-              </a>
+              </Link>
             </li>
           </ul>
           <form className='d-flex' role='search'>

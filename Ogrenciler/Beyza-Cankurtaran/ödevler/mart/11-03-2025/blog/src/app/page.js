@@ -12,7 +12,7 @@ export default function Home() {
 
   return (
     <div className='container'>
-      <h1>Bloglarımız</h1>
+      <h1 className='text-center mt-2 mb-3'>Bloglarımız</h1>
       <div className='row row-cols-1 row-cols-md-3 g-4'>
         {filteredBlogs.map((blog) => (
           <div key={blog.id}>
