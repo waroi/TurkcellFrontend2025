@@ -1,0 +1,134 @@
+{
+    "blogs": [
+        {
+            "id": 1,
+            "title": "Modern Web Geliştirmede React’ın Yeri",
+            "content": "React, modern web geliştirme dünyasında devrim yaratan en popüler JavaScript kütüphanelerinden biridir. \n    Facebook tarafından geliştirilen ve açık kaynak olarak sunulan bu kütüphane, bileşen tabanlı yapısıyla öne çıkıyor. \n    Peki, React neden bu kadar popüler? Öncelikle, Virtual DOM sayesinde geleneksel DOM manipülasyonlarından daha verimli bir yapı sunar.\n    Sayfa yüklenme sürelerini kısaltır ve kullanıcı deneyimini iyileştirir. Ayrıca, büyük ölçekli uygulamalar için bileşen bazlı geliştirme \n    sayesinde kod tekrarını azaltır ve sürdürülebilirliği artırır. JSX kullanımı sayesinde HTML benzeri bir sözdizimi ile JavaScript içinde \n    bileşenler yazılabilir, bu da geliştiricilere büyük esneklik kazandırır. React’in en büyük avantajlarından biri de geniş ekosistemi ve \n    topluluğudur. React Router, Redux gibi ek araçlarla çok daha güçlü hale gelir. Özellikle büyük firmalar (Facebook, Instagram, Airbnb, \n    Netflix gibi) tarafından kullanılması, kütüphanenin güvenilirliğini kanıtlıyor. React ayrıca sunucu taraflı render (SSR) desteği \n    sağlayarak SEO açısından avantajlıdır. Next.js ile birlikte kullanıldığında, React tabanlı uygulamalar çok daha hızlı yüklenebilir ve \n    SEO dostu hale getirilebilir. Son olarak, React Native sayesinde mobil uygulamalar geliştirmek de mümkün hale gelmiştir. Kısacası, React \n    modern web geliştirme dünyasında büyük bir yer edinmiştir ve popülerliğini koruyarak gelecekte de önemli bir teknoloji olmaya devam edecektir.",
+            "image": "react-modern.jpg",
+            "author": {
+                "name": "Ela Kılıç",
+                "photo": "https://media.licdn.com/dms/image/v2/D4D03AQHGEWxP5zW_uQ/profile-displayphoto-shrink_400_400/B4DZUgoo2GHkAg-/0/1740009279730?e=1747267200&v=beta&t=LlI9Lls5IwoL01qQK4NZriUFrphD6TeUkxVpfQ1HmfI"
+            },
+            "date": "2025-03-11",
+            "reading_time": "5 dk",
+            "category": "Frontend"
+        },
+        {
+            "id": 2,
+            "title": "JavaScript ile Asenkron Programlama",
+            "content": "JavaScript’in en önemli özelliklerinden biri, asenkron programlamayı desteklemesidir. Asenkron programlama, uzun süren işlemlerin \n    (örneğin, bir API çağrısı veya dosya okuma) kullanıcı deneyimini kesintiye uğratmadan gerçekleştirilmesini sağlar. Geleneksel \n    JavaScript'te asenkron işlemler için callback fonksiyonları kullanılırdı. Ancak callback fonksiyonlarının iç içe geçmesi, kodu okunması \n    zor bir hale getirebilir (callback hell). Bunun yerine, ECMAScript 6 (ES6) ile birlikte gelen Promises yapısı, asenkron işlemleri daha \n    yönetilebilir hale getirdi. Promise nesneleri, başarılı veya başarısız olma durumuna göre `.then()` ve `.catch()` metodlarıyla işlenir. \n    Ancak, en modern yaklaşım olarak görülen `async/await` yapısı, kodun senkronize bir şekilde yazılmasını sağlarken asenkron çalışmasını \n    sürdürür. `async` fonksiyonlar, içerisinde `await` anahtar kelimesi kullanarak, bir Promise’in tamamlanmasını bekleyebilir. Bu sayede, \n    kod daha okunabilir ve anlaşılır hale gelir. Örneğin, bir API çağrısı yapan fonksiyon düşünelim: `const data = await fetch(url).then(res => res.json());` \n    gibi bir kullanım, asenkron işlemleri çok daha kolay yönetmemizi sağlar. Günümüzde JavaScript ile modern web geliştirmede \n    (React, Vue, Angular gibi framework’lerde) asenkron programlama kritik bir rol oynamaktadır.",
+            "image": "async-js.jpg",
+            "author": {
+                "name": "Mustafa Yıldırım",
+                "photo": "https://media.licdn.com/dms/image/v2/D4D03AQHglhvi6WZ0GQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1657990625696?e=1747267200&v=beta&t=L1-ztaqx10d7p_pGTKdptH7iVEYzsaw1U13fLIrhDic"
+            },
+            "date": "2025-03-10",
+            "reading_time": "7 dk",
+            "category": "JavaScript"
+        },
+        {
+            "id": 3,
+            "title": "MongoDB vs PostgreSQL: Hangisini Seçmelisiniz?",
+            "content": "Veritabanı seçimi, bir uygulamanın performansı ve ölçeklenebilirliği açısından kritik öneme sahiptir. NoSQL tabanlı MongoDB ve SQL \n    tabanlı PostgreSQL, bu alanda en çok tercih edilen iki çözümdür. MongoDB, verileri JSON benzeri belgeler (documents) şeklinde \n    depolayan bir NoSQL veritabanıdır. Esnek şema yapısı sayesinde veri yapıları önceden tanımlanmadan kullanılabilir. Bu özellik, özellikle \n    dinamik ve hızlı değişen projeler için avantaj sağlar. Öte yandan, PostgreSQL ise ilişkisel (SQL tabanlı) bir veritabanıdır ve ACID \n    (Atomicity, Consistency, Isolation, Durability) ilkelerine tam uyumludur. Karmaşık sorgular, büyük veri setleri ve tutarlılık gerektiren \n    uygulamalar için PostgreSQL daha güçlü bir alternatiftir. MongoDB, büyük ölçekli uygulamalarda yatay ölçeklenebilirlik sunarken, \n    PostgreSQL daha iyi veri bütünlüğü ve ilişkisel sorgular sağlar. Peki hangi durumda hangisini tercih etmelisiniz? Eğer veri yapınız çok \n    sık değişiyorsa, esneklik önemliyse ve büyük ölçekli okuma-yazma işlemleri yapılıyorsa MongoDB daha iyi bir seçenektir. Ancak, güçlü \n    ilişkisel sorgulara, veri tutarlılığına ve güvenilirliğe ihtiyaç duyuyorsanız PostgreSQL daha mantıklı bir seçim olacaktır.",
+            "image": "mongodb-vs-postgresql.jpg",
+            "author": {
+                "name": "Cenk Aydın",
+                "photo": "https://media.licdn.com/dms/image/v2/D4D03AQHfbDK1UaPQEQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1708073452241?e=1747267200&v=beta&t=DJxZeKhq-jKEszQqxWyPiL9yHjrII5OBuMEJTqDwVD8"
+            },
+            "date": "2025-03-09",
+            "reading_time": "6 dk",
+            "category": "Database"
+        },
+        {
+            "id": 4,
+            "title": "TypeScript mi, JavaScript mi?",
+            "content": "TypeScript’in avantajları nelerdir? JavaScript’ten farkı nedir? Projeniz için hangisini seçmelisiniz?",
+            "image": "typescript-vs-javascript.jpg",
+            "author": {
+                "name": "Ela Kılıç",
+                "photo": "https://media.licdn.com/dms/image/v2/D4D03AQHGEWxP5zW_uQ/profile-displayphoto-shrink_400_400/B4DZUgoo2GHkAg-/0/1740009279730?e=1747267200&v=beta&t=LlI9Lls5IwoL01qQK4NZriUFrphD6TeUkxVpfQ1HmfI"
+            },
+            "date": "2025-03-08",
+            "reading_time": "5 dk",
+            "category": "TypeScript"
+        },
+        {
+            "id": 5,
+            "title": "RESTful API vs GraphQL: Hangisi Daha İyi?",
+            "content": "API geliştirmede REST ve GraphQL karşılaştırması. Hangi durumda hangisini kullanmalısınız?",
+            "image": "rest-vs-graphql.jpg",
+            "author": {
+                "name": "Mustafa Yıldırım",
+                "photo": "https://media.licdn.com/dms/image/v2/D4D03AQHglhvi6WZ0GQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1657990625696?e=1747267200&v=beta&t=L1-ztaqx10d7p_pGTKdptH7iVEYzsaw1U13fLIrhDic"
+            },
+            "date": "2025-03-07",
+            "reading_time": "6 dk",
+            "category": "Backend"
+        },
+        {
+            "id": 6,
+            "title": "Tailwind CSS ile Hızlı UI Geliştirme",
+            "content": "Tailwind CSS, klasik CSS ve Bootstrap’e kıyasla çok daha esnek ve hızlı. İşte temel kullanımı ve avantajları...",
+            "image": "tailwind-css.jpg",
+            "author": {
+                "name": "Cenk Aydın",
+                "photo": "https://media.licdn.com/dms/image/v2/D4D03AQHfbDK1UaPQEQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1708073452241?e=1747267200&v=beta&t=DJxZeKhq-jKEszQqxWyPiL9yHjrII5OBuMEJTqDwVD8"
+            },
+            "date": "2025-03-06",
+            "reading_time": "5 dk",
+            "category": "CSS"
+        },
+        {
+            "id": 7,
+            "title": "Next.js ile SSR ve SSG Kavramları",
+            "content": "Next.js kullanırken SSR (Server Side Rendering) ve SSG (Static Site Generation) arasındaki farkları bilmek önemli. İşte detaylı açıklamalar...",
+            "image": "nextjs-ssr-ssg.jpg",
+            "author": {
+                "name": "Ela Kılıç",
+                "photo": "https://media.licdn.com/dms/image/v2/D4D03AQHGEWxP5zW_uQ/profile-displayphoto-shrink_400_400/B4DZUgoo2GHkAg-/0/1740009279730?e=1747267200&v=beta&t=LlI9Lls5IwoL01qQK4NZriUFrphD6TeUkxVpfQ1HmfI"
+            },
+            "date": "2025-03-05",
+            "reading_time": "7 dk",
+            "category": "Next.js"
+        },
+        {
+            "id": 8,
+            "title": "Docker ile Projeleri Konteynerize Etmek",
+            "content": "Docker ile projelerinizi nasıl konteynerize edebilirsiniz? İşte adım adım Docker kullanımı...",
+            "image": "docker-guide.jpg",
+            "author": {
+                "name": "Mustafa Yıldırım",
+                "photo": "https://media.licdn.com/dms/image/v2/D4D03AQHglhvi6WZ0GQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1657990625696?e=1747267200&v=beta&t=L1-ztaqx10d7p_pGTKdptH7iVEYzsaw1U13fLIrhDic"
+            },
+            "date": "2025-03-04",
+            "reading_time": "8 dk",
+            "category": "DevOps"
+        },
+        {
+            "id": 9,
+            "title": "Firebase ile Gerçek Zamanlı Veri Tabanı Kullanımı",
+            "content": "Firebase’in gerçek zamanlı veri tabanı nasıl çalışır? React ve Firebase entegrasyonu...",
+            "image": "firebase-guide.jpg",
+            "author": {
+                "name": "Cenk Aydın",
+                "photo": "https://media.licdn.com/dms/image/v2/D4D03AQHfbDK1UaPQEQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1708073452241?e=1747267200&v=beta&t=DJxZeKhq-jKEszQqxWyPiL9yHjrII5OBuMEJTqDwVD8"
+            },
+            "date": "2025-03-03",
+            "reading_time": "6 dk",
+            "category": "Database"
+        },
+        {
+            "id": 10,
+            "title": "Web Performansını Artırmanın 10 Yolu",
+            "content": "Web sitenizin performansını artırmak için dikkat etmeniz gereken 10 temel madde...",
+            "image": "web-performance.jpg",
+            "author": {
+                "name": "Ela Kılıç",
+                "photo": "https://media.licdn.com/dms/image/v2/D4D03AQHGEWxP5zW_uQ/profile-displayphoto-shrink_400_400/B4DZUgoo2GHkAg-/0/1740009279730?e=1747267200&v=beta&t=LlI9Lls5IwoL01qQK4NZriUFrphD6TeUkxVpfQ1HmfI"
+            },
+            "date": "2025-03-02",
+            "reading_time": "5 dk",
+            "category": "Web Performance"
+        }
+    ]
+}

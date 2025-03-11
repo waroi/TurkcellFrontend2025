@@ -18,7 +18,7 @@ function App() {
   const fetchPostData = async () => {
     setPostLoading(true);
     try {
-      const url = "http://localhost:3000";
+      const url = "http://localhost:4000";
       const query = "/posts";
       const response = await fetch(`${url}${query}`);
       if (!response.ok) {
@@ -35,7 +35,7 @@ function App() {
 
   const handleEdit = async (updatedPost) => {
     const response = await fetch(
-      `http://localhost:3000/posts/${updatedPost.id}`,
+      `http://localhost:4000/posts/${updatedPost.id}`,
       {
         method: "PUT",
         headers: {
@@ -50,7 +50,7 @@ function App() {
     }
   };
   const handleDelete = async (postId) => {
-    const response = await fetch(`http://localhost:3000/posts/${postId}`, {
+    const response = await fetch(`http://localhost:4000/posts/${postId}`, {
       method: "DELETE",
     });
     fetchPostData();
@@ -61,7 +61,7 @@ function App() {
 
   const handleAddPost = async (postItem) => {
     console.log(postItem);
-    const response = await fetch(`http://localhost:3000/posts`, {
+    const response = await fetch(`http://localhost:4000/posts`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -77,7 +77,7 @@ function App() {
   const fetchUserData = async () => {
     setUserLoading(true);
     try {
-      const url = "http://localhost:3000";
+      const url = "http://localhost:4000";
       const query = "/user";
       const response = await fetch(`${url}${query}`);
       if (!response.ok) {
