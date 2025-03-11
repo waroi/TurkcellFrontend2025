@@ -7,7 +7,7 @@ const Home = () => {
 
   useEffect(() => {
     const url = process.env.NEXT_SERVER_URL;
-    console.log(url);
+    console.log("url", url);
     fetch(`http://localhost:8000/blogs`)
       .then((res) => res.json())
       .then((data) => setBlogs(data));

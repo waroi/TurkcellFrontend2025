@@ -50,7 +50,7 @@ export async function deleteApiBlog(id) {
   }
 }
 
-export async function updateBlog(id, blog) {
+export async function updateApiBlog(id, blog) {
   try {
     const response = await fetch(`${API_URL}/${id}`, {
       method: "PUT",

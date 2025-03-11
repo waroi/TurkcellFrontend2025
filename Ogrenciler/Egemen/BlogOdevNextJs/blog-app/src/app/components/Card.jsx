@@ -1,8 +1,9 @@
 import { MdEdit } from "react-icons/md";
 import { MdDeleteForever } from "react-icons/md";
 import { useDispatch } from "react-redux";
-import { deleteBlog } from "../redux/slices/blogSlice";
+import { deleteBlog, setBlog } from "../redux/slices/blogSlice";
 import { deleteApiBlog } from "../../../services/Api";
+import UpdateModal from "./UpdateModal";
 
 const Card = ({ card }) => {
   const dispatch = useDispatch();
@@ -11,6 +12,10 @@ const Card = ({ card }) => {
     dispatch(deleteBlog(card.id));
     deleteApiBlog(card.id);
     console.log("Silindi");
+  };
+
+  const handleUpdate = () => {
+    dispatch(setBlog(card));
   };
 
   return (
@@ -36,7 +41,12 @@ const Card = ({ card }) => {
             </div>
             <div className="card-footer p-2 d-flex justify-content-between align-items-center">
               <div className="">
-                <button className="btn btn-primary me-2">
+                <button
+                  className="btn btn-primary me-2"
+                  onClick={handleUpdate}
+                  data-bs-toggle="modal"
+                  data-bs-target="#updateBlogModal"
+                >
                   <MdEdit />
                 </button>
                 <button onClick={handleDelete} className="btn btn-danger">
@@ -50,6 +60,7 @@ const Card = ({ card }) => {
                 {card.topic}
               </span>
             </div>
+            <UpdateModal />
           </div>
         </div>
       </div>
