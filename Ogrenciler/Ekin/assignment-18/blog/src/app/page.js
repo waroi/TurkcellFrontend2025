@@ -13,27 +13,14 @@ export default function Home() {
   const blogState = blog();
 
   useEffect(() => {
-    blogState.fetchBlogs(); // Blogları store'a çekiyoruz
+    blogState.getBlogs(); // Blogları store'a çekiyoruz
   }, []);
 
   console.log(blogState);
 
   return (
     <>
-      <button
-        onClick={() =>
-          blogState.addBlog({
-            // id: "metafizik-nedir",
-            title: "AAAAAAAAAAAA Yasanın Metafiziği: Hukuk, Ahlak ve Varlık",
-            image:
-              "https://www.aydemperakende.com.tr/storage/blog/00000-Blog/AydemBlog_Metafizik-Meta.webp",
-            description:
-              "Hukuk ve ahlak yasalarının metafiziksel temelleri, varlık anlayışımızı ve etik normları şekillendirir. Yasaların doğası, evrenselliği ve varlıkla olan ilişkisini tartışacağız.",
-            date: 1742695699380,
-            content: "CONTENT",
-          })
-        }
-      >
+      <button onClick={() => blogState.deleteBlog("metafizik-nedir")}>
         HELLOOO
       </button>
       <Navigation />
