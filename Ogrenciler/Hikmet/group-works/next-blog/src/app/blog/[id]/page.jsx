@@ -1,18 +1,20 @@
-"use client";
-
 import blogData from "@/components/data.json";
-import React from "react";
 
 function BlogsDetail({ params }) {
-	const { id } = React.use(params.id);
+	const id = params.id;
 
 	const post = blogData.find((blog) => blog.id === id);
-	console.log(post);
+
+	if (!post) {
+		return <div>Blog bulunamadı!</div>;
+	}
 
 	return (
-		<div>
-			<h1>{params.id}</h1>
-			<p>{params.title}</p>
+		<div className="container">
+			<h1>{post.title}</h1>
+			<p>{post.description}</p>
+			{post.imageUrl && <img src={post.imageUrl} alt={post.title} />}
+			{post.releaseDate && <p>Yayın Tarihi: {post.releaseDate}</p>}
 		</div>
 	);
 }
