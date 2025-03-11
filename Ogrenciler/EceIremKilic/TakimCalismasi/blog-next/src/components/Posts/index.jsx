@@ -31,27 +31,36 @@ const Posts = () => {
     return null;
   }
   return (
-    <div className="container">
+    <div className="container py-5">
       <div className="row">
         {blogs?.map((blog, index) => (
-          <div className="col-lg-3 col-md-4 col-sm-6 col-12" key={index}>
-            <div className="card shadow-sm border-0 rounded">
+          <div
+            className="col-lg-3 col-md-4 col-sm-6 col-12 d-flex align-items-stretch"
+            key={index}
+          >
+            <div className="card shadow-sm border-0 rounded mb-4 rounded-4">
               <img
                 src={blog?.image}
-                className={`card-img-top ${styles.image}`}
+                className={`card-img-top object-fit-cover rounded-top-4 img-fluid ${styles.image}`}
                 alt="..."
               />
-              <div className="card-body">
+              <div className="card-body d-flex flex-column justify-content-between">
                 <div className="card-info d-flex justify-content-between mb-2">
-                  <div className=" card-date badge bg-primary rounded-pill px-3 py-1">
+                  <div
+                    className={`card-author badge ${styles.bgGreen} text-dark fw-normal rounded-pill px-3 py-1`}
+                  >
                     {formatDate(blog?.releaseDate)}
                   </div>
-                  <div className="card-author badge bg-primary rounded-pill px-3 py-1">
+                  <div
+                    className={`card-author badge ${styles.bgGreen} text-dark fw-normal rounded-pill px-3 py-1`}
+                  >
                     {blog?.author}
                   </div>
                 </div>
                 <h5 className="card-title">{blog?.title}</h5>
-                <p className="card-text">{blog?.content}</p>
+                <p className="card-text">
+                  {blog?.content.split(".").slice(0, 1) + "."}
+                </p>
               </div>
             </div>
           </div>
