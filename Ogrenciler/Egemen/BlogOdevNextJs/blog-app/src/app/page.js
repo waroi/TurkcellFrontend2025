@@ -1,15 +1,11 @@
-
-"use client"
+"use client";
 import Image from "next/image";
 import styles from "./page.module.css";
-import { getBlog } from "../../services/Api"
+import { getBlog } from "../../services/Api";
 import { useState, useEffect } from "react";
 import Card from "../app/components/Card";
 
-
-
 export default function Home() {
-
   const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
@@ -23,39 +19,22 @@ export default function Home() {
     fetchData();
   }, []);
 
-
-
   return (
-
     <div className={styles.page}>
-      <main className={styles.main}>
-
+      <main className="container">
         <h1>Blog Yazıları</h1>
-        {blogs.length > 0 ? (
-          blogs.map((blog) => (
-            <Card card={blog} key={blog.id} />
-          ))
-        ) : (
-          <p>Yükleniyor...</p>
-        )}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        <div className="row">
+          {blogs.length > 0 ? (
+            blogs.map((blog) => (
+              <div key={blog.id} className="col-12">
+                <Card card={blog} />
+              </div>
+            ))
+          ) : (
+            <p>Yükleniyor...</p>
+          )}
+        </div>
       </main>
-
-
     </div>
-
   );
 }

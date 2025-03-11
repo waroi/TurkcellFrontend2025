@@ -1,14 +1,45 @@
+import { MdEdit } from "react-icons/md";
+import { MdDeleteForever } from "react-icons/md";
+
 const Card = ({ card }) => {
   return (
     <>
-      <div className="card text-bg-dark">
-        <img src={card.image} className="card-img" alt="card_img" />
-        <div className="card-img-overlay">
-          <h5 className="card-title">{card.title}</h5>
-          <p className="card-text">{card.body}</p>
-          <p className="card-text">
-            <small>{card.created_at}</small>
-          </p>
+      <div className="card mb-3 position-relative">
+        <div className="row g-0">
+          <div className="col-md-4 overflow-hidden">
+            <img
+              src={card?.image}
+              className="object-cover h-100 w-100 rounded-start"
+              alt="card_img"
+            />
+          </div>
+          <div className="col-md-8 d-flex justify-content-between flex-column">
+            <div className="card-body">
+              <h5 className="card-title">{card.title}</h5>
+              <p className="card-text">{card.body}</p>
+              <p className="card-text">{card.author}</p>
+              <p className="card-text">
+                {" "}
+                <small>{card.created_at.slice(0, 4)}</small>
+              </p>
+            </div>
+            <div className="card-footer p-2 d-flex justify-content-between align-items-center">
+              <div className="">
+                <button className="btn btn-primary me-2">
+                  <MdEdit />
+                </button>
+                <button className="btn btn-danger">
+                  <MdDeleteForever />
+                </button>
+              </div>
+              <span
+                className="badge text-bg-warning  p-2 m-2"
+                style={{ width: "min-content" }}
+              >
+                {card.topic}
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </>
