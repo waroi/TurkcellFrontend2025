@@ -35,7 +35,7 @@ export default function Navbar() {
                 to='/'
                 className={({ isActive }) =>
                   `nav-link px-3 py-2 rounded-pill ${
-                    isActive ? 'bg-white text-orange fw-bold' : 'text-white'
+                    isActive ? 'bg-white fw-bold' : 'text-white'
                   }`
                 }
               >
@@ -48,7 +48,7 @@ export default function Navbar() {
                   to='/admin'
                   className={({ isActive }) =>
                     `nav-link px-3 py-2 rounded-pill ${
-                      isActive ? 'bg-white text-orange fw-bold' : 'text-white'
+                      isActive ? 'bg-white fw-bold' : 'text-white'
                     }`
                   }
                 >

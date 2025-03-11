@@ -1,18 +1,15 @@
 import { useRef, useEffect } from "react";
 
-import { useSelector, useDispatch } from "react-redux";
-import { setUser, setBooks } from "../redux/slices/librarySlice";
-import { setModal } from "../redux/slices/modalSlice";
+import { getBooks } from "../firebase";
+
+import modal from "../modal";
+import library from "../library";
 
 import { Modal, Button, Form, FloatingLabel } from "react-bootstrap";
 
-import { getBooks } from "../firebase/firebase";
-
 export default function ModalComponent() {
-  const dispatch = useDispatch();
-  const hideModal = () => dispatch(setModal({ show: false }));
-
-  const { show, mode, book, action } = useSelector((state) => state.modal);
+  const { setModal, show, mode, book, action } = modal();
+  const { setUser, setBooks } = library();
 
   const id = useRef();
   const title = useRef();
@@ -42,7 +39,7 @@ export default function ModalComponent() {
   }, [mode, book, action]);
 
   return (
-    <Modal show={show} onHide={hideModal} centered>
+    <Modal show={show} onHide={() => setModal({ show: false })} centered>
       <Modal.Header closeButton>
         <Modal.Title>
           {
@@ -95,7 +92,7 @@ export default function ModalComponent() {
         )}
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="secondary" onClick={hideModal}>
+        <Button variant="secondary" onClick={() => setModal({ show: false })}>
           Close
         </Button>
         <Button
@@ -125,7 +122,7 @@ export default function ModalComponent() {
                 break;
               case "register":
                 action(email.current.value, password.current.value).then(
-                  (credential) => dispatch(setUser(credential.user.uid))
+                  (credential) => setUser(credential.user.uid)
                 );
                 break;
               case "login":
@@ -134,33 +131,34 @@ export default function ModalComponent() {
                   password.current.value,
                   remember.current.checked
                 ).then((credential) => {
-                  dispatch(setUser(credential.user.uid));
+                  setUser(credential.user.uid);
                   getBooks(credential.user.uid).then((books) =>
-                    dispatch(setBooks(books))
+                    setBooks(books)
                   );
                 });
 
                 break;
               case "logout":
                 action().then(() => {
-                  dispatch(setUser(null));
-                  dispatch(setBooks([]));
+                  setUser(null);
+                  setBooks([]);
                 });
                 break;
             }
 
-            hideModal();
+            setModal({ show: false });
           }}
         >
-          {mode == "add" || mode == "edit"
-            ? "Save"
-            : mode == "delete"
-            ? "Delete"
-            : mode == "register"
-            ? "Register"
-            : mode == "login"
-            ? "Login"
-            : "Logout"}
+          {
+            {
+              add: "Save",
+              edit: "Save",
+              delete: "Delete",
+              register: "Register",
+              login: "Login",
+              logout: "Logout",
+            }[mode]
+          }
         </Button>
       </Modal.Footer>
     </Modal>

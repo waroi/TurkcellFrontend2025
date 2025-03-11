@@ -1,15 +1,20 @@
 import { useRoutes } from "react-router";
-import BookList from "../components/BookList/BookList";
-import BookDetail from "../components/BookDetail";
-import BookUpdate from "../components/BookUpdate";
-import SignIn from "../components/SignIn";
+
+import HomeView from "../views/HomeView";
+import EditorView from "../views/EditorView";
+import AdminView from "../views/AdminView";
+import BookDetailView from "../views/BookDetailView";
+import BookUpdateView from "../views/BookUpdateView";
+import SignInView from "../views/SignInView";
 
 const Router = () => {
   const routes = useRoutes([
-    { path: "/", element: <SignIn /> },
-    { path: "/books", element: <BookList /> },
-    { path: "/:id", element: <BookDetail /> },
-    { path: "/update/:id", element: <BookUpdate /> },
+    { path: "/", element: <HomeView /> },
+    { path: "/login", element: <SignInView /> },
+    { path: "/editor", element: <EditorView /> },
+    { path: "/admin", element: <AdminView /> },
+    { path: "/book-detail/:id", element: <BookDetailView /> },
+    { path: "/update/:id", element: <BookUpdateView /> },
   ]);
   return routes;
 };

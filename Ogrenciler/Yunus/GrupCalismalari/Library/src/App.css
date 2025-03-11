@@ -16,8 +16,11 @@ body {
 }
 
 .navbar {
-  background-color: rgba(26, 95, 122, 0.05) !important;
+  background-color: white !important;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .navbar-brand img {
@@ -31,11 +34,41 @@ body {
 .nav-link {
   color: var(--primary-blue) !important;
   transition: color 0.3s ease;
+  padding: 10px 15px;
 }
 
 .nav-link:hover {
   color: var(--secondary-coral) !important;
 }
+
+.user-menu {
+  display: none; 
+  /* position: absolute;  */
+  border: 1px solid #eaeaea; 
+  border-radius: 5px; 
+  padding: 10px; 
+  /* z-index: 1;  */
+}
+
+.d-flex:hover .user-menu,
+.user-menu:hover {
+  display: block;
+}
+
+.user-menu .nav-link {
+  color: #1A5F7A; 
+  padding: 5px 10px; 
+}
+
+.user-menu .nav-link:hover {
+  background-color: #e2e6ea; 
+  border-radius: 5px;
+}
+
+.navbar-toggler {
+  border-color: var(--primary-blue);
+}
+
 
 .book-card {
   border: none;
@@ -303,4 +336,20 @@ h5 {
 .form-signin {
   max-width: 500px;
   margin: 0 auto;
+}
+
+.fw-bold {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.list-group-item:hover {
+  color: white;
+  align-items: center;
+  background-color: #1A5F7A;
+  cursor: pointer;
+}
+
+.book-div {
+  cursor: pointer;
 }

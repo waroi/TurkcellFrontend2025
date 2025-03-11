@@ -1,40 +1,37 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { addBook } from "../../redux/slices/bookSlice";
 import "bootstrap/dist/css/bootstrap.min.css";
+import {
+  addedBook,
+  getPublisherId,
+  getUserBooks,
+} from "../../../firebase/dbController";
+import { useDispatch } from "react-redux";
+import { setBooks } from "../../redux/slices/bookSlice";
 
 const AddBook = () => {
-  const dispatch = useDispatch();
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [genre, setGenre] = useState("");
   const [publicYear, setPublicYear] = useState("");
   const [description, setDescription] = useState("");
   const [img, setImg] = useState("");
-
+  const dispatch = useDispatch();
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (title && author && publicYear && description) {
       const newBook = {
-        id: Date.now(),
-        title,
-        author,
-        genre,
+        title: title,
+        author: author,
+        genre: genre,
         img:
           img ||
           "https://static.wikia.nocookie.net/villains/images/3/35/Learning-language-without-grammar-education-online.jpg/revision/latest?cb=20180825053447",
-        publicYear: new Date().getFullYear() || "Belirtilmemiş",
-        description,
+        publicYear: publicYear || "Belirtilmemiş",
+        description: description,
+        publisherId: await getPublisherId(),
       };
-
-      const response = await fetch("http://localhost:5000/books", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(newBook),
-      });
-      const addedBook = await response.json();
-      dispatch(addBook(addedBook)); // Redux'a yeni kitabı ekle
-
+      addedBook(newBook);
+      dispatch(setBooks(await getUserBooks()));
       setTitle("");
       setAuthor("");
       setGenre("");
@@ -109,7 +106,7 @@ const AddBook = () => {
         ></textarea>
       </div>
 
-      <button type="submit" className="btn btn-success mt-3 w-100">
+      <button type="submit" className="btn btn-green card-btn mt-3 w-100">
         ➕ Kitap Ekle
       </button>
     </form>

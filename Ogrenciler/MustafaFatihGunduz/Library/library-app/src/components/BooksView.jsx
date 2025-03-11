@@ -1,21 +1,14 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteBook, searchBook, sortingBook } from "../redux/slices/bookSlice";
-import { checkIsHeAdmin } from "../controller/DBController";
 import Modal from "./module/Modal";
-import { ThemeContext } from "../context/ThemeContext";
 
-const BooksView = ({ category }) => {
+const BooksView = ({ publishing }) => {
   const { books, keyword } = useSelector((state) => state.book);
   const dispatch = useDispatch();
   const handleDelete = (id) => dispatch(deleteBook(id));
-  const { theme } = useContext(ThemeContext);
   const [editingBookId, setEditingBookId] = useState(null);
-  const [admin,setAdmin] = useState("");
-  useEffect(()=> {
-    const fetchAdmin = async () => {await handleAdmin()}
-    return () => fetchAdmin()
-  },[],);
+
   const openEditModal = (id) => {
     setEditingBookId(id);
     const modal = new bootstrap.Modal(document.getElementById("bookEvent"));
@@ -30,33 +23,19 @@ const BooksView = ({ category }) => {
     });
   };
 
-  const filteredBooks = category
-    ? books.filter((book) => book.category === category)
+  const filteredBooks = publishing
+    ? books.filter((book) => book.publishing === publishing)
     : books;
 
   const filteredItems = filteredBooks.filter((book) =>
     book.title.toLowerCase().includes((keyword || "").toLowerCase())
   );
 
-  const handleAdmin = async () => {
-    try {
-      const adminUser = await checkIsHeAdmin();
-      console.log(adminUser);
-      setAdmin(adminUser);
-      console.log(admin,"Null gelmem ben efendiyim");
-    } catch (error) {
-      console.log("IsAdmin Error",error)
-    }
-  }
-
   return (
     <>
-    <div
-        className={`${
-          theme === "light" ? "bg-dark text-light" : "bg-white text-dark"
-        }`}
-      >
-        {admin ? <div className="container">
+      <div id="books">
+        <h3 className="mx-5 py-2">Kitaplar</h3>
+        <div className="container">
           <div className="d-flex gap-5 justify-content-center py-4">
             <select
               onChange={(e) => dispatch(sortingBook(e.target.value))}
@@ -72,17 +51,11 @@ const BooksView = ({ category }) => {
               placeholder="Ara..."
             />
           </div>
-          <div id="books" className="row ">
+          <div id="books" className="row">
             {filteredItems.length > 0 ? (
               filteredItems.map((book) => (
                 <div key={book.id} className="col-lg-3 col-md-6 col-sm-12 pb-5">
-                  <div
-                    className={`card mb-3 h-100 ${
-                      theme === "light"
-                        ? "bg-secondary text-light"
-                        : "bg-white text-dark"
-                    }`}
-                  >
+                  <div className="h-100 d-flex flex-column border rounded shadow-sm p-3">
                     <div className="card-img-div">
                       <img
                         src={book.image}
@@ -90,7 +63,7 @@ const BooksView = ({ category }) => {
                         alt="..."
                       />
                     </div>
-                    <div className="card-body w-100 gap-2 d-flex flex-column justify-content-between">
+                    <div className="card-body d-flex flex-column justify-content-between">
                       <div>
                         <h5 className="card-title">{book.title}</h5>
                         <p className="card-text">{book.description}</p>
@@ -102,7 +75,8 @@ const BooksView = ({ category }) => {
                         Çıkış Tarihi: {formatDate(book.releaseDate)}
                       </p>
                       <p className="card-text">Kategori: {book.category}</p>
-                      <p className="card-text"> Sayfa Sayısı: {book.page}</p>
+                      <p className="card-text">Yayınevi: {book.publishing}</p>
+                      <p className="card-text">Sayfa Sayısı: {book.page}</p>
                       <div className="btn-group gap-2 w-100">
                         <button
                           className="btn btn-warning w-50"
@@ -129,16 +103,10 @@ const BooksView = ({ category }) => {
               setEditingBookId={setEditingBookId}
             />
           </div>
-        </div> : <div className="sadece">
-          <h5>Sadece Adminler Görür</h5>
-        </div> }
+        </div>
       </div>
     </>
   );
 };
 
 export default BooksView;
-
-/**
- * 
- */

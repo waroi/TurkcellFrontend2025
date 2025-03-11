@@ -6,10 +6,10 @@ const SpecialOfferView = () => {
       <div className="col-lg-6"></div>
       <div className="col-lg-6">
         <h4 className="text-uppercase fs-3 fw-bold">Özel Fırsatlar</h4>
-        <h6 className=" text-white fw-semi">
+        <h6 className="fw-semi">
           Teknoloji Kitaplarında %50 ye varan indirimler sizi bekliyor
         </h6>
-        <p className="text-white">
+        <p className="text-muted">
           Kaçırılmıyacak fırsatlar için sizde hemen abone olun ve size özel
           indirimlerden faydalanın!!
         </p>

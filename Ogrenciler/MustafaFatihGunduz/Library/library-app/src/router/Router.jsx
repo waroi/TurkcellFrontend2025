@@ -1,12 +1,14 @@
 import { useRoutes } from "react-router";
-import LoginScreen from "../Pages/LoginScreen";
-import Home from "../Pages/Home";
 import CategoryPage from "../Pages/CategoryPage";
+import Home from "../Pages/Home";
+import LoginScreen from "../Pages/LoginScreen";
+import AboutPage from "../Pages/AboutPage";
 const Router = () => {
   const routes = useRoutes([
     { path: "/", element: <Home /> },
     { path: "/login", element: <LoginScreen /> },
-    { path: "/kategori/:category", element: <CategoryPage /> },
+    { path: "/about", element: <AboutPage /> },
+    { path: "/yayinevi/:publishing", element: <CategoryPage /> },
   ]);
   return routes;
 };

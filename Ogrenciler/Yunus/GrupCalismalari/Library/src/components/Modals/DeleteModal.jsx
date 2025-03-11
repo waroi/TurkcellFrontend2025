@@ -2,12 +2,14 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import { removeBook } from '../../redux/slice/librarySlice'
 import { useNavigate } from 'react-router'
+import { FireStore } from '../../api/fireStore'
 
 const DeleteModal = ({ book }) => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
     const handeDelete = () => {
+        FireStore.deleteBook((book.id))
         dispatch(removeBook(book.id))
         navigate('/')
     }

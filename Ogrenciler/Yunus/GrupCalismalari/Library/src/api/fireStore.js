@@ -1,25 +1,35 @@
-import { addDoc, collection, doc, getDoc, getDocs, setDoc } from "firebase/firestore";
+import { addDoc, collection, deleteDoc, doc, getDoc, getDocs, setDoc, updateDoc } from "firebase/firestore";
 import { db } from "../firebase/firebase";
 
 export class FireStore {
     static async getAllBooks() {
-        const booksData = [];
-        const querySnapshot = await getDocs(collection(db, "books"));
+        const booksData = []
+        const querySnapshot = await getDocs(collection(db, "books"))
 
         querySnapshot.forEach((doc) => {
-            const docData = doc.data();
-            booksData.push(docData);
+            const docData = doc.data()
+            booksData.push(docData)
         });
-
         return booksData;
     }
 
+    static async getAllUsers() {
+        const usersData = []
+        const querySnapshot = await getDocs(collection(db, "users"))
+
+        querySnapshot.forEach((doc) => {
+            const docData = doc.data()
+            usersData.push(docData)
+        });
+        return usersData
+    }
+
     static async getPublisherBooks(publisherName) {
-        const querySnapshot = await getDocs(collection(db, "books"));
+        const querySnapshot = await getDocs(collection(db, "books"))
         const booksData = querySnapshot.docs
             .map((doc) => doc.data())
-            .filter((book) => book.publisherName === publisherName);
-        return booksData;
+            .filter((book) => book.publisherName === publisherName)
+        return booksData
     };
 
     static async getBookWithId(id) {
@@ -36,31 +46,27 @@ export class FireStore {
                 return null
             }
         } catch (error) {
-            console.error("Kitap çekerken hata oluştu", error)
+            console.error("Kitap çekerken bir hata oluştu", error)
             return null
         }
     }
 
     static async addUser(user) {
         try {
-            const docRef = doc(db, "users", user.uid);
-            await setDoc(docRef, user);
-            console.log("Document written with ID: ", user.uid);
-        } catch (e) {
-            console.error("Error adding document: ", e);
+            const docRef = doc(db, "users", user.uid)
+            await setDoc(docRef, user)
+            console.log("Document written with ID: ", user.uid)
+        } catch (event) {
+            console.error("Error adding document: ", event)
         }
     }
 
-    static async addPublisher() {
+    static async addPublisher(data) {
         try {
-            const docRef = await addDoc(collection(db, "publisher"), {
-                first: "HAzalllllllll",
-                last: "KÜT KÜTTTTTTTTTTTTTT",
-                born: 1815
-            });
-            console.log("Document written with ID: ", docRef.id);
+            const docRef = await addDoc(collection(db, "publisher"), data);
+            console.log("Document written with ID: ", docRef.id)
         } catch (e) {
-            console.error("Error adding document: ", e);
+            console.error("Error adding document: ", e)
         }
     }
 
@@ -84,30 +90,45 @@ export class FireStore {
 
             console.log("Kitap eklendi, ID:", id)
         } catch (error) {
-            console.error("Kitap eklenirken hata:", error)
+            console.error("Kitap eklenirken bir hata olluştu:", error)
         }
     }
 
     static async deleteBook(bookId) {
-        const bookRef = doc(db, "books", bookId);
+        const bookRef = doc(db, "books", bookId)
         try {
-            await deleteDoc(bookRef);
-            console.log("Kitap silindi");
+            await deleteDoc(bookRef)
+            console.log("Kitap silindi")
         } catch (error) {
-            console.error("Hata:", error);
+            console.error("Kitap silinirken bir hata olluştu:", error)
         }
     }
 
+
     static async updateBook(bookId, newData) {
-        const bookRef = doc(db, "books", bookId);
+        const bookRef = doc(db, "books", bookId)
         try {
             await updateDoc(bookRef, {
                 ...newData,
                 updatedAt: new Date().toISOString()
             });
-            console.log("Kitap güncellendi");
+            console.log("Kitap güncellendi brooooooooooooooooo")
         } catch (error) {
-            console.error("Hata:", error);
+            console.error("Kitap güncellerken bir hata oluştu:", error)
+        }
+    }
+    static async updateUser(userId, userData) {
+        const bookRef = doc(db, "users", userId)
+        try {
+            await updateDoc(bookRef, {
+                ...userData,
+                state: userData.state,
+                publisherName: userData.email,
+                updatedAt: new Date().toISOString()
+            });
+            console.log("Kullanıcı güncellemesi başarılı")
+        } catch (error) {
+            console.error("Kullanıcı güncellenirken bir hata oluştu:", error)
         }
     }
 }
