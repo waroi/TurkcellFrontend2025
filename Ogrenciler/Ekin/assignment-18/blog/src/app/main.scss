@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Faculty+Glyphic&display=swap");
+
+$font-family-base: "Faculty Glyphic";
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+main {
+  min-height: calc(100vh - 12rem);
+}
+
+.banner {
+  height: 20rem;
+}
