@@ -18,7 +18,7 @@ export default function Card({ blog }) {
                 Read More
               </a>
             </div>
-            <p className="card-text">
+            {/* <p className="card-text">
               <small className="text-body-secondary">
                 Last Updated:
                 {" " +
@@ -29,7 +29,7 @@ export default function Card({ blog }) {
                     year: "numeric",
                   })}
               </small>
-            </p>
+            </p> */}
           </div>
         </div>
       </div>

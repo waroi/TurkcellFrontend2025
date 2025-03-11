@@ -1,4 +1,4 @@
-const URL = "http://localhost:5000";
+const URL = "http://localhost:5050";
 
 export function getBlogs() {
   return fetch(`${URL}/blogs`).then((response) => response.json());
@@ -6,4 +6,24 @@ export function getBlogs() {
 
 export function getBlog(id) {
   return fetch(`${URL}/blogs/${id}`).then((response) => response.json());
+}
+
+export function addBlog(blog) {
+  return fetch(`${URL}/blogs`, {
+    method: "POST",
+    body: JSON.stringify(blog),
+  });
+}
+
+export function editBlog(blog) {
+  return fetch(`${URL}/blogs/${blog.id}`, {
+    method: "PUT",
+    body: JSON.stringify(blog),
+  });
+}
+
+export function deleteBlog(blog) {
+  return fetch(`${URL}/blogs/${blog.id}`, {
+    method: "DELETE",
+  });
 }
