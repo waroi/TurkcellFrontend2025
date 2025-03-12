@@ -11,6 +11,9 @@ export function getBlog(id) {
 export function addBlog(blog) {
   return fetch(`${URL}/blogs`, {
     method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
     body: JSON.stringify(blog),
   });
 }
@@ -18,6 +21,9 @@ export function addBlog(blog) {
 export function editBlog(blog) {
   return fetch(`${URL}/blogs/${blog.id}`, {
     method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
     body: JSON.stringify(blog),
   });
 }

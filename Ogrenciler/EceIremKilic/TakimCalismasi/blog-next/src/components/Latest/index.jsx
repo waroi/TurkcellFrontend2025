@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import data from "../../data/data.json";
+import data from "../../../data/data.json";
 import styles from "./latest.module.css";
 
 const Latest = () => {
@@ -14,7 +14,7 @@ const Latest = () => {
   }, []);
 
   const handleSetBlogs = () => {
-    const formattedData = data.slice(0, 4);
+    const formattedData = data.posts.slice(0, 4);
     setBlogs(formattedData);
     console.log("blogs:", blogs);
   };

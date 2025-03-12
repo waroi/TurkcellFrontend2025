@@ -7,7 +7,7 @@ const HomeCard = ({ blog }) => {
   );
   return (
     <div>
-      <div className="card mb-3">
+      <div className={`${styles.card} mb-3 card`}>
         <Link
           href={`/blog/${blog.id}`}
           className="text-decoration-none text-dark"
@@ -38,14 +38,14 @@ const HomeCard = ({ blog }) => {
                   </span>
                 </div>
                 <h3 className="card-title h5 fw-bold">{blog.title}</h3>
-                <p className="card-text text-muted">{blog.content}</p>
+                <p className={`card-text text-muted ${styles.content}`}>
+                  {blog.content}
+                </p>
                 <div className="d-flex align-items-center gap-2 meta-info mt-3">
                   <img
                     src={blog.author.photo || "/placeholder.svg"}
                     alt={blog.author.name}
-                    width={24}
-                    height={24}
-                    className="author-avatar"
+                    className={`${styles.avatar}`}
                   />
                   <span>{blog.author.name}</span>
                   <span>•</span>

@@ -1,7 +1,8 @@
 import React from "react";
-import styles from './navbar.module.css'
+import styles from "./navbar.module.css";
 import Image from "next/image";
-import mef from '../../assets/logo.png'
+import mef from "../../assets/logo.png";
+import Link from "next/link";
 
 const Navbar = () => {
   return (
@@ -21,22 +22,35 @@ const Navbar = () => {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className= "collapse navbar-collapse" id="navbarNav">
+        <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">
-                Anasayfa
-              </a>
+              <Link href="/" className="text-decoration-none" scroll>
+                <p className="nav-link active " aria-current="page" href="#">
+                  Anasayfa
+                </p>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#latest">
-                Son yayımlananlar
-              </a>
+              <Link href="#latest" className="text-decoration-none">
+                <p className="nav-link active " aria-current="page" href="#">
+                  Son Yayımlananlar
+                </p>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#posts">
-                Tüm bloglar
-              </a>
+              <Link href="/" className="text-decoration-none" scroll>
+                <p className="nav-link active " aria-current="page" href="#">
+                  Tüm Bloglar
+                </p>
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link href="/blog/add" className="text-decoration-none" scroll>
+                <p className="nav-link active " aria-current="page" href="#">
+                  Post Ekle
+                </p>
+              </Link>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#subscribe">

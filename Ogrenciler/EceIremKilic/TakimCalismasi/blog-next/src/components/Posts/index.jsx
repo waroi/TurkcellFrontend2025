@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import data from "../../data/data.json";
+import data from "../../../data/data.json";
 import styles from "./posts.module.css";
 import useBlogStore from "../../store/useBlogStore";
 import Link from "next/link";
@@ -9,8 +9,6 @@ const Posts = () => {
   const [blogs, setBlogs] = useState([]);
   const [isMounted, setIsMounted] = useState(false);
   const { posts, addPosts } = useBlogStore();
-
-  console.log("123", posts);
 
   const handleAddPosts = () => {
     const data = {
@@ -21,8 +19,6 @@ const Posts = () => {
       releaseDate: "2025-03-11",
       author: "Ece İrem",
     };
-
-    addPosts(data);
   };
 
   useEffect(() => {
@@ -54,7 +50,7 @@ const Posts = () => {
     <div className="container py-5" id="posts">
       <h2 className="my-5">Tüm Bloglar</h2>
       <div className="row">
-        {blogs?.map((blog, index) => (
+        {posts?.map((blog, index) => (
           <div
             className="col-lg-3 col-md-4 col-sm-6 col-12 d-flex align-items-stretch"
             key={index}
