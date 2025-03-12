@@ -4,7 +4,7 @@ function Navbar() {
 	return (
 		<nav className="navbar navbar-expand-lg bg-body-tertiary">
 			<div className="container">
-				<Link className="navbar-brand" href="/">
+				<Link className="navbar-brand bolder" href="/">
 					NextBlog
 				</Link>
 				<button
@@ -22,16 +22,6 @@ function Navbar() {
 						<li className="nav-item">
 							<Link className="nav-link active" aria-current="page" href="#">
 								Home
-							</Link>
-						</li>
-						<li className="nav-item">
-							<Link className="nav-link" href="#">
-								Link
-							</Link>
-						</li>
-						<li className="nav-item">
-							<Link className="nav-link" href="#">
-								Disabled
 							</Link>
 						</li>
 					</ul>
