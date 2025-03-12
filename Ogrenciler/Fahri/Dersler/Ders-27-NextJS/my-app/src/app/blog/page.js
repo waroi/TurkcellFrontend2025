@@ -4,66 +4,66 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setBlogs } from "../redux/slice/blogSlice";
 import Link from "next/link";
+import "./BlogList.css";
 
 const BlogList = () => {
-  const dispatch = useDispatch();
-  const blogs = useSelector((state) => state.blog.blogs);
+  const dispatch = useDispatch()
+  const blogs = useSelector((state) => state.blog.blogs)
 
   useEffect(() => {
     const fetchBlogs = async () => {
-      const response = await fetch("http://localhost:5000/blogs");
-      const data = await response.json();
-      // console.log("Bloglar geliyor mu:", data);
-      dispatch(setBlogs(data));
+      const response = await fetch("http://localhost:5000/blogs")
+      const data = await response.json()
+      dispatch(setBlogs(data))
     };
 
-    fetchBlogs();
-  }, [dispatch]);
+    fetchBlogs()
+  }, [dispatch])
 
   return (
-    <>
-      <div className="container">
-        <h1 className="text-danger">Blog Listesi</h1>
-        <Link href={"/blog/add"} className="text-danger">
+    <div className="blog-list-container">
+      <div className="blog-list-header">
+        <h1 className="blog-list-title fw-bold fst-italic">PESPEMBE BLOG</h1>
+        <Link href={"/blog/add"} className="add-blog-link">
           Blog Ekle
         </Link>
-        <div className="row">
-          {blogs && blogs.length > 0 ? (
-            blogs.map((blog) => (
-              <div className="col-lg-3 col-md-6 mt-5" key={blog.id}>
-                <div className="card">
-                  <img
-                    src="https://picsum.photos/200"
-                    className="card-img-top"
-                    alt={blog.title}
-                  />
-                  <div className="card-body">
-                    <h5 className="card-title">
-                      {blog.title.substring(0, 20) + "..."}
-                    </h5>
-                    <p className="card-text">
-                      {blog.content.substring(0, 50) + "..."}
-                    </p>
-                    <p className="card-text">
-                      <strong>Yazar:</strong> {blog.author}
-                    </p>
-                    <Link
-                      href={`/blog/${blog.id}`}
-                      className="btn btn-outline-primary"
-                    >
-                      Blog
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            ))
-          ) : (
-            <p>Blog yok veya yükleniyor!</p>
-          )}
-        </div>
       </div>
-    </>
+
+      <div className="blog-grid">
+        {blogs && blogs.length > 0 ? (
+          blogs.map((blog) => (
+            <div className="blog-card" key={blog.id}>
+              <div className="blog-card-image">
+                <img
+                  src={blog.poster || 'https://picsum.photos/200'}
+                  alt={blog.title}
+                />
+              </div>
+              <div className="blog-card-content">
+                <h5 className="blog-card-title">
+                  {blog.title.substring(0, 20) + "..."}
+                </h5>
+                <p className="blog-card-excerpt">
+                  {blog.content.substring(0, 50) + "..."}
+                </p>
+                <p className="blog-card-author">
+                  <strong>Yazar:</strong> {blog.author}
+                </p>
+                <Link
+                  href={`/blog/${blog.id}`}
+                  className="view-blog-button"
+                >
+                  Daha fazla
+                </Link>
+              </div>
+            </div>
+          ))
+        ) : (
+          <p className="no-blogs-message">Blog yok veya yükleniyor!</p>
+        )}
+      </div>
+    </div>
   );
 };
 
-export default BlogList;
+export default BlogList
