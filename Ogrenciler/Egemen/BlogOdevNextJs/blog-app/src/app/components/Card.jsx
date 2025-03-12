@@ -1,9 +1,12 @@
 import { MdEdit } from "react-icons/md";
 import { MdDeleteForever } from "react-icons/md";
+import { MdVisibility } from "react-icons/md";
+
 import { useDispatch } from "react-redux";
 import { deleteBlog, setBlog } from "../redux/slices/blogSlice";
 import { deleteApiBlog } from "../../../services/Api";
 import UpdateModal from "./UpdateModal";
+import Link from "next/link";
 
 const Card = ({ card }) => {
   const dispatch = useDispatch();
@@ -49,9 +52,15 @@ const Card = ({ card }) => {
                 >
                   <MdEdit />
                 </button>
-                <button onClick={handleDelete} className="btn btn-danger">
+                <button onClick={handleDelete} className="btn btn-danger me-2">
                   <MdDeleteForever />
                 </button>
+
+                <Link href={`/blog/${card.id}`}>
+                  <button className="btn btn-warning">
+                    <MdVisibility />
+                  </button>
+                </Link>
               </div>
               <span
                 className="badge text-bg-warning  p-2 m-2"
