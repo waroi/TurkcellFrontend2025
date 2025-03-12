@@ -31,10 +31,11 @@ function Page({ params }) {
 
   return id !== undefined ? (
     blog && (
-      <div className="card mb-3 border-0">
-        <div className="row g-0">
-          <div className="col-md-4">
-            {/* <Image
+      <div className="container mt-4">
+        <div className="card mb-3 border-0"> 
+          <div className="row g-0">
+            <div className="col-md-4">
+              {/* <Image
               src={blog?.poster | "/noImage.png"}
               height={50}
               width={150}
@@ -43,26 +44,28 @@ function Page({ params }) {
               priority
               loader={() => myLoader(blog?.poster)}
             /> */}
-            <img
-              src={blog?.poster || "/noImage.png"}
-              alt={`${blog?.title} Adlı Resim`}
-              className="rounded card-img-top img-fluid w-100 h-100"
-            />
-          </div>
-          <div className="col-md-8">
-            <div className="card-body d-flex flex-column h-100 ">
-              <h5 className="card-title">{blog?.title}</h5>
-              <p className="card-text">{blog?.content}</p>
-              <p className="card-text justify-self-end">
-                <small className="text-body-secondary">
-                  Yazar: {blog.author} |{" "}
-                  {new Date(blog.date).toLocaleDateString()}
-                </small>
-              </p>
+              <img
+                src={blog?.poster || "/noImage.png"}
+                alt={`${blog?.title} Adlı Resim`}
+                className="rounded card-img-top img-fluid w-100 h-100"
+              />
+            </div>
+            <div className="col-md-8">
+              <div className="card-body d-flex flex-column h-100 ">
+                <h5 className="card-title">{blog?.title}</h5>
+                <p className="card-text">{blog?.content}</p>
+                <p className="card-text justify-self-end">
+                  <small className="text-body-secondary">
+                    Yazar: {blog.author} |{" "}
+                    {new Date(blog.date).toLocaleDateString()}
+                  </small>
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
+
     )
   ) : (
     <p> Geçerli bir blog id bulunamadı.</p>

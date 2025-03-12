@@ -31,7 +31,8 @@ const Latest = () => {
     return null;
   }
   return (
-    <div className="container">
+    <div className="container" id="latest">
+      <h2 className="my-5">Son Yayımlanan Bloglar</h2>
       <div className="row">
         {blogs?.map((blog, index) => (
           <div className="col-lg-3 col-md-4 col-sm-6 col-12" key={index}>

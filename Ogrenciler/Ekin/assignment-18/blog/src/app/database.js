@@ -1,4 +1,4 @@
-const URL = "http://localhost:5050";
+const URL = "http://localhost:5000";
 
 export function getBlogs() {
   return fetch(`${URL}/blogs`).then((response) => response.json());

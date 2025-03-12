@@ -1,5 +1,5 @@
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
-:root {
+/* :root {
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -40,4 +40,53 @@ a {
   html {
     color-scheme: dark;
   }
+} */
+html, body {
+  margin: 0;
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  flex: 1;
+}
+.navbar {
+  background-color: #537496;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.card-img-top {
+  object-fit: cover; 
+}
+
+.card {
+  transition: transform 0.2s; 
+}
+
+.card:hover {
+  transform: scale(1.02); 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+h1, h5 {
+  color: #2c3e50; 
+}
+
+.btn-primary {
+  background-color: #3498db; 
+  border-color: #2980b9;
+}
+
+.btn-primary:hover {
+  background-color: #2980b9; 
+}
+
+footer {
+  background-color: #537496;
+  width: 100%;
+  margin-top: auto;
 }

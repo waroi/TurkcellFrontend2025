@@ -13,17 +13,12 @@ export default function Home() {
   const blogState = blog();
 
   useEffect(() => {
-    blogState.getBlogs(); // Blogları store'a çekiyoruz
+    blogState.getBlogs();
   }, []);
-
-  console.log(blogState);
 
   return (
     <>
-      <button onClick={() => blogState.deleteBlog("metafizik-nedir")}>
-        HELLOOO
-      </button>
-      <Navigation />
+      <Navigation active="home" />
       <main>
         <div className="container py-5">
           {blogState.blogs.map((blog, index) => (

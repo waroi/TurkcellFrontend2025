@@ -3,10 +3,11 @@ import React from "react";
 
 const Subscribe = () => {
   return (
-    <section className="subscribe-section">
+    <section className="subscribe-section" id="subscribe">
       <div className="container">
+        <h2 className="my-5">Bültenimize Abone Ol</h2>
         <div className="row">
-          <div className="col-lg-5 bg-dark d-flex flex-column justify-content-between p-5">
+          <div className={` col-lg-5 d-flex flex-column justify-content-between p-5 ${styles.bgColor}`}>	
             <h4 className="text-white">
               Son gelişmelerden haberdar olmak için bültenimize abone olun.
             </h4>

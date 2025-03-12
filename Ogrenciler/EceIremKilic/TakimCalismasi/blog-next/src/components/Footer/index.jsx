@@ -1,21 +1,39 @@
 import styles from "./footer.module.css";
 import React from "react";
+import Image from "next/image";
+import mef from '../../assets/logo.png'
 
 const Footer = () => {
   return (
-    <footer className="footer mt-5">
-      <div className="container ">
-        <div className="row ">
-          <div className="col-md-6 align-items-center">
-            @2025 by MEF Turizm. Powered and security by Turkcell Atmosware{" "}
+    <footer className={`${styles.bgColor} footer mt-5 py-2`} id="foot">
+      <div className="container-fluid">
+        <div className="row align-items-center">
+          <div className="col-md-5">
+            <h6>
+              @2025 by MEF Turizm. Powered and security by Turkcell Atmosware
+            </h6>
           </div>
-          <div className="col-md-3">
-            <h1>MEF Turizm</h1>
+          <div className="col-md-5">
+            <a href="#"><Image src={mef} alt="logo" width={75} height={75} />  </a>
           </div>
-          <div className="col-md-3">
-            <div className="social-icons d-flex justify-content-around gap-2">
-              <i className={`${styles.brands} fa-brands fa-instagram`}></i>
-              <i className={`${styles.brands} fa-brands fa-linkedin`}></i>
+          <div className="col-md-2">
+            <div className="social-icons d-flex gap-2">
+              <i
+                aria-hidden="true"
+                className={`${styles.brands} fa-brands fa-instagram`}
+              ></i>
+              <i
+                aria-hidden="true"
+                className={`${styles.brands} fa-brands fa-linkedin`}
+              ></i>
+              <i
+                aria-hidden="true"
+                className={`${styles.brands} fa-brands fa-facebook`}
+              ></i>
+              <i
+                aria-hidden="true"
+                className={`${styles.brands} fa-brands fa-github`}
+              ></i>
             </div>
           </div>
         </div>

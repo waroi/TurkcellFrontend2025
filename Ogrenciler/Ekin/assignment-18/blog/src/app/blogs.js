@@ -16,6 +16,13 @@ const state = createStore((set) => ({
 
   addBlog: (blog) => {
     blog.id = Math.random().toString(36).substring(2);
+    blog.date = new Date().getTime();
+    blog.image = blog.image
+      ? blog.image
+      : "https://coffective.com/wp-content/uploads/2018/06/default-featured-image.png.jpg";
+    blog.banner = blog.banner
+      ? blog.banner
+      : "https://coffective.com/wp-content/uploads/2018/06/default-featured-image.png.jpg";
 
     addBlogToServer(blog);
 
@@ -25,6 +32,14 @@ const state = createStore((set) => ({
   },
 
   editBlog: (blog) => {
+    blog.date = new Date().getTime();
+    blog.image = blog.image
+      ? blog.image
+      : "https://coffective.com/wp-content/uploads/2018/06/default-featured-image.png.jpg";
+    blog.banner = blog.banner
+      ? blog.banner
+      : "https://coffective.com/wp-content/uploads/2018/06/default-featured-image.png.jpg";
+
     editBlogToServer(blog);
 
     set((state) => ({

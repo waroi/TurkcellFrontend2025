@@ -1,7 +1,7 @@
 'use client';
 import BlogCard from '../component/BlogCard';
 import blogs from '../data/blog.json';
-import { useSearch } from '@/searchContext';
+import { useSearch } from '@/context/searchContext';
 
 export default function Home() {
   const { searchQuery } = useSearch();
@@ -12,12 +12,10 @@ export default function Home() {
 
   return (
     <div className='container'>
-      <h1>Bloglarımız</h1>
-      <div className='row row-cols-1 row-cols-md-3 g-4'>
+      <h1 className='text-center mt-2 mb-3'>Bloglarımız</h1>
+      <div className='row gy-3 mb-5'>
         {filteredBlogs.map((blog) => (
-          <div key={blog.id}>
-            <BlogCard blog={blog} />
-          </div>
+          <BlogCard key={blog.id} blog={blog} />
         ))}
       </div>
     </div>
