@@ -51,7 +51,8 @@ const Posts = () => {
     return null;
   }
   return (
-    <div className="container py-5">
+    <div className="container py-5" id="posts">
+      <h2 className="my-5">Tüm Bloglar</h2>
       <div className="row">
         {blogs?.map((blog, index) => (
           <div
