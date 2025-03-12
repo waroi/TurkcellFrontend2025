@@ -7,7 +7,7 @@ function Page({ params }) {
   const { id } = use(params);
   const [blog, setBlog] = useState(null);
 
-  const myLoader = ({ src }) => {
+  const myLoader = (src) => {
     return src;
   };
 
@@ -32,23 +32,22 @@ function Page({ params }) {
   return id !== undefined ? (
     blog && (
       <div className="container mt-4">
-        <div className="card mb-3 border-0"> 
+        <div className="card mb-3 border-0">
           <div className="row g-0">
             <div className="col-md-4">
-              {/* <Image
-              src={blog?.poster | "/noImage.png"}
-              height={50}
-              width={150}
-              className="rounded card-img-top img-fluid w-100 h-100"
-              alt={`${blog?.title} Adlı Resim`}
-              priority
-              loader={() => myLoader(blog?.poster)}
-            /> */}
-              <img
+              <Image
+                src={"/noImage.png"}
+                height={50}
+                width={150}
+                className="rounded card-img-top img-fluid w-100 h-100"
+                alt={`${blog?.title} Adlı Resim`}
+                loader={() => myLoader(blog?.poster)}
+              />
+              {/* <img
                 src={blog?.poster || "/noImage.png"}
                 alt={`${blog?.title} Adlı Resim`}
                 className="rounded card-img-top img-fluid w-100 h-100"
-              />
+              /> */}
             </div>
             <div className="col-md-8">
               <div className="card-body d-flex flex-column h-100 ">
@@ -65,7 +64,6 @@ function Page({ params }) {
           </div>
         </div>
       </div>
-
     )
   ) : (
     <p> Geçerli bir blog id bulunamadı.</p>
