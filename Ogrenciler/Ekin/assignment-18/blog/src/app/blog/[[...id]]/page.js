@@ -2,18 +2,28 @@
 
 import { use, useState, useEffect } from "react";
 import { getBlog } from "@/app/database";
+import { useRouter } from "next/navigation";
+import useBlog from "../../blogs";
 
 const Blog = ({ params }) => {
-  const { id } = use(params);
-  const [blog, setBlog] = useState({});
+  const router = useRouter();
+  const blogState = useBlog();
 
-  console.log(id);
+  const id = use(params).id[0];
+  const [blog, setBlog] = useState({});
 
   useEffect(() => {
     try {
       getBlog(id).then((response) => setBlog(response));
     } catch {}
   }, []);
+
+  function deleteBlog() {
+    if (confirm("Are you sure you want to delete the blog?")) {
+      blogState.deleteBlog(id);
+      router.push("/");
+    }
+  }
 
   return (
     <>
@@ -29,6 +39,12 @@ const Blog = ({ params }) => {
             </p>
           ))
         )}
+        <a href={`/edit/${id}`} className="btn btn-warning me-3">
+          Edit
+        </a>
+        <button className="btn btn-danger" onClick={deleteBlog}>
+          Delete
+        </button>
       </div>
     </>
   );

@@ -1,13 +1,18 @@
 "use client";
 
-import { use, useState, useEffect } from "react";
+import { use, useState, useEffect, useRef } from "react";
+import { useRouter } from "next/navigation";
 import { getBlog } from "@/app/database";
 
-const Edit = ({ params }) => {
-  const { id } = use(params);
-  const [blog, setBlog] = useState({});
+import blog from "../../blogs";
 
-  console.log(id);
+const Edit = ({ params }) => {
+  const router = useRouter();
+
+  const blogState = blog();
+
+  const { id } = use(params);
+  // const [blog, setBlog] = useState({});
 
   useEffect(() => {
     try {
@@ -27,8 +32,9 @@ const Edit = ({ params }) => {
   const banner = useRef();
   const content = useRef();
 
-  function addBlog() {
-    blogState.addBlog({
+  function editBlog() {
+    blogState.editBlog({
+      id: id[0],
       title: title.current.value,
       image: image.current.value,
       description: description.current.value,
@@ -90,8 +96,8 @@ const Edit = ({ params }) => {
         />
         <label htmlFor="content">Content</label>
       </div>
-      <button className="btn btn-primary" onClick={addBlog}>
-        Add Blog
+      <button className="btn btn-primary" onClick={editBlog}>
+        Save
       </button>
     </>
   );

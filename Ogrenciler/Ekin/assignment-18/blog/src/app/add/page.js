@@ -80,7 +80,7 @@ export default function Add() {
         <label htmlFor="content">Content</label>
       </div>
       <button className="btn btn-primary" onClick={addBlog}>
-        Add Blog
+        Save
       </button>
     </>
   );

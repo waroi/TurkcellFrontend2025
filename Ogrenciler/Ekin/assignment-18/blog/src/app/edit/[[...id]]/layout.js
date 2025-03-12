@@ -7,7 +7,7 @@ const Edit = ({ children }) => {
   return (
     <div>
       <Navigation />
-      <main className="container">{children}</main>
+      <main className="container py-5">{children}</main>
       <Footer />
     </div>
   );
