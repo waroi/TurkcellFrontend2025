@@ -1,11 +1,12 @@
 "use client";
 import React, { use, useEffect, useState } from "react";
 import useBlogStore from "@/store/useBlogStore";
+import { useRouter } from "next/navigation";
 
 const BlogDetails = ({ params }) => {
   const nonPromiseParams = use(params);
   const [date, setDate] = useState("");
-
+  const router = useRouter();
   const { posts, updatePost } = useBlogStore();
   const blog = posts.filter(
     (post) => post.id.toString() == nonPromiseParams.id
@@ -123,7 +124,10 @@ const BlogDetails = ({ params }) => {
                 <button
                   type="submit"
                   className="btn btn-warning"
-                  onClick={() => updatePost(blog[0].id, editedPost)}
+                  onClick={() => {
+                    updatePost(blog[0].id, editedPost);
+                    router.push("/");
+                  }}
                 >
                   Güncelle
                 </button>

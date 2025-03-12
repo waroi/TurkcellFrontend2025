@@ -55,29 +55,32 @@ const Posts = () => {
             className="col-lg-3 col-md-4 col-sm-6 col-12 d-flex align-items-stretch"
             key={index}
           >
-            <Link href={`/blog/${blog.id}`} className="text-decoration-none">
-              <div className="card shadow-sm border-0 rounded mb-4 rounded-4">
+            <Link
+              href={`/blog/${blog.id}`}
+              className="text-decoration-none w-100 mb-4"
+            >
+              <div className="card shadow-sm border-0 rounded mb-4 rounded-4 h-100 ">
                 <img
                   src={blog?.image}
                   className={`card-img-top object-fit-cover rounded-top-4 img-fluid ${styles.image}`}
                   alt="..."
                 />
-                <div className="card-body d-flex flex-column justify-content-between">
+                <div className="card-body ">
                   <div className="card-info d-flex justify-content-between mb-2">
-                    <div
-                      className={`card-author badge ${styles.bgGreen} text-dark fw-normal rounded-pill px-3 py-1`}
+                    <h6
+                      className={`card-author badge ${styles.bgGreen} text-dark  rounded-pill px-3 py-1`}
                     >
                       {formatDate(blog?.releaseDate)}
-                    </div>
-                    <div
-                      className={`card-author badge ${styles.bgGreen} text-dark fw-normal rounded-pill px-3 py-1`}
+                    </h6>
+                    <h6
+                      className={`card-author badge ${styles.bgGreen} text-dark  rounded-pill px-3 py-1`}
                     >
                       {blog?.author}
-                    </div>
+                    </h6>
                   </div>
                   <h5 className="card-title">{blog?.title}</h5>
                   <p className="card-text">
-                    {blog?.content.split(".").slice(0, 1) + "."}
+                    {blog?.content?.split(".").slice(0, 1) + "."}
                   </p>
                 </div>
               </div>
