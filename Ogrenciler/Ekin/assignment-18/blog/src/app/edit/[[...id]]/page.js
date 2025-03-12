@@ -12,7 +12,6 @@ const Edit = ({ params }) => {
   const blogState = blog();
 
   const { id } = use(params);
-  // const [blog, setBlog] = useState({});
 
   useEffect(() => {
     try {

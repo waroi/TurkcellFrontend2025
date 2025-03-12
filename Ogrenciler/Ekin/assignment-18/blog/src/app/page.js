@@ -16,8 +16,6 @@ export default function Home() {
     blogState.getBlogs();
   }, []);
 
-  console.log(blogState);
-
   return (
     <>
       <Navigation active="home" />
