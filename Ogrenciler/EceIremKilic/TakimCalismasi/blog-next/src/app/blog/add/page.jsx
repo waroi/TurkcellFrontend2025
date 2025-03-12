@@ -1,49 +1,42 @@
 "use client";
 import React, { use, useEffect, useState } from "react";
 import useBlogStore from "@/store/useBlogStore";
+import { useRouter } from "next/navigation";
 
-const BlogDetails = ({ params }) => {
-  const nonPromiseParams = use(params);
+const BlogDetails = () => {
   const [date, setDate] = useState("");
+  const [isEdit, setIsEdit] = useState(false); //! Sayfanın aynı içerisinde güncelleme işlemi yapılacaksa kullanılabilir. Şu anlık ben kullanmadım. Eğer isEdit ise p ile açılmış tagleri input ile değiştir.
+  const router = useRouter();
+  const { addPost } = useBlogStore();
 
-  const { posts, updatePost } = useBlogStore();
-  const blog = posts.filter(
-    (post) => post.id.toString() == nonPromiseParams.id
-  );
+  // useEffect(() => {
+  //   setDate(
+  //     new Date(blog[0]?.releaseDate).toLocaleDateString("tr-TR", {
+  //       day: "2-digit",
+  //       month: "long",
+  //       year: "numeric",
+  //     })
+  //   );
+  // });
 
-  useEffect(() => {
-    setDate(
-      new Date(blog[0]?.releaseDate).toLocaleDateString("tr-TR", {
-        day: "2-digit",
-        month: "long",
-        year: "numeric",
-      })
-    );
-  });
-
-  const [editedPost, setEditedPost] = useState({
-    title: blog[0].title,
-    image: blog[0].image,
-    author: blog[0].author,
-    releaseDate: blog[0].releaseDate,
-    content: blog[0].content,
+  const [newPost, setNewPost] = useState({
+    title: "",
+    image: "",
+    author: "",
+    releaseDate: "",
+    content: "",
   });
   const handleChange = (e) => {
     e.preventDefault();
-    console.log(editedPost);
+    console.log(newPost);
 
-    setEditedPost({ ...editedPost, [e.target.id]: e.target.value });
+    setNewPost({ ...newPost, [e.target.id]: e.target.value });
   };
 
-  useEffect(() => {
-    setDate(
-      new Date(blog[0]?.releaseDate).toLocaleDateString("tr-TR", {
-        day: "2-digit",
-        month: "long",
-        year: "numeric",
-      })
-    );
-  });
+  const handleAdd = (newPost) => {
+    addPost(newPost);
+    router.push("/");
+  };
 
   return (
     <div className="container">
@@ -56,14 +49,13 @@ const BlogDetails = ({ params }) => {
                   Post İçeriğini Düzenle
                 </h5>
                 <div className="mb-3">
-                  <label htmlFor="img" className="form-label">
+                  <label htmlFor="image" className="form-label">
                     Post Görsel URL'i
                   </label>
                   <input
                     type="text"
                     className="form-control"
-                    id="img"
-                    defaultValue={blog[0].image}
+                    id="image"
                     onChange={(e) => handleChange(e)}
                   />
                 </div>
@@ -76,7 +68,6 @@ const BlogDetails = ({ params }) => {
                     className="form-control"
                     id="title"
                     aria-describedby="emailHelp"
-                    defaultValue={blog[0].title}
                     onChange={(e) => handleChange(e)}
                   />
                   <div id="emailHelp" className="form-text">
@@ -91,7 +82,6 @@ const BlogDetails = ({ params }) => {
                     type="text"
                     className="form-control"
                     id="content"
-                    defaultValue={blog[0].content}
                     onChange={(e) => handleChange(e)}
                   />
                 </div>
@@ -103,7 +93,6 @@ const BlogDetails = ({ params }) => {
                     type="text"
                     className="form-control"
                     id="author"
-                    defaultValue={blog[0].author}
                     onChange={(e) => handleChange(e)}
                   />
                 </div>
@@ -114,8 +103,7 @@ const BlogDetails = ({ params }) => {
                   <input
                     type="date"
                     className="form-control"
-                    id="release-date"
-                    defaultValue={blog[0].releaseDate}
+                    id="releaseDate"
                     onChange={(e) => handleChange(e)}
                   />
                 </div>
@@ -123,9 +111,9 @@ const BlogDetails = ({ params }) => {
                 <button
                   type="submit"
                   className="btn btn-warning"
-                  onClick={() => updatePost(blog[0].id, editedPost)}
+                  onClick={() => handleAdd(newPost)}
                 >
-                  Güncelle
+                  Ekle
                 </button>
               </form>
             </div>
@@ -133,15 +121,29 @@ const BlogDetails = ({ params }) => {
           <div className="col-lg-5">
             <div className="preload">
               <div className="card">
-                <img src={blog[0].image} className="card-img-top" alt="..." />
+                <img
+                  className="card-img-top"
+                  src={
+                    newPost.image ||
+                    "https://img.freepik.com/free-photo/online-message-blog-chat-communication-envelop-graphic-icon-concept_53876-139717.jpg?t=st=1741786321~exp=1741789921~hmac=6dae9766aea04f52a17467b86a70dae132aff9267ed9244db0b15a345b39cae1&w=1380"
+                  }
+                  alt="Post Görseli"
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src =
+                      "https://img.freepik.com/free-photo/online-message-blog-chat-communication-envelop-graphic-icon-concept_53876-139717.jpg?t=st=1741786321~exp=1741789921~hmac=6dae9766aea04f52a17467b86a70dae132aff9267ed9244db0b15a345b39cae1&w=1380";
+                  }}
+                />
                 <div className="card-body">
-                  <h5 className="card-title">{blog[0].title}</h5>
-                  <p className="card-text">{blog[0].content}</p>
+                  <h5 className="card-title">{newPost?.title || "Title"}</h5>
+                  <p className="card-text">{newPost?.content || "Content"}</p>
                   <div className="d-flex justify-content-between">
                     <p className="card-text badge bg-success mb-0">
-                      {blog[0].author}
+                      {newPost?.author || "Author"}
                     </p>
-                    <p className="card-text badge bg-success">{date}</p>
+                    <p className="card-text badge bg-success">
+                      {newPost?.releaseDate || "Date"}
+                    </p>
                   </div>
                 </div>
               </div>

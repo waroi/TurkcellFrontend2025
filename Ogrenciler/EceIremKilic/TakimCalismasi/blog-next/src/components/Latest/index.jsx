@@ -14,7 +14,7 @@ const Latest = () => {
   }, []);
 
   const handleSetBlogs = () => {
-    const formattedData = data.slice(0, 4);
+    const formattedData = data.posts.slice(0, 4);
     setBlogs(formattedData);
     console.log("blogs:", blogs);
   };
