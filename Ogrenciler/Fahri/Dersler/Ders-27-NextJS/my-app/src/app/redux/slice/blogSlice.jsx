@@ -20,16 +20,16 @@ export const blogSlice = createSlice({
     updateBlog: (state, action) => {
       const index = state.blogs.findIndex(
         (blog) => blog.id === action.payload.id
-      );
+      )
       if (index !== -1) {
         state.blogs[index] = {
           ...state.blogs[index],
           ...action.payload.newBlog,
-        };
+        }
       }
     },
   },
-});
+})
 
 export const { setBlogs, addBlog, removeBlog, updateBlog } = blogSlice.actions;
 
