@@ -1,9 +1,11 @@
 const Footer = () => {
   return (
-    <footer className="p-4 bg-body-tertiary">
-      <div className="container d-flex align-items-center justify-content-between">
+    <footer className="p-4  position-absolute bottom-0 w-100">
+      <div className="container flex-wrap d-flex align-items-center  justify-content-center justify-content-md-between gap-2">
         <p>All Rights Reserved.</p>
-        <p>Designed and built by Kadriye, Mehmetcan, Egemen.</p>
+        <p className="text-center">
+          Designed and built by Kadriye, Mehmetcan, Egemen.
+        </p>
       </div>
     </footer>
   );

@@ -8,35 +8,6 @@ import { setUpdateBlog, resetBlog, addBlog } from "../redux/slices/blogSlice";
 const Modal = () => {
   const blog = useSelector((state) => state.blog.blog);
   const dispatch = useDispatch();
-
-  //   useEffect(() => {
-  //     if (typeof window !== "undefined") {
-  //       import("bootstrap/dist/js/bootstrap.bundle.min.js").then((bootstrap) => {
-  //         window.bootstrap = bootstrap;
-  //       });
-  //       const handleFormSubmit = () => {
-  //         const forms = document.querySelectorAll(".needs-validation");
-
-  //         Array.from(forms).forEach((form) => {
-  //           form.addEventListener(
-  //             "submit",
-  //             (event) => {
-  //               if (!form.checkValidity()) {
-  //                 event.preventDefault();
-  //                 event.stopPropagation();
-  //               }
-
-  //               form.classList.add("was-validated");
-  //             },
-  //             false
-  //           );
-  //         });
-  //       };
-
-  //       handleFormSubmit();
-  //     }
-  //   }, []);
-
   const handleChange = (event) => {
     const { name, value } = event.target;
     dispatch(
@@ -48,24 +19,11 @@ const Modal = () => {
 
   const handleClick = async (e) => {
     e.preventDefault();
-    const form = e.target.closest("form");
-    // if (!form.checkValidity()) {
-    //   form.classList.add("was-validated");
-
-    //   return;
-    // }
-
     try {
       const blogs = await postBlog(blog);
       dispatch(addBlog(blogs));
       dispatch(resetBlog());
       console.log("Blog Eklendi");
-      //   form.classList.remove("was-validated");
-      //   if (typeof window !== "undefined") {
-      //     const modalElement = document.getElementById("exampleModal");
-      //     const modalInstance = new bootstrap.Modal(modalElement);
-      //     modalInstance.hide();
-      //   }
     } catch (error) {
       console.log("Blog Eklenmedi");
     }
@@ -78,7 +36,7 @@ const Modal = () => {
         data-bs-toggle="modal"
         data-bs-target="#exampleModal"
       >
-        📚 Blog Ekle
+        ☄️ Blog Ekle
       </button>
 
       <div
@@ -92,7 +50,7 @@ const Modal = () => {
           <div className="modal-content p-3 rounded-4 shadow-lg border-0">
             <div className="modal-header rounded-top-4">
               <h1 className="modal-title fs-5" id="exampleModalLabel">
-                📚 Blog Ekle
+                ☄️ Blog Ekle
               </h1>
               <button
                 type="button"
@@ -196,7 +154,7 @@ const Modal = () => {
                 data-bs-dismiss="modal"
                 aria-label="Close"
               >
-                Save changes
+                Kaydet
               </button>
             </div>
           </div>

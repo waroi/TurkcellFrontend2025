@@ -4,29 +4,33 @@ import { getBlog } from "../../services/Api";
 import { useEffect } from "react";
 import Card from "../app/components/Card";
 import { useDispatch } from "react-redux";
-import { addAllBlog } from "../app/redux/slices/blogSlice";
+import { addAllBlog, searchBlogs } from "../app/redux/slices/blogSlice";
 import { useSelector } from "react-redux";
 
 export default function Home() {
-
   const blogs = useSelector((state) => state.blog.blogs);
+  const searchTerm = useSelector((state) => state.blog.searchTerm);
   const dispatch = useDispatch();
-
   useEffect(() => {
-    async function fetchBlog() {
-      const data = await getBlog();
-      if (data) {
-        console.log("Blog Verisi:", data);
-        dispatch(addAllBlog(data));
+    if (searchTerm == "") {
+      async function fetchBlog() {
+        const data = await getBlog();
+        if (data) {
+          dispatch(addAllBlog(data));
+        }
       }
+      fetchBlog();
+    } else {
+      dispatch(searchBlogs(searchTerm));
     }
-    fetchBlog();
-  }, []);
+  }, [searchTerm]);
 
   return (
     <div className={styles.page}>
       <main className="container">
-        <h1>Blog Yazıları</h1>
+        <h3 className="my-3 text-center text-success fw-semibold">
+          Blog Yazıları
+        </h3>
         <div className="row">
           {blogs.length > 0 ? (
             blogs?.map((blog) => (

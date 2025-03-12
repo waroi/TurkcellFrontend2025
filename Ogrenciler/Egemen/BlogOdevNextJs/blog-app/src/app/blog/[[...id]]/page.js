@@ -1,32 +1,41 @@
 "use client";
-import { useParams } from "next/navigation";
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
-import { getBlog } from "../../redux/slices/blogSlice";
+import { useSelector } from "react-redux";
 
 const Page = () => {
-    const params = useParams();
-    const dispatch = useDispatch();
-    const blog = useSelector((state) => state.blog.blog);
-    const [blogId, setBlogId] = useState(null);
-
-    useEffect(() => {
-        if (params?.id) {
-            setBlogId(params.id);
-            dispatch(getBlog(params.id));
-        }
-    }, [params, dispatch]);
-
-    if (!blogId) {
-        return <div>Geçersiz Blog ID</div>;
-    }
-
-    return (
-        <div>
-            <h1>Blog ID: {blogId}</h1>
-            <pre>{blog ? JSON.stringify(blog, null, 2) : "Yükleniyor..."}</pre>
+  const blog = useSelector((state) => state.blog.blog);
+  return (
+    <div className="container">
+      <div className="card my-5 position-relative">
+        <div className="row g-0">
+          <div className="col-lg-4 overflow-hidden">
+            <img
+              src={blog?.image}
+              className="object-cover h-100 w-100 rounded"
+              alt="card_img"
+            />
+          </div>
+          <div className="col-lg-8 d-flex justify-content-between flex-column">
+            <div className="card-body">
+              <h5 className="card-title">{blog.title}</h5>
+              <p className="card-text">{blog.body}</p>
+              <p className="card-text">{blog.author}</p>
+              <p className="card-text">
+                <small>{blog.created_at}</small>
+              </p>
+            </div>
+            <div className="card-footer p-2 d-flex justify-content-between align-items-center">
+              <span
+                className="badge text-bg-warning  p-2 m-2"
+                style={{ width: "min-content" }}
+              >
+                {blog.topic}
+              </span>
+            </div>
+          </div>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default Page;
