@@ -1,9 +1,6 @@
 export default function Navigation({ active }) {
   return (
-    <nav
-      className="navbar navbar-expand-lg bg-primary py-3"
-      
-    >
+    <nav className="navbar navbar-expand-lg bg-primary py-3">
       <div className="container">
         <a className="navbar-brand" href="/">
           Bilinç ve Ötesi
@@ -32,7 +29,7 @@ export default function Navigation({ active }) {
             <li className="nav-item">
               <a
                 className={`nav-link ${active == "add" ? "active" : ""}`}
-                href="add"
+                href="/add"
               >
                 Add Blog
               </a>
