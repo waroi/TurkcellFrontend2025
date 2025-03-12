@@ -2,7 +2,7 @@ import { create } from "zustand";
 import data from "../data/data.json";
 
 const useBlogStore = create((set) => ({
-  posts: data,
+  posts: [...data],
   id: 17,
   addPosts: (post) =>
     set((state) => ({
