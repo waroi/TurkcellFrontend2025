@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import {useState} from "react";
-import {useRouter} from "next/navigation";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const SiteNavbar = () => {
   const router = useRouter();
@@ -37,7 +37,7 @@ const SiteNavbar = () => {
     <header className="shadow-sm">
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container">
-          <a className="navbar-brand fw-bold fs-3" href="#">
+          <a className="navbar-brand fw-bold fs-3" href="/">
             M&lt;ela&gt;M
           </a>
           <button

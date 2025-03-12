@@ -26,7 +26,7 @@ export default function Home() {
       <Banner />
       <div className="container">
         <div className=" d-flex justify-content-between align-items-center my-2">
-          <h2>Recent Blogs</h2>
+          <h2>Son Bloglar</h2>
 
           <Link href="/blog" className="text-decoration-none text-dark">
             <button className="btn btn-dark"> Tümünü Görüntüle</button>

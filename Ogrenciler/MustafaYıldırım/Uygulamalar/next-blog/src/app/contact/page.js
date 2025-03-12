@@ -2,7 +2,6 @@ const Contact = () => {
   return (
     <>
       <div className="bg-white">
-        {/* Header */}
         <header className="bg-light py-5">
           <div className="container">
             <div className="row justify-content-center">
@@ -17,7 +16,6 @@ const Contact = () => {
           </div>
         </header>
 
-        {/* Contact Form & Info */}
         <section className="py-5">
           <div className="container">
             <div className="row g-5">
@@ -159,7 +157,6 @@ const Contact = () => {
           </div>
         </section>
 
-        {/* Map */}
         <section className="py-5 bg-light">
           <div className="container">
             <div className="row justify-content-center mb-4">
