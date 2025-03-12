@@ -1,0 +1,10 @@
+npm init --yes
+
+npm install
+
+npm create vite
+npm create next
+
+npm run dev
+
+npx json-server --watch database.json --port 5000
