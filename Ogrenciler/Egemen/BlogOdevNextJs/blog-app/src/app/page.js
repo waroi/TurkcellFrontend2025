@@ -6,6 +6,7 @@ import Card from "../app/components/Card";
 import { useDispatch } from "react-redux";
 import { addAllBlog, searchBlogs } from "../app/redux/slices/blogSlice";
 import { useSelector } from "react-redux";
+import UpdateModal from "../app/components/UpdateModal";
 
 export default function Home() {
   const blogs = useSelector((state) => state.blog.blogs);
@@ -42,6 +43,7 @@ export default function Home() {
             <p>Yükleniyor...</p>
           )}
         </div>
+        <UpdateModal />
       </main>
     </div>
   );

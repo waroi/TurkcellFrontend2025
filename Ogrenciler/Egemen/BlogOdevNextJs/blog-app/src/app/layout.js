@@ -2,6 +2,7 @@
 import "./globals.css";
 import "../../node_modules/bootstrap/dist/js/bootstrap.bundle";
 import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { Provider } from "react-redux";

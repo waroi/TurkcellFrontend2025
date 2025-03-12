@@ -71,7 +71,7 @@ const Card = ({ card }) => {
                 {card.topic}
               </span>
             </div>
-            <UpdateModal />
+            {/* <UpdateModal /> */}
           </div>
         </div>
       </div>

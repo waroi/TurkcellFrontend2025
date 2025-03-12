@@ -8,6 +8,10 @@ import { setUpdateBlog, resetBlog, addBlog } from "../redux/slices/blogSlice";
 const Modal = () => {
   const blog = useSelector((state) => state.blog.blog);
   const dispatch = useDispatch();
+
+  const handleModalOpen = () => {
+    dispatch(resetBlog());
+  };
   const handleChange = (event) => {
     const { name, value } = event.target;
     dispatch(
@@ -35,6 +39,7 @@ const Modal = () => {
         className="btn btn-outline-success"
         data-bs-toggle="modal"
         data-bs-target="#exampleModal"
+        onClick={handleModalOpen}
       >
         ☄️ Blog Ekle
       </button>

@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 
 const Page = () => {
   const blog = useSelector((state) => state.blog.blog);
+
   return (
     <div className="container">
       <div className="card my-5 position-relative">
