@@ -1,28 +1,28 @@
 "use client";
 
-import { use, useState, useEffect } from "react";
-import { getBlog } from "@/app/database";
 import { useRouter } from "next/navigation";
-import useBlog from "../../blogs";
+
+import { use, useState, useEffect } from "react";
+
+import useBlog from "@/blogs";
+import { getBlog, deleteBlog as deleteBlogFirebase } from "@/firebase";
 
 const Blog = ({ params }) => {
   const router = useRouter();
   const blogState = useBlog();
-
-  const id = use(params).id[0];
+  const id = use(params).id;
   const [blog, setBlog] = useState({});
 
   useEffect(() => {
-    try {
-      getBlog(id).then((response) => setBlog(response));
-    } catch {}
+    getBlog(id).then(setBlog);
   }, []);
 
   function deleteBlog() {
-    if (confirm("Are you sure you want to delete the blog?")) {
-      blogState.deleteBlog(id);
-      router.push("/");
-    }
+    if (confirm("Are you sure you want to delete the blog?"))
+      deleteBlogFirebase(id).then(() => {
+        blogState.deleteBlog(id);
+        router.push("/");
+      });
   }
 
   return (

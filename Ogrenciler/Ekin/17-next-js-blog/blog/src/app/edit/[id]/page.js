@@ -1,28 +1,27 @@
 "use client";
 
-import { use, useState, useEffect, useRef } from "react";
+import { use, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
-import { getBlog } from "@/app/database";
+import { getBlog } from "@/firebase";
 
-import blog from "../../blogs";
+import useBlog from "@/blogs";
+import { editBlog as editBlogFirebase } from "@/firebase";
 
 const Edit = ({ params }) => {
   const router = useRouter();
-
-  const blogState = blog();
-
+  const blogState = useBlog();
   const { id } = use(params);
 
   useEffect(() => {
-    try {
-      getBlog(id).then((response) => {
-        title.current.value = response.title;
-        image.current.value = response.image;
-        description.current.value = response.description;
-        banner.current.value = response.banner;
-        content.current.value = response.content;
-      });
-    } catch {}
+    getBlog(id).then((response) => {
+      title.current.value = response.title;
+      image.current.value = response.image;
+      description.current.value = response.description;
+      banner.current.value = response.banner;
+      content.current.value = response.content
+        .reduce((content, paragraph) => content + "\n\n" + paragraph, "")
+        .substring(2);
+    });
   }, []);
 
   const title = useRef();
@@ -31,16 +30,28 @@ const Edit = ({ params }) => {
   const banner = useRef();
   const content = useRef();
 
-  function editBlog() {
-    blogState.editBlog({
-      id: id[0],
+  function editBlog(blog) {
+    blog = {
+      id: id,
       title: title.current.value,
-      image: image.current.value,
       description: description.current.value,
       banner: banner.current.value,
-      content: content.current.value,
+      content: content.current.value
+        .split("\n\n")
+        .map((paragraph) => paragraph.trim()),
+      date: new Date().getTime(),
+      image: image.current.value
+        ? image.current.value
+        : "https://coffective.com/wp-content/uploads/2018/06/default-featured-image.png.jpg",
+      banner: banner.current.value
+        ? banner.current.value
+        : "https://coffective.com/wp-content/uploads/2018/06/default-featured-image.png.jpg",
+    };
+
+    editBlogFirebase(blog).then(() => {
+      blogState.editBlog(blog);
     });
-    router.push("/");
+    router.push(`/blogs/${id}`);
   }
 
   return (

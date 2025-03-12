@@ -1,23 +1,24 @@
 "use client";
 
-import Navigation from "./components/Navigation";
-import Card from "./components/Card";
-import Footer from "./components/Footer";
-
-import blog from "./blogs";
-
-import "./main.scss";
 import { useEffect } from "react";
 
+import useBlog from "@/blogs";
+import { getBlogs } from "@/firebase";
+
+import Navigation from "@/components/Navigation";
+import Card from "@/components/Card";
+import Footer from "@/components/Footer";
+
 export default function Home() {
-  const blogState = blog();
+  const blogState = useBlog();
 
   useEffect(() => {
-    blogState.getBlogs();
+    getBlogs().then(blogState.setBlogs);
   }, []);
 
   return (
     <>
+      <button onClick={() => {}}>DEBUG LAAAAAAOOO</button>
       <Navigation active="home" />
       <main className="page-body">
         <div className="container py-5">

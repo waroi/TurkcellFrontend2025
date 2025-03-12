@@ -2,10 +2,10 @@
 
 $font-family-base: "Faculty Glyphic";
 $primary: #b298dc;
-$secondary : #f8edeb;
-$warning : #c4f1be;
+$secondary: #f8edeb;
+$warning: #c4f1be;
 
-@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "../node_modules/bootstrap/scss/bootstrap";
 
 main {
   min-height: calc(100vh - 12rem);
@@ -27,6 +27,6 @@ main {
   background-image: url(https://img.freepik.com/free-photo/ultra-detailed-nebula-abstract-wallpaper-4_1562-749.jpg?t=st=1741781731~exp=1741785331~hmac=76f37c45a14689fd95610b79d038d97d6ed0e0e22f87423e761e2db37d7e9a1b&w=2000);
   background-size: contain;
 }
-.blog-body{
-background-color: $secondary;
+.blog-body {
+  background-color: $secondary;
 }
