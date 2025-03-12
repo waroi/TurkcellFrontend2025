@@ -9,7 +9,7 @@ const BlogCard = ({ blog }) => {
   return (
     <>
       {blog && (
-        <div className="col-lg-3 rounded">
+        <div className="col-lg-4 rounded">
           <div className="card p-3 h-100">
             {/* <Image
               src={blog?.poster | "/noImage.png"}
