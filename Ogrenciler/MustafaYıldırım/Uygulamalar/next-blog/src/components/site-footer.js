@@ -54,10 +54,10 @@ const SiteFooter = () => {
             <h5>İletişim</h5>
             <address>
               <p>
-              <i class="bi bi-geo-alt-fill"></i> Türkiye
+                <i className="bi bi-geo-alt-fill"></i> Türkiye
               </p>
               <p>
-              <i class="bi bi-envelope"></i> info@melam.com
+                <i className="bi bi-envelope"></i> info@melam.com
               </p>
               <p>
                 <i className="bi bi-phone "></i> +90 212 123 45 67
@@ -83,7 +83,7 @@ const SiteFooter = () => {
                 className="text-dark text-decoration-none me-3"
                 aria-label="instagram"
               >
-                <i class="bi bi-instagram"></i>
+                <i className="bi bi-instagram"></i>
               </a>
               <a
                 href="#"
