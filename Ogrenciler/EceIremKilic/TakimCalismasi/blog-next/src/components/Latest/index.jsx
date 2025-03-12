@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import data from "../../data/data.json";
+import data from "../../../data/data.json";
 import styles from "./latest.module.css";
 
 const Latest = () => {

@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import data from "../../data/data.json";
+import data from "../../../data/data.json";
 import styles from "./posts.module.css";
 import useBlogStore from "../../store/useBlogStore";
 import Link from "next/link";

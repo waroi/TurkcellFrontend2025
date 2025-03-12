@@ -1,28 +1,52 @@
 import { create } from "zustand";
-import data from "../data/data.json";
+import data from "../../data/data.json";
 
 const useBlogStore = create((set) => ({
-  posts: [...data],
+  posts: [...data.posts],
   id: 17,
-  addPosts: (post) =>
+  getPosts: async () => {
+    const response = await fetch(`http://localhost:3000/posts`);
+    const posts = await response.json();
+    set({ posts });
+  },
+  getPostById: async (id) => {
+    const response = await fetch(`http://localhost:3000/posts/${id}`);
+    return response.json();
+  },
+  addPost: async (newPost) => {
     set((state) => ({
-      posts: [...state.posts, { id: state.id, ...post }],
+      posts: [...state.posts, { id: state.id, ...newPost }],
       id: state.id + 1,
-    })),
-  deletePost: (id) => set((state) => ({ 
-   posts: state.posts.filter((post) => post.id !== id)
-  })),
-  updatePost: (id, blog) => set((state) => ({
-    posts: state.posts.map((post) => post.id === id ? {...post, ...blog} : post)
-  })),
-
+    }));
+    const response = await fetch(`http://localhost:3000/posts`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(newPost),
+    });
+    return response.json();
+  },
+  updatePost: async (id, updatedPost) => {
+    set((state) => ({
+      posts: state.posts.map((post) =>
+        post.id === id ? { ...post, ...updatedPost } : post
+      ),
+    }));
+    const response = await fetch(`http://localhost:3000/posts/${id}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(updatedPost),
+    });
+    return response.json();
+  },
+  deletePost: async (id) => {
+    set((state) => ({
+      posts: state.posts.filter((post) => post.id !== id),
+    }));
+    const response = await fetch(`http://localhost:3000/posts/${id}`, {
+      method: "DELETE",
+    });
+    return response.json();
+  },
 }));
-
-/**
- *! Arkadaşlar methodları yazdım delete ve update işlemleri için kullanabilirsiniz. 
- **Delete klasik mantıkta çalışıyor ID sini verdiğiniz postu siliyor. 
- *?Update ise ID sini verdiğiniz postu güncelliyor. İçerisine blog parametresinin alma sebebi ise güncellenecek postun içerisindeki verileri almak için. 
- *TODO post.id === id ? {...post, ...blog} : post olarak yazmamızın sebebi ise eğer id eşitse postun içerisindeki verileri alıp blog içerisindeki verileri de alıp bir araya getiriyoruz. Eğer id eşit değilse sadece postu döndürüyoruz.
- */
 
 export default useBlogStore;
