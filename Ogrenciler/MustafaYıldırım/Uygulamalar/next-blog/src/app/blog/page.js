@@ -14,8 +14,8 @@ const Blog = () => {
   }, []);
   return (
     <div className="container">
-      <h1 className="text-center">Blogs</h1>
-      <div className="row">
+      <h1 className="text-center">Bloglar</h1>
+      <div className="row mb-3">
         {blogs.map((blog) => (
           <PostCard blog={blog} key={blog.id} />
         ))}

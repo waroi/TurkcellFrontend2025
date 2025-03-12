@@ -38,7 +38,6 @@ const About = () => {
   ];
   return (
     <div className="bg-white">
-      {/* Header */}
       <header className="bg-light py-5">
         <div className="container">
           <div className="row align-items-center">
@@ -56,8 +55,6 @@ const About = () => {
           </div>
         </div>
       </header>
-
-      {/* Our Mission */}
       <section className="py-5">
         <div className="container">
           <div className="row justify-content-center">
@@ -79,8 +76,6 @@ const About = () => {
           </div>
         </div>
       </section>
-
-      {/* Team */}
       <section className="py-5 bg-light">
         <div className="container">
           <h2 className="h2 fw-bold text-center mb-5">Ekibimizle Tanışın</h2>
@@ -123,8 +118,6 @@ const About = () => {
           </div>
         </div>
       </section>
-
-      {/* Our Story */}
       <section className="py-5 ">
         <div className="container">
           <div className="row justify-content-center mb-5">
@@ -157,7 +150,7 @@ const About = () => {
                       placeholder="Enter your email"
                       aria-label="Email"
                     />
-                    <button className="btn btn-light" type="button">
+                    <button className="btn btn-dark" type="button">
                       Abone ol
                     </button>
                   </div>

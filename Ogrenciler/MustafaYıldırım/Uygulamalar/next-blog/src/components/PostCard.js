@@ -11,7 +11,7 @@ const PostCard = ({ blog }) => {
         href={`/blog/${blog.id}`}
         className="text-decoration-none text-dark"
       >
-        <div className="card h-100 border-0 shadow-sm">
+        <div className={`${styles.card} card h-100 border-0 shadow-sm`}>
           <div className="card-img-container">
             <img
               src={imgSrc}
@@ -34,7 +34,7 @@ const PostCard = ({ blog }) => {
               </span>
             </div>
             <h3 className="card-title h5 fw-bold">{blog.title}</h3>
-            <p className="card-text text-muted">{blog.content}</p>
+            <p className="card-text text-muted">{blog.content.split(" ").slice(0, 15).join(" ")}...</p>
             <div className="d-flex align-items-center gap-2 meta-info mt-3">
               <img
                 src={blog.author.photo || "/placeholder.svg"}

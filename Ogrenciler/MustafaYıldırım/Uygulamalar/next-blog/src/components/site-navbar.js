@@ -5,7 +5,7 @@ const SiteNavbar = () => {
   const roters = [
     {
       href: "/",
-      label: "Home",
+      label: "Anasayfa",
     },
     {
       href: "/blog",
@@ -13,19 +13,19 @@ const SiteNavbar = () => {
     },
     {
       href: "/about",
-      label: "About",
+      label: "Hakkımızda",
     },
     {
       href: "/contact",
-      label: "Contact",
+      label: "İletişim",
     },
   ];
 
   return (
-    <header className="sticky-top shadow-sm">
+    <header className="shadow-sm">
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
-        <div className="container-fluid">
-          <a className="navbar-brand fw-bold" href="#">
+        <div className="container">
+          <a className="navbar-brand fw-bold fs-3" href="#">
             M&lt;ela&gt;M
           </a>
           <button
@@ -57,11 +57,11 @@ const SiteNavbar = () => {
               <input
                 className="form-control me-2"
                 type="search"
-                placeholder="Search"
+                placeholder="Ara.."
                 aria-label="Search"
               />
-              <button className="btn btn-outline-success" type="submit">
-                Search
+              <button className="btn btn-outline-dark" type="submit">
+                Ara
               </button>
             </form>
           </div>

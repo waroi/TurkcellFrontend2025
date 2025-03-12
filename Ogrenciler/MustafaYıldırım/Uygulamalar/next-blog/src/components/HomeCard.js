@@ -7,7 +7,7 @@ const HomeCard = ({ blog }) => {
   );
   return (
     <div>
-      <div className="card mb-3">
+      <div className={`${styles.card} mb-3 card`}>
         <Link
           href={`/blog/${blog.id}`}
           className="text-decoration-none text-dark"
