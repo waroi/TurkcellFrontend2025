@@ -1,14 +1,14 @@
 'use client';
-import { useSearch } from '@/searchContext';
+import { useSearch } from '@/context/searchContext';
 import Link from 'next/link';
 const Navbar = () => {
   const { searchQuery, setSearchQuery } = useSearch();
   return (
-    <nav className='navbar navbar-expand-lg bg-body-tertiary'>
+    <nav className='navbar navbar-dark bg-secondary navbar-expand-lg'>
       <div className='container-fluid'>
-        <a className='navbar-brand' href='#'>
+        <Link className='navbar-brand' href='/'>
           TechTalks
-        </a>
+        </Link>
         <button
           className='navbar-toggler'
           type='button'
@@ -22,7 +22,7 @@ const Navbar = () => {
         </button>
         <div className='collapse navbar-collapse' id='navbarSupportedContent'>
           <ul className='navbar-nav me-auto mb-2 mb-lg-0'>
-          <li className='nav-item'>
+            <li className='nav-item'>
               <Link className='nav-link active' href='/'>
                 Anasayfa
               </Link>

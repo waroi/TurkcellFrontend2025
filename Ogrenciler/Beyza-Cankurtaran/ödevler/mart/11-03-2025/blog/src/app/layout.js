@@ -1,4 +1,4 @@
-import { SearchProvider } from '@/searchContext';
+import { SearchProvider } from '@/context/searchContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from '@/component/Navbar';
 import { Geist, Geist_Mono } from 'next/font/google';
