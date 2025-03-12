@@ -7,7 +7,7 @@ const Blog = ({ children }) => {
   return (
     <div>
       <Navigation />
-      <main>{children}</main>
+      <main className="blog-body">{children}</main>
       <Footer />
     </div>
   );

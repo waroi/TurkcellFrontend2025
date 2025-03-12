@@ -19,7 +19,7 @@ export default function Home() {
   return (
     <>
       <Navigation active="home" />
-      <main>
+      <main className="page-body">
         <div className="container py-5">
           {blogState.blogs.map((blog, index) => (
             <Card key={index} blog={blog} />
