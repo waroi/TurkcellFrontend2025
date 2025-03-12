@@ -1,14 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
+  searchTerm: "",
   blogs: [],
-
   blog: {
     title: "",
     author: "",
     body: "",
     image: "",
-    created_at: new Date().getFullYear(),
+    created_at: `${new Date().toJSON().slice(0, 10)}`,
     topic: "",
     id: "",
   },
@@ -18,6 +18,20 @@ export const blogSlice = createSlice({
   name: "blog",
   initialState,
   reducers: {
+    setSearchTermRedux: (state, action) => {
+      state.searchTerm = action.payload;
+    },
+    searchBlogs: (state, action) => {
+      const searchTerm = action.payload.toLowerCase();
+      state.searchTerm = searchTerm;
+      console.log("search", action.payload);
+      console.log("searcht", searchTerm);
+      state.blogs = state.blogs.filter(
+        (blog) =>
+          blog.title.toLowerCase().includes(searchTerm) ||
+          blog.author.toLowerCase().includes(searchTerm)
+      );
+    },
     addBlog: (state, action) => {
       state.blogs = [...state.blogs, action.payload];
       state.blog = {
@@ -26,7 +40,7 @@ export const blogSlice = createSlice({
         author: "",
         body: "",
         image: "",
-        created_at: new Date().getFullYear(),
+        created_at: `${new Date().toJSON().slice(0, 10)}`,
         topic: "",
         id: "",
       };
@@ -34,14 +48,6 @@ export const blogSlice = createSlice({
     deleteBlog: (state, action) => {
       state.blogs = state.blogs.filter((blog) => blog.id !== action.payload);
     },
-
-    getBlog: (state, action) => {
-      const blogIndex = state.blogs.findIndex(
-        (blog) => blog.id === state.blog.id
-      );
-      state.blogs[blogIndex];
-    },
-
     addAllBlog: (state, action) => {
       state.blogs = action.payload;
     },
@@ -56,7 +62,7 @@ export const blogSlice = createSlice({
         author: "",
         body: "",
         image: "",
-        created_at: new Date().getFullYear(),
+        created_at: `${new Date().toJSON().slice(0, 10)}`,
         topic: "",
         id: "",
       };
@@ -74,7 +80,7 @@ export const blogSlice = createSlice({
         author: "",
         body: "",
         image: "",
-        created_at: new Date().getFullYear(),
+        created_at: `${new Date().toJSON().slice(0, 10)}`,
         topic: "",
         id: "",
       };
@@ -90,7 +96,8 @@ export const {
   setBlog,
   setUpdateBlog,
   resetBlog,
-  getBlog,
+  searchBlogs,
+  setSearchTermRedux,
 } = blogSlice.actions;
 
 export default blogSlice.reducer;

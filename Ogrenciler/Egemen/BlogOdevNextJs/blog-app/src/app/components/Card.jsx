@@ -20,6 +20,9 @@ const Card = ({ card }) => {
   const handleUpdate = () => {
     dispatch(setBlog(card));
   };
+  const handleDetail = () => {
+    dispatch(setBlog(card));
+  };
 
   return (
     <>
@@ -35,41 +38,40 @@ const Card = ({ card }) => {
           <div className="col-md-8 d-flex justify-content-between flex-column">
             <div className="card-body">
               <h5 className="card-title">{card.title}</h5>
-              <p className="card-text">{card.body}</p>
-              <p className="card-text">{card.author}</p>
+              <p className="card-text">{card.body.slice(0, 200) + "..."}</p>
+              <p className="card-text">✍️ {card.author}</p>
               <p className="card-text">
-                {" "}
                 <small>{card.created_at}</small>
               </p>
             </div>
             <div className="card-footer p-2 d-flex justify-content-between align-items-center">
               <div className="">
                 <button
-                  className="btn btn-primary me-2"
+                  className="btn btn-primary m-1"
                   onClick={handleUpdate}
                   data-bs-toggle="modal"
                   data-bs-target="#updateBlogModal"
                 >
                   <MdEdit />
                 </button>
-                <button onClick={handleDelete} className="btn btn-danger me-2">
+                <button onClick={handleDelete} className="btn btn-danger m-1">
                   <MdDeleteForever />
                 </button>
 
-                <Link href={`/blog/${card.id}`}>
-                  <button className="btn btn-warning">
+                <Link href={`/blog/${card.id}`} onClick={handleDetail}>
+                  <button className="btn btn-warning m-1">
                     <MdVisibility />
                   </button>
                 </Link>
               </div>
               <span
-                className="badge text-bg-warning  p-2 m-2"
+                className="badge  fs-6 text-black  p-2 m-2"
                 style={{ width: "min-content" }}
               >
                 {card.topic}
               </span>
             </div>
-            <UpdateModal />
+            {/* <UpdateModal /> */}
           </div>
         </div>
       </div>

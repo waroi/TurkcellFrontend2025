@@ -1,1 +1,19 @@
 @import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
+body {
+  background-color: #c1e1c1;
+  position: relative;
+  padding-bottom: 150px;
+  min-height: 100vh;
+}
+
+.navbar,
+footer,
+.card {
+  background-color: #e2ebe28c;
+  transition: all 0.3s ease-in-out;
+}
+.card:hover {
+  box-shadow: 0px 0px 24px 0px rgba(66, 68, 90, 0.699);
+  transform: scale(1.05);
+}

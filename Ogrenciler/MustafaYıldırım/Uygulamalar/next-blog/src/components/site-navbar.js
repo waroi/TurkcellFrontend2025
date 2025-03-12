@@ -1,7 +1,13 @@
+"use client";
+
 import Link from "next/link";
-import "./components.module.css";
+import {useState} from "react";
+import {useRouter} from "next/navigation";
 
 const SiteNavbar = () => {
+  const router = useRouter();
+  const [searchTerm, setSearchTerm] = useState("");
+
   const roters = [
     {
       href: "/",
@@ -20,6 +26,12 @@ const SiteNavbar = () => {
       label: "İletişim",
     },
   ];
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    router.push(`/blog?search=${encodeURIComponent(searchTerm)}`);
+    setSearchTerm("");
+  };
 
   return (
     <header className="shadow-sm">
@@ -53,12 +65,14 @@ const SiteNavbar = () => {
                 </li>
               ))}
             </ul>
-            <form className="d-flex" role="search">
+            <form className="d-flex" role="search" onSubmit={handleSubmit}>
               <input
                 className="form-control me-2"
                 type="search"
                 placeholder="Ara.."
                 aria-label="Search"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
               />
               <button className="btn btn-outline-dark" type="submit">
                 Ara

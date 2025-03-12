@@ -2,15 +2,20 @@
 import "./globals.css";
 import "../../node_modules/bootstrap/dist/js/bootstrap.bundle";
 import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { Provider } from "react-redux";
 import store from "./redux/store/";
-
+import { Roboto } from "next/font/google";
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+});
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
+      <body className={roboto.className}>
         <Provider store={store}>
           <Navbar />
           {children}
