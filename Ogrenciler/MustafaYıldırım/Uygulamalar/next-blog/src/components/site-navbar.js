@@ -22,11 +22,11 @@ const SiteNavbar = () => {
   ];
 
   return (
-    <>
+    <header className="sticky-top shadow-sm">
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
           <a className="navbar-brand fw-bold" href="#">
-            MELAM
+            M&lt;ela&gt;M
           </a>
           <button
             className="navbar-toggler"
@@ -67,7 +67,7 @@ const SiteNavbar = () => {
           </div>
         </div>
       </nav>
-    </>
+    </header>
   );
 };
 

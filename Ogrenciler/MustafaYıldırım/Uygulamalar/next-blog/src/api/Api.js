@@ -13,28 +13,22 @@ export async function getBlogs() {
   }
 }
 
-export async function postBlog(blog) {
+export const blogId = async (id) => {
   try {
-    const response = await fetch(API_URL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        ...blog,
-        id: Date.now().toString(),
-      }),
-    });
-    const data = await response.json();
-    console.log("data:", data);
-    if (response.ok) {
-      return data;
+    const response = await fetch(`http://localhost:3000/blogs/${id}`); // PORT KONTROLÜ
+    if (!response.ok) {
+      throw new Error(
+        `Blog verisi alınamadı. HTTP Hata Kodu: ${response.status}`
+      );
     }
+
+    const data = await response.json();
+    return data;
   } catch (error) {
-    console.log("Request Model Error: ", error);
+    console.error("Çekme isteği başarısız oldu:", error.message);
     return null;
   }
-}
+};
 
 export const deleteBlog = async (id) => {
   try {
