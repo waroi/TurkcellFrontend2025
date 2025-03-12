@@ -2,7 +2,7 @@ export default function Navigation({ active }) {
   return (
     <nav
       className="navbar navbar-expand-lg bg-primary py-3"
-      data-bs-theme="dark"
+      
     >
       <div className="container">
         <a className="navbar-brand" href="/">
