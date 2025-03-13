@@ -35,7 +35,8 @@ const BlogDetails = () => {
 
   const handleAdd = (newPost) => {
     addPost(newPost);
-    router.push("/");
+    //router.push("/");
+    console.log(newPost);
   };
 
   return (

@@ -1,24 +1,17 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import data from "../../../data/data.json";
 import styles from "./latest.module.css";
+import useBlogStore from "@/store/useBlogStore";
 
 const Latest = () => {
-  const [blogs, setBlogs] = useState([]);
+  const { posts, getPosts } = useBlogStore();
   const [isMounted, setIsMounted] = useState(false);
-
   useEffect(() => {
-    handleSetBlogs();
-  }, []);
-  useEffect(() => {
+    getPosts();
     setIsMounted(true);
   }, []);
 
-  const handleSetBlogs = () => {
-    const formattedData = data.posts.slice(5, 9);
-    setBlogs(formattedData);
-    console.log("blogs:", blogs);
-  };
+  const filtredItem = posts.slice(8, 12);
 
   const formatDate = (dateStr) => {
     return new Date(dateStr).toLocaleDateString("tr-TR", {
@@ -35,7 +28,7 @@ const Latest = () => {
     <div className="container" id="latest">
       <h2 className="my-5">Son Yayımlanan Bloglar</h2>
       <div className="row">
-        {blogs?.map((blog, index) => (
+        {filtredItem?.map((blog, index) => (
           <div className="col-lg-3 col-md-4 col-sm-6 col-12" key={index}>
             <div className="card shadow-sm border-0 rounded h-100 rounded-5">
               <img
@@ -73,3 +66,9 @@ const Latest = () => {
 };
 
 export default Latest;
+
+/**
+ * {blogs?.map((blog, index) => (
+         
+        ))}
+ */
