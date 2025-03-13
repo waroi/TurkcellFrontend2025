@@ -1,6 +1,9 @@
 'use client';
 import React, { useState } from 'react';
 import { useAuth } from '../../context/authContext';
+import Link from 'next/link';
+import { redirect } from 'next/navigation';
+
 
 const SignIn = () => {
   const [email, setEmail] = useState('');
@@ -10,6 +13,10 @@ const SignIn = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     loginUser(email, password);
+    setEmail('');
+    setPassword('');
+    redirect('/');
+
   };
 
   return (
@@ -37,9 +44,10 @@ const SignIn = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <button type='submit' className='btn btn-primary'>
-          Giriş Yap
-        </button>
+        <Link href="/">
+          <button type='submit' className='btn btn-primary'>Giriş Yap</button>
+        </Link>
+
       </form>
     </div>
   );
