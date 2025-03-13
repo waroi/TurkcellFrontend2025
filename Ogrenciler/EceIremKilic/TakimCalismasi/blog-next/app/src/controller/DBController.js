@@ -51,8 +51,3 @@ export const checkIsHeAdmin = async () => {
     return null;
   }
 };
-
-export const initializeData = async () => {
-  const q = query(db, "posts");
-  const snapsshots = await getDocs(q);
-};
