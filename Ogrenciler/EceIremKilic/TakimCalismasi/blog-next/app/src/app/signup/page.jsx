@@ -1,10 +1,10 @@
 "use client";
-import {useState} from "react";
+import { useState } from "react";
 import styles from "./signup.module.css";
 import { createWithEmailAndPassword } from "@/controller/AuthController";
-import {useRouter} from "next/navigation"
+import { useRouter } from "next/navigation";
 
-const SignUpPage= () => {
+const SignUpPage = () => {
   const Router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -12,20 +12,20 @@ const SignUpPage= () => {
 
   const handleLoginIn = async (e) => {
     e.preventDefault();
-    const dbUser = await createWithEmailAndPassword(email,password);
+    const dbUser = await createWithEmailAndPassword(email, password);
     if (dbUser !== null) {
       console.log("Giriş Başarılı", dbUser);
       if (typeof window === "undefined") return null;
       Router.push("/");
-    }else{
-      console.log("Giriş Başarısız")
+    } else {
+      console.log("Giriş Başarısız");
     }
   };
   return (
-    <div className="container mt-5">
+    <div className="container-fluid">
       <div className="row">
         <div className="col-md-6 d-flex align-items-center justify-content-center">
-          <div className="sign-in-container">
+          <div className="sign-in-container container">
             <form onSubmit={handleLoginIn}>
               <div className="mb-3">
                 <label htmlFor="signInEmail" className="form-label">
@@ -73,7 +73,7 @@ const SignUpPage= () => {
             </form>
           </div>
         </div>
-        <div className="col-md-6">
+        <div className="col-md-6 container p-0">
           <div className={`${styles.imgContainer} `}></div>
         </div>
       </div>
@@ -81,5 +81,4 @@ const SignUpPage= () => {
   );
 };
 
-export default SignUpPage
-;
+export default SignUpPage;

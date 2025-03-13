@@ -1,18 +1,24 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import data from "../../../data/data.json";
 import styles from "./latest.module.css";
 
 const Latest = () => {
   const [blogs, setBlogs] = useState([]);
   const [isMounted, setIsMounted] = useState(false);
 
+  const getData = async () => {
+    const data = await getData();
+  };
+
   useEffect(() => {
     handleSetBlogs();
+    getData();
   }, []);
   useEffect(() => {
     setIsMounted(true);
   }, []);
+
+  console.log(data);
 
   const handleSetBlogs = () => {
     const formattedData = data.posts.slice(5, 9);
