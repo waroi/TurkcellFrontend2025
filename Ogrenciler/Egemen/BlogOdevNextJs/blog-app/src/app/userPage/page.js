@@ -1,23 +1,22 @@
 "use client";
-import styles from "./page.module.css";
-import { getBlog } from "../../services/Api";
-import { useEffect } from "react";
-import Card from "../app/components/Card";
-import { useDispatch } from "react-redux";
-import { addAllBlog, searchBlogs } from "../app/redux/slices/blogSlice";
-import { useSelector } from "react-redux";
-import UpdateModal from "../app/components/UpdateModal";
-import { getAllBLogs } from "../../firebase/dbController";
+import { useEffect, useState } from "react";
+import { getUserBlogs } from "../../../firebase/dbController";
+import { useDispatch, useSelector } from "react-redux";
+import Card from "../components/Card";
+import UpdateModal from "../components/UpdateModal";
+import { addAllBlog, searchBlogs } from "../redux/slices/blogSlice";
+import { auth } from "../../../firebase/firebase";
 
-export default function Home() {
+const UserPage = () => {
   const blogs = useSelector((state) => state.blog.blogs);
   const searchTerm = useSelector((state) => state.blog.searchTerm);
   const dispatch = useDispatch();
+  const [userAuth, setUserAuth] = useState();
   useEffect(() => {
     if (searchTerm == "") {
       async function fetchBlog() {
         // const data = await getBlog();
-        const data = await getAllBLogs();
+        const data = await getUserBlogs();
         if (data) {
           dispatch(addAllBlog(data));
         }
@@ -26,13 +25,23 @@ export default function Home() {
     } else {
       dispatch(searchBlogs(searchTerm));
     }
-  }, [searchTerm]);
+  }, [searchTerm, userAuth, dispatch]);
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((userAuth) => {
+      if (userAuth) {
+        setUserAuth(userAuth);
+      } else {
+        setUserAuth(null);
+      }
+    });
 
-  return (
-    <div className={styles.page}>
+    return () => unsubscribe();
+  }, []);
+  return userAuth ? (
+    <div>
       <main className="container">
         <h3 className="my-3 text-center text-success fw-semibold">
-          Blog Yazıları
+          Blog Yazılarım
         </h3>
         <div className="row">
           {blogs.length > 0 ? (
@@ -48,5 +57,9 @@ export default function Home() {
         <UpdateModal />
       </main>
     </div>
+  ) : (
+    <p>Yükleniyor</p>
   );
-}
+};
+
+export default UserPage;

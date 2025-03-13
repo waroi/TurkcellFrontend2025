@@ -1,23 +1,29 @@
 'use client'
-import { useState } from "react"
-import { useDispatch } from "react-redux"
-import { addBlog } from "../../redux/slice/blogSlice"
+import { use, useEffect, useState } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { addBlog, setUser } from "../../redux/slice/blogSlice"
 import { useRouter } from "next/navigation"
 import "./AddBlogForm.css"
 import { BlogService } from "@/app/service/BlogService"
+import { useSession } from "next-auth/react"
+import { AuthService } from "@/app/service/AuthService"
 
 const AddBlogForm = () => {
   const dispatch = useDispatch()
+  const { data: session, status } = useSession()
+
+  const userInfo = useSelector(state => state.blog.user)
+
   const router = useRouter()
   const [title, setTitle] = useState("")
   const [content, setContent] = useState("")
-  const [author, setAuthor] = useState("")
+  const [author, setAuthor] = useState(userInfo.username)
   const [poster, setPoster] = useState("")
 
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    if (!title || !content || !author || !poster) {
+    if (!title || !content || !poster) {
       alert("Lütfen tüm alanları doldurun.")
       return;
     }
@@ -40,7 +46,7 @@ const AddBlogForm = () => {
 
       setTitle("")
       setContent("")
-      setAuthor("")
+      setAuthor(userInfo?.username || "Fahri")
       setPoster("")
 
       router.push("/blog")
@@ -78,10 +84,11 @@ const AddBlogForm = () => {
             <label className="form-label">Yazar:</label>
             <input
               type="text"
-              value={author}
+              disabled
+              value={userInfo.username}
               onChange={(e) => setAuthor(e.target.value)}
               placeholder="Blog yazarını girin"
-              className="form-input"
+              className="form-input bg-dark"
             />
           </div>
 
