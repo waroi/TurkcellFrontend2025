@@ -43,11 +43,6 @@ function Page({ params }) {
                 alt={`${blog?.title} Adlı Resim`}
                 loader={() => myLoader(blog?.poster)}
               />
-              {/* <img
-                src={blog?.poster || "/noImage.png"}
-                alt={`${blog?.title} Adlı Resim`}
-                className="rounded card-img-top img-fluid w-100 h-100"
-              /> */}
             </div>
             <div className="col-md-8">
               <div className="card-body d-flex flex-column h-100 ">
