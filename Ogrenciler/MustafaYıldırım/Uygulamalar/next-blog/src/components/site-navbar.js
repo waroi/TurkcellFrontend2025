@@ -1,12 +1,33 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import { signOut } from "firebase/auth";
+import {auth} from '../api/firebaseAuth'
 
 const SiteNavbar = () => {
   const router = useRouter();
   const [searchTerm, setSearchTerm] = useState("");
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((currentUser) => {
+      setUser(currentUser);
+    });
+
+    return () => unsubscribe();
+  }, []);
+
+  const handleLogout = async () => {
+    try {
+      await signOut(auth);
+      router.push("/");
+    } catch (error) {
+      console.error("Çıkış yaparken hata oluştu:", error);
+    }
+  };
+
 
   const roters = [
     {
@@ -78,6 +99,15 @@ const SiteNavbar = () => {
                 Ara
               </button>
             </form>
+            <div className="ms-5 d-flex">
+              {user ?(
+            <button onClick={handleLogout} className="btn btn-dark">
+                Çıkış Yap <i className="bi bi-box-arrow-in-right"></i>
+              </button>):(
+              <Link href="/sign/signIn" className="btn btn-dark">
+                Giriş Yap <i className="bi bi-box-arrow-in-right"></i>
+              </Link>)}
+            </div>
           </div>
         </div>
       </nav>
