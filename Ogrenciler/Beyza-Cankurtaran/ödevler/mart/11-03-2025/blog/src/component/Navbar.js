@@ -1,8 +1,10 @@
 'use client';
+import { useAuth } from '@/context/authContext';
 import { useSearch } from '@/context/searchContext';
 import Link from 'next/link';
 const Navbar = () => {
   const { searchQuery, setSearchQuery } = useSearch();
+  const { isLoggedIn, logOutUser } = useAuth();
   return (
     <nav className='navbar navbar-dark bg-secondary navbar-expand-lg'>
       <div className='container-fluid'>
@@ -38,6 +40,20 @@ const Navbar = () => {
               onChange={(e) => setSearchQuery(e.target.value)}
             />
           </form>
+          <div className='auth-buttons'>
+            {isLoggedIn ? (
+              <div className='logged-in'>
+                <button className='btn' onClick={logOutUser}>
+                  Logout
+                </button>
+              </div>
+            ) : (
+              <div className='not-logged-in'>
+                <button className='btn btn-primary'>Login</button>
+                <button className='btn btn-outline-warning'>Register</button>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </nav>

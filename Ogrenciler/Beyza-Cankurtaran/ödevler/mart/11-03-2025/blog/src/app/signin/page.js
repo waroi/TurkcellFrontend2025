@@ -1,38 +1,45 @@
-"use client";
-import React from "react";
-import { loginUser } from "../../../firebase/auth";
+'use client';
+import React, { useState } from 'react';
+import { useAuth } from '../../context/authContext';
 
 const SignIn = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const { loginUser } = useAuth();
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    loginUser();
+    loginUser(email, password);
   };
 
   return (
     <div>
-      <form className="container" onSubmit={handleSubmit}>
-        <div className="input-group mb-3">
-          <label for="basic-url" className="input-group-text">
+      <form className='container' onSubmit={handleSubmit}>
+        <div className='input-group mb-3'>
+          <label for='basic-url' className='input-group-text'>
             Email
           </label>
           <input
-            type="email"
-            className="form-control"
-            aria-label="Sizing example input"
-            aria-describedby="inputGroup-sizing-default"
+            type='email'
+            className='form-control'
+            aria-label='Sizing example input'
+            aria-describedby='inputGroup-sizing-default'
+            onChange={(e) => setEmail(e.target.value)}
           />
-          <label for="basic-url" className="input-group-text">
+          <label for='basic-url' className='input-group-text'>
             Şifre
           </label>
           <input
-            type="password"
-            className="form-control"
-            aria-label="Sizing example input"
-            aria-describedby="inputGroup-sizing-default"
+            type='password'
+            className='form-control'
+            aria-label='Sizing example input'
+            aria-describedby='inputGroup-sizing-default'
+            onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <button type="submit" className="btn btn-primary"></button>
-        <a href="/">Giriş Yap</a>
+        <button type='submit' className='btn btn-primary'>
+          Giriş Yap
+        </button>
       </form>
     </div>
   );
