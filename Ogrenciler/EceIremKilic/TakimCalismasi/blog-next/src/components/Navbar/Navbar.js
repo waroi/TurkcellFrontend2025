@@ -3,6 +3,7 @@ import styles from "./navbar.module.css";
 import Image from "next/image";
 import mef from "../../assets/logo.png";
 import Link from "next/link";
+import { auth } from "@/firebase_config";
 
 const Navbar = () => {
   return (
@@ -57,6 +58,27 @@ const Navbar = () => {
                 Abone ol
               </a>
             </li>
+            <div className="dropdown">
+              <button
+                className={`${styles.buttonBg} btn  dropdown`}
+                type="button"
+                id="dropdownMenuButton"
+                data-bs-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+              </button>
+              <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <button className="dropdown-item">
+                   {auth.currentUser !== null ? null : <Link href= "/profile" className="text-decoration-none">Profil</Link>}
+                </button>
+                <button className="dropdown-item">
+                  <Link href="/login" className="text-decoration-none">
+                    {auth.currentUser !== null ? "Giriş Yap" : "Çıkış Yap"}
+                  </Link>
+                </button>
+              </div>
+            </div>
           </ul>
         </div>
       </div>
