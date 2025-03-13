@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   blogs: [],
+  user: {}
 };
 
 export const blogSlice = createSlice({
@@ -28,9 +29,13 @@ export const blogSlice = createSlice({
         }
       }
     },
+    setUser: (state, action) => {
+      console.log(action.payload)
+      state.user = action.payload
+    }
   },
 })
 
-export const { setBlogs, addBlog, removeBlog, updateBlog } = blogSlice.actions;
+export const { setBlogs, addBlog, removeBlog, updateBlog, setUser } = blogSlice.actions;
 
 export default blogSlice.reducer;

@@ -3,6 +3,7 @@ import Modal from "./Modal";
 import Link from "next/link";
 import { useDispatch } from "react-redux";
 import { setSearchTermRedux } from "../redux/slices/blogSlice";
+import { registerWithGoogle, signOut } from "../../../firebase/authControl";
 
 const Navbar = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -41,6 +42,12 @@ const Navbar = () => {
             Ara
           </button>
         </form>
+        <Link href={`/userPage`} onClick={registerWithGoogle}>
+          SignIn
+        </Link>
+        <Link href={`/`} onClick={signOut}>
+          SignOut
+        </Link>
         <Modal />
       </div>
     </nav>

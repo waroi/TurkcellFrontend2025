@@ -6,11 +6,15 @@ import { useRouter } from "next/navigation"
 import { updateBlog } from "@/app/redux/slice/blogSlice"
 import "./EditBlogForm.css"
 import { BlogService } from "@/app/service/BlogService"
+import { useSession } from "next-auth/react"
 
 const EditBlogForm = ({ params }) => {
     const dispatch = useDispatch()
     const router = useRouter()
     const blogs = useSelector((state) => state.blog.blogs)
+    const { data: session, status } = useSession()
+
+    const userInfo = useSelector(state => state.blog.user)
 
     const [editBlog, setEditBlog] = useState({
         title: "",
@@ -36,7 +40,7 @@ const EditBlogForm = ({ params }) => {
                 setEditBlog({
                     title: blogToEdit.title,
                     content: blogToEdit.content,
-                    author: blogToEdit.author,
+                    author: userInfo.username,
                     poster: blogToEdit.poster,
                     blogId: id,
                 })
@@ -47,7 +51,7 @@ const EditBlogForm = ({ params }) => {
                     setEditBlog({
                         title: data.title,
                         content: data.content,
-                        author: data.author,
+                        author: userInfo.username,
                         poster: data.poster,
                         blogId: id,
                     })
@@ -130,10 +134,11 @@ const EditBlogForm = ({ params }) => {
                         <input
                             type="text"
                             name="author"
+                            disabled
                             value={editBlog.author}
                             onChange={onChangeHandler}
                             placeholder="Blog yazarını girin"
-                            className="form-input"
+                            className="form-input bg-dark"
                         />
                     </div>
 

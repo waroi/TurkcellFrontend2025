@@ -1,8 +1,20 @@
+import { auth } from "@/firebaseConfig";
+import { signOut } from "firebase/auth";
 import Link from "next/link";
+import { redirect } from "next/navigation";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
+  const logout = async() =>{
+    toast.success("Çıkış Yapılıyor");
+    await signOut(auth);
+    setTimeout (() => {
+      redirect("/auth");
+    }, 2000)
+  }
+
   return (
-    <nav className="navbar navbar-expand-lg bg-white ">
+    <nav className="navbar navbar-expand-lg bg-secondary ">
       <div className="container">
         <Link href="/" className="navbar-brand">
           BlogApp
@@ -34,6 +46,9 @@ const Navbar = () => {
               <Link href="/contact" className="nav-link">
                 İletişim
               </Link>
+            </li>
+            <li className="nav-item">
+              <button onClick={logout} className="nav-link btn btn-danger">Çıkış Yap</button>
             </li>
           </ul>
         </div>
