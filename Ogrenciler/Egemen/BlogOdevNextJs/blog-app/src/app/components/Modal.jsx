@@ -4,10 +4,14 @@ import React, { useEffect } from "react";
 import { postBlog } from "../../../services/Api";
 import { useSelector, useDispatch } from "react-redux";
 import { setUpdateBlog, resetBlog, addBlog } from "../redux/slices/blogSlice";
+import { addedBlog } from "../../../firebase/dbController";
+import { auth } from "../../../firebase/firebase";
+import { MdArrowCircleRight } from "react-icons/md";
 
 const Modal = () => {
   const blog = useSelector((state) => state.blog.blog);
   const dispatch = useDispatch();
+  const user = auth.currentUser;
 
   const handleModalOpen = () => {
     dispatch(resetBlog());
@@ -17,6 +21,7 @@ const Modal = () => {
     dispatch(
       setUpdateBlog({
         [name]: value,
+        ["userId"]: user.uid || "",
       })
     );
   };
@@ -27,6 +32,8 @@ const Modal = () => {
       const blogs = await postBlog(blog);
       dispatch(addBlog(blogs));
       dispatch(resetBlog());
+
+      addedBlog(blog);
       console.log("Blog Eklendi");
     } catch (error) {
       console.log("Blog Eklenmedi");
