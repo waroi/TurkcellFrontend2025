@@ -1,14 +1,22 @@
 import BlogCard from "@/components/BlogCard/BlogCard";
-import blogData from "../components/data.json";
+import Navbar from "@/components/Navbar/Navbar";
 
-export default function Home() {
+export default async function Home() {
+	async function blogData() {
+		return fetch("http://localhost:3000/blogs").then((res) => res.json());
+	}
+	const blogs = await blogData();
+
 	return (
-		<section className="container">
-			<div className="row">
-				{blogData.map((blog) => (
-					<BlogCard key={blog.id} {...blog} />
-				))}
-			</div>
-		</section>
+		<>
+			<Navbar />
+			<section className="container">
+				<div className="row">
+					{blogs.map((blog) => (
+						<BlogCard key={blog.id} {...blog} />
+					))}
+				</div>
+			</section>
+		</>
 	);
 }
