@@ -20,6 +20,8 @@ const BlogDetails = ({ params }) => {
     );
   });
 
+  console.log(posts);
+
   const handleDelete = (id) => {
     deletePost(id);
     router.push("/");
