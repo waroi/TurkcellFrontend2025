@@ -2,31 +2,67 @@
 
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setBlogs } from "../redux/slice/blogSlice";
+import { setBlogs, setUser } from "../redux/slice/blogSlice";
 import Link from "next/link";
 import "./BlogList.css";
+import { signIn, signOut, useSession } from "next-auth/react";
+import { AuthService } from "../service/AuthService";
 
 const BlogList = () => {
+  const { data: session, status } = useSession()
   const dispatch = useDispatch()
   const blogs = useSelector((state) => state.blog.blogs)
 
   useEffect(() => {
     const fetchBlogs = async () => {
       const response = await fetch("http://localhost:5000/blogs")
-      const data = await response.json()
-      dispatch(setBlogs(data))
+      const blogsData = await response.json()
+      dispatch(setBlogs(blogsData))
     };
-
     fetchBlogs()
-  }, [dispatch])
+
+    const fetchUser = async () => {
+      if (status === "authenticated" && session?.user?.email) {
+        try {
+          const user = await AuthService.getUser(session.user.email)
+          console.log("Fetched user:", user)
+          dispatch(setUser(user))
+        } catch (error) {
+          console.error("Kullanıcı alınırken hata:", error)
+        }
+      } else if (status === "unauthenticated") {
+        console.log("Kullanıcı giriş yapmamış, redirect ediliyor...")
+        router.push("/login")
+      }
+    }
+
+    fetchUser()
+
+  }, [dispatch, session, status])
 
   return (
     <div className="blog-list-container">
       <div className="blog-list-header">
         <h1 className="blog-list-title fw-bold fst-italic">PESPEMBE BLOG</h1>
-        <Link href={"/blog/add"} className="add-blog-link">
-          Blog Ekle
-        </Link>
+        {status !== "authenticated" &&
+          <>
+            <Link href={'/login'} className="add-blog-link">
+              Giriş Yap
+            </Link>
+            <Link href={"/register"} className="add-blog-link">
+              Kayıt Ol
+            </Link>
+          </>
+          || <>
+            <Link href={"/blog"} onClick={signOut} className="add-blog-link">
+              Çıkış Yap
+            </Link>
+            <Link href={"/blog/add"} className="add-blog-link">
+              Blog Ekle
+            </Link>
+          </>
+        }
+
       </div>
 
       <div className="blog-grid">
