@@ -6,7 +6,7 @@ const PostCard = ({ blog }) => {
     blog.image || "https://placeholder.pics/svg/400x200"
   );
   return (
-    <div className=" col-lg-4 gap-2 my-2">
+    <div className="gap-2 my-2">
       <Link
         href={`/blog/${blog.id}`}
         className="text-decoration-none text-dark"

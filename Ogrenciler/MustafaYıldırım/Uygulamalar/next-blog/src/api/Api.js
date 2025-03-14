@@ -29,3 +29,35 @@ export const blogId = async (id) => {
     return null;
   }
 };
+
+export async function addBlog(blog) {
+  try {
+    const response = await fetch(API_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(blog),
+    });
+
+    if (!response.ok) {
+      throw new Error("Blog eklenirken hata oluştu.");
+    }
+
+    const newBlog = await response.json(); // API'nin döndürdüğü blog nesnesini al
+    return newBlog; // ID ile birlikte yeni blogu döndür
+  } catch (error) {
+    console.error("Blog ekleme hatası:", error);
+    return null;
+  }
+}
+
+export async function updateBlog(id, blog) {
+  await fetch(`${API_URL}/${id}`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(blog),
+  });
+}
+
+export async function deleteBlog(id) {
+  await fetch(`${API_URL}/${id}`, { method: "DELETE" });
+}

@@ -13,6 +13,7 @@ export default function SignupPage() {
     lastName: "",
     email: "",
     password: "",
+    avatar: "",
     publisher: "",
     agreeTerms: false,
   });
@@ -23,6 +24,7 @@ export default function SignupPage() {
     email: "",
     password: "",
     publisher: "",
+    avatar: "",
     agreeTerms: "",
   });
 
@@ -50,6 +52,9 @@ export default function SignupPage() {
       const user = await doCreateUserWithEmailAndPassword(
         formData.email,
         formData.password,
+        formData.firstName,
+        formData.lastName,
+        formData.avatar,
         formData.publisher
       );
       if (user) {
@@ -63,6 +68,7 @@ export default function SignupPage() {
           email: "",
           password: "",
           publisher: "",
+          avatar: "",
         });
       }
     } catch (error) {
@@ -84,7 +90,8 @@ export default function SignupPage() {
                         Melam'a Hoşgeldin...
                       </h1>
                       <p className="lead">
-                      Geliştiriciler, tasarımcılar ve dijital meraklılardan oluşan topluluğumuza katılın.
+                        Geliştiriciler, tasarımcılar ve dijital meraklılardan
+                        oluşan topluluğumuza katılın.
                       </p>
                     </div>
                     <Image
@@ -101,7 +108,7 @@ export default function SignupPage() {
                     <div className="text-center mb-4">
                       <h2 className="h3 fw-bold">Bir hesap oluşturun</h2>
                       <p className="text-muted">
-                      Özel içeriklere ve özelliklere erişin
+                        Özel içeriklere ve özelliklere erişin
                       </p>
                     </div>
 
@@ -109,7 +116,7 @@ export default function SignupPage() {
                       <div className="alert alert-success mb-4">
                         Hesabınız başarıyla oluşturuldu!{" "}
                         <Link href="/sign/signIn" className="alert-link">
-                        Şimdi giriş yap
+                          Şimdi giriş yap
                         </Link>
                       </div>
                     )}
@@ -198,6 +205,22 @@ export default function SignupPage() {
                             id="publisher"
                             name="publisher"
                             value={formData.publisher}
+                            onChange={handleChange}
+                            required
+                          />
+                        </div>
+                        <div className="col-12">
+                          <label htmlFor="avatar" className="form-label">
+                            Avatar
+                          </label>
+                          <input
+                            type="url"
+                            className={`form-control ${
+                              formErrors.avatar ? "is-invalid" : ""
+                            }`}
+                            id="avatar"
+                            name="avatar"
+                            value={formData.avatar}
                             onChange={handleChange}
                             required
                           />

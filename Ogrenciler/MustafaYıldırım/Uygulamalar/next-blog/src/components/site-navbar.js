@@ -3,8 +3,9 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { signOut } from "firebase/auth";
-import {auth} from '../api/firebaseAuth'
+import { signOut, onAuthStateChanged } from "firebase/auth";
+import { auth, db } from "../api/firebaseAuth";
+import { doc, getDoc } from "firebase/firestore";
 
 const SiteNavbar = () => {
   const router = useRouter();
@@ -12,11 +13,21 @@ const SiteNavbar = () => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((currentUser) => {
-      setUser(currentUser);
+    const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
+      if (!currentUser) {
+        setUser(null);
+        return;
+      }
+
+      const userRef = doc(db, "users", currentUser.uid);
+      const userSnap = await getDoc(userRef);
+
+      if (userSnap.exists()) {
+        setUser(userSnap.data());
+      }
     });
 
-    return () => unsubscribe();
+    return unsubscribe;
   }, []);
 
   const handleLogout = async () => {
@@ -28,24 +39,11 @@ const SiteNavbar = () => {
     }
   };
 
-
   const roters = [
-    {
-      href: "/",
-      label: "Anasayfa",
-    },
-    {
-      href: "/blog",
-      label: "Blog",
-    },
-    {
-      href: "/about",
-      label: "Hakkımızda",
-    },
-    {
-      href: "/contact",
-      label: "İletişim",
-    },
+    { href: "/", label: "Anasayfa" },
+    { href: "/blog", label: "Blog" },
+    { href: "/about", label: "Hakkımızda" },
+    { href: "/contact", label: "İletişim" },
   ];
 
   const handleSubmit = (e) => {
@@ -58,9 +56,9 @@ const SiteNavbar = () => {
     <header className="shadow-sm">
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container">
-          <a className="navbar-brand fw-bold fs-3" href="/">
+          <Link className="navbar-brand fw-bold fs-3" href="/">
             M&lt;ela&gt;M
-          </a>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -76,11 +74,7 @@ const SiteNavbar = () => {
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               {roters.map((route) => (
                 <li className="nav-item" key={route.href}>
-                  <Link
-                    key={route.href}
-                    href={route.href}
-                    className="nav-link active"
-                  >
+                  <Link href={route.href} className="nav-link active">
                     {route.label}
                   </Link>
                 </li>
@@ -100,13 +94,42 @@ const SiteNavbar = () => {
               </button>
             </form>
             <div className="ms-5 d-flex">
-              {user ?(
-            <button onClick={handleLogout} className="btn btn-dark">
-                Çıkış Yap <i className="bi bi-box-arrow-in-right"></i>
-              </button>):(
-              <Link href="/sign/signIn" className="btn btn-dark">
-                Giriş Yap <i className="bi bi-box-arrow-in-right"></i>
-              </Link>)}
+              {user ? (
+                <>
+                  <div className="dropdown">
+                    <button
+                      className="btn btn-dark dropdown-toggle"
+                      type="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Hoşgeldin, {user.publisher}
+                    </button>
+                    <ul className="dropdown-menu">
+                      <li>
+                        <Link
+                          href="/userBlogs"
+                          className="dropdown-item bg-dark w-100 rounded-0 text-white text-center"
+                        >
+                          Bloklarım
+                        </Link>
+                      </li>
+                      <li>
+                        <button
+                          onClick={handleLogout}
+                          className="dropdown-item bg-dark w-100 rounded-0 text-white text-center"
+                        >
+                          Çıkış Yap <i className="bi bi-box-arrow-in-right"></i>
+                        </button>
+                      </li>
+                    </ul>
+                  </div>
+                </>
+              ) : (
+                <Link href="/sign/signIn" className="btn btn-dark">
+                  Giriş Yap <i className="bi bi-box-arrow-in-right"></i>
+                </Link>
+              )}
             </div>
           </div>
         </div>

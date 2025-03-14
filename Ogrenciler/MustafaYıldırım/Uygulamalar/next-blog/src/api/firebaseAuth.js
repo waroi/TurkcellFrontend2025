@@ -15,12 +15,10 @@ const firebaseConfig = {
   storageBucket: "melam-1433d.firebasestorage.app",
   messagingSenderId: "150330077437",
   appId: "1:150330077437:web:a9c58fc98fd698dec7ce94",
-  measurementId: "G-D2ZW09JT6G"
+  measurementId: "G-D2ZW09JT6G",
 };
 
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 export const db = getFirestore(app);
-
 export const auth = getAuth(app);

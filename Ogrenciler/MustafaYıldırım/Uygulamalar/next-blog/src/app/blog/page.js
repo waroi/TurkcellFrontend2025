@@ -1,7 +1,7 @@
 "use client";
-import {useEffect, useState} from "react";
-import {useSearchParams} from "next/navigation";
-import {getBlogs} from "../../api/Api";
+import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
+import { getBlogs } from "../../api/Api";
 import PostCard from "../../components/PostCard";
 
 const Blog = () => {
@@ -26,7 +26,9 @@ const Blog = () => {
       <h1 className="text-center">Bloglar</h1>
       <div className="row mb-3">
         {filteredBlogs.map((blog) => (
-          <PostCard blog={blog} key={blog.id} />
+          <div className="col-md-4">
+            <PostCard blog={blog} key={blog.id} />
+          </div>
         ))}
       </div>
     </div>

@@ -3,11 +3,15 @@ import { auth, db } from "./firebaseAuth";
 import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
-  sendPasswordResetEmail,
-  updatePassword,
 } from "firebase/auth";
 
-const saveUserToFirestore = async (user, publisher) => {
+const saveUserToFirestore = async (
+  user,
+  firstName,
+  lastName,
+  avatar,
+  publisher
+) => {
   if (!user) return;
 
   const userRef = doc(db, "users", user.uid);
@@ -17,6 +21,9 @@ const saveUserToFirestore = async (user, publisher) => {
     const userData = {
       uid: user.uid,
       email: user.email,
+      firstName: firstName || "", // Eğer boşsa boş string ata
+      lastName: lastName || "",
+      avatar: avatar || "",
       publisher: publisher || "Publisher",
       role: "admin",
     };
@@ -28,7 +35,10 @@ const saveUserToFirestore = async (user, publisher) => {
 export const doCreateUserWithEmailAndPassword = async (
   email,
   password,
-  publisher,
+  firstName,
+  lastName,
+  avatar,
+  publisher
 ) => {
   const userCredential = await createUserWithEmailAndPassword(
     auth,
@@ -37,7 +47,7 @@ export const doCreateUserWithEmailAndPassword = async (
   );
   const user = userCredential.user;
 
-  await saveUserToFirestore(user, publisher);
+  await saveUserToFirestore(user, firstName, lastName, avatar, publisher);
   return user;
 };
 
