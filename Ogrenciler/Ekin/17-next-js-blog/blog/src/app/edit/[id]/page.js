@@ -51,7 +51,7 @@ const Edit = ({ params }) => {
     editBlogFirebase(blog).then(() => {
       blogState.editBlog(blog);
     });
-    router.push(`/blogs/${id}`);
+    router.push(`/blog/${id}`);
   }
 
   return (
