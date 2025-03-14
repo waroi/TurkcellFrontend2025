@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const Posts = () => {
   const [isMounted, setIsMounted] = useState(false);
-  const { posts, addPosts } = useBlogStore();
+  const { posts } = useBlogStore();
 
   useEffect(() => {
     setIsMounted(true);
@@ -19,7 +19,7 @@ const Posts = () => {
       year: "numeric",
     });
   };
-
+  console.log("posts", posts);
   if (!isMounted) {
     return null;
   }

@@ -1,5 +1,12 @@
 import { create } from "zustand";
-import { collection, getDocs, query, setDoc, doc } from "firebase/firestore";
+import {
+  collection,
+  getDocs,
+  query,
+  setDoc,
+  doc,
+  getDoc,
+} from "firebase/firestore";
 import { db } from "../firebase_config";
 
 const useBlogStore = create((set) => ({
@@ -8,7 +15,10 @@ const useBlogStore = create((set) => ({
     try {
       const q = query(collection(db, "posts"));
       const snaps = await getDocs(q);
-      const allPosts = snaps.docs.map((post) => post.data());
+      const allPosts = snaps.docs.map((post) => ({
+        id: post.id,
+        ...post.data(),
+      }));
 
       set({ posts: allPosts });
     } catch (error) {
@@ -17,8 +27,25 @@ const useBlogStore = create((set) => ({
   },
 
   getPostById: async (id) => {
-    const response = await fetch(`http://localhost:3000/posts/${id}`);
-    return response.json();
+    try {
+      const postRef = doc(db, "posts", id);
+      const postSnap = await getDoc(postRef);
+
+      if (postSnap.exists()) {
+        const postData = {
+          id: postSnap.id,
+          ...postSnap.data(),
+        };
+        console.log("getPostById:", postData);
+        return postData;
+      } else {
+        console.log("Belirtilen ID'ye sahip gönderi bulunamadı.");
+        return null;
+      }
+    } catch (error) {
+      console.error("getPostById DBController Error:", error);
+      return null;
+    }
   },
   addPost: async (newPost) => {
     try {
@@ -26,16 +53,14 @@ const useBlogStore = create((set) => ({
       await setDoc(newPostRef, {
         title: newPost.title,
         content: newPost.content,
-        author: newPost.author, // 🔥 DÜZELTİLDİ
+        author: newPost.author,
         releaseDate: newPost.releaseDate,
         image: newPost.image,
       });
 
-      // Yeni eklenen postu getir
       const newPostSnap = await getDoc(newPostRef);
       const newPostData = { id: newPostSnap.id, ...newPostSnap.data() };
 
-      // State'i güncelle
       set((state) => ({
         posts: [...state.posts, newPostData],
       }));
