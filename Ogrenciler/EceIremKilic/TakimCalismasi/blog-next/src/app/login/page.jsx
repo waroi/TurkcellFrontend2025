@@ -1,23 +1,24 @@
 "use client";
-import {useState} from "react";
+import { useState } from "react";
 import styles from "./login.module.css";
 import { signWithEmailAndPassword } from "@/controller/AuthController";
-import {useRouter} from "next/navigation"
+import { useRouter } from "next/navigation";
+import useAuthStore from "@/store/useAuthStore";
 
 const LoginPage = () => {
-  const Router = useRouter();
+  const router = useRouter();
+  const { login } = useAuthStore();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleLoginIn = async (e) => {
     e.preventDefault();
-    const dbUser = await signWithEmailAndPassword(email,password);
+    const dbUser = await login(email, password);
     if (dbUser !== null) {
       console.log("Giriş Başarılı", dbUser);
-      if (typeof window === "undefined") return null;
-      Router.push("/");
-    }else{
-      console.log("Giriş Başarısız")
+      router.push("/");
+    } else {
+      console.log("Giriş Başarısız");
     }
   };
   return (

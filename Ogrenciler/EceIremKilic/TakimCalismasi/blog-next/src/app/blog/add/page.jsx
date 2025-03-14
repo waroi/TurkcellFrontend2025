@@ -1,11 +1,26 @@
 "use client";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import useBlogStore from "@/store/useBlogStore";
 import { useRouter } from "next/navigation";
+import { getCurrentUser, getUserData } from "@/controller/AuthController";
 
 const BlogDetails = () => {
   const router = useRouter();
+  const [userData, setUserData] = useState(null);
   const { addPost } = useBlogStore();
+
+  useEffect(() => {
+    const fetchUserData = async () => {
+      const user = getCurrentUser();
+      if (user) {
+        const data = await getUserData(user.uid);
+        setUserData(data);
+      }
+    };
+
+    fetchUserData();
+    console.log(userData);
+  }, []);
 
   const [newPost, setNewPost] = useState({
     title: "",
@@ -81,6 +96,7 @@ const BlogDetails = () => {
                     type="text"
                     className="form-control"
                     id="author"
+                    defaultValue={userData ? userData.fullName : ""}
                     onChange={(e) => handleChange(e)}
                   />
                 </div>

@@ -3,19 +3,21 @@ import { useState } from "react";
 import styles from "./signup.module.css";
 import { createWithEmailAndPassword } from "@/controller/AuthController";
 import { useRouter } from "next/navigation";
+import useAuthStore from "@/store/useAuthStore";
 
 const SignUpPage = () => {
   const Router = useRouter();
+  const { signup } = useAuthStore();
   const [email, setEmail] = useState("");
+  const [fullName, setFullName] = useState("");
   const [password, setPassword] = useState("");
   const [rePassword, setRePassword] = useState("");
 
   const handleLoginIn = async (e) => {
     e.preventDefault();
-    const dbUser = await createWithEmailAndPassword(email, password);
+    const dbUser = await signup(email, password, fullName);
     if (dbUser !== null) {
       console.log("Giriş Başarılı", dbUser);
-      if (typeof window === "undefined") return null;
       Router.push("/");
     } else {
       console.log("Giriş Başarısız");
@@ -44,6 +46,19 @@ const SignUpPage = () => {
                 </div>
               </div>
               <div className="mb-3">
+                <label htmlFor="signInName" className="form-label">
+                  İsim
+                </label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="signInName"
+                  aria-describedby="nameHelp"
+                  value={fullName}
+                  onChange={(e) => setFullName(e.target.value)}
+                />
+              </div>
+              <div className="mb-3">
                 <label htmlFor="signUpPassword" className="form-label">
                   Şifre
                 </label>
@@ -57,7 +72,7 @@ const SignUpPage = () => {
               </div>
               <div className="mb-3">
                 <label htmlFor="signUpRePassword" className="form-label">
-                  Şifre
+                  Şifreyi Tekrar Giriniz
                 </label>
                 <input
                   type="password"

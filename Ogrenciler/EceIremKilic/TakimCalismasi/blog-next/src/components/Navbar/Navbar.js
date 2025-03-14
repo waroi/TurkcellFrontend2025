@@ -6,10 +6,12 @@ import mef from "../../assets/logo.png";
 import Link from "next/link";
 import { auth } from "@/firebase_config";
 import { getProfileImageUrl } from "@/controller/DBController";
+import useAuthStore from "@/store/useAuthStore";
 
 const Navbar = () => {
   const [profileImageUrl, setProfileImageUrl] = useState(null);
   const [currentUser, setCurrentUser] = useState(null);
+  const { user } = useAuthStore();
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
@@ -21,7 +23,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const fetchProfileImage = async () => {
-      if (currentUser) {
+      if (user) {
         const url = await getProfileImageUrl();
         setProfileImageUrl(url);
       } else {
@@ -29,7 +31,7 @@ const Navbar = () => {
       }
     };
     fetchProfileImage();
-  }, [currentUser]);
+  }, [user]);
 
   const buttonStyle = {
     backgroundImage: profileImageUrl ? `url(${profileImageUrl})` : "none",
@@ -57,33 +59,20 @@ const Navbar = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav ms-auto">
+          <ul className="navbar-nav ms-auto d-flex align-items-center">
             <li className="nav-item">
-              <Link href="/" className="text-decoration-none" scroll>
-                <p className="nav-link active " aria-current="page" href="#">
-                  Anasayfa
-                </p>
+              <Link href="/" className="nav-link">
+                Anasayfa
               </Link>
             </li>
             <li className="nav-item">
-              <Link href="#latest" className="text-decoration-none">
-                <p className="nav-link active " aria-current="page" href="#">
-                  Son Yayımlananlar
-                </p>
+              <Link href="#latest" className="nav-link">
+                Son Yayımlananlar
               </Link>
             </li>
             <li className="nav-item">
-              <Link href="/" className="text-decoration-none" scroll>
-                <p className="nav-link active " aria-current="page" href="#">
-                  Tüm Bloglar
-                </p>
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link href="/blog/add" className="text-decoration-none" scroll>
-                <p className="nav-link active " aria-current="page" href="#">
-                  Post Ekle
-                </p>
+              <Link href="/blog/add" className="nav-link">
+                Post Ekle
               </Link>
             </li>
             <li className="nav-item">
@@ -91,36 +80,54 @@ const Navbar = () => {
                 Abone ol
               </a>
             </li>
-            <div className="dropdown">
+            <li className="nav-item dropdown">
               <button
-                className={`${
-                  currentUser !== null ? styles.buttonBg : null
-                } btn  dropdown rounded-circle p-0`}
+                className="btn rounded-circle p-0 d-flex align-items-center justify-content-center"
                 type="button"
                 id="dropdownMenuButton"
                 data-bs-toggle="dropdown"
                 aria-haspopup="true"
                 aria-expanded="false"
-                style={currentUser ? buttonStyle : null}
+                style={
+                  user
+                    ? buttonStyle
+                    : {
+                        width: "50px",
+                        height: "50px",
+                        borderRadius: "50%",
+                        backgroundColor: "#ddd",
+                      }
+                }
               ></button>
               <div
-                className="dropdown-menu"
+                className="dropdown-menu dropdown-menu-end"
                 aria-labelledby="dropdownMenuButton"
               >
-                <button className="dropdown-item">
-                  {currentUser !== null ? (
-                    <Link href="/profile" className="text-decoration-none">
+                {user ? (
+                  <>
+                    <Link
+                      className="dropdown-item text-decoration-none"
+                      href="/profile"
+                    >
                       Profil
                     </Link>
-                  ) : null}
-                </button>
-                <button className="dropdown-item">
-                  <Link href="/login" className="text-decoration-none">
-                    {currentUser !== null ? "Çıkış Yap" : "Giriş Yap"}
+                    <Link
+                      className="dropdown-item text-decoration-none"
+                      href="/login"
+                    >
+                      Çıkış Yap
+                    </Link>
+                  </>
+                ) : (
+                  <Link
+                    className="dropdown-item text-decoration-none"
+                    href="/login"
+                  >
+                    Giriş Yap
                   </Link>
-                </button>
+                )}
               </div>
-            </div>
+            </li>
           </ul>
         </div>
       </div>
