@@ -1,7 +1,11 @@
-import React from "react";
+import { useAuth } from '@/context/authContext';
 
-const signOut = () => {
-  return <div>signOut</div>;
-};
+export default function SignOutButton() {
+  const { logOutUser } = useAuth();
 
-export default signOut;
+  return (
+    <button className='btn btn-danger' onClick={logOutUser}>
+      Logout
+    </button>
+  );
+}
