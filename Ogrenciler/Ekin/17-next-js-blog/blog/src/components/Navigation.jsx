@@ -3,28 +3,37 @@
 import useBlog from "@/blogs";
 import { getUser } from "@/firebase";
 import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter } from 'next/compat/router'
+import Link from "next/link";
 
 export default function Navigation({ active }) {
-  const router = useRouter();
   const blogState = useBlog();
   const [user, setUser] = useState();
+  const router = useRouter();
 
   useEffect(() => {
     if (localStorage.getItem("user") && !blogState.user)
       blogState.setUser(localStorage.getItem("user"));
-  }, []);
+  }, [blogState]);
 
   useEffect(() => {
     if (blogState.user) getUser(blogState.user).then(setUser);
   }, [blogState.user]);
+
+  // useEffect(() => {
+  //   if (typeof window !== 'undefined' && !user && router) {
+  //     router.push("/");
+  //   }
+  // }, [user, router]);
 
   function logout() {
     if (confirm("Are you sure you want to logout?")) {
       setUser(null);
       blogState.setUser(null);
       delete localStorage.user;
-      router.push("/");
+      // if (typeof window !== 'undefined' && router) {
+      //   router.push("/"); 
+      // }
     }
   }
 
@@ -48,49 +57,49 @@ export default function Navigation({ active }) {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a
+              <Link
                 className={`nav-link ${active == "home" ? "active" : ""}`}
                 href="/"
               >
                 Home
-              </a>
+              </Link>
             </li>
 
             {user ? (
               <>
                 <li className="nav-item">
-                  <a
+                  <Link
                     className={`nav-link ${active == "add" ? "active" : ""}`}
                     href="/add"
                   >
                     Add Blog
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#" onClick={logout}>
+                  <Link className="nav-link" href="/" onClick={logout}>
                     Logout
-                  </a>
+                  </Link>
                 </li>
               </>
             ) : (
               <>
                 <li className="nav-item">
-                  <a
+                  <Link
                     className={`nav-link ${
                       active == "register" ? "active" : ""
                     }`}
                     href="/register"
                   >
                     Register
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a
+                  <Link
                     className={`nav-link ${active == "login" ? "active" : ""}`}
                     href="/login"
                   >
                     Login
-                  </a>
+                  </Link>
                 </li>
               </>
             )}
