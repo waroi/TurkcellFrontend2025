@@ -2,19 +2,13 @@
 
 import { useEffect, useState } from "react";
 import BlogCard from "@/components/BlogCard/BlogCard";
+import useBlogStore from "@/store/blogStore";
 
 function HomeContent() {
-    const [blogs, setBlogs] = useState([]);
 
-    const fetchBlogs = async () => {
-        try {
-            const response = await fetch("http://localhost:3000/blogs");
-            const data = await response.json();
-            setBlogs(data);
-        } catch (error) {
-            console.error("Blog verileri alınamadı:", error);
-        }
-    };
+    const blogs = useBlogStore((state) => state.blogs);
+    const fetchBlogs = useBlogStore((state) => state.fetchBlogs);
+
 
     useEffect(() => {
         fetchBlogs();
