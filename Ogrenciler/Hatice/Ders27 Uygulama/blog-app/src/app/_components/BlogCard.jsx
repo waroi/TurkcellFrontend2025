@@ -1,11 +1,9 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
+import { myLoader } from "@/utils/functions";
 
 const BlogCard = ({ blog }) => {
-  const myLoader = (src) => {
-    return src;
-  };
   return (
     <>
       {blog && (
@@ -18,6 +16,7 @@ const BlogCard = ({ blog }) => {
               className="rounded card-img-top img-fluid w-100 h-100"
               alt="Adlı Resim"
               loader={() => myLoader(blog?.poster)}
+              priority
             />
             <div className="card-body bg-transparent">
               <h5 className="card-title fw-bold">{blog.title}</h5>

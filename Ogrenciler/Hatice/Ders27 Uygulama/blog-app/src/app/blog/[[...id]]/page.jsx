@@ -1,15 +1,16 @@
 "use client";
-import { use } from "react";
+import * as React from "react";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { myLoader } from "@/utils/functions";
+
+// export const metadata: Metadata = {
+//   title: 'Gökten düşen blog tanesi',
+// };
 
 function Page({ params }) {
-  const { id } = use(params);
+  const { id } = React.use(params);
   const [blog, setBlog] = useState(null);
-
-  const myLoader = (src) => {
-    return src;
-  };
 
   const fetchBlog = async () => {
     const response = await fetch(`http://localhost:8000/blogs/${id}`);
@@ -42,6 +43,7 @@ function Page({ params }) {
                 className="rounded card-img-top img-fluid w-100 h-100"
                 alt={`${blog?.title} Adlı Resim`}
                 loader={() => myLoader(blog?.poster)}
+                priority
               />
             </div>
             <div className="col-md-8">

@@ -1,17 +1,24 @@
-import { auth } from "@/firebaseConfig";
+"use client";
+import { useRef } from "react";
+import { auth } from "@/utils/firebaseConfig";
 import { signOut } from "firebase/auth";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { toast } from "react-toastify";
+import Button from "./Button";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
-  const logout = async() =>{
+  const buttonRef = useRef(null);
+  const pathname = usePathname();
+
+  const logout = async () => {
     toast.success("Çıkış Yapılıyor");
     await signOut(auth);
-    setTimeout (() => {
-      redirect("/auth");
-    }, 2000)
-  }
+    setTimeout(() => {
+      redirect("/login");
+    }, 2000);
+  };
 
   return (
     <nav className="navbar navbar-expand-lg bg-secondary ">
@@ -47,9 +54,17 @@ const Navbar = () => {
                 İletişim
               </Link>
             </li>
-            <li className="nav-item">
-              <button onClick={logout} className="nav-link btn btn-danger">Çıkış Yap</button>
-            </li>
+            {pathname !== "auth" && (
+              <li className="nav-item">
+                <Button
+                  ref={buttonRef}
+                  onClick={logout}
+                  className="nav-link btn btn-danger"
+                >
+                  Çıkış Yap
+                </Button>
+              </li>
+            )}
           </ul>
         </div>
       </div>
