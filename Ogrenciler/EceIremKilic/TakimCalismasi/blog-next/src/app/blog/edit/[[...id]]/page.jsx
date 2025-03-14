@@ -1,10 +1,11 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,use } from "react";
 import useBlogStore from "@/store/useBlogStore";
 import { useRouter } from "next/navigation";
 
 const BlogDetails = ({ params }) => {
-  const { id } = params; // params.id'yi doğrudan al
+  const unwrappedParams = use(params);
+  const { id } = unwrappedParams;
   const [date, setDate] = useState("");
   const router = useRouter();
   const { posts, getPosts, updatePost } = useBlogStore();
@@ -12,11 +13,9 @@ const BlogDetails = ({ params }) => {
 
   useEffect(() => {
     const loadPost = () => {
-      const currentBlog = posts.find((post) => post.id === id);
+      const currentBlog = posts.find((post) => post.id === id[0]);
       setBlog(currentBlog);
     };
-
-    // posts yüklenmediyse, getPosts fonksiyonunu çağır
     if (posts.length === 0) {
       getPosts();
     } else {
@@ -37,12 +36,24 @@ const BlogDetails = ({ params }) => {
   }, [blog]);
 
   const [editedPost, setEditedPost] = useState({
-    title: blog?.title || "",
-    image: blog?.image || "",
-    author: blog?.author || "",
-    releaseDate: blog?.releaseDate || "",
-    content: blog?.content || "",
+    title: "",
+    image: "",
+    author: "",
+    releaseDate: "",
+    content: "",
   });
+  
+  useEffect(() => {
+    if (blog) {
+      setEditedPost({
+        title: blog.title || "",
+        image: blog.image || "",
+        author: blog.author || "",
+        releaseDate: blog.releaseDate || "",
+        content: blog.content || "",
+      });
+    }
+  }, [blog]);
 
   const handleChange = (e) => {
     e.preventDefault();

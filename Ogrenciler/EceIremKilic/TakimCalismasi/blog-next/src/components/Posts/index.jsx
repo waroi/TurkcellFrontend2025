@@ -6,11 +6,15 @@ import Link from "next/link";
 
 const Posts = () => {
   const [isMounted, setIsMounted] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const { posts } = useBlogStore();
 
   useEffect(() => {
     setIsMounted(true);
-  }, []);
+    if (posts && posts.length > 0) {
+      setIsLoading(false);
+    }
+  }, [posts]);
 
   const formatDate = (dateStr) => {
     return new Date(dateStr).toLocaleDateString("tr-TR", {
@@ -19,10 +23,26 @@ const Posts = () => {
       year: "numeric",
     });
   };
+
   console.log("posts", posts);
+
   if (!isMounted) {
     return null;
   }
+
+  if (isLoading) {
+    return (
+      <div className="container py-5" id="posts">
+        <h2 className="my-5">Bloglar Yükleniyor...</h2>
+        <div className="d-flex justify-content-center">
+          <div className="spinner-border" role="status">
+            <span className="visually-hidden">Yükleniyor...</span>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="container py-5" id="posts">
       <h2 className="my-5">Tüm Bloglar</h2>

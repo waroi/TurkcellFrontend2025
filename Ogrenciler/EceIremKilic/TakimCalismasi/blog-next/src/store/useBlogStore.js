@@ -6,6 +6,8 @@ import {
   setDoc,
   doc,
   getDoc,
+  updateDoc,
+  deleteDoc,
 } from "firebase/firestore";
 import { db } from "../firebase_config";
 
@@ -19,34 +21,32 @@ const useBlogStore = create((set) => ({
         id: post.id,
         ...post.data(),
       }));
-
       set({ posts: allPosts });
     } catch (error) {
-      console.log("fetchAllPosts DBController Error", error);
+      console.error("fetchAllPosts DBController Error", error);
     }
   },
 
   getPostById: async (id) => {
     try {
-      const postRef = doc(db, "posts", id);
-      const postSnap = await getDoc(postRef);
+        const postRef = doc(db, "posts", id);
+        const postSnap = await getDoc(postRef);
 
-      if (postSnap.exists()) {
-        const postData = {
-          id: postSnap.id,
-          ...postSnap.data(),
-        };
-        console.log("getPostById:", postData);
-        return postData;
-      } else {
-        console.log("Belirtilen ID'ye sahip gönderi bulunamadı.");
-        return null;
-      }
+        if (postSnap.exists()) {
+            const postData = {
+                id: postSnap.id,
+                ...postSnap.data(),
+            };
+            return postData;
+        } else {
+            console.log("Belirtilen ID'ye sahip gönderi bulunamadı.");
+            return null;
+        }
     } catch (error) {
-      console.error("getPostById DBController Error:", error);
-      return null;
+        console.error("getPostById DBController Error:", error);
+        return null;
     }
-  },
+},
   addPost: async (newPost) => {
     try {
       const newPostRef = doc(db, "posts", self.crypto.randomUUID());
@@ -57,41 +57,46 @@ const useBlogStore = create((set) => ({
         releaseDate: newPost.releaseDate,
         image: newPost.image,
       });
-
       const newPostSnap = await getDoc(newPostRef);
       const newPostData = { id: newPostSnap.id, ...newPostSnap.data() };
-
       set((state) => ({
         posts: [...state.posts, newPostData],
       }));
-
       console.log("Yeni post eklendi:", newPostData);
     } catch (error) {
-      console.log("addPost DBController Error", error);
+      console.error("addPost DBController Error", error);
     }
   },
 
   updatePost: async (id, updatedPost) => {
-    set((state) => ({
-      posts: state.posts.map((post) =>
-        post.id === id ? { ...post, ...updatedPost } : post
-      ),
-    }));
-    const response = await fetch(`http://localhost:3000/posts/${id}`, {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(updatedPost),
-    });
-    return response.json();
+    try {
+      const postRef = doc(db, "posts", id);
+      await updateDoc(postRef, updatedPost);
+
+      set((state) => ({
+        posts: state.posts.map((post) =>
+          post.id === id ? { ...post, ...updatedPost } : post
+        ),
+      }));
+      console.log("Post güncellendi:", updatedPost);
+    } catch (error) {
+      console.error("updatePost DBController Error", error);
+    }
   },
+
   deletePost: async (id) => {
-    set((state) => ({
-      posts: state.posts.filter((post) => post.id !== id),
-    }));
-    const response = await fetch(`http://localhost:3000/posts/${id}`, {
-      method: "DELETE",
-    });
-    return response.json();
+    try {
+      const postRef = doc(db, "posts", id);
+      await deleteDoc(postRef);
+
+      set((state) => ({
+        posts: state.posts.filter((post) => post.id !== id),
+      }));
+
+      console.log("Post silindi:", id);
+    } catch (error) {
+      console.error("deletePost DBController Error", error);
+    }
   },
 }));
 
