@@ -1,49 +1,30 @@
 "use client";
 
+import useBlogStore from "@/store/blogStore";
 import { redirect } from "next/navigation";
 import { useEffect, useState } from "react";
 
 function BlogActions({ id }) {
-	const [blogData, setBlogData] = useState(null);
+	//! Implement the updateBlog function
+	function updateBlog() {}
+
 	const [title, setTitle] = useState("");
 	const [description, setDescription] = useState("");
 	const [imageUrl, setImageUrl] = useState("");
 	const [releaseDate, setReleaseDate] = useState("");
 
-	//! async function olan fetchBlog fonksiyonunu useEffect dışına al ve useEFfect içinde çağır
-	//! anasayfadaki veri getirme olayı useEffect ile farklı bir componentte denenecek ve state değiştiğinde yani useEffect dependency array değiştiğinde çalışacak
+	const { blogs, fetchBlogs, deleteBlog: deleteBlogInStore } = useBlogStore();
+
 	useEffect(() => {
-		fetchBlog();
-	}, [id]);
+		fetchBlogs();
+	}, [id, fetchBlogs]);
 
-	const fetchBlog = async () => {
-		try {
-			const response = await fetch(`http://localhost:3000/blogs/${id}`);
-
-			if (!response.ok) {
-				throw new Error("Blog verisi alınamadı");
-			}
-
-			const data = await response.json();
-			setBlogData(data);
-
-			setTitle(data.title || "");
-			setDescription(data.description || "");
-			setImageUrl(data.imageUrl || "");
-			setReleaseDate(data.releaseDate || "");
-		} catch (error) {
-			console.error("Blog yüklenirken hata:", error);
-		}
-	};
-
-	function deleteBlog() {
-		fetch(`http://localhost:3000/blogs/${id}`, {
-			method: "DELETE",
-		}).then(() => {
+	async function handleDeleteBlog() {
+		const success = await deleteBlogInStore(id);
+		if (success) {
 			redirect("/");
-		});
+		}
 	}
-	function updateBlog() { }
 
 	return (
 		<div className="d-flex justify-content-center gap-3">
@@ -53,7 +34,7 @@ function BlogActions({ id }) {
 				data-bs-target="#updateBlog">
 				Düzenle
 			</button>
-			<button onClick={deleteBlog} className="btn btn-danger mt-5">
+			<button onClick={handleDeleteBlog} className="btn btn-danger mt-5">
 				Sil
 			</button>
 			<div
@@ -85,6 +66,7 @@ function BlogActions({ id }) {
 										className="form-control"
 										id="title"
 										value={title}
+										onChange={(e) => setTitle(e.target.value)}
 									/>
 								</div>
 								<div className="mb-3">
@@ -94,7 +76,8 @@ function BlogActions({ id }) {
 									<textarea
 										className="form-control"
 										id="description"
-										value={description}></textarea>
+										value={description}
+										onChange={(e) => setDescription(e.target.value)}></textarea>
 								</div>
 								<div className="mb-3">
 									<label htmlFor="imageUrl" className="col-form-label">
@@ -105,6 +88,7 @@ function BlogActions({ id }) {
 										className="form-control"
 										id="imageUrl"
 										value={imageUrl}
+										onChange={(e) => setImageUrl(e.target.value)}
 									/>
 								</div>
 								<div className="mb-3">
@@ -116,6 +100,7 @@ function BlogActions({ id }) {
 										className="form-control"
 										id="releaseDate"
 										value={releaseDate}
+										onChange={(e) => setReleaseDate(e.target.value)}
 									/>
 								</div>
 							</form>
@@ -130,7 +115,8 @@ function BlogActions({ id }) {
 							<button
 								type="button"
 								className="btn btn-primary"
-								onClick={updateBlog}>
+								onClick={updateBlog}
+								data-bs-dismiss="modal">
 								Update Blog Post
 							</button>
 						</div>

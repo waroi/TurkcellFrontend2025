@@ -17,7 +17,6 @@ function UserComponent() {
 
 	const client = createClient();
 
-
 	async function getUser() {
 		const userSession = await client.auth.getUser();
 
@@ -42,11 +41,8 @@ function UserComponent() {
 			imageUrl,
 			releaseDate,
 		};
-
 		const success = await createBlog(blogData);
-
 		if (success) {
-			// Form alanlarını temizle
 			setTitle("");
 			setDescription("");
 			setImageUrl("");
