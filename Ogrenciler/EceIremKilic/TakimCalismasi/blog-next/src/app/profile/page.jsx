@@ -17,7 +17,6 @@ const ProfilePage = () => {
   
     const handleUpload = async () => {
       if (!image) return;
-      
       setUploading(true);
       try {
         const imageUrl = await uploadProfileImage(image);

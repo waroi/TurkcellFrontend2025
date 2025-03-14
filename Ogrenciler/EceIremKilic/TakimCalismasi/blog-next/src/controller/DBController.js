@@ -51,3 +51,22 @@ export const checkIsHeAdmin = async () => {
     return null;
   }
 };
+
+export const getProfileImageUrl = async () => {
+  try {
+      const currentUser = auth.currentUser.uid;
+      const docRef = doc(db, "users", currentUser);
+      const docSnap = await getDoc(docRef);
+
+      if (docSnap.exists()) {
+          const userData = docSnap.data();
+          return userData.profileUrl;
+      } else {
+          console.log("Kullanıcı dökümanı bulunamadı.");
+          return null;
+      }
+  } catch (error) {
+      console.error("getProfileImageUrl Error: ", error);
+      return null;
+  }
+};

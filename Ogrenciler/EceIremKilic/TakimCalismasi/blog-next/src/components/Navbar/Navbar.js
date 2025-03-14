@@ -1,11 +1,31 @@
-import React from "react";
+"use client";
+import {useState,useEffect} from "react";
 import styles from "./navbar.module.css";
 import Image from "next/image";
 import mef from "../../assets/logo.png";
 import Link from "next/link";
 import { auth } from "@/firebase_config";
+import { getProfileImageUrl } from "@/controller/DBController";
 
 const Navbar = () => {
+  const [profileImageUrl, setProfileImageUrl] = useState(null);
+
+  useEffect(() => {
+    const fetchProfileImage = async () => {
+        const url = await getProfileImageUrl();
+        setProfileImageUrl(url);
+    };
+    fetchProfileImage();
+}, []);
+
+const buttonStyle = {
+  backgroundImage: profileImageUrl ? `url(${profileImageUrl})` : 'none',
+  backgroundSize: 'cover',
+  backgroundPosition: 'center', 
+  width: '50px',
+  height: '50px',
+  borderRadius: '50%',
+};
   return (
     <nav className={`navbar navbar-expand-lg py-2 ${styles.bgColor}`}>
       <div className="container d-flex justify-content-between">
@@ -57,24 +77,25 @@ const Navbar = () => {
               <a className="nav-link" href="#subscribe">
                 Abone ol
               </a>
-            </li>
-            <div className="dropdown">
+            </li>         
+              <div className="dropdown">
               <button
-                className={`${styles.buttonBg} btn  dropdown`}
+                className={`${auth.currentUser !== null ? styles.buttonBg  : null} btn  dropdown`}
                 type="button"
                 id="dropdownMenuButton"
                 data-bs-toggle="dropdown"
                 aria-haspopup="true"
                 aria-expanded="false"
+                style={auth.currentUser ? buttonStyle : null}
               >
               </button>
               <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <button className="dropdown-item">
-                   {auth.currentUser !== null ? null : <Link href= "/profile" className="text-decoration-none">Profil</Link>}
+                   {auth.currentUser !== null ? <Link href= "/profile" className="text-decoration-none">Profil</Link>  :null }
                 </button>
                 <button className="dropdown-item">
                   <Link href="/login" className="text-decoration-none">
-                    {auth.currentUser !== null ? "Giriş Yap" : "Çıkış Yap"}
+                    {auth.currentUser !== null ? "Çıkış Yap"  :  "Giriş Yap"}
                   </Link>
                 </button>
               </div>
