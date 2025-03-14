@@ -49,10 +49,10 @@ const Navbar = () => {
             ) : (
               <>
                 <Link href='/signin'>
-                  <button className='btn btn-primary me-2'>Login</button>
+                  <button className='btn btn-primary me-2'>Giriş Yap</button>
                 </Link>
                 <Link href='/signup'>
-                  <button className='btn btn-primary'>Register</button>
+                  <button className='btn btn-primary'>Kayıt Ol</button>
                 </Link>
               </>
             )}
