@@ -23,7 +23,6 @@ const useBlogStore = create((set) => ({
 				},
 				body: JSON.stringify(blogData),
 			});
-
 			if (response.ok) {
 				const newBlog = await response.json();
 				set((state) => ({
