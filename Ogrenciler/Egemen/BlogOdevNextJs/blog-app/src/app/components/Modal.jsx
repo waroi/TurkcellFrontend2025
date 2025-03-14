@@ -55,7 +55,7 @@ const Modal = () => {
     <>
       <button
         type="button"
-        className="btn btn-outline-success"
+        className="btn btn-outline-success rounded-pill"
         data-bs-toggle="modal"
         data-bs-target="#exampleModal"
         onClick={handleModalOpen}

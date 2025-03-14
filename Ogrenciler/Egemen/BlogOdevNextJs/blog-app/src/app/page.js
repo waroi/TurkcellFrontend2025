@@ -48,7 +48,10 @@ export default function Home() {
         <h3 className="my-3 text-center text-dark fw-semibold">
           Blog Yazıları
         </h3>
-        <div id="carouselExampleIndicators" className="carousel slide">
+        <div
+          id="carouselExampleIndicators"
+          className="carousel carousel-dark slide"
+        >
           <div className="carousel-indicators">
             <button
               type="button"
@@ -80,7 +83,7 @@ export default function Home() {
                 className="d-block w-75 img-fluid mx-auto"
                 alt="..."
               />
-              <div className="carousel-caption d-none d-md-block ">
+              <div className="carousel-caption d-none d-md-block  bg-dark text-light bg-opacity-75 rounded p-3 my-3">
                 <h5>İnsan Odaklı Yaşam Alanları</h5>
                 <p>
                   Daha az beton, daha çok doğa… Geleceğin şehirleri dev
@@ -97,7 +100,7 @@ export default function Home() {
                 className="d-block w-75 img-fluid mx-auto"
                 alt="..."
               />
-              <div className="carousel-caption d-none d-md-block">
+              <div className="carousel-caption d-none d-md-block bg-dark text-light bg-opacity-75 rounded p-3 my-3">
                 <h5>İnsan ve Makinenin Dansı</h5>
                 <p>
                   Her hareketimiz bir algoritma tarafından analiz ediliyor, her
@@ -113,7 +116,7 @@ export default function Home() {
                 className="d-block w-75 img-fluid mx-auto"
                 alt="..."
               />
-              <div className="carousel-caption d-none d-md-block">
+              <div className="carousel-caption d-none d-md-block bg-dark text-light bg-opacity-75 rounded p-3 my-3">
                 <h5>Geleceğin şehirleri gökyüzüne uzanıyor.</h5>
                 <p>
                   Yolların yerini havada süzülen araçlar alırken, gökdelenler
