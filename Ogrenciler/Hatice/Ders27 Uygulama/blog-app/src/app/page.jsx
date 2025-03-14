@@ -24,11 +24,17 @@ const Home = () => {
     return () => unsubscribe();
   }, [auth, router]);
 
-  useEffect(() => {
+  const fetchBlogs = () => {
     apiFetch(`/blogs`)
       .then((res) => res.json())
       .then((data) => setBlogs(data));
+  };
+  useEffect(() => {
+    fetchBlogs();
   }, []);
+  const getBlogs = () => {
+    fetchBlogs();
+  };
 
   const filteredBlogs = filterStrings(blogs, "title", searchQuery);
 
@@ -42,7 +48,7 @@ const Home = () => {
           className="form-control mb-4"
           onChange={(e) => setSearchQuery(e.target.value)}
         />
-        <BlogList blogs={filteredBlogs} />
+        <BlogList blogs={filteredBlogs} getBlogs={getBlogs} />
       </div>
     </>
   );
