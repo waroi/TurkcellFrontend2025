@@ -27,6 +27,7 @@ const UserPage = () => {
     }
   }, [searchTerm, userAuth, dispatch]);
   useEffect(() => {
+    dispatch(addAllBlog([]));
     const unsubscribe = auth.onAuthStateChanged((userAuth) => {
       if (userAuth) {
         setUserAuth(userAuth);
@@ -47,7 +48,7 @@ const UserPage = () => {
           {blogs.length > 0 ? (
             blogs?.map((blog) => (
               <div key={blog?.id} className="col-12">
-                <Card key={blog?.id + "card"} card={blog} />
+                <Card userAuth={userAuth} key={blog?.id + "card"} card={blog} />
               </div>
             ))
           ) : (
