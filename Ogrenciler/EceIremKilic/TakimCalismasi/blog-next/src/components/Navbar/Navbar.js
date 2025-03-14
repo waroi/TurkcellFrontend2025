@@ -11,7 +11,7 @@ import useAuthStore from "@/store/useAuthStore";
 const Navbar = () => {
   const [profileImageUrl, setProfileImageUrl] = useState(null);
   const [currentUser, setCurrentUser] = useState(null);
-  const { user } = useAuthStore();
+  const { user, signout } = useAuthStore();
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
@@ -107,13 +107,8 @@ const Navbar = () => {
                   <>
                     <Link
                       className="dropdown-item text-decoration-none"
-                      href="/profile"
-                    >
-                      Profil
-                    </Link>
-                    <Link
-                      className="dropdown-item text-decoration-none"
-                      href="/login"
+                      onClick={() => signout()}
+                      href="/"
                     >
                       Çıkış Yap
                     </Link>

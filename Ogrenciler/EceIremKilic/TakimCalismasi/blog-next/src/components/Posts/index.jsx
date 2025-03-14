@@ -45,7 +45,7 @@ const Posts = () => {
 
   return (
     <div className="container py-5" id="posts">
-      <h2 className="my-5">Tüm Bloglar</h2>
+      <h2 className="mb-5">Tüm Postlar</h2>
       <div className="row">
         {posts?.map((blog, index) => (
           <div
@@ -63,7 +63,7 @@ const Posts = () => {
                   alt="..."
                 />
                 <div className="card-body ">
-                  <div className="card-info d-flex justify-content-between mb-2">
+                  <div className="card-info d-flex flex-column flex-xl-row justify-content-between mb-2">
                     <h6
                       className={`card-author badge ${styles.bgGreen} text-dark  rounded-pill px-3 py-1`}
                     >

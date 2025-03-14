@@ -1,4 +1,5 @@
 import Link from "next/link";
+import UserComponent from "./UserComponent";
 
 function Navbar() {
 	return (
@@ -24,6 +25,7 @@ function Navbar() {
 								Home
 							</Link>
 						</li>
+						<UserComponent />
 					</ul>
 				</div>
 			</div>

@@ -25,19 +25,24 @@ const BlogDetails = () => {
   const [newPost, setNewPost] = useState({
     title: "",
     image: "",
-    author: "",
+    author: userData ? userData.fullName : "",
     releaseDate: "",
     content: "",
   });
-  const handleChange = useCallback((e) => {
-    setNewPost((prevPost) => ({
-      ...prevPost,
-      [e.target.id]: e.target.value,
-    }));
-  }, []);
+  const handleChange = useCallback(
+    (e) => {
+      setNewPost((prevPost) => ({
+        ...prevPost,
+        author: userData.fullName,
+        [e.target.id]: e.target.value,
+      }));
+    },
+    [userData]
+  );
 
   const handleAdd = useCallback((newPost) => {
     addPost(newPost);
+    console.log("added", newPost);
     router.push("/");
   });
 
