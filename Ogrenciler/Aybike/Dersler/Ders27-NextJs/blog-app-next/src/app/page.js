@@ -6,9 +6,9 @@ import { useEffect, useState } from 'react'
 import { useSession } from 'next-auth/react'
 
 export default function Home () {
-  const { data: session } = useSession();
+  const { data: session } = useSession()
   const [blogs, setBlogs] = useState([])
-console.log(session?.user)
+  console.log(session?.user)
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
@@ -24,9 +24,12 @@ console.log(session?.user)
 
   return (
     <div className={styles.page}>
-      <main className={styles.main}>
-        <section className='blog-list'>
-          <h1>Hoş Geldiniz!{session?.user.email}</h1>
+      <section className='blog-list'>
+        <div className='container mt-5'>
+          <div className='d-flex align-items-center gap-2 fs-3 mb-3 px-3'>
+            <span>Hoş Geldiniz!</span>
+            <span>{session?.user.email}</span>
+          </div>
           <div className='row'>
             {blogs &&
               blogs.map(blog => (
@@ -35,8 +38,8 @@ console.log(session?.user)
                 </div>
               ))}
           </div>
-        </section>
-      </main>
+        </div>
+      </section>
     </div>
   )
 }

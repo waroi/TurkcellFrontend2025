@@ -1,5 +1,6 @@
 "use client";
 
+import useBlogStore from "@/store/blogStore";
 import { createClient } from "@/utils/supabase/client";
 
 import Link from "next/link";
@@ -16,6 +17,7 @@ function UserComponent() {
 
 	const client = createClient();
 
+
 	async function getUser() {
 		const userSession = await client.auth.getUser();
 
@@ -31,22 +33,26 @@ function UserComponent() {
 		setUser(undefined);
 	};
 
-	function createBlog() {
-		fetch("http://localhost:3000/blogs", {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify({
-				title,
-				description,
-				imageUrl,
-				releaseDate,
-			}),
-		}).then(() => {
-			window.location.reload();
-		});
-	}
+	const createBlog = useBlogStore((state) => state.createBlog);
+
+	const handleCreateBlog = async () => {
+		const blogData = {
+			title,
+			description,
+			imageUrl,
+			releaseDate,
+		};
+
+		const success = await createBlog(blogData);
+
+		if (success) {
+			// Form alanlarını temizle
+			setTitle("");
+			setDescription("");
+			setImageUrl("");
+			setReleaseDate("");
+		}
+	};
 
 	return (
 		<>
@@ -153,8 +159,8 @@ function UserComponent() {
 								type="button"
 								className="btn btn-primary"
 								data-bs-dismiss="modal"
-								onClick={createBlog}
-								onKeyDown={(e) => e.key === "Enter" && createBlog()}>
+								onClick={handleCreateBlog}
+								onKeyDown={(e) => e.key === "Enter" && handleCreateBlog()}>
 								Create Blog Post
 							</button>
 						</div>
