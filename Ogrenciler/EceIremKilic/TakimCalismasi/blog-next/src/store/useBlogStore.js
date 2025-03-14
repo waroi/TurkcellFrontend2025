@@ -29,24 +29,24 @@ const useBlogStore = create((set) => ({
 
   getPostById: async (id) => {
     try {
-        const postRef = doc(db, "posts", id);
-        const postSnap = await getDoc(postRef);
+      const postRef = doc(db, "posts", id);
+      const postSnap = await getDoc(postRef);
 
-        if (postSnap.exists()) {
-            const postData = {
-                id: postSnap.id,
-                ...postSnap.data(),
-            };
-            return postData;
-        } else {
-            console.log("Belirtilen ID'ye sahip gönderi bulunamadı.");
-            return null;
-        }
-    } catch (error) {
-        console.error("getPostById DBController Error:", error);
+      if (postSnap.exists()) {
+        const postData = {
+          id: postSnap.id,
+          ...postSnap.data(),
+        };
+        return postData;
+      } else {
+        console.log("Belirtilen ID'ye sahip gönderi bulunamadı.");
         return null;
+      }
+    } catch (error) {
+      console.error("getPostById DBController Error:", error);
+      return null;
     }
-},
+  },
   addPost: async (newPost) => {
     try {
       const newPostRef = doc(db, "posts", self.crypto.randomUUID());
@@ -57,11 +57,17 @@ const useBlogStore = create((set) => ({
         releaseDate: newPost.releaseDate,
         image: newPost.image,
       });
+
       const newPostSnap = await getDoc(newPostRef);
       const newPostData = { id: newPostSnap.id, ...newPostSnap.data() };
-      set((state) => ({
-        posts: [...state.posts, newPostData],
-      }));
+
+      set((state) => {
+        const alreadyExists = state.posts.some(
+          (post) => post.id === newPostData.id
+        );
+        return alreadyExists ? state : { posts: [...state.posts, newPostData] };
+      });
+
       console.log("Yeni post eklendi:", newPostData);
     } catch (error) {
       console.error("addPost DBController Error", error);

@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState,use } from "react";
+import React, { useEffect, useState, use } from "react";
 import useBlogStore from "@/store/useBlogStore";
 import { useRouter } from "next/navigation";
 
@@ -42,7 +42,7 @@ const BlogDetails = ({ params }) => {
     releaseDate: "",
     content: "",
   });
-  
+
   useEffect(() => {
     if (blog) {
       setEditedPost({
@@ -89,7 +89,7 @@ const BlogDetails = ({ params }) => {
                   <input
                     type="text"
                     className="form-control"
-                    id="img"
+                    id="image"
                     value={editedPost.image}
                     onChange={handleChange}
                   />
@@ -137,7 +137,7 @@ const BlogDetails = ({ params }) => {
                   <input
                     type="date"
                     className="form-control"
-                    id="release-date"
+                    id="releaseDate"
                     value={editedPost.releaseDate}
                     onChange={handleChange}
                   />
@@ -151,15 +151,25 @@ const BlogDetails = ({ params }) => {
           <div className="col-lg-5">
             <div className="preload">
               <div className="card">
-                <img src={blog.image} className="card-img-top" alt="..." />
+                <img
+                  src={editedPost.image || blog.image}
+                  className="card-img-top"
+                  alt="..."
+                />
                 <div className="card-body">
-                  <h5 className="card-title">{blog.title}</h5>
-                  <p className="card-text">{blog.content}</p>
+                  <h5 className="card-title">
+                    {editedPost.title || blog.title}
+                  </h5>
+                  <p className="card-text">
+                    {editedPost.content || blog.content}
+                  </p>
                   <div className="d-flex justify-content-between">
                     <p className="card-text badge bg-success mb-0">
-                      {blog.author}
+                      {editedPost.author || blog.author}
                     </p>
-                    <p className="card-text badge bg-success">{date}</p>
+                    <p className="card-text badge bg-success">
+                      {date || editedPost.releaseDate || blog.releaseDate}
+                    </p>
                   </div>
                 </div>
               </div>
