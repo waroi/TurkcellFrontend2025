@@ -5,9 +5,8 @@ import { useEffect } from "react";
 import useBlog from "@/blogs";
 import { getBlogs } from "@/firebase";
 
-import Navigation from "@/components/Navigation";
+import Layout from "@/components/Layout";
 import Card from "@/components/Card";
-import Footer from "@/components/Footer";
 
 export default function Home() {
   const blogState = useBlog();
@@ -17,16 +16,12 @@ export default function Home() {
   }, []);
 
   return (
-    <>
-      <Navigation active="home" />
-      <main className="page-body">
-        <div className="container py-5">
-          {blogState.blogs.map((blog, index) => (
-            <Card key={index} blog={blog} />
-          ))}
-        </div>
-      </main>
-      <Footer />
-    </>
+    <Layout>
+      <section className="container py-5">
+        {blogState.blogs.map((blog, index) => (
+          <Card key={index} blog={blog} />
+        ))}
+      </section>
+    </Layout>
   );
 }

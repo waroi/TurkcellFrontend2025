@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 
 import useBlog from "@/blogs";
 import { login as loginFirebase } from "@/firebase";
+import Layout from "@/components/Layout";
 
 export default function Add() {
   const router = useRouter();
@@ -22,7 +23,7 @@ export default function Add() {
   }
 
   return (
-    <>
+    <Layout active="login">
       <div className="form-floating mb-3">
         <input
           type="text"
@@ -46,6 +47,6 @@ export default function Add() {
       <button className="btn btn-primary" onClick={login}>
         Login
       </button>
-    </>
+    </Layout>
   );
 }
