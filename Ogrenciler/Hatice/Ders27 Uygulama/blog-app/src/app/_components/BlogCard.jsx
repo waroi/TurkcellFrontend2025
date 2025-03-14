@@ -4,6 +4,7 @@ import Image from "next/image";
 import { myLoader } from "@/utils/functions";
 import Button from "./Button";
 import { deleteBlog } from "@/utils/services/helpers";
+import { toast } from "react-toastify";
 
 const BlogCard = ({ blog, getBlogs }) => {
   return (
@@ -35,13 +36,13 @@ const BlogCard = ({ blog, getBlogs }) => {
                 onClick={async () => {
                   const result = await deleteBlog(blog?.id);
                   if (result) {
-                    await getBlogs(); 
+                    await getBlogs();
+                    toast.success("Blog başarıyla silindi.");
                   }
                 }}
               >
                 Sil
               </Button>
-
             </div>
           </div>
         </div>

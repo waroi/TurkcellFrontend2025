@@ -21,7 +21,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg bg-secondary ">
+    <nav className="navbar navbar-expand-lg  ">
       <div className="container">
         <Link href="/" className="navbar-brand">
           BlogApp
