@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 
 import useBlog from "@/blogs";
 import { register as registerFirebase } from "@/firebase";
+import Layout from "@/components/Layout";
 
 export default function Add() {
   const router = useRouter();
@@ -49,7 +50,7 @@ export default function Add() {
   }
 
   return (
-    <>
+    <Layout active="register">
       <div className="form-floating mb-3">
         <input
           type="text"
@@ -95,6 +96,6 @@ export default function Add() {
       <button className="btn btn-primary" onClick={register}>
         Register
       </button>
-    </>
+    </Layout>
   );
 }
