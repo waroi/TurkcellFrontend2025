@@ -9,6 +9,7 @@ import { setSearchTermRedux } from "../redux/slices/blogSlice";
 import { registerWithGoogle, signOut } from "../../../firebase/authControl";
 // import { useRouter } from "next/router";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 const Navbar = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [userAuth, setUserAuth] = useState(null);
@@ -38,17 +39,19 @@ const Navbar = () => {
           href={`/home`}
           className="navbar-brand d-flex gap-2 align-items-center"
         >
-          <img
+          <Image
             width={50}
-            src="https://clinipol.co.uk/clinipolsite/wp-content/uploads/2017/07/future-icon.png"
+            height={50}
+            src="/logo.jpg"
             alt="logo"
+            className="rounded-circle"
           />
-          <h2> Geleceğin Bloğu</h2>
+          <h2 className="m-0"> Geleceğin Bloğu</h2>
         </Link>
 
         <form className="d-flex" role="search">
           <input
-            className="form-control me-2"
+            className="form-control me-2 rounded-pill"
             type="search"
             placeholder="Ara"
             aria-label="Search"
@@ -56,7 +59,7 @@ const Navbar = () => {
           />
           <button
             onClick={handleSearch}
-            className="btn btn-outline-light"
+            className="btn btn-outline-light rounded-pill text-dark"
             type="submit"
           >
             Ara
@@ -64,17 +67,21 @@ const Navbar = () => {
         </form>
 
         {userAuth && !isHomePage ? (
-          <div className="d-flex gap-4">
+          <div className="d-flex gap-4 align-items-center">
             <Modal />
             <Link
               href={`/userPage`}
-              className="navbar-brand d-flex gap-2 align-items-center"
+              className="text-decoration-none d-flex gap-2 align-items-center"
             >
               <button className="btn btn-outline-light rounded-pill text-dark">
                 Yazılarım
               </button>
             </Link>
-            <Link className="btn btn-danger" href={`/`} onClick={signOut}>
+            <Link
+              className="btn btn-danger rounded-pill"
+              href={`/`}
+              onClick={signOut}
+            >
               SignOut
             </Link>
           </div>

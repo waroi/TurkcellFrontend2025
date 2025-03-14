@@ -30,11 +30,6 @@ export const AuthProvider = ({ children }) => {
     return () => unsubscribe();
   }, []);
 
-  useEffect(() => {
-    console.log('currentUser: ', currentUser);
-    console.log('isLoggedIn: ', isLoggedIn);
-  }, [currentUser, isLoggedIn]);
-
   const registerUser = async (email, password) => {
     try {
       const userCredential = await createUserWithEmailAndPassword(
@@ -72,7 +67,14 @@ export const AuthProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider
-      value={{ registerUser, loginUser, logOutUser, currentUser, isLoggedIn }}
+      value={{
+        registerUser,
+        loginUser,
+        logOutUser,
+        currentUser,
+        isLoggedIn,
+        isLoading,
+      }}
     >
       {children}
     </AuthContext.Provider>

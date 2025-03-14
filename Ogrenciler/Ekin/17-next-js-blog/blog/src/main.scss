@@ -4,6 +4,7 @@ $font-family-base: "Faculty Glyphic";
 $primary: #b298dc;
 $secondary: #f8edeb;
 $warning: #c4f1be;
+$info: #6220ce;
 
 @import "../node_modules/bootstrap/scss/bootstrap";
 
@@ -29,4 +30,18 @@ main {
 }
 .blog-body {
   background-color: $secondary;
+}
+
+nav {
+  height: 5rem;
+
+  img {
+    height: 3rem;
+    width: 3rem;
+  }
+}
+
+.card img {
+  height: 3rem;
+  width: 3rem;
 }
