@@ -21,6 +21,7 @@ const Modal = () => {
   const blog = useSelector((state) => state.blog.blog);
   const dispatch = useDispatch();
   const user = auth.currentUser;
+  console.log("user", user);
 
   const handleModalOpen = () => {
     dispatch(resetBlog());
@@ -104,7 +105,8 @@ const Modal = () => {
                     Yazar
                   </label>
                   <input
-                    value={blog.author}
+                    disabled
+                    value={user.displayName}
                     onChange={handleChange}
                     name="author"
                     type="text"

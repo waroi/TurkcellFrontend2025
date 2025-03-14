@@ -1,46 +1,38 @@
 "use client";
-import styles from "./page.module.css";
-import { getBlog } from "../../services/Api";
+import styles from "../page.module.css";
+// import { getBlog } from "../../services/Api";
 import { useEffect } from "react";
-import Card from "../app/components/Card";
+import Card from "../../app/components/Card";
 import { useDispatch } from "react-redux";
-import { addAllBlog, searchBlogs } from "../app/redux/slices/blogSlice";
+import { addAllBlog, searchBlogs } from "../../app/redux/slices/blogSlice";
 import { useSelector } from "react-redux";
-import UpdateModal from "../app/components/UpdateModal";
-import { getAllBLogs } from "../../firebase/dbController";
-import { auth } from "../../firebase/firebase";
+import UpdateModal from "../../app/components/UpdateModal";
+import { getAllBLogs } from "../../../firebase/dbController";
+import { auth } from "../../../firebase/firebase";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 
-export default function Home() {
+export default function HomePage() {
   const blogs = useSelector((state) => state.blog.blogs);
   const searchTerm = useSelector((state) => state.blog.searchTerm);
   const user = auth.currentUser;
   const router = useRouter();
 
   const dispatch = useDispatch();
-
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((user) => {
-      if (user) {
-        router.push("/userPage");
-      } else {
-        if (searchTerm == "") {
-          async function fetchBlog() {
-            const data = await getAllBLogs();
-            if (data) {
-              dispatch(addAllBlog(data));
-            }
-          }
-          fetchBlog();
-        } else {
-          dispatch(searchBlogs(searchTerm));
+    if (searchTerm == "") {
+      async function fetchBlog() {
+        // const data = await getBlog();
+        const data = await getAllBLogs();
+        if (data) {
+          dispatch(addAllBlog(data));
         }
       }
-    });
-
-    return () => unsubscribe();
-  }, [searchTerm, router]);
+      fetchBlog();
+    } else {
+      dispatch(searchBlogs(searchTerm));
+    }
+  }, [searchTerm]);
 
   return (
     <div className={styles.page}>
@@ -85,7 +77,7 @@ export default function Home() {
                 <p>
                   Daha az beton, daha çok doğa… Geleceğin şehirleri dev
                   gökdelenlerden ziyade insanı ve doğayı kucaklayan,
-                  sürdürülebilir ve minimalist yapılarla dolu.{" "}
+                  sürdürülebilir ve minimalist yapılarla dolu.
                 </p>
               </div>
             </div>
