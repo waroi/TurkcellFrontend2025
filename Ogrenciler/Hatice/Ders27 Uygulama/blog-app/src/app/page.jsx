@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import BlogList from "./_components/BlogList";
 import { filterStrings } from "@/utils/functions";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
+<<<<<<< HEAD
 import apiFetch from "@/utils/service";
 
 const Home = () => {
