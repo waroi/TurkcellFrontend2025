@@ -5,7 +5,7 @@ import { useSearch } from '@/context/searchContext';
 import { useAuth } from '@/context/authContext';
 export default function Home() {
   const { searchQuery } = useSearch();
-  const { isLoading } = useAuth();
+  const { isLoggedIn } = useAuth();
 
   const filteredBlogs = blogs.filter((blog) =>
     blog.title.toLowerCase().includes(searchQuery.toLowerCase())
@@ -13,20 +13,14 @@ export default function Home() {
 
   return (
     <>
-      {isLoading ? (
-        <div>
-          <h1 className='text-center mt-2 mb-3'>Yükleniyor...</h1>
+      <div className='container'>
+        <h1 className='text-center mt-2 mb-3'>Bloglarımız</h1>
+        <div className='row gy-3 mb-5'>
+          {filteredBlogs.map((blog) => (
+            <BlogCard key={blog.id} blog={blog} />
+          ))}
         </div>
-      ) : (
-        <div className='container'>
-          <h1 className='text-center mt-2 mb-3'>Bloglarımız</h1>
-          <div className='row gy-3 mb-5'>
-            {filteredBlogs.map((blog) => (
-              <BlogCard key={blog.id} blog={blog} />
-            ))}
-          </div>
-        </div>
-      )}
+      </div>
     </>
   );
 }
