@@ -1,11 +1,5 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import {
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-} from "firebase/auth";
-import { toast } from "react-toastify";
-import { auth } from "../../../utils/firebaseConfig";
 import { login, register } from "../actions";
 import { useActionState } from "react";
 
