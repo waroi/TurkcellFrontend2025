@@ -54,7 +54,20 @@ const Navbar = () => {
                 İletişim
               </Link>
             </li>
-            {pathname !== "auth" && (
+            {!auth.currentUser ? (
+              <>
+                <li className="nav-item">
+                  <Link href="/login" className="nav-link">
+                    Giriş Yap
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link href="/register" className="nav-link">
+                    Kayıt Ol
+                  </Link>
+                </li>
+              </>
+            ) : (
               <li className="nav-item">
                 <Button
                   ref={buttonRef}

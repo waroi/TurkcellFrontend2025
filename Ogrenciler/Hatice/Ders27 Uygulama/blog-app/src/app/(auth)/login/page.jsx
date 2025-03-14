@@ -1,34 +1,50 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import {
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-} from "firebase/auth";
-import { toast } from "react-toastify";
+import React, { useState } from "react";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../../utils/firebaseConfig";
-import { login, register } from "../actions";
-import { useActionState } from "react";
-
-const initialState = {
-  message: "",
-};
+import { useRouter } from "next/navigation";
 
 const Login = () => {
-  const [state, formAction, pending] = useActionState(login, initialState);
-  console.log(state?.message);
+  const [email, setEmail] = useState(""); 
+  const [password, setPassword] = useState(""); 
+  const [error, setError] = useState(""); 
+  const router = useRouter(); 
+
+  const handleLogin = async (e) => {
+    e.preventDefault(); 
+    setError(""); 
+
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      router.push("/"); 
+    } catch (err) {
+      setError("Giriş başarısız: " + err.message);
+    }
+  };
 
   return (
     <div className="auth">
-      <form action={formAction} className="input-div">
-        <input name="email" type="text" placeholder="Email adres" required />
-        <input name="password" type="password" placeholder="Şifre" required />
-        <p className="text-warning" aria-live="polite">
-          {state?.message}
-        </p>
+      <h2>Giriş Yap</h2>
+      <form onSubmit={handleLogin} className="input-div">
+        <input
+          name="email"
+          type="text"
+          placeholder="Email adresi"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+        <input
+          name="password"
+          type="password"
+          placeholder="Şifre"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)} 
+          required
+        />
+        {error && <p className="text-warning" aria-live="polite">{error}</p>}
         <div>
-          <button disabled={pending} type="submit" className="button-div">
-            Giriş Yap
-          </button>
+          <button type="submit" className="button-div">Giriş Yap</button>
         </div>
       </form>
     </div>

@@ -3,27 +3,43 @@ import { useEffect, useState } from "react";
 import BlogList from "./_components/BlogList";
 import { filterStrings } from "@/utils/functions";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { useRouter } from "next/navigation";
 
 const Home = () => {
   const [blogs, setBlogs] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
-
+  const [user, setUser] = useState(null);
+  const router = useRouter(); 
   const auth = getAuth();
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-      // User is signed in, see docs for a list of available properties
-      // https://firebase.google.com/docs/reference/js/auth.user
-      const uid = user.uid;
-      console.log(uid);
-      // ...
-      return;
-    } else {
-      // User is signed out
-      // ...
-      console.log("hello");
-      //logine gönderilecek ama henüz fonksiyonumuz iyi çalışmıyor
-    }
-  });
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user){
+        setUser(user);
+      } else{
+        router.push("/login");
+      }
+    });
+    return () => unsubscribe();
+  }, [auth , router]);
+
+
+  // const auth = getAuth();
+  // onAuthStateChanged(auth, (user) => {
+  //   if (user) {
+  //     // User is signed in, see docs for a list of available properties
+  //     // https://firebase.google.com/docs/reference/js/auth.user
+  //     const uid = user.uid;
+  //     console.log(uid);
+  //     // ...
+  //     return;
+  //   } else {
+  //     // User is signed out
+  //     // ...
+  //     console.log("hello");
+  //     //logine gönderilecek ama henüz fonksiyonumuz iyi çalışmıyor
+  //   }
+  // });
 
   useEffect(() => {
     const url = process.env.NEXT_PUBLIC_SERVER_URL;
