@@ -1,68 +1,26 @@
-"use client";
 import * as React from "react";
-import { useEffect, useState } from "react";
+
 import Image from "next/image";
 import { myLoader } from "@/utils/functions";
-import apiFetch from "@/utils/service";
+import apiFetch from "@/utils/services/service";
+import BlogDetail from "./_components/BlogDetail";
+import { getBlog } from "@/utils/services/helpers";
 
-// export const metadata: Metadata = {
-//   title: 'Gökten düşen blog tanesi',
-// };
+export async function generateMetadata({ params }) {
+  const { id } = await params;
+  const blog = await getBlog(id);
+  console.log("params", params);
 
-function Page({ params }) {
-  const { id } = React.use(params);
-  const [blog, setBlog] = useState(null);
+  return { title: blog?.title ? blog.title : "Göklerden düşen blog tanesi" };
+}
 
-  const fetchBlog = async () => {
-    const response = await apiFetch(`/blogs/${id}`);
-    console.log(response);
+async function Page({ params }) {
+  const { id } = await params;
 
-    if (!response.ok) {
-      console.log("response", response, response?.statusText);
-      return;
-    }
-    const data = await response.json();
-    console.log(data);
-    setBlog(data);
-  };
-
-  useEffect(() => {
-    fetchBlog();
-    console.log("hello");
-  }, []);
+  const blog = await getBlog(id);
 
   return id !== undefined ? (
-    blog && (
-      <div className="container mt-4">
-        <div className="card mb-3 border-0">
-          <div className="row g-0">
-            <div className="col-md-4">
-              <Image
-                src={"/noImage.png"}
-                height={50}
-                width={150}
-                className="rounded card-img-top img-fluid w-100 h-100"
-                alt={`${blog?.title} Adlı Resim`}
-                loader={() => myLoader(blog?.poster)}
-                priority
-              />
-            </div>
-            <div className="col-md-8">
-              <div className="card-body d-flex flex-column h-100 ">
-                <h5 className="card-title">{blog?.title}</h5>
-                <p className="card-text">{blog?.content}</p>
-                <p className="card-text justify-self-end">
-                  <small className="text-body-secondary">
-                    Yazar: {blog.author} |{" "}
-                    {new Date(blog.date).toLocaleDateString()}
-                  </small>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    )
+    blog && <BlogDetail blog={blog} />
   ) : (
     <p> Geçerli bir blog id bulunamadı.</p>
   );

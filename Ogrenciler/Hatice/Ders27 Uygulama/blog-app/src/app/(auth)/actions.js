@@ -8,8 +8,6 @@ import {
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import { auth } from "@/utils/firebaseConfig";
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 export async function login(prevState, formData) {
   const email = formData.get("email");

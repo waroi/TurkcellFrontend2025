@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import BlogList from "./_components/BlogList";
 import { filterStrings } from "@/utils/functions";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-import apiFetch from "@/utils/service";
+import apiFetch from "@/utils/services/service";
 import { useRouter } from "next/navigation";
 
 const Home = () => {
