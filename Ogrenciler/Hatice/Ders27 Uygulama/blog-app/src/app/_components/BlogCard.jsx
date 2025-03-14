@@ -2,8 +2,10 @@
 import Link from "next/link";
 import Image from "next/image";
 import { myLoader } from "@/utils/functions";
+import Button from "./Button";
+import { deleteBlog } from "@/utils/services/helpers";
 
-const BlogCard = ({ blog }) => {
+const BlogCard = ({ blog, getBlogs }) => {
   return (
     <>
       {blog && (
@@ -28,6 +30,18 @@ const BlogCard = ({ blog }) => {
               <Link href={`blog/${blog.id}`} className="btn btn-primary">
                 Daha fazlası
               </Link>
+              <Button
+                className="btn btn-danger ms-2"
+                onClick={async () => {
+                  const result = await deleteBlog(blog?.id);
+                  if (result) {
+                    await getBlogs(); 
+                  }
+                }}
+              >
+                Sil
+              </Button>
+
             </div>
           </div>
         </div>

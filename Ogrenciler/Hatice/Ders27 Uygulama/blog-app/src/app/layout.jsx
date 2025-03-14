@@ -18,9 +18,6 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  // const user =
-  //   typeof window !== "undefined" ? localStorage.getItem("user") : null;
-
   return (
     <html lang="en">
       <body>

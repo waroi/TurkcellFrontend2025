@@ -1,8 +1,4 @@
 import * as React from "react";
-
-import Image from "next/image";
-import { myLoader } from "@/utils/functions";
-import apiFetch from "@/utils/services/service";
 import BlogDetail from "./_components/BlogDetail";
 import { getBlog } from "@/utils/services/helpers";
 
