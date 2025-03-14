@@ -32,13 +32,16 @@ const BlogCard = ({ blog, getBlogs }) => {
               </Link>
               <Button
                 className="btn btn-danger ms-2"
-                onClick={() => {
-                  deleteBlog(blog?.id);
-                  getBlogs();
+                onClick={async () => {
+                  const result = await deleteBlog(blog?.id);
+                  if (result) {
+                    await getBlogs(); 
+                  }
                 }}
               >
                 Sil
               </Button>
+
             </div>
           </div>
         </div>
