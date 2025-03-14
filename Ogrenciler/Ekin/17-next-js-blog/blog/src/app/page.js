@@ -18,7 +18,6 @@ export default function Home() {
 
   return (
     <>
-      <button onClick={() => {}}>DEBUG LAAAAAAOOO</button>
       <Navigation active="home" />
       <main className="page-body">
         <div className="container py-5">

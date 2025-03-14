@@ -18,6 +18,7 @@ export default function Add() {
 
   function addBlog(blog) {
     blog = {
+      author: blogState.user,
       title: title.current.value,
       description: description.current.value,
       content: content.current.value

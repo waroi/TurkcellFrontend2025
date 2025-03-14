@@ -15,6 +15,7 @@ import {
   deleteDoc,
   getDoc,
   updateDoc,
+  setDoc,
 } from "firebase/firestore";
 
 const app = initializeApp({
@@ -31,8 +32,16 @@ const database = getFirestore(app);
 
 //* User ====================================================================================================
 
-export function register(email, password) {
-  return createUserWithEmailAndPassword(auth, email, password);
+export function register(email, password, name, profile) {
+  return createUserWithEmailAndPassword(auth, email, password)
+    .then((response) => response.user.uid)
+    .then((user) =>
+      setDoc(doc(database, "users", user), {
+        user,
+        name,
+        profile,
+      }).then(() => user)
+    );
 }
 
 export function login(email, password) {
@@ -43,6 +52,12 @@ export function login(email, password) {
 
 export function logout() {
   return auth.signOut();
+}
+
+export function getUser(user) {
+  return getDoc(doc(database, "users", user)).then((snapshot) =>
+    snapshot.data()
+  );
 }
 
 //* Blog ====================================================================================================
