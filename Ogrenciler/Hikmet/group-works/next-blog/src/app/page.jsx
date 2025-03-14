@@ -1,23 +1,16 @@
-import BlogCard from "@/components/BlogCard/BlogCard";
+import HomeContent from "@/components/HomeContent/HomeContent";
 import Navbar from "@/components/Navbar/Navbar";
 
-async function blogData() {
-	return fetch("http://localhost:3000/blogs").then((res) => res.json());
-}
+
+
+//! anasayfadaki veri getirme olayı useEffect ile farklı bir componentte denenecek ve state değiştiğinde yani useEffect dependency array değiştiğinde çalışacak
 
 export default async function Home() {
-	const blogs = await blogData();
 
 	return (
 		<>
 			<Navbar />
-			<section className="container">
-				<div className="row">
-					{blogs.map((blog) => (
-						<BlogCard key={blog.id} {...blog} />
-					))}
-				</div>
-			</section>
+			<HomeContent />
 		</>
 	);
 }
