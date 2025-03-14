@@ -13,28 +13,28 @@ function BlogActions({ id }) {
 	//! async function olan fetchBlog fonksiyonunu useEffect dışına al ve useEFfect içinde çağır
 	//! anasayfadaki veri getirme olayı useEffect ile farklı bir componentte denenecek ve state değiştiğinde yani useEffect dependency array değiştiğinde çalışacak
 	useEffect(() => {
-		const fetchBlog = async () => {
-			try {
-				const response = await fetch(`http://localhost:3000/blogs/${id}`);
-
-				if (!response.ok) {
-					throw new Error("Blog verisi alınamadı");
-				}
-
-				const data = await response.json();
-				setBlogData(data);
-
-				setTitle(data.title || "");
-				setDescription(data.description || "");
-				setImageUrl(data.imageUrl || "");
-				setReleaseDate(data.releaseDate || "");
-			} catch (error) {
-				console.error("Blog yüklenirken hata:", error);
-			}
-		};
-
 		fetchBlog();
 	}, [id]);
+
+	const fetchBlog = async () => {
+		try {
+			const response = await fetch(`http://localhost:3000/blogs/${id}`);
+
+			if (!response.ok) {
+				throw new Error("Blog verisi alınamadı");
+			}
+
+			const data = await response.json();
+			setBlogData(data);
+
+			setTitle(data.title || "");
+			setDescription(data.description || "");
+			setImageUrl(data.imageUrl || "");
+			setReleaseDate(data.releaseDate || "");
+		} catch (error) {
+			console.error("Blog yüklenirken hata:", error);
+		}
+	};
 
 	function deleteBlog() {
 		fetch(`http://localhost:3000/blogs/${id}`, {
@@ -43,7 +43,7 @@ function BlogActions({ id }) {
 			redirect("/");
 		});
 	}
-	function updateBlog() {}
+	function updateBlog() { }
 
 	return (
 		<div className="d-flex justify-content-center gap-3">
