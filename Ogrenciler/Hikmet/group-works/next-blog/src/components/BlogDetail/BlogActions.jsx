@@ -5,19 +5,42 @@ import { redirect } from "next/navigation";
 import { useEffect, useState } from "react";
 
 function BlogActions({ id }) {
-	//! Implement the updateBlog function
-	function updateBlog() {}
 
 	const [title, setTitle] = useState("");
 	const [description, setDescription] = useState("");
 	const [imageUrl, setImageUrl] = useState("");
 	const [releaseDate, setReleaseDate] = useState("");
 
-	const { blogs, fetchBlogs, deleteBlog: deleteBlogInStore } = useBlogStore();
+	const { blogs, fetchBlogs, deleteBlog: deleteBlogInStore, updateBlog: updateBlogInStore } = useBlogStore();
+
+	useEffect(() => {
+		const currentBlog = blogs.find(blog => blog.id === id);
+		if (currentBlog) {
+			setTitle(currentBlog.title);
+			setDescription(currentBlog.description);
+			setImageUrl(currentBlog.imageUrl);
+			setReleaseDate(currentBlog.releaseDate);
+		}
+	}, [id]);
 
 	useEffect(() => {
 		fetchBlogs();
-	}, [id, fetchBlogs]);
+	}, []);
+
+
+	async function updateBlog() {
+		const blogData = {
+			title,
+			description,
+			imageUrl,
+			releaseDate
+		};
+
+		const success = await updateBlogInStore(id, blogData);
+		if (success) {
+			redirect(`/blog/${id}`);
+		}
+	}
 
 	async function handleDeleteBlog() {
 		const success = await deleteBlogInStore(id);

@@ -25,6 +25,7 @@ export const AuthProvider = ({ children }) => {
         setIsLoggedIn(false);
       }
       setIsLoading(false);
+      console.log(isLoggedIn);
     });
 
     return () => unsubscribe();

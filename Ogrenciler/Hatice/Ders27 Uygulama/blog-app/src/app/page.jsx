@@ -24,17 +24,14 @@ const Home = () => {
     return () => unsubscribe();
   }, [auth, router]);
 
-  const fetchBlogs = () => {
+  const getBlogs = () => {
     apiFetch(`/blogs`)
       .then((res) => res.json())
       .then((data) => setBlogs(data));
   };
   useEffect(() => {
-    fetchBlogs();
+    getBlogs();
   }, []);
-  const getBlogs = () => {
-    fetchBlogs();
-  };
 
   const filteredBlogs = filterStrings(blogs, "title", searchQuery);
 
