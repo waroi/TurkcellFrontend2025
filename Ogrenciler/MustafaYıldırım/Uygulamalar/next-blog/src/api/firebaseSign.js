@@ -18,9 +18,6 @@ const saveUserToFirestore = async (user, publisher) => {
       uid: user.uid,
       email: user.email,
       publisher: publisher || "Publisher",
-      displayName: user.displayName || "Anonim",
-      photoURL: user.photoURL || null,
-      createdAt: new Date(),
       role: "admin",
     };
 
@@ -31,7 +28,7 @@ const saveUserToFirestore = async (user, publisher) => {
 export const doCreateUserWithEmailAndPassword = async (
   email,
   password,
-  publisher
+  publisher,
 ) => {
   const userCredential = await createUserWithEmailAndPassword(
     auth,

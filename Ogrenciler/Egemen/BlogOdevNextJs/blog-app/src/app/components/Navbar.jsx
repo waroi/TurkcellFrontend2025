@@ -1,4 +1,7 @@
-import { useState } from "react";
+"useClient";
+
+import { auth } from "../../../firebase/firebase";
+import { useState, useEffect } from "react";
 import Modal from "./Modal";
 import Link from "next/link";
 import { useDispatch } from "react-redux";
@@ -7,11 +10,23 @@ import { registerWithGoogle, signOut } from "../../../firebase/authControl";
 
 const Navbar = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const distpacth = useDispatch();
+  const [userAuth, setUserAuth] = useState();
+  const dispatch = useDispatch();
   function handleSearch(e) {
     e.preventDefault();
-    distpacth(setSearchTermRedux(searchTerm));
+    dispatch(setSearchTermRedux(searchTerm));
   }
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((userAuth) => {
+      if (userAuth) {
+        setUserAuth(userAuth);
+      } else {
+        setUserAuth(null);
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
   return (
     <nav className="navbar">
       <div className="container-fluid">
@@ -42,13 +57,22 @@ const Navbar = () => {
             Ara
           </button>
         </form>
-        <Link href={`/userPage`} onClick={registerWithGoogle}>
-          SignIn
-        </Link>
-        <Link href={`/`} onClick={signOut}>
-          SignOut
-        </Link>
-        <Modal />
+        {userAuth ? (
+          <div className="d-flex gap-4">
+            <Modal />
+            <Link className="btn btn-danger" href={`/`} onClick={signOut}>
+              SignOut
+            </Link>
+          </div>
+        ) : (
+          <Link
+            className="btn btn-primary"
+            href={`/userPage`}
+            onClick={registerWithGoogle}
+          >
+            SignIn
+          </Link>
+        )}
       </div>
     </nav>
   );

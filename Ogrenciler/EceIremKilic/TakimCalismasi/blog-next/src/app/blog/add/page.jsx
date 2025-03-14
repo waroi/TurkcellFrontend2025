@@ -1,23 +1,11 @@
 "use client";
-import React, { use, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 import useBlogStore from "@/store/useBlogStore";
 import { useRouter } from "next/navigation";
 
 const BlogDetails = () => {
-  const [date, setDate] = useState("");
-  const [isEdit, setIsEdit] = useState(false); //! Sayfanın aynı içerisinde güncelleme işlemi yapılacaksa kullanılabilir. Şu anlık ben kullanmadım. Eğer isEdit ise p ile açılmış tagleri input ile değiştir.
   const router = useRouter();
   const { addPost } = useBlogStore();
-
-  // useEffect(() => {
-  //   setDate(
-  //     new Date(blog[0]?.releaseDate).toLocaleDateString("tr-TR", {
-  //       day: "2-digit",
-  //       month: "long",
-  //       year: "numeric",
-  //     })
-  //   );
-  // });
 
   const [newPost, setNewPost] = useState({
     title: "",
@@ -26,17 +14,17 @@ const BlogDetails = () => {
     releaseDate: "",
     content: "",
   });
-  const handleChange = (e) => {
-    e.preventDefault();
-    console.log(newPost);
+  const handleChange = useCallback((e) => {
+    setNewPost((prevPost) => ({
+      ...prevPost,
+      [e.target.id]: e.target.value,
+    }));
+  }, []);
 
-    setNewPost({ ...newPost, [e.target.id]: e.target.value });
-  };
-
-  const handleAdd = (newPost) => {
+  const handleAdd = useCallback((newPost) => {
     addPost(newPost);
     router.push("/");
-  };
+  });
 
   return (
     <div className="container">
@@ -109,7 +97,7 @@ const BlogDetails = () => {
                 </div>
 
                 <button
-                  type="submit"
+                  type="button"
                   className="btn btn-warning"
                   onClick={() => handleAdd(newPost)}
                 >

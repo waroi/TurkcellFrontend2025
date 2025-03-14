@@ -56,6 +56,12 @@ export const blogSlice = createSlice({
         (blog) => blog.id === state.blog.id
       );
       state.blogs[blogIndex] = { ...state.blogs[blogIndex], ...state.blog };
+      if (blogIndex !== -1) {
+        state.blogs[blogIndex] = { ...state.blog };
+      } else {
+        console.warn("Blog not found in state, adding it");
+        state.blogs.push({ ...state.blog });
+      }
       state.blog = {
         ...state.blog,
         title: "",

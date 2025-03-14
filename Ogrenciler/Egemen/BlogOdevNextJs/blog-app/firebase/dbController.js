@@ -1,10 +1,13 @@
 import {
   addDoc,
   collection,
+  deleteDoc,
   doc,
   getDoc,
   getDocs,
   query,
+  setDoc,
+  updateDoc,
   where,
 } from "firebase/firestore";
 import { auth, db } from "./firebase";
@@ -41,5 +44,25 @@ export async function getAllBLogs() {
 }
 export async function addedBlog(blog) {
   const user = auth.currentUser;
-  const bookRef = await addDoc(collection(db, "blogs"), blog);
+  const blogRef = await addDoc(collection(db, "blogs"), blog);
+}
+export async function deleteFbBlog(id) {
+  await deleteDoc(doc(db, "blogs", id));
+}
+
+export async function updateFbBlog(blog) {
+  try {
+    const docRef = doc(db, "blogs", blog.id);
+    const docSnap = await getDoc(docRef);
+
+    if (docSnap.exists()) {
+      await updateDoc(docRef, blog);
+      return true;
+    } else {
+      await setDoc(docRef, blog);
+      return true;
+    }
+  } catch (error) {
+    console.error("Error updating blog:", error);
+  }
 }

@@ -3,8 +3,17 @@
 import React, { useEffect } from "react";
 import { postBlog } from "../../../services/Api";
 import { useSelector, useDispatch } from "react-redux";
-import { setUpdateBlog, resetBlog, addBlog } from "../redux/slices/blogSlice";
-import { addedBlog } from "../../../firebase/dbController";
+import {
+  setUpdateBlog,
+  resetBlog,
+  addBlog,
+  addAllBlog,
+} from "../redux/slices/blogSlice";
+import {
+  addedBlog,
+  getAllBLogs,
+  getUserBlogs,
+} from "../../../firebase/dbController";
 import { auth } from "../../../firebase/firebase";
 import { MdArrowCircleRight } from "react-icons/md";
 
@@ -29,11 +38,13 @@ const Modal = () => {
   const handleClick = async (e) => {
     e.preventDefault();
     try {
-      const blogs = await postBlog(blog);
-      dispatch(addBlog(blogs));
+      // const blogs = await postBlog(blog);
+      addedBlog(blog);
+
+      const blogs = await getUserBlogs();
+      dispatch(addAllBlog(blogs));
       dispatch(resetBlog());
 
-      addedBlog(blog);
       console.log("Blog Eklendi");
     } catch (error) {
       console.log("Blog Eklenmedi");
