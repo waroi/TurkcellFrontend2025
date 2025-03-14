@@ -59,7 +59,7 @@ const UserPage = () => {
       </main>
     </div>
   ) : (
-    <p>Yükleniyor</p>
+    <p>Lütfen Giriş Yapınız</p>
   );
 };
 
