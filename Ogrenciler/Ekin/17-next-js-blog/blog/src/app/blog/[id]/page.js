@@ -4,8 +4,8 @@ import { useRouter } from "next/navigation";
 
 import { use, useState, useEffect } from "react";
 
-import useBlog from "@/blogs";
-import { getBlog, deleteBlog as deleteBlogFirebase } from "@/firebase";
+import useBlog from "@/store/blogs";
+import { getBlog, deleteBlog as deleteBlogFirebase } from "@/services/firebase";
 import Layout from "@/components/Layout";
 
 const Blog = ({ params }) => {

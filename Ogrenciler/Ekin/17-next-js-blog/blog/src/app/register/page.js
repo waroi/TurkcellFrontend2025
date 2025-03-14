@@ -1,53 +1,18 @@
 "use client";
 
 import { useRef } from "react";
-import { useRouter } from "next/navigation";
 
-import useBlog from "@/blogs";
-import { register as registerFirebase } from "@/firebase";
 import Layout from "@/components/Layout";
 
+import useAuth from "@/hooks/useAuth";
+
 export default function Add() {
-  const router = useRouter();
-  const blogState = useBlog();
+  const { register } = useAuth();
 
   const name = useRef();
   const profile = useRef();
-  const user = useRef();
+  const email = useRef();
   const password = useRef();
-
-  function register() {
-    convertBase64(profile.current.files[0]).then((profile) => {
-      registerFirebase(
-        user.current.value,
-        password.current.value,
-        name.current.value,
-        profile
-      ).then((user) => {
-        blogState.setUser(user);
-        localStorage.setItem("user", user);
-        router.push("/");
-      });
-    });
-
-    function convertBase64(file) {
-      if (file)
-        return new Promise((resolve, reader) => {
-          reader = new FileReader();
-
-          reader.onloadend = () => {
-            resolve(reader.result);
-          };
-
-          reader.readAsDataURL(file);
-        });
-      return new Promise((resolve) => {
-        resolve(
-          "https://static.vecteezy.com/system/resources/previews/009/292/244/non_2x/default-avatar-icon-of-social-media-user-vector.jpg"
-        );
-      });
-    }
-  }
 
   return (
     <Layout active="register">
@@ -77,11 +42,11 @@ export default function Add() {
         <input
           type="text"
           className="form-control"
-          id="user"
-          placeholder="User"
-          ref={user}
+          id="email"
+          placeholder="Email"
+          ref={email}
         />
-        <label htmlFor="user">Email</label>
+        <label htmlFor="email">Email</label>
       </div>
       <div className="form-floating mb-3">
         <input
@@ -93,7 +58,17 @@ export default function Add() {
         />
         <label htmlFor="password">Password</label>
       </div>
-      <button className="btn btn-primary" onClick={register}>
+      <button
+        className="btn btn-primary"
+        onClick={() =>
+          register(
+            email.current.value,
+            password.current.value,
+            name.current.value,
+            profile.current.files[0]
+          )
+        }
+      >
         Register
       </button>
     </Layout>
