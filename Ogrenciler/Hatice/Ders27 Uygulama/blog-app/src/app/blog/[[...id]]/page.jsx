@@ -3,6 +3,7 @@ import * as React from "react";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { myLoader } from "@/utils/functions";
+import apiFetch from "@/utils/service";
 
 // export const metadata: Metadata = {
 //   title: 'Gökten düşen blog tanesi',
@@ -13,7 +14,7 @@ function Page({ params }) {
   const [blog, setBlog] = useState(null);
 
   const fetchBlog = async () => {
-    const response = await fetch(`http://localhost:8000/blogs/${id}`);
+    const response = await apiFetch(`/blogs/${id}`);
     console.log(response);
 
     if (!response.ok) {

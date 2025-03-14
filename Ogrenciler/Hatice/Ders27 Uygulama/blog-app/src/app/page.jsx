@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import BlogList from "./_components/BlogList";
 import { filterStrings } from "@/utils/functions";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
+import apiFetch from "@/utils/service";
 
 const Home = () => {
   const [blogs, setBlogs] = useState([]);
@@ -26,9 +27,7 @@ const Home = () => {
   });
 
   useEffect(() => {
-    const url = process.env.NEXT_PUBLIC_SERVER_URL;
-    console.log("url", url);
-    fetch(`${url}/blogs`)
+    apiFetch(`/blogs`)
       .then((res) => res.json())
       .then((data) => setBlogs(data));
   }, []);
