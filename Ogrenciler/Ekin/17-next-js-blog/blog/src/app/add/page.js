@@ -3,8 +3,8 @@
 import { useRef } from "react";
 import { useRouter } from "next/navigation";
 
-import useBlog from "@/blogs";
-import { addBlog as addBlogFirebase } from "@/firebase";
+import useBlog from "@/store/blogs";
+import { addBlog as addBlogFirebase } from "@/services/firebase";
 import Layout from "@/components/Layout";
 
 export default function Add() {
