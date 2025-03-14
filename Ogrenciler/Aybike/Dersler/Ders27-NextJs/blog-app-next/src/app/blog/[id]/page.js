@@ -4,16 +4,16 @@ import { useParams } from 'next/navigation'
 import { useEffect, useState } from 'react'
 
 const BlogDetail = () => {
-  const { id } = useParams() 
+  const { id } = useParams()
   const [blog, setBlog] = useState(null)
 
   useEffect(() => {
-	console.log(id)
+    console.log(id)
     const fetchBlog = async () => {
       try {
         const blogData = await BlogService.getBlogById(parseInt(id))
         setBlog(blogData)
-		console.log(blogData)
+        console.log(blogData)
       } catch (error) {
         console.error('Blog alınırken bir hata oluştu:', error)
       }
@@ -22,36 +22,45 @@ const BlogDetail = () => {
     if (id) {
       fetchBlog()
     }
-  }, [id]) 
+  }, [id])
+
+  if (!blog) {
+    return <p>Loading...</p>
+  }
 
   return (
-    <>
-      <div>
-        {blog && (
-          <div className='detail-container d-flex flex-column align-items-center justify-content-center shadow-lg p-5 m-5'>
-            <h1 className='py-3'>{blog.title}</h1>
-            <img src={blog.image} alt='Blog Picture' height={500} />
-            <div className='detail-body'>
-              <div className='py-5'>
-                {blog.content.map((content, index) => (
+    <div>
+      {blog && (
+        <div className='detail-container d-flex flex-column align-items-center justify-content-center shadow-lg p-5 m-5'>
+          <h1 className='py-3'>{blog.title}</h1>
+          {blog.image && <img src={blog.image} alt='Blog Picture' height={500} />}
+          <div className='detail-body'>
+            <div className='py-5'>
+              {Array.isArray(blog.content) ? (
+                blog.content.map((content, index) => (
                   <div key={index}>
-                    {' '}
                     <p>{content}</p>
                   </div>
-                ))}
-              </div>
-              <div className='tags'>
-                {blog.tags.map(tag => (
+                ))
+              ) : (
+                <p>{blog.content}</p>
+              )}
+            </div>
+            <div className='tags'>
+              {Array.isArray(blog.tags) && blog.tags.length > 0 ? (
+                blog.tags.map(tag => (
                   <span key={tag} className='tag badge me-2'>
                     #{tag}
                   </span>
-                ))}
-              </div>
+                ))
+              ) : (
+                <p>No tags available</p>
+              )}
             </div>
           </div>
-        )}
-      </div>
-    </>
+        </div>
+      )}
+    </div>
   )
 }
 
