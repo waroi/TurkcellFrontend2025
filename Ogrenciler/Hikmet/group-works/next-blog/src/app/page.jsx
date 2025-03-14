@@ -1,10 +1,11 @@
 import BlogCard from "@/components/BlogCard/BlogCard";
 import Navbar from "@/components/Navbar/Navbar";
 
+async function blogData() {
+	return fetch("http://localhost:3000/blogs").then((res) => res.json());
+}
+
 export default async function Home() {
-	async function blogData() {
-		return fetch("http://localhost:3000/blogs").then((res) => res.json());
-	}
 	const blogs = await blogData();
 
 	return (

@@ -1,90 +1,72 @@
 "use client";
 
-import { createClient } from "@/utils/supabase/client";
-
-import Link from "next/link";
+import { redirect } from "next/navigation";
 import { useEffect, useState } from "react";
 
-function UserComponent() {
-	const [user, setUser] = useState();
-
-	// Blog creation states
+function BlogActions({ id }) {
+	const [blogData, setBlogData] = useState(null);
 	const [title, setTitle] = useState("");
 	const [description, setDescription] = useState("");
 	const [imageUrl, setImageUrl] = useState("");
 	const [releaseDate, setReleaseDate] = useState("");
 
-	const client = createClient();
-
-	async function getUser() {
-		const userSession = await client.auth.getUser();
-
-		setUser(userSession.data.user);
-	}
-
+	//! async function olan fetchBlog fonksiyonunu useEffect dışına al ve useEFfect içinde çağır
+	//! anasayfadaki veri getirme olayı useEffect ile farklı bir componentte denenecek ve state değiştiğinde yani useEffect dependency array değiştiğinde çalışacak
 	useEffect(() => {
-		getUser();
-	}, []);
+		const fetchBlog = async () => {
+			try {
+				const response = await fetch(`http://localhost:3000/blogs/${id}`);
 
-	const logOut = async () => {
-		await client.auth.signOut();
-		setUser(undefined);
-	};
+				if (!response.ok) {
+					throw new Error("Blog verisi alınamadı");
+				}
 
-	function createBlog() {
-		fetch("http://localhost:3000/blogs", {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify({
-				title,
-				description,
-				imageUrl,
-				releaseDate,
-			}),
+				const data = await response.json();
+				setBlogData(data);
+
+				setTitle(data.title || "");
+				setDescription(data.description || "");
+				setImageUrl(data.imageUrl || "");
+				setReleaseDate(data.releaseDate || "");
+			} catch (error) {
+				console.error("Blog yüklenirken hata:", error);
+			}
+		};
+
+		fetchBlog();
+	}, [id]);
+
+	function deleteBlog() {
+		fetch(`http://localhost:3000/blogs/${id}`, {
+			method: "DELETE",
 		}).then(() => {
-			window.location.reload();
+			redirect("/");
 		});
 	}
+	function updateBlog() {}
 
 	return (
-		<>
-			<li>
-				{user ? (
-					<div className="nav-link" onClick={logOut}>
-						Log Out
-					</div>
-				) : (
-					<Link className="nav-link" href="/login">
-						Login
-					</Link>
-				)}
-			</li>
-			<li>
-				{user && (
-					<button
-						type="button"
-						className="btn btn-primary"
-						data-bs-toggle="modal"
-						data-bs-target="#createBlog"
-						data-bs-whatever="@mdo">
-						Add New Blog Post
-					</button>
-				)}
-			</li>
-
+		<div className="d-flex justify-content-center gap-3">
+			<button
+				className="btn btn-primary mt-5"
+				data-bs-toggle="modal"
+				data-bs-target="#updateBlog">
+				Düzenle
+			</button>
+			<button onClick={deleteBlog} className="btn btn-danger mt-5">
+				Sil
+			</button>
 			<div
 				className="modal fade"
-				id="createBlog"
+				id="updateBlog"
 				tabIndex="-1"
-				aria-labelledby="createBlogLabel"
+				aria-labelledby="updateBlogLabel"
 				aria-hidden="true">
 				<div className="modal-dialog">
 					<div className="modal-content">
 						<div className="modal-header">
-							<h1 className="modal-title fs-5" id="createBlogLabel">
-								Create Blog Post
+							<h1 className="modal-title fs-5" id="updateBlogLabel">
+								Update Blog Post
 							</h1>
 							<button
 								type="button"
@@ -102,7 +84,6 @@ function UserComponent() {
 										type="text"
 										className="form-control"
 										id="title"
-										onChange={(e) => setTitle(e.target.value)}
 										value={title}
 									/>
 								</div>
@@ -113,7 +94,6 @@ function UserComponent() {
 									<textarea
 										className="form-control"
 										id="description"
-										onChange={(e) => setDescription(e.target.value)}
 										value={description}></textarea>
 								</div>
 								<div className="mb-3">
@@ -124,7 +104,6 @@ function UserComponent() {
 										type="text"
 										className="form-control"
 										id="imageUrl"
-										onChange={(e) => setImageUrl(e.target.value)}
 										value={imageUrl}
 									/>
 								</div>
@@ -136,7 +115,6 @@ function UserComponent() {
 										type="text"
 										className="form-control"
 										id="releaseDate"
-										onChange={(e) => setReleaseDate(e.target.value)}
 										value={releaseDate}
 									/>
 								</div>
@@ -152,17 +130,15 @@ function UserComponent() {
 							<button
 								type="button"
 								className="btn btn-primary"
-								data-bs-dismiss="modal"
-								onClick={createBlog}
-								onKeyDown={(e) => e.key === "Enter" && createBlog()}>
-								Create Blog Post
+								onClick={updateBlog}>
+								Update Blog Post
 							</button>
 						</div>
 					</div>
 				</div>
 			</div>
-		</>
+		</div>
 	);
 }
 
-export default UserComponent;
+export default BlogActions;
