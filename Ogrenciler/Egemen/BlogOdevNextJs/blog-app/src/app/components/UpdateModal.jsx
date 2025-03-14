@@ -5,6 +5,7 @@ import {
   updateBlog,
 } from "../redux/slices/blogSlice";
 import { updateApiBlog } from "../../../services/Api";
+import { updateFbBlog } from "../../../firebase/dbController";
 
 function UpdateModal() {
   const dispatch = useDispatch();
@@ -12,9 +13,16 @@ function UpdateModal() {
   const handleUpdateForm = (e) => {
     dispatch(setUpdateBlog({ [e.target.name]: e.target.value }));
   };
-  const handleSave = () => {
-    dispatch(updateBlog());
-    updateApiBlog(blog.id, blog);
+  const handleSave = async () => {
+    try {
+      console.log("Güncellenen blog:", blog);
+      await updateFbBlog(blog);
+      dispatch(updateBlog());
+      console.log("Blog güncelleme başarılı");
+    } catch (error) {
+      console.error("Blog güncellenirken hata oluştu:", error);
+    }
+    // updateApiBlog(blog.id, blog);
   };
 
   return (

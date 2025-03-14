@@ -6,7 +6,7 @@ const PostCard = ({ blog }) => {
     blog.image || "https://placeholder.pics/svg/400x200"
   );
   return (
-    <div className=" col-lg-4 gap-2 my-2">
+    <div className="gap-2 my-2">
       <Link
         href={`/blog/${blog.id}`}
         className="text-decoration-none text-dark"
@@ -34,14 +34,14 @@ const PostCard = ({ blog }) => {
               </span>
             </div>
             <h3 className="card-title h5 fw-bold">{blog.title}</h3>
-            <p className="card-text text-muted">{blog.content.split(" ").slice(0, 15).join(" ")}...</p>
+            <p className="card-text text-muted">
+              {blog.content.split(" ").slice(0, 15).join(" ")}...
+            </p>
             <div className="d-flex align-items-center gap-2 meta-info mt-3">
               <img
                 src={blog.author.photo || "/placeholder.svg"}
                 alt={blog.author.name}
-                width={24}
-                height={24}
-                className="author-avatar"
+                className={`${styles.avatar}`}
               />
               <span>{blog.author.name}</span>
               <span>•</span>

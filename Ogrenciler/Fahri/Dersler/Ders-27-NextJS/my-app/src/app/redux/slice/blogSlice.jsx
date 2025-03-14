@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   blogs: [],
+  user: {}
 };
 
 export const blogSlice = createSlice({
@@ -20,17 +21,21 @@ export const blogSlice = createSlice({
     updateBlog: (state, action) => {
       const index = state.blogs.findIndex(
         (blog) => blog.id === action.payload.id
-      );
+      )
       if (index !== -1) {
         state.blogs[index] = {
           ...state.blogs[index],
           ...action.payload.newBlog,
-        };
+        }
       }
     },
+    setUser: (state, action) => {
+      console.log(action.payload)
+      state.user = action.payload
+    }
   },
-});
+})
 
-export const { setBlogs, addBlog, removeBlog, updateBlog } = blogSlice.actions;
+export const { setBlogs, addBlog, removeBlog, updateBlog, setUser } = blogSlice.actions;
 
 export default blogSlice.reducer;

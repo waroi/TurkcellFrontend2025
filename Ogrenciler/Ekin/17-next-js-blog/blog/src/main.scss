@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Faculty+Glyphic&display=swap");
+
+$font-family-base: "Faculty Glyphic";
+$primary: #b298dc;
+$secondary: #f8edeb;
+$warning: #c4f1be;
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+main {
+  min-height: calc(100vh - 12rem);
+}
+
+.banner {
+  height: 20rem;
+}
+
+#description {
+  height: 5rem;
+}
+
+#content {
+  height: 10rem;
+}
+
+.page-body {
+  background-image: url(https://img001.prntscr.com/file/img001/BjoiThwKTxGVXg-xrA1aPQ.jpg);
+  background-size: contain;
+}
+.blog-body {
+  background-color: $secondary;
+}

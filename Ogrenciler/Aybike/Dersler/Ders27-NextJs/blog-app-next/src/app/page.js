@@ -3,10 +3,12 @@ import { BlogService } from '@/services/blogService'
 import styles from './page.module.css'
 import BlogCard from '@/components/BlogCard'
 import { useEffect, useState } from 'react'
+import { useSession } from 'next-auth/react'
 
 export default function Home () {
+  const { data: session } = useSession();
   const [blogs, setBlogs] = useState([])
-
+console.log(session?.user)
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
@@ -17,7 +19,6 @@ export default function Home () {
         console.error('Bloglar alınırken bir hata oluştu:', error)
       }
     }
-
     fetchBlogs()
   }, [])
 
@@ -25,6 +26,7 @@ export default function Home () {
     <div className={styles.page}>
       <main className={styles.main}>
         <section className='blog-list'>
+          <h1>Hoş Geldiniz!{session?.user.email}</h1>
           <div className='row'>
             {blogs &&
               blogs.map(blog => (

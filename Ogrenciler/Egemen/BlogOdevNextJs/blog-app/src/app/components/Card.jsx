@@ -7,13 +7,15 @@ import { deleteBlog, setBlog } from "../redux/slices/blogSlice";
 import { deleteApiBlog } from "../../../services/Api";
 import UpdateModal from "./UpdateModal";
 import Link from "next/link";
+import { deleteFbBlog, updateFbBlog } from "../../../firebase/dbController";
 
-const Card = ({ card }) => {
+const Card = ({ card, userAuth }) => {
   const dispatch = useDispatch();
 
   const handleDelete = () => {
+    deleteFbBlog(card.id);
     dispatch(deleteBlog(card.id));
-    deleteApiBlog(card.id);
+    // deleteApiBlog(card.id);
     console.log("Silindi");
   };
 
@@ -37,26 +39,33 @@ const Card = ({ card }) => {
           </div>
           <div className="col-md-8 d-flex justify-content-between flex-column">
             <div className="card-body">
-              <h5 className="card-title">{card.title}</h5>
-              <p className="card-text">{card.body.slice(0, 200) + "..."}</p>
+              <h5 className="card-title">{card?.title}</h5>
+              <p className="card-text">{card.body + "..."}</p>
               <p className="card-text">✍️ {card.author}</p>
               <p className="card-text">
                 <small>{card.created_at}</small>
               </p>
             </div>
             <div className="card-footer p-2 d-flex justify-content-between align-items-center">
-              <div className="">
-                <button
-                  className="btn btn-primary m-1"
-                  onClick={handleUpdate}
-                  data-bs-toggle="modal"
-                  data-bs-target="#updateBlogModal"
-                >
-                  <MdEdit />
-                </button>
-                <button onClick={handleDelete} className="btn btn-danger m-1">
-                  <MdDeleteForever />
-                </button>
+              <div className="d-flex ">
+                {userAuth ? (
+                  <div>
+                    <button
+                      className="btn btn-primary m-1"
+                      onClick={handleUpdate}
+                      data-bs-toggle="modal"
+                      data-bs-target="#updateBlogModal"
+                    >
+                      <MdEdit />
+                    </button>
+                    <button
+                      onClick={handleDelete}
+                      className="btn btn-danger m-1"
+                    >
+                      <MdDeleteForever />
+                    </button>
+                  </div>
+                ) : null}
 
                 <Link href={`/blog/${card.id}`} onClick={handleDetail}>
                   <button className="btn btn-warning m-1">

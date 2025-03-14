@@ -1,51 +1,108 @@
 import { create } from "zustand";
-import data from "../../data/data.json";
+import {
+  collection,
+  getDocs,
+  query,
+  setDoc,
+  doc,
+  getDoc,
+  updateDoc,
+  deleteDoc,
+} from "firebase/firestore";
+import { db } from "../firebase_config";
 
 const useBlogStore = create((set) => ({
-  posts: [...data.posts],
-  id: 17,
+  posts: [],
   getPosts: async () => {
-    const response = await fetch(`http://localhost:3000/posts`);
-    const posts = await response.json();
-    set({ posts });
+    try {
+      const q = query(collection(db, "posts"));
+      const snaps = await getDocs(q);
+      const allPosts = snaps.docs.map((post) => ({
+        id: post.id,
+        ...post.data(),
+      }));
+      set({ posts: allPosts });
+    } catch (error) {
+      console.error("fetchAllPosts DBController Error", error);
+    }
   },
+
   getPostById: async (id) => {
-    const response = await fetch(`http://localhost:3000/posts/${id}`);
-    return response.json();
+    try {
+      const postRef = doc(db, "posts", id);
+      const postSnap = await getDoc(postRef);
+
+      if (postSnap.exists()) {
+        const postData = {
+          id: postSnap.id,
+          ...postSnap.data(),
+        };
+        return postData;
+      } else {
+        console.log("Belirtilen ID'ye sahip gönderi bulunamadı.");
+        return null;
+      }
+    } catch (error) {
+      console.error("getPostById DBController Error:", error);
+      return null;
+    }
   },
   addPost: async (newPost) => {
-    set((state) => ({
-      posts: [...state.posts, { id: state.id, ...newPost }],
-      id: state.id + 1,
-    }));
-    const response = await fetch(`http://localhost:3000/posts`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(newPost),
-    });
-    return response.json();
+    try {
+      const newPostRef = doc(db, "posts", self.crypto.randomUUID());
+      await setDoc(newPostRef, {
+        title: newPost.title,
+        content: newPost.content,
+        author: newPost.author,
+        releaseDate: newPost.releaseDate,
+        image: newPost.image,
+      });
+
+      const newPostSnap = await getDoc(newPostRef);
+      const newPostData = { id: newPostSnap.id, ...newPostSnap.data() };
+
+      set((state) => {
+        const alreadyExists = state.posts.some(
+          (post) => post.id === newPostData.id
+        );
+        return alreadyExists ? state : { posts: [...state.posts, newPostData] };
+      });
+
+      console.log("Yeni post eklendi:", newPostData);
+    } catch (error) {
+      console.error("addPost DBController Error", error);
+    }
   },
+
   updatePost: async (id, updatedPost) => {
-    set((state) => ({
-      posts: state.posts.map((post) =>
-        post.id === id ? { ...post, ...updatedPost } : post
-      ),
-    }));
-    const response = await fetch(`http://localhost:3000/posts/${id}`, {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(updatedPost),
-    });
-    return response.json();
+    try {
+      const postRef = doc(db, "posts", id);
+      await updateDoc(postRef, updatedPost);
+
+      set((state) => ({
+        posts: state.posts.map((post) =>
+          post.id === id ? { ...post, ...updatedPost } : post
+        ),
+      }));
+      console.log("Post güncellendi:", updatedPost);
+    } catch (error) {
+      console.error("updatePost DBController Error", error);
+    }
   },
+
   deletePost: async (id) => {
-    set((state) => ({
-      posts: state.posts.filter((post) => post.id !== id),
-    }));
-    const response = await fetch(`http://localhost:3000/posts/${id}`, {
-      method: "DELETE",
-    });
-    return response.json();
+    try {
+      const postRef = doc(db, "posts", id);
+      await deleteDoc(postRef);
+
+      set((state) => ({
+        posts: state.posts.filter((post) => post.id !== id),
+      }));
+
+      console.log("Post silindi:", id);
+    } catch (error) {
+      console.error("deletePost DBController Error", error);
+    }
   },
 }));
 

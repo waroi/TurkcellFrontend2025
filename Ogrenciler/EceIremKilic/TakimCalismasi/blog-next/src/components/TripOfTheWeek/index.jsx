@@ -8,7 +8,7 @@ const TripOfTheWeek = () => {
         className={`d-flex flex-column justify-content-center align-items-center ${styles.bannerWrapper}`}
       >
         <h1
-          className={`d-flex justify-content-center align-items-center ${styles.bannerTitle}`}
+          className={`d-flex justify-content-center align-items-center ${styles.bannerTitle} text-white fw-bold`}
         >
           TRIP OF THE WEEK
         </h1>

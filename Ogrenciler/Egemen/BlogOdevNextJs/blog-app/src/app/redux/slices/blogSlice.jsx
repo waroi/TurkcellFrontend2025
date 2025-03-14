@@ -10,7 +10,7 @@ const initialState = {
     image: "",
     created_at: `${new Date().toJSON().slice(0, 10)}`,
     topic: "",
-    id: "",
+    userId: "",
   },
 };
 
@@ -42,7 +42,7 @@ export const blogSlice = createSlice({
         image: "",
         created_at: `${new Date().toJSON().slice(0, 10)}`,
         topic: "",
-        id: "",
+        userId: "",
       };
     },
     deleteBlog: (state, action) => {
@@ -56,6 +56,7 @@ export const blogSlice = createSlice({
         (blog) => blog.id === state.blog.id
       );
       state.blogs[blogIndex] = { ...state.blogs[blogIndex], ...state.blog };
+
       state.blog = {
         ...state.blog,
         title: "",
@@ -64,7 +65,7 @@ export const blogSlice = createSlice({
         image: "",
         created_at: `${new Date().toJSON().slice(0, 10)}`,
         topic: "",
-        id: "",
+        userId: "",
       };
     },
     setBlog: (state, action) => {
@@ -82,7 +83,7 @@ export const blogSlice = createSlice({
         image: "",
         created_at: `${new Date().toJSON().slice(0, 10)}`,
         topic: "",
-        id: "",
+        userId: "",
       };
     },
   },

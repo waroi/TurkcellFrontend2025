@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from '@/component/Navbar';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
+import { AuthProvider } from '@/context/authContext';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -24,8 +25,10 @@ export default function RootLayout({ children }) {
     <html lang='en' className={`${geistSans.variable} ${geistMono.variable}`}>
       <body>
         <SearchProvider>
-          <Navbar />
-          {children}
+          <AuthProvider>
+            <Navbar />
+            {children}
+          </AuthProvider>
         </SearchProvider>
       </body>
     </html>

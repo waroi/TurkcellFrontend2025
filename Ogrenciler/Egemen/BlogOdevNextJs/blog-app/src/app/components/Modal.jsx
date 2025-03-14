@@ -3,11 +3,25 @@
 import React, { useEffect } from "react";
 import { postBlog } from "../../../services/Api";
 import { useSelector, useDispatch } from "react-redux";
-import { setUpdateBlog, resetBlog, addBlog } from "../redux/slices/blogSlice";
+import {
+  setUpdateBlog,
+  resetBlog,
+  addBlog,
+  addAllBlog,
+} from "../redux/slices/blogSlice";
+import {
+  addedBlog,
+  getAllBLogs,
+  getUserBlogs,
+} from "../../../firebase/dbController";
+import { auth } from "../../../firebase/firebase";
+import { MdArrowCircleRight } from "react-icons/md";
 
 const Modal = () => {
   const blog = useSelector((state) => state.blog.blog);
   const dispatch = useDispatch();
+  const user = auth.currentUser;
+  console.log("user", user);
 
   const handleModalOpen = () => {
     dispatch(resetBlog());
@@ -17,6 +31,7 @@ const Modal = () => {
     dispatch(
       setUpdateBlog({
         [name]: value,
+        ["userId"]: user.uid || "",
       })
     );
   };
@@ -24,9 +39,13 @@ const Modal = () => {
   const handleClick = async (e) => {
     e.preventDefault();
     try {
-      const blogs = await postBlog(blog);
-      dispatch(addBlog(blogs));
+      // const blogs = await postBlog(blog);
+      addedBlog(blog);
+
+      const blogs = await getUserBlogs();
+      dispatch(addAllBlog(blogs));
       dispatch(resetBlog());
+
       console.log("Blog Eklendi");
     } catch (error) {
       console.log("Blog Eklenmedi");
@@ -86,7 +105,8 @@ const Modal = () => {
                     Yazar
                   </label>
                   <input
-                    value={blog.author}
+                    disabled
+                    value={user.displayName}
                     onChange={handleChange}
                     name="author"
                     type="text"

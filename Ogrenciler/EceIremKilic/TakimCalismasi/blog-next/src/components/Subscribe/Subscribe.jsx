@@ -8,7 +8,7 @@ const Subscribe = () => {
         <h2 className="my-5">Bültenimize Abone Ol</h2>
         <div className="row">
           <div
-            className={` col-lg-5 d-flex flex-column justify-content-between p-5 ${styles.bgColor}`}
+            className={` col-lg-5 d-flex flex-column justify-content-between p-5 ${styles.bgColor} rounded`}
           >
             <h4 className="text-white">
               Son gelişmelerden haberdar olmak için bültenimize abone olun.
@@ -21,7 +21,13 @@ const Subscribe = () => {
               <label htmlFor="Email" className="text-white">
                 Email
               </label>
-              <input type="email" name="email" id="email" className="mt-3" />
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Mail adresi giriniz."
+                className="mt-3 form-control rounded-pill"
+              />
               <button className="btn btn-outline-danger rounded-pill w-25 mt-3">
                 Abone ol
               </button>

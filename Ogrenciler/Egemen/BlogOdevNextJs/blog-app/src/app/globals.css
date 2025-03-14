@@ -1,10 +1,14 @@
 @import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 body {
-  background-color: #c1e1c1;
+  /* background-color: #c1e1c1; */
   position: relative;
   padding-bottom: 150px;
   min-height: 100vh;
+  background-image: url("../../public/bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .navbar,

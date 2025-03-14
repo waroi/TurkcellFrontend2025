@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styles from "./components.module.css";
 
-const Banner = (blog) => {
+const Banner = () => {
   return (
     <section className="container py-5">
       <div className={`${styles.featuredPost}`}>
@@ -21,15 +21,13 @@ const Banner = (blog) => {
             </span>
           </div>
           <h2 className="display-6 fw-bold mb-3">
-          2025'te Web Geliştirmenin Geleceği
+            2025'te Web Geliştirmenin Geleceği
           </h2>
           <p className="mb-4 text-white-50" style={{ maxWidth: "700px" }}>
-          Web geliştirmenin geleceğini şekillendiren en son trendleri ve teknolojileri keşfedin.
+            Web geliştirmenin geleceğini şekillendiren en son trendleri ve
+            teknolojileri keşfedin.
           </p>
-          <Link
-            href="/blog"
-            className="btn btn-dark"
-          >
+          <Link href="/blog" className="btn btn-dark">
             Bloğu Oku
           </Link>
         </div>

@@ -2,15 +2,21 @@
 import BlogCard from '../component/BlogCard';
 import blogs from '../data/blog.json';
 import { useSearch } from '@/context/searchContext';
-
+import { useAuth } from '@/context/authContext';
 export default function Home() {
   const { searchQuery } = useSearch();
+  const{isLoading}=useAuth();
 
   const filteredBlogs = blogs.filter((blog) =>
     blog.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  return (
+  return (<>
+  {isLoading ?
+   <div>
+   <h1 className='text-center mt-2 mb-3'>Yükleniyor...</h1>
+  </div>
+:
     <div className='container'>
       <h1 className='text-center mt-2 mb-3'>Bloglarımız</h1>
       <div className='row gy-3 mb-5'>
@@ -19,5 +25,9 @@ export default function Home() {
         ))}
       </div>
     </div>
-  );
+    
+
+    
+  }
+    </>);
 }

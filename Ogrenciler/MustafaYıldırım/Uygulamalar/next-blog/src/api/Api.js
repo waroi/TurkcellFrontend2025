@@ -15,7 +15,7 @@ export async function getBlogs() {
 
 export const blogId = async (id) => {
   try {
-    const response = await fetch(`http://localhost:3000/blogs/${id}`); // PORT KONTROLÜ
+    const response = await fetch(`http://localhost:3000/blogs/${id}`);
     if (!response.ok) {
       throw new Error(
         `Blog verisi alınamadı. HTTP Hata Kodu: ${response.status}`
@@ -30,34 +30,34 @@ export const blogId = async (id) => {
   }
 };
 
-export const deleteBlog = async (id) => {
+export async function addBlog(blog) {
   try {
-    const response = await fetch(`http://localhost:3000/blogs/${id}`, {
-      method: "DELETE",
-    });
-    const responseData = await response.json();
-    return response;
-  } catch (error) {
-    console.error("Silme isteği başarısız oldu:", error);
-    return null;
-  }
-};
-
-export async function updateBlog(id, blog) {
-  try {
-    const response = await fetch(`${API_URL}/${id}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
+    const response = await fetch(API_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(blog),
     });
-    const data = await response.json();
-    if (response.ok) {
-      return data;
+
+    if (!response.ok) {
+      throw new Error("Blog eklenirken hata oluştu.");
     }
+
+    const newBlog = await response.json(); // API'nin döndürdüğü blog nesnesini al
+    return newBlog; // ID ile birlikte yeni blogu döndür
   } catch (error) {
-    console.log("Request Model Error: ", error);
+    console.error("Blog ekleme hatası:", error);
     return null;
   }
+}
+
+export async function updateBlog(id, blog) {
+  await fetch(`${API_URL}/${id}`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(blog),
+  });
+}
+
+export async function deleteBlog(id) {
+  await fetch(`${API_URL}/${id}`, { method: "DELETE" });
 }

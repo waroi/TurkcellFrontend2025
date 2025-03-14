@@ -1,42 +1,50 @@
 "use client";
-import React, { use, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import useBlogStore from "@/store/useBlogStore";
 import { useRouter } from "next/navigation";
+import { getCurrentUser, getUserData } from "@/controller/AuthController";
 
 const BlogDetails = () => {
-  const [date, setDate] = useState("");
-  const [isEdit, setIsEdit] = useState(false); //! Sayfanın aynı içerisinde güncelleme işlemi yapılacaksa kullanılabilir. Şu anlık ben kullanmadım. Eğer isEdit ise p ile açılmış tagleri input ile değiştir.
   const router = useRouter();
+  const [userData, setUserData] = useState(null);
   const { addPost } = useBlogStore();
 
-  // useEffect(() => {
-  //   setDate(
-  //     new Date(blog[0]?.releaseDate).toLocaleDateString("tr-TR", {
-  //       day: "2-digit",
-  //       month: "long",
-  //       year: "numeric",
-  //     })
-  //   );
-  // });
+  useEffect(() => {
+    const fetchUserData = async () => {
+      const user = getCurrentUser();
+      if (user) {
+        const data = await getUserData(user.uid);
+        setUserData(data);
+      }
+    };
+
+    fetchUserData();
+    console.log(userData);
+  }, []);
 
   const [newPost, setNewPost] = useState({
     title: "",
     image: "",
-    author: "",
+    author: userData ? userData.fullName : "",
     releaseDate: "",
     content: "",
   });
-  const handleChange = (e) => {
-    e.preventDefault();
-    console.log(newPost);
+  const handleChange = useCallback(
+    (e) => {
+      setNewPost((prevPost) => ({
+        ...prevPost,
+        author: userData.fullName,
+        [e.target.id]: e.target.value,
+      }));
+    },
+    [userData]
+  );
 
-    setNewPost({ ...newPost, [e.target.id]: e.target.value });
-  };
-
-  const handleAdd = (newPost) => {
+  const handleAdd = useCallback((newPost) => {
     addPost(newPost);
+    console.log("added", newPost);
     router.push("/");
-  };
+  });
 
   return (
     <div className="container">
@@ -93,6 +101,7 @@ const BlogDetails = () => {
                     type="text"
                     className="form-control"
                     id="author"
+                    defaultValue={userData ? userData.fullName : ""}
                     onChange={(e) => handleChange(e)}
                   />
                 </div>
@@ -109,7 +118,7 @@ const BlogDetails = () => {
                 </div>
 
                 <button
-                  type="submit"
+                  type="button"
                   className="btn btn-warning"
                   onClick={() => handleAdd(newPost)}
                 >
