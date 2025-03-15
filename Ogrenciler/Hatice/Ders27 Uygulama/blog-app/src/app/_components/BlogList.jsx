@@ -1,4 +1,6 @@
+import { deleteBlog } from "@/utils/services/helpers";
 import BlogCard from "./BlogCard";
+import  Card  from "./Card";
 
 const BlogList = ({ blogs, getBlogs }) => {
   return (

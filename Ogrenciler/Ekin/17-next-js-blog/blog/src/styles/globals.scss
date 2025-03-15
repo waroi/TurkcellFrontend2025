@@ -14,7 +14,7 @@ $container-max-widths: (
   xxl: 1140px,
 );
 
-@import "../node_modules/bootstrap/scss/bootstrap";
+@import "../../node_modules/bootstrap/scss/bootstrap";
 
 main {
   min-height: calc(100vh - 12rem);

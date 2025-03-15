@@ -1,28 +1,19 @@
 "use client";
 
 import { useRef } from "react";
-import { useRouter } from "next/navigation";
 
-import useBlog from "@/blogs";
-import { login as loginFirebase } from "@/firebase";
+import Layout from "@/components/Layout";
+
+import useAuth from "@/hooks/useAuth";
 
 export default function Add() {
-  const router = useRouter();
-  const blogState = useBlog();
+  const { login } = useAuth();
 
   const user = useRef();
   const password = useRef();
 
-  function login() {
-    loginFirebase(user.current.value, password.current.value).then((user) => {
-      blogState.setUser(user);
-      localStorage.setItem("user", user);
-      router.push("/");
-    });
-  }
-
   return (
-    <>
+    <Layout active="login">
       <div className="form-floating mb-3">
         <input
           type="text"
@@ -43,9 +34,12 @@ export default function Add() {
         />
         <label htmlFor="password">Password</label>
       </div>
-      <button className="btn btn-primary" onClick={login}>
+      <button
+        className="btn btn-primary"
+        onClick={() => login(user.current.value, password.current.value)}
+      >
         Login
       </button>
-    </>
+    </Layout>
   );
 }

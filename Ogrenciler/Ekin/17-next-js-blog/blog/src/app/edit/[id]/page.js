@@ -2,10 +2,11 @@
 
 import { use, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
-import { getBlog } from "@/firebase";
+import { getBlog } from "@/services/firebase";
 
-import useBlog from "@/blogs";
-import { editBlog as editBlogFirebase } from "@/firebase";
+import useBlog from "@/store/blogs";
+import { editBlog as editBlogFirebase } from "@/services/firebase";
+import Layout from "@/components/Layout";
 
 const Edit = ({ params }) => {
   const router = useRouter();
@@ -55,7 +56,7 @@ const Edit = ({ params }) => {
   }
 
   return (
-    <>
+    <Layout>
       <div className="form-floating mb-3">
         <input
           type="text"
@@ -109,7 +110,7 @@ const Edit = ({ params }) => {
       <button className="btn btn-primary" onClick={editBlog}>
         Save
       </button>
-    </>
+    </Layout>
   );
 };
 

@@ -4,8 +4,9 @@ import { useRouter } from "next/navigation";
 
 import { use, useState, useEffect } from "react";
 
-import useBlog from "@/blogs";
-import { getBlog, deleteBlog as deleteBlogFirebase } from "@/firebase";
+import useBlog from "@/store/blogs";
+import { getBlog, deleteBlog as deleteBlogFirebase } from "@/services/firebase";
+import Layout from "@/components/Layout";
 
 const Blog = ({ params }) => {
   const router = useRouter();
@@ -24,9 +25,9 @@ const Blog = ({ params }) => {
         router.push("/");
       });
   }
-
+  //! ********************************************************************************************
   return (
-    <>
+    <Layout active="add" bodyClassName="blog-body" fill>
       <img src={blog.banner} className="banner w-100 object-fit-cover mb-5" />
       <div className="container pb-5">
         <h1 className="mt-5 mb-5">{blog.title}</h1>
@@ -46,7 +47,7 @@ const Blog = ({ params }) => {
           Delete
         </button>
       </div>
-    </>
+    </Layout>
   );
 };
 

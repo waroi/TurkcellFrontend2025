@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { getUser } from "@/firebase";
+import { getUser } from "@/services/firebase";
 
 export default function Card({ blog }) {
   const [user, setUser] = useState({

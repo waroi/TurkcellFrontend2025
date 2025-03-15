@@ -3,8 +3,9 @@
 import { useRef } from "react";
 import { useRouter } from "next/navigation";
 
-import useBlog from "@/blogs";
-import { addBlog as addBlogFirebase } from "@/firebase";
+import useBlog from "@/store/blogs";
+import { addBlog as addBlogFirebase } from "@/services/firebase";
+import Layout from "@/components/Layout";
 
 export default function Add() {
   const router = useRouter();
@@ -40,7 +41,7 @@ export default function Add() {
   }
 
   return (
-    <>
+    <Layout active="add">
       <div className="form-floating mb-3">
         <input
           type="text"
@@ -94,6 +95,6 @@ export default function Add() {
       <button className="btn btn-primary" onClick={addBlog}>
         Save
       </button>
-    </>
+    </Layout>
   );
 }

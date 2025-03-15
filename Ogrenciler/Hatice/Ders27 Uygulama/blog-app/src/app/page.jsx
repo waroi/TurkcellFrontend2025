@@ -24,11 +24,20 @@ const Home = () => {
     return () => unsubscribe();
   }, [auth, router]);
 
-  const getBlogs = () => {
-    apiFetch(`/blogs`)
-      .then((res) => res.json())
-      .then((data) => setBlogs(data));
+  const getBlogs = async () => {
+    try {
+      const response = await apiFetch(`/blogs`);
+      if (!response.ok) {
+        console.error(response.status);
+        return;
+      }
+      const data = await response.json();
+      setBlogs(data);
+    } catch (error) {
+      console.log(error);
+    }
   };
+
   useEffect(() => {
     getBlogs();
   }, []);
