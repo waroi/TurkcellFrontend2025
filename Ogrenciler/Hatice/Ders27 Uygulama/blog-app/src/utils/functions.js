@@ -9,3 +9,11 @@ export const filterStrings = (array, key, filterValue) => {
       item[key].toLowerCase().includes(filterValue.toLowerCase())
   );
 };
+
+// export const handleBlogDelete = async (id) => {
+//   const result = await deleteBlog(id);
+//   if (result) {
+//     await getBlogs();
+//     toast.success(deleteSuccessMessage);
+//   }
+// };

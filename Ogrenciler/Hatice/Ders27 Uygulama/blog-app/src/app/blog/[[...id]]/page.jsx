@@ -5,7 +5,6 @@ import { getBlog } from "@/utils/services/helpers";
 export async function generateMetadata({ params }) {
   const { id } = await params;
   const blog = await getBlog(id);
-  console.log("params", params);
 
   return { title: blog?.title ? blog.title : "Göklerden düşen blog tanesi" };
 }
@@ -15,10 +14,10 @@ async function Page({ params }) {
 
   const blog = await getBlog(id);
 
-  return id !== undefined ? (
-    blog && <BlogDetail blog={blog} />
-  ) : (
+  return id === undefined ? (
     <p> Geçerli bir blog id bulunamadı.</p>
+  ) : (
+    blog && <BlogDetail blog={blog} />
   );
 }
 export default Page;

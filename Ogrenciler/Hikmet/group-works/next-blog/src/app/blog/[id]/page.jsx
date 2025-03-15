@@ -1,4 +1,5 @@
 import BlogDetails from "@/components/BlogDetail/BlogDetails";
+import Navbar from "@/components/Navbar/Navbar";
 
 async function BlogsDetail({ params }) {
 	const id = await params.id;
@@ -14,9 +15,12 @@ async function BlogsDetail({ params }) {
 	}
 
 	return (
-		<section className="container">
+		<>
+		<Navbar/>
+		<section className="container d-flex align-items-center justify-content-center">
 			<BlogDetails blog={blog} />
 		</section>
+		</>
 	);
 }
 

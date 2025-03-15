@@ -3,8 +3,10 @@ import { useCallback, useEffect, useState } from "react";
 import useBlogStore from "@/store/useBlogStore";
 import { useRouter } from "next/navigation";
 import { getCurrentUser, getUserData } from "@/controller/AuthController";
+import CustomButton from "@/components/CustomButton";
+import Form from "@/components/Form";
 
-const BlogDetails = () => {
+const AddBlog = () => {
   const router = useRouter();
   const [userData, setUserData] = useState(null);
   const { addPost } = useBlogStore();
@@ -117,13 +119,12 @@ const BlogDetails = () => {
                   />
                 </div>
 
-                <button
+                <CustomButton
                   type="button"
-                  className="btn btn-warning"
+                  variant="warning"
                   onClick={() => handleAdd(newPost)}
-                >
-                  Ekle
-                </button>
+                  buttonText="Ekle"
+                />
               </form>
             </div>
           </div>
@@ -164,4 +165,4 @@ const BlogDetails = () => {
   );
 };
 
-export default BlogDetails;
+export default AddBlog;

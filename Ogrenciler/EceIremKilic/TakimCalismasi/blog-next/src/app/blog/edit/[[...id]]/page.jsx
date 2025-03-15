@@ -2,11 +2,12 @@
 import React, { useEffect, useState, use } from "react";
 import useBlogStore from "@/store/useBlogStore";
 import { useRouter } from "next/navigation";
+import Form from "@/components/Form";
+import formatDate from "@/utils/FormatDate";
 
-const BlogDetails = ({ params }) => {
+const EditBlog = ({ params }) => {
   const unwrappedParams = use(params);
   const { id } = unwrappedParams;
-  const [date, setDate] = useState("");
   const router = useRouter();
   const { posts, getPosts, updatePost } = useBlogStore();
   const [blog, setBlog] = useState(null);
@@ -22,18 +23,6 @@ const BlogDetails = ({ params }) => {
       loadPost();
     }
   }, [id, posts, getPosts]);
-
-  useEffect(() => {
-    if (blog) {
-      setDate(
-        new Date(blog.releaseDate).toLocaleDateString("tr-TR", {
-          day: "2-digit",
-          month: "long",
-          year: "numeric",
-        })
-      );
-    }
-  }, [blog]);
 
   const [editedPost, setEditedPost] = useState({
     title: "",
@@ -77,76 +66,11 @@ const BlogDetails = ({ params }) => {
       <div className="d-flex py-5">
         <div className="row align-items-center">
           <div className="col-lg-7">
-            <div className="form">
-              <form onSubmit={handleSubmit}>
-                <h5 className="display-6 fs-3 mb-5 text-center">
-                  Post İçeriğini Düzenle
-                </h5>
-                <div className="mb-3">
-                  <label htmlFor="img" className="form-label">
-                    Post Görsel URL'i
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="image"
-                    value={editedPost.image}
-                    onChange={handleChange}
-                  />
-                </div>
-                <div className="mb-3">
-                  <label htmlFor="title" className="form-label">
-                    Post Başlığı
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="title"
-                    value={editedPost.title}
-                    onChange={handleChange}
-                  />
-                </div>
-                <div className="mb-3">
-                  <label htmlFor="content" className="form-label">
-                    Post İçeriği
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="content"
-                    value={editedPost.content}
-                    onChange={handleChange}
-                  />
-                </div>
-                <div className="mb-3">
-                  <label htmlFor="author" className="form-label">
-                    Post Yazarı
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="author"
-                    value={editedPost.author}
-                    onChange={handleChange}
-                  />
-                </div>
-                <div className="mb-3">
-                  <label htmlFor="release-date" className="form-label">
-                    Post Yayınlanma Tarihi
-                  </label>
-                  <input
-                    type="date"
-                    className="form-control"
-                    id="releaseDate"
-                    value={editedPost.releaseDate}
-                    onChange={handleChange}
-                  />
-                </div>
-                <button type="submit" className="btn btn-warning">
-                  Güncelle
-                </button>
-              </form>
-            </div>
+            <Form
+              onChange={handleChange}
+              onSubmit={handleSubmit}
+              value={editedPost}
+            />
           </div>
           <div className="col-lg-5">
             <div className="preload">
@@ -168,7 +92,8 @@ const BlogDetails = ({ params }) => {
                       {editedPost.author || blog.author}
                     </p>
                     <p className="card-text badge bg-success">
-                      {date || editedPost.releaseDate || blog.releaseDate}
+                      {formatDate(editedPost.releaseDate) ||
+                        formatDate(blog.releaseDate)}
                     </p>
                   </div>
                 </div>
@@ -181,4 +106,4 @@ const BlogDetails = ({ params }) => {
   );
 };
 
-export default BlogDetails;
+export default EditBlog;

@@ -5,6 +5,7 @@ import { filterStrings } from "@/utils/functions";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import apiFetch from "@/utils/services/service";
 import { useRouter } from "next/navigation";
+import AddBlogForm from "./_components/AddBlogForm";
 
 const Home = () => {
   const [blogs, setBlogs] = useState([]);
@@ -24,11 +25,20 @@ const Home = () => {
     return () => unsubscribe();
   }, [auth, router]);
 
-  const getBlogs = () => {
-    apiFetch(`/blogs`)
-      .then((res) => res.json())
-      .then((data) => setBlogs(data));
+  const getBlogs = async () => {
+    try {
+      const response = await apiFetch(`/blogs`);
+      if (!response.ok) {
+        console.error(response.status);
+        return;
+      }
+      const data = await response.json();
+      setBlogs(data);
+    } catch (error) {
+      console.log(error);
+    }
   };
+
   useEffect(() => {
     getBlogs();
   }, []);
@@ -45,6 +55,7 @@ const Home = () => {
           className="form-control mb-4"
           onChange={(e) => setSearchQuery(e.target.value)}
         />
+        <AddBlogForm getBlogs={getBlogs} />
         <BlogList blogs={filteredBlogs} getBlogs={getBlogs} />
       </div>
     </>
