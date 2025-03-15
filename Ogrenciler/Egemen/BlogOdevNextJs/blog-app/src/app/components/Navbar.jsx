@@ -1,15 +1,17 @@
 "use client";
 
-import { auth } from "../../../firebase/firebase";
 import { useState, useEffect } from "react";
 import Modal from "./Modal";
 import Link from "next/link";
 import { useDispatch } from "react-redux";
 import { setSearchTermRedux } from "../redux/slices/blogSlice";
 import { registerWithGoogle, signOut } from "../../../firebase/authControl";
-// import { useRouter } from "next/router";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
+import { unsubscribe } from "../../../services/authServices";
+import Button from "./atoms/buttons/Button";
+import BaseModal from "./organisms/modal/BaseModal";
+
 const Navbar = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [userAuth, setUserAuth] = useState(null);
@@ -17,20 +19,15 @@ const Navbar = () => {
   const isHomePage = pathname === "/";
 
   const dispatch = useDispatch();
+  const handleModalOpen = () => {
+    dispatch(resetBlog());
+  };
   function handleSearch(e) {
     e.preventDefault();
     dispatch(setSearchTermRedux(searchTerm));
   }
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((userAuth) => {
-      if (userAuth) {
-        setUserAuth(userAuth);
-      } else {
-        setUserAuth(null);
-      }
-    });
-
-    return () => unsubscribe();
+    unsubscribe(setUserAuth);
   }, []);
   return (
     <nav className="navbar">
@@ -57,25 +54,35 @@ const Navbar = () => {
             aria-label="Search"
             onChange={(e) => setSearchTerm(e.target.value)}
           />
-          <button
+          <Button
             onClick={handleSearch}
             className="btn btn-outline-light rounded-pill text-dark"
             type="submit"
           >
             Ara
-          </button>
+          </Button>
         </form>
 
         {userAuth && !isHomePage ? (
           <div className="d-flex gap-4 align-items-center">
-            <Modal />
+            <Button
+              type="button"
+              className="btn btn-outline-success rounded-pill"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+              onClick={handleModalOpen}
+            >
+              ☄️ Blog Ekle
+            </Button>
+
+            <BaseModal />
             <Link
               href={`/userPage`}
               className="text-decoration-none d-flex gap-2 align-items-center"
             >
-              <button className="btn btn-outline-light rounded-pill text-dark">
+              <Button className="btn btn-outline-light rounded-pill text-dark">
                 Yazılarım
-              </button>
+              </Button>
             </Link>
             <Link
               className="btn btn-danger rounded-pill"

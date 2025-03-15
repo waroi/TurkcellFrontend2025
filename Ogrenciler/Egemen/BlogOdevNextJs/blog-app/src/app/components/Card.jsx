@@ -1,13 +1,12 @@
 import { MdEdit } from "react-icons/md";
 import { MdDeleteForever } from "react-icons/md";
 import { MdVisibility } from "react-icons/md";
-
 import { useDispatch } from "react-redux";
 import { deleteBlog, setBlog } from "../redux/slices/blogSlice";
-import { deleteApiBlog } from "../../../services/Api";
-import UpdateModal from "./UpdateModal";
 import Link from "next/link";
-import { deleteFbBlog, updateFbBlog } from "../../../firebase/dbController";
+import { deleteFbBlog } from "../../../firebase/dbController";
+import Button from "./atoms/buttons/Button";
+import ModalWrapper from "./atoms/buttons/ModalWrapper";
 
 const Card = ({ card, userAuth }) => {
   const dispatch = useDispatch();
@@ -15,7 +14,6 @@ const Card = ({ card, userAuth }) => {
   const handleDelete = () => {
     deleteFbBlog(card.id);
     dispatch(deleteBlog(card.id));
-    // deleteApiBlog(card.id);
     console.log("Silindi");
   };
 
@@ -25,7 +23,7 @@ const Card = ({ card, userAuth }) => {
   const handleDetail = () => {
     dispatch(setBlog(card));
   };
-
+  //const ModalButton = ModalWrapper(Button);
   return (
     <>
       <div className="card mb-3 position-relative">
@@ -50,27 +48,27 @@ const Card = ({ card, userAuth }) => {
               <div className="d-flex ">
                 {userAuth ? (
                   <div>
-                    <button
-                      className="btn btn-primary m-1"
+                    <Button
+                      className={"btn btn-primary m-1"}
                       onClick={handleUpdate}
-                      data-bs-toggle="modal"
-                      data-bs-target="#updateBlogModal"
+                      data-bs-toggle={"modal"}
+                      data-bs-target={"#updateBlogModal"}
                     >
                       <MdEdit />
-                    </button>
-                    <button
+                    </Button>
+                    <Button
                       onClick={handleDelete}
                       className="btn btn-danger m-1"
                     >
                       <MdDeleteForever />
-                    </button>
+                    </Button>
                   </div>
                 ) : null}
 
                 <Link href={`/blog/${card.id}`} onClick={handleDetail}>
-                  <button className="btn btn-warning m-1">
+                  <Button className="btn btn-warning m-1">
                     <MdVisibility />
-                  </button>
+                  </Button>
                 </Link>
               </div>
               <span
@@ -80,7 +78,6 @@ const Card = ({ card, userAuth }) => {
                 {card.topic}
               </span>
             </div>
-            {/* <UpdateModal /> */}
           </div>
         </div>
       </div>

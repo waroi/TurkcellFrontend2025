@@ -1,65 +1,11 @@
-"use client";
+import React from "react";
 
-import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import {
-  setUpdateBlog,
-  resetBlog,
-  addAllBlog,
-} from "../redux/slices/blogSlice";
-import { addedBlog, getUserBlogs } from "../../../firebase/dbController";
-import { auth } from "../../../firebase/firebase";
-import Button from "./atoms/buttons/Button";
-const Modal = () => {
-  const blog = useSelector((state) => state.blog.blog);
-  const dispatch = useDispatch();
-  const user = auth.currentUser;
-  console.log("user", user);
-
-  const handleModalOpen = () => {
-    dispatch(resetBlog());
-  };
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    dispatch(
-      setUpdateBlog({
-        [name]: value,
-        ["userId"]: user.uid || "",
-        ["author"]: user.displayName,
-      })
-    );
-  };
-
-  const handleClick = async (e) => {
-    e.preventDefault();
-    try {
-      // const blogs = await postBlog(blog);
-      addedBlog(blog);
-
-      const blogs = await getUserBlogs();
-      dispatch(addAllBlog(blogs));
-      dispatch(resetBlog());
-
-      console.log("Blog Eklendi");
-    } catch (error) {
-      console.log("Blog Eklenmedi");
-    }
-  };
+const BaseModal = ({ ...props }) => {
   return (
     <>
-      {/* <Button
-        type="button"
-        className="btn btn-outline-success rounded-pill"
-        data-bs-toggle="modal"
-        data-bs-target="#exampleModal"
-        onClick={handleModalOpen}
-      >
-        ☄️ Blog Ekle
-      </Button> */}
-
       <div
         className="modal fade"
-        id="exampleModal"
+        id={props.id}
         tabIndex="-1"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
@@ -68,7 +14,7 @@ const Modal = () => {
           <div className="modal-content p-3 rounded-4 shadow-lg border-0">
             <div className="modal-header rounded-top-4">
               <h1 className="modal-title fs-5" id="exampleModalLabel">
-                ☄️ Blog Ekle
+                {props.title}
               </h1>
               <Button
                 type="button"
@@ -84,7 +30,7 @@ const Modal = () => {
                     Başlık
                   </label>
                   <input
-                    value={blog.title || ""}
+                    value={props.blog.title || ""}
                     onChange={handleChange}
                     type="text"
                     name="title"
@@ -119,7 +65,7 @@ const Modal = () => {
                   </label>
                   <div className="input-group has-validation">
                     <input
-                      value={blog.topic}
+                      value={props.blog.topic}
                       onChange={handleChange}
                       type="text"
                       className="form-control"
@@ -138,7 +84,7 @@ const Modal = () => {
                     Resim URL
                   </label>
                   <input
-                    value={blog.image}
+                    value={props.blog.image}
                     onChange={handleChange}
                     type="text"
                     name="image"
@@ -153,7 +99,7 @@ const Modal = () => {
 
                 <div className="form-floating col-12">
                   <textarea
-                    value={blog.body}
+                    value={props.blog.body}
                     onChange={handleChange}
                     className="form-control"
                     placeholder="Leave a comment here"
@@ -183,4 +129,4 @@ const Modal = () => {
   );
 };
 
-export default Modal;
+export default BaseModal;

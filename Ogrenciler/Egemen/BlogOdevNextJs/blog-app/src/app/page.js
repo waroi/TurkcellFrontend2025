@@ -1,6 +1,5 @@
 "use client";
 import styles from "./page.module.css";
-import { getBlog } from "../../services/Api";
 import { useEffect } from "react";
 import Card from "../app/components/Card";
 import { useDispatch } from "react-redux";
