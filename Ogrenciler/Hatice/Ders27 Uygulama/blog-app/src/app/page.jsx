@@ -5,6 +5,7 @@ import { filterStrings } from "@/utils/functions";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import apiFetch from "@/utils/services/service";
 import { useRouter } from "next/navigation";
+import AddBlogForm from "./_components/AddBlogForm";
 
 const Home = () => {
   const [blogs, setBlogs] = useState([]);
@@ -54,6 +55,7 @@ const Home = () => {
           className="form-control mb-4"
           onChange={(e) => setSearchQuery(e.target.value)}
         />
+        <AddBlogForm getBlogs={getBlogs} />
         <BlogList blogs={filteredBlogs} getBlogs={getBlogs} />
       </div>
     </>
