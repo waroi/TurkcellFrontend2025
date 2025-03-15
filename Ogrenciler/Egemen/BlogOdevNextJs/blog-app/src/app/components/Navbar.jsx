@@ -4,13 +4,13 @@ import { useState, useEffect } from "react";
 import Modal from "./Modal";
 import Link from "next/link";
 import { useDispatch } from "react-redux";
-import { setSearchTermRedux } from "../redux/slices/blogSlice";
+import { resetBlog, setSearchTermRedux } from "../redux/slices/blogSlice";
 import { registerWithGoogle, signOut } from "../../../firebase/authControl";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { unsubscribe } from "../../../services/authServices";
 import Button from "./atoms/buttons/Button";
-import BaseModal from "./organisms/modal/BaseModal";
+import AddModal from "./organisms/modal/AddModal";
 
 const Navbar = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -69,13 +69,13 @@ const Navbar = () => {
               type="button"
               className="btn btn-outline-success rounded-pill"
               data-bs-toggle="modal"
-              data-bs-target="#exampleModal"
+              data-bs-target="#addModal"
               onClick={handleModalOpen}
             >
               ☄️ Blog Ekle
             </Button>
 
-            <BaseModal />
+            <AddModal />
             <Link
               href={`/userPage`}
               className="text-decoration-none d-flex gap-2 align-items-center"

@@ -1,6 +1,22 @@
-import React from "react";
-
+import { useDispatch, useSelector } from "react-redux";
+import { auth } from "../../../../../firebase/firebase";
+import Button from "../../atoms/buttons/Button";
+import { setUpdateBlog } from "@/app/redux/slices/blogSlice";
 const BaseModal = ({ ...props }) => {
+  const dispatch = useDispatch();
+  const user = auth.currentUser;
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    dispatch(
+      setUpdateBlog({
+        [name]: value,
+        ["userId"]: user.uid || "",
+        ["author"]: user.displayName,
+      })
+    );
+  };
+
   return (
     <>
       <div
@@ -113,7 +129,7 @@ const BaseModal = ({ ...props }) => {
 
             <div className="modal-footer d-flex justify-content-center">
               <Button
-                onClick={handleClick}
+                onClick={props.handleClick}
                 type="submit"
                 className="btn btn-warning px-4 py-2 rounded-3 fw-bold shadow"
                 data-bs-dismiss="modal"

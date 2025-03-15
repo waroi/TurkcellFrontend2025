@@ -5,11 +5,12 @@ import Card from "../app/components/Card";
 import { useDispatch } from "react-redux";
 import { addAllBlog, searchBlogs } from "../app/redux/slices/blogSlice";
 import { useSelector } from "react-redux";
-import UpdateModal from "../app/components/UpdateModal";
+
 import { getAllBLogs } from "../../firebase/dbController";
 import { auth } from "../../firebase/firebase";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import UpdateModal from "./components/organisms/modal/UpdateModal";
 
 export default function Home() {
   const blogs = useSelector((state) => state.blog.blogs);

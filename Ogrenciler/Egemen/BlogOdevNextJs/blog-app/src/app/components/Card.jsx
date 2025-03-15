@@ -52,7 +52,7 @@ const Card = ({ card, userAuth }) => {
                       className={"btn btn-primary m-1"}
                       onClick={handleUpdate}
                       data-bs-toggle={"modal"}
-                      data-bs-target={"#updateBlogModal"}
+                      data-bs-target={"#updateModal"}
                     >
                       <MdEdit />
                     </Button>
