@@ -48,7 +48,6 @@ const AddBlogForm = ({ getBlogs }) => {
 
     return (
         <form onSubmit={handleSubmit} className="p-4 border rounded shadow mb-4">
-            <h2 className="mb-3 font-bold">Yeni Blog Ekle</h2>
             <div className="row mb-3">
                 <div className="col-md-6">
                     <label className="form-label">Başlık</label>
@@ -64,7 +63,6 @@ const AddBlogForm = ({ getBlogs }) => {
                     <label className="form-label">İçerik</label>
                     <textarea
                         className="form-control"
-                        rows="1"
                         value={content}
                         onChange={(e) => setContent(e.target.value)}
                         placeholder="Blog içeriği"
@@ -94,7 +92,7 @@ const AddBlogForm = ({ getBlogs }) => {
                 </div>
             </div>
             <button type="submit" className="btn btn-primary w-100">
-                Blogu Ekle
+                Blog Ekle
             </button>
         </form>
     );
