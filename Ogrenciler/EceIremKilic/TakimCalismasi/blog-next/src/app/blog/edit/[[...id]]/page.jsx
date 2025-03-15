@@ -2,12 +2,12 @@
 import React, { useEffect, useState, use } from "react";
 import useBlogStore from "@/store/useBlogStore";
 import { useRouter } from "next/navigation";
-import Form from "@/components/utils/Form";
+import Form from "@/components/Form";
+import formatDate from "@/utils/FormatDate";
 
-const BlogDetails = ({ params }) => {
+const EditBlog = ({ params }) => {
   const unwrappedParams = use(params);
   const { id } = unwrappedParams;
-  const [date, setDate] = useState("");
   const router = useRouter();
   const { posts, getPosts, updatePost } = useBlogStore();
   const [blog, setBlog] = useState(null);
@@ -23,18 +23,6 @@ const BlogDetails = ({ params }) => {
       loadPost();
     }
   }, [id, posts, getPosts]);
-
-  useEffect(() => {
-    if (blog) {
-      setDate(
-        new Date(blog.releaseDate).toLocaleDateString("tr-TR", {
-          day: "2-digit",
-          month: "long",
-          year: "numeric",
-        })
-      );
-    }
-  }, [blog]);
 
   const [editedPost, setEditedPost] = useState({
     title: "",
@@ -78,7 +66,11 @@ const BlogDetails = ({ params }) => {
       <div className="d-flex py-5">
         <div className="row align-items-center">
           <div className="col-lg-7">
-            <Form onChange={handleChange} />
+            <Form
+              onChange={handleChange}
+              onSubmit={handleSubmit}
+              value={editedPost}
+            />
           </div>
           <div className="col-lg-5">
             <div className="preload">
@@ -100,7 +92,8 @@ const BlogDetails = ({ params }) => {
                       {editedPost.author || blog.author}
                     </p>
                     <p className="card-text badge bg-success">
-                      {date || editedPost.releaseDate || blog.releaseDate}
+                      {formatDate(editedPost.releaseDate) ||
+                        formatDate(blog.releaseDate)}
                     </p>
                   </div>
                 </div>
@@ -113,4 +106,4 @@ const BlogDetails = ({ params }) => {
   );
 };
 
-export default BlogDetails;
+export default EditBlog;

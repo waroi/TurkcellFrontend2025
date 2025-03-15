@@ -1,8 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import useBlogStore from "@/store/useBlogStore";
-import Loading from "../utils/Loading";
-import Card from "../utils/Card";
+import Loading from "../Loading";
+import Card from "../Card";
 
 const Latest = () => {
   const { posts, getPosts } = useBlogStore();

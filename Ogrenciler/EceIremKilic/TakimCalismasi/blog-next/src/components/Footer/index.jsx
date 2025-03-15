@@ -5,7 +5,7 @@ import mef from "../../assets/logo.png";
 
 const Footer = () => {
   return (
-    <footer className={`${styles.bgColor} footer mt-5 py-2`} id="foot">
+    <footer className={`${styles.bgColor} footer`} id="foot">
       <div className="container">
         <div className="row align-items-center">
           <div className="col-md-8">

@@ -1,16 +1,9 @@
 import Link from "next/link";
 import React from "react";
 import styles from "./card.module.css";
+import formatDate from "@/utils/FormatDate";
 
 const Card = ({ blog }) => {
-  const formatDate = (dateStr) => {
-    return new Date(dateStr).toLocaleDateString("tr-TR", {
-      day: "2-digit",
-      month: "long",
-      year: "numeric",
-    });
-  };
-
   return (
     <div className="col-lg-3 col-md-4 col-sm-6 col-12 d-flex align-items-stretch">
       <Link

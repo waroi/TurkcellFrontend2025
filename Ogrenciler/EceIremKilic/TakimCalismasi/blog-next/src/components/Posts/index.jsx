@@ -1,8 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import useBlogStore from "../../store/useBlogStore";
-import Card from "../utils/Card";
-import Loading from "../utils/Loading";
+import Card from "../Card";
+import Loading from "../Loading";
 
 const Posts = () => {
   const [isMounted, setIsMounted] = useState(false);
