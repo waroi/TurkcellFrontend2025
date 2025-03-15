@@ -21,7 +21,7 @@ function  SideBar() {
   const token = import.meta.env.VITE_SPOTIFY_TOKEN;
 
   api(token, "https://api.spotify.com/v1/me/playlists", "GET").then((resp)=>{
-    console.log(resp.items[0])}
+    }
     // setPlayList(resp)}
     )
 

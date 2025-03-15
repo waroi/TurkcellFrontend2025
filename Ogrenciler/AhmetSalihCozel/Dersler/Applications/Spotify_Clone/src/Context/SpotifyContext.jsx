@@ -85,9 +85,9 @@ export const SpotifyProvider = ({ children }) => {
         track_window: { current_track },
       }) => {
         setTrack(current_track);
-        console.log("Currently Playing", current_track);
-        console.log("Position in Song", position);
-        console.log("Duration of Song", duration);
+        // console.log("Currently Playing", current_track);
+        // console.log("Position in Song", position);
+        // console.log("Duration of Song", duration);
       });
 
       const success = await newPlayer.connect();
@@ -127,8 +127,6 @@ async function getUserObject(token, setUserInfo) {
   });
 
   const userData = await userObject.json();
-  console.log(userData)
-  setUserInfo(userData)
 }
 
 

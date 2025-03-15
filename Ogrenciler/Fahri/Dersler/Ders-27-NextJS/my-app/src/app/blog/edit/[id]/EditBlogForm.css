@@ -1,0 +1,110 @@
+.blog-form-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 25px;
+    background-color: var(--form-bg-color);
+    border-radius: 10px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
+}
+
+.form-title {
+    color: var(--accent-color);
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 28px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.blog-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-label, a {
+    color: var(--accent-color);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+a>svg {
+    fill: var(--accent-color);
+}
+
+a:hover, a:hover>svg {
+    fill: var(--accent-hover);
+    color: var(--accent-hover);
+}
+
+.form-input,
+.form-textarea {
+    padding: 12px 15px;
+    background-color: var(--input-bg-color);
+    border: 1px solid var(--input-border);
+    border-radius: 6px;
+    color: var(--text-color);
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(255, 61, 113, 0.25);
+}
+
+.form-textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+    color: #888;
+}
+
+.submit-button {
+    margin-top: 10px;
+    padding: 14px;
+    background-color: var(--accent-color);
+    color: var(--button-text);
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 61, 113, 0.4);
+}
+
+.submit-button:active {
+    transform: translateY(0);
+}
+
+@media screen and (max-width: 768px) {
+    .blog-form-container {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    .form-title {
+        font-size: 24px;
+    }
+}

@@ -1,0 +1,15 @@
+.description {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-clamp: 3;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+
+
+.card-footer {
+  height: 50px;
+  bottom: 0;
+}

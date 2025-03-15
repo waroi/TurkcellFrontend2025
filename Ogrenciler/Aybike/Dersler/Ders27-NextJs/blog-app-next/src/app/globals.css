@@ -1,0 +1,83 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+:root {
+	--background: #ffffff;
+	--foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--background: #0a0a0a;
+		--foreground: #ededed;
+	}
+}
+
+html,
+body {
+	max-width: 100vw;
+	overflow-x: hidden;
+}
+
+body {
+	color: var(--foreground);
+	background: var(--background);
+	font-family: Arial, Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+	html {
+		color-scheme: dark;
+	}
+}
+
+.blog-card {
+	margin: 1rem;
+	padding: 1rem;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+	transform: scale(1.05);
+	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+.blog-image {
+	object-fit: cover;
+}
+
+.card-title {
+	height: 30px;
+}
+
+@media screen and (max-width: 1200px) {
+	.card-title {
+		height: 60px;
+		font-size: medium;
+	}
+}
+
+.blog-date {
+	font-size: 0.8rem;
+}
+
+.detail-container {
+	border-radius: 5%;
+	width: 80%;
+}
+.tag {
+	background-color: #d682f0;
+}
+.custom-button{
+	width: 120px;
+}
