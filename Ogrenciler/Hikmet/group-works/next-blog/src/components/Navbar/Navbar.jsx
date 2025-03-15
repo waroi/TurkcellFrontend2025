@@ -2,11 +2,14 @@
 import Link from "next/link";
 import UserComponent from "./UserComponent";
 import useBlogStore from "@/store/blogStore";
-import { useEffect } from "react";
+
 
 function Navbar() {
   const filterBlogs = useBlogStore((state) => state.filterBlogs);
   const setInputValue = useBlogStore((state) => state.setInputValue);
+  const theme = useBlogStore((state) => state.theme);
+  const toggleTheme = useBlogStore((state) => state.toggleTheme)
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -14,7 +17,7 @@ function Navbar() {
     filterBlogs(e.target.filterInput.value ?? "Zustand");
   };
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+    <nav className={`navbar navbar-expand-lg ${theme}`} >
       <div className="container">
         <Link className="navbar-brand bolder" href="/">
           NextBlog
@@ -53,6 +56,10 @@ function Navbar() {
             Search
           </button>
         </form>
+
+        <button className=" btn btn-primary ms-2" onClick={toggleTheme}>
+          {theme === "light" ? "🌞" : "🌙"}
+        </button>
       </div>
     </nav>
   );

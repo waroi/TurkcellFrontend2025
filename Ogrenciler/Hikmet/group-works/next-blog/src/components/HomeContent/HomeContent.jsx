@@ -9,24 +9,25 @@ function HomeContent() {
   const blogs = useBlogStore((state) => state.blogs);
   const fetchBlogs = useBlogStore((state) => state.fetchBlogs);
   const searchInput = useBlogStore((state) => state.searchInput);
-
-useEffect(()=>{
-	fetchBlogs();
-},[blogs])
+  const theme = useBlogStore((state) => state.theme);
 
   useEffect(() => {
-}, [filteredBlogs]);
+    fetchBlogs();
+  }, [blogs])
+
+  useEffect(() => {
+  }, [filteredBlogs]);
 
   return (
-    <section className="container">
+    <section className={`container ${theme}`}>
       <div className="row">
         <section className="container">
           <div className="row">
             {searchInput === "" && filteredBlogs != []
               ? blogs?.map((blog) => <BlogCard key={blog.id} {...blog} />)
               : filteredBlogs?.map((blog) => (
-                  <BlogCard key={blog.id} {...blog} />
-                ))}
+                <BlogCard key={blog.id} {...blog} />
+              ))}
           </div>
         </section>
       </div>
