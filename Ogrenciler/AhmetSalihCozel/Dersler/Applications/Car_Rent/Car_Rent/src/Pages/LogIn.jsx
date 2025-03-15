@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
-import {register} from "../Store/fireBase"
+import {login} from "../Store/fireBase"
 import { NavLink } from "react-router";
 
-const SignIn = () => {
+const LogIn = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-    register(email,password)
+    const check = e.target.rememberMe.checked;
+    login(email,password,check)
   }
   return (
     <React.Fragment>
@@ -23,12 +24,12 @@ const SignIn = () => {
             <input name="password" type="password" className="form-control" id="exampleInputPassword1" />
           </div>
           <div className="mb-3 form-check">
-            <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-            <label className="form-check-label" htmlFor="exampleCheck1">Check me out</label>
+            <input name="rememberMe" type="checkbox" className="form-check-input" id="exampleCheck1" />
+            <label className="form-check-label" htmlFor="exampleCheck1">Remember Me</label>
           </div>
-          <button type="submit" className="btn btn-primary">Submit</button>
+          <button type="submit" className="btn btn-primary">Log In</button>
           <div className="my-3">
-            <NavLink to={"/login"}>Log In</NavLink>
+            <NavLink to={"/signin"}>Sign In</NavLink>
           </div>
         </form>
       </div>
@@ -36,4 +37,4 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+export default LogIn;

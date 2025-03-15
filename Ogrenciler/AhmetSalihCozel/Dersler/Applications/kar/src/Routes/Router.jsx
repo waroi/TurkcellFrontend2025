@@ -4,13 +4,10 @@ import SignIn from '../Pages/SignIn'
 import CarStore from '../Pages/CarStore'
 import CarDetails from '../Pages/CarDetails'
 import Reservation from '../Pages/Reservation'
-import LogIn from '../Pages/LogIn'
 
 const Router = () => {
     const routes = useRoutes([
-        { path: "/", element: <LogIn /> },
-        { path: "/login", element: <LogIn /> },
-        { path: "/signin", element: <SignIn /> },
+        { path: "/", element: <SignIn /> },
         { path: "/carstore", element: <CarStore /> },
         { path: "/cardetail/:carname", element: <CarDetails /> },
         { path: "/reservation", element: <Reservation /> },

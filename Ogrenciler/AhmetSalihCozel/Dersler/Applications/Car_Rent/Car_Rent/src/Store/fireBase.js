@@ -1,11 +1,22 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  doc,
+  deleteDoc,
+  setDoc,
+  updateDoc,
+} from "firebase/firestore";
+
 const firebaseConfig = {
   apiKey: "AIzaSyC_4ypNnyS9yoABCNhjbkoB6b0wyA_IkNU",
   authDomain: "car-rental-app-85606.firebaseapp.com",
@@ -16,6 +27,38 @@ const firebaseConfig = {
   measurementId: "G-4J2V5FW0BW"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+const auth = getAuth(app);
+const db = getFirestore(app);
+
+export async function register(email, password) {
+  const user = await createUserWithEmailAndPassword(auth, email, password);
+  setDoc(doc(collection(db, "users"), user.user.uid), {rentedCars:[]})
+  console.log(user)
+  return user
+}
+
+export async function login(email, password, remember) {
+  return signInWithEmailAndPassword(auth, email, password).then(
+    (credentials) => {
+      console.log(collection(db, credentials.user.uid))
+      if (remember) localStorage.setItem("user", credentials.user.uid);
+      return credentials;
+    }
+  );
+}
+
+export function logout() {
+  localStorage.removeItem("user");
+  return auth.signOut();
+}
+
+// setDoc(userRef, { name: "Ahmet", age: 30 }, { merge: true })
+//   .then(() => {
+//     console.log("Document successfully written!");
+//   })
+//   .catch((error) => {
+//     console.error("Error writing document: ", error);
+//   });
+// console.log(userRef)
+// setDoc(cityRef, { capital: true }, { merge: true });
