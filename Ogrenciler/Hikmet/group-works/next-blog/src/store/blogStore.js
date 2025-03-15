@@ -2,6 +2,13 @@ import { create } from "zustand";
 
 const useBlogStore = create((set) => ({
 	blogs: [],
+	filteredBlogs:[],
+	searchInput: "",
+
+	setInputValue: (value)=>{
+		set({searchInput:value})
+		console.log(value)
+	},
 	setBlogs: (blogs) => set({ blogs }),
 
 	fetchBlogs: async () => {
@@ -9,6 +16,17 @@ const useBlogStore = create((set) => ({
 			const response = await fetch("http://localhost:3000/blogs");
 			const data = await response.json();
 			set({ blogs: data });
+		} catch (error) {
+			console.error("Blog verileri alınamadı:", error);
+		}
+	},
+
+	filterBlogs: async (filterText) => {
+		try {
+			const response = await fetch("http://localhost:3000/blogs");
+			const data = await response.json();
+			const filteredData = data.filter(blog=>blog.title.toLowerCase().includes(filterText.toLowerCase()))
+			set({ filteredBlogs: filteredData });
 		} catch (error) {
 			console.error("Blog verileri alınamadı:", error);
 		}
