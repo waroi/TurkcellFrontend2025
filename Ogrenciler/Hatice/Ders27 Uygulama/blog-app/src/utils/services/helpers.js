@@ -44,3 +44,18 @@ export async function deleteBlog(id) {
 
   return await response.json();
 }
+
+export async function addBlog(data) {
+  const response = await apiFetch(`/blogs`, {
+    method: "POST",
+    body: JSON.stringify(data),
+  });
+
+  if (!response.ok) {
+    console.error("API Error:", response.status, response.statusText);
+    toast.error("Blog eklenirken bir hata oluştu");
+    return response.statusText;
+  }
+
+  return await response.json();
+}
