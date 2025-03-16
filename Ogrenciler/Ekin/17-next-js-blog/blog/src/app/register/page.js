@@ -6,6 +6,10 @@ import Layout from "@/components/Layout";
 
 import useAuth from "@/hooks/useAuth";
 
+import Input from "@/components/Input";
+import FileInput from "@/components/FileInput";
+import Button from "@/components/Button";
+
 export default function Add() {
   const { register } = useAuth();
 
@@ -16,61 +20,24 @@ export default function Add() {
 
   return (
     <Layout active="register">
-      <div className="form-floating mb-3">
-        <input
-          type="text"
-          className="form-control"
-          id="name"
-          placeholder="Name"
-          ref={name}
-        />
-        <label htmlFor="name">Name</label>
+      <div className="container pt-5">
+        <Input ref={name} name="Name" type="text" />
+        <FileInput ref={profile} name="Profile Picture" />
+        <Input ref={email} name="Email" type="email" />
+        <Input ref={password} name="Password" type="password" />
+        <Button
+          onClick={() =>
+            register(
+              email.current.value,
+              password.current.value,
+              name.current.value,
+              profile.current.files[0]
+            )
+          }
+        >
+          Register
+        </Button>
       </div>
-      <div className="input-group mb-3">
-        <label className="input-group-text" htmlFor="profile">
-          Profile Picture
-        </label>
-        <input
-          type="file"
-          className="form-control py-3"
-          id="profile"
-          accept="image/*"
-          ref={profile}
-        />
-      </div>
-      <div className="form-floating mb-3">
-        <input
-          type="text"
-          className="form-control"
-          id="email"
-          placeholder="Email"
-          ref={email}
-        />
-        <label htmlFor="email">Email</label>
-      </div>
-      <div className="form-floating mb-3">
-        <input
-          type="password"
-          className="form-control"
-          id="password"
-          placeholder="Password"
-          ref={password}
-        />
-        <label htmlFor="password">Password</label>
-      </div>
-      <button
-        className="btn btn-primary"
-        onClick={() =>
-          register(
-            email.current.value,
-            password.current.value,
-            name.current.value,
-            profile.current.files[0]
-          )
-        }
-      >
-        Register
-      </button>
     </Layout>
   );
 }

@@ -25,9 +25,9 @@ const Blog = ({ params }) => {
         router.push("/");
       });
   }
-  //! ********************************************************************************************
+
   return (
-    <Layout active="add" bodyClassName="blog-body" fill>
+    <Layout active="add" mainClass="blog">
       <img src={blog.banner} className="banner w-100 object-fit-cover mb-5" />
       <div className="container pb-5">
         <h1 className="mt-5 mb-5">{blog.title}</h1>

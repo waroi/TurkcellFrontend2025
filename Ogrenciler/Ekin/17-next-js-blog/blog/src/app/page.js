@@ -19,7 +19,7 @@ export default function Home() {
   }, []);
 
   return (
-    <Layout>
+    <Layout mainClass="home">
       <button
         onClick={() => {
           router.push("/login");

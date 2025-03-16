@@ -18,6 +18,15 @@ $container-max-widths: (
 
 main {
   min-height: calc(100vh - 12rem);
+
+  &.home {
+    background-image: url(https://img001.prntscr.com/file/img001/BjoiThwKTxGVXg-xrA1aPQ.jpg);
+    background-size: contain;
+  }
+
+  &.blog {
+    background-color: $secondary;
+  }
 }
 
 .banner {
@@ -30,14 +39,6 @@ main {
 
 #content {
   height: 10rem;
-}
-
-.page-body {
-  background-image: url(https://img001.prntscr.com/file/img001/BjoiThwKTxGVXg-xrA1aPQ.jpg);
-  background-size: contain;
-}
-.blog-body {
-  background-color: $secondary;
 }
 
 nav {
