@@ -1,9 +1,8 @@
-'use client';
+"use client";
 
-import data from '../../../data/blog.json';
-import { useEffect, useState, use } from 'react';
-import '../../globals.css';
-import DetailCard from '../../../component/DetailCard';
+import data from "../../../data/blog.json";
+import { useEffect, useState, use } from "react";
+import DetailCard from "../../../component/DetailCard";
 
 export default function BlogDetail({ params }) {
   const [blog, setBlog] = useState(null);
@@ -15,19 +14,19 @@ export default function BlogDetail({ params }) {
       const IDBlog = data.find((blog) => blog.id === Number(id));
 
       setBlog(IDBlog);
-      console.log('IDBlog:', IDBlog);
+      console.log("IDBlog:", IDBlog);
     }
   }, [id]);
 
   if (!blog) {
     return (
-      <div className='container my-5 text-center'>
-        <div className='alert alert-warning py-4'>
-          <h1 className='display-5'>Blog Bulunamadı!</h1>
-          <p className='lead mt-3'>
+      <div className="container my-5 text-center">
+        <div className="alert alert-warning py-4">
+          <h1 className="display-5">Blog Bulunamadı!</h1>
+          <p className="lead mt-3">
             The requested blog post could not be found.
           </p>
-          <a href='/' className='btn btn-outline-warning mt-3'>
+          <a href="/" className="btn btn-outline-warning mt-3">
             Ana Sayfaya Dön
           </a>
         </div>
@@ -36,7 +35,7 @@ export default function BlogDetail({ params }) {
   }
 
   return (
-    <div className='container my-5 blog-detail'>
+    <div className="container my-5 blog-detail">
       <DetailCard blog={blog} />
     </div>
   );
