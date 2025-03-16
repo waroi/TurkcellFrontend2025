@@ -6,6 +6,9 @@ import { useRouter } from "next/navigation";
 import useBlog from "@/store/blogs";
 import { addBlog as addBlogFirebase } from "@/services/firebase";
 import Layout from "@/components/Layout";
+import Input from "@/components/Input";
+import TextArea from "@/components/TextArea";
+import Button from "@/components/Button";
 
 export default function Add() {
   const router = useRouter();
@@ -19,7 +22,7 @@ export default function Add() {
 
   function addBlog(blog) {
     blog = {
-      author: blogState.user,
+      author: blogState.user.id,
       title: title.current.value,
       description: description.current.value,
       content: content.current.value
@@ -42,59 +45,14 @@ export default function Add() {
 
   return (
     <Layout active="add">
-      <div className="form-floating mb-3">
-        <input
-          type="text"
-          className="form-control"
-          id="title"
-          placeholder="Title"
-          ref={title}
-        />
-        <label htmlFor="title">Title</label>
+      <div className="container pt-5">
+        <Input ref={title} name="Title" type="text" />
+        <Input ref={image} name="Card Image" type="text" />
+        <TextArea ref={description} name="Description" />
+        <Input ref={banner} name="Banner Image" type="text" />
+        <TextArea ref={content} name="Content" />
+        <Button onClick={addBlog}>Save</Button>
       </div>
-      <div className="form-floating mb-3">
-        <input
-          type="text"
-          className="form-control"
-          id="image"
-          placeholder="Card Image"
-          ref={image}
-        />
-        <label htmlFor="image">Card Image</label>
-      </div>
-      <div className="form-floating mb-3">
-        <textarea
-          type="text"
-          className="form-control"
-          id="description"
-          placeholder="Description"
-          ref={description}
-        />
-        <label htmlFor="description">Description</label>
-      </div>
-      <div className="form-floating mb-3">
-        <input
-          type="text"
-          className="form-control"
-          id="banner"
-          placeholder="Banner Image"
-          ref={banner}
-        />
-        <label htmlFor="banner">Banner Image</label>
-      </div>
-      <div className="form-floating mb-3">
-        <textarea
-          type="text"
-          className="form-control"
-          id="content"
-          placeholder="Content"
-          ref={content}
-        />
-        <label htmlFor="content">Content</label>
-      </div>
-      <button className="btn btn-primary" onClick={addBlog}>
-        Save
-      </button>
     </Layout>
   );
 }
