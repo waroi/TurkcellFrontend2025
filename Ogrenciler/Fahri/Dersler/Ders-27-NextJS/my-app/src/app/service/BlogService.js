@@ -38,4 +38,8 @@ export class BlogService {
         if (!response.ok) throw new Error("Blog silinirken bir hata oluştu")
         return response.ok
     }
+    static async getAllBlogs() {
+        const response = await fetch(this.API_URL);
+        return await response.json();
+    }
 }

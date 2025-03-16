@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import { configureStore } from "@reduxjs/toolkit";
 import blogReducer from "../redux/slice/blogSlice";
@@ -8,4 +8,4 @@ export const store = configureStore({
   },
 });
 
-export default store;
+export default store
