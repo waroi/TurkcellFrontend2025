@@ -34,7 +34,6 @@ export default function Navigation({ active }) {
                 Home
               </Link>
             </li>
-
             {user ? (
               <>
                 <li className="nav-item">

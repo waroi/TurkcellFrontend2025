@@ -1,30 +1,28 @@
 "use client";
 
-import { useRouter } from "next/navigation";
-
 import { use, useState, useEffect } from "react";
 
-import useBlog from "@/store/blogs";
-import { getBlog, deleteBlog as deleteBlogFirebase } from "@/services/firebase";
+import { getBlog } from "@/services/firebase";
 import Layout from "@/components/Layout";
+import Link from "next/link";
+
+import useBlog from "@/hooks/useBlog";
+import Button from "@/components/Button";
+
+import useStore from "@/store/blogs";
 
 const Blog = ({ params }) => {
-  const router = useRouter();
-  const blogState = useBlog();
+  const store = useStore();
+
+  const { deleteBlog } = useBlog();
+
   const id = use(params).id;
+
   const [blog, setBlog] = useState({});
 
   useEffect(() => {
     getBlog(id).then(setBlog);
   }, []);
-
-  function deleteBlog() {
-    if (confirm("Are you sure you want to delete the blog?"))
-      deleteBlogFirebase(id).then(() => {
-        blogState.deleteBlog(id);
-        router.push("/");
-      });
-  }
 
   return (
     <Layout active="add" mainClass="blog">
@@ -40,12 +38,18 @@ const Blog = ({ params }) => {
             </p>
           ))
         )}
-        <a href={`/edit/${id}`} className="btn btn-warning me-3">
-          Edit
-        </a>
-        <button className="btn btn-danger" onClick={deleteBlog}>
-          Delete
-        </button>
+        {store.user && store.user.id == blog.author ? (
+          <>
+            <Link href={`/edit/${id}`} className="btn btn-warning me-3">
+              Edit
+            </Link>
+            <Button variant="danger" onClick={() => deleteBlog(id)}>
+              Delete
+            </Button>
+          </>
+        ) : (
+          ""
+        )}
       </div>
     </Layout>
   );

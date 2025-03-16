@@ -1,16 +1,16 @@
 "use client";
 
 import { use, useEffect, useRef } from "react";
-import { useRouter } from "next/navigation";
 import { getBlog } from "@/services/firebase";
 
-import useBlog from "@/store/blogs";
-import { editBlog as editBlogFirebase } from "@/services/firebase";
+import Input from "@/components/Input";
+import TextArea from "@/components/TextArea";
+import Button from "@/components/Button";
+import useBlog from "@/hooks/useBlog";
 import Layout from "@/components/Layout";
 
 const Edit = ({ params }) => {
-  const router = useRouter();
-  const blogState = useBlog();
+  const { editBlog } = useBlog();
   const { id } = use(params);
 
   useEffect(() => {
@@ -31,38 +31,31 @@ const Edit = ({ params }) => {
   const banner = useRef();
   const content = useRef();
 
-  function editBlog(blog) {
-    blog = {
-      id: id,
-      title: title.current.value,
-      description: description.current.value,
-      banner: banner.current.value,
-      content: content.current.value
-        .split("\n\n")
-        .map((paragraph) => paragraph.trim()),
-      date: new Date().getTime(),
-      image: image.current.value
-        ? image.current.value
-        : "https://coffective.com/wp-content/uploads/2018/06/default-featured-image.png.jpg",
-      banner: banner.current.value
-        ? banner.current.value
-        : "https://coffective.com/wp-content/uploads/2018/06/default-featured-image.png.jpg",
-    };
-
-    editBlogFirebase(blog).then(() => {
-      blogState.editBlog(blog);
-    });
-    router.push(`/blog/${id}`);
-  }
-
   return (
     <Layout>
-      <Input ref={title} name="Title" type="text" />
-      <Input ref={image} name="Card Image" type="text" />
-      <TextArea ref={description} name="Description" />
-      <Input ref={banner} name="Banner Image" type="text" />
-      <TextArea ref={content} name="Content" />
-      <Button onClick={editBlog}>Save</Button>
+      <div className="container pt-5">
+        <Input ref={title} name="Title" type="text" />
+        <Input ref={image} name="Card Image" type="text" />
+        <TextArea ref={description} name="Description" />
+        <Input ref={banner} name="Banner Image" type="text" />
+        <TextArea ref={content} name="Content" />
+        <Button
+          onClick={() =>
+            editBlog(
+              id,
+              title.current.value,
+              image.current.value,
+              description.current.value,
+              banner.current.value,
+              content.current.value
+                .split("\n\n")
+                .map((paragraph) => paragraph.trim())
+            )
+          }
+        >
+          Save
+        </Button>
+      </div>
     </Layout>
   );
 };

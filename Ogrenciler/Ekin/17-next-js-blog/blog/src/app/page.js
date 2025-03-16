@@ -20,13 +20,6 @@ export default function Home() {
 
   return (
     <Layout mainClass="home">
-      <button
-        onClick={() => {
-          router.push("/login");
-        }}
-      >
-        DEBUG!!!!!!!!!!
-      </button>
       <section className="container py-5">
         {blogState.blogs.map((blog, index) => (
           <Card key={index} blog={blog} />
