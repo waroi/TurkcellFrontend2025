@@ -15,6 +15,7 @@ export const AuthProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -60,13 +61,14 @@ export const AuthProvider = ({ children }) => {
       console.error('Login error:', error.message);
     }
   };
-
+  console.log("current user:",currentUser);
   const logOutUser = async () => {
     try {
       await signOut(auth);
       console.log('User logged out');
     } catch (error) {
       console.error('Logout error:', error.message);
+      
     }
   };
 

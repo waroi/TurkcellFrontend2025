@@ -3,12 +3,20 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { db } from "../../../../firebase/firebaseconfig";
 import { collection, getDocs, deleteDoc, doc } from "firebase/firestore";
+import { useAuth } from "../../../context/authContext";
 
 export default function BlogPanel() {
-  const router = useRouter();
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  const { isLoggedIn } = useAuth();
+    const router = useRouter();
+  
+    useEffect(() => {
+      if (!isLoggedIn) {
+        router.push('/'); 
+      }
+    }, [isLoggedIn, router]);
   useEffect(() => {
     fetchBlogs();
   }, []);

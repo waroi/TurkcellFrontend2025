@@ -1,11 +1,19 @@
 'use client';
-import { useState } from 'react';
+import { useState ,useEffect} from 'react';
 import { useRouter } from 'next/navigation';
 import { db } from '../../../../../firebase/firebaseconfig';
 import { doc, updateDoc, serverTimestamp } from 'firebase/firestore';
 import { useParams } from 'next/navigation';
-
+import { useAuth } from '../../../../context/authContext';
 export default function BlogUpdate() {
+  const { isLoggedIn } = useAuth();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!isLoggedIn) {
+      router.push('/');
+    }
+  }, [isLoggedIn, router]);
   const { id } = useParams();
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
@@ -14,7 +22,6 @@ export default function BlogUpdate() {
   const [image, setImage] = useState('');
   const [author, setAuthor] = useState('');
   const [loading, setLoading] = useState(false);
-  const router = useRouter();
 
   const handleUpdate = async () => {
     if (
