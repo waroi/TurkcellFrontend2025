@@ -17,7 +17,6 @@ export default function BlogPanel() {
     try {
       const querySnapshot = await getDocs(collection(db, 'blogs'));
       const blogsData = querySnapshot.docs.map((doc) => {
-        console.log('doc: ', doc.data());
         return {
           id: doc.id,
           ...doc.data(),

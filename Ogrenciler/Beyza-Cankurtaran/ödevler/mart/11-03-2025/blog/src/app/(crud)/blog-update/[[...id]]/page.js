@@ -7,7 +7,6 @@ import { useParams } from 'next/navigation';
 
 export default function BlogUpdate() {
   const { id } = useParams();
-  console.log(id);
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [date, setDate] = useState('');
