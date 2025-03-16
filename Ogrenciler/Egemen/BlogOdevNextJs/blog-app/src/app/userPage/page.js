@@ -6,6 +6,7 @@ import Card from "../components/Card";
 import UpdateModal from "../components/UpdateModal";
 import { addAllBlog, searchBlogs } from "../redux/slices/blogSlice";
 import { auth } from "../../../firebase/firebase";
+import { unsubscribe } from "../../../services/authServices";
 
 const UserPage = () => {
   const blogs = useSelector((state) => state.blog.blogs);
@@ -16,7 +17,7 @@ const UserPage = () => {
     if (searchTerm == "") {
       async function fetchBlog() {
         // const data = await getBlog();
-        const data = await getUserBlogs();
+        const data = await getUserBlogs();// buraya bak
         if (data) {
           dispatch(addAllBlog(data));
         }
@@ -28,15 +29,8 @@ const UserPage = () => {
   }, [searchTerm, userAuth, dispatch]);
   useEffect(() => {
     dispatch(addAllBlog([]));
-    const unsubscribe = auth.onAuthStateChanged((userAuth) => {
-      if (userAuth) {
-        setUserAuth(userAuth);
-      } else {
-        setUserAuth(null);
-      }
-    });
+    unsubscribe(setUserAuth);
 
-    return () => unsubscribe();
   }, []);
   return userAuth ? (
     <div>

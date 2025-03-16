@@ -5,7 +5,7 @@ import "./blogCard.css";
 function BlogCard({ id, title, description, imageUrl, releaseDate }) {
 	return (
 		<div className="p-3 col-lg-6">
-			<div className="card mb-3 p-0  h-100" key={id}>
+				<div className="card mb-3 p-0  h-100" key={id}>
 				<div className="row h-100">
 					<div className="col-md-4 d-flex align-items-center justify-content-center">
 						<Image

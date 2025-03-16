@@ -1,23 +1,23 @@
 import clsx from "clsx";
 import { uiTexts } from "../../../constants/index";
 
-const Button = ({ children, type, className, ...props }) => {
+const Button = ({ children, variant, className, ...props }) => {
   const { buttons } = uiTexts;
-  console.log(type === "delete");
+  console.log(variant === "delete");
   return (
     <button
       className={clsx(
         "btn ",
-        !type && "btn-primary",
-        type === "delete" && "btn-danger",
-        type === "edit" && "btn-warning",
-        type === "outline" && "btn-outline-secondary",
-        type === "link" && "link-primary",
+        !variant && "btn-primary",
+        variant === "delete" && "btn-danger",
+        variant === "edit" && "btn-warning",
+        variant === "outline" && "btn-outline-secondary",
+        variant === "link" && "link-primary",
         className
       )}
       {...props}
     >
-      {children ? children : buttons[type]}
+      {children ? children : buttons[variant]}
     </button>
   );
 };

@@ -1,10 +1,11 @@
+import CustomButton from "../CustomButton";
 import styles from "./subscribe.module.css";
 import React from "react";
 
 const Subscribe = () => {
   return (
     <section className="subscribe-section" id="subscribe">
-      <div className="container">
+      <div className="container mb-5">
         <h2 className="my-5">Bültenimize Abone Ol</h2>
         <div className="row">
           <div
@@ -26,11 +27,9 @@ const Subscribe = () => {
                 name="email"
                 id="email"
                 placeholder="Mail adresi giriniz."
-                className="mt-3 form-control rounded-pill"
+                className="mb-3 form-control rounded-pill"
               />
-              <button className="btn btn-outline-danger rounded-pill w-25 mt-3">
-                Abone ol
-              </button>
+              <CustomButton buttonText="Abone Ol" variant="outline-danger" />
             </form>
           </div>
           <div className="col-lg-7 p-0">

@@ -7,20 +7,11 @@ import Link from "next/link";
 import { auth } from "@/firebase_config";
 import { getProfileImageUrl } from "@/controller/DBController";
 import useAuthStore from "@/store/useAuthStore";
-import NavbarItems from "../utils/NavbarItems";
+import NavbarItems from "./components/NavbarItems";
 
 const Navbar = () => {
   const [profileImageUrl, setProfileImageUrl] = useState(null);
-  const [currentUser, setCurrentUser] = useState(null);
   const { user } = useAuthStore();
-
-  useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((user) => {
-      setCurrentUser(user);
-    });
-
-    return () => unsubscribe();
-  }, []);
 
   useEffect(() => {
     const fetchProfileImage = async () => {

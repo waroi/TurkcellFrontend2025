@@ -45,7 +45,6 @@ body {
   margin: 0;
 }
 
-
 a {
   color: inherit;
   text-decoration: none;
@@ -55,4 +54,14 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+.dark {
+  background-color: #3d0606;
+  color: #fce2e2;
+}
+
+.light {
+  background-color: #fce2e2;
+  color: #3d0606;
 }
