@@ -36,7 +36,7 @@ function Page({ blog }) {
           <Button
             className="ms-2"
             onClick={() => handleDelete(blog?.id)}
-            type="delete"
+            variant="delete"
           ></Button>
         </CardFooter>
       </Card>

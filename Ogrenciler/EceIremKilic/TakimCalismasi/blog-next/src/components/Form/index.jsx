@@ -1,8 +1,11 @@
 import React from "react";
 import Input from "../Input";
 import CustomButton from "../CustomButton";
+import Loading from "../Loading";
 
 const Form = ({ onChange, onSubmit, value }) => {
+  console.log("val:", value);
+
   return (
     <div className="form">
       <form onSubmit={onSubmit}>
@@ -12,7 +15,7 @@ const Form = ({ onChange, onSubmit, value }) => {
         <div className="mb-3">
           <Input
             id="image"
-            value={value.image}
+            defaultValue={value?.image}
             onChange={onChange}
             label="Post Görsel URL'i"
           />
@@ -20,7 +23,7 @@ const Form = ({ onChange, onSubmit, value }) => {
         <div className="mb-3">
           <Input
             id="title"
-            value={value.title}
+            defaultValue={value?.title}
             onChange={onChange}
             label="Post Başlığı"
           />
@@ -28,7 +31,7 @@ const Form = ({ onChange, onSubmit, value }) => {
         <div className="mb-3">
           <Input
             id="content"
-            value={value.content}
+            defaultValue={value?.content}
             onChange={onChange}
             label="Post İçeriği"
           />
@@ -36,7 +39,7 @@ const Form = ({ onChange, onSubmit, value }) => {
         <div className="mb-3">
           <Input
             id="author"
-            value={value.author}
+            defaultValue={value?.author}
             onChange={onChange}
             label="Post Yazarı"
           />
@@ -45,7 +48,7 @@ const Form = ({ onChange, onSubmit, value }) => {
           <Input
             type="date"
             id="releaseDate"
-            value={value.releaseDate}
+            defaultValue={value?.releaseDate}
             onChange={onChange}
             label="Post Yayınlanma Tarihi"
           />

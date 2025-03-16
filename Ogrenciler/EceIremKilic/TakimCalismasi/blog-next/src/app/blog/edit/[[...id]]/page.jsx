@@ -4,6 +4,7 @@ import useBlogStore from "@/store/useBlogStore";
 import { useRouter } from "next/navigation";
 import Form from "@/components/Form";
 import formatDate from "@/utils/FormatDate";
+import Loading from "@/components/Loading";
 
 const EditBlog = ({ params }) => {
   const unwrappedParams = use(params);
@@ -58,7 +59,7 @@ const EditBlog = ({ params }) => {
   };
 
   if (!blog) {
-    return <div>Yazı yükleniyor...</div>;
+    return <Loading />;
   }
 
   return (
@@ -67,9 +68,9 @@ const EditBlog = ({ params }) => {
         <div className="row align-items-center">
           <div className="col-lg-7">
             <Form
+              value={editedPost}
               onChange={handleChange}
               onSubmit={handleSubmit}
-              value={editedPost}
             />
           </div>
           <div className="col-lg-5">

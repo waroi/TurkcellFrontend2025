@@ -1,4 +1,5 @@
 import CustomButton from "../CustomButton";
+import Input from "../Input";
 import styles from "./subscribe.module.css";
 import React from "react";
 
@@ -18,19 +19,18 @@ const Subscribe = () => {
               Emin ol sadece tek bir spam bile yok. Sadece sana özel bir indirim
               gelirse haberdar edeceğiz.
             </p>
-            <form className="d-flex flex-column">
-              <label htmlFor="Email" className="text-white">
-                Email
-              </label>
-              <input
+            <div className="d-flex flex-column">
+              <Input
                 type="email"
-                name="email"
                 id="email"
                 placeholder="Mail adresi giriniz."
-                className="mb-3 form-control rounded-pill"
+                label="Email"
+                value=""
+                onChange={null}
               />
+
               <CustomButton buttonText="Abone Ol" variant="outline-danger" />
-            </form>
+            </div>
           </div>
           <div className="col-lg-7 p-0">
             <div className={`${styles.sideImage} w-100 object-fit-cover`}></div>

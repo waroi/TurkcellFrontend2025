@@ -8,7 +8,7 @@ Bu tema, kişisel bloglar, seyahat, sağlık ve yaşam tarzı içerikleri için 
 
 body {
   font-size: 16px;
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   color: #e0e0e0;
   background: #121212;
 }
@@ -24,7 +24,7 @@ body {
 }
 
 .card-image-top {
-  height: "100%";
+  height: '100%';
   object-fit: cover;
 }
 
@@ -76,4 +76,8 @@ body {
 .form-control:focus {
   border-color: rgb(255, 123, 0);
   box-shadow: 0 0 6px rgba(255, 123, 0.8);
+}
+
+.mt-20 {
+  margin-top: 56px;
 }
