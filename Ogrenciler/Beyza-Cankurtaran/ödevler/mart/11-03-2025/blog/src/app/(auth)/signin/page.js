@@ -1,12 +1,12 @@
 'use client';
-import SignUpForm from '@/component/SignUpForm';
+import SignInForm from '../../../component/SignInForm';
 
-const SignUp = () => {
+const SignIn = () => {
   return (
     <div className='container-fluid d-flex justify-content-center align-items-center vh-100'>
-      <SignUpForm />
+      <SignInForm />
     </div>
   );
 };
 
-export default SignUp;
+export default SignIn;

@@ -18,16 +18,16 @@ export default function DetailCard({ blog }) {
           <div className='col-lg-6 p-4 blog-content'>
             <div className='d-flex align-items-center mb-4'>
               <span className='badge bg-secondary me-2'>Blog</span>
-              <p className='mb-0 text-muted'>
+              <p className='mb-0 color-grey'>
                 <i className='bi bi-person-fill me-1'></i>
                 {blog.author}
               </p>
             </div>
 
-            <p className='lead text-muted mb-4'>{blog.detail}</p>
+            <p className='lead color-grey mb-4'>{blog.detail}</p>
 
             <div className='blog-body'>
-              <p>{blog.content}</p>
+              <p className='color-grey'>{blog.content}</p>
             </div>
           </div>
         </div>
