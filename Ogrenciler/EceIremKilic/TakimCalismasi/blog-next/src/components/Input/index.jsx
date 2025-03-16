@@ -4,7 +4,8 @@ const Input = ({
   type = "text",
   id = "",
   label = "",
-  value = { value },
+  defaultValue = "",
+  placeholder = "",
   onChange = { onChange },
 }) => {
   return (
@@ -16,8 +17,9 @@ const Input = ({
         type={type}
         className="form-control"
         id={id}
-        value={value}
+        defaultValue={defaultValue || ""}
         onChange={onChange}
+        placeholder={placeholder}
       />
     </div>
   );

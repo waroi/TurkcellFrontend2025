@@ -8,6 +8,7 @@ import {
   getDoc,
   updateDoc,
   deleteDoc,
+  orderBy,
 } from "firebase/firestore";
 import { db } from "../firebase_config";
 
@@ -15,7 +16,8 @@ const useBlogStore = create((set) => ({
   posts: [],
   getPosts: async () => {
     try {
-      const q = query(collection(db, "posts"));
+      const postsCollection = collection(db, "posts");
+      const q = query(postsCollection, orderBy("releaseDate", "desc"));
       const snaps = await getDocs(q);
       const allPosts = snaps.docs.map((post) => ({
         id: post.id,
@@ -26,7 +28,6 @@ const useBlogStore = create((set) => ({
       console.error("fetchAllPosts DBController Error", error);
     }
   },
-
   getPostById: async (id) => {
     try {
       const postRef = doc(db, "posts", id);
