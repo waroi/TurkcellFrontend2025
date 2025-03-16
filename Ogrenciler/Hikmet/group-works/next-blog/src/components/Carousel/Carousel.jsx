@@ -18,10 +18,10 @@ export default function Carousel() {
 			data-bs-ride="carousel">
 			<div className="carousel-inner">
 				{blogs?.map((blog, index) => (
-					<div
-						className={`carousel-item ${index === 0 ? "active " : ""}`}
-						key={index}>
-						<img src={blog.imageUrl} className="d-block w-100" alt="img" />
+					<div className={`carousel-item ${index === 0 ? "active" : ""}`} key={index}>
+						<div className={styles.imageWrapper}>
+							<img src={blog.imageUrl} alt="img" />
+						</div>
 						<p className={styles.description}>{blog.title}</p>
 					</div>
 				))}
