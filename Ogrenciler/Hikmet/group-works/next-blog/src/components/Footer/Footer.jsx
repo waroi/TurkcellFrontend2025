@@ -1,104 +1,74 @@
 "use client";
 
 import useBlogStore from "@/store/blogStore";
-import Link from "next/link";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
-import { MdEmail, MdLocationOn, MdPhone } from "react-icons/md";
 import styles from "./footer.module.css";
 
 function Footer() {
 	const theme = useBlogStore((state) => state.theme);
 	return (
-		<>
-			<footer className={`styles.footer ${theme}`}>
-				<div className={styles.footerContainer}>
-					{/* Sol Kolon - İletişim Bilgileri */}
+		<footer className={styles.footer}>
+			<section className="container">
+				<div className="row row-cols-1 row-cols-md-3">
 					<div className={styles.footerColumn}>
-						<h3>İletişim</h3>
-						<div className={styles.contactItem}>
-							<MdLocationOn className={styles.icon} />
-							<p>Ataşehir, İstanbul, Türkiye</p>
-						</div>
-						<div className={styles.contactItem}>
-							<MdPhone className={styles.icon} />
-							<p>+90 555 123 45 67</p>
-						</div>
-						<div className={styles.contactItem}>
-							<MdEmail className={styles.icon} />
-							<p>info@nextblog.com</p>
-						</div>
-						<div className={styles.socialIcons}>
-							<Link href="https://facebook.com" aria-label="Facebook">
-								<FaFacebook className={styles.socialIcon} />
-							</Link>
-							<Link href="https://twitter.com" aria-label="Twitter">
-								<FaTwitter className={styles.socialIcon} />
-							</Link>
-							<Link href="https://instagram.com" aria-label="Instagram">
-								<FaInstagram className={styles.socialIcon} />
-							</Link>
-							<Link href="https://linkedin.com" aria-label="LinkedIn">
-								<FaLinkedin className={styles.socialIcon} />
-							</Link>
-						</div>
+						<h4 className={styles.footerHeading}>Our Address</h4>
+						<p className={styles.footerText}>123 Main Street</p>
+						<p className={styles.footerText}>Istanbul, Turkey</p>
+						<p className={styles.footerText}>34000</p>
+						<p className={styles.footerText}>Email: contact@example.com</p>
+						<p className={styles.footerText}>Phone: +90 123 456 7890</p>
 					</div>
-
-					{/* Orta Kolon - Navigasyon Linkleri */}
 					<div className={styles.footerColumn}>
-						<div className={styles.navSection}>
-							<h3>Kategoriler</h3>
-							<ul className={styles.navLinks}>
-								<li>
-									<Link href="/category/technology">Teknoloji</Link>
-								</li>
-								<li>
-									<Link href="/category/travel">Seyahat</Link>
-								</li>
-								<li>
-									<Link href="/category/food">Yemek</Link>
-								</li>
-								<li>
-									<Link href="/category/lifestyle">Yaşam</Link>
-								</li>
-								<li>
-									<Link href="/category/business">İş Dünyası</Link>
-								</li>
-							</ul>
-						</div>
+						<h4 className={styles.footerHeading}>Links</h4>
+						<ul className={styles.footerList}>
+							<li className={styles.footerItem}>
+								<a href="/" className={styles.footerLink}>
+									Home
+								</a>
+							</li>
+							<li className={styles.footerItem}>
+								<a href="/about" className={styles.footerLink}>
+									About
+								</a>
+							</li>
+							<li className={styles.footerItem}>
+								<a href="/contact" className={styles.footerLink}>
+									Contact
+								</a>
+							</li>
+						</ul>
 					</div>
-
-					{/* Sağ Kolon - Newsletter */}
 					<div className={styles.footerColumn}>
-						<h3>Bültenimize Abone Olun</h3>
-						<p>
-							En son blog yazıları, güncellemeler ve özel içerikler için abone
-							olun.
-						</p>
-						<form className={styles.newsletterForm}>
-							<input
-								type="email"
-								placeholder="E-posta adresiniz"
-								className={styles.emailInput}
-								required
-							/>
-							<button type="submit" className={styles.subscribeBtn}>
-								Abone Ol
-							</button>
-						</form>
-						<p className={styles.privacyText}>
-							Kaydolarak{" "}
-							<Link href="/privacy-policy">Gizlilik Politikamızı</Link> kabul
-							etmiş olursunuz.
-						</p>
+						<h4 className={styles.footerHeading}>Follow Us</h4>
+						<ul className={styles.footerList}>
+							<li className={styles.footerItem}>
+								<a href="https://facebook.com" className={styles.footerLink}>
+									<FaFacebook /> Facebook
+								</a>
+							</li>
+							<li className={styles.footerItem}>
+								<a href="https://twitter.com" className={styles.footerLink}>
+									<FaTwitter /> Twitter
+								</a>
+							</li>
+							<li className={styles.footerItem}>
+								<a href="https://instagram.com" className={styles.footerLink}>
+									<FaInstagram /> Instagram
+								</a>
+							</li>
+							<li className={styles.footerItem}>
+								<a href="https://linkedin.com" className={styles.footerLink}>
+									<FaLinkedin /> LinkedIn
+								</a>
+							</li>
+						</ul>
 					</div>
 				</div>
-			</footer>
-			<div className={styles.footerBottom}>
-				<p>
-					&copy; {new Date().getFullYear()} Next Blog. Tüm hakları saklıdır.
-				</p>
-			</div>
-		</>
+				<div className={styles.copyright}>
+					© 2025 Next Blog. All rights reserved.
+				</div>
+			</section>
+		</footer>
 	);
 }
 

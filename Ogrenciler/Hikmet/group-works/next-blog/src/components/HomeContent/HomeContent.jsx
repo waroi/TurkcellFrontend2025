@@ -20,8 +20,8 @@ function HomeContent() {
 
 	return (
 		<main className={`${theme}`}>
-			<Carousel />
 			<section className="container pb-3">
+				<Carousel />
 				<div className="row g-2 ">
 					{searchInput === "" && filteredBlogs != []
 						? blogs?.map((blog) => <BlogCard key={blog.id} {...blog} />)

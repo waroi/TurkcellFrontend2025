@@ -52,28 +52,48 @@ function UserComponent() {
 
 	return (
 		<>
-			<li>
-				{user ? (
-					<div className="nav-link" onClick={logOut}>
-						Log Out
-					</div>
-				) : (
-					<Link className="nav-link" href="/login">
-						Login
-					</Link>
-				)}
-			</li>
-			<li>
-				{user && (
-					<button
-						type="button"
-						className="btn btn-primary"
-						data-bs-toggle="modal"
-						data-bs-target="#createBlog"
-						data-bs-whatever="@mdo">
-						Add New Blog Post
-					</button>
-				)}
+			<li className="nav-item dropdown">
+				<a
+					className="nav-link dropdown-toggle"
+					href="#"
+					role="button"
+					data-bs-toggle="dropdown"
+					aria-expanded="false">
+					{user ? user.email : "User"}
+				</a>
+				<ul className="dropdown-menu">
+					<li>
+						{user && (
+							<a
+								type="button"
+								className="btn btn-primary nav-link"
+								data-bs-toggle="modal"
+								data-bs-target="#createBlog"
+								data-bs-whatever="@mdo">
+								New Blog Post
+							</a>
+						)}
+					</li>
+					<li>
+						<a className="dropdown-item" href="#">
+							Another action
+						</a>
+					</li>
+					<li>
+						<hr className="dropdown-divider" />
+					</li>
+					<li>
+						{user ? (
+							<a className="btn btn-danger nav-link" onClick={logOut}>
+								Log Out
+							</a>
+						) : (
+							<Link className="nav-link" href="/login">
+								Login
+							</Link>
+						)}
+					</li>
+				</ul>
 			</li>
 
 			<div
