@@ -1,22 +1,15 @@
 "use client";
 
 import React, { useEffect } from "react";
-import { postBlog } from "../../../services/Api";
 import { useSelector, useDispatch } from "react-redux";
 import {
   setUpdateBlog,
   resetBlog,
-  addBlog,
   addAllBlog,
 } from "../redux/slices/blogSlice";
-import {
-  addedBlog,
-  getAllBLogs,
-  getUserBlogs,
-} from "../../../firebase/dbController";
+import { addedBlog, getUserBlogs } from "../../../firebase/dbController";
 import { auth } from "../../../firebase/firebase";
-import { MdArrowCircleRight } from "react-icons/md";
-
+import Button from "./atoms/buttons/Button";
 const Modal = () => {
   const blog = useSelector((state) => state.blog.blog);
   const dispatch = useDispatch();
@@ -32,6 +25,7 @@ const Modal = () => {
       setUpdateBlog({
         [name]: value,
         ["userId"]: user.uid || "",
+        ["author"]: user.displayName,
       })
     );
   };
@@ -53,7 +47,7 @@ const Modal = () => {
   };
   return (
     <>
-      <button
+      {/* <Button
         type="button"
         className="btn btn-outline-success rounded-pill"
         data-bs-toggle="modal"
@@ -61,7 +55,7 @@ const Modal = () => {
         onClick={handleModalOpen}
       >
         ☄️ Blog Ekle
-      </button>
+      </Button> */}
 
       <div
         className="modal fade"
@@ -76,12 +70,12 @@ const Modal = () => {
               <h1 className="modal-title fs-5" id="exampleModalLabel">
                 ☄️ Blog Ekle
               </h1>
-              <button
+              <Button
                 type="button"
                 className="btn-close"
                 data-bs-dismiss="modal"
                 aria-label="Close"
-              ></button>
+              ></Button>
             </div>
             <div className="modal-body">
               <form className="row g-3 needs-validation" noValidate>
@@ -172,7 +166,7 @@ const Modal = () => {
             </div>
 
             <div className="modal-footer d-flex justify-content-center">
-              <button
+              <Button
                 onClick={handleClick}
                 type="submit"
                 className="btn btn-warning px-4 py-2 rounded-3 fw-bold shadow"
@@ -180,7 +174,7 @@ const Modal = () => {
                 aria-label="Close"
               >
                 Kaydet
-              </button>
+              </Button>
             </div>
           </div>
         </div>

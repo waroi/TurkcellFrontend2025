@@ -4,8 +4,8 @@ import {
   setUpdateBlog,
   updateBlog,
 } from "../redux/slices/blogSlice";
-import { updateApiBlog } from "../../../services/Api";
 import { updateFbBlog } from "../../../firebase/dbController";
+import Button from "./atoms/buttons/Button";
 
 function UpdateModal() {
   const dispatch = useDispatch();
@@ -22,7 +22,6 @@ function UpdateModal() {
     } catch (error) {
       console.error("Blog güncellenirken hata oluştu:", error);
     }
-    // updateApiBlog(blog.id, blog);
   };
 
   return (
@@ -44,13 +43,13 @@ function UpdateModal() {
               >
                 📚 Blog Düzenle
               </h1>
-              <button
+              <Button
                 type="button"
                 className="btn-close btn-close-white"
                 data-bs-dismiss="modal"
                 aria-label="Close"
                 onClick={() => dispatch(resetBlog())}
-              ></button>
+              ></Button>
             </div>
             <div className="modal-body">
               <form className="px-3">
@@ -143,22 +142,22 @@ function UpdateModal() {
               </form>
             </div>
             <div className="modal-footer d-flex justify-content-between">
-              <button
+              <Button
                 type="button"
                 className="btn btn-outline-secondary px-4 py-2 rounded-3"
                 data-bs-dismiss="modal"
                 onClick={() => dispatch(resetBlog())}
               >
                 Kapat
-              </button>
-              <button
+              </Button>
+              <Button
                 type="button"
                 className="btn btn-warning px-4 py-2 rounded-3 fw-bold shadow"
                 data-bs-dismiss="modal"
                 onClick={handleSave}
               >
                 Güncelle 📖
-              </button>
+              </Button>
             </div>
           </div>
         </div>

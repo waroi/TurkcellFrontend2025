@@ -1,9 +1,10 @@
-import { SearchProvider } from '@/context/searchContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Navbar from '@/component/Navbar';
+import { SearchProvider } from '..//context/searchContext';
+import Navbar from '../component/Navbar';
+import { AuthProvider } from '../context/authContext';
+import Footer from '../component/Footer';
+import './style.css';
 import { Geist, Geist_Mono } from 'next/font/google';
-import './globals.css';
-import { AuthProvider } from '@/context/authContext';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -23,11 +24,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang='en' className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body>
+      <body className='mt-20'>
         <SearchProvider>
           <AuthProvider>
             <Navbar />
             {children}
+            <Footer />
           </AuthProvider>
         </SearchProvider>
       </body>

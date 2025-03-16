@@ -1,13 +1,218 @@
+:global(:root) {
+  --footer-bg: #f8f9fa;
+  --footer-text: #495057;
+  --footer-title: #343a40;
+  --footer-border: #e9ecef;
+  --footer-bottom-bg: #e9ecef;
+  --footer-link-hover: #0d6efd;
+  --footer-input-bg: #ffffff;
+  --footer-btn-bg: #0d6efd;
+  --footer-btn-text: #ffffff;
+  --footer-icon-color: #6c757d;
+}
+
+/* Dark tema için değişkenler */
+:global([data-theme="dark"]) {
+  --footer-bg: #212529;
+  --footer-text: #e9ecef;
+  --footer-title: #f8f9fa;
+  --footer-border: #343a40;
+  --footer-bottom-bg: #1a1d20;
+  --footer-link-hover: #6ea8fe;
+  --footer-input-bg: #343a40;
+  --footer-btn-bg: #0d6efd;
+  --footer-btn-text: #ffffff;
+  --footer-icon-color: #adb5bd;
+}
+
+
 .footer {
-  background-color: #f8f9fa;
-  padding: 20px 0;
-  text-align: center;
-  margin-top: 20px;
-  position: relative;
-  bottom: 0;
+  background-color: var(--footer-bg);
+  padding: 50px 0 30px;
+  color: var(--footer-text);
+  font-size: 15px;
+  line-height: 1.6;
+  border-top: 1px solid var(--footer-border);
   width: 100%;
-  color: #495057;
+}
+
+/* Footer container - grid layout için */
+.footerContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 0 20px;
+}
+
+/* Footer sütunları */
+.footerColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Başlıklar */
+.footer h3 {
+  color: var(--footer-title);
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.footer h3:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50px;
+  height: 2px;
+  background-color: var(--footer-link-hover);
+}
+
+/* İletişim öğeleri */
+.contactItem {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.contactItem .icon {
+  font-size: 20px;
+  margin-right: 12px;
+  color: var(--footer-icon-color);
+  min-width: 20px;
+}
+
+.contactItem p {
+  margin: 0;
+}
+
+/* Sosyal medya ikonları */
+.socialIcons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.socialIcon {
+  font-size: 22px;
+  color: var(--footer-icon-color);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.socialIcon:hover {
+  color: var(--footer-link-hover);
+  transform: translateY(-3px);
+}
+
+/* Navigasyon bölümleri */
+.navSection {
+  margin-bottom: 25px;
+}
+
+.navLinks {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navLinks li {
+  margin-bottom: 10px;
+}
+
+.navLinks a {
+  color: var(--footer-text);
+  text-decoration: none;
+  transition: color 0.3s ease, padding-left 0.3s ease;
+  display: inline-block;
+}
+
+.navLinks a:hover {
+  color: var(--footer-link-hover);
+  padding-left: 5px;
+}
+
+/* Newsletter form */
+.newsletterForm {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.emailInput {
+  flex: 1;
+  border: 1px solid var(--footer-border);
+  background-color: var(--footer-input-bg);
+  color: var(--footer-text);
+  padding: 10px 15px;
+  border-radius: 4px 0 0 4px;
   font-size: 14px;
-  font-weight: 400;
-  border-top: 1px solid #e9ecef;
+}
+
+.subscribeBtn {
+  background-color: var(--footer-btn-bg);
+  color: var(--footer-btn-text);
+  border: none;
+  padding: 10px 15px;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.subscribeBtn:hover {
+  background-color: #0b5ed7;
+}
+
+.privacyText {
+  font-size: 12px;
+  margin-top: 10px;
+  color: var(--footer-icon-color);
+}
+
+.privacyText a {
+  color: var(--footer-link-hover);
+  text-decoration: none;
+}
+
+/* Footer alt kısmı */
+.footerBottom {
+  background-color: var(--footer-bottom-bg);
+  text-align: center;
+  padding: 15px 0;
+  font-size: 14px;
+  color: var(--footer-text);
+  border-top: 1px solid var(--footer-border);
+}
+
+/* Responsive düzenlemeler */
+@media (max-width: 992px) {
+  .footerContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footerColumn:last-child {
+    grid-column: span 2;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footerContainer {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .footerColumn {
+    margin-bottom: 0;
+  }
+
+  .footerColumn:last-child {
+    grid-column: span 1;
+  }
+
+  .navSection {
+    margin-bottom: 20px;
+  }
 }

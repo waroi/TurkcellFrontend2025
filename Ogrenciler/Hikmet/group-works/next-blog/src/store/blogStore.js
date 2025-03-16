@@ -2,13 +2,30 @@ import { create } from "zustand";
 
 const useBlogStore = create((set) => ({
 	blogs: [],
+	filteredBlogs: [],
+	theme: "light",
+	searchInput: "",
+
+	setInputValue: (searchInput) => { set({ searchInput }) },
 	setBlogs: (blogs) => set({ blogs }),
+	toggleTheme: () => set((state) => ({ theme: state.theme === 'light' ? 'dark' : 'light' })),
 
 	fetchBlogs: async () => {
 		try {
 			const response = await fetch("http://localhost:3000/blogs");
 			const data = await response.json();
 			set({ blogs: data });
+		} catch (error) {
+			console.error("Blog verileri alınamadı:", error);
+		}
+	},
+
+	filterBlogs: async (filterText) => {
+		try {
+			const response = await fetch("http://localhost:3000/blogs");
+			const data = await response.json();
+			const filteredData = data.filter(blog => blog.title.toLowerCase().includes(filterText.toLowerCase()))
+			set({ filteredBlogs: filteredData });
 		} catch (error) {
 			console.error("Blog verileri alınamadı:", error);
 		}
@@ -23,7 +40,6 @@ const useBlogStore = create((set) => ({
 				},
 				body: JSON.stringify(blogData),
 			});
-
 			if (response.ok) {
 				const newBlog = await response.json();
 				set((state) => ({
@@ -82,6 +98,8 @@ const useBlogStore = create((set) => ({
 			return false;
 		}
 	},
+
+
 }));
 
 export default useBlogStore;

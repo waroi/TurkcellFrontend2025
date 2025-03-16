@@ -1,20 +1,38 @@
 "use client";
 
 import useBlogStore from "@/store/blogStore";
+import { createClient } from "@/utils/supabase/client";
 import { redirect } from "next/navigation";
 import { useEffect, useState } from "react";
 
 function BlogActions({ id }) {
+	const [user, setUser] = useState();
+	const client = createClient();
+
+	async function getUser() {
+		const userSession = await client.auth.getUser();
+
+		setUser(userSession.data.user);
+	}
+
+	useEffect(() => {
+		getUser();
+	}, []);
 
 	const [title, setTitle] = useState("");
 	const [description, setDescription] = useState("");
 	const [imageUrl, setImageUrl] = useState("");
 	const [releaseDate, setReleaseDate] = useState("");
 
-	const { blogs, fetchBlogs, deleteBlog: deleteBlogInStore, updateBlog: updateBlogInStore } = useBlogStore();
+	const {
+		blogs,
+		fetchBlogs,
+		deleteBlog: deleteBlogInStore,
+		updateBlog: updateBlogInStore,
+	} = useBlogStore();
 
 	useEffect(() => {
-		const currentBlog = blogs.find(blog => blog.id === id);
+		const currentBlog = blogs.find((blog) => blog.id === id);
 		if (currentBlog) {
 			setTitle(currentBlog.title);
 			setDescription(currentBlog.description);
@@ -27,13 +45,12 @@ function BlogActions({ id }) {
 		fetchBlogs();
 	}, []);
 
-
 	async function updateBlog() {
 		const blogData = {
 			title,
 			description,
 			imageUrl,
-			releaseDate
+			releaseDate,
 		};
 
 		const success = await updateBlogInStore(id, blogData);
@@ -51,15 +68,19 @@ function BlogActions({ id }) {
 
 	return (
 		<div className="d-flex justify-content-center gap-3">
-			<button
-				className="btn btn-primary mt-5"
-				data-bs-toggle="modal"
-				data-bs-target="#updateBlog">
-				Düzenle
-			</button>
-			<button onClick={handleDeleteBlog} className="btn btn-danger mt-5">
-				Sil
-			</button>
+			{user && (
+				<>
+					<button
+						className="btn btn-primary mt-5"
+						data-bs-toggle="modal"
+						data-bs-target="#updateBlog">
+						Düzenle
+					</button>
+					<button onClick={handleDeleteBlog} className="btn btn-danger mt-5">
+						Sil
+					</button>
+				</>
+			)}
 			<div
 				className="modal fade"
 				id="updateBlog"

@@ -1,10 +1,12 @@
+import CustomButton from "../CustomButton";
+import Input from "../Input";
 import styles from "./subscribe.module.css";
 import React from "react";
 
 const Subscribe = () => {
   return (
     <section className="subscribe-section" id="subscribe">
-      <div className="container">
+      <div className="container mb-5">
         <h2 className="my-5">Bültenimize Abone Ol</h2>
         <div className="row">
           <div
@@ -17,21 +19,18 @@ const Subscribe = () => {
               Emin ol sadece tek bir spam bile yok. Sadece sana özel bir indirim
               gelirse haberdar edeceğiz.
             </p>
-            <form className="d-flex flex-column">
-              <label htmlFor="Email" className="text-white">
-                Email
-              </label>
-              <input
+            <div className="d-flex flex-column">
+              <Input
                 type="email"
-                name="email"
                 id="email"
                 placeholder="Mail adresi giriniz."
-                className="mt-3 form-control rounded-pill"
+                label="Email"
+                value=""
+                onChange={null}
               />
-              <button className="btn btn-outline-danger rounded-pill w-25 mt-3">
-                Abone ol
-              </button>
-            </form>
+
+              <CustomButton buttonText="Abone Ol" variant="outline-danger" />
+            </div>
           </div>
           <div className="col-lg-7 p-0">
             <div className={`${styles.sideImage} w-100 object-fit-cover`}></div>

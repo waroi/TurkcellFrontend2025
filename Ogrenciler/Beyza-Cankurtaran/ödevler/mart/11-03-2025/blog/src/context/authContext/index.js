@@ -12,7 +12,7 @@ export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
-  const [isLoggedIn, setIsLoggedIn] = useState(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -20,16 +20,20 @@ export const AuthProvider = ({ children }) => {
       if (user) {
         setCurrentUser(user);
         setIsLoggedIn(true);
+        console.log('if user varsa kısmı');
       } else {
         setCurrentUser(null);
         setIsLoggedIn(false);
+        console.log('else kısmı');
       }
       setIsLoading(false);
-      console.log(isLoggedIn);
+      console.log('Auth durumu:', user ? 'Giriş yapıldı' : 'Giriş yapılmadı');
+      console.log('isloggedin: ', isLoggedIn);
+      console.log('user: ', user);
     });
 
-    return () => unsubscribe();
-  }, []);
+    return unsubscribe;
+  }, [currentUser]);
 
   const registerUser = async (email, password) => {
     try {
@@ -77,7 +81,7 @@ export const AuthProvider = ({ children }) => {
         isLoading,
       }}
     >
-      {children}
+      {!isLoading && children}
     </AuthContext.Provider>
   );
 };

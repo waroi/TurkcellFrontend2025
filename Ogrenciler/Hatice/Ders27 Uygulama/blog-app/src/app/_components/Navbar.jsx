@@ -1,25 +1,14 @@
 "use client";
 import { useRef } from "react";
 import { auth } from "@/utils/firebaseConfig";
-import { signOut } from "firebase/auth";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { toast } from "react-toastify";
 import Button from "./Button";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import { logout } from "@/utils/services/helpers";
 
 const Navbar = () => {
-  const buttonRef = useRef(null);
-  const pathname = usePathname();
-
-  const logout = async () => {
-    toast.success("Çıkış Yapılıyor");
-    await signOut(auth);
-    setTimeout(() => {
-      redirect("/login");
-    }, 2000);
-  };
-
   return (
     <nav className="navbar navbar-expand-lg  ">
       <div className="container">
@@ -54,7 +43,7 @@ const Navbar = () => {
                 İletişim
               </Link>
             </li>
-            {!auth.currentUser ? (
+            {auth.currentUser ? (
               <>
                 <li className="nav-item">
                   <Link href="/login" className="nav-link">
@@ -69,11 +58,7 @@ const Navbar = () => {
               </>
             ) : (
               <li className="nav-item">
-                <Button
-                  ref={buttonRef}
-                  onClick={logout}
-                  className="nav-link btn btn-danger"
-                >
+                <Button onClick={logout} className="nav-link" type="delete">
                   Çıkış Yap
                 </Button>
               </li>

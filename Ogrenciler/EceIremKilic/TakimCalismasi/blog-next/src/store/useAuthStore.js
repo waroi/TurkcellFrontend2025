@@ -26,16 +26,25 @@ const useAuthStore = create((set) => ({
       );
       const user = userCredential.user;
 
+      const defaultAvatarUrl =
+        "https://p16-common-sign-sg.tiktokcdn-us.com/tos-alisg-avt-0068/dd1a8f11d81bfce05f7811b8f74ba955~tplv-tiktokx-cropcenter:100:100.jpeg?dr=9640&refresh_token=78d2dd18&x-expires=1742022000&x-signature=J9ChCtVvW3el/XrMT3ScFy73njU=&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=b59d6b55&idc=useast5";
+
       await setDoc(doc(db, "users", user.uid), {
         fullName: fullName,
         email: user.email,
+        avatar: defaultAvatarUrl,
         createdAt: new Date(),
       });
 
       console.log("Kullanıcı başarıyla kaydedildi:", user);
 
       set({
-        user: { uid: user.uid, email: user.email, fullName },
+        user: {
+          uid: user.uid,
+          email: user.email,
+          fullName,
+          avatar: defaultAvatarUrl,
+        },
         loading: false,
       });
     } catch (error) {
@@ -59,11 +68,24 @@ const useAuthStore = create((set) => ({
 
       if (userSnapshot.exists()) {
         set({
-          user: { uid: user.uid, email: user.email, ...userSnapshot.data() },
+          user: {
+            uid: user.uid,
+            email: user.email,
+            fullName: userSnapshot.data().fullName,
+            avatar: userSnapshot.data().avatarUrl,
+          },
           loading: false,
         });
       } else {
-        set({ user: { uid: user.uid, email: user.email }, loading: false });
+        set({
+          user: {
+            uid: user.uid,
+            email: user.email,
+            avatar:
+              "https://p16-common-sign-sg.tiktokcdn-us.com/tos-alisg-avt-0068/dd1a8f11d81bfce05f7811b8f74ba955~tplv-tiktokx-cropcenter:100:100.jpeg?dr=9640&refresh_token=78d2dd18&x-expires=1742022000&x-signature=J9ChCtVvW3el/XrMT3ScFy73njU=&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=b59d6b55&idc=useast5",
+          },
+          loading: false,
+        });
       }
     } catch (error) {
       set({ error: error.message, loading: false });

@@ -1,15 +1,14 @@
 'use client';
 
 import data from '../../../data/blog.json';
-import { useEffect, useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { useEffect, useState, use } from 'react';
 import '../../globals.css';
-import DetailCard from '@/component/DetailCard';
+import DetailCard from '../../../component/DetailCard';
 
 export default function BlogDetail({ params }) {
   const [blog, setBlog] = useState(null);
 
-  const { id } = params;
+  const { id } = use(params);
 
   useEffect(() => {
     if (id) {

@@ -1,6 +1,6 @@
 'use client';
-import { useAuth } from '@/context/authContext';
-import { useSearch } from '@/context/searchContext';
+import { useAuth } from '../context/authContext';
+import { useSearch } from '../context/searchContext';
 import Link from 'next/link';
 import SignOutButton from './SignOutButton';
 
@@ -9,9 +9,9 @@ const Navbar = () => {
   const { isLoggedIn } = useAuth();
 
   return (
-    <nav className='navbar navbar-dark bg-secondary navbar-expand-lg'>
+    <nav className='navbar navbar-dark navbar-expand-lg fixed-top'>
       <div className='container-fluid'>
-        <Link className='navbar-brand' href='/'>
+        <Link className='navbar-brand color-grey color-grey-title' href='/'>
           TechTalks
         </Link>
         <button
@@ -28,10 +28,20 @@ const Navbar = () => {
         <div className='collapse navbar-collapse' id='navbarSupportedContent'>
           <ul className='navbar-nav me-auto mb-2 mb-lg-0'>
             <li className='nav-item'>
-              <Link className='nav-link active' href='/'>
+              <Link className='nav-link color-grey color-grey-title' href='/'>
                 Anasayfa
               </Link>
             </li>
+            {isLoggedIn && (
+              <li className='nav-item'>
+                <Link
+                  className='nav-link color-grey color-grey-title'
+                  href='/blog-panel'
+                >
+                  CRUD
+                </Link>
+              </li>
+            )}
           </ul>
           <form className='d-flex' role='search'>
             <input
@@ -49,10 +59,10 @@ const Navbar = () => {
             ) : (
               <>
                 <Link href='/signin'>
-                  <button className='btn btn-primary me-2'>Giriş Yap</button>
+                  <button className='btn btn-orange me-2'>Giriş Yap</button>
                 </Link>
                 <Link href='/signup'>
-                  <button className='btn btn-primary'>Kayıt Ol</button>
+                  <button className='btn btn-blue'>Kayıt Ol</button>
                 </Link>
               </>
             )}

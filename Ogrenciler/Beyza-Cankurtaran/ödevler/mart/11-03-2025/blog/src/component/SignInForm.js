@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { useAuth } from '@/context/authContext';
+import { useAuth } from '../context/authContext';
 
 export default function SignInForm() {
   const [email, setEmail] = useState('');
@@ -25,10 +25,10 @@ export default function SignInForm() {
       className='card p-4 shadow-lg'
       style={{ maxWidth: '400px', width: '100%' }}
     >
-      <h3 className='text-center mb-3'>Giriş Yap</h3>
+      <h3 className='text-center mb-3 color-grey'>Giriş Yap</h3>
       <form onSubmit={handleSubmit}>
         <div className='mb-3'>
-          <label className='form-label'>Email</label>
+          <label className='form-label color-grey'>Email</label>
           <input
             type='email'
             className='form-control'
@@ -38,7 +38,7 @@ export default function SignInForm() {
           />
         </div>
         <div className='mb-3'>
-          <label className='form-label'>Şifre</label>
+          <label className='form-label color-grey'>Şifre</label>
           <div className='input-group'>
             <input
               type='password'
@@ -49,12 +49,15 @@ export default function SignInForm() {
             />
           </div>
         </div>
-        <button type='submit' className='btn btn-primary w-100'>
+        <button type='submit' className='btn btn-orange w-100'>
           Giriş Yap
         </button>
       </form>
-      <p className='text-center mt-3'>
-        Hesabın yok mu? <Link href='/signup'>Kayıt Ol</Link>
+      <p className='text-center mt-3 color-grey'>
+        Hesabın yok mu?{' '}
+        <Link href='/signup' className='color-orange'>
+          Kayıt Ol
+        </Link>
       </p>
     </div>
   );

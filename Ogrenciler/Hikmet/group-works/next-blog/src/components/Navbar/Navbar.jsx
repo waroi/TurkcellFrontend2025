@@ -1,36 +1,68 @@
+"use client";
 import Link from "next/link";
 import UserComponent from "./UserComponent";
+import useBlogStore from "@/store/blogStore";
+
 
 function Navbar() {
-	return (
-		<nav className="navbar navbar-expand-lg bg-body-tertiary">
-			<div className="container">
-				<Link className="navbar-brand bolder" href="/">
-					NextBlog
-				</Link>
-				<button
-					className="navbar-toggler"
-					type="button"
-					data-bs-toggle="collapse"
-					data-bs-target="#navbarSupportedContent"
-					aria-controls="navbarSupportedContent"
-					aria-expanded="false"
-					aria-label="Toggle navigation">
-					<span className="navbar-toggler-icon"></span>
-				</button>
-				<div className="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul className="navbar-nav me-auto mb-2 mb-lg-0">
-						<li className="nav-item">
-							<Link className="nav-link active" aria-current="page" href="#">
-								Home
-							</Link>
-						</li>
-						<UserComponent />
-					</ul>
-				</div>
-			</div>
-		</nav>
-	);
+  const filterBlogs = useBlogStore((state) => state.filterBlogs);
+  const setInputValue = useBlogStore((state) => state.setInputValue);
+  const theme = useBlogStore((state) => state.theme);
+  const toggleTheme = useBlogStore((state) => state.toggleTheme)
+
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(e.target.filterInput.value);
+    filterBlogs(e.target.filterInput.value ?? "Zustand");
+  };
+  return (
+    <nav className={`navbar navbar-expand-lg ${theme}`} >
+      <div className="container">
+        <Link className="navbar-brand bolder" href="/">
+          NextBlog
+        </Link>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <li className="nav-item">
+              <Link className="nav-link active" aria-current="page" href="/">
+                Home
+              </Link>
+            </li>
+            <UserComponent />
+          </ul>
+        </div>
+        <form onSubmit={handleSubmit} className="d-flex" role="search">
+          <input
+            onChange={(e) => setInputValue(e.target.value)}
+            name="filterInput"
+            className="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button className="btn btn-outline-primary" type="submit">
+            Search
+          </button>
+        </form>
+
+        <button className=" btn btn-primary ms-2" onClick={toggleTheme}>
+          {theme === "light" ? "🌞" : "🌙"}
+        </button>
+      </div>
+    </nav>
+  );
 }
 
 export default Navbar;

@@ -1,0 +1,83 @@
+/* 2. Soft & Minimalist (Daha Ferah ve Okunaklı)
+📌 Arka Plan: #F7F7F7 (Açık Gri) veya #FAF3E0 (Krem)
+📌 Başlıklar: #333333 (Koyu Gri) veya #2C3E50 (Lacivert)
+📌 Vurgu Renkleri: Pastel Mavi (#A8DADC) veya Pastel Pembe (#FFB6C1)
+📌 Butonlar: #FFA500 (Turuncu) veya #4CAF50 (Yeşil)
+
+Bu tema, kişisel bloglar, seyahat, sağlık ve yaşam tarzı içerikleri için mükemmel olur. */
+
+body {
+  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+  color: #e0e0e0;
+  background: #121212;
+}
+
+.card {
+  background: #363636;
+  border: 1px solid #ff7b00;
+  transition: 0.3s ease, transform 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 0 10px rgba(255, 123, 0, 0.8);
+}
+
+.card-image-top {
+  height: '100%';
+  object-fit: cover;
+}
+
+.color-grey {
+  color: #e0e0e0;
+}
+
+.color-grey-title:hover {
+  color: #ff7b00;
+}
+
+.color-orange {
+  color: #ff7b00;
+}
+
+.btn-orange {
+  background: #ff7b00;
+  color: #e0e0e0;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-orange:hover,
+.btn.btn-orange:active {
+  background: rgb(255, 123, 0);
+  color: #ffffff;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(255, 123, 0, 0.8);
+}
+
+.btn-blue {
+  background: rgb(0, 123, 255);
+  color: #e0e0e0;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.btn-blue:hover,
+.btn.btn-blue:active {
+  background: rgb(0, 123, 255);
+  color: #ffffff;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.8);
+}
+
+.navbar {
+  background: #363636;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.form-control:active,
+.form-control:focus {
+  border-color: rgb(255, 123, 0);
+  box-shadow: 0 0 6px rgba(255, 123, 0.8);
+}
+
+.mt-20 {
+  margin-top: 56px;
+}

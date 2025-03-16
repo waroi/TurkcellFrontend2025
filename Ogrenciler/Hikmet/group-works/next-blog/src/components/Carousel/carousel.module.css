@@ -1,0 +1,20 @@
+.carouselSection {
+  max-height: 400px;
+  overflow: hidden;
+}
+
+.carouselSection img {
+  height: 50%;
+  object-fit: cover;
+}
+
+.description {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+}
