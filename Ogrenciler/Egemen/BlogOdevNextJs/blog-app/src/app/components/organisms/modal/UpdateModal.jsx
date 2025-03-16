@@ -20,9 +20,9 @@ const UpdateModal = () => {
   };
   return (
     <BaseModal
+      title="Blog Düzenle"
       id={"updateModal"}
       handleClick={handleClick}
-      title="Blog Düzenle"
       blog={blog}
     />
   );

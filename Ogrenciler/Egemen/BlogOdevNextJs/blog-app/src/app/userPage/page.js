@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { getUserBlogs } from "../../../firebase/dbController";
 import { useDispatch, useSelector } from "react-redux";
 import Card from "../components/Card";
-import UpdateModal from "../components/UpdateModal";
+import UpdateModal from "../components/organisms/modal/UpdateModal";
 import { addAllBlog, searchBlogs } from "../redux/slices/blogSlice";
 import { auth } from "../../../firebase/firebase";
 import { unsubscribe } from "../../../services/authServices";
@@ -16,8 +16,7 @@ const UserPage = () => {
   useEffect(() => {
     if (searchTerm == "") {
       async function fetchBlog() {
-        // const data = await getBlog();
-        const data = await getUserBlogs();// buraya bak
+        const data = await getUserBlogs(); // buraya bak
         if (data) {
           dispatch(addAllBlog(data));
         }
@@ -28,9 +27,8 @@ const UserPage = () => {
     }
   }, [searchTerm, userAuth, dispatch]);
   useEffect(() => {
-    dispatch(addAllBlog([]));
     unsubscribe(setUserAuth);
-
+    dispatch(addAllBlog([]));
   }, []);
   return userAuth ? (
     <div>

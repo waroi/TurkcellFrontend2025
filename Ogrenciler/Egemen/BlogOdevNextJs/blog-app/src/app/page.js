@@ -1,35 +1,43 @@
 "use client";
 import { useEffect } from "react";
-import Card from "../../app/components/Card";
+import Card from "../app/components/Card";
 import { useDispatch } from "react-redux";
-import { addAllBlog, searchBlogs } from "../../app/redux/slices/blogSlice";
+import { addAllBlog, searchBlogs } from "../app/redux/slices/blogSlice";
 import { useSelector } from "react-redux";
-import { getAllBLogs } from "../../../firebase/dbController";
-import { auth } from "../../../firebase/firebase";
+import { getAllBLogs } from "../../firebase/dbController";
+import { auth } from "../../firebase/firebase";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 
-export default function HomePage() {
+export default function Home() {
   const blogs = useSelector((state) => state.blog.blogs);
   const searchTerm = useSelector((state) => state.blog.searchTerm);
   const user = auth.currentUser;
   const router = useRouter();
 
   const dispatch = useDispatch();
+
   useEffect(() => {
-    if (searchTerm == "") {
-      async function fetchBlog() {
-        // const data = await getBlog();
-        const data = await getAllBLogs();
-        if (data) {
-          dispatch(addAllBlog(data));
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      if (user) {
+        router.push("/userPage");
+      } else {
+        if (searchTerm == "") {
+          async function fetchBlog() {
+            const data = await getAllBLogs();
+            if (data) {
+              dispatch(addAllBlog(data));
+            }
+          }
+          fetchBlog();
+        } else {
+          dispatch(searchBlogs(searchTerm));
         }
       }
-      fetchBlog();
-    } else {
-      dispatch(searchBlogs(searchTerm));
-    }
-  }, [searchTerm]);
+    });
+
+    return () => unsubscribe();
+  }, [searchTerm, router]);
 
   return (
     <div>
@@ -39,9 +47,9 @@ export default function HomePage() {
         </h3>
         <div
           id="carouselExampleIndicators"
-          className="carousel slide carousel-dark"
+          className="carousel carousel-dark slide"
         >
-          <div className="carousel-indicators ">
+          <div className="carousel-indicators">
             <button
               type="button"
               data-bs-target="#carouselExampleIndicators"
@@ -72,12 +80,12 @@ export default function HomePage() {
                 className="d-block w-75 img-fluid mx-auto"
                 alt="..."
               />
-              <div className="carousel-caption d-none d-md-block ">
+              <div className="carousel-caption d-none d-md-block  bg-dark text-light bg-opacity-75 rounded p-3 my-3">
                 <h5>İnsan Odaklı Yaşam Alanları</h5>
                 <p>
                   Daha az beton, daha çok doğa… Geleceğin şehirleri dev
                   gökdelenlerden ziyade insanı ve doğayı kucaklayan,
-                  sürdürülebilir ve minimalist yapılarla dolu.
+                  sürdürülebilir ve minimalist yapılarla dolu.{" "}
                 </p>
               </div>
             </div>
@@ -89,7 +97,7 @@ export default function HomePage() {
                 className="d-block w-75 img-fluid mx-auto"
                 alt="..."
               />
-              <div className="carousel-caption d-none d-md-block">
+              <div className="carousel-caption d-none d-md-block bg-dark text-light bg-opacity-75 rounded p-3 my-3">
                 <h5>İnsan ve Makinenin Dansı</h5>
                 <p>
                   Her hareketimiz bir algoritma tarafından analiz ediliyor, her
@@ -105,7 +113,7 @@ export default function HomePage() {
                 className="d-block w-75 img-fluid mx-auto"
                 alt="..."
               />
-              <div className="carousel-caption d-none d-md-block">
+              <div className="carousel-caption d-none d-md-block bg-dark text-light bg-opacity-75 rounded p-3 my-3">
                 <h5>Geleceğin şehirleri gökyüzüne uzanıyor.</h5>
                 <p>
                   Yolların yerini havada süzülen araçlar alırken, gökdelenler
@@ -151,7 +159,7 @@ export default function HomePage() {
             <p>Yükleniyor...</p>
           )}
         </div>
-        <UpdateModal />
+        {/* <UpdateModal /> */}
       </main>
     </div>
   );

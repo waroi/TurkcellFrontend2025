@@ -1,7 +1,10 @@
-import { useDispatch, useSelector } from "react-redux";
+"use client";
+import { useDispatch } from "react-redux";
 import { auth } from "../../../../../firebase/firebase";
 import Button from "../../atoms/buttons/Button";
 import { setUpdateBlog } from "@/app/redux/slices/blogSlice";
+import { useEffect } from "react";
+
 const BaseModal = ({ ...props }) => {
   const dispatch = useDispatch();
   const user = auth.currentUser;
@@ -12,7 +15,7 @@ const BaseModal = ({ ...props }) => {
       setUpdateBlog({
         [name]: value,
         ["userId"]: user.uid || "",
-        ["author"]: user.displayName,
+        ["author"]: user.displayName || "",
       })
     );
   };
@@ -25,6 +28,7 @@ const BaseModal = ({ ...props }) => {
         tabIndex="-1"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
+        // data-bs-config='{"backdrop": false}'
       >
         <div className="modal-dialog modal-lg">
           <div className="modal-content p-3 rounded-4 shadow-lg border-0">
