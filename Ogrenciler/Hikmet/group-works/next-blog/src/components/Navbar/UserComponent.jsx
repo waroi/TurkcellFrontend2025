@@ -69,7 +69,7 @@ function UserComponent() {
 								data-bs-toggle="modal"
 								data-bs-target="#createBlog"
 								data-bs-whatever="@mdo">
-								New Blog Post
+								Yeni Blog Yazısı
 							</a>
 						)}
 					</li>
@@ -84,11 +84,11 @@ function UserComponent() {
 					<li>
 						{user ? (
 							<a className="btn btn-danger nav-link" onClick={logOut}>
-								Log Out
+								Çıkış Yap
 							</a>
 						) : (
 							<Link className="nav-link" href="/login">
-								Login
+								Giriş Yap
 							</Link>
 						)}
 					</li>
@@ -105,7 +105,7 @@ function UserComponent() {
 					<div className="modal-content">
 						<div className="modal-header">
 							<h1 className="modal-title fs-5" id="createBlogLabel">
-								Create Blog Post
+								Yeni Blog Yazısı Oluştur
 							</h1>
 							<button
 								type="button"
@@ -117,7 +117,7 @@ function UserComponent() {
 							<form>
 								<div className="mb-3">
 									<label htmlFor="title" className="col-form-label">
-										Title:
+										Başlık:
 									</label>
 									<input
 										type="text"
@@ -129,7 +129,7 @@ function UserComponent() {
 								</div>
 								<div className="mb-3">
 									<label htmlFor="description" className="col-form-label">
-										Description:
+										Açıklama:
 									</label>
 									<textarea
 										className="form-control"
@@ -139,7 +139,7 @@ function UserComponent() {
 								</div>
 								<div className="mb-3">
 									<label htmlFor="img_url" className="col-form-label">
-										Image URL:
+										Görsel URL:
 									</label>
 									<input
 										type="text"
@@ -151,7 +151,7 @@ function UserComponent() {
 								</div>
 								<div className="mb-3">
 									<label htmlFor="releaseDate" className="col-form-label">
-										Release Date:
+										Oluşturma Tarihi:
 									</label>
 									<input
 										type="text"
@@ -168,7 +168,7 @@ function UserComponent() {
 								type="button"
 								className="btn btn-secondary"
 								data-bs-dismiss="modal">
-								Close
+								Kapat
 							</button>
 							<button
 								type="button"
@@ -176,7 +176,7 @@ function UserComponent() {
 								data-bs-dismiss="modal"
 								onClick={handleCreateBlog}
 								onKeyDown={(e) => e.key === "Enter" && handleCreateBlog()}>
-								Create Blog Post
+								Yeni Blog Yazısı Oluştur
 							</button>
 						</div>
 					</div>

@@ -1,71 +1,72 @@
 "use client";
 
-import useBlogStore from "@/store/blogStore";
+import Link from "next/link";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 import styles from "./footer.module.css";
 
 function Footer() {
-	const theme = useBlogStore((state) => state.theme);
 	return (
 		<footer className={styles.footer}>
 			<section className="container">
 				<div className="row row-cols-1 row-cols-md-3">
 					<div className={styles.footerColumn}>
-						<h4 className={styles.footerHeading}>Our Address</h4>
-						<p className={styles.footerText}>123 Main Street</p>
-						<p className={styles.footerText}>Istanbul, Turkey</p>
-						<p className={styles.footerText}>34000</p>
-						<p className={styles.footerText}>Email: contact@example.com</p>
+						<h4 className={styles.footerHeading}>Adresimiz</h4>
+						<p className={styles.footerText}>123 Sokak</p>
+						<p className={styles.footerText}>Turkey</p>
+						<p className={styles.footerText}>12345</p>
+						<p className={styles.footerText}>Email: contact@contact.com</p>
 						<p className={styles.footerText}>Phone: +90 123 456 7890</p>
 					</div>
 					<div className={styles.footerColumn}>
-						<h4 className={styles.footerHeading}>Links</h4>
+						<h4 className={styles.footerHeading}>Bağlantılar</h4>
 						<ul className={styles.footerList}>
 							<li className={styles.footerItem}>
-								<a href="/" className={styles.footerLink}>
+								<Link href="/" className={styles.footerLink}>
 									Home
-								</a>
+								</Link>
 							</li>
 							<li className={styles.footerItem}>
-								<a href="/about" className={styles.footerLink}>
+								<Link href="/about" className={styles.footerLink}>
 									About
-								</a>
+								</Link>
 							</li>
 							<li className={styles.footerItem}>
-								<a href="/contact" className={styles.footerLink}>
+								<Link href="/contact" className={styles.footerLink}>
 									Contact
-								</a>
+								</Link>
 							</li>
 						</ul>
 					</div>
 					<div className={styles.footerColumn}>
-						<h4 className={styles.footerHeading}>Follow Us</h4>
+						<h4 className={styles.footerHeading}>Bizi Takip Edin</h4>
 						<ul className={styles.footerList}>
 							<li className={styles.footerItem}>
-								<a href="https://facebook.com" className={styles.footerLink}>
+								<Link href="https://facebook.com" className={styles.footerLink}>
 									<FaFacebook /> Facebook
-								</a>
+								</Link>
 							</li>
 							<li className={styles.footerItem}>
-								<a href="https://twitter.com" className={styles.footerLink}>
+								<Link href="https://x.com" className={styles.footerLink}>
 									<FaTwitter /> Twitter
-								</a>
+								</Link>
 							</li>
 							<li className={styles.footerItem}>
-								<a href="https://instagram.com" className={styles.footerLink}>
+								<Link
+									href="https://instagram.com"
+									className={styles.footerLink}>
 									<FaInstagram /> Instagram
-								</a>
+								</Link>
 							</li>
 							<li className={styles.footerItem}>
-								<a href="https://linkedin.com" className={styles.footerLink}>
+								<Link href="https://linkedin.com" className={styles.footerLink}>
 									<FaLinkedin /> LinkedIn
-								</a>
+								</Link>
 							</li>
 						</ul>
 					</div>
 				</div>
 				<div className={styles.copyright}>
-					© 2025 Next Blog. All rights reserved.
+					© 2025 Next Blog. Tüm Hakları Saklıdır.
 				</div>
 			</section>
 		</footer>

@@ -48,17 +48,17 @@ function Navbar() {
 					className="navbar-toggler"
 					type="button"
 					data-bs-toggle="collapse"
-					data-bs-target="#navbarSupportedContent"
-					aria-controls="navbarSupportedContent"
+					data-bs-target="#navbar"
+					aria-controls="navbar"
 					aria-expanded="false"
 					aria-label="Toggle navigation">
 					<span className="navbar-toggler-icon"></span>
 				</button>
-				<div className="collapse navbar-collapse" id="navbarSupportedContent">
+				<div className="collapse navbar-collapse" id="navbar">
 					<ul className="navbar-nav me-auto mb-2 mb-lg-0">
 						<li className="nav-item">
 							<Link className="nav-link active" aria-current="page" href="/">
-								Home
+								Anasayfa
 							</Link>
 						</li>
 
@@ -74,7 +74,7 @@ function Navbar() {
 							aria-label="Search"
 						/>
 						<button className="btn btn-outline-primary" type="submit">
-							Search
+							Ara
 						</button>
 					</form>
 					<button className="btn btn-primary ms-2" onClick={toggleTheme}>
