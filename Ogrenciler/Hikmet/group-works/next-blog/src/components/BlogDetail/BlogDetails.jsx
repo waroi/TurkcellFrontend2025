@@ -8,7 +8,7 @@ function BlogDetails({ blog }) {
 				<div className={styles.imageWrapper}>
 					<img
 						className={styles.blogImage}
-						src={blog.imageUrl ? blog.imageUrl : "/react.svg"}
+						src={blog.img_url ? blog.img_url : "/react.svg"}
 						alt={blog.title}
 					/>
 				</div>

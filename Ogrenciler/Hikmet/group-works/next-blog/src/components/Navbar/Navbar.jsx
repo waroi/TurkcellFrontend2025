@@ -1,6 +1,8 @@
 "use client";
 import useBlogStore from "@/store/blogStore";
+import { createClient } from "@/utils/supabase/client";
 import Link from "next/link";
+import { useEffect } from "react";
 import UserComponent from "./UserComponent";
 
 function Navbar() {
@@ -9,13 +11,35 @@ function Navbar() {
 	const theme = useBlogStore((state) => state.theme);
 	const toggleTheme = useBlogStore((state) => state.toggleTheme);
 
+	useEffect(() => {
+		document.documentElement.setAttribute("data-theme", theme);
+	}, [theme]);
+
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		console.log(e.target.filterInput.value);
 		filterBlogs(e.target.filterInput.value ?? "Zustand");
 	};
+
+	const supabase = createClient();
+
+	const handleFetchData = async () => {
+		let { data: blogs, error } = await supabase.from("blogs").select("*");
+
+		if (error) {
+			console.log("error", error);
+		} else {
+			console.log("blogs", blogs);
+		}
+	};
+
 	return (
-		<nav className={`navbar navbar-expand-lg ${theme}`}>
+		<nav
+			className="navbar navbar-sticky navbar-expand-lg"
+			style={{
+				backgroundColor: "var(--color-header-bg)",
+				color: "var(--color-header-text)",
+			}}>
 			<div className="container">
 				<Link className="navbar-brand bolder" href="/">
 					NextBlog
@@ -40,24 +64,23 @@ function Navbar() {
 
 						<UserComponent />
 					</ul>
-				</div>
-				<form onSubmit={handleSubmit} className="d-flex" role="search">
-					<input
-						onChange={(e) => setInputValue(e.target.value)}
-						name="filterInput"
-						className="form-control me-2"
-						type="search"
-						placeholder="Search"
-						aria-label="Search"
-					/>
-					<button className="btn btn-outline-primary" type="submit">
-						Search
+					<form onSubmit={handleSubmit} className="d-flex" role="search">
+						<input
+							onChange={(e) => setInputValue(e.target.value)}
+							name="filterInput"
+							className="form-control me-2"
+							type="search"
+							placeholder="Search"
+							aria-label="Search"
+						/>
+						<button className="btn btn-outline-primary" type="submit">
+							Search
+						</button>
+					</form>
+					<button className="btn btn-primary ms-2" onClick={toggleTheme}>
+						{theme === "light" ? "🌞" : "🌙"}
 					</button>
-				</form>
-
-				<button className=" btn btn-primary ms-2" onClick={toggleTheme}>
-					{theme === "light" ? "🌞" : "🌙"}
-				</button>
+				</div>
 			</div>
 		</nav>
 	);

@@ -11,6 +11,7 @@ const nextConfig = {
 			"cdn.hashnode.com",
 			"tanstack.com",
 			"images.unsplash.com",
+			"picsum.photos",
 		],
 	},
 };

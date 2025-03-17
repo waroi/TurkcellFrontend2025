@@ -12,14 +12,13 @@ function UserComponent() {
 	// Blog creation states
 	const [title, setTitle] = useState("");
 	const [description, setDescription] = useState("");
-	const [imageUrl, setImageUrl] = useState("");
+	const [img_url, setImgUrl] = useState("");
 	const [releaseDate, setReleaseDate] = useState("");
 
 	const client = createClient();
 
 	async function getUser() {
 		const userSession = await client.auth.getUser();
-
 		setUser(userSession.data.user);
 	}
 
@@ -38,14 +37,14 @@ function UserComponent() {
 		const blogData = {
 			title,
 			description,
-			imageUrl,
+			img_url,
 			releaseDate,
 		};
 		const success = await createBlog(blogData);
 		if (success) {
 			setTitle("");
 			setDescription("");
-			setImageUrl("");
+			setImgUrl("");
 			setReleaseDate("");
 		}
 	};
@@ -139,15 +138,15 @@ function UserComponent() {
 										value={description}></textarea>
 								</div>
 								<div className="mb-3">
-									<label htmlFor="imageUrl" className="col-form-label">
+									<label htmlFor="img_url" className="col-form-label">
 										Image URL:
 									</label>
 									<input
 										type="text"
 										className="form-control"
-										id="imageUrl"
-										onChange={(e) => setImageUrl(e.target.value)}
-										value={imageUrl}
+										id="img_url"
+										onChange={(e) => setImgUrl(e.target.value)}
+										value={img_url}
 									/>
 								</div>
 								<div className="mb-3">

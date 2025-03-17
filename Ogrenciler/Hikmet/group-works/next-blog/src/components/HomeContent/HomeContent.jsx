@@ -10,7 +10,6 @@ function HomeContent() {
 	const blogs = useBlogStore((state) => state.blogs);
 	const fetchBlogs = useBlogStore((state) => state.fetchBlogs);
 	const searchInput = useBlogStore((state) => state.searchInput);
-	const theme = useBlogStore((state) => state.theme);
 
 	useEffect(() => {
 		fetchBlogs();
@@ -19,18 +18,14 @@ function HomeContent() {
 	useEffect(() => {}, [filteredBlogs]);
 
 	return (
-		<main className={`${theme}`}>
-			<section className="container pb-3">
-				<Carousel />
-				<div className="row g-2 ">
-					{searchInput === "" && filteredBlogs != []
-						? blogs?.map((blog) => <BlogCard key={blog.id} {...blog} />)
-						: filteredBlogs?.map((blog) => (
-								<BlogCard key={blog.id} {...blog} />
-						  ))}
-				</div>
-			</section>
-		</main>
+		<section className="container pb-3">
+			<Carousel />
+			<div className="row g-2 ">
+				{searchInput === "" && filteredBlogs != []
+					? blogs?.map((blog) => <BlogCard key={blog.id} {...blog} />)
+					: filteredBlogs?.map((blog) => <BlogCard key={blog.id} {...blog} />)}
+			</div>
+		</section>
 	);
 }
 

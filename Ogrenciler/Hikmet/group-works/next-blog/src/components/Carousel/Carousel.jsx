@@ -27,7 +27,7 @@ export default function Carousel() {
 							key={blog.id || index}>
 							<div className={styles.imageWrapper}>
 								<img
-									src={blog.imageUrl}
+									src={blog.img_url}
 									alt={blog.title || "Blog image"}
 									className="d-block w-100"
 								/>

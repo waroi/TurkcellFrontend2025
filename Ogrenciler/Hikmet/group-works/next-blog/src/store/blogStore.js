@@ -1,3 +1,4 @@
+import { createClient } from "@/utils/supabase/client";
 import { create } from "zustand";
 
 const useBlogStore = create((set) => ({
@@ -6,17 +7,42 @@ const useBlogStore = create((set) => ({
 	theme: "light",
 	searchInput: "",
 
-	setInputValue: (searchInput) => { set({ searchInput }) },
+	setInputValue: (searchInput) => {
+		set({ searchInput });
+	},
 	setBlogs: (blogs) => set({ blogs }),
-	toggleTheme: () => set((state) => ({ theme: state.theme === 'light' ? 'dark' : 'light' })),
+	toggleTheme: () =>
+		set((state) => ({ theme: state.theme === "light" ? "dark" : "light" })),
 
 	fetchBlogs: async () => {
+		const supabase = createClient();
 		try {
-			const response = await fetch("http://localhost:3000/blogs");
-			const data = await response.json();
-			set({ blogs: data });
+			let { data: blogs, error } = await supabase.from("blogs").select("*");
+			if (error) {
+				console.error("Supabase'den veri çekerken hata:", error);
+				return;
+			}
+			set({ blogs });
+			set({ filteredBlogs: blogs });
 		} catch (error) {
 			console.error("Blog verileri alınamadı:", error);
+		}
+	},
+	fetchBlogById: async (id) => {
+		const supabase = createClient();
+		try {
+			let { data: blog, error } = await supabase
+				.from("blogs")
+				.select("*")
+				.eq("id", id)
+				.single();
+			if (error) {
+				console.error("Supabase'den veri çekerken hata:", error);
+				return;
+			}
+			return blog;
+		} catch (error) {
+			console.error("Blog verisi alınamadı:", error);
 		}
 	},
 
@@ -24,7 +50,9 @@ const useBlogStore = create((set) => ({
 		try {
 			const response = await fetch("http://localhost:3000/blogs");
 			const data = await response.json();
-			const filteredData = data.filter(blog => blog.title.toLowerCase().includes(filterText.toLowerCase()))
+			const filteredData = data.filter((blog) =>
+				blog.title.toLowerCase().includes(filterText.toLowerCase())
+			);
 			set({ filteredBlogs: filteredData });
 		} catch (error) {
 			console.error("Blog verileri alınamadı:", error);
@@ -33,21 +61,19 @@ const useBlogStore = create((set) => ({
 
 	createBlog: async (blogData) => {
 		try {
-			const response = await fetch("http://localhost:3000/blogs", {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify(blogData),
-			});
-			if (response.ok) {
-				const newBlog = await response.json();
-				set((state) => ({
-					blogs: [...state.blogs, newBlog],
-				}));
-				return true;
+			const supabase = createClient();
+			const { data, error } = await supabase.from("blogs").insert(blogData);
+
+			if (error) {
+				console.error("Supabase'de blog eklenirken hata:", error);
+				return false;
 			}
-			return false;
+
+			set((state) => ({
+				blogs: [...state.blogs, blogData],
+				filteredBlogs: [...state.filteredBlogs, blogData],
+			}));
+			return true;
 		} catch (error) {
 			console.error("Blog eklenirken hata:", error);
 			return false;
@@ -55,18 +81,23 @@ const useBlogStore = create((set) => ({
 	},
 
 	deleteBlog: async (id) => {
+		const supabase = createClient();
 		try {
-			const response = await fetch(`http://localhost:3000/blogs/${id}`, {
-				method: "DELETE",
-			});
+			const { data, error } = await supabase
+				.from("blogs")
+				.delete()
+				.eq("id", id);
 
-			if (response.ok) {
-				set((state) => ({
-					blogs: state.blogs.filter((blog) => blog.id !== id),
-				}));
-				return true;
+			if (error) {
+				console.error("Supabase'de blog silinirken hata:", error);
+				return false;
 			}
-			return false;
+
+			set((state) => ({
+				blogs: state.blogs.filter((blog) => blog.id !== id),
+				filteredBlogs: state.filteredBlogs.filter((blog) => blog.id !== id),
+			}));
+			return true;
 		} catch (error) {
 			console.error("Blog silinirken hata:", error);
 			return false;
@@ -74,32 +105,32 @@ const useBlogStore = create((set) => ({
 	},
 
 	updateBlog: async (id, blogData) => {
+		const supabase = createClient();
 		try {
-			const response = await fetch(`http://localhost:3000/blogs/${id}`, {
-				method: "PUT",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify(blogData),
-			});
+			const { data, error } = await supabase
+				.from("blogs")
+				.update(blogData)
+				.eq("id", id);
 
-			if (response.ok) {
-				const updatedBlog = await response.json();
-				set((state) => ({
-					blogs: state.blogs.map((blog) =>
-						blog.id === id ? updatedBlog : blog
-					),
-				}));
-				return true;
+			if (error) {
+				console.error("Supabase'de blog güncellenirken hata:", error);
+				return false;
 			}
-			return false;
+
+			set((state) => ({
+				blogs: state.blogs.map((blog) =>
+					blog.id === id ? { ...blog, ...blogData } : blog
+				),
+				filteredBlogs: state.filteredBlogs.map((blog) =>
+					blog.id === id ? { ...blog, ...blogData } : blog
+				),
+			}));
+			return true;
 		} catch (error) {
 			console.error("Blog güncellenirken hata:", error);
 			return false;
 		}
 	},
-
-
 }));
 
 export default useBlogStore;

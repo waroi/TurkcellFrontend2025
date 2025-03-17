@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./blogCard.module.css";
 
-function BlogCard({ id, title, description, imageUrl, releaseDate }) {
+function BlogCard({ id, title, description, img_url, releaseDate }) {
 	return (
 		<div className={`col-md-4 ${styles.card}`}>
 			<div className={styles.cardInner}>
@@ -10,7 +10,7 @@ function BlogCard({ id, title, description, imageUrl, releaseDate }) {
 					<Image
 						width={400}
 						height={250}
-						src={imageUrl}
+						src={img_url}
 						className={styles.cardImage}
 						alt={title}
 					/>
