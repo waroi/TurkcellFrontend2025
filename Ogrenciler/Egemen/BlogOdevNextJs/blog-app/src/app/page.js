@@ -1,41 +1,29 @@
 "use client";
 import { useEffect } from "react";
-import Card from "../app/components/organisms/card/Card";
+import Card from "./components/molecules/card/Card";
 import { useDispatch } from "react-redux";
 import { addAllBlog, searchBlogs } from "../app/redux/slices/blogSlice";
 import { useSelector } from "react-redux";
 import { getAllBLogs } from "../../firebase/dbController";
-import { auth } from "../../firebase/firebase";
-import { useRouter } from "next/navigation";
 import Carousel from "./components/organisms/carousel/Carousel";
 
 export default function Home() {
   const blogs = useSelector((state) => state.blog.blogs);
   const searchTerm = useSelector((state) => state.blog.searchTerm);
-  const router = useRouter();
   const dispatch = useDispatch();
-
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((user) => {
-      if (user) {
-        router.push("/userPage");
-      } else {
-        if (searchTerm == "") {
-          async function fetchBlog() {
-            const data = await getAllBLogs();
-            if (data) {
-              dispatch(addAllBlog(data));
-            }
-          }
-          fetchBlog();
-        } else {
-          dispatch(searchBlogs(searchTerm));
+    if (searchTerm == "") {
+      async function fetchBlog() {
+        const data = await getAllBLogs();
+        if (data) {
+          dispatch(addAllBlog(data));
         }
       }
-    });
-
-    return () => unsubscribe();
-  }, [searchTerm, router]);
+      fetchBlog();
+    } else {
+      dispatch(searchBlogs(searchTerm));
+    }
+  }, [searchTerm, blogs]);
 
   return (
     <div>

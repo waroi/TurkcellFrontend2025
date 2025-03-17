@@ -14,9 +14,7 @@ import { auth, db } from "./firebase";
 
 export async function getUserBlogs() {
   const user = auth.currentUser;
-  console.log(user);
   if (!user) {
-    console.error("Kullanıcı oturum açmamış!");
     return;
   }
   const userRef = doc(db, "users", user.uid);
@@ -43,11 +41,17 @@ export async function getAllBLogs() {
   return blogs;
 }
 export async function addedBlog(blog) {
+  const { id, ...blogData } = blog;
   const user = auth.currentUser;
-  const blogRef = await addDoc(collection(db, "blogs"), blog);
+  const blogRef = await addDoc(collection(db, "blogs"), blogData);
 }
 export async function deleteFbBlog(id) {
   await deleteDoc(doc(db, "blogs", id));
+}
+export async function getBlog(id) {
+  const docRef = doc(db, "blogs", id);
+  const docSnap = await getDoc(docRef);
+  return docSnap.data();
 }
 
 export async function updateFbBlog(blog) {
