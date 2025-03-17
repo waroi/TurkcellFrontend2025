@@ -22,9 +22,12 @@ const Latest = () => {
     <div className="container" id="latest">
       <Title title={"Son Yayımlanan Bloglar"} />
       <div className="row">
-        {filtredItem?.map((blog, index) => (
-          <div className="col-lg-3 col-md-4 col-sm-6 col-12 d-flex align-items-stretch">
-            <Card blog={blog} key={index} />
+        {filtredItem?.map((blog) => (
+          <div
+            className="col-lg-3 col-md-4 col-sm-6 col-12 d-flex align-items-stretch"
+            key={blog.id}
+          >
+            <Card blog={blog} />
           </div>
         ))}
       </div>
