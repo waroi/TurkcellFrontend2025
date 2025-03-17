@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import useBlogStore from "../../store/useBlogStore";
 import Card from "../Card";
 import Loading from "../Loading";
+import Title from "./atoms/title";
 
 const Posts = () => {
   const [isMounted, setIsMounted] = useState(false);
@@ -26,7 +27,7 @@ const Posts = () => {
 
   return (
     <div className="container py-5" id="posts">
-      <h2 className="mb-5">Tüm Postlar</h2>
+      <Title title={"Tüm Postlar"} />
       <div className="row">
         {posts?.map((blog, index) => (
           <Card blog={blog} key={index} />

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import useBlogStore from "@/store/useBlogStore";
 import Loading from "../Loading";
 import Card from "../Card";
+import Title from "./atoms/title";
 
 const Latest = () => {
   const { posts, getPosts } = useBlogStore();
@@ -19,7 +20,7 @@ const Latest = () => {
   }
   return (
     <div className="container" id="latest">
-      <h2 className="my-5">Son Yayımlanan Bloglar</h2>
+      <Title title={"Son Yayımlanan Bloglar"} />
       <div className="row">
         {filtredItem?.map((blog, index) => (
           <Card blog={blog} key={index} />

@@ -2,6 +2,8 @@ import Link from "next/link";
 import React from "react";
 import styles from "./card.module.css";
 import formatDate from "@/utils/FormatDate";
+import H6 from "./atoms/h6_title";
+import CardImage from "./atoms/card_image";
 
 const Card = ({ blog }) => {
   return (
@@ -11,23 +13,11 @@ const Card = ({ blog }) => {
         className="text-decoration-none w-100 mb-4"
       >
         <div className="card shadow-sm border-0 rounded mb-4 rounded-4 h-100 ">
-          <img
-            src={blog?.image}
-            className={`card-img-top object-fit-cover rounded-top-4 img-fluid ${styles.image}`}
-            alt={blog?.title}
-          />
+          <CardImage img={blog?.image} title={blog?.title} />
           <div className="card-body ">
             <div className="card-info d-flex flex-column flex-xl-row justify-content-between mb-2">
-              <h6
-                className={`card-author badge ${styles.bgGreen} text-dark  rounded-pill px-3 py-1`}
-              >
-                {formatDate(blog?.releaseDate)}
-              </h6>
-              <h6
-                className={`card-author badge ${styles.bgGreen} text-dark  rounded-pill px-3 py-1`}
-              >
-                {blog?.author}
-              </h6>
+              <H6 child={formatDate(blog?.releaseDate)} />
+              <H6 child={blog?.author} />
             </div>
             <h5 className="card-title">{blog?.title}</h5>
             <p className="card-text">

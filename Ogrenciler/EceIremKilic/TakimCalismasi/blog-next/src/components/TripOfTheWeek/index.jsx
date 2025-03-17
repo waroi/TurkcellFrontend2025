@@ -1,5 +1,7 @@
 import React from "react";
 import styles from "./tripOfTheWeek.module.css";
+import Title from "./atoms/Title";
+import Subtitle from "./atoms/Subtitle";
 
 const TripOfTheWeek = () => {
   return (
@@ -7,16 +9,8 @@ const TripOfTheWeek = () => {
       <div
         className={`d-flex flex-column justify-content-center align-items-center ${styles.bannerWrapper}`}
       >
-        <h1
-          className={`d-flex justify-content-center align-items-center ${styles.bannerTitle} text-white fw-bold`}
-        >
-          TRIP OF THE WEEK
-        </h1>
-        <div
-          className={`d-flex justify-content-center align-items-center text-white ${styles.bannerDescription}`}
-        >
-          The Story Behind DESCRIPTION
-        </div>
+        <Title title={"TRIP OF THE WEEK"} />
+        <Subtitle subtitle={"The Story Behind DESCRIPTION"} />
       </div>
     </div>
   );

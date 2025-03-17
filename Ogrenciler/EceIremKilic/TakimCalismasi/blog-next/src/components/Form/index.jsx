@@ -2,6 +2,7 @@ import React from "react";
 import Input from "../Input";
 import CustomButton from "../CustomButton";
 import Loading from "../Loading";
+import FormTitle from "./atoms/form_title";
 
 const Form = ({ onChange, onSubmit, value }) => {
   console.log("val:", value);
@@ -9,9 +10,7 @@ const Form = ({ onChange, onSubmit, value }) => {
   return (
     <div className="form">
       <form onSubmit={onSubmit}>
-        <h5 className="display-6 fs-3 mb-5 text-center">
-          Post İçeriğini Düzenle
-        </h5>
+        <FormTitle title={" Post İçeriğini Düzenle"} />
         <div className="mb-3">
           <Input
             id="image"
@@ -53,7 +52,6 @@ const Form = ({ onChange, onSubmit, value }) => {
             label="Post Yayınlanma Tarihi"
           />
         </div>
-
         <CustomButton type="submit" variant="warning" buttonText="Güncelle" />
       </form>
     </div>

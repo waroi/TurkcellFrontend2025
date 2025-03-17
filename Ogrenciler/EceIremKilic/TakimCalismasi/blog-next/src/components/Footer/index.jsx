@@ -2,6 +2,8 @@ import styles from "./footer.module.css";
 import React from "react";
 import Image from "next/image";
 import mef from "../../assets/logo.png";
+import SocialIcons from "./components/social_icons";
+import Title from "./atoms/title";
 
 const Footer = () => {
   return (
@@ -9,9 +11,11 @@ const Footer = () => {
       <div className="container">
         <div className="row align-items-center">
           <div className="col-md-8">
-            <h6>
-              @2025 by MEF Turizm. Powered and security by Turkcell Atmosware
-            </h6>
+            <Title
+              child={
+                "@2025 by MEF Turizm. Powered and security by Turkcell Atmosware"
+              }
+            />
           </div>
           <div className="col-md-2">
             <a href="#">
@@ -19,24 +23,7 @@ const Footer = () => {
             </a>
           </div>
           <div className="col-md-2">
-            <div className="social-icons d-flex gap-2">
-              <i
-                aria-hidden="true"
-                className={`${styles.brands} fa-brands fa-instagram`}
-              ></i>
-              <i
-                aria-hidden="true"
-                className={`${styles.brands} fa-brands fa-linkedin`}
-              ></i>
-              <i
-                aria-hidden="true"
-                className={`${styles.brands} fa-brands fa-facebook`}
-              ></i>
-              <i
-                aria-hidden="true"
-                className={`${styles.brands} fa-brands fa-github`}
-              ></i>
-            </div>
+            <SocialIcons />
           </div>
         </div>
       </div>

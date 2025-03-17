@@ -4,7 +4,6 @@ import styles from "./navbar.module.css";
 import Image from "next/image";
 import mef from "../../assets/logo.png";
 import Link from "next/link";
-import { auth } from "@/firebase_config";
 import { getProfileImageUrl } from "@/controller/DBController";
 import useAuthStore from "@/store/useAuthStore";
 import NavbarItems from "./components/NavbarItems";
