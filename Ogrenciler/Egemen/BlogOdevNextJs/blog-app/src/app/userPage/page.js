@@ -16,7 +16,7 @@ const UserPage = () => {
     if (searchTerm == "") {
       unsubscribe(setUserAuth);
       async function fetchBlog() {
-        const data = await getUserBlogs(); // buraya bak
+        const data = await getUserBlogs();
         if (data) {
           dispatch(addAllBlog(data));
         }

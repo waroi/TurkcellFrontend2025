@@ -1,10 +1,8 @@
 import { MdEdit } from "react-icons/md";
 import { MdDeleteForever } from "react-icons/md";
 import { MdVisibility } from "react-icons/md";
-
 import { useDispatch } from "react-redux";
 import { deleteBlog, setBlog } from "../../../redux/slices/blogSlice";
-
 import Link from "next/link";
 import { deleteFbBlog } from "../../../../../firebase/dbController";
 
@@ -77,7 +75,6 @@ const Card = ({ card, userAuth }) => {
                 {card.topic}
               </span>
             </div>
-            {/* <UpdateModal /> */}
           </div>
         </div>
       </div>
