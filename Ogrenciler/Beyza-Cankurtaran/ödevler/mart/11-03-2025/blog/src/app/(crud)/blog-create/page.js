@@ -3,9 +3,18 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { db } from '../../../../firebase/firebaseconfig';
 import { collection, addDoc } from 'firebase/firestore';
+import { useAuth } from '../../../context/authContext';
+import { useEffect } from 'react';
 
 export default function CreateBlog() {
+  const { isLoggedIn } = useAuth();
   const router = useRouter();
+
+  useEffect(() => {
+    if (!isLoggedIn) {
+      router.push('/'); 
+    }
+  }, [isLoggedIn, router]);
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [date, setDate] = useState('');

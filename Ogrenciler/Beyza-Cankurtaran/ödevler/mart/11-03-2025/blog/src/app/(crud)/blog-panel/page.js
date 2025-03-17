@@ -1,23 +1,30 @@
-'use client';
-import { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
-import { db } from '../../../../firebase/firebaseconfig';
-import { collection, getDocs, deleteDoc, doc } from 'firebase/firestore';
+"use client";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { db } from "../../../../firebase/firebaseconfig";
+import { collection, getDocs, deleteDoc, doc } from "firebase/firestore";
+import { useAuth } from "../../../context/authContext";
 
 export default function BlogPanel() {
-  const router = useRouter();
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  const { isLoggedIn } = useAuth();
+    const router = useRouter();
+  
+    useEffect(() => {
+      if (!isLoggedIn) {
+        router.push('/'); 
+      }
+    }, [isLoggedIn, router]);
   useEffect(() => {
     fetchBlogs();
   }, []);
 
   const fetchBlogs = async () => {
     try {
-      const querySnapshot = await getDocs(collection(db, 'blogs'));
+      const querySnapshot = await getDocs(collection(db, "blogs"));
       const blogsData = querySnapshot.docs.map((doc) => {
-        console.log('doc: ', doc.data());
         return {
           id: doc.id,
           ...doc.data(),
@@ -25,7 +32,7 @@ export default function BlogPanel() {
       });
       setBlogs(blogsData);
     } catch (error) {
-      console.error('Error fetching blogs:', error);
+      console.error("Error fetching blogs:", error);
     } finally {
       setLoading(false);
     }
@@ -33,26 +40,26 @@ export default function BlogPanel() {
 
   const handleDelete = async (id) => {
     try {
-      await deleteDoc(doc(db, 'blogs', id));
+      await deleteDoc(doc(db, "blogs", id));
       setBlogs(blogs.filter((blog) => blog.id !== id));
     } catch (error) {
-      console.error('blog delete hata:', error);
+      console.error("blog delete hata:", error);
     }
   };
 
   return (
-    <div className='container mt-5'>
-      <h1 className='mb-4 py-4'>Blog Yönetim Paneli</h1>
+    <div className="container mt-5 vh-100">
+      <h1 className="mb-4 py-4">Blog Yönetim Paneli</h1>
       <button
-        className='btn btn-orange mb-3'
-        onClick={() => router.push('blog-create')}
+        className="btn btn-orange mb-3"
+        onClick={() => router.push("blog-create")}
       >
         Yeni Blog Oluştur
       </button>
       {loading ? (
         <p>Loading...</p>
       ) : (
-        <table className='table table-bordered table-dark'>
+        <table className="table table-bordered table-dark">
           <thead>
             <tr>
               <th>ID</th>
@@ -67,13 +74,13 @@ export default function BlogPanel() {
                 <td>{blog.title}</td>
                 <td>
                   <button
-                    className='btn btn-success me-2'
+                    className="btn btn-success me-2"
                     onClick={() => router.push(`blog-update/${blog.id}`)}
                   >
                     Düzenle
                   </button>
                   <button
-                    className='btn btn-danger'
+                    className="btn btn-danger"
                     onClick={() => handleDelete(blog.id)}
                   >
                     Sil

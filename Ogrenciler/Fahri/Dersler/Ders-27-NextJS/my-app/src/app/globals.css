@@ -1,0 +1,21 @@
+@import "./../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
+:root {
+  --main-bg-color: #121212;
+  --form-bg-color: #1e1e1e;
+  --input-bg-color: #2d2d2d;
+  --text-color: #e0e0e0;
+  --accent-color: #ff3d71;
+  --accent-hover: #ff6694;
+  --input-border: #444;
+  --button-text: #000;
+}
+
+body {
+  background-color: var(--main-bg-color);
+  color: var(--text-color);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
