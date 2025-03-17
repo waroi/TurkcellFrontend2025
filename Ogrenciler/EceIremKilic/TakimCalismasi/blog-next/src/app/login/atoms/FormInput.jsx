@@ -1,6 +1,13 @@
 import React from "react";
 
-const FormInput = ({ id, label, type = "text", value, onChange }) => {
+const FormInput = ({
+  id,
+  label,
+  type = "text",
+  value,
+  onChange,
+  placeholder,
+}) => {
   return (
     <div className="mb-3">
       <label htmlFor={id} className="form-label fw-bold">
@@ -10,9 +17,9 @@ const FormInput = ({ id, label, type = "text", value, onChange }) => {
         type={type}
         className="form-control form-control-lg"
         id={id}
-        aria-describedby="emailHelp"
         value={value}
         onChange={onChange}
+        placeholder={placeholder}
       />
     </div>
   );

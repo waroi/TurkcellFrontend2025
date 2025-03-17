@@ -28,14 +28,17 @@ const SignInForm = () => {
         type="email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
+        label="E-mail"
+        placeholder="E-mailinizi giriniz."
       />
-      <div id="emailHelp" className="form-text">
-        Lütfen geçerli bir mail adresi giriniz.
-      </div>
+
       <FormInput
+        type="password"
         id={"signInPassword"}
         value={password}
         onChange={(e) => setPassword(e.target.value)}
+        label="Şifre"
+        placeholder="Şifrenizi giriniz."
       />
       <SignButton title={"Giriş Yap"} />
       <TextButton route={"/signup"} title={"Hesabınız yok mu? Oluşturun."} />

@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import Form from "@/components/Form";
 import formatDate from "@/utils/FormatDate";
 import Loading from "@/components/Loading";
+import Card from "@/components/Card";
 
 const EditBlog = ({ params }) => {
   const unwrappedParams = use(params);
@@ -71,11 +72,13 @@ const EditBlog = ({ params }) => {
               value={editedPost}
               onChange={handleChange}
               onSubmit={handleSubmit}
+              btnText="Güncelle"
             />
           </div>
           <div className="col-lg-5">
             <div className="preload">
-              <div className="card">
+              <Card blog={editedPost || blog} />
+              {/* <div className="card">
                 <img
                   src={editedPost.image || blog.image}
                   className="card-img-top"
@@ -98,7 +101,7 @@ const EditBlog = ({ params }) => {
                     </p>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

@@ -23,7 +23,9 @@ const Latest = () => {
       <Title title={"Son Yayımlanan Bloglar"} />
       <div className="row">
         {filtredItem?.map((blog, index) => (
-          <Card blog={blog} key={index} />
+          <div className="col-lg-3 col-md-4 col-sm-6 col-12 d-flex align-items-stretch">
+            <Card blog={blog} key={index} />
+          </div>
         ))}
       </div>
     </div>
