@@ -16,15 +16,16 @@ import {
   setDoc,
   updateDoc,
 } from "firebase/firestore";
+import cars from "./cars";
 
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.REACT_APP_FIREBASE_APP_ID,
-  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
 };
 
 
@@ -39,27 +40,23 @@ export async function register(email, password) {
   return user
 }
 
-export async function login(email, password, remember) {
+export async function login(email, password, remember, navigate) {
+
   return signInWithEmailAndPassword(auth, email, password).then(
     (credentials) => {
       console.log(collection(db, credentials.user.uid))
       if (remember) localStorage.setItem("user", credentials.user.uid);
+      navigate("/carstore");
       return credentials;
     }
-  );
+  ).catch((err)=>alert(err));
 }
+
+
+// setDoc(doc(collection(db, "cars"), "kW0oGpik6LcikXCJfJ2p"), cars)
+
 
 export function logout() {
   localStorage.removeItem("user");
   return auth.signOut();
 }
-
-// setDoc(userRef, { name: "Ahmet", age: 30 }, { merge: true })
-//   .then(() => {
-//     console.log("Document successfully written!");
-//   })
-//   .catch((error) => {
-//     console.error("Error writing document: ", error);
-//   });
-// console.log(userRef)
-// setDoc(cityRef, { capital: true }, { merge: true });
