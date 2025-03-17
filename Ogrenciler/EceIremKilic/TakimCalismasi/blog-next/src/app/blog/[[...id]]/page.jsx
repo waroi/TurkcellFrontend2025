@@ -33,6 +33,7 @@ const BlogDetails = () => {
   }, [id, getPostById]);
 
   const handleDelete = (id) => {
+    confirm("Bu postu silmek istediğinize emin misiniz?");
     deletePost(id);
     router.push("/");
   };

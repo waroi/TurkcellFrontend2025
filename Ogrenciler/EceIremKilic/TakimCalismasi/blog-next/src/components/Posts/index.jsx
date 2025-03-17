@@ -29,8 +29,13 @@ const Posts = () => {
     <div className="container py-5" id="posts">
       <Title title={"Tüm Postlar"} />
       <div className="row">
-        {posts?.map((blog, index) => (
-          <Card blog={blog} key={index} />
+        {posts?.map((blog) => (
+          <div
+            className="col-lg-3 col-md-4 col-sm-6 col-12 d-flex align-items-stretch"
+            key={blog.id}
+          >
+            <Card blog={blog} />
+          </div>
         ))}
       </div>
     </div>

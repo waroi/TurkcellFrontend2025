@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
 import {login} from "../Store/fireBase"
-import { NavLink } from "react-router";
+import { NavLink, useNavigate } from "react-router";
 
 const LogIn = () => {
+  const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
     const check = e.target.rememberMe.checked;
-    login(email,password,check)
+    login(email,password,check,navigate)
   }
   return (
     <React.Fragment>

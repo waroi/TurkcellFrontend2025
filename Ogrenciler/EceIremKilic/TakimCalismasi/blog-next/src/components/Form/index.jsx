@@ -1,14 +1,13 @@
 import React from "react";
 import Input from "../Input";
 import CustomButton from "../CustomButton";
-import Loading from "../Loading";
 import FormTitle from "./atoms/form_title";
 
-const Form = ({ onChange, onSubmit, value }) => {
+const Form = ({ onChange, onSubmit, value, btnText, className }) => {
   console.log("val:", value);
 
   return (
-    <div className="form">
+    <div className={`form ${className}`}>
       <form onSubmit={onSubmit}>
         <FormTitle title={" Post İçeriğini Düzenle"} />
         <div className="mb-3">
@@ -52,7 +51,7 @@ const Form = ({ onChange, onSubmit, value }) => {
             label="Post Yayınlanma Tarihi"
           />
         </div>
-        <CustomButton type="submit" variant="warning" buttonText="Güncelle" />
+        <CustomButton type="submit" variant="warning" buttonText={btnText} />
       </form>
     </div>
   );
