@@ -26,15 +26,17 @@ const SignUpForm = () => {
     <form onSubmit={handleSignUp}>
       <FormInput
         id={"signUpFullName"}
-        label={"Ad Soyad"}
+        label={"Ad - Soyad"}
         value={fullName}
         onChange={(e) => setFullName(e.target.value)}
+        placeholder="Ad-Soyad"
       />
       <FormInput
         id={"signInEmail"}
         label={"Email"}
         value={email}
         onChange={(e) => setEmail(e.target.value)}
+        placeholder="E-mail"
       />
       <FormInput
         type="password"
@@ -42,6 +44,7 @@ const SignUpForm = () => {
         label={"Şifre"}
         value={password}
         onChange={(e) => setPassword(e.target.value)}
+        placeholder="Şifre"
       />
       <FormInput
         type="password"
@@ -49,6 +52,7 @@ const SignUpForm = () => {
         label={"Şifre Tekrarı"}
         value={rePassword}
         onChange={(e) => setRePassword(e.target.value)}
+        placeholder="Şifre tekrar"
       />
       <SignButton title={"Kayıt Ol"} />
       <TextButton

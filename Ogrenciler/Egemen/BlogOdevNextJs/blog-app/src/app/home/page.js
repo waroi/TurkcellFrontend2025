@@ -1,6 +1,6 @@
 "use client";
 import { useEffect } from "react";
-import Card from "../../app/components/organisms/card/Card";
+import Card from "../components/molecules/card/Card";
 import { useDispatch } from "react-redux";
 import { addAllBlog, searchBlogs } from "../../app/redux/slices/blogSlice";
 import { useSelector } from "react-redux";

@@ -36,7 +36,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="container-fluid">
         <Link
-          href={`/home`}
+          href={`/`}
           className="navbar-brand d-flex gap-2 align-items-center"
         >
           <Image
@@ -66,20 +66,23 @@ const Navbar = () => {
           </Button>
         </form>
 
-        {userAuth && !isHomePage ? (
+        {userAuth /*&& !isHomePage*/ ? (
           <div className="d-flex gap-4 align-items-center">
-            <Button
-              type="button"
-              className="btn btn-outline-success rounded-pill"
-              data-bs-toggle="modal"
-              data-bs-target="#addModal"
-              onClick={handleModalOpen}
-            >
-              ☄️ Blog Ekle
-            </Button>
+            {!isHomePage ? (
+              <Button
+                type="button"
+                className="btn btn-outline-success rounded-pill"
+                data-bs-toggle="modal"
+                data-bs-target="#addModal"
+                onClick={handleModalOpen}
+              >
+                ☄️ Blog Ekle
+              </Button>
+            ) : (
+              <></>
+            )}
             <UpdateModal />
             <AddModal />
-
             <Link
               href={`/userPage`}
               className="text-decoration-none d-flex gap-2 align-items-center"

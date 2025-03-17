@@ -1,0 +1,134 @@
+{
+  "blogs": [
+    {
+      "id": "1",
+      "title": "Modern Web Geliştirmede React’ın Yeri",
+      "content": "React, modern web geliştirme dünyasında devrim yaratan en popüler JavaScript kütüphanelerinden biridir. \n    Facebook tarafından geliştirilen ve açık kaynak olarak sunulan bu kütüphane, bileşen tabanlı yapısıyla öne çıkıyor. \n    Peki, React neden bu kadar popüler? Öncelikle, Virtual DOM sayesinde geleneksel DOM manipülasyonlarından daha verimli bir yapı sunar.\n    Sayfa yüklenme sürelerini kısaltır ve kullanıcı deneyimini iyileştirir. Ayrıca, büyük ölçekli uygulamalar için bileşen bazlı geliştirme \n    sayesinde kod tekrarını azaltır ve sürdürülebilirliği artırır. JSX kullanımı sayesinde HTML benzeri bir sözdizimi ile JavaScript içinde \n    bileşenler yazılabilir, bu da geliştiricilere büyük esneklik kazandırır. React’in en büyük avantajlarından biri de geniş ekosistemi ve \n    topluluğudur. React Router, Redux gibi ek araçlarla çok daha güçlü hale gelir. Özellikle büyük firmalar (Facebook, Instagram, Airbnb, \n    Netflix gibi) tarafından kullanılması, kütüphanenin güvenilirliğini kanıtlıyor. React ayrıca sunucu taraflı render (SSR) desteği \n    sağlayarak SEO açısından avantajlıdır. Next.js ile birlikte kullanıldığında, React tabanlı uygulamalar çok daha hızlı yüklenebilir ve \n    SEO dostu hale getirilebilir. Son olarak, React Native sayesinde mobil uygulamalar geliştirmek de mümkün hale gelmiştir. Kısacası, React \n    modern web geliştirme dünyasında büyük bir yer edinmiştir ve popülerliğini koruyarak gelecekte de önemli bir teknoloji olmaya devam edecektir.",
+      "image": "https://www.infotechacademy.com.tr/content/education/reactjs-egitimi-infotech-academy32.png",
+      "author": {
+        "name": "Ela Kılıç",
+        "photo": "https://media.licdn.com/dms/image/v2/D4D03AQHGEWxP5zW_uQ/profile-displayphoto-shrink_400_400/B4DZUgoo2GHkAg-/0/1740009279730?e=1747267200&v=beta&t=LlI9Lls5IwoL01qQK4NZriUFrphD6TeUkxVpfQ1HmfI"
+      },
+      "date": "2025-03-11",
+      "reading_time": "5 dk",
+      "category": "Frontend"
+    },
+    {
+      "id": "2",
+      "title": "JavaScript ile Asenkron Programlama",
+      "content": "JavaScript’in en önemli özelliklerinden biri, asenkron programlamayı desteklemesidir. Asenkron programlama, uzun süren işlemlerin \n    (örneğin, bir API çağrısı veya dosya okuma) kullanıcı deneyimini kesintiye uğratmadan gerçekleştirilmesini sağlar. Geleneksel \n    JavaScript'te asenkron işlemler için callback fonksiyonları kullanılırdı. Ancak callback fonksiyonlarının iç içe geçmesi, kodu okunması \n    zor bir hale getirebilir (callback hell). Bunun yerine, ECMAScript 6 (ES6) ile birlikte gelen Promises yapısı, asenkron işlemleri daha \n    yönetilebilir hale getirdi. Promise nesneleri, başarılı veya başarısız olma durumuna göre `.then()` ve `.catch()` metodlarıyla işlenir. \n    Ancak, en modern yaklaşım olarak görülen `async/await` yapısı, kodun senkronize bir şekilde yazılmasını sağlarken asenkron çalışmasını \n    sürdürür. `async` fonksiyonlar, içerisinde `await` anahtar kelimesi kullanarak, bir Promise’in tamamlanmasını bekleyebilir. Bu sayede, \n    kod daha okunabilir ve anlaşılır hale gelir. Örneğin, bir API çağrısı yapan fonksiyon düşünelim: `const data = await fetch(url).then(res => res.json());` \n    gibi bir kullanım, asenkron işlemleri çok daha kolay yönetmemizi sağlar. Günümüzde JavaScript ile modern web geliştirmede \n    (React, Vue, Angular gibi framework’lerde) asenkron programlama kritik bir rol oynamaktadır.",
+      "image": "https://cdn.cangokceaslan.com/articles/1d92e52f6e66f5ee-80bbb49b-4b75395c-605832cb-8ded297d7caef13571f9005e.jpeg",
+      "author": {
+        "name": "Mustafa Yıldırım",
+        "photo": "https://media.licdn.com/dms/image/v2/D4D03AQHglhvi6WZ0GQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1657990625696?e=1747267200&v=beta&t=L1-ztaqx10d7p_pGTKdptH7iVEYzsaw1U13fLIrhDic"
+      },
+      "date": "2025-03-10",
+      "reading_time": "7 dk",
+      "category": "JavaScript"
+    },
+    {
+      "id": "3",
+      "title": "MongoDB vs PostgreSQL: Hangisini Seçmelisiniz?",
+      "content": "Veritabanı seçimi, bir uygulamanın performansı ve ölçeklenebilirliği açısından kritik öneme sahiptir. NoSQL tabanlı MongoDB ve SQL \n    tabanlı PostgreSQL, bu alanda en çok tercih edilen iki çözümdür. MongoDB, verileri JSON benzeri belgeler (documents) şeklinde \n    depolayan bir NoSQL veritabanıdır. Esnek şema yapısı sayesinde veri yapıları önceden tanımlanmadan kullanılabilir. Bu özellik, özellikle \n    dinamik ve hızlı değişen projeler için avantaj sağlar. Öte yandan, PostgreSQL ise ilişkisel (SQL tabanlı) bir veritabanıdır ve ACID \n    (Atomicity, Consistency, Isolation, Durability) ilkelerine tam uyumludur. Karmaşık sorgular, büyük veri setleri ve tutarlılık gerektiren \n    uygulamalar için PostgreSQL daha güçlü bir alternatiftir. MongoDB, büyük ölçekli uygulamalarda yatay ölçeklenebilirlik sunarken, \n    PostgreSQL daha iyi veri bütünlüğü ve ilişkisel sorgular sağlar. Peki hangi durumda hangisini tercih etmelisiniz? Eğer veri yapınız çok \n    sık değişiyorsa, esneklik önemliyse ve büyük ölçekli okuma-yazma işlemleri yapılıyorsa MongoDB daha iyi bir seçenektir. Ancak, güçlü \n    ilişkisel sorgulara, veri tutarlılığına ve güvenilirliğe ihtiyaç duyuyorsanız PostgreSQL daha mantıklı bir seçim olacaktır.",
+      "image": "https://media.licdn.com/dms/image/v2/D4D12AQESOp7-r1gKWg/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1721183259280?e=2147483647&v=beta&t=UfCUFLMQboExjNyaKpHW8PD_zeMoa0iqP3v6x1eJaXk",
+      "author": {
+        "name": "Cenk Aydın",
+        "photo": "https://media.licdn.com/dms/image/v2/D4D03AQHfbDK1UaPQEQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1708073452241?e=1747267200&v=beta&t=DJxZeKhq-jKEszQqxWyPiL9yHjrII5OBuMEJTqDwVD8"
+      },
+      "date": "2025-03-09",
+      "reading_time": "6 dk",
+      "category": "Database"
+    },
+    {
+      "id": "4",
+      "title": "TypeScript mi, JavaScript mi?",
+      "content": "JavaScript, web geliştirme dünyasında uzun yıllardır kullanılan, dinamik ve esnek bir dildir.\n Ancak, büyük ölçekli projelerde tip güvenliği eksikliği, hata ayıklama zorlukları ve ölçeklenebilirlik gibi sorunlarla karşılaşabilirsiniz. \nİşte tam bu noktada TypeScript devreye giriyor. TypeScript, JavaScript’in bir üst kümesi olarak geliştirilmiş, statik tiplere sahip bir dildir.\n Bu, kod yazarken hataları daha erken tespit etmenizi sağlar ve geliştirme sürecini daha güvenilir hale getirir. Ayrıca, modern IDE'ler ile sunduğu otomatik tamamlama ve hata ayıklama özellikleri sayesinde geliştiricilerin işini kolaylaştırır. \nPeki, projeniz için hangisini seçmelisiniz? Eğer küçük ve hızlı prototipler geliştiriyorsanız JavaScript işinizi görebilir. Ancak, büyük ve uzun vadeli projeler için TypeScript, daha temiz ve sürdürülebilir bir kod tabanı oluşturmanıza yardımcı olur.",
+      "image": "https://appmaster.io/api/_files/TJCZsq8p3gFNCrcnjEsVxb/download/",
+      "author": {
+        "name": "Ela Kılıç",
+        "photo": "https://media.licdn.com/dms/image/v2/D4D03AQHGEWxP5zW_uQ/profile-displayphoto-shrink_400_400/B4DZUgoo2GHkAg-/0/1740009279730?e=1747267200&v=beta&t=LlI9Lls5IwoL01qQK4NZriUFrphD6TeUkxVpfQ1HmfI"
+      },
+      "date": "2025-03-08",
+      "reading_time": "5 dk",
+      "category": "TypeScript"
+    },
+    {
+      "id": "5",
+      "title": "RESTful API vs GraphQL: Hangisi Daha İyi?",
+      "content": "Günümüz modern web geliştirme dünyasında, API’ler uygulamalar arasında veri alışverişini sağlayan kritik bileşenlerdir. \nGeleneksel olarak REST API’ler, HTTP istekleriyle verileri almak ve işlemek için yaygın olarak kullanılırken, son yıllarda GraphQL, daha esnek ve verimli bir alternatif olarak öne çıkmıştır.\n REST API’ler, belirli URL uç noktalarıyla çalışır ve istemciye sabit bir veri yapısı sunar. \nAncak, bazı durumlarda gereğinden fazla veya eksik veri getirerek istemci tarafında fazladan iş yükü oluşturabilir.\n Örneğin, bir kullanıcı profili almak istediğinizde gereksiz ek veriler de gelebilir. GraphQL ise istemcinin ihtiyacına uygun verileri tam olarak talep etmesine olanak tanır. \nTek bir uç nokta üzerinden çalışarak, fazla veya eksik veri getirme sorununu ortadan kaldırır. Ancak, GraphQL’in REST’e kıyasla daha fazla yapılandırma gerektirdiği ve önbellekleme mekanizmalarının daha karmaşık olduğu unutulmamalıdır. \nPeki, hangisini seçmelisiniz? Eğer basit ve geleneksel bir yapı istiyorsanız REST kullanabilirsiniz. Ancak, büyük ölçekli ve esnek veri gereksinimleri olan bir proje geliştiriyorsanız GraphQL iyi bir alternatif olabilir.",
+      "image": "https://miro.medium.com/v2/resize:fit:1400/1*ULITHErCZzYdqxLtlP1qDw.png",
+      "author": {
+        "name": "Mustafa Yıldırım",
+        "photo": "https://media.licdn.com/dms/image/v2/D4D03AQHglhvi6WZ0GQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1657990625696?e=1747267200&v=beta&t=L1-ztaqx10d7p_pGTKdptH7iVEYzsaw1U13fLIrhDic"
+      },
+      "date": "2025-03-07",
+      "reading_time": "6 dk",
+      "category": "Backend"
+    },
+    {
+      "id": "6",
+      "title": "Tailwind CSS ile Hızlı UI Geliştirme",
+      "content": "CSS, web sitelerinin görselliğini belirleyen temel teknolojilerden biridir.\n Ancak, klasik CSS yazımı zaman alıcı olabilir ve yönetimi zorlaşabilir. Bootstrap gibi önceden tanımlanmış sınıfları içeren frameworkler ise bileşenleri hızlıca oluşturmamıza yardımcı olsa da esneklik konusunda bazı kısıtlamalar içerebilir.\n Tailwind CSS ise utility-first (yardımcı sınıflar odaklı) bir yaklaşım benimseyerek geliştiricilere doğrudan CSS yazma esnekliği sunar.\n Örneğin, özel bir buton tasarlamak için Tailwind ile doğrudan bg-blue-500 text-white px-4 py-2 rounded-lg gibi sınıflar ekleyerek stil verebilirsiniz. \nTailwind’in en büyük avantajlarından biri, global CSS dosyalarıyla uğraşmadan her bileşeni bağımsız olarak stilize edebilme imkanı sunmasıdır.\n Ayrıca, React veya Vue gibi modern frameworklerle mükemmel şekilde çalışarak, dinamik ve ölçeklenebilir UI bileşenleri oluşturmanıza yardımcı olur.\n Eğer hızlı ve özelleştirilebilir bir CSS framework arıyorsanız, Tailwind CSS sizin için harika bir seçenek olabilir!",
+      "image": "https://webdeseo.com.tr/wp-content/uploads/2024/08/tailwind_css_nedir_nasil_kullanilir_156b07e004_DOhqq-1170x700.webp",
+      "author": {
+        "name": "Cenk Aydın",
+        "photo": "https://media.licdn.com/dms/image/v2/D4D03AQHfbDK1UaPQEQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1708073452241?e=1747267200&v=beta&t=DJxZeKhq-jKEszQqxWyPiL9yHjrII5OBuMEJTqDwVD8"
+      },
+      "date": "2025-03-06",
+      "reading_time": "5 dk",
+      "category": "CSS"
+    },
+    {
+      "id": "7",
+      "title": "Next.js ile SSR ve SSG Kavramları",
+      "content": "Next.js, React tabanlı modern web uygulamaları geliştirmek için kullanılan güçlü bir framework'tür. \nNext.js'in en büyük avantajlarından biri, sunucu tarafı render (SSR) ve statik site üretimi (SSG) gibi farklı render yöntemlerini desteklemesidir.\n SSR (Server Side Rendering), her kullanıcı isteği geldiğinde sayfanın sunucu tarafından oluşturulmasını sağlar.\n Bu yöntem, SEO açısından avantajlıdır ve dinamik içerikler için idealdir. Ancak, her istek için sunucu yükü oluşturduğundan yüksek trafik alan sitelerde performans sorunları yaşanabilir. \nSSG (Static Site Generation) ise sayfaları build (derleme) aşamasında oluşturur ve önbelleğe alır. Bu sayede sayfalar daha hızlı yüklenir ve sunucu yükü azaltılmış olur.\n Ancak, içeriklerin güncellenmesi gerektiğinde siteyi yeniden oluşturmanız gerekir. Hangi yöntemin daha iyi olduğu projenizin gereksinimlerine bağlıdır. Eğer dinamik içerikler ve kullanıcı bazlı veriler gerektiriyorsa SSR kullanmalısınız. Ancak, sabit içeriklerle hızlı bir performans istiyorsanız SSG daha uygun olabilir.",
+      "image": "https://media2.dev.to/dynamic/image/width=1600,height=900,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fn507runwsnkjdzucsw7z.png",
+      "author": {
+        "name": "Ela Kılıç",
+        "photo": "https://media.licdn.com/dms/image/v2/D4D03AQHGEWxP5zW_uQ/profile-displayphoto-shrink_400_400/B4DZUgoo2GHkAg-/0/1740009279730?e=1747267200&v=beta&t=LlI9Lls5IwoL01qQK4NZriUFrphD6TeUkxVpfQ1HmfI"
+      },
+      "date": "2025-03-05",
+      "reading_time": "7 dk",
+      "category": "Next.js"
+    },
+    {
+      "id": "8",
+      "title": "Docker ile Projeleri Konteynerize Etmek",
+      "content": "Docker, uygulamalarınızı bağımsız ve taşınabilir bir şekilde çalıştırmanıza olanak tanıyan bir konteyner teknolojisidir.\n Geleneksel sanal makinelerden farklı olarak Docker, uygulamaları doğrudan işletim sistemi üzerinde çalıştırarak kaynak tüketimini en aza indirir.\n Bir projeyi Docker ile çalıştırmak için şu adımları izleyebilirsiniz: \n1️⃣ Dockerfile oluşturun: Uygulamanızın nasıl çalıştırılacağını tanımlayan bir Dockerfile oluşturmalısınız. \n2️⃣ Docker image oluşturun: docker build -t my-app . komutuyla uygulamanızın bir Docker image’ını oluşturabilirsiniz.\n 3️⃣ Docker container çalıştırın: docker run -p 3000:3000 my-app komutuyla uygulamanızı bir konteyner içinde çalıştırabilirsiniz. Docker, özellikle mikro hizmetler mimarisi ile çalışan projelerde büyük avantajlar sağlar. Her geliştiricinin aynı ortamda çalışmasını sağlar, sunucu yapılandırma sorunlarını ortadan kaldırır ve CI/CD süreçlerini kolaylaştırır.",
+      "image": "https://miro.medium.com/v2/resize:fit:1047/1*RIoC7XhP5wE-KyBED7gWGA.png",
+      "author": {
+        "name": "Mustafa Yıldırım",
+        "photo": "https://media.licdn.com/dms/image/v2/D4D03AQHglhvi6WZ0GQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1657990625696?e=1747267200&v=beta&t=L1-ztaqx10d7p_pGTKdptH7iVEYzsaw1U13fLIrhDic"
+      },
+      "date": "2025-03-04",
+      "reading_time": "8 dk",
+      "category": "DevOps"
+    },
+    {
+      "id": "9",
+      "title": "Firebase ile Gerçek Zamanlı Veri Tabanı Kullanımı",
+      "content": "Firebase, Google tarafından geliştirilen ve bulut tabanlı hizmetler sunan bir platformdur.\n Özellikle Firebase Realtime Database, verileri anlık olarak senkronize edebilme yeteneğiyle dikkat çeker.\n Firebase ile gerçek zamanlı veri tabanı kullanmak için şu adımları izleyebilirsiniz: \n1️⃣ Firebase projenizi oluşturun ve API anahtarınızı alın.\n 2️⃣ Firebase SDK’sını yükleyin ve React projenize entegre edin. \n3️⃣ Gerçek zamanlı verileri dinleyin: onValue(ref(database, users), (snapshot) => { ... }) gibi fonksiyonlar ile anlık güncellemeleri alabilirsiniz. Firebase, chat uygulamaları, canlı skor sistemleri ve anlık veri güncellemeleri gerektiren her türlü proje için mükemmel bir çözümdür.",
+      "image": "https://i.ytimg.com/vi/ineTxlv7EOI/maxresdefault.jpg",
+      "author": {
+        "name": "Cenk Aydın",
+        "photo": "https://media.licdn.com/dms/image/v2/D4D03AQHfbDK1UaPQEQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1708073452241?e=1747267200&v=beta&t=DJxZeKhq-jKEszQqxWyPiL9yHjrII5OBuMEJTqDwVD8"
+      },
+      "date": "2025-03-03",
+      "reading_time": "6 dk",
+      "category": "Database"
+    },
+    {
+      "id": "10",
+      "title": "Web Performansını Artırmanın 10 Yolu",
+      "content": "1️⃣ Görselleri Optimize Edin → WebP formatını kullanın, resimleri sıkıştırın ve lazy loading uygulayın. \n 2️⃣ CDN Kullanın → İçeriklerinizi coğrafi olarak dağıtarak yüklenme süresini azaltın. \n 3️⃣  CSS ve JS Dosyalarını Minimize Edin → Gereksiz boşlukları temizleyerek dosya boyutunu küçültün.\n 4️⃣ Sunucu Yanıt Süresini (TTFB) Düşürün → Daha hızlı bir hosting seçin ve cache kullanın.\n 5️⃣ Render Bloklayan Kaynakları Azaltın → async ve defer kullanarak JavaScript dosyalarını optimize edin.\n 6️⃣ Web Fontlarını Optimize Edin → Gereksiz font ağırlıklarını kaldırın ve font-display: swap; kullanın. \n7️⃣ Tarayıcı Önbelleklemesini Etkinleştirin → Statik dosyaların tekrar indirilmesini önleyin.\n 8️⃣ Veritabanı Optimizasyonu Yapın → Gereksiz sorguları azaltın ve indexleme kullanın.\n 9️⃣ Modern Resim Formatlarını Kullanın → JPEG yerine WebP veya AVIF tercih edin.\n 🔟 Lighthouse ile Test Yapın → Google Lighthouse ile hızınızı analiz edip iyileştirmeler yapın.",
+      "image": "https://iperformans.com/blog/wp-content/uploads/2022/10/seo-performans.jpg",
+      "author": {
+        "name": "Ela Kılıç",
+        "photo": "https://media.licdn.com/dms/image/v2/D4D03AQHGEWxP5zW_uQ/profile-displayphoto-shrink_400_400/B4DZUgoo2GHkAg-/0/1740009279730?e=1747267200&v=beta&t=LlI9Lls5IwoL01qQK4NZriUFrphD6TeUkxVpfQ1HmfI"
+      },
+      "date": "2025-03-02",
+      "reading_time": "5 dk",
+      "category": "Web Performance"
+    }
+  ]
+}

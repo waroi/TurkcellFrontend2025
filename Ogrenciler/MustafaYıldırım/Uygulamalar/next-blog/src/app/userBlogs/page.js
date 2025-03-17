@@ -90,7 +90,7 @@ const UserBlogs = () => {
           {blogs.map((blog) => (
             <div key={blog.id} className="card col-lg-3">
               <PostCard blog={blog} />
-              <div className="card-body d-flex justify-content-between align-items-center">
+              <div className="card-body d-flex justify-content-between">
                 <button
                   className="btn btn-warning"
                   onClick={() => openModal(blog)}

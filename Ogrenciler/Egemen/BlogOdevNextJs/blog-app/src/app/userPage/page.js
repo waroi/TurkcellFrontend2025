@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { getUserBlogs } from "../../../firebase/dbController";
 import { useDispatch, useSelector } from "react-redux";
-import Card from "../components/organisms/card/Card";
+import Card from "../components/molecules/card/Card";
 import UpdateModal from "../components/organisms/modal/UpdateModal";
 import { addAllBlog, searchBlogs } from "../redux/slices/blogSlice";
 import { unsubscribe } from "../../../services/authServices";

@@ -6,7 +6,7 @@ import { deleteBlog, setBlog } from "../../../redux/slices/blogSlice";
 import Link from "next/link";
 import { deleteFbBlog } from "../../../../../firebase/dbController";
 
-const Card = ({ card, userAuth }) => {
+const Card = ({ card, userAuth = false, d_button = "d-flex" }) => {
   const dispatch = useDispatch();
   const handleDelete = () => {
     deleteFbBlog(card.id);
@@ -17,13 +17,10 @@ const Card = ({ card, userAuth }) => {
   const handleUpdate = () => {
     dispatch(setBlog(card));
   };
-  const handleDetail = () => {
-    dispatch(setBlog(card));
-  };
 
   return (
     <>
-      <div className="card mb-3 position-relative">
+      <div className="card my-3 position-relative">
         <div className="row g-0">
           <div className="col-md-4 overflow-hidden">
             <img
@@ -42,7 +39,7 @@ const Card = ({ card, userAuth }) => {
               </p>
             </div>
             <div className="card-footer p-2 d-flex justify-content-between align-items-center">
-              <div className="d-flex ">
+              <div className={d_button}>
                 {userAuth ? (
                   <div>
                     <button
@@ -62,7 +59,7 @@ const Card = ({ card, userAuth }) => {
                   </div>
                 ) : null}
 
-                <Link href={`/blog/${card.id}`} onClick={handleDetail}>
+                <Link href={`/blog/${card.id}`}>
                   <button className="btn btn-warning m-1">
                     <MdVisibility />
                   </button>
