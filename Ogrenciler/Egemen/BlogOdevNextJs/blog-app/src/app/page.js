@@ -1,6 +1,6 @@
 "use client";
 import { useEffect } from "react";
-import Card from "../app/components/Card";
+import Card from "../app/components/organisms/card/Card";
 import { useDispatch } from "react-redux";
 import { addAllBlog, searchBlogs } from "../app/redux/slices/blogSlice";
 import { useSelector } from "react-redux";
@@ -159,7 +159,6 @@ export default function Home() {
             <p>Yükleniyor...</p>
           )}
         </div>
-        {/* <UpdateModal /> */}
       </main>
     </div>
   );

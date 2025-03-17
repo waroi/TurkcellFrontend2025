@@ -3,14 +3,17 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useDispatch } from "react-redux";
-import { resetBlog, setSearchTermRedux } from "../redux/slices/blogSlice";
-import { registerWithGoogle, signOut } from "../../../firebase/authControl";
+import { resetBlog, setSearchTermRedux } from "../../../redux/slices/blogSlice";
+import {
+  registerWithGoogle,
+  signOut,
+} from "../../../../../firebase/authControl";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
-import { unsubscribe } from "../../../services/authServices";
-import Button from "./atoms/buttons/Button";
-import UpdateModal from "./organisms/modal/UpdateModal";
-import AddModal from "./organisms/modal/AddModal";
+import { unsubscribe } from "../../../../../services/authServices";
+import Button from "../../atoms/buttons/Button";
+import UpdateModal from "../modal/UpdateModal";
+import AddModal from "../modal/AddModal";
 
 const Navbar = () => {
   const [searchTerm, setSearchTerm] = useState("");

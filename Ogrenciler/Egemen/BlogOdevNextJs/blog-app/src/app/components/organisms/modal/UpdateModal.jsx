@@ -7,7 +7,6 @@ import { updateFbBlog } from "../../../../../firebase/dbController";
 const UpdateModal = () => {
   const dispatch = useDispatch();
   const blog = useSelector((state) => state.blog.blog);
-  console.log(blog + "dfg");
   const handleClick = async () => {
     try {
       console.log("Güncellenen blog:", blog);

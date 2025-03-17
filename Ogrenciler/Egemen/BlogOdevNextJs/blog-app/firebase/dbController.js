@@ -52,14 +52,14 @@ export async function deleteFbBlog(id) {
 
 export async function updateFbBlog(blog) {
   try {
-    const docRef = doc(db, "blogs", blog.id);
+    const { id, ...blogData } = blog;
+    const docRef = doc(db, "blogs", id);
     const docSnap = await getDoc(docRef);
-
     if (docSnap.exists()) {
-      await updateDoc(docRef, blog);
+      await updateDoc(docRef, blogData);
       return true;
     } else {
-      await setDoc(docRef, blog);
+      await setDoc(docRef, blogData);
       return true;
     }
   } catch (error) {

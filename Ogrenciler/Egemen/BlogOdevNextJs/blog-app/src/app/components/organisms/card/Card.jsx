@@ -3,14 +3,13 @@ import { MdDeleteForever } from "react-icons/md";
 import { MdVisibility } from "react-icons/md";
 
 import { useDispatch } from "react-redux";
-import { deleteBlog, setBlog } from "../redux/slices/blogSlice";
+import { deleteBlog, setBlog } from "../../../redux/slices/blogSlice";
 
 import Link from "next/link";
-import { deleteFbBlog, updateFbBlog } from "../../../firebase/dbController";
+import { deleteFbBlog } from "../../../../../firebase/dbController";
 
 const Card = ({ card, userAuth }) => {
   const dispatch = useDispatch();
-
   const handleDelete = () => {
     deleteFbBlog(card.id);
     dispatch(deleteBlog(card.id));

@@ -1,25 +1,20 @@
 "use client";
 import { useEffect } from "react";
-import Card from "../../app/components/Card";
+import Card from "../../app/components/organisms/card/Card";
 import { useDispatch } from "react-redux";
 import { addAllBlog, searchBlogs } from "../../app/redux/slices/blogSlice";
 import { useSelector } from "react-redux";
 import { getAllBLogs } from "../../../firebase/dbController";
-import { auth } from "../../../firebase/firebase";
-import { useRouter } from "next/navigation";
 import Image from "next/image";
 
 export default function HomePage() {
   const blogs = useSelector((state) => state.blog.blogs);
   const searchTerm = useSelector((state) => state.blog.searchTerm);
-  const user = auth.currentUser;
-  const router = useRouter();
 
   const dispatch = useDispatch();
   useEffect(() => {
     if (searchTerm == "") {
       async function fetchBlog() {
-        // const data = await getBlog();
         const data = await getAllBLogs();
         if (data) {
           dispatch(addAllBlog(data));
@@ -151,7 +146,6 @@ export default function HomePage() {
             <p>Yükleniyor...</p>
           )}
         </div>
-        <UpdateModal />
       </main>
     </div>
   );

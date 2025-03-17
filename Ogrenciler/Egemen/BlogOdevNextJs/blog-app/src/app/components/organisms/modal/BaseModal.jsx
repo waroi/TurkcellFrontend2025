@@ -4,6 +4,8 @@ import { auth } from "../../../../../firebase/firebase";
 import Button from "../../atoms/buttons/Button";
 import { setUpdateBlog } from "@/app/redux/slices/blogSlice";
 import { useEffect } from "react";
+import FormInput from "../../molecules/formInput/FormInput";
+import FormTextarea from "../../molecules/formTextarea/FormTextarea";
 
 const BaseModal = ({ ...props }) => {
   const dispatch = useDispatch();
@@ -19,7 +21,6 @@ const BaseModal = ({ ...props }) => {
       })
     );
   };
-
   return (
     <>
       <div
@@ -28,7 +29,6 @@ const BaseModal = ({ ...props }) => {
         tabIndex="-1"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
-        // data-bs-config='{"backdrop": false}'
       >
         <div className="modal-dialog modal-lg">
           <div className="modal-content p-3 rounded-4 shadow-lg border-0">
@@ -45,92 +45,47 @@ const BaseModal = ({ ...props }) => {
             </div>
             <div className="modal-body">
               <form className="row g-3 needs-validation" noValidate>
-                <div className="col-md-4">
-                  <label htmlFor="validationCustom01" className="form-label">
-                    Başlık
-                  </label>
-                  <input
-                    value={props.blog.title || ""}
-                    onChange={handleChange}
-                    type="text"
-                    name="title"
-                    className="form-control"
-                    id="validationCustom01"
-                    required
-                  />
-                  <div className="valid-feedback">Looks good!</div>
-                </div>
-                <div className="col-md-4">
-                  <label htmlFor="validationCustom02" className="form-label">
-                    Yazar
-                  </label>
-                  <input
-                    disabled
-                    value={user.displayName}
-                    onChange={handleChange}
-                    name="author"
-                    type="text"
-                    className="form-control"
-                    id="validationCustom02"
-                    required
-                  />
-                  <div className="valid-feedback">Looks good!</div>
-                </div>
-                <div className="col-md-4">
-                  <label
-                    htmlFor="validationCustomUsername"
-                    className="form-label"
-                  >
-                    Konu
-                  </label>
-                  <div className="input-group has-validation">
-                    <input
-                      value={props.blog.topic}
-                      onChange={handleChange}
-                      type="text"
-                      className="form-control"
-                      id="validationCustomUsername"
-                      name="topic"
-                      aria-describedby="inputGroupPrepend"
-                      required
-                    />
-                    <div className="invalid-feedback">
-                      Please choose a username.
-                    </div>
-                  </div>
-                </div>
-                <div className="col-12">
-                  <label htmlFor="validationCustom03" className="form-label">
-                    Resim URL
-                  </label>
-                  <input
-                    value={props.blog.image}
-                    onChange={handleChange}
-                    type="text"
-                    name="image"
-                    className="form-control"
-                    id="validationCustom03"
-                    required
-                  />
-                  <div className="invalid-feedback">
-                    Please provide a valid city.
-                  </div>
-                </div>
-
-                <div className="form-floating col-12">
-                  <textarea
-                    value={props.blog.body}
-                    onChange={handleChange}
-                    className="form-control"
-                    placeholder="Leave a comment here"
-                    name="body"
-                    id="floatingTextarea"
-                  ></textarea>
-                  <label htmlFor="floatingTextarea">İçerik</label>
-                </div>
+                <FormInput
+                  labelName={"Başlık"}
+                  id={"titleInput"}
+                  type={"text"}
+                  value={props.blog.title || ""}
+                  onChange={handleChange}
+                  name={"title"}
+                ></FormInput>
+                <FormInput
+                  labelName={"Yazar"}
+                  id={"authorInput"}
+                  type={"text"}
+                  value={user.displayName}
+                  name="author"
+                  disabled
+                ></FormInput>
+                <FormInput
+                  labelName={"Konu"}
+                  id={"topicInput"}
+                  type={"text"}
+                  value={props.blog.topic}
+                  name="topic"
+                  onChange={handleChange}
+                ></FormInput>
+                <FormInput
+                  labelName={"Resim URL"}
+                  id={"imageInput"}
+                  type={"text"}
+                  value={props.blog.image}
+                  name="image"
+                  onChange={handleChange}
+                ></FormInput>
+                <FormTextarea
+                  labelName={"İçerik"}
+                  id={"contentInput"}
+                  onChange={handleChange}
+                  name="body"
+                  value={props.blog.body}
+                ></FormTextarea>
               </form>
             </div>
-
             <div className="modal-footer d-flex justify-content-center">
               <Button
                 onClick={props.handleClick}

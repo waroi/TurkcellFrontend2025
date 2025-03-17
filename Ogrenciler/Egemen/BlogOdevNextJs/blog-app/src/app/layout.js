@@ -6,8 +6,8 @@ import "./globals.css";
 import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import Script from "next/script";
 
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import Navbar from "./components/organisms/navbar/Navbar";
+import Footer from "./components/organisms/footer/Footer";
 import { Provider } from "react-redux";
 import store from "../app/redux/store/";
 
