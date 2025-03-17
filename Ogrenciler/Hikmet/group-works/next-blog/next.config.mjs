@@ -9,7 +9,8 @@ const nextConfig = {
 			"redux.js.org",
 			"reactjs.org",
 			"cdn.hashnode.com",
-			"tanstack.com"
+			"tanstack.com",
+			"images.unsplash.com",
 		],
 	},
 };

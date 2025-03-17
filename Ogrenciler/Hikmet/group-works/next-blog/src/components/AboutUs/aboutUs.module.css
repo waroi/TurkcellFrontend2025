@@ -1,0 +1,367 @@
+.aboutContainer {
+	overflow: hidden;
+}
+
+.heroSection {
+	padding: 5rem 0;
+	background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+	position: relative;
+}
+
+.heroTitle {
+	font-size: 3.5rem;
+	font-weight: 800;
+	margin-bottom: 1.5rem;
+	color: #333;
+	position: relative;
+}
+
+.heroTitle::after {
+	content: "";
+	position: absolute;
+	bottom: -15px;
+	left: 0;
+	width: 80px;
+	height: 4px;
+	background-color: #007bff;
+	border-radius: 2px;
+}
+
+.heroSubtitle {
+	font-size: 1.25rem;
+	line-height: 1.6;
+	color: #555;
+	margin-bottom: 2rem;
+}
+
+.heroImageContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+.heroImage {
+	max-width: 100%;
+	height: auto;
+	filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.1));
+	transition: transform 0.3s ease;
+}
+
+.heroImage:hover {
+	transform: translateY(-10px);
+}
+
+.missionSection {
+	padding: 5rem 0;
+	background-color: #fff;
+}
+
+.missionCard {
+	background-color: #fff;
+	border-radius: 12px;
+	padding: 2rem;
+	margin-bottom: 2rem;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
+
+.missionCard:hover {
+	transform: translateY(-10px);
+	box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.missionIcon {
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	background-color: rgba(0, 123, 255, 0.1);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 1.5rem;
+	color: #007bff;
+}
+
+.missionCard h3 {
+	font-size: 1.5rem;
+	font-weight: 700;
+	margin-bottom: 1rem;
+	color: #333;
+}
+
+.missionCard p {
+	color: #666;
+	line-height: 1.6;
+}
+
+.storySection {
+	padding: 5rem 0;
+	background-color: #f8f9fa;
+}
+
+.storyImageContainer {
+	position: relative;
+	border-radius: 12px;
+	overflow: hidden;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.storyImage {
+	width: 100%;
+	height: auto;
+	transition: transform 0.5s ease;
+}
+
+.storyImageContainer:hover .storyImage {
+	transform: scale(1.05);
+}
+
+.storyContent {
+	padding: 2rem;
+}
+
+.storyContent h2 {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-bottom: 1.5rem;
+	color: #333;
+	position: relative;
+}
+
+.storyContent h2::after {
+	content: "";
+	position: absolute;
+	bottom: -10px;
+	left: 0;
+	width: 60px;
+	height: 3px;
+	background-color: #007bff;
+	border-radius: 2px;
+}
+
+.storyContent p {
+	font-size: 1.1rem;
+	line-height: 1.8;
+	color: #555;
+	margin-bottom: 1rem;
+}
+
+.teamSection {
+	padding: 5rem 0;
+	background-color: #fff;
+}
+
+.sectionTitle {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-bottom: 3rem;
+	text-align: center;
+	color: #333;
+	position: relative;
+}
+
+.sectionTitle::after {
+	content: "";
+	position: absolute;
+	bottom: -15px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 80px;
+	height: 3px;
+	background-color: #007bff;
+	border-radius: 2px;
+}
+
+.teamCard {
+	background-color: #fff;
+	border-radius: 12px;
+	padding: 2rem;
+	margin-bottom: 2rem;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	text-align: center;
+	height: 100%;
+}
+
+.teamCard:hover {
+	transform: translateY(-10px);
+	box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.teamImageContainer {
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	overflow: hidden;
+	margin: 0 auto 1.5rem;
+	border: 5px solid rgba(0, 123, 255, 0.1);
+}
+
+.teamImage {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 0.5s ease;
+}
+
+.teamCard:hover .teamImage {
+	transform: scale(1.1);
+}
+
+.teamName {
+	font-size: 1.5rem;
+	font-weight: 700;
+	margin-bottom: 0.5rem;
+	color: #333;
+}
+
+.teamRole {
+	font-size: 1rem;
+	color: #007bff;
+	margin-bottom: 1rem;
+	font-weight: 500;
+}
+
+.teamBio {
+	color: #666;
+	line-height: 1.6;
+}
+
+.ctaSection {
+	padding: 5rem 0;
+	background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+	color: white;
+}
+
+.ctaContent {
+	text-align: center;
+	max-width: 700px;
+	margin: 0 auto;
+}
+
+.ctaContent h2 {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-bottom: 1.5rem;
+}
+
+.ctaContent p {
+	font-size: 1.2rem;
+	margin-bottom: 2rem;
+	opacity: 0.9;
+}
+
+.ctaButton {
+	display: inline-block;
+	background-color: white;
+	color: #007bff;
+	font-weight: 600;
+	padding: 1rem 2.5rem;
+	border-radius: 50px;
+	text-decoration: none;
+	transition: all 0.3s ease;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.ctaButton:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+	background-color: #f8f9fa;
+}
+
+:global(.dark) .heroSection {
+	background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+}
+
+:global(.dark) .heroTitle,
+:global(.dark) .storyContent h2,
+:global(.dark) .missionCard h3,
+:global(.dark) .teamName,
+:global(.dark) .sectionTitle {
+	color: #f0f0f0;
+}
+
+:global(.dark) .heroSubtitle,
+:global(.dark) .storyContent p,
+:global(.dark) .missionCard p,
+:global(.dark) .teamBio {
+	color: #b0b0b0;
+}
+
+:global(.dark) .missionSection,
+:global(.dark) .teamSection {
+	background-color: #2a2a2a;
+}
+
+:global(.dark) .storySection {
+	background-color: #222;
+}
+
+:global(.dark) .missionCard,
+:global(.dark) .teamCard {
+	background-color: #333;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+:global(.dark) .missionIcon {
+	background-color: rgba(77, 163, 255, 0.2);
+	color: #4da3ff;
+}
+
+:global(.dark) .teamRole {
+	color: #4da3ff;
+}
+
+:global(.dark) .ctaSection {
+	background: linear-gradient(135deg, #4da3ff 0%, #2a7dd7 100%);
+}
+
+:global(.dark) .ctaButton {
+	background-color: #333;
+	color: #4da3ff;
+}
+
+:global(.dark) .ctaButton:hover {
+	background-color: #444;
+}
+
+@media (max-width: 991px) {
+	.heroTitle {
+		font-size: 2.5rem;
+	}
+
+	.heroSection {
+		padding: 4rem 0;
+	}
+
+	.storyContent {
+		padding: 1rem 0;
+		margin-top: 2rem;
+	}
+}
+
+@media (max-width: 767px) {
+	.heroTitle {
+		font-size: 2rem;
+	}
+
+	.heroSection,
+	.missionSection,
+	.storySection,
+	.teamSection,
+	.ctaSection {
+		padding: 3rem 0;
+	}
+
+	.storyContent h2,
+	.sectionTitle,
+	.ctaContent h2 {
+		font-size: 2rem;
+	}
+}

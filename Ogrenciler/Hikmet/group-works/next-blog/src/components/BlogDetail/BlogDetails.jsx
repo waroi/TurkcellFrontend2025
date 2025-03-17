@@ -1,28 +1,39 @@
 import BlogActions from "./BlogActions";
-import './blogDetails.css'
-
+import styles from "./blogDetails.module.css";
 
 function BlogDetails({ blog }) {
-
 	return (
-		<div className="d-flex flex-column align-items-center justify-content-center detailsWrap">
-			<img 
-				className="shadow-lg border rounded-5 p-3  mt-5"
-				height={"300px"}
-				width={"300px"}
-				src={blog.imageUrl ? blog.imageUrl : "/react.svg"}
-				alt={blog.title}
-			/>
-			<h1 className="my-4 text-center">{blog.title}</h1>
-			<p>{blog.description}</p>
-			<h6>
-				Yayın Tarihi:
-				<span className="badge text-bg-secondary mx-2">{blog.releaseDate}</span>
-			</h6>
-			<div className="d-flex justify-content-center gap-3">
-				<BlogActions id={blog.id} />
+		<article className={styles.blogDetailContainer}>
+			<div className={styles.blogHeader}>
+				<div className={styles.imageWrapper}>
+					<img
+						className={styles.blogImage}
+						src={blog.imageUrl ? blog.imageUrl : "/react.svg"}
+						alt={blog.title}
+					/>
+				</div>
+				<div className={styles.blogMeta}>
+					<span className={styles.dateTag}>
+						{new Date(blog.releaseDate).toLocaleDateString("tr-TR", {
+							year: "numeric",
+							month: "long",
+							day: "numeric",
+						})}
+					</span>
+				</div>
 			</div>
-		</div>
+
+			<div className={styles.blogContent}>
+				<h1 className={styles.blogTitle}>{blog.title}</h1>
+				<div className={styles.blogDescription}>
+					<p>{blog.description}</p>
+				</div>
+
+				<div className={styles.blogActions}>
+					<BlogActions id={blog.id} />
+				</div>
+			</div>
+		</article>
 	);
 }
 

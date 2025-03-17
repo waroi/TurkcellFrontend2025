@@ -9,23 +9,34 @@ export default function Carousel() {
 
 	useEffect(() => {
 		fetchBlogs();
-	}, []);
+	}, [fetchBlogs]);
 
 	return (
-		<section
-			id="carouselExampleSlidesOnly"
-			className={`carousel slide mb-3 ${styles.carouselSection}`}
-			data-bs-ride="carousel">
-			<div className="carousel-inner">
-				{blogs?.map((blog, index) => (
-					<div className={`carousel-item ${index === 0 ? "active" : ""}`} key={index}>
-						<div className={styles.imageWrapper}>
-							<img src={blog.imageUrl} alt="img" />
+		<div className="container mb-4">
+			<section
+				id="carouselExampleSlidesOnly"
+				className={`carousel slide ${styles.carouselSection}`}
+				data-bs-ride="carousel"
+				data-bs-interval="5000">
+				<div className="carousel-inner">
+					{blogs?.map((blog, index) => (
+						<div
+							className={`carousel-item ${index === 0 ? "active" : ""} ${
+								styles["carousel-item"]
+							}`}
+							key={blog.id || index}>
+							<div className={styles.imageWrapper}>
+								<img
+									src={blog.imageUrl}
+									alt={blog.title || "Blog image"}
+									className="d-block w-100"
+								/>
+							</div>
+							<h3 className={styles.description}>{blog.title}</h3>
 						</div>
-						<p className={styles.description}>{blog.title}</p>
-					</div>
-				))}
-			</div>
-		</section>
+					))}
+				</div>
+			</section>
+		</div>
 	);
 }

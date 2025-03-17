@@ -16,10 +16,11 @@ async function BlogsDetail({ params }) {
 
 	return (
 		<>
-		<Navbar/>
-		<section className="container d-flex align-items-center justify-content-center">
-			<BlogDetails blog={blog} />
-		</section>
+			<Navbar />
+
+			<div className="container mb-3">
+				<BlogDetails blog={blog} />
+			</div>
 		</>
 	);
 }
