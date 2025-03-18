@@ -1,5 +1,5 @@
 import { useRouter } from 'next/navigation';
-import { db } from '../../../../firebase/firebaseconfig';
+import { db } from '../../firebase/firebaseconfig';
 import { collection, addDoc } from 'firebase/firestore';
 
 export function useCreateBlog() {

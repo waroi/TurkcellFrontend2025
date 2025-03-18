@@ -1,7 +1,7 @@
 'use client';
 import { useEffect } from 'react';
 import { useAuth } from '../../../context/authContext';
-import { useBlogPanel } from './useBlogPanel';
+import { useBlogPanel } from '..//../../hooks/useBlogPanel';
 import BlogList from './BlogList';
 
 export default function BlogPanel() {

@@ -1,5 +1,6 @@
 import { useState } from 'react';
-
+import FormButon from '../../../component/atoms/FormButon';
+import FormInput from '../../../component/atoms/FormInput';
 export default function BlogForm({ onSubmit }) {
   const [formData, setFormData] = useState({
     title: '',
@@ -35,10 +36,10 @@ export default function BlogForm({ onSubmit }) {
           />
         </div>
       ))}
-
-      <button type='submit' className='btn btn-orange'>
-        Blog Oluştur
-      </button>
+      <div className=' mx-auto  w-25'>
+        <FormButon text="Blog Oluştur"/>
+      </div>
+        
     </form>
   );
 }

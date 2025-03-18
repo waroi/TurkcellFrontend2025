@@ -2,7 +2,7 @@
 import React from 'react';
 import BlogCard from '../component/BlogCard';
 import { useSearch } from '../context/searchContext';
-import useFetchBlogs from './useFetchBlogs';
+import useFetchBlogs from '../hooks/useFetchBlogs';
 
 export default function Home() {
   const { blogs } = useFetchBlogs();

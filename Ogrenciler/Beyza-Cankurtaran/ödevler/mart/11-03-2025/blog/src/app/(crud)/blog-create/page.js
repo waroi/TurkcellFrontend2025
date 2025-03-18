@@ -2,7 +2,7 @@
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '../../../context/authContext';
-import { useCreateBlog } from './useCreateBlog';
+import { useCreateBlog } from '../../../hooks/useCreateBlog';
 import BlogForm from './BlogFrom';
 
 export default function CreateBlog() {

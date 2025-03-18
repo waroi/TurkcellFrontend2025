@@ -1,7 +1,7 @@
 'use client';
 import { useEffect } from 'react';
 import { useAuth } from '../../../../context/authContext';
-import { useBlogUpdate } from './useBlogUpdate';
+import { useBlogUpdate } from '../../../../hooks/useBlogUpdate';
 import BlogUpdateForm from './BlogUpdateForm';
 import { useRouter } from 'next/navigation';
 

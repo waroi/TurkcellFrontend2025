@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { db } from '../../../../firebase/firebaseconfig';
+import { db } from '../../firebase/firebaseconfig';
 import { collection, getDocs, deleteDoc, doc } from 'firebase/firestore';
 
 export function useBlogPanel() {

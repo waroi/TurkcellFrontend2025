@@ -2,7 +2,7 @@
 import { useAuth } from "../context/authContext";
 import { useSearch } from "../context/searchContext";
 import Link from "next/link";
-import SignOutButton from "./SignOutButton";
+import SignOutButton from "./atoms/signOutButton";
 
 const Navbar = () => {
   const { searchQuery, setSearchQuery } = useSearch();
