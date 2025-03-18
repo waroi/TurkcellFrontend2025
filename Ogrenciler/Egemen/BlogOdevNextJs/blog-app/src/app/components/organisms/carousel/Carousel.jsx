@@ -7,10 +7,7 @@ import CarouselItem from "../../molecules/carouselItem/CarouselItem";
 
 const Carousel = () => {
   return (
-    <div
-      id="carouselExampleIndicators"
-      className="carousel carousel-dark slide"
-    >
+    <div id="DigitalCarousel" className="carousel carousel-dark slide">
       <div className="carousel-indicators">
         <IndicatorButton
           data-bs-slide-to="0"

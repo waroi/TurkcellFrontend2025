@@ -1,11 +1,11 @@
 "use client";
 import { useEffect } from "react";
-import Card from "./components/molecules/card/Card";
 import { useDispatch } from "react-redux";
 import { addAllBlog, searchBlogs } from "../app/redux/slices/blogSlice";
 import { useSelector } from "react-redux";
 import { getAllBLogs } from "../../firebase/dbController";
 import Carousel from "./components/organisms/carousel/Carousel";
+import Map from "./components/organisms/cardContainer/Map";
 
 export default function Home() {
   const blogs = useSelector((state) => state.blog.blogs);
@@ -23,7 +23,7 @@ export default function Home() {
     } else {
       dispatch(searchBlogs(searchTerm));
     }
-  }, [searchTerm, blogs]);
+  }, [searchTerm]);
 
   return (
     <div>
@@ -32,18 +32,7 @@ export default function Home() {
           Blog Yazıları
         </h3>
         <Carousel />
-
-        <div className="row">
-          {blogs.length > 0 ? (
-            blogs?.map((blog) => (
-              <div key={blog?.id} className="col-12">
-                <Card key={blog?.id + "card"} card={blog} />
-              </div>
-            ))
-          ) : (
-            <p>Yükleniyor...</p>
-          )}
-        </div>
+        <Map blogs={blogs} />
       </main>
     </div>
   );

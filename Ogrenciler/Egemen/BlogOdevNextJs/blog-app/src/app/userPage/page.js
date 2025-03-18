@@ -2,14 +2,15 @@
 import { useEffect, useState } from "react";
 import { getUserBlogs } from "../../../firebase/dbController";
 import { useDispatch, useSelector } from "react-redux";
-import Card from "../components/molecules/card/Card";
 import UpdateModal from "../components/organisms/modal/UpdateModal";
 import { addAllBlog, searchBlogs } from "../redux/slices/blogSlice";
 import { unsubscribe } from "../../../services/authServices";
+import Map from "../components/organisms/cardContainer/Map";
 
 const UserPage = () => {
   const blogs = useSelector((state) => state.blog.blogs);
   const searchTerm = useSelector((state) => state.blog.searchTerm);
+  const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
   const [userAuth, setUserAuth] = useState();
   useEffect(() => {
@@ -19,13 +20,14 @@ const UserPage = () => {
         const data = await getUserBlogs();
         if (data) {
           dispatch(addAllBlog(data));
+          setLoading(true);
         }
       }
       fetchBlog();
     } else {
       dispatch(searchBlogs(searchTerm));
     }
-  }, [searchTerm, userAuth, dispatch]);
+  }, [searchTerm, userAuth]);
 
   return userAuth ? (
     <div>
@@ -33,17 +35,7 @@ const UserPage = () => {
         <h3 className="my-3 text-center text-success fw-semibold">
           Blog Yazılarım
         </h3>
-        <div className="row">
-          {blogs.length > 0 ? (
-            blogs?.map((blog) => (
-              <div key={blog?.id} className="col-12">
-                <Card userAuth={userAuth} key={blog?.id + "card"} card={blog} />
-              </div>
-            ))
-          ) : (
-            <p>Yükleniyor...</p>
-          )}
-        </div>
+        <Map blogs={blogs} userAuth={userAuth} loading={loading} />
         <UpdateModal />
       </main>
     </div>

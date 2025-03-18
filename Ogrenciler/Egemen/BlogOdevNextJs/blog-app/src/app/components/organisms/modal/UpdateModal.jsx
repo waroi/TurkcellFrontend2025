@@ -9,12 +9,10 @@ const UpdateModal = () => {
   const blog = useSelector((state) => state.blog.blog);
   const handleClick = async () => {
     try {
-      console.log("Güncellenen blog:", blog);
       await updateFbBlog(blog);
       dispatch(updateBlog());
-      console.log("Blog güncelleme başarılı");
     } catch (error) {
-      console.error("Blog güncellenirken hata oluştu:", error);
+      alert("Blog güncellenirken hata oluştu:", error);
     }
   };
   return (
