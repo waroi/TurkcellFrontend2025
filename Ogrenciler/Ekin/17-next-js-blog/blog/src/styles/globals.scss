@@ -20,8 +20,9 @@ main {
   min-height: calc(100vh - 12rem);
 
   &.home {
-    background-image: url(https://img001.prntscr.com/file/img001/BjoiThwKTxGVXg-xrA1aPQ.jpg);
-    background-size: contain;
+    background-image: url("https://img001.prntscr.com/file/img001/BjoiThwKTxGVXg-xrA1aPQ.jpg");
+    background-size: cover;
+    background-attachment: fixed;
   }
 
   &.blog {

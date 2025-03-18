@@ -8,14 +8,19 @@ import { getBlogs } from "@/services/firebase";
 import Layout from "@/components/Layout";
 import Card from "@/components/Card";
 
-import { useRouter } from "next/navigation";
+import scrollInterpolation from "@/util/scrollInterpolation";
 
 export default function Home() {
-  const router = useRouter();
   const blogState = useBlog();
 
   useEffect(() => {
     getBlogs().then(blogState.setBlogs);
+
+    let interval = scrollInterpolation(document.querySelector("main"));
+
+    return () => {
+      clearInterval(interval);
+    };
   }, []);
 
   return (
