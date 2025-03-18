@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { db } from '../../firebase/firebaseconfig';
 import { doc, getDoc } from 'firebase/firestore';
 
-export function useFetchBlog(id) {
+export default function useFetchBlog(id) {
   const [blog, setBlog] = useState(null);
   const [loading, setLoading] = useState(true);
 
