@@ -1,4 +1,4 @@
-import { db } from './firebaseAuth';
+import {db} from "./firebaseAuth";
 import {
   doc,
   setDoc,
@@ -6,36 +6,36 @@ import {
   collection,
   getDocs,
   deleteDoc,
-} from 'firebase/firestore';
+} from "firebase/firestore";
 
 export async function addSingleBlogToFirestore(blog) {
   try {
-    const docRef = doc(db, 'blogs', String(blog.id));
+    const docRef = doc(db, "blogs", String(blog.id));
     await setDoc(docRef, blog);
 
-    console.log('kitap eklendi');
+    console.log("kitap eklendi");
     return true;
   } catch (error) {
-    console.error('addSingleBookToFirestore hata', error);
+    console.error("addSingleBlogToFirestore hata", error);
   }
 }
 
-export async function editSingleBookToFirestore(blog) {
+export async function editSingleBlogToFirestore(blog) {
   try {
-    const docRef = doc(db, 'blogs', String(blog.id));
-    await updateDoc(docRef, blog, { merge: true });
+    const docRef = doc(db, "blogs", String(blog.id));
+    await updateDoc(docRef, blog, {merge: true});
 
-    console.log('kitap editlendi');
+    console.log("kitap editlendi");
     return true;
   } catch (error) {
-    console.error('editSingleBookToFirestore hata', error);
+    console.error("editSingleBlogToFirestore hata", error);
   }
 }
 
-export async function fetchBooksFromFirestore() {
+export async function fetchBlogsFromFirestore() {
   try {
-    const blogsCollection = collection(db, 'blogs');
-    const blogsSnapshot = await getDocs(booksCollection);
+    const blogsCollection = collection(db, "blogs");
+    const blogsSnapshot = await getDocs(blogsCollection);
     const blogsList = blogsSnapshot.docs.map((doc) => ({
       id: doc.id,
       ...doc.data(),
@@ -43,18 +43,18 @@ export async function fetchBooksFromFirestore() {
 
     return blogsList;
   } catch (error) {
-    console.error('fetchBooksFromFirestore hata', error);
+    console.error("fetchBlogsFromFirestore hata", error);
   }
 }
 
-export async function deleteBookFromFirestore(blogId) {
+export async function deleteBlogFromFirestore(blogId) {
   try {
-    const docRef = doc(db, 'blogs', blogId);
+    const docRef = doc(db, "blogs", blogId);
     await deleteDoc(docRef);
 
-    console.log('Kitap silindi');
+    console.log("Kitap silindi");
     return true;
   } catch (error) {
-    console.error('deleteBookFromFirestore hata', error);
+    console.error("deleteBlogFromFirestore hata", error);
   }
 }
