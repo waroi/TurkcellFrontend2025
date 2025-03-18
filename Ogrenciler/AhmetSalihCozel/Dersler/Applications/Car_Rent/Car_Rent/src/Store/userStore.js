@@ -3,13 +3,13 @@ import { initializeApp } from "firebase/app";
 import { getFirestore, doc, getDoc } from "firebase/firestore"; 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyC_4ypNnyS9yoABCNhjbkoB6b0wyA_IkNU",
-  authDomain: "car-rental-app-85606.firebaseapp.com",
-  projectId: "car-rental-app-85606",
-  storageBucket: "car-rental-app-85606.firebasestorage.app",
-  messagingSenderId: "171938002059",
-  appId: "1:171938002059:web:7d6c1c6d1b86ba9e90108e",
-  measurementId: "G-4J2V5FW0BW"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
 };
 
 // Initialize Firebase
@@ -18,11 +18,17 @@ const db = getFirestore(app);
 
 const useUserStore = create((set) => ({
     user: {},
+    cars: [],
     fetchUser: async () => {
         const userRef = doc(db, "user", "vls8uXOxKhzFnQNXk6Ps"); // users koleksiyonundaki ID
         const userSnap = await getDoc(userRef);
         set({ user: userSnap.data() }); // Firestore'dan veriyi çek
         return userSnap.data()
+    },
+    getCars: async () => {
+      const docRef = doc(db, "cars", "kW0oGpik6LcikXCJfJ2p");
+      const docSnap = await getDoc(docRef);
+      set({ cars: docSnap.data() || [] });
     }
 }));
 

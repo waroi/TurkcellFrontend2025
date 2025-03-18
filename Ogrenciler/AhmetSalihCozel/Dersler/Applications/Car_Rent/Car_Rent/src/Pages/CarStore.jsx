@@ -1,6 +1,6 @@
+"use client"
+
 import React from 'react'
-import carStore from '../Store/carStore'
-import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -8,12 +8,13 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import useUserStore from '../Store/userStore';
 
-
-const CarStore = () => {
-  const {car} = carStore((state)=>state)
+const  CarStore = async () => {
+    const cars = useUserStore((state)=>state.cars)
+  
   return (
-    car.map(()=>{
+    cars?.map(()=>{
       <Card sx={{ maxWidth: 345 }}>
       <CardMedia
         sx={{ height: 140 }}
