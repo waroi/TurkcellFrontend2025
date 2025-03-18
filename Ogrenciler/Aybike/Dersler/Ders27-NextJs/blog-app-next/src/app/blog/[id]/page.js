@@ -1,5 +1,5 @@
 'use client'
-import { BlogService } from '@/services/blogService'
+import { BlogService } from '@/app/services/blogService'
 import { useParams } from 'next/navigation'
 import { useEffect, useState } from 'react'
 

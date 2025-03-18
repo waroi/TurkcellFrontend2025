@@ -1,19 +1,18 @@
 'use client'
-import styles from './page.module.css'
 import { useEffect, useState } from 'react'
-import { useSession } from 'next-auth/react'
-import useTodoStore from './store'
-import BlogCard from './components/BlogCard'
-import { BlogService } from './services/blogService'
-import app from './firebase/firebase'
+import { useParams } from 'next/navigation'
+import BlogCard from '@/app/components/BlogCard'
+import { getBlogsByAuthor } from '@/app/services/logServices'
+import useTodoStore from '@/app/store'
 
-export default function Home () {
-  const { blogs, setBlogs } = useTodoStore()
+export default function Page () {
+  const { id } = useParams()
+  const { blogsByAuthor, setBlogsByAuthor } = useTodoStore()
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const blogsData = await BlogService.getBlogs()
-        setBlogs(blogsData)
+        const blogsData = await getBlogsByAuthor(id)
+        setBlogsByAuthor(blogsData)
       } catch (error) {
         console.error('Bloglar alınırken bir hata oluştu:', error)
       }
@@ -22,7 +21,7 @@ export default function Home () {
   }, [])
 
   return (
-    <div className={styles.page}>
+    <div>
       <section className='blog-list'>
         <div className='container mt-5'>
           <div className='d-flex align-items-center gap-2 fs-3 mb-3 px-3'>
@@ -30,10 +29,10 @@ export default function Home () {
             <span>aw</span>
           </div>
           <div className='row'>
-            {blogs &&
-              blogs.map((blog, index) => (
+            {blogsByAuthor &&
+              blogsByAuthor.map((blog, index) => (
                 <div key={index} className='col-12 col-sm-6 '>
-                  <BlogCard blog={blog} />
+                  <BlogCard blog={blog} edit={true}/>
                 </div>
               ))}
           </div>

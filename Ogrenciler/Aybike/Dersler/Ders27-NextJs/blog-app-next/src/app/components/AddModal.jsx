@@ -1,7 +1,10 @@
-import { BlogService } from "@/services/blogService";
+
 import { useState } from "react";
+import { BlogService } from "../services/blogService";
+import useTodoStore from "../store";
 
 const AddNewsModal = () => {
+  const {addBlog} = useTodoStore();
   const [news, setNews] = useState({
     title: "",
     author: "",
@@ -17,8 +20,8 @@ const AddNewsModal = () => {
 
   const handleSave = async () => {
     try {
-      await BlogService.post(news);
-      alert("Haber başarıyla eklendi!");
+      const newBlog = await BlogService.post(news);
+      addBlog(newBlog)
     } catch (error) {
       alert(error.message);
     }
