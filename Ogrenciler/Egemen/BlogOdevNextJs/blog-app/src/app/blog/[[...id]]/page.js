@@ -1,7 +1,6 @@
 "use client";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
 import { getBlog } from "../../../../firebase/dbController";
 import Card from "@/app/components/molecules/card/Card";
 

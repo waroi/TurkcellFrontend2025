@@ -2,11 +2,7 @@ import React from "react";
 
 export const CarouselButton = ({ children, ...props }) => {
   return (
-    <button
-      type="button"
-      data-bs-target="#carouselExampleIndicators"
-      {...props}
-    >
+    <button type="button" data-bs-target="#DigitalCarousel" {...props}>
       {" "}
       {children}
     </button>
@@ -15,10 +11,6 @@ export const CarouselButton = ({ children, ...props }) => {
 
 export const IndicatorButton = ({ ...props }) => {
   return (
-    <button
-      data-bs-target="#carouselExampleIndicators"
-      type="button"
-      {...props}
-    ></button>
+    <button data-bs-target="#DigitalCarousel" type="button" {...props}></button>
   );
 };

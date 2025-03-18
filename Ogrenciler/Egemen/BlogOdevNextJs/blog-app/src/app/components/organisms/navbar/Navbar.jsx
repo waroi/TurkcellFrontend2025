@@ -20,7 +20,6 @@ const Navbar = () => {
   const [userAuth, setUserAuth] = useState(null);
   const pathname = usePathname();
   const isHomePage = pathname === "/";
-
   const dispatch = useDispatch();
   const handleModalOpen = () => {
     dispatch(resetBlog());
@@ -39,14 +38,7 @@ const Navbar = () => {
           href={`/`}
           className="navbar-brand d-flex gap-2 align-items-center"
         >
-          <Image
-            width={50}
-            height={50}
-            src="/logo.jpg"
-            alt="logo"
-            className="rounded-circle"
-          />
-          <h2 className="m-0"> Geleceğin Bloğu</h2>
+          <Image width={200} height={50} src="/logo1.PNG" alt="logo" />
         </Link>
 
         <form className="d-flex" role="search">
@@ -66,7 +58,7 @@ const Navbar = () => {
           </Button>
         </form>
 
-        {userAuth /*&& !isHomePage*/ ? (
+        {userAuth ? (
           <div className="d-flex gap-4 align-items-center">
             {!isHomePage ? (
               <Button

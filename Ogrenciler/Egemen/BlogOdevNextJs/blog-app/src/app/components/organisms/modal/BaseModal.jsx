@@ -27,13 +27,13 @@ const BaseModal = ({ ...props }) => {
         className="modal fade"
         id={props.id}
         tabIndex="-1"
-        aria-labelledby="exampleModalLabel"
+        aria-labelledby="digitalModalLabel"
         aria-hidden="true"
       >
         <div className="modal-dialog modal-lg">
           <div className="modal-content p-3 rounded-4 shadow-lg border-0">
             <div className="modal-header rounded-top-4">
-              <h1 className="modal-title fs-5" id="exampleModalLabel">
+              <h1 className="modal-title fs-5" id="digitalModalLabel">
                 {props.title}
               </h1>
               <Button

@@ -13,9 +13,8 @@ const AddModal = () => {
       const blogs = await getUserBlogs();
       dispatch(addAllBlog(blogs));
       dispatch(resetBlog());
-      console.log("Blog Eklendi");
     } catch (error) {
-      console.log("Blog Eklenmedi");
+      alert("Blog Eklenmedi", error);
     }
   };
   return (
