@@ -2,7 +2,7 @@
 
 import data from "../../../data/blog.json";
 import { useEffect, useState, use } from "react";
-import DetailCard from "../../../component/DetailCard";
+import DetailCard from "./DetailCard";
 
 export default function BlogDetail({ params }) {
   const [blog, setBlog] = useState(null);

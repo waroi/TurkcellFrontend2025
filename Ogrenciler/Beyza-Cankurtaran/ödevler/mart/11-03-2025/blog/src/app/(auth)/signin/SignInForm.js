@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { useAuth } from '../context/authContext';
+import { useAuth } from '../../../context/authContext';
 
 export default function SignInForm() {
   const [email, setEmail] = useState('');

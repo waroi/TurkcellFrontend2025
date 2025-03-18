@@ -1,96 +1,27 @@
-"use client";
-import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
-import { db } from "../../../../firebase/firebaseconfig";
-import { collection, getDocs, deleteDoc, doc } from "firebase/firestore";
-import { useAuth } from "../../../context/authContext";
+'use client';
+import { useEffect } from 'react';
+import { useAuth } from '../../../context/authContext';
+import { useBlogPanel } from './useBlogPanel';
+import BlogList from './BlogList';
 
 export default function BlogPanel() {
-  const [blogs, setBlogs] = useState([]);
-  const [loading, setLoading] = useState(true);
-
   const { isLoggedIn } = useAuth();
-    const router = useRouter();
-  
-    useEffect(() => {
-      if (!isLoggedIn) {
-        router.push('/'); 
-      }
-    }, [isLoggedIn, router]);
+  const { blogs, loading, handleDelete, router } = useBlogPanel();
+
   useEffect(() => {
-    fetchBlogs();
-  }, []);
-
-  const fetchBlogs = async () => {
-    try {
-      const querySnapshot = await getDocs(collection(db, "blogs"));
-      const blogsData = querySnapshot.docs.map((doc) => {
-        return {
-          id: doc.id,
-          ...doc.data(),
-        };
-      });
-      setBlogs(blogsData);
-    } catch (error) {
-      console.error("Error fetching blogs:", error);
-    } finally {
-      setLoading(false);
+    if (!isLoggedIn) {
+      router.push('/');
     }
-  };
-
-  const handleDelete = async (id) => {
-    try {
-      await deleteDoc(doc(db, "blogs", id));
-      setBlogs(blogs.filter((blog) => blog.id !== id));
-    } catch (error) {
-      console.error("blog delete hata:", error);
-    }
-  };
+  }, [isLoggedIn, router]);
 
   return (
     <div className="container mt-5 vh-100">
       <h1 className="mb-4 py-4">Blog Yönetim Paneli</h1>
-      <button
-        className="btn btn-orange mb-3"
-        onClick={() => router.push("blog-create")}
-      >
+      <button className="btn btn-orange mb-3" onClick={() => router.push('blog-create')}>
         Yeni Blog Oluştur
       </button>
-      {loading ? (
-        <p>Loading...</p>
-      ) : (
-        <table className="table table-bordered table-dark">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Başlık</th>
-              <th>İşlemler</th>
-            </tr>
-          </thead>
-          <tbody>
-            {blogs.map((blog) => (
-              <tr key={blog.id}>
-                <td>{blog.id}</td>
-                <td>{blog.title}</td>
-                <td>
-                  <button
-                    className="btn btn-success me-2"
-                    onClick={() => router.push(`blog-update/${blog.id}`)}
-                  >
-                    Düzenle
-                  </button>
-                  <button
-                    className="btn btn-danger"
-                    onClick={() => handleDelete(blog.id)}
-                  >
-                    Sil
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      )}
+      {loading ? <p>Loading...</p> : <BlogList blogs={blogs} onDelete={handleDelete} onEdit={(id) => router.push(`blog-update/${id}`)} />}
     </div>
   );
 }
+

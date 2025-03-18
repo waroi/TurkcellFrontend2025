@@ -1,4 +1,4 @@
-import { useAuth } from '../context/authContext';
+import { useAuth } from '../../../context/authContext';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
