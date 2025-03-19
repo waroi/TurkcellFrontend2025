@@ -1,0 +1,10 @@
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+p.text-danger {
+  height: 0;
+  transition: height 0.3s;
+
+  &.active {
+    height: 2rem;
+  }
+}

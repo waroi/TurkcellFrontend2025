@@ -38,7 +38,17 @@ function WorkForm() {
       onSubmit,
     });
 
+  const addArray = (field) => {
+    formik.setFieldValue(field, [...formik.values[field], ""]);
+  };
+
+  const removeArray = (field, index) => {
+    const updatedArray = formik.values[field].filter((_, i) => i !== index);
+    formik.setFieldValue(field, updatedArray);
+  };
+
   return (
+
     <form onSubmit={handleSubmit}>
       <div className="container">
         <FormInput
@@ -69,6 +79,15 @@ function WorkForm() {
           placeholder="Gender"
         />
         <FormInput
+          label="Email"
+          value={values.email}
+          handleChange={handleChange}
+          error={errors.email}
+          id="email"
+          type="email"
+          placeholder="Email"
+        />
+        <FormInput
           label="Phone Number"
           value={values.phonenumber}
           handleChange={handleChange}
@@ -94,6 +113,10 @@ function WorkForm() {
           id="education"
           type="text"
           placeholder="Education"
+          isArray={true}
+          array={values.education}
+          addArray={addArray}
+          removeArray={removeArray}
         />
         <FormInput
           label="Foreign Language"
@@ -103,6 +126,7 @@ function WorkForm() {
           id="foreignlanguage"
           type="text"
           placeholder="Foreign Language"
+          isArray={true}
         />
         <FormInput
           label="Experience"
@@ -112,6 +136,7 @@ function WorkForm() {
           id="experience"
           type="text"
           placeholder="Experience"
+          isArray={true}
         />
         <FormInput
           label="Technologies"
@@ -121,6 +146,7 @@ function WorkForm() {
           id="technologies"
           type="text"
           placeholder="Technologies"
+          isArray={true}
         />
         <FormInput
           label="Salary"
@@ -139,6 +165,7 @@ function WorkForm() {
           id="projects"
           type="text"
           placeholder="Projects"
+          isArray={true}
         />
         <FormInput
           label="Certificates"
@@ -148,6 +175,7 @@ function WorkForm() {
           id="certificates"
           type="text"
           placeholder="Certificates"
+          isArray={true}
         />
         <FormInput
           label="Volunteer Work"
@@ -157,6 +185,7 @@ function WorkForm() {
           id="volunteerwork"
           type="text"
           placeholder="Volunteer Work"
+          isArray={true}
         />
         <FormInput
           label="Social Media"
@@ -166,6 +195,7 @@ function WorkForm() {
           id="socialmedia"
           type="text"
           placeholder="Social Media"
+          isArray={true}
         />
         <FormInput
           label="References"
@@ -175,6 +205,7 @@ function WorkForm() {
           id="references"
           type="text"
           placeholder="References"
+          isArray={true}
         />
         <FormInput
           label="Motivation"
@@ -185,15 +216,7 @@ function WorkForm() {
           type="text"
           placeholder="Motivation"
         />
-        <FormInput
-          label="Email"
-          value={values.email}
-          handleChange={handleChange}
-          error={errors.email}
-          id="email"
-          type="email"
-          placeholder="Email"
-        />
+
       </div>
       <button disabled={isSubmitting} type="submit">
         Kaydet
