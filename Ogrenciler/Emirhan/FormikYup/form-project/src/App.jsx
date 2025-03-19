@@ -1,10 +1,12 @@
 import "./App.css";
+import Navbar from "./components/Navbar";
 import WorkForm from "./components/WorkForm";
 
 function App() {
   return (
     <>
-      <WorkForm/>
+      <Navbar />
+      <WorkForm />
     </>
   );
 }
