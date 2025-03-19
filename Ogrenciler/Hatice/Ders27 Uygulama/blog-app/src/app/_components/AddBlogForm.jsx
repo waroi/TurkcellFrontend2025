@@ -1,15 +1,24 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import apiFetch from "@/utils/services/service";
 import Button from "./Button";
-import { addBlog } from "@/utils/services/helpers";
+import { addBlog, updateBlog} from "@/utils/services/helpers";
 
-const AddBlogForm = ({ getBlogs }) => {
+const AddBlogForm = ({ getBlogs, blogToUpdate, setBlogToUpdate }) => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [author, setAuthor] = useState("");
   const [poster, setPoster] = useState("");
+
+  useEffect(() => {
+    if (blogToUpdate) { 
+      setTitle(blogToUpdate.title);
+      setContent(blogToUpdate.content);
+      setAuthor(blogToUpdate.author);
+      setPoster(blogToUpdate.poster);
+    }
+  }, [blogToUpdate]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,15 +35,18 @@ const AddBlogForm = ({ getBlogs }) => {
       poster: poster || "https://picsum.photos/200/300",
     };
     try {
-      const result = await addBlog(newBlog);
-      if (!result) {
-        return;
+      if (blogToUpdate) {
+        await updateBlog(blogToUpdate.id, newBlog);
+        toast.success("Blog başarıyla güncellendi");
+      } else{
+        await addBlog(newBlog);
+        toast.success("Blog başarıyla eklendi");
       }
-      toast.success("Blog başarıyla eklendi");
       setTitle("");
       setContent("");
       setAuthor("");
       setPoster("");
+      setBlogToUpdate(null);
       getBlogs();
     } catch (error) {
       console.error(error);
@@ -88,7 +100,7 @@ const AddBlogForm = ({ getBlogs }) => {
         </div>
       </div>
       <Button type="submit" className="w-100">
-        Blog Ekle
+        {blogToUpdate ? "Güncelle" : "Ekle"}
       </Button>
     </form>
   );

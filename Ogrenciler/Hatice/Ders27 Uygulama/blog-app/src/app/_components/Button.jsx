@@ -3,7 +3,6 @@ import { uiTexts } from "../../../constants/index";
 
 const Button = ({ children, variant, className, ...props }) => {
   const { buttons } = uiTexts;
-  console.log(variant === "delete");
   return (
     <button
       className={clsx(

@@ -59,3 +59,18 @@ export async function addBlog(data) {
 
   return await response.json();
 }
+
+export async function updateBlog(id, data) {
+  const response = await apiFetch(`/blogs/${id}`, {
+    method: "PUT",
+    body: JSON.stringify(data),
+  });
+
+  if (!response.ok) {
+    console.error("API Error:", response.status, response.statusText);
+    toast.error("Blog düzenlenirken bir hata oluştu");
+    return response.statusText;
+  }
+
+  return await response.json();
+}

@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import BlogList from "./_components/BlogList";
 import { filterStrings } from "@/utils/functions";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
@@ -11,8 +11,10 @@ const Home = () => {
   const [blogs, setBlogs] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [user, setUser] = useState(null);
+  const [blogToUpdate, setBlogToUpdate] = useState(null);
   const router = useRouter();
   const auth = getAuth();
+  const formRef = useRef(null);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -43,6 +45,12 @@ const Home = () => {
     getBlogs();
   }, []);
 
+  useEffect(() => {
+    if (blogToUpdate && formRef.current) {
+      formRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [blogToUpdate]);
+
   const filteredBlogs = filterStrings(blogs, "title", searchQuery);
 
   return (
@@ -55,8 +63,8 @@ const Home = () => {
           className="form-control mb-4"
           onChange={(e) => setSearchQuery(e.target.value)}
         />
-        <AddBlogForm getBlogs={getBlogs} />
-        <BlogList blogs={filteredBlogs} getBlogs={getBlogs} />
+        <AddBlogForm getBlogs={getBlogs} blogToUpdate={blogToUpdate} setBlogToUpdate={setBlogToUpdate}/>
+        <BlogList blogs={filteredBlogs} getBlogs={getBlogs} onUpdate={setBlogToUpdate}/>
       </div>
     </>
   );

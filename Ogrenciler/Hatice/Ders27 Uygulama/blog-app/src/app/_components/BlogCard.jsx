@@ -9,7 +9,7 @@ import Card from "./Card";
 import CardFooter from "./CardFooter";
 import { uiTexts } from "../../../constants/index";
 
-const BlogCard = ({ blog, getBlogs }) => {
+const BlogCard = ({ blog, getBlogs, onUpdate }) => {
   const { buttons, toastMessages } = uiTexts;
 
   const handleDelete = async (id) => {
@@ -19,7 +19,7 @@ const BlogCard = ({ blog, getBlogs }) => {
       toast.success(toastMessages?.success?.delete);
     }
   };
-  return (
+      return (
     <>
       {blog && (
         <div className="col-lg-4 rounded">
@@ -41,6 +41,11 @@ const BlogCard = ({ blog, getBlogs }) => {
                 className="ms-2"
                 onClick={() => handleDelete(blog?.id)}
                 variant="delete"
+              ></Button>
+              <Button
+                className="ms-2"
+                onClick={() => onUpdate(blog)}
+                variant="edit"
               ></Button>
             </CardFooter>
           </Card>

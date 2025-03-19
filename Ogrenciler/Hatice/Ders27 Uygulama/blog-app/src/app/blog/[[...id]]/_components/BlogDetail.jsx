@@ -38,6 +38,11 @@ function Page({ blog }) {
             onClick={() => handleDelete(blog?.id)}
             variant="delete"
           ></Button>
+          <Button
+            className="ms-2"
+            onClick={() => router.push(`/`)}
+            variant="edit">
+          </Button>
         </CardFooter>
       </Card>
     </div>
