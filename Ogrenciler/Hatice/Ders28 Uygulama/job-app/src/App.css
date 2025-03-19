@@ -1,3 +1,4 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -5,3 +6,39 @@
   text-align: center;
 }
 
+:root{
+  --primary : rgb(25, 118, 210);
+  --dark-blue : #023E82;
+}
+/* .navbar{
+  background-color: var(--primary);
+} */
+.bg-primary {
+  background-color: var(--primary);
+}
+.bg-dark-blue{
+  background-color: var(--dark-blue);
+}
+
+body {
+  background-color: white;
+  color: black;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+  background-color: #343a40;
+  color: white;
+}
+form input{
+  background-color: white;
+  color: black;
+  transition: background-color 0.3s, color 0.3s;
+}
+form input.dark-mode{
+  background-color: gray;
+  color: white;
+}
+.form-title{
+  color: var(--primary);
+}
