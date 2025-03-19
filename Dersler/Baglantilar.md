@@ -20,6 +20,10 @@
 - [Javascript Nasıl Çalışır 2](https://devnot.com/2020/javascript-nasil-calisir/)
 - [Javascript Tarihesi](https://medium.com/frontend-development-with-js/javascriptin-tarih%C3%A7esi-1789284fc09c)
 - [SOLID Principles](https://medium.com/@hridoymahmud/mastering-solid-principles-in-next-js-building-scalable-and-maintainable-applications-cdc2e40e869e)
+- [Design Patterns (Tasarım Kalıpları)](https://medium.com/nsistanbul/design-patterns-factory-method-pattern-615457e9560b)
+- [JavaScript’te Tasarım Desenleri: Creational Patterns](https://furkangulsen.medium.com/javascriptte-tasarim-desenleri-creational-patterns-44d867bb8e3d)
+- [React.js Tasarım Desenleri(2024)](https://ozmeneyup60.medium.com/react-js-tasar%C4%B1m-desenleri-2024-d584c492dd01)
+- [Next.js 14+ Design Patterns: Best Practices for Modern Web Development](https://medium.com/@sitharawanigasooriya_/next-js-14-design-patterns-best-practices-for-modern-web-development-b3fdb0ef8b32)
 
 ## Javascript nasıl çalışır konusunda yukarıdaki kaynak + aşağıdaki kaynaklardan yararlanılmıştır.
 
