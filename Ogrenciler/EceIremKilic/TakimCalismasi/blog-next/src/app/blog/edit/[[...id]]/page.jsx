@@ -1,62 +1,14 @@
 "use client";
-import React, { useEffect, useState, use } from "react";
-import useBlogStore from "@/store/useBlogStore";
-import { useRouter } from "next/navigation";
+import React, { use } from "react";
 import Form from "@/components/Form";
 import Loading from "@/components/Loading";
 import Card from "@/components/Card";
+import { useEditPost } from "@/hooks/useEditPost";
 
 const EditBlog = ({ params }) => {
   const unwrappedParams = use(params);
   const { id } = unwrappedParams;
-  const router = useRouter();
-  const { posts, getPosts, updatePost } = useBlogStore();
-  const [blog, setBlog] = useState(null);
-
-  useEffect(() => {
-    const loadPost = () => {
-      const currentBlog = posts.find((post) => post.id === id[0]);
-      setBlog(currentBlog);
-    };
-    if (posts.length === 0) {
-      getPosts();
-    } else {
-      loadPost();
-    }
-  }, [id, posts, getPosts]);
-
-  const [editedPost, setEditedPost] = useState({
-    title: "",
-    image: "",
-    author: "",
-    releaseDate: "",
-    content: "",
-  });
-
-  useEffect(() => {
-    if (blog) {
-      setEditedPost({
-        title: blog.title || "",
-        image: blog.image || "",
-        author: blog.author || "",
-        releaseDate: blog.releaseDate || "",
-        content: blog.content || "",
-      });
-    }
-  }, [blog]);
-
-  const handleChange = (e) => {
-    e.preventDefault();
-    setEditedPost({ ...editedPost, [e.target.id]: e.target.value });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (blog) {
-      await updatePost(blog.id, editedPost);
-      router.push("/");
-    }
-  };
+  const { blog, newPost, handleChange, handleSubmit } = useEditPost(id);
 
   if (!blog) {
     return <Loading />;
@@ -68,7 +20,7 @@ const EditBlog = ({ params }) => {
         <div className="row align-items-center">
           <div className="col-lg-7">
             <Form
-              value={editedPost}
+              value={newPost}
               onChange={handleChange}
               onSubmit={handleSubmit}
               btnText="Güncelle"
@@ -76,7 +28,7 @@ const EditBlog = ({ params }) => {
           </div>
           <div className="col-lg-5">
             <div className="preload">
-              <Card blog={editedPost || blog} />
+              <Card blog={newPost || blog} />
             </div>
           </div>
         </div>

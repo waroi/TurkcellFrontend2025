@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import useAuthStore from "@/store/useAuthStore";
+import { getProfileImageUrl } from "@/controller/DBController";
 
 const useNavProfileImage = () => {
   const [profileImageUrl, setProfileImageUrl] = useState(null);

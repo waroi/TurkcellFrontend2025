@@ -1,57 +1,10 @@
 "use client";
-import { useCallback, useEffect, useState } from "react";
-import useBlogStore from "@/store/useBlogStore";
-import { useRouter } from "next/navigation";
-import { getCurrentUser, getUserData } from "@/controller/AuthController";
 import Form from "@/components/Form";
 import Card from "@/components/Card";
+import { useAddPost } from "@/hooks/useAddPost";
 
 const AddBlog = () => {
-  const router = useRouter();
-  const [userData, setUserData] = useState(null);
-  const { addPost } = useBlogStore();
-
-  useEffect(() => {
-    const fetchUserData = async () => {
-      const user = getCurrentUser();
-      if (user) {
-        const data = await getUserData(user.uid);
-        setUserData(data);
-      }
-    };
-
-    fetchUserData();
-    console.log("userdata", userData);
-  }, []);
-
-  const [newPost, setNewPost] = useState({
-    title: "",
-    image: "",
-    author: userData ? userData?.fullName : "",
-    releaseDate: "",
-    content: "",
-  });
-  const handleChange = useCallback((e) => {
-    setNewPost((prevPost) => ({
-      ...prevPost,
-      [e.target.id]: e.target.value,
-    }));
-  }, []);
-
-  useEffect(() => {
-    if (userData) {
-      setNewPost((prev) => ({ ...prev, author: userData.fullName }));
-    }
-  }, [userData]);
-
-  const handleAdd = useCallback((newPost, e) => {
-    e.preventDefault();
-    addPost(newPost);
-    console.log("added", newPost);
-    router.push("/");
-  });
-  if (!newPost) return <Loading />;
-  console.log("val:", newPost);
+  const { newPost, handleChange, handleAdd } = useAddPost();
 
   return (
     <div className="container">
