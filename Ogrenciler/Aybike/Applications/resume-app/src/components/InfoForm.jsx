@@ -14,8 +14,8 @@ const InfoForm = () => {
 
   return (
     <>
-      <div>Lütfen başvuru için gerekli bilgileri doldurunuz.</div>
-      <Formik
+    <div className="container">
+    <Formik
         initialValues={{
           email: '',
           firstName: '',
@@ -34,7 +34,7 @@ const InfoForm = () => {
 
         {({ isSubmitting }) => (
 
-          <Form>
+          <Form className="d-flex flex-column">
             <CustomInput
               label="Kullancı Adı"
               name="firstName"
@@ -63,7 +63,7 @@ const InfoForm = () => {
           </Form>
         )}
       </Formik >
-
+      </div>
     </>
   )
 }
