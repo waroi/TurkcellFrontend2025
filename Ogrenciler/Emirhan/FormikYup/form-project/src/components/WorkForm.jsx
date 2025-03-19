@@ -48,7 +48,7 @@ function WorkForm() {
   ];
 
   return (
-    <div>
+    <div className="container">
       <Formik
         initialValues={initialValues}
         validationSchema={basicSchema}

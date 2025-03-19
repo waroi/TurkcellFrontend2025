@@ -6,7 +6,7 @@ function ArrayInput({ field, values, errors, touched, setFieldValue }) {
       {({ push, remove }) => (
         <div>
           <label htmlFor={field}>{field}</label>
-          <Field name={`${field}Input`} placeholder={`Enter ${field}`} />
+          <Field className="form-control" name={`${field}Input`} placeholder={`Enter ${field}`} />
           <button
             type="button"
             onClick={() => {
@@ -26,10 +26,14 @@ function ArrayInput({ field, values, errors, touched, setFieldValue }) {
           {values[field].length > 0 && (
             <ul>
               {values[field].map((item, index) => (
-                <li key={index}>
+                <li className="d-inline-flex gap-2 btn btn-primary" key={index}>
                   {item}
-                  <button type="button" onClick={() => remove(index)}>
-                    ❌
+
+                  <button className="btn btn-primary" type="button" onClick={() => remove(index)} >
+
+
+                    <i className="fa-solid fa-circle-xmark"></i>
+
                   </button>
                 </li>
               ))}
