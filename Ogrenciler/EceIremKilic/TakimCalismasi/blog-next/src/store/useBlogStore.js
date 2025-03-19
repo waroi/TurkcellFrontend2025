@@ -93,6 +93,10 @@ const useBlogStore = create((set) => ({
 
   deletePost: async (id) => {
     try {
+      const confirmDelete = confirm(
+        "Bu postu silmek istediğinize emin misiniz?"
+      );
+      if (!confirmDelete) return;
       const postRef = doc(db, "posts", id);
       await deleteDoc(postRef);
 

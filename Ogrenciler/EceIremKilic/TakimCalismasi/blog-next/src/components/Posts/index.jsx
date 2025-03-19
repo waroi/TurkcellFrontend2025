@@ -1,6 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import useBlogStore from "../../store/useBlogStore";
+import React from "react";
 import Card from "../Card";
 import Loading from "../Loading";
 import Title from "./atoms/title";

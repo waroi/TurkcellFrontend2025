@@ -3,7 +3,6 @@ import React, { useEffect, useState, use } from "react";
 import useBlogStore from "@/store/useBlogStore";
 import { useRouter } from "next/navigation";
 import Form from "@/components/Form";
-import formatDate from "@/utils/FormatDate";
 import Loading from "@/components/Loading";
 import Card from "@/components/Card";
 
@@ -78,30 +77,6 @@ const EditBlog = ({ params }) => {
           <div className="col-lg-5">
             <div className="preload">
               <Card blog={editedPost || blog} />
-              {/* <div className="card">
-                <img
-                  src={editedPost.image || blog.image}
-                  className="card-img-top"
-                  alt="..."
-                />
-                <div className="card-body">
-                  <h5 className="card-title">
-                    {editedPost.title || blog.title}
-                  </h5>
-                  <p className="card-text">
-                    {editedPost.content || blog.content}
-                  </p>
-                  <div className="d-flex justify-content-between">
-                    <p className="card-text badge bg-success mb-0">
-                      {editedPost.author || blog.author}
-                    </p>
-                    <p className="card-text badge bg-success">
-                      {formatDate(editedPost.releaseDate) ||
-                        formatDate(blog.releaseDate)}
-                    </p>
-                  </div>
-                </div>
-              </div> */}
             </div>
           </div>
         </div>
