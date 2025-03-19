@@ -9,6 +9,9 @@ import { usePathname, useRouter } from "next/navigation";
 import { logout } from "@/utils/services/helpers";
 
 const Navbar = () => {
+  const user = auth.currentUser;
+  const router = useRouter();
+  const pathname = usePathname();
   return (
     <nav className="navbar navbar-expand-lg  ">
       <div className="container">
@@ -43,7 +46,7 @@ const Navbar = () => {
                 İletişim
               </Link>
             </li>
-            {auth.currentUser ? (
+            {!auth.currentUser ? (
               <>
                 <li className="nav-item">
                   <Link href="/login" className="nav-link">
