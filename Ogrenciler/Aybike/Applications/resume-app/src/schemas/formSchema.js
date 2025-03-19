@@ -6,31 +6,31 @@ export const formSchema = yup.object().shape({
         .email('Please enter a valid email')
         .required('Email is required'),
 
-        firstName: yup.string()
+    firstName: yup.string()
         .required('Name is required')
         .min(2, 'Name must be at least 3 characters long'),
 
-        lastName: yup.string()
+    lastName: yup.string()
         .required('Lastname is required')
         .min(2, 'Name must be at least 3 characters long'),
 
-        country: yup.string()
+    country: yup.string()
         .required('Lütfen ülke seçiniz'),
 
-        city : yup.string()
+    city: yup.string()
         .required('Lütfen şehir seçiniz'),
 
-        university: yup.string()
+    university: yup.string()
         .required('Lütfen üniversite seçiniz'),
 
-        graduationStatus: yup.boolean(),
+    graduationStatus: yup.boolean(),
 
-        graduationYear: yup.string(),
-        
-        department: yup.string()
+    graduationYear: yup.string(),
+
+    department: yup.string()
         .required('Lütfen bölüm seçiniz'),
 
-        gpa: yup.number()
+    gpa: yup.number()
         .positive('Lütfen geçerli bir ortalama seçiniz')
         .lessThan(4.0, 'Ortalamanız 4.0 dan küçük olmalıdır')
 
@@ -38,5 +38,5 @@ export const formSchema = yup.object().shape({
 
 
 
-        
+
 
