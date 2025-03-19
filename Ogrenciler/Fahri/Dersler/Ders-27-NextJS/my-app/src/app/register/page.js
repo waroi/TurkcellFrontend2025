@@ -1,7 +1,7 @@
 "use client"
 
 import { useRouter } from "next/navigation";
-import { useAuthRedirect } from "../utils/hooks/useAuthRedirect";
+import { useAuthRedirect } from "../utils/useLikeHooks/useAuthRedirect";
 import styles from "../styles/auth.module.css";
 import RedirectMessage from "../components/RedirectMessage/RedirectMessage";
 import RegisterForm from "../components/RegisterForm.js/RegisterForm";

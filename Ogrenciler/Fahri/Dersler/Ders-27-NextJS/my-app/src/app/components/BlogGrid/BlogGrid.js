@@ -7,6 +7,9 @@ const BlogGrid = ({ blogs }) => {
                 blogs.map((blog) => (
                     <div className="blog-card" key={blog.id}>
                         <div className="blog-card-image">
+                            <p className="category-paragraph">
+                                {blog && blog.category}
+                            </p>
                             <img
                                 src={blog.poster || 'https://picsum.photos/200'}
                                 alt={blog.title}
@@ -19,6 +22,8 @@ const BlogGrid = ({ blogs }) => {
                             <p className="blog-card-excerpt">
                                 {blog.content.substring(0, 50) + "..."}
                             </p>
+                            <p className="fs-6 reading-time">Okuma Süresi: <strong>
+                                {blog && blog.readingTime}</strong> </p>
                             <p className="blog-card-author">
                                 <strong>Yazar:</strong> {blog.author}
                             </p>
@@ -28,6 +33,7 @@ const BlogGrid = ({ blogs }) => {
                             >
                                 Daha fazla
                             </Link>
+
                         </div>
                     </div>
                 ))

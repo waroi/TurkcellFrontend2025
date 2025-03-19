@@ -3,11 +3,17 @@
     {
       "title": "React.js: Modern Web Uygulamaları Geliştirmenin Güçlü Aracı",
       "content": "React.js, günümüzün en popüler JavaScript kütüphanelerinden biridir ve modern web uygulamaları geliştirme sürecini büyük ölçüde kolaylaştırır. Facebook tarafından geliştirilen ve açık kaynak olarak sunulan React.js, kullanıcı arayüzlerinin oluşturulması ve yönetilmesi için ideal bir araçtır. Bu makalede, React.js’in sunduğu avantajları ve çeşitli kullanım alanlarını inceleyeceğiz.\n\nReact.js’in Avantajları\nYüksek Performans: React.js, sanal DOM (Document Object Model) kullanarak yüksek performans sunar. Sanal DOM, gerçek DOM’un hafif bir kopyasıdır ve kullanıcı etkileşimlerine daha hızlı yanıt verir.\n\nBileşen Tabanlı Yapı: React.js’in bileşen tabanlı yapısı, kodun modüler ve yeniden kullanılabilir olmasını sağlar. Bu, büyük projelerde bile kodun yönetimini kolaylaştırır ve geliştirme sürecini hızlandırır.\n\nReaktif Doğa: React.js, reaktif programlama paradigmasını benimser. Bu, veri değişikliklerinin otomatik olarak kullanıcı arayüzüne yansımasını sağlar, bu da geliştiricilerin kullanıcı deneyimini iyileştirmesine olanak tanır.\n\nReact.js Kullanım Alanları\nTek Sayfa Uygulamaları (SPA)\nReact.js, tek sayfa uygulamaları (Single Page Applications – SPA) geliştirmek için mükemmel bir seçenektir. SPA’lar, sunucudan sadece bir kez veri yükleyip, daha sonra kullanıcı etkileşimlerini istemci tarafında işleyerek daha akıcı bir deneyim sunar. Bu, sayfa yenilenmelerine gerek kalmadan uygulamanın daha hızlı ve reaktif olmasını sağlar.\n\nSosyal Medya Uygulamaları\nFacebook, Instagram, Twitter gibi popüler sosyal medya platformları, yüksek trafik ve etkileşim gerektiren uygulamalardır. React.js, bu tür uygulamalar için yüksek performans ve bileşen tabanlı yapı sayesinde büyük avantajlar sunar.\n\nE-Ticaret Siteleri\nE-ticaret siteleri, ürün listeleme, arama, sepet yönetimi gibi dinamik bileşenlere ihtiyaç duyar. React.js’in reaktif yapısı, bu tür dinamik özelliklerin kolayca geliştirilmesini sağlar. Amazon, Shopify gibi büyük e-ticaret platformları, kullanıcı deneyimini geliştirmek için React.js kullanmaktadır.\n\nMasaüstü Uygulamaları\nReact.js, Electron gibi araçlarla birlikte kullanılarak masaüstü uygulamaları geliştirmek için de tercih edilebilir. Bu sayede, web tabanlı uygulamalar masaüstü ortamına taşınabilir ve daha geniş bir kullanıcı kitlesine ulaşabilir.\n\nMobil Uygulamalar\nReact Native, React.js’in mobil uygulama geliştirme çerçevesidir. Bu çerçeve sayesinde, React.js bileşenleri hem iOS hem de Android uygulamaları için kullanılabilir. Airbnb, Tesla gibi şirketler, mobil uygulamalarını geliştirmek için React Native kullanmaktadır.\n\nOyun Geliştirme\nReact.js, HTML5 canvas özelliği ile birlikte kullanılarak basit tarayıcı tabanlı oyunların geliştirilmesinde de tercih edilebilir. React.js’in bileşen tabanlı yapısı, oyunların modüler ve ölçeklenebilir olmasını sağlar.\n\nVeri Görselleştirme\nD3.js gibi popüler veri görselleştirme kütüphaneleri ile birlikte kullanılarak interaktif ve dinamik veri görselleştirme uygulamaları oluşturmak için React.js kullanılabilir. Bu, özellikle finansal analizler ve büyük veri projelerinde büyük avantaj sağlar.\n\nKurumsal Uygulamalar\nReact.js’in modüler yapısı ve bileşen tabanlı mimarisi, büyük ölçekli ve karmaşık kurumsal uygulamaların geliştirilmesinde de avantaj sağlar. Bu sayede, uygulama daha kolay yönetilebilir ve ölçeklenebilir hale gelir.",
-      "author": "Beyza",
+      "author": "Yunus",
       "poster": "https://serebellum.com/wp-content/uploads/2024/06/react.png",
       "blogId": "1",
       "updatedAt": "12.03.2025",
-      "id": "1"
+      "id": "1",
+      "category": "React",
+      "readingTime": "9 dakika",
+      "likes": [
+        "8dfb"
+      ],
+      "likeCount": 1
     },
     {
       "id": "3",
@@ -15,7 +21,9 @@
       "content": "MongoDB Atlas Nedir?\nMongoDB Atlas, bulutta çalışan bir NoSQL veritabanı servisidir. MongoDB'nin tam yönetilen bir sürümüdür. Kullanıcılar, veritabanı işlemlerini kolayca yönetebilir, ölçeklendirebilir ve güvenli bir şekilde veri saklayabilirler. Atlas, AWS, Google Cloud ve Azure gibi büyük bulut servis sağlayıcılarıyla entegre şekilde çalışır. Kullanıcılar, küresel veritabanı dağılımlarını tek bir tıklamayla gerçekleştirebilirler. Atlas, veritabanı yönetimini basitleştiren otomatik yedekleme, güvenlik ve performans izleme özelliklerine sahiptir.\n\nMongoDB Atlas'ın Avantajları\nMongoDB Atlas, kullanıcılarına birçok avantaj sunar. İlk olarak, tam yönetilen bir servis olması, kullanıcıların teknik işlemlere odaklanmadan veritabanı yönetimine odaklanmalarını sağlar. Atlas, yüksek düzeyde güvenlik önlemleri sunar. SSL/TLS şifreleme, IP beyaz listesi ve iki faktörlü kimlik doğrulama gibi özelliklerle veri güvenliğini garanti eder. Ayrıca, kullanıcılar, veritabanı performansını izleyebilir ve optimize edebilirler. Atlas, kullanıcıların kaynak kullanımını ölçeklendirmelerine olanak tanır, böylece kaynak kullanımı ihtiyaca göre ayarlanabilir.\n\nBaşlarken: MongoDB Atlas Kurulumu\nMongoDB Atlas kurulumu oldukça basittir. İlk olarak, MongoDB Atlas web sitesine gidip bir hesap oluşturmalısınız. Hesap oluşturduktan sonra, bir organizasyon ve proje oluşturmalısınız. Daha sonra, bir veritabanı kümesi oluşturabilirsiniz. Küme oluştururken, bulut sağlayıcısını ve bölgeyi seçebilirsiniz. Atlas, kullanıcıların veritabanı kümelerini özelleştirmelerine olanak tanır. Örneğin, kullanıcılar, depolama boyutunu, bellek boyutunu ve diğer kaynakları ayarlayabilirler. Kurulum tamamlandıktan sonra, Atlas kullanıma hazırdır.",
       "author": "Beyza",
       "poster": "https://cdn.cangokceaslan.com/articles/6548e6b9b2693c81-a4633b71-40aa88ad-8dd21277-5c067aa0b126dd7702885d57.png",
-      "updatedAt": "12.03.2025"
+      "updatedAt": "12.03.2025",
+      "category": "MongoDB",
+      "readingTime": "8 dakika"
     },
     {
       "id": "4",
@@ -23,7 +31,9 @@
       "content": "Öncelikle VS Code üzerinde boş bir klasörü açarak CTRL + \" ile command prompt u açalım. Ardından bir npm init komutu ile bir package.json dosyasının oluşmasını sağlayalım. Size package.json dosyasına yazmak için bazı sorular soracaktır. Enter a basarak hepsini geçebilir ya da en mantıklı cevapları verebilirsiniz. (Soruları okursanız ne olduğu belli zaten çok takılmadan geçiyorum.)\n\nDaha hızlı bir şekilde varsayılan değerler ile package.json dosyasını oluşturmak isterseniz. npm init -y komutu tüm sorulara varsayılan cevabı verecektir.\n\nProjeye Express.js paketini kuracağız. Yine command prompt a npm install express komutunu girerek paketin kurulmasını sağlamalısınız.\n\nArdından app.js ismi ile bir dosya oluşturuyorum. Aşağıdaki kodu bu dosya içerisine yazarak ilk örnek nodejs api nizi çalıştırmak için gereken kodu sağlamış olacaksınız.",
       "author": "Yunus",
       "poster": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*TuhDNcbgW4qxOVSNnwoW9w.jpeg",
-      "updatedAt": "12.03.2025"
+      "category": "21313",
+      "updatedAt": "19.03.2025",
+      "readingTime": "6 dakika"
     },
     {
       "id": "5",
@@ -31,15 +41,23 @@
       "content": "Bilindiği üzere Javascript evreninde, ES6 öncesi ve sonrası diyebileceğimiz ve kod yazarken de yazdıktan sonra da daha iyi anlamamızı sağlayan köklü değişiklikler olmuştur. Bu yazımda, ES6 sonrasında gelen bilinmesi gereken özellikler üzerine yoğunlaşacağız ve örneklerle de bu açıklamalara güzel ek olacak.\n\nCONSTANTS\n\nJavacript’te const anahtar kelimesi ile tanımlanan bir değişken yalnızca bir kere tanımlanabilir ve doğrudan olarak tekrar değer ataması yapılamaz. Ayrıca constant değişkenler için immutable(değiştirelemez) değişkenler tanımını da birçok yer de görebilirsiniz.\n\nconst sampleVariable = 100;\nconst sampleVariable = 250; // Hata",
       "author": "Fahri",
       "poster": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*Pr7q-ZE8SzRnHH0mvFKBAA.jpeg",
-      "updatedAt": "13.03.2025"
+      "updatedAt": "13.03.2025",
+      "category": "Javascript",
+      "readingTime": "6 dakika",
+      "likes": [
+        "8dfb"
+      ],
+      "likeCount": 1
     },
     {
       "id": "6",
       "title": "Javascript Motoru Nedir, Nasıl çalışır ? Abstract Syntax Tree, Bytecode nasıl oluşturuluyor ?",
-      "content": "Javascript son 10 yılda nefret edilen ama mecburen geliştirme yapılan bir dil iken hızlı şekilde ve zevkle geliştirme yapılan, her yerde kullanılabilen ve gün geçtikçe daha da zevkli hale gelen bir dil olmuştur.\n\nJavascript dili temel olarak basit bir dildir fakat Javascript’in çalıştığı ortamın detaylarını iyi anlamaz isek geliştirdiğimiz uygulamalar beklediğimiz performans ve akıcılıkta olmayacaktır. Bu yazı serisi ile Javascript’in üzerinde koştuğu Javascript motorunun detaylarını göreceğiz ve daha etkili Javascript uygulamaları geliştirmek için faydalı bilgiler öğreneceğiz.\n\nKonuya giriş yapmadan önce bu yazı dizisinin Code42 kanalımda video halini bulabilirsiniz eğer video anlatım daha çok hoşunuza gidiyorsa buradan izleyebilirsiniz.",
+      "content": "Javascript son 10 yılda nefret edilen ama mecburen geliştirme yapılan bir dil iken hızlı şekilde ve zevkle geliştirme yapılan, her yerde kullanılabilen ve gün geçtikçe daha da zevkli hale gelen bir dil olmuştur.\n\nJavascript dili temel olarak basit bir dildir fakat Javascript’in çalıştığı ortamın detaylarını iyi anlamaz isek geliştirdiğimiz uygulamalar beklediğimiz performans ve akıcılıkta olmayacaktır. Bu yazı serisi ile Javascript’in üzerinde koştuğu Javascript motorunun detaylarını göreceğiz ve daha etkili Javascript uygulamaları geliştirmek için faydalı bilgiler öğreneceğiz.\n\nKonuya giriş yapmadan önce bu yazı dizisinin Code42 kanalımda video halini bulabilirsiniz eğer video anlatım daha çok hoşunuza gidiyorsa buradan izleyebilirsiniz.Javascript son 10 yılda nefret edilen ama mecburen geliştirme yapılan bir dil iken hızlı şekilde ve zevkle geliştirme yapılan, her yerde kullanılabilen ve gün geçtikçe daha da zevkli hale gelen bir dil olmuştur.\n\nJavascript dili temel olarak basit bir dildir fakat Javascript’in çalıştığı ortamın detaylarını iyi anlamaz isek geliştirdiğimiz uygulamalar beklediğimiz performans ve akıcılıkta olmayacaktır. Bu yazı serisi ile Javascript’in üzerinde koştuğu Javascript motorunun detaylarını göreceğiz ve daha etkili Javascript uygulamaları geliştirmek için faydalı bilgiler öğreneceğiz.\n\nKonuya giriş yapmadan önce bu yazı dizisinin Code42 kanalımda video halini bulabilirsiniz eğer video anlatım daha çok hoşunuza gidiyorsa buradan izleyebilirsiniz.Javascript son 10 yılda nefret edilen ama mecburen geliştirme yapılan bir dil iken hızlı şekilde ve zevkle geliştirme yapılan, her yerde kullanılabilen ve gün geçtikçe daha da zevkli hale gelen bir dil olmuştur.\n\nJavascript dili temel olarak basit bir dildir fakat Javascript’in çalıştığı ortamın detaylarını iyi anlamaz isek geliştirdiğimiz uygulamalar beklediğimiz performans ve akıcılıkta olmayacaktır. Bu yazı serisi ile Javascript’in üzerinde koştuğu Javascript motorunun detaylarını göreceğiz ve daha etkili Javascript uygulamaları geliştirmek için faydalı bilgiler öğreneceğiz.\n\nKonuya giriş yapmadan önce bu yazı dizisinin Code42 kanalımda video halini bulabilirsiniz eğer video anlatım daha çok hoşunuza gidiyorsa buradan izleyebilirsiniz.Javascript son 10 yılda nefret edilen ama mecburen geliştirme yapılan bir dil iken hızlı şekilde ve zevkle geliştirme yapılan, her yerde kullanılabilen ve gün geçtikçe daha da zevkli hale gelen bir dil olmuştur.\n\nJavascript dili temel olarak basit bir dildir fakat Javascript’in çalıştığı ortamın detaylarını iyi anlamaz isek geliştirdiğimiz uygulamalar beklediğimiz performans ve akıcılıkta olmayacaktır. Bu yazı serisi ile Javascript’in üzerinde koştuğu Javascript motorunun detaylarını göreceğiz ve daha etkili Javascript uygulamaları geliştirmek için faydalı bilgiler öğreneceğiz.\n\nKonuya giriş yapmadan önce bu yazı dizisinin Code42 kanalımda video halini bulabilirsiniz eğer video anlatım daha çok hoşunuza gidiyorsa buradan izleyebilirsiniz.Javascript son 10 yılda nefret edilen ama mecburen geliştirme yapılan bir dil iken hızlı şekilde ve zevkle geliştirme yapılan, her yerde kullanılabilen ve gün geçtikçe daha da zevkli hale gelen bir dil olmuştur.\n\nJavascript dili temel olarak basit bir dildir fakat Javascript’in çalıştığı ortamın detaylarını iyi anlamaz isek geliştirdiğimiz uygulamalar beklediğimiz performans ve akıcılıkta olmayacaktır. Bu yazı serisi ile Javascript’in üzerinde koştuğu Javascript motorunun detaylarını göreceğiz ve daha etkili Javascript uygulamaları geliştirmek için faydalı bilgiler öğreneceğiz.\n\nKonuya giriş yapmadan önce bu yazı dizisinin Code42 kanalımda video halini bulabilirsiniz eğer video anlatım daha çok hoşunuza gidiyorsa buradan izleyebilirsiniz.Javascript son 10 yılda nefret edilen ama mecburen geliştirme yapılan bir dil iken hızlı şekilde ve zevkle geliştirme yapılan, her yerde kullanılabilen ve gün geçtikçe daha da zevkli hale gelen bir dil olmuştur.\n\nJavascript dili temel olarak basit bir dildir fakat Javascript’in çalıştığı ortamın detaylarını iyi anlamaz isek geliştirdiğimiz uygulamalar beklediğimiz performans ve akıcılıkta olmayacaktır. Bu yazı serisi ile Javascript’in üzerinde koştuğu Javascript motorunun detaylarını göreceğiz ve daha etkili Javascript uygulamaları geliştirmek için faydalı bilgiler öğreneceğiz.\n\nKonuya giriş yapmadan önce bu yazı dizisinin Code42 kanalımda video halini bulabilirsiniz eğer video anlatım daha çok hoşunuza gidiyorsa buradan izleyebilirsiniz.Javascript son 10 yılda nefret edilen ama mecburen geliştirme yapılan bir dil iken hızlı şekilde ve zevkle geliştirme yapılan, her yerde kullanılabilen ve gün geçtikçe daha da zevkli hale gelen bir dil olmuştur.\n\nJavascript dili temel olarak basit bir dildir fakat Javascript’in çalıştığı ortamın detaylarını iyi anlamaz isek geliştirdiğimiz uygulamalar beklediğimiz performans ve akıcılıkta olmayacaktır. Bu yazı serisi ile Javascript’in üzerinde koştuğu Javascript motorunun detaylarını göreceğiz ve daha etkili Javascript uygulamaları geliştirmek için faydalı bilgiler öğreneceğiz.\n\nKonuya giriş yapmadan önce bu yazı dizisinin Code42 kanalımda video halini bulabilirsiniz eğer video anlatım daha çok hoşunuza gidiyorsa buradan izleyebilirsiniz.Javascript son 10 yılda nefret edilen ama mecburen geliştirme yapılan bir dil iken hızlı şekilde ve zevkle geliştirme yapılan, her yerde kullanılabilen ve gün geçtikçe daha da zevkli hale gelen bir dil olmuştur.\n\nJavascript dili temel olarak basit bir dildir fakat Javascript’in çalıştığı ortamın detaylarını iyi anlamaz isek geliştirdiğimiz uygulamalar beklediğimiz performans ve akıcılıkta olmayacaktır. Bu yazı serisi ile Javascript’in üzerinde koştuğu Javascript motorunun detaylarını göreceğiz ve daha etkili Javascript uygulamaları geliştirmek için faydalı bilgiler öğreneceğiz.\n\nKonuya giriş yapmadan önce bu yazı dizisinin Code42 kanalımda video halini bulabilirsiniz eğer video anlatım daha çok hoşunuza gidiyorsa buradan izleyebilirsiniz.Javascript son 10 yılda nefret edilen ama mecburen geliştirme yapılan bir dil iken hızlı şekilde ve zevkle geliştirme yapılan, her yerde kullanılabilen ve gün geçtikçe daha da zevkli hale gelen bir dil olmuştur.\n\nJavascript dili temel olarak basit bir dildir fakat Javascript’in çalıştığı ortamın detaylarını iyi anlamaz isek geliştirdiğimiz uygulamalar beklediğimiz performans ve akıcılıkta olmayacaktır. Bu yazı serisi ile Javascript’in üzerinde koştuğu Javascript motorunun detaylarını göreceğiz ve daha etkili Javascript uygulamaları geliştirmek için faydalı bilgiler öğreneceğiz.\n\nKonuya giriş yapmadan önce bu yazı dizisinin Code42 kanalımda video halini bulabilirsiniz eğer video anlatım daha çok hoşunuza gidiyorsa buradan izleyebilirsiniz.",
       "author": "Yunus",
       "poster": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*mcJsgdLvQuRRNzM8jymqKA.png",
-      "updatedAt": "12.03.2025"
+      "category": "Javascript",
+      "readingTime": "5 dakika",
+      "updatedAt": "19.03.2025"
     },
     {
       "id": "7",
@@ -47,7 +65,9 @@
       "content": "SEO uyumlu web uygulamaları, online görünürlüğünüzü artırmak için kritiktir. Next.js, React tabanlı projeler için popüler bir çerçeve olan ve SSR (Server-Side Rendering) özelliği ile SEO performansınızı güçlendirebilir. Next.js ile oluşturulan uygulamalar, daha hızlı yüklenme süreleri ve daha iyi bir kullanıcı deneyimi sunar.\n\nNext.js kullanarak yeni bir proje oluşturalım. Terminal veya komut istemcisine npx create-next-app my-next-app yazın. Bu komut, 'my-next-app' adında yeni bir Next.js projesi oluşturur. Proje oluşturulduktan sonra, çalışma dizininize gidin ve cd my-next-app yazarak oluşturduğunuz projeye gidin.\n\ngetServerSideProps fonksiyonu, Next.js'in SSR özelliğini kullanmanızı sağlar. Bu fonksiyon, sunucu tarafında çalışır ve sayfa bileşenine prop olarak veri gönderir. Bu sayede, sayfa içeriği sunucu tarafında oluşturulmuş olur.\n\nDinamik rotalama, Next.js'in güçlü özelliklerinden biridir. Dinamik rotalar, URL içinde değişken kullanmanıza olanak tanır. Örneğin, 'pages/posts/[id].js' dosyasını oluşturun ve aşağıdaki kodu ekleyin.\n\nBu kod, dinamik bir rota oluşturur ve URL'deki 'id' parametresini yakalar. Bu özellik, kullanıcıların farklı içeriklere dinamik olarak erişmelerini sağlar.\n\nSEO optimizasyonunu desteklemek için meta etiketleri ekleyin. 'Head' bileşenini kullanarak sayfanızın 'head' kısmına meta etiketleri ekleyebilirsiniz. Örneğin, sayfa başlığı ve açıklaması eklemek için aşağıdaki kodu kullanabilirsiniz.",
       "author": "Yunus",
       "poster": "https://cdn.cangokceaslan.com/articles/31448c8e0fe4892b-630d60f0-296e8357-f8d7f2f2-6ced9e649e54b9a8122f2f60.png",
-      "updatedAt": "12.03.2025"
+      "category": "NextJS",
+      "readingTime": "1 dakika",
+      "updatedAt": "19.03.2025"
     },
     {
       "id": "8",
@@ -55,7 +75,9 @@
       "content": "Giriş\nBu yazımda, temel GitHub kullanımı hakkında bilgi vereceğim.\n\n“GitHub’da repository nasıl açılır?”, “Local’de çalışılan proje ilk kez GitHub’a nasıl pushlanır?”, “Mevcutta GitHub’da bulunan repository için nasıl commit atılır?” gibi soruların cevaplarını örnekleri ile birlikte yazının devamında bulabilirsiniz.\n\nSürüm Kontrol (Version Control) Nedir?\nVersion control sistemleri, kodda yapılan değişikliklerin kaydını tutarak dosyalarda yapılan değişiklikleri kaydetmeye yardımcı olan bir yazılım aracıdır.\n\nGit vs GitHub\nGit, en yaygın olarak kullanılan sürüm kontrol sistemidir (VCS). Git, dosyalarda yaptığınız değişiklikleri izler, böylece yaptığınız değişikliklerin bir kaydını tutar ve ihtiyacınız olduğunda belirli sürümlere geri dönebilirsiniz.\n\nGitHub, git kullanan projeleri yöneten bir web sitesidir. Git’i kullanmak için GitHub’a ihtiyacınız yok, ancak GitHub’ı git kullanmadan kullanamazsınız.\n\nAvantajları\nKod dosyalarını önceki durumlarına geri döndürebilir (Revert işlemi),\nBelirli sürelerdeki kod değişikliklerini karşılaştırabilir,\nBir soruna veya soruna neden olabilecek bir kod parçasını en son kimin değiştirdiğini bulabilir,\nVe belirli bir konuyu kim ve ne zaman gündeme getirdi sorusunun cevabını da bulabilirsiniz.\nTemel Git Komutları\ngit init: Yeni bir Git repository’sini başlatır.\n\ngit add: Değişiklikleri çalışma dizininden Staging alanına taşır.\n\ngit commit: Staged snapshot alır ve proje geçmişine kaydeder. git add ile birlikte kullanılır.\n\ngit push: Localde çalışılan branch’teki değişiklikleri remote repository’e göndermenize olanak sağlar.\n\ngit pull: Pulling, git fetch’in otomatikleştirilmiş halidir. Remote repository’den branch’i localinize çeker, ardından onu hemen geçerli branch’le birleştirir.\n\ngit clone: Mevcut bir Git repository’sinin bir kopyasını oluşturur. Klonlama, geliştiricilerin repositorylerin kopyasını edinmelerinin en yaygın yoludur.\n\ngit status: Localde çalışma dizininin durumunu görüntüler.",
       "author": "Fahri",
       "poster": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*KcS4OX_bdjrsr54CmbiBGw.png",
-      "updatedAt": "12.03.2025"
+      "updatedAt": "12.03.2025",
+      "category": "Git",
+      "readingTime": "10 dakika"
     },
     {
       "id": "9",
@@ -63,7 +85,11 @@
       "content": "Projelerinize hızlı, esnek ve etkileyici bir görünüm kazandırmak için Tailwind CSS ile tanışmaya hazır olun… Modern bir CSS çerçevesi olan Tailwind CSS ile artık stil dosyalarıyla uğraşmak yerine, doğrudan HTML’e sınıfları ekleyerek hızlı ve verimli bir şekilde tasarım yapabilirsiniz. Bu başlangıç kılavuzunda, Tailwind CSS’in temellerini öğrenerek projelerinizi bir üst seviyeye taşımak için ihtiyaç duyduğunuz bilgilere sahip olacaksınız. Bu, tasarım sürecinizi büyük ölçüde kolaylaştıracak.\n\nTailwind CSS, birçok avantaj sunar. İşte Tailwind’in bazı önemli avantajları:\n\nHızlı ve Verimli Tasarım: Tailwind CSS, sınıf tabanlı bir yaklaşım ile tasarım sürecini hızlandırır. Stil dosyaları oluşturmak yerine, sınıfları doğrudan HTML elementlerine ekleyerek tasarım yapabilirsiniz. Bu, tasarım sürecini hızlandırıp ve kod tekrarını azaltır.\n\nÖzelleştirilebilirlik: Tailwind CSS, geniş bir stil ve yapılandırma seçeneği sunar.\n\nResponsive Tasarım Desteği: Tailwind CSS, responsive tasarımı kolaylaştıran bir dizi sınıf sunar. Ekran boyutlarına ve cihazlara özgü sınıflar kullanarak, web sitenizin farklı ekranlarda uyumlu ve kullanıcı dostu olmasını sağlayabilirsiniz.\n\nModüler ve Ölçeklenebilir: Tailwind CSS, modüler bir yapıya sahiptir. İhtiyacınıza göre farklı sınıfları bir araya getirerek ve bileşenleri yeniden kullanarak projenizi kolayca ölçeklendirebilirsiniz.\n\nBu avantajlar, Tailwind CSS’i etkili bir web tasarım aracı haline getirir ve biz geliştiricilerin daha hızlı, daha esnek ve daha verimli bir şekilde projelerini oluşturmasına olanak tanır.",
       "author": "Beyza",
       "poster": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*ANYwfZWYVC0hT6W0UTgOCQ.png",
-      "updatedAt": "12.03.2025"
+      "updatedAt": "12.03.2025",
+      "category": "Tailwind",
+      "readingTime": "5 dakika",
+      "likes": [],
+      "likeCount": 0
     },
     {
       "id": "23a952c1-6629-4688-a375-ee1cea17d1da",
@@ -71,7 +97,13 @@
       "content": "Son birkaç aydır kariyerinin başlarında olan pek çok geliştirici ile konuşuyorum ve her biri yapay zeka konusunda giderek daha endişeli hale gelmiş durumdalar. GPT-4 gibi araçların son derece etkileyici demolarını görüyorlar ve bu araçlar HTML/CSS/JS konusunda tam anlamıyla gelişirlerse, işlerinin ellerinden alınacağı konusunda endişe duyuyorlar.\n\n",
       "author": "Fahri",
       "poster": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*OLgI72UGzxTZBAE3NWeqgQ.png",
-      "pushedAt": "12.03.2025"
+      "pushedAt": "12.03.2025",
+      "category": "Son",
+      "readingTime": "7 dakika",
+      "likes": [
+        "8dfb"
+      ],
+      "likeCount": 1
     },
     {
       "id": "4c118591-ad53-41ea-8a9c-76a87a8a64b5",
@@ -79,7 +111,9 @@
       "content": "Sizlere üniversiteden mezun olduktan sonra mesleki alanda ilerleyişimi, yazılım sektörüne yönelme nedenlerimi, Turkcell Geleceği Yazanlar Frontend Bootcamp’ine kabul alışım ve Bootcampte yaşadığım serüveni anlatacağım.\n\n",
       "author": "Varol Hocammmmmmmmmmmmmmmmmmmm",
       "poster": "https://miro.medium.com/v2/resize:fit:472/format:webp/1*dY6NKNyhoG6QeMRe_GqnjQ.png",
-      "updatedAt": "12.03.2025"
+      "updatedAt": "12.03.2025",
+      "category": "Atmosware",
+      "readingTime": "8 dakika"
     },
     {
       "id": "006982a3-1540-4903-a9c3-b89fca49b811",
@@ -87,7 +121,9 @@
       "content": "React, Facebook tarafından geliştirilen ve günümüzde en popüler JavaScript kütüphanelerinden biri olan bir UI (kullanıcı arayüzü) kütüphanesidir. React, özellikle tek sayfa uygulamaları (SPA) geliştirmek için kullanılır ve bileşen tabanlı mimarisi sayesinde büyük projelerde kod yönetimini kolaylaştırır.",
       "author": "fahri2",
       "poster": "https://miro.medium.com/v2/resize:fit:1400/0*ECzYttBdIGxUbhOW.png",
-      "pushedAt": "14.03.2025"
+      "pushedAt": "14.03.2025",
+      "category": "React",
+      "readingTime": "4 dakika"
     }
   ],
   "users": [

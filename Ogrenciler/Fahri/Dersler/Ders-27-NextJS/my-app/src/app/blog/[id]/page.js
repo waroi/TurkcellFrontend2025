@@ -1,11 +1,11 @@
 "use client"
 
 import { useSession } from "next-auth/react";
-import { useBlogDetail } from "@/app/utils/hooks/useBlogDetail";
 import "./BlogDetail.css";
 import BlogDetailContent from "@/app/components/BlogDetail/Content/BlogContent";
 import BlogActions from "@/app/components/BlogDetail/Actions/Actions";
 import BlogDetailHeader from "@/app/components/BlogDetail/Header/BlogHeader";
+import { useBlogDetail } from "@/app/utils/hooks/useBlogDetail";
 
 const BlogDetail = ({ params }) => {
   const { status } = useSession()

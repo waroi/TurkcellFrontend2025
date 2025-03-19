@@ -1,6 +1,6 @@
 "use client"
 
-const BlogFormFields = ({ title, setTitle, content, setContent, author, poster, setPoster, userInfo }) => {
+const BlogFormFields = ({ title, setTitle, category, setCategory, content, setContent, author, poster, setPoster, userInfo }) => {
     return (
         <>
             <div className="form-group">
@@ -43,6 +43,16 @@ const BlogFormFields = ({ title, setTitle, content, setContent, author, poster, 
                     onChange={(e) => setContent(e.target.value)}
                     placeholder="Blog içeriğini yazın"
                     className="form-textarea"
+                />
+            </div>
+
+            <div className="form-group">
+                <label className="form-label">Kategori:</label>
+                <textarea
+                    value={category}
+                    onChange={(e) => setCategory(e.target.value)}
+                    placeholder="Blog kategorisini yazın"
+                    className="form-input"
                 />
             </div>
         </>

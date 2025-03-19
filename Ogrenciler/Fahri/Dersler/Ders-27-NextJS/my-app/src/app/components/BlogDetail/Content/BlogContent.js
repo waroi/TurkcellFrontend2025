@@ -3,6 +3,11 @@
 const BlogDetailContent = ({ blog }) => {
     return (
         <>
+            <p className="readingingTime">
+
+                Okuma süresi:    <strong>{blog.readingTime}</strong>
+            </p>
+
             <h1 className="blog-title">{blog.title}</h1>
             <div className="blog-content">
                 {blog.content}

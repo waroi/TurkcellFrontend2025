@@ -1,10 +1,10 @@
 'use client';
 
 import { useSession } from "next-auth/react";
-import { useBlogForm } from "@/app/utils/hooks/useBlogForm";
 import "./AddBlogForm.css";
 import BackButton from "@/app/components/BackButton/BackButton";
 import BlogFormFields from "@/app/components/BlogFormFields/BlogFormFields";
+import { useBlogForm } from "@/app/utils/hooks/useBlogForm";
 
 const AddBlogForm = () => {
   const { status } = useSession();
@@ -14,7 +14,8 @@ const AddBlogForm = () => {
     author, setAuthor,
     poster, setPoster,
     userInfo,
-    handleSubmit
+    handleSubmit,
+    category, setCategory
   } = useBlogForm()
 
   if (status === "unauthenticated") {
@@ -36,6 +37,8 @@ const AddBlogForm = () => {
             author={author}
             poster={poster}
             setPoster={setPoster}
+            setCategory={setCategory}
+            category={category}
             userInfo={userInfo}
           />
 

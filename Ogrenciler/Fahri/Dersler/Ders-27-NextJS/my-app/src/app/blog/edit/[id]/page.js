@@ -22,6 +22,7 @@ const EditBlogForm = ({ params }) => {
         author: "",
         poster: "",
         blogId: "",
+        category: "",
     })
     const [isLoading, setIsLoading] = useState(true)
 
@@ -43,6 +44,9 @@ const EditBlogForm = ({ params }) => {
                     author: userInfo.username,
                     poster: blogToEdit.poster,
                     blogId: id,
+                    category: blogToEdit.category, likes: blogToEdit.likes,
+                    likeCount: blogToEdit.likeCount,
+                    readingTime: Math.ceil(editBlog.content.split(' ').length / 200) + ' dakika',
                 })
                 setIsLoading(false)
             } else {
@@ -53,7 +57,11 @@ const EditBlogForm = ({ params }) => {
                         content: data.content,
                         author: userInfo.username,
                         poster: data.poster,
+                        readingTime: Math.ceil(editBlog.content.split(' ').length / 200) + ' dakika',
                         blogId: id,
+                        category: data.category, likes: data.likes,
+                        likeCount: data.likeCount
+
                     })
                 } catch (error) {
                     console.error("Blog yüklenirken hata oluştu aaaaaaaaaa:", error)
@@ -87,7 +95,11 @@ const EditBlogForm = ({ params }) => {
             content: editBlog.content,
             author: editBlog.author,
             poster: editBlog.poster,
+            category: editBlog.category,
+            readingTime: Math.ceil(editBlog.content.split(' ').length / 200) + ' dakika',
             updatedAt: new Date().toLocaleDateString("tr-TR"),
+            likes: editBlog.likes,
+            likeCount: editBlog.likeCount
         }
 
         dispatch(updateBlog(updatedBlog))
@@ -162,6 +174,16 @@ const EditBlogForm = ({ params }) => {
                             onChange={onChangeHandler}
                             placeholder="Blog içeriğini yazın"
                             className="form-textarea"
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label className="form-label">Kategori:</label>
+                        <textarea
+                            value={editBlog.category}
+                            name="category"
+                            onChange={onChangeHandler}
+                            placeholder="Blog kategorisini yazın"
+                            className="form-input"
                         />
                     </div>
 

@@ -1,11 +1,11 @@
 "use client"
 
 import { useRouter } from "next/navigation";
-import { useAuthRedirect } from "../utils/hooks/useAuthRedirect";
 import styles from "../styles/auth.module.css";
 import LoginRedirectMessage from "../components/RedirectMessage/LoginRedirectMessage";
 import LoginForm from "../components/LoginForm/LoginForm";
 import BackButton from "../components/BackButton/BackButton";
+import { useAuthRedirect } from "../utils/hooks/useAuthRedirect";
 
 const Login = () => {
   const router = useRouter();

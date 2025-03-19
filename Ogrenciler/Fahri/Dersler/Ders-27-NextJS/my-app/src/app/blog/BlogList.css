@@ -144,3 +144,141 @@
         grid-template-columns: 1fr;
     }
 }
+
+.reading-time {
+    color: var(--accent-color);
+}
+
+.blog-card-image {
+    position: relative;
+}
+
+.category-paragraph {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 4px 7px;
+    font-size: 12px;
+    border-radius: 6px;
+    width: max-content;
+    z-index: 300;
+}
+
+/* BlogList.css - Koyu tema için güncellendi */
+
+.blog-list-container {
+    background-color: var(--main-bg-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    padding: 2rem 0;
+}
+
+.blog-filters {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 1rem;
+    margin: 0 auto 2rem;
+}
+
+.search-container {
+    width: 100%;
+}
+
+.search-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--input-border);
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: var(--input-bg-color);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(255, 61, 113, 0.2);
+}
+
+.search-input::placeholder {
+    color: #888;
+}
+
+.category-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.category-btn {
+    padding: 0.5rem 1rem;
+    height: 39px;
+    background-color: var(--form-bg-color);
+    border: 1px solid var(--input-border);
+    border-radius: 20px;
+    font-size: 0.875rem;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.category-btn:hover {
+    background-color: #333;
+    border-color: #555;
+}
+
+.category-btn.active {
+    background-color: var(--accent-color);
+    color: var(--button-text);
+    border-color: var(--accent-color);
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem;
+    color: #888;
+    font-size: 1.125rem;
+    background-color: var(--form-bg-color);
+    border-radius: 8px;
+    margin: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+    .blog-filters {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .search-container {
+        width: 40%;
+    }
+
+    .category-filter {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 0.5rem;
+        scrollbar-width: thin;
+        scrollbar-color: var(--accent-color) var(--form-bg-color);
+    }
+
+    .category-filter::-webkit-scrollbar {
+        height: 4px;
+    }
+
+    .category-filter::-webkit-scrollbar-track {
+        background: var(--form-bg-color);
+    }
+
+    .category-filter::-webkit-scrollbar-thumb {
+        background-color: var(--accent-color);
+        border-radius: 10px;
+    }
+}

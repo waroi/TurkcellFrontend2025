@@ -42,4 +42,31 @@ export class BlogService {
         const response = await fetch(this.API_URL);
         return await response.json();
     }
+    static async likeBlog(blogId, userId) {
+        const blog = await this.getBlogById(blogId)
+
+        if (!blog.likes) {
+            blog.likes = []
+        }
+
+        if (!blog.likes.includes(userId)) {
+            blog.likes.push(userId)
+            blog.likeCount = blog.likes.length
+        }
+
+        return this.updateBlog(blog)
+    }
+
+    static async unlikeBlog(blogId, userId) {
+        const blog = await this.getBlogById(blogId)
+
+        if (!blog.likes) {
+            blog.likes = []
+            return blog
+        }
+        blog.likes = blog.likes.filter(id => id !== userId)
+        blog.likeCount = blog.likes.length
+
+        return this.updateBlog(blog)
+    }
 }

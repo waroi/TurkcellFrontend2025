@@ -165,3 +165,67 @@
         justify-content: center;
     }
 }
+
+.readingingTime {
+    color: var(--accent-color);
+}
+
+.blog-card-image {
+    position: relative;
+}
+
+.category-paragraph {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 4px 7px;
+    font-size: 12px;
+    border-radius: 6px;
+    width: max-content;
+    z-index: 300;
+}
+
+.button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--button-text);
+    background-color: var(--accent-color);
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: var(--accent-hover);
+}
+
+.button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.edit-button, .delete-button {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+}
+
+.edit-button:hover, .delete-button:hover {
+    background-color: var(--accent-hover);
+}
+
+.like-button, .dislike-button {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+}
+
+.like-button:hover, .dislike-button:hover {
+    background-color: var(--accent-hover);
+}
+
+.like-button.liked, .dislike-button.disliked {
+    background-color: var(--accent-hover);
+}

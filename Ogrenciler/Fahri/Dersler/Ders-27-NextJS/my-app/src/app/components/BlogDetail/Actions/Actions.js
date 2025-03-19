@@ -1,9 +1,18 @@
 "use client"
 
+import { useLikeHooks } from "@/app/utils/hooks/useLikeHook";
 import Link from "next/link";
 
 const BlogActions = ({ blog, userInfo, onDelete, onEdit }) => {
     const isAuthor = userInfo.username === blog.author
+    const {
+        isLiked,
+        isDisliked,
+        likeCount,
+        dislikeCount,
+        handleLike,
+        handleDislike
+    } = useLikeHooks(blog, userInfo)
 
     return (
         <div className="blog-actions">
@@ -31,6 +40,17 @@ const BlogActions = ({ blog, userInfo, onDelete, onEdit }) => {
                     </button>
                 </div>
             )}
+
+
+            <div className="likes d-flex gap-3">
+                <button className={`button like-button ${isLiked ? 'liked' : ''}`} onClick={handleLike}>
+                    {isLiked ? "Beğeniyi Kaldır" : "Beğen"} ({likeCount})
+                </button>
+
+                <button className={`button dislike-button ${isDisliked ? 'disliked' : ''}`} onClick={handleDislike}>
+                    {isDisliked ? "Beğenmemeyi Kaldır" : "Beğenme"} ({dislikeCount})
+                </button>
+            </div>
         </div>
     )
 }

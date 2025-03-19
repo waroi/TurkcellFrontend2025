@@ -15,6 +15,7 @@ export const useBlogForm = () => {
     const [content, setContent] = useState("")
     const [author, setAuthor] = useState(userInfo?.username || "")
     const [poster, setPoster] = useState("")
+    const [category, setCategory] = useState("")
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -30,6 +31,10 @@ export const useBlogForm = () => {
             author: userInfo?.username || author,
             poster,
             pushedAt: new Date().toLocaleDateString("tr-TR"),
+            likes: [],
+            likeCount: 0,
+            readingTime: Math.ceil(content.split(' ').length / 200) + ' dakika',
+            category
         }
 
         try {
@@ -44,6 +49,7 @@ export const useBlogForm = () => {
             setContent("")
             setAuthor(userInfo?.username || "")
             setPoster("")
+            setCategory("")
 
             router.push("/blog");
         } catch (error) {
@@ -58,6 +64,7 @@ export const useBlogForm = () => {
         author, setAuthor,
         poster, setPoster,
         userInfo,
+        category, setCategory,
         handleSubmit
     }
 }
