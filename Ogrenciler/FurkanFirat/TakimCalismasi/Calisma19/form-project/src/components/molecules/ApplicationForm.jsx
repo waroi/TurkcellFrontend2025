@@ -1,49 +1,25 @@
-import { FormInput } from '../atoms/FormInput';
+import {formFields} from "../../constants/formFields";
+import {FormInput} from "../atoms/FormInput";
 
 export const ApplicationForm = () => {
-  const fields = [
-    {
-      column: '1',
-      type: 'text',
-      id: 'firstName',
-      name: 'firstName',
-      placeholder: 'First Name',
-    },
-    {
-      column: '2',
-      type: 'text',
-      id: 'lastName',
-      name: 'lastName',
-      placeholder: 'Last Name',
-    },
-    {
-      column: '1',
-      type: 'email',
-      id: 'email',
-      name: 'email',
-      placeholder: 'Email',
-    },
-  ];
   return (
-    <form>
-      {fields.map((field) => (
-        <div>
-          <FormInput type={field.type} />
+    <form className="row g-3">
+      {formFields.map((field) => (
+        <div className={`col-md-${field.column}`} key={field.id}>
+          <FormInput
+            type={field.type}
+            id={field.id}
+            name={field.name}
+            placeholder={field.placeholder}
+          />
         </div>
       ))}
-
-      {/* <FormInput
-        type='text'
-        id='firstName'
-        name='firstName'
-        placeholder='First Name'
-      />
-      <FormInput
-        type='text'
-        id='lastName'
-        name='lastName'
-        placeholder='Last Name'
-      /> */}
+      <div className="col-12">
+        <button className="btn btn-primary">Reset</button>
+        <button type="submit" className="btn btn-primary">
+          Submit
+        </button>
+      </div>
     </form>
   );
 };
