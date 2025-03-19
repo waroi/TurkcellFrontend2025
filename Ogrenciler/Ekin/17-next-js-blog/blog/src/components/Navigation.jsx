@@ -75,13 +75,15 @@ export default function Navigation({ active }) {
           </ul>
           {user ? (
             <>
-              <img
-                src={user.profile}
-                className="ms-5 border border-info border-3 rounded-circle object-fit-cover"
-              />
-              <span className="badge text-bg-info ms-2 py-2 px-3">
-                {user.name}
-              </span>
+              <Link href="/user">
+                <img
+                  src={user.profile}
+                  className="ms-5 border border-info border-3 rounded-circle object-fit-cover"
+                />
+                <span className="badge text-bg-info ms-2 py-2 px-3">
+                  {user.name}
+                </span>
+              </Link>
             </>
           ) : (
             ""

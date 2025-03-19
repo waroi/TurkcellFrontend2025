@@ -6,6 +6,7 @@ import {
   login as loginFirebase,
   logout as logoutFirebase,
   getUser,
+  setUser as setUserFirebase,
 } from "@/services/firebase";
 import { useRouter } from "next/navigation";
 import convertBase64 from "@/util/convertBase64";
@@ -52,10 +53,25 @@ export default function () {
     }
   }
 
+  async function setUser(name, profile, user) {
+    user = {
+      id: store.user.id,
+      name: name ? name : store.user.name,
+      profile: profile ? await convertBase64(profile) : store.user.profile,
+    };
+
+    setUserFirebase(user.id, user.name, user.profile).then(() => {
+      store.setUser(user);
+      localStorage.setItem("user", JSON.stringify(user));
+      router.push("/");
+    });
+  }
+
   return {
     user: store.user,
     register,
     login,
     logout,
+    setUser,
   };
 }

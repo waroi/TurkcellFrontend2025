@@ -33,15 +33,17 @@ const database = getFirestore(app);
 //* User ====================================================================================================
 
 export function register(email, password, name, profile) {
-  return createUserWithEmailAndPassword(auth, email, password)
-    .then((response) => response.user.uid)
-    .then((user) =>
-      setDoc(doc(database, "users", user), {
-        user,
-        name,
-        profile,
-      }).then(() => user)
-    );
+  return createUserWithEmailAndPassword(auth, email, password).then(
+    (response) => setUser(response.user.uid, name, profile)
+  );
+}
+
+export function setUser(id, name, profile) {
+  return setDoc(doc(database, "users", id), {
+    id,
+    name,
+    profile,
+  }).then(() => id);
 }
 
 export function login(email, password) {
