@@ -4,19 +4,10 @@ import useBlogStore from "../../store/useBlogStore";
 import Card from "../Card";
 import Loading from "../Loading";
 import Title from "./atoms/title";
+import usePosts from "@/hooks/usePosts";
 
 const Posts = () => {
-  const [isMounted, setIsMounted] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
-  const { posts } = useBlogStore();
-
-  useEffect(() => {
-    setIsMounted(true);
-    if (posts && posts.length > 0) {
-      setIsLoading(false);
-    }
-  }, [posts]);
-
+  const { isLoading, isMounted, posts } = usePosts();
   if (!isMounted) {
     return null;
   }

@@ -1,20 +1,10 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import useBlogStore from "@/store/useBlogStore";
 import Loading from "../Loading";
 import Card from "../Card";
 import Title from "./atoms/title";
-
+import useLatestPost from "@/hooks/useLatestPost";
 const Latest = () => {
-  const { posts, getPosts } = useBlogStore();
-  const [isMounted, setIsMounted] = useState(false);
-  useEffect(() => {
-    getPosts();
-    setIsMounted(true);
-  }, []);
-
-  const filtredItem = posts.slice(8, 12);
-
+  const { filtredItem, isMounted } = useLatestPost();
   if (!isMounted) {
     return <Loading />;
   }

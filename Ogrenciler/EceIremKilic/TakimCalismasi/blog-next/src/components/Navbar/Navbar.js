@@ -1,29 +1,13 @@
 "use client";
-import { useState, useEffect } from "react";
 import styles from "./navbar.module.css";
 import Image from "next/image";
 import mef from "../../assets/logo.png";
 import Link from "next/link";
-import { getProfileImageUrl } from "@/controller/DBController";
-import useAuthStore from "@/store/useAuthStore";
 import NavbarItems from "./components/NavbarItems";
+import useNavProfileImage from "@/hooks/useNavProfileImage";
 
 const Navbar = () => {
-  const [profileImageUrl, setProfileImageUrl] = useState(null);
-  const { user } = useAuthStore();
-
-  useEffect(() => {
-    const fetchProfileImage = async () => {
-      if (user) {
-        const url = await getProfileImageUrl();
-        setProfileImageUrl(url);
-      } else {
-        setProfileImageUrl(null);
-      }
-    };
-    fetchProfileImage();
-  }, [user]);
-
+  const {profileImageUrl} = useNavProfileImage();
   return (
     <nav className={`navbar navbar-expand-lg py-2 ${styles.bgColor}`}>
       <div className="container d-flex justify-content-between">
