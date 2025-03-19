@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
 import Input from "../components/Input/Input";
 import CheckBox from "../components/CheckBox/CheckBox";
 import { useFormik } from "formik";
+import { basicSchema } from "../schema";
 
 const Application = () => {
   const { values, errors, isSubmitting, handleChange, handleSubmit } =
@@ -22,17 +22,20 @@ const Application = () => {
         university: "",
         isGraduate: false,
       },
+      validationSchema: basicSchema,
     });
   return (
-    <div>
+    <form onSubmit={handleSubmit}>
       <div className="d-flex">
         <Input
           label={"Ad"}
           placeholder="Adınız"
           id={"name"}
-          value={values.email}
+          value={values.name}
           onChange={handleChange}
         />
+        {errors.name && <p className="error">{errors.name}</p>}
+
         <Input
           label={"Soyad"}
           placeholder="Soyadınız"
@@ -40,22 +43,27 @@ const Application = () => {
           value={values.lastName}
           onChange={handleChange}
         />
+        {errors.lastName && <p className="error">{errors.lastName}</p>}
       </div>
       <div className="adress">
         <Input
           label={"Adress 1. Satır"}
           placeholder="Adres"
-          id={"adress"}
+          id={"adressFirst"}
           value={values.adressFirst}
           onChange={handleChange}
         />
+        {errors.adressFirst && <p className="error">{errors.adressFirst}</p>}
+
         <Input
           label={"Adress 2. Satır"}
           placeholder="Adres 2"
-          id={"adress"}
+          id={"adressSecond"}
           value={values.adressSecond}
           onChange={handleChange}
         />
+        {errors.adressSecond && <p className="error">{errors.adressSecond}</p>}
+
         <Input
           label={"Şehir"}
           placeholder="Şehir"
@@ -63,6 +71,8 @@ const Application = () => {
           value={values.city}
           onChange={handleChange}
         />
+        {errors.city && <p className="error">{errors.city}</p>}
+
         <Input
           label={"İl/İlçe"}
           placeholder="İliniz"
@@ -70,22 +80,28 @@ const Application = () => {
           value={values.province}
           onChange={handleChange}
         />
+        {errors.province && <p className="error">{errors.province}</p>}
+
         <Input
           label={"Posta Kodu"}
           placeholder="Posta Kodunuz"
+          type="number"
           id={"postCode"}
           value={values.postCode}
           onChange={handleChange}
         />
+        {errors.postCode && <p className="error">{errors.postCode}</p>}
       </div>
       <div className="phone">
         <Input
           label={"Telefon Numarası"}
           placeholder="Numaranız"
+          type="number"
           id={"phoneNumber"}
           value={values.phoneNumber}
           onChange={handleChange}
         />
+        {errors.phoneNumber && <p className="error">{errors.email}</p>}
       </div>
       <div className="email">
         <Input
@@ -95,6 +111,7 @@ const Application = () => {
           value={values.email}
           onChange={handleChange}
         />
+        {errors.email && <p className="error">{errors.email}</p>}
       </div>
       <div className="birthday">
         <Input
@@ -105,6 +122,7 @@ const Application = () => {
           value={values.birthday}
           onChange={handleChange}
         />
+        {errors.birthday && <p className="error">{errors.birthday}</p>}
       </div>
       <div className="isTurkish">
         <CheckBox
@@ -113,8 +131,10 @@ const Application = () => {
           onChange={handleChange}
           value={values.isTurkish}
         />
+        {errors.isTurkish && <p className="error">{errors.isTurkish}</p>}
       </div>
-    </div>
+      <button type="submit">Gönder</button>
+    </form>
   );
 };
 
