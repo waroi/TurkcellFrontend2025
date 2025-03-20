@@ -7,7 +7,7 @@ function WorkForm() {
   const initialValues = {
     name: "",
     surname: "",
-    birthyear: "",
+    birthyear: null,
     gender: "",
     phonenumber: "",
     address: "",
@@ -53,10 +53,27 @@ function WorkForm() {
       <Formik
         initialValues={initialValues}
         validationSchema={basicSchema}
-        onSubmit={async (values) => {
-          await new Promise((r) => setTimeout(r, 500));
-          alert(JSON.stringify(values, null, 2));
+        onSubmit={(values, { resetForm }) => {
+          const filteredValues = Object.fromEntries(
+            Object.entries(values).filter(([key]) => !key.endsWith("Input"))
+          );
+
+          fetch("http://localhost:3000/jobApplications", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(filteredValues),
+          })
+            .then((response) => {
+              if (!response.ok) throw new Error("Veri kaydedilirken hata oluştu.");
+              alert("Başarıyla kaydedildi!");
+              resetForm();
+            })
+            .catch((error) => {
+              console.error("Hata:", error);
+              alert("Bir hata oluştu, tekrar deneyin.");
+            });
         }}
+
       >
         {({ values, errors, touched, setFieldValue }) => (
           <Form className="my-5">
@@ -80,7 +97,7 @@ function WorkForm() {
               />
             ))}
 
-            <button type="submit">Submit</button>
+            <button className="btn btn-danger" type="submit">Submit</button>
           </Form>
         )}
       </Formik>

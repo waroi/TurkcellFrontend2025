@@ -4,10 +4,9 @@ export const basicSchema = yup.object().shape({
   name: yup.string().required("İsim girmek zorunludur"),
   surname: yup.string().required("Soyisim girmek zorunludur"),
   birthyear: yup
-    .number()
-    .positive("Lütfen geçerli bir doğum yılı giriniz")
-    .integer("Lütfen tam sayı olarak giriniz")
-    .required("Doğum yılı girmek zorunludur"),
+    .date()
+    .max(new Date(), "Doğum tarihi bugünden büyük olamaz")
+    .required("Doğum yılı zorunludur"),
   gender: yup.string().required("Cinsiyet girmek zorunludur"),
   phonenumber: yup
     .string()
