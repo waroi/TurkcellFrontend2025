@@ -4,7 +4,9 @@ import { useFormik } from "formik";
 import { basicSchema } from "../schema";
 import { userService } from "../services/userService";
 import AdminButton from "../components/AdminButton";
-import "bootstrap/dist/css/bootstrap.min.css"; // Bootstrap stil dosyası
+import { saveApplication } from "../services/applicationService";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { auth } from "../../firebase_config";
 
 const Application = () => {
   const { values, errors, isSubmitting, handleChange, handleSubmit } =
@@ -27,12 +29,18 @@ const Application = () => {
       },
       validationSchema: basicSchema,
       onSubmit: async (values) => {
-        await userService.saveUser(values);
-        console.log("gönderildi");
+        try {
+          if (auth.currentUser !== null) {
+            await userService.saveUser(values);
+            await saveApplication(values);
+            console.log("Başarı ile kaydedildi");
+          }else {
+          }
+        } catch (error) {
+          console.log("OnSubmit Error",error)
+        }
       },
     });
-
-  console.log("Hatalar:", errors);
 
   return (
     <div className="container mt-4">

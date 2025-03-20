@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { fetchApplications } from "../services/applicationService";
-import "bootstrap/dist/css/bootstrap.min.css"; // Bootstrap stil dosyası
+import "bootstrap/dist/css/bootstrap.min.css"; 
+import { sendEmail } from "../services/db_service";
 
 const AdminPanel = () => {
   const [applications, setApplications] = useState([]);
@@ -60,6 +61,9 @@ const AdminPanel = () => {
                 <p className="card-text">
                   <strong>Mezun mu?</strong> {app.isGraduate ? "Evet" : "Hayır"}
                 </p>
+              </div>
+              <div className="card-footer">
+                <button className="btn btn-primary" onClick={async () => await sendEmail(applications) }>Onayla</button>
               </div>
             </div>
           </div>
