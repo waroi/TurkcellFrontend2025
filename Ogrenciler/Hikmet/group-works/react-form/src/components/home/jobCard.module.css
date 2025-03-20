@@ -1,0 +1,20 @@
+.jobCard {
+  transition: all 0.3s ease;
+  background-color: #ffffff;
+}
+
+.jobCard:hover {
+  background-color: #f8f9fa;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+.logo {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+}
+
+.transition {
+  transition: all 0.3s ease;
+}

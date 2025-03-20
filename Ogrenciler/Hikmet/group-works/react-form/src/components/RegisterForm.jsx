@@ -1,69 +1,170 @@
-import React from "react";
-import { useFormik } from "formik";
-import { auth } from "../firebase/config";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { useNavigate } from "react-router"; 
-import {registerSchema} from "../lib/register"
-
+import { useFormik } from "formik";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router";
+import { auth } from "../firebase/config";
+import { registerSchema } from "../lib/register";
 
 export default function RegisterForm() {
-	const navigate = useNavigate(); 
+	const navigate = useNavigate();
+	const [registerError, setRegisterError] = useState(null);
 
-	const { values, errors, handleChange, handleSubmit, isSubmitting } = useFormik({
-		initialValues: {
-			email: "",
-			password: "",
-		},
-		validationSchema: registerSchema,
-		onSubmit: async (values, actions) => {
-			try {
-				await createUserWithEmailAndPassword(auth, values.email, values.password);
-				console.log("Kayıt başarılı!");
-
-				actions.resetForm();
-
-				navigate("/");
-			} catch (error) {
-				console.error("Kayıt hatası:", error.message);
-			}
-		},
-	});
+	const { values, errors, touched, isSubmitting, handleChange, handleSubmit } =
+		useFormik({
+			initialValues: {
+				email: "",
+				password: "",
+				confirmPassword: "",
+			},
+			validationSchema: registerSchema,
+			onSubmit: async (values, actions) => {
+				try {
+					setRegisterError(null);
+					await createUserWithEmailAndPassword(
+						auth,
+						values.email,
+						values.password
+					);
+					actions.resetForm();
+					navigate("/");
+				} catch (error) {
+					console.error("Registration error:", error.message);
+					setRegisterError(
+						error.code === "auth/email-already-in-use"
+							? "An account with this email already exists"
+							: "Failed to create account. Please try again."
+					);
+				}
+			},
+		});
 
 	return (
-		<div className="container d-flex justify-content-center align-items-center vh-100">
-			<div className="card p-4 shadow-lg" style={{ width: "400px" }}>
-				<h2 className="text-center mb-4">Kayıt Ol!</h2>
-				<form onSubmit={handleSubmit}>
-					<div className="mb-3">
-						<label htmlFor="email" className="form-label">Email</label>
-						<input
-							type="email"
-							className={`form-control ${errors.email ? "is-invalid" : ""}`}
-							id="email"
-							placeholder="Email adresinizi giriniz"
-							value={values.email}
-							onChange={handleChange}
-							required
-						/>
-						{errors.email && <div className="invalid-feedback">{errors.email}</div>}
+		<div className="container py-5">
+			<div className="row justify-content-center">
+				<div className="col-md-6 col-lg-5">
+					<div className="card border-0 shadow-lg">
+						<div className="card-body p-5">
+							<div className="text-center mb-4">
+								<i
+									className="bi bi-person-plus text-primary"
+									style={{ fontSize: "3rem" }}></i>
+								<h3 className="mt-3 mb-1 fw-bold">Create Account</h3>
+								<p className="text-muted">
+									Join JobPortal and find your dream job
+								</p>
+							</div>
+
+							{registerError && (
+								<div className="alert alert-danger" role="alert">
+									{registerError}
+								</div>
+							)}
+
+							<form onSubmit={handleSubmit}>
+								<div className="form-floating mb-3">
+									<input
+										type="email"
+										className={`form-control ${
+											errors.email && touched.email ? "is-invalid" : ""
+										}`}
+										id="email"
+										placeholder="name@example.com"
+										value={values.email}
+										onChange={handleChange}
+									/>
+									<label htmlFor="email">Email address</label>
+									{errors.email && touched.email && (
+										<div className="invalid-feedback">{errors.email}</div>
+									)}
+								</div>
+
+								<div className="form-floating mb-3">
+									<input
+										type="password"
+										className={`form-control ${
+											errors.password && touched.password ? "is-invalid" : ""
+										}`}
+										id="password"
+										placeholder="Password"
+										value={values.password}
+										onChange={handleChange}
+									/>
+									<label htmlFor="password">Password</label>
+									{errors.password && touched.password && (
+										<div className="invalid-feedback">{errors.password}</div>
+									)}
+								</div>
+
+								<div className="form-floating mb-3">
+									<input
+										type="password"
+										className={`form-control ${
+											errors.confirmPassword && touched.confirmPassword
+												? "is-invalid"
+												: ""
+										}`}
+										id="confirmPassword"
+										placeholder="Confirm Password"
+										value={values.confirmPassword}
+										onChange={handleChange}
+									/>
+									<label htmlFor="confirmPassword">Confirm Password</label>
+									{errors.confirmPassword && touched.confirmPassword && (
+										<div className="invalid-feedback">
+											{errors.confirmPassword}
+										</div>
+									)}
+								</div>
+
+								<div className="form-check mb-4">
+									<input
+										className="form-check-input"
+										type="checkbox"
+										id="termsAgreed"
+									/>
+									<label className="form-check-label" htmlFor="termsAgreed">
+										I agree to the{" "}
+										<Link to="/terms" className="text-decoration-none">
+											Terms of Service
+										</Link>{" "}
+										and{" "}
+										<Link to="/privacy" className="text-decoration-none">
+											Privacy Policy
+										</Link>
+									</label>
+								</div>
+
+								<button
+									type="submit"
+									className="btn btn-primary w-100 py-2 mb-3"
+									disabled={isSubmitting}>
+									{isSubmitting ? (
+										<>
+											<span
+												className="spinner-border spinner-border-sm me-2"
+												role="status"
+												aria-hidden="true"></span>
+											Creating Account...
+										</>
+									) : (
+										"Register"
+									)}
+								</button>
+							</form>
+
+							<div className="text-center mt-4">
+								<p className="mb-0">
+									Already have an account?{" "}
+									<Link
+										to="/login"
+										className="fw-semibold text-decoration-none">
+										Sign In
+									</Link>
+								</p>
+							</div>
+						</div>
 					</div>
-					<div className="mb-3">
-						<label htmlFor="password" className="form-label">Şifre</label>
-						<input
-							type="password"
-							className={`form-control ${errors.password ? "is-invalid" : ""}`}
-							id="password"
-							placeholder="Şifrenizi giriniz"
-							value={values.password}
-							onChange={handleChange}
-							required
-						/>
-						{errors.password && <div className="invalid-feedback">{errors.password}</div>}
-					</div>
-					<button type="submit" className="btn btn-primary w-100" disabled={isSubmitting}>
-						{isSubmitting ? "Kayıt Yapılıyor..." : "Kayıt Ol"}
-					</button>
-				</form>
+				</div>
 			</div>
 		</div>
 	);

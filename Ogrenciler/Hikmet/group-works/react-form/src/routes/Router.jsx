@@ -1,18 +1,20 @@
 import React from "react";
 import { Route, Routes } from "react-router";
-import LoginForm from "../components/LoginForm";
-import RegisterForm from "../components/RegisterForm";
-import HomeView from "../../views/HomeView";
-import AdminView from "../../views/AdminView";
 
+import AdminView from "../../views/AdminView";
+import ApplyView from "../../views/ApplyView";
+import HomeView from "../../views/HomeView";
+import LoginView from "../../views/LoginView";
+import RegisterView from "../../views/RegisterView";
 
 const Router = () => {
 	return (
 		<Routes>
 			<Route path="/" element={<HomeView />} />
-			<Route path="/login" element={<LoginForm />} />
-            <Route path="/register" element={<RegisterForm />} />
-			<Route path="/admin" element={<AdminView/>} />
+			<Route path="/apply-job/:jobId" element={<ApplyView />} />
+			<Route path="/login" element={<LoginView />} />
+			<Route path="/register" element={<RegisterView />} />
+			<Route path="/admin" element={<AdminView />} />
 		</Routes>
 	);
 };

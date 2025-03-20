@@ -1,9 +1,7 @@
-import React from 'react'
-import RecruitmentForm from '../src/components/RecruitmentForm'
-const HomeView = () => {
-  return (<>
-    <RecruitmentForm />
-  </>)
-}
+import Home from "../src/components/home/Home";
 
-export default HomeView
+const HomeView = () => {
+	return <Home />;
+};
+
+export default HomeView;
