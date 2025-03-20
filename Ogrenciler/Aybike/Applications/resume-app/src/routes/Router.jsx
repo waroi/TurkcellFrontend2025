@@ -5,13 +5,15 @@ import ApplicationDetailView from "../pages/admin/ApplicationDetailView";
 import ApplicationView from "../pages/user/ApplicationView";
 import PrivateRoute from "./PrivateRoute";
 import AdminLogin from "../pages/admin/AdminLogin";
+import GiftView from "../pages/Gift/GiftView";
+import CVSlider from "../pages/Slider/CVSlider";
 const Router = () => {
   const routes = useRoutes([
     {
       path: "/",
       element: <Layout />,
       children: [
-        { index: true, element: <Navigate to={"/"} /> },
+        { index: true, element: <CVSlider /> },
         {
           path: "admin",
           children: [
@@ -30,6 +32,10 @@ const Router = () => {
           path: "application",
           element: <ApplicationView />,
         },
+        {
+          path: 'gift',
+          element: <GiftView />
+        }
       ],
     },
   ]);

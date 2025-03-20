@@ -1,12 +1,25 @@
-import { NavLink } from "react-router";
+import { NavLink, useNavigate } from "react-router";
+import { useUser } from "../../../context/UserContext";
+import AuthService from "../../../services/AuthService";
+import './Navbar.css'
 
 const Navbar = () => {
+	const { user } = useUser();
+	const navigate = useNavigate()
+
+	const logOut = () => {
+		if (AuthService.signOut()) {
+			alert("Çıkış başarılı yönlendiriliyorsunuz...")
+			navigate('/')
+		}
+	}
+
 	return (
 		<header>
 			<nav className="navbar navbar-expand-lg">
-				<div className="container-fluid">
+				<div className="container-fluid flex-column">
 					<NavLink className="navbar-brand" to="/">
-						<img className="logo" src="/src/assets/logo.png" alt="logo" />
+						<img className="logo" src="../vite.svg" alt="logo" />
 					</NavLink>
 					<button
 						className="navbar-toggler"
@@ -22,10 +35,27 @@ const Navbar = () => {
 					<div className="collapse navbar-collapse" id="navbarNav">
 						<ul className="navbar-nav me-auto mb-2 mb-lg-0">
 							<li className="nav-item">
-								<NavLink className="nav-link active" to="/">
-									Applications
+								<NavLink className="nav-link active" to="/application">
+									CV Ekle
 								</NavLink>
 							</li>
+							{user !== null ? <>
+								<li className="nav-item">
+									<NavLink className="nav-link active" to="/admin/applications">
+										Başvurular
+									</NavLink>
+								</li>
+								<li className="nav-item">
+									<NavLink className="nav-link active" to="/" onClick={logOut}>
+										Çıkış Yap
+									</NavLink>
+								</li>
+							</> : <li className="nav-item">
+								<NavLink className="nav-link active" to="/admin/login">
+									Giriş Yap
+								</NavLink>
+							</li>}
+
 						</ul>
 					</div>
 				</div>

@@ -1,72 +1,97 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { doc, getDoc } from "firebase/firestore";
-import { db } from "../../firebase/Firebase";
+import { ApplicationService } from "../../services/ApplicationService";
+import "./ApplicationDetailView.css";
 
 const ApplicationDetailView = () => {
   const { applicationId } = useParams();
   const [application, setApplication] = useState(null);
 
   useEffect(() => {
-    const fetchApplicationDetails = async () => {
-      try {
-        const docRef = doc(db, "applications", applicationId);
-        const docSnap = await getDoc(docRef);
-
-        if (docSnap.exists()) {
-          setApplication(docSnap.data());
-        } else {
-          console.log("Başvuru bulunamadı!");
-        }
-      } catch (error) {
-        console.error("Başvuru detayları alınırken hata oluştu:", error);
+    const fetchApplication = async () => {
+      const response = await ApplicationService.getApplicationById(applicationId)
+      console.log(response)
+      if (response.success) {
+        setApplication(response.data)
+      } else {
+        console.log(response.message)
       }
-    };
+    }
 
-    fetchApplicationDetails();
-  }, [applicationId]);
+    fetchApplication()
+  }, [applicationId])
 
   return (
     <div className="container mt-4">
-      <h2>Başvuru Detayları</h2>
-      {application ? (
-        <div>
-          <p>
-            <strong>Ad Soyad:</strong> {application.firstName}{" "}
-            {application.lastName}
-          </p>
-          <p>
-            <strong>Email:</strong> {application.email}
-          </p>
-          <p>
-            <strong>Ülke:</strong> {application.country}
-          </p>
-          <p>
-            <strong>Şehir:</strong> {application.city}
-          </p>
-          <p>
-            <strong>Üniversite:</strong> {application.university}
-          </p>
-          <p>
-            <strong>Bölüm:</strong> {application.department}
-          </p>
-          <p>
-            <strong>Mezuniyet Durumu:</strong>{" "}
-            {application.graduationStatus ? "Mezun" : "Henüz Mezun Değil"}
-          </p>
-          <p>
-            <strong>Mezuniyet Yılı:</strong>{" "}
-            {application.graduationYear || "Belirtilmemiş"}
-          </p>
-          <p>
-            <strong>GPA:</strong> {application.gpa}
-          </p>
-        </div>
-      ) : (
-        <p>Detaylar yükleniyor...</p>
-      )}
-    </div>
-  );
-};
+      <div className="application-detail">
+        <h2>Başvuru Detayları</h2>
+        {application ? (
+          <>
+            <div className="detail-section">
+              <div className="detail-item">
+                <div className="detail-label">Ad Soyad</div>
+                <div className="detail-value">{application.firstName} {application.lastName}</div>
+              </div>
 
-export default ApplicationDetailView;
+              <div className="detail-item">
+                <div className="detail-label">Email</div>
+                <div className="detail-value">{application.email}</div>
+              </div>
+
+              <div className="detail-item">
+                <div className="detail-label">Ülke</div>
+                <div className="detail-value">{application.country}</div>
+              </div>
+
+              <div className="detail-item">
+                <div className="detail-label">Şehir</div>
+                <div className="detail-value">{application.city}</div>
+              </div>
+
+              <div className="detail-item">
+                <div className="detail-label">Üniversite</div>
+                <div className="detail-value">{application.university}</div>
+              </div>
+
+              <div className="detail-item">
+                <div className="detail-label">Bölüm</div>
+                <div className="detail-value">{application.department}</div>
+              </div>
+
+              <div className="detail-item">
+                <div className="detail-label">Mezuniyet Durumu</div>
+                <div className="detail-value">
+                  <span className={`graduation-status ${application.graduationStatus ? 'graduated' : 'not-graduated'}`}>
+                    {application.graduationStatus ? "Mezun" : "Henüz Mezun Değil"}
+                  </span>
+                </div>
+              </div>
+
+              <div className="detail-item">
+                <div className="detail-label">Mezuniyet Yılı</div>
+                <div className="detail-value">{application.graduationYear || "Belirtilmemiş"}</div>
+              </div>
+
+              <div className="detail-item">
+                <div className="detail-label">GPA</div>
+                <div className="detail-value">{application.gpa}</div>
+              </div>
+            </div>
+            <div className="detail-item mx-auto rate-block">
+              <div className="detail-label">Değerlendirme</div>
+              <div className="detail-value">{application.rate == 0 ? application.rate : <strong>
+                <small>Değerlendirilmemiş</small>
+              </strong>}</div>
+            </div>
+          </>
+        ) : (
+          <div className="loading-container">
+            <p className="loading-text">Detaylar yükleniyor...</p>
+          </div>
+        )}
+      </div>
+    </div>
+  )
+}
+
+export default ApplicationDetailView
