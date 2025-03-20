@@ -1,18 +1,25 @@
 import { useField } from "formik";
 
-const CustomInput = ({ label, ...props }) => {
+const CustomSelect = ({ label, options, ...props }) => {
   const [field, meta] = useField(props);
 
   return (
     <div className="mb-3">
       <label className="form-label">{label}</label>
-      <input
+      <select
         {...field}
         {...props}
-        className={`form-control ${
+        className={`form-select ${
           meta.touched && meta.error ? "is-invalid" : ""
         }`}
-      />
+      >
+        <option value="">Seçiniz</option>
+        {options.map((option, index) => (
+          <option key={index} value={option}>
+            {option}
+          </option>
+        ))}
+      </select>
       {meta.touched && meta.error ? (
         <div className="invalid-feedback">{meta.error}</div>
       ) : null}
@@ -20,4 +27,4 @@ const CustomInput = ({ label, ...props }) => {
   );
 };
 
-export default CustomInput;
+export default CustomSelect;
