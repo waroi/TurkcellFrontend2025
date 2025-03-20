@@ -1,15 +1,21 @@
 import * as yup from "yup";
+import { oneOfMap } from "../util/selectMap";
 
 export const initialValues = {
   name: "",
   surname: "",
   email: "",
-  emailAgain: "",
+  "email-again": "",
   phone: "",
   id: "",
   university: "",
   major: "",
   grade: "",
+  "preference-first": "",
+  "preference-second": "",
+  "preference-third": "",
+  "terms-and-conditions": false,
+  kvkk: false,
 };
 
 export const universities = [
@@ -57,6 +63,15 @@ export const majors = [
   "Matematik",
 ];
 
+export const grades = [
+  "Hazırlık",
+  "1. Sınıf",
+  "2. Sınıf",
+  "3. Sınıf",
+  "4. Sınıf",
+  "Mezun",
+];
+
 export const preferences = [
   "Teknoloji & Bilgi Sistemleri",
   "İnsan Kaynakları",
@@ -69,16 +84,16 @@ export const validationSchema = yup.object().shape({
   name: yup
     .string()
     .required("Lütfen adınızı giriniz.")
-    .min(3, "Lütfen minumun 3 karakter giriniz."),
+    .min(3, "Lütfen minimum 3 karakter giriniz."),
   surname: yup
     .string()
     .required("Lütfen soyadınızı giriniz.")
-    .min(3, "Lütfen minumun 3 karakter giriniz."),
+    .min(3, "Lütfen minimum 3 karakter giriniz."),
   email: yup
     .string()
     .email("Lütfen geçerli bir e-posta adresi giriniz.")
     .required("Lütfen e-posta adresinizi giriniz."),
-  emailAgain: yup
+  "email-again": yup
     .string()
     .email("Lütfen geçerli bir e-posta adresi giriniz.")
     .required("Lütfen e-posta adresinizi giriniz.")
@@ -95,22 +110,30 @@ export const validationSchema = yup.object().shape({
     .length(11, "Kimlik numarası 11 haneli olmalıdır."),
   university: yup
     .string()
-    .oneOf(
-      universities.map((university) =>
-        university.toLowerCase().replaceAll(" ", "-")
-      ),
-      "Lütfen üniversitenizi seçiniz."
-    )
+    .oneOf(oneOfMap(universities), "Lütfen üniversitenizi seçiniz.")
     .required("Lütfen üniversitenizi seçiniz."),
   major: yup
     .string()
-    .oneOf(
-      majors.map((major) => major.toLowerCase().replaceAll(" ", "-")),
-      "Lütfen bölümünüzü seçiniz."
-    )
+    .oneOf(oneOfMap(majors), "Lütfen bölümünüzü seçiniz.")
     .required("Lütfen bölümünüzü seçiniz."),
-  major: yup
+  grade: yup
     .string()
-    .oneOf(["P", "1", "2", "3", "4", "G"], "Lütfen sınıfınızı seçiniz.")
+    .oneOf(oneOfMap(grades), "Lütfen sınıfınızı seçiniz.")
     .required("Lütfen sınıfınızı seçiniz."),
+  "preference-first": yup
+    .string()
+    .oneOf(oneOfMap(preferences), "Lütfen 1. tercihinizi seçiniz.")
+    .required("Lütfen 1. tercihinizi seçiniz."),
+  "preference-second": yup
+    .string()
+    .oneOf(oneOfMap(preferences), "Lütfen 2. tercihinizi seçiniz.")
+    .required("Lütfen 2. tercihinizi seçiniz."),
+  "preference-third": yup
+    .string()
+    .oneOf(oneOfMap(preferences), "Lütfen 3. tercihinizi seçiniz.")
+    .required("Lütfen 3. tercihinizi seçiniz."),
+  "terms-and-conditions": yup
+    .boolean()
+    .oneOf([true], "Aydınlatma metnini kabul ediniz."),
+  kvkk: yup.boolean().oneOf([true], "KVKK metnini kabul ediniz."),
 });
