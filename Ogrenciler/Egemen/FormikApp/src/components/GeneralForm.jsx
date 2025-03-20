@@ -3,6 +3,8 @@ import CustomInput from "./CustomInput";
 import CustomSelect from "./CustomSelect";
 import CustomCheckbox from "./CustomCheckbox";
 import Accordion from "./organisms/accordion/Accordion";
+import { auth, db } from "../../firebase/firebase";
+import { getUser } from "../../firebase/dbController";
 
 import Button from "./atoms/buttons/Button";
 import { basicSchema } from "../schemas";
@@ -11,6 +13,7 @@ const GeneralForm = () => {
   const onSubmit = async (values, actions) => {
     console.log("values " + Object.values(values.skills.languages));
     console.log("actions " + actions);
+    console.log("aaa", await getUser(auth.currentUser.uid));
     saveApplication(values);
     // await new Promise((resolve) => {
     //   setTimeout(resolve, 1000);

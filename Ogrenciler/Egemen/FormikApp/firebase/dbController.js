@@ -32,13 +32,13 @@ export async function getUserBlogs() {
   }));
   return blogs;
 }
-export async function getAllBLogs() {
-  const querySnapshot = await getDocs(collection(db, "blogs"));
-  const blogs = querySnapshot.docs.map((doc) => ({
+export async function getAllApplications() {
+  const querySnapshot = await getDocs(collection(db, "applications"));
+  const applications = querySnapshot.docs.map((doc) => ({
     id: doc.id,
     ...doc.data(),
   }));
-  return blogs;
+  return applications;
 }
 export async function saveApplication(application) {
   const { id, ...applicationData } = application;
@@ -50,8 +50,8 @@ export async function saveApplication(application) {
 export async function deleteFbBlog(id) {
   await deleteDoc(doc(db, "blogs", id));
 }
-export async function getBlog(id) {
-  const docRef = doc(db, "blogs", id);
+export async function getUser(id) {
+  const docRef = doc(db, "users", id);
   const docSnap = await getDoc(docRef);
   return docSnap.data();
 }
