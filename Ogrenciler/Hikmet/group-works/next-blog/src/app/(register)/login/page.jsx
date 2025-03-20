@@ -1,8 +1,8 @@
+"use client";
+import { login } from "@/store/firebaseStore";
 import Link from "next/link";
 
 export default function LoginPage() {
-	
-
 	return (
 		<main className="d-flex justify-content-center align-items-center p-3">
 			<section
@@ -38,13 +38,11 @@ export default function LoginPage() {
 					</div>
 
 					<div className="d-grid gap-2 mt-2">
-						<button  className="btn btn-primary btn-lg">
-							Giriş Yap.
+						<button formAction={login} className="btn btn-primary btn-lg">
+							Giriş Yap
 						</button>
-						<Link
-							href={"/signup"}
-							className="btn btn-outline-secondary btn-lg">
-							Hesabınız yoksa oluşturun.
+						<Link href={"/signup"} className="btn btn-outline-secondary btn-lg">
+							Hesabınız yoksa oluşturun
 						</Link>
 					</div>
 				</form>
