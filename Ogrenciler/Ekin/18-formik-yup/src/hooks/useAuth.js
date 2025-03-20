@@ -27,6 +27,7 @@ export default function () {
           email: form.email,
           name: form.name,
           surname: form.surname,
+          isAdmin: false,
         };
         setUser(data);
         localStorage.setItem("user", JSON.stringify(data));
@@ -40,6 +41,7 @@ export default function () {
       console.log("loginuser", user);
 
       getUser(user).then((user) => {
+        setUser(user);
         localStorage.setItem("user", JSON.stringify(user));
       });
 
@@ -47,9 +49,11 @@ export default function () {
     });
   }
 
-  function logout(form) {
-    logoutFb().then((user) => {
-      setUserFb(null);
+  function logout() {
+    console.log("click");
+
+    logoutFb().then(() => {
+      setUser(null);
       localStorage.removeItem("user");
       navigation("/");
     });

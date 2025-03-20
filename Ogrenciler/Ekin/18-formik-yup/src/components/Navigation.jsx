@@ -33,15 +33,18 @@ export default function Navigation() {
                     Application
                   </NavLink>
                 </li>
+                {user.isAdmin && (
+                  <li className="nav-item">
+                    <NavLink className="nav-link" to="/admin">
+                      Admin
+                    </NavLink>
+                  </li>
+                )}
+
                 <li className="nav-item">
-                  <NavLink className="nav-link" to="/admin">
-                    Admin
-                  </NavLink>
-                </li>
-                <li className="nav-item">
-                  <Button className="nav-link" onPress={logout}>
+                  <button className="nav-link" onClick={logout}>
                     Logout
-                  </Button>
+                  </button>
                 </li>
               </>
             ) : (
