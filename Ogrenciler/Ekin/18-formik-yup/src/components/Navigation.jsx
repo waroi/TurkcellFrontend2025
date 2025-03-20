@@ -1,6 +1,12 @@
 import { NavLink } from "react-router";
+import useUserStore from "../store/useUserStore";
+import useAuth from "../hooks/useAuth";
+import Button from "./Button";
 
 export default function Navigation() {
+  const { user } = useUserStore();
+  const { logout } = useAuth();
+
   return (
     <nav
       className="navbar navbar-expand-lg bg-primary py-3"
@@ -25,16 +31,28 @@ export default function Navigation() {
                 Home
               </NavLink>
             </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/application">
-                Application
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/admin">
-                Admin
-              </NavLink>
-            </li>
+            {user ? (
+              <>
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/application">
+                    Application
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/admin">
+                    Admin
+                  </NavLink>
+                </li>
+              </>
+            ) : (
+              <>
+                <li className="nav-item">
+                  <Button className="nav-link" onPress={logout}>
+                    Logout
+                  </Button>
+                </li>
+              </>
+            )}
           </ul>
         </div>
       </div>
