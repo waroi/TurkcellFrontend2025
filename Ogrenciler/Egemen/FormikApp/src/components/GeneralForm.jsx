@@ -5,7 +5,19 @@ import CustomCheckbox from "./CustomCheckbox";
 import Accordion from "./organisms/accordion/Accordion";
 
 import Button from "./atoms/buttons/Button";
+import { basicSchema } from "../schemas";
+import { saveApplication } from "../../firebase/dbController";
 const GeneralForm = () => {
+  const onSubmit = async (values, actions) => {
+    console.log("values " + Object.values(values.skills.languages));
+    console.log("actions " + actions);
+    saveApplication(values);
+    // await new Promise((resolve) => {
+    //   setTimeout(resolve, 1000);
+    // });
+    actions.resetForm();
+  };
+
   const sections = [
     {
       title: "Personal Information",
@@ -243,13 +255,19 @@ const GeneralForm = () => {
             expectedSalary: "",
             isAccepted: false,
           }}
+          onSubmit={onSubmit}
+          validationSchema={basicSchema}
         >
           {({ isSubmitting }) => (
             <div className=" d-flex bg-white justify-content-center align-items-center">
               <Form className="w-100">
                 <Accordion sections={sections}></Accordion>
                 <div className="d-flex justify-content-center">
-                  <Button className="btn btn-primary mt-4" type="submit">
+                  <Button
+                    className="btn btn-primary mt-4"
+                    type="submit"
+                    disabled={isSubmitting}
+                  >
                     Submit
                   </Button>
                 </div>
