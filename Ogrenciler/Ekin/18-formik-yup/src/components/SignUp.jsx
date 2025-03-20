@@ -11,7 +11,7 @@ export default function SignUp() {
 
   async function onSubmit(values, actions) {
     register(values);
-    actions.resetForm();
+    //actions.resetForm();
   }
 
   return (

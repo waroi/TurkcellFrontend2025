@@ -1,6 +1,12 @@
 import { NavLink } from "react-router";
+import useUserStore from "../store/useUserStore";
+import useAuth from "../hooks/useAuth";
+import Button from "./Button";
 
 export default function Navigation() {
+  const { user } = useUserStore();
+  const { logout } = useAuth();
+
   return (
     <nav
       className="navbar navbar-expand-lg bg-primary py-3"
@@ -20,21 +26,36 @@ export default function Navigation() {
         </button>
         <div className="collapse navbar-collapse" id="navbar">
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/">
-                Home
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/application">
-                Application
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/admin">
-                Admin
-              </NavLink>
-            </li>
+            {user ? (
+              <>
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/application">
+                    Application
+                  </NavLink>
+                </li>
+                {user.isAdmin && (
+                  <li className="nav-item">
+                    <NavLink className="nav-link" to="/admin">
+                      Admin
+                    </NavLink>
+                  </li>
+                )}
+
+                <li className="nav-item">
+                  <button className="nav-link" onClick={logout}>
+                    Logout
+                  </button>
+                </li>
+              </>
+            ) : (
+              <>
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/">
+                    Home
+                  </NavLink>
+                </li>
+              </>
+            )}
           </ul>
         </div>
       </div>
