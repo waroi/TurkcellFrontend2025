@@ -24,6 +24,7 @@ function SignInModal({ show, handleClose }) {
             <Form.Label>Şifre</Form.Label>
             <Form.Control type="password" placeholder="Şifreniz" />
           </Form.Group>
+          <Button variant="link">Kayıt Ol</Button>
         </Form>
       </Modal.Body>
       <Modal.Footer>

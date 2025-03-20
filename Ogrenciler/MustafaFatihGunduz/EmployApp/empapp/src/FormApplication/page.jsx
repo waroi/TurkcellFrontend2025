@@ -11,7 +11,7 @@ import SignInModal from "../components/SignInModal/SignInModal";
 import { useState } from "react";
 
 const Application = () => {
-  const [show, setShow] = useState();
+  const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
