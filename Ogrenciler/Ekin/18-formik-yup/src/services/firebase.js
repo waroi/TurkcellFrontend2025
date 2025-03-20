@@ -34,19 +34,23 @@ const database = getFirestore(app);
 
 export function register(email, password, name, surname) {
   return createUserWithEmailAndPassword(auth, email, password).then(
-    (response) => setUser(response.user.uid, name, surname)
+    (response) => setUser(response.user.uid, email, name, surname)
   );
 }
 
-export function setUser(id, name, surname) {
+export function setUser(id, email, name, surname) {
   return setDoc(doc(database, "users", id), {
     id,
+    email,
     name,
     surname,
+    isAdmin: false,
   }).then(() => id);
 }
 
 export function login(email, password) {
+  console.log("firebase", email, password);
+
   return signInWithEmailAndPassword(auth, email, password).then(
     (credendials) => credendials.user.uid
   );
@@ -56,6 +60,11 @@ export function logout() {
   return auth.signOut();
 }
 
+export function getUser(user) {
+  return getDoc(doc(database, "users", user)).then((snapshot) =>
+    snapshot.data()
+  );
+}
 //* Form ====================================================================================================
 
 export function submitForm(form) {

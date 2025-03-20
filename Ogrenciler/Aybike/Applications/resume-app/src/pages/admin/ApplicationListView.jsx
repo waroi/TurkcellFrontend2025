@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { collection, getDocs } from "firebase/firestore";
-import { db } from "../../firebase/Firebase";
 import { Link } from "react-router";
+import { ApplicationService } from "../../services/ApplicationService";
+import './ApplicationListView.css'
 
 const ApplicationListView = () => {
   const [applications, setApplications] = useState([]);
@@ -9,11 +9,7 @@ const ApplicationListView = () => {
   useEffect(() => {
     const fetchApplications = async () => {
       try {
-        const querySnapshot = await getDocs(collection(db, "applications"));
-        const applicationsData = querySnapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        }));
+        const applicationsData = await ApplicationService.getApplications()
         setApplications(applicationsData);
       } catch (error) {
         console.error("Başvuruları alırken hata oluştu:", error);
@@ -33,6 +29,7 @@ const ApplicationListView = () => {
             <th>Email</th>
             <th>Bölüm</th>
             <th>Üniversite</th>
+            <th>Değerlendirme</th>
             <th>Detaylar</th>
           </tr>
         </thead>
@@ -45,6 +42,7 @@ const ApplicationListView = () => {
               <td>{application.email}</td>
               <td>{application.department}</td>
               <td>{application.university}</td>
+              <td>{application.rate == 0 ? application.rate : <small>Değerlendirilmemiş</small>}</td>
               <td>
                 <Link
                   to={`/admin/applications/${application.id}`}

@@ -5,6 +5,7 @@ import ApplicationView from "./views/ApplicationView";
 import Footer from "./components/Footer";
 
 import "./App.scss";
+import AdminView from "./views/AdminView";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         {useRoutes([
           { path: "/", element: <HomeView /> },
           { path: "/application", element: <ApplicationView /> },
+          { path: "/admin", element: <AdminView /> },
         ])}
       </main>
       <Footer />

@@ -1,15 +1,17 @@
 import { Form, Formik } from "formik";
 import { initialValues, validationSchema } from "../schemas/sign-up";
-
-// import { submitForm } from "../services/firebase";
+import useAuth from "../hooks/useAuth";
+import { submitForm } from "../services/firebase";
 
 import Input from "../components/Input";
 import Button from "../components/Button";
 
 export default function SignUp() {
+  const { register } = useAuth();
+
   async function onSubmit(values, actions) {
-    // await submitForm(values);
-    // actions.resetForm();
+    register(values);
+    //actions.resetForm();
   }
 
   return (

@@ -1,11 +1,14 @@
 import { ErrorMessage, Field } from "formik";
 
-function FormInput({ field }) {
+function FormInput({ field, type, label }) {
   return (
-    <div key={field}>
-      <label htmlFor={field}>{field}</label>
-      <Field className="form-control"  name={field} placeholder={`Enter ${field}`} />
-      <ErrorMessage name={field} component="div" className="error" />
+    <div key={field} className="w-75">
+      <label htmlFor={field} className="text-start d-block fs-5 text-white mb-2 fs-6">{`${label}:`}</label>
+      <Field className="form-control outline-0" name={field} placeholder={`${label} Giriniz...`} type={type} />
+      <div className="error-text">
+        <ErrorMessage name={field} component="div" className="error" />
+      </div>
+
     </div>
   );
 }

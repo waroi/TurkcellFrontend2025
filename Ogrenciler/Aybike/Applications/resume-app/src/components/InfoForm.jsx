@@ -3,20 +3,8 @@ import { formSchema } from "../schemas/formSchema";
 import CustomInput from "./CustomInput";
 import CustomSelect from "./CustomSelect";
 import CustomCheckbox from "./CustomCheckbox";
-import { collection, addDoc } from "firebase/firestore";
-import { db } from "../firebase/Firebase";
-
-const onSubmit = async (values, actions) => {
-  try {
-    await addDoc(collection(db, "applications"), values);
-    console.log("Başvuru başarılı:", values);
-    actions.resetForm();
-    alert("Başvurunuz başarıyla kaydedildi!");
-  } catch (error) {
-    console.error("Başvuru hatası:", error);
-    alert("Başvuru sırasında bir hata oluştu!");
-  }
-};
+import { useNavigate } from "react-router";
+import { ApplicationService } from "../services/ApplicationService";
 
 const countries = ["Türkiye", "ABD", "Almanya", "Fransa"];
 const cities = ["İstanbul", "Ankara", "İzmir", "Bursa"];
@@ -29,6 +17,22 @@ const departments = [
 ];
 
 const InfoForm = () => {
+  const navigate = useNavigate()
+
+  const onSubmit = async (values, actions) => {
+    try {
+      const addApplicationResponse = await ApplicationService.addApplication(values)
+      if (addApplicationResponse.success) {
+        navigate('/gift')
+        alert(addApplicationResponse.message);
+        actions.resetForm();
+      }
+    } catch (error) {
+      console.error("Başvuru hatası:", error);
+      alert("Başvuru sırasında bir hata oluştu!");
+    }
+  };
+
   return (
     <div className="container mt-4">
       <h2>Başvuru Formu</h2>
