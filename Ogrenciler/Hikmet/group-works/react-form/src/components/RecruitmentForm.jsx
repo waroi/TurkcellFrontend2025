@@ -1,17 +1,26 @@
 import { useFormik } from "formik";
-import { Link } from "react-router";
 import { recruitmentSchema } from "../lib/schema";
-
+import { db } from "../firebase/config";
+import { collection, addDoc } from "firebase/firestore";
 const onSubmit = async (values, actions) => {
 	console.log(values);
 	console.log(actions);
-
+	await addDataToFirestore(values);
 	await new Promise((resolve) => {
 		setTimeout(resolve, 2000);
 	});
 
 	actions.resetForm();
 };
+const addDataToFirestore = async (formData) => {
+	try {
+		await addDoc(collection(db, "incelenecek"), formData);
+		console.log("Veri Firestore'a başarıyla eklendi!");
+	} catch (error) {
+		console.error("Veri eklenirken hata oluştu:", error);
+	}
+};
+
 
 export default function RecruitmentForm() {
 	const { values, errors, isSubmitting, handleChange, handleSubmit } =
@@ -149,7 +158,7 @@ export default function RecruitmentForm() {
 				Submit
 			</button>
 
-			<Link to="/login">Giriş Sayfasına Yönlendir</Link>
+			
 		</form>
 	);
 }
