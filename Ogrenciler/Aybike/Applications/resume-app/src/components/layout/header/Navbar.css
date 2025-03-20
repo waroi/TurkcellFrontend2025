@@ -1,0 +1,137 @@
+.navbar {
+    background: linear-gradient(to right, #99a6b3, #17212a);
+    padding: 0.8rem 1.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 10px 10px;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.logo {
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: rotate(10deg);
+}
+
+.navbar-nav .nav-link {
+    color: #333;
+    font-weight: 500;
+    margin: 0 5px;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    transform: translateY(-2px);
+}
+
+.navbar-nav .nav-link.active {
+    color: #007bff;
+    font-weight: 600;
+}
+
+.navbar-collapse {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-link[href="/application"],
+.nav-link[to="/application"] {
+    background: linear-gradient(45deg, #ff7675, #fd79a8, #6c5ce7, #0984e3);
+    background-size: 300% 300%;
+    color: white !important;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    animation: gradientShift 3s infinite, pulse 2s infinite;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-link[href="/application"]:hover,
+.nav-link[to="/application"]:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.nav-link[href="/admin/login"],
+.nav-link[to="/admin/login"],
+.nav-link[href="/admin/applications"],
+.nav-link[to="/admin/applications"],
+.nav-link[onClick] {
+    background-color: #007bff;
+    color: white !important;
+    padding: 8px 16px;
+    border-radius: 20px;
+    margin-left: 10px;
+    transition: all 0.3s ease;
+}
+
+.nav-link[href="/admin/login"]:hover,
+.nav-link[to="/admin/login"]:hover {
+    background-color: #0069d9;
+    transform: translateY(-2px);
+}
+
+.nav-link[onClick] {
+    background-color: #dc3545;
+}
+
+.nav-link[onClick]:hover {
+    background-color: #c82333;
+    transform: translateY(-2px);
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .navbar-collapse {
+        display: block;
+    }
+
+    .nav-link[href="/application"],
+    .nav-link[to="/application"] {
+        margin-bottom: 10px;
+    }
+
+    .nav-link[href="/admin/login"],
+    .nav-link[to="/admin/login"],
+    .nav-link[onClick] {
+        margin-left: 0;
+        margin-top: 5px;
+    }
+}

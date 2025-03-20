@@ -1,21 +1,20 @@
 import { createContext, useState, useEffect, useContext } from "react";
+import AuthService from "../services/AuthService";
 
 const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
-  const [user, setUser] = useState(localStorage.getItem("user") || "User");
-  
-  useEffect(() => {
-    localStorage.setItem("user", user);
-  }, [user]);
+  const [user, setUser] = useState(null);
 
-  const values = {
-    user,
-    setUser,
-  };
+  useEffect(() => {
+    const unSubs = AuthService.onAuthStateChange(setUser)
+    return () => unSubs()
+  }, []);
 
   return (
-    <UserContext.Provider value={values}>{children}</UserContext.Provider>
+    <UserContext.Provider value={{ user, setUser }}>
+      {children}
+    </UserContext.Provider>
   );
 };
 
