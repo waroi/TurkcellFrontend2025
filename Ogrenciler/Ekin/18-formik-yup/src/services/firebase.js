@@ -33,6 +33,8 @@ const database = getFirestore(app);
 //* User ====================================================================================================
 
 export function register(email, password, name, surname) {
+  console.log("email", email);
+
   return createUserWithEmailAndPassword(auth, email, password).then(
     (response) => setUser(response.user.uid, name, surname)
   );
