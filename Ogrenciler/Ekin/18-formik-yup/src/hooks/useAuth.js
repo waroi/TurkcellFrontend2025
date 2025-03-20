@@ -22,8 +22,14 @@ export default function () {
     console.log("user", form);
     registerFb(form.email, form.password, form.name, form.surname).then(
       (id) => {
-        setUserFb(id, form.email, form.name, form.surname);
-        //localStorage.setItem("user", JSON.stringify(data));
+        const data = {
+          id,
+          email: form.email,
+          name: form.name,
+          surname: form.surname,
+        };
+        setUser(data);
+        localStorage.setItem("user", JSON.stringify(data));
         navigation("/application");
       }
     );

@@ -34,22 +34,11 @@ const database = getFirestore(app);
 
 export function register(email, password, name, surname) {
   return createUserWithEmailAndPassword(auth, email, password).then(
-    (response) => setUser(response.user.uid, name, surname)
+    (response) => setUser(response.user.uid, email, name, surname)
   );
 }
 
 export function setUser(id, email, name, surname) {
-  console.log(
-    "firebase setuser id",
-    id,
-    "email",
-    email,
-    "name",
-    name,
-    "surname",
-    surname
-  );
-
   return setDoc(doc(database, "users", id), {
     id,
     email,

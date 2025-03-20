@@ -14,20 +14,45 @@ import Input from "../components/Input";
 import Select from "../components/Select";
 import Checkbox from "../components/Checkbox";
 import Button from "../components/Button";
+import useUserStore from "../store/useUserStore";
 
 export default function ApplicationView() {
+  const { user } = useUserStore();
   async function onSubmit(values, actions) {
     await submitForm(values);
     actions.resetForm();
   }
 
+  console.log(
+    user
+      ? {
+          ...initialValues,
+          name: user.name,
+          surname: user.surname,
+          email: user.email,
+          "email-again": user.email,
+        }
+      : initialValues
+  );
+
   return (
     <div className="container">
       <h1 className="mb-5 fw-normal">Turkcell Atmosware Başvuru Formu</h1>
       <Formik
-        initialValues={initialValues}
+        initialValues={
+          user
+            ? {
+                ...initialValues,
+                name: user.name,
+                surname: user.surname,
+                email: user.email,
+                "email-again": user.email,
+              }
+            : initialValues
+        }
         onSubmit={onSubmit}
         validationSchema={validationSchema}
+        enableReinitialize
       >
         {({ isSubmitting }) => (
           <Form>
