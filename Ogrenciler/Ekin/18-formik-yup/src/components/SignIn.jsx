@@ -1,5 +1,5 @@
 import { Form, Formik } from "formik";
-import { initialValues, validationSchema } from "../schemas/sign-up";
+import { initialValues, validationSchema } from "../schemas/sign-in";
 import useAuth from "../hooks/useAuth";
 // import { submitForm } from "../services/firebase";
 
