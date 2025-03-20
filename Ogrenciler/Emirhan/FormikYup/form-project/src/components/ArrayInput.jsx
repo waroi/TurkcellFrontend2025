@@ -1,39 +1,55 @@
-import { Field, FieldArray } from "formik";
+import { useState } from "react";
+import { FieldArray } from "formik";
 
-function ArrayInput({ field, values, errors, touched, setFieldValue }) {
+function ArrayInput({ field, values, errors, touched, setFieldValue, label }) {
+  const [inputValue, setInputValue] = useState("");
+
   return (
     <FieldArray key={field} name={field}>
       {({ push, remove }) => (
-        <div>
-          <label htmlFor={field}>{field}</label>
-          <Field className="form-control" name={`${field}Input`} placeholder={`Enter ${field}`} />
-          <button
-            type="button"
-            onClick={() => {
-              if (values[`${field}Input`]?.trim()) {
-                push(values[`${field}Input`]);
-                setFieldValue(`${field}Input`, "");
-              }
-            }}
-          >
-            Add
-          </button>
+        <div className="mb-1">
+          <label htmlFor={field} className="text-start d-block fs-5">
+            {`${label}:`}
+          </label>
+          <div className="d-flex gap-2">
+            <input
+              className="form-control"
+              value={inputValue}
+              onChange={(e) => setInputValue(e.target.value)}
+              placeholder={`${label} Giriniz...`}
+            />
+            <button
+              type="button"
+              className="btn btn-primary"
+              onClick={() => {
+                if (inputValue.trim()) {
+                  push(inputValue);
+                  setInputValue("");
+                }
+              }}
+            >
+              <i className="fa-solid fa-plus"></i>
+            </button>
+          </div>
 
-          {errors[field] && touched[field] && (
-            <div className="error">{errors[field]}</div>
-          )}
+          <div className="error-text">
+            {errors[field] && touched[field] && (
+              <div className="error text-danger">{errors[field]}</div>
+            )}
+          </div>
 
-          {values[field].length > 0 && (
+
+          {values[field]?.length > 0 && (
             <ul>
               {values[field].map((item, index) => (
-                <li className="d-inline-flex gap-2 btn btn-primary" key={index}>
+                <li className="d-inline-flex gap-2" key={index}>
                   {item}
-
-                  <button className="btn btn-primary" type="button" onClick={() => remove(index)} >
-
-
+                  <button
+                    className="btn btn-primary"
+                    type="button"
+                    onClick={() => remove(index)}
+                  >
                     <i className="fa-solid fa-circle-xmark"></i>
-
                   </button>
                 </li>
               ))}

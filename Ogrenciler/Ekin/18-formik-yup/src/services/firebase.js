@@ -38,15 +38,30 @@ export function register(email, password, name, surname) {
   );
 }
 
-export function setUser(id, name, surname) {
+export function setUser(id, email, name, surname) {
+  console.log(
+    "firebase setuser id",
+    id,
+    "email",
+    email,
+    "name",
+    name,
+    "surname",
+    surname
+  );
+
   return setDoc(doc(database, "users", id), {
     id,
+    email,
     name,
     surname,
+    isAdmin: false,
   }).then(() => id);
 }
 
 export function login(email, password) {
+  console.log("firebase", email, password);
+
   return signInWithEmailAndPassword(auth, email, password).then(
     (credendials) => credendials.user.uid
   );
@@ -56,6 +71,11 @@ export function logout() {
   return auth.signOut();
 }
 
+export function getUser(user) {
+  return getDoc(doc(database, "users", user)).then((snapshot) =>
+    snapshot.data()
+  );
+}
 //* Form ====================================================================================================
 
 export function submitForm(form) {

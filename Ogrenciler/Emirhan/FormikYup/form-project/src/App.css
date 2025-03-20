@@ -1,77 +1,10 @@
-#root {
-  margin: 0 auto;
-  text-align: center;
+body {
+  font-family: "Montserrat", sans-serif;
 }
-/* src/components/Footer.css */
-
-.footer {
-  background-color: #232323;
-  color: white;
-  padding: 50px 0;
-  position: relative;
+.error-text {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  /* background: #f8d7da; */
 }
-
-.footer .footer-title {
-  font-size: 2rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.footer .footer-description {
-  font-size: 1rem;
-  margin-top: 10px;
-}
-
-.footer .footer-section-title {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 20px;
-}
-
-.footer .footer-links {
-  padding-left: 0;
-}
-
-.footer .footer-links a {
-  color: #bbb;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.footer .footer-links a:hover {
-  color: #f39c12;
-}
-
-.footer .social-icons {
-  margin-top: 20px;
-}
-
-.footer .social-icon {
-  color: #bbb;
-  font-size: 25px;
-  margin: 0 10px;
-  transition: color 0.3s;
-}
-
-.footer .social-icon:hover {
-  color: #f39c12;
-}
-
-.footer .row {
-  margin-bottom: 20px;
-}
-
-.footer p {
-  font-size: 0.9rem;
-  color: #bbb;
-}
-
-.footer .social-icon i {
-  transition: transform 0.3s ease;
-}
-
-.footer .social-icon:hover i {
-  transform: scale(1.2);
-}
-
