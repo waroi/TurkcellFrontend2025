@@ -65,11 +65,28 @@ export function getUser(user) {
     snapshot.data()
   );
 }
-//* Form ====================================================================================================
+//* Application ====================================================================================================
 
 export function submitForm(form) {
   delete form["email-again"];
   delete form["terms-and-conditions"];
   delete form["kvkk"];
   return addDoc(collection(database, "application-forms"), form);
+}
+
+export function getForms() {
+  return getDocs(collection(database, "application-forms")).then(
+    (snapshot) =>
+      snapshot.docs.map((application) => ({
+        ...application.data(),
+        id: application.id,
+      }))
+    //   .sort((current, next) => next.date - current.date)
+  );
+}
+
+export function setApplication(id, status) {
+  return updateDoc(doc(database, "application-forms", id), {
+    status,
+  }).then(() => id);
 }

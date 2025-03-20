@@ -23,18 +23,6 @@ export default function ApplicationView() {
     actions.resetForm();
   }
 
-  console.log(
-    user
-      ? {
-          ...initialValues,
-          name: user.name,
-          surname: user.surname,
-          email: user.email,
-          "email-again": user.email,
-        }
-      : initialValues
-  );
-
   return (
     <div className="container">
       <h1 className="mb-5 fw-normal">Turkcell Atmosware Başvuru Formu</h1>

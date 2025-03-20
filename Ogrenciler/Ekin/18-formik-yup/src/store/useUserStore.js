@@ -8,8 +8,16 @@ const useUserStore = create((set) => ({
     set({ user });
   },
 
-  setApplications: (application) => {
-    set({ application });
+  setApplications: (applications) => {
+    set({ applications });
+  },
+
+  setApplicationStatus: (id, status) => {
+    set((state) => ({
+      applications: state.applications.map((application) =>
+        id == application.id ? { ...application, status } : application
+      ),
+    }));
   },
 }));
 
