@@ -13,11 +13,10 @@ export const basicSchema = yup.object().shape({
     .matches(/^\+?\d{10,15}$/, "Lütfen geçerli bir telefon numarası giriniz")
     .required("Telefon numarası girmek zorunludur"),
   address: yup.string().required("Adres girmek zorunludur"),
-  education: yup
-    .array()
-    .of(yup.string().required("Eğitim bilgisi boş olamaz"))
-    .min(1, "En az bir eğitim bilgisi girmelisiniz")
-    .required("Eğitim bilgisi girmek zorunludur"),
+  school: yup.string().required("Okul girmek zorunludur"),
+  department: yup.string().required("Bölüm girmek zorunludur"),
+  position: yup.string().required("Pozisyon seçmek zorunludur"),
+  grade: yup.string().required("Sınıf girmek zorunludur"),
   foreignlanguage: yup
     .array()
     .of(yup.string().required("Yabancı dil bilgisi boş olamaz"))
