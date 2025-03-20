@@ -1,18 +1,19 @@
-const CheckBox = ({ id, label, value, onChange, name }) => {
+const CheckBox = ({ id, label, checked, onChange, name }) => {
   return (
-    <div>
-      <label htmlFor={id} className="form-label">
-        {label}
-      </label>
+    <div className="form-check">
       <input
         type="checkbox"
-        className="form-control"
+        className="form-check-input"
         id={id}
         name={name}
-        value={value || ""}
+        checked={checked}
         onChange={onChange}
       />
+      <label htmlFor={id} className="form-check-label">
+        {label}
+      </label>
     </div>
   );
 };
+
 export default CheckBox;
