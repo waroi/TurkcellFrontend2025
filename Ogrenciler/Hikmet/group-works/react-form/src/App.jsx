@@ -1,14 +1,14 @@
 import "./App.css";
-import LoginForm from "./components/LoginForm";
-import RecruitmentForm from "./components/RecruitmentForm";
-import { Routes, Route } from "react-router";
+import AppRouter from "./routes/Router";
+import Navbar from "../src/components/Navbar";
+
 
 function App() {
 	return (
-		<Routes>
-			<Route path="/" element={<RecruitmentForm />} />
-			<Route path="/login" element={<LoginForm />} />
-		</Routes>
+		<>
+		<Navbar/>
+		<AppRouter/>
+		</>
 	);
 }
 
