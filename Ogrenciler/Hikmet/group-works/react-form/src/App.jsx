@@ -1,6 +1,7 @@
 import "./App.css";
 import LoginForm from "./components/LoginForm";
 import RecruitmentForm from "./components/RecruitmentForm";
+import { Routes, Route } from "react-router";
 
 function App() {
 	return (

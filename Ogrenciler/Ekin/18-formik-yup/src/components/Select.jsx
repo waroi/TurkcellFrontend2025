@@ -7,14 +7,16 @@ export default function Select({ label, children, ...props }) {
     <>
       <p
         className={`text-danger small fw-bold mb-0 ${
-          meta.error ? "active" : ""
+          meta.touched && meta.error ? "active" : ""
         }`}
       >
-        {meta.error ?? ""}
+        {meta.touched && meta.error ? meta.error : ""}
       </p>
       <select
         className={`form-select py-3 border border-2 mb-3 ${
-          meta.error ? "border-danger-subtle" : "border-success-subtle"
+          meta.touched && meta.error
+            ? "border-danger-subtle"
+            : "border-success-subtle"
         }`}
         {...field}
         {...props}

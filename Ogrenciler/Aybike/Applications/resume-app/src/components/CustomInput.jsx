@@ -1,22 +1,23 @@
 import { useField } from "formik";
 
-// eslint-disable-next-line react/prop-types
-function CustomInput({ label, ...props }) {
-    const [field, meta] = useField(props);
-    console.log(field)
-    console.log(meta)
-    return (
-        <>
-            <label>{label}</label>
-            <input
-                {...field}
-                {...props}
-                className={meta.error ? "input-error" : ""}
-            />
+const CustomInput = ({ label, ...props }) => {
+  const [field, meta] = useField(props);
 
-            {meta.error && <div className="error">{meta.error}</div>}
-        </>
-    );
-}
+  return (
+    <div className="mb-3">
+      <label className="form-label">{label}</label>
+      <input
+        {...field}
+        {...props}
+        className={`form-control ${
+          meta.touched && meta.error ? "is-invalid" : ""
+        }`}
+      />
+      {meta.touched && meta.error ? (
+        <div className="invalid-feedback">{meta.error}</div>
+      ) : null}
+    </div>
+  );
+};
 
 export default CustomInput;
