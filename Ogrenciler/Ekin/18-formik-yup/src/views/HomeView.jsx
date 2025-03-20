@@ -1,3 +1,6 @@
+import SignIn from "../components/SignIn";
+import SignUp from "../components/SignUp";
+
 export default function HomeView() {
   return (
     <>
@@ -7,7 +10,7 @@ export default function HomeView() {
             <button
               className="nav-link active"
               data-bs-toggle="tab"
-              data-bs-target="#login"
+              data-bs-target="#sign-in"
               type="button"
               role="tab"
             >
@@ -18,7 +21,7 @@ export default function HomeView() {
             <button
               className="nav-link"
               data-bs-toggle="tab"
-              data-bs-target="#register"
+              data-bs-target="#sign-up"
               type="button"
               role="tab"
             >
@@ -26,12 +29,16 @@ export default function HomeView() {
             </button>
           </li>
         </ul>
-        <div className="tab-content">
-          <div className="tab-pane fade show active" id="login" role="tabpanel">
-            aa
+        <div className="tab-content pt-4">
+          <div
+            className="tab-pane fade show active"
+            id="sign-in"
+            role="tabpanel"
+          >
+            <SignIn />
           </div>
-          <div className="tab-pane fade" id="register" role="tabpanel">
-            bb
+          <div className="tab-pane fade" id="sign-up" role="tabpanel">
+            <SignUp />
           </div>
         </div>
       </div>

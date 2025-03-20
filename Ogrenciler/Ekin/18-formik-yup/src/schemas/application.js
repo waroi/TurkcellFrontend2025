@@ -1,5 +1,5 @@
 import * as yup from "yup";
-import { oneOfMap } from "./util/selectMap";
+import { oneOfMap } from "../util/selectMap";
 
 export const initialValues = {
   name: "",
@@ -84,11 +84,11 @@ export const validationSchema = yup.object().shape({
   name: yup
     .string()
     .required("Lütfen adınızı giriniz.")
-    .min(3, "Lütfen minumun 3 karakter giriniz."),
+    .min(3, "Lütfen minimum 3 karakter giriniz."),
   surname: yup
     .string()
     .required("Lütfen soyadınızı giriniz.")
-    .min(3, "Lütfen minumun 3 karakter giriniz."),
+    .min(3, "Lütfen minimum 3 karakter giriniz."),
   email: yup
     .string()
     .email("Lütfen geçerli bir e-posta adresi giriniz.")

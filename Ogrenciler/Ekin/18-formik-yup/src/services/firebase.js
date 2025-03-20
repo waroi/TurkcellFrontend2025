@@ -30,6 +30,34 @@ const app = initializeApp({
 const auth = getAuth(app);
 const database = getFirestore(app);
 
+//* User ====================================================================================================
+
+export function register(email, password, name, surname) {
+  return createUserWithEmailAndPassword(auth, email, password).then(
+    (response) => setUser(response.user.uid, name, surname)
+  );
+}
+
+export function setUser(id, name, surname) {
+  return setDoc(doc(database, "users", id), {
+    id,
+    name,
+    surname,
+  }).then(() => id);
+}
+
+export function login(email, password) {
+  return signInWithEmailAndPassword(auth, email, password).then(
+    (credendials) => credendials.user.uid
+  );
+}
+
+export function logout() {
+  return auth.signOut();
+}
+
+//* Form ====================================================================================================
+
 export function submitForm(form) {
   delete form["email-again"];
   delete form["terms-and-conditions"];

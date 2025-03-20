@@ -6,7 +6,7 @@ import {
   majors,
   grades,
   preferences,
-} from "../schema";
+} from "../schemas/application";
 import selectMap from "../util/selectMap";
 import { submitForm } from "../services/firebase";
 
