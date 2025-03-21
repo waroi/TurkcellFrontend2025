@@ -15,17 +15,13 @@ const GeneralForm = () => {
       console.log("Form values:", values);
 
       // Check if user is authenticated
-      if (!auth.currentUser) {
-        console.error("User not authenticated");
-        return;
-      }
 
-      const userData = await getUser(auth.currentUser.uid);
-      console.log("User Data", userData);
+      //const userData = await getUser(auth.currentUser.uid);
+      // console.log("User Data", userData);
 
       await saveApplication(values);
       console.log("Application saved successfully");
-      actions.resetForm();
+      // actions.resetForm();
     } catch (error) {
       console.error("Error submitting form:", error);
       // You might want to show this error to the user
@@ -166,14 +162,17 @@ const GeneralForm = () => {
               <CustomCheckbox
                 label="JavaScript"
                 name="skills.programmingLanguages.javascript"
+                value="javascript"
               />
               <CustomCheckbox
                 label="Python"
                 name="skills.programmingLanguages.python"
+                value="python"
               />
               <CustomCheckbox
                 label="Java"
                 name="skills.programmingLanguages.java"
+                value="java"
               />
             </div>
           </div>
@@ -222,14 +221,14 @@ const GeneralForm = () => {
             experience: { years: "", currentCompany: "", position: "" },
             skills: {
               languages: {
-                turkish: false,
-                english: false,
-                german: false,
+                turkish: "turkish",
+                english: "english",
+                german: "german",
               },
               programmingLanguages: {
-                javascript: false,
-                python: false,
-                java: false,
+                javascript: "javascript",
+                python: "python",
+                java: "java",
               },
             },
             expectedSalary: "",

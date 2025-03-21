@@ -91,18 +91,24 @@ const Applications = () => {
                         "Mevcut deneyim yılı bilgisi yok."}
                     </p>
                     <p>
-                      <strong>Databases:</strong>{" "}
-                      {application.skills.databases
-                        ? Object.values(application.skills.databases).join(", ")
-                        : "Database becerisi yok."}
+                      <strong>Programming Languages:</strong>{" "}
+                      {application.skills.programmingLanguages
+                        ? Object.entries(
+                            application.skills.programmingLanguages
+                          )
+                            .filter(([_, value]) => value)
+                            .map(([key]) => key)
+                            .join(", ")
+                        : "Programlama dili becerisi yok."}
                     </p>
                     <p>
-                      <strong>Frameworks:</strong>{" "}
-                      {application.skills.frameworks
-                        ? Object.values(application.skills.frameworks).join(
-                            ", "
-                          )
-                        : "Frameworks becerisi yok."}
+                      <strong>Languages:</strong>{" "}
+                      {application.skills.languages
+                        ? Object.entries(application.skills.languages)
+                            .filter(([_, value]) => value)
+                            .map(([key]) => key)
+                            .join(", ")
+                        : "Dil becerisi yok."}
                     </p>
                   </div>
                 </div>
