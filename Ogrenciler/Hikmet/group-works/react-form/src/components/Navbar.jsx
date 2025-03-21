@@ -55,10 +55,11 @@ const Navbar = () => {
 								About Us
 							</Link>
 						</li>
-						{user && (
-							<li className="nav-item">
-								<Link className="nav-link" to="/applied-jobs">
-									My Applications
+						{user && user.email === "admin@admin.com" && (
+							<li>
+								<Link className="dropdown-item" to="/admin">
+									<i className="bi bi-gear me-2"></i>
+									Admin Panel
 								</Link>
 							</li>
 						)}
