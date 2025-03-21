@@ -7,7 +7,7 @@ const cars = {
     "brand": "Tesla",
     "rentValue": 350,
     "rentedBy":"",
-    "imageUrl": "https://picsum.photos/id/1011/800/600"
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/2018_Tesla_Model_S_75D.jpg/1200px-2018_Tesla_Model_S_75D.jpg"
   },
   {
     "isRented": false,
@@ -16,7 +16,7 @@ const cars = {
     "brand": "Honda",
     "rentValue": 200,
     "rentedBy":"",
-    "imageUrl": "https://picsum.photos/id/1012/800/600"
+    "imageUrl": "https://cdn.motor1.com/images/mgl/rv9P9/s3/2022-honda-civic-prototype.jpg"
   },
   {
     "isRented": false,
@@ -25,7 +25,7 @@ const cars = {
     "brand": "Toyota",
     "rentValue": 220,
     "rentedBy":"",
-    "imageUrl": "https://picsum.photos/id/1013/800/600"
+    "imageUrl": "https://www.webtekno.com/images/editor/default/0003/68/0c846d7641fbfd5c95980fde254b88655aca7820.jpeg"
   },
   {
     "isRented": true,
@@ -34,7 +34,7 @@ const cars = {
     "brand": "BMW",
     "rentValue": 300,
     "rentedBy":"",
-    "imageUrl": "https://picsum.photos/id/1014/800/600"
+    "imageUrl": "https://cdn.motor1.com/images/mgl/jlwrMo/s1/novo-bmw-serie-3-2027---projecao.jpg"
   },
   {
     "isRented": false,
@@ -43,7 +43,7 @@ const cars = {
     "brand": "Audi",
     "rentValue": 320,
     "rentedBy":"",
-    "imageUrl": "https://picsum.photos/id/1015/800/600"
+    "imageUrl": "https://arabam-blog.mncdn.com/wp-content/uploads/2021/07/yeni-audi-a4.jpg"
   },
   {
     "isRented": false,
@@ -52,7 +52,7 @@ const cars = {
     "brand": "Ford",
     "rentValue": 180,
     "rentedBy":"",
-    "imageUrl": "https://picsum.photos/id/1016/800/600"
+    "imageUrl": "https://www.arabazzi.com/images/yuklemeler/ford-focus-24815.jpg"
   },
   {
     "isRented": true,
@@ -61,7 +61,7 @@ const cars = {
     "brand": "Renault",
     "rentValue": 210,
     "rentedBy":"",
-    "imageUrl": "https://picsum.photos/id/1017/800/600"
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHy-lJggPTMNxmjpQtRj0aUp_IU6b22hci3A&s"
   },
   {
     "isRented": false,
@@ -70,7 +70,7 @@ const cars = {
     "brand": "Hyundai",
     "rentValue": 190,
     "rentedBy":"",
-    "imageUrl": "https://picsum.photos/id/1018/800/600"
+    "imageUrl": "https://di-enrollment-api.s3.amazonaws.com/hyundai/models/2021/accent/colors/olympus-silver.jpg"
   },
   {
     "isRented": false,
@@ -79,7 +79,7 @@ const cars = {
     "brand": "BMW",
     "rentValue": 330,
     "rentedBy":"",
-    "imageUrl": "https://picsum.photos/id/1019/800/600"
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvLeyae8sVA1vm2TbI4MSo9C0Y-JJRm70Lsw&s"
   },
   {
     "isRented": false,
@@ -88,7 +88,7 @@ const cars = {
     "brand": "Opel",
     "rentValue": 170,
     "rentedBy":"",
-    "imageUrl": "https://picsum.photos/id/1020/800/600"
+    "imageUrl": "https://www.benimopelim.com/images/YEN%C4%B0%20OPEL%20CORSA%20%C3%96ZELL%C4%B0K.jpg"
   }
 ]
 }
