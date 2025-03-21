@@ -1,4 +1,12 @@
-export const FormInput = ({ type, id, name, placeholder, onChange, value }) => {
+export const FormInput = ({
+  type,
+  id,
+  name,
+  placeholder,
+  onChange,
+  value,
+  onBlur,
+}) => {
   return (
     <input
       className='form-control'
@@ -8,6 +16,7 @@ export const FormInput = ({ type, id, name, placeholder, onChange, value }) => {
       placeholder={placeholder}
       onChange={onChange}
       value={value}
+      onBlur={onBlur}
     />
   );
 };

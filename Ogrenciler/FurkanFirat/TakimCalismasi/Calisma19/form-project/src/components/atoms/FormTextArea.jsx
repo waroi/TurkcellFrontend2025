@@ -6,6 +6,7 @@ export const FormTextArea = ({
   placeholder,
   value,
   onChange,
+  onBlur,
 }) => {
   return (
     <textarea
@@ -16,6 +17,7 @@ export const FormTextArea = ({
       placeholder={placeholder}
       value={value}
       onChange={onChange}
+      onBlur={onBlur}
       className='form-control'
     ></textarea>
   );

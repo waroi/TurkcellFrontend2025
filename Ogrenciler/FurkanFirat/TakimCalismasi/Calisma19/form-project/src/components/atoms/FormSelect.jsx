@@ -1,4 +1,4 @@
-export const FormSelect = ({ options, name, id, value, onChange }) => {
+export const FormSelect = ({ options, name, id, value, onChange, onBlur }) => {
   return (
     <select
       name={name}
@@ -6,6 +6,7 @@ export const FormSelect = ({ options, name, id, value, onChange }) => {
       className='form-select'
       value={value}
       onChange={onChange}
+      onBlur={onBlur}
     >
       {options.map((option) => (
         <option value={option.value} key={option.value}>
