@@ -1,14 +1,13 @@
-import React from "react";
 import { useRoutes } from "react-router";
-import GeneralForm from "../components/GeneralForm";
-import Applications from "../components/Applications";
-import SignIn from "../components/SignIn";
+import GeneralFormView from "../views/GeneralFormView";
+import ApplicationsView from "../views/ApplicationsView";
+import SignInView from "../views/SignInView";
 
 const Router = () => {
   const routes = useRoutes([
-    { path: "/", element: <SignIn /> },
-    { path: "/form", element: <GeneralForm /> },
-    { path: "/applications", element: <Applications /> },
+    { path: "/", element: <SignInView /> },
+    { path: "/form", element: <GeneralFormView /> },
+    { path: "/applications", element: <ApplicationsView /> },
   ]);
   return routes;
 };

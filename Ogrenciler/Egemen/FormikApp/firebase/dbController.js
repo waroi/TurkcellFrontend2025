@@ -1,7 +1,6 @@
 import {
   addDoc,
   collection,
-  deleteDoc,
   doc,
   getDoc,
   getDocs,
@@ -47,15 +46,11 @@ export async function saveApplication(application) {
     applicationData
   );
 }
-export async function deleteFbBlog(id) {
-  await deleteDoc(doc(db, "blogs", id));
-}
 export async function getUser(id) {
   const docRef = doc(db, "users", id);
   const docSnap = await getDoc(docRef);
   return docSnap.data();
 }
-
 export async function updateAppStatus(app) {
   try {
     const { id, ...appData } = app;

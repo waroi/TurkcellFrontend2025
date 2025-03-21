@@ -1,27 +1,14 @@
 import { Form, Formik } from "formik";
-import CustomInput from "./CustomInput";
-import CustomSelect from "./CustomSelect";
-import CustomCheckbox from "./CustomCheckbox";
-import Accordion from "./organisms/accordion/Accordion";
-import { auth, db } from "../../firebase/firebase";
-import { getUser } from "../../firebase/dbController";
-import Button from "./atoms/buttons/Button";
+import CustomInput from "../components/molecules/CustomInput/CustomInput";
+import CustomSelect from "../components/molecules/CustomSelect/CustomSelect";
+import CustomCheckbox from "../components/molecules/CustomCheckbox/CustomCheckbox";
+import Accordion from "../components/organisms/accordion/Accordion";
+import { auth } from "../../firebase/firebase";
+import Button from "../components/atoms/buttons/Button";
 import { basicSchema } from "../schemas";
-import { saveApplication } from "../../firebase/dbController";
+import onSubmit from "../hooks/onSubmit";
 
 const GeneralForm = () => {
-  const onSubmit = async (values, actions) => {
-    try {
-      console.log("Form values:", values);
-      await saveApplication(values);
-      console.log("Application saved successfully");
-    } catch (error) {
-      console.error("Error submitting form:", error);
-    } finally {
-      actions.setSubmitting(false);
-    }
-  };
-
   const sections = [
     {
       title: "Personal Information",
@@ -154,17 +141,14 @@ const GeneralForm = () => {
               <CustomCheckbox
                 label="JavaScript"
                 name="skills.programmingLanguages.javascript"
-                value="javascript"
               />
               <CustomCheckbox
                 label="Python"
                 name="skills.programmingLanguages.python"
-                value="python"
               />
               <CustomCheckbox
                 label="Java"
                 name="skills.programmingLanguages.java"
-                value="java"
               />
             </div>
           </div>
