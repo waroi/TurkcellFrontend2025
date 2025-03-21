@@ -9,6 +9,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { auth } from "../../firebase_config";
 import SignInModal from "../components/SignInModal/SignInModal";
 import { useState } from "react";
+import { signOutFromApp } from "../services/auth_service";
 
 const Application = () => {
   const [show, setShow] = useState(false);
@@ -49,10 +50,19 @@ const Application = () => {
       },
     });
 
+    const handleSignOut = async () => {
+      await signOutFromApp();
+      if (auth.currentUser === null) {
+        alert("Oturumu kapattınız");
+      }else{
+        alert("Oturum kapatılamadı")
+      }
+    }
   return (
     <>
       <div className="container mt-4">
         <AdminButton />
+        <button className="btn btn-primary" onClick={async () => await handleSignOut()}>Çıkış yap</button>
         <div className="card shadow p-4">
           <h2 className="text-center mb-4">Başvuru Formu</h2>
           <form onSubmit={handleSubmit}>

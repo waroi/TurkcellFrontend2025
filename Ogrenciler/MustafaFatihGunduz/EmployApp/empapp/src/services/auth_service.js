@@ -1,6 +1,6 @@
 import { auth } from "../../firebase_config";
 import { readUser, saveUser } from "./db_service";
-import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut } from "firebase/auth";
 
 export const signWithEmailAndPassword = async (email,password) => {
     try {
@@ -28,5 +28,17 @@ export const createWithEmailAndPassword = async (email,password) => {
         }
     } catch (error) {
         console.log("Error in signWithEmailAndPassword: ", error);
+    }
+}
+
+export const signOutFromApp = async () => {
+    try {
+        if (auth.currentUser !== null) {
+            await signOut(auth);
+        }else{
+            console.log("Zaten giriş yapan kullanıcı yok")
+        }
+    } catch (error) {
+        console.log("Error in signOutFromApp: ", error);
     }
 }

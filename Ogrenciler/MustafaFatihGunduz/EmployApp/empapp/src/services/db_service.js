@@ -1,3 +1,4 @@
+import { auth } from "../../firebase_config";
 import {
 	collection,
 	doc,
@@ -8,6 +9,7 @@ import {
 	where,
 } from "firebase/firestore";
 import { db } from "../../firebase_config";
+import { sendEmailVerification,sendPasswordResetEmail } from "firebase/auth";
 
 export const readUser = async (userID) => {
 	try {
@@ -36,15 +38,10 @@ export const saveUser = async (user) => {
 	}
 };
 
-export const sendEmail = async (application) => {
-    if (application.email !== null) {
-      const q = query(collection(db,"users"));
-      const snap = await getDocs(q,where("email","==", application.email))
-      if (snap !== null) {
-        
-        console.log(snap.docs.forEach((doc) => console.log(doc.data())));
-      }else{
-        console.log("Böyle bir kullanıcı bulunamadı")
-      }
-    }
-  }
+export const sendEmail = async () => {
+	await sendEmailVerification(auth.currentUser);
+}
+
+export const sendPasswordReset = async () => {
+	await sendPasswordResetEmail(auth,auth.currentUser.email)
+}
