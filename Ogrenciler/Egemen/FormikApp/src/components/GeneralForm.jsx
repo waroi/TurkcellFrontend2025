@@ -11,11 +11,27 @@ import { saveApplication } from "../../firebase/dbController";
 
 const GeneralForm = () => {
   const onSubmit = async (values, actions) => {
-    console.log("values ", Object.values(values.skills.languages));
-    console.log("actions ", actions);
-    console.log("User Data", await getUser(auth.currentUser.uid));
-    saveApplication(values);
-    actions.resetForm();
+    try {
+      console.log("Form values:", values);
+
+      // Check if user is authenticated
+      if (!auth.currentUser) {
+        console.error("User not authenticated");
+        return;
+      }
+
+      const userData = await getUser(auth.currentUser.uid);
+      console.log("User Data", userData);
+
+      await saveApplication(values);
+      console.log("Application saved successfully");
+      actions.resetForm();
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      // You might want to show this error to the user
+    } finally {
+      actions.setSubmitting(false);
+    }
   };
 
   const sections = [
@@ -164,6 +180,26 @@ const GeneralForm = () => {
         </div>
       ),
     },
+    {
+      title: "Additional Information",
+      fields: (
+        <div className="row g-3">
+          <CustomInput
+            label="Expected Salary"
+            name="expectedSalary"
+            type="number"
+            placeholder="Enter your expected salary"
+            className="col-md-6"
+          />
+          <div className="col-12 mt-3">
+            <CustomCheckbox
+              label="I accept the terms and conditions"
+              name="isAccepted"
+            />
+          </div>
+        </div>
+      ),
+    },
   ];
 
   return (
@@ -184,7 +220,18 @@ const GeneralForm = () => {
               gpa: "",
             },
             experience: { years: "", currentCompany: "", position: "" },
-            skills: { languages: {}, programmingLanguages: {} },
+            skills: {
+              languages: {
+                turkish: false,
+                english: false,
+                german: false,
+              },
+              programmingLanguages: {
+                javascript: false,
+                python: false,
+                java: false,
+              },
+            },
             expectedSalary: "",
             isAccepted: false,
           }}

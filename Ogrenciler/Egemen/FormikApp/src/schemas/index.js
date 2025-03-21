@@ -6,8 +6,8 @@ export const basicSchema = yup.object().shape({
     .string()
     .email("Geçerli bir email giriniz")
     .required("Email girmek zorunludur"),
-  phone: yup.number("Sayı giriniz").required("Telefon numaranızı giriniz"),
-  birthDate: yup.date().required(),
+  phone: yup.string().required("Telefon numaranızı giriniz"), // Changed from number to string
+  birthDate: yup.date().required("Doğum tarihinizi giriniz"),
   address: yup.string().required("Adresinizi giriniz"),
   education: yup.object().shape({
     university: yup
@@ -18,7 +18,7 @@ export const basicSchema = yup.object().shape({
       )
       .required("Lütfen üniversitenizi seçiniz"),
     department: yup.string().required("Bölümünüzü giriniz"),
-    graduationYear: yup.date().required("Mezuniyet yılınızı giriniz"),
+    graduationYear: yup.number().required("Mezuniyet yılınızı giriniz"), // Changed from date to number
     gpa: yup
       .number()
       .positive("Lütfen pozitif bir değer giriniz")
@@ -30,8 +30,10 @@ export const basicSchema = yup.object().shape({
     currentCompany: yup.string().max(50, "50 karakterden fazla giremezsiniz"),
     position: yup.string().max(50, "50 karakterden fazla giremezsiniz"),
   }),
-  // TODO
-  //   skills: yup.object().shape({}), todo
+  skills: yup.object().shape({
+    languages: yup.object(),
+    programmingLanguages: yup.object(),
+  }),
   expectedSalary: yup
     .number()
     .positive("Litfen pozitif bir değer giriniz")
