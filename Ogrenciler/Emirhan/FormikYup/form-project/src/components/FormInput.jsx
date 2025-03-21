@@ -1,29 +1,15 @@
-/* eslint-disable react/prop-types */
+import { ErrorMessage, Field } from "formik";
 
-
-function FormInput({ label, id, type, value, handleChange, error, placeholder, isArray = false, addArray, removeArray, array }) {
+function FormInput({ field, type, label }) {
   return (
-    <>
-      <label>{label}</label>
-      <div className="d-flex gap-2">
-        <input
-          type={type}
-          value={value}
-          onChange={handleChange}
-          id={id}
-          name={id}
-          placeholder={placeholder}
-          className={error ? "input-error form-control" : "form-control"}
-          autoComplete="off"
-        />
-        {isArray ? <button onClick={() => addArray(id)}><i className="fa-solid fa-plus"></i></button> : null}
-        {array && array.length > 1 ? array.map((item, index) => (
-          <div key={index}>{item}</div>
-        )) : null}
+    <div key={field} className="w-75">
+      <label htmlFor={field} className="text-start d-block fs-5 text-white mb-2 fs-6">{`${label}:`}</label>
+      <Field className="form-control outline-0" name={field} placeholder={`${label} Giriniz...`} type={type} />
+      <div className="error-text">
+        <ErrorMessage name={field} component="div" className="error" />
       </div>
 
-      {error && <p className="error">{error}</p>}
-    </>
+    </div>
   );
 }
 

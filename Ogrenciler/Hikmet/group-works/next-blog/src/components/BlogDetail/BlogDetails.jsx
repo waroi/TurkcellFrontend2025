@@ -1,7 +1,7 @@
 import BlogActions from "./BlogActions";
 import styles from "./blogDetails.module.css";
 
-function BlogDetails({ blog }) {
+async function BlogDetails({ blog }) {
 	return (
 		<article className={styles.blogDetailContainer}>
 			<div className={styles.blogHeader}>

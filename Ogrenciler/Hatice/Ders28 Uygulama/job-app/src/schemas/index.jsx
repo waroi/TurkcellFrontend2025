@@ -19,7 +19,7 @@ export const basicSchema = yup.object().shape({
     .required("LinkedIn gerekli"),
     resume: yup
     .mixed()
-    .required("Ön yazı gerekli"),
+    .required("CV gerekli"),
     coverLetter: yup
     .string()
     .required("Ön yazı gerekli"),

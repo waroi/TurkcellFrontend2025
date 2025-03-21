@@ -14,3 +14,4 @@ export const basicSchema = yup.object().shape({
     .max(200, "Ön yazı en fazla 200 karakter olmalı")
     .required("Ön Yazı yazmak zorunludur."),
 });
+export const advancedSchema = yup.object().shape

@@ -7,15 +7,17 @@ export default function Input({ label, ...props }) {
     <>
       <p
         className={`text-danger small fw-bold mb-0 ${
-          meta.error ? "active" : ""
+          meta.touched && meta.error ? "active" : ""
         }`}
       >
-        {meta.error ?? ""}
+        {meta.touched && meta.error ? meta.error : ""}
       </p>
       <div className="form-floating mb-3">
         <input
           className={`form-control border border-2 ${
-            meta.error ? "border-danger-subtle" : "border-success-subtle"
+            meta.touched && meta.error
+              ? "border-danger-subtle"
+              : "border-success-subtle"
           }`}
           id={props.name}
           placeholder=""

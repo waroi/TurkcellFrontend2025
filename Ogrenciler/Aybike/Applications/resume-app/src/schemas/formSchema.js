@@ -1,42 +1,39 @@
-import * as yup from 'yup';
+import * as yup from "yup";
 
 export const formSchema = yup.object().shape({
+  email: yup
+    .string()
+    .email("Please enter a valid email")
+    .required("Email is required"),
 
-    email: yup.string()
-        .email('Please enter a valid email')
-        .required('Email is required'),
+  firstName: yup
+    .string()
+    .required("Name is required")
+    .min(2, "Name must be at least 3 characters long"),
 
-    firstName: yup.string()
-        .required('Name is required')
-        .min(2, 'Name must be at least 3 characters long'),
+  lastName: yup
+    .string()
+    .required("Lastname is required")
+    .min(2, "Lastname must be at least 3 characters long"),
 
-    lastName: yup.string()
-        .required('Lastname is required')
-        .min(2, 'Name must be at least 3 characters long'),
+  country: yup.string().required("Lütfen ülke seçiniz"),
 
-    country: yup.string()
-        .required('Lütfen ülke seçiniz'),
+  city: yup.string().required("Lütfen şehir seçiniz"),
 
-    city: yup.string()
-        .required('Lütfen şehir seçiniz'),
+  university: yup.string().required("Lütfen üniversite seçiniz"),
 
-    university: yup.string()
-        .required('Lütfen üniversite seçiniz'),
+  graduationStatus: yup.boolean(),
 
-    graduationStatus: yup.boolean(),
+  graduationYear: yup.string().when("graduationStatus", {
+    is: true, // Eğer graduationStatus true ise
+    then: (schema) => schema.required("Lütfen mezuniyet yılınızı giriniz"),
+    otherwise: (schema) => schema.notRequired(),
+  }),
 
-    graduationYear: yup.string(),
+  department: yup.string().required("Lütfen bölüm seçiniz"),
 
-    department: yup.string()
-        .required('Lütfen bölüm seçiniz'),
-
-    gpa: yup.number()
-        .positive('Lütfen geçerli bir ortalama seçiniz')
-        .lessThan(4.0, 'Ortalamanız 4.0 dan küçük olmalıdır')
-
+  gpa: yup
+    .number()
+    .positive("Lütfen geçerli bir ortalama giriniz")
+    .max(4.0, "Ortalamanız 4.0'dan küçük olmalıdır"),
 });
-
-
-
-
-

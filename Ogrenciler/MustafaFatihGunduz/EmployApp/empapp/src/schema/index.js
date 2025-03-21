@@ -1,37 +1,41 @@
 import * as yup from "yup";
-const passwordRules = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}$/;
 
 export const basicSchema = yup.object().shape({
+  name: yup.string().required("Bu alan zorunludur"),
+  lastName: yup.string().required("Bu alan zorunludur"),
+  adressFirst: yup
+    .string()
+    .min(10, "Lütfen minimum 10 karakter giriniz")
+    .required("Bu alan zorunludur"),
+  adressSecond: yup
+    .string()
+    .min(10, "Lütfen minimum 10 karakter giriniz")
+    .required("Bu alan zorunludur"),
+  city: yup.string().required("Bu alan zorunludur"),
+  province: yup.string().required("Bu alan zorunludur"),
+  postCode: yup
+    .number()
+    .transform((value, originalValue) =>
+      originalValue === "" ? undefined : value
+    )
+    .required("Bu alan zorunludur"),
+  country: yup.string().required("Bu alan zorunludur"),
+  phoneNumber: yup
+    .number()
+    .transform((value, originalValue) =>
+      originalValue === "" ? undefined : value
+    )
+    .required("Bu alan zorunludur"),
   email: yup
     .string()
     .email("Geçerli bir email giriniz")
-    .required("Email girmek zorunludur"),
-  age: yup
-    .number()
-    .positive("Lütfen pozitif bir yaş giriniz")
-    .integer("Lütfen yaşınızı tam sayı olarak giriniz")
-    .required("Yaş girmek zorunludur"),
-  password: yup
-    .string()
-    .min(5, "Lütfen minumun 5 karakter giriniz")
-    .matches(passwordRules, {
-      message: "Lütfen en az 1 büyük harf 1 küçük harf ve 1 sayı giriniz",
-    })
-    .required("Şifre girmek zorunludur"),
-  confirmPassword: yup
-    .string()
-    .oneOf([yup.ref("password")], "Şifreler eşleşmiyor")
-    .required("Tekrar şifre girmek zorunludur"),
-});
-
-export const advancedSchema = yup.object().shape({
-  username: yup
-    .string()
-    .min(3, "Kullanıcı adı minunmum 3 karakter uzunluğunda olmadılır")
-    .required("Kullanıcı adı zorunludur"),
-  university: yup
-    .string()
-    .oneOf(["bogazici", "gsu", "odtü", "itü"], "Lütfen üniversitenizi seçiniz")
-    .required("Lütfen üniversitenizi seçiniz"),
-  isAccepted: yup.boolean().oneOf([true], "Kullanım koşullarını kabul ediniz"),
+    .required("Bu alan zorunludur"),
+  birthday: yup
+    .date()
+    .min(new Date(1995, 0, 1))
+    .max(new Date(2007, 0, 1))
+    .required("Bu alan zorunludur"),
+  isTurkish: yup.boolean().required("Bu alan zorunludur"),
+  university: yup.string().required("Bu alan zorunludur"),
+  isGraduate: yup.boolean().required("Bu alan zorunludur"),
 });

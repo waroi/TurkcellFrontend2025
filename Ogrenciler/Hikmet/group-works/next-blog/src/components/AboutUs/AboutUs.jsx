@@ -1,3 +1,4 @@
+import { getCurrentUser } from "@/store/firebaseStore";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./aboutUs.module.css";
@@ -23,10 +24,21 @@ export default function AboutUs() {
 			bio: "Frontend ve backend teknolojilerinde deneyimli geliştirici.",
 		},
 	];
+	const checkExistingUser = getCurrentUser();
+	console.log(checkExistingUser);
 
 	return (
 		<div className={styles.aboutContainer}>
 			<section className={styles.heroSection}>
+				<div>
+					{!checkExistingUser ? (
+						<div className="alert alert-danger" role="alert">
+							You are not authorized to view this page.
+						</div>
+					) : (
+						""
+					)}
+				</div>
 				<div className="container">
 					<div className="row align-items-center">
 						<div className="col-lg-6">

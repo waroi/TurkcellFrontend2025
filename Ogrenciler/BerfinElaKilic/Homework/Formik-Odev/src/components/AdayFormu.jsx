@@ -26,7 +26,10 @@ const AdayFormu = () => {
       onSubmit,
     });
   return (
-    <Form onSubmit={handleSubmit}>
+    <Form
+      onSubmit={handleSubmit}
+      className="shadow w-75 p-5 rounded-5 bg-transparent"
+    >
       <Form.Group className="mb-3" controlId="firstName">
         <Form.Label>İsim: </Form.Label>
         <Form.Control
@@ -35,7 +38,9 @@ const AdayFormu = () => {
           value={values.firstName}
           onChange={handleChange}
           name="firstName"
-          className={errors.firstName ? "border-2 border-danger shadow-none" : ""}
+          className={
+            errors.firstName ? "border-2 border-danger shadow-none" : ""
+          }
         />
         {errors.firstName && <p className="error">{errors.firstName}</p>}
       </Form.Group>
@@ -47,7 +52,9 @@ const AdayFormu = () => {
           value={values.lastName}
           onChange={handleChange}
           name="lastName"
-          className={errors.lastName ? "border-2 border-danger shadow-none" : ""}
+          className={
+            errors.lastName ? "border-2 border-danger shadow-none" : ""
+          }
         />
         {errors.lastName && <p className="error">{errors.lastName}</p>}
       </Form.Group>
@@ -71,7 +78,9 @@ const AdayFormu = () => {
           name="coverLetter"
           value={values.coverLetter}
           onChange={handleChange}
-          className={errors.coverLetter ? "border-2 border-danger shadow-none" : ""}
+          className={
+            errors.coverLetter ? "border-2 border-danger shadow-none" : ""
+          }
           placeholder="Ön yazınızı max 200 karakter girerek yazınız..."
         />
         {errors.coverLetter && <p className="error">{errors.coverLetter}</p>}

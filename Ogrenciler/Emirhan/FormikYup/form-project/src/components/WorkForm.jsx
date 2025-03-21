@@ -1,227 +1,305 @@
-import { useFormik } from "formik";
+import { ErrorMessage, Field, FieldArray, Form, Formik } from "formik";
 import { basicSchema } from "../schema";
 import FormInput from "./FormInput";
-
-const onSubmit = async (values, actions) => {
-  console.log(values);
-  console.log(actions);
-
-  await new Promise((resolve) => {
-    setTimeout(resolve, 1000);
-  });
-  actions.resetForm();
-};
+import ArrayInput from "./ArrayInput";
+import SelectInput from "./SelectInput";
 
 function WorkForm() {
-  const { values, errors, isSubmitting, handleChange, handleSubmit } =
-    useFormik({
-      initialValues: {
-        fullname: "",
-        birthyear: null,
-        gender: "",
-        phonenumber: "",
-        address: "",
-        education: [],
-        foreignlanguage: [],
-        experience: [],
-        technologies: [],
-        salary: null,
-        projects: [],
-        certificates: [],
-        volunteerwork: [],
-        socialmedia: [],
-        references: [],
-        motivation: "",
-        email: "",
-      },
-      validationSchema: basicSchema,
-      onSubmit,
-    });
-
-  const addArray = (field) => {
-    formik.setFieldValue(field, [...formik.values[field], ""]);
+  const initialValues = {
+    name: "",
+    surname: "",
+    birthyear: null,
+    gender: "",
+    phonenumber: "",
+    address: "",
+    salary: "",
+    motivation: "",
+    email: "",
+    school: "",
+    department: "",
+    grade: "",
+    position: "",
+    foreignlanguage: [],
+    experience: [],
+    technologies: [],
+    projects: [],
+    certificates: [],
+    volunteerwork: [],
+    socialmedia: [],
+    references: [],
   };
 
-  const removeArray = (field, index) => {
-    const updatedArray = formik.values[field].filter((_, i) => i !== index);
-    formik.setFieldValue(field, updatedArray);
-  };
+  const singleFields = [
+    { name: "name", type: "text", label: "Ad" },
+    { name: "surname", type: "text", label: "Soyad" },
+    { name: "birthyear", type: "date", label: "Doğum Tarihi" },
+    { name: "phonenumber", type: "number", label: "Telefon Numarası" },
+    { name: "address", type: "text", label: "Adres" },
+    { name: "salary", type: "number", label: "Maaş Beklentisi" },
+    { name: "motivation", type: "text", label: "Başvuru Motivasyonu" },
+    { name: "email", type: "email", label: "Email" },
+  ];
+  const arrayFields = [
+    { name: "foreignlanguage", label: "Yabancı Dil" },
+    { name: "experience", label: "Deneyim" },
+    { name: "technologies", label: "Kullandığınız Teknoloji(ler)" },
+    { name: "projects", label: "Proje" },
+    { name: "certificates", label: "Sertifika" },
+    { name: "volunteerwork", label: "Gönüllü Çalışma" },
+    { name: "socialmedia", label: "Sosyal Medya" },
+    { name: "references", label: "Referans" },
+  ];
+  const selectFields = [
+    {
+      name: "gender",
+      label: "Cinsiyet",
+      options: [
+        "Cinsiyet Seçiniz...",
+        "Erkek",
+        "Kadın",
+        "Belirtmek istemiyorum",
+      ],
+    },
+    {
+      name: "school",
+      label: "Üniversite Adı",
+      options: [
+        "Üniversite Adı Seçiniz...",
+        "Boğaziçi Üniversitesi",
+        "Orta Doğu Teknik Üniversitesi (ODTÜ)",
+        "İstanbul Teknik Üniversitesi (İTÜ)",
+        "Koç Üniversitesi",
+        "Sabancı Üniversitesi",
+        "Bilkent Üniversitesi",
+        "Hacettepe Üniversitesi",
+        "Ankara Üniversitesi",
+        "Ege Üniversitesi",
+        "İstanbul Üniversitesi",
+        "Yıldız Teknik Üniversitesi",
+        "Marmara Üniversitesi",
+        "Gazi Üniversitesi",
+        "Çukurova Üniversitesi",
+        "Dokuz Eylül Üniversitesi",
+        "İzmir Yüksek Teknoloji Enstitüsü (İYTE)",
+        "Gebze Teknik Üniversitesi",
+        "Atatürk Üniversitesi",
+        "Erciyes Üniversitesi",
+        "Selçuk Üniversitesi",
+        "Akdeniz Üniversitesi",
+        "Uludağ Üniversitesi",
+        "Fırat Üniversitesi",
+        "Karadeniz Teknik Üniversitesi",
+        "Sakarya Üniversitesi",
+        "Eskişehir Teknik Üniversitesi",
+        "Samsun Üniversitesi",
+        "Balıkesir Üniversitesi",
+        "Süleyman Demirel Üniversitesi",
+        "Pamukkale Üniversitesi",
+      ],
+    },
+    {
+      name: "department",
+      label: "Bölüm Adı",
+      options: [
+        "Bölüm Adı Seçiniz...",
+        "Bilgisayar Mühendisliği",
+        "Yazılım Mühendisliği",
+        "Elektrik-Elektronik Mühendisliği",
+        "Makine Mühendisliği",
+        "İnşaat Mühendisliği",
+        "Endüstri Mühendisliği",
+        "Mekatronik Mühendisliği",
+        "Otomotiv Mühendisliği",
+        "Gıda Mühendisliği",
+        "Metalurji ve Malzeme Mühendisliği",
+        "Çevre Mühendisliği",
+        "Havacılık ve Uzay Mühendisliği",
+        "Enerji Sistemleri Mühendisliği",
+        "Jeoloji Mühendisliği",
+        "Petrol ve Doğal Gaz Mühendisliği",
+        "Harita Mühendisliği",
+        "Biyomedikal Mühendisliği",
+        "Telekomünikasyon Mühendisliği",
+        "Tıp",
+        "Diş Hekimliği",
+        "Eczacılık",
+        "Hemşirelik",
+        "Fizyoterapi ve Rehabilitasyon",
+        "Beslenme ve Diyetetik",
+        "Veterinerlik",
+        "Sağlık Yönetimi",
+        "Biyoteknoloji",
+        "Odyoloji",
+        "Biyoloji",
+        "Kimya",
+        "Fizik",
+        "Matematik",
+        "Astronomi ve Uzay Bilimleri",
+        "Moleküler Biyoloji ve Genetik",
+        "İstatistik",
+        "Genetik ve Biyomühendislik",
+        "Psikoloji",
+        "Sosyoloji",
+        "Felsefe",
+        "Tarih",
+        "Coğrafya",
+        "Antropoloji",
+        "Arkeoloji",
+        "İlahiyat",
+        "Sanat Tarihi",
+        "Türk Dili ve Edebiyatı",
+        "Halkla İlişkiler ve Tanıtım",
+        "Radyo, Televizyon ve Sinema",
+        "Hukuk",
+        "Uluslararası İlişkiler",
+        "Siyaset Bilimi ve Kamu Yönetimi",
+        "İşletme",
+        "İktisat",
+        "Maliye",
+        "Kamu Yönetimi",
+        "Çalışma Ekonomisi ve Endüstri İlişkileri",
+        "Lojistik Yönetimi",
+        "Sınıf Öğretmenliği",
+        "Okul Öncesi Öğretmenliği",
+        "İngilizce Öğretmenliği",
+        "Matematik Öğretmenliği",
+        "Fen Bilgisi Öğretmenliği",
+        "Türkçe Öğretmenliği",
+        "Tarih Öğretmenliği",
+        "Coğrafya Öğretmenliği",
+        "Özel Eğitim Öğretmenliği",
+        "Rehberlik ve Psikolojik Danışmanlık",
+        "Grafik Tasarım",
+        "İç Mimarlık",
+        "Mimarlık",
+        "Moda Tasarımı",
+        "Görsel İletişim Tasarımı",
+        "Endüstriyel Tasarım",
+        "Seramik ve Cam Tasarımı",
+        "Tiyatro",
+        "Sinema ve Televizyon",
+        "Müzik",
+        "Resim",
+        "Beden Eğitimi ve Spor Öğretmenliği",
+        "Antrenörlük Eğitimi",
+        "Rekreasyon Yönetimi",
+        "Spor Yöneticiliği",
+        "Gastronomi ve Mutfak Sanatları",
+        "Turizm ve Otelcilik",
+        "Havacılık Yönetimi",
+        "Pilotaj",
+        "Yeni Medya ve İletişim",
+        "Adalet Meslek Yüksekokulu",
+        "Çocuk Gelişimi",
+        "Sosyal Hizmet",
+        "İnsan Kaynakları Yönetimi",
+        "Bilgi ve Belge Yönetimi",
+      ],
+    },
+    {
+      name: "grade",
+      label: "Sınıf Bilgisi",
+      options: [
+        "Sınıf Bilgisi Seçiniz...",
+        "Mezun",
+        "Hazırlık",
+        "1. Sınıf",
+        "2. Sınıf",
+        "3. Sınıf",
+        "4. Sınıf",
+        "5. Sınıf",
+        "6. Sınıf",
+        "Yüksek Lisans",
+        "Doktora",
+      ],
+    },
+    {
+      name: "position",
+      label: "Pozisyon Seçimi",
+      options: [
+        "Başvurduğunuz pozisyonu seçiniz...",
+        "Yapay Zeka Mühendisi",
+        "Makine Öğrenimi Mühendisi",
+        "Veri Bilimci",
+        "Veri Analisti",
+        "Doğal Dil İşleme (NLP) Uzmanı",
+        "Front-End Geliştirici",
+        "Back-End Geliştirici",
+        "AI Destekli Pazarlama Uzmanı",
+        "Genel Başvuru",
+      ],
+    },
+  ];
 
   return (
+    <div className="container">
+      <Formik
+        initialValues={initialValues}
+        validationSchema={basicSchema}
+        onSubmit={(values, { resetForm }) => {
+          const filteredValues = Object.fromEntries(
+            Object.entries(values).filter(([key]) => !key.endsWith("Input"))
+          );
 
-    <form onSubmit={handleSubmit}>
-      <div className="container">
-        <FormInput
-          label="Full Name"
-          value={values.fullname}
-          handleChange={handleChange}
-          error={errors.fullname}
-          id="fullname"
-          type="text"
-          placeholder="Full Name"
-        />
-        <FormInput
-          label="Birth Year"
-          value={values.birthyear}
-          handleChange={handleChange}
-          error={errors.birthyear}
-          id="birthyear"
-          type="number"
-          placeholder="Birth Year"
-        />
-        <FormInput
-          label="Gender"
-          value={values.gender}
-          handleChange={handleChange}
-          error={errors.gender}
-          id="gender"
-          type="string"
-          placeholder="Gender"
-        />
-        <FormInput
-          label="Email"
-          value={values.email}
-          handleChange={handleChange}
-          error={errors.email}
-          id="email"
-          type="email"
-          placeholder="Email"
-        />
-        <FormInput
-          label="Phone Number"
-          value={values.phonenumber}
-          handleChange={handleChange}
-          error={errors.phonenumber}
-          id="phonenumber"
-          type="number"
-          placeholder="Phone Number"
-        />
-        <FormInput
-          label="Address"
-          value={values.address}
-          handleChange={handleChange}
-          error={errors.address}
-          id="address"
-          type="text"
-          placeholder="Address"
-        />
-        <FormInput
-          label="Education"
-          value={values.education}
-          handleChange={handleChange}
-          error={errors.education}
-          id="education"
-          type="text"
-          placeholder="Education"
-          isArray={true}
-          array={values.education}
-          addArray={addArray}
-          removeArray={removeArray}
-        />
-        <FormInput
-          label="Foreign Language"
-          value={values.foreignlanguage}
-          handleChange={handleChange}
-          error={errors.foreignlanguage}
-          id="foreignlanguage"
-          type="text"
-          placeholder="Foreign Language"
-          isArray={true}
-        />
-        <FormInput
-          label="Experience"
-          value={values.experience}
-          handleChange={handleChange}
-          error={errors.experience}
-          id="experience"
-          type="text"
-          placeholder="Experience"
-          isArray={true}
-        />
-        <FormInput
-          label="Technologies"
-          value={values.technologies}
-          handleChange={handleChange}
-          error={errors.technologies}
-          id="technologies"
-          type="text"
-          placeholder="Technologies"
-          isArray={true}
-        />
-        <FormInput
-          label="Salary"
-          value={values.salary}
-          handleChange={handleChange}
-          error={errors.salary}
-          id="salary"
-          type="number"
-          placeholder="Salary"
-        />
-        <FormInput
-          label="Projects"
-          value={values.projects}
-          handleChange={handleChange}
-          error={errors.projects}
-          id="projects"
-          type="text"
-          placeholder="Projects"
-          isArray={true}
-        />
-        <FormInput
-          label="Certificates"
-          value={values.certificates}
-          handleChange={handleChange}
-          error={errors.certificates}
-          id="certificates"
-          type="text"
-          placeholder="Certificates"
-          isArray={true}
-        />
-        <FormInput
-          label="Volunteer Work"
-          value={values.volunteerwork}
-          handleChange={handleChange}
-          error={errors.volunteerwork}
-          id="volunteerwork"
-          type="text"
-          placeholder="Volunteer Work"
-          isArray={true}
-        />
-        <FormInput
-          label="Social Media"
-          value={values.socialmedia}
-          handleChange={handleChange}
-          error={errors.socialmedia}
-          id="socialmedia"
-          type="text"
-          placeholder="Social Media"
-          isArray={true}
-        />
-        <FormInput
-          label="References"
-          value={values.references}
-          handleChange={handleChange}
-          error={errors.references}
-          id="references"
-          type="text"
-          placeholder="References"
-          isArray={true}
-        />
-        <FormInput
-          label="Motivation"
-          value={values.motivation}
-          handleChange={handleChange}
-          error={errors.motivation}
-          id="motivation"
-          type="text"
-          placeholder="Motivation"
-        />
+          fetch("http://localhost:3000/jobApplications", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(filteredValues),
+          })
+            .then((response) => {
+              if (!response.ok)
+                throw new Error("Veri kaydedilirken hata oluştu.");
+              alert("Başarıyla kaydedildi!");
+              resetForm();
+            })
+            .catch((error) => {
+              console.error("Hata:", error);
+              alert("Bir hata oluştu, tekrar deneyin.");
+            });
+        }}
+      >
+        {({ values, errors, touched, setFieldValue }) => (
+          <Form className="my-5 d-flex flex-column align-items-center">
+            {singleFields.map((item) => (
+              <FormInput
+                key={item.name}
+                label={item.label}
+                field={item.name}
+                type={item.type}
+              />
+            ))}
 
-      </div>
-      <button disabled={isSubmitting} type="submit">
-        Kaydet
-      </button>
-    </form>
+            {selectFields.map((item) => (
+              <SelectInput
+                key={item.name}
+                field={item.name}
+                label={item.label}
+                options={item.options}
+                errors={errors}
+                touched={touched}
+                setFieldValue={setFieldValue}
+              />
+            ))}
+
+            {arrayFields.map((item) => (
+              <ArrayInput
+                key={item.name}
+                field={item.name}
+                label={item.label}
+                errors={errors}
+                values={values}
+                touched={touched}
+                setFieldValue={setFieldValue}
+              />
+            ))}
+
+            <button className="btn bg-green" type="submit">
+              Submit
+            </button>
+          </Form>
+        )}
+      </Formik>
+    </div>
   );
 }
 

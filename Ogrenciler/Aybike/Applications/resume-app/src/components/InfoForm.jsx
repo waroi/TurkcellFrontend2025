@@ -1,71 +1,122 @@
 import { Form, Formik } from "formik";
-import { formSchema } from '../schemas/formSchema';
-import CustomInput from './CustomInput';
+import { formSchema } from "../schemas/formSchema";
+import CustomInput from "./CustomInput";
+import CustomSelect from "./CustomSelect";
+import CustomCheckbox from "./CustomCheckbox";
+import { useNavigate } from "react-router";
+import { ApplicationService } from "../services/ApplicationService";
 
-const onSubmit = async (values, actions) => {
-  await new Promise((resolve) => {
-    console.log(values)
-    setTimeout(resolve, 1000);
-  });
-  actions.resetForm();
-}
+const countries = ["Türkiye", "ABD", "Almanya", "Fransa"];
+const cities = ["İstanbul", "Ankara", "İzmir", "Bursa"];
+const universities = ["Boğaziçi", "ODTÜ", "İTÜ", "Koç Üniversitesi"];
+const departments = [
+  "Bilgisayar Mühendisliği",
+  "Elektrik Elektronik",
+  "Makine",
+  "Endüstri",
+];
 
 const InfoForm = () => {
+  const navigate = useNavigate()
+
+  const onSubmit = async (values, actions) => {
+    try {
+      const addApplicationResponse = await ApplicationService.addApplication(values)
+      if (addApplicationResponse.success) {
+        navigate('/gift')
+        alert(addApplicationResponse.message);
+        actions.resetForm();
+      }
+    } catch (error) {
+      console.error("Başvuru hatası:", error);
+      alert("Başvuru sırasında bir hata oluştu!");
+    }
+  };
 
   return (
-    <>
-      <div>Lütfen başvuru için gerekli bilgileri doldurunuz.</div>
+    <div className="container mt-4">
+      <h2>Başvuru Formu</h2>
       <Formik
         initialValues={{
-          email: '',
-          firstName: '',
-          lastName: '',
-          country: '',
-          city: '',
-          university: '',
+          email: "",
+          firstName: "",
+          lastName: "",
+          country: "",
+          city: "",
+          university: "",
           graduationStatus: false,
-          graduationYear: '',
-          department: '',
-          gpa: ''
+          graduationYear: "",
+          department: "",
+          gpa: "",
         }}
         validationSchema={formSchema}
         onSubmit={onSubmit}
       >
-
-        {({ isSubmitting }) => (
-
-          <Form>
+        {({ isSubmitting, values }) => (
+          <Form className="d-flex flex-column gap-3">
             <CustomInput
-              label="Kullancı Adı"
-              name="firstName"
               type="text"
-              placeholder="Kullanıcı Adınızı Giriniz"
+              label="Adınız"
+              name="firstName"
+              placeholder="Adınızı giriniz"
+            />
+            <CustomInput
+              type="text"
+              label="Soyadınız"
+              name="lastName"
+              placeholder="Soyadınızı giriniz"
+            />
+            <CustomInput
+              type="email"
+              label="E-Posta"
+              name="email"
+              placeholder="E-posta adresinizi giriniz"
             />
 
-            <CustomInput type="text" label="Soyisminiz" name="lastName" />
-            <CustomInput type="email" label="Mail Adresiniz" name="email" />
+            <CustomSelect label="Ülke" name="country" options={countries} />
+            <CustomSelect label="Şehir" name="city" options={cities} />
+            <CustomSelect
+              label="Üniversite"
+              name="university"
+              options={universities}
+            />
+            <CustomSelect
+              label="Bölüm"
+              name="department"
+              options={departments}
+            />
 
-            {/* Custom Select yapılacak inş */}
-            <CustomInput type="text" label="Ülke Adresiniz" name="country" />
-            <CustomInput type="text" label="Şehir Adresiniz" name="city" />
-            <CustomInput type="text" label="Üniversite Adresiniz" name="university" />
-            {/* Custom Select yapılacak inş */}
+            <CustomCheckbox label="Mezun Oldum" name="graduationStatus" />
 
-            <label htmlFor="mezun" > Mezun oldum</label>
-            <input type="checkbox" id="mezun" value="Mezun" />
-            {/*   <input type="date" label="mezuniyet yılı" name="graduationYear" />
-            <input type="text" label="departman" name="department" />
+            {values.graduationStatus && (
+              <CustomInput
+                type="text"
+                label="Mezuniyet Yılı"
+                name="graduationYear"
+                placeholder="Mezuniyet yılınızı giriniz"
+              />
+            )}
 
-            <input type="number" label="GANO" name="gpa" />*/}
-            <button disabled={isSubmitting} type="submit">
+            <CustomInput
+              type="number"
+              step="0.01"
+              label="GPA (Not Ortalaması)"
+              name="gpa"
+              placeholder="Ortalamanızı giriniz"
+            />
+
+            <button
+              disabled={isSubmitting}
+              type="submit"
+              className="btn btn-primary"
+            >
               Gönder
             </button>
           </Form>
         )}
-      </Formik >
+      </Formik>
+    </div>
+  );
+};
 
-    </>
-  )
-}
-
-export default InfoForm
+export default InfoForm;

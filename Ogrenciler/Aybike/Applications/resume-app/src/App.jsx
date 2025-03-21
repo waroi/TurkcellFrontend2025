@@ -1,13 +1,12 @@
-import './App.css'
-import InfoForm from './components/InfoForm'
+import "./App.css";
+import Router from "./routes/Router";
 
 function App() {
-
   return (
     <>
-   <InfoForm />
+      <Router />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
