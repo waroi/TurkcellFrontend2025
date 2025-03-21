@@ -57,7 +57,7 @@ const Navbar = () => {
 						</li>
 						{user && user.email === "admin@admin.com" && (
 							<li>
-								<Link className="dropdown-item" to="/admin">
+								<Link className="nav-link" to="/admin">
 									<i className="bi bi-gear me-2"></i>
 									Admin Panel
 								</Link>
