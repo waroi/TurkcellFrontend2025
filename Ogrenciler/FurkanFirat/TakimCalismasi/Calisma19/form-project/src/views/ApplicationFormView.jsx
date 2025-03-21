@@ -1,6 +1,6 @@
 import { PageFooter } from '../components/atoms/PageFooter';
 import { PageHeader } from '../components/atoms/PageHeader';
-import { ApplicationForm } from '../components/molecules/ApplicationForm';
+import { ApplicationForm } from '../components/organisms/ApplicationForm';
 
 export const ApplicationFormView = () => {
   return (

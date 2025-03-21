@@ -1,18 +1,34 @@
-export const FormSelect = ({ options, name, id, value, onChange, onBlur }) => {
+import React from 'react';
+
+const FormSelect = ({
+  id,
+  name,
+  options,
+  value,
+  onChange,
+  onBlur,
+  error,
+  className,
+}) => {
   return (
-    <select
-      name={name}
-      id={id}
-      className='form-select'
-      value={value}
-      onChange={onChange}
-      onBlur={onBlur}
-    >
-      {options.map((option) => (
-        <option value={option.value} key={option.value}>
-          {option.label}
-        </option>
-      ))}
-    </select>
+    <>
+      <select
+        id={id}
+        name={name}
+        value={value}
+        onChange={onChange}
+        onBlur={onBlur}
+        className={className}
+      >
+        {options.map((option, index) => (
+          <option key={index} value={option.value}>
+            {option.label}
+          </option>
+        ))}
+      </select>
+      {error && <div className='text-danger'>{error}</div>}
+    </>
   );
 };
+
+export default FormSelect;

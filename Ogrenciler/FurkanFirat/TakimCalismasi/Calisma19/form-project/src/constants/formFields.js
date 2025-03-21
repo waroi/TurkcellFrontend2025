@@ -1,4 +1,58 @@
-export const formFields = [
+export const loginFormFields = [
+  {
+    column: '12',
+    type: 'email',
+    id: 'email',
+    name: 'email',
+    placeholder: 'example@email.com',
+    labelText: 'Email',
+  },
+  {
+    column: '12',
+    type: 'password',
+    id: 'password',
+    name: 'password',
+    placeholder: '**********',
+    labelText: 'Password',
+  },
+];
+
+export const registerFormFields = [
+  {
+    column: '12',
+    type: 'text',
+    id: 'fullName',
+    name: 'fullName',
+    placeholder: 'John Doe',
+    labelText: 'Full Name',
+  },
+  {
+    column: '12',
+    type: 'email',
+    id: 'email',
+    name: 'email',
+    placeholder: 'example@email.com',
+    labelText: 'Email',
+  },
+  {
+    column: '12',
+    type: 'password',
+    id: 'password',
+    name: 'password',
+    placeholder: '**********',
+    labelText: 'Password',
+  },
+  {
+    column: '12',
+    type: 'password',
+    id: 'confirmPassword',
+    name: 'confirmPassword',
+    placeholder: '**********',
+    labelText: 'Confirm Password',
+  },
+];
+
+export const applicationFormFields = [
   {
     column: '6',
     type: 'text',

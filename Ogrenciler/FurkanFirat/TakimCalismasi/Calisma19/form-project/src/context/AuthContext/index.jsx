@@ -4,8 +4,10 @@ import {
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signOut,
+  updateProfile,
 } from 'firebase/auth';
-import { auth } from '../../firebase/config';
+import { doc, setDoc } from 'firebase/firestore';
+import { auth, db } from '../../firebase/config';
 
 export const AuthContext = createContext();
 
@@ -22,7 +24,6 @@ export const AuthProvider = ({ children }) => {
       } else {
         setCurrentUser(null);
         setIsLoggedIn(false);
-        console.log('else kısmı');
       }
       setIsLoading(false);
     });
@@ -30,7 +31,7 @@ export const AuthProvider = ({ children }) => {
     return unsubscribe;
   }, [currentUser]);
 
-  const registerUser = async (email, password) => {
+  const registerUser = async (fullName, email, password) => {
     try {
       const userCredential = await createUserWithEmailAndPassword(
         auth,
@@ -38,6 +39,20 @@ export const AuthProvider = ({ children }) => {
         password
       );
       console.log('User registered:', userCredential.user);
+
+      await updateProfile(userCredential.user, {
+        displayName: fullName,
+      });
+
+      const userRef = doc(db, 'users', userCredential.user.uid);
+      await setDoc(userRef, {
+        fullName,
+        email,
+        role: 'user',
+        createdAt: new Date(),
+      });
+
+      console.log('User details saved to Firestore');
     } catch (error) {
       console.error('Register error:', error.message);
     }
