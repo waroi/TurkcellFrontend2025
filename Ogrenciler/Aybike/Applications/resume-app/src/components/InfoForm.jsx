@@ -15,15 +15,18 @@ const departments = [
   "Makine",
   "Endüstri",
 ];
+const skillsOptions = ["JavaScript", "React", "Node.js", "Python", "Java"];
 
 const InfoForm = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const onSubmit = async (values, actions) => {
     try {
-      const addApplicationResponse = await ApplicationService.addApplication(values)
+      const addApplicationResponse = await ApplicationService.addApplication(
+        values
+      );
       if (addApplicationResponse.success) {
-        navigate('/gift')
+        navigate("/gift");
         alert(addApplicationResponse.message);
         actions.resetForm();
       }
@@ -41,6 +44,8 @@ const InfoForm = () => {
           email: "",
           firstName: "",
           lastName: "",
+          phone: "",
+          birthDate: "",
           country: "",
           city: "",
           university: "",
@@ -48,6 +53,11 @@ const InfoForm = () => {
           graduationYear: "",
           department: "",
           gpa: "",
+          linkedin: "",
+          summary: "",
+          skills: [],
+          experience: "",
+          projects: "",
         }}
         validationSchema={formSchema}
         onSubmit={onSubmit}
@@ -72,6 +82,13 @@ const InfoForm = () => {
               name="email"
               placeholder="E-posta adresinizi giriniz"
             />
+            <CustomInput
+              type="text"
+              label="Telefon"
+              name="phone"
+              placeholder="Telefon numaranızı giriniz"
+            />
+            <CustomInput type="date" label="Doğum Tarihi" name="birthDate" />
 
             <CustomSelect label="Ülke" name="country" options={countries} />
             <CustomSelect label="Şehir" name="city" options={cities} />
@@ -87,7 +104,6 @@ const InfoForm = () => {
             />
 
             <CustomCheckbox label="Mezun Oldum" name="graduationStatus" />
-
             {values.graduationStatus && (
               <CustomInput
                 type="text"
@@ -103,6 +119,41 @@ const InfoForm = () => {
               label="GPA (Not Ortalaması)"
               name="gpa"
               placeholder="Ortalamanızı giriniz"
+            />
+
+            <CustomInput
+              type="text"
+              label="LinkedIn Profiliniz"
+              name="linkedin"
+              placeholder="LinkedIn URL'nizi giriniz"
+            />
+
+            <CustomInput
+              type="textarea"
+              label="Kariyer Hedefleriniz"
+              name="summary"
+              placeholder="Kısa bir açıklama yazınız"
+            />
+
+            <CustomSelect
+              label="Yetenekler"
+              name="skills"
+              options={skillsOptions}
+              multiple
+            />
+
+            <CustomInput
+              type="textarea"
+              label="İş / Staj Deneyimleriniz"
+              name="experience"
+              placeholder="Deneyimlerinizi yazınız"
+            />
+
+            <CustomInput
+              type="textarea"
+              label="Projeleriniz"
+              name="projects"
+              placeholder="Yaptığınız projeleri yazınız"
             />
 
             <button

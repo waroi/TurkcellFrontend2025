@@ -26,11 +26,6 @@ export default function Navigation() {
         </button>
         <div className="collapse navbar-collapse" id="navbar">
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/">
-                Home
-              </NavLink>
-            </li>
             {user ? (
               <>
                 <li className="nav-item">
@@ -38,18 +33,26 @@ export default function Navigation() {
                     Application
                   </NavLink>
                 </li>
+                {user.isAdmin && (
+                  <li className="nav-item">
+                    <NavLink className="nav-link" to="/admin">
+                      Admin
+                    </NavLink>
+                  </li>
+                )}
+
                 <li className="nav-item">
-                  <NavLink className="nav-link" to="/admin">
-                    Admin
-                  </NavLink>
+                  <button className="nav-link" onClick={logout}>
+                    Logout
+                  </button>
                 </li>
               </>
             ) : (
               <>
                 <li className="nav-item">
-                  <Button className="nav-link" onPress={logout}>
-                    Logout
-                  </Button>
+                  <NavLink className="nav-link" to="/">
+                    Home
+                  </NavLink>
                 </li>
               </>
             )}

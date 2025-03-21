@@ -21,25 +21,31 @@ function PortalForm() {
         validationSchema={advancedSchema}
       >
         {({ isSubmitting }) => (
-          <Form>
+          <Form className="border border-5 my-4 p-5 rounded-3 d-flex flex-column gap-2">
             <CustomInput
               label="Kullancı Adı"
               name="username"
               type="text"
               placeholder="Kullanıcı Adınızı Giriniz"
+              style={{ border: "1px solid var(--primary)", borderRadius:"5px" }}
             />
+            <hr />
             <CustomSelect
               label="Pozisyon"
               name="position"
               placeholder="Pozisyon Seçiniz"
+              style={{ border: "1px solid var(--primary)", borderRadius:"5px" }}
+
             >
               <option value="">Lütfen Bir Pozisyon Seçiniz</option>
               <option value="Frontend">Frontend Developer</option>
               <option value="Backend">Backend Developer</option>
               <option value="Full Stack">Full Stack Developer</option>
             </CustomSelect>
+            <hr />
             <CustomCheckbox type="checkbox" name="isAccepted" />
-            <button disabled={isSubmitting} type="submit">
+            <hr />
+            <button className="btn btn-outline-primary" disabled={isSubmitting} type="submit">
               Kaydet
             </button>
             <Link className="formLink" to="/">

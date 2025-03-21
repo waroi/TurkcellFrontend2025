@@ -1,0 +1,20 @@
+.adminContainer {
+    background-color: #f8f9fa;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  }  
+   
+  .cardAdmin {
+    transition: all 0.3s ease;
+    border: none;
+  }
+  
+  .cardAdmin:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+  }
+  
+    
+  
+  

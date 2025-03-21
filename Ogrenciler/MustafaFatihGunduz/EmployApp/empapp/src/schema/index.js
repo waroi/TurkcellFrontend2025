@@ -38,4 +38,5 @@ export const basicSchema = yup.object().shape({
   isTurkish: yup.boolean().required("Bu alan zorunludur"),
   university: yup.string().required("Bu alan zorunludur"),
   isGraduate: yup.boolean().required("Bu alan zorunludur"),
+  skills: yup.string().required("En az bir yetenek eklemelisiniz"),
 });

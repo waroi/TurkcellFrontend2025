@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const AdminButton = () => {
   return (
     <Link to="/admin">
-      <button>Admin Paneline Git</button>
+      <button className="btn btn-primary">Admin Paneline Git</button>
     </Link>
   );
 };

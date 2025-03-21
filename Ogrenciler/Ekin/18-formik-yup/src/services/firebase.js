@@ -34,22 +34,11 @@ const database = getFirestore(app);
 
 export function register(email, password, name, surname) {
   return createUserWithEmailAndPassword(auth, email, password).then(
-    (response) => setUser(response.user.uid, name, surname)
+    (response) => setUser(response.user.uid, email, name, surname)
   );
 }
 
 export function setUser(id, email, name, surname) {
-  console.log(
-    "firebase setuser id",
-    id,
-    "email",
-    email,
-    "name",
-    name,
-    "surname",
-    surname
-  );
-
   return setDoc(doc(database, "users", id), {
     id,
     email,
@@ -76,11 +65,28 @@ export function getUser(user) {
     snapshot.data()
   );
 }
-//* Form ====================================================================================================
+//* Application ====================================================================================================
 
 export function submitForm(form) {
   delete form["email-again"];
   delete form["terms-and-conditions"];
   delete form["kvkk"];
   return addDoc(collection(database, "application-forms"), form);
+}
+
+export function getForms() {
+  return getDocs(collection(database, "application-forms")).then(
+    (snapshot) =>
+      snapshot.docs.map((application) => ({
+        ...application.data(),
+        id: application.id,
+      }))
+    //   .sort((current, next) => next.date - current.date)
+  );
+}
+
+export function setApplication(id, status) {
+  return updateDoc(doc(database, "application-forms", id), {
+    status,
+  }).then(() => id);
 }
