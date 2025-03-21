@@ -13,18 +13,10 @@ const GeneralForm = () => {
   const onSubmit = async (values, actions) => {
     try {
       console.log("Form values:", values);
-
-      // Check if user is authenticated
-
-      //const userData = await getUser(auth.currentUser.uid);
-      // console.log("User Data", userData);
-
       await saveApplication(values);
       console.log("Application saved successfully");
-      // actions.resetForm();
     } catch (error) {
       console.error("Error submitting form:", error);
-      // You might want to show this error to the user
     } finally {
       actions.setSubmitting(false);
     }
@@ -207,6 +199,7 @@ const GeneralForm = () => {
         <h2 className="text-center mb-4">Application Form</h2>
         <Formik
           initialValues={{
+            userId: `${auth.currentUser.uid}`,
             fullname: "",
             email: "",
             phone: "",
@@ -221,18 +214,19 @@ const GeneralForm = () => {
             experience: { years: "", currentCompany: "", position: "" },
             skills: {
               languages: {
-                turkish: "turkish",
-                english: "english",
-                german: "german",
+                turkish: false,
+                english: false,
+                german: false,
               },
               programmingLanguages: {
-                javascript: "javascript",
-                python: "python",
-                java: "java",
+                javascript: false,
+                python: false,
+                java: false,
               },
             },
             expectedSalary: "",
             isAccepted: false,
+            status: "Beklemede",
           }}
           onSubmit={onSubmit}
           validationSchema={basicSchema}

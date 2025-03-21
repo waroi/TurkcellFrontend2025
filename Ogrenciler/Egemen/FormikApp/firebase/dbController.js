@@ -12,7 +12,7 @@ import {
 } from "firebase/firestore";
 import { auth, db } from "./firebase";
 
-export async function getUserBlogs() {
+export async function getUserApplications() {
   const user = auth.currentUser;
   if (!user) {
     return;
@@ -23,14 +23,14 @@ export async function getUserBlogs() {
     console.error("Kullanıcı bilgisi bulunamadı!");
     return;
   }
-  const blogsRef = collection(db, "blogs");
-  const q = query(blogsRef, where("userId", "==", user.uid));
+  const appRef = collection(db, "applications");
+  const q = query(appRef, where("userId", "==", user.uid));
   const querySnapshot = await getDocs(q);
-  const blogs = querySnapshot.docs.map((doc) => ({
+  const apps = querySnapshot.docs.map((doc) => ({
     id: doc.id,
     ...doc.data(),
   }));
-  return blogs;
+  return apps;
 }
 export async function getAllApplications() {
   const querySnapshot = await getDocs(collection(db, "applications"));
@@ -56,16 +56,16 @@ export async function getUser(id) {
   return docSnap.data();
 }
 
-export async function updateFbBlog(blog) {
+export async function updateAppStatus(app) {
   try {
-    const { id, ...blogData } = blog;
-    const docRef = doc(db, "blogs", id);
+    const { id, ...appData } = app;
+    const docRef = doc(db, "applications", id);
     const docSnap = await getDoc(docRef);
     if (docSnap.exists()) {
-      await updateDoc(docRef, blogData);
+      await updateDoc(docRef, appData);
       return true;
     } else {
-      await setDoc(docRef, blogData);
+      await setDoc(docRef, appData);
       return true;
     }
   } catch (error) {

@@ -1,43 +1,19 @@
 import { useEffect, useState } from "react";
-import {
-  getAllApplications,
-  getUser,
-  getUserApplications,
-  updateAppStatus,
-} from "../../firebase/dbController";
-import { auth } from "../../firebase/firebase";
-import { unsubscribe } from "../../services/authServices";
-import Button from "./atoms/buttons/Button";
+import { getUserApplications } from "../../firebase/dbController";
 
-const Applications = () => {
+const MyApplications = () => {
   const [apps, setApps] = useState([]);
-  const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const getApplications = async (uid) => {
-    const fetchedUser = await getUser(uid);
-    setUser(fetchedUser);
-    if (fetchedUser && fetchedUser.role === "admin") {
-      setApps(await getAllApplications());
-    } else {
-      setApps(await getUserApplications(uid));
-    }
-    setLoading(false);
+
+  const getApplications = async () => {
+    setApps(await getUserApplications());
   };
 
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((currentUser) => {
-      if (currentUser) {
-        getApplications(currentUser.uid);
-      }
-    });
-    return () => unsubscribe();
-  }, [apps]);
-  if (loading) {
-    return <div>Loading...</div>;
-  }
+    getApplications();
+  }, []);
   return (
     <div className="container py-4">
-      <h1 className="mb-4 text-center text-primary">Tüm Başvurular</h1>
+      <h1 className="mb-4 text-center text-primary">Başvurularım</h1>
       <div className="accordion" id="applicationsAccordion">
         {apps.map((application, index) => (
           <div
@@ -134,54 +110,7 @@ const Applications = () => {
                         : "Dil becerisi yok."}
                     </p>
                   </div>
-                </div>
-                <div className="mt-4 d-flex justify-content-end">
-                  {user &&
-                  application.status === "Beklemede" &&
-                  user.role === "admin" ? (
-                    <>
-                      <Button
-                        className="btn btn-success me-3 px-4 py-2 shadow"
-                        onClick={() => {
-                          {
-                            application.status = "Onay";
-                            updateAppStatus(application);
-                          }
-                        }}
-                      >
-                        Onayla
-                      </Button>
-                      <Button
-                        className="btn btn-danger px-4 py-2 shadow"
-                        onClick={() => {
-                          {
-                            application.status = "Red";
-                            updateAppStatus(application);
-                          }
-                        }}
-                      >
-                        Reddet
-                      </Button>
-                    </>
-                  ) : (
-                    <>
-                      {application.status === "Beklemede" && (
-                        <span className="badge text-bg-primary">
-                          Değerlendirme Aşamasında
-                        </span>
-                      )}
-                      {application.status === "Onay" && (
-                        <span className="badge text-bg-success">
-                          Başvuru Onaylandı
-                        </span>
-                      )}
-                      {application.status === "Red" && (
-                        <span className="badge text-bg-danger">
-                          Başvuru kabul edilmedi
-                        </span>
-                      )}
-                    </>
-                  )}
+                  <div className="col-12"></div>
                 </div>
               </div>
             </div>
@@ -192,4 +121,4 @@ const Applications = () => {
   );
 };
 
-export default Applications;
+export default MyApplications;
