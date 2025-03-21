@@ -5,6 +5,7 @@ import { Link } from "react-router";
 import { LANGUAGES, levels, UNIVERSITIES } from "../constants/constants";
 import LanguageForm from "./LanguageForm";
 import ProfileForm from "./ProfileForm";
+import { advancedSchema } from "../schemas";
 
 const onSubmit = async (values, actions) => {
   await new Promise((resolve) => {
@@ -26,10 +27,11 @@ const PortalFormu = () => {
           gender: "",
           phoneNumber: "",
           language: "",
+          level: "",
           isAccepted: false,
         }}
         onSubmit={onSubmit}
-        // validationSchema={advancedSchema}
+        validationSchema={advancedSchema}
       >
         {({ isSubmitting }) => (
           <>
@@ -58,11 +60,23 @@ const PortalFormu = () => {
                 placeholder="Telefon Numaranızı Giriniz"
               />
               <div>
-                {Array.from({length: count}, (v, i) => <LanguageForm key={i}/>)}<button onClick={() => setCount(count + 1)} className="btn btn-dark">Yeni Dil Ekle</button>
+                {Array.from({ length: count }, (v, i) => (
+                  <LanguageForm key={i} />
+                ))}
+                <button
+                  onClick={() => setCount(count + 1)}
+                  className="btn btn-dark"
+                >
+                  Yeni Dil Ekle
+                </button>
               </div>
 
               {/* <CustomCheckbox type="checkbox" name="isAccepted" /> */}
-              <button disabled={isSubmitting} type="submit" className="btn btn-primary mt-3">
+              <button
+                disabled={isSubmitting}
+                type="submit"
+                className="btn btn-primary mt-3"
+              >
                 Kaydet
               </button>
               <Link className="formLink" to="/">
