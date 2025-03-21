@@ -13,7 +13,7 @@ export const basicSchema = yup.object().shape({
     university: yup
       .string()
       .oneOf(
-        ["bogazici", "gsu", "odtü", "itü", "ksu", "bey"],
+        ["bogazici", "gsu", "odtu", "itu", "hacettepe", "bilkent"],
         "Lütfen üniversitenizi seçiniz"
       )
       .required("Lütfen üniversitenizi seçiniz"),

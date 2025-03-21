@@ -24,7 +24,7 @@ const Navbar = () => {
         <div className="container-fluid">
           <div className="navbar-brand d-flex align-items-center">
             <img
-              src="https://cdn.dribbble.com/users/2286676/screenshots/6851910/applima_4x.jpg?resize=230x120"
+              src="https://cdn.dribbble.com/users/2286676/screenshots/6851910/applima_4x.jpg?resize=230x60"
               alt="logo"
             />
           </div>
