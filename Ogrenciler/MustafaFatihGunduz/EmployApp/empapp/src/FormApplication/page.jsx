@@ -8,7 +8,7 @@ import { saveApplication } from "../services/applicationService";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { auth } from "../../firebase_config";
 import SignInModal from "../components/SignInModal/SignInModal";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { signOutFromApp } from "../services/auth_service";
 import { checkIsHeAdmin } from "../services/db_service";
 
@@ -16,11 +16,19 @@ const Application = () => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const [admin, setAdmin] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   const handleAdmin = async () => {
     const user = await checkIsHeAdmin();
     setAdmin(user);
   };
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      setIsLoggedIn(user !== null);
+    });
 
+    return () => unsubscribe();
+  }, []);
   const { values, errors, isSubmitting, handleChange, handleSubmit } =
     useFormik({
       initialValues: {
@@ -38,6 +46,7 @@ const Application = () => {
         isTurkish: true,
         university: "",
         isGraduate: false,
+        skills: "",
       },
       validationSchema: basicSchema,
       onSubmit: async (values) => {
@@ -67,13 +76,18 @@ const Application = () => {
   return (
     <>
       <div className="container mt-4">
-        <AdminButton />
-        <button
-          className="btn btn-primary"
-          onClick={async () => await handleSignOut()}
-        >
-          Çıkış yap
-        </button>
+        <div className="d-flex justify-content-between mb-3">
+          <AdminButton />
+
+          {isLoggedIn && (
+            <button
+              className="btn btn-primary"
+              onClick={async () => await handleSignOut()}
+            >
+              Çıkış yap
+            </button>
+          )}
+        </div>
         <div className="card shadow p-4">
           <h2 className="text-center mb-4">Başvuru Formu</h2>
           <form onSubmit={handleSubmit}>
@@ -240,6 +254,19 @@ const Application = () => {
                 />
                 {errors.university && (
                   <p className="text-danger">{errors.university}</p>
+                )}
+              </div>
+              <div className="col-md-12">
+                <Input
+                  label="Yetenekleriniz"
+                  placeholder="Yeteneklerinizi virgülle ayırarak yazınız (ör: React, JavaScript, CSS)"
+                  id="skills"
+                  value={values.skills}
+                  onChange={handleChange}
+                  className="form-control"
+                />
+                {errors.skills && (
+                  <p className="text-danger">{errors.skills}</p>
                 )}
               </div>
             </div>

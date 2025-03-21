@@ -2,20 +2,19 @@ import { useState } from "react";
 import {
   signWithEmailAndPassword,
   createWithEmailAndPassword,
-} from "../services/auth_service"
+} from "../services/auth_service";
 
 const useHandleAuth = () => {
-
-  const handleLogin = async (email,password) => {
+  const handleLogin = async (email, password) => {
     const user = await signWithEmailAndPassword(email, password);
     if (user !== null) {
       alert("Başarılı bir şekilde giriş yaptınız.");
-      // handleClose();
+      //handleClose();
     } else {
       alert("Giriş yaparken bir hata oluştu");
     }
   };
-  const handleSignUp = async (email,password) => {
+  const handleSignUp = async (email, password) => {
     const user = await createWithEmailAndPassword(email, password);
     if (user !== null) {
       alert("Başarılı bir şekilde kayıt oldunuz.");
@@ -23,11 +22,8 @@ const useHandleAuth = () => {
       alert("Kayıt yaparken bir hata oluştu");
     }
   };
-    
-  
 
-  
-  return {handleLogin,handleSignUp};
-}
+  return { handleLogin, handleSignUp };
+};
 
-export default useHandleAuth
+export default useHandleAuth;

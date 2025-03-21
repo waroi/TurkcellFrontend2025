@@ -16,8 +16,8 @@ export const fetchApplications = async () => {
 
 export const saveApplication = async (application) => {
   try {
-    const q = query(collection(db,"applications"));
-    const newApp = await setDoc(q,{
+    const q = query(collection(db, "applications"));
+    const newApp = await setDoc(q, {
       adressFirst: application.adressFirst,
       adressSecond: application.adressSecond,
       birthday: application.birthday,
@@ -31,10 +31,11 @@ export const saveApplication = async (application) => {
       phoneNumber: application.phoneNumber,
       postCode: application.postCode,
       province: application.province,
-      university: application.university
+      university: application.university,
+      skills: application.skills,
     });
     console.log(newApp);
   } catch (error) {
-    console.log("SaveApplication Error",error);
+    console.log("SaveApplication Error", error);
   }
-}
+};

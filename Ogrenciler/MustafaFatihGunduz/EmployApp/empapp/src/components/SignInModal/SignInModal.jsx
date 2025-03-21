@@ -55,7 +55,7 @@ function SignInModal({ show, handleClose }) {
   ) : (
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
-        <Modal.Title>Giriş Yap</Modal.Title>
+        <Modal.Title>Kayıt Ol</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form>
@@ -88,7 +88,7 @@ function SignInModal({ show, handleClose }) {
             />
           </Form.Group>
           <Button variant="link" onClick={() => setIsCreating(true)}>
-            Giriş yap
+            Giriş Yap
           </Button>
         </Form>
       </Modal.Body>
