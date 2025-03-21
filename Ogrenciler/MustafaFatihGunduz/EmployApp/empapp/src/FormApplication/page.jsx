@@ -11,6 +11,7 @@ import SignInModal from "../components/SignInModal/SignInModal";
 import { useState, useEffect } from "react";
 import { signOutFromApp } from "../services/auth_service";
 import { checkIsHeAdmin } from "../services/db_service";
+import "../pages/AdminPanel.css";
 
 const Application = () => {
   const [show, setShow] = useState(false);
@@ -75,13 +76,13 @@ const Application = () => {
   };
   return (
     <>
-      <div className="container mt-4">
+      <div className="container mt-4 adminContainer">
         <div className="d-flex justify-content-between mb-3">
           <AdminButton />
 
           {isLoggedIn && (
             <button
-              className="btn btn-primary"
+              className="btn btn-danger"
               onClick={async () => await handleSignOut()}
             >
               Çıkış yap

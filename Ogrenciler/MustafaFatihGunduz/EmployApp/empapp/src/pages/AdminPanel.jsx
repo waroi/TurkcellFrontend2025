@@ -9,6 +9,7 @@ import useFetchApplication from "../store/useFetchApplication";
 import { useState, useEffect } from "react";
 import { auth } from "../../firebase_config";
 import { Link } from "react-router-dom";
+import "./AdminPanel.css";
 
 const AdminPanel = () => {
   const { applications, show, handleClose, handleLogin } =
@@ -65,7 +66,7 @@ const AdminPanel = () => {
     return (
       <div className="container mt-4">
         <div className="text-center">
-          <div className="spinner-border" role="status">
+          <div className="spinner-border spinner" role="status">
             <span className="visually-hidden">Yükleniyor...</span>
           </div>
           <p className="mt-2">Yükleniyor...</p>
@@ -75,10 +76,10 @@ const AdminPanel = () => {
   }
 
   return (
-    <div className="container mt-4">
-      <div className="d-flex justify-content-between align-items-center mb-4">
-        <h1>Başvuruları Yönet</h1>
-        <Link to="/" className="btn btn-secondary">
+    <div className="container mt-4 adminContainer">
+      <div className=" d-flex justify-content-between align-items-center mb-4">
+        <h1 className="fw-bolder">Başvuruları Yönet</h1>
+        <Link to="/" className="btn btn-secondary ">
           <i className="bi bi-arrow-left"></i> Başvuru Sayfasına Dön
         </Link>
       </div>
@@ -111,7 +112,7 @@ const AdminPanel = () => {
             <div className="col-md-12">
               <input
                 type="text"
-                className="form-control"
+                className="form-control p-3 mb-4 border rounded shadow-sm"
                 placeholder="İsim veya yetenek girin"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
@@ -120,10 +121,10 @@ const AdminPanel = () => {
           </div>
           <div className="row">
             {filteredApplications.map((app) => (
-              <div key={app.id} className="col-md-4 mb-4">
-                <div className="card shadow-sm">
+              <div key={app.id} className="col-md-4 mb-4 ">
+                <div className="card cardAdmin shadow-sm">
                   <div className="card-body">
-                    <h5 className="card-title">
+                    <h5 className="card-title text-dark fw-semibold border-bottom pb-2 mb-3">
                       {app.name} {app.lastName}
                     </h5>
                     <p className="card-text">
@@ -155,11 +156,11 @@ const AdminPanel = () => {
                     {app.skills && (
                       <p className="card-text">
                         <strong>Yetenekler:</strong>{" "}
-                        <span className="badge bg-warning text-dark me-1">
+                        <span className="d-flex flex-wrap gap-2 mt-2">
                           {app.skills.split(",").map((skill, index) => (
                             <span
                               key={index}
-                              className="badge bg-secondary me-1"
+                              className=" badge bg-dark rounded-pill"
                             >
                               {skill.trim()}
                             </span>
@@ -175,9 +176,9 @@ const AdminPanel = () => {
                       {app.isGraduate ? "Evet" : "Hayır"}
                     </p>
                   </div>
-                  <div className="card-footer gap-4 d-flex justify-content-center">
+                  <div className="card-footer  gap-4 d-flex justify-content-center">
                     <button
-                      className="btn btn-primary "
+                      className="btn btn-success"
                       onClick={async () => await sendEmail()}
                     >
                       Onayla
