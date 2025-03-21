@@ -16,7 +16,7 @@ const Applications = () => {
 
   useEffect(() => {
     getApplications(auth.currentUser.uid, setApps, setUser, setLoading);
-  }, []);
+  }, [apps]);
 
   return loading ? (
     <div>Loading...</div>
