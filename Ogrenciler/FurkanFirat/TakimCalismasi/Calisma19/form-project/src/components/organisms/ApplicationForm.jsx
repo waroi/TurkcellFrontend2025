@@ -5,7 +5,9 @@ import { applicationFormSchema } from '../../schemas';
 import ApplicationFormField from '../molecules/ApplicationFormField';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { db } from '../../firebase/config';
+import { useNavigate } from 'react-router';
 export const ApplicationForm = () => {
+  const navigate = useNavigate();
   const {
     values,
     errors,
@@ -28,11 +30,12 @@ export const ApplicationForm = () => {
     },
     validationSchema: applicationFormSchema,
     onSubmit: async (values) => {
-      console.log(values);
       await addDoc(collection(db, 'applications'), {
         ...values,
         timestamp: serverTimestamp(),
       });
+      alert('Form submitted.');
+      navigate('/');
     },
   });
 
