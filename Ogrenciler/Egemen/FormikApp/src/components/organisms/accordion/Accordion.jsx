@@ -26,7 +26,7 @@ const Accordion = ({ sections = [] }) => {
             className={`accordion-collapse collapse ${
               index === 0 ? "show" : ""
             }`}
-            data-bs-parent="#accordionExample"
+            data-bs-parent="#accordion"
           >
             <div className="accordion-body">{section.fields}</div>
           </div>
