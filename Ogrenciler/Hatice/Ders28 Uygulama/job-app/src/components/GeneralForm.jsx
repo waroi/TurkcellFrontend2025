@@ -3,7 +3,7 @@ import { basicSchema } from "../schemas";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useNavigate } from "react-router";
-import { auth } from "../firebaseConfig";
+import { auth } from "../firebase/firebaseConfig";
 
 const onSubmit = async (values, actions) => {
   console.log(values);

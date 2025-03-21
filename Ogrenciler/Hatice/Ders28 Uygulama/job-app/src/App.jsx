@@ -6,11 +6,15 @@ import GeneralForm from "./components/GeneralForm";
 import PortalForm from "./components/PortalForm";
 import Login from "./auth/Login";
 import Register from "./auth/Register";
+// import { db } from "./firebase/firebaseConfig";
+
+
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {
+  console.log("xxx",db)
   return (
     <div className="App">
       <Navbar />
