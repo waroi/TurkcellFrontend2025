@@ -25,13 +25,7 @@ export default function LoginForm() {
 				} catch (error) {
 					console.error("Login error:", error.message);
 					//! HATA MESAJLARINI KONTROL ET
-					setLoginError(
-						error.code === "auth/user-not-found"
-							? "No account found with this email"
-							: error.code === "auth/wrong-password"
-							? "Invalid password"
-							: "Failed to sign in. Please try again."
-					);
+					setLoginError("Invalid email or password. Please try again.");
 				}
 			},
 		});

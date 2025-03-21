@@ -3,11 +3,9 @@ import { useFormik } from "formik";
 import { db } from "../../firebase/config";
 import { recruitmentSchema } from "../../lib/schema";
 
-// jobId yerine jobDetails props'unu direkt alıyoruz
 export default function RecruitmentForm({ jobId, jobDetails }) {
 	const addDataToFirestore = async (formData) => {
 		try {
-			// İş bilgilerini de form verilerine ekle
 			const formDataWithJob = {
 				...formData,
 				jobId: jobId,
@@ -48,7 +46,6 @@ export default function RecruitmentForm({ jobId, jobDetails }) {
 		onSubmit: async (values, actions) => {
 			const success = await addDataToFirestore(values);
 
-			// Simüle edilmiş bir gecikme (gerçek projede kaldırılabilir)
 			await new Promise((resolve) => setTimeout(resolve, 1000));
 
 			if (success) {
@@ -85,9 +82,6 @@ export default function RecruitmentForm({ jobId, jobDetails }) {
 					/>
 					<label htmlFor="jobTitle">Başvurulan Pozisyon</label>
 				</div>
-
-				{/* Diğer form alanları aynı kalacak */}
-				{/* ... */}
 
 				<h5 className="text-start mb-3 text-primary">Kişisel Bilgiler</h5>
 

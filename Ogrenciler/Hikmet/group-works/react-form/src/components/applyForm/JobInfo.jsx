@@ -6,7 +6,7 @@ import JobInfoCard from "./JobInfoCard";
 import RecruitmentForm from "./RecruitmentForm";
 
 export default function JobInfo() {
-	const { jobId } = useParams(); // jobId olarak alıyoruz (route parametresi bu şekilde)
+	const { jobId } = useParams();
 	const [jobDetails, setJobDetails] = useState(null);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
@@ -15,8 +15,6 @@ export default function JobInfo() {
 		const fetchJobDetails = async () => {
 			try {
 				setLoading(true);
-				console.log("Fetching job with ID:", jobId); // Debugging için
-
 				const jobDoc = doc(db, "jobs", jobId);
 				const jobSnapshot = await getDoc(jobDoc);
 
@@ -25,10 +23,8 @@ export default function JobInfo() {
 						jobId: jobSnapshot.jobId,
 						...jobSnapshot.data(),
 					};
-					console.log("Job data fetched:", data); // Debugging için
 					setJobDetails(data);
 				} else {
-					console.log("No job found with ID:", jobId); // Debugging için
 					setError("İş ilanı bulunamadı.");
 				}
 			} catch (err) {

@@ -26,10 +26,8 @@ export const approveApplication = async (application) => {
 	try {
 		const { id, ...cleanApplication } = application;
 
-		// Olumlu koleksiyonuna ekle
 		await addDoc(collection(db, "olumlu"), cleanApplication);
 
-		// İncelenecek koleksiyonundan sil
 		await deleteDoc(doc(db, "incelenecek", id));
 
 		return true;
@@ -44,10 +42,8 @@ export const rejectApplication = async (application) => {
 	try {
 		const { id, ...cleanApplication } = application;
 
-		// Olumsuz koleksiyonuna ekle
 		await addDoc(collection(db, "olumsuz"), cleanApplication);
 
-		// İncelenecek koleksiyonundan sil
 		await deleteDoc(doc(db, "incelenecek", id));
 
 		return true;
