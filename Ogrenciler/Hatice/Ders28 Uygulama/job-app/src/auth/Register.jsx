@@ -2,7 +2,7 @@ import { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebaseConfig";
 import { useNavigate } from "react-router";
-import { toast } from "react-toastify"; 
+import { toast } from "react-toastify";
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -13,10 +13,10 @@ const Register = () => {
     e.preventDefault();
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-      toast.success("Kayıt başarıyla tamamlandı! 🎉 Giriş yapabilirsiniz."); 
+      toast.success("Kayıt başarıyla tamamlandı! 🎉 Giriş yapabilirsiniz.");
       navigate("/login");
     } catch (error) {
-      toast.error(`Kayıt başarısız: ${error.message}`);  
+      toast.error(`Kayıt başarısız: ${error.message}`);
     }
   };
 
