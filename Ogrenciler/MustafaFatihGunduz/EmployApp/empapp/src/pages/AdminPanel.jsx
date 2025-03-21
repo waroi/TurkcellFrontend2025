@@ -1,20 +1,19 @@
-import { useEffect, useState } from "react";
-import { fetchApplications } from "../services/applicationService";
-import "bootstrap/dist/css/bootstrap.min.css"; 
-import { sendEmail } from "../services/db_service";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { sendEmail, sendPasswordReset } from "../services/db_service";
+import SignInModal from "../components/SignInModal/SignInModal";
+import useFetchApplication from "../store/useFetchApplication";
+import { useState } from "react";
 
 const AdminPanel = () => {
-  const [applications, setApplications] = useState([]);
+  const { applications, show, handleClose, handleLogin } =
+    useFetchApplication();
 
-  useEffect(() => {
-    const getApplications = async () => {
-      const data = await fetchApplications();
-      setApplications(data);
-    };
-
-    getApplications();
-  }, []);
-
+  const [searchTerm, setSearchTerm] = useState("");
+  const filteredApplications = applications.filter((app) => {
+    const lowerCaseSearch = searchTerm.toLowerCase();
+    return app.name.toLowerCase().includes(lowerCaseSearch);
+    // app.skills.map((skill) => skill.toLowerCase().includes(lowerCaseSearch))
+  });
   return (
     <div className="container mt-4">
       <h1 className="text-center mb-4">Başvuruları Yönet</h1>
@@ -22,9 +21,22 @@ const AdminPanel = () => {
         Bu sayfada başvurular listelenecek ve admin tarafından
         değerlendirilecek.
       </p>
-
+      <button className="btn btn-primary" onClick={() => handleLogin()}>
+        Giriş yap
+      </button>
+      <div className="row my-3">
+        <div className="col-md-12">
+          <input
+            type="text"
+            className="form-control"
+            placeholder="İsim veya yetenek girin"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+        </div>
+      </div>
       <div className="row">
-        {applications.map((app) => (
+        {filteredApplications.map((app) => (
           <div key={app.id} className="col-md-4 mb-4">
             <div className="card shadow-sm">
               <div className="card-body">
@@ -63,12 +75,24 @@ const AdminPanel = () => {
                 </p>
               </div>
               <div className="card-footer">
-                <button className="btn btn-primary" onClick={async () => await sendEmail(applications) }>Onayla</button>
+                <button
+                  className="btn btn-primary"
+                  onClick={async () => await sendEmail()}
+                >
+                  Onayla
+                </button>
+                <button
+                  className="btn btn-danger"
+                  onClick={async () => await sendPasswordReset()}
+                >
+                  Reddet
+                </button>
               </div>
             </div>
           </div>
         ))}
       </div>
+      <SignInModal show={show} handleClose={handleClose} />
     </div>
   );
 };

@@ -19,9 +19,9 @@ const Navbar = () => {
     return (
         <>
             <nav className="navbar navbar-expand-lg text-white fixed-top bg-primary">
-                <div className="navbar-content d-flex justify-content-space-between align-items-center w-100">
-                    <div className="navbar-heading w-100">
-                        <h5 className="p-5 text-start">{"{atmosware}"}</h5>
+                <div className="navbar-content d-flex justify-content-between align-items-center w-100">
+                    <div className="navbar-heading">
+                        <h5 className="ps-5">{"{atmosware}"}</h5>
                     </div>
                     <div className="d-flex align-items-center">
                         <button
@@ -32,7 +32,7 @@ const Navbar = () => {
                                 fontSize: "30px"
                             }}
                         >
-                            🔆
+                            {dark ? "🌙" : "🔆"} {/* Dark modda ay, light modda güneş */}
                         </button>
                         {user && (
                             <button
