@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 export default function FooterBottom() {
 	return (
 		<section className="row align-items-center">

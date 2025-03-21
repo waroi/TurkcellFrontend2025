@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 export default function Resources() {
 	return (
 		<section className="col-lg-2 col-md-6 mb-4 mb-md-5">

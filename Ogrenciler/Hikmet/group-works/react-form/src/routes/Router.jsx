@@ -1,11 +1,10 @@
-import React from "react";
 import { Route, Routes } from "react-router";
 
-import AdminView from "../../views/AdminView";
-import ApplyView from "../../views/ApplyView";
-import HomeView from "../../views/HomeView";
-import LoginView from "../../views/LoginView";
-import RegisterView from "../../views/RegisterView";
+import AdminView from "../views/AdminView";
+import ApplyView from "../views/ApplyView";
+import HomeView from "../views/HomeView";
+import LoginView from "../views/LoginView";
+import RegisterView from "../views/RegisterView";
 
 const Router = () => {
 	return (
