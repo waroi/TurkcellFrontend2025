@@ -2,21 +2,21 @@ import { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebaseConfig";
 import { useNavigate } from "react-router";
-import { toast } from "react-toastify"; 
+import { toast } from "react-toastify";
 
 const Login = () => {
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");   
+  const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      toast.success("Başarıyla giriş yaptınız! 🎉");  
+      toast.success("Başarıyla giriş yaptınız! 🎉");
       navigate("/");
     } catch (error) {
-      toast.error(`Giriş yapılamadı: ${error.message}`);  
+      toast.error(`Giriş yapılamadı: ${error.message}`);
     }
   };
 
