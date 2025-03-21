@@ -45,3 +45,18 @@ export const sendEmail = async () => {
 export const sendPasswordReset = async () => {
 	await sendPasswordResetEmail(auth,auth.currentUser.email)
 }
+export const checkIsHeAdmin = async () => {
+	try {
+		const q = query(collection(db, "users"), where("isAdmin", "==", true));
+		const snaps = await getDocs(q);
+		const currentID = auth.currentUser.uid;
+		for (const doc of snaps.docs) {
+			if (doc.id === currentID) {
+				return doc.data().isAdmin;
+			}
+		}
+	} catch (error) {
+		console.log("checkIsHeAdmin DBController Error", error);
+		return null;
+	}
+};
