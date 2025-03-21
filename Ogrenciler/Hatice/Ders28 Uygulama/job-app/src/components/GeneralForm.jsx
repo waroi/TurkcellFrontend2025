@@ -1,6 +1,9 @@
 import { useFormik } from "formik";
 import { basicSchema } from "../schemas";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { useNavigate } from "react-router";
+import { auth } from "../firebaseConfig";
 
 const onSubmit = async (values, actions) => {
   console.log(values);
@@ -13,6 +16,14 @@ const onSubmit = async (values, actions) => {
 };
 
 function GeneralForm() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!auth.currentUser) {
+      navigate("/login");
+    }
+  }, []);
+
   const { values, errors, isSubmitting, handleChange, handleSubmit } =
     useFormik({
       initialValues: {
@@ -27,11 +38,10 @@ function GeneralForm() {
       onSubmit,
     });
 
-  //   console.log(formik);
   return (
     <div className="container fromContainer">
       <div>
-      <h3 className="p-5 text-start form-title">{"{atmosware} Başvuru Sayfasına Hoşgeldiniz!"}</h3>
+        <h3 className="p-5 text-start form-title">{"{atmosware} Başvuru Sayfasına Hoşgeldiniz!"}</h3>
       </div>
       <form className="border border-5 my-4 p-3 rounded-3 generalForm" onSubmit={handleSubmit}>
         <div className="inputDiv m-2 d-flex justify-content-between">
@@ -74,7 +84,7 @@ function GeneralForm() {
             value={values.linkedin}
             onChange={handleChange}
             id="linkedin"
-            placeholder={errors.linkedin? errors.linkedin:"Geçerli bir URL giriniz"}
+            placeholder={errors.linkedin ? errors.linkedin : "Geçerli bir URL giriniz"}
             className={errors.linkedin ? "input-error" : ""}
           />
         </div>
@@ -96,7 +106,7 @@ function GeneralForm() {
             onChange={handleChange}
             id="coverLetter"
             placeholder={errors.coverLetter ? errors.coverLetter : "Geçerli bir ön yazı giriniz"}
-            className={errors.coverLetter ? "input-error" : "" } 
+            className={errors.coverLetter ? "input-error" : ""}
             rows="4"
           />
         </div>
