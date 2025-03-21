@@ -10,7 +10,6 @@ const ApplicationFormField = ({
   handleChange,
   handleBlur,
   values,
-  setFieldValue,
 }) => {
   return (
     <div className={`col-md-${field.column}`} key={field.id}>
@@ -59,23 +58,6 @@ const ApplicationFormField = ({
           value={values[field.name]}
           error={touched[field.name] && errors[field.name]}
         />
-      )}
-
-      {field.type === 'file' && (
-        <input
-          type='file'
-          id={field.id}
-          name={field.name}
-          accept={field.accept}
-          onChange={(event) => setFieldValue(field.name, event.target.files[0])}
-          className={`form-control ${
-            touched[field.name] && errors[field.name] ? 'is-invalid' : ''
-          }`}
-        />
-      )}
-
-      {touched[field.name] && errors[field.name] && (
-        <div className='text-danger'>{errors[field.name]}</div>
       )}
     </div>
   );

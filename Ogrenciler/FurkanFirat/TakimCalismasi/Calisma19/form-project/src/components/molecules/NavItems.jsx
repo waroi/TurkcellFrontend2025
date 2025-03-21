@@ -6,8 +6,13 @@ const NavItems = ({ currentUser, handleLogout }) => {
   if (currentUser) {
     return (
       <>
+        <NavbarLink to='/admin'>Applications</NavbarLink>
+
         <li className='nav-item'>
-          <Button className='btn btn-outline-secondary' onClick={handleLogout}>
+          <Button
+            className='btn btn-outline-secondary ms-2'
+            onClick={handleLogout}
+          >
             Logout
           </Button>
         </li>

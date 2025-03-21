@@ -15,17 +15,6 @@ export const applicationFormSchema = Yup.object().shape({
   address: Yup.string().required('Address is required'),
   desiredPosition: Yup.string().required('Position is required'),
   additionalInfo: Yup.string(),
-  cv: Yup.mixed()
-    .required('CV is required')
-    .test('fileType', 'Only PDF, DOC, and DOCX are allowed', (value) =>
-      value
-        ? [
-            'application/pdf',
-            'application/msword',
-            'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-          ].includes(value.type)
-        : false
-    ),
 });
 
 export const loginFormSchema = Yup.object({

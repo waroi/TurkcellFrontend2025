@@ -6,7 +6,7 @@ import {
   signOut,
   updateProfile,
 } from 'firebase/auth';
-import { doc, setDoc } from 'firebase/firestore';
+import { doc, getDoc, setDoc } from 'firebase/firestore';
 import { auth, db } from '../../firebase/config';
 
 export const AuthContext = createContext();
@@ -17,9 +17,17 @@ export const AuthProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
+    const unsubscribe = onAuthStateChanged(auth, async (user) => {
       if (user) {
-        setCurrentUser(user);
+        const userRef = doc(db, 'users', user.uid);
+        const userSnap = await getDoc(userRef);
+
+        if (userSnap.exists()) {
+          setCurrentUser({ ...user, ...userSnap.data() });
+        } else {
+          setCurrentUser(user);
+        }
+
         setIsLoggedIn(true);
       } else {
         setCurrentUser(null);
@@ -29,8 +37,7 @@ export const AuthProvider = ({ children }) => {
     });
 
     return unsubscribe;
-  }, [currentUser]);
-
+  }, []);
   const registerUser = async (fullName, email, password) => {
     try {
       const userCredential = await createUserWithEmailAndPassword(
@@ -65,6 +72,14 @@ export const AuthProvider = ({ children }) => {
         email,
         password
       );
+
+      const userRef = doc(db, 'users', userCredential.user.uid);
+      const userSnap = await getDoc(userRef);
+
+      if (userSnap.exists()) {
+        setCurrentUser({ ...userCredential.user, ...userSnap.data() });
+      }
+
       console.log('User logged in:', userCredential.user);
     } catch (error) {
       console.error('Login error:', error.message);

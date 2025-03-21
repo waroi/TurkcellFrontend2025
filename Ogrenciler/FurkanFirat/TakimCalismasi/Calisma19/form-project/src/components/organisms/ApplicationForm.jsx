@@ -3,7 +3,8 @@ import { Button } from '../atoms/Button';
 import { applicationFormFields } from '../../constants/formFields';
 import { applicationFormSchema } from '../../schemas';
 import ApplicationFormField from '../molecules/ApplicationFormField';
-
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { db } from '../../firebase/config';
 export const ApplicationForm = () => {
   const {
     values,
@@ -13,7 +14,6 @@ export const ApplicationForm = () => {
     handleBlur,
     handleSubmit,
     handleReset,
-    setFieldValue,
   } = useFormik({
     initialValues: {
       firstName: '',
@@ -25,11 +25,14 @@ export const ApplicationForm = () => {
       address: '',
       desiredPosition: '',
       additionalInfo: '',
-      cv: null,
     },
     validationSchema: applicationFormSchema,
-    onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+    onSubmit: async (values) => {
+      console.log(values);
+      await addDoc(collection(db, 'applications'), {
+        ...values,
+        timestamp: serverTimestamp(),
+      });
     },
   });
 
@@ -44,7 +47,6 @@ export const ApplicationForm = () => {
           handleChange={handleChange}
           handleBlur={handleBlur}
           values={values}
-          setFieldValue={setFieldValue}
         />
       ))}
 

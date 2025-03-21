@@ -15,7 +15,7 @@ export default function Router() {
     { path: '/login', element: <LoginView /> },
     { path: '/register', element: <RegisterView /> },
     { path: '/register-warning', element: <RegisterWarningView /> },
-    { path: '/application-form', element: <ApplicationFormView /> },
+    { path: '/admin', element: <AdminView /> },
     {
       path: '/application-form',
       element: <PrivateRouter isLoggedIn={isLoggedIn} />,
