@@ -20,9 +20,9 @@ const useUserStore = create((set) => ({
     user: {},
     cars: [],
     fetchUser: async () => {
-        const userRef = doc(db, "user", "vls8uXOxKhzFnQNXk6Ps"); // users koleksiyonundaki ID
+        const userRef = doc(db, "user", "vls8uXOxKhzFnQNXk6Ps");
         const userSnap = await getDoc(userRef);
-        set({ user: userSnap.data() }); // Firestore'dan veriyi çek
+        set({ user: userSnap.data() });
         return userSnap.data()
     },
     getCars: async () => {

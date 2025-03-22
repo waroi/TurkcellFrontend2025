@@ -10,7 +10,7 @@ export const basicSchema = yup.object().shape({
   gender: yup.string().required("Cinsiyet girmek zorunludur"),
   phonenumber: yup
     .string()
-    .matches(/^\+?\d{10,15}$/, "Lütfen geçerli bir telefon numarası giriniz")
+    .matches(/^\+?\d{10}$/, "Lütfen geçerli bir telefon numarası giriniz")
     .required("Telefon numarası girmek zorunludur"),
   address: yup.string().required("Adres girmek zorunludur"),
   school: yup.string().required("Okul girmek zorunludur"),
