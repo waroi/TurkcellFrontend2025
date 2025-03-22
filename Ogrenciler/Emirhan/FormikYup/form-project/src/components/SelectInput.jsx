@@ -19,11 +19,11 @@ function SelectInput({
       </label>
       <Field
         as="select"
-        name={field} 
+        name={field}
         className={`form-select form-control ${
           errors[field] && touched[field] ? "is-invalid" : ""
         }`}
-        onChange={(e) => setFieldValue(field, e.target.value)} 
+        onChange={(e) => setFieldValue(field, e.target.value)}
       >
         {options.map((option) => (
           <option key={option} value={option}>

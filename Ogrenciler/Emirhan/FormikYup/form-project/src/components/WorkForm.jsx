@@ -1,4 +1,4 @@
-import { ErrorMessage, Field, FieldArray, Form, Formik } from "formik";
+import { Form, Formik } from "formik";
 import { basicSchema } from "../schema";
 import FormInput from "./FormInput";
 import ArrayInput from "./ArrayInput";
@@ -246,9 +246,7 @@ function WorkForm() {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(filteredValues),
           })
-            .then((response) => {
-              if (!response.ok)
-                throw new Error("Veri kaydedilirken hata oluştu.");
+            .then(() => {
               alert("Başarıyla kaydedildi!");
               resetForm();
             })

@@ -5,7 +5,7 @@ function ArrayInput({ field, values, errors, touched, label }) {
   const [inputValue, setInputValue] = useState("");
 
   return (
-    <FieldArray key={field} name={field}>
+    <FieldArray name={field}>
       {({ push, remove }) => (
         <div className="w-75">
           <label
