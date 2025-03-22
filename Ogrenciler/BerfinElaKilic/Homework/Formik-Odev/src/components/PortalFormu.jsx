@@ -61,7 +61,7 @@ const PortalFormu = () => {
               />
               <div>
                 {Array.from({ length: count }, (v, i) => (
-                  <LanguageForm key={i} />
+                  <LanguageForm key={i} index={i} />
                 ))}
                 <button
                   onClick={() => setCount(count + 1)}

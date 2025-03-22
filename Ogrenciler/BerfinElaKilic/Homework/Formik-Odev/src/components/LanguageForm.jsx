@@ -10,7 +10,7 @@ const onSubmit = async (values, actions) => {
   actions.resetForm();
 };
 
-const LanguageForm = () => {
+const LanguageForm = ({ index }) => {
   const [language, setLanguage] = useState("");
   return (
     <>
@@ -19,7 +19,7 @@ const LanguageForm = () => {
           as="select"
           className="form-control"
           label="Yabancı Dil"
-          name="language"
+          name={`language${index}`}
         >
           <option defaultValue="">Yabancı Dil Seçiniz</option>
           {LANGUAGES.map((lang) => (
@@ -32,7 +32,7 @@ const LanguageForm = () => {
           as="select"
           className="form-control"
           label="Seviye Seçiniz"
-          name="level"
+          name={`level${index}`}
         >
           <option defaultValue="">Seviyenizi Seçiniz</option>
           {levels.map((level) => (
