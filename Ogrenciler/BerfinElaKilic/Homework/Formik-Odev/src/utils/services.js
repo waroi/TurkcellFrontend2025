@@ -25,3 +25,16 @@ export const deleteJob = async (id) => {
 export const getCandidatesByJobId = async (jobId) => {
   return await fetchService(`${url}/jobs/${jobId}/applicants`);
 };
+
+export const addAdmin = async (userDetail) => {
+  return await fetchService(`${url}/admins`, "POST", userDetail);
+};
+export const addCandidate = async (userDetail) => {
+  return await fetchService(`${url}/candidates`, "POST", userDetail);
+};
+export const getAdmin = async (id) => {
+  return await fetchService(`${url}/admins/${id}`);
+};
+export const getCandidate = async (id) => {
+  return await fetchService(`${url}/candidates/${id}`);
+};

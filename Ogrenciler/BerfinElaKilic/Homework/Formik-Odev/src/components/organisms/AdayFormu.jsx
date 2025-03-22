@@ -12,7 +12,19 @@ const AdayFormu = () => {
   const onSubmit = async (values, actions) => {
     console.log(values);
     console.log(actions);
-    const user = await register(values.password, values.lastName);
+    // const user = await register(
+    //   values.email,
+    //   values.lastName,
+    //   values.firstName,
+    //   values.lastName,
+    //   "candidate"
+    // );
+    const user = await login(
+      "hh@gmail.com",
+      "gfhfghfgh",
+      "uCASWzKrJNZ39LhRBYX4D5QIbYA3",
+      false
+    );
     if (user) {
       console.log(user);
       navigate("/register");

@@ -1,7 +1,7 @@
 import { Navigate, useRoutes } from "react-router";
 import UserProfile from "../views/UserProfile";
 import Admin from "../views/Admin";
-import User from "../views/User";
+import ProtectedUser from "../views/User";
 import JobDetail from "../views/JobDetail";
 import Login from "../views/Login";
 import Register from "../views/Register";
@@ -31,7 +31,7 @@ const Router = () => {
     },
     {
       path: `user/:userId`, //TODO:Protected for userId
-      element: <User />,
+      element: <ProtectedUser />,
       children: [{ path: `profile`, element: <UserProfile /> }], //TODO:display Not Protected,crud protected for userId
     },
     {

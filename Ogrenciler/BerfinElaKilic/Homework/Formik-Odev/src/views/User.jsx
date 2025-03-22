@@ -1,6 +1,7 @@
 import { Outlet } from "react-router";
 import DataRender from "../components/HOCS/DataRender";
-import { getAllJobs } from "../utils/services";
+import { getCandidate } from "../utils/services";
+import withAuth from "../components/HOCS/withAuth";
 
 const User = () => {
   const renderUserData = (data) => {
@@ -11,17 +12,18 @@ const User = () => {
 
     return <div>"hello"</div>;
   };
-
   return (
     <div>
       User <Outlet />
       <DataRender
-        id="userId"
-        fetchFunction={getAllJobs}
+        id="uCASWzKrJNZ39LhRBYX4D5QIbYA3"
+        fetchFunction={getCandidate}
         render={renderUserData}
       />
     </div>
   );
 };
 
-export default User;
+const ProtectedUser = withAuth(User, "candidate");
+
+export default ProtectedUser;
