@@ -17,13 +17,14 @@ export default function () {
 
 function Toast({ toastKey, message, variant = "primary" }) {
   const toast = useRef();
+  const store = useStore();
 
   useEffect(() => {
     new bootstrap.Toast(toast.current).show();
 
     toast.current.addEventListener("hidden.bs.toast", (event) => {
       event.preventDefault();
-      useStore().removeToast(toastKey);
+      store.removeToast(toastKey);
     });
   }, []);
 

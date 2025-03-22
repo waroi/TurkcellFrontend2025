@@ -16,17 +16,6 @@ function App() {
   return (
     <>
       <Navigation />
-      <Toast />
-      <button
-        onClick={() => {
-          store.addToast(
-            "MESSAGE !!!!!!!!" + Math.random().toString(36),
-            Math.random() < 0.5 ? "success" : "danger"
-          );
-        }}
-      >
-        DEBUG !!!!!!!!!!!!!!!!!!!!!
-      </button>
       <main className="py-5 bg-white">
         {useRoutes([
           { path: "/", element: <HomeView /> },
@@ -35,6 +24,7 @@ function App() {
         ])}
       </main>
       <Footer />
+      <Toast />
     </>
   );
 }
