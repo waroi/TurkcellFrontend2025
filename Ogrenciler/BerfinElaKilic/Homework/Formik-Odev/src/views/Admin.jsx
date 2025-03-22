@@ -1,12 +1,13 @@
 import { Outlet } from "react-router";
+import Admin from "../components/templates/Admin";
 
-const Admin = () => {
+const AdminView = () => {
   return (
     <>
-      Admin
+      <Admin/>
       <Outlet />
     </>
   );
 };
 
-export default Admin;
+export default AdminView;
