@@ -1,18 +1,17 @@
 import { useRoutes } from "react-router";
-import Navigation from "./components/Navigation";
+
 import HomeView from "./views/HomeView";
 import ApplicationView from "./views/ApplicationView";
+import UserView from "./views/UserView";
+import AdminView from "./views/AdminView";
+
+import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import Toast from "./components/Toast";
 
 import "./App.scss";
-import AdminView from "./views/AdminView";
-
-import useStore from "./store/useStore";
 
 function App() {
-  const store = useStore();
-
   return (
     <>
       <Navigation />
@@ -20,6 +19,7 @@ function App() {
         {useRoutes([
           { path: "/", element: <HomeView /> },
           { path: "/application", element: <ApplicationView /> },
+          { path: "/user", element: <UserView /> },
           { path: "/admin", element: <AdminView /> },
         ])}
       </main>
