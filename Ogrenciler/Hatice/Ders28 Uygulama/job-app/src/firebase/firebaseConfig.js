@@ -1,6 +1,14 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  getDocs,
+  doc,
+  deleteDoc,
+  getDoc,
+} from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyD9yKXHUgUygpGrkhAMijrua7V7qvG6bM8",
@@ -17,3 +25,34 @@ const db = getFirestore(app);
 
 
 export { auth, app, db };
+
+export function getUser(user) {
+  return getDoc(doc(database, "users", user)).then((snapshot) =>
+    snapshot.data()
+  );
+}
+
+export function getJobs() {
+  return getDocs(collection(database, "jobs")).then((snapshot) =>
+    snapshot.docs
+      .map((blog) => ({ ...blog.data(), id: blog.id }))
+      .sort((current, next) => next.date - current.date)
+  );
+}
+
+export function getJob(id) {
+  return getDoc(doc(database, "jobs", id)).then((snapshot) => ({
+    ...snapshot.data(),
+    id: snapshot.id,
+  }));
+}
+
+export function addJob(blog) {
+  return addDoc(collection(database, "jobs"), blog).then(
+    (response) => response.id
+  );
+}
+
+export function deleteJob(id) {
+  return deleteDoc(doc(database, "jobs", id));
+}
