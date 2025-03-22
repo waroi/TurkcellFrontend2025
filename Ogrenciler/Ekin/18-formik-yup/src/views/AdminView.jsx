@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import useUserStore from "../store/useUserStore";
+import useUserStore from "../store/useStore";
 import { getForms } from "../services/firebase";
 import Application from "../components/Application";
 import ApplicationDetail from "../components/ApplicationDetail";

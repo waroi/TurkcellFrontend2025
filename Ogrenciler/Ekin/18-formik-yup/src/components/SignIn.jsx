@@ -3,8 +3,8 @@ import { initialValues, validationSchema } from "../schemas/sign-in";
 import useAuth from "../hooks/useAuth";
 // import { submitForm } from "../services/firebase";
 
-import Input from "../components/Input";
-import Button from "../components/Button";
+import Input from "./inputs/Input";
+import Button from "./inputs/Button";
 
 export default function SignIn() {
   const { login } = useAuth();

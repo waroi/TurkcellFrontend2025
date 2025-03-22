@@ -1,17 +1,14 @@
 import { useField } from "formik";
 
+import Validation from "./Validation";
+import Label from "./Label";
+
 export default function Checkbox({ children, ...props }) {
   const [field, meta] = useField(props);
 
   return (
     <div className="mb-3">
-      <p
-        className={`text-danger small fw-bold mb-0 ${
-          meta.touched && meta.error ? "active" : ""
-        }`}
-      >
-        {meta.touched && meta.error ? meta.error : ""}
-      </p>
+      <Validation meta={meta} />
       <div className="form-check">
         <input
           {...field}
@@ -21,9 +18,7 @@ export default function Checkbox({ children, ...props }) {
           value=""
           id={props.name}
         />
-        <label className="form-check-label" htmlFor={props.name}>
-          {children}
-        </label>
+        <Label htmlFor={props.name}>{children}</Label>
       </div>
     </div>
   );

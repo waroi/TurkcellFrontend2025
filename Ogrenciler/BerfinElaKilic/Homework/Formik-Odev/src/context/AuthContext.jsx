@@ -7,41 +7,70 @@ import {
 } from "firebase/auth";
 import { auth } from "../utils/firebaseConfig";
 
-const AuthContext = createContext();
+const AuthContext = createContext(null);
 
 export const AuthProvider = ({ children }) => {
+  console.log("auth", auth);
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser); // Kullanıcı varsa user'a atar, yoksa null olur
+      setUser(currentUser);
       setLoading(false);
     });
 
-    return () => unsubscribe();
+    return unsubscribe; // Cleanup için direkt unsubscribe döndürmek yeterli
   }, []);
 
-  const login = (email, password) => {
-    return signInWithEmailAndPassword(auth, email, password);
+  const login = async (email, password) => {
+    try {
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      setUser(userCredential.user);
+      return userCredential.user;
+    } catch (error) {
+      console.error("Login error:", error.message);
+      throw new Error("Giriş yapılamadı. Lütfen bilgilerinizi kontrol edin.");
+    }
   };
 
-  const register = (email, password) => {
-    return createUserWithEmailAndPassword(auth, email, password);
+  const register = async (email, password) => {
+    try {
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      if (!userCredential.user) {
+        throw new Error("User oluşturulamadı");
+      }
+      return userCredential.user;
+    } catch (error) {
+      console.error("Register error:", error.message);
+      throw new Error("Kayıt işlemi başarısız. Lütfen tekrar deneyin.");
+    }
   };
 
   const logout = async () => {
     await signOut(auth);
-    setUser(null); // Çıkış yapıldığında user'ı sıfırla
+    setUser(null);
   };
 
-  const values = { user, login, register, logout };
-
   return (
-    <AuthContext.Provider value={values}>
+    <AuthContext.Provider value={{ user, login, register, logout }}>
       {!loading && children}
     </AuthContext.Provider>
   );
 };
 
-export const useAuth = () => useContext(AuthContext);
+export const useAuth = () => {
+  const context = useContext(AuthContext);
+  if (!context) {
+    throw new Error("useAuth must be used within an AuthProvider");
+  }
+  return context;
+};

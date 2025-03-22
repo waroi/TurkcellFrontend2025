@@ -1,17 +1,14 @@
 import { useField } from "formik";
 
+import Validation from "./Validation";
+import Label from "./Label";
+
 export default function Input({ label, ...props }) {
   const [field, meta] = useField(props);
 
   return (
     <>
-      <p
-        className={`text-danger small fw-bold mb-0 ${
-          meta.touched && meta.error ? "active" : ""
-        }`}
-      >
-        {meta.touched && meta.error ? meta.error : ""}
-      </p>
+      <Validation meta={meta} />
       <div className="form-floating mb-3">
         <input
           className={`form-control border border-2 ${
@@ -24,7 +21,7 @@ export default function Input({ label, ...props }) {
           {...field}
           {...props}
         />
-        <label htmlFor={props.name}>{label}</label>
+        <Label htmlFor={props.name}>{label}</Label>
       </div>
     </>
   );

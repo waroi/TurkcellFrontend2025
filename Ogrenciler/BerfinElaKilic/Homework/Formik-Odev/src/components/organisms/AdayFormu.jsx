@@ -3,14 +3,20 @@ import Button from "react-bootstrap/Button";
 import { useFormik } from "formik";
 import { basicSchema } from "../../schemas";
 import { useAuth } from "../../context/AuthContext";
+import { useNavigate } from "react-router";
 
 const AdayFormu = () => {
-  const { login } = useAuth();
+  const { login, register } = useAuth();
+  const navigate = useNavigate();
 
   const onSubmit = async (values, actions) => {
     console.log(values);
     console.log(actions);
-    login(values.password, values.lastName);
+    const user = await register(values.password, values.lastName);
+    if (user) {
+      console.log(user);
+      navigate("/register");
+    }
 
     await new Promise((resolve) => {
       setTimeout(resolve, 1000);

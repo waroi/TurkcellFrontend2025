@@ -6,7 +6,7 @@ import {
 } from "../services/firebase";
 import { getUser, setUser as setUserFb } from "../services/firebase";
 import { useNavigate } from "react-router";
-import useUserStore from "../store/useUserStore";
+import useUserStore from "../store/useStore";
 
 export default function () {
   const navigation = useNavigate();

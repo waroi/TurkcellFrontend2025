@@ -1,7 +1,7 @@
 import { NavLink } from "react-router";
-import useUserStore from "../store/useUserStore";
+import useUserStore from "../store/useStore";
 import useAuth from "../hooks/useAuth";
-import Button from "./Button";
+import Button from "./inputs/Button";
 
 export default function Navigation() {
   const { user } = useUserStore();
