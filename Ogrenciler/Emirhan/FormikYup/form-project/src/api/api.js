@@ -3,6 +3,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "firebase/auth";
+import app from "../firebase/firebase";
 
 export const registerUser = async (email, password) => {
   const auth = getAuth();
@@ -27,11 +28,9 @@ export const SignIn = async (email, password) => {
       email,
       password
     );
-    alert("Başarıyla giriş yaptınız yönlendiriliyorsunuz...");
     console.log("Kullanıcı giriş yaptı:", userCredential.user);
     return userCredential.user;
   } catch (error) {
-    alert("Kullanıcı adı veya şifreniz hatalı !");
     console.error("Hata:", error.message);
     throw error;
   }

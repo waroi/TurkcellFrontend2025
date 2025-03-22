@@ -7,16 +7,20 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "sass": "sass -w src/scss:src/css"
   },
   "dependencies": {
+    "bootstrap": "^5.3.3",
     "firebase": "^11.5.0",
     "formik": "^2.4.6",
     "json-server": "^1.0.0-beta.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router": "^7.4.0",
-    "yup": "^1.6.1"
+    "sass": "^1.86.0",
+    "yup": "^1.6.1",
+    "zustand": "^5.0.3"
   },
   "devDependencies": {
     "@eslint/js": "^9.19.0",

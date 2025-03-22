@@ -1,14 +1,14 @@
 import * as yup from "yup";
 
 export const initialValues = {
-  email: "",
-  password: "",
+  "sign-in-email": "",
+  "sign-in-password": "",
 };
 
 export const validationSchema = yup.object().shape({
-  email: yup
+  "sign-in-email": yup
     .string()
     .required("Lütfen e-posta adresinizi giriniz.")
     .email("Lütfen geçerli bir e-posta adresi giriniz."),
-  password: yup.string().required("Lütfen şifrenizi giriniz."),
+  "sign-in-password": yup.string().required("Lütfen şifrenizi giriniz."),
 });

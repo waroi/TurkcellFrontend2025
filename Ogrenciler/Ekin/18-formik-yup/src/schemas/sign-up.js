@@ -1,26 +1,26 @@
 import * as yup from "yup";
 
 export const initialValues = {
-  name: "",
-  surname: "",
-  email: "",
-  password: "",
+  "sign-up-name": "",
+  "sign-up-surname": "",
+  "sign-up-email": "",
+  "sign-up-password": "",
 };
 
 export const validationSchema = yup.object().shape({
-  name: yup
+  "sign-up-name": yup
     .string()
     .required("Lütfen adınızı giriniz.")
     .min(3, "Lütfen minimum 3 karakter giriniz."),
-  surname: yup
+  "sign-up-surname": yup
     .string()
     .required("Lütfen soyadınızı giriniz.")
     .min(3, "Lütfen minimum 3 karakter giriniz."),
-  email: yup
+  "sign-up-email": yup
     .string()
     .required("Lütfen e-posta adresinizi giriniz.")
     .email("Lütfen geçerli bir e-posta adresi giriniz."),
-  password: yup
+  "sign-up-password": yup
     .string()
     .required("Lütfen şifrenizi giriniz.")
     .min(6, "Lütfen minimum 6 karakter giriniz.")

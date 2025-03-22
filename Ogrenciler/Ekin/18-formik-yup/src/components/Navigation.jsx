@@ -33,6 +33,11 @@ export default function Navigation() {
                     Application
                   </NavLink>
                 </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/user">
+                    User
+                  </NavLink>
+                </li>
                 {user.isAdmin && (
                   <li className="nav-item">
                     <NavLink className="nav-link" to="/admin">
