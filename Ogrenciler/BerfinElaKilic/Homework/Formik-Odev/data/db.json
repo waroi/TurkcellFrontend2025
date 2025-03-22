@@ -1,114 +1,114 @@
 {
-    "candidates": [
-      {
-        "id": "candidateId",
-        "firstName": "John",
-        "lastName": "Doe",
-        "email": "john.doe@example.com",
-        "phone": "+1234567890",
-        "resumeUrl": "https://example.com/resume.pdf",
-        "linkedinUrl": "https://linkedin.com/in/johndoe",
-        "portfolioUrl": "https://johndoe.dev",
-        "coverLetter": "I am passionate about frontend development and UX design...",
-        "languages": [
-          {
-            "language": "English",
-            "level": "Advanced"
-          },
-          {
-            "language": "Spanish",
-            "level": "Intermediate"
-          }
-        ],
-        "techCompetencies": [
-          "React.js",
-          "Next.js",
-          "TypeScript",
-          "Tailwind CSS",
-          "Node.js",
-          "MongoDB"
-        ],
-        "experience": [
-          {
-            "company": "TechCorp",
-            "position": "Frontend Developer",
-            "startDate": "2022-06-01",
-            "endDate": "Present",
-            "description": "Developing and maintaining a productivity app using Next.js and Tailwind CSS."
-          },
-          {
-            "company": "InnovateX",
-            "position": "UI Engineer",
-            "startDate": "2020-01-15",
-            "endDate": "2022-05-30",
-            "description": "Contributed to the UI/UX design and frontend development of AI-powered applications."
-          }
-        ],
-        "education": {
-          "degree": "Bachelor's in Computer Science",
-          "university": "XYZ University",
-          "graduationYear": 2019
+  "candidates": [
+    {
+      "id": "candidateId",
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "john.doe@example.com",
+      "phone": "+1234567890",
+      "resumeUrl": "https://example.com/resume.pdf",
+      "linkedinUrl": "https://linkedin.com/in/johndoe",
+      "portfolioUrl": "https://johndoe.dev",
+      "coverLetter": "I am passionate about frontend development and UX design...",
+      "languages": [
+        {
+          "language": "English",
+          "level": "Advanced"
         },
-        "isAdmin": false
-      }
-    ],
-    "jobs": [
-      {
-        "jobId": "jobId123",
-        "createdAt": "2024-03-21T10:00:00Z",
-        "createdByAdmin": "adminId789",
-        "position": "Frontend Developer",
-        "company": "TechCorp",
-        "location": "Remote",
-        "employmentType": "Full-time",
-        "term": "Permanent",
-        "salaryRange": "1200-1500 EUR",
-        "description": "We are looking for a skilled Frontend Developer with experience in React and TypeScript.",
-        "requirements": [
-          "Proficiency in React.js and TypeScript",
-          "Experience with Tailwind CSS",
-          "Familiarity with Next.js and modern frontend technologies",
-          "Strong understanding of UX principles"
-        ],
-        "responsibilities": [
-          "Develop and maintain user-facing features",
-          "Optimize applications for maximum speed and scalability",
-          "Work closely with designers and backend developers",
-          "Implement best practices in frontend development"
-        ],
-        "benefits": [
-          "Fully remote work",
-          "Flexible working hours",
-          "Annual training budget",
-          "Company laptop and equipment"
-        ],
-        "status": "open",
-        "deadline": "2024-04-30T23:59:59Z",
-        "applicants": [
-          {
-            "candidateId": "candidateId",
-            "appliedAt": "2024-03-21T11:00:00Z",
-            "status": "pending",
-            "approvedByAdmin": "adminId456"
-          }
-        ]
-      }
-    ],
-    "admins": [
-      {
-        "adminId": "adminId456",
-        "firstName": "Admin",
-        "lastName": "User",
-        "email": "admin@example.com",
-        "isAdmin": true,
-        "createdJobs": ["jobId123"],
-        "approvedCandidates": [
-          {
-            "candidateId": "candidateId",
-            "jobId": "jobId123",
-            "approvedAt": "2024-03-21T12:00:00Z"
-          }
-        ]
-      }
-    ]
-  }
+        {
+          "language": "Spanish",
+          "level": "Intermediate"
+        }
+      ],
+      "techCompetencies": [
+        "React.js",
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Node.js",
+        "MongoDB"
+      ],
+      "experience": [
+        {
+          "company": "TechCorp",
+          "position": "Frontend Developer",
+          "startDate": "2022-06-01",
+          "endDate": "Present",
+          "description": "Developing and maintaining a productivity app using Next.js and Tailwind CSS."
+        },
+        {
+          "company": "InnovateX",
+          "position": "UI Engineer",
+          "startDate": "2020-01-15",
+          "endDate": "2022-05-30",
+          "description": "Contributed to the UI/UX design and frontend development of AI-powered applications."
+        }
+      ],
+      "education": {
+        "degree": "Bachelor's in Computer Science",
+        "university": "XYZ University",
+        "graduationYear": 2019
+      },
+      "isAdmin": false
+    }
+  ],
+  "jobs": [
+    {
+      "id": "1",
+      "createdAt": "2024-03-21T10:00:00Z",
+      "createdByAdmin": "adminId789",
+      "position": "Frontend Developer",
+      "company": "TechCorp",
+      "location": "Remote",
+      "employmentType": "Full-time",
+      "term": "Permanent",
+      "salaryRange": "1200-1500 EUR",
+      "description": "We are looking for a skilled Frontend Developer with experience in React and TypeScript.",
+      "requirements": [
+        "Proficiency in React.js and TypeScript",
+        "Experience with Tailwind CSS",
+        "Familiarity with Next.js and modern frontend technologies",
+        "Strong understanding of UX principles"
+      ],
+      "responsibilities": [
+        "Develop and maintain user-facing features",
+        "Optimize applications for maximum speed and scalability",
+        "Work closely with designers and backend developers",
+        "Implement best practices in frontend development"
+      ],
+      "benefits": [
+        "Fully remote work",
+        "Flexible working hours",
+        "Annual training budget",
+        "Company laptop and equipment"
+      ],
+      "status": "open",
+      "deadline": "2024-04-30T23:59:59Z",
+      "applicants": [
+        {
+          "candidateId": "candidateId",
+          "appliedAt": "2024-03-21T11:00:00Z",
+          "status": "pending",
+          "approvedByAdmin": "adminId456"
+        }
+      ]
+    }
+  ],
+  "admins": [
+    {
+      "id": "adminId456",
+      "firstName": "Admin",
+      "lastName": "User",
+      "email": "admin@example.com",
+      "isAdmin": true,
+      "createdJobs": ["jobId123"],
+      "approvedCandidates": [
+        {
+          "candidateId": "candidateId",
+          "jobId": "jobId123",
+          "approvedAt": "2024-03-21T12:00:00Z"
+        }
+      ]
+    }
+  ]
+}

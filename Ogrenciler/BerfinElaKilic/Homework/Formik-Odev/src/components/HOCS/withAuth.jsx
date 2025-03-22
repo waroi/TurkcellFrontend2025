@@ -1,15 +1,22 @@
+import { useEffect } from "react";
 import { useNavigate } from "react-router";
+import { useAuth } from "../../context/AuthContext";
+
 const withAuth = (WrappedComponent) => {
-  const navigate = useNavigate();
-
   return (props) => {
-    const isAuthenticated = useAuth(); // useAuth: kullanıcı doğrulama hook'u
+    const navigate = useNavigate();
+    const { user } = useAuth();
 
-    if (!isAuthenticated) {
-      return <navigate to="/login" />;
-    }
+    useEffect(() => {
+      if (!user) {
+        navigate("/login");
+      }
+    }, [user, navigate]);
+
+    if (!user) return <p>Loading...</p>;
 
     return <WrappedComponent {...props} />;
   };
 };
+
 export default withAuth;
