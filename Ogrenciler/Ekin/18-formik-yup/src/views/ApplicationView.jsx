@@ -10,11 +10,11 @@ import {
 import selectMap from "../util/selectMap";
 import { submitForm } from "../services/firebase";
 
-import Input from "../components/Input";
-import Select from "../components/Select";
-import Checkbox from "../components/Checkbox";
-import Button from "../components/Button";
-import useUserStore from "../store/useUserStore";
+import Input from "../components/inputs/Input";
+import Select from "../components/inputs/Select";
+import Checkbox from "../components/inputs/Checkbox";
+import Button from "../components/inputs/Button";
+import useUserStore from "../store/useStore";
 
 export default function ApplicationView() {
   const { user } = useUserStore();

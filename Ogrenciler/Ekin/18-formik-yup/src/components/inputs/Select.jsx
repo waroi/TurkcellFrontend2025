@@ -1,17 +1,13 @@
 import { useField } from "formik";
 
+import Validation from "./Validation";
+
 export default function Select({ label, children, ...props }) {
   const [field, meta] = useField(props);
 
   return (
     <>
-      <p
-        className={`text-danger small fw-bold mb-0 ${
-          meta.touched && meta.error ? "active" : ""
-        }`}
-      >
-        {meta.touched && meta.error ? meta.error : ""}
-      </p>
+      <Validation meta={meta} />
       <select
         className={`form-select py-3 border border-2 mb-3 ${
           meta.touched && meta.error

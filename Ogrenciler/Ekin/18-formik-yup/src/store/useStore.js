@@ -3,6 +3,7 @@ import { create } from "zustand";
 const useUserStore = create((set) => ({
   user: null,
   applications: [],
+  toast: "",
 
   setUser: (user) => {
     set({ user });
@@ -18,6 +19,10 @@ const useUserStore = create((set) => ({
         id == application.id ? { ...application, status } : application
       ),
     }));
+  },
+
+  setToast: (toast) => {
+    set({ toast });
   },
 }));
 

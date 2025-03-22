@@ -1,6 +1,6 @@
 import stringMap from "../util/stringMap";
 import { setApplication } from "../services/firebase";
-import useUserStore from "../store/useUserStore";
+import useUserStore from "../store/useStore";
 
 export default function ApplicationDetail({
   application,
