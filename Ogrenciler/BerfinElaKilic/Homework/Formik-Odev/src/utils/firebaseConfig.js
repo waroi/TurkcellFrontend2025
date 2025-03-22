@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBeJmpspaHApfrRUFISG5sA-azP2eylBc8",
-  authDomain: "hr-portal-c120a.firebaseapp.com",
-  projectId: "hr-portal-c120a",
-  storageBucket: "hr-portal-c120a.firebasestorage.app",
-  messagingSenderId: "906564024360",
-  appId: "1:906564024360:web:116380708117a8bb2a5d1d",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
 // Initialize Firebase
