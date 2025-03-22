@@ -3,7 +3,7 @@ import { create } from "zustand";
 const useUserStore = create((set) => ({
   user: null,
   applications: [],
-  toast: "",
+  toast: [],
 
   setUser: (user) => {
     set({ user });
@@ -21,8 +21,18 @@ const useUserStore = create((set) => ({
     }));
   },
 
-  setToast: (toast) => {
-    set({ toast });
+  addToast: (message, variant) => {
+    set((state) => ({
+      toast: state.toast.concat([
+        { key: Math.random().toString(36).substring(5), message, variant },
+      ]),
+    }));
+  },
+
+  removeToast: (selectedKey) => {
+    set((state) => {
+      return { toast: state.toast.filter(({ key }) => selectedKey != key) };
+    });
   },
 }));
 

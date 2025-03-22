@@ -14,6 +14,7 @@ export default function ApplicationDetail({
     userStore.setApplicationStatus(application.id, status);
     goCompletedApplications();
     setDetail(null);
+    userStore.addToast("Başvuru başarıyla değerlendirildi.", "success");
   }
 
   return application ? (
