@@ -16,9 +16,13 @@ function App() {
   return (
     <>
       <Navigation />
+      <Toast />
       <button
         onClick={() => {
-          store.setToast(Math.random().toString(36));
+          store.addToast(
+            "MESSAGE !!!!!!!!" + Math.random().toString(36),
+            Math.random() < 0.5 ? "success" : "danger"
+          );
         }}
       >
         DEBUG !!!!!!!!!!!!!!!!!!!!!
@@ -31,7 +35,6 @@ function App() {
         ])}
       </main>
       <Footer />
-      <Toast />
     </>
   );
 }
