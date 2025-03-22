@@ -9,6 +9,7 @@ function CustomCheckbox({ ...props }) {
         <input
           {...field}
           {...props}
+          checked={field.value}
           className={meta.error ? "input-error" : ""}
         />
         <span>Kullanım koşullarını kabul ediyorum</span>

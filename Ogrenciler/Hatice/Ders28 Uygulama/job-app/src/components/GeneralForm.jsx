@@ -3,22 +3,26 @@ import { basicSchema } from "../schemas";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useNavigate } from "react-router";
-import { auth } from "../firebase/firebaseConfig";
-
+import { auth, db } from "../firebase/firebaseConfig";
+import { addDoc, collection } from "firebase/firestore";
 
 const onSubmit = async (values, actions) => {
-  console.log(values);
+  try {
+    await addDoc(collection(db, "jobApplications"), {
+      fullName: values.fullName,
+      email: values.email,
+      phone: values.phone,
+      linkedin: values.linkedin,
+      coverLetter: values.coverLetter,
+      createdAt: new Date(),
+    });
 
-  // console.log(actions);
-
-  // await new Promise((resolve) => {
-  //   setTimeout(resolve, 1000);
-  // });
-  // actions.resetForm();
+    console.log("Başvuru başarıyla eklendi!");
+    actions.resetForm();
+  } catch (error) {
+    console.error("Başvuru gönderilirken hata oluştu:", error);
+  }
 };
-
-// const { addJob } = useJob();
-// addJob(job);
 
 function GeneralForm() {
   const navigate = useNavigate();
@@ -54,7 +58,7 @@ function GeneralForm() {
             type="text"
             value={values.fullName}
             onChange={handleChange}
-            id="fullName"
+            name="fullName"
             placeholder={errors.fullName ? errors.fullName : "Ad soyad giriniz"}
             className={errors.fullName ? "input-error" : ""}
           />
@@ -65,7 +69,7 @@ function GeneralForm() {
             type="email"
             value={values.email}
             onChange={handleChange}
-            id="email"
+            name="email"
             placeholder={errors.email ? errors.email : "Mail adresinizi giriniz"}
             className={errors.email ? "input-error" : ""}
           />
@@ -76,7 +80,7 @@ function GeneralForm() {
             type="number"
             value={values.phone}
             onChange={handleChange}
-            id="phone"
+            name="phone"
             placeholder={errors.phone ? errors.phone : "Telefon numarası giriniz"}
             className={errors.phone ? "input-error" : ""}
           />
@@ -87,7 +91,7 @@ function GeneralForm() {
             type="url"
             value={values.linkedin}
             onChange={handleChange}
-            id="linkedin"
+            name="linkedin"
             placeholder={errors.linkedin ? errors.linkedin : "Geçerli bir URL giriniz"}
             className={errors.linkedin ? "input-error" : ""}
           />
@@ -98,7 +102,7 @@ function GeneralForm() {
           <textarea
             value={values.coverLetter}
             onChange={handleChange}
-            id="coverLetter"
+            name="coverLetter"
             placeholder={errors.coverLetter ? errors.coverLetter : "Geçerli bir ön yazı giriniz"}
             className={errors.coverLetter ? "input-error" : ""}
             rows="4"

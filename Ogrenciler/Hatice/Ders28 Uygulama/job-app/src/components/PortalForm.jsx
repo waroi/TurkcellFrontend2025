@@ -6,17 +6,21 @@ import CustomCheckbox from "./CustomCheckbox";
 import { Link } from "react-router-dom";
 
 const onSubmit = async (values, actions) => {
-  await new Promise((resolve) => {
-    setTimeout(resolve, 1000);
-  });
-  actions.resetForm();
+  try {
+    localStorage.setItem("selectedPosition", values.position);
+    console.log("Pozisyon başarıyla seçildi:", values.position);
+    alert("Başvuru başarıyla kaydedildi!");
+    await actions.resetForm(); 
+  } catch (error) {
+    console.error("Pozisyon seçilirken hata oluştu:", error);
+  }
 };
 
 function PortalForm() {
   return (
     <>
       <Formik
-        initialValues={{ position: "", isAccepted: false }}
+        initialValues={{ username: "", position: "", isAccepted: false }}
         onSubmit={onSubmit}
         validationSchema={advancedSchema}
       >
@@ -27,21 +31,22 @@ function PortalForm() {
               name="username"
               type="text"
               placeholder="Kullanıcı Adınızı Giriniz"
-              style={{ border: "1px solid var(--primary)", borderRadius:"5px" }}
+              style={{ border: "1px solid var(--primary)", borderRadius: "5px" }}
             />
             <hr />
             <CustomSelect
               label="Pozisyon"
               name="position"
-              placeholder="Pozisyon Seçiniz"
-              style={{ border: "1px solid var(--primary)", borderRadius:"5px" }}
-
+              style={{ border: "1px solid var(--primary)", borderRadius: "5px" }}
             >
-              <option value="">Lütfen Bir Pozisyon Seçiniz</option>
+              <option value="" disabled>
+                Lütfen Bir Pozisyon Seçiniz
+              </option>
               <option value="Frontend">Frontend Developer</option>
               <option value="Backend">Backend Developer</option>
               <option value="Full Stack">Full Stack Developer</option>
             </CustomSelect>
+
             <hr />
             <CustomCheckbox type="checkbox" name="isAccepted" />
             <hr />
