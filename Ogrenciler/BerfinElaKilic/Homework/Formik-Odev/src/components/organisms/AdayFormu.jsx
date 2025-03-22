@@ -2,18 +2,22 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { useFormik } from "formik";
 import { basicSchema } from "../../schemas";
-
-const onSubmit = async (values, actions) => {
-  console.log(values);
-  console.log(actions);
-
-  await new Promise((resolve) => {
-    setTimeout(resolve, 1000);
-  });
-  actions.resetForm();
-};
+import { useAuth } from "../../context/AuthContext";
 
 const AdayFormu = () => {
+  const { login } = useAuth();
+
+  const onSubmit = async (values, actions) => {
+    console.log(values);
+    console.log(actions);
+    login(values.password, values.lastName);
+
+    await new Promise((resolve) => {
+      setTimeout(resolve, 1000);
+    });
+    actions.resetForm();
+  };
+
   const { values, errors, isSubmitting, handleSubmit, handleChange } =
     useFormik({
       initialValues: {
@@ -25,10 +29,11 @@ const AdayFormu = () => {
       validationSchema: basicSchema,
       onSubmit,
     });
+
   return (
     <Form
       onSubmit={handleSubmit}
-      className="shadow w-75 p-5 rounded-5 bg-transparent"
+      className="shadow w-100 p-5 rounded-5 bg-transparent"
     >
       <Form.Group className="mb-3" controlId="firstName">
         <Form.Label>İsim: </Form.Label>
@@ -86,7 +91,7 @@ const AdayFormu = () => {
         {errors.coverLetter && <p className="error">{errors.coverLetter}</p>}
       </Form.Group>
       <Button variant="primary" type="submit" disabled={isSubmitting}>
-            Kaydet
+        Kaydet
       </Button>
     </Form>
   );
