@@ -9,7 +9,6 @@ import {
   setUser as setUserFirebase,
 } from "@/services/firebase";
 import { useRouter } from "next/navigation";
-import convertBase64 from "@/util/convertBase64";
 
 export default function () {
   const router = useRouter();

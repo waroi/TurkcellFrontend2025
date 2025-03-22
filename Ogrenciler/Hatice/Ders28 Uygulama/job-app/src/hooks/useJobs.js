@@ -2,22 +2,18 @@ import { useRouter } from "next/navigation";
 import useStore from "../store/jobs";
 
 import {
-  addBlog as addBlogFirebase,
-  editBlog as editBlogFirebase,
-  deleteBlog as deleteBlogFirebase,
-} from "@/services/firebase";
+  addJob as addJobFirebase,
+  deleteJob as deleteJobFirebase,
+} from "../firebase/firebaseConfig";
 
-const defaultImage =
-  "https://coffective.com/wp-content/uploads/2018/06/default-featured-image.png.jpg";
 
 export default function () {
   const router = useRouter();
   const store = useStore();
 
-  function addBlog(title, image, description, banner, content, blog) {
-    blog = {
+  function addJob(title, description, banner, content, job) {
+    job = {
       title,
-      image: image ? image : defaultImage,
       description: description,
       banner: banner ? banner : defaultImage,
       content,
@@ -25,30 +21,13 @@ export default function () {
       author: store.user.id,
     };
 
-    addBlogFirebase(blog).then((id) => {
-      store.addBlog({ ...blog, id });
+    addJobFirebase(job).then((id) => {
+      store.addBlog({ ...job, id });
       router.push("/");
     });
   }
 
-  function editBlog(id, title, image, description, banner, content, blog) {
-    blog = {
-      id,
-      title,
-      image: image ? image : defaultImage,
-      description,
-      banner: banner ? banner : defaultImage,
-      content: content,
-      date: new Date().getTime(),
-    };
-
-    editBlogFirebase(blog).then(() => {
-      store.editBlog(blog);
-    });
-    router.push(`/blog/${id}`);
-  }
-
-  function deleteBlog(id) {
+  function deleteJob(id) {
     if (confirm("Are you sure you want to delete the blog?"))
       deleteBlogFirebase(id).then(() => {
         store.deleteBlog(id);
@@ -57,8 +36,8 @@ export default function () {
   }
 
   return {
-    addBlog,
-    editBlog,
+    addJob,
+    editJob,
     deleteBlog,
   };
 }

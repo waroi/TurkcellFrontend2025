@@ -5,15 +5,20 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router";
 import { auth } from "../firebase/firebaseConfig";
 
+
 const onSubmit = async (values, actions) => {
   console.log(values);
-  console.log(actions);
 
-  await new Promise((resolve) => {
-    setTimeout(resolve, 1000);
-  });
-  actions.resetForm();
+  // console.log(actions);
+
+  // await new Promise((resolve) => {
+  //   setTimeout(resolve, 1000);
+  // });
+  // actions.resetForm();
 };
+
+// const { addJob } = useJob();
+// addJob(job);
 
 function GeneralForm() {
   const navigate = useNavigate();
@@ -31,7 +36,6 @@ function GeneralForm() {
         email: "",
         phone: "",
         linkedin: "",
-        resume: "",
         coverLetter: "",
       },
       validationSchema: basicSchema,
@@ -86,16 +90,6 @@ function GeneralForm() {
             id="linkedin"
             placeholder={errors.linkedin ? errors.linkedin : "Geçerli bir URL giriniz"}
             className={errors.linkedin ? "input-error" : ""}
-          />
-        </div>
-        <div className="resume m-2 d-flex justify-content-between">
-          <label>Resume : </label>
-          <input
-            type="file"
-            value={values.resume}
-            onChange={handleChange}
-            id="resume"
-            className={errors.resume ? "input-error" : ""}
           />
         </div>
         <hr />

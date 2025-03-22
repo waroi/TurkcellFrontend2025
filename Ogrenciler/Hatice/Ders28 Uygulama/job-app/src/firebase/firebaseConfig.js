@@ -27,13 +27,13 @@ const db = getFirestore(app);
 export { auth, app, db };
 
 export function getUser(user) {
-  return getDoc(doc(database, "users", user)).then((snapshot) =>
+  return getDoc(doc(db, "users", user)).then((snapshot) =>
     snapshot.data()
   );
 }
 
 export function getJobs() {
-  return getDocs(collection(database, "jobs")).then((snapshot) =>
+  return getDocs(collection(db, "jobs")).then((snapshot) =>
     snapshot.docs
       .map((blog) => ({ ...blog.data(), id: blog.id }))
       .sort((current, next) => next.date - current.date)
@@ -41,18 +41,19 @@ export function getJobs() {
 }
 
 export function getJob(id) {
-  return getDoc(doc(database, "jobs", id)).then((snapshot) => ({
+  return getDoc(doc(db, "jobs", id)).then((snapshot) => ({
     ...snapshot.data(),
     id: snapshot.id,
   }));
 }
 
-export function addJob(blog) {
-  return addDoc(collection(database, "jobs"), blog).then(
+export function addJob(job) {
+  console.log(job)
+  return addDoc(collection(db, "jobs"), job).then(
     (response) => response.id
   );
 }
 
 export function deleteJob(id) {
-  return deleteDoc(doc(database, "jobs", id));
+  return deleteDoc(doc(db, "jobs", id));
 }

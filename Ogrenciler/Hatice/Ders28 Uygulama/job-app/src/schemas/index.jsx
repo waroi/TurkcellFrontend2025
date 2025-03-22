@@ -17,9 +17,6 @@ export const basicSchema = yup.object().shape({
     .string()
     .url("Geçerli bir URL giriniz")
     .required("LinkedIn gerekli"),
-    resume: yup
-    .mixed()
-    .required("CV gerekli"),
     coverLetter: yup
     .string()
     .required("Ön yazı gerekli"),
