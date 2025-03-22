@@ -1,7 +1,7 @@
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { useFormik } from "formik";
-import { basicSchema } from "../schemas";
+import { basicSchema } from "../../schemas";
 
 const onSubmit = async (values, actions) => {
   console.log(values);

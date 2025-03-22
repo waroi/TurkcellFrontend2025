@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Formik, Form } from "formik";
-import CustomComponent from "./CustomInput";
-import { LANGUAGES, levels } from "../constants/constants";
+import CustomComponent from "../../atoms/CustomComponent";
+import { LANGUAGES, levels } from "../../../constants/constants";
 
 const onSubmit = async (values, actions) => {
   await new Promise((resolve) => {

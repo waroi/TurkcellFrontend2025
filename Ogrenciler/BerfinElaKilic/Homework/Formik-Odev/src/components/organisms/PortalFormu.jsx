@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Formik, Form } from "formik";
-import CustomComponent from "./CustomInput";
+import CustomComponent from "../atoms/CustomComponent";
 import { Link } from "react-router";
-import { LANGUAGES, levels, UNIVERSITIES } from "../constants/constants";
-import LanguageForm from "./LanguageForm";
-import ProfileForm from "./ProfileForm";
-import { advancedSchema } from "../schemas";
+import { LANGUAGES, levels, UNIVERSITIES } from "../../constants/constants";
+import LanguageForm from "../molecules/forms/LanguageForm";
+import ProfileForm from "../molecules/forms/ProfileForm";
+import { advancedSchema } from "../../schemas";
 
 const onSubmit = async (values, actions) => {
   await new Promise((resolve) => {

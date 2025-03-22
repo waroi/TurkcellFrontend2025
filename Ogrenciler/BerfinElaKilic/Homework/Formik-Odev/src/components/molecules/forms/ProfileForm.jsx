@@ -1,5 +1,5 @@
 import React from "react";
-import CustomComponent from "./CustomInput";
+import CustomComponent from "../../atoms/CustomComponent";
 
 const ProfileForm = () => {
   return (
