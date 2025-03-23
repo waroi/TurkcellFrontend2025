@@ -36,7 +36,7 @@ const RegisterForm = () => {
         passwordConfirmation: "",
         role: "",
       },
-      validationSchema: authSchema,
+      validationSchema: registerSchema,
       onSubmit,
     });
 
