@@ -1,4 +1,5 @@
 import DataRender from "../components/HOCS/DataRender";
+import PortalFormu from "../components/organisms/PortalFormu";
 import { getAllJobs } from "../utils/services";
 
 const UserProfile = () => {
@@ -8,7 +9,7 @@ const UserProfile = () => {
       return <p>Loading...</p>;
     }
 
-    return <div>"hello"</div>;
+    return <div><PortalFormu/></div>;
   };
   return <DataRender fetchFunction={getAllJobs} render={renderUserData} />;
 };
