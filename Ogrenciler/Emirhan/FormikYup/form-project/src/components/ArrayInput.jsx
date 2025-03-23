@@ -36,31 +36,33 @@ function ArrayInput({ field, values, errors, touched, label }) {
             </button>
           </div>
 
-          <div className="error-text">
-            {errors[field] && touched[field] && (
-              <div className="error">{errors[field]}</div>
-            )}
 
-            {values[field]?.length > 0 && (
-              <div className="d-flex gap-2 mt-2">
-                {values[field].map((item, index) => (
-                  <div
-                    className="d-inline-flex gap-2 array-item text-black my-2"
-                    key={index}
+          {errors && errors[field] && touched && touched[field] && (
+            <div className="error" style={{ color: "red", fontSize: "12px" }}>
+              {errors[field]}
+            </div>
+          )}
+
+
+          {values[field]?.length > 0 && (
+            <div className="d-flex gap-2 mt-2">
+              {values[field].map((item, index) => (
+                <div
+                  className="d-inline-flex gap-2 array-item text-black my-2"
+                  key={index}
+                >
+                  <span>{item}</span>
+                  <button
+                    className="array-button color-red"
+                    type="button"
+                    onClick={() => remove(index)}
                   >
-                    {item}
-                    <button
-                      className="array-button color-red"
-                      type="button"
-                      onClick={() => remove(index)}
-                    >
-                      <i className="fa-solid fa-circle-xmark"></i>
-                    </button>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
+                    <i className="fa-solid fa-circle-xmark"></i>
+                  </button>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       )}
     </FieldArray>
@@ -68,3 +70,4 @@ function ArrayInput({ field, values, errors, touched, label }) {
 }
 
 export default ArrayInput;
+
