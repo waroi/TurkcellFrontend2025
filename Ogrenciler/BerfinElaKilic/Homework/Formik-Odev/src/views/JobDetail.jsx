@@ -1,19 +1,20 @@
+import JobDetailPage from "../components/atoms/cards/JobDetail";
 import DataRender from "../components/HOCS/DataRender";
 import { getJobById } from "../utils/services";
+import {useParams} from 'react-router'
 
 const JobDetail = () => {
-  const id = "1";
+  const { id } = useParams();
   const renderJobData = (data) => {
     console.log("data", data);
     if (!data) {
       return <p>Loading...</p>;
     }
 
-    return <div>"hello"</div>;
+    return <div><JobDetailPage key={data.id} job={data}/></div>;
   };
   return (
     <div>
-      JobDetail
       <DataRender id={id} fetchFunction={getJobById} render={renderJobData} />
     </div>
   );

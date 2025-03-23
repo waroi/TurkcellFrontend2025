@@ -27,6 +27,7 @@ const LanguageForm = () => {
         <select
           className="form-select mb-2"
           value={selectedLanguage}
+          name="language"
           onChange={(e) => setSelectedLanguage(e.target.value)}
         >
           <option value="">Yabancı Dil Seçiniz</option>
@@ -38,6 +39,7 @@ const LanguageForm = () => {
         <select
           className="form-select mb-2"
           value={selectedLevel}
+          name="level"
           onChange={(e) => setSelectedLevel(e.target.value)}
         >
           <option value="">Seviyenizi Seçiniz</option>

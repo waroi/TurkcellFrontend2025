@@ -8,6 +8,7 @@ import Register from "../views/Register";
 import Auth from "../views/Auth";
 import Jobs from "../views/Jobs";
 import ProtectedUserDashboard from "../views/UserDashboardView";
+import AllJobs from "../views/AllJobs";
 
 const Router = () => {
   const routes = useRoutes([
@@ -42,7 +43,10 @@ const Router = () => {
     {
       path: "jobs", //TODO: Not Protected
       element: <Jobs />,
-      children: [{ path: `:id`, element: <JobDetail /> }],
+      children: [{ path: `:id`, element: <JobDetail /> },
+        { index: true, element: <Navigate to="all" /> },
+        { path: `all`, element: <AllJobs /> },
+      ],
     },
   ]);
   return routes;

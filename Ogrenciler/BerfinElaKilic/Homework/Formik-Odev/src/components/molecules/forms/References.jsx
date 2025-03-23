@@ -3,8 +3,8 @@ import CustomComponent from "../../atoms/CustomComponent";
 
 const References = () => {
   return (
-    <div class="container p-4">
-      <h2 class="mb-4">Referanslar</h2>
+    <div className="container p-4">
+      <h2 className="mb-4">Referanslar</h2>
 
       <CustomComponent
         as="input"

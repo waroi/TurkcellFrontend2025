@@ -4,8 +4,8 @@ import CustomComponent from "../../atoms/CustomComponent";
 
 const CoverLetter = () => {
   return (
-    <div class="container p-4">
-      <h2 class="mb-4">Cover Letter</h2>
+    <div className="container p-4">
+      <h2 className="mb-4">Cover Letter</h2>
 
       <CustomComponent
         as="textarea"

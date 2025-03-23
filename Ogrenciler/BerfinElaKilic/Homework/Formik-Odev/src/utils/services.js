@@ -26,6 +26,10 @@ export const getCandidatesByJobId = async (jobId) => {
   return await fetchService(`${url}/jobs/${jobId}/applicants`);
 };
 
+export const addCandidateInfo = async (id, userInfo) => {
+  return await fetchService(`${url}/candidates/${id}`, "PATCH", userInfo);
+};
+
 export const addAdmin = async (userDetail) => {
   return await fetchService(`${url}/admins`, "POST", userDetail);
 };

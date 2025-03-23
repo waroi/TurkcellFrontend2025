@@ -1,10 +1,10 @@
 import React from "react";
-import CustomComponent from "../atoms/CustomComponent";
+import CustomComponent from "../../atoms/CustomComponent";
 
 const Experiences = () => {
   return (
-    <div class="container p-4">
-      <h2 class="mb-4">Deneyim</h2>
+    <div className="container p-4">
+      <h2 className="mb-4">Deneyim</h2>
 
       <CustomComponent
         as="input"
