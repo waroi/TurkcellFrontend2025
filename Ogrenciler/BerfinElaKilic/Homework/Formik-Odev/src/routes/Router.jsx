@@ -7,6 +7,7 @@ import Login from "../views/Login";
 import Register from "../views/Register";
 import Auth from "../views/Auth";
 import Jobs from "../views/Jobs";
+import ProtectedUserDashboard from "../views/UserDashboardView";
 
 const Router = () => {
   const routes = useRoutes([
@@ -30,9 +31,13 @@ const Router = () => {
       ],
     },
     {
-      path: `user/:userId`, //TODO:Protected for userId
+      path: `user`, //TODO:Protected for userId
       element: <ProtectedUser />,
-      children: [{ path: `profile`, element: <UserProfile /> }], //TODO:display Not Protected,crud protected for userId
+      children: [
+        { index: true, element: <Navigate to=":userId" /> },
+        { path: `:userId`, element: <ProtectedUserDashboard /> },
+        { path: `profile`, element: <UserProfile /> },
+      ], //TODO:display Not Protected,crud protected for userId
     },
     {
       path: "jobs", //TODO: Not Protected
