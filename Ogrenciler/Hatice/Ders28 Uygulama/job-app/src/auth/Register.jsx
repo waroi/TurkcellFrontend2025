@@ -1,47 +1,47 @@
-import { useState } from "react";
 import { useFormik } from "formik";
 import { basicSchema } from "../schemas";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth, db } from "../firebase/firebaseConfig";
 import { useNavigate } from "react-router";
 import { toast } from "react-toastify";
-import { addDoc, collection } from "firebase/firestore";
+import { setDoc,doc } from "firebase/firestore";
 
 const Register = () => {
-;  const navigate = useNavigate()
+  ; const navigate = useNavigate()
 
-const formik = useFormik({
-  initialValues: {
-    fullName: "",
-    email: "",
-    password: "",
-  },
-  basicSchema,
-  onSubmit: async (values, actions) => {
-    try {
-      await createUserWithEmailAndPassword(auth, values.email, values.password);
+  const formik = useFormik({
+    initialValues: {
+      fullName: "",
+      email: "",
+      password: "",
+    },
+    basicSchema,
+    onSubmit: async (values, actions) => {
+      try {
+        const userCredential = await createUserWithEmailAndPassword(auth, values.email, values.password);
+        const user = userCredential.user;
 
-      await addDoc(collection(db, "users"), {
-        fullName: values.fullName,
-        email: values.email,
-        isAdmin: false,
-      });
+        await setDoc(doc(db, "users", user.uid), {
+          fullName: values.fullName,
+          email: values.email,
+          isAdmin: false,
+        });
 
-      toast.success("Kayıt başarıyla tamamlandı! 🎉 Giriş yapabilirsiniz.");
-      navigate("/login");
-    } catch (error) {
-      toast.error(`Kayıt başarısız: ${error.message}`);
-    }
+        toast.success("Kayıt başarıyla tamamlandı! 🎉 Giriş yapabilirsiniz.");
+        navigate("/login");
+      } catch (error) {
+        toast.error(`Kayıt başarısız: ${error.message}`);
+      }
 
-    actions.resetForm();
-  },
-});
+      actions.resetForm();
+    },
+  });
 
   return (
     <div className="container mt-5">
       <h2>Kayıt Ol</h2>
       <form onSubmit={formik.handleSubmit}>
-      <input
+        <input
           type="text"
           name="fullName"
           placeholder="Ad Soyad"
