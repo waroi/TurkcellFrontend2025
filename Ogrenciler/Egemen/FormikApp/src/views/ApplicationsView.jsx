@@ -8,13 +8,24 @@ import {
 import { auth } from "../../firebase/firebase";
 import Button from "../components/atoms/buttons/Button";
 import getApplications from "../hooks/getAplications";
+
 const Applications = () => {
   const [apps, setApps] = useState([]);
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+
   useEffect(() => {
-    getApplications(auth.currentUser.uid, setApps, setUser, setLoading);
-  }, [apps]);
+    const unsubscribe = auth.onAuthStateChanged((currentUser) => {
+      if (currentUser) {
+        getApplications(currentUser.uid, setApps, setUser, setLoading);
+      } else {
+        setLoading(false);
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
+
   return loading ? (
     <div>Loading...</div>
   ) : (
@@ -173,4 +184,5 @@ const Applications = () => {
     </div>
   );
 };
+
 export default Applications;

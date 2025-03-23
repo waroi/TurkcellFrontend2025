@@ -13,6 +13,7 @@ import { auth, db } from "./firebase";
 
 export async function getUserApplications() {
   const user = auth.currentUser;
+
   if (!user) {
     return;
   }
@@ -36,6 +37,7 @@ export async function getAllApplications() {
   const applications = querySnapshot.docs.map((doc) => ({
     id: doc.id,
     ...doc.data(),
+
   }));
   return applications;
 }
