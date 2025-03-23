@@ -1,6 +1,5 @@
 import { useFormik } from "formik";
 import { basicSchema } from "../schemas";
-import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useNavigate } from "react-router";
 import { auth, db } from "../firebase/firebaseConfig";
@@ -96,6 +95,18 @@ function GeneralForm() {
             className={errors.linkedin ? "input-error" : ""}
           />
         </div>
+        <div className="m-2 d-flex justify-content-between">
+          <label>Pozisyon : </label>
+          <select name="position" id="position" className="form-select w-50"
+            style={{ border: "1px solid var(--primary)", borderRadius: "5px" }}>
+            <option value="" disabled>
+              Lütfen Bir Pozisyon Seçiniz
+            </option>
+            <option value="Frontend">Frontend Developer</option>
+            <option value="Backend">Backend Developer</option>
+            <option value="Full Stack">Full Stack Developer</option>
+          </select>
+        </div>
         <hr />
         <div className="coverLetter m-2 d-flex flex-column justify-content-between">
           <label className="text-align-left">Cover Letter</label>
@@ -104,7 +115,7 @@ function GeneralForm() {
             onChange={handleChange}
             name="coverLetter"
             placeholder={errors.coverLetter ? errors.coverLetter : "Geçerli bir ön yazı giriniz"}
-            className={errors.coverLetter ? "input-error" : ""}
+            className={`form-control ${errors.coverLetter ? "input-error" : ""}`}
             rows="4"
           />
         </div>
@@ -113,9 +124,6 @@ function GeneralForm() {
         <button disabled={isSubmitting} type="submit" className="btn btn-outline-primary rounded m-3">
           Kaydet
         </button>
-        <Link className="formLink" to="/portal">
-          Portala Git
-        </Link>
       </form>
     </div>
   );

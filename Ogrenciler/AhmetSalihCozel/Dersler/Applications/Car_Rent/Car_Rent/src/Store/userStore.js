@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { initializeApp } from "firebase/app";
-import { getFirestore, doc, getDoc } from "firebase/firestore"; 
+import { getFirestore, doc, getDoc, updateDoc } from "firebase/firestore"; 
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -12,23 +12,91 @@ const firebaseConfig = {
   measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 const useUserStore = create((set) => ({
     user: {},
     cars: [],
-    fetchUser: async () => {
-        const userRef = doc(db, "user", "vls8uXOxKhzFnQNXk6Ps");
+    rentedCars:[],
+    fetchUser: async (userId) => {
+        const userRef = doc(db, "users", userId);
         const userSnap = await getDoc(userRef);
         set({ user: userSnap.data() });
-        return userSnap.data()
     },
     getCars: async () => {
       const docRef = doc(db, "cars", "kW0oGpik6LcikXCJfJ2p");
       const docSnap = await getDoc(docRef);
-      set({ cars: docSnap.data() || [] });
+      set({ cars: docSnap.data().cars || [] });
+    },
+    rentCar: async (carId,userId) => {
+      try {
+        const carRef = doc(db, "cars", "kW0oGpik6LcikXCJfJ2p");
+        const carSnap = await getDoc(carRef);
+        const userRef = doc(db, "users", userId);
+        const userSnap = await getDoc(userRef);
+        console.log(userSnap.data())
+
+        
+        if (userSnap.exists()){
+          const userData = userSnap.data();
+          const rentedCars = userData.rentedCars
+          console.log(rentedCars)
+          if(!rentedCars.includes(carId)){
+            set({ rentedCars:[...rentedCars,carId] })
+            await updateDoc(userRef, { rentedCars: [...rentedCars,carId] });
+            console.log(`Kiralık araçlara ${carId} eklendi`);
+          }
+        }
+        
+        if (carSnap.exists()) {
+          const carData = carSnap.data();
+          const updatedCars = carData.cars.map((car) =>
+            car.carId === carId ? { ...car, isRented: true, rentedBy:localStorage.getItem("user") } : car
+          );
+          set({ cars: updatedCars });
+          await updateDoc(carRef, { cars: updatedCars });
+          console.log(`Araç ${carId} başarıyla güncellendi!`);
+        } else {
+          console.log("Araç verisi bulunamadı!");
+        }
+      } catch (error) {
+        console.error("Araç kiralama durumu güncellenirken hata oluştu:", error);
+      }
+    },
+    cancelRentCar: async (carId,userId) => {
+      try {
+        const carRef = doc(db, "cars", "kW0oGpik6LcikXCJfJ2p");
+        const carSnap = await getDoc(carRef);
+        const userRef = doc(db, "users", userId);
+        const userSnap = await getDoc(userRef);
+        console.log(userSnap.data())
+
+        
+        if (userSnap.exists()){
+          const userData = userSnap.data();
+          console.log(userData.rentedCars)
+          const updatedRentedCars = userData.rentedCars.filter((id) => id !== carId);
+          console.log(updatedRentedCars)
+          set({ rentedCars:updatedRentedCars })
+          await updateDoc(userRef, { rentedCars: updatedRentedCars });
+          console.log(`Kiralık araçlara ${carId} eklendi`);
+        }
+
+        if (carSnap.exists()) {
+          const carData = carSnap.data();
+          const updatedCars = carData.cars.map((car) =>
+            car.carId === carId ? { ...car, isRented: false, rentedBy:"" } : car
+          );
+          set({ cars: updatedCars });
+          await updateDoc(carRef, { cars: updatedCars });
+          console.log(`Araç ${carId} başarıyla güncellendi!`);
+        } else {
+          console.log("Araç verisi bulunamadı!");
+        }
+      } catch (error) {
+        console.error("Araç kiralama durumu güncellenirken hata oluştu:", error);
+      }
     }
 }));
 

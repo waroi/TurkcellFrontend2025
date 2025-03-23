@@ -2,7 +2,7 @@
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import Footer from "./Templates/Footer";
 import Header from "./Templates/Header";
-import { red } from "@mui/material/colors";
+import { blue, red } from "@mui/material/colors";
 import Router from "./Routes/Router";
 import "./App.css";
 import { BrowserRouter } from "react-router";
@@ -11,9 +11,30 @@ import { useEffect } from "react";
 import { Container } from "@mui/material";
 
 const theme = createTheme({
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          textTransform: "none",
+        },
+      },
+    },
+  },
+  typography: {
+    fontFamily: "'Poppins', sans-serif",
+  },
   palette: {
     primary: {
-      main: red[500],
+      main: "#061E47",
+    },
+    secondary: {
+      main: "#68A4F1",
+    },
+    third: {
+      main: "#2B6AD0",
+    },
+    forth: {
+      main: "#1F4591",
     },
   },
 });
@@ -26,13 +47,13 @@ function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <Header />
-        <Container maxWidth="md">
-          <BrowserRouter>
+        <BrowserRouter>
+          <Header />
+          <Container maxWidth="md">
             <Router />
-          </BrowserRouter>
-        </Container>
-        <Footer />
+          </Container>
+          <Footer />
+        </BrowserRouter>
       </ThemeProvider>
     </>
   );

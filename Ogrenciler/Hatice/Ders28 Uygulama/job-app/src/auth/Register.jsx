@@ -1,43 +1,79 @@
 import { useState } from "react";
+import { useFormik } from "formik";
+import { basicSchema } from "../schemas";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../firebase/firebaseConfig";
+import { auth, db } from "../firebase/firebaseConfig";
 import { useNavigate } from "react-router";
 import { toast } from "react-toastify";
+import { addDoc, collection } from "firebase/firestore";
 
 const Register = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const navigate = useNavigate();
+;  const navigate = useNavigate()
 
-  const handleRegister = async (e) => {
-    e.preventDefault();
+const formik = useFormik({
+  initialValues: {
+    fullName: "",
+    email: "",
+    password: "",
+  },
+  basicSchema,
+  onSubmit: async (values, actions) => {
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
+      await createUserWithEmailAndPassword(auth, values.email, values.password);
+
+      await addDoc(collection(db, "users"), {
+        fullName: values.fullName,
+        email: values.email,
+        isAdmin: false,
+      });
+
       toast.success("Kayıt başarıyla tamamlandı! 🎉 Giriş yapabilirsiniz.");
       navigate("/login");
     } catch (error) {
       toast.error(`Kayıt başarısız: ${error.message}`);
     }
-  };
+
+    actions.resetForm();
+  },
+});
 
   return (
     <div className="container mt-5">
       <h2>Kayıt Ol</h2>
-      <form onSubmit={handleRegister}>
+      <form onSubmit={formik.handleSubmit}>
+      <input
+          type="text"
+          name="fullName"
+          placeholder="Ad Soyad"
+          value={formik.values.fullName}
+          onChange={formik.handleChange}
+          className="form-control mb-3"
+        />
+        {formik.errors.fullName && formik.touched.fullName && (
+          <div className="text-danger">{formik.errors.fullName}</div>
+        )}
         <input
           type="email"
+          name="email"
           placeholder="E-posta"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          value={formik.values.email}
+          onChange={formik.handleChange}
           className="form-control mb-3"
         />
+        {formik.errors.email && formik.touched.email && (
+          <div className="text-danger">{formik.errors.email}</div>
+        )}
         <input
           type="password"
+          name="password"
           placeholder="Şifre"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          value={formik.values.password}
+          onChange={formik.handleChange}
           className="form-control mb-3"
         />
+        {formik.errors.password && formik.touched.password && (
+          <div className="text-danger">{formik.errors.password}</div>
+        )}
         <button type="submit" className="btn btn-success w-100">
           Kayıt Ol
         </button>

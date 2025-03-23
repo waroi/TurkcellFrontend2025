@@ -1,40 +1,42 @@
-import { useRoutes, Navigate } from "react-router";
+import { useRoutes } from "react-router";
 import Layout from "../components/layout/Layout";
-import ApplicationListView from "../pages/admin/ApplicationListView";
-import ApplicationDetailView from "../pages/admin/ApplicationDetailView";
-import ApplicationView from "../pages/user/ApplicationView";
-import PrivateRoute from "./PrivateRoute";
-import AdminLogin from "../pages/admin/AdminLogin";
-import GiftView from "../pages/Gift/GiftView";
-import CVSlider from "../pages/Slider/CVSlider";
+import { lazy } from "react";
+
+const LazyHome = lazy(() => import('../pages/Home/Home'))
+const LazyGiftView = lazy(() => import('../pages/Gift/GiftView'))
+const LazyAdminLogin = lazy(() => import('../pages/admin/AdminLogin'))
+const LazyApplicationView = lazy(() => import('../pages/user/ApplicationView'))
+const LazyApplicationDetailView = lazy(() => import('../pages/admin/ApplicationDetailView'))
+const LazyApplicationListView = lazy(() => import('../pages/admin/ApplicationListView'))
+
 const Router = () => {
   const routes = useRoutes([
     {
       path: "/",
       element: <Layout />,
       children: [
-        { index: true, element: <CVSlider /> },
+        { index: true, element: <LazyHome /> },
         {
           path: "admin",
           children: [
-            { path: "login", element: <AdminLogin /> },
+            { path: "login", element: <LazyAdminLogin /> },
             {
               path: "applications",
-              element: <ApplicationListView />,
+              element: <LazyApplicationListView />,
             },
             {
               path: "applications/:applicationId",
-              element: <ApplicationDetailView />,
+              element: <LazyApplicationDetailView />,
             },
           ],
         },
         {
           path: "application",
-          element: <ApplicationView />,
+          element: <LazyApplicationView />,
         },
         {
           path: 'gift',
-          element: <GiftView />
+          element: <LazyGiftView />
         }
       ],
     },

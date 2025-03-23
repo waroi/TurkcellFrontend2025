@@ -15,7 +15,7 @@ export default function () {
   const store = useStore();
 
   useEffect((user) => {
-    user = JSON.parse(localStorage.getItem("user"));
+    user = JSON.parse(localStorage.getItem("users"));
 
     if (user) store.setUser(user);
   }, []);
@@ -25,7 +25,7 @@ export default function () {
       registerFirebase(email, password, name, profile).then((user) => {
         getUser(user).then((user) => {
           store.setUser(user);
-          localStorage.setItem("user", JSON.stringify(user));
+          localStorage.setItem("users", JSON.stringify(user));
           router.push("/");
         });
       });
@@ -36,7 +36,7 @@ export default function () {
     loginFirebase(email, password).then((user) => {
       getUser(user).then((user) => {
         store.setUser(user);
-        localStorage.setItem("user", JSON.stringify(user));
+        localStorage.setItem("users", JSON.stringify(user));
         router.push("/");
       });
     });
@@ -60,7 +60,7 @@ export default function () {
 
     setUserFirebase(user.id, user.name).then(() => {
       store.setUser(user);
-      localStorage.setItem("user", JSON.stringify(user));
+      localStorage.setItem("users", JSON.stringify(user));
       router.push("/");
     });
   }
