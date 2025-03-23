@@ -1,11 +1,12 @@
 import React from "react";
 import { Form, Formik } from "formik";
-import { basicSchema } from "../schema"; 
+// import { basicSchema } from "../schema";
 import FormInput from "./FormInput";
 import ArrayInput from "./ArrayInput";
-import { db } from "../firebase/firebase"; 
-import { collection, addDoc } from "firebase/firestore"; 
-import { getStorage, ref, uploadString } from "firebase/storage"; 
+import { db } from "../firebase/firebase";
+import { collection, addDoc } from "firebase/firestore";
+import { getStorage, ref, uploadString } from "firebase/storage";
+import { uploadJobForm } from "../firebase/firebaseUpload";
 
 function WorkForm() {
   const initialValues = {
@@ -22,7 +23,7 @@ function WorkForm() {
     department: "",
     grade: "",
     position: "",
-    foreignlanguage: [], 
+    foreignlanguage: [],
     experience: [],
     technologies: [],
     projects: [],
@@ -30,7 +31,6 @@ function WorkForm() {
     volunteerwork: [],
     socialmedia: [],
     references: [],
-    cvFile: "", 
   };
 
   const singleFields = [
@@ -55,83 +55,44 @@ function WorkForm() {
     { name: "references", label: "Referans" },
   ];
 
-  const handleFileChange = (event, setFieldValue) => {
-    const file = event.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setFieldValue("cvFile", reader.result.split(",")[1]);
-      };
-      reader.readAsDataURL(file);
-    }
-  };
+
 
   return (
     <div className="container">
       <Formik
         initialValues={initialValues}
-        validationSchema={basicSchema} 
+        // validationSchema={basicSchema}
         onSubmit={async (values, { resetForm, setSubmitting, setErrors }) => {
-          setSubmitting(true); 
+          console.log("fonksiyon çalıştı");
           const filteredValues = Object.fromEntries(
-            Object.entries(values).filter(([key]) => key !== "cvFile") 
+            Object.entries(values).filter(([key]) => !key.endsWith("Input"))
           );
+          await uploadJobForm(filteredValues);
+          resetForm();
 
-          try {
-         
-            const docRef = await addDoc(collection(db, "jobApplications"), filteredValues);
 
-        
-            if (values.cvFile) {
-              const storage = getStorage();
-              const storageRef = ref(storage, `cvFiles/${values.email}_${Date.now()}.txt`);
-              await uploadString(storageRef, values.cvFile, "base64");
-            }
-
-            alert("Başvuru başarıyla kaydedildi!");
-            resetForm(); 
-          } catch (error) {
-            console.error("Hata:", error);
-            alert("Bir hata oluştu, tekrar deneyin."); 
-            setErrors({ submit: "Başvuru sırasında bir hata oluştu." }); 
-          } finally {
-            setSubmitting(false); 
-          }
         }}
       >
         {({ values, setFieldValue, isSubmitting, errors }) => (
           <Form className="my-5 d-flex flex-column align-items-center">
-        
+
             {singleFields.map((item) => (
               <FormInput key={item.name} label={item.label} field={item.name} type={item.type} />
             ))}
 
-     
+
             {arrayFields.map((item) => (
-              <ArrayInput 
-                key={item.name} 
-                field={item.name} 
-                label={item.label} 
-                values={values} 
-                setFieldValue={setFieldValue} 
+              <ArrayInput
+                key={item.name}
+                field={item.name}
+                label={item.label}
+                values={values}
+                setFieldValue={setFieldValue}
               />
             ))}
 
-
-            <div className="mb-3">
-              <label className="form-label">CV Yükleyin:</label>
-              <input
-                type="file"
-                className="form-control"
-                accept=".pdf,.doc,.docx,.txt" 
-                onChange={(e) => handleFileChange(e, setFieldValue)}
-                disabled={isSubmitting} 
-              />
-              {errors.submit && <div style={{ color: "red" }}>{errors.submit}</div>} 
-            </div>
-
-            <button className="btn bg-green" type="submit" disabled={isSubmitting}>
-              {isSubmitting ? "Yükleniyor..." : "Başvur"}
+            <button className="btn bg-green" type="submit" onClick={() => console.log("Butona tıklandı!")}>
+              Başvur
             </button>
           </Form>
         )}

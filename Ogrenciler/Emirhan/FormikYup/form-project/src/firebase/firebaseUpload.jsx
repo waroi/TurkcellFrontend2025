@@ -26,3 +26,15 @@ export const fetchPosition = async (id) => {
         console.error("Veri çekme hatası:", error);
     }
 };
+
+export const uploadJobForm = async (job) => {
+    try {
+        const jobsCollection = collection(db, "jobApplications");
+
+        await addDoc(jobsCollection, job);
+
+
+    } catch (error) {
+        console.error("Hata oluştu:", error);
+    }
+};
