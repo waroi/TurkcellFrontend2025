@@ -1,10 +1,11 @@
 import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
+import PrimaryButton from "../atoms/Buttons/PrimaryButton";
 import { useFormik } from "formik";
 import { loginSchema } from "../../schemas";
 import { useAuth } from "../../context/AuthContext";
 import { useNavigate } from "react-router";
 import { useEffect } from "react";
+import { NavLink } from "react-router";
 
 const LoginForm = () => {
   const { login, register, user } = useAuth();
@@ -49,7 +50,7 @@ const LoginForm = () => {
   return (
     <Form
       onSubmit={handleSubmit}
-      className="shadow w-100 p-5 rounded-5 bg-transparent"
+      className="shadow w-75 p-5 rounded-5 bg-transparent"
     >
       <Form.Group className="mb-3" controlId="email">
         <Form.Label>Mail Adresi: </Form.Label>
@@ -94,9 +95,15 @@ const LoginForm = () => {
         {errors.role && <p className="error">{errors.role}</p>}
       </Form.Group>
 
-      <Button variant="primary" type="submit" disabled={isSubmitting}>
-        Kaydet
-      </Button>
+      <div className="d-flex gap-4 align-items-center">
+        <PrimaryButton type="submit" disabled={isSubmitting}>
+          Giriş yap
+        </PrimaryButton>
+        <NavLink to="/register" className="ms-2">
+          {" "}
+          Kayıtlı değil misin? Üye ol.
+        </NavLink>
+      </div>
     </Form>
   );
 };
