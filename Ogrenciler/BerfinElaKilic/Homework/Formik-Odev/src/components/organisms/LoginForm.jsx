@@ -4,10 +4,17 @@ import { useFormik } from "formik";
 import { loginSchema } from "../../schemas";
 import { useAuth } from "../../context/AuthContext";
 import { useNavigate } from "react-router";
+import { useEffect } from "react";
 
 const LoginForm = () => {
-  const { login, register } = useAuth();
+  const { login, register, user } = useAuth();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (user) {
+      navigate("/jobs");
+    }
+  }, [user]);
 
   const onSubmit = async (values, actions) => {
     console.log("submitting");
