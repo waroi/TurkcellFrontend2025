@@ -3,6 +3,7 @@ import { create } from "zustand";
 const useUserStore = create((set) => ({
   user: null,
   applications: [],
+  userApplications: [],
   toast: [],
 
   setUser: (user) => {
@@ -11,6 +12,10 @@ const useUserStore = create((set) => ({
 
   setApplications: (applications) => {
     set({ applications });
+  },
+
+  setUserApplications: (userApplications) => {
+    set({ userApplications });
   },
 
   setApplicationStatus: (id, status) => {

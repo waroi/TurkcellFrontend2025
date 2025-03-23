@@ -11,7 +11,7 @@ export function Tab({ children }) {
   return (
     <>
       <ul className="nav nav-tabs" role="tablist" ref={tabs}>
-        {children.map(({ props: { id, tab } }, index) => (
+        {children.map(({ props: { id, tab } }) => (
           <li key={id} className="nav-item" role="presentation">
             <button
               className="nav-link"
