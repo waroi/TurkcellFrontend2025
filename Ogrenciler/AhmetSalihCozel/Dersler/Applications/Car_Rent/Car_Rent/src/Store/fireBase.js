@@ -34,9 +34,9 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-export async function register(email, password) {
+export async function register(email, password, name) {
   const user = await createUserWithEmailAndPassword(auth, email, password);
-  setDoc(doc(collection(db, "users"), user.user.uid), {rentedCars:[]})
+  setDoc(doc(collection(db, "users"), user.user.uid), {rentedCars:[],userName:name})
   console.log(user)
   return user
 }
@@ -46,7 +46,7 @@ export async function login(email, password, remember, navigate) {
   return signInWithEmailAndPassword(auth, email, password).then(
     (credentials) => {
       console.log(collection(db, credentials.user.uid))
-      if (remember) localStorage.setItem("user", credentials.user.uid);
+      localStorage.setItem("user", credentials.user.uid);
       navigate("/carstore");
       return credentials;
     }

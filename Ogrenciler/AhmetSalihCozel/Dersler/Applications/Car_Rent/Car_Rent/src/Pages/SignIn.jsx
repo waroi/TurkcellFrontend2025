@@ -7,12 +7,17 @@ const SignIn = () => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-    register(email,password)
+    const name = e.target.userName.value;
+    register(email,password,name)
   }
   return (
     <React.Fragment>
       <div className="d-flex h-100 w-100 align-items-center justify-content-center">
         <form className="w-50 d-flex justify-content-center flex-column" onSubmit={handleSubmit}>
+        <div className="mb-3">
+            <label htmlFor="userName" className="form-label">Name</label>
+            <input name="userName" type="form-text" className="form-control" id="userName" />
+          </div>
           <div className="mb-3">
             <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
             <input name="email" type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />

@@ -8,29 +8,28 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import useUserStore from "../Store/userStore";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 
-const CarStore = () => {
-  const user = localStorage.getItem("user")
-  const cars = useUserStore((state) => state.cars);
-  const rentCar = useUserStore((state) => state.rentCar);
-  const cancelRentCar = useUserStore((state) => state.cancelRentCar);
-  const getCars = useUserStore((state) => state.getCars);
-  const navigate = useNavigate();
+function UserRentedCars() {
+    const user = localStorage.getItem("user")
+    const cars = useUserStore((state) => state.cars);
+    const rentCar = useUserStore((state) => state.rentCar);
+    const cancelRentCar = useUserStore((state) => state.cancelRentCar);
+    const getCars = useUserStore((state) => state.getCars);
+    const navigate = useNavigate()
+  
+    const userRentedCars = cars.filter((car)=>car.rentedBy === localStorage.getItem("user"))
 
-
-  useEffect(()=>{
-    if(cars.length === 0){
-      getCars()
-    }
-  },[cars])
-
-
+    useEffect(()=>{
+      if(cars.length === 0){
+        getCars()
+      }
+      },[cars])
   return (
     <Grid container spacing={3}>
-      {cars?.map((car, index) => (
+      {userRentedCars?.map((car, index) => (
         <Grid item xs={12} sm={6} md={4} key={index}>
-          <Card sx={{ maxWidth: 345, border:"1px solid", borderColor:"third.main", bgcolor:"secondary.main", color:"primary.main" }}>
+          <Card sx={{ maxWidth: 345 }}>
             <CardMedia
               sx={{ height: 140, display:"flex", alignItems:"center", justifyContent:"center" }}
               image={car.imageUrl}
@@ -42,23 +41,23 @@ const CarStore = () => {
               <Typography gutterBottom variant="h5" component="div">
                 {car.brand}
               </Typography>
-              <Typography variant="body2" >
+              <Typography variant="body2" sx={{ color: "text.secondary" }}>
                 {car.model}
               </Typography>
-              <Typography variant="body1" >
+              <Typography variant="body1" sx={{ color: "text.secondary", mt:2 }}>
                 {car.productionYear}
               </Typography>
             </CardContent>
             <CardActions sx={{display:"flex", justifyContent:"space-between"}}>
-              <Button variant="contained" onClick={()=>rentCar(car.carId,user)} size="small">Kirala</Button>
-              <Button variant="contained" onClick={()=>navigate(`/cardetails/${car.carId}`)} sx={{fontSize:"1rem"}}>İncele</Button>
-              <Button variant="contained" onClick={()=>cancelRentCar(car.carId,user)} size="small">Vazgeç</Button>
+              <Button onClick={()=>rentCar(car.carId,user)} size="small">Kirala</Button>
+              <Button onClick={()=>navigate(`/cardetails/${car.carId}`)} size="small">İncele</Button>
+              <Button onClick={()=>cancelRentCar(car.carId,user)} size="small">Vazgeç</Button>
             </CardActions>
           </Card>
         </Grid>
       ))}
     </Grid>
-  );
-};
+  )
+}
 
-export default CarStore;
+export default UserRentedCars
