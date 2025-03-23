@@ -12,12 +12,14 @@ import {
   getAdmin,
   getCandidate,
 } from "../utils/services";
+import { useNavigate } from "react-router";
 
 const AuthContext = createContext(null);
-//TODO:: burda tutulan user bilgisi json-server dan gelmeli , şuan firebaseden geliyor.
+
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
@@ -101,8 +103,15 @@ export const AuthProvider = ({ children }) => {
   };
 
   const logout = async () => {
-    await signOut(auth);
-    setUser(null);
+    try {
+      await signOut(auth);
+    } catch (error) {
+      console.log("çıkış yapılamadı", error);
+      return;
+    } finally {
+      setUser(null);
+      navigate("/login");
+    }
   };
 
   return (
