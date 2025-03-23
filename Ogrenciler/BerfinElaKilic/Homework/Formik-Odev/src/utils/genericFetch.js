@@ -16,16 +16,18 @@ const fetchService = async (url, method = "GET", body = null, options = {}) => {
   try {
     const response = await fetch(url, requestOptions);
     if (!response.ok) {
-      throw new Error(
-        `'İlan detayları yüklenirken bir hata oluştu': ${response.status}`
+      console.log(
+        "İlan detayları yüklenirken bir hata oluştu",
+        response.status
       );
+      return;
     }
 
     const data = await response.json();
     return data;
   } catch (error) {
-    console.error("İlan detayları yüklenirken bir hata oluştu: ", error);
-    throw error;
+    console.log("İlan detayları yüklenirken bir hata oluştu: ", error);
+    return;
   }
 };
 export default fetchService;

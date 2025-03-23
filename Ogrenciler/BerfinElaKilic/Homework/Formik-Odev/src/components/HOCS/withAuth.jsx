@@ -10,12 +10,12 @@ const withAuth = (WrappedComponent, role) => {
     console.log("user", user);
     useEffect(() => {
       if (!user) {
-        // navigate("/login");
+        navigate("/login");
       }
     }, [user, navigate]);
 
     if (!user) return <p>Loading...</p>;
-    else if (user && user.role !== role) {
+    else if (user && role && user.role !== role) {
       return <p>Sayfaya girme yetkiniz yoktur.</p>;
     }
 

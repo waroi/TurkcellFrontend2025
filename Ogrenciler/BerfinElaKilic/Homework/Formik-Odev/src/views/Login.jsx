@@ -1,11 +1,11 @@
 import React from "react";
-import AdayFormu from "../components/organisms/AdayFormu";
+import LoginForm from "../components/organisms/LoginForm";
 
 const Login = () => {
   return (
-    <div>
-      <AdayFormu />
-    </div>
+    <>
+      <LoginForm />
+    </>
   );
 };
 

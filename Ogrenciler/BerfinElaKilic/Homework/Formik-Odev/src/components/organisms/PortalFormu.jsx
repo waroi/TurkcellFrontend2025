@@ -6,6 +6,10 @@ import { LANGUAGES, levels, UNIVERSITIES } from "../../constants/constants";
 import LanguageForm from "../molecules/forms/LanguageForm";
 import ProfileForm from "../molecules/forms/ProfileForm";
 import { advancedSchema } from "../../schemas";
+import EduForm from "../molecules/forms/EduForm";
+import Experiences from "../molecules/Experiences";
+import References from "../molecules/forms/References";
+import CoverLetter from "../molecules/forms/CoverLetter";
 
 const onSubmit = async (values, actions) => {
   await new Promise((resolve) => {
@@ -37,28 +41,8 @@ const PortalFormu = () => {
           <>
             <Form>
               <ProfileForm />
-              <CustomComponent
-                id="university"
-                as="select"
-                className="form-select"
-                label="Üniversite"
-                name="university"
-              >
-                <option defaultValue="">Üniversitenizi Seçiniz</option>
-                {UNIVERSITIES.map((uni) => (
-                  <option key={uni} value={uni}>
-                    {uni}
-                  </option>
-                ))}
-              </CustomComponent>
-              <CustomComponent
-                as="input"
-                className="form-control"
-                label="Telefon Numarası"
-                name="phoneNumber"
-                type="text"
-                placeholder="Telefon Numaranızı Giriniz"
-              />
+              <EduForm/>
+              
               <div>
                 {Array.from({ length: count }, (v, i) => (
                   <LanguageForm key={i} index={i} />
@@ -70,6 +54,9 @@ const PortalFormu = () => {
                   Yeni Dil Ekle
                 </button>
               </div>
+              <Experiences/>
+              <References/>
+              <CoverLetter/>
 
               {/* <CustomCheckbox type="checkbox" name="isAccepted" /> */}
               <button

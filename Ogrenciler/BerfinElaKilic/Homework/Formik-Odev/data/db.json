@@ -49,7 +49,35 @@
         "university": "XYZ University",
         "graduationYear": 2019
       },
-      "isAdmin": false
+      "role": "user"
+    },
+    {
+      "id": "rrgcH5FFxNYeaIyjDFxtKqa4qu43",
+      "firstName": "aa",
+      "lastName": "cc",
+      "role": "user",
+      "email": "bb@gmail.com"
+    },
+    {
+      "id": "90dZl0LQt8cihXatYOszexHShlm1",
+      "firstName": "hilal",
+      "lastName": "semercioğlu",
+      "role": "user",
+      "email": "hilalsem@gmail.com"
+    },
+    {
+      "id": "KJYc2EatFfbXchuIY2a65IR5pGu2",
+      "firstName": "hilal",
+      "lastName": "semercioğlu",
+      "role": "user",
+      "email": "hilal@gmail.com"
+    },
+    {
+      "id": "AWCaSKnywvZxUEG11zxVwG5tMVE2",
+      "firstName": "berfin ela",
+      "lastName": "Kılıç",
+      "role": "user",
+      "email": "berfin@gmail.com"
     }
   ],
   "jobs": [
@@ -100,8 +128,10 @@
       "firstName": "Admin",
       "lastName": "User",
       "email": "admin@example.com",
-      "isAdmin": true,
-      "createdJobs": ["jobId123"],
+      "role": "admin",
+      "createdJobs": [
+        "jobId123"
+      ],
       "approvedCandidates": [
         {
           "candidateId": "candidateId",
@@ -109,6 +139,27 @@
           "approvedAt": "2024-03-21T12:00:00Z"
         }
       ]
+    },
+    {
+      "id": "U83XzbXkDDcslTvbS3HzsHB6c9D2",
+      "firstName": "hilal",
+      "lastName": "semercioğlu",
+      "role": "admin",
+      "email": "af@gmail.com"
+    },
+    {
+      "id": "Vqp2AbvBBQfyu2nGS1GYlFCHs7u2",
+      "firstName": "aa",
+      "lastName": "bb",
+      "role": "admin",
+      "email": "cc@gmail.com"
+    },
+    {
+      "id": "oYjIlobVBFPbiM5Lt5nAEGbBdXW2",
+      "firstName": "hilal",
+      "lastName": "semercioğlu",
+      "role": "admin",
+      "email": "h@gmail.com"
     }
   ]
 }
