@@ -1,23 +1,9 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router";
-import { ApplicationService } from "../../services/ApplicationService";
+import { useApplicationList } from "../../utils/hooks/useApplicationList";
 import "./ApplicationListView.css";
 
 const ApplicationListView = () => {
-  const [applications, setApplications] = useState([]);
-
-  useEffect(() => {
-    const fetchApplications = async () => {
-      try {
-        const applicationsData = await ApplicationService.getApplications();
-        setApplications(applicationsData);
-      } catch (error) {
-        console.error("Başvuruları alırken hata oluştu:", error);
-      }
-    };
-
-    fetchApplications();
-  }, []);
+  const { applications, loading, error } = useApplicationList()
 
   return (
     <div className="container mt-4">

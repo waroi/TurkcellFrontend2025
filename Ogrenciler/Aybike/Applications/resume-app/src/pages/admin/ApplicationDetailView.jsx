@@ -1,47 +1,8 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router";
-import { ApplicationService } from "../../services/ApplicationService";
 import "./ApplicationDetailView.css";
+import { useApplicationDetail } from "../../utils/hooks/useApplicationDetail";
 
 const ApplicationDetailView = () => {
-  const { applicationId } = useParams();
-  const [application, setApplication] = useState(null);
-  const [selectedRate, setSelectedRate] = useState(0);
-
-  useEffect(() => {
-    const fetchApplication = async () => {
-      const response = await ApplicationService.getApplicationById(
-        applicationId
-      );
-      console.log(response);
-      if (response.success) {
-        setApplication(response.data);
-        setSelectedRate(response.data.rate);
-      } else {
-        console.log(response.message);
-      }
-    };
-
-    fetchApplication();
-  }, [applicationId]);
-
-  const handleRateChange = (event) => {
-    setSelectedRate(Number(event.target.value));
-  };
-
-  const handleRateSubmit = async () => {
-    const response = await ApplicationService.updateApplicationRate(
-      applicationId,
-      selectedRate
-    );
-    if (response.success) {
-      alert("Puan güncellendi!");
-      setApplication((prev) => ({ ...prev, rate: selectedRate }));
-    } else {
-      alert("Puan güncellenirken hata oluştu!");
-    }
-  };
-
+  const { application, selectedRate, handleRateChange, handleRateSubmit } = useApplicationDetail()
   return (
     <div className="container mt-4">
       <div className="application-detail">
@@ -99,11 +60,10 @@ const ApplicationDetailView = () => {
                 <div className="detail-label">Mezuniyet Durumu</div>
                 <div className="detail-value">
                   <span
-                    className={`graduation-status ${
-                      application.graduationStatus
-                        ? "graduated"
-                        : "not-graduated"
-                    }`}
+                    className={`graduation-status ${application.graduationStatus
+                      ? "graduated"
+                      : "not-graduated"
+                      }`}
                   >
                     {application.graduationStatus
                       ? "Mezun"

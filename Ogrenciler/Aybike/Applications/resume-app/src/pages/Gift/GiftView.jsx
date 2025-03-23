@@ -6,22 +6,10 @@ import './GiftView.css';
 import LoadingSpinner from '../../components/Gift/LoadingSpinner/LoadingSpinner.jsx';
 import CelebrationEmoji from '../../components/Gift/CelebrationEmoji/CelebrationEmoji.jsx';
 import ProgressBar from '../../components/Gift/ProgressBar/ProgressBar.jsx';
+import { useGiftView } from '../../utils/hooks/useGiftView.jsx';
 
 const GiftView = () => {
-    const [loading, setLoading] = useState(true)
-    const { createConfetti } = useConfetti()
-    const { createBalloons } = useBalloons()
-
-    useEffect(() => {
-        createConfetti()
-        createBalloons()
-
-        const timer = setTimeout(() => {
-            setLoading(false)
-        }, 1000)
-
-        return () => clearTimeout(timer)
-    }, [createConfetti, createBalloons])
+    const { loading } = useGiftView();
 
     return (
         <div className="gift-view-container">

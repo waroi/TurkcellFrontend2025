@@ -3,38 +3,11 @@ import { formSchema } from "../schemas/formSchema";
 import CustomInput from "./CustomInput";
 import CustomSelect from "./CustomSelect";
 import CustomCheckbox from "./CustomCheckbox";
-import { useNavigate } from "react-router";
-import { ApplicationService } from "../services/ApplicationService";
-
-const countries = ["Türkiye", "ABD", "Almanya", "Fransa"];
-const cities = ["İstanbul", "Ankara", "İzmir", "Bursa"];
-const universities = ["Boğaziçi", "ODTÜ", "İTÜ", "Koç Üniversitesi"];
-const departments = [
-  "Bilgisayar Mühendisliği",
-  "Elektrik Elektronik",
-  "Makine",
-  "Endüstri",
-];
-const skillsOptions = ["JavaScript", "React", "Node.js", "Python", "Java"];
+import { useInfoForm } from "../utils/hooks/useInfoForm";
+import { cities, countries, departments, skillsOptions, universities } from "../utils/constans/formOptions";
 
 const InfoForm = () => {
-  const navigate = useNavigate();
-
-  const onSubmit = async (values, actions) => {
-    try {
-      const addApplicationResponse = await ApplicationService.addApplication(
-        values
-      );
-      if (addApplicationResponse.success) {
-        navigate("/gift");
-        alert(addApplicationResponse.message);
-        actions.resetForm();
-      }
-    } catch (error) {
-      console.error("Başvuru hatası:", error);
-      alert("Başvuru sırasında bir hata oluştu!");
-    }
-  };
+  const { handleSubmit } = useInfoForm();
 
   return (
     <div className="container mt-4">
@@ -60,7 +33,7 @@ const InfoForm = () => {
           projects: "",
         }}
         validationSchema={formSchema}
-        onSubmit={onSubmit}
+        onSubmit={handleSubmit}
       >
         {({ isSubmitting, values }) => (
           <Form className="d-flex flex-column gap-3">
