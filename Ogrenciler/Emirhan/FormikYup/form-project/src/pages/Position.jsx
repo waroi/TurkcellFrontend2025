@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { db } from "../firebase/firebase";
 import { collection, getDocs } from "firebase/firestore";
-
+import Navbar from "../components/Navbar";
 
 const Position = () => {
     const [positions, setPositions] = useState([]);
@@ -25,6 +25,7 @@ const Position = () => {
 
     return (
         <div className='container'>
+            <Navbar />
             <div className="mb-5">
                 <h2 className="text-center my-5">Açık Pozisyonlar – Kariyerine Yeni Bir Adım At!</h2>
                 <div className="fs-5">

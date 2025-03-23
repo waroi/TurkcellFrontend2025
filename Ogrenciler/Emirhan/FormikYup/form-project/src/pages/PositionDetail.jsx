@@ -2,7 +2,7 @@ import React from 'react'
 import { useParams } from 'react-router'
 import { useEffect, useState } from 'react'
 import { fetchPosition } from '../firebase/firebaseUpload'
-
+import Navbar from '../components/Navbar'
 
 
 const PositionDetail = () => {
@@ -15,6 +15,7 @@ const PositionDetail = () => {
 
     return (
         <>
+            <Navbar />
             <div className='container my-5'>
                 <h2 className="text-center mb-4">{position.title}</h2>
                 <div>

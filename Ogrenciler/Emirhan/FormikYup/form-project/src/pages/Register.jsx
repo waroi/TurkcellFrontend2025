@@ -2,24 +2,38 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import { registerUser, SignIn } from "../api/api";
 import { uploadUser } from "../firebase/firebaseUpload";
-
+import Navbar from "../components/Navbar";
 function Register() {
   const [user, setUser] = useState({
     name: "",
     surname: "",
     mail: "",
     password: "",
-    status: "admin",
+    status: "user",
   });
   const navigate = useNavigate();
   const handleRegister = async () => {
-    await registerUser(user.mail, user.password);
-    await uploadUser(user);
-    navigate(`/position`);
+    try {
+      const ruser = await registerUser(user.mail, user.password);
+
+      console.log("Kayıtlı kullanıcı yanıtı:", ruser); // Yanıtı kontrol et
+
+      if (!ruser || !ruser.uid) {
+        throw new Error("Kullanıcı verisi geçersiz, localId bulunamadı.");
+      }
+
+      await uploadUser(user, ruser.uid);  // localId'yi kullan
+      navigate(`/position`);
+    } catch (error) {
+      console.error("Hata oluştu:", error.message);
+    }
   };
+
+
 
   return (
     <div className="container d-flex flex-column align-items-center justify-content-center form-container py-5">
+      <Navbar />
       <div className="h-auto login-form-width shadow p-4 mb-5 bg-white rounded">
         <div className="w-100 py-3 d-flex flex-column justify-content-center align-items-center">
           <i class="fa-solid fa-user-tie fs-1 mb-3"></i>

@@ -5,6 +5,7 @@ import Button from "../../atoms/buttons/Button";
 import { getUser } from "../../../../firebase/dbController";
 import { auth } from "../../../../firebase/firebase";
 import { NavLink, useNavigate } from "react-router";
+import { getUserApplications } from "../../../../firebase/dbController";
 const Navbar = () => {
   const [userAuth, setUserAuth] = useState(null);
   let navigate = useNavigate();
@@ -44,6 +45,13 @@ const Navbar = () => {
                   onClick={signOut}
                 >
                   SignOut
+                </NavLink>
+                <NavLink
+                  to="/form"
+                  className="btn btn-warning rounded-pill "
+                  onClick={getUserApplications()}
+                >
+                  Form Ekle
                 </NavLink>
               </div>
             </>

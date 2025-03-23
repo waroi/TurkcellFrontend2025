@@ -8,6 +8,20 @@ import PositionDetail from "../pages/PositionDetail";
 import WorkForm from "../components/WorkForm";
 import Applications from "../pages/Applications";
 
+const ProtectedRoute = ({ element, allowedRoles }) => {
+  const status = localStorage.getItem("status");
+
+  if (!status) {
+    return <Navigate to="/login" replace />;
+  }
+
+  if (!allowedRoles.includes(status)) {
+    return <Navigate to="/" replace />;
+  }
+
+  return element;
+};
+
 const Router = () => {
   const routes = useRoutes([
     { path: "/", element: <HomePage /> },
@@ -15,15 +29,20 @@ const Router = () => {
     { path: "/register", element: <Register /> },
     { path: "/position", element: <Position /> },
     { path: "/position/:id", element: <PositionDetail /> },
-    { path: "/uploadjobform", element: <UploadJobForm /> },
-    { path: "/workform", element: <WorkForm /> },
-    { path: "/applications", element: <Applications /> },
-
-
-
-
-
+    {
+      path: "/uploadjobform",
+      element: <ProtectedRoute element={<UploadJobForm />} allowedRoles={["admin"]} />,
+    },
+    {
+      path: "/workform",
+      element: <ProtectedRoute element={<WorkForm />} allowedRoles={["user", "admin"]} />,
+    },
+    {
+      path: "/applications",
+      element: <ProtectedRoute element={<Applications />} allowedRoles={["admin"]} />,
+    },
   ]);
+
   return routes;
 };
 

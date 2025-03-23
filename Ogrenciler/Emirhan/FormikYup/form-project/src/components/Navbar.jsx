@@ -1,6 +1,15 @@
+import { useEffect, useState } from "react";
+
 function Navbar() {
+  const [status, setStatus] = useState(null);
+
+  useEffect(() => {
+    const userStatus = localStorage.getItem("status");
+    setStatus(userStatus);
+  }, []);
+
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+    <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top">
       <div className="container">
         <a className="navbar-brand" href="#">
           ZenCode
@@ -29,33 +38,55 @@ function Navbar() {
               </a>
             </li>
           </ul>
-          <div class="dropdown">
-            <button
-              class="btn btn-secondary dropdown-toggle"
-              type="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Sen bir adminsin!!! Kendine gel!!!
-            </button>
-            <ul class="dropdown-menu">
-              <li>
-                <a class="dropdown-item" href="#">
-                  Profilim
-                </a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="/uploadjobform">
-                  Açık Pozisyonları Yönet
-                </a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">
-                  Başvuruları Yönet
-                </a>
-              </li>
-            </ul>
-          </div>
+          {status ? (
+            <div className="dropdown">
+              <button
+                className="btn btn-secondary dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                {status === "admin" ? "Sen bir adminsin!!! Kendine gel!!!" : "Profilim"}
+              </button>
+              <ul className="dropdown-menu">
+                <li>
+                  <a className="dropdown-item" href="#">
+                    Profilim
+                  </a>
+                </li>
+                {status === "admin" && (
+                  <>
+                    <li>
+                      <a className="dropdown-item" href="/uploadjobform">
+                        Açık Pozisyonları Yönet
+                      </a>
+                    </li>
+                    <li>
+                      <a className="dropdown-item" href="#">
+                        Başvuruları Yönet
+                      </a>
+                    </li>
+                  </>
+                )}
+                <li>
+                  <a
+                    className="dropdown-item"
+                    href="/login"
+                    onClick={() => {
+                      localStorage.removeItem("status");
+                      setStatus(null);
+                    }}
+                  >
+                    Çıkış Yap
+                  </a>
+                </li>
+              </ul>
+            </div>
+          ) : (
+            <a className="btn btn-primary" href="/login">
+              Giriş Yap
+            </a>
+          )}
         </div>
       </div>
     </nav>

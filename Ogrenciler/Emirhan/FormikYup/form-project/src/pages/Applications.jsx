@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { fetchApplications } from "../firebase/firebaseUpload";
+import Navbar from "../components/Navbar";
 
 function Applications() {
   const [applications, setApplications] = useState([]);
@@ -14,6 +15,7 @@ function Applications() {
 
   return (
     <div className="container form-container">
+      <Navbar />
       <table class="table table-striped">
         <thead>
           <tr>

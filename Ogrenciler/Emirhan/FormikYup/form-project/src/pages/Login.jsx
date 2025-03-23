@@ -1,16 +1,34 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import { SignIn } from "../api/api";
+import { fetchUser } from "../firebase/firebaseUpload";
+import Navbar from "../components/Navbar";
 function Login() {
   const [user, setUser] = useState({ mail: "", password: "" });
   const navigate = useNavigate();
   const handleLogin = async () => {
-    const alreadyUser = await SignIn(user.mail, user.password);
-    navigate(`/`);
+    try {
+      const alreadyUser = await SignIn(user.mail, user.password);
+
+      if (alreadyUser && alreadyUser.uid) {
+
+        const userData = await fetchUser(alreadyUser.uid);
+        if (userData) {
+          localStorage.setItem("status", userData.status);
+          navigate(`/position`);
+        }
+      }
+    } catch (error) {
+      console.error("Login error:", error);
+    }
   };
 
+
+
   return (
+
     <div className="container d-flex flex-column align-items-center justify-content-center form-container">
+      <Navbar />
       <div className="h-auto login-form-width shadow p-4 mb-5 bg-white rounded">
         <div className="w-100 py-3 d-flex flex-column justify-content-center align-items-center">
           <i class="fa-solid fa-user-tie fs-1 mb-3"></i>

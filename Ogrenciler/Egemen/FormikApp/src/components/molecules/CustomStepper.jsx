@@ -7,6 +7,7 @@ const CustomStepper = ({
   handleNext,
   activeStep,
   isSubmitting,
+  setActiveStep,
 }) => {
   return (
     <div>

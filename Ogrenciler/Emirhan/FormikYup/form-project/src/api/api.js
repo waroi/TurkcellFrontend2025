@@ -13,7 +13,7 @@ export const registerUser = async (email, password) => {
       email,
       password
     );
-    console.log("Kullanıcı kaydedildi:", userCredential.user);
+    return userCredential.user;
   } catch (error) {
     console.error("Hata:", error.message);
     throw error;
@@ -29,7 +29,7 @@ export const SignIn = async (email, password) => {
       password
     );
     console.log("Kullanıcı giriş yaptı:", userCredential.user);
-    return userCredential.user;
+    return { uid: userCredential.user.uid, email: userCredential.user.email };
   } catch (error) {
     console.error("Hata:", error.message);
     throw error;
