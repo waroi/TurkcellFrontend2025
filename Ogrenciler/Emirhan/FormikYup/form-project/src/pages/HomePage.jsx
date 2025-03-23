@@ -1,10 +1,11 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Navbar from '../components/Navbar';
 
 function HomePage() {
   return (
     <div>
-
+      <Navbar />
       <header className="bg-dark text-white text-center py-5">
         <div className="container">
           <h1 className="display-4">ZenCode - Modern Yazılım Çözümleri</h1>

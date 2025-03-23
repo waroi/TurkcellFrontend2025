@@ -7,7 +7,6 @@ import Router from "./routes/router";
 function App() {
   return (
     <>
-      <Navbar />
       <Router />
       <Footer />
     </>

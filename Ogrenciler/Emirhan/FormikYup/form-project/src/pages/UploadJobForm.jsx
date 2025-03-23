@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { uploadJobs } from "../firebase/firebaseUpload";
+import Navbar from "../components/Navbar";
 
 const UploadJobForm = () => {
     const [job, setJob] = useState({ title: "", description: "" });
@@ -21,6 +22,7 @@ const UploadJobForm = () => {
 
     return (
         <div>
+            <Navbar />
             <h2>İş İlanı Yükle</h2>
             <form onSubmit={handleSubmit}>
                 <label>
