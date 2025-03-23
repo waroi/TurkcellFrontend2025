@@ -28,7 +28,15 @@
 }
 
 .form-container{
-    min-height: 100vh;
+    min-height: 70vh;
     height: auto;
     padding: 50px 0;
+}
+
+.custom-badge{
+    background-color: #dbc500;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
 }

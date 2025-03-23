@@ -13,14 +13,14 @@ function SelectInput({
     <div className="w-75">
       <label
         htmlFor={field}
-        className="text-start d-block fs-5 text-white mb-2 fs-6"
+        className="text-start d-block fs-5 text-black mb-2 fs-6"
       >
         {`${label}:`}
       </label>
       <Field
         as="select"
         name={field}
-        className={`form-select form-control ${
+        className={`custom-input form-control ${
           errors[field] && touched[field] ? "is-invalid" : ""
         }`}
         onChange={(e) => setFieldValue(field, e.target.value)}

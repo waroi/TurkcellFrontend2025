@@ -1,9 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router";
+import { registerUser, SignIn } from "../api/api";
+import { uploadUser } from "../firebase/firebaseUpload";
 
 function Register() {
+  const [user, setUser] = useState({
+    name: "",
+    surname: "",
+    mail: "",
+    password: "",
+    status: "admin",
+  });
+  const navigate = useNavigate();
+  const handleRegister = async () => {
+    await registerUser(user.mail, user.password);
+    await uploadUser(user);
+    navigate(`/position`);
+  };
+
   return (
     <div className="container d-flex flex-column align-items-center justify-content-center form-container py-5">
-      <form className="h-auto login-form-width shadow p-4 mb-5 bg-white rounded">
+      <div className="h-auto login-form-width shadow p-4 mb-5 bg-white rounded">
         <div className="w-100 py-3 d-flex flex-column justify-content-center align-items-center">
           <i class="fa-solid fa-user-tie fs-1 mb-3"></i>
           <h4 className="fs-4">Zencode'a hoşgeldin</h4>
@@ -19,6 +36,7 @@ function Register() {
             id="InputName"
             placeholder="Ad giriniz..."
             aria-describedby="nameHelp"
+            onChange={(e) => setUser({ ...user, name: e.target.value })}
           />
         </div>
         <div className="mb-3">
@@ -31,6 +49,7 @@ function Register() {
             id="InputSurname"
             placeholder="Soyad giriniz..."
             aria-describedby="surnameHelp"
+            onChange={(e) => setUser({ ...user, surname: e.target.value })}
           />
         </div>
         <div className="mb-3">
@@ -43,6 +62,7 @@ function Register() {
             id="InputEmail"
             placeholder="E-mail giriniz..."
             aria-describedby="emailHelp"
+            onChange={(e) => setUser({ ...user, mail: e.target.value })}
           />
         </div>
         <div className="mb-3">
@@ -54,17 +74,18 @@ function Register() {
             className="custom-input"
             id="InputPassword1"
             placeholder="Şifre giriniz..."
+            onChange={(e) => setUser({ ...user, password: e.target.value })}
           />
         </div>
 
-        <button type="submit" className="primary-button">
+        <button onClick={handleRegister} className="primary-button">
           Kayıt Ol
         </button>
         <div className="form-helper-text mt-4 w-100 d-flex justify-content-center gap-2">
           <span>Zaten bir hesabınız var mı?</span>
           <a href="/login"> Giriş yap</a>
         </div>
-      </form>
+      </div>
     </div>
   );
 }

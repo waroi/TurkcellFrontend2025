@@ -10,21 +10,21 @@ function ArrayInput({ field, values, errors, touched, label }) {
         <div className="w-75">
           <label
             htmlFor={field}
-            className="text-start d-block fs-5 text-white mb-2 fs-6"
+            className="text-start d-block fs-5 text-black mb-2 fs-6"
           >
             {`${label}:`}
           </label>
 
           <div className="d-flex gap-2 w-100">
             <input
-              className="form-control border-0 outline-0 flex-grow-1"
+              className="custom-input outline-0 flex-grow-1"
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
               placeholder={`${label} Giriniz...`}
             />
             <button
               type="button"
-              className="btn bg-red text-white"
+              className="btn bg-green text-white"
               onClick={() => {
                 if (inputValue.trim()) {
                   push(inputValue);
@@ -36,13 +36,11 @@ function ArrayInput({ field, values, errors, touched, label }) {
             </button>
           </div>
 
-
           {errors && errors[field] && touched && touched[field] && (
             <div className="error" style={{ color: "red", fontSize: "12px" }}>
               {errors[field]}
             </div>
           )}
-
 
           {values[field]?.length > 0 && (
             <div className="d-flex gap-2 mt-2">
@@ -70,4 +68,3 @@ function ArrayInput({ field, values, errors, touched, label }) {
 }
 
 export default ArrayInput;
-
