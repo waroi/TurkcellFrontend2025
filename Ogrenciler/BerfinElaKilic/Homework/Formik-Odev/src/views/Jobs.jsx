@@ -1,6 +1,7 @@
 import { Outlet } from "react-router";
 import DataRender from "../components/HOCS/DataRender";
 import { getAllJobs } from "../utils/services";
+import JobCard from "../components/atoms/cards/JobCard";
 
 const Jobs = () => {
   const renderJobsData = (data) => {
@@ -9,7 +10,12 @@ const Jobs = () => {
       return <p>Loading...</p>;
     }
 
-    return <div>"hello"</div>;
+    return (
+      <div>
+        <h2>İş İlanları</h2>
+        <JobCard />
+      </div>
+    );
   };
   return (
     <>

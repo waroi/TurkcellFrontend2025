@@ -42,18 +42,7 @@ const PortalFormu = () => {
             <Form>
               <ProfileForm />
               <EduForm/>
-              
-              <div>
-                {Array.from({ length: count }, (v, i) => (
-                  <LanguageForm key={i} index={i} />
-                ))}
-                <button
-                  onClick={() => setCount(count + 1)}
-                  className="btn btn-dark"
-                >
-                  Yeni Dil Ekle
-                </button>
-              </div>
+              <LanguageForm/>
               <Experiences/>
               <References/>
               <CoverLetter/>

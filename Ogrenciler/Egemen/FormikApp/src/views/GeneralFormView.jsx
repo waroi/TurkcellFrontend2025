@@ -2,8 +2,9 @@ import { useState } from "react";
 import { Form, Formik } from "formik";
 import { auth } from "../../firebase/firebase";
 import { stepSchemas } from "../schemas";
-import onSubmit from "../hooks/onSubmit";
+//import onSubmit from "../hooks/onSubmit";
 import CustomStepper from "../components/molecules/CustomStepper";
+import useSubmitApplication from "../hooks/onSubmit";
 
 const GeneralForm = () => {
   const [activeStep, setActiveStep] = useState(0);
@@ -14,7 +15,9 @@ const GeneralForm = () => {
       setActiveStep((prev) => prev + 1);
     }
   };
+
   const handleBack = () => setActiveStep((prev) => prev - 1);
+  const submitApplication = useSubmitApplication(setActiveStep);
 
   return (
     <div className="container py-5 d-flex justify-content-center">
@@ -52,7 +55,7 @@ const GeneralForm = () => {
             status: "Beklemede",
           }}
           validationSchema={stepSchemas[activeStep]}
-          onSubmit={onSubmit}
+          onSubmit={submitApplication}
         >
           {({ isSubmitting, validateForm }) => (
             <Form>
@@ -61,6 +64,7 @@ const GeneralForm = () => {
                 handleNext={() => handleNext(validateForm)}
                 activeStep={activeStep}
                 isSubmitting={isSubmitting}
+                setActiveStep={setActiveStep}
               />
             </Form>
           )}

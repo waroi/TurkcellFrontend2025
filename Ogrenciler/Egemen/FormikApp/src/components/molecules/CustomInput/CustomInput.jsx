@@ -9,6 +9,7 @@ const CustomInput = ({ label, ...props }) => {
         <label htmlFor="" className="me-3">
           {label}
         </label>
+
         <input
           {...field}
           {...props}
