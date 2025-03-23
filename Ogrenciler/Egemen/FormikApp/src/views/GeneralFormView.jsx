@@ -11,7 +11,7 @@ const GeneralForm = () => {
   const handleNext = async (validateForm) => {
     const errors = await validateForm();
     if (Object.keys(errors).length === 0) {
-      setStep((prev) => prev + 1);
+      setActiveStep((prev) => prev + 1);
     }
   };
   const handleBack = () => setActiveStep((prev) => prev - 1);
@@ -19,10 +19,10 @@ const GeneralForm = () => {
   return (
     <div className="container py-5 d-flex justify-content-center">
       <div className="card shadow-lg p-4 w-50">
-        <h2 className="text-center mb-4">Application Form</h2>
+        <h2 className="text-center mb-4">Başvuru Formu</h2>
         <Formik
           initialValues={{
-            userId: `${auth.currentUser?.uid || ""}`,
+            userId: `${auth.currentUser?.uid}`,
             fullname: "",
             email: "",
             phone: "",
@@ -54,11 +54,11 @@ const GeneralForm = () => {
           validationSchema={stepSchemas[activeStep]}
           onSubmit={onSubmit}
         >
-          {({ isSubmitting }) => (
+          {({ isSubmitting, validateForm }) => (
             <Form>
               <CustomStepper
                 handleBack={handleBack}
-                handleNext={handleNext}
+                handleNext={() => handleNext(validateForm)}
                 activeStep={activeStep}
                 isSubmitting={isSubmitting}
               />

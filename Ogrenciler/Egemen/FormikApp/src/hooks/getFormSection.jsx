@@ -8,37 +8,37 @@ function getStepContent(step) {
       return (
         <div className="row g-3">
           <CustomInput
-            label="Full Name"
+            label="Ad - Soyad"
             name="fullname"
             type="text"
-            placeholder="Enter your full name"
+            placeholder="Adınızı ve soyadınızı giriniz"
             className="col-md-6"
           />
           <CustomInput
             label="Email"
             name="email"
             type="email"
-            placeholder="Enter your email"
+            placeholder="Mail adresinizi giriniz"
             className="col-md-6"
           />
           <CustomInput
-            label="Phone"
+            label="Telefon"
             name="phone"
             type="tel"
-            placeholder="Enter your phone number"
+            placeholder="Telefon numaranızı giriniz"
             className="col-md-6"
           />
           <CustomInput
-            label="Birth Date"
+            label="Doğum Tarihi"
             name="birthDate"
             type="date"
             className="col-md-6"
           />
           <CustomInput
-            label="Address"
+            label="Adres"
             name="address"
             type="textarea"
-            placeholder="Enter your address"
+            placeholder="Adresinizi giriniz"
             className="col-12"
           />
         </div>
@@ -47,7 +47,7 @@ function getStepContent(step) {
       return (
         <div className="row g-3">
           <CustomSelect
-            label="University"
+            label="Universite"
             name="education.university"
             className="col-md-6"
           >
@@ -62,17 +62,17 @@ function getStepContent(step) {
             <option value="bilkent">Bilkent University</option>
           </CustomSelect>
           <CustomInput
-            label="Department"
+            label="Bölüm"
             name="education.department"
             type="text"
-            placeholder="Enter your department"
+            placeholder="Bölümünüzü giriniz"
             className="col-md-6"
           />
           <CustomInput
-            label="Graduation Year"
+            label="Mezuniyet Yılı"
             name="education.graduationYear"
             type="number"
-            placeholder="Enter graduation year"
+            placeholder="Mezuniyet yılınızı giriniz"
             className="col-md-6"
           />
           <CustomInput
@@ -80,7 +80,7 @@ function getStepContent(step) {
             name="education.gpa"
             type="number"
             step="0.01"
-            placeholder="Enter your GPA"
+            placeholder="GPA notunuzu giriniz"
             className="col-md-6"
           />
         </div>
@@ -89,24 +89,24 @@ function getStepContent(step) {
       return (
         <div className="row g-3">
           <CustomInput
-            label="Years of Experience"
+            label="Deneyim Yılı"
             name="experience.years"
             type="number"
-            placeholder="Enter years of experience"
+            placeholder="Deneyim sürenizi yazınız"
             className="col-md-6"
           />
           <CustomInput
-            label="Current Company"
+            label="Çalışılan Şirket"
             name="experience.currentCompany"
             type="text"
-            placeholder="Enter current company name"
+            placeholder="Şuan çalıştığınız şirketi yazınız"
             className="col-md-6"
           />
           <CustomInput
-            label="Position"
+            label="Ünvan"
             name="experience.position"
             type="text"
-            placeholder="Enter your position"
+            placeholder="Ünvanınızı yazınız"
             className="col-12"
           />
         </div>
@@ -115,15 +115,18 @@ function getStepContent(step) {
       return (
         <div className="row g-3">
           <div className="col-12">
-            <label className="form-label me-3">Languages</label>
+            <label className="form-label me-3">Diller</label>
             <div className="d-flex gap-3">
-              <CustomCheckbox label="Turkish" name="skills.languages.turkish" />
-              <CustomCheckbox label="English" name="skills.languages.english" />
-              <CustomCheckbox label="German" name="skills.languages.german" />
+              <CustomCheckbox label="Turkçe" name="skills.languages.turkish" />
+              <CustomCheckbox
+                label="İngilizce"
+                name="skills.languages.english"
+              />
+              <CustomCheckbox label="Almanca" name="skills.languages.german" />
             </div>
           </div>
           <div className="col-12">
-            <label className="form-label me-3">Programming Languages</label>
+            <label className="form-label me-3">Programlama Dilleri</label>
             <div className="d-flex gap-3">
               <CustomCheckbox
                 label="JavaScript"
@@ -145,15 +148,15 @@ function getStepContent(step) {
       return (
         <div className="row g-3">
           <CustomInput
-            label="Expected Salary"
+            label="Beklenen Maaş"
             name="expectedSalary"
             type="number"
-            placeholder="Enter your expected salary"
+            placeholder="Beklentiniz olan maaş ücretini giriniz"
             className="col-md-6"
           />
           <div className="col-12 mt-3">
             <CustomCheckbox
-              label="I accept the terms and conditions"
+              label="Kullanım koşullarını kabul ediyorum."
               name="isAccepted"
             />
           </div>

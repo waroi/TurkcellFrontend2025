@@ -11,11 +11,11 @@ const CustomStepper = ({
   return (
     <div>
       <Stepper activeStep={activeStep}>
-        <Step label="Personal Information" />
-        <Step label="Education" />
-        <Step label="Experience" />
-        <Step label="Skills" />
-        <Step label="Additional Information" />
+        <Step label="Kişisel Bilgiler" />
+        <Step label="Eğitim" />
+        <Step label="Deneyim" />
+        <Step label="Beceriler" />
+        <Step label="Ek Bilgiler" />
       </Stepper>
 
       <div className="mt-4">{getStepContent(activeStep)}</div>
@@ -27,7 +27,7 @@ const CustomStepper = ({
             type="button"
             onClick={handleBack}
           >
-            Back
+            Geri dön
           </Button>
         )}
 
@@ -37,7 +37,7 @@ const CustomStepper = ({
             type="button"
             onClick={handleNext}
           >
-            Next
+            Devam et
           </Button>
         ) : (
           <Button
