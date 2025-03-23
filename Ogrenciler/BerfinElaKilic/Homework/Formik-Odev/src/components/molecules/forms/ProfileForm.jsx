@@ -60,7 +60,7 @@ const ProfileForm = () => {
         placeholder="Doğum Tarihinizi Giriniz"
       />
 
-      <h4 class="mt-4">Cinsiyet</h4>
+      <p class="mt-4">Cinsiyet</p>
       <div class="form-check form-check-inline">
         <CustomComponent
           className="form-check-input"

@@ -120,8 +120,141 @@
           "approvedByAdmin": "adminId456"
         }
       ]
+    },
+    {
+      "id": "2",
+      "createdAt": "2024-03-22T09:00:00Z",
+      "createdByAdmin": "adminId123",
+      "position": "Backend Developer",
+      "company": "Innovatech",
+      "location": "Berlin, Germany",
+      "employmentType": "Full-time",
+      "term": "Permanent",
+      "salaryRange": "1300-1600 EUR",
+      "description": "Seeking a Backend Developer with Node.js and MongoDB experience.",
+      "requirements": [
+        "Strong knowledge of Node.js and MongoDB",
+        "Experience with RESTful APIs",
+        "Understanding of microservices architecture",
+        "Good communication skills"
+      ],
+      "responsibilities": [
+        "Develop scalable backend solutions",
+        "Collaborate with frontend team",
+        "Maintain and optimize databases",
+        "Ensure code quality and performance"
+      ],
+      "benefits": [
+        "Remote work flexibility",
+        "Health insurance",
+        "Training and development",
+        "Company retreats"
+      ],
+      "status": "open",
+      "deadline": "2024-05-15T23:59:59Z",
+      "applicants": []
+    },
+    {
+      "id": "3",
+      "createdAt": "2024-03-23T11:00:00Z",
+      "createdByAdmin": "adminId456",
+      "position": "UI/UX Designer",
+      "company": "DesignHub",
+      "location": "Istanbul, Turkey",
+      "employmentType": "Part-time",
+      "term": "Contract",
+      "salaryRange": "1000-1200 EUR",
+      "description": "Creative UI/UX Designer needed with a keen eye for aesthetics.",
+      "requirements": [
+        "Proficiency in Figma and Adobe XD",
+        "Experience with responsive design",
+        "Strong portfolio of design projects",
+        "Ability to work in agile teams"
+      ],
+      "responsibilities": [
+        "Design user-friendly interfaces",
+        "Collaborate with developers",
+        "Conduct user research and testing",
+        "Stay updated with design trends"
+      ],
+      "benefits": [
+        "Flexible working hours",
+        "Creative work environment",
+        "Opportunity to work on exciting projects",
+        "Professional growth opportunities"
+      ],
+      "status": "open",
+      "deadline": "2024-05-10T23:59:59Z",
+      "applicants": []
+    },
+    {
+      "id": "4",
+      "createdAt": "2024-03-24T08:30:00Z",
+      "createdByAdmin": "adminId789",
+      "position": "Full Stack Developer",
+      "company": "GlobalTech",
+      "location": "London, UK",
+      "employmentType": "Full-time",
+      "term": "Permanent",
+      "salaryRange": "1400-1700 EUR",
+      "description": "Full Stack Developer needed with expertise in React and Node.js.",
+      "requirements": [
+        "Proficiency in React and Node.js",
+        "Experience with SQL and NoSQL databases",
+        "Strong understanding of CI/CD pipelines",
+        "Team collaboration skills"
+      ],
+      "responsibilities": [
+        "Develop full stack web applications",
+        "Work with cross-functional teams",
+        "Maintain and optimize performance",
+        "Write clean and maintainable code"
+      ],
+      "benefits": [
+        "Remote work option",
+        "Health and dental insurance",
+        "Annual bonus",
+        "Learning and development budget"
+      ],
+      "status": "open",
+      "deadline": "2024-05-20T23:59:59Z",
+      "applicants": []
+    },
+    {
+      "id": "5",
+      "createdAt": "2024-03-25T12:15:00Z",
+      "createdByAdmin": "adminId123",
+      "position": "Product Manager",
+      "company": "Marketify",
+      "location": "Paris, France",
+      "employmentType": "Full-time",
+      "term": "Permanent",
+      "salaryRange": "1500-1800 EUR",
+      "description": "Experienced Product Manager required with strong leadership skills.",
+      "requirements": [
+        "Proven experience as a Product Manager",
+        "Strong understanding of agile methodologies",
+        "Excellent communication skills",
+        "Data-driven decision-making skills"
+      ],
+      "responsibilities": [
+        "Define product vision and strategy",
+        "Work with cross-functional teams",
+        "Gather and analyze feedback",
+        "Ensure product delivery timelines"
+      ],
+      "benefits": [
+        "Competitive salary",
+        "Work-life balance",
+        "Health insurance",
+        "Company stock options"
+      ],
+      "status": "open",
+      "deadline": "2024-06-01T23:59:59Z",
+      "applicants": []
     }
   ],
+
   "admins": [
     {
       "id": "adminId456",
@@ -160,6 +293,13 @@
       "lastName": "semercioğlu",
       "role": "admin",
       "email": "h@gmail.com"
+    },
+    {
+      "id": "VcRi0lxrw9WHb7VrHlGfyhdwFlD2",
+      "firstName": "ela",
+      "lastName": "kılıç",
+      "role": "admin",
+      "email": "berfinela877@gmail.com"
     }
   ]
 }
