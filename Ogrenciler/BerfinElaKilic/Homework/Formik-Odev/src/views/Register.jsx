@@ -1,7 +1,11 @@
-import React from "react";
+import RegisterForm from "../components/organisms/RegisterForm";
 
 const Register = () => {
-  return <div>Register</div>;
+  return (
+    <>
+      <RegisterForm />
+    </>
+  );
 };
 
 export default Register;

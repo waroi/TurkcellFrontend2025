@@ -1,33 +1,23 @@
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { useFormik } from "formik";
-import { basicSchema } from "../../schemas";
+import { registerSchema } from "../../schemas";
 import { useAuth } from "../../context/AuthContext";
 import { useNavigate } from "react-router";
 
-const AdayFormu = () => {
-  const { login, register } = useAuth();
+const RegisterForm = () => {
+  const { register } = useAuth();
   const navigate = useNavigate();
 
   const onSubmit = async (values, actions) => {
     console.log(values);
     console.log(actions);
-    // const user = await register(
-    //   values.email,
-    //   values.lastName,
-    //   values.firstName,
-    //   values.lastName,
-    //   "candidate"
-    // );
-    const user = await login(
-      "hh@gmail.com",
-      "gfhfghfgh",
-      "uCASWzKrJNZ39LhRBYX4D5QIbYA3",
-      false
-    );
+    const { email, password, firstName, lastName, role } = values;
+    const user = await register(email, password, firstName, lastName, role);
+
     if (user) {
-      console.log(user);
-      navigate("/register");
+      console.log("user from database", user);
+      navigate("/login");
     }
 
     await new Promise((resolve) => {
@@ -42,9 +32,11 @@ const AdayFormu = () => {
         firstName: "",
         lastName: "",
         email: "",
-        coverLetter: "",
+        password: "",
+        passwordConfirmation: "",
+        role: "",
       },
-      validationSchema: basicSchema,
+      validationSchema: authSchema,
       onSubmit,
     });
 
@@ -67,6 +59,7 @@ const AdayFormu = () => {
         />
         {errors.firstName && <p className="error">{errors.firstName}</p>}
       </Form.Group>
+
       <Form.Group className="mb-3" controlId="lastName">
         <Form.Label>Soyisim: </Form.Label>
         <Form.Control
@@ -81,6 +74,7 @@ const AdayFormu = () => {
         />
         {errors.lastName && <p className="error">{errors.lastName}</p>}
       </Form.Group>
+
       <Form.Group className="mb-3" controlId="email">
         <Form.Label>Mail Adresi: </Form.Label>
         <Form.Control
@@ -93,21 +87,57 @@ const AdayFormu = () => {
         />
         {errors.email && <p className="error">{errors.email}</p>}
       </Form.Group>
-      <Form.Group className="mb-3" controlId="coverLetter">
-        <Form.Label>Ön Yazı:</Form.Label>
+
+      <Form.Group className="mb-3" controlId="password">
+        <Form.Label>Şifre: </Form.Label>
         <Form.Control
-          as="textarea"
-          rows={3}
-          name="coverLetter"
-          value={values.coverLetter}
+          type="password"
+          placeholder="Şifrenizi Giriniz..."
+          value={values.password}
           onChange={handleChange}
+          name="password"
           className={
-            errors.coverLetter ? "border-2 border-danger shadow-none" : ""
+            errors.password ? "border-2 border-danger shadow-none" : ""
           }
-          placeholder="Ön yazınızı max 200 karakter girerek yazınız..."
         />
-        {errors.coverLetter && <p className="error">{errors.coverLetter}</p>}
+        {errors.password && <p className="error">{errors.password}</p>}
       </Form.Group>
+
+      <Form.Group className="mb-3" controlId="passwordConfirmation">
+        <Form.Label>Şifre Tekrar: </Form.Label>
+        <Form.Control
+          type="password"
+          placeholder="Şifrenizi Tekrar Giriniz..."
+          value={values.passwordConfirmation}
+          onChange={handleChange}
+          name="passwordConfirmation"
+          className={
+            errors.passwordConfirmation
+              ? "border-2 border-danger shadow-none"
+              : ""
+          }
+        />
+        {errors.passwordConfirmation && (
+          <p className="error">{errors.passwordConfirmation}</p>
+        )}
+      </Form.Group>
+
+      <Form.Group className="mb-3" controlId="role">
+        <Form.Label>Rol Seçin:</Form.Label>
+        <Form.Select
+          name="role"
+          value={values.role}
+          onChange={handleChange}
+          className={errors.role ? "border-2 border-danger shadow-none" : ""}
+        >
+          {" "}
+          <option value="">Sitemizi kullanım amacınızı seçiniz.</option>
+          <option value="user">İş Arıyorum.</option>
+          <option value="admin">İlan vereceğim.</option>
+        </Form.Select>
+        {errors.role && <p className="error">{errors.role}</p>}
+      </Form.Group>
+
       <Button variant="primary" type="submit" disabled={isSubmitting}>
         Kaydet
       </Button>
@@ -115,4 +145,4 @@ const AdayFormu = () => {
   );
 };
 
-export default AdayFormu;
+export default RegisterForm;

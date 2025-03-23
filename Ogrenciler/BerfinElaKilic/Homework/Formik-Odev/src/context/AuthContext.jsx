@@ -21,28 +21,31 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
+      console.log(currentUser);
       if (currentUser) {
-        // Firebase'den gelen kullanıcı bilgisiyle kendi API'nizden kullanıcı bilgilerini çek
         let userData;
         userData = await getCandidate(currentUser.uid); // Önce candidate olarak ara
         if (!userData) {
           userData = await getAdmin(currentUser.uid); // Candidate bulunamazsa admin olarak ara
         }
         if (userData) {
-          setUser(userData); // Kullanıcı bilgilerini ayarla
+          setUser(userData);
+          console.log("user from database:", userData);
         } else {
-          setUser(null); // Kullanıcı bulunamazsa user'ı null yap
+          setUser(null);
         }
       } else {
-        setUser(null); // Firebase'de oturum yoksa user'ı null yap
+        setUser(null);
       }
-      setLoading(false); // Yükleme durumunu false yap
+      setLoading(false);
     });
 
-    return unsubscribe; // Dinleyiciyi temizle
+    return unsubscribe;
   }, []);
 
-  const login = async (email, password, id, isAdmin) => {
+  const login = async (email, password, role) => {
+    console.log("logining");
+
     try {
       const userCredential = await signInWithEmailAndPassword(
         auth,
@@ -52,6 +55,8 @@ export const AuthProvider = ({ children }) => {
       if (!userCredential.user) {
         throw new error("user bulunamadı");
       }
+      const id = userCredential.user.uid;
+      const isAdmin = role === "admin";
       const user = isAdmin ? await getAdmin(id) : await getCandidate(id);
       setUser(user);
       return user;
