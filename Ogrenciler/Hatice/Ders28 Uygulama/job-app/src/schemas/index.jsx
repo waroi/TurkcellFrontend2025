@@ -8,10 +8,10 @@ export const basicSchema = yup.object().shape({
     .string()
     .email("Geçerli bir email giriniz")
     .required("Email girmek zorunludur"),
-  password: yup
-    .string()
-    .min(6, "Şifre en az 6 karakter olmalı")
-    .required("Şifre zorunludur"),
+  // password: yup
+  //   .string()
+  //   .min(6, "Şifre en az 6 karakter olmalı")
+  //   .required("Şifre zorunludur"),
   phone: yup
     .number()
     .positive("Lütfen pozitif değer giriniz")
