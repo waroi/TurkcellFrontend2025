@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { getCandidatesByJobId } from "../../utils/services"; 
+import { getJobById} from "../../utils/services"; 
 import CandidateCard from "../atoms/cards/CandidateCard";
 
 const Applicants = () => {
   const { jobId } = useParams(); 
-  const [candidates, setCandidates] = useState([]);
+  const [applicants, setApplicants] = useState([]);
 
   useEffect(() => {
     const fetchCandidates = async () => {
       try {
-        const data = await getCandidatesByJobId(jobId);
-        setCandidates(data);
+        const data = await getJobById(jobId);
+        setApplicants(data.applicants);
       } catch (error) {
         console.error("Error fetching candidates:", error);
       }
@@ -23,9 +23,9 @@ const Applicants = () => {
   return (
     <div>
       <h2>Adaylar Listesi</h2>
-      {candidates ? (
-        candidates.map(candidate => (
-          <CandidateCard key={candidate.id} candidate={candidate} />
+      {applicants ? (
+        applicants.map(applicant => (
+          <CandidateCard key={applicant.id} applicant={applicant} />
         ))
       ) : (
         <p>Hiç başvuran yok.</p>

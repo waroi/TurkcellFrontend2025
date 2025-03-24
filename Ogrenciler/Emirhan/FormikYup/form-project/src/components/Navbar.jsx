@@ -2,10 +2,13 @@ import { useEffect, useState } from "react";
 
 function Navbar() {
   const [status, setStatus] = useState(null);
+  const [name, setName] = useState(null);
 
   useEffect(() => {
     const userStatus = localStorage.getItem("status");
+    const userName = localStorage.getItem("name");
     setStatus(userStatus);
+    setName(userName);
   }, []);
 
   return (
@@ -41,12 +44,12 @@ function Navbar() {
           {status ? (
             <div className="dropdown">
               <button
-                className="btn btn-secondary dropdown-toggle"
+                className="dropdown-toggle profile-badge"
                 type="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                {status === "admin" ? "Sen bir adminsin!!! Kendine gel!!!" : "Profilim"}
+                {name}
               </button>
               <ul className="dropdown-menu">
                 <li>
@@ -62,7 +65,7 @@ function Navbar() {
                       </a>
                     </li>
                     <li>
-                      <a className="dropdown-item" href="#">
+                      <a className="dropdown-item" href="/applications">
                         Başvuruları Yönet
                       </a>
                     </li>

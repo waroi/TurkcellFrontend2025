@@ -21,97 +21,48 @@ const UploadJobForm = () => {
     };
 
     return (
-        <div>
+        <div class="container mt-5 py-5">
             <Navbar />
-            <h2>İş İlanı Yükle</h2>
-            <form onSubmit={handleSubmit}>
-                <label>
-                    İş Başlığı:
-                    <input
-                        type="text"
-                        name="title"
-                        value={job.title}
-                        onChange={handleChange}
-                        required
-                    />
-                </label>
-                <br />
-                <label>
-                    Konum
-                    <input
-                        type="text"
-                        name="location"
-                        value={job.location}
-                        onChange={handleChange}
-                        required
-                    />
-                </label>
-                <br />
-                <label>
-                    Başvuru Türü:
-                    <input
-                        type="text"
-                        name="type"
-                        value={job.type}
-                        onChange={handleChange}
-                        required
-                    />
-                </label>
-                <br />
-                <label>
-                    İlan Açılış Tarihi:
-                    <input
-                        type="date"
-                        name="startDate"
-                        value={job.startDate}
-                        onChange={handleChange}
-                        required
-                    />
-                </label>
-                <br />
-                <label>
-                    Son Başvuru Tarihi:
-                    <input
-                        type="date"
-                        name="endDate"
-                        value={job.endDate}
-                        onChange={handleChange}
-                        required
-                    />
-                </label>
-                <br />
-                <label>
-                    Açıklama:
-                    <textarea
-                        name="description"
-                        value={job.description}
-                        onChange={handleChange}
-                        required
-                    ></textarea>
-                </label>
-                <br />
-                <label>
-                    Sorumluluklar:
-                    <textarea
-                        name="responsivities"
-                        value={job.responsivities}
-                        onChange={handleChange}
-                        required
-                    ></textarea>
-                </label>
-                <br />
-                <label>
-                    Gereksinimler:
-                    <textarea
-                        name="requirements"
-                        value={job.requirements}
-                        onChange={handleChange}
-                        required
-                    ></textarea>
-                </label>
-                <br />
-                <button type="submit">Gönder</button>
-            </form>
+            <div class="card shadow p-4">
+                <h2 class="mb-4 text-center">İş İlanı Yükle</h2>
+                <form onSubmit={handleSubmit} class="row g-3">
+                    <div class="col-12">
+                        <label class="form-label">İş Başlığı</label>
+                        <input type="text" class="form-control" name="title" value={job.title} onChange={handleChange} required />
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Konum</label>
+                        <input type="text" class="form-control" name="location" value={job.location} onChange={handleChange} required />
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Başvuru Türü</label>
+                        <input type="text" class="form-control" name="type" value={job.type} onChange={handleChange} required />
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">İlan Açılış Tarihi</label>
+                        <input type="date" class="form-control" name="startDate" value={job.startDate} onChange={handleChange} required />
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Son Başvuru Tarihi</label>
+                        <input type="date" class="form-control" name="endDate" value={job.endDate} onChange={handleChange} required />
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label">Açıklama</label>
+                        <textarea class="form-control" name="description" rows="4" value={job.description} onChange={handleChange} required></textarea>
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label">Sorumluluklar</label>
+                        <textarea class="form-control" name="responsivities" rows="4" value={job.responsivities} onChange={handleChange} required></textarea>
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label">Gereksinimler</label>
+                        <textarea class="form-control" name="requirements" rows="4" value={job.requirements} onChange={handleChange} required></textarea>
+                    </div>
+                    <div class="col-12 text-center">
+                        <button type="submit" class="btn btn-primary px-4 py-2">Gönder</button>
+                    </div>
+                </form>
+            </div>
         </div>
     );
 };

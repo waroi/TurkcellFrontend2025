@@ -24,7 +24,7 @@ function ArrayInput({ field, values, errors, touched, label }) {
             />
             <button
               type="button"
-              className="btn bg-green text-white"
+              className="primary-button inline-button"
               onClick={() => {
                 if (inputValue.trim()) {
                   push(inputValue);
@@ -51,7 +51,7 @@ function ArrayInput({ field, values, errors, touched, label }) {
                 >
                   <span>{item}</span>
                   <button
-                    className="array-button color-red"
+                    className="array-button"
                     type="button"
                     onClick={() => remove(index)}
                   >
