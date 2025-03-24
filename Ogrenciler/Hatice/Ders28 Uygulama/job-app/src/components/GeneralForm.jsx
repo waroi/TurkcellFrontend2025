@@ -13,6 +13,7 @@ const onSubmit = async (values, actions) => {
       phone: values.phone,
       linkedin: values.linkedin,
       coverLetter: values.coverLetter,
+      position: values.position,
       createdAt: new Date(),
     });
 
@@ -40,6 +41,7 @@ function GeneralForm() {
         phone: "",
         linkedin: "",
         coverLetter: "",
+        position: "",
       },
       validationSchema: basicSchema,
       onSubmit,
@@ -76,7 +78,7 @@ function GeneralForm() {
         <div className="inputDiv m-2 d-flex justify-content-between">
           <label>Phone : </label>
           <input
-            type="number"
+            type="text"
             value={values.phone}
             onChange={handleChange}
             name="phone"
@@ -97,11 +99,14 @@ function GeneralForm() {
         </div>
         <div className="m-2 d-flex justify-content-between">
           <label>Pozisyon : </label>
-          <select name="position" id="position" className="form-select w-50"
-            style={{ border: "1px solid var(--primary)", borderRadius: "5px" }}>
-            <option value="" disabled>
-              Lütfen Bir Pozisyon Seçiniz
-            </option>
+          <select
+            name="position"
+            value={values.position}
+            onChange={handleChange}
+            className={`form-select w-50 ${errors.position ? "input-error" : ""}`}
+            style={{ border: "1px solid var(--primary)", borderRadius: "5px" }}
+          >
+            <option value="" disabled>Lütfen Bir Pozisyon Seçiniz</option>
             <option value="Frontend">Frontend Developer</option>
             <option value="Backend">Backend Developer</option>
             <option value="Full Stack">Full Stack Developer</option>

@@ -1,17 +1,16 @@
 import React from "react";
-import getStepContent from "../../hooks/getFormSection";
+import getStepContent from "../../../hooks/getFormSection";
 import { Step, Stepper } from "react-form-stepper";
-import Button from "../atoms/buttons/Button";
+import Button from "../../atoms/buttons/Button";
 const CustomStepper = ({
   handleBack,
   handleNext,
   activeStep,
   isSubmitting,
-  setActiveStep,
 }) => {
   return (
     <div>
-      <Stepper activeStep={activeStep}>
+      <Stepper className="flex-wrap" activeStep={activeStep}>
         <Step label="Kişisel Bilgiler" />
         <Step label="Eğitim" />
         <Step label="Deneyim" />

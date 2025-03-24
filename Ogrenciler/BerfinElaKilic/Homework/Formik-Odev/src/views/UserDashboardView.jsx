@@ -4,10 +4,12 @@ import { getCandidate } from "../utils/services";
 import withAuth from "../components/HOCS/withAuth";
 import { useParams, useLocation } from "react-router";
 import UserDashboard from "../components/templates/UserDashboard";
+import {useAuth} from '../context/AuthContext'
 
 const User = () => {
   const params = useParams();
   const id = params.userId;
+  const {setUser} = useAuth();
   const location = useLocation();
 
   const renderUserData = (data) => {
@@ -15,7 +17,10 @@ const User = () => {
     if (!data) {
       return <p>Kullanıcı bilgileri yükleniyor...</p>;
     }
-    return <UserDashboard data={data} location={location} />;
+    else {
+      setUser(data);
+      return <UserDashboard data={data} location={location} />;
+    };
   };
   return (
     <>

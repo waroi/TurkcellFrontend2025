@@ -16,7 +16,7 @@ function Applications() {
   return (
     <div className="container form-container">
       <Navbar />
-      <table class="table table-striped">
+      <table class="table table-striped mt-5">
         <thead>
           <tr>
             <th scope="col">No</th>

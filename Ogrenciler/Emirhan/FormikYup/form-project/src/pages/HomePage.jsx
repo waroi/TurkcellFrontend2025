@@ -4,9 +4,9 @@ import Navbar from '../components/Navbar';
 
 function HomePage() {
   return (
-    <div>
+    <div >
       <Navbar />
-      <header className="bg-dark text-white text-center py-5">
+      <header className="bg-dark text-white text-center py-10">
         <div className="container">
           <h1 className="display-4">ZenCode - Modern Yazılım Çözümleri</h1>
           <p className="lead">Yenilikçi, güvenilir ve sürdürülebilir yazılım hizmetleri sunuyoruz.</p>
@@ -22,7 +22,7 @@ function HomePage() {
 
           <div className="col-md-4 mb-4">
             <div className="card shadow-lg border-0 rounded-3">
-              <img src="path_to_web_image.jpg" alt="Web Geliştirme" className="card-img-top rounded-3" />
+              <img src="https://bairesdev.mo.cloudinary.net/blog/2023/09/How-Many-Web-Developers-in-the-World-1.jpg?tx=w_1920,q_auto" alt="Web Geliştirme" className="card-img-top rounded-3" />
               <div className="card-body text-center">
                 <h4 className="card-title text-dark">Web Geliştirme</h4>
                 <p className="card-text text-muted">Özel tasarlanmış, mobil uyumlu ve hızlı web siteleri geliştiriyoruz. Kullanıcı odaklı, SEO uyumlu çözümler sunarak, çevrimiçi varlığınızı güçlendiriyoruz.</p>
@@ -34,7 +34,7 @@ function HomePage() {
 
           <div className="col-md-4 mb-4">
             <div className="card shadow-lg border-0 rounded-3">
-              <img src="path_to_mobile_image.jpg" alt="Mobil Uygulamalar" className="card-img-top rounded-3" />
+              <img src="https://www.simplilearn.com/ice9/free_resources_article_thumb/Building-a-career-in-Mobile-App-Development.jpg" alt="Mobil Uygulamalar" className="card-img-top rounded-3" />
               <div className="card-body text-center">
                 <h4 className="card-title text-dark">Mobil Uygulamalar</h4>
                 <p className="card-text text-muted">iOS ve Android platformlarında kullanıcı dostu uygulamalar oluşturuyoruz. Hem işlevsel hem de şık tasarımlar ile mobil deneyimi mükemmelleştiriyoruz.</p>
@@ -46,10 +46,10 @@ function HomePage() {
 
           <div className="col-md-4 mb-4">
             <div className="card shadow-lg border-0 rounded-3">
-              <img src="path_to_cloud_image.jpg" alt="Bulut Çözümleri" className="card-img-top rounded-3" />
+              <img src="https://www.devopsinstitute.com/wp-content/uploads/2021/05/iStock-1277731016-scaled.jpg" alt="Bulut Çözümleri" className="card-img-top rounded-3" />
               <div className="card-body text-center">
                 <h4 className="card-title text-dark">Bulut Çözümleri</h4>
-                <p className="card-text text-muted">Güvenli ve ölçeklenebilir bulut altyapıları sağlıyoruz. İş süreçlerinizi hızlandıracak ve verilerinizi güvenli bir şekilde yönetebileceksiniz.</p>
+                <p className="card-text text-muted">Güvenli ve ölçeklenebilir bulut altyapıları sağlıyoruz. İş süreçlerinizi hızlandıracak ve verilerinizi güvenli bir şekilde yönetebileceksiniz. Hizmetimize göz atın!</p>
                 <a href="#cloud" className="btn btn-primary">Detayları Gör</a>
               </div>
             </div>
@@ -119,11 +119,11 @@ function HomePage() {
 
           </div>
           <a class="carousel-control-prev" href="#customerReviewsCarousel" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon bg-dark" aria-hidden="true"></span>
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Önceki</span>
           </a>
           <a class="carousel-control-next" href="#customerReviewsCarousel" role="button" data-slide="next">
-            <span class="carousel-control-next-icon bg-dark" aria-hidden="true"></span>
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Sonraki</span>
           </a>
         </div>

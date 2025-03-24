@@ -26,7 +26,7 @@ const Position = () => {
     return (
         <div className='container'>
             <Navbar />
-            <div className="mb-5">
+            <div className="mb-5 py-5">
                 <h2 className="text-center my-5">Açık Pozisyonlar – Kariyerine Yeni Bir Adım At!</h2>
                 <div className="fs-5">
 
@@ -36,7 +36,7 @@ const Position = () => {
                     Sana uygun bir pozisyon bulduğunda hemen başvur ve kariyer yolculuğuna bizimle devam et! Yenilikçi projelerde yer alarak profesyonel dünyada iz bırakma şansını kaçırmayın.
                 </div>
             </div>
-            <div className="row">
+            <div className="row pb-5">
                 {positions.map((position) => (
                     <div className="col-sm-6" key={position.id}>
                         <div className="card p-2 mb-4">
@@ -62,7 +62,7 @@ const Position = () => {
                                             <span>{position.type}</span>
                                         </div>
                                     </div>
-                                    <a href={`/position/${position.id}`} className="btn btn-primary">İncele</a>
+                                    <a href={`/position/${position.id}`} className="primary-button inline-button text-decoration-none">İncele</a>
                                 </div>
                             </div>
 

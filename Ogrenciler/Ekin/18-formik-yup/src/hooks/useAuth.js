@@ -20,8 +20,13 @@ export default function () {
     if (user) setUser(user);
   }, []);
 
-  function register({ email, password, name, surname }) {
-    registerFirebase(email, password, name, surname)
+  function register(values) {
+    let email = values["sign-up-email"],
+      password = values["sign-up-password"],
+      name = values["sign-up-name"],
+      surname = values["sign-up-surname"];
+
+    return registerFirebase(email, password, name, surname)
       .then((id, data) => {
         data = {
           id,
@@ -47,8 +52,11 @@ export default function () {
       });
   }
 
-  function login({ email, password }) {
-    loginFirebase(email, password)
+  function login(values) {
+    let email = values["sign-in-email"],
+      password = values["sign-in-password"];
+
+    return loginFirebase(email, password)
       .then((user) => {
         getUser(user).then((user) => {
           localStorage.setItem("user", JSON.stringify(user));

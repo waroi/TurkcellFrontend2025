@@ -32,7 +32,7 @@ export function Tab({ children }) {
 
 export function Pane({ id, children }) {
   return (
-    <div className="tab-pane" id={id} role="tabpanel">
+    <div className="tab-pane fade" id={id} role="tabpanel">
       {children}
     </div>
   );

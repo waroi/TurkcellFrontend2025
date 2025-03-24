@@ -71,10 +71,10 @@ const JobDetailPage = ({ job, user }) => {
             </small>
           </Card.Text>
           {user?.role === "admin" ? (
-            ""
-          ) : (
-            <SuccessButton className="mt-3">Başvur</SuccessButton>
-          )}
+              <SuccessButton>Düzenle</SuccessButton>
+            ) : (
+              <SuccessButton>Başvur</SuccessButton>
+            )}
         </Card.Body>
       </Card>
     </WrapperCard>

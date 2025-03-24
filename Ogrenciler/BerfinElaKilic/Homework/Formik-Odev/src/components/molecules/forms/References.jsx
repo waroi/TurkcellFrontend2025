@@ -11,6 +11,7 @@ const References = () => {
         className="form-control mb-3"
         label="İsim Soyisim"
         name="referenceName"
+        id="referenceName"
         type="text"
         placeholder="Referans Kişinin İsmi"
       />
@@ -20,6 +21,7 @@ const References = () => {
         className="form-control mb-3"
         label="Telefon"
         name="referencePhone"
+        id="referencePhone"
         type="tel"
         placeholder="Telefon Numarası"
       />
@@ -29,6 +31,7 @@ const References = () => {
         className="form-control mb-3"
         label="Email"
         name="referenceEmail"
+        id="referenceEmail"
         type="email"
         placeholder="Email Adresi"
       />

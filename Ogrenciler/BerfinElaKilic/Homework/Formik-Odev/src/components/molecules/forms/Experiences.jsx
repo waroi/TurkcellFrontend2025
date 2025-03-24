@@ -11,6 +11,7 @@ const Experiences = () => {
         className="form-control mb-3"
         label="Çalıştığı Yer"
         name="workPlace"
+        id="workPlace"
         type="text"
         placeholder="Çalıştığınız Yer"
       />
@@ -20,6 +21,7 @@ const Experiences = () => {
         className="form-control mb-3"
         label="Başlama Tarihi"
         name="startDate"
+        id="startDate"
         type="date"
       />
 
@@ -28,6 +30,7 @@ const Experiences = () => {
         className="form-control mb-3"
         label="Bitiş Tarihi"
         name="endDate"
+        id="endDate"
         type="date"
       />
 
@@ -36,6 +39,7 @@ const Experiences = () => {
         className="form-control mb-3"
         label="Pozisyon"
         name="position"
+        id="position"
         type="text"
         placeholder="Pozisyonunuz"
       />

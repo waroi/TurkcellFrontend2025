@@ -6,8 +6,13 @@ import EducationSection from "./atoms/EducationSection";
 import InternshipSection from "./atoms/InternshipSection";
 import Checkbox from "../inputs/Checkbox";
 import Button from "../inputs/Button";
+import { useNavigate } from "react-router";
+import useStore from "../../store/useStore";
 
 export default function ApplicationForm({ user }) {
+  const { addToast } = useStore();
+  const navigation = useNavigate();
+
   const formInitial = user
     ? {
         ...initialValues,
@@ -20,6 +25,9 @@ export default function ApplicationForm({ user }) {
 
   async function onSubmit(values, actions) {
     await submitForm(values);
+    addToast("Başvurunuz başarıyla gönderildi!", "success");
+    navigation("/thank-you");
+
     actions.resetForm();
   }
 
