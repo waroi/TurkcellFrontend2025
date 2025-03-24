@@ -1,24 +1,23 @@
-import React, { useState } from "react";
-import { FieldArray, useFormikContext } from "formik";
+import React from "react";
+import { useFormikContext } from "formik";
 import { LANGUAGES, levels } from "../../../constants/constants";
 import CustomComponent from "../../atoms/CustomComponent";
 
 const LanguageForm = () => {
-  const { values, setFieldValue } = useFormikContext(); 
-  const [selectedLanguage, setSelectedLanguage] = useState("");
-  const [selectedLevel, setSelectedLevel] = useState("");
+  const { values, setFieldValue } = useFormikContext();
 
   const handleAddLanguage = () => {
-    if (selectedLanguage && selectedLevel) {
+    if (values.selectedLanguage && values.selectedLevel) {
       const newLanguage = {
-        language: selectedLanguage,
-        level: selectedLevel,
+        language: values.selectedLanguage,
+        level: values.selectedLevel,
       };
       setFieldValue("languages", [...values.languages, newLanguage]);
-      setSelectedLanguage("");
-      setSelectedLevel("");
+      setFieldValue("selectedLanguage", ""); // Formik state'ini sıfırla
+      setFieldValue("selectedLevel", "");
     }
   };
+
   const handleRemoveLanguage = (index) => {
     const updatedLanguages = values.languages.filter((_, i) => i !== index);
     setFieldValue("languages", updatedLanguages);
@@ -32,9 +31,10 @@ const LanguageForm = () => {
         <CustomComponent
           as="select"
           className="form-select mb-2"
-          value={selectedLanguage}
+          id="selectedLanguage"
+          value={values.selectedLanguage || ""}
           name="selectedLanguage"
-          onChange={(e) => setSelectedLanguage(e.target.value)}
+          onChange={(e) => setFieldValue("selectedLanguage", e.target.value)}
         >
           <option value="">Yabancı Dil Seçiniz</option>
           {LANGUAGES.map((lang) => (
@@ -47,9 +47,10 @@ const LanguageForm = () => {
         <CustomComponent
           as="select"
           className="form-select mb-2"
-          value={selectedLevel}
+          value={values.selectedLevel || ""}
           name="selectedLevel"
-          onChange={(e) => setSelectedLevel(e.target.value)}
+          id="selectedLevel"
+          onChange={(e) => setFieldValue("selectedLevel", e.target.value)}
         >
           <option value="">Seviyenizi Seçiniz</option>
           {levels.map((level) => (

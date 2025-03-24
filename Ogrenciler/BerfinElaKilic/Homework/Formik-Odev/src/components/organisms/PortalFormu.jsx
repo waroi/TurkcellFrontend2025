@@ -58,6 +58,8 @@ const PortalFormu = () => {
             position: "",
             coverLetter: "",
             languages: [],
+            selectedLanguage: "",
+            selectedLevel: "",
           }}
           onSubmit={onSubmit}
           validationSchema={advancedSchema}
@@ -73,18 +75,12 @@ const PortalFormu = () => {
                 <CoverLetter />
 
                 <div className="d-flex gap-2">
-                  <PrimaryButton
-                    disabled={isSubmitting}
-                    type="submit"
-                  >
+                  <PrimaryButton disabled={isSubmitting} type="submit">
                     Kaydet
                   </PrimaryButton>
 
                   {submittedData && (
-                    <button
-                      type="button"
-                      onClick={handleCancel}
-                    >
+                    <button type="button" onClick={handleCancel}>
                       Vazgeç
                     </button>
                   )}

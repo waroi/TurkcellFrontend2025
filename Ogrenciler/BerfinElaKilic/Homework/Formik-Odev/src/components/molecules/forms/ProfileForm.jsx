@@ -8,6 +8,7 @@ const ProfileForm = () => {
 
       <CustomComponent
         as="input"
+        id="firstName"
         className="form-control mb-3"
         label="İsim"
         name="firstName"
@@ -20,6 +21,7 @@ const ProfileForm = () => {
         className="form-control mb-3"
         label="Soyisim"
         name="lastName"
+        id="lastName"
         type="text"
         placeholder="Soyadınızı Giriniz"
       />
@@ -29,6 +31,7 @@ const ProfileForm = () => {
         className="form-control mb-3"
         label="Adres"
         name="address"
+        id="address"
         type="text"
         placeholder="Adresinizi Giriniz"
       />
@@ -38,6 +41,7 @@ const ProfileForm = () => {
         className="form-control mb-3"
         label="Telefon"
         name="phone"
+        id="phone"
         type="tel"
         placeholder="Telefon Numaranızı Giriniz"
       />
@@ -47,6 +51,7 @@ const ProfileForm = () => {
         className="form-control mb-3"
         label="Şehir"
         name="city"
+        id="city"
         type="text"
         placeholder="Şehrinizi Giriniz"
       />
@@ -56,8 +61,8 @@ const ProfileForm = () => {
         className="form-control mb-3"
         label="Doğum Tarihi"
         name="dateOfBirth"
+        id="dateOfBirth"
         type="date"
-        placeholder="Doğum Tarihinizi Giriniz"
       />
 
       <p className="mt-4">Cinsiyet</p>

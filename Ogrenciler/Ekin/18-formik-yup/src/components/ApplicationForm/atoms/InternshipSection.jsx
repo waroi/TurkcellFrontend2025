@@ -1,7 +1,7 @@
 import React from "react";
 import Select from "../../inputs/Select";
-import selectMap from "../../util/selectMap";
-import { preferences } from "../../schemas/application";
+import selectMap from "../../../util/selectMap";
+import { preferences } from "../../../schemas/application";
 
 export default function InternshipSection() {
   return (

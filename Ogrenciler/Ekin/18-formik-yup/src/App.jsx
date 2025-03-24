@@ -10,6 +10,7 @@ import Footer from "./components/Footer";
 import Toast from "./components/Toast";
 
 import "./App.scss";
+import ThankYouView from "./views/ThankYouView";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           { path: "/application", element: <ApplicationView /> },
           { path: "/user", element: <UserView /> },
           { path: "/admin", element: <AdminView /> },
+          { path: "/thank-you", element: <ThankYouView /> },
         ])}
       </main>
       <Footer />

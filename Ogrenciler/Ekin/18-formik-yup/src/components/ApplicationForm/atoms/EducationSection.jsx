@@ -1,7 +1,7 @@
 import React from "react";
-import Select from "../inputs/Select";
-import selectMap from "../../util/selectMap";
-import { universities, majors, grades } from "../../schemas/application";
+import Select from "../../inputs/Select";
+import selectMap from "../../../util/selectMap";
+import { universities, majors, grades } from "../../../schemas/application";
 
 export default function EducationSection() {
   return (

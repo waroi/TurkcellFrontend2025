@@ -1,6 +1,6 @@
-import useUserStore from "../store/useStore";
-import useAuth from "../hooks/useAuth";
-import NavigationLinks from "./NavigationLinks";
+import useUserStore from "../../store/useStore";
+import useAuth from "../../hooks/useAuth";
+import NavigationLinks from "./atoms/NavLinks";
 
 export default function Navigation() {
   const { user } = useUserStore();
