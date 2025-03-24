@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import { getFirestore, collection, getDocs } from "firebase/firestore";
 
 export default create((set) => ({
   jobs: [],
@@ -6,6 +7,20 @@ export default create((set) => ({
 
   setUser: (user) => {
     set({ user });
+  },
+
+  fetchJobs: async () => {
+    const db = getFirestore(); 
+    const jobCollection = collection(db, "jobApplications");
+  
+    try {
+      const jobSnapshot = await getDocs(jobCollection);
+      const jobList = jobSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+  
+      set({ jobs: jobList }); 
+    } catch (error) {
+      console.error("Error fetching jobs: ", error);
+    }
   },
 
 
