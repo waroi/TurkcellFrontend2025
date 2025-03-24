@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { getAllJobs, deleteJob } from '../../utils/services'
 import JobList from '../molecules/Jobs/JobsList';
-import DangerButton from '../atoms/Buttons/DangerButton';
 
 const Admin = () => {
     const [listing, setListing] = useState([])

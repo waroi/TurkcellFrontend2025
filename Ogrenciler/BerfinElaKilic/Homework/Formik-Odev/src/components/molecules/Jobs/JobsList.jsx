@@ -6,7 +6,9 @@ const JobList = ({ jobs, onDelete }) => {
     <div>
       <h2>İş İlanları</h2>
       {jobs.length > 0 ? (
-        <JobCard jobs={jobs} onDelete={onDelete} />
+        jobs.map((job) => (
+        <JobCard key={job.id} job={job}  onDelete={onDelete} />
+        ))
       ) : (
         <p>Henüz iş ilanı yok.</p>
       )}
