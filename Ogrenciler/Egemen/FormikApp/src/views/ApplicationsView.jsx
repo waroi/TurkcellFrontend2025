@@ -1,30 +1,22 @@
 import { useEffect, useState } from "react";
-import {
-  getAllApplications,
-  getUser,
-  getUserApplications,
-  updateAppStatus,
-} from "../../firebase/dbController";
-import { auth } from "../../firebase/firebase";
+import { updateAppStatus } from "../../firebase/dbController";
 import Button from "../components/atoms/buttons/Button";
 import getApplications from "../hooks/getAplications";
+import { unsubscribe } from "../../services/authServices";
 
 const Applications = () => {
   const [apps, setApps] = useState([]);
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-
+  const [userAuth, setUserAuth] = useState(null);
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((currentUser) => {
-      if (currentUser) {
-        getApplications(currentUser.uid, setApps, setUser, setLoading);
-      } else {
-        setLoading(false);
-      }
-    });
-
-    return () => unsubscribe();
-  }, []);
+    unsubscribe(setUserAuth);
+    if (userAuth) {
+      getApplications(userAuth.uid, setApps, setUser, setLoading);
+    } else {
+      setLoading(false);
+    }
+  }, [userAuth, apps]);
 
   return loading ? (
     <div>Loading...</div>

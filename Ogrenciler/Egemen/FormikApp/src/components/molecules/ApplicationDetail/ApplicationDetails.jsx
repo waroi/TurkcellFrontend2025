@@ -1,4 +1,4 @@
-import Button from "../atoms/buttons/Button";
+import Button from "../../atoms/buttons/Button";
 
 const ApplicationDetails = ({ application, user, onUpdateStatus }) => {
   return (

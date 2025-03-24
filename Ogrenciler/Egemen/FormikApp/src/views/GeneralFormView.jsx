@@ -1,14 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Form, Formik } from "formik";
-import { auth } from "../../firebase/firebase";
 import { stepSchemas } from "../schemas";
-//import onSubmit from "../hooks/onSubmit";
-import CustomStepper from "../components/molecules/CustomStepper";
+import CustomStepper from "../components/molecules/CustomStepper/CustomStepper";
 import useSubmitApplication from "../hooks/onSubmit";
+import { unsubscribe } from "../../services/authServices";
 
 const GeneralForm = () => {
   const [activeStep, setActiveStep] = useState(0);
-
+  const [userAuth, setUserAuth] = useState(null);
+  useEffect(() => {
+    unsubscribe(setUserAuth);
+  }, [userAuth]);
   const handleNext = async (validateForm) => {
     const errors = await validateForm();
     if (Object.keys(errors).length === 0) {
@@ -20,57 +22,58 @@ const GeneralForm = () => {
   const submitApplication = useSubmitApplication(setActiveStep);
 
   return (
-    <div className="container py-5 d-flex justify-content-center">
-      <div className="card shadow-lg p-4 w-50">
-        <h2 className="text-center mb-4">Başvuru Formu</h2>
-        <Formik
-          initialValues={{
-            userId: `${auth.currentUser?.uid}`,
-            fullname: "",
-            email: "",
-            phone: "",
-            birthDate: "",
-            address: "",
-            education: {
-              university: "",
-              department: "",
-              graduationYear: "",
-              gpa: "",
-            },
-            experience: { years: "", currentCompany: "", position: "" },
-            skills: {
-              languages: {
-                turkish: false,
-                english: false,
-                german: false,
+    userAuth && (
+      <div className="container py-5 d-flex justify-content-center">
+        <div className="card shadow-lg p-4 w-50">
+          <h2 className="text-center mb-4">Başvuru Formu</h2>
+          <Formik
+            initialValues={{
+              userId: `${userAuth.uid}`,
+              fullname: "",
+              email: "",
+              phone: "",
+              birthDate: "",
+              address: "",
+              education: {
+                university: "",
+                department: "",
+                graduationYear: "",
+                gpa: "",
               },
-              programmingLanguages: {
-                javascript: false,
-                python: false,
-                java: false,
+              experience: { years: "", currentCompany: "", position: "" },
+              skills: {
+                languages: {
+                  turkish: false,
+                  english: false,
+                  german: false,
+                },
+                programmingLanguages: {
+                  javascript: false,
+                  python: false,
+                  java: false,
+                },
               },
-            },
-            expectedSalary: "",
-            isAccepted: false,
-            status: "Beklemede",
-          }}
-          validationSchema={stepSchemas[activeStep]}
-          onSubmit={submitApplication}
-        >
-          {({ isSubmitting, validateForm }) => (
-            <Form>
-              <CustomStepper
-                handleBack={handleBack}
-                handleNext={() => handleNext(validateForm)}
-                activeStep={activeStep}
-                isSubmitting={isSubmitting}
-                setActiveStep={setActiveStep}
-              />
-            </Form>
-          )}
-        </Formik>
+              expectedSalary: "",
+              isAccepted: false,
+              status: "Beklemede",
+            }}
+            validationSchema={stepSchemas[activeStep]}
+            onSubmit={submitApplication}
+          >
+            {({ isSubmitting, validateForm }) => (
+              <Form>
+                <CustomStepper
+                  handleBack={handleBack}
+                  handleNext={() => handleNext(validateForm)}
+                  activeStep={activeStep}
+                  isSubmitting={isSubmitting}
+                />
+              </Form>
+            )}
+          </Formik>
+        </div>
       </div>
-    </div>
+    )
   );
 };
 
