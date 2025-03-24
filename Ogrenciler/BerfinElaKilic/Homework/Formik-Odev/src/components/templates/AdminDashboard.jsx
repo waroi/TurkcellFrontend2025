@@ -29,7 +29,7 @@ function AdminDashboard({ data, jobs, location }) {
                 >
                 </Col>
             </Row>
-            <AllJobs title="Tüm İlanlar" limit="10" /> 
+            <AllJobs title="İlanlarım" limit="10" /> 
          
         </Container>
     );

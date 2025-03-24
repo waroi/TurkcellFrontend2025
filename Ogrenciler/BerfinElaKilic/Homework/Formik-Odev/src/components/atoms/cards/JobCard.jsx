@@ -30,7 +30,7 @@ const JobCard = ({ job, user }) => {
               Görüntüle
             </PrimaryButton>
             {user?.role === "admin" ? (
-              ""
+              <WarningButton onClick={() => navigate(`/jobs/${job.id}/candidates`)}>Başvuran Adaylar</WarningButton>
             ) : (
               <SuccessButton>Başvur</SuccessButton>
             )}
