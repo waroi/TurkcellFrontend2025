@@ -1,7 +1,16 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { unsubscribe } from "../../services/authServices";
+import { useNavigate } from "react-router";
 const SignIn = () => {
-  return (
+  let navigate = useNavigate();
+  const [userAuth, setUserAuth] = useState(null);
+  useEffect(() => {
+    unsubscribe(setUserAuth);
+  }, [userAuth]);
+  return userAuth ? (
+    navigate("/applications")
+  ) : (
     <div className="container mt-5">
       <div className="row justify-content-center">
         <div className="w-100 ">
