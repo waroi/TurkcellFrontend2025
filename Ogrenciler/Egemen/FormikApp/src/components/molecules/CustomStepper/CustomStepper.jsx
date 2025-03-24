@@ -10,7 +10,7 @@ const CustomStepper = ({
 }) => {
   return (
     <div>
-      <Stepper activeStep={activeStep}>
+      <Stepper className="flex-wrap" activeStep={activeStep}>
         <Step label="Kişisel Bilgiler" />
         <Step label="Eğitim" />
         <Step label="Deneyim" />

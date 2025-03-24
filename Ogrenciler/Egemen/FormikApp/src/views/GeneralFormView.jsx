@@ -23,54 +23,56 @@ const GeneralForm = () => {
 
   return (
     userAuth && (
-      <div className="container py-5 d-flex justify-content-center">
-        <div className="card shadow-lg p-4 w-50">
-          <h2 className="text-center mb-4">Başvuru Formu</h2>
-          <Formik
-            initialValues={{
-              userId: `${userAuth.uid}`,
-              fullname: "",
-              email: "",
-              phone: "",
-              birthDate: "",
-              address: "",
-              education: {
-                university: "",
-                department: "",
-                graduationYear: "",
-                gpa: "",
-              },
-              experience: { years: "", currentCompany: "", position: "" },
-              skills: {
-                languages: {
-                  turkish: false,
-                  english: false,
-                  german: false,
+      <div className="w-100 mx-auto py-5  justify-content-center row">
+        <div className="col-12 col-md-8 col-lg-6">
+          <div className="card shadow-lg p-4">
+            <h2 className="text-center mb-4">Başvuru Formu</h2>
+            <Formik
+              initialValues={{
+                userId: `${userAuth.uid}`,
+                fullname: "",
+                email: "",
+                phone: "",
+                birthDate: "",
+                address: "",
+                education: {
+                  university: "",
+                  department: "",
+                  graduationYear: "",
+                  gpa: "",
                 },
-                programmingLanguages: {
-                  javascript: false,
-                  python: false,
-                  java: false,
+                experience: { years: "", currentCompany: "", position: "" },
+                skills: {
+                  languages: {
+                    turkish: false,
+                    english: false,
+                    german: false,
+                  },
+                  programmingLanguages: {
+                    javascript: false,
+                    python: false,
+                    java: false,
+                  },
                 },
-              },
-              expectedSalary: "",
-              isAccepted: false,
-              status: "Beklemede",
-            }}
-            validationSchema={stepSchemas[activeStep]}
-            onSubmit={submitApplication}
-          >
-            {({ isSubmitting, validateForm }) => (
-              <Form>
-                <CustomStepper
-                  handleBack={handleBack}
-                  handleNext={() => handleNext(validateForm)}
-                  activeStep={activeStep}
-                  isSubmitting={isSubmitting}
-                />
-              </Form>
-            )}
-          </Formik>
+                expectedSalary: "",
+                isAccepted: false,
+                status: "Beklemede",
+              }}
+              validationSchema={stepSchemas[activeStep]}
+              onSubmit={submitApplication}
+            >
+              {({ isSubmitting, validateForm }) => (
+                <Form>
+                  <CustomStepper
+                    handleBack={handleBack}
+                    handleNext={() => handleNext(validateForm)}
+                    activeStep={activeStep}
+                    isSubmitting={isSubmitting}
+                  />
+                </Form>
+              )}
+            </Formik>
+          </div>
         </div>
       </div>
     )

@@ -8,12 +8,14 @@ import { NavLink, useNavigate } from "react-router";
 import { getUserApplications } from "../../../../firebase/dbController";
 const Navbar = () => {
   const [userAuth, setUserAuth] = useState(null);
+  const [user, setUser] = useState(null);
   let navigate = useNavigate();
 
   const handleRegister = async () => {
     await registerWithGoogle();
     const user = await getUser(auth.currentUser.uid);
     user.role === "admin" ? navigate("/applications") : navigate("/form");
+    setUser(user);
   };
 
   useEffect(() => {
@@ -40,13 +42,17 @@ const Navbar = () => {
                 >
                   Başvurular
                 </NavLink>
-                <NavLink
-                  to="/form"
-                  className="btn btn-warning rounded-pill "
-                  onClick={getUserApplications()}
-                >
-                  Yeni Başvuru
-                </NavLink>
+                {user && user.role == "user" ? (
+                  <NavLink
+                    to="/form"
+                    className="btn btn-warning rounded-pill "
+                    onClick={getUserApplications()}
+                  >
+                    Yeni Başvuru
+                  </NavLink>
+                ) : (
+                  <></>
+                )}
                 <NavLink
                   to="/"
                   className="btn btn-danger rounded-pill"
