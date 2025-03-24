@@ -74,8 +74,8 @@ export const advancedSchema = yup.object().shape({
     .array()
     .of(
       yup.object().shape({
-        language: yup.string().required("Dil seçiniz"),
-        level: yup.string().required("Seviye seçiniz"),
+        selectedLanguage: yup.string().required("Dil seçiniz"),
+        selectedLevel: yup.string().required("Seviye seçiniz"),
       })
     )
     .min(1, "En az bir dil eklemelisiniz"),

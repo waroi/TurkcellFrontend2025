@@ -12,6 +12,7 @@ const CoverLetter = () => {
         className="form-control mb-3"
         label="Cover Letter"
         name="coverLetter"
+        id="coverLetter"
         rows="5"
         placeholder="Kendinizi Kısaca Tanıtın"
       />
