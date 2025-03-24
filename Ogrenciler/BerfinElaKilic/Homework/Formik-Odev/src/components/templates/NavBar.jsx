@@ -33,9 +33,15 @@ function NavBar() {
                 {user.firstName}
               </Dropdown.Toggle>
               <Dropdown.Menu align="end">
-                <Dropdown.Item as={NavLink} to={`/user/${user.id}`}>
-                  Profil
-                </Dropdown.Item>
+                {user?.role === "admin" ? (
+                  <Dropdown.Item as={NavLink} to={`/admin/${user.id}`}>
+                    Profil
+                  </Dropdown.Item>
+                ) : (
+                  <Dropdown.Item as={NavLink} to={`/user/${user.id}`}>
+                    Profil
+                  </Dropdown.Item>
+                )}
                 <Dropdown.Divider />
                 <Dropdown.Item onClick={handleLogout}>Logout</Dropdown.Item>
               </Dropdown.Menu>

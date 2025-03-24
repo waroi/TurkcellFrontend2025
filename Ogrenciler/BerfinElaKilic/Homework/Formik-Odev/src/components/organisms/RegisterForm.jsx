@@ -51,7 +51,11 @@ const RegisterForm = () => {
           value={values.firstName}
           onChange={handleChange}
           name="firstName"
-          className={errors.firstName ? "error-input shadow-none" : ""}
+          className={
+            errors.firstName
+              ? "error-input shadow-none rounded-pill"
+              : "rounded-pill"
+          }
         />
         {errors.firstName && (
           <p className="error-message">{errors.firstName}</p>
@@ -66,7 +70,11 @@ const RegisterForm = () => {
           value={values.lastName}
           onChange={handleChange}
           name="lastName"
-          className={errors.lastName ? "error-input shadow-none" : ""}
+          className={
+            errors.lastName
+              ? "error-input shadow-none rounded-pill"
+              : "rounded-pill"
+          }
         />
         {errors.lastName && <p className="error-message">{errors.lastName}</p>}
       </Form.Group>
@@ -79,7 +87,11 @@ const RegisterForm = () => {
           value={values.email}
           onChange={handleChange}
           name="email"
-          className={errors.email ? "error-input shadow-none" : ""}
+          className={
+            errors.email
+              ? "error-input shadow-none rounded-pill"
+              : "rounded-pill"
+          }
         />
         {errors.email && <p className="error-message">{errors.email}</p>}
       </Form.Group>
@@ -92,7 +104,11 @@ const RegisterForm = () => {
           value={values.password}
           onChange={handleChange}
           name="password"
-          className={errors.password ? "error-input shadow-none" : ""}
+          className={
+            errors.password
+              ? "error-input shadow-none rounded-pill"
+              : "rounded-pill"
+          }
         />
         {errors.password && <p className="error-message">{errors.password}</p>}
       </Form.Group>
@@ -120,7 +136,11 @@ const RegisterForm = () => {
           name="role"
           value={values.role}
           onChange={handleChange}
-          className={errors.role ? "error-input shadow-none" : ""}
+          className={
+            errors.role
+              ? "error-input shadow-none rounded-pill"
+              : "rounded-pill"
+          }
         >
           {" "}
           <option value="">Sitemizi kullanım amacınızı seçiniz.</option>
@@ -131,7 +151,7 @@ const RegisterForm = () => {
       </Form.Group>
 
       <div className="d-flex gap-4 align-items-center">
-        <PrimaryButton type="submit" disabled={isSubmitting}>
+        <PrimaryButton className="px-5" type="submit" disabled={isSubmitting}>
           Kaydet
         </PrimaryButton>
         <NavLink to="/login" className="ms-2">

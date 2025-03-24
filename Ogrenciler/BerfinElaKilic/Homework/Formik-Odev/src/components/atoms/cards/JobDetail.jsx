@@ -3,7 +3,7 @@ import { Card, ListGroup, Badge, Button } from "react-bootstrap";
 import SuccessButton from "../Buttons/SuccessButton";
 import WrapperCard from "./WrapperCard";
 
-const JobDetailPage = ({ job }) => {
+const JobDetailPage = ({ job, user }) => {
   return (
     <WrapperCard className="m-3">
       <Card className="border-0 bg-transparent">
@@ -17,7 +17,7 @@ const JobDetailPage = ({ job }) => {
             <Badge bg="primary" className="me-2 rounded-pill">
               {job.employmentType}
             </Badge>
-            <Badge bg="secondary" lassName="me-2 rounded-pill">
+            <Badge bg="secondary" className="me-2 rounded-pill">
               {job.term}
             </Badge>
           </div>
@@ -70,8 +70,11 @@ const JobDetailPage = ({ job }) => {
               {new Date(job.deadline).toLocaleDateString()}
             </small>
           </Card.Text>
-
-          <SuccessButton className="mt-3">Başvur</SuccessButton>
+          {user?.role === "admin" ? (
+            ""
+          ) : (
+            <SuccessButton className="mt-3">Başvur</SuccessButton>
+          )}
         </Card.Body>
       </Card>
     </WrapperCard>
