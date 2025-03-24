@@ -1,9 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import { collection, getDocs, doc, updateDoc, query } from 'firebase/firestore';
+import {
+  collection,
+  getDocs,
+  doc,
+  updateDoc,
+  deleteDoc,
+  query,
+} from 'firebase/firestore';
 import { db } from '../firebase/config';
 import { useAuth } from '../context/AuthContext';
-import { LoadingSpinner } from '../components/atoms/LoadingSpinner';
+import { ApplicationsTable } from '../components/organisms/ApplicationsTable';
+import { ApplicationModal } from '../components/organisms/ApplicationModal';
 import { useNavigate } from 'react-router';
+import { LoadingSpinner } from '../components/atoms/LoadingSpinner';
+import { Button } from '../components/atoms/Button';
 
 export const AdminView = () => {
   const [applications, setApplications] = useState([]);
@@ -12,9 +22,7 @@ export const AdminView = () => {
   const [actionLoading, setActionLoading] = useState(false);
 
   const navigate = useNavigate();
-
   const { currentUser } = useAuth();
-  console.log(currentUser);
 
   useEffect(() => {
     if (!currentUser || currentUser.role !== 'admin') {
@@ -22,7 +30,7 @@ export const AdminView = () => {
       return;
     }
     fetchApplications();
-  }, []);
+  }, [currentUser, navigate]);
 
   const fetchApplications = async () => {
     try {
@@ -50,7 +58,13 @@ export const AdminView = () => {
         updatedAt: new Date(),
         updatedBy: currentUser.uid,
       });
-      await fetchApplications();
+
+      setApplications((prevApplications) =>
+        prevApplications.map((app) =>
+          app.id === id ? { ...app, status } : app
+        )
+      );
+
       setSelectedApplication(null);
     } catch (error) {
       console.error('Error updating application:', error);
@@ -59,158 +73,49 @@ export const AdminView = () => {
     }
   };
 
-  if (loading)
+  const handleDeleteApplication = async (id) => {
+    if (window.confirm('Are you sure you want to delete this application?')) {
+      try {
+        const applicationRef = doc(db, 'applications', id);
+        await deleteDoc(applicationRef);
+        await fetchApplications();
+      } catch (error) {
+        console.error('Error deleting application:', error);
+      }
+    }
+  };
+
+  if (loading) {
     return (
       <div className='d-flex justify-content-center align-items-center mt-5'>
         <LoadingSpinner />
       </div>
     );
+  }
 
   return (
     <div className='container mt-4'>
       <h2 className='mb-4'>Application Management</h2>
       <div className='d-flex justify-content-between mb-3'>
         <h4>Total Applications: {applications.length}</h4>
-        <button className='btn btn-primary' onClick={fetchApplications}>
+        <Button variant='primary' onClick={fetchApplications}>
           Refresh
-        </button>
+        </Button>
       </div>
-      {applications.length === 0 ? (
-        <div className='text-center p-4'>
-          <h4>No applications yet.</h4>
-        </div>
-      ) : (
-        <table className='table table-striped table-bordered table-hover'>
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Full Name</th>
-              <th>Email</th>
-              <th>Phone</th>
-              <th>Application Date</th>
-              <th>Status</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {applications.map((app, index) => (
-              <tr key={app.id}>
-                <td>{index + 1}</td>
-                <td>{app.fullName || `${app.firstName} ${app.lastName}`}</td>
-                <td>{app.email}</td>
-                <td>{app.phone}</td>
-                <td>
-                  {app.timestamp?.toDate
-                    ? app.timestamp.toDate().toLocaleDateString('en-US')
-                    : 'Not Provided'}
-                </td>
-                <td>
-                  <span
-                    className={`badge bg-${
-                      app.status === 'approved'
-                        ? 'success'
-                        : app.status === 'rejected'
-                        ? 'danger'
-                        : 'warning'
-                    }`}
-                  >
-                    {app.status === 'approved'
-                      ? 'Approved'
-                      : app.status === 'rejected'
-                      ? 'Rejected'
-                      : 'Pending'}
-                  </span>
-                </td>
-                <td>
-                  <button
-                    className='btn btn-info btn-sm me-2'
-                    onClick={() => setSelectedApplication(app)}
-                  >
-                    View
-                  </button>
-                  <button className='btn btn-danger btn-sm' onClick={() => {}}>
-                    Delete
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      )}
 
-      {/* MODAL */}
-      {selectedApplication && (
-        <div
-          className='modal fade show d-block text-secondary'
-          tabIndex='-1'
-          role='dialog'
-          style={{ background: 'rgba(0,0,0,0.5)' }}
-        >
-          <div className='modal-dialog modal-lg' role='document'>
-            <div className='modal-content'>
-              <div className='modal-header'>
-                <h5 className='modal-title'>Application Details</h5>
-                <button
-                  type='button'
-                  className='btn-close'
-                  onClick={() => setSelectedApplication(null)}
-                ></button>
-              </div>
-              <div className='modal-body'>
-                <h4>
-                  {selectedApplication.fullName ||
-                    `${selectedApplication.firstName} ${selectedApplication.lastName}`}
-                </h4>
-                <p>
-                  <strong>Email:</strong> {selectedApplication.email}
-                </p>
-                <p>
-                  <strong>Phone:</strong> {selectedApplication.phone}
-                </p>
-                <p>
-                  <strong>Status:</strong> {selectedApplication.status}
-                </p>
-              </div>
-              <div className='modal-footer'>
-                {selectedApplication.status !== 'approved' && (
-                  <button
-                    className='btn btn-success'
-                    onClick={() =>
-                      handleApplicationAction(
-                        selectedApplication.id,
-                        'approved'
-                      )
-                    }
-                    disabled={actionLoading}
-                  >
-                    {actionLoading ? 'Processing...' : 'Approve'}
-                  </button>
-                )}
-                {selectedApplication.status !== 'rejected' && (
-                  <button
-                    className='btn btn-danger'
-                    onClick={() =>
-                      handleApplicationAction(
-                        selectedApplication.id,
-                        'rejected'
-                      )
-                    }
-                    disabled={actionLoading}
-                  >
-                    {actionLoading ? 'Processing...' : 'Reject'}
-                  </button>
-                )}
-                <button
-                  className='btn btn-secondary'
-                  onClick={() => setSelectedApplication(null)}
-                >
-                  Close
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+      <ApplicationsTable
+        applications={applications}
+        onViewApplication={setSelectedApplication}
+        onDeleteApplication={handleDeleteApplication}
+      />
+
+      <ApplicationModal
+        application={selectedApplication}
+        onClose={() => setSelectedApplication(null)}
+        onApprove={(id) => handleApplicationAction(id, 'approved')}
+        onReject={(id) => handleApplicationAction(id, 'rejected')}
+        actionLoading={actionLoading}
+      />
     </div>
   );
 };

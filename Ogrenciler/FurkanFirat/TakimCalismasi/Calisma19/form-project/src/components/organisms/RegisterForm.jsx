@@ -45,6 +45,7 @@ const RegisterForm = () => {
           textContent='Already have an account?'
           linkText='Login'
           to='/login'
+          className='text-center text-muted mt-3'
         />
       </div>
     </div>
