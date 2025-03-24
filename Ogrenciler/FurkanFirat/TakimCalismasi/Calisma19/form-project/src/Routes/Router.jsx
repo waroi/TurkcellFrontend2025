@@ -5,6 +5,7 @@ import { LoginView } from '../views/LoginView';
 import { RegisterView } from '../views/RegisterView';
 import { RegisterWarningView } from '../views/RegisterWarningView';
 import { AdminView } from '../views/AdminView';
+import { ExamView } from '../views/ExamView';
 import { useAuth } from '../context/AuthContext';
 import { ApplicationFormView } from '../views/ApplicationFormView';
 
@@ -15,6 +16,7 @@ export default function Router() {
     { path: '/login', element: <LoginView /> },
     { path: '/register', element: <RegisterView /> },
     { path: '/register-warning', element: <RegisterWarningView /> },
+    { path: '/technical-exam', element: <ExamView /> },
     { path: '/admin', element: <AdminView /> },
     {
       path: '/application-form',
