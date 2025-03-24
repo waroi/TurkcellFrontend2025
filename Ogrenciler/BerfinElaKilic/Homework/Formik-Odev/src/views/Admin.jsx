@@ -1,9 +1,9 @@
 import { Outlet } from "react-router";
-import Admin from "../components/templates/Admin";
 import { getAdmin } from "../utils/services";
 import { useLocation, useParams } from "react-router";
 import DataRender from "../components/HOCS/DataRender";
 import withAuth from "../components/HOCS/withAuth";
+import AdminDashboard from "../components/templates/AdminDashboard";
 
 
 const AdminView = () => {
@@ -16,7 +16,7 @@ const AdminView = () => {
       if (!data) {
         return <p>Admin bilgileri yükleniyor...</p>;
       }
-      return <Admin data={data} location={location} />;
+      return <AdminDashboard data={data} location={location} />;
     };
   return (
     <>
@@ -31,4 +31,6 @@ const AdminView = () => {
   );
 };
 
-export default AdminView;
+const ProtectedAdminDashboard = withAuth(AdminView, "admin");
+
+export default ProtectedAdminDashboard;
