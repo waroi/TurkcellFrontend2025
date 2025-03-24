@@ -1,95 +1,92 @@
 import React, { useState } from "react";
 import { Formik, Form } from "formik";
-import CustomComponent from "../atoms/CustomComponent";
-import { Link } from "react-router";
-import { LANGUAGES, levels, UNIVERSITIES } from "../../constants/constants";
-import LanguageForm from "../molecules/forms/LanguageForm";
+import { useAuth } from "../../context/AuthContext";
+import { addCandidateInfo } from "../../utils/services";
+import DisplayForm from "./DisplayForm";
+import PrimaryButton from "../atoms/Buttons/PrimaryButton";
 import ProfileForm from "../molecules/forms/ProfileForm";
-import { advancedSchema } from "../../schemas";
 import EduForm from "../molecules/forms/EduForm";
+import LanguageForm from "../molecules/forms/LanguageForm";
 import Experiences from "../molecules/forms/Experiences";
 import References from "../molecules/forms/References";
 import CoverLetter from "../molecules/forms/CoverLetter";
-import { useAuth } from "../../context/AuthContext";
-import { addCandidateInfo } from "../../utils/services";
-import PrimaryButton from "../atoms/Buttons/PrimaryButton";
-import DisplayForm from "./DisplayForm";
+import SecondaryButton from "../atoms/Buttons/SecondaryButton";
 
-const PortalFormu = () => {
-  const [count, setCount] = useState(1);
-  const { user } = useAuth();
+const PortalFormu = ({ setIsEditing, isEditing ,user}) => {
+
   const [submittedData, setSubmittedData] = useState(null);
-  const [isEditing, setIsEditing] = useState(false);
+
+  const initialValues = submittedData || {
+    firstName: user.firstName || "",
+    lastName: user.lastName || "",
+    address: user.address || "",
+    city: user.city || "",
+    graduationYear: user.graduationYear || "",
+    department: user.department || "",
+    university: user.university || "",
+    dateofBirth: user.dateofBirth || "",
+    gender: user.gender || "",
+    phone: user.phone || "",
+    workPlace: user.workPlace || "",
+    startDate: user.startDate || "",
+    endDate: user.endDate || "",
+    position: user.position || "",
+    coverLetter: user.coverLetter || "",
+    referenceName: user.referenceName || "",
+    referencePhone: user.referencePhone || "",
+    referenceEmail: user.referenceEmail || "",
+    languages: [],
+  };
 
   const onSubmit = async (values, actions) => {
-    console.log(values);
-    await addCandidateInfo(user.id, values);
-    setSubmittedData(values);
-    setIsEditing(false);
-    actions.resetForm();
+    try {
+      await addCandidateInfo(user.id, values);
+      setSubmittedData(values);
+      setIsEditing(false);
+      actions.resetForm();
+    } catch (error) {
+      console.error("Hata oluştu:", error);
+    }
   };
-  const handleEdit = () => {
-    setIsEditing(true);
-  };
-  const handleCancel = () => {
+
+  const handleCancel = (resetForm) => {
+    resetForm({ values: submittedData });
     setIsEditing(false);
   };
 
   return (
     <>
-      {submittedData && !isEditing ? (
-        <DisplayForm data={submittedData} onEdit={handleEdit} />
-      ) : (
-        <Formik
-          initialValues={{
-            firstName: "",
-            lastName: "",
-            address: "",
-            city: "",
-            graduationYear: "",
-            department: "",
-            university: "",
-            dateofBirth: "",
-            gender: "",
-            phone: "",
-            workPlace: "",
-            startDate: "",
-            endDate: "",
-            position: "",
-            coverLetter: "",
-            languages: [],
-            selectedLanguage: "",
-            selectedLevel: "",
-          }}
-          onSubmit={onSubmit}
-          validationSchema={advancedSchema}
-        >
-          {({ isSubmitting }) => (
-            <>
-              <Form className="">
-                <ProfileForm />
-                <EduForm />
-                <LanguageForm />
-                <Experiences />
-                <References />
-                <CoverLetter />
+      <Formik
+        initialValues={initialValues}
+        onSubmit={onSubmit}
+        enableReinitialize={true}
+      >
+        {({ isSubmitting, resetForm }) => (
+          <Form>
+            <ProfileForm />
+            <EduForm />
+            <LanguageForm />
+            <Experiences />
+            <References />
+            <CoverLetter />
 
-                <div className="d-flex gap-2">
-                  <PrimaryButton disabled={isSubmitting} type="submit">
-                    Kaydet
-                  </PrimaryButton>
+            <div className="d-flex gap-2">
+              <PrimaryButton disabled={isSubmitting} type="submit">
+                Kaydet
+              </PrimaryButton>
 
-                  {submittedData && (
-                    <button type="button" onClick={handleCancel}>
-                      Vazgeç
-                    </button>
-                  )}
-                </div>
-              </Form>
-            </>
-          )}
-        </Formik>
-      )}
+              {submittedData && (
+                <SecondaryButton
+                  type="button"
+                  onClick={() => handleCancel(resetForm)}
+                >
+                  Vazgeç
+                </SecondaryButton>
+              )}
+            </div>
+          </Form>
+        )}
+      </Formik>
     </>
   );
 };

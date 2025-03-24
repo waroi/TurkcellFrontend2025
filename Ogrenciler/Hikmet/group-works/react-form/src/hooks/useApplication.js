@@ -39,8 +39,6 @@ export const useApplications = () => {
 	const handleApprove = useCallback(async (application) => {
 		try {
 			await approveApplication(application);
-
-			// State'i güncelle
 			setPositiveList((prev) => [...prev, application]);
 			setReviewList((prev) =>
 				prev.filter((item) => item.id !== application.id)
@@ -57,8 +55,6 @@ export const useApplications = () => {
 	const handleReject = useCallback(async (application) => {
 		try {
 			await rejectApplication(application);
-
-			// State'i güncelle
 			setNegativeList((prev) => [...prev, application]);
 			setReviewList((prev) =>
 				prev.filter((item) => item.id !== application.id)
@@ -86,3 +82,8 @@ export const useApplications = () => {
 		handleReject,
 	};
 };
+
+//Todo: Apply form SOLID prensiplerine göre tekrardan düzenleme yapılacak
+//todo: diğer componentlerin de SOLID prensiplerine göre düzenlenmesi yapılacak
+//?to-do: state management yapısı eklenebilir
+//?: admin paneli için sürükle bırak yapısı denenecek

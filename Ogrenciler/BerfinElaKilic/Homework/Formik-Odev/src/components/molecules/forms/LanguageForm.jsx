@@ -2,6 +2,8 @@ import React from "react";
 import { useFormikContext } from "formik";
 import { LANGUAGES, levels } from "../../../constants/constants";
 import CustomComponent from "../../atoms/CustomComponent";
+import DangerButton from "../../atoms/Buttons/DangerButton";
+import PrimaryButton from "../../atoms/Buttons/PrimaryButton";
 
 const LanguageForm = () => {
   const { values, setFieldValue } = useFormikContext();
@@ -13,7 +15,7 @@ const LanguageForm = () => {
         level: values.selectedLevel,
       };
       setFieldValue("languages", [...values.languages, newLanguage]);
-      setFieldValue("selectedLanguage", ""); // Formik state'ini sıfırla
+      setFieldValue("selectedLanguage", "");
       setFieldValue("selectedLevel", "");
     }
   };
@@ -60,28 +62,28 @@ const LanguageForm = () => {
           ))}
         </CustomComponent>
 
-        <button
+        <PrimaryButton
           onClick={handleAddLanguage}
-          className="mb-2 btn btn-dark"
+          className="mb-2"
           type="button"
         >
           Ekle
-        </button>
+        </PrimaryButton>
       </div>
 
       <ul className="list-group">
         {values.languages?.map((item, index) => (
           <li
             key={index}
-            className="list-group-item d-flex justify-content-between align-items-center"
+            className="list-group-item d-flex justify-content-between align-items-center bg-transparent"
           >
             {item.language} - {item.level}
-            <button
-              className="btn btn-danger btn-sm"
+            <DangerButton
+              className="btn-sm"
               onClick={() => handleRemoveLanguage(index)}
             >
               Sil
-            </button>
+            </DangerButton>
           </li>
         ))}
       </ul>
