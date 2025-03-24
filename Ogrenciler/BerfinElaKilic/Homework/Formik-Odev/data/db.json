@@ -1,7 +1,7 @@
 {
   "candidates": [
     {
-      "id": "candidateId",
+      "id": "candidateId3",
       "firstName": "John",
       "lastName": "Doe",
       "email": "john.doe@example.com",
@@ -148,7 +148,7 @@
       "deadline": "2024-04-30T23:59:59Z",
       "applicants": [
         {
-          "candidateId": "candidateId1",
+          "id": "candidateId",
           "appliedAt": "2024-03-21T11:00:00Z",
           "status": "pending",
           "approvedByAdmin": "adminId456"
@@ -188,7 +188,7 @@
       "deadline": "2024-05-15T23:59:59Z",
       "applicants": [
         {
-          "candidateId": "candidateId2",
+          "id": "candidateId2",
           "appliedAt": "2024-03-22T10:00:00Z",
           "status": "pending",
           "approvedByAdmin": "adminId457"
@@ -228,10 +228,10 @@
       "deadline": "2024-05-30T23:59:59Z",
       "applicants": [
         {
-          "candidateId": "candidateId3",
+          "id": "candidateId3",
           "appliedAt": "2024-03-23T12:00:00Z",
           "status": "pending",
-          "approvedByAdmin": "adminId458"
+          "approvedByAdmin": ""
         }
       ]
     }

@@ -1,14 +1,30 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
+import { useState, useEffect } from 'react';
+import { getCandidate } from '../../../utils/services';
 
-const CandidateCard = ({ candidate }) => {
+const CandidateCard = ({ applicant }) => {
+  const [candidate, setCandidate] = useState(null);
+
+  useEffect(() => {
+    const fetchCandidates = async () => {
+      try {
+        const data = await getCandidate(applicant.id);
+        setCandidate(data);
+      } catch (error) {
+        console.error("Error fetching candidates:", error);
+      }
+    };
+
+    fetchCandidates();
+  }, []);
   return (
     <Card className="mb-3">
       <Card.Body>
-        <Card.Title>{candidate.name}</Card.Title>
-        <Card.Text>Email: {candidate.email}</Card.Text>
-        <Card.Text>Phone: {candidate.phone}</Card.Text>
-        <Card.Text>Resume: <a href={candidate.resumeUrl}>View Resume</a></Card.Text>
+        <Card.Title>{candidate?.firstName} {candidate?.lastName}</Card.Title>
+        <Card.Text>Email: {candidate?.email}</Card.Text>
+        <Card.Text>Phone: {applicant?.appliedAt}</Card.Text>
+        <Card.Text>Resume: <a href={applicant?.status}>View Resume</a></Card.Text>
       </Card.Body>
     </Card>
   );

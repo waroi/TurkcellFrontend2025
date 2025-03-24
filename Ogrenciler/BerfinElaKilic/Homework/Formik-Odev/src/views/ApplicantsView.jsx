@@ -5,6 +5,7 @@ const ApplicantsView = () => {
   return (
     <>
     <Applicants />
+    <Outlet />
     </>
   )
 }
