@@ -5,6 +5,7 @@ import ApplyView from "../views/ApplyView";
 import HomeView from "../views/HomeView";
 import LoginView from "../views/LoginView";
 import RegisterView from "../views/RegisterView";
+import Quiz from "../components/test/Quiz"
 
 const Router = () => {
 	return (
@@ -14,6 +15,7 @@ const Router = () => {
 			<Route path="/login" element={<LoginView />} />
 			<Route path="/register" element={<RegisterView />} />
 			<Route path="/admin" element={<AdminView />} />
+			<Route path="/profile"element={<Quiz/>}/>
 		</Routes>
 	);
 };
