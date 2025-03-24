@@ -70,8 +70,15 @@ export const advancedSchema = yup.object().shape({
     .required("Mezuniyet yılı zorunludur")
     .min(new Date().getFullYear() - 60, "Geçerli bir yıl giriniz")
     .max(new Date().getFullYear(), "Gelecek yıl olamaz"),
-  language: yup.string().required("Yabancı dil seçimi zorunludur"),
-  level: yup.string().required("Seviye seçimi zorunludur"),
+  languages: yup
+    .array()
+    .of(
+      yup.object().shape({
+        language: yup.string().required("Dil seçiniz"),
+        level: yup.string().required("Seviye seçiniz"),
+      })
+    )
+    .min(1, "En az bir dil eklemelisiniz"),
   referenceName: yup
     .string()
     .required("İsim Soyisim zorunludur")

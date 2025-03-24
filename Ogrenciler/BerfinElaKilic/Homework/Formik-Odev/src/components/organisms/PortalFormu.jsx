@@ -13,67 +13,87 @@ import CoverLetter from "../molecules/forms/CoverLetter";
 import { useAuth } from "../../context/AuthContext";
 import { addCandidateInfo } from "../../utils/services";
 import PrimaryButton from "../atoms/Buttons/PrimaryButton";
+import DisplayForm from "./DisplayForm";
 
 const PortalFormu = () => {
   const [count, setCount] = useState(1);
   const { user } = useAuth();
+  const [submittedData, setSubmittedData] = useState(null);
+  const [isEditing, setIsEditing] = useState(false);
 
   const onSubmit = async (values, actions) => {
     console.log(values);
-    addCandidateInfo(user.id, values);
-    await new Promise((resolve) => {
-      setTimeout(resolve, 1000);
-    });
+    await addCandidateInfo(user.id, values);
+    setSubmittedData(values);
+    setIsEditing(false);
     actions.resetForm();
+  };
+  const handleEdit = () => {
+    setIsEditing(true);
+  };
+  const handleCancel = () => {
+    setIsEditing(false);
   };
 
   return (
     <>
-      <Formik
-        initialValues={{
-          firstName: "",
-          lastName: "",
-          address: "",
-          city: "",
-          graduationYear: "",
-          department: "",
-          university: "",
-          dateofBirth: "",
-          gender: "",
-          phone: "",
-          language: "",
-          level: "",
-          workPlace: "",
-          startDate: "",
-          endDate: "",
-          position: "",
-          coverLetter: "",
-        }}
-        onSubmit={onSubmit}
-        validationSchema={advancedSchema}
-      >
-        {({ isSubmitting }) => (
-          <>
-            <Form className="">
-              <ProfileForm />
-              <EduForm />
-              <LanguageForm />
-              <Experiences />
-              <References />
-              <CoverLetter />
+      {submittedData && !isEditing ? (
+        <DisplayForm data={submittedData} onEdit={handleEdit} />
+      ) : (
+        <Formik
+          initialValues={{
+            firstName: "",
+            lastName: "",
+            address: "",
+            city: "",
+            graduationYear: "",
+            department: "",
+            university: "",
+            dateofBirth: "",
+            gender: "",
+            phone: "",
+            workPlace: "",
+            startDate: "",
+            endDate: "",
+            position: "",
+            coverLetter: "",
+            languages: [],
+          }}
+          onSubmit={onSubmit}
+          validationSchema={advancedSchema}
+        >
+          {({ isSubmitting }) => (
+            <>
+              <Form className="">
+                <ProfileForm />
+                <EduForm />
+                <LanguageForm />
+                <Experiences />
+                <References />
+                <CoverLetter />
 
-              {/* <CustomCheckbox type="checkbox" name="isAccepted" /> */}
-              <PrimaryButton
-                disabled={isSubmitting}
-                type="submit"
-                className="btn btn-primary mt-3"
-              >
-                Kaydet
-              </PrimaryButton>
-            </Form>
-          </>
-        )}
-      </Formik>
+                <div className="d-flex gap-2">
+                  <PrimaryButton
+                    disabled={isSubmitting}
+                    type="submit"
+                  >
+                    Kaydet
+                  </PrimaryButton>
+
+                  {submittedData && (
+                    <button
+                      type="button"
+                      onClick={handleCancel}
+                    >
+                      Vazgeç
+                    </button>
+                  )}
+                </div>
+              </Form>
+            </>
+          )}
+        </Formik>
+      )}
     </>
   );
 };
