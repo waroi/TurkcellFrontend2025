@@ -28,7 +28,7 @@ function Login() {
 
   return (
 
-    <div className="container d-flex flex-column align-items-center justify-content-center form-container">
+    <div className="container d-flex flex-column align-items-center justify-content-center form-container my-4">
       <Navbar />
       <div className="h-auto login-form-width shadow p-4 my-5 bg-white rounded">
         <div className="w-100 py-3 d-flex flex-column justify-content-center align-items-center">

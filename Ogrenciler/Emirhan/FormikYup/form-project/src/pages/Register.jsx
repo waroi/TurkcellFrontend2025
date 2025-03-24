@@ -16,14 +16,12 @@ function Register() {
     try {
       const ruser = await registerUser(user.mail, user.password);
 
-      console.log("Kayıtlı kullanıcı yanıtı:", ruser); // Yanıtı kontrol et
-
       if (!ruser || !ruser.uid) {
         throw new Error("Kullanıcı verisi geçersiz, localId bulunamadı.");
       }
 
-      await uploadUser(user, ruser.uid);  // localId'yi kullan
-      navigate(`/position`);
+      await uploadUser(user, ruser.uid);
+      navigate(`/login`);
     } catch (error) {
       console.error("Hata oluştu:", error.message);
     }

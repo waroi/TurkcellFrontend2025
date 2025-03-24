@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar';
 
 function HomePage() {
   return (
-    <div>
+    <div >
       <Navbar />
       <header className="bg-dark text-white text-center py-10">
         <div className="container">

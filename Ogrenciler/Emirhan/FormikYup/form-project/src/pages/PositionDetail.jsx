@@ -16,7 +16,7 @@ const PositionDetail = () => {
     return (
         <>
             <Navbar />
-            <div className='container my-5'>
+            <div className='container my-5 py-2'>
                 <h2 className="text-center mb-4 py-5">{position.title}</h2>
                 <div>
                     <div className="d-flex flex-column gap-3">
