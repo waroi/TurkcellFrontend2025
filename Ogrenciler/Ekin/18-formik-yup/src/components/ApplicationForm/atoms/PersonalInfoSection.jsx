@@ -1,5 +1,5 @@
 import React from "react";
-import Input from "../inputs/Input";
+import Input from "../../inputs/Input";
 
 export default function PersonalInfoSection() {
   return (

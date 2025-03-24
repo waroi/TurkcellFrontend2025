@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router";
 
 export default function NavigationLinks({ user, logout }) {
   if (!user) {
