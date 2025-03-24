@@ -60,8 +60,8 @@ const ProfileForm = () => {
         placeholder="Doğum Tarihinizi Giriniz"
       />
 
-      <p class="mt-4">Cinsiyet</p>
-      <div class="form-check form-check-inline">
+      <p className="mt-4">Cinsiyet</p>
+      <div className="form-check form-check-inline">
         <CustomComponent
           className="form-check-input"
           type="radio"
@@ -73,7 +73,7 @@ const ProfileForm = () => {
         />
       </div>
 
-      <div class="form-check form-check-inline">
+      <div className="form-check form-check-inline">
         <CustomComponent
           className="form-check-input"
           type="radio"
@@ -85,7 +85,7 @@ const ProfileForm = () => {
         />
       </div>
 
-      <div class="form-check form-check-inline">
+      <div className="form-check form-check-inline">
         <CustomComponent
           className="form-check-input"
           type="radio"
