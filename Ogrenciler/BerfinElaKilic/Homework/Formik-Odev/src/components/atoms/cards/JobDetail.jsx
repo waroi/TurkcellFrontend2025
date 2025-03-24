@@ -70,11 +70,10 @@ const JobDetailPage = ({ job, user }) => {
               {new Date(job.deadline).toLocaleDateString()}
             </small>
           </Card.Text>
-          {user?.role === "admin" ? (
-            ""
-          ) : (
-            <SuccessButton className="mt-3">Başvur</SuccessButton>
-          )}
+
+          <SuccessButton className="mt-3">
+            {user?.role === "admin" ? "Düzenle" : "Başvur"}
+          </SuccessButton>
         </Card.Body>
       </Card>
     </WrapperCard>
