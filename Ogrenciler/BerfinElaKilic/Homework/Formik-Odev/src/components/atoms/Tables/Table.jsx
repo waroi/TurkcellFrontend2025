@@ -13,9 +13,10 @@ const Table = ({ columns, data }) => {
       <tbody>
         {data.map((row, rowIndex) => (
           <tr key={rowIndex}>
-            {columns.map((column) => (
-              <td key={column.accessor}>{row[column.accessor]}</td>
-            ))}
+            {columns.map((column) => {
+            const cellValue = column.Cell ? column.Cell({ row }) : row[column.accessor];
+            return <td key={column.accessor}>{cellValue}</td>;
+          })}
           </tr>
         ))}
       </tbody>
