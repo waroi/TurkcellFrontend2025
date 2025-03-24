@@ -44,6 +44,7 @@ const LoginForm = () => {
         </form>
 
         <RedirectLink
+          className='text-center text-muted mt-3'
           textContent="Don't have an account?"
           linkText='Register'
           to='/register'

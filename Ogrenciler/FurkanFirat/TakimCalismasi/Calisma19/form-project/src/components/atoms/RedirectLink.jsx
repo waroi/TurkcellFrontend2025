@@ -1,8 +1,8 @@
 import { Link } from 'react-router';
 
-export const RedirectLink = ({ textContent, linkText, to }) => {
+export const RedirectLink = ({ textContent, linkText, to, className }) => {
   return (
-    <p className='text-center text-muted mt-3'>
+    <p className={className}>
       {textContent}{' '}
       <Link to={to} className='text-primary'>
         {linkText}

@@ -116,7 +116,7 @@ export const applicationFormFields = [
     name: 'desiredPosition',
     placeholder: 'Desired position',
     options: [
-      { value: '', label: 'Position' },
+      { value: '', label: 'Department' },
       { value: 'tech', label: 'Tech' },
       { value: 'marketing', label: 'Marketing' },
       { value: 'hr', label: 'HR' },

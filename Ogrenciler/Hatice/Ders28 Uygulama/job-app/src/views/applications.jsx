@@ -1,18 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { getJobs } from '../firebase/firebaseConfig';
 import useJobsStore from '../store/jobs';
 
 const Applications = () => {
-  const { jobs, setJobs } = useJobsStore();
+  const jobs = useJobsStore((state) => state.jobs);
+  const fetchJobs = useJobsStore((state) => state.fetchJobs);
+
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    getJobs().then((jobsData) => {
-      console.log("Gelen Jobs:", jobsData);  
-      setJobs(jobsData); 
-      setLoading(false);
-    });
-  }, [setJobs]);
+    fetchJobs().then(() => setLoading(false));
+  }, [fetchJobs]); // fetchJobs bağımlılığı eklendi
 
   return (
     <div className='container mt-5'>
