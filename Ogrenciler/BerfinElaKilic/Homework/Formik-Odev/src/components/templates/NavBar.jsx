@@ -5,6 +5,8 @@ import { useAuth } from "../../context/AuthContext";
 import { NavLink } from "react-router";
 import Button from "react-bootstrap/Button";
 import { useLocation } from "react-router";
+import PrimaryButton from "../atoms/Buttons/PrimaryButton";
+import SecondaryButton from "../atoms/Buttons/SecondaryButton";
 
 function NavBar() {
   const { user, logout } = useAuth();
@@ -18,9 +20,11 @@ function NavBar() {
   }
 
   return (
-    <Navbar className="bg-body-tertiary">
+    <Navbar className="bg-transparent text-light">
       <Container>
-        <Navbar.Brand href="#home">İK PORTAL</Navbar.Brand>
+        <Navbar.Brand className="text-light fw-bold" href="#home">
+          İK PORTAL
+        </Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
           {user ? (
@@ -37,9 +41,13 @@ function NavBar() {
               </Dropdown.Menu>
             </Dropdown>
           ) : (
-            <Button as={NavLink} to="/login" variant="primary">
+            <SecondaryButton
+              as={NavLink}
+              to="/login"
+              className="bg-transparent"
+            >
               Giriş Yap
-            </Button>
+            </SecondaryButton>
           )}
         </Navbar.Collapse>
       </Container>

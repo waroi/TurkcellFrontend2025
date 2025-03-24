@@ -6,53 +6,59 @@ import WrapperCard from "./WrapperCard";
 const JobDetailPage = ({ job }) => {
   return (
     <WrapperCard className="m-3">
-      <Card className="border-0">
-        <Card.Body>
+      <Card className="border-0 bg-transparent">
+        <Card.Body className="bg-transparent">
           <h2 className="mb-3 fw-bold">{job.position}</h2>
           <h5 className="text-muted">
             {job.company} - {job.location}
           </h5>
 
           <div className="my-3">
-            <Badge bg="primary" className="me-2">
+            <Badge bg="primary" className="me-2 rounded-pill">
               {job.employmentType}
             </Badge>
-            <Badge bg="secondary">{job.term}</Badge>
+            <Badge bg="secondary" lassName="me-2 rounded-pill">
+              {job.term}
+            </Badge>
           </div>
 
           <Card.Text className="mb-3">
             <strong>Salary: </strong>
-            <span className="fw-semibold bg-warning px-2 py-1 rounded">
+            <span className="fw-semibold badge  rounded-pill bg-warning px-2 py-1 rounded">
               {job.salaryRange}
             </span>
           </Card.Text>
 
           <Card.Text>{job.description}</Card.Text>
 
-          <ListGroup variant="flush" className="mb-3">
-            <ListGroup.Item className="fw-bold">Requirements:</ListGroup.Item>
+          <ListGroup variant="flush" className="mb-3 bg-transparent">
+            <ListGroup.Item className="fw-bold bg-transparent">
+              Requirements:
+            </ListGroup.Item>
             {job.requirements.map((req, index) => (
-              <ListGroup.Item key={index} className="ps-4">
+              <ListGroup.Item key={index} className="ps-4 bg-transparent">
                 - {req}
               </ListGroup.Item>
             ))}
           </ListGroup>
 
-          <ListGroup variant="flush" className="mb-3">
-            <ListGroup.Item className="fw-bold">
+          <ListGroup variant="flush" className="mb-3 bg-transparent">
+            <ListGroup.Item className="fw-bold bg-transparent">
               Responsibilities:
             </ListGroup.Item>
             {job.responsibilities.map((res, index) => (
-              <ListGroup.Item key={index} className="ps-4">
+              <ListGroup.Item key={index} className="ps-4 bg-transparent">
                 - {res}
               </ListGroup.Item>
             ))}
           </ListGroup>
 
-          <ListGroup variant="flush" className="mb-3">
-            <ListGroup.Item className="fw-bold">Benefits:</ListGroup.Item>
+          <ListGroup variant="flush" className="mb-3 bg-transparent">
+            <ListGroup.Item className="fw-bold bg-transparent">
+              Benefits:
+            </ListGroup.Item>
             {job.benefits.map((benefit, index) => (
-              <ListGroup.Item key={index} className="ps-4">
+              <ListGroup.Item key={index} className="ps-4 bg-transparent">
                 - {benefit}
               </ListGroup.Item>
             ))}

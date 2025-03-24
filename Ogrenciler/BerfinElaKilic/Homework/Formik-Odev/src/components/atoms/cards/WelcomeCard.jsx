@@ -2,6 +2,8 @@ import Card from "react-bootstrap/Card";
 import PrimaryButton from "../Buttons/PrimaryButton";
 import { NavLink } from "react-router";
 import WrapperCard from "./WrapperCard";
+import SuccessButton from "../Buttons/SuccessButton";
+import WarningButton from "../Buttons/WarningButton";
 
 function WelcomeCard({
   header,
@@ -14,13 +16,15 @@ function WelcomeCard({
   console.log(navigateTo);
   return (
     <WrapperCard>
-      <Card className="text-center border-0">
+      <Card className="text-center border-0 bg-transparent">
         {header && <Card.Header>{header}</Card.Header>}
         <Card.Body>
-          <Card.Title>Hoşgeldin {userName}!</Card.Title>
+          <Card.Title className="fw-bold fs-2">
+            Hoşgeldin {userName}!
+          </Card.Title>
           <Card.Text>{body}</Card.Text>
           <NavLink to={navigateTo}>
-            <PrimaryButton> {navigationButtonTitle}</PrimaryButton>
+            <WarningButton> {navigationButtonTitle}</WarningButton>
           </NavLink>
         </Card.Body>
         {footer && <Card.Footer className="text-muted">{footer}</Card.Footer>}

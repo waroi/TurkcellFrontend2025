@@ -2,7 +2,7 @@
 import clsx from "clsx";
 const BaseButton = ({ children, className, ...props }) => {
   return (
-    <button className={clsx(className, "btn")} {...props}>
+    <button className={clsx(className, "btn rounded-pill")} {...props}>
       {children}
     </button>
   );

@@ -17,7 +17,8 @@ function CustomComponent({
         {...field}
         {...props}
         className={clsx(
-          meta.error && "shadow-none border-1 border-warning",
+          Component !== "textarea" && "rounded-pill",
+          meta.error && "shadow-none border-1 border-warning ",
           className
         )}
       />

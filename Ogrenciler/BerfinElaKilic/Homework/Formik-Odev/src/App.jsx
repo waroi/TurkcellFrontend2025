@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="min-vh-100">
       <NavBar />
-      <div className="container d-flex flex-column justify-content-center align-items-center min-vh-100">
+      <div className="container d-flex flex-column min-vh-100 mt-5">
         <Router />
       </div>
     </div>
