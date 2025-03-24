@@ -11,7 +11,8 @@ import { db } from "./firebase/firebaseConfig";
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Applications from "./views/applications";
+import Applications from "./views/Applications";
+import Congrats from "./views/Congrats";
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/" element={<GeneralForm />} />
         <Route path="/applications" element={<Applications />} />
-
+        <Route path="/congrats" element={<Congrats />} />
       </Routes>
       <Footer />
       <ToastContainer position="top-right" autoClose={3000} />

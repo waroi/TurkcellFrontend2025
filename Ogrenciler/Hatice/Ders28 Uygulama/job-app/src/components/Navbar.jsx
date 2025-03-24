@@ -40,6 +40,9 @@ const Navbar = () => {
                         <h5 className="ps-5">{"{atmosware}"}</h5>
                     </div>
                     <div className="d-flex align-items-center">
+                        <button className="btn btn-warning">
+                            Başvurularımı Görüntüle
+                        </button>
                         <button
                             onClick={toggle}
                             className="btn px-5"
