@@ -1,33 +1,15 @@
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router";
-import { useUser } from "../../context/UserContext";
-import AuthService from "../../services/AuthService";
+import { useAdminLogin } from "../../utils/hooks/useAdminLogin";
 import './AdminLogin.css'
 
 const AdminLogin = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const navigate = useNavigate()
-  const { user } = useUser();
-
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    try {
-      const loginResponse = await AuthService.signIn(email, password)
-      console.log(loginResponse)
-      if (loginResponse.success) {
-        alert("Giriş başarılı!");
-        navigate('/')
-      }
-    } catch (err) {
-      setError("Giriş başarısız! Lütfen bilgilerinizi kontrol edin.");
-    }
-  };
-
-  useEffect(() => {
-    user ? navigate('/admin/applications') : ""
-  }, [user])
+  const {
+    email,
+    setEmail,
+    password,
+    setPassword,
+    error,
+    handleLogin
+  } = useAdminLogin();
 
 
   return (

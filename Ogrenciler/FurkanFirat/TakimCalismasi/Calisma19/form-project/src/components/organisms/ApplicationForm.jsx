@@ -5,7 +5,11 @@ import { applicationFormSchema } from '../../schemas';
 import ApplicationFormField from '../molecules/ApplicationFormField';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { db } from '../../firebase/config';
+import { useNavigate } from 'react-router';
+import { useAuth } from '../../context/AuthContext';
 export const ApplicationForm = () => {
+  const { currentUser } = useAuth();
+  const navigate = useNavigate();
   const {
     values,
     errors,
@@ -18,21 +22,23 @@ export const ApplicationForm = () => {
     initialValues: {
       firstName: '',
       lastName: '',
-      email: '',
+      email: currentUser.email || '',
       phone: '',
       country: '',
       city: '',
       address: '',
       desiredPosition: '',
       additionalInfo: '',
+      status: 'pending',
     },
     validationSchema: applicationFormSchema,
     onSubmit: async (values) => {
-      console.log(values);
       await addDoc(collection(db, 'applications'), {
         ...values,
         timestamp: serverTimestamp(),
       });
+      alert('Form submitted.');
+      navigate('/');
     },
   });
 

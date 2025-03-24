@@ -6,7 +6,9 @@ const NavItems = ({ currentUser, handleLogout }) => {
   if (currentUser) {
     return (
       <>
-        <NavbarLink to='/admin'>Applications</NavbarLink>
+        {currentUser.role === 'admin' && (
+          <NavbarLink to='/admin'>Applications</NavbarLink>
+        )}
 
         <li className='nav-item'>
           <Button

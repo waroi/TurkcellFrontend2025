@@ -1,6 +1,6 @@
 import stringMap from "../util/stringMap";
 import { setApplication } from "../services/firebase";
-import useUserStore from "../store/useUserStore";
+import useUserStore from "../store/useStore";
 
 export default function ApplicationDetail({
   application,
@@ -14,6 +14,7 @@ export default function ApplicationDetail({
     userStore.setApplicationStatus(application.id, status);
     goCompletedApplications();
     setDetail(null);
+    userStore.addToast("Başvuru başarıyla değerlendirildi.", "success");
   }
 
   return application ? (

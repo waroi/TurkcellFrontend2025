@@ -1,0 +1,64 @@
+.login-form-width {
+  width: 40%;
+}
+
+.primary-button {
+  background-color: #111827;
+  color: white;
+  padding: 8px;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.inline-button {
+    display: inline-block !important;
+    width: auto !important;
+    padding: 8px 20px;
+  }
+  
+
+.form-helper-text {
+  color: #111827;
+  font-size: 13px;
+}
+
+.custom-input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #b3b3b3;
+  outline: none;
+  font-size: 14px;
+}
+
+.form-container {
+  min-height: 70vh;
+  height: auto;
+  padding: 50px 0;
+}
+
+.custom-badge {
+  background-color: #ffc107;
+  color: black;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+.py-10 {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1);
+}
+
+.profile-badge{
+    background-color: transparent;
+    border: none;
+    outline: none;
+}

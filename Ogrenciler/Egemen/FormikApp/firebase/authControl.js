@@ -17,6 +17,7 @@ export const registerWithGoogle = async () => {
   }
   return user;
 };
+
 export const signOut = async () => {
   return auth.signOut();
 };

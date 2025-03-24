@@ -1,23 +1,21 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import {
-  sendEmail,
-  sendPasswordReset,
-  checkIsHeAdmin,
-} from "../services/db_service";
-import SignInModal from "../components/SignInModal/SignInModal";
-import useFetchApplication from "../store/useFetchApplication";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { auth } from "../../firebase_config";
+import useFetchApplication from "../store/useFetchApplication";
+import SignInModal from "../components/SignInModal/SignInModal";
 import { Link } from "react-router-dom";
 import "./AdminPanel.css";
 
 const AdminPanel = () => {
-  const { applications, show, handleClose, handleLogin } =
-    useFetchApplication();
-  const [isAdmin, setIsAdmin] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
-
+  const {
+    applications,
+    show,
+    handleClose,
+    handleLoginAndCheckAdmin,
+    isAdmin,
+    isLoading,
+  } = useFetchApplication();
   const [searchTerm, setSearchTerm] = useState("");
+
   const filteredApplications = applications.filter((app) => {
     const lowerCaseSearch = searchTerm.toLowerCase();
     return (
@@ -25,42 +23,6 @@ const AdminPanel = () => {
       (app.skills && app.skills.toLowerCase().includes(lowerCaseSearch))
     );
   });
-
-  const checkAdminStatus = async () => {
-    setIsLoading(true);
-    if (auth.currentUser) {
-      try {
-        const adminStatus = await checkIsHeAdmin();
-        setIsAdmin(adminStatus === true);
-      } catch (error) {
-        console.error("Admin kontrolü sırasında hata:", error);
-        setIsAdmin(false);
-      }
-    } else {
-      setIsAdmin(false);
-    }
-    setIsLoading(false);
-  };
-
-  useEffect(() => {
-    checkAdminStatus();
-
-    const unsubscribe = auth.onAuthStateChanged((user) => {
-      if (user) {
-        checkAdminStatus();
-      } else {
-        setIsAdmin(false);
-        setIsLoading(false);
-      }
-    });
-
-    return () => unsubscribe();
-  }, []);
-
-  const handleLoginAndCheckAdmin = async () => {
-    await handleLogin();
-    await checkAdminStatus();
-  };
 
   if (isLoading) {
     return (

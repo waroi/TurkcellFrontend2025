@@ -1,16 +1,18 @@
 import { useEffect } from "react";
-import {
-  register as registerFb,
-  login as loginFb,
-  logout as logoutFb,
-} from "../services/firebase";
-import { getUser, setUser as setUserFb } from "../services/firebase";
 import { useNavigate } from "react-router";
-import useUserStore from "../store/useUserStore";
+
+import {
+  register as registerFirebase,
+  login as loginFirebase,
+  logout as logoutFirebase,
+  getUser,
+} from "../services/firebase";
+
+import useStore from "../store/useStore";
 
 export default function () {
   const navigation = useNavigate();
-  const { setUser } = useUserStore();
+  const { setUser, addToast } = useStore();
 
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("user"));
@@ -18,43 +20,58 @@ export default function () {
     if (user) setUser(user);
   }, []);
 
-  function register(form) {
-    console.log("user", form);
-    registerFb(form.email, form.password, form.name, form.surname).then(
-      (id) => {
-        const data = {
+  function register({ email, password, name, surname }) {
+    registerFirebase(email, password, name, surname)
+      .then((id, data) => {
+        data = {
           id,
-          email: form.email,
-          name: form.name,
-          surname: form.surname,
+          email,
+          name,
+          surname,
           isAdmin: false,
         };
-        setUser(data);
+
         localStorage.setItem("user", JSON.stringify(data));
+        setUser(data);
         navigation("/application");
-      }
-    );
+      })
+      .catch((error) => {
+        switch (error.code) {
+          case "auth/email-already-in-use":
+            addToast("Bu e-posta adresi zaten kullanımda.", "danger");
+            break;
+          default:
+            addToast("Bir hata oluştu, lütfen tekrar deneyiniz.", "danger");
+            break;
+        }
+      });
   }
 
-  function login(form) {
-    loginFb(form.email, form.password).then((user) => {
-      console.log("loginuser", user);
-
-      getUser(user).then((user) => {
-        setUser(user);
-        localStorage.setItem("user", JSON.stringify(user));
+  function login({ email, password }) {
+    loginFirebase(email, password)
+      .then((user) => {
+        getUser(user).then((user) => {
+          localStorage.setItem("user", JSON.stringify(user));
+          setUser(user);
+          navigation("/application");
+        });
+      })
+      .catch((error) => {
+        switch (error.code) {
+          case "auth/invalid-credential":
+            addToast("E-posta adresi veya şifre yanlış.", "danger");
+            break;
+          default:
+            addToast("Bir hata oluştu, lütfen tekrar deneyiniz.", "danger");
+            break;
+        }
       });
-
-      navigation("/application");
-    });
   }
 
   function logout() {
-    console.log("click");
-
-    logoutFb().then(() => {
-      setUser(null);
+    logoutFirebase().then(() => {
       localStorage.removeItem("user");
+      setUser(null);
       navigation("/");
     });
   }

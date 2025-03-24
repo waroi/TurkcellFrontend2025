@@ -1,3 +1,18 @@
+:root {
+  --primary-color: #4a6cf7;
+  --primary-hover: #3a5ce4;
+  --text-color: #333;
+  --light-text: #666;
+  --border-color: #e1e1e1;
+  --background-color: #f9fafb;
+  --card-background: #ffffff;
+  --error-color: #e53e3e;
+  --success-color: #38a169;
+  --transition: all 0.3s ease;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
+  --radius: 8px;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;

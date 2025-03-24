@@ -154,3 +154,28 @@ export const levels = [
   "Intermediate",
   "Advanced",
 ];
+export const DEPARTMENTS = [
+  "Bilgisayar Mühendisliği",
+  "Elektrik-Elektronik Mühendisliği",
+  "Makine Mühendisliği",
+  "İşletme",
+  "Psikoloji",
+  "Hukuk",
+  "Mimarlık",
+  "Tıp",
+  "Endüstri Mühendisliği",
+  "Uluslararası İlişkiler",
+  "İktisat",
+  "Sosyoloji",
+  "Matematik",
+  "Fizik",
+  "Kimya Mühendisliği",
+  "İnşaat Mühendisliği",
+  "Grafik Tasarım",
+  "Gazetecilik"
+];
+
+export const GRADUATION_YEARS = Array.from(
+  { length: 60 },
+  (_, i) => new Date().getFullYear() - i
+);

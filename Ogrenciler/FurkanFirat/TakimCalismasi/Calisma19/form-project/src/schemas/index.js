@@ -19,24 +19,24 @@ export const applicationFormSchema = Yup.object().shape({
 
 export const loginFormSchema = Yup.object({
   email: Yup.string()
-    .email('Geçerli bir email giriniz')
-    .required('Email alanı zorunludur'),
+    .email('Please enter a valid email')
+    .required('Email is required'),
   password: Yup.string()
-    .min(6, 'Şifre en az 6 karakter olmalıdır')
-    .required('Şifre alanı zorunludur'),
+    .min(6, 'Password must be at least 6 characters')
+    .required('Password is required'),
 });
 
 export const registerFormSchema = Yup.object({
   fullName: Yup.string()
-    .min(3, 'Ad en az 3 karakter olmalıdır')
-    .required('Ad zorunludur'),
+    .min(3, 'Name must be at least 3 characters')
+    .required('Name is required'),
   email: Yup.string()
-    .email('Geçerli bir e-posta adresi girin')
-    .required('E-posta zorunludur'),
+    .email('Please enter a valid email address')
+    .required('Email is required'),
   password: Yup.string()
-    .min(6, 'Şifre en az 6 karakter olmalıdır')
-    .required('Şifre zorunludur'),
+    .min(6, 'Password must be at least 6 characters')
+    .required('Password is required'),
   confirmPassword: Yup.string()
-    .oneOf([Yup.ref('password')], 'Şifreler eşleşmiyor')
-    .required('Şifre tekrar zorunludur'),
+    .oneOf([Yup.ref('password')], 'Passwords do not match')
+    .required('Confirm password is required'),
 });

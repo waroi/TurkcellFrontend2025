@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { auth } from "../firebase/firebase";
 
 export function unsubscribe(setUserAuth) {

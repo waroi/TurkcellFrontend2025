@@ -1,18 +1,37 @@
 import { useFormik } from "formik";
 import { basicSchema } from "../schemas";
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { useNavigate } from "react-router";
+import { auth, db } from "../firebase/firebaseConfig";
+import { addDoc, collection } from "firebase/firestore";
 
 const onSubmit = async (values, actions) => {
-  console.log(values);
-  console.log(actions);
+  try {
+    await addDoc(collection(db, "jobApplications"), {
+      fullName: values.fullName,
+      email: values.email,
+      phone: values.phone,
+      linkedin: values.linkedin,
+      coverLetter: values.coverLetter,
+      createdAt: new Date(),
+    });
 
-  await new Promise((resolve) => {
-    setTimeout(resolve, 1000);
-  });
-  actions.resetForm();
+    console.log("Başvuru başarıyla eklendi!");
+    actions.resetForm();
+  } catch (error) {
+    console.error("Başvuru gönderilirken hata oluştu:", error);
+  }
 };
 
 function GeneralForm() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!auth.currentUser) {
+      navigate("/login");
+    }
+  }, []);
+
   const { values, errors, isSubmitting, handleChange, handleSubmit } =
     useFormik({
       initialValues: {
@@ -20,18 +39,16 @@ function GeneralForm() {
         email: "",
         phone: "",
         linkedin: "",
-        resume: "",
         coverLetter: "",
       },
       validationSchema: basicSchema,
       onSubmit,
     });
 
-  //   console.log(formik);
   return (
     <div className="container fromContainer">
       <div>
-      <h3 className="p-5 text-start form-title">{"{atmosware} Başvuru Sayfasına Hoşgeldiniz!"}</h3>
+        <h3 className="p-5 text-start form-title">{"{atmosware} Başvuru Sayfasına Hoşgeldiniz!"}</h3>
       </div>
       <form className="border border-5 my-4 p-3 rounded-3 generalForm" onSubmit={handleSubmit}>
         <div className="inputDiv m-2 d-flex justify-content-between">
@@ -40,7 +57,7 @@ function GeneralForm() {
             type="text"
             value={values.fullName}
             onChange={handleChange}
-            id="fullName"
+            name="fullName"
             placeholder={errors.fullName ? errors.fullName : "Ad soyad giriniz"}
             className={errors.fullName ? "input-error" : ""}
           />
@@ -51,7 +68,7 @@ function GeneralForm() {
             type="email"
             value={values.email}
             onChange={handleChange}
-            id="email"
+            name="email"
             placeholder={errors.email ? errors.email : "Mail adresinizi giriniz"}
             className={errors.email ? "input-error" : ""}
           />
@@ -62,7 +79,7 @@ function GeneralForm() {
             type="number"
             value={values.phone}
             onChange={handleChange}
-            id="phone"
+            name="phone"
             placeholder={errors.phone ? errors.phone : "Telefon numarası giriniz"}
             className={errors.phone ? "input-error" : ""}
           />
@@ -73,20 +90,22 @@ function GeneralForm() {
             type="url"
             value={values.linkedin}
             onChange={handleChange}
-            id="linkedin"
-            placeholder={errors.linkedin? errors.linkedin:"Geçerli bir URL giriniz"}
+            name="linkedin"
+            placeholder={errors.linkedin ? errors.linkedin : "Geçerli bir URL giriniz"}
             className={errors.linkedin ? "input-error" : ""}
           />
         </div>
-        <div className="resume m-2 d-flex justify-content-between">
-          <label>Resume : </label>
-          <input
-            type="file"
-            value={values.resume}
-            onChange={handleChange}
-            id="resume"
-            className={errors.resume ? "input-error" : ""}
-          />
+        <div className="m-2 d-flex justify-content-between">
+          <label>Pozisyon : </label>
+          <select name="position" id="position" className="form-select w-50"
+            style={{ border: "1px solid var(--primary)", borderRadius: "5px" }}>
+            <option value="" disabled>
+              Lütfen Bir Pozisyon Seçiniz
+            </option>
+            <option value="Frontend">Frontend Developer</option>
+            <option value="Backend">Backend Developer</option>
+            <option value="Full Stack">Full Stack Developer</option>
+          </select>
         </div>
         <hr />
         <div className="coverLetter m-2 d-flex flex-column justify-content-between">
@@ -94,9 +113,9 @@ function GeneralForm() {
           <textarea
             value={values.coverLetter}
             onChange={handleChange}
-            id="coverLetter"
+            name="coverLetter"
             placeholder={errors.coverLetter ? errors.coverLetter : "Geçerli bir ön yazı giriniz"}
-            className={errors.coverLetter ? "input-error" : "" } 
+            className={`form-control ${errors.coverLetter ? "input-error" : ""}`}
             rows="4"
           />
         </div>
@@ -105,9 +124,6 @@ function GeneralForm() {
         <button disabled={isSubmitting} type="submit" className="btn btn-outline-primary rounded m-3">
           Kaydet
         </button>
-        <Link className="formLink" to="/portal">
-          Portala Git
-        </Link>
       </form>
     </div>
   );

@@ -12,7 +12,6 @@ import {
   addDoc,
   getDocs,
   doc,
-  deleteDoc,
   getDoc,
   updateDoc,
   setDoc,
@@ -71,7 +70,10 @@ export function submitForm(form) {
   delete form["email-again"];
   delete form["terms-and-conditions"];
   delete form["kvkk"];
-  return addDoc(collection(database, "application-forms"), form);
+  return addDoc(collection(database, "application-forms"), {
+    ...form,
+    status: "pending",
+  });
 }
 
 export function getForms() {
@@ -87,6 +89,6 @@ export function getForms() {
 
 export function setApplication(id, status) {
   return updateDoc(doc(database, "application-forms", id), {
-    status,
+    ...status,
   }).then(() => id);
 }

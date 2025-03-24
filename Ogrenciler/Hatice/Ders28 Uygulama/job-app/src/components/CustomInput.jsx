@@ -9,9 +9,9 @@ function CustomInput({ label, ...props }) {
       <input
         {...field}
         {...props}
+        value={field.value || ""} 
         className={meta.error ? "input-error" : ""}
       />
-
       {meta.error && <div className="error">{meta.error}</div>}
     </>
   );

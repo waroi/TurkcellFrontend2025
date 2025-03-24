@@ -5,18 +5,20 @@ import Button from "../../atoms/buttons/Button";
 import { getUser } from "../../../../firebase/dbController";
 import { auth } from "../../../../firebase/firebase";
 import { NavLink, useNavigate } from "react-router";
+import { getUserApplications } from "../../../../firebase/dbController";
 const Navbar = () => {
   const [userAuth, setUserAuth] = useState(null);
   let navigate = useNavigate();
-  useEffect(() => {
-    unsubscribe(setUserAuth);
-  }, []);
 
   const handleRegister = async () => {
     await registerWithGoogle();
     const user = await getUser(auth.currentUser.uid);
     user.role === "admin" ? navigate("/applications") : navigate("/form");
   };
+
+  useEffect(() => {
+    unsubscribe(setUserAuth);
+  }, []);
 
   return (
     <div>
@@ -31,19 +33,26 @@ const Navbar = () => {
 
           {userAuth ? (
             <>
-              <div className="container d-flex justify-content-end">
+              <div className="container d-flex justify-content-end gap-2">
                 <NavLink
                   to="/applications"
                   className="btn btn-warning rounded-pill "
                 >
-                  Applications
+                  Başvurular
+                </NavLink>
+                <NavLink
+                  to="/form"
+                  className="btn btn-warning rounded-pill "
+                  onClick={getUserApplications()}
+                >
+                  Yeni Başvuru
                 </NavLink>
                 <NavLink
                   to="/"
                   className="btn btn-danger rounded-pill"
                   onClick={signOut}
                 >
-                  SignOut
+                  Çıkış
                 </NavLink>
               </div>
             </>
@@ -53,7 +62,7 @@ const Navbar = () => {
               href="/userPage"
               onClick={() => handleRegister()}
             >
-              Login
+              Giriş
             </Button>
           )}
         </div>

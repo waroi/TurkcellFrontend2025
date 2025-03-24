@@ -1,10 +1,27 @@
-import { useState } from "react";
-import { useAuth } from "../context/AuthContext";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { auth } from "../firebase/firebaseConfig";
 
 const Navbar = () => {
-    const { user, logout } = useAuth();
     const [dark, setDark] = useState(false);
+    const [user, setUser] = useState(null);
+    const navigate = useNavigate();
 
+    useEffect(() => {
+        const unsubscribe = auth.onAuthStateChanged((currentUser) => {
+            setUser(currentUser);
+        });
+        return () => unsubscribe();
+    }, []);
+    const logout = async () => {
+        try {
+            await auth.signOut();
+            setUser(null);
+            navigate("/login");
+        } catch (error) {
+            console.error("Çıkış yapılamadı:", error);
+        }
+    };
     const toggle = () => {
         setDark(!dark);
         if (dark) {
@@ -15,7 +32,6 @@ const Navbar = () => {
             document.body.classList.add("dark-mode");
         }
     };
-
     return (
         <>
             <nav className="navbar navbar-expand-lg text-white fixed-top bg-primary">
@@ -29,12 +45,12 @@ const Navbar = () => {
                             className="btn px-5"
                             style={{
                                 cursor: "pointer",
-                                fontSize: "30px"
+                                fontSize: "30px",
                             }}
                         >
-                            {dark ? "🌙" : "🔆"} {/* Dark modda ay, light modda güneş */}
+                            {dark ? "🌙" : "🔆"}
                         </button>
-                        {user && (
+                        {user ? (
                             <button
                                 onClick={logout}
                                 className="btn btn-danger mx-3"
@@ -42,6 +58,8 @@ const Navbar = () => {
                             >
                                 Çıkış Yap
                             </button>
+                        ) : (
+                            <p className="mx-3">Giriş yapınız</p>
                         )}
                     </div>
                 </div>

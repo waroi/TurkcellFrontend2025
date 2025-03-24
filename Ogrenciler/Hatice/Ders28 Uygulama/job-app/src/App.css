@@ -40,7 +40,9 @@ footer{
 .generalForm input:focus{
   box-shadow: 0 0 4px 2px var(--primary);
 }
-
+.generalForm select{
+  min-width: 300px;
+}
 .formContainer{
   overflow:scroll;
 }

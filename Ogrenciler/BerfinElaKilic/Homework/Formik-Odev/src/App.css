@@ -1,0 +1,225 @@
+:root {
+  --bg-color: #1e1e1e;
+  --primary-color: #6619c4;
+  --secondary-color: #2d055e;
+  --success-color: #4caf50;
+  --warning-color: #ff9800;
+  --danger-color: #d33024;
+  --shadow-color: rgba(103, 40, 180, 0.3);
+}
+
+body {
+  background: linear-gradient(45deg, var(--bg-color), #272626);
+  color: rgb(205, 205, 205) !important;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-secondary {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+.btn-success {
+  background-color: var(--success-color);
+  border-color: var(--success-color);
+}
+
+.btn-warning {
+  background-color: var(--warning-color);
+  border-color: var(--warning-color);
+}
+
+.btn-danger:hover {
+  background-color: var(--danger-color);
+  border-color: var(--danger-color);
+}
+.btn-primary:hover {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-secondary:hover {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+.btn-success:hover {
+  background-color: var(--success-color);
+  border-color: var(--success-color);
+}
+
+.btn-warning:hover {
+  background-color: var(--warning-color);
+  border-color: var(--warning-color);
+}
+
+.btn-danger:hover {
+  background-color: var(--danger-color);
+  border-color: var(--danger-color);
+}
+
+.btn-primary:hover,
+.btn-secondary:hover,
+.btn-success:hover,
+.btn-warning:hover,
+.btn-danger:hover {
+  opacity: 0.9;
+}
+
+.btn-primary:focus,
+.btn-secondary:focus,
+.btn-success:focus,
+.btn-warning:focus,
+.btn-danger:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 0.2rem rgba(88, 33, 154, 0.25) !important;
+}
+.shadow {
+  box-shadow: 0 0.5rem 1rem var(--shadow-color) !important;
+}
+
+.shadow-sm {
+  box-shadow: 0 0.125rem 0.5rem var(--shadow-color) !important;
+}
+
+.shadow-lg {
+  box-shadow: 0 1rem 3rem var(--shadow-color) !important;
+}
+form input,
+form select,
+form textarea,
+form button {
+  background-color: transparent !important;
+  color: rgb(205, 205, 205) !important;
+  border: 1px solid rgb(100, 100, 100) !important;
+  border-radius: 0.25rem !important;
+  padding: 0.5rem !important;
+}
+form input,
+form select,
+form textarea {
+  background-color: transparent !important;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus,
+form button:focus {
+  outline: none !important;
+  border-color: var(--primary-color) !important;
+}
+
+form input::placeholder,
+form select::placeholder,
+form textarea::placeholder {
+  color: rgb(205, 205, 205) !important;
+  opacity: 1 !important;
+}
+.wrapper-card {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.wrapper-card:hover {
+  box-shadow: 0 0.5rem 2rem var(--shadow-color) !important;
+}
+.card-header {
+  color: rgb(255, 255, 255) !important;
+}
+
+.card-title {
+  color: rgb(214, 214, 214) !important;
+}
+
+.card-text {
+  color: rgb(170, 170, 170) !important;
+}
+
+.list-group-item {
+  color: rgb(205, 205, 205) !important;
+}
+
+.list-group-item.fw-bold {
+  color: rgb(255, 255, 255) !important;
+}
+
+.list-group-item.text-muted {
+  color: rgb(180, 180, 180) !important;
+}
+
+.badge.bg-primary {
+  background-color: var(--primary-color) !important;
+  color: rgb(255, 255, 255) !important;
+}
+
+.badge.bg-secondary {
+  background-color: var(--secondary-color) !important;
+  color: rgb(255, 255, 255) !important;
+}
+
+.bg-warning {
+  background-color: var(--warning-color) !important;
+  color: rgb(255, 255, 255) !important;
+}
+
+.badge.bg-success {
+  background-color: var(--success-color) !important;
+  color: rgb(255, 255, 255) !important;
+}
+
+.badge.bg-danger {
+  background-color: var(--danger-color) !important;
+  color: rgb(255, 255, 255) !important;
+}
+
+.list-group-item {
+  border-color: rgba(205, 205, 205, 0.1) !important;
+  border-width: 1px !important;
+}
+
+.list-group-item.fw-bold {
+  border-color: transparent !important;
+}
+
+h2,
+h5 {
+  color: rgb(244, 241, 241) !important;
+}
+
+.text-muted {
+  color: rgb(186, 185, 185) !important;
+}
+
+.fw-bold {
+  color: rgb(255, 255, 255) !important;
+}
+.text-secondary {
+  color: rgb(212, 207, 207) !important;
+}
+
+.error-input {
+  border: 2px solid var(--danger-color) !important;
+  background-color: rgba(244, 67, 54, 0.1) !important;
+  color: var(--danger-color) !important;
+}
+.error-input:focus {
+  border: none !important;
+}
+
+.error-message {
+  color: var(--danger-color);
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+.border-secondary {
+  border-color: rgb(68, 64, 64) !important;
+}

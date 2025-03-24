@@ -1,6 +1,6 @@
 body {
   font-family: "Montserrat", sans-serif;
-  background-color: #1f1f1f;
+  background-color: #f9fafb;
 }
 
 .error-text {
@@ -24,7 +24,7 @@ body {
 
 .array-button {
   background-color: transparent;
-  color: white;
+  color: #111827;
   border: none;
   text-align: center;
   text-decoration: none;
@@ -36,10 +36,6 @@ body {
 
 .bg-red {
   background-color: #d64206;
-}
-
-.color-red {
-  color: #d64206;
 }
 
 input:focus,
@@ -65,7 +61,9 @@ select:focus {
 }
 
 .form-control {
-  background-color: #dcdcdc !important;
+  background-color: #ffffff !important;
+  border-radius: 5px !important;
+  font-size: 14px !important;
 }
 
 .form-control:focus {
@@ -85,4 +83,20 @@ select:focus {
 
 .footer-links a:hover {
   color: lightgray;
+}
+
+.h-screen-50 {
+  height: 50vh;
+}
+
+.h-screen-100 {
+  height: 100vh;
+}
+
+.login-bg-color {
+  background-color: #f9fafb;
+}
+
+.white-space {
+  white-space: pre-line;
 }

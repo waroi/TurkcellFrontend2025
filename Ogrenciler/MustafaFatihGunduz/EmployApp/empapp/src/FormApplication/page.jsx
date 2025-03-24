@@ -1,79 +1,25 @@
 import Input from "../components/Input/Input";
 import CheckBox from "../components/CheckBox/CheckBox";
-import { useFormik } from "formik";
-import { basicSchema } from "../schema";
-import { userService } from "../services/userService";
 import AdminButton from "../components/AdminButton";
-import { saveApplication } from "../services/applicationService";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { auth } from "../../firebase_config";
 import SignInModal from "../components/SignInModal/SignInModal";
-import { useState, useEffect } from "react";
-import { signOutFromApp } from "../services/auth_service";
-import { checkIsHeAdmin } from "../services/db_service";
 import "../pages/AdminPanel.css";
-
+import useLoggedIn from "../store/useLoggedIn";
+import useSignOut from "../store/useSignOut";
+import useFormikOnInputs from "../store/useFormikOnInputs";
 const Application = () => {
-  const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const [admin, setAdmin] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const { handleSignOut } = useSignOut();
+  const { isLoggedIn } = useLoggedIn();
+  const {
+    isSubmitting,
+    values,
+    errors,
+    handleChange,
+    handleClose,
+    show,
+    handleSubmit,
+  } = useFormikOnInputs();
 
-  const handleAdmin = async () => {
-    const user = await checkIsHeAdmin();
-    setAdmin(user);
-  };
-  useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((user) => {
-      setIsLoggedIn(user !== null);
-    });
-
-    return () => unsubscribe();
-  }, []);
-  const { values, errors, isSubmitting, handleChange, handleSubmit } =
-    useFormik({
-      initialValues: {
-        name: "",
-        lastName: "",
-        adressFirst: "",
-        adressSecond: "",
-        city: "",
-        province: "",
-        postCode: "",
-        country: "",
-        phoneNumber: "",
-        email: "",
-        birthday: "",
-        isTurkish: true,
-        university: "",
-        isGraduate: false,
-        skills: "",
-      },
-      validationSchema: basicSchema,
-      onSubmit: async (values) => {
-        await handleAdmin();
-        try {
-          if (auth.currentUser !== null) {
-            await userService.saveUser(values);
-            await saveApplication(values);
-            console.log("Başarı ile kaydedildi");
-          } else {
-            setShow(true);
-          }
-        } catch (error) {
-          console.log("OnSubmit Error", error);
-        }
-      },
-    });
-
-  const handleSignOut = async () => {
-    await signOutFromApp();
-    if (auth.currentUser === null) {
-      alert("Oturumu kapattınız");
-    } else {
-      alert("Oturum kapatılamadı");
-    }
-  };
   return (
     <>
       <div className="container mt-4 adminContainer">

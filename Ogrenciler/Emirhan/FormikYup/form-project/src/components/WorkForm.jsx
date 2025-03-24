@@ -1,8 +1,10 @@
-import { ErrorMessage, Field, FieldArray, Form, Formik } from "formik";
+import { Form, Formik } from "formik";
 import { basicSchema } from "../schema";
 import FormInput from "./FormInput";
 import ArrayInput from "./ArrayInput";
 import SelectInput from "./SelectInput";
+import { uploadJobForm } from "../firebase/firebaseUpload";
+import Navbar from "./Navbar";
 
 function WorkForm() {
   const initialValues = {
@@ -15,6 +17,7 @@ function WorkForm() {
     salary: "",
     motivation: "",
     email: "",
+    status: "Beklemede",
     school: "",
     department: "",
     grade: "",
@@ -28,7 +31,6 @@ function WorkForm() {
     socialmedia: [],
     references: [],
   };
-
   const singleFields = [
     { name: "name", type: "text", label: "Ad" },
     { name: "surname", type: "text", label: "Soyad" },
@@ -230,32 +232,18 @@ function WorkForm() {
       ],
     },
   ];
-
   return (
-    <div className="container">
+    <div className="container py-10">
+      <Navbar />
       <Formik
         initialValues={initialValues}
         validationSchema={basicSchema}
-        onSubmit={(values, { resetForm }) => {
+        onSubmit={async (values, { resetForm }) => {
           const filteredValues = Object.fromEntries(
             Object.entries(values).filter(([key]) => !key.endsWith("Input"))
           );
-
-          fetch("http://localhost:3000/jobApplications", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(filteredValues),
-          })
-            .then((response) => {
-              if (!response.ok)
-                throw new Error("Veri kaydedilirken hata oluştu.");
-              alert("Başarıyla kaydedildi!");
-              resetForm();
-            })
-            .catch((error) => {
-              console.error("Hata:", error);
-              alert("Bir hata oluştu, tekrar deneyin.");
-            });
+          await uploadJobForm(filteredValues);
+          resetForm();
         }}
       >
         {({ values, errors, touched, setFieldValue }) => (
@@ -268,7 +256,6 @@ function WorkForm() {
                 type={item.type}
               />
             ))}
-
             {selectFields.map((item) => (
               <SelectInput
                 key={item.name}
@@ -280,7 +267,6 @@ function WorkForm() {
                 setFieldValue={setFieldValue}
               />
             ))}
-
             {arrayFields.map((item) => (
               <ArrayInput
                 key={item.name}
@@ -292,8 +278,7 @@ function WorkForm() {
                 setFieldValue={setFieldValue}
               />
             ))}
-
-            <button className="btn bg-green" type="submit">
+            <button className="primary-button inline-button mt-5" type="submit">
               Submit
             </button>
           </Form>
@@ -302,5 +287,4 @@ function WorkForm() {
     </div>
   );
 }
-
 export default WorkForm;
