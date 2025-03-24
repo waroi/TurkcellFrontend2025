@@ -4,12 +4,17 @@ import useJobsStore from '../store/jobs';
 const Applications = () => {
   const jobs = useJobsStore((state) => state.jobs);
   const fetchJobs = useJobsStore((state) => state.fetchJobs);
+  const updateJobStatus = useJobsStore((state) => state.updateJobStatus);
 
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetchJobs().then(() => setLoading(false));
   }, [fetchJobs]); // fetchJobs bağımlılığı eklendi
+
+  const handleStatusChange = (id, newStatus) => {
+    updateJobStatus(id, newStatus);
+  };
 
   return (
     <div className='container mt-5'>
@@ -27,6 +32,7 @@ const Applications = () => {
               <th>LinkedIn</th>
               <th>Ön Yazı</th>
               <th>Başvuru Tarihi</th>
+              <th>Durum</th>
             </tr>
           </thead>
           <tbody>
@@ -42,6 +48,17 @@ const Applications = () => {
                 </td>
                 <td>{job.coverLetter}</td>
                 <td>{job.createdAt?.toDate?.().toLocaleString() || '-'}</td>
+                <td>
+                  <select className='bg-white text-dark'
+                  style={{ border: "1px solid var(--primary)", borderRadius: "5px" }}
+                    value={job.status || 'Beklemede'}
+                    onChange={(e) => handleStatusChange(job.id, e.target.value)}
+                  >
+                    <option value='Beklemede'>Beklemede</option>
+                    <option value='Olumlu'>Olumlu</option>
+                    <option value='Olumsuz'>Olumsuz</option>
+                  </select>
+                </td>
               </tr>
             ))}
           </tbody>
