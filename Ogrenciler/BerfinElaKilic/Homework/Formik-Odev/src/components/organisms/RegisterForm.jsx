@@ -43,6 +43,7 @@ const RegisterForm = () => {
 
   return (
     <Form onSubmit={handleSubmit} className="w-100 p-5 bg-transparent">
+      <h1>Kaydol</h1>
       <Form.Group className="mb-3" controlId="firstName">
         <Form.Label>İsim: </Form.Label>
         <Form.Control

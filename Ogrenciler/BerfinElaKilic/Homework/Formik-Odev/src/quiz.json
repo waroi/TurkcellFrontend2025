@@ -1,0 +1,334 @@
+[
+  {
+    "candidateId": "candidateId",
+    "_id": "34c6q2h6le47xxzs",
+    "examDate": "2023-02-14T12:26:44.439Z",
+    "isCompleted": false,
+    "name": "Admission Test",
+    "totalScore": 0,
+    "totalDuration": 16,
+    "relatedJob": "jobId",
+    "senderId": "adminId",
+    "questions": [
+      {
+        "duration": 3,
+        "text": "What’s Harry’s Patronus?.",
+        "img": "https://demo-res.cloudinary.com/image/upload/sample.jpg",
+        "answers": [
+          { "text": "A Bunny", "isCorrect": false },
+          { "text": "A stag", "isCorrect": true },
+          { "text": "a Unicorn", "isCorrect": false },
+          { "text": "a Dragon", "isCorrect": false }
+        ],
+        "providedAnswer": 0
+      },
+      {
+        "duration": 4,
+        "text": "Who’s the ghost of Gryffindor?",
+        "answers": [
+          { "text": "the Grey Lady ", "isCorrect": false },
+          { "text": "Nearly Headless Nick ", "isCorrect": true },
+          { "text": "the Fat Friar ", "isCorrect": false },
+          { "text": "the Bloody Baron", "isCorrect": false }
+        ],
+        "providedAnswer": 0
+      },
+      {
+        "duration": 3,
+        "text": "If you had to get rid of a Dementor, what would you do?",
+        "img": "https://demo-res.cloudinary.com/image/upload/sample.jpg",
+        "answers": [
+          { "text": "Expelliarmus", "isCorrect": false },
+          { "text": "Expecto Patronum!", "isCorrect": true },
+          { "text": "Petrificus Totalus", "isCorrect": false },
+          { "text": "Sectumsempra", "isCorrect": false }
+        ]
+      },
+      {
+        "duration": 3,
+        "text": "Which language has the more native speakers?",
+        "answers": [
+          { "text": "English", "isCorrect": false },
+          { "text": "Chinese", "isCorrect": false },
+          { "text": "Spanish", "isCorrect": true },
+          { "text": "Deutsch", "isCorrect": false }
+        ]
+      },
+      {
+        "duration": 3,
+        "text": "In what country would you find Mount Kilimanjaro?",
+        "answers": [
+          { "text": "Turkey", "isCorrect": false },
+          { "text": "Tanzania", "isCorrect": true },
+          { "text": "Nepal", "isCorrect": false },
+          { "text": "India", "isCorrect": false }
+        ]
+      }
+    ]
+  },
+  {
+    "candidateName": "Hilal",
+    "_id": "34c6q2hvle47z3xy",
+    "examDate": "2023-02-14T12:27:38.805Z",
+    "isCompleted": false,
+    "name": "Admission Test",
+    "totalScore": 0,
+    "totalDuration": 17,
+    "questions": [
+      {
+        "duration": 4,
+        "text": "Who’s the ghost of Gryffindor?",
+        "answers": [
+          { "text": "the Grey Lady ", "isCorrect": false },
+          { "text": "Nearly Headless Nick ", "isCorrect": true },
+          { "text": "the Fat Friar ", "isCorrect": false },
+          { "text": "the Bloody Baron", "isCorrect": false }
+        ]
+      },
+      {
+        "duration": 3,
+        "text": "What’s Harry’s Patronus?.",
+        "img": "https://demo-res.cloudinary.com/image/upload/sample.jpg",
+        "answers": [
+          { "text": "A Bunny", "isCorrect": false },
+          { "text": "A stag", "isCorrect": true },
+          { "text": "a Unicorn", "isCorrect": false },
+          { "text": "a Dragon", "isCorrect": false }
+        ]
+      },
+      {
+        "duration": 4,
+        "text": "Which country won the first-ever soccer World Cup in 1930?",
+        "img": "https://demo-res.cloudinary.com/image/upload/sample.jpg",
+        "answers": [
+          { "text": "Argentine", "isCorrect": false },
+          { "text": "Spain", "isCorrect": true },
+          { "text": "Brazil", "isCorrect": false },
+          { "text": "Uruguay", "isCorrect": false }
+        ]
+      },
+      {
+        "duration": 3,
+        "text": "If you had to get rid of a Dementor, what would you do?",
+        "img": "https://demo-res.cloudinary.com/image/upload/sample.jpg",
+        "answers": [
+          { "text": "Expelliarmus", "isCorrect": false },
+          { "text": "Expecto Patronum!", "isCorrect": true },
+          { "text": "Petrificus Totalus", "isCorrect": false },
+          { "text": "Sectumsempra", "isCorrect": false }
+        ]
+      },
+      {
+        "duration": 3,
+        "text": "NWhich planet has the most moons?",
+        "img": "https://demo-res.cloudinary.com/image/upload/sample.jpg",
+        "answers": [
+          { "text": "Uranus", "isCorrect": false },
+          { "text": "Pluton", "isCorrect": false },
+          { "text": "Saturn ", "isCorrect": true },
+          { "text": "Venus", "isCorrect": false }
+        ]
+      }
+    ]
+  },
+  {
+    "candidateName": "Hilal",
+    "_id": "34c6q2m7le488pyd",
+    "examDate": "2023-02-14T12:35:07.236Z",
+    "isCompleted": false,
+    "name": "Admission Test",
+    "totalScore": 20,
+    "totalDuration": 15,
+    "questions": [
+      {
+        "duration": 4,
+        "text": "Which country won the first-ever soccer World Cup in 1930?",
+        "img": "https://demo-res.cloudinary.com/image/upload/sample.jpg",
+        "answers": [
+          { "text": "Argentine", "isCorrect": false },
+          { "text": "Spain", "isCorrect": true },
+          { "text": "Brazil", "isCorrect": false },
+          { "text": "Uruguay", "isCorrect": false }
+        ],
+        "providedAnswer": 0
+      },
+      {
+        "duration": 3,
+        "text": "Who discovered that the earth revolves around the sun? ",
+        "answers": [
+          { "text": "Nicolaus Copernicus ", "isCorrect": true },
+          { "text": "Albert Einstein", "isCorrect": false },
+          { "text": " Nicola Tesla", "isCorrect": false },
+          { "text": "Alan Turing", "isCorrect": false }
+        ],
+        "providedAnswer": 3
+      },
+      {
+        "duration": 2,
+        "text": "Where would you be if you were standing on the Spanish Steps? ",
+        "answers": [
+          { "text": "Barcelona", "isCorrect": false },
+          { "text": "Rome", "isCorrect": true },
+          { "text": "Hong Kong", "isCorrect": false },
+          { "text": "Paris", "isCorrect": false }
+        ],
+        "providedAnswer": 1
+      },
+      {
+        "duration": 3,
+        "text": "Which language has the more native speakers?",
+        "answers": [
+          { "text": "English", "isCorrect": false },
+          { "text": "Chinese", "isCorrect": false },
+          { "text": "Spanish", "isCorrect": true },
+          { "text": "Deutsch", "isCorrect": false }
+        ]
+      },
+      {
+        "duration": 3,
+        "text": "In what country would you find Mount Kilimanjaro?",
+        "answers": [
+          { "text": "Turkey", "isCorrect": false },
+          { "text": "Tanzania", "isCorrect": true },
+          { "text": "Nepal", "isCorrect": false },
+          { "text": "India", "isCorrect": false }
+        ]
+      }
+    ]
+  },
+  {
+    "candidateName": "Hilal",
+    "_id": "1z4or3vsliaap0wr",
+    "examDate": "2023-05-30T13:09:13.562Z",
+    "isCompleted": false,
+    "name": "Admission Test",
+    "totalScore": 20,
+    "totalDuration": 16,
+    "questions": [
+      {
+        "duration": 4,
+        "text": "Who’s the ghost of Gryffindor?",
+        "answers": [
+          { "text": "the Grey Lady ", "isCorrect": false },
+          { "text": "Nearly Headless Nick ", "isCorrect": true },
+          { "text": "the Fat Friar ", "isCorrect": false },
+          { "text": "the Bloody Baron", "isCorrect": false }
+        ],
+        "providedAnswer": 0
+      },
+      {
+        "duration": 2,
+        "text": "Where would you be if you were standing on the Spanish Steps? ",
+        "answers": [
+          { "text": "Barcelona", "isCorrect": false },
+          { "text": "Rome", "isCorrect": true },
+          { "text": "Hong Kong", "isCorrect": false },
+          { "text": "Paris", "isCorrect": false }
+        ],
+        "providedAnswer": 0
+      },
+      {
+        "duration": 4,
+        "text": "Who was the first woman to win a Nobel Prize (in 1903)?",
+        "img": "https://demo-res.cloudinary.com/image/upload/sample.jpg",
+        "answers": [
+          { "text": "Selma Lagerlöf", "isCorrect": false },
+          { "text": "Marie Curie", "isCorrect": true },
+          { "text": "Nelly Sachs", "isCorrect": false },
+          { "text": "Elfriede Jelinek", "isCorrect": false }
+        ],
+        "providedAnswer": 0
+      },
+      {
+        "duration": 3,
+        "text": "What’s Harry’s Patronus?.",
+        "img": "https://demo-res.cloudinary.com/image/upload/sample.jpg",
+        "answers": [
+          { "text": "A Bunny", "isCorrect": false },
+          { "text": "A stag", "isCorrect": true },
+          { "text": "a Unicorn", "isCorrect": false },
+          { "text": "a Dragon", "isCorrect": false }
+        ],
+        "providedAnswer": 0
+      },
+      {
+        "duration": 3,
+        "text": "Who discovered that the earth revolves around the sun? ",
+        "answers": [
+          { "text": "Nicolaus Copernicus ", "isCorrect": true },
+          { "text": "Albert Einstein", "isCorrect": false },
+          { "text": " Nicola Tesla", "isCorrect": false },
+          { "text": "Alan Turing", "isCorrect": false }
+        ],
+        "providedAnswer": 0
+      }
+    ]
+  },
+  {
+    "candidateName": "sevgi ",
+    "_id": "b85o2c9p3liaar6e4",
+    "examDate": "2023-05-30T13:10:53.979Z",
+    "isCompleted": false,
+    "name": "Admission Test",
+    "totalScore": 20,
+    "totalDuration": 15,
+    "questions": [
+      {
+        "duration": 3,
+        "text": "What’s Harry’s Patronus?.",
+        "img": "https://demo-res.cloudinary.com/image/upload/sample.jpg",
+        "answers": [
+          { "text": "A Bunny", "isCorrect": false },
+          { "text": "A stag", "isCorrect": true },
+          { "text": "a Unicorn", "isCorrect": false },
+          { "text": "a Dragon", "isCorrect": false }
+        ],
+        "providedAnswer": 1
+      },
+      {
+        "duration": 3,
+        "text": "If you had to get rid of a Dementor, what would you do?",
+        "img": "https://demo-res.cloudinary.com/image/upload/sample.jpg",
+        "answers": [
+          { "text": "Expelliarmus", "isCorrect": false },
+          { "text": "Expecto Patronum!", "isCorrect": true },
+          { "text": "Petrificus Totalus", "isCorrect": false },
+          { "text": "Sectumsempra", "isCorrect": false }
+        ],
+        "providedAnswer": 0
+      },
+      {
+        "duration": 2,
+        "text": "Where would you be if you were standing on the Spanish Steps? ",
+        "answers": [
+          { "text": "Barcelona", "isCorrect": false },
+          { "text": "Rome", "isCorrect": true },
+          { "text": "Hong Kong", "isCorrect": false },
+          { "text": "Paris", "isCorrect": false }
+        ],
+        "providedAnswer": 3
+      },
+      {
+        "duration": 4,
+        "text": "Which country won the first-ever soccer World Cup in 1930?",
+        "img": "https://demo-res.cloudinary.com/image/upload/sample.jpg",
+        "answers": [
+          { "text": "Argentine", "isCorrect": false },
+          { "text": "Spain", "isCorrect": true },
+          { "text": "Brazil", "isCorrect": false },
+          { "text": "Uruguay", "isCorrect": false }
+        ]
+      },
+      {
+        "duration": 3,
+        "text": "Who discovered that the earth revolves around the sun? ",
+        "answers": [
+          { "text": "Nicolaus Copernicus ", "isCorrect": true },
+          { "text": "Albert Einstein", "isCorrect": false },
+          { "text": " Nicola Tesla", "isCorrect": false },
+          { "text": "Alan Turing", "isCorrect": false }
+        ]
+      }
+    ]
+  }
+]
