@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { getAllJobs, deleteJob } from '../../utils/services'
-import BaseCard from '../atoms/cards/baseCard';
-import DangerButton from '../atoms/Buttons/DangerButton';
+import JobList from '../molecules/Jobs/JobsList';
 
 const Admin = () => {
     const [listing, setListing] = useState([])
@@ -21,7 +20,7 @@ const Admin = () => {
     const handleDelete = async (id) => {
         try {
           await deleteJob(id); 
-          setListings(listings.filter(listing => listing.jobId !== id)); 
+          setListing(listing.filter(listing => listing.jobId !== id)); 
         } catch (error) {
           console.error(error);
         }
@@ -30,9 +29,9 @@ const Admin = () => {
 
 return (
     <div>
-        <h1>İlanlar</h1>
-        <BaseCard/>
-        <DangerButton onClick= {handleDelete}>Sil</DangerButton> 
+        <h1>İlan Yönetimi</h1>
+        <JobList jobs={listing} onDelete={handleDelete}/>
+
     </div>
 )
 }
