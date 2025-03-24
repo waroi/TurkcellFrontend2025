@@ -104,6 +104,11 @@ form button {
   border-radius: 0.25rem !important;
   padding: 0.5rem !important;
 }
+form input,
+form select,
+form textarea {
+  background-color: transparent !important;
+}
 
 form input:focus,
 form select:focus,

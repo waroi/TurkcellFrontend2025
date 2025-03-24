@@ -49,7 +49,9 @@
         "university": "XYZ University",
         "graduationYear": 2019
       },
-      "aplliedJobs": ["jobId"],
+      "aplliedJobs": [
+        "jobId"
+      ],
       "role": "user"
     },
     {
@@ -227,7 +229,9 @@
       "lastName": "User",
       "email": "admin@example.com",
       "role": "admin",
-      "createdJobs": ["jobId123"],
+      "createdJobs": [
+        "jobId123"
+      ],
       "approvedCandidates": [
         {
           "candidateId": "candidateId",
@@ -256,6 +260,13 @@
       "lastName": "semercioğlu",
       "role": "admin",
       "email": "h@gmail.com"
+    },
+    {
+      "id": "B41gDrkVwfb7hMtF5nQjKwLX4ow2",
+      "firstName": "helen",
+      "lastName": "studyo",
+      "role": "admin",
+      "email": "helenstudyo@gmail.com"
     }
   ]
 }
