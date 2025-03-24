@@ -39,6 +39,7 @@ const Router = () => {
         { index: true, element: <Navigate to=":userId" /> },
         { path: `:userId`, element: <ProtectedUserDashboard /> },
         { path: `:userId/profile`, element: <UserProfile /> },
+        { path: `:userId/candidates/:candidateId`, element: <UserProfile />}
       ], //TODO:display Not Protected,crud protected for userId
     },
     {
