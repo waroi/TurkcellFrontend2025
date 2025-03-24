@@ -26,7 +26,7 @@ export default function () {
       name = values["sign-up-name"],
       surname = values["sign-up-surname"];
 
-    registerFirebase(email, password, name, surname)
+    return registerFirebase(email, password, name, surname)
       .then((id, data) => {
         data = {
           id,
@@ -56,7 +56,7 @@ export default function () {
     let email = values["sign-in-email"],
       password = values["sign-in-password"];
 
-    loginFirebase(email, password)
+    return loginFirebase(email, password)
       .then((user) => {
         getUser(user).then((user) => {
           localStorage.setItem("user", JSON.stringify(user));
