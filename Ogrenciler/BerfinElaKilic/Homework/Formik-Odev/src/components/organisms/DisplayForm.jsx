@@ -1,7 +1,7 @@
 import React from "react";
 import PrimaryButton from "../atoms/Buttons/PrimaryButton";
 
-const DisplayForm = ({ data, onEdit }) => {
+const DisplayForm = ({ data, setIsEditing }) => {
   return (
     <div className="container p-4">
       <h2 className="mb-4">Başvuru Bilgileri</h2>
@@ -69,7 +69,7 @@ const DisplayForm = ({ data, onEdit }) => {
 
       <PrimaryButton
         type="button"
-        onClick={onEdit}
+        onClick={ () => setIsEditing(true)}
         className="btn btn-warning mt-3"
       >
         Düzenle
