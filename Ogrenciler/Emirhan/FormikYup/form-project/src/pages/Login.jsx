@@ -15,6 +15,7 @@ function Login() {
         const userData = await fetchUser(alreadyUser.uid);
         if (userData) {
           localStorage.setItem("status", userData.status);
+          localStorage.setItem("name", userData.name);
           navigate(`/position`);
         }
       }
@@ -29,7 +30,7 @@ function Login() {
 
     <div className="container d-flex flex-column align-items-center justify-content-center form-container">
       <Navbar />
-      <div className="h-auto login-form-width shadow p-4 mb-5 bg-white rounded">
+      <div className="h-auto login-form-width shadow p-4 my-5 bg-white rounded">
         <div className="w-100 py-3 d-flex flex-column justify-content-center align-items-center">
           <i class="fa-solid fa-user-tie fs-1 mb-3"></i>
           <h4 className="fs-4">Zencode'a hoşgeldin</h4>

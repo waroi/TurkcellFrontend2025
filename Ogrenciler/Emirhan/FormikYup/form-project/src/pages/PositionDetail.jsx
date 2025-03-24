@@ -17,7 +17,7 @@ const PositionDetail = () => {
         <>
             <Navbar />
             <div className='container my-5'>
-                <h2 className="text-center mb-4">{position.title}</h2>
+                <h2 className="text-center mb-4 py-5">{position.title}</h2>
                 <div>
                     <div className="d-flex flex-column gap-3">
                         <div className='d-flex gap-2 align-items-center'>
@@ -60,7 +60,7 @@ const PositionDetail = () => {
                         </div>
                     </div>
                     <div className="text-center mt-4">
-                        <a href='/workform' className="btn btn-primary btn-lg">Hemen Başvur!</a>
+                        <a href='/workform' className="primary-button inline-button text-decoration-none">Hemen Başvur!</a>
                     </div>
                 </div>
             </div>
