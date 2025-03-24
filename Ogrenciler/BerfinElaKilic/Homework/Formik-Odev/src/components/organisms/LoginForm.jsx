@@ -48,10 +48,7 @@ const LoginForm = () => {
     });
 
   return (
-    <Form
-      onSubmit={handleSubmit}
-      className="shadow w-75 p-5 rounded-5 bg-transparent"
-    >
+    <Form onSubmit={handleSubmit} className="w-75 p-5 bg-transparent">
       <Form.Group className="mb-3" controlId="email">
         <Form.Label>Mail Adresi: </Form.Label>
         <Form.Control
@@ -60,9 +57,9 @@ const LoginForm = () => {
           value={values.email}
           onChange={handleChange}
           name="email"
-          className={errors.email ? "border-2 border-danger shadow-none" : ""}
+          className={errors.email ? "error-input" : ""}
         />
-        {errors.email && <p className="error">{errors.email}</p>}
+        {errors.email && <p className="error-message">{errors.email}</p>}
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="password">
@@ -73,11 +70,9 @@ const LoginForm = () => {
           value={values.password}
           onChange={handleChange}
           name="password"
-          className={
-            errors.password ? "border-2 border-danger shadow-none" : ""
-          }
+          className={errors.password ? "error-input" : ""}
         />
-        {errors.password && <p className="error">{errors.password}</p>}
+        {errors.password && <p className="error-message">{errors.password}</p>}
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="role">
@@ -86,13 +81,13 @@ const LoginForm = () => {
           name="role"
           value={values.role}
           onChange={handleChange}
-          className={errors.role ? "border-2 border-danger shadow-none" : ""}
+          className={errors.role ? "error-input" : ""}
         >
           <option value="">Rol Seçiniz</option>
           <option value="user">İş Arıyorum</option>
           <option value="admin">İlan veriyorum</option>
         </Form.Select>
-        {errors.role && <p className="error">{errors.role}</p>}
+        {errors.role && <p className="error-message">{errors.role}</p>}
       </Form.Group>
 
       <div className="d-flex gap-4 align-items-center">

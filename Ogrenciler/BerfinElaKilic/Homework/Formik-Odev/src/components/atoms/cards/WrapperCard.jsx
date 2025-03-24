@@ -5,7 +5,7 @@ const WrapperCard = ({ children, className, ...props }) => {
     <div
       className={clsx(
         className,
-        "shadow-sm p-3 rounded-3 bg-transparent wrapper-card"
+        "shadow-sm p-3 border border-secondary rounded-3 bg-transparent wrapper-card"
       )}
       {...props}
     >

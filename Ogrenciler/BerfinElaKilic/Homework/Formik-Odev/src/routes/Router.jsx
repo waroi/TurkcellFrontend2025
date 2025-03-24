@@ -37,13 +37,14 @@ const Router = () => {
       children: [
         { index: true, element: <Navigate to=":userId" /> },
         { path: `:userId`, element: <ProtectedUserDashboard /> },
-        { path: `profile`, element: <UserProfile /> },
+        { path: `:userId/profile`, element: <UserProfile /> },
       ], //TODO:display Not Protected,crud protected for userId
     },
     {
       path: "jobs", //TODO: Not Protected
       element: <Jobs />,
-      children: [{ path: `:id`, element: <JobDetail /> },
+      children: [
+        { path: `:id`, element: <JobDetail /> },
         { index: true, element: <Navigate to="all" /> },
         { path: `all`, element: <AllJobs /> },
       ],

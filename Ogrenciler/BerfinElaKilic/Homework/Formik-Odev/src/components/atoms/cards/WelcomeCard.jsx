@@ -15,7 +15,7 @@ function WelcomeCard({
 }) {
   console.log(navigateTo);
   return (
-    <WrapperCard>
+    <>
       <Card className="text-center border-0 bg-transparent">
         {header && <Card.Header>{header}</Card.Header>}
         <Card.Body>
@@ -29,7 +29,7 @@ function WelcomeCard({
         </Card.Body>
         {footer && <Card.Footer className="text-muted">{footer}</Card.Footer>}
       </Card>
-    </WrapperCard>
+    </>
   );
 }
 

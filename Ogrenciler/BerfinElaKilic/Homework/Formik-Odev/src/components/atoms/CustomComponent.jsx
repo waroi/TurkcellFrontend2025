@@ -18,12 +18,12 @@ function CustomComponent({
         {...props}
         className={clsx(
           Component !== "textarea" && "rounded-pill",
-          meta.error && "shadow-none border-1 border-warning ",
+          meta.error && "shadow-none error-input ",
           className
         )}
       />
 
-      {meta.error && <div className="bg-warning">{meta.error}</div>}
+      {meta.error && <div className="error-message">{meta.error}</div>}
     </>
   );
 }

@@ -49,6 +49,7 @@
         "university": "XYZ University",
         "graduationYear": 2019
       },
+      "aplliedJobs": ["jobId"],
       "role": "user"
     },
     {
@@ -131,10 +132,90 @@
       "deadline": "2024-04-30T23:59:59Z",
       "applicants": [
         {
-          "candidateId": "candidateId",
+          "candidateId": "candidateId1",
           "appliedAt": "2024-03-21T11:00:00Z",
           "status": "pending",
           "approvedByAdmin": "adminId456"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "createdAt": "2024-03-22T09:30:00Z",
+      "createdByAdmin": "adminId790",
+      "position": "Backend Developer",
+      "company": "DataSolutions",
+      "location": "Hybrid",
+      "employmentType": "Full-time",
+      "term": "Permanent",
+      "salaryRange": "1800-2200 EUR",
+      "description": "We are looking for a talented Backend Developer to join our growing team.",
+      "requirements": [
+        "Proficiency in Node.js and Express.js",
+        "Experience with databases such as MongoDB and PostgreSQL",
+        "Familiarity with Docker and AWS",
+        "Strong problem-solving and debugging skills"
+      ],
+      "responsibilities": [
+        "Develop and maintain backend services",
+        "Design and implement APIs",
+        "Ensure the scalability and reliability of the system",
+        "Collaborate with frontend developers and product managers"
+      ],
+      "benefits": [
+        "Health insurance",
+        "Paid time off",
+        "Performance bonuses",
+        "Opportunity for career growth"
+      ],
+      "status": "open",
+      "deadline": "2024-05-15T23:59:59Z",
+      "applicants": [
+        {
+          "candidateId": "candidateId2",
+          "appliedAt": "2024-03-22T10:00:00Z",
+          "status": "pending",
+          "approvedByAdmin": "adminId457"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "createdAt": "2024-03-23T11:15:00Z",
+      "createdByAdmin": "adminId791",
+      "position": "UX/UI Designer",
+      "company": "Creative Studios",
+      "location": "Remote",
+      "employmentType": "Part-time",
+      "term": "Contract",
+      "salaryRange": "1000-1200 EUR",
+      "description": "Creative Studios is looking for a UX/UI Designer with a passion for crafting beautiful and functional designs.",
+      "requirements": [
+        "Experience with Figma and Adobe XD",
+        "Proficiency in HTML and CSS",
+        "Strong portfolio showcasing web and mobile design projects",
+        "Ability to work in an agile team"
+      ],
+      "responsibilities": [
+        "Design and prototype user interfaces for web and mobile applications",
+        "Collaborate with developers to ensure designs are implemented accurately",
+        "Conduct user research and usability testing",
+        "Provide feedback and support during the development process"
+      ],
+      "benefits": [
+        "Work remotely from anywhere",
+        "Flexible schedule",
+        "Creative freedom and autonomy",
+        "Paid contract extension after initial term"
+      ],
+      "status": "open",
+      "deadline": "2024-05-30T23:59:59Z",
+      "applicants": [
+        {
+          "candidateId": "candidateId3",
+          "appliedAt": "2024-03-23T12:00:00Z",
+          "status": "pending",
+          "approvedByAdmin": "adminId458"
         }
       ]
     }
@@ -146,9 +227,7 @@
       "lastName": "User",
       "email": "admin@example.com",
       "role": "admin",
-      "createdJobs": [
-        "jobId123"
-      ],
+      "createdJobs": ["jobId123"],
       "approvedCandidates": [
         {
           "candidateId": "candidateId",

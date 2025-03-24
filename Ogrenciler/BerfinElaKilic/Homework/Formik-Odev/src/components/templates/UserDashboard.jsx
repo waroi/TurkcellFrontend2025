@@ -3,6 +3,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import WelcomeCard from "../atoms/cards/WelcomeCard";
 import WrapperCard from "../atoms/cards/WrapperCard";
+import AllJobs from "../../views/AllJobs";
 
 function UserDashboard({ data, location }) {
   const text =
@@ -18,52 +19,22 @@ function UserDashboard({ data, location }) {
               navigateTo={`${location.pathname}/profile`}
               navigationButtonTitle="Özgeçmişini görüntüle ve düzenle"
               body={text}
+              className="border-secondary border-1"
             />
           )}
         </Col>
-        <Col xs={12} md={3} className="d-flex flex-column gap-2">
-          <WrapperCard>
-            Son 90 günde özgeçmişinin görüntülenme sayısı: 90
-          </WrapperCard>
-          <WrapperCard>Bir bilgi tanesi</WrapperCard>
+
+        <Col
+          xs={12}
+          md={3}
+          className="d-flex p-5 align-items-center justify-content-center flex-column gap-2 border-start border-secondary border-1"
+        >
+          <div>Son 90 günde özgeçmişinin görüntülenme sayısı: 90</div>
         </Col>
       </Row>
-      <div>
-        <h5> Başvurduğun İLANLAR</h5>
-        <WrapperCard>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
-            officia eligendi laboriosam quidem facere non reiciendis vitae sunt
-            molestias. Corrupti!
-          </p>
-        </WrapperCard>
-        <WrapperCard>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
-            officia eligendi laboriosam quidem facere non reiciendis vitae sunt
-            molestias. Corrupti!
-          </p>
-        </WrapperCard>
-        <WrapperCard>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
-            officia eligendi laboriosam quidem facere non reiciendis vitae sunt
-            molestias. Corrupti!
-          </p>
-        </WrapperCard>
-        <WrapperCard>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
-            officia eligendi laboriosam quidem facere non reiciendis vitae sunt
-            molestias. Corrupti!
-          </p>
-        </WrapperCard>
-      </div>
 
-      <h5> Sana uygun İLANLAR</h5>
-      <WrapperCard>
-        <p>Sana uygun işler jobCard bleşeniyle çağırırım</p>
-      </WrapperCard>
+      <AllJobs title="Başvurduğun İlanlar" limit="5" />
+      <AllJobs title="Sana uygun İlanlar" limit="2" />
     </Container>
   );
 }

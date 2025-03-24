@@ -42,10 +42,7 @@ const RegisterForm = () => {
     });
 
   return (
-    <Form
-      onSubmit={handleSubmit}
-      className="shadow w-100 p-5 rounded-5 bg-transparent"
-    >
+    <Form onSubmit={handleSubmit} className="w-100 p-5 bg-transparent">
       <Form.Group className="mb-3" controlId="firstName">
         <Form.Label>İsim: </Form.Label>
         <Form.Control
@@ -54,11 +51,11 @@ const RegisterForm = () => {
           value={values.firstName}
           onChange={handleChange}
           name="firstName"
-          className={
-            errors.firstName ? "border-2 border-danger shadow-none" : ""
-          }
+          className={errors.firstName ? "error-input shadow-none" : ""}
         />
-        {errors.firstName && <p className="error">{errors.firstName}</p>}
+        {errors.firstName && (
+          <p className="error-message">{errors.firstName}</p>
+        )}
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="lastName">
@@ -69,11 +66,9 @@ const RegisterForm = () => {
           value={values.lastName}
           onChange={handleChange}
           name="lastName"
-          className={
-            errors.lastName ? "border-2 border-danger shadow-none" : ""
-          }
+          className={errors.lastName ? "error-input shadow-none" : ""}
         />
-        {errors.lastName && <p className="error">{errors.lastName}</p>}
+        {errors.lastName && <p className="error-message">{errors.lastName}</p>}
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="email">
@@ -84,9 +79,9 @@ const RegisterForm = () => {
           value={values.email}
           onChange={handleChange}
           name="email"
-          className={errors.email ? "border-2 border-danger shadow-none" : ""}
+          className={errors.email ? "error-input shadow-none" : ""}
         />
-        {errors.email && <p className="error">{errors.email}</p>}
+        {errors.email && <p className="error-message">{errors.email}</p>}
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="password">
@@ -97,11 +92,9 @@ const RegisterForm = () => {
           value={values.password}
           onChange={handleChange}
           name="password"
-          className={
-            errors.password ? "border-2 border-danger shadow-none" : ""
-          }
+          className={errors.password ? "error-input shadow-none" : ""}
         />
-        {errors.password && <p className="error">{errors.password}</p>}
+        {errors.password && <p className="error-message">{errors.password}</p>}
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="passwordConfirmation">
@@ -113,13 +106,11 @@ const RegisterForm = () => {
           onChange={handleChange}
           name="passwordConfirmation"
           className={
-            errors.passwordConfirmation
-              ? "border-2 border-danger shadow-none"
-              : ""
+            errors.passwordConfirmation ? "error-input shadow-none" : ""
           }
         />
         {errors.passwordConfirmation && (
-          <p className="error">{errors.passwordConfirmation}</p>
+          <p className="error-message">{errors.passwordConfirmation}</p>
         )}
       </Form.Group>
 
@@ -129,14 +120,14 @@ const RegisterForm = () => {
           name="role"
           value={values.role}
           onChange={handleChange}
-          className={errors.role ? "border-2 border-danger shadow-none" : ""}
+          className={errors.role ? "error-input shadow-none" : ""}
         >
           {" "}
           <option value="">Sitemizi kullanım amacınızı seçiniz.</option>
           <option value="user">İş Arıyorum.</option>
           <option value="admin">İlan vereceğim.</option>
         </Form.Select>
-        {errors.role && <p className="error">{errors.role}</p>}
+        {errors.role && <p className="error-message">{errors.role}</p>}
       </Form.Group>
 
       <div className="d-flex gap-4 align-items-center">

@@ -54,7 +54,7 @@ const PortalFormu = () => {
       >
         {({ isSubmitting }) => (
           <>
-            <Form>
+            <Form className="">
               <ProfileForm />
               <EduForm />
               <LanguageForm />
