@@ -9,6 +9,7 @@ import Auth from "../views/Auth";
 import Jobs from "../views/Jobs";
 import ProtectedUserDashboard from "../views/UserDashboardView";
 import AllJobs from "../views/AllJobs";
+import ApplicantsView from "../views/ApplicantsView";
 
 const Router = () => {
   const routes = useRoutes([
@@ -47,6 +48,7 @@ const Router = () => {
         { path: `:id`, element: <JobDetail /> },
         { index: true, element: <Navigate to="all" /> },
         { path: `all`, element: <AllJobs /> },
+        { path: `:jobId/candidates`, element: <ApplicantsView />},
       ],
     },
   ]);

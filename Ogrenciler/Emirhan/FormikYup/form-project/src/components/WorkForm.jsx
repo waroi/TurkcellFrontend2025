@@ -4,6 +4,7 @@ import FormInput from "./FormInput";
 import ArrayInput from "./ArrayInput";
 import SelectInput from "./SelectInput";
 import { uploadJobForm } from "../firebase/firebaseUpload";
+import Navbar from "./Navbar";
 
 function WorkForm() {
   const initialValues = {
@@ -232,8 +233,8 @@ function WorkForm() {
     },
   ];
   return (
-    <div className="container">
-      {" "}
+    <div className="container py-10">
+      <Navbar />
       <Formik
         initialValues={initialValues}
         validationSchema={basicSchema}
@@ -277,7 +278,7 @@ function WorkForm() {
                 setFieldValue={setFieldValue}
               />
             ))}
-            <button className="btn bg-green" type="submit">
+            <button className="primary-button inline-button mt-5" type="submit">
               Submit
             </button>
           </Form>
