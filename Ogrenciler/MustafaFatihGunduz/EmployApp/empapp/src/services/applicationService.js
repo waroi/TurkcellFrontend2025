@@ -1,5 +1,5 @@
 import { db } from "../../firebase_config";
-import { collection, getDocs, query, setDoc } from "firebase/firestore";
+import { collection, getDocs, addDoc } from "firebase/firestore";
 
 export const fetchApplications = async () => {
   try {
@@ -14,28 +14,12 @@ export const fetchApplications = async () => {
   }
 };
 
-export const saveApplication = async (application) => {
+export const saveUser = async (newApplication) => {
   try {
-    const q = query(collection(db, "applications"));
-    const newApp = await setDoc(q, {
-      adressFirst: application.adressFirst,
-      adressSecond: application.adressSecond,
-      birthday: application.birthday,
-      city: application.city,
-      country: application.country,
-      email: application.email,
-      isGraduate: application.isGraduate,
-      isTurkish: application.isTurkish,
-      lastName: application.lastName,
-      name: application.name,
-      phoneNumber: application.phoneNumber,
-      postCode: application.postCode,
-      province: application.province,
-      university: application.university,
-      skills: application.skills,
-    });
-    console.log(newApp);
+    const docRef = await addDoc(collection(db, "applications"), newApplication);
+    console.log("Başvuru başarıyla kaydedildi, ID:", docRef.id);
   } catch (error) {
-    console.log("SaveApplication Error", error);
+    console.error("Başvuru kaydedilirken hata oluştu:", error);
+    throw error;
   }
-};
+}
