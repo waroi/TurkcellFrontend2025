@@ -1,0 +1,54 @@
+{
+  "questions": [
+    {
+      "question": "HTML'de semantic bir element değildir?",
+      "options": ["<header>", "<section>", "<div>", "<article>"],
+      "correctAnswer": 2,
+      "explanation": "<div> elementi semantic bir element değildir, genel bir amaç için kullanılır."
+    },
+    {
+      "question": "CSS'de bir elementi yatay ve dikey olarak ortalamak için hangisi kullanılabilir?",
+      "options": [
+        "display: table;",
+        "position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);",
+        "margin: auto;",
+        "float: center;"
+      ],
+      "correctAnswer": 1,
+      "explanation": "position: absolute ile top ve left 50% verip transform: translate(-50%, -50%) kullanmak elementi tam ortalar."
+    },
+    {
+      "question": "JavaScript'te hangisi bir arrow function örneğidir?",
+      "options": [
+        "function() {}",
+        "() => {}",
+        "function => {}",
+        "() function {}"
+      ],
+      "correctAnswer": 1,
+      "explanation": "() => {} syntax'ı arrow function'ı temsil eder."
+    },
+    {
+      "question": "React'ta bir component'in state'ini güncellemek için hangisi kullanılır?",
+      "options": [
+        "this.updateState()",
+        "this.setState()",
+        "this.modifyState()",
+        "this.changeState()"
+      ],
+      "correctAnswer": 1,
+      "explanation": "React'ta state güncellemek için this.setState() metodu kullanılır."
+    },
+    {
+      "question": "Hangisi CSS pre-processor değildir?",
+      "options": ["Sass", "Less", "Stylus", "PostHTML"],
+      "correctAnswer": 3,
+      "explanation": "PostHTML bir CSS pre-processor değildir, HTML post-processor'dür."
+    }
+  ],
+  "info": {
+    "totalQuestions": 5,
+    "categories": ["HTML", "CSS", "JavaScript", "React", "CSS Pre-processors"],
+    "difficulty": "Intermediate"
+  }
+}
