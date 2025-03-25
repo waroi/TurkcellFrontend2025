@@ -1,0 +1,48 @@
+.result-container {
+    padding: 40px 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.success-icon {
+    font-size: 80px;
+    color: #4CAF50;
+    margin-bottom: 20px;
+}
+
+.result-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #212121;
+    font-weight: 600;
+}
+
+.score-container {
+    margin-bottom: 30px;
+}
+
+.score-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #3f51b5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px;
+    box-shadow: 0 4px 10px rgba(63, 81, 181, 0.3);
+}
+
+.score-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+}
+
+.score-text {
+    font-size: 1.2rem;
+    color: #424242;
+    max-width: 400px;
+}

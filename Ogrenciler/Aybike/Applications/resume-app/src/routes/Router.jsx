@@ -8,6 +8,7 @@ const LazyAdminLogin = lazy(() => import('../pages/admin/AdminLogin'))
 const LazyApplicationView = lazy(() => import('../pages/user/ApplicationView'))
 const LazyApplicationDetailView = lazy(() => import('../pages/admin/ApplicationDetailView'))
 const LazyApplicationListView = lazy(() => import('../pages/admin/ApplicationListView'))
+const LazyTest = lazy(() => import('../pages/test/Test'))
 
 const Router = () => {
   const routes = useRoutes([
@@ -37,6 +38,10 @@ const Router = () => {
         {
           path: 'gift',
           element: <LazyGiftView />
+        },
+        {
+          path: 'test',
+          element: <LazyTest />
         }
       ],
     },

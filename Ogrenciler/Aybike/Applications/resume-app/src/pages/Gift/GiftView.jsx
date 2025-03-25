@@ -8,8 +8,8 @@ import CelebrationEmoji from '../../components/Gift/CelebrationEmoji/Celebration
 import ProgressBar from '../../components/Gift/ProgressBar/ProgressBar.jsx';
 import { useGiftView } from '../../utils/hooks/useGiftView.jsx';
 
-const GiftView = () => {
-    const { loading } = useGiftView();
+const GiftView = ({ test = false }) => {
+    const { loading } = useGiftView()
 
     return (
         <div className="gift-view-container">
@@ -26,19 +26,16 @@ const GiftView = () => {
                     <ProgressBar />
 
                     <p className="message">
-                        Başvurunuz başarıyla alındı ve değerlendirme sürecine alındı.
+                        {test ? "Değerlendirme testini tamamlandı" : "Başvurunuz başarıyla alındı ve değerlendirme sürecine alındı."}
                         <span className="highlight"> Katıldığınız için teşekkür ederiz!</span>
                     </p>
                     <p className="sub-message">
-                        Başvurunuz sistemimize kaydedildi. İnceleme sonrası sizinle iletişime geçeceğiz.
+                        {test ? "Test tamamlandı süreç boyunca mail adresinizi kontrol etmeyi unutmayınız" : " Başvurunuz sistemimize kaydedildi. İnceleme sonrası sizinle iletişime geçeceğiz."}
                     </p>
 
                     <div className="celebration-buttons">
                         <Link to="/" className="btn btn-primary">
                             Ana Sayfaya Dön
-                        </Link>
-                        <Link to="/application" className="btn btn-secondary">
-                            Yeni Başvuru
                         </Link>
                     </div>
                 </div>
