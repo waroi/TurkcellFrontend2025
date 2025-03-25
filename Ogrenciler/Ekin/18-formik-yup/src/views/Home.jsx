@@ -2,7 +2,7 @@ import { Tab, Pane } from "../components/Tabs";
 import SignIn from "../components/SignIn";
 import SignUp from "../components/SignUp";
 
-export default function HomeView() {
+export default function Home() {
   return (
     <>
       <div className="container">

@@ -1,5 +1,6 @@
 import { useRef, useEffect } from "react";
-import useStore from "../store/useStore";
+
+import useStore from "@/store/useStore";
 
 export default function () {
   const { toast } = useStore();
