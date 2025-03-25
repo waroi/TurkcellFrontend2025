@@ -13,6 +13,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Applications from "./views/Applications";
 import Congrats from "./views/Congrats";
+import MyApplications from "./views/MyApplications";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/" element={<GeneralForm />} />
         <Route path="/applications" element={<Applications />} />
         <Route path="/congrats" element={<Congrats />} />
+        <Route path="/my-applications" element={<MyApplications />} />
       </Routes>
       <Footer />
       <ToastContainer position="top-right" autoClose={3000} />
