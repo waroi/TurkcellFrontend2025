@@ -51,7 +51,7 @@ function Applications() {
                 >
                   <i className="fa-solid fa-circle-check"></i>
                 </button>
-                <button className="btn btn-danger btn-sm">
+                <button className="btn btn-danger btn-sm" onClick={() => updateApplicationStatus(application.id, "Reddedildi", application.email, application.name)}>
                   <i className="fa-solid fa-circle-xmark"></i>
                 </button>
                 <button className="btn btn-primary btn-sm">
