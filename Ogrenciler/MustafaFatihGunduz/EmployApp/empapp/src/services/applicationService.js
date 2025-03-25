@@ -37,7 +37,7 @@ export const fetchUserApplication = async (userEmail) => {
       id: doc.id,
       ...doc.data(),
     }));
-    return applications[0] || null;
+    return applications || null;
   } catch (error) {
     console.error("Kullanıcı başvurusu çekilirken hata oluştu:", error);
     return null;
