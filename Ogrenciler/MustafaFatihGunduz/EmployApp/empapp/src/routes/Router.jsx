@@ -11,16 +11,18 @@ import { onAuthStateChanged } from "firebase/auth";
 const Router = () => {
   const { isAdmin, isLoading } = useCheckIsHeAdmin();
   const [user, setUser] = useState(null);
+  const [authLoading, setAuthLoading] = useState(true);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
+      setAuthLoading(false);
     });
 
     return () => unsubscribe();
   }, []);
 
-  if (isLoading) return null;
+  if (isLoading || authLoading) return <div>Yükleniyor...</div>;
 
   return (
     <Routes>

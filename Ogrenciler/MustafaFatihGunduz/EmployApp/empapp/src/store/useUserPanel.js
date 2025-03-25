@@ -10,10 +10,11 @@ import useQuestions from "./useQuestions";
 
 const useUserPanel = () => {
   const navigate = useNavigate();
-  const [application, setApplication] = useState(null);
+  const [applications, setApplications] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const { selectedQuestions, setShowTest } = useQuestions();
+  const [currentApplication, setCurrentApplication] = useState(null);
 
   const handleLogout = async () => {
     await signOutFromApp();
@@ -22,7 +23,9 @@ const useUserPanel = () => {
 
   const handleTestComplete = async (results) => {
     try {
-      await updateTestResults(application.id, results);
+      if (!currentApplication) return;
+
+      await updateTestResults(currentApplication.id, results);
       setShowTest(false);
       window.location.reload();
     } catch (error) {
@@ -33,20 +36,33 @@ const useUserPanel = () => {
   useEffect(() => {
     const getUserApplication = async () => {
       if (auth.currentUser) {
-        const data = await fetchUserApplication(auth.currentUser.email);
-        setApplication(data);
-        setLoading(false);
+        try {
+          const data = await fetchUserApplication(auth.currentUser.email);
+
+          if (Array.isArray(data)) {
+            setApplications(data);
+          } else {
+            setApplications(data ? [data] : []);
+          }
+        } catch (error) {
+          console.error("Error fetching user applications:", error);
+          setApplications([]);
+        } finally {
+          setLoading(false);
+        }
       }
     };
     getUserApplication();
   }, []);
 
   return {
-    application,
+    applications,
     loading,
     selectedQuestions,
     handleLogout,
     handleTestComplete,
+    currentApplication,
+    setCurrentApplication,
   };
 };
 
