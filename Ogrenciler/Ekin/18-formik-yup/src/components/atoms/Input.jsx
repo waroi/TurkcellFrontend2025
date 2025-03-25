@@ -1,7 +1,7 @@
 import { useField } from "formik";
 
-import Validation from "./Validation";
-import Label from "./Label";
+import Validation from "#/atoms/Validation";
+import Label from "#/atoms/Label";
 
 export default function Input({ label, ...props }) {
   const [field, meta] = useField(props);
@@ -12,9 +12,11 @@ export default function Input({ label, ...props }) {
       <div className="form-floating mb-3">
         <input
           className={`form-control border border-2 ${
-            meta.touched && meta.error
-              ? "border-danger-subtle"
-              : "border-success-subtle"
+            meta.touched || field.value
+              ? meta.error
+                ? "border-danger-subtle"
+                : "border-success-subtle"
+              : ""
           }`}
           id={props.name}
           placeholder=""

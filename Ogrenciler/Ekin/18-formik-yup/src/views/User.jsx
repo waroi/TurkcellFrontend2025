@@ -5,7 +5,7 @@ import { getForms } from "../services/firebase";
 import MyApplications from "../components/MyApplications";
 import UserInfo from "../components/inputs/UserInfo";
 
-export default function UserView() {
+export default function User() {
   const { user, userApplications, setUserApplications } = useStore();
 
   useEffect(() => {

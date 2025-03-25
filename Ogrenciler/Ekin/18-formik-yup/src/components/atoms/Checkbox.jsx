@@ -1,7 +1,7 @@
 import { useField } from "formik";
 
-import Validation from "./Validation";
-import Label from "./Label";
+import Validation from "#/atoms/Validation";
+import Label from "#/atoms/Label";
 
 export default function Checkbox({ children, ...props }) {
   const [field, meta] = useField(props);

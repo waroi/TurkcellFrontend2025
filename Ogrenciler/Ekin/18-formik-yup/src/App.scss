@@ -9,10 +9,12 @@ $container-max-widths: (
 @import "../node_modules/bootstrap/scss/bootstrap";
 
 p.text-danger {
+  opacity: 0;
   height: 0;
-  transition: height 0.3s;
+  transition: opacity 0.1s 0.1s, height 0.2s;
 
   &.active {
+    opacity: 1;
     height: 2rem;
   }
 }

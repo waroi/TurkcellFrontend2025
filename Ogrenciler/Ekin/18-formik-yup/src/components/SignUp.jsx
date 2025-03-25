@@ -2,8 +2,8 @@ import { Form, Formik } from "formik";
 import { initialValues, validationSchema } from "../schemas/sign-up";
 import useAuth from "../hooks/useAuth";
 
-import Input from "./inputs/Input";
-import Button from "./inputs/Button";
+import Input from "#/atoms/Input";
+import Button from "#/atoms/Button";
 
 export default function SignUp() {
   const { register } = useAuth();
