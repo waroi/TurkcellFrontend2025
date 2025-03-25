@@ -13,7 +13,7 @@ function NavBar() {
   const { pathname } = useLocation();
 
   const handleLogout = () => {
-    logout(); // Çıkış işlemini gerçekleştir
+    logout();
   };
   if (pathname === "/login" || pathname === "/register") {
     return null;
