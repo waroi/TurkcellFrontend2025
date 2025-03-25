@@ -3,8 +3,7 @@ import useFetchApplication from "../store/useFetchApplication";
 import useAdminPanel from "../store/useAdminPanel";
 import SignInModal from "../components/SignInModal/SignInModal";
 import { Link } from "react-router-dom";
-import "./AdminPanel.css";
-
+import styles from "./AdminPanel.module.css"
 const AdminPanel = () => {
   const {
     applications,
@@ -27,7 +26,7 @@ const AdminPanel = () => {
 
   if (isLoading) {
     return (
-      <div className="container mt-4">
+      <div className={`container mt-4`}>
         <div className="text-center">
           <div className="spinner-border spinner" role="status">
             <span className="visually-hidden">Yükleniyor...</span>
@@ -40,7 +39,7 @@ const AdminPanel = () => {
 
   return (
     <>
-      <div className="container mt-4 adminContainer">
+      <div className="container">
         <div className=" d-flex justify-content-between align-items-center mb-4">
           <h1 className="fw-bolder">Başvuruları Yönet</h1>
           <Link to="/" className="btn btn-secondary ">
@@ -85,8 +84,8 @@ const AdminPanel = () => {
             </div>
             <div className="row">
               {filteredApplications.map((app) => (
-                <div key={app.id} className="col-md-4 mb-4 ">
-                  <div className="card cardAdmin shadow-sm">
+                <div key={app.id} className="col-md-4 mb-4">
+                  <div className={`card`}>
                     <div className="card-body">
                       <h5 className="card-title text-dark fw-semibold border-bottom pb-2 mb-3">
                         {app.name} {app.lastName}

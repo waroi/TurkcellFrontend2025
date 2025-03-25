@@ -16,7 +16,7 @@ const useAdminPanel = () => {
   const handleApprove = async (application) => {
     try {
       await updateApplicationStatus(application.id, {
-        status: "approved", // "Onaylandı" yerine "approved" kullanılmalı
+        status: "approved",
         isTestAvailable: true,
       });
       alert("Başvuru onaylandı!");
