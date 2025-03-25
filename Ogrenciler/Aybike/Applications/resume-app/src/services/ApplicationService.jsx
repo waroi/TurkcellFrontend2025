@@ -7,6 +7,7 @@ import {
   updateDoc,
 } from "firebase/firestore";
 import { db } from "../firebase/Firebase";
+import { TestService } from "./TestService";
 
 export class ApplicationService {
   static async getApplications() {
@@ -47,8 +48,9 @@ export class ApplicationService {
       return { success: false, message: error };
     }
   }
-  static async updateApplicationRate(applicationId, newRate) {
+  static async updateApplicationRate(applicationId, newRate, userInfo) {
     try {
+      if (newRate >= 4) TestService.addNewUser(userInfo)
       const docRef = doc(db, "applications", applicationId);
       await updateDoc(docRef, { rate: newRate });
 
