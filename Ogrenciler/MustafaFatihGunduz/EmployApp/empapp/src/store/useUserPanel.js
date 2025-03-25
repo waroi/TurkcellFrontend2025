@@ -38,12 +38,7 @@ const useUserPanel = () => {
       if (auth.currentUser) {
         try {
           const data = await fetchUserApplication(auth.currentUser.email);
-
-          if (Array.isArray(data)) {
-            setApplications(data);
-          } else {
-            setApplications(data ? [data] : []);
-          }
+          setApplications(data);
         } catch (error) {
           console.error("Error fetching user applications:", error);
           setApplications([]);

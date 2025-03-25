@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import TestModal from "../components/TestModal/TestModal";
 import useUserPanel from "../store/useUserPanel";
 import useQuestions from "../store/useQuestions";
-
+import styles from "./AdminPanel.module.css"
 const UserPanel = () => {
   const {
     applications,
@@ -33,7 +33,7 @@ const UserPanel = () => {
   };
 
   return (
-    <div className="container mt-4">
+    <div className="container d-flex flex-column justify-content-start " style={{minHeight: "100vh"}}>
       <div className="d-flex justify-content-between align-items-center mb-4">
         <h1>Başvuru Detayları</h1>
         <div className="d-flex gap-2">
@@ -47,9 +47,11 @@ const UserPanel = () => {
       </div>
       {applications.length > 0 ? (
         <>
-          <h4 className="mb-3">Tüm Başvurularınız</h4>
+          <h4 className="mb-3 mt-5">Tüm Başvurularınız</h4>
+          <div className="row">
           {applications.map((application) => (
-            <div className="card mb-3" key={application.id}>
+            <div className="col-md-4">
+                          <div className= {`${styles.cardContainer} card mb-3`} key={application.id}>
               <div className="card-body">
                 <h5 className="card-title">
                   {application.name} {application.lastName}
@@ -103,7 +105,9 @@ const UserPanel = () => {
                 )}
               </div>
             </div>
+            </div>
           ))}
+          </div>
         </>
       ) : (
         <div className="alert alert-info">

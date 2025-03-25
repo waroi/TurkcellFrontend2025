@@ -14,8 +14,8 @@ const LoginPage = () => {
   } = useLoginPage();
 
   return (
-    <div className="container mt-5">
-      <div className="row justify-content-center">
+    <div className="container">
+      <div className="row align-items-center justify-content-center w-100" style={{height :"100vh"}}>
         <div className="col-md-6">
           <div className="card">
             <div className="card-body">
@@ -64,6 +64,9 @@ const LoginPage = () => {
               </div>
             </div>
           </div>
+        </div>
+        <div className="col-md-6">
+          <img src="https://isbasvuru.konya.bel.tr/assets/images/isbasvuru_link.jpg" alt="basvuru" className='img-fluid object-fit-cover' />
         </div>
       </div>
     </div>
