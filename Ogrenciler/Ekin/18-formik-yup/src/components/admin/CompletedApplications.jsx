@@ -1,5 +1,5 @@
 import React from "react";
-import ApplicationCard from "./ApplicationCard";
+import ApplicationCard from "#/atoms/ApplicationCard";
 
 export default function CompletedApplications({ applications }) {
   const completed = applications.filter((a) => a.status);

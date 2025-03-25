@@ -1,6 +1,6 @@
-import stringMap from "../util/stringMap";
-import { setApplication } from "../services/firebase";
-import useUserStore from "../store/useStore";
+import { mapString } from "@/util/map";
+import { setApplication } from "@/services/firebase";
+import useUserStore from "@/store/useStore";
 
 export default function ApplicationDetail({
   application,
@@ -35,24 +35,24 @@ export default function ApplicationDetail({
       <hr />
       <h5 className="mb-4">Eğitim</h5>
       <p className="text-capitalize">
-        <b>Üniversite:</b> {stringMap(application.university)}
+        <b>Üniversite:</b> {mapString(application.university)}
       </p>
       <p className="text-capitalize">
-        <b>Bölüm:</b> {stringMap(application.major)}
+        <b>Bölüm:</b> {mapString(application.major)}
       </p>
       <p className="text-capitalize">
-        <b>Sınıf:</b> {stringMap(application.grade)}
+        <b>Sınıf:</b> {mapString(application.grade)}
       </p>
       <hr />
       <h5 className="mb-4">Staj</h5>
       <p className="text-capitalize">
-        <b>1. Tercih:</b> {stringMap(application["preference-first"])}
+        <b>1. Tercih:</b> {mapString(application["preference-first"])}
       </p>
       <p className="text-capitalize">
-        <b>2. Tercih:</b> {stringMap(application["preference-second"])}
+        <b>2. Tercih:</b> {mapString(application["preference-second"])}
       </p>
       <p className="text-capitalize">
-        <b>3. Tercih:</b> {stringMap(application["preference-third"])}
+        <b>3. Tercih:</b> {mapString(application["preference-third"])}
       </p>
 
       <button

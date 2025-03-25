@@ -1,6 +1,6 @@
 import { Form, Formik } from "formik";
-import { initialValues, validationSchema } from "../schemas/sign-in";
-import useAuth from "../hooks/useAuth";
+import { initialValues, validationSchema } from "../../schemas/sign-in";
+import useAuth from "../../hooks/useAuth";
 
 import Input from "#/atoms/Input";
 import Button from "#/atoms/Button";

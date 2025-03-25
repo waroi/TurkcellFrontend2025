@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import useUserStore from "../store/useStore";
-import { getForms } from "../services/firebase";
-import ApplicationDetail from "../components/ApplicationDetail";
-import PendingApplications from "../components/PendingApplications";
-import CompletedApplications from "../components/CompletedApplications";
-import { Tab, Pane } from "../components/Tabs";
+import useUserStore from "@/store/useStore";
+import { getForms } from "@/services/firebase";
+import ApplicationDetail from "#/admin/ApplicationDetail";
+import PendingApplications from "#/admin/PendingApplications";
+import CompletedApplications from "#/admin/CompletedApplications";
+import { Tab, Pane } from "#/atoms/Tab";
 
 export default function AdminView() {
   const [detail, setDetail] = useState(null);

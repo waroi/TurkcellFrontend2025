@@ -1,6 +1,6 @@
 import React from "react";
-import { getStatusBadge, getStatusLabel } from "../util/applicationStatus";
-import stringMap from "../util/stringMap";
+import { getStatusBadge, getStatusLabel } from "@/util/applicationStatus";
+import { mapString } from "@/util/map";
 
 const ApplicationCard = ({
   application,
@@ -23,13 +23,13 @@ const ApplicationCard = ({
             <p className="text-capitalize mb-2 d-flex align-items-center">
               <i className="bi bi-building me-2 text-primary fs-5"></i>
               <span className="fw-semibold">
-                {stringMap(application.university)}
+                {mapString(application.university)}
               </span>
             </p>
             <p className="text-capitalize mb-0 d-flex align-items-center">
               <i className="bi bi-journal-bookmark me-2 text-primary fs-5"></i>
               <span>
-                {stringMap(application.major)} - {stringMap(application.grade)}
+                {mapString(application.major)} - {mapString(application.grade)}
               </span>
             </p>
           </div>
