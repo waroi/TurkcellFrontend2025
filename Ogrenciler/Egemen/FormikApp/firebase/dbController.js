@@ -37,7 +37,6 @@ export async function getAllApplications() {
   const applications = querySnapshot.docs.map((doc) => ({
     id: doc.id,
     ...doc.data(),
-
   }));
   return applications;
 }
@@ -66,6 +65,12 @@ export async function updateAppStatus(app) {
       return true;
     }
   } catch (error) {
-    console.error("Error updating blog:", error);
+    console.error("Error updating doc:", error);
   }
+}
+
+export async function setQuizPoint(appId, point) {
+  const docRef = doc(db, "applications", appId);
+  console.log(appId);
+  setDoc(docRef, { quiz: point, status: "Mülakat" }, { merge: true });
 }
