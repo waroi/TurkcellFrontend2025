@@ -58,10 +58,7 @@ export const advancedSchema = yup.object().shape({
     .string()
     .required("Şehir zorunludur")
     .min(2, "En az 2 karakter olmalı"),
-  dateOfBirth: yup
-    .date()
-    .required("Doğum tarihi zorunludur")
-    .max(new Date(), "Doğum tarihi bugünden ileri olamaz"),
+  dateOfBirth: yup.date().max(new Date(), "Doğum tarihi bugünden ileri olamaz"),
   gender: yup.string().required("Cinsiyet seçimi zorunludur"),
   university: yup.string().required("Üniversite seçimi zorunludur"),
   department: yup.string().required("Bölüm seçimi zorunludur"),
@@ -70,34 +67,24 @@ export const advancedSchema = yup.object().shape({
     .required("Mezuniyet yılı zorunludur")
     .min(new Date().getFullYear() - 60, "Geçerli bir yıl giriniz")
     .max(new Date().getFullYear(), "Gelecek yıl olamaz"),
-  languages: yup
-    .array()
-    .of(
-      yup.object().shape({
-        selectedLanguage: yup.string().required("Dil seçiniz"),
-        selectedLevel: yup.string().required("Seviye seçiniz"),
-      })
-    )
-    .min(1, "En az bir dil eklemelisiniz"),
-  referenceName: yup
-    .string()
-    .required("İsim Soyisim zorunludur")
-    .min(3, "En az 3 karakter olmalı"),
+  languages: yup.array().of(
+    yup.object().shape({
+      selectedLanguage: yup.string().required("Dil seçiniz"),
+      selectedLevel: yup.string().required("Seviye seçiniz"),
+    })
+  ),
+  referenceName: yup.string(),
   referencePhone: yup
     .string()
-    .matches(/^[0-9]{10,15}$/, "Geçerli bir telefon numarası girin")
-    .required("Telefon numarası zorunludur"),
-  referenceEmail: yup
-    .string()
-    .email("Geçerli bir e-posta adresi girin")
-    .required("E-posta zorunludur"),
+    .matches(/^[0-9]{10,15}$/, "Geçerli bir telefon numarası girin"),
+  referenceEmail: yup.string().email("Geçerli bir e-posta adresi girin"),
   workPlace: yup
     .string()
-    .required("Çalıştığınız yer zorunludur")
+
     .min(2, "En az 2 karakter olmalı"),
   startDate: yup
     .date()
-    .required("Başlama tarihi zorunludur")
+
     .max(new Date(), "Başlama tarihi bugünün ileri olamaz"),
   endDate: yup
     .date()
@@ -105,7 +92,7 @@ export const advancedSchema = yup.object().shape({
     .min(yup.ref("startDate"), "Bitiş tarihi başlama tarihinden önce olamaz"),
   position: yup
     .string()
-    .required("Pozisyon zorunludur")
+
     .min(2, "En az 2 karakter olmalı"),
   coverLetter: yup
     .string()
