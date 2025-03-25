@@ -6,12 +6,14 @@ import ApplicationList from "./ApplicationList";
 import ApplicationModal from "./ApplicationModal";
 
 const AdminDashboard = () => {
-	const [selectedApplication, setSelectedApplication] = useState(null);
 
+	const [selectedApplication, setSelectedApplication] = useState(null);
 	const {
 		reviewList,
 		positiveList,
 		negativeList,
+		passedCandidates,
+		failedCandidates,
 		loading,
 		refreshData,
 		handleApprove,
@@ -51,7 +53,54 @@ const AdminDashboard = () => {
 	return (
 		<div className="container-fluid py-4">
 			<AdminHeader onRefresh={refreshData} />
+			<div className="row g-4">
+				{/* Geçen Adaylar Tablosu */}
+				<div className="col-lg-6 mb-5">
+					<h4>Geçen Adaylar</h4>
+					<table className="table table-bordered">
+						<thead>
+							<tr>
+								<th>Ad</th>
+								<th>Email</th>
+								<th>Skor</th>
+							</tr>
+						</thead>
+						<tbody>
+							{passedCandidates.map((candidate) => (
+								<tr key={candidate.id}>
+									<td>{candidate.name}</td>
+									<td>{candidate.email}</td>
+									<td>{candidate.score}</td>
+								</tr>
+							))}
+						</tbody>
+					</table>
+				</div>
 
+				{/* Kalan Adaylar Tablosu */}
+				<div className="col-lg-6 mb-5">
+					<h4>Kalan Adaylar</h4>
+					<table className="table table-bordered">
+						<thead>
+							<tr>
+								<th>Ad</th>
+								<th>Email</th>
+								<th>Skor</th>
+							</tr>
+						</thead>
+						<tbody>
+							{failedCandidates.map((candidate) => (
+								<tr key={candidate.id}>
+									<td>{candidate.name}</td>
+									<td>{candidate.email}</td>
+									<td>{candidate.score}</td>
+								</tr>
+							))}
+						</tbody>
+					</table>
+				</div>
+
+			</div>
 			<div className="row g-4">
 				{/* İncelenecek Başvurular */}
 				<div className="col-lg-4">
@@ -68,7 +117,7 @@ const AdminDashboard = () => {
 				</div>
 
 				{/* Onaylanan Başvurular */}
-				<div className="col-lg-4">
+				<div className="col-lg-4"><button className="btn btn-primary">Test Gönder</button>
 					<ApplicationList
 						title="Onaylanan Başvurular"
 						icon="bi-check-circle"
@@ -80,6 +129,7 @@ const AdminDashboard = () => {
 						showActions={false}
 						variant="approved"
 					/>
+
 				</div>
 
 				{/* Reddedilen Başvurular */}

@@ -3,7 +3,8 @@ import {
   collection,
   getDocs,
   query,
-  where
+  where,
+  addDoc 
 } from "firebase/firestore";
 import { auth, db } from "../../firebase/config";
 import { onAuthStateChanged } from "firebase/auth";
@@ -50,7 +51,7 @@ const Quiz = () => {
     }
   };
 
-  const handleAnswer = () => {
+  const handleAnswer = async () => {
     if (!selectedAnswer) return;
     if (selectedAnswer === questions[currentQuestionIndex].Correct) {
       setScore(prev => prev + 1);
@@ -58,10 +59,33 @@ const Quiz = () => {
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(prev => prev + 1);
     } else {
+      await saveQuizResult();
       setTestCompleted(true);
     }
     setSelectedAnswer("");
   };
+
+  const saveQuizResult = async () => {
+    console.log(user);
+    if (!user) return;
+    const status = score >= 4 ? "Geçti" : "Kaldı";
+
+    try {
+      await addDoc(collection(db, "quizResults"), {
+        email: user.email,
+        score: score,
+        status: status,
+      });
+    } catch (error) {
+      console.error("Error saving quiz result:", error);
+    }
+  };
+
+  if (isLoading) {
+    return <div className="d-flex justify-content-center align-items-center vh-100">
+      <div className="spinner-border text-primary" role="status"></div>
+    </div>;
+  }
 
   if (!isEligibleForTest) {
     return <div className="alert alert-warning text-center">You do not have any tests available</div>;
