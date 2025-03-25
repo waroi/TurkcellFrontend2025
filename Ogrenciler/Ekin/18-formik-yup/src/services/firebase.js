@@ -66,29 +66,97 @@ export function getUser(user) {
 }
 //* Application ====================================================================================================
 
+export function getApplications() {
+  return getDocs(collection(database, "applications")).then((snapshot) =>
+    snapshot.docs.map((application) => ({
+      id: application.id,
+      ...application.data(),
+    }))
+  );
+}
+
+export function getApplication(id) {
+  return getDoc(doc(database, "applications", id)).then((snapshot) => ({
+    id,
+    ...snapshot.data(),
+  }));
+}
+
 export function submitForm(form) {
   delete form["email-again"];
   delete form["terms-and-conditions"];
   delete form["kvkk"];
-  return addDoc(collection(database, "application-forms"), {
-    ...form,
-    status: "pending",
-  });
+
+  return addDoc(collection(database, "forms"), form);
 }
 
 export function getForms() {
-  return getDocs(collection(database, "application-forms")).then(
+  return getDocs(collection(database, "forms")).then(
     (snapshot) =>
-      snapshot.docs.map((application) => ({
-        ...application.data(),
-        id: application.id,
+      snapshot.docs.map((form) => ({
+        ...form.data(),
+        form: form.id,
       }))
     //   .sort((current, next) => next.date - current.date)
   );
 }
 
 export function setApplication(id, status) {
-  return updateDoc(doc(database, "application-forms", id), {
-    ...status,
-  }).then(() => id);
+  return status == "accepted"
+    ? addExam().then((exam) => {
+        updateDoc(doc(database, "forms", id), {
+          status,
+          exam,
+        }).then(() => id);
+      })
+    : updateDoc(doc(database, "forms", id), {
+        status,
+      }).then(() => id);
+}
+
+// export function addQuestions() {
+//   let q = prompt("QUESTION?");
+
+//   let a = prompt("CORRECT");
+//   let b = prompt("WRONG");
+//   let c = prompt("WRONG");
+//   let d = prompt("WRONG");
+
+//   return addDoc(collection(database, "questions"), {
+//     question: q,
+//     answers: [a, b, c, d],
+//   });
+// }
+
+function addExam() {
+  return getFiveRandomQuestions().then((questions) =>
+    addDoc(collection(database, "exams"), {
+      questions,
+    }).then((exam) => exam.id)
+  );
+
+  function getFiveRandomQuestions() {
+    return getDocs(collection(database, "questions")).then((questions) => {
+      questions = questions.docs.map((question) => question.id);
+
+      shuffle(questions);
+
+      return questions.slice(0, 5);
+
+      function shuffle(questions) {
+        let index = questions.length;
+
+        while (index != 0) {
+          let random = Math.floor(Math.random() * index);
+
+          index--;
+
+          [questions[index], questions[random]] = [
+            questions[random],
+            questions[index],
+          ];
+        }
+      }
+    });
+  }
 }

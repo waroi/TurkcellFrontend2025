@@ -15,8 +15,8 @@ const ApplicationList = ({
 }) => {
 	return (
 		<div className="card shadow-sm border-0 h-100">
-			<div className="card-header bg-white p-3 border-0">
-				<h5 className="card-title mb-0">
+			<div className="card-header bg-white p-3 border-0 d-flex justify-content-between align-items-center">
+				<h5 className="card-title mb-0 d-flex align-items-center">
 					<i
 						className={`bi ${icon} me-2 text-${badgeColor.replace(
 							"bg-",
@@ -24,15 +24,15 @@ const ApplicationList = ({
 						)}`}></i>
 					{title}
 					<span
-						className={`badge ${badgeColor} ${
-							badgeColor === "bg-warning" ? "text-dark" : ""
-						} ms-2`}>
-						{applications.length}
+						className={`badge ${badgeColor} ${badgeColor === "bg-warning" ? "text-dark" : ""
+							} ms-2`}>
+						{applications?.length}
 					</span>
 				</h5>
 			</div>
+
 			<div className="card-body p-0">
-				{applications.length === 0 ? (
+				{applications?.length === 0 ? (
 					<div className="p-4 text-center text-muted">
 						<i className={`bi ${emptyIcon} fs-1 d-block mb-3 text-light`}></i>
 						<p>{emptyMessage}</p>
@@ -48,7 +48,7 @@ const ApplicationList = ({
 								</tr>
 							</thead>
 							<tbody>
-								{applications.map((item) => (
+								{applications?.map((item) => (
 									<ApplicationItem
 										key={item.id}
 										application={item}
