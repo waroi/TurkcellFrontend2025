@@ -1,21 +1,27 @@
 import { useRef, useEffect } from "react";
-import useStore from "../store/useStore";
 
-export default function () {
+import useStore from "@/store/useStore";
+
+export default function Toast() {
   const { toast } = useStore();
 
   return (
     <section className="position-fixed top-0 start-50 translate-middle-x z-3">
       {toast.map(({ key, message, variant }) => {
         return (
-          <Toast key={key} toastKey={key} message={message} variant={variant} />
+          <ToastInstance
+            key={key}
+            toastKey={key}
+            message={message}
+            variant={variant}
+          />
         );
       })}
     </section>
   );
 }
 
-function Toast({ toastKey, message, variant = "primary" }) {
+function ToastInstance({ toastKey, message, variant = "primary" }) {
   const toast = useRef();
   const store = useStore();
 

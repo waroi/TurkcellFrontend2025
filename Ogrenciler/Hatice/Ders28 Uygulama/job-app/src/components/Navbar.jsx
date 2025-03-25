@@ -1,8 +1,12 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../firebase/firebaseConfig";
+import { useLocation } from "react-router-dom";
+
 
 const Navbar = () => {
+    const location = useLocation();
+
     const [dark, setDark] = useState(false);
     const [user, setUser] = useState(null);
     const navigate = useNavigate();
@@ -32,6 +36,13 @@ const Navbar = () => {
             document.body.classList.add("dark-mode");
         }
     };
+    const handleButtonDisplay = () => {
+        if (location.pathname === "/") {
+            return "d-block";
+        } else {
+            return "d-none";
+        }
+    };
     return (
         <>
             <nav className="navbar navbar-expand-lg text-white fixed-top bg-primary">
@@ -40,6 +51,9 @@ const Navbar = () => {
                         <h5 className="ps-5">{"{atmosware}"}</h5>
                     </div>
                     <div className="d-flex align-items-center">
+                        <button onClick={()=>navigate("/my-applications")} className={`btn btn-warning ${handleButtonDisplay()}`}>
+                            Başvurularımı Görüntüle
+                        </button>
                         <button
                             onClick={toggle}
                             className="btn px-5"

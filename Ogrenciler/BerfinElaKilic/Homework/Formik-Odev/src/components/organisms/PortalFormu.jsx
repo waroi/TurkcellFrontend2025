@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Formik, Form } from "formik";
 import { useAuth } from "../../context/AuthContext";
-import { addCandidateInfo } from "../../utils/services";
+import { addCandidateInfo, getCandidate } from "../../utils/services";
 import DisplayForm from "./DisplayForm";
 import PrimaryButton from "../atoms/Buttons/PrimaryButton";
 import ProfileForm from "../molecules/forms/ProfileForm";
@@ -12,8 +12,7 @@ import References from "../molecules/forms/References";
 import CoverLetter from "../molecules/forms/CoverLetter";
 import SecondaryButton from "../atoms/Buttons/SecondaryButton";
 
-const PortalFormu = ({ setIsEditing, isEditing ,user}) => {
-
+const PortalFormu = ({ setIsEditing, isEditing, user }) => {
   const [submittedData, setSubmittedData] = useState(null);
 
   const initialValues = submittedData || {
@@ -40,7 +39,12 @@ const PortalFormu = ({ setIsEditing, isEditing ,user}) => {
 
   const onSubmit = async (values, actions) => {
     try {
-      await addCandidateInfo(user.id, values);
+      const response = await addCandidateInfo(user.id, values);
+      if (response) {
+        const user = await getCandidate(user.id);
+        setUser(user);
+      }
+
       setSubmittedData(values);
       setIsEditing(false);
       actions.resetForm();

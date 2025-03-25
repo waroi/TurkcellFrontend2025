@@ -1,5 +1,5 @@
 import * as yup from "yup";
-import { oneOfMap } from "../util/selectMap";
+import { mapOneOf } from "@/util/map";
 
 export const initialValues = {
   name: "",
@@ -110,27 +110,27 @@ export const validationSchema = yup.object().shape({
     .length(11, "Kimlik numarası 11 haneli olmalıdır."),
   university: yup
     .string()
-    .oneOf(oneOfMap(universities), "Lütfen üniversitenizi seçiniz.")
+    .oneOf(mapOneOf(universities), "Lütfen üniversitenizi seçiniz.")
     .required("Lütfen üniversitenizi seçiniz."),
   major: yup
     .string()
-    .oneOf(oneOfMap(majors), "Lütfen bölümünüzü seçiniz.")
+    .oneOf(mapOneOf(majors), "Lütfen bölümünüzü seçiniz.")
     .required("Lütfen bölümünüzü seçiniz."),
   grade: yup
     .string()
-    .oneOf(oneOfMap(grades), "Lütfen sınıfınızı seçiniz.")
+    .oneOf(mapOneOf(grades), "Lütfen sınıfınızı seçiniz.")
     .required("Lütfen sınıfınızı seçiniz."),
   "preference-first": yup
     .string()
-    .oneOf(oneOfMap(preferences), "Lütfen 1. tercihinizi seçiniz.")
+    .oneOf(mapOneOf(preferences), "Lütfen 1. tercihinizi seçiniz.")
     .required("Lütfen 1. tercihinizi seçiniz."),
   "preference-second": yup
     .string()
-    .oneOf(oneOfMap(preferences), "Lütfen 2. tercihinizi seçiniz.")
+    .oneOf(mapOneOf(preferences), "Lütfen 2. tercihinizi seçiniz.")
     .required("Lütfen 2. tercihinizi seçiniz."),
   "preference-third": yup
     .string()
-    .oneOf(oneOfMap(preferences), "Lütfen 3. tercihinizi seçiniz.")
+    .oneOf(mapOneOf(preferences), "Lütfen 3. tercihinizi seçiniz.")
     .required("Lütfen 3. tercihinizi seçiniz."),
   "terms-and-conditions": yup
     .boolean()

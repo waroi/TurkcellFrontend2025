@@ -25,6 +25,7 @@ const Register = () => {
           fullName: values.fullName,
           email: values.email,
           isAdmin: false,
+          myApplications:[]
         });
 
         toast.success("Kayıt başarıyla tamamlandı! 🎉 Giriş yapabilirsiniz.");

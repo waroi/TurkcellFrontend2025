@@ -1,0 +1,32 @@
+.progress-container {
+    padding: 0px 20px 10px;
+    background-color: #ffffff;
+    height: 100%;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.question-counter {
+    font-weight: 600;
+    color: #3f51b5;
+}
+
+.timer {
+    color: #f44336;
+    font-weight: 600;
+}
+
+.progress {
+    height: 8px;
+    border-radius: 4px;
+    background-color: #e0e0e0;
+}
+
+.progress-bar {
+    background-color: #3f51b5;
+    transition: width 0.3s ease;
+}

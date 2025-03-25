@@ -5,27 +5,34 @@ import { useNavigate } from "react-router";
 import { auth, db } from "../firebase/firebaseConfig";
 import { addDoc, collection } from "firebase/firestore";
 
-const onSubmit = async (values, actions) => {
-  try {
-    await addDoc(collection(db, "jobApplications"), {
-      fullName: values.fullName,
-      email: values.email,
-      phone: values.phone,
-      linkedin: values.linkedin,
-      coverLetter: values.coverLetter,
-      position: values.position,
-      createdAt: new Date(),
-    });
 
-    console.log("Başvuru başarıyla eklendi!");
-    actions.resetForm();
-  } catch (error) {
-    console.error("Başvuru gönderilirken hata oluştu:", error);
-  }
-};
+
 
 function GeneralForm() {
   const navigate = useNavigate();
+
+  const onSubmit = async (values, actions) => {
+    try {
+      await addDoc(collection(db, "jobApplications"), {
+        fullName: values.fullName,
+        email: values.email,
+        phone: values.phone,
+        linkedin: values.linkedin,
+        coverLetter: values.coverLetter,
+        position: values.position,
+        createdAt: new Date(),
+        status: "pending",
+      });
+  
+      console.log("Başvuru başarıyla eklendi!");
+      actions.resetForm();
+      navigate("/congrats")
+  
+    } catch (error) {
+      console.error("Başvuru gönderilirken hata oluştu:", error);
+    }
+  };
+
 
   useEffect(() => {
     if (!auth.currentUser) {

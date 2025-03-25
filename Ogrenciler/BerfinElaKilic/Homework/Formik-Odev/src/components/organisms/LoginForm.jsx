@@ -49,6 +49,7 @@ const LoginForm = () => {
 
   return (
     <Form onSubmit={handleSubmit} className="w-75 p-5 bg-transparent">
+      <h1>Giriş Yap</h1>
       <Form.Group className="mb-3" controlId="email">
         <Form.Label>Mail Adresi: </Form.Label>
         <Form.Control

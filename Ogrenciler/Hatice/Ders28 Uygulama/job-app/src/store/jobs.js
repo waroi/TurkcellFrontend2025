@@ -3,11 +3,6 @@ import { getFirestore, collection, getDocs, doc, updateDoc } from "firebase/fire
 
 export default create((set) => ({
   jobs: [],
-  user: null,
-
-  setUser: (user) => {
-    set({ user });
-  },
 
   fetchJobs: async () => {
     const db = getFirestore();

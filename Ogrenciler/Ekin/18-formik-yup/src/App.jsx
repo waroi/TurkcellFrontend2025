@@ -1,27 +1,31 @@
 import { useRoutes } from "react-router";
 
-import HomeView from "./views/HomeView";
-import ApplicationView from "./views/ApplicationView";
-import UserView from "./views/UserView";
-import AdminView from "./views/AdminView";
+import Home from "@/views/Home";
+import Auth from "@/views/Auth";
+import Applications from "@/views/Applications";
+import Application from "@/views/Application";
+import User from "@/views/User";
+import Admin from "@/views/Admin";
 
-import Navigation from "./components/Navigation";
-import Footer from "./components/Footer";
-import Toast from "./components/Toast";
+import Nav from "#/Nav";
+import Footer from "#/Footer";
+import Toast from "#/Toast";
 
 import "./App.scss";
 import ThankYouView from "./views/ThankYouView";
 
-function App() {
+export default function App() {
   return (
     <>
-      <Navigation />
+      <Nav />
       <main className="py-5 bg-white">
         {useRoutes([
-          { path: "/", element: <HomeView /> },
-          { path: "/application", element: <ApplicationView /> },
-          { path: "/user", element: <UserView /> },
-          { path: "/admin", element: <AdminView /> },
+          { path: "/", element: <Home /> },
+          { path: "/auth", element: <Auth /> },
+          { path: "/applications", element: <Applications /> },
+          { path: "/application/:application-id", element: <Application /> },
+          { path: "/user", element: <User /> },
+          { path: "/admin", element: <Admin /> },
           { path: "/thank-you", element: <ThankYouView /> },
         ])}
       </main>
@@ -30,5 +34,3 @@ function App() {
     </>
   );
 }
-
-export default App;

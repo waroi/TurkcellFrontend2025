@@ -10,7 +10,7 @@ const Applications = () => {
 
   useEffect(() => {
     fetchJobs().then(() => setLoading(false));
-  }, [fetchJobs]); // fetchJobs bağımlılığı eklendi
+  }, [fetchJobs]);
 
   const handleStatusChange = (id, newStatus) => {
     updateJobStatus(id, newStatus);
