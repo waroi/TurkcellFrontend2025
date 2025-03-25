@@ -11,9 +11,11 @@ import Experiences from "../molecules/forms/Experiences";
 import References from "../molecules/forms/References";
 import CoverLetter from "../molecules/forms/CoverLetter";
 import SecondaryButton from "../atoms/Buttons/SecondaryButton";
+import { advancedSchema } from "../../schemas";
 
 const PortalFormu = ({ setIsEditing, isEditing, user }) => {
   const [submittedData, setSubmittedData] = useState(null);
+  const { setUser } = useAuth();
 
   const initialValues = submittedData || {
     firstName: user.firstName || "",
@@ -41,8 +43,8 @@ const PortalFormu = ({ setIsEditing, isEditing, user }) => {
     try {
       const response = await addCandidateInfo(user.id, values);
       if (response) {
-        const user = await getCandidate(user.id);
-        setUser(user);
+        const userFromDatabase = await getCandidate(user.id);
+        setUser(userFromDatabase);
       }
 
       setSubmittedData(values);
@@ -64,6 +66,7 @@ const PortalFormu = ({ setIsEditing, isEditing, user }) => {
         initialValues={initialValues}
         onSubmit={onSubmit}
         enableReinitialize={true}
+        validationSchema={advancedSchema}
       >
         {({ isSubmitting, resetForm }) => (
           <Form>

@@ -1,13 +1,18 @@
 import { create } from "zustand";
 
-const useUserStore = create((set) => ({
+export default create((set) => ({
   user: null,
+  allApplications: [],
   applications: [],
   userApplications: [],
   toast: [],
 
   setUser: (user) => {
     set({ user });
+  },
+
+  setAllApplications: (allApplications) => {
+    set({ allApplications });
   },
 
   setApplications: (applications) => {
@@ -21,7 +26,7 @@ const useUserStore = create((set) => ({
   setApplicationStatus: (id, status) => {
     set((state) => ({
       applications: state.applications.map((application) =>
-        id == application.id ? { ...application, status } : application
+        id == application.form ? { ...application, status } : application
       ),
     }));
   },
@@ -40,5 +45,3 @@ const useUserStore = create((set) => ({
     });
   },
 }));
-
-export default useUserStore;

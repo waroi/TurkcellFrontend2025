@@ -7,6 +7,7 @@ import UploadJobForm from "../pages/UploadJobForm";
 import PositionDetail from "../pages/PositionDetail";
 import WorkForm from "../components/WorkForm";
 import Applications from "../pages/Applications";
+import OnlineTest from "../pages/OnlineTest";
 
 const ProtectedRoute = ({ element, allowedRoles }) => {
   const status = localStorage.getItem("status");
@@ -31,16 +32,26 @@ const Router = () => {
     { path: "/position/:id", element: <PositionDetail /> },
     {
       path: "/uploadjobform",
-      element: <ProtectedRoute element={<UploadJobForm />} allowedRoles={["admin"]} />,
+      element: (
+        <ProtectedRoute element={<UploadJobForm />} allowedRoles={["admin"]} />
+      ),
     },
     {
       path: "/workform",
-      element: <ProtectedRoute element={<WorkForm />} allowedRoles={["user", "admin"]} />,
+      element: (
+        <ProtectedRoute
+          element={<WorkForm />}
+          allowedRoles={["user", "admin"]}
+        />
+      ),
     },
     {
       path: "/applications",
-      element: <ProtectedRoute element={<Applications />} allowedRoles={["admin"]} />,
+      element: (
+        <ProtectedRoute element={<Applications />} allowedRoles={["admin"]} />
+      ),
     },
+    { path: "/online-test/:id", element: <OnlineTest /> },
   ]);
 
   return routes;

@@ -10,8 +10,8 @@ export default function ApplicationDetail({
   const userStore = useUserStore();
 
   function complete(status) {
-    setApplication(application.id, status);
-    userStore.setApplicationStatus(application.id, status);
+    setApplication(application.form, status);
+    userStore.setApplicationStatus(application.form, status);
     goCompletedApplications();
     setDetail(null);
     userStore.addToast("Başvuru başarıyla değerlendirildi.", "success");
