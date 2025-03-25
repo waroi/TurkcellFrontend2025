@@ -9,5 +9,5 @@ export function mapOneOf(array) {
 }
 
 export function mapString(string) {
-  return string.replaceAll("-", " ").replaceAll("ve", "&");
+  return string.replaceAll("-ve-", "-&-").replaceAll("-", " ");
 }

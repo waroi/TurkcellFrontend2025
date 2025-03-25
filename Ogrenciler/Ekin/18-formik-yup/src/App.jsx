@@ -23,7 +23,7 @@ export default function App() {
           { path: "/", element: <Home /> },
           { path: "/auth", element: <Auth /> },
           { path: "/applications", element: <Applications /> },
-          { path: "/application/:application-id", element: <Application /> },
+          { path: "/application/:id", element: <Application /> },
           { path: "/user", element: <User /> },
           { path: "/admin", element: <Admin /> },
           { path: "/thank-you", element: <ThankYouView /> },
