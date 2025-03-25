@@ -7,6 +7,8 @@ import "../pages/AdminPanel.css";
 import useLoggedIn from "../store/useLoggedIn";
 import useSignOut from "../store/useSignOut";
 import useFormikOnInputs from "../store/useFormikOnInputs";
+import { Link } from "react-router-dom";
+
 const Application = () => {
   const { handleSignOut } = useSignOut();
   const { isLoggedIn } = useLoggedIn();
@@ -26,13 +28,17 @@ const Application = () => {
         <div className="d-flex justify-content-between mb-3">
           <AdminButton />
 
-          {isLoggedIn && (
+          {isLoggedIn ? (
             <button
               className="btn btn-danger"
               onClick={async () => await handleSignOut()}
             >
-              Çıkış yap
+              Çıkış Yap
             </button>
+          ) : (
+            <Link to="/login" className="btn btn-primary">
+              Giriş Yap
+            </Link>
           )}
         </div>
         <div className="card shadow p-4">

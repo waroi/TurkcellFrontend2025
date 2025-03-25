@@ -1,0 +1,204 @@
+{
+    "questions": [
+    {
+      "question": "React nedir?",
+      "options": [
+        { "id": "A", "text": "Bir programlama dili" },
+        { "id": "B", "text": "Bir CSS kütüphanesi" },
+        { "id": "C", "text": "Bir JavaScript kütüphanesi" },
+        { "id": "D", "text": "Bir veritabanı yönetim sistemi" }
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "JSX nedir?",
+      "options": [
+        { "id": "A", "text": "JavaScript dosyalarını HTML'e dönüştüren bir sistem" },
+        { "id": "B", "text": "JavaScript içinde HTML benzeri kod yazmamızı sağlayan bir sözdizimi" },
+        { "id": "C", "text": "Bir CSS framework'ü" },
+        { "id": "D", "text": "React'in bir state yönetim kütüphanesi" }
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "React bileşenleri (components) kaça ayrılır?",
+      "options": [
+        { "id": "A", "text": "1" },
+        { "id": "B", "text": "2" },
+        { "id": "C", "text": "3" },
+        { "id": "D", "text": "4" }
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "React'te state nedir?",
+      "options": [
+        { "id": "A", "text": "Component içinde saklanan ve değişebilen veri" },
+        { "id": "B", "text": "React'te sayfalar arası yönlendirme için kullanılan bir yapı" },
+        { "id": "C", "text": "Yalnızca prop'lar üzerinden değiştirilebilen sabit veri" },
+        { "id": "D", "text": "JSX'in bir fonksiyonu" }
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Props ve state arasındaki fark nedir?",
+      "options": [
+        { "id": "A", "text": "State bileşen içinde değişebilir, props ise bileşene dışarıdan gelen veridir" },
+        { "id": "B", "text": "Props bileşen içinde değişebilir, state ise değişmez" },
+        { "id": "C", "text": "State ve props tamamen aynı şeydir" },
+        { "id": "D", "text": "State sadece sınıf bileşenlerinde kullanılabilir" }
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "useState hook'u ne işe yarar?",
+      "options": [
+        { "id": "A", "text": "React'te yönlendirme yapmak için kullanılır" },
+        { "id": "B", "text": "Component içinde state yönetimi sağlar" },
+        { "id": "C", "text": "Component'i yeniden render etmeyi önler" },
+        { "id": "D", "text": "JSX içinde koşullu ifadeler yazmamızı sağlar" }
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "useEffect hook'u ne zaman çalışır?",
+      "options": [
+        { "id": "A", "text": "Sadece bileşen ilk render olduğunda" },
+        { "id": "B", "text": "Sadece bileşen güncellendiğinde" },
+        { "id": "C", "text": "Bileşen ilk render olduğunda ve bağımlılıkları değiştiğinde" },
+        { "id": "D", "text": "Sadece bileşen unmount edildiğinde" }
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "React'te key prop'u neden kullanılır?",
+      "options": [
+        { "id": "A", "text": "Bileşenler arasında veri paylaşımını sağlamak için" },
+        { "id": "B", "text": "Listelerde performansı artırmak için" },
+        { "id": "C", "text": "State yönetimini kolaylaştırmak için" },
+        { "id": "D", "text": "Yalnızca class bileşenlerinde kullanılır" }
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "React Router nedir?",
+      "options": [
+        { "id": "A", "text": "React içinde sayfa yönlendirmesi yapmamızı sağlayan bir kütüphane" },
+        { "id": "B", "text": "React bileşenleri içinde veri saklayan bir yapı" },
+        { "id": "C", "text": "React içinde form yönetimi yapmak için kullanılan bir yöntem" },
+        { "id": "D", "text": "Sadece mobil uygulamalar için kullanılan bir özellik" }
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "React'te controlled component nedir?",
+      "options": [
+        { "id": "A", "text": "Değerini sadece state ile yönettiğimiz form bileşenleri" },
+        { "id": "B", "text": "Props ile kontrol edilen bileşenler" },
+        { "id": "C", "text": "Kendi kendine güncellenebilen bileşenler" },
+        { "id": "D", "text": "Sadece class bileşenlerinde kullanılan bir yöntem" }
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Virtual DOM nedir ve React'te neden kullanılır?",
+      "options": [
+        { "id": "A", "text": "Gerçek DOM'un bir kopyasıdır ve performans optimizasyonu için kullanılır" },
+        { "id": "B", "text": "Tarayıcının bellek yönetim sistemidir" },
+        { "id": "C", "text": "React'in state yönetim sistemidir" },
+        { "id": "D", "text": "JavaScript'in bir özelliğidir" }
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "useCallback ve useMemo arasındaki fark nedir?",
+      "options": [
+        { "id": "A", "text": "İkisi de tamamen aynı işlevi görür" },
+        { "id": "B", "text": "useCallback fonksiyonları, useMemo değerleri memorize eder" },
+        { "id": "C", "text": "useMemo yalnızca class componentlerde kullanılır" },
+        { "id": "D", "text": "useCallback yalnızca state güncellemelerinde kullanılır" }
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "React'te Higher Order Component (HOC) nedir?",
+      "options": [
+        { "id": "A", "text": "En üstteki parent component" },
+        { "id": "B", "text": "Bir componenti parametre olarak alan ve yeni bir component döndüren fonksiyon" },
+        { "id": "C", "text": "React Router'ın bir özelliği" },
+        { "id": "D", "text": "Redux store'unu yöneten component" }
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "React Hooks kullanmanın avantajları nelerdir?",
+      "options": [
+        { "id": "A", "text": "Class componentlere göre daha az kod yazılır" },
+        { "id": "B", "text": "Logic'i custom hooklarda tekrar kullanılabilir" },
+        { "id": "C", "text": "State yönetimi daha basittir" },
+        { "id": "D", "text": "Hepsi" }
+      ],
+      "answer": "D"
+    },
+    {
+      "question": "React'te Pure Component nedir?",
+      "options": [
+        { "id": "A", "text": "Props değişmedikçe yeniden render olmayan component" },
+        { "id": "B", "text": "Hiç state kullanmayan component" },
+        { "id": "C", "text": "Sadece UI gösteren component" },
+        { "id": "D", "text": "Redux ile bağlantılı component" }
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "React.memo() ne işe yarar?",
+      "options": [
+        { "id": "A", "text": "Componentin state'ini saklar" },
+        { "id": "B", "text": "Gereksiz render'ları önler" },
+        { "id": "C", "text": "API çağrılarını cache'ler" },
+        { "id": "D", "text": "Route'ları yönetir" }
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "useEffect cleanup fonksiyonu ne zaman çalışır?",
+      "options": [
+        { "id": "A", "text": "Component mount olduğunda" },
+        { "id": "B", "text": "Component unmount olduğunda" },
+        { "id": "C", "text": "Her render'da" },
+        { "id": "D", "text": "Sadece state değiştiğinde" }
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "React'te Error Boundary'ler neden kullanılır?",
+      "options": [
+        { "id": "A", "text": "Performance optimizasyonu için" },
+        { "id": "B", "text": "Component hatalarını yakalamak ve yönetmek için" },
+        { "id": "C", "text": "State yönetimi için" },
+        { "id": "D", "text": "Routing işlemleri için" }
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "React Suspense ne işe yarar?",
+      "options": [
+        { "id": "A", "text": "Code splitting ve lazy loading için fallback UI gösterir" },
+        { "id": "B", "text": "State management sağlar" },
+        { "id": "C", "text": "Form validasyonu yapar" },
+        { "id": "D", "text": "API isteklerini yönetir" }
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Custom Hook yazarken dikkat edilmesi gereken kurallar nelerdir?",
+      "options": [
+        { "id": "A", "text": "use ile başlamalıdır" },
+        { "id": "B", "text": "Diğer React Hook'larını kullanabilir" },
+        { "id": "C", "text": "Component içinde çağrılmalıdır" },
+        { "id": "D", "text": "Hepsi" }
+      ],
+      "answer": "D"
+    }
+  ]
+}
