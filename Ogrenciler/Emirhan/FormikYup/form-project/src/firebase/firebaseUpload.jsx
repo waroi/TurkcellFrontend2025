@@ -7,8 +7,10 @@ import {
   getDoc,
   getDocs,
   setDoc,
+  updateDoc,
 } from "firebase/firestore";
 import firebase, { db } from "./firebase";
+import emailjs from "@emailjs/browser";
 
 export const uploadJobs = async (job) => {
   try {
@@ -57,6 +59,7 @@ export const fetchApplications = async () => {
     return [];
   }
 };
+
 export const fetchUser = async (id) => {
   try {
     console.log("Fetching user with ID:", id);
@@ -84,4 +87,34 @@ export const uploadJobForm = async (job) => {
   } catch (error) {
     console.error("Hata oluştu:", error);
   }
+};
+export const updateApplicationStatus = async (id, status, email, name) => {
+  try {
+    const applicationRef = doc(db, "jobApplications", id);
+    await updateDoc(applicationRef, { status: status });
+
+    sendEmail(email, status, name, id);
+  } catch (error) {
+    console.error("Durum güncelleme hatası:", error);
+  }
+};
+
+const sendEmail = (email, status, name, id) => {
+  const templateParams = {
+    user_id: String(id),
+    user_email: email,
+    user_name: name,
+    status: status,
+  };
+
+  emailjs
+    .send(
+      "service_jj9bmas",
+      "template_tezccql",
+      templateParams,
+      "EYT-ulWdaGXtFdUJ6"
+    )
+    .catch((error) => {
+      console.error("Email Error:", error);
+    });
 };
