@@ -21,6 +21,7 @@ function GeneralForm() {
         coverLetter: values.coverLetter,
         position: values.position,
         createdAt: new Date(),
+        status: "pending",
       });
   
       console.log("Başvuru başarıyla eklendi!");

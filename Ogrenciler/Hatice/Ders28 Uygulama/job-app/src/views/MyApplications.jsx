@@ -41,12 +41,13 @@ const MyApplications = () => {
       <h2>Başvurularım</h2>
       {applications.length > 0 ? (
         applications.map((app) => (
-          <div key={app.id} className="p-4 border rounded my-2">
+          <div key={app.id} className={`p-4 border rounded my-2 border-${(app.status === "Olumlu" ? "success": app.status === "Olumsuz"? "danger":"warning") ?? "warning"} border-3`}>
             <p><strong>Pozisyon:</strong> {app.position}</p>
             <p><strong>Ad Soyad:</strong> {app.fullName}</p>
             <p><strong>Telefon:</strong> {app.phone}</p>
             <p><strong>LinkedIn:</strong> <a href={app.linkedin} target="_blank" rel="noreferrer">{app.linkedin}</a></p>
             <p><strong>Cover Letter:</strong> {app.coverLetter}</p>
+            <p><strong>Başvuru Durumu:</strong> <span className={`badge text-bg-${(app.status === "Olumlu" ? "success": app.status === "Olumsuz"? "danger":"warning") ?? "warning"}`}>{app.status ?? "Beklemede"}</span> </p>
           </div>
         ))
       ) : (
