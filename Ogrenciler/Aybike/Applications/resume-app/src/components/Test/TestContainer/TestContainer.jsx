@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import Question from '../Question/Question';
 import Result from '../Result/Result';
-import ProgressBar from '../ProgressBar/ProgressBar';
 import './TestContainer.css';
+import ProgressBar from '../../Gift/ProgressBar/ProgressBar';
 
 const TestContainer = ({ questions }) => {
     const [currentQuestion, setCurrentQuestion] = useState(0)
@@ -22,7 +22,7 @@ const TestContainer = ({ questions }) => {
     }, [timer, showResult])
 
     const handleAnswer = (answer) => {
-        setAnswers([...answers, answer]);
+        setAnswers([...answers, answer])
         if (currentQuestion < questions.length - 1) {
             setCurrentQuestion(currentQuestion + 1)
             setTimer(30)

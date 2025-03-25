@@ -1,6 +1,7 @@
 import { useRoutes } from "react-router";
 import Layout from "../components/layout/Layout";
 import { lazy } from "react";
+import Dashboard from "../components/DashBoard/Dashboard";
 
 const LazyHome = lazy(() => import('../pages/Home/Home'))
 const LazyGiftView = lazy(() => import('../pages/Gift/GiftView'))
@@ -38,6 +39,10 @@ const Router = () => {
         {
           path: 'gift',
           element: <LazyGiftView />
+        },
+        {
+          path: "dashboard",
+          element: <Dashboard />
         },
         {
           path: 'test',

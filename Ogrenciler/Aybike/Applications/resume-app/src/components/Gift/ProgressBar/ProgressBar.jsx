@@ -1,14 +1,14 @@
-import { useEffect, useRef } from "react"
+import { useEffect, useRef } from "react";
 
 const ProgressBar = () => {
     const progressBarRef = useRef(null)
 
     useEffect(() => {
-        if (progressBarRef.current) {
-            setTimeout(() => {
-                progressBarRef.current.style.width = '100%'
-            }, 300)
-        }
+        setTimeout(() => {
+            if (progressBarRef.current) {
+                progressBarRef.current.style.width = "100%"
+            }
+        }, 300)
     }, [])
 
     return (

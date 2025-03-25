@@ -1,19 +1,16 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AdminPanel from "./pages/AdminPanel";
-import AdminButton from "./components/AdminButton";
 import Application from "./FormApplication/page";
+import LoginPage from "./pages/LoginPage";
+import Router from "./routes/Router";
+import { BrowserRouter } from "react-router-dom";
 
 function App() {
   return (
-    <Router>
-      <div>
-        {/* <AdminButton /> */}
-        <Routes>
-          <Route path="/" element={<Application />} />
-          <Route path="/admin" element={<AdminPanel />} />
-        </Routes>
-      </div>
-    </Router>
+    <BrowserRouter>
+      {" "}
+      <Router />
+    </BrowserRouter>
   );
 }
 

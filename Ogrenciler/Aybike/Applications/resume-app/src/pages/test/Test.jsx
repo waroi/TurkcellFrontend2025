@@ -1,7 +1,22 @@
+import { useState } from "react"
 import TestContainer from "../../components/Test/TestContainer/TestContainer"
 import './Test.css'
+import { TestService } from "../../services/TestService"
+import { useEffect } from "react"
+import { useNavigate } from "react-router"
 
 const Test = () => {
+    const navigate = useNavigate()
+    const [userMail, setUserMail] = useState(TestService.getUser || null) // giren kişinin maili ekrana basabiliriz? ya da şey yaparız resultta alırız bunu result sonucunu dbye atarız boom
+    useEffect(() => {
+        const checkUser = async () => {
+            return
+            // bu alttaki kontrolü patladı bir anda anlayamadıKKKKK
+            // if (!await TestService.checkAccess(userMail)) navigate('/dashboard')
+        }
+        checkUser()
+    }, [userMail])
+
     // dbye havuz oluşturup random 5-10 arası çekeriz onları basrız bunlar geçici sorular
     const questions = [
         {
@@ -31,7 +46,9 @@ const Test = () => {
         }
     ]
     return (
-        <TestContainer questions={questions} />
+        <>
+            <TestContainer questions={questions} />
+        </>
     )
 }
 

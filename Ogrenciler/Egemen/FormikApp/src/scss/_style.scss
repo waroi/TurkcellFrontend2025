@@ -1,0 +1,98 @@
+$primary-gradient: linear-gradient(135deg, #ff6b6b, #f06595);
+$shadow-color: rgba(0, 0, 0, 0.15);
+
+.test-result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f8f9fa;
+
+  .card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 8px 16px $shadow-color;
+    text-align: center;
+    max-width: 400px;
+
+    h2 {
+      font-size: 24px;
+      font-weight: bold;
+      background: $primary-gradient;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p {
+      font-size: 16px;
+      color: #555;
+    }
+
+    .btn {
+      background: $primary-gradient;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 16px;
+      margin-top: 20px;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 4px 10px $shadow-color;
+      }
+    }
+  }
+}
+
+$primary-color: #4a90e2;
+$secondary-color: #f5f5f5;
+$option-hover: #e0e0e0;
+$shadow-color: rgba(0, 0, 0, 0.15);
+
+.quiz-container {
+  .question {
+    text-align: center;
+
+    p {
+      font-size: 18px;
+      font-weight: bold;
+      color: $primary-color;
+    }
+
+    .card {
+      background: white;
+      box-shadow: 0px 4px 10px $shadow-color;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  .options {
+    margin-top: 20px;
+
+    .card {
+      background: white;
+      cursor: pointer;
+      box-shadow: 0px 2px 6px $shadow-color;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        background: $option-hover;
+        transform: scale(1.02);
+      }
+
+      &:active {
+        background: $primary-color;
+        color: white;
+      }
+
+      p {
+        text-align: center;
+        font-size: 16px;
+        font-weight: 500;
+      }
+    }
+  }
+}
