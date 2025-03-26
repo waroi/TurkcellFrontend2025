@@ -52,7 +52,7 @@
       "appliedJobs": [
         {
           "id": "1",
-          "status": "pending",
+          "status": "hired",
           "applicationDate": "2024-03-21T11:00:00Z"
         }
       ],
@@ -101,44 +101,17 @@
       "appliedJobs": [
         {
           "id": "1",
-          "status": "pending",
-          "applicationDate": "2024-03-21T11:00:00Z"
-        },
-        {
-          "id": "1",
-          "status": "pending",
-          "applicationDate": "2025-03-26T00:41:42.081Z"
-        }
-      ]
-    },
-    {
-      "id": "FXPXZ8QOAGN3Cx9U83Yi0FTHyri1",
-      "firstName": "Hazal",
-      "lastName": "Kütküt",
-      "role": "user",
-      "email": "hazalktkt@gmail.com",
-      "appliedJobs": [
-        {
-          "id": "1",
-          "status": "pending",
+          "status": "test",
           "applicationDate": "2024-03-21T11:00:00Z"
         }
       ]
-    },
-    {
-      "id": "iAEiwpsMS3PqPkHGO9nHICxtY6c2",
-      "firstName": "Hazal",
-      "lastName": "Kütküt",
-      "role": "user",
-      "email": "hazalk@gmail.com",
-      "appliedJobs": []
     }
   ],
   "jobs": [
     {
       "id": "1",
       "createdAt": "2024-03-21T10:00:00Z",
-      "createdByAdmin": "adminId789",
+      "createdByAdminId": "EgXkh9QfPQYYeRpjwjS7nEuZ54B3",
       "position": "Frontend Developer",
       "company": "TechCorp",
       "location": "Remote",
@@ -175,7 +148,7 @@
         },
         {
           "id": "90dZl0LQt8cihXatYOszexHShlm1",
-          "status": "pending",
+          "status": "test",
           "approvedByAdmin": "",
           "applicationDate": "2025-03-26T00:35:20.098Z"
         }
@@ -197,7 +170,7 @@
       ],
       "approvedCandidates": [
         {
-          "id": "1",
+          "userId": "1",
           "jobId": "1",
           "approvedAt": "2024-03-21T12:00:00Z",
           "newStatus": "test"
@@ -212,41 +185,19 @@
       ]
     },
     {
-      "id": "tyrRs7mlhQToPmbQT9VVpeNC0Wl2",
-      "firstName": "helen",
-      "lastName": "studyo",
-      "role": "admin",
-      "email": "helenstudyo@gmail.com",
-      "appliedJobs": []
-    },
-    {
-      "id": "6YQBDpgK4bOVBIoCDfHwZE2rpOK2",
-      "firstName": "helen",
-      "lastName": "stüdyo",
-      "role": "admin",
-      "email": "helenstudyo@gmail.com",
-      "appliedJobs": []
-    },
-    {
-      "id": "Hnmchxrd6AVBKDAo9O1K0ZqwvVn2",
+      "id": "4jD11dc0GLY8py3GlFiNHYqXow13",
       "firstName": "helenstudyo",
-      "lastName": "hilal",
+      "lastName": "helen",
       "role": "admin",
-      "email": "helenstudyo@gmail.com"
-    },
-    {
-      "id": "bQoPej9ck8e7TrpbSQ5BreJoFX23",
-      "firstName": "Hazal",
-      "lastName": "Kütküt",
-      "role": "admin",
-      "email": "hazalktt@gmail.com"
-    },
-    {
-      "id": "1VyODh3o0gONwmtrEgBQX0ikcmA3",
-      "firstName": "Hazal",
-      "lastName": "Kütküt",
-      "role": "admin",
-      "email": "hazalktt@gmail.com"
+      "email": "helenstudyo@gmail.com",
+      "approvedCandidates": [
+        {
+          "userId": "90dZl0LQt8cihXatYOszexHShlm1",
+          "jobId": "1",
+          "approvedAt": "2024-03-21T12:00:00Z",
+          "newStatus": "test"
+        }
+      ]
     }
   ],
   "exams": [
