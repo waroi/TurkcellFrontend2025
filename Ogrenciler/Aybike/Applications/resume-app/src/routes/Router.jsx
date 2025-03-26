@@ -1,7 +1,6 @@
 import { useRoutes } from "react-router";
 import Layout from "../components/layout/Layout";
 import { lazy } from "react";
-import Dashboard from "../components/DashBoard/Dashboard";
 
 const LazyHome = lazy(() => import('../pages/Home/Home'))
 const LazyGiftView = lazy(() => import('../pages/Gift/GiftView'))
@@ -10,6 +9,8 @@ const LazyApplicationView = lazy(() => import('../pages/user/ApplicationView'))
 const LazyApplicationDetailView = lazy(() => import('../pages/admin/ApplicationDetailView'))
 const LazyApplicationListView = lazy(() => import('../pages/admin/ApplicationListView'))
 const LazyTest = lazy(() => import('../pages/test/Test'))
+const LazyDashboard = lazy(() => import("../components/DashBoard/Dashboard"))
+const LazyCompletedUsers = lazy(() => import("../pages/CompletedUsers/CompletedUsers"))
 
 const Router = () => {
   const routes = useRoutes([
@@ -42,11 +43,15 @@ const Router = () => {
         },
         {
           path: "dashboard",
-          element: <Dashboard />
+          element: <LazyDashboard />
         },
         {
           path: 'test',
           element: <LazyTest />
+        },
+        {
+          path: 'completed-users',
+          element: <LazyCompletedUsers />
         }
       ],
     },
