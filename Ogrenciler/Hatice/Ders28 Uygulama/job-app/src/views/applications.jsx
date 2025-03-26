@@ -1,20 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import useJobsStore from '../store/jobs';
+import useJobs from '../hooks/useJobs';
+import ApplicationStatus from '../hooks/ApplicationStatus';
 
 const Applications = () => {
-  const jobs = useJobsStore((state) => state.jobs);
-  const fetchJobs = useJobsStore((state) => state.fetchJobs);
-  const updateJobStatus = useJobsStore((state) => state.updateJobStatus);
-
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    fetchJobs().then(() => setLoading(false));
-  }, [fetchJobs]);
-
-  const handleStatusChange = (id, newStatus) => {
-    updateJobStatus(id, newStatus);
-  };
+  const { jobs, loading } = useJobs();
 
   return (
     <div className='container mt-5'>
@@ -49,15 +38,7 @@ const Applications = () => {
                 <td>{job.coverLetter}</td>
                 <td>{job.createdAt?.toDate?.().toLocaleString() || '-'}</td>
                 <td>
-                  <select className='bg-white text-dark'
-                  style={{ border: "1px solid var(--primary)", borderRadius: "5px" }}
-                    value={job.status || 'Beklemede'}
-                    onChange={(e) => handleStatusChange(job.id, e.target.value)}
-                  >
-                    <option value='Beklemede'>Beklemede</option>
-                    <option value='Olumlu'>Olumlu</option>
-                    <option value='Olumsuz'>Olumsuz</option>
-                  </select>
+                  <ApplicationStatus job={job} />
                 </td>
               </tr>
             ))}
