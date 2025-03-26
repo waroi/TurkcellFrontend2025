@@ -39,3 +39,6 @@ export const getCandidate = async (id) => {
 export const updateUserExams = async (id, score) => {
   return await fetchService(`${url}/candidates/${id}`, "PUT", { score });
 }
+export const getAllJobsQuiz = async () => { 
+  return await fetchService(`${url}/questions`);  
+}

@@ -6,85 +6,12 @@ import SecondaryButton from "../atoms/Buttons/SecondaryButton";
 import DangerButton from "../atoms/Buttons/DangerButton";
 import { updateUserExams } from "../../utils/services";
 
-const questions = [
-  {
-    question: "Nesne (Object) nedir?",
-    options: [
-      "Sadece fiziksel varlıklardır.",
-      "Özellikleri ve davranışları olan varlıklardır.",
-      "Yalnızca programlama dillerinde kullanılır.",
-      "Sadece veritabanında depolanan öğelerdir.",
-    ],
-    answer: "Özellikleri ve davranışları olan varlıklardır.",
-  },
-  {
-    question: "Sınıf (Class) nedir?",
-    options: [
-      "Nesnelerin özelliklerinin depolandığı yerdir.",
-      "Nesnelerin oluşturulduğu bir kalıptır.",
-      "Sadece verileri tutar.",
-      "Yalnızca metodları içerir.",
-    ],
-    answer: "Nesnelerin oluşturulduğu bir kalıptır.",
-  },
-  {
-    question: "Kalıtım (Inheritance) nedir?",
-    options: [
-      "Sadece metodların paylaşılmasıdır.",
-      "Bir sınıfın başka bir sınıftan özellikler almasıdır.",
-      "Verilerin kopyalanmasıdır.",
-      "Yalnızca temel sınıflarda kullanılır.",
-    ],
-    answer: "Bir sınıfın başka bir sınıftan özellikler almasıdır.",
-  },
-  {
-    question: "Soyutlama (Abstraction) nedir?",
-    options: [
-      "Nesnenin tüm detaylarını gizlemek anlamına gelir.",
-      "Önemli özelliklerin ön plana çıkarılmasıdır.",
-      "Yalnızca metodların gizlenmesidir.",
-      "Verilerin doğrudan erişilmesidir.",
-    ],
-    answer: "Önemli özelliklerin ön plana çıkarılmasıdır.",
-  },
-  {
-    question: "Çok biçimlilik (Polymorphism) nedir?",
-    options: [
-      "Aynı metodun farklı şekillerde davranış göstermesidir.",
-      "Nesnelerin kopyalanmasıdır.",
-      "Yalnızca türetilmiş sınıflarda kullanılır.",
-      "Metodların üzerine yazılmasıdır.",
-    ],
-    answer: "Aynı metodun farklı şekillerde davranış göstermesidir.",
-  },
-  {
-    question: "Kapsülleme (Encapsulation) nedir?",
-    options: [
-      "Nesnenin iç detaylarının gizlenmesidir.",
-      "Yalnızca metodların gizlenmesidir.",
-      "Nesnelerin kopyalanmasıdır.",
-      "Verilerin doğrudan erişilmesidir.",
-    ],
-    answer: "Nesnenin iç detaylarının gizlenmesidir.",
-  },
-  {
-    question: "SOLID prensiplerinin amacı nedir?",
-    options: [
-      "Kodun okunabilirliğini azaltmak",
-      "Nesne yönelimli tasarımı optimize etmek",
-      "Sadece performansı artırmak",
-      "Daha fazla kod yazmak",
-    ],
-    answer: "Nesne yönelimli tasarımı optimize etmek",
-  },
-];
-
 function shuffle(array) {
   return array.sort(() => Math.random() - 0.5);
 }
 
 const totalTime = 90; // Toplam süre
-const Quiz = ({jobId}) => {
+const Quiz = ({jobId, questions}) => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [showResult, setShowResult] = useState(false);
@@ -92,6 +19,7 @@ const Quiz = ({jobId}) => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [shuffledQuestions, setShuffledQuestions] = useState([]);
   const [quizStarted, setQuizStarted] = useState(false);
+
   useEffect(() => {
     setShuffledQuestions(shuffle(questions).slice(0, 5));
   }, []);
