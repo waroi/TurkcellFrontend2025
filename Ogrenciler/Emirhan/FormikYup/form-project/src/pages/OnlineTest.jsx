@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import questionsData from "../../data/questions.json";
-import "bootstrap/dist/css/bootstrap.min.css";
 import { useParams, useNavigate } from "react-router";
 import { testApplicationStatus } from "../firebase/firebaseUpload";
 import { doc, getDoc } from "firebase/firestore";
@@ -37,7 +36,9 @@ const OnlineTest = () => {
 
   useEffect(() => {
     if (testCompleted || loading) return;
-    const shuffledQuestions = [...questionsData].sort(() => 0.5 - Math.random());
+    const shuffledQuestions = [...questionsData].sort(
+      () => 0.5 - Math.random()
+    );
     setQuestions(shuffledQuestions.slice(0, 5));
   }, [testCompleted, loading]);
 
@@ -93,7 +94,10 @@ const OnlineTest = () => {
       <div className="container mt-4 fullscreen ">
         <div className="card shadow p-4 text-center ">
           <h1 className="text-danger">Tekrar giriş yapamazsınız!</h1>
-          <button className="btn btn-primary mt-3" onClick={() => navigate("/")}>
+          <button
+            className="btn btn-primary mt-3"
+            onClick={() => navigate("/")}
+          >
             Ana Sayfaya Dön
           </button>
         </div>
@@ -108,35 +112,57 @@ const OnlineTest = () => {
         {!showResults ? (
           questions.length > 0 && (
             <div className="mb-3 p-3 border rounded bg-light">
-              <p className="fw-bold">{questions[currentQuestionIndex].question}</p>
+              <p className="fw-bold">
+                {questions[currentQuestionIndex].question}
+              </p>
               <div className="form-check">
-                {Object.keys(questions[currentQuestionIndex].options).map((option) => (
-                  <div key={option} className="form-check">
-                    <input
-                      className="form-check-input"
-                      type="radio"
-                      id={`${questions[currentQuestionIndex].id}_${option}`}
-                      name={`question_${questions[currentQuestionIndex].id}`}
-                      value={option}
-                      checked={answers[questions[currentQuestionIndex].id] === option}
-                      onChange={() => handleAnswerChange(questions[currentQuestionIndex].id, option)}
-                    />
-                    <label className="form-check-label" htmlFor={`${questions[currentQuestionIndex].id}_${option}`}>
-                      {questions[currentQuestionIndex].options[option]}
-                    </label>
-                  </div>
-                ))}
+                {Object.keys(questions[currentQuestionIndex].options).map(
+                  (option) => (
+                    <div key={option} className="form-check">
+                      <input
+                        className="form-check-input"
+                        type="radio"
+                        id={`${questions[currentQuestionIndex].id}_${option}`}
+                        name={`question_${questions[currentQuestionIndex].id}`}
+                        value={option}
+                        checked={
+                          answers[questions[currentQuestionIndex].id] === option
+                        }
+                        onChange={() =>
+                          handleAnswerChange(
+                            questions[currentQuestionIndex].id,
+                            option
+                          )
+                        }
+                      />
+                      <label
+                        className="form-check-label"
+                        htmlFor={`${questions[currentQuestionIndex].id}_${option}`}
+                      >
+                        {questions[currentQuestionIndex].options[option]}
+                      </label>
+                    </div>
+                  )
+                )}
               </div>
               <div className="text-center mt-3">
-                <button className="btn btn-primary" type="button" onClick={handleNextQuestion}>
-                  {currentQuestionIndex < questions.length - 1 ? "Sonraki Soru" : "Testi Bitir"}
+                <button
+                  className="btn btn-primary"
+                  type="button"
+                  onClick={handleNextQuestion}
+                >
+                  {currentQuestionIndex < questions.length - 1
+                    ? "Sonraki Soru"
+                    : "Testi Bitir"}
                 </button>
               </div>
             </div>
           )
         ) : (
           <div className="alert alert-success mt-4 text-center">
-            <p className="fs-5">Tebrikler! Testi Tamamladınız Sekmeyi Kapatabilirsiniz.</p>
+            <p className="fs-5">
+              Tebrikler! Testi Tamamladınız Sekmeyi Kapatabilirsiniz.
+            </p>
           </div>
         )}
       </div>

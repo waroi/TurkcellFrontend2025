@@ -7,6 +7,7 @@ import Navbar from "../components/Navbar";
 
 function Applications() {
   const [applications, setApplications] = useState([]);
+  const [selectedApplication, setSelectedApplication] = useState(null);
 
   useEffect(() => {
     const getApplications = async () => {
@@ -19,7 +20,7 @@ function Applications() {
   return (
     <div className="container form-container">
       <Navbar />
-      <table class="table table-striped mt-5">
+      <table className="table table-striped mt-5">
         <thead>
           <tr>
             <th scope="col">No</th>
@@ -40,18 +41,26 @@ function Applications() {
               <td>{application.email}</td>
               <td>{application.position}</td>
               <td>
-                <span class="custom-badge">{application.status}</span>
+                <span className="custom-badge">{application.status}</span>
               </td>
               <td className="d-flex align-items-center gap-2">
-                <button
+                <a
                   className="btn btn-success btn-sm"
-                  onClick={() =>
-                    updateApplicationStatus(application.id, "Test Aşamasında", application.email, application.name)
-                  }
+                  href={`/question-type-select/${application.id}`}
                 >
                   <i className="fa-solid fa-circle-check"></i>
-                </button>
-                <button className="btn btn-danger btn-sm" onClick={() => updateApplicationStatus(application.id, "Reddedildi", application.email, application.name)}>
+                </a>
+                <button
+                  className="btn btn-danger btn-sm"
+                  onClick={() =>
+                    updateApplicationStatus(
+                      application.id,
+                      "Reddedildi",
+                      application.email,
+                      application.name
+                    )
+                  }
+                >
                   <i className="fa-solid fa-circle-xmark"></i>
                 </button>
                 <button className="btn btn-primary btn-sm">

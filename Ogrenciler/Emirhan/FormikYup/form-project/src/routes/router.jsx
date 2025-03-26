@@ -8,6 +8,7 @@ import PositionDetail from "../pages/PositionDetail";
 import WorkForm from "../components/WorkForm";
 import Applications from "../pages/Applications";
 import OnlineTest from "../pages/OnlineTest";
+import QuestionType from "../pages/QuestionType";
 
 const ProtectedRoute = ({ element, allowedRoles }) => {
   const status = localStorage.getItem("status");
@@ -52,6 +53,7 @@ const Router = () => {
       ),
     },
     { path: "/online-test/:id", element: <OnlineTest /> },
+    { path: "/question-type-select/:id", element: <QuestionType /> }
   ]);
 
   return routes;

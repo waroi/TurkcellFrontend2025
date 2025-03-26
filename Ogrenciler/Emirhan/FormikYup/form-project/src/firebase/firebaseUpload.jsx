@@ -89,6 +89,16 @@ export const uploadJobForm = async (job) => {
   }
 };
 
+export const createQuestionDistribution = async (questionDistribution) => {
+  try {
+    const jobsCollection = collection(db, "questionDistributions");
+
+    await addDoc(jobsCollection, questionDistribution);
+  } catch (error) {
+    console.error("Hata oluştu:", error);
+  }
+};
+
 export const updateApplicationStatus = async (id, status, email, name) => {
   try {
     const applicationRef = doc(db, "jobApplications", id);
@@ -105,17 +115,13 @@ export const testApplicationStatus = async (id, correctAnswers) => {
     const applicationRef = doc(db, "jobApplications", id);
     if (correctAnswers >= 4) {
       await updateDoc(applicationRef, { status: "Başarılı" });
-    }
-    else {
+    } else {
       await updateDoc(applicationRef, { status: "Başarısız" });
     }
-
   } catch (error) {
     console.error("Durum güncelleme hatası:", error);
   }
 };
-
-
 
 const sendEmail = (email, status, name, id) => {
   const templateParams = {

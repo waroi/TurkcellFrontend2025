@@ -44,7 +44,7 @@ const Position = () => {
                                 <div className="d-flex justify-content-between">
                                     <h5 className="card-title">{position.title}</h5>
                                     <div className="d-flex gap-2 align-items-center">
-                                        <i class="fa-solid fa-calendar-days text-danger"></i>
+                                        <i className="fa-solid fa-calendar-days text-danger"></i>
                                         <span className="text-danger fw-medium">{position.endDate}</span>
                                     </div>
                                 </div>
@@ -54,11 +54,11 @@ const Position = () => {
                                     <div className="d-flex gap-3">
 
                                         <div className="d-flex gap-2 align-items-center">
-                                            <i class="fa-solid fa-location-dot"></i>
+                                            <i className="fa-solid fa-location-dot"></i>
                                             <span>{position.location}</span>
                                         </div>
                                         <div className="d-flex gap-2 align-items-center">
-                                            <i class="fa-solid fa-briefcase"></i>
+                                            <i className="fa-solid fa-briefcase"></i>
                                             <span>{position.type}</span>
                                         </div>
                                     </div>
