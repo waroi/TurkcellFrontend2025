@@ -90,12 +90,12 @@ const Quiz = ({jobId, questions}) => {
           </p>
         </div>
       ) : (
-        <div>
-          <h2 className="mb-2">
+        <div className="vh-100 d-flex flex-column justify-content-center p-5 gap-5">
+          <h2 className="mb-2 text-center">
             {shuffledQuestions[currentQuestion]?.question}
           </h2>
           <div className="text-end text-muted mb-2">Toplam Süre: {timeLeft} sn</div>
-          <div className="d-flex justify-content-between align-items-center gap-3">
+          <div className="d-flex justify-content-between align-items-center gap-2">
             {shuffledQuestions[currentQuestion]?.options.map((option) => {
               const isCorrect =
                 option === shuffledQuestions[currentQuestion].answer;
