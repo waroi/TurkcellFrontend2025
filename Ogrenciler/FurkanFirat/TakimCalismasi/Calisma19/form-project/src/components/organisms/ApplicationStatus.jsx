@@ -73,6 +73,7 @@ export const ApplicationStatus = () => {
       </div>
     );
   }
+  console.log(application);
 
   return (
     <>
@@ -112,6 +113,17 @@ export const ApplicationStatus = () => {
                 <p className='text-danger'>
                   We're sorry, but your application has been rejected. Please
                   contact support for more information.
+                </p>
+              )}
+              {application.status === 'exam passed' && (
+                <p className='text-success'>
+                  Congrats! You have passed the exam. We will contact you soon.
+                </p>
+              )}
+              {application.status === 'exam failed' && (
+                <p className='text-danger'>
+                  You have failed the test. Unfortunately, we will not be moving
+                  forward.
                 </p>
               )}
             </div>
