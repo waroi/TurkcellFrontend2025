@@ -11,12 +11,18 @@ const JobCard = ({ job, user }) => {
   const navigate = useNavigate();
   const { applyJob } = useActions();
   const [hasApplied, setHasApplied] = useState(false);
+  const [jobStatus, setJobStatus] = useState("pending");
 
   const appliedBefore = () => {
-    const applied = user.appliedJobs.some(
-      (appliedJob) => appliedJob.id === job.id
-    );
-    setHasApplied(applied);
+    if (user && user.appliedJobs) {
+      const appliedJob = user.appliedJobs.find(
+        (appliedJob) => appliedJob.id === job.id
+      );
+      if (appliedJob) {
+        setHasApplied(true);
+        setJobStatus(appliedJob.status);
+      }
+    }
   };
 
   useEffect(() => {
@@ -51,6 +57,10 @@ const JobCard = ({ job, user }) => {
               >
                 Başvuran Adaylar
               </WarningButton>
+            ) : jobStatus === "test" ? (
+              <SuccessButton onClick={() => navigate(`jobs/${job.id}/exam`)}>
+                Test aşamasına geçtiniz, testi çözmek için tıklayınız
+              </SuccessButton>
             ) : (
               <SuccessButton
                 onClick={() => applyJob(job.id)}

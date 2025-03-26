@@ -52,7 +52,7 @@
       "appliedJobs": [
         {
           "id": "1",
-          "status": "pending",
+          "status": "hired",
           "applicationDate": "2024-03-21T11:00:00Z"
         }
       ],
@@ -101,13 +101,36 @@
       "appliedJobs": [
         {
           "id": "1",
-          "status": "pending",
+          "status": "test",
           "applicationDate": "2024-03-21T11:00:00Z"
-        },
+        }
+      ]
+    },
+    {
+      "id": "VILaDZXFqNUzaxhGzZpa7Hi8rZF2",
+      "firstName": "ela",
+      "lastName": "kılıç",
+      "role": "user",
+      "email": "berfin@gmail.com",
+      "appliedJobs": [
+        {
+          "id": "1",
+          "status": "test",
+          "applicationDate": "2025-03-26T12:26:54.807Z"
+        }
+      ]
+    },
+    {
+      "id": "j623JrQfEcdLMI294bLETumYyPU2",
+      "firstName": "Hazal",
+      "lastName": "Kütküt",
+      "role": "user",
+      "email": "hazalktt@gmail.com",
+      "appliedJobs": [
         {
           "id": "1",
           "status": "pending",
-          "applicationDate": "2025-03-26T00:41:42.081Z"
+          "applicationDate": "2025-03-26T13:09:30.489Z"
         }
       ]
     }
@@ -116,7 +139,7 @@
     {
       "id": "1",
       "createdAt": "2024-03-21T10:00:00Z",
-      "createdByAdmin": "adminId789",
+      "createdByAdminId": "EgXkh9QfPQYYeRpjwjS7nEuZ54B3",
       "position": "Frontend Developer",
       "company": "TechCorp",
       "location": "Remote",
@@ -148,14 +171,32 @@
         {
           "id": "1",
           "applicationDate": "2024-03-21T11:00:00Z",
-          "status": "pending",
+          "status": "hired",
           "approvedByAdmin": "1"
         },
         {
           "id": "90dZl0LQt8cihXatYOszexHShlm1",
-          "status": "pending",
+          "status": "test",
           "approvedByAdmin": "",
           "applicationDate": "2025-03-26T00:35:20.098Z"
+        },
+        {
+          "id": "VILaDZXFqNUzaxhGzZpa7Hi8rZF2",
+          "status": "test",
+          "approvedByAdmin": "",
+          "applicationDate": "2025-03-26T12:26:54.807Z"
+        },
+        {
+          "id": "j623JrQfEcdLMI294bLETumYyPU2",
+          "status": "pending",
+          "approvedByAdmin": "",
+          "applicationDate": "2025-03-26T13:09:05.965Z"
+        },
+        {
+          "id": "j623JrQfEcdLMI294bLETumYyPU2",
+          "status": "pending",
+          "approvedByAdmin": "",
+          "applicationDate": "2025-03-26T13:09:30.489Z"
         }
       ]
     }
@@ -175,7 +216,7 @@
       ],
       "approvedCandidates": [
         {
-          "id": "1",
+          "userId": "1",
           "jobId": "1",
           "approvedAt": "2024-03-21T12:00:00Z",
           "newStatus": "test"
@@ -190,27 +231,40 @@
       ]
     },
     {
-      "id": "tyrRs7mlhQToPmbQT9VVpeNC0Wl2",
-      "firstName": "helen",
-      "lastName": "studyo",
-      "role": "admin",
-      "email": "helenstudyo@gmail.com",
-      "appliedJobs": []
-    },
-    {
-      "id": "6YQBDpgK4bOVBIoCDfHwZE2rpOK2",
-      "firstName": "helen",
-      "lastName": "stüdyo",
-      "role": "admin",
-      "email": "helenstudyo@gmail.com",
-      "appliedJobs": []
-    },
-    {
-      "id": "Hnmchxrd6AVBKDAo9O1K0ZqwvVn2",
+      "id": "4jD11dc0GLY8py3GlFiNHYqXow13",
       "firstName": "helenstudyo",
-      "lastName": "hilal",
+      "lastName": "helen",
       "role": "admin",
-      "email": "helenstudyo@gmail.com"
+      "email": "helenstudyo@gmail.com",
+      "approvedCandidates": [
+        {
+          "userId": "90dZl0LQt8cihXatYOszexHShlm1",
+          "jobId": "1",
+          "approvedAt": "2024-03-21T12:00:00Z",
+          "newStatus": "test"
+        }
+      ]
+    },
+    {
+      "id": "tbHVOivOomebkNYdTDxqPNSChRy2",
+      "firstName": "Berfin Ela",
+      "lastName": "Kılıç",
+      "role": "admin",
+      "email": "berfinela877@gmail.com",
+      "approvedCandidates": [
+        {
+          "userId": "1",
+          "jobId": "1",
+          "approvedAt": "2025-03-26T12:44:31.194Z",
+          "newStatus": "hired"
+        },
+        {
+          "userId": "VILaDZXFqNUzaxhGzZpa7Hi8rZF2",
+          "jobId": "1",
+          "approvedAt": "2025-03-26T12:50:43.011Z",
+          "newStatus": "test"
+        }
+      ]
     }
   ],
   "exams": [
