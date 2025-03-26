@@ -88,6 +88,10 @@ export async function updateMessage(id, message) {
 
 export async function setQuizPoint(appId, point) {
   const docRef = doc(db, "applications", appId);
-  console.log(appId);
-  setDoc(docRef, { quiz: point, status: "Mülakat" }, { merge: true });
+  setDoc(docRef, { quiz: point, status: "Test Kontrol" }, { merge: true });
+}
+
+export async function setStatus(appId, status) {
+  const docRef = doc(db, "applications", appId);
+  setDoc(docRef, { status: status }, { merge: true });
 }

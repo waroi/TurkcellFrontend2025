@@ -127,34 +127,19 @@ const Applications = () => {
                 <div className="mt-4 d-flex justify-content-end">
                   {user &&
                   (application.status === "Beklemede" ||
-                    application.status === "Mülakat") &&
+                    application.status === "Test Kontrol") &&
                   user.role === "admin" ? (
                     <>
-                      {application.status === "Mülakat" && (
+                      {application.status === "Test Kontrol" && (
                         <span className="badge text-bg-primary">
                           Test Skoru: {application.quiz}
                         </span>
                       )}
                       <Button
                         className="btn btn-success me-3 px-4 py-2 shadow"
-                        onClick={() => sonrakiAsama(application)}
-                        // onClick={() => {
-                        //   const newStatus =
-                        //     application.status === "Beklemede"
-                        //       ? "Test"
-                        //       : "Mülakat";
-                        //   updateAppStatus({
-                        //     ...application,
-                        //     status: newStatus,
-                        //   });
-                        //   setApps((prevApps) =>
-                        //     prevApps.map((app) =>
-                        //       app.id === application.id
-                        //         ? { ...app, status: newStatus }
-                        //         : app
-                        //     )
-                        //   );
-                        // }}
+                        onClick={() => {
+                          sonrakiAsama(application);
+                        }}
                       >
                         {application.status} adıma geç
                       </Button>
@@ -192,9 +177,16 @@ const Applications = () => {
                             Teste Git
                           </NavLink>
                         ))}
+
+                      {user?.role === "user" &&
+                        application.status === "Test Kontrol" && (
+                          <span className="badge text-bg-primary">
+                            Test sonuçlarınız değerlendiriliyor.
+                          </span>
+                        )}
                       {application.status === "Mülakat" && (
                         <span className="badge text-bg-primary">
-                          Test Sonucu Bekleniyor
+                          Tebrikler Mülakat adımına geçmeye hak kazandınız.
                         </span>
                       )}
                       {application.status === "Onay" && (

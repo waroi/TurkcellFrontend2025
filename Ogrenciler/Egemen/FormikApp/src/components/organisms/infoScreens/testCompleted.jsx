@@ -1,12 +1,15 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router";
 
 const TestResult = () => {
+  const navigate = useNavigate();
   const [message, setMessage] = useState(
     "Teknik testi tamamladınız! 🎉 Değerlendirmelerimiz sonucunda sizinle iletişime geçeceğiz."
   );
 
   const handleClick = () => {
     setMessage("Başvurunuz değerlendirme aşamasında. Sabırlı olun! 🚀");
+    navigate("/applications");
   };
 
   return (

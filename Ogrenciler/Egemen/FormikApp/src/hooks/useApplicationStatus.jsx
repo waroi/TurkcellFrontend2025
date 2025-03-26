@@ -15,17 +15,21 @@ const useApplicationStatus = (user, setApps) => {
           newMessage = "Test aşamasında.";
           break;
         case "Test":
-          newStatus = "Mülakat";
+          newStatus = "Test Kontrol";
+          newMessage = "Testiniz değerlendiriliyor.";
+          break;
+        case "Test Kontrol":
+          newStatus = "Test Kontrol";
           newMessage = "Mülakata davet edildi.";
           break;
         case "Mülakat":
-          if (application.quiz > 70) {
-            newStatus = "Onay";
-            newMessage = "Başvuru onaylandı!";
-          } else {
-            newStatus = "Red";
-            newMessage = "Başvuru reddedildi.";
-          }
+          newStatus = "Onay";
+          newMessage = "Mükalata girmeye hak kazandınız.";
+          break;
+        case "Red":
+          newStatus = "Red";
+          newMessage = "Başvuru reddedildi.";
+
           break;
         default:
           return;
