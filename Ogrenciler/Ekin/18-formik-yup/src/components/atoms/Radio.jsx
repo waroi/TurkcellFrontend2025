@@ -1,10 +1,10 @@
-export default function Radio({ value, children, onClick }) {
+export default function Radio({ value, children, onClick, name }) {
   return (
     <div className="form-check mb-3">
       <input
         className="form-check-input"
         type="radio"
-        name={"value"}
+        name={name}
         id={value}
         onClick={onClick}
       />

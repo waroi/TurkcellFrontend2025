@@ -22,7 +22,12 @@ export default function Question({ id, answer }) {
         <hr className="mb-4" />
         <div className="row row-cols-2 px-2 mb-4">
           {question.answers.map((value, index) => (
-            <Radio key={value} value={value} onClick={() => answer(value)}>
+            <Radio
+              key={value}
+              value={value}
+              name={id}
+              onClick={() => answer(value)}
+            >
               {{ 0: "A)", 1: "B)", 2: "C)", 3: "D)" }[index]} {value}
             </Radio>
           ))}

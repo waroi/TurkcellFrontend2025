@@ -8,7 +8,7 @@ export default function ThankYouView() {
 
   const { from } = useParams();
 
-  setTimeout(() => navigate("/"), 5000);
+  // setTimeout(() => navigate("/"), 5000);
 
   return (
     <div className="container text-center">

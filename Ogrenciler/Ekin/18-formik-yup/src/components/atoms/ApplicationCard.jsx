@@ -55,7 +55,16 @@ const ApplicationCard = ({
 
         {showStatus && (
           <div className="status-section mt-3">
-            {application.status ? (
+            {onSelect ? (
+              <div className="text-end mt-3">
+                <button
+                  onClick={() => onSelect(application)}
+                  className="btn btn-primary btn-sm rounded-pill px-4 py-2"
+                >
+                  <i className="bi bi-search me-2"></i> İncele
+                </button>
+              </div>
+            ) : (
               <div className="d-flex align-items-center">
                 <span className="me-2 fw-semibold">Durum:</span>
                 <span
@@ -67,16 +76,7 @@ const ApplicationCard = ({
                   {getStatusLabel(application.status, application.result)}
                 </span>
               </div>
-            ) : onSelect ? (
-              <div className="text-end mt-3">
-                <button
-                  onClick={() => onSelect(application)}
-                  className="btn btn-primary btn-sm rounded-pill px-4 py-2"
-                >
-                  <i className="bi bi-search me-2"></i> İncele
-                </button>
-              </div>
-            ) : null}
+            )}
           </div>
         )}
       </div>
