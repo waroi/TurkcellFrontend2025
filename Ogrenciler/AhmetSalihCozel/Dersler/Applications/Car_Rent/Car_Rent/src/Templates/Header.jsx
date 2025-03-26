@@ -8,7 +8,6 @@ import { logout } from "../Store/fireBase";
 const Header = () => {
   const user = useUserStore((state) => state.user);
   const fetchUser = useUserStore((state) => state.fetchUser);
-  
   const userId = localStorage.getItem("user");
   const navigate = useNavigate();
 
@@ -23,7 +22,7 @@ const Header = () => {
   const handleClick = (event) => {
     if (!isLoggedOut) {
       setAnchorEl(event.currentTarget);
-      setIsLoggedOut(false)
+      setIsLoggedOut(false);
     }
   };
 
@@ -32,6 +31,10 @@ const Header = () => {
     setAnchorEl(null);
     setIsLoggedOut(true); // Kullanıcı çıkış yaptıktan sonra durumu güncelle
     navigate("/"); // Anasayfaya yönlendir
+  };
+
+  const handleCloseMenu = () => {
+    setAnchorEl(null); // Menü kapama
   };
 
   return (
@@ -54,8 +57,8 @@ const Header = () => {
             </Box>
           )}
 
-          <Menu anchorEl={anchorEl} open={Boolean(anchorEl)}>
-            <MenuItem onClick={() => { navigate("/rentedcars");}}>Kiraladığım Araçlar</MenuItem>
+          <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleCloseMenu}> {/* onClose prop'u eklendi */}
+            <MenuItem onClick={() => { navigate("/rentedcars"); handleCloseMenu(); }}>Kiraladığım Araçlar</MenuItem>
             <MenuItem onClick={handleLogout}>Çıkış Yap</MenuItem>
           </Menu>
         </Box>
