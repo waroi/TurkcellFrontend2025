@@ -129,8 +129,13 @@
       "appliedJobs": [
         {
           "id": "1",
-          "status": "pending",
+          "status": "test",
           "applicationDate": "2025-03-26T13:09:30.489Z"
+        },
+        {
+          "id": "2",
+          "status": "pending",
+          "applicationDate": "2025-03-26T16:38:58.928Z"
         }
       ]
     }
@@ -188,15 +193,161 @@
         },
         {
           "id": "j623JrQfEcdLMI294bLETumYyPU2",
-          "status": "pending",
+          "status": "test",
           "approvedByAdmin": "",
           "applicationDate": "2025-03-26T13:09:05.965Z"
         },
         {
           "id": "j623JrQfEcdLMI294bLETumYyPU2",
-          "status": "pending",
+          "status": "test",
           "approvedByAdmin": "",
           "applicationDate": "2025-03-26T13:09:30.489Z"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "createdAt": "2024-02-15T09:30:00Z",
+      "createdByAdminId": "1",
+      "position": "Backend Developer",
+      "company": "DevSolutions",
+      "location": "Berlin, Germany",
+      "employmentType": "Full-time",
+      "term": "Permanent",
+      "salaryRange": "2000-2500 EUR",
+      "description": "We are seeking an experienced Backend Developer with expertise in Node.js and MongoDB.",
+      "requirements": [
+        "Proficiency in Node.js and Express",
+        "Experience with MongoDB and SQL databases",
+        "Knowledge of RESTful API design",
+        "Strong problem-solving skills"
+      ],
+      "responsibilities": [
+        "Design and develop scalable backend services",
+        "Maintain and optimize database performance",
+        "Collaborate with frontend and DevOps teams",
+        "Ensure security best practices are followed"
+      ],
+      "benefits": [
+        "Hybrid work model",
+        "Competitive salary",
+        "Health insurance",
+        "Company retreats"
+      ],
+      "status": "open",
+      "deadline": "2024-05-15T23:59:59Z",
+      "applicants": [
+        {
+          "id": "j623JrQfEcdLMI294bLETumYyPU2",
+          "status": "pending",
+          "approvedByAdmin": "",
+          "applicationDate": "2025-03-26T16:38:58.928Z"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "createdAt": "2024-01-10T08:45:00Z",
+      "createdByAdminId": "1",
+      "position": "UI/UX Designer",
+      "company": "CreativeStudio",
+      "location": "Paris, France",
+      "employmentType": "Part-time",
+      "term": "Contract",
+      "salaryRange": "800-1200 EUR",
+      "description": "We are looking for a talented UI/UX Designer to join our creative team.",
+      "requirements": [
+        "Experience with Figma and Adobe XD",
+        "Understanding of design principles and UX research",
+        "Ability to create wireframes and prototypes",
+        "Strong collaboration and communication skills"
+      ],
+      "responsibilities": [
+        "Design intuitive and engaging user interfaces",
+        "Conduct user research and usability testing",
+        "Work closely with developers to ensure seamless implementation",
+        "Maintain design consistency across products"
+      ],
+      "benefits": [
+        "Flexible working hours",
+        "Remote-friendly environment",
+        "Creative and collaborative team",
+        "Learning opportunities"
+      ],
+      "status": "open",
+      "deadline": "2024-06-01T23:59:59Z",
+      "applicants": []
+    },
+    {
+      "id": "4",
+      "createdAt": "2024-04-05T11:15:00Z",
+      "createdByAdminId": "1",
+      "position": "Full Stack Developer",
+      "company": "InnovateX",
+      "location": "Amsterdam, Netherlands",
+      "employmentType": "Full-time",
+      "term": "Permanent",
+      "salaryRange": "2500-3000 EUR",
+      "description": "We are looking for a Full Stack Developer with expertise in React and Node.js.",
+      "requirements": [
+        "Experience with React.js, Node.js, and TypeScript",
+        "Familiarity with PostgreSQL and MongoDB",
+        "Understanding of CI/CD pipelines",
+        "Strong problem-solving and analytical skills"
+      ],
+      "responsibilities": [
+        "Develop and maintain full-stack applications",
+        "Collaborate with UX designers and backend developers",
+        "Optimize applications for performance and scalability",
+        "Participate in code reviews and agile processes"
+      ],
+      "benefits": [
+        "Relocation support",
+        "Yearly bonus structure",
+        "Access to the latest technologies",
+        "Professional development opportunities"
+      ],
+      "status": "open",
+      "deadline": "2024-07-01T23:59:59Z",
+      "applicants": []
+    },
+    {
+      "id": "5",
+      "createdAt": "2024-02-20T14:50:00Z",
+      "createdByAdminId": "1",
+      "position": "Data Analyst",
+      "company": "DataWorks",
+      "location": "London, UK",
+      "employmentType": "Full-time",
+      "term": "Permanent",
+      "salaryRange": "2200-2700 GBP",
+      "description": "Seeking a Data Analyst to derive insights from complex datasets.",
+      "requirements": [
+        "Strong experience with SQL and Python",
+        "Familiarity with BI tools like Tableau or Power BI",
+        "Understanding of statistical analysis",
+        "Excellent communication and reporting skills"
+      ],
+      "responsibilities": [
+        "Analyze large datasets to support business decisions",
+        "Develop dashboards and reports",
+        "Collaborate with stakeholders to define KPIs",
+        "Ensure data accuracy and integrity"
+      ],
+      "benefits": [
+        "Hybrid work model",
+        "Career advancement programs",
+        "Annual performance bonuses",
+        "Wellness benefits"
+      ],
+      "status": "open",
+      "deadline": "2024-06-30T23:59:59Z",
+      "applicants": [
+        {
+          "id": "j623JrQfEcdLMI294bLETumYyPU2",
+          "status": "pending",
+          "approvedByAdmin": "",
+          "applicationDate": "2025-03-26T16:30:30.955Z"
         }
       ]
     }
@@ -211,6 +362,26 @@
       "createdJobs": [
         {
           "id": "1",
+          "createdDate": "date"
+        },
+        {
+          "id": "2",
+          "createdDate": "date"
+        },
+        {
+          "id": "3",
+          "createdDate": "date"
+        },
+        {
+          "id": "4",
+          "createdDate": "date"
+        },
+        {
+          "id": "4",
+          "createdDate": "date"
+        },
+        {
+          "id": "4",
           "createdDate": "date"
         }
       ],
@@ -265,6 +436,21 @@
           "newStatus": "test"
         }
       ]
+    },
+    {
+      "id": "hnCIJojXAKS4o48zIA6Urs4j6Gs1",
+      "firstName": "Hazal",
+      "lastName": "Kütküt",
+      "role": "admin",
+      "email": "hazalkt@gmail.com",
+      "approvedCandidates": [
+        {
+          "userId": "j623JrQfEcdLMI294bLETumYyPU2",
+          "jobId": "1",
+          "approvedAt": "2025-03-26T15:45:05.847Z",
+          "newStatus": "test"
+        }
+      ]
     }
   ],
   "exams": [
@@ -277,7 +463,6 @@
       "senderAdminId": "1"
     }
   ],
-  
   "questions": [
     {
       "question": "JavaScript'te Event Bubbling nedir?",
