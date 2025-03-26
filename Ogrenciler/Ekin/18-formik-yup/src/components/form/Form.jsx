@@ -33,7 +33,7 @@ export default function Form({ id }) {
   function onSubmit(values, actions) {
     return submitForm({ application: application.id, ...values }).then(() => {
       addToast("Başvurunuz başarıyla gönderildi!", "success");
-      navigate("/thank-you");
+      navigate("/redirect/application");
       actions.resetForm();
     });
   }

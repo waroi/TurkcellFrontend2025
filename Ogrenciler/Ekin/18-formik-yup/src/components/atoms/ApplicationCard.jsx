@@ -60,10 +60,11 @@ const ApplicationCard = ({
                 <span className="me-2 fw-semibold">Durum:</span>
                 <span
                   className={`badge ${getStatusBadge(
-                    application.status
+                    application.status,
+                    application.result
                   )} py-2 px-3 rounded-pill`}
                 >
-                  {getStatusLabel(application.status)}
+                  {getStatusLabel(application.status, application.result)}
                 </span>
               </div>
             ) : onSelect ? (

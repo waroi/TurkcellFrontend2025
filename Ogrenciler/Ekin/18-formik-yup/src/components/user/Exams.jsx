@@ -25,7 +25,8 @@ const MyApplications = () => {
   return (
     <div className="mt-3">
       {userApplications.map((app) => {
-        if (app.exam) return <Exam key={app.application} app={app} />;
+        if (app.exam && !app.result)
+          return <Exam key={app.application} app={app} />;
       })}
     </div>
   );

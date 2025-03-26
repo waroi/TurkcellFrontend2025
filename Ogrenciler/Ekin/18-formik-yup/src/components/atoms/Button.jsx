@@ -22,7 +22,12 @@ export default function Button({
     );
   else
     return (
-      <button disabled={disabled} className={`btn btn-${variant}`} type={type}>
+      <button
+        disabled={disabled}
+        className={`btn btn-${variant}`}
+        type={type}
+        onClick={onClick}
+      >
         {children}
       </button>
     );

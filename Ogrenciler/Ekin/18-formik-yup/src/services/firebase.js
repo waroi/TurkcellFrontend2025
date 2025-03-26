@@ -26,6 +26,8 @@ const app = initializeApp({
   appId: "1:152546404685:web:fbcd7a0db185164dceaf04",
 });
 
+import { shuffle } from "@/util/random";
+
 const auth = getAuth(app);
 const database = getFirestore(app);
 
@@ -139,24 +141,44 @@ function addExam() {
     return getDocs(collection(database, "questions")).then((questions) => {
       questions = questions.docs.map((question) => question.id);
 
-      shuffle(questions);
-
-      return questions.slice(0, 5);
-
-      function shuffle(questions) {
-        let index = questions.length;
-
-        while (index != 0) {
-          let random = Math.floor(Math.random() * index);
-
-          index--;
-
-          [questions[index], questions[random]] = [
-            questions[random],
-            questions[index],
-          ];
-        }
-      }
+      return shuffle(questions).slice(0, 5);
     });
   }
+}
+
+export function getExam(id) {
+  return getDoc(doc(database, "exams", id)).then((snapshot) => snapshot.data());
+}
+
+export function getQuestion(id) {
+  return getDoc(doc(database, "questions", id)).then((snapshot) =>
+    snapshot.data()
+  );
+}
+
+export async function submitExam(id, exam) {
+  exam.questions
+    .reduce(
+      async (result, question, index) =>
+        (await result) +
+        ((
+          exam.answers[index]
+            ? exam.answers[index] == (await getQuestion(question)).answers[0]
+            : false
+        )
+          ? 1
+          : 0),
+      0
+    )
+    .then((count) =>
+      getDocs(collection(database, "forms")).then((forms) =>
+        forms.docs.map((form) =>
+          id == form.data().exam
+            ? updateDoc(doc(database, "forms", form.id), {
+                result: parseInt((count * 100) / exam.questions.length),
+              })
+            : ""
+        )
+      )
+    );
 }
