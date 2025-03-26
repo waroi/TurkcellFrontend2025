@@ -1,5 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 $primary-gradient: linear-gradient(135deg, #ff6b6b, #f06595);
 $shadow-color: rgba(0, 0, 0, 0.15);
+$custom-dark-blue: #28317b;
+$custom-burgundy: #780000;
+$custom-cream: #fdf0d5;
+$custom-light-blue: #669bbc;
+* {
+  font-family: "Montserrat", sans-serif;
+}
 
 .test-result {
   display: flex;
@@ -20,7 +28,6 @@ $shadow-color: rgba(0, 0, 0, 0.15);
       font-size: 24px;
       font-weight: bold;
       background: $primary-gradient;
-      -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
@@ -93,6 +100,18 @@ $shadow-color: rgba(0, 0, 0, 0.15);
         font-size: 16px;
         font-weight: 500;
       }
+    }
+  }
+}
+
+.navbar {
+  background-color: $custom-dark-blue;
+  .bg-cream {
+    background-color: $custom-cream;
+  }
+  .btn {
+    &:hover {
+      background-color: $custom-light-blue;
     }
   }
 }
