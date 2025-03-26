@@ -57,6 +57,7 @@ const GeneralForm = () => {
                 expectedSalary: "",
                 isAccepted: false,
                 status: "Beklemede",
+                message: "",
               }}
               validationSchema={stepSchemas[activeStep]}
               onSubmit={submitApplication}

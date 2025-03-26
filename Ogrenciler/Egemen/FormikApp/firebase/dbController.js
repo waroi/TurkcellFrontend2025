@@ -68,6 +68,23 @@ export async function updateAppStatus(app) {
     console.error("Error updating doc:", error);
   }
 }
+export async function updateMessage(id, message) {
+  try {
+    const docRef = doc(db, "applications", id);
+    const docSnap = await getDoc(docRef);
+
+    if (docSnap.exists()) {
+      await updateDoc(docRef, { message });
+      return true;
+    } else {
+      console.warn("Belirtilen başvuru bulunamadı.");
+      return false;
+    }
+  } catch (error) {
+    console.error("Başvuru mesajı güncellenirken hata oluştu:", error);
+    return false;
+  }
+}
 
 export async function setQuizPoint(appId, point) {
   const docRef = doc(db, "applications", appId);

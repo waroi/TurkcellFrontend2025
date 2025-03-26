@@ -4,12 +4,15 @@ import Button from "../components/atoms/buttons/Button";
 import getApplications from "../hooks/getAplications";
 import { unsubscribe } from "../../services/authServices";
 import { NavLink } from "react-router";
+import useApplicationStatus from "../hooks/useApplicationStatus";
 
 const Applications = () => {
   const [apps, setApps] = useState([]);
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [userAuth, setUserAuth] = useState(null);
+  const { sonrakiAsama } = useApplicationStatus(user, setApps);
+
   useEffect(() => {
     unsubscribe(setUserAuth);
     if (userAuth) {
@@ -17,8 +20,7 @@ const Applications = () => {
     } else {
       setLoading(false);
     }
-    console.log("first");
-  }, [userAuth, apps]);
+  }, [userAuth]);
 
   return loading ? (
     <div>Loading...</div>
@@ -135,23 +137,39 @@ const Applications = () => {
                       )}
                       <Button
                         className="btn btn-success me-3 px-4 py-2 shadow"
-                        onClick={() => {
-                          application.status =
-                            application.status == "Beklemede"
-                              ? "Test"
-                              : "Mülakat";
-                          updateAppStatus(application);
-                        }}
+                        onClick={() => sonrakiAsama(application)}
+                        // onClick={() => {
+                        //   const newStatus =
+                        //     application.status === "Beklemede"
+                        //       ? "Test"
+                        //       : "Mülakat";
+                        //   updateAppStatus({
+                        //     ...application,
+                        //     status: newStatus,
+                        //   });
+                        //   setApps((prevApps) =>
+                        //     prevApps.map((app) =>
+                        //       app.id === application.id
+                        //         ? { ...app, status: newStatus }
+                        //         : app
+                        //     )
+                        //   );
+                        // }}
                       >
                         {application.status} adıma geç
                       </Button>
                       <Button
                         className="btn btn-danger px-4 py-2 shadow"
                         onClick={() => {
-                          {
-                            application.status = "Red";
-                            updateAppStatus(application);
-                          }
+                          updateAppStatus({ ...application, status: "Red" });
+
+                          setApps((prevApps) =>
+                            prevApps.map((app) =>
+                              app.id === application.id
+                                ? { ...app, status: "Red" }
+                                : app
+                            )
+                          );
                         }}
                       >
                         Reddet
@@ -165,7 +183,7 @@ const Applications = () => {
                         </span>
                       )}
                       {application.status === "Test" &&
-                        (user.role === "admin" ? (
+                        (user?.role === "admin" ? (
                           <span className="badge text-bg-warning">
                             Test Gönderildi
                           </span>
