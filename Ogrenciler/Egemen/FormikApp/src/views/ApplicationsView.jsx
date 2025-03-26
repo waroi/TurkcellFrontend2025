@@ -20,7 +20,7 @@ const Applications = () => {
     } else {
       setLoading(false);
     }
-  }, [userAuth]);
+  }, [userAuth, apps]);
 
   return loading ? (
     <div>Loading...</div>
