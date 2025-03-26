@@ -472,7 +472,10 @@
         "Yalnızca belirli bir elementte çalışmasıdır.",
         "Event Listener'ların kaldırılmasıdır."
       ],
-      "answer": "Olayın en içteki elementten dışa doğru yayılmasıdır."
+      "answer": "Olayın en içteki elementten dışa doğru yayılmasıdır.",
+      "category": "JavaScript",
+      "level": "Medium",
+      "subcategory": "Olay Yönetimi"
     },
     {
       "question": "TypeScript nedir?",
@@ -482,7 +485,10 @@
         "Sadece backend için kullanılan bir dildir.",
         "CSS çerçevesidir."
       ],
-      "answer": "JavaScript'in tip kontrollü üst kümesidir."
+      "answer": "JavaScript'in tip kontrollü üst kümesidir.",
+      "category": "TypeScript",
+      "level": "Medium",
+      "subcategory": "Dil Bilgisi"
     },
     {
       "question": "React'te 'key' prop'unun amacı nedir?",
@@ -492,7 +498,10 @@
         "State yönetimini kolaylaştırmak",
         "Yalnızca liste uzunluğunu belirlemek"
       ],
-      "answer": "Her bileşene özgün kimlik sağlamak"
+      "answer": "Her bileşene özgün kimlik sağlamak",
+      "category": "React",
+      "level": "Medium",
+      "subcategory": "Bileşen Yönetimi"
     },
     {
       "question": "Vue.js'de 'v-model' direktifi ne işe yarar?",
@@ -502,7 +511,10 @@
         "Form elemanları ile çift yönlü veri bağlama sağlar.",
         "Yalnızca stil düzenlemek için kullanılır."
       ],
-      "answer": "Form elemanları ile çift yönlü veri bağlama sağlar."
+      "answer": "Form elemanları ile çift yönlü veri bağlama sağlar.",
+      "category": "Vue.js",
+      "level": "Medium",
+      "subcategory": "Veri Bağlama"
     },
     {
       "question": "Angular'da 'ngFor' yapısı ne için kullanılır?",
@@ -512,7 +524,10 @@
         "Koşullu ifadeler yazmak için",
         "Servis çağrıları yapmak için"
       ],
-      "answer": "Döngü oluşturmak için"
+      "answer": "Döngü oluşturmak için",
+      "category": "Angular",
+      "level": "Medium",
+      "subcategory": "Döngü Yönetimi"
     },
     {
       "question": "React'te 'useState' Hook'u ne işe yarar?",
@@ -522,7 +537,10 @@
         "Yalnızca stil değiştirmek için",
         "Yalnızca HTTP istekleri yapmak için"
       ],
-      "answer": "Bileşen içindeki durumları yönetmek için"
+      "answer": "Bileşen içindeki durumları yönetmek için",
+      "category": "React",
+      "level": "Medium",
+      "subcategory": "State Yönetimi"
     },
     {
       "question": "CSS'de Flexbox özelliği ne için kullanılır?",
@@ -532,7 +550,10 @@
         "Öğe hizalama ve düzenleme için",
         "Yalnızca mobil uyumluluk için"
       ],
-      "answer": "Öğe hizalama ve düzenleme için"
+      "answer": "Öğe hizalama ve düzenleme için",
+      "category": "CSS",
+      "level": "Medium",
+      "subcategory": "Düzenleme"
     },
     {
       "question": "JavaScript'te Promise nedir?",
@@ -542,7 +563,114 @@
         "Asenkron işlemleri yönetmek için kullanılan yapı",
         "Hata yakalamak için kullanılan yapı"
       ],
-      "answer": "Asenkron işlemleri yönetmek için kullanılan yapı"
+      "answer": "Asenkron işlemleri yönetmek için kullanılan yapı",
+      "category": "JavaScript",
+      "level": "Medium",
+      "subcategory": "Asenkron Programlama"
+    },
+    {
+      "question": "JavaScript'te Event Bubbling nedir?",
+      "options": [
+        "Olayın en içteki elementten dışa doğru yayılmasıdır.",
+        "Olayların engellenmesidir.",
+        "Yalnızca belirli bir elementte çalışmasıdır.",
+        "Event Listener'ların kaldırılmasıdır."
+      ],
+      "answer": "Olayın en içteki elementten dışa doğru yayılmasıdır.",
+      "category": "JavaScript",
+      "level": "Medium",
+      "subcategory": "Olay Yönetimi"
+    },
+    {
+      "question": "TypeScript nedir?",
+      "options": [
+        "JavaScript'in kütüphanesidir.",
+        "JavaScript'in tip kontrollü üst kümesidir.",
+        "Sadece backend için kullanılan bir dildir.",
+        "CSS çerçevesidir."
+      ],
+      "answer": "JavaScript'in tip kontrollü üst kümesidir.",
+      "category": "TypeScript",
+      "level": "Medium",
+      "subcategory": "Dil Bilgisi"
+    },
+    {
+      "question": "React'te 'key' prop'unun amacı nedir?",
+      "options": [
+        "CSS stilini belirlemek",
+        "Her bileşene özgün kimlik sağlamak",
+        "State yönetimini kolaylaştırmak",
+        "Yalnızca liste uzunluğunu belirlemek"
+      ],
+      "answer": "Her bileşene özgün kimlik sağlamak",
+      "category": "React",
+      "level": "Medium",
+      "subcategory": "Bileşen Yönetimi"
+    },
+    {
+      "question": "Vue.js'de 'v-model' direktifi ne işe yarar?",
+      "options": [
+        "Sadece okuma işlemleri için kullanılır.",
+        "Bileşenler arası veri taşımak için kullanılır.",
+        "Form elemanları ile çift yönlü veri bağlama sağlar.",
+        "Yalnızca stil düzenlemek için kullanılır."
+      ],
+      "answer": "Form elemanları ile çift yönlü veri bağlama sağlar.",
+      "category": "Vue.js",
+      "level": "Medium",
+      "subcategory": "Veri Bağlama"
+    },
+    {
+      "question": "Angular'da 'ngFor' yapısı ne için kullanılır?",
+      "options": [
+        "Sadece CSS düzenlemek için",
+        "Döngü oluşturmak için",
+        "Koşullu ifadeler yazmak için",
+        "Servis çağrıları yapmak için"
+      ],
+      "answer": "Döngü oluşturmak için",
+      "category": "Angular",
+      "level": "Medium",
+      "subcategory": "Döngü Yönetimi"
+    },
+    {
+      "question": "React'te 'useState' Hook'u ne işe yarar?",
+      "options": [
+        "Bileşenler arası veri taşımak için",
+        "Bileşen içindeki durumları yönetmek için",
+        "Yalnızca stil değiştirmek için",
+        "Yalnızca HTTP istekleri yapmak için"
+      ],
+      "answer": "Bileşen içindeki durumları yönetmek için",
+      "category": "React",
+      "level": "Medium",
+      "subcategory": "State Yönetimi"
+    },
+    {
+      "question": "CSS'de Flexbox özelliği ne için kullanılır?",
+      "options": [
+        "Sayfaya arka plan eklemek için",
+        "Grid tabanlı düzenler oluşturmak için",
+        "Öğe hizalama ve düzenleme için",
+        "Yalnızca mobil uyumluluk için"
+      ],
+      "answer": "Öğe hizalama ve düzenleme için",
+      "category": "CSS",
+      "level": "Medium",
+      "subcategory": "Düzenleme"
+    },
+    {
+      "question": "JavaScript'te Promise nedir?",
+      "options": [
+        "Senkron işlemleri yönetmek için kullanılan yapı",
+        "Zamanlayıcı işlevi",
+        "Asenkron işlemleri yönetmek için kullanılan yapı",
+        "Hata yakalamak için kullanılan yapı"
+      ],
+      "answer": "Asenkron işlemleri yönetmek için kullanılan yapı",
+      "category": "JavaScript",
+      "level": "Medium",
+      "subcategory": "Asenkron Programlama"
     },
     {
       "question": "Next.js'de API Routes ne işe yarar?",
@@ -552,7 +680,10 @@
         "Veritabanı işlemlerini yürütmek için",
         "Yalnızca dosya yüklemek için"
       ],
-      "answer": "Sunucu tarafında API oluşturmak için"
+      "answer": "Sunucu tarafında API oluşturmak için",
+      "category": "Next.js",
+      "level": "Medium",
+      "subcategory": "API Yönetimi"
     },
     {
       "question": "Angular'da Service ne için kullanılır?",
@@ -562,7 +693,10 @@
         "Sadece HTTP istekleri yapmak için",
         "Yalnızca yönlendirme için"
       ],
-      "answer": "Bileşenler arasında veri paylaşmak için"
+      "answer": "Bileşenler arasında veri paylaşmak için",
+      "category": "Angular",
+      "level": "Medium",
+      "subcategory": "Servis Yönetimi"
     },
     {
       "question": "Nesne (Object) nedir?",
@@ -572,7 +706,10 @@
         "Yalnızca programlama dillerinde kullanılır.",
         "Sadece veritabanında depolanan öğelerdir."
       ],
-      "answer": "Özellikleri ve davranışları olan varlıklardır."
+      "answer": "Özellikleri ve davranışları olan varlıklardır.",
+      "category": "Temel Programlama",
+      "level": "Low",
+      "subcategory": "Nesne Yönetimi"
     },
     {
       "question": "Sınıf (Class) nedir?",
@@ -582,7 +719,10 @@
         "Sadece verileri tutar.",
         "Yalnızca metodları içerir."
       ],
-      "answer": "Nesnelerin oluşturulduğu bir kalıptır."
+      "answer": "Nesnelerin oluşturulduğu bir kalıptır.",
+      "category": "Temel Programlama",
+      "level": "Low",
+      "subcategory": "Sınıf Yönetimi"
     },
     {
       "question": "Kalıtım (Inheritance) nedir?",
@@ -592,7 +732,10 @@
         "Verilerin kopyalanmasıdır.",
         "Yalnızca temel sınıflarda kullanılır."
       ],
-      "answer": "Bir sınıfın başka bir sınıftan özellikler almasıdır."
+      "answer": "Bir sınıfın başka bir sınıftan özellikler almasıdır.",
+      "category": "Temel Programlama",
+      "level": "Medium",
+      "subcategory": "Nesne Yönelimli Programlama"
     },
     {
       "question": "Soyutlama (Abstraction) nedir?",
@@ -602,7 +745,10 @@
         "Yalnızca metodların gizlenmesidir.",
         "Verilerin doğrudan erişilmesidir."
       ],
-      "answer": "Önemli özelliklerin ön plana çıkarılmasıdır."
+      "answer": "Önemli özelliklerin ön plana çıkarılmasıdır.",
+      "category": "Temel Programlama",
+      "level": "Medium",
+      "subcategory": "Nesne Yönelimli Programlama"
     },
     {
       "question": "Çok biçimlilik (Polymorphism) nedir?",
@@ -612,7 +758,10 @@
         "Yalnızca türetilmiş sınıflarda kullanılır.",
         "Metodların üzerine yazılmasıdır."
       ],
-      "answer": "Aynı metodun farklı şekillerde davranış göstermesidir."
+      "answer": "Aynı metodun farklı şekillerde davranış göstermesidir.",
+      "category": "Temel Programlama",
+      "level": "Medium",
+      "subcategory": "Nesne Yönelimli Programlama"
     },
     {
       "question": "Kapsülleme (Encapsulation) nedir?",
@@ -622,7 +771,10 @@
         "Nesnelerin kopyalanmasıdır.",
         "Verilerin doğrudan erişilmesidir."
       ],
-      "answer": "Nesnenin iç detaylarının gizlenmesidir."
+      "answer": "Nesnenin iç detaylarının gizlenmesidir.",
+      "category": "Temel Programlama",
+      "level": "Medium",
+      "subcategory": "Nesne Yönelimli Programlama"
     },
     {
       "question": "SOLID prensiplerinin amacı nedir?",
@@ -630,9 +782,12 @@
         "Kodun okunabilirliğini azaltmak",
         "Nesne yönelimli tasarımı optimize etmek",
         "Sadece performansı artırmak",
-        "Daha fazla kod yazmak"
+        "Daha faza kod yazmak"
       ],
-      "answer": "Nesne yönelimli tasarımı optimize etmek"
+      "answer": "Nesne yönelimli tasarımı optimize etmek",
+      "category": "OOP Prensipleri",
+      "level": "High",
+      "subcategory": "Tasarım Prensipleri"
     },
     {
       "question": "Single Responsibility Prensibi nedir?",
@@ -642,7 +797,10 @@
         "Sınıflar arasındaki ilişkiyi artırır.",
         "Yalnızca küçük projelerde uygulanır."
       ],
-      "answer": "Her sınıfın yalnızca bir sorumluluğu olmalıdır."
+      "answer": "Her sınıfın yalnızca bir sorumluluğu olmalıdır.",
+      "category": "OOP Prensipleri",
+      "level": "High",
+      "subcategory": "Tasarım Prensipleri"
     },
     {
       "question": "Dependency Inversion Prensibi nedir?",
@@ -652,7 +810,10 @@
         "Yüksek seviyeli sınıfların soyut kavramlara bağlı olmasıdır.",
         "Yalnızca metodların kopyalanmasıdır."
       ],
-      "answer": "Yüksek seviyeli sınıfların soyut kavramlara bağlı olmasıdır."
+      "answer": "Yüksek seviyeli sınıfların soyut kavramlara bağlı olmasıdır.",
+      "category": "OOP Prensipleri",
+      "level": "High",
+      "subcategory": "Tasarım Prensipleri"
     },
     {
       "question": "Interface Segregation Prensibi nedir?",
@@ -662,7 +823,10 @@
         "Sınıflar arasındaki ilişkiyi artırır.",
         "Yalnızca küçük projelerde uygulanır."
       ],
-      "answer": "Kullanılmayan metodların ayrılmasıdır."
+      "answer": "Kullanılmayan metodların ayrılmasıdır.",
+      "category": "OOP Prensipleri",
+      "level": "High",
+      "subcategory": "Tasarım Prensipleri"
     },
     {
       "question": "Framework nedir?",
@@ -672,7 +836,10 @@
         "Kodları derlemek için kullanılır.",
         "Yalnızca arayüz geliştirmek için kullanılır."
       ],
-      "answer": "Kütüphanelerden oluşan bir yapıdır."
+      "answer": "Kütüphanelerden oluşan bir yapıdır.",
+      "category": "Yazılım Mimarisi",
+      "level": "Medium",
+      "subcategory": "Geliştirme Araçları"
     },
     {
       "question": "Library (Kütüphane) nedir?",
@@ -682,7 +849,10 @@
         "Kodları derlemek için kullanılır.",
         "Yalnızca arayüz geliştirmek için kullanılır."
       ],
-      "answer": "Önceden yazılmış kodların bulunduğu yapıdır."
+      "answer": "Önceden yazılmış kodların bulunduğu yapıdır.",
+      "category": "Yazılım Mimarisi",
+      "level": "Medium",
+      "subcategory": "Geliştirme Araçları"
     },
     {
       "question": "API nedir?",
@@ -692,7 +862,10 @@
         "Kodları derlemek için kullanılır.",
         "Yalnızca arayüz geliştirmek için kullanılır."
       ],
-      "answer": "Başka uygulamaların işlevlerini kullanmak için oluşturulan modüldür."
+      "answer": "Başka uygulamaların işlevlerini kullanmak için oluşturulan modüldür.",
+      "category": "Web Geliştirme",
+      "level": "Medium",
+      "subcategory": "API Yönetimi"
     },
     {
       "question": "MVC mimarisi hangi katmanlardan oluşur?",
@@ -702,7 +875,10 @@
         "View, Controller, Router",
         "Router, Controller, Model"
       ],
-      "answer": "Model, View, Controller"
+      "answer": "Model, View, Controller",
+      "category": "Yazılım Mimarisi",
+      "level": "Medium",
+      "subcategory": "Mimari Desenler"
     },
     {
       "question": "Authentication nedir?",
@@ -712,7 +888,10 @@
         "Veritabanı bağlantısıdır.",
         "Sadece giriş denemeleridir."
       ],
-      "answer": "Kullanıcı kimlik doğrulamasıdır."
+      "answer": "Kullanıcı kimlik doğrulamasıdır.",
+      "category": "Güvenlik",
+      "level": "Medium",
+      "subcategory": "Kimlik Doğrulama"
     },
     {
       "question": "Authorization nedir?",
@@ -722,7 +901,10 @@
         "Kullanıcı yetkilendirmesidir.",
         "Sadece giriş denemeleridir."
       ],
-      "answer": "Kullanıcı yetkilendirmesidir."
+      "answer": "Kullanıcı yetkilendirmesidir.",
+      "category": "Güvenlik",
+      "level": "Medium",
+      "subcategory": "Yetkilendirme"
     },
     {
       "question": "HTTP nedir?",
@@ -732,7 +914,10 @@
         "Sadece dosya transferi için kullanılır.",
         "Kodları derlemek için kullanılır."
       ],
-      "answer": "İnternet üzerinden veri aktarım protokolüdür."
+      "answer": "İnternet üzerinden veri aktarım protokolüdür.",
+      "category": "Web Geliştirme",
+      "level": "Medium",
+      "subcategory": "Protokoller"
     },
     {
       "question": "Middleware nedir?",
@@ -742,7 +927,10 @@
         "Gelen istekleri kontrol eden ara katmandır.",
         "Kodları derlemek için kullanılır."
       ],
-      "answer": "Gelen istekleri kontrol eden ara katmandır."
+      "answer": "Gelen istekleri kontrol eden ara katmandır.",
+      "category": "Web Geliştirme",
+      "level": "Medium",
+      "subcategory": "Yapılar"
     },
     {
       "question": "Lazy Loading nedir?",
@@ -752,7 +940,10 @@
         "Veritabanı bağlantısıdır.",
         "Yalnızca arayüz geliştirmek için kullanılır."
       ],
-      "answer": "İhtiyaç duyuldukça yükleme yapılmasıdır."
+      "answer": "İhtiyaç duyuldukça yükleme yapılmasıdır.",
+      "category": "Web Geliştirme",
+      "level": "Medium",
+      "subcategory": "Performans"
     },
     {
       "question": "SSL nedir?",
@@ -762,7 +953,10 @@
         "Kodları derlemek için kullanılır.",
         "Yalnızca arayüz geliştirmek için kullanılır."
       ],
-      "answer": "Verileri şifreleyerek ileten bir protokoldür."
+      "answer": "Verileri şifreleyerek ileten bir protokoldür.",
+      "category": "Güvenlik",
+      "level": "Medium",
+      "subcategory": "Şifreleme Protokolleri"
     }
   ]
 }
