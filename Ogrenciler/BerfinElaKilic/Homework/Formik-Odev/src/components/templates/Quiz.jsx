@@ -138,10 +138,8 @@ const Quiz = ({jobId}) => {
     setShowResult(true);
     try {
       await updateUserExams(userId, score);
-      alert("Your exam has been updated successfully!");
     } catch (error) {
       console.error("Error updating user exams:", error);
-      alert("There was an error updating your exam. Please try again.");
     }
   };
   return (
