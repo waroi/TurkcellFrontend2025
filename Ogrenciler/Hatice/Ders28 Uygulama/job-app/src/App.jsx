@@ -14,6 +14,8 @@ import "react-toastify/dist/ReactToastify.css";
 import Applications from "./views/Applications";
 import Congrats from "./views/Congrats";
 import MyApplications from "./views/MyApplications";
+import Test from "./views/Test";
+import ResultPage from "./views/ResultPage";
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
         <Route path="/applications" element={<Applications />} />
         <Route path="/congrats" element={<Congrats />} />
         <Route path="/my-applications" element={<MyApplications />} />
+        <Route path="/technical-test" element={<Test />} />
+        <Route path="/result" element={<ResultPage />} />
       </Routes>
       <Footer />
       <ToastContainer position="top-right" autoClose={3000} />
