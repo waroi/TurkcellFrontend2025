@@ -27,7 +27,7 @@ const QuizView = () => {
 
   return (
     <div>
-      <Quiz jobId={jobId} quiz={exam}  />
+      <Quiz jobId={jobId} questions={exam}  />
     </div>
   );
 };
