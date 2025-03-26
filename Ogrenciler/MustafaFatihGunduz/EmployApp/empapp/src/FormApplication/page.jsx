@@ -3,7 +3,6 @@ import CheckBox from "../components/CheckBox/CheckBox";
 import AdminButton from "../components/AdminButton";
 import "bootstrap/dist/css/bootstrap.min.css";
 import SignInModal from "../components/SignInModal/SignInModal";
-import "../pages/AdminPanel.css";
 import useLoggedIn from "../store/useLoggedIn";
 import useSignOut from "../store/useSignOut";
 import useFormikOnInputs from "../store/useFormikOnInputs";
@@ -24,7 +23,7 @@ const Application = () => {
 
   return (
     <>
-      <div className="container mt-4 adminContainer">
+      <div className="container py-5">
         <div className="d-flex justify-content-between mb-3">
           <AdminButton />
 

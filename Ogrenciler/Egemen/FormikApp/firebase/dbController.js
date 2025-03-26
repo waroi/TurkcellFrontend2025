@@ -37,7 +37,6 @@ export async function getAllApplications() {
   const applications = querySnapshot.docs.map((doc) => ({
     id: doc.id,
     ...doc.data(),
-
   }));
   return applications;
 }
@@ -66,6 +65,33 @@ export async function updateAppStatus(app) {
       return true;
     }
   } catch (error) {
-    console.error("Error updating blog:", error);
+    console.error("Error updating doc:", error);
   }
+}
+export async function updateMessage(id, message) {
+  try {
+    const docRef = doc(db, "applications", id);
+    const docSnap = await getDoc(docRef);
+
+    if (docSnap.exists()) {
+      await updateDoc(docRef, { message });
+      return true;
+    } else {
+      console.warn("Belirtilen başvuru bulunamadı.");
+      return false;
+    }
+  } catch (error) {
+    console.error("Başvuru mesajı güncellenirken hata oluştu:", error);
+    return false;
+  }
+}
+
+export async function setQuizPoint(appId, point) {
+  const docRef = doc(db, "applications", appId);
+  setDoc(docRef, { quiz: point, status: "Test Kontrol" }, { merge: true });
+}
+
+export async function setStatus(appId, status) {
+  const docRef = doc(db, "applications", appId);
+  setDoc(docRef, { status: status }, { merge: true });
 }

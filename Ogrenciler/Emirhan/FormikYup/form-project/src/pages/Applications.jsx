@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { fetchApplications } from "../firebase/firebaseUpload";
+import {
+  fetchApplications,
+  updateApplicationStatus,
+} from "../firebase/firebaseUpload";
 import Navbar from "../components/Navbar";
 
 function Applications() {
@@ -37,15 +40,18 @@ function Applications() {
               <td>{application.email}</td>
               <td>{application.position}</td>
               <td>
-                <span class="custom-badge">
-                  {application.status}
-                </span>
+                <span class="custom-badge">{application.status}</span>
               </td>
               <td className="d-flex align-items-center gap-2">
-                <button className="btn btn-success btn-sm">
+                <button
+                  className="btn btn-success btn-sm"
+                  onClick={() =>
+                    updateApplicationStatus(application.id, "Test Aşamasında", application.email, application.name)
+                  }
+                >
                   <i className="fa-solid fa-circle-check"></i>
                 </button>
-                <button className="btn btn-danger btn-sm">
+                <button className="btn btn-danger btn-sm" onClick={() => updateApplicationStatus(application.id, "Reddedildi", application.email, application.name)}>
                   <i className="fa-solid fa-circle-xmark"></i>
                 </button>
                 <button className="btn btn-primary btn-sm">

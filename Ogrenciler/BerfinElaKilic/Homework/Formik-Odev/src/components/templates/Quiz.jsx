@@ -4,89 +4,18 @@ import PrimaryButton from "../atoms/Buttons/PrimaryButton";
 import SuccessButton from "../atoms/Buttons/SuccessButton";
 import SecondaryButton from "../atoms/Buttons/SecondaryButton";
 import DangerButton from "../atoms/Buttons/DangerButton";
-
-const questions = [
-  {
-    question: "Nesne (Object) nedir?",
-    options: [
-      "Sadece fiziksel varlıklardır.",
-      "Özellikleri ve davranışları olan varlıklardır.",
-      "Yalnızca programlama dillerinde kullanılır.",
-      "Sadece veritabanında depolanan öğelerdir.",
-    ],
-    answer: "Özellikleri ve davranışları olan varlıklardır.",
-  },
-  {
-    question: "Sınıf (Class) nedir?",
-    options: [
-      "Nesnelerin özelliklerinin depolandığı yerdir.",
-      "Nesnelerin oluşturulduğu bir kalıptır.",
-      "Sadece verileri tutar.",
-      "Yalnızca metodları içerir.",
-    ],
-    answer: "Nesnelerin oluşturulduğu bir kalıptır.",
-  },
-  {
-    question: "Kalıtım (Inheritance) nedir?",
-    options: [
-      "Sadece metodların paylaşılmasıdır.",
-      "Bir sınıfın başka bir sınıftan özellikler almasıdır.",
-      "Verilerin kopyalanmasıdır.",
-      "Yalnızca temel sınıflarda kullanılır.",
-    ],
-    answer: "Bir sınıfın başka bir sınıftan özellikler almasıdır.",
-  },
-  {
-    question: "Soyutlama (Abstraction) nedir?",
-    options: [
-      "Nesnenin tüm detaylarını gizlemek anlamına gelir.",
-      "Önemli özelliklerin ön plana çıkarılmasıdır.",
-      "Yalnızca metodların gizlenmesidir.",
-      "Verilerin doğrudan erişilmesidir.",
-    ],
-    answer: "Önemli özelliklerin ön plana çıkarılmasıdır.",
-  },
-  {
-    question: "Çok biçimlilik (Polymorphism) nedir?",
-    options: [
-      "Aynı metodun farklı şekillerde davranış göstermesidir.",
-      "Nesnelerin kopyalanmasıdır.",
-      "Yalnızca türetilmiş sınıflarda kullanılır.",
-      "Metodların üzerine yazılmasıdır.",
-    ],
-    answer: "Aynı metodun farklı şekillerde davranış göstermesidir.",
-  },
-  {
-    question: "Kapsülleme (Encapsulation) nedir?",
-    options: [
-      "Nesnenin iç detaylarının gizlenmesidir.",
-      "Yalnızca metodların gizlenmesidir.",
-      "Nesnelerin kopyalanmasıdır.",
-      "Verilerin doğrudan erişilmesidir.",
-    ],
-    answer: "Nesnenin iç detaylarının gizlenmesidir.",
-  },
-  {
-    question: "SOLID prensiplerinin amacı nedir?",
-    options: [
-      "Kodun okunabilirliğini azaltmak",
-      "Nesne yönelimli tasarımı optimize etmek",
-      "Sadece performansı artırmak",
-      "Daha fazla kod yazmak",
-    ],
-    answer: "Nesne yönelimli tasarımı optimize etmek",
-  },
-];
+import { updateUserExams } from "../../utils/services";
 
 function shuffle(array) {
   return array.sort(() => Math.random() - 0.5);
 }
 
-const Quiz = () => {
+const totalTime = 90; // Toplam süre
+const Quiz = ({jobId, questions}) => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [showResult, setShowResult] = useState(false);
-  const [timeLeft, setTimeLeft] = useState(10);
+  const [timeLeft, setTimeLeft] = useState(totalTime);
   const [selectedOption, setSelectedOption] = useState(null);
   const [shuffledQuestions, setShuffledQuestions] = useState([]);
   const [quizStarted, setQuizStarted] = useState(false);
@@ -94,42 +23,53 @@ const Quiz = () => {
   useEffect(() => {
     setShuffledQuestions(shuffle(questions).slice(0, 5));
   }, []);
-
   useEffect(() => {
     if (!quizStarted || timeLeft === 0) return;
     const timer = setInterval(() => {
-      setTimeLeft((prev) => (prev > 0 ? prev - 1 : 0));
+      setTimeLeft((prev) => {
+        if (prev <= 1) {
+          handleEndQuiz();
+          return 0;
+        }
+        return prev - 1;
+      });
     }, 1000);
-
     return () => clearInterval(timer);
   }, [timeLeft, quizStarted]);
-
   const handleAnswer = (option) => {
     if (selectedOption) return;
-
     setSelectedOption(option);
     if (option === shuffledQuestions[currentQuestion].answer) {
       setScore(score + 1);
     }
     setTimeout(handleNextQuestion, 1000);
   };
-
+  const handlePreviousQuestion = () => {
+    if (currentQuestion > 0) {
+      setCurrentQuestion(currentQuestion - 1);
+      setSelectedOption(null);
+    }
+  };
   const handleNextQuestion = () => {
     const nextQuestion = currentQuestion + 1;
     if (nextQuestion < shuffledQuestions.length) {
       setCurrentQuestion(nextQuestion);
-      setTimeLeft(10);
       setSelectedOption(null);
     } else {
-      setShowResult(true);
+      handleEndQuiz();
     }
   };
-
   const startQuiz = () => {
     setQuizStarted(true);
-    setTimeLeft(10);
   };
-
+  const handleEndQuiz = async () => {
+    setShowResult(true);
+    try {
+      await updateUserExams(userId, score);
+    } catch (error) {
+      console.error("Sınav sonucu yüklenemedi:", error);
+    }
+  };
   return (
     <WrapperCard>
       {!quizStarted ? (
@@ -150,17 +90,16 @@ const Quiz = () => {
           </p>
         </div>
       ) : (
-        <div>
-          <h2 className="mb-2">
+        <div className="vh-100 d-flex flex-column justify-content-center p-5 gap-5">
+          <h2 className="mb-2 text-center">
             {shuffledQuestions[currentQuestion]?.question}
           </h2>
-          <div className="text-end text-muted mb-2">Süre: {timeLeft} sn</div>
-          <div className="d-flex justify-content-between align-items-center gap-3">
+          <div className="text-end text-muted mb-2">Toplam Süre: {timeLeft} sn</div>
+          <div className="d-flex justify-content-between align-items-center gap-2">
             {shuffledQuestions[currentQuestion]?.options.map((option) => {
               const isCorrect =
                 option === shuffledQuestions[currentQuestion].answer;
               const isSelected = option === selectedOption;
-
               return (
                 <div key={option}>
                   {isSelected ? (
@@ -191,10 +130,15 @@ const Quiz = () => {
               );
             })}
           </div>
+          <div className="d-flex justify-content-between align-items-center gap-3 my-3">
+            <SecondaryButton onClick={handlePreviousQuestion}>
+              Önceki Soru
+            </SecondaryButton>
+            <PrimaryButton onClick={handleNextQuestion}>Sonraki Soru</PrimaryButton>
+          </div>
         </div>
       )}
     </WrapperCard>
   );
 };
-
 export default Quiz;

@@ -22,28 +22,39 @@ export const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    if (user) {
+      setLoading(false);
+      return;
+    }
+
+    const storedUser = localStorage.getItem("user");
+
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+      setLoading(false);
+      return;
+    }
+
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
-      console.log(currentUser);
       if (currentUser) {
-        let userData;
-        userData = await getCandidate(currentUser.uid); // Önce candidate olarak ara
-        if (!userData) {
-          userData = await getAdmin(currentUser.uid); // Candidate bulunamazsa admin olarak ara
-        }
+        const userData =
+          (await getCandidate(currentUser.uid)) ||
+          (await getAdmin(currentUser.uid));
         if (userData) {
           setUser(userData);
-          console.log("user from database:", userData);
+          localStorage.setItem("user", JSON.stringify(userData));
         } else {
           setUser(null);
         }
       } else {
         setUser(null);
+        localStorage.removeItem("user");
       }
       setLoading(false);
     });
 
-    return unsubscribe;
-  }, []);
+    return () => unsubscribe();
+  }, [user]);
 
   const login = async (email, password, role) => {
     console.log("logining");
@@ -59,9 +70,12 @@ export const AuthProvider = ({ children }) => {
       }
       const id = userCredential.user.uid;
       const isAdmin = role === "admin";
-      const user = isAdmin ? await getAdmin(id) : await getCandidate(id);
-      setUser(user);
-      return user;
+      const userFromDatabase = isAdmin
+        ? await getAdmin(id)
+        : await getCandidate(id);
+      setUser(userFromDatabase);
+      localStorage.setItem("user", JSON.stringify(userFromDatabase));
+      return userFromDatabase;
     } catch (error) {
       console.error("Login error:", error.message);
       throw new Error("Giriş yapılamadı. Lütfen bilgilerinizi kontrol edin.");
@@ -78,7 +92,7 @@ export const AuthProvider = ({ children }) => {
       if (!userCredential.user) {
         throw new Error("User oluşturulamadı");
       }
-      const userDetail = {
+      let userDetail = {
         firstName,
         lastName,
         role,
@@ -89,6 +103,7 @@ export const AuthProvider = ({ children }) => {
       if (role === "admin") {
         user = await addAdmin(userDetail);
       } else {
+        userDetail = { ...userDetail, appliedJobs: [] };
         user = await addCandidate(userDetail);
       }
       console.log(user);
@@ -110,12 +125,13 @@ export const AuthProvider = ({ children }) => {
       return;
     } finally {
       setUser(null);
+      localStorage.removeItem("user");
       navigate("/login");
     }
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, register, logout ,setUser }}>
+    <AuthContext.Provider value={{ user, login, register, logout, setUser }}>
       {!loading && children}
     </AuthContext.Provider>
   );

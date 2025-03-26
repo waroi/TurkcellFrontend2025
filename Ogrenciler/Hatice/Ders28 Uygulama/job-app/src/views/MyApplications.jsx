@@ -2,10 +2,12 @@ import { collection, query, where, getDocs } from "firebase/firestore";
 import { auth, db } from "../firebase/firebaseConfig";
 import { useEffect, useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
+import { useNavigate } from "react-router";
 
 const MyApplications = () => {
   const [applications, setApplications] = useState([]);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchApplications = async (user) => {
@@ -41,13 +43,48 @@ const MyApplications = () => {
       <h2>Başvurularım</h2>
       {applications.length > 0 ? (
         applications.map((app) => (
-          <div key={app.id} className={`p-4 border rounded my-2 border-${(app.status === "Olumlu" ? "success": app.status === "Olumsuz"? "danger":"warning") ?? "warning"} border-3`}>
+          <div
+            key={app.id}
+            className={`p-4 border rounded my-2 border-${
+              app.status === "Olumlu"
+                ? "success"
+                : app.status === "Olumsuz"
+                ? "danger"
+                : "warning"
+            } border-3`}
+          >
             <p><strong>Pozisyon:</strong> {app.position}</p>
             <p><strong>Ad Soyad:</strong> {app.fullName}</p>
             <p><strong>Telefon:</strong> {app.phone}</p>
-            <p><strong>LinkedIn:</strong> <a href={app.linkedin} target="_blank" rel="noreferrer">{app.linkedin}</a></p>
+            <p>
+              <strong>LinkedIn:</strong>{" "}
+              <a href={app.linkedin} target="_blank" rel="noreferrer">
+                {app.linkedin}
+              </a>
+            </p>
             <p><strong>Cover Letter:</strong> {app.coverLetter}</p>
-            <p><strong>Başvuru Durumu:</strong> <span className={`badge text-bg-${(app.status === "Olumlu" ? "success": app.status === "Olumsuz"? "danger":"warning") ?? "warning"}`}>{app.status ?? "Beklemede"}</span> </p>
+            <p>
+              <strong>Başvuru Durumu:</strong>{" "}
+              <span
+                className={`badge text-bg-${
+                  app.status === "Olumlu"
+                    ? "success"
+                    : app.status === "Olumsuz"
+                    ? "danger"
+                    : "warning"
+                }`}
+              >
+                {app.status ?? "Beklemede"}
+              </span>
+            </p>
+            {app.status === "Olumlu" && (
+              <button
+                className="btn btn-primary mt-3"
+                onClick={() => navigate("/technical-test")}
+              >
+                Teknik Teste Git
+              </button>
+            )}
           </div>
         ))
       ) : (

@@ -26,6 +26,8 @@ const app = initializeApp({
   appId: "1:152546404685:web:fbcd7a0db185164dceaf04",
 });
 
+import { shuffle } from "@/util/random";
+
 const auth = getAuth(app);
 const database = getFirestore(app);
 
@@ -66,29 +68,117 @@ export function getUser(user) {
 }
 //* Application ====================================================================================================
 
+export function getApplications() {
+  return getDocs(collection(database, "applications")).then((snapshot) =>
+    snapshot.docs.map((application) => ({
+      id: application.id,
+      ...application.data(),
+    }))
+  );
+}
+
+export function getApplication(id) {
+  return getDoc(doc(database, "applications", id)).then((snapshot) => ({
+    id,
+    ...snapshot.data(),
+  }));
+}
+
 export function submitForm(form) {
   delete form["email-again"];
   delete form["terms-and-conditions"];
   delete form["kvkk"];
-  return addDoc(collection(database, "application-forms"), {
-    ...form,
-    status: "pending",
-  });
+
+  return addDoc(collection(database, "forms"), form);
 }
 
 export function getForms() {
-  return getDocs(collection(database, "application-forms")).then(
+  return getDocs(collection(database, "forms")).then(
     (snapshot) =>
-      snapshot.docs.map((application) => ({
-        ...application.data(),
-        id: application.id,
+      snapshot.docs.map((form) => ({
+        ...form.data(),
+        form: form.id,
       }))
     //   .sort((current, next) => next.date - current.date)
   );
 }
 
 export function setApplication(id, status) {
-  return updateDoc(doc(database, "application-forms", id), {
-    ...status,
-  }).then(() => id);
+  return status == "accepted"
+    ? addExam().then((exam) => {
+        updateDoc(doc(database, "forms", id), {
+          status,
+          exam,
+        }).then(() => id);
+      })
+    : updateDoc(doc(database, "forms", id), {
+        status,
+      }).then(() => id);
+}
+
+// export function addQuestions() {
+//   let q = prompt("QUESTION?");
+
+//   let a = prompt("CORRECT");
+//   let b = prompt("WRONG");
+//   let c = prompt("WRONG");
+//   let d = prompt("WRONG");
+
+//   return addDoc(collection(database, "questions"), {
+//     question: q,
+//     answers: [a, b, c, d],
+//   });
+// }
+
+function addExam() {
+  return getFiveRandomQuestions().then((questions) =>
+    addDoc(collection(database, "exams"), {
+      questions,
+    }).then((exam) => exam.id)
+  );
+
+  function getFiveRandomQuestions() {
+    return getDocs(collection(database, "questions")).then((questions) => {
+      questions = questions.docs.map((question) => question.id);
+
+      return shuffle(questions).slice(0, 5);
+    });
+  }
+}
+
+export function getExam(id) {
+  return getDoc(doc(database, "exams", id)).then((snapshot) => snapshot.data());
+}
+
+export function getQuestion(id) {
+  return getDoc(doc(database, "questions", id)).then((snapshot) =>
+    snapshot.data()
+  );
+}
+
+export async function submitExam(id, exam) {
+  exam.questions
+    .reduce(
+      async (result, question, index) =>
+        (await result) +
+        ((
+          exam.answers[index]
+            ? exam.answers[index] == (await getQuestion(question)).answers[0]
+            : false
+        )
+          ? 1
+          : 0),
+      0
+    )
+    .then((count) =>
+      getDocs(collection(database, "forms")).then((forms) =>
+        forms.docs.map((form) =>
+          id == form.data().exam
+            ? updateDoc(doc(database, "forms", form.id), {
+                result: parseInt((count * 100) / exam.questions.length),
+              })
+            : ""
+        )
+      )
+    );
 }

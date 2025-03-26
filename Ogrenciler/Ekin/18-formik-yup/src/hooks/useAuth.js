@@ -38,7 +38,7 @@ export default function () {
 
         localStorage.setItem("user", JSON.stringify(data));
         setUser(data);
-        navigation("/application");
+        navigation("/applications");
       })
       .catch((error) => {
         switch (error.code) {
@@ -61,7 +61,7 @@ export default function () {
         getUser(user).then((user) => {
           localStorage.setItem("user", JSON.stringify(user));
           setUser(user);
-          navigation("/application");
+          navigation("/applications");
         });
       })
       .catch((error) => {

@@ -55,18 +55,7 @@ const ApplicationCard = ({
 
         {showStatus && (
           <div className="status-section mt-3">
-            {application.status ? (
-              <div className="d-flex align-items-center">
-                <span className="me-2 fw-semibold">Durum:</span>
-                <span
-                  className={`badge ${getStatusBadge(
-                    application.status
-                  )} py-2 px-3 rounded-pill`}
-                >
-                  {getStatusLabel(application.status)}
-                </span>
-              </div>
-            ) : onSelect ? (
+            {onSelect ? (
               <div className="text-end mt-3">
                 <button
                   onClick={() => onSelect(application)}
@@ -75,7 +64,19 @@ const ApplicationCard = ({
                   <i className="bi bi-search me-2"></i> İncele
                 </button>
               </div>
-            ) : null}
+            ) : (
+              <div className="d-flex align-items-center">
+                <span className="me-2 fw-semibold">Durum:</span>
+                <span
+                  className={`badge ${getStatusBadge(
+                    application.status,
+                    application.result
+                  )} py-2 px-3 rounded-pill`}
+                >
+                  {getStatusLabel(application.status, application.result)}
+                </span>
+              </div>
+            )}
           </div>
         )}
       </div>

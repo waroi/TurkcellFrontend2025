@@ -1,10 +1,13 @@
+import { useParams } from "react-router-dom";
+
 import Form from "#/form/Form";
 
 export default function Application() {
+  const { id } = useParams();
+
   return (
     <div className="container">
-      <h2 className="mb-5 fw-normal">Turkcell Atmosware Başvuru Formu</h2>
-      <Form />
+      <Form id={id} />
     </div>
   );
 }

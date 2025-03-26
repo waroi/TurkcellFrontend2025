@@ -8,10 +8,10 @@ import { Tab, Pane } from "#/atoms/Tab";
 
 export default function AdminView() {
   const [detail, setDetail] = useState(null);
-  const userStore = useUserStore();
+  const { applications, setApplications } = useUserStore();
 
   useEffect(() => {
-    getForms().then((applications) => userStore.setApplications(applications));
+    getForms().then((applications) => setApplications(applications));
   }, []);
 
   const handleSelect = (application) => {
@@ -30,7 +30,9 @@ export default function AdminView() {
       <Tab>
         <Pane id="applications" tab="Bekleyen Başvurular">
           <PendingApplications
-            applications={userStore.applications}
+            applications={applications.filter(
+              (application) => !application.status
+            )}
             onSelect={handleSelect}
           />
         </Pane>
@@ -44,7 +46,11 @@ export default function AdminView() {
         </Pane>
 
         <Pane id="completed-applications" tab="Tamamlanmış Başvurular">
-          <CompletedApplications applications={userStore.applications} />
+          <CompletedApplications
+            applications={applications.filter(
+              (application) => application.status
+            )}
+          />
         </Pane>
       </Tab>
     </div>

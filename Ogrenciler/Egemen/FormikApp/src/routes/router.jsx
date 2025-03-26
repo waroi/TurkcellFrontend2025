@@ -10,8 +10,18 @@ const Router = () => {
     { path: "/", element: <SignInView /> },
     { path: "/form", element: <GeneralFormView /> },
     { path: "/applications", element: <ApplicationsView /> },
-    { path: "/quiz", element: <Quiz /> },
+    { path: "/quiz/:id", element: <Quiz /> },
     { path: "/quizCompleted", element: <TestResult /> },
+    {
+      path: "/applicationCompleted",
+      element: (
+        <TestResult
+          customMessage={
+            "Başvurunuz bize ulaştı. En yakın zamanda sizi süreçle ilgili bilgilendireceğiz."
+          }
+        />
+      ),
+    },
   ]);
   return routes;
 };

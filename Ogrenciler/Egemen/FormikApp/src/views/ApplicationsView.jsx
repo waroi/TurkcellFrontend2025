@@ -3,12 +3,16 @@ import { updateAppStatus } from "../../firebase/dbController";
 import Button from "../components/atoms/buttons/Button";
 import getApplications from "../hooks/getAplications";
 import { unsubscribe } from "../../services/authServices";
+import { NavLink } from "react-router";
+import useApplicationStatus from "../hooks/useApplicationStatus";
 
 const Applications = () => {
   const [apps, setApps] = useState([]);
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [userAuth, setUserAuth] = useState(null);
+  const { sonrakiAsama } = useApplicationStatus(user, setApps);
+
   useEffect(() => {
     unsubscribe(setUserAuth);
     if (userAuth) {
@@ -122,27 +126,35 @@ const Applications = () => {
                 </div>
                 <div className="mt-4 d-flex justify-content-end">
                   {user &&
-                  application.status === "Beklemede" &&
+                  (application.status === "Beklemede" ||
+                    application.status === "Test Kontrol") &&
                   user.role === "admin" ? (
                     <>
+                      {application.status === "Test Kontrol" && (
+                        <span className="badge text-bg-primary">
+                          Test Skoru: {application.quiz}
+                        </span>
+                      )}
                       <Button
                         className="btn btn-success me-3 px-4 py-2 shadow"
                         onClick={() => {
-                          {
-                            application.status = "Onay";
-                            updateAppStatus(application);
-                          }
+                          sonrakiAsama(application);
                         }}
                       >
-                        Onayla
+                        {application.status} adıma geç
                       </Button>
                       <Button
                         className="btn btn-danger px-4 py-2 shadow"
                         onClick={() => {
-                          {
-                            application.status = "Red";
-                            updateAppStatus(application);
-                          }
+                          updateAppStatus({ ...application, status: "Red" });
+
+                          setApps((prevApps) =>
+                            prevApps.map((app) =>
+                              app.id === application.id
+                                ? { ...app, status: "Red" }
+                                : app
+                            )
+                          );
                         }}
                       >
                         Reddet
@@ -153,6 +165,28 @@ const Applications = () => {
                       {application.status === "Beklemede" && (
                         <span className="badge text-bg-primary">
                           Değerlendirme Aşamasında
+                        </span>
+                      )}
+                      {application.status === "Test" &&
+                        (user?.role === "admin" ? (
+                          <span className="badge text-bg-warning">
+                            Test Gönderildi
+                          </span>
+                        ) : (
+                          <NavLink to={`/quiz/${application.id}`}>
+                            Teste Git
+                          </NavLink>
+                        ))}
+
+                      {user?.role === "user" &&
+                        application.status === "Test Kontrol" && (
+                          <span className="badge text-bg-primary">
+                            Test sonuçlarınız değerlendiriliyor.
+                          </span>
+                        )}
+                      {application.status === "Mülakat" && (
+                        <span className="badge text-bg-primary">
+                          Tebrikler Mülakat adımına geçmeye hak kazandınız.
                         </span>
                       )}
                       {application.status === "Onay" && (

@@ -1,7 +1,7 @@
 {
   "candidates": [
     {
-      "id": "candidateId3",
+      "id": "1",
       "firstName": "John",
       "lastName": "Doe",
       "email": "john.doe@example.com",
@@ -49,17 +49,26 @@
         "university": "XYZ University",
         "graduationYear": 2019
       },
-      "aplliedJobs": [
-        "jobId"
+      "appliedJobs": [
+        {
+          "id": "1",
+          "status": "hired",
+          "applicationDate": "2024-03-21T11:00:00Z"
+        }
+      ],
+      "exams": [
+        {
+          "examId": "1",
+          "examDate": "2023-02-14T12:26:44.439Z",
+          "isCompleted": false,
+          "name": "Admission Test",
+          "totalScore": 0,
+          "totalDuration": 16,
+          "jobId": "1",
+          "senderAdminId": "1"
+        }
       ],
       "role": "user"
-    },
-    {
-      "id": "rrgcH5FFxNYeaIyjDFxtKqa4qu43",
-      "firstName": "aa",
-      "lastName": "cc",
-      "role": "user",
-      "email": "bb@gmail.com"
     },
     {
       "id": "90dZl0LQt8cihXatYOszexHShlm1",
@@ -67,13 +76,13 @@
       "lastName": "semercioğlu",
       "role": "user",
       "email": "hilalsem@gmail.com",
-      "address": " bursa",
+      "address": "şşşşş",
       "city": "Nilüfer",
       "graduationYear": "2023",
       "department": "Makine Mühendisliği",
       "university": "Abdullah Gül Üniversitesi",
       "dateofBirth": "",
-      "gender": "female",
+      "gender": "noPreference",
       "phone": "05529292614",
       "language": "",
       "level": "",
@@ -86,100 +95,56 @@
       "dateOfBirth": "2025-03-25",
       "referenceName": "",
       "referencePhone": "",
-      "languages": [
-        {
-          "language": "Fransızca",
-          "level": "Intermediate"
-        }
-      ],
-      "selectedLanguage": "",
-      "selectedLevel": ""
-    },
-    {
-      "id": "KJYc2EatFfbXchuIY2a65IR5pGu2",
-      "firstName": "hilal",
-      "lastName": "semercioğlu",
-      "role": "user",
-      "email": "hilal@gmail.com"
-    },
-    {
-      "id": "AWCaSKnywvZxUEG11zxVwG5tMVE2",
-      "firstName": "berfin ela",
-      "lastName": "Kılıç",
-      "role": "user",
-      "email": "berfin@gmail.com"
-    },
-    {
-      "id": "kAa1Z5IYplRnaH23Jp6QmUXtwO62",
-      "firstName": "Hazal",
-      "lastName": "Kütküt",
-      "role": "user",
-      "email": "hazalk@gmail.com"
-    },
-    {
-      "id": "3fAH4oscrIZ1GeLsqDPQYfLOUhR2",
-      "firstName": "Berfin Ela",
-      "lastName": "Kılıç",
-      "role": "user",
-      "email": "berfin@gmail.com",
-      "address": "diyarbakır",
-      "city": "diyarbakır",
-      "graduationYear": "2024",
-      "department": "Bilgisayar Mühendisliği",
-      "university": "Çukurova Üniversitesi",
-      "dateofBirth": "",
-      "gender": "female",
-      "phone": "05312806221",
-      "workPlace": "Turkcell",
-      "startDate": "2024-12-21",
-      "endDate": "2025-03-24",
-      "position": "Trainee",
-      "coverLetter": "ofjbüfajbvpcjgpıjobrfdkolv nıbpjorfkvlkvşwAD",
       "languages": [],
-      "dateOfBirth": "2000-05-11",
-      "referenceName": "Varol",
-      "referencePhone": "0123456789",
-      "referenceEmail": "varol@gmail.com",
       "selectedLanguage": "",
-      "selectedLevel": ""
+      "selectedLevel": "",
+      "appliedJobs": [
+        {
+          "id": "1",
+          "status": "test",
+          "applicationDate": "2024-03-21T11:00:00Z"
+        }
+      ]
     },
     {
-      "id": "bHz68mxbxPeeOtELca8yORGDkLr1",
-      "firstName": "a@gmail.com",
-      "lastName": "bb",
-      "role": "user",
-      "email": "aa@gmail.com",
-      "address": "",
-      "city": "",
-      "graduationYear": "",
-      "department": "",
-      "university": "",
-      "dateofBirth": "",
-      "gender": "female",
-      "phone": "",
-      "workPlace": "",
-      "startDate": "",
-      "endDate": "",
-      "position": "",
-      "coverLetter": "",
-      "referenceName": "",
-      "referencePhone": "",
-      "referenceEmail": "",
-      "languages": []
-    },
-    {
-      "id": "ldYd8MPz15dkP0lYeXJZbNA8D3p2",
+      "id": "VILaDZXFqNUzaxhGzZpa7Hi8rZF2",
       "firstName": "ela",
       "lastName": "kılıç",
       "role": "user",
-      "email": "berfin@gmail.com"
+      "email": "berfin@gmail.com",
+      "appliedJobs": [
+        {
+          "id": "1",
+          "status": "test",
+          "applicationDate": "2025-03-26T12:26:54.807Z"
+        }
+      ]
+    },
+    {
+      "id": "j623JrQfEcdLMI294bLETumYyPU2",
+      "firstName": "Hazal",
+      "lastName": "Kütküt",
+      "role": "user",
+      "email": "hazalktt@gmail.com",
+      "appliedJobs": [
+        {
+          "id": "1",
+          "status": "test",
+          "applicationDate": "2025-03-26T13:09:30.489Z"
+        },
+        {
+          "id": "2",
+          "status": "pending",
+          "applicationDate": "2025-03-26T16:38:58.928Z"
+        }
+      ]
     }
   ],
   "jobs": [
     {
       "id": "1",
       "createdAt": "2024-03-21T10:00:00Z",
-      "createdByAdmin": "adminId789",
+      "createdByAdminId": "EgXkh9QfPQYYeRpjwjS7nEuZ54B3",
       "position": "Frontend Developer",
       "company": "TechCorp",
       "location": "Remote",
@@ -209,160 +174,789 @@
       "deadline": "2024-04-30T23:59:59Z",
       "applicants": [
         {
-          "id": "candidateId",
-          "appliedAt": "2024-03-21T11:00:00Z",
-          "status": "pending",
-          "approvedByAdmin": "adminId456"
+          "id": "1",
+          "applicationDate": "2024-03-21T11:00:00Z",
+          "status": "hired",
+          "approvedByAdmin": "1"
+        },
+        {
+          "id": "90dZl0LQt8cihXatYOszexHShlm1",
+          "status": "test",
+          "approvedByAdmin": "",
+          "applicationDate": "2025-03-26T00:35:20.098Z"
+        },
+        {
+          "id": "VILaDZXFqNUzaxhGzZpa7Hi8rZF2",
+          "status": "test",
+          "approvedByAdmin": "",
+          "applicationDate": "2025-03-26T12:26:54.807Z"
+        },
+        {
+          "id": "j623JrQfEcdLMI294bLETumYyPU2",
+          "status": "test",
+          "approvedByAdmin": "",
+          "applicationDate": "2025-03-26T13:09:05.965Z"
+        },
+        {
+          "id": "j623JrQfEcdLMI294bLETumYyPU2",
+          "status": "test",
+          "approvedByAdmin": "",
+          "applicationDate": "2025-03-26T13:09:30.489Z"
         }
       ]
     },
     {
       "id": "2",
-      "createdAt": "2024-03-22T09:30:00Z",
-      "createdByAdmin": "adminId790",
+      "createdAt": "2024-02-15T09:30:00Z",
+      "createdByAdminId": "1",
       "position": "Backend Developer",
-      "company": "DataSolutions",
-      "location": "Hybrid",
+      "company": "DevSolutions",
+      "location": "Berlin, Germany",
       "employmentType": "Full-time",
       "term": "Permanent",
-      "salaryRange": "1800-2200 EUR",
-      "description": "We are looking for a talented Backend Developer to join our growing team.",
+      "salaryRange": "2000-2500 EUR",
+      "description": "We are seeking an experienced Backend Developer with expertise in Node.js and MongoDB.",
       "requirements": [
-        "Proficiency in Node.js and Express.js",
-        "Experience with databases such as MongoDB and PostgreSQL",
-        "Familiarity with Docker and AWS",
-        "Strong problem-solving and debugging skills"
+        "Proficiency in Node.js and Express",
+        "Experience with MongoDB and SQL databases",
+        "Knowledge of RESTful API design",
+        "Strong problem-solving skills"
       ],
       "responsibilities": [
-        "Develop and maintain backend services",
-        "Design and implement APIs",
-        "Ensure the scalability and reliability of the system",
-        "Collaborate with frontend developers and product managers"
+        "Design and develop scalable backend services",
+        "Maintain and optimize database performance",
+        "Collaborate with frontend and DevOps teams",
+        "Ensure security best practices are followed"
       ],
       "benefits": [
+        "Hybrid work model",
+        "Competitive salary",
         "Health insurance",
-        "Paid time off",
-        "Performance bonuses",
-        "Opportunity for career growth"
+        "Company retreats"
       ],
       "status": "open",
       "deadline": "2024-05-15T23:59:59Z",
       "applicants": [
         {
-          "id": "candidateId2",
-          "appliedAt": "2024-03-22T10:00:00Z",
+          "id": "j623JrQfEcdLMI294bLETumYyPU2",
           "status": "pending",
-          "approvedByAdmin": "adminId457"
+          "approvedByAdmin": "",
+          "applicationDate": "2025-03-26T16:38:58.928Z"
         }
       ]
     },
     {
       "id": "3",
-      "createdAt": "2024-03-23T11:15:00Z",
-      "createdByAdmin": "adminId791",
-      "position": "UX/UI Designer",
-      "company": "Creative Studios",
-      "location": "Remote",
+      "createdAt": "2024-01-10T08:45:00Z",
+      "createdByAdminId": "1",
+      "position": "UI/UX Designer",
+      "company": "CreativeStudio",
+      "location": "Paris, France",
       "employmentType": "Part-time",
       "term": "Contract",
-      "salaryRange": "1000-1200 EUR",
-      "description": "Creative Studios is looking for a UX/UI Designer with a passion for crafting beautiful and functional designs.",
+      "salaryRange": "800-1200 EUR",
+      "description": "We are looking for a talented UI/UX Designer to join our creative team.",
       "requirements": [
         "Experience with Figma and Adobe XD",
-        "Proficiency in HTML and CSS",
-        "Strong portfolio showcasing web and mobile design projects",
-        "Ability to work in an agile team"
+        "Understanding of design principles and UX research",
+        "Ability to create wireframes and prototypes",
+        "Strong collaboration and communication skills"
       ],
       "responsibilities": [
-        "Design and prototype user interfaces for web and mobile applications",
-        "Collaborate with developers to ensure designs are implemented accurately",
+        "Design intuitive and engaging user interfaces",
         "Conduct user research and usability testing",
-        "Provide feedback and support during the development process"
+        "Work closely with developers to ensure seamless implementation",
+        "Maintain design consistency across products"
       ],
       "benefits": [
-        "Work remotely from anywhere",
-        "Flexible schedule",
-        "Creative freedom and autonomy",
-        "Paid contract extension after initial term"
+        "Flexible working hours",
+        "Remote-friendly environment",
+        "Creative and collaborative team",
+        "Learning opportunities"
       ],
       "status": "open",
-      "deadline": "2024-05-30T23:59:59Z",
+      "deadline": "2024-06-01T23:59:59Z",
+      "applicants": []
+    },
+    {
+      "id": "4",
+      "createdAt": "2024-04-05T11:15:00Z",
+      "createdByAdminId": "1",
+      "position": "Full Stack Developer",
+      "company": "InnovateX",
+      "location": "Amsterdam, Netherlands",
+      "employmentType": "Full-time",
+      "term": "Permanent",
+      "salaryRange": "2500-3000 EUR",
+      "description": "We are looking for a Full Stack Developer with expertise in React and Node.js.",
+      "requirements": [
+        "Experience with React.js, Node.js, and TypeScript",
+        "Familiarity with PostgreSQL and MongoDB",
+        "Understanding of CI/CD pipelines",
+        "Strong problem-solving and analytical skills"
+      ],
+      "responsibilities": [
+        "Develop and maintain full-stack applications",
+        "Collaborate with UX designers and backend developers",
+        "Optimize applications for performance and scalability",
+        "Participate in code reviews and agile processes"
+      ],
+      "benefits": [
+        "Relocation support",
+        "Yearly bonus structure",
+        "Access to the latest technologies",
+        "Professional development opportunities"
+      ],
+      "status": "open",
+      "deadline": "2024-07-01T23:59:59Z",
+      "applicants": []
+    },
+    {
+      "id": "5",
+      "createdAt": "2024-02-20T14:50:00Z",
+      "createdByAdminId": "1",
+      "position": "Data Analyst",
+      "company": "DataWorks",
+      "location": "London, UK",
+      "employmentType": "Full-time",
+      "term": "Permanent",
+      "salaryRange": "2200-2700 GBP",
+      "description": "Seeking a Data Analyst to derive insights from complex datasets.",
+      "requirements": [
+        "Strong experience with SQL and Python",
+        "Familiarity with BI tools like Tableau or Power BI",
+        "Understanding of statistical analysis",
+        "Excellent communication and reporting skills"
+      ],
+      "responsibilities": [
+        "Analyze large datasets to support business decisions",
+        "Develop dashboards and reports",
+        "Collaborate with stakeholders to define KPIs",
+        "Ensure data accuracy and integrity"
+      ],
+      "benefits": [
+        "Hybrid work model",
+        "Career advancement programs",
+        "Annual performance bonuses",
+        "Wellness benefits"
+      ],
+      "status": "open",
+      "deadline": "2024-06-30T23:59:59Z",
       "applicants": [
         {
-          "id": "candidateId3",
-          "appliedAt": "2024-03-23T12:00:00Z",
+          "id": "j623JrQfEcdLMI294bLETumYyPU2",
           "status": "pending",
-          "approvedByAdmin": ""
+          "approvedByAdmin": "",
+          "applicationDate": "2025-03-26T16:30:30.955Z"
         }
       ]
     }
   ],
   "admins": [
     {
-      "id": "adminId456",
+      "id": "1",
       "firstName": "Admin",
       "lastName": "User",
       "email": "admin@example.com",
       "role": "admin",
       "createdJobs": [
-        "jobId123"
+        {
+          "id": "1",
+          "createdDate": "date"
+        },
+        {
+          "id": "2",
+          "createdDate": "date"
+        },
+        {
+          "id": "3",
+          "createdDate": "date"
+        },
+        {
+          "id": "4",
+          "createdDate": "date"
+        },
+        {
+          "id": "4",
+          "createdDate": "date"
+        },
+        {
+          "id": "4",
+          "createdDate": "date"
+        }
       ],
       "approvedCandidates": [
         {
-          "candidateId": "candidateId",
-          "jobId": "jobId123",
-          "approvedAt": "2024-03-21T12:00:00Z"
+          "userId": "1",
+          "jobId": "1",
+          "approvedAt": "2024-03-21T12:00:00Z",
+          "newStatus": "test"
+        }
+      ],
+      "createdExams": [
+        {
+          "examId": "1",
+          "candidateId": "1",
+          "createdAt": "2024-03-21T10:00:00Z"
         }
       ]
     },
     {
-      "id": "U83XzbXkDDcslTvbS3HzsHB6c9D2",
-      "firstName": "hilal",
-      "lastName": "semercioğlu",
+      "id": "4jD11dc0GLY8py3GlFiNHYqXow13",
+      "firstName": "helenstudyo",
+      "lastName": "helen",
       "role": "admin",
-      "email": "af@gmail.com"
+      "email": "helenstudyo@gmail.com",
+      "approvedCandidates": [
+        {
+          "userId": "90dZl0LQt8cihXatYOszexHShlm1",
+          "jobId": "1",
+          "approvedAt": "2024-03-21T12:00:00Z",
+          "newStatus": "test"
+        }
+      ]
     },
     {
-      "id": "Vqp2AbvBBQfyu2nGS1GYlFCHs7u2",
-      "firstName": "aa",
-      "lastName": "bb",
-      "role": "admin",
-      "email": "cc@gmail.com"
-    },
-    {
-      "id": "oYjIlobVBFPbiM5Lt5nAEGbBdXW2",
-      "firstName": "hilal",
-      "lastName": "semercioğlu",
-      "role": "admin",
-      "email": "h@gmail.com"
-    },
-    {
-      "id": "B41gDrkVwfb7hMtF5nQjKwLX4ow2",
-      "firstName": "helen",
-      "lastName": "studyo",
-      "role": "admin",
-      "email": "helenstudyo@gmail.com"
-    },
-    {
-      "id": "YwhkcGefzEdc5HQSRmY8hAGNwFY2",
-      "firstName": "Hazal",
-      "lastName": "Kütküt",
-      "role": "admin",
-      "email": "hazalktk@gmail.com"
-    },
-    {
-      "id": "N3nJXrzHHNhfVpUvBrLhHEy7OsH3",
+      "id": "tbHVOivOomebkNYdTDxqPNSChRy2",
       "firstName": "Berfin Ela",
       "lastName": "Kılıç",
       "role": "admin",
-      "email": "berfinela877@gmail.com"
+      "email": "berfinela877@gmail.com",
+      "approvedCandidates": [
+        {
+          "userId": "1",
+          "jobId": "1",
+          "approvedAt": "2025-03-26T12:44:31.194Z",
+          "newStatus": "hired"
+        },
+        {
+          "userId": "VILaDZXFqNUzaxhGzZpa7Hi8rZF2",
+          "jobId": "1",
+          "approvedAt": "2025-03-26T12:50:43.011Z",
+          "newStatus": "test"
+        }
+      ]
     },
     {
-      "id": "cGVfgnY3CENkAiVWafAQnPfKN0h2",
-      "firstName": "admin@gmail.com",
-      "lastName": "123456",
+      "id": "hnCIJojXAKS4o48zIA6Urs4j6Gs1",
+      "firstName": "Hazal",
+      "lastName": "Kütküt",
       "role": "admin",
-      "email": "admin@gmail.com"
+      "email": "hazalkt@gmail.com",
+      "approvedCandidates": [
+        {
+          "userId": "j623JrQfEcdLMI294bLETumYyPU2",
+          "jobId": "1",
+          "approvedAt": "2025-03-26T15:45:05.847Z",
+          "newStatus": "test"
+        }
+      ]
+    }
+  ],
+  "exams": [
+    {
+      "id": "1",
+      "examDate": "2023-02-14T12:26:44.439Z",
+      "name": "Admission Test",
+      "totalDuration": 16,
+      "jobId": "1",
+      "senderAdminId": "1"
+    }
+  ],
+  "questions": [
+    {
+      "question": "JavaScript'te Event Bubbling nedir?",
+      "options": [
+        "Olayın en içteki elementten dışa doğru yayılmasıdır.",
+        "Olayların engellenmesidir.",
+        "Yalnızca belirli bir elementte çalışmasıdır.",
+        "Event Listener'ların kaldırılmasıdır."
+      ],
+      "answer": "Olayın en içteki elementten dışa doğru yayılmasıdır.",
+      "category": "JavaScript",
+      "level": "Medium",
+      "subcategory": "Olay Yönetimi"
+    },
+    {
+      "question": "TypeScript nedir?",
+      "options": [
+        "JavaScript'in kütüphanesidir.",
+        "JavaScript'in tip kontrollü üst kümesidir.",
+        "Sadece backend için kullanılan bir dildir.",
+        "CSS çerçevesidir."
+      ],
+      "answer": "JavaScript'in tip kontrollü üst kümesidir.",
+      "category": "TypeScript",
+      "level": "Medium",
+      "subcategory": "Dil Bilgisi"
+    },
+    {
+      "question": "React'te 'key' prop'unun amacı nedir?",
+      "options": [
+        "CSS stilini belirlemek",
+        "Her bileşene özgün kimlik sağlamak",
+        "State yönetimini kolaylaştırmak",
+        "Yalnızca liste uzunluğunu belirlemek"
+      ],
+      "answer": "Her bileşene özgün kimlik sağlamak",
+      "category": "React",
+      "level": "Medium",
+      "subcategory": "Bileşen Yönetimi"
+    },
+    {
+      "question": "Vue.js'de 'v-model' direktifi ne işe yarar?",
+      "options": [
+        "Sadece okuma işlemleri için kullanılır.",
+        "Bileşenler arası veri taşımak için kullanılır.",
+        "Form elemanları ile çift yönlü veri bağlama sağlar.",
+        "Yalnızca stil düzenlemek için kullanılır."
+      ],
+      "answer": "Form elemanları ile çift yönlü veri bağlama sağlar.",
+      "category": "Vue.js",
+      "level": "Medium",
+      "subcategory": "Veri Bağlama"
+    },
+    {
+      "question": "Angular'da 'ngFor' yapısı ne için kullanılır?",
+      "options": [
+        "Sadece CSS düzenlemek için",
+        "Döngü oluşturmak için",
+        "Koşullu ifadeler yazmak için",
+        "Servis çağrıları yapmak için"
+      ],
+      "answer": "Döngü oluşturmak için",
+      "category": "Angular",
+      "level": "Medium",
+      "subcategory": "Döngü Yönetimi"
+    },
+    {
+      "question": "React'te 'useState' Hook'u ne işe yarar?",
+      "options": [
+        "Bileşenler arası veri taşımak için",
+        "Bileşen içindeki durumları yönetmek için",
+        "Yalnızca stil değiştirmek için",
+        "Yalnızca HTTP istekleri yapmak için"
+      ],
+      "answer": "Bileşen içindeki durumları yönetmek için",
+      "category": "React",
+      "level": "Medium",
+      "subcategory": "State Yönetimi"
+    },
+    {
+      "question": "CSS'de Flexbox özelliği ne için kullanılır?",
+      "options": [
+        "Sayfaya arka plan eklemek için",
+        "Grid tabanlı düzenler oluşturmak için",
+        "Öğe hizalama ve düzenleme için",
+        "Yalnızca mobil uyumluluk için"
+      ],
+      "answer": "Öğe hizalama ve düzenleme için",
+      "category": "CSS",
+      "level": "Medium",
+      "subcategory": "Düzenleme"
+    },
+    {
+      "question": "JavaScript'te Promise nedir?",
+      "options": [
+        "Senkron işlemleri yönetmek için kullanılan yapı",
+        "Zamanlayıcı işlevi",
+        "Asenkron işlemleri yönetmek için kullanılan yapı",
+        "Hata yakalamak için kullanılan yapı"
+      ],
+      "answer": "Asenkron işlemleri yönetmek için kullanılan yapı",
+      "category": "JavaScript",
+      "level": "Medium",
+      "subcategory": "Asenkron Programlama"
+    },
+    {
+      "question": "JavaScript'te Event Bubbling nedir?",
+      "options": [
+        "Olayın en içteki elementten dışa doğru yayılmasıdır.",
+        "Olayların engellenmesidir.",
+        "Yalnızca belirli bir elementte çalışmasıdır.",
+        "Event Listener'ların kaldırılmasıdır."
+      ],
+      "answer": "Olayın en içteki elementten dışa doğru yayılmasıdır.",
+      "category": "JavaScript",
+      "level": "Medium",
+      "subcategory": "Olay Yönetimi"
+    },
+    {
+      "question": "TypeScript nedir?",
+      "options": [
+        "JavaScript'in kütüphanesidir.",
+        "JavaScript'in tip kontrollü üst kümesidir.",
+        "Sadece backend için kullanılan bir dildir.",
+        "CSS çerçevesidir."
+      ],
+      "answer": "JavaScript'in tip kontrollü üst kümesidir.",
+      "category": "TypeScript",
+      "level": "Medium",
+      "subcategory": "Dil Bilgisi"
+    },
+    {
+      "question": "React'te 'key' prop'unun amacı nedir?",
+      "options": [
+        "CSS stilini belirlemek",
+        "Her bileşene özgün kimlik sağlamak",
+        "State yönetimini kolaylaştırmak",
+        "Yalnızca liste uzunluğunu belirlemek"
+      ],
+      "answer": "Her bileşene özgün kimlik sağlamak",
+      "category": "React",
+      "level": "Medium",
+      "subcategory": "Bileşen Yönetimi"
+    },
+    {
+      "question": "Vue.js'de 'v-model' direktifi ne işe yarar?",
+      "options": [
+        "Sadece okuma işlemleri için kullanılır.",
+        "Bileşenler arası veri taşımak için kullanılır.",
+        "Form elemanları ile çift yönlü veri bağlama sağlar.",
+        "Yalnızca stil düzenlemek için kullanılır."
+      ],
+      "answer": "Form elemanları ile çift yönlü veri bağlama sağlar.",
+      "category": "Vue.js",
+      "level": "Medium",
+      "subcategory": "Veri Bağlama"
+    },
+    {
+      "question": "Angular'da 'ngFor' yapısı ne için kullanılır?",
+      "options": [
+        "Sadece CSS düzenlemek için",
+        "Döngü oluşturmak için",
+        "Koşullu ifadeler yazmak için",
+        "Servis çağrıları yapmak için"
+      ],
+      "answer": "Döngü oluşturmak için",
+      "category": "Angular",
+      "level": "Medium",
+      "subcategory": "Döngü Yönetimi"
+    },
+    {
+      "question": "React'te 'useState' Hook'u ne işe yarar?",
+      "options": [
+        "Bileşenler arası veri taşımak için",
+        "Bileşen içindeki durumları yönetmek için",
+        "Yalnızca stil değiştirmek için",
+        "Yalnızca HTTP istekleri yapmak için"
+      ],
+      "answer": "Bileşen içindeki durumları yönetmek için",
+      "category": "React",
+      "level": "Medium",
+      "subcategory": "State Yönetimi"
+    },
+    {
+      "question": "CSS'de Flexbox özelliği ne için kullanılır?",
+      "options": [
+        "Sayfaya arka plan eklemek için",
+        "Grid tabanlı düzenler oluşturmak için",
+        "Öğe hizalama ve düzenleme için",
+        "Yalnızca mobil uyumluluk için"
+      ],
+      "answer": "Öğe hizalama ve düzenleme için",
+      "category": "CSS",
+      "level": "Medium",
+      "subcategory": "Düzenleme"
+    },
+    {
+      "question": "JavaScript'te Promise nedir?",
+      "options": [
+        "Senkron işlemleri yönetmek için kullanılan yapı",
+        "Zamanlayıcı işlevi",
+        "Asenkron işlemleri yönetmek için kullanılan yapı",
+        "Hata yakalamak için kullanılan yapı"
+      ],
+      "answer": "Asenkron işlemleri yönetmek için kullanılan yapı",
+      "category": "JavaScript",
+      "level": "Medium",
+      "subcategory": "Asenkron Programlama"
+    },
+    {
+      "question": "Next.js'de API Routes ne işe yarar?",
+      "options": [
+        "Sunucu tarafında API oluşturmak için",
+        "Yalnızca istemci tarafında çalışmak için",
+        "Veritabanı işlemlerini yürütmek için",
+        "Yalnızca dosya yüklemek için"
+      ],
+      "answer": "Sunucu tarafında API oluşturmak için",
+      "category": "Next.js",
+      "level": "Medium",
+      "subcategory": "API Yönetimi"
+    },
+    {
+      "question": "Angular'da Service ne için kullanılır?",
+      "options": [
+        "Yalnızca stil düzenlemek için",
+        "Bileşenler arasında veri paylaşmak için",
+        "Sadece HTTP istekleri yapmak için",
+        "Yalnızca yönlendirme için"
+      ],
+      "answer": "Bileşenler arasında veri paylaşmak için",
+      "category": "Angular",
+      "level": "Medium",
+      "subcategory": "Servis Yönetimi"
+    },
+    {
+      "question": "Nesne (Object) nedir?",
+      "options": [
+        "Sadece fiziksel varlıklardır.",
+        "Özellikleri ve davranışları olan varlıklardır.",
+        "Yalnızca programlama dillerinde kullanılır.",
+        "Sadece veritabanında depolanan öğelerdir."
+      ],
+      "answer": "Özellikleri ve davranışları olan varlıklardır.",
+      "category": "Temel Programlama",
+      "level": "Low",
+      "subcategory": "Nesne Yönetimi"
+    },
+    {
+      "question": "Sınıf (Class) nedir?",
+      "options": [
+        "Nesnelerin özelliklerinin depolandığı yerdir.",
+        "Nesnelerin oluşturulduğu bir kalıptır.",
+        "Sadece verileri tutar.",
+        "Yalnızca metodları içerir."
+      ],
+      "answer": "Nesnelerin oluşturulduğu bir kalıptır.",
+      "category": "Temel Programlama",
+      "level": "Low",
+      "subcategory": "Sınıf Yönetimi"
+    },
+    {
+      "question": "Kalıtım (Inheritance) nedir?",
+      "options": [
+        "Sadece metodların paylaşılmasıdır.",
+        "Bir sınıfın başka bir sınıftan özellikler almasıdır.",
+        "Verilerin kopyalanmasıdır.",
+        "Yalnızca temel sınıflarda kullanılır."
+      ],
+      "answer": "Bir sınıfın başka bir sınıftan özellikler almasıdır.",
+      "category": "Temel Programlama",
+      "level": "Medium",
+      "subcategory": "Nesne Yönelimli Programlama"
+    },
+    {
+      "question": "Soyutlama (Abstraction) nedir?",
+      "options": [
+        "Nesnenin tüm detaylarını gizlemek anlamına gelir.",
+        "Önemli özelliklerin ön plana çıkarılmasıdır.",
+        "Yalnızca metodların gizlenmesidir.",
+        "Verilerin doğrudan erişilmesidir."
+      ],
+      "answer": "Önemli özelliklerin ön plana çıkarılmasıdır.",
+      "category": "Temel Programlama",
+      "level": "Medium",
+      "subcategory": "Nesne Yönelimli Programlama"
+    },
+    {
+      "question": "Çok biçimlilik (Polymorphism) nedir?",
+      "options": [
+        "Aynı metodun farklı şekillerde davranış göstermesidir.",
+        "Nesnelerin kopyalanmasıdır.",
+        "Yalnızca türetilmiş sınıflarda kullanılır.",
+        "Metodların üzerine yazılmasıdır."
+      ],
+      "answer": "Aynı metodun farklı şekillerde davranış göstermesidir.",
+      "category": "Temel Programlama",
+      "level": "Medium",
+      "subcategory": "Nesne Yönelimli Programlama"
+    },
+    {
+      "question": "Kapsülleme (Encapsulation) nedir?",
+      "options": [
+        "Nesnenin iç detaylarının gizlenmesidir.",
+        "Yalnızca metodların gizlenmesidir.",
+        "Nesnelerin kopyalanmasıdır.",
+        "Verilerin doğrudan erişilmesidir."
+      ],
+      "answer": "Nesnenin iç detaylarının gizlenmesidir.",
+      "category": "Temel Programlama",
+      "level": "Medium",
+      "subcategory": "Nesne Yönelimli Programlama"
+    },
+    {
+      "question": "SOLID prensiplerinin amacı nedir?",
+      "options": [
+        "Kodun okunabilirliğini azaltmak",
+        "Nesne yönelimli tasarımı optimize etmek",
+        "Sadece performansı artırmak",
+        "Daha faza kod yazmak"
+      ],
+      "answer": "Nesne yönelimli tasarımı optimize etmek",
+      "category": "OOP Prensipleri",
+      "level": "High",
+      "subcategory": "Tasarım Prensipleri"
+    },
+    {
+      "question": "Single Responsibility Prensibi nedir?",
+      "options": [
+        "Her sınıfın yalnızca bir sorumluluğu olmalıdır.",
+        "Tüm sorumluluklar bir sınıfta toplanmalıdır.",
+        "Sınıflar arasındaki ilişkiyi artırır.",
+        "Yalnızca küçük projelerde uygulanır."
+      ],
+      "answer": "Her sınıfın yalnızca bir sorumluluğu olmalıdır.",
+      "category": "OOP Prensipleri",
+      "level": "High",
+      "subcategory": "Tasarım Prensipleri"
+    },
+    {
+      "question": "Dependency Inversion Prensibi nedir?",
+      "options": [
+        "Düşük seviyeli sınıfların yüksek seviyelilere bağlı olmasıdır.",
+        "Soyutlamanın somutlamaya bağlı olmasıdır.",
+        "Yüksek seviyeli sınıfların soyut kavramlara bağlı olmasıdır.",
+        "Yalnızca metodların kopyalanmasıdır."
+      ],
+      "answer": "Yüksek seviyeli sınıfların soyut kavramlara bağlı olmasıdır.",
+      "category": "OOP Prensipleri",
+      "level": "High",
+      "subcategory": "Tasarım Prensipleri"
+    },
+    {
+      "question": "Interface Segregation Prensibi nedir?",
+      "options": [
+        "Tüm metodların bir interface içinde toplanmasıdır.",
+        "Kullanılmayan metodların ayrılmasıdır.",
+        "Sınıflar arasındaki ilişkiyi artırır.",
+        "Yalnızca küçük projelerde uygulanır."
+      ],
+      "answer": "Kullanılmayan metodların ayrılmasıdır.",
+      "category": "OOP Prensipleri",
+      "level": "High",
+      "subcategory": "Tasarım Prensipleri"
+    },
+    {
+      "question": "Framework nedir?",
+      "options": [
+        "Kütüphanelerden oluşan bir yapıdır.",
+        "Sadece veri tabanı işlemleri için kullanılır.",
+        "Kodları derlemek için kullanılır.",
+        "Yalnızca arayüz geliştirmek için kullanılır."
+      ],
+      "answer": "Kütüphanelerden oluşan bir yapıdır.",
+      "category": "Yazılım Mimarisi",
+      "level": "Medium",
+      "subcategory": "Geliştirme Araçları"
+    },
+    {
+      "question": "Library (Kütüphane) nedir?",
+      "options": [
+        "Önceden yazılmış kodların bulunduğu yapıdır.",
+        "Yalnızca veritabanı işlemleri için kullanılır.",
+        "Kodları derlemek için kullanılır.",
+        "Yalnızca arayüz geliştirmek için kullanılır."
+      ],
+      "answer": "Önceden yazılmış kodların bulunduğu yapıdır.",
+      "category": "Yazılım Mimarisi",
+      "level": "Medium",
+      "subcategory": "Geliştirme Araçları"
+    },
+    {
+      "question": "API nedir?",
+      "options": [
+        "Başka uygulamaların işlevlerini kullanmak için oluşturulan modüldür.",
+        "Yalnızca veritabanı işlemleri için kullanılır.",
+        "Kodları derlemek için kullanılır.",
+        "Yalnızca arayüz geliştirmek için kullanılır."
+      ],
+      "answer": "Başka uygulamaların işlevlerini kullanmak için oluşturulan modüldür.",
+      "category": "Web Geliştirme",
+      "level": "Medium",
+      "subcategory": "API Yönetimi"
+    },
+    {
+      "question": "MVC mimarisi hangi katmanlardan oluşur?",
+      "options": [
+        "Model, View, Controller",
+        "Model, View, Database",
+        "View, Controller, Router",
+        "Router, Controller, Model"
+      ],
+      "answer": "Model, View, Controller",
+      "category": "Yazılım Mimarisi",
+      "level": "Medium",
+      "subcategory": "Mimari Desenler"
+    },
+    {
+      "question": "Authentication nedir?",
+      "options": [
+        "Kullanıcı yetkilendirmesidir.",
+        "Kullanıcı kimlik doğrulamasıdır.",
+        "Veritabanı bağlantısıdır.",
+        "Sadece giriş denemeleridir."
+      ],
+      "answer": "Kullanıcı kimlik doğrulamasıdır.",
+      "category": "Güvenlik",
+      "level": "Medium",
+      "subcategory": "Kimlik Doğrulama"
+    },
+    {
+      "question": "Authorization nedir?",
+      "options": [
+        "Kullanıcı kimlik doğrulamasıdır.",
+        "Veritabanı bağlantısıdır.",
+        "Kullanıcı yetkilendirmesidir.",
+        "Sadece giriş denemeleridir."
+      ],
+      "answer": "Kullanıcı yetkilendirmesidir.",
+      "category": "Güvenlik",
+      "level": "Medium",
+      "subcategory": "Yetkilendirme"
+    },
+    {
+      "question": "HTTP nedir?",
+      "options": [
+        "Veritabanı bağlantısıdır.",
+        "İnternet üzerinden veri aktarım protokolüdür.",
+        "Sadece dosya transferi için kullanılır.",
+        "Kodları derlemek için kullanılır."
+      ],
+      "answer": "İnternet üzerinden veri aktarım protokolüdür.",
+      "category": "Web Geliştirme",
+      "level": "Medium",
+      "subcategory": "Protokoller"
+    },
+    {
+      "question": "Middleware nedir?",
+      "options": [
+        "Veritabanı bağlantısıdır.",
+        "Arka plan işlemlerini optimize eder.",
+        "Gelen istekleri kontrol eden ara katmandır.",
+        "Kodları derlemek için kullanılır."
+      ],
+      "answer": "Gelen istekleri kontrol eden ara katmandır.",
+      "category": "Web Geliştirme",
+      "level": "Medium",
+      "subcategory": "Yapılar"
+    },
+    {
+      "question": "Lazy Loading nedir?",
+      "options": [
+        "Sayfanın tamamının önceden yüklenmesidir.",
+        "İhtiyaç duyuldukça yükleme yapılmasıdır.",
+        "Veritabanı bağlantısıdır.",
+        "Yalnızca arayüz geliştirmek için kullanılır."
+      ],
+      "answer": "İhtiyaç duyuldukça yükleme yapılmasıdır.",
+      "category": "Web Geliştirme",
+      "level": "Medium",
+      "subcategory": "Performans"
+    },
+    {
+      "question": "SSL nedir?",
+      "options": [
+        "Verileri şifreleyerek ileten bir protokoldür.",
+        "Yalnızca veritabanı işlemleri için kullanılır.",
+        "Kodları derlemek için kullanılır.",
+        "Yalnızca arayüz geliştirmek için kullanılır."
+      ],
+      "answer": "Verileri şifreleyerek ileten bir protokoldür.",
+      "category": "Güvenlik",
+      "level": "Medium",
+      "subcategory": "Şifreleme Protokolleri"
     }
   ]
 }

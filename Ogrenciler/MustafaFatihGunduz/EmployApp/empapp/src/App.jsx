@@ -1,16 +1,14 @@
-// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import AdminPanel from "./pages/AdminPanel";
-import Application from "./FormApplication/page";
-import LoginPage from "./pages/LoginPage";
 import Router from "./routes/Router";
 import { BrowserRouter } from "react-router-dom";
+import styles from "../src/pages/AdminPanel.module.css"
 
 function App() {
   return (
-    <BrowserRouter>
-      {" "}
+    <div className= {`${styles.backGround}`}>
+          <BrowserRouter>
       <Router />
     </BrowserRouter>
+    </div>
   );
 }
 

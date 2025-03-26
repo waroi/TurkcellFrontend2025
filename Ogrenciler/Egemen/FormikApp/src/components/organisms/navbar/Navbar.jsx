@@ -6,21 +6,32 @@ import { getUser } from "../../../../firebase/dbController";
 import { auth } from "../../../../firebase/firebase";
 import { NavLink, useNavigate } from "react-router";
 import { getUserApplications } from "../../../../firebase/dbController";
+
 const Navbar = () => {
   const [userAuth, setUserAuth] = useState(null);
-  const [user, setUser] = useState(null);
+  const [userRole, setUserRole] = useState(null);
   let navigate = useNavigate();
 
   const handleRegister = async () => {
     await registerWithGoogle();
     const user = await getUser(auth.currentUser.uid);
+    setUserRole(user.role);
     user.role === "admin" ? navigate("/applications") : navigate("/form");
-    setUser(user);
   };
 
   useEffect(() => {
     unsubscribe(setUserAuth);
   }, []);
+
+  useEffect(() => {
+    if (userAuth) {
+      const fetchUserRole = async () => {
+        const user = await getUser(auth.currentUser.uid);
+        setUserRole(user.role);
+      };
+      fetchUserRole();
+    }
+  }, [userAuth]);
 
   return (
     <div>
@@ -34,34 +45,33 @@ const Navbar = () => {
           </div>
 
           {userAuth ? (
-            <>
-              <div className="container d-flex justify-content-end gap-2">
+            <div className="container d-flex justify-content-end gap-2">
+              <NavLink
+                to="/applications"
+                className="btn btn-warning rounded-pill"
+              >
+                Başvurular
+              </NavLink>
+
+              {/* Kullanıcı 'user' rolündeyse 'Yeni Başvuru' butonunu göster */}
+              {userRole === "user" && (
                 <NavLink
-                  to="/applications"
-                  className="btn btn-warning rounded-pill "
+                  to="/form"
+                  className="btn btn-warning rounded-pill"
+                  onClick={() => getUserApplications()}
                 >
-                  Başvurular
+                  Yeni Başvuru
                 </NavLink>
-                {user && user.role == "user" ? (
-                  <NavLink
-                    to="/form"
-                    className="btn btn-warning rounded-pill "
-                    onClick={getUserApplications()}
-                  >
-                    Yeni Başvuru
-                  </NavLink>
-                ) : (
-                  <></>
-                )}
-                <NavLink
-                  to="/"
-                  className="btn btn-danger rounded-pill"
-                  onClick={signOut}
-                >
-                  Çıkış
-                </NavLink>
-              </div>
-            </>
+              )}
+
+              <NavLink
+                to="/"
+                className="btn btn-danger rounded-pill"
+                onClick={signOut}
+              >
+                Çıkış
+              </NavLink>
+            </div>
           ) : (
             <Button
               className="btn btn-warning rounded-pill"

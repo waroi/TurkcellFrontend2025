@@ -5,6 +5,7 @@ import { useAuth } from "../context/AuthContext";
 
 const AllJobs = ({ title = "İş İlanları", limit }) => {
   const { user } = useAuth();
+  console.log("user from jobs", user);
   const renderJobsData = (data) => {
     console.log("data", data);
     if (!data) {
