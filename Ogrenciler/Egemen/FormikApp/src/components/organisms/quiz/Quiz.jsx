@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import questionData from "../../../constants/questions.json";
-import { useNavigate } from "react-router";
+import { useNavigate, useParams } from "react-router";
+import { setQuizPoint } from "../../../../firebase/dbController";
 
 const Quiz = () => {
   const [questions, setQuestions] = useState([]);
   const [activeIndex, setActiveIndex] = useState(0);
   const [totalPoint, setTotalPoint] = useState(0);
+  const { id } = useParams();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -17,6 +19,7 @@ const Quiz = () => {
       setActiveIndex(activeIndex + 1);
     } else {
       navigate("/quizCompleted");
+      setQuizPoint(id, totalPoint);
     }
   };
   const calcPoint = (selectedIndex) => {

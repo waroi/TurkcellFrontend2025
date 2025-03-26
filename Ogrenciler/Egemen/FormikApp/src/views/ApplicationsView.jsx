@@ -3,6 +3,7 @@ import { updateAppStatus } from "../../firebase/dbController";
 import Button from "../components/atoms/buttons/Button";
 import getApplications from "../hooks/getAplications";
 import { unsubscribe } from "../../services/authServices";
+import { NavLink } from "react-router";
 
 const Applications = () => {
   const [apps, setApps] = useState([]);
@@ -16,6 +17,7 @@ const Applications = () => {
     } else {
       setLoading(false);
     }
+    console.log("first");
   }, [userAuth, apps]);
 
   return loading ? (
@@ -122,19 +124,26 @@ const Applications = () => {
                 </div>
                 <div className="mt-4 d-flex justify-content-end">
                   {user &&
-                  application.status === "Beklemede" &&
+                  (application.status === "Beklemede" ||
+                    application.status === "Mülakat") &&
                   user.role === "admin" ? (
                     <>
+                      {application.status === "Mülakat" && (
+                        <span className="badge text-bg-primary">
+                          Test Skoru: {application.quiz}
+                        </span>
+                      )}
                       <Button
                         className="btn btn-success me-3 px-4 py-2 shadow"
                         onClick={() => {
-                          {
-                            application.status = "Onay";
-                            updateAppStatus(application);
-                          }
+                          application.status =
+                            application.status == "Beklemede"
+                              ? "Test"
+                              : "Mülakat";
+                          updateAppStatus(application);
                         }}
                       >
-                        Onayla
+                        {application.status} adıma geç
                       </Button>
                       <Button
                         className="btn btn-danger px-4 py-2 shadow"
@@ -153,6 +162,21 @@ const Applications = () => {
                       {application.status === "Beklemede" && (
                         <span className="badge text-bg-primary">
                           Değerlendirme Aşamasında
+                        </span>
+                      )}
+                      {application.status === "Test" &&
+                        (user.role === "admin" ? (
+                          <span className="badge text-bg-warning">
+                            Test Gönderildi
+                          </span>
+                        ) : (
+                          <NavLink to={`/quiz/${application.id}`}>
+                            Teste Git
+                          </NavLink>
+                        ))}
+                      {application.status === "Mülakat" && (
+                        <span className="badge text-bg-primary">
+                          Test Sonucu Bekleniyor
                         </span>
                       )}
                       {application.status === "Onay" && (

@@ -10,7 +10,7 @@ const Router = () => {
     { path: "/", element: <SignInView /> },
     { path: "/form", element: <GeneralFormView /> },
     { path: "/applications", element: <ApplicationsView /> },
-    { path: "/quiz", element: <Quiz /> },
+    { path: "/quiz/:id", element: <Quiz /> },
     { path: "/quizCompleted", element: <TestResult /> },
   ]);
   return routes;
