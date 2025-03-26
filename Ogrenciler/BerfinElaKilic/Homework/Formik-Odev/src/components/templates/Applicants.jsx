@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { getJobById} from "../../utils/services"; 
+import { getJobById } from "../../utils/services";
 import CandidateCard from "../atoms/cards/CandidateCard";
 
 const Applicants = () => {
-  const { jobId } = useParams(); 
+  const { jobId } = useParams();
   const [applicants, setApplicants] = useState([]);
 
   useEffect(() => {
@@ -24,7 +24,7 @@ const Applicants = () => {
     <div>
       <h2>Adaylar Listesi</h2>
       {applicants ? (
-        applicants.map(applicant => (
+        applicants.map((applicant) => (
           <CandidateCard key={applicant.id} applicant={applicant} />
         ))
       ) : (

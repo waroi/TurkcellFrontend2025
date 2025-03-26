@@ -103,6 +103,7 @@ export const AuthProvider = ({ children }) => {
       if (role === "admin") {
         user = await addAdmin(userDetail);
       } else {
+        userDetail = { ...userDetail, appliedJobs: [] };
         user = await addCandidate(userDetail);
       }
       console.log(user);

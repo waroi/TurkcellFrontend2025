@@ -1,13 +1,29 @@
 import React, { useEffect, useState } from "react";
-import { Card, Button, CardText } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import { useNavigate } from "react-router";
 import WrapperCard from "./WrapperCard";
 import PrimaryButton from "../Buttons/PrimaryButton";
 import SuccessButton from "../Buttons/SuccessButton";
 import WarningButton from "../Buttons/WarningButton";
+import { useActions } from "../../../context/ActionsContext";
 
 const JobCard = ({ job, user }) => {
   const navigate = useNavigate();
+  const { applyJob } = useActions();
+  const [hasApplied, setHasApplied] = useState(false);
+
+  const appliedBefore = () => {
+    const applied = user.appliedJobs.some(
+      (appliedJob) => appliedJob.id === job.id
+    );
+    setHasApplied(applied);
+  };
+
+  useEffect(() => {
+    if (user && user.role !== "admin") {
+      appliedBefore();
+    }
+  }, [user, job.id]);
 
   return (
     <WrapperCard className="mt-4">
@@ -30,9 +46,18 @@ const JobCard = ({ job, user }) => {
               Görüntüle
             </PrimaryButton>
             {user?.role === "admin" ? (
-              <WarningButton onClick={() => navigate(`/jobs/${job.id}/candidates`)}>Başvuran Adaylar</WarningButton>
+              <WarningButton
+                onClick={() => navigate(`/jobs/${job.id}/candidates`)}
+              >
+                Başvuran Adaylar
+              </WarningButton>
             ) : (
-              <SuccessButton>Başvur</SuccessButton>
+              <SuccessButton
+                onClick={() => applyJob(job.id)}
+                disabled={hasApplied}
+              >
+                {hasApplied ? "Başvuruldu" : "Başvur"}
+              </SuccessButton>
             )}
           </div>
         </Card.Body>

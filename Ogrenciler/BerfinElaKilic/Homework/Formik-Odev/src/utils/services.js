@@ -15,7 +15,7 @@ export const addJob = async (jobDetails) => {
 };
 
 export const updateJob = async (id, jobDetails) => {
-  return await fetchService(`${url}/jobs/${id}`, "PUT", jobDetails);
+  return await fetchService(`${url}/jobs/${id}`, "PATCH", jobDetails);
 };
 
 export const deleteJob = async (id) => {
