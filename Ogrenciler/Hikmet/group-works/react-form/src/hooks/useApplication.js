@@ -4,7 +4,7 @@ import {
   fetchApplications,
   rejectApplication,
 } from "../services/applicationService";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../firebase/config";
 
 export const useApplications = () => {
@@ -16,37 +16,44 @@ export const useApplications = () => {
   const [passedCandidates, setPassedCandidates] = useState([]);
   const [failedCandidates, setFailedCandidates] = useState([]);
 
-  // Sınav sonuçlarını getirme fonksiyonu
-  const fetchQuizResults = async () => {
+  // Test sonuçlarını getirme fonksiyonu
+  const fetchTestResults = async () => {
     try {
-      const resultsRef = collection(db, "quizResults");
-      const resultsSnapshot = await getDocs(resultsRef);
+      const attemptsRef = collection(db, "test_attempts");
+      const attemptsSnapshot = await getDocs(attemptsRef);
 
-      if (resultsSnapshot.empty) {
+      if (attemptsSnapshot.empty) {
         setPassedCandidates([]);
         setFailedCandidates([]);
         return;
       }
 
-      const results = resultsSnapshot.docs.map((doc) => ({
+      const attempts = attemptsSnapshot.docs.map((doc) => ({
         id: doc.id,
         ...doc.data(),
       }));
 
-      const passed = results.filter((result) => result.score >= 4);
-      const failed = results.filter((result) => result.score < 4);
+      // Tamamlanmış ve aktif testleri filtrele
+      const completedAttempts = attempts.filter(
+        (attempt) => attempt.completed && attempt.attempted
+      );
+
+      // Geçen ve kalan adayları ayır
+      const passed = completedAttempts.filter((attempt) => attempt.score >= 7);
+      const failed = completedAttempts.filter((attempt) => attempt.score < 7);
 
       setPassedCandidates(passed);
       setFailedCandidates(failed);
     } catch (err) {
-      console.error("Error fetching quiz results:", err);
+      console.error("Test sonuçları getirilirken hata oluştu:", err);
       setPassedCandidates([]);
       setFailedCandidates([]);
     }
   };
 
+  // İlk yüklemede test sonuçlarını getir
   useEffect(() => {
-    fetchQuizResults();
+    fetchTestResults();
   }, []);
 
   // Tüm başvuruları getir
@@ -65,7 +72,7 @@ export const useApplications = () => {
       setNegativeList(negativeData || []);
       setError(null);
     } catch (err) {
-      console.error("Error fetching application data:", err);
+      console.error("Başvuru verileri getirilirken hata oluştu:", err);
       setError("Veri yüklenirken bir hata oluştu.");
     } finally {
       setLoading(false);
@@ -83,7 +90,7 @@ export const useApplications = () => {
 
       return true;
     } catch (error) {
-      console.error("Error approving application:", error);
+      console.error("Başvuru onaylanırken hata oluştu:", error);
       return false;
     }
   }, []);
@@ -99,11 +106,12 @@ export const useApplications = () => {
 
       return true;
     } catch (error) {
-      console.error("Error rejecting application:", error);
+      console.error("Başvuru reddedilirken hata oluştu:", error);
       return false;
     }
   }, []);
 
+  // İlk yüklemede tüm verileri getir
   useEffect(() => {
     fetchAllData();
   }, [fetchAllData]);
@@ -119,6 +127,6 @@ export const useApplications = () => {
     refreshData: fetchAllData,
     handleApprove,
     handleReject,
-    fetchQuizResults,
+    fetchTestResults,
   };
 };
