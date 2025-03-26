@@ -105,6 +105,34 @@
           "applicationDate": "2024-03-21T11:00:00Z"
         }
       ]
+    },
+    {
+      "id": "VILaDZXFqNUzaxhGzZpa7Hi8rZF2",
+      "firstName": "ela",
+      "lastName": "kılıç",
+      "role": "user",
+      "email": "berfin@gmail.com",
+      "appliedJobs": [
+        {
+          "id": "1",
+          "status": "test",
+          "applicationDate": "2025-03-26T12:26:54.807Z"
+        }
+      ]
+    },
+    {
+      "id": "j623JrQfEcdLMI294bLETumYyPU2",
+      "firstName": "Hazal",
+      "lastName": "Kütküt",
+      "role": "user",
+      "email": "hazalktt@gmail.com",
+      "appliedJobs": [
+        {
+          "id": "1",
+          "status": "pending",
+          "applicationDate": "2025-03-26T13:09:30.489Z"
+        }
+      ]
     }
   ],
   "jobs": [
@@ -143,7 +171,7 @@
         {
           "id": "1",
           "applicationDate": "2024-03-21T11:00:00Z",
-          "status": "pending",
+          "status": "hired",
           "approvedByAdmin": "1"
         },
         {
@@ -151,6 +179,24 @@
           "status": "test",
           "approvedByAdmin": "",
           "applicationDate": "2025-03-26T00:35:20.098Z"
+        },
+        {
+          "id": "VILaDZXFqNUzaxhGzZpa7Hi8rZF2",
+          "status": "test",
+          "approvedByAdmin": "",
+          "applicationDate": "2025-03-26T12:26:54.807Z"
+        },
+        {
+          "id": "j623JrQfEcdLMI294bLETumYyPU2",
+          "status": "pending",
+          "approvedByAdmin": "",
+          "applicationDate": "2025-03-26T13:09:05.965Z"
+        },
+        {
+          "id": "j623JrQfEcdLMI294bLETumYyPU2",
+          "status": "pending",
+          "approvedByAdmin": "",
+          "applicationDate": "2025-03-26T13:09:30.489Z"
         }
       ]
     }
@@ -195,6 +241,27 @@
           "userId": "90dZl0LQt8cihXatYOszexHShlm1",
           "jobId": "1",
           "approvedAt": "2024-03-21T12:00:00Z",
+          "newStatus": "test"
+        }
+      ]
+    },
+    {
+      "id": "tbHVOivOomebkNYdTDxqPNSChRy2",
+      "firstName": "Berfin Ela",
+      "lastName": "Kılıç",
+      "role": "admin",
+      "email": "berfinela877@gmail.com",
+      "approvedCandidates": [
+        {
+          "userId": "1",
+          "jobId": "1",
+          "approvedAt": "2025-03-26T12:44:31.194Z",
+          "newStatus": "hired"
+        },
+        {
+          "userId": "VILaDZXFqNUzaxhGzZpa7Hi8rZF2",
+          "jobId": "1",
+          "approvedAt": "2025-03-26T12:50:43.011Z",
           "newStatus": "test"
         }
       ]

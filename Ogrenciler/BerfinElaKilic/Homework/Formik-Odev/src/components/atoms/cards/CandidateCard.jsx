@@ -5,27 +5,28 @@ import { Link } from "react-router";
 import SuccessButton from "../Buttons/SuccessButton";
 import WrapperCard from "./WrapperCard";
 import { useActions } from "../../../context/ActionsContext";
+import CustomComponent from "../CustomComponent";
 const CandidateCard = ({ applicant, jobId }) => {
   const [candidate, setCandidate] = useState(null);
   const [status, setStatus] = useState(applicant?.status || "pending");
   const { approveCandidate } = useActions();
+  const fetchCandidates = async () => {
+    try {
+      const data = await getCandidate(applicant.id);
+      setCandidate(data);
+      setStatus(data?.appliedJobs?.find(job => job.id === jobId)?.status || "pending");
+    } catch (error) {
+      console.error("Error fetching candidate:", error);
+    }
+  };
   useEffect(() => {
-    const fetchCandidates = async () => {
-      try {
-        const data = await getCandidate(applicant.id);
-        setCandidate(data);
-        setStatus(data?.status || "pending");
-      } catch (error) {
-        console.error("Error fetching candidate:", error);
-      }
-    };
     fetchCandidates();
-  }, [applicant.id]);
+  }, [applicant.id, jobId]);
   const onStatusSubmit = async (event) => {
     event.preventDefault();
-    approveCandidate(candidate.id, jobId, status);
     try {
-      setCandidate((prev) => ({ ...prev, status }));
+      await approveCandidate(candidate.id, jobId, status);
+      await fetchCandidates(); // Güncel veriyi tekrar çek
     } catch (error) {
       console.error("Error updating status:", error);
     }
@@ -79,9 +80,9 @@ const CandidateCard = ({ applicant, jobId }) => {
                   <option value="mülakat">Mülakat</option>
                   <option value="hired">Hired</option>
                 </Form.Select>
-                <Button type="submit" variant="success" className="btn-sm">
+                <SuccessButton type="submit" className="btn-sm">
                   Güncelle
-                </Button>
+                </SuccessButton>
               </Form>
             </Col>
           </Row>

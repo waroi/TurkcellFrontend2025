@@ -84,7 +84,7 @@ function shuffle(array) {
 }
 
 const totalTime = 90; // Toplam süre
-const Quiz = () => {
+const Quiz = ({jobId}) => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [showResult, setShowResult] = useState(false);

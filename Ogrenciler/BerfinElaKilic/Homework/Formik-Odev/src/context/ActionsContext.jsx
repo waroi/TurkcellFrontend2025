@@ -68,24 +68,35 @@ export const ActionsProvider = ({ children }) => {
   };
   const approveCandidate = async (candidateId, jobId, newStatus) => {
     const candidate = await getCandidate(candidateId);
-    const appliedJobs = candidate.appliedJobs;
+    if (!candidate) {
+      console.error("Candidate bulunamadı.");
+      return;
+    }
+  
+    const appliedJobs = candidate.appliedJobs || [];
     const appliedJob = appliedJobs.find((job) => job.id === jobId);
     console.log(user, candidate, appliedJob, appliedJobs);
+  
     if (user && appliedJob) {
-      const existedUser = user.approvedCandidates.find(
+      const approvedCandidates = Array.isArray(user.approvedCandidates)
+        ? user.approvedCandidates
+        : [];
+  
+      const existedUser = approvedCandidates.find(
         (candidate) =>
           candidate.userId === candidateId && candidate.jobId === jobId
       );
+  
       let newApprovedCandidates;
       if (existedUser) {
-        newApprovedCandidates = user.approvedCandidates.map((candidate) =>
+        newApprovedCandidates = approvedCandidates.map((candidate) =>
           candidate.userId === candidateId && candidate.jobId === jobId
             ? { ...candidate, newStatus }
             : candidate
         );
       } else {
         newApprovedCandidates = [
-          ...user.approvedCandidates,
+          ...approvedCandidates,
           {
             userId: candidateId,
             jobId: jobId,
@@ -94,12 +105,13 @@ export const ActionsProvider = ({ children }) => {
           },
         ];
       }
+  
       const newAppliedJobs = appliedJobs.map((job) =>
         job.id === jobId ? { ...job, status: newStatus } : job
       );
-      // Job içindeki applicants'ı güncelle*
+  
       const job = await getJobById(jobId);
-      if (job.applicants && Array.isArray(job.applicants)) {
+      if (job?.applicants && Array.isArray(job.applicants)) {
         const updatedJob = {
           ...job,
           applicants: job.applicants.map((applicant) =>
@@ -108,17 +120,20 @@ export const ActionsProvider = ({ children }) => {
               : applicant
           ),
         };
-        // Job güncelleme fonksiyonu çağrılıyor*
         await updateJob(jobId, updatedJob);
+      } else {
+        console.error("Job veya applicants geçerli değil.");
       }
+  
       console.log(newAppliedJobs, newApprovedCandidates);
-      // Verileri güncelle*
       await addAdminInfo(user.id, {
         approvedCandidates: newApprovedCandidates,
       });
       await addCandidateInfo(candidate.id, {
         appliedJobs: newAppliedJobs,
       });
+    } else {
+      console.error("User veya appliedJob bulunamadı.");
     }
   };
   return (
