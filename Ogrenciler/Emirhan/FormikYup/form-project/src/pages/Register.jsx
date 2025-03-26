@@ -34,7 +34,7 @@ function Register() {
       <Navbar />
       <div className="h-auto login-form-width shadow p-4 my-5 bg-white rounded">
         <div className="w-100 py-3 d-flex flex-column justify-content-center align-items-center">
-          <i class="fa-solid fa-user-tie fs-1 mb-3"></i>
+          <i className="fa-solid fa-user-tie fs-1 mb-3"></i>
           <h4 className="fs-4">Zencode'a hoşgeldin</h4>
           <h6 className="fs-6 text-secondary fw-normal">Yeni hesap oluştur</h6>
         </div>
