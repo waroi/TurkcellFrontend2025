@@ -5,6 +5,7 @@ import { Card, CardContent, CardMedia, Typography, Button, Box } from "@mui/mate
 import useUserStore from "../Store/userStore";
 
 const CarDetails = () => {
+  const user = localStorage.getItem("user")
   const rentCar = useUserStore((state) => state.rentCar);
   const { carId } = useParams();
   const navigate = useNavigate();
@@ -42,7 +43,7 @@ const CarDetails = () => {
         </CardContent>
         <Box sx={{ display: "flex", justifyContent: "space-between", mt: 2 }}>
           <Button variant="outlined" color="primary" onClick={() => navigate(-1)}>Geri Dön</Button>
-          <Button variant="contained" color="primary" size="large" onClick={()=>rentCar(carId,user)}>Kirala</Button>
+          <Button variant="contained" color="primary" size="large" disabled={(user !== car.rentedBy && car.rentedBy !== "")? true:false} onClick={()=>rentCar(carId,user)}>Kirala</Button>
         </Box>
       </Card>
     </Box>

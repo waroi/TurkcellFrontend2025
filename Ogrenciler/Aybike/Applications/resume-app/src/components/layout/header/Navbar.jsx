@@ -46,6 +46,11 @@ const Navbar = () => {
 									</NavLink>
 								</li>
 								<li className="nav-item">
+									<NavLink className="nav-link active bg-primary text-white" to="/completed-users">
+										Testi Tamamlayanlar
+									</NavLink>
+								</li>
+								<li className="nav-item">
 									<NavLink className="nav-link active" to="/" onClick={logOut}>
 										Çıkış Yap
 									</NavLink>

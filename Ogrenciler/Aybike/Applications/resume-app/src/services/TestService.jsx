@@ -1,4 +1,4 @@
-import { addDoc, collection, doc, getDoc, setDoc, updateDoc } from "firebase/firestore"
+import { addDoc, collection, doc, getDoc, getDocs, setDoc, updateDoc } from "firebase/firestore"
 import { db } from "../firebase/Firebase"
 import { EmailService } from "./EmailService";
 
@@ -62,15 +62,25 @@ export class TestService {
         return localStorage.getItem("userEmail")
     }
 
-    static async completedUser(email) {
+    static async completedUser(email, score) {
         try {
             const docRef = doc(db, "completed_users", email)
 
-            await setDoc(docRef, { email, date: new Date().toLocaleDateString("tr-TR") })
+            await setDoc(docRef, { email, score, date: new Date().toLocaleDateString("tr-TR") })
+            localStorage.removeItem("userEmail")
             return { success: true, message: "Test başarıyla tamamlandı" }
         } catch (error) {
             console.error("Başvuru tamamlanırken bir hata oluştu: ", error)
             return { success: false, message: error.message }
         }
+    }
+
+    static async getAllCompletedUsers() {
+        const querySnapshot = await getDocs(collection(db, "completed_users"));
+        const completedUsersData = querySnapshot.docs.map((doc) => ({
+            id: doc.id,
+            ...doc.data(),
+        }));
+        return { data: completedUsersData }
     }
 }

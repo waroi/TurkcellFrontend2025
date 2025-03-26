@@ -1,24 +1,8 @@
-import React, { useState } from 'react';
 import './Dashboard.css';
-import { TestService } from '../../services/TestService';
-import { useNavigate } from 'react-router';
+import useTestAccess from '../../utils/hooks/useTestAccess';
 
 const Dashboard = () => {
-    const [isLoading, setIsLoading] = useState(false)
-    const [email, setEmail] = useState('')
-    const navigate = useNavigate()
-
-    const handleSubmit = async (event) => {
-        event.preventDefault()
-
-        setIsLoading(true)
-        const hasAccess = await TestService.checkAccess(email)
-
-        if (hasAccess) navigate("/test")
-        else alert("Erişim izniniz yok hemen Yöneticiden onay almaya gidin")
-
-        setIsLoading(false)
-    }
+    const { isLoading, email, setEmail, handleSubmit } = useTestAccess()
 
     return (
         <div className="login-container">
@@ -41,7 +25,6 @@ const Dashboard = () => {
                             onChange={(e) => setEmail(e.target.value)}
                             disabled={isLoading}
                         />
-                        {/* {error && <div className="invalid-feedback">{error}</div>} */}
                     </div>
 
                     <button
@@ -59,8 +42,8 @@ const Dashboard = () => {
                 </form>
 
                 <div className="login-footer">
-                    <p>Bu test BENCE 7 sorudan oluşmaktadır ve yaklaşık 30 saniyee sürecektir.</p>
-                    <p className="privacy-note">E-posta adresiniz sadece test sonuçlarını kaydetmek için kullanılacaktır (şaka satacağız bilgileri)</p>
+                    <p>Bu test 5 sorudan oluşmaktadır ve her soru 30 saniye sürecektir.</p>
+                    <p className="privaccy-note">E-posta adresiniz sadece test sonuçlarını kaydetmek için kullanılacaktır (şaka bilgileri satacağız)</p>
                 </div>
             </div>
         </div>

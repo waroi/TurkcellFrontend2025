@@ -5,6 +5,7 @@ import getApplications from "../hooks/getAplications";
 import { unsubscribe } from "../../services/authServices";
 import { NavLink } from "react-router";
 import useApplicationStatus from "../hooks/useApplicationStatus";
+import ApplicationDetails from "../components/molecules/ApplicationDetail/ApplicationDetails";
 
 const Applications = () => {
   const [apps, setApps] = useState([]);
@@ -20,7 +21,7 @@ const Applications = () => {
     } else {
       setLoading(false);
     }
-  }, [userAuth]);
+  }, [userAuth, apps]);
 
   return loading ? (
     <div>Loading...</div>
@@ -52,7 +53,7 @@ const Applications = () => {
               aria-labelledby={`heading${index}`}
               data-bs-parent="#applicationsAccordion"
             >
-              <div className="accordion-body bg-white p-4">
+              {/* <div className="accordion-body bg-white p-4">
                 <div className="row">
                   <div className="col-lg-4">
                     <h5 className="fw-bold text-secondary">Kişisel Bilgiler</h5>
@@ -202,7 +203,13 @@ const Applications = () => {
                     </>
                   )}
                 </div>
-              </div>
+              </div> */}
+              <ApplicationDetails
+                application={application}
+                user={user}
+                onUpdateStatus={updateAppStatus}
+                sonrakiAsama={sonrakiAsama}
+              />
             </div>
           </div>
         ))}

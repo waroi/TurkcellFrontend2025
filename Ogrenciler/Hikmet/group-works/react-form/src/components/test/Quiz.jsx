@@ -35,6 +35,7 @@ const Quiz = () => {
   const checkTestEligibility = async (currentUser) => {
     try {
       if (!currentUser?.email) return;
+      {/*SELECT * FROM olumlu WHERE email = 'currentUser.email';*/}
       const olumluQuery = query(collection(db, "olumlu"), where("email", "==", currentUser.email));
       const querySnapshot = await getDocs(olumluQuery);
 

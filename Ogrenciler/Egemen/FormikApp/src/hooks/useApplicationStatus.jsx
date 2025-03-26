@@ -1,4 +1,4 @@
-import { useCallback } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { updateAppStatus, updateMessage } from "../../firebase/dbController";
 
 const useApplicationStatus = (user, setApps) => {
@@ -19,24 +19,20 @@ const useApplicationStatus = (user, setApps) => {
           newMessage = "Testiniz değerlendiriliyor.";
           break;
         case "Test Kontrol":
-          newStatus = "Test Kontrol";
-          newMessage = "Mülakata davet edildi.";
+          newStatus = "Mülakat";
+          newMessage = "Mülakata davet edildiniz.";
           break;
         case "Mülakat":
           newStatus = "Onay";
-          newMessage = "Mükalata girmeye hak kazandınız.";
+          newMessage = "Tebrikler! Başvurunuz onaylandı.";
           break;
         case "Red":
           newStatus = "Red";
-          newMessage = "Başvuru reddedildi.";
-
+          newMessage = "Başvurunuz reddedildi.";
           break;
         default:
           return;
       }
-
-      await updateAppStatus({ ...application, status: newStatus });
-      await updateMessage(application.id, newMessage);
 
       setApps((prevApps) =>
         prevApps.map((app) =>
@@ -45,6 +41,13 @@ const useApplicationStatus = (user, setApps) => {
             : app
         )
       );
+
+      try {
+        await updateAppStatus({ ...application, status: newStatus });
+        await updateMessage(application.id, newMessage);
+      } catch (error) {
+        console.error("Durum güncellenirken hata oluştu:", error);
+      }
     },
     [user, setApps]
   );

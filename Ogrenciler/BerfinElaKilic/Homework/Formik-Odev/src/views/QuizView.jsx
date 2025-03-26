@@ -14,7 +14,7 @@ const QuizView = () => {
         const data = await getAllJobsQuiz();
         setExam(data);
       } catch (error) {
-        console.error("Error fetching quizzes:", error);
+        console.error("Sınav bulunamadı:", error);
       } finally {
         setLoading(false);
       }
@@ -23,7 +23,7 @@ const QuizView = () => {
     fetchExam();
   }, []);
 
-  if (loading) return <div>Loading quizzes...</div>;
+  if (loading) return <div>Sınav yükleniyor...</div>;
 
   return (
     <div>

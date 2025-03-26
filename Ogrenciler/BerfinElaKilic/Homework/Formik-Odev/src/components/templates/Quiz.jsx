@@ -67,7 +67,7 @@ const Quiz = ({jobId, questions}) => {
     try {
       await updateUserExams(userId, score);
     } catch (error) {
-      console.error("Error updating user exams:", error);
+      console.error("Sınav sonucu yüklenemedi:", error);
     }
   };
   return (

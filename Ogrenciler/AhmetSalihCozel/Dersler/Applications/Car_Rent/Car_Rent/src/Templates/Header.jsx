@@ -3,28 +3,38 @@ import { Box, Button, Typography, Avatar, Menu, MenuItem, IconButton } from "@mu
 import CarRentalIcon from "@mui/icons-material/CarRental";
 import { useNavigate } from "react-router";
 import useUserStore from "../Store/userStore";
+import { logout } from "../Store/fireBase";
 
 const Header = () => {
-  const user = useUserStore((state)=>state.user)
-  const fetchUser = useUserStore((state)=>state.fetchUser)
-  const userId = localStorage.getItem("user")
+  const user = useUserStore((state) => state.user);
+  const fetchUser = useUserStore((state) => state.fetchUser);
+  const userId = localStorage.getItem("user");
   const navigate = useNavigate();
 
-  useEffect(()=>{
-    fetchUser(userId)
-  },[])
-
-
   const [anchorEl, setAnchorEl] = useState(null);
-  const open = Boolean(anchorEl);
+  const [isLoggedOut, setIsLoggedOut] = useState(false); // Çıkış durumunu takip et
+
+  useEffect(() => {
+    fetchUser(userId);
+  }, [user]);
 
   // Menü açma/kapatma fonksiyonları
   const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
+    if (!isLoggedOut) {
+      setAnchorEl(event.currentTarget);
+      setIsLoggedOut(false);
+    }
   };
 
-  const handleClose = () => {
+  const handleLogout = () => {
+    logout();
     setAnchorEl(null);
+    setIsLoggedOut(true); // Kullanıcı çıkış yaptıktan sonra durumu güncelle
+    navigate("/"); // Anasayfaya yönlendir
+  };
+
+  const handleCloseMenu = () => {
+    setAnchorEl(null); // Menü kapama
   };
 
   return (
@@ -38,16 +48,18 @@ const Header = () => {
             </Typography>
           </Box>
 
-          <Box sx={{ display: "flex", alignItems: "center", border:"1px solid", borderColor:"secondary.main", p:1, px:1, borderRadius:"2rem"}}>
-            <IconButton onClick={handleClick} sx={{ p: 0 }}>
-            <Avatar>{user?.userName?.charAt(0)}</Avatar>
-            </IconButton>
-            <Typography sx={{ ml: 1, color: "white", fontWeight: 600 }}>{user?.userName}</Typography>
-          </Box>
+          {!isLoggedOut && ( // Eğer kullanıcı çıkış yapmadıysa, Avatar ve menü butonunu göster
+            <Box sx={{ display: "flex", alignItems: "center", border: "1px solid", borderColor: "secondary.main", p: 1, px: 1, borderRadius: "2rem" }}>
+              <IconButton onClick={handleClick} sx={{ p: 0 }}>
+                <Avatar>{user?.userName?.charAt(0)}</Avatar>
+              </IconButton>
+              <Typography sx={{ ml: 1, color: "white", fontWeight: 600 }}>{user?.userName}</Typography>
+            </Box>
+          )}
 
-          <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
-            <MenuItem onClick={() => { navigate("/rentedcars"); handleClose(); }}>Kiraladığım Araçlar</MenuItem>
-            <MenuItem onClick={() => { navigate("/"); handleClose(); }}>Çıkış Yap</MenuItem>
+          <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleCloseMenu}> {/* onClose prop'u eklendi */}
+            <MenuItem onClick={() => { navigate("/rentedcars"); handleCloseMenu(); }}>Kiraladığım Araçlar</MenuItem>
+            <MenuItem onClick={handleLogout}>Çıkış Yap</MenuItem>
           </Menu>
         </Box>
       </nav>

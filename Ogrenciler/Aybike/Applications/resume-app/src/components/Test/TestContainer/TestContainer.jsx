@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Question from '../Question/Question';
 import Result from '../Result/Result';
 import './TestContainer.css';
-import ProgressBar from '../../Gift/ProgressBar/ProgressBar';
+import ProgressBar from '../ProgressBar/ProgressBar';
 
 const TestContainer = ({ questions }) => {
     const [currentQuestion, setCurrentQuestion] = useState(0)
