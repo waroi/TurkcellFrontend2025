@@ -13,10 +13,12 @@ const JobCard = ({ job, user }) => {
   const [hasApplied, setHasApplied] = useState(false);
 
   const appliedBefore = () => {
-    const applied = user.appliedJobs.some(
-      (appliedJob) => appliedJob.id === job.id
-    );
-    setHasApplied(applied);
+    if (user && user.appliedJobs) {
+      const applied = user.appliedJobs.some(
+        (appliedJob) => appliedJob.id === job.id
+      );
+      setHasApplied(applied);
+    }
   };
 
   useEffect(() => {

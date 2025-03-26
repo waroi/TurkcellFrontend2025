@@ -92,7 +92,7 @@ export const AuthProvider = ({ children }) => {
       if (!userCredential.user) {
         throw new Error("User oluşturulamadı");
       }
-      const userDetail = {
+      let userDetail = {
         firstName,
         lastName,
         role,

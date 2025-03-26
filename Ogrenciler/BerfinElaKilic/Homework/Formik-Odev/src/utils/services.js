@@ -42,3 +42,7 @@ export const getAdmin = async (id) => {
 export const getCandidate = async (id) => {
   return await fetchService(`${url}/candidates/${id}`);
 };
+
+export const updateUserExams = async (id, score) => {
+  return await fetchService(`${url}/candidates/${id}`, "PUT", { score });
+}
