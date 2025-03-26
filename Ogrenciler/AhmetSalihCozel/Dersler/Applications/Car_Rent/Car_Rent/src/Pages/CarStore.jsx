@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect,useState } from "react";
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
@@ -48,11 +48,14 @@ const CarStore = () => {
               <Typography variant="body1" >
                 {car.productionYear}
               </Typography>
+              <Typography variant="body2" >
+                {car?.rentedByName === "" ? "" : `Rented By:${car?.rentedByName}`}
+              </Typography>
             </CardContent>
             <CardActions sx={{display:"flex", justifyContent:"space-between"}}>
-              <Button variant="contained" onClick={()=>rentCar(car.carId,user)} size="small">Kirala</Button>
+              <Button variant="contained" disabled={(user !== car.rentedBy && car.rentedBy !== "")? true:false} onClick={()=>rentCar(car.carId,user)} size="small">Kirala</Button>
               <Button variant="contained" onClick={()=>navigate(`/cardetails/${car.carId}`)} sx={{fontSize:"1rem"}}>İncele</Button>
-              <Button variant="contained" onClick={()=>cancelRentCar(car.carId,user)} size="small">Vazgeç</Button>
+              <Button variant="contained" disabled={(user !== car.rentedBy && car.rentedBy !== "")? true:false} onClick={()=>cancelRentCar(car.carId,user)} size="small">Vazgeç</Button>
             </CardActions>
           </Card>
         </Grid>

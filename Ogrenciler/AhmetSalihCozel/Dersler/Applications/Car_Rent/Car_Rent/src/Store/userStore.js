@@ -18,12 +18,15 @@ const db = getFirestore(app);
 const useUserStore = create((set) => ({
     user: {},
     cars: [],
+    isLoggedIn: false,
     rentedCars:[],
     fetchUser: async (userId) => {
         const userRef = doc(db, "users", userId);
         const userSnap = await getDoc(userRef);
         set({ user: userSnap.data() });
     },
+    
+    setLogIn: ()=> set({isLoggedIn: true}),
     getCars: async () => {
       const docRef = doc(db, "cars", "kW0oGpik6LcikXCJfJ2p");
       const docSnap = await getDoc(docRef);
@@ -51,8 +54,9 @@ const useUserStore = create((set) => ({
         
         if (carSnap.exists()) {
           const carData = carSnap.data();
+          const userData = userSnap.data();
           const updatedCars = carData.cars.map((car) =>
-            car.carId === carId ? { ...car, isRented: true, rentedBy:localStorage.getItem("user") } : car
+            car.carId === carId ? { ...car, isRented: true, rentedBy:localStorage.getItem("user"), rentedByName:userData.userName  } : car
           );
           set({ cars: updatedCars });
           await updateDoc(carRef, { cars: updatedCars });
@@ -85,8 +89,10 @@ const useUserStore = create((set) => ({
 
         if (carSnap.exists()) {
           const carData = carSnap.data();
+          const userData = userSnap.data();
           const updatedCars = carData.cars.map((car) =>
-            car.carId === carId ? { ...car, isRented: false, rentedBy:"" } : car
+            
+            car.carId === carId ? { ...car, isRented: false, rentedBy:"", rentedByName:"" } : car
           );
           set({ cars: updatedCars });
           await updateDoc(carRef, { cars: updatedCars });
