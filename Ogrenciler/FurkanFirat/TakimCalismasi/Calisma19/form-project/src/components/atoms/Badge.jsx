@@ -1,8 +1,8 @@
 export const Badge = ({ status }) => {
   const badgeColor =
-    status === 'approved'
+    status === 'approved' || status === 'exam passed'
       ? 'success'
-      : status === 'rejected'
+      : status === 'rejected' || status === 'exam failed'
       ? 'danger'
       : 'warning';
 
@@ -11,6 +11,10 @@ export const Badge = ({ status }) => {
       ? 'Approved'
       : status === 'rejected'
       ? 'Rejected'
+      : status === 'exam passed'
+      ? 'Exam Passed'
+      : status === 'exam failed'
+      ? 'Exam Failed'
       : 'Pending';
 
   return <span className={`badge bg-${badgeColor}`}>{badgeText}</span>;
