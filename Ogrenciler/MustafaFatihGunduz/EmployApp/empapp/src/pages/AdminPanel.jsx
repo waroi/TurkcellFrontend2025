@@ -3,7 +3,8 @@ import useFetchApplication from "../store/useFetchApplication";
 import useAdminPanel from "../store/useAdminPanel";
 import SignInModal from "../components/SignInModal/SignInModal";
 import { Link } from "react-router-dom";
-import styles from "./AdminPanel.module.css"
+import AdminTestModal from "../components/AdminTestModal/AdminTestModal";
+import useAdminTest from "../store/useAdminTest";
 const AdminPanel = () => {
   const {
     applications,
@@ -21,6 +22,8 @@ const AdminPanel = () => {
     handleApprove,
     handleReject,
   } = useAdminPanel();
+
+  const {showModal,handleCloseModal,handleModal} = useAdminTest();
 
   const filteredApplications = getFilteredApplications(applications);
 
@@ -142,10 +145,11 @@ const AdminPanel = () => {
                     <div className="card-footer gap-4 d-flex justify-content-center">
                       <button
                         className="btn btn-success"
-                        onClick={() => handleApprove(app)}
+                        onClick={() => handleModal()}
                       >
                         Onayla
                       </button>
+                      <AdminTestModal show={showModal} handleClose={handleCloseModal} app={app} />
                       <button
                         className="btn btn-danger"
                         onClick={() => handleReject(app)}
@@ -159,6 +163,7 @@ const AdminPanel = () => {
             </div>
           </>
         )}
+
         <SignInModal show={show} handleClose={handleClose} />
       </div>
     </>

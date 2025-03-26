@@ -22,7 +22,6 @@ const useAdminPanel = () => {
       alert("Başvuru onaylandı!");
     } catch (error) {
       console.error("Onaylama hatası:", error);
-      alert("Bir hata oluştu!");
     }
   };
 

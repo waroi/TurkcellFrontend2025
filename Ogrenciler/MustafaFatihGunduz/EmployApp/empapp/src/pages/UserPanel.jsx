@@ -53,7 +53,7 @@ const UserPanel = () => {
           <h4 className="mb-3 mt-5">Tüm Başvurularınız</h4>
           <div className="row">
             {applications.map((application) => (
-              <div className="col-md-4">
+              <div className="col-md-4" key={application.id}>
                 <div
                   className={`${styles.cardContainer} card mb-3`}
                   key={application.id}

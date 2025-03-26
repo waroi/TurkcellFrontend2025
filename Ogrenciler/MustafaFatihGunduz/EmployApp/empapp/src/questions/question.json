@@ -8,7 +8,8 @@
         { "id": "C", "text": "Bir JavaScript kütüphanesi" },
         { "id": "D", "text": "Bir veritabanı yönetim sistemi" }
       ],
-      "answer": "C"
+      "answer": "C",
+      "difficulty" : "1"
     },
     {
       "question": "JSX nedir?",
@@ -18,7 +19,8 @@
         { "id": "C", "text": "Bir CSS framework'ü" },
         { "id": "D", "text": "React'in bir state yönetim kütüphanesi" }
       ],
-      "answer": "B"
+      "answer": "B",
+      "difficulty" : "1"
     },
     {
       "question": "React bileşenleri (components) kaça ayrılır?",
@@ -28,7 +30,8 @@
         { "id": "C", "text": "3" },
         { "id": "D", "text": "4" }
       ],
-      "answer": "B"
+      "answer": "B",
+      "difficulty" : "3"
     },
     {
       "question": "React'te state nedir?",
@@ -38,7 +41,8 @@
         { "id": "C", "text": "Yalnızca prop'lar üzerinden değiştirilebilen sabit veri" },
         { "id": "D", "text": "JSX'in bir fonksiyonu" }
       ],
-      "answer": "A"
+      "answer": "A",
+      "difficulty" : "2"
     },
     {
       "question": "Props ve state arasındaki fark nedir?",
@@ -48,7 +52,8 @@
         { "id": "C", "text": "State ve props tamamen aynı şeydir" },
         { "id": "D", "text": "State sadece sınıf bileşenlerinde kullanılabilir" }
       ],
-      "answer": "A"
+      "answer": "A",
+      "difficulty" : "2"
     },
     {
       "question": "useState hook'u ne işe yarar?",
@@ -58,7 +63,8 @@
         { "id": "C", "text": "Component'i yeniden render etmeyi önler" },
         { "id": "D", "text": "JSX içinde koşullu ifadeler yazmamızı sağlar" }
       ],
-      "answer": "B"
+      "answer": "B",
+      "difficulty" : "1"
     },
     {
       "question": "useEffect hook'u ne zaman çalışır?",
@@ -68,7 +74,8 @@
         { "id": "C", "text": "Bileşen ilk render olduğunda ve bağımlılıkları değiştiğinde" },
         { "id": "D", "text": "Sadece bileşen unmount edildiğinde" }
       ],
-      "answer": "C"
+      "answer": "C",
+      "difficulty" : "2"
     },
     {
       "question": "React'te key prop'u neden kullanılır?",
@@ -78,7 +85,8 @@
         { "id": "C", "text": "State yönetimini kolaylaştırmak için" },
         { "id": "D", "text": "Yalnızca class bileşenlerinde kullanılır" }
       ],
-      "answer": "B"
+      "answer": "B",
+      "difficulty" : "3"
     },
     {
       "question": "React Router nedir?",
@@ -88,7 +96,8 @@
         { "id": "C", "text": "React içinde form yönetimi yapmak için kullanılan bir yöntem" },
         { "id": "D", "text": "Sadece mobil uygulamalar için kullanılan bir özellik" }
       ],
-      "answer": "A"
+      "answer": "A",
+      "difficulty" : "1"
     },
     {
       "question": "React'te controlled component nedir?",
@@ -98,7 +107,8 @@
         { "id": "C", "text": "Kendi kendine güncellenebilen bileşenler" },
         { "id": "D", "text": "Sadece class bileşenlerinde kullanılan bir yöntem" }
       ],
-      "answer": "A"
+      "answer": "A",
+      "difficulty" : "3"
     },
     {
       "question": "Virtual DOM nedir ve React'te neden kullanılır?",
@@ -108,7 +118,8 @@
         { "id": "C", "text": "React'in state yönetim sistemidir" },
         { "id": "D", "text": "JavaScript'in bir özelliğidir" }
       ],
-      "answer": "A"
+      "answer": "A",
+      "difficulty" : "3"
     },
     {
       "question": "useCallback ve useMemo arasındaki fark nedir?",
@@ -118,7 +129,8 @@
         { "id": "C", "text": "useMemo yalnızca class componentlerde kullanılır" },
         { "id": "D", "text": "useCallback yalnızca state güncellemelerinde kullanılır" }
       ],
-      "answer": "B"
+      "answer": "B",
+      "difficulty" : "2"
     },
     {
       "question": "React'te Higher Order Component (HOC) nedir?",
@@ -128,7 +140,8 @@
         { "id": "C", "text": "React Router'ın bir özelliği" },
         { "id": "D", "text": "Redux store'unu yöneten component" }
       ],
-      "answer": "B"
+      "answer": "B",
+      "difficulty" : "2"
     },
     {
       "question": "React Hooks kullanmanın avantajları nelerdir?",
@@ -138,7 +151,8 @@
         { "id": "C", "text": "State yönetimi daha basittir" },
         { "id": "D", "text": "Hepsi" }
       ],
-      "answer": "D"
+      "answer": "D",
+      "difficulty" : "1"
     },
     {
       "question": "React'te Pure Component nedir?",
@@ -148,7 +162,8 @@
         { "id": "C", "text": "Sadece UI gösteren component" },
         { "id": "D", "text": "Redux ile bağlantılı component" }
       ],
-      "answer": "A"
+      "answer": "A",
+      "difficulty" : "1"
     },
     {
       "question": "React.memo() ne işe yarar?",
@@ -158,7 +173,8 @@
         { "id": "C", "text": "API çağrılarını cache'ler" },
         { "id": "D", "text": "Route'ları yönetir" }
       ],
-      "answer": "B"
+      "answer": "B",
+      "difficulty" : "1"
     },
     {
       "question": "useEffect cleanup fonksiyonu ne zaman çalışır?",
@@ -168,7 +184,8 @@
         { "id": "C", "text": "Her render'da" },
         { "id": "D", "text": "Sadece state değiştiğinde" }
       ],
-      "answer": "B"
+      "answer": "B",
+      "difficulty" : "2"
     },
     {
       "question": "React'te Error Boundary'ler neden kullanılır?",
@@ -178,7 +195,8 @@
         { "id": "C", "text": "State yönetimi için" },
         { "id": "D", "text": "Routing işlemleri için" }
       ],
-      "answer": "B"
+      "answer": "B",
+      "difficulty" : "1"
     },
     {
       "question": "React Suspense ne işe yarar?",
@@ -188,7 +206,8 @@
         { "id": "C", "text": "Form validasyonu yapar" },
         { "id": "D", "text": "API isteklerini yönetir" }
       ],
-      "answer": "A"
+      "answer": "A",
+      "difficulty" : "2"
     },
     {
       "question": "Custom Hook yazarken dikkat edilmesi gereken kurallar nelerdir?",
@@ -198,7 +217,8 @@
         { "id": "C", "text": "Component içinde çağrılmalıdır" },
         { "id": "D", "text": "Hepsi" }
       ],
-      "answer": "D"
+      "answer": "D",
+      "difficulty" : "1"
     }
   ]
 }
