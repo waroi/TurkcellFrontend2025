@@ -60,17 +60,19 @@ const AdminDashboard = () => {
 					<table className="table table-bordered">
 						<thead>
 							<tr>
-								<th>Ad</th>
+								
 								<th>Email</th>
 								<th>Skor</th>
+								<th>Status</th>
 							</tr>
 						</thead>
 						<tbody>
 							{passedCandidates.map((candidate) => (
 								<tr key={candidate.id}>
-									<td>{candidate.name}</td>
+									
 									<td>{candidate.email}</td>
 									<td>{candidate.score}</td>
+									<td>{candidate.status}</td>
 								</tr>
 							))}
 						</tbody>
@@ -83,17 +85,19 @@ const AdminDashboard = () => {
 					<table className="table table-bordered">
 						<thead>
 							<tr>
-								<th>Ad</th>
+								
 								<th>Email</th>
 								<th>Skor</th>
+								<th>Status</th>
 							</tr>
 						</thead>
 						<tbody>
 							{failedCandidates.map((candidate) => (
 								<tr key={candidate.id}>
-									<td>{candidate.name}</td>
+									
 									<td>{candidate.email}</td>
 									<td>{candidate.score}</td>
+									<td>{candidate.status}</td>
 								</tr>
 							))}
 						</tbody>

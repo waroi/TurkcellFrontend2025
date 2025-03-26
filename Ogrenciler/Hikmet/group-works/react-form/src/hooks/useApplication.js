@@ -12,10 +12,9 @@ export const useApplications = () => {
 	const [negativeList, setNegativeList] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
-	const [selectedApplication, setSelectedApplication] = useState(null);
 	const [passedCandidates, setPassedCandidates] = useState([]);
 	const [failedCandidates, setFailedCandidates] = useState([]);
-  
+    //sınav sonuç gösterme fonkksiyonu
 	const fetchQuizResults = async () => {
 	  try {
 		const resultsRef = collection(db, "quizResults");
