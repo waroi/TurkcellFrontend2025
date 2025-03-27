@@ -1,29 +1,28 @@
-import { useState } from 'react';
-import { allQuestions } from '../constans/questions';
+import { useState, useEffect } from 'react';
+import { allQuestions } from './../constans/questions'
+
+const questionCounts = {
+    easy: 2,
+    medium: 5,
+    hard: 2
+}
 
 export const useRandomQuestions = () => {
     const [selectedQuestions, setSelectedQuestions] = useState([])
 
-    const selectRandomQuestions = () => {
-        const questionsCopy = [...allQuestions]
+    useEffect(() => {
         const selected = []
 
-        const count = Math.min(5, questionsCopy.length)
+        Object.keys(questionCounts).forEach((category) => {
+            const categoryQuestions = allQuestions[category]
+            const count = questionCounts[category]
 
-        for (let i = 0; i < count; i++) {
-            const randomIndex = Math.floor(Math.random() * questionsCopy.length)
-
-            selected.push(questionsCopy[randomIndex])
-
-            questionsCopy.splice(randomIndex, 1)
-        }
+            const shuffled = categoryQuestions.sort(() => Math.random() - 0.5)
+            selected.push(...shuffled.slice(0, count))
+            console.log(selectedQuestions)
+        })
 
         setSelectedQuestions(selected)
-    }
-
-    useState(() => {
-        selectRandomQuestions()
     }, [])
-
-    return { selectedQuestions, selectRandomQuestions }
+    return { selectedQuestions }
 }

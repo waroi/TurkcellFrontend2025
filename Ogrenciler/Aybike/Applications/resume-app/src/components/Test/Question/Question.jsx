@@ -11,7 +11,7 @@ const Question = ({ question, onAnswer }) => {
                         className="option-button"
                         onClick={() => onAnswer(option)}
                     >
-                        <span className="option-letter">{index + 1}</span>
+                        <span className="option-letter">{String.fromCharCode(65 + index)}</span>
                         <span className="option-text">{option}</span>
                     </button>
                 ))}
