@@ -30,7 +30,7 @@ const UserPanel = () => {
   }
   const startTest = async (application) => {
     setCurrentApplication(application);
-    await handleStartTest();
+    await handleStartTest(application);
   };
 
   return (
@@ -38,10 +38,13 @@ const UserPanel = () => {
       className="container d-flex flex-column justify-content-start "
       style={{ minHeight: "100vh" }}
     >
-      <div className="d-flex justify-content-between align-items-center mb-4">
-        <h1>Başvuru Detayları</h1>
+      <div className="d-flex justify-content-between align-items-center pt-5 mb-4">
+        <h1 className={`${styles.fontHeading}`}>Başvuru Detayları</h1>
         <div className="d-flex gap-2">
-          <Link to="/" className="btn btn-primary">
+          <Link
+            to="/"
+            className={`${styles.buttonColor} ${styles.fontPrimary} btn text-white mt-2`}
+          >
             <i className="bi bi-plus-circle"></i> Yeni Başvuru Yap
           </Link>
           <button onClick={handleLogout} className="btn btn-danger">
@@ -51,16 +54,20 @@ const UserPanel = () => {
       </div>
       {applications && applications.length > 0 ? (
         <>
-          <h4 className="mb-3 mt-5">Tüm Başvurularınız</h4>
+          <h4 className={`${styles.fontHeading} mb-3 mt-5`}>
+            Tüm Başvurularınız
+          </h4>
           <div className="row">
             {applications.map((application) => (
               <div className="col-md-4" key={application.id}>
                 <div
-                  className={`${styles.cardContainer} card mb-3`}
+                  className={`${styles.cardContainer}  card border-0 rounded  mb-3`}
                   key={application.id}
                 >
-                  <div className="card-body">
-                    <h5 className="card-title">
+                  <div
+                    className={`card-body rounded text-white ${styles.fontPrimary} ${styles.cardBackGround}`}
+                  >
+                    <h5 className={`card-title  ${styles.fontHeading}`}>
                       {application.name} {application.lastName}
                     </h5>
                     <p className="card-text">
@@ -83,8 +90,8 @@ const UserPanel = () => {
                     {application.status === "approved" &&
                       !application.testResults && (
                         <button
-                          className="btn btn-primary mt-2"
-                          onClick={async() => await startTest(application)}
+                          className={`${styles.buttonColor} ${styles.fontPrimary} btn text-white mt-2`}
+                          onClick={async () => await startTest(application)}
                         >
                           Testi Başlat
                         </button>

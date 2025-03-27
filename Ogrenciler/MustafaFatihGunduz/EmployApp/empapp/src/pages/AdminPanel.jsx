@@ -5,6 +5,8 @@ import SignInModal from "../components/SignInModal/SignInModal";
 import { Link } from "react-router-dom";
 import AdminTestModal from "../components/AdminTestModal/AdminTestModal";
 import useAdminTest from "../store/useAdminTest";
+import styles from "./AdminPanel.module.css";
+
 const AdminPanel = () => {
   const {
     applications,
@@ -23,7 +25,8 @@ const AdminPanel = () => {
     handleReject,
   } = useAdminPanel();
 
-  const {showModal,handleCloseModal,handleModal} = useAdminTest();
+  const { showModal, setShowModal, handleCloseModal, openModal } =
+    useAdminTest();
 
   const filteredApplications = getFilteredApplications(applications);
 
@@ -43,10 +46,13 @@ const AdminPanel = () => {
   return (
     <>
       <div className="container">
-        <div className=" d-flex justify-content-between align-items-center mb-4">
+        <div className=" d-flex justify-content-between align-items-center pt-5 mb-4">
           <h1 className="fw-bolder">Başvuruları Yönet</h1>
-          <Link to="/" className="btn btn-secondary ">
-            <i className="bi bi-arrow-left"></i> Başvuru Sayfasına Dön
+          <Link
+            to="/"
+            className={`${styles.buttonColor} ${styles.fontPrimary} btn text-white mt-2`}
+          >
+            Başvuru Sayfasına Dön
           </Link>
         </div>
         <p className="text-center">
@@ -76,21 +82,28 @@ const AdminPanel = () => {
           <>
             <div className="row my-3">
               <div className="col-md-12">
-                <input
-                  type="text"
-                  className="form-control p-3 mb-4 border rounded shadow-sm"
-                  placeholder="İsim veya yetenek girin"
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                />
+                <div className={`${styles.searchContainer} position-relative`}>
+                  <input
+                    type="text"
+                    className={`form-control ${styles.searchInput}`}
+                    placeholder="İsim veya yetenek ara..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                  />
+                  <i className={`bi bi-search ${styles.searchIcon}`}></i>
+                </div>
               </div>
             </div>
             <div className="row">
               {filteredApplications.map((app) => (
                 <div key={app.id} className="col-md-4 mb-4">
                   <div className={`card`}>
-                    <div className="card-body">
-                      <h5 className="card-title text-dark fw-semibold border-bottom pb-2 mb-3">
+                    <div
+                      className={`card-body rounded border-0 text-white ${styles.fontPrimary} ${styles.cardBackGround}`}
+                    >
+                      <h5
+                        className={`card-title border-bottom pb-2 mb-3 ${styles.fontHeading}`}
+                      >
                         {app.name} {app.lastName}
                       </h5>
                       <p className="card-text">
@@ -141,21 +154,27 @@ const AdminPanel = () => {
                         <strong>Mezun mu?</strong>{" "}
                         {app.isGraduate ? "Evet" : "Hayır"}
                       </p>
-                    </div>
-                    <div className="card-footer gap-4 d-flex justify-content-center">
-                      <button
-                        className="btn btn-success"
-                        onClick={() => handleModal(app)}
+                      <div
+                        className={`card-footer gap-4 d-flex justify-content-center ${styles.fontPrimary} ${styles.cardBackGround}`}
                       >
-                        Onayla
-                      </button>
-                      <AdminTestModal show={showModal} handleClose={handleCloseModal} app={app} />
-                      <button
-                        className="btn btn-danger"
-                        onClick={() => handleReject(app)}
-                      >
-                        Reddet
-                      </button>
+                        <button
+                          className={`${styles.buttonColor} ${styles.fontPrimary} btn text-white mt-2`}
+                          onClick={() => openModal(app)}
+                        >
+                          Onayla
+                        </button>
+                        <AdminTestModal
+                          show={showModal}
+                          handleClose={handleCloseModal}
+                          app={app}
+                        />
+                        <button
+                          className={` ${styles.fontPrimary} btn btn-light text-dark mt-2`}
+                          onClick={() => handleReject(app)}
+                        >
+                          Reddet
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
