@@ -10,9 +10,9 @@ export default function CompletedApplications({ applications }) {
 
   return (
     <>
-      {completed.map((app) => (
+      {completed.map((app, index) => (
         <ApplicationCard
-          key={app.id}
+          key={index}
           application={app}
           showUniversityInfo={true}
           showPreferences={false}
