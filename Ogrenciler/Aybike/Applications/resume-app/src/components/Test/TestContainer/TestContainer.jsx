@@ -4,7 +4,7 @@ import Result from '../Result/Result';
 import './TestContainer.css';
 import ProgressBar from '../ProgressBar/ProgressBar';
 
-const TestContainer = ({ questions }) => {
+const TestContainer = ({ questions, isLoading, error }) => {
     const [currentQuestion, setCurrentQuestion] = useState(0)
     const [answers, setAnswers] = useState([])
     const [showResult, setShowResult] = useState(false)
@@ -42,6 +42,8 @@ const TestContainer = ({ questions }) => {
                             timer={timer}
                         />
                         <Question
+                            error={error}
+                            isLoading={isLoading}
                             question={questions[currentQuestion]}
                             onAnswer={handleAnswer}
                             currentNumber={currentQuestion + 1}

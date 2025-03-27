@@ -9,7 +9,7 @@ import { allQuestions } from "../../utils/constans/questions"
 
 const Test = () => {
     const navigate = useNavigate()
-    const { selectRandomQuestions, selectedQuestions } = useRandomQuestions()
+    const { selectedQuestions, error } = useRandomQuestions()
 
     const [userMail, setUserMail] = useState(TestService.getUser || null) // giren kişinin maili ekrana basabiliriz? ya da şey yaparız resultta alırız bunu result sonucunu dbye atarız boom
     useEffect(() => {
@@ -23,7 +23,7 @@ const Test = () => {
 
     return (
         <>
-            <TestContainer questions={selectedQuestions} />
+            <TestContainer error={error} questions={selectedQuestions} />
         </>
     )
 }
