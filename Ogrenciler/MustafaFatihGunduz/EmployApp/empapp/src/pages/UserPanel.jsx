@@ -3,6 +3,7 @@ import TestModal from "../components/TestModal/TestModal";
 import useUserPanel from "../store/useUserPanel";
 import useQuestions from "../store/useQuestions";
 import styles from "./AdminPanel.module.css";
+import { auth } from "../../firebase_config";
 const UserPanel = () => {
   const {
     applications,
@@ -27,9 +28,9 @@ const UserPanel = () => {
       </div>
     );
   }
-  const startTest = (application) => {
+  const startTest = async (application) => {
     setCurrentApplication(application);
-    handleStartTest();
+    await handleStartTest();
   };
 
   return (
@@ -83,7 +84,7 @@ const UserPanel = () => {
                       !application.testResults && (
                         <button
                           className="btn btn-primary mt-2"
-                          onClick={() => startTest(application)}
+                          onClick={async() => await startTest(application)}
                         >
                           Testi Başlat
                         </button>

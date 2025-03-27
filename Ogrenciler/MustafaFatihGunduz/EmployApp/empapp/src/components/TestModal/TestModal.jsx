@@ -11,30 +11,31 @@ const TestModal = ({ show, handleClose, questions, onComplete }) => {
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton />
       <Modal.Body>
-        {questions.map((question, index) => (
-          <div key={index} className="mb-4">
-            <h5>{question.question}</h5>
-            {question.options.map((option) => (
-              <div key={option.id} className="form-check">
-                <input
-                  type="radio"
-                  className="form-check-input"
-                  name={`question-${index}`}
-                  id={`${index}-${option.id}`}
-                  onChange={() => handleAnswer(index, option.id)}
-                  checked={answers[index] === option.id} //! radio buttonun seçili olup olmadığını kontrol ediyoruz
-                />
-                <label
-                  className="form-check-label"
-                  htmlFor={`${index}-${option.id}`} //! 1-A, 2-B gibi çıktı üretiyor ve benzersiz
-                >
-                  {option.text}
-                </label>
-              </div>
-            ))}
+  {questions.length === 0 ? (
+    <p className="text-center">Sorular yükleniyor veya bulunamadı!</p>
+  ) : (
+    questions.map((question, index) => (
+      <div key={index} className="mb-4">
+        <h5>{question.question}</h5>
+        {question.options.map((option) => (
+          <div key={option.id} className="form-check">
+            <input
+              type="radio"
+              className="form-check-input"
+              name={`question-${index}`}
+              id={`${index}-${option.id}`}
+              onChange={() => handleAnswer(index, option.id)}
+              checked={answers[index] === option.id}
+            />
+            <label className="form-check-label" htmlFor={`${index}-${option.id}`}>
+              {option.text}
+            </label>
           </div>
         ))}
-      </Modal.Body>
+      </div>
+    ))
+  )}
+</Modal.Body>
       <Modal.Footer>
         <Button variant="secondary" onClick={handleClose}>
           İptal

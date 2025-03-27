@@ -145,7 +145,7 @@ const AdminPanel = () => {
                     <div className="card-footer gap-4 d-flex justify-content-center">
                       <button
                         className="btn btn-success"
-                        onClick={() => handleModal()}
+                        onClick={() => handleModal(app)}
                       >
                         Onayla
                       </button>
