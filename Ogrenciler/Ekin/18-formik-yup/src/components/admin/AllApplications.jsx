@@ -10,12 +10,15 @@ export default function AllApplications() {
   }, []);
 
   return allApplications.map((application, index) => (
-    <div className="card mb-3" key={index}>
+    <div className="card mb-3 border-0 shadow mb-5" key={index}>
       <div className="row g-0">
-        <div className="col-md-4">
-          <img src={application.image} className="img-fluid rounded-start" />
+        <div className="col-md-6">
+          <img
+            src={application.image}
+            className="img-fluid rounded-start h-100 object-fit-cover pe-0 pe-md-3"
+          />
         </div>
-        <div className="col-md-8">
+        <div className="col-md-6">
           <div className="card-body">
             <p className="card-text mb-2 fw-bold opacity-50">
               {application.department}
