@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { doc, setDoc, getDoc } from "firebase/firestore";
 import { auth, db } from "../../firebase_config";
 import useAdminPanel from "./useAdminPanel";
@@ -12,6 +12,10 @@ const useAdminTest = () => {
   const [mediumQuestion, setMediumQuestion] = useState("");
   const [currentApplication, setCurrentApplication] = useState(null);
 
+  useEffect(() => {
+    console.log("Current Application Updated:", currentApplication);
+  }, [currentApplication]);
+  
   const openModal = async (app) => {
     setCurrentApplication(app);
     setShowModal(true);
@@ -32,7 +36,6 @@ const useAdminTest = () => {
       console.log("Geçersiz test parametreleri:", { total, hard, medium });
       return false;
     }
-
     try {
       await setDoc(doc(db, "tests", application.id), {
         totalQuestion: total,
@@ -40,14 +43,9 @@ const useAdminTest = () => {
         mediumQuestion: medium,
         userId: application.id,
       });
-
-      console.log("Test bilgileri Firestore'a kaydedildi");
-      console.log("Kaydedilen değerler:", { total, hard, medium });
-
       setTotalQuestion(total);
       setHardQuestion(hard);
       setMediumQuestion(medium);
-
       await fetchTestDetails(application.id);
       await handleApprove(application);
       return true;
@@ -67,8 +65,6 @@ const useAdminTest = () => {
         setTotalQuestion(data.totalQuestion);
         setHardQuestion(data.hardQuestion);
         setMediumQuestion(data.mediumQuestion);
-
-        console.log("Firestore'dan gelen test ayarları:", data);
 
         return data;
       } else {

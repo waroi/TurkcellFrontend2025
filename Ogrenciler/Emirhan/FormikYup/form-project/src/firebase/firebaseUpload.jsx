@@ -14,7 +14,6 @@ import {
 import firebase, { db } from "./firebase";
 import emailjs from "@emailjs/browser";
 
-
 export const uploadJobs = async (job) => {
   try {
     const jobsCollection = collection(db, "job");
@@ -115,7 +114,9 @@ export const updateApplicationStatus = async (id, status, email, name) => {
 export const testApplicationStatus = async (id, isSuccessful) => {
   try {
     const applicationRef = doc(db, "jobApplications", id);
-    await updateDoc(applicationRef, { status: isSuccessful ? "Başarılı" : "Başarısız" });
+    await updateDoc(applicationRef, {
+      status: isSuccessful ? "Başarılı" : "Başarısız",
+    });
   } catch (error) {
     console.error("Durum güncelleme hatası:", error);
   }
@@ -140,7 +141,6 @@ const sendEmail = (email, status, name, id) => {
     });
 };
 
-
 export const fetchApplicationById = async (id) => {
   try {
     const docRef = doc(db, "jobApplications", id);
@@ -158,12 +158,10 @@ export const fetchApplicationById = async (id) => {
   }
 };
 
-
-
 export const fetchQuestionType = async (userId) => {
   try {
     const q = query(
-      collection(db, "jobApplications"),
+      collection(db, "questionDistributions"),
       where("id", "==", userId)
     );
 

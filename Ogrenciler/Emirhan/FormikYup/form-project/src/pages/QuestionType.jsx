@@ -7,9 +7,7 @@ import {
 import Navbar from "../components/Navbar";
 import { useParams, useNavigate } from "react-router";
 
-
 function QuestionType() {
-
   const { id } = useParams();
 
   const navigate = useNavigate();
@@ -63,7 +61,6 @@ function QuestionType() {
   };
 
   return (
-
     <div className="container form-container py-10">
       <Navbar />
       <div>
@@ -115,11 +112,12 @@ function QuestionType() {
       <div>Toplam Soru Sayısı: {total}</div>
 
       <div className="d-flex gap-2 justify-content-end mt-4">
-        <a href="/applications" className="btn btn-secondary" >Geri</a>
+        <a href="/applications" className="btn btn-secondary">
+          Geri
+        </a>
         <button className="btn btn-primary" onClick={handleSubmit}>
           Testi Gönder
         </button>
-
       </div>
     </div>
   );

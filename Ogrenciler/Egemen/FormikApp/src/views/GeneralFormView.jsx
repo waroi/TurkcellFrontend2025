@@ -30,11 +30,13 @@ const GeneralForm = () => {
             <Formik
               initialValues={{
                 userId: `${userAuth.uid}`,
-                fullname: "",
-                email: "",
-                phone: "",
-                birthDate: "",
-                address: "",
+                personal: {
+                  fullname: "",
+                  email: "",
+                  phone: "",
+                  birthDate: "",
+                  address: "",
+                },
                 education: {
                   university: "",
                   department: "",

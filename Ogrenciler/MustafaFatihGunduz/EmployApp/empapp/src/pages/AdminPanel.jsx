@@ -22,11 +22,10 @@ const AdminPanel = () => {
     searchTerm,
     setSearchTerm,
     getFilteredApplications,
-    handleApprove,
     handleReject,
   } = useAdminPanel();
 
-  const { showModal, setShowModal, handleCloseModal, openModal } =
+  const { showModal,handleCloseModal, openModal } =
     useAdminTest();
 
   const filteredApplications = getFilteredApplications(applications);
@@ -147,7 +146,7 @@ const AdminPanel = () => {
                       >
                         <button
                           className={`${styles.approveButton} btn text-white mt-2`}
-                          onClick={() => openModal(app)}
+                          onClick={() => {openModal(app); console.log("Şu anki tıklanan app Admin Panel:",app)}}
                         >
                           Onayla
                         </button>

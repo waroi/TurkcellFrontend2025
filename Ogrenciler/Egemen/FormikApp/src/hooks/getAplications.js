@@ -8,7 +8,9 @@ const getApplications = async (uid, setApps, setUser, setLoading) => {
   const fetchedUser = await getUser(uid);
   setUser(fetchedUser);
   if (fetchedUser && fetchedUser.role === "admin") {
-    setApps(await getAllApplications());
+    const basvurular = await getAllApplications();
+    setApps(basvurular);
+    return basvurular;
   } else {
     setApps(await getUserApplications(uid));
   }
