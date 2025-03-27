@@ -1,7 +1,5 @@
 import { useState } from "react";
 import { updateApplicationStatus } from "../services/applicationService";
-import { db } from "../../firebase_config";
-import { setDoc, doc } from "firebase/firestore";
 
 const useAdminPanel = () => {
   const [searchTerm, setSearchTerm] = useState("");

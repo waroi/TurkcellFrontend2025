@@ -32,7 +32,6 @@ const useAdminTest = () => {
       console.log("Geçersiz test parametreleri:", { total, hard, medium });
       return false;
     }
-
     try {
       await setDoc(doc(db, "tests", application.id), {
         totalQuestion: total,
@@ -40,16 +39,14 @@ const useAdminTest = () => {
         mediumQuestion: medium,
         userId: application.id,
       });
-
-      console.log("Test bilgileri Firestore'a kaydedildi");
-      console.log("Kaydedilen değerler:", { total, hard, medium });
-
       setTotalQuestion(total);
       setHardQuestion(hard);
       setMediumQuestion(medium);
-
-      await fetchTestDetails(application.id);
-      await handleApprove(application);
+      const test = await fetchTestDetails(application.id);
+      if (test) {
+        console.log("Kayıtederken app:",application)
+        await handleApprove(application);
+      }
       return true;
     } catch (error) {
       console.log("Test kaydetme hatası:", error);
@@ -67,8 +64,6 @@ const useAdminTest = () => {
         setTotalQuestion(data.totalQuestion);
         setHardQuestion(data.hardQuestion);
         setMediumQuestion(data.mediumQuestion);
-
-        console.log("Firestore'dan gelen test ayarları:", data);
 
         return data;
       } else {
