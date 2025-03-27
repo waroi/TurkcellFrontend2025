@@ -48,9 +48,9 @@ export class ApplicationService {
       return { success: false, message: error };
     }
   }
-  static async updateApplicationRate(applicationId, newRate, userInfo) {
+  static async updateApplicationRate(applicationId, newRate, userInfo, questionSettings) {
     try {
-      if (newRate >= 4) TestService.addNewUser(userInfo)
+      if (newRate >= 4) TestService.addNewUser(userInfo, questionSettings)
       const docRef = doc(db, "applications", applicationId);
       await updateDoc(docRef, { rate: newRate });
 

@@ -2,24 +2,30 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 import { INITIAL_RATE } from './../constans/applicationConstants';
 import { ApplicationService } from '../../services/ApplicationService';
-import { TestService } from '../../services/TestService';
 
 export const useApplicationDetail = () => {
-    const { applicationId } = useParams()
-    const [application, setApplication] = useState(null)
-    const [selectedRate, setSelectedRate] = useState(INITIAL_RATE)
-    const [userInfo, setUserInfo] = useState({})
+    const { applicationId } = useParams();
+    const [application, setApplication] = useState(null);
+    const [selectedRate, setSelectedRate] = useState(INITIAL_RATE);
+    const [userInfo, setUserInfo] = useState({});
+    const [showQuestionSettingsModal, setShowQuestionSettingsModal] = useState(false)
+    const [questionSettings, setQuestionSettings] = useState({
+        totalQuestions: 10,
+        difficulty: {
+            easy: 3,
+            medium: 3,
+            hard: 4
+        }
+    })
 
     useEffect(() => {
         const fetchApplication = async () => {
             const response = await ApplicationService.getApplicationById(applicationId)
             if (response.success) {
-                console.log(response.data)
                 setUserInfo({
                     email: response.data.email,
                     phone: response.data.phone
-                })
-
+                });
                 setApplication(response.data)
                 setSelectedRate(response.data.rate)
             } else {
@@ -27,25 +33,60 @@ export const useApplicationDetail = () => {
             }
         }
 
-        fetchApplication();
+        fetchApplication()
     }, [applicationId])
 
     const handleRateChange = (event) => {
-        setSelectedRate(Number(event.target.value))
+        setSelectedRate(event.target.value)
     }
 
-    const handleRateSubmit = async () => {
-        console.log(userInfo)
+    const handleQuestionSettingsChange = (type, value) => {
+        if (type === 'totalQuestions') {
+            setQuestionSettings(prev => ({
+                ...prev,
+                totalQuestions: parseInt(value || 0)
+            }))
+        } else {
+            setQuestionSettings(prev => ({
+                ...prev,
+                difficulty: {
+                    ...prev.difficulty,
+                    [type]: parseInt(value || 0)
+                }
+            }))
+        }
+    }
+
+    const handleEvaluateClick = () => {
+        setShowQuestionSettingsModal(true)
+    }
+
+    const handleModalSubmit = () => {
+        const totalDifficultyQuestions =
+            questionSettings.difficulty.easy +
+            questionSettings.difficulty.medium +
+            questionSettings.difficulty.hard
+
+        if (totalDifficultyQuestions !== questionSettings.totalQuestions) {
+            return alert("Toplam soru sayısı zorluk seviyelerindeki soru sayılarıyla eşleşmelidir!")
+        }
+
+        handleRateSubmit(questionSettings)
+        setShowQuestionSettingsModal(false)
+    }
+
+    const handleRateSubmit = async (questionSettings = null) => {
         const response = await ApplicationService.updateApplicationRate(
             applicationId,
             selectedRate,
-            userInfo
-        );
+            userInfo,
+            questionSettings
+        )
         if (response.success) {
-            alert("Puan güncellendi!")
+            alert("Değerlendirme güncellendi!");
             setApplication((prev) => ({ ...prev, rate: selectedRate }))
         } else {
-            alert("Puan güncellenirken hata oluştu!")
+            alert("Değerlendirme güncellenirken hata oluştu!")
         }
     }
 
@@ -54,5 +95,11 @@ export const useApplicationDetail = () => {
         selectedRate,
         handleRateChange,
         handleRateSubmit,
+        showQuestionSettingsModal,
+        setShowQuestionSettingsModal,
+        questionSettings,
+        handleQuestionSettingsChange,
+        handleEvaluateClick,
+        handleModalSubmit
     }
 }

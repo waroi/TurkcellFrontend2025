@@ -62,7 +62,7 @@ const ApplicationListView = () => {
         </tbody>
       </table>
     </div>
-  );
-};
+  )
+}
 
-export default ApplicationListView;
+export default ApplicationListView

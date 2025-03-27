@@ -16,9 +16,8 @@ const Test = () => {
         const checkUser = async () => {
             // return
             // bu alttaki kontrol patladı bir anda anlayamadım :(
-            if (!await TestService.checkAccess(userMail)) navigate('/dashboard')
+            // if (!await TestService.checkAccess(userMail)) navigate('/dashboard')
         }
-        console.log(selectedQuestions)
         checkUser()
     }, [userMail])
 
