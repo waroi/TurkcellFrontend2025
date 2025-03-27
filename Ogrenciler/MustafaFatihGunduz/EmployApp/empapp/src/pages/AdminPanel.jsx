@@ -7,7 +7,6 @@ import SignInModal from "../components/SignInModal/SignInModal";
 import { Link } from "react-router-dom";
 import AdminTestModal from "../components/AdminTestModal/AdminTestModal";
 import useAdminTest from "../store/useAdminTest";
-import styles from "./AdminPanel.module.css";
 
 const AdminPanel = () => {
   const {
@@ -48,7 +47,7 @@ const AdminPanel = () => {
   return (
     <div className={styles.adminContainer}>
       <div className="container">
-        <div className={styles.header}>
+        <div className={`${styles.header} d-flex justify-content-between`}>
           <h1 className={styles.title}>Başvuruları Yönet</h1>
           <Link to="/" className={styles.backButton}>
             <i className="bi bi-arrow-left"></i> Başvuru Sayfasına Dön
@@ -147,7 +146,7 @@ const AdminPanel = () => {
                         className={`card-footer gap-4 d-flex justify-content-center ${styles.fontPrimary} ${styles.cardBackGround}`}
                       >
                         <button
-                          className={`${styles.buttonColor} ${styles.fontPrimary} btn text-white mt-2`}
+                          className={`${styles.approveButton} btn text-white mt-2`}
                           onClick={() => openModal(app)}
                         >
                           Onayla
@@ -158,7 +157,7 @@ const AdminPanel = () => {
                           app={app}
                         />
                         <button
-                          className={` ${styles.fontPrimary} btn btn-light text-dark mt-2`}
+                          className={` ${styles.rejectButton} btn text-white mt-2`}
                           onClick={() => handleReject(app)}
                         >
                           Reddet
