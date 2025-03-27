@@ -128,14 +128,6 @@ function addExam(difficulty) {
     }).then((exam) => exam.id)
   );
 
-  // function getFiveRandomQuestions() {
-  //   return getDocs(collection(database, "questions")).then((questions) => {
-  //     questions = questions.docs.map((question) => question.id);
-
-  //     return shuffle(questions).slice(0, 5);
-  //   });
-  // }
-
   function getQuestions(difficulty) {
     return getDocs(collection(database, "questions")).then((questions) => {
       questions = shuffle(
@@ -174,6 +166,7 @@ export function getQuestion(id) {
 }
 
 export async function submitExam(id, exam) {
+  //* Evaluation
   exam.questions
     .reduce(
       async (result, question, index) => {

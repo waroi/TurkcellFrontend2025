@@ -4,6 +4,7 @@ import Button from "#/atoms/Button";
 
 import { setDifficulty } from "@/services/firebase";
 import useStore from "@/store/useStore";
+import Range from "#/atoms/Range";
 
 export default function ApplicationQuestion({ id, difficulty }) {
   const { addToast } = useStore();
@@ -25,46 +26,31 @@ export default function ApplicationQuestion({ id, difficulty }) {
     <>
       <p className="card-text">Sınav Soru Dağılımı</p>
       <div className="px-1 w-50 mb-3">
-        <label htmlFor={`easy-${id}`} className="form-label">
-          Kolay: {easy}
-        </label>
-        <input
-          type="range"
-          className="form-range"
-          min="1"
-          max="10"
-          id={`easy-${id}`}
+        <Range
+          name={`easy-${id}`}
           value={easy}
           onChange={(event) => setEasy(parseInt(event.target.value))}
-        />
+        >
+          Kolay: {easy}
+        </Range>
       </div>
       <div className="px-1 w-50 mb-3">
-        <label htmlFor={`medium-${id}`} className="form-label">
-          Orta: {medium}
-        </label>
-        <input
-          type="range"
-          className="form-range"
-          min="1"
-          max="10"
-          id={`medium-${id}`}
+        <Range
+          name={`medium-${id}`}
           value={medium}
           onChange={(event) => setMedium(parseInt(event.target.value))}
-        />
+        >
+          Orta: {medium}
+        </Range>
       </div>
       <div className="px-1 w-50 mb-3">
-        <label htmlFor={`hard-${id}`} className="form-label">
-          Zor: {hard}
-        </label>
-        <input
-          type="range"
-          className="form-range"
-          min="1"
-          max="10"
-          id={`hard-${id}`}
+        <Range
+          name={`hard-${id}`}
           value={hard}
           onChange={(event) => setHard(parseInt(event.target.value))}
-        />
+        >
+          Zor: {hard}
+        </Range>
       </div>
       <Button onClick={saveDifficulty}>Kaydet</Button>
     </>
