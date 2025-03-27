@@ -14,7 +14,9 @@ const TestResult = ({ customMessage }) => {
   return (
     <div className="test-result">
       <div className="card">
-        <h2>Tebrikler! 🎊</h2>
+        <span>
+          <h2 className="d-inline-block">Tebrikler! </h2> 🎊
+        </span>
         <p>{customMessage ? customMessage : message}</p>
         <button className="btn" onClick={handleClick}>
           Tamam

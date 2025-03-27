@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { updateApplicationStatus } from "../services/applicationService";
 import { db } from "../../firebase_config";
-import { setDoc,doc } from "firebase/firestore";
+import { setDoc, doc } from "firebase/firestore";
 
 const useAdminPanel = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -15,24 +15,19 @@ const useAdminPanel = () => {
     );
   };
 
-  const handleApprove = async (application, total, hard, medium) => {
+  const handleApprove = async (application) => {
     try {
-        await updateApplicationStatus(application.id, {
-            status: "approved",
-            isTestAvailable: true,
-        });
-        await setDoc(doc(db, "tests", application.id), {
-            totalQuestion: total,
-            hardQuestion: hard,
-            mediumQuestion: medium,
-            userId: application.id,
-        });
+      await updateApplicationStatus(application.id, {
+        status: "approved",
+        isTestAvailable: true,
+      });
 
-        alert("Başvuru onaylandı ve test bilgileri kaydedildi!");
+      alert("Başvuru onaylandı!");
     } catch (error) {
-        console.error("Onaylama hatası:", error);
+      console.error("Onaylama hatası:", error);
+      throw error;
     }
-};
+  };
   const handleReject = async (application) => {
     try {
       await updateApplicationStatus(application.id, {

@@ -21,7 +21,7 @@ const Applications = () => {
     } else {
       setLoading(false);
     }
-  }, [userAuth, apps]);
+  }, [userAuth]); //apps
 
   return loading ? (
     <div>Loading...</div>

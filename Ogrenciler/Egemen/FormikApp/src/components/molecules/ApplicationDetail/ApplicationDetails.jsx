@@ -4,37 +4,47 @@ import Button from "../../atoms/buttons/Button";
 import Modal from "react-bootstrap/Modal"; // Assuming you're using react-bootstrap for modals
 import { getShuffledQuestionsByCategory } from "../../../services/QuestionService"; // Import the function
 import questionData from "../../../constants/questions.json"; // Import question data
+import { setQuestionCount } from "../../../../firebase/dbController";
 
 const ApplicationDetails = ({ application, user, sonrakiAsama }) => {
   const [showModal, setShowModal] = useState(false);
   const [easyCount, setEasyCount] = useState(0);
   const [mediumCount, setMediumCount] = useState(0);
   const [hardCount, setHardCount] = useState(0);
-  const [quizCounts, setQuizCounts] = useState({}); // Local state for quiz counts
+  //const [quizCounts, setQuizCounts] = useState({});
+  // Local state for quiz counts
+  const [quizs, setQuizs] = useState([]);
   const navigate = useNavigate();
 
   const handleModalOpen = () => setShowModal(true);
   const handleModalClose = () => setShowModal(false);
 
   const handleSubmit = () => {
-    console.log(easyCount);
-
-    setQuizCounts({
+    setQuestionCount(application.id, {
       easy: easyCount,
       medium: mediumCount,
       hard: hardCount,
     });
+    // console.log(easyCount);
 
-    const selectedQuestions = getShuffledQuestionsByCategory(
-      easyCount,
-      mediumCount,
-      hardCount
-    );
-    console.log(selectedQuestions);
+    // setQuizCounts({
+    //   easy: easyCount,
+    //   medium: mediumCount,
+    //   hard: hardCount,
+    // });
+
+    // const selectedQuestions = getShuffledQuestionsByCategory(
+    //   easyCount,
+    //   mediumCount,
+    //   hardCount
+    // );
+    // setQuizs(selectedQuestions);
+    // console.log(selectedQuestions);
     handleModalClose();
   };
   const startQuiz = () => {
-    navigate(`/quiz/${application.id}`, { state: { quizCounts } });
+    //console.log("qqq", quizCounts);
+    navigate(`/quiz/${application.id}`);
   };
 
   return (
@@ -117,7 +127,11 @@ const ApplicationDetails = ({ application, user, sonrakiAsama }) => {
             <Button
               className="btn btn-success me-3 px-4 py-2 shadow"
               onClick={() => {
-                handleModalOpen();
+                application.status == "Değerlendirme" ? (
+                  handleModalOpen()
+                ) : (
+                  <></>
+                );
                 sonrakiAsama(application);
               }}
             >
