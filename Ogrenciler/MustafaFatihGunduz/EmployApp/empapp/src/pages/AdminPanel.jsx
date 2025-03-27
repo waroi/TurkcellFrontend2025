@@ -7,6 +7,8 @@ import SignInModal from "../components/SignInModal/SignInModal";
 import { Link } from "react-router-dom";
 import AdminTestModal from "../components/AdminTestModal/AdminTestModal";
 import useAdminTest from "../store/useAdminTest";
+import styles from "./AdminPanel.module.css";
+
 const AdminPanel = () => {
   const {
     applications,
@@ -25,7 +27,8 @@ const AdminPanel = () => {
     handleReject,
   } = useAdminPanel();
 
-  const { showModal, handleCloseModal, handleModal } = useAdminTest();
+  const { showModal, setShowModal, handleCloseModal, openModal } =
+    useAdminTest();
 
   const filteredApplications = getFilteredApplications(applications);
 
@@ -140,25 +143,27 @@ const AdminPanel = () => {
                         <strong>Mezun mu?</strong>{" "}
                         {app.isGraduate ? "Evet" : "Hayır"}
                       </p>
-                    </div>
-                    <div className={styles.cardFooter}>
-                      <button
-                        className={styles.approveButton}
-                        onClick={() => handleModal(app)}
+                      <div
+                        className={`card-footer gap-4 d-flex justify-content-center ${styles.fontPrimary} ${styles.cardBackGround}`}
                       >
-                        Onayla
-                      </button>
-                      <AdminTestModal
-                        show={showModal}
-                        handleClose={handleCloseModal}
-                        app={app}
-                      />
-                      <button
-                        className={styles.rejectButton}
-                        onClick={() => handleReject(app)}
-                      >
-                        Reddet
-                      </button>
+                        <button
+                          className={`${styles.buttonColor} ${styles.fontPrimary} btn text-white mt-2`}
+                          onClick={() => openModal(app)}
+                        >
+                          Onayla
+                        </button>
+                        <AdminTestModal
+                          show={showModal}
+                          handleClose={handleCloseModal}
+                          app={app}
+                        />
+                        <button
+                          className={` ${styles.fontPrimary} btn btn-light text-dark mt-2`}
+                          onClick={() => handleReject(app)}
+                        >
+                          Reddet
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>

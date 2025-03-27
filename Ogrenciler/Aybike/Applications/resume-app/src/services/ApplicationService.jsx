@@ -32,32 +32,32 @@ export class ApplicationService {
       return { success: false, message: error };
     }
   }
-
-  static async getApplicationById(applicationId) {
-    try {
-      const docRef = doc(db, "applications", applicationId);
-      const docSnap = await getDoc(docRef);
-
-      if (docSnap.exists()) {
-        return { success: true, data: { id: docSnap.id, ...docSnap.data() } };
-      } else {
-        return { success: false, message: "Başvuru bulunamadı!" };
-      }
-    } catch (error) {
-      console.error("Başvuru detayları alınırken hata oluştu:", error);
-      return { success: false, message: error };
-    }
-  }
   static async updateApplicationRate(applicationId, newRate, userInfo, questionSettings) {
     try {
       if (newRate >= 4) TestService.addNewUser(userInfo, questionSettings)
       const docRef = doc(db, "applications", applicationId);
-      await updateDoc(docRef, { rate: newRate });
+      await updateDoc(docRef, { rate: newRate })
 
-      return { success: true, message: "Puan başarıyla güncellendi" };
+      return { success: true, message: "Puan başarıyla güncellendi" }
     } catch (error) {
-      console.error("Puan güncellenirken hata oluştu:", error);
-      return { success: false, message: error };
+      console.error("Puan güncellenirken hata oluştu:", error)
+      return { success: false, message: error }
     }
   }
+  static async getApplicationById(applicationId) {
+    try {
+      const docRef = doc(db, "applications", applicationId)
+      const docSnap = await getDoc(docRef)
+
+      if (docSnap.exists()) {
+        return { success: true, data: { id: docSnap.id, ...docSnap.data() } }
+      } else {
+        return { success: false, message: "Başvuru bulunamadı!" }
+      }
+    } catch (error) {
+      console.error("Başvuru detayları alınırken hata oluştu:", error)
+      return { success: false, message: error }
+    }
+  }
+
 }

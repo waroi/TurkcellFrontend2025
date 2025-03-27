@@ -26,7 +26,7 @@ function QuestionType() {
   };
 
   const handleSubmit = async () => {
-    await createQuestionDistribution({ id, ...ranges });
+    await createQuestionDistribution({ id, ...ranges, area: "front" });
     await updateApplicationStatus(
       application.id,
       "Test Aşamasında",
@@ -36,9 +36,11 @@ function QuestionType() {
   };
 
   return (
+
     <div className="container form-container py-10">
       <Navbar />
       <div>
+        <h2 className="text-center mb-4">Test Gönder</h2>
         <label>
           Kolay
           <span className="custom-badge">{ranges.easy}</span>
@@ -84,6 +86,14 @@ function QuestionType() {
         />
       </div>
       <div>Toplam Soru Sayısı: {total}</div>
+
+      <div className="d-flex gap-2 justify-content-end mt-4">
+        <button className="btn btn-secondary">Geri</button>
+        <button className="btn btn-primary" onClick={handleSubmit}>
+          Testi Gönder
+        </button>
+
+      </div>
     </div>
   );
 }
