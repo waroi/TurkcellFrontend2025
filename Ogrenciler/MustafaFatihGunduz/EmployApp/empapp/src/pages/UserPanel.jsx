@@ -31,7 +31,7 @@ const UserPanel = () => {
   }
   const startTest = async (application) => {
     setCurrentApplication(application);
-    await handleStartTest();
+    await handleStartTest(application);
   };
 
   return (

@@ -96,8 +96,22 @@ export async function setStatus(appId, status) {
   setDoc(docRef, { status: status }, { merge: true });
 }
 
-
 export async function setMessage(appId, status, userMessage, adminMessage) {
   const docRef = doc(db, "applications", appId);
-  setDoc(docRef, { status: status, userMessage: userMessage, adminMessage: adminMessage }, { merge: true });
+  setDoc(
+    docRef,
+    { status: status, userMessage: userMessage, adminMessage: adminMessage },
+    { merge: true }
+  );
+}
+
+export async function setQuestionCount(appId, count) {
+  const docRef = doc(db, "applications", appId);
+  setDoc(docRef, { questions: count }, { merge: true });
+}
+export async function getQuestionCount(appId) {
+  const docRef = doc(db, "applications", appId);
+  const docSnap = await getDoc(docRef);
+  const data = docSnap.data();
+  return data.questions;
 }

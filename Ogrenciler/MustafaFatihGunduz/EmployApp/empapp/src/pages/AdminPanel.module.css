@@ -16,6 +16,7 @@
   color: var(--text-primary);
   font-size: var(--font-2xl);
   font-weight: 700;
+  margin-bottom: var(--space-lg);
 }
 
 .backButton {
@@ -26,6 +27,8 @@
   font-weight: 600;
   padding: var(--space-sm) var(--space-md);
   transition: var(--transition);
+  text-decoration: none;
+  height: 55px;
 }
 .backButton:hover {
   transform: var(--button-hover-transform);
