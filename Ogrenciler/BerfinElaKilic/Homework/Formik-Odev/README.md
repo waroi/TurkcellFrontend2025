@@ -1,8 +1,6 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Sonradan yapılacak düzeltmeler unutulmasın
+1-User local storage giriş yapar yapmaz setlendiği için artık view lerdeki gereksiz user fetchleme operasyonlarının silinmesi lazım
+2-useActions içindeki aksiyonların her biri yeni bir context'e eklenmeli
+3-protectionlar(HOC) henüz tüm projeye dağıtılmdı dağıtılsın
+4-yeni bileşenlerimiz prensiplere uygun değil hepsi yapımıza uygun hale geitirilerek temiz koda dnüştürülsün.(fetchlerin HOC bileşen ile çekilmesi, bileşenlerin küçük birimlere ayrılması gibi)
+5-
