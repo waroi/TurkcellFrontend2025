@@ -1,0 +1,139 @@
+.userPanelContainer {
+  background: var(--primary-gradient);
+  min-height: 100vh;
+  padding: var(--space-xl) 0;
+}
+.header {
+  background: var(--card-bg);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: var(--blur);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-xl);
+}
+.applicationCard {
+  background: var(--card-bg);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: var(--blur);
+  border: var(--border-base);
+  transition: var(--transition);
+  margin-bottom: var(--space-lg);
+  padding: var(--space-lg);
+}
+.applicationCard:hover {
+  transform: var(--hover-transform);
+  box-shadow: var(--shadow-lg);
+}
+.cardTitle {
+  color: var(--text-primary);
+  font-size: var(--font-xl);
+  font-weight: 600;
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-md);
+  border-bottom: var(--border-divider);
+}
+.cardText {
+  color: var(--text-secondary);
+  margin-bottom: var(--space-sm);
+}
+.cardLabel {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+.statusBadge {
+  display: inline-block;
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-lg);
+  font-weight: 500;
+  margin-top: var(--space-md);
+}
+.statusPending {
+  background: var(--status-pending-bg);
+  color: var(--status-pending-text);
+}
+.statusApproved {
+  background: var(--status-approved-bg);
+  color: var(--status-approved-text);
+}
+.statusRejected {
+  background: var(--status-rejected-bg);
+  color: var(--status-rejected-text);
+}
+.newApplicationButton {
+  background: var(--primary-gradient);
+  border: none;
+  border-radius: var(--radius-sm);
+  color: white;
+  font-weight: var(--font-weight-semibold);
+  padding: var(--space-sm) var(--space-lg);
+  transition: var(--transition);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-family: var(--font-family-header);
+}
+.newApplicationButton:hover {
+  transform: var(--button-hover-transform);
+  box-shadow: var(--shadow-hover);
+  color: white;
+}
+
+.newApplicationButton i {
+  font-size: var(--font-lg);
+}
+
+.testButton:hover {
+  transform: var(--button-hover-transform);
+  box-shadow: var(--shadow-hover);
+}
+
+.testResults {
+  background: var(--card-bg);
+  border-radius: var(--radius-sm);
+  padding: var(--space-md);
+  margin-top: var(--space-md);
+  border: var(--border-divider);
+}
+
+.testResultsTitle {
+  color: var(--text-primary);
+  font-size: var(--font-lg);
+  font-weight: 600;
+  margin-bottom: var(--space-sm);
+}
+
+.successText {
+  color: var(--status-approved-text);
+  font-weight: 500;
+}
+
+.failText {
+  color: var(--status-rejected-text);
+  font-weight: 500;
+}
+
+.logoutButton {
+  background: var(--danger-gradient);
+  border: none;
+  border-radius: var(--radius-sm);
+  color: white;
+  font-weight: var(--font-weight-semibold);
+  padding: var(--space-sm) var(--space-lg);
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-family: var(--font-family-header);
+}
+
+.logoutButton:hover {
+  transform: var(--button-hover-transform);
+  box-shadow: var(--shadow-hover);
+  color: white;
+}
+
+.logoutButton i {
+  font-size: var(--font-lg);
+}
