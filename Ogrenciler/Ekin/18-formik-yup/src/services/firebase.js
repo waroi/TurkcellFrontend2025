@@ -176,24 +176,37 @@ export function getQuestion(id) {
 export async function submitExam(id, exam) {
   exam.questions
     .reduce(
-      async (result, question, index) =>
-        (await result) +
-        ((
+      async (result, question, index) => {
+        result = await result;
+        question = await getQuestion(question);
+
+        if (
           exam.answers[index]
-            ? exam.answers[index] == (await getQuestion(question)).answers[0]
+            ? exam.answers[index] == question.answers[0]
             : false
-        )
-          ? 1
-          : 0),
-      0
+        ) {
+          result.score++;
+        } else {
+          result.wrongs.push({
+            question: question.question,
+            correct: question.answers[0],
+            wrong: exam.answers[index],
+          });
+        }
+
+        return result;
+      },
+      { score: 0, wrongs: [] }
     )
-    .then((count) =>
+    .then((result) => ({
+      score: parseInt((result.score * 100) / exam.questions.length),
+      wrongs: result.wrongs,
+    }))
+    .then((result) =>
       getDocs(collection(database, "forms")).then((forms) =>
         forms.docs.map((form) =>
           id == form.data().exam
-            ? updateDoc(doc(database, "forms", form.id), {
-                result: parseInt((count * 100) / exam.questions.length),
-              })
+            ? updateDoc(doc(database, "forms", form.id), { result })
             : ""
         )
       )

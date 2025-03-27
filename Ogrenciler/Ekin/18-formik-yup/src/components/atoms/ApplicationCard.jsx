@@ -65,16 +65,66 @@ const ApplicationCard = ({
                 </button>
               </div>
             ) : (
-              <div className="d-flex align-items-center">
-                <span className="me-2 fw-semibold">Durum:</span>
-                <span
-                  className={`badge ${getStatusBadge(
-                    application.status,
-                    application.result
-                  )} py-2 px-3 rounded-pill`}
-                >
-                  {getStatusLabel(application.status, application.result)}
-                </span>
+              <div>
+                <div className="d-flex align-items-center mb-4">
+                  <span className="me-2 fw-semibold">Durum:</span>
+                  <span
+                    className={`badge ${getStatusBadge(
+                      application.status,
+                      application.result?.score
+                    )} py-2 px-3 rounded-pill`}
+                  >
+                    {getStatusLabel(
+                      application.status,
+                      application.result?.score
+                    )}
+                  </span>
+                </div>
+                {application.result?.wrongs &&
+                application.result.wrongs.length ? (
+                  <div>
+                    <div
+                      className="accordion"
+                      id={`wrongs-${application.application}`}
+                    >
+                      <div className="accordion-item">
+                        <h2 className="accordion-header">
+                          <button
+                            className="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target={`#wrongs-control-${application.application}`}
+                          >
+                            Hatalı Sorular
+                          </button>
+                        </h2>
+                        <div
+                          id={`wrongs-control-${application.application}`}
+                          className="accordion-collapse collapse"
+                          data-bs-parent={`#wrongs-${application.application}`}
+                        >
+                          <div className="accordion-body">
+                            {application.result.wrongs.map(
+                              (wrongQuestion, index) => (
+                                <div key={index} className="mb-4">
+                                  <p>{wrongQuestion.question}</p>
+                                  <div className="alert alert-success py-1">
+                                    <b>Doğru Cevap:</b> {wrongQuestion.correct}
+                                  </div>
+                                  <div className="alert alert-danger py-1">
+                                    <b>Cevabın:</b> {wrongQuestion.wrong}
+                                  </div>
+                                </div>
+                              )
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  ""
+                )}
               </div>
             )}
           </div>

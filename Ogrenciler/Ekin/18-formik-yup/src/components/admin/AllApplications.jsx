@@ -21,7 +21,10 @@ export default function AllApplications() {
               {application.department}
             </p>
             <h5 className="card-title mb-3">{application.name}</h5>
-            <ApplicationQuestion id={application.id} />
+            <ApplicationQuestion
+              id={application.id}
+              difficulty={application.difficulty}
+            />
           </div>
         </div>
       </div>

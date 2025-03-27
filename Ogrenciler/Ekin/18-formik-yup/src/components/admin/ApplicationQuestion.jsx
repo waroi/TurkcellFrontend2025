@@ -9,12 +9,12 @@ import useStore from "@/store/useStore";
 
 const amount = Array.from({ length: 10 }, (_, index) => index + 1);
 
-export default function ApplicationQuestion({ id }) {
+export default function ApplicationQuestion({ id, difficulty }) {
   const { addToast } = useStore();
 
-  const [easy, setEasy] = useState(5);
-  const [medium, setMedium] = useState(3);
-  const [hard, setHard] = useState(2);
+  const [easy, setEasy] = useState(difficulty[0]);
+  const [medium, setMedium] = useState(difficulty[1]);
+  const [hard, setHard] = useState(difficulty[2]);
 
   function saveDifficulty() {
     setDifficulty(id, [easy, medium, hard]).then(() => {
