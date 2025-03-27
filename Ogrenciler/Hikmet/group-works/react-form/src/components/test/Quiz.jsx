@@ -24,8 +24,8 @@ const Quiz = () => {
   const [score, setScore] = useState(0);
   const [errorMessage, setErrorMessage] = useState("");
   const [testAttemptStatus, setTestAttemptStatus] = useState(null);
+  const [quizSettings, setQuizSettings] = useState(null);
 
-  // Authentication and Test Eligibility Check
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
       if (currentUser) {
@@ -47,7 +47,43 @@ const Quiz = () => {
     return () => unsubscribe();
   }, []);
 
-  // Check Test Eligibility and Previous Attempts
+  const fetchAdminSettings = async () => {
+    try {
+      const settingsRef = doc(db, "quiz_settings", "default");
+      const settingsSnap = await getDoc(settingsRef);
+  
+      if (settingsSnap.exists()) {
+        const fetchedSettings = settingsSnap.data();
+  
+        const validatedSettings = {
+          easyCount: typeof fetchedSettings.easyCount === 'number' 
+            ? fetchedSettings.easyCount 
+            : 5,  
+          mediumCount: typeof fetchedSettings.mediumCount === 'number' 
+            ? fetchedSettings.mediumCount 
+            : 3,  
+          hardCount: typeof fetchedSettings.hardCount === 'number' 
+            ? fetchedSettings.hardCount 
+            : 2 
+        };
+  
+        console.log("Validated Quiz Settings:", validatedSettings);
+  
+        return validatedSettings;
+      } else {
+        throw new Error("No quiz settings found in Firestore");
+      }
+    } catch (error) {
+      console.error("Error fetching admin settings:", error);
+      
+      return {
+        easyCount: 5,
+        mediumCount: 3,
+        hardCount: 2
+      };
+    }
+  };
+
   const checkTestEligibilityAndAttemptStatus = async (currentUser) => {
     const olumluQuery = query(
       collection(db, "olumlu"),
@@ -85,9 +121,92 @@ const Quiz = () => {
     }
   };
 
-  // Fetch and Validate Questions
+  const categorizeQuestions = (questions) => {
+    const categorized = {
+      easy: [],
+      medium: [],
+      hard: []
+    };
+
+    questions.forEach(question => {
+      const level = (question.level || question.Level || '').toLowerCase().trim();
+      switch(level) {
+        case 'easy':
+          categorized.easy.push(question);
+          break;
+        case 'medium':
+          categorized.medium.push(question);
+          break;
+        case 'hard':
+          categorized.hard.push(question);
+          break;
+        default:
+          console.warn(`Question with unrecognized difficulty: ${question.question}`);
+      }
+    });
+
+    return categorized;
+  };
+
+  const getRandomQuestions = (array, count) => {
+    if (array.length === 0) return [];
+    if (array.length <= count) return array;
+
+    const shuffled = [...array].sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, count);
+  };
+
+  const selectRandomQuestions = (questions, settings) => {
+    const { easy, medium, hard } = categorizeQuestions(questions);
+
+    const safeEasyCount = Math.min(settings.easyCount, easy.length);
+    const safeMediumCount = Math.min(settings.mediumCount, medium.length);
+    const safeHardCount = Math.min(settings.hardCount, hard.length);
+
+    const selectedQuestions = [
+      ...getRandomQuestions(easy, safeEasyCount),
+      ...getRandomQuestions(medium, safeMediumCount),
+      ...getRandomQuestions(hard, safeHardCount)
+    ];
+
+    console.log("Question Selection Breakdown:", {
+      totalQuestions: selectedQuestions.length,
+      easyQuestions: selectedQuestions.filter(q => 
+        (q.level || q.Level || '').toLowerCase() === 'easy'
+      ).length,
+      mediumQuestions: selectedQuestions.filter(q => 
+        (q.level || q.Level || '').toLowerCase() === 'medium'
+      ).length,
+      hardQuestions: selectedQuestions.filter(q => 
+        (q.level || q.Level || '').toLowerCase() === 'hard'
+      ).length
+    });
+
+    return selectedQuestions;
+  };
+
+  const isValidQuestion = (question) => {
+    return (
+      question &&
+      question.question &&
+      question.Correct &&
+      question.A &&
+      question.B &&
+      question.C &&
+      question.D &&
+      (question.Level || question.level)
+    );
+  };
+
   const fetchQuestions = async () => {
     try {
+      const settings = await fetchAdminSettings();
+      
+      if (!settings) {
+        setErrorMessage("Failed to load quiz settings");
+        return;
+      }
+
       const questionsRef = collection(db, "questions");
       const questionSnapshot = await getDocs(questionsRef);
 
@@ -103,84 +222,17 @@ const Quiz = () => {
         return;
       }
 
-      const randomQuestions = selectRandomQuestions(validQuestions);
+      const randomQuestions = selectRandomQuestions(validQuestions, settings);
 
-      if (randomQuestions.length === 0) {
-        setErrorMessage(
-          "Could not select any questions. Please check database."
-        );
-        return;
-      }
-
-      setQuestions(allQuestions);
+      setQuestions(validQuestions);
       setSelectedQuestions(randomQuestions);
+      setQuizSettings(settings);
     } catch (error) {
       console.error("Question Fetching Error:", error);
       setErrorMessage("Failed to fetch questions: " + error.message);
     }
   };
 
-  // Validate Individual Questions
-  const isValidQuestion = (question) => {
-    return (
-      question &&
-      question.question &&
-      question.Correct &&
-      question.A &&
-      question.B &&
-      question.C &&
-      (question.Level || question.level)
-    );
-  };
-
-  // Select Random Questions with Balanced Difficulty
-  const selectRandomQuestions = (questions) => {
-    const categorizeQuestions = (questions) => {
-      const easy = questions.filter(
-        (q) =>
-          q.Level?.toLowerCase() === "easy" || q.level?.toLowerCase() === "easy"
-      );
-      const medium = questions.filter(
-        (q) =>
-          q.Level?.toLowerCase() === "medium" ||
-          q.level?.toLowerCase() === "medium"
-      );
-      const hard = questions.filter(
-        (q) =>
-          q.Level?.toLowerCase() === "hard" || q.level?.toLowerCase() === "hard"
-      );
-
-      return { easy, medium, hard };
-    };
-
-    const { easy, medium, hard } = categorizeQuestions(questions);
-
-    const getRandomQuestions = (array, desiredCount) => {
-      if (array.length === 0) return [];
-      if (array.length <= desiredCount) return array;
-
-      const shuffled = [...array];
-      for (let i = shuffled.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-      }
-
-      return shuffled.slice(0, desiredCount);
-    };
-
-    const selectedQuestions = [
-      ...getRandomQuestions(easy, Math.max(3, Math.ceil(easy.length * 0.3))),
-      ...getRandomQuestions(
-        medium,
-        Math.max(3, Math.ceil(medium.length * 0.3))
-      ),
-      ...getRandomQuestions(hard, Math.max(4, Math.ceil(hard.length * 0.3))),
-    ];
-
-    return selectedQuestions;
-  };
-
-  // Handle Answer Selection and Quiz Progress
   const handleAnswer = async () => {
     if (!selectedAnswer) return;
 
@@ -200,53 +252,57 @@ const Quiz = () => {
     setSelectedAnswer("");
   };
 
-  // Save Quiz Result and Mark Test as Completed
   const saveQuizResult = async () => {
     if (!user) return;
 
     try {
-      await addDoc(collection(db, "quiz_results"), {
-        userId: user.uid,
-        email: user.email,
-        score: score,
-        totalQuestions: selectedQuestions.length,
-        timestamp: new Date(),
-      });
+        console.log("Saving quiz result for:", user.email);
+        console.log("Score being saved:", score);
+        console.log("Total Questions:", selectedQuestions.length);
 
-      const testStatusRef = doc(db, "test_attempts", user.uid);
-      await setDoc(testStatusRef, {
-        userId: user.uid,
-        email: user.email,
-        attempted: true,
-        completed: true,
-        score: score,
-        totalQuestions: selectedQuestions.length,
-        timestamp: new Date(),
-      });
+        await addDoc(collection(db, "quiz_results"), {
+            userId: user.uid,
+            email: user.email,
+            score: score,
+            totalQuestions: selectedQuestions.length,
+            timestamp: new Date(),
+        });
+
+        const testStatusRef = doc(db, "test_attempts", user.uid);
+        await setDoc(testStatusRef, {
+            userId: user.uid,
+            email: user.email,
+            attempted: true,
+            completed: true,
+            score: score,
+            totalQuestions: selectedQuestions.length,
+            timestamp: new Date(),
+        });
+
+        console.log("Quiz result saved successfully!");
+
     } catch (error) {
-      console.error("Error saving quiz result:", error);
+        console.error("Error saving quiz result:", error);
     }
-  };
+};
 
-  // Render Quiz Content
+
   const renderQuizContent = () => {
     if (isLoading) {
       return <div className="text-center">Loading...</div>;
     }
 
-    // Previous Test Attempt Check
     if (testAttemptStatus) {
       return (
         <div className="alert alert-warning text-center">
           {errorMessage}
           {testAttemptStatus.completed
-            ? ` Your previous test score was: ${testAttemptStatus.score} / ${testAttemptStatus.totalQuestions}`
+            ? `Your previous test score was: ${testAttemptStatus.score} / ${testAttemptStatus.totalQuestions}`
             : " You cannot start a new test."}
         </div>
       );
     }
 
-    // Test Eligibility Check
     if (!isEligibleForTest) {
       return (
         <div className="alert alert-warning text-center">
@@ -255,7 +311,6 @@ const Quiz = () => {
       );
     }
 
-    // No Questions Available
     if (selectedQuestions.length === 0) {
       return (
         <div className="alert alert-danger text-center">
@@ -265,7 +320,6 @@ const Quiz = () => {
       );
     }
 
-    // Test Completed
     if (testCompleted) {
       return (
         <div className="text-center">
@@ -277,7 +331,6 @@ const Quiz = () => {
       );
     }
 
-    // Active Quiz Rendering
     const currentQuestion = selectedQuestions[currentQuestionIndex];
 
     return (
@@ -288,11 +341,10 @@ const Quiz = () => {
           {["A", "B", "C", "D"].map((option) => (
             <button
               key={option}
-              className={`btn ${
-                selectedAnswer === currentQuestion[option]
+              className={`btn ${selectedAnswer === currentQuestion[option]
                   ? "btn-primary"
                   : "btn-outline-secondary"
-              } m-2`}
+                } m-2`}
               onClick={() => setSelectedAnswer(currentQuestion[option])}
             >
               {currentQuestion[option]}
