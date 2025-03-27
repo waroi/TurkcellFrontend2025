@@ -50,8 +50,6 @@ export function setUser(id, email, name, surname) {
 }
 
 export function login(email, password) {
-  console.log("firebase", email, password);
-
   return signInWithEmailAndPassword(auth, email, password).then(
     (credendials) => credendials.user.uid
   );
@@ -66,6 +64,7 @@ export function getUser(user) {
     snapshot.data()
   );
 }
+
 //* Application ====================================================================================================
 
 export function getApplications() {
@@ -103,45 +102,55 @@ export function getForms() {
   );
 }
 
-export function setApplication(id, status) {
+export function setApplication(application, id, status) {
   return status == "accepted"
-    ? addExam().then((exam) => {
-        updateDoc(doc(database, "forms", id), {
-          status,
-          exam,
-        }).then(() => id);
-      })
+    ? getApplication(application).then(({ difficulty }) =>
+        addExam(difficulty).then((exam) => {
+          updateDoc(doc(database, "forms", id), {
+            status,
+            exam,
+          }).then(() => id);
+        })
+      )
     : updateDoc(doc(database, "forms", id), {
         status,
       }).then(() => id);
 }
 
-// export function addQuestions() {
-//   let q = prompt("QUESTION?");
-
-//   let a = prompt("CORRECT");
-//   let b = prompt("WRONG");
-//   let c = prompt("WRONG");
-//   let d = prompt("WRONG");
-
-//   return addDoc(collection(database, "questions"), {
-//     question: q,
-//     answers: [a, b, c, d],
-//   });
+// export function addQuestions(q) {
+//   return addDoc(collection(database, "questions"), q);
 // }
 
-function addExam() {
-  return getFiveRandomQuestions().then((questions) =>
+function addExam(difficulty) {
+  return getQuestions(difficulty).then((questions) =>
     addDoc(collection(database, "exams"), {
       questions,
     }).then((exam) => exam.id)
   );
 
-  function getFiveRandomQuestions() {
+  function getQuestions(difficulty) {
     return getDocs(collection(database, "questions")).then((questions) => {
-      questions = questions.docs.map((question) => question.id);
+      questions = shuffle(
+        questions.docs.map((question) => ({
+          id: question.id,
+          difficulty: question.data().difficulty,
+        }))
+      );
 
-      return shuffle(questions).slice(0, 5);
+      return questions
+        .filter((question) => !question.difficulty)
+        .slice(0, difficulty[0])
+        .concat(
+          questions
+            .filter((question) => question.difficulty == 1)
+            .slice(0, difficulty[1])
+            .concat(
+              questions
+                .filter((question) => question.difficulty == 2)
+                .slice(0, difficulty[2])
+            )
+        )
+        .map((question) => question.id);
     });
   }
 }
@@ -157,28 +166,48 @@ export function getQuestion(id) {
 }
 
 export async function submitExam(id, exam) {
+  //* Evaluation
   exam.questions
     .reduce(
-      async (result, question, index) =>
-        (await result) +
-        ((
+      async (result, question, index) => {
+        result = await result;
+        question = await getQuestion(question);
+
+        if (
           exam.answers[index]
-            ? exam.answers[index] == (await getQuestion(question)).answers[0]
+            ? exam.answers[index] == question.answers[0]
             : false
-        )
-          ? 1
-          : 0),
-      0
+        ) {
+          result.score++;
+        } else {
+          result.wrongs.push({
+            question: question.question,
+            correct: question.answers[0],
+            wrong: exam.answers[index],
+          });
+        }
+
+        return result;
+      },
+      { score: 0, wrongs: [] }
     )
-    .then((count) =>
+    .then((result) => ({
+      score: parseInt((result.score * 100) / exam.questions.length),
+      wrongs: result.wrongs,
+    }))
+    .then((result) =>
       getDocs(collection(database, "forms")).then((forms) =>
         forms.docs.map((form) =>
           id == form.data().exam
-            ? updateDoc(doc(database, "forms", form.id), {
-                result: parseInt((count * 100) / exam.questions.length),
-              })
+            ? updateDoc(doc(database, "forms", form.id), { result })
             : ""
         )
       )
     );
+}
+
+export function setDifficulty(id, difficulty) {
+  return updateDoc(doc(database, "applications", id), {
+    difficulty,
+  });
 }

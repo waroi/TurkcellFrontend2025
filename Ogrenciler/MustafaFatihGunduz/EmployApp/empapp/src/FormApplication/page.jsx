@@ -7,6 +7,8 @@ import useLoggedIn from "../store/useLoggedIn";
 import useSignOut from "../store/useSignOut";
 import useFormikOnInputs from "../store/useFormikOnInputs";
 import { Link } from "react-router-dom";
+import '../styles/variables.css';
+import styles from "./page.module.css";
 
 const Application = () => {
   const { handleSignOut } = useSignOut();
@@ -22,26 +24,25 @@ const Application = () => {
   } = useFormikOnInputs();
 
   return (
-    <>
+    <div className={styles.formContainer}>
       <div className="container py-5">
-        <div className="d-flex justify-content-between mb-3">
+        <div className={styles.headerButtons}>
           <AdminButton />
-
           {isLoggedIn ? (
             <button
-              className="btn btn-danger"
+              className={styles.logoutButton}
               onClick={async () => await handleSignOut()}
             >
               Çıkış Yap
             </button>
           ) : (
-            <Link to="/login" className="btn btn-primary">
+            <Link to="/login" className={styles.loginButton}>
               Giriş Yap
             </Link>
           )}
         </div>
-        <div className="card shadow p-4">
-          <h2 className="text-center mb-4">Başvuru Formu</h2>
+        <div className={`${styles.formCard} p-4`}>
+          <h2 className={`${styles.formTitle} text-center`}>Başvuru Formu</h2>
           <form onSubmit={handleSubmit}>
             <div className="row g-3">
               <div className="col-md-6">
@@ -225,7 +226,7 @@ const Application = () => {
             <div className="d-flex justify-content-center mt-4">
               <button
                 type="submit"
-                className="btn btn-primary"
+                className={styles.submitButton}
                 disabled={isSubmitting}
               >
                 {isSubmitting ? "Gönderiliyor..." : "Başvuruyu Gönder"}
@@ -235,7 +236,7 @@ const Application = () => {
         </div>
         <SignInModal show={show} handleClose={handleClose} />
       </div>
-    </>
+    </div>
   );
 };
 

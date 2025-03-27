@@ -99,3 +99,13 @@ export const advancedSchema = yup.object().shape({
     .required("Cover letter zorunludur")
     .min(20, "En az 20 karakter içermelidir"),
 });
+
+export const examSchema = yup.object().shape({
+  category: yup.string().required("Kategori seçiniz"),
+  subcategory: yup.string().required("Alt kategori seçiniz"),
+  difficultyLevel: yup.string().required("Zorluk seviyesi seçiniz"),
+  questionCount: yup
+    .number()
+    .required("Soru sayısını seçiniz")
+    .min(1, "En az bir soru seçmelisiniz"),
+});

@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom";
+import '../../../src/styles/variables.css';
+import styles from "./AdminButton.module.css";
 
 const AdminButton = () => {
   return (
-    <Link to="/admin">
-      <button className="btn btn-primary">Admin Paneline Git</button>
+    <Link to="/admin" className={styles.adminButton}>
+      <i className="bi bi-shield-lock"></i>
+      Admin Paneline Git
     </Link>
   );
 };

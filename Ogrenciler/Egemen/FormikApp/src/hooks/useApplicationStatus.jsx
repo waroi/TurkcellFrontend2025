@@ -1,34 +1,35 @@
 import { useCallback, useEffect, useState } from "react";
 import { updateAppStatus, updateMessage } from "../../firebase/dbController";
 
-const useApplicationStatus = (user, setApps) => {
+const useApplicationStatus = (setApps) => {
   const handleStatusChange = useCallback(
     async (application) => {
-      if (!user || user.role !== "admin") return;
-
       let newStatus;
-      let newMessage;
+      let userMessage;
+      let adminMessage;
 
       switch (application.status) {
-        case "Beklemede":
+        case "Değerlendirme":
           newStatus = "Test";
-          newMessage = "Test aşamasında.";
+          userMessage = "Testi Çöz";
+          adminMessage = "Test aşamasında";
+
           break;
         case "Test":
           newStatus = "Test Kontrol";
-          newMessage = "Testiniz değerlendiriliyor.";
+          userMessage = "Testiniz değerlendiriliyor.";
+          adminMessage = "Mülakat aşamasını başlat";
           break;
         case "Test Kontrol":
           newStatus = "Mülakat";
-          newMessage = "Mülakata davet edildiniz.";
+          userMessage = "Mülakata davet edildiniz.";
+          adminMessage = "Mülakat aşamasına geçildi";
+
           break;
-        case "Mülakat":
-          newStatus = "Onay";
-          newMessage = "Tebrikler! Başvurunuz onaylandı.";
-          break;
+
         case "Red":
           newStatus = "Red";
-          newMessage = "Başvurunuz reddedildi.";
+          userMessage = "Başvurunuz reddedildi.";
           break;
         default:
           return;
@@ -37,19 +38,24 @@ const useApplicationStatus = (user, setApps) => {
       setApps((prevApps) =>
         prevApps.map((app) =>
           app.id === application.id
-            ? { ...app, status: newStatus, message: newMessage }
+            ? {
+                ...app,
+                status: newStatus,
+                userMessage: userMessage,
+                adminMessage: adminMessage,
+              }
             : app
         )
       );
 
       try {
         await updateAppStatus({ ...application, status: newStatus });
-        await updateMessage(application.id, newMessage);
+        await updateMessage(application.id, userMessage, adminMessage);
       } catch (error) {
         console.error("Durum güncellenirken hata oluştu:", error);
       }
     },
-    [user, setApps]
+    [setApps]
   );
 
   const sonrakiAsama = useCallback(

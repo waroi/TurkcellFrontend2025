@@ -1,86 +1,111 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
-.fontPrimary {
-  font-family: 'Poppins', sans-serif;
-  letter-spacing: 0.03em;
+.adminContainer {
+  background: var(--primary-gradient);
+  min-height: 100vh;
+  padding: var(--space-xl);
 }
 
-.fontSecondary {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 300;
+.header {
+  background: var(--card-bg);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-xl);
 }
 
-.fontHeading {
-  font-family: 'Poppins', sans-serif;
+.title {
+  color: var(--text-primary);
+  font-size: var(--font-2xl);
+  font-weight: 700;
+}
+
+.backButton {
+  background: var(--primary-gradient);
+  border: none;
+  border-radius: var(--radius-sm);
+  color: white;
   font-weight: 600;
-  letter-spacing: 0.05em;
+  padding: var(--space-sm) var(--space-md);
+  transition: var(--transition);
 }
-
-.cardContainer {
-  padding: 1%;
-  background-color: #1e2749 !important;
-  transition: all 0.3s ease; 
+.backButton:hover {
+  transform: var(--button-hover-transform);
+  box-shadow: var(--shadow-hover);
 }
-.cardContainer:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-}
-
-.buttonColor {
-  background-color: #1e2749 !important;
-  transition: all 0.3s ease; 
-}
-
-.buttonColor:hover {
-  background-color: #28335a !important; 
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-}
-
-.backGround {
-  background-color: #f4f4f9;
-}
-
-.cardBackGround {
-  background-color: #0d3b66;
-  transition: all 0.3s ease; 
-}
-
-.cardBackGround:hover {
-  background-color: #154a7c; 
-  box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.15); 
-  transform: scale(1.01);
-}
-  
 .searchInput {
-  background-color: #f8f9fa;
-  border: 1px solid #e0e0e0;
-  border-radius: 50px;
-  padding: 12px 25px;
-  font-family: 'Poppins', sans-serif;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  padding: var(--space-md);
+  border: var(--border-input);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-lg);
+  transition: var(--transition);
 }
-
 .searchInput:focus {
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-  border-color: #1e2749;
   outline: none;
+  border-color: #fda085;
+  box-shadow: var(--input-focus-shadow);
 }
-
-.searchInput::placeholder {
-  color: #9e9e9e;
-  font-style: italic;
+.applicationCard {
+  background: var(--card-bg);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  margin-bottom: var(--space-lg);
 }
-
-.searchContainer {
-  position: relative;
-  margin-bottom: 1.5rem;
+.applicationCard:hover {
+  transform: var(--hover-transform);
+  box-shadow: var(--shadow-lg);
 }
-
-.searchIcon {
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #1e2749;
+.cardBody {
+  padding: var(--space-lg);
+}
+.cardTitle {
+  color: var(--text-primary);
+  font-size: var(--font-lg);
+  font-weight: 600;
+  padding-bottom: var(--space-sm);
+  border-bottom: var(--border-divider);
+  margin-bottom: var(--space-md);
+}
+.skillsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin-top: var(--space-xs);
+}
+.skillBadge {
+  background: var(--primary-gradient);
+  color: white;
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-lg);
+  font-size: var(--font-sm);
+}
+.cardFooter {
+  padding: var(--space-md);
+  display: flex;
+  justify-content: center;
+  gap: var(--space-md);
+  border-top: var(--border-base);
+}
+.approveButton {
+  background: var(--success-gradient);
+  border: none;
+  border-radius: var(--radius-sm);
+  color: white;
+  font-weight: 600;
+  padding: var(--space-sm) var(--space-md);
+  transition: var(--transition);
+}
+.rejectButton {
+  background: var(--danger-gradient);
+  border: none;
+  border-radius: var(--radius-sm);
+  color: white;
+  font-weight: 600;
+  padding: var(--space-sm) var(--space-md);
+  transition: var(--transition);
+}
+.approveButton:hover,
+.rejectButton:hover {
+  transform: var(--button-hover-transform);
+  box-shadow: var(--shadow-hover);
 }

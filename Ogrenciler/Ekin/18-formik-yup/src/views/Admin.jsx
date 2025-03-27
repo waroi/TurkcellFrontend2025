@@ -4,6 +4,7 @@ import { getForms } from "@/services/firebase";
 import ApplicationDetail from "#/admin/ApplicationDetail";
 import PendingApplications from "#/admin/PendingApplications";
 import CompletedApplications from "#/admin/CompletedApplications";
+import AllApplications from "#/admin/AllApplications";
 import { Tab, Pane } from "#/atoms/Tab";
 
 export default function AdminView() {
@@ -28,6 +29,9 @@ export default function AdminView() {
   return (
     <div className="container mt-4">
       <Tab>
+        <Pane id="all-applications" tab="Başvuru İlanları">
+          <AllApplications />
+        </Pane>
         <Pane id="applications" tab="Bekleyen Başvurular">
           <PendingApplications
             applications={applications.filter(
@@ -36,7 +40,6 @@ export default function AdminView() {
             onSelect={handleSelect}
           />
         </Pane>
-
         <Pane id="selected" tab="Seçilen">
           <ApplicationDetail
             application={detail}
@@ -44,7 +47,6 @@ export default function AdminView() {
             setDetail={setDetail}
           />
         </Pane>
-
         <Pane id="completed-applications" tab="Tamamlanmış Başvurular">
           <CompletedApplications
             applications={applications.filter(

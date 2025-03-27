@@ -1,4 +1,4 @@
-import { collection, getDocs } from "firebase/firestore";
+import { collection, query, where, getDocs } from "firebase/firestore";
 import { db } from "../firebase/firebaseConfig";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -8,30 +8,38 @@ const TechnicalTest = () => {
   const [answers, setAnswers] = useState({});
   const navigate = useNavigate();
 
+  const getRandomQuestions = async (difficulty, count) => {
+    const q = query(collection(db, "technicalTests"), where("difficulty", "==", difficulty));
+    const snapshot = await getDocs(q);
+    const allQuestions = snapshot.docs.map(doc => {
+      const data = doc.data();
+
+      try {
+        return {
+          id: doc.id,
+          ...data,
+          options: Array.isArray(data.options) ? data.options : JSON.parse(data.options),
+        };
+      } catch (error) {
+        console.error("JSON parsing error for options", error);
+        return {
+          id: doc.id,
+          ...data,
+          options: [],
+        };
+      }
+    });
+
+    return allQuestions.sort(() => 0.5 - Math.random()).slice(0, count);
+  };
+
   useEffect(() => {
     const fetchQuestions = async () => {
-      const snapshot = await getDocs(collection(db, "technicalTests"));
-      const questionList = snapshot.docs.map(doc => {
-        const data = doc.data();
+      const easyQuestions = await getRandomQuestions("easy", 1);
+      const mediumQuestions = await getRandomQuestions("medium", 2);
+      const hardQuestions = await getRandomQuestions("hard", 2);
 
-        try {
-          return {
-            id: doc.id,
-            ...data,
-            options: Array.isArray(data.options) ? data.options : JSON.parse(data.options),
-          };
-        } catch (error) {
-          console.error("JSON parsing error for options", error);
-          return {
-            id: doc.id,
-            ...data,
-            options: [],
-          };
-        }
-      });
-
-      const randomQuestions = questionList.sort(() => 0.5 - Math.random()).slice(0, 5);
-      setQuestions(randomQuestions);
+      setQuestions([...easyQuestions, ...mediumQuestions, ...hardQuestions]);
     };
 
     fetchQuestions();

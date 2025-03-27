@@ -56,8 +56,9 @@ const GeneralForm = () => {
                 },
                 expectedSalary: "",
                 isAccepted: false,
-                status: "Beklemede",
-                message: "",
+                status: "Değerlendirme",
+                userMessage: "Değerlendirme Aşamasında",
+                adminMessage: "Test Gönder",
               }}
               validationSchema={stepSchemas[activeStep]}
               onSubmit={submitApplication}

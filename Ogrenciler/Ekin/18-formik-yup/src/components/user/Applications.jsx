@@ -22,9 +22,9 @@ const MyApplications = () => {
 
   return (
     <div className="mt-3">
-      {userApplications.map((app) => (
+      {userApplications.map((app, index) => (
         <ApplicationCard
-          key={app.id}
+          key={index}
           application={app}
           showPreferences={true}
           showStatus={true}

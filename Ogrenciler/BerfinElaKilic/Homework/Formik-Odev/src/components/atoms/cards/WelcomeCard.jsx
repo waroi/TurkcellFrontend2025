@@ -19,9 +19,7 @@ function WelcomeCard({
       <Card className="text-center border-0 bg-transparent">
         {header && <Card.Header>{header}</Card.Header>}
         <Card.Body>
-          <Card.Title className="fw-bold fs-2">
-            Hoşgeldin {userName}!
-          </Card.Title>
+          <Card.Title className="fw-bold fs-2">{userName}</Card.Title>
           <Card.Text>{body}</Card.Text>
           <NavLink to={navigateTo}>
             <WarningButton> {navigationButtonTitle}</WarningButton>

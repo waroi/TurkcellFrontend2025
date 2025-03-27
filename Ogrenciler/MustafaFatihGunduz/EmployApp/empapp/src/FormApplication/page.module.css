@@ -1,0 +1,91 @@
+.formContainer {
+  background: var(--primary-gradient);
+  min-height: 100vh;
+  padding: var(--space-xl) 0;
+}
+.formCard {
+  background: var(--card-bg);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  border: var(--border-base);
+  transition: var(--transition);
+}
+.formTitle {
+  color: var(--text-primary);
+  font-size: var(--font-2xl);
+  font-weight: 600;
+  margin-bottom: var(--space-xl);
+}
+.inputGroup {
+  margin-bottom: var(--space-lg);
+}
+.formInput {
+  background: var(--card-bg);
+  border: var(--border-input);
+  border-radius: var(--radius-sm);
+  padding: var(--space-md);
+  transition: var(--transition);
+}
+.formInput:focus {
+  border-color: #fda085;
+  box-shadow: var(--input-focus-shadow);
+  outline: none;
+}
+.submitButton {
+  background: var(--primary-gradient);
+  border: none;
+  border-radius: var(--radius-sm);
+  color: white;
+  font-weight: 600;
+  padding: var(--space-md) var(--space-xl);
+  transition: var(--transition);
+}
+.submitButton:hover {
+  transform: var(--button-hover-transform);
+  box-shadow: var(--shadow-hover);
+}
+.submitButton:disabled {
+  background: var(--border-color);
+  transform: none;
+  box-shadow: none;
+}
+.errorText {
+  color: var(--status-rejected-text);
+  font-size: var(--font-sm);
+  margin-top: var(--space-xs);
+}
+.headerButtons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--space-xl);
+  font-family: var(--font-family-header);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  font-size: var(--font-lg);
+}
+.loginButton {
+  background: var(--primary-gradient);
+  border: none;
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  color: white;
+  font-weight: 600;
+  padding: var(--space-sm) var(--space-md);
+  transition: var(--transition);
+}
+.loginButton:hover {
+  transform: var(--button-hover-transform);
+  box-shadow: var(--shadow-hover);
+}
+.logoutButton {
+  background: var(--danger-gradient);
+  border: none;
+  border-radius: var(--radius-sm);
+  color: white;
+  padding: var(--space-sm) var(--space-md);
+  transition: var(--transition);
+}
+.logoutButton:hover {
+  transform: var(--button-hover-transform);
+  box-shadow: var(--shadow-hover);
+}

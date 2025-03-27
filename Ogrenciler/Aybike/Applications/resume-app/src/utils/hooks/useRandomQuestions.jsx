@@ -1,29 +1,35 @@
-import { useState } from 'react';
-import { allQuestions } from '../constans/questions';
+import { useState, useEffect } from 'react';
+import { allQuestions } from './../constans/questions'
+import { TestService } from '../../services/TestService';
 
 export const useRandomQuestions = () => {
     const [selectedQuestions, setSelectedQuestions] = useState([])
+    const [isLoading, setIsLoading] = useState(false)
+    const [error, setError] = useState(null)
 
-    const selectRandomQuestions = () => {
-        const questionsCopy = [...allQuestions]
-        const selected = []
+    useEffect(() => {
+        const fetchQuestions = async () => {
+            setIsLoading(true)
+            try {
+                const questionCounts = await TestService.getQuestionSettingsByEmail()
+                const selected = []
 
-        const count = Math.min(5, questionsCopy.length)
+                Object.entries(questionCounts.data.difficulty).forEach(([category, count]) => {
+                    const categoryQuestions = allQuestions[category]
+                    const shuffled = [...categoryQuestions].sort(() => Math.random() - 0.5)
+                    selected.push(...shuffled.slice(0, count))
+                })
 
-        for (let i = 0; i < count; i++) {
-            const randomIndex = Math.floor(Math.random() * questionsCopy.length)
-
-            selected.push(questionsCopy[randomIndex])
-
-            questionsCopy.splice(randomIndex, 1)
+                setSelectedQuestions(selected)
+            } catch (err) {
+                setError("Soru üretilirken bri hata olluştu")
+            } finally {
+                setIsLoading(false)
+            }
         }
 
-        setSelectedQuestions(selected)
-    }
-
-    useState(() => {
-        selectRandomQuestions()
+        fetchQuestions()
     }, [])
 
-    return { selectedQuestions, selectRandomQuestions }
+    return { selectedQuestions, isLoading, error }
 }

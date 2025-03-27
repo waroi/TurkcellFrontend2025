@@ -1,107 +1,43 @@
+import { useState } from "react";
+import { NavLink, useNavigate } from "react-router";
 import Button from "../../atoms/buttons/Button";
+import Modal from "react-bootstrap/Modal"; // Assuming you're using react-bootstrap for modals
+import { getShuffledQuestionsByCategory } from "../../../services/QuestionService"; // Import the function
+import questionData from "../../../constants/questions.json"; // Import question data
 
 const ApplicationDetails = ({ application, user, sonrakiAsama }) => {
+  const [showModal, setShowModal] = useState(false);
+  const [easyCount, setEasyCount] = useState(0);
+  const [mediumCount, setMediumCount] = useState(0);
+  const [hardCount, setHardCount] = useState(0);
+  const [quizCounts, setQuizCounts] = useState({}); // Local state for quiz counts
+  const navigate = useNavigate();
+
+  const handleModalOpen = () => setShowModal(true);
+  const handleModalClose = () => setShowModal(false);
+
+  const handleSubmit = () => {
+    console.log(easyCount);
+
+    setQuizCounts({
+      easy: easyCount,
+      medium: mediumCount,
+      hard: hardCount,
+    });
+
+    const selectedQuestions = getShuffledQuestionsByCategory(
+      easyCount,
+      mediumCount,
+      hardCount
+    );
+    console.log(selectedQuestions);
+    handleModalClose();
+  };
+  const startQuiz = () => {
+    navigate(`/quiz/${application.id}`, { state: { quizCounts } });
+  };
+
   return (
-    // <div className="accordion-body bg-white p-4">
-    //   <div className="row">
-    //     <div className="col-lg-4">
-    //       <h5 className="fw-bold text-secondary">Kişisel Bilgiler</h5>
-    //       <p>
-    //         <strong>Email:</strong> {application.email}
-    //       </p>
-    //       <p>
-    //         <strong>Telefon:</strong> {application.phone}
-    //       </p>
-    //       <p>
-    //         <strong>Doğum Tarihi:</strong> {application.birthDate}
-    //       </p>
-    //     </div>
-    //     <div className="col-lg-4">
-    //       <h5 className="fw-bold text-secondary">Eğitim Bilgileri</h5>
-    //       <p>
-    //         <strong>Üniversite:</strong> {application.education.university}
-    //       </p>
-    //       <p>
-    //         <strong>Bölüm:</strong> {application.education.department}
-    //       </p>
-    //       <p>
-    //         <strong>Mezuniyet Yılı:</strong>{" "}
-    //         {application.education.graduationYear}
-    //       </p>
-    //       <p>
-    //         <strong>GPA:</strong> {application.education.gpa}
-    //       </p>
-    //     </div>
-    //     <div className="col-lg-4">
-    //       <h5 className="fw-bold text-secondary">Deneyim & Beceriler</h5>
-    //       <p>
-    //         <strong>Şirket:</strong>{" "}
-    //         {application.experience.currentCompany ||
-    //           "Mevcut şirket bilgisi yok."}
-    //       </p>
-    //       <p>
-    //         <strong>Pozisyon:</strong>{" "}
-    //         {application.experience.position || "Mevcut pozisyon bilgisi yok."}
-    //       </p>
-    //       <p>
-    //         <strong>Deneyim Yılı:</strong>{" "}
-    //         {application.experience.years || "Mevcut deneyim yılı bilgisi yok."}
-    //       </p>
-    //       <p>
-    //         <strong>Programming Languages:</strong>{" "}
-    //         {application.skills.programmingLanguages
-    //           ? Object.entries(application.skills.programmingLanguages)
-    //               .filter(([_, value]) => value)
-    //               .map(([key]) => key)
-    //               .join(", ")
-    //           : "Programlama dili becerisi yok."}
-    //       </p>
-    //       <p>
-    //         <strong>Languages:</strong>{" "}
-    //         {application.skills.languages
-    //           ? Object.entries(application.skills.languages)
-    //               .filter(([_, value]) => value)
-    //               .map(([key]) => key)
-    //               .join(", ")
-    //           : "Dil becerisi yok."}
-    //       </p>
-    //     </div>
-    //   </div>
-    //   <div className="mt-4 d-flex justify-content-end">
-    //     {user && application.status === "Beklemede" && user.role === "admin" ? (
-    //       <>
-    //         <Button
-    //           className="btn btn-success me-3 px-4 py-2 shadow"
-    //           onClick={() => onUpdateStatus(application, "Onay")}
-    //         >
-    //           Onayla
-    //         </Button>
-    //         <Button
-    //           className="btn btn-danger px-4 py-2 shadow"
-    //           onClick={() => onUpdateStatus(application, "Red")}
-    //         >
-    //           Reddet
-    //         </Button>
-    //       </>
-    //     ) : (
-    //       <>
-    //         {application.status === "Beklemede" && (
-    //           <span className="badge text-bg-primary">
-    //             Değerlendirme Aşamasında
-    //           </span>
-    //         )}
-    //         {application.status === "Onay" && (
-    //           <span className="badge text-bg-success">Başvuru Onaylandı</span>
-    //         )}
-    //         {application.status === "Red" && (
-    //           <span className="badge text-bg-danger">
-    //             Başvuru kabul edilmedi
-    //           </span>
-    //         )}
-    //       </>
-    //     )}
-    //   </div>
-    // </div>
     <div className="accordion-body bg-white p-4">
       <div className="row">
         <div className="col-lg-4">
@@ -169,7 +105,7 @@ const ApplicationDetails = ({ application, user, sonrakiAsama }) => {
       </div>
       <div className="mt-4 d-flex justify-content-end">
         {user &&
-        (application.status === "Beklemede" ||
+        (application.status === "Değerlendirme" ||
           application.status === "Test Kontrol") &&
         user.role === "admin" ? (
           <>
@@ -181,10 +117,11 @@ const ApplicationDetails = ({ application, user, sonrakiAsama }) => {
             <Button
               className="btn btn-success me-3 px-4 py-2 shadow"
               onClick={() => {
+                handleModalOpen();
                 sonrakiAsama(application);
               }}
             >
-              {application.status} adıma geç
+              {application.adminMessage}
             </Button>
             <Button
               className="btn btn-danger px-4 py-2 shadow"
@@ -203,39 +140,92 @@ const ApplicationDetails = ({ application, user, sonrakiAsama }) => {
           </>
         ) : (
           <>
-            {application.status === "Beklemede" && (
+            {application.status === "Değerlendirme" && (
               <span className="badge text-bg-primary">
-                Değerlendirme Aşamasında
+                {application.userMessage}
               </span>
             )}
             {application.status === "Test" &&
               (user?.role === "admin" ? (
-                <span className="badge text-bg-warning">Test Gönderildi</span>
+                <span className="badge text-bg-warning">
+                  {application.adminMessage}
+                </span>
               ) : (
-                <NavLink to={`/quiz/${application.id}`}>Teste Git</NavLink>
+                // <NavLink to={`/quiz/${application.id}`}>
+                //   {application.userMessage}
+                // </NavLink>
+                <button onClick={startQuiz}>{application.userMessage}</button>
               ))}
-
-            {user?.role === "user" && application.status === "Test Kontrol" && (
+            {application.status === "Test Kontrol" && (
               <span className="badge text-bg-primary">
-                Test sonuçlarınız değerlendiriliyor.
+                {user?.role === "user"
+                  ? application.userMessage
+                  : application.adminMessage}
               </span>
             )}
             {application.status === "Mülakat" && (
               <span className="badge text-bg-primary">
-                Tebrikler Mülakat adımına geçmeye hak kazandınız.
+                {user?.role === "user"
+                  ? application.userMessage
+                  : application.adminMessage}
               </span>
-            )}
-            {application.status === "Onay" && (
-              <span className="badge text-bg-success">Başvuru Onaylandı</span>
             )}
             {application.status === "Red" && (
               <span className="badge text-bg-danger">
-                Başvuru kabul edilmedi
+                {application.userMessage}
               </span>
             )}
           </>
         )}
       </div>
+
+      <Modal show={showModal} onHide={handleModalClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Test Hazırlayın</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <form>
+            <div className="form-group">
+              <label htmlFor="easyCount">Kolay Soru Adedi:</label>
+              <input
+                type="number"
+                className="form-control"
+                id="easyCount"
+                value={easyCount}
+                onChange={(e) => setEasyCount(e.target.value)}
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="mediumCount">Orta Soru Adedi:</label>
+              <input
+                type="number"
+                className="form-control"
+                id="mediumCount"
+                value={mediumCount}
+                onChange={(e) => setMediumCount(e.target.value)}
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="hardCount">Zor Soru Adedi:</label>
+              <input
+                type="number"
+                className="form-control"
+                id="hardCount"
+                value={hardCount}
+                onChange={(e) => setHardCount(e.target.value)}
+              />
+            </div>
+          </form>
+        </Modal.Body>
+        <Modal.Footer>
+          <button variant="secondary" onClick={handleModalClose}>
+            Close
+          </button>
+          <button variant="primary" onClick={handleSubmit}>
+            Submit
+          </button>
+        </Modal.Footer>
+      </Modal>
     </div>
   );
 };
