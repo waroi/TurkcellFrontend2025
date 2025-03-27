@@ -16,47 +16,48 @@ export const useApplications = () => {
   const [passedCandidates, setPassedCandidates] = useState([]);
   const [failedCandidates, setFailedCandidates] = useState([]);
 
-  // Test sonuçlarını getirme fonksiyonu
   const fetchTestResults = async () => {
     try {
-      const attemptsRef = collection(db, "test_attempts");
-      const attemptsSnapshot = await getDocs(attemptsRef);
+        const attemptsRef = collection(db, "test_attempts");
+        const attemptsSnapshot = await getDocs(attemptsRef);
 
-      if (attemptsSnapshot.empty) {
+        if (attemptsSnapshot.empty) {
+            setPassedCandidates([]);
+            setFailedCandidates([]);
+            return;
+        }
+
+        const attempts = attemptsSnapshot.docs.map((doc) => ({
+            id: doc.id,
+            ...doc.data(),
+        }));
+
+        console.log("Fetched test results:", attempts);
+
+        const completedAttempts = attempts.filter(
+            (attempt) => attempt.completed && attempt.attempted
+        );
+
+        console.log("Completed Attempts:", completedAttempts);
+
+        const passed = completedAttempts.filter((attempt) => attempt.score >= 7);
+        const failed = completedAttempts.filter((attempt) => attempt.score < 7);
+
+        console.log("Passed Candidates:", passed);
+        console.log("Failed Candidates:", failed);
+
+        setPassedCandidates(passed);
+        setFailedCandidates(failed);
+    } catch (err) {
+        console.error("Test sonuçları getirilirken hata oluştu:", err);
         setPassedCandidates([]);
         setFailedCandidates([]);
-        return;
-      }
-
-      const attempts = attemptsSnapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      }));
-
-      // Tamamlanmış ve aktif testleri filtrele
-      const completedAttempts = attempts.filter(
-        (attempt) => attempt.completed && attempt.attempted
-      );
-
-      // Geçen ve kalan adayları ayır
-      const passed = completedAttempts.filter((attempt) => attempt.score >= 7);
-      const failed = completedAttempts.filter((attempt) => attempt.score < 7);
-
-      setPassedCandidates(passed);
-      setFailedCandidates(failed);
-    } catch (err) {
-      console.error("Test sonuçları getirilirken hata oluştu:", err);
-      setPassedCandidates([]);
-      setFailedCandidates([]);
     }
-  };
-
-  // İlk yüklemede test sonuçlarını getir
+};
   useEffect(() => {
     fetchTestResults();
   }, []);
 
-  // Tüm başvuruları getir
   const fetchAllData = useCallback(async () => {
     try {
       setLoading(true);
@@ -79,7 +80,6 @@ export const useApplications = () => {
     }
   }, []);
 
-  // Başvuruyu onayla
   const handleApprove = useCallback(async (application) => {
     try {
       await approveApplication(application);
@@ -95,7 +95,6 @@ export const useApplications = () => {
     }
   }, []);
 
-  // Başvuruyu reddet
   const handleReject = useCallback(async (application) => {
     try {
       await rejectApplication(application);
@@ -111,7 +110,6 @@ export const useApplications = () => {
     }
   }, []);
 
-  // İlk yüklemede tüm verileri getir
   useEffect(() => {
     fetchAllData();
   }, [fetchAllData]);

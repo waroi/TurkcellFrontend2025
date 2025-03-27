@@ -4,6 +4,7 @@ import AdminHeader from "./AdminHeader";
 import ApplicationList from "./ApplicationList";
 import ApplicationModal from "./ApplicationModal";
 import QuestionManagementForm from "./QuestionManagementForm";
+import AdminQuizSettings from "./AdminQuizSettings";
 
 const AdminDashboard = () => {
   const [selectedApplication, setSelectedApplication] = useState(null);
@@ -53,9 +54,9 @@ const AdminDashboard = () => {
 
   return (
     <div className="container-fluid py-4">
+    <AdminQuizSettings/>
       <AdminHeader onRefresh={refreshData} />
 
-      {/* Navigation Tabs */}
       <ul className="nav nav-tabs mb-4">
         <li className="nav-item">
           <button
@@ -77,7 +78,6 @@ const AdminDashboard = () => {
         </li>
       </ul>
 
-      {/* Conditional Rendering Based on Active Tab */}
       {activeTab === "applications" ? (
         <>
           <div className="row g-4">

@@ -21,6 +21,7 @@ const Input = ({
         className={`form-control ${error ? "is-invalid" : ""}`}
         id={id}
         value={value || ""}
+        readOnly = {type === "email" ? true : false}
         onChange={onChange}
         placeholder={placeholder}
       />
