@@ -50,8 +50,6 @@ export function setUser(id, email, name, surname) {
 }
 
 export function login(email, password) {
-  console.log("firebase", email, password);
-
   return signInWithEmailAndPassword(auth, email, password).then(
     (credendials) => credendials.user.uid
   );
@@ -66,6 +64,7 @@ export function getUser(user) {
     snapshot.data()
   );
 }
+
 //* Application ====================================================================================================
 
 export function getApplications() {
@@ -103,14 +102,16 @@ export function getForms() {
   );
 }
 
-export function setApplication(id, status) {
+export function setApplication(application, id, status) {
   return status == "accepted"
-    ? addExam().then((exam) => {
-        updateDoc(doc(database, "forms", id), {
-          status,
-          exam,
-        }).then(() => id);
-      })
+    ? getApplication(application).then(({ difficulty }) =>
+        addExam(difficulty).then((exam) => {
+          updateDoc(doc(database, "forms", id), {
+            status,
+            exam,
+          }).then(() => id);
+        })
+      )
     : updateDoc(doc(database, "forms", id), {
         status,
       }).then(() => id);
@@ -120,18 +121,44 @@ export function setApplication(id, status) {
 //   return addDoc(collection(database, "questions"), q);
 // }
 
-function addExam() {
-  return getFiveRandomQuestions().then((questions) =>
+function addExam(difficulty) {
+  return getQuestions(difficulty).then((questions) =>
     addDoc(collection(database, "exams"), {
       questions,
     }).then((exam) => exam.id)
   );
 
-  function getFiveRandomQuestions() {
-    return getDocs(collection(database, "questions")).then((questions) => {
-      questions = questions.docs.map((question) => question.id);
+  // function getFiveRandomQuestions() {
+  //   return getDocs(collection(database, "questions")).then((questions) => {
+  //     questions = questions.docs.map((question) => question.id);
 
-      return shuffle(questions).slice(0, 5);
+  //     return shuffle(questions).slice(0, 5);
+  //   });
+  // }
+
+  function getQuestions(difficulty) {
+    return getDocs(collection(database, "questions")).then((questions) => {
+      questions = shuffle(
+        questions.docs.map((question) => ({
+          id: question.id,
+          difficulty: question.data().difficulty,
+        }))
+      );
+
+      return questions
+        .filter((question) => !question.difficulty)
+        .slice(0, difficulty[0])
+        .concat(
+          questions
+            .filter((question) => question.difficulty == 1)
+            .slice(0, difficulty[1])
+            .concat(
+              questions
+                .filter((question) => question.difficulty == 2)
+                .slice(0, difficulty[2])
+            )
+        )
+        .map((question) => question.id);
     });
   }
 }

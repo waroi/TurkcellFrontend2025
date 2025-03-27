@@ -10,7 +10,7 @@ export default function ApplicationDetail({
   const userStore = useUserStore();
 
   function complete(status) {
-    setApplication(application.form, status);
+    setApplication(application.application, application.form, status);
     userStore.setApplicationStatus(application.form, status);
     goCompletedApplications();
     setDetail(null);
