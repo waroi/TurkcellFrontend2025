@@ -3,7 +3,17 @@ import { uploadJobs } from "../firebase/firebaseUpload";
 import Navbar from "../components/Navbar";
 
 const UploadJobForm = () => {
-    const [job, setJob] = useState({ title: "", description: "" });
+    const [job, setJob] = useState({
+        title: "",
+        description: "",
+        location: "",
+        type: "",
+        startDate: "",
+        endDate: "",
+        area: "",
+        responsivities: "",
+        requirements: ""
+    });
 
     const handleChange = (e) => {
         setJob({ ...job, [e.target.name]: e.target.value });
@@ -14,7 +24,17 @@ const UploadJobForm = () => {
         try {
             await uploadJobs(job);
             alert("İş ilanı başarıyla yüklendi!");
-            setJob({ title: "", description: "" });
+            setJob({
+                title: "",
+                description: "",
+                location: "",
+                type: "",
+                startDate: "",
+                endDate: "",
+                area: "",
+                responsivities: "",
+                requirements: ""
+            });
         } catch (error) {
             console.error("Hata oluştu:", error);
         }
@@ -45,6 +65,15 @@ const UploadJobForm = () => {
                     <div className="col-md-6">
                         <label className="form-label">Son Başvuru Tarihi</label>
                         <input type="date" className="form-control" name="endDate" value={job.endDate} onChange={handleChange} required />
+                    </div>
+                    <div className="col-12">
+                        <label className="form-label">İş Alanı</label>
+                        <select className="form-select" name="area" value={job.area} onChange={handleChange} required>
+                            <option value="">Seçiniz</option>
+                            <option value="front">Front-End Geliştirici</option>
+                            <option value="back">Back-End Geliştirici</option>
+                            <option value="yapay-zeka">Yapay Zeka Geliştirici</option>
+                        </select>
                     </div>
                     <div className="col-12">
                         <label className="form-label">Açıklama</label>

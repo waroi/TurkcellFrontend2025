@@ -22,6 +22,7 @@ function WorkForm() {
     department: "",
     grade: "",
     position: "",
+    area: "",
     foreignlanguage: [],
     experience: [],
     technologies: [],
