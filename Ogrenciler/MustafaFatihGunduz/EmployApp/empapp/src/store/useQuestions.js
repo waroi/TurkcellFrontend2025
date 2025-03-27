@@ -1,9 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import questions from "../questions/question.json";
+import useAdminTest from "./useAdminTest";
 
 const useQuestions = () => {
   const [selectedQuestions, setSelectedQuestions] = useState([]);
   const [showTest, setShowTest] = useState(false);
+  const { fetchTestDetails } = useAdminTest()
   const handleStartTest = async (application) => {
     const testData = await fetchTestDetails(application.id);
     if (!testData) {

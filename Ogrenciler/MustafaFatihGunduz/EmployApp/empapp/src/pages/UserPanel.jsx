@@ -4,8 +4,10 @@ import { Link } from "react-router-dom";
 import TestModal from "../components/TestModal/TestModal";
 import useUserPanel from "../store/useUserPanel";
 import useQuestions from "../store/useQuestions";
-import { auth } from "../../firebase_config";
+import { useState } from "react";
+import useAdminTest from "../store/useAdminTest";
 const UserPanel = () => {
+  const [totalCount,setTotalCount] = useState();
   const {
     applications,
     loading,
@@ -15,9 +17,14 @@ const UserPanel = () => {
     setCurrentApplication,
   } = useUserPanel();
 
+  const {fetchTestDetails} = useAdminTest();
+
   const { handleStartTest, showTest, setShowTest, selectedQuestions } =
     useQuestions();
-
+    const handleQuestionCount = async (application) => {
+      const testData = await fetchTestDetails(application.id);
+      setTotalCount(testData.totalQuestion);
+    }
   if (loading) {
     return (
       <div className="container mt-4">
@@ -84,7 +91,7 @@ const UserPanel = () => {
                           !application.testResults && (
                             <button
                               className="btn btn-primary mt-2"
-                              onClick={async () => await startTest(application)}
+                              onClick={async () =>{ await startTest(application); await handleQuestionCount(application)}}
                             >
                               Testi Başlat
                             </button>
@@ -96,7 +103,7 @@ const UserPanel = () => {
                             <p className="mb-1">
                               Doğru Cevap:{" "}
                               {application.testResults.correctAnswers}
-                              /5
+                              / {totalCount}
                             </p>
                             <p className="mb-0">
                               Durum:

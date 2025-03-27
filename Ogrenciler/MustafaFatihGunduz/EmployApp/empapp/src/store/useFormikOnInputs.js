@@ -32,6 +32,7 @@ const useFormikOnInputs = () => {
       university: "",
       isGraduate: false,
       skills: "",
+      status: "enchanted"
     },
 
     validationSchema: basicSchema,

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { doc, setDoc, getDoc } from "firebase/firestore";
 import { auth, db } from "../../firebase_config";
 import useAdminPanel from "./useAdminPanel";
@@ -12,6 +12,10 @@ const useAdminTest = () => {
   const [mediumQuestion, setMediumQuestion] = useState("");
   const [currentApplication, setCurrentApplication] = useState(null);
 
+  useEffect(() => {
+    console.log("Current Application Updated:", currentApplication);
+  }, [currentApplication]);
+  
   const openModal = async (app) => {
     setCurrentApplication(app);
     setShowModal(true);
@@ -42,11 +46,8 @@ const useAdminTest = () => {
       setTotalQuestion(total);
       setHardQuestion(hard);
       setMediumQuestion(medium);
-      const test = await fetchTestDetails(application.id);
-      if (test) {
-        console.log("Kayıtederken app:",application)
-        await handleApprove(application);
-      }
+      await fetchTestDetails(application.id);
+      await handleApprove(application);
       return true;
     } catch (error) {
       console.log("Test kaydetme hatası:", error);
