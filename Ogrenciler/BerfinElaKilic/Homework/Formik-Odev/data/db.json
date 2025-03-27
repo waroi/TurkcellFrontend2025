@@ -467,500 +467,492 @@
       "senderAdminId": "1"
     }
   ],
+
   "questions": [
     {
-      "question": "JavaScript'te Event Bubbling nedir?",
-      "options": [
-        "Olayın en içteki elementten dışa doğru yayılmasıdır.",
-        "Olayların engellenmesidir.",
-        "Yalnızca belirli bir elementte çalışmasıdır.",
-        "Event Listener'ların kaldırılmasıdır."
-      ],
-      "answer": "Olayın en içteki elementten dışa doğru yayılmasıdır.",
-      "category": "JavaScript",
-      "level": "Medium",
-      "subcategory": "Olay Yönetimi"
-    },
-    {
-      "question": "TypeScript nedir?",
-      "options": [
-        "JavaScript'in kütüphanesidir.",
-        "JavaScript'in tip kontrollü üst kümesidir.",
-        "Sadece backend için kullanılan bir dildir.",
-        "CSS çerçevesidir."
-      ],
-      "answer": "JavaScript'in tip kontrollü üst kümesidir.",
-      "category": "TypeScript",
-      "level": "Medium",
-      "subcategory": "Dil Bilgisi"
-    },
-    {
-      "question": "React'te 'key' prop'unun amacı nedir?",
-      "options": [
-        "CSS stilini belirlemek",
-        "Her bileşene özgün kimlik sağlamak",
-        "State yönetimini kolaylaştırmak",
-        "Yalnızca liste uzunluğunu belirlemek"
-      ],
-      "answer": "Her bileşene özgün kimlik sağlamak",
-      "category": "React",
-      "level": "Medium",
-      "subcategory": "Bileşen Yönetimi"
-    },
-    {
-      "question": "Vue.js'de 'v-model' direktifi ne işe yarar?",
-      "options": [
-        "Sadece okuma işlemleri için kullanılır.",
-        "Bileşenler arası veri taşımak için kullanılır.",
-        "Form elemanları ile çift yönlü veri bağlama sağlar.",
-        "Yalnızca stil düzenlemek için kullanılır."
-      ],
-      "answer": "Form elemanları ile çift yönlü veri bağlama sağlar.",
-      "category": "Vue.js",
-      "level": "Medium",
-      "subcategory": "Veri Bağlama"
-    },
-    {
-      "question": "Angular'da 'ngFor' yapısı ne için kullanılır?",
-      "options": [
-        "Sadece CSS düzenlemek için",
-        "Döngü oluşturmak için",
-        "Koşullu ifadeler yazmak için",
-        "Servis çağrıları yapmak için"
-      ],
-      "answer": "Döngü oluşturmak için",
-      "category": "Angular",
-      "level": "Medium",
-      "subcategory": "Döngü Yönetimi"
-    },
-    {
-      "question": "React'te 'useState' Hook'u ne işe yarar?",
-      "options": [
-        "Bileşenler arası veri taşımak için",
-        "Bileşen içindeki durumları yönetmek için",
-        "Yalnızca stil değiştirmek için",
-        "Yalnızca HTTP istekleri yapmak için"
-      ],
-      "answer": "Bileşen içindeki durumları yönetmek için",
-      "category": "React",
-      "level": "Medium",
-      "subcategory": "State Yönetimi"
-    },
-    {
-      "question": "CSS'de Flexbox özelliği ne için kullanılır?",
-      "options": [
-        "Sayfaya arka plan eklemek için",
-        "Grid tabanlı düzenler oluşturmak için",
-        "Öğe hizalama ve düzenleme için",
-        "Yalnızca mobil uyumluluk için"
-      ],
-      "answer": "Öğe hizalama ve düzenleme için",
-      "category": "CSS",
-      "level": "Medium",
-      "subcategory": "Düzenleme"
-    },
-    {
-      "question": "JavaScript'te Promise nedir?",
-      "options": [
-        "Senkron işlemleri yönetmek için kullanılan yapı",
-        "Zamanlayıcı işlevi",
-        "Asenkron işlemleri yönetmek için kullanılan yapı",
-        "Hata yakalamak için kullanılan yapı"
-      ],
-      "answer": "Asenkron işlemleri yönetmek için kullanılan yapı",
-      "category": "JavaScript",
-      "level": "Medium",
-      "subcategory": "Asenkron Programlama"
-    },
-    {
-      "question": "JavaScript'te Event Bubbling nedir?",
-      "options": [
-        "Olayın en içteki elementten dışa doğru yayılmasıdır.",
-        "Olayların engellenmesidir.",
-        "Yalnızca belirli bir elementte çalışmasıdır.",
-        "Event Listener'ların kaldırılmasıdır."
-      ],
-      "answer": "Olayın en içteki elementten dışa doğru yayılmasıdır.",
-      "category": "JavaScript",
-      "level": "Medium",
-      "subcategory": "Olay Yönetimi"
-    },
-    {
-      "question": "TypeScript nedir?",
-      "options": [
-        "JavaScript'in kütüphanesidir.",
-        "JavaScript'in tip kontrollü üst kümesidir.",
-        "Sadece backend için kullanılan bir dildir.",
-        "CSS çerçevesidir."
-      ],
-      "answer": "JavaScript'in tip kontrollü üst kümesidir.",
-      "category": "TypeScript",
-      "level": "Medium",
-      "subcategory": "Dil Bilgisi"
-    },
-    {
-      "question": "React'te 'key' prop'unun amacı nedir?",
-      "options": [
-        "CSS stilini belirlemek",
-        "Her bileşene özgün kimlik sağlamak",
-        "State yönetimini kolaylaştırmak",
-        "Yalnızca liste uzunluğunu belirlemek"
-      ],
-      "answer": "Her bileşene özgün kimlik sağlamak",
-      "category": "React",
-      "level": "Medium",
-      "subcategory": "Bileşen Yönetimi"
-    },
-    {
-      "question": "Vue.js'de 'v-model' direktifi ne işe yarar?",
-      "options": [
-        "Sadece okuma işlemleri için kullanılır.",
-        "Bileşenler arası veri taşımak için kullanılır.",
-        "Form elemanları ile çift yönlü veri bağlama sağlar.",
-        "Yalnızca stil düzenlemek için kullanılır."
-      ],
-      "answer": "Form elemanları ile çift yönlü veri bağlama sağlar.",
-      "category": "Vue.js",
-      "level": "Medium",
-      "subcategory": "Veri Bağlama"
-    },
-    {
-      "question": "Angular'da 'ngFor' yapısı ne için kullanılır?",
-      "options": [
-        "Sadece CSS düzenlemek için",
-        "Döngü oluşturmak için",
-        "Koşullu ifadeler yazmak için",
-        "Servis çağrıları yapmak için"
-      ],
-      "answer": "Döngü oluşturmak için",
-      "category": "Angular",
-      "level": "Medium",
-      "subcategory": "Döngü Yönetimi"
-    },
-    {
-      "question": "React'te 'useState' Hook'u ne işe yarar?",
-      "options": [
-        "Bileşenler arası veri taşımak için",
-        "Bileşen içindeki durumları yönetmek için",
-        "Yalnızca stil değiştirmek için",
-        "Yalnızca HTTP istekleri yapmak için"
-      ],
-      "answer": "Bileşen içindeki durumları yönetmek için",
-      "category": "React",
-      "level": "Medium",
-      "subcategory": "State Yönetimi"
-    },
-    {
-      "question": "CSS'de Flexbox özelliği ne için kullanılır?",
-      "options": [
-        "Sayfaya arka plan eklemek için",
-        "Grid tabanlı düzenler oluşturmak için",
-        "Öğe hizalama ve düzenleme için",
-        "Yalnızca mobil uyumluluk için"
-      ],
-      "answer": "Öğe hizalama ve düzenleme için",
-      "category": "CSS",
-      "level": "Medium",
-      "subcategory": "Düzenleme"
-    },
-    {
-      "question": "JavaScript'te Promise nedir?",
-      "options": [
-        "Senkron işlemleri yönetmek için kullanılan yapı",
-        "Zamanlayıcı işlevi",
-        "Asenkron işlemleri yönetmek için kullanılan yapı",
-        "Hata yakalamak için kullanılan yapı"
-      ],
-      "answer": "Asenkron işlemleri yönetmek için kullanılan yapı",
-      "category": "JavaScript",
-      "level": "Medium",
-      "subcategory": "Asenkron Programlama"
-    },
-    {
-      "question": "Next.js'de API Routes ne işe yarar?",
-      "options": [
-        "Sunucu tarafında API oluşturmak için",
-        "Yalnızca istemci tarafında çalışmak için",
-        "Veritabanı işlemlerini yürütmek için",
-        "Yalnızca dosya yüklemek için"
-      ],
-      "answer": "Sunucu tarafında API oluşturmak için",
-      "category": "Next.js",
-      "level": "Medium",
-      "subcategory": "API Yönetimi"
-    },
-    {
-      "question": "Angular'da Service ne için kullanılır?",
-      "options": [
-        "Yalnızca stil düzenlemek için",
-        "Bileşenler arasında veri paylaşmak için",
-        "Sadece HTTP istekleri yapmak için",
-        "Yalnızca yönlendirme için"
-      ],
-      "answer": "Bileşenler arasında veri paylaşmak için",
-      "category": "Angular",
-      "level": "Medium",
-      "subcategory": "Servis Yönetimi"
-    },
-    {
-      "question": "Nesne (Object) nedir?",
-      "options": [
-        "Sadece fiziksel varlıklardır.",
-        "Özellikleri ve davranışları olan varlıklardır.",
-        "Yalnızca programlama dillerinde kullanılır.",
-        "Sadece veritabanında depolanan öğelerdir."
-      ],
-      "answer": "Özellikleri ve davranışları olan varlıklardır.",
-      "category": "Temel Programlama",
-      "level": "Low",
-      "subcategory": "Nesne Yönetimi"
-    },
-    {
-      "question": "Sınıf (Class) nedir?",
-      "options": [
-        "Nesnelerin özelliklerinin depolandığı yerdir.",
-        "Nesnelerin oluşturulduğu bir kalıptır.",
-        "Sadece verileri tutar.",
-        "Yalnızca metodları içerir."
-      ],
-      "answer": "Nesnelerin oluşturulduğu bir kalıptır.",
-      "category": "Temel Programlama",
-      "level": "Low",
-      "subcategory": "Sınıf Yönetimi"
-    },
-    {
-      "question": "Kalıtım (Inheritance) nedir?",
-      "options": [
-        "Sadece metodların paylaşılmasıdır.",
-        "Bir sınıfın başka bir sınıftan özellikler almasıdır.",
-        "Verilerin kopyalanmasıdır.",
-        "Yalnızca temel sınıflarda kullanılır."
-      ],
-      "answer": "Bir sınıfın başka bir sınıftan özellikler almasıdır.",
-      "category": "Temel Programlama",
-      "level": "Medium",
-      "subcategory": "Nesne Yönelimli Programlama"
-    },
-    {
-      "question": "Soyutlama (Abstraction) nedir?",
-      "options": [
-        "Nesnenin tüm detaylarını gizlemek anlamına gelir.",
-        "Önemli özelliklerin ön plana çıkarılmasıdır.",
-        "Yalnızca metodların gizlenmesidir.",
-        "Verilerin doğrudan erişilmesidir."
-      ],
-      "answer": "Önemli özelliklerin ön plana çıkarılmasıdır.",
-      "category": "Temel Programlama",
-      "level": "Medium",
-      "subcategory": "Nesne Yönelimli Programlama"
-    },
-    {
-      "question": "Çok biçimlilik (Polymorphism) nedir?",
-      "options": [
-        "Aynı metodun farklı şekillerde davranış göstermesidir.",
-        "Nesnelerin kopyalanmasıdır.",
-        "Yalnızca türetilmiş sınıflarda kullanılır.",
-        "Metodların üzerine yazılmasıdır."
-      ],
-      "answer": "Aynı metodun farklı şekillerde davranış göstermesidir.",
-      "category": "Temel Programlama",
-      "level": "Medium",
-      "subcategory": "Nesne Yönelimli Programlama"
-    },
-    {
-      "question": "Kapsülleme (Encapsulation) nedir?",
-      "options": [
-        "Nesnenin iç detaylarının gizlenmesidir.",
-        "Yalnızca metodların gizlenmesidir.",
-        "Nesnelerin kopyalanmasıdır.",
-        "Verilerin doğrudan erişilmesidir."
-      ],
-      "answer": "Nesnenin iç detaylarının gizlenmesidir.",
-      "category": "Temel Programlama",
-      "level": "Medium",
-      "subcategory": "Nesne Yönelimli Programlama"
-    },
-    {
-      "question": "SOLID prensiplerinin amacı nedir?",
-      "options": [
-        "Kodun okunabilirliğini azaltmak",
-        "Nesne yönelimli tasarımı optimize etmek",
-        "Sadece performansı artırmak",
-        "Daha faza kod yazmak"
-      ],
-      "answer": "Nesne yönelimli tasarımı optimize etmek",
-      "category": "OOP Prensipleri",
-      "level": "High",
-      "subcategory": "Tasarım Prensipleri"
-    },
-    {
-      "question": "Single Responsibility Prensibi nedir?",
-      "options": [
-        "Her sınıfın yalnızca bir sorumluluğu olmalıdır.",
-        "Tüm sorumluluklar bir sınıfta toplanmalıdır.",
-        "Sınıflar arasındaki ilişkiyi artırır.",
-        "Yalnızca küçük projelerde uygulanır."
-      ],
-      "answer": "Her sınıfın yalnızca bir sorumluluğu olmalıdır.",
-      "category": "OOP Prensipleri",
-      "level": "High",
-      "subcategory": "Tasarım Prensipleri"
-    },
-    {
-      "question": "Dependency Inversion Prensibi nedir?",
-      "options": [
-        "Düşük seviyeli sınıfların yüksek seviyelilere bağlı olmasıdır.",
-        "Soyutlamanın somutlamaya bağlı olmasıdır.",
-        "Yüksek seviyeli sınıfların soyut kavramlara bağlı olmasıdır.",
-        "Yalnızca metodların kopyalanmasıdır."
-      ],
-      "answer": "Yüksek seviyeli sınıfların soyut kavramlara bağlı olmasıdır.",
-      "category": "OOP Prensipleri",
-      "level": "High",
-      "subcategory": "Tasarım Prensipleri"
-    },
-    {
-      "question": "Interface Segregation Prensibi nedir?",
-      "options": [
-        "Tüm metodların bir interface içinde toplanmasıdır.",
-        "Kullanılmayan metodların ayrılmasıdır.",
-        "Sınıflar arasındaki ilişkiyi artırır.",
-        "Yalnızca küçük projelerde uygulanır."
-      ],
-      "answer": "Kullanılmayan metodların ayrılmasıdır.",
-      "category": "OOP Prensipleri",
-      "level": "High",
-      "subcategory": "Tasarım Prensipleri"
-    },
-    {
-      "question": "Framework nedir?",
-      "options": [
-        "Kütüphanelerden oluşan bir yapıdır.",
-        "Sadece veri tabanı işlemleri için kullanılır.",
-        "Kodları derlemek için kullanılır.",
-        "Yalnızca arayüz geliştirmek için kullanılır."
-      ],
-      "answer": "Kütüphanelerden oluşan bir yapıdır.",
-      "category": "Yazılım Mimarisi",
-      "level": "Medium",
-      "subcategory": "Geliştirme Araçları"
-    },
-    {
-      "question": "Library (Kütüphane) nedir?",
-      "options": [
-        "Önceden yazılmış kodların bulunduğu yapıdır.",
-        "Yalnızca veritabanı işlemleri için kullanılır.",
-        "Kodları derlemek için kullanılır.",
-        "Yalnızca arayüz geliştirmek için kullanılır."
-      ],
-      "answer": "Önceden yazılmış kodların bulunduğu yapıdır.",
-      "category": "Yazılım Mimarisi",
-      "level": "Medium",
-      "subcategory": "Geliştirme Araçları"
-    },
-    {
-      "question": "API nedir?",
-      "options": [
-        "Başka uygulamaların işlevlerini kullanmak için oluşturulan modüldür.",
-        "Yalnızca veritabanı işlemleri için kullanılır.",
-        "Kodları derlemek için kullanılır.",
-        "Yalnızca arayüz geliştirmek için kullanılır."
-      ],
-      "answer": "Başka uygulamaların işlevlerini kullanmak için oluşturulan modüldür.",
-      "category": "Web Geliştirme",
-      "level": "Medium",
-      "subcategory": "API Yönetimi"
-    },
-    {
-      "question": "MVC mimarisi hangi katmanlardan oluşur?",
-      "options": [
-        "Model, View, Controller",
-        "Model, View, Database",
-        "View, Controller, Router",
-        "Router, Controller, Model"
-      ],
-      "answer": "Model, View, Controller",
-      "category": "Yazılım Mimarisi",
-      "level": "Medium",
-      "subcategory": "Mimari Desenler"
-    },
-    {
-      "question": "Authentication nedir?",
-      "options": [
-        "Kullanıcı yetkilendirmesidir.",
-        "Kullanıcı kimlik doğrulamasıdır.",
-        "Veritabanı bağlantısıdır.",
-        "Sadece giriş denemeleridir."
-      ],
-      "answer": "Kullanıcı kimlik doğrulamasıdır.",
-      "category": "Güvenlik",
-      "level": "Medium",
-      "subcategory": "Kimlik Doğrulama"
-    },
-    {
-      "question": "Authorization nedir?",
-      "options": [
-        "Kullanıcı kimlik doğrulamasıdır.",
-        "Veritabanı bağlantısıdır.",
-        "Kullanıcı yetkilendirmesidir.",
-        "Sadece giriş denemeleridir."
-      ],
-      "answer": "Kullanıcı yetkilendirmesidir.",
-      "category": "Güvenlik",
-      "level": "Medium",
-      "subcategory": "Yetkilendirme"
-    },
-    {
-      "question": "HTTP nedir?",
-      "options": [
-        "Veritabanı bağlantısıdır.",
-        "İnternet üzerinden veri aktarım protokolüdür.",
-        "Sadece dosya transferi için kullanılır.",
-        "Kodları derlemek için kullanılır."
-      ],
-      "answer": "İnternet üzerinden veri aktarım protokolüdür.",
-      "category": "Web Geliştirme",
-      "level": "Medium",
-      "subcategory": "Protokoller"
-    },
-    {
-      "question": "Middleware nedir?",
-      "options": [
-        "Veritabanı bağlantısıdır.",
-        "Arka plan işlemlerini optimize eder.",
-        "Gelen istekleri kontrol eden ara katmandır.",
-        "Kodları derlemek için kullanılır."
-      ],
-      "answer": "Gelen istekleri kontrol eden ara katmandır.",
-      "category": "Web Geliştirme",
-      "level": "Medium",
-      "subcategory": "Yapılar"
-    },
-    {
-      "question": "Lazy Loading nedir?",
-      "options": [
-        "Sayfanın tamamının önceden yüklenmesidir.",
-        "İhtiyaç duyuldukça yükleme yapılmasıdır.",
-        "Veritabanı bağlantısıdır.",
-        "Yalnızca arayüz geliştirmek için kullanılır."
-      ],
-      "answer": "İhtiyaç duyuldukça yükleme yapılmasıdır.",
-      "category": "Web Geliştirme",
-      "level": "Medium",
-      "subcategory": "Performans"
-    },
-    {
-      "question": "SSL nedir?",
-      "options": [
-        "Verileri şifreleyerek ileten bir protokoldür.",
-        "Yalnızca veritabanı işlemleri için kullanılır.",
-        "Kodları derlemek için kullanılır.",
-        "Yalnızca arayüz geliştirmek için kullanılır."
-      ],
-      "answer": "Verileri şifreleyerek ileten bir protokoldür.",
-      "category": "Güvenlik",
-      "level": "Medium",
-      "subcategory": "Şifreleme Protokolleri"
+      "category": {
+        "JavaScript": {
+          "easy": [
+            {
+              "id": 1,
+              "question": "Which of the following is used to declare variables in JavaScript?",
+              "options": ["var", "let", "const", "None of the above"],
+              "answers": ["let"]
+            },
+            {
+              "id": 2,
+              "question": "Which method is used to join two or more arrays in JavaScript?",
+              "options": ["join()", "concat()", "push()", "merge()"],
+              "answers": ["concat()"]
+            },
+            {
+              "id": 3,
+              "question": "Which of the following is a correct JavaScript variable declaration?",
+              "options": [
+                "let x = 10",
+                "var x = 10",
+                "const x = 10",
+                "All of the above"
+              ],
+              "answers": ["All of the above"]
+            }
+          ],
+          "medium": [
+            {
+              "id": 4,
+              "question": "Which of the following is a JavaScript closure?",
+              "options": [
+                "Closures",
+                "Hoisting",
+                "Event Loop",
+                "None of the above"
+              ],
+              "answers": ["Closures"]
+            },
+            {
+              "id": 5,
+              "question": "What will be the output of the following JavaScript code: console.log(1 + '1')?",
+              "options": ["11", "2", "NaN", "Error"],
+              "answers": ["11"]
+            },
+            {
+              "id": 6,
+              "question": "Which JavaScript method is used to check if an object is an array?",
+              "options": [
+                "isArray()",
+                "Array.isArray()",
+                "typeof",
+                "Object.isArray()"
+              ],
+              "answers": ["Array.isArray()"]
+            }
+          ],
+          "hard": [
+            {
+              "id": 7,
+              "question": "Which of the following JavaScript features is used for handling asynchronous operations?",
+              "options": [
+                "SetTimeout",
+                "SetInterval",
+                "Promise",
+                "Async/Await"
+              ],
+              "answers": ["Promise"]
+            },
+            {
+              "id": 8,
+              "question": "Which JavaScript method can be used to merge multiple objects into a single object?",
+              "options": [
+                "Object.assign()",
+                "Object.merge()",
+                "Object.combine()",
+                "None of the above"
+              ],
+              "answers": ["Object.assign()"]
+            },
+            {
+              "id": 9,
+              "question": "What is the purpose of the JavaScript 'this' keyword?",
+              "options": [
+                "Refers to the current object",
+                "Refers to the global object",
+                "Both A and B",
+                "None of the above"
+              ],
+              "answers": ["Both A and B"]
+            }
+          ]
+        },
+        "TypeScript": {
+          "easy": [
+            {
+              "id": 10,
+              "question": "Which TypeScript type is used to declare any type of value?",
+              "options": ["any", "unknown", "never", "void"],
+              "answers": ["any"]
+            },
+            {
+              "id": 11,
+              "question": "What is the correct way to define a TypeScript function?",
+              "options": [
+                "function myFunction(): void {}",
+                "const myFunction = (): void => {}",
+                "Both of the above",
+                "None of the above"
+              ],
+              "answers": ["Both of the above"]
+            },
+            {
+              "id": 12,
+              "question": "Which of the following is the correct TypeScript syntax for defining a variable of type string?",
+              "options": [
+                "let name: string;",
+                "let name = string;",
+                "var name: String;",
+                "None of the above"
+              ],
+              "answers": ["let name: string;"]
+            }
+          ],
+          "medium": [
+            {
+              "id": 13,
+              "question": "What is the correct way to define a TypeScript interface?",
+              "options": [
+                "Interfaces",
+                "Type Aliases",
+                "Enums",
+                "None of the above"
+              ],
+              "answers": ["Interfaces"]
+            },
+            {
+              "id": 14,
+              "question": "Which of the following TypeScript features provides a type for variables that never have a value?",
+              "options": ["void", "never", "any", "unknown"],
+              "answers": ["never"]
+            },
+            {
+              "id": 15,
+              "question": "What is the purpose of the 'as' keyword in TypeScript?",
+              "options": [
+                "Type assertion",
+                "Type declaration",
+                "Type casting",
+                "All of the above"
+              ],
+              "answers": ["Type assertion"]
+            }
+          ],
+          "hard": [
+            {
+              "id": 16,
+              "question": "Which TypeScript feature is used for type safety in reusable code?",
+              "options": [
+                "Generics",
+                "Decorators",
+                "Mixin",
+                "All of the above"
+              ],
+              "answers": ["Generics"]
+            },
+            {
+              "id": 17,
+              "question": "How do you define a type for a function that returns a promise in TypeScript?",
+              "options": [
+                "function fetchData(): Promise<T>;",
+                "function fetchData<T>(): T;",
+                "function fetchData(): T;",
+                "None of the above"
+              ],
+              "answers": ["function fetchData(): Promise<T>;"]
+            },
+            {
+              "id": 18,
+              "question": "Which TypeScript feature is used to allow a class to be extended with properties and methods from other classes?",
+              "options": ["Mixin", "Inheritance", "Interfaces", "Generics"],
+              "answers": ["Inheritance"]
+            }
+          ]
+        },
+        "React": {
+          "easy": [
+            {
+              "id": 19,
+              "question": "Which of the following hooks is used to manage state in a functional component?",
+              "options": [
+                "useState",
+                "useEffect",
+                "useContext",
+                "None of the above"
+              ],
+              "answers": ["useState"]
+            },
+            {
+              "id": 20,
+              "question": "Which of the following is used for routing in React?",
+              "options": [
+                "React Router",
+                "Next.js",
+                "React Nav",
+                "None of the above"
+              ],
+              "answers": ["React Router"]
+            },
+            {
+              "id": 21,
+              "question": "What does the 'useEffect' hook do in React?",
+              "options": [
+                "State management",
+                "Fetching data",
+                "Handling side effects",
+                "None of the above"
+              ],
+              "answers": ["Handling side effects"]
+            }
+          ],
+          "medium": [
+            {
+              "id": 22,
+              "question": "Which of the following is used for state management in React?",
+              "options": ["Hooks", "Redux", "React Router", "All of the above"],
+              "answers": ["Hooks"]
+            },
+            {
+              "id": 23,
+              "question": "What is the 'useEffect' hook used for in React?",
+              "options": [
+                "State management",
+                "Handling side effects",
+                "Event handling",
+                "Rendering components"
+              ],
+              "answers": ["Handling side effects"]
+            },
+            {
+              "id": 24,
+              "question": "What is JSX in React?",
+              "options": [
+                "JavaScript XML",
+                "JavaScript Extended Syntax",
+                "JavaScript Execution Syntax",
+                "None of the above"
+              ],
+              "answers": ["JavaScript XML"]
+            }
+          ],
+          "hard": [
+            {
+              "id": 25,
+              "question": "What is the concept of 'Reconciliation' in React?",
+              "options": [
+                "Virtual DOM",
+                "Reconciliation",
+                "Fiber",
+                "All of the above"
+              ],
+              "answers": ["Reconciliation"]
+            },
+            {
+              "id": 26,
+              "question": "Which of the following is the correct method to update the state based on previous state in React?",
+              "options": [
+                "this.setState(prevState => newState)",
+                "this.setState(newState)",
+                "this.updateState(newState)",
+                "None of the above"
+              ],
+              "answers": ["this.setState(prevState => newState)"]
+            },
+            {
+              "id": 27,
+              "question": "What does React's 'key' prop help with?",
+              "options": [
+                "Uniqueness of elements",
+                "Rendering order",
+                "Optimizing re-renders",
+                "All of the above"
+              ],
+              "answers": ["All of the above"]
+            }
+          ]
+        },
+        "Vue.js": {
+          "easy": [
+            {
+              "id": 28,
+              "question": "Which directive is used to bind an attribute to an element in Vue.js?",
+              "options": ["v-bind", "v-model", "v-for", "None of the above"],
+              "answers": ["v-bind"]
+            },
+            {
+              "id": 29,
+              "question": "Which lifecycle hook is called when a Vue component is created?",
+              "options": [
+                "created",
+                "mounted",
+                "beforeCreate",
+                "None of the above"
+              ],
+              "answers": ["created"]
+            },
+            {
+              "id": 30,
+              "question": "Which directive is used for looping through an array in Vue.js?",
+              "options": ["v-for", "v-repeat", "v-loop", "None of the above"],
+              "answers": ["v-for"]
+            }
+          ],
+          "medium": [
+            {
+              "id": 31,
+              "question": "Which library is commonly used for state management in Vue.js?",
+              "options": ["Vue Router", "Vuex", "Vue CLI", "All of the above"],
+              "answers": ["Vuex"]
+            },
+            {
+              "id": 32,
+              "question": "How do you define a computed property in Vue.js?",
+              "options": [
+                "computed: { name: function() { return value; }}",
+                "data: { name: value }",
+                "methods: { name: function() { return value; }}",
+                "All of the above"
+              ],
+              "answers": ["computed: { name: function() { return value; }}"]
+            },
+            {
+              "id": 33,
+              "question": "How can you define a method in Vue.js?",
+              "options": [
+                "methods: { name: function() {} }",
+                "computed: { name: function() {} }",
+                "data: { name: value }",
+                "None of the above"
+              ],
+              "answers": ["methods: { name: function() {} }"]
+            }
+          ],
+          "hard": [
+            {
+              "id": 34,
+              "question": "What is the Composition API in Vue.js?",
+              "options": [
+                "Vue Composition API",
+                "Vue Directives",
+                "Vue Slots",
+                "All of the above"
+              ],
+              "answers": ["Vue Composition API"]
+            },
+            {
+              "id": 35,
+              "question": "What is the key difference between 'v-if' and 'v-show' in Vue.js?",
+              "options": [
+                "v-if removes the element from the DOM, while v-show only hides it",
+                "v-if hides the element, while v-show removes it from the DOM",
+                "Both are identical",
+                "None of the above"
+              ],
+              "answers": [
+                "v-if removes the element from the DOM, while v-show only hides it"
+              ]
+            },
+            {
+              "id": 36,
+              "question": "What does the 'v-slot' directive do in Vue.js?",
+              "options": [
+                "Passes content to a child component",
+                "Binds a slot to a parent component",
+                "Creates a custom event",
+                "None of the above"
+              ],
+              "answers": ["Passes content to a child component"]
+            }
+          ]
+        },
+        "CSS": {
+          "easy": [
+            {
+              "id": 37,
+              "question": "Which property is used to change the text color in CSS?",
+              "options": [
+                "color",
+                "background-color",
+                "font-color",
+                "text-color"
+              ],
+              "answers": ["color"]
+            },
+            {
+              "id": 38,
+              "question": "How do you add a border to an element in CSS?",
+              "options": [
+                "border: 1px solid black;",
+                "border: solid black 1px;",
+                "border: 1px black;",
+                "All of the above"
+              ],
+              "answers": ["All of the above"]
+            },
+            {
+              "id": 39,
+              "question": "Which CSS property is used to control the spacing between lines of text?",
+              "options": ["line-height", "letter-spacing", "margin", "padding"],
+              "answers": ["line-height"]
+            }
+          ],
+          "medium": [
+            {
+              "id": 40,
+              "question": "Which property is used to change the font size of text in CSS?",
+              "options": ["font-size", "text-size", "size", "font-style"],
+              "answers": ["font-size"]
+            },
+            {
+              "id": 41,
+              "question": "What does the CSS 'display' property control?",
+              "options": [
+                "Element visibility",
+                "Positioning of elements",
+                "How elements are displayed on the page",
+                "Element content"
+              ],
+              "answers": ["How elements are displayed on the page"]
+            },
+            {
+              "id": 42,
+              "question": "Which CSS property can be used to make an element flexible?",
+              "options": [
+                "flex",
+                "display: flex",
+                "align-items",
+                "justify-content"
+              ],
+              "answers": ["display: flex"]
+            }
+          ],
+          "hard": [
+            {
+              "id": 43,
+              "question": "What is the purpose of CSS 'position: absolute'?",
+              "options": [
+                "Position the element relative to the nearest positioned ancestor",
+                "Position the element relative to the viewport",
+                "Position the element relative to the parent",
+                "All of the above"
+              ],
+              "answers": [
+                "Position the element relative to the nearest positioned ancestor"
+              ]
+            },
+            {
+              "id": 44,
+              "question": "How do you center an element both vertically and horizontally using CSS Flexbox?",
+              "options": [
+                "justify-content: center; align-items: center;",
+                "display: flex; align-items: center; justify-content: center;",
+                "display: block;",
+                "All of the above"
+              ],
+              "answers": [
+                "display: flex; align-items: center; justify-content: center;"
+              ]
+            },
+            {
+              "id": 45,
+              "question": "What does 'z-index' control in CSS?",
+              "options": [
+                "The stack order of elements",
+                "Element positioning",
+                "Element visibility",
+                "Element size"
+              ],
+              "answers": ["The stack order of elements"]
+            }
+          ]
+        }
+      }
     }
   ]
 }
