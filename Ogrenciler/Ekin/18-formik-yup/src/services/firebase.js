@@ -116,18 +116,8 @@ export function setApplication(id, status) {
       }).then(() => id);
 }
 
-// export function addQuestions() {
-//   let q = prompt("QUESTION?");
-
-//   let a = prompt("CORRECT");
-//   let b = prompt("WRONG");
-//   let c = prompt("WRONG");
-//   let d = prompt("WRONG");
-
-//   return addDoc(collection(database, "questions"), {
-//     question: q,
-//     answers: [a, b, c, d],
-//   });
+// export function addQuestions(q) {
+//   return addDoc(collection(database, "questions"), q);
 // }
 
 function addExam() {
@@ -181,4 +171,10 @@ export async function submitExam(id, exam) {
         )
       )
     );
+}
+
+export function setDifficulty(id, difficulty) {
+  return updateDoc(doc(database, "applications", id), {
+    difficulty,
+  });
 }

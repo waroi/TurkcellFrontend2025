@@ -1,22 +1,111 @@
 .adminContainer {
-    background-color: #f8f9fa;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-  }  
-   
-  .cardAdmin {
-    transition: all 0.3s ease;
-    border: none;
-  }
-  
-  .cardAdmin:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
-  }
-  
-.backGround{
-  background-color: #F2E2B1;
+  background: var(--primary-gradient);
+  min-height: 100vh;
+  padding: var(--space-xl);
 }
-  
-  
+
+.header {
+  background: var(--card-bg);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-xl);
+}
+
+.title {
+  color: var(--text-primary);
+  font-size: var(--font-2xl);
+  font-weight: 700;
+}
+
+.backButton {
+  background: var(--primary-gradient);
+  border: none;
+  border-radius: var(--radius-sm);
+  color: white;
+  font-weight: 600;
+  padding: var(--space-sm) var(--space-md);
+  transition: var(--transition);
+}
+.backButton:hover {
+  transform: var(--button-hover-transform);
+  box-shadow: var(--shadow-hover);
+}
+.searchInput {
+  width: 100%;
+  padding: var(--space-md);
+  border: var(--border-input);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-lg);
+  transition: var(--transition);
+}
+.searchInput:focus {
+  outline: none;
+  border-color: #fda085;
+  box-shadow: var(--input-focus-shadow);
+}
+.applicationCard {
+  background: var(--card-bg);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  margin-bottom: var(--space-lg);
+}
+.applicationCard:hover {
+  transform: var(--hover-transform);
+  box-shadow: var(--shadow-lg);
+}
+.cardBody {
+  padding: var(--space-lg);
+}
+.cardTitle {
+  color: var(--text-primary);
+  font-size: var(--font-lg);
+  font-weight: 600;
+  padding-bottom: var(--space-sm);
+  border-bottom: var(--border-divider);
+  margin-bottom: var(--space-md);
+}
+.skillsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin-top: var(--space-xs);
+}
+.skillBadge {
+  background: var(--primary-gradient);
+  color: white;
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-lg);
+  font-size: var(--font-sm);
+}
+.cardFooter {
+  padding: var(--space-md);
+  display: flex;
+  justify-content: center;
+  gap: var(--space-md);
+  border-top: var(--border-base);
+}
+.approveButton {
+  background: var(--success-gradient);
+  border: none;
+  border-radius: var(--radius-sm);
+  color: white;
+  font-weight: 600;
+  padding: var(--space-sm) var(--space-md);
+  transition: var(--transition);
+}
+.rejectButton {
+  background: var(--danger-gradient);
+  border: none;
+  border-radius: var(--radius-sm);
+  color: white;
+  font-weight: 600;
+  padding: var(--space-sm) var(--space-md);
+  transition: var(--transition);
+}
+.approveButton:hover,
+.rejectButton:hover {
+  transform: var(--button-hover-transform);
+  box-shadow: var(--shadow-hover);
+}

@@ -35,7 +35,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <nav className="navbar navbar-expand-lg lg-body-teritary bg-primary">
+      <nav className="navbar navbar-expand-lg lg-body-teritary bg-blue ">
         <div className="container-fluid">
           <div className="navbar-brand d-flex align-items-center">
             <img
@@ -46,18 +46,16 @@ const Navbar = () => {
 
           {userAuth ? (
             <div className="container d-flex justify-content-end gap-2">
-              <NavLink
-                to="/applications"
-                className="btn btn-warning rounded-pill"
-              >
-                Başvurular
+              <NavLink to="/applications">
+                <Button className="btn bg-cream rounded-pill text-dark">
+                  Başvurular
+                </Button>
               </NavLink>
 
-              {/* Kullanıcı 'user' rolündeyse 'Yeni Başvuru' butonunu göster */}
               {userRole === "user" && (
                 <NavLink
                   to="/form"
-                  className="btn btn-warning rounded-pill"
+                  className="btn bg-cream rounded-pill"
                   onClick={() => getUserApplications()}
                 >
                   Yeni Başvuru
@@ -66,7 +64,7 @@ const Navbar = () => {
 
               <NavLink
                 to="/"
-                className="btn btn-danger rounded-pill"
+                className="btn bg-cream rounded-pill"
                 onClick={signOut}
               >
                 Çıkış
@@ -74,7 +72,7 @@ const Navbar = () => {
             </div>
           ) : (
             <Button
-              className="btn btn-warning rounded-pill"
+              className="btn bg-cream rounded-pill"
               href="/userPage"
               onClick={() => handleRegister()}
             >

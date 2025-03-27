@@ -1,0 +1,24 @@
+.adminButton {
+  background: var(--primary-gradient);
+  border: none;
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  color: white;
+  font-weight: var(--font-weight-semibold);
+  padding: var(--space-sm) var(--space-lg);
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-family: var(--font-family-header);
+}
+
+.adminButton:hover {
+  transform: var(--button-hover-transform);
+  box-shadow: var(--shadow-hover);
+  color: white;
+}
+
+.adminButton i {
+  font-size: var(--font-lg);
+}

@@ -22,6 +22,7 @@ export const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    console.log("user:", user);
     if (user) {
       setLoading(false);
       return;

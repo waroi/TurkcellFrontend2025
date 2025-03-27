@@ -1,0 +1,66 @@
+.loginContainer {
+  background: var(--primary-gradient);
+  min-height: 100vh;
+}
+.loginCard {
+  background: var(--card-bg);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  backdrop-filter: var(--blur);
+  border: var(--border-base);
+  transition: var(--transition);
+}
+.loginCard:hover {
+  transform: var(--hover-transform);
+}
+.formTitle {
+  color: var(--text-primary);
+  font-size: var(--font-2xl);
+  font-weight: 600;
+}
+.formInput {
+  background: var(--card-bg);
+  border: var(--border-input);
+  border-radius: var(--radius-sm);
+  padding: var(--space-md);
+  transition: var(--transition);
+}
+.formInput:focus {
+  border-color: #fda085;
+  box-shadow: var(--input-focus-shadow);
+}
+.submitButton {
+  background: var(--primary-gradient);
+  border: none;
+  border-radius: var(--radius-sm);
+  color: white;
+  font-weight: 600;
+  padding: var(--space-md);
+  transition: var(--transition);
+}
+.submitButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(253, 160, 133, 0.4);
+}
+.switchButton {
+  color: #fda085;
+  transition: color 0.3s ease;
+}
+.switchButton:hover {
+  color: #f6d365;
+  text-decoration: none;
+}
+.imageContainer {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+.loginImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.loginImage:hover {
+  transform: scale(1.05);
+}

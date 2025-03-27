@@ -1,9 +1,9 @@
-import { addDoc, collection, doc, getDoc, getDocs, setDoc, updateDoc } from "firebase/firestore"
+import { collection, doc, getDoc, getDocs, setDoc, updateDoc } from "firebase/firestore"
 import { db } from "../firebase/Firebase"
 import { EmailService } from "./EmailService";
 
 export class TestService {
-    static async addNewUser(values) {
+    static async addNewUser(values, questionSettings) {
         if (!values.phone) values.phone = "Telefon numarası bulunamadı"
         try {
             if (!values?.email) throw new Error("Teste eklenmek için eksik veri");
@@ -12,17 +12,16 @@ export class TestService {
             const docSnap = await getDoc(docRef)
 
             if (docSnap.exists()) {
-                console.log('Bu kullanıcıı kayıtlı olduğu için dbye yükleymiyoruz ve mail atmıyoruz broooo')
-                return { success: false, message: "Bu kullanıcı zaten kayıtlı dostum" }
+                alert("Bu kullanıcı zaten kayıtlı")
+                return { success: false, message: "Bu kullanıcı zaten kayıtlı" }
             }
 
-            // buradan bir yerden maili de yollayacağız onu authserviceden mi yapsak bilemedim /dashboarda atsak yeter /teste atmamıza gerek yok boşuna atarız yönlendirecek zaten oraya :D
-            await setDoc(docRef, { ...values, access: true })
+            await setDoc(docRef, { ...values, access: true, questionSettings })
 
             EmailService.sendTestEmail(values.email)
-            return { success: true, message: "Test'e başarıyla eklendin broo :))" }
+            return { success: true, message: "Test'e başarıyla eklendi" }
         } catch (error) {
-            console.error("Başvuru eklerken approved_users'da boom-->", error)
+            console.error("Başvuru eklerken bir hata oluştu", error)
             return { success: false, message: error.message }
         }
     }
@@ -33,33 +32,30 @@ export class TestService {
             const docSnap = await getDoc(docRef)
 
             if (!docSnap.exists()) {
-                console.log("No access - Kullanıcı bulunamadı go tooooooo ---> dashboard")
-                return false
+                return alert("No access - Kullanıcı bulunamadı dashboard'a yönlendiriliyorsunuz")
             }
 
             const userData = docSnap.data()
 
             if (!userData.access) {
-                console.log("No access - Kullanıcı zaten teste giriş yapmış")
-                return false
+                return alert("No access - Kullanıcı zaten teste giriş yapmış")
             }
-
 
             await updateDoc(docRef, {
                 access: false,
                 lastAccessDate: new Date().toLocaleDateString("tr-TR")
             })
             localStorage.setItem("userEmail", email);
-            console.log("Userın has access - Erişim verildi, artık tekrar giremez")
+            alert("Userın has access - Erişim verildi, artık tekrar giremez")
             return true
         } catch (error) {
-            console.error("checkAccess'de bir hata--*-*>", error)
+            alert("checkAccess'de bir hata", error)
             return false
         }
     }
 
     static getUser() {
-        return localStorage.getItem("userEmail")
+        return localStorage.getItem("userEmail") || "yunusorak07@gmail.com"
     }
 
     static async completedUser(email, score) {
@@ -70,7 +66,7 @@ export class TestService {
             localStorage.removeItem("userEmail")
             return { success: true, message: "Test başarıyla tamamlandı" }
         } catch (error) {
-            console.error("Başvuru tamamlanırken bir hata oluştu: ", error)
+            alert("Başvuru tamamlanırken bir hata oluştu: ", error)
             return { success: false, message: error.message }
         }
     }
@@ -82,5 +78,21 @@ export class TestService {
             ...doc.data(),
         }));
         return { data: completedUsersData }
+    }
+
+    static async getQuestionSettingsByEmail() {
+        try {
+            const docRef = doc(db, "approved_users", this.getUser())
+            const docSnap = await getDoc(docRef)
+
+            if (docSnap.exists()) {
+                return { success: true, data: { ...docSnap.data().questionSettings } }
+            } else {
+                return { success: false, message: "Soru ayarlarınız bulunamadı" }
+            }
+        } catch (error) {
+            console.error("Soru ayarları alınırken hata oluştu:", error)
+            return { success: false, message: error }
+        }
     }
 }
