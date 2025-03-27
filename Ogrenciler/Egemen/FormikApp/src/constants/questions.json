@@ -1,156 +1,167 @@
 {
-  "questions": [
-    {
-      "question": "HTML'de sayfa başlığını tanımlamak için hangi etiket kullanılır?",
-      "options": ["<heading>", "<h1>", "<title>", "<header>"],
-      "correctAnswer": 2,
-      "explanation": "<title> etiketi tarayıcı sekmesinde görünen sayfa başlığını tanımlar."
-    },
-    {
-      "question": "CSS'de !important ifadesi ne yapar?",
-      "options": [
-        "Kuralın geçersiz olmasını sağlar",
-        "Kurala en yüksek önceliği verir",
-        "Sadece yazdırma stillerinde kullanılır",
-        "Kuralın sadece mobilde geçerli olmasını sağlar"
-      ],
-      "correctAnswer": 1,
-      "explanation": "!important kurala en yüksek önceliği verir ve diğer stilleri geçersiz kılar."
-    },
-    {
-      "question": "JavaScript'te 'use strict' ifadesinin amacı nedir?",
-      "options": [
-        "Kodun daha hızlı çalışmasını sağlar",
-        "Daha katı syntax kontrolü yapar",
-        "Tarayıcı uyumluluğunu artırır",
-        "Otomatik olarak type conversion yapar"
-      ],
-      "correctAnswer": 1,
-      "explanation": "'use strict' daha katı syntax kontrolü yaparak güvenliği artırır."
-    },
-    {
-      "question": "React'ta bir component'in yaşam döngüsü methodu değildir?",
-      "options": [
-        "componentDidMount",
-        "componentWillUnmount",
-        "shouldComponentUpdate",
-        "componentWillRender"
-      ],
-      "correctAnswer": 3,
-      "explanation": "React'ta componentWillRender diye bir yaşam döngüsü methodu yoktur."
-    },
-    {
-      "question": "Hangisi CSS Grid özelliği değildir?",
-      "options": ["grid-template-columns", "grid-gap", "grid-flow", "grid-box"],
-      "correctAnswer": 3,
-      "explanation": "grid-box diye bir CSS Grid özelliği yoktur."
-    },
-    {
-      "question": "HTML'de <canvas> elementi ne için kullanılır?",
-      "options": [
-        "Video oynatmak için",
-        "Grafik çizmek için",
-        "Form oluşturmak için",
-        "Veri depolamak için"
-      ],
-      "correctAnswer": 1,
-      "explanation": "<canvas> elementi JavaScript ile grafik çizmek için kullanılır."
-    },
-    {
-      "question": "JavaScript'te async/await kullanmanın amacı nedir?",
-      "options": [
-        "Döngüleri optimize etmek",
-        "Promise'lerle daha okunabilir kod yazmak",
-        "Değişken tanımlamak",
-        "Event listener eklemek"
-      ],
-      "correctAnswer": 1,
-      "explanation": "async/await Promise'lerle çalışırken daha okunabilir kod yazmayı sağlar."
-    },
-    {
-      "question": "React Hooks ile gelen bir özellik değildir?",
-      "options": ["useState", "useEffect", "useContext", "useComponent"],
-      "correctAnswer": 3,
-      "explanation": "useComponent diye bir React Hook yoktur."
-    },
-    {
-      "question": "CSS'de 'rem' birimi neyi ifade eder?",
-      "options": [
-        "Root elementin font boyutu",
-        "Parent elementin font boyutu",
-        "Ekran genişliği",
-        "Tarayıcı varsayılan font boyutu"
-      ],
-      "correctAnswer": 0,
-      "explanation": "'rem' root elementin (html) font boyutuna göre hesaplanır."
-    },
-    {
-      "question": "JavaScript'te 'null' ve 'undefined' arasındaki fark nedir?",
-      "options": [
-        "undefined bir değerin olmaması, null ise bilinçli boş bırakılmasıdır",
-        "null bir object, undefined primitive türdür",
-        "undefined tanımlanmamış, null sıfır değeridir",
-        "Hiçbir fark yoktur"
-      ],
-      "correctAnswer": 0,
-      "explanation": "undefined bir değerin olmaması durumu, null ise bilinçli olarak boş bırakılmış değerdir."
-    },
-    {
-      "question": "React'ta props'lar nasıl aktarılır?",
-      "options": [
-        "Sadece parent'tan child'a",
-        "Sadece child'tan parent'a",
-        "Hem parent'tan child'a hem child'tan parent'a",
-        "Component'ler arasında her yöne"
-      ],
-      "correctAnswer": 0,
-      "explanation": "Props'lar sadece parent component'ten child component'e aktarılabilir."
-    },
-    {
-      "question": "CSS'de 'z-index' ne işe yarar?",
-      "options": [
-        "Elementlerin yatay konumunu belirler",
-        "Elementlerin dikey yığın sırasını belirler",
-        "Elementlerin boyutunu belirler",
-        "Elementlerin saydamlığını belirler"
-      ],
-      "correctAnswer": 1,
-      "explanation": "z-index elementlerin dikey yığın sırasını (stack order) belirler."
-    },
-    {
-      "question": "JavaScript'te 'let' ve 'var' arasındaki temel fark nedir?",
-      "options": [
-        "'let' block-scoped, 'var' function-scoped",
-        "'let' sadece sayıları saklar",
-        "'var' arrow function'larda kullanılamaz",
-        "'let' hoisting yapmaz"
-      ],
-      "correctAnswer": 0,
-      "explanation": "'let' block-scoped iken 'var' function-scoped'tur."
-    },
-    {
-      "question": "React'ta Virtual DOM'ın amacı nedir?",
-      "options": [
-        "Sunucu tarafında render işlemi yapmak",
-        "Gerçek DOM manipülasyonlarını optimize etmek",
-        "CSS stillerini yönetmek",
-        "State yönetimini kolaylaştırmak"
-      ],
-      "correctAnswer": 1,
-      "explanation": "Virtual DOM gerçek DOM manipülasyonlarını optimize ederek performansı artırır."
-    },
-    {
-      "question": "CSS'de 'flex: 1' ne anlama gelir?",
-      "options": [
-        "Elementin genişliğini 1px yapar",
-        "Elementin esnek şekilde büyüyüp küçülebileceğini belirtir",
-        "Elementin yüksekliğini 1rem yapar",
-        "Elementin z-index'ini 1 yapar"
-      ],
-      "correctAnswer": 1,
-      "explanation": "'flex: 1' elementin esnek şekilde büyüyüp küçülebileceğini belirtir."
-    }
-  ],
+  "questions": {
+    "easy": [
+      {
+        "question": "HTML'de sayfa başlığını tanımlamak için hangi etiket kullanılır?",
+        "options": ["<heading>", "<h1>", "<title>", "<header>"],
+        "correctAnswer": 2,
+        "explanation": "<title> etiketi tarayıcı sekmesinde görünen sayfa başlığını tanımlar."
+      },
+      {
+        "question": "CSS'de !important ifadesi ne yapar?",
+        "options": [
+          "Kuralın geçersiz olmasını sağlar",
+          "Kurala en yüksek önceliği verir",
+          "Sadece yazdırma stillerinde kullanılır",
+          "Kuralın sadece mobilde geçerli olmasını sağlar"
+        ],
+        "correctAnswer": 1,
+        "explanation": "!important kurala en yüksek önceliği verir ve diğer stilleri geçersiz kılar."
+      },
+      {
+        "question": "JavaScript'te 'use strict' ifadesinin amacı nedir?",
+        "options": [
+          "Kodun daha hızlı çalışmasını sağlar",
+          "Daha katı syntax kontrolü yapar",
+          "Tarayıcı uyumluluğunu artırır",
+          "Otomatik olarak type conversion yapar"
+        ],
+        "correctAnswer": 1,
+        "explanation": "'use strict' daha katı syntax kontrolü yaparak güvenliği artırır."
+      },
+      {
+        "question": "React'ta props'lar nasıl aktarılır?",
+        "options": [
+          "Sadece parent'tan child'a",
+          "Sadece child'tan parent'a",
+          "Hem parent'tan child'a hem child'tan parent'a",
+          "Component'ler arasında her yöne"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Props'lar sadece parent component'ten child component'e aktarılabilir."
+      },
+      {
+        "question": "CSS'de 'z-index' ne işe yarar?",
+        "options": [
+          "Elementlerin yatay konumunu belirler",
+          "Elementlerin dikey yığın sırasını belirler",
+          "Elementlerin boyutunu belirler",
+          "Elementlerin saydamlığını belirler"
+        ],
+        "correctAnswer": 1,
+        "explanation": "z-index elementlerin dikey yığın sırasını (stack order) belirler."
+      }
+    ],
+    "medium": [
+      {
+        "question": "React'ta bir component'in yaşam döngüsü methodu değildir?",
+        "options": [
+          "componentDidMount",
+          "componentWillUnmount",
+          "shouldComponentUpdate",
+          "componentWillRender"
+        ],
+        "correctAnswer": 3,
+        "explanation": "React'ta componentWillRender diye bir yaşam döngüsü methodu yoktur."
+      },
+      {
+        "question": "Hangisi CSS Grid özelliği değildir?",
+        "options": [
+          "grid-template-columns",
+          "grid-gap",
+          "grid-flow",
+          "grid-box"
+        ],
+        "correctAnswer": 3,
+        "explanation": "grid-box diye bir CSS Grid özelliği yoktur."
+      },
+      {
+        "question": "HTML'de <canvas> elementi ne için kullanılır?",
+        "options": [
+          "Video oynatmak için",
+          "Grafik çizmek için",
+          "Form oluşturmak için",
+          "Veri depolamak için"
+        ],
+        "correctAnswer": 1,
+        "explanation": "<canvas> elementi JavaScript ile grafik çizmek için kullanılır."
+      },
+      {
+        "question": "JavaScript'te async/await kullanmanın amacı nedir?",
+        "options": [
+          "Döngüleri optimize etmek",
+          "Promise'lerle daha okunabilir kod yazmak",
+          "Değişken tanımlamak",
+          "Event listener eklemek"
+        ],
+        "correctAnswer": 1,
+        "explanation": "async/await Promise'lerle çalışırken daha okunabilir kod yazmayı sağlar."
+      },
+      {
+        "question": "React Hooks ile gelen bir özellik değildir?",
+        "options": ["useState", "useEffect", "useContext", "useComponent"],
+        "correctAnswer": 3,
+        "explanation": "useComponent diye bir React Hook yoktur."
+      }
+    ],
+    "hard": [
+      {
+        "question": "CSS'de 'rem' birimi neyi ifade eder?",
+        "options": [
+          "Root elementin font boyutu",
+          "Parent elementin font boyutu",
+          "Ekran genişliği",
+          "Tarayıcı varsayılan font boyutu"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'rem' root elementin (html) font boyutuna göre hesaplanır."
+      },
+      {
+        "question": "JavaScript'te 'null' ve 'undefined' arasındaki fark nedir?",
+        "options": [
+          "undefined bir değerin olmaması, null ise bilinçli boş bırakılmasıdır",
+          "null bir object, undefined primitive türdür",
+          "undefined tanımlanmamış, null sıfır değeridir",
+          "Hiçbir fark yoktur"
+        ],
+        "correctAnswer": 0,
+        "explanation": "undefined bir değerin olmaması durumu, null ise bilinçli olarak boş bırakılmış değerdir."
+      },
+      {
+        "question": "JavaScript'te 'let' ve 'var' arasındaki temel fark nedir?",
+        "options": [
+          "'let' block-scoped, 'var' function-scoped",
+          "'let' sadece sayıları saklar",
+          "'var' arrow function'larda kullanılamaz",
+          "'let' hoisting yapmaz"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'let' block-scoped iken 'var' function-scoped'tur."
+      },
+      {
+        "question": "React'ta Virtual DOM'ın amacı nedir?",
+        "options": [
+          "Sunucu tarafında render işlemi yapmak",
+          "Gerçek DOM manipülasyonlarını optimize etmek",
+          "CSS stillerini yönetmek",
+          "State yönetimini kolaylaştırmak"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Virtual DOM gerçek DOM manipülasyonlarını optimize ederek performansı artırır."
+      },
+      {
+        "question": "CSS'de 'flex: 1' ne anlama gelir?",
+        "options": [
+          "Elementin genişliğini 1px yapar",
+          "Elementin esnek şekilde büyüyüp küçülebileceğini belirtir",
+          "Elementin yüksekliğini 1rem yapar",
+          "Elementin z-index'ini 1 yapar"
+        ],
+        "correctAnswer": 1,
+        "explanation": "'flex: 1' elementin esnek şekilde büyüyüp küçülebileceğini belirtir."
+      }
+    ]
+  },
   "info": {
     "totalQuestions": 15,
     "categories": [
