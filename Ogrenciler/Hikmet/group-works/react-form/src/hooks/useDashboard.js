@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import {
   approveApplication,
   fetchApplications,
@@ -16,7 +16,7 @@ export const useAdminDashboard = () => {
   const [passedCandidates, setPassedCandidates] = useState([]);
   const [failedCandidates, setFailedCandidates] = useState([]);
 
-  const fetchTestResults = async () => {
+  async function fetchTestResults() {
     try {
       const attemptsRef = collection(db, "test_attempts");
       const attemptsSnapshot = await getDocs(attemptsRef);
@@ -27,13 +27,13 @@ export const useAdminDashboard = () => {
     } catch (err) {
       console.error("Test sonuçları getirilirken hata oluştu:", err);
     }
-  };
+  }
 
   useEffect(() => {
     fetchTestResults();
   }, []);
 
-  const fetchAllData = useCallback(async () => {
+  async function fetchAllData() {
     try {
       setLoading(true);
       const [reviewData, positiveData, negativeData] = await Promise.all([
@@ -49,11 +49,11 @@ export const useAdminDashboard = () => {
     } finally {
       setLoading(false);
     }
-  }, []);
+  }
 
   useEffect(() => {
     fetchAllData();
-  }, [fetchAllData]);
+  }, []);
 
   return {
     reviewList,

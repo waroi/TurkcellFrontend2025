@@ -1,54 +1,35 @@
-import {
-	addDoc,
-	collection,
-	deleteDoc,
-	doc,
-	getDocs,
-} from "firebase/firestore";
-import { db } from "../firebase/config";
+import { api } from "./api";
 
-// Başvuruları getiren servis fonksiyonları
-export const fetchApplications = async (collectionName) => {
-	try {
-		const snapshot = await getDocs(collection(db, collectionName));
-		return snapshot.docs.map((doc) => ({
-			id: doc.id,
-			...doc.data(),
-		}));
-	} catch (error) {
-		console.error(`Error fetching ${collectionName}:`, error);
-		throw error;
-	}
+// Fetch applications from a specific collection
+export const fetchApplications = (collectionName) => {
+  return api.applications.fetchByCollection(collectionName);
 };
 
-// Başvuru onaylama servisi
+// Approve an application by moving it from incelenecek to olumlu
 export const approveApplication = async (application) => {
-	try {
-		const { id, ...cleanApplication } = application;
-
-		await addDoc(collection(db, "olumlu"), cleanApplication);
-
-		await deleteDoc(doc(db, "incelenecek", id));
-
-		return true;
-	} catch (error) {
-		console.error("Error approving application:", error);
-		throw error;
-	}
+  return api.applications.move(application, "incelenecek", "olumlu");
 };
 
-// Başvuru reddetme servisi
+// Reject an application by moving it from incelenecek to olumsuz
 export const rejectApplication = async (application) => {
-	try {
-		const { id, ...cleanApplication } = application;
+  return api.applications.move(application, "incelenecek", "olumsuz");
+};
 
-		await addDoc(collection(db, "olumsuz"), cleanApplication);
+// Submit a new job application
+export const submitApplication = async (formData, jobInfo) => {
+  try {
+    const formDataWithJob = {
+      ...formData,
+      jobId: jobInfo.id,
+      jobTitle: jobInfo.title || "Unknown Job",
+      jobAppliedDate: new Date().toISOString(),
+    };
 
-		await deleteDoc(doc(db, "incelenecek", id));
-
-		return true;
-	} catch (error) {
-		console.error("Error rejecting application:", error);
-		throw error;
-	}
+    await api.applications.add("incelenecek", formDataWithJob);
+    console.log("Application successfully submitted");
+    return true;
+  } catch (error) {
+    console.error("Error submitting application:", error);
+    return false;
+  }
 };

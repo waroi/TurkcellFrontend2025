@@ -7,7 +7,7 @@ export const useJobDetails = (jobId) => {
 	const [error, setError] = useState(null);
 
 	useEffect(() => {
-		const getJobDetails = async () => {
+		async function getJobDetails() {
 			try {
 				setLoading(true);
 
@@ -28,7 +28,7 @@ export const useJobDetails = (jobId) => {
 			} finally {
 				setLoading(false);
 			}
-		};
+		}
 
 		getJobDetails();
 	}, [jobId]);
