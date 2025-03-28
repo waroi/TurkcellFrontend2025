@@ -15,7 +15,7 @@ const MyModal = ({
   const handleModalClose = () => setShowModal(false);
 
   return (
-    <Modal show={showModal} onHide={handleModalClose}>
+    <Modal show={showModal} onHide={handleModalClose} backdrop="static">
       <Modal.Header>
         <Modal.Title>Test Hazırlayın ☄️</Modal.Title>
       </Modal.Header>
