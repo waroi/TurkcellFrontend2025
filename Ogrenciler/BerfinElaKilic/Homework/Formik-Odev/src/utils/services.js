@@ -60,6 +60,6 @@ export const getJobWithExams = async (jobId) => {
 export const updateExam = async (id, examDetail) => {
   return await fetchService(`${url}/exams/${id}`, "PATCH", examDetail);
 };
-export const getExamsByAdminId = async (adminId) => { 
-  return await fetchService(`${url}/admins/${adminId}?_embed=exams`);
+export const getExamsByAdminId = async (id) => { 
+  return await fetchService(`${url}/exams?adminId=${id}`);
 }
