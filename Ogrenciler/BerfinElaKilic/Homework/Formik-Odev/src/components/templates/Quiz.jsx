@@ -4,25 +4,30 @@ import PrimaryButton from "../atoms/Buttons/PrimaryButton";
 import SuccessButton from "../atoms/Buttons/SuccessButton";
 import SecondaryButton from "../atoms/Buttons/SecondaryButton";
 import DangerButton from "../atoms/Buttons/DangerButton";
-import { updateUserExams } from "../../utils/services";
+import { updateQuizByExamID, updateUserExams } from "../../utils/services";
 
-function shuffle(array) {
-  return array.sort(() => Math.random() - 0.5);
-}
-
-const totalTime = 90; // Toplam süre
-const Quiz = ({jobId, questions}) => {
+// Toplam süre
+const Quiz = ({ jobId, shuffledQuestions }) => {
+  const totalTime = shuffledQuestions.totalDuration || 90;
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [showResult, setShowResult] = useState(false);
   const [timeLeft, setTimeLeft] = useState(totalTime);
   const [selectedOption, setSelectedOption] = useState(null);
-  const [shuffledQuestions, setShuffledQuestions] = useState([]);
   const [quizStarted, setQuizStarted] = useState(false);
 
-  useEffect(() => {
-    setShuffledQuestions(shuffle(questions).slice(0, 5));
-  }, []);
+  const finishExam = async () => {
+    try {
+      const updatedExam = { score: score };
+      //nereye yazılacak düşünülecek.fetch Update
+      console.log(data);
+    } catch (error) {
+      console.error("Sınav bulunamadı:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   useEffect(() => {
     if (!quizStarted || timeLeft === 0) return;
     const timer = setInterval(() => {
@@ -36,6 +41,7 @@ const Quiz = ({jobId, questions}) => {
     }, 1000);
     return () => clearInterval(timer);
   }, [timeLeft, quizStarted]);
+
   const handleAnswer = (option) => {
     if (selectedOption) return;
     setSelectedOption(option);
@@ -50,6 +56,7 @@ const Quiz = ({jobId, questions}) => {
       setSelectedOption(null);
     }
   };
+
   const handleNextQuestion = () => {
     const nextQuestion = currentQuestion + 1;
     if (nextQuestion < shuffledQuestions.length) {
@@ -59,9 +66,11 @@ const Quiz = ({jobId, questions}) => {
       handleEndQuiz();
     }
   };
+
   const startQuiz = () => {
     setQuizStarted(true);
   };
+
   const handleEndQuiz = async () => {
     setShowResult(true);
     try {
@@ -70,6 +79,7 @@ const Quiz = ({jobId, questions}) => {
       console.error("Sınav sonucu yüklenemedi:", error);
     }
   };
+
   return (
     <WrapperCard>
       {!quizStarted ? (
@@ -94,7 +104,9 @@ const Quiz = ({jobId, questions}) => {
           <h2 className="mb-2 text-center">
             {shuffledQuestions[currentQuestion]?.question}
           </h2>
-          <div className="text-end text-muted mb-2">Toplam Süre: {timeLeft} sn</div>
+          <div className="text-end text-muted mb-2">
+            Toplam Süre: {timeLeft} sn
+          </div>
           <div className="d-flex justify-content-between align-items-center gap-2">
             {shuffledQuestions[currentQuestion]?.options.map((option) => {
               const isCorrect =
@@ -134,7 +146,9 @@ const Quiz = ({jobId, questions}) => {
             <SecondaryButton onClick={handlePreviousQuestion}>
               Önceki Soru
             </SecondaryButton>
-            <PrimaryButton onClick={handleNextQuestion}>Sonraki Soru</PrimaryButton>
+            <PrimaryButton onClick={handleNextQuestion}>
+              Sonraki Soru
+            </PrimaryButton>
           </div>
         </div>
       )}

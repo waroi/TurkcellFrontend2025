@@ -144,7 +144,7 @@
     {
       "id": "1",
       "createdAt": "2024-03-21T10:00:00Z",
-      "createdByAdminId": "EgXkh9QfPQYYeRpjwjS7nEuZ54B3",
+      "adminId": "1",
       "position": "Frontend Developer",
       "company": "TechCorp",
       "location": "Remote",
@@ -208,7 +208,7 @@
     {
       "id": "2",
       "createdAt": "2024-02-15T09:30:00Z",
-      "createdByAdminId": "1",
+      "adminId": "1",
       "position": "Backend Developer",
       "company": "DevSolutions",
       "location": "Berlin, Germany",
@@ -248,7 +248,7 @@
     {
       "id": "3",
       "createdAt": "2024-01-10T08:45:00Z",
-      "createdByAdminId": "1",
+      "adminId": "1",
       "position": "UI/UX Designer",
       "company": "CreativeStudio",
       "location": "Paris, France",
@@ -281,7 +281,7 @@
     {
       "id": "4",
       "createdAt": "2024-04-05T11:15:00Z",
-      "createdByAdminId": "1",
+      "adminId": "4jD11dc0GLY8py3GlFiNHYqXow13",
       "position": "Full Stack Developer",
       "company": "InnovateX",
       "location": "Amsterdam, Netherlands",
@@ -314,7 +314,7 @@
     {
       "id": "5",
       "createdAt": "2024-02-20T14:50:00Z",
-      "createdByAdminId": "1",
+      "adminId": "4jD11dc0GLY8py3GlFiNHYqXow13",
       "position": "Data Analyst",
       "company": "DataWorks",
       "location": "London, UK",
@@ -370,18 +370,6 @@
         },
         {
           "id": "3",
-          "createdDate": "date"
-        },
-        {
-          "id": "4",
-          "createdDate": "date"
-        },
-        {
-          "id": "4",
-          "createdDate": "date"
-        },
-        {
-          "id": "4",
           "createdDate": "date"
         }
       ],
@@ -456,644 +444,393 @@
   "exams": [
     {
       "id": "1",
-      "examDate": "2023-02-14T12:26:44.439Z",
+      "createdAt": "2023-02-14T12:26:44.439Z",
       "name": "Admission Test",
       "category": "Yazılım",
       "subcategory": "Javascript",
       "level": "Low",
-      "questions": [],
+      "questions": [
+        1,
+        2,
+        3
+      ],
       "totalDuration": 16,
       "jobId": "1",
-      "senderAdminId": "1"
+      "adminId": "1"
+    },
+    {
+      "id": "348c",
+      "createdAt": "2025-03-28T00:14:29.197Z",
+      "title": "jj",
+      "questions": [],
+      "totalDuration": 5,
+      "jobId": "4",
+      "adminId": "4jD11dc0GLY8py3GlFiNHYqXow13"
+    },
+    {
+      "id": "4cd0",
+      "createdAt": "2025-03-28T00:37:35.757Z",
+      "title": "frontend",
+      "questions": [
+        2
+      ],
+      "totalDuration": 5,
+      "jobId": "5",
+      "adminId": "4jD11dc0GLY8py3GlFiNHYqXow13",
+      "questionDetails": [
+        {
+          "id": 2,
+          "category": "JavaScript",
+          "subcategory": "Arrays",
+          "question": "JavaScript'te iki veya daha fazla diziyi birleştirmek için hangi metod kullanılır?",
+          "options": [
+            "join()",
+            "concat()",
+            "push()",
+            "merge()"
+          ],
+          "answers": [
+            1
+          ],
+          "difficultyLevel": "easy"
+        }
+      ]
+    },
+    {
+      "id": "937a",
+      "createdAt": "2025-03-28T00:41:31.113Z",
+      "title": "full",
+      "questions": [
+        6,
+        11
+      ],
+      "totalDuration": 10,
+      "jobId": "4",
+      "adminId": "4jD11dc0GLY8py3GlFiNHYqXow13",
+      "questionDetails": [
+        {
+          "id": 6,
+          "category": "JavaScript",
+          "subcategory": "Arrays",
+          "question": "JavaScript'te bir nesnenin dizi olup olmadığını kontrol etmek için hangi metod kullanılır?",
+          "options": [
+            "isArray()",
+            "Array.isArray()",
+            "typeof",
+            "Object.isArray()"
+          ],
+          "answers": [
+            1
+          ],
+          "difficultyLevel": "medium"
+        },
+        {
+          "id": 11,
+          "category": "TypeScript",
+          "subcategory": "Functions",
+          "question": "Aşağıdakilerden hangisi doğru bir TypeScript fonksiyon tanımlamasıdır?",
+          "options": [
+            "function myFunction(): void {}",
+            "const myFunction = (): void => {}",
+            "Hepsi",
+            "Hiçbiri"
+          ],
+          "answers": [
+            2
+          ],
+          "difficultyLevel": "easy"
+        }
+      ]
     }
   ],
   "questions": [
     {
-      "JavaScript": {
-        "easy": [
-          {
-            "id": 1,
-            "question": "Aşağıdakilerden hangisi JavaScript'te değişken tanımlamak için kullanılır?",
-            "options": [
-              "var",
-              "let",
-              "const",
-              "Hiçbiri"
-            ],
-            "answers": [
-              "let"
-            ]
-          },
-          {
-            "id": 2,
-            "question": "JavaScript'te iki veya daha fazla diziyi birleştirmek için hangi metod kullanılır?",
-            "options": [
-              "join()",
-              "concat()",
-              "push()",
-              "merge()"
-            ],
-            "answers": [
-              "concat()"
-            ]
-          },
-          {
-            "id": 3,
-            "question": "Aşağıdakilerden hangisi doğru bir JavaScript değişkeni tanımlamasıdır?",
-            "options": [
-              "let x = 10",
-              "var x = 10",
-              "const x = 10",
-              "Hepsi"
-            ],
-            "answers": [
-              "Hepsi"
-            ]
-          }
-        ],
-        "medium": [
-          {
-            "id": 4,
-            "question": "Aşağıdakilerden hangisi JavaScript'te bir closure örneğidir?",
-            "options": [
-              "Closures",
-              "Hoisting",
-              "Event Loop",
-              "Hiçbiri"
-            ],
-            "answers": [
-              "Closures"
-            ]
-          },
-          {
-            "id": 5,
-            "question": "Aşağıdaki JavaScript kodunun çıktısı ne olur: console.log(1 + '1')?",
-            "options": [
-              "11",
-              "2",
-              "NaN",
-              "Hata"
-            ],
-            "answers": [
-              "11"
-            ]
-          },
-          {
-            "id": 6,
-            "question": "JavaScript'te bir nesnenin dizi olup olmadığını kontrol etmek için hangi metod kullanılır?",
-            "options": [
-              "isArray()",
-              "Array.isArray()",
-              "typeof",
-              "Object.isArray()"
-            ],
-            "answers": [
-              "Array.isArray()"
-            ]
-          }
-        ],
-        "hard": [
-          {
-            "id": 7,
-            "question": "Aşağıdakilerden hangisi JavaScript'te asenkron işlemleri yönetmek için kullanılır?",
-            "options": [
-              "SetTimeout",
-              "SetInterval",
-              "Promise",
-              "Async/Await"
-            ],
-            "answers": [
-              "Promise"
-            ]
-          },
-          {
-            "id": 8,
-            "question": "JavaScript'te birden fazla nesneyi birleştirmek için hangi metod kullanılır?",
-            "options": [
-              "Object.assign()",
-              "Object.merge()",
-              "Object.combine()",
-              "Hiçbiri"
-            ],
-            "answers": [
-              "Object.assign()"
-            ]
-          },
-          {
-            "id": 9,
-            "question": "'this' anahtar kelimesinin amacı nedir?",
-            "options": [
-              "Mevcut nesneye referans",
-              "Global nesneye referans",
-              "A ve B şıkları",
-              "Hiçbiri"
-            ],
-            "answers": [
-              "A ve B şıkları"
-            ]
-          }
-        ]
-      },
-      "TypeScript": {
-        "easy": [
-          {
-            "id": 10,
-            "question": "Aşağıdaki TypeScript tiplerinden hangisi herhangi bir değeri tanımlamak için kullanılır?",
-            "options": [
-              "any",
-              "unknown",
-              "never",
-              "void"
-            ],
-            "answers": [
-              "any"
-            ]
-          },
-          {
-            "id": 11,
-            "question": "Aşağıdakilerden hangisi doğru bir TypeScript fonksiyon tanımlamasıdır?",
-            "options": [
-              "function myFunction(): void {}",
-              "const myFunction = (): void => {}",
-              "Hepsi",
-              "Hiçbiri"
-            ],
-            "answers": [
-              "Hepsi"
-            ]
-          },
-          {
-            "id": 12,
-            "question": "Aşağıdakilerden hangisi TypeScript'te string türünde bir değişken tanımlamak için doğru bir yazımdır?",
-            "options": [
-              "let name: string;",
-              "let name = string;",
-              "var name: String;",
-              "Hiçbiri"
-            ],
-            "answers": [
-              "let name: string;"
-            ]
-          }
-        ],
-        "medium": [
-          {
-            "id": 13,
-            "question": "Aşağıdakilerden hangisi TypeScript'te bir interface tanımlamak için kullanılır?",
-            "options": [
-              "Interfaces",
-              "Type Aliases",
-              "Enums",
-              "Hiçbiri"
-            ],
-            "answers": [
-              "Interfaces"
-            ]
-          },
-          {
-            "id": 14,
-            "question": "Aşağıdaki TypeScript özelliklerinden hangisi bir değişkenin hiç değeri olmadığını belirtir?",
-            "options": [
-              "void",
-              "never",
-              "any",
-              "unknown"
-            ],
-            "answers": [
-              "never"
-            ]
-          },
-          {
-            "id": 15,
-            "question": "'as' anahtar kelimesinin TypeScript'teki amacı nedir?",
-            "options": [
-              "Tip beyannamesi",
-              "Tip çıkarımı",
-              "Tip dönüştürme",
-              "Hepsi"
-            ],
-            "answers": [
-              "Tip beyannamesi"
-            ]
-          }
-        ],
-        "hard": [
-          {
-            "id": 16,
-            "question": "Aşağıdakilerden hangisi TypeScript'te reusable (yeniden kullanılabilir) kodda tip güvenliği sağlamak için kullanılır?",
-            "options": [
-              "Generics",
-              "Decorators",
-              "Mixin",
-              "Hepsi"
-            ],
-            "answers": [
-              "Generics"
-            ]
-          },
-          {
-            "id": 17,
-            "question": "TypeScript'te bir fonksiyonun promise döndürmesi için doğru yazım nedir?",
-            "options": [
-              "function fetchData(): Promise<T>;",
-              "function fetchData<T>(): T;",
-              "function fetchData(): T;",
-              "Hiçbiri"
-            ],
-            "answers": [
-              "function fetchData(): Promise<T>;"
-            ]
-          },
-          {
-            "id": 18,
-            "question": "Aşağıdaki TypeScript özelliklerinden hangisi bir sınıfı başka sınıflardan özellik ve metotlarla genişletmeyi sağlar?",
-            "options": [
-              "Mixin",
-              "Inheritance",
-              "Interfaces",
-              "Generics"
-            ],
-            "answers": [
-              "Inheritance"
-            ]
-          }
-        ]
-      },
-      "React": {
-        "easy": [
-          {
-            "id": 19,
-            "question": "Bir fonksiyonel bileşende durumu yönetmek için hangi React hook'u kullanılır?",
-            "options": [
-              "useState",
-              "useEffect",
-              "useContext",
-              "Hiçbiri"
-            ],
-            "answers": [
-              "useState"
-            ]
-          },
-          {
-            "id": 20,
-            "question": "React'te yönlendirme işlemi için hangi kütüphane kullanılır?",
-            "options": [
-              "React Router",
-              "Next.js",
-              "React Nav",
-              "Hiçbiri"
-            ],
-            "answers": [
-              "React Router"
-            ]
-          },
-          {
-            "id": 21,
-            "question": "'useEffect' hook'u React'te ne işe yarar?",
-            "options": [
-              "Durum yönetimi",
-              "Veri çekme",
-              "Yan etkilerle ilgilenme",
-              "Hiçbiri"
-            ],
-            "answers": [
-              "Yan etkilerle ilgilenme"
-            ]
-          }
-        ],
-        "medium": [
-          {
-            "id": 22,
-            "question": "React'te durum yönetimi için hangi özellik kullanılır?",
-            "options": [
-              "Hooks",
-              "Redux",
-              "React Router",
-              "Hepsi"
-            ],
-            "answers": [
-              "Hooks"
-            ]
-          },
-          {
-            "id": 23,
-            "question": "'useEffect' hook'u React'te ne için kullanılır?",
-            "options": [
-              "Durum yönetimi",
-              "Yan etkilerle ilgilenme",
-              "Olay yönetimi",
-              "Bileşen render'ı"
-            ],
-            "answers": [
-              "Yan etkilerle ilgilenme"
-            ]
-          },
-          {
-            "id": 24,
-            "question": "JSX nedir?",
-            "options": [
-              "JavaScript XML",
-              "JavaScript Extended Syntax",
-              "JavaScript Execution Syntax",
-              "Hiçbiri"
-            ],
-            "answers": [
-              "JavaScript XML"
-            ]
-          }
-        ],
-        "hard": [
-          {
-            "id": 25,
-            "question": "React'teki 'Reconciliation' kavramı nedir?",
-            "options": [
-              "Virtual DOM",
-              "Reconciliation",
-              "Fiber",
-              "Hepsi"
-            ],
-            "answers": [
-              "Reconciliation"
-            ]
-          },
-          {
-            "id": 26,
-            "question": "React'te önceki duruma bağlı olarak durumu güncellemek için hangi metod kullanılır?",
-            "options": [
-              "this.setState(prevState => newState)",
-              "this.setState(newState)",
-              "this.updateState(newState)",
-              "Hiçbiri"
-            ],
-            "answers": [
-              "this.setState(prevState => newState)"
-            ]
-          },
-          {
-            "id": 27,
-            "question": "React'teki 'key' prop'u ne işe yarar?",
-            "options": [
-              "Elemanların benzersizliğini sağlamak",
-              "Render sırasını kontrol etmek",
-              "Render optimizasyonu sağlamak",
-              "Hepsi"
-            ],
-            "answers": [
-              "Hepsi"
-            ]
-          }
-        ]
-      },
-      "CSS": {
-        "easy": [
-          {
-            "id": 28,
-            "question": "CSS'te metin rengini değiştirmek için hangi özellik kullanılır?",
-            "options": [
-              "color",
-              "background-color",
-              "font-color",
-              "text-color"
-            ],
-            "answers": [
-              "color"
-            ]
-          },
-          {
-            "id": 29,
-            "question": "Bir elemana sınır eklemek için hangi CSS özelliği kullanılır?",
-            "options": [
-              "border: 1px solid black;",
-              "border: solid black 1px;",
-              "border: 1px black;",
-              "Hepsi"
-            ],
-            "answers": [
-              "Hepsi"
-            ]
-          },
-          {
-            "id": 30,
-            "question": "CSS'te metinler arasındaki boşluğu kontrol etmek için hangi özellik kullanılır?",
-            "options": [
-              "line-height",
-              "letter-spacing",
-              "margin",
-              "padding"
-            ],
-            "answers": [
-              "line-height"
-            ]
-          }
-        ],
-        "medium": [
-          {
-            "id": 31,
-            "question": "CSS'te metin boyutunu değiştirmek için hangi özellik kullanılır?",
-            "options": [
-              "font-size",
-              "text-size",
-              "size",
-              "font-style"
-            ],
-            "answers": [
-              "font-size"
-            ]
-          },
-          {
-            "id": 32,
-            "question": "'display' özelliği CSS'te neyi kontrol eder?",
-            "options": [
-              "Eleman görünürlüğü",
-              "Elemanların yerleşimi",
-              "Elemanların sayfada nasıl göründüğünü",
-              "Eleman içeriği"
-            ],
-            "answers": [
-              "Elemanların sayfada nasıl göründüğünü"
-            ]
-          },
-          {
-            "id": 33,
-            "question": "CSS Flexbox kullanarak bir elemanı esnek yapmak için hangi özellik kullanılır?",
-            "options": [
-              "flex",
-              "display: flex",
-              "align-items",
-              "justify-content"
-            ],
-            "answers": [
-              "display: flex"
-            ]
-          }
-        ],
-        "hard": [
-          {
-            "id": 34,
-            "question": "'position: absolute' özelliğinin amacı nedir?",
-            "options": [
-              "Elemanı en yakın konumlandırılmış üst öğesine göre konumlandırmak",
-              "Elemanı görünüm alanına göre konumlandırmak",
-              "Elemanı üst öğesine göre konumlandırmak",
-              "Hepsi"
-            ],
-            "answers": [
-              "Elemanı en yakın konumlandırılmış üst öğesine göre konumlandırmak"
-            ]
-          },
-          {
-            "id": 35,
-            "question": "CSS Flexbox kullanarak bir elemanı hem dikey hem yatay olarak nasıl ortalarsınız?",
-            "options": [
-              "justify-content: center; align-items: center;",
-              "display: flex; align-items: center; justify-content: center;",
-              "display: block;",
-              "Hepsi"
-            ],
-            "answers": [
-              "display: flex; align-items: center; justify-content: center;"
-            ]
-          },
-          {
-            "id": 36,
-            "question": "'z-index' CSS'te neyi kontrol eder?",
-            "options": [
-              "Elemanların yığılma sırasını",
-              "Eleman yerleşimini",
-              "Eleman görünürlüğünü",
-              "Eleman boyutunu"
-            ],
-            "answers": [
-              "Elemanların yığılma sırasını"
-            ]
-          }
-        ]
-      },
-      "Vuejs": {
-        "easy": [
-          {
-            "id": 28,
-            "question": "Vue.js'te bir ögeye bir özellik bağlamak için hangi direktif kullanılır?",
-            "options": [
-              "v-bind",
-              "v-model",
-              "v-for",
-              "Hiçbiri"
-            ],
-            "answers": [
-              "v-bind"
-            ]
-          },
-          {
-            "id": 29,
-            "question": "Vue bileşeni oluşturulduğunda hangi yaşam döngüsü kancası çağrılır?",
-            "options": [
-              "created",
-              "mounted",
-              "beforeCreate",
-              "Hiçbiri"
-            ],
-            "answers": [
-              "created"
-            ]
-          },
-          {
-            "id": 30,
-            "question": "Vue.js'te bir dizi üzerinde döngü yapmak için hangi direktif kullanılır?",
-            "options": [
-              "v-for",
-              "v-repeat",
-              "v-loop",
-              "Hiçbiri"
-            ],
-            "answers": [
-              "v-for"
-            ]
-          }
-        ],
-        "medium": [
-          {
-            "id": 31,
-            "question": "Vue.js'te durum yönetimi için hangi kütüphane yaygın olarak kullanılır?",
-            "options": [
-              "Vue Router",
-              "Vuex",
-              "Vue CLI",
-              "Hepsi"
-            ],
-            "answers": [
-              "Vuex"
-            ]
-          },
-          {
-            "id": 32,
-            "question": "Vue.js'te bir hesaplanan özellik nasıl tanımlanır?",
-            "options": [
-              "computed: { name: function() { return value; }}",
-              "data: { name: value }",
-              "methods: { name: function() { return value; }}",
-              "Hepsi"
-            ],
-            "answers": [
-              "computed: { name: function() { return value; }}"
-            ]
-          },
-          {
-            "id": 33,
-            "question": "Vue.js'te bir metod nasıl tanımlanır?",
-            "options": [
-              "methods: { name: function() {} }",
-              "computed: { name: function() {} }",
-              "data: { name: value }",
-              "Hiçbiri"
-            ],
-            "answers": [
-              "methods: { name: function() {} }"
-            ]
-          }
-        ],
-        "hard": [
-          {
-            "id": 34,
-            "question": "Vue.js'teki Composition API nedir?",
-            "options": [
-              "Vue Composition API",
-              "Vue Direktifleri",
-              "Vue Slot'ları",
-              "Hepsi"
-            ],
-            "answers": [
-              "Vue Composition API"
-            ]
-          },
-          {
-            "id": 35,
-            "question": "'v-if' ve 'v-show' arasındaki ana fark nedir?",
-            "options": [
-              "v-if, öğeyi DOM'dan kaldırır, v-show yalnızca gizler",
-              "v-if, öğeyi gizler, v-show öğeyi DOM'dan kaldırır",
-              "Her ikisi de aynıdır",
-              "Hiçbiri"
-            ],
-            "answers": [
-              "v-if, öğeyi DOM'dan kaldırır, v-show yalnızca gizler"
-            ]
-          },
-          {
-            "id": 36,
-            "question": "'v-slot' direktifi Vue.js'te ne işe yarar?",
-            "options": [
-              "Bir içeriği bir alt bileşene iletmek",
-              "Bir slot'u bir üst bileşene bağlamak",
-              "Özel bir olay oluşturmak",
-              "Hiçbiri"
-            ],
-            "answers": [
-              "Bir içeriği bir alt bileşene iletmek"
-            ]
-          }
-        ]
-      }
+      "id": 1,
+      "category": "JavaScript",
+      "subcategory": "Variables",
+      "question": "Aşağıdakilerden hangisi JavaScript'te değişken tanımlamak için kullanılır?",
+      "options": [
+        "var",
+        "let",
+        "const",
+        "Hiçbiri"
+      ],
+      "answers": [
+        1
+      ],
+      "difficultyLevel": "easy"
+    },
+    {
+      "id": 2,
+      "category": "JavaScript",
+      "subcategory": "Arrays",
+      "question": "JavaScript'te iki veya daha fazla diziyi birleştirmek için hangi metod kullanılır?",
+      "options": [
+        "join()",
+        "concat()",
+        "push()",
+        "merge()"
+      ],
+      "answers": [
+        1
+      ],
+      "difficultyLevel": "easy"
+    },
+    {
+      "id": 3,
+      "category": "JavaScript",
+      "subcategory": "Variables",
+      "question": "Aşağıdakilerden hangisi doğru bir JavaScript değişkeni tanımlamasıdır?",
+      "options": [
+        "let x = 10",
+        "var x = 10",
+        "const x = 10",
+        "Hepsi"
+      ],
+      "answers": [
+        3
+      ],
+      "difficultyLevel": "easy"
+    },
+    {
+      "id": 4,
+      "category": "JavaScript",
+      "subcategory": "Functions",
+      "question": "Aşağıdakilerden hangisi JavaScript'te bir closure örneğidir?",
+      "options": [
+        "Closures",
+        "Hoisting",
+        "Event Loop",
+        "Hiçbiri"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "medium"
+    },
+    {
+      "id": 5,
+      "category": "JavaScript",
+      "subcategory": "Type Coercion",
+      "question": "Aşağıdaki JavaScript kodunun çıktısı ne olur: console.log(1 + '1')?",
+      "options": [
+        "11",
+        "2",
+        "NaN",
+        "Hata"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "medium"
+    },
+    {
+      "id": 6,
+      "category": "JavaScript",
+      "subcategory": "Arrays",
+      "question": "JavaScript'te bir nesnenin dizi olup olmadığını kontrol etmek için hangi metod kullanılır?",
+      "options": [
+        "isArray()",
+        "Array.isArray()",
+        "typeof",
+        "Object.isArray()"
+      ],
+      "answers": [
+        1
+      ],
+      "difficultyLevel": "medium"
+    },
+    {
+      "id": 7,
+      "category": "JavaScript",
+      "subcategory": "Asynchronous",
+      "question": "Aşağıdakilerden hangisi JavaScript'te asenkron işlemleri yönetmek için kullanılır?",
+      "options": [
+        "SetTimeout",
+        "SetInterval",
+        "Promise",
+        "Async/Await"
+      ],
+      "answers": [
+        2
+      ],
+      "difficultyLevel": "hard"
+    },
+    {
+      "id": 8,
+      "category": "JavaScript",
+      "subcategory": "Objects",
+      "question": "JavaScript'te birden fazla nesneyi birleştirmek için hangi metod kullanılır?",
+      "options": [
+        "Object.assign()",
+        "Object.merge()",
+        "Object.combine()",
+        "Hiçbiri"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "hard"
+    },
+    {
+      "id": 9,
+      "category": "JavaScript",
+      "subcategory": "Context",
+      "question": "'this' anahtar kelimesinin amacı nedir?",
+      "options": [
+        "Mevcut nesneye referans",
+        "Global nesneye referans",
+        "A ve B şıkları",
+        "Hiçbiri"
+      ],
+      "answers": [
+        2
+      ],
+      "difficultyLevel": "hard"
+    },
+    {
+      "id": 10,
+      "category": "TypeScript",
+      "subcategory": "Types",
+      "question": "Aşağıdaki TypeScript tiplerinden hangisi herhangi bir değeri tanımlamak için kullanılır?",
+      "options": [
+        "any",
+        "unknown",
+        "never",
+        "void"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "easy"
+    },
+    {
+      "id": 11,
+      "category": "TypeScript",
+      "subcategory": "Functions",
+      "question": "Aşağıdakilerden hangisi doğru bir TypeScript fonksiyon tanımlamasıdır?",
+      "options": [
+        "function myFunction(): void {}",
+        "const myFunction = (): void => {}",
+        "Hepsi",
+        "Hiçbiri"
+      ],
+      "answers": [
+        2
+      ],
+      "difficultyLevel": "easy"
+    },
+    {
+      "id": 12,
+      "category": "TypeScript",
+      "subcategory": "Variables",
+      "question": "Aşağıdakilerden hangisi TypeScript'te string türünde bir değişken tanımlamak için doğru bir yazımdır?",
+      "options": [
+        "let name: string;",
+        "let name = string;",
+        "var name: String;",
+        "Hiçbiri"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "easy"
+    },
+    {
+      "id": 13,
+      "category": "TypeScript",
+      "subcategory": "Interfaces",
+      "question": "Aşağıdakilerden hangisi TypeScript'te bir interface tanımlamak için kullanılır?",
+      "options": [
+        "Interfaces",
+        "Type Aliases",
+        "Enums",
+        "Hiçbiri"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "medium"
+    },
+    {
+      "id": 14,
+      "category": "TypeScript",
+      "subcategory": "Types",
+      "question": "Aşağıdaki TypeScript özelliklerinden hangisi bir değişkenin hiç değeri olmadığını belirtir?",
+      "options": [
+        "void",
+        "never",
+        "any",
+        "unknown"
+      ],
+      "answers": [
+        1
+      ],
+      "difficultyLevel": "medium"
+    },
+    {
+      "id": 15,
+      "category": "TypeScript",
+      "subcategory": "Type Assertions",
+      "question": "'as' anahtar kelimesinin TypeScript'teki amacı nedir?",
+      "options": [
+        "Tip beyannamesi",
+        "Tip çıkarımı",
+        "Tip dönüştürme",
+        "Hepsi"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "medium"
+    },
+    {
+      "id": 16,
+      "category": "TypeScript",
+      "subcategory": "Generics",
+      "question": "Aşağıdakilerden hangisi TypeScript'te reusable (yeniden kullanılabilir) kodda tip güvenliği sağlamak için kullanılır?",
+      "options": [
+        "Generics",
+        "Decorators",
+        "Mixin",
+        "Hepsi"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "hard"
+    },
+    {
+      "id": 17,
+      "category": "TypeScript",
+      "subcategory": "Async",
+      "question": "TypeScript'te bir fonksiyonun promise döndürmesi için doğru yazım nedir?",
+      "options": [
+        "function fetchData(): Promise<T>;",
+        "function fetchData<T>(): T;",
+        "function fetchData(): T;",
+        "Hiçbiri"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "hard"
+    },
+    {
+      "id": 18,
+      "category": "TypeScript",
+      "subcategory": "OOP",
+      "question": "Aşağıdaki TypeScript özelliklerinden hangisi bir sınıfı başka sınıflardan özellik ve metotlarla genişletmeyi sağlar?",
+      "options": [
+        "Mixin",
+        "Inheritance",
+        "Interfaces",
+        "Generics"
+      ],
+      "answers": [
+        1
+      ],
+      "difficultyLevel": "hard"
     }
   ]
 }

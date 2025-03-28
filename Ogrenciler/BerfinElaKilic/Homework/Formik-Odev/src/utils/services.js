@@ -38,7 +38,16 @@ export const getCandidate = async (id) => {
 };
 export const updateUserExams = async (id, score) => {
   return await fetchService(`${url}/candidates/${id}`, "PUT", { score });
-}
-export const getAllJobsQuiz = async () => { 
-  return await fetchService(`${url}/questions`);  
-}
+};
+export const getAllJobsQuiz = async () => {
+  return await fetchService(`${url}/questions`);
+};
+export const postExam = async (newExam) => {
+  return await fetchService(`${url}/exams`, "POST", newExam);
+};
+export const getQuizByExamID = async (id) => {
+  return await fetchService(`${url}/exams/${id}`);
+};
+export const updateQuizByExamID = async (id, examDetail) => {
+  return await fetchService(`${url}/exams/${id}`, "PATCH", examDetail);
+};
