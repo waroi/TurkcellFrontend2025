@@ -70,8 +70,14 @@ const Quiz = ({ jobId, shuffledQuestions }) => {
   const handleEndQuiz = async () => {
     setShowResult(true);
     console.log(examId, user.id, score);
+    const newScore = (score / shuffledQuestions?.length) * 100;
+    console.log(newScore);
     try {
-      const response = await updateCandidateExamScore(examId, user.id, score);
+      const response = await updateCandidateExamScore(
+        examId,
+        user.id,
+        newScore
+      );
       console.log(response);
     } catch (error) {
       console.error("Sınav bulunamadı:", error);
@@ -90,14 +96,15 @@ const Quiz = ({ jobId, shuffledQuestions }) => {
         </div>
       ) : showResult ? (
         <div>
-          <h2 className="mb-3">
+          {/* <h2 className="mb-3">
             Sonuç: {score}/{shuffledQuestions.length}
           </h2>
           <p>
             {score / shuffledQuestions.length >= 0.7
               ? "Tebrikler! Mülakata çağrıldınız."
               : "Başarısız oldunuz. Tekrar deneyin."}
-          </p>
+          </p> */}
+          <p></p>
         </div>
       ) : (
         <div className="vh-100 d-flex flex-column justify-content-center p-5 gap-5">
