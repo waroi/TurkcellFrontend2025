@@ -3,6 +3,9 @@ const url = import.meta.env.VITE_BASE_URL;
 export const getAllJobs = async () => {
   return await fetchService(`${url}/jobs`);
 };
+export const getAllJobsWithExams = async () => {
+  return await fetchService(`${url}/jobs?_embed=exams`);
+};
 export const getJobById = async (id) => {
   return await fetchService(`${url}/jobs/${id}`);
 };
