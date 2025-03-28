@@ -125,7 +125,7 @@ const CandidateCard = ({ applicant, jobId, exams }) => {
                       ))}
                     </Form.Select>
                     {applicantPercentScore && (
-                      <div>{applicantPercentScore}%</div>
+                      <div>{applicantPercentScore} %</div>
                     )}
                   </>
                 )}
