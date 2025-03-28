@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useFormik } from 'formik';
 import { registerFormSchema } from '../../schemas';
 import { Button } from '../atoms/Button';
@@ -10,8 +11,9 @@ import { useNavigate } from 'react-router';
 import { LoadingSpinner } from '../atoms/LoadingSpinner';
 
 const RegisterForm = () => {
-  const { registerUser, isLoading } = useAuth();
+  const { registerUser } = useAuth();
   const navigate = useNavigate();
+  const [registerLoading, setRegisterLoading] = useState(false);
 
   const formik = useFormik({
     initialValues: {
@@ -21,9 +23,16 @@ const RegisterForm = () => {
       confirmPassword: '',
     },
     validationSchema: registerFormSchema,
-    onSubmit: (values) => {
-      registerUser(values.fullName, values.email, values.password);
-      navigate('/');
+    onSubmit: async (values) => {
+      try {
+        setRegisterLoading(true);
+        await registerUser(values.fullName, values.email, values.password);
+        navigate('/');
+      } catch (error) {
+        console.error('Registration failed:', error);
+      } finally {
+        setRegisterLoading(false);
+      }
     },
   });
 
@@ -36,8 +45,12 @@ const RegisterForm = () => {
             <RegisterFormField key={field.id} field={field} formik={formik} />
           ))}
 
-          <Button type='submit' className='btn btn-primary w-100'>
-            {isLoading ? <LoadingSpinner /> : 'Register'}
+          <Button
+            type='submit'
+            className='btn btn-primary w-100'
+            disabled={registerLoading}
+          >
+            {registerLoading ? <LoadingSpinner /> : 'Register'}
           </Button>
         </form>
 
