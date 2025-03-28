@@ -31,11 +31,11 @@ const JobCard = ({ job, user, jobId }) => {
       exam.sentExams?.some((sentExam) => sentExam.id === user.id)
     );
     if (foundExam) {
-      const matchingSentExam = foundExam.sentExams?.find(
-        (sentExam) => sentExam.id === user.id
-      );
-      console.log("Matching Exam:", matchingSentExam);
-      return matchingSentExam;
+      //   const matchingSentExam = foundExam.sentExams?.find(
+      //     (sentExam) => sentExam.id === user.id
+      //   ); Bunu totalScore manipule ederken kullanıcaz
+      // console.log("Matching Exam:", matchingSentExam, foundExam);
+      return foundExam;
     }
     return null;
   };
