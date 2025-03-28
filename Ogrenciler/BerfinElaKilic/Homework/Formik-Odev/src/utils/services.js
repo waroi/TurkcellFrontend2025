@@ -51,3 +51,6 @@ export const getQuizByExamID = async (id) => {
 export const updateQuizByExamID = async (id, examDetail) => {
   return await fetchService(`${url}/exams/${id}`, "PATCH", examDetail);
 };
+export const getExamsByAdminId = async (id) => {
+  return await fetchService(`${url}/exams?adminId=${id}`);
+}

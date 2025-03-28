@@ -13,6 +13,7 @@ import ApplicantsView from "../views/ApplicantsView";
 import QuizView from "../views/QuizView";
 import ExamManagement from "../views/Exams";
 import AdminDashboard from "../views/AdminDashboard";
+import ExamDetail from "../views/ExamDetail";
 
 const Router = () => {
   const routes = useRoutes([
@@ -60,6 +61,7 @@ const Router = () => {
         { path: `all`, element: <AllJobs /> },
         { path: `:jobId/candidates`, element: <ApplicantsView /> }, //TODO: admin altına çekilmesi daha uygun olabilir.
         { path: `:jobId/exam`, element: <QuizView /> }, //TODO: admin altına çekilmesi daha uygun olabilir.
+        { path: `:jobId/exam/:examId`, element: <ExamDetail /> }, //TODO: admin altına çekilmesi daha uygun olabilir.
       ],
     },
   ]);
