@@ -6,7 +6,7 @@ import DangerButton from "../../atoms/Buttons/DangerButton";
 import PrimaryButton from "../../atoms/Buttons/PrimaryButton";
 
 const LanguageForm = () => {
-  const { values, setFieldValue } = useFormikContext();
+  const [selection, setSelection] = useState([]);
 
   const handleAddLanguage = () => {
     if (values.selectedLanguage && values.selectedLevel) {

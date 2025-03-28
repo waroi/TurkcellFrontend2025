@@ -102,10 +102,22 @@ export const advancedSchema = yup.object().shape({
 
 export const examSchema = yup.object().shape({
   category: yup.string().required("Kategori seçiniz"),
-  subcategory: yup.string().required("Alt kategori seçiniz"),
+  subcategory: yup.string().when("category", {
+    is: (category) => !!category,
+    then: (schema) => schema.required("Alt kategori seçiniz"),
+    otherwise: (schema) => schema.notRequired(),
+  }),
   difficultyLevel: yup.string().required("Zorluk seviyesi seçiniz"),
   questionCount: yup
-    .number()
+    .number("Sadece sayı girebilirsiniz.")
     .required("Soru sayısını seçiniz")
-    .min(1, "En az bir soru seçmelisiniz"),
+    .min(1, "En az bir soru seçmelisiniz")
+    .when("maxQuestionCount", (max, schema) =>
+      schema.max(max || 5, `En fazla ${max || 5} soru seçebilirsiniz.`)
+    ),
+  relatedJob: yup.string(),
+  title: yup
+    .string()
+    .min(1, "En az bir harf girmelisiniz")
+    .required("Lütfen sınav adı girin."),
 });

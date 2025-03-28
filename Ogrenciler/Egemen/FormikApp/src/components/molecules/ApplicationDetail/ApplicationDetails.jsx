@@ -1,102 +1,94 @@
-import { useState } from "react";
-import { NavLink, useNavigate } from "react-router";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
 import Button from "../../atoms/buttons/Button";
-import Modal from "react-bootstrap/Modal"; // Assuming you're using react-bootstrap for modals
-import { getShuffledQuestionsByCategory } from "../../../services/QuestionService"; // Import the function
-import questionData from "../../../constants/questions.json"; // Import question data
-import { setQuestionCount } from "../../../../firebase/dbController";
+import Modal from "react-bootstrap/Modal";
+import {
+  setMessage,
+  setQuestionCount,
+} from "../../../../firebase/dbController";
+import AppSection from "./AppSection";
 
-const ApplicationDetails = ({ application, user, sonrakiAsama }) => {
+const ApplicationDetails = ({
+  application,
+  user,
+  updateAppStatus,
+  sonrakiAsama,
+}) => {
+  const [app, setApp] = useState(application);
   const [showModal, setShowModal] = useState(false);
   const [easyCount, setEasyCount] = useState(0);
   const [mediumCount, setMediumCount] = useState(0);
   const [hardCount, setHardCount] = useState(0);
-  //const [quizCounts, setQuizCounts] = useState({});
-  // Local state for quiz counts
-  const [quizs, setQuizs] = useState([]);
   const navigate = useNavigate();
+  useEffect(() => {
+    console.log("abc");
+  }, [app]);
 
   const handleModalOpen = () => setShowModal(true);
   const handleModalClose = () => setShowModal(false);
 
   const handleSubmit = () => {
-    setQuestionCount(application.id, {
+    setQuestionCount(app.id, {
       easy: easyCount,
       medium: mediumCount,
       hard: hardCount,
     });
-    // console.log(easyCount);
 
-    // setQuizCounts({
-    //   easy: easyCount,
-    //   medium: mediumCount,
-    //   hard: hardCount,
-    // });
-
-    // const selectedQuestions = getShuffledQuestionsByCategory(
-    //   easyCount,
-    //   mediumCount,
-    //   hardCount
-    // );
-    // setQuizs(selectedQuestions);
-    // console.log(selectedQuestions);
     handleModalClose();
   };
   const startQuiz = () => {
-    //console.log("qqq", quizCounts);
-    navigate(`/quiz/${application.id}`);
+    navigate(`/quiz/${app.id}`);
   };
 
   return (
     <div className="accordion-body bg-white p-4">
       <div className="row">
-        <div className="col-lg-4">
+        <AppSection title="Kişisel Bilgiler" sections={app?.personal} />
+        {/* <div className="col-lg-4">
           <h5 className="fw-bold text-secondary">Kişisel Bilgiler</h5>
           <p>
-            <strong>Email:</strong> {application.email}
+            <strong>Email:</strong> {app.email}
           </p>
           <p>
-            <strong>Telefon:</strong> {application.phone}
+            <strong>Telefon:</strong> {app.phone}
           </p>
           <p>
-            <strong>Doğum Tarihi:</strong> {application.birthDate}
+            <strong>Doğum Tarihi:</strong> {app.birthDate}
           </p>
-        </div>
+        </div> */}
         <div className="col-lg-4">
           <h5 className="fw-bold text-secondary">Eğitim Bilgileri</h5>
           <p>
-            <strong>Üniversite:</strong> {application.education.university}
+            <strong>Üniversite:</strong> {app.education.university}
           </p>
           <p>
-            <strong>Bölüm:</strong> {application.education.department}
+            <strong>Bölüm:</strong> {app.education.department}
           </p>
           <p>
-            <strong>Mezuniyet Yılı:</strong>{" "}
-            {application.education.graduationYear}
+            <strong>Mezuniyet Yılı:</strong> {app.education.graduationYear}
           </p>
           <p>
-            <strong>GPA:</strong> {application.education.gpa}
+            <strong>GPA:</strong> {app.education.gpa}
           </p>
         </div>
         <div className="col-lg-4">
           <h5 className="fw-bold text-secondary">Deneyim & Beceriler</h5>
           <p>
             <strong>Şirket:</strong>{" "}
-            {application.experience.currentCompany ||
-              "Mevcut şirket bilgisi yok."}
+            {app.experience.currentCompany || "Mevcut şirket bilgisi yok."}
           </p>
           <p>
             <strong>Pozisyon:</strong>{" "}
-            {application.experience.position || "Mevcut pozisyon bilgisi yok."}
+            {app.experience.position || "Mevcut pozisyon bilgisi yok."}
           </p>
           <p>
             <strong>Deneyim Yılı:</strong>{" "}
-            {application.experience.years || "Mevcut deneyim yılı bilgisi yok."}
+            {app.experience.years || "Mevcut deneyim yılı bilgisi yok."}
           </p>
           <p>
             <strong>Programming Languages:</strong>{" "}
-            {application.skills.programmingLanguages
-              ? Object.entries(application.skills.programmingLanguages)
+            {app.skills.programmingLanguages
+              ? Object.entries(app.skills.programmingLanguages)
                   .filter(([_, value]) => value)
                   .map(([key]) => key)
                   .join(", ")
@@ -104,8 +96,8 @@ const ApplicationDetails = ({ application, user, sonrakiAsama }) => {
           </p>
           <p>
             <strong>Languages:</strong>{" "}
-            {application.skills.languages
-              ? Object.entries(application.skills.languages)
+            {app.skills.languages
+              ? Object.entries(app.skills.languages)
                   .filter(([_, value]) => value)
                   .map(([key]) => key)
                   .join(", ")
@@ -115,37 +107,43 @@ const ApplicationDetails = ({ application, user, sonrakiAsama }) => {
       </div>
       <div className="mt-4 d-flex justify-content-end">
         {user &&
-        (application.status === "Değerlendirme" ||
-          application.status === "Test Kontrol") &&
+        (app.status === "Değerlendirme" || app.status === "Test Kontrol") &&
         user.role === "admin" ? (
           <>
-            {application.status === "Test Kontrol" && (
-              <span className="badge text-bg-primary">
-                Test Skoru: {application.quiz}
+            {app.status === "Test Kontrol" && (
+              <span className="badge text-bg-primary p-2 me-3">
+                <p className="mb-1 fs-6">Test İçeriği: </p>
+                {"Kolay: " +
+                  app.questions.easy +
+                  " Orta: " +
+                  app.questions.medium +
+                  " Zor: " +
+                  app.questions.hard}
+              </span>
+            )}
+            {app.status === "Test Kontrol" && (
+              <span className="badge text-bg-primary me-3">
+                <p className="mb-1 fs-6">Test Skoru: </p>
+                {app.quiz}
               </span>
             )}
             <Button
               className="btn btn-success me-3 px-4 py-2 shadow"
               onClick={() => {
-                application.status == "Değerlendirme" ? (
-                  handleModalOpen()
-                ) : (
-                  <></>
-                );
-                sonrakiAsama(application);
+                app.status == "Değerlendirme" ? handleModalOpen() : <></>;
+                sonrakiAsama(app);
               }}
             >
-              {application.adminMessage}
+              {app.adminMessage}
             </Button>
             <Button
               className="btn btn-danger px-4 py-2 shadow"
               onClick={() => {
-                updateAppStatus({ ...application, status: "Red" });
-
-                setApps((prevApps) =>
-                  prevApps.map((app) =>
-                    app.id === application.id ? { ...app, status: "Red" } : app
-                  )
+                setMessage(
+                  app.id,
+                  "Red",
+                  "Başvurunuz reddedildi",
+                  "Başvuru reddedildi"
                 );
               }}
             >
@@ -154,39 +152,30 @@ const ApplicationDetails = ({ application, user, sonrakiAsama }) => {
           </>
         ) : (
           <>
-            {application.status === "Değerlendirme" && (
-              <span className="badge text-bg-primary">
-                {application.userMessage}
-              </span>
+            {app.status === "Değerlendirme" && (
+              <span className="badge text-bg-primary">{app.userMessage}</span>
             )}
-            {application.status === "Test" &&
+            {app.status === "Test" &&
               (user?.role === "admin" ? (
                 <span className="badge text-bg-warning">
-                  {application.adminMessage}
+                  {app.adminMessage}
                 </span>
               ) : (
-                // <NavLink to={`/quiz/${application.id}`}>
-                //   {application.userMessage}
-                // </NavLink>
-                <button onClick={startQuiz}>{application.userMessage}</button>
+                <button onClick={startQuiz}>{app.userMessage}</button>
               ))}
-            {application.status === "Test Kontrol" && (
+            {app.status === "Test Kontrol" && (
               <span className="badge text-bg-primary">
-                {user?.role === "user"
-                  ? application.userMessage
-                  : application.adminMessage}
+                {user?.role === "user" ? app.userMessage : app.adminMessage}
               </span>
             )}
-            {application.status === "Mülakat" && (
+            {app.status === "Mülakat" && (
               <span className="badge text-bg-primary">
-                {user?.role === "user"
-                  ? application.userMessage
-                  : application.adminMessage}
+                {user?.role === "user" ? app.userMessage : app.adminMessage}
               </span>
             )}
-            {application.status === "Red" && (
+            {app.status === "Red" && (
               <span className="badge text-bg-danger">
-                {application.userMessage}
+                {user?.role === "user" ? app.userMessage : app.adminMessage}
               </span>
             )}
           </>
