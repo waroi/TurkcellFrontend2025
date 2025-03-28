@@ -4,12 +4,13 @@ import { useParams } from "react-router";
 import { getAllJobsQuiz, getQuizByExamID } from "../utils/services";
 
 const QuizView = () => {
-  const { jobId , examId} = useParams();
+  const { jobId, examId } = useParams();
   const [exam, setExam] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchExam = async () => {
+      console.log("examId", examId);
       try {
         const data = await getQuizByExamID(examId);
         setExam(data.questionDetails);

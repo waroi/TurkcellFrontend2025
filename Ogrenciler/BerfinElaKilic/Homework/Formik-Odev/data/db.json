@@ -103,6 +103,21 @@
           "id": "1",
           "status": "test",
           "applicationDate": "2024-03-21T11:00:00Z"
+        },
+        {
+          "id": "2",
+          "status": "pending",
+          "applicationDate": "2025-03-28T12:49:05.297Z"
+        },
+        {
+          "id": "3",
+          "status": "pending",
+          "applicationDate": "2025-03-28T12:49:06.430Z"
+        },
+        {
+          "id": "4",
+          "status": "pending",
+          "applicationDate": "2025-03-28T12:49:07.514Z"
         }
       ]
     },
@@ -242,6 +257,12 @@
           "status": "pending",
           "approvedByAdmin": "",
           "applicationDate": "2025-03-26T16:38:58.928Z"
+        },
+        {
+          "id": "90dZl0LQt8cihXatYOszexHShlm1",
+          "status": "pending",
+          "approvedByAdmin": "",
+          "applicationDate": "2025-03-28T12:49:05.297Z"
         }
       ]
     },
@@ -276,7 +297,14 @@
       ],
       "status": "open",
       "deadline": "2024-06-01T23:59:59Z",
-      "applicants": []
+      "applicants": [
+        {
+          "id": "90dZl0LQt8cihXatYOszexHShlm1",
+          "status": "pending",
+          "approvedByAdmin": "",
+          "applicationDate": "2025-03-28T12:49:06.430Z"
+        }
+      ]
     },
     {
       "id": "4",
@@ -309,7 +337,14 @@
       ],
       "status": "open",
       "deadline": "2024-07-01T23:59:59Z",
-      "applicants": []
+      "applicants": [
+        {
+          "id": "90dZl0LQt8cihXatYOszexHShlm1",
+          "status": "pending",
+          "approvedByAdmin": "",
+          "applicationDate": "2025-03-28T12:49:07.514Z"
+        }
+      ]
     },
     {
       "id": "5",
@@ -728,6 +763,137 @@
             1
           ],
           "difficultyLevel": "easy"
+        }
+      ]
+    },
+    {
+      "id": "3346",
+      "createdAt": "2025-03-28T12:50:48.756Z",
+      "title": "Frontend",
+      "questions": [
+        "4",
+        "37",
+        "36",
+        "36",
+        "36",
+        "4",
+        "37"
+      ],
+      "totalDuration": 35,
+      "jobId": "5",
+      "adminId": "4jD11dc0GLY8py3GlFiNHYqXow13",
+      "questionDetails": [
+        {
+          "id": "4",
+          "category": "JavaScript",
+          "subcategory": "Functions",
+          "question": "Aşağıdakilerden hangisi JavaScript'te bir closure örneğidir?",
+          "options": [
+            "Closures",
+            "Hoisting",
+            "Event Loop",
+            "Hiçbiri"
+          ],
+          "answers": [
+            0
+          ],
+          "difficultyLevel": "medium"
+        },
+        {
+          "id": "37",
+          "category": "JavaScript",
+          "subcategory": "Functions",
+          "question": "JavaScript'te currying nedir?",
+          "options": [
+            "Fonksiyonu ardışık çağrılara bölme tekniği",
+            "Fonksiyonu optimize etme",
+            "Fonksiyonu sıkıştırma",
+            "Hiçbiri"
+          ],
+          "answers": [
+            0
+          ],
+          "difficultyLevel": "medium"
+        },
+        {
+          "id": "36",
+          "category": "JavaScript",
+          "subcategory": "Functions",
+          "question": "JavaScript'te higher-order fonksiyon nedir?",
+          "options": [
+            "Başka fonksiyonları parametre olarak alan veya döndüren fonksiyon",
+            "Sadece global fonksiyonlar",
+            "Sadece arrow fonksiyonlar",
+            "Hiçbiri"
+          ],
+          "answers": [
+            0
+          ],
+          "difficultyLevel": "medium"
+        },
+        {
+          "id": "36",
+          "category": "JavaScript",
+          "subcategory": "Functions",
+          "question": "JavaScript'te higher-order fonksiyon nedir?",
+          "options": [
+            "Başka fonksiyonları parametre olarak alan veya döndüren fonksiyon",
+            "Sadece global fonksiyonlar",
+            "Sadece arrow fonksiyonlar",
+            "Hiçbiri"
+          ],
+          "answers": [
+            0
+          ],
+          "difficultyLevel": "medium"
+        },
+        {
+          "id": "36",
+          "category": "JavaScript",
+          "subcategory": "Functions",
+          "question": "JavaScript'te higher-order fonksiyon nedir?",
+          "options": [
+            "Başka fonksiyonları parametre olarak alan veya döndüren fonksiyon",
+            "Sadece global fonksiyonlar",
+            "Sadece arrow fonksiyonlar",
+            "Hiçbiri"
+          ],
+          "answers": [
+            0
+          ],
+          "difficultyLevel": "medium"
+        },
+        {
+          "id": "4",
+          "category": "JavaScript",
+          "subcategory": "Functions",
+          "question": "Aşağıdakilerden hangisi JavaScript'te bir closure örneğidir?",
+          "options": [
+            "Closures",
+            "Hoisting",
+            "Event Loop",
+            "Hiçbiri"
+          ],
+          "answers": [
+            0
+          ],
+          "difficultyLevel": "medium"
+        },
+        {
+          "id": "37",
+          "category": "JavaScript",
+          "subcategory": "Functions",
+          "question": "JavaScript'te currying nedir?",
+          "options": [
+            "Fonksiyonu ardışık çağrılara bölme tekniği",
+            "Fonksiyonu optimize etme",
+            "Fonksiyonu sıkıştırma",
+            "Hiçbiri"
+          ],
+          "answers": [
+            0
+          ],
+          "difficultyLevel": "medium"
         }
       ]
     }
