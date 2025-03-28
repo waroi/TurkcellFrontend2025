@@ -9,7 +9,6 @@ import { useActions } from "../../context/ActionsContext";
 import { useNavigate, useParams } from "react-router";
 import { useAuth } from "../../context/AuthContext";
 
-// Toplam süre
 const Quiz = ({ jobId, shuffledQuestions }) => {
   const { updateCandidateExamScore } = useActions();
   const { examId } = useParams();
