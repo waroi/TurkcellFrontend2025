@@ -2,11 +2,13 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import Button from "../../atoms/buttons/Button";
 import Modal from "react-bootstrap/Modal";
+//import Button from "react-bootstrap/Button";
 import {
   setMessage,
   setQuestionCount,
 } from "../../../../firebase/dbController";
 import AppSection from "./AppSection";
+import MyModal from "../../organisms/modal/myModal";
 
 const ApplicationDetails = ({
   application,
@@ -161,7 +163,12 @@ const ApplicationDetails = ({
                   {app.adminMessage}
                 </span>
               ) : (
-                <button onClick={startQuiz}>{app.userMessage}</button>
+                <Button
+                  className="btn btn-success me-3 px-4 py-2 shadow"
+                  onClick={startQuiz}
+                >
+                  {app.userMessage}
+                </Button>
               ))}
             {app.status === "Test Kontrol" && (
               <span className="badge text-bg-primary">
@@ -182,53 +189,17 @@ const ApplicationDetails = ({
         )}
       </div>
 
-      <Modal show={showModal} onHide={handleModalClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Test Hazırlayın</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <form>
-            <div className="form-group">
-              <label htmlFor="easyCount">Kolay Soru Adedi:</label>
-              <input
-                type="number"
-                className="form-control"
-                id="easyCount"
-                value={easyCount}
-                onChange={(e) => setEasyCount(e.target.value)}
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="mediumCount">Orta Soru Adedi:</label>
-              <input
-                type="number"
-                className="form-control"
-                id="mediumCount"
-                value={mediumCount}
-                onChange={(e) => setMediumCount(e.target.value)}
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="hardCount">Zor Soru Adedi:</label>
-              <input
-                type="number"
-                className="form-control"
-                id="hardCount"
-                value={hardCount}
-                onChange={(e) => setHardCount(e.target.value)}
-              />
-            </div>
-          </form>
-        </Modal.Body>
-        <Modal.Footer>
-          <button variant="secondary" onClick={handleModalClose}>
-            Close
-          </button>
-          <button variant="primary" onClick={handleSubmit}>
-            Submit
-          </button>
-        </Modal.Footer>
-      </Modal>
+      <MyModal
+        showModal={showModal}
+        easyCount={easyCount}
+        mediumCount={mediumCount}
+        hardCount={hardCount}
+        setEasyCount={setEasyCount}
+        setMediumCount={setMediumCount}
+        setHardCount={setHardCount}
+        handleSubmit={handleSubmit}
+        setShowModal={setShowModal}
+      ></MyModal>
     </div>
   );
 };

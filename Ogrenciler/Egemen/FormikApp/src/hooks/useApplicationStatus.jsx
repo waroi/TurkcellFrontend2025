@@ -34,20 +34,6 @@ const useApplicationStatus = (setApps) => {
           return;
       }
 
-      // setApps((prevApps) => {
-      //   console.log("prevApps", prevApps);
-      //   prevApps.map((app) =>
-      //     app.id === application.id
-      //       ? {
-      //           ...app,
-      //           status: newStatus,
-      //           userMessage: userMessage,
-      //           adminMessage: adminMessage,
-      //         }
-      //       : app
-      //   );
-      // });
-
       try {
         await updateAppStatus({ ...application, status: newStatus });
         await updateMessage(application.id, userMessage, adminMessage);
