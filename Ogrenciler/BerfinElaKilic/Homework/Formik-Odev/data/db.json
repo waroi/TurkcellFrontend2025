@@ -144,7 +144,7 @@
     {
       "id": "1",
       "createdAt": "2024-03-21T10:00:00Z",
-      "adminId": "1",
+      "adminId": "tbHVOivOomebkNYdTDxqPNSChRy2",
       "position": "Frontend Developer",
       "company": "TechCorp",
       "location": "Remote",
@@ -208,7 +208,7 @@
     {
       "id": "2",
       "createdAt": "2024-02-15T09:30:00Z",
-      "adminId": "1",
+      "adminId": "tbHVOivOomebkNYdTDxqPNSChRy2",
       "position": "Backend Developer",
       "company": "DevSolutions",
       "location": "Berlin, Germany",
@@ -422,6 +422,12 @@
           "jobId": "1",
           "approvedAt": "2025-03-26T12:50:43.011Z",
           "newStatus": "test"
+        },
+        {
+          "userId": "j623JrQfEcdLMI294bLETumYyPU2",
+          "jobId": "1",
+          "approvedAt": "2025-03-28T08:20:21.341Z",
+          "newStatus": "test"
         }
       ]
     },
@@ -541,11 +547,40 @@
           "difficultyLevel": "easy"
         }
       ]
+    },
+    {
+      "id": "ae74",
+      "createdAt": "2025-03-28T08:46:15.632Z",
+      "title": "Teknik Test",
+      "questions": [
+        "6"
+      ],
+      "totalDuration": 5,
+      "jobId": "1",
+      "adminId": "tbHVOivOomebkNYdTDxqPNSChRy2",
+      "questionDetails": [
+        {
+          "id": "6",
+          "category": "JavaScript",
+          "subcategory": "Arrays",
+          "question": "JavaScript'te bir nesnenin dizi olup olmadığını kontrol etmek için hangi metod kullanılır?",
+          "options": [
+            "isArray()",
+            "Array.isArray()",
+            "typeof",
+            "Object.isArray()"
+          ],
+          "answers": [
+            1
+          ],
+          "difficultyLevel": "medium"
+        }
+      ]
     }
   ],
   "questions": [
     {
-      "id": 1,
+      "id": "1",
       "category": "JavaScript",
       "subcategory": "Variables",
       "question": "Aşağıdakilerden hangisi JavaScript'te değişken tanımlamak için kullanılır?",
@@ -561,7 +596,7 @@
       "difficultyLevel": "easy"
     },
     {
-      "id": 2,
+      "id": "2",
       "category": "JavaScript",
       "subcategory": "Arrays",
       "question": "JavaScript'te iki veya daha fazla diziyi birleştirmek için hangi metod kullanılır?",
@@ -577,7 +612,7 @@
       "difficultyLevel": "easy"
     },
     {
-      "id": 3,
+      "id": "3",
       "category": "JavaScript",
       "subcategory": "Variables",
       "question": "Aşağıdakilerden hangisi doğru bir JavaScript değişkeni tanımlamasıdır?",
@@ -593,7 +628,7 @@
       "difficultyLevel": "easy"
     },
     {
-      "id": 4,
+      "id": "4",
       "category": "JavaScript",
       "subcategory": "Functions",
       "question": "Aşağıdakilerden hangisi JavaScript'te bir closure örneğidir?",
@@ -609,7 +644,7 @@
       "difficultyLevel": "medium"
     },
     {
-      "id": 5,
+      "id": "5",
       "category": "JavaScript",
       "subcategory": "Type Coercion",
       "question": "Aşağıdaki JavaScript kodunun çıktısı ne olur: console.log(1 + '1')?",
@@ -625,7 +660,7 @@
       "difficultyLevel": "medium"
     },
     {
-      "id": 6,
+      "id": "6",
       "category": "JavaScript",
       "subcategory": "Arrays",
       "question": "JavaScript'te bir nesnenin dizi olup olmadığını kontrol etmek için hangi metod kullanılır?",
@@ -641,7 +676,7 @@
       "difficultyLevel": "medium"
     },
     {
-      "id": 7,
+      "id": "7",
       "category": "JavaScript",
       "subcategory": "Asynchronous",
       "question": "Aşağıdakilerden hangisi JavaScript'te asenkron işlemleri yönetmek için kullanılır?",
@@ -657,7 +692,7 @@
       "difficultyLevel": "hard"
     },
     {
-      "id": 8,
+      "id": "8",
       "category": "JavaScript",
       "subcategory": "Objects",
       "question": "JavaScript'te birden fazla nesneyi birleştirmek için hangi metod kullanılır?",
@@ -673,7 +708,7 @@
       "difficultyLevel": "hard"
     },
     {
-      "id": 9,
+      "id": "9",
       "category": "JavaScript",
       "subcategory": "Context",
       "question": "'this' anahtar kelimesinin amacı nedir?",
@@ -689,7 +724,7 @@
       "difficultyLevel": "hard"
     },
     {
-      "id": 10,
+      "id": "10",
       "category": "TypeScript",
       "subcategory": "Types",
       "question": "Aşağıdaki TypeScript tiplerinden hangisi herhangi bir değeri tanımlamak için kullanılır?",
@@ -705,7 +740,7 @@
       "difficultyLevel": "easy"
     },
     {
-      "id": 11,
+      "id": "11",
       "category": "TypeScript",
       "subcategory": "Functions",
       "question": "Aşağıdakilerden hangisi doğru bir TypeScript fonksiyon tanımlamasıdır?",
@@ -721,7 +756,7 @@
       "difficultyLevel": "easy"
     },
     {
-      "id": 12,
+      "id": "12",
       "category": "TypeScript",
       "subcategory": "Variables",
       "question": "Aşağıdakilerden hangisi TypeScript'te string türünde bir değişken tanımlamak için doğru bir yazımdır?",
@@ -737,7 +772,7 @@
       "difficultyLevel": "easy"
     },
     {
-      "id": 13,
+      "id": "13",
       "category": "TypeScript",
       "subcategory": "Interfaces",
       "question": "Aşağıdakilerden hangisi TypeScript'te bir interface tanımlamak için kullanılır?",
@@ -753,7 +788,7 @@
       "difficultyLevel": "medium"
     },
     {
-      "id": 14,
+      "id": "14",
       "category": "TypeScript",
       "subcategory": "Types",
       "question": "Aşağıdaki TypeScript özelliklerinden hangisi bir değişkenin hiç değeri olmadığını belirtir?",
@@ -769,7 +804,7 @@
       "difficultyLevel": "medium"
     },
     {
-      "id": 15,
+      "id": "15",
       "category": "TypeScript",
       "subcategory": "Type Assertions",
       "question": "'as' anahtar kelimesinin TypeScript'teki amacı nedir?",
@@ -785,7 +820,7 @@
       "difficultyLevel": "medium"
     },
     {
-      "id": 16,
+      "id": "16",
       "category": "TypeScript",
       "subcategory": "Generics",
       "question": "Aşağıdakilerden hangisi TypeScript'te reusable (yeniden kullanılabilir) kodda tip güvenliği sağlamak için kullanılır?",
@@ -801,7 +836,7 @@
       "difficultyLevel": "hard"
     },
     {
-      "id": 17,
+      "id": "17",
       "category": "TypeScript",
       "subcategory": "Async",
       "question": "TypeScript'te bir fonksiyonun promise döndürmesi için doğru yazım nedir?",
@@ -817,7 +852,7 @@
       "difficultyLevel": "hard"
     },
     {
-      "id": 18,
+      "id": "18",
       "category": "TypeScript",
       "subcategory": "OOP",
       "question": "Aşağıdaki TypeScript özelliklerinden hangisi bir sınıfı başka sınıflardan özellik ve metotlarla genişletmeyi sağlar?",
