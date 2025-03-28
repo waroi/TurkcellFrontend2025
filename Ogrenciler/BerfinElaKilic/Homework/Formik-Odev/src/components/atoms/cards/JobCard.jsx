@@ -24,11 +24,21 @@ const JobCard = ({ job, user, jobId }) => {
       }
     }
   };
+  const filteredExam = () => {
+    const result2 = job.exams
+      .flatMap((exam) => console.log("Exams", exam) )
+      
+      // .find((sentExam) => sentExam?.id === user?.id);
+    console.log("exam", result2);
+
+    return result2;
+  };
 
   useEffect(() => {
     if (user && user.role !== "admin") {
       appliedBefore();
     }
+    filteredExam();
   }, [user, job.id]);
 
   return (

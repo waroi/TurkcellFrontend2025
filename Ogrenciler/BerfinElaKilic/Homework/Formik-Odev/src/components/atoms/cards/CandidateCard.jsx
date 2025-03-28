@@ -6,10 +6,11 @@ import SuccessButton from "../Buttons/SuccessButton";
 import WrapperCard from "./WrapperCard";
 import { useActions } from "../../../context/ActionsContext";
 import CustomComponent from "../CustomComponent";
-const CandidateCard = ({ applicant, jobId }) => {
+const CandidateCard = ({ applicant, jobId , exams}) => {
   const [candidate, setCandidate] = useState(null);
   const [status, setStatus] = useState(applicant?.status || "pending");
-  const { approveCandidate } = useActions();
+  const [exam, setExam] = useState();
+  const { approveCandidate, sendExamToCandidate } = useActions();
   const fetchCandidates = async () => {
     try {
       const data = await getCandidate(applicant.id);
@@ -26,7 +27,10 @@ const CandidateCard = ({ applicant, jobId }) => {
     event.preventDefault();
     try {
       await approveCandidate(candidate.id, jobId, status);
-      await fetchCandidates(); // Güncel veriyi tekrar çek
+      if(status === "test"){
+        await sendExamToCandidate(exam, candidate.id)
+      }
+      await fetchCandidates();
     } catch (error) {
       console.error("Error updating status:", error);
     }
@@ -80,6 +84,14 @@ const CandidateCard = ({ applicant, jobId }) => {
                   <option value="mülakat">Mülakat</option>
                   <option value="hired">Hired</option>
                 </Form.Select>
+                {status === "test" && <Form.Select
+                  className="mx-3"
+                  value={exam}
+                  onChange={(e) => setExam(e.target.value)}
+                >
+                  <option value="">Test Seçiniz</option>
+                  {exams.map((exam) => <option key={exam.id} value={exam.id}>{exam.title}</option>)}
+                </Form.Select>}
                 <SuccessButton type="submit" className="btn-sm">
                   Güncelle
                 </SuccessButton>

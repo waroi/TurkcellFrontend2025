@@ -54,3 +54,9 @@ export const getQuizByExamID = async (id) => {
 export const updateQuizByExamID = async (id, examDetail) => {
   return await fetchService(`${url}/exams/${id}`, "PATCH", examDetail);
 };
+export const getJobWithExams = async (jobId) => {
+  return await fetchService(`${url}/jobs/${jobId}?_embed=exams`);
+};
+export const updateExam = async (id, examDetail) => {
+  return await fetchService(`${url}/exams/${id}`, "PATCH", examDetail);
+};
