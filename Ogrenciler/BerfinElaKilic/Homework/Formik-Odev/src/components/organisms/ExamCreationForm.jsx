@@ -6,6 +6,7 @@ import { examSchema } from "../../schemas";
 import ExamSelection from "../molecules/forms/ExamSelection";
 import { useAuth } from "../../context/AuthContext";
 import { postExam } from "../../utils/services";
+import WrapperCard from "../atoms/cards/WrapperCard";
 
 const ExamCreationForm = ({ questions }) => {
   const { user } = useAuth();
@@ -15,7 +16,6 @@ const ExamCreationForm = ({ questions }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  // Fetch jobs created by the admin
   useEffect(() => {
     const fetchJobs = async () => {
       try {
@@ -36,7 +36,6 @@ const ExamCreationForm = ({ questions }) => {
     fetchJobs();
   }, [user.id]);
 
-  // Fisher-Yates shuffle algorithm
   const shuffleArray = (array) => {
     const newArray = [...array];
     for (let i = newArray.length - 1; i > 0; i--) {
@@ -135,14 +134,15 @@ const ExamCreationForm = ({ questions }) => {
       validationSchema={examSchema}
     >
       {({ isSubmitting }) => (
+        <WrapperCard>
         <Form className="">
           {error && <div className="alert alert-danger">{error}</div>}
 
           <CustomComponent
             id="title"
             as="input"
-            className="mb-3"
-            label="Sınav adı"
+            className="form-control mb-3"
+            label="Sınav Adı"
             name="title"
             required
           />
@@ -171,15 +171,17 @@ const ExamCreationForm = ({ questions }) => {
             selection={selection}
           />
 
-          <div className="mt-4">
+          <div className="text-end mt-4">
             <PrimaryButton
               type="submit"
               disabled={isSubmitting || isLoading || selection.length === 0}
+              className="btn btn-primary px-4 py-2"
             >
               {isLoading ? "Oluşturuluyor..." : "Sınavı Oluştur"}
             </PrimaryButton>
           </div>
         </Form>
+        </WrapperCard>
       )}
     </Formik>
   );

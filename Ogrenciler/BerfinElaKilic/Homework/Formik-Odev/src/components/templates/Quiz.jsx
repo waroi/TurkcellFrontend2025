@@ -14,7 +14,7 @@ const Quiz = ({ jobId, shuffledQuestions }) => {
   const { updateCandidateExamScore } = useActions();
   const { examId } = useParams();
   const { user } = useAuth();
-  const { navigate } = useNavigate();
+  const navigate  = useNavigate();
   const totalTime = shuffledQuestions.totalDuration || 90;
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
@@ -80,7 +80,9 @@ const Quiz = ({ jobId, shuffledQuestions }) => {
         newScore
       );
       console.log(response);
-      navigate("/jobs");
+      setTimeout(() => {
+        navigate("/jobs");
+      }, 5000);
     } catch (error) {
       console.error("Sınav bulunamadı:", error);
     } finally {
@@ -98,14 +100,6 @@ const Quiz = ({ jobId, shuffledQuestions }) => {
         </div>
       ) : showResult ? (
         <div>
-          {/* <h2 className="mb-3">
-            Sonuç: {score}/{shuffledQuestions.length}
-          </h2>
-          <p>
-            {score / shuffledQuestions.length >= 0.7
-              ? "Tebrikler! Mülakata çağrıldınız."
-              : "Başarısız oldunuz. Tekrar deneyin."}
-          </p> */}
           <p>Testi Tamamladınız.</p>
         </div>
       ) : (
@@ -127,19 +121,19 @@ const Quiz = ({ jobId, shuffledQuestions }) => {
                   <div key={index}>
                     {isSelected ? (
                       isCorrect ? (
-                        <SuccessButton
+                        <PrimaryButton
                           onClick={() => handleAnswer(index)}
                           disabled={!!selectedOption}
                         >
                           {option}
-                        </SuccessButton>
+                        </PrimaryButton>
                       ) : (
-                        <DangerButton
+                        <PrimaryButton
                           onClick={() => handleAnswer(index)}
                           disabled={!!selectedOption}
                         >
                           {option}
-                        </DangerButton>
+                        </PrimaryButton>
                       )
                     ) : (
                       <PrimaryButton
