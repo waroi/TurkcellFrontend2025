@@ -59,7 +59,7 @@ const Router = () => {
         { index: true, element: <Navigate to="all" /> },
         { path: `all`, element: <AllJobs /> },
         { path: `:jobId/candidates`, element: <ApplicantsView /> }, //TODO: admin altına çekilmesi daha uygun olabilir.
-        { path: `:jobId/exam`, element: <QuizView /> }, //TODO: admin altına çekilmesi daha uygun olabilir.
+        { path: `:jobId/exam/:examId`, element: <QuizView /> }, //TODO: admin altına çekilmesi daha uygun olabilir.
       ],
     },
   ]);

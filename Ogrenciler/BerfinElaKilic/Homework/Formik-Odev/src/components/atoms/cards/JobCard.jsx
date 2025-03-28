@@ -25,16 +25,19 @@ const JobCard = ({ job, user, jobId }) => {
       }
     }
   };
+
   const filteredExam = () => {
     const foundExam = job.exams?.find((exam) =>
       exam.sentExams?.some((sentExam) => sentExam.id === user.id)
     );
-
-    const matchingSentExam = foundExam?.sentExams?.find(
-      (sentExam) => sentExam.id === user.id
-    );
-    console.log("exam", matchingSentExam);
-    return matchingSentExam;
+    if (foundExam) {
+      const matchingSentExam = foundExam.sentExams?.find(
+        (sentExam) => sentExam.id === user.id
+      );
+      console.log("Matching Exam:", matchingSentExam);
+      return matchingSentExam;
+    }
+    return null;
   };
 
   useEffect(() => {
@@ -42,10 +45,15 @@ const JobCard = ({ job, user, jobId }) => {
       appliedBefore();
     }
     if (jobStatus === "test") {
-      const exam = filteredExam();
-      setExamId(exam.id);
+      const exam = filteredExam(); // Test aşamasındaki exam'ı buluyoruz
+      if (exam) {
+        setExamId(exam.id); // Bulduğumuz exam id'yi setliyoruz
+        console.log("Exam ID Setted:", exam.id); // Debugging: Exam ID kontrolü
+      } else {
+        console.log("No matching exam found");
+      }
     }
-  }, [user, job.id]);
+  }, [user, job.id, jobStatus]); // jobStatus ve job.id'yi bağımlılık olarak ekledik
 
   return (
     <WrapperCard className="mt-4">
