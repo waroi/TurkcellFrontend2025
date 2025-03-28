@@ -12,6 +12,7 @@ const JobCard = ({ job, user, jobId }) => {
   const { applyJob } = useActions();
   const [hasApplied, setHasApplied] = useState(false);
   const [jobStatus, setJobStatus] = useState("pending");
+  const [examId, setExamId] = useState("");
 
   const appliedBefore = () => {
     if (user && user.appliedJobs) {
@@ -25,20 +26,25 @@ const JobCard = ({ job, user, jobId }) => {
     }
   };
   const filteredExam = () => {
-    const result2 = job.exams
-      .flatMap((exam) => console.log("Exams", exam) )
-      
-      // .find((sentExam) => sentExam?.id === user?.id);
-    console.log("exam", result2);
+    const foundExam = job.exams?.find((exam) =>
+      exam.sentExams?.some((sentExam) => sentExam.id === user.id)
+    );
 
-    return result2;
+    const matchingSentExam = foundExam?.sentExams?.find(
+      (sentExam) => sentExam.id === user.id
+    );
+    console.log("exam", matchingSentExam);
+    return matchingSentExam;
   };
 
   useEffect(() => {
     if (user && user.role !== "admin") {
       appliedBefore();
     }
-    filteredExam();
+    if (jobStatus === "test") {
+      const exam = filteredExam();
+      setExamId(exam.id);
+    }
   }, [user, job.id]);
 
   return (
@@ -69,7 +75,7 @@ const JobCard = ({ job, user, jobId }) => {
               </WarningButton>
             ) : jobStatus === "test" ? (
               <SuccessButton
-                onClick={() => navigate(`/jobs/${job.id}/exam/${user.id}`)}
+                onClick={() => navigate(`/jobs/${job.id}/exam/${examId}`)}
               >
                 Test aşamasına geçtiniz, testi çözmek için tıklayınız
               </SuccessButton>
