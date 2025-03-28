@@ -66,7 +66,7 @@ const Exams = () => {
                     <Card.Text className="mb-1 p-3">İş: {exam.relatedJob.position}</Card.Text>
                     <span className="mx-2">|</span>
                     <Card.Text className="mb-1 p-3">Oluşturulma Tarihi: {new Date(exam.createdAt).toLocaleDateString()}</Card.Text>
-                    <Link to={`/jobs/${exam.jobId}/exam/${exam.id}`}>
+                    <Link to={`${exam.id}`} className="text-decoration-none">
                       <SuccessButton className="btn-sm">Sınavı Görüntüle</SuccessButton>
                     </Link>
                   </Card.Body>
