@@ -40,6 +40,7 @@ const Router = () => {
           path: `:adminId/exams`, //TODO:Protected for adminID
           element: <ExamManagement />,
         },
+        {path: `:adminId/exams/:examId`, element: <ExamDetail />}, //TODO: admin altına çekilmesi daha uygun olabilir.
       ],
     },
     {
