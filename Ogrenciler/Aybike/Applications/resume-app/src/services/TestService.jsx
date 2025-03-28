@@ -32,7 +32,7 @@ export class TestService {
             const docSnap = await getDoc(docRef)
 
             if (!docSnap.exists()) {
-                return alert("No access - Kullanıcı bulunamadı dashboard'a yönlendiriliyorsunuz")
+                return alert("Kullanıcı bulunamadı, lütfen önce başvuru yapınız")
             }
 
             const userData = docSnap.data()
