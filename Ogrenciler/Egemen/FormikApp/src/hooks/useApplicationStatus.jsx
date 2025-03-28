@@ -3,7 +3,7 @@ import { updateAppStatus, updateMessage } from "../../firebase/dbController";
 
 const useApplicationStatus = (setApps) => {
   const handleStatusChange = useCallback(
-    async (application) => {
+    async (application, updateStatus) => {
       let newStatus;
       let userMessage;
       let adminMessage;
@@ -13,28 +13,23 @@ const useApplicationStatus = (setApps) => {
           newStatus = "Test";
           userMessage = "Testi Çöz";
           adminMessage = "Test aşamasında";
-          application.status = "Test";
-
           break;
         case "Test":
           newStatus = "Test Kontrol";
           userMessage = "Testiniz değerlendiriliyor.";
           adminMessage = "Mülakat aşamasını başlat";
-          application.status = "Test Kontrol";
           break;
         case "Test Kontrol":
           newStatus = "Mülakat";
           userMessage = "Mülakata davet edildiniz.";
           adminMessage = "Mülakat aşamasına geçildi";
-          application.status = "Mülakat";
-
           break;
-
         default:
           return;
       }
 
       try {
+        updateStatus(newStatus, userMessage, adminMessage);
         await updateAppStatus({ ...application, status: newStatus });
         await updateMessage(application.id, userMessage, adminMessage);
       } catch (error) {
@@ -45,8 +40,8 @@ const useApplicationStatus = (setApps) => {
   );
 
   const sonrakiAsama = useCallback(
-    (application) => {
-      handleStatusChange(application);
+    (application, updateStatus) => {
+      handleStatusChange(application, updateStatus);
     },
     [handleStatusChange]
   );

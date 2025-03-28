@@ -221,12 +221,6 @@
           "status": "pending",
           "approvedByAdmin": "",
           "applicationDate": "2025-03-26T13:09:05.965Z"
-        },
-        {
-          "id": "j623JrQfEcdLMI294bLETumYyPU2",
-          "status": "pending",
-          "approvedByAdmin": "",
-          "applicationDate": "2025-03-26T13:09:30.489Z"
         }
       ]
     },
@@ -548,9 +542,7 @@
             "Her zaman undefined'dır",
             "Hiçbiri"
           ],
-          "answers": [
-            0
-          ],
+          "answers": [0],
           "difficultyLevel": "easy"
         },
         {
@@ -564,9 +556,7 @@
             "map() sadece sayılar için kullanılır",
             "Hiçbiri"
           ],
-          "answers": [
-            0
-          ],
+          "answers": [0],
           "difficultyLevel": "medium"
         },
         {
@@ -580,9 +570,7 @@
             "Hepsi",
             "Hiçbiri"
           ],
-          "answers": [
-            2
-          ],
+          "answers": [2],
           "difficultyLevel": "easy"
         },
         {
@@ -596,9 +584,7 @@
             "Tip dönüşümü",
             "Hepsi"
           ],
-          "answers": [
-            0
-          ],
+          "answers": [0],
           "difficultyLevel": "medium"
         },
         {
@@ -612,9 +598,7 @@
             "typeof",
             "Object.isArray()"
           ],
-          "answers": [
-            1
-          ],
+          "answers": [1],
           "difficultyLevel": "medium"
         },
         {
@@ -628,9 +612,7 @@
             "Diziyi filtreler",
             "Hiçbiri"
           ],
-          "answers": [
-            0
-          ],
+          "answers": [0],
           "difficultyLevel": "hard"
         },
         {
@@ -644,9 +626,7 @@
             "Filtrelenmiş dizi",
             "Hiçbiri"
           ],
-          "answers": [
-            0
-          ],
+          "answers": [0],
           "difficultyLevel": "hard"
         },
         {
@@ -660,9 +640,7 @@
             "Hiçbiri",
             "Hepsi"
           ],
-          "answers": [
-            3
-          ],
+          "answers": [3],
           "difficultyLevel": "medium"
         },
         {
@@ -676,9 +654,7 @@
             "Hiçbiri",
             "Hepsi"
           ],
-          "answers": [
-            0
-          ],
+          "answers": [0],
           "difficultyLevel": "medium"
         },
         {
@@ -692,9 +668,7 @@
             "Diziyi ters çevirmek",
             "Hiçbiri"
           ],
-          "answers": [
-            0
-          ],
+          "answers": [0],
           "difficultyLevel": "medium"
         }
       ],
@@ -712,15 +686,8 @@
       "category": "JavaScript",
       "subcategory": "Variables",
       "question": "Aşağıdakilerden hangisi JavaScript'te değişken tanımlamak için kullanılır?",
-      "options": [
-        "var",
-        "let",
-        "const",
-        "Hiçbiri"
-      ],
-      "answers": [
-        1
-      ],
+      "options": ["var", "let", "const", "Hiçbiri"],
+      "answers": [1],
       "difficultyLevel": "easy"
     },
     {
@@ -728,15 +695,8 @@
       "category": "JavaScript",
       "subcategory": "Variables",
       "question": "JavaScript'te 'var' ile tanımlanan bir değişkenin kapsamı nedir?",
-      "options": [
-        "Fonksiyon scope",
-        "Block scope",
-        "Global scope",
-        "Hiçbiri"
-      ],
-      "answers": [
-        0
-      ],
+      "options": ["Fonksiyon scope", "Block scope", "Global scope", "Hiçbiri"],
+      "answers": [0],
       "difficultyLevel": "easy"
     },
     {
@@ -744,15 +704,8 @@
       "category": "JavaScript",
       "subcategory": "Variables",
       "question": "JavaScript'te 'const' ile tanımlanan bir değişkenin değeri sonradan değiştirilebilir mi?",
-      "options": [
-        "Evet",
-        "Hayır",
-        "Sadece nesnelerde",
-        "Sadece dizilerde"
-      ],
-      "answers": [
-        1
-      ],
+      "options": ["Evet", "Hayır", "Sadece nesnelerde", "Sadece dizilerde"],
+      "answers": [1],
       "difficultyLevel": "easy"
     },
     {
@@ -766,9 +719,7 @@
         "Hiçbir fark yok",
         "const sadece sayılar için kullanılır"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "medium"
     },
     {
@@ -782,9 +733,7 @@
         "Global değişkenlerin durumu",
         "Hiçbiri"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "medium"
     },
     {
@@ -798,9 +747,7 @@
         "undefined: global değişken, not defined: local değişken",
         "Hiçbiri"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "medium"
     },
     {
@@ -814,9 +761,7 @@
         "Aynı şeyler",
         "Hiçbiri"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "hard"
     },
     {
@@ -830,9 +775,7 @@
         "Shallow: primitive tipler için, deep: reference tipler için",
         "Hiçbiri"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "hard"
     },
     {
@@ -846,9 +789,7 @@
         "Tüm değişkenleri const yapar",
         "Hiçbiri"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "hard"
     },
     {
@@ -856,15 +797,8 @@
       "category": "JavaScript",
       "subcategory": "Arrays",
       "question": "JavaScript'te iki veya daha fazla diziyi birleştirmek için hangi metod kullanılır?",
-      "options": [
-        "join()",
-        "concat()",
-        "push()",
-        "merge()"
-      ],
-      "answers": [
-        1
-      ],
+      "options": ["join()", "concat()", "push()", "merge()"],
+      "answers": [1],
       "difficultyLevel": "easy"
     },
     {
@@ -872,15 +806,8 @@
       "category": "JavaScript",
       "subcategory": "Arrays",
       "question": "JavaScript'te bir dizinin sonuna eleman eklemek için hangi metod kullanılır?",
-      "options": [
-        "push()",
-        "pop()",
-        "shift()",
-        "unshift()"
-      ],
-      "answers": [
-        0
-      ],
+      "options": ["push()", "pop()", "shift()", "unshift()"],
+      "answers": [0],
       "difficultyLevel": "easy"
     },
     {
@@ -888,15 +815,8 @@
       "category": "JavaScript",
       "subcategory": "Arrays",
       "question": "JavaScript'te bir dizinin ilk elemanını çıkarmak için hangi metod kullanılır?",
-      "options": [
-        "shift()",
-        "pop()",
-        "slice()",
-        "splice()"
-      ],
-      "answers": [
-        0
-      ],
+      "options": ["shift()", "pop()", "slice()", "splice()"],
+      "answers": [0],
       "difficultyLevel": "easy"
     },
     {
@@ -910,9 +830,7 @@
         "map() sadece sayılar için kullanılır",
         "Hiçbiri"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "medium"
     },
     {
@@ -926,9 +844,7 @@
         "Diziyi ters çevirmek",
         "Hiçbiri"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "medium"
     },
     {
@@ -936,15 +852,8 @@
       "category": "JavaScript",
       "subcategory": "Arrays",
       "question": "JavaScript'te bir nesnenin dizi olup olmadığını kontrol etmek için hangi metod kullanılır?",
-      "options": [
-        "isArray()",
-        "Array.isArray()",
-        "typeof",
-        "Object.isArray()"
-      ],
-      "answers": [
-        1
-      ],
+      "options": ["isArray()", "Array.isArray()", "typeof", "Object.isArray()"],
+      "answers": [1],
       "difficultyLevel": "medium"
     },
     {
@@ -958,9 +867,7 @@
         "Diziyi filtreler",
         "Hiçbiri"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "hard"
     },
     {
@@ -974,9 +881,7 @@
         "Dizileri filtrelemek için",
         "Hiçbiri"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "hard"
     },
     {
@@ -990,9 +895,7 @@
         "Filtrelenmiş dizi",
         "Hiçbiri"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "hard"
     },
     {
@@ -1000,15 +903,8 @@
       "category": "JavaScript",
       "subcategory": "Functions",
       "question": "Aşağıdakilerden hangisi JavaScript'te bir closure örneğidir?",
-      "options": [
-        "Closures",
-        "Hoisting",
-        "Event Loop",
-        "Hiçbiri"
-      ],
-      "answers": [
-        0
-      ],
+      "options": ["Closures", "Hoisting", "Event Loop", "Hiçbiri"],
+      "answers": [0],
       "difficultyLevel": "medium"
     },
     {
@@ -1022,9 +918,7 @@
         "Sadece bir parametre alabilir",
         "Hiçbiri"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "easy"
     },
     {
@@ -1038,9 +932,7 @@
         "Callback fonksiyon",
         "Hiçbiri"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "easy"
     },
     {
@@ -1054,9 +946,7 @@
         "Sadece arrow fonksiyonlar",
         "Hiçbiri"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "medium"
     },
     {
@@ -1070,9 +960,7 @@
         "Fonksiyonu sıkıştırma",
         "Hiçbiri"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "medium"
     },
     {
@@ -1086,9 +974,7 @@
         "Fonksiyonları birleştirme",
         "Hiçbiri"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "hard"
     },
     {
@@ -1102,9 +988,7 @@
         "Sadece matematiksel işlemler yapan fonksiyon",
         "Hiçbiri"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "hard"
     },
     {
@@ -1118,9 +1002,7 @@
         "Fonksiyonları optimize etme",
         "Hiçbiri"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "hard"
     },
     {
@@ -1128,15 +1010,8 @@
       "category": "JavaScript",
       "subcategory": "Type Coercion",
       "question": "Aşağıdaki JavaScript kodunun çıktısı ne olur: console.log(1 + '1')?",
-      "options": [
-        "11",
-        "2",
-        "NaN",
-        "Hata"
-      ],
-      "answers": [
-        0
-      ],
+      "options": ["11", "2", "NaN", "Hata"],
+      "answers": [0],
       "difficultyLevel": "medium"
     },
     {
@@ -1150,9 +1025,7 @@
         "== sadece sayılar için kullanılır",
         "Hiçbiri"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "easy"
     },
     {
@@ -1160,15 +1033,8 @@
       "category": "JavaScript",
       "subcategory": "Type Coercion",
       "question": "console.log(Boolean('false')) çıktısı nedir?",
-      "options": [
-        "true",
-        "false",
-        "undefined",
-        "Hata"
-      ],
-      "answers": [
-        0
-      ],
+      "options": ["true", "false", "undefined", "Hata"],
+      "answers": [0],
       "difficultyLevel": "easy"
     },
     {
@@ -1182,9 +1048,7 @@
         "Sadece 1 ve 0",
         "Hiçbiri"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "medium"
     },
     {
@@ -1192,15 +1056,8 @@
       "category": "JavaScript",
       "subcategory": "Type Coercion",
       "question": "console.log([] == ![]) çıktısı nedir?",
-      "options": [
-        "true",
-        "false",
-        "undefined",
-        "Hata"
-      ],
-      "answers": [
-        0
-      ],
+      "options": ["true", "false", "undefined", "Hata"],
+      "answers": [0],
       "difficultyLevel": "medium"
     },
     {
@@ -1214,9 +1071,7 @@
         "Değerleri karşılaştırmak",
         "Hiçbiri"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "hard"
     },
     {
@@ -1230,9 +1085,7 @@
         "Performansı artırır",
         "Hiçbiri"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "hard"
     },
     {
@@ -1246,9 +1099,7 @@
         "Tip dönüşümü yapmak",
         "Hiçbiri"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "hard"
     },
     {
@@ -1256,15 +1107,8 @@
       "category": "JavaScript",
       "subcategory": "Asynchronous",
       "question": "Aşağıdakilerden hangisi JavaScript'te asenkron işlemleri yönetmek için kullanılır?",
-      "options": [
-        "SetTimeout",
-        "SetInterval",
-        "Promise",
-        "Async/Await"
-      ],
-      "answers": [
-        2
-      ],
+      "options": ["SetTimeout", "SetInterval", "Promise", "Async/Await"],
+      "answers": [2],
       "difficultyLevel": "hard"
     },
     {
@@ -1278,9 +1122,7 @@
         "Arrow fonksiyon",
         "Hiçbiri"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "easy"
     },
     {
@@ -1294,9 +1136,7 @@
         "start, process, end",
         "Hiçbiri"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "easy"
     },
     {
@@ -1310,9 +1150,7 @@
         "Callback hell'i önler",
         "Hiçbiri"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "medium"
     },
     {
@@ -1326,9 +1164,7 @@
         "Promise'leri yönetir",
         "Hiçbiri"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "medium"
     },
     {
@@ -1342,9 +1178,7 @@
         "Aynı şeyler",
         "Hiçbiri"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "medium"
     },
     {
@@ -1358,9 +1192,7 @@
         "Promise'leri iptal eder",
         "Hiçbiri"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "hard"
     },
     {
@@ -1374,9 +1206,7 @@
         "Callback fonksiyonudur",
         "Hiçbiri"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "hard"
     },
     {
@@ -1390,9 +1220,7 @@
         "Callback'leri yönetmek için",
         "Hiçbiri"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "hard"
     },
     {
@@ -1406,9 +1234,7 @@
         "Object.combine()",
         "Hiçbiri"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "hard"
     },
     {
@@ -1422,9 +1248,7 @@
         "Object.entries()",
         "Hepsi"
       ],
-      "answers": [
-        3
-      ],
+      "answers": [3],
       "difficultyLevel": "easy"
     },
     {
@@ -1438,9 +1262,7 @@
         "Spread operator",
         "Hiçbiri"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "easy"
     },
     {
@@ -1454,9 +1276,7 @@
         "Nesne kopyalama yöntemi",
         "Hiçbiri"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "medium"
     },
     {
@@ -1470,9 +1290,7 @@
         "Nesneyi birleştirir",
         "Hiçbiri"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "medium"
     },
     {
@@ -1486,9 +1304,7 @@
         "Prototip özellikleri",
         "Hiçbiri"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "medium"
     },
     {
@@ -1502,9 +1318,7 @@
         "Nesne birleştirme aracı",
         "Hiçbiri"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "hard"
     },
     {
@@ -1518,9 +1332,7 @@
         "Prototip özelliği",
         "Hiçbiri"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "hard"
     },
     {
@@ -1534,9 +1346,7 @@
         "Sadece primitive değerler alır",
         "Hiçbiri"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "hard"
     },
     {
@@ -1550,9 +1360,7 @@
         "A ve B şıkları",
         "Hiçbiri"
       ],
-      "answers": [
-        2
-      ],
+      "answers": [2],
       "difficultyLevel": "hard"
     },
     {
@@ -1566,9 +1374,7 @@
         "Her zaman undefined'dır",
         "Hiçbiri"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "easy"
     },
     {
@@ -1582,9 +1388,7 @@
         "Hepsi",
         "Hiçbiri"
       ],
-      "answers": [
-        2
-      ],
+      "answers": [2],
       "difficultyLevel": "easy"
     },
     {
@@ -1598,9 +1402,7 @@
         "undefined'dır",
         "Hiçbiri"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "medium"
     },
     {
@@ -1614,9 +1416,7 @@
         "Her zaman window'u gösterir",
         "Hiçbiri"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "medium"
     },
     {
@@ -1630,9 +1430,7 @@
         "undefined yapar",
         "Hiçbiri"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "medium"
     },
     {
@@ -1646,9 +1444,7 @@
         "undefined",
         "Hiçbiri"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "hard"
     },
     {
@@ -1656,15 +1452,8 @@
       "category": "JavaScript",
       "subcategory": "Context",
       "question": "JavaScript'te module context'inde 'this' neyi gösterir?",
-      "options": [
-        "undefined",
-        "Global nesneyi",
-        "Module nesnesini",
-        "Hiçbiri"
-      ],
-      "answers": [
-        0
-      ],
+      "options": ["undefined", "Global nesneyi", "Module nesnesini", "Hiçbiri"],
+      "answers": [0],
       "difficultyLevel": "hard"
     },
     {
@@ -1678,9 +1467,7 @@
         "Global nesneyi",
         "Hiçbiri"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "hard"
     },
     {
@@ -1688,15 +1475,8 @@
       "category": "TypeScript",
       "subcategory": "Types",
       "question": "Aşağıdaki TypeScript tiplerinden hangisi herhangi bir değeri tanımlamak için kullanılır?",
-      "options": [
-        "any",
-        "unknown",
-        "never",
-        "void"
-      ],
-      "answers": [
-        0
-      ],
+      "options": ["any", "unknown", "never", "void"],
+      "answers": [0],
       "difficultyLevel": "easy"
     },
     {
@@ -1710,9 +1490,7 @@
         "Interface",
         "Hiçbiri"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "easy"
     },
     {
@@ -1726,9 +1504,7 @@
         "Fonksiyon tipi",
         "Hiçbiri"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "easy"
     },
     {
@@ -1742,9 +1518,7 @@
         "Runtime tip kontrolü",
         "Hiçbiri"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "medium"
     },
     {
@@ -1752,15 +1526,8 @@
       "category": "TypeScript",
       "subcategory": "Types",
       "question": "Aşağıdaki TypeScript özelliklerinden hangisi bir değişkenin hiç değeri olmadığını belirtir?",
-      "options": [
-        "void",
-        "never",
-        "any",
-        "unknown"
-      ],
-      "answers": [
-        1
-      ],
+      "options": ["void", "never", "any", "unknown"],
+      "answers": [1],
       "difficultyLevel": "medium"
     },
     {
@@ -1774,9 +1541,7 @@
         "Generic kısıtlamalar",
         "Hiçbiri"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "medium"
     },
     {
@@ -1790,9 +1555,7 @@
         "Interface birleşimi",
         "Hiçbiri"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "hard"
     },
     {
@@ -1806,9 +1569,7 @@
         "Interface'ler",
         "Hiçbiri"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "hard"
     },
     {
@@ -1822,9 +1583,7 @@
         "Interface genişletme",
         "Hiçbiri"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "hard"
     },
     {
@@ -1838,9 +1597,7 @@
         "Hepsi",
         "Hiçbiri"
       ],
-      "answers": [
-        2
-      ],
+      "answers": [2],
       "difficultyLevel": "easy"
     },
     {
@@ -1854,9 +1611,7 @@
         "Hepsi",
         "Hiçbiri"
       ],
-      "answers": [
-        2
-      ],
+      "answers": [2],
       "difficultyLevel": "easy"
     },
     {
@@ -1870,9 +1625,7 @@
         "Hepsi",
         "Hiçbiri"
       ],
-      "answers": [
-        2
-      ],
+      "answers": [2],
       "difficultyLevel": "easy"
     },
     {
@@ -1886,9 +1639,7 @@
         "Hepsi",
         "Hiçbiri"
       ],
-      "answers": [
-        2
-      ],
+      "answers": [2],
       "difficultyLevel": "medium"
     },
     {
@@ -1902,9 +1653,7 @@
         "Hepsi",
         "Hiçbiri"
       ],
-      "answers": [
-        2
-      ],
+      "answers": [2],
       "difficultyLevel": "medium"
     },
     {
@@ -1918,9 +1667,7 @@
         "Hepsi",
         "Hiçbiri"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "medium"
     },
     {
@@ -1934,9 +1681,7 @@
         "Hepsi",
         "Hiçbiri"
       ],
-      "answers": [
-        2
-      ],
+      "answers": [2],
       "difficultyLevel": "hard"
     },
     {
@@ -1950,9 +1695,7 @@
         "Hepsi",
         "Hiçbiri"
       ],
-      "answers": [
-        2
-      ],
+      "answers": [2],
       "difficultyLevel": "hard"
     },
     {
@@ -1966,9 +1709,7 @@
         "Hepsi",
         "Hiçbiri"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "hard"
     },
     {
@@ -1982,9 +1723,7 @@
         "var name: String;",
         "Hiçbiri"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "easy"
     },
     {
@@ -1998,9 +1737,7 @@
         "Hiçbiri",
         "Hepsi"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "easy"
     },
     {
@@ -2014,9 +1751,7 @@
         "Tip dönüşümü",
         "Hiçbiri"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "easy"
     },
     {
@@ -2030,9 +1765,7 @@
         "Hiçbiri",
         "Hepsi"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "medium"
     },
     {
@@ -2046,9 +1779,7 @@
         "Hiçbiri",
         "Hepsi"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "medium"
     },
     {
@@ -2062,9 +1793,7 @@
         "Hiçbiri",
         "Hepsi"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "medium"
     },
     {
@@ -2078,9 +1807,7 @@
         "Hiçbiri",
         "Hepsi"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "hard"
     },
     {
@@ -2094,9 +1821,7 @@
         "Hiçbiri",
         "Hepsi"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "hard"
     },
     {
@@ -2110,9 +1835,7 @@
         "Hiçbiri",
         "Hepsi"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "hard"
     },
     {
@@ -2120,15 +1843,8 @@
       "category": "TypeScript",
       "subcategory": "Interfaces",
       "question": "Aşağıdakilerden hangisi TypeScript'te bir interface tanımlamak için kullanılır?",
-      "options": [
-        "Interfaces",
-        "Type Aliases",
-        "Enums",
-        "Hiçbiri"
-      ],
-      "answers": [
-        0
-      ],
+      "options": ["Interfaces", "Type Aliases", "Enums", "Hiçbiri"],
+      "answers": [0],
       "difficultyLevel": "medium"
     },
     {
@@ -2142,9 +1858,7 @@
         "Hiçbiri",
         "Hepsi"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "easy"
     },
     {
@@ -2158,9 +1872,7 @@
         "Hiçbiri",
         "Hepsi"
       ],
-      "answers": [
-        3
-      ],
+      "answers": [3],
       "difficultyLevel": "easy"
     },
     {
@@ -2174,9 +1886,7 @@
         "Hiçbiri",
         "Hepsi"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "medium"
     },
     {
@@ -2190,9 +1900,7 @@
         "Hiçbiri",
         "Hepsi"
       ],
-      "answers": [
-        3
-      ],
+      "answers": [3],
       "difficultyLevel": "medium"
     },
     {
@@ -2200,15 +1908,8 @@
       "category": "TypeScript",
       "subcategory": "Interfaces",
       "question": "TypeScript'te readonly properties nasıl tanımlanır?",
-      "options": [
-        "readonly keyword'ü ile",
-        "Const gibi",
-        "Hiçbiri",
-        "Hepsi"
-      ],
-      "answers": [
-        0
-      ],
+      "options": ["readonly keyword'ü ile", "Const gibi", "Hiçbiri", "Hepsi"],
+      "answers": [0],
       "difficultyLevel": "medium"
     },
     {
@@ -2222,9 +1923,7 @@
         "Hiçbiri",
         "Hepsi"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "hard"
     },
     {
@@ -2238,9 +1937,7 @@
         "Hiçbiri",
         "Hepsi"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "hard"
     },
     {
@@ -2254,9 +1951,7 @@
         "Hiçbiri",
         "Hepsi"
       ],
-      "answers": [
-        3
-      ],
+      "answers": [3],
       "difficultyLevel": "hard"
     },
     {
@@ -2264,15 +1959,8 @@
       "category": "TypeScript",
       "subcategory": "Type Assertions",
       "question": "'as' anahtar kelimesinin TypeScript'teki amacı nedir?",
-      "options": [
-        "Tip beyannamesi",
-        "Tip çıkarımı",
-        "Tip dönüşümü",
-        "Hepsi"
-      ],
-      "answers": [
-        0
-      ],
+      "options": ["Tip beyannamesi", "Tip çıkarımı", "Tip dönüşümü", "Hepsi"],
+      "answers": [0],
       "difficultyLevel": "medium"
     },
     {
@@ -2286,9 +1974,7 @@
         "Hiçbiri",
         "Hepsi"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "easy"
     },
     {
@@ -2296,15 +1982,8 @@
       "category": "TypeScript",
       "subcategory": "Type Assertions",
       "question": "TypeScript'te type assertion runtime'da etkili midir?",
-      "options": [
-        "Hayır",
-        "Evet",
-        "Bazen",
-        "Hiçbiri"
-      ],
-      "answers": [
-        0
-      ],
+      "options": ["Hayır", "Evet", "Bazen", "Hiçbiri"],
+      "answers": [0],
       "difficultyLevel": "easy"
     },
     {
@@ -2318,9 +1997,7 @@
         "Hiçbiri",
         "Hepsi"
       ],
-      "answers": [
-        3
-      ],
+      "answers": [3],
       "difficultyLevel": "medium"
     },
     {
@@ -2334,9 +2011,7 @@
         "Hiçbiri",
         "Hepsi"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "medium"
     },
     {
@@ -2350,9 +2025,7 @@
         "Hiçbiri",
         "Hepsi"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "hard"
     },
     {
@@ -2366,9 +2039,7 @@
         "Hiçbiri",
         "Hepsi"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "hard"
     },
     {
@@ -2382,9 +2053,7 @@
         "Hiçbiri",
         "Hepsi"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "hard"
     },
     {
@@ -2392,15 +2061,8 @@
       "category": "TypeScript",
       "subcategory": "Generics",
       "question": "Aşağıdakilerden hangisi TypeScript'te reusable (yeniden kullanılabilir) kodda tip güvenliği sağlamak için kullanılır?",
-      "options": [
-        "Generics",
-        "Decorators",
-        "Mixin",
-        "Hepsi"
-      ],
-      "answers": [
-        0
-      ],
+      "options": ["Generics", "Decorators", "Mixin", "Hepsi"],
+      "answers": [0],
       "difficultyLevel": "hard"
     },
     {
@@ -2414,9 +2076,7 @@
         "Hiçbiri",
         "Hepsi"
       ],
-      "answers": [
-        3
-      ],
+      "answers": [3],
       "difficultyLevel": "easy"
     },
     {
@@ -2430,9 +2090,7 @@
         "Hiçbiri",
         "Hepsi"
       ],
-      "answers": [
-        3
-      ],
+      "answers": [3],
       "difficultyLevel": "easy"
     },
     {
@@ -2446,9 +2104,7 @@
         "Hiçbiri",
         "Hepsi"
       ],
-      "answers": [
-        3
-      ],
+      "answers": [3],
       "difficultyLevel": "medium"
     },
     {
@@ -2462,9 +2118,7 @@
         "Hiçbiri",
         "Hepsi"
       ],
-      "answers": [
-        3
-      ],
+      "answers": [3],
       "difficultyLevel": "medium"
     },
     {
@@ -2478,9 +2132,7 @@
         "Hiçbiri",
         "Hepsi"
       ],
-      "answers": [
-        3
-      ],
+      "answers": [3],
       "difficultyLevel": "medium"
     },
     {
@@ -2494,9 +2146,7 @@
         "Hiçbiri",
         "Hepsi"
       ],
-      "answers": [
-        3
-      ],
+      "answers": [3],
       "difficultyLevel": "hard"
     },
     {
@@ -2510,9 +2160,7 @@
         "Hiçbiri",
         "Hepsi"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "hard"
     },
     {
@@ -2526,9 +2174,7 @@
         "Hiçbiri",
         "Hepsi"
       ],
-      "answers": [
-        3
-      ],
+      "answers": [3],
       "difficultyLevel": "hard"
     },
     {
@@ -2542,9 +2188,7 @@
         "function fetchData(): T;",
         "Hiçbiri"
       ],
-      "answers": [
-        0
-      ],
+      "answers": [0],
       "difficultyLevel": "hard"
     },
     {
@@ -2558,9 +2202,7 @@
         "Hiçbiri",
         "Hepsi"
       ],
-      "answers": [
-        3
-      ],
+      "answers": [3],
       "difficultyLevel": "easy"
     },
     {
@@ -2568,15 +2210,8 @@
       "category": "TypeScript",
       "subcategory": "Async",
       "question": "TypeScript'te Promise.all tipi nasıl tanımlanır?",
-      "options": [
-        "Promise<Array<T>>",
-        "Promise<T[]>",
-        "Hiçbiri",
-        "Hepsi"
-      ],
-      "answers": [
-        3
-      ],
+      "options": ["Promise<Array<T>>", "Promise<T[]>", "Hiçbiri", "Hepsi"],
+      "answers": [3],
       "difficultyLevel": "easy"
     },
     {
@@ -2584,15 +2219,8 @@
       "category": "TypeScript",
       "subcategory": "Async",
       "question": "TypeScript'te async/await ile hata yönetimi nasıl yapılır?",
-      "options": [
-        "try/catch ile",
-        ".catch() ile",
-        "Hiçbiri",
-        "Hepsi"
-      ],
-      "answers": [
-        3
-      ],
+      "options": ["try/catch ile", ".catch() ile", "Hiçbiri", "Hepsi"],
+      "answers": [3],
       "difficultyLevel": "medium"
     },
     {
@@ -2606,9 +2234,7 @@
         "Hiçbiri",
         "Hepsi"
       ],
-      "answers": [
-        3
-      ],
+      "answers": [3],
       "difficultyLevel": "medium"
     },
     {
@@ -2616,15 +2242,8 @@
       "category": "TypeScript",
       "subcategory": "Async",
       "question": "TypeScript'te async generator tipi nasıl tanımlanır?",
-      "options": [
-        "AsyncIterable<T>",
-        "AsyncGenerator<T>",
-        "Hiçbiri",
-        "Hepsi"
-      ],
-      "answers": [
-        3
-      ],
+      "options": ["AsyncIterable<T>", "AsyncGenerator<T>", "Hiçbiri", "Hepsi"],
+      "answers": [3],
       "difficultyLevel": "medium"
     },
     {
@@ -2638,9 +2257,7 @@
         "Hiçbiri",
         "Hepsi"
       ],
-      "answers": [
-        3
-      ],
+      "answers": [3],
       "difficultyLevel": "hard"
     },
     {
@@ -2654,9 +2271,7 @@
         "Hiçbiri",
         "Hepsi"
       ],
-      "answers": [
-        3
-      ],
+      "answers": [3],
       "difficultyLevel": "hard"
     },
     {
@@ -2664,15 +2279,8 @@
       "category": "TypeScript",
       "subcategory": "Async",
       "question": "TypeScript'te async context'te this nasıl yönetilir?",
-      "options": [
-        "Arrow fonksiyonlarla",
-        "Bind ile",
-        "Hiçbiri",
-        "Hepsi"
-      ],
-      "answers": [
-        3
-      ],
+      "options": ["Arrow fonksiyonlarla", "Bind ile", "Hiçbiri", "Hepsi"],
+      "answers": [3],
       "difficultyLevel": "hard"
     },
     {
@@ -2680,15 +2288,8 @@
       "category": "TypeScript",
       "subcategory": "OOP",
       "question": "Aşağıdaki TypeScript özelliklerinden hangisi bir sınıfı başka sınıflardan özellik ve metotlarla genişletmeyi sağlar?",
-      "options": [
-        "Mixin",
-        "Inheritance",
-        "Interfaces",
-        "Generics"
-      ],
-      "answers": [
-        1
-      ],
+      "options": ["Mixin", "Inheritance", "Interfaces", "Generics"],
+      "answers": [1],
       "difficultyLevel": "hard"
     },
     {
@@ -2696,15 +2297,8 @@
       "category": "TypeScript",
       "subcategory": "OOP",
       "question": "TypeScript'te class nasıl tanımlanır?",
-      "options": [
-        "class MyClass {}",
-        "ES6 syntax'ı ile",
-        "Hiçbiri",
-        "Hepsi"
-      ],
-      "answers": [
-        3
-      ],
+      "options": ["class MyClass {}", "ES6 syntax'ı ile", "Hiçbiri", "Hepsi"],
+      "answers": [3],
       "difficultyLevel": "easy"
     },
     {
@@ -2718,9 +2312,7 @@
         "Hiçbiri",
         "Hepsi"
       ],
-      "answers": [
-        3
-      ],
+      "answers": [3],
       "difficultyLevel": "easy"
     },
     {
@@ -2734,9 +2326,7 @@
         "Hiçbiri",
         "Hepsi"
       ],
-      "answers": [
-        3
-      ],
+      "answers": [3],
       "difficultyLevel": "medium"
     },
     {
@@ -2750,9 +2340,7 @@
         "Hiçbiri",
         "Hepsi"
       ],
-      "answers": [
-        3
-      ],
+      "answers": [3],
       "difficultyLevel": "medium"
     },
     {
@@ -2760,15 +2348,8 @@
       "category": "TypeScript",
       "subcategory": "OOP",
       "question": "TypeScript'te static members nedir?",
-      "options": [
-        "Class'a ait üyeler",
-        "Instance'a değil",
-        "Hiçbiri",
-        "Hepsi"
-      ],
-      "answers": [
-        3
-      ],
+      "options": ["Class'a ait üyeler", "Instance'a değil", "Hiçbiri", "Hepsi"],
+      "answers": [3],
       "difficultyLevel": "medium"
     },
     {
@@ -2782,9 +2363,7 @@
         "Hiçbiri",
         "Hepsi"
       ],
-      "answers": [
-        3
-      ],
+      "answers": [3],
       "difficultyLevel": "hard"
     },
     {
@@ -2798,9 +2377,7 @@
         "Hiçbiri",
         "Hepsi"
       ],
-      "answers": [
-        3
-      ],
+      "answers": [3],
       "difficultyLevel": "hard"
     },
     {
@@ -2808,15 +2385,8 @@
       "category": "TypeScript",
       "subcategory": "OOP",
       "question": "TypeScript'te private fields nasıl tanımlanır?",
-      "options": [
-        "# ile",
-        "ES2022 syntax'ı",
-        "Hiçbiri",
-        "Hepsi"
-      ],
-      "answers": [
-        3
-      ],
+      "options": ["# ile", "ES2022 syntax'ı", "Hiçbiri", "Hepsi"],
+      "answers": [3],
       "difficultyLevel": "hard"
     }
   ]
