@@ -1,0 +1,302 @@
+[
+    {
+        "id": 1,
+        "question": "CSS Flexbox'ta bir öğeyi yatayda ortalamak için hangi özelliği kullanırız?",
+        "options": {
+            "A": "justify-content: center;",
+            "B": "align-items: center;",
+            "C": "text-align: center;",
+            "D": "margin: 0 auto;",
+            "E": "align-self: center;"
+        },
+        "correct_answer": "A"
+    },
+    {
+        "id": 2,
+        "question": "JavaScript'te bir array metoduyla dizinin sonuna eleman eklemek için hangi metodu kullanırız?",
+        "options": {
+            "A": "push()",
+            "B": "pop()",
+            "C": "shift()",
+            "D": "unshift()",
+            "E": "concat()"
+        },
+        "correct_answer": "A"
+    },
+    {
+        "id": 3,
+        "question": "HTML5 ile gelen yeni etiketlerden hangisi video içerikleri için kullanılır?",
+        "options": {
+            "A": "<audio>",
+            "B": "<video>",
+            "C": "<media>",
+            "D": "<source>",
+            "E": "<stream>"
+        },
+        "correct_answer": "B"
+    },
+    {
+        "id": 4,
+        "question": "CSS Grid sisteminde bir hücreyi 3 sütun boyunca uzatmak için hangi özelliği kullanırız?",
+        "options": {
+            "A": "grid-column: span 3;",
+            "B": "grid-row: span 3;",
+            "C": "grid-area: span 3;",
+            "D": "grid-item: span 3;",
+            "E": "none of the above"
+        },
+        "correct_answer": "A"
+    },
+    {
+        "id": 5,
+        "question": "JavaScript'te bir nesnenin kopyasını almak için hangi yöntem kullanılır?",
+        "options": {
+            "A": "Object.assign()",
+            "B": "copy()",
+            "C": "clone()",
+            "D": "slice()",
+            "E": "spread operator"
+        },
+        "correct_answer": "A"
+    },
+    {
+        "id": 6,
+        "question": "React'te bir bileşen render edilirken, hangi yöntem DOM ile ilişkilidir?",
+        "options": {
+            "A": "componentDidMount()",
+            "B": "render()",
+            "C": "componentWillUnmount()",
+            "D": "useEffect()",
+            "E": "componentWillReceiveProps()"
+        },
+        "correct_answer": "B"
+    },
+    {
+        "id": 7,
+        "question": "CSS'le bir öğeyi tam ekran yapmak için hangi özellik kullanılır?",
+        "options": {
+            "A": "width: 100%; height: 100%;",
+            "B": "display: block; height: 100vh;",
+            "C": "position: fixed; top: 0; left: 0;",
+            "D": "height: 100%; width: 100%; object-fit: cover;",
+            "E": "all of the above"
+        },
+        "correct_answer": "E"
+    },
+    {
+        "id": 8,
+        "question": "JavaScript'te bir string'i tam sayı türüne dönüştürmek için hangi fonksiyon kullanılır?",
+        "options": {
+            "A": "parseInt()",
+            "B": "toInt()",
+            "C": "convertToInt()",
+            "D": "parseNumber()",
+            "E": "toNumber()"
+        },
+        "correct_answer": "A"
+    },
+    {
+        "id": 9,
+        "question": "React'te `state` değişikliği nasıl yapılır?",
+        "options": {
+            "A": "this.state = newState;",
+            "B": "this.setState(newState);",
+            "C": "this.updateState(newState);",
+            "D": "state.set(newState);",
+            "E": "state = newState;"
+        },
+        "correct_answer": "B"
+    },
+    {
+        "id": 10,
+        "question": "CSS'te bir öğeye kenarlık eklemek için hangi özellik kullanılır?",
+        "options": {
+            "A": "border-style",
+            "B": "border-width",
+            "C": "border-color",
+            "D": "border",
+            "E": "outline"
+        },
+        "correct_answer": "D"
+    },
+    {
+        "id": 11,
+        "question": "JavaScript'te bir diziyi tersine çevirmek için hangi metod kullanılır?",
+        "options": {
+            "A": "reverse()",
+            "B": "flip()",
+            "C": "invert()",
+            "D": "turn()",
+            "E": "rotate()"
+        },
+        "correct_answer": "A"
+    },
+    {
+        "id": 12,
+        "question": "HTML5'te `localStorage`'a veri kaydetmek için hangi metod kullanılır?",
+        "options": {
+            "A": "store()",
+            "B": "save()",
+            "C": "setItem()",
+            "D": "addItem()",
+            "E": "setData()"
+        },
+        "correct_answer": "C"
+    },
+    {
+        "id": 13,
+        "question": "JavaScript'te bir dizinin ilk elemanını kaldırmak için hangi metod kullanılır?",
+        "options": {
+            "A": "shift()",
+            "B": "pop()",
+            "C": "splice()",
+            "D": "slice()",
+            "E": "unshift()"
+        },
+        "correct_answer": "A"
+    },
+    {
+        "id": 14,
+        "question": "CSS'te bir öğeyi gizlemek için hangi özellik kullanılır?",
+        "options": {
+            "A": "visibility: hidden;",
+            "B": "display: none;",
+            "C": "opacity: 0;",
+            "D": "all of the above",
+            "E": "none of the above"
+        },
+        "correct_answer": "D"
+    },
+    {
+        "id": 15,
+        "question": "React'te, bileşenler arasında veri göndermek için hangi yöntemi kullanırız?",
+        "options": {
+            "A": "useState",
+            "B": "useEffect",
+            "C": "props",
+            "D": "state",
+            "E": "context"
+        },
+        "correct_answer": "C"
+    },
+    {
+        "id": 16,
+        "question": "JavaScript'te bir sayıyı tam sayıya yuvarlamak için hangi fonksiyon kullanılır?",
+        "options": {
+            "A": "Math.floor()",
+            "B": "Math.ceil()",
+            "C": "Math.round()",
+            "D": "parseInt()",
+            "E": "round()"
+        },
+        "correct_answer": "C"
+    },
+    {
+        "id": 17,
+        "question": "HTML'de bir öğenin altını çizmek için hangi etiket kullanılır?",
+        "options": {
+            "A": "<b>",
+            "B": "<i>",
+            "C": "<u>",
+            "D": "<ins>",
+            "E": "<mark>"
+        },
+        "correct_answer": "C"
+    },
+    {
+        "id": 18,
+        "question": "CSS'te bir öğenin kutu modelinde dış kenarlıkların etrafında boşluk bırakmak için hangi özellik kullanılır?",
+        "options": {
+            "A": "padding",
+            "B": "margin",
+            "C": "border",
+            "D": "spacing",
+            "E": "box-sizing"
+        },
+        "correct_answer": "B"
+    },
+    {
+        "id": 19,
+        "question": "JavaScript'te, `undefined` değeri ile `null` değeri arasındaki fark nedir?",
+        "options": {
+            "A": "İkisi de aynı şeydir.",
+            "B": "`undefined` bir değişkenin değeri atanmadığında, `null` ise bilinçli olarak verilen bir değerdir.",
+            "C": "`null` sadece sayılar için geçerlidir.",
+            "D": "Biri bir nesnedir, diğeri bir veri türüdür.",
+            "E": "`undefined` sadece fonksiyonlar için geçerlidir."
+        },
+        "correct_answer": "B"
+    },
+    {
+        "id": 20,
+        "question": "CSS'te yazı rengini değiştirmek için hangi özellik kullanılır?",
+        "options": {
+            "A": "font-color",
+            "B": "color",
+            "C": "text-color",
+            "D": "color-style",
+            "E": "background-color"
+        },
+        "correct_answer": "B"
+    },
+    {
+        "id": 21,
+        "question": "React'te bir fonksiyon bileşeninde state yönetmek için hangi Hook kullanılır?",
+        "options": {
+            "A": "useState",
+            "B": "useEffect",
+            "C": "useReducer",
+            "D": "useContext",
+            "E": "useMemo"
+        },
+        "correct_answer": "A"
+    },
+    {
+        "id": 22,
+        "question": "JavaScript'te DOM öğesini seçmek için hangi metod kullanılır?",
+        "options": {
+            "A": "getElementById()",
+            "B": "querySelector()",
+            "C": "querySelectorAll()",
+            "D": "getElementsByClassName()",
+            "E": "all of the above"
+        },
+        "correct_answer": "E"
+    },
+    {
+        "id": 23,
+        "question": "CSS'te bir öğeye dışarıdan kenarlık eklemek için hangi özellik kullanılır?",
+        "options": {
+            "A": "border-width",
+            "B": "outline-width",
+            "C": "margin",
+            "D": "border-style",
+            "E": "border"
+        },
+        "correct_answer": "E"
+    },
+    {
+        "id": 24,
+        "question": "JavaScript'te `setTimeout()` fonksiyonu ne işe yarar?",
+        "options": {
+            "A": "Bir fonksiyonu belirli bir süre sonra çalıştırır.",
+            "B": "Bir fonksiyonu hemen çalıştırır.",
+            "C": "Bir fonksiyonu bir süre duraklatır.",
+            "D": "Bir fonksiyonu sürekli çalıştırır.",
+            "E": "Bir fonksiyonu durdurur."
+        },
+        "correct_answer": "A"
+    },
+    {
+        "id": 25,
+        "question": "HTML5 ile gelen yeni etiketlerden hangisi form elemanıdır?",
+        "options": {
+            "A": "<input>",
+            "B": "<textarea>",
+            "C": "<button>",
+            "D": "<form>",
+            "E": "all of the above"
+        },
+        "correct_answer": "E"
+    }
+]

@@ -30,11 +30,13 @@ const GeneralForm = () => {
             <Formik
               initialValues={{
                 userId: `${userAuth.uid}`,
-                fullname: "",
-                email: "",
-                phone: "",
-                birthDate: "",
-                address: "",
+                personal: {
+                  fullname: "",
+                  email: "",
+                  phone: "",
+                  birthDate: "",
+                  address: "",
+                },
                 education: {
                   university: "",
                   department: "",
@@ -56,8 +58,9 @@ const GeneralForm = () => {
                 },
                 expectedSalary: "",
                 isAccepted: false,
-                status: "Beklemede",
-                message: "",
+                status: "Değerlendirme",
+                userMessage: "Değerlendirme Aşamasında",
+                adminMessage: "Test Gönder",
               }}
               validationSchema={stepSchemas[activeStep]}
               onSubmit={submitApplication}

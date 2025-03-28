@@ -68,13 +68,13 @@ export async function updateAppStatus(app) {
     console.error("Error updating doc:", error);
   }
 }
-export async function updateMessage(id, message) {
+export async function updateMessage(id, userMessage, adminMessage) {
   try {
     const docRef = doc(db, "applications", id);
     const docSnap = await getDoc(docRef);
 
     if (docSnap.exists()) {
-      await updateDoc(docRef, { message });
+      await updateDoc(docRef, { userMessage, adminMessage });
       return true;
     } else {
       console.warn("Belirtilen başvuru bulunamadı.");
@@ -94,4 +94,24 @@ export async function setQuizPoint(appId, point) {
 export async function setStatus(appId, status) {
   const docRef = doc(db, "applications", appId);
   setDoc(docRef, { status: status }, { merge: true });
+}
+
+export async function setMessage(appId, status, userMessage, adminMessage) {
+  const docRef = doc(db, "applications", appId);
+  setDoc(
+    docRef,
+    { status: status, userMessage: userMessage, adminMessage: adminMessage },
+    { merge: true }
+  );
+}
+
+export async function setQuestionCount(appId, count) {
+  const docRef = doc(db, "applications", appId);
+  setDoc(docRef, { questions: count }, { merge: true });
+}
+export async function getQuestionCount(appId) {
+  const docRef = doc(db, "applications", appId);
+  const docSnap = await getDoc(docRef);
+  const data = docSnap.data();
+  return data.questions;
 }

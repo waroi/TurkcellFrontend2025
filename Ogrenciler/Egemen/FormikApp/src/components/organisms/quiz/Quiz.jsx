@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
-import questionData from "../../../constants/questions.json";
 import { useNavigate, useParams } from "react-router";
-import { setQuizPoint } from "../../../../firebase/dbController";
-import { getShuffledQuestions } from "../../../services/QuestionService";
+import {
+  getQuestionCount,
+  setMessage,
+  setQuizPoint,
+} from "../../../../firebase/dbController";
+import { getShuffledQuestionsByCategory } from "../../../services/QuestionService";
 import QuizComponent from "./QuizComponent";
 
 const Quiz = () => {
@@ -12,8 +15,13 @@ const Quiz = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
+  async function fetchCount() {
+    const { easy, medium, hard } = await getQuestionCount(id);
+    console.log("e", easy, " m", medium, " h", hard);
+    setQuestions(getShuffledQuestionsByCategory(easy, medium, hard));
+  }
   useEffect(() => {
-    setQuestions(getShuffledQuestions());
+    fetchCount();
   }, [id]);
 
   const handleAnswerClick = (selectedIndex) => {
@@ -21,9 +29,15 @@ const Quiz = () => {
     if (selectedIndex === correctAnswerIndex) {
       setTotalPoint((prev) => prev + 20);
     }
-
-    if (activeIndex === 4) {
+    console.log(activeIndex);
+    if (activeIndex === questions.length - 1) {
       setQuizPoint(id, totalPoint);
+      setMessage(
+        id,
+        "Test Kontrol",
+        "Testiniz Değerlendiriliyor",
+        "Mülakat aşamasını başlat"
+      );
       navigate("/quizCompleted");
     } else {
       setActiveIndex(activeIndex + 1);
@@ -31,12 +45,14 @@ const Quiz = () => {
   };
 
   return (
-    <QuizComponent
-      question={questions[activeIndex]?.question}
-      options={questions[activeIndex]?.options}
-      activeIndex={activeIndex}
-      handleAnswerClick={handleAnswerClick}
-    />
+    questions && (
+      <QuizComponent
+        question={questions[activeIndex]?.question}
+        options={questions[activeIndex]?.options}
+        activeIndex={activeIndex}
+        handleAnswerClick={handleAnswerClick}
+      />
+    )
   );
 };
 

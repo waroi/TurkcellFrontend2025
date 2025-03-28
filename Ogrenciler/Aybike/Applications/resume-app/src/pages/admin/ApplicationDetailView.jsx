@@ -15,7 +15,6 @@ const ApplicationDetailView = () => {
     handleQuestionSettingsChange,
     handleEvaluateClick,
     handleModalSubmit,
-    handleRateSubmit
   } = useApplicationDetail()
 
 

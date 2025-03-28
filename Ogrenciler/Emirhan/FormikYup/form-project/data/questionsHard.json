@@ -1,0 +1,302 @@
+[
+    {
+        "id": 1,
+        "question": "JavaScript'te event delegation neden performans açısından daha avantajlıdır?",
+        "options": {
+            "A": "Tüm elementlere ayrı event listener eklemekten kaçınarak bellek kullanımını azaltır.",
+            "B": "Event bubbling mekanizmasını devre dışı bırakır.",
+            "C": "DOM manipülasyonlarını optimize eder ve repaint işlemlerini hızlandırır.",
+            "D": "Event loop sırasını değiştirerek daha hızlı çalışmasını sağlar.",
+            "E": "Yalnızca asenkron işlemlerde kullanılır."
+        },
+        "correct_answer": "A"
+    },
+    {
+        "id": 2,
+        "question": "JavaScript'te 'closure' kavramı ne anlama gelir?",
+        "options": {
+            "A": "Bir fonksiyonun, dışındaki değişkenlere erişmesini sağlayan mekanizmadır.",
+            "B": "Yalnızca `let` ve `const` değişkenleri için geçerlidir.",
+            "C": "Garbage collector tarafından hemen temizlenmeyen değişkenleri ifade eder.",
+            "D": "Sadece arrow function'larda çalışır.",
+            "E": "JavaScript’in bellek yönetiminde kullanılan bir veritabanıdır."
+        },
+        "correct_answer": "A"
+    },
+    {
+        "id": 3,
+        "question": "JavaScript'te 'Reflow' ve 'Repaint' arasındaki temel fark nedir?",
+        "options": {
+            "A": "Repaint sadece görünüm değişikliklerini, Reflow ise layout değişikliklerini içerir.",
+            "B": "Reflow işlemi, sadece `position: absolute` olan elementler için çalışır.",
+            "C": "Repaint işlemi, `display: none` olan elementlerde gerçekleşir.",
+            "D": "Reflow işlemi, yalnızca event listener'lar ile tetiklenir.",
+            "E": "Repaint her zaman Reflow’dan önce çalışır."
+        },
+        "correct_answer": "A"
+    },
+    {
+        "id": 4,
+        "question": "`requestAnimationFrame()` neden `setTimeout()` veya `setInterval()` yerine kullanılır?",
+        "options": {
+            "A": "Tarayıcı, çizim işlemlerini optimize ederek gereksiz çalışmayı önler.",
+            "B": "Tüm asenkron işlemleri sıraya koyarak sırayla çalıştırır.",
+            "C": "Her durumda belirli bir gecikme süresi ekler.",
+            "D": "Tarayıcıyı tamamen bloklayarak performansı artırır.",
+            "E": "Sadece `canvas` elemanları için çalışır."
+        },
+        "correct_answer": "A"
+    },
+    {
+        "id": 5,
+        "question": "`setTimeout(fn, 0)` çağrıldığında, fonksiyon ne zaman çalıştırılır?",
+        "options": {
+            "A": "Hemen çalıştırılır.",
+            "B": "Call Stack boşaldıktan sonra çalıştırılır.",
+            "C": "Event Loop’un bir sonraki turunda çalıştırılır.",
+            "D": "Web Worker içinde paralel olarak çalıştırılır.",
+            "E": "Garbage collector çalıştırıldıktan sonra tetiklenir."
+        },
+        "correct_answer": "C"
+    },
+    {
+        "id": 6,
+        "question": "JavaScript'te `WeakMap` ve `Map` arasındaki en önemli fark nedir?",
+        "options": {
+            "A": "WeakMap'de anahtarlar yalnızca objeler olabilir.",
+            "B": "Map, sadece primitive veri tiplerini anahtar olarak kabul eder.",
+            "C": "WeakMap, içindeki değerleri `localStorage` gibi saklayabilir.",
+            "D": "WeakMap elemanları manuel olarak silinmelidir.",
+            "E": "Map elemanları garbage collector tarafından temizlenmez."
+        },
+        "correct_answer": "A"
+    },
+    {
+        "id": 7,
+        "question": "CSS’de `contain: strict;` kullanımı ne anlama gelir?",
+        "options": {
+            "A": "Elemanın içeriğinin dışa taşmasını engeller.",
+            "B": "Elemanın layout, style, ve paint işlemlerini kapsülleyerek performansı artırır.",
+            "C": "Elemanın `z-index` değerini değiştirir.",
+            "D": "Yalnızca `flexbox` içindeki elemanlara uygulanabilir.",
+            "E": "Sadece medya sorguları içinde kullanılır."
+        },
+        "correct_answer": "B"
+    },
+    {
+        "id": 8,
+        "question": "JavaScript'te `Intl.NumberFormat` API'si ne işe yarar?",
+        "options": {
+            "A": "Sayıları belirli bir yerel ayara göre biçimlendirmek için kullanılır.",
+            "B": "Sayıları yalnızca ondalık sistemde göstermeye yarar.",
+            "C": "JavaScript’te büyük sayıları daha hızlı işlemeye yardımcı olur.",
+            "D": "Yalnızca `Date` objeleri ile birlikte çalışır.",
+            "E": "Sadece `parseInt()` ve `parseFloat()` fonksiyonlarıyla kullanılır."
+        },
+        "correct_answer": "A"
+    },
+    {
+        "id": 9,
+        "question": "React'te `useMemo` hook'u neden kullanılır?",
+        "options": {
+            "A": "Hesaplanan değerlerin gereksiz tekrar hesaplanmasını önlemek için.",
+            "B": "Componentlerin render edilmesini engellemek için.",
+            "C": "State değişikliklerini takip etmek için.",
+            "D": "Side effect işlemlerini yönetmek için.",
+            "E": "Context API ile birlikte çalıştırmak için."
+        },
+        "correct_answer": "A"
+    },
+    {
+        "id": 10,
+        "question": "React'te `useEffect` içinde yanlış bir kullanım aşağıdakilerden hangisidir?",
+        "options": {
+            "A": "Sonsuz döngüye neden olacak şekilde state güncellemesi yapmak.",
+            "B": "Cleanup fonksiyonu tanımlamamak.",
+            "C": "Bağımlılık dizisini yanlış tanımlamak.",
+            "D": "Sadece event listener eklemek için kullanmak.",
+            "E": "Asenkron işlemleri doğrudan içinde çağırmak."
+        },
+        "correct_answer": "A"
+    },
+    {
+        "id": 11,
+        "question": "Shadow DOM'un temel avantajı nedir?",
+        "options": {
+            "A": "Stil ve bileşenlerin izole edilmesini sağlar.",
+            "B": "JavaScript'in daha hızlı çalışmasını sağlar.",
+            "C": "Bütün tarayıcılarda varsayılan olarak etkindir.",
+            "D": "React bileşenleriyle yalnızca birlikte çalışır.",
+            "E": "Sadece animasyonları yönetmek için kullanılır."
+        },
+        "correct_answer": "A"
+    },
+    {
+        "id": 12,
+        "question": "CSS'de ⁠ will-change ⁠ özelliği neden dikkatli kullanılmalıdır?",
+        "options": {
+            "A": "Gereksiz kullanıldığında performansı olumsuz etkileyebilir.",
+            "B": "Sadece GPU hızlandırmalı elementlerde çalışır.",
+            "C": "DOM manipülasyonlarını engelleyebilir.",
+            "D": "Tarayıcının event listener'ları yanlış işlemesine neden olur.",
+            "E": "Sadece ⁠ opacity ⁠ ve ⁠ transform ⁠ ile birlikte çalışır."
+        },
+        "correct_answer": "A"
+    },
+    {
+        "id": 13,
+        "question": "JavaScript'te ⁠ Object.defineProperty() ⁠ ne için kullanılır?",
+        "options": {
+            "A": "Bir nesnenin özelliklerini değiştirme veya koruma yeteneği sağlar.",
+            "B": "Sadece getter ve setter tanımlamak için kullanılır.",
+            "C": "Garbage collector yönetimini optimize eder.",
+            "D": "Yalnızca ⁠ Proxy ⁠ nesneleri ile çalışır.",
+            "E": "Tüm primitive türleri nesneye çevirmek için kullanılır."
+        },
+        "correct_answer": "A"
+    },
+    {
+        "id": 14,
+        "question": "⁠ Intersection Observer ⁠ API'sinin temel avantajı nedir?",
+        "options": {
+            "A": "Elementlerin viewport içinde olup olmadığını performanslı bir şekilde tespit eder.",
+            "B": "DOM manipülasyonlarını hızlandırır.",
+            "C": "Sadece ⁠ scroll ⁠ event'leriyle birlikte çalışır.",
+            "D": "Sadece ⁠ async/await ⁠ ile birlikte kullanılabilir.",
+            "E": "Event loop'un çalışma sırasını değiştirir."
+        },
+        "correct_answer": "A"
+    },
+    {
+        "id": 15,
+        "question": "React'te 'Concurrent Mode' ne işe yarar?",
+        "options": {
+            "A": "Kullanıcı etkileşimlerini daha akıcı hale getirmek için render işlemlerini bölümlere ayırır.",
+            "B": "Server-Side Rendering’i daha hızlı yapar.",
+            "C": "State değişikliklerini otomatik olarak optimize eder.",
+            "D": "React'in DOM'u baştan aşağı yeniden oluşturmasını sağlar.",
+            "E": "Sadece Redux ile çalışır."
+        },
+        "correct_answer": "A"
+    },
+    {
+        "id": 16,
+        "question": "JavaScript'te 'tail call optimization' nasıl çalışır?",
+        "options": {
+            "A": "Bir fonksiyonun son çağrısı doğrudan geri döndürüldüğünde stack kullanımı optimize edilir.",
+            "B": "Fonksiyonlar daha hızlı çalışır, çünkü tüm argümanlar önceden hesaplanır.",
+            "C": "Yalnızca async/await ile çalışır.",
+            "D": "Fonksiyonlar heap belleğinde tutulur.",
+            "E": "Tarayıcının garbage collector’ü bunu otomatik olarak uygular."
+        },
+        "correct_answer": "A"
+    },
+    {
+        "id": 17,
+        "question": "Hangi HTTP başlığı 'CORS' (Cross-Origin Resource Sharing) ile ilgilidir?",
+        "options": {
+            "A": "⁠ Access-Control-Allow-Origin ⁠",
+            "B": "⁠ Content-Type ⁠",
+            "C": "⁠ X-Frame-Options ⁠",
+            "D": "⁠ Referrer-Policy ⁠",
+            "E": "⁠ Cache-Control ⁠"
+        },
+        "correct_answer": "A"
+    },
+    {
+        "id": 18,
+        "question": "CSS'de ⁠ contain-intrinsic-size ⁠ ne işe yarar?",
+        "options": {
+            "A": "Yüklenmeyen içerikler için tahmini boyut belirler.",
+            "B": "Bir elementin içeriğinin boyutunu değiştirir.",
+            "C": "Sadece ⁠ flexbox ⁠ ile birlikte çalışır.",
+            "D": "Tarayıcı tarafından otomatik olarak eklenir.",
+            "E": "Sadece ⁠ grid ⁠ elemanları için geçerlidir."
+        },
+        "correct_answer": "A"
+    },
+    {
+        "id": 19,
+        "question": "React'te Suspense API'si ne için kullanılır?",
+        "options": {
+            "A": "Asenkron bileşenlerin yüklenmesini yönetmek için.",
+            "B": "Event listener'ları daha performanslı hale getirmek için.",
+            "C": "State güncellemelerini geciktirmek için.",
+            "D": "Server-Side Rendering için gerekli bir API'dir.",
+            "E": "Yalnızca Redux ile çalışır."
+        },
+        "correct_answer": "A"
+    },
+    {
+        "id": 20,
+        "question": "Hangi CSS özelliği 'subgrid' desteğini içerir?",
+        "options": {
+            "A": "⁠ display: grid; ⁠",
+            "B": "⁠ grid-template-columns: subgrid; ⁠",
+            "C": "⁠ position: relative; ⁠",
+            "D": "⁠ display: flex; ⁠",
+            "E": "⁠ contain: layout; ⁠"
+        },
+        "correct_answer": "B"
+    },
+    {
+        "id": 21,
+        "question": "React'te useTransition hook'u ne işe yarar?",
+        "options": {
+            "A": "Düşük öncelikli güncellemeleri yönetmek için.",
+            "B": "Componentler arası veri paylaşımını sağlar.",
+            "C": "Asenkron işlemleri yönetmek için.",
+            "D": "Server-Side Rendering sürecini hızlandırır.",
+            "E": "useEffect ile birlikte kullanılmalıdır."
+        },
+        "correct_answer": "A"
+    },
+    {
+        "id": 22,
+        "question": "JavaScript’te ⁠ import() ⁠ fonksiyonunun avantajı nedir?",
+        "options": {
+            "A": "Dinamik olarak modül yüklemeye olanak tanır.",
+            "B": "Tüm modüllerin önceden yüklenmesini sağlar.",
+            "C": "JavaScript kodunun daha hızlı çalışmasını sağlar.",
+            "D": "Event loop'u kontrol eder.",
+            "E": "Sadece Web Workers içinde çalışır."
+        },
+        "correct_answer": "A"
+    },
+    {
+        "id": 23,
+        "question": "JavaScript’te ⁠ structuredClone() ⁠ ne işe yarar?",
+        "options": {
+            "A": "Derin kopyalama işlemi yapar.",
+            "B": "Shallow copy oluşturur.",
+            "C": "Sadece JSON veri türlerinde çalışır.",
+            "D": "Garbage collector tarafından otomatik çağrılır.",
+            "E": "Yalnızca DOM nesneleriyle çalışır."
+        },
+        "correct_answer": "A"
+    },
+    {
+        "id": 24,
+        "question": "Web Worker'lar neden kullanılır?",
+        "options": {
+            "A": "Ana thread'in bloklanmasını önlemek için.",
+            "B": "CSS'in daha hızlı yüklenmesini sağlamak için.",
+            "C": "JavaScript kodunun CPU kullanımını azaltmak için.",
+            "D": "DOM manipülasyonlarını hızlandırmak için.",
+            "E": "Sadece async işlemleri kontrol eder."
+        },
+        "correct_answer": "A"
+    },
+    {
+        "id": 25,
+        "question": "CSS'de ⁠ scroll-behavior: smooth; ⁠ ne yapar?",
+        "options": {
+            "A": "Sayfanın yumuşak bir şekilde kaymasını sağlar.",
+            "B": "Sadece mobil cihazlarda çalışır.",
+            "C": "Event listener'ları geciktirir.",
+            "D": "Yalnızca ⁠ position: fixed; ⁠ ile çalışır.",
+            "E": "Flexbox için özel bir özelliktir."
+        },
+        "correct_answer": "A"
+    }
+]

@@ -1,0 +1,65 @@
+:root {
+  --font-family-primary: "Outfit", sans-serif;
+  --font-family-body: "Inter", sans-serif;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --primary-gradient: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+  --danger-gradient: linear-gradient(to right, #ff6b6b, #ff8787);
+  --success-gradient: linear-gradient(to right, #34d399, #10b981);
+  --card-bg: rgba(255, 255, 255, 0.95);
+  --text-primary: #2d3748;
+  --text-secondary: #4a5568;
+  --border-color: #e2e8f0;
+  --status-pending-bg: rgba(246, 211, 101, 0.2);
+  --status-approved-bg: rgba(72, 187, 120, 0.2);
+  --status-rejected-bg: rgba(245, 101, 101, 0.2);
+  --status-pending-text: #b7791f;
+  --status-approved-text: #2f855a;
+  --status-rejected-text: #c53030;
+
+  --shadow-sm: 0 8px 25px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 15px 35px rgba(0, 0, 0, 0.15);
+  --shadow-hover: 0 5px 15px rgba(253, 160, 133, 0.4);
+  --input-focus-shadow: 0 0 0 3px rgba(253, 160, 133, 0.2);
+
+  --radius-sm: 8px;
+  --radius-md: 15px;
+  --radius-lg: 20px;
+
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+
+  --font-sm: 0.875rem;
+  --font-base: 1rem;
+  --font-lg: 1.25rem;
+  --font-xl: 1.5rem;
+  --font-2xl: 2rem;
+
+  --border-base: 1px solid rgba(255, 255, 255, 0.2);
+  --border-input: 2px solid var(--border-color);
+  --border-divider: 2px solid rgba(246, 211, 101, 0.3);
+
+  --blur: blur(10px);
+  --transition: all 0.3s ease;
+  --hover-transform: translateY(-5px);
+  --button-hover-transform: translateY(-2px);
+}
+body {
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-regular);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-semibold);
+}

@@ -7,7 +7,7 @@ export const useJobs = () => {
 	const [error, setError] = useState(null);
 
 	useEffect(() => {
-		const getJobs = async () => {
+		async function getJobs() {
 			try {
 				setLoading(true);
 				const jobs = await fetchJobs();
@@ -19,7 +19,7 @@ export const useJobs = () => {
 			} finally {
 				setLoading(false);
 			}
-		};
+		}
 
 		getJobs();
 	}, []);

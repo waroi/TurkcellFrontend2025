@@ -1,14 +1,16 @@
 import * as yup from "yup";
 
 const personalInfoSchema = yup.object({
-  fullname: yup.string().required("Adınız ve soyadınızı giriniz"),
-  email: yup
-    .string()
-    .email("Geçerli bir email giriniz")
-    .required("Email girmek zorunludur"),
-  phone: yup.string().required("Telefon numaranızı giriniz"),
-  birthDate: yup.date().required("Doğum tarihinizi giriniz"),
-  address: yup.string().required("Adresinizi giriniz"),
+  personal: yup.object({
+    fullname: yup.string().required("Adınız ve soyadınızı giriniz"),
+    email: yup
+      .string()
+      .email("Geçerli bir email giriniz")
+      .required("Email girmek zorunludur"),
+    phone: yup.string().required("Telefon numaranızı giriniz"),
+    birthDate: yup.date().required("Doğum tarihinizi giriniz"),
+    address: yup.string().required("Adresinizi giriniz"),
+  }),
 });
 
 const educationSchema = yup.object({

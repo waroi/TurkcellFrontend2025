@@ -28,6 +28,7 @@ $custom-light-blue: #669bbc;
       font-size: 24px;
       font-weight: bold;
       background: $primary-gradient;
+      -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 

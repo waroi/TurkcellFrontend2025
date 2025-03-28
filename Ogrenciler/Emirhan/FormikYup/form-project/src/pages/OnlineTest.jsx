@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from "react";
-import questionsData from "../../data/questions.json";
 import { useParams, useNavigate } from "react-router";
-import { testApplicationStatus } from "../firebase/firebaseUpload";
+import {
+  testApplicationStatus,
+  fetchQuestionType,
+} from "../firebase/firebaseUpload";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../firebase/firebase";
+import questionsEasy from "../../data/questionsEasy.json";
+import questionsMiddle from "../../data/questionsMiddle.json";
+import questionsHard from "../../data/questionsHard.json";
 
 const OnlineTest = () => {
   const [questions, setQuestions] = useState([]);
@@ -13,6 +18,8 @@ const OnlineTest = () => {
   const [correctAnswers, setCorrectAnswers] = useState(0);
   const [testCompleted, setTestCompleted] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [questionType, setQuestionType] = useState(null);
+
   const userId = useParams().id;
   const navigate = useNavigate();
 
@@ -35,12 +42,49 @@ const OnlineTest = () => {
   }, [userId]);
 
   useEffect(() => {
-    if (testCompleted || loading) return;
-    const shuffledQuestions = [...questionsData].sort(
-      () => 0.5 - Math.random()
-    );
-    setQuestions(shuffledQuestions.slice(0, 5));
-  }, [testCompleted, loading]);
+    const fetchData = async () => {
+      console.log(userId);
+      const data = await fetchQuestionType(userId);
+      console.log("çekilen data", data);
+      if (Array.isArray(data) && data.length > 0) {
+        setQuestionType(data[0]);
+      }
+    };
+
+    fetchData();
+  }, [userId]);
+
+  useEffect(() => {
+    if (!questionType) return;
+
+    const shuffleArray = (array) => {
+      return array.sort(() => Math.random() - 0.5);
+    };
+
+    const fetchQuestions = () => {
+      const shuffledEasy = shuffleArray([...questionsEasy]).slice(
+        0,
+        Number(questionType.easy)
+      );
+      const shuffledMiddle = shuffleArray([...questionsMiddle]).slice(
+        0,
+        Number(questionType.middle)
+      );
+      const shuffledHard = shuffleArray([...questionsHard]).slice(
+        0,
+        Number(questionType.hard)
+      );
+
+      return shuffleArray([
+        ...shuffledEasy,
+        ...shuffledMiddle,
+        ...shuffledHard,
+      ]);
+    };
+
+    setQuestions(fetchQuestions());
+    setLoading(false);
+  }, [questionType]);
 
   const handleAnswerChange = (questionId, selectedOption) => {
     setAnswers((prevAnswers) => ({
@@ -54,6 +98,7 @@ const OnlineTest = () => {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     } else {
       calculateResults();
+      setShowResults(true);
     }
   };
 
@@ -66,16 +111,13 @@ const OnlineTest = () => {
     });
 
     setCorrectAnswers(correctCount);
-    const incorrectCount = questions.length - correctCount;
 
-    if (correctCount >= 4) {
-      testApplicationStatus(userId, "Başarılı");
-      setTestCompleted("Başarılı");
-    } else if (incorrectCount > 1) {
-      testApplicationStatus(userId, "Başarısız");
-      setTestCompleted("Başarısız");
-    }
-    setShowResults(true);
+    handleTestCompletion(correctCount);
+  };
+
+  const handleTestCompletion = (correctCount) => {
+    const result = correctCount / questions.length > 0.7;
+    testApplicationStatus(userId, result);
   };
 
   if (loading) {
@@ -91,8 +133,8 @@ const OnlineTest = () => {
 
   if (testCompleted) {
     return (
-      <div className="container mt-4 fullscreen ">
-        <div className="card shadow p-4 text-center ">
+      <div className="container mt-4 fullscreen">
+        <div className="card shadow p-4 text-center">
           <h1 className="text-danger">Tekrar giriş yapamazsınız!</h1>
           <button
             className="btn btn-primary mt-3"
@@ -115,36 +157,34 @@ const OnlineTest = () => {
               <p className="fw-bold">
                 {questions[currentQuestionIndex].question}
               </p>
-              <div className="form-check">
-                {Object.keys(questions[currentQuestionIndex].options).map(
-                  (option) => (
-                    <div key={option} className="form-check">
-                      <input
-                        className="form-check-input"
-                        type="radio"
-                        id={`${questions[currentQuestionIndex].id}_${option}`}
-                        name={`question_${questions[currentQuestionIndex].id}`}
-                        value={option}
-                        checked={
-                          answers[questions[currentQuestionIndex].id] === option
-                        }
-                        onChange={() =>
-                          handleAnswerChange(
-                            questions[currentQuestionIndex].id,
-                            option
-                          )
-                        }
-                      />
-                      <label
-                        className="form-check-label"
-                        htmlFor={`${questions[currentQuestionIndex].id}_${option}`}
-                      >
-                        {questions[currentQuestionIndex].options[option]}
-                      </label>
-                    </div>
-                  )
-                )}
-              </div>
+              {Object.keys(questions[currentQuestionIndex].options).map(
+                (option) => (
+                  <div key={option} className="form-check">
+                    <input
+                      className="form-check-input"
+                      type="radio"
+                      id={`${questions[currentQuestionIndex].id}_${option}`}
+                      name={`question_${questions[currentQuestionIndex].id}`}
+                      value={option}
+                      checked={
+                        answers[questions[currentQuestionIndex].id] === option
+                      }
+                      onChange={() =>
+                        handleAnswerChange(
+                          questions[currentQuestionIndex].id,
+                          option
+                        )
+                      }
+                    />
+                    <label
+                      className="form-check-label"
+                      htmlFor={`${questions[currentQuestionIndex].id}_${option}`}
+                    >
+                      {questions[currentQuestionIndex].options[option]}
+                    </label>
+                  </div>
+                )
+              )}
               <div className="text-center mt-3">
                 <button
                   className="btn btn-primary"
@@ -161,7 +201,7 @@ const OnlineTest = () => {
         ) : (
           <div className="alert alert-success mt-4 text-center">
             <p className="fs-5">
-              Tebrikler! Testi Tamamladınız Sekmeyi Kapatabilirsiniz.
+              Tebrikler! Testi Tamamladınız. Sekmeyi kapatabilirsiniz.
             </p>
           </div>
         )}

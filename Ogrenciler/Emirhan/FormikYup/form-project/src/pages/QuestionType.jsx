@@ -2,10 +2,18 @@ import { useEffect, useState } from "react";
 import {
   createQuestionDistribution,
   updateApplicationStatus,
+  fetchApplicationById,
 } from "../firebase/firebaseUpload";
 import Navbar from "../components/Navbar";
+import { useParams, useNavigate } from "react-router";
 
 function QuestionType() {
+  const { id } = useParams();
+
+  const navigate = useNavigate();
+
+  const [application, setApplication] = useState(null);
+
   const [ranges, setRanges] = useState({
     easy: 10,
     middle: 10,
@@ -25,20 +33,38 @@ function QuestionType() {
     }));
   };
 
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await fetchApplicationById(id);
+      setApplication(data);
+    };
+
+    fetchData();
+  }, [id]);
+
   const handleSubmit = async () => {
-    await createQuestionDistribution({ id, ...ranges });
-    await updateApplicationStatus(
-      application.id,
-      "Test Aşamasında",
-      application.email,
-      application.name
-    );
+    try {
+      await createQuestionDistribution({ id, ...ranges, area: "front" });
+      await updateApplicationStatus(
+        application.id,
+        "Test Aşamasında",
+        application.email,
+        application.name
+      );
+
+      alert("Başarıyla gönderildi!");
+      navigate("/applications");
+    } catch (error) {
+      console.error("Hata oluştu:", error);
+      alert("Bir hata oluştu, lütfen tekrar deneyin.");
+    }
   };
 
   return (
     <div className="container form-container py-10">
       <Navbar />
       <div>
+        <h2 className="text-center mb-4">Test Gönder</h2>
         <label>
           Kolay
           <span className="custom-badge">{ranges.easy}</span>
@@ -84,6 +110,15 @@ function QuestionType() {
         />
       </div>
       <div>Toplam Soru Sayısı: {total}</div>
+
+      <div className="d-flex gap-2 justify-content-end mt-4">
+        <a href="/applications" className="btn btn-secondary">
+          Geri
+        </a>
+        <button className="btn btn-primary" onClick={handleSubmit}>
+          Testi Gönder
+        </button>
+      </div>
     </div>
   );
 }

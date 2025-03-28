@@ -32,6 +32,7 @@ const useFormikOnInputs = () => {
       university: "",
       isGraduate: false,
       skills: "",
+      status: "enchanted"
     },
 
     validationSchema: basicSchema,
@@ -39,9 +40,8 @@ const useFormikOnInputs = () => {
       try {
         if (auth.currentUser !== null) {
           await saveUser(values);
+          alert("Başvurunuz alınmıştır. İnsan Kaynakları size en kısa sürede geri dönüş sağlayacaktır.");
           resetForm();
-          // await saveApplication(values);
-          console.log("Başarı ile kaydedildi");
         } else {
           setShow(true);
         }

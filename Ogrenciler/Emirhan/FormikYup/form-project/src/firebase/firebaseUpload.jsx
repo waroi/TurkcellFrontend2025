@@ -8,6 +8,8 @@ import {
   getDocs,
   setDoc,
   updateDoc,
+  query,
+  where,
 } from "firebase/firestore";
 import firebase, { db } from "./firebase";
 import emailjs from "@emailjs/browser";
@@ -109,20 +111,16 @@ export const updateApplicationStatus = async (id, status, email, name) => {
     console.error("Durum güncelleme hatası:", error);
   }
 };
-
-export const testApplicationStatus = async (id, correctAnswers) => {
+export const testApplicationStatus = async (id, isSuccessful) => {
   try {
     const applicationRef = doc(db, "jobApplications", id);
-    if (correctAnswers >= 4) {
-      await updateDoc(applicationRef, { status: "Başarılı" });
-    } else {
-      await updateDoc(applicationRef, { status: "Başarısız" });
-    }
+    await updateDoc(applicationRef, {
+      status: isSuccessful ? "Başarılı" : "Başarısız",
+    });
   } catch (error) {
     console.error("Durum güncelleme hatası:", error);
   }
 };
-
 const sendEmail = (email, status, name, id) => {
   const templateParams = {
     user_id: String(id),
@@ -141,4 +139,42 @@ const sendEmail = (email, status, name, id) => {
     .catch((error) => {
       console.error("Email Error:", error);
     });
+};
+
+export const fetchApplicationById = async (id) => {
+  try {
+    const docRef = doc(db, "jobApplications", id);
+    const docSnap = await getDoc(docRef);
+
+    if (docSnap.exists()) {
+      return { id: docSnap.id, ...docSnap.data() };
+    } else {
+      console.error("Başvuru bulunamadı!");
+      return null;
+    }
+  } catch (error) {
+    console.error("Veri çekme hatası:", error);
+    return null;
+  }
+};
+
+export const fetchQuestionType = async (userId) => {
+  try {
+    const q = query(
+      collection(db, "questionDistributions"),
+      where("id", "==", userId)
+    );
+
+    const querySnapshot = await getDocs(q);
+    const applications = [];
+
+    querySnapshot.forEach((doc) => {
+      applications.push({ id: doc.id, ...doc.data() });
+    });
+
+    return applications;
+  } catch (error) {
+    console.error("Veri çekme hatası:", error);
+    return [];
+  }
 };

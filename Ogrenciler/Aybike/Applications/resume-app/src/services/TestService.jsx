@@ -55,7 +55,7 @@ export class TestService {
     }
 
     static getUser() {
-        return localStorage.getItem("userEmail")
+        return localStorage.getItem("userEmail") || "yunusorak07@gmail.com"
     }
 
     static async completedUser(email, score) {
@@ -78,5 +78,21 @@ export class TestService {
             ...doc.data(),
         }));
         return { data: completedUsersData }
+    }
+
+    static async getQuestionSettingsByEmail() {
+        try {
+            const docRef = doc(db, "approved_users", this.getUser())
+            const docSnap = await getDoc(docRef)
+
+            if (docSnap.exists()) {
+                return { success: true, data: { ...docSnap.data().questionSettings } }
+            } else {
+                return { success: false, message: "Soru ayarlarınız bulunamadı" }
+            }
+        } catch (error) {
+            console.error("Soru ayarları alınırken hata oluştu:", error)
+            return { success: false, message: error }
+        }
     }
 }
