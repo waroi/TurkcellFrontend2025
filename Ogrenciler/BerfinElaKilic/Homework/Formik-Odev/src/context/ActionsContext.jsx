@@ -9,6 +9,8 @@ import {
   getAllJobs,
   getCandidate,
   getJobById,
+  getQuizByExamID,
+  updateExam,
   updateJob,
 } from "../utils/services";
 import { useNavigate } from "react-router";
@@ -72,21 +74,21 @@ export const ActionsProvider = ({ children }) => {
       console.error("Candidate bulunamadı.");
       return;
     }
-  
+
     const appliedJobs = candidate.appliedJobs || [];
     const appliedJob = appliedJobs.find((job) => job.id === jobId);
     console.log(user, candidate, appliedJob, appliedJobs);
-  
+
     if (user && appliedJob) {
       const approvedCandidates = Array.isArray(user.approvedCandidates)
         ? user.approvedCandidates
         : [];
-  
+
       const existedUser = approvedCandidates.find(
         (candidate) =>
           candidate.userId === candidateId && candidate.jobId === jobId
       );
-  
+
       let newApprovedCandidates;
       if (existedUser) {
         newApprovedCandidates = approvedCandidates.map((candidate) =>
@@ -105,11 +107,11 @@ export const ActionsProvider = ({ children }) => {
           },
         ];
       }
-  
+
       const newAppliedJobs = appliedJobs.map((job) =>
         job.id === jobId ? { ...job, status: newStatus } : job
       );
-  
+
       const job = await getJobById(jobId);
       if (job?.applicants && Array.isArray(job.applicants)) {
         const updatedJob = {
@@ -124,8 +126,9 @@ export const ActionsProvider = ({ children }) => {
       } else {
         console.error("Job veya applicants geçerli değil.");
       }
-  
+
       console.log(newAppliedJobs, newApprovedCandidates);
+
       await addAdminInfo(user.id, {
         approvedCandidates: newApprovedCandidates,
       });
@@ -136,8 +139,21 @@ export const ActionsProvider = ({ children }) => {
       console.error("User veya appliedJob bulunamadı.");
     }
   };
+  const sendExamToCandidate = async (examId, candidateId) => {
+    const newSentExam = { id: candidateId, totalScore: 0 };
+    const exam = await getQuizByExamID(examId);
+    if (exam) {
+      const existingSentExams = exam.sentExams || [];
+      const updatedSentExams = [...existingSentExams, newSentExam];
+      return await updateExam(examId, { sentExams: updatedSentExams });
+    }else{
+      console.log("Exam Bulunamadı");
+    }
+  };
   return (
-    <ActionsContext.Provider value={{ jobs, applyJob, approveCandidate }}>
+    <ActionsContext.Provider
+      value={{ jobs, applyJob, approveCandidate, sendExamToCandidate }}
+    >
       {!loading && children}
     </ActionsContext.Provider>
   );

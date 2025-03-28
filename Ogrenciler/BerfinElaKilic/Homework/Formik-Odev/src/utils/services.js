@@ -3,6 +3,9 @@ const url = import.meta.env.VITE_BASE_URL;
 export const getAllJobs = async () => {
   return await fetchService(`${url}/jobs`);
 };
+export const getAllJobsWithExams = async () => {
+  return await fetchService(`${url}/jobs?_embed=exams`);
+};
 export const getJobById = async (id) => {
   return await fetchService(`${url}/jobs/${id}`);
 };
@@ -51,6 +54,9 @@ export const getQuizByExamID = async (id) => {
 export const updateQuizByExamID = async (id, examDetail) => {
   return await fetchService(`${url}/exams/${id}`, "PATCH", examDetail);
 };
-export const getExamsByAdminId = async (id) => {
-  return await fetchService(`${url}/exams?adminId=${id}`);
-}
+export const getJobWithExams = async (jobId) => {
+  return await fetchService(`${url}/jobs/${jobId}?_embed=exams`);
+};
+export const updateExam = async (id, examDetail) => {
+  return await fetchService(`${url}/exams/${id}`, "PATCH", examDetail);
+};

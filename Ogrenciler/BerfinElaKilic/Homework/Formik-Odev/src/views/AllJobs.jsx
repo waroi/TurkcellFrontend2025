@@ -1,5 +1,5 @@
 import DataRender from "../components/HOCS/DataRender";
-import { getAllJobs } from "../utils/services";
+import { getAllJobs, getAllJobsWithExams } from "../utils/services";
 import JobCard from "../components/atoms/cards/JobCard";
 import { useAuth } from "../context/AuthContext";
 
@@ -10,6 +10,7 @@ const AllJobs = ({ title = "İş İlanları", limit }) => {
     if (!data) {
       return <p>Loading...</p>;
     }
+    console.log("jobs,", data);
     const limitedData = limit ? data.slice(0, limit) : data;
     return (
       <div>
@@ -24,7 +25,7 @@ const AllJobs = ({ title = "İş İlanları", limit }) => {
   };
   return (
     <>
-      <DataRender fetchFunction={getAllJobs} render={renderJobsData} />
+      <DataRender fetchFunction={getAllJobsWithExams} render={renderJobsData} />
     </>
   );
 };

@@ -129,7 +129,7 @@
       "appliedJobs": [
         {
           "id": "1",
-          "status": "test",
+          "status": "pending",
           "applicationDate": "2025-03-26T13:09:30.489Z"
         },
         {
@@ -144,7 +144,7 @@
     {
       "id": "1",
       "createdAt": "2024-03-21T10:00:00Z",
-      "adminId": "1",
+      "adminId": "tbHVOivOomebkNYdTDxqPNSChRy2",
       "position": "Frontend Developer",
       "company": "TechCorp",
       "location": "Remote",
@@ -193,13 +193,13 @@
         },
         {
           "id": "j623JrQfEcdLMI294bLETumYyPU2",
-          "status": "test",
+          "status": "pending",
           "approvedByAdmin": "",
           "applicationDate": "2025-03-26T13:09:05.965Z"
         },
         {
           "id": "j623JrQfEcdLMI294bLETumYyPU2",
-          "status": "test",
+          "status": "pending",
           "approvedByAdmin": "",
           "applicationDate": "2025-03-26T13:09:30.489Z"
         }
@@ -208,7 +208,7 @@
     {
       "id": "2",
       "createdAt": "2024-02-15T09:30:00Z",
-      "adminId": "1",
+      "adminId": "tbHVOivOomebkNYdTDxqPNSChRy2",
       "position": "Backend Developer",
       "company": "DevSolutions",
       "location": "Berlin, Germany",
@@ -422,6 +422,18 @@
           "jobId": "1",
           "approvedAt": "2025-03-26T12:50:43.011Z",
           "newStatus": "test"
+        },
+        {
+          "userId": "j623JrQfEcdLMI294bLETumYyPU2",
+          "jobId": "1",
+          "approvedAt": "2025-03-28T08:20:21.341Z",
+          "newStatus": "test"
+        },
+        {
+          "userId": "90dZl0LQt8cihXatYOszexHShlm1",
+          "jobId": "1",
+          "approvedAt": "2025-03-28T11:09:19.086Z",
+          "newStatus": "test"
         }
       ]
     },
@@ -445,7 +457,7 @@
     {
       "id": "1",
       "createdAt": "2023-02-14T12:26:44.439Z",
-      "name": "Admission Test",
+      "title": "Admission Test",
       "category": "Yazılım",
       "subcategory": "Javascript",
       "level": "Low",
@@ -541,11 +553,188 @@
           "difficultyLevel": "easy"
         }
       ]
+    },
+    {
+      "0": {
+        "id": "90dZl0LQt8cihXatYOszexHShlm1",
+        "totalScore": 0
+      },
+      "id": "ae74",
+      "createdAt": "2025-03-28T08:46:15.632Z",
+      "title": "Teknik Test",
+      "questions": [
+        "6"
+      ],
+      "totalDuration": 5,
+      "jobId": "1",
+      "adminId": "tbHVOivOomebkNYdTDxqPNSChRy2",
+      "questionDetails": [
+        {
+          "id": "6",
+          "category": "JavaScript",
+          "subcategory": "Arrays",
+          "question": "JavaScript'te bir nesnenin dizi olup olmadığını kontrol etmek için hangi metod kullanılır?",
+          "options": [
+            "isArray()",
+            "Array.isArray()",
+            "typeof",
+            "Object.isArray()"
+          ],
+          "answers": [
+            1
+          ],
+          "difficultyLevel": "medium"
+        }
+      ],
+      "sentExams": [
+        {
+          "id": "90dZl0LQt8cihXatYOszexHShlm1",
+          "totalScore": 0
+        },
+        {
+          "id": "90dZl0LQt8cihXatYOszexHShlm1",
+          "totalScore": 0
+        },
+        {
+          "id": "90dZl0LQt8cihXatYOszexHShlm1",
+          "totalScore": 0
+        },
+        {
+          "id": "VILaDZXFqNUzaxhGzZpa7Hi8rZF2",
+          "totalScore": 0
+        }
+      ]
+    },
+    {
+      "id": "95fb",
+      "createdAt": "2025-03-28T09:35:54.125Z",
+      "title": "teknik test",
+      "questions": [
+        "3",
+        "1"
+      ],
+      "totalDuration": 10,
+      "jobId": "1",
+      "adminId": "tbHVOivOomebkNYdTDxqPNSChRy2",
+      "questionDetails": [
+        {
+          "id": "3",
+          "category": "JavaScript",
+          "subcategory": "Variables",
+          "question": "Aşağıdakilerden hangisi doğru bir JavaScript değişkeni tanımlamasıdır?",
+          "options": [
+            "let x = 10",
+            "var x = 10",
+            "const x = 10",
+            "Hepsi"
+          ],
+          "answers": [
+            3
+          ],
+          "difficultyLevel": "easy"
+        },
+        {
+          "id": "1",
+          "category": "JavaScript",
+          "subcategory": "Variables",
+          "question": "Aşağıdakilerden hangisi JavaScript'te değişken tanımlamak için kullanılır?",
+          "options": [
+            "var",
+            "let",
+            "const",
+            "Hiçbiri"
+          ],
+          "answers": [
+            1
+          ],
+          "difficultyLevel": "easy"
+        }
+      ]
+    },
+    {
+      "id": "a171",
+      "createdAt": "2025-03-28T09:37:30.616Z",
+      "title": "teknik ",
+      "questions": [
+        "6",
+        "3",
+        "1",
+        "2"
+      ],
+      "totalDuration": 20,
+      "jobId": "1",
+      "adminId": "tbHVOivOomebkNYdTDxqPNSChRy2",
+      "questionDetails": [
+        {
+          "id": "6",
+          "category": "JavaScript",
+          "subcategory": "Arrays",
+          "question": "JavaScript'te bir nesnenin dizi olup olmadığını kontrol etmek için hangi metod kullanılır?",
+          "options": [
+            "isArray()",
+            "Array.isArray()",
+            "typeof",
+            "Object.isArray()"
+          ],
+          "answers": [
+            1
+          ],
+          "difficultyLevel": "medium"
+        },
+        {
+          "id": "3",
+          "category": "JavaScript",
+          "subcategory": "Variables",
+          "question": "Aşağıdakilerden hangisi doğru bir JavaScript değişkeni tanımlamasıdır?",
+          "options": [
+            "let x = 10",
+            "var x = 10",
+            "const x = 10",
+            "Hepsi"
+          ],
+          "answers": [
+            3
+          ],
+          "difficultyLevel": "easy"
+        },
+        {
+          "id": "1",
+          "category": "JavaScript",
+          "subcategory": "Variables",
+          "question": "Aşağıdakilerden hangisi JavaScript'te değişken tanımlamak için kullanılır?",
+          "options": [
+            "var",
+            "let",
+            "const",
+            "Hiçbiri"
+          ],
+          "answers": [
+            1
+          ],
+          "difficultyLevel": "easy"
+        },
+        {
+          "id": "2",
+          "category": "JavaScript",
+          "subcategory": "Arrays",
+          "question": "JavaScript'te iki veya daha fazla diziyi birleştirmek için hangi metod kullanılır?",
+          "options": [
+            "join()",
+            "concat()",
+            "push()",
+            "merge()"
+          ],
+          "answers": [
+            1
+          ],
+          "difficultyLevel": "easy"
+        }
+      ]
     }
   ],
   "questions": [
     {
-      "id": 1,
+      "id": "1",
       "category": "JavaScript",
       "subcategory": "Variables",
       "question": "Aşağıdakilerden hangisi JavaScript'te değişken tanımlamak için kullanılır?",
@@ -561,7 +750,135 @@
       "difficultyLevel": "easy"
     },
     {
-      "id": 2,
+      "id": "19",
+      "category": "JavaScript",
+      "subcategory": "Variables",
+      "question": "JavaScript'te 'var' ile tanımlanan bir değişkenin kapsamı nedir?",
+      "options": [
+        "Fonksiyon scope",
+        "Block scope",
+        "Global scope",
+        "Hiçbiri"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "easy"
+    },
+    {
+      "id": "20",
+      "category": "JavaScript",
+      "subcategory": "Variables",
+      "question": "JavaScript'te 'const' ile tanımlanan bir değişkenin değeri sonradan değiştirilebilir mi?",
+      "options": [
+        "Evet",
+        "Hayır",
+        "Sadece nesnelerde",
+        "Sadece dizilerde"
+      ],
+      "answers": [
+        1
+      ],
+      "difficultyLevel": "easy"
+    },
+    {
+      "id": "21",
+      "category": "JavaScript",
+      "subcategory": "Variables",
+      "question": "JavaScript'te 'let' ve 'const' arasındaki temel fark nedir?",
+      "options": [
+        "let yeniden atanabilir, const atanamaz",
+        "const fonksiyon scoped, let block scoped",
+        "Hiçbir fark yok",
+        "const sadece sayılar için kullanılır"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "medium"
+    },
+    {
+      "id": "22",
+      "category": "JavaScript",
+      "subcategory": "Variables",
+      "question": "JavaScript'te temporal dead zone nedir?",
+      "options": [
+        "let/const tanımlamalarının hoisted olması ama erişilememesi",
+        "Bir değişkenin silinmesi",
+        "Global değişkenlerin durumu",
+        "Hiçbiri"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "medium"
+    },
+    {
+      "id": "23",
+      "category": "JavaScript",
+      "subcategory": "Variables",
+      "question": "JavaScript'te 'undefined' ve 'not defined' arasındaki fark nedir?",
+      "options": [
+        "undefined: tanımlı ama değer atanmamış, not defined: hiç tanımlanmamış",
+        "Aynı şeyler",
+        "undefined: global değişken, not defined: local değişken",
+        "Hiçbiri"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "medium"
+    },
+    {
+      "id": "24",
+      "category": "JavaScript",
+      "subcategory": "Variables",
+      "question": "JavaScript'te primitive ve reference tipler arasındaki fark nedir?",
+      "options": [
+        "Primitive: değerle, reference: referansla iletilir",
+        "Primitive: obje, reference: fonksiyon",
+        "Aynı şeyler",
+        "Hiçbiri"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "hard"
+    },
+    {
+      "id": "25",
+      "category": "JavaScript",
+      "subcategory": "Variables",
+      "question": "JavaScript'te shallow copy ve deep copy arasındaki fark nedir?",
+      "options": [
+        "Shallow: sadece üst seviye kopyalar, deep: tüm nested objeleri kopyalar",
+        "Aynı şeyler",
+        "Shallow: primitive tipler için, deep: reference tipler için",
+        "Hiçbiri"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "hard"
+    },
+    {
+      "id": "26",
+      "category": "JavaScript",
+      "subcategory": "Variables",
+      "question": "JavaScript'te 'use strict' modu ne işe yarar?",
+      "options": [
+        "Daha katı syntax kuralları getirir",
+        "Performansı artırır",
+        "Tüm değişkenleri const yapar",
+        "Hiçbiri"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "hard"
+    },
+    {
+      "id": "2",
       "category": "JavaScript",
       "subcategory": "Arrays",
       "question": "JavaScript'te iki veya daha fazla diziyi birleştirmek için hangi metod kullanılır?",
@@ -577,30 +894,46 @@
       "difficultyLevel": "easy"
     },
     {
-      "id": 3,
+      "id": "27",
       "category": "JavaScript",
-      "subcategory": "Variables",
-      "question": "Aşağıdakilerden hangisi doğru bir JavaScript değişkeni tanımlamasıdır?",
+      "subcategory": "Arrays",
+      "question": "JavaScript'te bir dizinin sonuna eleman eklemek için hangi metod kullanılır?",
       "options": [
-        "let x = 10",
-        "var x = 10",
-        "const x = 10",
-        "Hepsi"
+        "push()",
+        "pop()",
+        "shift()",
+        "unshift()"
       ],
       "answers": [
-        3
+        0
       ],
       "difficultyLevel": "easy"
     },
     {
-      "id": 4,
+      "id": "28",
       "category": "JavaScript",
-      "subcategory": "Functions",
-      "question": "Aşağıdakilerden hangisi JavaScript'te bir closure örneğidir?",
+      "subcategory": "Arrays",
+      "question": "JavaScript'te bir dizinin ilk elemanını çıkarmak için hangi metod kullanılır?",
       "options": [
-        "Closures",
-        "Hoisting",
-        "Event Loop",
+        "shift()",
+        "pop()",
+        "slice()",
+        "splice()"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "easy"
+    },
+    {
+      "id": "29",
+      "category": "JavaScript",
+      "subcategory": "Arrays",
+      "question": "JavaScript'te map() ve forEach() arasındaki temel fark nedir?",
+      "options": [
+        "map() yeni dizi döndürür, forEach() döndürmez",
+        "forEach() daha hızlıdır",
+        "map() sadece sayılar için kullanılır",
         "Hiçbiri"
       ],
       "answers": [
@@ -609,15 +942,15 @@
       "difficultyLevel": "medium"
     },
     {
-      "id": 5,
+      "id": "30",
       "category": "JavaScript",
-      "subcategory": "Type Coercion",
-      "question": "Aşağıdaki JavaScript kodunun çıktısı ne olur: console.log(1 + '1')?",
+      "subcategory": "Arrays",
+      "question": "JavaScript'te filter() metodunun amacı nedir?",
       "options": [
-        "11",
-        "2",
-        "NaN",
-        "Hata"
+        "Belirli koşulları sağlayan elemanlarla yeni dizi oluşturmak",
+        "Diziyi sıralamak",
+        "Diziyi ters çevirmek",
+        "Hiçbiri"
       ],
       "answers": [
         0
@@ -625,7 +958,7 @@
       "difficultyLevel": "medium"
     },
     {
-      "id": 6,
+      "id": "6",
       "category": "JavaScript",
       "subcategory": "Arrays",
       "question": "JavaScript'te bir nesnenin dizi olup olmadığını kontrol etmek için hangi metod kullanılır?",
@@ -641,7 +974,311 @@
       "difficultyLevel": "medium"
     },
     {
-      "id": 7,
+      "id": "31",
+      "category": "JavaScript",
+      "subcategory": "Arrays",
+      "question": "JavaScript'te reduce() metodunun çalışma prensibi nedir?",
+      "options": [
+        "Diziyi tek bir değere indirger",
+        "Diziyi sıralar",
+        "Diziyi filtreler",
+        "Hiçbiri"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "hard"
+    },
+    {
+      "id": "32",
+      "category": "JavaScript",
+      "subcategory": "Arrays",
+      "question": "JavaScript'te spread operator (...) dizilerle nasıl kullanılır?",
+      "options": [
+        "Dizileri birleştirmek veya kopyalamak için",
+        "Dizileri sıralamak için",
+        "Dizileri filtrelemek için",
+        "Hiçbiri"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "hard"
+    },
+    {
+      "id": "33",
+      "category": "JavaScript",
+      "subcategory": "Arrays",
+      "question": "JavaScript'te typed array nedir?",
+      "options": [
+        "Belirli bir veri tipinde elemanlar içeren dizi",
+        "Sıralı dizi",
+        "Filtrelenmiş dizi",
+        "Hiçbiri"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "hard"
+    },
+    {
+      "id": "4",
+      "category": "JavaScript",
+      "subcategory": "Functions",
+      "question": "Aşağıdakilerden hangisi JavaScript'te bir closure örneğidir?",
+      "options": [
+        "Closures",
+        "Hoisting",
+        "Event Loop",
+        "Hiçbiri"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "medium"
+    },
+    {
+      "id": "34",
+      "category": "JavaScript",
+      "subcategory": "Functions",
+      "question": "JavaScript'te arrow fonksiyonlarının normal fonksiyonlardan farkı nedir?",
+      "options": [
+        "this bağlamı yoktur",
+        "Daha hızlı çalışır",
+        "Sadece bir parametre alabilir",
+        "Hiçbiri"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "easy"
+    },
+    {
+      "id": "35",
+      "category": "JavaScript",
+      "subcategory": "Functions",
+      "question": "JavaScript'te IIFE (Immediately Invoked Function Expression) nedir?",
+      "options": [
+        "Tanımlandığı anda çalıştırılan fonksiyon",
+        "Async fonksiyon",
+        "Callback fonksiyon",
+        "Hiçbiri"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "easy"
+    },
+    {
+      "id": "36",
+      "category": "JavaScript",
+      "subcategory": "Functions",
+      "question": "JavaScript'te higher-order fonksiyon nedir?",
+      "options": [
+        "Başka fonksiyonları parametre olarak alan veya döndüren fonksiyon",
+        "Sadece global fonksiyonlar",
+        "Sadece arrow fonksiyonlar",
+        "Hiçbiri"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "medium"
+    },
+    {
+      "id": "37",
+      "category": "JavaScript",
+      "subcategory": "Functions",
+      "question": "JavaScript'te currying nedir?",
+      "options": [
+        "Fonksiyonu ardışık çağrılara bölme tekniği",
+        "Fonksiyonu optimize etme",
+        "Fonksiyonu sıkıştırma",
+        "Hiçbiri"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "medium"
+    },
+    {
+      "id": "38",
+      "category": "JavaScript",
+      "subcategory": "Functions",
+      "question": "JavaScript'te memoization nedir?",
+      "options": [
+        "Fonksiyon sonuçlarını önbelleğe alarak performans artırma",
+        "Fonksiyonları sıralama",
+        "Fonksiyonları birleştirme",
+        "Hiçbiri"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "hard"
+    },
+    {
+      "id": "39",
+      "category": "JavaScript",
+      "subcategory": "Functions",
+      "question": "JavaScript'te pure fonksiyon nedir?",
+      "options": [
+        "Aynı girdiye her zaman aynı çıktıyı veren ve yan etkisi olmayan fonksiyon",
+        "Global değişkenleri kullanan fonksiyon",
+        "Sadece matematiksel işlemler yapan fonksiyon",
+        "Hiçbiri"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "hard"
+    },
+    {
+      "id": "40",
+      "category": "JavaScript",
+      "subcategory": "Functions",
+      "question": "JavaScript'te fonksiyon composition nedir?",
+      "options": [
+        "Birden fazla fonksiyonu birleştirerek yeni fonksiyon oluşturma",
+        "Fonksiyonları sıkıştırma",
+        "Fonksiyonları optimize etme",
+        "Hiçbiri"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "hard"
+    },
+    {
+      "id": "5",
+      "category": "JavaScript",
+      "subcategory": "Type Coercion",
+      "question": "Aşağıdaki JavaScript kodunun çıktısı ne olur: console.log(1 + '1')?",
+      "options": [
+        "11",
+        "2",
+        "NaN",
+        "Hata"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "medium"
+    },
+    {
+      "id": "41",
+      "category": "JavaScript",
+      "subcategory": "Type Coercion",
+      "question": "JavaScript'te == ve === arasındaki fark nedir?",
+      "options": [
+        "== tip dönüşümü yapar, === yapmaz",
+        "=== daha hızlıdır",
+        "== sadece sayılar için kullanılır",
+        "Hiçbiri"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "easy"
+    },
+    {
+      "id": "42",
+      "category": "JavaScript",
+      "subcategory": "Type Coercion",
+      "question": "console.log(Boolean('false')) çıktısı nedir?",
+      "options": [
+        "true",
+        "false",
+        "undefined",
+        "Hata"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "easy"
+    },
+    {
+      "id": "43",
+      "category": "JavaScript",
+      "subcategory": "Type Coercion",
+      "question": "JavaScript'te truthy ve falsy değerler nedir?",
+      "options": [
+        "Boolean bağlamda true/false olarak değerlendirilen değerler",
+        "Sadece true ve false",
+        "Sadece 1 ve 0",
+        "Hiçbiri"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "medium"
+    },
+    {
+      "id": "44",
+      "category": "JavaScript",
+      "subcategory": "Type Coercion",
+      "question": "console.log([] == ![]) çıktısı nedir?",
+      "options": [
+        "true",
+        "false",
+        "undefined",
+        "Hata"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "medium"
+    },
+    {
+      "id": "45",
+      "category": "JavaScript",
+      "subcategory": "Type Coercion",
+      "question": "JavaScript'te Object.is() metodunun amacı nedir?",
+      "options": [
+        "İki değerin aynı olup olmadığını kontrol etmek",
+        "Tip dönüşümü yapmak",
+        "Değerleri karşılaştırmak",
+        "Hiçbiri"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "hard"
+    },
+    {
+      "id": "46",
+      "category": "JavaScript",
+      "subcategory": "Type Coercion",
+      "question": "JavaScript'te Symbol tipinin özelliği nedir?",
+      "options": [
+        "Benzersiz ve değiştirilemez primitive değerler oluşturur",
+        "Tip dönüşümü sağlar",
+        "Performansı artırır",
+        "Hiçbiri"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "hard"
+    },
+    {
+      "id": "47",
+      "category": "JavaScript",
+      "subcategory": "Type Coercion",
+      "question": "JavaScript'te BigInt ne işe yarar?",
+      "options": [
+        "Büyük tam sayıları temsil etmek",
+        "Ondalıklı sayıları temsil etmek",
+        "Tip dönüşümü yapmak",
+        "Hiçbiri"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "hard"
+    },
+    {
+      "id": "7",
       "category": "JavaScript",
       "subcategory": "Asynchronous",
       "question": "Aşağıdakilerden hangisi JavaScript'te asenkron işlemleri yönetmek için kullanılır?",
@@ -657,7 +1294,135 @@
       "difficultyLevel": "hard"
     },
     {
-      "id": 8,
+      "id": "48",
+      "category": "JavaScript",
+      "subcategory": "Asynchronous",
+      "question": "JavaScript'te callback fonksiyon nedir?",
+      "options": [
+        "Başka bir fonksiyona parametre olarak geçilen fonksiyon",
+        "Anonim fonksiyon",
+        "Arrow fonksiyon",
+        "Hiçbiri"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "easy"
+    },
+    {
+      "id": "49",
+      "category": "JavaScript",
+      "subcategory": "Asynchronous",
+      "question": "JavaScript'te Promise'in üç durumu nedir?",
+      "options": [
+        "pending, fulfilled, rejected",
+        "waiting, done, failed",
+        "start, process, end",
+        "Hiçbiri"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "easy"
+    },
+    {
+      "id": "50",
+      "category": "JavaScript",
+      "subcategory": "Asynchronous",
+      "question": "JavaScript'te async/await ne işe yarar?",
+      "options": [
+        "Asenkron kodu senkron gibi yazmayı sağlar",
+        "Promise'leri iptal eder",
+        "Callback hell'i önler",
+        "Hiçbiri"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "medium"
+    },
+    {
+      "id": "51",
+      "category": "JavaScript",
+      "subcategory": "Asynchronous",
+      "question": "JavaScript'te event loop nasıl çalışır?",
+      "options": [
+        "Call stack boşaldığında callback queue'den fonksiyon alır",
+        "Sadece setTimeout için çalışır",
+        "Promise'leri yönetir",
+        "Hiçbiri"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "medium"
+    },
+    {
+      "id": "52",
+      "category": "JavaScript",
+      "subcategory": "Asynchronous",
+      "question": "JavaScript'te microtask ve macrotask arasındaki fark nedir?",
+      "options": [
+        "Microtask (Promise) macrotask'tan (setTimeout) önce çalışır",
+        "Macrotask daha önemlidir",
+        "Aynı şeyler",
+        "Hiçbiri"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "medium"
+    },
+    {
+      "id": "53",
+      "category": "JavaScript",
+      "subcategory": "Asynchronous",
+      "question": "JavaScript'te Promise.all() ne işe yarar?",
+      "options": [
+        "Birden fazla Promise'i paralel çalıştırıp hepsinin bitmesini bekler",
+        "Promise'leri sırayla çalıştırır",
+        "Promise'leri iptal eder",
+        "Hiçbiri"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "hard"
+    },
+    {
+      "id": "54",
+      "category": "JavaScript",
+      "subcategory": "Asynchronous",
+      "question": "JavaScript'te async generator nedir?",
+      "options": [
+        "Asenkron veri akışını yönetmek için kullanılır",
+        "Promise üretir",
+        "Callback fonksiyonudur",
+        "Hiçbiri"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "hard"
+    },
+    {
+      "id": "55",
+      "category": "JavaScript",
+      "subcategory": "Asynchronous",
+      "question": "JavaScript'te AbortController ne işe yarar?",
+      "options": [
+        "Asenkron işlemleri iptal etmek için",
+        "Promise'leri birleştirmek için",
+        "Callback'leri yönetmek için",
+        "Hiçbiri"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "hard"
+    },
+    {
+      "id": "8",
       "category": "JavaScript",
       "subcategory": "Objects",
       "question": "JavaScript'te birden fazla nesneyi birleştirmek için hangi metod kullanılır?",
@@ -673,7 +1438,135 @@
       "difficultyLevel": "hard"
     },
     {
-      "id": 9,
+      "id": "56",
+      "category": "JavaScript",
+      "subcategory": "Objects",
+      "question": "JavaScript'te bir nesnenin özelliklerini listelemek için hangi metod kullanılır?",
+      "options": [
+        "Object.keys()",
+        "Object.values()",
+        "Object.entries()",
+        "Hepsi"
+      ],
+      "answers": [
+        3
+      ],
+      "difficultyLevel": "easy"
+    },
+    {
+      "id": "57",
+      "category": "JavaScript",
+      "subcategory": "Objects",
+      "question": "JavaScript'te nesne kopyalama yöntemlerinden hangisi deep copy sağlar?",
+      "options": [
+        "JSON.parse(JSON.stringify(obj))",
+        "Object.assign()",
+        "Spread operator",
+        "Hiçbiri"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "easy"
+    },
+    {
+      "id": "58",
+      "category": "JavaScript",
+      "subcategory": "Objects",
+      "question": "JavaScript'te prototip nedir?",
+      "options": [
+        "Nesneler arasında özellik/method paylaşım mekanizması",
+        "Nesne oluşturma yöntemi",
+        "Nesne kopyalama yöntemi",
+        "Hiçbiri"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "medium"
+    },
+    {
+      "id": "59",
+      "category": "JavaScript",
+      "subcategory": "Objects",
+      "question": "JavaScript'te Object.create() ne işe yarar?",
+      "options": [
+        "Belirtilen prototip ile yeni nesne oluşturur",
+        "Nesneyi kopyalar",
+        "Nesneyi birleştirir",
+        "Hiçbiri"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "medium"
+    },
+    {
+      "id": "60",
+      "category": "JavaScript",
+      "subcategory": "Objects",
+      "question": "JavaScript'te getter ve setter nedir?",
+      "options": [
+        "Özelliklere erişimi kontrol eden fonksiyonlar",
+        "Nesne oluşturma yöntemleri",
+        "Prototip özellikleri",
+        "Hiçbiri"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "medium"
+    },
+    {
+      "id": "61",
+      "category": "JavaScript",
+      "subcategory": "Objects",
+      "question": "JavaScript'te proxy nedir?",
+      "options": [
+        "Nesneler için temel işlemleri özelleştirmek için kullanılır",
+        "Nesne kopyalama aracı",
+        "Nesne birleştirme aracı",
+        "Hiçbiri"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "hard"
+    },
+    {
+      "id": "62",
+      "category": "JavaScript",
+      "subcategory": "Objects",
+      "question": "JavaScript'te descriptor nedir?",
+      "options": [
+        "Bir özelliğin davranışını tanımlayan nesne",
+        "Nesne tanımlama yöntemi",
+        "Prototip özelliği",
+        "Hiçbiri"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "hard"
+    },
+    {
+      "id": "63",
+      "category": "JavaScript",
+      "subcategory": "Objects",
+      "question": "JavaScript'te weakMap ve weakSet'in özelliği nedir?",
+      "options": [
+        "Zayıf referans tutarlar ve garbage collection'ı engellemezler",
+        "Normal Map/Set'ten daha hızlıdır",
+        "Sadece primitive değerler alır",
+        "Hiçbiri"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "hard"
+    },
+    {
+      "id": "9",
       "category": "JavaScript",
       "subcategory": "Context",
       "question": "'this' anahtar kelimesinin amacı nedir?",
@@ -689,7 +1582,135 @@
       "difficultyLevel": "hard"
     },
     {
-      "id": 10,
+      "id": "64",
+      "category": "JavaScript",
+      "subcategory": "Context",
+      "question": "JavaScript'te 'this' değeri nasıl belirlenir?",
+      "options": [
+        "Fonksiyonun nasıl çağrıldığına göre",
+        "Her zaman global nesneyi gösterir",
+        "Her zaman undefined'dır",
+        "Hiçbiri"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "easy"
+    },
+    {
+      "id": "65",
+      "category": "JavaScript",
+      "subcategory": "Context",
+      "question": "JavaScript'te call(), apply() ve bind() arasındaki fark nedir?",
+      "options": [
+        "call/apply hemen çağırır, bind yeni fonksiyon döndürür",
+        "apply array alır, call parametreleri tek tek alır",
+        "Hepsi",
+        "Hiçbiri"
+      ],
+      "answers": [
+        2
+      ],
+      "difficultyLevel": "easy"
+    },
+    {
+      "id": "66",
+      "category": "JavaScript",
+      "subcategory": "Context",
+      "question": "JavaScript'te arrow fonksiyonlarında 'this' nasıl çalışır?",
+      "options": [
+        "Lexical context'te belirlenir",
+        "Global nesneyi gösterir",
+        "undefined'dır",
+        "Hiçbiri"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "medium"
+    },
+    {
+      "id": "67",
+      "category": "JavaScript",
+      "subcategory": "Context",
+      "question": "JavaScript'te strict modda 'this' nasıl çalışır?",
+      "options": [
+        "Belirtilmezse undefined olur",
+        "Her zaman global nesneyi gösterir",
+        "Her zaman window'u gösterir",
+        "Hiçbiri"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "medium"
+    },
+    {
+      "id": "68",
+      "category": "JavaScript",
+      "subcategory": "Context",
+      "question": "JavaScript'te 'new' anahtar kelimesi 'this'i nasıl etkiler?",
+      "options": [
+        "Yeni oluşturulan nesneyi gösterir",
+        "Global nesneyi gösterir",
+        "undefined yapar",
+        "Hiçbiri"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "medium"
+    },
+    {
+      "id": "69",
+      "category": "JavaScript",
+      "subcategory": "Context",
+      "question": "JavaScript'te 'this' bir event listener içinde neyi gösterir?",
+      "options": [
+        "Event'in tetiklendiği elementi",
+        "Global nesneyi",
+        "undefined",
+        "Hiçbiri"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "hard"
+    },
+    {
+      "id": "70",
+      "category": "JavaScript",
+      "subcategory": "Context",
+      "question": "JavaScript'te module context'inde 'this' neyi gösterir?",
+      "options": [
+        "undefined",
+        "Global nesneyi",
+        "Module nesnesini",
+        "Hiçbiri"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "hard"
+    },
+    {
+      "id": "71",
+      "category": "JavaScript",
+      "subcategory": "Context",
+      "question": "JavaScript'te 'this' bir class içinde neyi gösterir?",
+      "options": [
+        "Class instance'ını",
+        "Prototip nesnesini",
+        "Global nesneyi",
+        "Hiçbiri"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "hard"
+    },
+    {
+      "id": "10",
       "category": "TypeScript",
       "subcategory": "Types",
       "question": "Aşağıdaki TypeScript tiplerinden hangisi herhangi bir değeri tanımlamak için kullanılır?",
@@ -705,30 +1726,14 @@
       "difficultyLevel": "easy"
     },
     {
-      "id": 11,
+      "id": "72",
       "category": "TypeScript",
-      "subcategory": "Functions",
-      "question": "Aşağıdakilerden hangisi doğru bir TypeScript fonksiyon tanımlamasıdır?",
+      "subcategory": "Types",
+      "question": "TypeScript'te tuple nedir?",
       "options": [
-        "function myFunction(): void {}",
-        "const myFunction = (): void => {}",
-        "Hepsi",
-        "Hiçbiri"
-      ],
-      "answers": [
-        2
-      ],
-      "difficultyLevel": "easy"
-    },
-    {
-      "id": 12,
-      "category": "TypeScript",
-      "subcategory": "Variables",
-      "question": "Aşağıdakilerden hangisi TypeScript'te string türünde bir değişken tanımlamak için doğru bir yazımdır?",
-      "options": [
-        "let name: string;",
-        "let name = string;",
-        "var name: String;",
+        "Sabit uzunlukta ve belirli tiplerde dizi",
+        "Generic tip",
+        "Interface",
         "Hiçbiri"
       ],
       "answers": [
@@ -737,14 +1742,30 @@
       "difficultyLevel": "easy"
     },
     {
-      "id": 13,
+      "id": "73",
       "category": "TypeScript",
-      "subcategory": "Interfaces",
-      "question": "Aşağıdakilerden hangisi TypeScript'te bir interface tanımlamak için kullanılır?",
+      "subcategory": "Types",
+      "question": "TypeScript'te enum nedir?",
       "options": [
-        "Interfaces",
-        "Type Aliases",
-        "Enums",
+        "Sabit değer kümesi",
+        "Generic tip",
+        "Fonksiyon tipi",
+        "Hiçbiri"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "easy"
+    },
+    {
+      "id": "74",
+      "category": "TypeScript",
+      "subcategory": "Types",
+      "question": "TypeScript'te type assertion nedir?",
+      "options": [
+        "Derleyiciye tip hakkında bilgi verme",
+        "Tip dönüşümü",
+        "Runtime tip kontrolü",
         "Hiçbiri"
       ],
       "answers": [
@@ -753,7 +1774,7 @@
       "difficultyLevel": "medium"
     },
     {
-      "id": 14,
+      "id": "14",
       "category": "TypeScript",
       "subcategory": "Types",
       "question": "Aşağıdaki TypeScript özelliklerinden hangisi bir değişkenin hiç değeri olmadığını belirtir?",
@@ -769,14 +1790,270 @@
       "difficultyLevel": "medium"
     },
     {
-      "id": 15,
+      "id": "75",
       "category": "TypeScript",
-      "subcategory": "Type Assertions",
-      "question": "'as' anahtar kelimesinin TypeScript'teki amacı nedir?",
+      "subcategory": "Types",
+      "question": "TypeScript'te type guards nedir?",
       "options": [
-        "Tip beyannamesi",
-        "Tip çıkarımı",
-        "Tip dönüştürme",
+        "Runtime'da tip kontrolü yapmayı sağlar",
+        "Tip dönüşümü",
+        "Generic kısıtlamalar",
+        "Hiçbiri"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "medium"
+    },
+    {
+      "id": "76",
+      "category": "TypeScript",
+      "subcategory": "Types",
+      "question": "TypeScript'te discriminated union nedir?",
+      "options": [
+        "Ortak bir alana sahip tiplerin birleşimi",
+        "Generic tip",
+        "Interface birleşimi",
+        "Hiçbiri"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "hard"
+    },
+    {
+      "id": "77",
+      "category": "TypeScript",
+      "subcategory": "Types",
+      "question": "TypeScript'te conditional types nedir?",
+      "options": [
+        "Koşullara bağlı tipler",
+        "Generic tipler",
+        "Interface'ler",
+        "Hiçbiri"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "hard"
+    },
+    {
+      "id": "78",
+      "category": "TypeScript",
+      "subcategory": "Types",
+      "question": "TypeScript'te mapped types nedir?",
+      "options": [
+        "Varolan tipten yeni tip oluşturma",
+        "Generic tip",
+        "Interface genişletme",
+        "Hiçbiri"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "hard"
+    },
+    {
+      "id": "11",
+      "category": "TypeScript",
+      "subcategory": "Functions",
+      "question": "Aşağıdakilerden hangisi doğru bir TypeScript fonksiyon tanımlamasıdır?",
+      "options": [
+        "function myFunction(): void {}",
+        "const myFunction = (): void => {}",
+        "Hepsi",
+        "Hiçbiri"
+      ],
+      "answers": [
+        2
+      ],
+      "difficultyLevel": "easy"
+    },
+    {
+      "id": "79",
+      "category": "TypeScript",
+      "subcategory": "Functions",
+      "question": "TypeScript'te optional parametre nasıl tanımlanır?",
+      "options": [
+        "Parametre adından sonra ? koyarak",
+        "default değer atayarak",
+        "Hepsi",
+        "Hiçbiri"
+      ],
+      "answers": [
+        2
+      ],
+      "difficultyLevel": "easy"
+    },
+    {
+      "id": "80",
+      "category": "TypeScript",
+      "subcategory": "Functions",
+      "question": "TypeScript'te rest parametre nasıl tanımlanır?",
+      "options": [
+        "... operatörü kullanarak",
+        "Array tipi belirterek",
+        "Hepsi",
+        "Hiçbiri"
+      ],
+      "answers": [
+        2
+      ],
+      "difficultyLevel": "easy"
+    },
+    {
+      "id": "81",
+      "category": "TypeScript",
+      "subcategory": "Functions",
+      "question": "TypeScript'te function overloading nedir?",
+      "options": [
+        "Aynı fonksiyonun farklı imzalarını tanımlama",
+        "Fonksiyonları aşırı yükleme",
+        "Hepsi",
+        "Hiçbiri"
+      ],
+      "answers": [
+        2
+      ],
+      "difficultyLevel": "medium"
+    },
+    {
+      "id": "82",
+      "category": "TypeScript",
+      "subcategory": "Functions",
+      "question": "TypeScript'te higher-order fonksiyon tipi nasıl tanımlanır?",
+      "options": [
+        "(param: type) => returnType",
+        "Function interface'i kullanarak",
+        "Hepsi",
+        "Hiçbiri"
+      ],
+      "answers": [
+        2
+      ],
+      "difficultyLevel": "medium"
+    },
+    {
+      "id": "83",
+      "category": "TypeScript",
+      "subcategory": "Functions",
+      "question": "TypeScript'te this parametresi nasıl belirtilir?",
+      "options": [
+        "Fonksiyon parametrelerinin başında",
+        "Interface'de",
+        "Hepsi",
+        "Hiçbiri"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "medium"
+    },
+    {
+      "id": "84",
+      "category": "TypeScript",
+      "subcategory": "Functions",
+      "question": "TypeScript'te generic fonksiyon nedir?",
+      "options": [
+        "Çeşitli tiplerle çalışabilen fonksiyon",
+        "Generic parametre alan fonksiyon",
+        "Hepsi",
+        "Hiçbiri"
+      ],
+      "answers": [
+        2
+      ],
+      "difficultyLevel": "hard"
+    },
+    {
+      "id": "85",
+      "category": "TypeScript",
+      "subcategory": "Functions",
+      "question": "TypeScript'te decorator fonksiyon nedir?",
+      "options": [
+        "Sınıf/method/property'leri dekore eden fonksiyon",
+        "Meta programlama aracı",
+        "Hepsi",
+        "Hiçbiri"
+      ],
+      "answers": [
+        2
+      ],
+      "difficultyLevel": "hard"
+    },
+    {
+      "id": "86",
+      "category": "TypeScript",
+      "subcategory": "Functions",
+      "question": "TypeScript'te async fonksiyon tipi nasıl tanımlanır?",
+      "options": [
+        "Promise<returnType>",
+        "Async keyword'ü ile",
+        "Hepsi",
+        "Hiçbiri"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "hard"
+    },
+    {
+      "id": "12",
+      "category": "TypeScript",
+      "subcategory": "Variables",
+      "question": "Aşağıdakilerden hangisi TypeScript'te string türünde bir değişken tanımlamak için doğru bir yazımdır?",
+      "options": [
+        "let name: string;",
+        "let name = string;",
+        "var name: String;",
+        "Hiçbiri"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "easy"
+    },
+    {
+      "id": "87",
+      "category": "TypeScript",
+      "subcategory": "Variables",
+      "question": "TypeScript'te const assertion nedir?",
+      "options": [
+        "Değerin değişmez olduğunu belirtme",
+        "Const değişken tanımlama",
+        "Hiçbiri",
+        "Hepsi"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "easy"
+    },
+    {
+      "id": "88",
+      "category": "TypeScript",
+      "subcategory": "Variables",
+      "question": "TypeScript'te type inference nedir?",
+      "options": [
+        "Tipin otomatik belirlenmesi",
+        "Tip belirtme",
+        "Tip dönüşümü",
+        "Hiçbiri"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "easy"
+    },
+    {
+      "id": "89",
+      "category": "TypeScript",
+      "subcategory": "Variables",
+      "question": "TypeScript'te non-null assertion operator (!) ne işe yarar?",
+      "options": [
+        "Değerin null/undefined olmadığını belirtir",
+        "Null kontrolü yapar",
+        "Hiçbiri",
         "Hepsi"
       ],
       "answers": [
@@ -785,7 +2062,359 @@
       "difficultyLevel": "medium"
     },
     {
-      "id": 16,
+      "id": "90",
+      "category": "TypeScript",
+      "subcategory": "Variables",
+      "question": "TypeScript'te literal types nedir?",
+      "options": [
+        "Belirli değerleri tip olarak kullanma",
+        "String literal",
+        "Hiçbiri",
+        "Hepsi"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "medium"
+    },
+    {
+      "id": "91",
+      "category": "TypeScript",
+      "subcategory": "Variables",
+      "question": "TypeScript'te readonly ne işe yarar?",
+      "options": [
+        "Değişkenin değiştirilemez olduğunu belirtir",
+        "Const benzeri",
+        "Hiçbiri",
+        "Hepsi"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "medium"
+    },
+    {
+      "id": "92",
+      "category": "TypeScript",
+      "subcategory": "Variables",
+      "question": "TypeScript'te intersection types nedir?",
+      "options": [
+        "Tiplerin kesişimini alır",
+        "Birden fazla tipi birleştirir",
+        "Hiçbiri",
+        "Hepsi"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "hard"
+    },
+    {
+      "id": "93",
+      "category": "TypeScript",
+      "subcategory": "Variables",
+      "question": "TypeScript'te type aliases nedir?",
+      "options": [
+        "Tip için takma ad oluşturma",
+        "Interface benzeri",
+        "Hiçbiri",
+        "Hepsi"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "hard"
+    },
+    {
+      "id": "94",
+      "category": "TypeScript",
+      "subcategory": "Variables",
+      "question": "TypeScript'te satisfies operator ne işe yarar?",
+      "options": [
+        "Değerin tipi kontrol eder ama daraltmaz",
+        "Type assertion benzeri",
+        "Hiçbiri",
+        "Hepsi"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "hard"
+    },
+    {
+      "id": "13",
+      "category": "TypeScript",
+      "subcategory": "Interfaces",
+      "question": "Aşağıdakilerden hangisi TypeScript'te bir interface tanımlamak için kullanılır?",
+      "options": [
+        "Interfaces",
+        "Type Aliases",
+        "Enums",
+        "Hiçbiri"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "medium"
+    },
+    {
+      "id": "95",
+      "category": "TypeScript",
+      "subcategory": "Interfaces",
+      "question": "TypeScript'te interface ve type arasındaki temel fark nedir?",
+      "options": [
+        "Interface extend edilebilir, type ise birleştirilebilir",
+        "Aynı şeyler",
+        "Hiçbiri",
+        "Hepsi"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "easy"
+    },
+    {
+      "id": "96",
+      "category": "TypeScript",
+      "subcategory": "Interfaces",
+      "question": "TypeScript'te interface'ler nasıl birleştirilir?",
+      "options": [
+        "Aynı isimle tekrar tanımlayarak",
+        "Extends kullanarak",
+        "Hiçbiri",
+        "Hepsi"
+      ],
+      "answers": [
+        3
+      ],
+      "difficultyLevel": "easy"
+    },
+    {
+      "id": "97",
+      "category": "TypeScript",
+      "subcategory": "Interfaces",
+      "question": "TypeScript'te index signatures nedir?",
+      "options": [
+        "Dinamik property tipleri tanımlama",
+        "Dizi interface'i",
+        "Hiçbiri",
+        "Hepsi"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "medium"
+    },
+    {
+      "id": "98",
+      "category": "TypeScript",
+      "subcategory": "Interfaces",
+      "question": "TypeScript'te optional properties nasıl tanımlanır?",
+      "options": [
+        "Property adından sonra ? koyarak",
+        "Undefined union'ı kullanarak",
+        "Hiçbiri",
+        "Hepsi"
+      ],
+      "answers": [
+        3
+      ],
+      "difficultyLevel": "medium"
+    },
+    {
+      "id": "99",
+      "category": "TypeScript",
+      "subcategory": "Interfaces",
+      "question": "TypeScript'te readonly properties nasıl tanımlanır?",
+      "options": [
+        "readonly keyword'ü ile",
+        "Const gibi",
+        "Hiçbiri",
+        "Hepsi"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "medium"
+    },
+    {
+      "id": "100",
+      "category": "TypeScript",
+      "subcategory": "Interfaces",
+      "question": "TypeScript'te hybrid types nedir?",
+      "options": [
+        "Hem fonksiyon hem nesne olan interface'ler",
+        "Çoklu tip",
+        "Hiçbiri",
+        "Hepsi"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "hard"
+    },
+    {
+      "id": "101",
+      "category": "TypeScript",
+      "subcategory": "Interfaces",
+      "question": "TypeScript'te declaration merging nasıl çalışır?",
+      "options": [
+        "Aynı isimli interface'ler otomatik birleşir",
+        "Extends ile",
+        "Hiçbiri",
+        "Hepsi"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "hard"
+    },
+    {
+      "id": "102",
+      "category": "TypeScript",
+      "subcategory": "Interfaces",
+      "question": "TypeScript'te utility types nedir?",
+      "options": [
+        "Varolan tiplerden yeni tipler oluşturmak",
+        "Partial, Pick, Omit gibi",
+        "Hiçbiri",
+        "Hepsi"
+      ],
+      "answers": [
+        3
+      ],
+      "difficultyLevel": "hard"
+    },
+    {
+      "id": "15",
+      "category": "TypeScript",
+      "subcategory": "Type Assertions",
+      "question": "'as' anahtar kelimesinin TypeScript'teki amacı nedir?",
+      "options": [
+        "Tip beyannamesi",
+        "Tip çıkarımı",
+        "Tip dönüşümü",
+        "Hepsi"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "medium"
+    },
+    {
+      "id": "103",
+      "category": "TypeScript",
+      "subcategory": "Type Assertions",
+      "question": "TypeScript'te angle-bracket syntax nedir?",
+      "options": [
+        "<type>value şeklinde tip assertion",
+        "Generic syntax",
+        "Hiçbiri",
+        "Hepsi"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "easy"
+    },
+    {
+      "id": "104",
+      "category": "TypeScript",
+      "subcategory": "Type Assertions",
+      "question": "TypeScript'te type assertion runtime'da etkili midir?",
+      "options": [
+        "Hayır",
+        "Evet",
+        "Bazen",
+        "Hiçbiri"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "easy"
+    },
+    {
+      "id": "105",
+      "category": "TypeScript",
+      "subcategory": "Type Assertions",
+      "question": "TypeScript'te const assertion ne zaman kullanılır?",
+      "options": [
+        "Değerin değişmeyeceğini belirtmek için",
+        "Literal tipler için",
+        "Hiçbiri",
+        "Hepsi"
+      ],
+      "answers": [
+        3
+      ],
+      "difficultyLevel": "medium"
+    },
+    {
+      "id": "106",
+      "category": "TypeScript",
+      "subcategory": "Type Assertions",
+      "question": "TypeScript'te non-null assertion operator (!) ne işe yarar?",
+      "options": [
+        "Değerin null/undefined olmadığını belirtir",
+        "Null kontrolü yapar",
+        "Hiçbiri",
+        "Hepsi"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "medium"
+    },
+    {
+      "id": "107",
+      "category": "TypeScript",
+      "subcategory": "Type Assertions",
+      "question": "TypeScript'te satisfies operator ne işe yarar?",
+      "options": [
+        "Tip uyumluluğunu kontrol eder ama daraltmaz",
+        "Type assertion gibi",
+        "Hiçbiri",
+        "Hepsi"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "hard"
+    },
+    {
+      "id": "108",
+      "category": "TypeScript",
+      "subcategory": "Type Assertions",
+      "question": "TypeScript'te type assertion ve type guard arasındaki fark nedir?",
+      "options": [
+        "Assertion derleyiciye bilgi verir, guard runtime kontrol yapar",
+        "Aynı şeyler",
+        "Hiçbiri",
+        "Hepsi"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "hard"
+    },
+    {
+      "id": "109",
+      "category": "TypeScript",
+      "subcategory": "Type Assertions",
+      "question": "TypeScript'te type assertion yanlış kullanılırsa ne olur?",
+      "options": [
+        "Runtime hataları oluşabilir",
+        "Derleyici uyarı vermez",
+        "Hiçbiri",
+        "Hepsi"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "hard"
+    },
+    {
+      "id": "16",
       "category": "TypeScript",
       "subcategory": "Generics",
       "question": "Aşağıdakilerden hangisi TypeScript'te reusable (yeniden kullanılabilir) kodda tip güvenliği sağlamak için kullanılır?",
@@ -801,7 +2430,135 @@
       "difficultyLevel": "hard"
     },
     {
-      "id": 17,
+      "id": "110",
+      "category": "TypeScript",
+      "subcategory": "Generics",
+      "question": "TypeScript'te generic nedir?",
+      "options": [
+        "Çeşitli tiplerle çalışabilen yapılar",
+        "Tip parametreleri",
+        "Hiçbiri",
+        "Hepsi"
+      ],
+      "answers": [
+        3
+      ],
+      "difficultyLevel": "easy"
+    },
+    {
+      "id": "111",
+      "category": "TypeScript",
+      "subcategory": "Generics",
+      "question": "TypeScript'te generic constraints nedir?",
+      "options": [
+        "Generic tip parametrelerine kısıtlama",
+        "Extends ile",
+        "Hiçbiri",
+        "Hepsi"
+      ],
+      "answers": [
+        3
+      ],
+      "difficultyLevel": "easy"
+    },
+    {
+      "id": "112",
+      "category": "TypeScript",
+      "subcategory": "Generics",
+      "question": "TypeScript'te generic default types nedir?",
+      "options": [
+        "Generic tip için varsayılan tip",
+        "= ile tanımlanır",
+        "Hiçbiri",
+        "Hepsi"
+      ],
+      "answers": [
+        3
+      ],
+      "difficultyLevel": "medium"
+    },
+    {
+      "id": "113",
+      "category": "TypeScript",
+      "subcategory": "Generics",
+      "question": "TypeScript'te keyof operatorü ne işe yarar?",
+      "options": [
+        "Bir nesnenin key'lerini union tip olarak alır",
+        "Generic constraints için",
+        "Hiçbiri",
+        "Hepsi"
+      ],
+      "answers": [
+        3
+      ],
+      "difficultyLevel": "medium"
+    },
+    {
+      "id": "114",
+      "category": "TypeScript",
+      "subcategory": "Generics",
+      "question": "TypeScript'te mapped types nedir?",
+      "options": [
+        "Varolan tipten yeni tip oluşturma",
+        "Generic ile",
+        "Hiçbiri",
+        "Hepsi"
+      ],
+      "answers": [
+        3
+      ],
+      "difficultyLevel": "medium"
+    },
+    {
+      "id": "115",
+      "category": "TypeScript",
+      "subcategory": "Generics",
+      "question": "TypeScript'te conditional types nedir?",
+      "options": [
+        "Koşullu tip tanımlama",
+        "Ternary operatör gibi",
+        "Hiçbiri",
+        "Hepsi"
+      ],
+      "answers": [
+        3
+      ],
+      "difficultyLevel": "hard"
+    },
+    {
+      "id": "116",
+      "category": "TypeScript",
+      "subcategory": "Generics",
+      "question": "TypeScript'te infer keyword'ü ne işe yarar?",
+      "options": [
+        "Conditional types'da tip çıkarımı",
+        "Generic'lerde",
+        "Hiçbiri",
+        "Hepsi"
+      ],
+      "answers": [
+        0
+      ],
+      "difficultyLevel": "hard"
+    },
+    {
+      "id": "117",
+      "category": "TypeScript",
+      "subcategory": "Generics",
+      "question": "TypeScript'te utility types nedir?",
+      "options": [
+        "Partial, Required, Readonly gibi hazır tipler",
+        "Generic ile çalışır",
+        "Hiçbiri",
+        "Hepsi"
+      ],
+      "answers": [
+        3
+      ],
+      "difficultyLevel": "hard"
+    },
+    {
+      "id": "17",
       "category": "TypeScript",
       "subcategory": "Async",
       "question": "TypeScript'te bir fonksiyonun promise döndürmesi için doğru yazım nedir?",
@@ -817,7 +2574,135 @@
       "difficultyLevel": "hard"
     },
     {
-      "id": 18,
+      "id": "118",
+      "category": "TypeScript",
+      "subcategory": "Async",
+      "question": "TypeScript'te async fonksiyon tipi nedir?",
+      "options": [
+        "Promise döndüren fonksiyon",
+        "Async keyword'ü ile",
+        "Hiçbiri",
+        "Hepsi"
+      ],
+      "answers": [
+        3
+      ],
+      "difficultyLevel": "easy"
+    },
+    {
+      "id": "119",
+      "category": "TypeScript",
+      "subcategory": "Async",
+      "question": "TypeScript'te Promise.all tipi nasıl tanımlanır?",
+      "options": [
+        "Promise<Array<T>>",
+        "Promise<T[]>",
+        "Hiçbiri",
+        "Hepsi"
+      ],
+      "answers": [
+        3
+      ],
+      "difficultyLevel": "easy"
+    },
+    {
+      "id": "120",
+      "category": "TypeScript",
+      "subcategory": "Async",
+      "question": "TypeScript'te async/await ile hata yönetimi nasıl yapılır?",
+      "options": [
+        "try/catch ile",
+        ".catch() ile",
+        "Hiçbiri",
+        "Hepsi"
+      ],
+      "answers": [
+        3
+      ],
+      "difficultyLevel": "medium"
+    },
+    {
+      "id": "121",
+      "category": "TypeScript",
+      "subcategory": "Async",
+      "question": "TypeScript'te Promise.race tipi nasıl tanımlanır?",
+      "options": [
+        "Promise<T>",
+        "İlk tamamlanan promise'in tipi",
+        "Hiçbiri",
+        "Hepsi"
+      ],
+      "answers": [
+        3
+      ],
+      "difficultyLevel": "medium"
+    },
+    {
+      "id": "122",
+      "category": "TypeScript",
+      "subcategory": "Async",
+      "question": "TypeScript'te async generator tipi nasıl tanımlanır?",
+      "options": [
+        "AsyncIterable<T>",
+        "AsyncGenerator<T>",
+        "Hiçbiri",
+        "Hepsi"
+      ],
+      "answers": [
+        3
+      ],
+      "difficultyLevel": "medium"
+    },
+    {
+      "id": "123",
+      "category": "TypeScript",
+      "subcategory": "Async",
+      "question": "TypeScript'te AbortSignal nasıl kullanılır?",
+      "options": [
+        "Async işlemleri iptal etmek için",
+        "fetch ile",
+        "Hiçbiri",
+        "Hepsi"
+      ],
+      "answers": [
+        3
+      ],
+      "difficultyLevel": "hard"
+    },
+    {
+      "id": "124",
+      "category": "TypeScript",
+      "subcategory": "Async",
+      "question": "TypeScript'te Promise.allSettled tipi nasıldır?",
+      "options": [
+        "Promise<Array<PromiseSettledResult<T>>>",
+        "Tüm promise'lerin sonucu",
+        "Hiçbiri",
+        "Hepsi"
+      ],
+      "answers": [
+        3
+      ],
+      "difficultyLevel": "hard"
+    },
+    {
+      "id": "125",
+      "category": "TypeScript",
+      "subcategory": "Async",
+      "question": "TypeScript'te async context'te this nasıl yönetilir?",
+      "options": [
+        "Arrow fonksiyonlarla",
+        "Bind ile",
+        "Hiçbiri",
+        "Hepsi"
+      ],
+      "answers": [
+        3
+      ],
+      "difficultyLevel": "hard"
+    },
+    {
+      "id": "18",
       "category": "TypeScript",
       "subcategory": "OOP",
       "question": "Aşağıdaki TypeScript özelliklerinden hangisi bir sınıfı başka sınıflardan özellik ve metotlarla genişletmeyi sağlar?",
@@ -829,6 +2714,134 @@
       ],
       "answers": [
         1
+      ],
+      "difficultyLevel": "hard"
+    },
+    {
+      "id": "126",
+      "category": "TypeScript",
+      "subcategory": "OOP",
+      "question": "TypeScript'te class nasıl tanımlanır?",
+      "options": [
+        "class MyClass {}",
+        "ES6 syntax'ı ile",
+        "Hiçbiri",
+        "Hepsi"
+      ],
+      "answers": [
+        3
+      ],
+      "difficultyLevel": "easy"
+    },
+    {
+      "id": "127",
+      "category": "TypeScript",
+      "subcategory": "OOP",
+      "question": "TypeScript'te access modifier'lar nelerdir?",
+      "options": [
+        "public, private, protected",
+        "Erişim kontrolü",
+        "Hiçbiri",
+        "Hepsi"
+      ],
+      "answers": [
+        3
+      ],
+      "difficultyLevel": "easy"
+    },
+    {
+      "id": "128",
+      "category": "TypeScript",
+      "subcategory": "OOP",
+      "question": "TypeScript'te abstract class nedir?",
+      "options": [
+        "Instance'ı oluşturulamayan class",
+        "Soyut sınıf",
+        "Hiçbiri",
+        "Hepsi"
+      ],
+      "answers": [
+        3
+      ],
+      "difficultyLevel": "medium"
+    },
+    {
+      "id": "129",
+      "category": "TypeScript",
+      "subcategory": "OOP",
+      "question": "TypeScript'te interface ve abstract class farkı nedir?",
+      "options": [
+        "Interface'de implementasyon yok",
+        "Abstract class'da kısmi implementasyon olabilir",
+        "Hiçbiri",
+        "Hepsi"
+      ],
+      "answers": [
+        3
+      ],
+      "difficultyLevel": "medium"
+    },
+    {
+      "id": "130",
+      "category": "TypeScript",
+      "subcategory": "OOP",
+      "question": "TypeScript'te static members nedir?",
+      "options": [
+        "Class'a ait üyeler",
+        "Instance'a değil",
+        "Hiçbiri",
+        "Hepsi"
+      ],
+      "answers": [
+        3
+      ],
+      "difficultyLevel": "medium"
+    },
+    {
+      "id": "131",
+      "category": "TypeScript",
+      "subcategory": "OOP",
+      "question": "TypeScript'te decorator nedir?",
+      "options": [
+        "Class/method/property'leri dekore eden fonksiyon",
+        "Meta programlama",
+        "Hiçbiri",
+        "Hepsi"
+      ],
+      "answers": [
+        3
+      ],
+      "difficultyLevel": "hard"
+    },
+    {
+      "id": "132",
+      "category": "TypeScript",
+      "subcategory": "OOP",
+      "question": "TypeScript'te mixin pattern nedir?",
+      "options": [
+        "Çoklu kalıtım benzeri yapı",
+        "Behavior composition",
+        "Hiçbiri",
+        "Hepsi"
+      ],
+      "answers": [
+        3
+      ],
+      "difficultyLevel": "hard"
+    },
+    {
+      "id": "133",
+      "category": "TypeScript",
+      "subcategory": "OOP",
+      "question": "TypeScript'te private fields nasıl tanımlanır?",
+      "options": [
+        "# ile",
+        "ES2022 syntax'ı",
+        "Hiçbiri",
+        "Hepsi"
+      ],
+      "answers": [
+        3
       ],
       "difficultyLevel": "hard"
     }

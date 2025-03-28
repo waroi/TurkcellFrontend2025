@@ -42,14 +42,16 @@ const Quiz = ({ jobId, shuffledQuestions }) => {
     return () => clearInterval(timer);
   }, [timeLeft, quizStarted]);
 
-  const handleAnswer = (option) => {
+  const handleAnswer = (optionIndex) => {
     if (selectedOption) return;
-    setSelectedOption(option);
-    if (option === shuffledQuestions[currentQuestion].answer) {
-      setScore(score + 1);
+    setSelectedOption(optionIndex);
+    const correctAnswers = shuffledQuestions[currentQuestion]?.answers || [];
+    if (correctAnswers.includes(optionIndex)) {
+      setScore((prevScore) => prevScore + 1);
     }
     setTimeout(handleNextQuestion, 1000);
   };
+
   const handlePreviousQuestion = () => {
     if (currentQuestion > 0) {
       setCurrentQuestion(currentQuestion - 1);
@@ -108,39 +110,42 @@ const Quiz = ({ jobId, shuffledQuestions }) => {
             Toplam Süre: {timeLeft} sn
           </div>
           <div className="d-flex justify-content-between align-items-center gap-2">
-            {shuffledQuestions[currentQuestion]?.options.map((option) => {
-              const isCorrect =
-                option === shuffledQuestions[currentQuestion].answer;
-              const isSelected = option === selectedOption;
-              return (
-                <div key={option}>
-                  {isSelected ? (
-                    isCorrect ? (
-                      <SuccessButton
-                        onClick={() => handleAnswer(option)}
-                        disabled={!!selectedOption}
-                      >
-                        {option}
-                      </SuccessButton>
+            {shuffledQuestions[currentQuestion]?.options.map(
+              (option, index) => {
+                const isCorrect =
+                  option ===
+                  shuffledQuestions[currentQuestion]?.answers.includes(index);
+                const isSelected = selectedOption === index;
+                return (
+                  <div key={index}>
+                    {isSelected ? (
+                      isCorrect ? (
+                        <SuccessButton
+                          onClick={() => handleAnswer(index)}
+                          disabled={!!selectedOption}
+                        >
+                          {option}
+                        </SuccessButton>
+                      ) : (
+                        <DangerButton
+                          onClick={() => handleAnswer(index)}
+                          disabled={!!selectedOption}
+                        >
+                          {option}
+                        </DangerButton>
+                      )
                     ) : (
-                      <DangerButton
-                        onClick={() => handleAnswer(option)}
+                      <PrimaryButton
+                        onClick={() => handleAnswer(index)}
                         disabled={!!selectedOption}
                       >
                         {option}
-                      </DangerButton>
-                    )
-                  ) : (
-                    <PrimaryButton
-                      onClick={() => handleAnswer(option)}
-                      disabled={!!selectedOption}
-                    >
-                      {option}
-                    </PrimaryButton>
-                  )}
-                </div>
-              );
-            })}
+                      </PrimaryButton>
+                    )}
+                  </div>
+                );
+              }
+            )}
           </div>
           <div className="d-flex justify-content-between align-items-center gap-3 my-3">
             <SecondaryButton onClick={handlePreviousQuestion}>
