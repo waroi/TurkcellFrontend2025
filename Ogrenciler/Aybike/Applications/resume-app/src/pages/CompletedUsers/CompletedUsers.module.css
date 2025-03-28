@@ -1,4 +1,4 @@
-.completion-list-container {
+.completionListContainer {
     max-width: 800px;
     margin: 40px auto;
     padding: 20px;
@@ -7,19 +7,19 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.completion-list-title {
+.completionListTitle {
     text-align: center;
     color: #3f51b5;
     font-size: 2rem;
     margin-bottom: 30px;
 }
 
-.completion-list {
+.completionList {
     display: grid;
     gap: 20px;
 }
 
-.completion-item {
+.completionItem {
     background-color: #ffffff;
     border-radius: 8px;
     padding: 20px;
@@ -29,39 +29,39 @@
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
-.completion-item:hover {
+.completionItem:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
-.completion-info {
+.completionInfo {
     flex-grow: 1;
 }
 
-.completion-email {
+.completionEmail {
     font-weight: 600;
     color: #333;
     margin-bottom: 5px;
 }
 
-.completion-date {
+.completionDate {
     font-size: 0.9rem;
     color: #666;
 }
 
-.completion-score {
-    background-color: #4CAF50;
+.completionScore {
+    background-color: #4caf50;
     color: white;
     padding: 8px 16px;
     border-radius: 20px;
     font-weight: 600;
 }
 
-.score-invalid-value {
+.scoreInvalidValue {
     background-color: #f44336;
 }
 
-.score-label {
+.scoreLabel {
     margin-right: 5px;
 }
 
@@ -76,13 +76,13 @@
     color: #f44336;
 }
 
-@media screen and(max-width: 600px) {
-    .completion-item {
+@media screen and (max-width: 576px) {
+    .completionItem {
         flex-direction: column;
         align-items: flex-start;
     }
 
-    .completion-score {
+    .completionScore {
         margin-top: 10px;
     }
 }

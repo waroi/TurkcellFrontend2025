@@ -1,8 +1,9 @@
 import SurveyCard from "./SurveyCard"
+import styles from "./SurveyRow.module.css"
 const SurveyRow = ({ items, direction, renderStars, getStatusClass }) => {
     return (
-        <div className={`scrolling-row ${direction}`}>
-            <div className="scrolling-content py-3">
+        <div className={`${styles.scrollingRow} ${direction}`}>
+            <div className={`${styles.scrollingContent} py-3`}>
                 {items.map((survey) => (
                     <SurveyCard
                         key={survey.id}

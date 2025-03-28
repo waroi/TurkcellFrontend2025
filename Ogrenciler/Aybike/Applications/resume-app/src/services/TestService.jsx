@@ -38,7 +38,7 @@ export class TestService {
             const userData = docSnap.data()
 
             if (!userData.access) {
-                return alert("No access - Kullanıcı zaten teste giriş yapmış")
+                return alert("Zaten teste giriş yapmışsınız")
             }
 
             await updateDoc(docRef, {
@@ -46,7 +46,6 @@ export class TestService {
                 lastAccessDate: new Date().toLocaleDateString("tr-TR")
             })
             localStorage.setItem("userEmail", email);
-            alert("Userın has access - Erişim verildi, artık tekrar giremez")
             return true
         } catch (error) {
             alert("checkAccess'de bir hata", error)
@@ -55,7 +54,7 @@ export class TestService {
     }
 
     static getUser() {
-        return localStorage.getItem("userEmail") || "yunusorak07@gmail.com"
+        return localStorage.getItem("userEmail") || null
     }
 
     static async completedUser(email, score) {
@@ -91,7 +90,7 @@ export class TestService {
                 return { success: false, message: "Soru ayarlarınız bulunamadı" }
             }
         } catch (error) {
-            console.error("Soru ayarları alınırken hata oluştu:", error)
+            console.log("Soru ayarları alınırken hata oluştu:", error)
             return { success: false, message: error }
         }
     }

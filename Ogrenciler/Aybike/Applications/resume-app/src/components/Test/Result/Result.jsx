@@ -1,66 +1,63 @@
-import React from 'react';
-import './Result.css'
+import styles from './Result.module.css';
 import useTestResult from '../../../utils/hooks/useTestResult';
-import { useEffect } from 'react';
 
 const Result = ({ questions, answers }) => {
     const { userMail, score, isResultSaved, error, retryResultSave } = useTestResult(questions, answers)
 
-
     return (
-        <div className="test-result-container">
-            <div className="result-card">
-                <div className="result-header">
-                    <div className={`result-badge ${score >= 60 ? 'success' : 'failure'}`}>
+        <div className={styles.testResultContainer}>
+            <div className={styles.resultCard}>
+                <div className={styles.resultHeader}>
+                    <div className={`${styles.resultBadge} ${score >= 60 ? styles.resultBadgeSuccess : styles.resultBadgeFailure}`}>
                         {score >= 60 ? (
                             <i className="bi bi-check-lg"></i>
                         ) : (
                             <i className="bi bi-x-lg"></i>
                         )}
                     </div>
-                    <h2 className="result-title">Test Sonucu</h2>
+                    <h2 className={styles.resultTitle}>Test Sonucu</h2>
                 </div>
 
-                <div className="result-content">
+                <div className={styles.resultContent}>
                     {userMail && (
-                        <div className="result-info">
-                            <span className="info-label">E-posta:</span>
-                            <span className="info-value">{userMail}</span>
+                        <div className={styles.resultInfo}>
+                            <span className={styles.infoLabel}>E-posta:</span>
+                            <span className={styles.infoValue}>{userMail}</span>
                         </div>
                     )}
 
-                    <div className="result-info score-info">
-                        <span className="info-label">Puanınız:</span>
-                        <span className={`info-value score-value ${score >= 60 ? 'success-score' : 'failure-score'}`}>
+                    <div className={`${styles.resultInfo} ${styles.scoreInfo}`}>
+                        <span className={styles.infoLabel}>Puanınız:</span>
+                        <span className={`${styles.infoValue} ${styles.scoreValue} ${score >= 60 ? styles.successScore : styles.failureScore}`}>
                             {score}%
                         </span>
                     </div>
 
                     {score >= 60 ? (
-                        <p className="success-message">
+                        <p className={styles.successMessage}>
                             <i className="bi bi-trophy-fill"></i> Tebrikler! Testi başarıyla tamamladınız.
                         </p>
                     ) : (
-                        <p className="failure-message">
+                        <p className={styles.failureMessage}>
                             <i className="bi bi-exclamation-triangle-fill"></i> Üzgünüz, testi geçmek için en az 60% puan almanız gerekmektedir.
                         </p>
                     )}
                 </div>
 
-                <div className="result-footer">
+                <div className={styles.resultFooter}>
                     {isResultSaved ? (
-                        <p className="save-success">
+                        <p className={styles.saveSuccess}>
                             <i className="bi bi-cloud-check-fill"></i> Sonucunuz başarıyla kaydedildi.
                         </p>
                     ) : error ? (
-                        <div className="save-error">
+                        <div className={styles.saveError}>
                             <p><i className="bi bi-exclamation-circle-fill"></i> {error}</p>
-                            <button className="retry-button" onClick={retryResultSave}>
+                            <button className={styles.retryButton} onClick={retryResultSave}>
                                 <i className="bi bi-arrow-repeat"></i> Tekrar Kaydetmeyi Dene
                             </button>
                         </div>
                     ) : (
-                        <p className="saving-message">
+                        <p className={styles.savingMessage}>
                             <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                             Sonucunuz kaydediliyor...
                         </p>

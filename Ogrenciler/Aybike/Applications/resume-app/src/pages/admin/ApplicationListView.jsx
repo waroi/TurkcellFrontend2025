@@ -1,14 +1,14 @@
 import { Link } from "react-router";
 import { useApplicationList } from "../../utils/hooks/useApplicationList";
-import "./ApplicationListView.css";
+import styles from "./ApplicationListView.module.css";
 
 const ApplicationListView = () => {
   const { applications, loading, error } = useApplicationList()
 
   return (
-    <div className="container mt-4">
-      <h2>Başvuru Listesi</h2>
-      <table className="table">
+    <div className="container mx-auto">
+      <h2 className={styles.heading}>Başvuru Listesi</h2>
+      <table className={styles.table}>
         <thead>
           <tr>
             <th>Ad Soyad</th>
@@ -52,7 +52,7 @@ const ApplicationListView = () => {
               <td>
                 <Link
                   to={`/admin/applications/${application.id}`}
-                  className="btn btn-info"
+                  className={styles.btnInfo}
                 >
                   Detaylar
                 </Link>

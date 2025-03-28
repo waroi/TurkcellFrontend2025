@@ -1,4 +1,4 @@
-import './Question.css';
+import styles from './Question.module.css';
 
 const Question = ({ question, onAnswer, isLoading, error }) => {
     if (isLoading) return (
@@ -8,18 +8,18 @@ const Question = ({ question, onAnswer, isLoading, error }) => {
         <p className="error-message">Bir hata oluştu: {error}</p>
     )
     return (
-        <div className="question-container">
+        <div className={styles.questionContainer}>
             {question && <>
-                <h2 className="question-text">{question.text || "Soru"}</h2>
-                <div className="options-container">
+                <h2 className={styles.questionText}>{question.text || "Soru"}</h2>
+                <div className={styles.optionsContainer}>
                     {question.options.map((option, index) => (
                         <button
                             key={index}
-                            className="option-button"
+                            className={styles.optionButton}
                             onClick={() => onAnswer(option)}
                         >
-                            <span className="option-letter">{String.fromCharCode(65 + index)}</span>
-                            <span className="option-text">{option}</span>
+                            <span className={styles.optionLetter}>{String.fromCharCode(65 + index)}</span>
+                            <span className={styles.optionText}>{option}</span>
                         </button>
                     ))}
                 </div>

@@ -1,31 +1,31 @@
-import './CompletedUsers.css';
 import useCompletedTests from '../../utils/hooks/useCompletedUsers';
+import styles from './CompletedUsers.module.css';
 
 const CompletedUsers = () => {
     const { completions, loading, error } = useCompletedTests()
 
-    if (loading) return <div className="loading">Yükleniyor...</div>
-    if (error) return <div className="error">Datayı çekerken bir hata oluştuu {error}</div>
+    if (loading) return <div className={styles.loading}>Yükleniyor...</div>
+    if (error) return <div className={styles.error}>Datayı çekerken bir hata oluştu {error}</div>
 
     return (
-        <div className="completion-list-container">
-            <h2 className="completion-list-title">Testi Tamamlayanlar</h2>
-            <div className="completion-list">
+        <div className={styles.completionListContainer}>
+            <h2 className={styles.completionListTitle}>Testi Tamamlayanlar</h2>
+            <div className={styles.completionList}>
                 {completions.map((completion) => (
-                    <div key={completion.id} className="completion-item">
-                        <div className="completion-info">
-                            <div className="completion-email">{completion.email}</div>
-                            <div className="completion-date">{completion.date}</div>
+                    <div key={completion.id} className={styles.completionItem}>
+                        <div className={styles.completionInfo}>
+                            <div className={styles.completionEmail}>{completion.email}</div>
+                            <div className={styles.completionDate}>{completion.date}</div>
                         </div>
-                        <div className={`completion-score ${completion.score > 60 ? "score-success" : "score-invalid-value"}`}>
-                            <span className="score-label">Puan:</span>
-                            <span className="score-value">{completion.score}</span>
+                        <div className={`${styles.completionScore} ${completion.score > 60 ? styles.scoreSuccess : styles.scoreInvalidValue}`}>
+                            <span className={styles.scoreLabel}>Puan:</span>
+                            <span className={styles.scoreValue}>{completion.score}</span>
                         </div>
                     </div>
                 ))}
             </div>
         </div>
-    );
-};
+    )
+}
 
 export default CompletedUsers

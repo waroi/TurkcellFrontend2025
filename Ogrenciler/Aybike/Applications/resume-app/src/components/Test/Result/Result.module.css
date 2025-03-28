@@ -1,4 +1,4 @@
-.test-result-container {
+.testResultContainer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -6,7 +6,7 @@
     padding: 20px;
 }
 
-.result-card {
+.resultCard {
     background-color: #ffffff;
     border-radius: 16px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -15,14 +15,14 @@
     overflow: hidden;
 }
 
-.result-header {
+.resultHeader {
     padding: 30px;
     text-align: center;
     background-color: #f8f9fa;
     border-bottom: 1px solid #eaeaea;
 }
 
-.result-badge {
+.resultBadge {
     width: 70px;
     height: 70px;
     border-radius: 50%;
@@ -34,64 +34,64 @@
     color: white;
 }
 
-.result-badge.success {
+.resultBadgeSuccess {
     background-color: #4CAF50;
 }
 
-.result-badge.failure {
+.resultBadgeFailure {
     background-color: #F44336;
 }
 
-.result-title {
+.resultTitle {
     font-size: 1.8rem;
     color: #333;
     margin: 0;
     font-weight: 600;
 }
 
-.result-content {
+.resultContent {
     padding: 30px;
 }
 
-.result-info {
+.resultInfo {
     display: flex;
     justify-content: space-between;
     padding: 12px 0;
     border-bottom: 1px solid #eaeaea;
 }
 
-.info-label {
+.infoLabel {
     font-weight: 600;
     color: #666;
 }
 
-.info-value {
+.infoValue {
     font-weight: 500;
     color: #333;
 }
 
-.score-info {
+.scoreInfo {
     margin-bottom: 20px;
 }
 
-.score-value {
+.scoreValue {
     font-size: 1.2rem;
     font-weight: 700;
     padding: 5px 15px;
     border-radius: 20px;
 }
 
-.success-score {
+.successScore {
     background-color: rgba(76, 175, 80, 0.1);
     color: #4CAF50;
 }
 
-.failure-score {
+.failureScore {
     background-color: rgba(244, 67, 54, 0.1);
     color: #F44336;
 }
 
-.success-message, .failure-message {
+.successMessage, .failureMessage {
     text-align: center;
     padding: 15px;
     border-radius: 8px;
@@ -102,56 +102,56 @@
     justify-content: center;
 }
 
-.success-message {
+.successMessage {
     background-color: rgba(76, 175, 80, 0.1);
     color: #4CAF50;
 }
 
-.failure-message {
+.failureMessage {
     background-color: rgba(244, 67, 54, 0.1);
     color: #F44336;
 }
 
-.success-message i, .failure-message i {
+.successMessage i, .failureMessage i {
     margin-right: 10px;
     font-size: 1.2rem;
 }
 
-.result-footer {
+.resultFooter {
     padding: 20px 30px;
     background-color: #f8f9fa;
     border-top: 1px solid #eaeaea;
 }
 
-.save-success, .save-error, .saving-message {
+.saveSuccess, .saveError, .savingMessage {
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 500;
 }
 
-.save-success {
+.saveSuccess {
     color: #4CAF50;
 }
 
-.save-error {
+.saveError {
     color: #F44336;
     flex-direction: column;
 }
 
-.saving-message {
+.savingMessage {
     color: #3f51b5;
 }
 
-.saving-message .spinner-border {
+.savingMessage .spinnerBorder {
     margin-right: 10px;
 }
 
-.save-success i, .save-error i {
+.saveSuccess i, .saveError i {
     margin-right: 10px;
 }
 
-.retry-button {
+.retryButton {
     background-color: #F44336;
     color: white;
     border: none;
@@ -165,31 +165,31 @@
     align-items: center;
 }
 
-.retry-button:hover {
+.retryButton:hover {
     background-color: #D32F2F;
     transform: translateY(-2px);
 }
 
-.retry-button i {
+.retryButton i {
     margin-right: 8px;
 }
 
-@media screen and(max-width: 576px) {
-    .result-card {
+@media screen and (max-width: 576px) {
+    .resultCard {
         border-radius: 12px;
     }
 
-    .result-header, .result-content, .result-footer {
+    .resultHeader, .resultContent, .resultFooter {
         padding: 20px;
     }
 
-    .result-badge {
+    .resultBadge {
         width: 60px;
         height: 60px;
         font-size: 24px;
     }
 
-    .result-title {
+    .resultTitle {
         font-size: 1.5rem;
     }
 }

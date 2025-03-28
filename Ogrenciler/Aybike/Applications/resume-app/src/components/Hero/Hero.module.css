@@ -1,10 +1,10 @@
-.hero-section {
+.heroSection {
     padding: 80px 0;
     background: linear-gradient(135deg, #2a3b4c 0%, #1e2a3a 100%);
     color: white;
 }
 
-.hero-container {
+.heroContainer {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
@@ -14,28 +14,27 @@
     text-align: center;
 }
 
-.hero-content {
+.heroContent {
     max-width: 800px;
     margin-bottom: 60px;
 }
 
-.hero-title {
+.heroTitle {
     font-size: 3rem;
     font-weight: 700;
     margin-bottom: 20px;
     background: linear-gradient(90deg, #4a6cf7, #f072b6);
-    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.hero-description {
+.heroDescription {
     font-size: 1.2rem;
     line-height: 1.6;
     margin-bottom: 30px;
     color: #e1e1e1;
 }
 
-.hero-buttons {
+.heroButtons {
     display: flex;
     gap: 15px;
     justify-content: center;
@@ -51,35 +50,24 @@
     border: none;
 }
 
-.btn-primary {
+.btnPrimary {
     background-color: #4a6cf7;
     color: white;
 }
 
-.btn-primary:hover {
+.btnPrimary:hover {
     background-color: #3a5ce4;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(74, 108, 247, 0.3);
 }
 
-.btn-secondary {
-    background-color: transparent;
-    color: white;
-    border: 2px solid #4a6cf7;
-}
-
-.btn-secondary:hover {
-    background-color: rgba(74, 108, 247, 0.1);
-    transform: translateY(-2px);
-}
-
-.hero-stats {
+.heroStats {
     display: flex;
     gap: 30px;
     margin-bottom: 60px;
 }
 
-.stat-card {
+.statCard {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
     padding: 20px 30px;
@@ -88,11 +76,11 @@
     transition: transform 0.3s ease;
 }
 
-.stat-card:hover {
+.statCard:hover {
     transform: translateY(-5px);
 }
 
-.stat-number {
+.statNumber {
     display: block;
     font-size: 2.5rem;
     font-weight: 700;
@@ -100,32 +88,32 @@
     margin-bottom: 5px;
 }
 
-.stat-label {
+.statLabel {
     font-size: 0.9rem;
     color: #e1e1e1;
 }
 
-.featured-evaluations {
+.featuredEvaluations {
     max-width: 1200px;
     margin: 0 auto;
     padding: 60px 20px;
 }
 
-.featured-evaluations h2 {
+.featuredEvaluations h2 {
     text-align: center;
     margin-bottom: 40px;
     font-size: 2rem;
     color: white;
 }
 
-.evaluation-cards {
+.evaluationCards {
     display: flex;
     gap: 20px;
     overflow-x: auto;
     padding-bottom: 20px;
 }
 
-.evaluation-card {
+.evaluationCard {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
     padding: 25px;
@@ -134,18 +122,18 @@
     transition: all 0.3s ease;
 }
 
-.evaluation-card:hover {
+.evaluationCard:hover {
     transform: translateY(-5px);
     background: rgba(255, 255, 255, 0.1);
 }
 
-.evaluation-card h3 {
+.evaluationCard h3 {
     font-size: 1.2rem;
     margin-bottom: 10px;
     color: white;
 }
 
-.evaluation-card p {
+.evaluationCard p {
     color: #e1e1e1;
     margin-bottom: 15px;
     font-size: 0.9rem;
@@ -165,26 +153,26 @@
     font-weight: 500;
 }
 
-.status.success {
+.statusSuccess {
     background-color: rgba(56, 161, 105, 0.2);
     color: #38a169;
 }
 
-@media screen and(max-width: 768px) {
-    .hero-title {
+@media screen and (max-width: 768px) {
+    .heroTitle {
         font-size: 2.2rem;
     }
 
-    .hero-stats {
+    .heroStats {
         flex-direction: column;
         gap: 15px;
     }
 
-    .evaluation-cards {
+    .evaluationCards {
         flex-direction: column;
     }
 
-    .evaluation-card {
+    .evaluationCard {
         min-width: auto;
     }
 }

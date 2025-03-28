@@ -1,4 +1,4 @@
-.form-container {
+.formContainer {
     max-width: 1000px;
     margin: 40px auto;
     padding: 0 20px;
@@ -6,7 +6,7 @@
     color: var(--text-color);
 }
 
-.form-card {
+.formCard {
     background-color: var(--card-background);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
@@ -14,7 +14,7 @@
     overflow: hidden;
 }
 
-.form-title {
+.formTitle {
     font-size: 24px;
     font-weight: 600;
     text-align: center;
@@ -22,31 +22,27 @@
     color: var(--text-color);
 }
 
-.graduatino-box .form-check {
-    width: 100% !important;
-}
-
-.application-form {
+.applicationForm {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.form-grid {
+.formGrid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
 }
 
-.form-group {
+.formGroup {
     margin-bottom: 5px;
 }
 
-.form-group.full-width {
+.formGroupFullWidth {
     grid-column: 1 / -1;
 }
 
-.form-group label {
+.formGroupLabel {
     display: block;
     margin-bottom: 8px;
     font-weight: 500;
@@ -54,9 +50,9 @@
     color: var(--text-color);
 }
 
-.form-group input,
-.form-group select,
-.form-group textarea {
+.formGroupInput,
+.formGroupSelect,
+.formGroupTextarea {
     width: 100%;
     padding: 10px 12px;
     border: 1px solid var(--border-color);
@@ -67,36 +63,36 @@
     color: var(--text-color);
 }
 
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
+.formGroupInput:focus,
+.formGroupSelect:focus,
+.formGroupTextarea:focus {
     outline: none;
     border-color: var(--primary-color);
     box-shadow: 0 0 0 3px rgba(74, 108, 247, 0.1);
 }
 
-.form-group textarea {
+.formGroupTextarea {
     min-height: 100px;
     resize: vertical;
 }
 
-.checkbox-group {
+.checkboxGroup {
     display: flex;
     align-items: center;
     margin: 10px 0;
 }
 
-.checkbox-group input[type="checkbox"] {
+.checkboxGroupInput {
     width: auto;
     margin-right: 10px;
 }
 
-.form-submit {
+.formSubmit {
     text-align: center;
     margin-top: 20px;
 }
 
-.submit-button {
+.submitButton {
     background-color: var(--primary-color);
     color: white;
     border: none;
@@ -109,29 +105,29 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.submit-button:hover {
+.submitButton:hover {
     background-color: var(--primary-hover);
     transform: translateY(-1px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-.submit-button:disabled {
+.submitButton:disabled {
     opacity: 0.7;
     cursor: not-allowed;
 }
 
-.error-message {
+.errorMessage {
     color: var(--error-color);
     font-size: 12px;
     margin-top: 4px;
 }
 
-@media screen and(max-width: 768px) {
-    .form-card {
+@media screen and (max-width: 768px) {
+    .formCard {
         padding: 30px 20px;
     }
 
-    .form-grid {
+    .formGrid {
         grid-template-columns: 1fr;
     }
 }

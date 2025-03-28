@@ -1,8 +1,8 @@
-.question-container {
+.questionContainer {
     padding: 30px;
 }
 
-.question-text {
+.questionText {
     font-size: 1.4rem;
     margin-bottom: 30px;
     color: #212121;
@@ -10,13 +10,13 @@
     line-height: 1.4;
 }
 
-.options-container {
+.optionsContainer {
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
 
-.option-button {
+.optionButton {
     display: flex;
     align-items: center;
     background-color: #f5f7fa;
@@ -28,12 +28,12 @@
     text-align: left;
 }
 
-.option-button:hover {
+.optionButton:hover {
     border-color: #3f51b5;
     background-color: #e8eaf6;
 }
 
-.option-letter {
+.optionLetter {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -46,7 +46,7 @@
     color: #424242;
 }
 
-.option-text {
+.optionText {
     font-size: 1.1rem;
     color: #424242;
 }
