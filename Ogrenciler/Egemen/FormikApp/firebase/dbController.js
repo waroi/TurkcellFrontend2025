@@ -115,3 +115,9 @@ export async function getQuestionCount(appId) {
   const data = docSnap.data();
   return data.questions;
 }
+export async function getFormSchema(formId) {
+  const docRef = doc(db, "applicationFormSchemas", formId);
+  const docSnap = await getDoc(docRef);
+  const data = docSnap.data();
+  return data;
+}
