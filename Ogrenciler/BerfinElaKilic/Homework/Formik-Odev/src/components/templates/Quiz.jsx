@@ -6,7 +6,7 @@ import SecondaryButton from "../atoms/Buttons/SecondaryButton";
 import DangerButton from "../atoms/Buttons/DangerButton";
 import { updateQuizByExamID, updateUserExams } from "../../utils/services";
 import { useActions } from "../../context/ActionsContext";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { useAuth } from "../../context/AuthContext";
 
 // Toplam süre
@@ -14,6 +14,7 @@ const Quiz = ({ jobId, shuffledQuestions }) => {
   const { updateCandidateExamScore } = useActions();
   const { examId } = useParams();
   const { user } = useAuth();
+  const { navigate } = useNavigate();
   const totalTime = shuffledQuestions.totalDuration || 90;
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
@@ -79,6 +80,7 @@ const Quiz = ({ jobId, shuffledQuestions }) => {
         newScore
       );
       console.log(response);
+      navigate("/jobs");
     } catch (error) {
       console.error("Sınav bulunamadı:", error);
     } finally {
@@ -104,7 +106,7 @@ const Quiz = ({ jobId, shuffledQuestions }) => {
               ? "Tebrikler! Mülakata çağrıldınız."
               : "Başarısız oldunuz. Tekrar deneyin."}
           </p> */}
-          <p></p>
+          <p>Testi Tamamladınız.</p>
         </div>
       ) : (
         <div className="vh-100 d-flex flex-column justify-content-center p-5 gap-5">
