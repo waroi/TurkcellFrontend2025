@@ -132,6 +132,16 @@
           "id": "1",
           "status": "test",
           "applicationDate": "2025-03-26T12:26:54.807Z"
+        },
+        {
+          "id": "4",
+          "status": "pending",
+          "applicationDate": "2025-03-28T13:37:47.333Z"
+        },
+        {
+          "id": "2",
+          "status": "test",
+          "applicationDate": "2025-03-28T13:39:41.129Z"
         }
       ]
     },
@@ -263,6 +273,12 @@
           "status": "pending",
           "approvedByAdmin": "",
           "applicationDate": "2025-03-28T12:49:05.297Z"
+        },
+        {
+          "id": "VILaDZXFqNUzaxhGzZpa7Hi8rZF2",
+          "status": "test",
+          "approvedByAdmin": "",
+          "applicationDate": "2025-03-28T13:39:41.129Z"
         }
       ]
     },
@@ -343,6 +359,12 @@
           "status": "pending",
           "approvedByAdmin": "",
           "applicationDate": "2025-03-28T12:49:07.514Z"
+        },
+        {
+          "id": "VILaDZXFqNUzaxhGzZpa7Hi8rZF2",
+          "status": "pending",
+          "approvedByAdmin": "",
+          "applicationDate": "2025-03-28T13:37:47.333Z"
         }
       ]
     },
@@ -469,6 +491,12 @@
           "jobId": "1",
           "approvedAt": "2025-03-28T11:09:19.086Z",
           "newStatus": "test"
+        },
+        {
+          "userId": "VILaDZXFqNUzaxhGzZpa7Hi8rZF2",
+          "jobId": "2",
+          "approvedAt": "2025-03-28T13:41:11.238Z",
+          "newStatus": "test"
         }
       ]
     },
@@ -489,96 +517,51 @@
     }
   ],
   "exams": [
+
     {
-      "id": "1",
-      "createdAt": "2023-02-14T12:26:44.439Z",
-      "title": "Admission Test",
-      "category": "Yazılım",
-      "subcategory": "Javascript",
-      "level": "Low",
+      "id": "26b6",
+      "createdAt": "2025-03-28T13:26:16.832Z",
+      "title": "Test",
       "questions": [
-        1,
-        2,
-        3
+        "52",
+        "65",
+        "23",
+        "51",
+        "116",
+        "16",
+        "64",
+        "39",
+        "22",
+        "38"
       ],
-      "totalDuration": 16,
+      "totalDuration": 50,
       "jobId": "1",
-      "adminId": "1"
-    },
-    {
-      "id": "348c",
-      "createdAt": "2025-03-28T00:14:29.197Z",
-      "title": "jj",
-      "questions": [],
-      "totalDuration": 5,
-      "jobId": "4",
-      "adminId": "4jD11dc0GLY8py3GlFiNHYqXow13"
-    },
-    {
-      "id": "4cd0",
-      "createdAt": "2025-03-28T00:37:35.757Z",
-      "title": "frontend",
-      "questions": [
-        2
-      ],
-      "totalDuration": 5,
-      "jobId": "5",
-      "adminId": "4jD11dc0GLY8py3GlFiNHYqXow13",
+      "adminId": "tbHVOivOomebkNYdTDxqPNSChRy2",
       "questionDetails": [
         {
-          "id": 2,
+          "id": "52",
           "category": "JavaScript",
-          "subcategory": "Arrays",
-          "question": "JavaScript'te iki veya daha fazla diziyi birleştirmek için hangi metod kullanılır?",
+          "subcategory": "Asynchronous",
+          "question": "JavaScript'te microtask ve macrotask arasındaki fark nedir?",
           "options": [
-            "join()",
-            "concat()",
-            "push()",
-            "merge()"
+            "Microtask (Promise) macrotask'tan (setTimeout) önce çalışır",
+            "Macrotask daha önemlidir",
+            "Aynı şeyler",
+            "Hiçbiri"
           ],
           "answers": [
-            1
-          ],
-          "difficultyLevel": "easy"
-        }
-      ]
-    },
-    {
-      "id": "937a",
-      "createdAt": "2025-03-28T00:41:31.113Z",
-      "title": "full",
-      "questions": [
-        6,
-        11
-      ],
-      "totalDuration": 10,
-      "jobId": "4",
-      "adminId": "4jD11dc0GLY8py3GlFiNHYqXow13",
-      "questionDetails": [
-        {
-          "id": 6,
-          "category": "JavaScript",
-          "subcategory": "Arrays",
-          "question": "JavaScript'te bir nesnenin dizi olup olmadığını kontrol etmek için hangi metod kullanılır?",
-          "options": [
-            "isArray()",
-            "Array.isArray()",
-            "typeof",
-            "Object.isArray()"
-          ],
-          "answers": [
-            1
+            0
           ],
           "difficultyLevel": "medium"
         },
         {
-          "id": 11,
-          "category": "TypeScript",
-          "subcategory": "Functions",
-          "question": "Aşağıdakilerden hangisi doğru bir TypeScript fonksiyon tanımlamasıdır?",
+          "id": "65",
+          "category": "JavaScript",
+          "subcategory": "Context",
+          "question": "JavaScript'te call(), apply() ve bind() arasındaki fark nedir?",
           "options": [
-            "function myFunction(): void {}",
-            "const myFunction = (): void => {}",
+            "call/apply hemen çağırır, bind yeni fonksiyon döndürür",
+            "apply array alır, call parametreleri tek tek alır",
             "Hepsi",
             "Hiçbiri"
           ],
@@ -586,52 +569,139 @@
             2
           ],
           "difficultyLevel": "easy"
-        }
-      ]
-    },
-    {
-      "0": {
-        "id": "90dZl0LQt8cihXatYOszexHShlm1",
-        "totalScore": 0
-      },
-      "id": "ae74",
-      "createdAt": "2025-03-28T08:46:15.632Z",
-      "title": "Teknik Test",
-      "questions": [
-        "6"
-      ],
-      "totalDuration": 5,
-      "jobId": "1",
-      "adminId": "tbHVOivOomebkNYdTDxqPNSChRy2",
-      "questionDetails": [
+        },
         {
-          "id": "6",
+          "id": "23",
           "category": "JavaScript",
-          "subcategory": "Arrays",
-          "question": "JavaScript'te bir nesnenin dizi olup olmadığını kontrol etmek için hangi metod kullanılır?",
+          "subcategory": "Variables",
+          "question": "JavaScript'te 'undefined' ve 'not defined' arasındaki fark nedir?",
           "options": [
-            "isArray()",
-            "Array.isArray()",
-            "typeof",
-            "Object.isArray()"
+            "undefined: tanımlı ama değer atanmamış, not defined: hiç tanımlanmamış",
+            "Aynı şeyler",
+            "undefined: global değişken, not defined: local değişken",
+            "Hiçbiri"
           ],
           "answers": [
-            1
+            0
           ],
           "difficultyLevel": "medium"
+        },
+        {
+          "id": "51",
+          "category": "JavaScript",
+          "subcategory": "Asynchronous",
+          "question": "JavaScript'te event loop nasıl çalışır?",
+          "options": [
+            "Call stack boşaldığında callback queue'den fonksiyon alır",
+            "Sadece setTimeout için çalışır",
+            "Promise'leri yönetir",
+            "Hiçbiri"
+          ],
+          "answers": [
+            0
+          ],
+          "difficultyLevel": "medium"
+        },
+        {
+          "id": "116",
+          "category": "TypeScript",
+          "subcategory": "Generics",
+          "question": "TypeScript'te infer keyword'ü ne işe yarar?",
+          "options": [
+            "Conditional types'da tip çıkarımı",
+            "Generic'lerde",
+            "Hiçbiri",
+            "Hepsi"
+          ],
+          "answers": [
+            0
+          ],
+          "difficultyLevel": "hard"
+        },
+        {
+          "id": "16",
+          "category": "TypeScript",
+          "subcategory": "Generics",
+          "question": "Aşağıdakilerden hangisi TypeScript'te reusable (yeniden kullanılabilir) kodda tip güvenliği sağlamak için kullanılır?",
+          "options": [
+            "Generics",
+            "Decorators",
+            "Mixin",
+            "Hepsi"
+          ],
+          "answers": [
+            0
+          ],
+          "difficultyLevel": "hard"
+        },
+        {
+          "id": "64",
+          "category": "JavaScript",
+          "subcategory": "Context",
+          "question": "JavaScript'te 'this' değeri nasıl belirlenir?",
+          "options": [
+            "Fonksiyonun nasıl çağrıldığına göre",
+            "Her zaman global nesneyi gösterir",
+            "Her zaman undefined'dır",
+            "Hiçbiri"
+          ],
+          "answers": [
+            0
+          ],
+          "difficultyLevel": "easy"
+        },
+        {
+          "id": "39",
+          "category": "JavaScript",
+          "subcategory": "Functions",
+          "question": "JavaScript'te pure fonksiyon nedir?",
+          "options": [
+            "Aynı girdiye her zaman aynı çıktıyı veren ve yan etkisi olmayan fonksiyon",
+            "Global değişkenleri kullanan fonksiyon",
+            "Sadece matematiksel işlemler yapan fonksiyon",
+            "Hiçbiri"
+          ],
+          "answers": [
+            0
+          ],
+          "difficultyLevel": "hard"
+        },
+        {
+          "id": "22",
+          "category": "JavaScript",
+          "subcategory": "Variables",
+          "question": "JavaScript'te temporal dead zone nedir?",
+          "options": [
+            "let/const tanımlamalarının hoisted olması ama erişilememesi",
+            "Bir değişkenin silinmesi",
+            "Global değişkenlerin durumu",
+            "Hiçbiri"
+          ],
+          "answers": [
+            0
+          ],
+          "difficultyLevel": "medium"
+        },
+        {
+          "id": "38",
+          "category": "JavaScript",
+          "subcategory": "Functions",
+          "question": "JavaScript'te memoization nedir?",
+          "options": [
+            "Fonksiyon sonuçlarını önbelleğe alarak performans artırma",
+            "Fonksiyonları sıralama",
+            "Fonksiyonları birleştirme",
+            "Hiçbiri"
+          ],
+          "answers": [
+            0
+          ],
+          "difficultyLevel": "hard"
         }
       ],
       "sentExams": [
         {
-          "id": "90dZl0LQt8cihXatYOszexHShlm1",
-          "totalScore": 0
-        },
-        {
-          "id": "90dZl0LQt8cihXatYOszexHShlm1",
-          "totalScore": 0
-        },
-        {
-          "id": "90dZl0LQt8cihXatYOszexHShlm1",
+          "id": "VILaDZXFqNUzaxhGzZpa7Hi8rZF2",
           "totalScore": 0
         },
         {
@@ -639,71 +709,103 @@
           "totalScore": 0
         },
         {
-          "id": "90dZl0LQt8cihXatYOszexHShlm1",
+          "id": "VILaDZXFqNUzaxhGzZpa7Hi8rZF2",
+          "totalScore": 0
+        },
+        {
+          "id": "VILaDZXFqNUzaxhGzZpa7Hi8rZF2",
+          "totalScore": 0
+        },
+        {
+          "id": "VILaDZXFqNUzaxhGzZpa7Hi8rZF2",
           "totalScore": 0
         }
       ]
     },
     {
-      "id": "95fb",
-      "createdAt": "2025-03-28T09:35:54.125Z",
-      "title": "teknik test",
+      "id": "68f3",
+      "createdAt": "2025-03-28T13:40:55.026Z",
+      "title": "back",
       "questions": [
-        "3",
-        "1"
+        "64",
+        "29",
+        "65",
+        "15",
+        "6",
+        "31",
+        "33",
+        "105",
+        "106",
+        "30"
       ],
-      "totalDuration": 10,
-      "jobId": "1",
+      "totalDuration": 50,
+      "jobId": "2",
       "adminId": "tbHVOivOomebkNYdTDxqPNSChRy2",
       "questionDetails": [
         {
-          "id": "3",
+          "id": "64",
           "category": "JavaScript",
-          "subcategory": "Variables",
-          "question": "Aşağıdakilerden hangisi doğru bir JavaScript değişkeni tanımlamasıdır?",
+          "subcategory": "Context",
+          "question": "JavaScript'te 'this' değeri nasıl belirlenir?",
           "options": [
-            "let x = 10",
-            "var x = 10",
-            "const x = 10",
-            "Hepsi"
+            "Fonksiyonun nasıl çağrıldığına göre",
+            "Her zaman global nesneyi gösterir",
+            "Her zaman undefined'dır",
+            "Hiçbiri"
           ],
           "answers": [
-            3
+            0
           ],
           "difficultyLevel": "easy"
         },
         {
-          "id": "1",
+          "id": "29",
           "category": "JavaScript",
-          "subcategory": "Variables",
-          "question": "Aşağıdakilerden hangisi JavaScript'te değişken tanımlamak için kullanılır?",
+          "subcategory": "Arrays",
+          "question": "JavaScript'te map() ve forEach() arasındaki temel fark nedir?",
           "options": [
-            "var",
-            "let",
-            "const",
+            "map() yeni dizi döndürür, forEach() döndürmez",
+            "forEach() daha hızlıdır",
+            "map() sadece sayılar için kullanılır",
             "Hiçbiri"
           ],
           "answers": [
-            1
+            0
+          ],
+          "difficultyLevel": "medium"
+        },
+        {
+          "id": "65",
+          "category": "JavaScript",
+          "subcategory": "Context",
+          "question": "JavaScript'te call(), apply() ve bind() arasındaki fark nedir?",
+          "options": [
+            "call/apply hemen çağırır, bind yeni fonksiyon döndürür",
+            "apply array alır, call parametreleri tek tek alır",
+            "Hepsi",
+            "Hiçbiri"
+          ],
+          "answers": [
+            2
           ],
           "difficultyLevel": "easy"
-        }
-      ]
-    },
-    {
-      "id": "a171",
-      "createdAt": "2025-03-28T09:37:30.616Z",
-      "title": "teknik ",
-      "questions": [
-        "6",
-        "3",
-        "1",
-        "2"
-      ],
-      "totalDuration": 20,
-      "jobId": "1",
-      "adminId": "tbHVOivOomebkNYdTDxqPNSChRy2",
-      "questionDetails": [
+        },
+        {
+          "id": "15",
+          "category": "TypeScript",
+          "subcategory": "Type Assertions",
+          "question": "'as' anahtar kelimesinin TypeScript'teki amacı nedir?",
+          "options": [
+            "Tip beyannamesi",
+            "Tip çıkarımı",
+            "Tip dönüşümü",
+            "Hepsi"
+          ],
+          "answers": [
+            0
+          ],
+          "difficultyLevel": "medium"
+        },
         {
           "id": "6",
           "category": "JavaScript",
@@ -721,183 +823,90 @@
           "difficultyLevel": "medium"
         },
         {
-          "id": "3",
+          "id": "31",
           "category": "JavaScript",
-          "subcategory": "Variables",
-          "question": "Aşağıdakilerden hangisi doğru bir JavaScript değişkeni tanımlamasıdır?",
+          "subcategory": "Arrays",
+          "question": "JavaScript'te reduce() metodunun çalışma prensibi nedir?",
           "options": [
-            "let x = 10",
-            "var x = 10",
-            "const x = 10",
+            "Diziyi tek bir değere indirger",
+            "Diziyi sıralar",
+            "Diziyi filtreler",
+            "Hiçbiri"
+          ],
+          "answers": [
+            0
+          ],
+          "difficultyLevel": "hard"
+        },
+        {
+          "id": "33",
+          "category": "JavaScript",
+          "subcategory": "Arrays",
+          "question": "JavaScript'te typed array nedir?",
+          "options": [
+            "Belirli bir veri tipinde elemanlar içeren dizi",
+            "Sıralı dizi",
+            "Filtrelenmiş dizi",
+            "Hiçbiri"
+          ],
+          "answers": [
+            0
+          ],
+          "difficultyLevel": "hard"
+        },
+        {
+          "id": "105",
+          "category": "TypeScript",
+          "subcategory": "Type Assertions",
+          "question": "TypeScript'te const assertion ne zaman kullanılır?",
+          "options": [
+            "Değerin değişmeyeceğini belirtmek için",
+            "Literal tipler için",
+            "Hiçbiri",
             "Hepsi"
           ],
           "answers": [
             3
           ],
-          "difficultyLevel": "easy"
+          "difficultyLevel": "medium"
         },
         {
-          "id": "1",
-          "category": "JavaScript",
-          "subcategory": "Variables",
-          "question": "Aşağıdakilerden hangisi JavaScript'te değişken tanımlamak için kullanılır?",
+          "id": "106",
+          "category": "TypeScript",
+          "subcategory": "Type Assertions",
+          "question": "TypeScript'te non-null assertion operator (!) ne işe yarar?",
           "options": [
-            "var",
-            "let",
-            "const",
-            "Hiçbiri"
+            "Değerin null/undefined olmadığını belirtir",
+            "Null kontrolü yapar",
+            "Hiçbiri",
+            "Hepsi"
           ],
           "answers": [
-            1
+            0
           ],
-          "difficultyLevel": "easy"
+          "difficultyLevel": "medium"
         },
         {
-          "id": "2",
+          "id": "30",
           "category": "JavaScript",
           "subcategory": "Arrays",
-          "question": "JavaScript'te iki veya daha fazla diziyi birleştirmek için hangi metod kullanılır?",
+          "question": "JavaScript'te filter() metodunun amacı nedir?",
           "options": [
-            "join()",
-            "concat()",
-            "push()",
-            "merge()"
+            "Belirli koşulları sağlayan elemanlarla yeni dizi oluşturmak",
+            "Diziyi sıralamak",
+            "Diziyi ters çevirmek",
+            "Hiçbiri"
           ],
           "answers": [
-            1
+            0
           ],
-          "difficultyLevel": "easy"
+          "difficultyLevel": "medium"
         }
-      ]
-    },
-    {
-      "id": "3346",
-      "createdAt": "2025-03-28T12:50:48.756Z",
-      "title": "Frontend",
-      "questions": [
-        "4",
-        "37",
-        "36",
-        "36",
-        "36",
-        "4",
-        "37"
       ],
-      "totalDuration": 35,
-      "jobId": "5",
-      "adminId": "4jD11dc0GLY8py3GlFiNHYqXow13",
-      "questionDetails": [
+      "sentExams": [
         {
-          "id": "4",
-          "category": "JavaScript",
-          "subcategory": "Functions",
-          "question": "Aşağıdakilerden hangisi JavaScript'te bir closure örneğidir?",
-          "options": [
-            "Closures",
-            "Hoisting",
-            "Event Loop",
-            "Hiçbiri"
-          ],
-          "answers": [
-            0
-          ],
-          "difficultyLevel": "medium"
-        },
-        {
-          "id": "37",
-          "category": "JavaScript",
-          "subcategory": "Functions",
-          "question": "JavaScript'te currying nedir?",
-          "options": [
-            "Fonksiyonu ardışık çağrılara bölme tekniği",
-            "Fonksiyonu optimize etme",
-            "Fonksiyonu sıkıştırma",
-            "Hiçbiri"
-          ],
-          "answers": [
-            0
-          ],
-          "difficultyLevel": "medium"
-        },
-        {
-          "id": "36",
-          "category": "JavaScript",
-          "subcategory": "Functions",
-          "question": "JavaScript'te higher-order fonksiyon nedir?",
-          "options": [
-            "Başka fonksiyonları parametre olarak alan veya döndüren fonksiyon",
-            "Sadece global fonksiyonlar",
-            "Sadece arrow fonksiyonlar",
-            "Hiçbiri"
-          ],
-          "answers": [
-            0
-          ],
-          "difficultyLevel": "medium"
-        },
-        {
-          "id": "36",
-          "category": "JavaScript",
-          "subcategory": "Functions",
-          "question": "JavaScript'te higher-order fonksiyon nedir?",
-          "options": [
-            "Başka fonksiyonları parametre olarak alan veya döndüren fonksiyon",
-            "Sadece global fonksiyonlar",
-            "Sadece arrow fonksiyonlar",
-            "Hiçbiri"
-          ],
-          "answers": [
-            0
-          ],
-          "difficultyLevel": "medium"
-        },
-        {
-          "id": "36",
-          "category": "JavaScript",
-          "subcategory": "Functions",
-          "question": "JavaScript'te higher-order fonksiyon nedir?",
-          "options": [
-            "Başka fonksiyonları parametre olarak alan veya döndüren fonksiyon",
-            "Sadece global fonksiyonlar",
-            "Sadece arrow fonksiyonlar",
-            "Hiçbiri"
-          ],
-          "answers": [
-            0
-          ],
-          "difficultyLevel": "medium"
-        },
-        {
-          "id": "4",
-          "category": "JavaScript",
-          "subcategory": "Functions",
-          "question": "Aşağıdakilerden hangisi JavaScript'te bir closure örneğidir?",
-          "options": [
-            "Closures",
-            "Hoisting",
-            "Event Loop",
-            "Hiçbiri"
-          ],
-          "answers": [
-            0
-          ],
-          "difficultyLevel": "medium"
-        },
-        {
-          "id": "37",
-          "category": "JavaScript",
-          "subcategory": "Functions",
-          "question": "JavaScript'te currying nedir?",
-          "options": [
-            "Fonksiyonu ardışık çağrılara bölme tekniği",
-            "Fonksiyonu optimize etme",
-            "Fonksiyonu sıkıştırma",
-            "Hiçbiri"
-          ],
-          "answers": [
-            0
-          ],
-          "difficultyLevel": "medium"
+          "id": "VILaDZXFqNUzaxhGzZpa7Hi8rZF2",
+          "totalScore": 0
         }
       ]
     }
