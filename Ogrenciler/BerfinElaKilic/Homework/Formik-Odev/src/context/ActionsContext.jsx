@@ -146,13 +146,40 @@ export const ActionsProvider = ({ children }) => {
       const existingSentExams = exam.sentExams || [];
       const updatedSentExams = [...existingSentExams, newSentExam];
       return await updateExam(examId, { sentExams: updatedSentExams });
-    }else{
+    } else {
       console.log("Exam Bulunamadı");
     }
   };
+  const updateCandidateExamScore = async (examId, candidateId, newScore) => {
+    const exam = await getQuizByExamID(examId);
+    if (!exam) {
+      console.log("Exam Bulunamadı");
+      return null;
+    }
+
+    const existingSentExams = exam.sentExams || [];
+    const sentExamIndex = existingSentExams.findIndex(
+      (se) => se.id === candidateId
+    );
+
+    if (sentExamIndex === -1) {
+      console.log("Bu aday için gönderilmiş sınav bulunamadı");
+      return null;
+    }
+
+    existingSentExams[sentExamIndex].totalScore = newScore;
+
+    return await updateExam(examId, { sentExams: existingSentExams });
+  };
   return (
     <ActionsContext.Provider
-      value={{ jobs, applyJob, approveCandidate, sendExamToCandidate }}
+      value={{
+        jobs,
+        applyJob,
+        approveCandidate,
+        sendExamToCandidate,
+        updateCandidateExamScore,
+      }}
     >
       {!loading && children}
     </ActionsContext.Provider>

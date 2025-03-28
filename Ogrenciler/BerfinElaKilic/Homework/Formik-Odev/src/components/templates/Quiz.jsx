@@ -5,9 +5,15 @@ import SuccessButton from "../atoms/Buttons/SuccessButton";
 import SecondaryButton from "../atoms/Buttons/SecondaryButton";
 import DangerButton from "../atoms/Buttons/DangerButton";
 import { updateQuizByExamID, updateUserExams } from "../../utils/services";
+import { useActions } from "../../context/ActionsContext";
+import { useParams } from "react-router";
+import { useAuth } from "../../context/AuthContext";
 
 // Toplam süre
 const Quiz = ({ jobId, shuffledQuestions }) => {
+  const { updateCandidateExamScore } = useActions();
+  const { examId } = useParams();
+  const { user } = useAuth();
   const totalTime = shuffledQuestions.totalDuration || 90;
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
@@ -15,18 +21,6 @@ const Quiz = ({ jobId, shuffledQuestions }) => {
   const [timeLeft, setTimeLeft] = useState(totalTime);
   const [selectedOption, setSelectedOption] = useState(null);
   const [quizStarted, setQuizStarted] = useState(false);
-
-  const finishExam = async () => {
-    try {
-      const updatedExam = { score: score };
-      //nereye yazılacak düşünülecek.fetch Update
-      console.log(data);
-    } catch (error) {
-      console.error("Sınav bulunamadı:", error);
-    } finally {
-      setLoading(false);
-    }
-  };
 
   useEffect(() => {
     if (!quizStarted || timeLeft === 0) return;
@@ -75,10 +69,14 @@ const Quiz = ({ jobId, shuffledQuestions }) => {
 
   const handleEndQuiz = async () => {
     setShowResult(true);
+    console.log(examId, user.id, score);
     try {
-      await updateUserExams(userId, score);
+      const response = await updateCandidateExamScore(examId, user.id, score);
+      console.log(response);
     } catch (error) {
-      console.error("Sınav sonucu yüklenemedi:", error);
+      console.error("Sınav bulunamadı:", error);
+    } finally {
+      setLoading(false);
     }
   };
 
