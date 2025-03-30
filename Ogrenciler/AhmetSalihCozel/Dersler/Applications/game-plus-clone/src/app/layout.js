@@ -13,9 +13,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`antialiased font-sans`}>
         <div className="flex">
-          <div>
             <SideBar />
-          </div>
           <div className="flex-1 flex flex-col">
             <Header />
             <main className="flex-grow">{children}</main>

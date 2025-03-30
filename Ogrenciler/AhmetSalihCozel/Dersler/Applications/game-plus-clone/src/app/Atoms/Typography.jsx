@@ -10,7 +10,7 @@ const Typography = ({ variant = "p", className = "", children, after = false }) 
     span: "text-sm",
   };
   const afterBar = after?"relative after:content-[''] mb-5 after:block after:w-16 after:h-1 after:bg-lime-500 after:absolute after:left-1/2 after:transform after:-translate-x-1/2 after:mt-2":""
-  const mutualCss = "p-5"
+  const mutualCss = ""
   const Component = variant;
 
   return <Component className={`${baseStyles[variant]} ${className} ${afterBar} ${mutualCss}`}>{children}</Component>;
