@@ -7,7 +7,7 @@ $white: #fff;
 $black: #242431;
 $gray: #dfdfee;
 
-$fast: 0.2s;
+$fast: 0.3s;
 
 $font-primary: "Permanent Marker", cursive;
 $font-secondary: "Mogra", sans-serif;
@@ -45,18 +45,19 @@ button {
   }
 }
 
-@mixin grid($template) {
-  height: 100%;
+@mixin grid($columns, $rows: default) {
   display: grid;
-  grid-template-columns: $template;
-  column-gap: 5rem;
+  grid-template-columns: $columns;
+  grid-template-rows: $rows;
+  gap: 5rem;
+  transition: grid-template-columns $fast, gap $fast;
 }
 
 @mixin panel() {
   height: 100%;
   background-color: $white;
   border-radius: 2rem;
-  padding: 3rem;
+  padding: 1.5rem;
 }
 
 #root {
@@ -64,25 +65,11 @@ button {
   height: 100vh;
   padding: 5rem;
 
-  #home {
-    @include grid(3fr 2fr);
-    transition: grid-template-columns $fast, gap $fast;
+  section {
+    height: 100%;
 
-    &.loading {
-      grid-template-columns: 1fr 0fr;
-      gap: 0;
-
-      & > div > * {
-        opacity: 0;
-      }
-    }
-
-    & > div {
-      @include panel();
-
-      & > * {
-        transition: opacity $fast;
-      }
+    &#home {
+      @include grid(3fr 2fr);
 
       h1 {
         font-family: $font-primary;
@@ -218,5 +205,70 @@ button {
         }
       }
     }
+
+    &#game {
+      &:not(:has(.loading)) {
+        animation: initialise $fast forwards;
+      }
+
+      #canvas {
+        grid-row: span 2;
+
+        canvas {
+          width: 100%;
+          height: 100%;
+          box-shadow: 0 0 5px magenta;
+        }
+      }
+    }
+
+    &.loading {
+      height: 100%;
+      grid-template-columns: 1fr 0fr !important;
+      gap: 0;
+
+      & > div > * {
+        animation: none;
+        opacity: 0;
+      }
+    }
+
+    & > div {
+      @include panel();
+
+      &.loading {
+        font-size: 5rem;
+        @include center();
+      }
+
+      & > * {
+        transition: opacity $fast;
+
+        &:not(i) {
+          animation: fade $fast forwards;
+        }
+      }
+    }
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes initialise {
+  from {
+    @include grid(0fr 1fr, 1fr 0fr);
+    gap: 0;
+  }
+
+  to {
+    @include grid(2fr 4fr, 3fr 2fr);
   }
 }

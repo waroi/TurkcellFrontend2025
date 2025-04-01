@@ -25,14 +25,17 @@ const get = (reference) =>
 
 const set = (reference, value) => setFirebase(ref(database, reference), value);
 
-export const play = ({ id, name, profile }) =>
-  (profile
-    ? getDoc(doc(firestore, "players", id)).then(
-        (snaphot) =>
-          !snaphot.exists() &&
-          setDoc(doc(firestore, "players", id), { profile })
-      )
-    : Promise.resolve()
+export const play = ({ id, name, profile }) => {
+  console.log(id);
+
+  return (
+    profile
+      ? getDoc(doc(firestore, "players", id)).then(
+          (snaphot) =>
+            !snaphot.exists() &&
+            setDoc(doc(firestore, "players", id), { profile })
+        )
+      : Promise.resolve()
   ).then(() =>
     get("players").then((players) =>
       players && Object.keys(players).includes(id)
@@ -43,3 +46,4 @@ export const play = ({ id, name, profile }) =>
           })
     )
   );
+};
