@@ -11,10 +11,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`antialiased font-sans`}>
+      <body className="antialiased font-sans">
         <div className="flex">
-            <SideBar />
-          <div className="flex-1 flex flex-col">
+          <SideBar />
+          <div className="flex-1 flex flex-col pl-50">
             <Header />
             <main className="flex-grow">{children}</main>
             <Footer />
@@ -24,3 +24,4 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+

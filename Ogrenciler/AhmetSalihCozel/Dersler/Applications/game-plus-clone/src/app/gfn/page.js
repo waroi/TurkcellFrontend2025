@@ -2,16 +2,22 @@ import React from "react";
 import Button from "../Atoms/Button";
 import Typography from "../Atoms/Typography";
 import Badge from "../Atoms/Badge";
+import Carousel from "../Organisms/Carousel";
+import Gift from "../Organisms/Gift";
+import GfnGamePc from "../Organisms/GfnGamePc";
+import Information from "../Molecules/Information";
+import GfnDesc from "../Organisms/GfnDesc";
+import GameCatalog from "../Organisms/GameCatalog/GameCatalog";
 
 export default function Home() {
   return (
       <div className="flex flex-col gap-2">
-        <Typography variant="h1">Selam Canım Naber</Typography>
-        <Button variant="contained">Contained Button</Button>
-        <Button variant="outlined">Outlined Button</Button>
-        <Button variant="dissabled">Disabled Button</Button>
-        <Button variant="xlButton">Contained Button</Button>
-        <Badge>40%</Badge>
+        <Carousel/>
+        <Gift/>
+        <GfnGamePc/>
+        <Information/>
+        <GfnDesc/>
+        <GameCatalog/>
       </div>
   );
 }

@@ -9,7 +9,7 @@ const Typography = ({ variant = "p", className = "", children, after = false }) 
     p: "text-base",
     span: "text-sm",
   };
-  const afterBar = after?"relative after:content-[''] mb-5 after:block after:w-16 after:h-1 after:bg-lime-500 after:absolute after:left-1/2 after:transform after:-translate-x-1/2 after:mt-2":""
+  const afterBar = after?"relative after:content-[''] mb-5 after:block after:w-20 after:h-1 after:bg-lime-500 after:absolute after:left-1/2 after:transform after:-translate-x-1/2 after:mt-5":""
   const mutualCss = ""
   const Component = variant;
 
