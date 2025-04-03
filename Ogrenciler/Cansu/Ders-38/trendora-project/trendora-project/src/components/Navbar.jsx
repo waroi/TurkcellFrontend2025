@@ -1,9 +1,12 @@
+import { useAuth } from "../hooks/useAuth";
 import Link from "next/link";
-import { useAuth } from "../context/AuthContext";
+import useThemeStore from "../store/useThemeStore";
 import "bootstrap/dist/css/bootstrap.min.css";
+
 
 const Navbar = () => {
   const { user, logoutUser } = useAuth();
+  const { theme, toggleTheme } = useThemeStore();
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -36,6 +39,11 @@ const Navbar = () => {
                 </li>
               </>
             )}
+            <li className="nav-item">
+              <button className="btn btn-outline-light ms-3" onClick={toggleTheme}>
+                {theme === "light" ? "🌙 Dark Mode" : "☀️ Light Mode"}
+              </button>
+            </li>
           </ul>
         </div>
       </div>
