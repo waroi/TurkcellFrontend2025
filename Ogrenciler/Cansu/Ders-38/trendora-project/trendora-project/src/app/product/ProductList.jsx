@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { getProducts } from "@/firebase/firestore"; // firestore fonksiyonunu import ettik
+import { getProducts } from "@/firebase/firestore";
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
@@ -10,18 +10,18 @@ const ProductList = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const productsData = await getProducts(); // getProducts fonksiyonunu çağırıyoruz
-        setProducts(productsData); // Çekilen ürünleri state'e kaydediyoruz
+        const productsData = await getProducts(); 
+        setProducts(productsData); 
       } catch (err) {
-        setError(err.message); // Hata olursa, hata mesajını gösteriyoruz
+        setError(err.message);
       }
     };
 
-    fetchProducts(); // Ürünleri çekmeye başlıyoruz
-  }, []); // Sadece component mount olduğunda çalışacak
+    fetchProducts(); 
+  }, []); 
 
-  if (error) return <p>{error}</p>; // Hata varsa göster
-  if (products.length === 0) return <p>Yükleniyor...</p>; // Ürünler gelene kadar yükleniyor mesajı
+  if (error) return <p>{error}</p>; 
+  if (products.length === 0) return <p>Yükleniyor...</p>; 
 
   return (
     <div>
