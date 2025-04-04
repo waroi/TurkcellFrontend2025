@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useState } from 'react';
-import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
 export default function Shop() {
@@ -71,7 +70,7 @@ export default function Shop() {
 
   return (
     <>
-      <Navbar />
+ 
 
     
       <div className="container py-4">

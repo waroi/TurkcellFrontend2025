@@ -1,23 +1,21 @@
-// Lila tonları ve premium renk paleti
-$primary-color: #9B4DFF; // Lila (Ana renk - göz alıcı ve modern)
-$secondary-color: #D1B3FF; // Lavanta (Soft, tamamlayıcı ton)
-$accent-color: #FF6EC7; // Açık Pembe (Vurgulama rengi ve butonlar için)
-$neutral-light: #F9F9F9; // Soft Beyaz (Temiz arka plan)
-$neutral-dark: #2F2F2F; // Koyu Gri (Yazı rengi)
+$primary-color: #9B4DFF; 
+$secondary-color: #D1B3FF;
+$accent-color: #FF6EC7; 
+$neutral-light: #F9F9F9; 
+$neutral-dark: #2F2F2F; 
 
-$background-color: $neutral-light; // Temiz ve minimal arka plan
+$background-color: $neutral-light; 
 
-// Fontlar
-$font-primary: 'Poppins', sans-serif; // Modern ve şık font
-$font-secondary: 'Roboto', sans-serif; // Okunaklı ikincil font
 
-// Breakpoints - Responsive Tasarım
+$font-primary: 'Poppins', sans-serif; 
+$font-secondary: 'Roboto', sans-serif; 
+
 $breakpoint-sm: 576px;
 $breakpoint-md: 768px;
 $breakpoint-lg: 992px;
 $breakpoint-xl: 1200px;
 
-// Box Shadow (Kutucuk gölgeleri)
+
 $box-shadow-light: 0 4px 8px rgba(0, 0, 0, 0.1);
 $box-shadow-dark: 0 6px 12px rgba(0, 0, 0, 0.2);
 

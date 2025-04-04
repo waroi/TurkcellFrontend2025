@@ -33,19 +33,21 @@ const Register = () => {
 
   const handleSubmit = async (values) => {
     try {
+    
       const userCredential = await createUserWithEmailAndPassword(auth, values.email, values.password);
       const user = userCredential.user;
 
-    
+     
       await setDoc(doc(db, "users", user.uid), {
         email: values.email,
         name: `${values.firstName} ${values.lastName}`,
         profilePic: "", 
         createdAt: serverTimestamp(),
-        role: "customer",
+        role: "admin",
       });
 
-      router.push("/login"); 
+
+      router.push("/login");
     } catch (error) {
       setError("Kayıt işlemi başarısız: " + error.message);
     }
@@ -102,6 +104,7 @@ const Register = () => {
 };
 
 export default Register;
+
 
 
 
