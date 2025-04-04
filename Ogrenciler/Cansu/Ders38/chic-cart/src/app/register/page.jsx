@@ -32,7 +32,7 @@ const Register = () => {
   const handleSubmit = async (values) => {
     try {
       await createUserWithEmailAndPassword(auth, values.email, values.password);
-      router.push("/login"); // Yönlendirmeyi değiştirdik
+      router.push("/login"); 
     } catch (error) {
       setError("Kayıt işlemi başarısız: " + error.message);
     }
