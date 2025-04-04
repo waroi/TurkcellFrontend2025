@@ -1,0 +1,26 @@
+{
+  "name": "chic-cart",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.4",
+    "firebase": "^11.6.0",
+    "formik": "^2.4.6",
+    "next": "15.2.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "sass": "^1.86.3",
+    "yup": "^1.6.1"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "eslint": "^9",
+    "eslint-config-next": "15.2.4"
+  }
+}
