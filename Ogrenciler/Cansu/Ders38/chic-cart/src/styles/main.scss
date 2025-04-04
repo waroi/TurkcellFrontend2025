@@ -146,3 +146,51 @@ body {
       font-size: 1.125rem;
     }
   }
+  /* styles/main.scss */
+
+/* Aydınlık mod için varsayılan stiller */
+body {
+    background-color: #fff;
+    color: #000;
+  }
+  
+  .navbar-light {
+    background-color: #f8f9fa;
+  }
+  
+  .navbar-dark {
+    background-color: #343a40;
+  }
+  
+  .card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+  }
+  
+  .card-img-top {
+    filter: brightness(80%);
+  }
+  
+  /* Karanlık mod */
+  body.dark {
+    background-color: #121212;
+    color: #fff;
+  }
+  
+  body.dark .navbar-light {
+    background-color: #343a40;
+  }
+  
+  body.dark .navbar-dark {
+    background-color: #f8f9fa;
+  }
+  
+  body.dark .card {
+    background-color: #333;
+    border: 1px solid #444;
+  }
+  
+  body.dark .card-img-top {
+    filter: brightness(60%);
+  }
+  

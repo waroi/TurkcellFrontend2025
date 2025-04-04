@@ -2,10 +2,10 @@
 
 import { useRouter } from 'next/navigation';
 import useAuthStore from '@/store/authStore'; 
-import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import '../styles/main.scss';
 import { useEffect, useState } from 'react';
+
 
 export default function Home() {
   const user = useAuthStore((state) => state.user);  
@@ -15,6 +15,7 @@ export default function Home() {
   const [popularProducts, setPopularProducts] = useState([]);
   const [newArrivals, setNewArrivals] = useState([]);
 
+  
   
   const fetchProducts = async () => {
     try {
@@ -47,6 +48,18 @@ export default function Home() {
   };
 
   useEffect(() => {
+    try {
+      const userData = localStorage.getItem('user');
+      if (userData) {
+        setUser(JSON.parse(userData));
+      }
+    } catch (err) {
+      console.error("User data parse error:", err);
+    }
+  }, []);
+  
+  
+  useEffect(() => {
     if (!user) {
       router.push('/login'); 
     } else {
@@ -73,9 +86,7 @@ export default function Home() {
 
   return (
     <>
-      <Navbar />
-
-    
+  
       <section className="hero bg-primary text-white text-center py-5" style={{ backgroundImage: "url('/hero-bg.jpg')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div className="container">
           <h1 className="display-3 font-weight-bold">Hoş Geldin, {user?.name || user?.displayName || 'Kullanıcı'}!</h1>
