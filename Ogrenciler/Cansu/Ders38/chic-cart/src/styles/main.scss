@@ -1,2 +1,148 @@
 @import 'variables'; 
 @import 'mixins';  
+body {
+    font-family: $font-primary;
+    background-color: $background-color;
+    color: $neutral-dark;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+  }
+  
+
+  .hero {
+    background-color: $primary-color;
+    color: $neutral-light;
+    padding: 80px 0;
+    text-align: center;
+    box-shadow: $box-shadow-light;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  .hero p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+  }
+  
+  .hero .btn {
+    @include btn($secondary-color);
+    font-size: 1.2rem;
+    padding: 0.75rem 1.5rem;
+  }
+  
+
+  nav {
+    background-color: $neutral-light;
+    padding: 1rem 0;
+    box-shadow: $box-shadow-light;
+    
+    .navbar-brand {
+      font-family: $font-secondary;
+      font-size: 1.75rem;
+      font-weight: 700;
+    }
+  
+    .nav-link {
+      color: $neutral-dark;
+      font-weight: 500;
+      font-size: 1.125rem;
+      
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+  
+
+  .featured-products {
+    background-color: $neutral-light;
+    padding: 50px 0;
+    text-align: center;
+  
+    .card {
+      box-shadow: $box-shadow-light;
+      border: none;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+  
+      &:hover {
+        transform: translateY(-10px);
+      }
+      
+      .card-img-top {
+        @include responsive-image(100%);
+      }
+  
+      .card-body {
+        padding: 1.25rem;
+      }
+  
+      .card-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+      }
+  
+      .card-text {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+      }
+  
+      .btn-primary {
+        background-color: $primary-color;
+        color: white;
+        border: none;
+        font-weight: 600;
+        text-transform: uppercase;
+        padding: 0.5rem 1.25rem;
+        transition: background-color 0.3s ease;
+  
+        &:hover {
+          background-color: darken($primary-color, 10%);
+        }
+      }
+    }
+  }
+  
+ 
+  footer {
+    background-color: $neutral-dark;
+    color: $neutral-light;
+    padding: 40px 0;
+    text-align: center;
+  
+    p {
+      font-size: 1rem;
+      margin: 0;
+    }
+  
+    a {
+      color: $neutral-light;
+      text-decoration: none;
+      transition: color 0.3s ease;
+  
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+  
+
+  @media (max-width: $breakpoint-md) {
+    .hero {
+      padding: 60px 0;
+    }
+  
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+  
+    .card-title {
+      font-size: 1.125rem;
+    }
+  }

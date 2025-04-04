@@ -6,10 +6,14 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import { getDoc, doc } from "firebase/firestore"; 
+import { db } from "@/firebase/firebaseConfig"; 
+import useAuthStore from "@/store/authStore"; 
 
 const Login = () => {
   const [error, setError] = useState("");
   const router = useRouter();
+  const setUser = useAuthStore((state) => state.setUser);  
 
   const initialValues = {
     email: "",
@@ -23,8 +27,23 @@ const Login = () => {
 
   const handleSubmit = async (values) => {
     try {
-      await signInWithEmailAndPassword(auth, values.email, values.password);
-      router.push("/"); 
+      const userCredential = await signInWithEmailAndPassword(auth, values.email, values.password);
+      const user = userCredential.user;
+
+      const userDoc = await getDoc(doc(db, "users", user.uid)); 
+      if (userDoc.exists()) {
+        const userData = userDoc.data();
+        setUser(userData); 
+        const role = userData.role;
+
+        if (role === "admin") {
+          router.push("/admin");
+        } else {
+          router.push("/");
+        }
+      } else {
+        setError("Kullanıcı verisi bulunamadı.");
+      }
     } catch (error) {
       setError("Giriş işlemi başarısız: " + error.message);
     }
@@ -75,5 +94,7 @@ const Login = () => {
 };
 
 export default Login;
+
+
 
 
