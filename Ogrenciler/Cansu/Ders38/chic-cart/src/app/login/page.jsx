@@ -67,7 +67,7 @@ const Login = () => {
           )}
         </Formik>
         <div className="text-center mt-3">
-          <p>Hesabın yok mu? <Link href="/auth/register">Kayıt ol</Link></p>
+          <p>Hesabın yok mu? <Link href="/register">Kayıt ol</Link></p>
         </div>
       </div>
     </div>

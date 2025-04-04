@@ -32,7 +32,7 @@ const Register = () => {
   const handleSubmit = async (values) => {
     try {
       await createUserWithEmailAndPassword(auth, values.email, values.password);
-      router.push("/auth/login"); 
+      router.push("/login"); // Yönlendirmeyi değiştirdik
     } catch (error) {
       setError("Kayıt işlemi başarısız: " + error.message);
     }
@@ -105,7 +105,7 @@ const Register = () => {
           )}
         </Formik>
         <div className="text-center mt-3">
-          <p>Zaten hesabın var mı? <Link href="/auth/login">Giriş Yap</Link></p>
+          <p>Zaten hesabın var mı? <Link href="/login">Giriş Yap</Link></p>
         </div>
       </div>
     </div>
@@ -113,5 +113,6 @@ const Register = () => {
 };
 
 export default Register;
+
 
 

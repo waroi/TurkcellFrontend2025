@@ -1,12 +1,9 @@
 "use client";
+
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { getAuth } from "firebase/auth";  
+import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
-
-
-
-
 
 const firebaseConfig = {
   apiKey: "AIzaSyC4ec4Z3dVgU8Z-GBzEMtgU_c6yrxqThYk",
@@ -19,8 +16,13 @@ const firebaseConfig = {
 };
 
 
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+let app, analytics, auth, db;
 
-export const auth = getAuth(app);  
-export const db = getFirestore(app); 
+if (typeof window !== "undefined") {
+  app = initializeApp(firebaseConfig);
+  analytics = getAnalytics(app);
+  auth = getAuth(app);
+  db = getFirestore(app);
+}
+
+export { auth, db };
