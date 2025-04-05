@@ -1,67 +1,67 @@
-"use client";
+"use client";  
+
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import useAuthStore from '@/store/useAuthStore';
-import { updateProfile } from '@/api/profile';
-import { getOrders } from '@/api/orders'; 
+import { getOrders } from '@/api/orders';
+import { updateProfile } from '@/api/profile';  
 import Link from 'next/link';
 
 const Profile = () => {
-  const { user } = useAuthStore(); 
+  const { user } = useAuthStore();  
   const [userData, setUserData] = useState(null);
-  const [orders, setOrders] = useState([]); 
-  const [isEditing, setIsEditing] = useState(false); 
+  const [orders, setOrders] = useState([]);
+  const [isEditing, setIsEditing] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
   });
   const [isClient, setIsClient] = useState(false); 
-  const router = useRouter(); 
- 
+  const router = useRouter();  
+
   useEffect(() => {
-    setIsClient(true);
+    setIsClient(true);  
   }, []);
+
 
   useEffect(() => {
     if (user && router) {
-
       setUserData(user);
       setFormData({
         name: user.name,
         email: user.email,
         phone: user.phone || '',
       });
-      fetchOrders();
+      fetchOrders();  
     } else if (user === null && router) {
- 
-      router.push('/login');
+      router.push('/login'); 
     }
   }, [user, router]);
 
-
   const fetchOrders = async () => {
     try {
-      const userOrders = await getOrders(user.id); 
-      setOrders(userOrders);
+      if (user && user.id) {
+        const userOrders = await getOrders(user.id);  
+        setOrders(userOrders);
+      }
     } catch (error) {
       console.error('Error fetching orders:', error);
     }
   };
 
   const handleEdit = () => {
-    setIsEditing(true);
+    setIsEditing(true);  
   };
 
   const handleCancelEdit = () => {
-    setIsEditing(false);
+    setIsEditing(false); 
     setFormData({
       name: userData.name,
       email: userData.email,
       phone: userData.phone || '',
     });
   };
-
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -71,25 +71,22 @@ const Profile = () => {
     });
   };
 
-
   const handleSave = async () => {
     try {
-      await updateProfile(formData);
-      setIsEditing(false); 
-      setUserData(formData); 
+      await updateProfile(formData);  
+      setIsEditing(false);  
+      setUserData(formData);  
     } catch (error) {
       console.error('Error saving profile:', error);
     }
   };
 
-
   const handleLogout = () => {
-    localStorage.removeItem('user'); 
+    localStorage.removeItem('user');  
     router.push('/login'); 
   };
 
-
-  if (!isClient || !router) return null; 
+  if (!isClient || !router) return null;  
 
   return (
     <div className="profile-page container mt-5">
@@ -183,6 +180,8 @@ const Profile = () => {
 };
 
 export default Profile;
+
+
 
 
 
