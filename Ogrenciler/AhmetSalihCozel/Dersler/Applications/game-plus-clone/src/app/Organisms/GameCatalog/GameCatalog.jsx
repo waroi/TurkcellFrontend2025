@@ -13,7 +13,7 @@ function GameCatalog() {
   return (
     <section className="overflow-hidden">
       <div className="flex flex-col items-center justify-center">
-        <div className="flex flex-col items-center gap-3">
+        <div className="flex flex-col items-center gap-3 px-5">
           <Typography variant="h2" className="text-lime-500" after={true}>
             Oyun Kataloğu
           </Typography>
@@ -23,7 +23,7 @@ function GameCatalog() {
         </div>
         <div className="flex flex-col justify-between gap-2 p-3 mb-5 overflow-hidden">
           {images.map((image, index) => (
-            <div key={index} className="block overflow-hidden w-[80vw]">
+            <div key={index} className="block overflow-hidden w-[80vw] md:w-[60vw] lg:w-[70vw] xl:w-[80vw]">
               <div className="block h-[160px] w-[3000px] overflow-hidden">
                 <div
                   alt={`Afiş ${index + 1}`}

@@ -30,7 +30,7 @@ const infoItems = [
 
 function Information() {
   return (
-    <section className='flex justify-evenly gap-5 p-6 rounded-xl'>
+    <section className='flex flex-col lg:flex-row justify-evenly xl:flex-row gap-5 p-6 rounded-xl'>
       {infoItems.map((item, index) => (
         <div key={index} className='flex items-center justify-center flex-col gap-3 text-center'>
           <BootIcon iconName={item.icon} className='text-lime-500' size={50} />

@@ -1,13 +1,11 @@
 import React from "react";
-import Button from "../Atoms/Button";
-import Typography from "../Atoms/Typography";
-import Badge from "../Atoms/Badge";
 import Carousel from "../Organisms/Carousel";
 import Gift from "../Organisms/Gift";
 import GfnGamePc from "../Organisms/GfnGamePc";
-import Information from "../Molecules/Information";
+import Information from "../Organisms/Information";
 import GfnDesc from "../Organisms/GfnDesc";
 import GameCatalog from "../Organisms/GameCatalog/GameCatalog";
+import PackagesCarousel from "../Organisms/PackagesCarousel";
 
 export default function Home() {
   return (
@@ -18,6 +16,7 @@ export default function Home() {
         <Information/>
         <GfnDesc/>
         <GameCatalog/>
+        <PackagesCarousel/>
       </div>
   );
 }

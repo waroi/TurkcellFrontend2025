@@ -6,7 +6,7 @@ function CarouselBullets({ carouselData, activeElement, setActiveElement }) {
       {carouselData.map((carouselItem, index) => {
         return (
           <div
-            className={`w-4 h-4 rounded-xl mt-5 cursor-pointer ${index===activeElement?"bg-white":"bg-neutral-500"}`}
+            className={`w-3 h-3 rounded-xl mt-5 cursor-pointer ${index===activeElement?"bg-white":"bg-neutral-500"}`}
             onClick={() => setActiveElement(index)}
             key={index}
           ></div>

@@ -4,7 +4,7 @@ import Typography from "../Atoms/Typography";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-function NavBarNavList() {
+function NavBarNavList({className}) {
   const pathname = usePathname();
   const listItems = [
     { innerText: "Oyunlar", url: "/oyunlar" },
@@ -14,7 +14,7 @@ function NavBarNavList() {
   ];
 
   return (
-    <ul className="flex gap-3 p-0 my-8 ms-8">
+    <ul className={`flex ${className} gap-3 p-0 my-8 ms-8`}>
       {listItems.map((listItem, index) => (
           <Link
             key={index}

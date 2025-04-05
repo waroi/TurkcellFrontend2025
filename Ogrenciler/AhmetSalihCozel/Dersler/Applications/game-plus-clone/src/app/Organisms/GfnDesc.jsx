@@ -5,7 +5,7 @@ import Button from "../Atoms/Button";
 function GfnDesc() {
   return (
     <section className="flex flex-col items-center p-4 space-y-6">
-      <div className="flex items-center justify-evenly w-full h-auto">
+      <div className="flex flex-col lg:flex-row items-center justify-evenly w-full h-auto">
         <div className="relative w-full max-w-[800px] min-w-[400px]">
           <img
             src="/img/mac-laptop.png"

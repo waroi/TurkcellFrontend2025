@@ -1,11 +1,11 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import CarouselBullets from "../Atoms/CarouselBullets";
-import CarouselData from "../Hooks/CarouselData";
+import PackagesCarouselData from "../Hooks/PackagesCarouselData";
 
-function Carousel() {
+function PackagesCarousel() {
+  const { carouselData, carouselElement } = PackagesCarouselData();
   const [activeElement, setActiveElement] = useState(0);
-  const {carouselData, carouselElement} = CarouselData();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -13,7 +13,7 @@ function Carousel() {
     }, 5000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [carouselData.length]);
 
   return (
     <section className="relative w-full overflow-hidden">
@@ -32,4 +32,4 @@ function Carousel() {
   );
 }
 
-export default Carousel;
+export default PackagesCarousel;
