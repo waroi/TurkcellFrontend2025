@@ -8,7 +8,7 @@ import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { getDoc, doc } from "firebase/firestore"; 
 import { db } from "@/firebase/firebaseConfig"; 
-import useAuthStore from "@/store/authStore"; 
+import useAuthStore from "@/store/useAuthStore"; 
 
 const Login = () => {
   const [error, setError] = useState("");

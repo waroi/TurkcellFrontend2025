@@ -26,7 +26,7 @@ const About = () => {
           <div className="row">
             <div className="col-md-8">
               <p>
-                Chic-Cart, 2020 yılında kaliteli ve şık giyim ürünlerini her bütçeye uygun fiyatlarla
+                Chic-Cart, 2025 yılında kaliteli ve şık giyim ürünlerini her bütçeye uygun fiyatlarla
                 sunma amacıyla kuruldu. Moda dünyasında adım atarken, müşteri memnuniyeti, hızlı teslimat
                 ve güvenli alışveriş ilkelerimizle sektördeki yerimizi aldık.
               </p>

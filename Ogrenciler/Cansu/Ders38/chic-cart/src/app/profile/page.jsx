@@ -1,62 +1,190 @@
 "use client";
-import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
-import { auth, db } from "@/firebase/firebaseConfig";
-import { onAuthStateChanged } from "firebase/auth";
-import { doc, getDoc } from "firebase/firestore";
-import useAuthStore from "@/store/authStore"; 
+import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import useAuthStore from '@/store/useAuthStore';
+import { updateProfile } from '@/api/profile';
+import { getOrders } from '@/api/orders'; 
+import Link from 'next/link';
 
 const Profile = () => {
-  const [loading, setLoading] = useState(true);
-  const setUser = useAuthStore((state) => state.setUser);
-  const user = useAuthStore((state) => state.user);
-  const router = useRouter();
+  const { user } = useAuthStore(); 
+  const [userData, setUserData] = useState(null);
+  const [orders, setOrders] = useState([]); 
+  const [isEditing, setIsEditing] = useState(false); 
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+  });
+  const [isClient, setIsClient] = useState(false); 
+  const router = useRouter(); 
+ 
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, async (user) => {
-      if (!user) {
-        router.push("/login");
-        return;
-      }
+    if (user && router) {
 
-      const docRef = doc(db, "users", user.uid);
-      const docSnap = await getDoc(docRef);
+      setUserData(user);
+      setFormData({
+        name: user.name,
+        email: user.email,
+        phone: user.phone || '',
+      });
+      fetchOrders();
+    } else if (user === null && router) {
+ 
+      router.push('/login');
+    }
+  }, [user, router]);
 
-      if (docSnap.exists()) {
-        setUser(docSnap.data()); 
-      } else {
-        console.log("Kullanıcı verisi bulunamadı.");
-      }
-      setLoading(false); 
+
+  const fetchOrders = async () => {
+    try {
+      const userOrders = await getOrders(user.id); 
+      setOrders(userOrders);
+    } catch (error) {
+      console.error('Error fetching orders:', error);
+    }
+  };
+
+  const handleEdit = () => {
+    setIsEditing(true);
+  };
+
+  const handleCancelEdit = () => {
+    setIsEditing(false);
+    setFormData({
+      name: userData.name,
+      email: userData.email,
+      phone: userData.phone || '',
     });
+  };
 
-    return () => unsubscribe(); 
-  }, [router, setUser]);
 
-  if (loading) {
-    return <p className="text-center mt-5">Yükleniyor...</p>;
-  }
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
 
-  if (!user) {
-    return <p>Kullanıcı bilgileri bulunamadı.</p>;
-  }
+
+  const handleSave = async () => {
+    try {
+      await updateProfile(formData);
+      setIsEditing(false); 
+      setUserData(formData); 
+    } catch (error) {
+      console.error('Error saving profile:', error);
+    }
+  };
+
+
+  const handleLogout = () => {
+    localStorage.removeItem('user'); 
+    router.push('/login'); 
+  };
+
+
+  if (!isClient || !router) return null; 
 
   return (
-    <div className="container mt-5">
-      <h1>Profil</h1>
-      <p>Hoş geldin, {user.name}!</p>
-      <div className="profile-content">
-        <img
-          src={user.profilePic || "/default-profile.jpg"}
-          alt="Profile"
-          className="img-fluid rounded-circle"
-          style={{ width: "150px", height: "150px", objectFit: "cover" }}
-        />
-        <h3>Rol: {user.role}</h3>
-        <p>E-posta: {user.email}</p>
+    <div className="profile-page container mt-5">
+      <h2>{userData?.name}'s Profile</h2>
+
+      <div className="profile-info my-4">
+        <h3>Personal Information</h3>
+        {isEditing ? (
+          <div className="edit-form">
+            <div className="mb-3">
+              <label className="form-label">Name</label>
+              <input
+                type="text"
+                className="form-control"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="mb-3">
+              <label className="form-label">Email</label>
+              <input
+                type="email"
+                className="form-control"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="mb-3">
+              <label className="form-label">Phone</label>
+              <input
+                type="tel"
+                className="form-control"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+              />
+            </div>
+            <button className="btn btn-primary" onClick={handleSave}>
+              Save
+            </button>
+            <button className="btn btn-secondary ms-2" onClick={handleCancelEdit}>
+              Cancel
+            </button>
+          </div>
+        ) : (
+          <div className="info-details">
+            <p><strong>Name:</strong> {userData?.name}</p>
+            <p><strong>Email:</strong> {userData?.email}</p>
+            <p><strong>Phone:</strong> {userData?.phone || 'Not provided'}</p>
+            <button className="btn btn-secondary" onClick={handleEdit}>
+              Edit Profile
+            </button>
+          </div>
+        )}
+      </div>
+
+      <div className="order-history my-5">
+        <h3>Your Orders</h3>
+        {orders.length === 0 ? (
+          <p>No orders yet.</p>
+        ) : (
+          <ul className="list-group">
+            {orders.map((order) => (
+              <li key={order.id} className="list-group-item">
+                <Link href={`/order/${order.id}`} className="text-decoration-none">
+                  <div>
+                    <strong>Order #{order.id}</strong>
+                    <div>Status: {order.status}</div>
+                  </div>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+
+      <div className="address-book my-5">
+        <h3>Shipping Addresses</h3>
+        <button className="btn btn-primary">Add New Address</button>
+      </div>
+
+      <div className="logout-section my-5">
+        <button className="btn btn-danger" onClick={handleLogout}>
+          Logout
+        </button>
       </div>
     </div>
   );
 };
 
 export default Profile;
+
+
+
+
+

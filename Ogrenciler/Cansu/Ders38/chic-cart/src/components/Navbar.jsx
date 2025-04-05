@@ -1,24 +1,23 @@
 "use client";
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import Link from 'next/link';
 import useThemeStore from '@/store/useThemeStore';
-
-
+import useAuthStore from '@/store/useAuthStore';  
 
 const Navbar = () => {
-    const [user, setUser] = useState(null);
     const { isDarkMode, toggleTheme } = useThemeStore();
+    const { user, setUser, logout } = useAuthStore(); 
 
     useEffect(() => {
         const userData = localStorage.getItem('user');
         if (userData) {
-            setUser(JSON.parse(userData));
+            setUser(JSON.parse(userData)); 
         }
-    }, []);
+    }, [setUser]);
 
     const handleLogout = () => {
         localStorage.removeItem('user');
-        setUser(null);
+        logout();  
     };
 
     return (
@@ -61,10 +60,10 @@ const Navbar = () => {
                                 <Link href="/login" className="nav-link">Login</Link>
                             </li>
                         )}
+
                         <li className="nav-item">
                             <Link href="/cart" className="nav-link">🛍️ Sepetim</Link>
                         </li>
-
 
                         <li className="nav-item ms-3">
                             <button onClick={toggleTheme} className={`btn btn-sm ${isDarkMode ? 'btn-light' : 'btn-dark'}`}>
@@ -79,5 +78,7 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
 
 
