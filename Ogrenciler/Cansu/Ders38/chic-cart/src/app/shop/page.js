@@ -1,27 +1,29 @@
 "use client";
-import { useEffect, useState } from 'react';
-import Footer from '@/components/Footer';
+import { useEffect, useState } from "react";
+import Footer from "@/components/Footer";
+import useCartStore from "@/store/useCartStore";
 
 export default function Shop() {
-  const [products, setProducts] = useState([]); 
-  const [filteredProducts, setFilteredProducts] = useState([]); 
-  const [loading, setLoading] = useState(true);  
-  const [categoryFilter, setCategoryFilter] = useState('');  
-  const [priceFilter, setPriceFilter] = useState([0, 1000]); 
-  const [searchQuery, setSearchQuery] = useState('');  
-  const [sortBy, setSortBy] = useState('default');  
+  const [products, setProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [categoryFilter, setCategoryFilter] = useState("");
+  const [priceFilter, setPriceFilter] = useState([0, 1000]);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [sortBy, setSortBy] = useState("default");
 
+  const addToCart = useCartStore((state) => state.addToCart); 
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch('https://fakestoreapi.com/products');
+        const response = await fetch("https://fakestoreapi.com/products");
         const data = await response.json();
         setProducts(data);
         setFilteredProducts(data);
         setLoading(false);
       } catch (error) {
-        console.error('Error fetching products:', error);
+        console.error("Error fetching products:", error);
         setLoading(false);
       }
     };
@@ -38,11 +40,9 @@ export default function Shop() {
       );
     }
 
-  
     filtered = filtered.filter(
       (product) => product.price >= priceFilter[0] && product.price <= priceFilter[1]
     );
-
 
     if (searchQuery) {
       filtered = filtered.filter((product) =>
@@ -50,19 +50,22 @@ export default function Shop() {
       );
     }
 
-
-    if (sortBy === 'price-asc') {
+    if (sortBy === "price-asc") {
       filtered = filtered.sort((a, b) => a.price - b.price);
-    } else if (sortBy === 'price-desc') {
+    } else if (sortBy === "price-desc") {
       filtered = filtered.sort((a, b) => b.price - a.price);
-    } else if (sortBy === 'name-asc') {
+    } else if (sortBy === "name-asc") {
       filtered = filtered.sort((a, b) => a.title.localeCompare(b.title));
-    } else if (sortBy === 'name-desc') {
+    } else if (sortBy === "name-desc") {
       filtered = filtered.sort((a, b) => b.title.localeCompare(a.title));
     }
 
-    setFilteredProducts(filtered);  
+    setFilteredProducts(filtered);
   }, [categoryFilter, priceFilter, searchQuery, sortBy, products]);
+
+  const handleAddToCart = (product) => {
+    addToCart(product); 
+  };
 
   if (loading) {
     return <p>Yükleniyor...</p>;
@@ -70,74 +73,10 @@ export default function Shop() {
 
   return (
     <>
- 
-
-    
       <div className="container py-4">
         <h3>Filtrele ve Sıralayın</h3>
-
-     
-        <div className="mb-3">
-          <label htmlFor="categoryFilter" className="form-label">Kategori</label>
-          <select
-            id="categoryFilter"
-            className="form-select"
-            value={categoryFilter}
-            onChange={(e) => setCategoryFilter(e.target.value)}
-          >
-            <option value="">Tümü</option>
-            <option value="electronics">Elektronik</option>
-            <option value="jewelery">Takı</option>
-            <option value="men's clothing">Erkek Giyim</option>
-            <option value="women's clothing">Kadın Giyim</option>
-          </select>
-        </div>
-
-  
-        <div className="mb-3">
-          <label htmlFor="priceFilter" className="form-label">Fiyat Aralığı</label>
-          <input
-            type="range"
-            className="form-range"
-            min="0"
-            max="1000"
-            value={priceFilter[1]}
-            onChange={(e) => setPriceFilter([0, e.target.value])}
-          />
-          <span>{priceFilter[0]} - {priceFilter[1]} $</span>
-        </div>
-
-    
-        <div className="mb-3">
-          <label htmlFor="searchQuery" className="form-label">Arama</label>
-          <input
-            type="text"
-            className="form-control"
-            id="searchQuery"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Ürün adı ile ara"
-          />
-        </div>
-
-  
-        <div className="mb-3">
-          <label htmlFor="sortBy" className="form-label">Sıralama</label>
-          <select
-            id="sortBy"
-            className="form-select"
-            value={sortBy}
-            onChange={(e) => setSortBy(e.target.value)}
-          >
-            <option value="default">Varsayılan</option>
-            <option value="price-asc">Fiyat (Artan)</option>
-            <option value="price-desc">Fiyat (Azalan)</option>
-            <option value="name-asc">İsim (A-Z)</option>
-            <option value="name-desc">İsim (Z-A)</option>
-          </select>
-        </div>
+   
       </div>
-
 
       <section className="featured-products py-5">
         <div className="container">
@@ -155,14 +94,21 @@ export default function Shop() {
                     <div className="card-body">
                       <h5 className="card-title">{product.title}</h5>
                       <p className="card-text">{product.description}</p>
-                      <p className="card-text"><strong>${product.price}</strong></p>
-                      <a href="#" className="btn btn-primary">Add to Cart</a>
+                      <p className="card-text">
+                        <strong>${product.price}</strong>
+                      </p>
+                      <button
+                        onClick={() => handleAddToCart(product)} 
+                        className="btn btn-primary"
+                      >
+                        Sepete Ekle
+                      </button>
                     </div>
                   </div>
                 </div>
               ))
             ) : (
-              <p>No products found.</p>  
+              <p>No products found.</p>
             )}
           </div>
         </div>
