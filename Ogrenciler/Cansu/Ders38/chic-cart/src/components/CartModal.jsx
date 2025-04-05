@@ -1,9 +1,9 @@
 "use client";
-import useCartStore from "@/store/useCartStore"; 
+import useCartStore from "@/store/useCartStore";  
 
 const CartModal = () => {
-  const cartItems = useCartStore((state) => state.cartItems);
-  const removeFromCart = useCartStore((state) => state.removeFromCart); 
+  const cartItems = useCartStore((state) => state.cartItems);  
+  const removeFromCart = useCartStore((state) => state.removeFromCart);  
 
   return (
     <div className="modal fade" id="cartModal" tabIndex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
@@ -36,4 +36,5 @@ const CartModal = () => {
 };
 
 export default CartModal;
+
 

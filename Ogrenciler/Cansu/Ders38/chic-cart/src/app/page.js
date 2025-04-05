@@ -1,8 +1,6 @@
 "use client"; 
-
 import { useRouter } from 'next/navigation';
 import useAuthStore from '@/store/authStore'; 
-import Footer from '@/components/Footer';
 import '../styles/main.scss';
 import { useEffect, useState } from 'react';
 
@@ -244,7 +242,6 @@ export default function Home() {
         </div>
       </section>
 
-      <Footer />
     </>
   );
 }

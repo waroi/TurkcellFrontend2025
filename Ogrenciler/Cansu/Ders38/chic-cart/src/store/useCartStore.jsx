@@ -1,4 +1,4 @@
-import { create } from 'zustand';
+import { create } from "zustand";
 
 const useCartStore = create((set) => ({
   cartItems: [], 
@@ -8,7 +8,7 @@ const useCartStore = create((set) => ({
       return {
         cartItems: state.cartItems.map(item =>
           item.id === product.id
-            ? { ...item, quantity: item.quantity + 1 }
+            ? { ...item, quantity: item.quantity + 1 } 
             : item
         ),
       };
@@ -25,5 +25,6 @@ const useCartStore = create((set) => ({
 }));
 
 export default useCartStore;
+
 
 

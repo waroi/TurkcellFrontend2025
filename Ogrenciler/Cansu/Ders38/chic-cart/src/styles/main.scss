@@ -7,7 +7,12 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
   }
+  
+  
   
 
   .hero {
@@ -109,12 +114,11 @@ body {
     }
   }
   
- 
+  
   footer {
-    background-color: $neutral-dark;
-    color: $neutral-light;
-    padding: 40px 0;
     text-align: center;
+    margin-top: auto;
+
   
     p {
       font-size: 1rem;
@@ -146,9 +150,7 @@ body {
       font-size: 1.125rem;
     }
   }
-  /* styles/main.scss */
 
-/* Aydınlık mod için varsayılan stiller */
 body {
     background-color: #fff;
     color: #000;
@@ -161,7 +163,12 @@ body {
   .navbar-dark {
     background-color: #343a40;
   }
-  
+  .footer-light{
+    background-color: #f8f9fa
+  }
+  .footer-dark {
+    background-color: #343a40;
+  }
   .card {
     background-color: #fff;
     border: 1px solid #ddd;
@@ -171,7 +178,7 @@ body {
     filter: brightness(80%);
   }
   
-  /* Karanlık mod */
+
   body.dark {
     background-color: #121212;
     color: #fff;

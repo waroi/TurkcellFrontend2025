@@ -1,10 +1,12 @@
 'use client';
-
 import { useEffect } from 'react';
 import useThemeStore from '@/store/useThemeStore';
 import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 import '../styles/main.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
 
 export default function RootLayout({ children }) {
   const { isDarkMode, toggleTheme } = useThemeStore();
@@ -25,6 +27,7 @@ export default function RootLayout({ children }) {
       <body>
         <Navbar toggleTheme={toggleTheme} />  
         {children}
+        <Footer/>
       </body>
     </html>
   );

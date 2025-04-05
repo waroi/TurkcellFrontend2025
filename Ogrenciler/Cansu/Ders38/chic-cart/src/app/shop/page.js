@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import Footer from "@/components/Footer";
-import useCartStore from "@/store/useCartStore";
+import useCartStore from "@/store/useCartStore";  
 
 export default function Shop() {
   const [products, setProducts] = useState([]);
@@ -12,7 +11,8 @@ export default function Shop() {
   const [searchQuery, setSearchQuery] = useState("");
   const [sortBy, setSortBy] = useState("default");
 
-  const addToCart = useCartStore((state) => state.addToCart); 
+
+  const addToCart = useCartStore((state) => state.addToCart);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -75,7 +75,63 @@ export default function Shop() {
     <>
       <div className="container py-4">
         <h3>Filtrele ve Sıralayın</h3>
-   
+
+        <div className="mb-3">
+          <label htmlFor="categoryFilter" className="form-label">Kategori</label>
+          <select
+            id="categoryFilter"
+            className="form-select"
+            value={categoryFilter}
+            onChange={(e) => setCategoryFilter(e.target.value)}
+          >
+            <option value="">Tümü</option>
+            <option value="electronics">Elektronik</option>
+            <option value="jewelery">Takı</option>
+            <option value="men's clothing">Erkek Giyim</option>
+            <option value="women's clothing">Kadın Giyim</option>
+          </select>
+        </div>
+
+        <div className="mb-3">
+          <label htmlFor="priceFilter" className="form-label">Fiyat Aralığı</label>
+          <input
+            type="range"
+            className="form-range"
+            min="0"
+            max="1000"
+            value={priceFilter[1]}
+            onChange={(e) => setPriceFilter([0, e.target.value])}
+          />
+          <span>{priceFilter[0]} - {priceFilter[1]} $</span>
+        </div>
+
+        <div className="mb-3">
+          <label htmlFor="searchQuery" className="form-label">Arama</label>
+          <input
+            type="text"
+            className="form-control"
+            id="searchQuery"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            placeholder="Ürün adı ile ara"
+          />
+        </div>
+
+        <div className="mb-3">
+          <label htmlFor="sortBy" className="form-label">Sıralama</label>
+          <select
+            id="sortBy"
+            className="form-select"
+            value={sortBy}
+            onChange={(e) => setSortBy(e.target.value)}
+          >
+            <option value="default">Varsayılan</option>
+            <option value="price-asc">Fiyat (Artan)</option>
+            <option value="price-desc">Fiyat (Azalan)</option>
+            <option value="name-asc">İsim (A-Z)</option>
+            <option value="name-desc">İsim (Z-A)</option>
+          </select>
+        </div>
       </div>
 
       <section className="featured-products py-5">
@@ -114,7 +170,7 @@ export default function Shop() {
         </div>
       </section>
 
-      <Footer />
+
     </>
   );
 }
