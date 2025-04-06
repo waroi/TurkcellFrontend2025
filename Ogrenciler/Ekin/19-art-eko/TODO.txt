@@ -1,10 +1,43 @@
-canvas fixed resolution ans scalefunc
-canvas panel
+Player Section
+ -layout & css
+ -position change
 
-layout
-player map order change transition!
-chat
-...
+
+Chat Section
+ -layout & css
+ -input send front
+
+
+Interval Section
+ -waiting for host layout & css
+ -$player is now drawing layout & css
+ -interval
+   -timeout skip layout & css
+   -the word was $word layout & css (+ correct guess count)
+ -top 3 layout & css
+
+
+firebase sync store
+
+connect store & DEBUGTEST
+
+GAME structure
+ -connect people
+ -start game by HOSTER
+ -game prepare (+ WORD LIST PREPERATION)
+ -turn timing
+ -phase changes
+ -end game & top 3
+
+
+ >>>
+
+ CHAT SCROLL STOP EVENT
+
+
+
+----------------
+
 
 
 

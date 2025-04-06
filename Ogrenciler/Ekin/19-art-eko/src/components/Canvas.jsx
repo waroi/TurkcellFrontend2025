@@ -159,7 +159,7 @@ export default function Canvas({ word, hinted = [] }) {
           </h3>
         </div>
         <button>
-          <i class="fa-solid fa-highlighter"></i> Hint
+          <i className="fa-solid fa-highlighter"></i> Hint
         </button>
       </div>
       <div>

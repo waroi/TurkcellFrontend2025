@@ -6,6 +6,11 @@ $secondary: #ff9100;
 $white: #fff;
 $black: #242431;
 $gray: #dfdfee;
+$green: #00a600;
+$purple: #8522a3;
+$subtle-secondary: #ff91004f;
+$subtle-green: #00a6004f;
+$subtle-purple: #8522a34f;
 
 $fast: 0.3s;
 
@@ -45,12 +50,12 @@ button {
   }
 }
 
-@mixin grid($columns, $rows: default, $gap: 5rem) {
+@mixin grid($columns, $rows: initial, $gap: 5rem) {
   display: grid;
   grid-template-columns: $columns;
   grid-template-rows: $rows;
   gap: $gap;
-  transition: grid-template-columns $fast, gap $fast;
+  transition: grid-template-columns $fast, grid-template-rows $fast, gap $fast;
 }
 
 @mixin panel() {
@@ -213,21 +218,21 @@ button {
       #canvas {
         background-color: $black;
         grid-row: span 2;
-        @include grid(1fr, auto 1fr, 1rem);
+        @include grid(1fr, auto 1fr, 1.5rem);
         transition: grid-template-columns 0.3s, gap 0.3s, background-color $fast;
-        padding: 1rem;
+        padding: 1.5rem;
 
         & > div:nth-child(1) {
           background-color: $secondary;
           border-radius: 1rem;
-          padding: 1rem;
-          @include grid(auto auto 1fr auto, 1fr, 1rem);
+          padding: 0.75rem;
+          @include grid(auto auto 1fr auto, 1fr, 1.5rem);
 
           & > div:nth-child(1) {
             @include grid(1fr 1fr 1fr 1fr 1fr 1fr 1fr, 1fr 1fr, 0.25rem);
             padding: 0.25rem;
             background-color: $white;
-            border-radius: 1rem;
+            border-radius: 0.75rem;
 
             button {
               width: 2rem;
@@ -383,9 +388,93 @@ button {
           background-color: $white;
           width: 100%;
           height: 100%;
-          max-height: calc(100vh - 19.75rem);
+          max-height: calc(100vh - 20.75rem);
           cursor: crosshair;
           border-radius: 1rem;
+        }
+      }
+
+      #chat {
+        @include grid(1fr, 1fr auto, 1.5rem);
+
+        & > div:nth-child(1) {
+          scroll-behavior: smooth;
+          height: calc((100vh - 15rem) / 2 - 7rem);
+          overflow-x: hidden;
+          overflow-y: scroll;
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+
+          p {
+            animation: chat $fast forwards;
+          }
+
+          .guess {
+            &-close {
+              border-radius: 1rem;
+              padding: 0.25rem 0.5rem;
+              color: $secondary;
+              background-color: $subtle-secondary;
+            }
+
+            &-correct {
+              border-radius: 1rem;
+              padding: 0.25rem 0.5rem;
+              color: $green;
+              background-color: $subtle-green;
+            }
+
+            &-correct-other {
+              border-radius: 1rem;
+              padding: 0.25rem 0.5rem;
+              color: $purple;
+              background-color: $subtle-purple;
+            }
+          }
+        }
+
+        & > div:nth-child(2) {
+          @include grid(1fr auto, 1fr, 1.5rem);
+          display: flex;
+
+          input {
+            border: 0.25rem solid $black;
+            font-size: 1.25rem;
+            padding: 0.25rem 1rem;
+            border-top-left-radius: 2rem;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 2rem;
+            width: 100%;
+            opacity: 0.5;
+            transition: opacity $fast;
+
+            &:focus {
+              opacity: 1;
+            }
+
+            &::-webkit-input-placeholder {
+              color: $black;
+            }
+          }
+
+          button {
+            cursor: pointer;
+            border: none;
+            background-color: $black;
+            color: $white;
+            font-size: 1.25rem;
+            padding: 0.25rem 1.5rem 0.25rem 1rem;
+            border-top-left-radius: 0;
+            border-top-right-radius: 2rem;
+            border-bottom-right-radius: 2rem;
+            border-bottom-left-radius: 0;
+
+            i {
+              transform: rotate(45deg);
+            }
+          }
         }
       }
     }
@@ -437,6 +526,18 @@ button {
   }
 
   to {
-    @include grid(2fr 4fr, 3fr 2fr);
+    @include grid(2fr 4fr, 1fr 1fr);
+  }
+}
+
+@keyframes chat {
+  from {
+    opacity: 0;
+    transform: translateX(2rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
