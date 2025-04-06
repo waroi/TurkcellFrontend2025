@@ -6,7 +6,17 @@
   --foreground: #000000;
 }
 
+* {
+  box-sizing: border-box;
+}
 
+body {
+  overflow-x: hidden; /* Body'de taşan tüm yatay içerikleri gizle */
+}
+
+section {
+  overflow: hidden; /* Yalnızca ilgili bölümde taşan içerikleri gizle */
+}
 
 @media (prefers-color-scheme: dark) {
   :root {

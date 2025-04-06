@@ -6,9 +6,14 @@ const useSideBarStore = create((set) => ({
   setIsSideClosed: (boolean) => {set({ isSideClosed: boolean })},
 }));
 
-const useTwinRadioStore = create((set) => ({
-  radioValue: "Süreli",
-  toggleRadioValue: () => {set((state) => ({ radioValue: state.radioValue === "Süreli" ? "Süresiz": "Süreli" }))},
+const useTwinRadioOneStore = create((set) => ({
+  twinRadioOneValue: "Süresiz",
+  toggleTwinRadioOneValue: () => {set((state) => ({ twinRadioOneValue: state.twinRadioOneValue === "Süreli" ? "Süresiz": "Süreli" }))},
+}));
+
+const useTwinRadioTwoStore = create((set) => ({
+  twinRadioTwoValue: "Süresiz",
+  toggleTwinRadioTwoValue: () => {set((state) => ({ twinRadioTwoValue: state.twinRadioTwoValue === "Süreli" ? "Süresiz": "Süreli" }))},
 }));
 
 const useCardOneRadioStore = create((set) => ({
@@ -21,4 +26,4 @@ const useCardTwoRadioStore = create((set) => ({
   toggleRadioValue: (index) => {set({ radioValue: index})},
 }));
 
-export {useSideBarStore, useTwinRadioStore, useCardOneRadioStore, useCardTwoRadioStore};
+export {useSideBarStore, useTwinRadioOneStore, useTwinRadioTwoStore, useCardOneRadioStore, useCardTwoRadioStore};

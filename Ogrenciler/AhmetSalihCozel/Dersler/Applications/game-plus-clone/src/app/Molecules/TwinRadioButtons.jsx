@@ -1,17 +1,19 @@
-import React from "react";
-import {useTwinRadioStore} from "../Store/ComCom"
+import React, { useEffect } from "react";
 
-function TwinRadioButtons() {
-  const {radioValue, toggleRadioValue} = useTwinRadioStore()
+function TwinRadioButtons({value,toggle}) {
+
+  useEffect(()=>{
+
+  },[value])
 
   return (
-    <fieldset aria-label="Choose a memory option">
+    <fieldset aria-label="Choose a memory option w-full">
       <div className="mt-4 flex justify-center items-center gap-5">
-        {["Süreli", "Süresiz"].map((option) => (
+        {["Süresiz", "Süreli"].map((option) => (
           <label
             key={option}
             className={`px-4 py-1 cursor-pointer bg-neutral-700 rounded-full ${
-              radioValue === option ? "border text-wihte border-lime-500" : "opacity-50"
+              value === option ? "border text-wihte border-lime-500" : "opacity-50"
             }`}
           >
             <input
@@ -19,8 +21,8 @@ function TwinRadioButtons() {
               name="memory-option"
               value={option}
               className="sr-only"
-              checked={radioValue === option}
-              onChange={() => toggleRadioValue()}
+              checked={value === option}
+              onChange={() => toggle()}
             />
             <span>{option}</span>
           </label>

@@ -9,14 +9,14 @@ import PackagesCarousel from "../Organisms/PackagesCarousel";
 
 export default function Home() {
   return (
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-2 overflow-hidden w-full">
         <Carousel/>
         <Gift/>
         <GfnGamePc/>
         <Information/>
         <GfnDesc/>
         <GameCatalog/>
-        <PackagesCarousel/>
+        <PackagesCarousel className="w-full"/>
       </div>
   );
 }
