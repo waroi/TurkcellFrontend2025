@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-export default function Canvas() {
+export default function Canvas({ word, hinted = [] }) {
   const [canvas, setCanvas] = useState();
   const [drawing, setDrawing] = useState(false);
 
@@ -8,15 +8,15 @@ export default function Canvas() {
 
   const canvasRef = useRef();
 
-  useEffect(() => {
-    setCanvas({
-      context: ((context) => {
-        context.strokeStyle = "black";
-        context.lineWidth = 1;
+  useEffect((timeout, resize) => {
+    timeout = setTimeout(calibrate, 500);
 
-        return context;
-      })(canvasRef.current.getContext("2d")),
-    });
+    resize = window.addEventListener("resize", calibrate);
+
+    return () => {
+      clearTimeout(timeout);
+      window.removeEventListener("resize", resize);
+    };
   }, []);
 
   useEffect(
@@ -54,17 +54,44 @@ export default function Canvas() {
     }
   }, [coordinate, drawing]);
 
-  const color = (color) =>
-    setCanvas((canvas) => {
-      canvas.context.strokeStyle = color;
-      return { ...canvas };
-    });
+  const calibrate = (size, data) => {
+    data = canvasRef.current
+      .getContext("2d")
+      .getImageData(0, 0, canvasRef.current.width, canvasRef.current.height);
+    size = canvasRef.current.getBoundingClientRect();
 
-  const size = (size) =>
+    canvasRef.current.width = size.width;
+    canvasRef.current.height = size.height;
+
+    setCanvas({
+      context: ((context) => {
+        context.strokeStyle = "#242431";
+        context.lineWidth = 5;
+        context.putImageData(data, 0, 0);
+
+        return context;
+      })(canvasRef.current.getContext("2d")),
+    });
+  };
+
+  const color = (event, selected) => {
+    console.log(
+      event.target.parentElement.parentElement.parentElement.querySelector(
+        ".selected"
+      )
+    );
+
+    selected = event.target.parentElement.parentElement.parentElement
+      .querySelector(".selected")
+      ?.classList.remove("selected");
+
+    event.target.classList.toggle("selected");
+
     setCanvas((canvas) => {
-      canvas.context.lineWidth = size;
+      canvas.context.strokeStyle = event.target.dataset.color;
       return { ...canvas };
     });
+  };
 
   const clear = () =>
     canvas.context.clearRect(
@@ -77,25 +104,67 @@ export default function Canvas() {
   return (
     <div id="canvas">
       <div>
-        <button
-          onClick={() => {
-            let x = prompt("COLOR");
-            color(x);
-          }}
-        >
-          SET COLOR
+        <div>
+          <button
+            className="selected"
+            onClick={color}
+            data-color="#242431"
+          ></button>
+          <button onClick={color} data-color="#ff1b1b"></button>
+          <button onClick={color} data-color="#ff9100"></button>
+          <button onClick={color} data-color="#ffd100"></button>
+          <button onClick={color} data-color="#00a600"></button>
+          <button onClick={color} data-color="#2a30cc"></button>
+          <button onClick={color} data-color="#8522a3"></button>
+          <button onClick={color} data-color="#7e7e97"></button>
+          <button onClick={color} data-color="#ff97d2"></button>
+          <button onClick={color} data-color="#a25200"></button>
+          <button onClick={color} data-color="#ffa878"></button>
+          <button onClick={color} data-color="#81ff6b"></button>
+          <button onClick={color} data-color="#4af2f7"></button>
+          <button onClick={color} data-color="#0095f8"></button>
+        </div>
+        <div>
+          <div>
+            <button onClick={color} data-color="#fff">
+              <i className="fa-solid fa-eraser"></i> Erase
+            </button>
+            <button onClick={clear}>
+              <i className="fa-solid fa-file"></i> Clear
+            </button>
+          </div>
+          <input
+            type="range"
+            min="1"
+            max="15"
+            defaultValue="5"
+            onChange={(event) =>
+              setCanvas((canvas) => {
+                canvas.context.lineWidth = event.target.value;
+                return { ...canvas };
+              })
+            }
+          />
+        </div>
+        <div>
+          <h3>
+            {word.split("").map((character, index) => (
+              <span
+                key={index}
+                className={hinted.includes(index) ? "hinted" : ""}
+              >
+                {character}
+              </span>
+            ))}
+          </h3>
+        </div>
+        <button>
+          <i class="fa-solid fa-highlighter"></i> Hint
         </button>
-        <button
-          onClick={() => {
-            let x = prompt("SIZE");
-            size(x);
-          }}
-        >
-          SET SIZE
-        </button>
-        <button onClick={clear}>CLEAR</button>
       </div>
-      <canvas ref={canvasRef}></canvas>
+      <div>
+        <canvas ref={canvasRef}></canvas>
+      </div>
     </div>
   );
 }

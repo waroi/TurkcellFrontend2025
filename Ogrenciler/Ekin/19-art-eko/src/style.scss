@@ -45,11 +45,11 @@ button {
   }
 }
 
-@mixin grid($columns, $rows: default) {
+@mixin grid($columns, $rows: default, $gap: 5rem) {
   display: grid;
   grid-template-columns: $columns;
   grid-template-rows: $rows;
-  gap: 5rem;
+  gap: $gap;
   transition: grid-template-columns $fast, gap $fast;
 }
 
@@ -188,7 +188,6 @@ button {
           border-radius: 2rem;
           border: 0.5rem solid $black;
           background-color: $secondary;
-          color: $black;
           font-size: 1.5rem;
           padding: 0.75rem 2rem 0.5rem;
           text-align: center;
@@ -212,12 +211,181 @@ button {
       }
 
       #canvas {
+        background-color: $black;
         grid-row: span 2;
+        @include grid(1fr, auto 1fr, 1rem);
+        transition: grid-template-columns 0.3s, gap 0.3s, background-color $fast;
+        padding: 1rem;
+
+        & > div:nth-child(1) {
+          background-color: $secondary;
+          border-radius: 1rem;
+          padding: 1rem;
+          @include grid(auto auto 1fr auto, 1fr, 1rem);
+
+          & > div:nth-child(1) {
+            @include grid(1fr 1fr 1fr 1fr 1fr 1fr 1fr, 1fr 1fr, 0.25rem);
+            padding: 0.25rem;
+            background-color: $white;
+            border-radius: 1rem;
+
+            button {
+              width: 2rem;
+              height: 2rem;
+              border: 0.25rem solid transparent;
+              border-radius: 100%;
+              cursor: grab;
+              transition: border-color $fast;
+
+              &:active {
+                cursor: grabbing;
+              }
+
+              &.selected {
+                border-color: $black;
+
+                &[data-color="\#242431"] {
+                  border-color: $secondary;
+                }
+              }
+
+              @each $color
+                in (
+                  #242431,
+                  #ff1b1b,
+                  #ff9100,
+                  #ffd100,
+                  #00a600,
+                  #2a30cc,
+                  #8522a3,
+                  #7e7e97,
+                  #ff97d2,
+                  #a25200,
+                  #ffa878,
+                  #81ff6b,
+                  #4af2f7,
+                  #0095f8
+                )
+              {
+                &[data-color="#{$color}"] {
+                  background-color: $color;
+                }
+              }
+            }
+          }
+
+          & > div:nth-child(2) {
+            @include grid(1fr, 1fr 1fr, 0);
+
+            div {
+              @include center();
+
+              button {
+                font-size: 1rem;
+                border: none;
+                background-color: $white;
+                padding: 0.25rem 1rem 0;
+                border-radius: 2rem;
+                cursor: pointer;
+                transition: background-color $fast, color $fast,
+                  border-color $fast;
+                border: 0.25rem solid transparent;
+
+                &:nth-child(1) {
+                  margin-right: 1rem;
+
+                  &.selected {
+                    border-color: $black;
+                  }
+                }
+
+                &:hover {
+                  background-color: $primary;
+                  color: $white;
+                }
+
+                &:active {
+                  border-color: $black;
+                }
+              }
+            }
+
+            input {
+              width: 100%;
+              margin: auto;
+              -webkit-appearance: none;
+              appearance: none;
+              height: 0.5rem;
+              background: $white;
+              border-radius: 1rem;
+
+              &::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                appearance: none;
+                width: 1rem;
+                height: 1rem;
+                border-radius: 100%;
+                background: $black;
+                cursor: nw-resize;
+              }
+            }
+          }
+
+          & > div:nth-child(3) {
+            @include center();
+
+            h3 {
+              font-size: 2.5rem;
+              font-weight: 500;
+              text-transform: uppercase;
+              display: flex;
+              gap: 0.25rem;
+
+              span {
+                opacity: 0.5;
+                border-bottom: 0.25rem solid $black;
+                transition: opacity $fast;
+
+                &.hinted {
+                  opacity: 1;
+                }
+              }
+            }
+          }
+
+          & > button:nth-child(4) {
+            font-size: 1rem;
+            background-color: $white;
+            height: 100%;
+            border-radius: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0.25rem 1rem;
+            border: none;
+            cursor: pointer;
+            transition: background-color $fast, color $fast;
+
+            i {
+              font-size: 1.5rem;
+              margin-bottom: 0.5rem;
+            }
+
+            &:hover {
+              background-color: $primary;
+              color: $white;
+            }
+          }
+        }
 
         canvas {
+          background-color: $white;
           width: 100%;
           height: 100%;
-          box-shadow: 0 0 5px magenta;
+          max-height: calc(100vh - 19.75rem);
+          cursor: crosshair;
+          border-radius: 1rem;
         }
       }
     }
