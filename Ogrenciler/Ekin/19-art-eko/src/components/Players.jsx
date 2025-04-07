@@ -1,15 +1,18 @@
 import { useEffect, useState } from "react";
 
 export default function Players({ players }) {
-  const [placement, setPlacement] = useState([]);
+  const [placement, setPlacement] = useState();
   const [profiles, setProfiles] = useState({});
 
   useEffect(() => {
-    setPlacement([
-      ...players
+    setPlacement(
+      players
         .sort((current, next) => next.score - current.score)
-        .map((player, placement) => ({ ...player, placement })),
-    ]);
+        .reduce(
+          (placement, player, index) => ({ ...placement, [player.id]: index }),
+          {}
+        )
+    );
 
     players.map((player) =>
       setProfiles((profiles) => {
@@ -22,29 +25,38 @@ export default function Players({ players }) {
     );
   }, [players]);
 
-  return (
-    <div id="players">
-      <div>
-        {placement.map((player) => (
-          <div key={player.id} style={{ top: player.placement * 5.75 + "rem" }}>
-            <span>{player.placement + 1}</span>
-            <img src={profiles[player.id]} />
-            <span>
-              {player.name}
-              {player.placement < 3 ? (
-                <i
-                  class={`fa-solid fa-medal placement-${player.placement + 1}`}
-                ></i>
-              ) : (
-                ""
-              )}
-            </span>
-            <span>
-              <i class="fa-solid fa-palette"></i> {player.score}
-            </span>
-          </div>
-        ))}
+  if (players && placement)
+    return (
+      <div id="players">
+        <div>
+          {players.map((player) => (
+            <div
+              key={player.id}
+              style={{
+                top: placement[player.id] * 5.75 + "rem",
+                zIndex: 100 - placement[player.id],
+              }}
+            >
+              <span>{placement[player.id] + 1}</span>
+              <img src={profiles[player.id]} />
+              <span>
+                {player.name}
+                {placement[player.id] < 3 ? (
+                  <i
+                    className={`fa-solid fa-medal placement-${
+                      placement[player.id] + 1
+                    }`}
+                  ></i>
+                ) : (
+                  ""
+                )}
+              </span>
+              <span>
+                <i className="fa-solid fa-palette"></i> {player.score}
+              </span>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
-  );
+    );
 }

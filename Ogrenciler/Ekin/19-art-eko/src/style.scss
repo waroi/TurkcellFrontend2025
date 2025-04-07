@@ -411,7 +411,8 @@ button {
             align-items: center;
             position: absolute;
             width: calc(100% - 1.5rem);
-            transition: top 4s;
+            background-color: $white;
+            transition: top $fast;
 
             & > span:nth-child(1) {
               width: 0.75rem;
@@ -422,17 +423,23 @@ button {
               height: 4rem;
               border-radius: 100%;
             }
-            & > span:nth-child(3) i.placement {
-              &-1 {
-                color: #ffd100;
-              }
 
-              &-2 {
-                color: #7e7e97;
-              }
+            & > span:nth-child(3) i {
+              margin-left: 1rem;
+              font-size: 2rem;
 
-              &-3 {
-                color: #ffa878;
+              &.placement {
+                &-1 {
+                  color: #ffd100;
+                }
+
+                &-2 {
+                  color: #7e7e97;
+                }
+
+                &-3 {
+                  color: #ffa878;
+                }
               }
             }
 
@@ -528,6 +535,53 @@ button {
             i {
               transform: rotate(45deg);
             }
+          }
+        }
+      }
+
+      #screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        border-radius: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: #242431cf;
+        z-index: 100;
+        clip-path: circle(0);
+        transition: clip-path $fast;
+        color: $white;
+        @include center();
+        flex-direction: column;
+        font-size: 3rem;
+        gap: 3rem;
+
+        &.active {
+          clip-path: circle(75%);
+        }
+
+        & > i {
+          font-size: 5rem;
+        }
+
+        button {
+          cursor: pointer;
+          border-radius: 2rem;
+          border: 0.5rem solid $black;
+          background-color: $secondary;
+          font-size: 1.5rem;
+          padding: 0.75rem 2rem 0.5rem;
+          text-align: center;
+          transition: transform $fast, background-color $fast, opacity $fast;
+          @include center();
+
+          &:hover {
+            transform: scale(1.1);
+          }
+
+          i {
+            margin-right: 1rem;
+            transform: translateY(-0.25rem);
           }
         }
       }
