@@ -6,17 +6,19 @@ import Information from "../Organisms/Information";
 import GfnDesc from "../Organisms/GfnDesc";
 import GameCatalog from "../Organisms/GameCatalog/GameCatalog";
 import PackagesCarousel from "../Organisms/PackagesCarousel";
+import GiftingGeForce from "../Organisms/GiftingGeForce";
 
 export default function Home() {
   return (
-      <div className="flex flex-col gap-2 overflow-hidden w-full">
+      <div className="flex flex-col gap-2 overflow-hidden">
         <Carousel/>
         <Gift/>
         <GfnGamePc/>
         <Information/>
         <GfnDesc/>
         <GameCatalog/>
-        <PackagesCarousel className="w-full"/>
+        <PackagesCarousel/>
+        <GiftingGeForce/>
       </div>
   );
 }

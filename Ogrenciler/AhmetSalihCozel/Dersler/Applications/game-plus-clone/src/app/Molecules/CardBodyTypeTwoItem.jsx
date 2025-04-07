@@ -5,8 +5,8 @@ function CardBodyTypeTwoItem({ dataBody }) {
   console.log(dataBody.dataType);
   if (dataBody.dataType === "geforce") {
     return (
-      <div className="flex flex-col items-center justify-center border border-lime-500 bg-dark h-full">
-        <Typography variant="h2" className="text-lime-500">
+      <div className="flex flex-col items-center justify-center border border-lime-500 bg-dark h-full p-5">
+        <Typography variant="h1" className="text-lime-500">
           {dataBody.header}
         </Typography>
         <Typography variant="p" className="text-center">{dataBody.desc}</Typography>
@@ -14,7 +14,7 @@ function CardBodyTypeTwoItem({ dataBody }) {
     );
   } else {
     return (
-      <div className="flex flex-col items-center justify-center border border-yellow-500 bg-dark h-full">
+      <div className="flex flex-col items-center justify-center border border-yellow-500 bg-dark h-full p-5">
         <Typography variant="h2">
           {dataBody.timeExpires}
         </Typography>
