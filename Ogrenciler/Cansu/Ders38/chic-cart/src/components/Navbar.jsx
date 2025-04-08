@@ -25,7 +25,7 @@ const Navbar = () => {
     const categoryDropdownRef = useRef(null);
     const searchRef = useRef(null);
 
-    // Sample categories data
+
     const categories = [
         { id: 1, name: 'Elektronik', icon: 'laptop', path: '/category/electronics' },
         { id: 2, name: 'Moda', icon: 'tshirt', path: '/category/fashion' },
@@ -39,7 +39,7 @@ const Navbar = () => {
         { id: 10, name: 'Oto Aksesuar', icon: 'car', path: '/category/auto' }
     ];
 
-    // Sample campaigns data
+
     const campaigns = [
         { id: 1, name: 'Yaz İndirimi', path: '/campaigns/summer-sale', discount: '50%' },
         { id: 2, name: '2 Al 1 Öde', path: '/campaigns/buy-2-get-1', discount: '33%' },
@@ -52,7 +52,7 @@ const Navbar = () => {
             setUser(JSON.parse(userData));
         }
 
-        // Close dropdowns when clicking outside
+ 
         const handleClickOutside = (event) => {
             if (userDropdownRef.current && !userDropdownRef.current.contains(event.target)) {
                 setIsUserDropdownOpen(false);
@@ -99,9 +99,9 @@ const Navbar = () => {
         
         setIsSearching(true);
         
-        // Simulate API call for search results
+   
         setTimeout(() => {
-            // Sample search results - in a real app, this would come from an API
+     
             const results = [
                 { id: 1, name: 'iPhone 13 Pro', price: '32.999 TL', image: '/images/products/iphone.jpg', category: 'Elektronik' },
                 { id: 2, name: 'Samsung Galaxy S21', price: '24.999 TL', image: '/images/products/samsung.jpg', category: 'Elektronik' },
@@ -140,7 +140,7 @@ const Navbar = () => {
 
     return (
         <>
-            {/* Top Bar - Announcements, Contact, etc. */}
+        
             <div className={`py-2 ${isDarkMode ? 'bg-dark text-white' : 'bg-light text-dark'} border-bottom`}>
                 <div className="container">
                     <div className="row align-items-center">
@@ -151,7 +151,7 @@ const Navbar = () => {
                         </div>
                         <div className="col-md-6 text-end">
                             <small className="me-3">
-                                <i className="fas fa-phone-alt me-1"></i> 0850 123 45 67
+                                <i className="fas fa-phone-alt me-1"></i> 0212 345 67 89
                             </small>
                             <small>
                                 <i className="fas fa-envelope me-1"></i> destek@chiccart.com
@@ -161,15 +161,15 @@ const Navbar = () => {
                 </div>
             </div>
 
-            {/* Main Navbar */}
+         
             <nav className={`navbar navbar-expand-lg ${isDarkMode ? 'navbar-dark bg-dark' : 'navbar-light bg-light'} sticky-top shadow-sm`}>
                 <div className="container">
-                    {/* Logo */}
-                    <Link href="/" className="navbar-brand fw-bold">
+                 
+                    <Link href="/home" className="navbar-brand fw-bold">
                         <span className="text-primary">Chic</span>Cart
                     </Link>
 
-                    {/* Search Bar - Desktop */}
+                  
                     <div className="d-none d-lg-flex flex-grow-1 mx-4 position-relative" ref={searchRef}>
                         <form className="input-group" onSubmit={handleSearch}>
                             <input 
@@ -185,7 +185,7 @@ const Navbar = () => {
                             </button>
                         </form>
                         
-                        {/* Search Results Dropdown */}
+                    
                         {searchResults.length > 0 && (
                             <div className={`position-absolute w-100 mt-1 ${isDarkMode ? 'bg-dark text-white' : 'bg-white text-dark'} shadow-lg rounded-3 z-3`} style={{ top: '100%' }}>
                                 <div className="p-2">
@@ -215,7 +215,7 @@ const Navbar = () => {
                             </div>
                         )}
                         
-                        {/* Loading Indicator */}
+                     
                         {isSearching && (
                             <div className={`position-absolute w-100 mt-1 ${isDarkMode ? 'bg-dark text-white' : 'bg-white text-dark'} shadow-lg rounded-3 z-3 p-3`} style={{ top: '100%' }}>
                                 <div className="d-flex justify-content-center">
@@ -228,9 +228,9 @@ const Navbar = () => {
                         )}
                     </div>
 
-                    {/* Desktop Menu */}
+                 
                     <div className="d-none d-lg-flex align-items-center">
-                        {/* Favorites */}
+                   
                         <Link href="/favorites" className="nav-link me-3 position-relative">
                             <i className="far fa-heart"></i>
                             <span className="ms-1 d-none d-md-inline">Favorilerim</span>
@@ -241,7 +241,7 @@ const Navbar = () => {
                             )}
                         </Link>
 
-                        {/* Cart */}
+              
                         <button
                             className="btn btn-outline-primary position-relative me-3"
                             data-bs-toggle="modal"
@@ -256,7 +256,7 @@ const Navbar = () => {
                             )}
                         </button>
 
-                        {/* Theme Toggle */}
+                     
                         <button 
                             onClick={toggleTheme} 
                             className={`btn btn-sm ${isDarkMode ? 'btn-light' : 'btn-dark'} me-3`}
@@ -265,7 +265,7 @@ const Navbar = () => {
                             {isDarkMode ? '☀️' : '🌙'}
                         </button>
 
-                        {/* User Menu */}
+                  
                         <div className="dropdown" ref={userDropdownRef}>
                             {user ? (
                                 <>
@@ -316,7 +316,7 @@ const Navbar = () => {
                         </div>
                     </div>
 
-                    {/* Mobile Menu Button */}
+               
                     <button 
                         className="navbar-toggler d-lg-none" 
                         type="button" 
@@ -328,7 +328,6 @@ const Navbar = () => {
                 </div>
             </nav>
 
-            {/* Category Bar */}
             <div className={`py-2 ${isDarkMode ? 'bg-dark text-white' : 'bg-light text-dark'} border-bottom`}>
                 <div className="container">
                     <div className="d-none d-lg-flex justify-content-between">
@@ -393,10 +392,9 @@ const Navbar = () => {
                 </div>
             </div>
 
-            {/* Mobile Menu */}
             <div className={`collapse navbar-collapse ${isMenuOpen ? 'show' : ''} bg-white position-absolute w-100 z-3 shadow-lg`} style={{ top: '100%' }}>
                 <div className="container py-3">
-                    {/* Mobile Search */}
+                 
                     <div className="d-lg-none mb-3 position-relative" ref={searchRef}>
                         <form className="input-group" onSubmit={handleSearch}>
                             <input 
@@ -412,7 +410,7 @@ const Navbar = () => {
                             </button>
                         </form>
                         
-                        {/* Search Results Dropdown for Mobile */}
+                      
                         {searchResults.length > 0 && (
                             <div className={`position-absolute w-100 mt-1 ${isDarkMode ? 'bg-dark text-white' : 'bg-white text-dark'} shadow-lg rounded-3 z-3`} style={{ top: '100%' }}>
                                 <div className="p-2">
@@ -441,8 +439,7 @@ const Navbar = () => {
                                 </div>
                             </div>
                         )}
-                        
-                        {/* Loading Indicator for Mobile */}
+                      
                         {isSearching && (
                             <div className={`position-absolute w-100 mt-1 ${isDarkMode ? 'bg-dark text-white' : 'bg-white text-dark'} shadow-lg rounded-3 z-3 p-3`} style={{ top: '100%' }}>
                                 <div className="d-flex justify-content-center">
@@ -455,7 +452,7 @@ const Navbar = () => {
                         )}
                     </div>
 
-                    {/* Mobile Categories */}
+                 
                     <div className="d-lg-none mb-3">
                         <h6 className="fw-bold mb-2">Kategoriler</h6>
                         <div className="row g-2">
@@ -473,7 +470,7 @@ const Navbar = () => {
                         </div>
                     </div>
 
-                    {/* Mobile Campaigns */}
+                
                     <div className="d-lg-none mb-3">
                         <h6 className="fw-bold mb-2">Kampanyalar</h6>
                         <div className="row g-2">
@@ -492,7 +489,7 @@ const Navbar = () => {
                         </div>
                     </div>
 
-                    {/* Mobile Menu Items */}
+               
                     <ul className="navbar-nav">
                         <li className="nav-item">
                             <Link href="/" className="nav-link py-2" onClick={() => setIsMenuOpen(false)}>
