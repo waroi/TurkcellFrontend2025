@@ -5,7 +5,6 @@ import { useRouter } from 'next/navigation';
 import useThemeStore from '@/store/useThemeStore';
 import useAuthStore from '@/store/useAuthStore';
 import useCartStore from '@/store/useCartStore';
-// Navbar.jsx veya ilgili dosya
 import useFavoritesStore from '@/store/useFavoritesStore';
 
 
@@ -165,7 +164,7 @@ const Navbar = () => {
             <nav className={`navbar navbar-expand-lg ${isDarkMode ? 'navbar-dark bg-dark' : 'navbar-light bg-light'} sticky-top shadow-sm`}>
                 <div className="container">
                  
-                    <Link href="/home" className="navbar-brand fw-bold">
+                    <Link href="/" className="navbar-brand fw-bold">
                         <span className="text-primary">Chic</span>Cart
                     </Link>
 
@@ -241,12 +240,8 @@ const Navbar = () => {
                             )}
                         </Link>
 
-              
-                        <button
-                            className="btn btn-outline-primary position-relative me-3"
-                            data-bs-toggle="modal"
-                            data-bs-target="#cartModal"
-                        >
+                        
+                        <Link href="/cart" className="btn btn-primary position-relative me-3">
                             <i className="fas fa-shopping-cart"></i>
                             <span className="ms-1 d-none d-md-inline">Sepetim</span>
                             {cartItemsCount > 0 && (
@@ -254,7 +249,8 @@ const Navbar = () => {
                                     {cartItemsCount}
                                 </span>
                             )}
-                        </button>
+                        </Link>
+
 
                      
                         <button 
