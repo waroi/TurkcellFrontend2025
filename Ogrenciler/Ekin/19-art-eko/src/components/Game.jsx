@@ -13,6 +13,7 @@ export default function Game() {
   const navigate = useNavigate();
   const { set } = useGameStore();
   const player = JSON.parse(localStorage.getItem("player"))?.id;
+  const name = JSON.parse(localStorage.getItem("player"))?.name;
 
   useEffect((interval) => {
     if (!player) navigate("/");
@@ -28,7 +29,7 @@ export default function Game() {
     <>
       <Players players={[]} />
       <Canvas word="geçenşağı" player={player} />
-      <Chat />
+      <Chat player={player} name={name} />
       <Screen />
     </>
   );

@@ -10,6 +10,7 @@ import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
 
 import words from "@/util/words";
 import { shuffle } from "@/util/random";
+import { minimumEditDistance } from "@/util/levenshtein";
 
 initializeApp({
   apiKey: "AIzaSyBbuG1mYgyN4F3XUpk1ISOfFrg2djgSanY",
@@ -88,5 +89,21 @@ export const hint = () =>
         hint.replace(new RegExp(`^(.{${index}}).`), `$1${word[index]}`)
       );
   });
+
+export const guess = (player, name, guess) => {
+  get("turns/0/word").then((word, similarity, id) => {
+    similarity = minimumEditDistance(guess.toLocaleLowerCase("tr-TR"), word);
+
+    id = `${new Date().getTime()}:${player}`;
+
+    if (similarity == 0) {
+      set(`chat/${id}`, { type: "correct", player, name });
+    } else if (similarity <= 3) {
+      set(`chat/${id}`, { type: "close", player });
+    } else {
+      set(`chat/${id}`, { type: "message", name, content: guess });
+    }
+  });
+};
 
 //! REMOVE 15SEC CONTROL ON TOP TO CREATE CONTROL FUNCTION
