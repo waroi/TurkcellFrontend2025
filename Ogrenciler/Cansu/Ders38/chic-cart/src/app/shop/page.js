@@ -41,7 +41,7 @@ export default function Shop() {
       setProducts(data);
       setFilteredProducts(data);
       
-      // Initialize quantities for all products
+
       const initialQuantities = {};
       data.forEach(product => {
         initialQuantities[product.id] = 1;
@@ -57,17 +57,17 @@ export default function Shop() {
   const filterAndSortProducts = () => {
     let filtered = [...products];
 
-    // Apply category filter
+  
     if (selectedCategory) {
       filtered = filtered.filter(product => product.category === selectedCategory);
     }
 
-    // Apply price range filter
+ 
     filtered = filtered.filter(product => 
       product.price >= priceRange.min && product.price <= priceRange.max
     );
 
-    // Apply search filter
+ 
     if (searchQuery) {
       const query = searchQuery.toLowerCase();
       filtered = filtered.filter(product =>
@@ -76,7 +76,7 @@ export default function Shop() {
       );
     }
 
-    // Apply sorting
+
     switch (sortBy) {
       case 'price-asc':
         filtered.sort((a, b) => a.price - b.price);
@@ -118,7 +118,7 @@ export default function Shop() {
     try {
       setAddingToCart(prev => ({ ...prev, [product.id]: true }));
       
-      // Add the product to cart with the selected quantity
+     
       const quantity = productQuantities[product.id] || 1;
       for (let i = 0; i < quantity; i++) {
         addToCart(product);
@@ -213,14 +213,14 @@ export default function Shop() {
       )}
 
       <div className="row">
-        {/* Filters Sidebar */}
+ 
         <div className="col-lg-3 col-md-4">
           <div className="card mb-4 shadow-sm sticky-top" style={{ top: '20px' }}>
             <div className="card-header bg-primary text-white">
               <h5 className="card-title mb-0">Filtreler</h5>
             </div>
             <div className="card-body">
-              {/* Category Filter */}
+        
               <div className="mb-3">
                 <label className="form-label fw-bold">Kategori</label>
                 <select 
@@ -237,7 +237,6 @@ export default function Shop() {
                 </select>
               </div>
 
-              {/* Price Range Filter */}
               <div className="mb-3">
                 <label className="form-label fw-bold">Fiyat Aralığı</label>
                 <div className="d-flex gap-2">
@@ -258,7 +257,7 @@ export default function Shop() {
                 </div>
               </div>
 
-              {/* Search Filter */}
+         
               <div className="mb-3">
                 <label className="form-label fw-bold">Arama</label>
                 <div className="input-group">
@@ -275,7 +274,7 @@ export default function Shop() {
                 </div>
               </div>
 
-              {/* Sort Filter */}
+         
               <div className="mb-3">
                 <label className="form-label fw-bold">Sıralama</label>
                 <select 
@@ -291,7 +290,7 @@ export default function Shop() {
                 </select>
               </div>
               
-              {/* Clear Filters Button */}
+           
               <button 
                 className="btn btn-outline-primary w-100"
                 onClick={() => {
@@ -307,7 +306,7 @@ export default function Shop() {
           </div>
         </div>
 
-        {/* Products Grid */}
+
         <div className="col-lg-9 col-md-8">
           {filteredProducts.length === 0 ? (
             <div className="alert alert-info">
@@ -362,7 +361,7 @@ export default function Shop() {
                           <span className="badge bg-success">Stokta</span>
                         </div>
                         
-                        {/* Quantity Controls */}
+                     
                         <div className="d-flex align-items-center mb-3">
                           <label className="form-label me-2 mb-0">Adet:</label>
                           <div className="input-group input-group-sm" style={{ width: '120px' }}>

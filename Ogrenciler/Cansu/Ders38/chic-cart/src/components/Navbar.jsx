@@ -354,29 +354,12 @@ const Navbar = () => {
                                 </div>
                             )}
                         </div>
+                     
                         <div className="d-flex align-items-center">
-                            <div className="dropdown">
-                                <button 
-                                    className="btn btn-link dropdown-toggle" 
-                                    type="button" 
-                                    id="campaignDropdown" 
-                                    data-bs-toggle="dropdown" 
-                                    aria-expanded="false"
-                                >
-                                    <i className="fas fa-percent me-1"></i> Kampanyalar
-                                </button>
-                                <ul className="dropdown-menu" aria-labelledby="campaignDropdown">
-                                    {campaigns.map(campaign => (
-                                        <li key={campaign.id}>
-                                            <Link href={campaign.path} className="dropdown-item">
-                                                {campaign.name} <span className="badge bg-danger ms-1">{campaign.discount}</span>
-                                            </Link>
-                                        </li>
-                                    ))}
-                                    <li><hr className="dropdown-divider" /></li>
-                                    <li><Link href="/campaigns" className="dropdown-item">Tüm Kampanyalar</Link></li>
-                                </ul>
-                            </div>
+                            <Link href="/campain" className="btn btn-link">
+                                <i className="fas fa-percent me-1"></i> Kampanyalar
+                            </Link>
+
                             <Link href="/new-arrivals" className="text-decoration-none me-3">
                                 <i className="fas fa-star me-1"></i> Yeni Gelenler
                             </Link>

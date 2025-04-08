@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 
 const useAuthStore = create((set, get) => ({
-  user: typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('user')) || null : null,
+  user: null,
   
   setUser: (user) => {
     if (typeof window !== 'undefined' && user) {
@@ -19,7 +19,21 @@ const useAuthStore = create((set, get) => ({
   
   isAuthenticated: () => {
     return get().user !== null;
+  },
+
+  initialize: () => {
+    if (typeof window !== 'undefined') {
+      const storedUser = localStorage.getItem('user');
+      if (storedUser) {
+        set({ user: JSON.parse(storedUser) });
+      }
+    }
   }
 }));
+
+
+if (typeof window !== 'undefined') {
+  useAuthStore.getState().initialize();
+}
 
 export default useAuthStore;
