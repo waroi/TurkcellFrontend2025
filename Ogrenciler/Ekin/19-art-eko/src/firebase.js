@@ -53,13 +53,13 @@ export const play = ({ id, name, profile }) =>
 
 export const startGame = () => {
   get("players")
-    .then((players, now = new Date(), randomWords = shuffle([...words])) =>
+    .then((players, now = new Date(), random = shuffle([...words])) =>
       Object.keys(players)
         .filter((id) => now - players[id].online < 15000)
         .map((player, index) => ({
           player,
-          word: randomWords[index],
-          guessers: [],
+          word: random[index],
+          hint: "?".repeat(random[index].length),
         }))
     )
     .then((turns) => set("turns", turns))
@@ -69,3 +69,24 @@ export const startGame = () => {
 export const online = (id) => set(`players/${id}/online`, new Date().getTime());
 
 export const image = (canvas) => set("canvas", canvas);
+
+export const hint = () =>
+  get("turns/0/").then(({ word, hint }, index) => {
+    index = shuffle(
+      hint
+        .split("")
+        .reduce(
+          (possibles, character, index) =>
+            character == "?" ? [...possibles, index] : possibles,
+          []
+        )
+    )[0];
+
+    index >= 0 &&
+      set(
+        "turns/0/hint",
+        hint.replace(new RegExp(`^(.{${index}}).`), `$1${word[index]}`)
+      );
+  });
+
+//! REMOVE 15SEC CONTROL ON TOP TO CREATE CONTROL FUNCTION

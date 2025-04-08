@@ -11,7 +11,7 @@ import { sync, online } from "@/firebase";
 
 export default function Game() {
   const navigate = useNavigate();
-  const { phase, set, turns } = useGameStore();
+  const { set } = useGameStore();
   const player = JSON.parse(localStorage.getItem("player"))?.id;
 
   useEffect((interval) => {
@@ -23,17 +23,6 @@ export default function Game() {
 
     return () => clearInterval(interval);
   }, []);
-
-  useEffect(() => {
-    if (!phase) return;
-
-    console.log(phase);
-  }, [phase]);
-
-  const DEBUG = useGameStore();
-  useEffect(() => {
-    // console.log(DEBUG);
-  }, [DEBUG]);
 
   return (
     <>

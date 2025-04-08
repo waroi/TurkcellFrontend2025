@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import Loading from "#/Loading";
 
 import useGameStore from "@/store/gameStore";
-import { image } from "@/firebase";
+import { image, hint } from "@/firebase";
 
 export default function Canvas({ player, hinted = [] }) {
   const gameStore = useGameStore();
@@ -180,18 +180,19 @@ export default function Canvas({ player, hinted = [] }) {
             </div>
             <div className="word">
               <h3>
-                {console.log(gameStore.turns)}
                 {gameStore.turns[0].word.split("").map((character, index) => (
                   <span
                     key={index}
-                    className={hinted.includes(index) ? "hinted" : ""}
+                    className={
+                      gameStore.turns[0].hint[index] != "?" ? "hinted" : ""
+                    }
                   >
                     {character}
                   </span>
                 ))}
               </h3>
             </div>
-            <button>
+            <button onClick={hint}>
               <i className="fa-solid fa-highlighter"></i> Hint
             </button>
           </div>
@@ -202,9 +203,11 @@ export default function Canvas({ player, hinted = [] }) {
                 {gameStore.turns[0].word.split("").map((character, index) => (
                   <span
                     key={index}
-                    className={hinted.includes(index) ? "hinted" : ""}
+                    className={
+                      gameStore.turns[0].hint[index] != "?" ? "hinted" : ""
+                    }
                   >
-                    {hinted.includes(index) ? character : "?"}
+                    {gameStore.turns[0].hint[index] != "?" ? character : "?"}
                   </span>
                 ))}
               </h3>
