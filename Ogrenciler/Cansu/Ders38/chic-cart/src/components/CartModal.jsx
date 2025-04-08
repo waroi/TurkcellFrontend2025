@@ -1,9 +1,10 @@
-"use client";
-import useCartStore from "@/store/useCartStore";  
+// components/CartModal.js
+import React from 'react';
+import useCartStore from "@/store/useCartStore";
 
-const CartModal = () => {
-  const cartItems = useCartStore((state) => state.cartItems);  
-  const removeFromCart = useCartStore((state) => state.removeFromCart);  
+export default function CartModal() {
+  const cartItems = useCartStore((state) => state.cartItems);
+  const clearCart = useCartStore((state) => state.clearCart);
 
   return (
     <div className="modal fade" id="cartModal" tabIndex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
@@ -14,27 +15,28 @@ const CartModal = () => {
             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div className="modal-body">
-            {cartItems.length === 0 ? (
-              <p>Sepetiniz boş.</p>
-            ) : (
-              cartItems.map((item) => (
-                <div key={item.id} className="d-flex justify-content-between align-items-center mb-2">
-                  <span>{item.title} x {item.quantity}</span>
-                  <button onClick={() => removeFromCart(item.id)} className="btn btn-danger btn-sm">Sil</button>
+            {cartItems.length > 0 ? (
+              cartItems.map(item => (
+                <div key={item.id} className="cart-item">
+                  <h6>{item.title}</h6>
+                  <p>{item.quantity} x ${item.price}</p>
                 </div>
               ))
+            ) : (
+              <p>Sepetiniz boş.</p>
             )}
           </div>
           <div className="modal-footer">
             <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
-            <button type="button" className="btn btn-primary">Ödeme Yap</button>
+            <button type="button" className="btn btn-primary" onClick={clearCart}>Sepeti Temizle</button>
           </div>
         </div>
       </div>
     </div>
   );
-};
+}
 
-export default CartModal;
+
+
 
 

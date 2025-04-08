@@ -6,18 +6,23 @@ const ProductCard = ({ product }) => {
 
   return (
     <div className="card p-3 h-100">
-      <h5>{product.name}</h5>
-      <p>{product.description}</p>
-      <p><strong>{product.price} ₺</strong></p>
-      <button
-        onClick={() => addToCart(product)}
-        className="btn btn-success w-100 mt-auto"
-      >
-        Sepete Ekle
-      </button>
+      <img src={product.image} className="card-img-top" alt={product.name} />
+      <div className="card-body d-flex flex-column">
+        <h5 className="card-title">{product.name}</h5>
+        <p className="card-text">{product.description}</p>
+        <p><strong>{product.price} ₺</strong></p>
+        <button
+          onClick={() => addToCart(product)}
+          className="btn btn-success mt-auto w-100"
+        >
+          Sepete Ekle
+        </button>
+      </div>
     </div>
   );
 };
 
 export default ProductCard;
+
+
 

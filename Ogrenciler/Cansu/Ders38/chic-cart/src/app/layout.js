@@ -1,37 +1,40 @@
-'use client';
-import { useEffect } from 'react';
-import useThemeStore from '@/store/useThemeStore';
-import useAuthStore from '@/store/useAuthStore'; 
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import '../styles/main.scss';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '@fortawesome/fontawesome-free/css/all.min.css';
+"use client";
+
+import { useEffect } from "react";
+import useThemeStore from "@/store/useThemeStore";
+import useAuthStore from "@/store/useAuthStore"; 
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import "../styles/main.scss";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import { AuthProvider } from "@/context/UserContext";
 
 export default function RootLayout({ children }) {
   const { isDarkMode, toggleTheme } = useThemeStore();
   const { user, logout } = useAuthStore(); 
 
+
   useEffect(() => {
     if (isDarkMode) {
-      document.body.classList.add('dark');
-      document.body.classList.remove('light');
+      document.body.classList.add("dark");
+      document.body.classList.remove("light");
     } else {
-      document.body.classList.add('light');
-      document.body.classList.remove('dark');
+      document.body.classList.add("light");
+      document.body.classList.remove("dark");
     }
-  }, [isDarkMode]);
+  }, [isDarkMode]); 
 
-  
+
   useEffect(() => {
     if (!user) {
-    
-      document.body.classList.remove('dark', 'light');
-      document.body.classList.add('light'); 
+      document.body.classList.remove("dark", "light");
+      document.body.classList.add("light"); 
     }
-  }, [user]);
+  }, [user]); 
 
   return (
+    <AuthProvider> 
     <html lang="en">
       <body>
         <Navbar toggleTheme={toggleTheme} logout={logout} /> 
@@ -39,6 +42,7 @@ export default function RootLayout({ children }) {
         <Footer />
       </body>
     </html>
+     </AuthProvider>
   );
 }
 

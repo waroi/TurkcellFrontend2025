@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import useCartStore from "@/store/useCartStore";  
+import useCartStore from "@/store/useCartStore"; 
 
 export default function Shop() {
   const [products, setProducts] = useState([]);
@@ -10,7 +10,6 @@ export default function Shop() {
   const [priceFilter, setPriceFilter] = useState([0, 1000]);
   const [searchQuery, setSearchQuery] = useState("");
   const [sortBy, setSortBy] = useState("default");
-
 
   const addToCart = useCartStore((state) => state.addToCart);
 
@@ -23,7 +22,7 @@ export default function Shop() {
         setFilteredProducts(data);
         setLoading(false);
       } catch (error) {
-        console.error("Error fetching products:", error);
+        console.error("Ürünler yüklenirken bir hata oluştu:", error);
         setLoading(false);
       }
     };
@@ -67,6 +66,19 @@ export default function Shop() {
     addToCart(product); 
   };
 
+  const getRandomRating = () => {
+    return Math.floor(Math.random() * 5) + 1; // Rastgele 1-5 arasında bir yıldız puanı
+  };
+
+  // Yorumları simüle et
+  const getProductComments = () => {
+    return [
+      { name: "Ayşe", comment: "Harika ürün, çok beğendim! Kesinlikle tavsiye ederim." },
+      { name: "Ahmet", comment: "Fiyat/performans oranı çok iyi, ürün gayet kaliteli." },
+      { name: "Mehmet", comment: "Beklediğimden çok daha kaliteli, her yönüyle harika!" },
+    ];
+  };
+
   if (loading) {
     return <p>Yükleniyor...</p>;
   }
@@ -102,7 +114,7 @@ export default function Shop() {
             value={priceFilter[1]}
             onChange={(e) => setPriceFilter([0, e.target.value])}
           />
-          <span>{priceFilter[0]} - {priceFilter[1]} $</span>
+          <span>{priceFilter[0]} - {priceFilter[1]} ₺</span>
         </div>
 
         <div className="mb-3">
@@ -136,42 +148,70 @@ export default function Shop() {
 
       <section className="featured-products py-5">
         <div className="container">
-          <h2 className="text-center mb-4">Featured Products</h2>
+          <h2 className="text-center mb-4">Öne Çıkan Ürünler</h2>
           <div className="row">
             {filteredProducts.length > 0 ? (
-              filteredProducts.map((product) => (
-                <div key={product.id} className="col-md-4 mb-4">
-                  <div className="card">
-                    <img
-                      src={product.image}
-                      className="card-img-top"
-                      alt={product.title}
-                    />
-                    <div className="card-body">
-                      <h5 className="card-title">{product.title}</h5>
-                      <p className="card-text">{product.description}</p>
-                      <p className="card-text">
-                        <strong>${product.price}</strong>
-                      </p>
-                      <button
-                        onClick={() => handleAddToCart(product)} 
-                        className="btn btn-primary"
-                      >
-                        Sepete Ekle
-                      </button>
+              filteredProducts.map((product) => {
+                const rating = getRandomRating(); // Her ürün için rastgele yıldız puanı
+                const comments = getProductComments(); // Ürün yorumlarını al
+
+                return (
+                  <div key={product.id} className="col-md-4 mb-4">
+                    <div className="card">
+                      <img
+                        src={product.image}
+                        className="card-img-top"
+                        alt={product.title}
+                      />
+                      <div className="card-body">
+                        <h5 className="card-title">{product.title}</h5>
+                        <p className="card-text">{product.description}</p>
+                        <div className="d-flex align-items-center">
+                          <div className="stars">
+                            {[...Array(5)].map((_, index) => (
+                              <i
+                                key={index}
+                                className={`fa fa-star ${index < rating ? 'text-warning' : 'text-muted'}`}
+                              />
+                            ))}
+                          </div>
+                          <span className="ms-2">{rating} Yıldız</span>
+                        </div>
+                        <p className="card-text">
+                          <strong>{product.price.toLocaleString('tr-TR', { style: 'currency', currency: 'TRY' })}</strong>
+                        </p>
+                        <button
+                          onClick={() => handleAddToCart(product)} 
+                          className="btn btn-primary"
+                        >
+                          Sepete Ekle
+                        </button>
+
+                        {/* Yorumlar */}
+                        <div className="product-comments mt-3">
+                          <h6>Yorumlar:</h6>
+                          <ul className="list-unstyled">
+                            {comments.map((comment, index) => (
+                              <li key={index}>
+                                <strong>{comment.name}:</strong> {comment.comment}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))
+                );
+              })
             ) : (
-              <p>No products found.</p>
+              <p>Ürün bulunamadı.</p>
             )}
           </div>
         </div>
       </section>
-
-
     </>
   );
 }
+
+
 
