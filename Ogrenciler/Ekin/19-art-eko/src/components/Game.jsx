@@ -38,7 +38,7 @@ export default function Game() {
   return (
     <>
       <Players players={[]} />
-      <Canvas word="geçenşağı" draw={turns && turns[0].player == player} />
+      <Canvas word="geçenşağı" player={player} />
       <Chat />
       <Screen />
     </>

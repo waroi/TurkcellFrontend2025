@@ -1,6 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 
-export default function Canvas({ word, hinted = [] }) {
+import Loading from "#/Loading";
+
+import useGameStore from "@/store/gameStore";
+import { image } from "@/firebase";
+
+export default function Canvas({ player, hinted = [] }) {
+  const gameStore = useGameStore();
+
   const [canvas, setCanvas] = useState();
   const [drawing, setDrawing] = useState(false);
 
@@ -48,11 +55,37 @@ export default function Canvas({ word, hinted = [] }) {
   );
 
   useEffect(() => {
-    if (coordinate && drawing) {
+    if (
+      coordinate &&
+      drawing &&
+      gameStore.turns &&
+      gameStore.turns[0].player == player
+    ) {
       canvas.context.lineTo(coordinate.x, coordinate.y);
       canvas.context.stroke();
+
+      image(canvasRef.current.toDataURL("image/png"));
     }
   }, [coordinate, drawing]);
+
+  useEffect(
+    (image) => {
+      if (gameStore.turns && gameStore.turns[0].player != player) {
+        image = new Image();
+
+        image.onload = () =>
+          canvasRef.current.getContext("2d").drawImage(image, 0, 0);
+
+        image.onerror = () =>
+          canvasRef.current
+            .getContext("2d")
+            .clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
+
+        image.src = gameStore.canvas;
+      }
+    },
+    [gameStore]
+  );
 
   const calibrate = (size, data) => {
     data = canvasRef.current
@@ -75,12 +108,6 @@ export default function Canvas({ word, hinted = [] }) {
   };
 
   const color = (event, selected) => {
-    console.log(
-      event.target.parentElement.parentElement.parentElement.querySelector(
-        ".selected"
-      )
-    );
-
     selected = event.target.parentElement.parentElement.parentElement
       .querySelector(".selected")
       ?.classList.remove("selected");
@@ -93,7 +120,7 @@ export default function Canvas({ word, hinted = [] }) {
     });
   };
 
-  const clear = () =>
+  const clear = () => {
     canvas.context.clearRect(
       0,
       0,
@@ -101,70 +128,98 @@ export default function Canvas({ word, hinted = [] }) {
       canvasRef.current.height
     );
 
-  return (
-    <div id="canvas">
-      <div>
-        <div>
-          <button
-            className="selected"
-            onClick={color}
-            data-color="#242431"
-          ></button>
-          <button onClick={color} data-color="#ff1b1b"></button>
-          <button onClick={color} data-color="#ff9100"></button>
-          <button onClick={color} data-color="#ffd100"></button>
-          <button onClick={color} data-color="#00a600"></button>
-          <button onClick={color} data-color="#2a30cc"></button>
-          <button onClick={color} data-color="#8522a3"></button>
-          <button onClick={color} data-color="#7e7e97"></button>
-          <button onClick={color} data-color="#ff97d2"></button>
-          <button onClick={color} data-color="#a25200"></button>
-          <button onClick={color} data-color="#ffa878"></button>
-          <button onClick={color} data-color="#81ff6b"></button>
-          <button onClick={color} data-color="#4af2f7"></button>
-          <button onClick={color} data-color="#0095f8"></button>
-        </div>
-        <div>
+    image("");
+  };
+
+  if (gameStore && gameStore.turns && gameStore.turns.length)
+    return (
+      <div id="canvas">
+        {gameStore.turns && gameStore.turns[0].player == player ? (
           <div>
-            <button onClick={color} data-color="#fff">
-              <i className="fa-solid fa-eraser"></i> Erase
-            </button>
-            <button onClick={clear}>
-              <i className="fa-solid fa-file"></i> Clear
+            <div>
+              <button
+                className="selected"
+                onClick={color}
+                data-color="#242431"
+              ></button>
+              <button onClick={color} data-color="#ff1b1b"></button>
+              <button onClick={color} data-color="#ff9100"></button>
+              <button onClick={color} data-color="#ffd100"></button>
+              <button onClick={color} data-color="#00a600"></button>
+              <button onClick={color} data-color="#2a30cc"></button>
+              <button onClick={color} data-color="#8522a3"></button>
+              <button onClick={color} data-color="#7e7e97"></button>
+              <button onClick={color} data-color="#ff97d2"></button>
+              <button onClick={color} data-color="#a25200"></button>
+              <button onClick={color} data-color="#ffa878"></button>
+              <button onClick={color} data-color="#81ff6b"></button>
+              <button onClick={color} data-color="#4af2f7"></button>
+              <button onClick={color} data-color="#0095f8"></button>
+            </div>
+            <div>
+              <div>
+                <button onClick={color} data-color="#fff">
+                  <i className="fa-solid fa-eraser"></i> Erase
+                </button>
+                <button onClick={clear}>
+                  <i className="fa-solid fa-file"></i> Clear
+                </button>
+              </div>
+              <input
+                type="range"
+                min="1"
+                max="15"
+                defaultValue="5"
+                onChange={(event) =>
+                  setCanvas((canvas) => {
+                    canvas.context.lineWidth = event.target.value;
+                    return { ...canvas };
+                  })
+                }
+              />
+            </div>
+            <div className="word">
+              <h3>
+                {console.log(gameStore.turns)}
+                {gameStore.turns[0].word.split("").map((character, index) => (
+                  <span
+                    key={index}
+                    className={hinted.includes(index) ? "hinted" : ""}
+                  >
+                    {character}
+                  </span>
+                ))}
+              </h3>
+            </div>
+            <button>
+              <i className="fa-solid fa-highlighter"></i> Hint
             </button>
           </div>
-          <input
-            type="range"
-            min="1"
-            max="15"
-            defaultValue="5"
-            onChange={(event) =>
-              setCanvas((canvas) => {
-                canvas.context.lineWidth = event.target.value;
-                return { ...canvas };
-              })
-            }
-          />
-        </div>
+        ) : (
+          <div className="guess">
+            <div className="word">
+              <h3>
+                {gameStore.turns[0].word.split("").map((character, index) => (
+                  <span
+                    key={index}
+                    className={hinted.includes(index) ? "hinted" : ""}
+                  >
+                    {hinted.includes(index) ? character : "?"}
+                  </span>
+                ))}
+              </h3>
+            </div>
+          </div>
+        )}
         <div>
-          <h3>
-            {word.split("").map((character, index) => (
-              <span
-                key={index}
-                className={hinted.includes(index) ? "hinted" : ""}
-              >
-                {character}
-              </span>
-            ))}
-          </h3>
+          <canvas ref={canvasRef}></canvas>
         </div>
-        <button>
-          <i className="fa-solid fa-highlighter"></i> Hint
-        </button>
       </div>
-      <div>
-        <canvas ref={canvasRef}></canvas>
+    );
+  else
+    return (
+      <div id="canvas">
+        <Loading />
       </div>
-    </div>
-  );
+    );
 }

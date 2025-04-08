@@ -1,10 +1,6 @@
-Player Section
- -layout & css
- -position change
-
+TOO MUCH LATENCY!!!
 
 Interval Section
- -waiting for host layout & css
  -$player is now drawing layout & css
  -interval
    -timeout skip layout & css
@@ -12,14 +8,8 @@ Interval Section
  -top 3 layout & css
 
 
-firebase sync store
-
-connect store & DEBUGTEST
 
 GAME structure
- -connect people
- -start game by HOSTER
- -game prepare (+ WORD LIST PREPERATION)
  -turn timing
  -phase changes
  -end game & top 3
@@ -41,6 +31,10 @@ wtf is p l a y e r on zustand
 
 
 <div id="screen" className={screen.phase != "game" && "active"}> fix?
+
+
+canvas vs canvasRef (use only one of them)
+
 
 ----------------
 

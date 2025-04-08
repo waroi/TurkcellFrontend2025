@@ -211,24 +211,51 @@ button {
     }
 
     &#game {
-      &:not(:has(.loading)) {
+      &:not(:has(.loading:not(#game > * .loading))) {
         animation: initialise $fast forwards;
       }
 
       #canvas {
-        background-color: $black;
+        animation: dark $fast forwards;
         grid-row: span 2;
         @include grid(1fr, auto 1fr, 1.5rem);
-        transition: grid-template-columns 0.3s, gap 0.3s, background-color $fast;
+        transition: grid-template-columns 0.3s, gap 0.3s;
         padding: 1.5rem;
 
-        & > div:nth-child(1) {
+        & > div:nth-child(1):not(.loading) {
           background-color: $secondary;
           border-radius: 1rem;
           padding: 0.75rem;
           @include grid(auto auto 1fr auto, 1fr, 1.5rem);
 
-          & > div:nth-child(1) {
+          &.guess {
+            @include grid(1fr);
+
+            & > div.word {
+              h3 {
+                font-size: 2.5rem;
+                font-weight: 500;
+                text-transform: uppercase;
+                display: flex;
+                gap: 0.25rem;
+
+                span {
+                  width: 2rem;
+                  text-align: center;
+                  color: transparent;
+                  opacity: 1;
+                  border-bottom: 0.25rem solid $black;
+                  transition: color $fast;
+
+                  &.hinted {
+                    color: $black;
+                  }
+                }
+              }
+            }
+          }
+
+          & > div:nth-child(1):not(.word) {
             @include grid(1fr 1fr 1fr 1fr 1fr 1fr 1fr, 1fr 1fr, 0.25rem);
             padding: 0.25rem;
             background-color: $white;
@@ -336,8 +363,9 @@ button {
             }
           }
 
-          & > div:nth-child(3) {
+          & > div.word {
             @include center();
+            margin: auto;
 
             h3 {
               font-size: 2.5rem;
@@ -391,6 +419,11 @@ button {
           max-height: calc(100vh - 20.75rem);
           cursor: crosshair;
           border-radius: 1rem;
+        }
+
+        & .loading {
+          grid-row: span 2;
+          color: $white;
         }
       }
 
@@ -598,13 +631,13 @@ button {
       }
     }
 
+    .loading {
+      font-size: 5rem;
+      @include center();
+    }
+
     & > div {
       @include panel();
-
-      &.loading {
-        font-size: 5rem;
-        @include center();
-      }
 
       & > * {
         transition: opacity $fast;
@@ -647,5 +680,15 @@ button {
   to {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+@keyframes dark {
+  from {
+    background-color: $white;
+  }
+
+  to {
+    background-color: $black;
   }
 }

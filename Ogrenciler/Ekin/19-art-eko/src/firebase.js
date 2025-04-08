@@ -56,12 +56,16 @@ export const startGame = () => {
     .then((players, now = new Date(), randomWords = shuffle([...words])) =>
       Object.keys(players)
         .filter((id) => now - players[id].online < 15000)
-        .map((player, index) => ({ player, word: randomWords[index] }))
+        .map((player, index) => ({
+          player,
+          word: randomWords[index],
+          guessers: [],
+        }))
     )
     .then((turns) => set("turns", turns))
     .then(() => set("phase", "game"));
 };
 
-export const online = (id) => {
-  set(`players/${id}/online`, new Date().getTime());
-};
+export const online = (id) => set(`players/${id}/online`, new Date().getTime());
+
+export const image = (canvas) => set("canvas", canvas);
