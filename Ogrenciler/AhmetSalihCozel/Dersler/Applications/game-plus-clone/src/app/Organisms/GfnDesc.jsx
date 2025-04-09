@@ -1,8 +1,11 @@
 import React from "react";
 import Typography from "../Atoms/Typography";
 import Button from "../Atoms/Button";
+import { writeData } from "../FireBase/fireBase";
 
 function GfnDesc() {
+writeData()
+
   return (
     <section className="flex flex-col items-center p-4 space-y-6">
       <div className="flex flex-col lg:flex-row items-center justify-evenly w-full h-auto">
