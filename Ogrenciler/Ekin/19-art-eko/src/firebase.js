@@ -54,6 +54,10 @@ export const play = ({ id, name, profile }) =>
 
 export const startGame = () => {
   get("players")
+    .then((players) => {
+      Object.keys(players).map((player) => set(`players/${player}/score`, 0));
+      return players;
+    })
     .then((players, now = new Date(), random = shuffle([...words])) =>
       Object.keys(players)
         .filter((id) => now - players[id].online < 15000)
@@ -64,7 +68,10 @@ export const startGame = () => {
         }))
     )
     .then((turns) => set("turns", turns))
-    .then(() => set("phase", "game"));
+    .then(() => {
+      set("phase", "game");
+      set("canvas", "");
+    });
 };
 
 export const online = (id) => set(`players/${id}/online`, new Date().getTime());
@@ -91,13 +98,34 @@ export const hint = () =>
   });
 
 export const guess = (player, name, guess) => {
-  get("turns/0/word").then((word, similarity, id) => {
-    similarity = minimumEditDistance(guess.toLocaleLowerCase("tr-TR"), word);
+  get("turns/0").then((turn, similarity, id) => {
+    similarity = minimumEditDistance(
+      guess.toLocaleLowerCase("tr-TR"),
+      turn.word
+    );
 
     id = `${new Date().getTime()}:${player}`;
 
     if (similarity == 0) {
       set(`chat/${id}`, { type: "correct", player, name });
+      set(`turns/0/players/${player}`, true);
+
+      get(`player/${player}`).then(({ score }) =>
+        set(
+          `player/${player}/score`,
+          score + Math.max(10 - Object.keys(turn.players && {}).length, 6)
+        )
+      );
+
+      get(`player/${turn.player}`).then(({ score }) =>
+        set(
+          `player/${turn.player}/score`,
+          score +
+            ((length) => (length ? Math.max(10 - length, 1) : 10))(
+              Object.keys(turn.players && {}).length
+            )
+        )
+      );
     } else if (similarity <= 3) {
       set(`chat/${id}`, { type: "close", player });
     } else {
