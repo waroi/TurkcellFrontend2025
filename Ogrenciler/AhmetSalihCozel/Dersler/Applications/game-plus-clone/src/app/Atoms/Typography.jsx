@@ -1,6 +1,6 @@
 import React from "react";
 
-const Typography = ({ variant = "p", className = "", children, after = false }) => {
+const Typography = ({ onClick, variant = "p", className = "", children, after = false }) => {
   const baseStyles = {
     h1: "text-4xl font-bold",
     h2: "text-3xl font-semibold",
@@ -13,7 +13,7 @@ const Typography = ({ variant = "p", className = "", children, after = false }) 
   const mutualCss = ""
   const Component = variant;
 
-  return <Component className={`${baseStyles[variant]} ${className} ${afterBar} ${mutualCss}`}>{children}</Component>;
+  return <Component onClick={onClick} className={`${baseStyles[variant]} ${className} ${afterBar} ${mutualCss}`}>{children}</Component>;
 };
 
 export default Typography;

@@ -60,7 +60,7 @@ function PackagesCarousel() {
       </div>
 
       <CarouselBullets
-        carouselData={carouselData}
+        carouselData={carouselData.slice(0,carouselData.length-visibleCardCount+1)}
         activeElement={activeElement}
         setActiveElement={setActiveElement}
         visibleCardCount={visibleCardCount}

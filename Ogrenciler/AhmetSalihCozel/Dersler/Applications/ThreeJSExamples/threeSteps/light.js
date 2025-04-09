@@ -2,7 +2,7 @@ import * as THREE from '../node_modules/three/build/three.module.js';
 import { scene } from './scene.js';
 
 // Ambient Light (Genel aydınlatma)
-const ambientLight = new THREE.AmbientLight("green", 1);
+const ambientLight = new THREE.AmbientLight("red", 1);
 scene.add(ambientLight);
 
 const inputX = document.getElementById("lightX")
@@ -23,7 +23,7 @@ lightCalcButton.addEventListener("click", () => {
 
 
 // Directional Light (Yönlü ışık)
-const directionalLight = new THREE.DirectionalLight("yellow", 1);
+const directionalLight = new THREE.DirectionalLight("blue", 1);
 directionalLight.intensity = 5;
 directionalLight.position.set(5, 5, 5);
 scene.add(directionalLight);

@@ -4,8 +4,9 @@ import { camera } from "./camera.js";
 import { renderer } from "./renderer.js";
 
 function animate() {
-    cube.rotation.x += 0.01;
+    cube.rotation.x += 0;
     cube.rotation.y += 0.01;
+    
   }
 
   // Sahneyi render etme ve animasyonu başlatma
