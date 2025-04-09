@@ -1,0 +1,195 @@
+.testResultContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 20px;
+}
+
+.resultCard {
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 550px;
+    overflow: hidden;
+}
+
+.resultHeader {
+    padding: 30px;
+    text-align: center;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.resultBadge {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 15px;
+    font-size: 32px;
+    color: white;
+}
+
+.resultBadgeSuccess {
+    background-color: #4CAF50;
+}
+
+.resultBadgeFailure {
+    background-color: #F44336;
+}
+
+.resultTitle {
+    font-size: 1.8rem;
+    color: #333;
+    margin: 0;
+    font-weight: 600;
+}
+
+.resultContent {
+    padding: 30px;
+}
+
+.resultInfo {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.infoLabel {
+    font-weight: 600;
+    color: #666;
+}
+
+.infoValue {
+    font-weight: 500;
+    color: #333;
+}
+
+.scoreInfo {
+    margin-bottom: 20px;
+}
+
+.scoreValue {
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 5px 15px;
+    border-radius: 20px;
+}
+
+.successScore {
+    background-color: rgba(76, 175, 80, 0.1);
+    color: #4CAF50;
+}
+
+.failureScore {
+    background-color: rgba(244, 67, 54, 0.1);
+    color: #F44336;
+}
+
+.successMessage, .failureMessage {
+    text-align: center;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.successMessage {
+    background-color: rgba(76, 175, 80, 0.1);
+    color: #4CAF50;
+}
+
+.failureMessage {
+    background-color: rgba(244, 67, 54, 0.1);
+    color: #F44336;
+}
+
+.successMessage i, .failureMessage i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.resultFooter {
+    padding: 20px 30px;
+    background-color: #f8f9fa;
+    border-top: 1px solid #eaeaea;
+}
+
+.saveSuccess, .saveError, .savingMessage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+}
+
+.saveSuccess {
+    color: #4CAF50;
+}
+
+.saveError {
+    color: #F44336;
+    flex-direction: column;
+}
+
+.savingMessage {
+    color: #3f51b5;
+}
+
+.savingMessage .spinnerBorder {
+    margin-right: 10px;
+}
+
+.saveSuccess i, .saveError i {
+    margin-right: 10px;
+}
+
+.retryButton {
+    background-color: #F44336;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    margin-top: 10px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+}
+
+.retryButton:hover {
+    background-color: #D32F2F;
+    transform: translateY(-2px);
+}
+
+.retryButton i {
+    margin-right: 8px;
+}
+
+@media screen and (max-width: 576px) {
+    .resultCard {
+        border-radius: 12px;
+    }
+
+    .resultHeader, .resultContent, .resultFooter {
+        padding: 20px;
+    }
+
+    .resultBadge {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+    }
+
+    .resultTitle {
+        font-size: 1.5rem;
+    }
+}

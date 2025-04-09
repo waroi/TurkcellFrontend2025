@@ -7,7 +7,7 @@ import useQuestions from "../store/useQuestions";
 import { useState } from "react";
 import useAdminTest from "../store/useAdminTest";
 const UserPanel = () => {
-  const [totalCount,setTotalCount] = useState();
+  const [totalCount,setTotalCount] = useState(0);
   const {
     applications,
     loading,
@@ -18,13 +18,17 @@ const UserPanel = () => {
   } = useUserPanel();
 
   const {fetchTestDetails} = useAdminTest();
+  const { handleStartTest, showTest, setShowTest, selectedQuestions } = useQuestions();
 
-  const { handleStartTest, showTest, setShowTest, selectedQuestions } =
-    useQuestions();
     const handleQuestionCount = async (application) => {
       const testData = await fetchTestDetails(application.id);
-      setTotalCount(testData.totalQuestion);
-    }
+      console.log("Toplam soru sayısı",testData.totalQuestion)
+      if(testData && testData.totalQuestion){
+          setTotalCount(testData.totalQuestion);
+      } else {
+          setTotalCount(0);
+      }
+    };
   if (loading) {
     return (
       <div className="container mt-4">
@@ -39,6 +43,7 @@ const UserPanel = () => {
   const startTest = async (application) => {
     setCurrentApplication(application);
     await handleStartTest(application);
+    await handleQuestionCount(application);
   };
 
   return (
@@ -91,7 +96,7 @@ const UserPanel = () => {
                           !application.testResults && (
                             <button
                               className="btn btn-primary mt-2"
-                              onClick={async () =>{ await startTest(application); await handleQuestionCount(application)}}
+                              onClick={async () => await startTest(application)}
                             >
                               Testi Başlat
                             </button>

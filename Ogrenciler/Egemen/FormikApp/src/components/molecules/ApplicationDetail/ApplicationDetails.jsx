@@ -1,29 +1,20 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router";
 import Button from "../../atoms/buttons/Button";
-import Modal from "react-bootstrap/Modal";
+
 import {
   setMessage,
   setQuestionCount,
 } from "../../../../firebase/dbController";
 import AppSection from "./AppSection";
+import MyModal from "../../organisms/modal/myModal";
 
-const ApplicationDetails = ({
-  application,
-  user,
-  updateAppStatus,
-  sonrakiAsama,
-}) => {
-  const [app, setApp] = useState(application);
+const ApplicationDetails = ({ app, setApp, user, sonrakiAsama }) => {
   const [showModal, setShowModal] = useState(false);
   const [easyCount, setEasyCount] = useState(0);
   const [mediumCount, setMediumCount] = useState(0);
   const [hardCount, setHardCount] = useState(0);
   const navigate = useNavigate();
-  useEffect(() => {
-    console.log("abc");
-  }, [app]);
-
   const handleModalOpen = () => setShowModal(true);
   const handleModalClose = () => setShowModal(false);
 
@@ -39,52 +30,22 @@ const ApplicationDetails = ({
   const startQuiz = () => {
     navigate(`/quiz/${app.id}`);
   };
-
+  const updateStatus = (newStatus, newUserMessage, newAdminMessage) => {
+    setApp((prevState) => ({
+      ...prevState,
+      status: newStatus,
+      userMessage: newUserMessage,
+      adminMessage: newAdminMessage,
+    }));
+  };
   return (
     <div className="accordion-body bg-white p-4">
       <div className="row">
-        <AppSection title="Kişisel Bilgiler" sections={app?.personal} />
-        {/* <div className="col-lg-4">
-          <h5 className="fw-bold text-secondary">Kişisel Bilgiler</h5>
-          <p>
-            <strong>Email:</strong> {app.email}
-          </p>
-          <p>
-            <strong>Telefon:</strong> {app.phone}
-          </p>
-          <p>
-            <strong>Doğum Tarihi:</strong> {app.birthDate}
-          </p>
-        </div> */}
-        <div className="col-lg-4">
-          <h5 className="fw-bold text-secondary">Eğitim Bilgileri</h5>
-          <p>
-            <strong>Üniversite:</strong> {app.education.university}
-          </p>
-          <p>
-            <strong>Bölüm:</strong> {app.education.department}
-          </p>
-          <p>
-            <strong>Mezuniyet Yılı:</strong> {app.education.graduationYear}
-          </p>
-          <p>
-            <strong>GPA:</strong> {app.education.gpa}
-          </p>
-        </div>
-        <div className="col-lg-4">
-          <h5 className="fw-bold text-secondary">Deneyim & Beceriler</h5>
-          <p>
-            <strong>Şirket:</strong>{" "}
-            {app.experience.currentCompany || "Mevcut şirket bilgisi yok."}
-          </p>
-          <p>
-            <strong>Pozisyon:</strong>{" "}
-            {app.experience.position || "Mevcut pozisyon bilgisi yok."}
-          </p>
-          <p>
-            <strong>Deneyim Yılı:</strong>{" "}
-            {app.experience.years || "Mevcut deneyim yılı bilgisi yok."}
-          </p>
+        <AppSection section={app?.personal} id="personal" />
+        <AppSection section={app?.education} id="education" />
+        <AppSection section={app?.experience} id="experience" />
+        <div className="col-lg-3">
+          <h5 className="fw-bold text-secondary">Beceriler</h5>
           <p>
             <strong>Programming Languages:</strong>{" "}
             {app.skills.programmingLanguages
@@ -105,6 +66,7 @@ const ApplicationDetails = ({
           </p>
         </div>
       </div>
+
       <div className="mt-4 d-flex justify-content-end">
         {user &&
         (app.status === "Değerlendirme" || app.status === "Test Kontrol") &&
@@ -131,7 +93,7 @@ const ApplicationDetails = ({
               className="btn btn-success me-3 px-4 py-2 shadow"
               onClick={() => {
                 app.status == "Değerlendirme" ? handleModalOpen() : <></>;
-                sonrakiAsama(app);
+                sonrakiAsama(app, updateStatus);
               }}
             >
               {app.adminMessage}
@@ -161,7 +123,12 @@ const ApplicationDetails = ({
                   {app.adminMessage}
                 </span>
               ) : (
-                <button onClick={startQuiz}>{app.userMessage}</button>
+                <Button
+                  className="btn btn-success me-3 px-4 py-2 shadow"
+                  onClick={startQuiz}
+                >
+                  {app.userMessage}
+                </Button>
               ))}
             {app.status === "Test Kontrol" && (
               <span className="badge text-bg-primary">
@@ -182,53 +149,17 @@ const ApplicationDetails = ({
         )}
       </div>
 
-      <Modal show={showModal} onHide={handleModalClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Test Hazırlayın</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <form>
-            <div className="form-group">
-              <label htmlFor="easyCount">Kolay Soru Adedi:</label>
-              <input
-                type="number"
-                className="form-control"
-                id="easyCount"
-                value={easyCount}
-                onChange={(e) => setEasyCount(e.target.value)}
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="mediumCount">Orta Soru Adedi:</label>
-              <input
-                type="number"
-                className="form-control"
-                id="mediumCount"
-                value={mediumCount}
-                onChange={(e) => setMediumCount(e.target.value)}
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="hardCount">Zor Soru Adedi:</label>
-              <input
-                type="number"
-                className="form-control"
-                id="hardCount"
-                value={hardCount}
-                onChange={(e) => setHardCount(e.target.value)}
-              />
-            </div>
-          </form>
-        </Modal.Body>
-        <Modal.Footer>
-          <button variant="secondary" onClick={handleModalClose}>
-            Close
-          </button>
-          <button variant="primary" onClick={handleSubmit}>
-            Submit
-          </button>
-        </Modal.Footer>
-      </Modal>
+      <MyModal
+        showModal={showModal}
+        easyCount={easyCount}
+        mediumCount={mediumCount}
+        hardCount={hardCount}
+        setEasyCount={setEasyCount}
+        setMediumCount={setMediumCount}
+        setHardCount={setHardCount}
+        handleSubmit={handleSubmit}
+        setShowModal={setShowModal}
+      ></MyModal>
     </div>
   );
 };

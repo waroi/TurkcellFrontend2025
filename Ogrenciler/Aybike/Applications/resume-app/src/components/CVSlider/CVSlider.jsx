@@ -1,12 +1,12 @@
 import SurveyRow from '../../components/CVSlider/SurveyRow';
 import { useCVSlider } from '../../utils/hooks/useCVSlider';
-import './CVSlider.css';
+import styles from './CVSlider.module.css';
 
 const CVSlider = () => {
     const { renderStars, getStatusClass, firstRowItems, secondRowItems } = useCVSlider()
 
     return (
-        <div className="auto-scrolling-surveys">
+        <div className={styles.autoScrollingSurveys}>
             <h2 className="text-center mb-4">Canlı Sonuçlanan Değerlendirmeler</h2>
 
             <SurveyRow

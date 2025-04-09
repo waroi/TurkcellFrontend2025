@@ -7,8 +7,10 @@ import SignInModal from "../components/SignInModal/SignInModal";
 import { Link } from "react-router-dom";
 import AdminTestModal from "../components/AdminTestModal/AdminTestModal";
 import useAdminTest from "../store/useAdminTest";
+import { useState } from "react";
 
 const AdminPanel = () => {
+  const [modalKey, setModalKey] = useState(0);
   const {
     applications,
     show,
@@ -25,7 +27,7 @@ const AdminPanel = () => {
     handleReject,
   } = useAdminPanel();
 
-  const { showModal,handleCloseModal, openModal } =
+  const { showModal,handleCloseModal, openModal,currentApplication } =
     useAdminTest();
 
   const filteredApplications = getFilteredApplications(applications);
@@ -146,14 +148,15 @@ const AdminPanel = () => {
                       >
                         <button
                           className={`${styles.approveButton} btn text-white mt-2`}
-                          onClick={() => {openModal(app); console.log("Şu anki tıklanan app Admin Panel:",app)}}
+                          onClick={() => {openModal(app);setModalKey((prevKey) => prevKey + 1);}}
                         >
                           Onayla
                         </button>
                         <AdminTestModal
+                          key={modalKey}
                           show={showModal}
                           handleClose={handleCloseModal}
-                          app={app}
+                          app={currentApplication}
                         />
                         <button
                           className={` ${styles.rejectButton} btn text-white mt-2`}

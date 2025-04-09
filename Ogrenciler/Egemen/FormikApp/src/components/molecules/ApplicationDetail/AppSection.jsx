@@ -1,23 +1,26 @@
 import React, { useEffect, useState } from "react";
+import { getFormSchema } from "../../../../firebase/dbController";
 
-const AppSection = ({ sections, title }) => {
-  const [section, setSection] = useState(sections);
-
+const AppSection = ({ section, id }) => {
+  const [sectionSchema, setSectionSchema] = useState();
+  async function setSchema() {
+    setSectionSchema(await getFormSchema(id));
+  }
   useEffect(() => {
-    console.log("sect", sections);
-  });
+    setSchema();
+  }, []);
   return (
-    <div className="col-lg-4">
-      <h5 className="fw-bold text-secondary">{title}</h5>
-
-      {Object.entries(section)
-        .filter(([_, value]) => value)
-        .map(([key, value]) => (
-          <p>
-            <strong>{key}</strong> {value}
+    sectionSchema && (
+      <div className="col-lg-3">
+        <h5 className="fw-bold text-secondary">{sectionSchema.title}</h5>
+        {Object.entries(section).map(([key, value]) => (
+          <p key={key}>
+            <strong>{sectionSchema[`${key}`]}</strong>{" "}
+            {value == "" ? "Bilgi girilmemiş" : value}
           </p>
         ))}
-    </div>
+      </div>
+    )
   );
 };
 

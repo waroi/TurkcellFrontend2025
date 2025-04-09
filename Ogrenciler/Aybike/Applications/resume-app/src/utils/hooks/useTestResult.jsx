@@ -35,6 +35,7 @@ const useTestResult = (questions, answers) => {
 
         setTimeout(() => {
             navigate('/')
+            localStorage.removeItem("userEmail")
         }, 10000);
     }, [questions, answers, userMail])
 

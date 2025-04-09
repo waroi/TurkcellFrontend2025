@@ -5,19 +5,19 @@ import { useBalloons } from './useBalloons';
 
 export const useGiftView = () => {
     const [loading, setLoading] = useState(INITIAL_LOADING_STATE)
-    const { createConfetti } = useConfetti()
-    const { createBalloons } = useBalloons()
+    // const { createConfetti } = useConfetti()
+    // const { createBalloons } = useBalloons()
 
     useEffect(() => {
-        createConfetti()
-        createBalloons()
+        // createConfetti()
+        // createBalloons()
 
         const timer = setTimeout(() => {
             setLoading(false)
         }, LOADING_TIMEOUT)
 
         return () => clearTimeout(timer)
-    }, [createConfetti, createBalloons])
+    }, [])
 
     return { loading }
 }

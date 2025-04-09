@@ -12,14 +12,11 @@ const useAdminTest = () => {
   const [mediumQuestion, setMediumQuestion] = useState("");
   const [currentApplication, setCurrentApplication] = useState(null);
 
-  useEffect(() => {
-    console.log("Current Application Updated:", currentApplication);
-  }, [currentApplication]);
-  
   const openModal = async (app) => {
     setCurrentApplication(app);
     setShowModal(true);
   };
+
   const handleSaveTest = async (application, total, hard, medium) => {
     if (!application) {
       console.error("No application selected");
@@ -37,7 +34,7 @@ const useAdminTest = () => {
       return false;
     }
     try {
-      await setDoc(doc(db, "tests", application.id), {
+      await setDoc(doc(db, "tests", application.id), { 
         totalQuestion: total,
         hardQuestion: hard,
         mediumQuestion: medium,

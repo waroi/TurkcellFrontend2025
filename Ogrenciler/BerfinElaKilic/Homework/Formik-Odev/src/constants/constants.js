@@ -149,11 +149,7 @@ export const LANGUAGES = [
   "Çince",
   "Japonca",
 ];
-export const levels = [
-  "Beginner",
-  "Intermediate",
-  "Advanced",
-];
+export const levels = ["Beginner", "Intermediate", "Advanced"];
 export const DEPARTMENTS = [
   "Bilgisayar Mühendisliği",
   "Elektrik-Elektronik Mühendisliği",
@@ -172,8 +168,10 @@ export const DEPARTMENTS = [
   "Kimya Mühendisliği",
   "İnşaat Mühendisliği",
   "Grafik Tasarım",
-  "Gazetecilik"
+  "Gazetecilik",
 ];
+
+export const QUESTION_LEVELS = ["easy", "medium", "hard"];
 
 export const GRADUATION_YEARS = Array.from(
   { length: 60 },

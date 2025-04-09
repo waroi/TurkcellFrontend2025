@@ -1,0 +1,31 @@
+.rateBlock {
+    max-width: 500px;
+    margin-top: 30px;
+}
+
+.customSelect {
+    width: 100px;
+    padding: 8px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.customSelect:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.btnPrimary {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btnPrimary:hover {
+    background-color: #0056b3;
+}

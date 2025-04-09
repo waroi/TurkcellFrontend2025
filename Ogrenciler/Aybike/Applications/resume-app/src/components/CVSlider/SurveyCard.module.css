@@ -1,0 +1,141 @@
+.surveyCard {
+    flex: 0 0 300px;
+    margin: 0 15px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.surveyCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    z-index: 1;
+}
+
+.surveyHeader {
+    padding: 16px 20px;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.surveyTitle {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.surveyId {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+.surveyContent {
+    padding: 20px;
+}
+
+.companyName {
+    margin-top: 0;
+    margin-bottom: 16px;
+    color: #555;
+    font-size: 1rem;
+}
+
+.ratingContainer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.starsContainer {
+    display: flex;
+    margin-right: 10px;
+}
+
+.star {
+    font-size: 1.2rem;
+    color: #ddd;
+}
+
+.filled {
+    color: gold;
+}
+
+.halfFilled {
+    position: relative;
+    color: #ddd;
+}
+
+.halfFilled::before {
+    content: "★";
+    position: absolute;
+    color: gold;
+    width: 50%;
+    overflow: hidden;
+}
+
+.ratingValue {
+    font-weight: bold;
+    color: #333;
+}
+
+.progressBarContainer {
+    height: 8px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 16px;
+}
+
+.progressBar {
+    height: 100%;
+    background: linear-gradient(to right, #4CAF50, #8BC34A);
+    border-radius: 4px;
+    transition: width 1s ease-in-out;
+}
+
+.surveyFooter {
+    padding: 12px 20px;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.statusBadge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.success {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+.warning {
+    background-color: #fff8e1;
+    color: #ff8f00;
+}
+
+.info {
+    background-color: #e3f2fd;
+    color: #1976d2;
+}
+
+@media screen and (max-width: 768px) {
+    .surveyCard {
+        flex: 0 0 250px;
+    }
+
+    .surveyTitle {
+        font-size: 1rem;
+    }
+}

@@ -7,11 +7,12 @@ import SuccessButton from "../Buttons/SuccessButton";
 import WarningButton from "../Buttons/WarningButton";
 import { useActions } from "../../../context/ActionsContext";
 
-const JobCard = ({ job, user , jobId}) => {
+const JobCard = ({ job, user, jobId }) => {
   const navigate = useNavigate();
   const { applyJob } = useActions();
   const [hasApplied, setHasApplied] = useState(false);
   const [jobStatus, setJobStatus] = useState("pending");
+  const [examId, setExamId] = useState("");
 
   const appliedBefore = () => {
     if (user && user.appliedJobs) {
@@ -25,11 +26,34 @@ const JobCard = ({ job, user , jobId}) => {
     }
   };
 
+  const filteredExam = () => {
+    const foundExam = job.exams?.find((exam) =>
+      exam.sentExams?.some((sentExam) => sentExam.id === user.id)
+    );
+    if (foundExam) {
+      //   const matchingSentExam = foundExam.sentExams?.find(
+      //     (sentExam) => sentExam.id === user.id
+      //   ); Bunu totalScore manipule ederken kullanıcaz
+      // console.log("Matching Exam:", matchingSentExam, foundExam);
+      return foundExam;
+    }
+    return null;
+  };
+
   useEffect(() => {
     if (user && user.role !== "admin") {
       appliedBefore();
     }
-  }, [user, job.id]);
+    if (jobStatus === "test") {
+      const exam = filteredExam(); // Test aşamasındaki exam'ı buluyoruz
+      if (exam) {
+        setExamId(exam.id); // Bulduğumuz exam id'yi setliyoruz
+        console.log("Exam ID Setted:", exam.id); // Debugging: Exam ID kontrolü
+      } else {
+        console.log("No matching exam found");
+      }
+    }
+  }, [user, job.id, jobStatus]); // jobStatus ve job.id'yi bağımlılık olarak ekledik
 
   return (
     <WrapperCard className="mt-4">
@@ -58,7 +82,9 @@ const JobCard = ({ job, user , jobId}) => {
                 Başvuran Adaylar
               </WarningButton>
             ) : jobStatus === "test" ? (
-              <SuccessButton onClick={() => navigate(`/jobs/${job.id}/exam`)}>
+              <SuccessButton
+                onClick={() => navigate(`/jobs/${job.id}/exam/${examId}`)}
+              >
                 Test aşamasına geçtiniz, testi çözmek için tıklayınız
               </SuccessButton>
             ) : (
