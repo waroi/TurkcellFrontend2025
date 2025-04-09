@@ -1,8 +1,24 @@
 import { useEffect, useState } from "react";
 
-export default function Players({ players }) {
+import useGameStore from "@/store/gameStore";
+
+export default function Players() {
+  const gameStore = useGameStore();
+
+  const [players, setPlayers] = useState([]);
   const [placement, setPlacement] = useState();
   const [profiles, setProfiles] = useState({});
+
+  useEffect(() => {
+    if (!gameStore.players) return;
+
+    setPlayers(
+      Object.keys(gameStore.players).map((id) => ({
+        ...gameStore.players[id],
+        id,
+      }))
+    );
+  }, [gameStore.players]);
 
   useEffect(() => {
     setPlacement(
@@ -16,16 +32,16 @@ export default function Players({ players }) {
 
     players.map((player) =>
       setProfiles((profiles) => {
-        profiles[player.id] = `https://picsum.photos/seed/${Math.random()
-          .toString(36)
-          .substring(2)}/500`;
+        profiles[
+          player.id
+        ] = `https://api.dicebear.com/9.x/fun-emoji/svg?size=64&backgroundColor=8484a5,ff8d8d,ffc880,ffe880,53ff53,9295e8,cc7de4&seed=${player.id}`;
 
         return profiles;
       })
     );
   }, [players]);
 
-  if (players && placement)
+  if (players && placement && Object.keys(placement).length)
     return (
       <div id="players">
         <div>
@@ -59,4 +75,5 @@ export default function Players({ players }) {
         </div>
       </div>
     );
+  else return <div id="players"></div>;
 }

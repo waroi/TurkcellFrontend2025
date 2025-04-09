@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 import { guess } from "@/firebase";
 import useGameStore from "@/store/gameStore";
@@ -56,12 +56,12 @@ export default function Chat({ player, name }) {
           placeholder="Guess"
           onKeyDown={(event) => event.code == "Enter" && chat()}
           ref={guessRef}
-          disabled={
-            gameStore.turns &&
-            (player == gameStore.turns[0].player ||
-              (gameStore.turns[0].players &&
-                gameStore.turns[0].players[player]))
-          }
+          // disabled={
+          //   gameStore.turns &&
+          //   (player == gameStore.turns[0].player ||
+          //     (gameStore.turns[0].players &&
+          //       gameStore.turns[0].players[player]))
+          // }
         />
         <button onClick={chat}>
           <i className="fa-solid fa-paper-plane"></i>

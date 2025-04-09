@@ -110,19 +110,22 @@ export const guess = (player, name, guess) => {
       set(`chat/${id}`, { type: "correct", player, name });
       set(`turns/0/players/${player}`, true);
 
-      get(`player/${player}`).then(({ score }) =>
+      console.log(turn.players);
+      console.log(turn.players ?? {});
+
+      get(`players/${player}`).then(({ score }) =>
         set(
-          `player/${player}/score`,
-          score + Math.max(10 - Object.keys(turn.players && {}).length, 6)
+          `players/${player}/score`,
+          score + Math.max(10 - Object.keys(turn.players ?? {}).length, 6)
         )
       );
 
-      get(`player/${turn.player}`).then(({ score }) =>
+      get(`players/${turn.player}`).then(({ score }) =>
         set(
-          `player/${turn.player}/score`,
+          `players/${turn.player}/score`,
           score +
-            ((length) => (length ? Math.max(10 - length, 1) : 10))(
-              Object.keys(turn.players && {}).length
+            ((length) => (length ? Math.max(6 - length, 1) : 10))(
+              Object.keys(turn.players ?? {}).length
             )
         )
       );
