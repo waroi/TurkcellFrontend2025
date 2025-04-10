@@ -1,11 +1,7 @@
 <script lang="ts">
- const fetchCurrency = () => {
-  
- }
+  import Currency from "./lib/api/Currency.svelte";
 </script>
 
 <main>
-  
+  <Currency />
 </main>
-
-
