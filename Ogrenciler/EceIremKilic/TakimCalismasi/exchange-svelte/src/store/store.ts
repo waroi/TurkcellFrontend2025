@@ -1,14 +1,19 @@
+
 import { writable } from "svelte/store";
 
-type currency = {
+export type Currency = {
   key: string;
   value: number;
 };
 
-export const currencies: any = writable(
-  [ {key: 12431231, value: 3256235 }],
+export const currencies = writable<Currency[]>([
+  { key: "USD", value: 1 },
+  { key: "EUR", value: 0 },
+  { key: "IDR", value: 0 }
+]);
 
-
-
-  () => () => console.log("no more subscribers")
-);
+export const getDefaultCurrencies = (): Currency[] => [
+  { key: "USD", value: 1 },
+  { key: "EUR", value: 0 },
+  { key: "IDR", value: 0 }
+];

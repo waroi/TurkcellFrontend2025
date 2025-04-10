@@ -1,6 +1,14 @@
 <script lang="ts">
-  import { apiData, currencyRates } from "$lib/store";
-  import { onMount } from "svelte";
+  import {apiData, currencyRates} from "$lib/store";
+  import {onMount} from "svelte";
+
+  let fromCurrency = "USD";
+  let toCurrency = "TRY";
+  let inputRate = 1;
+  let isOpen = false;
+  let selectedType: "from" | "to" = "to";
+  let fromCurrencyRate = 1.0;
+  let toCurrencyRate = 1.0;
 
   onMount(async () => {
     fetch(
@@ -8,23 +16,38 @@
     )
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         apiData.set(data);
+
+        const unsubscribe = currencyRates.subscribe((rates) => {
+          const from = rates.find((item) => item.currency === fromCurrency);
+          const to = rates.find((item) => item.currency === toCurrency);
+
+          if (from) fromCurrencyRate = from.rate;
+          if (to) toCurrencyRate = to.rate;
+        });
+
+        setTimeout(() => unsubscribe(), 100);
       })
       .catch((error) => {
         console.log(error);
-        return {};
       });
   });
 
-  const handleCurrentChange = (currency: string) => {
-    current = currency;
+  const handleCurrencyChange = (currency: string, rate: number) => {
+    if (selectedType === "from") {
+      fromCurrency = currency;
+      fromCurrencyRate = rate;
+    } else {
+      toCurrency = currency;
+      toCurrencyRate = rate;
+    }
     isOpen = false;
   };
 
-  let isOpen = false;
-  let current = "TRY";
-  let inputRate = 1;
+  const openDropdown = (type: "from" | "to") => {
+    selectedType = type;
+    isOpen = true;
+  };
 </script>
 
 <main>
@@ -33,7 +56,7 @@
       <div class="dropdown">
         {#each $currencyRates as { currency, rate }}
           <button
-            on:click={() => handleCurrentChange(currency)}
+            on:click={() => handleCurrencyChange(currency, rate)}
             class="current-rate-dropdown"
           >
             {currency}
@@ -42,16 +65,29 @@
       </div>
     </div>
   {/if}
+
   {#each $currencyRates as { currency, rate }}
-    {#if currency === current}
-      <button on:click={() => (isOpen = !isOpen)} class="current-rate-text">
-        usd
-      </button>
-      <button on:click={() => (isOpen = !isOpen)} class="current-rate-text">
-        {currency}
-      </button>
+    {#if currency === toCurrency}
+      <div class="currencies">
+        <button on:click={() => openDropdown("from")} class="current-rate-text">
+          {fromCurrency}
+        </button>
+        <button on:click={() => openDropdown("to")} class="current-rate-text">
+          {toCurrency}
+        </button>
+      </div>
       <input type="text" bind:value={inputRate} class="rate-input" />
-      <h1 class="current-rate">{rate * inputRate}</h1>
+      <h1 class="current-rate">
+        {(inputRate / fromCurrencyRate) * toCurrencyRate}
+      </h1>
+
+      <!-- 1 dolar 38 lira
+  1 dolar 2.76 lari
+  x lira çevirmek istiyorum
+  x/38 = x/38
+  x/38 * 2.76 = A 
+  x Lira = A Lari
+      -->
     {/if}
   {/each}
 </main>
@@ -123,5 +159,11 @@
       width: 100px;
       height: 50px;
     }
+  }
+  .currencies {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
   }
 </style>
