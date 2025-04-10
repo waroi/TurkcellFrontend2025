@@ -8,7 +8,7 @@
   let isOpen = false;
   let selectedType: "from" | "to" = "to";
   let fromCurrencyRate = 1.0;
-  let toCurrencyRate = 38.0;
+  let toCurrencyRate = 38.0122;
 
   onMount(async () => {
     fetch(
