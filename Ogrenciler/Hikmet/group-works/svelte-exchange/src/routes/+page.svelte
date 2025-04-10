@@ -1,89 +1,127 @@
-<script>
-	import { apiData, currencyRates } from "$lib/store";
-	import { onMount } from "svelte";
+<script lang="ts">
+  import { apiData, currencyRates } from "$lib/store";
+  import { onMount } from "svelte";
 
-	onMount(async () => {
-		fetch(
-			"https://v6.exchangerate-api.com/v6/2698119567804d617518d360/latest/USD"
-		)
-			.then((response) => response.json())
-			.then((data) => {
-				console.log(data);
-				apiData.set(data);
-			})
-			.catch((error) => {
-				console.log(error);
-				return {};
-			});
-	});
+  onMount(async () => {
+    fetch(
+      "https://v6.exchangerate-api.com/v6/2698119567804d617518d360/latest/USD"
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        apiData.set(data);
+      })
+      .catch((error) => {
+        console.log(error);
+        return {};
+      });
+  });
+
+  const handleCurrentChange = (currency: string) => {
+    current = currency;
+    isOpen = false;
+  };
+
+  let isOpen = false;
+  let current = "TRY";
+  let inputRate = 1;
 </script>
 
 <main>
-	<h1>Döviz Kurları</h1>
-
-	{#if $apiData.base_code}
-		<div class="info">
-			<p>Baz Para Birimi: {$apiData.base_code}</p>
-			<p>Son Güncelleme: {$apiData.time_last_update_utc}</p>
-			<p>Sonraki Güncelleme: {$apiData.time_next_update_utc}</p>
-		</div>
-	{/if}
-
-	<table>
-		<thead>
-			<tr>
-				<th>Para Birimi</th>
-				<th>Değer</th>
-			</tr>
-		</thead>
-		<tbody>
-			{#each $currencyRates as { currency, rate }}
-				<tr>
-					<td>{currency}</td>
-					<td>{rate}</td>
-				</tr>
-			{/each}
-		</tbody>
-	</table>
+  {#if isOpen}
+    <div class="dropdown-container">
+      <div class="dropdown">
+        {#each $currencyRates as { currency, rate }}
+          <button
+            on:click={() => handleCurrentChange(currency)}
+            class="current-rate-dropdown"
+          >
+            {currency}
+          </button>
+        {/each}
+      </div>
+    </div>
+  {/if}
+  {#each $currencyRates as { currency, rate }}
+    {#if currency === current}
+      <button on:click={() => (isOpen = !isOpen)} class="current-rate-text">
+        usd
+      </button>
+      <button on:click={() => (isOpen = !isOpen)} class="current-rate-text">
+        {currency}
+      </button>
+      <input type="text" bind:value={inputRate} class="rate-input" />
+      <h1 class="current-rate">{rate * inputRate}</h1>
+    {/if}
+  {/each}
 </main>
 
 <style>
-	main {
-		max-width: 900px;
-		margin: 0 auto;
-		padding: 20px;
-	}
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  main {
+    width: 100%;
+    height: 100vh;
+    background-color: #041e42;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: "Roboto Slab", serif;
+    font-weight: 200;
+  }
 
-	h1 {
-		text-align: center;
-		margin-bottom: 20px;
-	}
+  .current-rate-text {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+  }
 
-	.info {
-		background: #f5f5f5;
-		padding: 15px;
-		border-radius: 5px;
-		margin-bottom: 20px;
-	}
+  .current-rate-dropdown {
+    color: #000000;
+    font-size: 20px;
+    font-weight: 500;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+  }
 
-	table {
-		width: 100%;
-		border-collapse: collapse;
-	}
+  .current-rate {
+    font-size: 130px;
+    color: #fff;
+  }
 
-	th,
-	td {
-		padding: 8px 12px;
-		text-align: left;
-		border-bottom: 1px solid #ddd;
-	}
+  .dropdown-container {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .dropdown {
+    width: 300px;
+    height: 300px;
+    background-color: #fff;
+    overflow-y: auto;
+    color: black;
+    display: flex;
+    flex-direction: column;
 
-	th {
-		background-color: #f2f2f2;
-		font-weight: bold;
-	}
-
-	tr:hover {
-		background-color: #f5f5f5;
-	}
+    .rate-input {
+      width: 100px;
+      height: 50px;
+    }
+  }
 </style>
