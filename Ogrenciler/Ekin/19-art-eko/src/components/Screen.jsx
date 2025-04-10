@@ -28,9 +28,7 @@ export default function Screen() {
             <i className="fa-solid fa-book fa-bounce"></i>
             <p>
               The word was
-              <span style={{ textTransform: "uppercase" }}>
-                {turns[0].word}
-              </span>
+              <span className="interval-word">{" " + turns[0].word}</span>
             </p>
           </>
         ) : phase == "end" ? (

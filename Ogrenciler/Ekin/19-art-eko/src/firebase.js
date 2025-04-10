@@ -110,9 +110,6 @@ export const guess = (player, name, guess) => {
       set(`chat/${id}`, { type: "correct", player, name });
       set(`turns/0/players/${player}`, true);
 
-      console.log(turn.players);
-      console.log(turn.players ?? {});
-
       get(`players/${player}`).then(({ score }) =>
         set(
           `players/${player}/score`,

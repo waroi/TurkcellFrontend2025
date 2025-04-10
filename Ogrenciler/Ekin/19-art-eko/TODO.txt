@@ -1,29 +1,31 @@
 
-canvas resets !!!!!!!!!
-
-
-sonradan join atanların score atanması
-
-
-
-
-
 Interval Section
- -interval
-   -timeout skip layout & css
-   -the word was $word layout & css (+ correct guess count)
- -top 3 layout & css
+  -the word was $word layout & css (+ correct guess count)
+  -top 3 layout & css
 
 
 
-GAME structure
- -turn timing
- -phase changes
- -end game & top 3
+HOST.CHECK GUESS COMPLETE
+HOST.TURN TIME?
+
+HOST.CHANGE TURN
+HOST.END GAME
+
+
+TIMEOUT SYSTEM
+
+
+canvas resets resize bug !!!!!!!!!
+
+
+
 
 
  >>>
 TOO MUCH LATENCY!!!
+
+sonradan join atanların score atanması
+
 
  player json stringify at game performance problems
 
