@@ -8,7 +8,7 @@
   let isOpen = false;
   let selectedType: "from" | "to" = "to";
   let fromCurrencyRate = 1.0;
-  let toCurrencyRate = 38.0122;
+  let toCurrencyRate = 1.0;
 
   onMount(async () => {
     fetch(
@@ -16,12 +16,20 @@
     )
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         apiData.set(data);
+
+        const unsubscribe = currencyRates.subscribe((rates) => {
+          const from = rates.find((item) => item.currency === fromCurrency);
+          const to = rates.find((item) => item.currency === toCurrency);
+
+          if (from) fromCurrencyRate = from.rate;
+          if (to) toCurrencyRate = to.rate;
+        });
+
+        setTimeout(() => unsubscribe(), 100);
       })
       .catch((error) => {
         console.log(error);
-        return {};
       });
   });
 
