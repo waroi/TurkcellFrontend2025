@@ -45,7 +45,6 @@ const OnlineTest = () => {
     const fetchData = async () => {
       console.log(userId);
       const data = await fetchQuestionType(userId);
-      console.log("çekilen data", data);
       if (Array.isArray(data) && data.length > 0) {
         setQuestionType(data[0]);
       }
