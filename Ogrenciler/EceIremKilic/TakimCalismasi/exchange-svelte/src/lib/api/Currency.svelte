@@ -1,6 +1,9 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import { currencies } from "../../store/store";
+  import Select from "../components/atoms/Select.svelte";
+  import Input from "../components/atoms/Input.svelte";
+  import type { Currency, CurrencyRates } from "../../types/type";
 
   let baseCurrency = { currency: "IDR", value: 100 };
   let secondCurrency = { currency: "USD", value: 0 };
@@ -8,7 +11,7 @@
   let isLoading = false;
   let errorMessage = "";
 
-  let currencyRates: Record<string, number> = {};
+  let currencyRates: CurrencyRates = {};
   $: total = amount * secondCurrency.value;
   $: formattedTotal = new Intl.NumberFormat(undefined, {
     style: "currency",
@@ -38,13 +41,14 @@
         secondCurrency.value = currencyRates[secondCurrency.currency];
       }
 
-      const currencies_list: any = Object.entries(data.data).map(
+      const currencies_list: Currency[] = Object.entries(data.data).map(
         ([key, value]) => ({
           key,
-          value,
+          value: Number(value),
         })
       );
       currencies.set(currencies_list);
+      console.log(currencies_list);
     } catch (error) {
       errorMessage = "Error fetching currency data. Please try again.";
       console.error(error);
@@ -86,14 +90,7 @@
       <label for="amountInput" class="form-label">Miktar</label>
       <div class="input-group">
         <span class="input-group-text">{baseCurrency.currency}</span>
-        <input
-          id="amountInput"
-          class="form-control form-control-lg"
-          type="number"
-          bind:value={amount}
-          min="0"
-          placeholder="Miktar giriniz."
-        />
+        <Input {amount} placeholder="Deneme" />
       </div>
     </div>
 
@@ -103,18 +100,11 @@
           <label for="baseCurrencySelect" class="form-label"
             >Dönüştürülecek</label
           >
-          <select
-            id="baseCurrencySelect"
-            class="form-select"
-            bind:value={baseCurrency.currency}
-            on:change={handleBaseCurrency}
-          >
-            {#each $currencies as currency}
-              <option value={currency.key}>
-                {currency.key}
-              </option>
-            {/each}
-          </select>
+          <Select
+            value={baseCurrency.currency}
+            onChange={handleBaseCurrency}
+            options={$currencies.map((currency) => ({ key: currency.key }))}
+          />
         </div>
       </div>
 
