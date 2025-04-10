@@ -1,46 +1,39 @@
 <script lang="ts">
+  import type { Currency, Pair } from "../types";
   import currencies from "../currencies";
+  import popularPairs from "../popularPairs";
 
-  export let getPairConversion: (from: string, to: string) => Promise<number>;
+  export var getPairConversion: (from: string, to: string) => Promise<number>;
 
   let amount: number = 1;
   let fromCurrency: string = "USD";
   let toCurrency: string = "TRY";
-  let rate: number = null;
+  let rate: number = 1;
 
-  const popularPairs = [
-    { from: "USD", to: "TRY" },
-    { from: "EUR", to: "TRY" },
-    { from: "GBP", to: "TRY" },
-    { from: "USD", to: "EUR" },
-    { from: "EUR", to: "USD" },
-    { from: "USD", to: "GBP" },
-    { from: "GBP", to: "USD" },
-  ];
-
-  function calculate() {
-    if (amount && fromCurrency && toCurrency)
+  function calculate(): void {
+    if (fromCurrency && toCurrency)
       getPairConversion(fromCurrency, toCurrency).then(
         (response) => (rate = response)
       );
   }
 
-  function formatCurrency(value, code) {
-    if (value === null) return "";
-
+  function formatCurrency(value: number, code: string): string {
     return `${value.toFixed(2)} ${getCurrencySymbol(code)}`;
   }
 
-  function getCurrencySymbol(code) {
-    return currencies.find((currency) => currency.code == code).symbol;
+  function getCurrencySymbol(code: string): string {
+    return currencies.find(
+      (currency: Currency): boolean => currency.code == code
+    ).symbol;
   }
 
-  function swapCurrencies() {
+  function swapCurrencies(): void {
     [fromCurrency, toCurrency] = [toCurrency, fromCurrency];
+
     calculate();
   }
 
-  function selectPair(pair) {
+  function selectPair(pair: Pair): void {
     fromCurrency = pair.from;
     toCurrency = pair.to;
     calculate();

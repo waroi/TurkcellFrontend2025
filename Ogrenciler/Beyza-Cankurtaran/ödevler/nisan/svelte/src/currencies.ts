@@ -1,4 +1,6 @@
-export default [
+import type { Currency } from "./types";
+
+const currencies: Currency[] = [
   { code: "AED", name: "UAE Dirham", symbol: "د.إ" },
   { code: "AFN", name: "Afghan Afghani", symbol: "؋" },
   { code: "ALL", name: "Albanian Lek", symbol: "L" },
@@ -161,3 +163,5 @@ export default [
   { code: "ZMW", name: "Zambian Kwacha", symbol: "ZK" },
   { code: "ZWL", name: "Zimbabwean Dollar", symbol: "$" },
 ];
+
+export default currencies;

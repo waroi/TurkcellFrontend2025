@@ -5,8 +5,10 @@
     return fetch(
       `https://v6.exchangerate-api.com/v6/2e15a4f6b9ac3c8ac8b8829a/pair/${from}/${to}`
     )
-      .then((response) => response.json())
-      .then((response) => parseFloat(response.conversion_rate.toFixed(2)));
+      .then((response: Response) => response.json())
+      .then((response: { conversion_rate: number }) =>
+        parseFloat(response.conversion_rate.toFixed(2))
+      );
   }
 </script>
 
