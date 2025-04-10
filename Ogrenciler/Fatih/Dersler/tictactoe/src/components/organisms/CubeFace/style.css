@@ -1,0 +1,28 @@
+.face {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  backface-visibility: hidden;
+}
+
+.face.front {
+  transform: rotateY(0deg) translateZ(90px);
+}
+.face.back {
+  transform: rotateY(180deg) translateZ(90px);
+}
+.face.right {
+  transform: rotateY(90deg) translateZ(90px);
+}
+.face.left {
+  transform: rotateY(-90deg) translateZ(90px);
+}
+.face.top {
+  transform: rotateX(90deg) translateZ(90px);
+}
+.face.bottom {
+  transform: rotateX(-90deg) translateZ(90px);
+}

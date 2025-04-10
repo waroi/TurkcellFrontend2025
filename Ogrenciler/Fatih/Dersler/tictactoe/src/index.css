@@ -1,0 +1,303 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #121212;
+  background-image: linear-gradient(135deg, #121212 0%, #1e2124 100%);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  color: #e0e0e0;
+}
+.ttt-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.ttt-card {
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  padding: 40px;
+  width: 100%;
+  max-width: 400px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #303030;
+}
+
+.ttt-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.ttt-title {
+  color: #ffffff;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 28px;
+}
+
+.ttt-subtitle {
+  font-size: 20px;
+  font-weight: 500;
+  color: #bbbbbb;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.ttt-text {
+  color: #bbbbbb;
+  font-size: 14px;
+}
+
+.ttt-input-group {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.ttt-input {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 16px;
+  border: 1px solid #444444;
+  border-radius: 8px;
+  background-color: #2a2a2a;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  color: #e0e0e0;
+}
+
+.ttt-input:focus {
+  border-color: #0095ff;
+  box-shadow: 0 0 0 2px rgba(0, 149, 255, 0.2);
+  outline: none;
+}
+
+.ttt-input::placeholder {
+  color: #777777;
+}
+
+.ttt-button {
+  background-color: #0095ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 10px;
+}
+
+.ttt-button:hover {
+  background-color: #0077cc;
+  transform: translateY(-2px);
+}
+
+.ttt-button.secondary {
+  background-color: #555555;
+}
+
+.ttt-button.secondary:hover {
+  background-color: #666666;
+}
+
+.ttt-button.danger {
+  background-color: #e53935;
+}
+
+.ttt-button.danger:hover {
+  background-color: #c62828;
+}
+
+.ttt-error {
+  color: #ff5252;
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.ttt-success {
+  color: #69f0ae;
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+/* Logo and Branding */
+.ttt-logo {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.ttt-x {
+  color: #0095ff;
+  font-size: 32px;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(0, 149, 255, 0.5);
+}
+
+.ttt-o {
+  color: #ff4081;
+  font-size: 32px;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(255, 64, 129, 0.5);
+}
+
+.ttt-link-container {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #bbbbbb;
+}
+
+.ttt-link {
+  color: #0095ff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.ttt-link:hover {
+  text-decoration: underline;
+  color: #00b0ff;
+}
+
+/* Game Board Elements */
+.ttt-game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.ttt-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 30px 0;
+}
+
+.ttt-cell {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2a2a2a;
+  border-radius: 8px;
+  font-size: 32px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid #444444;
+}
+
+.ttt-cell:hover {
+  background-color: #333333;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.ttt-cell.x {
+  color: #0095ff;
+  text-shadow: 0 0 5px rgba(0, 149, 255, 0.5);
+}
+
+.ttt-cell.o {
+  color: #ff4081;
+  text-shadow: 0 0 5px rgba(255, 64, 129, 0.5);
+}
+
+.ttt-room-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 20px 0;
+  width: 100%;
+}
+
+.ttt-room-item {
+  background-color: #2a2a2a;
+  border-radius: 8px;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 1px solid #444444;
+}
+
+.ttt-room-item:hover {
+  background-color: #333333;
+  transform: translateX(5px);
+}
+
+.ttt-room-name {
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.ttt-room-players {
+  font-size: 14px;
+  color: #bbbbbb;
+}
+
+.ttt-game-status {
+  margin: 20px 0;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 500;
+  background-color: #2a2a2a;
+  border: 1px solid #444444;
+}
+
+.ttt-game-status.your-turn {
+  border-color: #0095ff;
+  color: #0095ff;
+}
+
+.ttt-game-status.opponent-turn {
+  border-color: #ff4081;
+  color: #ff4081;
+}
+
+.ttt-game-status.game-over {
+  border-color: #69f0ae;
+  color: #69f0ae;
+}
+
+/* Animations */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.ttt-pulse {
+  animation: pulse 2s infinite;
+}
+
+@media (max-width: 480px) {
+  .ttt-card {
+    padding: 25px;
+  }
+
+  .ttt-cell {
+    width: 70px;
+    height: 70px;
+    font-size: 28px;
+  }
+}
