@@ -1,102 +1,52 @@
-<script>
-  // State
-  let amount = 1;
-  let fromCurrency = "USD";
-  let toCurrency = "EUR";
-  let convertedAmount = null;
-  
-  // Currency data
-  const currencies = [
-    { code: "USD", name: "US Dollar", symbol: "$" },
-    { code: "EUR", name: "Euro", symbol: "€" },
-    { code: "GBP", name: "British Pound", symbol: "£" },
-    { code: "JPY", name: "Japanese Yen", symbol: "¥" },
-    { code: "AUD", name: "Australian Dollar", symbol: "A$" },
-    { code: "CAD", name: "Canadian Dollar", symbol: "C$" },
-    { code: "CHF", name: "Swiss Franc", symbol: "CHF" },
-    { code: "CNY", name: "Chinese Yuan", symbol: "¥" },
-    { code: "INR", name: "Indian Rupee", symbol: "₹" },
-    { code: "BRL", name: "Brazilian Real", symbol: "R$" },
-    { code: "RUB", name: "Russian Ruble", symbol: "₽" },
-    { code: "KRW", name: "South Korean Won", symbol: "₩" },
-    { code: "SGD", name: "Singapore Dollar", symbol: "S$" },
-    { code: "NZD", name: "New Zealand Dollar", symbol: "NZ$" },
-    { code: "MXN", name: "Mexican Peso", symbol: "Mex$" },
-  ];
-  
+<script lang="ts">
+  import currencies from "../currencies";
+
+  export let getPairConversion: (from: string, to: string) => Promise<number>;
+
+  let amount: number = 1;
+  let fromCurrency: string = "USD";
+  let toCurrency: string = "TRY";
+  let rate: number = null;
+
   const popularPairs = [
+    { from: "USD", to: "TRY" },
+    { from: "EUR", to: "TRY" },
+    { from: "GBP", to: "TRY" },
     { from: "USD", to: "EUR" },
     { from: "EUR", to: "USD" },
     { from: "USD", to: "GBP" },
     { from: "GBP", to: "USD" },
-    { from: "USD", to: "JPY" },
-    { from: "EUR", to: "GBP" },
   ];
-  
-  // Mock exchange rates data - in a real application, this would come from an API
-  const exchangeRates = {
-    USD: 1.0,
-    EUR: 0.85,
-    GBP: 0.73,
-    JPY: 110.26,
-    AUD: 1.35,
-    CAD: 1.25,
-    CHF: 0.91,
-    CNY: 6.45,
-    INR: 74.38,
-    BRL: 5.23,
-    RUB: 73.45,
-    KRW: 1156.23,
-    SGD: 1.35,
-    NZD: 1.42,
-    MXN: 19.87,
-  };
-  
-  // Methods
-  function calculateExchange() {
-    if (amount && fromCurrency && toCurrency) {
-      const rate = getExchangeRate(fromCurrency, toCurrency);
-      convertedAmount = amount * rate;
-    }
+
+  function calculate() {
+    if (amount && fromCurrency && toCurrency)
+      getPairConversion(fromCurrency, toCurrency).then(
+        (response) => (rate = response)
+      );
   }
-  
-  function getExchangeRate(from, to) {
-    const fromRate = exchangeRates[from];
-    const toRate = exchangeRates[to];
-    return parseFloat((toRate / fromRate).toFixed(6));
+
+  function formatCurrency(value, code) {
+    if (value === null) return "";
+
+    return `${value.toFixed(2)} ${getCurrencySymbol(code)}`;
   }
-  
-  function formatCurrency(value, currencyCode) {
-    if (value === null) return '';
-    
-    const formatter = new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: currencyCode,
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2
-    });
-    
-    return formatter.format(value);
-  }
-  
+
   function getCurrencySymbol(code) {
-    const currency = currencies.find(c => c.code === code);
-    return currency ? currency.symbol : '';
+    return currencies.find((currency) => currency.code == code).symbol;
   }
-  
+
   function swapCurrencies() {
     [fromCurrency, toCurrency] = [toCurrency, fromCurrency];
-    calculateExchange();
+    calculate();
   }
-  
+
   function selectPair(pair) {
     fromCurrency = pair.from;
     toCurrency = pair.to;
-    calculateExchange();
+    calculate();
   }
-  
-  // Initialize conversion
-  calculateExchange();
+
+  calculate();
 </script>
 
 <div class="card">
@@ -104,23 +54,23 @@
     <div>
       <div class="form-group">
         <label for="amount">Amount</label>
-        <input 
-          type="number" 
-          id="amount" 
-          bind:value={amount} 
-          on:input={calculateExchange}
+        <input
+          type="number"
+          id="amount"
+          bind:value={amount}
+          on:input={calculate}
           placeholder="Enter amount"
           min="0"
-        >
+        />
       </div>
-      
+
       <div class="form-group">
         <label for="fromCurrency">From Currency</label>
         <div class="currency-select-container">
-          <select 
-            id="fromCurrency" 
-            bind:value={fromCurrency} 
-            on:change={calculateExchange}
+          <select
+            id="fromCurrency"
+            bind:value={fromCurrency}
+            on:change={calculate}
           >
             {#each currencies as currency}
               <option value={currency.code}>
@@ -131,19 +81,13 @@
           <span class="currency-icon">{getCurrencySymbol(fromCurrency)}</span>
         </div>
       </div>
-      
-      <button class="swap-btn" on:click={swapCurrencies}>
-        ⇅
-      </button>
-      
+
+      <button class="swap-btn" on:click={swapCurrencies}> ⇅ </button>
+
       <div class="form-group">
         <label for="toCurrency">To Currency</label>
         <div class="currency-select-container">
-          <select 
-            id="toCurrency" 
-            bind:value={toCurrency} 
-            on:change={calculateExchange}
-          >
+          <select id="toCurrency" bind:value={toCurrency} on:change={calculate}>
             {#each currencies as currency}
               <option value={currency.code}>
                 {currency.code} - {currency.name}
@@ -153,7 +97,7 @@
           <span class="currency-icon">{getCurrencySymbol(toCurrency)}</span>
         </div>
       </div>
-      
+
       <div class="popular-pairs">
         {#each popularPairs as pair}
           <div class="pair-chip" on:click={() => selectPair(pair)}>
@@ -161,22 +105,28 @@
           </div>
         {/each}
       </div>
-      
     </div>
-    
+
     <div class="result">
       <h2>Conversion Result</h2>
-      {#if convertedAmount !== null}
+      {#if rate !== null}
         <div>
-          <div class="result-amount">{formatCurrency(convertedAmount, toCurrency)}</div>
+          <div class="result-amount">
+            {formatCurrency(amount * rate, toCurrency)}
+          </div>
           <div class="result-text">
-            {formatCurrency(amount, fromCurrency)} = {formatCurrency(convertedAmount, toCurrency)}
+            {formatCurrency(amount, fromCurrency)} = {formatCurrency(
+              amount * rate,
+              toCurrency
+            )}
           </div>
           <div class="exchange-rate">
-            1 {fromCurrency} = {getExchangeRate(fromCurrency, toCurrency)} {toCurrency}
+            1 {fromCurrency} = {(1 * rate).toFixed(2)}
+            {toCurrency}
           </div>
           <div class="exchange-rate">
-            1 {toCurrency} = {getExchangeRate(toCurrency, fromCurrency)} {fromCurrency}
+            1 {toCurrency} = {(1 / rate).toFixed(2)}
+            {fromCurrency}
           </div>
         </div>
       {:else}
@@ -220,7 +170,8 @@
     font-weight: 500;
   }
 
-  input, select {
+  input,
+  select {
     width: 100%;
     padding: 10px;
     border: 1px solid #ddd;
