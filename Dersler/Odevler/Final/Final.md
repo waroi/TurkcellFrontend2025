@@ -2,11 +2,16 @@
 
 ## Proje Tasarımı
 
-https://www.figma.com/design/GAf84WJAFR8x0Xve64Kgjk/Crypto-Planet---Crypto-Trading-Exchange-UI-Template-In-Figma--Community-?node-id=2-3&p=f
+- Kullanılacak:
+  https://www.figma.com/design/98DqPAzFuthisWLaeTG7B6/cryptocurrency-exchange-in-light-mood-and-Dark-mood--Community-?node-id=2680-54312&t=UDuV2ZXEQIoilHh8-0
+
+- Esinlenilecek:
+  https://www.figma.com/design/GAf84WJAFR8x0Xve64Kgjk/Crypto-Planet---Crypto-Trading-Exchange-UI-Template-In-Figma--Community-?node-id=2-3&p=f
 
 ## Al-Sat endpointi
 
 https://testnet.binance.vision/
+https://coinmarketcap.com/
 
 ## Proje Detayı
 
@@ -22,6 +27,7 @@ https://testnet.binance.vision/
 - Koyu ve açık tema olacak.
 - Proje, dark mode ve light mode arasında geçiş yapabilmelidir.
 - İki farklı dil seçeneği olacak (Türkçe ve İngilizce). i18n kullanılabilir.
+- Kripto para birimi logolarını bir endpointden alalım.
 
 ## Teknolojiler
 
@@ -40,3 +46,12 @@ https://testnet.binance.vision/
 - Vercel'e depyol ediecek.
 - Proje, Github üzerinde versiyon kontrolü ile takip edilecek. Branching yapısı kullanalım.
 - Mümkünse giti patlatmayalım.
+- Clean kod yazılmalı.
+- Solid prensiplerine uygun olmalı.
+- Tasarım kurallarına uygun olmalı.
+- Proje, responsive tasarıma sahip olmalı.
+
+## Teslim Tarihi
+
+18 Nisan 2025 - Saat 23:59
+21 Nisan Sunum
