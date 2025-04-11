@@ -1,12 +1,22 @@
 <script>
-	import { goto } from '$app/navigation';
-
-	function goToExchange() {
-		goto('/exchange');
-	}
+	import HeroBanner from '../components/home/HeroBanner.svelte';
+	import FeatureHighlights from '../components/home/FeatureHighlights.svelte';
+	import CurrencyCards from '../components/home/CurrencyCards.svelte';
 </script>
 
-<h1>Hoş geldiniz!</h1>
-<p>Dilediğiniz para birimini istediğiniz zaman dönüştürün.</p>
+<section class="home-container">
+	<HeroBanner />
+	<FeatureHighlights />
+	<CurrencyCards />
+</section>
 
-<button class="btn" on:click={goToExchange}> Hemen Dönüştür </button>
+<style>
+	.home-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 3rem 1rem;
+		max-width: 90rem;
+		margin: 0 auto;
+	}
+</style>
