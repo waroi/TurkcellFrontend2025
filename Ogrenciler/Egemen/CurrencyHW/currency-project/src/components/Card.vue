@@ -32,13 +32,12 @@ function handleExchangeClick(currency) {
 function handleAmountClick(currency) {
   amountType.value = currency.code
   amount.value = 1
-
   fetchData(amountType.value)
     .then((json) => {
       currencyData.value = json
       currencyData.value.data.map((currency) => {
-        if (exchangeType == data.code) {
-          exchangeRate.value = data.rate
+        if (exchangeType.value === currency.code) {
+          exchangeRate.value = currency.rate
           exchange.value = exchangeRate.value * amount.value
         }
       })
@@ -47,7 +46,6 @@ function handleAmountClick(currency) {
 }
 
 watch(amount, () => {
-  console.log("amount ", amount.value, " exchange ", exchange.value)
   exchange.value = exchangeRate.value * amount.value
 })
 </script>
@@ -60,11 +58,13 @@ watch(amount, () => {
         <div class="left">
           <div class="input-group mb-3">
             <input type="number" class="form-control" aria-label="Currency type dropdown" v-model="amount">
-            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
               aria-expanded="false">{{ amountType }}</button>
             <ul class="dropdown-menu dropdown-menu-end">
               <li @click="handleAmountClick(currency)" class="dropdown-item" v-for="currency in currencyData.data"
-                :key="currency.code"> {{ currency.name }}
+                :key="currency.code"> <img
+                  :src="`https://flagcdn.com/24x18/${currency.code.slice(0, 2).toLowerCase()}.png`" width="16"
+                  height="12" :alt="currency.name"> {{ currency.name }}
               </li>
             </ul>
           </div>
@@ -72,11 +72,13 @@ watch(amount, () => {
         <div class="right">
           <div class="input-group mb-3">
             <input type="text" class="form-control" aria-label="Currency exchange amount" readonly v-model="exchange">
-            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
               aria-expanded="false">{{ exchangeType }}</button>
             <ul class="dropdown-menu dropdown-menu-end">
               <li @click="handleExchangeClick(currency)" class="dropdown-item" v-for="currency in currencyData.data"
-                :key="currency.code"> {{ currency.name }}
+                :key="currency.code"><img
+                  :src="`https://flagcdn.com/24x18/${currency.code.slice(0, 2).toLowerCase()}.png`" width="16"
+                  height="12" :alt="currency.name"> {{ currency.name }}
               </li>
             </ul>
           </div>
@@ -88,4 +90,16 @@ watch(amount, () => {
 
 </template>
 
-<style scoped></style>
+<style scoped>
+.form-control {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fcfcfc;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.dropdown-menu {
+  max-height: 300px;
+  overflow-y: scroll;
+}
+</style>
