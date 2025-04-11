@@ -2,7 +2,7 @@
   //   export let text: string;
   //   export let onClick: () => any;
   //   export let variant: string = "outline-secondary";
-  let { children, text, variant, onClick, disabled = false } = $props();
+  let { children = null, text, variant, onClick, disabled = false } = $props();
 </script>
 
 <button type="button" {disabled} class={`btn btn-${variant}`} onclick={onClick}>
