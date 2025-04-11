@@ -5,7 +5,7 @@ export const fetchData = async (currency = "TRY") => {
         `https://api.collectapi.com/economy/currencyToAll?int=10&base=${currency}`,
         {
           headers: {
-            Authorization: "apikey 58e1Vowpjao0t9n5aWAOfZ:306w3hPFnZgnpF38SsZN51",
+            Authorization: "apikey 1vUTuR54ZLk7HqjRwh5zjr:3ueBI1ZjSyPfKbM3epJfyF",
           },
         }
       );
@@ -13,9 +13,7 @@ export const fetchData = async (currency = "TRY") => {
         throw new Error("Para Değerleri Bulunamadı");
       }
       const data = await response.json();
-      console.log(data);
       return data.result;
     } catch (error) {
       console.log(`Para Birimi API çağrısı başarisiz`)
-
     }}
