@@ -6,7 +6,18 @@
     max-width: 800px;
     margin: 0 auto;
   }
-
+  .flag-icon {
+    width: 24px;
+    height: 16px;
+    margin-right: 6px;
+    vertical-align: middle;
+  }
+  .currency-select-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
   .calculator {
     display: grid;
     grid-template-columns: 1fr 1fr;

@@ -1,6 +1,6 @@
 <script lang="ts">
   import "./Card.css";
-  
+
   import type { Currency, Pair } from "../types";
   import currencies from "../currencies";
   import popularPairs from "../popularPairs";
@@ -15,7 +15,7 @@
   function calculate(): void {
     if (fromCurrency && toCurrency)
       getPairConversion(fromCurrency, toCurrency).then(
-        (response) => (rate = response)
+        (response) => (rate = response),
       );
   }
 
@@ -24,10 +24,17 @@
   }
 
   function getCurrencySymbol(code: string): string {
-    return currencies.find(
-      (currency: Currency): boolean => currency.code == code
-    ).symbol;
+  const currency = currencies.find(
+    (currency: Currency): boolean => currency.code === code
+  );
+
+  if (!currency) {
+    return ""; 
   }
+
+  return currency.symbol;
+}
+
 
   function swapCurrencies(): void {
     [fromCurrency, toCurrency] = [toCurrency, fromCurrency];
@@ -62,7 +69,13 @@
       <div class="form-group">
         <label for="fromCurrency">From Currency</label>
         <div class="currency-select-container">
+          <img
+            class="flag-icon"
+            src={`https://www.xe.com/svgs/flags/${fromCurrency.toLowerCase()}.static.svg`}
+            alt={`${fromCurrency} flag`}
+          />
           <select
+            
             id="fromCurrency"
             bind:value={fromCurrency}
             on:change={calculate}
@@ -82,6 +95,11 @@
       <div class="form-group">
         <label for="toCurrency">To Currency</label>
         <div class="currency-select-container">
+          <img
+            class="flag-icon"
+            src={`https://www.xe.com/svgs/flags/${toCurrency.toLowerCase()}.static.svg`}
+            alt={`${toCurrency} flag`}
+          />
           <select id="toCurrency" bind:value={toCurrency} on:change={calculate}>
             {#each currencies as currency}
               <option value={currency.code}>
@@ -89,17 +107,23 @@
               </option>
             {/each}
           </select>
+          
           <span class="currency-icon">{getCurrencySymbol(toCurrency)}</span>
         </div>
       </div>
 
       <div class="popular-pairs">
         {#each popularPairs as pair}
-          <div class="pair-chip" on:click={() => selectPair(pair)}>
+          <button
+            type="button"
+            class="pair-chip"
+            on:click={() => selectPair(pair)}
+          >
             {pair.from}/{pair.to}
-          </div>
+          </button>
         {/each}
       </div>
+      
     </div>
 
     <div class="result">
@@ -112,7 +136,7 @@
           <div class="result-text">
             {formatCurrency(amount, fromCurrency)} = {formatCurrency(
               amount * rate,
-              toCurrency
+              toCurrency,
             )}
           </div>
           <div class="exchange-rate">
