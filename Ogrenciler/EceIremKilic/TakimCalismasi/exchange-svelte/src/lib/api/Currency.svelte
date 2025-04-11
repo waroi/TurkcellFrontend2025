@@ -4,14 +4,17 @@
   import Select from "../components/atoms/Select.svelte";
   import Input from "../components/atoms/Input.svelte";
   import type { Currency, CurrencyRates } from "../../types/type";
+  import Button from "../components/atoms/Button.svelte";
 
   let baseCurrency = { currency: "IDR", value: 100 };
   let secondCurrency = { currency: "USD", value: 0 };
   let amount = 100;
   let isLoading = false;
   let errorMessage = "";
+  let total: number;
 
   let currencyRates: CurrencyRates = {};
+
   $: total = amount * secondCurrency.value;
   $: formattedTotal = new Intl.NumberFormat(undefined, {
     style: "currency",
@@ -48,7 +51,6 @@
         })
       );
       currencies.set(currencies_list);
-      console.log(currencies_list);
     } catch (error) {
       errorMessage = "Error fetching currency data. Please try again.";
       console.error(error);
@@ -57,7 +59,14 @@
     }
   };
 
-  const handleBaseCurrency = () => {
+  const handleBaseCurrency = (event: Event) => {
+    const { value } = event.target as HTMLSelectElement;
+    if (currencyRates[baseCurrency.currency]) {
+      baseCurrency = {
+        currency: value,
+        value: currencyRates[value],
+      };
+    }
     getCurrency();
   };
 
@@ -90,7 +99,8 @@
       <label for="amountInput" class="form-label">Miktar</label>
       <div class="input-group">
         <span class="input-group-text">{baseCurrency.currency}</span>
-        <Input {amount} placeholder="Deneme" />
+
+        <Input id="amountInput" bind:amount placeholder="Miktar giriniz." />
       </div>
     </div>
 
@@ -109,12 +119,13 @@
       </div>
 
       <div class="col-md-2 d-flex align-items-center justify-content-center">
-        <button
-          class="btn btn-outline-secondary mt-4"
-          on:click={swapCurrencies}
+        <Button
+          text="↔"
+          variant="outline-secondary mt-4"
+          onClick={swapCurrencies}
         >
-          <i class="bi bi-arrow-left-right"></i> ↔
-        </button>
+          <i class="bi bi-arrow-left-right"></i>
+        </Button>
       </div>
 
       <div class="col-md-5">
@@ -137,9 +148,10 @@
     </div>
 
     <div class="d-grid mb-3">
-      <button
-        class="btn btn-primary btn-lg"
-        on:click={getCurrency}
+      <Button
+        text=""
+        variant="primary btn-lg"
+        onClick={getCurrency}
         disabled={isLoading}
       >
         {#if isLoading}
@@ -152,7 +164,7 @@
         {:else}
           Dönüştür
         {/if}
-      </button>
+      </Button>
     </div>
 
     <div class="result-container bg-light p-4 rounded text-center">
