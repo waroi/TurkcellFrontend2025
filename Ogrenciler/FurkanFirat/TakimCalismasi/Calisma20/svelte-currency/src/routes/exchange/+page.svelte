@@ -1,10 +1,11 @@
 <script lang="ts">
-	import { fromStore } from "svelte/store";
+	import { fromStore } from 'svelte/store';
 
 	let amount: number = 1;
 	let from: string = 'USD';
 	let to: string = 'EUR';
 	let result: number | null = null;
+	let currencies = $state({});
 
 	interface Currency {
 		code: string;
@@ -31,15 +32,33 @@
 
 			const fromRate = data.data[from].value;
 			const toRate = data.data[to].value;
+			console.log(fromRate);
+			console.log(toRate);
 
 			// USD -> EUR gibi dönüşüm: amount * (toRate / fromRate)
 			result = amount * (toRate / fromRate);
+			console.log(result);
 		} catch (error) {
 			console.error('Döviz API hatası:', error);
 		}
 	}
-	function swapCurrency(): void{
-		const x = from ;
+	async function getCurrencies(): Promise<void> {
+		try {
+			const res = await fetch(`https://api.currencyapi.com/v3/currencies?apikey=${API_KEY}`);
+			const data = await res.json();
+			currencies = data.data;
+			console.log(currencies);
+		} catch (error) {
+			console.error('Döviz API hatası:', error);
+		}
+	}
+
+	$effect(() => {
+		getCurrencies();
+	});
+
+	function swapCurrency(): void {
+		const x = from;
 		from = to;
 		to = x;
 		convertCurrency();
@@ -51,30 +70,20 @@
 <div class="exchance-box">
 	<input type="number" bind:value={amount} min="0" />
 	<select bind:value={from}>
-		<option value="USD">USD</option>
-		<option value="EUR">EUR</option>
-		<option value="CAD">CAD</option>
-		<option value="TRY">TRY</option>
-		<option value="GBP">GBP</option>
-		<option value="RUB">RUB</option>
+		{#each Object.entries(currencies) as [code, currency]}
+			<option value={code}>{code} - {currency.name}</option>
+		{/each}
 	</select>
-	<button onclick={swapCurrency}>
-		↔
-	</button>
+	<button onclick={swapCurrency}> ↔ </button>
 	<select bind:value={to}>
-		<option value="USD">USD</option>
-		<option value="EUR">EUR</option>
-		<option value="CAD">CAD</option>
-		<option value="TRY">TRY</option>
-		<option value="GBP">GBP</option>
-		<option value="RUB">RUB</option>
+		{#each Object.entries(currencies) as [code, currency]}
+			<option value={code}>{code} - {currency.name}</option>
+		{/each}
 	</select>
 	<button class="btn" onclick={convertCurrency}>Çevir</button>
 </div>
 
-{#if result !== null}
-	<p class="result">{amount} {from} = <strong>{result.toFixed(2)}</strong> {to}</p>
-{/if}
+<p class="result">{amount} {from} = <strong>{result}</strong> {to}</p>
 
 <!-- TASARIM GÜNCELLEMESİ
 SELECT - OPTION KISMINI GÜNCELLEYELİM -->
