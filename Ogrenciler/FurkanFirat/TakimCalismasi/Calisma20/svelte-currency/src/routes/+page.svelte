@@ -6,7 +6,7 @@
 	}
 </script>
 
-<h2>Hoş geldiniz!</h2>
+<h1>Hoş geldiniz!</h1>
 <p>Dilediğiniz para birimini istediğiniz zaman dönüştürün.</p>
 
-<button on:click={goToExchange}> Hemen Dönüştür </button>
+<button class="btn" on:click={goToExchange}> Hemen Dönüştür </button>
