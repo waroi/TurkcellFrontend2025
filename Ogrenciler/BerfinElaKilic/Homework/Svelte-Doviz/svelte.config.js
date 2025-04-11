@@ -1,7 +1,11 @@
-import { vitePreprocess } from '@sveltejs/vite-plugin-svelte'
+import path from 'path';
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
 export default {
-  // Consult https://svelte.dev/docs#compile-time-svelte-preprocess
-  // for more information about preprocessors
+  kit: {
+    alias: {
+      $lib: path.resolve('src/lib'),
+    },
+  },
   preprocess: vitePreprocess(),
-}
+};

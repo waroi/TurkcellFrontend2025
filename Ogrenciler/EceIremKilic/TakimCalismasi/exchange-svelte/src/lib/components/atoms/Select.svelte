@@ -1,6 +1,6 @@
 <script lang="ts">
   export let value: string;
-  export let onChange: () => void;
+  export let onChange: (event: Event) => void;
   export let options: { key: string }[];
 </script>
 
