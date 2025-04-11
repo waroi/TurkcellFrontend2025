@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { fromStore } from "svelte/store";
+
 	let amount: number = 1;
 	let from: string = 'USD';
 	let to: string = 'EUR';
@@ -36,30 +38,42 @@
 			console.error('Döviz API hatası:', error);
 		}
 	}
+	function swapCurrency(): void{
+		const x = from ;
+		from = to;
+		to = x;
+		convertCurrency();
+	}
 </script>
 
 <h2>Döviz Çevirici</h2>
 
-<div>
+<div class="exchance-box">
 	<input type="number" bind:value={amount} min="0" />
 	<select bind:value={from}>
 		<option value="USD">USD</option>
 		<option value="EUR">EUR</option>
 		<option value="CAD">CAD</option>
 		<option value="TRY">TRY</option>
+		<option value="GBP">GBP</option>
+		<option value="RUB">RUB</option>
 	</select>
-	<span>→</span>
+	<button onclick={swapCurrency}>
+		↔
+	</button>
 	<select bind:value={to}>
 		<option value="USD">USD</option>
 		<option value="EUR">EUR</option>
 		<option value="CAD">CAD</option>
 		<option value="TRY">TRY</option>
+		<option value="GBP">GBP</option>
+		<option value="RUB">RUB</option>
 	</select>
-	<button on:click={convertCurrency}>Çevir</button>
+	<button class="btn" onclick={convertCurrency}>Çevir</button>
 </div>
 
 {#if result !== null}
-	<p>{amount} {from} = <strong>{result.toFixed(2)}</strong> {to}</p>
+	<p class="result">{amount} {from} = <strong>{result.toFixed(2)}</strong> {to}</p>
 {/if}
 
 <!-- TASARIM GÜNCELLEMESİ
