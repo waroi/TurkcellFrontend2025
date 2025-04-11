@@ -4,14 +4,12 @@ import TheWelcome from "./components/TheWelcome.vue";
 import { fetchData } from "./service/dbController.ts";
 import Home from "./components/Home.vue";
 import { ref } from 'vue'
-
 const currency = ref(null)
 const error = ref(null)
 
 
 
 fetchData()
-  
   .then((json) => (currency.value = json))
   .catch((err) => (error.value = err))
 </script>
@@ -21,22 +19,22 @@ fetchData()
 
 
 
- 
 
-    <div v-if="error">Oops! Error encountered: {{ error.message }}</div>
+
+  <div v-if="error">Oops! Error encountered: {{ error.message }}</div>
   <div v-else-if="currency">
     Data loaded:
-    <Home :currencyData = "currency" />
+    <Home :currencyData="currency" />
   </div>
   <div v-else>Loading...</div>
- 
+
 
   <main>
     <!-- {{ fetchData()
   .then(result => console.log(result)) }} -->
- 
+
   </main>
- 
+
 </template>
 
 <style scoped>
