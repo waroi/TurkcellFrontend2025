@@ -1,3 +1,4 @@
+import BottomBanner from "@/components/landing-page/bottom-banner/BottomBanner";
 import DownloadApp from "@/components/landing-page/download-app/DownloadApp";
 import Hero from "@/components/landing-page/hero/Hero";
 import HeroCryptoContainer from "@/components/landing-page/hero/HeroCryptoContainer";
@@ -21,6 +22,14 @@ export default function Home() {
 				<DownloadApp />
 			</section>
 			<OurCustomers />
+			<section
+				className="bg-primary"
+				style={{
+					background:
+						"linear-gradient(to right, #8444D4, #5B41D9, #383FDE, #5B41D9, #8444D4)",
+				}}>
+				<BottomBanner />
+			</section>
 		</>
 	);
 }
