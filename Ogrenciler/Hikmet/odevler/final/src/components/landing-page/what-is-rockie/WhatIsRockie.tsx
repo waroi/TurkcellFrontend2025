@@ -9,7 +9,7 @@ export default function WhatIsRockie() {
 			<Row className="py-5">
 				<Col className="d-md-flex justify-content-center align-baseline d-none">
 					<Image
-						src="/what-is-left.png"
+						src="/what-is-left.svg"
 						alt="What is Rockie Image"
 						width={500}
 						height={500}
