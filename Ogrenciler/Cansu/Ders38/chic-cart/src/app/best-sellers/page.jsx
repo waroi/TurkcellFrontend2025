@@ -22,11 +22,11 @@ export default function NewArrivals() {
     try {
       const response = await fetch("https://fakestoreapi.com/products");
       const data = await response.json();
-      const slicedData = data.slice(6, 9); 
+      const slicedData = data.slice(0, 3); 
       setProducts(slicedData);
       setLoading(false);
     } catch (error) {
-      console.error("Yeni gelen ürünler alınırken bir hata oluştu:", error);
+      console.error("Öne çıkan ürünler alınırken bir hata oluştu:", error);
       setError("Ürünler yüklenirken bir hata oluştu. Lütfen daha sonra tekrar deneyin.");
       setLoading(false);
     }
@@ -115,7 +115,7 @@ export default function NewArrivals() {
           <div className="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
           <div className="position-relative p-5 text-white text-center">
             <h1 className="display-4 fw-bold mb-3">
-              <i className="fas fa-star me-2"></i>Öne Çıkan Kampanyalar
+              <i className="fas fa-star me-2"></i>Çok Satanlar
             </h1>
             <p className="lead mb-4">En yeni ürünlerimizi keşfedin ve trendleri yakından takip edin!</p>
             <div className="d-flex justify-content-center gap-3">
@@ -142,4 +142,5 @@ export default function NewArrivals() {
     </div>
   );
 }
- 
+
+
