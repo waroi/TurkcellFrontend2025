@@ -7,8 +7,11 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 
 import Image from "next/image";
 
+import { logout } from "@/components/auth/actions";
+import { createClient } from "@/utils/supabase/client";
 import { useLocale, useTranslations } from "next-intl";
 import { usePathname, useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import Navbar from "react-bootstrap/Navbar";
 
@@ -16,8 +19,27 @@ export default function NavBar() {
 	const t = useTranslations("Navbar");
 	const locale = useLocale();
 	const router = useRouter();
-	const pathname = usePathname();
 
+	const pathname = usePathname();
+	const [user, setUser] = useState<any>(null);
+	const [loading, setLoading] = useState(true);
+
+	useEffect(() => {
+		async function getUser() {
+			const supabase = createClient();
+			const {
+				data: { user },
+			} = await supabase.auth.getUser();
+			setUser(user);
+			setLoading(false);
+		}
+
+		getUser();
+	}, []);
+
+	const handleLogout = async () => {
+		await logout();
+	};
 	return (
 		<Navbar expand="lg" className="sticky-top bg-light">
 			<Container fluid>
@@ -125,13 +147,38 @@ export default function NavBar() {
 							{t("links.wallet")}
 						</Button>
 
-						<Image
-							src="/ben.webp"
-							alt="User Avatar"
-							width={40}
-							height={40}
-							className="mx-2 border rounded-circle"
-						/>
+						{!loading &&
+							(user ? (
+								<NavDropdown
+									title={
+										<Image
+											src="/ben.webp"
+											alt="User Avatar"
+											width={40}
+											height={40}
+											className="border rounded-circle"
+										/>
+									}
+									id="user-dropdown"
+									align="end">
+									<NavDropdown.Item>
+										{user.user_metadata?.nickname || user.email}
+									</NavDropdown.Item>
+									<NavDropdown.Divider />
+									<NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
+									<NavDropdown.Item href="/settings">Settings</NavDropdown.Item>
+									<NavDropdown.Divider />
+									<NavDropdown.Item onClick={handleLogout}>
+										Logout
+									</NavDropdown.Item>
+								</NavDropdown>
+							) : (
+								<Nav.Link href="/login" className="d-flex align-items-center">
+									<Button variant="primary" className="rounded-pill">
+										Login / Register
+									</Button>
+								</Nav.Link>
+							))}
 					</Nav>
 				</Navbar.Collapse>
 			</Container>

@@ -1,6 +1,7 @@
 "use client";
 import { registerSchema } from "@/lib/definitions";
 import { yupResolver } from "@hookform/resolvers/yup";
+
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 import {
@@ -14,6 +15,7 @@ import {
 	Tab,
 } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { signup } from "../actions";
 
 export default function Register() {
 	const t = useTranslations("Register");
@@ -31,7 +33,7 @@ export default function Register() {
 	});
 
 	const onSubmit = (data: any) => {
-		console.log(data);
+		signup(data);
 	};
 
 	return (

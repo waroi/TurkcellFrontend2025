@@ -1,11 +1,32 @@
+import { routing } from "@/i18n/routing";
+import { updateSession } from "@/utils/supabase/middleware";
 import createMiddleware from "next-intl/middleware";
-import { routing } from "./i18n/routing";
+import { type NextRequest } from "next/server";
 
-export default createMiddleware(routing);
+const intlMiddleware = createMiddleware(routing);
+
+export async function middleware(request: NextRequest) {
+	let response = await updateSession(request);
+
+	const intlResponse = intlMiddleware(request);
+
+	response.cookies.getAll().forEach((cookie) => {
+		intlResponse.cookies.set(cookie.name, cookie.value, {
+			domain: cookie.domain,
+			expires: cookie.expires,
+			httpOnly: cookie.httpOnly,
+			maxAge: cookie.maxAge,
+			path: cookie.path,
+			sameSite: cookie.sameSite,
+			secure: cookie.secure,
+		});
+	});
+
+	return intlResponse;
+}
 
 export const config = {
-	// Match all pathnames except for
-	// - … if they start with `/api`, `/trpc`, `/_next` or `/_vercel`
-	// - … the ones containing a dot (e.g. `favicon.ico`)
-	matcher: "/((?!api|trpc|_next|_vercel|.*\\..*).*)",
+	matcher: [
+		"/((?!api|trpc|_next|_vercel|_next/static|_next/image|favicon.ico|.*\\..*).*)",
+	],
 };

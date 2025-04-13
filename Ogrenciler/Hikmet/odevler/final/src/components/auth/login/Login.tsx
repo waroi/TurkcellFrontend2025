@@ -15,6 +15,7 @@ import {
 	Tab,
 } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { login } from "../actions";
 import styles from "./login.module.scss";
 
 export default function Login() {
@@ -32,7 +33,7 @@ export default function Login() {
 	});
 
 	const onSubmit = (data: any) => {
-		console.log(data);
+		login(data);
 	};
 
 	return (

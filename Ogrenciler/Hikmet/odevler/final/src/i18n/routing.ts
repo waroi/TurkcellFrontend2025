@@ -7,6 +7,8 @@ export const routing = defineRouting({
 
 	// Used when no locale matches
 	defaultLocale: "en",
+	localeDetection: true,
+	localePrefix: "always",
 	pathnames: {
 		"/": "/",
 		"/login": {
@@ -16,6 +18,10 @@ export const routing = defineRouting({
 		"/register": {
 			en: "/register",
 			tr: "/kayit",
+		},
+		"/profile": {
+			en: "/profile",
+			tr: "/profil",
 		},
 	},
 });
