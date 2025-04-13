@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { SSRProvider } from "react-bootstrap";
+import BottomBanner from "./landing-page/bottom-banner/BottomBanner";
 import Footer from "./landing-page/footer/Footer";
 import NavBar from "./landing-page/navbar/NavBar";
 
@@ -13,6 +14,7 @@ export default function RootLayoutProvider({
 		<SSRProvider>
 			<NavBar />
 			{children}
+			<BottomBanner />
 			<Footer />
 		</SSRProvider>
 	);

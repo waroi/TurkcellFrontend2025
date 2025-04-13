@@ -17,7 +17,9 @@ export default function BottomBanner() {
 						<p>{t("description")}</p>
 					</Col>
 					<Col xs="auto">
-						<Button className="bg-white px-4 py-2 rounded-5 text-black">
+						<Button
+							className="bg-white px-4 py-2 rounded-5 text-black"
+							href="/register">
 							{t("createAccount")}
 						</Button>
 					</Col>

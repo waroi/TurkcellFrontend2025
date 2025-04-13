@@ -1,4 +1,3 @@
-import BottomBanner from "@/components/landing-page/bottom-banner/BottomBanner";
 import DownloadApp from "@/components/landing-page/download-app/DownloadApp";
 import Hero from "@/components/landing-page/hero/Hero";
 import HeroCryptoContainer from "@/components/landing-page/hero/HeroCryptoContainer";
@@ -17,7 +16,6 @@ export default function Home() {
 			<WhatIsRockie />
 			<DownloadApp />
 			<OurCustomers />
-			<BottomBanner />
 		</>
 	);
 }

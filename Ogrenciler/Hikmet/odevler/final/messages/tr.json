@@ -28,6 +28,65 @@
 		}
 	},
 
+	"Register": {
+		"bannerTitle": "Kayıt Ol",
+		"path": "Ana Sayfa / Kayıt Ol",
+		"title": "Rockie'ye Kayıt Ol",
+		"subtitle": "Önceden kayıt olun ve etkinlik avantajlarının tadını çıkarın",
+		"tabs": ["E-posta", "Mobil"],
+		"email": {
+			"label": "E-posta/ID",
+			"placeholder": "Lütfen e-posta formunu doldurun.",
+			"authenticate": " Doğrula"
+		},
+		"password": {
+			"label": "Şifre <span>(8 veya daha fazla karakter, sayılar ve özel karakterler dahil)</span>",
+			"placeholder": "Lütfen bir şifre girin.",
+			"confirmPassword": "Lütfen şifreyi tekrar girin."
+		},
+		"nickName": {
+			"label": "Kullanıcı Adı <span>(Özel karakterler hariç)</span>",
+			"placeholder": "Lütfen kullanıcı adı formunu doldurun."
+		},
+		"country": {
+			"label": "Ülke"
+		},
+		"phoneNumber": {
+			"label": "Telefon Numarası <span>(Sadece rakam girin)</span>",
+			"placeholder": "örn) 05301234567 ('-' olmadan)"
+		},
+		"uidCode": {
+			"label": "UID Kodu <span>(İsteğe bağlı)</span>",
+			"placeholder": "Lütfen davet kodunuzu girin."
+		},
+		"preRegisterButton": "Ön Kayıt",
+		"haveAnAccount": "Zaten hesabınız var mı?",
+		"login": "Giriş Yap",
+		"validations": {
+			"email": {
+				"required": "E-posta adresi gereklidir",
+				"invalid": "Lütfen geçerli bir e-posta adresi girin"
+			},
+			"password": {
+				"required": "Şifre gereklidir",
+				"minLength": "Şifre en az 8 karakter olmalıdır",
+				"format": "Şifre en az bir sayı ve bir özel karakter içermelidir"
+			},
+			"confirmPassword": {
+				"required": "Şifre onayı gereklidir",
+				"match": "Şifreler eşleşmelidir"
+			},
+			"nickName": {
+				"required": "Kullanıcı adı gereklidir",
+				"match": "Kullanıcı adı e-posta ile aynı olmalıdır"
+			},
+			"phone": {
+				"required": "Telefon numarası gereklidir",
+				"format": "Telefon numarası 10 rakamdan oluşmalıdır"
+			}
+		}
+	},
+
 	"Hero": {
 		"title": "Kripto Varlıkları Roketle Al & Sat",
 		"subtitle": "Coin roket, kripto varlık borsa alım satım işlemlerini yapmanın en kolay, en güvenli ve en hızlı yoludur.",

@@ -28,6 +28,65 @@
 		}
 	},
 
+	"Register": {
+		"bannerTitle": "Register",
+		"path": "Home / Register",
+		"title": "Register To Rockie",
+		"subtitle": "Register in advance and enjoy the event benefits",
+		"tabs": ["Email", "Mobile"],
+		"email": {
+			"label": "Email/ID",
+			"placeholder": "Please fill in the email form.",
+			"authenticate": " Authenticate"
+		},
+		"password": {
+			"label": "Password <span>(8 or more characters, including numbers and special characters)</span>",
+			"placeholder": "Please enter a password.",
+			"confirmPassword": "Please re-enter the password."
+		},
+		"nickName": {
+			"label": "Nick Name <span>(Excluding special characters)</span>",
+			"placeholder": "Please fill in the nickname form."
+		},
+		"country": {
+			"label": "Country"
+		},
+		"phoneNumber": {
+			"label": "Phone Number <span>(Enter Numbers Only)</span>",
+			"placeholder": "ex) 01012345678 (without '-')"
+		},
+		"uidCode": {
+			"label": "UID Code <span>(Optional)</span>",
+			"placeholder": "Please enter your invitation code."
+		},
+		"preRegisterButton": "Pre-Registration",
+		"haveAnAccount": "Already have an account?",
+		"login": "Login",
+		"validations": {
+			"email": {
+				"required": "Email is required",
+				"invalid": "Please enter a valid email address"
+			},
+			"password": {
+				"required": "Password is required",
+				"minLength": "Password must be at least 8 characters",
+				"format": "Password must contain at least one number and one special character"
+			},
+			"confirmPassword": {
+				"required": "Confirm Password is required",
+				"match": "Passwords must match"
+			},
+			"nickName": {
+				"required": "NickName is required",
+				"match": "NickName must be equal to email"
+			},
+			"phone": {
+				"required": "Phone number is required",
+				"format": "Phone number must be 10 digits"
+			}
+		}
+	},
+
 	"Hero": {
 		"title": "Buy & Sell Digital Assets In The Rocket",
 		"subtitle": "Coin rocket is the easiest, safest, and fastest way to buy & sell crypto asset exchange.",
