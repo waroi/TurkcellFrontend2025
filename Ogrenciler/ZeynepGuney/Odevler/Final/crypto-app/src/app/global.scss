@@ -1,0 +1,21 @@
+html[data-theme='light'] {
+    --white: #ffffff;
+    --on-surface: #23262F;
+    --primary : #3772FF;
+    --secondary : #777E90;
+    --dark : #141416;
+  }
+  
+  html[data-theme='dark'] {
+    --bg: #141416;
+    --primary : #3772FF;
+    --secondary : #777E90;
+    --white: #ffffff;
+  }
+  
+  body {
+    background-color: var(--bg);
+    color: var(--text);
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
