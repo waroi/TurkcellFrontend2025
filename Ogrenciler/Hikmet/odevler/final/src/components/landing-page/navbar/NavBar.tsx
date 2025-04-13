@@ -7,18 +7,21 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 
 import Image from "next/image";
 
-import { useLocalization } from "@/hooks/useLocalization";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import { usePathname, useRouter } from "next/navigation";
 import { Button } from "react-bootstrap";
 import Navbar from "react-bootstrap/Navbar";
 
 export default function NavBar() {
 	const t = useTranslations("Navbar");
-	const { locale, toggleLanguage } = useLocalization();
+	const locale = useLocale();
+	const router = useRouter();
+	const pathname = usePathname();
+
 	return (
 		<Navbar expand="lg" className="sticky-top bg-light">
 			<Container fluid>
-				<Navbar.Brand href="#">
+				<Navbar.Brand href="/">
 					<Image
 						src="/logo.svg"
 						alt="React Bootstrap logo"
@@ -31,7 +34,7 @@ export default function NavBar() {
 				<Navbar.Collapse id="basic-navbar-nav">
 					<Nav className="me-auto">
 						<NavDropdown title={t("links.homePage")} id="basic-nav-dropdown">
-							<NavDropdown.Item href="#action/3.1">Homepage</NavDropdown.Item>
+							<NavDropdown.Item href="/">Homepage</NavDropdown.Item>
 						</NavDropdown>
 
 						<Nav.Link href="#link">{t("links.buyCrypto")}</Nav.Link>
@@ -79,14 +82,27 @@ export default function NavBar() {
 								{t("links.ordersTrades.tradeHistory")}
 							</NavDropdown.Item>
 						</NavDropdown>
-						<Button
-							variant="outline-secondary rounded-5"
-							className="mx-2"
-							onClick={toggleLanguage}>
-							{locale.toUpperCase()}
-						</Button>
+						<NavDropdown
+							title={locale === "en" ? "English" : "Türkçe"}
+							id="language-dropdown"
+							className="me-2">
+							<NavDropdown.Item
+								onClick={() =>
+									router.push(pathname.replace(`/${locale}`, `/en`))
+								}
+								active={locale === "en"}>
+								English
+							</NavDropdown.Item>
+							<NavDropdown.Item
+								onClick={() =>
+									router.push(pathname.replace(`/${locale}`, `/tr`))
+								}
+								active={locale === "tr"}>
+								Türkçe
+							</NavDropdown.Item>
+						</NavDropdown>
 						<div className="d-lg-block mx-2 vr d-none"></div>
-						<Nav.Link href="#link">
+						<Nav.Link href="/">
 							<Image
 								src="/sun.svg"
 								alt="User"

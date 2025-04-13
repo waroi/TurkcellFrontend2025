@@ -9,10 +9,10 @@ export const routing = defineRouting({
 	defaultLocale: "en",
 	pathnames: {
 		"/": "/",
-		// "/login": {
-		// 	en: "/login",
-		// 	tr: "/giris",
-		// },
+		"/login": {
+			en: "/login",
+			tr: "/giris",
+		},
 		"/register": {
 			en: "/register",
 			tr: "/kayit",

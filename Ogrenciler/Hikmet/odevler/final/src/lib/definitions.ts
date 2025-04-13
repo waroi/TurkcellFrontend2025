@@ -32,3 +32,19 @@ export const registerSchema = yup.object().shape({
 		.matches(phoneRegex, "Phone number must be 10 digits")
 		.required("Phone number is required"),
 });
+
+export const loginSchema = yup.object().shape({
+	email: yup
+		.string()
+		.email("Please enter a valid email address")
+		.required("Email is required"),
+	password: yup
+		.string()
+		.min(8, "Password or email is incorrect")
+		.matches(
+			passwordRegex,
+			"Password must contain at least one number and one special character"
+		)
+		.required("Password is required"),
+	rememberMe: yup.boolean(),
+});

@@ -42,7 +42,7 @@ export default function Hero() {
 							</h1>
 							{t("subtitle")}
 							<p className="mb-4 text-body-tertiary text-left fs-20 fw-light"></p>
-							<Button className="mb-4 rounded-5">
+							<Button className="mb-4 rounded-5" href="/login">
 								{t("getStartedButton")}
 							</Button>
 							<h5 className="mb-3">{t("ourPartners")}</h5>
