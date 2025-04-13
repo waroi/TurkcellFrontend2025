@@ -1,0 +1,12 @@
+.navlink {
+  text-decoration: none;
+  color: #23262f;
+  padding: 17px 16px;
+  &.active {
+    background-color: #3772ff;
+    color: #ffffff;
+  }
+  img {
+    margin-left: 4px;
+  }
+}

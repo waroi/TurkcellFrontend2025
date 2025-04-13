@@ -1,4 +1,4 @@
-import React from 'react'
+import "./style.scss"
 import ImageItem from '../../atoms/ImageItem/ImageItem';
 
 interface NavbarLogoProbs {
@@ -9,9 +9,9 @@ interface NavbarLogoProbs {
 
 const NavbarLogo = ({ src, text }: NavbarLogoProbs) => {
     return (
-        <div>
-            <ImageItem src={src} alt={text} width={10} height={10} />
-            <h2>{text}</h2>
+        <div className='logo'>
+            <ImageItem src={src} alt={text} width={30} height={30} />
+            <h2 >{text}</h2>
         </div>
     )
 }

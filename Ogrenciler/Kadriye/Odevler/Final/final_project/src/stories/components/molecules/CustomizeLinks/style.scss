@@ -1,0 +1,23 @@
+.navlinks {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  button {
+    background: none;
+    border: none;
+  }
+  .btn {
+    padding: 7px 12px;
+    margin: auto 0;
+    border: 1px solid #23262f;
+    border-radius: 30px;
+  }
+  .icon_btn {
+    padding: 0 8px;
+    margin: 17px 0;
+    border-left: 1px solid #e5e5e5;
+  }
+  img {
+    border-radius: 50%;
+  }
+}
