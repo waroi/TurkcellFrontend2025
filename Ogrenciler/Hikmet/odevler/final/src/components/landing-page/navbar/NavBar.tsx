@@ -7,14 +7,16 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 
 import Image from "next/image";
 
+import { useLocalization } from "@/hooks/useLocalization";
 import { useTranslations } from "next-intl";
 import { Button } from "react-bootstrap";
 import Navbar from "react-bootstrap/Navbar";
 
 export default function NavBar() {
 	const t = useTranslations("Navbar");
+	const { locale, toggleLanguage } = useLocalization();
 	return (
-		<Navbar expand="lg" className="bg-body-light">
+		<Navbar expand="lg" className="sticky-top bg-light">
 			<Container fluid>
 				<Navbar.Brand href="#">
 					<Image
@@ -77,10 +79,12 @@ export default function NavBar() {
 								{t("links.ordersTrades.tradeHistory")}
 							</NavDropdown.Item>
 						</NavDropdown>
-						<NavDropdown title="EN" id="basic-nav-dropdown">
-							<NavDropdown.Item href="#">TR</NavDropdown.Item>
-							<NavDropdown.Item href="#">EN</NavDropdown.Item>
-						</NavDropdown>
+						<Button
+							variant="outline-secondary rounded-5"
+							className="mx-2"
+							onClick={toggleLanguage}>
+							{locale.toUpperCase()}
+						</Button>
 						<div className="d-lg-block mx-2 vr d-none"></div>
 						<Nav.Link href="#link">
 							<Image

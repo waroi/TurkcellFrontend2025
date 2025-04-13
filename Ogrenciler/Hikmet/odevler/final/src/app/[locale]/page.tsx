@@ -10,26 +10,14 @@ import WhatIsRockie from "@/components/landing-page/what-is-rockie/WhatIsRockie"
 export default function Home() {
 	return (
 		<>
-			<section className="bg-body-tertiary">
-				<Hero />
-			</section>
+			<Hero />
 			<HeroCryptoContainer />
-
 			<MarketUpdate />
 			<HowItWork />
 			<WhatIsRockie />
-			<section className="bg-body-tertiary">
-				<DownloadApp />
-			</section>
+			<DownloadApp />
 			<OurCustomers />
-			<section
-				className="bg-primary"
-				style={{
-					background:
-						"linear-gradient(to right, #8444D4, #5B41D9, #383FDE, #5B41D9, #8444D4)",
-				}}>
-				<BottomBanner />
-			</section>
+			<BottomBanner />
 		</>
 	);
 }

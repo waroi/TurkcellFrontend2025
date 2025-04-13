@@ -2,7 +2,7 @@ import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Nav, NavItem, Row } from "react-bootstrap";
 
 export default function Footer() {
 	const t = useTranslations("Footer");
@@ -31,147 +31,62 @@ export default function Footer() {
 							<h6 className="mb-3 text-uppercase fw-bold">
 								{t("secondGrid.title")}
 							</h6>
-							<ul className="flex-column nav">
-								<li className="mb-2 nav-item">
-									<Link href="#" className="p-0 text-muted nav-link">
-										{t("secondGrid.spot")}
-									</Link>
-								</li>
-								<li className="mb-2 nav-item">
-									<Link href="#" className="p-0 text-muted nav-link">
-										{t("secondGrid.inverse")}
-									</Link>
-								</li>
-								<li className="mb-2 nav-item">
-									<Link href="#" className="p-0 text-muted nav-link">
-										{t("secondGrid.perpetual")}
-									</Link>
-								</li>
-								<li className="mb-2 nav-item">
-									<Link href="#" className="p-0 text-muted nav-link">
-										{t("secondGrid.exchange")}
-									</Link>
-								</li>
-								<li className="mb-2 nav-item">
-									<Link href="#" className="p-0 text-muted nav-link">
-										{t("secondGrid.launchpad")}
-									</Link>
-								</li>
-								<li className="mb-2 nav-item">
-									<Link href="#" className="p-0 text-muted nav-link">
-										{t("secondGrid.pay")}
-									</Link>
-								</li>
-							</ul>
+							<Nav className="flex-column">
+								{(t.raw("secondGrid.links") as string[]).map(
+									(link: string, index: number) => (
+										<NavItem key={index} className="mb-2">
+											<Link href="#" className="p-0 text-muted nav-link">
+												{link}
+											</Link>
+										</NavItem>
+									)
+								)}
+							</Nav>
 						</Col>
 
 						<Col xs={6} md={3} lg={2}>
 							<h6 className="mb-3 text-uppercase fw-bold">
 								{t("thirdGrid.title")}
 							</h6>
-							<ul className="flex-column nav">
-								<li className="mb-2 nav-item">
-									<Link href="#" className="p-0 text-muted nav-link">
-										{t("thirdGrid.buyCrypto")}
-									</Link>
-								</li>
-								<li className="mb-2 nav-item">
-									<Link href="#" className="p-0 text-muted nav-link">
-										{t("thirdGrid.markets")}
-									</Link>
-								</li>
-								<li className="mb-2 nav-item">
-									<Link href="#" className="p-0 text-muted nav-link">
-										{t("thirdGrid.trading")}
-									</Link>
-								</li>
-								<li className="mb-2 nav-item">
-									<Link href="#" className="p-0 text-muted nav-link">
-										{t("thirdGrid.affiliate")}
-									</Link>
-								</li>
-								<li className="mb-2 nav-item">
-									<Link href="#" className="p-0 text-muted nav-link">
-										{t("thirdGrid.referral")}
-									</Link>
-								</li>
-								<li className="mb-2 nav-item">
-									<Link href="#" className="p-0 text-muted nav-link">
-										{t("thirdGrid.api")}
-									</Link>
-								</li>
-							</ul>
+							<Nav className="flex-column">
+								{(t.raw("thirdGrid.links") as string[]).map((link, index) => (
+									<NavItem key={index} className="mb-2">
+										<Link href="#" className="p-0 text-muted nav-link">
+											{link}
+										</Link>
+									</NavItem>
+								))}
+							</Nav>
 						</Col>
 
 						<Col xs={6} md={3} lg={2}>
 							<h6 className="mb-3 text-uppercase fw-bold">
 								{t("fourthGrid.title")}
 							</h6>
-							<ul className="flex-column nav">
-								<li className="mb-2 nav-item">
-									<Link href="#" className="p-0 text-muted nav-link">
-										{t("fourthGrid.bybitLearn")}
-									</Link>
-								</li>
-								<li className="mb-2 nav-item">
-									<Link href="#" className="p-0 text-muted nav-link">
-										{t("fourthGrid.helpCenter")}
-									</Link>
-								</li>
-								<li className="mb-2 nav-item">
-									<Link href="#" className="p-0 text-muted nav-link">
-										{t("fourthGrid.userFeedback")}
-									</Link>
-								</li>
-								<li className="mb-2 nav-item">
-									<Link href="#" className="p-0 text-muted nav-link">
-										{t("fourthGrid.submitRequest")}
-									</Link>
-								</li>
-								<li className="mb-2 nav-item">
-									<Link href="#" className="p-0 text-muted nav-link">
-										{t("fourthGrid.apiDoc")}
-									</Link>
-								</li>
-								<li className="mb-2 nav-item">
-									<Link href="#" className="p-0 text-muted nav-link">
-										{t("fourthGrid.tradingRules")}
-									</Link>
-								</li>
-							</ul>
+							<Nav className="flex-column">
+								{(t.raw("fourthGrid.links") as string[]).map((link, index) => (
+									<NavItem key={index} className="mb-2">
+										<Link href="#" className="p-0 text-muted nav-link">
+											{link}
+										</Link>
+									</NavItem>
+								))}
+							</Nav>
 						</Col>
 
 						<Col xs={6} md={3} lg={3}>
 							<h6 className="mb-3 text-uppercase fw-bold">
 								{t("fifthGrid.title")}
 							</h6>
-							<ul className="flex-column nav">
-								<li className="mb-2 nav-item">
-									<Link href="#" className="p-0 text-muted nav-link">
-										{t("fifthGrid.aboutBybit")}
-									</Link>
-								</li>
-								<li className="mb-2 nav-item">
-									<Link href="#" className="p-0 text-muted nav-link">
-										{t("fifthGrid.authenticityCheck")}
-									</Link>
-								</li>
-								<li className="mb-2 nav-item">
-									<Link href="#" className="p-0 text-muted nav-link">
-										{t("fifthGrid.careers")}
-									</Link>
-								</li>
-								<li className="mb-2 nav-item">
-									<Link href="#" className="p-0 text-muted nav-link">
-										{t("fifthGrid.businessContacts")}
-									</Link>
-								</li>
-								<li className="mb-2 nav-item">
-									<Link href="#" className="p-0 text-muted nav-link">
-										{t("fifthGrid.blog")}
-									</Link>
-								</li>
-							</ul>
+							<Nav className="flex-column">
+								{(t.raw("fifthGrid.links") as string[]).map((link, index) => (
+									<NavItem key={index} className="mb-2">
+										<Link href="#" className="p-0 text-muted nav-link">
+											{link}
+										</Link>
+									</NavItem>
+								))}
+							</Nav>
 						</Col>
 					</Row>
 				</footer>

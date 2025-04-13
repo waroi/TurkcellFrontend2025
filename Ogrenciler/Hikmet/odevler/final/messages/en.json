@@ -144,38 +144,39 @@
 		},
 		"secondGrid": {
 			"title": "PRODUCTS",
-			"spot": "Spot",
-			"inverse": "Inverse Perpetual",
-			"perpetual": "USDT Perpetual",
-			"exchange": "Exchange",
-			"launchpad": "Launchpad",
-			"pay": "Binance Pay"
+			"links": [
+				"Spot",
+				"Inverse Perpetual",
+				"USDT Perpetual",
+				"Exchange",
+				"Launchpad",
+				"Binance Pay"
+			]
 		},
 		"thirdGrid": {
 			"title": "SERVICES",
-			"buyCrypto": "Buy Crypto",
-			"markets": "Markets",
-			"trading": "Trading Fee",
-			"affiliate": "Affiliate Program",
-			"referral": "Referral Program",
-			"api": "API"
+			"links": [
+				"Buy Crypto",
+				"Markets",
+				"Trading Fee",
+				"P2P",
+				"Staking",
+				"Mining"
+			]
 		},
 		"fourthGrid": {
 			"title": "SUPPORT",
-			"bybitLearn": "Bybit Learn",
-			"helpCenter": "Help Center",
-			"userFeedback": "User Feedback",
-			"submitRequest": "Submit a Request",
-			"apiDoc": "API Documentation",
-			"tradingRules": "Trading Rules"
+			"links": ["Bybit Learn", "Help Center", "FAQ", "Support", "API"]
 		},
 		"fifthGrid": {
 			"title": "ABOUT US",
-			"aboutBybit": "About Bybit",
-			"authenticityCheck": "Authenticity Check",
-			"careers": "Careers",
-			"businessContacts": "Business Contacts",
-			"blog": "Blog"
+			"links": [
+				"About Bybit",
+				"Authenticity Check",
+				"Career Opportunities",
+				"Business Contacts",
+				"Blog"
+			]
 		}
 	}
 }
