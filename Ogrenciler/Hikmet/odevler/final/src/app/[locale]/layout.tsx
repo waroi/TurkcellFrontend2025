@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { DM_Sans } from "next/font/google";
 import { notFound } from "next/navigation";
-import "../globals.css";
+import "../globals.scss";
 
 const dmSans = DM_Sans({
 	subsets: ["latin"],
