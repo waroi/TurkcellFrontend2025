@@ -1,9 +1,12 @@
 "use client";
 
+import PageInfoContainer from "@/components/PageInfoContainer";
 import { loginSchema } from "@/lib/definitions";
+import { createClient } from "@/utils/supabase/client";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useTranslations } from "next-intl";
-import { useState } from "react";
+import { redirect } from "next/navigation";
+import { useEffect, useState } from "react";
 import {
 	Button,
 	Card,
@@ -24,6 +27,21 @@ export default function Login() {
 	const defaultTab = t.raw("tabs")[0].toLowerCase();
 	const [activeLoginTab, setActiveLoginTab] = useState<string>(defaultTab);
 
+	useEffect(() => {
+		const checkAuthAndRedirect = async () => {
+			const supabase = createClient();
+			const { data, error } = await supabase.auth.getSession();
+
+			if (error) {
+				console.error("Error getting session:", error);
+			} else if (data.session) {
+				redirect("/profile");
+			}
+		};
+
+		checkAuthAndRedirect();
+	}, []);
+
 	const {
 		register,
 		handleSubmit,
@@ -38,15 +56,7 @@ export default function Login() {
 
 	return (
 		<>
-			<div className="bg-body-secondary py-5">
-				<Container>
-					<Col className="d-flex align-items-center justify-content-between">
-						<h1>{t("bannerTitle")}</h1>
-						<span className="text-muted">{t("path")}</span>
-					</Col>
-				</Container>
-			</div>
-
+			<PageInfoContainer t={t} />
 			<Container className="py-5">
 				<Row className="justify-content-center">
 					<Col md={8} lg={6}>

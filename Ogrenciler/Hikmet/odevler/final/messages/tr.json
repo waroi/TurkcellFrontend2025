@@ -259,5 +259,67 @@
 				"Blog"
 			]
 		}
+	},
+
+	"Profile": {
+		"bannerTitle": "Kullanıcı Profili",
+		"subtitle": "Bilgiler",
+		"path": "Ana Sayfa / Profil",
+
+		"tabs": [
+			{
+				"title": "Profil",
+				"href": "/profile",
+				"icon": "/user.svg"
+			},
+			{
+				"title": "Referanslar",
+				"href": "/profile/referrals",
+				"icon": "/referral.svg"
+			},
+			{
+				"title": "API Anahtarları",
+				"href": "/profile/api-keys",
+				"icon": "/api_key.svg"
+			},
+			{
+				"title": "Giriş Geçmişi",
+				"href": "/profile/login-history",
+				"icon": "/login.svg"
+			},
+			{
+				"title": "2FA",
+				"href": "/profile/2fa",
+				"icon": "/2fa.svg"
+			},
+			{
+				"title": "Şifre Değiştir",
+				"href": "/profile/change-password",
+				"icon": "/change_password.svg"
+			}
+		],
+
+		"features": {
+			"title": "Özellikler",
+			"level1": {
+				"title": "Seviye 1",
+				"depositAssets": "Varlık Yatırma",
+				"withdrawAssets": {
+					"title": "Varlık Çekme",
+					"description": "Etkin $1.000.000/gün"
+				},
+				"cardPurchase": "Kart ile Alım",
+				"bankDeposit": "Banka Havalesi",
+				"updateProfile": "Profili Güncelle"
+			},
+			"level2": {
+				"title": "Seviye 2",
+				"fiatSpot": "Fiat ve Spot Cüzdan",
+				"marginWallet": {
+					"title": "Marjin Cüzdanı",
+					"description": "100x Kaldıraç Etkin"
+				}
+			}
+		}
 	}
 }

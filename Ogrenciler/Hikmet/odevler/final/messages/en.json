@@ -1,269 +1,318 @@
 {
-  "Navbar": {
-    "links": {
-      "homePage": "Home Page",
-      "buyCrypto": "Buy Crypto",
-      "markets": "Markets",
-      "exchange": "Exchange",
-      "spot": "Spot",
-      "pages": {
-        "title": "Pages",
-        "home": "Home",
-        "portfolio": "Portfolio",
-        "wallet": "Wallet"
-      },
-      "assets": {
-        "title": "Assets",
-        "assetsAndMarkets": "Assets & Markets",
-        "assetsAndMarketsAndExchange": "Assets & Markets & Exchange"
-      },
-      "ordersTrades": {
-        "title": "Orders & Trades",
-        "orders": "Orders",
-        "trades": "Trades",
-        "orderHistory": "Order History",
-        "tradeHistory": "Trade History"
-      },
-      "wallet": "Wallet"
-    }
-  },
-  "Register": {
-    "bannerTitle": "Register",
-    "path": "Home / Register",
-    "title": "Register To Rockie",
-    "subtitle": "Register in advance and enjoy the event benefits",
-    "tabs": [
-      "Email",
-      "Mobile"
-    ],
-    "email": {
-      "label": "Email/ID",
-      "placeholder": "Please fill in the email form.",
-      "authenticate": " Authenticate"
-    },
-    "password": {
-      "label": "Password <span>(8 or more characters, including numbers and special characters)</span>",
-      "placeholder": "Please enter a password.",
-      "confirmPassword": "Please re-enter the password."
-    },
-    "nickName": {
-      "label": "Nick Name <span>(Excluding special characters)</span>",
-      "placeholder": "Please fill in the nickname form."
-    },
-    "country": {
-      "label": "Country"
-    },
-    "phoneNumber": {
-      "label": "Phone Number <span>(Enter Numbers Only)</span>",
-      "placeholder": "ex) 01012345678 (without '-')"
-    },
-    "uidCode": {
-      "label": "UID Code <span>(Optional)</span>",
-      "placeholder": "Please enter your invitation code."
-    },
-    "preRegisterButton": "Pre-Registration",
-    "haveAnAccount": "Already have an account?",
-    "login": "Login",
-    "validations": {
-      "email": {
-        "required": "Email is required",
-        "invalid": "Please enter a valid email address"
-      },
-      "password": {
-        "required": "Password is required",
-        "minLength": "Password must be at least 8 characters",
-        "format": "Password must contain at least one number and one special character"
-      },
-      "confirmPassword": {
-        "required": "Confirm Password is required",
-        "match": "Passwords must match"
-      },
-      "nickName": {
-        "required": "NickName is required",
-        "match": "NickName must be equal to email"
-      },
-      "phone": {
-        "required": "Phone number is required",
-        "format": "Phone number must be 10 digits"
-      }
-    }
-  },
-  "Login": {
-    "bannerTitle": "Login",
-    "path": "Home / Login",
-    "title": "Login To Rockie",
-    "subtitle": "Welcome back! Log In now to start trading",
-    "tabs": [
-      "Email",
-      "Mobile"
-    ],
-    "email": {
-      "label": "Email/ID",
-      "placeholder": "Please fill in the email form."
-    },
-    "password": {
-      "label": "Password",
-      "placeholder": "Please enter a password."
-    },
-    "rememberMe": "Remember Me",
-    "forgotPassword": "Forgot Password?",
-    "loginButton": "Login",
-    "notAMember": "Not a member?",
-    "register": "Register",
-    "loginWithQR": "Login with QR Code",
-    "qrDescription": "Scan this code with the <span>Rockie Mobile App</span> to log in instantly."
-  },
-  "Hero": {
-    "title": "Buy & Sell Digital Assets In The Rocket",
-    "subtitle": "Coin rocket is the easiest, safest, and fastest way to buy & sell crypto asset exchange.",
-    "getStartedButton": "Get Started Now",
-    "ourPartners": "Our Partners"
-  },
-  "MarketUpdate": {
-    "title": "Market Update",
-    "seeAll": "See All Coins"
-  },
-  "HowItWork": {
-    "title": "How It Work",
-    "subtitle": "Stacks is a production-ready library of stackable content blocks built in React Native.",
-    "steps": [
-      {
-        "step": "STEP 1",
-        "icon": "/bit-cloud.png",
-        "title": "Download",
-        "description": [
-          "Stacks Is A Production Ready",
-          "Library Of Stackable Content Blocks",
-          "Built In React Native"
-        ]
-      },
-      {
-        "step": "STEP 2",
-        "icon": "/bit-wallet.png",
-        "title": "Connect Wallet",
-        "description": [
-          "Stacks Is A Production Ready",
-          "Library Of Stackable Content Blocks",
-          "Built In React Native"
-        ]
-      },
-      {
-        "step": "STEP 3",
-        "icon": "/bit-mining.png",
-        "title": "Start Trading",
-        "description": [
-          "Stacks Is A Production Ready",
-          "Library Of Stackable Content Blocks",
-          "Built In React Native"
-        ]
-      },
-      {
-        "step": "STEP 4",
-        "icon": "/bit-coin.png",
-        "title": "Earn Money",
-        "description": [
-          "Stacks Is A Production Ready",
-          "Library Of Stackable Content Blocks",
-          "Built In React Native"
-        ]
-      }
-    ]
-  },
-  "WhatIsRockie": {
-    "title": "What Is Rockie?",
-    "description": "Experience a variety of trading on Bitcost. You can use various types of coin transactions such as Spot Trade, Futures Trade, P2P, Staking, Mining, and margin.",
-    "articles": [
-      {
-        "icon": "/tick.svg",
-        "title": "View real-time cryptocurrency prices",
-        "description": "Experience a variety of trading on Bitcost. You can use various types of coin transactions such as Spot Trade, Futures Trade, P2P, Staking, Mining, and margin."
-      },
-      {
-        "icon": "/tick.svg",
-        "title": "Buy and sell BTC, ETH, XRP, OKB, Etc...",
-        "description": "Experience a variety of trading on Bitcost. You can use various types of coin transactions such as Spot Trade, Futures Trade, P2P, Staking, Mining, and margin."
-      }
-    ],
-    "exploreMoreButton": "Explore More"
-  },
-  "DownloadApp": {
-    "title": "Free your money & Invest with confident",
-    "description": "With Cryptor Trade, you can be sure your trading skills are matched",
-    "articles": [
-      {
-        "icon": "/tick.svg",
-        "title": "Buy, Sell, And Trade On The Go",
-        "description": "Buy, Sell, And Trade On The Go"
-      },
-      {
-        "icon": "/tick.svg",
-        "title": "Take Control Of Your Wealth",
-        "description": "Rest assured you (and only you) have access to your funds"
-      }
-    ]
-  },
-  "OurCustomers": {
-    "title": "Our Customers Love What We Do",
-    "subtitle": "Transform your idea into reality with finsweet",
-    "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
-    "customerReviews": "<span>30+</span> Customer Reviews",
-    "customerReview": "“Great course I really enjoyed it and the course was way easy to learn with very good explanations of the code, I could easily understand and develop applications with the knowledge gathered during the course.”",
-    "customerTitle": "Director Company"
-  },
-  "BottomBanner": {
-    "title": "Earn up to $25 worth of crypto",
-    "description": "Discover how specific cryptocurrencies work — and get a bit of each crypto to try out for yourself.",
-    "createAccount": "Create Account"
-  },
-  "Footer": {
-    "firstGrid": {
-      "title": "Let's talk! 🤙",
-      "phoneNumber": "+90 537 688 2416",
-      "email": "hikmetmelik@gmail.com",
-      "copyright": "Copyright © 2023  Free For Earth’s people"
-    },
-    "secondGrid": {
-      "title": "PRODUCTS",
-      "links": [
-        "Spot",
-        "Inverse Perpetual",
-        "USDT Perpetual",
-        "Exchange",
-        "Launchpad",
-        "Binance Pay"
-      ]
-    },
-    "thirdGrid": {
-      "title": "SERVICES",
-      "links": [
-        "Buy Crypto",
-        "Markets",
-        "Trading Fee",
-        "P2P",
-        "Staking",
-        "Mining"
-      ]
-    },
-    "fourthGrid": {
-      "title": "SUPPORT",
-      "links": [
-        "Bybit Learn",
-        "Help Center",
-        "FAQ",
-        "Support",
-        "API"
-      ]
-    },
-    "fifthGrid": {
-      "title": "ABOUT US",
-      "links": [
-        "About Bybit",
-        "Authenticity Check",
-        "Career Opportunities",
-        "Business Contacts",
-        "Blog"
-      ]
-    }
-  },
-  "coming-soon": "Coming Soon..."
+	"Navbar": {
+		"links": {
+			"homePage": "Home Page",
+			"buyCrypto": "Buy Crypto",
+			"markets": "Markets",
+			"exchange": "Exchange",
+			"spot": "Spot",
+			"pages": {
+				"title": "Pages",
+				"home": "Home",
+				"portfolio": "Portfolio",
+				"wallet": "Wallet"
+			},
+			"assets": {
+				"title": "Assets",
+				"assetsAndMarkets": "Assets & Markets",
+				"assetsAndMarketsAndExchange": "Assets & Markets & Exchange"
+			},
+			"ordersTrades": {
+				"title": "Orders & Trades",
+				"orders": "Orders",
+				"trades": "Trades",
+				"orderHistory": "Order History",
+				"tradeHistory": "Trade History"
+			},
+			"wallet": "Wallet"
+		}
+	},
+	"Register": {
+		"bannerTitle": "Register",
+		"path": "Home / Register",
+		"title": "Register To Rockie",
+		"subtitle": "Register in advance and enjoy the event benefits",
+		"tabs": ["Email", "Mobile"],
+		"email": {
+			"label": "Email/ID",
+			"placeholder": "Please fill in the email form.",
+			"authenticate": " Authenticate"
+		},
+		"password": {
+			"label": "Password <span>(8 or more characters, including numbers and special characters)</span>",
+			"placeholder": "Please enter a password.",
+			"confirmPassword": "Please re-enter the password."
+		},
+		"nickName": {
+			"label": "Nick Name <span>(Excluding special characters)</span>",
+			"placeholder": "Please fill in the nickname form."
+		},
+		"country": {
+			"label": "Country"
+		},
+		"phoneNumber": {
+			"label": "Phone Number <span>(Enter Numbers Only)</span>",
+			"placeholder": "ex) 01012345678 (without '-')"
+		},
+		"uidCode": {
+			"label": "UID Code <span>(Optional)</span>",
+			"placeholder": "Please enter your invitation code."
+		},
+		"preRegisterButton": "Pre-Registration",
+		"haveAnAccount": "Already have an account?",
+		"login": "Login",
+		"validations": {
+			"email": {
+				"required": "Email is required",
+				"invalid": "Please enter a valid email address"
+			},
+			"password": {
+				"required": "Password is required",
+				"minLength": "Password must be at least 8 characters",
+				"format": "Password must contain at least one number and one special character"
+			},
+			"confirmPassword": {
+				"required": "Confirm Password is required",
+				"match": "Passwords must match"
+			},
+			"nickName": {
+				"required": "NickName is required",
+				"match": "NickName must be equal to email"
+			},
+			"phone": {
+				"required": "Phone number is required",
+				"format": "Phone number must be 10 digits"
+			}
+		}
+	},
+	"Login": {
+		"bannerTitle": "Login",
+		"path": "Home / Login",
+		"title": "Login To Rockie",
+		"subtitle": "Welcome back! Log In now to start trading",
+		"tabs": ["Email", "Mobile"],
+		"email": {
+			"label": "Email/ID",
+			"placeholder": "Please fill in the email form."
+		},
+		"password": {
+			"label": "Password",
+			"placeholder": "Please enter a password."
+		},
+		"rememberMe": "Remember Me",
+		"forgotPassword": "Forgot Password?",
+		"loginButton": "Login",
+		"notAMember": "Not a member?",
+		"register": "Register",
+		"loginWithQR": "Login with QR Code",
+		"qrDescription": "Scan this code with the <span>Rockie Mobile App</span> to log in instantly."
+	},
+	"Hero": {
+		"title": "Buy & Sell Digital Assets In The Rocket",
+		"subtitle": "Coin rocket is the easiest, safest, and fastest way to buy & sell crypto asset exchange.",
+		"getStartedButton": "Get Started Now",
+		"ourPartners": "Our Partners"
+	},
+	"MarketUpdate": {
+		"title": "Market Update",
+		"seeAll": "See All Coins"
+	},
+	"HowItWork": {
+		"title": "How It Work",
+		"subtitle": "Stacks is a production-ready library of stackable content blocks built in React Native.",
+		"steps": [
+			{
+				"step": "STEP 1",
+				"icon": "/bit-cloud.png",
+				"title": "Download",
+				"description": [
+					"Stacks Is A Production Ready",
+					"Library Of Stackable Content Blocks",
+					"Built In React Native"
+				]
+			},
+			{
+				"step": "STEP 2",
+				"icon": "/bit-wallet.png",
+				"title": "Connect Wallet",
+				"description": [
+					"Stacks Is A Production Ready",
+					"Library Of Stackable Content Blocks",
+					"Built In React Native"
+				]
+			},
+			{
+				"step": "STEP 3",
+				"icon": "/bit-mining.png",
+				"title": "Start Trading",
+				"description": [
+					"Stacks Is A Production Ready",
+					"Library Of Stackable Content Blocks",
+					"Built In React Native"
+				]
+			},
+			{
+				"step": "STEP 4",
+				"icon": "/bit-coin.png",
+				"title": "Earn Money",
+				"description": [
+					"Stacks Is A Production Ready",
+					"Library Of Stackable Content Blocks",
+					"Built In React Native"
+				]
+			}
+		]
+	},
+	"WhatIsRockie": {
+		"title": "What Is Rockie?",
+		"description": "Experience a variety of trading on Bitcost. You can use various types of coin transactions such as Spot Trade, Futures Trade, P2P, Staking, Mining, and margin.",
+		"articles": [
+			{
+				"icon": "/tick.svg",
+				"title": "View real-time cryptocurrency prices",
+				"description": "Experience a variety of trading on Bitcost. You can use various types of coin transactions such as Spot Trade, Futures Trade, P2P, Staking, Mining, and margin."
+			},
+			{
+				"icon": "/tick.svg",
+				"title": "Buy and sell BTC, ETH, XRP, OKB, Etc...",
+				"description": "Experience a variety of trading on Bitcost. You can use various types of coin transactions such as Spot Trade, Futures Trade, P2P, Staking, Mining, and margin."
+			}
+		],
+		"exploreMoreButton": "Explore More"
+	},
+	"DownloadApp": {
+		"title": "Free your money & Invest with confident",
+		"description": "With Cryptor Trade, you can be sure your trading skills are matched",
+		"articles": [
+			{
+				"icon": "/tick.svg",
+				"title": "Buy, Sell, And Trade On The Go",
+				"description": "Buy, Sell, And Trade On The Go"
+			},
+			{
+				"icon": "/tick.svg",
+				"title": "Take Control Of Your Wealth",
+				"description": "Rest assured you (and only you) have access to your funds"
+			}
+		]
+	},
+	"OurCustomers": {
+		"title": "Our Customers Love What We Do",
+		"subtitle": "Transform your idea into reality with finsweet",
+		"description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+		"customerReviews": "<span>30+</span> Customer Reviews",
+		"customerReview": "“Great course I really enjoyed it and the course was way easy to learn with very good explanations of the code, I could easily understand and develop applications with the knowledge gathered during the course.”",
+		"customerTitle": "Director Company"
+	},
+	"BottomBanner": {
+		"title": "Earn up to $25 worth of crypto",
+		"description": "Discover how specific cryptocurrencies work — and get a bit of each crypto to try out for yourself.",
+		"createAccount": "Create Account"
+	},
+	"Footer": {
+		"firstGrid": {
+			"title": "Let's talk! 🤙",
+			"phoneNumber": "+90 537 688 2416",
+			"email": "hikmetmelik@gmail.com",
+			"copyright": "Copyright © 2023  Free For Earth’s people"
+		},
+		"secondGrid": {
+			"title": "PRODUCTS",
+			"links": [
+				"Spot",
+				"Inverse Perpetual",
+				"USDT Perpetual",
+				"Exchange",
+				"Launchpad",
+				"Binance Pay"
+			]
+		},
+		"thirdGrid": {
+			"title": "SERVICES",
+			"links": [
+				"Buy Crypto",
+				"Markets",
+				"Trading Fee",
+				"P2P",
+				"Staking",
+				"Mining"
+			]
+		},
+		"fourthGrid": {
+			"title": "SUPPORT",
+			"links": ["Bybit Learn", "Help Center", "FAQ", "Support", "API"]
+		},
+		"fifthGrid": {
+			"title": "ABOUT US",
+			"links": [
+				"About Bybit",
+				"Authenticity Check",
+				"Career Opportunities",
+				"Business Contacts",
+				"Blog"
+			]
+		}
+	},
+
+	"Profile": {
+		"bannerTitle": "User Profile",
+		"subtitle": "Information",
+		"path": "Home / Profile",
+
+		"tabs": [
+			{
+				"title": "Profile",
+				"href": "/profile",
+				"icon": "/user.svg"
+			},
+			{
+				"title": "Referrals",
+				"href": "/profile/referrals",
+				"icon": "/referral.svg"
+			},
+			{
+				"title": "API Keys",
+				"href": "/profile/api-keys",
+				"icon": "/api_key.svg"
+			},
+			{
+				"title": "Login History",
+				"href": "/profile/login-history",
+				"icon": "/login.svg"
+			},
+			{
+				"title": "2FA",
+				"href": "/profile/2fa",
+				"icon": "/2fa.svg"
+			},
+			{
+				"title": "Change Password",
+				"href": "/profile/change-password",
+				"icon": "/change_password.svg"
+			}
+		],
+
+		"features": {
+			"title": "Features",
+			"level1": {
+				"title": "Level 1",
+				"depositAssets": "Deposit Assets",
+				"withdrawAssets": {
+					"title": "Withdraw Assets",
+					"description": "Enabled $1,000,000/day"
+				},
+				"cardPurchase": "Card Purchase",
+				"bankDeposit": "Bank Deposit",
+				"updateProfile": "Update Profile"
+			},
+			"level2": {
+				"title": "Level 2",
+				"fiatSpot": "Fiat and Spot Wallet",
+				"marginWallet": {
+					"title": "Margin Wallet",
+					"description": "Enabled 100x Leverage"
+				}
+			}
+		}
+	}
 }

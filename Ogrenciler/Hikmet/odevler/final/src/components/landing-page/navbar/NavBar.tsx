@@ -143,7 +143,7 @@ export default function NavBar() {
 								className="align-center"
 							/>
 						</Nav.Link>
-						<Button variant="outline-primary" className="rounded-5">
+						<Button variant="outline-primary" className="rounded-pill">
 							{t("links.wallet")}
 						</Button>
 
@@ -154,13 +154,12 @@ export default function NavBar() {
 										<Image
 											src="/ben.webp"
 											alt="User Avatar"
-											width={40}
-											height={40}
-											className="border rounded-circle"
+											width={30}
+											height={30}
+											className="rounded-circle object-fit-cover"
 										/>
 									}
-									id="user-dropdown"
-									align="end">
+									id="user-dropdown">
 									<NavDropdown.Item>
 										{user.user_metadata?.nickname || user.email}
 									</NavDropdown.Item>

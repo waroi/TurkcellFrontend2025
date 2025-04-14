@@ -1,5 +1,6 @@
 import { redirect } from "next/navigation";
 
+import Profile from "@/components/profile/Profile";
 import { createClient } from "@/utils/supabase/server";
 
 export default async function ProfileView() {
@@ -10,5 +11,5 @@ export default async function ProfileView() {
 		redirect("/login");
 	}
 
-	return <p>Hello {data.user.email}</p>;
+	return <Profile user={data?.user} />;
 }

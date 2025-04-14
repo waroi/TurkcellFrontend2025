@@ -1,5 +1,4 @@
 "use server";
-
 import { createClient } from "@/utils/supabase/server";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
@@ -38,7 +37,6 @@ export async function login(data: LoginData) {
 export async function signup(data: SignupData) {
 	const supabase = await createClient();
 
-	// Kullanıcı hesabı oluştur
 	const { data: authData, error: authError } = await supabase.auth.signUp({
 		email: data.email,
 		password: data.password,
@@ -59,14 +57,12 @@ export async function signup(data: SignupData) {
 
 	console.log("User created:", authData?.user);
 
-	// Kullanıcı oluşturulduğunda profil bilgilerini kaydet
 	if (authData?.user) {
-		// Profiles tablosuna ekleme yapmak için
 		const { data: profileData, error: profileError } = await supabase
 			.from("profiles")
 			.insert([
 				{
-					id: authData.user.id, // user_id yerine Supabase'de id kullanmak daha yaygındır
+					id: authData.user.id,
 					nickname: data.nickName,
 					country: data.country || "",
 					phone: data.phone,
@@ -77,7 +73,6 @@ export async function signup(data: SignupData) {
 			.select();
 
 		if (profileError) {
-			// Detaylı hata bilgisi
 			console.error("Profile creation error details:", {
 				message: profileError.message,
 				details: profileError.details,

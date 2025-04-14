@@ -2,6 +2,7 @@
 import { registerSchema } from "@/lib/definitions";
 import { yupResolver } from "@hookform/resolvers/yup";
 
+import PageInfoContainer from "@/components/PageInfoContainer";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 import {
@@ -38,15 +39,7 @@ export default function Register() {
 
 	return (
 		<>
-			<div className="bg-body-secondary py-5">
-				<Container>
-					<Col className="d-flex align-items-center justify-content-between">
-						<h1>{t("bannerTitle")}</h1>
-						<span className="text-muted">{t("path")}</span>
-					</Col>
-				</Container>
-			</div>
-
+			<PageInfoContainer t={t} />
 			<Container className="py-5">
 				<Row className="justify-content-center">
 					<Col md={8} lg={6}>
