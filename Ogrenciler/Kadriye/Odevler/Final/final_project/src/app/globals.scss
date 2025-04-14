@@ -1,0 +1,88 @@
+$primary: #3772ff;
+$onSurface: #23262f;
+$secondary: #777e90;
+$secondary2: #b1b5c3;
+$surface: #f7f7f7;
+$surfaceMain: #ffffff;
+$interactive: #2e72d2;
+$critical: #d33535;
+$warning: #fabe3c;
+$success: #58bd7d;
+$hightlight: #1e58c8;
+$bg_dark: #141416;
+html[data-theme="light"] {
+  --color-text: #{$onSurface};
+  --color-background: #{$surfaceMain};
+}
+
+html[data-theme="dark"] {
+  --color-text: #{$surfaceMain};
+  --color-background: #{$bg_dark};
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: var(--color-text);
+  background: var(--color-background);
+  a,
+  button {
+    color: var(--color-text);
+    border-color: var(--color-text);
+  }
+}
+.primary-btn {
+  background-color: $primary;
+  color: $surfaceMain;
+  font-weight: 500;
+  border: none;
+}
+.big-btn {
+  padding: 16px 24px;
+  border-radius: 30px;
+}
+.container {
+  padding: 0 255px;
+}
+/* :root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+} */

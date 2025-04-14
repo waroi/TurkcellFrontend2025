@@ -2,14 +2,15 @@
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
+  margin-right: 40px;
   button {
     background: none;
     border: none;
   }
   .btn {
     padding: 7px 12px;
-    margin: auto 0;
-    border: 1px solid #23262f;
+    margin: auto 16px auto 0;
+    border: 1px solid;
     border-radius: 30px;
   }
   .icon_btn {

@@ -1,4 +1,4 @@
-import { H } from "vitest/dist/chunks/reporters.d.CfRkRKN2.js";
+"use client"
 import ImageItem from "../ImageItem/ImageItem";
 
 interface ButtonItemProbs {
@@ -8,11 +8,12 @@ interface ButtonItemProbs {
     height?: number;
     alt?: string;
     classProps?: string;
+    event?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-const ButtonItem = ({ text, src, width = 0, height = 0, alt = "", classProps = "" }: ButtonItemProbs) => {
+const ButtonItem = ({ text, src, width = 0, height = 0, alt = "", classProps = "", event }: ButtonItemProbs) => {
     return (
-        <button type="button" className={classProps}>{text} {src ? <ImageItem src={src} width={width} height={height} alt={alt} /> : <></>} </button>
+        <button type="button" className={classProps} onClick={event}>{text} {src ? <ImageItem src={src} width={width} height={height} alt={alt} /> : <></>} </button>
     )
 }
 
