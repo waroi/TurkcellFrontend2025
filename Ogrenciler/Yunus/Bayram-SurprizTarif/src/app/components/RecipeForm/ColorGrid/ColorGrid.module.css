@@ -1,0 +1,82 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 4px;
+    margin-bottom: 1.5rem;
+    aspect-ratio: 1;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.gridItem {
+    aspect-ratio: 1;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.gridItem:hover {
+    transform: scale(0.95);
+}
+
+.colorPicker {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+}
+
+.colorButton {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.colorButton:hover {
+    transform: scale(1.15);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.colorButton.selected {
+    border: 3px solid #4b5563;
+}
+
+.clearButton {
+    padding: 0.75rem 1.5rem;
+    background-color: #dec525;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    margin-right: 10px;
+    margin-bottom: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(139, 92, 246, 0.2);
+}
+
+.clearButton:hover {
+    background-color: #c5ab00;
+    transform: translateY(-2px);
+}
+
+.clearButton:active {
+    transform: translateY(0);
+}
+
+@media screen and (max-width: 768px) {
+    .grid {
+        max-width: 100%;
+    }
+}

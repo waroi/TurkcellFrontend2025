@@ -16,8 +16,6 @@ const useTestAccess = () => {
 
       if (hasAccess) {
         navigate("/test")
-      } else {
-        alert("Erişim izniniz yok hemen Yöneticiden onay almaya gidin")
       }
     } catch (error) {
       alert("Bir hata oluştu. Lütfen daha sonra tekrar deneeeeeeeee")

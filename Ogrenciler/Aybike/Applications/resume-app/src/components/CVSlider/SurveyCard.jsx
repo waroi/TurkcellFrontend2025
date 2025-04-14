@@ -1,31 +1,33 @@
+import styles from './SurveyCard.module.css';
+
 const SurveyCard = ({ survey, renderStars, getStatusClass }) => {
     return (
-        <div className="survey-card">
-            <div className="survey-header">
-                <h2 className="survey-title">{survey.title}</h2>
-                <span className="survey-id">Anket #{survey.id}</span>
+        <div className={styles.surveyCard}>
+            <div className={styles.surveyHeader}>
+                <h2 className={styles.surveyTitle}>{survey.title}</h2>
+                <span className={styles.surveyId}>Anket #{survey.id}</span>
             </div>
 
-            <div className="survey-content">
-                <p className="company-name"><strong>Şirket:</strong> {survey.company}</p>
+            <div className={styles.surveyContent}>
+                <p className={styles.companyName}><strong>Şirket:</strong> {survey.company}</p>
 
-                <div className="rating-container">
-                    <div className="stars-container">
+                <div className={styles.ratingContainer}>
+                    <div className={styles.starsContainer}>
                         {renderStars(survey.rating)}
                     </div>
-                    <span className="rating-value">{survey.rating}/5</span>
+                    <span className={styles.ratingValue}>{survey.rating}/5</span>
                 </div>
 
-                <div className="progress-bar-container">
+                <div className={styles.progressBarContainer}>
                     <div
-                        className="progress-bar"
+                        className={styles.progressBar}
                         style={{ width: `${(survey.rating / 5) * 100}%` }}
                     ></div>
                 </div>
             </div>
 
-            <div className="survey-footer">
-                <span className={`status-badge ${getStatusClass(survey.status)}`}>
+            <div className={styles.surveyFooter}>
+                <span className={`${styles.statusBadge} ${styles[getStatusClass(survey.status)]}`}>
                     {survey.status}
                 </span>
             </div>

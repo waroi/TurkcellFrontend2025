@@ -15,7 +15,7 @@ const AdminTestModal = ({ show, handleClose, app }) => {
       </Modal.Header>
       <Modal.Body>
         <Form>
-          <Form.Group className="mb-3">
+        <Form.Group className="mb-3">
             <Form.Label>Toplam Soru Sayısını Seçiniz</Form.Label>
             <Form.Select
               value={totalQuestion}
@@ -56,7 +56,6 @@ const AdminTestModal = ({ show, handleClose, app }) => {
               <option value="3">3</option>
             </Form.Select>
           </Form.Group>
-
           <Button
             variant="primary"
             onClick={async () => {
@@ -65,23 +64,28 @@ const AdminTestModal = ({ show, handleClose, app }) => {
                 return;
               }
 
-              try {
-                const success = await handleSaveTest(
-                  app,
-                  Number(totalQuestion),
-                  Number(hardQuestion),
-                  Number(mediumQuestion)
-                );
+              if (app && app.id) {
+                try {
+                  const success = await handleSaveTest(
+                    app,
+                    Number(totalQuestion),
+                    Number(hardQuestion),
+                    Number(mediumQuestion)
+                  );
 
-                if (success) {
-                  handleClose();
+                  if (success) {
+                    handleClose();
+                  }
+                } catch (error) {
+                  console.error(
+                    "Test ayarları kaydedilirken hata oluştu:",
+                    error
+                  );
+                  alert("Test ayarları kaydedilirken bir hata oluştu.");
                 }
-              } catch (error) {
-                console.error(
-                  "Test ayarları kaydedilirken hata oluştu:",
-                  error
-                );
-                alert("Test ayarları kaydedilirken bir hata oluştu.");
+              } else {
+                console.error("app is null or invalid");
+                alert("Başvuru bilgileri alınamadı!");
               }
             }}
           >

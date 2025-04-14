@@ -1,0 +1,40 @@
+.scrollingRow {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.scrollingContent {
+    display: flex;
+    width: fit-content;
+    padding: 0.75rem 0;
+}
+
+.rightToLeft .scrollingContent {
+    animation: scrollRightToLeft 60s linear infinite;
+}
+
+.leftToRight .scrollingContent {
+    animation: scrollLeftToRight 60s linear infinite;
+}
+
+@keyframes scrollRightToLeft {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes scrollLeftToRight {
+    0% {
+        transform: translateX(-50%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}

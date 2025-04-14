@@ -1,0 +1,699 @@
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mogra&display=swap");
+
+$primary: #0095f8;
+$secondary: #ff9100;
+$white: #fff;
+$black: #242431;
+$gray: #dfdfee;
+$green: #00a600;
+$purple: #8522a3;
+$subtle-secondary: #ff91004f;
+$subtle-green: #00a6004f;
+$subtle-purple: #8522a34f;
+
+$fast: 0.3s;
+
+$font-primary: "Permanent Marker", cursive;
+$font-secondary: "Mogra", sans-serif;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-secondary;
+  color: $black;
+}
+
+input,
+button {
+  font-family: inherit;
+  outline: none;
+  background-color: inherit;
+}
+
+@mixin center($flex: true, $vertical: true) {
+  @if $flex {
+    display: flex;
+    justify-content: center;
+    @if $vertical {
+      align-items: center;
+    }
+  } @else {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@mixin grid($columns, $rows: initial, $gap: 5rem) {
+  display: grid;
+  grid-template-columns: $columns;
+  grid-template-rows: $rows;
+  gap: $gap;
+  transition: grid-template-columns $fast, grid-template-rows $fast, gap $fast;
+}
+
+@mixin panel() {
+  height: 100%;
+  background-color: $white;
+  border-radius: 2rem;
+  padding: 1.5rem;
+}
+
+#root {
+  background-color: $primary;
+  height: 100vh;
+  padding: 5rem;
+
+  section {
+    height: 100%;
+
+    &#home {
+      @include grid(3fr 2fr);
+
+      h1 {
+        font-family: $font-primary;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 4rem;
+        margin-bottom: 1rem;
+      }
+
+      h2 {
+        text-align: center;
+        margin-bottom: 6rem;
+      }
+
+      .image-input {
+        @include center();
+        margin-bottom: 3rem;
+
+        label {
+          position: relative;
+          width: 10rem;
+          height: 10rem;
+          background-color: $secondary;
+          border-radius: 100%;
+          color: $white;
+          cursor: pointer;
+          transition: background-color $fast;
+
+          &.image {
+            background-color: $black;
+          }
+
+          .fa {
+            &-user {
+              font-size: 6rem;
+              @include center(false);
+              padding-bottom: 0.25rem;
+              clip-path: inset(3rem 0 0 0);
+            }
+
+            &-face-laugh {
+              font-size: 3rem;
+              @include center(false);
+              padding-bottom: 3.25rem;
+            }
+
+            &-plus {
+              width: 3rem;
+              height: 3rem;
+              @include center();
+              position: absolute;
+              top: 0rem;
+              right: -0.25rem;
+              font-size: 2rem;
+              background-color: $black;
+              border-radius: 100%;
+              transition: transform $fast;
+            }
+          }
+
+          &:hover .fa-plus {
+            transform: scale(1.2);
+          }
+
+          img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            padding: 0.5rem;
+            border-radius: 100%;
+          }
+        }
+
+        input {
+          display: none;
+        }
+      }
+
+      .input {
+        @include center();
+        margin-bottom: 3rem;
+
+        input {
+          width: 15rem;
+          border-radius: 2rem;
+          border: 0.5rem solid transparent;
+          background-color: $secondary;
+          color: $white;
+          font-size: 1.5rem;
+          padding: 0.75rem 2rem 0.5rem;
+          text-align: center;
+          transition: color $fast, border-color $fast, border-radius $fast;
+
+          &:focus {
+            border-color: $black;
+            color: $black;
+            border-radius: 0;
+
+            &::-webkit-input-placeholder {
+              color: $black;
+            }
+          }
+
+          &::-webkit-input-placeholder {
+            transition: color $fast;
+            color: $white;
+          }
+        }
+      }
+
+      .button {
+        @include center();
+
+        button {
+          cursor: pointer;
+          border-radius: 2rem;
+          border: 0.5rem solid $black;
+          background-color: $secondary;
+          font-size: 1.5rem;
+          padding: 0.75rem 2rem 0.5rem;
+          text-align: center;
+          transition: transform $fast, background-color $fast, opacity $fast;
+
+          &:hover {
+            transform: scale(1.1);
+          }
+
+          &.disabled {
+            background-color: $gray;
+            opacity: 0.25;
+          }
+        }
+      }
+    }
+
+    &#game {
+      &:not(:has(.loading:not(#game > * .loading))) {
+        animation: initialise $fast forwards;
+      }
+
+      #canvas {
+        animation: dark $fast forwards;
+        grid-row: span 2;
+        @include grid(1fr, auto 1fr, 1.5rem);
+        transition: grid-template-columns 0.3s, gap 0.3s;
+        padding: 1.5rem;
+
+        & > div:nth-child(1):not(.loading) {
+          background-color: $secondary;
+          border-radius: 1rem;
+          padding: 0.75rem;
+          @include grid(auto auto 1fr auto, 1fr, 1.5rem);
+
+          &.guess {
+            @include grid(1fr);
+
+            & > div.word {
+              h3 {
+                font-size: 2.5rem;
+                font-weight: 500;
+                text-transform: uppercase;
+                display: flex;
+                gap: 0.25rem;
+
+                span {
+                  width: 2rem;
+                  text-align: center;
+                  color: transparent;
+                  opacity: 1;
+                  border-bottom: 0.25rem solid $black;
+                  transition: color $fast;
+
+                  &.hinted {
+                    color: $black;
+                  }
+                }
+              }
+            }
+          }
+
+          & > div:nth-child(1):not(.word) {
+            @include grid(1fr 1fr 1fr 1fr 1fr 1fr 1fr, 1fr 1fr, 0.25rem);
+            padding: 0.25rem;
+            background-color: $white;
+            border-radius: 0.75rem;
+
+            button {
+              width: 2rem;
+              height: 2rem;
+              border: 0.25rem solid transparent;
+              border-radius: 100%;
+              cursor: grab;
+              transition: border-color $fast;
+
+              &:active {
+                cursor: grabbing;
+              }
+
+              &.selected {
+                border-color: $black;
+
+                &[data-color="\#242431"] {
+                  border-color: $secondary;
+                }
+              }
+
+              @each $color
+                in (
+                  #242431,
+                  #ff1b1b,
+                  #ff9100,
+                  #ffd100,
+                  #00a600,
+                  #2a30cc,
+                  #8522a3,
+                  #7e7e97,
+                  #ff97d2,
+                  #a25200,
+                  #ffa878,
+                  #81ff6b,
+                  #4af2f7,
+                  #0095f8
+                )
+              {
+                &[data-color="#{$color}"] {
+                  background-color: $color;
+                }
+              }
+            }
+          }
+
+          & > div:nth-child(2) {
+            @include grid(1fr, 1fr 1fr, 0);
+
+            div {
+              @include center();
+
+              button {
+                font-size: 1rem;
+                border: none;
+                background-color: $white;
+                padding: 0.25rem 1rem 0;
+                border-radius: 2rem;
+                cursor: pointer;
+                transition: background-color $fast, color $fast,
+                  border-color $fast;
+                border: 0.25rem solid transparent;
+
+                &:nth-child(1) {
+                  margin-right: 1rem;
+
+                  &.selected {
+                    border-color: $black;
+                  }
+                }
+
+                &:hover {
+                  background-color: $primary;
+                  color: $white;
+                }
+
+                &:active {
+                  border-color: $black;
+                }
+              }
+            }
+
+            input {
+              width: 100%;
+              margin: auto;
+              -webkit-appearance: none;
+              appearance: none;
+              height: 0.5rem;
+              background: $white;
+              border-radius: 1rem;
+
+              &::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                appearance: none;
+                width: 1rem;
+                height: 1rem;
+                border-radius: 100%;
+                background: $black;
+                cursor: nw-resize;
+              }
+            }
+          }
+
+          & > div.word {
+            @include center();
+            margin: auto;
+
+            h3 {
+              font-size: 2.5rem;
+              font-weight: 500;
+              text-transform: uppercase;
+              display: flex;
+              gap: 0.25rem;
+
+              span {
+                opacity: 0.5;
+                border-bottom: 0.25rem solid $black;
+                transition: opacity $fast;
+
+                &.hinted {
+                  opacity: 1;
+                }
+              }
+            }
+          }
+
+          & > button:nth-child(4) {
+            font-size: 1rem;
+            background-color: $white;
+            height: 100%;
+            border-radius: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0.25rem 1rem;
+            border: none;
+            cursor: pointer;
+            transition: background-color $fast, color $fast;
+
+            i {
+              font-size: 1.5rem;
+              margin-bottom: 0.5rem;
+            }
+
+            &:hover {
+              background-color: $primary;
+              color: $white;
+            }
+          }
+        }
+
+        canvas {
+          background-color: $white;
+          width: 100%;
+          height: 100%;
+          max-height: calc(100vh - 20.75rem);
+          cursor: crosshair;
+          border-radius: 1rem;
+        }
+
+        & .loading {
+          grid-row: span 2;
+          color: $white;
+        }
+      }
+
+      #players {
+        & > div {
+          overflow-y: scroll;
+          height: calc((100vh - 15rem) / 2 - 3rem);
+          font-size: 1.5rem;
+          display: flex;
+          flex-direction: column;
+          gap: 0.75rem;
+
+          position: relative;
+
+          & > div {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            position: absolute;
+            width: calc(100% - 1.5rem);
+            background-color: $white;
+            transition: top $fast;
+
+            & > span:nth-child(1) {
+              width: 0.75rem;
+            }
+
+            img {
+              width: 4rem;
+              height: 4rem;
+              border-radius: 100%;
+            }
+
+            & > span:nth-child(3) i {
+              margin-left: 1rem;
+              font-size: 2rem;
+
+              &.placement {
+                &-1 {
+                  color: #ffd100;
+                }
+
+                &-2 {
+                  color: #7e7e97;
+                }
+
+                &-3 {
+                  color: #ffa878;
+                }
+              }
+            }
+
+            & > span:nth-child(4) {
+              margin-left: auto;
+            }
+
+            &:not(:last-child) {
+              padding-bottom: 0.75rem;
+              border-bottom: 0.25rem solid $gray;
+            }
+          }
+        }
+      }
+
+      #chat {
+        @include grid(1fr, 1fr auto, 1.5rem);
+
+        & > div:nth-child(1) {
+          scroll-behavior: smooth;
+          height: calc((100vh - 15rem) / 2 - 7rem);
+          overflow-x: hidden;
+          overflow-y: scroll;
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+
+          p {
+            animation: chat $fast forwards;
+          }
+
+          .guess {
+            &-close {
+              border-radius: 1rem;
+              padding: 0.25rem 0.5rem;
+              color: $secondary;
+              background-color: $subtle-secondary;
+            }
+
+            &-correct {
+              border-radius: 1rem;
+              padding: 0.25rem 0.5rem;
+              color: $green;
+              background-color: $subtle-green;
+            }
+
+            &-correct-other {
+              border-radius: 1rem;
+              padding: 0.25rem 0.5rem;
+              color: $purple;
+              background-color: $subtle-purple;
+            }
+          }
+        }
+
+        & > div:nth-child(2) {
+          @include grid(1fr auto, 1fr, 1.5rem);
+          display: flex;
+
+          input {
+            border: 0.25rem solid $black;
+            font-size: 1.25rem;
+            padding: 0.25rem 1rem;
+            border-top-left-radius: 2rem;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 2rem;
+            width: 100%;
+            opacity: 0.5;
+            transition: opacity $fast;
+
+            &:focus {
+              opacity: 1;
+            }
+
+            &::-webkit-input-placeholder {
+              color: $black;
+            }
+          }
+
+          button {
+            cursor: pointer;
+            border: none;
+            background-color: $black;
+            color: $white;
+            font-size: 1.25rem;
+            padding: 0.25rem 1.5rem 0.25rem 1rem;
+            border-top-left-radius: 0;
+            border-top-right-radius: 2rem;
+            border-bottom-right-radius: 2rem;
+            border-bottom-left-radius: 0;
+
+            i {
+              transform: rotate(45deg);
+            }
+          }
+        }
+      }
+
+      #screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        border-radius: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: #242431cf;
+        z-index: 100;
+        clip-path: circle(0);
+        transition: clip-path $fast;
+        color: $white;
+        @include center();
+        flex-direction: column;
+        font-size: 3rem;
+        gap: 3rem;
+
+        &.active {
+          clip-path: circle(75%);
+        }
+
+        & > i {
+          font-size: 5rem;
+        }
+
+        button {
+          cursor: pointer;
+          border-radius: 2rem;
+          border: 0.5rem solid $black;
+          background-color: $secondary;
+          font-size: 1.5rem;
+          padding: 0.75rem 2rem 0.5rem;
+          text-align: center;
+          transition: transform $fast, background-color $fast, opacity $fast;
+          @include center();
+
+          &:hover {
+            transform: scale(1.1);
+          }
+
+          i {
+            margin-right: 1rem;
+            transform: translateY(-0.25rem);
+          }
+        }
+
+        .interval-word {
+          text-transform: uppercase;
+          color: $secondary;
+        }
+      }
+    }
+
+    &.loading {
+      height: 100%;
+      grid-template-columns: 1fr 0fr !important;
+      gap: 0;
+
+      & > div > * {
+        animation: none;
+        opacity: 0;
+      }
+    }
+
+    .loading {
+      font-size: 5rem;
+      @include center();
+    }
+
+    & > div {
+      @include panel();
+
+      & > * {
+        transition: opacity $fast;
+
+        &:not(i) {
+          animation: fade $fast forwards;
+        }
+      }
+    }
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes initialise {
+  from {
+    @include grid(0fr 1fr, 1fr 0fr);
+    gap: 0;
+  }
+
+  to {
+    @include grid(2fr 4fr, 1fr 1fr);
+  }
+}
+
+@keyframes chat {
+  from {
+    opacity: 0;
+    transform: translateX(2rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes dark {
+  from {
+    background-color: $white;
+  }
+
+  to {
+    background-color: $black;
+  }
+}

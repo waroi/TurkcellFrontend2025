@@ -18,26 +18,37 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
+      setIsLoading(true);
+
       if (user) {
-        const userRef = doc(db, 'users', user.uid);
-        const userSnap = await getDoc(userRef);
+        try {
+          const userRef = doc(db, 'users', user.uid);
+          const userSnap = await getDoc(userRef);
 
-        if (userSnap.exists()) {
-          setCurrentUser({ ...user, ...userSnap.data() });
-        } else {
-          setCurrentUser(user);
+          if (userSnap.exists()) {
+            setCurrentUser({ ...user, ...userSnap.data() });
+          } else {
+            setCurrentUser(user);
+          }
+
+          setIsLoggedIn(true);
+        } catch (error) {
+          console.error('Error fetching user data:', error);
+          setCurrentUser(null);
+          setIsLoggedIn(false);
+        } finally {
+          setIsLoading(false);
         }
-
-        setIsLoggedIn(true);
       } else {
         setCurrentUser(null);
         setIsLoggedIn(false);
+        setIsLoading(false);
       }
-      setIsLoading(false);
     });
 
     return unsubscribe;
   }, []);
+
   const registerUser = async (fullName, email, password) => {
     try {
       const userCredential = await createUserWithEmailAndPassword(
@@ -80,11 +91,23 @@ export const AuthProvider = ({ children }) => {
         setCurrentUser({ ...userCredential.user, ...userSnap.data() });
       }
 
-      console.log('User logged in:', userCredential.user);
+      setIsLoggedIn(true);
+      setIsLoading(false);
+
+      console.log(userCredential.user);
+
+      return userCredential.user;
     } catch (error) {
+      setCurrentUser(null);
+      setIsLoggedIn(false);
+      setIsLoading(false);
+
       console.error('Login error:', error.message);
+
+      throw error;
     }
   };
+
   const logOutUser = async () => {
     try {
       await signOut(auth);

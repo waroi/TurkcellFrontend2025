@@ -1,17 +1,17 @@
-import './ProgressBar.css';
+import styles from './ProgressBar.module.css';
 
 const ProgressBar = ({ current, total, timer }) => {
-    const progress = (current / total) * 100
+    const progress = (current / total) * 100;
 
     return (
-        <div className="progress-container">
-            <div className="progress-info">
-                <span className="question-counter">{current}/{total}</span>
-                <span className="timer">{timer} saniye</span>
+        <div className={styles.progressContainer}>
+            <div className={styles.progressInfo}>
+                <span className={styles.questionCounter}>{current}/{total}</span>
+                <span className={styles.timer}>{timer} saniye</span>
             </div>
-            <div className="progress">
+            <div className={styles.progress}>
                 <div
-                    className="progress-bar"
+                    className={styles.progressBar}
                     role="progressbar"
                     style={{ width: `${progress}%` }}
                     aria-valuenow={progress}

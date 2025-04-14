@@ -10,13 +10,13 @@ import { RedirectLink } from '../atoms/RedirectLink';
 
 export const ApplicationStatus = () => {
   const [application, setApplication] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const { currentUser } = useAuth();
+  const [applicationLoading, setApplicationLoading] = useState(true);
+  const { currentUser, isLoading } = useAuth();
 
   useEffect(() => {
     const fetchApplicationStatus = async () => {
       if (!currentUser) {
-        setLoading(false);
+        setApplicationLoading(false);
         return;
       }
 
@@ -34,18 +34,21 @@ export const ApplicationStatus = () => {
             id: querySnapshot.docs[0].id,
             ...docData,
           });
+        } else {
+          setApplication(null);
         }
       } catch (error) {
         console.error('Error fetching application status:', error);
+        setApplication(null);
       } finally {
-        setLoading(false);
+        setApplicationLoading(false);
       }
     };
 
     fetchApplicationStatus();
-  }, [currentUser]);
+  }, [currentUser, isLoading]);
 
-  if (loading) {
+  if (isLoading || applicationLoading) {
     return (
       <div className='text-center py-4'>
         <LoadingSpinner />
@@ -73,70 +76,71 @@ export const ApplicationStatus = () => {
       </div>
     );
   }
-  console.log(application);
 
-  return (
-    <>
+  if (!application) {
+    return (
       <div className='card p-4 my-4'>
         <h4>Application Status</h4>
-
-        {application ? (
-          <div>
-            <p>
-              Your application has been submitted on{' '}
-              {application.timestamp?.toDate
-                ? application.timestamp.toDate().toLocaleDateString('en-US')
-                : 'N/A'}
-            </p>
-            <p>
-              Current status: <Badge status={application.status} />
-            </p>
-            <div className='mt-3'>
-              {application.status === 'pending' && (
-                <p className='text-info'>
-                  Your application is being reviewed. We will notify you once
-                  there's an update.
-                </p>
-              )}
-              {application.status === 'approved' && (
-                <>
-                  <p className='text-success'>
-                    Congratulations! Your application has been approved. You can
-                    now take the exam.
-                  </p>
-                  <NavLink to='/technical-exam'>
-                    <Button variant='primary'>Take exam</Button>
-                  </NavLink>
-                </>
-              )}
-              {application.status === 'rejected' && (
-                <p className='text-danger'>
-                  We're sorry, but your application has been rejected. Please
-                  contact support for more information.
-                </p>
-              )}
-              {application.status === 'exam passed' && (
-                <p className='text-success'>
-                  Congrats! You have passed the exam. We will contact you soon.
-                </p>
-              )}
-              {application.status === 'exam failed' && (
-                <p className='text-danger'>
-                  You have failed the test. Unfortunately, we will not be moving
-                  forward.
-                </p>
-              )}
-            </div>
-          </div>
-        ) : (
-          <div>
-            <p>You haven't submitted an application yet.</p>
-            <Link to='/application-form'>
-              <Button variant='primary'>Apply Now</Button>
-            </Link>
-          </div>
-        )}
+        <div>
+          <p>You haven't submitted an application yet.</p>
+          <Link to='/application-form'>
+            <Button variant='primary'>Apply Now</Button>
+          </Link>
+        </div>
       </div>
-    </>
+    );
+  }
+
+  return (
+    <div className='card p-4 my-4'>
+      <h4>Application Status</h4>
+      <div>
+        <p>
+          Your application has been submitted on{' '}
+          {application.timestamp?.toDate
+            ? application.timestamp.toDate().toLocaleDateString('en-US')
+            : 'N/A'}
+        </p>
+        <p>
+          Current status: <Badge status={application.status} />
+        </p>
+        <div className='mt-3'>
+          {application.status === 'pending' && (
+            <p className='text-info'>
+              Your application is being reviewed. We will notify you once
+              there's an update.
+            </p>
+          )}
+          {application.status === 'approved' && (
+            <>
+              <p className='text-success'>
+                Congratulations! Your application has been approved. You can now
+                take the exam.
+              </p>
+              <NavLink to='/technical-exam'>
+                <Button variant='primary'>Take exam</Button>
+              </NavLink>
+            </>
+          )}
+          {application.status === 'rejected' && (
+            <p className='text-danger'>
+              We're sorry, but your application has been rejected. Please
+              contact support for more information.
+            </p>
+          )}
+          {application.status === 'exam passed' && (
+            <p className='text-success'>
+              Congrats! You have passed the exam. We will contact you soon.
+            </p>
+          )}
+          {application.status === 'exam failed' && (
+            <p className='text-danger'>
+              You have failed the test. Unfortunately, we will not be moving
+              forward.
+            </p>
+          )}
+        </div>
+      </div>
+    </div>
   );
 };

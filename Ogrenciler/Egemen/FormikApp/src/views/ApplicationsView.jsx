@@ -11,13 +11,11 @@ const Applications = () => {
   const [loading, setLoading] = useState(true);
   const [userAuth, setUserAuth] = useState(null);
   const { sonrakiAsama } = useApplicationStatus(setApps);
-  let basvurular = [];
 
   useEffect(() => {
     unsubscribe(setUserAuth);
     if (userAuth) {
-      basvurular = getApplications(userAuth.uid, setApps, setUser, setLoading);
-      console.log("aaa", basvurular);
+      getApplications(userAuth.uid, setApps, setUser, setLoading);
     } else {
       setLoading(false);
     }

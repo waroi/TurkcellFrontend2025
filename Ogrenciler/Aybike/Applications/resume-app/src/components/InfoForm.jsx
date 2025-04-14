@@ -5,15 +5,15 @@ import CustomSelect from "./CustomSelect";
 import CustomCheckbox from "./CustomCheckbox";
 import { useInfoForm } from "../utils/hooks/useInfoForm";
 import { cities, countries, departments, skillsOptions, universities } from "../utils/constans/formOptions";
-import "./InfoForm.css";
+import styles from './InfoForm.module.css';
 
 const InfoForm = () => {
   const { handleSubmit } = useInfoForm()
 
   return (
-    <div className="form-container">
-      <div className="form-card">
-        <h2 className="form-title">Başvuru Formu</h2>
+    <div className={styles.formContainer}>
+      <div className={styles.formCard}>
+        <h2 className={styles.formTitle}>Başvuru Formu</h2>
         <Formik
           initialValues={{
             email: "",
@@ -38,9 +38,9 @@ const InfoForm = () => {
           onSubmit={handleSubmit}
         >
           {({ isSubmitting, values }) => (
-            <Form className="application-form">
-              <div className="form-grid">
-                <div className="form-group">
+            <Form className={styles.applicationForm}>
+              <div className={styles.formGrid}>
+                <div className={styles.formGroup}>
                   <CustomInput
                     type="text"
                     label="Adınız"
@@ -48,7 +48,7 @@ const InfoForm = () => {
                     placeholder="Adınızı giriniz"
                   />
                 </div>
-                <div className="form-group">
+                <div className={styles.formGroup}>
                   <CustomInput
                     type="text"
                     label="Soyadınız"
@@ -56,7 +56,7 @@ const InfoForm = () => {
                     placeholder="Soyadınızı giriniz"
                   />
                 </div>
-                <div className="form-group">
+                <div className={styles.formGroup}>
                   <CustomInput
                     type="email"
                     label="E-Posta"
@@ -64,7 +64,7 @@ const InfoForm = () => {
                     placeholder="E-posta adresinizi giriniz"
                   />
                 </div>
-                <div className="form-group">
+                <div className={styles.formGroup}>
                   <CustomInput
                     type="text"
                     label="Telefon"
@@ -72,23 +72,23 @@ const InfoForm = () => {
                     placeholder="Telefon numaranızı giriniz"
                   />
                 </div>
-                <div className="form-group">
+                <div className={styles.formGroup}>
                   <CustomInput type="date" label="Doğum Tarihi" name="birthDate" />
                 </div>
-                <div className="form-group">
+                <div className={styles.formGroup}>
                   <CustomSelect label="Ülke" name="country" options={countries} />
                 </div>
-                <div className="form-group">
+                <div className={styles.formGroup}>
                   <CustomSelect label="Şehir" name="city" options={cities} />
                 </div>
-                <div className="form-group">
+                <div className={styles.formGroup}>
                   <CustomSelect
                     label="Üniversite"
                     name="university"
                     options={universities}
                   />
                 </div>
-                <div className="form-group">
+                <div className={styles.formGroup}>
                   <CustomSelect
                     label="Bölüm"
                     name="department"
@@ -97,12 +97,12 @@ const InfoForm = () => {
                 </div>
               </div>
 
-              <div className="form-group graduatino-box checkbox-group">
+              <div className={`${styles.formGroup} ${styles.graduatinoBox} ${styles.checkboxGroup}`}>
                 <CustomCheckbox label="Mezun Oldum" name="graduationStatus" />
               </div>
 
               {values.graduationStatus && (
-                <div className="form-group">
+                <div className={styles.formGroup}>
                   <CustomInput
                     type="text"
                     label="Mezuniyet Yılı"
@@ -112,7 +112,7 @@ const InfoForm = () => {
                 </div>
               )}
 
-              <div className="form-group">
+              <div className={styles.formGroup}>
                 <CustomInput
                   type="number"
                   step="0.01"
@@ -122,7 +122,7 @@ const InfoForm = () => {
                 />
               </div>
 
-              <div className="form-group">
+              <div className={styles.formGroup}>
                 <CustomInput
                   type="text"
                   label="LinkedIn Profiliniz"
@@ -131,7 +131,7 @@ const InfoForm = () => {
                 />
               </div>
 
-              <div className="form-group full-width">
+              <div className={`${styles.formGroup} ${styles.formGroupFullWidth}`}>
                 <CustomInput
                   type="textarea"
                   label="Kariyer Hedefleriniz"
@@ -140,7 +140,7 @@ const InfoForm = () => {
                 />
               </div>
 
-              <div className="form-group full-width">
+              <div className={`${styles.formGroup} ${styles.formGroupFullWidth}`}>
                 <CustomSelect
                   label="Yetenekler"
                   name="skills"
@@ -149,7 +149,7 @@ const InfoForm = () => {
                 />
               </div>
 
-              <div className="form-group full-width">
+              <div className={`${styles.formGroup} ${styles.formGroupFullWidth}`}>
                 <CustomInput
                   type="textarea"
                   label="İş / Staj Deneyimleriniz"
@@ -158,7 +158,7 @@ const InfoForm = () => {
                 />
               </div>
 
-              <div className="form-group full-width">
+              <div className={`${styles.formGroup} ${styles.formGroupFullWidth}`}>
                 <CustomInput
                   type="textarea"
                   label="Projeleriniz"
@@ -167,11 +167,11 @@ const InfoForm = () => {
                 />
               </div>
 
-              <div className="form-submit">
+              <div className={styles.formSubmit}>
                 <button
                   disabled={isSubmitting}
                   type="submit"
-                  className="submit-button"
+                  className={styles.submitButton}
                 >
                   {isSubmitting ? "Gönderiliyor..." : "Gönder"}
                 </button>
@@ -181,7 +181,7 @@ const InfoForm = () => {
         </Formik>
       </div>
     </div>
-  );
-};
+  )
+}
 
 export default InfoForm

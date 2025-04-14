@@ -1,64 +1,53 @@
-import React from 'react';
-import './Hero.css';
+import styles from './Hero.module.css';
 import { Link } from 'react-router';
 
 const Hero = () => {
     return (
-        <section className="hero-section">
-            <div className="hero-container">
-                <div className="hero-content">
-                    <h1 className="hero-title">Değerlendirme Platformuna Hoş Geldiniz</h1>
-                    <p className="hero-description">
+        <section className={styles.heroSection}>
+            <div className={styles.heroContainer}>
+                <div className={styles.heroContent}>
+                    <h1 className={styles.heroTitle}>Değerlendirme Platformuna Hoş Geldiniz</h1>
+                    <p className={styles.heroDescription}>
                         Kariyer yolculuğunuzda bir adım öne çıkın. CV'nizi yükleyin, başvurularınızı takip edin ve
                         profesyonel değerlendirmelerle gelişiminizi hızlandırın.
                     </p>
-                    <div className="hero-buttons">
-                        <Link to={'/application'} className="btn btn-primary">CV Ekle</Link>
+                    <div className={styles.heroButtons}>
+                        <Link to={'/application'} className={`${styles.btn} ${styles.btnPrimary}`}>
+                            CV Ekle
+                        </Link>
                     </div>
                 </div>
-                <div className="hero-stats">
-                    <div className="stat-card">
-                        <span className="stat-number">500+</span>
-                        <span className="stat-label">Başarılı Başvuru</span>
+                <div className={styles.heroStats}>
+                    <div className={styles.statCard}>
+                        <span className={styles.statNumber}>500+</span>
+                        <span className={styles.statLabel}>Başarılı Başvuru</span>
                     </div>
-                    <div className="stat-card">
-                        <span className="stat-number">50+</span>
-                        <span className="stat-label">Partner Şirket</span>
+                    <div className={styles.statCard}>
+                        <span className={styles.statNumber}>50+</span>
+                        <span className={styles.statLabel}>Partner Şirket</span>
                     </div>
-                    <div className="stat-card">
-                        <span className="stat-number">4.8/5</span>
-                        <span className="stat-label">Memnuniyet Oranı</span>
+                    <div className={styles.statCard}>
+                        <span className={styles.statNumber}>4.8/5</span>
+                        <span className={styles.statLabel}>Memnuniyet Oranı</span>
                     </div>
                 </div>
             </div>
 
-            <div className="featured-evaluations">
+            <div className={styles.featuredEvaluations}>
                 <h2>Öne Çıkan Değerlendirmeler</h2>
-                <div className="evaluation-cards overflow-hidden">
-                    <div className="evaluation-card">
-                        <h3>Müşteri Memnuniyeti</h3>
-                        <p>ABC Şirketi</p>
-                        <div className="rating">★★★★★ 5/5</div>
-                        <span className="status success">Kabul Edildi</span>
-                    </div>
-                    <div className="evaluation-card">
-                        <h3>Kullanıcı Deneyimi</h3>
-                        <p>123 Holding</p>
-                        <div className="rating">★★★★☆ 4.5/5</div>
-                        <span className="status success">Kabul Edildi</span>
-                    </div>
-                    <div className="evaluation-card">
-                        <h3>Sosyal Medya Etkisi</h3>
-                        <p>Global Markets</p>
-                        <div className="rating">★★★★★ 4.7/5</div>
-                        <span className="status success">Kabul Edildi</span>
-                    </div>
-                    <div className="evaluation-card">
-                        <h3>Sosyal Medya Etkisi</h3>
-                        <p>Global Markets</p>
-                        <div className="rating">★★★★★ 4.7/5</div>
-                        <span className="status success">Kabul Edildi</span>
-                    </div>
+                <div className={styles.evaluationCards}>
+                    {[
+                        { title: "Müşteri Memnuniyeti", company: "ABC Şirketi", rating: "★★★★★ 5/5" },
+                        { title: "Kullanıcı Deneyimi", company: "123 Holding", rating: "★★★★☆ 4.5/5" },
+                        { title: "Sosyal Medya Etkisi", company: "Global Markets", rating: "★★★★★ 4.7/5" }
+                    ].map((item, index) => (
+                        <div key={index} className={styles.evaluationCard}>
+                            <h3>{item.title}</h3>
+                            <p>{item.company}</p>
+                            <div className={styles.rating}>{item.rating}</div>
+                            <span className={`${styles.status} ${styles.statusSuccess}`}>Kabul Edildi</span>
+                        </div>
+                    ))}
                 </div>
             </div>
         </section>

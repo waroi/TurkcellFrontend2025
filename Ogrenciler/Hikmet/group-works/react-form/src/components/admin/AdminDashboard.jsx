@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { useApplications } from "../../hooks/useApplication";
+import { useApplications } from "../hooks/useApplications";
+import {useAdminDashboard} from "../hooks/useAdminDashboard";
 import AdminHeader from "./AdminHeader";
 import AdminQuizSettings from "./AdminQuizSettings";
 import ApplicationList from "./ApplicationList";

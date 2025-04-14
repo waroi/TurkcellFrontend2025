@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useFormik } from 'formik';
 import { loginFormSchema } from '../../schemas';
 import { Button } from '../atoms/Button';
@@ -10,8 +11,9 @@ import { useNavigate } from 'react-router';
 import { LoadingSpinner } from '../atoms/LoadingSpinner';
 
 const LoginForm = () => {
-  const { loginUser, isLoading } = useAuth();
+  const { loginUser } = useAuth();
   const navigate = useNavigate();
+  const [loginLoading, setLoginLoading] = useState(false);
 
   const formik = useFormik({
     initialValues: {
@@ -19,9 +21,16 @@ const LoginForm = () => {
       password: '',
     },
     validationSchema: loginFormSchema,
-    onSubmit: (values) => {
-      loginUser(values.email, values.password);
-      navigate('/');
+    onSubmit: async (values) => {
+      try {
+        setLoginLoading(true);
+        await loginUser(values.email, values.password);
+        navigate('/');
+      } catch (error) {
+        console.error('Login hata:', error);
+      } finally {
+        setLoginLoading(false);
+      }
     },
   });
 
@@ -37,9 +46,9 @@ const LoginForm = () => {
           <Button
             type='submit'
             className='btn btn-primary w-100'
-            disabled={isLoading}
+            disabled={loginLoading}
           >
-            {isLoading ? <LoadingSpinner /> : 'Login'}
+            {loginLoading ? <LoadingSpinner /> : 'Login'}
           </Button>
         </form>
 

@@ -1,0 +1,197 @@
+@import 'variables';
+@import 'mixins';
+
+body {
+  font-family: $font-primary;
+  background-color: $color-light-bg;
+  color: $color-light-text;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+body.dark {
+  background-color: $color-dark-bg;
+  color: $color-dark-text;
+}
+
+nav {
+  background-color: $color-light-bg;
+  box-shadow: $box-shadow-light;
+  padding: 1rem 2rem;
+  transition: all 0.3s ease;
+
+  .navbar-brand {
+    font-family: $font-secondary;
+    font-size: 1.75rem;
+    font-weight: bold;
+  }
+
+  .nav-link {
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: $color-light-text;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
+
+body.dark nav {
+  background-color: $color-dark-card;
+
+  .nav-link {
+    color: $color-dark-text;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
+
+.hero {
+  background-color: $primary-color;
+  color: #fff;
+  padding: 100px 0;
+  text-align: center;
+  box-shadow: $box-shadow-light;
+
+  h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .btn {
+    @include btn($secondary-color);
+    font-size: 1.1rem;
+    padding: 0.75rem 1.5rem;
+    color: #fff;
+  }
+}
+
+.featured-products {
+  padding: 60px 0;
+  background-color: $color-light-card;
+
+  .card {
+    background-color: #fff;
+    border: 1px solid $color-light-border;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: $box-shadow-light;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-8px);
+    }
+
+    .card-img-top {
+      width: 100%;
+      height: auto;
+      filter: brightness(85%);
+    }
+
+    .card-body {
+      padding: 1.25rem;
+    }
+
+    .card-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    .card-text {
+      color: $color-light-muted;
+      font-size: 1rem;
+    }
+
+    .btn-primary {
+      background-color: $primary-color;
+      color: #fff;
+      font-weight: 600;
+      padding: 0.5rem 1.25rem;
+      border: none;
+
+      &:hover {
+        background-color: darken($primary-color, 10%);
+      }
+    }
+  }
+}
+
+body.dark .featured-products {
+  background-color: $color-dark-bg;
+
+  .card {
+    background-color: $color-dark-card;
+    border: 1px solid $color-dark-border;
+    box-shadow: $box-shadow-dark;
+
+    .card-text {
+      color: $color-dark-muted;
+    }
+
+    .card-img-top {
+      filter: brightness(65%);
+    }
+  }
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: $color-light-footer;
+
+  p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: $color-light-muted;
+  }
+
+  a {
+    color: $primary-color;
+    text-decoration: none;
+
+    &:hover {
+      color: darken($primary-color, 15%);
+    }
+  }
+}
+
+body.dark footer {
+  background-color: $color-dark-footer;
+
+  p {
+    color: $color-dark-muted;
+  }
+}
+
+@media (max-width: $breakpoint-md) {
+  .hero {
+    padding: 70px 0;
+
+    h1 {
+      font-size: 2.25rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+
+  .card-title {
+    font-size: 1rem;
+  }
+}
+
+  

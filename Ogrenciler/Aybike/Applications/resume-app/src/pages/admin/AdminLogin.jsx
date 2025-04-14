@@ -1,5 +1,5 @@
 import { useAdminLogin } from "../../utils/hooks/useAdminLogin";
-import './AdminLogin.css'
+import styles from './AdminLogin.module.css';
 
 const AdminLogin = () => {
   const {
@@ -9,19 +9,18 @@ const AdminLogin = () => {
     setPassword,
     error,
     handleLogin
-  } = useAdminLogin();
-
+  } = useAdminLogin()
 
   return (
-    <div className="container mt-5 admin-container">
+    <div className={`${styles.container} mt-5`}>
       <h2>Admin Girişi</h2>
-      {error && <p className="text-danger">{error}</p>}
+      {error && <p className={styles.textDanger}>{error}</p>}
       <form onSubmit={handleLogin}>
         <div className="mb-3">
           <label>Email</label>
           <input
             type="email"
-            className="form-control"
+            className={styles.formControl}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
@@ -31,18 +30,18 @@ const AdminLogin = () => {
           <label>Şifre</label>
           <input
             type="password"
-            className="form-control"
+            className={styles.formControl}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
           />
         </div>
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className={styles.btnPrimary}>
           Giriş Yap
         </button>
       </form>
     </div>
-  );
-};
+  )
+}
 
-export default AdminLogin;
+export default AdminLogin

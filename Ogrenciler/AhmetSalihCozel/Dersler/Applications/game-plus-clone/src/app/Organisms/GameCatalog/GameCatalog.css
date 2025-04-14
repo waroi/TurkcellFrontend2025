@@ -1,0 +1,37 @@
+.bgimg1 {
+    background-image: url("/img/swipe/backgroundImage1.webp");
+    animation: move 15s ease-in-out infinite;
+    height: 160px;
+    width: 100%;
+    background-repeat: repeat-x;
+  }
+  
+  .bgimg2 {
+    background-image: url("/img/swipe/backgroundImage2.webp");
+    animation: move 20s ease-in-out infinite;
+    height: 160px;
+    width: 100%;
+    background-repeat: repeat-x;
+
+  }
+  
+  .bgimg3 {
+    background-image: url("/img/swipe/backgroundImage3.webp");
+    animation: move 30s ease-in-out infinite;
+    height: 160px;
+    width: 100%;
+    background-repeat: repeat-x;
+  }
+  
+  @keyframes move {
+    0% {
+      transform: translateX(0); /* Başlangıç noktası */
+    }
+    50% {
+      transform: translateX(-800px); /* Orta noktada sağa kayma */
+    }
+    100% {
+      transform: translateX(0); /* Orta noktada sağa kayma */
+    }
+  }
+  

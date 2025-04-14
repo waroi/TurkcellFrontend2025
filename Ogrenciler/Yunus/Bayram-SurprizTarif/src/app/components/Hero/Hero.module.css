@@ -1,0 +1,285 @@
+.wrapper {
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Hero Bölümü */
+.heroSection {
+    position: relative;
+    padding: 80px 0;
+    overflow: hidden;
+}
+
+.heroTitle {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.heroTitleAccent {
+    color: #ffc107;
+}
+
+.heroBadge {
+    display: inline-block;
+    background-color: rgba(255, 193, 7, 0.15);
+    color: #d4a200;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 20px;
+    margin-bottom: 1.5rem;
+}
+
+.heroDescription {
+    font-size: 1.1rem;
+    color: #6c757d;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.searchBox {
+    position: relative;
+    margin-bottom: 3rem;
+}
+
+.searchInput {
+    height: 54px;
+    padding: 0 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+    font-size: 1rem;
+    width: 100%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.searchButton {
+    position: absolute;
+    right: 5px;
+    top: 0;
+    bottom: 5px;
+    background-color: #ffc107;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    width: 44px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.searchButton:hover {
+    background-color: #e0a800;
+}
+
+.statsRow {
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+.statsItem {
+    flex: 1;
+    text-align: center;
+    padding: 0 15px;
+}
+
+.statsNumber {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffc107;
+    margin-bottom: 0.25rem;
+}
+
+.statsLabel {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+/* Hero Image */
+.heroImageWrap {
+    position: relative;
+    z-index: 1;
+}
+
+.heroImage {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.featureCard {
+    position: absolute;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    max-width: 220px;
+    z-index: 2;
+}
+
+.featureCardTop {
+    top: 0;
+    right: -30px;
+    transform: translateY(-30%);
+}
+
+.featureCardBottom {
+    bottom: 10%;
+    left: -30px;
+}
+
+.featureIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 193, 7, 0.15);
+    color: #ffc107;
+    border-radius: 50%;
+    margin-right: 12px;
+}
+
+.featureContent {
+    flex: 1;
+}
+
+.featureTitle {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.featureDescription {
+    font-size: 0.75rem;
+    color: #6c757d;
+    margin: 0;
+}
+
+/* Kategori Kartları */
+.categorySection {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+}
+
+.sectionTitle {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.sectionSubtitle {
+    font-size: 1rem;
+    color: #6c757d;
+    text-align: center;
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.categoryGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 20px;
+}
+
+.categoryCard {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.categoryCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.categoryIcon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 193, 7, 0.15);
+    color: #ffc107;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+}
+
+.categoryName {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+@media screen and (max-width: 992px) {
+    .heroSection {
+        padding: 60px 0;
+    }
+
+    .heroTitle {
+        font-size: 2.5rem;
+    }
+
+    .featureCard {
+        max-width: 180px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .heroSection {
+        padding: 40px 0;
+    }
+
+    .heroTitle {
+        font-size: 2rem;
+    }
+
+    .heroDescription {
+        font-size: 1rem;
+    }
+
+    .statsRow {
+        flex-wrap: wrap;
+    }
+
+    .statsItem {
+        flex: 0 0 33.333%;
+        margin-bottom: 1.5rem;
+    }
+
+    .featureCard {
+        position: static;
+        transform: none;
+        margin-top: 20px;
+        max-width: 100%;
+    }
+
+    .categoryGrid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .heroTitle {
+        font-size: 1.8rem;
+    }
+
+    .statsItem {
+        flex: 0 0 50%;
+    }
+
+    .categoryGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

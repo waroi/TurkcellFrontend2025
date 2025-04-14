@@ -1,0 +1,88 @@
+.completionListContainer {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.completionListTitle {
+    text-align: center;
+    color: #3f51b5;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.completionList {
+    display: grid;
+    gap: 20px;
+}
+
+.completionItem {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.completionItem:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.completionInfo {
+    flex-grow: 1;
+}
+
+.completionEmail {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.completionDate {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.completionScore {
+    background-color: #4caf50;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.scoreInvalidValue {
+    background-color: #f44336;
+}
+
+.scoreLabel {
+    margin-right: 5px;
+}
+
+.loading, .error {
+    text-align: center;
+    padding: 20px;
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.error {
+    color: #f44336;
+}
+
+@media screen and (max-width: 576px) {
+    .completionItem {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .completionScore {
+        margin-top: 10px;
+    }
+}
