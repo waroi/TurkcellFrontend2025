@@ -2,7 +2,11 @@ import { useState, useEffect } from "react";
 import { fetchQuizSettings, updateQuizSettings } from "../services/quizService";
 
 export const useAdminQuizSettings = () => {
-  const [settings, setSettings] = useState({ easyCount: 3, mediumCount: 3, hardCount: 4 });
+  const [settings, setSettings] = useState({
+    easyCount: 3,
+    mediumCount: 3,
+    hardCount: 4,
+  });
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
@@ -11,7 +15,7 @@ export const useAdminQuizSettings = () => {
       try {
         console.log("Fetching quiz settings...");
         const fetchedSettings = await fetchQuizSettings();
-        
+
         setSettings({
           easyCount: fetchedSettings.easyCount ?? 3,
           mediumCount: fetchedSettings.mediumCount ?? 3,
@@ -24,16 +28,22 @@ export const useAdminQuizSettings = () => {
         setLoading(false);
       }
     };
-    
+
     getSettings();
   }, []);
 
   const saveSettings = async () => {
     try {
       const validatedSettings = {
-        easyCount: isNaN(settings.easyCount) ? 3 : Math.max(0, Math.round(settings.easyCount)),
-        mediumCount: isNaN(settings.mediumCount) ? 3 : Math.max(0, Math.round(settings.mediumCount)),
-        hardCount: isNaN(settings.hardCount) ? 4 : Math.max(0, Math.round(settings.hardCount)),
+        easyCount: isNaN(settings.easyCount)
+          ? 3
+          : Math.max(0, Math.round(settings.easyCount)),
+        mediumCount: isNaN(settings.mediumCount)
+          ? 3
+          : Math.max(0, Math.round(settings.mediumCount)),
+        hardCount: isNaN(settings.hardCount)
+          ? 4
+          : Math.max(0, Math.round(settings.hardCount)),
       };
 
       console.log("Updating settings:", validatedSettings);
@@ -50,8 +60,8 @@ export const useAdminQuizSettings = () => {
   const updateSettingField = (field, value) => {
     const numValue = parseInt(value);
     setSettings({
-      ...settings, 
-      [field]: isNaN(numValue) ? 0 : Math.max(0, numValue)
+      ...settings,
+      [field]: isNaN(numValue) ? 0 : Math.max(0, numValue),
     });
   };
 
@@ -60,6 +70,6 @@ export const useAdminQuizSettings = () => {
     updateSettingField,
     saveSettings,
     loading,
-    error
+    error,
   };
 };

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
 import {
   approveApplication,
@@ -20,10 +21,19 @@ export const useAdminDashboard = () => {
     try {
       const attemptsRef = collection(db, "test_attempts");
       const attemptsSnapshot = await getDocs(attemptsRef);
-      const attempts = attemptsSnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
-      const completedAttempts = attempts.filter((attempt) => attempt.completed && attempt.attempted);
-      setPassedCandidates(completedAttempts.filter((attempt) => attempt.score >= 7));
-      setFailedCandidates(completedAttempts.filter((attempt) => attempt.score < 7));
+      const attempts = attemptsSnapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      const completedAttempts = attempts.filter(
+        (attempt) => attempt.completed && attempt.attempted
+      );
+      setPassedCandidates(
+        completedAttempts.filter((attempt) => attempt.score >= 7)
+      );
+      setFailedCandidates(
+        completedAttempts.filter((attempt) => attempt.score < 7)
+      );
     } catch (err) {
       console.error("Test sonuçları getirilirken hata oluştu:", err);
     }

@@ -1,11 +1,11 @@
 const ErrorDisplay = ({ message }) => {
-	return (
-		<div className="container mt-5 pt-3">
-			<div className="alert alert-danger" role="alert">
-				{message}
-			</div>
-		</div>
-	);
+  return (
+    <div className="container mt-5 pt-3">
+      <div className="alert alert-danger" role="alert">
+        {message}
+      </div>
+    </div>
+  );
 };
 
 export default ErrorDisplay;

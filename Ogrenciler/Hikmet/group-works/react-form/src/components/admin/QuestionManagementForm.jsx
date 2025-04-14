@@ -1,15 +1,8 @@
 import React, { useState, useEffect } from "react";
-import {
-  collection,
-  getDocs,
-  addDoc,
-  deleteDoc,
-  doc,
-} from "firebase/firestore";
+import { collection, getDocs, addDoc } from "firebase/firestore";
 import { db } from "../../firebase/config";
 
 const QuestionManagementForm = () => {
-  // State for managing questions
   const [allQuestions, setAllQuestions] = useState([]);
   const [selectedQuestions, setSelectedQuestions] = useState([]);
   const [questionCounts, setQuestionCounts] = useState({
@@ -18,7 +11,6 @@ const QuestionManagementForm = () => {
     hard: 0,
   });
 
-  // Fetch all questions from Firestore
   useEffect(() => {
     const fetchQuestions = async () => {
       try {
@@ -37,11 +29,9 @@ const QuestionManagementForm = () => {
     fetchQuestions();
   }, []);
 
-  // Add or remove question from selected list
   const toggleQuestionSelection = (question) => {
     const difficulty = (question.Level || question.level).toLowerCase();
 
-    // Check if adding would exceed difficulty-specific limits
     if (!selectedQuestions.includes(question)) {
       if (difficulty === "easy" && questionCounts.easy >= 4) {
         alert("Maximum 4 easy questions allowed");
@@ -62,7 +52,6 @@ const QuestionManagementForm = () => {
         [difficulty]: prev[difficulty] + 1,
       }));
     } else {
-      // Remove question
       setSelectedQuestions(
         selectedQuestions.filter((q) => q.id !== question.id)
       );
@@ -73,7 +62,6 @@ const QuestionManagementForm = () => {
     }
   };
 
-  // Create a new quiz set from selected questions
   const createQuizSet = async () => {
     if (selectedQuestions.length !== 10) {
       alert("You must select exactly 10 questions (4 easy, 4 medium, 2 hard)");
@@ -89,7 +77,7 @@ const QuestionManagementForm = () => {
       });
 
       alert("Quiz set created successfully!");
-      // Reset selections
+
       setSelectedQuestions([]);
       setQuestionCounts({ easy: 0, medium: 0, hard: 0 });
     } catch (error) {
@@ -98,7 +86,6 @@ const QuestionManagementForm = () => {
     }
   };
 
-  // Categorize questions by difficulty
   const categorizeQuestions = (questions) => {
     return {
       easy: questions.filter(
@@ -119,14 +106,12 @@ const QuestionManagementForm = () => {
     <div className="container-fluid py-4">
       <h2 className="mb-4">Quiz Question Management</h2>
 
-      {/* Question Selection Limits */}
       <div className="alert alert-info">
         Selection Limits: 4 Easy Questions, 4 Medium Questions, 2 Hard Questions
         (Current: Easy {questionCounts.easy}/4, Medium {questionCounts.medium}
         /4, Hard {questionCounts.hard}/2)
       </div>
 
-      {/* Question Categories */}
       <div className="row">
         {Object.entries(categorizedQuestions).map(([difficulty, questions]) => (
           <div key={difficulty} className="col-md-4 mb-4">
@@ -181,7 +166,6 @@ const QuestionManagementForm = () => {
         ))}
       </div>
 
-      {/* Create Quiz Set Button */}
       <div className="text-center mt-4">
         <button
           className="btn btn-primary btn-lg"
