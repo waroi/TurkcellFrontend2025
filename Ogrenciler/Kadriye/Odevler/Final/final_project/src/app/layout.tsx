@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import { DM_Sans } from 'next/font/google'
 import "./globals.scss";
 
@@ -8,9 +7,9 @@ import { getLocale } from 'next-intl/server';
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
-  weight: ['400', '500', '700'], // ihtiyacına göre ağırlıkları seç
+  weight: ['400', '500', '700'],
   display: 'swap',
-  variable: '--font-dm-sans',   // opsiyonel, CSS değişkeni olarak da kullanabilirsin
+  variable: '--font-dm-sans',
 })
 
 export const metadata: Metadata = {

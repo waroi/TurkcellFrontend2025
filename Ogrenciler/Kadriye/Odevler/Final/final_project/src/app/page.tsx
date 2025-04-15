@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from "./page.module.css";
-import Homepage from "@/stories/components/pages/HomePage/HomePage";
 import { useTranslations } from 'next-intl';
+import Homepage from "./components/pages/HomePage/HomePage";
 export default function Home() {
   const t = useTranslations('HomePage');
   return (
