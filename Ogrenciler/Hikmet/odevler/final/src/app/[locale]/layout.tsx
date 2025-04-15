@@ -1,4 +1,3 @@
-import RootLayoutProvider from "@/components/RootLayoutProvider";
 import { routing } from "@/i18n/routing";
 import type { Metadata } from "next";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
@@ -12,18 +11,19 @@ const dmSans = DM_Sans({
 	display: "swap",
 	variable: "--font-dm-sans",
 });
+
 export const metadata: Metadata = {
-	title: "Rocket",
-	description: "Rocket is a cryptocurrency trading platform",
+	title: "Rockie",
+	description: "Rockie is a cryptocurrency trading platform",
 };
 
 export default async function RootLayout({
 	children,
 	params,
-}: Readonly<{
+}: {
 	children: React.ReactNode;
 	params: Promise<{ locale: string }>;
-}>) {
+}) {
 	const { locale } = await params;
 	if (!hasLocale(routing.locales, locale)) {
 		notFound();
@@ -40,16 +40,16 @@ export default async function RootLayout({
 					href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
 					rel="stylesheet"
 					integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
-					crossOrigin="anonymous"></link>
+					crossOrigin="anonymous"
+				/>
 			</head>
 			<body className={dmSans.className}>
-				<NextIntlClientProvider>
-					<RootLayoutProvider>{children}</RootLayoutProvider>
-				</NextIntlClientProvider>
+				<NextIntlClientProvider>{children}</NextIntlClientProvider>
 				<script
 					src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
 					integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
-					crossOrigin="anonymous"></script>
+					crossOrigin="anonymous"
+				/>
 			</body>
 		</html>
 	);

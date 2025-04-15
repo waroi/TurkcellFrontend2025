@@ -23,6 +23,10 @@ export const routing = defineRouting({
 			en: "/profile",
 			tr: "/profil",
 		},
+		"/dashboard": {
+			en: "/dashboard",
+			tr: "/panel",
+		},
 	},
 });
 export const { Link, redirect, usePathname, useRouter, getPathname } =

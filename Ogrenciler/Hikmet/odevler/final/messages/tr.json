@@ -321,5 +321,74 @@
 				}
 			}
 		}
+	},
+
+	"Dashboard": {
+		"sidebar": {
+			"home": {
+				"title": "Ana Sayfa",
+				"icon": "/home.svg"
+			},
+			"buyCrypto": {
+				"title": "Kripto Satın Al",
+				"icon": "/buy-crypto.svg"
+			},
+			"market": {
+				"title": "Piyasa",
+				"icon": "/market.svg"
+			},
+			"exchange": {
+				"title": "Takas",
+				"icon": "/exchange.svg"
+			},
+			"spot": {
+				"title": "Spot",
+				"icon": "/spot.svg"
+			},
+			"byfiCenter": {
+				"title": "Byfi Merkezi",
+				"icon": "/byfi-center.svg"
+			},
+			"more": {
+				"title": "Daha Fazla",
+				"icon": "/more.svg"
+			},
+			"asset": {
+				"title": "Varlık",
+				"icon": "/asset.svg"
+			},
+			"orderTrades": {
+				"title": "Siparişler ve İşlemler",
+				"icon": "/order-trades.svg"
+			},
+			"wallet": {
+				"title": "Cüzdan",
+				"icon": "/wallet.svg"
+			},
+			"logout": {
+				"title": "Çıkış",
+				"icon": "/logout.svg"
+			}
+		},
+		"tradingMarket": "Ticaret Piyasası",
+		"buy": "Satın Al",
+		"sell": "Sat",
+		"pay": "Öde",
+		"receive": "Al",
+		"yourBalance": "Bakiyeniz",
+		"topUpBalance": "Bakiyenizi Yükleyin",
+		"yourAssets": "Varlıklarınız",
+		"orderBook": {
+			"title": "Emir Defteri",
+			"col1": "Fiyat (BTC)",
+			"col2": "Miktar (ETH)",
+			"col3": "Toplam (BTC)"
+		},
+		"recentTrades": {
+			"title": "Son İşlemler",
+			"col1": "Zaman",
+			"col2": "Fiyat (BTC)",
+			"col3": "Miktar (ETH)"
+		}
 	}
 }

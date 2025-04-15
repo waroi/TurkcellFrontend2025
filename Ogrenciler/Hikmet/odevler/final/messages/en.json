@@ -314,5 +314,74 @@
 				}
 			}
 		}
+	},
+
+	"Dashboard": {
+		"sidebar": {
+			"home": {
+				"title": "Home",
+				"icon": "/home.svg"
+			},
+			"buyCrypto": {
+				"title": "Buy Crypto",
+				"icon": "/buy-crypto.svg"
+			},
+			"market": {
+				"title": "Market",
+				"icon": "/market.svg"
+			},
+			"exchange": {
+				"title": "Exchange",
+				"icon": "/exchange.svg"
+			},
+			"spot": {
+				"title": "Spot",
+				"icon": "/spot.svg"
+			},
+			"byfiCenter": {
+				"title": "Byfi Center",
+				"icon": "/byfi-center.svg"
+			},
+			"more": {
+				"title": "More",
+				"icon": "/more.svg"
+			},
+			"asset": {
+				"title": "Asset",
+				"icon": "/asset.svg"
+			},
+			"orderTrades": {
+				"title": "Orders & Trades",
+				"icon": "/order-trades.svg"
+			},
+			"wallet": {
+				"title": "Wallet",
+				"icon": "/wallet.svg"
+			},
+			"logout": {
+				"title": "Logout",
+				"icon": "/logout.svg"
+			}
+		},
+		"tradingMarket": "Trading Market",
+		"buy": "Buy",
+		"sell": "Sell",
+		"pay": "Pay",
+		"receive": "Receive",
+		"yourBalance": "Your Balance",
+		"topUpBalance": "Top Up Balance",
+		"yourAssets": "Your Assets",
+		"orderBook": {
+			"title": "Order Book",
+			"col1": "Price (BTC)",
+			"col2": "Amount (ETH)",
+			"col3": "Total (BTC)"
+		},
+		"recentTrades": {
+			"title": "Recent Trades",
+			"col1": "Time",
+			"col2": "Price (BTC)",
+			"col3": "Amount (ETH)"
+		}
 	}
 }
