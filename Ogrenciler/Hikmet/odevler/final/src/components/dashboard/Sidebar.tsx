@@ -50,6 +50,7 @@ export default function Sidebar() {
 			<Nav className="flex-column sidebar-nav">
 				<Nav.Item className="w-100">
 					<Button
+						href="/"
 						variant={activeItem === "home" ? "primary" : "link"}
 						className="d-flex align-items-center px-3 py-2 rounded-pill w-100 fs-6"
 						onClick={() => setActiveItem("home")}>

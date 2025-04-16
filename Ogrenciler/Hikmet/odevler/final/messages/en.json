@@ -371,6 +371,26 @@
 		"yourBalance": "Your Balance",
 		"topUpBalance": "Top Up Balance",
 		"yourAssets": "Your Assets",
+		"limit": "Limit",
+		"market": "Market",
+		"stopLimit": "Stop Limit",
+		"stopMarket": "Stop Market",
+
+		"orderHistory": {
+			"searchPlaceholder": "Search By Date",
+			"tab1": "Order History",
+			"tab2": "Open Orders",
+			"tab3": "Closed Orders",
+			"tableCols": {
+				"col1": "Date",
+				"col2": "Pair",
+				"col3": "Buy/Sell",
+				"col4": "Price",
+				"col5": "Executed",
+				"col6": "Total"
+			}
+		},
+
 		"orderBook": {
 			"title": "Order Book",
 			"col1": "Price (BTC)",
@@ -382,6 +402,11 @@
 			"col1": "Time",
 			"col2": "Price (BTC)",
 			"col3": "Amount (ETH)"
+		},
+		"thirdGrid": {
+			"col1": "Pair",
+			"col2": "Last Price",
+			"col3": "Changes"
 		}
 	}
 }

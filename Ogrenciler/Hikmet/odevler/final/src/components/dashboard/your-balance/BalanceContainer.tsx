@@ -2,6 +2,7 @@ import { Search } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Button, Card, CardBody, Col, Row } from "react-bootstrap";
+import BalanceCoinPrice from "./BalanceCoinPrice";
 
 export default function BalanceContainer({
 	t,
@@ -33,22 +34,21 @@ export default function BalanceContainer({
 				</Col>
 				<div className="d-flex flex-column gap-3">
 					{Object.values(coins).map((coin: any) => (
-						<div className="d-flex" key={coin.id}>
+						<div className="d-flex align-items-center" key={coin.id}>
 							<Image
 								src={coin.logo}
 								alt={coin.name}
 								width={48}
 								height={48}
-								className="me-2 rounded-circle"
+								className="me-3 rounded-circle"
 							/>
 							<Row className="d-flex align-items-center justify-content-between w-100">
 								<Col className="d-flex flex-column">
-									<p className="mb-0 fs-4">{coin.name}</p>
-									<p className="mb-0 text-muted">{coin.symbol}</p>
+									<h5 className="mb-0 fs-4">{coin.name}</h5>
+									<small className="mb-0 text-muted">{coin.symbol}</small>
 								</Col>
 								<Col className="d-flex flex-column align-items-end">
-									<h5 className="mb-0">sea</h5>
-									<p className="mb-0 text-muted">ase</p>
+									<BalanceCoinPrice coin={coin.symbol} />
 								</Col>
 							</Row>
 						</div>
