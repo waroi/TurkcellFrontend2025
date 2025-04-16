@@ -1,3 +1,7 @@
+"use client";
+
+import useMarketData from "@/hooks/useMarketData";
+import Image from "next/image";
 import { Button, Card, CardBody, Col, Container, Row } from "react-bootstrap";
 
 const heroCryptoContainerLinks = [
@@ -12,41 +16,51 @@ const heroCryptoContainerLinks = [
 	"Makersplace",
 ];
 
-const heroCryptoContainersData = [
-	{
-		icon: "/btc.svg",
-		title: "Bitcoin",
-		shortCut: "BTC/USD",
-		price: "USD 46,168.95",
-		subPrice: "36,641.20",
-		priceChange: "-0.79%",
-	},
-	{
-		icon: "/eth.svg",
-		title: "Ethereum",
-		shortCut: "ETH/USD",
-		price: "USD $3,480.04",
-		subPrice: "3,480.04",
-		priceChange: "+10.55%",
-	},
-	{
-		icon: "/tet.svg",
-		title: "Tether",
-		shortCut: "USDT/USD",
-		price: "USD 1.00",
-		subPrice: "1.00",
-		priceChange: "+0.01%",
-	},
-	{
-		icon: "/bnb.svg",
-		title: "Binance Coin",
-		shortCut: "BNB/USD",
-		price: "USD 443.56",
-		subPrice: "443.56",
-		priceChange: "-1.24%",
-	},
-];
+interface CoinDisplay {
+	icon: string;
+	title: string;
+	shortCut: string;
+	price: string;
+	subPrice: string;
+	priceChange: string;
+}
+
 export default function HeroCryptoContainer() {
+	const { info, market, loading } = useMarketData();
+
+	const filteredCoins = market
+		.filter((coin) => ["1", "1027", "52", "1839"].includes(coin.id.toString()))
+		.map((coin) => {
+			const coinInfo = info[coin.id.toString()];
+			if (!coinInfo) return null;
+
+			return {
+				icon: coinInfo.logo,
+				title: coinInfo.name,
+				shortCut: `${coinInfo.symbol}/USD`,
+				price: `USD ${coin.quote.USD.price.toFixed(
+					coin.quote.USD.price >= 1 ? 2 : 6
+				)}`,
+				subPrice: `$${coin.quote.USD.market_cap.toLocaleString()}`,
+				priceChange: `${
+					coin.quote.USD.percent_change_24h >= 0 ? "+" : ""
+				}${coin.quote.USD.percent_change_24h.toFixed(2)}%`,
+			};
+		})
+		.filter(Boolean) as CoinDisplay[];
+
+	if (loading) {
+		return (
+			<Container className="z-2 bg-white shadow mb-5 rounded-4">
+				<Row className="align-items-center py-3">
+					<Col xs={12} className="text-center">
+						<p>Loading...</p>
+					</Col>
+				</Row>
+			</Container>
+		);
+	}
+
 	return (
 		<Container className="z-2 bg-white shadow mb-5 rounded-4">
 			<Row className="align-items-center py-3">
@@ -78,19 +92,24 @@ export default function HeroCryptoContainer() {
 				))}
 			</Row>
 			<Row>
-				{heroCryptoContainersData.map((data, index) => (
-					<Col key={index} xs={12} sm={6} md={4} lg={3} className="mb-3">
+				{filteredCoins.map((data) => (
+					<Col
+						key={data.shortCut}
+						xs={12}
+						sm={6}
+						md={4}
+						lg={3}
+						className="mb-3">
 						<Card className="shadow-sm rounded-4">
 							<CardBody>
 								<div className="d-flex align-items-center mb-3">
-									<img
+									<Image
 										src={data.icon}
 										alt={data.title}
-										width="32"
-										height="32"
+										width={32}
+										height={32}
 										className="me-2"
 									/>
-
 									<h5 className="mb-0 card-title">{data.title}</h5>
 									<p className="ms-3 mb-0 text-muted small">{data.shortCut}</p>
 								</div>
