@@ -33,7 +33,7 @@ const Login = () => {
       const userDoc = await getDoc(doc(db, "users", user.uid)); 
       if (userDoc.exists()) {
         const userData = userDoc.data();
-        setUser(userData); 
+        setUser({...userData, uid: user.uid}); 
         const role = userData.role;
 
         if (role === "admin") {

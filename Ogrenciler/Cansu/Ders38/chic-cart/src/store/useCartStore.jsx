@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 
-// Load cart items from localStorage if available
+
 const loadCartItems = () => {
   if (typeof window !== 'undefined') {
     try {
@@ -14,7 +14,7 @@ const loadCartItems = () => {
   return [];
 };
 
-// Save cart items to localStorage
+
 const saveCartItems = (items) => {
   if (typeof window !== 'undefined') {
     try {
@@ -43,7 +43,7 @@ const useCartStore = create((set, get) => ({
         newCartItems = [...state.cartItems, { ...product, quantity: 1 }];
       }
       
-      // Save to localStorage
+  
       saveCartItems(newCartItems);
       
       return { cartItems: newCartItems };

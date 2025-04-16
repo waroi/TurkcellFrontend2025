@@ -20,14 +20,10 @@ const AdminPanel = () => {
     isLoading,
   } = useFetchApplication();
 
-  const {
-    searchTerm,
-    setSearchTerm,
-    getFilteredApplications,
-    handleReject,
-  } = useAdminPanel();
+  const { searchTerm, setSearchTerm, getFilteredApplications, handleReject } =
+    useAdminPanel();
 
-  const { showModal,handleCloseModal, openModal,currentApplication } =
+  const { showModal, handleCloseModal, openModal, currentApplication } =
     useAdminTest();
 
   const filteredApplications = getFilteredApplications(applications);
@@ -148,16 +144,14 @@ const AdminPanel = () => {
                       >
                         <button
                           className={`${styles.approveButton} btn text-white mt-2`}
-                          onClick={() => {openModal(app);setModalKey((prevKey) => prevKey + 1);}}
+                          onClick={() => {
+                            openModal(app);
+                            setModalKey((prevKey) => prevKey + 1);
+                          }}
                         >
                           Onayla
                         </button>
-                        <AdminTestModal
-                          key={modalKey}
-                          show={showModal}
-                          handleClose={handleCloseModal}
-                          app={currentApplication}
-                        />
+
                         <button
                           className={` ${styles.rejectButton} btn text-white mt-2`}
                           onClick={() => handleReject(app)}
@@ -172,7 +166,12 @@ const AdminPanel = () => {
             </div>
           </>
         )}
-
+        <AdminTestModal
+          key={modalKey}
+          show={showModal}
+          handleClose={handleCloseModal}
+          app={currentApplication}
+        />
         <SignInModal show={show} handleClose={handleClose} />
       </div>
     </div>

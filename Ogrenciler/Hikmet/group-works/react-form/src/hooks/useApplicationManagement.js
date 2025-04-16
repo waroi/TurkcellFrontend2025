@@ -1,7 +1,9 @@
-import { approveApplication, rejectApplication } from "../services/applicationService";
+import {
+  approveApplication,
+  rejectApplication,
+} from "../services/applicationService";
 
 export const useApplicationManagement = (onApplicationProcessed) => {
-  // Removed useCallback - React 19 doesn't need it for these functions
   async function handleApprove(application) {
     try {
       await approveApplication(application);

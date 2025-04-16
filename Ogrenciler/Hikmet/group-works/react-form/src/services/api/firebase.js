@@ -1,17 +1,16 @@
-import { 
-  collection, 
-  addDoc, 
-  deleteDoc, 
-  doc, 
-  getDoc, 
+import {
+  collection,
+  addDoc,
+  deleteDoc,
+  doc,
+  getDoc,
   getDocs,
   query,
   setDoc,
-  where
+  where,
 } from "firebase/firestore";
 import { db } from "../../firebase/config";
 
-// Applications
 const fetchApplicationsByCollection = async (collectionName) => {
   try {
     const snapshot = await getDocs(collection(db, collectionName));
@@ -47,7 +46,6 @@ const moveApplication = async (application, fromCollection, toCollection) => {
   }
 };
 
-// Jobs
 const fetchAllJobs = async () => {
   try {
     const jobsCollection = collection(db, "jobs");
@@ -85,7 +83,6 @@ const fetchJobById = async (jobId) => {
   }
 };
 
-// Quiz and Test Results
 const fetchTestResults = async () => {
   try {
     const attemptsRef = collection(db, "test_attempts");
@@ -132,24 +129,23 @@ const fetchQuizSettings = async () => {
   try {
     const settingsRef = doc(db, "quiz_settings", "default");
     const settingsSnap = await getDoc(settingsRef);
-    
+
     if (settingsSnap.exists()) {
       return settingsSnap.data();
     }
-    
-    // Default settings if none found
+
     return {
       easyCount: 5,
       mediumCount: 3,
-      hardCount: 2
+      hardCount: 2,
     };
   } catch (error) {
     console.error("Error fetching quiz settings:", error);
-    // Return default settings on error
+
     return {
       easyCount: 5,
       mediumCount: 3,
-      hardCount: 2
+      hardCount: 2,
     };
   }
 };
@@ -174,7 +170,7 @@ const saveQuizResult = async (userId, email, score, totalQuestions) => {
       totalQuestions,
       timestamp: new Date(),
     });
-    
+
     return true;
   } catch (error) {
     console.error("Error saving quiz result:", error);
@@ -196,11 +192,11 @@ const checkUserTestEligibility = async (userEmail) => {
     }
 
     const olumluData = olumluSnapshot.docs[0].data();
-    
+
     if (!olumluData.isAccepted) {
       return { isEligible: false, message: "Test access not approved." };
     }
-    
+
     return { isEligible: true, message: "" };
   } catch (error) {
     console.error("Error checking eligibility:", error);
@@ -212,11 +208,11 @@ const getUserTestStatus = async (userId) => {
   try {
     const testStatusRef = doc(db, "test_attempts", userId);
     const testStatusSnap = await getDoc(testStatusRef);
-    
+
     if (testStatusSnap.exists()) {
       return testStatusSnap.data();
     }
-    
+
     return null;
   } catch (error) {
     console.error("Error getting test status:", error);
@@ -238,11 +234,11 @@ export const firebaseApi = {
   applications: {
     fetchByCollection: fetchApplicationsByCollection,
     add: addApplication,
-    move: moveApplication
+    move: moveApplication,
   },
   jobs: {
     fetchAll: fetchAllJobs,
-    fetchById: fetchJobById
+    fetchById: fetchJobById,
   },
   quiz: {
     fetchQuestions: fetchQuizQuestions,
@@ -250,9 +246,9 @@ export const firebaseApi = {
     saveResult: saveQuizResult,
     checkEligibility: checkUserTestEligibility,
     getUserStatus: getUserTestStatus,
-    updateSettings: updateQuizSettings
+    updateSettings: updateQuizSettings,
   },
   testResults: {
-    fetch: fetchTestResults
-  }
+    fetch: fetchTestResults,
+  },
 };

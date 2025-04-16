@@ -24,28 +24,29 @@ export const updateQuizSettings = (settings) => {
   return api.quiz.updateSettings(settings);
 };
 
-// Utility functions to select questions based on difficulty
 export const categorizeQuestions = (questions) => {
   const categorized = {
     easy: [],
     medium: [],
-    hard: []
+    hard: [],
   };
 
-  questions.forEach(question => {
-    const level = (question.level || question.Level || '').toLowerCase().trim();
-    switch(level) {
-      case 'easy':
+  questions.forEach((question) => {
+    const level = (question.level || question.Level || "").toLowerCase().trim();
+    switch (level) {
+      case "easy":
         categorized.easy.push(question);
         break;
-      case 'medium':
+      case "medium":
         categorized.medium.push(question);
         break;
-      case 'hard':
+      case "hard":
         categorized.hard.push(question);
         break;
       default:
-        console.warn(`Question with unrecognized difficulty: ${question.question}`);
+        console.warn(
+          `Question with unrecognized difficulty: ${question.question}`
+        );
     }
   });
 
@@ -70,7 +71,7 @@ export const selectRandomQuestions = (questions, settings) => {
   return [
     ...getRandomQuestions(easy, safeEasyCount),
     ...getRandomQuestions(medium, safeMediumCount),
-    ...getRandomQuestions(hard, safeHardCount)
+    ...getRandomQuestions(hard, safeHardCount),
   ];
 };
 

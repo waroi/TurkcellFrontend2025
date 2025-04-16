@@ -2,7 +2,8 @@ import React from "react";
 import { useAdminQuizSettings } from "../../hooks/useAdminQuizSettings";
 
 const AdminQuizSettings = () => {
-  const { settings, updateSettingField, saveSettings, loading, error } = useAdminQuizSettings();
+  const { settings, updateSettingField, saveSettings, loading, error } =
+    useAdminQuizSettings();
 
   const handleSave = async () => {
     const success = await saveSettings();
@@ -51,7 +52,9 @@ const AdminQuizSettings = () => {
           />
         </div>
       </div>
-      <button className="btn btn-primary" onClick={handleSave}>Save Settings</button>
+      <button className="btn btn-primary" onClick={handleSave}>
+        Save Settings
+      </button>
     </div>
   );
 };
