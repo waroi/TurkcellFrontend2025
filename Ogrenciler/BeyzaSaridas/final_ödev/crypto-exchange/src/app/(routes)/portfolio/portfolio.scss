@@ -1,0 +1,615 @@
+@import '../../../styles/scss/variables';
+@import '../../../styles/scss/mixins';
+
+.portfolio-page {
+   padding: 2rem 0 4rem;
+
+   &__header {
+      margin-bottom: 2rem;
+      text-align: center;
+   }
+
+   &__title {
+      font-size: $font-size-3xl;
+      font-weight: 700;
+      color: $text-dark;
+      margin-bottom: 0.5rem;
+
+      @include dark-mode {
+         color: $text-light;
+      }
+   }
+
+   &__subtitle {
+      font-size: $font-size-lg;
+      color: $text-muted;
+      max-width: 36rem;
+      margin: 0 auto;
+   }
+
+   &__overview {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin-bottom: 2rem;
+
+      @include md {
+         grid-template-columns: repeat(2, 1fr);
+      }
+
+      @include lg {
+         grid-template-columns: repeat(3, 1fr);
+      }
+   }
+
+   &__card {
+      background-color: $bg-light;
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+
+      @include dark-mode {
+         background-color: lighten($bg-dark, 5%);
+         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+      }
+
+      &-icon {
+         width: 3rem;
+         height: 3rem;
+         border-radius: 50%;
+         background-color: rgba($primary-color, 0.1);
+         color: $primary-color;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         margin-right: 1rem;
+
+         svg {
+            width: 1.5rem;
+            height: 1.5rem;
+         }
+      }
+
+      &-info {
+         flex: 1;
+      }
+
+      &-title {
+         font-size: 0.875rem;
+         color: $text-muted;
+         margin-bottom: 0.25rem;
+      }
+
+      &-value {
+         font-size: 1.25rem;
+         font-weight: 600;
+         color: $text-dark;
+         margin-bottom: 0.25rem;
+
+         @include dark-mode {
+            color: $text-light;
+         }
+      }
+
+      &-change {
+         display: flex;
+         align-items: center;
+         font-size: 0.875rem;
+         font-weight: 500;
+
+         &--positive {
+            color: $success-color;
+         }
+
+         &--negative {
+            color: $danger-color;
+         }
+
+         svg {
+            width: 1rem;
+            height: 1rem;
+            margin-right: 0.25rem;
+         }
+      }
+
+      &-action {
+         display: inline-flex;
+         align-items: center;
+         font-size: 0.75rem;
+         color: $primary-color;
+         cursor: pointer;
+         margin-right: 0.75rem;
+
+         &:hover {
+            text-decoration: underline;
+         }
+
+         svg {
+            width: 0.875rem;
+            height: 0.875rem;
+            margin-right: 0.25rem;
+         }
+      }
+
+      &-actions {
+         display: flex;
+         margin-top: 0.5rem;
+      }
+   }
+
+   &__profit {
+      &--positive {
+         color: $success-color;
+      }
+
+      &--negative {
+         color: $danger-color;
+      }
+   }
+
+   &__content {
+      background-color: $bg-light;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+      @include dark-mode {
+         background-color: lighten($bg-dark, 5%);
+         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+      }
+   }
+
+   &__tabs {
+      display: flex;
+      border-bottom: 1px solid $border-light;
+
+      @include dark-mode {
+         border-bottom-color: $border-dark;
+      }
+   }
+
+   &__tab {
+      padding: 1rem 1.5rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: $text-muted;
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+
+      svg {
+         width: 1rem;
+         height: 1rem;
+         margin-right: 0.5rem;
+      }
+
+      &:hover {
+         color: $text-dark;
+         background-color: rgba($text-dark, 0.05);
+
+         @include dark-mode {
+            color: $text-light;
+            background-color: rgba($text-light, 0.05);
+         }
+      }
+
+      &--active {
+         color: $primary-color;
+         border-bottom: 2px solid $primary-color;
+
+         &:hover {
+            color: $primary-color;
+         }
+      }
+   }
+
+   &__tab-content {
+      padding: 1.5rem;
+   }
+
+   &__section {
+      margin-bottom: 2rem;
+
+      &:last-child {
+         margin-bottom: 0;
+      }
+
+      &-title {
+         font-size: 1rem;
+         font-weight: 600;
+         color: $text-dark;
+         margin-bottom: 1rem;
+
+         @include dark-mode {
+            color: $text-light;
+         }
+      }
+   }
+
+   &__distribution {
+      background-color: rgba($text-dark, 0.05);
+      border-radius: 0.5rem;
+      padding: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 15rem;
+
+      @include dark-mode {
+         background-color: rgba($text-light, 0.05);
+      }
+
+      &-placeholder {
+         color: $text-muted;
+         font-style: italic;
+      }
+   }
+
+   &__assets-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+   }
+
+   &__asset-item {
+      display: flex;
+      align-items: center;
+      padding: 0.75rem;
+      background-color: rgba($text-dark, 0.025);
+      border-radius: 0.5rem;
+
+      @include dark-mode {
+         background-color: rgba($text-light, 0.025);
+      }
+
+      &:hover {
+         background-color: rgba($text-dark, 0.05);
+
+         @include dark-mode {
+            background-color: rgba($text-light, 0.05);
+         }
+      }
+   }
+
+   &__asset-icon {
+      margin-right: 0.75rem;
+   }
+
+   &__asset-info {
+      flex: 1;
+   }
+
+   &__asset-name {
+      font-weight: 500;
+      color: $text-dark;
+      margin-bottom: 0.25rem;
+
+      @include dark-mode {
+         color: $text-light;
+      }
+   }
+
+   &__asset-amount {
+      font-size: 0.75rem;
+      color: $text-muted;
+   }
+
+   &__asset-value {
+      text-align: right;
+   }
+
+   &__asset-price {
+      font-weight: 500;
+      color: $text-dark;
+      margin-bottom: 0.25rem;
+
+      @include dark-mode {
+         color: $text-light;
+      }
+   }
+
+   &__asset-change {
+      font-size: 0.75rem;
+
+      &--positive {
+         color: $success-color;
+      }
+
+      &--negative {
+         color: $danger-color;
+      }
+   }
+
+   &__transactions-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+   }
+
+   &__transaction-item {
+      display: flex;
+      align-items: center;
+      padding: 0.75rem;
+      background-color: rgba($text-dark, 0.025);
+      border-radius: 0.5rem;
+
+      @include dark-mode {
+         background-color: rgba($text-light, 0.025);
+      }
+
+      &:hover {
+         background-color: rgba($text-dark, 0.05);
+
+         @include dark-mode {
+            background-color: rgba($text-light, 0.05);
+         }
+      }
+   }
+
+   &__transaction-icon {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 0.75rem;
+
+      &--buy {
+         background-color: rgba($success-color, 0.1);
+         color: $success-color;
+      }
+
+      &--sell {
+         background-color: rgba($danger-color, 0.1);
+         color: $danger-color;
+      }
+
+      &--deposit {
+         background-color: rgba($primary-color, 0.1);
+         color: $primary-color;
+      }
+
+      &--withdraw {
+         background-color: rgba($warning-color, 0.1);
+         color: $warning-color;
+      }
+
+      svg {
+         width: 1rem;
+         height: 1rem;
+      }
+   }
+
+   &__transaction-info {
+      flex: 1;
+   }
+
+   &__transaction-title {
+      font-weight: 500;
+      color: $text-dark;
+      margin-bottom: 0.25rem;
+
+      @include dark-mode {
+         color: $text-light;
+      }
+   }
+
+   &__transaction-date {
+      font-size: 0.75rem;
+      color: $text-muted;
+      display: flex;
+      align-items: center;
+
+      svg {
+         margin-right: 0.25rem;
+      }
+   }
+
+   &__transaction-amount {
+      font-weight: 500;
+      color: $text-dark;
+
+      @include dark-mode {
+         color: $text-light;
+      }
+   }
+
+   &__view-all {
+      margin-top: 1rem;
+      text-align: center;
+   }
+
+   &__assets-table-container,
+   &__transactions-table-container {
+      overflow-x: auto;
+   }
+
+   &__assets-table,
+   &__transactions-table {
+      width: 100%;
+      border-collapse: collapse;
+   }
+
+   &__th {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: $text-muted;
+   }
+
+   &__tr {
+      border-bottom: 1px solid $border-light;
+
+      @include dark-mode {
+         border-bottom-color: $border-dark;
+      }
+
+      &:last-child {
+         border-bottom: none;
+      }
+
+      &:hover {
+         background-color: rgba($text-dark, 0.025);
+
+         @include dark-mode {
+            background-color: rgba($text-light, 0.025);
+         }
+      }
+   }
+
+   &__td {
+      padding: 1rem;
+   }
+
+   &__asset-cell {
+      display: flex;
+      align-items: center;
+
+      &-info {
+         margin-left: 0.75rem;
+      }
+
+      &-name {
+         font-weight: 500;
+         color: $text-dark;
+         margin-bottom: 0.25rem;
+
+         @include dark-mode {
+            color: $text-light;
+         }
+      }
+
+      &-symbol {
+         font-size: 0.75rem;
+         color: $text-muted;
+      }
+   }
+
+   &__asset-profit {
+      &--positive {
+         color: $success-color;
+      }
+
+      &--negative {
+         color: $danger-color;
+      }
+
+      &-value {
+         font-weight: 500;
+         margin-bottom: 0.25rem;
+      }
+
+      &-percentage {
+         font-size: 0.75rem;
+      }
+   }
+
+   &__asset-actions {
+      display: flex;
+      gap: 0.5rem;
+   }
+
+   &__transaction-cell {
+      display: flex;
+      align-items: center;
+
+      &-icon {
+         width: 2rem;
+         height: 2rem;
+         border-radius: 50%;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         margin-right: 0.75rem;
+
+         &--buy {
+            background-color: rgba($success-color, 0.1);
+            color: $success-color;
+         }
+
+         &--sell {
+            background-color: rgba($danger-color, 0.1);
+            color: $danger-color;
+         }
+
+         &--deposit {
+            background-color: rgba($primary-color, 0.1);
+            color: $primary-color;
+         }
+
+         &--withdraw {
+            background-color: rgba($warning-color, 0.1);
+            color: $warning-color;
+         }
+      }
+
+      &-info {
+         display: flex;
+         flex-direction: column;
+      }
+
+      &-type {
+         font-weight: 500;
+         color: $text-dark;
+
+         @include dark-mode {
+            color: $text-light;
+         }
+      }
+
+      &-asset {
+         font-size: 0.75rem;
+         color: $text-muted;
+      }
+   }
+
+   &__empty-state {
+      padding: 3rem 1rem;
+      text-align: center;
+
+      p {
+         color: $text-muted;
+         margin-bottom: 1.5rem;
+      }
+   }
+
+   &__loading {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 20rem;
+
+      &-spinner {
+         width: 3rem;
+         height: 3rem;
+         border-radius: 50%;
+         border: 3px solid rgba($primary-color, 0.1);
+         border-top-color: $primary-color;
+         animation: spin 1s linear infinite;
+         margin-bottom: 1rem;
+      }
+
+      p {
+         color: $text-muted;
+      }
+   }
+}
+
+@keyframes spin {
+   from {
+      transform: rotate(0deg);
+   }
+
+   to {
+      transform: rotate(360deg);
+   }
+}

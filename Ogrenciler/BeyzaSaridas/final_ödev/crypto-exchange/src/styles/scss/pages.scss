@@ -1,0 +1,74 @@
+.hero {
+  padding: 6rem 0 4rem;
+  text-align: center;
+
+  &__title {
+    font-size: $font-size-4xl;
+    font-weight: bold;
+    margin-bottom: $spacing-4;
+    color: $text-dark;
+
+    @include dark-mode {
+      color: $text-light;
+    }
+
+    &--highlight {
+      color: $primary-color;
+    }
+  }
+
+  &__subtitle {
+    font-size: $font-size-lg;
+    color: $text-muted;
+    max-width: 36rem;
+    margin: 0 auto $spacing-8;
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-4;
+    justify-content: center;
+    max-width: 24rem;
+    margin: 0 auto;
+
+    @include md {
+      flex-direction: row;
+    }
+  }
+
+  &__button {
+    display: inline-block;
+    padding: $spacing-3 $spacing-6;
+    font-weight: 500;
+    border-radius: 0.375rem;
+    transition: all 0.2s ease;
+
+    &--primary {
+      background-color: $primary-color;
+      color: white;
+
+      &:hover {
+        background-color: darken($primary-color, 10%);
+      }
+    }
+
+    &--secondary {
+      border: 1px solid $border-light;
+      color: $text-dark;
+
+      &:hover {
+        background-color: rgba($text-dark, 0.05);
+      }
+
+      @include dark-mode {
+        border-color: $border-dark;
+        color: $text-light;
+
+        &:hover {
+          background-color: rgba($text-light, 0.05);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,625 @@
+.markets-page {
+  padding: $spacing-xl 0;
+
+  .markets-header {
+    margin-bottom: $spacing-xl;
+
+    .markets-title {
+      font-size: 2rem;
+      font-weight: $font-weight-bold;
+      margin-bottom: $spacing-sm;
+    }
+
+    .markets-subtitle {
+      color: $text-color-light;
+    }
+  }
+
+  .market-stats {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-md;
+    margin-bottom: $spacing-xl;
+
+    @include respond-to("md") {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond-to("lg") {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .stat-card {
+      background-color: $bg-color;
+      border-radius: $border-radius-lg;
+      padding: $spacing-lg;
+      @include shadow("md");
+
+      .stat-title {
+        font-size: 0.875rem;
+        color: $text-color-light;
+        margin-bottom: $spacing-xs;
+        display: flex;
+        align-items: center;
+
+        .info-icon {
+          margin-left: $spacing-xs;
+          cursor: pointer;
+        }
+      }
+
+      .stat-value {
+        font-size: 1.5rem;
+        font-weight: $font-weight-bold;
+        margin-bottom: $spacing-xs;
+      }
+
+      .stat-change {
+        display: flex;
+        align-items: center;
+        font-size: 0.875rem;
+
+        &.positive {
+          color: $success-color;
+        }
+
+        &.negative {
+          color: $danger-color;
+        }
+      }
+    }
+  }
+
+  .markets-content {
+    background-color: $bg-color;
+    border-radius: $border-radius-lg;
+    padding: $spacing-lg;
+    @include shadow("md");
+
+    .markets-controls {
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-md;
+      margin-bottom: $spacing-lg;
+
+      @include respond-to("md") {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .markets-tabs {
+        display: flex;
+
+        .market-tab {
+          padding: $spacing-sm $spacing-md;
+          cursor: pointer;
+          transition: $transition-base;
+          font-weight: $font-weight-medium;
+          border-bottom: 2px solid transparent;
+
+          &:hover {
+            color: $primary-color;
+          }
+
+          &.active {
+            color: $primary-color;
+            border-bottom-color: $primary-color;
+          }
+        }
+      }
+
+      .markets-filters {
+        display: flex;
+        gap: $spacing-md;
+
+        .search-filter {
+          max-width: 240px;
+
+          .form-control {
+            padding-left: $spacing-lg;
+            position: relative;
+          }
+
+          .search-icon {
+            position: absolute;
+            left: $spacing-sm;
+            top: 50%;
+            transform: translateY(-50%);
+            color: $text-color-light;
+          }
+        }
+
+        .sort-filter {
+          .form-control {
+            min-width: 150px;
+          }
+        }
+      }
+    }
+
+    .markets-table-wrapper {
+      overflow-x: auto;
+    }
+
+    .markets-table {
+      width: 100%;
+
+      th {
+        position: sticky;
+        top: 0;
+        background-color: $bg-color;
+        padding: $spacing-sm $spacing-md;
+        font-weight: $font-weight-medium;
+        color: $text-color-light;
+        text-align: left;
+        cursor: pointer;
+        transition: $transition-base;
+
+        &:hover {
+          color: $primary-color;
+        }
+
+        .sort-icon {
+          margin-left: $spacing-xs;
+        }
+      }
+
+      td {
+        padding: $spacing-md;
+        border-top: 1px solid $border-color;
+      }
+
+      tr:hover {
+        background-color: rgba($secondary-color, 0.5);
+      }
+
+      .star-column {
+        width: 40px;
+        text-align: center;
+
+        .star-icon {
+          cursor: pointer;
+          color: $text-color-light;
+          transition: $transition-base;
+
+          &:hover,
+          &.active {
+            color: $warning-color;
+          }
+        }
+      }
+
+      .rank-column {
+        width: 60px;
+        color: $text-color-light;
+      }
+
+      .name-column {
+        min-width: 200px;
+
+        .crypto-name {
+          display: flex;
+          align-items: center;
+
+          .crypto-icon {
+            width: 30px;
+            height: 30px;
+            margin-right: $spacing-sm;
+            border-radius: 50%;
+          }
+
+          .crypto-info {
+            .crypto-symbol {
+              font-weight: $font-weight-medium;
+              margin-bottom: 2px;
+            }
+
+            .crypto-fullname {
+              font-size: 0.75rem;
+              color: $text-color-light;
+            }
+          }
+        }
+      }
+
+      .price-column {
+        min-width: 120px;
+        font-weight: $font-weight-medium;
+      }
+
+      .change-column {
+        min-width: 100px;
+
+        .change-value {
+          padding: $spacing-xs $spacing-sm;
+          border-radius: $border-radius-md;
+          font-weight: $font-weight-medium;
+          display: inline-block;
+          text-align: center;
+          min-width: 80px;
+
+          &.positive {
+            background-color: rgba($success-color, 0.1);
+            color: $success-color;
+          }
+
+          &.negative {
+            background-color: rgba($danger-color, 0.1);
+            color: $danger-color;
+          }
+        }
+      }
+
+      .market-cap-column {
+        min-width: 150px;
+      }
+
+      .volume-column {
+        min-width: 150px;
+      }
+
+      .chart-column {
+        min-width: 120px;
+
+        .mini-chart {
+          width: 100px;
+          height: 40px;
+        }
+      }
+
+      .action-column {
+        width: 100px;
+        text-align: right;
+      }
+    }
+
+    .markets-pagination {
+      margin-top: $spacing-lg;
+      display: flex;
+      justify-content: center;
+
+      .pagination {
+        display: flex;
+
+        .page-item {
+          .page-link {
+            padding: $spacing-xs $spacing-sm;
+            min-width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: $bg-color;
+            border: 1px solid $border-color;
+            color: $text-color;
+            transition: $transition-base;
+            cursor: pointer;
+
+            &:hover {
+              background-color: $secondary-color;
+              z-index: 2;
+            }
+          }
+
+          &.active .page-link {
+            background-color: $primary-color;
+            border-color: $primary-color;
+            color: white;
+            z-index: 3;
+          }
+
+          &.disabled .page-link {
+            color: $text-color-light;
+            pointer-events: none;
+            cursor: auto;
+          }
+        }
+      }
+    }
+  }
+
+  .crypto-detail {
+    .crypto-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: $spacing-lg;
+
+      .back-button {
+        margin-right: $spacing-md;
+      }
+
+      .crypto-title {
+        display: flex;
+        align-items: center;
+
+        .crypto-icon {
+          width: 40px;
+          height: 40px;
+          margin-right: $spacing-md;
+          border-radius: 50%;
+        }
+
+        .crypto-info {
+          .crypto-name {
+            font-size: 1.5rem;
+            font-weight: $font-weight-bold;
+            display: flex;
+            align-items: center;
+
+            .crypto-symbol {
+              margin-left: $spacing-sm;
+              color: $text-color-light;
+            }
+
+            .crypto-rank {
+              margin-left: $spacing-sm;
+              font-size: 0.75rem;
+              padding: $spacing-xs $spacing-sm;
+              background-color: $secondary-color;
+              border-radius: $border-radius-sm;
+              color: $text-color-light;
+            }
+          }
+
+          .crypto-price {
+            display: flex;
+            align-items: center;
+
+            .price-value {
+              font-size: 1.25rem;
+              font-weight: $font-weight-medium;
+              margin-right: $spacing-sm;
+            }
+
+            .price-change {
+              padding: $spacing-xs $spacing-sm;
+              border-radius: $border-radius-sm;
+              font-size: 0.875rem;
+
+              &.positive {
+                background-color: rgba($success-color, 0.1);
+                color: $success-color;
+              }
+
+              &.negative {
+                background-color: rgba($danger-color, 0.1);
+                color: $danger-color;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .crypto-actions {
+      display: flex;
+      gap: $spacing-md;
+      margin-bottom: $spacing-lg;
+    }
+
+    .crypto-stats {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: $spacing-md;
+      margin-bottom: $spacing-lg;
+
+      @include respond-to("md") {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @include respond-to("lg") {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .stat-card {
+        background-color: $bg-color;
+        border-radius: $border-radius-md;
+        padding: $spacing-md;
+        @include shadow("sm");
+
+        .stat-title {
+          font-size: 0.75rem;
+          color: $text-color-light;
+          margin-bottom: $spacing-xs;
+        }
+
+        .stat-value {
+          font-size: 1.125rem;
+          font-weight: $font-weight-bold;
+        }
+      }
+    }
+
+    .crypto-chart-container {
+      background-color: $bg-color;
+      border-radius: $border-radius-lg;
+      padding: $spacing-lg;
+      margin-bottom: $spacing-lg;
+      @include shadow("md");
+
+      .chart-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: $spacing-lg;
+
+        .chart-title {
+          font-size: 1.25rem;
+          font-weight: $font-weight-bold;
+        }
+
+        .chart-timeframes {
+          display: flex;
+          gap: $spacing-xs;
+
+          .timeframe-option {
+            padding: $spacing-xs $spacing-sm;
+            border-radius: $border-radius-sm;
+            background-color: $secondary-color;
+            color: $text-color;
+            cursor: pointer;
+            transition: $transition-base;
+            font-size: 0.875rem;
+
+            &:hover {
+              background-color: shade($secondary-color, 10%);
+            }
+
+            &.active {
+              background-color: $primary-color;
+              color: white;
+            }
+          }
+        }
+      }
+    }
+
+    .crypto-details {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: $spacing-lg;
+
+      @include respond-to("lg") {
+        grid-template-columns: 2fr 1fr;
+      }
+
+      .crypto-info-card {
+        background-color: $bg-color;
+        border-radius: $border-radius-lg;
+        padding: $spacing-lg;
+        @include shadow("md");
+
+        .card-title {
+          font-size: 1.25rem;
+          font-weight: $font-weight-bold;
+          margin-bottom: $spacing-md;
+        }
+
+        .info-table {
+          width: 100%;
+
+          tr {
+            border-bottom: 1px solid $border-color;
+
+            &:last-child {
+              border-bottom: none;
+            }
+          }
+
+          th,
+          td {
+            padding: $spacing-sm 0;
+          }
+
+          th {
+            color: $text-color-light;
+            font-weight: $font-weight-normal;
+            text-align: left;
+          }
+
+          td {
+            text-align: right;
+            font-weight: $font-weight-medium;
+          }
+        }
+
+        .crypto-description {
+          margin-top: $spacing-lg;
+
+          .description-title {
+            font-size: 1rem;
+            font-weight: $font-weight-bold;
+            margin-bottom: $spacing-sm;
+          }
+
+          .description-content {
+            color: $text-color-light;
+            line-height: 1.6;
+          }
+
+          .read-more {
+            margin-top: $spacing-sm;
+            color: $primary-color;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .market-data-card {
+        background-color: $bg-color;
+        border-radius: $border-radius-lg;
+        padding: $spacing-lg;
+        @include shadow("md");
+
+        .card-title {
+          font-size: 1.25rem;
+          font-weight: $font-weight-bold;
+          margin-bottom: $spacing-md;
+        }
+
+        .progress-item {
+          margin-bottom: $spacing-md;
+
+          .progress-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: $spacing-xs;
+
+            .label {
+              color: $text-color-light;
+              font-size: 0.875rem;
+            }
+
+            .value {
+              font-weight: $font-weight-medium;
+            }
+          }
+
+          .progress-bar-container {
+            height: 6px;
+            background-color: $secondary-color;
+            border-radius: $border-radius-full;
+            overflow: hidden;
+
+            .progress-bar {
+              height: 100%;
+              background-color: $primary-color;
+              border-radius: $border-radius-full;
+            }
+          }
+        }
+
+        .exchange-list {
+          margin-top: $spacing-lg;
+
+          .exchange-item {
+            display: flex;
+            justify-content: space-between;
+            padding: $spacing-sm 0;
+            border-bottom: 1px solid $border-color;
+
+            &:last-child {
+              border-bottom: none;
+            }
+
+            .exchange-name {
+              display: flex;
+              align-items: center;
+
+              .exchange-icon {
+                width: 20px;
+                height: 20px;
+                margin-right: $spacing-sm;
+              }
+            }
+
+            .exchange-price {
+              font-weight: $font-weight-medium;
+            }
+          }
+        }
+      }
+    }
+  }
+}

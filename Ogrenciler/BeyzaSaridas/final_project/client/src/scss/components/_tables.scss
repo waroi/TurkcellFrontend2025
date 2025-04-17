@@ -1,0 +1,149 @@
+.table {
+  width: 100%;
+  margin-bottom: $spacing-md;
+  color: $text-color;
+  border-collapse: collapse;
+
+  th,
+  td {
+    padding: $spacing-sm $spacing-md;
+    vertical-align: middle;
+    border-top: 1px solid $border-color;
+    text-align: left;
+  }
+
+  thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid $border-color;
+    font-weight: $font-weight-bold;
+    color: $text-color-light;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+  }
+
+  tbody + tbody {
+    border-top: 2px solid $border-color;
+  }
+
+  &-sm {
+    th,
+    td {
+      padding: $spacing-xs $spacing-sm;
+    }
+  }
+
+  &-bordered {
+    border: 1px solid $border-color;
+
+    th,
+    td {
+      border: 1px solid $border-color;
+    }
+  }
+
+  &-borderless {
+    th,
+    td,
+    thead th,
+    tbody + tbody {
+      border: 0;
+    }
+  }
+
+  &-striped {
+    tbody tr:nth-of-type(odd) {
+      background-color: rgba($secondary-color, 0.5);
+    }
+  }
+
+  &-hover {
+    tbody tr:hover {
+      background-color: rgba($secondary-color, 0.7);
+    }
+  }
+
+  &-dark {
+    color: white;
+    background-color: $text-color;
+
+    th,
+    td,
+    thead th {
+      border-color: rgba(white, 0.1);
+    }
+
+    &.table-striped {
+      tbody tr:nth-of-type(odd) {
+        background-color: rgba(white, 0.05);
+      }
+    }
+
+    &.table-hover {
+      tbody tr:hover {
+        background-color: rgba(white, 0.1);
+      }
+    }
+  }
+
+  &-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+
+    > .table-bordered {
+      border: 0;
+    }
+  }
+
+  &.crypto-market-table {
+    th {
+      font-weight: $font-weight-medium;
+      color: $text-color-light;
+    }
+
+    .crypto-name {
+      display: flex;
+      align-items: center;
+
+      .crypto-icon {
+        margin-right: $spacing-sm;
+      }
+
+      .symbol {
+        color: $text-color-light;
+        font-size: 0.875rem;
+        margin-left: $spacing-xs;
+      }
+    }
+
+    .price-column {
+      font-weight: $font-weight-medium;
+    }
+
+    .change-column {
+      &.positive {
+        color: $success-color;
+      }
+
+      &.negative {
+        color: $danger-color;
+      }
+    }
+
+    .market-cap-column,
+    .volume-column {
+      color: $text-color-light;
+    }
+
+    .chart-column {
+      width: 120px;
+    }
+
+    .action-column {
+      width: 100px;
+      text-align: right;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+.input {
+   width: 100%;
+   padding: $spacing-sm $spacing-md;
+   font-size: $font-size-base;
+   border: 1px solid $border-color;
+   border-radius: $border-radius-md;
+   transition: $transition-base;
+
+   &:focus {
+      border-color: $primary-color;
+      outline: none;
+      box-shadow: 0 0 0 0.2rem rgba($primary-color, 0.25);
+   }
+
+   &::placeholder {
+      color: $text-color-light;
+   }
+}

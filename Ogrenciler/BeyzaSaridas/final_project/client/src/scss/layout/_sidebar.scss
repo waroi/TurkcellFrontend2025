@@ -1,0 +1,235 @@
+.sidebar {
+  width: 260px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: $bg-color;
+  border-right: 1px solid $border-color;
+  z-index: $z-index-fixed;
+  transition: $transition-base;
+  @include shadow("md");
+
+  &.collapsed {
+    width: 80px;
+
+    .sidebar-logo-text,
+    .sidebar-item-text,
+    .sidebar-dropdown-icon,
+    .sidebar-dropdown-menu {
+      display: none;
+    }
+
+    .sidebar-item {
+      justify-content: center;
+      padding: $spacing-md $spacing-sm;
+
+      .sidebar-item-icon {
+        margin-right: 0;
+      }
+    }
+
+    .sidebar-toggle {
+      justify-content: center;
+
+      .toggle-icon {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &.mobile {
+    transform: translateX(-100%);
+
+    &.show {
+      transform: translateX(0);
+    }
+  }
+
+  .sidebar-header {
+    height: 70px;
+    padding: 0 $spacing-md;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid $border-color;
+
+    .sidebar-logo {
+      display: flex;
+      align-items: center;
+      font-weight: $font-weight-bold;
+      font-size: 1.25rem;
+      color: $primary-color;
+
+      img,
+      svg {
+        margin-right: $spacing-sm;
+      }
+    }
+  }
+
+  .sidebar-content {
+    height: calc(100vh - 70px);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sidebar-menu {
+    padding: $spacing-md 0;
+    flex: 1;
+  }
+
+  .sidebar-section {
+    padding: 0 $spacing-md;
+    margin-bottom: $spacing-md;
+
+    &-title {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      color: $text-color-light;
+      font-weight: $font-weight-medium;
+      margin-bottom: $spacing-sm;
+      letter-spacing: 0.05em;
+    }
+  }
+
+  .sidebar-item {
+    display: flex;
+    align-items: center;
+    padding: $spacing-sm $spacing-md;
+    border-radius: $border-radius-md;
+    margin-bottom: $spacing-xs;
+    color: $text-color;
+    text-decoration: none;
+    transition: $transition-base;
+    position: relative;
+
+    &-icon {
+      margin-right: $spacing-md;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $text-color-light;
+      transition: $transition-base;
+    }
+
+    &-text {
+      font-weight: $font-weight-medium;
+    }
+
+    &:hover {
+      background-color: rgba($primary-color, 0.1);
+      color: $primary-color;
+
+      .sidebar-item-icon {
+        color: $primary-color;
+      }
+    }
+
+    &.active {
+      background-color: $primary-color;
+      color: white;
+
+      .sidebar-item-icon {
+        color: white;
+      }
+    }
+
+    &.with-dropdown {
+      cursor: pointer;
+
+      .sidebar-dropdown-icon {
+        margin-left: auto;
+        transition: $transition-base;
+      }
+
+      &.open {
+        .sidebar-dropdown-icon {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+
+  .sidebar-dropdown-menu {
+    padding-left: calc(20px + #{$spacing-md} + #{$spacing-sm});
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+
+    &.open {
+      max-height: 500px;
+    }
+
+    .sidebar-dropdown-item {
+      padding: $spacing-sm 0;
+      color: $text-color;
+      text-decoration: none;
+      display: block;
+      transition: $transition-base;
+
+      &:hover,
+      &.active {
+        color: $primary-color;
+      }
+    }
+  }
+
+  .sidebar-footer {
+    padding: $spacing-md;
+    border-top: 1px solid $border-color;
+  }
+
+  .sidebar-toggle {
+    display: flex;
+    align-items: center;
+    padding: $spacing-sm $spacing-md;
+    cursor: pointer;
+    color: $text-color-light;
+    transition: $transition-base;
+
+    &:hover {
+      color: $primary-color;
+    }
+
+    .toggle-icon {
+      margin-left: auto;
+      transition: $transition-base;
+    }
+  }
+
+  .sidebar-user {
+    display: flex;
+    align-items: center;
+
+    .user-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: $spacing-sm;
+      background-color: $secondary-color;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $primary-color;
+      font-weight: $font-weight-bold;
+    }
+
+    .user-info {
+      overflow: hidden;
+
+      .user-name {
+        font-weight: $font-weight-medium;
+        @include truncate(1);
+      }
+
+      .user-email {
+        font-size: 0.75rem;
+        color: $text-color-light;
+        @include truncate(1);
+      }
+    }
+  }
+}

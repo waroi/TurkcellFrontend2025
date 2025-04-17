@@ -1,0 +1,55 @@
+@mixin sm {
+   @media (min-width: $breakpoint-sm) {
+      @content;
+   }
+}
+
+@mixin md {
+   @media (min-width: $breakpoint-md) {
+      @content;
+   }
+}
+
+@mixin lg {
+   @media (min-width: $breakpoint-lg) {
+      @content;
+   }
+}
+
+@mixin xl {
+   @media (min-width: $breakpoint-xl) {
+      @content;
+   }
+}
+
+@mixin xxl {
+   @media (min-width: $breakpoint-2xl) {
+      @content;
+   }
+}
+
+@mixin flex($direction: row, $justify: flex-start, $align: stretch, $wrap: nowrap) {
+   display: flex;
+   flex-direction: $direction;
+   justify-content: $justify;
+   align-items: $align;
+   flex-wrap: $wrap;
+}
+
+
+@mixin grid($columns: 1, $gap: $spacing-4) {
+   display: grid;
+   grid-template-columns: repeat($columns, 1fr);
+   gap: $gap;
+}
+
+
+@mixin dark-mode {
+   .dark & {
+      @content;
+   }
+}
+
+@mixin transition($property: all, $duration: 0.3s, $timing: ease) {
+   transition: $property $duration $timing;
+}

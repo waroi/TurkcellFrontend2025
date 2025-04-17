@@ -1,0 +1,100 @@
+@import "scss/abstracts/variables";
+@import "scss/abstracts/functions";
+@import "scss/abstracts/mixins";
+
+@import "scss/base/reset";
+@import "scss/base/typography";
+@import "scss/base/utilities";
+
+@import "scss/components/buttons";
+@import "scss/components/cards";
+@import "scss/components/forms";
+@import "scss/components/tables";
+@import "scss/components/icons";
+@import "scss/components/charts";
+
+@import "scss/layout/header";
+@import "scss/layout/footer";
+@import "scss/layout/navigation";
+@import "scss/layout/sidebar";
+@import "scss/layout/grid";
+
+@import "scss/pages/home";
+@import "scss/pages/wallet";
+@import "scss/pages/markets";
+@import "scss/pages/exchange";
+@import "scss/pages/profile";
+@import "scss/pages/auth";
+
+@import "scss/themes/theme";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  color: $text-color;
+  background-color: $bg-color-light;
+  line-height: 1.5;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: $bg-color-light;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $border-color;
+  border-radius: $border-radius-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: $text-color-light;
+}
+
+.nav-item.active {
+  color: $primary-color;
+  font-weight: $font-weight-medium;
+}
+
+.step-active {
+  color: $primary-color;
+  border-color: $primary-color;
+  background-color: $primary-color;
+}
+
+.toggle-active {
+  background-color: $primary-color;
+}
+
+.btn-primary {
+  background-color: $primary-color;
+  color: $bg-color;
+  transition: $transition-base;
+
+  &:hover {
+    background-color: shade($primary-color, 10%);
+  }
+}
+
+.btn-outline {
+  border: 1px solid $primary-color;
+  color: $primary-color;
+  transition: $transition-base;
+
+  &:hover {
+    background-color: rgba($primary-color, 0.1);
+  }
+}

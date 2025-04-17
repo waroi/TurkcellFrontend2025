@@ -1,0 +1,129 @@
+.footer {
+  background-color: $bg-color;
+  border-top: 1px solid $border-color;
+  padding: $spacing-xl 0;
+
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xl;
+
+    @include respond-to("lg") {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  .footer-logo {
+    margin-bottom: $spacing-md;
+    display: flex;
+    align-items: center;
+    font-weight: $font-weight-bold;
+    font-size: 1.5rem;
+    color: $primary-color;
+
+    img,
+    svg {
+      margin-right: $spacing-sm;
+    }
+  }
+
+  .footer-description {
+    color: $text-color-light;
+    margin-bottom: $spacing-md;
+    max-width: 300px;
+  }
+
+  .footer-section {
+    &-title {
+      font-weight: $font-weight-bold;
+      margin-bottom: $spacing-md;
+    }
+
+    &-links {
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-sm;
+
+      .footer-link {
+        color: $text-color-light;
+        text-decoration: none;
+        transition: $transition-base;
+
+        &:hover {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+
+  .footer-social {
+    display: flex;
+    gap: $spacing-md;
+    margin-top: $spacing-md;
+
+    .social-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: $secondary-color;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: $transition-base;
+
+      &:hover {
+        background-color: $primary-color;
+        color: white;
+      }
+    }
+  }
+
+  .newsletter-form {
+    margin-top: $spacing-md;
+
+    .input-group {
+      max-width: 300px;
+    }
+  }
+
+  .footer-bottom {
+    margin-top: $spacing-xl;
+    padding-top: $spacing-md;
+    border-top: 1px solid $border-color;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include respond-to("lg") {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .copyright {
+      color: $text-color-light;
+      font-size: 0.875rem;
+      margin-bottom: $spacing-md;
+
+      @include respond-to("lg") {
+        margin-bottom: 0;
+      }
+    }
+
+    .footer-bottom-links {
+      display: flex;
+      gap: $spacing-md;
+
+      .footer-bottom-link {
+        color: $text-color-light;
+        font-size: 0.875rem;
+        text-decoration: none;
+        transition: $transition-base;
+
+        &:hover {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+}

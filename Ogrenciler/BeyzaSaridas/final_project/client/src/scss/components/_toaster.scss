@@ -1,0 +1,16 @@
+.toaster {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: $primary-color;
+  color: $bg-color;
+  padding: $spacing-md;
+  border-radius: $border-radius-md;
+  box-shadow: $shadow-md;
+  z-index: $z-index-toast;
+
+  .toaster-message {
+    font-size: $font-size-base;
+    font-weight: $font-weight-medium;
+  }
+}

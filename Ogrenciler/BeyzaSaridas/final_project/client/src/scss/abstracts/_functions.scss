@@ -1,0 +1,41 @@
+@function rem($pixels, $context: 16) {
+  @return ($pixels / $context) * 1rem;
+}
+
+@function percent($target, $context) {
+  @return ($target / $context) * 100%;
+}
+
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
+@function z($key) {
+  @if map-has-key($z-layers, $key) {
+    @return map-get($z-layers, $key);
+  }
+
+  @warn "Unknown `#{$key}` in $z-layers.";
+  @return null;
+}
+
+@function breakpoint($point) {
+  @if $point == "sm" {
+    @return $breakpoint-sm;
+  } @else if $point == "md" {
+    @return $breakpoint-md;
+  } @else if $point == "lg" {
+    @return $breakpoint-lg;
+  } @else if $point == "xl" {
+    @return $breakpoint-xl;
+  } @else if $point == "2xl" {
+    @return $breakpoint-2xl;
+  }
+
+  @warn "Unknown breakpoint `#{$point}`.";
+  @return null;
+}

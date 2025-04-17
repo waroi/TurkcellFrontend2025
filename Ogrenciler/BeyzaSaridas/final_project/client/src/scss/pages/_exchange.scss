@@ -1,0 +1,734 @@
+.exchange-page {
+  padding: $spacing-xl 0;
+
+  .exchange-header {
+    margin-bottom: $spacing-xl;
+
+    .exchange-title {
+      font-size: 2rem;
+      font-weight: $font-weight-bold;
+      margin-bottom: $spacing-sm;
+    }
+
+    .exchange-subtitle {
+      color: $text-color-light;
+    }
+  }
+
+  .exchange-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-lg;
+
+    @include respond-to("lg") {
+      grid-template-columns: 3fr 1fr;
+    }
+
+    .exchange-main {
+      .exchange-chart-card {
+        background-color: $bg-color;
+        border-radius: $border-radius-lg;
+        padding: $spacing-lg;
+        margin-bottom: $spacing-lg;
+        @include shadow("md");
+
+        .pair-selector {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: $spacing-lg;
+
+          .pair-dropdown {
+            display: flex;
+            align-items: center;
+            background-color: $secondary-color;
+            border-radius: $border-radius-md;
+            padding: $spacing-sm $spacing-md;
+            cursor: pointer;
+            transition: $transition-base;
+
+            &:hover {
+              background-color: shade($secondary-color, 5%);
+            }
+
+            .pair-icon {
+              width: 24px;
+              height: 24px;
+              margin-right: $spacing-sm;
+            }
+
+            .pair-name {
+              font-weight: $font-weight-medium;
+              margin-right: $spacing-sm;
+            }
+
+            .dropdown-icon {
+              color: $text-color-light;
+            }
+          }
+
+          .chart-type-selector {
+            display: flex;
+            gap: $spacing-xs;
+
+            .chart-type {
+              padding: $spacing-xs $spacing-sm;
+              border-radius: $border-radius-sm;
+              background-color: $secondary-color;
+              color: $text-color;
+              cursor: pointer;
+              transition: $transition-base;
+              font-size: 0.875rem;
+
+              &:hover {
+                background-color: shade($secondary-color, 10%);
+              }
+
+              &.active {
+                background-color: $primary-color;
+                color: white;
+              }
+            }
+          }
+        }
+
+        .chart-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          margin-bottom: $spacing-md;
+
+          .chart-price {
+            .current-price {
+              font-size: 1.5rem;
+              font-weight: $font-weight-bold;
+              margin-bottom: $spacing-xs;
+            }
+
+            .price-change {
+              display: flex;
+              align-items: center;
+
+              &.positive {
+                color: $success-color;
+              }
+
+              &.negative {
+                color: $danger-color;
+              }
+            }
+          }
+
+          .chart-timeframes {
+            display: flex;
+            gap: $spacing-xs;
+
+            .timeframe-option {
+              padding: $spacing-xs $spacing-sm;
+              border-radius: $border-radius-sm;
+              background-color: $secondary-color;
+              color: $text-color;
+              cursor: pointer;
+              transition: $transition-base;
+              font-size: 0.875rem;
+
+              &:hover {
+                background-color: shade($secondary-color, 10%);
+              }
+
+              &.active {
+                background-color: $primary-color;
+                color: white;
+              }
+            }
+          }
+        }
+
+        .chart-container {
+          height: 400px;
+          margin-bottom: $spacing-md;
+        }
+
+        .chart-indicators {
+          display: flex;
+          justify-content: flex-end;
+          gap: $spacing-sm;
+
+          .indicator-button {
+            padding: $spacing-xs $spacing-sm;
+            border-radius: $border-radius-sm;
+            background-color: $secondary-color;
+            color: $text-color;
+            cursor: pointer;
+            transition: $transition-base;
+            font-size: 0.75rem;
+            display: flex;
+            align-items: center;
+
+            .indicator-icon {
+              margin-right: $spacing-xs;
+            }
+
+            &:hover {
+              background-color: shade($secondary-color, 10%);
+            }
+          }
+        }
+      }
+
+      .exchange-order-card {
+        background-color: $bg-color;
+        border-radius: $border-radius-lg;
+        padding: $spacing-lg;
+        @include shadow("md");
+
+        .order-tabs {
+          display: flex;
+          border-bottom: 1px solid $border-color;
+          margin-bottom: $spacing-lg;
+
+          .order-tab {
+            padding: $spacing-sm $spacing-md;
+            font-weight: $font-weight-medium;
+            cursor: pointer;
+            transition: $transition-base;
+            border-bottom: 2px solid transparent;
+
+            &:hover {
+              color: $primary-color;
+            }
+
+            &.active {
+              color: $primary-color;
+              border-bottom-color: $primary-color;
+            }
+          }
+        }
+
+        .order-content {
+          .order-type-selector {
+            display: flex;
+            gap: $spacing-sm;
+            margin-bottom: $spacing-md;
+
+            .order-type {
+              flex: 1;
+              text-align: center;
+              padding: $spacing-sm;
+              border: 1px solid $border-color;
+              border-radius: $border-radius-md;
+              cursor: pointer;
+              transition: $transition-base;
+
+              &:hover {
+                border-color: $primary-color;
+              }
+
+              &.active {
+                background-color: $primary-color;
+                color: white;
+                border-color: $primary-color;
+              }
+            }
+          }
+
+          .order-form {
+            .form-group {
+              margin-bottom: $spacing-md;
+
+              .input-group {
+                .input-group-text {
+                  background-color: $secondary-color;
+                  border-color: $border-color;
+                  color: $text-color-light;
+                }
+              }
+
+              .slider-container {
+                margin-top: $spacing-sm;
+
+                .percentage-slider {
+                  width: 100%;
+                  margin-bottom: $spacing-sm;
+                }
+
+                .percentage-buttons {
+                  display: flex;
+                  justify-content: space-between;
+
+                  .percentage-button {
+                    width: 22%;
+                    text-align: center;
+                    padding: $spacing-xs;
+                    background-color: $secondary-color;
+                    color: $text-color;
+                    border-radius: $border-radius-sm;
+                    font-size: 0.75rem;
+                    cursor: pointer;
+                    transition: $transition-base;
+
+                    &:hover {
+                      background-color: shade($secondary-color, 10%);
+                    }
+
+                    &.active {
+                      background-color: $primary-color;
+                      color: white;
+                    }
+                  }
+                }
+              }
+            }
+
+            .order-summary {
+              padding: $spacing-md;
+              background-color: $secondary-color;
+              border-radius: $border-radius-md;
+              margin-bottom: $spacing-md;
+
+              .summary-item {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: $spacing-xs;
+                font-size: 0.875rem;
+
+                &:last-child {
+                  margin-bottom: 0;
+                }
+
+                .summary-value {
+                  font-weight: $font-weight-medium;
+                }
+              }
+            }
+
+            .form-submit {
+              display: flex;
+              gap: $spacing-md;
+
+              .btn {
+                flex: 1;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .exchange-sidebar {
+      .orderbook-card {
+        background-color: $bg-color;
+        border-radius: $border-radius-lg;
+        padding: $spacing-lg;
+        margin-bottom: $spacing-lg;
+        @include shadow("md");
+
+        .card-title {
+          font-size: 1.25rem;
+          font-weight: $font-weight-bold;
+          margin-bottom: $spacing-md;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .orderbook-controls {
+            display: flex;
+            gap: $spacing-xs;
+
+            .control-button {
+              width: 24px;
+              height: 24px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              background-color: $secondary-color;
+              border-radius: $border-radius-sm;
+              color: $text-color;
+              cursor: pointer;
+              transition: $transition-base;
+
+              &:hover {
+                background-color: shade($secondary-color, 10%);
+              }
+            }
+          }
+        }
+
+        .orderbook-header {
+          display: flex;
+          justify-content: space-between;
+          padding: $spacing-xs 0;
+          border-bottom: 1px solid $border-color;
+          font-size: 0.75rem;
+          color: $text-color-light;
+
+          .price-header,
+          .amount-header,
+          .total-header {
+            flex: 1;
+          }
+
+          .amount-header,
+          .total-header {
+            text-align: right;
+          }
+        }
+
+        .orderbook-asks {
+          margin-bottom: $spacing-xs;
+
+          .ask-row {
+            display: flex;
+            justify-content: space-between;
+            padding: $spacing-xs 0;
+            font-size: 0.875rem;
+            cursor: pointer;
+            position: relative;
+
+            &:hover {
+              background-color: rgba($danger-color, 0.05);
+            }
+
+            .depth-visualization {
+              position: absolute;
+              top: 0;
+              right: 0;
+              height: 100%;
+              background-color: rgba($danger-color, 0.1);
+              z-index: 0;
+            }
+
+            .price,
+            .amount,
+            .total {
+              flex: 1;
+              position: relative;
+              z-index: 1;
+            }
+
+            .price {
+              color: $danger-color;
+            }
+
+            .amount,
+            .total {
+              text-align: right;
+            }
+          }
+        }
+
+        .orderbook-last-price {
+          display: flex;
+          justify-content: space-between;
+          padding: $spacing-sm 0;
+          border-top: 1px solid $border-color;
+          border-bottom: 1px solid $border-color;
+
+          .price-value {
+            font-weight: $font-weight-bold;
+
+            &.up {
+              color: $success-color;
+            }
+
+            &.down {
+              color: $danger-color;
+            }
+          }
+
+          .price-change {
+            font-size: 0.875rem;
+
+            &.positive {
+              color: $success-color;
+            }
+
+            &.negative {
+              color: $danger-color;
+            }
+          }
+        }
+
+        .orderbook-bids {
+          margin-top: $spacing-xs;
+
+          .bid-row {
+            display: flex;
+            justify-content: space-between;
+            padding: $spacing-xs 0;
+            font-size: 0.875rem;
+            cursor: pointer;
+            position: relative;
+
+            &:hover {
+              background-color: rgba($success-color, 0.05);
+            }
+
+            .depth-visualization {
+              position: absolute;
+              top: 0;
+              right: 0;
+              height: 100%;
+              background-color: rgba($success-color, 0.1);
+              z-index: 0;
+            }
+
+            .price,
+            .amount,
+            .total {
+              flex: 1;
+              position: relative;
+              z-index: 1;
+            }
+
+            .price {
+              color: $success-color;
+            }
+
+            .amount,
+            .total {
+              text-align: right;
+            }
+          }
+        }
+      }
+
+      .market-trades-card {
+        background-color: $bg-color;
+        border-radius: $border-radius-lg;
+        padding: $spacing-lg;
+        @include shadow("md");
+
+        .card-title {
+          font-size: 1.25rem;
+          font-weight: $font-weight-bold;
+          margin-bottom: $spacing-md;
+        }
+
+        .trades-header {
+          display: flex;
+          justify-content: space-between;
+          padding: $spacing-xs 0;
+          border-bottom: 1px solid $border-color;
+          font-size: 0.75rem;
+          color: $text-color-light;
+
+          .price-header,
+          .amount-header,
+          .time-header {
+            flex: 1;
+          }
+
+          .amount-header,
+          .time-header {
+            text-align: right;
+          }
+        }
+
+        .trades-list {
+          max-height: 300px;
+          overflow-y: auto;
+
+          .trade-row {
+            display: flex;
+            justify-content: space-between;
+            padding: $spacing-xs 0;
+            font-size: 0.875rem;
+            border-bottom: 1px solid rgba($border-color, 0.5);
+
+            &:last-child {
+              border-bottom: none;
+            }
+
+            .price,
+            .amount,
+            .time {
+              flex: 1;
+            }
+
+            .price {
+              &.buy {
+                color: $success-color;
+              }
+
+              &.sell {
+                color: $danger-color;
+              }
+            }
+
+            .amount,
+            .time {
+              text-align: right;
+            }
+
+            .time {
+              color: $text-color-light;
+              font-size: 0.75rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .exchange-orders {
+    margin-top: $spacing-xl;
+
+    .orders-card {
+      background-color: $bg-color;
+      border-radius: $border-radius-lg;
+      padding: $spacing-lg;
+      @include shadow("md");
+
+      .orders-tabs {
+        display: flex;
+        border-bottom: 1px solid $border-color;
+        margin-bottom: $spacing-lg;
+
+        .orders-tab {
+          padding: $spacing-sm $spacing-md;
+          font-weight: $font-weight-medium;
+          cursor: pointer;
+          transition: $transition-base;
+          border-bottom: 2px solid transparent;
+
+          &:hover {
+            color: $primary-color;
+          }
+
+          &.active {
+            color: $primary-color;
+            border-bottom-color: $primary-color;
+          }
+        }
+      }
+
+      .orders-table-wrapper {
+        overflow-x: auto;
+      }
+
+      .orders-table {
+        width: 100%;
+
+        th {
+          padding: $spacing-sm;
+          font-weight: $font-weight-medium;
+          color: $text-color-light;
+          text-align: left;
+          border-bottom: 1px solid $border-color;
+          font-size: 0.75rem;
+        }
+
+        td {
+          padding: $spacing-sm;
+          border-bottom: 1px solid $border-color;
+          font-size: 0.875rem;
+        }
+
+        .order-pair {
+          display: flex;
+          align-items: center;
+
+          .pair-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: $spacing-sm;
+            border-radius: 50%;
+          }
+        }
+
+        .order-type {
+          &.buy {
+            color: $success-color;
+          }
+
+          &.sell {
+            color: $danger-color;
+          }
+        }
+
+        .order-status {
+          .status-indicator {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-right: $spacing-xs;
+
+            &.filled {
+              background-color: $success-color;
+            }
+
+            &.partial {
+              background-color: $warning-color;
+            }
+
+            &.pending {
+              background-color: $info-color;
+            }
+
+            &.canceled {
+              background-color: $danger-color;
+            }
+          }
+        }
+
+        .order-progress {
+          width: 100%;
+          height: 6px;
+          background-color: $secondary-color;
+          border-radius: $border-radius-full;
+          overflow: hidden;
+
+          .progress-bar {
+            height: 100%;
+            background-color: $primary-color;
+          }
+        }
+
+        .order-actions {
+          display: flex;
+          gap: $spacing-xs;
+
+          .action-button {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: $secondary-color;
+            border-radius: $border-radius-sm;
+            color: $text-color;
+            cursor: pointer;
+            transition: $transition-base;
+
+            &:hover {
+              background-color: shade($secondary-color, 10%);
+
+              &.cancel {
+                background-color: $danger-color;
+                color: white;
+              }
+            }
+          }
+        }
+      }
+
+      .no-orders {
+        padding: $spacing-xl;
+        text-align: center;
+        color: $text-color-light;
+
+        .no-orders-icon {
+          font-size: 3rem;
+          margin-bottom: $spacing-md;
+          opacity: 0.3;
+        }
+
+        .no-orders-text {
+          margin-bottom: $spacing-md;
+        }
+      }
+    }
+  }
+}

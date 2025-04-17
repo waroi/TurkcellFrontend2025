@@ -1,0 +1,148 @@
+.card {
+  @include card($spacing-md, $border-radius-md, "md");
+  transition: $transition-base;
+
+  &:hover {
+    @include shadow("lg");
+  }
+
+  .card-header {
+    padding: $spacing-md;
+    border-bottom: 1px solid $border-color;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &:first-child {
+      border-top-left-radius: $border-radius-md;
+      border-top-right-radius: $border-radius-md;
+    }
+
+    .card-title {
+      margin-bottom: 0;
+      font-weight: $font-weight-bold;
+    }
+  }
+
+  .card-body {
+    padding: $spacing-md;
+  }
+
+  .card-footer {
+    padding: $spacing-md;
+    border-top: 1px solid $border-color;
+
+    &:last-child {
+      border-bottom-left-radius: $border-radius-md;
+      border-bottom-right-radius: $border-radius-md;
+    }
+  }
+
+  .card-img {
+    width: 100%;
+
+    &-top {
+      border-top-left-radius: $border-radius-md;
+      border-top-right-radius: $border-radius-md;
+    }
+
+    &-bottom {
+      border-bottom-left-radius: $border-radius-md;
+      border-bottom-right-radius: $border-radius-md;
+    }
+  }
+
+  &.card-overlay {
+    position: relative;
+
+    .card-img {
+      opacity: 0.8;
+    }
+
+    .card-overlay-content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding: $spacing-md;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+    }
+  }
+
+  &.card-horizontal {
+    display: flex;
+    flex-direction: row;
+
+    .card-img,
+    .card-img-overlay {
+      max-width: 200px;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border-top-left-radius: $border-radius-md;
+      border-bottom-left-radius: $border-radius-md;
+    }
+
+    .card-body {
+      flex: 1;
+    }
+  }
+
+  &.crypto-card {
+    display: flex;
+    align-items: center;
+    padding: $spacing-md;
+
+    .crypto-icon {
+      margin-right: $spacing-md;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba($primary-color, 0.1);
+    }
+
+    .crypto-details {
+      flex: 1;
+    }
+
+    .crypto-price {
+      font-weight: $font-weight-bold;
+      text-align: right;
+    }
+
+    .price-change {
+      font-size: 0.75rem;
+
+      &.positive {
+        color: $success-color;
+      }
+
+      &.negative {
+        color: $danger-color;
+      }
+    }
+  }
+
+  &.asset-card {
+    border-left: 3px solid $primary-color;
+
+    .asset-balance {
+      font-size: 1.5rem;
+      font-weight: $font-weight-bold;
+      margin-bottom: $spacing-xs;
+    }
+
+    .asset-value {
+      color: $text-color-light;
+      font-size: 0.875rem;
+    }
+  }
+}

@@ -1,0 +1,133 @@
+.chart-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 250px;
+
+  &.chart-small {
+    height: 120px;
+    min-height: auto;
+  }
+
+  &.chart-medium {
+    height: 200px;
+  }
+
+  &.chart-large {
+    height: 300px;
+  }
+}
+
+.price-chart {
+  .chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $spacing-md;
+
+    .chart-title {
+      font-weight: $font-weight-bold;
+      font-size: 1.25rem;
+    }
+
+    .chart-price {
+      font-weight: $font-weight-bold;
+      font-size: 1.5rem;
+    }
+
+    .chart-change {
+      font-size: 0.875rem;
+
+      &.positive {
+        color: $success-color;
+      }
+
+      &.negative {
+        color: $danger-color;
+      }
+    }
+  }
+
+  .chart-footer {
+    margin-top: $spacing-md;
+  }
+
+  .timeframe-selector {
+    display: flex;
+    justify-content: center;
+    margin: $spacing-md 0;
+
+    .timeframe-option {
+      padding: $spacing-xs $spacing-sm;
+      margin: 0 $spacing-xs;
+      border-radius: $border-radius-md;
+      background-color: $secondary-color;
+      color: $text-color;
+      cursor: pointer;
+      transition: $transition-base;
+      font-size: 0.875rem;
+
+      &:hover {
+        background-color: shade($secondary-color, 5%);
+      }
+
+      &.active {
+        background-color: $primary-color;
+        color: white;
+      }
+    }
+  }
+}
+
+.mini-chart {
+  width: 100px;
+  height: 40px;
+
+  &.positive path {
+    stroke: $success-color;
+  }
+
+  &.negative path {
+    stroke: $danger-color;
+  }
+}
+
+.doughnut-chart,
+.pie-chart {
+  position: relative;
+
+  .chart-center-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+    .value {
+      font-size: 1.5rem;
+      font-weight: $font-weight-bold;
+    }
+
+    .label {
+      font-size: 0.75rem;
+      color: $text-color-light;
+    }
+  }
+}
+
+.volume-bars {
+  display: flex;
+  align-items: flex-end;
+  height: 40px;
+
+  .volume-bar {
+    flex: 1;
+    background-color: rgba($primary-color, 0.3);
+    margin: 0 1px;
+    transition: $transition-base;
+
+    &:hover {
+      background-color: $primary-color;
+    }
+  }
+}
