@@ -6,7 +6,7 @@ import { Providers } from './providers'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Crypto Planet - Kripto Para Borsası',
+  title: 'Rocket - Kripto Para Borsası',
   description: 'Modern ve güvenli kripto para alım satım platformu',
 }
 
