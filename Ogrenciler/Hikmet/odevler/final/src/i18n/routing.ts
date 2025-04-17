@@ -23,6 +23,10 @@ export const routing = defineRouting({
 			en: "/profile",
 			tr: "/profil",
 		},
+		"/market": {
+			en: "/market",
+			tr: "/pazar",
+		},
 		"/dashboard": {
 			en: "/dashboard",
 			tr: "/panel",

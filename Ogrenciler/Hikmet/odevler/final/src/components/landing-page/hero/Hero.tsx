@@ -34,43 +34,39 @@ export default function Hero() {
 	return (
 		<section className="bg-body-tertiary">
 			<Container>
-				<div className="py-5">
-					<Row className="py-5">
-						<Col>
-							<h1 className="text-left display-4 fs-50 fw-bold">
-								{t("title")}
-							</h1>
-							{t("subtitle")}
-							<p className="mb-4 text-body-tertiary text-left fs-20 fw-light"></p>
-							<Button className="mb-4 rounded-5" href="/login">
-								{t("getStartedButton")}
-							</Button>
-							<h5 className="mb-3">{t("ourPartners")}</h5>
-							<Row className="mt-3 g-4">
-								{imagesData.map((image, index) => (
-									<Col xs={6} sm={3} key={index}>
-										<Image
-											src={`/${image.src}`}
-											alt={image.alt}
-											width={image.width}
-											height={image.height}
-											className="img-fluid"
-										/>
-									</Col>
-								))}
-							</Row>
-						</Col>
-						<Col className="d-md-flex justify-content-center align-baseline d-none">
-							<Image
-								src="/hero-right.svg"
-								alt="Hero Image"
-								width={450}
-								height={450}
-								className="img-fluid"
-							/>
-						</Col>
-					</Row>
-				</div>
+				<Row className="py-5">
+					<Col>
+						<h1 className="text-left display-4 fs-50 fw-bold">{t("title")}</h1>
+						{t("subtitle")}
+						<p className="mb-4 text-body-tertiary text-left fs-20 fw-light"></p>
+						<Button className="mb-4 rounded-5" href="/login">
+							{t("getStartedButton")}
+						</Button>
+						<h5 className="mb-3">{t("ourPartners")}</h5>
+						<Row className="mt-3 g-4">
+							{imagesData.map((image, index) => (
+								<Col xs={6} sm={3} key={index}>
+									<Image
+										src={`/${image.src}`}
+										alt={image.alt}
+										width={image.width}
+										height={image.height}
+										className="img-fluid"
+									/>
+								</Col>
+							))}
+						</Row>
+					</Col>
+					<Col className="d-md-flex justify-content-center align-baseline d-none">
+						<Image
+							src="/hero-right.svg"
+							alt="Hero Image"
+							width={450}
+							height={450}
+							className="img-fluid"
+						/>
+					</Col>
+				</Row>
 			</Container>
 		</section>
 	);

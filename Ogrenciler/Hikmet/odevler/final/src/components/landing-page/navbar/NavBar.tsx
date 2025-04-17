@@ -41,7 +41,7 @@ export default function NavBar() {
 		await logout();
 	};
 	return (
-		<Navbar expand="lg" className="sticky-top bg-light">
+		<Navbar expand="lg" className="sticky-top bg-white py-0">
 			<Container fluid>
 				<Navbar.Brand href="/">
 					<Image
@@ -52,10 +52,10 @@ export default function NavBar() {
 						className="align-top"
 					/>
 				</Navbar.Brand>
-				<Navbar.Toggle aria-controls="basic-navbar-nav" />
-				<Navbar.Collapse id="basic-navbar-nav">
+				<Navbar.Toggle aria-controls="navbar" />
+				<Navbar.Collapse id="navbar">
 					<Nav className="me-auto">
-						<NavDropdown title={t("links.homePage")} id="basic-nav-dropdown">
+						<NavDropdown title={t("links.homePage")} id="navbar-dropdown">
 							<NavDropdown.Item href="/">Homepage</NavDropdown.Item>
 						</NavDropdown>
 
@@ -64,7 +64,7 @@ export default function NavBar() {
 						<Nav.Link href="#link">{t("links.exchange")}</Nav.Link>
 						<Nav.Link href="#link">{t("links.spot")}</Nav.Link>
 						<Nav.Link href="#link">BITUSDT</Nav.Link>
-						<NavDropdown title={t("links.pages.title")} id="basic-nav-dropdown">
+						<NavDropdown title={t("links.pages.title")} id="navbar-dropdown">
 							<NavDropdown.Item href="#action/3.2">
 								{t("links.pages.home")}
 							</NavDropdown.Item>
@@ -78,9 +78,7 @@ export default function NavBar() {
 					</Nav>
 
 					<Nav className="ms-auto">
-						<NavDropdown
-							title={t("links.assets.title")}
-							id="basic-nav-dropdown">
+						<NavDropdown title={t("links.assets.title")} id="navbar-dropdown">
 							<NavDropdown.Item href="#">
 								{t("links.assets.assetsAndMarkets")}
 							</NavDropdown.Item>
@@ -90,7 +88,7 @@ export default function NavBar() {
 						</NavDropdown>
 						<NavDropdown
 							title={t("links.ordersTrades.title")}
-							id="basic-nav-dropdown">
+							id="navbar-dropdown">
 							<NavDropdown.Item href="#">
 								{t("links.ordersTrades.orders")}
 							</NavDropdown.Item>
