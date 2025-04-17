@@ -1,6 +1,6 @@
 "use client";
 
-import { useWindowSize } from "@/lib/use-window-size";
+import { useWindowSize } from "@/hooks/useWindowSize";
 import { useSidebarStore } from "@/store/sidebar-store";
 import { useTranslations } from "next-intl";
 import Image from "next/image";

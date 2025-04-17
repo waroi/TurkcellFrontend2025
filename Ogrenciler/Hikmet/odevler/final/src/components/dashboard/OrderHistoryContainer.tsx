@@ -1,7 +1,7 @@
 import { CircleCheckBig, CircleX } from "lucide-react";
 import { useState } from "react";
 import { Card, Form, InputGroup, Nav, Table } from "react-bootstrap";
-import "../../app/[locale]/dashboard/dashboard.scss";
+import styles from "./dashboardComponents.module.scss";
 
 const orderHistoryData = [
 	{
@@ -104,7 +104,7 @@ export default function OrderHistoryContainer({
 					</Nav.Item>
 				</Nav>
 			</Card.Header>
-			<section className="p-4 h-100">
+			<section className="p-4 h-100 overflow-y-auto">
 				<Table responsive borderless className="table-sm">
 					<thead>
 						<tr className="text-center">
@@ -116,9 +116,9 @@ export default function OrderHistoryContainer({
 							<th className="text-end">{t("orderHistory.tableCols.col6")}</th>
 						</tr>
 					</thead>
-					<tbody className="order-history-row">
+					<tbody>
 						{orderHistoryData.map((order, index) => (
-							<tr key={index} className="text-center">
+							<tr key={index} className={`text-center ${styles.orderRow}`}>
 								<td className="text-start">{order.time}</td>
 								<td>{order.pair}</td>
 								<td>{order.type}</td>
