@@ -28,12 +28,6 @@ export default function Home() {
             </a>
           </div>
         </div>
-
-        <div className="register-page">
-          <div className="register-page__container">
-            <div className="register-page__content"></div>
-          </div>
-        </div>
       </div>
     </Layout>
   );
