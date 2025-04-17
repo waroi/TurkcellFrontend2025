@@ -18,6 +18,7 @@ import {
   Clock,
   Plus,
   Minus,
+  
 } from "lucide-react";
 import "./portfolio.scss";
 
@@ -225,9 +226,7 @@ const PortfolioPage: React.FC = () => {
         </div>
       </Layout>
     );
-  }
-
-  return (
+  } return (
     <Layout>
       <div className="portfolio-page">
         <div className="container">
@@ -319,8 +318,7 @@ const PortfolioPage: React.FC = () => {
                   </Link>
                 </div>
               </div>
-            </div>
-          </div>
+            </div> </div>
 
           <div className="portfolio-page__content">
             <div className="portfolio-page__tabs">
@@ -352,8 +350,7 @@ const PortfolioPage: React.FC = () => {
               >
                 <RefreshCw size={16} />
                 İşlem Geçmişi
-              </button>
-            </div>
+              </button></div>
 
             <div className="portfolio-page__tab-content">
               {activeTab === "overview" && (
@@ -517,9 +514,9 @@ const PortfolioPage: React.FC = () => {
                       >
                         Tüm İşlemleri Görüntüle
                       </Button>
-                    </div>
+                 </div>
                   </div>
-                </div>
+                 </div>
               )}
 
               {activeTab === "assets" && (
@@ -769,8 +766,7 @@ const PortfolioPage: React.FC = () => {
                     </div>
                   )}
                 </div>
-              )}
-            </div>
+              )} </div>
           </div>
         </div>
       </div>

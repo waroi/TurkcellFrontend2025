@@ -1,11 +1,20 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  webpack: (config, { dev, isServer }) => {
+  webpack: (config, { isServer }) => {
     config.module.rules.push({
-      test: /\.js$/,
-      include: /node_modules\/undici/,
-      type: "javascript/auto",
+      test: /\.m?js$/,
+      include: /node_modules\/(undici|firebase)/,
+      use: {
+        loader: "babel-loader",
+        options: {
+          presets: ["@babel/preset-env"],
+          plugins: [
+            "@babel/plugin-proposal-private-methods",
+            "@babel/plugin-proposal-private-fields",
+          ],
+        },
+      },
     });
 
     return config;
