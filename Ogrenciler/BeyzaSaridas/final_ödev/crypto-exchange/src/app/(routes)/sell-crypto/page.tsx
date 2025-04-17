@@ -5,7 +5,6 @@ import { useTranslation } from "react-i18next";
 import Layout from "../../../components/layout/Layout";
 import Button from "../../../components/ui/Button";
 import CryptoIcon from "../../../components/common/CryptoIcon";
-import { formatCurrency } from "../../../lib/utils";
 import { sellCrypto } from "../../../lib/firebaseService"; // Firebase'den satış işlemi
 import "./sell-crypto.scss";
 
@@ -37,19 +36,18 @@ const SellCryptoPage: React.FC = () => {
     <Layout>
       <div className="sell-crypto-page">
         <div className="sell-crypto-page__header">
-          <h1 className="sell-crypto-page__title">{t("sellCrypto.title")}</h1>
+          <h1 className="sell-crypto-page__title">{t("Sell Crypto")}</h1>
           <p className="sell-crypto-page__subtitle">
-            {t("sellCrypto.subtitle")}
+            {t("Kolayca kripto para satın ve portföyünüzü büyütün")}
           </p>
         </div>
 
         <div className="sell-crypto-page__content">
           <div className="sell-crypto-page__crypto-selection">
             <h3 className="sell-crypto-page__section-title">
-              {t("sellCrypto.selectCrypto")}
+              {t("Select Crypto to Sell")}
             </h3>
             <div className="sell-crypto-page__crypto-grid">
-              {/* Örnek kripto paralar */}
               {["BTC", "ETH", "XRP"].map((crypto) => (
                 <div
                   key={crypto}
@@ -71,11 +69,11 @@ const SellCryptoPage: React.FC = () => {
 
           <div className="sell-crypto-page__payment-section">
             <h3 className="sell-crypto-page__section-title">
-              {t("sellCrypto.enterAmount")}
+              {t("Please enter the amount")}
             </h3>
             <div className="sell-crypto-page__amount-container">
               <label className="sell-crypto-page__input-label">
-                {t("sellCrypto.amount")}
+                {t("Amount")}
               </label>
               <input
                 type="number"
@@ -90,7 +88,7 @@ const SellCryptoPage: React.FC = () => {
               onClick={handleSell}
               disabled={loading}
             >
-              {loading ? t("sellCrypto.loading") : t("sellCrypto.sell")}
+              {loading ? t("sellCrypto.loading") : t("Sell")}
             </Button>
           </div>
         </div>

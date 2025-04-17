@@ -7,6 +7,8 @@ export default {
     settings: 'Settings',
     changePassword: 'Change Password',
     wallet: 'Wallet',
+    buyCrypto: 'Buy Crypto',
+    sellCrypto: 'Sell Crypto',
     menu: 'Menu',
     darkMode: 'Dark Mode',
     lightMode: 'Light Mode'
@@ -45,6 +47,15 @@ export default {
     selectCrypto: 'Select Cryptocurrency',
     availableBalance: 'Available Balance',
     successful: 'Transaction Successful'
+  },
+  sellCrypto: {
+    title: 'Sell Crypto',
+    subtitle: 'Easily sell cryptocurrencies and grow your portfolio',
+    selectCrypto: 'Select Crypto to Sell',
+    amountPlaceholder: 'Enter amount to sell',
+    loading: 'Processing...',
+    success: 'Transaction successful!',
+    error: 'Transaction failed. Please try again.',
   },
   auth: {
     email: 'Email',

@@ -1,7 +1,6 @@
-import React from 'react';
-import Layout from '../components/layout/Layout';
-import RegisterForm from '../components/auth/RegisterForm';
-import './(auth)/register/register.scss'; 
+import React from "react";
+import Layout from "../components/layout/Layout";
+import "./(auth)/register/register.scss";
 
 export default function Home() {
   return (
@@ -9,23 +8,30 @@ export default function Home() {
       <div className="container">
         <div className="hero">
           <h1 className="hero__title">
-            Modern <span className="hero__title--highlight">Kripto Para</span> Borsası
+            Modern <span className="hero__title--highlight">Kripto Para</span>{" "}
+            Borsası
           </h1>
           <p className="hero__subtitle">
-            Güvenli, hızlı ve kullanıcı dostu bir platformda kripto para alım satımı yapın.
-            En güncel fiyatları takip edin, portföyünüzü yönetin ve piyasaları analiz edin.
+            Güvenli, hızlı ve kullanıcı dostu bir platformda kripto para alım
+            satımı yapın. En güncel fiyatları takip edin, portföyünüzü yönetin
+            ve piyasaları analiz edin.
           </p>
           <div className="hero__buttons">
-            <a href="/market" className="hero__button hero__button--primary">Piyasayı Görüntüle</a>
-            <a href="/register" className="hero__button hero__button--secondary">Hesap Oluştur</a>
+            <a href="/market" className="hero__button hero__button--primary">
+              Piyasayı Görüntüle
+            </a>
+            <a
+              href="/register"
+              className="hero__button hero__button--secondary"
+            >
+              Hesap Oluştur
+            </a>
           </div>
         </div>
 
         <div className="register-page">
           <div className="register-page__container">
-            <div className="register-page__content">
-              <RegisterForm />
-            </div>
+            <div className="register-page__content"></div>
           </div>
         </div>
       </div>

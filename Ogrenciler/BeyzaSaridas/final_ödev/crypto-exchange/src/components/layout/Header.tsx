@@ -1,10 +1,9 @@
 'use client';
-
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useTranslation } from 'react-i18next';
-import { Clock, History, Menu, X } from 'lucide-react';
+import { Clock, History, Menu, X, Wallet } from 'lucide-react';
 import ThemeToggle from '../../components/ui/ThemeToggle';
 import LanguageSelector from '../../components/ui/LanguageSelector';
 import Button from '../../components/ui/Button';
@@ -32,6 +31,7 @@ const Header: React.FC = () => {
   const [currentPassword, setCurrentPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [error, setError] = useState<string | null>(null);
+  const [isWalletMenuOpen, setIsWalletMenuOpen] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -80,7 +80,6 @@ const Header: React.FC = () => {
                 Crypto Planet
               </Link>
             </div>
-
             <nav className="header__nav">
               <Link
                 href="/market"
@@ -120,44 +119,45 @@ const Header: React.FC = () => {
               </Link>
             </nav>
           </div>
-
           <div className="header__right">
             <div className="header__actions">
               <div className="header__actions-time">
                 <Clock size={16} className="header__actions-time-icon" />
                 <span>{formatTime(currentTime)}</span>
               </div>
-
               <ThemeToggle />
-
               <LanguageSelector />
-
               {user && (
                 <>
                   <Link href="/transactions" className="header__actions-item">
                     <History className="header__actions-item-icon" />
                     <span className="sr-only">Trade History</span>
                   </Link>
-
-                  {/* Wallet Actions */}
-                  <div className="header__actions-wallet-group">
-                    <Link href="/buy-crypto" className="header__actions-wallet">
+                  {/* Wallet Button */}
+                  <div className="header__actions-wallet-container">
+                    <button 
+                      className="header__actions-wallet" 
+                      onClick={() => setIsWalletMenuOpen(!isWalletMenuOpen)}
+                    >
                       <svg className="header__actions-wallet-icon" viewBox="0 0 24 24">
                         <path d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
                       </svg>
-                      <span>{t('common.buyCrypto')}</span>
-                    </Link>
-                    <Link href="/sell-crypto" className="header__actions-wallet">
-                      <svg className="header__actions-wallet-icon" viewBox="0 0 24 24">
-                        <path d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
-                      </svg>
-                      <span>{t('common.sellCrypto')}</span>
-                    </Link>
+                      <span>Wallet</span>
+                    </button>
+                    {isWalletMenuOpen && (
+                      <div className="header__wallet-dropdown">
+                        <Link href="/buy-crypto" className="header__wallet-dropdown-item">
+                          {t('Buy-Crypto')}
+                        </Link>
+                        <Link href="/sell-crypto" className="header__wallet-dropdown-item">
+                          {t('Sell-Crypto')}
+                        </Link>
+                      </div>
+                    )}
                   </div>
                 </>
               )}
             </div>
-
             {user ? (
               <div className="header__user">
                 <div className="header__user-info">
@@ -177,7 +177,6 @@ const Header: React.FC = () => {
                     <path d="M19 9l-7 7-7-7"></path>
                   </svg>
                 </button>
-
                 {isUserMenuOpen && (
                   <div className="header__dropdown">
                     <Link href="/profile" className="header__dropdown-item">
@@ -208,7 +207,6 @@ const Header: React.FC = () => {
                 </Link>
               </div>
             )}
-
             <button
               className="header__toggle"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -219,7 +217,98 @@ const Header: React.FC = () => {
           </div>
         </div>
       </div>
-
+      {isMobileMenuOpen && (
+        <div className="header__mobile">
+          <div className="header__mobile-links">
+            <Link
+              href="/market"
+              className={combineClasses(
+                'header__mobile-item',
+                isLinkActive('/market') ? 'header__mobile-item--active' : ''
+              )}
+            >
+              {t('market.title')}
+            </Link>
+            <Link
+              href="/portfolio"
+              className={combineClasses(
+                'header__mobile-item',
+                isLinkActive('/portfolio') ? 'header__mobile-item--active' : ''
+              )}
+            >
+              {t('portfolio.title')}
+            </Link>
+            <Link
+              href="/watchlist"
+              className={combineClasses(
+                'header__mobile-item',
+                isLinkActive('/watchlist') ? 'header__mobile-item--active' : ''
+              )}
+            >
+              {t('watchlist.title')}
+            </Link>
+            <Link
+              href="/learn"
+              className={combineClasses(
+                'header__mobile-item',
+                isLinkActive('/learn') ? 'header__mobile-item--active' : ''
+              )}
+            >
+              Learn
+            </Link>
+          </div>
+          {user ? (
+            <div className="header__mobile-user">
+              <div className="header__mobile-user-info">
+                <img
+                  className="header__mobile-user-avatar"
+                  src={`https://ui-avatars.com/api/?name=${user.displayName || 'User'}&background=random`}
+                  alt="User avatar"
+                />
+                <div>
+                  <div className="header__mobile-user-name">{user?.displayName || 'User'}</div>
+                  <div className="header__mobile-user-email">{user?.email}</div>
+                </div>
+              </div>
+              <div className="header__mobile-user-links">
+                <Link href="/profile" className="header__mobile-user-link">
+                  {t('common.profile')}
+                </Link>
+                <Link href="/settings" className="header__mobile-user-link">
+                  {t('common.settings')}
+                </Link>
+                <Link href="/transactions" className="header__mobile-user-link">
+                  Trade History
+                </Link>
+                <Link href="/buy-crypto" className="header__mobile-user-link">
+                  {t('common.buyCrypto')}
+                </Link>
+                <Link href="/sell-crypto" className="header__mobile-user-link">
+                  {t('common.sellCrypto')}
+                </Link>
+                <button
+                  onClick={() => setIsChangePasswordOpen(true)}
+                  className="header__mobile-user-link"
+                >
+                  {t('common.changePassword')}
+                </button>
+                <button onClick={handleLogout} className="header__mobile-user-link">
+                  {t('common.logout')}
+                </button>
+              </div>
+            </div>
+          ) : (
+            <div className="header__mobile-auth">
+              <Link href="/login" className="header__mobile-auth-login">
+                {t('common.login')}
+              </Link>
+              <Link href="/register" className="header__mobile-auth-register">
+                {t('common.register')}
+              </Link>
+            </div>
+          )}
+        </div>
+      )}
       {isChangePasswordOpen && (
         <div className="change-password-modal">
           <div className="change-password-modal__content">

@@ -7,6 +7,8 @@ export default {
     settings: 'Ayarlar',
     changePassword: 'Şifre Değiştir',
     wallet: 'Cüzdan',
+    buyCrypto: 'Kripto Al',
+    sellCrypto: 'Kripto Sat',
     menu: 'Menü',
     darkMode: 'Karanlık Mod',
     lightMode: 'Aydınlık Mod'
@@ -45,6 +47,15 @@ export default {
     selectCrypto: 'Kripto Para Seçin',
     availableBalance: 'Kullanılabilir Bakiye',
     successful: 'İşlem Başarılı'
+  },
+  sellCrypto: {
+    title: 'Kripto Sat',
+    subtitle: 'Kolayca kripto para satın ve portföyünüzü büyütün',
+    selectCrypto: 'Satılacak Kriptoyu Seçin',
+    amountPlaceholder: 'Satılacak miktarı girin',
+    loading: 'İşlem yapılıyor...',
+    success: 'İşlem başarılı!',
+    error: 'İşlem başarısız oldu. Lütfen tekrar deneyin.',
   },
   auth: {
     email: 'E-posta',
