@@ -5,16 +5,17 @@ interface ImageItemProbs {
   width: number;
   height: number;
   alt: string;
+  classProp?: string
 }
 
-const ImageItem = ({ src, width, height, alt, ...props }: ImageItemProbs) => {
+const ImageItem = ({ src, width, height, alt, classProp }: ImageItemProbs) => {
   return (
     <Image
       src={src}
       alt={alt}
       width={width}
       height={height}
-      {...props}
+      className={classProp}
     />
   )
 }

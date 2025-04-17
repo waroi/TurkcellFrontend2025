@@ -1,5 +1,7 @@
 import "./style.scss"
 import ImageItem from '../../atoms/ImageItem/ImageItem';
+import H3 from "../../atoms/H3/H3";
+import Link from "next/link";
 
 interface NavbarLogoProbs {
     src: string;
@@ -9,10 +11,12 @@ interface NavbarLogoProbs {
 
 const NavbarLogo = ({ src, text }: NavbarLogoProbs) => {
     return (
-        <div className='logo'>
-            <ImageItem src={src} alt={text} width={30} height={30} />
-            <h2 >{text}</h2>
-        </div>
+        <Link href="/">
+            <div className='logo'>
+                <ImageItem src={src} alt={text} width={30} height={30} />
+                <H3 text={text} ></H3>
+
+            </div></Link>
     )
 }
 

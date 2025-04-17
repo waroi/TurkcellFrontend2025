@@ -4,8 +4,6 @@ import ImageItem from "../../atoms/ImageItem/ImageItem"
 import NavLinkItem from "../../atoms/NavLinkItem/NavLinkItem"
 import { useTranslations } from "next-intl"
 import SelectItem from "../../atoms/SelectItem/SelectItem"
-
-import handleTheme from "@/app/hooks/handleTheme"
 import { cookies } from "next/headers"
 import ThemeToggleButton from "../../atoms/ButtonItem/ThemeToggleButton"
 

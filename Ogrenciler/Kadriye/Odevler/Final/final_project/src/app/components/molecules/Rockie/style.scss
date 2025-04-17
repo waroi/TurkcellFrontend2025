@@ -1,0 +1,32 @@
+.rockie {
+  .rockie-head {
+    h2 {
+      margin: 0 0 16px 0;
+    }
+    h3 {
+      margin: 0;
+      font-weight: 400;
+      color: var(--color-secondary);
+    }
+  }
+  .texts {
+    margin: 32px 0;
+    .text {
+      .text-title {
+        img {
+          margin-right: 7px;
+        }
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+  button {
+    background-color: var(--color-primary);
+    border: none;
+    padding: 16px 40px;
+    border-radius: 90px;
+    font-weight: 600;
+    color: var(--color-white);
+  }
+}

@@ -2,6 +2,7 @@
 import ImageItem from "../ImageItem/ImageItem";
 
 interface ButtonItemProbs {
+    type?: any;
     text?: string;
     src?: string;
     width?: number;
@@ -11,9 +12,9 @@ interface ButtonItemProbs {
     event?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-const ButtonItem = ({ text, src, width = 0, height = 0, alt = "", classProps = "", event }: ButtonItemProbs) => {
+const ButtonItem = ({ type = "button", text, src, width = 0, height = 0, alt = "", classProps = "", event }: ButtonItemProbs) => {
     return (
-        <button type="button" className={classProps} onClick={event}>{text} {src ? <ImageItem src={src} width={width} height={height} alt={alt} /> : <></>} </button>
+        <button type={type} className={classProps} onClick={event}>{text} {src ? <ImageItem src={src} width={width} height={height} alt={alt} /> : <></>} </button>
     )
 }
 

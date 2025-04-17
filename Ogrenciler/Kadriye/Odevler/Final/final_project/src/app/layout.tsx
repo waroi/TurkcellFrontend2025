@@ -3,7 +3,8 @@ import { DM_Sans } from 'next/font/google'
 import "./globals.scss";
 
 import { NextIntlClientProvider } from 'next-intl';
-import { getLocale } from 'next-intl/server';
+import { getLocale, getMessages } from 'next-intl/server';
+
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
@@ -23,11 +24,12 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const locale = await getLocale();
-
   return (
     <html lang={locale}>
       <body className={dmSans.className}>
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <NextIntlClientProvider >
+          {children}
+        </NextIntlClientProvider>
       </body>
     </html>
   );

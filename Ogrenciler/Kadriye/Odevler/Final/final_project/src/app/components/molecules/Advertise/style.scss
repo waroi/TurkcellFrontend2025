@@ -1,0 +1,29 @@
+.advertise {
+  padding-bottom: 100px;
+  .advertise-head {
+    h2 {
+      margin: 0 0 16px 0;
+    }
+    h3 {
+      margin: 0;
+      font-weight: 400;
+      color: var(--color-secondary);
+    }
+  }
+  .texts {
+    margin: 32px 0;
+    .text {
+      .text-title {
+        img {
+          margin-right: 7px;
+        }
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+  .images {
+    display: flex;
+    gap: 16px;
+  }
+}
