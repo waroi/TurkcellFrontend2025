@@ -1,0 +1,426 @@
+{
+	"Navbar": {
+		"links": {
+			"homePage": "Ana Sayfa",
+			"buyCrypto": "Kripto Satın Al",
+			"markets": "Piyasalar",
+			"exchange": "Borsa",
+			"spot": "Spot",
+			"pages": {
+				"title": "Sayfalar",
+				"home": "Ana Sayfa",
+				"portfolio": "Portföy",
+				"wallet": "Cüzdan"
+			},
+			"assets": {
+				"title": "Varlıklar",
+				"assetsAndMarkets": "Varlıklar & Piyasalar",
+				"assetsAndMarketsAndExchange": "Varlıklar & Piyasalar & Borsa"
+			},
+			"ordersTrades": {
+				"title": "Emirler & İşlemler",
+				"orders": "Emirler",
+				"trades": "İşlemler",
+				"orderHistory": "Emir Geçmişi",
+				"tradeHistory": "İşlem Geçmişi"
+			},
+			"wallet": "Cüzdan"
+		}
+	},
+
+	"Register": {
+		"bannerTitle": "Kayıt Ol",
+		"path": "Ana Sayfa / Kayıt Ol",
+		"title": "Rockie'ye Kayıt Ol",
+		"subtitle": "Önceden kayıt olun ve etkinlik avantajlarının tadını çıkarın",
+		"tabs": ["E-posta", "Mobil"],
+		"email": {
+			"label": "E-posta/ID",
+			"placeholder": "Lütfen e-posta formunu doldurun.",
+			"authenticate": " Doğrula"
+		},
+		"password": {
+			"label": "Şifre <span>(8 veya daha fazla karakter, sayılar ve özel karakterler dahil)</span>",
+			"placeholder": "Lütfen bir şifre girin.",
+			"confirmPassword": "Lütfen şifreyi tekrar girin."
+		},
+		"nickName": {
+			"label": "Kullanıcı Adı <span>(Özel karakterler hariç)</span>",
+			"placeholder": "Lütfen kullanıcı adı formunu doldurun."
+		},
+		"country": {
+			"label": "Ülke"
+		},
+		"phoneNumber": {
+			"label": "Telefon Numarası <span>(Sadece rakam girin)</span>",
+			"placeholder": "örn) 05301234567 ('-' olmadan)"
+		},
+		"uidCode": {
+			"label": "UID Kodu <span>(İsteğe bağlı)</span>",
+			"placeholder": "Lütfen davet kodunuzu girin."
+		},
+		"preRegisterButton": "Ön Kayıt",
+		"haveAnAccount": "Zaten hesabınız var mı?",
+		"login": "Giriş Yap",
+		"validations": {
+			"email": {
+				"required": "E-posta adresi gereklidir",
+				"invalid": "Lütfen geçerli bir e-posta adresi girin"
+			},
+			"password": {
+				"required": "Şifre gereklidir",
+				"minLength": "Şifre en az 8 karakter olmalıdır",
+				"format": "Şifre en az bir sayı ve bir özel karakter içermelidir"
+			},
+			"confirmPassword": {
+				"required": "Şifre onayı gereklidir",
+				"match": "Şifreler eşleşmelidir"
+			},
+			"nickName": {
+				"required": "Kullanıcı adı gereklidir",
+				"match": "Kullanıcı adı e-posta ile aynı olmalıdır"
+			},
+			"phone": {
+				"required": "Telefon numarası gereklidir",
+				"format": "Telefon numarası 10 rakamdan oluşmalıdır"
+			}
+		}
+	},
+	"Login": {
+		"bannerTitle": "Giriş Yap",
+		"path": "Ana Sayfa / Giriş Yap",
+		"title": "Rockie'ye Giriş Yap",
+		"subtitle": "Hoş geldiniz! Ticaret yapmaya başlamak için giriş yapın",
+		"tabs": ["E-posta", "Mobil"],
+		"email": {
+			"label": "E-posta/ID",
+			"placeholder": "Lütfen e-posta alanını doldurun."
+		},
+		"password": {
+			"label": "Şifre",
+			"placeholder": "Lütfen şifrenizi girin."
+		},
+		"rememberMe": "Beni Hatırla",
+		"forgotPassword": "Şifremi Unuttum?",
+		"loginButton": "Giriş Yap",
+		"notAMember": "Üye değil misiniz?",
+		"register": "Kayıt Ol",
+		"loginWithQR": "QR Kod ile Giriş Yap",
+		"qrDescription": "Anında giriş yapmak için bu kodu <span>Rockie Mobil Uygulaması</span> ile tarayın."
+	},
+
+	"Hero": {
+		"title": "Kripto Varlıkları Roketle Al & Sat",
+		"subtitle": "Coin roket, kripto varlık borsa alım satım işlemlerini yapmanın en kolay, en güvenli ve en hızlı yoludur.",
+		"getStartedButton": "Şimdi Başlayın",
+		"ourPartners": "Ortaklarımız"
+	},
+
+	"MarketUpdate": {
+		"title": "Piyasa Güncellemesi",
+		"seeAll": "Tüm Paraları Görüntüle",
+		"table": {
+			"col1": "İsim",
+			"col2": "Son Fiyat",
+			"col3": "24s %",
+			"col4": "Market Hacmi",
+			"col5": "Son 7 Gün",
+			"trade": "Ticaret"
+		}
+	},
+
+	"HowItWork": {
+		"title": "Nasıl Çalışır",
+		"subtitle": "Stacks, React Native'de oluşturulmuş istiflenen içerik bloklarının üretim aşamasında hazır bir kütüphanesidir.",
+		"steps": [
+			{
+				"step": "ADIM 1",
+				"icon": "/bit-cloud.png",
+				"title": "İndir",
+				"description": [
+					"Stacks, React Native'de oluşturulmuş",
+					"istiflenen içerik bloklarının üretim aşamasında",
+					"hazır bir kütüphanesidir."
+				]
+			},
+			{
+				"step": "ADIM 2",
+				"icon": "/bit-wallet.png",
+				"title": "Cüzdanı Bağla",
+				"description": [
+					"Stacks, React Native'de oluşturulmuş",
+					"istiflenen içerik bloklarının üretim aşamasında",
+					"hazır bir kütüphanesidir."
+				]
+			},
+			{
+				"step": "ADIM 3",
+				"icon": "/bit-mining.png",
+				"title": "Ticaret Yapmaya Başla",
+				"description": [
+					"Stacks, React Native'de oluşturulmuş",
+					"istiflenen içerik bloklarının üretim aşamasında",
+					"hazır bir kütüphanesidir."
+				]
+			},
+			{
+				"step": "ADIM 4",
+				"icon": "/bit-coin.png",
+				"title": "Para Kazan",
+				"description": [
+					"Stacks, React Native'de oluşturulmuş",
+					"istiflenen içerik bloklarının üretim aşamasında",
+					"hazır bir kütüphanesidir."
+				]
+			}
+		]
+	},
+
+	"WhatIsRockie": {
+		"title": "Rockie Nedir?",
+		"description": "Bitcost'ta çeşitli ticaret deneyimleri yaşayın. Spot Ticaret, Vadeli İşlemler Ticareti, P2P, Staking, Madencilik ve marj gibi çeşitli coin işlem türlerini kullanabilirsiniz.",
+		"articles": [
+			{
+				"icon": "/tick.svg",
+				"title": "Kripto para fiyatlarını gerçek zamanlı görüntüleyin",
+				"description": "Bitcost'ta çeşitli ticaret deneyimleri yaşayın. Spot Ticaret, Vadeli İşlemler Ticareti, P2P, Staking, Madencilik ve marj gibi çeşitli coin işlem türlerini kullanabilirsiniz."
+			},
+			{
+				"icon": "/tick.svg",
+				"title": "BTC, ETH, XRP, OKB vb. alın ve satın...",
+				"description": "Bitcost'ta çeşitli ticaret deneyimleri yaşayın. Spot Ticaret, Vadeli İşlemler Ticareti, P2P, Staking, Madencilik ve marj gibi çeşitli coin işlem türlerini kullanabilirsiniz."
+			}
+		],
+		"exploreMoreButton": "Daha Fazlasını Keşfet"
+	},
+	"DownloadApp": {
+		"title": "Paranızı özgürleştirin & Güvenle yatırım yapın",
+		"description": "Cryptor Trade ile ticaret becerilerinizin eşleştiğinden emin olabilirsiniz",
+		"articles": [
+			{
+				"icon": "/tick.svg",
+				"title": "Hareket Halindeyken Alın, Satın ve Ticaret Yapın",
+				"description": "Hareket Halindeyken Alın, Satın ve Ticaret Yapın"
+			},
+			{
+				"icon": "/tick.svg",
+				"title": "Varlıklarınızın Kontrolünü Elinize Alın",
+				"description": "Fonlarınıza yalnızca sizin erişiminiz olduğundan emin olun"
+			}
+		]
+	},
+	"OurCustomers": {
+		"title": "Müşterilerimiz Yaptıklarımızı Seviyor",
+		"subtitle": "Fikrini finsweet ile gerçeğe dönüştür",
+		"description": "Uzun zamandır bilinen bir gerçektir ki, bir sayfa düzenine bakarken okurun, sayfanın okunabilir içeriği ile dikkatinin dağılması muhtemeldir.",
+		"customerReviews": "<span>30+</span> Müşteri Değerlendirmesi",
+		"customerReview": "“Harika bir kurs, gerçekten keyif aldım ve kodun çok iyi açıklamaları sayesinde kurs öğrenmesi çok kolaydı. Kurs boyunca edindiğim bilgilerle uygulamaları kolayca anlayabilir ve geliştirebilirdim.“",
+		"customerTitle": "Şirket Direktörü"
+	},
+
+	"BottomBanner": {
+		"title": "$25 değerinde kripto kazanın",
+		"description": "Belirli kripto para birimlerinin nasıl çalıştığını keşfedin — ve kendiniz denemek için her birinden biraz alın.",
+		"createAccount": "Hesap Oluştur"
+	},
+
+	"Footer": {
+		"firstGrid": {
+			"title": "Hadi konuşalım! 🤙",
+			"phoneNumber": "+90 537 688 2416",
+			"email": "hikmetmelik@gmail.com",
+			"copyright": "Telif Hakkı © 2023 Dünya insanları için ücretsiz"
+		},
+		"secondGrid": {
+			"title": "ÜRÜNLER",
+			"links": [
+				"Spot",
+				"Ters Sürekli",
+				"USDT Sürekli",
+				"Takas",
+				"Launchpad",
+				"Binance Ödeme"
+			]
+		},
+		"thirdGrid": {
+			"title": "HİZMETLER",
+			"links": [
+				"Kripto Satın Al",
+				"Piyasalar",
+				"İşlem Ücreti",
+				"P2P",
+				"Staking",
+				"Madencilik"
+			]
+		},
+		"fourthGrid": {
+			"title": "DESTEK",
+			"links": ["Bybit Öğren", "Yardım Merkezi", "SSS", "Destek", "API"]
+		},
+		"fifthGrid": {
+			"title": "HAKKIMIZDA",
+			"links": [
+				"Bybit Hakkında",
+				"Orijinallik Kontrolü",
+				"Kariyer Fırsatları",
+				"İş İletişimleri",
+				"Blog"
+			]
+		}
+	},
+
+	"Profile": {
+		"bannerTitle": "Kullanıcı Profili",
+		"subtitle": "Bilgiler",
+		"path": "Ana Sayfa / Profil",
+
+		"tabs": [
+			{
+				"title": "Profil",
+				"href": "/profile",
+				"icon": "/user.svg"
+			},
+			{
+				"title": "Referanslar",
+				"href": "/profile/referrals",
+				"icon": "/referral.svg"
+			},
+			{
+				"title": "API Anahtarları",
+				"href": "/profile/api-keys",
+				"icon": "/api_key.svg"
+			},
+			{
+				"title": "Giriş Geçmişi",
+				"href": "/profile/login-history",
+				"icon": "/login.svg"
+			},
+			{
+				"title": "2FA",
+				"href": "/profile/2fa",
+				"icon": "/2fa.svg"
+			},
+			{
+				"title": "Şifre Değiştir",
+				"href": "/profile/change-password",
+				"icon": "/change_password.svg"
+			}
+		],
+
+		"features": {
+			"title": "Özellikler",
+			"level1": {
+				"title": "Seviye 1",
+				"depositAssets": "Varlık Yatırma",
+				"withdrawAssets": {
+					"title": "Varlık Çekme",
+					"description": "Etkin $1.000.000/gün"
+				},
+				"cardPurchase": "Kart ile Alım",
+				"bankDeposit": "Banka Havalesi",
+				"updateProfile": "Profili Güncelle"
+			},
+			"level2": {
+				"title": "Seviye 2",
+				"fiatSpot": "Fiat ve Spot Cüzdan",
+				"marginWallet": {
+					"title": "Marjin Cüzdanı",
+					"description": "100x Kaldıraç Etkin"
+				}
+			}
+		}
+	},
+
+	"Dashboard": {
+		"sidebar": {
+			"home": {
+				"title": "Ana Sayfa",
+				"icon": "/home.svg"
+			},
+			"buyCrypto": {
+				"title": "Kripto Satın Al",
+				"icon": "/buy-crypto.svg"
+			},
+			"market": {
+				"title": "Piyasa",
+				"icon": "/market.svg"
+			},
+			"exchange": {
+				"title": "Takas",
+				"icon": "/exchange.svg"
+			},
+			"spot": {
+				"title": "Spot",
+				"icon": "/spot.svg"
+			},
+			"byfiCenter": {
+				"title": "Byfi Merkezi",
+				"icon": "/byfi-center.svg"
+			},
+			"more": {
+				"title": "Daha Fazla",
+				"icon": "/more.svg"
+			},
+			"asset": {
+				"title": "Varlık",
+				"icon": "/asset.svg"
+			},
+			"orderTrades": {
+				"title": "Siparişler ve İşlemler",
+				"icon": "/order-trades.svg"
+			},
+			"wallet": {
+				"title": "Cüzdan",
+				"icon": "/wallet.svg"
+			},
+			"logout": {
+				"title": "Çıkış",
+				"icon": "/logout.svg"
+			}
+		},
+		"tradingMarket": "Ticaret Piyasası",
+		"buy": "Satın Al",
+		"sell": "Sat",
+		"pay": "Öde",
+		"receive": "Al",
+		"yourBalance": "Bakiyeniz",
+		"topUpBalance": "Bakiyenizi Yükleyin",
+		"yourAssets": "Varlıklarınız",
+		"limit": "Limit",
+		"market": "Piyasa",
+		"stopLimit": "Stop Limit",
+		"stopMarket": "Stop Market",
+
+		"orderHistory": {
+			"searchPlaceholder": "Tarihe Göre Ara",
+			"tab1": "Sipariş Geçmişi",
+			"tab2": "Açık Siparişler",
+			"tab3": "Kapalı Siparişler",
+			"tableCols": {
+				"col1": "Tarih",
+				"col2": "Parite",
+				"col3": "Alış/Satış",
+				"col4": "Fiyat",
+				"col5": "Gerçekleşen",
+				"col6": "Toplam"
+			}
+		},
+		"orderBook": {
+			"title": "Emir Defteri",
+			"col1": "Fiyat (BTC)",
+			"col2": "Miktar (ETH)",
+			"col3": "Toplam (BTC)"
+		},
+		"recentTrades": {
+			"title": "Son İşlemler",
+			"col1": "Zaman",
+			"col2": "Fiyat (BTC)",
+			"col3": "Miktar (ETH)"
+		},
+		"thirdGrid": {
+			"col1": "Çift",
+			"col2": "Son Fiyat",
+			"col3": "Değişim"
+		}
+	}
+}

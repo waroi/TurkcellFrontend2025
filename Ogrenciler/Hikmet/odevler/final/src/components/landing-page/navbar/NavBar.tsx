@@ -1,0 +1,186 @@
+"use client";
+
+import Nav from "react-bootstrap/Nav";
+
+import Container from "react-bootstrap/Container";
+import NavDropdown from "react-bootstrap/NavDropdown";
+
+import Image from "next/image";
+
+import { logout } from "@/components/auth/actions";
+import { createClient } from "@/utils/supabase/client";
+import { useLocale, useTranslations } from "next-intl";
+import { usePathname, useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import { Button } from "react-bootstrap";
+import Navbar from "react-bootstrap/Navbar";
+
+export default function NavBar() {
+	const t = useTranslations("Navbar");
+	const locale = useLocale();
+	const router = useRouter();
+
+	const pathname = usePathname();
+	const [user, setUser] = useState<any>(null);
+	const [loading, setLoading] = useState(true);
+
+	useEffect(() => {
+		async function getUser() {
+			const supabase = createClient();
+			const {
+				data: { user },
+			} = await supabase.auth.getUser();
+			setUser(user);
+			setLoading(false);
+		}
+
+		getUser();
+	}, []);
+
+	const handleLogout = async () => {
+		await logout();
+	};
+	return (
+		<Navbar expand="lg" className="sticky-top bg-light">
+			<Container fluid>
+				<Navbar.Brand href="/">
+					<Image
+						src="/logo.svg"
+						alt="React Bootstrap logo"
+						width={100}
+						height={50}
+						className="align-top"
+					/>
+				</Navbar.Brand>
+				<Navbar.Toggle aria-controls="basic-navbar-nav" />
+				<Navbar.Collapse id="basic-navbar-nav">
+					<Nav className="me-auto">
+						<NavDropdown title={t("links.homePage")} id="basic-nav-dropdown">
+							<NavDropdown.Item href="/">Homepage</NavDropdown.Item>
+						</NavDropdown>
+
+						<Nav.Link href="#link">{t("links.buyCrypto")}</Nav.Link>
+						<Nav.Link href="#link">{t("links.markets")}</Nav.Link>
+						<Nav.Link href="#link">{t("links.exchange")}</Nav.Link>
+						<Nav.Link href="#link">{t("links.spot")}</Nav.Link>
+						<Nav.Link href="#link">BITUSDT</Nav.Link>
+						<NavDropdown title={t("links.pages.title")} id="basic-nav-dropdown">
+							<NavDropdown.Item href="#action/3.2">
+								{t("links.pages.home")}
+							</NavDropdown.Item>
+							<NavDropdown.Item href="#action/3.3">
+								{t("links.pages.portfolio")}
+							</NavDropdown.Item>
+							<NavDropdown.Item href="#action/3.4">
+								{t("links.pages.wallet")}
+							</NavDropdown.Item>
+						</NavDropdown>
+					</Nav>
+
+					<Nav className="ms-auto">
+						<NavDropdown
+							title={t("links.assets.title")}
+							id="basic-nav-dropdown">
+							<NavDropdown.Item href="#">
+								{t("links.assets.assetsAndMarkets")}
+							</NavDropdown.Item>
+							<NavDropdown.Item href="#">
+								{t("links.assets.assetsAndMarketsAndExchange")}
+							</NavDropdown.Item>
+						</NavDropdown>
+						<NavDropdown
+							title={t("links.ordersTrades.title")}
+							id="basic-nav-dropdown">
+							<NavDropdown.Item href="#">
+								{t("links.ordersTrades.orders")}
+							</NavDropdown.Item>
+							<NavDropdown.Item href="#">
+								{t("links.ordersTrades.trades")}
+							</NavDropdown.Item>
+							<NavDropdown.Item href="#">
+								{t("links.ordersTrades.orderHistory")}
+							</NavDropdown.Item>
+							<NavDropdown.Item href="#">
+								{t("links.ordersTrades.tradeHistory")}
+							</NavDropdown.Item>
+						</NavDropdown>
+						<NavDropdown
+							title={locale === "en" ? "English" : "Türkçe"}
+							id="language-dropdown"
+							className="me-2">
+							<NavDropdown.Item
+								onClick={() =>
+									router.push(pathname.replace(`/${locale}`, `/en`))
+								}
+								active={locale === "en"}>
+								English
+							</NavDropdown.Item>
+							<NavDropdown.Item
+								onClick={() =>
+									router.push(pathname.replace(`/${locale}`, `/tr`))
+								}
+								active={locale === "tr"}>
+								Türkçe
+							</NavDropdown.Item>
+						</NavDropdown>
+						<div className="d-lg-block mx-2 vr d-none"></div>
+						<Nav.Link href="/">
+							<Image
+								src="/sun.svg"
+								alt="User"
+								width={16}
+								height={16}
+								className="align-center"
+							/>
+						</Nav.Link>
+						<div className="d-lg-block mx-2 vr d-none"></div>
+						<Nav.Link href="#link">
+							<Image
+								src="/notification.svg"
+								alt="User"
+								width={16}
+								height={16}
+								className="align-center"
+							/>
+						</Nav.Link>
+						<Button variant="outline-primary" className="rounded-pill">
+							{t("links.wallet")}
+						</Button>
+
+						{!loading &&
+							(user ? (
+								<NavDropdown
+									title={
+										<Image
+											src="/ben.webp"
+											alt="User Avatar"
+											width={30}
+											height={30}
+											className="rounded-circle object-fit-cover"
+										/>
+									}
+									id="user-dropdown">
+									<NavDropdown.Item>
+										{user.user_metadata?.nickname || user.email}
+									</NavDropdown.Item>
+									<NavDropdown.Divider />
+									<NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
+									<NavDropdown.Item href="/settings">Settings</NavDropdown.Item>
+									<NavDropdown.Divider />
+									<NavDropdown.Item onClick={handleLogout}>
+										Logout
+									</NavDropdown.Item>
+								</NavDropdown>
+							) : (
+								<Nav.Link href="/login" className="d-flex align-items-center">
+									<Button variant="primary" className="rounded-pill">
+										Login / Register
+									</Button>
+								</Nav.Link>
+							))}
+					</Nav>
+				</Navbar.Collapse>
+			</Container>
+		</Navbar>
+	);
+}
