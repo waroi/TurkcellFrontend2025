@@ -139,12 +139,21 @@ const Header: React.FC = () => {
                     <span className="sr-only">Trade History</span>
                   </Link>
 
-                  <Link href="/buy-crypto" className="header__actions-wallet">
-                    <svg className="header__actions-wallet-icon" viewBox="0 0 24 24">
-                      <path d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
-                    </svg>
-                    <span>{t('common.wallet')}</span>
-                  </Link>
+                  {/* Wallet Actions */}
+                  <div className="header__actions-wallet-group">
+                    <Link href="/buy-crypto" className="header__actions-wallet">
+                      <svg className="header__actions-wallet-icon" viewBox="0 0 24 24">
+                        <path d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
+                      </svg>
+                      <span>{t('common.buyCrypto')}</span>
+                    </Link>
+                    <Link href="/sell-crypto" className="header__actions-wallet">
+                      <svg className="header__actions-wallet-icon" viewBox="0 0 24 24">
+                        <path d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
+                      </svg>
+                      <span>{t('common.sellCrypto')}</span>
+                    </Link>
+                  </div>
                 </>
               )}
             </div>

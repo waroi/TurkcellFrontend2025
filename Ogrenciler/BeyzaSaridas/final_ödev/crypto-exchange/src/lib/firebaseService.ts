@@ -191,3 +191,34 @@ export const createUserWallet = async (userId: string) => {
     throw error;
   }
 };
+export const sellCrypto = async (symbol: string, amount: number) => {
+  try {
+    const user = auth.currentUser;
+    if (!user) throw new Error("Kullanıcı oturum açmamış.");
+
+    const walletRef = doc(db, COLLECTIONS.WALLETS, user.uid);
+    const walletDoc = await getDoc(walletRef);
+
+    if (!walletDoc.exists()) throw new Error("Cüzdan bulunamadı.");
+
+    const walletData = walletDoc.data();
+    const asset = walletData.cryptoAssets.find(
+      (asset: any) => asset.symbol === symbol
+    );
+
+    if (!asset || asset.amount < amount) {
+      throw new Error("Yetersiz bakiye.");
+    }
+
+    asset.amount -= amount;
+    asset.valueUSD = asset.amount * asset.currentPriceUSD;
+
+    await updateDoc(walletRef, {
+      cryptoAssets: walletData.cryptoAssets,
+      updatedAt: serverTimestamp(),
+    });
+  } catch (error) {
+    console.error("Error selling crypto:", error);
+    throw error;
+  }
+};
