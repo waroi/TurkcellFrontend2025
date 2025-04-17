@@ -1,5 +1,7 @@
 import React from 'react';
 import Layout from '../components/layout/Layout';
+import RegisterForm from '../components/auth/RegisterForm';
+import './(auth)/register/register.scss'; 
 
 export default function Home() {
   return (
@@ -16,6 +18,14 @@ export default function Home() {
           <div className="hero__buttons">
             <a href="/market" className="hero__button hero__button--primary">Piyasayı Görüntüle</a>
             <a href="/register" className="hero__button hero__button--secondary">Hesap Oluştur</a>
+          </div>
+        </div>
+
+        <div className="register-page">
+          <div className="register-page__container">
+            <div className="register-page__content">
+              <RegisterForm />
+            </div>
           </div>
         </div>
       </div>
