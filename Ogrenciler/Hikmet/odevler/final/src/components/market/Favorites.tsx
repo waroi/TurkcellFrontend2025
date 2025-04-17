@@ -11,6 +11,7 @@ import {
 import { useTranslations } from "use-intl";
 import DerivativesNavs from "./derivatives/DerivativesNavs";
 import MarketTable from "./derivatives/MarketTable";
+import FavoritesPage from "./FavoriteCoins";
 
 export default function FavoritesTableContainer() {
 	const t = useTranslations("Market");
@@ -24,7 +25,7 @@ export default function FavoritesTableContainer() {
 					onSelect={(k) => setActiveKey(k || t.raw("tabs")[0])}>
 					<CardHeader className="bg-body-secondary">
 						<Nav variant="tabs" className="border-bottom-0">
-							{t.raw("tabs").map((item, id) => (
+							{t.raw("tabs").map((item: string, id: number) => (
 								<Nav.Item key={id}>
 									<Nav.Link eventKey={item.toLowerCase()}>{item}</Nav.Link>
 								</Nav.Item>
@@ -34,8 +35,7 @@ export default function FavoritesTableContainer() {
 					<CardBody>
 						<Tab.Content>
 							<Tab.Pane eventKey="favorites">
-								<h5>Your Favorite Coins</h5>
-								<p>Content for favorites tab goes here</p>
+								<FavoritesPage />
 							</Tab.Pane>
 							<Tab.Pane eventKey="derivatives">
 								<DerivativesNavs t={t} />

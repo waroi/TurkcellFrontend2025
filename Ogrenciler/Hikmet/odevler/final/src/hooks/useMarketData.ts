@@ -5,6 +5,7 @@ interface CoinInfo {
 	name: string;
 	symbol: string;
 	logo: string;
+	price: number;
 }
 
 interface CoinMarket {
@@ -35,13 +36,13 @@ export default function useMarketData(limit: number = 10): CoinData {
 	useEffect(() => {
 		async function fetchData() {
 			try {
-				const marketRes = await fetch(`/api/coin/market?limit=${limit}`);
-				const marketJson = await marketRes.json();
+				const marketResponse = await fetch(`/api/coin/market?limit=${limit}`);
+				const marketJson = await marketResponse.json();
 
 				const coinIds = marketJson.map((coin: any) => coin.id).join(",");
 
-				const infoRes = await fetch(`/api/coin?id=${coinIds}`);
-				const infoJson = await infoRes.json();
+				const infoResponse = await fetch(`/api/coin?id=${coinIds}`);
+				const infoJson = await infoResponse.json();
 
 				const coinInfo: Record<string, CoinInfo> = Object.entries(
 					infoJson.data
@@ -51,6 +52,7 @@ export default function useMarketData(limit: number = 10): CoinData {
 						name: coin.name,
 						symbol: coin.symbol,
 						logo: coin.logo,
+						price: coin.quote?.USD?.price ?? 0,
 					};
 					return acc;
 				}, {} as Record<string, CoinInfo>);
