@@ -14,6 +14,8 @@ interface CoinMarket {
 	quote: {
 		USD: {
 			price: number;
+			percent_change_1h: number;
+			percent_change_7d: number;
 			percent_change_24h: number;
 			market_cap: number;
 		};
@@ -25,8 +27,7 @@ interface CoinData {
 	market: CoinMarket[];
 	loading: boolean;
 }
-
-export default function useMarketData(): CoinData {
+export default function useMarketData(limit: number = 10): CoinData {
 	const [info, setInfo] = useState<Record<string, CoinInfo>>({});
 	const [market, setMarket] = useState<CoinMarket[]>([]);
 	const [loading, setLoading] = useState(true);
@@ -34,13 +35,13 @@ export default function useMarketData(): CoinData {
 	useEffect(() => {
 		async function fetchData() {
 			try {
-				const [infoRes, marketRes] = await Promise.all([
-					fetch("/api/coin"),
-					fetch("/api/coin/market"),
-				]);
-
-				const infoJson = await infoRes.json();
+				const marketRes = await fetch(`/api/coin/market?limit=${limit}`);
 				const marketJson = await marketRes.json();
+
+				const coinIds = marketJson.map((coin: any) => coin.id).join(",");
+
+				const infoRes = await fetch(`/api/coin?id=${coinIds}`);
+				const infoJson = await infoRes.json();
 
 				const coinInfo: Record<string, CoinInfo> = Object.entries(
 					infoJson.data
@@ -64,7 +65,7 @@ export default function useMarketData(): CoinData {
 		}
 
 		fetchData();
-	}, []);
+	}, [limit]);
 
 	return { info, market, loading };
 }

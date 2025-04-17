@@ -37,8 +37,9 @@ export default function Hero() {
 				<Row className="py-5">
 					<Col>
 						<h1 className="text-left display-4 fs-50 fw-bold">{t("title")}</h1>
-						{t("subtitle")}
-						<p className="mb-4 text-body-tertiary text-left fs-20 fw-light"></p>
+						<p className="mb-4 text-body-tertiary text-left fs-20 fw-light">
+							{t("subtitle")}
+						</p>
 						<Button className="mb-4 rounded-5" href="/login">
 							{t("getStartedButton")}
 						</Button>

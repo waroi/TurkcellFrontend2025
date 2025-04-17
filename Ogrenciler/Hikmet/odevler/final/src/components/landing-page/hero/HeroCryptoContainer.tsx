@@ -1,20 +1,9 @@
 "use client";
 
 import useMarketData from "@/hooks/useMarketData";
+import { heroCryptoContainerLinks } from "@/utils/heroCryptoContainersLinks";
 import Image from "next/image";
 import { Button, Card, CardBody, Col, Container, Row } from "react-bootstrap";
-
-const heroCryptoContainerLinks = [
-	"Crypto",
-	"DeFi",
-	"BSC",
-	"NFT",
-	"Metaverse",
-	"Polkadot",
-	"Solana",
-	"Opensea",
-	"Makersplace",
-];
 
 interface CoinDisplay {
 	icon: string;

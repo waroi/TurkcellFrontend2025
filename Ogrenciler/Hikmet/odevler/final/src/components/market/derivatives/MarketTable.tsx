@@ -1,0 +1,109 @@
+import TradingViewMiniChart from "@/components/landing-page/market-update/TradingViewMiniChart";
+import useMarketData from "@/hooks/useMarketData";
+import { Star } from "lucide-react";
+import Image from "next/image";
+import { Button, Table } from "react-bootstrap";
+import styles from "../../landing-page/market-update/market.module.scss";
+
+export default function MarketTable({ t }: { t: (key: string) => string }) {
+	const { loading, market, info } = useMarketData(20); // ✅ doğru kullanım
+
+	if (loading) {
+		return (
+			<div className="d-flex align-items-center justify-content-center">
+				<div className="spinner-border" role="status">
+					<span className="visually-hidden">Loading...</span>
+				</div>
+			</div>
+		);
+	}
+
+	return (
+		<Table borderless hover responsive className="table-sm text-center">
+			<thead>
+				<tr>
+					<th></th>
+					<th>#</th>
+					<th className="text-start">{t("table.col1")}</th>
+					<th>{t("table.col2")}</th>
+					<th>{t("table.col3")}</th>
+					<th>{t("table.col4")}</th>
+					<th>{t("table.col5")}</th>
+					<th>{t("table.col6")}</th>
+					<th>{t("table.col7")}</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody className={styles.tableRow}>
+				{market.map((coin, index) => {
+					const coinInfo = info[coin.id.toString()];
+					if (!coinInfo) return null;
+
+					const { name, symbol: infoSymbol } = coinInfo;
+
+					const {
+						symbol,
+						quote: {
+							USD: {
+								price,
+								percent_change_1h,
+								percent_change_24h,
+								percent_change_7d,
+								market_cap,
+							},
+						},
+					} = coin;
+
+					const tvSymbol = `BINANCE:${symbol}USDT`;
+
+					const formatChange = (value: number | undefined) => {
+						if (value === undefined) return "--";
+						const formatted = `${value >= 0 ? "+" : ""}${value.toFixed(2)}%`;
+						return (
+							<span className={value >= 0 ? "text-success" : "text-danger"}>
+								{formatted}
+							</span>
+						);
+					};
+
+					return (
+						<tr key={coin.id}>
+							<td>
+								<Star size={16} style={{ cursor: "pointer" }} />
+							</td>
+							<td>{index + 1}</td>
+							<td className="text-start">
+								<Image
+									src={coinInfo.logo}
+									alt={name}
+									width={20}
+									height={20}
+									className="me-2"
+								/>
+								<span className="fw-bold">{name}</span>{" "}
+								<small className="text-muted">{infoSymbol}</small>
+							</td>
+							<td>${price.toFixed(2)}</td>
+							<td>{formatChange(percent_change_1h)}</td>
+							<td>{formatChange(percent_change_24h)}</td>
+							<td>{formatChange(percent_change_7d)}</td>
+							<td>${market_cap.toLocaleString()}</td>
+							<td>
+								<TradingViewMiniChart
+									symbol={tvSymbol}
+									width={100}
+									height={50}
+								/>
+							</td>
+							<td>
+								<Button className="rounded-pill">
+									<small>{t("table.trade")}</small>
+								</Button>
+							</td>
+						</tr>
+					);
+				})}
+			</tbody>
+		</Table>
+	);
+}
