@@ -8,18 +8,13 @@ import ThemeToggle from '../../components/ui/ThemeToggle';
 import LanguageSelector from '../../components/ui/LanguageSelector';
 import Button from '../../components/ui/Button';
 import { combineClasses } from '../../lib/utils';
-import { changePassword, logoutUser } from '../../lib/firebaseService'; // Firebase servisleri
+import { changePassword, logoutUser, getCurrentUserProfile } from '../../lib/firebaseService'; // Firebase servisleri
 import './Header.scss';
 
 interface User {
   displayName: string;
   email: string;
 }
-
-const user: User | null = {
-  displayName: 'Beyza Sarıdaş',
-  email: 'saridas.beyzaa@gmail.com',
-};
 
 const Header: React.FC = () => {
   const pathname = usePathname();
@@ -32,6 +27,21 @@ const Header: React.FC = () => {
   const [newPassword, setNewPassword] = useState('');
   const [error, setError] = useState<string | null>(null);
   const [isWalletMenuOpen, setIsWalletMenuOpen] = useState(false);
+  const [user, setUser] = useState<{ displayName: string; email: string } | null>(null);
+
+  // Kullanıcı bilgilerini yükleme
+  useEffect(() => {
+    const fetchUserProfile = async () => {
+      try {
+        const userProfile = await getCurrentUserProfile();
+        setUser(userProfile);
+      } catch (error) {
+        console.error('Kullanıcı bilgileri alınamadı:', error);
+      }
+    };
+
+    fetchUserProfile();
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -45,6 +55,7 @@ const Header: React.FC = () => {
   const handleLogout = async () => {
     try {
       await logoutUser();
+      setUser(null); // Kullanıcı bilgilerini temizle
       console.log('Logout successful');
       window.location.href = '/login'; // Login sayfasına yönlendirme
     } catch (error) {
@@ -135,8 +146,8 @@ const Header: React.FC = () => {
                   </Link>
                   {/* Wallet Button */}
                   <div className="header__actions-wallet-container">
-                    <button 
-                      className="header__actions-wallet" 
+                    <button
+                      className="header__actions-wallet"
                       onClick={() => setIsWalletMenuOpen(!isWalletMenuOpen)}
                     >
                       <svg className="header__actions-wallet-icon" viewBox="0 0 24 24">
@@ -217,120 +228,6 @@ const Header: React.FC = () => {
           </div>
         </div>
       </div>
-      {isMobileMenuOpen && (
-        <div className="header__mobile">
-          <div className="header__mobile-links">
-            <Link
-              href="/market"
-              className={combineClasses(
-                'header__mobile-item',
-                isLinkActive('/market') ? 'header__mobile-item--active' : ''
-              )}
-            >
-              {t('market.title')}
-            </Link>
-            <Link
-              href="/portfolio"
-              className={combineClasses(
-                'header__mobile-item',
-                isLinkActive('/portfolio') ? 'header__mobile-item--active' : ''
-              )}
-            >
-              {t('portfolio.title')}
-            </Link>
-            <Link
-              href="/watchlist"
-              className={combineClasses(
-                'header__mobile-item',
-                isLinkActive('/watchlist') ? 'header__mobile-item--active' : ''
-              )}
-            >
-              {t('watchlist.title')}
-            </Link>
-            <Link
-              href="/learn"
-              className={combineClasses(
-                'header__mobile-item',
-                isLinkActive('/learn') ? 'header__mobile-item--active' : ''
-              )}
-            >
-              Learn
-            </Link>
-          </div>
-          {user ? (
-            <div className="header__mobile-user">
-              <div className="header__mobile-user-info">
-                <img
-                  className="header__mobile-user-avatar"
-                  src={`https://ui-avatars.com/api/?name=${user.displayName || 'User'}&background=random`}
-                  alt="User avatar"
-                />
-                <div>
-                  <div className="header__mobile-user-name">{user?.displayName || 'User'}</div>
-                  <div className="header__mobile-user-email">{user?.email}</div>
-                </div>
-              </div>
-              <div className="header__mobile-user-links">
-                <Link href="/profile" className="header__mobile-user-link">
-                  {t('common.profile')}
-                </Link>
-                <Link href="/settings" className="header__mobile-user-link">
-                  {t('common.settings')}
-                </Link>
-                <Link href="/transactions" className="header__mobile-user-link">
-                  Trade History
-                </Link>
-                <Link href="/buy-crypto" className="header__mobile-user-link">
-                  {t('common.buyCrypto')}
-                </Link>
-                <Link href="/sell-crypto" className="header__mobile-user-link">
-                  {t('common.sellCrypto')}
-                </Link>
-                <button
-                  onClick={() => setIsChangePasswordOpen(true)}
-                  className="header__mobile-user-link"
-                >
-                  {t('common.changePassword')}
-                </button>
-                <button onClick={handleLogout} className="header__mobile-user-link">
-                  {t('common.logout')}
-                </button>
-              </div>
-            </div>
-          ) : (
-            <div className="header__mobile-auth">
-              <Link href="/login" className="header__mobile-auth-login">
-                {t('common.login')}
-              </Link>
-              <Link href="/register" className="header__mobile-auth-register">
-                {t('common.register')}
-              </Link>
-            </div>
-          )}
-        </div>
-      )}
-      {isChangePasswordOpen && (
-        <div className="change-password-modal">
-          <div className="change-password-modal__content">
-            <h2>{t('common.changePassword')}</h2>
-            <input
-              type="password"
-              placeholder="Mevcut Şifre"
-              value={currentPassword}
-              onChange={(e) => setCurrentPassword(e.target.value)}
-            />
-            <input
-              type="password"
-              placeholder="Yeni Şifre"
-              value={newPassword}
-              onChange={(e) => setNewPassword(e.target.value)}
-            />
-            {error && <p className="error-text">{error}</p>}
-            <button onClick={handleChangePassword}>Şifreyi Değiştir</button>
-            <button onClick={() => setIsChangePasswordOpen(false)}>İptal</button>
-          </div>
-        </div>
-      )}
     </header>
   );
 };

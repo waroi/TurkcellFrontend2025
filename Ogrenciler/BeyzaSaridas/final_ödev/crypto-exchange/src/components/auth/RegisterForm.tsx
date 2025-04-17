@@ -27,6 +27,9 @@ const t = (key: string): string => {
   return translations[key] || key;
 };
 
+
+
+
 const registerSchema = z.object({
   displayName: z.string().min(3, { message: "Ad Soyad en az 3 karakter olmalıdır" }),
   email: z.string().email({ message: "Geçerli bir e-posta adresi girin" }),

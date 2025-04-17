@@ -1,4 +1,4 @@
-// src/lib/firebaseService.ts
+
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -145,6 +145,24 @@ export const getUserProfile = async (userId: string) => {
     throw error;
   }
 };
+export const getCurrentUserProfile = async () => {
+  try {
+    const user = auth.currentUser;
+    if (!user) throw new Error("Kullanıcı oturum açmamış.");
+
+    const userDocRef = doc(db, COLLECTIONS.USERS, user.uid);
+    const userDoc = await getDoc(userDocRef);
+
+    if (userDoc.exists()) {
+      return { id: userDoc.id, ...userDoc.data() };
+    } else {
+      throw new Error("Kullanıcı profili bulunamadı.");
+    }
+  } catch (error) {
+    console.error("Error getting current user profile:", error);
+    throw error;
+  }
+};
 
 // Kullanıcı bilgilerini güncelleme
 export const updateUserProfile = async (userId: string, data: any) => {
@@ -159,7 +177,24 @@ export const updateUserProfile = async (userId: string, data: any) => {
     throw error;
   }
 };
-
+export const addTransaction = async (transaction: {
+  userId: string;
+  type: 'buy' | 'sell';
+  symbol: string;
+  amount: number;
+  price: number;
+}) => {
+  try {
+    const transactionRef = collection(db, COLLECTIONS.TRANSACTIONS);
+    await addDoc(transactionRef, {
+      ...transaction,
+      createdAt: serverTimestamp(),
+    });
+  } catch (error) {
+    console.error('Error adding transaction:', error);
+    throw error;
+  }
+};
 // Kullanıcı cüzdanı oluşturma
 export const createUserWallet = async (userId: string) => {
   try {
@@ -219,6 +254,38 @@ export const sellCrypto = async (symbol: string, amount: number) => {
     });
   } catch (error) {
     console.error("Error selling crypto:", error);
+    throw error;
+  }
+};
+export const updateWallet = async (userId: string, symbol: string, amount: number, type: 'buy' | 'sell') => {
+  try {
+    const walletRef = doc(db, COLLECTIONS.WALLETS, userId);
+    const walletDoc = await getDoc(walletRef);
+
+    if (!walletDoc.exists()) throw new Error('Cüzdan bulunamadı.');
+
+    const walletData = walletDoc.data();
+    const asset = walletData.cryptoAssets.find((asset: any) => asset.symbol === symbol);
+
+    if (type === 'buy') {
+      if (asset) {
+        asset.amount += amount;
+      } else {
+        walletData.cryptoAssets.push({ symbol, amount });
+      }
+    } else if (type === 'sell') {
+      if (!asset || asset.amount < amount) {
+        throw new Error('Yetersiz bakiye.');
+      }
+      asset.amount -= amount;
+    }
+
+    await updateDoc(walletRef, {
+      cryptoAssets: walletData.cryptoAssets,
+      updatedAt: serverTimestamp(),
+    });
+  } catch (error) {
+    console.error('Error updating wallet:', error);
     throw error;
   }
 };
