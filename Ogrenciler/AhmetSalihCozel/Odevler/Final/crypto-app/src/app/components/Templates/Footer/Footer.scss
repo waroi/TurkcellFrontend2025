@@ -1,0 +1,47 @@
+@import "../../../theme/themeColors.scss";
+.footerWrap{
+    display: grid;
+    grid-template-columns: 5fr 2fr 2fr 2fr 2fr;
+}
+
+.footerBottomWrap{
+    height: 60px;
+}
+
+:root {
+    .imageTopImgContainer{
+        background-image: url("/img/footer_top_bg_light.png");
+        background-color: $primary;
+    }
+  }
+  
+  [data-theme="dark"] {
+    .imageTopImgContainer{
+        background-image: url("/img/footer_top_bg_dark.png");
+    }
+  }
+
+
+.imageTopImgContainer{
+    margin-top: 100px;
+    margin-bottom: 50px;
+    background-position: center;
+    height: 140px;
+}
+
+@media (max-width: 1440px) {
+    .footerWrap{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .footerBottomWrap{
+        flex-direction: column;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .footerWrap{
+        gap: 50px;
+        padding-left: 50px;
+        grid-template-columns: 1fr;
+    }
+  }

@@ -1,0 +1,65 @@
+@import "../../../theme/themeColors.scss";
+
+.tableContainer{
+  margin-top: 100px;
+}
+
+.tableRow {
+  border-bottom: 1px solid $secondary2;
+  transition: background-color 0.3s ease;
+  height: 88px;
+  vertical-align: middle;
+  &:hover {
+    background-color: rgba($primary, 0.1);
+  }
+}
+
+tr{
+  border-radius: 50px;
+
+}
+
+td {
+  height: 88px;
+  vertical-align: middle;
+  line-height: 88px;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+  color: $secondary;
+  font-weight: 700;
+  text-transform: capitalize;
+  font-size: 18px;
+}
+
+.verticalLine{
+  height: 20px;
+  border: 1px solid $secondary;
+  opacity: 0.5;
+}
+
+.tradeButton{
+  border: 2px solid $secondary2;
+  &:hover{
+    background-color: $primary;
+    border: 1px solid $primary;
+    color: white;
+  }
+}
+
+.tableSearchBar{
+  width: 282px;
+  height: 44px;
+  border: 2px $secondary2 solid;
+  border-radius: 22px;
+  padding: 0 20px;
+  outline: none;
+  &:focus, &:hover{
+    border: 2px $primary solid;
+  }
+}
