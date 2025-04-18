@@ -15,15 +15,13 @@ const UserProfile: React.FC = () => {
   const [country, setCountry] = useState('South Korean');
   const [gender, setGender] = useState('Male');
   const [birthdate, setBirthdate] = useState('');
-  
-  // Change password states
+
   const [currentPassword, setCurrentPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [passwordError, setPasswordError] = useState<string | null>(null);
   const [passwordSuccess, setPasswordSuccess] = useState<string | null>(null);
-  
-  // Feature toggles
+
   const [depositAssetsEnabled, setDepositAssetsEnabled] = useState(true);
   const [withdrawAssetsEnabled, setWithdrawAssetsEnabled] = useState(true);
   const [cardPurchasesEnabled, setCardPurchasesEnabled] = useState(false);
@@ -31,20 +29,18 @@ const UserProfile: React.FC = () => {
   const [fiatSpotWalletEnabled, setFiatSpotWalletEnabled] = useState(true);
   const [marginWalletEnabled, setMarginWalletEnabled] = useState(true);
 
-  // Active tab
   const [activeTab, setActiveTab] = useState('profile');
 
   useEffect(() => {
     const fetchUserProfile = async () => {
       try {
-        const userProfile = await getCurrentUserProfile();
+        const userProfile: { id: string; displayName?: string; email?: string } = await getCurrentUserProfile();
         if (userProfile && userProfile.displayName && userProfile.email) {
           setUser({
             displayName: userProfile.displayName,
             email: userProfile.email,
           });
-          
-          // Set default values based on the display name
+
           const nameParts = userProfile.displayName.split(' ');
           setFirstName(nameParts[0] || '');
           setLastName(nameParts.slice(1).join(' ') || '');
@@ -66,7 +62,6 @@ const UserProfile: React.FC = () => {
   }, []);
 
   const handleUpdateProfile = () => {
-    // In a real application, this would save the profile to the backend
     alert('Profile updated successfully!');
   };
 
@@ -74,18 +69,17 @@ const UserProfile: React.FC = () => {
     try {
       setPasswordError(null);
       setPasswordSuccess(null);
-      
-      // Validation
+
       if (newPassword !== confirmPassword) {
         setPasswordError("New passwords don't match");
         return;
       }
-      
+
       if (newPassword.length < 6) {
         setPasswordError("New password must be at least 6 characters");
         return;
       }
-      
+
       await changePassword(currentPassword, newPassword);
       setPasswordSuccess('Password changed successfully!');
       setCurrentPassword('');
@@ -120,9 +114,9 @@ const UserProfile: React.FC = () => {
           <div className="user-profile-sidebar">
             <div className="user-avatar-container">
               <div className="user-avatar">
-                <img 
-                  src={`https://ui-avatars.com/api/?name=${user?.displayName || 'User'}&background=B6BBC4&color=fff&size=128`} 
-                  alt="User avatar" 
+                <img
+                  src={`https://ui-avatars.com/api/?name=${user?.displayName || 'User'}&background=B6BBC4&color=fff&size=128`}
+                  alt="User avatar"
                 />
                 <button className="edit-avatar-button">
                   <Edit size={16} />
@@ -133,42 +127,42 @@ const UserProfile: React.FC = () => {
             </div>
 
             <nav className="user-profile-nav">
-              <button 
-                className={`nav-item ${activeTab === 'profile' ? 'active' : ''}`} 
+              <button
+                className={`nav-item ${activeTab === 'profile' ? 'active' : ''}`}
                 onClick={() => setActiveTab('profile')}
               >
                 <User size={18} />
                 <span>User Profile</span>
               </button>
-              <button 
-                className={`nav-item ${activeTab === 'referrals' ? 'active' : ''}`} 
+              <button
+                className={`nav-item ${activeTab === 'referrals' ? 'active' : ''}`}
                 onClick={() => setActiveTab('referrals')}
               >
                 <Share2 size={18} />
                 <span>Referrals</span>
               </button>
-              <button 
+              <button
                 className={`nav-item ${activeTab === 'api' ? 'active' : ''}`}
                 onClick={() => setActiveTab('api')}
               >
                 <Key size={18} />
                 <span>API keys</span>
               </button>
-              <button 
-                className={`nav-item ${activeTab === 'login' ? 'active' : ''}`} 
+              <button
+                className={`nav-item ${activeTab === 'login' ? 'active' : ''}`}
                 onClick={() => setActiveTab('login')}
               >
                 <Clock size={18} />
                 <span>Login history</span>
               </button>
-              <button 
-                className={`nav-item ${activeTab === '2fa' ? 'active' : ''}`} 
+              <button
+                className={`nav-item ${activeTab === '2fa' ? 'active' : ''}`}
                 onClick={() => setActiveTab('2fa')}
               >
                 <Shield size={18} />
                 <span>2FA</span>
               </button>
-              <button 
+              <button
                 className={`nav-item ${activeTab === 'password' ? 'active' : ''}`}
                 onClick={() => setActiveTab('password')}
               >
@@ -185,16 +179,16 @@ const UserProfile: React.FC = () => {
                   <h3>Information</h3>
                   <div className="form-row">
                     <div className="form-group">
-                      <input 
-                        type="text" 
-                        value={firstName} 
+                      <input
+                        type="text"
+                        value={firstName}
                         onChange={(e) => setFirstName(e.target.value)}
                         placeholder="First Name"
                       />
                     </div>
                     <div className="form-group">
-                      <input 
-                        type="text" 
+                      <input
+                        type="text"
                         value={lastName}
                         onChange={(e) => setLastName(e.target.value)}
                         placeholder="Last Name"
@@ -204,8 +198,8 @@ const UserProfile: React.FC = () => {
 
                   <div className="form-row">
                     <div className="form-group">
-                      <input 
-                        type="email" 
+                      <input
+                        type="email"
                         value={user?.email}
                         readOnly
                         className="email-input"
@@ -218,8 +212,8 @@ const UserProfile: React.FC = () => {
                           <ChevronDown size={16} />
                         </div>
                       </div>
-                      <input 
-                        type="tel" 
+                      <input
+                        type="tel"
                         value={phoneNumber}
                         onChange={(e) => setPhoneNumber(e.target.value)}
                         placeholder="Your Phone Number"
@@ -229,7 +223,7 @@ const UserProfile: React.FC = () => {
 
                   <div className="form-row">
                     <div className="form-group select-container">
-                      <select 
+                      <select
                         value={country}
                         onChange={(e) => setCountry(e.target.value)}
                       >
@@ -241,7 +235,7 @@ const UserProfile: React.FC = () => {
                       <ChevronDown size={16} className="select-arrow" />
                     </div>
                     <div className="form-group select-container">
-                      <select 
+                      <select
                         value={gender}
                         onChange={(e) => setGender(e.target.value)}
                       >
@@ -252,8 +246,8 @@ const UserProfile: React.FC = () => {
                       <ChevronDown size={16} className="select-arrow" />
                     </div>
                     <div className="form-group">
-                      <input 
-                        type="date" 
+                      <input
+                        type="date"
                         value={birthdate}
                         onChange={(e) => setBirthdate(e.target.value)}
                         placeholder="DD/MM/YY"
@@ -264,7 +258,7 @@ const UserProfile: React.FC = () => {
 
                 <div className="features-section">
                   <h3>Features</h3>
-                  
+
                   <div className="features-container">
                     <div className="feature-level">
                       <h4>LEVEL 1</h4>
@@ -272,8 +266,8 @@ const UserProfile: React.FC = () => {
                         <div className="feature-item">
                           <span>Deposit assets</span>
                           <label className="toggle-switch">
-                            <input 
-                              type="checkbox" 
+                            <input
+                              type="checkbox"
                               checked={depositAssetsEnabled}
                               onChange={() => setDepositAssetsEnabled(!depositAssetsEnabled)}
                             />
@@ -285,8 +279,8 @@ const UserProfile: React.FC = () => {
                           <div className="feature-detail">
                             <span className="feature-limit">Enabled $1,000,000/day</span>
                             <label className="toggle-switch">
-                              <input 
-                                type="checkbox" 
+                              <input
+                                type="checkbox"
                                 checked={withdrawAssetsEnabled}
                                 onChange={() => setWithdrawAssetsEnabled(!withdrawAssetsEnabled)}
                               />
@@ -297,8 +291,8 @@ const UserProfile: React.FC = () => {
                         <div className="feature-item">
                           <span>Card purchases</span>
                           <label className="toggle-switch">
-                            <input 
-                              type="checkbox" 
+                            <input
+                              type="checkbox"
                               checked={cardPurchasesEnabled}
                               onChange={() => setCardPurchasesEnabled(!cardPurchasesEnabled)}
                             />
@@ -308,8 +302,8 @@ const UserProfile: React.FC = () => {
                         <div className="feature-item">
                           <span>Bank deposit</span>
                           <label className="toggle-switch">
-                            <input 
-                              type="checkbox" 
+                            <input
+                              type="checkbox"
                               checked={bankDepositEnabled}
                               onChange={() => setBankDepositEnabled(!bankDepositEnabled)}
                             />
@@ -318,15 +312,15 @@ const UserProfile: React.FC = () => {
                         </div>
                       </div>
                     </div>
-                    
+
                     <div className="feature-level">
                       <h4>LEVEL 2</h4>
                       <div className="feature-items">
                         <div className="feature-item">
                           <span>Fiat and Spot wallet</span>
                           <label className="toggle-switch">
-                            <input 
-                              type="checkbox" 
+                            <input
+                              type="checkbox"
                               checked={fiatSpotWalletEnabled}
                               onChange={() => setFiatSpotWalletEnabled(!fiatSpotWalletEnabled)}
                             />
@@ -338,8 +332,8 @@ const UserProfile: React.FC = () => {
                           <div className="feature-detail">
                             <span className="feature-limit">Enabled 100x Leverage</span>
                             <label className="toggle-switch">
-                              <input 
-                                type="checkbox" 
+                              <input
+                                type="checkbox"
                                 checked={marginWalletEnabled}
                                 onChange={() => setMarginWalletEnabled(!marginWalletEnabled)}
                               />
@@ -387,54 +381,54 @@ const UserProfile: React.FC = () => {
                 <p>Your 2FA settings will appear here.</p>
               </div>
             )}
-            
+
             {activeTab === 'password' && (
               <div className="tab-content">
                 <h3>Change Password</h3>
-                
+
                 {passwordError && (
                   <div className="alert alert-error">
                     <p>{passwordError}</p>
                   </div>
                 )}
-                
+
                 {passwordSuccess && (
                   <div className="alert alert-success">
                     <p>{passwordSuccess}</p>
                   </div>
                 )}
-                
+
                 <div className="password-form">
                   <div className="form-group">
                     <label>Current Password</label>
-                    <input 
-                      type="password" 
+                    <input
+                      type="password"
                       value={currentPassword}
                       onChange={(e) => setCurrentPassword(e.target.value)}
                       placeholder="Enter your current password"
                     />
                   </div>
-                  
+
                   <div className="form-group">
                     <label>New Password</label>
-                    <input 
-                      type="password" 
+                    <input
+                      type="password"
                       value={newPassword}
                       onChange={(e) => setNewPassword(e.target.value)}
                       placeholder="Enter your new password"
                     />
                   </div>
-                  
+
                   <div className="form-group">
                     <label>Confirm New Password</label>
-                    <input 
-                      type="password" 
+                    <input
+                      type="password"
                       value={confirmPassword}
                       onChange={(e) => setConfirmPassword(e.target.value)}
                       placeholder="Confirm your new password"
                     />
                   </div>
-                  
+
                   <div className="password-requirements">
                     <h4>Password must contain:</h4>
                     <ul>
@@ -445,7 +439,7 @@ const UserProfile: React.FC = () => {
                       <li className={/[!@#$%^&*]/.test(newPassword) ? 'valid' : ''}>At least one special character</li>
                     </ul>
                   </div>
-                  
+
                   <button className="change-password-button" onClick={handleChangePassword}>
                     Change Password
                   </button>

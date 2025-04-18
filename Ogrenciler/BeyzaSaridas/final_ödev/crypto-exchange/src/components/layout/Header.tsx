@@ -8,7 +8,7 @@ import ThemeToggle from '../../components/ui/ThemeToggle';
 import LanguageSelector from '../../components/ui/LanguageSelector';
 import Button from '../../components/ui/Button';
 import { combineClasses } from '../../lib/utils';
-import { changePassword, logoutUser } from '../../lib/firebaseService'; // Firebase servisleri
+import { changePassword, logoutUser } from '../../lib/firebaseService';
 import './Header.scss';
 
 interface User {
@@ -46,7 +46,7 @@ const Header: React.FC = () => {
     try {
       await logoutUser();
       console.log('Logout successful');
-      window.location.href = '/login'; // Login sayfasına yönlendirme
+      window.location.href = '/login';
     } catch (error) {
       console.error('Logout error:', error);
     }
@@ -133,10 +133,10 @@ const Header: React.FC = () => {
                     <History className="header__actions-item-icon" />
                     <span className="sr-only">Trade History</span>
                   </Link>
-                  {/* Wallet Button */}
+
                   <div className="header__actions-wallet-container">
-                    <button 
-                      className="header__actions-wallet" 
+                    <button
+                      className="header__actions-wallet"
                       onClick={() => setIsWalletMenuOpen(!isWalletMenuOpen)}
                     >
                       <svg className="header__actions-wallet-icon" viewBox="0 0 24 24">
@@ -179,11 +179,11 @@ const Header: React.FC = () => {
                 </button>
                 {isUserMenuOpen && (
                   <div className="header__dropdown">
-                   <Link href="/user-profile" className="header__dropdown-item">
-  {t('common.profile')}
-</Link>
+                    <Link href="/user-profile" className="header__dropdown-item">
+                      {t('Profile')}
+                    </Link>
                     <Link href="/settings" className="header__dropdown-item">
-                      {t('common.settings')}
+                      {t('Settings')}
                     </Link>
                     <button
                       onClick={() => setIsChangePasswordOpen(true)}
@@ -330,7 +330,7 @@ const Header: React.FC = () => {
             <button onClick={() => setIsChangePasswordOpen(false)}>İptal</button>
           </div>
         </div>
-        
+
       )}
     </header>
   );

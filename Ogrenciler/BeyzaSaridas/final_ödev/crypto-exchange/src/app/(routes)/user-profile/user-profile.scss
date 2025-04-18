@@ -1,5 +1,5 @@
-@import '../../../styles/scss/variables';
-@import '../../../styles//scss/mixins';
+@import "../../../styles/scss/variables";
+@import "../../../styles//scss/mixins";
 
 .user-profile-container {
    padding: 0;
@@ -282,7 +282,7 @@
                            right: 0;
                            bottom: 0;
                            background-color: #ccc;
-                           transition: .4s;
+                           transition: 0.4s;
                            border-radius: 34px;
 
                            &:before {
@@ -293,7 +293,7 @@
                               left: 3px;
                               bottom: 3px;
                               background-color: white;
-                              transition: .4s;
+                              transition: 0.4s;
                               border-radius: 50%;
                            }
                         }
@@ -449,7 +449,6 @@
    }
 }
 
-// Add responsive styles for smaller screens
 @media (max-width: 992px) {
    .user-profile-content {
       flex-direction: column;

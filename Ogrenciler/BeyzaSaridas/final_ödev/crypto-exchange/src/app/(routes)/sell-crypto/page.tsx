@@ -46,7 +46,7 @@ interface RecentTransaction {
 const SellCryptoPage: React.FC = () => {
   const { t } = useTranslation();
   const searchParams = useSearchParams();
-  
+
   const [loading, setLoading] = useState(true);
   const [selectedCrypto, setSelectedCrypto] = useState<string | null>(null);
   const [amount, setAmount] = useState<string>('');
@@ -54,7 +54,7 @@ const SellCryptoPage: React.FC = () => {
   const [receiveMethod, setReceiveMethod] = useState<'wallet' | 'bank'>('wallet');
   const [cryptoList, setCryptoList] = useState<CryptoCurrency[]>([]);
   const [wallet, setWallet] = useState<Wallet | null>(null);
-  const [user, setUser] = useState<{uid: string}>({uid: 'user123'});
+  const [user, setUser] = useState<{ uid: string }>({ uid: 'user123' });
   const [isProcessing, setIsProcessing] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<boolean>(false);
@@ -69,7 +69,6 @@ const SellCryptoPage: React.FC = () => {
   }, [searchParams]);
 
   useEffect(() => {
-    // Mock data for cryptocurrencies
     const mockCryptos: CryptoCurrency[] = [
       { id: 'bitcoin', name: 'Bitcoin', symbol: 'btc', current_price: 54321.23, price_change_percentage_24h: 2.45 },
       { id: 'ethereum', name: 'Ethereum', symbol: 'eth', current_price: 2456.78, price_change_percentage_24h: -1.23 },
@@ -79,7 +78,6 @@ const SellCryptoPage: React.FC = () => {
       { id: 'solana', name: 'Solana', symbol: 'sol', current_price: 153.87, price_change_percentage_24h: 7.23 },
     ];
 
-    // Mock wallet data with crypto balances
     const mockWallet: Wallet = {
       fiatBalance: 5000,
       currency: 'USD',
@@ -90,41 +88,40 @@ const SellCryptoPage: React.FC = () => {
         { symbol: 'ltc', amount: 5, value: 936.25 }
       ]
     };
-    
-    // Mock recent transactions
+
     const mockTransactions: RecentTransaction[] = [
-      { 
-        id: '1', 
-        cryptoSymbol: 'btc', 
-        cryptoAmount: 0.025, 
-        fiatAmount: 1350.45, 
-        fiatCurrency: 'USD', 
-        timestamp: new Date(Date.now() - 24 * 60 * 60 * 1000), 
+      {
+        id: '1',
+        cryptoSymbol: 'btc',
+        cryptoAmount: 0.025,
+        fiatAmount: 1350.45,
+        fiatCurrency: 'USD',
+        timestamp: new Date(Date.now() - 24 * 60 * 60 * 1000),
         status: 'completed',
         type: 'sell'
       },
-      { 
-        id: '2', 
-        cryptoSymbol: 'eth', 
-        cryptoAmount: 1.5, 
-        fiatAmount: 3685.17, 
-        fiatCurrency: 'USD', 
-        timestamp: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000), 
+      {
+        id: '2',
+        cryptoSymbol: 'eth',
+        cryptoAmount: 1.5,
+        fiatAmount: 3685.17,
+        fiatCurrency: 'USD',
+        timestamp: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000),
         status: 'completed',
         type: 'buy'
       },
-      { 
-        id: '3', 
-        cryptoSymbol: 'sol', 
-        cryptoAmount: 2.75, 
-        fiatAmount: 423.14, 
-        fiatCurrency: 'USD', 
-        timestamp: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000), 
+      {
+        id: '3',
+        cryptoSymbol: 'sol',
+        cryptoAmount: 2.75,
+        fiatAmount: 423.14,
+        fiatCurrency: 'USD',
+        timestamp: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000),
         status: 'completed',
         type: 'sell'
       }
     ];
-    
+
     setCryptoList(mockCryptos);
     setWallet(mockWallet);
     setRecentTransactions(mockTransactions);
@@ -143,7 +140,7 @@ const SellCryptoPage: React.FC = () => {
         }
       }
     }
-    
+
     setCryptoAmount('');
   }, [selectedCrypto, amount, cryptoList]);
 
@@ -159,17 +156,17 @@ const SellCryptoPage: React.FC = () => {
         }
       }
     }
-    
+
     if (cryptoAmount === '') {
       setAmount('');
     }
   }, [selectedCrypto, cryptoAmount, cryptoList]);
-  
+
   const handleCryptoSelect = (symbol: string) => {
     setSelectedCrypto(symbol);
     setError(null);
   };
-  
+
   const handleAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     if (value === '' || /^\d*\.?\d*$/.test(value)) {
@@ -177,7 +174,7 @@ const SellCryptoPage: React.FC = () => {
       setError(null);
     }
   };
-  
+
   const handleCryptoAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     if (value === '' || /^\d*\.?\d*$/.test(value)) {
@@ -185,32 +182,31 @@ const SellCryptoPage: React.FC = () => {
       setError(null);
     }
   };
-  
+
   const handleReceiveMethodChange = (method: 'wallet' | 'bank') => {
     setReceiveMethod(method);
     setError(null);
   };
-  
+
   const handleSellCrypto = async () => {
     if (!selectedCrypto) {
       setError('Lütfen bir kripto para birimi seçin.');
       return;
     }
-    
+
     if (!cryptoAmount || parseFloat(cryptoAmount) <= 0) {
       setError('Lütfen geçerli bir miktar girin.');
       return;
     }
-    
+
     const cryptoAmountValue = parseFloat(cryptoAmount);
     const crypto = cryptoList.find(c => c.symbol.toLowerCase() === selectedCrypto.toLowerCase());
-    
+
     if (!crypto) {
       setError('Seçilen kripto para bulunamadı.');
       return;
     }
-    
-    // Check if user has enough crypto to sell
+
     const userCryptoBalance = wallet?.cryptoBalances.find(b => b.symbol.toLowerCase() === selectedCrypto.toLowerCase());
     if (!userCryptoBalance || userCryptoBalance.amount < cryptoAmountValue) {
       setError('Yetersiz kripto bakiyesi. Satmak istediğiniz miktarı düşürün.');
@@ -221,7 +217,6 @@ const SellCryptoPage: React.FC = () => {
     setError(null);
 
     try {
-      // İşlem kaydı ekleme
       await addTransaction({
         userId: user.uid,
         type: 'sell',
@@ -230,10 +225,8 @@ const SellCryptoPage: React.FC = () => {
         price: crypto.current_price,
       });
 
-      // Simulate transaction processing
       await new Promise(resolve => setTimeout(resolve, 1500));
-      
-      // Add transaction to history
+
       const newTransaction: RecentTransaction = {
         id: Date.now().toString(),
         cryptoSymbol: selectedCrypto,
@@ -244,13 +237,10 @@ const SellCryptoPage: React.FC = () => {
         status: 'completed',
         type: 'sell'
       };
-      
-      // Update transaction history
+
       setRecentTransactions([newTransaction, ...recentTransactions]);
-      
-      // Update wallet balances
+
       if (wallet) {
-        // Update crypto balance
         const updatedCryptoBalances = wallet.cryptoBalances.map(balance => {
           if (balance.symbol.toLowerCase() === selectedCrypto.toLowerCase()) {
             return {
@@ -261,21 +251,17 @@ const SellCryptoPage: React.FC = () => {
           }
           return balance;
         });
-        
-        // Update fiat balance
+
         const newFiatBalance = wallet.fiatBalance + parseFloat(amount);
-        
+
         setWallet({
           ...wallet,
           fiatBalance: newFiatBalance,
           cryptoBalances: updatedCryptoBalances
         });
       }
-
-      // Show success message
       setSuccess(true);
-      
-      // Reset form after delay
+
       setTimeout(() => {
         setSuccess(false);
         setAmount('');
@@ -288,7 +274,7 @@ const SellCryptoPage: React.FC = () => {
       setIsProcessing(false);
     }
   };
-  
+
   const getSelectedCryptoInfo = () => {
     if (!selectedCrypto) return null;
     return cryptoList.find(c => c.symbol.toLowerCase() === selectedCrypto.toLowerCase());
@@ -312,7 +298,7 @@ const SellCryptoPage: React.FC = () => {
   const toggleRecentTransactions = () => {
     setShowRecentTransactions(!showRecentTransactions);
   };
-  
+
   if (loading) {
     return (
       <Layout>
@@ -327,7 +313,7 @@ const SellCryptoPage: React.FC = () => {
       </Layout>
     );
   }
-  
+
   return (
     <Layout>
       <div className="sell-crypto-page">
@@ -338,7 +324,7 @@ const SellCryptoPage: React.FC = () => {
               Kripto varlıklarınızı güvenle nakit paraya dönüştürün
             </p>
           </div>
-          
+
           <div className="sell-crypto-page__content">
             <div className="sell-crypto-page__crypto-selection">
               <h2 className="sell-crypto-page__section-title">Satılacak Kripto</h2>
@@ -346,9 +332,9 @@ const SellCryptoPage: React.FC = () => {
                 {wallet?.cryptoBalances.map(balance => {
                   const crypto = cryptoList.find(c => c.symbol.toLowerCase() === balance.symbol.toLowerCase());
                   if (!crypto || balance.amount <= 0) return null;
-                  
+
                   return (
-                    <div 
+                    <div
                       key={crypto.id}
                       className={`sell-crypto-page__crypto-item ${selectedCrypto === crypto.symbol.toLowerCase() ? 'sell-crypto-page__crypto-item--selected' : ''}`}
                       onClick={() => handleCryptoSelect(crypto.symbol.toLowerCase())}
@@ -372,7 +358,7 @@ const SellCryptoPage: React.FC = () => {
                 })}
               </div>
             </div>
-            
+
             <div className="sell-crypto-page__payment-section">
               <div className="sell-crypto-page__amount-container">
                 <h2 className="sell-crypto-page__section-title">Satış Miktarı</h2>
@@ -397,11 +383,11 @@ const SellCryptoPage: React.FC = () => {
                       />
                     </div>
                   </div>
-                  
+
                   <div className="sell-crypto-page__arrow">
                     <ArrowRight />
                   </div>
-                  
+
                   <div className="sell-crypto-page__amount-input-group">
                     <label className="sell-crypto-page__input-label">Alınacak Miktar (USD)</label>
                     <div className="sell-crypto-page__input-wrapper">
@@ -417,7 +403,7 @@ const SellCryptoPage: React.FC = () => {
                     </div>
                   </div>
                 </div>
-                
+
                 {getSelectedCryptoBalance() && (
                   <div className="sell-crypto-page__available-balance">
                     <span className="sell-crypto-page__available-balance-label">Mevcut Bakiye:</span>
@@ -427,11 +413,11 @@ const SellCryptoPage: React.FC = () => {
                   </div>
                 )}
               </div>
-              
+
               <div className="sell-crypto-page__payment-method">
                 <h2 className="sell-crypto-page__section-title">Ödeme Alma Yöntemi</h2>
                 <div className="sell-crypto-page__payment-options">
-                  <div 
+                  <div
                     className={`sell-crypto-page__payment-option ${receiveMethod === 'wallet' ? 'sell-crypto-page__payment-option--selected' : ''}`}
                     onClick={() => handleReceiveMethodChange('wallet')}
                   >
@@ -445,8 +431,8 @@ const SellCryptoPage: React.FC = () => {
                       </div>
                     </div>
                   </div>
-                  
-                  <div 
+
+                  <div
                     className={`sell-crypto-page__payment-option ${receiveMethod === 'bank' ? 'sell-crypto-page__payment-option--selected' : ''}`}
                     onClick={() => handleReceiveMethodChange('bank')}
                   >
@@ -462,57 +448,57 @@ const SellCryptoPage: React.FC = () => {
                   </div>
                 </div>
               </div>
-              
+
               {error && (
                 <div className="sell-crypto-page__error">
                   <AlertCircle className="sell-crypto-page__error-icon" />
                   <p>{error}</p>
                 </div>
               )}
-              
+
               {success && (
                 <div className="sell-crypto-page__success">
                   <p>Satış işlemi başarıyla tamamlandı!</p>
                 </div>
               )}
-              
+
               <div className="sell-crypto-page__summary">
                 <h2 className="sell-crypto-page__section-title">İşlem Özeti</h2>
-                
+
                 <div className="sell-crypto-page__summary-item">
                   <span className="sell-crypto-page__summary-label">Seçilen Kripto:</span>
                   <span className="sell-crypto-page__summary-value">
-                    {getSelectedCryptoInfo() 
-                      ? `${getSelectedCryptoInfo()?.name} (${getSelectedCryptoInfo()?.symbol.toUpperCase()})` 
+                    {getSelectedCryptoInfo()
+                      ? `${getSelectedCryptoInfo()?.name} (${getSelectedCryptoInfo()?.symbol.toUpperCase()})`
                       : '-'}
                   </span>
                 </div>
-                
+
                 <div className="sell-crypto-page__summary-item">
                   <span className="sell-crypto-page__summary-label">Birim Fiyat:</span>
                   <span className="sell-crypto-page__summary-value">
-                    {getSelectedCryptoInfo() 
-                      ? formatCurrency(getSelectedCryptoInfo()?.current_price || 0) 
+                    {getSelectedCryptoInfo()
+                      ? formatCurrency(getSelectedCryptoInfo()?.current_price || 0)
                       : '-'}
                   </span>
                 </div>
-                
+
                 <div className="sell-crypto-page__summary-item">
                   <span className="sell-crypto-page__summary-label">Satış Miktarı:</span>
                   <span className="sell-crypto-page__summary-value">
-                    {cryptoAmount && selectedCrypto 
-                      ? `${formatNumber(parseFloat(cryptoAmount))} ${selectedCrypto.toUpperCase()}` 
+                    {cryptoAmount && selectedCrypto
+                      ? `${formatNumber(parseFloat(cryptoAmount))} ${selectedCrypto.toUpperCase()}`
                       : '-'}
                   </span>
                 </div>
-                
+
                 <div className="sell-crypto-page__summary-item">
                   <span className="sell-crypto-page__summary-label">Ödeme Alma Yöntemi:</span>
                   <span className="sell-crypto-page__summary-value">
                     {receiveMethod === 'wallet' ? 'Cüzdan Bakiyesi' : 'Banka Hesabı'}
                   </span>
                 </div>
-                
+
                 <div className="sell-crypto-page__summary-item sell-crypto-page__summary-item--total">
                   <span className="sell-crypto-page__summary-label">Toplam Alınacak Tutar:</span>
                   <span className="sell-crypto-page__summary-value sell-crypto-page__summary-total">
@@ -520,11 +506,11 @@ const SellCryptoPage: React.FC = () => {
                   </span>
                 </div>
               </div>
-              
+
               <div className="sell-crypto-page__actions">
-                <Button 
-                  variant="primary" 
-                  size="lg" 
+                <Button
+                  variant="primary"
+                  size="lg"
                   className="sell-crypto-page__sell-button"
                   onClick={handleSellCrypto}
                   disabled={!selectedCrypto || !cryptoAmount || parseFloat(cryptoAmount) <= 0 || isProcessing || success}
@@ -534,7 +520,6 @@ const SellCryptoPage: React.FC = () => {
               </div>
             </div>
 
-            {/* Recent Transactions Section */}
             <div className="sell-crypto-page__transactions">
               <div className="sell-crypto-page__transactions-header" onClick={toggleRecentTransactions}>
                 <h2 className="sell-crypto-page__section-title">
@@ -545,7 +530,7 @@ const SellCryptoPage: React.FC = () => {
                   {showRecentTransactions ? '▲' : '▼'}
                 </span>
               </div>
-              
+
               {showRecentTransactions && (
                 <div className="sell-crypto-page__transactions-list">
                   {recentTransactions.length > 0 ? (
@@ -567,8 +552,8 @@ const SellCryptoPage: React.FC = () => {
                             {transaction.type === 'sell' ? '+' : '-'}{formatCurrency(transaction.fiatAmount)}
                           </div>
                           <div className={`sell-crypto-page__transaction-status sell-crypto-page__transaction-status--${transaction.status}`}>
-                            {transaction.status === 'completed' ? 'Tamamlandı' : 
-                             transaction.status === 'pending' ? 'Beklemede' : 'Başarısız'}
+                            {transaction.status === 'completed' ? 'Tamamlandı' :
+                              transaction.status === 'pending' ? 'Beklemede' : 'Başarısız'}
                           </div>
                         </div>
                       </div>
@@ -582,7 +567,7 @@ const SellCryptoPage: React.FC = () => {
               )}
             </div>
 
-            
+
           </div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { useTheme } from "@/context/ThemeContext";
+import { useTheme } from "../../context/ThemeContext";
 import { Moon, Sun } from "lucide-react";
 import "./ThemeToggle.scss";
 

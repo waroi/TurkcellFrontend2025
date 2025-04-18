@@ -1,9 +1,8 @@
 import React from "react";
 import Layout from "../components/layout/Layout";
 import "./(auth)/register/register.scss";
-import "./trading-market.scss"; // Make sure to create this file
+import "./trading-market.scss";
 
-// SVG for the small graph icon in the table
 const MarketGraphIcon: React.FC = () => (
   <svg
     width="139"
@@ -23,56 +22,147 @@ const MarketGraphIcon: React.FC = () => (
   </svg>
 );
 
-// Candlestick Chart Component
 const CandlestickChart: React.FC = () => {
-  // These values define positions for the candlesticks in the chart
   const candlestickData = [
-    { date: "05 Feb", open: 38.3, close: 38.4, high: 38.5, low: 38.2, color: "green" },
-    { date: "06 Feb", open: 38.4, close: 38.3, high: 38.5, low: 38.2, color: "red" },
-    { date: "07 Feb", open: 38.3, close: 38.5, high: 38.6, low: 38.3, color: "green" },
-    { date: "08 Feb", open: 38.4, close: 38.3, high: 38.4, low: 38.2, color: "red" },
-    { date: "09 Feb", open: 38.3, close: 38.4, high: 38.5, low: 38.3, color: "green" },
-    { date: "10 Feb", open: 38.4, close: 38.5, high: 38.6, low: 38.4, color: "green" },
-    { date: "11 Feb", open: 38.5, close: 38.4, high: 38.5, low: 38.3, color: "red" },
-    { date: "12 Feb", open: 38.4, close: 38.2, high: 38.4, low: 38.1, color: "red" },
-    { date: "13 Feb", open: 38.2, close: 38.3, high: 38.4, low: 38.2, color: "green" },
-    { date: "14 Feb", open: 38.3, close: 38.6, high: 38.7, low: 38.3, color: "green" },
-    { date: "15 Feb", open: 38.5, close: 38.4, high: 38.5, low: 38.3, color: "red" },
+    {
+      date: "05 Feb",
+      open: 38.3,
+      close: 38.4,
+      high: 38.5,
+      low: 38.2,
+      color: "green",
+    },
+    {
+      date: "06 Feb",
+      open: 38.4,
+      close: 38.3,
+      high: 38.5,
+      low: 38.2,
+      color: "red",
+    },
+    {
+      date: "07 Feb",
+      open: 38.3,
+      close: 38.5,
+      high: 38.6,
+      low: 38.3,
+      color: "green",
+    },
+    {
+      date: "08 Feb",
+      open: 38.4,
+      close: 38.3,
+      high: 38.4,
+      low: 38.2,
+      color: "red",
+    },
+    {
+      date: "09 Feb",
+      open: 38.3,
+      close: 38.4,
+      high: 38.5,
+      low: 38.3,
+      color: "green",
+    },
+    {
+      date: "10 Feb",
+      open: 38.4,
+      close: 38.5,
+      high: 38.6,
+      low: 38.4,
+      color: "green",
+    },
+    {
+      date: "11 Feb",
+      open: 38.5,
+      close: 38.4,
+      high: 38.5,
+      low: 38.3,
+      color: "red",
+    },
+    {
+      date: "12 Feb",
+      open: 38.4,
+      close: 38.2,
+      high: 38.4,
+      low: 38.1,
+      color: "red",
+    },
+    {
+      date: "13 Feb",
+      open: 38.2,
+      close: 38.3,
+      high: 38.4,
+      low: 38.2,
+      color: "green",
+    },
+    {
+      date: "14 Feb",
+      open: 38.3,
+      close: 38.6,
+      high: 38.7,
+      low: 38.3,
+      color: "green",
+    },
+    {
+      date: "15 Feb",
+      open: 38.5,
+      close: 38.4,
+      high: 38.5,
+      low: 38.3,
+      color: "red",
+    },
   ];
 
   return (
     <div className="trading-market__chart-container">
       <div className="trading-market__chart-header">
         <div className="trading-market__chart-tabs">
-          <button className="trading-market__tab trading-market__tab--active">Price</button>
+          <button className="trading-market__tab trading-market__tab--active">
+            Price
+          </button>
           <button className="trading-market__tab">Market Cap</button>
           <button className="trading-market__tab">Trade View</button>
         </div>
         <div className="trading-market__chart-controls">
           <div className="trading-market__time-selector">
             <span className="trading-market__time-text">24h</span>
-            <svg className="trading-market__dropdown-icon" width="12" height="12" viewBox="0 0 24 24">
+            <svg
+              className="trading-market__dropdown-icon"
+              width="12"
+              height="12"
+              viewBox="0 0 24 24"
+            >
               <path fill="currentColor" d="M7 10l5 5 5-5z" />
             </svg>
           </div>
           <button className="trading-market__chart-button">
             <svg width="18" height="18" viewBox="0 0 24 24">
-              <path fill="currentColor" d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z" />
+              <path
+                fill="currentColor"
+                d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"
+              />
             </svg>
           </button>
           <button className="trading-market__chart-button">
             <svg width="18" height="18" viewBox="0 0 24 24">
-              <path fill="currentColor" d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z" />
+              <path
+                fill="currentColor"
+                d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"
+              />
             </svg>
           </button>
           <button className="trading-market__chart-button">
             <svg width="18" height="18" viewBox="0 0 24 24">
-              <path fill="currentColor" d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
+              <path
+                fill="currentColor"
+                d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+              />
             </svg>
           </button>
         </div>
       </div>
-      
+
       <div className="trading-market__chart-body">
         <div className="trading-market__price-indicator">
           <div className="trading-market__current-price">$38.40k</div>
@@ -88,11 +178,7 @@ const CandlestickChart: React.FC = () => {
             <span>38.10k</span>
           </div>
           <div className="trading-market__candlestick-chart">
-            {/* Visual representation of the chart using CSS */}
-            <div className="trading-market__candlesticks">
-              {/* Candlesticks will be rendered via CSS */}
-            </div>
-            {/* Highlighted day indicator */}
+            <div className="trading-market__candlesticks"></div>
             <div className="trading-market__highlight-day">
               <div className="trading-market__highlight-badge">08 Feb</div>
             </div>
@@ -117,7 +203,6 @@ const CandlestickChart: React.FC = () => {
   );
 };
 
-// Main Page Component
 export default function Home() {
   return (
     <Layout>
@@ -145,11 +230,9 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Trading Market Section */}
         <div className="trading-market">
           <h2 className="trading-market__title">Trading Market</h2>
-          
-          {/* Candlestick Chart Component */}
+
           <CandlestickChart />
           <h2 className="trading-market__title">Update Market</h2>
           <div className="trading-market__table">

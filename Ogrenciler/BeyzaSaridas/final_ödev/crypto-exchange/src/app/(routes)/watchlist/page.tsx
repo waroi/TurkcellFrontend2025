@@ -43,14 +43,14 @@ const WatchlistPage: React.FC = () => {
       { id: 'ethereum', name: 'Ethereum', symbol: 'eth', date_added: '2023-01-20' },
       { id: 'ripple', name: 'XRP', symbol: 'xrp', date_added: '2023-02-05' }
     ];
-    
+
     const mockCryptos: CryptoCurrency[] = [
       { id: 'bitcoin', name: 'Bitcoin', symbol: 'btc', current_price: 54321.23, price_change_percentage_24h: 2.45, image: 'https://example.com/btc.png' },
       { id: 'ethereum', name: 'Ethereum', symbol: 'eth', current_price: 2456.78, price_change_percentage_24h: -1.23, image: 'https://example.com/eth.png' },
       { id: 'ripple', name: 'XRP', symbol: 'xrp', current_price: 0.98, price_change_percentage_24h: -2.56, image: 'https://example.com/xrp.png' },
       { id: 'litecoin', name: 'Litecoin', symbol: 'ltc', current_price: 187.25, price_change_percentage_24h: 0.87, image: 'https://example.com/ltc.png' },
     ];
-    
+
     setWatchlist(mockWatchlist);
     setCryptocurrencies(mockCryptos);
     setLoading(false);
@@ -60,11 +60,11 @@ const WatchlistPage: React.FC = () => {
     if (watchlist.length > 0 && cryptocurrencies.length > 0) {
 
       const watchlistWithPrices = watchlist.map(item => {
-        const cryptoData = cryptocurrencies.find(c => 
-          c.id === item.id || 
+        const cryptoData = cryptocurrencies.find(c =>
+          c.id === item.id ||
           c.symbol.toLowerCase() === item.symbol.toLowerCase()
         );
-        
+
         return {
           ...item,
           price: cryptoData?.current_price || 0,
@@ -72,23 +72,23 @@ const WatchlistPage: React.FC = () => {
         };
       });
 
-      const filtered = watchlistWithPrices.filter(item => 
-        item.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
+      const filtered = watchlistWithPrices.filter(item =>
+        item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         item.symbol.toLowerCase().includes(searchQuery.toLowerCase())
       );
 
       const sorted = [...filtered].sort((a, b) => {
         if (sortBy === 'name') {
-          return sortDirection === 'asc' 
-            ? a.name.localeCompare(b.name) 
+          return sortDirection === 'asc'
+            ? a.name.localeCompare(b.name)
             : b.name.localeCompare(a.name);
         } else if (sortBy === 'price') {
-          return sortDirection === 'asc' 
-            ? a.price - b.price 
+          return sortDirection === 'asc'
+            ? a.price - b.price
             : b.price - a.price;
-        } else { // change
-          return sortDirection === 'asc' 
-            ? a.change - b.change 
+        } else {
+          return sortDirection === 'asc'
+            ? a.change - b.change
             : b.change - a.change;
         }
       });
@@ -150,7 +150,7 @@ const WatchlistPage: React.FC = () => {
                   onChange={(e) => setSearchQuery(e.target.value)}
                 />
               </div>
-              
+
               <div className="watchlist-page__actions">
                 <Link href="/market">
                   <Button size="sm" className="watchlist-page__market-button">
@@ -182,36 +182,36 @@ const WatchlistPage: React.FC = () => {
                 <table className="watchlist-page__table">
                   <thead>
                     <tr>
-                      <th 
+                      <th
                         onClick={() => toggleSort('name')}
                         className="watchlist-page__th watchlist-page__th--sortable"
                       >
                         <div className="watchlist-page__th-content">
                           Kripto Para
-                          <ChevronDown 
-                            className={`watchlist-page__sort-icon ${sortBy === 'name' && (sortDirection === 'asc' ? 'watchlist-page__sort-icon--asc' : '')}`} 
+                          <ChevronDown
+                            className={`watchlist-page__sort-icon ${sortBy === 'name' && (sortDirection === 'asc' ? 'watchlist-page__sort-icon--asc' : '')}`}
                           />
                         </div>
                       </th>
-                      <th 
+                      <th
                         onClick={() => toggleSort('price')}
                         className="watchlist-page__th watchlist-page__th--sortable"
                       >
                         <div className="watchlist-page__th-content">
                           Fiyat
-                          <ChevronDown 
-                            className={`watchlist-page__sort-icon ${sortBy === 'price' && (sortDirection === 'asc' ? 'watchlist-page__sort-icon--asc' : '')}`} 
+                          <ChevronDown
+                            className={`watchlist-page__sort-icon ${sortBy === 'price' && (sortDirection === 'asc' ? 'watchlist-page__sort-icon--asc' : '')}`}
                           />
                         </div>
                       </th>
-                      <th 
+                      <th
                         onClick={() => toggleSort('change')}
                         className="watchlist-page__th watchlist-page__th--sortable"
                       >
                         <div className="watchlist-page__th-content">
                           24s Değişim
-                          <ChevronDown 
-                            className={`watchlist-page__sort-icon ${sortBy === 'change' && (sortDirection === 'asc' ? 'watchlist-page__sort-icon--asc' : '')}`} 
+                          <ChevronDown
+                            className={`watchlist-page__sort-icon ${sortBy === 'change' && (sortDirection === 'asc' ? 'watchlist-page__sort-icon--asc' : '')}`}
                           />
                         </div>
                       </th>
@@ -232,11 +232,11 @@ const WatchlistPage: React.FC = () => {
                       </tr>
                     ) : (
                       filteredWatchlist.map((item) => {
-                        const cryptoData = cryptocurrencies.find(c => 
-                          c.id === item.id || 
+                        const cryptoData = cryptocurrencies.find(c =>
+                          c.id === item.id ||
                           c.symbol.toLowerCase() === item.symbol.toLowerCase()
                         );
-                        
+
                         return (
                           <tr key={item.id} className="watchlist-page__tr">
                             <td className="watchlist-page__td">

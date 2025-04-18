@@ -1,4 +1,3 @@
-
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -9,8 +8,8 @@ import {
   User,
   updatePassword,
   EmailAuthProvider,
-  reauthenticateWithCredential
-} from 'firebase/auth';
+  reauthenticateWithCredential,
+} from "firebase/auth";
 import {
   doc,
   setDoc,
@@ -23,11 +22,14 @@ import {
   addDoc,
   serverTimestamp,
   Timestamp,
-} from 'firebase/firestore';
-import { auth, db, googleProvider, COLLECTIONS } from './firebase';
+} from "firebase/firestore";
+import { auth, db, googleProvider, COLLECTIONS } from "./firebase";
 
-// Kullanıcı kaydı
-export const registerWithEmail = async (email: string, password: string, displayName: string) => {
+export const registerWithEmail = async (
+  email: string,
+  password: string,
+  displayName: string
+) => {
   try {
     const result = await createUserWithEmailAndPassword(auth, email, password);
     await updateProfile(result.user, { displayName });
@@ -35,72 +37,73 @@ export const registerWithEmail = async (email: string, password: string, display
     await createUserWallet(result.user.uid);
     return result.user;
   } catch (error) {
-    console.error('Error in registration:', error);
+    console.error("Error in registration:", error);
     throw error;
   }
 };
 
-// Email ile giriş
 export const loginWithEmail = async (email: string, password: string) => {
   try {
     const result = await signInWithEmailAndPassword(auth, email, password);
     return result.user;
   } catch (error) {
-    console.error('Error in login:', error);
+    console.error("Error in login:", error);
     throw error;
   }
 };
 
-// Google ile giriş
 export const loginWithGoogle = async () => {
   try {
     const result = await signInWithPopup(auth, googleProvider);
     const userDocRef = doc(db, COLLECTIONS.USERS, result.user.uid);
     const userDoc = await getDoc(userDocRef);
-    
+
     if (!userDoc.exists()) {
       await createUserProfile(result.user);
       await createUserWallet(result.user.uid);
     }
-    
+
     return result.user;
   } catch (error) {
-    console.error('Error in Google login:', error);
+    console.error("Error in Google login:", error);
     throw error;
   }
 };
 
-// Çıkış işlemi
 export const logoutUser = async () => {
   try {
     await signOut(auth);
   } catch (error) {
-    console.error('Error in logout:', error);
+    console.error("Error in logout:", error);
     throw error;
   }
 };
 
-// Şifre sıfırlama
 export const resetPassword = async (email: string) => {
   try {
     await sendPasswordResetEmail(auth, email);
   } catch (error) {
-    console.error('Error in password reset:', error);
+    console.error("Error in password reset:", error);
     throw error;
   }
 };
 
-// Şifre değiştirme
-export const changePassword = async (currentPassword: string, newPassword: string) => {
+export const changePassword = async (
+  currentPassword: string,
+  newPassword: string
+) => {
   try {
     const user = auth.currentUser;
-    if (!user || !user.email) throw new Error('User not authenticated');
-    
-    const credential = EmailAuthProvider.credential(user.email, currentPassword);
+    if (!user || !user.email) throw new Error("User not authenticated");
+
+    const credential = EmailAuthProvider.credential(
+      user.email,
+      currentPassword
+    );
     await reauthenticateWithCredential(user, credential);
     await updatePassword(user, newPassword);
   } catch (error) {
-    console.error('Error changing password:', error);
+    console.error("Error changing password:", error);
     throw error;
   }
 };
@@ -110,38 +113,39 @@ interface AdditionalUserData {
   [key: string]: any;
 }
 
-// Kullanıcı profili oluşturma
-export const createUserProfile = async (user: User, additionalData: AdditionalUserData = {}) => {
+export const createUserProfile = async (
+  user: User,
+  additionalData: AdditionalUserData = {}
+) => {
   const userRef = doc(db, COLLECTIONS.USERS, user.uid);
-  
+
   try {
     await setDoc(userRef, {
       uid: user.uid,
       email: user.email,
-      displayName: user.displayName || additionalData.displayName || '',
-      photoURL: user.photoURL || '',
+      displayName: user.displayName || additionalData.displayName || "",
+      photoURL: user.photoURL || "",
       createdAt: serverTimestamp(),
-      ...additionalData
+      ...additionalData,
     });
   } catch (error) {
-    console.error('Error creating user profile:', error);
+    console.error("Error creating user profile:", error);
     throw error;
   }
 };
 
-// Kullanıcı bilgilerini getirme
 export const getUserProfile = async (userId: string) => {
   try {
     const userDocRef = doc(db, COLLECTIONS.USERS, userId);
     const userDoc = await getDoc(userDocRef);
-    
+
     if (userDoc.exists()) {
       return { id: userDoc.id, ...userDoc.data() };
     } else {
       return null;
     }
   } catch (error) {
-    console.error('Error getting user profile:', error);
+    console.error("Error getting user profile:", error);
     throw error;
   }
 };
@@ -164,22 +168,21 @@ export const getCurrentUserProfile = async () => {
   }
 };
 
-// Kullanıcı bilgilerini güncelleme
 export const updateUserProfile = async (userId: string, data: any) => {
   try {
     const userDocRef = doc(db, COLLECTIONS.USERS, userId);
     await updateDoc(userDocRef, {
       ...data,
-      updatedAt: serverTimestamp()
+      updatedAt: serverTimestamp(),
     });
   } catch (error) {
-    console.error('Error updating user profile:', error);
+    console.error("Error updating user profile:", error);
     throw error;
   }
 };
 export const addTransaction = async (transaction: {
   userId: string;
-  type: 'buy' | 'sell';
+  type: "buy" | "sell";
   symbol: string;
   amount: number;
   price: number;
@@ -191,38 +194,38 @@ export const addTransaction = async (transaction: {
       createdAt: serverTimestamp(),
     });
   } catch (error) {
-    console.error('Error adding transaction:', error);
+    console.error("Error adding transaction:", error);
     throw error;
   }
 };
-// Kullanıcı cüzdanı oluşturma
+
 export const createUserWallet = async (userId: string) => {
   try {
     const walletRef = doc(db, COLLECTIONS.WALLETS, userId);
     await setDoc(walletRef, {
       userId,
-      totalBalanceUSD: 10000, 
+      totalBalanceUSD: 10000,
       cryptoAssets: [
-        { 
-          symbol: 'BTC', 
-          name: 'Bitcoin',
+        {
+          symbol: "BTC",
+          name: "Bitcoin",
           amount: 0.1,
           currentPriceUSD: 50000,
-          valueUSD: 5000
+          valueUSD: 5000,
         },
         {
-          symbol: 'ETH',
-          name: 'Ethereum',
+          symbol: "ETH",
+          name: "Ethereum",
           amount: 2.5,
           currentPriceUSD: 2000,
-          valueUSD: 5000
-        }
+          valueUSD: 5000,
+        },
       ],
       createdAt: serverTimestamp(),
-      updatedAt: serverTimestamp()
+      updatedAt: serverTimestamp(),
     });
   } catch (error) {
-    console.error('Error creating wallet:', error);
+    console.error("Error creating wallet:", error);
     throw error;
   }
 };
@@ -257,25 +260,32 @@ export const sellCrypto = async (symbol: string, amount: number) => {
     throw error;
   }
 };
-export const updateWallet = async (userId: string, symbol: string, amount: number, type: 'buy' | 'sell') => {
+export const updateWallet = async (
+  userId: string,
+  symbol: string,
+  amount: number,
+  type: "buy" | "sell"
+) => {
   try {
     const walletRef = doc(db, COLLECTIONS.WALLETS, userId);
     const walletDoc = await getDoc(walletRef);
 
-    if (!walletDoc.exists()) throw new Error('Cüzdan bulunamadı.');
+    if (!walletDoc.exists()) throw new Error("Cüzdan bulunamadı.");
 
     const walletData = walletDoc.data();
-    const asset = walletData.cryptoAssets.find((asset: any) => asset.symbol === symbol);
+    const asset = walletData.cryptoAssets.find(
+      (asset: any) => asset.symbol === symbol
+    );
 
-    if (type === 'buy') {
+    if (type === "buy") {
       if (asset) {
         asset.amount += amount;
       } else {
         walletData.cryptoAssets.push({ symbol, amount });
       }
-    } else if (type === 'sell') {
+    } else if (type === "sell") {
       if (!asset || asset.amount < amount) {
-        throw new Error('Yetersiz bakiye.');
+        throw new Error("Yetersiz bakiye.");
       }
       asset.amount -= amount;
     }
@@ -285,7 +295,7 @@ export const updateWallet = async (userId: string, symbol: string, amount: numbe
       updatedAt: serverTimestamp(),
     });
   } catch (error) {
-    console.error('Error updating wallet:', error);
+    console.error("Error updating wallet:", error);
     throw error;
   }
 };

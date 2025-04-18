@@ -1,7 +1,5 @@
-// trading-market.scss
-
-@import '../styles/scss/variables';
-@import '../styles/scss/mixins';
+@import "../styles/scss/variables";
+@import "../styles/scss/mixins";
 
 .trading-market {
    margin: 5rem 0;
@@ -144,7 +142,6 @@
       height: 100%;
    }
 
-   // This creates the candlestick chart visual representation
    &__candlesticks {
       position: absolute;
       left: 0;
@@ -152,87 +149,25 @@
       top: 0;
       bottom: 0;
 
-      // Creating a background image that represents the candlestick pattern
-      // Similar to the chart in the provided image
-      background-image:
-         // Green candles (up)
-         linear-gradient(#22c55e, #22c55e),
-         linear-gradient(#22c55e, #22c55e),
-         linear-gradient(#22c55e, #22c55e),
-         linear-gradient(#22c55e, #22c55e),
-         linear-gradient(#22c55e, #22c55e),
-         linear-gradient(#22c55e, #22c55e),
-         // Red candles (down)
-         linear-gradient(#ef4444, #ef4444),
-         linear-gradient(#ef4444, #ef4444),
-         linear-gradient(#ef4444, #ef4444),
-         linear-gradient(#ef4444, #ef4444),
-         // Green wicks
-         linear-gradient(#22c55e, #22c55e),
-         linear-gradient(#22c55e, #22c55e),
-         linear-gradient(#22c55e, #22c55e),
-         linear-gradient(#22c55e, #22c55e),
-         linear-gradient(#22c55e, #22c55e),
-         linear-gradient(#22c55e, #22c55e),
-         // Red wicks
-         linear-gradient(#ef4444, #ef4444),
-         linear-gradient(#ef4444, #ef4444),
-         linear-gradient(#ef4444, #ef4444),
+      background-image: linear-gradient(#22c55e, #22c55e),
+         linear-gradient(#22c55e, #22c55e), linear-gradient(#22c55e, #22c55e),
+         linear-gradient(#22c55e, #22c55e), linear-gradient(#22c55e, #22c55e),
+         linear-gradient(#22c55e, #22c55e), linear-gradient(#ef4444, #ef4444),
+         linear-gradient(#ef4444, #ef4444), linear-gradient(#ef4444, #ef4444),
+         linear-gradient(#ef4444, #ef4444), linear-gradient(#22c55e, #22c55e),
+         linear-gradient(#22c55e, #22c55e), linear-gradient(#22c55e, #22c55e),
+         linear-gradient(#22c55e, #22c55e), linear-gradient(#22c55e, #22c55e),
+         linear-gradient(#22c55e, #22c55e), linear-gradient(#ef4444, #ef4444),
+         linear-gradient(#ef4444, #ef4444), linear-gradient(#ef4444, #ef4444),
          linear-gradient(#ef4444, #ef4444);
 
-      // Positioning each candle and wick
-      background-position:
-         // Green candles
-         5% 40%,
-         15% 50%,
-         25% 55%,
-         65% 30%,
-         75% 40%,
-         95% 45%,
-         // Red candles
-         35% 55%,
-         45% 35%,
-         55% 50%,
-         85% 60%,
-         // Green wicks
-         5% 40%,
-         15% 50%,
-         25% 55%,
-         65% 30%,
-         75% 40%,
-         95% 45%,
-         // Red wicks
-         35% 55%,
-         45% 35%,
-         55% 50%,
-         85% 60%;
+      background-position: 5% 40%, 15% 50%, 25% 55%, 65% 30%, 75% 40%, 95% 45%,
+         35% 55%, 45% 35%, 55% 50%, 85% 60%, 5% 40%, 15% 50%, 25% 55%, 65% 30%,
+         75% 40%, 95% 45%, 35% 55%, 45% 35%, 55% 50%, 85% 60%;
 
-      // Size of each candle and wick
-      background-size:
-         // Green candles
-         4% 25%,
-         4% 20%,
-         4% 30%,
-         4% 25%,
-         4% 25%,
-         4% 30%,
-         // Red candles
-         4% 35%,
-         4% 30%,
-         4% 40%,
-         4% 25%,
-         // Green wicks
-         1px 50%,
-         1px 40%,
-         1px 60%,
-         1px 50%,
-         1px 50%,
-         1px 60%,
-         // Red wicks
-         1px 70%,
-         1px 60%,
-         1px 80%,
-         1px 50%;
+      background-size: 4% 25%, 4% 20%, 4% 30%, 4% 25%, 4% 25%, 4% 30%, 4% 35%,
+         4% 30%, 4% 40%, 4% 25%, 1px 50%, 1px 40%, 1px 60%, 1px 50%, 1px 50%,
+         1px 60%, 1px 70%, 1px 60%, 1px 80%, 1px 50%;
 
       background-repeat: no-repeat;
    }
@@ -269,7 +204,6 @@
       margin-top: 0.5rem;
 
       span:nth-child(4) {
-         // 08 Feb
          color: #475be8;
          font-weight: 600;
       }
@@ -346,7 +280,6 @@
    }
 }
 
-// Media queries for responsiveness
 @media (max-width: 992px) {
    .trading-market {
 

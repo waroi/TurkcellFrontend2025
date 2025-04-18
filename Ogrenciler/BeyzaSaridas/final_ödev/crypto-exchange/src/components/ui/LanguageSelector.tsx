@@ -11,8 +11,8 @@ type Language = {
 };
 
 const languages: Language[] = [
-  { code: "tr", name: "Türkçe", flag: "🇹🇷" },
-  { code: "en", name: "English", flag: "🇬🇧" },
+  { code: "tr", name: "TR", flag: "🇹🇷" },
+  { code: "en", name: "EN", flag: "🇬🇧" },
 ];
 
 const LanguageSelector: React.FC = () => {

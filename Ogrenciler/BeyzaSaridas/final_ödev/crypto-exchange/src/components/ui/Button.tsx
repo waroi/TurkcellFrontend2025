@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { combineClasses } from "@/lib/utils";
+import { combineClasses } from "../../lib/utils";
 import "./Button.scss";
 
 interface ButtonProps {

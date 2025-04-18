@@ -18,7 +18,6 @@ import {
   Clock,
   Plus,
   Minus,
-  
 } from "lucide-react";
 import "./portfolio.scss";
 
@@ -213,6 +212,30 @@ const PortfolioPage: React.FC = () => {
     }
   }, [wallet, cryptocurrencies]);
 
+  useEffect(() => {
+    if (activeTab === "overview" && !loading) {
+      const script = document.createElement('script');
+      script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js';
+      script.async = true;
+      script.innerHTML = JSON.stringify({
+        "symbol": "FX:EURUSD",
+        "width": "100%",
+        "height": 220,
+        "locale": "en",
+        "dateRange": "12M",
+        "colorTheme": "light",
+        "isTransparent": false,
+        "autosize": true,
+        "largeChartUrl": ""
+      });
+
+      const widgetContainer = document.querySelector('.portfolio-page__distribution-widget');
+      if (widgetContainer && !widgetContainer.querySelector('script')) {
+        widgetContainer.appendChild(script);
+      }
+    }
+  }, [activeTab, loading]);
+
   if (loading) {
     return (
       <Layout>
@@ -226,7 +249,9 @@ const PortfolioPage: React.FC = () => {
         </div>
       </Layout>
     );
-  } return (
+  }
+
+  return (
     <Layout>
       <div className="portfolio-page">
         <div className="container">
@@ -250,11 +275,10 @@ const PortfolioPage: React.FC = () => {
                   {formatCurrency(totalValue)}
                 </div>
                 <div
-                  className={`portfolio-page__card-change ${
-                    profitPercentage >= 0
-                      ? "portfolio-page__card-change--positive"
-                      : "portfolio-page__card-change--negative"
-                  }`}
+                  className={`portfolio-page__card-change ${profitPercentage >= 0
+                    ? "portfolio-page__card-change--positive"
+                    : "portfolio-page__card-change--negative"
+                    }`}
                 >
                   {profitPercentage >= 0 ? (
                     <ArrowUpRight size={16} />
@@ -293,11 +317,10 @@ const PortfolioPage: React.FC = () => {
                   {t("portfolio.profit")}
                 </h3>
                 <div
-                  className={`portfolio-page__card-value ${
-                    totalProfit >= 0
-                      ? "portfolio-page__profit--positive"
-                      : "portfolio-page__profit--negative"
-                  }`}
+                  className={`portfolio-page__card-value ${totalProfit >= 0
+                    ? "portfolio-page__profit--positive"
+                    : "portfolio-page__profit--negative"
+                    }`}
                 >
                   {formatCurrency(totalProfit)}
                 </div>
@@ -318,39 +341,38 @@ const PortfolioPage: React.FC = () => {
                   </Link>
                 </div>
               </div>
-            </div> </div>
+            </div>
+          </div>
 
           <div className="portfolio-page__content">
             <div className="portfolio-page__tabs">
               <button
-                className={`portfolio-page__tab ${
-                  activeTab === "overview" ? "portfolio-page__tab--active" : ""
-                }`}
+                className={`portfolio-page__tab ${activeTab === "overview" ? "portfolio-page__tab--active" : ""
+                  }`}
                 onClick={() => setActiveTab("overview")}
               >
                 <PieChart size={16} />
                 Genel Bakış
               </button>
               <button
-                className={`portfolio-page__tab ${
-                  activeTab === "assets" ? "portfolio-page__tab--active" : ""
-                }`}
+                className={`portfolio-page__tab ${activeTab === "assets" ? "portfolio-page__tab--active" : ""
+                  }`}
                 onClick={() => setActiveTab("assets")}
               >
                 <BarChart size={16} />
                 Varlıklar
               </button>
               <button
-                className={`portfolio-page__tab ${
-                  activeTab === "transactions"
-                    ? "portfolio-page__tab--active"
-                    : ""
-                }`}
+                className={`portfolio-page__tab ${activeTab === "transactions"
+                  ? "portfolio-page__tab--active"
+                  : ""
+                  }`}
                 onClick={() => setActiveTab("transactions")}
               >
                 <RefreshCw size={16} />
                 İşlem Geçmişi
-              </button></div>
+              </button>
+            </div>
 
             <div className="portfolio-page__tab-content">
               {activeTab === "overview" && (
@@ -360,8 +382,13 @@ const PortfolioPage: React.FC = () => {
                       Portföy Dağılımı
                     </h3>
                     <div className="portfolio-page__distribution">
-                      <div className="portfolio-page__distribution-placeholder">
-                        Grafik burada görüntülenecek
+                      <div className="portfolio-page__distribution-widget tradingview-widget-container">
+                        <div className="tradingview-widget-container__widget"></div>
+                        <div className="tradingview-widget-copyright">
+                          <a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank">
+                            <span className="blue-text">Track all markets on TradingView</span>
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -378,7 +405,7 @@ const PortfolioPage: React.FC = () => {
                               (c) =>
                                 c.id === asset.id ||
                                 c.symbol.toLowerCase() ===
-                                  asset.symbol.toLowerCase()
+                                asset.symbol.toLowerCase()
                             );
 
                             const currentValue = crypto
@@ -415,11 +442,10 @@ const PortfolioPage: React.FC = () => {
                                   {formatCurrency(asset.currentValue)}
                                 </div>
                                 <div
-                                  className={`portfolio-page__asset-change ${
-                                    asset.priceChange >= 0
-                                      ? "portfolio-page__asset-change--positive"
-                                      : "portfolio-page__asset-change--negative"
-                                  }`}
+                                  className={`portfolio-page__asset-change ${asset.priceChange >= 0
+                                    ? "portfolio-page__asset-change--positive"
+                                    : "portfolio-page__asset-change--negative"
+                                    }`}
                                 >
                                   {asset.priceChange >= 0 ? "+" : ""}
                                   {asset.priceChange.toFixed(2)}%
@@ -514,9 +540,9 @@ const PortfolioPage: React.FC = () => {
                       >
                         Tüm İşlemleri Görüntüle
                       </Button>
-                 </div>
+                    </div>
                   </div>
-                 </div>
+                </div>
               )}
 
               {activeTab === "assets" && (
@@ -541,7 +567,7 @@ const PortfolioPage: React.FC = () => {
                               (c) =>
                                 c.id === asset.id ||
                                 c.symbol.toLowerCase() ===
-                                  asset.symbol.toLowerCase()
+                                asset.symbol.toLowerCase()
                             );
 
                             const currentPrice = crypto
@@ -596,11 +622,10 @@ const PortfolioPage: React.FC = () => {
                                 </td>
                                 <td className="portfolio-page__td">
                                   <div
-                                    className={`portfolio-page__asset-profit ${
-                                      profit >= 0
-                                        ? "portfolio-page__asset-profit--positive"
-                                        : "portfolio-page__asset-profit--negative"
-                                    }`}
+                                    className={`portfolio-page__asset-profit ${profit >= 0
+                                      ? "portfolio-page__asset-profit--positive"
+                                      : "portfolio-page__asset-profit--negative"
+                                      }`}
                                   >
                                     <div className="portfolio-page__asset-profit-value">
                                       {formatCurrency(profit)}
@@ -702,10 +727,10 @@ const PortfolioPage: React.FC = () => {
                                       </div>
                                       {(transaction.type === "buy" ||
                                         transaction.type === "sell") && (
-                                        <div className="portfolio-page__transaction-cell-asset">
-                                          {transaction.name}
-                                        </div>
-                                      )}
+                                          <div className="portfolio-page__transaction-cell-asset">
+                                            {transaction.name}
+                                          </div>
+                                        )}
                                     </div>
                                   </div>
                                 </td>
@@ -736,7 +761,7 @@ const PortfolioPage: React.FC = () => {
                                   <div className="portfolio-page__transaction-price">
                                     {(transaction.type === "buy" ||
                                       transaction.type === "sell") &&
-                                    transaction.price
+                                      transaction.price
                                       ? formatCurrency(transaction.price)
                                       : "-"}
                                   </div>
@@ -745,14 +770,14 @@ const PortfolioPage: React.FC = () => {
                                   <div className="portfolio-page__transaction-total">
                                     {(transaction.type === "buy" ||
                                       transaction.type === "sell") &&
-                                    transaction.price
+                                      transaction.price
                                       ? formatCurrency(
-                                          transaction.amount * transaction.price
-                                        )
+                                        transaction.amount * transaction.price
+                                      )
                                       : transaction.type === "deposit" ||
                                         transaction.type === "withdraw"
-                                      ? formatCurrency(transaction.amount)
-                                      : "-"}
+                                        ? formatCurrency(transaction.amount)
+                                        : "-"}
                                   </div>
                                 </td>
                               </tr>
@@ -766,7 +791,8 @@ const PortfolioPage: React.FC = () => {
                     </div>
                   )}
                 </div>
-              )} </div>
+              )}
+            </div>
           </div>
         </div>
       </div>

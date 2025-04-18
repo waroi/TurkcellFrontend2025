@@ -91,7 +91,7 @@ const LoginForm: React.FC = () => {
           items: []
         });
       }
-      
+
       router.push('/market');
     } catch (error: any) {
       console.error('Google login error:', error);

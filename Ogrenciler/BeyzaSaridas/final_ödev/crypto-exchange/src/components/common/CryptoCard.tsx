@@ -33,7 +33,7 @@ const CryptoCard: React.FC<CryptoCardProps> = ({
   className = ''
 }) => {
   const isPositive = change >= 0;
-  
+
   const handleWatchlistClick = (e: React.MouseEvent) => {
     e.stopPropagation();
     if (inWatchlist) {
@@ -46,13 +46,13 @@ const CryptoCard: React.FC<CryptoCardProps> = ({
       }
     }
   };
-  
+
   return (
     <div className={combineClasses('crypto-card', className)} onClick={onClick}>
       <div className="crypto-card__main">
         <div className="crypto-card__icon">
-          {image ? 
-            <img src={image} alt={symbol} className="crypto-card__image" /> : 
+          {image ?
+            <img src={image} alt={symbol} className="crypto-card__image" /> :
             <CryptoIcon symbol={symbol} size={40} />
           }
         </div>
@@ -74,7 +74,7 @@ const CryptoCard: React.FC<CryptoCardProps> = ({
         </div>
       </div>
       {(onAddToWatchlist || onRemoveFromWatchlist) && (
-        <button 
+        <button
           className={combineClasses(
             'crypto-card__watchlist',
             inWatchlist ? 'crypto-card__watchlist--active' : ''
