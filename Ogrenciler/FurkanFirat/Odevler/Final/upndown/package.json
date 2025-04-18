@@ -9,11 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.6.1",
     "bootstrap": "^5.3.5",
+    "firebase": "^11.6.0",
+    "formik": "^2.4.6",
     "next": "15.3.0",
     "next-intl": "^4.0.2",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-redux": "^9.2.0",
+    "yup": "^1.6.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

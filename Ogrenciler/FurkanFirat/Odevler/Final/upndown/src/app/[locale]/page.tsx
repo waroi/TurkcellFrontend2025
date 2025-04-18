@@ -1,30 +1,23 @@
-import Image from 'next/image';
-import { useTranslations } from 'next-intl';
-import { Link } from '@/i18n/navigation';
+import DownloadApp from '@/components/Home/DownloadApp/DownloadApp';
+import About from '@/components/Home/About/About';
+import CryptoList from '@/components/Home/CryptoList/CryptoList';
+import HowItWork from '@/components/Home/HowItWork/HowItWork';
+import MarketUpdateTable from '@/components/Home/MarketUpdateTable/MarketUpdateTable';
+import Slider from '@/components/Home/Slider/Slider';
+import Testimonials from '@/components/Home/Testimonials/Testimonials';
+import CallToAction from '@/components/Home/CallToAction/CallToAction';
 
 export default function HomePage() {
-  const t = useTranslations('HomePage');
-
   return (
-    <div>
-      <main>
-        <Image
-          src='/next.svg'
-          alt='Next.js logo'
-          width={180}
-          height={38}
-          priority
-        />
-        <button className='btn btn-primary'>sa</button>
-        <ol>
-          <li>
-            <h1>{t('title')}</h1>
-          </li>
-          <li>
-            <Link href='/about'>{t('about')}</Link>
-          </li>
-        </ol>
-      </main>
-    </div>
+    <>
+      <Slider />
+      <CryptoList />
+      <MarketUpdateTable />
+      <HowItWork />
+      <About />
+      <DownloadApp />
+      <Testimonials />
+      <CallToAction />
+    </>
   );
 }

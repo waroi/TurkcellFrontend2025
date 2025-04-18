@@ -9,5 +9,8 @@ export const routing = defineRouting({
       en: '/about',
       tr: '/hakkinda',
     },
+    '/register': { en: '/register', tr: '/kayit-ol' },
+    '/login': { en: '/login', tr: '/giris-yap' },
+    '/profile': { en: '/profile', tr: '/profil' },
   },
 });

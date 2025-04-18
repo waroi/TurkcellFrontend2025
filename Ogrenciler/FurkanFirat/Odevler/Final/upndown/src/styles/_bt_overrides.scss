@@ -1,87 +1,86 @@
-$primary: #6247ea;
-$dark-gray: #222222;
-$secondary: #ec9d5f;
-$light-gray: #777777;
-$pColor: #f9f9ff;
-$price: #fafcff;
-$solution: #ec9d5f;
-$footerbg: #04091e;
-$footersocial: #1e2235;
-$white: #fff;
-$input-border-color: #333;
-$input: #999999;
+@import './variables';
 $theme-colors: (
   'primary': $primary,
+  'on-surface': $on-surface,
   'secondary': $secondary,
-  'dark-gray': $dark-gray,
-  'light-gray': $light-gray,
-  'pColor': $pColor,
-  'price': $price,
-  'solution': $solution,
-  'footerbg': $footerbg,
-  'footersocial': $footersocial,
+  'surface': $surface,
+  'surface-main': $surface-main,
+  'interactive': $interactive,
+  'critical': $critical,
+  'warning': $warning,
+  'success': $success,
   'white': $white,
-  'input-border-color': $input-border-color,
-  'input': $input,
+  'highlight': $highlight,
+  dark: $dark,
+  dark2: $dark2,
+  dark-hover: $dark-hover,
 );
 // SPACING
 $spacer: 1rem;
 $spacers: (
   0: 0,
   //4px
-  1: $spacer * 0.25,
+  4: $spacer * 0.25,
   //8px
-  2: $spacer * 0.5,
+  8: $spacer * 0.5,
   //12px
-  3: $spacer * 0.75,
+  12: $spacer * 0.75,
   //16px
-  4: $spacer,
+  16: $spacer,
   //20px
-  5: $spacer * 1.25,
+  20: $spacer * 1.25,
   //24px
-  6: $spacer * 1.5,
-  //28px
-  7: $spacer * 1.75,
+  24: $spacer * 1.5,
   //32px
-  8: $spacer * 2,
-  //36px
-  9: $spacer * 2.25,
+  32: $spacer * 2,
   //40px
-  10: $spacer * 2.5,
+  40: $spacer * 2.5,
   //44px
-  11: $spacer * 2.75,
-  //46px
-  12: $spacer * 3,
-  //50px
-  13: $spacer * 3.25,
-  //54px
-  14: $spacer * 3.5,
-  //58px
-  15: $spacer * 3.75,
-  //80px
-  20: $spacer * 5,
-  //120px
-  30: $spacer * 7.5,
-  //240px
-  50: $spacer * 15,
+  44: $spacer * 2.75,
+  //48px
+  48: $spacer * 3,
+  //56px
+  56: $spacer * 3.5,
+  //64
+  64: $spacer * 4,
+  100: $spacer * 6.25,
 );
+
 // FONST SIZE
 $line-height-lg: 2.25;
 $font-size-base: 1rem;
 $font-sizes: (
   12: $font-size-base * 0.75,
   14: $font-size-base * 0.875,
-  18: $font-size-base * 1.125,
+  16: $font-size-base * 1,
   20: $font-size-base * 1.25,
+  24: $font-size-base * 1.5,
   36: $font-size-base * 2.25,
+  48: $font-size-base * 3,
+  64: $font-size-base * 4,
 );
 // NAVBAR
-$navbar-light-color: $dark-gray;
-$navbar-light-hover-color: $primary;
-$navbar-light-active-color: $primary;
-//card
-$card-border-color: #eeeeee;
-$card-border-radius: 10px;
-//price
-$price-item-h2-hover-color: $primary;
-$input-height-lg: 2.5rem;
+$navbar-padding-y: 0;
+$navbar-nav-link-padding-x: 0.75rem;
+$navbar-brand-font-size: $font-size-base * 1.5;
+$navbar-brand-height: 0;
+$navbar-brand-padding-y: 0;
+
+$navbar-light-color: $on-surface;
+
+$navbar-dark-color: $surface-main;
+$navbar-dark-hover-color: $surface-main;
+
+$navbar-dark-icon-color: $navbar-dark-color;
+
+// BUTTON
+
+$btn-border-radius: 1.5rem;
+$btn-border-radius-sm: 1rem;
+$btn-border-radius-lg: 1rem;
+$btn-primary-color: white;
+.btn-primary {
+  color: white !important;
+}
+
+$breadcrumb-divider-color: $secondary;
