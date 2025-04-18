@@ -1,0 +1,571 @@
+/* [project]/src/components/organisms/ProfileSections/UserProfile.module.scss.module.css [app-client] (css) */
+.UserProfile-module-scss-module__Jyf87a__userProfile {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.UserProfile-module-scss-module__Jyf87a__title {
+  margin-bottom: .5rem;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.UserProfile-module-scss-module__Jyf87a__desc {
+  margin-top: 40px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.UserProfile-module-scss-module__Jyf87a__desc.UserProfile-module-scss-module__Jyf87a__light {
+  color: var(--on-surface);
+}
+
+.UserProfile-module-scss-module__Jyf87a__desc.UserProfile-module-scss-module__Jyf87a__dark {
+  color: var(--surface);
+}
+
+.UserProfile-module-scss-module__Jyf87a__form {
+  flex-direction: column;
+  gap: 1rem;
+  display: flex;
+}
+
+.UserProfile-module-scss-module__Jyf87a__form label {
+  flex-direction: column;
+  font-weight: bold;
+  display: flex;
+}
+
+.UserProfile-module-scss-module__Jyf87a__form label.UserProfile-module-scss-module__Jyf87a__light {
+  color: var(--secondary);
+}
+
+.UserProfile-module-scss-module__Jyf87a__form label.UserProfile-module-scss-module__Jyf87a__dark {
+  color: var(--secondary2);
+}
+
+.UserProfile-module-scss-module__Jyf87a__form label input {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-top: .3rem;
+  padding: .5rem;
+}
+
+.UserProfile-module-scss-module__Jyf87a__form label input.UserProfile-module-scss-module__Jyf87a__light {
+  background-color: var(--white);
+  color: var(--on-surface);
+}
+
+.UserProfile-module-scss-module__Jyf87a__form label input.UserProfile-module-scss-module__Jyf87a__dark {
+  background-color: var(--dark2);
+  color: var(--surface);
+}
+
+.UserProfile-module-scss-module__Jyf87a__levelContainer {
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 2rem;
+  margin-top: 2rem;
+  display: flex;
+}
+
+.UserProfile-module-scss-module__Jyf87a__left, .UserProfile-module-scss-module__Jyf87a__right {
+  flex: 1;
+  min-width: 250px;
+}
+
+.UserProfile-module-scss-module__Jyf87a__subtitle {
+  color: var(--primary);
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+.UserProfile-module-scss-module__Jyf87a__levelBox {
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+.UserProfile-module-scss-module__Jyf87a__levelBox p {
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: .75rem;
+  display: flex;
+}
+
+.UserProfile-module-scss-module__Jyf87a__levelBox hr {
+  margin: 1rem 0;
+}
+
+.UserProfile-module-scss-module__Jyf87a__levelBox span {
+  color: var(--sec);
+}
+
+.UserProfile-module-scss-module__Jyf87a__updateBtn {
+  margin-top: 1rem;
+}
+
+
+/* [project]/src/components/atoms/Switch/Switch.module.scss.module.css [app-client] (css) */
+.Switch-module-scss-module__QQ0KAW__switch {
+  width: 40px;
+  height: 20px;
+  display: inline-block;
+  position: relative;
+}
+
+.Switch-module-scss-module__QQ0KAW__switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.Switch-module-scss-module__QQ0KAW__switch input:checked + .Switch-module-scss-module__QQ0KAW__slider {
+  background-color: var(--primary);
+}
+
+.Switch-module-scss-module__QQ0KAW__switch input:focus + .Switch-module-scss-module__QQ0KAW__slider {
+  box-shadow: 0 0 1px var(--primary);
+}
+
+.Switch-module-scss-module__QQ0KAW__switch input:checked + .Switch-module-scss-module__QQ0KAW__slider:before {
+  transform: translateX(20px);
+}
+
+.Switch-module-scss-module__QQ0KAW__switch input:disabled + .Switch-module-scss-module__QQ0KAW__slider {
+  background-color: var(--line);
+  cursor: not-allowed;
+}
+
+.Switch-module-scss-module__QQ0KAW__slider {
+  cursor: pointer;
+  background-color: var(--line);
+  border-radius: 32px;
+  transition: all .4s;
+  position: absolute;
+  inset: 0;
+}
+
+.Switch-module-scss-module__QQ0KAW__slider:before {
+  content: "";
+  border: 2px solid var(--line);
+  background-color: var(--primary);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  transition: all .4s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(0);
+}
+
+
+/* [project]/src/components/organisms/ProfileSections/Referrals.module.scss.module.css [app-client] (css) */
+.Referrals-module-scss-module__mugQfa__referrals {
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-left: 80px;
+  display: flex;
+}
+
+.Referrals-module-scss-module__mugQfa__title, .Referrals-module-scss-module__mugQfa__desc {
+  margin-bottom: 1rem;
+}
+
+.Referrals-module-scss-module__mugQfa__referralCodeContainer {
+  border: none;
+  border-radius: 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 20px;
+  display: flex;
+}
+
+.Referrals-module-scss-module__mugQfa__referralCodeContainer.Referrals-module-scss-module__mugQfa__light {
+  background-color: var(--line);
+}
+
+.Referrals-module-scss-module__mugQfa__referralCodeContainer.Referrals-module-scss-module__mugQfa__dark {
+  background-color: var(--dark2);
+}
+
+.Referrals-module-scss-module__mugQfa__referralCode {
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  display: flex;
+}
+
+.Referrals-module-scss-module__mugQfa__inputWithButton {
+  flex-direction: row;
+  align-items: center;
+  gap: .5rem;
+  display: flex;
+}
+
+.Referrals-module-scss-module__mugQfa__labelReferralLink, .Referrals-module-scss-module__mugQfa__labelReferralCode {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .3rem;
+  width: 100%;
+  display: flex;
+}
+
+.Referrals-module-scss-module__mugQfa__input {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 100%;
+  padding: .5rem;
+}
+
+.Referrals-module-scss-module__mugQfa__input.Referrals-module-scss-module__mugQfa__light {
+  background-color: var(--white);
+  color: var(--on-surface);
+}
+
+.Referrals-module-scss-module__mugQfa__input.Referrals-module-scss-module__mugQfa__dark {
+  background-color: var(--dark2);
+  color: var(--surface);
+}
+
+.Referrals-module-scss-module__mugQfa__copyBtn {
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  padding: .5rem 1rem;
+}
+
+.Referrals-module-scss-module__mugQfa__wallet {
+  align-self: flex-start;
+  margin-top: 1rem;
+}
+
+
+/* [project]/src/components/organisms/ProfileSections/ChangePassword.module.scss.module.css [app-client] (css) */
+.ChangePassword-module-scss-module__d_odCW__referrals {
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-left: 80px;
+  display: flex;
+}
+
+.ChangePassword-module-scss-module__d_odCW__title, .ChangePassword-module-scss-module__d_odCW__desc {
+  margin-bottom: 1rem;
+}
+
+.ChangePassword-module-scss-module__d_odCW__referralCodeContainer {
+  border: none;
+  border-radius: 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 20px;
+  display: flex;
+}
+
+.ChangePassword-module-scss-module__d_odCW__referralCodeContainer.ChangePassword-module-scss-module__d_odCW__light {
+  background-color: var(--line);
+}
+
+.ChangePassword-module-scss-module__d_odCW__referralCodeContainer.ChangePassword-module-scss-module__d_odCW__dark {
+  background-color: var(--dark2);
+}
+
+.ChangePassword-module-scss-module__d_odCW__referralCode {
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  display: flex;
+}
+
+.ChangePassword-module-scss-module__d_odCW__inputWithButton {
+  flex-direction: row;
+  align-items: center;
+  gap: .5rem;
+  display: flex;
+}
+
+.ChangePassword-module-scss-module__d_odCW__labelReferralLink, .ChangePassword-module-scss-module__d_odCW__labelReferralCode {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .3rem;
+  width: 100%;
+  display: flex;
+}
+
+.ChangePassword-module-scss-module__d_odCW__input {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 100%;
+  padding: .5rem;
+}
+
+.ChangePassword-module-scss-module__d_odCW__input.ChangePassword-module-scss-module__d_odCW__light {
+  background-color: var(--white);
+  color: var(--on-surface);
+}
+
+.ChangePassword-module-scss-module__d_odCW__input.ChangePassword-module-scss-module__d_odCW__dark {
+  background-color: var(--dark2);
+  color: var(--surface);
+}
+
+.ChangePassword-module-scss-module__d_odCW__copyBtn {
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  padding: .5rem 1rem;
+}
+
+.ChangePassword-module-scss-module__d_odCW__wallet {
+  align-self: flex-start;
+  margin-top: 1rem;
+}
+
+.ChangePassword-module-scss-module__d_odCW__desc2 {
+  color: var(--on-surface);
+  font-weight: 700;
+}
+
+.ChangePassword-module-scss-module__d_odCW__emailRow {
+  align-items: center;
+  gap: .5rem;
+  display: flex;
+}
+
+.ChangePassword-module-scss-module__d_odCW__mailIcon {
+  width: 20px;
+  height: 20px;
+}
+
+.ChangePassword-module-scss-module__d_odCW__title2 {
+  color: var(--success);
+  font-weight: 700;
+}
+
+.ChangePassword-module-scss-module__d_odCW__button {
+  background-color: var(--critical);
+}
+
+
+/* [project]/src/components/organisms/ProfileSections/Api.module.scss.module.css [app-client] (css) */
+.Api-module-scss-module__a_PJBG__referrals {
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-left: 80px;
+  display: flex;
+}
+
+.Api-module-scss-module__a_PJBG__title, .Api-module-scss-module__a_PJBG__desc {
+  margin-bottom: 1rem;
+}
+
+.Api-module-scss-module__a_PJBG__referralCodeContainer {
+  border: none;
+  border-radius: 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 20px;
+  display: flex;
+}
+
+.Api-module-scss-module__a_PJBG__referralCodeContainer.Api-module-scss-module__a_PJBG__light {
+  background-color: var(--line);
+}
+
+.Api-module-scss-module__a_PJBG__referralCodeContainer.Api-module-scss-module__a_PJBG__dark {
+  background-color: var(--dark2);
+}
+
+.Api-module-scss-module__a_PJBG__referralCode {
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  display: flex;
+}
+
+.Api-module-scss-module__a_PJBG__inputWithButton {
+  flex-direction: row;
+  align-items: center;
+  gap: .5rem;
+  display: flex;
+}
+
+.Api-module-scss-module__a_PJBG__labelReferralLink, .Api-module-scss-module__a_PJBG__labelReferralCode {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .3rem;
+  width: 100%;
+  display: flex;
+}
+
+.Api-module-scss-module__a_PJBG__input {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 100%;
+  padding: .5rem;
+}
+
+.Api-module-scss-module__a_PJBG__input.Api-module-scss-module__a_PJBG__light {
+  background-color: var(--white);
+  color: var(--on-surface);
+}
+
+.Api-module-scss-module__a_PJBG__input.Api-module-scss-module__a_PJBG__dark {
+  background-color: var(--dark2);
+  color: var(--surface);
+}
+
+.Api-module-scss-module__a_PJBG__copyBtn {
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  padding: .5rem 1rem;
+}
+
+.Api-module-scss-module__a_PJBG__wallet {
+  align-self: flex-start;
+  margin-top: 1rem;
+}
+
+.Api-module-scss-module__a_PJBG__desc2 {
+  color: var(--success);
+  font-weight: 700;
+}
+
+.Api-module-scss-module__a_PJBG__emailRow {
+  align-items: center;
+  gap: .5rem;
+  display: flex;
+}
+
+.Api-module-scss-module__a_PJBG__mailIcon {
+  width: 20px;
+  height: 20px;
+}
+
+
+/* [project]/src/components/organisms/ProfileSections/Auth.module.scss.module.css [app-client] (css) */
+.Auth-module-scss-module__LohdRq__referrals {
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-left: 80px;
+  display: flex;
+}
+
+.Auth-module-scss-module__LohdRq__title, .Auth-module-scss-module__LohdRq__desc {
+  margin-bottom: 1rem;
+}
+
+.Auth-module-scss-module__LohdRq__referralCodeContainer {
+  border: none;
+  border-radius: 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 20px;
+  display: flex;
+}
+
+.Auth-module-scss-module__LohdRq__referralCodeContainer.Auth-module-scss-module__LohdRq__light {
+  background-color: var(--line);
+}
+
+.Auth-module-scss-module__LohdRq__referralCodeContainer.Auth-module-scss-module__LohdRq__dark {
+  background-color: var(--dark2);
+}
+
+.Auth-module-scss-module__LohdRq__referralCode {
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  display: flex;
+}
+
+.Auth-module-scss-module__LohdRq__inputWithButton {
+  flex-direction: row;
+  align-items: center;
+  gap: .5rem;
+  display: flex;
+}
+
+.Auth-module-scss-module__LohdRq__labelReferralLink, .Auth-module-scss-module__LohdRq__labelReferralCode {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .3rem;
+  width: 100%;
+  display: flex;
+}
+
+.Auth-module-scss-module__LohdRq__input {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 100%;
+  padding: .5rem;
+}
+
+.Auth-module-scss-module__LohdRq__input.Auth-module-scss-module__LohdRq__light {
+  background-color: var(--white);
+  color: var(--on-surface);
+}
+
+.Auth-module-scss-module__LohdRq__input.Auth-module-scss-module__LohdRq__dark {
+  background-color: var(--dark2);
+  color: var(--surface);
+}
+
+.Auth-module-scss-module__LohdRq__copyBtn {
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  padding: .5rem 1rem;
+}
+
+.Auth-module-scss-module__LohdRq__wallet {
+  align-self: flex-start;
+  margin-top: 1rem;
+}
+
+.Auth-module-scss-module__LohdRq__desc2 {
+  color: var(--on-surface);
+  font-weight: 700;
+}
+
+.Auth-module-scss-module__LohdRq__emailRow {
+  align-items: center;
+  gap: .5rem;
+  display: flex;
+}
+
+.Auth-module-scss-module__LohdRq__mailIcon {
+  width: 20px;
+  height: 20px;
+}
+
+.Auth-module-scss-module__LohdRq__title2 {
+  color: var(--success);
+  font-weight: 700;
+}
+
+.Auth-module-scss-module__LohdRq__button {
+  background-color: var(--critical);
+}
+
+
+/*# sourceMappingURL=src_components_8bbab582._.css.map*/

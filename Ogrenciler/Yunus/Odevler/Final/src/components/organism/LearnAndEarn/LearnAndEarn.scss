@@ -1,0 +1,78 @@
+.learn-and-earn {
+    .title {
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 56px;
+        text-align: center;
+        letter-spacing: -0.02em;
+        text-transform: capitalize;
+        margin-bottom: 1rem;
+    }
+
+    .description {
+        color: var(--secondary-color);
+        margin-bottom: 3rem;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 28px;
+        text-align: center;
+        letter-spacing: -0.01em;
+    }
+
+    .tag {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 20px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 4px 12px !important;
+    }
+
+    .blog-title {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 32px;
+        margin-top: 16px;
+        margin-bottom: 20px;
+    }
+
+    .profile-writer {
+        width: 24px;
+        height: 24px;
+    }
+
+    .writer {
+        color: var(--secondary-color);
+        font-weight: 700;
+        font-size: 14px !important;
+        line-height: 24px;
+    }
+
+    .date {
+        color: var(--secondary-color);
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    .button-load {
+        border: 2px solid var(--marketcap-border-color) !important;
+        background-color: var(--marketcap-searchbar-background) !important;
+
+        .load-more-button {
+            color: var(--text-color);
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 16px;
+            background-color: var(--marketcap-searchbar-background) !important;
+
+
+            &:focus {
+                background-color: var(--marketcap-searchbar-background) !important;
+            }
+        }
+    }
+
+}

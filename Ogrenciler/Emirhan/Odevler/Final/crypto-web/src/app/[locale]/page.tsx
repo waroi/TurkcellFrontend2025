@@ -8,20 +8,8 @@ import CategoryButtons from "@/components/CategoryButtons";
 import Button from "@/components/Button";
 import Footer from "@/components/Footer";
 import { useTranslations } from "next-intl";
-
-type Coin = {
-  id: number;
-  name: string;
-  symbol: string;
-  quote: {
-    USD: {
-      price: number;
-      volume_change_24h: number;
-      market_cap: number;
-      percent_change_24h: number;
-    };
-  };
-};
+import Link from "next/link";
+import { Coin } from "@/types/types";
 
 async function getCryptoData(): Promise<Coin[]> {
   const res = await fetch("/api/coins");
@@ -52,7 +40,9 @@ export default function HomePage() {
                 {t("Buy & Sell Digital Assets In The Rocket")}
               </h1>
               <p className="muted-text">
-                {t("Coin rocket is the easiest, safest, and fastest way to buy & sell crypto asset exchange")}
+                {t(
+                  "Coin rocket is the easiest, safest, and fastest way to buy & sell crypto asset exchange"
+                )}
               </p>
               <div className="d-flex align-items-center my-3">
                 <Button className="btn-primary text-white fs-4">
@@ -116,35 +106,45 @@ export default function HomePage() {
         <div className="container pb-6 mt-10-sm mt-35-sm">
           <div className="d-flex justify-content-between align-items-center pt-6">
             <h1 className="market-update-title">{t("Market Update")}</h1>
-            <Button
-              className="btn-white border-bottom fs-4"
-              rounded="rounded-0"
+            <Link
+              href="/market"
+              className="btn rounded-0 btn-white border-bottom fs-4"
             >
               {t("See All Coins")}
-            </Button>
+            </Link>
           </div>
 
           <div className="d-flex align-items-center justify-content-between flex-wrap gap-2 my-3">
             <div className="d-flex align-items-center gap-2 flex-wrap">
-              {[t("Hot"), t("New"), "DeFi", "NFT"].map((category, index) => (
-                <Button
-                  key={category}
-                  px="px-3"
-                  py="py-1"
-                  className={`fs-4 ${
-                    index === 0
-                      ? "btn-primary text-white"
-                      : "btn-white text-muted"
-                  }`}
-                >
-                  {category}
-                </Button>
-              ))}
+              <Button
+                px="px-3"
+                py="py-1"
+                className="fs-4 btn-primary text-white"
+              >
+                {t("Hot")}
+              </Button>
+              <Button px="px-3" py="py-1" className="fs-4 btn-white text-muted">
+                {t("New")}
+              </Button>
+              <Button
+                px="px-3"
+                py="py-1"
+                className="fs-4 btn-white text-muted d-none d-md-flex"
+              >
+                DeFi
+              </Button>
+              <Button
+                px="px-3"
+                py="py-1"
+                className="fs-4 btn-white text-muted d-none d-md-flex"
+              >
+                NFT
+              </Button>
             </div>
             <input
               type="text"
               className="form-control border-start-0 w-25 rounded-pill"
-              placeholder="Search Coin"
+              placeholder={t("Search Coin")}
               aria-label="Search Coin"
             />
           </div>
@@ -153,7 +153,7 @@ export default function HomePage() {
             <table className="table align-middle table-borderless">
               <thead>
                 <tr>
-                  <th className="text-muted"></th>
+                  <th className="text-muted d-none d-md-table-cell"></th>
                   <th className="text-muted">#</th>
                   <th className="text-muted">{t("Name")}</th>
                   <th className="text-muted">{t("Last Price")}</th>
@@ -170,7 +170,7 @@ export default function HomePage() {
               <tbody>
                 {coins.map((coin, index) => (
                   <tr key={coin.id}>
-                    <td>
+                    <td className="d-none d-md-table-cell">
                       <Image
                         src="/star.svg"
                         width={20}
@@ -244,7 +244,9 @@ export default function HomePage() {
         <div className="container">
           <h2 className="fw-bold">{t("How It Work")}</h2>
           <p className="text-muted mb-5">
-            {t("Stacks is a production-ready library of stackable content blocks built in React Native")}
+            {t(
+              "Stacks is a production-ready library of stackable content blocks built in React Native"
+            )}
           </p>
           <div className="row">
             {[
@@ -281,7 +283,9 @@ export default function HomePage() {
                   </h6>
                   <h5 className="fw-semibold mb-2">{item.title}</h5>
                   <p className="text-muted small">
-                    {t("Stacks is a production-ready library of stackable content blocks built in React Native")}
+                    {t(
+                      "Stacks is a production-ready library of stackable content blocks built in React Native"
+                    )}
                   </p>
                 </div>
               </div>
@@ -321,11 +325,13 @@ export default function HomePage() {
                   {t("buy_and_sell_BTC")}
                 </h6>
                 <p className="text-muted small">
-                {t("experience_variety_of_trading_on_bitcoast")}
+                  {t("experience_variety_of_trading_on_bitcoast")}
                 </p>
               </div>
 
-              <Button className="btn-primary text-white">{t("Explore More")}</Button>
+              <Button className="btn-primary text-white">
+                {t("Explore More")}
+              </Button>
             </div>
           </div>
         </div>
@@ -340,7 +346,9 @@ export default function HomePage() {
                 {t("With Confident")}
               </h2>
               <p className="text-muted mb-4">
-                {t("With Cryptor Trade, you can be sure your trading skills are matched")}
+                {t(
+                  "With Cryptor Trade, you can be sure your trading skills are matched"
+                )}
               </p>
 
               <div className="mb-3">
@@ -359,7 +367,9 @@ export default function HomePage() {
                   {t("Take Control Of Your Wealth")}
                 </h6>
                 <p className="text-muted small">
-                  {t("Rest assured you (and only you) have access to your funds")}
+                  {t(
+                    "Rest assured you (and only you) have access to your funds"
+                  )}
                 </p>
               </div>
 
@@ -377,7 +387,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="col-md-6 position-relative text-center d-flex align-items-center justify-content-center phone-container">
+            <div className="col-md-6 position-relative text-center d-flex align-items-end justify-content-center phone-container">
               <img
                 src="/freemoney.png"
                 alt="Mobile App"
@@ -388,7 +398,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="testimonials-section container py-6 bg-white">
+      <section className="testimonials-section container py-6 px-3 bg-white">
         <div className="row align-items-center">
           <div className="col-md-6 mb-4 mb-md-0 pe-5">
             <h1 className="fw-bold">
@@ -400,7 +410,9 @@ export default function HomePage() {
               {t("Transform Your Ideas Into Reality With Finsweet")}
             </h6>
             <p className="muted-text mt-3">
-              {t("It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout")}
+              {t(
+                "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout"
+              )}
             </p>
             <div className="d-flex flex-column gap-3">
               <div className="d-flex gap-1">
@@ -434,9 +446,7 @@ export default function HomePage() {
 
           <div className="col-md-6 pe-5">
             <div className="testimonial-box p-4 rounded position-relative">
-              <p className="mt-3 fs-5 fw-bold">
-                {t("great_course_i_really")}
-              </p>
+              <p className="mt-3 fs-5 fw-bold">{t("great_course_i_really")}</p>
               <div className="d-flex align-items-center mt-4">
                 <Image
                   src="/pp.jpg"
@@ -447,7 +457,9 @@ export default function HomePage() {
                 />
                 <div>
                   <strong>Johnny Andro</strong>
-                  <div className="text-muted small">{t("Director, Company")}</div>
+                  <div className="text-muted small">
+                    {t("Director, Company")}
+                  </div>
                 </div>
               </div>
             </div>

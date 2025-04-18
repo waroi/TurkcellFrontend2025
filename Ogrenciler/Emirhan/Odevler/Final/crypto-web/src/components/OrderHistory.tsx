@@ -4,7 +4,7 @@ import React from "react";
 
 const OrderHistory = () => {
   const t = useTranslations();
-  const orders = [
+  const orderHistory = [
     {
       date: "24-04 14:40",
       pair: "BTC/ETH",
@@ -94,17 +94,21 @@ const OrderHistory = () => {
       <table className="table table-hover table-borderless align-middle text-center fs-18 fw-bold">
         <thead>
           <tr>
-            <th className="py-3 text-muted d-none d-md-table-cell">{t("Date")}</th>
+            <th className="py-3 text-muted d-none d-md-table-cell">
+              {t("Date")}
+            </th>
             <th className="py-3 text-muted">{t("Pair")}</th>
             <th className="py-3 text-muted">{t("Buy/Sell")}</th>
             <th className="py-3 text-muted">{t("Price")}</th>
-            <th className="py-3 text-muted d-none d-md-table-cell">{t("Executed")}</th>
+            <th className="py-3 text-muted d-none d-md-table-cell">
+              {t("Executed")}
+            </th>
             <th className="py-3 text-muted">{t("Total")}</th>
           </tr>
         </thead>
 
         <tbody>
-          {orders.map((order, index) => (
+          {orderHistory.map((order, index) => (
             <tr key={index}>
               <td className="d-none d-md-table-cell">{order.date}</td>
               <td>{order.pair}</td>

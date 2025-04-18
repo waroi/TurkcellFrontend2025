@@ -36,7 +36,7 @@ export default function PriceChangeContainer({
 }) {
 	return (
 		<Card className="border-0 h-100 card">
-			<Card.Header className="bg-white p-2">
+			<Card.Header className="p-2">
 				<Col className="d-flex align-items-center justify-content-between">
 					<Star />
 					<Button className="rounded-pill">BTC</Button>

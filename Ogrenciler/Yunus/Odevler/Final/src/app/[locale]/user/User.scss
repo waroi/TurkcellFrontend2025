@@ -1,0 +1,14 @@
+.page-top {
+    background-color: var(--hero-background-color);
+}
+
+.main-user-layout {
+    margin-top: 101px;
+
+
+    @media screen and (min-width: 1401px) {
+        .user-layout-nav {
+            border-right: 1px solid var(--marketcap-border-color);
+        }
+    }
+}

@@ -1,16 +1,8 @@
 import React from "react";
 import clsx from "clsx";
+import { ButtonProps } from "@/types/types";
 
-type ButtonProps = {
-  children: React.ReactNode;
-  className?: string;
-  onClick?: () => void;
-  type?: "button" | "submit" | "reset";
-  disabled?: boolean;
-  rounded?: "rounded-pill" | "rounded-0";
-  px?: string;
-  py?: string;
-};
+
 
 function Button({
   children,

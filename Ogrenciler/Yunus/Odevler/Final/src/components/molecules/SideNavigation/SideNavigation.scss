@@ -1,0 +1,67 @@
+.user-layout {
+    padding: 0 20px;
+
+    .user-infos {
+
+        .user-panel-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            .user-panel-item {
+                .user-panel-link {
+                    color: var(--text-color);
+                    display: flex;
+                    justify-content: start;
+                    align-items: center;
+                    padding: 13px 8px 13px 20px;
+                    text-align: start;
+                    font-weight: 600;
+                    font-size: 16px;
+
+                    &:hover {
+                        background-color: var(--primary-color-light);
+                        color: white;
+
+                        path {
+                            stroke: white;
+                        }
+
+                        .marketSvg {
+                            path {
+                                fill: white;
+                            }
+                        }
+                    }
+
+                    &.text-danger {
+                        &:hover {
+                            background-color: #D33535;
+                            color: white !important;
+
+                            svg,
+                            path {
+                                fill: white;
+                                stroke: white;
+                            }
+                        }
+                    }
+
+                    &.active {
+                        background-color: var(--primary-color-light);
+                        color: white;
+
+                        svg,
+                        path {
+                            stroke: white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .dark-bg-icon {
+        fill: var(--primary-color-light);
+    }
+}

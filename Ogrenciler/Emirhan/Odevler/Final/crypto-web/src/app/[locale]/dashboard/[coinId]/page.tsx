@@ -9,50 +9,56 @@ import OrderBook from "@/components/OrderBook";
 import OrderHistory from "@/components/OrderHistory";
 import RecentTrades from "@/components/RecentTrades";
 import Sidebar from "@/components/Sidebar";
+import { app } from "@/firebase/firebase";
 import useCryptoStore from "@/store/useCryptoStore";
+import { Candle, Coin } from "@/types/types";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { CandlestickData, UTCTimestamp } from "lightweight-charts";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
-
-type Candle = {
-  time: number;
-  open: number;
-  high: number;
-  low: number;
-  close: number;
-};
-
-function convertToCandlestick(data: Candle[]): CandlestickData[] {
-  return data.map((item) => ({
-    ...item,
-    time: item.time as UTCTimestamp,
-  }));
+async function getCryptoData(): Promise<Coin[]> {
+  const res = await fetch("/api/coins");
+  return await res.json();
 }
 function Page() {
   const params = useParams();
-
   const [candleData, setCandleData] = useState<Candle[]>([]);
   const wallet = useCryptoStore((state) => state.wallet);
   const setSingleCoin = useCryptoStore((state) => state.setSingleCoin);
-  const t = useTranslations()
-
+  const t = useTranslations();
+  const router = useRouter();
+  const { coins, setCoins } = useCryptoStore();
   const coinId = params.coinId as string;
+  const coin = useCryptoStore((state) => state.singleCoin);
 
   useEffect(() => {
-    const fetchCandleData = async () => {
-      try {
-        const res = await fetch("/api/candles");
-        const data = await res.json();
-        setCandleData(data);
-      } catch (error) {
-        console.error("Error fetching candle data:", error);
-      }
+    const fetchData = async () => {
+      const data = await getCryptoData();
+      setCoins(data);
     };
 
-    fetchCandleData();
-  }, []);
+    fetchData();
+  }, [setCoins]);
+
+  function convertToCandlestick(data: Candle[]): CandlestickData[] {
+    return data.map((item) => ({
+      ...item,
+      time: item.time as UTCTimestamp,
+    }));
+  }
+
+  useEffect(() => {
+    const auth = getAuth(app);
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (!user) {
+        router.push("/login");
+      }
+    });
+
+    return () => unsubscribe();
+  }, [router]);
 
   useEffect(() => {
     const fetchCoin = async () => {
@@ -70,6 +76,22 @@ function Page() {
     if (coinId) fetchCoin();
   }, [coinId, setSingleCoin]);
 
+  useEffect(() => {
+    const fetchCandleData = async () => {
+      if (!coin?.symbol) return;
+
+      try {
+        const res = await fetch(`/api/candles?fsym=${coin.symbol}`);
+        const data = await res.json();
+        setCandleData(data);
+      } catch (error) {
+        console.error("Error fetching candle data:", error);
+      }
+    };
+
+    fetchCandleData();
+  }, [coin?.symbol, setCandleData]);
+
   return (
     <div className="container-fluid mt-nav">
       <div className="row min-vh-100">
@@ -77,9 +99,9 @@ function Page() {
         <div className="col-2 d-none d-xl-flex"></div>
         <div className="col-12 col-xl-10 p-40 bg-secondary">
           <MobileSidebar />
-          <CryptoTicker />
+          <CryptoTicker coins={coins} />
           <div className="grid-layout mt-4 p-0">
-            <div className="bg-white rounded-2 pb-3 trading-market">
+            <div className="bg-white rounded-2 pb-3 trading-market d-flex flex-column">
               <div className="p-5 d-flex align-items-center flex-wrap justify-content-between">
                 <h1 className="fs-2 fw-bold">{t("Trading Market")}</h1>
                 <div className="d-flex align-items-start gap-2">
@@ -93,7 +115,9 @@ function Page() {
                   <div className="badge text-bg-light">Y</div>
                 </div>
               </div>
-              <Chart data={convertToCandlestick(candleData)} />
+              <div style={{ flexGrow: 1, minHeight: "0", padding: "0 1rem" }}>
+                <Chart data={convertToCandlestick(candleData)} />
+              </div>
             </div>
 
             <div className="bg-white rounded-2 order-history">

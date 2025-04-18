@@ -1,0 +1,69 @@
+/* [project]/src/app/register/register.module.scss.module.css [app-client] (css) */
+.register-module-scss-module__nDDM7W__registerPage {
+  margin: 0;
+}
+
+.register-module-scss-module__nDDM7W__registerHeader {
+  justify-content: space-between;
+  align-items: center;
+  height: 150px;
+  display: flex;
+}
+
+.register-module-scss-module__nDDM7W__registerHeader.register-module-scss-module__nDDM7W__light {
+  background-color: var(--surface);
+}
+
+.register-module-scss-module__nDDM7W__registerHeader.register-module-scss-module__nDDM7W__dark {
+  background-color: var(--dark);
+}
+
+.register-module-scss-module__nDDM7W__registerContainer {
+  box-sizing: border-box;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  display: flex;
+}
+
+.register-module-scss-module__nDDM7W__registerTitle {
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  display: flex;
+}
+
+.register-module-scss-module__nDDM7W__registerTitle h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.register-module-scss-module__nDDM7W__registerTitle h2.register-module-scss-module__nDDM7W__light {
+  color: var(--on-surface);
+}
+
+.register-module-scss-module__nDDM7W__registerTitle h2.register-module-scss-module__nDDM7W__dark {
+  color: var(--surface);
+}
+
+.register-module-scss-module__nDDM7W__registerTitle p {
+  opacity: .7;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.register-module-scss-module__nDDM7W__registerTitle p.register-module-scss-module__nDDM7W__light {
+  color: var(--secondary);
+}
+
+.register-module-scss-module__nDDM7W__registerTitle p.register-module-scss-module__nDDM7W__dark {
+  color: var(--secondary2);
+}
+
+/*# sourceMappingURL=src_app_register_register_module_scss_module_css_f9ee138c._.single.css.map*/

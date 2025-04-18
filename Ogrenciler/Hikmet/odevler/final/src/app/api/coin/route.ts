@@ -3,12 +3,6 @@ import { NextRequest, NextResponse } from "next/server";
 export async function GET(request: NextRequest) {
 	const id = request.nextUrl.searchParams.get("id");
 
-	// 1 = Bitcoin
-	// 1027 = XRP
-	// 52 = Ethereum
-	// 1839 = BNB
-	// 5426 = Cardano
-	// 2010 = Solana
 	const defaultIds = "1,1027,52,1839,5426,2010";
 
 	const idsToUse = id || defaultIds;

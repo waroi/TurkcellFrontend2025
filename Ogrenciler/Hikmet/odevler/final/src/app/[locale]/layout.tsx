@@ -1,3 +1,4 @@
+import ThemeApplier from "@/components/ThemeApplier";
 import { routing } from "@/i18n/routing";
 import type { Metadata } from "next";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
@@ -43,7 +44,8 @@ export default async function RootLayout({
 					crossOrigin="anonymous"
 				/>
 			</head>
-			<body className={dmSans.className}>
+			<body className={dmSans.className} >
+				<ThemeApplier/>
 				<NextIntlClientProvider>{children}</NextIntlClientProvider>
 				<script
 					src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"

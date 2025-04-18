@@ -2,8 +2,9 @@ import { NextResponse } from 'next/server';
 
 export const runtime = 'nodejs';
 
-export async function GET() {
-  const fsym = 'ETH';
+export async function GET(request: Request) {
+  const { searchParams } = new URL(request.url);
+  const fsym = searchParams.get('fsym') || 'BTC';
   const tsym = 'USDT';
   const limit = 100;
 

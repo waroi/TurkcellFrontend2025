@@ -1,0 +1,41 @@
+/* [project]/src/components/atoms/ButtonGroup/ButtonGroup.module.scss.module.css [app-client] (css) */
+.ButtonGroup-module-scss-module__p3yMNa__buttonContainer {
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+  max-width: 1140px;
+  margin: 20px auto;
+  padding: 0 15px;
+  display: flex;
+}
+
+.ButtonGroup-module-scss-module__p3yMNa__buttonContainer button {
+  cursor: pointer;
+  border: none;
+  border-radius: 24px;
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16px;
+}
+
+.ButtonGroup-module-scss-module__p3yMNa__buttonContainer button.ButtonGroup-module-scss-module__p3yMNa__activeButton {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.ButtonGroup-module-scss-module__p3yMNa__buttonContainer button.ButtonGroup-module-scss-module__p3yMNa__inactiveButton {
+  background: none;
+}
+
+.ButtonGroup-module-scss-module__p3yMNa__buttonContainer button.ButtonGroup-module-scss-module__p3yMNa__inactiveButton.ButtonGroup-module-scss-module__p3yMNa__light {
+  color: var(--on-surface);
+}
+
+.ButtonGroup-module-scss-module__p3yMNa__buttonContainer button.ButtonGroup-module-scss-module__p3yMNa__inactiveButton.ButtonGroup-module-scss-module__p3yMNa__dark {
+  color: var(--white);
+}
+
+/*# sourceMappingURL=src_components_atoms_ButtonGroup_ButtonGroup_module_scss_module_css_f9ee138c._.single.css.map*/

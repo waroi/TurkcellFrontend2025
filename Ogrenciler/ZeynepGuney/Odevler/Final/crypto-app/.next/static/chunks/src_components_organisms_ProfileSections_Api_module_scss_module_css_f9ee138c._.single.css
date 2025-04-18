@@ -1,0 +1,101 @@
+/* [project]/src/components/organisms/ProfileSections/Api.module.scss.module.css [app-client] (css) */
+.Api-module-scss-module__a_PJBG__referrals {
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-left: 80px;
+  display: flex;
+}
+
+.Api-module-scss-module__a_PJBG__title, .Api-module-scss-module__a_PJBG__desc {
+  margin-bottom: 1rem;
+}
+
+.Api-module-scss-module__a_PJBG__referralCodeContainer {
+  border: none;
+  border-radius: 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 20px;
+  display: flex;
+}
+
+.Api-module-scss-module__a_PJBG__referralCodeContainer.Api-module-scss-module__a_PJBG__light {
+  background-color: var(--line);
+}
+
+.Api-module-scss-module__a_PJBG__referralCodeContainer.Api-module-scss-module__a_PJBG__dark {
+  background-color: var(--dark2);
+}
+
+.Api-module-scss-module__a_PJBG__referralCode {
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  display: flex;
+}
+
+.Api-module-scss-module__a_PJBG__inputWithButton {
+  flex-direction: row;
+  align-items: center;
+  gap: .5rem;
+  display: flex;
+}
+
+.Api-module-scss-module__a_PJBG__labelReferralLink, .Api-module-scss-module__a_PJBG__labelReferralCode {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .3rem;
+  width: 100%;
+  display: flex;
+}
+
+.Api-module-scss-module__a_PJBG__input {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 100%;
+  padding: .5rem;
+}
+
+.Api-module-scss-module__a_PJBG__input.Api-module-scss-module__a_PJBG__light {
+  background-color: var(--white);
+  color: var(--on-surface);
+}
+
+.Api-module-scss-module__a_PJBG__input.Api-module-scss-module__a_PJBG__dark {
+  background-color: var(--dark2);
+  color: var(--surface);
+}
+
+.Api-module-scss-module__a_PJBG__copyBtn {
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  padding: .5rem 1rem;
+}
+
+.Api-module-scss-module__a_PJBG__wallet {
+  align-self: flex-start;
+  margin-top: 1rem;
+}
+
+.Api-module-scss-module__a_PJBG__desc2 {
+  color: var(--success);
+  font-weight: 700;
+}
+
+.Api-module-scss-module__a_PJBG__emailRow {
+  align-items: center;
+  gap: .5rem;
+  display: flex;
+}
+
+.Api-module-scss-module__a_PJBG__mailIcon {
+  width: 20px;
+  height: 20px;
+}
+
+/*# sourceMappingURL=src_components_organisms_ProfileSections_Api_module_scss_module_css_f9ee138c._.single.css.map*/

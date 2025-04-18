@@ -6,12 +6,15 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import Button from "@/components/Button";
 import { useRouter } from "next/navigation";
+import Footer from "@/components/Footer";
+import { useTranslations } from "next-intl";
 
 export default function Register() {
   const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
   const [successMsg, setSuccessMsg] = useState("");
   const router = useRouter();
+  const t = useTranslations();
 
   const formik = useFormik({
     initialValues: {
@@ -44,7 +47,7 @@ export default function Register() {
       setSuccessMsg("");
       try {
         setLoading(true);
-        const res = await registerUser(
+        await registerUser(
           values.email,
           values.password,
           values.nickname,
@@ -68,22 +71,26 @@ export default function Register() {
 
   return (
     <section className="auth-container">
-      <div className="auth-flag py-5 bg-secondary d-flex align-items-center justify-content-between">
-        <h1 className="fs-1 fw-bold">Register</h1>
-        <p className="text-muted fs-4">Home / Register</p>
+      <div className="auth-flag py-5 bg-secondary d-flex align-items-center justify-content-between d-none d-md-flex">
+        <h1 className="fs-1 fw-bold">{t("Register")}</h1>
+        <p className="text-muted fs-4">
+          {t("Home")} / {t("Register")}
+        </p>
       </div>
 
-      <div className="container w-25">
-        <h2 className="text-center">Register To Rockie</h2>
+      <div className="container auth-form-container auth-padding">
+        <h2 className="text-center">{t("Register To Rockie")}</h2>
         <p className="text-center text-muted fs-3">
-          Register in advance and enjoy the event benefits
+          {t("Register in advance and enjoy the event benefits")}
         </p>
 
         <div className="d-flex align-items-center justify-content-center gap-3 mb-3">
           <button className="btn btn-primary py-1 px-3 rounded-pill text-white fs-5">
             Email
           </button>
-          <button className="btn btn-white text-muted fs-5">Mobile</button>
+          <button className="btn btn-white text-muted fs-5">
+            {t("Mobile")}
+          </button>
         </div>
 
         <form className="registerForm" onSubmit={formik.handleSubmit}>
@@ -100,7 +107,7 @@ export default function Register() {
               <input
                 type="email"
                 className="form-control rounded-end-0 me-0 fs-18"
-                placeholder="Please fill in the email form."
+                placeholder={t("Please fill in the email form")}
                 name="email"
                 id="email"
                 value={formik.values.email}
@@ -112,7 +119,7 @@ export default function Register() {
                 type="button"
                 className="btn btn-primary rounded-start-0 ms-0 text-white fs-4 py-2"
               >
-                Authenticate
+                {t("Authenticate")}
               </button>
             </div>
             {formik.touched.email && formik.errors.email && (
@@ -122,12 +129,12 @@ export default function Register() {
 
           <div className="mb-2">
             <label htmlFor="password" className="fs-3">
-              Password
+              {t("Password")}
             </label>
             <input
               type="password"
               className="form-control fs-18"
-              placeholder="Please enter a password."
+              placeholder={t("Please enter a password")}
               name="password"
               id="password"
               value={formik.values.password}
@@ -143,7 +150,7 @@ export default function Register() {
             <input
               type="password"
               className="form-control fs-18"
-              placeholder="Please re-enter your password."
+              placeholder={t("Please re-enter your password")}
               name="confirmPassword"
               id="confirmPassword"
               value={formik.values.confirmPassword}
@@ -160,12 +167,12 @@ export default function Register() {
 
           <div className="mb-3">
             <label htmlFor="nickname" className="fs-3">
-              Nickname
+              {t("Nickname")}
             </label>
             <input
               type="text"
               className="form-control fs-18"
-              placeholder="Enter Nickname"
+              placeholder={t("Enter Nickname")}
               name="nickname"
               id="nickname"
               value={formik.values.nickname}
@@ -179,7 +186,7 @@ export default function Register() {
 
           <div className="mb-3">
             <label htmlFor="country" className="fs-3">
-              Country
+              {t("Country")}
             </label>
             <select
               className="form-select fs-18"
@@ -197,7 +204,7 @@ export default function Register() {
 
           <div className="mb-3">
             <label htmlFor="phone" className="fs-3">
-              Phone
+              {t("Phone")}
             </label>
             <input
               type="tel"
@@ -216,12 +223,12 @@ export default function Register() {
 
           <div className="mb-3">
             <label htmlFor="uidCode" className="fs-3">
-              UID Code
+              {t("UID Code")}
             </label>
             <input
               type="text"
               className="form-control fs-18"
-              placeholder="Please enter your invitation code."
+              placeholder={t("Please enter your invitation code")}
               name="uidCode"
               id="uidCode"
               value={formik.values.uidCode}
@@ -239,15 +246,16 @@ export default function Register() {
               className="btn-primary text-white fs-4"
               disabled={loading}
             >
-              {loading ? "Registering..." : "Pre-Registration"}
+              {loading ? t("pending") : t("Register")}
             </Button>
           </div>
 
           <p className="text-center fs-4 pb-5">
-            Already Have An Account? <a href="/login">Login</a>
+            {t("Already Have An Account?")} <a href="/login">{t("Login")}</a>
           </p>
         </form>
       </div>
+      <Footer />
     </section>
   );
 }

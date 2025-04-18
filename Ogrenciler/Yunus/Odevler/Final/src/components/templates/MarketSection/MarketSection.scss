@@ -1,0 +1,141 @@
+.marketcap-main {
+    .market-section-header {
+        a {
+            color: var(--text-color);
+            text-decoration: none;
+            border-bottom: 2px solid #E5E5E5;
+        }
+    }
+
+    .subHero-list {
+        list-style: none;
+        margin-top: 15px;
+        overflow: auto;
+        padding: 10px;
+
+        .subHero-item {
+            .subHero-link {
+                color: var(--sublink-color);
+                text-decoration: none;
+                font-size: 14px;
+                font-weight: 700;
+                padding: 10px;
+                border-radius: 24px;
+                height: 32px;
+                width: 32px;
+
+                &:hover {
+                    background-color: #3772FF;
+                    color: white;
+                }
+            }
+        }
+
+        @media screen and (max-width: 1400px) {
+            .subHero-list {
+                display: grid;
+                grid-template-columns: repeat(10, 1fr);
+                overflow: auto;
+            }
+        }
+    }
+
+    .marketcap-search-input {
+        span {
+            background-color: var(--marketcap-searchbar-background) !important;
+            border-radius: 24px;
+            padding: 10px 10px 10px 20px;
+            border: 2px solid var(--marketcap-border-color);
+        }
+
+        input {
+            border-top-left-radius: 0 !important;
+            border-bottom-left-radius: 0 !important;
+            background-color: var(--marketcap-searchbar-background) !important;
+            border: 2px solid var(--marketcap-border-color);
+            padding-top: 11px;
+            padding-bottom: 11px;
+            color: var(--secondary-color-light);
+
+            &:focus {
+                outline: 0;
+                box-shadow: none;
+                border-color: #E5E5E5;
+            }
+
+            &::placeholder {
+                color: #B1B5C3;
+            }
+
+        }
+    }
+
+
+    table {
+        tr {
+            border-color: var(--marketcap-border-color) !important;
+        }
+
+        thead {
+            th {
+                color: var(--text-color);
+                background-color: var(--background-color);
+                font-size: 18px;
+            }
+        }
+
+        tbody {
+            tr {
+                border-radius: 12px;
+
+                &:hover>* {
+                    background-color: var(--marketcap-row-hover);
+                }
+
+                &:hover {
+                    td {
+                        border-color: transparent;
+                    }
+
+                    td:first-child {
+                        border-top-left-radius: 12px;
+                        border-bottom-left-radius: 12px;
+                    }
+
+                    td:last-child {
+                        border-top-right-radius: 12px;
+                        border-bottom-right-radius: 12px;
+                    }
+
+                }
+
+                td,
+                th {
+                    padding-top: 30px;
+                    padding-bottom: 20px;
+                    background-color: var(--background-color);
+                    text-align: left;
+                    color: var(--text-color);
+
+                    .name_of_coin {
+                        font-size: 18px;
+                    }
+
+                    .short-name {
+                        font-size: .8rem;
+                    }
+
+                    .price {
+                        font-size: 18px;
+                    }
+
+                    .price_percentage {
+                        font-size: 18px;
+                    }
+                }
+            }
+
+
+        }
+    }
+}

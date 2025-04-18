@@ -1,0 +1,81 @@
+.market-big-table {
+    margin-top: 80px;
+    margin-right: 40px;
+    margin-left: 40px;
+    border-radius: 12px;
+    margin-bottom: 80px;
+
+    thead {
+        tr {
+            th {
+                &:first-child {
+                    text-align: center;
+                }
+
+                font-weight: 700;
+                font-size: 16px;
+                background-color: var(--background-color);
+                padding-top: 30px;
+                padding-bottom: 20px;
+                text-align: start;
+                border: 0;
+                color: var(--text-color) !important;
+                line-height: 24px;
+            }
+        }
+    }
+
+    tbody {
+        tr {
+            &:hover {
+                >* {
+                    background-color: var(--marketcap-row-hover);
+                }
+
+                &:hover {
+
+                    td:first-child {
+                        border-top-left-radius: 12px;
+                        border-bottom-left-radius: 12px;
+                    }
+
+                    td:last-child {
+                        border-top-right-radius: 12px;
+                        border-bottom-right-radius: 12px;
+                    }
+                }
+            }
+
+            td {
+                padding-top: 22px;
+                padding-bottom: 15px;
+                border: 0;
+                text-align: start;
+                background-color: var(--background-color);
+                color: var(--text-color) !important;
+
+                .short-name {
+                    font-size: 12px;
+                }
+            }
+        }
+
+        .name-of-coin {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 24px;
+            color: var(--text-color);
+
+        }
+    }
+
+    @media screen and (max-width: 1200px) {
+        margin: 0;
+
+        th {
+            padding: 0 !important;
+        }
+    }
+
+}

@@ -24,7 +24,7 @@ export default function VarolHoca() {
 				<Row className="g-4">
 					<Col lg={8} md={7} sm={12}>
 						<div className="border-0 h-50 card">
-							<div className="bg-white p-4 card-header">
+							<div className="p-4 card-header">
 								<h5 className="mb-0">{t("tradingMarket")}</h5>
 							</div>
 							<section className="p-4 h-100">

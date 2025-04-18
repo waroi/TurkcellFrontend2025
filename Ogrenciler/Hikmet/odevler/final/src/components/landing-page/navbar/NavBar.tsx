@@ -8,7 +8,9 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import Image from "next/image";
 
 import { logout } from "@/components/auth/actions";
+import { useThemeStore } from "@/store/themeStore";
 import { createClient } from "@/utils/supabase/client";
+import { Moon, Sun } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -24,6 +26,8 @@ export default function NavBar() {
 	const [user, setUser] = useState<any>(null);
 	const [loading, setLoading] = useState(true);
 
+	const { theme, toggleTheme } = useThemeStore();
+
 	useEffect(() => {
 		async function getUser() {
 			const supabase = createClient();
@@ -35,13 +39,14 @@ export default function NavBar() {
 		}
 
 		getUser();
-	}, []);
+	}, [pathname]);
 
 	const handleLogout = async () => {
 		await logout();
+		router.refresh();
 	};
 	return (
-		<Navbar expand="lg" className="sticky-top bg-light">
+		<Navbar expand="lg" className="sticky-top bg-body py-0" bg="light">
 			<Container fluid>
 				<Navbar.Brand href="/">
 					<Image
@@ -52,23 +57,23 @@ export default function NavBar() {
 						className="align-top"
 					/>
 				</Navbar.Brand>
-				<Navbar.Toggle aria-controls="basic-navbar-nav" />
-				<Navbar.Collapse id="basic-navbar-nav">
+				<Navbar.Toggle aria-controls="navbar" />
+				<Navbar.Collapse id="navbar">
 					<Nav className="me-auto">
-						<NavDropdown title={t("links.homePage")} id="basic-nav-dropdown">
+						<NavDropdown title={t("links.homePage")} id="navbar-dropdown">
 							<NavDropdown.Item href="/">Homepage</NavDropdown.Item>
 						</NavDropdown>
 
-						<Nav.Link href="#link">{t("links.buyCrypto")}</Nav.Link>
-						<Nav.Link href="#link">{t("links.markets")}</Nav.Link>
-						<Nav.Link href="#link">{t("links.exchange")}</Nav.Link>
-						<Nav.Link href="#link">{t("links.spot")}</Nav.Link>
-						<Nav.Link href="#link">BITUSDT</Nav.Link>
-						<NavDropdown title={t("links.pages.title")} id="basic-nav-dropdown">
+						<Nav.Link href="/market">{t("links.buyCrypto")}</Nav.Link>
+						<Nav.Link href="/market">{t("links.markets")}</Nav.Link>
+						<Nav.Link href="/">{t("links.exchange")}</Nav.Link>
+						<Nav.Link href="/">{t("links.spot")}</Nav.Link>
+						<Nav.Link href="/dashboard">BITUSDT</Nav.Link>
+						<NavDropdown title={t("links.pages.title")} id="navbar-dropdown">
 							<NavDropdown.Item href="#action/3.2">
 								{t("links.pages.home")}
 							</NavDropdown.Item>
-							<NavDropdown.Item href="#action/3.3">
+							<NavDropdown.Item href="/market">
 								{t("links.pages.portfolio")}
 							</NavDropdown.Item>
 							<NavDropdown.Item href="#action/3.4">
@@ -78,9 +83,7 @@ export default function NavBar() {
 					</Nav>
 
 					<Nav className="ms-auto">
-						<NavDropdown
-							title={t("links.assets.title")}
-							id="basic-nav-dropdown">
+						<NavDropdown title={t("links.assets.title")} id="navbar-dropdown">
 							<NavDropdown.Item href="#">
 								{t("links.assets.assetsAndMarkets")}
 							</NavDropdown.Item>
@@ -90,7 +93,7 @@ export default function NavBar() {
 						</NavDropdown>
 						<NavDropdown
 							title={t("links.ordersTrades.title")}
-							id="basic-nav-dropdown">
+							id="navbar-dropdown">
 							<NavDropdown.Item href="#">
 								{t("links.ordersTrades.orders")}
 							</NavDropdown.Item>
@@ -124,15 +127,18 @@ export default function NavBar() {
 							</NavDropdown.Item>
 						</NavDropdown>
 						<div className="d-lg-block mx-2 vr d-none"></div>
-						<Nav.Link href="/">
-							<Image
-								src="/sun.svg"
-								alt="User"
-								width={16}
-								height={16}
-								className="align-center"
-							/>
-						</Nav.Link>
+						<Button
+              variant="link"
+							onClick={toggleTheme} 
+							className="me-2 p-0 nav-link" 
+                            aria-label={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'} 
+                        >
+                            {theme === "light" ? (
+                                <Sun size={18} /> 
+                            ) : (
+                                <Moon size={18} /> 
+                            )}
+                        </Button>
 						<div className="d-lg-block mx-2 vr d-none"></div>
 						<Nav.Link href="#link">
 							<Image
@@ -159,13 +165,14 @@ export default function NavBar() {
 											className="rounded-circle object-fit-cover"
 										/>
 									}
-									id="user-dropdown">
+									id="user-dropdown"
+									align="end">
 									<NavDropdown.Item>
 										{user.user_metadata?.nickname || user.email}
 									</NavDropdown.Item>
 									<NavDropdown.Divider />
 									<NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
-									<NavDropdown.Item href="/settings">Settings</NavDropdown.Item>
+									<NavDropdown.Item href="/profile">Settings</NavDropdown.Item>
 									<NavDropdown.Divider />
 									<NavDropdown.Item onClick={handleLogout}>
 										Logout

@@ -1,0 +1,71 @@
+/* [project]/src/components/atoms/Sidebar/Sidebar.module.scss.module.css [app-client] (css) */
+.Sidebar-module-scss-module__TwTipW__navbar {
+  background-color: var(--background);
+  z-index: 1000;
+  flex-direction: column;
+  gap: 1rem;
+  width: 250px;
+  height: 100%;
+  margin-left: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 2px 0 5px #0000001a;
+}
+
+.Sidebar-module-scss-module__TwTipW__left {
+  border-right: 1px solid var(--border-color);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  width: 100%;
+  display: flex;
+}
+
+.Sidebar-module-scss-module__TwTipW__menuItem, .Sidebar-module-scss-module__TwTipW__menuItemActive {
+  cursor: pointer;
+  color: var(--on-surface);
+  border-radius: 5px;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  padding: 10px;
+  text-decoration: none;
+  transition: background-color .3s;
+  display: flex;
+}
+
+.Sidebar-module-scss-module__TwTipW__menuItemActive {
+  background-color: var(--primary);
+  color: #fff;
+  border-radius: 100px;
+}
+
+.Sidebar-module-scss-module__TwTipW__right {
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  display: flex;
+}
+
+.Sidebar-module-scss-module__TwTipW__dropdown {
+  position: relative;
+}
+
+.Sidebar-module-scss-module__TwTipW__logout {
+  cursor: pointer;
+  color: var(--critical);
+  background-color: #0000;
+  border: none;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding: 0;
+  display: flex;
+}
+
+/*# sourceMappingURL=src_components_atoms_Sidebar_Sidebar_module_scss_module_css_f9ee138c._.single.css.map*/
