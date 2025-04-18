@@ -1,4 +1,3 @@
-// CoinMarketCap API service
 
 export interface CoinMarketCapResponse {
   data: CoinMarketCapCoin[];
@@ -38,7 +37,7 @@ export async function getTopCryptos(limit: number = 10): Promise<CoinMarketCapCo
           headers: {
             'X-CMC_PRO_API_KEY': COINMARKETCAP_API_KEY!,
           },
-          next: { revalidate: 60 }, // Cache for 60 seconds
+          next: { revalidate: 60 }, 
         }
       );
       
