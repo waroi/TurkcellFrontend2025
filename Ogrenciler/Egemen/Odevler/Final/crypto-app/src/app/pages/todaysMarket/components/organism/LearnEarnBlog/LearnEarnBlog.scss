@@ -1,0 +1,86 @@
+.blog-wrapper {
+  margin-left: 13.3vw;
+  margin-right: 13.3vw;
+}
+
+.blog-heading {
+  margin-left: 22.55vw;
+  margin-right: 22.55vw;
+  margin-bottom: 48px;
+
+  .blog-header {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 56px;
+    letter-spacing: -0.02%;
+    color: #23262f;
+  }
+  .blog-subheader {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: -0.01%;
+    color: #777e90;
+  }
+}
+
+.media-container {
+  width: 450px;
+  height: 270px;
+  border-radius: 12px;
+  background-color: #b1b5c3;
+  .play-button {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #e5e5e5;
+  }
+}
+.frame-1163 {
+  margin-top: 1.67vw;
+  .learn-button {
+    width: 122px;
+    height: 28px;
+    border-radius: 4px;
+    background-color: #3772ff;
+    padding: 4px 12px 4px 12px;
+    margin-bottom: 0.83vw;
+    .button-text {
+      font-family: "DM Sans", sans-serif;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 20px;
+      letter-spacing: 10%;
+    }
+  }
+  .learn-earn {
+    font-size: 24px;
+    line-height: 32px;
+    font-size: 24px;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 700;
+  }
+}
+
+.green-circle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #58bd7d;
+}
+
+.floyd-name {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 24px;
+  color: #777e90;
+}
+
+.date {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: #777e90;
+}
