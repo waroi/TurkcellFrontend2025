@@ -1,0 +1,190 @@
+@import '../../styles/scss/variables';
+@import '../../styles/scss/mixins';
+
+.footer {
+   background-color: $bg-light;
+   border-top: 1px solid rgba($text-dark, 0.1);
+   padding: 4rem 0 2rem;
+   @include transition;
+
+   @include dark-mode {
+      background-color: $bg-dark;
+      border-top-color: rgba($text-light, 0.1);
+   }
+
+   &__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+
+      @include md {
+         grid-template-columns: repeat(2, 1fr);
+      }
+
+      @include lg {
+         grid-template-columns: repeat(4, 1fr);
+      }
+   }
+
+   &__logo {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+
+      &-icon {
+         width: 2rem;
+         height: 2rem;
+         fill: currentColor;
+         color: $primary-color;
+      }
+
+      &-text {
+         margin-left: 0.5rem;
+         font-size: 1.25rem;
+         font-weight: 700;
+         color: $text-dark;
+
+         @include dark-mode {
+            color: $text-light;
+         }
+      }
+   }
+
+   &__description {
+      font-size: 0.875rem;
+      color: $text-muted;
+      margin-bottom: 1.5rem;
+      max-width: 20rem;
+   }
+
+   &__social {
+      display: flex;
+      gap: 1rem;
+
+      &-link {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         width: 2.5rem;
+         height: 2.5rem;
+         color: $text-muted;
+         border-radius: 9999px;
+         @include transition;
+
+         &:hover {
+            color: $primary-color;
+            background-color: rgba($primary-color, 0.1);
+         }
+      }
+
+      &-icon {
+         width: 1.25rem;
+         height: 1.25rem;
+         fill: currentColor;
+      }
+   }
+
+   &__heading {
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: $text-dark;
+      margin-bottom: 1.25rem;
+
+      @include dark-mode {
+         color: $text-light;
+      }
+   }
+
+   &__links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+
+      &-item {
+         font-size: 0.875rem;
+         color: $text-muted;
+         @include transition;
+
+         &:hover {
+            color: $primary-color;
+         }
+      }
+   }
+
+   &__newsletter {
+      &-form {
+         display: flex;
+         margin-top: 1rem;
+      }
+
+      &-input-container {
+         position: relative;
+         flex: 1;
+      }
+
+      &-input {
+         width: 100%;
+         padding: 0.625rem 2.5rem 0.625rem 0.75rem;
+         border: 1px solid rgba($text-dark, 0.2);
+         border-radius: 0.375rem 0 0 0.375rem;
+         background-color: $bg-light;
+         color: $text-dark;
+         font-size: 0.875rem;
+
+         @include dark-mode {
+            background-color: $bg-dark;
+            color: $text-light;
+            border-color: rgba($text-light, 0.2);
+         }
+
+         &:focus {
+            outline: none;
+            border-color: $primary-color;
+         }
+      }
+
+      &-icon {
+         position: absolute;
+         top: 50%;
+         right: 0.75rem;
+         transform: translateY(-50%);
+         width: 1rem;
+         height: 1rem;
+         color: $text-muted;
+      }
+
+      &-button {
+         padding: 0.625rem 1rem;
+         background-color: $primary-color;
+         color: white;
+         border: none;
+         border-radius: 0 0.375rem 0.375rem 0;
+         font-size: 0.875rem;
+         font-weight: 500;
+         cursor: pointer;
+         @include transition;
+
+         &:hover {
+            background-color: darken($primary-color, 10%);
+         }
+      }
+   }
+
+   &__bottom {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba($text-dark, 0.1);
+
+      @include dark-mode {
+         border-top-color: rgba($text-light, 0.1);
+      }
+   }
+
+   &__copyright {
+      text-align: center;
+      font-size: 0.875rem;
+      color: $text-muted;
+   }
+}

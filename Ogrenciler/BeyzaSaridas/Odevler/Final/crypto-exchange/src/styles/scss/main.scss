@@ -1,0 +1,135 @@
+@import 'variables';
+@import 'mixins';
+@import 'reset';
+@import 'components';
+@import 'pages';
+
+body {
+   font-family: $font-family-sans;
+   font-size: $font-size-base;
+   color: $text-dark;
+   background-color: $bg-light;
+
+   &.dark {
+      color: $text-light;
+      background-color: $bg-dark;
+   }
+}
+
+.container {
+   width: 100%;
+   max-width: 1280px;
+   margin: 0 auto;
+   padding: 0 $spacing-4;
+
+   @include md {
+      padding: 0 $spacing-6;
+   }
+}
+
+a {
+   color: $primary-color;
+   text-decoration: none;
+   @include transition;
+
+   &:hover {
+      color: darken($primary-color, 10%);
+   }
+}
+
+.text-center {
+   text-align: center;
+}
+
+.text-left {
+   text-align: left;
+}
+
+.text-right {
+   text-align: right;
+}
+
+.mt-1 {
+   margin-top: $spacing-1;
+}
+
+.mt-2 {
+   margin-top: $spacing-2;
+}
+
+.mt-3 {
+   margin-top: $spacing-3;
+}
+
+.mt-4 {
+   margin-top: $spacing-4;
+}
+
+.mt-5 {
+   margin-top: $spacing-5;
+}
+
+.mb-1 {
+   margin-bottom: $spacing-1;
+}
+
+.mb-2 {
+   margin-bottom: $spacing-2;
+}
+
+.mb-3 {
+   margin-bottom: $spacing-3;
+}
+
+.mb-4 {
+   margin-bottom: $spacing-4;
+}
+
+.mb-5 {
+   margin-bottom: $spacing-5;
+}
+
+.ml-1 {
+   margin-left: $spacing-1;
+}
+
+.ml-2 {
+   margin-left: $spacing-2;
+}
+
+.ml-3 {
+   margin-left: $spacing-3;
+}
+
+.ml-4 {
+   margin-left: $spacing-4;
+}
+
+.ml-5 {
+   margin-left: $spacing-5;
+}
+
+.mr-1 {
+   margin-right: $spacing-1;
+}
+
+.mr-2 {
+   margin-right: $spacing-2;
+}
+
+.mr-3 {
+   margin-right: $spacing-3;
+}
+
+.mr-4 {
+   margin-right: $spacing-4;
+}
+
+.mr-5 {
+   margin-right: $spacing-5;
+}
+
+.mx-auto {
+   margin-left: auto;
+   margin-right: auto;
+}
