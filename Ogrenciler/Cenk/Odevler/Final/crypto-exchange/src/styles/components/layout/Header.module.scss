@@ -1,26 +1,28 @@
 .header {
   display: flex;
   justify-content: space-between;
-  align-items: stretch;
-  height: 50px;
-  padding: 0 32px;
+  align-items: center;
+  height: 60px;
+  padding: 0 24px;
   background-color: var(--color-surface-main);
+  position: relative;
+  z-index: 1000;
 }
 
 html[data-theme='dark'] .header {
-  background-color: var(--color-on-surface);
+  background-color: var(--color-surface-main);
 }
 
 .left {
   display: flex;
-  align-items: stretch;
+  align-items: center;
 }
 
 .logo {
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 0 16px;
+  padding: 0 8px;
 
   .logoText {
     font-size: 18px;
@@ -37,8 +39,7 @@ html[data-theme='dark'] .logoText {
   display: flex;
   align-items: center;
   gap: 16px;
-  padding: 0 24px;
-  height: 100%;
+  padding: 0 16px;
 
   .navItem {
     font-size: 14px;
@@ -98,7 +99,7 @@ html[data-theme='dark'] .right .navItem {
   padding: 6px;
   display: flex;
   align-items: center;
-  filter: invert(0); 
+  filter: invert(0);
 
   &:hover {
     opacity: 0.8;
@@ -106,7 +107,7 @@ html[data-theme='dark'] .right .navItem {
 }
 
 html[data-theme='dark'] .iconBtn {
-  filter: invert(1); 
+  filter: invert(1);
 }
 
 .walletBtn {
@@ -133,3 +134,58 @@ html[data-theme='dark'] .walletBtn {
 .avatar {
   border-radius: 50%;
 }
+
+.mobileMenuBtn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  margin-left: 12px;
+}
+
+.mobileMenu {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  background-color: var(--color-surface-main);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  z-index: 999;
+}
+
+html[data-theme='dark'] .mobileMenu {
+  background-color: #1e1e1e;
+}
+
+@media (max-width: 1024px) {
+  .menuWrapper,
+  .right {
+    display: none;
+  }
+
+  .mobileMenuBtn {
+    display: flex;
+    align-items: center;
+  }
+
+  .header {
+    padding: 0 16px;
+  }
+
+  .logoText {
+    font-size: 16px;
+  }
+
+  .menuWrapper {
+    gap: 12px;
+  }
+
+  .right {
+    gap: 12px;
+  }
+}
+

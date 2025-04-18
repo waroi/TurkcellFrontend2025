@@ -1,16 +1,12 @@
-import React from 'react';
-import Header from '@/components/layout/Header'; 
+import Layout from '@/components/layout/Layout';
+import Hero from '@/components/sections/Hero';
+import CryptoList from '@/components/sections/CryptoList';
 
-const HomePage = () => {
+export default function HomePage() {
   return (
-    <>
-      <Header />
-      <main style={{ padding: '24px' }}>
-        <h1>Welcome to Crypto Exchange</h1>
-        <p>This is the homepage content.</p>
-      </main>
-    </>
+    <Layout>
+        <Hero />
+              <CryptoList />
+    </Layout>
   );
-};
-
-export default HomePage;
+}

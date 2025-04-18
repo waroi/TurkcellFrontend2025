@@ -3,6 +3,7 @@ import Image from 'next/image';
 import styles from '@/styles/components/layout/Header.module.scss';
 import ThemeToggle from '@/components/ui/ThemeToggle';
 import LanguageSwitcher from '@/components/ui/LanguageSwitcher';
+import { useState } from 'react';
 
 const navLeftItems = [
   { label: 'Homepage', dropdown: true },
@@ -21,6 +22,8 @@ const navRightItems = [
 ];
 
 const Header = () => {
+  const [mobileOpen, setMobileOpen] = useState(false);
+
   return (
     <header className={styles.header}>
       <div className={styles.left}>
@@ -61,6 +64,30 @@ const Header = () => {
           height={32}
         />
       </div>
+
+      <button className={styles.mobileMenuBtn} onClick={() => setMobileOpen(!mobileOpen)}>
+        <Image src="/icons/menu.svg" alt="Menu" width={24} height={24} />
+      </button>
+
+      {mobileOpen && (
+        <div className={styles.mobileMenu}>
+          {navLeftItems.map((item, i) => (
+            <div key={i} className={styles.navItem}>
+              {item.label}
+              {item.icon && <span>💧</span>}
+              {item.dropdown && <span className={styles.dropIcon}>▼</span>}
+            </div>
+          ))}
+          {navRightItems.map((item, i) => (
+            <div key={i} className={styles.navItem}>
+              {item.label}
+              {item.dropdown && <span className={styles.dropIcon}>▼</span>}
+            </div>
+          ))}
+          <LanguageSwitcher />
+          <ThemeToggle />
+        </div>
+      )}
     </header>
   );
 };
