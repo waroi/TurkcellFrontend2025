@@ -1,0 +1,16 @@
+@import "./bt_overrides";
+@import "../components/organisms/Footer/Footer.module.scss";
+@import "../components/organisms/CreateAccount/CreateAccount.module.scss";
+@import "../components/organisms/MarketBanner/MarketBanner.module.scss";
+@import "./theme";
+@import "bootstrap/scss/bootstrap";
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.card {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+}

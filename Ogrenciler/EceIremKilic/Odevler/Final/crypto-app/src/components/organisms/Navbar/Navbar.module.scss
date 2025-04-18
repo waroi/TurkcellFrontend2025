@@ -1,0 +1,12 @@
+.navbar-custom {
+  background-color: var(--navbar-bg) !important;
+  color: var(--text-color);
+
+  .nav-link {
+    color: var(--text-color) !important;
+
+    &:hover {
+      color: var(--primary-color) !important;
+    }
+  }
+}
