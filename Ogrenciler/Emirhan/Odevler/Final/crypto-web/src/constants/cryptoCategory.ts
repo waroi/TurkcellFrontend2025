@@ -12,7 +12,6 @@ export const categories = [
   'Makersplace',
 ];
 
-
 export const firstMenuItems = [
   {
     name: "Home",
