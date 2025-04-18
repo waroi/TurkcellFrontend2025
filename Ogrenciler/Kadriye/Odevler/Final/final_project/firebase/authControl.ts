@@ -4,17 +4,17 @@ import { doc, setDoc } from "firebase/firestore";
 
 
 export function registerFirebase(formData: any) {
-    const email = formData.get('Email/ID');
-    const password = formData.get('Password');
-    const password2 = formData.get('Password2');
+    const email = formData.get('email');
+    const password = formData.get('password');
+    const password2 = formData.get('password2');
 
     if (password !== password2) {
         console.error("Passwords do not match");
         return;
     }
-    const nickname = formData.get('NickName')
+    const nickname = formData.get('nickName')
     const country = formData.get('country')
-    const phone = formData.get('Phone')
+    const phone = formData.get('phone')
 
     createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
@@ -35,12 +35,11 @@ export function registerFirebase(formData: any) {
 }
 
 export async function loginFirebase(formData: any) {
-    const email = formData.get('Email/ID');
-    const password = formData.get('Password');
+    const email = formData.get('email');
+    const password = formData.get('password');
     try {
         const userCredential = await signInWithEmailAndPassword(auth, email, password);
         const user = userCredential.user;
-        console.log("login başarılı");
         return user;
     } catch (error: any) {
         console.error(`Error: ${error.code}, ${error.message}`);

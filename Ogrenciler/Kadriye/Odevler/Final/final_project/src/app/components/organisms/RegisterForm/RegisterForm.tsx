@@ -27,25 +27,25 @@ const RegisterForm = async () => {
                         </div>
                         <Form action={register}>
                             <div >
-                                <Label id={t('email')} title={t('email')} ></Label>
+                                <Label id={'email'} title={t('email')} ></Label>
                                 <div className="email">
-                                    <Input id={t('email')} placeholder={t('email_placeholder')} type="email" />
+                                    <Input id={'email'} placeholder={t('email_placeholder')} type="email" />
                                     <ButtonItem text={t('btn_text')} classProps="primary auth" />
                                 </div>
                             </div>
                             <div>
-                                <Label id={t('password') + "2"} title={t('password')} ></Label>
+                                <Label id={'password' + "2"} title={t('password')} ></Label>
                                 <div>
-                                    <Input id={t('password')} placeholder={t('password_placeholder_1')} type="password" />
-                                    <Input id={t('password') + "2"} placeholder={t('password_placeholder_2')} type="password" />
+                                    <Input id={'password'} placeholder={t('password_placeholder_1')} type="password" />
+                                    <Input id={'password2'} placeholder={t('password_placeholder_2')} type="password" />
                                 </div>
                             </div>
                             <div>
-                                <Label id={t('nick_name')} title={t('nick_name')} ></Label>
-                                <Input id={t('nick_name')} placeholder={t('nick_name_placeholder')} />
+                                <Label id={'nick_name'} title={t('nick_name')} ></Label>
+                                <Input id={'nick_name'} placeholder={t('nick_name_placeholder')} />
                             </div>
                             <div>
-                                <Label id={t('country.0')} title={t('country.0')} ></Label>
+                                <Label id={'country'} title={t('country.0')} ></Label>
                                 <select name="country" id="country">
                                     <option value={t('country.1')}>{t('country.1')}</option>
                                     <option value={t('country.2')}>{t('country.2')}</option>
@@ -53,8 +53,8 @@ const RegisterForm = async () => {
                                 </select>
                             </div>
                             <div>
-                                <Label id={t('phone')} title={t('phone')} ></Label>
-                                <Input id={t('phone')} placeholder={t('phone_placeholder')} type="number" />
+                                <Label id={'phone'} title={t('phone')} ></Label>
+                                <Input id={'phone'} placeholder={t('phone_placeholder')} type="number" />
                             </div>
                             <div>
                                 <Label id={t('UID')} title={t('UID')} ></Label>

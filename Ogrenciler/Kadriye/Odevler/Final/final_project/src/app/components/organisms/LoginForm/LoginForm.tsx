@@ -26,16 +26,16 @@ async function LoginForm() {
                     </div>
                     <Form action={login}>
                         <div >
-                            <Label id={t('email')} title={t('email')} ></Label>
-                            <Input id={t('email')} placeholder={t('email_placeholder')} type="email" />
+                            <Label id={'email'} title={t('email')} ></Label>
+                            <Input id={'email'} placeholder={t('email_placeholder')} type="email" />
                         </div>
                         <div>
-                            <Label id={t('password')} title={t('password')} ></Label>
-                            <Input id={t('password')} placeholder={t('password_placeholder')} type="password" />
+                            <Label id={'password'} title={t('password')} ></Label>
+                            <Input id={'password'} placeholder={t('password_placeholder')} type="password" />
                         </div>
                         <div className="remember-container">
                             <div className="remember">
-                                <Input id={"remember"} placeholder="" type="checkbox" />
+                                <Input id={"remember"} placeholder="" type="checkbox" required={false} />
                                 <Label id={"remember"} title={t('remember')} ></Label>
                             </div>
                             <Link href="/" >{t('forgot')}</Link>

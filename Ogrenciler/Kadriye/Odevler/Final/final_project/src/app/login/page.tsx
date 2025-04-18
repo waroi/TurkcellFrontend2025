@@ -3,6 +3,7 @@ import LoginPage from "../components/pages/LoginPage/LoginPage"
 
 const page = () => {
     const t = useTranslations('HomePage');
+
     return (
         <LoginPage />
     )

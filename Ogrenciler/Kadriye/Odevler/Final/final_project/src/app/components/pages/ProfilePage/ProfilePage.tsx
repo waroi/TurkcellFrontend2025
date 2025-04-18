@@ -1,6 +1,7 @@
 import ProfileTemplate from "../../templates/ProfileTemplate/ProfileTemplate"
 
-const ProfilePage = async () => {
+const ProfilePage = () => {
+
     return (
         <ProfileTemplate />
     )

@@ -3,14 +3,16 @@ import ImageItem from "../../atoms/ImageItem/ImageItem"
 import "./style.scss"
 import H4 from "../../atoms/H4/H4"
 import ButtonItem from "../../atoms/ButtonItem/ButtonItem"
+import { getTranslations } from "next-intl/server"
 
 const UserItem = async () => {
     const cookieStore = await cookies()
     const userData = cookieStore.get('current_user')
-    if (userData == null) {
+    if (userData?.value == null || userData?.value == "") {
         return
     }
     const user = JSON.parse(userData.value);
+    const t = await getTranslations('Profile.side_menu');
     return (
         <div className="user-item">
             <div className="top">
@@ -19,12 +21,12 @@ const UserItem = async () => {
                 <span>{user.email}</span>
             </div>
             <div className="bottom">
-                <ButtonItem text="User Profile" />
-                <ButtonItem text="User Profile" />
-                <ButtonItem text="User Profile" />
-                <ButtonItem text="User Profile" />
-                <ButtonItem text="User Profile" />
-                <ButtonItem text="User Profile" classProps="primary" />
+                <ButtonItem text={t('user')} />
+                <ButtonItem text={t('ref')} />
+                <ButtonItem text={t('api')} />
+                <ButtonItem text={t('history')} />
+                <ButtonItem text={t('2fa')} />
+                <ButtonItem text={t('password')} classProps="primary" />
             </div>
         </div>
     )

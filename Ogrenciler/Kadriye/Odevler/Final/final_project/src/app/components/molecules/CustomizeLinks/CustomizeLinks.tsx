@@ -7,6 +7,7 @@ import SelectItem from "../../atoms/SelectItem/SelectItem"
 import { cookies } from "next/headers"
 import ThemeToggleButton from "../../atoms/ButtonItem/ThemeToggleButton"
 import Link from "next/link"
+import { logout } from "@/app/posts/actions"
 
 const CustomizeLinks = async () => {
     const t = useTranslations('Navbar.right');
@@ -23,8 +24,10 @@ const CustomizeLinks = async () => {
             <div className="user-menu">
                 <ImageItem src="/assets/images/avatar.svg" width={30} height={30} alt="avatar" classProp="user-image" />
                 <div className="menu">
-                    <Link href="register">Register</Link>
-                    <Link href="profile">Profile</Link>
+                    <Link href="/register">{t('register')}</Link>
+                    <Link href="/login">{t('login')}</Link>
+                    <Link href="/profile">{t('profile')}</Link>
+                    <ButtonItem classProps="btn" text={t('logout')} event={logout} />
                 </div>
             </div>
         </div>

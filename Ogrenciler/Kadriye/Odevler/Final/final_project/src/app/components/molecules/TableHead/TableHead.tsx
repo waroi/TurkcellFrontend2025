@@ -1,14 +1,16 @@
+import { useTranslations } from "next-intl";
 import "./style.scss"
 const TableHead = () => {
+    const t = useTranslations('TableHead');
     return (
         <tr className="table-head">
             <th></th>
             <th>#</th>
-            <th>Name</th>
-            <th>Last Price</th>
+            <th>{t('name')}</th>
+            <th>{t('price')} </th>
             <th>24h %</th>
-            <th>Market Cap</th>
-            <th>Last 7 Days</th>
+            <th>{t('cap')} </th>
+            <th>{t('days')} </th>
             <th></th>
         </tr>
     )
