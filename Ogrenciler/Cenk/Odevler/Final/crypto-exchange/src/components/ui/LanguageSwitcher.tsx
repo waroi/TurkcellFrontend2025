@@ -13,7 +13,6 @@ const LanguageSwitcher = () => {
   };
 
   return (
-<<<<<<< Updated upstream
 <button
   onClick={toggleLanguage}
   style={{
@@ -28,20 +27,6 @@ const LanguageSwitcher = () => {
   {lang.toUpperCase()}
 </button>
 
-=======
-    <button
-      onClick={toggleLanguage}
-      style={{
-        background: 'none',
-        border: 'none',
-        cursor: 'pointer',
-        fontWeight: 600,
-        padding: '8px',
-      }}
-    >
-      {lang.toUpperCase()}
-    </button>
->>>>>>> Stashed changes
   );
 };
 
