@@ -1,0 +1,15 @@
+.section-title {
+  background-color: var(--color-bg-section);
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h2 {
+      font-size: 40px;
+      margin: 56px 0;
+    }
+    a {
+      color: var(--color-secondary);
+    }
+  }
+}

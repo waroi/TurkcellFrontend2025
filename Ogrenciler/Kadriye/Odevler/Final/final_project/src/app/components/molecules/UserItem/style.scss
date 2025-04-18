@@ -1,0 +1,31 @@
+.user-item {
+  max-width: 260px;
+  display: flex;
+  flex-direction: column;
+  .top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    h4 {
+      margin: 12px 0 4px 0;
+    }
+  }
+  .bottom {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    button {
+      padding: 16px 8px;
+      margin-bottom: 8px;
+      background: none;
+      text-align: left;
+      font-weight: 600;
+      &.primary {
+        background-color: var(--color-primary);
+        color: var(--color-white);
+        margin: 0;
+      }
+    }
+  }
+}

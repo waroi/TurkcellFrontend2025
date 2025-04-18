@@ -1,0 +1,24 @@
+.custom-select-wrapper {
+  position: relative;
+  display: inline-block;
+  padding: 16px;
+  padding-right: 28px;
+}
+
+select {
+  appearance: none; /* Varsayılan ikonu kaldırır */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: none;
+  background-color: transparent;
+}
+
+.custom-icon {
+  position: absolute;
+  pointer-events: none;
+  top: 50%;
+  right: 14px;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 8px;
+}
