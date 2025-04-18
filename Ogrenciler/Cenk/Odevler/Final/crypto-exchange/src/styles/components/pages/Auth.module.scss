@@ -1,0 +1,54 @@
+.authWrapper {
+  max-width: 400px;
+  margin: 64px auto;
+  background-color: var(--color-surface-main);
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+
+  h2 {
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 20px;
+  }
+}
+
+.authForm {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  label {
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  input {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+  }
+
+  button {
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: #2756f4;
+    }
+  }
+}
+
+.error {
+  color: #e74c3c;
+  font-size: 12px;
+  margin-top: -8px;
+  margin-bottom: 4px;
+}
