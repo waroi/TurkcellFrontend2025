@@ -9,8 +9,9 @@ import Image from "next/image";
 
 import { logout } from "@/components/auth/actions";
 import { useSidebarStore } from "@/store/sidebar-store";
+import { useThemeStore } from "@/store/themeStore";
 import { createClient } from "@/utils/supabase/client";
-import { Menu, Search } from "lucide-react";
+import { Menu, Moon, Search, Sun } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -25,6 +26,8 @@ export default function DashboardNavBar() {
 	const pathname = usePathname();
 	const [user, setUser] = useState<any>(null);
 	const [loading, setLoading] = useState(true);
+
+		const { theme, toggleTheme } = useThemeStore();
 
 	useEffect(() => {
 		async function getUser() {
@@ -44,7 +47,7 @@ export default function DashboardNavBar() {
 		await logout();
 	};
 	return (
-		<Navbar expand="lg" className="sticky-top bg-light">
+		<Navbar expand="lg" className="sticky-top bg-body" bg="light">
 			<Container fluid>
 				<Button
 					variant="link"
@@ -89,15 +92,18 @@ export default function DashboardNavBar() {
 							</NavDropdown.Item>
 						</NavDropdown>
 						<div className="d-lg-block mx-2 vr d-none"></div>
-						<Nav.Link href="/">
-							<Image
-								src="/sun.svg"
-								alt="User"
-								width={16}
-								height={16}
-								className="align-center"
-							/>
-						</Nav.Link>
+						<Button
+              variant="link"
+							onClick={toggleTheme} 
+							className="me-2 p-0 nav-link" 
+                            aria-label={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'} 
+                        >
+                            {theme === "light" ? (
+                                <Sun size={18} /> 
+                            ) : (
+                                <Moon size={18} /> 
+                            )}
+                        </Button>
 						<div className="d-lg-block mx-2 vr d-none"></div>
 						<Nav.Link href="#link">
 							<Image

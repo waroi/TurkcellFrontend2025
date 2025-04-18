@@ -1,0 +1,26 @@
+.subhero-card-column {
+    .card-sub {
+        border-radius: 12px;
+        transition: all .1s ease-in-out;
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem;
+        background-color: var(--subhero-background-color);
+        user-select: none;
+
+        &:hover {
+            box-shadow: 0 .5rem 1rem #00000026;
+            background-color: var(--subhero-card-hover);
+        }
+
+    }
+
+    .coin-name {
+        color: var(--text-color);
+        font-weight: bold;
+    }
+
+    .coin-short {
+        font-weight: lighter;
+        font-size: 14px;
+    }
+}

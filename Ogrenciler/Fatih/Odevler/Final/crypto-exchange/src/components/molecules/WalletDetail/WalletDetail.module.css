@@ -1,0 +1,32 @@
+.detailWrapper {
+  background-color: var(--surface);
+  color: var(--on-surface);
+  border: 1px solid var(--border-color, #e5e7eb);
+}
+
+.detailWrapper .btn {
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+.detailWrapper .btn-outline-primary {
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  background-color: transparent;
+}
+
+.detailWrapper .btn-outline-primary:hover {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+.detailWrapper .bg-light {
+  background-color: var(--muted);
+  border-radius: 0.75rem;
+}
+
+.detailWrapper .badge {
+  font-size: 0.75rem;
+  padding: 0.35rem 0.6rem;
+  border-radius: 0.5rem;
+}

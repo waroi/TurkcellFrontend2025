@@ -1,8 +1,6 @@
 import { orders } from "@/constants/cryptoCategory";
 import React from "react";
 
-
-
 const OrderBook = () => {
   const lastPrice = 0.020367;
   const usd = 148.65;

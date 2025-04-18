@@ -1,0 +1,18 @@
+.title {
+  font-weight: 600;
+  color: var(--on-surface);
+  margin-bottom: 0.5rem;
+}
+
+.nav {
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.nav li {
+  font-size: 0.875rem;
+  color: var(--secondary);
+  margin-bottom: 0.25rem;
+  list-style: none;
+}

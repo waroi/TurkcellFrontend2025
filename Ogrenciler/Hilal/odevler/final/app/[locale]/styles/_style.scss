@@ -1,0 +1,121 @@
+$decorative-color-start: #383fde;
+$decorative-color-end: #8444d4;
+
+@mixin typography($font-size-factor, $line-height-factor) {
+  font-size: $font-size-base * $font-size-factor;
+  line-height: $line-height-base * $line-height-factor;
+}
+
+.call-to-action{
+  background-color:$primary!important
+}
+
+[data-bs-theme="dark"] .bg-surface {
+  background-color: $dark-surface !important;
+}
+
+[data-bs-theme="dark"] .quote-card,.call-to-action {
+  background-color: $dark-surface;
+}
+
+[data-bs-theme="dark"] .dashboard {
+  .bg-body{background-color: $dark-surface!important}
+
+}
+
+[data-bs-theme="dark"] .text-secondary {
+  color: $light !important;
+}
+
+p,h1,h2,h3,h4,h5,h6{
+  padding: 0px !important;
+  margin: 0px !important;
+}
+
+.body2 {
+  @include typography(0.9, 1.111);
+}
+
+.body3 {
+  @include typography(0.8, 1.071);
+}
+
+.caption1 {
+  @include typography(0.7, 1.224);
+}
+
+.caption2 {
+  @include typography(0.6, 1.19);
+}
+
+.bg-decorative {
+  background: linear-gradient(
+    to top right,
+    $decorative-color-start,
+    $decorative-color-end
+  );
+  color: $body-bg;
+  border: none;
+
+  &:hover {
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+  }
+}
+.divider{
+  width:12px;
+}
+
+.quote{
+  right:40px;
+  top:10px
+}
+
+.centered-aligned-flex-row {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.line {
+  background-color: var(--bs-border-color);
+}
+
+.icon {
+  color: var(--bs-body-color) !important;
+}
+
+tr:hover .btn {
+  background-color: $primary !important;
+  color: $main-surface !important;
+}
+.crypto-card {
+  min-width: "320px";
+  flex-shrink: 0;
+  scroll-snap-type: "x mandatory";
+}
+.crypto-icon {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+.search-input{
+outline:none!important
+}
+.bg-primary,.btn-primary {
+  color: $main-surface!important}
+
+  .nav-link{
+    color:var(--bs-body-color)!important;
+    display:flex!important;
+    justify-content:center!important;
+    align-items:center!important;
+    padding-left:0px!important;
+    padding-right:0px!important
+  }
+  .btn-outline-dark {
+    border-color: var(--bs-body-color)!important
+  }
+  .btn-outline-dark:not(:hover) {
+    color: var(--bs-body-color)!important
+  }
+  

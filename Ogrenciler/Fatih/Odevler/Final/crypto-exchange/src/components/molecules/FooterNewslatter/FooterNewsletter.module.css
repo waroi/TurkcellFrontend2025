@@ -1,0 +1,21 @@
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.title {
+  font-weight: 600;
+  color: var(--on-surface);
+  margin-bottom: 0.5rem;
+}
+
+.icon {
+  color: var(--secondary);
+  transition: color 0.2s ease;
+  font-size: 1.25rem;
+}
+
+.icon:hover {
+  color: var(--primary);
+}

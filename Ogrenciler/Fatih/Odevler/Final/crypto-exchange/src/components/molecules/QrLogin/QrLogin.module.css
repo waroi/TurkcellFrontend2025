@@ -1,0 +1,31 @@
+.wrapper {
+  text-align: center;
+  background-color: var(--background);
+}
+
+.qrBox {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 1rem;
+  background-color: #cbd5e1;
+  border-radius: 8px;
+}
+
+.title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--on-surface);
+  margin-bottom: 0.25rem;
+}
+
+.desc {
+  font-size: 0.875rem;
+  color: var(--on-surface);
+  margin: 0;
+}
+
+.link {
+  color: var(--primary);
+  font-weight: 500;
+  text-decoration: none;
+}

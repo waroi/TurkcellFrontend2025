@@ -1,0 +1,43 @@
+.rowWrapper {
+  background-color: var(--surface);
+}
+
+.priceCell {
+  font-weight: 600;
+  white-space: nowrap;
+  width: 33%;
+}
+
+.totalBar {
+  height: 20px;
+  position: relative;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.totalValue {
+  position: absolute;
+  right: 8px;
+  font-size: 0.875rem;
+  color: var(--on-surface);
+}
+
+@media (max-width: 768px) {
+  .totalValue {
+    font-size: 0.75rem;
+    right: 4px;
+  }
+
+  .totalBar {
+    height: 16px;
+  }
+
+  .priceCell {
+    font-size: 0.875rem;
+  }
+
+  .rowWrapper tr td {
+    font-size: 0.8rem;
+    padding: 0.4rem;
+  }
+}

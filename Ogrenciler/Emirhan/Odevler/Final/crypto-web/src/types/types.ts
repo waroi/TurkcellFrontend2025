@@ -54,3 +54,24 @@ export type MarketPair = {
   change: number;
   favorite: boolean;
 };
+
+export type WalletData = Record<
+  string,
+  {
+    coinId: string;
+    value: number;
+  }
+>;
+
+export interface StoreState {
+  count: number;
+  coins: Coin[];
+  singleCoin: Coin | null;
+  wallet: WalletData; 
+  increase: () => void;
+  decrease: () => void;
+  reset: () => void;
+  setCoins: (coins: Coin[]) => void;
+  setSingleCoin: (coin: Coin) => void;
+  setWallet: (wallet: WalletData) => void; 
+}

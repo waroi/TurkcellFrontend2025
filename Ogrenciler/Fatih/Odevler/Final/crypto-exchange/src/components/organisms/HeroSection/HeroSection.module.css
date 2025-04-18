@@ -1,0 +1,44 @@
+.wrapper {
+  background-color: var(--surface);
+  padding: 2rem 0;
+}
+
+.text {
+  color: #777e90;
+}
+
+.heroInner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.leftContent {
+  flex: 1;
+}
+
+.rightImage {
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .heroInner {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .rightImage {
+    text-align: center;
+  }
+
+  .leftContent {
+    text-align: center;
+  }
+
+  .leftContent .w-25 {
+    width: 100% !important;
+  }
+}

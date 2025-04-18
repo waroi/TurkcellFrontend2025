@@ -1,0 +1,18 @@
+.banner-title {
+  h1 {
+    margin: 0;
+  }
+  h4 {
+    margin: 24px 0 48px 0;
+    color: var(--color-secondary);
+    font-weight: 500;
+  }
+  h3 {
+    margin: 48px 0 20px 0;
+  }
+  .partners {
+    display: flex;
+    align-items: flex-start;
+    gap: 60px;
+  }
+}

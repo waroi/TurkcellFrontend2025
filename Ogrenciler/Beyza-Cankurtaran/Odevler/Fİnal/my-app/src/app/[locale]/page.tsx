@@ -1,36 +1,97 @@
 "use client";
+
+import { useEffect, Suspense } from "react";
+import dynamic from 'next/dynamic';
 import "../[locale]/home.css";
+import { ThemeProvider } from '../context/ThemeContext';
+
 import '../services/firebase';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { useEffect } from "react";
-import { ThemeProvider, useTheme } from '../context/ThemeContext';
+import 'bootstrap/dist/css/bootstrap.css';
+
 import Navbar from "../../components/Navbar";
 import Banner from "../../components/Banner";
-import Footer from "../../components/Footer";
-import GetStartedSection from "../../components/GetStartedSection";
-import TradeAnywhereSection from "@/components/TradeAnywhereSection";
-import ServicesSection from "@/components/ServicesSection";
-import InvestorSection from "@/components/InvestorSection";
-import NewsletterSection from "@/components/NewsletterSection";
-import CryptoPriceCards from "@/components/CryptoPriceCards";
+
+const LoadingSpinner = () => <div className="text-center py-4">Loading...</div>;
+
+const CryptoPriceCards = dynamic(() => import("@/components/CryptoPriceCards"), {
+  loading: () => <LoadingSpinner />,
+  ssr: true
+});
+
+const GetStartedSection = dynamic(() => import("../../components/GetStartedSection"), {
+  loading: () => <LoadingSpinner />,
+  ssr: true
+});
+
+const TradeAnywhereSection = dynamic(() => import("@/components/TradeAnywhereSection"), {
+  loading: () => <LoadingSpinner />,
+  ssr: false 
+});
+
+const ServicesSection = dynamic(() => import("@/components/ServicesSection"), {
+  loading: () => <LoadingSpinner />,
+  ssr: false
+});
+
+const InvestorSection = dynamic(() => import("@/components/InvestorSection"), {
+  loading: () => <LoadingSpinner />,
+  ssr: false
+});
+
+const NewsletterSection = dynamic(() => import("@/components/NewsletterSection"), {
+  loading: () => <LoadingSpinner />,
+  ssr: false
+});
+
+const Footer = dynamic(() => import("../../components/Footer"), {
+  loading: () => <LoadingSpinner />,
+  ssr: false
+});
 
 function HomeContent() {
-  
   useEffect(() => {
-    import('bootstrap/dist/js/bootstrap.bundle.min.js');
+    const loadBootstrap = async () => {
+      await import('bootstrap/dist/js/bootstrap.bundle.min.js');
+    };
+    
+    if (window.requestIdleCallback) {
+      window.requestIdleCallback(loadBootstrap);
+    } else {
+      setTimeout(loadBootstrap, 1000);
+    }
   }, []);
-  
+
   return (
     <>
       <Navbar />
       <Banner />
-      <CryptoPriceCards  />
-      <GetStartedSection />
-      <TradeAnywhereSection />
-      <ServicesSection />
-      <InvestorSection />
-      <NewsletterSection />
-      <Footer />
+      <Suspense fallback={<LoadingSpinner />}>
+        <CryptoPriceCards />
+      </Suspense>
+      
+      <Suspense fallback={<LoadingSpinner />}>
+        <GetStartedSection />
+      </Suspense>
+      
+      <Suspense fallback={<LoadingSpinner />}>
+        <TradeAnywhereSection />
+      </Suspense>
+      
+      <Suspense fallback={<LoadingSpinner />}>
+        <ServicesSection />
+      </Suspense>
+      
+      <Suspense fallback={<LoadingSpinner />}>
+        <InvestorSection />
+      </Suspense>
+      
+      <Suspense fallback={<LoadingSpinner />}>
+        <NewsletterSection />
+      </Suspense>
+      
+      <Suspense fallback={<LoadingSpinner />}>
+        <Footer />
+      </Suspense>
     </>
   );
 }

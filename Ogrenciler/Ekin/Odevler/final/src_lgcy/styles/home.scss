@@ -1,0 +1,80 @@
+@import "variables";
+
+.header {
+  padding: 5rem 0 12rem !important;
+
+  & .row > div:nth-child(2).col-12.col-lg-6 img {
+    transform: translateX(9rem);
+  }
+
+  .header-crypto {
+    bottom: -9rem;
+    left: 0;
+
+    button {
+      padding-top: 0.25rem !important;
+      padding-bottom: 0.25rem !important;
+      font-size: 0.9rem !important;
+    }
+
+    .justify-content-start {
+      font-size: 0.9rem;
+      gap: 1.5rem;
+    }
+
+    .crypto-name {
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      span {
+        color: $secondary;
+      }
+    }
+  }
+}
+
+.market-update {
+  background-color: red;
+  padding: 15rem 0 6rem !important;
+
+  .fs-5 {
+    font-size: 1rem !important;
+    padding-bottom: 0.25rem;
+  }
+
+  table {
+    font-size: 1.1rem;
+    font-weight: 600;
+
+    td {
+      vertical-align: middle;
+    }
+
+    tr {
+      border-radius: 1rem;
+    }
+
+    i {
+      margin-left: 1rem;
+      color: $secondary;
+      cursor: pointer;
+
+      &.fa-solid {
+        color: $warning;
+      }
+    }
+
+    button:hover {
+      border-color: $primary !important;
+      background-color: $primary !important;
+      color: $white !important;
+    }
+  }
+}
+
+.how-it-work {
+  padding: 6rem 0 !important;
+}

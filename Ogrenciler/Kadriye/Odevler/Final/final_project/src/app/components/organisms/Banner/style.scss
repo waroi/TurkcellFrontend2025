@@ -1,0 +1,10 @@
+.banner {
+  padding: 83px 255px 146px 255px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(300px, 500px));
+  gap: 220px;
+  justify-content: space-between;
+  .market-banner-image {
+    margin-right: auto;
+  }
+}

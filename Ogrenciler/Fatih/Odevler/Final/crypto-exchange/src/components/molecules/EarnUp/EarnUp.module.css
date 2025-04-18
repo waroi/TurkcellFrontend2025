@@ -1,0 +1,17 @@
+.earnUp {
+  background-color: var(--earnUp);
+  color: var(--on-surface);
+  background-image: url("../../../assets/IMG.png");
+  background-size: cover;
+  background-position: center;
+}
+
+[data-theme="dark"] .earnUp {
+  background-image: none;
+  background-color: var(--surface);
+}
+
+.earnUp h5,
+.earnUp p {
+  color: #ffffff;
+}

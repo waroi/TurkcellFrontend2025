@@ -1,0 +1,12 @@
+.wrapper {
+  background-color: var(--surface);
+}
+
+.box {
+  min-width: 300px;
+}
+
+.activeTab {
+  color: var(--primary);
+  border-bottom: 2px solid var(--primary);
+}

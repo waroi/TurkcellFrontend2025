@@ -1,0 +1,59 @@
+.info-card {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.coin-card {
+  padding: 32px 40px;
+  border-radius: 12px;
+  &:hover {
+    box-shadow: 0px 14px 64px 0px rgba(15, 15, 15, 0.1);
+  }
+  .coin-card-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    p {
+      margin: 0;
+      margin-right: 8px;
+      font-weight: 600;
+      span {
+        margin-left: 8px;
+        color: #777e90;
+      }
+    }
+  }
+  h3 {
+    margin: 8px 0 10px 0;
+  }
+  .coin-card-footer {
+    display: flex;
+    gap: 8px;
+    button {
+      border: none;
+      color: var(--color-white);
+      padding: 2px 8px;
+      border-radius: 24px;
+      &.green {
+        background-color: var(--color-succes);
+      }
+      &.red {
+        background-color: var(--color-critical);
+      }
+    }
+  }
+}
+.market-card {
+  padding: 32px 40px;
+  border-radius: 12px;
+  &:hover {
+    box-shadow: 0px 14px 64px 0px rgba(15, 15, 15, 0.1);
+  }
+  .market-card-top,
+  .market-card-bottom {
+    display: flex;
+    align-items: top;
+    justify-content: space-between;
+  }
+}

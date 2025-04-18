@@ -1,12 +1,11 @@
 "use client";
 
 import PageInfoContainer from "@/components/PageInfoContainer";
-import { loginSchema } from "@/lib/definitions";
-import { createClient } from "@/utils/supabase/client";
+import { type LoginFormData, loginSchema } from "@/lib/definitions";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useTranslations } from "next-intl";
-import { redirect } from "next/navigation";
-import { useEffect, useState } from "react";
+import Image from "next/image"; // Image componentini import edin
+import { useState } from "react";
 import {
 	Button,
 	Card,
@@ -27,30 +26,16 @@ export default function Login() {
 	const defaultTab = t.raw("tabs")[0].toLowerCase();
 	const [activeLoginTab, setActiveLoginTab] = useState<string>(defaultTab);
 
-	useEffect(() => {
-		const checkAuthAndRedirect = async () => {
-			const supabase = createClient();
-			const { data, error } = await supabase.auth.getSession();
-
-			if (error) {
-				console.error("Error getting session:", error);
-			} else if (data.session) {
-				redirect("/profile");
-			}
-		};
-
-		checkAuthAndRedirect();
-	}, []);
-
 	const {
 		register,
 		handleSubmit,
 		formState: { errors },
-	} = useForm({
+	} = useForm<LoginFormData>({
 		resolver: yupResolver(loginSchema),
 	});
 
-	const onSubmit = (data: any) => {
+	const onSubmit = (data: LoginFormData) => {
+		console.log("Login Data:", data);
 		login(data);
 	};
 
@@ -58,8 +43,10 @@ export default function Login() {
 		<>
 			<PageInfoContainer t={t} />
 			<Container className="py-5">
-				<Row className="justify-content-center">
-					<Col md={8} lg={6}>
+				<Row className="align-items-center">
+					<Col lg={3} className="d-lg-block d-none"></Col>
+
+					<Col xs={12} md={8} lg={6} className="mb-4 mb-lg-0">
 						<Card className="border-0">
 							<Card.Body className="p-4">
 								<h1 className="mb-2 text-center fw-bold">{t("title")}</h1>
@@ -82,6 +69,7 @@ export default function Login() {
 								<Tab.Container
 									activeKey={activeLoginTab}
 									onSelect={(tab) => setActiveLoginTab(tab || "email")}>
+									{/* Tab Nav */}
 									<div className="d-flex justify-content-center mb-4">
 										<Nav className="tab-button-group nav-pills">
 											{t.raw("tabs").map((tab: string, index: number) => (
@@ -153,10 +141,7 @@ export default function Login() {
 
 												<div className="d-flex justify-content-between mb-4">
 													<Form.Group controlId="rememberMe">
-														<Form.Check.Input
-															type="checkbox"
-															{...register("rememberMe")}
-														/>
+														<Form.Check.Input type="checkbox" />
 														<Form.Check.Label>
 															{t("rememberMe")}
 														</Form.Check.Label>
@@ -198,6 +183,23 @@ export default function Login() {
 								</Tab.Container>
 							</Card.Body>
 						</Card>
+					</Col>
+
+					<Col lg={3} className="d-lg-block text-center d-none">
+						<Image
+							src="/madam.png"
+							alt="Hikmet'in Hayatı"
+							width={180}
+							height={180}
+							className="mb-3"
+						/>
+
+						<h5 className="fw-bold">{t("loginWithQR")}</h5>
+						<p className="text-muted">
+							{t.rich("qrDescription", {
+								span: (children) => <strong>{children}</strong>,
+							})}
+						</p>
 					</Col>
 				</Row>
 			</Container>

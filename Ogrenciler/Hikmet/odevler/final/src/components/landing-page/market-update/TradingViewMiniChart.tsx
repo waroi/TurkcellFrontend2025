@@ -1,4 +1,5 @@
 "use client";
+import { useThemeStore } from "@/store/themeStore";
 import { useEffect, useRef } from "react";
 
 interface TradingViewMiniChartProps {
@@ -13,6 +14,7 @@ export default function TradingViewMiniChart({
 	height = 40,
 }: TradingViewMiniChartProps) {
 	const containerRef = useRef<HTMLDivElement>(null);
+		const { theme, toggleTheme } = useThemeStore();
 
 	useEffect(() => {
 		const container = containerRef.current;
@@ -31,7 +33,7 @@ export default function TradingViewMiniChart({
 			height: height,
 			locale: "en",
 			dateRange: "12M",
-			colorTheme: "light",
+			colorTheme: theme === "dark" ? "dark" : "light",
 			isTransparent: true,
 			autosize: false,
 			chartOnly: true,
@@ -46,7 +48,7 @@ export default function TradingViewMiniChart({
 		return () => {
 			if (container) container.innerHTML = "";
 		};
-	}, [symbol, width, height]);
+	}, [symbol, width, height, theme]);
 
 	return (
 		<div

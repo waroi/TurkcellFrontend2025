@@ -1,0 +1,14 @@
+@import "variables";
+
+.form {
+  label {
+    font-size: 1.25rem;
+    color: $secondary;
+    font-weight: 600;
+  }
+
+  input {
+    font-size: 1.25rem;
+    padding: 0.5rem 1rem;
+  }
+}

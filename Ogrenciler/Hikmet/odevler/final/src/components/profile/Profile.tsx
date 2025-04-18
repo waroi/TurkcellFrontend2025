@@ -7,9 +7,9 @@ import { useState } from "react";
 import { Button, Col, Container, Nav, Row, Tab } from "react-bootstrap";
 import PageInfoContainer from "../PageInfoContainer";
 import ApiKeyPane from "./ApiKeyPane";
-import ChangePasswordPane from "./ChangePasswordPane";
+import ChangePasswordPane from "./change-password/ChangePasswordPane";
 import LoginHistoryPane from "./LoginHistoryPane";
-import ProfilePane from "./ProfilePane";
+import ProfilePane from "./profile-pane/ProfilePane";
 import ReferralPane from "./ReferralPane";
 import TwoFAPane from "./TwoFAPane";
 
@@ -18,9 +18,9 @@ type ProfileTab = {
 	icon: string;
 };
 
-interface ProfileProps {
+type ProfileProps = {
 	user: User;
-}
+};
 
 export default function Profile({ user }: ProfileProps) {
 	const t = useTranslations("Profile");

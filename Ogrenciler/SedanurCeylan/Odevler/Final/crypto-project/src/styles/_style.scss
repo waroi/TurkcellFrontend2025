@@ -1,0 +1,27 @@
+.page-container {
+  max-width: 1410px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.yüzdeyüz {
+  width: 100%;
+  height: auto;
+}
+
+.bg-foto {
+  background-image: url("/earnup.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.cardlar {
+  position: relative;
+  top: -80px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+.cardlar button {
+  white-space: nowrap;
+}

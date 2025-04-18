@@ -1,0 +1,23 @@
+@import './_bt_overrides.scss';
+@import './_variables.scss';
+
+* {
+    font-family: "DM Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+@media screen and (width >=1400px) {
+    .container {
+        max-width: 1400px !important;
+    }
+}

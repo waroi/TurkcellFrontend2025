@@ -1,5 +1,11 @@
+@import "../components/styles/theme";
+
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
 }

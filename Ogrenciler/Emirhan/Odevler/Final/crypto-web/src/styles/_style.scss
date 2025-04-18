@@ -191,7 +191,7 @@
 
   .testimonial-box {
     background-color: #ffffff;
-    border-left: 4px solid #3b82f6; 
+    border-left: 4px solid #3b82f6;
     position: relative;
 
     i.fa-quote-left {
@@ -497,10 +497,6 @@
   overflow-x: auto;
   width: 100%;
 }
-
-
-
-
 .auth-form-container {
   width: 90%;
 }
@@ -514,7 +510,6 @@
 @media (min-width: 768px) {
   .auth-form-container {
     width: 60%;
-    
   }
 }
 
@@ -541,13 +536,13 @@
   }
 }
 .dropdown-scroll {
-  max-height: 300px; 
+  max-height: 300px;
   overflow-y: auto;
 }
 .profile-settings-box {
-  height: auto; 
+  height: auto;
 
   @media (min-width: 768px) {
-    height: 100vh; 
+    height: 100vh;
   }
 }
