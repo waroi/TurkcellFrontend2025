@@ -1,5 +1,5 @@
 "use client";
-import { registerSchema } from "@/lib/definitions";
+import { RegisterFormData, registerSchema } from "@/lib/definitions";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 import PageInfoContainer from "@/components/PageInfoContainer";
@@ -13,6 +13,7 @@ import {
 	Form,
 	Nav,
 	Row,
+	Spinner,
 	Tab,
 } from "react-bootstrap";
 import { useForm } from "react-hook-form";
@@ -24,17 +25,31 @@ export default function Register() {
 	const defaultTab = t.raw("tabs")[0].toLowerCase();
 	const [activeRegisterTab, setActiveRegisterTab] =
 		useState<string>(defaultTab);
+	const [errorMessage, setErrorMessage] = useState<string | null>(null);
+	const [loading, setLoading] = useState(false);
 
 	const {
 		register,
 		handleSubmit,
 		formState: { errors },
-	} = useForm({
+	} = useForm<RegisterFormData>({
 		resolver: yupResolver(registerSchema),
 	});
 
-	const onSubmit = (data: any) => {
-		signup(data);
+	const onSubmit = async (data: RegisterFormData) => {
+		setLoading(true);
+		setErrorMessage(null);
+		console.log("Register Data:", data);
+		try {
+			const result = await signup(data);
+
+			if (result?.error) setErrorMessage(result.error);
+		} catch (error) {
+			console.error("Client-side signup error:", error);
+			setErrorMessage("An unexpected error occurred. Please try again.");
+		} finally {
+			setLoading(false);
+		}
 	};
 
 	return (
@@ -231,8 +246,22 @@ export default function Register() {
 														variant="primary"
 														type="submit"
 														size="lg"
-														className="rounded-pill">
-														{t("preRegisterButton")}
+														className="rounded-pill"
+														disabled={loading}>
+														{loading ? (
+															<>
+																<Spinner
+																	as="span"
+																	animation="border"
+																	size="sm"
+																	role="status"
+																	aria-hidden="true"
+																/>
+																<span className="ms-2">Registering...</span>
+															</>
+														) : (
+															t("preRegisterButton")
+														)}
 													</Button>
 												</div>
 

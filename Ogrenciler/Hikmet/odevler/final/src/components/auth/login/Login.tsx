@@ -1,7 +1,7 @@
 "use client";
 
 import PageInfoContainer from "@/components/PageInfoContainer";
-import { loginSchema } from "@/lib/definitions";
+import { type LoginFormData, loginSchema } from "@/lib/definitions";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
@@ -29,11 +29,12 @@ export default function Login() {
 		register,
 		handleSubmit,
 		formState: { errors },
-	} = useForm({
+	} = useForm<LoginFormData>({
 		resolver: yupResolver(loginSchema),
 	});
 
-	const onSubmit = (data: any) => {
+	const onSubmit = (data: LoginFormData) => {
+		console.log("Login Data:", data);
 		login(data);
 	};
 
@@ -136,10 +137,7 @@ export default function Login() {
 
 												<div className="d-flex justify-content-between mb-4">
 													<Form.Group controlId="rememberMe">
-														<Form.Check.Input
-															type="checkbox"
-															{...register("rememberMe")}
-														/>
+														<Form.Check.Input type="checkbox" />
 														<Form.Check.Label>
 															{t("rememberMe")}
 														</Form.Check.Label>
