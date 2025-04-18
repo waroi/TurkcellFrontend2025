@@ -11,7 +11,7 @@ import {
 import { useTranslations } from "use-intl";
 import DerivativesNavs from "./derivatives/DerivativesNavs";
 import MarketTable from "./derivatives/MarketTable";
-import FavoritesPage from "./FavoriteCoins";
+import FavoritesPage from "./favorite-coins/FavoriteCoins";
 
 export default function FavoritesTableContainer() {
 	const t = useTranslations("Market");

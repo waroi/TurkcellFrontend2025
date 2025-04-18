@@ -2,11 +2,30 @@ import TradingViewMiniChart from "@/components/landing-page/market-update/Tradin
 import useMarketData from "@/hooks/useMarketData";
 import { Star } from "lucide-react";
 import Image from "next/image";
+import { useState } from "react";
 import { Button, Table } from "react-bootstrap";
 import styles from "../../landing-page/market-update/market.module.scss";
 
+type SortKey =
+	| "price"
+	| "percent_change_1h"
+	| "percent_change_24h"
+	| "percent_change_7d"
+	| "market_cap";
+
 export default function MarketTable({ t }: { t: (key: string) => string }) {
-	const { loading, market, info } = useMarketData(20); // ✅ doğru kullanım
+	const { loading, market, info } = useMarketData(20);
+	const [sortKey, setSortKey] = useState<SortKey>("market_cap");
+	const [sortOrder, setSortOrder] = useState<"asc" | "desc">("desc");
+
+	const handleSort = (key: SortKey) => {
+		if (sortKey === key) {
+			setSortOrder((prev) => (prev === "asc" ? "desc" : "asc"));
+		} else {
+			setSortKey(key);
+			setSortOrder("desc");
+		}
+	};
 
 	if (loading) {
 		return (
@@ -18,6 +37,25 @@ export default function MarketTable({ t }: { t: (key: string) => string }) {
 		);
 	}
 
+	const sortedMarket = [...market].sort((a, b) => {
+		const aVal = a.quote.USD[sortKey];
+		const bVal = b.quote.USD[sortKey];
+
+		if (aVal === undefined || bVal === undefined) return 0;
+
+		return sortOrder === "asc" ? aVal - bVal : bVal - aVal;
+	});
+
+	const formatChange = (value: number | undefined) => {
+		if (value === undefined) return "--";
+		const formatted = `${value >= 0 ? "+" : ""}${value.toFixed(2)}%`;
+		return (
+			<span className={value >= 0 ? "text-success" : "text-danger"}>
+				{formatted}
+			</span>
+		);
+	};
+
 	return (
 		<Table borderless hover responsive className="table-sm text-center">
 			<thead>
@@ -26,20 +64,36 @@ export default function MarketTable({ t }: { t: (key: string) => string }) {
 					<th>#</th>
 					<th className="text-start">{t("table.col1")}</th>
 					<th>{t("table.col2")}</th>
-					<th>{t("table.col3")}</th>
-					<th>{t("table.col4")}</th>
-					<th>{t("table.col5")}</th>
-					<th>{t("table.col6")}</th>
+					<th
+						style={{ cursor: "pointer" }}
+						onClick={() => handleSort("percent_change_1h")}>
+						{t("table.col3")}
+					</th>
+					<th
+						style={{ cursor: "pointer" }}
+						onClick={() => handleSort("percent_change_24h")}>
+						{t("table.col4")}
+					</th>
+					<th
+						style={{ cursor: "pointer" }}
+						onClick={() => handleSort("percent_change_7d")}>
+						{t("table.col5")}
+					</th>
+					<th
+						style={{ cursor: "pointer" }}
+						onClick={() => handleSort("market_cap")}>
+						{t("table.col6")}
+					</th>
 					<th>{t("table.col7")}</th>
 					<th></th>
 				</tr>
 			</thead>
 			<tbody className={styles.tableRow}>
-				{market.map((coin, index) => {
+				{sortedMarket.map((coin, index) => {
 					const coinInfo = info[coin.id.toString()];
 					if (!coinInfo) return null;
 
-					const { name, symbol: infoSymbol } = coinInfo;
+					const { name, symbol: infoSymbol, logo } = coinInfo;
 
 					const {
 						symbol,
@@ -56,16 +110,6 @@ export default function MarketTable({ t }: { t: (key: string) => string }) {
 
 					const tvSymbol = `BINANCE:${symbol}USDT`;
 
-					const formatChange = (value: number | undefined) => {
-						if (value === undefined) return "--";
-						const formatted = `${value >= 0 ? "+" : ""}${value.toFixed(2)}%`;
-						return (
-							<span className={value >= 0 ? "text-success" : "text-danger"}>
-								{formatted}
-							</span>
-						);
-					};
-
 					return (
 						<tr key={coin.id}>
 							<td>
@@ -74,7 +118,7 @@ export default function MarketTable({ t }: { t: (key: string) => string }) {
 							<td>{index + 1}</td>
 							<td className="text-start">
 								<Image
-									src={coinInfo.logo}
+									src={logo}
 									alt={name}
 									width={20}
 									height={20}
