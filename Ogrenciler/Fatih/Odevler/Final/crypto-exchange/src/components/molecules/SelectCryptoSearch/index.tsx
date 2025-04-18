@@ -1,9 +1,12 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import styles from "./SelectCryptoSearch.module.css";
 import { FaSearch } from "react-icons/fa";
 import { Coin } from "@/types/coin";
+import { useSelector } from "react-redux";
+import { RootState } from "@/store/store";
+import { useTranslations } from "next-intl";
 
 interface SelectCryptoSearchProps {
   value: string;
@@ -28,19 +31,24 @@ const SelectCryptoSearch: React.FC<SelectCryptoSearchProps> = ({
   onSelectCoin,
   selectedCoinId,
 }) => {
-  const displayCurrency = selectedCurrency
-    ? selectedCurrency.toUpperCase()
-    : "";
+  const theme = useSelector((state: RootState) => state.theme.mode);
+  const t = useTranslations("SelectCrypto");
+  const displayCurrency = selectedCurrency?.toUpperCase();
 
-  console.log(coins);
+  useEffect(() => {
+    const delay = setTimeout(() => {
+      onSearch();
+    }, 500);
+
+    return () => clearTimeout(delay);
+  }, [value]);
+
   return (
-    <div className="bg-light rounded-4 p-4">
+    <div className="rounded-4 p-4">
       <div className="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4">
         <div>
-          <h5 className="fw-bold mb-1">Select Crypto</h5>
-          <p className="text-muted mb-0 small">
-            Which Crypto Do You Want To Search?
-          </p>
+          <h5 className={`${styles.title} fw-bold mb-1`}>{t("title")}</h5>
+          <p className={`${styles.text} mb-0 small`}>{t("subtitle")}</p>
         </div>
 
         <div className="d-flex align-items-center gap-2 flex-grow-1">
@@ -51,7 +59,7 @@ const SelectCryptoSearch: React.FC<SelectCryptoSearchProps> = ({
             <input
               type="text"
               className="form-control border-start-0"
-              placeholder="Search"
+              placeholder={t("searchPlaceholder")}
               value={value}
               onChange={onChange}
             />
@@ -86,17 +94,19 @@ const SelectCryptoSearch: React.FC<SelectCryptoSearchProps> = ({
           className="btn btn-primary rounded-pill px-4 fw-semibold"
           type="button"
         >
-          Search
+          {t("search")}
         </button>
       </div>
 
-      <table className="table mb-0">
+      <table
+        className={`table mb-0 text-sm ${theme === "dark" ? "table-dark" : ""}`}
+      >
         <thead>
           <tr className="text-muted small">
             <th>#</th>
-            <th>Name</th>
-            <th>Price</th>
-            <th>24%</th>
+            <th>{t("name")}</th>
+            <th>{t("price")}</th>
+            <th>{t("change24")}</th>
           </tr>
         </thead>
         <tbody>
@@ -121,7 +131,7 @@ const SelectCryptoSearch: React.FC<SelectCryptoSearchProps> = ({
                     />
                     <div>
                       <div className="fw-semibold">{coin.name}</div>
-                      <div className="text-muted small">
+                      <div className={`${styles.text} small`}>
                         {coin.symbol?.toUpperCase() || "-"}
                       </div>
                     </div>
@@ -142,7 +152,7 @@ const SelectCryptoSearch: React.FC<SelectCryptoSearchProps> = ({
           ) : (
             <tr>
               <td colSpan={4} className="text-center text-muted py-4">
-                No coins found.
+                {t("noResults")}
               </td>
             </tr>
           )}

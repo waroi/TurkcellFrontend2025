@@ -9,9 +9,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 import { useCoins } from "@/hooks/useCoins";
 import { setSellStepTwoData } from "@/store/slices/sellCryptoSlice";
+import styles from "./SellStepTwo.module.css";
+import { useTranslations } from "next-intl";
 
 const SellStepTwo = ({ onContinue }: { onContinue: () => void }) => {
   const dispatch = useDispatch();
+  const t = useTranslations("SellCrypto.StepTwo");
+
   const { selectedCoin } = useSelector((state: RootState) => state.sellCrypto);
   const [fromCurrency, setFromCurrency] = useState(selectedCoin);
   const [toCurrency, setToCurrency] = useState("vnd");
@@ -25,7 +29,9 @@ const SellStepTwo = ({ onContinue }: { onContinue: () => void }) => {
       receiveAmount: "0.00",
     },
     validationSchema: Yup.object().shape({
-      payAmount: Yup.number().required("Required").min(0, "Must be positive"),
+      payAmount: Yup.number()
+        .required(t("errors.required"))
+        .min(0, t("errors.positive")),
     }),
     onSubmit: () => {
       dispatch(
@@ -36,8 +42,6 @@ const SellStepTwo = ({ onContinue }: { onContinue: () => void }) => {
           toCurrency,
         })
       );
-      console.log(formik.values);
-
       onContinue();
     },
   });
@@ -57,13 +61,15 @@ const SellStepTwo = ({ onContinue }: { onContinue: () => void }) => {
   };
 
   return (
-    <div className="bg-light rounded-4 p-4">
-      <h5 className="fw-bold mb-3">Confirm Information</h5>
+    <div className={`${styles.wrapper} rounded-4 p-4`}>
+      <h5 className={`${styles.title} fw-bold mb-3`}>{t("title")}</h5>
 
       <form onSubmit={formik.handleSubmit}>
         <div className="d-flex flex-wrap align-items-center gap-3">
           <div className="flex-grow-1">
-            <label className="text-muted small mb-1">Sell</label>
+            <label className={`${styles.text} small mb-1`}>
+              {t("sellLabel")}
+            </label>
             <div className="border rounded-4 d-flex justify-content-between align-items-center px-3 py-2">
               <input
                 name="payAmount"
@@ -84,6 +90,11 @@ const SellStepTwo = ({ onContinue }: { onContinue: () => void }) => {
                 </span>
               </div>
             </div>
+            {formik.touched.payAmount && formik.errors.payAmount && (
+              <div className="text-danger small mt-1">
+                {formik.errors.payAmount}
+              </div>
+            )}
           </div>
 
           <div>
@@ -97,7 +108,9 @@ const SellStepTwo = ({ onContinue }: { onContinue: () => void }) => {
           </div>
 
           <div className="flex-grow-1">
-            <label className="text-muted small mb-1">Get</label>
+            <label className={`${styles.title} small mb-1`}>
+              {t("getLabel")}
+            </label>
             <div className="border rounded-4 d-flex justify-content-between align-items-center px-3 py-2">
               <input
                 name="receiveAmount"
@@ -133,7 +146,7 @@ const SellStepTwo = ({ onContinue }: { onContinue: () => void }) => {
 
           <div className="d-flex justify-content-end mt-4 w-100">
             <Button type="submit" variant="primary">
-              Continue
+              {t("continue")}
             </Button>
           </div>
         </div>
