@@ -1,0 +1,60 @@
+$secondary: #777e90;
+$onsurface: #23262f;
+
+.text {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: 0%;
+  color: $secondary;
+}
+
+.form-container {
+  padding-left: 32.03vw;
+  padding-right: 32.03vw;
+}
+
+.auth-btn {
+  background-color: #3772ff;
+  border: none;
+}
+
+.register-btn {
+  width: 100%;
+  border: none;
+  border-radius: 100px;
+  height: 52px;
+  background-color: #3772ff;
+}
+
+.register-header {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 56px;
+  letter-spacing: -2%;
+  color: $onsurface;
+}
+.register-subheader {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  color: $secondary;
+}
+
+.register-heading {
+  margin-top: 100px;
+}
+
+.circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 100px;
+  background-color: #58bd7d;
+  border: none;
+}
+
+.group-11038 {
+  height: 36px;
+  border-radius: 100px;
+  background-color: #58bd7d;
+}

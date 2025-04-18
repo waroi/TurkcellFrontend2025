@@ -1,0 +1,40 @@
+.market-heading {
+  margin-left: 13.3vw;
+  margin-right: 13.3vw;
+  margin-top: 5.2vw;
+  margin-bottom: 8.5vw;
+
+  .market-header {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 72px;
+    letter-spacing: -0.02;
+    color: #23262f;
+  }
+  .market-subheader {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: 0%;
+    color: #777e90;
+  }
+  .dollar-span {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -1%;
+    color: #23262f;
+  }
+}
+
+.market-img {
+  margin-top: 56px;
+  margin-bottom: 141px;
+}
+
+.market-header-row {
+  background-color: rgba(55, 114, 255, 0.1);
+}
