@@ -1,0 +1,14 @@
+.wrapper {
+  background-color: var(--background);
+}
+
+.overlayImage {
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .overlayImage {
+    width: 100% !important;
+    height: auto !important;
+  }
+}

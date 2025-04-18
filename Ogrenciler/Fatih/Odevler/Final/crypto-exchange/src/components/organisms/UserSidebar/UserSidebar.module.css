@@ -1,0 +1,30 @@
+.sidebar {
+  min-width: 240px;
+  background-color: var(--background);
+}
+
+.avatarWrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.cameraIcon {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: #2563eb;
+  padding: 4px;
+  border-radius: 50%;
+}
+
+.title {
+  color: var(--on-surface);
+}
+
+.text {
+  color: var(--secondary);
+}
+
+.inactive {
+  color: var(--on-surface);
+}
