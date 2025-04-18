@@ -1,7 +1,7 @@
 'use server'
 import { redirect } from 'next/navigation'
 import { changePasswordFirebase, loginFirebase, registerFirebase } from '../../../firebase/authControl'
-
+import { cookies } from "next/headers";
 
 export async function register(formData: FormData) {
     console.log(formData)
@@ -9,10 +9,18 @@ export async function register(formData: FormData) {
     //   redirect(`/profile`)
 }
 export async function login(formData: FormData) {
-    loginFirebase(formData);
+    const user = await loginFirebase(formData);
+    if (!user) {
+        console.error("Giriş başarısız.");
+        return;
+    }
+    const cookieStore = await cookies()
+    cookieStore.set('current_user', JSON.stringify(user))
 }
 export async function changePassword(formData: FormData) {
-    changePasswordFirebase(formData);
+    const cookieStore = await cookies()
+    const user = cookieStore.get('current_user')
+    changePasswordFirebase(formData, user);
 }
 
 export async function getFilteredData(formData: FormData) {

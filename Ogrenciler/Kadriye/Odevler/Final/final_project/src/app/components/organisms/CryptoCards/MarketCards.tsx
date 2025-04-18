@@ -22,7 +22,6 @@ const MarketCards = ({ dataInfos, logoInfos }: { dataInfos: any, logoInfos: any 
                         if (index < 4) {
                             return <MarketCard key={element.id} dataInfo={element} logoInfo={logoInfos[element.id]} />
                         }
-
                     })
                     }
                 </div>
