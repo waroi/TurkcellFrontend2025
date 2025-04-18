@@ -1,14 +1,11 @@
 
-import React from "react";
-import Footer from "@/components/molecules/Footer";
-import Navbar from "@/components/molecules/Navbar";
+import { useTranslations } from 'next-intl';
+import HomePages from '@/pages/HomePages';
 
+export default function HomePage() {
+  const t = useTranslations('HomePage')
 
-export default function Home() {
   return (
-    <>
-    <Navbar/>
-    <Footer/> 
-    </>
-  );
+    <HomePages />
+  )
 }

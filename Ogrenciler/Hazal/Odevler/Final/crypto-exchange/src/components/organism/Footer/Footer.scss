@@ -1,0 +1,60 @@
+.footer {
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .footer-company {
+        letter-spacing: -0.01em;
+        line-height: 40px;
+        font-size: 32px !important;
+    }
+
+    .footer-company-list {
+        li {
+            font-size: 16px;
+            line-height: 24px;
+            margin-bottom: 12px;
+            font-weight: 400;
+        }
+
+        .lets-talk {
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 12px;
+            line-height: 32px;
+        }
+    }
+
+    .footer-list-title {
+        font-size: 14px !important;
+        line-height: 24px;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+    }
+
+    .footer-list-group {
+
+        li {
+            margin-bottom: 8px;
+
+            &:first-child {
+                margin-top: 16px;
+            }
+
+            a {
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 24px;
+                text-transform: capitalize;
+                color: var(--secondary-color);
+                text-decoration: none;
+
+                &:hover {
+                    opacity: .6;
+                }
+            }
+        }
+    }
+}

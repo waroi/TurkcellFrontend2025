@@ -1,0 +1,6 @@
+.partners-logo {
+    @media screen and (max-width:768px) {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

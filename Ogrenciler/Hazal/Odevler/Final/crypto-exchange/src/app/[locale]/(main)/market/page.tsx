@@ -1,16 +1,10 @@
-import { CryptoTable } from '@/components/common/CryptoTable';
-import { MarketFilters } from '@/components/pages/Market/MarketFilters';
-import { MarketOverview } from '@/components/pages/Market/MarketOverview';
-import { getBinanceTickerData } from '@/lib/api/binance';
+import React from 'react'
+import MarketPage from '@/pages/MarketPage'
 
-export default async function MarketPage() {
-  const cryptoData = await getBinanceTickerData();
-
+const Market = () => {
   return (
-    <div className="market-page">
-      <MarketOverview />
-      <MarketFilters />
-      <CryptoTable data={cryptoData} />
-    </div>
-  );
+      <MarketPage />
+  )
 }
+
+export default Market
