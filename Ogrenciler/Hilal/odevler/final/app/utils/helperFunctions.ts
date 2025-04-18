@@ -25,6 +25,23 @@ export const coinToMoney = (
     return result;
   };
 
+  export const getCrossRate = (
+    marketData: any[],
+    fromSymbol: string,
+    toSymbol: string
+  ): number | null => {
+    const fromCoin = marketData.find((coin) => coin.symbol === fromSymbol);
+    const toCoin = marketData.find((coin) => coin.symbol === toSymbol);
+  
+    const fromPrice = fromCoin?.quote?.USD?.price;
+    const toPrice = toCoin?.quote?.USD?.price;
+  
+    if (!fromPrice || !toPrice) return null;
+  
+    return fromPrice / toPrice;
+  };
+  
+
 
   export const formatNumber = (value: number, options?: Intl.NumberFormatOptions) =>
     new Intl.NumberFormat("en-US", {
