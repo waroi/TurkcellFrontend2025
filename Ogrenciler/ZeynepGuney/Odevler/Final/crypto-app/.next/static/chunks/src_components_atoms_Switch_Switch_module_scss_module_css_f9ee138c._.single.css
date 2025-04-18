@@ -1,0 +1,55 @@
+/* [project]/src/components/atoms/Switch/Switch.module.scss.module.css [app-client] (css) */
+.Switch-module-scss-module__QQ0KAW__switch {
+  width: 40px;
+  height: 20px;
+  display: inline-block;
+  position: relative;
+}
+
+.Switch-module-scss-module__QQ0KAW__switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.Switch-module-scss-module__QQ0KAW__switch input:checked + .Switch-module-scss-module__QQ0KAW__slider {
+  background-color: var(--primary);
+}
+
+.Switch-module-scss-module__QQ0KAW__switch input:focus + .Switch-module-scss-module__QQ0KAW__slider {
+  box-shadow: 0 0 1px var(--primary);
+}
+
+.Switch-module-scss-module__QQ0KAW__switch input:checked + .Switch-module-scss-module__QQ0KAW__slider:before {
+  transform: translateX(20px);
+}
+
+.Switch-module-scss-module__QQ0KAW__switch input:disabled + .Switch-module-scss-module__QQ0KAW__slider {
+  background-color: var(--line);
+  cursor: not-allowed;
+}
+
+.Switch-module-scss-module__QQ0KAW__slider {
+  cursor: pointer;
+  background-color: var(--line);
+  border-radius: 32px;
+  transition: all .4s;
+  position: absolute;
+  inset: 0;
+}
+
+.Switch-module-scss-module__QQ0KAW__slider:before {
+  content: "";
+  border: 2px solid var(--line);
+  background-color: var(--primary);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  transition: all .4s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(0);
+}
+
+/*# sourceMappingURL=src_components_atoms_Switch_Switch_module_scss_module_css_f9ee138c._.single.css.map*/

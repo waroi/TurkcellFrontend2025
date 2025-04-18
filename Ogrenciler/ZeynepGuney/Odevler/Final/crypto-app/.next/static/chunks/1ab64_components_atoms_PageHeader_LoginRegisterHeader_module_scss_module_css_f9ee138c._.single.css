@@ -1,0 +1,69 @@
+/* [project]/src/components/atoms/PageHeader/LoginRegisterHeader.module.scss.module.css [app-client] (css) */
+.LoginRegisterHeader-module-scss-module__fuUNSq__loginPage {
+  margin: 0;
+}
+
+.LoginRegisterHeader-module-scss-module__fuUNSq__loginHeader {
+  justify-content: space-between;
+  align-items: center;
+  height: 150px;
+  display: flex;
+}
+
+.LoginRegisterHeader-module-scss-module__fuUNSq__loginHeader.LoginRegisterHeader-module-scss-module__fuUNSq__light {
+  background-color: var(--surface);
+}
+
+.LoginRegisterHeader-module-scss-module__fuUNSq__loginHeader.LoginRegisterHeader-module-scss-module__fuUNSq__dark {
+  background-color: var(--dark);
+}
+
+.LoginRegisterHeader-module-scss-module__fuUNSq__loginContainer {
+  box-sizing: border-box;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  display: flex;
+}
+
+.LoginRegisterHeader-module-scss-module__fuUNSq__loginTitle {
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  display: flex;
+}
+
+.LoginRegisterHeader-module-scss-module__fuUNSq__loginTitle h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.LoginRegisterHeader-module-scss-module__fuUNSq__loginTitle h2.LoginRegisterHeader-module-scss-module__fuUNSq__light {
+  color: var(--on-surface);
+}
+
+.LoginRegisterHeader-module-scss-module__fuUNSq__loginTitle h2.LoginRegisterHeader-module-scss-module__fuUNSq__dark {
+  color: var(--surface);
+}
+
+.LoginRegisterHeader-module-scss-module__fuUNSq__loginTitle p {
+  opacity: .7;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.LoginRegisterHeader-module-scss-module__fuUNSq__loginTitle p.LoginRegisterHeader-module-scss-module__fuUNSq__light {
+  color: var(--secondary);
+}
+
+.LoginRegisterHeader-module-scss-module__fuUNSq__loginTitle p.LoginRegisterHeader-module-scss-module__fuUNSq__dark {
+  color: var(--secondary2);
+}
+
+/*# sourceMappingURL=1ab64_components_atoms_PageHeader_LoginRegisterHeader_module_scss_module_css_f9ee138c._.single.css.map*/

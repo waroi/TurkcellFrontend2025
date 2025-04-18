@@ -1,0 +1,91 @@
+/* [project]/src/components/organisms/Navbar/Navbar.module.scss.module.css [app-client] (css) */
+.Navbar-module-scss-module__SkgiEW__navbar {
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  font-size: 14px;
+  display: flex;
+  box-shadow: 0 2px 5px #0000000d;
+}
+
+.Navbar-module-scss-module__SkgiEW__left {
+  align-items: center;
+  gap: 24px;
+  display: flex;
+}
+
+.Navbar-module-scss-module__SkgiEW__right {
+  align-items: center;
+  gap: 16px;
+  display: flex;
+}
+
+.Navbar-module-scss-module__SkgiEW__logoText {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.Navbar-module-scss-module__SkgiEW__menu {
+  gap: 18px;
+  display: flex;
+}
+
+.Navbar-module-scss-module__SkgiEW__menuItem {
+  cursor: pointer;
+  color: inherit;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+  display: flex;
+}
+
+a span.Navbar-module-scss-module__SkgiEW__menuItem {
+  text-decoration: none;
+}
+
+.Navbar-module-scss-module__SkgiEW__menuItemActive {
+  background-color: var(--primary);
+  color: var(--white);
+  border: none;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 12px;
+  text-decoration: none;
+  display: flex;
+}
+
+.Navbar-module-scss-module__SkgiEW__icon {
+  cursor: pointer;
+}
+
+.Navbar-module-scss-module__SkgiEW__walletBtn {
+  cursor: pointer;
+  color: var(--text-color);
+  border: 1px solid;
+  border-color: var(--border-color);
+  background: none;
+  border-radius: 9999px;
+  padding: 6px 12px;
+}
+
+.Navbar-module-scss-module__SkgiEW__walletBtn.Navbar-module-scss-module__SkgiEW__light {
+  color: var(--on-surface);
+  border-color: var(--on-surface);
+}
+
+.Navbar-module-scss-module__SkgiEW__walletBtn.Navbar-module-scss-module__SkgiEW__dark {
+  color: var(--white);
+  border-color: var(--white);
+}
+
+.Navbar-module-scss-module__SkgiEW__avatar {
+  cursor: pointer;
+  border-radius: 9999px;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  display: flex;
+}
+
+/*# sourceMappingURL=src_components_organisms_Navbar_Navbar_module_scss_module_css_f9ee138c._.single.css.map*/

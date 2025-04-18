@@ -1,0 +1,18 @@
+/* [project]/src/app/globals.css [app-client] (css) */
+html[data-theme="light"] {
+  --bg: #fff;
+  --text: #000;
+}
+
+html[data-theme="dark"] {
+  --bg: #121212;
+  --text: #fff;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color .3s, color .3s;
+}
+
+/*# sourceMappingURL=src_app_globals_css_f9ee138c._.single.css.map*/
