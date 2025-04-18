@@ -1,0 +1,122 @@
+.page-top {
+    background-color: var(--hero-background-color);
+}
+
+.main-container {
+    .main-title {
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 56px;
+        letter-spacing: -0.02em;
+        margin-top: 100px;
+        margin-bottom: 16px;
+    }
+
+    .description {
+        color: var(--secondary-color);
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    .tab-box {
+        margin-top: 12px;
+
+        button {
+            font-weight: bold;
+            font-size: 14px !important;
+            line-height: 16px;
+        }
+    }
+
+    .form-fields {
+        max-width: 690px;
+        margin-top: 40px;
+
+        .form-box.passwordField {
+            margin-bottom: 0 !important;
+
+        }
+
+        .form-box {
+            margin-bottom: 28px;
+
+            .form-control-lg,
+            .form-select-lg {
+                border: 2px solid var(--marketcap-border-color) !important;
+                background-color: var(--marketcap-searchbar-background);
+                color: var(--secondary-color);
+
+                &:focus {
+                    box-shadow: none;
+                    border-color: var(--primary-color-light) !important;
+                }
+
+                &::placeholder {
+                    font-size: 18px;
+                    line-height: 28px;
+                    color: var(--secondary-color-reverse);
+                }
+            }
+
+            .with-icon {
+                select {
+                    font-size: 18px;
+                    color: var(--text-color);
+                }
+            }
+
+            .form-label {
+                color: var(--secondary-color);
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 28px;
+            }
+
+            #authenticate-button {
+                font-size: 16px;
+                line-height: 16px;
+                border: none;
+                background-color: var(--primary-color-light);
+                color: white;
+                padding-left: 2rem;
+                padding-right: 2rem;
+                font-weight: 700;
+            }
+
+            .critical-message {
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 24px;
+            }
+
+            .select-country-code {
+                font-size: 16px;
+                color: var(--text-color);
+            }
+
+        }
+
+        .marginTop0 {
+            margin-top: 0 !important;
+        }
+
+        .duhacc {
+            font-size: 16px;
+            line-height: 24px;
+            margin-top: 24px;
+            margin-bottom: 100px;
+        }
+    }
+
+    .login-url {
+        background-image: url('/images/login/bg-url.png');
+        background-repeat: no-repeat;
+        background-position: center;
+
+        p {
+            line-height: 24px;
+            font-size: 14px;
+        }
+    }
+}
