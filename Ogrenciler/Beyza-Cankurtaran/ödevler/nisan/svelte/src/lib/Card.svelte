@@ -35,7 +35,6 @@
   return currency.symbol;
 }
 
-
   function swapCurrencies(): void {
     [fromCurrency, toCurrency] = [toCurrency, fromCurrency];
 
