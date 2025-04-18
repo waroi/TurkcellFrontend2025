@@ -5,6 +5,7 @@ import useMarketData from "@/hooks/useMarketData";
 import { useFavoriteStore } from "@/store/favoritesStore";
 import { StarIcon } from "lucide-react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { Button, Table } from "react-bootstrap";
 import Toast from "react-bootstrap/Toast";
@@ -19,6 +20,7 @@ export default function MarketUpdateTable({
 	const { info, market, loading } = useMarketData();
 	const [showToast, setShowToast] = useState(false);
 	const [toastMessage, setToastMessage] = useState("");
+	const router = useRouter();
 
 	const isFavorite = useFavoriteStore((state) => state.isFavorite);
 
@@ -68,6 +70,9 @@ export default function MarketUpdateTable({
 							);
 							setShowToast(true);
 						};
+						const handleTradeClick = () => {
+							router.push(`/dashboard?symbol=${encodeURIComponent(tvSymbol)}`);
+						};
 
 						return (
 							<tr key={coin.id} className={styles.tableRow}>
@@ -115,7 +120,7 @@ export default function MarketUpdateTable({
 									</div>
 								</td>
 								<td className="align-middle">
-									<Button className="rounded-pill">
+									<Button className="rounded-pill" onClick={handleTradeClick}>
 										<small>{t("table.trade")}</small>
 									</Button>
 								</td>

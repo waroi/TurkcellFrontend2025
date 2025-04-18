@@ -1,11 +1,17 @@
 "use client";
+import { useSearchParams } from "next/navigation"; // useSearchParams import edin
 import { JSX, useEffect, useRef } from "react";
 
 function TradingViewWidget(): JSX.Element {
 	const containerRef = useRef<HTMLDivElement | null>(null);
+	const searchParams = useSearchParams();
+	const symbol = searchParams.get("symbol") || "BITSTAMP:BTCUSD";
+	const isMounted = useRef(false);
 
 	useEffect(() => {
-		if (!containerRef.current) return;
+		if (isMounted.current || !containerRef.current) return;
+
+		isMounted.current = true;
 
 		const script = document.createElement("script");
 		script.src =
@@ -15,7 +21,7 @@ function TradingViewWidget(): JSX.Element {
 		script.innerHTML = `
     {
       "autosize": true,
-      "symbol": "BITSTAMP:BTCUSD",
+      "symbol": "${symbol}",
       "interval": "D",
       "timezone": "Etc/UTC",
       "theme": "light",
@@ -27,12 +33,8 @@ function TradingViewWidget(): JSX.Element {
 
 		containerRef.current.appendChild(script);
 
-		return () => {
-			if (containerRef.current && script.parentNode) {
-				script.parentNode.removeChild(script);
-			}
-		};
-	}, []);
+		return () => {};
+	}, [symbol]);
 
 	return (
 		<div
