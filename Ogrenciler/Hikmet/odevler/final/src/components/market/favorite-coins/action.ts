@@ -16,6 +16,7 @@ export async function getFavoriteCoinsData(): Promise<{
 	favoriteIds: string[];
 }> {
 	const cookieStore = cookies();
+	// @ts-ignore
 	const supabase = await createClient(cookieStore);
 
 	const {
