@@ -1,0 +1,91 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  font-size: 14px;
+  height: 50px;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logoText {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.menu {
+  display: flex;
+  gap: 18px;
+}
+
+.menuItem {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+  color: inherit;
+}
+
+a span.menuItem {
+  text-decoration: none;
+}
+
+.menuItemActive {
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border: none;
+  text-decoration: none;
+}
+
+.icon {
+  cursor: pointer;
+}
+
+
+.walletBtn {
+  border: 1px solid;
+  border-radius: 9999px;
+  padding: 6px 12px;
+  background: none;
+  cursor: pointer;
+
+  color: var(--text-color);
+  border-color: var(--border-color);
+
+  &.light {
+    color: var(--on-surface);
+    border-color: var(--on-surface);
+  }
+
+  &.dark {
+    color: var(--white);
+    border-color: var(--white);
+  }
+}
+
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}

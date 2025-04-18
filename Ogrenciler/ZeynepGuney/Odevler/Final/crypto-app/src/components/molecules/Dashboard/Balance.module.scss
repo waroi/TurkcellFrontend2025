@@ -1,0 +1,151 @@
+.card {
+    &.dark {
+        background-color: var(--dark);
+        color: var(--white);
+    }
+
+    &.light {
+        background-color: var(--white);
+        color: var(--on-surface);
+    }
+}
+
+.topSection {
+    text-align: center;
+}
+
+.assetBlock {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+
+    &.dark {
+        background-color: var(--dark);
+        color: var(--white);
+    }
+
+    &.light {
+        background-color: var(--white);
+        color: var(--on-surface);
+    }
+
+
+    &:hover {
+        transform: translateY(-3px);
+    }
+
+    .left {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+
+        .balanceTitle {
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .assetTitle {
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+
+        .assetDetails {
+            display: flex;
+            align-items: center;
+            margin-top: 0.5rem;
+
+            .logo {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                margin-right: 0.5rem;
+            }
+
+            .assetInfo {
+                display: flex;
+                flex-direction: column;
+
+                .symbol {
+                    font-weight: bold;
+                }
+
+                .marketCap {
+                    font-size: 0.9rem;
+                    color: #757575;
+                }
+            }
+        }
+    }
+
+    .right {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+
+        .priceBlock {
+            margin-bottom: 0.5rem;
+
+            .value {
+                font-size: 14px;
+                font-weight: bold;
+            }
+        }
+
+
+    }
+}
+
+.negative {
+    color: var(--critical);
+}
+
+.positive {
+    color: var(--success);
+}
+
+.priceContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+
+    .price {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: var(--secondary);
+    }
+
+    .symbol {
+        font-size: 1rem;
+        color: var(--secondary);
+
+    }
+}
+
+.loading {
+    font-size: 1.5rem;
+    color: var(--secondary);
+
+    text-align: center;
+}
+
+.topUpBtn {
+    border-radius: 100px;
+    &.light {
+        background-color: var(--white) !important;
+        color: var(--on-surface);
+        border: 1px solid var(--on-surface);
+    }
+
+    &.dark {
+        background-color: var(--dark);
+        color: var(--surface);
+        border: 1px solid var(--line);
+
+    }
+}

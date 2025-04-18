@@ -1,0 +1,69 @@
+@mixin inputSelectStyles($bg-color, $text-color, $border-color, $padding: 0.5rem, $font-size: 1rem) {
+  flex: 1;
+  padding: $padding;
+  border-radius: 8px;
+  border: 1px solid $border-color;
+  font-size: $font-size;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+
+  &.light {
+    background-color: $bg-color;
+    color: $text-color;
+  }
+
+  &.dark {
+    background-color: var(--dark2);
+    color: var(--white);
+  }
+}
+
+@mixin buttonStyles($bg-color, $text-color, $padding: 0.75rem 1rem, $border-radius: 8px) {
+  padding: $padding;
+  background-color: $bg-color;
+  color: $text-color;
+  font-weight: bold;
+  border: none;
+  border-radius: $border-radius;
+  cursor: pointer;
+}
+
+.inputGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.label {
+  font-size: 0.95rem;
+  font-weight: 500;
+
+  &.light {
+    color: var(--secondary);
+  }
+
+  &.dark {
+    color: var(--secondary2);
+  }
+}
+
+.input,
+.select {
+  @include inputSelectStyles(var(--white), var(--black), #ccc);
+}
+
+.select {
+  padding: 0.4rem;
+  max-width: 80px;
+  height: 40px;
+  appearance: none;
+}
+
+.authButton {
+  @include buttonStyles(var(--primary), white);
+  
+  &.hidden {
+    display: none;
+  }
+}

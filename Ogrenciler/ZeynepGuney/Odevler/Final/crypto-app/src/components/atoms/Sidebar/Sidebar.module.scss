@@ -1,0 +1,70 @@
+.navbar {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: var(--background);
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    gap: 1rem;
+    margin-left: 20px;
+
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+    width: 100%;
+    border-right: 1px solid var(--border-color);
+}
+
+.menuItem,
+.menuItemActive {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--on-surface);
+    transition: background-color 0.3s;
+    border-radius: 5px;
+    width: fit-content;
+}
+
+.menuItemActive {
+    background-color: var(--primary);
+    border-radius: 100px;
+    color: white;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.logout {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--critical);
+    padding: 0;
+    margin-bottom: 20px;
+}

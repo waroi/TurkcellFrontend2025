@@ -257,6 +257,8 @@ html[data-theme="dark"] {
 body {
   background-color: var(--bg);
   color: var(--text);
+  margin: 0;
+  padding: 0;
   transition: background-color .3s, color .3s;
 }
 

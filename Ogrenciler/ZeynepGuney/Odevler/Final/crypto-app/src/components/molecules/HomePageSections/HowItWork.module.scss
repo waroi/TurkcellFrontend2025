@@ -1,0 +1,123 @@
+@mixin fontStyle($size, $weight, $lineHeight) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $lineHeight;
+}
+
+@mixin textColor($colorVar) {
+  color: var(#{$colorVar});
+}
+
+@mixin centerBlock($marginBottom: 0) {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: $marginBottom;
+}
+section{
+  &.dark {
+    background-color: var(--dark2);
+  }
+
+  &.light {
+    background-color: var(--surface);
+  }
+}
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  text-align: center;
+  padding: 4rem 2rem;
+
+
+}
+
+.title {
+  @include fontStyle(48px, 700, 56px);
+  @include textColor(--on-surface);
+
+  &.dark {
+    @include textColor(--secondary2);
+  }
+
+  &.light {
+    @include textColor(--on-surface);
+  }
+}
+
+.subtitle {
+  @include fontStyle(20px, 400, 28px);
+  margin-bottom: 3rem;
+
+  &.light {
+    @include textColor(--secondary);
+  }
+
+  &.dark {
+    @include textColor(--secondary2);
+  }
+}
+
+.steps {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.step {
+  max-width: 300px;
+  height: auto;
+  flex: 1;
+}
+
+.icon {
+  width: 96px;
+  height: 96px;
+  @include centerBlock(1rem);
+}
+
+.stepNumber {
+  @include fontStyle(12px, 700, 20px);
+  margin-bottom: 0.5rem;
+
+  &.light {
+    @include textColor(--on-surface);
+  }
+
+  &.dark {
+    @include textColor(--secondary2);
+  }
+}
+
+.stepTitle {
+  @include fontStyle(20px, 700, 28px);
+
+  &.light {
+    @include textColor(--secondary);
+  }
+
+  &.dark {
+    @include textColor(--surface);
+  }
+}
+
+.stepDesc {
+  @include fontStyle(16px, 400, 24px);
+
+  &.light {
+    @include textColor(--secondary);
+  }
+
+  &.dark {
+    @include textColor(--secondary2);
+  }
+}
+
+.divider {
+  @include centerBlock();
+  padding-top: 2rem;
+}

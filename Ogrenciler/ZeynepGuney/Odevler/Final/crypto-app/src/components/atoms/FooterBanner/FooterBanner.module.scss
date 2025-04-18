@@ -1,0 +1,74 @@
+@mixin flex-center($direction: row, $justify: center, $align: center) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+  }
+  
+  @mixin text-style($size, $weight, $lineHeight, $color) {
+    font-size: $size;
+    font-weight: $weight;
+    line-height: $lineHeight;
+    color: $color;
+    margin: 0;
+  }
+  
+  .banner {
+    width: 100%;
+    height: 140px;
+    padding: 0;
+    @include flex-center(); 
+    
+    &.light {
+      background: var(--decorative);
+    }
+  
+    &.dark {
+      background-color: var(--dark2);
+    }
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    @include flex-center(row, space-between, center); 
+    width: 100%;
+  }
+  
+  .leftContent {
+    flex: 2;
+    @include flex-center(column, flex-start, center); 
+    width: 100%;
+  }
+  
+  .rightContent {
+    flex: 1;
+    @include flex-center(row, flex-end, center);
+    width: 100%;
+  }
+  
+  .title {
+    @include text-style(32px, 700, 40px, var(--surface));
+    text-align: left;
+    width: 100%;
+  }
+  
+  .description {
+    @include text-style(16px, 400, 24px, var(--surface));
+    text-align: left;
+    width: 100%;
+  }
+  
+  .footerButton {
+    background-color: var(--white) !important;
+    color: var(--on-surface) !important;
+    padding: 16px 24px;
+    border-radius: 90px;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  
