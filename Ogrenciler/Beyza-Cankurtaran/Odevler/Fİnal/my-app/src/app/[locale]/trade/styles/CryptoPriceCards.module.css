@@ -1,0 +1,41 @@
+.cryptoPriceCardsContainer {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+    border-radius: 16px;
+  }
+  
+  .activeTab {
+    color: #6352ff !important;
+    font-weight: 500;
+    border-bottom: 2px solid #6352ff !important;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    background-color: transparent !important;
+  }
+  
+  .columnHeader {
+    color: #888;
+    font-size: 14px;
+  }
+  
+  .cryptoIcon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .cryptoSymbol {
+    display: inline-block;
+    background-color: #f0f0f0;
+    color: #666;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    margin-top: 4px;
+  }
