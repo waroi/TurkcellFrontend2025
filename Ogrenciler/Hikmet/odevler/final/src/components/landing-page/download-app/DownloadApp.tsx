@@ -69,7 +69,7 @@ export default function DownloadApp() {
 					</Col>
 					<Col className="d-md-flex justify-content-center align-baseline d-none">
 						<Image
-							src="/phone.svg"
+							src="/takla.svg"
 							alt="What is Rockie Image"
 							width={500}
 							height={500}
