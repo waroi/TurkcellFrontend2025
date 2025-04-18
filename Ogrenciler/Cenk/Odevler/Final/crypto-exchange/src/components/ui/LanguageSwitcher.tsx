@@ -13,18 +13,20 @@ const LanguageSwitcher = () => {
   };
 
   return (
-    <button
-      onClick={toggleLanguage}
-      style={{
-        background: 'none',
-        border: 'none',
-        cursor: 'pointer',
-        fontWeight: 600,
-        padding: '8px',
-      }}
-    >
-      {lang.toUpperCase()}
-    </button>
+<button
+  onClick={toggleLanguage}
+  style={{
+    background: 'none',
+    border: 'none',
+    cursor: 'pointer',
+    fontWeight: 600,
+    padding: '8px',
+    color: 'var(--color-on-surface)', 
+  }}
+>
+  {lang.toUpperCase()}
+</button>
+
   );
 };
 

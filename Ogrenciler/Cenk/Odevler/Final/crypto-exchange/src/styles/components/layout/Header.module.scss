@@ -5,10 +5,10 @@
   height: 50px;
   padding: 0 32px;
   background-color: var(--color-surface-main);
+}
 
-  html[data-theme="dark"] .header {
-    background-color: var(--color-on-surface);
-  }
+html[data-theme='dark'] .header {
+  background-color: var(--color-on-surface);
 }
 
 .left {
@@ -27,6 +27,10 @@
     font-weight: 700;
     color: var(--color-on-surface);
   }
+}
+
+html[data-theme='dark'] .logoText {
+  color: white;
 }
 
 .menuWrapper {
@@ -59,6 +63,10 @@
   }
 }
 
+html[data-theme='dark'] .menuWrapper .navItem {
+  color: white;
+}
+
 .right {
   display: flex;
   align-items: center;
@@ -79,6 +87,10 @@
   }
 }
 
+html[data-theme='dark'] .right .navItem {
+  color: white;
+}
+
 .iconBtn {
   background: none;
   border: none;
@@ -86,10 +98,15 @@
   padding: 6px;
   display: flex;
   align-items: center;
+  filter: invert(0); 
 
   &:hover {
     opacity: 0.8;
   }
+}
+
+html[data-theme='dark'] .iconBtn {
+  filter: invert(1); 
 }
 
 .walletBtn {
@@ -108,26 +125,11 @@
   }
 }
 
-.avatar {
-  border-radius: 50%;
+html[data-theme='dark'] .walletBtn {
+  color: white;
+  border-color: white;
 }
 
-[data-theme="dark"] {
-  .right .navItem {
-    color: white;
-  }
-
-  .walletBtn {
-    color: white;
-    border-color: white;
-  }
-
-  .logoText {
-    color: white;
-  }
-
-  .menuWrapper .navItem:hover {
-    background-color: var(--color-primary);
-    color: white;
-  }
+.avatar {
+  border-radius: 50%;
 }
