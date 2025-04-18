@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Kripto Para Borsası Uygulaması
 
-## Getting Started
+Bu proje, [Next.js](https://nextjs.org) kullanılarak geliştirilmiş kapsamlı bir kripto para alım satım platformudur.
 
-First, run the development server:
+Uygulamayı Canlı Olarak Görüntülemek için [Vercel Linki](yunus-rocket-crypto-six.vercel.app)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Proje Hakkında
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Bu Proje, Turkcell’in "Gençlere Yatırım Geleceğe Yazılım 4.0 - Frontend Bootcamp" programı final ödevi kapsamında, verilen [Figma tasarımı](https://www.figma.com/design/98DqPAzFuthisWLaeTG7B6/cryptocurrency-exchange-in-light-mood-and-Dark-mood--Community-?node-id=2680-54312&t=UDuV2ZXEQIoilHh8-0) referans alınarak hayata geçirilmiş, tam özellikli bir kripto para alım satım platformudur. Uygulama, kullanıcıların güncel piyasa verilerine erişmesinin yanı sıra, gelişmiş alım satım araçları ve kişiselleştirilmiş bir deneyim sunar.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Kullanılan Teknolojiler
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Next.js 15 (App Router)**: Güçlü ve performanslı frontend geliştirme çatısı.
+- **TypeScript**: Güvenli ve ölçeklenebilir JavaScript geliştirme için statik tip kontrolü.
+- **SCSS + Bootstrap 5**: Modüler ve responsive arayüz geliştirme için stil ve bileşen kütüphanesi.
+- **Firebase Authentication**: Güvenli kullanıcı kayıt, giriş ve yetkilendirme işlemleri.
+- **Firebase Firestore**: Kullanıcı verilerini (profil bilgileri, favoriler vb.) saklamak için NoSQL bulut veritabanı.
+- **i18n (çoklu dil desteği)**: Tamamen entegre Türkçe ve İngilizce dil seçenekleri.
+- **Formik + Yup (form validasyonu)**: Güçlü ve kullanıcı dostu form yönetimi ve doğrulama kütüphanesi.
+- **CoinGecko API**: Gerçek zamanlı ve doğru kripto para piyasa verileri.
+- **Zustand**: Basit ve güçlü state yönetimi kütüphanesi (kullanıcı bilgileri ve tema gibi global durumlar için).
+- **TradingView**: Kapsamlı ve canlı kripto para grafiklerini görüntülemek için entegre edilmiş widget.
+- **Auth Provider**: Özel yetkilendirme mekanizması.
+- **Responsive tasarım**: Tüm cihazlarda (masaüstü, tablet, mobil) kusursuz kullanıcı deneyimi (%100 uyumluluk).
+- **Dark/Light Tema**: Kullanıcının tercihine göre değiştirilebilir karanlık ve aydınlık tema seçenekleri.
 
-## Learn More
+## Proje Özellikleri
 
-To learn more about Next.js, take a look at the following resources:
+- **Kullanıcı Kayıt ve Giriş Sistemi**: Firebase Authentication ile güvenli kullanıcı hesabı oluşturma ve yönetimi.
+- **Gelişmiş Yetkilendirme (Auth Provider)**: Özel olarak implement edilmiş yetkilendirme katmanı.
+- **Gerçek Zamanlı Piyasa Verileri (CoinGecko API)**: Kripto paraların anlık fiyatları, değişim oranları ve diğer önemli verileri.
+- **Canlı TradingView Grafikleri**: Kripto paraların geçmiş ve anlık fiyat hareketlerini detaylı olarak gösteren interaktif grafikler.
+- **Al-Sat Paneli**: Kullanıcıların kolayca kripto para alım satım işlemleri yapabileceği kullanıcı dostu arayüz.
+- **Coinleri Favorileme Özelliği**: Kullanıcıların ilgilendikleri kripto paraları favorilerine ekleyebilme ve takip edebilme imkanı.
+- **Profil Sayfası**: Kullanıcının kişisel bilgilerini görüntüleyebileceği ve güncelleyebileceği sayfa.
+- **Kullanıcı Bilgilerini Güncelleme**: Profil sayfasında kullanıcının ad, soyad gibi bilgilerini Firebase Firestore üzerinden güncelleyebilme.
+- **Türkçe & İngilizce Dil Seçeneği**: Uygulamanın tüm metinlerinin Türkçe ve İngilizce olarak görüntülenebilmesi.
+- **Formik ve Yup ile Kontrollü Formlar**: Kullanıcı giriş, kayıt ve profil güncelleme gibi formlarda veri doğruluğunu sağlayan güçlü validasyon.
+- **Zustand ile Global State Yönetimi**: Uygulama genelinde (kullanıcı bilgileri, tema durumu vb.) kolay ve etkili state yönetimi.
+- **Dark/Light Tema**: Kullanıcının tercihine göre dinamik olarak değiştirilebilen görsel tema.
+- **%100 Responsive Tasarım**: Farklı ekran boyutlarına ve cihazlara tam uyumluluk.
+- **Firebase Firestore Kayıt**: Kullanıcı profil bilgilerinin güvenli bir şekilde Firebase Firestore veritabanına kaydedilmesi.
+- **Dashboard**: Kullanıcının genel bakışını, favori coinlerini ve diğer önemli bilgileri içeren özel panel.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Projeyi Yerel Ortamda Çalıştırmak İçin
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Depoyu Klonlayın**:
 
-## Deploy on Vercel
+   ```bash
+   git clone https://github.com/yunusorak/rocket-crypto
+   cd rocket-crypto
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. **Bağımlılıkları Yükleyin**:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   ```bash
+   npm install
+   ```
+
+
+3. **Geliştirme Sunucusunu Başlatın**:
+
+   ```bash
+   npm run dev
+   ```
+
+4. Tarayıcınızda `http://localhost:3000` adresine giderek uygulamayı görüntüleyin. Sass hatası alırsanız npm i sass komutuyla devam edin.
