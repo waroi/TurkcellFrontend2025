@@ -51,9 +51,12 @@
    &__crypto-selection,
    &__payment-section {
       background-color: $bg-light;
+      margin-bottom: 2rem; // "Son İşlemler" ile çakışmayı önle
       border-radius: 0.5rem;
       padding: 1.5rem;
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      position: relative; // Satılacak Kripto kısmını konumlandır
+      z-index: 2; // Üstte görünmesini sağla
 
       @include dark-mode {
          background-color: lighten($bg-dark, 5%);
@@ -66,6 +69,35 @@
          align-self: flex-start;
          position: sticky;
          top: 5rem;
+      }
+   }
+
+   &__transactions {
+      position: sticky; // Footer'ın üstüne sabitle
+      bottom: 0; // Footer'a yapışık olsun
+      background-color: $bg-light; // Arka plan rengi
+      padding: 1rem; // İçerik boşluğu
+      border-top: 1px solid $border-light; // Üst kenara bir çizgi ekle
+      box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); // Hafif gölge
+      z-index: 10; // Diğer içeriklerin üstünde görünmesini sağla
+
+      @include dark-mode {
+         background-color: lighten($bg-dark, 5%);
+         border-top: 1px solid $border-dark;
+         box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
+      }
+   }
+
+   &__transactions-list {
+      max-height: 200px; // Maksimum yükseklik belirle
+      overflow-y: auto; // Taşan içerik için kaydırma çubuğu ekle
+      padding: 0.5rem; // İçerik boşluğu
+      background-color: $bg-light; // Arka plan rengi
+      border-radius: 0.5rem; // Köşeleri yuvarla
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Hafif gölge
+
+      @include dark-mode {
+         background-color: lighten($bg-dark, 5%);
       }
    }
 

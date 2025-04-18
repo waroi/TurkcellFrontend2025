@@ -71,7 +71,8 @@ export default {
     loginWithGoogle: 'Google ile Giriş Yap',
     passwordReset: 'Şifre Sıfırlama',
     resetInstructions: 'E-posta adresinizi girin ve şifre sıfırlama talimatlarını alın',
-    sendResetLink: 'Sıfırlama Bağlantısı Gönder'
+    sendResetLink: 'Sıfırlama Bağlantısı Gönder',
+    profile:'Profil',
   },
   footer: {
     aboutUs: 'Hakkımızda',

@@ -26,7 +26,6 @@ const Header: React.FC = () => {
   const [currentPassword, setCurrentPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [error, setError] = useState<string | null>(null);
-  const [isWalletMenuOpen, setIsWalletMenuOpen] = useState(false);
   const [user, setUser] = useState<{ displayName: string; email: string } | null>(null);
 
   // Kullanıcı bilgilerini yükleme
@@ -34,12 +33,21 @@ const Header: React.FC = () => {
     const fetchUserProfile = async () => {
       try {
         const userProfile = await getCurrentUserProfile();
-        setUser(userProfile);
+        if (userProfile && userProfile.displayName && userProfile.email) {
+          setUser({
+            displayName: userProfile.displayName,
+            email: userProfile.email,
+          });
+        } else {
+          setUser({
+            displayName: 'Unknown User',
+            email: 'Unknown Email',
+          });
+        }
       } catch (error) {
         console.error('Kullanıcı bilgileri alınamadı:', error);
       }
     };
-
     fetchUserProfile();
   }, []);
 
@@ -69,6 +77,8 @@ const Header: React.FC = () => {
       await changePassword(currentPassword, newPassword);
       alert('Şifre başarıyla değiştirildi!');
       setIsChangePasswordOpen(false);
+      setCurrentPassword('');
+      setNewPassword('');
     } catch (error: any) {
       setError(error.message || 'Şifre değiştirme başarısız oldu.');
     }
@@ -144,37 +154,11 @@ const Header: React.FC = () => {
                     <History className="header__actions-item-icon" />
                     <span className="sr-only">Trade History</span>
                   </Link>
-                  {/* Wallet Button */}
-                  <div className="header__actions-wallet-container">
-                    <button
-                      className="header__actions-wallet"
-                      onClick={() => setIsWalletMenuOpen(!isWalletMenuOpen)}
-                    >
-                      <svg className="header__actions-wallet-icon" viewBox="0 0 24 24">
-                        <path d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
-                      </svg>
-                      <span>Wallet</span>
-                    </button>
-                    {isWalletMenuOpen && (
-                      <div className="header__wallet-dropdown">
-                        <Link href="/buy-crypto" className="header__wallet-dropdown-item">
-                          {t('Buy-Crypto')}
-                        </Link>
-                        <Link href="/sell-crypto" className="header__wallet-dropdown-item">
-                          {t('Sell-Crypto')}
-                        </Link>
-                      </div>
-                    )}
-                  </div>
                 </>
               )}
             </div>
             {user ? (
               <div className="header__user">
-                <div className="header__user-info">
-                  <div className="header__user-name">{user?.displayName || 'User'}</div>
-                  <div className="header__user-email">{user?.email}</div>
-                </div>
                 <button
                   className="header__user-button"
                   onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
@@ -184,13 +168,10 @@ const Header: React.FC = () => {
                     src={`https://ui-avatars.com/api/?name=${user.displayName || 'User'}&background=random`}
                     alt="User avatar"
                   />
-                  <svg className="header__user-dropdown" viewBox="0 0 24 24">
-                    <path d="M19 9l-7 7-7-7"></path>
-                  </svg>
                 </button>
                 {isUserMenuOpen && (
                   <div className="header__dropdown">
-                    <Link href="/profile" className="header__dropdown-item">
+                    <Link href="/user-profile" className="header__dropdown-item">
                       {t('common.profile')}
                     </Link>
                     <Link href="/settings" className="header__dropdown-item">
@@ -218,16 +199,32 @@ const Header: React.FC = () => {
                 </Link>
               </div>
             )}
-            <button
-              className="header__toggle"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
-            >
-              {isMobileMenuOpen ? <X className="header__toggle-icon" /> : <Menu className="header__toggle-icon" />}
-            </button>
           </div>
         </div>
       </div>
+      {/* Change Password Modal */}
+      {isChangePasswordOpen && (
+        <div className="change-password-modal">
+          <div className="change-password-modal__content">
+            <h2>{t('common.changePassword')}</h2>
+            {error && <p className="change-password-modal__error">{error}</p>}
+            <input
+              type="password"
+              placeholder="Mevcut Şifre"
+              value={currentPassword}
+              onChange={(e) => setCurrentPassword(e.target.value)}
+            />
+            <input
+              type="password"
+              placeholder="Yeni Şifre"
+              value={newPassword}
+              onChange={(e) => setNewPassword(e.target.value)}
+            />
+            <button onClick={handleChangePassword}>Kaydet</button>
+            <button onClick={() => setIsChangePasswordOpen(false)}>İptal</button>
+          </div>
+        </div>
+      )}
     </header>
   );
 };

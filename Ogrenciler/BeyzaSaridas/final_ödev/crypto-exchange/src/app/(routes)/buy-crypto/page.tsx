@@ -7,7 +7,8 @@ import Layout from '../../../components/layout/Layout';
 import CryptoIcon from '../../../components/common/CryptoIcon';
 import Button from '../../../components/ui/Button';
 import { formatCurrency, formatNumber } from '../../../lib/utils';
-import { ArrowRight, Wallet, RefreshCw, CreditCard, DollarSign, AlertCircle } from 'lucide-react';
+import { ArrowRight, Wallet, RefreshCw, CreditCard, DollarSign, AlertCircle, Clock, TrendingUp } from 'lucide-react';
+import { addTransaction } from '../../../lib/firebaseService';
 import './buy-crypto.scss';
 
 interface CryptoCurrency {
@@ -24,6 +25,16 @@ interface Wallet {
   currency: string;
 }
 
+interface RecentTransaction {
+  id: string;
+  cryptoSymbol: string;
+  cryptoAmount: number;
+  fiatAmount: number;
+  fiatCurrency: string;
+  timestamp: Date;
+  status: 'completed' | 'pending' | 'failed';
+}
+
 const BuyCryptoPage: React.FC = () => {
   const { t } = useTranslation();
   const searchParams = useSearchParams();
@@ -38,6 +49,8 @@ const BuyCryptoPage: React.FC = () => {
   const [isProcessing, setIsProcessing] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<boolean>(false);
+  const [recentTransactions, setRecentTransactions] = useState<RecentTransaction[]>([]);
+  const [showRecentTransactions, setShowRecentTransactions] = useState<boolean>(false);
 
   useEffect(() => {
     const symbol = searchParams.get('symbol');
@@ -47,7 +60,7 @@ const BuyCryptoPage: React.FC = () => {
   }, [searchParams]);
 
   useEffect(() => {
-
+    // Mock data for cryptocurrencies
     const mockCryptos: CryptoCurrency[] = [
       { id: 'bitcoin', name: 'Bitcoin', symbol: 'btc', current_price: 54321.23, price_change_percentage_24h: 2.45 },
       { id: 'ethereum', name: 'Ethereum', symbol: 'eth', current_price: 2456.78, price_change_percentage_24h: -1.23 },
@@ -57,13 +70,46 @@ const BuyCryptoPage: React.FC = () => {
       { id: 'solana', name: 'Solana', symbol: 'sol', current_price: 153.87, price_change_percentage_24h: 7.23 },
     ];
 
+    // Mock wallet data
     const mockWallet: Wallet = {
       balance: 5000,
       currency: 'USD'
     };
     
+    // Mock recent transactions
+    const mockTransactions: RecentTransaction[] = [
+      { 
+        id: '1', 
+        cryptoSymbol: 'btc', 
+        cryptoAmount: 0.025, 
+        fiatAmount: 1350.45, 
+        fiatCurrency: 'USD', 
+        timestamp: new Date(Date.now() - 24 * 60 * 60 * 1000), 
+        status: 'completed' 
+      },
+      { 
+        id: '2', 
+        cryptoSymbol: 'eth', 
+        cryptoAmount: 1.5, 
+        fiatAmount: 3685.17, 
+        fiatCurrency: 'USD', 
+        timestamp: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000), 
+        status: 'completed' 
+      },
+      { 
+        id: '3', 
+        cryptoSymbol: 'sol', 
+        cryptoAmount: 2.75, 
+        fiatAmount: 423.14, 
+        fiatCurrency: 'USD', 
+        timestamp: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000), 
+        status: 'completed' 
+      }
+    ];
+    
     setCryptoList(mockCryptos);
     setWallet(mockWallet);
+    setRecentTransactions(mockTransactions);
     setLoading(false);
   }, []);
 
@@ -127,8 +173,7 @@ const BuyCryptoPage: React.FC = () => {
     setError(null);
   };
   
-  const handleBuy = () => {
-
+  const handleBuy = async () => {
     if (!selectedCrypto) {
       setError('Lütfen bir kripto para birimi seçin.');
       return;
@@ -149,21 +194,84 @@ const BuyCryptoPage: React.FC = () => {
     setIsProcessing(true);
     setError(null);
 
-    setTimeout(() => {
-      setIsProcessing(false);
-      setSuccess(true);
+    try {
+      // Simulate transaction processing
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      
+      // Add transaction to history
+      const newTransaction: RecentTransaction = {
+        id: Date.now().toString(),
+        cryptoSymbol: selectedCrypto,
+        cryptoAmount: parseFloat(cryptoAmount),
+        fiatAmount: parseFloat(amount),
+        fiatCurrency: 'USD',
+        timestamp: new Date(),
+        status: 'completed'
+      };
+      
+      // Update transaction history
+      setRecentTransactions([newTransaction, ...recentTransactions]);
+      
+      // Update wallet balance if using wallet payment
+      if (paymentMethod === 'wallet' && wallet) {
+        setWallet({
+          ...wallet,
+          balance: wallet.balance - parseFloat(amount)
+        });
+      }
 
+      // Show success message
+      setSuccess(true);
+      
+      // Try to add transaction to Firebase if the function exists
+      try {
+        if (typeof addTransaction === 'function') {
+          await addTransaction({
+            type: 'buy',
+            cryptoSymbol: selectedCrypto,
+            cryptoAmount: parseFloat(cryptoAmount),
+            fiatAmount: parseFloat(amount),
+            fiatCurrency: 'USD',
+            paymentMethod: paymentMethod,
+            timestamp: new Date()
+          });
+        }
+      } catch (err) {
+        console.error('Firebase transaction save error:', err);
+        // Don't show error to user as the transaction was successful
+      }
+
+      // Reset form after delay
       setTimeout(() => {
         setSuccess(false);
         setAmount('');
         setCryptoAmount('');
       }, 3000);
-    }, 1500);
+    } catch (err) {
+      console.error('Transaction error:', err);
+      setError('İşlem sırasında bir hata oluştu. Lütfen daha sonra tekrar deneyin.');
+    } finally {
+      setIsProcessing(false);
+    }
   };
   
   const getSelectedCryptoInfo = () => {
     if (!selectedCrypto) return null;
     return cryptoList.find(c => c.symbol.toLowerCase() === selectedCrypto.toLowerCase());
+  };
+
+  const formatDate = (date: Date) => {
+    return date.toLocaleDateString('tr-TR', {
+      day: '2-digit',
+      month: '2-digit',
+      year: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit'
+    });
+  };
+
+  const toggleRecentTransactions = () => {
+    setShowRecentTransactions(!showRecentTransactions);
   };
   
   if (loading) {
@@ -211,6 +319,9 @@ const BuyCryptoPage: React.FC = () => {
                     </div>
                     <div className="buy-crypto-page__crypto-price">
                       {formatCurrency(crypto.current_price)}
+                    </div>
+                    <div className={`buy-crypto-page__crypto-change ${crypto.price_change_percentage_24h >= 0 ? 'buy-crypto-page__crypto-change--positive' : 'buy-crypto-page__crypto-change--negative'}`}>
+                      {crypto.price_change_percentage_24h >= 0 ? '+' : ''}{crypto.price_change_percentage_24h.toFixed(2)}%
                     </div>
                   </div>
                 ))}
@@ -375,6 +486,55 @@ const BuyCryptoPage: React.FC = () => {
                 </Button>
               </div>
             </div>
+
+            {/* Recent Transactions Section */}
+            <div className="buy-crypto-page__transactions">
+              <div className="buy-crypto-page__transactions-header" onClick={toggleRecentTransactions}>
+                <h2 className="buy-crypto-page__section-title">
+                  <Clock className="buy-crypto-page__section-icon" />
+                  Son İşlemler
+                </h2>
+                <span className="buy-crypto-page__toggle-icon">
+                  {showRecentTransactions ? '▲' : '▼'}
+                </span>
+              </div>
+              
+              {showRecentTransactions && (
+                <div className="buy-crypto-page__transactions-list">
+                  {recentTransactions.length > 0 ? (
+                    recentTransactions.map(transaction => (
+                      <div key={transaction.id} className="buy-crypto-page__transaction-item">
+                        <div className="buy-crypto-page__transaction-icon">
+                          <CryptoIcon symbol={transaction.cryptoSymbol} size={24} />
+                        </div>
+                        <div className="buy-crypto-page__transaction-details">
+                          <div className="buy-crypto-page__transaction-title">
+                            {transaction.cryptoAmount.toFixed(6)} {transaction.cryptoSymbol.toUpperCase()} Satın Alındı
+                          </div>
+                          <div className="buy-crypto-page__transaction-date">
+                            {formatDate(transaction.timestamp)}
+                          </div>
+                        </div>
+                        <div className="buy-crypto-page__transaction-amount">
+                          <div className="buy-crypto-page__transaction-fiat">
+                            {formatCurrency(transaction.fiatAmount)}
+                          </div>
+                          <div className={`buy-crypto-page__transaction-status buy-crypto-page__transaction-status--${transaction.status}`}>
+                            {transaction.status === 'completed' ? 'Tamamlandı' : 
+                             transaction.status === 'pending' ? 'Beklemede' : 'Başarısız'}
+                          </div>
+                        </div>
+                      </div>
+                    ))
+                  ) : (
+                    <div className="buy-crypto-page__no-transactions">
+                      <p>Henüz işlem geçmişi bulunmamaktadır.</p>
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+
           </div>
         </div>
       </div>
