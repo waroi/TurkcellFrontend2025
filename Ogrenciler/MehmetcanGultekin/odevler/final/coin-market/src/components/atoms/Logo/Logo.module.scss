@@ -1,0 +1,9 @@
+.logo {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+
+    &:hover {
+        opacity: 0.9;
+    }
+}

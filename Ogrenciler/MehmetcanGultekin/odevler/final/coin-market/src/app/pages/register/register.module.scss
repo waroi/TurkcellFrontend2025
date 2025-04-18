@@ -1,0 +1,115 @@
+.registerContainer {
+    min-height: 100vh;
+    color: #23262f;
+
+    h1 {
+        font-size: 2.5rem;
+        color: #23262f;
+    }
+
+    p {
+        color: rgba(35, 38, 47, 0.6);
+    }
+
+    .formContainer {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .toggleBtn {
+        border-radius: 20px;
+        min-width: 120px;
+
+        &.active {
+            background-color: #3772ff;
+            border-color: #3772ff;
+            color: #fff;
+        }
+
+        &.inactive {
+            background-color: transparent;
+            color: rgba(35, 38, 47, 0.6);
+            border-color: rgba(35, 38, 47, 0.2);
+        }
+    }
+
+    label {
+        text-align: left;
+        display: block;
+        margin-bottom: 8px;
+        color: rgba(35, 38, 47, 0.6);
+    }
+
+    .inputGroup {
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+    input,
+    select {
+        height: 48px;
+        background-color: #fff;
+        border: 1px solid rgba(35, 38, 47, 0.2);
+        color: #23262f;
+        border-radius: 4px;
+        width: 100%;
+
+        &::placeholder {
+            color: rgba(35, 38, 47, 0.4);
+        }
+
+        &:focus {
+            background-color: #fff;
+            color: #23262f;
+            border-color: #3772ff;
+            box-shadow: none;
+        }
+    }
+
+
+
+    .eyeIcon {
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: rgba(35, 38, 47, 0.6);
+        cursor: pointer;
+        background: none;
+        border: none;
+        padding: 0;
+    }
+
+    .authButton {
+        background-color: #3772ff;
+        border: none;
+        color: white;
+        height: 48px;
+        border-radius: 0 4px 4px 0;
+        min-width: 120px;
+    }
+
+    .submitButton {
+        height: 48px;
+        background-color: #3772ff;
+        border: none;
+        border-radius: 24px;
+        font-size: 16px;
+        font-weight: 500;
+        color: #fff;
+
+        &:hover {
+            background-color: darken(#3772ff, 10%);
+        }
+    }
+
+    .loginLink {
+        color: #3772ff;
+        text-decoration: none;
+        font-weight: 500;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
