@@ -1,0 +1,73 @@
+$primary: #3772ff;
+$onSurface: #23262f;
+$secondary: #777e90;
+$secondary2: #b1b5c3;
+$surface: #f7f7f7;
+$surfaceMain: #ffffff;
+$interactive: #2e72d2;
+$critical: #d33535;
+$warning: #fabe3c;
+$success: #58bd7d;
+$hightlight: #1e58c8;
+$bg_dark: #141416;
+$bg-section-dark: #18191d;
+
+html {
+  --color-succes: #{$success};
+  --color-critical: #{$critical};
+  --color-white: #{$surfaceMain};
+  --color-secondary: #{$secondary};
+  --color-secondary2: #{$secondary2};
+  --color-primary: #{$primary};
+  --color-surface: #{$onSurface};
+}
+
+html[data-theme="light"] {
+  --color-text: #{$onSurface};
+  --color-background: #{$surfaceMain};
+  --color-bg-section: #{$surface};
+  --color-discover-bg: #{$primary};
+}
+
+html[data-theme="dark"] {
+  --color-text: #{$surfaceMain};
+  --color-background: #{$bg_dark};
+  --color-bg-section: #{$bg-section-dark};
+  --color-discover-bg: #{$bg-section-dark};
+}
+
+body,
+option,
+.card-container,
+.coin-card p {
+  margin: 0;
+  padding: 0;
+  color: var(--color-text);
+  background: var(--color-background);
+  a,
+  button,
+  select {
+    color: var(--color-text);
+    border-color: var(--color-text);
+  }
+  .banner,
+  .info {
+    background: var(--color-bg-section);
+  }
+}
+a {
+  text-decoration: none;
+}
+.primary-btn {
+  background-color: $primary;
+  color: $surfaceMain;
+  font-weight: 500;
+  border: none;
+}
+.big-btn {
+  padding: 16px 24px;
+  border-radius: 30px;
+}
+.container {
+  padding: 0 255px;
+}

@@ -2,6 +2,9 @@
 
 import React from "react";
 import Image from "next/image";
+import { useSelector } from "react-redux";
+import { RootState } from "@/store/store";
+import styles from "./StepProgress.module.css";
 
 interface StepProgressProps {
   currentStep: number;
@@ -9,11 +12,22 @@ interface StepProgressProps {
 }
 
 const StepProgress: React.FC<StepProgressProps> = ({ currentStep, steps }) => {
+  const theme = useSelector((state: RootState) => state.theme.mode);
+
   return (
     <div className="d-flex justify-content-between align-items-center mb-4">
       {steps.map((step, i) => {
         const isCompleted = i < currentStep;
         const isCurrent = i === currentStep - 1;
+        const isActive = isCompleted || isCurrent;
+        const textClass =
+          theme === "dark"
+            ? isActive
+              ? "text-white"
+              : "text-muted"
+            : isActive
+            ? "text-dark"
+            : "text-muted";
 
         return (
           <div
@@ -25,9 +39,8 @@ const StepProgress: React.FC<StepProgressProps> = ({ currentStep, steps }) => {
               style={{
                 width: 18,
                 height: 18,
-                borderColor: isCompleted || isCurrent ? "#16c784" : "#ccc",
-                backgroundColor:
-                  isCompleted || isCurrent ? "#16c784" : "transparent",
+                borderColor: isActive ? "#16c784" : "#ccc",
+                backgroundColor: isActive ? "#16c784" : "transparent",
               }}
             >
               {isCompleted && (
@@ -40,13 +53,7 @@ const StepProgress: React.FC<StepProgressProps> = ({ currentStep, steps }) => {
               )}
             </div>
 
-            <span
-              className={`fw-semibold ${
-                isCompleted || isCurrent ? "text-dark" : "text-muted"
-              }`}
-            >
-              {step}
-            </span>
+            <span className={`fw-semibold ${textClass}`}>{step}</span>
 
             {i !== steps.length - 1 && (
               <div

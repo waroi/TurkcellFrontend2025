@@ -1,0 +1,29 @@
+// Light theme default değerleri
+$primary: #007bff;
+$secondary: #6c757d;
+$body-bg: #ffffff;
+$body-color: #212529;
+$card-bg: #f8f9fa;
+
+// Bootstrap SCSS override edilecek alan
+// Bu kısım sadece light temayı temsil eder.
+// Dark tema için runtime'da CSS değişkeniyle override edeceğiz
+
+// CSS değişkenleri (light default)
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --background-color: #ffffff;
+  --text-color: #212529;
+  --card-bg: #f8f9fa;
+}
+
+// Dark mode değişkenleri
+body.dark {
+  --primary-color: #0d6efd;
+  --secondary-color: #5a6268;
+  --background-color: #18191d;
+  --text-color: #f8f9fa;
+  --card-bg: #2c3034;
+  --navbar-bg: #141416;
+}

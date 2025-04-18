@@ -1,0 +1,27 @@
+.customer-left {
+  max-width: 510px;
+  h2 {
+    margin-bottom: 16px;
+  }
+  h4 {
+    margin-bottom: 12px;
+  }
+  p {
+    margin-bottom: 24px;
+  }
+  .images {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .review {
+    p {
+      color: var(--color-primary);
+      font-weight: 600;
+      span {
+        color: var(--color-text);
+        margin-left: 4px;
+      }
+    }
+  }
+}

@@ -42,7 +42,7 @@ const About = () => {
                         <div className="rounded-4 p-4 shadow-sm bg-surface">
                             <h4 className="mb-4">{t('about_title_')}</h4>
                             <p>{t('about_text')}</p>
-                            <p>{t('about_text2')}</p>
+                            <p>{t('about_text2')} <a href="https://github.com/SedanurCeylan/TurkcellFinal.git"> Repo Linki</a></p>
                         </div>
                     </div>
                 </div>

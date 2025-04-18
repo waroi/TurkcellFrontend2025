@@ -3,12 +3,8 @@
 import React, { useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import Button from "@/components/atoms/Button";
-
-interface FaqItemProps {
-  question: string;
-  answer?: string;
-  defaultOpen?: boolean;
-}
+import type { FaqItemProps } from "@/types/global";
+import styles from "./FaqItem.module.css";
 
 const FaqItem = ({ question, answer, defaultOpen = false }: FaqItemProps) => {
   const [open, setOpen] = useState(defaultOpen);
@@ -20,12 +16,12 @@ const FaqItem = ({ question, answer, defaultOpen = false }: FaqItemProps) => {
         onClick={() => setOpen(!open)}
         style={{ cursor: "pointer" }}
       >
-        <h6 className="fw-semibold mb-0">{question}</h6>
+        <h6 className={`${styles.title} fw-semibold mb-0`}>{question}</h6>
         {open ? <FaChevronUp /> : <FaChevronDown />}
       </div>
 
       {open && (
-        <div className="mt-3 text-muted">
+        <div className={`${styles.text} mt-3`}>
           <p>
             {answer ||
               `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tellus

@@ -1,21 +1,29 @@
+"use client";
+
 import React from "react";
 import FaqItem from "../../molecules/FaqItem";
+import { useTranslations } from "next-intl";
+import styles from "./FaqSection.module.css";
 
 const FaqSection = () => {
+  const t = useTranslations("Faq");
+
   return (
     <div className="container py-5 w-50">
-      <h2 className="fw-bold text-center mb-2">Frequently Asked Questions</h2>
-      <p className="text-muted text-center mb-4">Learn how to get started</p>
+      <h2 className={`${styles.title} fw-bold text-center mb-2`}>
+        {t("title")}
+      </h2>
+      <p className={`${styles.text} text-center mb-4`}>{t("subtitle")}</p>
 
       <div className="border-top">
         <FaqItem
-          question="What is Rockie"
-          answer="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tellus aliquam parturient erat id vel, condimentum a, hendrerit egestas."
+          question={t("questions.q1")}
+          answer={t("answers.a1")}
           defaultOpen
         />
-        <FaqItem question="How to start with Rockie" />
-        <FaqItem question="What Cryptocurrencies can I use to purchase" />
-        <FaqItem question="How to buy & sell in Rockie" />
+        <FaqItem question={t("questions.q2")} answer={t("answers.a2")} />
+        <FaqItem question={t("questions.q3")} answer={t("answers.a3")} />
+        <FaqItem question={t("questions.q4")} answer={t("answers.a4")} />
       </div>
     </div>
   );

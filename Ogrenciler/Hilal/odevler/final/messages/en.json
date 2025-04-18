@@ -110,7 +110,7 @@
       }
     }
   },
- "Metadata": {
+  "Metadata": {
     "title": "Cryptor Exchange - Trade with Confidence",
     "description": "Buy, sell, and trade cryptocurrencies securely with Cryptor. Experience a seamless trading interface, real-time data, and fast transactions.",
     "home": {
@@ -192,25 +192,37 @@
       "excuted": "Excuted",
       "total": "Total"
     },
-    "coin-tabs":{
-      "BTC":"BTC",
-      "ETH":"ETH",
-      "USDT":"USDT"
+    "coin-tabs": {
+      "BTC": "BTC",
+      "ETH": "ETH",
+      "USDT": "USDT"
     },
-    "order-book":{
-      "price":"Price",
-      "quantity":"Amount",
-      "amount":"Total"
+    "order-book": {
+      "price": "Price",
+      "quantity": "Amount",
+      "amount": "Total"
     },
-"recent-trades":{
-  "time":"Time",
-  "price":"Price",
-  "amount":"Amount"
-},
-"coins":{
-  "pair":"Pair",
-  "last-price":"Last Price",
-  "change":"Change"
-}
+    "recent-trades": {
+      "time": "Time",
+      "price": "Price",
+      "amount": "Amount"
+    },
+    "coins": {
+      "pair": "Pair",
+      "last-price": "Last Price",
+      "change": "Change"
+    }
+  },
+  "BuyCriptoPage": {
+    "steps": {
+      "select-currency": "Select currency",
+      "success": "Success",
+      "payment": "Payment"
+    },
+    "BuyCriptoNavs": {
+      "overview": "Overview",
+      "buy-cripto": "Buy Cripto",
+      "sell-cripto": "Sell Cripto"
+    }
   }
 }
