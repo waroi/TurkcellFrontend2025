@@ -1,0 +1,17 @@
+.breadcrumb {
+    padding: 56px 0;
+
+    .title {
+        font-size: 40px;
+        line-height: 48px;
+        font-weight: 700;
+        line-height: -0.01em;
+    }
+
+    .path {
+        color: var(--secondary-color);
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 28px;
+    }
+}

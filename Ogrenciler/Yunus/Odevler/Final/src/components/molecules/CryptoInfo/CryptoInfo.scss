@@ -1,0 +1,116 @@
+.crypto-info-box {
+    background: var(--subhero-background-color);
+    border-radius: 16px;
+    padding: 50px 80px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+
+    &__pair {
+        font-weight: 700;
+        font-size: 1.25rem;
+
+        select {
+            border: none;
+            background: transparent;
+            font-weight: 700;
+            font-size: 1.25rem;
+            outline: none;
+            cursor: pointer;
+            color: var(--text-color);
+            padding-right: 18px;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 32px;
+        }
+    }
+
+    &__divider {
+        border-left: 1px solid var(--marketcap-border-color);
+        height: 48px;
+        margin: 0 24px;
+    }
+
+    &__item {
+        .label {
+            color: #777E90 !important;
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 20px;
+            line-height: 28px;
+            margin-bottom: 8px;
+
+            i {
+                margin-right: 4px;
+            }
+        }
+
+        .last-price {
+            color: #d33535;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 28px;
+
+        }
+
+        .usd-price {
+            color: #777E90;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 28px;
+            margin-left: 2px;
+        }
+
+        .change {
+            color: #58BD7D;
+            font-weight: 700;
+        }
+
+        .change-badge {
+            background: #58BD7D;
+            color: #fff;
+            font-size: 0.95rem;
+            border-radius: 16px;
+            padding: 2px 8px;
+            margin-left: 6px;
+            font-weight: 300;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .bold {
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 28px;
+            color: var(--text-color);
+        }
+    }
+
+    @media screen and (max-width: 1400px) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media screen and (max-width: 992px) {
+        flex-direction: column;
+        gap: 18px;
+        padding: 18px;
+
+        &__divider {
+            display: none;
+        }
+
+        display: grid !important;
+        grid-template-columns: repeat(6, 1fr);
+        overflow: auto;
+        gap: 30px;
+
+        .crypto-info-box__item {
+            width: max-content;
+        }
+    }
+}

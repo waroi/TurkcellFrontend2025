@@ -1,0 +1,715 @@
+{
+    "messages": {
+        "loading": "Yükleniyor..."
+    },
+    "HomePage": {
+        "welcome": "Sayfama hoş geldiniz!",
+        "title": "Bu uygulamamın başlığı",
+        "description": "Bu uygulamamın açıklaması",
+        "change_language": "Dili değiştir",
+        "menu": {
+            "wallet": {
+                "text": "Cüzdan",
+                "href": "/wallet"
+            },
+            "left": [
+                {
+                    "id": "home",
+                    "label": "Ana Sayfa",
+                    "href": "/"
+                },
+                {
+                    "id": "buy_crypto",
+                    "label": "Kripto Satın Al",
+                    "href": "/wallet/buy"
+                },
+                {
+                    "id": "markets",
+                    "label": "Piyasalar",
+                    "href": "/market"
+                },
+                {
+                    "id": "exchange",
+                    "label": "Borsa",
+                    "href": "/dashboard"
+                },
+                {
+                    "id": "spot",
+                    "label": "Spot",
+                    "href": "/spot"
+                },
+                {
+                    "id": "bit_usdt",
+                    "label": "BIT/USDT",
+                    "href": "/bitusdt"
+                }
+            ],
+            "right": [
+                {
+                    "id": "assets",
+                    "label": "Varlıklar",
+                    "href": "#",
+                    "subMenu": [
+                        {
+                            "id": "settings",
+                            "label": "Ayarlar",
+                            "href": "/profile/settings"
+                        }
+                    ]
+                },
+                {
+                    "id": "orders_traders",
+                    "label": "Emirler ve Ticaret",
+                    "href": "#",
+                    "subMenu": [
+                        {
+                            "id": "orders",
+                            "label": "Varlıklar",
+                            "href": "/orders"
+                        }
+                    ]
+                }
+            ]
+        },
+        "Hero": {
+            "Info": {
+                "title": "Dijital Varlıkları Roket İçinde Satın Alın ve Satın",
+                "description": "Coin Rocket, kripto varlık alım satımının en kolay, en güvenli ve en hızlı yoludur.",
+                "buttonText": "Hemen Başlayın",
+                "partner": "Partnerlerimiz"
+            },
+            "partners": [
+                "/partner-1.png",
+                "/partner-2.png",
+                "/partner-3.png",
+                "/partner-4.png"
+            ]
+        },
+        "MarketCap": {
+            "title": "Piyasa Güncellemesi",
+            "subTitle": "Tüm Coinleri Gör",
+            "categories": [
+                "Metaverse",
+                "Eğlence",
+                "Enerji",
+                "NFT",
+                "Oyun",
+                "Müzik"
+            ],
+            "tableColumns": [
+                "",
+                "#",
+                "İsim",
+                "Son Fiyat",
+                "24%",
+                "Piyasa Değeri",
+                "Son 7 Gün",
+                ""
+            ],
+            "messages": {
+                "loading": "Yükleniyor...",
+                "dataLoading": "Coin verileri yükleniyor..."
+            }
+        },
+        "HowItWorks": {
+            "title": "Nasıl Çalışır",
+            "description": "Stacks, React Native'de oluşturulmuş istiflenebilir içerik bloklarından oluşan üretime hazır bir kütüphanedir.",
+            "steps": [
+                {
+                    "path": "/homepage/how-it-works/Bitcoin-1.png",
+                    "step": 1,
+                    "label": "İndir",
+                    "description": "Stacks, React Native ile oluşturulmuş, üretim için hazır, istiflenebilir içerik blokları kütüphanesidir."
+                },
+                {
+                    "path": "/homepage/how-it-works/Bitcoin-Wallet.png",
+                    "step": 2,
+                    "label": "Cüzdanı Bağla",
+                    "description": "Stacks, React Native ile oluşturulmuş, üretim için hazır, istiflenebilir içerik blokları kütüphanesidir."
+                },
+                {
+                    "path": "/homepage/how-it-works/Bitcoin-Mining.png",
+                    "step": 3,
+                    "label": "Ticarete Başla",
+                    "description": "Stacks, React Native ile oluşturulmuş, üretim için hazır, istiflenebilir içerik blokları kütüphanesidir."
+                },
+                {
+                    "path": "/homepage/how-it-works/Bitcoin-Comparison.png",
+                    "step": 4,
+                    "label": "Para Kazan",
+                    "description": "Stacks, React Native ile oluşturulmuş, üretim için hazır, istiflenebilir içerik blokları kütüphanesidir."
+                }
+            ]
+        },
+        "WhatIsRockie": {
+            "title": "Rockie Nedir",
+            "description": "Bitcost'ta çeşitli ticaret deneyimleyin. Spot Ticaret, Vadeli İşlem Ticareti, P2P, Staking, Madencilik ve marj gibi çeşitli coin işlem türlerini kullanabilirsiniz.",
+            "steps": [
+                {
+                    "title": "Gerçek zamanlı kripto para",
+                    "description": "Bitcost'ta çeşitli ticaret deneyimleyin. Spot Ticaret, Vadeli İşlem Ticareti, P2P, Staking, Madencilik ve marj gibi çeşitli coin işlem türlerini kullanabilirsiniz."
+                },
+                {
+                    "title": "BTC, ETH, XRP, OKB vb. satımı yapın.",
+                    "description": "Bitcost'ta çeşitli ticaret deneyimleyin. Spot Ticaret, Vadeli İşlem Ticareti, P2P, Staking, Madencilik ve marj gibi çeşitli coin işlem türlerini kullanabilirsiniz."
+                }
+            ],
+            "buttonText": "Daha Fazlasını Keşfedin"
+        },
+        "FreeYourMoney": {
+            "title": "Paranızı serbest bırakın ve güvenle yatırım yapın",
+            "description": "Cryptor Trade ile ticaret becerilerinizin eşleştiğinden emin olabilirsiniz",
+            "steps": [
+                {
+                    "title": "Gerçek zamanlı kripto para",
+                    "description": "Mobil cihazınızdan varlıklarınızı yönetin"
+                },
+                {
+                    "title": "Servetinizin Kontrolünü Ele Alın",
+                    "description": "Emin olun, paranıza yalnızca siz erişebilirsiniz"
+                }
+            ]
+        },
+        "OurCustomers": {
+            "title": "Müşterilerimiz Yaptığımız İşi Seviyor",
+            "subTitle": "Fikrinizi finsweet ile gerçeğe dönüştürün",
+            "description": "Bir okuyucunun, bir sayfanın düzenine bakarken okunabilir içeriği tarafından dikkatinin dağıtılacağı uzun zamandır bilinen bir gerçektir.",
+            "reviewsText": "Müşteri Yorumları",
+            "rightSection": {
+                "message": "“Harika bir kurs. Gerçekten keyif aldım. Kurs, kodlara dair çok iyi açıklamalarla öğrenmesi çok kolaydı. Kurs sırasında edindiğim bilgilerle uygulamaları kolayca anlayabildim ve geliştirebildim.”",
+                "jobs": "Şirket Müdürü"
+            }
+        },
+        "Info": {
+            "title": "25$'a kadar kripto para kazanın",
+            "description": "Belirli kripto para birimlerinin nasıl çalıştığını keşfedin ve her kripto paradan bir miktar alıp kendiniz deneyin.",
+            "buttonText": "Hesap Oluştur"
+        }
+    },
+    "LocaleSwitcher": {
+        "label": "Dil Seçiniz",
+        "locale": {
+            "en": "EN/USD",
+            "tr": "TR/TRY"
+        }
+    },
+    "Footer": {
+        "logoSection": [
+            {
+                "id": "special",
+                "label": "Hadi Konuşalım! 🤙"
+            },
+            {
+                "id": "phone",
+                "label": "+98 902 353 2926"
+            },
+            {
+                "id": "email",
+                "label": "sinahosseini379@gmail.com"
+            },
+            {
+                "id": "copyright",
+                "label": "Telif Hakkı © 2023 Free For Earth’s people"
+            }
+        ],
+        "SiteDirections": [
+            {
+                "title": "Ürünler",
+                "key": "products",
+                "items": [
+                    {
+                        "id": "spot",
+                        "label": "Spot"
+                    },
+                    {
+                        "id": "inverse_perpetual",
+                        "label": "Ters Sürekli"
+                    },
+                    {
+                        "id": "usdt_perpetual",
+                        "label": "USDT Sürekli"
+                    },
+                    {
+                        "id": "exchange",
+                        "label": "Borsa"
+                    },
+                    {
+                        "id": "launchpad",
+                        "label": "Launchpad"
+                    },
+                    {
+                        "id": "binance_pay",
+                        "label": "Binance Pay"
+                    }
+                ]
+            },
+            {
+                "title": "Hizmetler",
+                "key": "services",
+                "items": [
+                    {
+                        "id": "buy_crypto",
+                        "label": "Kripto Satın Al"
+                    },
+                    {
+                        "id": "markets",
+                        "label": "Piyasalar"
+                    },
+                    {
+                        "id": "trading_fee",
+                        "label": "İşlem Ücreti"
+                    },
+                    {
+                        "id": "affiliate_program",
+                        "label": "Ortaklık Programı"
+                    },
+                    {
+                        "id": "referral_program",
+                        "label": "Referans Programı"
+                    },
+                    {
+                        "id": "api",
+                        "label": "API"
+                    }
+                ]
+            },
+            {
+                "title": "Destek",
+                "key": "support",
+                "items": [
+                    {
+                        "id": "bybit_learn",
+                        "label": "Bybit Öğren"
+                    },
+                    {
+                        "id": "help_center",
+                        "label": "Yardım Merkezi"
+                    },
+                    {
+                        "id": "user_feedback",
+                        "label": "Kullanıcı Geri Bildirimi"
+                    },
+                    {
+                        "id": "submit_request",
+                        "label": "Talep Gönder"
+                    },
+                    {
+                        "id": "api_documentation",
+                        "label": "API Dokümantasyonu"
+                    },
+                    {
+                        "id": "trading_rules",
+                        "label": "İşlem Kuralları"
+                    }
+                ]
+            },
+            {
+                "title": "Hakkımızda",
+                "key": "about_us",
+                "items": [
+                    {
+                        "id": "about_bybit",
+                        "label": "Bybit Hakkında"
+                    },
+                    {
+                        "id": "authenticity_check",
+                        "label": "Orijinallik Kontrolü"
+                    },
+                    {
+                        "id": "careers",
+                        "label": "Kariyer"
+                    },
+                    {
+                        "id": "business_contacts",
+                        "label": "İş İletişimleri"
+                    },
+                    {
+                        "id": "blog",
+                        "label": "Blog"
+                    }
+                ]
+            }
+        ]
+    },
+    "User": {
+        "layout": {
+            "userProfile": "Kullanıcı Profili",
+            "referrals": "Yönlendirmeler",
+            "api_keys": "API Anahtarları",
+            "loginHistory": "Oturum Geçmişi",
+            "fa2": "2FA",
+            "changePassword": "Şifre Değiştir"
+        },
+        "title": "Kullanıcı Profili",
+        "path": [
+            "Ana Sayfa",
+            "/",
+            "Kullanıcı"
+        ],
+        "subTitle": "Bilgiler",
+        "forms": {
+            "name": "Ad",
+            "SurName": "Soyad",
+            "email": "E-posta Adresi",
+            "phoneNumber": "Telefon Numaranız",
+            "updateButton": "Profili Kaydet"
+        },
+        "features": "Özellikler",
+        "level1": {
+            "title": "SEVİYE 1",
+            "deposit": "Varlık Yatırma",
+            "withdrawTitle": "Varlık Çekme",
+            "withdrawValue": "Etkin $1,000,000/gün",
+            "cardPurchase": "Kartla Satın Alma",
+            "bankDeposit": "Banka Yatırma"
+        },
+        "level2": {
+            "title": "SEVİYE 2",
+            "fiatAndSpot": "Fiat ve Spot Cüzdan",
+            "marginWallet": "Marj Cüzdanı",
+            "marginWalletValue": "Etkin 100x Kaldıraç"
+        },
+        "ChangePassword": {
+            "title": "Şifre Değiştir",
+            "subTitle": "Yeni Şifre",
+            "forms": {
+                "oldPassword": "Eski Şifre",
+                "newPassword": "Yeni Şifre",
+                "confirmPassword": "Şifreyi Onaylayın"
+            },
+            "buttonText": "Şifreyi Değiştir"
+        }
+    },
+    "Login": {
+        "path": [
+            "Ana Sayfa",
+            "/",
+            "Giriş Yap"
+        ],
+        "short": "Giriş Yap",
+        "title": "Rockie'ye Giriş Yap",
+        "subTitle": "Tekrar hoş geldiniz! Ticarete başlamak için şimdi giriş yapın",
+        "tabs": {
+            "email": "E-posta",
+            "phone": "Mobil"
+        },
+        "forms": {
+            "emailLabel": "E-posta/ID",
+            "emailPlaceholder": "Lütfen e-posta adresinizi giriniz.",
+            "passwordLabel": "Şifre",
+            "passwordPlaceholder": "Lütfen şifrenizi girin.",
+            "phoneLabel": "Telefon Numarası",
+            "phonePlaceholder": "Telefon Numaranız"
+        },
+        "buttonText": "Giriş Yap",
+        "message": "Üye değil misiniz?",
+        "markMessage": "Kayıt Ol"
+    },
+    "Register": {
+        "short": "Kayıt Ol",
+        "path": [
+            "Ana Sayfa",
+            "/",
+            "Kayıt"
+        ],
+        "title": "Rockie'ye Kayıt Ol",
+        "subTitle": "Önceden kayıt olun ve etkinlik avantajlarından yararlanın",
+        "tabs": {
+            "email": "E-posta",
+            "phone": "Mobil"
+        },
+        "forms": {
+            "emailLabel": "E-posta/ID",
+            "emailPlaceholder": "Lütfen e-posta formunu doldurun.",
+            "passwordLabel": "Şifre",
+            "passwordPlaceholder": "Lütfen bir şifre girin.",
+            "reRenderPassPlaceholder": "Lütfen şifrenizi tekrar girin.",
+            "passwordCriticMessage": "(8 veya daha fazla karakter, sayılar ve özel karakterler dahil)",
+            "nickNameLabel": "Takma Ad",
+            "nickNamePlaceHolder": "Takma Adınız",
+            "nickNameCriticMessage": "(Özel karakterler hariç)",
+            "country": "Ülke",
+            "phoneLabel": "Cep Telefonu",
+            "phone": "Telefon",
+            "phoneCriticMessage": "(Sadece sayılar girin)",
+            "phonePlaceholder": "Telefon Numaranız",
+            "authenticateButton": "Doğrula",
+            "uidCodeLabel": "UID Kodu",
+            "uidCodePlaceholder": "Lütfen davet kodunuzu girin."
+        },
+        "buttonText": "Ön Kayıt",
+        "message": "Zaten bir hesabınız var mı?",
+        "markMessage": "Giriş Yap"
+    },
+    "Market": {
+        "title": "Bugünün Kripto Para fiyatları",
+        "description": "Küresel kripto para piyasası değeri",
+        "markDesc": "$1.86T",
+        "columns": [
+            "#",
+            "İşlem",
+            "Son İşlem",
+            "24S Değişim %",
+            "24S En Yüksek",
+            "24S En Düşük",
+            "24S Hacim",
+            "Grafik",
+            ""
+        ],
+        "sortHeader": {
+            "tradingParis": "İşlem",
+            "lastPrice": "Son İşlem",
+            "h24Change": "24S Değişim %",
+            "h24TurnOver": "24S Hacim"
+        }
+    },
+    "Wallet": {
+        "layout": {
+            "overview": "Genel Bakış",
+            "buyCrypto": "Kripto Satın Al",
+            "sellCrypto": "Kripto Sat"
+        },
+        "title": "Cüzdan",
+        "path": [
+            "Ana Sayfa",
+            "/",
+            "Cüzdan"
+        ],
+        "overview": {
+            "title": "Genel Bakış",
+            "totalBalance": "Toplam Bakiye",
+            "buttonText": "Bakiyeyi Göster",
+            "forms": [
+                "#",
+                "Varlık",
+                "Kazanılan",
+                "Siparişlerden",
+                "Kullanılabilir Bakiye",
+                "Toplam Bakiye"
+            ],
+            "searchBarText": "Ara"
+        },
+        "buy": {
+            "steps": {
+                "step1": "Para birimini seç",
+                "step2": "Ödemeyi onayla",
+                "step3": "Detaylar"
+            },
+            "data": {
+                "step1": {
+                    "title": "Para Birimini Seç",
+                    "refPrice": "Referans Fiyatı",
+                    "pay": "Öde",
+                    "receive": "Al",
+                    "buttonText": "Devam Et"
+                },
+                "step2": {
+                    "title": "Bilgileri Onayla",
+                    "description": "Almak Üzere Olduğunuz",
+                    "pay": "Öde",
+                    "get": "Al",
+                    "for": "İçin",
+                    "forms": {
+                        "title": "Ödeme Detayları",
+                        "subTitle": "Banka Hesabı",
+                        "accName": "Hesap Adı",
+                        "accNumber": "Hesap Numarası",
+                        "address": "Adres",
+                        "switftCode": "SWIFT Kodu",
+                        "bankAddress": "Banka Adresi"
+                    },
+                    "refCode": "Referans Kodu",
+                    "refText": "Hesabınıza kredi sağlamak için depozitonuza Referans Kodunu EKLEMEK ZORUNDASINIZ!",
+                    "refSub": "Referans Kodu:",
+                    "canceButtonText": "İptal",
+                    "goButtonText": "Devam Et!"
+                },
+                "step3": {
+                    "title": "Başarılı",
+                    "text": "Başarıyla aldınız",
+                    "status": "Durum",
+                    "statusText": "Tamamlandı",
+                    "transactionText": "İşlem Kimliği",
+                    "paymentDetails": {
+                        "title": "Ödeme Detayları",
+                        "subTitle": "Banka Hesabı",
+                        "accName": "Hesap Adı",
+                        "accNumber": "Hesap Numarası",
+                        "address": "Adres",
+                        "switftCode": "SWIFT Kodu",
+                        "bankAddress": "Banka Adresi",
+                        "refCode": "Referans Kodu",
+                        "refText": "Hesabınıza kredi sağlamak için depozitonuza Referans Kodunu EKLEMEK ZORUNDASINIZ!",
+                        "refSub": "Referans Kodu:"
+                    },
+                    "buttons": {
+                        "trade": "Ticaret",
+                        "wallet": "Cüzdan"
+                    }
+                }
+            }
+        },
+        "sell": {
+            "steps": {
+                "step1": "Kripto Seç",
+                "step2": "Miktarı Gir",
+                "step3": "Ödeme Detayları",
+                "step4": "Ödeme Bilgileri"
+            },
+            "step1": {
+                "title": "Kripto Seç",
+                "text": "Hangi Kriptoyu aramak istiyorsunuz",
+                "search": "ara?",
+                "searchBarText": "Ara",
+                "searchButtonText": "Ara",
+                "goButtonText": "Devam Et",
+                "table": {
+                    "title": "Kripto Seç",
+                    "name": "İsim",
+                    "price": "Fiyat",
+                    "loading": "Yükleniyor...",
+                    "noData": "Veri bulunamadı."
+                }
+            },
+            "step2": {
+                "title": "Bilgileri Onayla",
+                "sell": "Sat",
+                "get": "Al",
+                "goButtonText": "Devam Et"
+            },
+            "step3": {
+                "title": "Bilgileri Onayla",
+                "text": "Almak Üzere Olduğunuz",
+                "pay": "Öde",
+                "get": "Al",
+                "for": "İçin",
+                "forms": {
+                    "title": "Ödeme Detayları",
+                    "subTitle": "Banka Hesabı",
+                    "accName": "Hesap Adı",
+                    "accNumber": "Hesap Numarası",
+                    "address": "Adres",
+                    "switftCode": "SWIFT Kodu",
+                    "bankAddress": "Banka Adresi"
+                },
+                "refCode": "Referans Kodu",
+                "refText": "Hesabınıza kredi sağlamak için depozitonuza Referans Kodunu EKLEMEK ZORUNDASINIZ!",
+                "refSub": "Referans Kodu:",
+                "canceButtonText": "İptal",
+                "goButtonText": "Devam Et!"
+            },
+            "step4": {
+                "sold": "Başarıyla Sattınız",
+                "title": "Başarılı",
+                "text": "Başarıyla sattınız",
+                "status": "Durum",
+                "statusText": "Tamamlandı",
+                "transactionText": "İşlem Kimliği",
+                "paymentDetails": {
+                    "title": "Ödeme Detayları",
+                    "subTitle": "Banka Hesabı",
+                    "accName": "Hesap Adı",
+                    "accNumber": "Hesap Numarası",
+                    "address": "Adres",
+                    "switftCode": "SWIFT Kodu",
+                    "bankAddress": "Banka Adresi",
+                    "refCode": "Referans Kodu",
+                    "refText": "Hesabınıza kredi sağlamak için depozitonuza Referans Kodunu EKLEMEK ZORUNDASINIZ!",
+                    "refSub": "Referans Kodu:"
+                },
+                "buttons": {
+                    "trade": "Ticaret",
+                    "wallet": "Cüzdan"
+                }
+            }
+        }
+    },
+    "Dashboard": {
+        "layout": {
+            "home": "Ana Sayfa",
+            "buyCrypto": "Kripto Satın Al",
+            "market": "Piyasa",
+            "exchane": "Borsa",
+            "spot": "Spot",
+            "byfiCenter": "ByFi Merkezi",
+            "more": "Daha Fazla",
+            "logOut": "Çıkış Yap"
+        },
+        "topContainer": {
+            "lastPrice": "Son Fiyat",
+            "H24Change": "24h Değişim",
+            "H24High": "24h Yüksek",
+            "H24Low": "24h Düşük",
+            "H24Vol": "24h Hacim"
+        },
+        "title": "Ticaret Piyasası",
+        "Exchange": {
+            "title": {
+                "buy": "Satın Al",
+                "sell": "Sat"
+            },
+            "tabs": {
+                "limit": "Limit",
+                "market": "Piyasa",
+                "stopLimit": "Stop Limit",
+                "stopMarket": "Stop Piyasa"
+            },
+            "forms": {
+                "pay": "Öde",
+                "receive": "Al",
+                "buttonText": "Satın Al"
+            }
+        },
+        "Balance": {
+            "title": "Bakiyeniz",
+            "buttonText": "Bakiye Yükle",
+            "subTitle": "Varlıklarınız"
+        },
+        "OrderHistory": {
+            "title": "Sipariş Defteri",
+            "tabs": [
+                "Sipariş Geçmişi",
+                "Open Geçmiş",
+                "Kapalı Geçmiş"
+            ],
+            "searchPlaceholder": "Tarihe Göre Ara",
+            "table": [
+                "Tarih",
+                "Çift",
+                "Satın Al/Sat",
+                "Fiyat",
+                "Yürütülmüş",
+                "Toplam"
+            ]
+        },
+        "OrderBook": {
+            "title": "Sipariş Defteri",
+            "table": [
+                "Fiyat",
+                "Miktar",
+                "Toplam"
+            ],
+            "lastPrice": "Son Fiyat",
+            "change": "Değişim"
+        },
+        "OrderBook2": {
+            "table": [
+                "Zaman",
+                "Fiyat",
+                "Miktar"
+            ]
+        },
+        "AllOrders": {
+            "tabs": [
+                "Limit",
+                "Piyasa",
+                "Stop Limit"
+            ],
+            "table": {
+                "pair": "Çift",
+                "lastPrice": "Son Fiyat",
+                "change": "Değişim"
+            }
+        }
+    }
+}
