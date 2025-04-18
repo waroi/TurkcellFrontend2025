@@ -1,3 +1,4 @@
+// app/[locale]/layout.tsx - Bu sizin verdiğiniz layout dosyası
 import {NextIntlClientProvider, hasLocale} from 'next-intl';
 import {notFound} from 'next/navigation';
 import {routing} from '@/i18n/routing';
@@ -14,17 +15,19 @@ export default async function LocaleLayout({
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
- 
+  
   return (
     <html lang={locale}>
+      <head>
+        <title>Crypto Trading Platform</title>
+        <meta name="description" content="Real-time cryptocurrency trading platform with advanced charts and order books" />
+      </head>
       <body>
-        
         <NextIntlClientProvider>
           <ThemeProvider>
-          {children}
+            {children}
           </ThemeProvider>
-          </NextIntlClientProvider>
-        
+        </NextIntlClientProvider>
       </body>
     </html>
   );

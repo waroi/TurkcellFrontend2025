@@ -1,0 +1,123 @@
+.buy-step2 {
+    padding: 28px 32px;
+    background-color: var(--hero-background-color);
+    margin-top: 64px;
+    border-radius: 28px;
+
+    &.buystep-second {
+        margin-top: 32px;
+
+        .subtitle {
+            font-weight: 600;
+            font-size: 16px !important;
+            line-height: 24px;
+            margin-top: 32px;
+        }
+
+        .refference-title {
+            font-weight: 500;
+            font-size: 16px;
+            margin-top: 2rem;
+            margin-bottom: 12px;
+            line-height: 24px;
+        }
+
+        .refference-description {
+            font-weight: 400;
+            color: var(--secondary-color);
+            font-size: 14px;
+            line-height: 24px;
+            margin-bottom: 12px;
+        }
+
+        .refference-code {
+            padding: 12px;
+            border: 1px solid var(--marketcap-border-color);
+            background-color: var(--referral-bg);
+            margin-bottom: 32px;
+
+            p {
+                font-weight: 500;
+                font-size: 16px;
+            }
+        }
+
+        .buy-label {
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 24px;
+            margin-top: 12px !important;
+        }
+
+        .form-control-lg {
+            border: 1px solid var(--marketcap-border-color);
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            color: var(--text-color);
+            padding: 12px 20px;
+            background-color: var(--marketcap-searchbar-background);
+
+            &:hover {
+                border-color: var(--primary-color-light);
+            }
+
+            &::placeholder {
+                color: var(--secondary-color);
+            }
+
+            &:focus {
+                border-color: var(--primary-color-light);
+                box-shadow: none;
+            }
+        }
+    }
+
+    .title {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 32px;
+        margin-bottom: 8px;
+    }
+
+    .description {
+        color: var(--secondary-color);
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 20px;
+    }
+
+    .information-list {
+        .info-title {
+            color: var(--secondary-color);
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 24px;
+        }
+
+        .info-message {
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 24px;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .exchangeRow {
+            flex-direction: column;
+        }
+
+        .information-main-box {
+            display: grid !important;
+        }
+
+        .buttons {
+            flex-direction: column;
+
+            button {
+                width: 100% !important;
+            }
+        }
+    }
+}

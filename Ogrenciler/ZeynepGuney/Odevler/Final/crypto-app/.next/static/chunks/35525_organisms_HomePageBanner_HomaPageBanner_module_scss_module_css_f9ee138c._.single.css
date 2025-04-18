@@ -1,0 +1,239 @@
+/* [project]/src/components/organisms/HomePageBanner/HomaPageBanner.module.scss.module.css [app-client] (css) */
+.HomaPageBanner-module-scss-module__DBScGq__bannerSection {
+  padding: 4rem 1.5rem;
+}
+
+.HomaPageBanner-module-scss-module__DBScGq__bannerSection.HomaPageBanner-module-scss-module__DBScGq__dark {
+  background-color: var(--dark2);
+}
+
+.HomaPageBanner-module-scss-module__DBScGq__bannerSection.HomaPageBanner-module-scss-module__DBScGq__light {
+  background-color: var(--surface);
+}
+
+.HomaPageBanner-module-scss-module__DBScGq__container {
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+}
+
+@media (width >= 768px) {
+  .HomaPageBanner-module-scss-module__DBScGq__container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+    display: flex;
+  }
+}
+
+.HomaPageBanner-module-scss-module__DBScGq__left, .HomaPageBanner-module-scss-module__DBScGq__right {
+  flex: 1;
+}
+
+.HomaPageBanner-module-scss-module__DBScGq__right {
+  justify-content: center;
+  display: flex;
+}
+
+.HomaPageBanner-module-scss-module__DBScGq__partners {
+  font-size: 24px 700;
+  font-weight: 32px;
+}
+
+.HomaPageBanner-module-scss-module__DBScGq__bannerImage {
+  object-fit: contain;
+  width: 100%;
+  max-height: 24rem;
+}
+
+@media (width >= 768px) {
+  .HomaPageBanner-module-scss-module__DBScGq__bannerImage {
+    max-height: 32rem;
+  }
+}
+
+.HomaPageBanner-module-scss-module__DBScGq__title {
+  margin-bottom: 1rem;
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 3rem;
+}
+
+.HomaPageBanner-module-scss-module__DBScGq__description {
+  margin-bottom: 1.5rem;
+  font-size: 1.125rem;
+  font-weight: 400;
+}
+
+.HomaPageBanner-module-scss-module__DBScGq__cryptoContainer {
+  border-radius: 24px;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 2rem;
+  display: flex;
+  box-shadow: 0 2px 4px #0000001a;
+}
+
+.HomaPageBanner-module-scss-module__DBScGq__cryptoContainer.HomaPageBanner-module-scss-module__DBScGq__light {
+  background-color: var(--white);
+}
+
+.HomaPageBanner-module-scss-module__DBScGq__cryptoContainer.HomaPageBanner-module-scss-module__DBScGq__dark {
+  background-color: var(--dark2);
+}
+
+.HomaPageBanner-module-scss-module__DBScGq__buttonContainer {
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  display: flex;
+}
+
+.HomaPageBanner-module-scss-module__DBScGq__buttonContainer button {
+  cursor: pointer;
+  border: none;
+  border-radius: 24px;
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16px;
+}
+
+.HomaPageBanner-module-scss-module__DBScGq__buttonContainer button.HomaPageBanner-module-scss-module__DBScGq__activeButton {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.HomaPageBanner-module-scss-module__DBScGq__buttonContainer button.HomaPageBanner-module-scss-module__DBScGq__inactiveButton {
+  background: none;
+}
+
+.HomaPageBanner-module-scss-module__DBScGq__buttonContainer button.HomaPageBanner-module-scss-module__DBScGq__inactiveButton.HomaPageBanner-module-scss-module__DBScGq__light {
+  color: var(--on-surface);
+}
+
+.HomaPageBanner-module-scss-module__DBScGq__buttonContainer button.HomaPageBanner-module-scss-module__DBScGq__inactiveButton.HomaPageBanner-module-scss-module__DBScGq__dark {
+  color: var(--white);
+}
+
+.HomaPageBanner-module-scss-module__DBScGq__cardContainer {
+  box-shadow: none;
+  border-top: 1px solid;
+  border-radius: 0;
+  gap: 22px;
+  padding: 20px;
+  display: flex;
+}
+
+.HomaPageBanner-module-scss-module__DBScGq__cardContainer.HomaPageBanner-module-scss-module__DBScGq__light {
+  border-color: var(--line);
+}
+
+.HomaPageBanner-module-scss-module__DBScGq__cardContainer.HomaPageBanner-module-scss-module__DBScGq__dark {
+  border-color: var(--on-surface);
+}
+
+.HomaPageBanner-module-scss-module__DBScGq__card {
+  text-align: center;
+  border-radius: 12px;
+  gap: 8px;
+  width: 200px;
+  margin-bottom: 32px;
+  padding: 32px 40px;
+  box-shadow: 0 2px 4px #0000001a;
+}
+
+.HomaPageBanner-module-scss-module__DBScGq__card:hover {
+  background: #ffffff1a;
+  transform: translateY(-4px);
+}
+
+.HomaPageBanner-module-scss-module__DBScGq__card.HomaPageBanner-module-scss-module__DBScGq__dark:hover {
+  background: #2f324180;
+  transform: translateY(-4px);
+}
+
+.HomaPageBanner-module-scss-module__DBScGq__header {
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 8px;
+  display: flex;
+}
+
+.HomaPageBanner-module-scss-module__DBScGq__icon {
+  width: 24px;
+  height: 24px;
+}
+
+.HomaPageBanner-module-scss-module__DBScGq__coinInfo {
+  text-align: left;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  display: flex;
+}
+
+.HomaPageBanner-module-scss-module__DBScGq__coinInfo .HomaPageBanner-module-scss-module__DBScGq__coinName {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.HomaPageBanner-module-scss-module__DBScGq__coinInfo .HomaPageBanner-module-scss-module__DBScGq__coinSymbol {
+  color: var(--secondary);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.HomaPageBanner-module-scss-module__DBScGq__price {
+  margin: 8px 0;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+}
+
+.HomaPageBanner-module-scss-module__DBScGq__marketVolumeContainer {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  display: flex;
+}
+
+.HomaPageBanner-module-scss-module__DBScGq__marketVolumeContainer .HomaPageBanner-module-scss-module__DBScGq__marketCap {
+  font-weight: 400;
+}
+
+.HomaPageBanner-module-scss-module__DBScGq__marketVolumeContainer .HomaPageBanner-module-scss-module__DBScGq__volumeChange {
+  text-align: center;
+  border-radius: 24px;
+  padding: 2px 8px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+}
+
+.HomaPageBanner-module-scss-module__DBScGq__marketVolumeContainer .HomaPageBanner-module-scss-module__DBScGq__volumeChange.HomaPageBanner-module-scss-module__DBScGq__negative {
+  background-color: var(--critical);
+  color: var(--white);
+}
+
+.HomaPageBanner-module-scss-module__DBScGq__marketVolumeContainer .HomaPageBanner-module-scss-module__DBScGq__volumeChange.HomaPageBanner-module-scss-module__DBScGq__positive {
+  background-color: var(--success);
+  color: var(--white);
+}
+
+/*# sourceMappingURL=35525_organisms_HomePageBanner_HomaPageBanner_module_scss_module_css_f9ee138c._.single.css.map*/

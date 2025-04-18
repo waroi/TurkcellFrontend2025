@@ -1,0 +1,388 @@
+/* [project]/src/components/ThemeToggleButton.module.scss.module.css [app-client] (css) */
+.ThemeToggleButton-module-scss-module__LwhdmG__button {
+  cursor: pointer;
+  border: none;
+  padding: .5rem 1rem;
+  font-size: 1rem;
+  transition: all .3s;
+}
+
+.ThemeToggleButton-module-scss-module__LwhdmG__button.ThemeToggleButton-module-scss-module__LwhdmG__light {
+  background-color: var(--white);
+  color: var(--dark);
+}
+
+.ThemeToggleButton-module-scss-module__LwhdmG__button.ThemeToggleButton-module-scss-module__LwhdmG__dark {
+  background-color: var(--dark);
+  color: var(--white);
+}
+
+
+/* [project]/src/components/Navbar.module.scss.module.css [app-client] (css) */
+.Navbar-module-scss-module__E_iIuG__navbar {
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  font-size: 14px;
+  display: flex;
+  box-shadow: 0 2px 5px #0000000d;
+}
+
+.Navbar-module-scss-module__E_iIuG__left {
+  align-items: center;
+  gap: 24px;
+  display: flex;
+}
+
+.Navbar-module-scss-module__E_iIuG__right {
+  align-items: center;
+  gap: 16px;
+  display: flex;
+}
+
+.Navbar-module-scss-module__E_iIuG__logoText {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.Navbar-module-scss-module__E_iIuG__menu {
+  gap: 18px;
+  display: flex;
+}
+
+.Navbar-module-scss-module__E_iIuG__menuItem {
+  cursor: pointer;
+  align-items: center;
+  gap: 4px;
+  display: flex;
+}
+
+.Navbar-module-scss-module__E_iIuG__menuItemActive {
+  background-color: var(--primary);
+  color: var(--white);
+  border: none;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 12px;
+  display: flex;
+}
+
+.Navbar-module-scss-module__E_iIuG__icon {
+  cursor: pointer;
+}
+
+.Navbar-module-scss-module__E_iIuG__lngBtn {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.Navbar-module-scss-module__E_iIuG__lngBtn.Navbar-module-scss-module__E_iIuG__light {
+  color: var(--on-surface);
+}
+
+.Navbar-module-scss-module__E_iIuG__lngBtn.Navbar-module-scss-module__E_iIuG__dark {
+  color: var(--white);
+}
+
+.Navbar-module-scss-module__E_iIuG__walletBtn {
+  cursor: pointer;
+  color: var(--text-color);
+  border: 1px solid;
+  border-color: var(--border-color);
+  background: none;
+  border-radius: 9999px;
+  padding: 6px 12px;
+}
+
+.Navbar-module-scss-module__E_iIuG__walletBtn.Navbar-module-scss-module__E_iIuG__light {
+  color: var(--on-surface);
+  border-color: var(--on-surface);
+}
+
+.Navbar-module-scss-module__E_iIuG__walletBtn.Navbar-module-scss-module__E_iIuG__dark {
+  color: var(--white);
+  border-color: var(--white);
+}
+
+.Navbar-module-scss-module__E_iIuG__avatar {
+  cursor: pointer;
+  border-radius: 9999px;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  display: flex;
+}
+
+
+/* [project]/src/app/global.scss.css [app-client] (css) */
+* {
+  font-family: DM Sans, sans-serif;
+}
+
+@import "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap";
+
+html[data-theme="light"] {
+  --white: #fff;
+  --on-surface: #23262f;
+  --primary: #3772ff;
+  --secondary: #777e90;
+  --dark: #141416;
+  --success: #58bd7d;
+  --critical: #d33535;
+  --line: #e5e5e5;
+}
+
+html[data-theme="dark"] {
+  --bg: #141416;
+  --on-surface: #23262f;
+  --primary: #3772ff;
+  --secondary: #777e90;
+  --white: #fff;
+  --success: #58bd7d;
+  --critical: #d33535;
+  --line: #e5e5e5;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color .3s, color .3s;
+}
+
+
+/* [project]/src/components/HomaPageBanner.module.scss.module.css [app-client] (css) */
+.HomaPageBanner-module-scss-module__EfiBya__bannerSection {
+  padding: 4rem 1.5rem;
+}
+
+.HomaPageBanner-module-scss-module__EfiBya__container {
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+}
+
+@media (width >= 768px) {
+  .HomaPageBanner-module-scss-module__EfiBya__container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+    display: flex;
+  }
+}
+
+.HomaPageBanner-module-scss-module__EfiBya__left, .HomaPageBanner-module-scss-module__EfiBya__right {
+  flex: 1;
+}
+
+.HomaPageBanner-module-scss-module__EfiBya__right {
+  justify-content: center;
+  display: flex;
+}
+
+.HomaPageBanner-module-scss-module__EfiBya__partners {
+  font-size: 24px 700;
+  font-weight: 32px;
+}
+
+.HomaPageBanner-module-scss-module__EfiBya__bannerImage {
+  object-fit: contain;
+  width: 100%;
+  max-height: 24rem;
+}
+
+@media (width >= 768px) {
+  .HomaPageBanner-module-scss-module__EfiBya__bannerImage {
+    max-height: 32rem;
+  }
+}
+
+.HomaPageBanner-module-scss-module__EfiBya__title {
+  margin-bottom: 1rem;
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 3rem;
+}
+
+.HomaPageBanner-module-scss-module__EfiBya__description {
+  margin-bottom: 1.5rem;
+  font-size: 1.125rem;
+  font-weight: 400;
+}
+
+.HomaPageBanner-module-scss-module__EfiBya__button {
+  background-color: var(--primary);
+  color: var(--white);
+  cursor: pointer;
+  border: none;
+  border-radius: 90px;
+  padding: 16px 24px;
+  font-weight: 700;
+}
+
+.HomaPageBanner-module-scss-module__EfiBya__cryptoContainer {
+  border-radius: 24px;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 2rem;
+  display: flex;
+  box-shadow: 0 2px 4px #0000001a;
+}
+
+.HomaPageBanner-module-scss-module__EfiBya__buttonContainer {
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  display: flex;
+}
+
+.HomaPageBanner-module-scss-module__EfiBya__buttonContainer button {
+  cursor: pointer;
+  border: none;
+  border-radius: 24px;
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16px;
+}
+
+.HomaPageBanner-module-scss-module__EfiBya__buttonContainer button.HomaPageBanner-module-scss-module__EfiBya__activeButton {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.HomaPageBanner-module-scss-module__EfiBya__buttonContainer button.HomaPageBanner-module-scss-module__EfiBya__inactiveButton {
+  background: none;
+}
+
+.HomaPageBanner-module-scss-module__EfiBya__buttonContainer button.HomaPageBanner-module-scss-module__EfiBya__inactiveButton.HomaPageBanner-module-scss-module__EfiBya__light {
+  color: var(--on-surface);
+}
+
+.HomaPageBanner-module-scss-module__EfiBya__buttonContainer button.HomaPageBanner-module-scss-module__EfiBya__inactiveButton.HomaPageBanner-module-scss-module__EfiBya__dark {
+  color: var(--white);
+}
+
+.HomaPageBanner-module-scss-module__EfiBya__cardContainer {
+  box-shadow: none;
+  border-top: 1px solid;
+  border-radius: 0;
+  gap: 22px;
+  padding: 20px;
+  display: flex;
+}
+
+.HomaPageBanner-module-scss-module__EfiBya__cardContainer.HomaPageBanner-module-scss-module__EfiBya__light {
+  border-color: var(--line);
+}
+
+.HomaPageBanner-module-scss-module__EfiBya__cardContainer.HomaPageBanner-module-scss-module__EfiBya__dark {
+  border-color: var(--on-surface);
+}
+
+.HomaPageBanner-module-scss-module__EfiBya__card {
+  text-align: center;
+  border-radius: 12px;
+  gap: 8px;
+  width: 200px;
+  margin-bottom: 32px;
+  padding: 32px 40px;
+  box-shadow: 0 2px 4px #0000001a;
+}
+
+.HomaPageBanner-module-scss-module__EfiBya__card:hover {
+  background: #ffffff1a;
+  transform: translateY(-4px);
+}
+
+.HomaPageBanner-module-scss-module__EfiBya__card.HomaPageBanner-module-scss-module__EfiBya__dark:hover {
+  background: #2f324180;
+  transform: translateY(-4px);
+}
+
+.HomaPageBanner-module-scss-module__EfiBya__header {
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 8px;
+  display: flex;
+}
+
+.HomaPageBanner-module-scss-module__EfiBya__icon {
+  width: 24px;
+  height: 24px;
+}
+
+.HomaPageBanner-module-scss-module__EfiBya__coinInfo {
+  text-align: left;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  display: flex;
+}
+
+.HomaPageBanner-module-scss-module__EfiBya__coinInfo .HomaPageBanner-module-scss-module__EfiBya__coinName {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.HomaPageBanner-module-scss-module__EfiBya__coinInfo .HomaPageBanner-module-scss-module__EfiBya__coinSymbol {
+  color: var(--secondary);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.HomaPageBanner-module-scss-module__EfiBya__price {
+  margin: 8px 0;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+}
+
+.HomaPageBanner-module-scss-module__EfiBya__marketVolumeContainer {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  display: flex;
+}
+
+.HomaPageBanner-module-scss-module__EfiBya__marketVolumeContainer .HomaPageBanner-module-scss-module__EfiBya__marketCap {
+  font-weight: 400;
+}
+
+.HomaPageBanner-module-scss-module__EfiBya__marketVolumeContainer .HomaPageBanner-module-scss-module__EfiBya__volumeChange {
+  text-align: center;
+  border-radius: 24px;
+  padding: 2px 8px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+}
+
+.HomaPageBanner-module-scss-module__EfiBya__marketVolumeContainer .HomaPageBanner-module-scss-module__EfiBya__volumeChange.HomaPageBanner-module-scss-module__EfiBya__negative {
+  background-color: var(--critical);
+  color: var(--white);
+}
+
+.HomaPageBanner-module-scss-module__EfiBya__marketVolumeContainer .HomaPageBanner-module-scss-module__EfiBya__volumeChange.HomaPageBanner-module-scss-module__EfiBya__positive {
+  background-color: var(--success);
+  color: var(--white);
+}
+
+
+/*# sourceMappingURL=src_3af281a3._.css.map*/

@@ -2,8 +2,6 @@
 
 import { trades } from "@/constants/cryptoCategory";
 
-
-
 const RecentTrades = () => {
   return (
     <div className="p-4">

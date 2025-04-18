@@ -1,0 +1,101 @@
+/* [project]/src/components/molecules/Dashboard/CryptoCard.module.scss.module.css [app-client] (css) */
+.CryptoCard-module-scss-module__gsPuCa__card {
+  background-color: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  width: 100%;
+  max-width: 20rem;
+  padding: 1rem;
+  box-shadow: 0 4px 6px #0000001a;
+}
+
+.CryptoCard-module-scss-module__gsPuCa__header {
+  align-items: center;
+  gap: .75rem;
+  margin-bottom: .5rem;
+  display: flex;
+}
+
+.CryptoCard-module-scss-module__gsPuCa__logo {
+  width: 2rem;
+  height: 2rem;
+}
+
+.CryptoCard-module-scss-module__gsPuCa__title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.CryptoCard-module-scss-module__gsPuCa__details {
+  color: #374151;
+  flex-direction: column;
+  gap: .25rem;
+  font-size: .875rem;
+  display: flex;
+}
+
+.CryptoCard-module-scss-module__gsPuCa__error {
+  color: red;
+}
+
+
+/* [project]/src/app/global.scss.css [app-client] (css) */
+* {
+  font-family: DM Sans, sans-serif;
+}
+
+@import "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap";
+
+html[data-theme="light"] {
+  --white: #fff;
+  --on-surface: #23262f;
+  --primary: #3772ff;
+  --secondary: #777e90;
+  --secondary2: #b1b5c3;
+  --dark: #141416;
+  --success: #58bd7d;
+  --critical: #d33535;
+  --line: #e5e5e5;
+  --stroke: #e6e8ec;
+  --surface: #f7f7f7;
+  --interactive: #2e72d2;
+  --warning: #fabe3c;
+  --highlight: #1e58c8;
+  --decorative: linear-gradient(90deg, #383fde, #8444d4);
+  --dark2: #18191d;
+  --gray: #3c404b;
+}
+
+html[data-theme="dark"] {
+  --bg: #141416;
+  --on-surface: #23262f;
+  --primary: #3772ff;
+  --secondary: #777e90;
+  --secondary2: #b1b5c3;
+  --white: #fff;
+  --success: #58bd7d;
+  --critical: #d33535;
+  --line: #e5e5e5;
+  --stroke: #e6e8ec;
+  --surface: #f7f7f7;
+  --interactive: #2e72d2;
+  --warning: #fabe3c;
+  --highlight: #1e58c8;
+  --decorative: linear-gradient(90deg, #383fde, #8444d4);
+  --dark2: #18191d;
+  --gray: #3c404b;
+  --dark-hover: #222630;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color .3s, color .3s;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+/*# sourceMappingURL=src_a543ea91._.css.map*/

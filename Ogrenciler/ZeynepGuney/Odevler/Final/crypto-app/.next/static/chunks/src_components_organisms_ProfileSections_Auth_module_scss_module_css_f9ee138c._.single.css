@@ -1,0 +1,110 @@
+/* [project]/src/components/organisms/ProfileSections/Auth.module.scss.module.css [app-client] (css) */
+.Auth-module-scss-module__LohdRq__referrals {
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-left: 80px;
+  display: flex;
+}
+
+.Auth-module-scss-module__LohdRq__title, .Auth-module-scss-module__LohdRq__desc {
+  margin-bottom: 1rem;
+}
+
+.Auth-module-scss-module__LohdRq__referralCodeContainer {
+  border: none;
+  border-radius: 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 20px;
+  display: flex;
+}
+
+.Auth-module-scss-module__LohdRq__referralCodeContainer.Auth-module-scss-module__LohdRq__light {
+  background-color: var(--line);
+}
+
+.Auth-module-scss-module__LohdRq__referralCodeContainer.Auth-module-scss-module__LohdRq__dark {
+  background-color: var(--dark2);
+}
+
+.Auth-module-scss-module__LohdRq__referralCode {
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  display: flex;
+}
+
+.Auth-module-scss-module__LohdRq__inputWithButton {
+  flex-direction: row;
+  align-items: center;
+  gap: .5rem;
+  display: flex;
+}
+
+.Auth-module-scss-module__LohdRq__labelReferralLink, .Auth-module-scss-module__LohdRq__labelReferralCode {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .3rem;
+  width: 100%;
+  display: flex;
+}
+
+.Auth-module-scss-module__LohdRq__input {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 100%;
+  padding: .5rem;
+}
+
+.Auth-module-scss-module__LohdRq__input.Auth-module-scss-module__LohdRq__light {
+  background-color: var(--white);
+  color: var(--on-surface);
+}
+
+.Auth-module-scss-module__LohdRq__input.Auth-module-scss-module__LohdRq__dark {
+  background-color: var(--dark2);
+  color: var(--surface);
+}
+
+.Auth-module-scss-module__LohdRq__copyBtn {
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  padding: .5rem 1rem;
+}
+
+.Auth-module-scss-module__LohdRq__wallet {
+  align-self: flex-start;
+  margin-top: 1rem;
+}
+
+.Auth-module-scss-module__LohdRq__desc2 {
+  color: var(--on-surface);
+  font-weight: 700;
+}
+
+.Auth-module-scss-module__LohdRq__emailRow {
+  align-items: center;
+  gap: .5rem;
+  display: flex;
+}
+
+.Auth-module-scss-module__LohdRq__mailIcon {
+  width: 20px;
+  height: 20px;
+}
+
+.Auth-module-scss-module__LohdRq__title2 {
+  color: var(--success);
+  font-weight: 700;
+}
+
+.Auth-module-scss-module__LohdRq__button {
+  background-color: var(--critical);
+}
+
+/*# sourceMappingURL=src_components_organisms_ProfileSections_Auth_module_scss_module_css_f9ee138c._.single.css.map*/

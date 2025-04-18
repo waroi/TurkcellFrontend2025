@@ -1,0 +1,143 @@
+.footer {
+  padding: 48px 64px;
+  background-color: var(--color-surface-main);
+  color: var(--color-on-surface);
+  font-size: 14px;
+
+  h4 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--color-on-surface);
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin-bottom: 8px;
+      color: var(--color-secondary);
+      cursor: pointer;
+
+      &:hover {
+        color: var(--color-primary);
+      }
+    }
+  }
+
+  .top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+  }
+
+  .logoSection {
+    max-width: 260px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      .logoText {
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--color-on-surface);
+      }
+    }
+
+    .talk {
+      font-weight: 600;
+      margin-top: 8px;
+      color: var(--color-on-surface);
+    }
+
+    .contact {
+      font-size: 14px;
+      color: var(--color-secondary);
+    }
+
+    .copy {
+      font-size: 12px;
+      margin-top: 8px;
+      color: var(--color-secondary2);
+    }
+  }
+
+  .links {
+    display: flex;
+    gap: 48px;
+    flex-wrap: wrap;
+  }
+
+  .bottom {
+    background-color: #2c2e3e; 
+    border-top: 1px solid #444;
+    padding: 16px 0;
+    padding-left: 64px;
+    padding-right: 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    p {
+      font-size: 12px;
+      color: var(--color-secondary2);
+    }
+
+    .socials {
+      display: flex;
+      gap: 16px;
+      filter: invert(0); 
+    }
+  }
+}
+
+html[data-theme='dark'] {
+  .footer {
+    background-color: #1c1c1c; 
+
+    h4,
+    .talk,
+    .logoText {
+      color: white;
+    }
+
+    .links li {
+      color: #ccc;
+
+      &:hover {
+        color: var(--color-primary);
+      }
+    }
+
+    .logoSection {
+      .contact {
+        color: #aaa;
+      }
+
+      .copy {
+        color: #888;
+      }
+    }
+
+    .bottom {
+      background-color: #2c2e3e;
+
+      p {
+        color: #aaa;
+      }
+
+      .socials {
+        filter: invert(1); 
+      }
+    }
+  }
+}

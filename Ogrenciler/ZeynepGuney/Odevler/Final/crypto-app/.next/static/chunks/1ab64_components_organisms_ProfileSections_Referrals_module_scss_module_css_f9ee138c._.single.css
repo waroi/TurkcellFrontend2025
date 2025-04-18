@@ -1,0 +1,85 @@
+/* [project]/src/components/organisms/ProfileSections/Referrals.module.scss.module.css [app-client] (css) */
+.Referrals-module-scss-module__mugQfa__referrals {
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-left: 80px;
+  display: flex;
+}
+
+.Referrals-module-scss-module__mugQfa__title, .Referrals-module-scss-module__mugQfa__desc {
+  margin-bottom: 1rem;
+}
+
+.Referrals-module-scss-module__mugQfa__referralCodeContainer {
+  border: none;
+  border-radius: 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 20px;
+  display: flex;
+}
+
+.Referrals-module-scss-module__mugQfa__referralCodeContainer.Referrals-module-scss-module__mugQfa__light {
+  background-color: var(--line);
+}
+
+.Referrals-module-scss-module__mugQfa__referralCodeContainer.Referrals-module-scss-module__mugQfa__dark {
+  background-color: var(--dark2);
+}
+
+.Referrals-module-scss-module__mugQfa__referralCode {
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  display: flex;
+}
+
+.Referrals-module-scss-module__mugQfa__inputWithButton {
+  flex-direction: row;
+  align-items: center;
+  gap: .5rem;
+  display: flex;
+}
+
+.Referrals-module-scss-module__mugQfa__labelReferralLink, .Referrals-module-scss-module__mugQfa__labelReferralCode {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .3rem;
+  width: 100%;
+  display: flex;
+}
+
+.Referrals-module-scss-module__mugQfa__input {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 100%;
+  padding: .5rem;
+}
+
+.Referrals-module-scss-module__mugQfa__input.Referrals-module-scss-module__mugQfa__light {
+  background-color: var(--white);
+  color: var(--on-surface);
+}
+
+.Referrals-module-scss-module__mugQfa__input.Referrals-module-scss-module__mugQfa__dark {
+  background-color: var(--dark2);
+  color: var(--surface);
+}
+
+.Referrals-module-scss-module__mugQfa__copyBtn {
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  padding: .5rem 1rem;
+}
+
+.Referrals-module-scss-module__mugQfa__wallet {
+  align-self: flex-start;
+  margin-top: 1rem;
+}
+
+/*# sourceMappingURL=1ab64_components_organisms_ProfileSections_Referrals_module_scss_module_css_f9ee138c._.single.css.map*/

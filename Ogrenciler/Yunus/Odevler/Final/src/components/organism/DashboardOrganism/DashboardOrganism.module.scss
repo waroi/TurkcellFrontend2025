@@ -1,0 +1,290 @@
+.sidebar {
+    width: 220px;
+    background-color: var(--subhero-background-color);
+    border-right: 1px solid var(--marketcap-border-color);
+    padding: 20px 0;
+    flex-shrink: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 15%;
+    overflow-y: auto;
+    transition: all 0.3s ease;
+    z-index: 100;
+
+    &.active {
+        left: 0;
+    }
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    margin-bottom: 30px;
+
+    .company {
+        font-weight: 700;
+        font-size: 24px !important;
+        line-height: 30px;
+    }
+}
+
+.navItem {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    color: #666;
+    text-decoration: none;
+    margin-bottom: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &.active {
+        background-color: #4066e0;
+        color: #fff;
+        border-radius: 8px;
+        margin: 0 10px;
+        padding: 12px 10px;
+    }
+
+    &:not(.active):hover {
+        background-color: rgba(64, 102, 224, 0.08);
+        color: #4066e0;
+        border-radius: 8px;
+        margin: 0 10px;
+        padding: 12px 10px;
+    }
+
+    .navIcon {
+        width: 20px;
+        height: 20px;
+        margin-right: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .navText {
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .dropdown {
+        margin-left: auto;
+        font-size: 12px;
+    }
+}
+
+.mainContent {
+    margin-left: 15%;
+    min-height: 100vh;
+    background-color: var(--content-background-color);
+    transition: margin-left 0.3s ease;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    background-color: var(--subhero-background-color);
+    z-index: 50;
+
+    .headerLeft {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.contentArea {
+    padding: 20px;
+}
+
+.searchBox {
+    display: flex;
+    align-items: center;
+    border-radius: 100px;
+    padding: 8px 16px;
+    border: 1px solid #eaedf3;
+    width: 300px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background-color: var(--marketcap-searchbar-background);
+    border: 2px solid var(--marketcap-border-color) !important;
+
+    .searchIcon {
+        color: #aaa;
+        margin-right: 8px;
+        font-size: 16px;
+    }
+
+    .searchInput {
+        border: none;
+        outline: none;
+        background: transparent;
+        font-size: 16px;
+        width: 100%;
+        color: var(--secondary-color);
+        background-color: var(--marketcap-searchbar-background);
+
+        &::placeholder {
+            color: var(--secondary-color);
+        }
+    }
+}
+
+.userActions {
+    display: flex;
+    align-items: center;
+
+    .languageSelector {
+        margin-right: 15px;
+        font-size: 14px;
+        font-weight: 500;
+        color: #333;
+        cursor: pointer;
+    }
+
+    .themeToggle,
+    .notifications {
+        margin-right: 15px;
+        cursor: pointer;
+        color: #666;
+        font-size: 18px;
+    }
+
+    .userAvatar {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        overflow: hidden;
+        font-weight: bold;
+    }
+}
+
+.mobileMenuToggle {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #333;
+    margin-right: 15px;
+}
+
+.closeSidebar {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #666;
+}
+
+.contentPlaceholder {
+    background-color: var(--subhero-background-color);
+    border-radius: 12px;
+    margin: 20px;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ccc;
+    font-size: 18px;
+}
+
+.sidebarOverlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+
+    &.active {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .sidebar {
+        left: -250000px;
+        width: 100%;
+
+        &.active {
+            left: 0;
+        }
+    }
+
+    .closeSidebar {
+        display: block;
+    }
+
+    .mainContent {
+        margin-left: 0;
+    }
+
+    .mobileMenuToggle {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .searchBox {
+        width: 250px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .sidebar {
+        left: -250000px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+
+        &.active {
+            left: 0;
+        }
+    }
+
+    .mainContent {
+        margin-left: 0;
+    }
+
+    .mobileMenuToggle {
+        display: block;
+    }
+
+    .searchBox {
+        width: 200px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .header {
+        padding: 15px;
+    }
+
+    .searchBox {
+        width: 150px;
+    }
+
+    .languageSelector {
+        margin-right: 10px;
+        font-size: 12px;
+    }
+
+    .themeToggle,
+    .notifications {
+        margin-right: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .searchBox {
+        width: 120px;
+    }
+}

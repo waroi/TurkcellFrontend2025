@@ -1,0 +1,447 @@
+/* [project]/src/components/atoms/Footer.module.scss.module.css [app-client] (css) */
+.Footer-module-scss-module__DQ09MG__footer {
+  width: 100%;
+  padding: 40px 20px;
+}
+
+.Footer-module-scss-module__DQ09MG__footer.Footer-module-scss-module__DQ09MG__dark {
+  background-color: var(--dark1);
+  color: var(--surface);
+}
+
+.Footer-module-scss-module__DQ09MG__footer.Footer-module-scss-module__DQ09MG__light {
+  background-color: var(--white);
+  color: var(--on-surface);
+}
+
+.Footer-module-scss-module__DQ09MG__footer .Footer-module-scss-module__DQ09MG__top {
+  flex-flow: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+}
+
+.Footer-module-scss-module__DQ09MG__footer .Footer-module-scss-module__DQ09MG__left {
+  flex: 1;
+  min-width: 250px;
+}
+
+.Footer-module-scss-module__DQ09MG__footer .Footer-module-scss-module__DQ09MG__left .Footer-module-scss-module__DQ09MG__logo {
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.Footer-module-scss-module__DQ09MG__footer .Footer-module-scss-module__DQ09MG__left .Footer-module-scss-module__DQ09MG__title {
+  margin-bottom: 8px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.Footer-module-scss-module__DQ09MG__footer .Footer-module-scss-module__DQ09MG__left p {
+  margin: 5px 0;
+}
+
+.Footer-module-scss-module__DQ09MG__footer .Footer-module-scss-module__DQ09MG__columns {
+  flex-wrap: wrap;
+  flex: 2;
+  justify-content: space-between;
+  gap: 2rem;
+  display: flex;
+}
+
+.Footer-module-scss-module__DQ09MG__footer .Footer-module-scss-module__DQ09MG__columns div {
+  min-width: 120px;
+}
+
+.Footer-module-scss-module__DQ09MG__footer .Footer-module-scss-module__DQ09MG__columns div h4 {
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.Footer-module-scss-module__DQ09MG__footer .Footer-module-scss-module__DQ09MG__columns div li {
+  font-size: 14px;
+  line-height: 1.8;
+  list-style: none;
+}
+
+.Footer-module-scss-module__DQ09MG__bottom {
+  width: 100%;
+}
+
+.Footer-module-scss-module__DQ09MG__bottom.Footer-module-scss-module__DQ09MG__dark {
+  background-color: var(--dark-hover);
+  color: var(--secondary2);
+}
+
+.Footer-module-scss-module__DQ09MG__bottom.Footer-module-scss-module__DQ09MG__light {
+  background-color: var(--surface);
+  color: var(--secondary2);
+}
+
+.Footer-module-scss-module__DQ09MG__bottom .Footer-module-scss-module__DQ09MG__container {
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.Footer-module-scss-module__DQ09MG__bottom .Footer-module-scss-module__DQ09MG__socials {
+  gap: 10px;
+  display: flex;
+}
+
+
+/* [project]/src/components/molecules/NavbarElements/ThemeToggleButton.module.scss.module.css [app-client] (css) */
+.ThemeToggleButton-module-scss-module__HnXCJq__button {
+  cursor: pointer;
+  border: none;
+  padding: .5rem 1rem;
+  font-size: 1rem;
+  transition: all .3s;
+}
+
+.ThemeToggleButton-module-scss-module__HnXCJq__button.ThemeToggleButton-module-scss-module__HnXCJq__light {
+  background-color: var(--white);
+  color: var(--dark);
+}
+
+.ThemeToggleButton-module-scss-module__HnXCJq__button.ThemeToggleButton-module-scss-module__HnXCJq__dark {
+  background-color: var(--dark);
+  color: var(--white);
+}
+
+
+/* [project]/src/components/organisms/Navbar/Navbar.module.scss.module.css [app-client] (css) */
+.Navbar-module-scss-module__SkgiEW__navbar {
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  font-size: 14px;
+  display: flex;
+  box-shadow: 0 2px 5px #0000000d;
+}
+
+.Navbar-module-scss-module__SkgiEW__left {
+  align-items: center;
+  gap: 24px;
+  display: flex;
+}
+
+.Navbar-module-scss-module__SkgiEW__right {
+  align-items: center;
+  gap: 16px;
+  display: flex;
+}
+
+.Navbar-module-scss-module__SkgiEW__logoText {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.Navbar-module-scss-module__SkgiEW__menu {
+  gap: 18px;
+  display: flex;
+}
+
+.Navbar-module-scss-module__SkgiEW__menuItem {
+  cursor: pointer;
+  color: inherit;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+  display: flex;
+}
+
+a span.Navbar-module-scss-module__SkgiEW__menuItem {
+  text-decoration: none;
+}
+
+.Navbar-module-scss-module__SkgiEW__menuItemActive {
+  background-color: var(--primary);
+  color: var(--white);
+  border: none;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 12px;
+  text-decoration: none;
+  display: flex;
+}
+
+.Navbar-module-scss-module__SkgiEW__icon {
+  cursor: pointer;
+}
+
+.Navbar-module-scss-module__SkgiEW__walletBtn {
+  cursor: pointer;
+  color: var(--text-color);
+  border: 1px solid;
+  border-color: var(--border-color);
+  background: none;
+  border-radius: 9999px;
+  padding: 6px 12px;
+}
+
+.Navbar-module-scss-module__SkgiEW__walletBtn.Navbar-module-scss-module__SkgiEW__light {
+  color: var(--on-surface);
+  border-color: var(--on-surface);
+}
+
+.Navbar-module-scss-module__SkgiEW__walletBtn.Navbar-module-scss-module__SkgiEW__dark {
+  color: var(--white);
+  border-color: var(--white);
+}
+
+.Navbar-module-scss-module__SkgiEW__avatar {
+  cursor: pointer;
+  border-radius: 9999px;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  display: flex;
+}
+
+
+/* [project]/src/components/molecules/NavbarElements/LanguageButton.module.scss.module.css [app-client] (css) */
+.LanguageButton-module-scss-module__SOd4xW__languageButton {
+  cursor: pointer;
+  background: none;
+  border: none;
+  align-items: center;
+  display: flex;
+}
+
+.LanguageButton-module-scss-module__SOd4xW__languageButton.LanguageButton-module-scss-module__SOd4xW__light {
+  color: var(--on-surface);
+}
+
+.LanguageButton-module-scss-module__SOd4xW__languageButton.LanguageButton-module-scss-module__SOd4xW__dark {
+  color: var(--white);
+}
+
+
+/* [project]/src/app/global.scss.css [app-client] (css) */
+* {
+  font-family: DM Sans, sans-serif;
+}
+
+@import "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap";
+
+html[data-theme="light"] {
+  --white: #fff;
+  --on-surface: #23262f;
+  --primary: #3772ff;
+  --secondary: #777e90;
+  --secondary2: #b1b5c3;
+  --dark: #141416;
+  --success: #58bd7d;
+  --critical: #d33535;
+  --line: #e5e5e5;
+  --stroke: #e6e8ec;
+  --surface: #f7f7f7;
+  --interactive: #2e72d2;
+  --warning: #fabe3c;
+  --highlight: #1e58c8;
+  --decorative: linear-gradient(90deg, #383fde, #8444d4);
+  --dark2: #18191d;
+  --gray: #3c404b;
+}
+
+html[data-theme="dark"] {
+  --bg: #141416;
+  --on-surface: #23262f;
+  --primary: #3772ff;
+  --secondary: #777e90;
+  --secondary2: #b1b5c3;
+  --white: #fff;
+  --success: #58bd7d;
+  --critical: #d33535;
+  --line: #e5e5e5;
+  --stroke: #e6e8ec;
+  --surface: #f7f7f7;
+  --interactive: #2e72d2;
+  --warning: #fabe3c;
+  --highlight: #1e58c8;
+  --decorative: linear-gradient(90deg, #383fde, #8444d4);
+  --dark2: #18191d;
+  --gray: #3c404b;
+  --dark-hover: #222630;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color .3s, color .3s;
+}
+
+
+/* [project]/src/components/molecules/MarketData/MarketUpdateRow.module.scss.module.css [app-client] (css) */
+.MarketUpdateRow-module-scss-module__GcmFYG__row {
+  border-bottom: 1px solid var(--line);
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  font-size: .9rem;
+  display: flex;
+}
+
+.MarketUpdateRow-module-scss-module__GcmFYG__row.MarketUpdateRow-module-scss-module__GcmFYG__dark {
+  border-bottom: 1px solid var(--on-surface);
+}
+
+.MarketUpdateRow-module-scss-module__GcmFYG__row:hover {
+  background: #ffffff1a;
+  transform: translateY(-4px);
+}
+
+.MarketUpdateRow-module-scss-module__GcmFYG__row.MarketUpdateRow-module-scss-module__GcmFYG__dark:hover {
+  background: #2f324180;
+  transform: translateY(-4px);
+}
+
+.MarketUpdateRow-module-scss-module__GcmFYG__rank {
+  text-align: center;
+  width: 40px;
+}
+
+.MarketUpdateRow-module-scss-module__GcmFYG__coin {
+  align-items: center;
+  gap: .75rem;
+  min-width: 160px;
+  display: flex;
+}
+
+.MarketUpdateRow-module-scss-module__GcmFYG__coin .MarketUpdateRow-module-scss-module__GcmFYG__logo {
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+}
+
+.MarketUpdateRow-module-scss-module__GcmFYG__coin .MarketUpdateRow-module-scss-module__GcmFYG__nameSymbol {
+  align-items: center;
+  gap: 8px;
+  display: flex;
+}
+
+.MarketUpdateRow-module-scss-module__GcmFYG__coin .MarketUpdateRow-module-scss-module__GcmFYG__name {
+  font-weight: 600;
+}
+
+.MarketUpdateRow-module-scss-module__GcmFYG__coin .MarketUpdateRow-module-scss-module__GcmFYG__symbol {
+  border-left: 1px solid var(--stroke);
+  color: var(--secondary);
+  padding-left: 8px;
+  font-size: .8rem;
+}
+
+.MarketUpdateRow-module-scss-module__GcmFYG__price {
+  text-align: right;
+  width: 100px;
+}
+
+.MarketUpdateRow-module-scss-module__GcmFYG__change {
+  text-align: right;
+  width: 80px;
+  font-weight: 600;
+}
+
+.MarketUpdateRow-module-scss-module__GcmFYG__green {
+  color: var(--success);
+}
+
+.MarketUpdateRow-module-scss-module__GcmFYG__red {
+  color: var(--critical);
+}
+
+.MarketUpdateRow-module-scss-module__GcmFYG__marketCap {
+  text-align: right;
+  width: 140px;
+}
+
+.MarketUpdateRow-module-scss-module__GcmFYG__sparkline {
+  text-align: center;
+  width: 100px;
+}
+
+.MarketUpdateRow-module-scss-module__GcmFYG__tradeButton {
+  cursor: pointer;
+  border-radius: 90px;
+  flex-shrink: 0;
+  padding: .4rem 1rem;
+  transition: all .3s;
+}
+
+.MarketUpdateRow-module-scss-module__GcmFYG__tradeButton.MarketUpdateRow-module-scss-module__GcmFYG__light {
+  background-color: var(--white);
+  color: var(--on-surface);
+  border: 2px solid var(--stroke);
+}
+
+.MarketUpdateRow-module-scss-module__GcmFYG__tradeButton.MarketUpdateRow-module-scss-module__GcmFYG__dark {
+  background-color: var(--on-surface);
+  color: var(--white);
+  border: 2px solid var(--stroke);
+}
+
+.MarketUpdateRow-module-scss-module__GcmFYG__tradeButton.MarketUpdateRow-module-scss-module__GcmFYG__active {
+  background-color: var(--primary);
+  color: var(--white);
+  border: none;
+}
+
+
+/* [project]/src/components/atoms/Button.module.scss.module.css [app-client] (css) */
+.Button-module-scss-module__dZF2Ya__button {
+  background-color: var(--primary);
+  color: var(--white);
+  cursor: pointer;
+  text-align: center;
+  border: none;
+  border-radius: 90px;
+  padding: 16px 24px;
+  font-weight: 700;
+  transition: transform .3s;
+}
+
+.Button-module-scss-module__dZF2Ya__button.Button-module-scss-module__dZF2Ya__activeButton {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.Button-module-scss-module__dZF2Ya__button.Button-module-scss-module__dZF2Ya__inactiveButton {
+  background: none;
+}
+
+.Button-module-scss-module__dZF2Ya__button.Button-module-scss-module__dZF2Ya__inactiveButton.Button-module-scss-module__dZF2Ya__light {
+  color: var(--on-surface);
+}
+
+.Button-module-scss-module__dZF2Ya__button.Button-module-scss-module__dZF2Ya__inactiveButton.Button-module-scss-module__dZF2Ya__dark {
+  color: var(--white);
+}
+
+
+/* [project]/src/components/atoms/MiniChart.module.scss.module.css [app-client] (css) */
+.MiniChart-module-scss-module__2oz9Ba__chart {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.MiniChart-module-scss-module__2oz9Ba__price {
+  color: #333;
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+
+/*# sourceMappingURL=src_0af8ccb0._.css.map*/

@@ -1,0 +1,84 @@
+.user-layout {
+    .circle-image {
+        width: 119px;
+        height: 119px;
+        background-color: var(--secondary-color-reverse);
+        position: relative;
+
+        .change-profile-icon {
+            width: 29px;
+            height: 29px;
+            font-weight: bold;
+            border-radius: 50%;
+            padding: 5px;
+            bottom: 0;
+            right: 0;
+            position: absolute;
+            color: white;
+            background-color: var(--primary-color-light);
+        }
+    }
+
+    .user-infos {
+        .title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 12px;
+            margin-bottom: 4px;
+            line-height: 30px;
+        }
+
+        .description {
+            font-size: 12px;
+            margin-bottom: 40px;
+            line-height: 18px;
+            color: var(--secondary-color);
+        }
+
+        .user-panel-list {
+            width: 85%;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            .user-panel-item {
+                .user-panel-link {
+                    color: var(--text-color);
+                    display: flex;
+                    justify-content: start;
+                    align-items: center;
+                    padding: 13px 8px 13px 20px;
+                    text-align: start;
+                    font-weight: 600;
+                    font-size: 16px;
+
+                    &:hover {
+                        background-color: var(--primary-color-light);
+                        color: white;
+
+                        svg,
+                        path {
+                            stroke: white;
+                            fill: white;
+                        }
+                    }
+
+                    &.active {
+                        background-color: var(--primary-color-light);
+                        color: white;
+
+                        svg,
+                        path {
+                            fill: white;
+                            stroke: white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.dark-bg-icon {
+    fill: var(--primary-color-light);
+}

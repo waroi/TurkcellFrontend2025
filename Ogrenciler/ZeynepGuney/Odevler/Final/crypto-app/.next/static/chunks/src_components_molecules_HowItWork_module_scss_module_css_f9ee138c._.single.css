@@ -1,0 +1,119 @@
+/* [project]/src/components/molecules/HowItWork.module.scss.module.css [app-client] (css) */
+section.HowItWork-module-scss-module__ruISOW__dark {
+  background-color: var(--dark2);
+}
+
+section.HowItWork-module-scss-module__ruISOW__light {
+  background-color: var(--surface);
+}
+
+.HowItWork-module-scss-module__ruISOW__container {
+  text-align: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.HowItWork-module-scss-module__ruISOW__title {
+  color: var(--on-surface);
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 56px;
+}
+
+.HowItWork-module-scss-module__ruISOW__title.HowItWork-module-scss-module__ruISOW__dark {
+  color: var(--secondary2);
+}
+
+.HowItWork-module-scss-module__ruISOW__title.HowItWork-module-scss-module__ruISOW__light {
+  color: var(--on-surface);
+}
+
+.HowItWork-module-scss-module__ruISOW__subtitle {
+  margin-bottom: 3rem;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.HowItWork-module-scss-module__ruISOW__subtitle.HowItWork-module-scss-module__ruISOW__light {
+  color: var(--secondary);
+}
+
+.HowItWork-module-scss-module__ruISOW__subtitle.HowItWork-module-scss-module__ruISOW__dark {
+  color: var(--secondary2);
+}
+
+.HowItWork-module-scss-module__ruISOW__steps {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  display: flex;
+  position: relative;
+}
+
+.HowItWork-module-scss-module__ruISOW__step {
+  flex: 1;
+  max-width: 300px;
+  height: auto;
+}
+
+.HowItWork-module-scss-module__ruISOW__icon {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 1rem;
+  display: block;
+}
+
+.HowItWork-module-scss-module__ruISOW__stepNumber {
+  margin-bottom: .5rem;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.HowItWork-module-scss-module__ruISOW__stepNumber.HowItWork-module-scss-module__ruISOW__light {
+  color: var(--on-surface);
+}
+
+.HowItWork-module-scss-module__ruISOW__stepNumber.HowItWork-module-scss-module__ruISOW__dark {
+  color: var(--secondary2);
+}
+
+.HowItWork-module-scss-module__ruISOW__stepTitle {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px;
+}
+
+.HowItWork-module-scss-module__ruISOW__stepTitle.HowItWork-module-scss-module__ruISOW__light {
+  color: var(--secondary);
+}
+
+.HowItWork-module-scss-module__ruISOW__stepTitle.HowItWork-module-scss-module__ruISOW__dark {
+  color: var(--surface);
+}
+
+.HowItWork-module-scss-module__ruISOW__stepDesc {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.HowItWork-module-scss-module__ruISOW__stepDesc.HowItWork-module-scss-module__ruISOW__light {
+  color: var(--secondary);
+}
+
+.HowItWork-module-scss-module__ruISOW__stepDesc.HowItWork-module-scss-module__ruISOW__dark {
+  color: var(--secondary2);
+}
+
+.HowItWork-module-scss-module__ruISOW__divider {
+  margin: 0 auto;
+  padding-top: 2rem;
+  display: block;
+}
+
+/*# sourceMappingURL=src_components_molecules_HowItWork_module_scss_module_css_f9ee138c._.single.css.map*/

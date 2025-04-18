@@ -1,0 +1,111 @@
+/* [project]/src/components/molecules/WhatIsRockie.module.scss.module.css [app-client] (css) */
+.WhatIsRockie-module-scss-module__mvLgsW__container {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+}
+
+.WhatIsRockie-module-scss-module__mvLgsW__contentWrapper {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+}
+
+.WhatIsRockie-module-scss-module__mvLgsW__imageContainer {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  width: 45%;
+  display: flex;
+}
+
+.WhatIsRockie-module-scss-module__mvLgsW__image {
+  object-fit: contain;
+  width: 100%;
+  max-width: 400px;
+}
+
+.WhatIsRockie-module-scss-module__mvLgsW__textContainer {
+  width: 50%;
+  padding-left: 20px;
+}
+
+.WhatIsRockie-module-scss-module__mvLgsW__title, .WhatIsRockie-module-scss-module__mvLgsW__subtitle, .WhatIsRockie-module-scss-module__mvLgsW__steps, .WhatIsRockie-module-scss-module__mvLgsW__button {
+  margin-bottom: 20px;
+}
+
+.WhatIsRockie-module-scss-module__mvLgsW__title {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 56px;
+}
+
+.WhatIsRockie-module-scss-module__mvLgsW__title.WhatIsRockie-module-scss-module__mvLgsW__light {
+  color: var(--on-surface);
+}
+
+.WhatIsRockie-module-scss-module__mvLgsW__title.WhatIsRockie-module-scss-module__mvLgsW__dark {
+  color: var(--surface);
+}
+
+.WhatIsRockie-module-scss-module__mvLgsW__subtitle {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.WhatIsRockie-module-scss-module__mvLgsW__subtitle.WhatIsRockie-module-scss-module__mvLgsW__light {
+  color: var(--secondary);
+}
+
+.WhatIsRockie-module-scss-module__mvLgsW__subtitle.WhatIsRockie-module-scss-module__mvLgsW__dark {
+  color: var(--secondary2);
+}
+
+.WhatIsRockie-module-scss-module__mvLgsW__stepTitle {
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  display: flex;
+}
+
+.WhatIsRockie-module-scss-module__mvLgsW__stepTitle.WhatIsRockie-module-scss-module__mvLgsW__light {
+  color: var(--on-surface);
+}
+
+.WhatIsRockie-module-scss-module__mvLgsW__stepTitle.WhatIsRockie-module-scss-module__mvLgsW__dark {
+  color: var(--surface);
+}
+
+.WhatIsRockie-module-scss-module__mvLgsW__stepDesc {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.WhatIsRockie-module-scss-module__mvLgsW__stepDesc.WhatIsRockie-module-scss-module__mvLgsW__light {
+  color: var(--secondary);
+}
+
+.WhatIsRockie-module-scss-module__mvLgsW__stepDesc.WhatIsRockie-module-scss-module__mvLgsW__dark {
+  color: var(--secondary2);
+}
+
+.WhatIsRockie-module-scss-module__mvLgsW__button {
+  background-color: var(--primary);
+}
+
+/*# sourceMappingURL=src_components_molecules_WhatIsRockie_module_scss_module_css_f9ee138c._.single.css.map*/
