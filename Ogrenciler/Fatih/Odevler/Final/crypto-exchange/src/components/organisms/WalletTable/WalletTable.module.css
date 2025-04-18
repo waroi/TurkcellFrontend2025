@@ -1,0 +1,40 @@
+.table-responsive {
+  background-color: var(--surface-main);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.title {
+  color: var(--on-surface);
+}
+
+.text {
+  color: var(--secondary);
+}
+.table {
+  width: 100%;
+}
+
+.th {
+  color: var(--secondary);
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+.td {
+  color: var(--on-surface);
+  font-size: 0.875rem;
+}
+
+.td .fw-semibold {
+  color: var(--on-surface);
+}
+
+.text-success {
+  color: var(--success) !important;
+}
+
+.text-muted {
+  color: var(--secondary2) !important;
+}

@@ -1,0 +1,41 @@
+.container {
+  background-color: var(--background);
+  color: var(--on-surface);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
+
+.tabButton {
+  border: none;
+  background: transparent;
+  font-weight: 600;
+  padding-bottom: 0.5rem;
+  color: var(--secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tabButton.active {
+  border-bottom: 2px solid var(--primary);
+}
+
+.tableContainer {
+  background-color: var(--surface-main);
+  color: var(--on-surface);
+}
+
+.tableContainer thead th {
+  color: var(--secondary);
+  border-bottom: 1px solid var(--border);
+}
+
+.tableContainer tbody td {
+  color: var(--on-surface);
+}
+
+.input {
+  background-color: var(--surface);
+  color: var(--on-surface);
+  border: 1px solid var(--border);
+}

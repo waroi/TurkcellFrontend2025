@@ -1,0 +1,29 @@
+.secureLink {
+  display: flex;
+  align-items: center;
+  background-color: #f1fbf5;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  width: fit-content;
+}
+
+.iconWrapper {
+  background-color: #3bb75e;
+  border-radius: 50%;
+  padding: 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.75rem;
+}
+
+.text {
+  font-size: 0.875rem;
+  color: black;
+  margin: 0;
+}
+
+.green {
+  color: #3bb75e;
+  margin-right: 0.25rem;
+}

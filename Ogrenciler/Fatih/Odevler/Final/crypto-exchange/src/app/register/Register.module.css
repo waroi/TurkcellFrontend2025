@@ -1,0 +1,58 @@
+.register {
+  background-color: var(--background);
+}
+
+.titleContainer {
+  background-color: var(--surface);
+  height: 160px;
+  display: flex;
+}
+
+.title {
+  color: var(--on-surface);
+}
+
+.subTitle {
+  color: var(--secondary);
+}
+
+.switchTabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.switchButton {
+  padding: 0.5rem 1.25rem;
+  border-radius: 999px;
+  border: none;
+  font-weight: 500;
+  color: var(--on-surface);
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.switchButton:hover {
+  background-color: var(--muted);
+}
+
+.switchButton.active {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+.earnUp {
+  display: flex;
+  width: 100%;
+  background-color: var(--earnUp);
+  background-image: url("../../assets/IMG.png");
+  background-size: cover;
+  height: 140px;
+}
+
+.earnUp h5,
+.earnUp p {
+  color: #ffffff;
+}

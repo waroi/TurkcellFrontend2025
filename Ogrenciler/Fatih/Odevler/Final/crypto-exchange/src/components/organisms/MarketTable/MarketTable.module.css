@@ -1,0 +1,46 @@
+.wrapper {
+  background-color: var(--surface);
+  color: var(--on-surface);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: var(--shadow-default, 0 0 0 rgba(0, 0, 0, 0));
+}
+
+.categoryButton {
+  background-color: transparent;
+  color: var(--secondary);
+  border: none;
+  padding: 0.5rem 1.25rem;
+  border-radius: 999px;
+  font-weight: 500;
+}
+
+.categoryActive {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+.searchBox {
+  background-color: var(--surface-main);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  color: var(--secondary2);
+}
+
+.searchInput {
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--on-surface);
+}
+
+.priceUp {
+  color: var(--success);
+}
+
+.priceDown {
+  color: var(--critical);
+}

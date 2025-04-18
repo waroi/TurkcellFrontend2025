@@ -1,0 +1,21 @@
+.categoryButton {
+  padding: 0.5rem 1.5rem;
+  border-radius: 999px;
+  border: none;
+  font-weight: 500;
+  font-size: 0.875rem;
+  background-color: transparent;
+  color: var(--secondary);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.categoryButton:hover {
+  background-color: var(--muted);
+  color: var(--on-surface);
+}
+
+.categoryActive {
+  background-color: var(--primary);
+  color: #fff;
+}

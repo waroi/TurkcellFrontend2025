@@ -1,0 +1,18 @@
+.searchBox {
+  display: flex;
+  align-items: center;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.5rem 1rem;
+  min-width: 220px;
+}
+
+.searchInput {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: var(--on-surface);
+  width: 100%;
+  font-size: 0.875rem;
+}

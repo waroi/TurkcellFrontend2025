@@ -1,0 +1,44 @@
+.navbarCustom {
+  background-color: var(--background);
+  color: var(--on-surface);
+}
+
+.navbarCustom .nav-link {
+  color: var(--on-surface);
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.activeNav {
+  background-color: var(--primary);
+  border-radius: 0.5rem;
+  font-weight: 600;
+}
+
+.navbarCustom .nav-link:hover {
+  color: var(--primary);
+}
+
+.notificationIcon {
+  filter: invert(0);
+  transition: filter 0.3s ease;
+}
+
+[data-theme="dark"] .notificationIcon {
+  filter: invert(1);
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 9999px;
+  object-fit: cover;
+}
+
+.hamburger {
+  background: none;
+  border: none;
+  color: var(--on-surface);
+  padding: 6px;
+  cursor: pointer;
+}
