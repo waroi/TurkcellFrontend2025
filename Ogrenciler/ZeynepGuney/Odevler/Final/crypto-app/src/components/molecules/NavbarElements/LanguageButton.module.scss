@@ -1,0 +1,15 @@
+.languageButton {
+  display: flex;
+  align-items: center; 
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.languageButton.light {
+  color: var(--on-surface);
+}
+
+.languageButton.dark {
+  color: var(--white);
+}

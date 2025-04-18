@@ -1,0 +1,126 @@
+@mixin fontStyle($size, $weight, $lineHeight) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $lineHeight;
+}
+
+@mixin textColor($colorVar) {
+  color: var(#{$colorVar});
+}
+
+@mixin flex($direction: row, $justify: flex-start, $align: stretch, $gap: 0) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+
+.container {
+  @include flex(row, center, center, 20px);
+  width: 100%;
+  padding: 20px;
+}
+
+.contentWrapper {
+  @include flex(row, space-between, center);
+  width: 100%;
+  max-width: 1200px;
+}
+
+.imageStackWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 716px;
+  margin: 0 auto;
+  padding-top: 80px; 
+}
+.image1,
+.image2,
+.image3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.image1 {
+  z-index: 3;
+  width: 400px; 
+}
+
+.image2 {
+  z-index: 2;
+  width: 450px;
+  transform: translate(10px, 10px);
+}
+
+.image3 {
+  z-index: 1;
+  width: 500px;
+  transform: translate(-15px, -50px)
+}
+
+.textContainer {
+  width: 50%;
+  padding-left: 20px;
+}
+
+.title,
+.subtitle,
+.steps,
+.button {
+  margin-bottom: 20px;
+}
+
+.title {
+  @include fontStyle(48px, 700, 56px);
+
+  &.light {
+    @include textColor(--on-surface);
+  }
+
+  &.dark {
+    @include textColor(--surface);
+  }
+}
+
+.subtitle {
+  @include fontStyle(20px, 400, 28px);
+
+  &.light {
+    @include textColor(--secondary);
+  }
+
+  &.dark {
+    @include textColor(--secondary2);
+  }
+}
+
+.stepTitle {
+  @include flex(row, flex-start, center, 8px);
+  @include fontStyle(24px, 700, 32px);
+
+  &.light {
+    @include textColor(--on-surface);
+  }
+
+  &.dark {
+    @include textColor(--surface);
+  }
+}
+
+.stepDesc {
+  @include fontStyle(16px, 400, 24px);
+
+  &.light {
+    @include textColor(--secondary);
+  }
+
+  &.dark {
+    @include textColor(--secondary2);
+  }
+}
+.button{
+  background-color: var(--primary);
+}

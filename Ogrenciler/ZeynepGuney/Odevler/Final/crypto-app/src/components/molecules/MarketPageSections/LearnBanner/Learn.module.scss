@@ -1,0 +1,117 @@
+.learnSection {
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    text-align: center;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.description {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+.videoCards {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.videoCard {
+    width: 30%;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: flex-start;
+}
+
+.videoCardPlaceholder {
+    background-color: var(--secondary);
+    height: 180px;
+    border-radius: 8px;
+    position: relative;
+}
+
+
+.videoThumbnail {
+    width: 48px;
+    height:48px;
+    object-fit: cover; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+}
+
+
+.cardButton {
+    margin-top: 15px;
+}
+.customButton{
+    border-radius: 4px;
+}
+
+.cardTitle {
+    margin-top: 50px;
+}
+
+.authorDateContainer {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    margin-top: 15px;
+}
+
+.greenDot {
+    width: 10px;
+    height: 10px;
+    background-color: var(--success);
+    border-radius: 50%;
+    margin-right: 12px;
+}
+
+.authorDate {
+    display: flex;
+    align-items: center;
+    width: 100%; 
+    justify-content: space-between; 
+}
+
+.author {
+    margin-right: 20px;
+}
+
+.date {
+    font-size: 0.9rem;
+    color: #777;
+    text-align: right; 
+}
+.loadDiv{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+.loadButton{
+    display: flex;
+    align-items: center;
+    border: 2px solid var(--line);
+    gap: 12px;
+    &.light{
+        background-color: var(--white);
+        color: var(--on-surface);
+    }
+    &.dark{
+        background-color: var(--dark);
+        color: var(--surface);
+    }
+}

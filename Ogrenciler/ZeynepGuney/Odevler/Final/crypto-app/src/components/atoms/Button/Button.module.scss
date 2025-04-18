@@ -1,0 +1,30 @@
+.button {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 16px 24px;
+    border-radius: 90px;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.3s ease;
+  
+  
+    &.activeButton {
+      background-color: var(--primary); 
+      color: var(--white);
+    }
+  
+    &.inactiveButton {
+      background: none;
+  
+      &.light {
+        color: var(--on-surface);
+      }
+  
+      &.dark {
+        color: var(--white);
+      }
+    }
+  }
+  

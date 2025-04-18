@@ -1,0 +1,135 @@
+@mixin flexAlignItems($direction: row, $align: center, $justify: center) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+}
+
+
+.marketContainer {
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 1rem;
+    margin: 0 auto;
+    @include flexAlignItems(row, center, space-between);
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 80px;
+    border-radius: 24px;
+
+    &.light {
+        background-color: var(--white);
+    }
+
+    &.dark {
+        background-color: var(--dark2);
+    }
+}
+
+.cardContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 22px;
+    border-top: 1px solid;
+    margin-bottom: 20px;
+    padding-top: 20px;
+
+
+    &.light {
+        border-color: var(--line);
+    }
+
+    &.dark {
+        border-color: var(--on-surface);
+    }
+}
+
+.card {
+    width: calc(25% - (22px * 3 / 4));
+    padding: 20px;
+    border-right: 1px solid;
+
+    &.light {
+        border-color: var(--line);
+    }
+
+    &.dark {
+        border-color: var(--on-surface);
+    }
+
+    &:last-child {
+        border-right: none;
+    }
+}
+
+
+
+
+.topSection {
+    @include flexAlignItems(row, center, space-between);
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.left {
+    @include flexAlignItems(column, flex-start, center);
+
+    .icon {
+        width: 32px;
+        height: 32px;
+        margin-bottom: 0.5rem;
+    }
+
+    .name {
+        font-size: 1rem;
+        font-weight: 600;
+    }
+}
+
+.right {
+    @include flexAlignItems(column, flex-end, flex-start);
+    width: 50%;
+
+    .volumeChange {
+        font-size: 0.85rem;
+        margin-top: 0.5rem;
+        font-weight: 500;
+        border-radius: 100px;
+        padding: 2px 8px;
+        color: var(--white);
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 24px;
+
+        &.positive {
+            background-color: var(--success);
+        }
+
+        &.negative {
+            background-color: var(--critical);
+        }
+    }
+}
+
+.priceContainer {
+    @include flexAlignItems(row, center, space-between);
+    width: 100%;
+}
+
+.price {
+    text-align: left;
+    font-size: 1.1rem;
+    font-weight: 600;
+    flex: 0 1 auto;
+}
+
+.symbol {
+    text-align: right;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--secondary);
+    margin-left: auto;
+}

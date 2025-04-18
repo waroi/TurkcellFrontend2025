@@ -1,0 +1,111 @@
+@mixin inputStyles($bg-color, $text-color, $border-color) {
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid $border-color;
+  background-color: $bg-color;
+  color: $text-color;
+}
+
+@mixin buttonStyles($bg-color, $text-color, $border-radius) {
+  padding: 0.75rem;
+  background-color: $bg-color;
+  color: $text-color;
+  border: none;
+  border-radius: $border-radius;
+  cursor: pointer;
+}
+@mixin flexCenter($direction: row, $gap: 0) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+  gap: $gap;
+}
+
+.titleWrapper {
+  h2,
+  h6 {
+    @include flexCenter(row, 0);
+  }
+}
+
+.registerForm {
+  width: 400px;
+  margin: 100px auto;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.toggleButtons {
+  @include flexCenter(row, 1rem);
+  margin-bottom: 1rem;
+
+  button {
+    background: none;
+    border: none;
+    padding: 8px 24px;
+    border-radius: 100px;
+    cursor: pointer;
+    color: #444;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .active {
+    background: var(--primary);
+    color: white;
+  }
+}
+
+.inputGroup {
+  @include flexCenter(row, 0.5rem);
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.input {
+  width: 100%;
+  @include inputStyles(var(--white), var(--black), #ccc);
+  margin-bottom: 1rem;
+
+  &.light {
+    @include inputStyles(var(--white), var(--black), #ccc);
+  }
+
+  &.dark {
+    @include inputStyles(var(--dark2), var(--white), #ccc);
+  }
+}
+
+.loginButton {
+  width: 100%;
+  @include buttonStyles(var(--primary), var(--white), 6px);
+}
+
+.registerButton {
+  width: 100%;
+  @include buttonStyles(var(--primary), var(--white), 100px);
+}
+
+.registerPrompt {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.select {
+  @include flexCenter(row);
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+
+  &.light {
+    background-color: var(--white);
+    color: var(--black);
+  }
+
+  &.dark {
+    background-color: var(--dark2);
+    color: var(--white);
+  }
+}

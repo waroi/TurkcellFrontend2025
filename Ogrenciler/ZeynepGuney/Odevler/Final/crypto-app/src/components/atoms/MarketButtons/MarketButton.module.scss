@@ -1,0 +1,50 @@
+.marketButtons {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 14px;
+    height: 50px;
+    padding: 0 20px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-top: 2px solid var(--border-color);
+
+    &.light {
+        background-color: var(--surface);
+    }
+
+    &.dark {
+        background-color: var(--dark-hover);
+    }
+}
+
+.left {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    width: 100%; 
+}
+
+.menuItem {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.menuItemActive {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 6px 12px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    border: none;
+    text-decoration: none;
+    text-align: center;
+}

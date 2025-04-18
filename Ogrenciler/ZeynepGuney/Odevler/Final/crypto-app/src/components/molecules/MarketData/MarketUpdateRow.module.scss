@@ -1,0 +1,120 @@
+.row {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid var(--line);
+    font-size: 0.9rem;
+    gap: 1rem;
+
+    &.dark {
+        border-bottom: 1px solid var(--on-surface);
+    }
+}
+
+.row:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.row.dark:hover {
+    transform: translateY(-4px);
+    background: rgba(47, 50, 65, 0.5);
+}
+
+.rank {
+    width: 40px;
+    text-align: center;
+}
+
+.coin {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    min-width: 160px;
+
+    .logo {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+    }
+
+    .nameSymbol {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .name {
+        font-weight: 600;
+
+    }
+
+    .symbol {
+        border-left: 1px solid var(--stroke);
+        padding-left: 8px;
+        font-size: 0.8rem;
+        color: var(--secondary);
+    }
+}
+
+.price {
+    width: 100px;
+    text-align: right;
+}
+
+.change {
+    width: 80px;
+    text-align: right;
+    font-weight: 600;
+}
+
+.green {
+    color: var(--success);
+}
+
+.red {
+    color: var(--critical);
+}
+
+.marketCap {
+    width: 140px;
+    text-align: right;
+}
+
+.sparkline {
+    width: 100px;
+    text-align: center;
+}
+
+
+
+.tradeButton {
+    flex-shrink: 0;
+    padding: 0.4rem 1rem;
+    border-radius: 90px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &.light {
+        background-color: var(--white);
+        color: var(--on-surface);
+        border: 2px solid var(--stroke);
+    }
+
+    &.dark {
+        background-color: var(--on-surface);
+        color: var(--white);
+        border: 2px solid var(--stroke);
+    }
+
+    &.active {
+        background-color: var(--primary);
+        color: var(--white);
+        border: none;
+    }
+}
