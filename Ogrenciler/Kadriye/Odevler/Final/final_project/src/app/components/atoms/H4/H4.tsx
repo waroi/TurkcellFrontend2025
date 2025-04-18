@@ -1,10 +1,11 @@
 import "./style.scss"
 interface Props {
     text: string;
+    child?: any
 }
-const H4 = ({ text }: Props) => {
+const H4 = ({ text, child }: Props) => {
     return (
-        <h4>{text}</h4>
+        <h4>{text} {child}</h4>
     )
 }
 

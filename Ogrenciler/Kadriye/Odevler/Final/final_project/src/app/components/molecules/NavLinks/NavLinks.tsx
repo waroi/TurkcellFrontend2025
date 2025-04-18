@@ -13,7 +13,7 @@ const NavLinks = async () => {
         <div className="navlinks">
             <NavLinkItem href="/" text={t('home')} src={`/assets/images/dark_arrow_down.svg`} classProp="active" />
             <NavLinkItem href="/buy-crypto" text={t('buy')} />
-            <NavLinkItem href="/markets" text={t('market')} />
+            <NavLinkItem href="/market" text={t('market')} />
             <NavLinkItem href="/exchange" text={t('exchange')} />
             <NavLinkItem href="/spot" text={t('spot')} />
             <NavLinkItem href="/BITUSDT" text={t('bitusdt')} src="/assets/images/fire.svg" />

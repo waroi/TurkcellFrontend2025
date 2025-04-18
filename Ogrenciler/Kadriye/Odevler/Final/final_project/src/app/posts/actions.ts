@@ -14,3 +14,14 @@ export async function login(formData: FormData) {
 export async function changePassword(formData: FormData) {
     changePasswordFirebase(formData);
 }
+
+export async function getFilteredData(formData: FormData) {
+    const query = new URLSearchParams()
+
+    for (const key of ['price_min', 'price_max', 'market_cap_min', 'market_cap_max', 'sort', 'sort_dir']) {
+        const value = formData.get(key)
+        if (value) query.append(key, value.toString())
+    }
+
+    redirect(`/market?${query.toString()}`)
+}

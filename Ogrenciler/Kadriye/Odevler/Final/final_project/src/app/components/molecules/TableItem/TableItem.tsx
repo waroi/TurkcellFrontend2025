@@ -2,6 +2,7 @@ import "./style.scss"
 import ButtonItem from "../../atoms/ButtonItem/ButtonItem";
 import ImageItem from "../../atoms/ImageItem/ImageItem";
 import P from "../../atoms/P/P";
+import TradingViewWidget from "../TradingViewWidget/TradingViewWidget";
 
 interface Props {
     index: number;
@@ -18,7 +19,7 @@ const TableItem = ({ index, data, dataLogo }: Props) => {
             <td>${data.quote.USD.price}</td>
             <td className={data.quote.USD.percent_change_24h >= 0 ? "green" : "red"}>{data.quote.USD.percent_change_24h}%</td>
             <td>${data.quote.USD.market_cap}</td>
-            <td>Grafik</td>
+            <td> <TradingViewWidget index={index} symbol={data.symbol} /> </td>
             <td><ButtonItem text="Trade" /></td>
         </tr>
     )
