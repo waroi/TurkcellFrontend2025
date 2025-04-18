@@ -51,7 +51,7 @@ export default function HeroCryptoContainer() {
 	}
 
 	return (
-		<Container className="z-2 bg-white shadow mb-5 rounded-4">
+		<Container className="z-2 shadow mb-5 rounded-4">
 			<Row className="align-items-center py-3">
 				{heroCryptoContainerLinks.map((crypto, index) => (
 					<Col

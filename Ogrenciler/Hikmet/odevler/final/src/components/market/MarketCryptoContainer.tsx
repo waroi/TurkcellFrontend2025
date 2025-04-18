@@ -17,7 +17,7 @@ export default function MarketCryptoContainer() {
 	const { info, market, loading } = useMarketData(4);
 
 	return (
-		<Container className="bg-white shadow mb-5 rounded-4">
+		<Container className="shadow mb-5 rounded-4">
 			<Row className="align-items-center py-3 border-bottom">
 				{heroCryptoContainerLinks.map((crypto, index) => (
 					<Col

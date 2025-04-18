@@ -1,0 +1,72 @@
+
+[data-bs-theme="light"] {
+  --theme-primary: #3772FF;
+  --theme-on-surface: #23262F;
+  --theme-secondary: #777E90;
+  --theme-secondary2: #B1B5C3;
+  --theme-surface: #F7F7F7;
+  --theme-surface-main: #FFFFFF;
+  --theme-interactive: #2E72D2;
+  --theme-critical: #EF466F;
+  --theme-warning: #FABE3C;
+  --theme-success: #58BD7D;
+  --theme-highlight: #1E58C8;
+
+  --bs-primary: var(--theme-primary);
+  --bs-secondary: var(--theme-secondary);
+  --bs-success: var(--theme-success);
+  --bs-warning: var(--theme-warning);
+  --bs-danger: var(--theme-critical);
+  --bs-info: var(--theme-interactive);
+
+  --bs-body-bg: var(--theme-surface-main);
+  --bs-body-color: var(--theme-on-surface);
+
+  --bs-tertiary-bg: var(--theme-surface);
+  --bs-light-bg-subtle: var(--theme-surface);
+  --bs-light: var(--theme-surface);
+  --bs-light-rgb: 247, 247, 247;
+
+  --bs-secondary-color: var(--theme-secondary);
+  --bs-emphasis-color: var(--theme-on-surface);
+  --bs-body-secondary-color: var(--theme-secondary2);
+
+  --bs-border-color: #E6E8EC;
+}
+
+
+[data-bs-theme="dark"] {
+  --theme-primary: #3772FF;
+  --theme-on-surface: #FCFCFD;
+  --theme-secondary: #B1B5C3;
+  --theme-secondary2: #777E90;
+  --theme-surface: #23262F;
+  --theme-surface-main: #141416;
+  --theme-interactive: #5A9BFF;
+  --theme-critical: #FF6A8A;
+  --theme-warning: #FFD166;
+  --theme-success: #7DD99E;
+  --theme-highlight: #4A80E3;
+
+
+  --bs-primary: var(--theme-primary);
+  --bs-secondary: var(--theme-secondary);
+  --bs-success: var(--theme-success);
+  --bs-warning: var(--theme-warning);
+  --bs-danger: var(--theme-critical);
+  --bs-info: var(--theme-interactive);
+
+  --bs-body-bg: var(--theme-surface-main);
+  --bs-body-color: var(--theme-on-surface);
+
+  --bs-tertiary-bg: var(--theme-surface);
+  --bs-light-bg-subtle: var(--theme-surface);
+  --bs-light: var(--theme-surface);
+  --bs-light-rgb: 35, 38, 47;
+
+  --bs-secondary-color: var(--theme-secondary);
+  --bs-emphasis-color: var(--theme-on-surface);
+  --bs-body-secondary-color: var(--theme-secondary2);
+
+  --bs-border-color: var(--theme-secondary2);
+}

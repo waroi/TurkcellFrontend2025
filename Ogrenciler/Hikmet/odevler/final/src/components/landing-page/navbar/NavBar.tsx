@@ -8,7 +8,9 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import Image from "next/image";
 
 import { logout } from "@/components/auth/actions";
+import { useThemeStore } from "@/store/themeStore";
 import { createClient } from "@/utils/supabase/client";
+import { Moon, Sun } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -23,6 +25,8 @@ export default function NavBar() {
 	const pathname = usePathname();
 	const [user, setUser] = useState<any>(null);
 	const [loading, setLoading] = useState(true);
+
+	const { theme, toggleTheme } = useThemeStore();
 
 	useEffect(() => {
 		async function getUser() {
@@ -39,9 +43,10 @@ export default function NavBar() {
 
 	const handleLogout = async () => {
 		await logout();
+		router.refresh();
 	};
 	return (
-		<Navbar expand="lg" className="sticky-top bg-white py-0">
+		<Navbar expand="lg" className="sticky-top bg-body py-0" bg="light">
 			<Container fluid>
 				<Navbar.Brand href="/">
 					<Image
@@ -122,15 +127,18 @@ export default function NavBar() {
 							</NavDropdown.Item>
 						</NavDropdown>
 						<div className="d-lg-block mx-2 vr d-none"></div>
-						<Nav.Link href="/">
-							<Image
-								src="/sun.svg"
-								alt="User"
-								width={16}
-								height={16}
-								className="align-center"
-							/>
-						</Nav.Link>
+						<Button
+              variant="link"
+							onClick={toggleTheme} 
+							className="me-2 p-0 nav-link" 
+                            aria-label={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'} 
+                        >
+                            {theme === "light" ? (
+                                <Sun size={18} /> 
+                            ) : (
+                                <Moon size={18} /> 
+                            )}
+                        </Button>
 						<div className="d-lg-block mx-2 vr d-none"></div>
 						<Nav.Link href="#link">
 							<Image
