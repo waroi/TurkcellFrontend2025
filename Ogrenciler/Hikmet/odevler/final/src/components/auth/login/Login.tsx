@@ -2,11 +2,9 @@
 
 import PageInfoContainer from "@/components/PageInfoContainer";
 import { loginSchema } from "@/lib/definitions";
-import { createClient } from "@/utils/supabase/client";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useTranslations } from "next-intl";
-import { redirect } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
 	Button,
 	Card,
@@ -26,21 +24,6 @@ export default function Login() {
 
 	const defaultTab = t.raw("tabs")[0].toLowerCase();
 	const [activeLoginTab, setActiveLoginTab] = useState<string>(defaultTab);
-
-	useEffect(() => {
-		const checkAuthAndRedirect = async () => {
-			const supabase = createClient();
-			const { data, error } = await supabase.auth.getSession();
-
-			if (error) {
-				console.error("Error getting session:", error);
-			} else if (data.session) {
-				redirect("/profile");
-			}
-		};
-
-		checkAuthAndRedirect();
-	}, []);
 
 	const {
 		register,

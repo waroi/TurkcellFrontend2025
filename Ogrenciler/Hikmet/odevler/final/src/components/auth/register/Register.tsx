@@ -168,13 +168,23 @@ export default function Register() {
 													<Form.Label className="text-muted">
 														{t("country.label")}
 													</Form.Label>
-													<Form.Select>
-														<option>United States</option>
-														<option>United Kingdom</option>
-														<option>Canada</option>
-														<option>Australia</option>
-														<option>Turkey</option>
+													<Form.Select
+														{...register("country")}
+														isInvalid={!!errors.country}>
+														<option value="">Select your country</option>
+														<option value="United States">United States</option>
+														<option value="United Kingdom">
+															United Kingdom
+														</option>
+														<option value="Canada">Canada</option>
+														<option value="Australia">Australia</option>
+														<option value="Turkey">Turkey</option>
 													</Form.Select>
+													{errors.country && (
+														<Form.Text className="text-danger">
+															{errors.country.message as string}
+														</Form.Text>
+													)}
 												</Form.Group>
 
 												<Form.Group className="mb-4" controlId="phone">

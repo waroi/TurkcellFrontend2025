@@ -35,7 +35,7 @@ export default function NavBar() {
 		}
 
 		getUser();
-	}, []);
+	}, [pathname]);
 
 	const handleLogout = async () => {
 		await logout();
@@ -59,16 +59,16 @@ export default function NavBar() {
 							<NavDropdown.Item href="/">Homepage</NavDropdown.Item>
 						</NavDropdown>
 
-						<Nav.Link href="#link">{t("links.buyCrypto")}</Nav.Link>
-						<Nav.Link href="#link">{t("links.markets")}</Nav.Link>
-						<Nav.Link href="#link">{t("links.exchange")}</Nav.Link>
-						<Nav.Link href="#link">{t("links.spot")}</Nav.Link>
-						<Nav.Link href="#link">BITUSDT</Nav.Link>
+						<Nav.Link href="/market">{t("links.buyCrypto")}</Nav.Link>
+						<Nav.Link href="/market">{t("links.markets")}</Nav.Link>
+						<Nav.Link href="/">{t("links.exchange")}</Nav.Link>
+						<Nav.Link href="/">{t("links.spot")}</Nav.Link>
+						<Nav.Link href="/dashboard">BITUSDT</Nav.Link>
 						<NavDropdown title={t("links.pages.title")} id="navbar-dropdown">
 							<NavDropdown.Item href="#action/3.2">
 								{t("links.pages.home")}
 							</NavDropdown.Item>
-							<NavDropdown.Item href="#action/3.3">
+							<NavDropdown.Item href="/market">
 								{t("links.pages.portfolio")}
 							</NavDropdown.Item>
 							<NavDropdown.Item href="#action/3.4">
@@ -157,13 +157,14 @@ export default function NavBar() {
 											className="rounded-circle object-fit-cover"
 										/>
 									}
-									id="user-dropdown">
+									id="user-dropdown"
+									align="end">
 									<NavDropdown.Item>
 										{user.user_metadata?.nickname || user.email}
 									</NavDropdown.Item>
 									<NavDropdown.Divider />
 									<NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
-									<NavDropdown.Item href="/settings">Settings</NavDropdown.Item>
+									<NavDropdown.Item href="/profile">Settings</NavDropdown.Item>
 									<NavDropdown.Divider />
 									<NavDropdown.Item onClick={handleLogout}>
 										Logout

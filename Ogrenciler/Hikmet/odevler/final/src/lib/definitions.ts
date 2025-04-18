@@ -34,6 +34,8 @@ export const registerSchema = yup.object().shape({
 		.required("NickName is required")
 		.trim(),
 
+	country: yup.string().required("Country is required"),
+
 	phone: yup
 		.string()
 		.matches(phoneRegex, "Phone number must be 10 digits")
