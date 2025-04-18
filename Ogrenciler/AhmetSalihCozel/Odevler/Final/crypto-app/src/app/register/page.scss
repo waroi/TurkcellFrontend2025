@@ -1,0 +1,20 @@
+@import "../theme/themeColors.scss";
+
+.registerInput{
+    border: 1px solid;
+    border-color: rgba($secondary2, 0.5);
+    height: 48px;
+    outline: none;
+    &:focus, &:hover{
+        border: 1px $primary solid;
+      }
+}
+
+.registerForm{
+ max-width: 690px;
+ width: 500px;
+}
+
+.formHeader{
+    margin-top: 100px;
+}

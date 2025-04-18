@@ -1,0 +1,217 @@
+@import "./theme/themeColors.scss";
+@import "./components/Atoms/Typography/Typography.scss";
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-flex;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.border-none{
+  border: none;
+}
+
+.cursor-pointer{
+  cursor: pointer;
+}
+
+:root {
+  --theme-bg-hard: #{$surfaceMain};
+  --theme-bg-smooth: #{$surface};
+}
+
+[data-theme="dark"] {
+  --theme-bg-smooth: #18191D;
+  --theme-bg-hard: #{$backgroundDark};
+}
+
+.theme-bg-hard{
+  background-color: var(--theme-bg-hard)
+}
+
+.theme-bg-smooth{
+  background-color: var(--theme-bg-smooth)
+}
+
+$colors: (
+  "primary": $primary,
+  "onSurface": $onSurface,
+  "secondary": $secondary,
+  "secondary2": $secondary2,
+  "surface": $surface,
+  "surfaceMain": $surfaceMain,
+  "interactive": $interactive,
+  "critical": $critical,
+  "warning": $warning,
+  "success": $success,
+  "highlight": $highlight,
+  "decorative": linear-gradient(216.56deg, #383fde 5.32%, #8444d5 94.32%),
+);
+
+@each $key, $value in $colors {
+  .bg-#{$key} {
+    background-color: $value;
+  }
+  .color-#{$key} {
+    color: $value;
+  }
+  .border-color-#{$key} {
+    border-color: $value;
+  }
+}
+
+
+body {
+  font-family: var(--font-dm-sans), sans-serif;
+}
+
+$spacing-values: (
+  "0": 0px,
+  "4": 4px,
+  "8": 8px,
+  "12": 12px,
+  "16": 16px,
+  "18": 18px,
+  "20": 20px,
+  "24": 24px,
+  "28": 28px,
+  "32": 32px,
+  "40": 40px,
+  "48": 48px,
+  "56": 56px,
+  "60": 60px,
+  "64": 64px,
+  "100":100px,
+);
+
+@each $key, $value in $spacing-values {
+  .fs-#{$key} {
+    font-size: $value;
+  }
+  .shadow-#{$key} {
+    box-shadow: 0 0 3*$value $value rgba(0, 0, 0, 0.2);
+  }
+  .border-rad-#{$key} {
+    border-radius: $value;
+  }
+  .m-#{$key} {
+    margin: $value;
+  }
+  .mt-#{$key} {
+    margin-top: $value;
+  }
+  .mr-#{$key} {
+    margin-right: $value;
+  }
+  .mb-#{$key} {
+    margin-bottom: $value;
+  }
+  .ml-#{$key} {
+    margin-left: $value;
+  }
+  .p-#{$key} {
+    padding: $value;
+  }
+  .pt-#{$key} {
+    padding-top: $value;
+  }
+  .pr-#{$key} {
+    padding-right: $value;
+  }
+  .pb-#{$key} {
+    padding-bottom: $value;
+  }
+  .pl-#{$key} {
+    padding-left: $value;
+  }
+  .px-#{$key} {
+    padding-left: $value;
+    padding-right: $value;
+  }
+  .py-#{$key} {
+    padding-bottom: $value;
+    padding-top: $value;
+  }
+  .mx-#{$key} {
+    margin-left: $value;
+    margin-right: $value;
+  }
+  .my-#{$key} {
+    margin-top: $value;
+    margin-bottom: $value;
+  }
+  .gap-#{$key} {
+    gap: $value;
+  }
+}
+
+.h-full {
+  height: 100%;
+}
+.w-full {
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+}
+.flex-col {
+  flex-direction: column;
+}
+.flex-row {
+  flex-direction: row;
+}
+
+.items-center {
+  align-items: center;
+}
+.items-start {
+  align-items: start;
+}
+.items-end {
+  align-items: end;
+}
+
+.justify-start {
+  justify-content: start;
+}
+.justify-end {
+  justify-content: end;
+}
+.justify-center {
+  justify-content: center;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.justify-evenly {
+  justify-content: space-evenly;
+}
+
+
+
+@media screen and (min-width: 0px) {
+  .container {
+    padding: 0 25px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .container {
+    padding: 0 255px;
+  }
+}
+

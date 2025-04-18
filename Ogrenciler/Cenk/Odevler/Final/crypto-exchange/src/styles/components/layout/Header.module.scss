@@ -1,0 +1,135 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  height: 50px;
+  padding: 0 32px;
+  background-color: var(--color-surface-main);
+}
+
+html[data-theme='dark'] .header {
+  background-color: var(--color-on-surface);
+}
+
+.left {
+  display: flex;
+  align-items: stretch;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 16px;
+
+  .logoText {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-on-surface);
+  }
+}
+
+html[data-theme='dark'] .logoText {
+  color: white;
+}
+
+.menuWrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0 24px;
+  height: 100%;
+
+  .navItem {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-on-surface);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 0 8px;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: var(--color-primary);
+      color: white;
+    }
+  }
+
+  .dropIcon {
+    font-size: 10px;
+    margin-left: 4px;
+  }
+}
+
+html[data-theme='dark'] .menuWrapper .navItem {
+  color: white;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  .navItem {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-on-surface);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    .dropIcon {
+      font-size: 10px;
+      margin-left: 4px;
+    }
+  }
+}
+
+html[data-theme='dark'] .right .navItem {
+  color: white;
+}
+
+.iconBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  filter: invert(0); 
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+html[data-theme='dark'] .iconBtn {
+  filter: invert(1); 
+}
+
+.walletBtn {
+  border: 1px solid var(--color-on-surface);
+  padding: 6px 14px;
+  border-radius: 24px;
+  font-weight: 500;
+  font-size: 14px;
+  background-color: transparent;
+  color: var(--color-on-surface);
+
+  &:hover {
+    background-color: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+  }
+}
+
+html[data-theme='dark'] .walletBtn {
+  color: white;
+  border-color: white;
+}
+
+.avatar {
+  border-radius: 50%;
+}

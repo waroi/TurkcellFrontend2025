@@ -1,0 +1,24 @@
+.button {
+  font-family: var(--font-family);
+  font-size: $fs-button;
+  font-weight: 600;
+  padding: $sp-16 $sp-32;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &.primary {
+    background-color: var(--color-primary);
+    color: #fff;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+
+  &.secondary {
+    background-color: var(--color-secondary);
+    color: #fff;
+  }
+}
