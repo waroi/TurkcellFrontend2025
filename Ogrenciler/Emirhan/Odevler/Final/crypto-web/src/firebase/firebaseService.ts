@@ -237,9 +237,9 @@ export const changeUserPassword = async (newPassword: string): Promise<{ success
     };
   } catch (error: unknown) {
     if (error instanceof Error) {
-      console.error("❌ Firebase kayıt hatası:", error.message);
+      console.error("Firebase kayıt hatası:", error.message);
     } else {
-      console.error("❌ Firebase kayıt hatası: Bilinmeyen bir hata oluştu.", error);
+      console.error("Firebase kayıt hatası: Bilinmeyen bir hata oluştu.", error);
     }
     throw error;
   }

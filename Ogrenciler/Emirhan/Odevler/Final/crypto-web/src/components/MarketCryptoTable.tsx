@@ -5,8 +5,6 @@ import { Coin, SortKey, SortOrder } from "@/types/types";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 
-
-
 function MarketCryptoTable({ coins }: { coins: Coin[] }) {
   const [sortKey, setSortKey] = useState<SortKey | null>(null);
   const [sortOrder, setSortOrder] = useState<SortOrder>("asc");

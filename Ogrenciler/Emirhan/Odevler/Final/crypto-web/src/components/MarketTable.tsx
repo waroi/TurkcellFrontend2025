@@ -3,9 +3,6 @@ import Image from "next/image";
 import Button from "./Button";
 import { pairs } from "@/constants/cryptoCategory";
 
-
-
-
 const MarketTable = () => {
   return (
     <div className="p-4 bg-white rounded-2 mb-4 pair-price">
