@@ -1,0 +1,727 @@
+{
+    "messages": {
+        "loading": "Loading..."
+    },
+    "HomePage": {
+        "welcome": "Welcome to my app",
+        "title": "This is my title",
+        "description": "This is my description",
+        "change_language": "Change Language",
+        "menu": {
+            "wallet": {
+                "text": "Wallet",
+                "href": "/wallet"
+            },
+            "left": [
+                {
+                    "id": "home",
+                    "label": "Homepage",
+                    "href": "/"
+                },
+                {
+                    "id": "buy_crypto",
+                    "label": "Buy Crypto",
+                    "href": "/wallet/buy"
+                },
+                {
+                    "id": "markets",
+                    "label": "Markets",
+                    "href": "/market"
+                },
+                {
+                    "id": "exchange",
+                    "label": "Exchange",
+                    "href": "/dashboard"
+                },
+                {
+                    "id": "spot",
+                    "label": "Spot",
+                    "href": "/spot"
+                },
+                {
+                    "id": "bit_usdt",
+                    "label": "BIT/USDT",
+                    "href": "/bitusdt"
+                },
+                {
+                    "id": "pages",
+                    "label": "Pages",
+                    "href": "#",
+                    "subMenu": [
+                        {
+                            "id": "pages_sub",
+                            "label": "Pages Sub",
+                            "href": "/pages/sub"
+                        }
+                    ]
+                }
+            ],
+            "right": [
+                {
+                    "id": "assets",
+                    "label": "Assets",
+                    "href": "#",
+                    "subMenu": [
+                        {
+                            "id": "assets",
+                            "label": "assets",
+                            "href": "/assets"
+                        }
+                    ]
+                },
+                {
+                    "id": "orders_traders",
+                    "label": "Orders & Trades",
+                    "href": "#",
+                    "subMenu": [
+                        {
+                            "id": "assets",
+                            "label": "assets",
+                            "href": "/assets"
+                        }
+                    ]
+                }
+            ]
+        },
+        "Hero": {
+            "Info": {
+                "title": "Buy & Sell Digital Assets In The Rocket",
+                "description": "Coin rocket is the easiest, safest, and fastest way to buy & sell crypto asset exchange.",
+                "buttonText": "Get started now",
+                "partner": "Our Partners"
+            },
+            "partners": [
+                "/partner-1.png",
+                "/partner-2.png",
+                "/partner-3.png",
+                "/partner-4.png"
+            ]
+        },
+        "MarketCap": {
+            "title": "Market Update",
+            "subTitle": "See All Coins",
+            "categories": [
+                "Metaverse",
+                "Entertainment",
+                "Energy",
+                "NFT",
+                "Gaming",
+                "Music"
+            ],
+            "tableColumns": [
+                "",
+                "#",
+                "Name",
+                "Last Price",
+                "24%",
+                "Market Cap",
+                "Last 7 Days",
+                ""
+            ],
+            "messages": {
+                "loading": "Loading...",
+                "dataLoading": "Coins data loading..."
+            }
+        },
+        "HowItWorks": {
+            "title": "How It Work",
+            "description": "Stacks is a production-ready library of stackable content blocks built in React Native.",
+            "steps": [
+                {
+                    "path": "/homepage/how-it-works/Bitcoin-1.png",
+                    "step": 1,
+                    "label": "Download",
+                    "description": "Stacks is a production-ready library of stackable content blocks built in React Native."
+                },
+                {
+                    "path": "/homepage/how-it-works/Bitcoin-Wallet.png",
+                    "step": 2,
+                    "label": "Connect Wallet",
+                    "description": "Stacks is a production-ready library of stackable content blocks built in React Native."
+                },
+                {
+                    "path": "/homepage/how-it-works/Bitcoin-Mining.png",
+                    "step": 3,
+                    "label": "Start Trading",
+                    "description": "Stacks is a production-ready library of stackable content blocks built in React Native."
+                },
+                {
+                    "path": "/homepage/how-it-works/Bitcoin-Comparison.png",
+                    "step": 4,
+                    "label": "Earn money",
+                    "description": "Stacks is a production-ready library of stackable content blocks built in React Native."
+                }
+            ]
+        },
+        "WhatIsRockie": {
+            "title": "What Is Rockie",
+            "description": "Experience a variety of trading on Bitcost. You can use various types of coin transactions such as Spot Trade, Futures Trade, P2P, Staking, Mining, and margin.",
+            "steps": [
+                {
+                    "title": "View real-time cryptocurrency prices",
+                    "description": "Experience a variety of trading on Bitcost. You can use various types of coin transactions such as Spot Trade, Futures Trade, P2P, Staking, Mining, and margin."
+                },
+                {
+                    "title": "Buy and sell BTC, ETH, XRP, OKB, Etc...",
+                    "description": "Experience a variety of trading on Bitcost. You can use various types of coin transactions such as Spot Trade, Futures Trade, P2P, Staking, Mining, and margin."
+                }
+            ],
+            "buttonText": "Explore More"
+        },
+        "FreeYourMoney": {
+            "title": "Free your money & Invest with confident",
+            "description": "With Cryptor Trade, you can be sure your trading skills are matched",
+            "steps": [
+                {
+                    "title": "View real-time cryptocurrency prices",
+                    "description": "Managa your holdings from your mobile decive"
+                },
+                {
+                    "title": "Take Control Of Your Wealth",
+                    "description": "Rest assured you (and only you) have access to your funds"
+                }
+            ]
+        },
+        "OurCustomers": {
+            "title": "Our Customers Love What We Do",
+            "subTitle": "Transform your idea into reality with finsweet",
+            "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+            "reviewsText": "Customer Reviews",
+            "rightSection": {
+                "message": "“Great course I really enjoyed it and the course was way easy to learn with very good explanations of the code, I could easily understand and develop applications with the knowledge gathered during the course.”",
+                "jobs": "Director, Company"
+            }
+        },
+        "Info": {
+            "title": "Earn up to $25 worth of crypto",
+            "description": "Discover how specific cryptocurrencies work — and get a bit of each crypto to try out for yourself.",
+            "buttonText": "Create Account"
+        }
+    },
+    "LocaleSwitcher": {
+        "label": "Select Language",
+        "locale": {
+            "en": "EN/USD",
+            "tr": "TR/TRY"
+        }
+    },
+    "Footer": {
+        "logoSection": [
+            {
+                "id": "special",
+                "label": "Let’s Talk! 🤙"
+            },
+            {
+                "id": "phone",
+                "label": "+98 902 353 2926"
+            },
+            {
+                "id": "email",
+                "label": "sinahosseini379@gmail.com"
+            },
+            {
+                "id": "copyright",
+                "label": "Copyright © 2023 Free For Earth’s people"
+            }
+        ],
+        "SiteDirections": [
+            {
+                "title": "Products",
+                "key": "products",
+                "items": [
+                    {
+                        "id": "spot",
+                        "label": "Spot"
+                    },
+                    {
+                        "id": "inverse_perpetual",
+                        "label": "Inverse Perpetual"
+                    },
+                    {
+                        "id": "usdt_perpetual",
+                        "label": "USDT Perpetual"
+                    },
+                    {
+                        "id": "exchange",
+                        "label": "Exchange"
+                    },
+                    {
+                        "id": "launchpad",
+                        "label": "Launchpad"
+                    },
+                    {
+                        "id": "binance_pay",
+                        "label": "Binance Pay"
+                    }
+                ]
+            },
+            {
+                "title": "Services",
+                "key": "services",
+                "items": [
+                    {
+                        "id": "buy_crypto",
+                        "label": "Buy Crypto"
+                    },
+                    {
+                        "id": "markets",
+                        "label": "Markets"
+                    },
+                    {
+                        "id": "trading_fee",
+                        "label": "Trading Fee"
+                    },
+                    {
+                        "id": "affiliate_program",
+                        "label": "Affiliate Program"
+                    },
+                    {
+                        "id": "referral_program",
+                        "label": "Referral Program"
+                    },
+                    {
+                        "id": "api",
+                        "label": "API"
+                    }
+                ]
+            },
+            {
+                "title": "Support",
+                "key": "support",
+                "items": [
+                    {
+                        "id": "bybit_learn",
+                        "label": "Bybit Learn"
+                    },
+                    {
+                        "id": "help_center",
+                        "label": "Help Center"
+                    },
+                    {
+                        "id": "user_feedback",
+                        "label": "User Feedback"
+                    },
+                    {
+                        "id": "submit_request",
+                        "label": "Submit Request"
+                    },
+                    {
+                        "id": "api_documentation",
+                        "label": "API Documentation"
+                    },
+                    {
+                        "id": "trading_rules",
+                        "label": "Trading Rules"
+                    }
+                ]
+            },
+            {
+                "title": "About Us",
+                "key": "about_us",
+                "items": [
+                    {
+                        "id": "about_bybit",
+                        "label": "About Bybit"
+                    },
+                    {
+                        "id": "authenticity_check",
+                        "label": "Authenticity Check"
+                    },
+                    {
+                        "id": "careers",
+                        "label": "Careers"
+                    },
+                    {
+                        "id": "business_contacts",
+                        "label": "Business Contacts"
+                    },
+                    {
+                        "id": "blog",
+                        "label": "Blog"
+                    }
+                ]
+            }
+        ]
+    },
+    "User": {
+        "layout": {
+            "userProfile": "User Profile",
+            "referrals": "Referrals",
+            "api_keys": "API Keys",
+            "loginHistory": "Login History",
+            "fa2": "2FA",
+            "changePassword": "Change Password"
+        },
+        "title": "User Profile",
+        "path": [
+            "Home",
+            "/",
+            "User"
+        ],
+        "subTitle": "Information",
+        "forms": {
+            "name": "Name",
+            "SurName": "SurName",
+            "email": "E-mail Address",
+            "phoneNumber": "Your Phone Number",
+            "updateButton": "Update Profile"
+        },
+        "features": "Features",
+        "level1": {
+            "title": "Level1",
+            "deposit": "Deposit Assets",
+            "withdrawTitle": "Withdraw assets",
+            "withdrawValue": "Enabled $1,000,000/day",
+            "cardPurchase": "Card purchases",
+            "bankDeposit": "Bank Deposit"
+        },
+        "level2": {
+            "title": "Level2",
+            "fiatAndSpot": "Fiat and Spot wallet",
+            "marginWallet": "Margin wallet",
+            "marginWalletValue": "Enabled 100x Leverage"
+        },
+        "ChangePassword": {
+            "title": "Change Password",
+            "subTitle": "New Password",
+            "forms": {
+                "oldPassword": "Old Password",
+                "newPassword": "New Password",
+                "confirmPassword": "Confirm Password"
+            },
+            "buttonText": "Change Password"
+        }
+    },
+    "Login": {
+        "path": [
+            "Home",
+            "/",
+            "Login"
+        ],
+        "short": "Login",
+        "title": "Login To Rockie",
+        "subTitle": "Welcome back! Log In now to start trading",
+        "tabs": {
+            "email": "Email",
+            "phone": "Mobile"
+        },
+        "forms": {
+            "emailLabel": "Email/ID",
+            "emailPlaceholder": "Please fill in the email form.",
+            "passwordLabel": "Password",
+            "passwordPlaceholder": "Please enter a password.",
+            "phoneLabel": "Mobile Phone",
+            "phonePlaceholder": "Your Phone Number"
+        },
+        "buttonText": "Login",
+        "message": "Not A Member?",
+        "markMessage": "Register"
+    },
+    "Register": {
+        "short": "Register",
+        "path": [
+            "Home",
+            "/",
+            "Register"
+        ],
+        "title": "Register To Rockie",
+        "subTitle": "Register in advance and enjoy the event benefits",
+        "tabs": {
+            "email": "Email",
+            "phone": "Mobile"
+        },
+        "forms": {
+            "emailLabel": "Email/ID",
+            "emailPlaceholder": "Please fill in the email form.",
+            "passwordLabel": "Password",
+            "passwordPlaceholder": "Please enter a password.",
+            "reRenderPassPlaceholder": "Please re-enter your password.",
+            "passwordCriticMessage": "(8 or more characters, including numbers and special characters)",
+            "nickNameLabel": "NickName",
+            "nickNamePlaceHolder": "Enter NickName",
+            "nickNameCriticMessage": "(Excluding special characters)",
+            "country": "Country",
+            "phoneLabel": "Mobile Phone",
+            "phone": "Phone",
+            "phoneCriticMessage": "(Enter numbers only)",
+            "phonePlaceholder": "Your Phone Number",
+            "authenticateButton": "Authenticate",
+            "uidCodeLabel": "UID Code",
+            "uidCodePlaceholder": "Please enter your invitation code."
+        },
+        "buttonText": "Pre-Registration",
+        "message": "Already have an account?",
+        "markMessage": "Login"
+    },
+    "Market": {
+        "title": "Today’s Cryptocurrency prices",
+        "description": "The global crypto market cap is",
+        "markDesc": "$1.86T",
+        "columns": [
+            "#",
+            "Trading Paris",
+            "Last Traded",
+            "24H Change%",
+            "24H High",
+            "24H Low",
+            "24H Turnover",
+            "Chart",
+            ""
+        ],
+        "sortHeader": {
+            "tradingParis": "Trading Paris",
+            "lastPrice": "Last Traded",
+            "h24Change": "24H Change%",
+            "h24TurnOver": "24H Turnover"
+        }
+    },
+    "Wallet": {
+        "layout": {
+            "overview": "Overview",
+            "buyCrypto": "Buy Crypto",
+            "sellCrypto": "Sell Crypto"
+        },
+        "title": "Wallet",
+        "path": [
+            "Home",
+            "/",
+            "Wallet"
+        ],
+        "overview": {
+            "title": "Overview",
+            "totalBalance": "Total Balance",
+            "buttonText": "Show Balance",
+            "forms": [
+                "#",
+                "Asset",
+                "Earn",
+                "On Orders",
+                "Available balance",
+                "Total balance"
+            ],
+            "searchBarText": "Search"
+        },
+        "buy": {
+            "steps": {
+                "step1": "Select currency",
+                "step2": "Confirm Payment",
+                "step3": "Details"
+            },
+            "data": {
+                "step1": {
+                    "title": "Select Currency",
+                    "refPrice": "Reference Price",
+                    "pay": "Pay",
+                    "receive": "Receive",
+                    "buttonText": "Continue"
+                },
+                "step2": {
+                    "title": "Confirm Information",
+                    "description": "You Are About To Receive",
+                    "pay": "Pay",
+                    "get": "Get",
+                    "for": "For",
+                    "forms": {
+                        "title": "Payment Details",
+                        "subTitle": "Bank Account",
+                        "accName": "Account Name",
+                        "accNumber": "Account Number",
+                        "address": "Address",
+                        "switftCode": "SWIFT Code",
+                        "bankAddress": "Bank Address"
+                    },
+                    "refCode": "Refference Code",
+                    "refText": "You MUST include the Reference Code in your deposit in order to credit your account!",
+                    "refSub": "Reference Code:",
+                    "canceButtonText": "Cancel",
+                    "goButtonText": "Let's Move on!"
+                },
+                "step3": {
+                    "title": "Success",
+                    "text": "You successfully sold",
+                    "status": "Status",
+                    "statusText": "Completed",
+                    "transactionText": "Transaction ID",
+                    "paymentDetails": {
+                        "title": "Payment Details",
+                        "subTitle": "Bank Account",
+                        "accName": "Account Name",
+                        "accNumber": "Account Number",
+                        "address": "Address",
+                        "switftCode": "SWIFT Code",
+                        "bankAddress": "Bank Address",
+                        "refCode": "Refference Code",
+                        "refText": "You MUST include the Reference Code in your deposit in order to credit your account!",
+                        "refSub": "Reference Code:"
+                    },
+                    "buttons": {
+                        "trade": "Trade",
+                        "wallet": "Wallet"
+                    }
+                }
+            }
+        },
+        "sell": {
+            "steps": {
+                "step1": "Select Crypto",
+                "step2": "Enter Amount",
+                "step3": "Payment Details",
+                "step4": "Payment Details"
+            },
+            "step1": {
+                "title": "Select Crypto",
+                "text": "Which Crypto do you want to\nsearch",
+                "search": "search?",
+                "searchBarText": "Search",
+                "searchButtonText": "Search",
+                "goButtonText": "Continue",
+                "table": {
+                    "title": "Select Crypto",
+                    "name": "Name",
+                    "price": "Price",
+                    "loading": "Loading...",
+                    "noData": "No data fund"
+                }
+            },
+            "step2": {
+                "title": "Confirm Information",
+                "sell": "Sell",
+                "get": "Get",
+                "goButtonText": "Continue"
+            },
+            "step3": {
+                "title": "Confirm Information",
+                "text": "You Are About To Receive",
+                "pay": "Pay",
+                "get": "Get",
+                "for": "For",
+                "forms": {
+                    "title": "Payment Details",
+                    "subTitle": "Bank Account",
+                    "accName": "Account Name",
+                    "accNumber": "Account Number",
+                    "address": "Address",
+                    "switftCode": "SWIFT Code",
+                    "bankAddress": "Bank Address"
+                },
+                "refCode": "Refference Code",
+                "refText": "You MUST include the Reference Code in your deposit in order to credit your account!",
+                "refSub": "Reference Code:",
+                "canceButtonText": "Cancel",
+                "goButtonText": "Let's Move on!"
+            },
+            "step4": {
+                "sold": "You Successfully Sold",
+                "title": "Success",
+                "text": "You successfully sold",
+                "status": "Status",
+                "statusText": "Completed",
+                "transactionText": "Transaction ID",
+                "paymentDetails": {
+                    "title": "Payment Details",
+                    "subTitle": "Bank Account",
+                    "accName": "Account Name",
+                    "accNumber": "Account Number",
+                    "address": "Address",
+                    "switftCode": "SWIFT Code",
+                    "bankAddress": "Bank Address",
+                    "refCode": "Refference Code",
+                    "refText": "You MUST include the Reference Code in your deposit in order to credit your account!",
+                    "refSub": "Reference Code:"
+                },
+                "buttons": {
+                    "trade": "Trade",
+                    "wallet": "Wallet"
+                }
+            }
+        }
+    },
+    "Dashboard": {
+        "layout": {
+            "home": "Home",
+            "buyCrypto": "Buy Crypto",
+            "market": "Market",
+            "exchane": "Exchane",
+            "spot": "Spot",
+            "byfiCenter": "ByFi Center",
+            "more": "More",
+            "logOut": "Çıkış Yap"
+        },
+        "topContainer": {
+            "lastPrice": "Last Price",
+            "H24Change": "24h Change",
+            "H24High": "24h High",
+            "H24Low": "24h Low",
+            "H24Vol": "24h Volume"
+        },
+        "title": "Trading Market",
+        "Exchange": {
+            "title": {
+                "buy": "Buy",
+                "sell": "Sell"
+            },
+            "tabs": {
+                "limit": "Limit",
+                "market": "Market",
+                "stopLimit": "Stop Limit",
+                "stopMarket": "Stop Market"
+            },
+            "forms": {
+                "pay": "Pay",
+                "receive": "Receive",
+                "buttonText": "Buy"
+            }
+        },
+        "Balance": {
+            "title": "Your Balance",
+            "buttonText": "Top Up Balance",
+            "subTitle": "Your Assets"
+        },
+        "OrderHistory": {
+            "title": "Order Book",
+            "tabs": [
+                "Order History",
+                "Open History",
+                "Closed History"
+            ],
+            "searchPlaceholder": "Search by Date",
+            "table": [
+                "Date",
+                "Pair",
+                "Buy/Sell",
+                "Price",
+                "Executed",
+                "Total"
+            ]
+        },
+        "OrderBook": {
+            "title": "Order Book",
+            "table": [
+                "Price",
+                "Amount",
+                "Total"
+            ],
+            "lastPrice": "Last Price",
+            "change": "Change"
+        },
+        "OrderBook2": {
+            "table": [
+                "Time",
+                "Price",
+                "Amount"
+            ]
+        },
+        "AllOrders": {
+            "tabs": [
+                "Limit",
+                "Market",
+                "Stop Limit"
+            ],
+            "table": {
+                "pair": "Pair",
+                "lastPrice": "Last Price",
+                "change": "Change"
+            }
+        }
+    }
+}

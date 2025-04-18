@@ -1,0 +1,116 @@
+@import "../../../theme/themeColors.scss";
+
+@mixin generalHeaderProperties() {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  transition: all ease 0.3s;
+  color: var(--header-text-color);
+}
+
+@mixin generalBodyProperties() {
+  font-weight: 400;
+  transition: all ease 0.3s;
+}
+
+:root {
+  --header-text-color: #{$onSurface};
+  --theme-typography-color: #{$onSurface};
+}
+
+[data-theme="dark"] {
+  --header-text-color: #{$surfaceMain};
+  --theme-typography-color: #{$surfaceMain};
+}
+
+.theme-type-color{
+  color: var(--theme-typography-color)
+}
+
+
+.head-1 {
+  @include generalHeaderProperties();
+  font-size: 64px;
+  line-height: 72px;
+}
+
+.head-2 {
+  @include generalHeaderProperties();
+  font-size: 48px;
+  line-height: 56px;
+  text-transform: capitalize;
+}
+
+.head-3 {
+  @include generalHeaderProperties();
+  font-size: 40px;
+  line-height: 48px;
+}
+.head-4 {
+  @include generalHeaderProperties();
+  font-size: 32px;
+  line-height: 40px;
+}
+
+.head-5 {
+  @include generalHeaderProperties();
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.body-1 {
+  @include generalBodyProperties();
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.body-2 {
+  @include generalBodyProperties();
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.body-3 {
+  @include generalBodyProperties();
+  font-size: 20px;
+  font-size: 16px;
+  line-height: 24px;
+  text-transform: capitalize;
+}
+
+.caption-1{
+    @include generalBodyProperties();
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.caption-2{
+    @include generalBodyProperties();
+    font-size: 12px;
+    line-height: 20px;
+}
+
+$btn-font-sizes: (
+  "df": 16px,
+  "sm-1": 14px,
+  "sm-2": 12px,
+);
+
+@each $key, $value in $btn-font-sizes {
+    .btn-size-#{$key} {
+        font-size: $value;
+    }
+}
+
+.f-bold{
+  font-weight: 700;
+}
+
+.f-normal{
+  font-weight: 400;
+}
+
+.text-center{
+  text-align: center;
+}
+

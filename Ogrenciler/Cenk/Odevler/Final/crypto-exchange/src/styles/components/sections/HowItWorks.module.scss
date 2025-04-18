@@ -1,0 +1,54 @@
+.section {
+  text-align: center;
+  padding: 64px 16px;
+  background-color: var(--color-surface);
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: var(--color-secondary);
+  margin-bottom: 40px;
+}
+
+.steps {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.step {
+  max-width: 220px;
+
+  h4 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: 12px;
+  }
+
+  .stepLabel {
+    margin-top: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--color-secondary2);
+  }
+
+  p {
+    font-size: 13px;
+    color: var(--color-secondary);
+    margin-top: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .steps {
+    flex-direction: column;
+    align-items: center;
+  }
+}

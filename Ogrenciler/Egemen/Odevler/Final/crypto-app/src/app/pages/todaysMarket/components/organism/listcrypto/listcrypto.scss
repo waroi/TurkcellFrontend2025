@@ -1,0 +1,42 @@
+.listcrypto-wrapper {
+  padding-left: 13.3vw;
+  padding-right: 13.3vw;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: -6.8vw;
+  position: relative;
+  z-index: 1;
+}
+
+.market-live {
+  width: 320px;
+  height: 180px;
+  padding: 28px 28px 108px 28px;
+
+  border-radius: 12px;
+
+  background-color: white;
+  gap: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  .market-live-title {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 24px;
+    font-family: "DM Sans", sans-serif;
+    color: #23262f;
+  }
+
+  .market-live-value {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -1%;
+  }
+}

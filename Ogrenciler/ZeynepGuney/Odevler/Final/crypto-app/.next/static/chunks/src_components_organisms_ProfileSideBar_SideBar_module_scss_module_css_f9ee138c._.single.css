@@ -1,0 +1,105 @@
+/* [project]/src/components/organisms/ProfileSideBar/SideBar.module.scss.module.css [app-client] (css) */
+.SideBar-module-scss-module__a9182W__sidebar {
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 4px 6px #0000001a;
+}
+
+.SideBar-module-scss-module__a9182W__sidebar.SideBar-module-scss-module__a9182W__dark {
+  background-color: #1a202c;
+}
+
+.SideBar-module-scss-module__a9182W__avatarContainer {
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  display: flex;
+}
+
+.SideBar-module-scss-module__a9182W__avatarPlaceholder {
+  background-color: var(--gray);
+  cursor: pointer;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+}
+
+.SideBar-module-scss-module__a9182W__avatarPlaceholder.SideBar-module-scss-module__a9182W__dark {
+  background-color: #4a5568;
+}
+
+.SideBar-module-scss-module__a9182W__avatarPlaceholder p {
+  color: #fff;
+}
+
+.SideBar-module-scss-module__a9182W__avatarImage {
+  cursor: pointer;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin-top: 1rem;
+  position: relative;
+}
+
+.SideBar-module-scss-module__a9182W__avatarImage .SideBar-module-scss-module__a9182W__uploadingOverlay {
+  color: #fff;
+  background-color: #00000080;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  font-size: .75rem;
+  display: flex;
+  position: absolute;
+  inset: 0;
+}
+
+.SideBar-module-scss-module__a9182W__avatarText {
+  color: #4a5568;
+  margin-top: .75rem;
+  font-size: .875rem;
+}
+
+.SideBar-module-scss-module__a9182W__avatarText.SideBar-module-scss-module__a9182W__dark {
+  color: #edf2f7;
+}
+
+.SideBar-module-scss-module__a9182W__avatarPreview {
+  object-fit: cover;
+  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
+}
+
+.SideBar-module-scss-module__a9182W__tab {
+  color: var(--on-surface);
+  cursor: pointer;
+  border-radius: 100px;
+  align-items: center;
+  margin-bottom: .5rem;
+  padding: .5rem 1rem;
+  transition: background-color .3s;
+  display: flex;
+}
+
+.SideBar-module-scss-module__a9182W__tab.SideBar-module-scss-module__a9182W__active {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.SideBar-module-scss-module__a9182W__tab.SideBar-module-scss-module__a9182W__dark {
+  color: var(--white);
+}
+
+.SideBar-module-scss-module__a9182W__tab .SideBar-module-scss-module__a9182W__icon {
+  margin-right: 5px;
+}
+
+.SideBar-module-scss-module__a9182W__tabsWrapper {
+  flex-direction: column;
+  display: flex;
+}
+
+/*# sourceMappingURL=src_components_organisms_ProfileSideBar_SideBar_module_scss_module_css_f9ee138c._.single.css.map*/

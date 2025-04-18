@@ -1,0 +1,73 @@
+.register-container {
+  text-align: center;
+  margin-top: 63px;
+  .register-form {
+    margin: 163px auto;
+    button {
+      background-color: transparent;
+      border: none;
+      padding: 8px 20px;
+      margin-left: 8px;
+      border-radius: 100px;
+      &.primary {
+        background-color: var(--color-primary);
+        color: var(--color-white);
+        margin: 0;
+      }
+      &.auth {
+        border-radius: 0;
+        margin-bottom: 8px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+      }
+      &.submit {
+        width: 100%;
+        margin: 40px 0 24px 0;
+        padding: 18px 0;
+        font-weight: 600;
+      }
+    }
+    .register-top {
+      margin-bottom: 40px;
+    }
+    form {
+      text-align: left;
+      max-width: 690px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      .email {
+        display: flex;
+      }
+      label {
+        display: block;
+        font-size: 20px;
+        font-weight: 500;
+        color: var(--color-secondary);
+        margin-bottom: 12px;
+      }
+      input,
+      select {
+        box-sizing: border-box;
+        background-color: var(--color-bg-section);
+        width: 100%;
+        padding: 10px 20px;
+        color: var(--color-secondary2);
+        font-size: 18px;
+        margin-bottom: 8px;
+        border-radius: 8px;
+        border: 1px solid rgb(229, 229, 229);
+      }
+    }
+  }
+  p {
+    font-weight: 500;
+    color: var(--color-text);
+    a {
+      color: var(--color-primary);
+      text-decoration: none;
+      margin-left: 3px;
+    }
+  }
+}

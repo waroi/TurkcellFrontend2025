@@ -1,0 +1,150 @@
+.overviewCard {
+    border-radius: 20px !important;
+    background-color: var(--hero-background-color);
+    margin-bottom: 20px;
+    margin-top: 32px;
+    padding: 32px !important;
+}
+
+.balanceAmount {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 32px;
+}
+
+.btcAmount {
+    font-size: 28px;
+    font-weight: 600;
+    margin-right: 10px;
+}
+
+.usdAmount {
+    color: var(--secondary-color);
+    line-height: 24px;
+    font-size: 16px;
+    margin-top: 16px;
+    font-weight: 400;
+}
+
+.searchContainer {
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.searchBox {
+    position: relative;
+    margin-right: 10px;
+
+    .searchIcon {
+        position: absolute;
+        left: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+.currencySelector {
+    .currencyButton {
+        display: flex;
+        align-items: center;
+        background-color: white;
+        border: 1px solid red;
+        border-radius: 6px;
+        padding: 10px 15px;
+        font-size: 14px;
+        cursor: pointer;
+
+        svg {
+            margin-left: 5px;
+        }
+
+        &:hover {
+            background-color: #f8f9fa;
+        }
+    }
+}
+
+.showBalanceBtn {
+    background-color: var(--primary-color-light);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+
+    &:hover {
+        background-color: var(--primary-color-light)
+    }
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    border-top: 1px solid red;
+
+    .paginationInfo {
+        font-size: 14px;
+        margin-right: 16px;
+    }
+
+    .paginationControls {
+        display: flex;
+        gap: 8px;
+    }
+
+    .paginationButton {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        border: 1px solid red;
+        border-radius: 4px;
+        background-color: white;
+        cursor: pointer;
+
+        &:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        &:hover:not(:disabled) {
+            background-color: #f8f9fa;
+        }
+    }
+}
+
+.formSelectLg,
+.formControlLg {
+    border: 1px solid var(--marketcap-border-color) !important;
+    background-color: var(--marketcap-searchbar-background) !important;
+    color: var(--secondary-color) !important;
+
+    &:focus {
+        box-shadow: none;
+        border-color: var(--primary-color-light) !important;
+    }
+
+    &::placeholder {
+        font-size: 18px;
+        line-height: 28px;
+        color: var(--secondary-color-reverse);
+    }
+}
+
+.formSelectLg {
+    font-weight: 700;
+    font-size: 1rem !important;
+    line-height: 16px;
+
+    &:focus {
+        border-color: var(--primary-color-light) !important;
+    }
+}

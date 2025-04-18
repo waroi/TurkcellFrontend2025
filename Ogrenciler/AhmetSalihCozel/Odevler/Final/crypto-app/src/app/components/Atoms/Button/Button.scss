@@ -1,0 +1,72 @@
+@import "../../../theme/themeColors.scss";
+
+@mixin generalButtonProperties() {
+    font-weight: 700;
+    line-height: 16px;
+    letter-spacing: 0%;
+    border-radius: 200px;
+    cursor: pointer;
+    transition: all ease 0.3s;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+
+$btn-font-sizes: (
+  "df": 16px,
+  "sm-1": 14px,
+  "sm-2": 12px,
+);
+
+@each $key, $value in $btn-font-sizes {
+    .btn-size-#{$key} {
+        height: $value;
+    }
+}
+
+:root {
+    --primary-button-bg: #{$primary};
+    --secondary-button-bg: #{$secondary2};
+    --outlined-button-color: #{$onSurface};
+}
+
+[data-theme="dark"] {
+    --secondary-button-bg: transparent;
+    --outlined-button-color: #{$surfaceMain};
+}
+
+.primary-button {
+    @include generalButtonProperties();
+    border: none;
+    background-color: var(--primary-button-bg);
+    color: $surfaceMain
+}
+
+.secondary-button {
+    @include generalButtonProperties();
+    background-color: var(--secondary-button-bg);
+    border: 1px $secondary2 solid;
+}
+
+.outlined{
+    @include generalButtonProperties();
+    background-color: transparent;
+    border: 2px var(--outlined-button-color) solid;
+    color: var(--outlined-button-color);
+}
+
+$btn-heights: (
+  "40": 40px,
+  "44": 44px,
+  "48": 48px,
+  "56": 56px,
+  "64": 64px,
+);
+
+
+@each $key, $value in $btn-heights {
+    .btn-h-#{$key} {
+        height: $value;
+    }
+}

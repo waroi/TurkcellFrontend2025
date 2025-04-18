@@ -1,0 +1,195 @@
+/* [project]/src/components/atoms/Footer/Footer.module.scss.module.css [app-client] (css) */
+.Footer-module-scss-module__8ayADa__footer {
+  width: 100%;
+  padding: 40px 20px;
+}
+
+.Footer-module-scss-module__8ayADa__footer.Footer-module-scss-module__8ayADa__dark {
+  background-color: var(--dark1);
+  color: var(--surface);
+}
+
+.Footer-module-scss-module__8ayADa__footer.Footer-module-scss-module__8ayADa__light {
+  background-color: var(--white);
+  color: var(--on-surface);
+}
+
+.Footer-module-scss-module__8ayADa__footer .Footer-module-scss-module__8ayADa__top {
+  flex-flow: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+}
+
+.Footer-module-scss-module__8ayADa__footer .Footer-module-scss-module__8ayADa__left {
+  flex: 1;
+  min-width: 250px;
+}
+
+.Footer-module-scss-module__8ayADa__footer .Footer-module-scss-module__8ayADa__left .Footer-module-scss-module__8ayADa__logo {
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.Footer-module-scss-module__8ayADa__footer .Footer-module-scss-module__8ayADa__left .Footer-module-scss-module__8ayADa__title {
+  margin-bottom: 8px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.Footer-module-scss-module__8ayADa__footer .Footer-module-scss-module__8ayADa__left p {
+  margin: 5px 0;
+}
+
+.Footer-module-scss-module__8ayADa__footer .Footer-module-scss-module__8ayADa__columns {
+  flex-wrap: wrap;
+  flex: 2;
+  justify-content: space-between;
+  gap: 2rem;
+  display: flex;
+}
+
+.Footer-module-scss-module__8ayADa__footer .Footer-module-scss-module__8ayADa__columns div {
+  min-width: 120px;
+}
+
+.Footer-module-scss-module__8ayADa__footer .Footer-module-scss-module__8ayADa__columns div h4 {
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.Footer-module-scss-module__8ayADa__footer .Footer-module-scss-module__8ayADa__columns div li {
+  font-size: 14px;
+  line-height: 1.8;
+  list-style: none;
+}
+
+.Footer-module-scss-module__8ayADa__bottom {
+  width: 100%;
+}
+
+.Footer-module-scss-module__8ayADa__bottom.Footer-module-scss-module__8ayADa__dark {
+  background-color: var(--dark-hover);
+  color: var(--secondary2);
+}
+
+.Footer-module-scss-module__8ayADa__bottom.Footer-module-scss-module__8ayADa__light {
+  background-color: var(--surface);
+  color: var(--secondary2);
+}
+
+.Footer-module-scss-module__8ayADa__bottom .Footer-module-scss-module__8ayADa__container {
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.Footer-module-scss-module__8ayADa__bottom .Footer-module-scss-module__8ayADa__socials {
+  gap: 10px;
+  display: flex;
+}
+
+
+/* [project]/src/app/global.scss.css [app-client] (css) */
+* {
+  font-family: DM Sans, sans-serif;
+}
+
+@import "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap";
+
+html[data-theme="light"] {
+  --white: #fff;
+  --on-surface: #23262f;
+  --primary: #3772ff;
+  --secondary: #777e90;
+  --secondary2: #b1b5c3;
+  --dark: #141416;
+  --success: #58bd7d;
+  --critical: #d33535;
+  --line: #e5e5e5;
+  --stroke: #e6e8ec;
+  --surface: #f7f7f7;
+  --interactive: #2e72d2;
+  --warning: #fabe3c;
+  --highlight: #1e58c8;
+  --decorative: linear-gradient(90deg, #383fde, #8444d4);
+  --dark2: #18191d;
+  --gray: #3c404b;
+}
+
+html[data-theme="dark"] {
+  --bg: #141416;
+  --on-surface: #23262f;
+  --primary: #3772ff;
+  --secondary: #777e90;
+  --secondary2: #b1b5c3;
+  --white: #fff;
+  --success: #58bd7d;
+  --critical: #d33535;
+  --line: #e5e5e5;
+  --stroke: #e6e8ec;
+  --surface: #f7f7f7;
+  --interactive: #2e72d2;
+  --warning: #fabe3c;
+  --highlight: #1e58c8;
+  --decorative: linear-gradient(90deg, #383fde, #8444d4);
+  --dark2: #18191d;
+  --gray: #3c404b;
+  --dark-hover: #222630;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color .3s, color .3s;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+/* [project]/src/components/molecules/NavbarElements/ThemeToggleButton.module.scss.module.css [app-client] (css) */
+.ThemeToggleButton-module-scss-module__HnXCJq__button {
+  cursor: pointer;
+  border: none;
+  padding: .5rem 1rem;
+  font-size: 1rem;
+  transition: all .3s;
+}
+
+.ThemeToggleButton-module-scss-module__HnXCJq__button.ThemeToggleButton-module-scss-module__HnXCJq__light {
+  background-color: var(--white);
+  color: var(--dark);
+}
+
+.ThemeToggleButton-module-scss-module__HnXCJq__button.ThemeToggleButton-module-scss-module__HnXCJq__dark {
+  background-color: var(--dark);
+  color: var(--white);
+}
+
+
+/* [project]/src/components/molecules/NavbarElements/LanguageButton.module.scss.module.css [app-client] (css) */
+.LanguageButton-module-scss-module__SOd4xW__languageButton {
+  cursor: pointer;
+  background: none;
+  border: none;
+  align-items: center;
+  display: flex;
+}
+
+.LanguageButton-module-scss-module__SOd4xW__languageButton.LanguageButton-module-scss-module__SOd4xW__light {
+  color: var(--on-surface);
+}
+
+.LanguageButton-module-scss-module__SOd4xW__languageButton.LanguageButton-module-scss-module__SOd4xW__dark {
+  color: var(--white);
+}
+
+
+/*# sourceMappingURL=src_c13dc958._.css.map*/

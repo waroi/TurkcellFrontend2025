@@ -1,0 +1,31 @@
+.footer {
+  background-color: var(--background);
+  color: var(--on-surface);
+  border-top: 1px solid var(--border);
+}
+
+.logo {
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: var(--primary);
+}
+
+.copy {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 0.25rem;
+}
+
+.nav li a {
+  color: var(--on-surface);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav li a:hover {
+  color: var(--primary);
+}
+
+.footerTab {
+  background-color: var(--surface);
+}

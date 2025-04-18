@@ -8,7 +8,7 @@
 	$transition-time: 0.3s;
 	$width-open: 250px;
 	$width-closed: 60px;
-	background: whitesmoke;
+
 	transition: all $transition-time;
 	width: $width-open;
 	z-index: 1000;
@@ -66,5 +66,5 @@
 
 .content-wrapper {
 	padding: 1rem;
-	background: #f8f9fa;
+
 }

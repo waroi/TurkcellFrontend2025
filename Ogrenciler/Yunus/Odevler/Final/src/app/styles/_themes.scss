@@ -1,0 +1,146 @@
+// variables
+$secondary2: #B1B5C3;
+$surface-main: #FFFFFF;
+$interactive: #2E72D2;
+$decorative: linear-gradient(90deg, #383FDE 0%, #8444D4 100%);
+$rose: #F27B82;
+$line: #E5E5E5;
+$pink: #F4407D;
+$supplementary: #32B6EA;
+$instagram: linear-gradient(45deg, #FFDD55 0%, #FF543E 50%, #C837AB 100%);
+$stroke: #E6E8EC;
+$line-dark: #23262F;
+$background-dark: #141416;
+$light-color: #F7F7F7;
+$theme-bakground: #18191d;
+$dark-hover: #222630;
+
+// Light theeme
+$background-color-light: #FFFFFF;
+$text-color-light: #F7F7F7;
+$primary-color-light: #3772FF;
+$secondary-color-light: #777E90;
+$border-color-light: #F7F7F7;
+$card-background-light: #f9fafb;
+$shadow-color-light: rgba(0, 0, 0, 0.1);
+$navbar-bg-light: $background-color-light;
+$temp-button-light: $background-color-light;
+$hero-background-color-light: $light-color;
+$sub-hero-background-color-light: $surface-main;
+$sub-hero-background-color-hover-light: $surface-main;
+$marketcap-border-color-light: $line;
+$marketcap-searchbar-background-light: $background-color-light;
+$trade-button-color-hover-light: $line-dark;
+$marketcap-row-hover-light: #3772FF30;
+$marketcap-theads-color-light: $secondary-color-light;
+$marketcap-border-color-line: $line;
+$secondary-color-light: #777E90;
+$info-bg-light: url("/images/homepage/info/info-bg.webp");
+$secondary-color-reverse-light: $secondary2;
+$referral-bg-light: $surface-main;
+$payment-border-color-light: $stroke;
+$content-background-color-light: $light-color;
+$coins-exchange-background-light: $light-color;
+$market-hero-background-light: #EBF1FF;
+
+// Dark Theme
+$background-color-dark: #121212;
+$text-color-dark: #23262F;
+$primary-color-dark: #3772FF;
+$secondary-color-dark: #94a3b8;
+$border-color-dark: #374151;
+$card-background-dark: #1f2937;
+$shadow-color-dark: rgba(0, 0, 0, 0.3);
+$navbar-bg-dark: $background-dark;
+$temp-button-dark: $background-color-dark;
+$hero-background-color-dark: $theme-bakground;
+$sub-hero-background-color-dark: $theme-bakground;
+$sub-hero-background-color-hover-dark: #2F3241;
+$marketcap-border-color-dark: none !important;
+$marketcap-searchbar-background-dark: $dark-hover;
+$trade-button-color-hover-dark: $surface-main;
+$marketcap-row-hover-dark: $line-dark;
+$marketcap-theads-color-dark: $surface-main;
+$marketcap-border-color-dark: $line-dark;
+$secondary-color-dark: $secondary2;
+$info-bg-dark: url("/images/homepage/info/info-bg-dark.webp");
+$secondary-color-reverse-dark: #777E90;
+$referral-bg-dark: $dark-hover;
+$payment-border-color-dark: $line-dark;
+$content-background-color-dark: $background-dark;
+$coins-exchange-background-dark: $dark-hover;
+$market-hero-background-dark: $theme-bakground;
+
+// Reeverse
+$background-color-reverse1: $background-color-dark;
+$background-color-reverse2: $background-color-light;
+$color-reverse1: $background-color-light;
+$color-reverse2: $background-color-dark;
+
+:root {
+    --background-color: #{$background-color-light};
+    --text-color: #{$text-color-light};
+    --primary-color: #{$primary-color-light};
+    --secondary-color: #{$secondary-color-light};
+    --border-color: #{$border-color-light};
+    --card-background: #{$card-background-light};
+    --shadow-color: #{$shadow-color-light};
+    // üst kısmı silicem çünkü aynısını variables a da eklemişim
+    --navbar-background: #{$navbar-bg-light};
+    --temp-button:#{$temp-button-light};
+    --background-color-reverse: #{$background-color-reverse1};
+    --color-reverse: #{$color-reverse1};
+    --hero-background-color: #{$hero-background-color-light};
+    --subhero-background-color: #{$sub-hero-background-color-light};
+    --subhero-border-color: #{$text-color-light};
+    --sublink-color:#{$line-dark};
+    --subhero-card-hover: #{$sub-hero-background-color-hover-light};
+    --marketcap-border-color: #{$marketcap-border-color-light};
+    --marketcap-searchbar-background: #{$marketcap-searchbar-background-light};
+    --trade-button-color: #{$trade-button-color-hover-light};
+    --marketcap-row-hover: #{$marketcap-row-hover-light};
+    --marketcap-theads-color: #{$marketcap-theads-color-light};
+    --marketcap-border-color: #{$marketcap-border-color-light};
+    --secondary-color:#{secondary-color-light};
+    --info-bg: #{$info-bg-light};
+    --secondary-color-reverse: #{$secondary-color-reverse-light};
+    --referral-bg: #{$referral-bg-light};
+    --payment-border-color: #{$payment-border-color-light};
+    --content-background-color: #{$content-background-color-light};
+    --coins-exchange-background: #{$coins-exchange-background-light};
+    --market-hero-background: #{$market-hero-background-light};
+}
+
+body.dark {
+    --background-color: #{$background-color-dark};
+    --text-color: #{$text-color-dark};
+    --primary-color: #{$primary-color-dark};
+    --secondary-color: #{$secondary-color-dark};
+    --border-color: #{$border-color-dark};
+    --card-background: #{$card-background-dark};
+    --shadow-color: #{$shadow-color-dark};
+    // üst kısmı silicem çünkü aynısını variables a da eklemişim
+    --navbar-background: #{$navbar-bg-dark};
+    --temp-button:#{$temp-button-dark};
+    --background-color-reverse: #{$background-color-reverse2};
+    --color-reverse: #{$color-reverse2};
+    --hero-background-color: #{$hero-background-color-dark};
+    --subhero-background-color: #{$sub-hero-background-color-dark};
+    --subhero-border-color: #{$line-dark};
+    --sublink-color:#{$secondary2};
+    --subhero-card-hover: #{$sub-hero-background-color-hover-dark};
+    --marketcap-border-color: #{$marketcap-border-color-dark};
+    --marketcap-searchbar-background: #{$marketcap-searchbar-background-dark};
+    --trade-button-color: #{$trade-button-color-hover-dark};
+    --marketcap-row-hover: #{$marketcap-row-hover-dark};
+    --marketcap-theads-color: #{$marketcap-theads-color-dark};
+    --marketcap-border-color: #{$marketcap-border-color-dark};
+    --secondary-color:#{secondary-color-dark};
+    --info-bg: #{$info-bg-dark};
+    --secondary-color-reverse: #{$secondary-color-reverse-dark};
+    --referral-bg: #{$referral-bg-dark};
+    --payment-border-color: #{$payment-border-color-dark};
+    --content-background-color: #{$content-background-color-dark};
+    --coins-exchange-background: #{$coins-exchange-background-dark};
+    --market-hero-background: #{$market-hero-background-dark};
+}

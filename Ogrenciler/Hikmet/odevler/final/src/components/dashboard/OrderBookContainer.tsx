@@ -64,7 +64,7 @@ export default function OrderBookContainer({
 }) {
 	return (
 		<Card className="border-0 h-100">
-			<Card.Header className="bg-white p-3 card-header">
+			<Card.Header className="p-3 card-header">
 				<h5 className="mb-0">{t("orderBook.title")}</h5>
 			</Card.Header>
 			<section className="p-4 h-100">

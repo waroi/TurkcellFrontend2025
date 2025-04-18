@@ -1,0 +1,78 @@
+.wrapper {
+  background-color: var(--background);
+  padding: 1.5rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.cardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.card {
+  min-width: 220px;
+  flex: 1;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--surface);
+}
+
+.cardWithBorder {
+  border-right: 1px solid var(--border);
+}
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.cardTitleLine {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.coinName {
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--on-surface);
+}
+
+.priceChange {
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  border-radius: 1rem;
+  color: #fff;
+}
+
+.positive {
+  background-color: var(--success);
+}
+
+.negative {
+  background-color: var(--critical);
+}
+
+.cardBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.price {
+  font-weight: bold;
+  color: var(--on-surface);
+}
+
+.symbol {
+  font-size: 0.875rem;
+  color: var(--secondary);
+}

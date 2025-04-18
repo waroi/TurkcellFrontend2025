@@ -1,29 +1,7 @@
 "use client";
 import Image from "next/image";
 import Button from "./Button";
-
-type MarketPair = {
-  pair: string;
-  lastPrice: number;
-  change: number;
-  favorite: boolean;
-};
-
-const pairs: MarketPair[] = [
-  { pair: "ETH/BTC", lastPrice: 0.022572, change: 1.54, favorite: true },
-  { pair: "XRP/BTC", lastPrice: 0.020371, change: 1.54, favorite: true },
-  { pair: "USDT/BTC", lastPrice: 0.022572, change: -1.54, favorite: false },
-  { pair: "BNB/BTC", lastPrice: 0.022572, change: 1.54, favorite: false },
-  { pair: "SOL/BTC", lastPrice: 0.020371, change: 1.54, favorite: false },
-  { pair: "ADA/BTC", lastPrice: 0.022572, change: 1.54, favorite: false },
-  { pair: "LTC/BTC", lastPrice: 0.022572, change: -1.54, favorite: false },
-  { pair: "NEO/BTC", lastPrice: 0.032378, change: 1.54, favorite: false },
-  { pair: "MAP/BTC", lastPrice: 0.023572, change: -1.54, favorite: false },
-  { pair: "GO/BTC", lastPrice: 0.023572, change: -1.54, favorite: false },
-  { pair: "DBC/BTC", lastPrice: 0.032378, change: 1.54, favorite: false },
-  { pair: "XMR/BTC", lastPrice: 0.032378, change: 1.54, favorite: false },
-  { pair: "TRY/BTC", lastPrice: 0.0322573, change: 1.54, favorite: false },
-];
+import { pairs } from "@/constants/cryptoCategory";
 
 const MarketTable = () => {
   return (

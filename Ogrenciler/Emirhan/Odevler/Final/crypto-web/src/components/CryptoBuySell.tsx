@@ -105,19 +105,23 @@ export default function CryptoBuySell({ coinId }: { coinId: string }) {
       </ul>
 
       <ul className="nav d-flex align-items-center py-3">
-        {[t("Limit"), t("Market"), t("Stop limit"), t("Stop market")].map((type, index) => (
-          <li className="nav-item me-2" key={type}>
-            <Button
-              px="px-3"
-              py="py-1"
-              className={`btn-sm fs-5 ${
-                index === 0 ? "btn-primary text-white" : "btn-white text-muted"
-              }`}
-            >
-              {type}
-            </Button>
-          </li>
-        ))}
+        {[t("Limit"), t("Market"), t("Stop limit"), t("Stop market")].map(
+          (type, index) => (
+            <li className="nav-item me-2" key={type}>
+              <Button
+                px="px-3"
+                py="py-1"
+                className={`btn-sm fs-5 ${
+                  index === 0
+                    ? "btn-primary text-white"
+                    : "btn-white text-muted"
+                }`}
+              >
+                {type}
+              </Button>
+            </li>
+          )
+        )}
       </ul>
 
       <div className="form-box p-3 mb-3">
@@ -137,7 +141,9 @@ export default function CryptoBuySell({ coinId }: { coinId: string }) {
       </div>
 
       <div className="form-box p-3 mb-3">
-        <label className="form-label text-muted fs-4 mb-0">{t("Receive")}</label>
+        <label className="form-label text-muted fs-4 mb-0">
+          {t("Receive")}
+        </label>
         <div className="d-flex gap-2 align-items-center">
           <input
             type="number"
@@ -191,9 +197,14 @@ export default function CryptoBuySell({ coinId }: { coinId: string }) {
       </Button>
 
       {result && (
-        <pre className="mt-3 p-2 bg-light rounded">
-          {JSON.stringify(result, null, 2)}
-        </pre>
+        <div
+          className={`alert mt-3 fs-6 ${
+            result.success ? "alert-success" : "alert-danger"
+          }`}
+          role="alert"
+        >
+          {result.wallet?.message || "İşlem tamamlanamadı."}
+        </div>
       )}
     </div>
   );

@@ -1,0 +1,66 @@
+/* [project]/src/components/molecules/MarketPageSections/MarketBannar/MarketBanner.module.scss.module.css [app-client] (css) */
+.MarketBanner-module-scss-module__2gYmRW__marketBanner {
+  background-color: var(--bg-color);
+  padding: 4rem 2rem;
+  transition: background-color .3s;
+}
+
+.MarketBanner-module-scss-module__2gYmRW__marketBanner.MarketBanner-module-scss-module__2gYmRW__dark {
+  background-color: var(--dark);
+}
+
+.MarketBanner-module-scss-module__2gYmRW__marketBanner.MarketBanner-module-scss-module__2gYmRW__light {
+  background-color: var(--surface);
+}
+
+.MarketBanner-module-scss-module__2gYmRW__marketBanner .MarketBanner-module-scss-module__2gYmRW__container {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.MarketBanner-module-scss-module__2gYmRW__marketBanner .MarketBanner-module-scss-module__2gYmRW__textContent {
+  flex: 1;
+  min-width: 300px;
+}
+
+.MarketBanner-module-scss-module__2gYmRW__marketBanner .MarketBanner-module-scss-module__2gYmRW__textContent .MarketBanner-module-scss-module__2gYmRW__title {
+  color: var(--text-color);
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.MarketBanner-module-scss-module__2gYmRW__marketBanner .MarketBanner-module-scss-module__2gYmRW__textContent .MarketBanner-module-scss-module__2gYmRW__description {
+  color: var(--secondary);
+  font-size: 1.2rem;
+}
+
+.MarketBanner-module-scss-module__2gYmRW__marketBanner .MarketBanner-module-scss-module__2gYmRW__textContent .MarketBanner-module-scss-module__2gYmRW__description span {
+  font-weight: 600;
+}
+
+.MarketBanner-module-scss-module__2gYmRW__marketBanner .MarketBanner-module-scss-module__2gYmRW__textContent .MarketBanner-module-scss-module__2gYmRW__description span.MarketBanner-module-scss-module__2gYmRW__dark {
+  color: var(--surface);
+}
+
+.MarketBanner-module-scss-module__2gYmRW__marketBanner .MarketBanner-module-scss-module__2gYmRW__textContent .MarketBanner-module-scss-module__2gYmRW__description span.MarketBanner-module-scss-module__2gYmRW__light {
+  color: var(--dark);
+}
+
+.MarketBanner-module-scss-module__2gYmRW__marketBanner .MarketBanner-module-scss-module__2gYmRW__imageContent {
+  text-align: right;
+  flex: 1;
+  min-width: 300px;
+}
+
+.MarketBanner-module-scss-module__2gYmRW__marketBanner .MarketBanner-module-scss-module__2gYmRW__imageContent .MarketBanner-module-scss-module__2gYmRW__image {
+  border-radius: 12px;
+  max-width: 100%;
+  height: auto;
+}
+
+/*# sourceMappingURL=12153_MarketPageSections_MarketBannar_MarketBanner_module_scss_module_css_f9ee138c._.single.css.map*/

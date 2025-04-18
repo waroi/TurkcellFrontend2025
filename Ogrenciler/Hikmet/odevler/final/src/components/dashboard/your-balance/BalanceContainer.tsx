@@ -20,7 +20,7 @@ export default function BalanceContainer({
 	console.log(coins);
 	return (
 		<Card className="p-4 border-0">
-			<div className="bg-white border-0 text-center">
+			<div className="border-0 text-center">
 				<p className="mb-0 text-muted">{t("yourBalance")}</p>
 				<h1 className="fw-medium">$132,832.89</h1>
 				<Button variant="outline-dark rounded-pill w-100">

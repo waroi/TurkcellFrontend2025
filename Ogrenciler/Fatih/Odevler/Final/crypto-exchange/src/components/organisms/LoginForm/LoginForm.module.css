@@ -1,0 +1,169 @@
+.loginLayoutWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loginLayout {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 2rem;
+  border-radius: 12px;
+  background-color: var(--background);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.qrSection {
+  position: absolute;
+  right: -320px;
+  top: 0;
+  width: 280px;
+  padding: 1rem;
+  background-color: var(--background);
+  border-radius: 12px;
+  text-align: center;
+}
+
+@media (max-width: 991px) {
+  .qrSection {
+    display: none;
+  }
+}
+
+.submitBtn {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background-color: var(--primary);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submitBtn:hover {
+  background-color: #1e40af;
+}
+
+.haveAccount {
+  color: var(--on-surface);
+  font-size: 0.875rem;
+}
+
+.haveAccount a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.haveAccount a:hover {
+  text-decoration: underline;
+}
+
+.forgotPassword {
+  color: var(--critical);
+}
+
+.switchTabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.switchButton {
+  padding: 0.5rem 1.25rem;
+  border-radius: 999px;
+  border: none;
+  font-weight: 500;
+  color: var(--on-surface);
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.switchButton:hover {
+  background-color: var(--muted);
+}
+
+.switchButton.active {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+.submitBtn {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background-color: var(--primary);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submitBtn:hover {
+  background-color: #1e40af;
+}
+
+.haveAccount {
+  color: var(--on-surface);
+  font-size: 0.875rem;
+}
+
+.haveAccount a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.haveAccount a:hover {
+  text-decoration: underline;
+}
+
+.forgotPassword {
+  color: var(--critical);
+}
+
+.switchTabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.switchButton {
+  padding: 0.5rem 1.25rem;
+  border-radius: 999px;
+  border: none;
+  font-weight: 500;
+  color: var(--on-surface);
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.switchButton:hover {
+  background-color: var(--muted);
+}
+
+.switchButton.active {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+.label {
+  color: var(--on-surface);
+}

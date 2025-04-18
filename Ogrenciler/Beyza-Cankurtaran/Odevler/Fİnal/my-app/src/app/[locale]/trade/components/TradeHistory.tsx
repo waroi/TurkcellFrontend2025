@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '../styles/Trading.module.css';
 import { CryptoCurrency } from '../types/crypto';
-
+import { useTheme } from '../../../context/ThemeContext';
 interface TradeHistoryProps {
   cryptocurrencies: CryptoCurrency[];
   loading: boolean;
@@ -13,9 +13,10 @@ const TradeHistory: React.FC<TradeHistoryProps> = ({
   loading,
   onSelectCoin
 }) => {
+  const { theme } = useTheme();
   if (loading) {
     return (
-      <div className="card bg-dark text-light p-4">
+      <div className={`card p-4 ${theme === 'dark' ? 'bg-black text-white' : 'bg-white text-dark'}`}>
         <div className="d-flex justify-content-center">
           <div className="spinner-border text-primary" role="status">
             <span className="visually-hidden">Loading...</span>
@@ -24,9 +25,8 @@ const TradeHistory: React.FC<TradeHistoryProps> = ({
       </div>
     );
   }
-
   return (
-    <div className={`${styles.tradeHistory} card bg-dark text-light`}>
+    <div className={`${styles.cryptoPriceCardsContainer} rounded p-1 mb-4 ${theme === 'dark' ? 'bg-dark text-light' : 'bg-white text-dark'}`}>
       <div className="card-header d-flex justify-content-between align-items-center">
         <h3>Trade History</h3>
         <div className="dropdown">
@@ -42,7 +42,7 @@ const TradeHistory: React.FC<TradeHistoryProps> = ({
       </div>
       <div className="card-body p-0">
         <div className="table-responsive">
-          <table className="table table-dark table-hover mb-0">
+          <table className={`table table-hover mb-0  ${theme === 'dark' ? 'table-dark text-white' : 'table-white text-dark'}`}>
             <thead>
               <tr>
                 <th scope="col">Coin Name</th>

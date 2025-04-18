@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 6, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
+    {"offset": {"line": 30, "column": 0}, "map": {"version":3,"sources":["file:///Users/zeynepguney/Desktop/TurkcellFrontend2025/Ogrenciler/ZeynepGuney/Odevler/Final/crypto-app/src/app/profile/page.tsx"],"sourcesContent":["// app/profile/page.tsx\nimport { redirect } from \"next/navigation\";\n\nexport default function ProfilePage() {\n    redirect(\"/profile/user\");\n}\n"],"names":[],"mappings":"AAAA,uBAAuB;;;;AACvB;AAAA;;AAEe,SAAS;IACpB,CAAA,GAAA,qLAAA,CAAA,WAAQ,AAAD,EAAE;AACb","debugId":null}}]
+}

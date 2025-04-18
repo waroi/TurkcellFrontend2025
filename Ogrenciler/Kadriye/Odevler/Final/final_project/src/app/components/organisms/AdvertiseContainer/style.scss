@@ -1,0 +1,17 @@
+.advertise-container {
+  padding: 163px 0 0;
+  background-color: var(--color-bg-section);
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(600, 1fr));
+    align-items: center;
+    gap: 136px;
+    .image-container {
+      align-self: end;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,57 @@
+@import "./themes";
+
+$primary: #3772FF;
+$secondary: #777E90;
+$success: #58BD7D;
+$danger: #D33535;
+$warning: #FABE;
+$info: #1E58C8;
+$light: #F7F7F7;
+$dark: #343a40;
+
+$theme-colors: (
+    "primary": $primary,
+    "secondary": $secondary,
+    "success": $success,
+    "danger": $danger,
+    "warning": $warning,
+    "info": $info,
+    "light": $light,
+    "dark": $dark
+);
+
+$custom-colors: (
+    "secondary2": $secondary2,
+    "surface-main": $surface-main,
+    "interactive": $interactive,
+    "critical": $danger,
+    "decorative": $decorative,
+    "rose": $rose,
+    "line": $line,
+    "pink": $pink,
+    "supplementary": $supplementary,
+    "instagram": $instagram,
+    "stroke": $stroke,
+    "line-dark": $line-dark,
+    "background-dark": $background-dark
+);
+
+$font-sizes: (
+    1: 3.5rem,
+    2: 3rem,
+    3: 2.5rem,
+    4: 2rem,
+    5: 1.5rem,
+    6: 1.25rem
+);
+@import "../../../node_modules/bootstrap/scss/bootstrap.scss";
+
+@each $color, $value in $custom-colors {
+    .text-#{$color} {
+        color: $value !important;
+    }
+
+    .bg-#{$color} {
+        background-color: $value !important;
+    }
+}

@@ -1,0 +1,27 @@
+.wrapper {
+  background-color: var(--surface);
+}
+
+.card {
+  background-color: var(--surface);
+  color: var(--on-surface);
+  transition: all 0.3s ease;
+}
+
+.cardPositive {
+  box-shadow: 0 1px 1px black;
+}
+
+.small {
+  color: var(--secondary);
+}
+
+.badgeGreen {
+  background-color: var(--success);
+  color: var(--on-surface);
+}
+
+.badgeRed {
+  background-color: var(--critical);
+  color: var(--on-surface);
+}

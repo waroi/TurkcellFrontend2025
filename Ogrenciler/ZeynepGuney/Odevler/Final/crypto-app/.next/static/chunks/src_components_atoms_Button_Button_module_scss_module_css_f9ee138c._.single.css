@@ -1,0 +1,31 @@
+/* [project]/src/components/atoms/Button/Button.module.scss.module.css [app-client] (css) */
+.Button-module-scss-module__EtFxQG__button {
+  background-color: var(--primary);
+  color: var(--white);
+  cursor: pointer;
+  text-align: center;
+  border: none;
+  border-radius: 90px;
+  padding: 16px 24px;
+  font-weight: 700;
+  transition: transform .3s;
+}
+
+.Button-module-scss-module__EtFxQG__button.Button-module-scss-module__EtFxQG__activeButton {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.Button-module-scss-module__EtFxQG__button.Button-module-scss-module__EtFxQG__inactiveButton {
+  background: none;
+}
+
+.Button-module-scss-module__EtFxQG__button.Button-module-scss-module__EtFxQG__inactiveButton.Button-module-scss-module__EtFxQG__light {
+  color: var(--on-surface);
+}
+
+.Button-module-scss-module__EtFxQG__button.Button-module-scss-module__EtFxQG__inactiveButton.Button-module-scss-module__EtFxQG__dark {
+  color: var(--white);
+}
+
+/*# sourceMappingURL=src_components_atoms_Button_Button_module_scss_module_css_f9ee138c._.single.css.map*/

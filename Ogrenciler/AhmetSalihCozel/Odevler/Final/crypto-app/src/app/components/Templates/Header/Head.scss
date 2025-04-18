@@ -1,0 +1,24 @@
+@import "../../../theme/themeColors.scss";
+
+nav{
+    height: 50px;
+    background-color: var(--navbar-bg-color);
+}
+
+:root {
+    --navbar-bg-color: #{$surfaceMain};
+  }
+  
+  [data-theme="dark"] {
+    --navbar-bg-color: #{$backgroundDark};
+  }
+
+.rounded-image{
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.border-lr{
+  border-left: 1px $secondary2 solid;
+  border-right: 1px $secondary2 solid;
+}

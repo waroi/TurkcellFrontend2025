@@ -1,0 +1,261 @@
+.navbar {
+    height: 50px;
+    position: sticky;
+
+    :global(.dark-theme) & {
+        background-color: #141416;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+}
+
+.brandName {
+    font-weight: 600;
+    font-size: 18px;
+
+    :global(.dark-theme) & {
+        color: #fcfcfd;
+    }
+}
+
+.menuItems {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 32px;
+}
+
+.navLinks {
+    width: 709px;
+}
+
+.navLink {
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    font-size: 14px;
+    white-space: nowrap;
+    gap: 4px;
+
+    :global(.dark-theme) & {
+        color: #b1b5c3;
+
+        &:hover,
+        &.active {
+            color: #3772ff;
+        }
+    }
+}
+
+.actionButton {
+    padding: 0 8px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    font-size: 14px;
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+    }
+}
+
+.iconButton {
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.walletButton {
+    gap: 8px;
+    padding: 0 12px;
+    height: 30px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.avatarPlaceholder {
+    width: 24px;
+    height: 24px;
+    border: none;
+    background-color: #3772ff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profileDropdownContainer {
+    position: relative;
+}
+
+.profileDropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 8px;
+    background-color: var(--card-background, #fff);
+    border: 1px solid var(--border, #e6e8ec);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    min-width: 180px;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.dropdownItem {
+    display: block;
+    padding: 12px 16px;
+    color: var(--foreground, #23262f);
+    text-decoration: none;
+    transition: background-color 0.2s;
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+    }
+}
+
+.dropdownLogoutButton {
+    display: block;
+    width: 100%;
+    padding: 12px 16px;
+    color: #f45;
+    background: none;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+    }
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+
+    span {
+        width: 100%;
+        height: 2px;
+        background-color: var(--foreground);
+        transition: all 0.3s ease;
+
+        :global(.dark-theme) & {
+            background-color: #fcfcfd;
+        }
+    }
+
+    &.active {
+        span:first-child {
+            transform: translateY(9px) rotate(45deg);
+        }
+
+        span:nth-child(2) {
+            opacity: 0;
+        }
+
+        span:last-child {
+            transform: translateY(-9px) rotate(-45deg);
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .menuItems {
+        position: fixed;
+        top: 50px;
+        left: 0;
+        right: 0;
+        background-color: var(--card-background);
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        padding: 16px;
+        box-shadow: var(--shadow);
+        transform: translateY(-100%);
+        opacity: 0;
+        transition: all 0.3s ease;
+        pointer-events: none;
+        margin-left: 0;
+
+        :global(.dark-theme) & {
+            background-color: #141416;
+        }
+
+        &.active {
+            transform: translateY(0);
+            opacity: 1;
+            pointer-events: auto;
+        }
+    }
+
+    .navLinks {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        gap: 12px;
+        height: auto;
+    }
+
+    .navLink {
+        height: auto;
+        padding: 8px 0;
+
+        &.active::after {
+            display: none;
+        }
+    }
+
+    .actionsContainer {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        margin-top: 16px;
+        height: auto;
+        gap: 12px;
+    }
+
+    .actionDropdown,
+    .actionButton {
+        width: 100%;
+        height: auto;
+        padding: 8px 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .profileDropdownContainer {
+        width: 100%;
+        margin-top: 12px;
+    }
+
+    .profileDropdown {
+        position: relative;
+        width: 100%;
+        margin-top: 12px;
+    }
+
+    .avatarPlaceholder {
+        margin: 0 auto;
+    }
+}

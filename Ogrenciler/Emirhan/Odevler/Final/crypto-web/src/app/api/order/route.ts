@@ -7,10 +7,6 @@ export async function POST(req: NextRequest) {
     const body = await req.json();
     const { symbol, side, quantity } = body;
 
-    const apiKey = process.env.BINANCE_API_KEY!;
-    const secretKey = process.env.BINANCE_SECRET_KEY!;
-    const baseUrl = process.env.BINANCE_BASE_URL!; 
-
     const timestamp = Date.now();
     const query = `symbol=${symbol}&side=${side}&type=MARKET&quantity=${quantity}&timestamp=${timestamp}`;
     const signature = crypto

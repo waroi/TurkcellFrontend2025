@@ -1,0 +1,159 @@
+/* [project]/src/components/molecules/CryptoSection.module.scss.module.css [app-client] (css) */
+.CryptoSection-module-scss-module__mP4fra__cardContainer {
+  box-shadow: none;
+  border-top: 1px solid;
+  border-radius: 0;
+  flex-wrap: wrap;
+  gap: 22px;
+  padding: 20px;
+  display: flex;
+}
+
+.CryptoSection-module-scss-module__mP4fra__buttonContainer {
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  display: flex;
+}
+
+.CryptoSection-module-scss-module__mP4fra__buttonContainer button {
+  cursor: pointer;
+  border: none;
+  border-radius: 24px;
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16px;
+}
+
+.CryptoSection-module-scss-module__mP4fra__buttonContainer button.CryptoSection-module-scss-module__mP4fra__activeButton {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.CryptoSection-module-scss-module__mP4fra__buttonContainer button.CryptoSection-module-scss-module__mP4fra__inactiveButton {
+  background: none;
+}
+
+.CryptoSection-module-scss-module__mP4fra__buttonContainer button.CryptoSection-module-scss-module__mP4fra__inactiveButton.CryptoSection-module-scss-module__mP4fra__light {
+  color: var(--on-surface);
+}
+
+.CryptoSection-module-scss-module__mP4fra__buttonContainer button.CryptoSection-module-scss-module__mP4fra__inactiveButton.CryptoSection-module-scss-module__mP4fra__dark {
+  color: var(--white);
+}
+
+.CryptoSection-module-scss-module__mP4fra__cardContainer {
+  box-shadow: none;
+  border-top: 1px solid;
+  border-radius: 0;
+  gap: 22px;
+  padding: 20px;
+  display: flex;
+}
+
+.CryptoSection-module-scss-module__mP4fra__cardContainer.CryptoSection-module-scss-module__mP4fra__light {
+  border-color: var(--line);
+}
+
+.CryptoSection-module-scss-module__mP4fra__cardContainer.CryptoSection-module-scss-module__mP4fra__dark {
+  border-color: var(--on-surface);
+}
+
+.CryptoSection-module-scss-module__mP4fra__card {
+  text-align: center;
+  border-radius: 12px;
+  gap: 8px;
+  width: 200px;
+  margin-bottom: 32px;
+  padding: 32px 40px;
+  box-shadow: 0 2px 4px #0000001a;
+}
+
+.CryptoSection-module-scss-module__mP4fra__card:hover {
+  background: #ffffff1a;
+  transform: translateY(-4px);
+}
+
+.CryptoSection-module-scss-module__mP4fra__card.CryptoSection-module-scss-module__mP4fra__dark:hover {
+  background: #2f324180;
+  transform: translateY(-4px);
+}
+
+.CryptoSection-module-scss-module__mP4fra__header {
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 8px;
+  display: flex;
+}
+
+.CryptoSection-module-scss-module__mP4fra__icon {
+  width: 24px;
+  height: 24px;
+}
+
+.CryptoSection-module-scss-module__mP4fra__coinInfo {
+  text-align: left;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  display: flex;
+}
+
+.CryptoSection-module-scss-module__mP4fra__coinInfo .CryptoSection-module-scss-module__mP4fra__coinName {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.CryptoSection-module-scss-module__mP4fra__coinInfo .CryptoSection-module-scss-module__mP4fra__coinSymbol {
+  color: var(--secondary);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.CryptoSection-module-scss-module__mP4fra__price {
+  margin: 8px 0;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+}
+
+.CryptoSection-module-scss-module__mP4fra__marketVolumeContainer {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  display: flex;
+}
+
+.CryptoSection-module-scss-module__mP4fra__marketVolumeContainer .CryptoSection-module-scss-module__mP4fra__marketCap {
+  font-weight: 400;
+}
+
+.CryptoSection-module-scss-module__mP4fra__marketVolumeContainer .CryptoSection-module-scss-module__mP4fra__volumeChange {
+  text-align: center;
+  border-radius: 24px;
+  padding: 2px 8px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+}
+
+.CryptoSection-module-scss-module__mP4fra__marketVolumeContainer .CryptoSection-module-scss-module__mP4fra__volumeChange.CryptoSection-module-scss-module__mP4fra__negative {
+  background-color: var(--critical);
+  color: var(--white);
+}
+
+.CryptoSection-module-scss-module__mP4fra__marketVolumeContainer .CryptoSection-module-scss-module__mP4fra__volumeChange.CryptoSection-module-scss-module__mP4fra__positive {
+  background-color: var(--success);
+  color: var(--white);
+}
+
+/*# sourceMappingURL=src_components_molecules_CryptoSection_module_scss_module_css_f9ee138c._.single.css.map*/

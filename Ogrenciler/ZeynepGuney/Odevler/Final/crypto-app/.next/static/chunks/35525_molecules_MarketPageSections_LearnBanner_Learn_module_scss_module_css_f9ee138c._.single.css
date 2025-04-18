@@ -1,0 +1,123 @@
+/* [project]/src/components/molecules/MarketPageSections/LearnBanner/Learn.module.scss.module.css [app-client] (css) */
+.Learn-module-scss-module__KILmQa__learnSection {
+  padding: 40px 20px;
+}
+
+.Learn-module-scss-module__KILmQa__container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.Learn-module-scss-module__KILmQa__header {
+  text-align: center;
+}
+
+.Learn-module-scss-module__KILmQa__title {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.Learn-module-scss-module__KILmQa__description {
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+.Learn-module-scss-module__KILmQa__videoCards {
+  justify-content: space-between;
+  margin-top: 30px;
+  display: flex;
+}
+
+.Learn-module-scss-module__KILmQa__videoCard {
+  width: 30%;
+  text-align: flex-start;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.Learn-module-scss-module__KILmQa__videoCardPlaceholder {
+  background-color: var(--secondary);
+  border-radius: 8px;
+  height: 180px;
+  position: relative;
+}
+
+.Learn-module-scss-module__KILmQa__videoThumbnail {
+  object-fit: cover;
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.Learn-module-scss-module__KILmQa__cardButton {
+  margin-top: 15px;
+}
+
+.Learn-module-scss-module__KILmQa__customButton {
+  border-radius: 4px;
+}
+
+.Learn-module-scss-module__KILmQa__cardTitle {
+  margin-top: 50px;
+}
+
+.Learn-module-scss-module__KILmQa__authorDateContainer {
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  display: flex;
+}
+
+.Learn-module-scss-module__KILmQa__greenDot {
+  background-color: var(--success);
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  margin-right: 12px;
+}
+
+.Learn-module-scss-module__KILmQa__authorDate {
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  display: flex;
+}
+
+.Learn-module-scss-module__KILmQa__author {
+  margin-right: 20px;
+}
+
+.Learn-module-scss-module__KILmQa__date {
+  color: #777;
+  text-align: right;
+  font-size: .9rem;
+}
+
+.Learn-module-scss-module__KILmQa__loadDiv {
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  display: flex;
+}
+
+.Learn-module-scss-module__KILmQa__loadButton {
+  border: 2px solid var(--line);
+  align-items: center;
+  gap: 12px;
+  display: flex;
+}
+
+.Learn-module-scss-module__KILmQa__loadButton.Learn-module-scss-module__KILmQa__light {
+  background-color: var(--white);
+  color: var(--on-surface);
+}
+
+.Learn-module-scss-module__KILmQa__loadButton.Learn-module-scss-module__KILmQa__dark {
+  background-color: var(--dark);
+  color: var(--surface);
+}
+
+/*# sourceMappingURL=35525_molecules_MarketPageSections_LearnBanner_Learn_module_scss_module_css_f9ee138c._.single.css.map*/

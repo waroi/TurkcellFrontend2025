@@ -52,7 +52,6 @@
 
 .main code {
   font-family: inherit;
-  /*background: var(--gray-alpha-100);*/
   padding: 2px 4px;
   border-radius: 4px;
   font-weight: 600;
@@ -110,7 +109,6 @@ a.secondary {
   flex-shrink: 0;
 }
 
-/* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
   a.primary:hover {
     background: var(--button-primary-hover);

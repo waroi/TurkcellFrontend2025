@@ -8,12 +8,15 @@ import Image from "next/image";
 import Button from "@/components/Button";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import Footer from "@/components/Footer";
+import { useTranslations } from "next-intl";
 
 export default function Login() {
   const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
   const [successMsg, setSuccessMsg] = useState("");
   const router = useRouter();
+  const t = useTranslations()
 
   const formik = useFormik({
     initialValues: {
@@ -48,15 +51,15 @@ export default function Login() {
 
   return (
     <section className="auth-container">
-      <div className="auth-flag py-5 bg-secondary d-flex align-items-center justify-content-between">
-        <h1 className="fs-1 fw-bold">Login</h1>
-        <p className="text-muted fs-4">Home / Login</p>
+      <div className="auth-flag py-5 bg-secondary align-items-center justify-content-between d-none d-md-flex">
+        <h1 className="fs-1 fw-bold">{t("Login")}</h1>
+        <p className="text-muted fs-4">{t("Home")} / {t("Login")}</p>
       </div>
 
-      <div className="container w-25">
-        <h2 className="text-center">Login To Rockie</h2>
+      <div className="container auth-form-container auth-padding">
+        <h2 className="text-center">{t("Login To Rockie")}</h2>
         <p className="text-center text-muted fs-3">
-          Welcome back! Log In now to start trading
+          {t("Welcome back! Log In now to start trading")}
         </p>
         <div className="w-100 d-flex align-items-center justify-content-center mb-4">
           <div className="bg-success bg-opacity-10 py-2 pe-4 rounded-pill">
@@ -77,7 +80,7 @@ export default function Login() {
           <button className="btn btn-primary py-1 px-3 rounded-pill text-white fs-5">
             Email
           </button>
-          <button className="btn btn-white text-muted fs-5">Mobile</button>
+          <button className="btn btn-white text-muted fs-5">{t("Mobile")}</button>
         </div>
 
         <form className="registerForm" onSubmit={formik.handleSubmit}>
@@ -93,7 +96,7 @@ export default function Login() {
             <input
               type="email"
               className="form-control fs-18"
-              placeholder="Please fill in the email form."
+              placeholder={t("Please fill in the email form")}
               name="email"
               id="email"
               value={formik.values.email}
@@ -107,12 +110,12 @@ export default function Login() {
 
           <div className="mb-2">
             <label htmlFor="password" className="fs-3">
-              Password
+              {t("Password")}
             </label>
             <input
               type="password"
               className="form-control fs-18"
-              placeholder="Please enter a password."
+              placeholder={t("Please enter a password")}
               name="password"
               id="password"
               value={formik.values.password}
@@ -131,12 +134,12 @@ export default function Login() {
                 id="rememberMe"
               />
               <label className="form-check-label fs-4" htmlFor="rememberMe">
-                Remember me
+                {t("Remember me")}
               </label>
             </div>
 
             <span className="text-danger fs-4" role="button">
-              Forgot Password?
+              {t("Forgot Password?")}
             </span>
           </div>
 
@@ -146,15 +149,16 @@ export default function Login() {
               className="btn-primary text-white fs-4"
               disabled={loading}
             >
-              {loading ? "Registering..." : "Login"}
+              {loading ? t("pending") : t("Login")}
             </Button>
           </div>
 
           <p className="text-center fs-4 pb-5">
-            Not a Member? <Link href="/register">Register</Link>
+            {t("Not a Member?")} <Link href="/register">{t("Register")}</Link>
           </p>
         </form>
       </div>
+      <Footer/>
     </section>
   );
 }

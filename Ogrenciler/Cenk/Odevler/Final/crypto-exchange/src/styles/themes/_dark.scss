@@ -1,0 +1,16 @@
+[data-theme="dark"] {
+  --color-primary: #3772ff;
+  --color-on-surface: #ffffff;
+  --color-secondary: #b1b5c3;
+  --color-secondary2: #777e90;
+  --color-surface: #23262f;
+  --color-surface-main: #1a1a1a;
+  --color-interactive: #2e72d2;
+  --color-critical: #d33535;
+  --color-warning: #fabe3c;
+  --color-success: #58bd7d;
+  --color-highlight: #1e58c8;
+  --color-decorative: #383fdd;
+
+  --font-family: #{$font-family-base};
+}

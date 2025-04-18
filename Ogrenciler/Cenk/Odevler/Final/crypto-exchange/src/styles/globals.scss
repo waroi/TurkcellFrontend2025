@@ -1,0 +1,27 @@
+@import "./base/variables";
+@import "./themes/light";
+@import "./themes/dark";
+@import "./components/buttons";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  font-family: "DM Sans", sans-serif;
+  background-color: var(--color-surface);
+  color: var(--color-on-surface);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+}

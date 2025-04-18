@@ -1,0 +1,98 @@
+/* [project]/src/components/Navbar.module.scss.module.css [app-client] (css) */
+.Navbar-module-scss-module__E_iIuG__navbar {
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  font-size: 14px;
+  display: flex;
+  box-shadow: 0 2px 5px #0000000d;
+}
+
+.Navbar-module-scss-module__E_iIuG__left {
+  align-items: center;
+  gap: 24px;
+  display: flex;
+}
+
+.Navbar-module-scss-module__E_iIuG__right {
+  align-items: center;
+  gap: 16px;
+  display: flex;
+}
+
+.Navbar-module-scss-module__E_iIuG__logoText {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.Navbar-module-scss-module__E_iIuG__menu {
+  gap: 18px;
+  display: flex;
+}
+
+.Navbar-module-scss-module__E_iIuG__menuItem {
+  cursor: pointer;
+  align-items: center;
+  gap: 4px;
+  display: flex;
+}
+
+.Navbar-module-scss-module__E_iIuG__menuItemActive {
+  background-color: var(--primary);
+  color: var(--white);
+  border: none;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 12px;
+  display: flex;
+}
+
+.Navbar-module-scss-module__E_iIuG__icon {
+  cursor: pointer;
+}
+
+.Navbar-module-scss-module__E_iIuG__lngBtn {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.Navbar-module-scss-module__E_iIuG__lngBtn.Navbar-module-scss-module__E_iIuG__light {
+  color: var(--on-surface);
+}
+
+.Navbar-module-scss-module__E_iIuG__lngBtn.Navbar-module-scss-module__E_iIuG__dark {
+  color: var(--white);
+}
+
+.Navbar-module-scss-module__E_iIuG__walletBtn {
+  cursor: pointer;
+  color: var(--text-color);
+  border: 1px solid;
+  border-color: var(--border-color);
+  background: none;
+  border-radius: 9999px;
+  padding: 6px 12px;
+}
+
+.Navbar-module-scss-module__E_iIuG__walletBtn.Navbar-module-scss-module__E_iIuG__light {
+  color: var(--on-surface);
+  border-color: var(--on-surface);
+}
+
+.Navbar-module-scss-module__E_iIuG__walletBtn.Navbar-module-scss-module__E_iIuG__dark {
+  color: var(--white);
+  border-color: var(--white);
+}
+
+.Navbar-module-scss-module__E_iIuG__avatar {
+  cursor: pointer;
+  border-radius: 9999px;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  display: flex;
+}
+
+/*# sourceMappingURL=src_components_Navbar_module_scss_module_css_f9ee138c._.single.css.map*/

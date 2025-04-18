@@ -1,0 +1,147 @@
+/* [project]/src/components/molecules/Dashboard/Balance.module.scss.module.css [app-client] (css) */
+.Balance-module-scss-module__braUYq__card.Balance-module-scss-module__braUYq__dark {
+  background-color: var(--dark);
+  color: var(--white);
+}
+
+.Balance-module-scss-module__braUYq__card.Balance-module-scss-module__braUYq__light {
+  background-color: var(--white);
+  color: var(--on-surface);
+}
+
+.Balance-module-scss-module__braUYq__topSection {
+  text-align: center;
+}
+
+.Balance-module-scss-module__braUYq__assetBlock {
+  border-radius: 8px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  transition: transform .3s ease-in-out;
+  display: flex;
+  box-shadow: 0 2px 6px #0000001a;
+}
+
+.Balance-module-scss-module__braUYq__assetBlock.Balance-module-scss-module__braUYq__dark {
+  background-color: var(--dark);
+  color: var(--white);
+}
+
+.Balance-module-scss-module__braUYq__assetBlock.Balance-module-scss-module__braUYq__light {
+  background-color: var(--white);
+  color: var(--on-surface);
+}
+
+.Balance-module-scss-module__braUYq__assetBlock:hover {
+  transform: translateY(-3px);
+}
+
+.Balance-module-scss-module__braUYq__assetBlock .Balance-module-scss-module__braUYq__left {
+  flex-direction: column;
+  justify-content: flex-start;
+  display: flex;
+}
+
+.Balance-module-scss-module__braUYq__assetBlock .Balance-module-scss-module__braUYq__left .Balance-module-scss-module__braUYq__balanceTitle {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.Balance-module-scss-module__braUYq__assetBlock .Balance-module-scss-module__braUYq__left .Balance-module-scss-module__braUYq__assetTitle {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.Balance-module-scss-module__braUYq__assetBlock .Balance-module-scss-module__braUYq__left .Balance-module-scss-module__braUYq__assetDetails {
+  align-items: center;
+  margin-top: .5rem;
+  display: flex;
+}
+
+.Balance-module-scss-module__braUYq__assetBlock .Balance-module-scss-module__braUYq__left .Balance-module-scss-module__braUYq__assetDetails .Balance-module-scss-module__braUYq__logo {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin-right: .5rem;
+}
+
+.Balance-module-scss-module__braUYq__assetBlock .Balance-module-scss-module__braUYq__left .Balance-module-scss-module__braUYq__assetDetails .Balance-module-scss-module__braUYq__assetInfo {
+  flex-direction: column;
+  display: flex;
+}
+
+.Balance-module-scss-module__braUYq__assetBlock .Balance-module-scss-module__braUYq__left .Balance-module-scss-module__braUYq__assetDetails .Balance-module-scss-module__braUYq__assetInfo .Balance-module-scss-module__braUYq__symbol {
+  font-weight: bold;
+}
+
+.Balance-module-scss-module__braUYq__assetBlock .Balance-module-scss-module__braUYq__left .Balance-module-scss-module__braUYq__assetDetails .Balance-module-scss-module__braUYq__assetInfo .Balance-module-scss-module__braUYq__marketCap {
+  color: #757575;
+  font-size: .9rem;
+}
+
+.Balance-module-scss-module__braUYq__assetBlock .Balance-module-scss-module__braUYq__right {
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  display: flex;
+}
+
+.Balance-module-scss-module__braUYq__assetBlock .Balance-module-scss-module__braUYq__right .Balance-module-scss-module__braUYq__priceBlock {
+  margin-bottom: .5rem;
+}
+
+.Balance-module-scss-module__braUYq__assetBlock .Balance-module-scss-module__braUYq__right .Balance-module-scss-module__braUYq__priceBlock .Balance-module-scss-module__braUYq__value {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.Balance-module-scss-module__braUYq__negative {
+  color: var(--critical);
+}
+
+.Balance-module-scss-module__braUYq__positive {
+  color: var(--success);
+}
+
+.Balance-module-scss-module__braUYq__priceContainer {
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  display: flex;
+}
+
+.Balance-module-scss-module__braUYq__priceContainer .Balance-module-scss-module__braUYq__price {
+  color: var(--secondary);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.Balance-module-scss-module__braUYq__priceContainer .Balance-module-scss-module__braUYq__symbol {
+  color: var(--secondary);
+  font-size: 1rem;
+}
+
+.Balance-module-scss-module__braUYq__loading {
+  color: var(--secondary);
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.Balance-module-scss-module__braUYq__topUpBtn {
+  border-radius: 100px;
+}
+
+.Balance-module-scss-module__braUYq__topUpBtn.Balance-module-scss-module__braUYq__light {
+  color: var(--on-surface);
+  border: 1px solid var(--on-surface);
+  background-color: var(--white) !important;
+}
+
+.Balance-module-scss-module__braUYq__topUpBtn.Balance-module-scss-module__braUYq__dark {
+  background-color: var(--dark);
+  color: var(--surface);
+  border: 1px solid var(--line);
+}
+
+/*# sourceMappingURL=src_components_molecules_Dashboard_Balance_module_scss_module_css_f9ee138c._.single.css.map*/

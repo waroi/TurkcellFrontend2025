@@ -1,0 +1,73 @@
+body.light {
+  background-color: #ffffff;
+  color: #222;
+}
+
+body.dark {
+  background-color: #111;
+  color: #f9f9f9;
+}
+body {
+  font-family: var(--font-dm-sans), sans-serif;
+}
+.nav-link {
+  line-height: 40px;
+}
+
+.navbar-nav .nav-link {
+  transition: background-color 0.2s ease, color 0.2s ease;
+
+  &:hover {
+    background-color: $primary;
+    color: $surface-main;
+  }
+}
+
+input::placeholder {
+  opacity: 1;
+}
+
+.bg-dark-hover::placeholder {
+  color: $secondary;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(1.05);
+  }
+}
+
+.loading-logo {
+  width: 120px;
+  height: auto;
+  animation: blink 1.5s infinite ease-in-out;
+  transition: transform 0.3s ease;
+}
+
+.user-avatar {
+  transition: 0.3s ease;
+  border-radius: 100%;
+}
+
+.user-avatar:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 16px rgba(0, 153, 255, 0.6);
+}
+
+.cta {
+  background: $decorative;
+}
+
+html {
+  font-size: 100%;
+
+  @media screen and (min-width: 1921px) {
+    font-size: 200%;
+  }
+}

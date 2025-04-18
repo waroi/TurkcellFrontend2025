@@ -1,0 +1,55 @@
+.navlinks {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  margin-right: 40px;
+  button {
+    background: none;
+    border: none;
+  }
+  .btn {
+    padding: 7px 12px;
+    margin: auto 16px auto 0;
+    border: 1px solid;
+    border-radius: 30px;
+  }
+  .icon_btn {
+    padding: 0 8px;
+    margin: 17px 0;
+    border-left: 1px solid #e5e5e5;
+  }
+  img {
+    border-radius: 50%;
+  }
+  .user-menu {
+    position: relative;
+    display: inline-block;
+
+    .menu {
+      display: none;
+      position: absolute;
+      top: 100%; // image altına yerleşir
+      left: 0;
+      background-color: white;
+      border: 1px solid #ccc;
+      padding: 0.5rem;
+      z-index: 10;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+      a {
+        display: block;
+        color: black;
+        text-decoration: none;
+        margin: 0.25rem 0;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    &:hover .menu {
+      display: block;
+    }
+  }
+}

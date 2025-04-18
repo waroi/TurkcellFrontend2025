@@ -1,0 +1,50 @@
+.password-container {
+  width: 100%;
+  margin: 100px auto;
+  display: flex;
+  gap: 80px;
+  button {
+    border: none;
+    border-radius: 100px;
+    &.primary {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+      margin: 0;
+    }
+    &.submit {
+      padding: 18px 0;
+      font-weight: 600;
+    }
+  }
+  .change-password {
+    padding-left: 80px;
+    width: 100%;
+    h3 {
+      margin: 20px 0 18px 0;
+    }
+    form {
+      text-align: left;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 28px;
+      label {
+        display: block;
+        font-size: 20px;
+        font-weight: 500;
+        color: var(--color-secondary);
+        margin-bottom: 12px;
+      }
+      input {
+        box-sizing: border-box;
+        background-color: var(--color-bg-section);
+        width: 100%;
+        padding: 10px 20px;
+        color: var(--color-secondary2);
+        font-size: 18px;
+        margin-bottom: 8px;
+        border-radius: 8px;
+        border: 1px solid rgb(229, 229, 229);
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+.section {
+  padding: 64px 16px;
+  background-color: var(--color-surface);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.imageWrapper {
+  flex: 1;
+  text-align: center;
+}
+
+.content {
+  flex: 1;
+
+  h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+
+  p {
+    font-size: 14px;
+    color: var(--color-secondary);
+    margin-bottom: 16px;
+  }
+
+  .exploreBtn {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 10px 24px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}

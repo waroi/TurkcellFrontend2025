@@ -1,0 +1,48 @@
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 0;
+  gap: 40px;
+}
+
+.heroSection {
+  padding: 80px 0;
+}
+
+.heading {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  line-height: 1.2;
+}
+
+.subheading {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+.partnersHeading {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.partnerLogo {
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.marketSection {
+  padding: 40px 0 80px;
+  background-color: var(--bg-light);
+
+  @media (max-width: 768px) {
+    padding: 20px 0 40px;
+  }
+}

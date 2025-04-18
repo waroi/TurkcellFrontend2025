@@ -3,21 +3,11 @@ import { createClient } from "@/utils/supabase/server";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
-interface LoginData {
-	email: string;
-	password: string;
-}
+import { type LoginFormData, type RegisterFormData } from "@/lib/definitions";
 
-interface SignupData {
-	email: string;
-	password: string;
-	nickName: string;
-	phone: string;
-	country?: string;
-	uidCode?: string;
-}
+type ActionResult = Promise<{ error: string } | null>;
 
-export async function login(data: LoginData) {
+export async function login(data: LoginFormData): ActionResult {
 	const supabase = await createClient();
 
 	const { error } = await supabase.auth.signInWithPassword({
@@ -27,14 +17,17 @@ export async function login(data: LoginData) {
 
 	if (error) {
 		console.error("Login error:", error.message);
-		redirect("/error");
+		if (error.message.includes("Invalid login credentials")) {
+			return { error: "Invalid email or password." };
+		}
+		return { error: error.message || "Login failed. Please try again." };
 	}
 
 	revalidatePath("/", "layout");
 	redirect("/");
 }
 
-export async function signup(data: SignupData) {
+export async function signup(data: RegisterFormData): ActionResult {
 	const supabase = await createClient();
 
 	const { data: authData, error: authError } = await supabase.auth.signUp({
@@ -45,44 +38,32 @@ export async function signup(data: SignupData) {
 				nickname: data.nickName,
 				country: data.country || "",
 				phone: data.phone,
-				uid_code: data.uidCode || "",
 			},
 		},
 	});
 
 	if (authError) {
 		console.error("Registration error:", authError.message);
-		redirect("/error");
-	}
-
-	console.log("User created:", authData?.user);
-
-	if (authData?.user) {
-		const { data: profileData, error: profileError } = await supabase
-			.from("profiles")
-			.insert([
-				{
-					id: authData.user.id,
-					nickname: data.nickName,
-					country: data.country || "",
-					phone: data.phone,
-					uid_code: data.uidCode || "",
-					updated_at: new Date().toISOString(),
-				},
-			])
-			.select();
-
-		if (profileError) {
-			console.error("Profile creation error details:", {
-				message: profileError.message,
-				details: profileError.details,
-				hint: profileError.hint,
-				code: profileError.code,
-			});
-		} else {
-			console.log("Profile created successfully:", profileData);
+		if (authError.message.includes("User already registered")) {
+			return { error: "This email address is already registered." };
 		}
+		if (authError.message.includes("Password should be at least")) {
+			return { error: "Password does not meet the minimum requirements." };
+		}
+		return {
+			error: authError.message || "Registration failed. Please try again.",
+		};
 	}
+
+	if (!authData?.user) {
+		console.error("Signup succeeded but user data is missing.");
+		return {
+			error:
+				"Registration completed, but failed to retrieve user data. Please try logging in.",
+		};
+	}
+
+	console.log("User created:", authData.user.id);
 
 	revalidatePath("/", "layout");
 	redirect("/");

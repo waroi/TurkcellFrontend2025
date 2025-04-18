@@ -1,0 +1,15 @@
+.rockie-container {
+  padding: 163px 0 100px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(600, 1fr));
+  gap: 94px;
+  .image-container {
+    position: relative;
+    padding-top: 80px;
+    .graphic {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+}

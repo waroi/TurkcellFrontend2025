@@ -1,0 +1,37 @@
+{
+  "name": "crypto-exchange",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@heroicons/react": "^2.2.0",
+    "binance-api-node": "^0.12.9",
+    "firebase": "^11.6.0",
+    "formik": "^2.4.6",
+    "i18next": "^25.0.0",
+    "lucide-react": "^0.488.0",
+    "next": "15.3.0",
+    "next-i18next": "^15.4.2",
+    "node-binance-api": "^1.0.3",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-i18next": "^15.4.1",
+    "sass": "^1.86.3",
+    "yup": "^1.6.1",
+    "zustand": "^5.0.3"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.3.0",
+    "typescript": "^5"
+  }
+}

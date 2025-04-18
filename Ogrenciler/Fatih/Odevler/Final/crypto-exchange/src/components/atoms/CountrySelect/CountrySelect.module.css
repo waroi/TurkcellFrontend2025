@@ -1,0 +1,24 @@
+.selectGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.selectGroup label {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.selectGroup select {
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--on-surface);
+  font-size: 0.875rem;
+  transition: border-color 0.2s ease;
+}
+
+.selectGroup select:focus {
+  outline: none;
+  border-color: var(--primary);
+}

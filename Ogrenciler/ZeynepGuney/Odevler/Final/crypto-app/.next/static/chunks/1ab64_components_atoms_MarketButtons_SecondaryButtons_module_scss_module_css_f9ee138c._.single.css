@@ -1,0 +1,37 @@
+/* [project]/src/components/atoms/MarketButtons/SecondaryButtons.module.scss.module.css [app-client] (css) */
+.SecondaryButtons-module-scss-module__Bepg2W__secondaryButtons {
+  justify-content: flex-start;
+  align-items: center;
+  max-width: 1200px;
+  height: 50px;
+  margin: 0 auto;
+  font-size: 14px;
+  display: flex;
+}
+
+.SecondaryButtons-module-scss-module__Bepg2W__secondaryButtons.SecondaryButtons-module-scss-module__Bepg2W__dark {
+  border-bottom: 2px solid var(--secondary);
+}
+
+.SecondaryButtons-module-scss-module__Bepg2W__left {
+  align-items: center;
+  gap: 24px;
+  display: flex;
+}
+
+.SecondaryButtons-module-scss-module__Bepg2W__menuItem {
+  cursor: pointer;
+  color: inherit;
+  border: none;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 12px;
+  text-decoration: none;
+  display: flex;
+}
+
+.SecondaryButtons-module-scss-module__Bepg2W__menuItemActive {
+  border-bottom: 2px solid var(--primary);
+}
+
+/*# sourceMappingURL=1ab64_components_atoms_MarketButtons_SecondaryButtons_module_scss_module_css_f9ee138c._.single.css.map*/

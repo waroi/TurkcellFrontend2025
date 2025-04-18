@@ -1,0 +1,100 @@
+$primary-color: #3772ff;
+$primary-color-rgb: 55, 114, 255;
+$secondary-color: #0ecb81;
+$error-color: #ea3943;
+$warning-color: #f5b700;
+
+$text-primary: #111827;
+$text-secondary: #6b7280;
+$text-light: #9ca3af;
+$text-white: #ffffff;
+
+$bg-main: #f9fafb;
+$bg-card: #ffffff;
+$bg-light: #f3f4f6;
+$bg-dark: #111827;
+$bg-hover: rgba(243, 244, 246, 0.7);
+
+$border-color: #e5e7eb;
+$border-light: #f3f4f6;
+$border-dark: #d1d5db;
+
+$spacing-xs: 0.25rem;
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+$spacing-lg: 1.5rem;
+$spacing-xl: 2rem;
+$spacing-2xl: 3rem;
+
+$mobile: 480px;
+$tablet: 768px;
+$desktop: 1024px;
+$large-desktop: 1280px;
+
+$font-family-sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+$font-size-xs: 0.75rem;
+$font-size-sm: 0.875rem;
+$font-size-base: 1rem;
+$font-size-lg: 1.125rem;
+$font-size-xl: 1.25rem;
+$font-size-2xl: 1.5rem;
+$font-size-3xl: 1.875rem;
+$font-size-4xl: 2.25rem;
+
+$shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+$shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+$radius-sm: 0.25rem;
+$radius-md: 0.5rem;
+$radius-lg: 0.75rem;
+$radius-full: 9999px;
+
+$z-index-dropdown: 1000;
+$z-index-sticky: 1020;
+$z-index-fixed: 1030;
+$z-index-modal-backdrop: 1040;
+$z-index-modal: 1050;
+$z-index-popover: 1060;
+$z-index-tooltip: 1070;
+
+:root {
+    --primary-color: #{$primary-color};
+    --primary-color-rgb: #{$primary-color-rgb};
+    --secondary-color: #{$secondary-color};
+    --error-color: #{$error-color};
+    --warning-color: #{$warning-color};
+
+    --text-primary: #{$text-primary};
+    --text-secondary: #{$text-secondary};
+    --text-light: #{$text-light};
+    --text-white: #{$text-white};
+
+    --bg-main: #{$bg-main};
+    --bg-card: #{$bg-card};
+    --bg-light: #{$bg-light};
+    --bg-dark: #{$bg-dark};
+    --bg-hover: #{$bg-hover};
+
+    --border-color: #{$border-color};
+    --border-light: #{$border-light};
+    --border-dark: #{$border-dark};
+}
+
+.dark-mode {
+    --primary-color: #{$primary-color};
+    --secondary-color: #{$secondary-color};
+
+    --text-primary: #{$text-white};
+    --text-secondary: #a1a1aa;
+    --text-light: #71717a;
+
+    --bg-main: #18181b;
+    --bg-card: #27272a;
+    --bg-light: #3f3f46;
+    --bg-hover: rgba(63, 63, 70, 0.7);
+
+    --border-color: #3f3f46;
+    --border-light: #52525b;
+    --border-dark: #71717a;
+}
