@@ -1,0 +1,21 @@
+footer {
+  margin-top: 63px;
+  .footer-top,
+  .footer-bottom .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-top {
+    margin-bottom: 60px;
+  }
+  .footer-bottom {
+    background-color: var(--color-bg-section);
+    .socials {
+      img {
+        margin-left: 26px;
+      }
+    }
+  }
+}

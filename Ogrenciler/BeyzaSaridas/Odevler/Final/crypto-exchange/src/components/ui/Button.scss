@@ -1,0 +1,92 @@
+@import '../../styles/scss/variables';
+@import '../../styles/scss/mixins';
+
+.button {
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   font-weight: 500;
+   border-radius: 0.375rem;
+   transition: all 0.2s ease;
+   cursor: pointer;
+   border: none;
+
+   &--primary {
+      background-color: $primary-color;
+      color: white;
+
+      &:hover {
+         background-color: darken($primary-color, 10%);
+      }
+
+      @include dark-mode {
+         background-color: lighten($primary-color, 5%);
+
+         &:hover {
+            background-color: lighten($primary-color, 15%);
+         }
+      }
+   }
+
+   &--secondary {
+      background-color: $secondary-color;
+      color: white;
+
+      &:hover {
+         background-color: darken($secondary-color, 10%);
+      }
+   }
+
+   &--outline {
+      background-color: transparent;
+      border: 1px solid $primary-color;
+      color: $primary-color;
+
+      &:hover {
+         background-color: rgba($primary-color, 0.1);
+      }
+
+      @include dark-mode {
+         border-color: lighten($primary-color, 10%);
+         color: lighten($primary-color, 10%);
+      }
+   }
+
+   &--ghost {
+      background-color: transparent;
+      color: $text-dark;
+
+      &:hover {
+         background-color: rgba($text-dark, 0.1);
+      }
+
+      @include dark-mode {
+         color: $text-light;
+
+         &:hover {
+            background-color: rgba($text-light, 0.1);
+         }
+      }
+   }
+
+   &--sm {
+      padding: 0.4rem 0.75rem;
+      font-size: 0.875rem;
+   }
+
+   &--md {
+      padding: 0.6rem 1rem;
+      font-size: 1rem;
+   }
+
+   &--lg {
+      padding: 0.75rem 1.5rem;
+      font-size: 1.125rem;
+   }
+
+   &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      pointer-events: none;
+   }
+}
