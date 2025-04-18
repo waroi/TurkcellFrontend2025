@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useTransition } from "react";
 import PrimaryButton from "../Buttons/PrimaryButton";
 import { useTranslations } from "next-intl";
 import { createTrade } from "@/app/utils/actions";
@@ -15,6 +15,8 @@ const BuyForm = ({ side = "buy" }: { side: "buy" | "sell" }) => {
   const [paySymbol, setPaySymbol] = useState("BTC");
   const [receiveSymbol, setReceiveSymbol] = useState("USDT");
   const [calculatedAmount, setCalculatedAmount] = useState<number>(0);
+  const [message, setMessage] = useState<string | null>(null);
+  const [isPending, startTransition] = useTransition();
 
   useEffect(() => {
     if (!marketData || !paySymbol || !receiveSymbol || !payAmount) return;
@@ -31,18 +33,37 @@ const BuyForm = ({ side = "buy" }: { side: "buy" | "sell" }) => {
     }
   }, [payAmount, paySymbol, receiveSymbol, marketData]);
 
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setMessage(null);
+
+    const formData = new FormData();
+    formData.append("side", side);
+    formData.append("quantity", payAmount.toString());
+    formData.append("paySymbol", paySymbol);
+    formData.append("receiveSymbol", receiveSymbol);
+
+    startTransition(async () => {
+      try {
+        await createTrade(formData);
+        setMessage("✅ Trade başarıyla gerçekleştirildi.");
+      } catch (err: any) {
+        setMessage("❌ İşlem sırasında bir hata oluştu: " + err.message);
+      }
+    });
+  };
+
   return (
-    <form
-      action={createTrade}
-      className="d-flex flex-column justify-content-between gap-4 p-5"
-    >
+    <form onSubmit={handleSubmit} className="d-flex flex-column gap-4 p-5">
       <div className="d-flex text-secondary">
         <span className="body3">
-          1 {paySymbol} ≈ {(marketData?.length &&
-            (
-              (marketData.find((c) => c.symbol === paySymbol)?.quote.USD.price || 0) /
-              (marketData.find((c) => c.symbol === receiveSymbol)?.quote.USD.price || 1)
-            ).toFixed(4)) + " " + receiveSymbol}
+          1 {paySymbol} ≈{" "}
+          {marketData?.length
+            ? (
+                (marketData.find((c) => c.symbol === paySymbol)?.quote.USD.price || 0) /
+                (marketData.find((c) => c.symbol === receiveSymbol)?.quote.USD.price || 1)
+              ).toFixed(4) + " " + receiveSymbol
+            : ""}
         </span>
       </div>
 
@@ -51,7 +72,6 @@ const BuyForm = ({ side = "buy" }: { side: "buy" | "sell" }) => {
           <label className="form-label text-secondary body3">Pay</label>
           <div className="d-flex gap-2">
             <input
-              name="quantity"
               type="number"
               value={payAmount}
               onChange={(e) => setPayAmount(Number(e.target.value))}
@@ -60,7 +80,6 @@ const BuyForm = ({ side = "buy" }: { side: "buy" | "sell" }) => {
               required
             />
             <select
-              name="paySymbol"
               value={paySymbol}
               onChange={(e) => setPaySymbol(e.target.value)}
               className="form-select"
@@ -78,7 +97,6 @@ const BuyForm = ({ side = "buy" }: { side: "buy" | "sell" }) => {
           <Icon name="turnAround" />
         </span>
 
-
         <div className="d-flex flex-column w-100">
           <label className="form-label text-secondary body3">Receive</label>
           <div className="d-flex gap-2">
@@ -89,7 +107,6 @@ const BuyForm = ({ side = "buy" }: { side: "buy" | "sell" }) => {
               disabled
             />
             <select
-              name="receiveSymbol"
               value={receiveSymbol}
               onChange={(e) => setReceiveSymbol(e.target.value)}
               className="form-select"
@@ -104,11 +121,15 @@ const BuyForm = ({ side = "buy" }: { side: "buy" | "sell" }) => {
         </div>
       </div>
 
-      <input hidden name="side" defaultValue={side} />
-
-      <PrimaryButton type="submit" className="px-5 py-3 align-self-end">
-        {side === "buy" ? t("buttons.buy") : t("buttons.sell")}
+      <PrimaryButton
+        type="submit"
+        className="px-5 py-3 align-self-end"
+        disabled={isPending}
+      >
+        {isPending ? "İşlem yapılıyor..." : side === "buy" ? t("buttons.buy") : t("buttons.sell")}
       </PrimaryButton>
+
+      {message && <div className="text-center text-secondary">{message}</div>}
     </form>
   );
 };
