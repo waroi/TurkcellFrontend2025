@@ -1,3 +1,4 @@
+
 .tradingPage {
     min-height: 100vh;
 }
@@ -32,7 +33,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #2a2d3a;
 }
 
 .tradingTabs button {
@@ -67,13 +67,11 @@
 }
 body {
   .crypto-card {
-    background-color: #121218;
     border-radius: 12px;
     padding: 20px;
     margin-bottom: 20px;
   }
   .tab-btn {
-    background-color: transparent;
     border: none;
     color: #6c757d;
     padding: 10px 15px;
@@ -87,7 +85,6 @@ body {
   .currency-select {
     display: flex;
     align-items: center;
-    background-color: #1d1d25;
     border-radius: 8px;
     padding: 10px;
     margin: 10px 0;
@@ -127,7 +124,6 @@ body {
     margin-top: 10px;
   }
   .order-book {
-    background-color: #121218;
     border-radius: 12px;
     padding: 15px;
     margin-bottom: 20px;

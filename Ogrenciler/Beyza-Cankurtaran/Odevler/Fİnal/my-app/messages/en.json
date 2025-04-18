@@ -204,6 +204,82 @@
         "passwordMismatch": "Passwords do not match.",
         "mustAccept": "You must accept the agreement.",
         "registrationError": "An error occurred during registration. Please try again."
+      },
+      "profile": {
+        "title": "My Profile",
+        "edit": "Edit",
+        "cancel": "Cancel",
+        "save": "Save Changes",
+        "createdOn": "This account was created on {date}, {time}",
+        "tabs": {
+          "info": "Info",
+          "wallet": "Wallet",
+          "history": "Trade History",
+          "security": "Security",
+          "api": "API"
+        },
+        "personalInfo": {
+          "title": "Personal Information",
+          "firstName": "First Name",
+          "lastName": "Last Name",
+          "displayName": "Display Name"
+        },
+        "contactInfo": {
+          "title": "Contact Information",
+          "email": "Email",
+          "phoneNumber": "Phone Number",
+          "location": "Location",
+          "currency": "Currency",
+          "locations": {
+            "select": "Select a location",
+            "us": "United States",
+            "uk": "United Kingdom",
+            "canada": "Canada",
+            "australia": "Australia"
+          },
+          "currencies": {
+            "select": "Select currency",
+            "usd": "US Dollar ($)",
+            "eur": "Euro (€)",
+            "gbp": "British Pound (£)",
+            "jpy": "Japanese Yen (¥)"
+          }
+        }
+      },
+      "security": {
+        "title": "Security",
+        "auth": {
+          "email": {
+            "title": "Email Authentication",
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+            "disable": "Disable"
+          },
+          "sms": {
+            "title": "SMS Authentication",
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+            "enable": "Enable"
+          },
+          "google": {
+            "title": "Google Authentication",
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+            "enable": "Enable"
+          }
+        },
+        "password": {
+          "title": "Password",
+          "description": "Set a unique password to protect your personal account.",
+          "oldPassword": "Old Password",
+          "newPassword": "New Password",
+          "reenterPassword": "Re-enter Password",
+          "securityTip": "To ensure your account is well protected, please use 8 or more characters with a mix of letters, numbers & symbols.",
+          "savePassword": "Save Password"
+        }
+      },
+      "api": {
+        "title": "API Management",
+        "keysList": "List of API Keys",
+        "needHelp": "Need help?",
+        "createKey": "Create Private API Key"
       }
     }
   }

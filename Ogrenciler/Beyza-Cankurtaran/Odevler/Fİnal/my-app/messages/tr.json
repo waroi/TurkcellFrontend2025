@@ -204,6 +204,82 @@
       "invalidEmail": "Geçerli bir email adresi girin.",
       "passwordShort": "Şifre en az 6 karakterden oluşmalıdır",
       "mustAccept": "Anlaşmaları kabul etmelisiniz."
+    },
+    "profile": {
+    "title": "Profilim",
+    "edit": "Düzenle",
+    "cancel": "İptal",
+    "save": "Değişiklikleri Kaydet",
+    "createdOn": "Bu hesap {date}, {time} tarihinde oluşturuldu",
+    "tabs": {
+      "info": "Bilgi",
+      "wallet": "Cüzdan",
+      "history": "İşlem Geçmişi",
+      "security": "Güvenlik",
+      "api": "API"
+    },
+    "personalInfo": {
+      "title": "Kişisel Bilgiler",
+      "firstName": "Ad",
+      "lastName": "Soyad",
+      "displayName": "Görünen Ad"
+    },
+    "contactInfo": {
+      "title": "İletişim Bilgileri",
+      "email": "E-posta",
+      "phoneNumber": "Telefon Numarası",
+      "location": "Konum",
+      "currency": "Para Birimi",
+      "locations": {
+        "select": "Konum seçiniz",
+        "us": "Amerika Birleşik Devletleri",
+        "uk": "Birleşik Krallık",
+        "canada": "Kanada",
+        "australia": "Avustralya"
+      },
+      "currencies": {
+        "select": "Para birimi seçiniz",
+        "usd": "Amerikan Doları ($)",
+        "eur": "Euro (€)",
+        "gbp": "İngiliz Sterlini (£)",
+        "jpy": "Japon Yeni (¥)"
+      }
     }
+  },
+  "security": {
+    "title": "Güvenlik",
+    "auth": {
+      "email": {
+        "title": "E-posta Kimlik Doğrulama",
+        "description": "Lorem Ipsum, baskı ve dizgi endüstrisinin basit sahte metnidir.",
+        "disable": "Devre Dışı Bırak"
+      },
+      "sms": {
+        "title": "SMS Kimlik Doğrulama",
+        "description": "Lorem Ipsum, baskı ve dizgi endüstrisinin basit sahte metnidir.",
+        "enable": "Etkinleştir"
+      },
+      "google": {
+        "title": "Google Kimlik Doğrulama",
+        "description": "Lorem Ipsum, baskı ve dizgi endüstrisinin basit sahte metnidir.",
+        "enable": "Etkinleştir"
+      }
+    },
+    "password": {
+      "title": "Şifre",
+      "description": "Kişisel hesabınızı korumak için benzersiz bir şifre belirleyin.",
+      "oldPassword": "Eski Şifre",
+      "newPassword": "Yeni Şifre",
+      "reenterPassword": "Şifreyi Tekrar Girin",
+      "securityTip": "Hesabınızın iyi korunmasını sağlamak için lütfen harfler, sayılar ve semboller karışımı ile 8 veya daha fazla karakter kullanın.",
+      "savePassword": "Şifreyi Kaydet"
+    }
+  },
+  "api": {
+    "title": "API Yönetimi",
+    "keysList": "API Anahtarları Listesi",
+    "needHelp": "Yardıma mı ihtiyacınız var?",
+    "createKey": "Özel API Anahtarı Oluştur"
+  }
   }
 }

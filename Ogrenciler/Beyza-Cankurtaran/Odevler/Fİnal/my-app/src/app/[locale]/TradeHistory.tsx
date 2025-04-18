@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from '../trade/styles/Trading.module.css';
-import { CryptoCurrency } from '../trade/types/crypto';
-import { useTheme } from '../../context/ThemeContext';
+import styles from '../styles/Trading.module.css';
+import { CryptoCurrency } from '../../app/[locale]/trade/types/crypto';
+import { useTheme } from '../../app/context/ThemeContext';
 interface TradeHistoryProps {
   cryptocurrencies: CryptoCurrency[];
   loading: boolean;
@@ -28,7 +28,7 @@ const TradeHistory: React.FC<TradeHistoryProps> = ({
   return (
     <div className={`${styles.cryptoPriceCardsContainer} rounded p-1 mb-4 ${theme === 'dark' ? 'bg-dark text-light' : 'bg-white text-dark'}`}>
       <div className="card-header d-flex justify-content-between align-items-center">
-        <h3>WatchList</h3>
+        <h3>Trade History</h3>
         <div className="dropdown">
           <button className="btn btn-outline-secondary dropdown-toggle" type="button" id="timeframeDropdown" data-bs-toggle="dropdown">
             24h

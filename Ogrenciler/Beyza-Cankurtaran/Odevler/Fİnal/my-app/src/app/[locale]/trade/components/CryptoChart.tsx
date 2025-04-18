@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import styles from '../styles/Trading.module.css';
 import { PriceDataPoint, TimeFrame } from '../types/crypto';
-
+import { useTheme } from '../../../context/ThemeContext';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -46,7 +46,7 @@ const CryptoChart: React.FC<CryptoChartProps> = ({
     const date = new Date(timestamp);
     return `${date.getDate()} ${date.toLocaleString('default', { month: 'short' })}`;
   };
-
+  const { theme } = useTheme();
   const chartData = {
     labels: data.map(item => formatDate(item.timestamp)),
     datasets: [
@@ -166,7 +166,8 @@ const CryptoChart: React.FC<CryptoChartProps> = ({
   };
 
   return (
-    <div className={`${styles.cryptoChart} card bg-dark text-light`}>
+    <div className={`card ${theme === 'dark' ? 'bg-black text-white' : `bg-white text-dark ${styles.cryptoChart}`}`}>
+
       <div className="card-header d-flex justify-content-between align-items-center">
         <h2>{coinName} to USD Chart</h2>
         <div className="btn-group">

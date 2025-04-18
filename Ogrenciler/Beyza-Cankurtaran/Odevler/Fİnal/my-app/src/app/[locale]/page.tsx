@@ -15,7 +15,6 @@ import NewsletterSection from "@/components/NewsletterSection";
 import CryptoPriceCards from "@/components/CryptoPriceCards";
 
 function HomeContent() {
-  const { theme } = useTheme();
   
   useEffect(() => {
     import('bootstrap/dist/js/bootstrap.bundle.min.js');
@@ -25,7 +24,7 @@ function HomeContent() {
     <>
       <Navbar />
       <Banner />
-      <CryptoPriceCards theme={theme} />
+      <CryptoPriceCards  />
       <GetStartedSection />
       <TradeAnywhereSection />
       <ServicesSection />
