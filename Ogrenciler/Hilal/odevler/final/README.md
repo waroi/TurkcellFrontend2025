@@ -33,4 +33,6 @@ Bu proje, Next.js 14 ve TypeScript ile geliştirilen bir kripto para borsası si
 
 Dil değişim bazlı Metadata verileri
 
+Temiz kod için eslint rule eklendi.
+
 Aktif Sayfalar:/home,/,
