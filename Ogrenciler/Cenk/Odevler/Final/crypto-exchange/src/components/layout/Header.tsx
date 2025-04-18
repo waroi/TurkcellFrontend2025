@@ -3,7 +3,10 @@ import Image from 'next/image';
 import styles from '@/styles/components/layout/Header.module.scss';
 import ThemeToggle from '@/components/ui/ThemeToggle';
 import LanguageSwitcher from '@/components/ui/LanguageSwitcher';
+<<<<<<< Updated upstream
 import { useState } from 'react';
+=======
+>>>>>>> Stashed changes
 
 const navLeftItems = [
   { label: 'Homepage', dropdown: true },
@@ -22,8 +25,11 @@ const navRightItems = [
 ];
 
 const Header = () => {
+<<<<<<< Updated upstream
   const [mobileOpen, setMobileOpen] = useState(false);
 
+=======
+>>>>>>> Stashed changes
   return (
     <header className={styles.header}>
       <div className={styles.left}>
@@ -64,6 +70,7 @@ const Header = () => {
           height={32}
         />
       </div>
+<<<<<<< Updated upstream
 
       <button className={styles.mobileMenuBtn} onClick={() => setMobileOpen(!mobileOpen)}>
         <Image src="/icons/menu.svg" alt="Menu" width={24} height={24} />
@@ -88,8 +95,14 @@ const Header = () => {
           <ThemeToggle />
         </div>
       )}
+=======
+>>>>>>> Stashed changes
     </header>
   );
 };
 
+<<<<<<< Updated upstream
 export default Header;
+=======
+export default Header;
+>>>>>>> Stashed changes

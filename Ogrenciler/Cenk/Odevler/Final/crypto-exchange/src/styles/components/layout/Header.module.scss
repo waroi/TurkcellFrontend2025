@@ -1,6 +1,7 @@
 .header {
   display: flex;
   justify-content: space-between;
+<<<<<<< Updated upstream
   align-items: center;
   height: 60px;
   padding: 0 24px;
@@ -11,18 +12,36 @@
 
 html[data-theme='dark'] .header {
   background-color: var(--color-surface-main);
+=======
+  align-items: stretch;
+  height: 50px;
+  padding: 0 32px;
+  background-color: var(--color-surface-main);
+
+  html[data-theme="dark"] .header {
+    background-color: var(--color-on-surface);
+  }
+>>>>>>> Stashed changes
 }
 
 .left {
   display: flex;
+<<<<<<< Updated upstream
   align-items: center;
+=======
+  align-items: stretch;
+>>>>>>> Stashed changes
 }
 
 .logo {
   display: flex;
   align-items: center;
   gap: 8px;
+<<<<<<< Updated upstream
   padding: 0 8px;
+=======
+  padding: 0 16px;
+>>>>>>> Stashed changes
 
   .logoText {
     font-size: 18px;
@@ -31,15 +50,23 @@ html[data-theme='dark'] .header {
   }
 }
 
+<<<<<<< Updated upstream
 html[data-theme='dark'] .logoText {
   color: white;
 }
 
+=======
+>>>>>>> Stashed changes
 .menuWrapper {
   display: flex;
   align-items: center;
   gap: 16px;
+<<<<<<< Updated upstream
   padding: 0 16px;
+=======
+  padding: 0 24px;
+  height: 100%;
+>>>>>>> Stashed changes
 
   .navItem {
     font-size: 14px;
@@ -64,10 +91,13 @@ html[data-theme='dark'] .logoText {
   }
 }
 
+<<<<<<< Updated upstream
 html[data-theme='dark'] .menuWrapper .navItem {
   color: white;
 }
 
+=======
+>>>>>>> Stashed changes
 .right {
   display: flex;
   align-items: center;
@@ -88,10 +118,13 @@ html[data-theme='dark'] .menuWrapper .navItem {
   }
 }
 
+<<<<<<< Updated upstream
 html[data-theme='dark'] .right .navItem {
   color: white;
 }
 
+=======
+>>>>>>> Stashed changes
 .iconBtn {
   background: none;
   border: none;
@@ -99,17 +132,23 @@ html[data-theme='dark'] .right .navItem {
   padding: 6px;
   display: flex;
   align-items: center;
+<<<<<<< Updated upstream
   filter: invert(0);
+=======
+>>>>>>> Stashed changes
 
   &:hover {
     opacity: 0.8;
   }
 }
 
+<<<<<<< Updated upstream
 html[data-theme='dark'] .iconBtn {
   filter: invert(1);
 }
 
+=======
+>>>>>>> Stashed changes
 .walletBtn {
   border: 1px solid var(--color-on-surface);
   padding: 6px 14px;
@@ -126,15 +165,19 @@ html[data-theme='dark'] .iconBtn {
   }
 }
 
+<<<<<<< Updated upstream
 html[data-theme='dark'] .walletBtn {
   color: white;
   border-color: white;
 }
 
+=======
+>>>>>>> Stashed changes
 .avatar {
   border-radius: 50%;
 }
 
+<<<<<<< Updated upstream
 .mobileMenuBtn {
   display: none;
   background: none;
@@ -189,3 +232,24 @@ html[data-theme='dark'] .mobileMenu {
   }
 }
 
+=======
+[data-theme="dark"] {
+  .right .navItem {
+    color: white;
+  }
+
+  .walletBtn {
+    color: white;
+    border-color: white;
+  }
+
+  .logoText {
+    color: white;
+  }
+
+  .menuWrapper .navItem:hover {
+    background-color: var(--color-primary);
+    color: white;
+  }
+}
+>>>>>>> Stashed changes

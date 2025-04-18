@@ -1,4 +1,8 @@
 'use client';
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 import { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 
@@ -24,6 +28,7 @@ const ThemeToggle = () => {
   };
 
   return (
+<<<<<<< Updated upstream
     <button
       onClick={toggleTheme}
       style={{
@@ -34,6 +39,9 @@ const ThemeToggle = () => {
         color: 'var(--color-on-surface)', 
       }}
     >
+=======
+    <button onClick={toggleTheme} style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '8px' }}>
+>>>>>>> Stashed changes
       {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
     </button>
   );
