@@ -1,0 +1,45 @@
+/* [project]/src/components/ThemeToggleButton.module.scss.module.css [app-client] (css) */
+.ThemeToggleButton-module-scss-module__LwhdmG__button {
+  cursor: pointer;
+  border: none;
+  padding: .5rem 1rem;
+  font-size: 1rem;
+  transition: all .3s;
+}
+
+.ThemeToggleButton-module-scss-module__LwhdmG__button.ThemeToggleButton-module-scss-module__LwhdmG__light {
+  color: #121212;
+  background-color: #f0f0f0;
+}
+
+.ThemeToggleButton-module-scss-module__LwhdmG__button.ThemeToggleButton-module-scss-module__LwhdmG__dark {
+  color: #f0f0f0;
+  background-color: #121212;
+}
+
+
+/* [project]/src/components/Navbar.module.scss.module.css [app-client] (css) */
+.Navbar-module-scss-module__E_iIuG__navbar {
+  background-color: var(--bg);
+  color: var(--text);
+  justify-content: space-between;
+  padding: 1rem;
+  transition: background-color .3s, color .3s;
+  display: flex;
+}
+
+.Navbar-module-scss-module__E_iIuG__button {
+  border: 1px solid var(--text);
+  cursor: pointer;
+  border-radius: 8px;
+  padding: .5rem 1rem;
+  transition: background-color .3s, color .3s;
+}
+
+.Navbar-module-scss-module__E_iIuG__button:hover {
+  background-color: var(--text);
+  color: var(--bg);
+}
+
+
+/*# sourceMappingURL=src_components_97bae33a._.css.map*/

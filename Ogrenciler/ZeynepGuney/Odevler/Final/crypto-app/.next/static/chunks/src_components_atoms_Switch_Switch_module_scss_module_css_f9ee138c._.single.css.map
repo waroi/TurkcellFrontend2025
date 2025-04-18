@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/src/components/atoms/Switch/Switch.module.scss.module.css"],"sourcesContent":[".switch{position:relative;display:inline-block;width:40px;height:20px}.switch input{opacity:0;width:0;height:0}.switch input:checked+.slider{background-color:var(--primary)}.switch input:focus+.slider{box-shadow:0 0 1px var(--primary)}.switch input:checked+.slider:before{transform:translateX(20px)}.switch input:disabled+.slider{background-color:var(--line);cursor:not-allowed}.slider{position:absolute;cursor:pointer;top:0;left:0;right:0;bottom:0;background-color:var(--line);transition:.4s ease;border-radius:32px}.slider:before{position:absolute;content:\"\";height:20px;width:20px;left:0;top:0;border:2px solid var(--line);background-color:var(--primary);transition:.4s ease;border-radius:50%;transform:translateX(0)}"],"names":[],"mappings":"AAAA;;;;;;;AAAsE;;;;;;AAAyC;;;;AAA8D;;;;AAA8D;;;;AAAgE;;;;;AAA+E;;;;;;;;;AAA2I"}}]
+}

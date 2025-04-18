@@ -1,0 +1,137 @@
+/* [project]/src/components/molecules/MarketPageSections/MarketCard/MarketCard.module.scss.module.css [app-client] (css) */
+.MarketCard-module-scss-module__peF4oq__marketContainer {
+  border-radius: 24px;
+  flex-flow: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 80px;
+  padding: 0 1rem;
+  display: flex;
+}
+
+.MarketCard-module-scss-module__peF4oq__marketContainer.MarketCard-module-scss-module__peF4oq__light {
+  background-color: var(--white);
+}
+
+.MarketCard-module-scss-module__peF4oq__marketContainer.MarketCard-module-scss-module__peF4oq__dark {
+  background-color: var(--dark2);
+}
+
+.MarketCard-module-scss-module__peF4oq__cardContainer {
+  border-top: 1px solid;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 22px;
+  width: 100%;
+  margin-bottom: 20px;
+  padding-top: 20px;
+  display: flex;
+}
+
+.MarketCard-module-scss-module__peF4oq__cardContainer.MarketCard-module-scss-module__peF4oq__light {
+  border-color: var(--line);
+}
+
+.MarketCard-module-scss-module__peF4oq__cardContainer.MarketCard-module-scss-module__peF4oq__dark {
+  border-color: var(--on-surface);
+}
+
+.MarketCard-module-scss-module__peF4oq__card {
+  border-right: 1px solid;
+  width: calc(25% - 16.5px);
+  padding: 20px;
+}
+
+.MarketCard-module-scss-module__peF4oq__card.MarketCard-module-scss-module__peF4oq__light {
+  border-color: var(--line);
+}
+
+.MarketCard-module-scss-module__peF4oq__card.MarketCard-module-scss-module__peF4oq__dark {
+  border-color: var(--on-surface);
+}
+
+.MarketCard-module-scss-module__peF4oq__card:last-child {
+  border-right: none;
+}
+
+.MarketCard-module-scss-module__peF4oq__topSection {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 1rem;
+  display: flex;
+}
+
+.MarketCard-module-scss-module__peF4oq__left {
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  display: flex;
+}
+
+.MarketCard-module-scss-module__peF4oq__left .MarketCard-module-scss-module__peF4oq__icon {
+  width: 32px;
+  height: 32px;
+  margin-bottom: .5rem;
+}
+
+.MarketCard-module-scss-module__peF4oq__left .MarketCard-module-scss-module__peF4oq__name {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.MarketCard-module-scss-module__peF4oq__right {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  width: 50%;
+  display: flex;
+}
+
+.MarketCard-module-scss-module__peF4oq__right .MarketCard-module-scss-module__peF4oq__volumeChange {
+  color: var(--white);
+  border-radius: 100px;
+  margin-top: .5rem;
+  padding: 2px 8px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.MarketCard-module-scss-module__peF4oq__right .MarketCard-module-scss-module__peF4oq__volumeChange.MarketCard-module-scss-module__peF4oq__positive {
+  background-color: var(--success);
+}
+
+.MarketCard-module-scss-module__peF4oq__right .MarketCard-module-scss-module__peF4oq__volumeChange.MarketCard-module-scss-module__peF4oq__negative {
+  background-color: var(--critical);
+}
+
+.MarketCard-module-scss-module__peF4oq__priceContainer {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  display: flex;
+}
+
+.MarketCard-module-scss-module__peF4oq__price {
+  text-align: left;
+  flex: 0 auto;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.MarketCard-module-scss-module__peF4oq__symbol {
+  text-align: right;
+  color: var(--secondary);
+  margin-left: auto;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+/*# sourceMappingURL=12153_MarketPageSections_MarketCard_MarketCard_module_scss_module_css_f9ee138c._.single.css.map*/

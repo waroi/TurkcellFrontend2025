@@ -1,0 +1,63 @@
+/* [project]/src/components/atoms/UnifiedInput.module.scss.module.css [app-client] (css) */
+.UnifiedInput-module-scss-module__OhPjIa__inputGroup {
+  align-items: center;
+  gap: .5rem;
+  margin-bottom: 1rem;
+  display: flex;
+}
+
+.UnifiedInput-module-scss-module__OhPjIa__label {
+  font-size: .95rem;
+  font-weight: 500;
+}
+
+.UnifiedInput-module-scss-module__OhPjIa__label.UnifiedInput-module-scss-module__OhPjIa__light {
+  color: var(--secondary);
+}
+
+.UnifiedInput-module-scss-module__OhPjIa__label.UnifiedInput-module-scss-module__OhPjIa__dark {
+  color: var(--secondary2);
+}
+
+.UnifiedInput-module-scss-module__OhPjIa__input, .UnifiedInput-module-scss-module__OhPjIa__select {
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  flex: 1;
+  padding: .5rem;
+  font-size: 1rem;
+  transition: border-color .2s;
+}
+
+.UnifiedInput-module-scss-module__OhPjIa__input.UnifiedInput-module-scss-module__OhPjIa__light, .UnifiedInput-module-scss-module__OhPjIa__select.UnifiedInput-module-scss-module__OhPjIa__light {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+.UnifiedInput-module-scss-module__OhPjIa__input.UnifiedInput-module-scss-module__OhPjIa__dark, .UnifiedInput-module-scss-module__OhPjIa__select.UnifiedInput-module-scss-module__OhPjIa__dark {
+  background-color: var(--dark2);
+  color: var(--white);
+}
+
+.UnifiedInput-module-scss-module__OhPjIa__select {
+  appearance: none;
+  max-width: 80px;
+  height: 40px;
+  padding: .4rem;
+}
+
+.UnifiedInput-module-scss-module__OhPjIa__authButton {
+  background-color: var(--primary);
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  padding: .75rem 1rem;
+  font-weight: bold;
+}
+
+.UnifiedInput-module-scss-module__OhPjIa__authButton.UnifiedInput-module-scss-module__OhPjIa__hidden {
+  display: none;
+}
+
+/*# sourceMappingURL=src_components_atoms_UnifiedInput_module_scss_module_css_f9ee138c._.single.css.map*/
