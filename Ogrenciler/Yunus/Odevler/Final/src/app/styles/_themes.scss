@@ -78,6 +78,14 @@ $color-reverse1: $background-color-light;
 $color-reverse2: $background-color-dark;
 
 :root {
+    --background-color: #{$background-color-light};
+    --text-color: #{$text-color-light};
+    --primary-color: #{$primary-color-light};
+    --secondary-color: #{$secondary-color-light};
+    --border-color: #{$border-color-light};
+    --card-background: #{$card-background-light};
+    --shadow-color: #{$shadow-color-light};
+    // üst kısmı silicem çünkü aynısını variables a da eklemişim
     --navbar-background: #{$navbar-bg-light};
     --temp-button:#{$temp-button-light};
     --background-color-reverse: #{$background-color-reverse1};
@@ -104,6 +112,14 @@ $color-reverse2: $background-color-dark;
 }
 
 body.dark {
+    --background-color: #{$background-color-dark};
+    --text-color: #{$text-color-dark};
+    --primary-color: #{$primary-color-dark};
+    --secondary-color: #{$secondary-color-dark};
+    --border-color: #{$border-color-dark};
+    --card-background: #{$card-background-dark};
+    --shadow-color: #{$shadow-color-dark};
+    // üst kısmı silicem çünkü aynısını variables a da eklemişim
     --navbar-background: #{$navbar-bg-dark};
     --temp-button:#{$temp-button-dark};
     --background-color-reverse: #{$background-color-reverse2};
