@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Kripto Para Borsası Uygulaması
 
-## Getting Started
+Bu proje, [Next.js](https://nextjs.org) kullanılarak oluşturulmuştur.
 
-First, run the development server:
+Uygulamayı Canlı Olarak Görüntülemek için [Vercel Linki](https://cryptoproject-ten.vercel.app/en)
 
+##  Proje Hakkında
+
+Bu Proje, Turkcell’in "Gençlere Yatırım Geleceğe Yazılım 4.0 - Frontend Bootcamp" programı final ödevi kapsamında, verilen [Figma tasarımı]([https://www.figma.com/](https://www.figma.com/design/98DqPAzFuthisWLaeTG7B6/cryptocurrency-exchange-in-light-mood-and-Dark-mood--Community-?node-id=2680-54312&t=UDuV2ZXEQIoilHh8-0)) referans alınarak geliştirilmiş bir kripto para al-sat platformudur. Uygulama, kullanıcıların güncel piyasa verilerine erişerek demo işlemler yapmasına olanak tanır.
+
+## Kullanılan Teknolojiler
+
+- **Next.js 14 (App Router)**
+- **TypeScript**
+- **SCSS + Bootstrap 5**
+- **Firebase Authentication**
+- **i18n (çoklu dil desteği)**
+- **Formik + Yup (form validasyonu)**
+- **CoinMarketCap**
+- **Responsive tasarım** 
+
+##  Proje Özellikleri
+
+- Kullanıcı Kayıt ve Giriş Sistemi
+- Gerçek zamanlı piyasa verileri (CoinMarketCap API)
+- Al-Sat paneli 
+- Coinleri favorileme özelliği
+- Profil Sayfası
+- Türkçe & İngilizce Dil Seçeneği
+
+
+
+
+
+## Projeyi Yerel Ortamda Çalıştırmak İçin
+
+1.Depoyu Klonlayın
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone://github.com/kullanici-adi/crypto-project.git
+cd crypto-project
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2.Bağımlılıkları yükleyin
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
 
-## Learn More
+3.Ortam değişkenlerini .env.local dosyasına tanımlayın 
 
-To learn more about Next.js, take a look at the following resources:
+```
+NEXT_PUBLİC_CMC_API_KEY=your_api_key
+NEXT_PUBLİC_FIREBASE_API_KEY=...
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4.Geliştirme Sunucusunu Başlatın 
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+npm run dev
+```
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Katkıda Bulunan
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+-Sedanur Ceylan - [LinkedIn](https://www.linkedin.com/in/sedanur-ceylan-190702/)
+
+
+
+
+
+
+
+
