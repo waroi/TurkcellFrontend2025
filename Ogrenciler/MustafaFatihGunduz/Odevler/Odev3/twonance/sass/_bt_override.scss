@@ -1,0 +1,162 @@
+$text-primary: #3772ff;
+$text-dark: #23262f;
+$text-secondary: #777e90;
+$text-muted: #b1b5c3;
+$text-success: #58bd7d;
+$text-danger: #d33535;
+$bg-secondary: #f7f7f7;
+$bg-light: #b1b5c3;
+$bg-success: #58bd7d;
+$bg-info: #e5e5e5;
+$fw-bold: 700;
+$fw-normal: 400;
+$font-size-base: 1rem;
+$fs-1: 48px;
+$fs-2: 40px;
+$fs-3: 24px;
+$fs-4: 20px;
+$fs-5: 18px;
+$fs-6: 16px;
+$opacity: (
+  0: 0,
+  10: 0.1,
+  25: 0.25,
+  50: 0.5,
+  75: 0.75,
+  100: 1,
+);
+$display-font-sizes: (
+  1: 2rem,
+  2: $font-size-base * 0.825,
+  3: $font-size-base * 0.75,
+  4: 4rem,
+);
+$spacer: 1rem;
+$spacers: (
+  11: 1rem,
+  12: 2rem,
+  13: 3rem,
+  14: 4rem,
+  15: 5rem,
+  16: (
+    1rem + $spacer * 0.25,
+  ),
+  17: (
+    2rem + $spacer * 0.25,
+  ),
+  18: (
+    3rem + $spacer * 0.25,
+  ),
+  19: (
+    4rem + $spacer * 0.25,
+  ),
+  20: (
+    5rem + $spacer * 0.25,
+  ),
+  21: (
+    6.25rem,
+  ),
+  22: (
+    $spacer * 1.125,
+  ),
+  23: (
+    7.75rem,
+  ),
+  24: (
+    5.625rem,
+  ),
+  25: (
+    8.25rem /*132*/,
+  ),
+  26: (
+    6.75rem /*108*/,
+  ),
+  27: (
+    9.25rem /*148*/,
+  ),
+  28: (
+    7.5rem /*120*/,
+  ),
+  29: (
+    4.5rem /*76*/,
+  ),
+  30: (
+    3.75rem /*60*/,
+  ),
+  31: (
+    3.5625rem /*56*/,
+  ),
+  32: (
+    3.25rem /*52*/,
+  ),
+  33: (
+    2.75rem /*44*/,
+  ),
+  34: (
+    1.375rem /*22*/,
+  ),
+  91: (
+    $spacer * 2.5 /*40*/,
+  ),
+  92: (
+    $spacer * 1.875 /* 30*/,
+  ),
+  93: (
+    $spacer * 0.75,
+  ),
+  94: (
+    $spacer * 0.8125,
+  ),
+  95: (
+    $spacer * 0.625,
+  ),
+  96: (
+    $spacer * 1.75,
+  ),
+  97: (
+    $spacer * 1.5,
+  ),
+  98: (
+    $spacer * 0.5,
+  ),
+  99: (
+    $spacer * 0.375,
+  ),
+);
+body.light {
+  --text-primary: #3772ff;
+  --text-dark: #23262f;
+  --text-secondary: #777e90;
+  --text-muted: #b1b5c3;
+
+  --input-bg: #ffffff;
+  --input-text: #23262f;
+  --input-border: #b1b5c3;
+  --bg-white: #ffffff;
+  --bg-secondary: #f7f7f7;
+  --bg-light: #b1b5c3;
+  --bg-success: #58bd7d;
+  --bg-info: #e5e5e5;
+}
+
+body.dark {
+  --text-primary: #3772ff;
+  --text-dark: #ffffff;
+  --text-secondary: #b1b5c3;
+  --text-muted: #777e90;
+
+  --input-bg: #1a1a1a;
+  --input-text: #ffffff;
+  --input-border: #23262f;
+  --bg-white: #141416;
+  --bg-secondary: #1a1a1a;
+  --bg-light: #23262f;
+  --bg-success: #58bd7d;
+  --bg-info: #2a2a2a;
+  --accordion-bg: #141416;
+  --accordion-text: #ffffff;
+  --accordion-header-bg: #141416;
+  --accordion-header-color: #ffffff;
+}
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import "../node_modules/bootstrap/scss/variables";
