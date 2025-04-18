@@ -1,0 +1,230 @@
+@use "sass:color";
+@import "../../../node_modules/bootstrap/scss/functions";
+@import "../../../node_modules/bootstrap/scss/variables";
+@import "../../../node_modules/bootstrap/scss/mixins";
+
+$light-bg-subtle: color.mix($gray-100, $white, $weight: 50%) !default;
+
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+
+$primary: #6366f1;
+$dark: #1e1e1e;
+$light: #f8f9fa;
+$body-bg-dark: #121212;
+$body-color-dark: #ffffff;
+$body-bg-light: #ffffff;
+$body-color-light: #212529;
+
+[data-bs-theme="light"] {
+  --bs-body-bg: #{$body-bg-light};
+  --bs-body-color: #{$body-color-light};
+  --bs-card-bg: #{$light};
+  --bs-card-border-color: #dee2e6;
+  --bs-border-color: #dee2e6;
+  --bs-navbar-color: #{$dark};
+  --bs-navbar-hover-color: #{color.adjust($dark, $lightness: -15%)};
+  --bs-navbar-active-color: #{color.adjust($dark, $lightness: -25%)};
+  --bs-table-color: #{$dark};
+  --bs-table-bg: #{$light};
+  --bs-table-hover-bg: #{color.adjust($light, $lightness: -5%)};
+  --bs-table-hover-color: #{$dark};
+}
+
+[data-bs-theme="dark"] {
+  --bs-body-bg: #{$body-bg-dark};
+  --bs-body-color: #{$body-color-dark};
+  --bs-card-bg: #{$dark};
+  --bs-card-border-color: #2d2d2d;
+  --bs-border-color: #2d2d2d;
+  --bs-navbar-color: #{$body-color-dark};
+  --bs-navbar-hover-color: #{color.adjust($body-color-dark, $lightness: -15%)};
+  --bs-navbar-active-color: #{color.adjust($body-color-dark, $lightness: -25%)};
+  --bs-table-color: #{$body-color-dark};
+  --bs-table-bg: #{$dark};
+  --bs-table-hover-bg: #{color.adjust($dark, $lightness: 5%)};
+  --bs-table-hover-color: #{$body-color-dark};
+}
+
+.banner-wrapper,
+.top-market-wrapper,
+.get-started-wrapper,
+.trade-anywhere-wrapper {
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-soft {
+  background-color: var(--bs-secondary-bg);
+  color: var(--bs-body-color);
+  border: none;
+  transition: background-color 0.3s;
+}
+
+.bg-card {
+  background-color: var(--bs-card-bg);
+  transition: background-color 0.3s ease;
+}
+
+.navbar {
+  transition: background-color 0.3s ease;
+  border-bottom: 1px solid var(--bs-border-color);
+
+  .nav-link {
+    color: var(--bs-navbar-color);
+
+    &:hover {
+      color: var(--bs-navbar-hover-color);
+    }
+
+    &.active {
+      color: var(--bs-navbar-active-color);
+    }
+  }
+}
+.card {
+  background-color: var(--bs-card-bg);
+  border-color: var(--bs-card-border-color);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.table {
+  color: var(--bs-table-color);
+  background-color: var(--bs-table-bg);
+  transition: color 0.3s ease, background-color 0.3s ease;
+
+  thead th {
+    color: var(--bs-table-color);
+  }
+
+  tbody tr {
+    &:hover {
+      color: var(--bs-table-hover-color);
+      background-color: var(--bs-table-hover-bg);
+    }
+  }
+}
+
+.form-control,
+.input-group-text {
+  background-color: var(--bs-card-bg);
+  border-color: var(--bs-border-color);
+  color: var(--bs-body-color);
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+
+  &:focus {
+    background-color: var(--bs-card-bg);
+    border-color: $primary;
+    color: var(--bs-body-color);
+    box-shadow: none;
+  }
+}
+
+.form-check-input {
+  background-color: var(--bs-card-bg);
+  border-color: var(--bs-border-color);
+
+  &:checked {
+    background-color: $primary;
+    border-color: $primary;
+  }
+}
+
+.watchlist-items {
+  max-height: 300px;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--bs-card-bg);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--bs-border-color);
+    border-radius: 3px;
+  }
+}
+
+.watchlist-page {
+  &.light {
+    background-color: var(--bs-body-bg);
+    color: var(--bs-body-color);
+  }
+
+  &.dark {
+    background-color: var(--bs-body-bg);
+    color: var(--bs-body-color);
+  }
+}
+
+.profile-page {
+  &.light {
+    background-color: var(--bs-body-bg);
+    color: var(--bs-body-color);
+
+    .bg-card {
+      background-color: var(--bs-card-bg);
+      color: var(--bs-body-color);
+    }
+
+    .btn-outline-primary {
+      color: var(--bs-navbar-color);
+      border-color: var(--bs-navbar-color);
+
+      &:hover {
+        background-color: var(--bs-navbar-hover-color);
+        color: var(--bs-body-bg);
+      }
+    }
+  }
+
+  &.dark {
+    background-color: var(--bs-body-bg);
+    color: var(--bs-body-color);
+
+    .bg-card {
+      background-color: var(--bs-card-bg);
+      color: var(--bs-body-color);
+    }
+
+    .btn-outline-primary {
+      color: var(--bs-body-color);
+      border-color: var(--bs-body-color);
+
+      &:hover {
+        background-color: var(--bs-navbar-hover-color);
+        color: var(--bs-body-bg);
+      }
+    }
+  }
+}
+
+.footer {
+  background-color: var(--bs-card-bg);
+  border-top: 1px solid var(--bs-border-color);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+
+  .footer-link {
+    color: var(--bs-body-color);
+    text-decoration: none;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .social-link {
+    color: var(--bs-body-color);
+    opacity: 0.8;
+    transition: opacity 0.2s, color 0.3s ease;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
