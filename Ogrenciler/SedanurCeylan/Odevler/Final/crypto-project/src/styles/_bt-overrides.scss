@@ -1,0 +1,62 @@
+$theme-colors: (
+  "primary": #3772ff,
+  "secondary": #777e90,
+  "secondary2": #b1b5c3,
+  "success": #58bd7d,
+  "warning": #fabe3c,
+  "critical": #d33535,
+  "info": #2e72d2,
+  "highlight": #1e58c8,
+  "decorative": #383fdc,
+  "onsurface": #23262f,
+  "surface": #f7f7f7,
+  "surfacemain": #ffffff,
+  "danger": red,
+);
+
+$spacer: 16px;
+
+$spacers: (
+  0: 0,
+  1: $spacer * 0.25,
+  //4px
+  2: $spacer * 0.5,
+  //8px
+  3: $spacer,
+  //16px
+  4: $spacer * 1.5,
+  //24px
+  5: $spacer * 3,
+  //48px
+  6: $spacer * 4,
+  //64px
+  7: $spacer * 5,
+  //80px
+  8: $spacer * 6,
+  //96px
+  9: $spacer * 7,
+  //112px
+  10: $spacer * 8,
+  //128px
+);
+
+$font-sizes: (
+  1: 3rem,
+  // 48px
+  2: 1.5rem,
+  // 24px
+  3: 1.25rem,
+  // 20px
+  4: 1rem,
+  // 16px
+  5: 0.875rem,
+  // 14px
+  6: 0.75rem,
+  // 12px,
+  32: 2rem,
+  //32px
+);
+
+$opacity: (
+  10: 0.1,
+);
