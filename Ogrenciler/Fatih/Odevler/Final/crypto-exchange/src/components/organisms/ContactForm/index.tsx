@@ -1,9 +1,20 @@
 "use client";
 
-import React from "react";
 import Button from "@/components/atoms/Button";
+import styles from "./ContactForm.module.css";
+import { useSelector } from "react-redux";
+import { RootState } from "@/store/store";
+import { useTranslations } from "next-intl";
 
 const ContactForm = () => {
+  const theme = useSelector((state: RootState) => state.theme.mode);
+  const t = useTranslations("Contact");
+
+  const inputClass =
+    theme === "dark" ? "form-control bg-dark text-white" : "form-control";
+  const selectClass =
+    theme === "dark" ? "form-select bg-dark text-white" : "form-select";
+
   return (
     <div className="container py-5">
       <div className="row g-5 align-items-start">
@@ -20,25 +31,25 @@ const ContactForm = () => {
         </div>
 
         <div className="col-md-6">
-          <h2 className="fw-bold mb-1">Leave A Message For Us</h2>
-          <p className="text-muted mb-4">Get in touch with Rockie</p>
+          <h2 className={`${styles.title} fw-bold mb-1`}>{t("title")}</h2>
+          <p className={`${styles.text} mb-4`}>{t("subtitle")}</p>
 
           <form className="d-flex flex-column gap-3">
-            <input className="form-control" placeholder="Enter your name" />
-            <input className="form-control" placeholder="Enter mail" />
-            <select className="form-select">
-              <option>NFT Items</option>
-              <option>Security</option>
-              <option>Withdrawals</option>
+            <input className={inputClass} placeholder={t("name")} />
+            <input className={inputClass} placeholder={t("email")} />
+            <select className={selectClass}>
+              <option>{t("category.nft")}</option>
+              <option>{t("category.security")}</option>
+              <option>{t("category.withdraw")}</option>
             </select>
             <textarea
-              className="form-control"
-              placeholder="Enter your message"
+              className={inputClass}
+              placeholder={t("message")}
               rows={4}
             />
             <div className="mt-3">
               <Button variant="primary" type="button">
-                Send message
+                {t("send")}
               </Button>
             </div>
           </form>

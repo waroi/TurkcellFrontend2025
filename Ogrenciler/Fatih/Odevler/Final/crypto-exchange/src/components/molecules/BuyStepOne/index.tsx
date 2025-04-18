@@ -71,8 +71,8 @@ const BuyStepOne = ({ onContinue }: BuyStepOneProps) => {
 
   return (
     <div className={`${styles.wrapper} p-4`}>
-      <h5 className="fw-semibold mb-2">Select Currency</h5>
-      <p className="text-muted small mb-4">
+      <h5 className={`${styles.title} fw-semibold mb-2`}>Select Currency</h5>
+      <p className={`${styles.text} small mb-4`}>
         Reference Price: {coinData?.current_price?.toLocaleString()} USD/
         {toCurrency?.toUpperCase()}
       </p>
@@ -80,7 +80,7 @@ const BuyStepOne = ({ onContinue }: BuyStepOneProps) => {
       <form onSubmit={formik.handleSubmit}>
         <div className="row g-3 align-items-center">
           <div className="col-md-5">
-            <label className="text-muted small">Pay</label>
+            <label className={`${styles.title} small`}>Pay</label>
             <div className="border rounded-4 d-flex justify-content-between align-items-center px-3 py-2">
               <input
                 name="payAmount"
@@ -129,7 +129,7 @@ const BuyStepOne = ({ onContinue }: BuyStepOneProps) => {
           </div>
 
           <div className="col-md-5">
-            <label className="text-muted small">Receive</label>
+            <label className={`${styles.title} small`}>Receive</label>
             <div className="border rounded-4 d-flex justify-content-between align-items-center px-3 py-2">
               <input
                 name="receiveAmount"

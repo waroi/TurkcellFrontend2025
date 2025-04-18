@@ -5,17 +5,23 @@ import TradeForm from "../../../_components/ui/Forms/TradeForm";
 import Icon from "@/app/_components/ui/Icon";
 import PrimaryButton from "@/app/_components/ui/Buttons/PrimaryButton";
 import clsx from "clsx";
-import { createTrade } from "../../../utils/actions";
 
 import { useTranslations } from "next-intl";
 import { useExchangeStore } from "@/app/[locale]/store/ExchangeStore";
+import { useNavigation } from "@/utils/navigation";
 
 const BuySellPanel = () => {
   const [selectedKey, setSelectedKey] = useState<string>("limit");
   const [side, setSide] = useState<"buy" | "sell">("buy");
+  const{goToBuyCripto} =useNavigation()
+
   const t = useTranslations("TradePage");
   const BUYSELLNAVS = ["limit", "market", "stopLimit", "stopMarket"];
   const { receiveSymbol, paySymbol, rate } = useExchangeStore();
+
+  const handleBuy=()=>{
+    goToBuyCripto()
+  }
 
   return (
     <>
@@ -51,26 +57,21 @@ const BuySellPanel = () => {
           />
         ))}
       </div>
-      <form
-        action={createTrade}
+      <div
         className="d-flex flex-column justify-content-between align-items-center gap-3"
       >
         <TradeForm type="pay" side={side} />
         <TradeForm type="receive" side={side} />
-        {/* <input type="text" name="paySymbol"  />
-      <input type="text" name="receiveSymbol"  />
-      <input  type="text" name="quantity"  />
-      <input hidden  name="side" defaultValue={side} /> */}
         <div className="d-flex text-secondary">
           <span className="body3">
             1 {paySymbol} ≈ {rate?.toFixed(2) + " " + receiveSymbol}{" "}
           </span>{" "}
           <Icon name="turnAround" className="ms-2" />
         </div>
-        <PrimaryButton type="submit" className="w-75 py-3">
+        <PrimaryButton onClick={handleBuy} className="w-75 py-3">
           {side == "buy" ? t("buttons.buy") : t("buttons.sell")}
         </PrimaryButton>
-      </form>
+      </div>
     </>
   );
 };

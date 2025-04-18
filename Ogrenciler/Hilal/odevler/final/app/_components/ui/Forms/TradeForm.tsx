@@ -49,13 +49,14 @@ const TradeForm = ({ type, side }: TradeFormProps) => {
   }, [paySymbol, receiveSymbol, payAmount, marketData]);
 
   return (
-    <div className="rounded border px-3 py-2 w-100">
+    <div className="rounded border bg-body px-3 py-2 w-100">
       <label className="form-label body3 text-secondary p-0 m-0">{type}</label>
       <span className="row">
         <span className="col-7 p-0">
           {isPay ? (
             <input
               type="text"
+              name="quantity"
               className="form-control outline-none border-0 shadow-none bg-transparent"
               value={amount}
               onChange={(e) => setAmount(Number(e.target.value))}
@@ -73,6 +74,7 @@ const TradeForm = ({ type, side }: TradeFormProps) => {
         <span className="col-5 p-0">
           {(isReceive && isBuy) || (isPay && isSell) ? (
             <select
+            name="receiveSymbol"
               className="form-select border-0 caption shadow-none"
               value={selectedPaySymbol}
               onChange={(e) => setSelectedPaySymbol(e.target.value)}
@@ -87,6 +89,7 @@ const TradeForm = ({ type, side }: TradeFormProps) => {
 
           {(isReceive && isSell) || (isPay && isBuy) ? (
             <select
+             name="paySymbol"
               className="form-select border-0 caption shadow-none"
               value={selectedReceiveSymbol}
               onChange={(e) => setSelectedReceiveSymbol(e.target.value)}

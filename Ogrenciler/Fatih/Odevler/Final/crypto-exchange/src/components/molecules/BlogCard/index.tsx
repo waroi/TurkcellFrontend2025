@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import React from "react";
+import styles from "./BlogCard.module.css";
 
 const BlogCard = () => {
   return (
@@ -21,7 +21,7 @@ const BlogCard = () => {
 
         <div className="mt-3">
           <span className="badge bg-primary mb-2">LEARN & EARN</span>
-          <h6 className="fw-bold">
+          <h6 className={`${styles.title} fw-bold`}>
             Learn about UI8 coin and earn an All-Access Pass
           </h6>
 
@@ -35,9 +35,11 @@ const BlogCard = () => {
                   backgroundColor: "#00C566",
                 }}
               ></span>
-              <span className="fw-semibold text-dark">Floyd Buckridge</span>
+              <span className={`${styles.text} fw-semibold`}>
+                Floyd Buckridge
+              </span>
             </div>
-            <span className="text-muted">Feb 03, 2021</span>
+            <span className={`${styles.text} fw-semibold`}>Feb 03, 2021</span>
           </div>
         </div>
       </div>

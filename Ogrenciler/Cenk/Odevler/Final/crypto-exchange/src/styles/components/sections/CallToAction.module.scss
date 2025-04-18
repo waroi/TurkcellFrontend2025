@@ -1,0 +1,45 @@
+.ctaSection {
+  background: linear-gradient(270deg, #3772ff 0%, #624bff 100%);
+  padding: 48px 24px;
+  display: flex;
+  justify-content: center;
+  color: white;
+
+  .wrapper {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+    flex-wrap: wrap;
+
+    h2 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    p {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.85);
+      max-width: 600px;
+    }
+
+    .ctaBtn {
+      background: white;
+      color: #3772ff;
+      padding: 14px 24px;
+      font-weight: 600;
+      border-radius: 40px;
+      border: none;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.2s;
+
+      &:hover {
+        background: #e2e2e2;
+      }
+    }
+  }
+}

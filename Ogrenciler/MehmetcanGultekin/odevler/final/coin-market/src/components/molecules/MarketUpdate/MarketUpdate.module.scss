@@ -1,0 +1,276 @@
+.marketUpdateContainer {
+    padding: 20px 0;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #111827;
+    margin: 0;
+}
+
+.seeAllLink {
+    color: #3772ff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 24px;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+}
+
+.categoryButton {
+    background: none;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    font-size: 0.9rem;
+
+    &:hover {
+        background-color: rgba(55, 114, 255, 0.1);
+    }
+
+    &.active {
+        background-color: #3772ff;
+        color: #fff;
+    }
+}
+
+.searchContainer {
+    margin-bottom: 24px;
+}
+
+.searchInput {
+    padding: 10px 16px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 300px;
+    font-size: 0.9rem;
+    background-color: #f3f4f6;
+    outline: none;
+    transition: border-color 0.2s ease;
+
+    &:focus {
+        border-color: #3772ff;
+    }
+
+    &::placeholder {
+        color: #9ca3af;
+    }
+}
+
+.tableContainer {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    background-color: #ffffff;
+}
+
+.coinTable {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #ffffff;
+
+    th,
+    td {
+        padding: 16px;
+        text-align: left;
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+    th {
+        background-color: #f3f4f6;
+        font-weight: 500;
+        font-size: 0.9rem;
+        color: #9ca3af;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    tbody tr {
+        transition: background-color 0.2s ease;
+
+        &:hover {
+            background-color: rgba(55, 114, 255, 0.05);
+        }
+
+        &:last-child td {
+            border-bottom: none;
+        }
+    }
+}
+
+.coinRow {
+    cursor: pointer;
+    transition: background-color 0.2s;
+
+    &:hover {
+        background-color: rgba(243, 244, 246, 0.7);
+    }
+}
+
+.nameCell {
+    min-width: 180px;
+}
+
+.coinInfo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logoContainer {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(55, 114, 255, 0.1);
+    border-radius: 50%;
+}
+
+.coinLogo {
+    border-radius: 50%;
+    object-fit: cover;
+    width: 40px;
+    height: 40px;
+    margin-right: 8px;
+    border-radius: 50%;
+}
+
+.coinName {
+    font-weight: 500;
+    margin-right: 6px;
+}
+
+.coinSymbol {
+    font-size: 0.85rem;
+    color: #9ca3af;
+    text-transform: uppercase;
+}
+
+.positive {
+    color: #16c784;
+    font-weight: 600;
+}
+
+.negative {
+    color: #ea3943;
+    font-weight: 600;
+}
+
+.miniChart {
+    padding: 5px;
+    width: 100px;
+    height: 40px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.tradeButton {
+    white-space: nowrap;
+    min-width: 80px;
+    border-radius: 50px;
+    font-weight: 600;
+}
+
+.loading,
+.error {
+    padding: 30px;
+    text-align: center;
+    width: 100%;
+    background-color: #f3f4f6;
+    border-radius: 8px;
+    color: #374151;
+}
+
+.loading {
+    color: #6b7280;
+}
+
+.error {
+    color: #ea3943;
+}
+
+@media (max-width: 768px) {
+    .marketUpdateContainer {
+        padding: 1rem;
+    }
+
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .searchInput {
+        width: 100%;
+    }
+
+    .categories {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 8px;
+
+        &::-webkit-scrollbar {
+            height: 4px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: rgba(55, 114, 255, 0.3);
+            border-radius: 10px;
+        }
+    }
+
+    .coinTable {
+
+        th,
+        td {
+            padding: 12px 8px;
+            font-size: 0.9rem;
+        }
+    }
+
+    .nameCell {
+        min-width: 140px;
+    }
+
+    .coinInfo {
+        gap: 6px;
+
+        .coinName {
+            margin-right: 2px;
+        }
+
+        .coinSymbol {
+            font-size: 0.8rem;
+        }
+    }
+}

@@ -1,4 +1,5 @@
 # Rocket Platform
+🔗 Canlı Proje Linki: https://cryptorocket-g52znu98l-beyza-saridass-projects.vercel.app/
 
 Rocket Platform, kullanıcıların kripto para alım-satımı yapabileceği, portföylerini yönetebileceği ve piyasa analizleri yapabileceği modern bir web uygulamasıdır. Bu proje, kullanıcı dostu bir arayüz ve güçlü bir altyapı ile geliştirilmiştir.
 
