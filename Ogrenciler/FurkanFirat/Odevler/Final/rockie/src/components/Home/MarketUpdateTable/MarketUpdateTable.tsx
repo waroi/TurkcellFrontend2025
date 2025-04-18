@@ -48,7 +48,7 @@ export default function MarketUpdateTable() {
   }, []);
 
   return (
-    <div className='my-100 container'>
+    <div className='container'>
       <h2 className='font-bold mb-24 fs-48'>{t('title')}</h2>
       <div className='table-responsive'>
         <table className='w-100'>

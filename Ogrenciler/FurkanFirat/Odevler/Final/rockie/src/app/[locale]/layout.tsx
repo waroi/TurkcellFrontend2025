@@ -10,6 +10,7 @@ import { ThemeProvider } from '@/context/ThemeContext';
 import { AuthProvider } from '@/context/AuthContext';
 import StoreProvider from '../StoreProvider';
 import '@/styles/main.scss';
+import GenericAlert from '@/components/GenericAlert/GenericAlert';
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
@@ -48,6 +49,7 @@ export default async function LocaleLayout({
           <StoreProvider>
             <AuthProvider>
               <NextIntlClientProvider>
+                <GenericAlert />
                 <Navbar />
                 {children}
                 <Footer />

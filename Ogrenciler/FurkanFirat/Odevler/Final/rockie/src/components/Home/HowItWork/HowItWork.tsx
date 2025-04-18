@@ -36,7 +36,7 @@ export default function HowItWork() {
 
   return (
     <section
-      className={`py-100 text-center ${
+      className={`py-100 text-center mt-100 ${
         theme === 'dark' ? 'bg-dark2 text-white' : 'bg-surface'
       }`}
     >

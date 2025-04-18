@@ -14,6 +14,8 @@ import {
   signOut,
   User,
 } from 'firebase/auth';
+import { useDispatch } from 'react-redux';
+import { showNotification } from '@/lib/features/notification/notificationSlice';
 import { doc, setDoc } from 'firebase/firestore';
 import { auth, db } from '@/lib/firebase/firebase';
 import { useRouter } from 'next/navigation';
@@ -41,6 +43,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const router = useRouter();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
@@ -105,6 +108,9 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
       setUser(userCredential.user);
       setIsLoggedIn(true);
+      dispatch(
+        showNotification({ message: 'Register successful!', type: 'success' })
+      );
       router.push('/');
     } catch {
       throw new Error('register error');
@@ -124,6 +130,10 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       setUser(userCredential.user);
 
       setIsLoggedIn(true);
+      dispatch(
+        showNotification({ message: 'Login successful!', type: 'success' })
+      );
+
       router.push('/');
     } catch (error) {
       setUser(null);

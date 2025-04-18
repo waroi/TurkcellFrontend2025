@@ -7,6 +7,7 @@ import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { useTheme } from '@/context/ThemeContext';
+import PageHeader from '../PageHeader.tsx/PageHeader';
 
 export default function LoginForm() {
   const { login, isLoading } = useAuth();
@@ -45,26 +46,10 @@ export default function LoginForm() {
 
   return (
     <>
-      <div className={`w-100 ${theme === 'light' ? 'bg-surface' : 'bg-dark'}`}>
-        <div className='container'>
-          <div className='d-flex flex-column flex-md-row justify-content-between align-items-center py-56'>
-            <h1 className='fs-48 fw-bold'>{t('title')}</h1>
-            <nav aria-label='breadcrumb'>
-              <ol className='breadcrumb'>
-                <li className='breadcrumb-item'>
-                  <Link href='/'>{t('Home')}</Link>
-                </li>
-                <li
-                  className='breadcrumb-item active text-secondary'
-                  aria-current='page'
-                >
-                  {t('title')}
-                </li>
-              </ol>
-            </nav>
-          </div>
-        </div>
-      </div>
+      <PageHeader
+        title={t('submit')}
+        breadcrumbs={[{ label: t('Home'), href: '/' }, { label: t('submit') }]}
+      />
       <div className='container d-flex justify-content-center align-items-center my-100'>
         <div className='w-100' style={{ maxWidth: 480 }}>
           <h1 className='text-center fw-bold mb-16 fs-48'>{t('title')}</h1>

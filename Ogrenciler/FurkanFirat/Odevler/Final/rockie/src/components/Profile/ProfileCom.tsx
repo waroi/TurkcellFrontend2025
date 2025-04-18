@@ -3,7 +3,6 @@
 import { useAuth } from '@/context/AuthContext';
 import { useTheme } from '@/context/ThemeContext';
 import { useTranslations } from 'next-intl';
-import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import {
   EmailAuthProvider,
@@ -12,6 +11,7 @@ import {
 } from 'firebase/auth';
 import { doc, getDoc, updateDoc } from 'firebase/firestore';
 import { db } from '@/lib/firebase/firebase';
+import PageHeader from '../PageHeader.tsx/PageHeader';
 
 export default function ProfileCom() {
   const { user } = useAuth();
@@ -92,26 +92,10 @@ export default function ProfileCom() {
 
   return (
     <>
-      <div className={`w-100 ${theme === 'light' ? 'bg-surface' : 'bg-dark'}`}>
-        <div className='container'>
-          <div className='d-flex flex-column flex-md-row justify-content-between align-items-center py-56'>
-            <h1 className='fs-48 fw-bold'>{t('title')}</h1>
-            <nav aria-label='breadcrumb'>
-              <ol className='breadcrumb'>
-                <li className='breadcrumb-item'>
-                  <Link href='/'>{t('home')}</Link>
-                </li>
-                <li
-                  className='breadcrumb-item active text-secondary'
-                  aria-current='page'
-                >
-                  {t('title')}
-                </li>
-              </ol>
-            </nav>
-          </div>
-        </div>
-      </div>
+      <PageHeader
+        title={t('profile')}
+        breadcrumbs={[{ label: t('home'), href: '/' }, { label: t('profile') }]}
+      />
 
       <div className='container my-100'>
         <div className='row'>
@@ -151,7 +135,7 @@ export default function ProfileCom() {
           <div className='col-12 col-lg-8'>
             {activeTab === 'profile' && (
               <>
-                <h2 className='mb-16'>{t('profile')}</h2>
+                <h2 className='mb-16'>{t('title')}</h2>
                 <form onSubmit={handleUpdateName}>
                   <div className='mb-16'>
                     <label className='form-label'>{t('email')}</label>

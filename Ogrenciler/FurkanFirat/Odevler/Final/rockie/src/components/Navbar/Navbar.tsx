@@ -47,8 +47,9 @@ export default function Navbar() {
                 <Link href='/profile'>
                   <Avatar />
                 </Link>
-
-                <WalletButton />
+                <Link href='/wallet'>
+                  <WalletButton />
+                </Link>
               </div>
             </div>
           )}
@@ -77,7 +78,9 @@ export default function Navbar() {
                     <NotificationIcon />
                   </li>
                   <li className='nav-item d-none d-xxl-flex align-items-center'>
-                    <WalletButton />
+                    <Link href='/wallet'>
+                      <WalletButton />
+                    </Link>
                   </li>
                   <li className='nav-item d-none d-xxl-flex align-items-center'>
                     <Link href='/profile'>

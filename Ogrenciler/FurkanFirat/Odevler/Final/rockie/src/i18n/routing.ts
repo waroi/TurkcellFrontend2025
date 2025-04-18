@@ -12,5 +12,6 @@ export const routing = defineRouting({
     '/register': { en: '/register', tr: '/kayit-ol' },
     '/login': { en: '/login', tr: '/giris-yap' },
     '/profile': { en: '/profile', tr: '/profil' },
+    '/wallet': { en: '/wallet', tr: '/cuzdan' },
   },
 });

@@ -49,7 +49,7 @@ export default function CryptoList() {
     <section
       className={`${
         theme === 'dark' ? 'bg-dark text-white' : 'bg-surface'
-      }rounded-4 shadow-sm container p-32`}
+      }rounded-4 shadow-sm container p-32 mb-100`}
     >
       <div className='mb-16 border-bottom pb-16 d-flex flex-wrap gap-16'>
         {categories.map((category) => (
