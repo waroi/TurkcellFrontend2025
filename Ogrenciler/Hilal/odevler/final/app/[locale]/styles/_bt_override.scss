@@ -1,0 +1,103 @@
+$primary: #3772ff;
+$danger: #d33535;
+$warning: #fabe3c;
+$secondary: #777e90;
+$success: #58bd7d;
+$info: #2e72d2; 
+$light: #b1b5c3;
+$highlight: #1e58c8;
+$dark: #23262f; 
+$surface: #f7f7f7;
+$main-surface: white;
+$dark-body-background: #141416;
+$dark-surface: #18191d;
+$line-color:#E5E5E5;
+$line-color-dark:$dark;
+$dark-hover:#222630;
+
+$body-color: $dark;
+$body-bg: $main-surface; 
+$tertiary-color: $surface;
+$body-bg-dark: $dark-body-background;
+$body-color-dark: $main-surface;
+$secondary-dark:$light;
+
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "interactive": $info,
+  "warning": $warning,
+  "critical": $danger,
+  "secondary2": $light,
+  "highlight": $highlight,
+  "dark": $dark,
+  "main-surface": $main-surface,
+  "dark-surface": $dark-surface,
+  "dark-hover":$dark-hover,
+  "surface":$surface
+
+);
+
+$border-color:$line-color;
+$border-color-dark:$line-color-dark;
+$font-weight-bold: 700;
+$line-height-base: 1.75;
+$font-size-base: 1.25rem;
+$font-size-sm: $font-size-base * 0.6;
+$font-size-lg: $font-size-base * 0.8;
+
+$headings-font-weight: $font-weight-bold;
+$headings-line-height: 1.25;
+
+$h1-font-size: $font-size-base * 3.2;
+$h2-font-size: $font-size-base * 2.4;
+$h3-font-size: $font-size-base * 2;
+$h4-font-size: $font-size-base * 1.6;
+$h5-font-size: $font-size-base * 1.2;
+$h6-font-size: $font-size-base;
+
+$btn-color: var(--bs-body-color);
+$input-btn-font-size: $font-size-base * 0.7;
+$input-btn-font-size-sm: $font-size-sm;
+$input-btn-font-size-lg: $font-size-lg;
+$btn-font-weight: $font-weight-bold;
+$btn-line-height: 1rem;
+
+$nav-link-font-size: $font-size-base*0.8;
+ $nav-link-font-weight:$font-weight-bold;
+ $link-color:$body-color;
+ $navbar-color:$body-color;
+$nav-link-color:$body-color;
+
+
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * 0.25,
+  2: $spacer * 0.5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 2,
+  6: $spacer * 2.5,
+  7: $spacer * 3,
+  8: $spacer * 3.5,
+  9: $spacer * 4,
+  10: $spacer * 0.75,
+);
+
+$border-radius:              1.5rem;
+$table-cell-padding-y:        1.60rem;
+ $table-color:              var(--bs-body-color);
+$table-hover-bg-factor:       .075;
+$table-hover-bg:              rgba($primary, $table-hover-bg-factor);
+$btn-link-color:var(--bs-body-color);
+$btn-link-hover-color:        var(--bs-body-hover-color);
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1130px,
+  xxl: 1423px
+);
