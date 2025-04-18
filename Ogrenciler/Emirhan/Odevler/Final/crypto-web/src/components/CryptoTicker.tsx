@@ -1,10 +1,13 @@
 "use client";
 
 import useCryptoStore from "@/store/useCryptoStore";
+import { Coin } from "@/types/types";
 import Image from "next/image";
-import React from "react";
-
-const CryptoTicker = () => {
+import Link from "next/link";
+interface Props {
+  coins: Coin[];
+}
+const CryptoTicker = ({ coins }: Props) => {
   const coin = useCryptoStore((state) => state.singleCoin);
 
   if (!coin) {
@@ -12,10 +15,30 @@ const CryptoTicker = () => {
   }
 
   return (
-    <div className="p-2">
+    <div className="px-2">
       <div className="row text-center shadow-md rounded-2 py-3 py-md-5 px-2 bg-white g-3 px-md-3">
-        <div className="col-12 col-sm-6 col-lg-3 ps-sm-5 fw-bold d-flex align-items-center justify-content-start fs-2">
-          {coin.name}/{coin.symbol}
+        <div className="col-12 col-sm-6 col-lg-3 ps-sm-5 fw-bold d-flex align-items-center justify-content-start fs-2 dropdown">
+          <button
+            className="btn bg-white border-0 dropdown-toggle w-100 text-start fs-2 fw-bold"
+            type="button"
+            id="coinDropdown"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            {coin.name}/{coin.symbol}
+          </button>
+          <ul
+            className="dropdown-menu w-100 dropdown-scroll"
+            aria-labelledby="coinDropdown"
+          >
+            {coins.map((item, index) => (
+              <li key={index}>
+                <Link className="dropdown-item" href={`/dashboard/${item.id}`}>
+                  {item.name}/{item.symbol}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
 
         <div className="col-12 col-sm-6 col-lg-3 fs-3 d-flex flex-column align-items-start justify-content-center">

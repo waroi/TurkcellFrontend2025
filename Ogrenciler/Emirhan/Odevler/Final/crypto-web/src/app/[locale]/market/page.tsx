@@ -4,28 +4,14 @@ import { useEffect } from "react";
 import useStore from "@/store/useCryptoStore";
 import Image from "next/image";
 import CategoryButtons from "@/components/CategoryButtons";
-import Button from "@/components/Button";
 import MarketCoinCard from "@/components/MarketCoinCard";
 import LearnAndEarn from "@/components/LearnAndEarn";
 import MarketCryptoTable from "@/components/MarketCryptoTable";
 import Footer from "@/components/Footer";
 import { useTranslations } from "next-intl";
+import { MarketCoin } from "@/types/types";
 
-type Coin = {
-  id: number;
-  name: string;
-  symbol: string;
-  quote: {
-    USD: {
-      price: number;
-      volume_change_24h: number;
-      market_cap: number;
-      percent_change_24h: number;
-    };
-  };
-};
-
-async function getCryptoData(): Promise<Coin[]> {
+async function getCryptoData(): Promise<MarketCoin[]> {
   const res = await fetch("/api/coins");
   return await res.json();
 }

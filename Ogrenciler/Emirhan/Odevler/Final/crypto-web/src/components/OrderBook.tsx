@@ -1,12 +1,7 @@
+import { orders } from "@/constants/cryptoCategory";
 import React from "react";
 
-const orders = [
-  { price: 0.022572, amount: 1.262415, total: 15.19648 },
-  { price: 0.020371, amount: 1.262415, total: 15.19648 },
-  { price: 0.023572, amount: 1.262415, total: 15.19648 },
-  { price: 0.032378, amount: 1.262415, total: 15.19648 },
-  { price: 0.022573, amount: 1.262415, total: 15.19648 },
-];
+
 
 const OrderBook = () => {
   const lastPrice = 0.020367;

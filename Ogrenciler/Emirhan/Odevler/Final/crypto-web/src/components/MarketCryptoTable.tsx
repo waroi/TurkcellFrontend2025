@@ -1,11 +1,11 @@
 import { useState } from "react";
 import Image from "next/image";
 import Button from "./Button";
-import { Coin } from "@/types/types";
+import { Coin, SortKey, SortOrder } from "@/types/types";
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 
-type SortKey = "name" | "price" | "percent" | "marketCap";
-type SortOrder = "asc" | "desc";
+
 
 function MarketCryptoTable({ coins }: { coins: Coin[] }) {
   const [sortKey, setSortKey] = useState<SortKey | null>(null);
@@ -184,9 +184,9 @@ function MarketCryptoTable({ coins }: { coins: Coin[] }) {
                   )}
                 </td>
                 <td className="d-none d-lg-table-cell">
-                  <Button className="btn-white border" px="px-3" py="py-1">
+                  <Link href={`/dashboard/${coin.id}`} className="btn btn-white border rounded-pill px-3 py-1">
                     Trade
-                  </Button>
+                  </Link>
                 </td>
               </tr>
             ))}

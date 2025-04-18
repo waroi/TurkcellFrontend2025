@@ -1,20 +1,8 @@
 "use client";
 
-const trades = [
-  { time: "14:04:54", price: 0.022572, amount: 1.262415 },
-  { time: "14:04:54", price: 0.020371, amount: 1.262415 },
-  { time: "14:04:54", price: 0.020371, amount: 1.262415 },
-  { time: "14:04:54", price: 0.022572, amount: 1.262415 },
-  { time: "14:04:54", price: 0.020371, amount: 1.262415 },
-  { time: "14:04:54", price: 0.022572, amount: 1.262415 },
-  { time: "14:04:54", price: 0.023572, amount: 1.262415 },
-  { time: "14:04:54", price: 0.032378, amount: 1.262415 },
-  { time: "14:04:54", price: 0.023572, amount: 1.262415 },
-  { time: "14:04:54", price: 0.023572, amount: 1.262415 },
-  { time: "14:04:54", price: 0.032378, amount: 1.262415 },
-  { time: "14:04:54", price: 0.032378, amount: 1.262415 },
-  { time: "14:04:54", price: 0.032573, amount: 1.262415 },
-];
+import { trades } from "@/constants/cryptoCategory";
+
+
 
 const RecentTrades = () => {
   return (

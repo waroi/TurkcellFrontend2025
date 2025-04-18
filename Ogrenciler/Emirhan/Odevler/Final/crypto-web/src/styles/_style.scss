@@ -118,7 +118,6 @@
     }
   }
 }
-// styles/what-is-rockie.scss
 .what-is-rockie-section {
   background-color: #fff;
 
@@ -139,7 +138,6 @@
   }
 }
 
-// styles/free-money.scss
 .free-money-section {
   background-color: #f9f9fb;
 
@@ -158,7 +156,7 @@
   }
 
   .phone-container {
-    height: 100%;
+    height: auto;
     min-height: 400px;
   }
 
@@ -193,7 +191,7 @@
 
   .testimonial-box {
     background-color: #ffffff;
-    border-left: 4px solid #3b82f6; // Mavi çizgi
+    border-left: 4px solid #3b82f6; 
     position: relative;
 
     i.fa-quote-left {
@@ -254,7 +252,7 @@
 
 .market-update-section {
   .market-update-title {
-    font-size: 48px;
+    font-size: 40px;
     font-weight: 700;
   }
   .coin-item {
@@ -498,4 +496,58 @@
   grid-area: pair-price;
   overflow-x: auto;
   width: 100%;
+}
+
+
+
+
+.auth-form-container {
+  width: 90%;
+}
+
+@media (min-width: 576px) {
+  .auth-form-container {
+    width: 80%;
+  }
+}
+
+@media (min-width: 768px) {
+  .auth-form-container {
+    width: 60%;
+    
+  }
+}
+
+@media (min-width: 992px) {
+  .auth-form-container {
+    width: 45%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .auth-form-container {
+    width: 35%;
+  }
+}
+
+@media (min-width: 1400px) {
+  .auth-form-container {
+    width: 30%;
+  }
+}
+.auth-padding {
+  @media (max-width: 768px) {
+    padding-top: 10rem;
+  }
+}
+.dropdown-scroll {
+  max-height: 300px; 
+  overflow-y: auto;
+}
+.profile-settings-box {
+  height: auto; 
+
+  @media (min-width: 768px) {
+    height: 100vh; 
+  }
 }

@@ -27,7 +27,7 @@ export const registerUser = async (
     );
 
     const user = userCredential.user;
-    console.log("✅ Kullanıcı kaydedildi:", user.uid);
+    console.log("Kullanıcı kaydedildi:", user.uid);
 
     await setDoc(doc(db, "users", user.uid), {
       uid: user.uid,
@@ -55,9 +55,9 @@ export const registerUser = async (
     };
   } catch (error: unknown) {
     if (error instanceof Error) {
-      console.error("❌ Firebase kayıt hatası:", error.message);
+      console.error("Firebase kayıt hatası:", error.message);
     } else {
-      console.error("❌ Firebase kayıt hatası: Bilinmeyen bir hata oluştu.", error);
+      console.error("Firebase kayıt hatası: Bilinmeyen bir hata oluştu.", error);
     }
     throw error;
   }
@@ -103,9 +103,9 @@ export const SignIn = async (
     return userCredential.user;
   } catch (error: unknown) {
     if (error instanceof Error) {
-      console.error("❌ Firebase kayıt hatası:", error.message);
+      console.log("Firebase kayıt hatası:", error.message);
     } else {
-      console.error("❌ Firebase kayıt hatası: Bilinmeyen bir hata oluştu.", error);
+      console.log("Firebase kayıt hatası: Bilinmeyen bir hata oluştu.", error);
     }
     throw error;
   }
@@ -209,7 +209,7 @@ export const tradeCrypto = async (
 
   return {
     success: true,
-    message: `${fromCurrent} ${from} ile ${toCurrent} ${to} alındı.`,
+    message: "İşlem başarılı.",
   };
 };
 export const changeUserPassword = async (newPassword: string): Promise<{ success: boolean; message: string }> => {
