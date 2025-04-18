@@ -1,0 +1,124 @@
+/* [project]/src/components/organisms/RegisterForm/RegisterForm.module.scss.module.css [app-client] (css) */
+.RegisterForm-module-scss-module__7GVHca__titleWrapper h2, .RegisterForm-module-scss-module__7GVHca__titleWrapper h6 {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  display: flex;
+}
+
+.RegisterForm-module-scss-module__7GVHca__registerForm {
+  border-radius: 10px;
+  width: 400px;
+  margin: 100px auto;
+  padding: 2rem;
+}
+
+.RegisterForm-module-scss-module__7GVHca__toggleButtons {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+}
+
+.RegisterForm-module-scss-module__7GVHca__toggleButtons button {
+  cursor: pointer;
+  color: #444;
+  background: none;
+  border: none;
+  border-radius: 100px;
+  padding: 8px 24px;
+  transition: background .2s, color .2s;
+}
+
+.RegisterForm-module-scss-module__7GVHca__toggleButtons .RegisterForm-module-scss-module__7GVHca__active {
+  background: var(--primary);
+  color: #fff;
+}
+
+.RegisterForm-module-scss-module__7GVHca__inputGroup {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
+  margin-bottom: 1rem;
+  display: flex;
+}
+
+.RegisterForm-module-scss-module__7GVHca__input {
+  background-color: var(--white);
+  width: 100%;
+  color: var(--black);
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  padding: .5rem;
+}
+
+.RegisterForm-module-scss-module__7GVHca__input.RegisterForm-module-scss-module__7GVHca__light {
+  background-color: var(--white);
+  color: var(--black);
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: .5rem;
+}
+
+.RegisterForm-module-scss-module__7GVHca__input.RegisterForm-module-scss-module__7GVHca__dark {
+  background-color: var(--dark2);
+  color: var(--white);
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: .5rem;
+}
+
+.RegisterForm-module-scss-module__7GVHca__loginButton {
+  background-color: var(--primary);
+  width: 100%;
+  color: var(--white);
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  padding: .75rem;
+}
+
+.RegisterForm-module-scss-module__7GVHca__registerButton {
+  background-color: var(--primary);
+  width: 100%;
+  color: var(--white);
+  cursor: pointer;
+  border: none;
+  border-radius: 100px;
+  padding: .75rem;
+}
+
+.RegisterForm-module-scss-module__7GVHca__registerPrompt {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.RegisterForm-module-scss-module__7GVHca__select {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: .5rem;
+  display: flex;
+}
+
+.RegisterForm-module-scss-module__7GVHca__select.RegisterForm-module-scss-module__7GVHca__light {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+.RegisterForm-module-scss-module__7GVHca__select.RegisterForm-module-scss-module__7GVHca__dark {
+  background-color: var(--dark2);
+  color: var(--white);
+}
+
+/*# sourceMappingURL=1ab64_components_organisms_RegisterForm_RegisterForm_module_scss_module_css_f9ee138c._.single.css.map*/

@@ -1,0 +1,109 @@
+/* [project]/src/components/organisms/ProfileSections/UserProfile.module.scss.module.css [app-client] (css) */
+.UserProfile-module-scss-module__Jyf87a__userProfile {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.UserProfile-module-scss-module__Jyf87a__title {
+  margin-bottom: .5rem;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.UserProfile-module-scss-module__Jyf87a__desc {
+  margin-top: 40px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.UserProfile-module-scss-module__Jyf87a__desc.UserProfile-module-scss-module__Jyf87a__light {
+  color: var(--on-surface);
+}
+
+.UserProfile-module-scss-module__Jyf87a__desc.UserProfile-module-scss-module__Jyf87a__dark {
+  color: var(--surface);
+}
+
+.UserProfile-module-scss-module__Jyf87a__form {
+  flex-direction: column;
+  gap: 1rem;
+  display: flex;
+}
+
+.UserProfile-module-scss-module__Jyf87a__form label {
+  flex-direction: column;
+  font-weight: bold;
+  display: flex;
+}
+
+.UserProfile-module-scss-module__Jyf87a__form label.UserProfile-module-scss-module__Jyf87a__light {
+  color: var(--secondary);
+}
+
+.UserProfile-module-scss-module__Jyf87a__form label.UserProfile-module-scss-module__Jyf87a__dark {
+  color: var(--secondary2);
+}
+
+.UserProfile-module-scss-module__Jyf87a__form label input {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-top: .3rem;
+  padding: .5rem;
+}
+
+.UserProfile-module-scss-module__Jyf87a__form label input.UserProfile-module-scss-module__Jyf87a__light {
+  background-color: var(--white);
+  color: var(--on-surface);
+}
+
+.UserProfile-module-scss-module__Jyf87a__form label input.UserProfile-module-scss-module__Jyf87a__dark {
+  background-color: var(--dark2);
+  color: var(--surface);
+}
+
+.UserProfile-module-scss-module__Jyf87a__levelContainer {
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 2rem;
+  margin-top: 2rem;
+  display: flex;
+}
+
+.UserProfile-module-scss-module__Jyf87a__left, .UserProfile-module-scss-module__Jyf87a__right {
+  flex: 1;
+  min-width: 250px;
+}
+
+.UserProfile-module-scss-module__Jyf87a__subtitle {
+  color: var(--primary);
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+.UserProfile-module-scss-module__Jyf87a__levelBox {
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+.UserProfile-module-scss-module__Jyf87a__levelBox p {
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: .75rem;
+  display: flex;
+}
+
+.UserProfile-module-scss-module__Jyf87a__levelBox hr {
+  margin: 1rem 0;
+}
+
+.UserProfile-module-scss-module__Jyf87a__levelBox span {
+  color: var(--sec);
+}
+
+.UserProfile-module-scss-module__Jyf87a__updateBtn {
+  margin-top: 1rem;
+}
+
+/*# sourceMappingURL=35525_organisms_ProfileSections_UserProfile_module_scss_module_css_f9ee138c._.single.css.map*/

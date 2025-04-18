@@ -1,0 +1,115 @@
+/* [project]/src/components/molecules/HomePageSections/FreeMoney.module.scss.module.css [app-client] (css) */
+.FreeMoney-module-scss-module__jXJYsW__freemoney.FreeMoney-module-scss-module__jXJYsW__light {
+  background-color: var(--surface);
+}
+
+.FreeMoney-module-scss-module__jXJYsW__freemoney.FreeMoney-module-scss-module__jXJYsW__dark {
+  background-color: var(--dark2);
+}
+
+.FreeMoney-module-scss-module__jXJYsW__container {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+}
+
+.FreeMoney-module-scss-module__jXJYsW__contentWrapper {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+}
+
+.FreeMoney-module-scss-module__jXJYsW__imageContainer {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  width: 45%;
+  display: flex;
+}
+
+.FreeMoney-module-scss-module__jXJYsW__image {
+  object-fit: contain;
+  width: 100%;
+  max-width: 400px;
+}
+
+.FreeMoney-module-scss-module__jXJYsW__textContainer {
+  width: 50%;
+  padding-left: 20px;
+}
+
+.FreeMoney-module-scss-module__jXJYsW__title, .FreeMoney-module-scss-module__jXJYsW__subtitle, .FreeMoney-module-scss-module__jXJYsW__steps, .FreeMoney-module-scss-module__jXJYsW__button {
+  margin-bottom: 20px;
+}
+
+.FreeMoney-module-scss-module__jXJYsW__title {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 56px;
+}
+
+.FreeMoney-module-scss-module__jXJYsW__title.FreeMoney-module-scss-module__jXJYsW__light {
+  color: var(--on-surface);
+}
+
+.FreeMoney-module-scss-module__jXJYsW__title.FreeMoney-module-scss-module__jXJYsW__dark {
+  color: var(--surface);
+}
+
+.FreeMoney-module-scss-module__jXJYsW__subtitle {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.FreeMoney-module-scss-module__jXJYsW__subtitle.FreeMoney-module-scss-module__jXJYsW__light {
+  color: var(--secondary);
+}
+
+.FreeMoney-module-scss-module__jXJYsW__subtitle.FreeMoney-module-scss-module__jXJYsW__dark {
+  color: var(--secondary2);
+}
+
+.FreeMoney-module-scss-module__jXJYsW__stepTitle {
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  display: flex;
+}
+
+.FreeMoney-module-scss-module__jXJYsW__stepTitle.FreeMoney-module-scss-module__jXJYsW__light {
+  color: var(--on-surface);
+}
+
+.FreeMoney-module-scss-module__jXJYsW__stepTitle.FreeMoney-module-scss-module__jXJYsW__dark {
+  color: var(--surface);
+}
+
+.FreeMoney-module-scss-module__jXJYsW__stepDesc {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.FreeMoney-module-scss-module__jXJYsW__stepDesc.FreeMoney-module-scss-module__jXJYsW__light {
+  color: var(--secondary);
+}
+
+.FreeMoney-module-scss-module__jXJYsW__stepDesc.FreeMoney-module-scss-module__jXJYsW__dark {
+  color: var(--secondary2);
+}
+
+/*# sourceMappingURL=1ab64_components_molecules_HomePageSections_FreeMoney_module_scss_module_css_f9ee138c._.single.css.map*/

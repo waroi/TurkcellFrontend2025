@@ -1,0 +1,211 @@
+/* [project]/src/components/organisms/LoginForm/LoginForm.module.scss.module.css [app-client] (css) */
+.LoginForm-module-scss-module__yX9Deq__loginForm {
+  width: 800px;
+  margin: 100px auto;
+  padding: 2rem;
+}
+
+.LoginForm-module-scss-module__yX9Deq__toggleButtons {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+}
+
+.LoginForm-module-scss-module__yX9Deq__toggleButtons button {
+  cursor: pointer;
+  color: var(--secondary);
+  background: none;
+  border: none;
+  border-radius: 100px;
+  padding: 8px 24px;
+  transition: background .2s, color .2s;
+}
+
+.LoginForm-module-scss-module__yX9Deq__toggleButtons .LoginForm-module-scss-module__yX9Deq__active {
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+}
+
+.LoginForm-module-scss-module__yX9Deq__inputGroup {
+  flex-direction: column;
+  gap: .5rem;
+  margin-bottom: 1rem;
+  display: flex;
+}
+
+.LoginForm-module-scss-module__yX9Deq__label {
+  font-size: .95rem;
+  font-weight: 500;
+}
+
+.LoginForm-module-scss-module__yX9Deq__label.LoginForm-module-scss-module__yX9Deq__light {
+  color: var(--secondary);
+}
+
+.LoginForm-module-scss-module__yX9Deq__label.LoginForm-module-scss-module__yX9Deq__dark {
+  color: var(--secondary2);
+}
+
+.LoginForm-module-scss-module__yX9Deq__input {
+  background-color: var(--white);
+  width: 100%;
+  color: var(--black);
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  padding: .5rem;
+}
+
+.LoginForm-module-scss-module__yX9Deq__input.LoginForm-module-scss-module__yX9Deq__light {
+  background-color: var(--white);
+}
+
+.LoginForm-module-scss-module__yX9Deq__input.LoginForm-module-scss-module__yX9Deq__dark {
+  background-color: var(--dark2);
+}
+
+.LoginForm-module-scss-module__yX9Deq__options {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+}
+
+.LoginForm-module-scss-module__yX9Deq__loginButton {
+  background-color: var(--primary);
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  border-radius: 100px;
+  width: 100%;
+  padding: .75rem;
+}
+
+.LoginForm-module-scss-module__yX9Deq__registerPrompt {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.LoginForm-module-scss-module__yX9Deq__forgetPassword {
+  color: var(--critical);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.LoginForm-module-scss-module__yX9Deq__formContent {
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  display: flex;
+}
+
+.LoginForm-module-scss-module__yX9Deq__leftSide {
+  flex: 1;
+}
+
+.LoginForm-module-scss-module__yX9Deq__titleWrapper h2, .LoginForm-module-scss-module__yX9Deq__titleWrapper h6 {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  display: flex;
+}
+
+.LoginForm-module-scss-module__yX9Deq__qrSection {
+  text-align: center;
+  width: 160px;
+}
+
+.LoginForm-module-scss-module__yX9Deq__qrSection .LoginForm-module-scss-module__yX9Deq__qrBox {
+  background: #e0e0e0;
+  width: 100%;
+  height: 160px;
+  margin-bottom: .5rem;
+}
+
+.LoginForm-module-scss-module__yX9Deq__qrSection p {
+  margin-bottom: .25rem;
+  font-weight: 400;
+}
+
+.LoginForm-module-scss-module__yX9Deq__qrSection span {
+  color: var(--primary);
+  font-size: .875rem;
+}
+
+.LoginForm-module-scss-module__yX9Deq__Greencontainer {
+  border-radius: 100px;
+  justify-content: center;
+  max-width: 350px;
+  margin: 0 auto 32px;
+  display: flex;
+}
+
+.LoginForm-module-scss-module__yX9Deq__Greencontainer.LoginForm-module-scss-module__yX9Deq__light {
+  background-color: #eef8f2;
+}
+
+.LoginForm-module-scss-module__yX9Deq__Greencontainer.LoginForm-module-scss-module__yX9Deq__dark {
+  background-color: #1b2520;
+}
+
+.LoginForm-module-scss-module__yX9Deq__link, .LoginForm-module-scss-module__yX9Deq__staticText {
+  color: inherit;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  text-decoration: none;
+  display: flex;
+}
+
+.LoginForm-module-scss-module__yX9Deq__keyContainer {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  display: flex;
+  position: relative;
+}
+
+.LoginForm-module-scss-module__yX9Deq__keyIcon {
+  z-index: 1;
+  width: 24px;
+  height: 24px;
+}
+
+.LoginForm-module-scss-module__yX9Deq__greenDot {
+  z-index: 0;
+  background-color: var(--success);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  position: absolute;
+  bottom: -5px;
+}
+
+.LoginForm-module-scss-module__yX9Deq__urlText {
+  font-size: 14px;
+}
+
+.LoginForm-module-scss-module__yX9Deq__urlText.LoginForm-module-scss-module__yX9Deq__light {
+  color: var(--on-surface);
+}
+
+.LoginForm-module-scss-module__yX9Deq__urlText.LoginForm-module-scss-module__yX9Deq__dark {
+  color: var(--surface);
+}
+
+.LoginForm-module-scss-module__yX9Deq__greenLink {
+  color: var(--success);
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=src_components_organisms_LoginForm_LoginForm_module_scss_module_css_f9ee138c._.single.css.map*/

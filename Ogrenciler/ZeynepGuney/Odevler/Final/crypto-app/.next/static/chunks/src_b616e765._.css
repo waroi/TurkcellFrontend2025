@@ -1,0 +1,518 @@
+/* [project]/src/components/atoms/FooterBanner.module.scss.module.css [app-client] (css) */
+.FooterBanner-module-scss-module__mRSGiG__banner {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 140px;
+  padding: 0;
+  display: flex;
+}
+
+.FooterBanner-module-scss-module__mRSGiG__banner.FooterBanner-module-scss-module__mRSGiG__light {
+  background: var(--decorative);
+}
+
+.FooterBanner-module-scss-module__mRSGiG__banner.FooterBanner-module-scss-module__mRSGiG__dark {
+  background-color: var(--dark2);
+}
+
+.FooterBanner-module-scss-module__mRSGiG__container {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+}
+
+.FooterBanner-module-scss-module__mRSGiG__leftContent {
+  flex-direction: column;
+  flex: 2;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  display: flex;
+}
+
+.FooterBanner-module-scss-module__mRSGiG__rightContent {
+  flex-direction: row;
+  flex: 1;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  display: flex;
+}
+
+.FooterBanner-module-scss-module__mRSGiG__title {
+  color: var(--surface);
+  text-align: left;
+  width: 100%;
+  margin: 0;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 40px;
+}
+
+.FooterBanner-module-scss-module__mRSGiG__description {
+  color: var(--surface);
+  text-align: left;
+  width: 100%;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.FooterBanner-module-scss-module__mRSGiG__button {
+  background-color: var(--white);
+  color: var(--on-surface);
+  cursor: pointer;
+  text-align: center;
+  border: none;
+  border-radius: 90px;
+  padding: 16px 24px;
+  font-weight: 700;
+}
+
+
+/* [project]/src/components/atoms/Button.module.scss.module.css [app-client] (css) */
+.Button-module-scss-module__dZF2Ya__button {
+  color: var(--white);
+  cursor: pointer;
+  text-align: center;
+  border: none;
+  border-radius: 90px;
+  padding: 16px 24px;
+  font-weight: 700;
+  transition: transform .3s;
+}
+
+.Button-module-scss-module__dZF2Ya__button.Button-module-scss-module__dZF2Ya__activeButton {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.Button-module-scss-module__dZF2Ya__button.Button-module-scss-module__dZF2Ya__inactiveButton {
+  background: none;
+}
+
+.Button-module-scss-module__dZF2Ya__button.Button-module-scss-module__dZF2Ya__inactiveButton.Button-module-scss-module__dZF2Ya__light {
+  color: var(--on-surface);
+}
+
+.Button-module-scss-module__dZF2Ya__button.Button-module-scss-module__dZF2Ya__inactiveButton.Button-module-scss-module__dZF2Ya__dark {
+  color: var(--white);
+}
+
+
+/* [project]/src/components/atoms/Footer.module.scss.module.css [app-client] (css) */
+.Footer-module-scss-module__DQ09MG__footer {
+  width: 100%;
+  padding: 40px 20px;
+}
+
+.Footer-module-scss-module__DQ09MG__footer.Footer-module-scss-module__DQ09MG__dark {
+  background-color: var(--dark1);
+  color: var(--surface);
+}
+
+.Footer-module-scss-module__DQ09MG__footer.Footer-module-scss-module__DQ09MG__light {
+  color: #111;
+  background-color: #fff;
+}
+
+.Footer-module-scss-module__DQ09MG__footer .Footer-module-scss-module__DQ09MG__top {
+  flex-flow: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+}
+
+.Footer-module-scss-module__DQ09MG__footer .Footer-module-scss-module__DQ09MG__left {
+  flex: 1;
+  min-width: 250px;
+}
+
+.Footer-module-scss-module__DQ09MG__footer .Footer-module-scss-module__DQ09MG__left .Footer-module-scss-module__DQ09MG__logo {
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.Footer-module-scss-module__DQ09MG__footer .Footer-module-scss-module__DQ09MG__left .Footer-module-scss-module__DQ09MG__title {
+  margin-bottom: 8px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.Footer-module-scss-module__DQ09MG__footer .Footer-module-scss-module__DQ09MG__left p {
+  margin: 5px 0;
+}
+
+.Footer-module-scss-module__DQ09MG__footer .Footer-module-scss-module__DQ09MG__columns {
+  flex-wrap: wrap;
+  flex: 2;
+  justify-content: space-between;
+  gap: 2rem;
+  display: flex;
+}
+
+.Footer-module-scss-module__DQ09MG__footer .Footer-module-scss-module__DQ09MG__columns div {
+  min-width: 120px;
+}
+
+.Footer-module-scss-module__DQ09MG__footer .Footer-module-scss-module__DQ09MG__columns div h4 {
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.Footer-module-scss-module__DQ09MG__footer .Footer-module-scss-module__DQ09MG__columns div li {
+  font-size: 14px;
+  line-height: 1.8;
+  list-style: none;
+}
+
+.Footer-module-scss-module__DQ09MG__bottom {
+  width: 100%;
+}
+
+.Footer-module-scss-module__DQ09MG__bottom.Footer-module-scss-module__DQ09MG__dark {
+  background-color: var(--dark-hover);
+  color: var(--secondary2);
+}
+
+.Footer-module-scss-module__DQ09MG__bottom.Footer-module-scss-module__DQ09MG__light {
+  background-color: var(--surface);
+  color: var(--secondary2);
+}
+
+.Footer-module-scss-module__DQ09MG__bottom .Footer-module-scss-module__DQ09MG__container {
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.Footer-module-scss-module__DQ09MG__bottom .Footer-module-scss-module__DQ09MG__socials {
+  gap: 10px;
+  display: flex;
+}
+
+
+/* [project]/src/components/molecules/NavbarElements/ThemeToggleButton.module.scss.module.css [app-client] (css) */
+.ThemeToggleButton-module-scss-module__HnXCJq__button {
+  cursor: pointer;
+  border: none;
+  padding: .5rem 1rem;
+  font-size: 1rem;
+  transition: all .3s;
+}
+
+.ThemeToggleButton-module-scss-module__HnXCJq__button.ThemeToggleButton-module-scss-module__HnXCJq__light {
+  background-color: var(--white);
+  color: var(--dark);
+}
+
+.ThemeToggleButton-module-scss-module__HnXCJq__button.ThemeToggleButton-module-scss-module__HnXCJq__dark {
+  background-color: var(--dark);
+  color: var(--white);
+}
+
+
+/* [project]/src/components/organisms/Navbar/Navbar.module.scss.module.css [app-client] (css) */
+.Navbar-module-scss-module__SkgiEW__navbar {
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  font-size: 14px;
+  display: flex;
+  box-shadow: 0 2px 5px #0000000d;
+}
+
+.Navbar-module-scss-module__SkgiEW__left {
+  align-items: center;
+  gap: 24px;
+  display: flex;
+}
+
+.Navbar-module-scss-module__SkgiEW__right {
+  align-items: center;
+  gap: 16px;
+  display: flex;
+}
+
+.Navbar-module-scss-module__SkgiEW__logoText {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.Navbar-module-scss-module__SkgiEW__menu {
+  gap: 18px;
+  display: flex;
+}
+
+.Navbar-module-scss-module__SkgiEW__menuItem {
+  cursor: pointer;
+  align-items: center;
+  gap: 4px;
+  display: flex;
+}
+
+.Navbar-module-scss-module__SkgiEW__menuItemActive {
+  background-color: var(--primary);
+  color: var(--white);
+  border: none;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 12px;
+  display: flex;
+}
+
+.Navbar-module-scss-module__SkgiEW__icon {
+  cursor: pointer;
+}
+
+.Navbar-module-scss-module__SkgiEW__walletBtn {
+  cursor: pointer;
+  color: var(--text-color);
+  border: 1px solid;
+  border-color: var(--border-color);
+  background: none;
+  border-radius: 9999px;
+  padding: 6px 12px;
+}
+
+.Navbar-module-scss-module__SkgiEW__walletBtn.Navbar-module-scss-module__SkgiEW__light {
+  color: var(--on-surface);
+  border-color: var(--on-surface);
+}
+
+.Navbar-module-scss-module__SkgiEW__walletBtn.Navbar-module-scss-module__SkgiEW__dark {
+  color: var(--white);
+  border-color: var(--white);
+}
+
+.Navbar-module-scss-module__SkgiEW__avatar {
+  cursor: pointer;
+  border-radius: 9999px;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  display: flex;
+}
+
+
+/* [project]/src/components/molecules/NavbarElements/LanguageButton.module.scss.module.css [app-client] (css) */
+.LanguageButton-module-scss-module__SOd4xW__languageButton {
+  cursor: pointer;
+  background: none;
+  border: none;
+  align-items: center;
+  display: flex;
+}
+
+.LanguageButton-module-scss-module__SOd4xW__languageButton.LanguageButton-module-scss-module__SOd4xW__light {
+  color: var(--on-surface);
+}
+
+.LanguageButton-module-scss-module__SOd4xW__languageButton.LanguageButton-module-scss-module__SOd4xW__dark {
+  color: var(--white);
+}
+
+
+/* [project]/src/app/global.scss.css [app-client] (css) */
+* {
+  font-family: DM Sans, sans-serif;
+}
+
+@import "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap";
+
+html[data-theme="light"] {
+  --white: #fff;
+  --on-surface: #23262f;
+  --primary: #3772ff;
+  --secondary: #777e90;
+  --secondary2: #b1b5c3;
+  --dark: #141416;
+  --success: #58bd7d;
+  --critical: #d33535;
+  --line: #e5e5e5;
+  --stroke: #e6e8ec;
+  --surface: #f7f7f7;
+  --interactive: #2e72d2;
+  --warning: #fabe3c;
+  --highlight: #1e58c8;
+  --decorative: linear-gradient(90deg, #383fde, #8444d4);
+  --dark2: #18191d;
+  --gray: #3c404b;
+}
+
+html[data-theme="dark"] {
+  --bg: #141416;
+  --on-surface: #23262f;
+  --primary: #3772ff;
+  --secondary: #777e90;
+  --secondary2: #b1b5c3;
+  --white: #fff;
+  --success: #58bd7d;
+  --critical: #d33535;
+  --line: #e5e5e5;
+  --stroke: #e6e8ec;
+  --surface: #f7f7f7;
+  --interactive: #2e72d2;
+  --warning: #fabe3c;
+  --highlight: #1e58c8;
+  --decorative: linear-gradient(90deg, #383fde, #8444d4);
+  --dark2: #18191d;
+  --gray: #3c404b;
+  --dark-hover: #222630;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color .3s, color .3s;
+}
+
+
+/* [project]/src/app/register/register.module.scss.module.css [app-client] (css) */
+.register-module-scss-module__nDDM7W__registerPage {
+  margin: 0;
+}
+
+.register-module-scss-module__nDDM7W__registerHeader {
+  justify-content: space-between;
+  align-items: center;
+  height: 150px;
+  display: flex;
+}
+
+.register-module-scss-module__nDDM7W__registerHeader.register-module-scss-module__nDDM7W__light {
+  background-color: var(--surface);
+}
+
+.register-module-scss-module__nDDM7W__registerHeader.register-module-scss-module__nDDM7W__dark {
+  background-color: var(--dark);
+}
+
+.register-module-scss-module__nDDM7W__registerContainer {
+  box-sizing: border-box;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  display: flex;
+}
+
+.register-module-scss-module__nDDM7W__registerTitle {
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  display: flex;
+}
+
+.register-module-scss-module__nDDM7W__registerTitle h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.register-module-scss-module__nDDM7W__registerTitle h2.register-module-scss-module__nDDM7W__light {
+  color: var(--on-surface);
+}
+
+.register-module-scss-module__nDDM7W__registerTitle h2.register-module-scss-module__nDDM7W__dark {
+  color: var(--surface);
+}
+
+.register-module-scss-module__nDDM7W__registerTitle p {
+  opacity: .7;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.register-module-scss-module__nDDM7W__registerTitle p.register-module-scss-module__nDDM7W__light {
+  color: var(--secondary);
+}
+
+.register-module-scss-module__nDDM7W__registerTitle p.register-module-scss-module__nDDM7W__dark {
+  color: var(--secondary2);
+}
+
+
+/* [project]/src/components/molecules/RegisterInputs/Phone/Phone.module.scss.module.css [app-client] (css) */
+
+
+
+/* [project]/src/components/molecules/RegisterInputs/Email/Email.module.scss.module.css [app-client] (css) */
+
+
+
+/* [project]/src/components/organisms/RegisterForm/RegisterForm.module.scss.module.css [app-client] (css) */
+.RegisterForm-module-scss-module__7GVHca__registerForm {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  width: 400px;
+  margin: 100px auto;
+  padding: 2rem;
+}
+
+.RegisterForm-module-scss-module__7GVHca__toggleButtons {
+  gap: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+}
+
+.RegisterForm-module-scss-module__7GVHca__active {
+  color: #fff;
+  background: #4f46e5;
+}
+
+.RegisterForm-module-scss-module__7GVHca__inputGroup {
+  margin-bottom: 1rem;
+}
+
+.RegisterForm-module-scss-module__7GVHca__input {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: .5rem;
+}
+
+.RegisterForm-module-scss-module__7GVHca__options {
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  display: flex;
+}
+
+.RegisterForm-module-scss-module__7GVHca__loginButton {
+  color: #fff;
+  cursor: pointer;
+  background-color: #4f46e5;
+  border: none;
+  border-radius: 6px;
+  width: 100%;
+  padding: .75rem;
+}
+
+.RegisterForm-module-scss-module__7GVHca__registerPrompt {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+
+/*# sourceMappingURL=src_b616e765._.css.map*/

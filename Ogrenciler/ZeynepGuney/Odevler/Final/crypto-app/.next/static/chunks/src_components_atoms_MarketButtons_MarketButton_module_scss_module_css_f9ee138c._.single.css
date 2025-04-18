@@ -1,0 +1,53 @@
+/* [project]/src/components/atoms/MarketButtons/MarketButton.module.scss.module.css [app-client] (css) */
+.MarketButton-module-scss-module__jdY5cG__marketButtons {
+  border-top: 2px solid var(--border-color);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  height: 50px;
+  margin: 0 auto;
+  padding: 0 20px;
+  font-size: 14px;
+  display: flex;
+}
+
+.MarketButton-module-scss-module__jdY5cG__marketButtons.MarketButton-module-scss-module__jdY5cG__light {
+  background-color: var(--surface);
+}
+
+.MarketButton-module-scss-module__jdY5cG__marketButtons.MarketButton-module-scss-module__jdY5cG__dark {
+  background-color: var(--dark-hover);
+}
+
+.MarketButton-module-scss-module__jdY5cG__left {
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  display: flex;
+}
+
+.MarketButton-module-scss-module__jdY5cG__menuItem {
+  cursor: pointer;
+  color: inherit;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+  display: flex;
+}
+
+.MarketButton-module-scss-module__jdY5cG__menuItemActive {
+  background-color: var(--primary);
+  color: var(--white);
+  text-align: center;
+  border: none;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 12px;
+  text-decoration: none;
+  display: flex;
+}
+
+/*# sourceMappingURL=src_components_atoms_MarketButtons_MarketButton_module_scss_module_css_f9ee138c._.single.css.map*/
