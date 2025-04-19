@@ -15,7 +15,7 @@ Bu proje, Next.js 14 ve TypeScript ile geliştirilen bir kripto para borsası si
 
 ⭐ Favorilere ekleme özelliği (Zustand + localStorage ile persist)
 
-👛 Cüzdan bakiyesi görüntüleme (fake balance verisi)
+👛 Cüzdan bakiyesi görüntüleme (balance verisi)
 
 📊 Order Book, Order History ve Recent Trades bileşenleri -Order History gerçek verili
 
@@ -35,4 +35,3 @@ Dil değişim bazlı Metadata verileri
 
 Temiz kod için eslint rule eklendi.
 
-Aktif Sayfalar:/home,/,
