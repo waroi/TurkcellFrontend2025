@@ -1,0 +1,64 @@
+// Bootstrap variable overrides
+$primary: var(--accent);
+$secondary: var(--text-secondary);
+$success: var(--positive);
+$danger: var(--negative);
+$light: var(--secondary);
+$dark: var(--text-primary);
+
+$body-bg: var(--primary);
+$body-color: var(--text-primary);
+
+$border-color: var(--border);
+
+$card-bg: var(--card-bg);
+$card-border-color: var(--border);
+
+$input-bg: var(--primary);
+$input-color: var(--text-primary);
+$input-border-color: var(--border);
+$input-focus-border-color: var(--accent);
+
+$table-bg: transparent;
+$table-color: var(--text-primary);
+$table-border-color: var(--border);
+
+$nav-tabs-link-active-color: var(--accent);
+$nav-tabs-link-active-border-color: var(--border) var(--border) var(--accent);
+
+// Import Bootstrap after overrides
+@import '~bootstrap/scss/bootstrap';
+
+// Additional overrides
+.btn {
+  transition: all 0.2s ease;
+}
+
+.form-control {
+  background-clip: border-box;
+}
+
+.card {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.table {
+  th, td {
+    vertical-align: middle;
+  }
+}
+
+// Dark mode adjustments
+[data-theme="dark"] {
+  .bg-light {
+    background-color: var(--secondary) !important;
+  }
+  
+  .text-dark {
+    color: var(--text-primary) !important;
+  }
+  
+  .border-light {
+    border-color: var(--border) !important;
+  }
+}
