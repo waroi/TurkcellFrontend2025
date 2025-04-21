@@ -1,0 +1,136 @@
+@import "variables";
+@import "bootstrap/scss/bootstrap";
+
+body {
+  overflow-x: hidden;
+}
+
+.bg-tertiary {
+  background-color: $tertiary;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.reset {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  color: $secondary;
+  font-size: 1.25rem;
+}
+
+.btn {
+  padding: 0.75rem 1.75rem;
+}
+
+h2 {
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+hr {
+  border-color: #e5e5e5;
+  opacity: 1;
+}
+
+[data-bs-theme="dark"] {
+  button {
+    color: $white !important;
+  }
+
+  .text-black {
+    color: $white !important;
+  }
+
+  .dark-black {
+    background-color: $black !important;
+  }
+}
+
+.small {
+  font-size: 1rem !important;
+}
+
+main {
+  min-height: 30rem;
+}
+
+.category-nav {
+  font-size: 0.9rem;
+  gap: 1.5rem;
+
+  button {
+    padding-top: 0.25rem !important;
+    padding-bottom: 0.25rem !important;
+    font-size: 0.9rem !important;
+  }
+
+  input {
+    width: 16rem;
+  }
+}
+
+.marquee {
+  background-image: url("/marquee.png");
+  background-position: center;
+  background-size: cover;
+}
+
+@for $index from 0 through 6 {
+  .progress-#{$index} {
+    [class^="phase-"] {
+      display: none;
+    }
+    .phase-#{$index} {
+      display: block;
+    }
+  }
+}
+
+//* ************************************************** *\\
+
+.sell-wallet-table {
+  max-height: 50rem;
+  overflow-y: scroll;
+
+  table {
+    vertical-align: middle;
+
+    p {
+      margin-bottom: 0 !important;
+    }
+  }
+}
+
+.market-table {
+  button:hover {
+    border-color: $primary !important;
+    background-color: $primary !important;
+    color: $white !important;
+  }
+
+  td:not(:nth-child(5)) {
+    font-weight: 600;
+  }
+
+  i {
+    margin-left: 1rem;
+    color: $secondary;
+    cursor: pointer;
+
+    &.fa-solid {
+      color: $warning;
+    }
+  }
+}
