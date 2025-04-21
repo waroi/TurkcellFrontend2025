@@ -4,16 +4,17 @@
   "private": true,
   "scripts": {
     "sync": "git clone --depth=1 -q https://github.com/Xaszanyn/Justified-Sync-Patch.git src",
-    "dev": "npm run sync && next dev --turbopack",
-    "build": "npm run sync && next build",
-    "start": "npm run sync && next start",
-    "lint": "npm run sync && next lint"
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
     "bootstrap": "^5.3.5",
     "firebase": "^11.6.0",
     "i18next": "^25.0.0",
     "next": "15.3.0",
+    "node-binance-api": "^1.0.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-i18next": "^15.4.1",
