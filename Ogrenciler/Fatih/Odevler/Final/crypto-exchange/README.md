@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Crypto Exchange
 
-## Getting Started
+## Başlarken
 
-First, run the development server:
+Geliştirme sunucusunu çalıştırmak için:
 
 ```bash
 npm run dev
-# or
+# veya
 yarn dev
-# or
+# veya
 pnpm dev
-# or
+# veya
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Tarayıcınızda [http://localhost:3000](http://localhost:3000) adresini açarak uygulamayı görebilirsiniz.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🌐 Yayında
 
-## Learn More
+🔗 [https://crypto-exchange-roan-nu.vercel.app/](https://crypto-exchange-roan-nu.vercel.app/)
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🛠️ Kullanılan Teknolojiler
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Next.js** – App Router mimarisi
+- **TypeScript** – Tip güvenliği
+- **Redux Toolkit** – State yönetimi
+- **Firebase** – Kimlik doğrulama ve Firestore veritabanı
+- **i18n** – Uluslararasılaştırma ve çok dilli destek
+- **CSS Modules** – Bileşen bazlı stil yönetimi
+- **Bootstrap 5** – UI bileşenleri ve grid yapısı
+- **Özel Karanlık Tema** – Tema değiştirme desteği
+- **Atomic Design** – Ölçeklenebilir bileşen mimarisi
+- **Formik & Yup** – Form yönetimi ve doğrulama
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🔐 Özellikler
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### ✅ Kimlik Doğrulama
+
+- Firebase Auth ile kullanıcı kayıt ve giriş işlemleri
+
+### 💱 Kripto Alım & Satım
+
+- Adım adım ilerleyen kripto alım/satım süreci
+- Gerçek zamanlı kur dönüşümü ve coin seçimi
+
+### 📊 Canlı Verilerle Takip
+
+- Gerçek zamanlı market verileriyle coin fiyatlarını takip etme
+- CoinGecko API ile güncel bilgiler ve yüzdelik değişimlerin görüntülenmesi
+- Portföydeki coin'lerin toplam USD karşılıklarını gösteren grafik ve özetler
+
+### ⭐ Favoriler
+
+- Exchange sayfasındaki yıldız simgesiyle coin’leri favorilere ekleme
+
+### 👤 Profil Sayfası
+
+- Profil bilgilerini güncelleme
+- Güvenli şifre değiştirme
+
+---
