@@ -1,24 +1,47 @@
-"use client";
+"use client"
 
 import { Formik, Form, FormikHelpers } from "formik";
 import { registerSchema } from "../schemas";
 import CustomInput from "../components/CustomInput";
 import { Button } from "../../../components/atoms/Button";
 
+import { useAuthStore } from "@/store/authStore";
+import { useRouter } from "next/navigation";
+
+
+
 interface RegisterFormValues {
     email: string;
     password: string;
+    name: string;
+    surname: string;
 }
 
-const onSubmit = async (
-    values: RegisterFormValues,
-    actions: FormikHelpers<RegisterFormValues>
-) => {
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    actions.resetForm();
-};
-
 export default function Register() {
+    const { register } = useAuthStore();
+    const router = useRouter(); 
+
+    const onSubmit = async (
+        values: RegisterFormValues,
+        actions: FormikHelpers<RegisterFormValues>
+    ) => {
+        try {
+            await register(
+                values.email,
+                values.password,
+                values.name,
+                values.surname
+            );
+            router.push("/login");
+        } catch (error: any) {
+            alert("Kayıt olma başarısız: " + error.message);
+        } finally {
+            await new Promise((resolve) => setTimeout(resolve, 1000));
+            actions.resetForm();
+        }
+    };
+
+
     return (
         <div className="container d-flex justify-content-center align-items-center min-vh-100 ">
             <div>
@@ -26,11 +49,11 @@ export default function Register() {
                 <p>Register in advance and enjoy the event benefits</p>
 
                 <Formik
-                    initialValues={{ email: "", password: "" }}
+                    initialValues={{ email: "", password: "", name: "", surname: "" }}
                     onSubmit={onSubmit}
                     validationSchema={registerSchema}
                 >
-                    <Form>
+                    {({ isSubmitting }) => (<Form>
                         <div className="mb-3">
                             <CustomInput
                                 label="Ad"
@@ -67,10 +90,10 @@ export default function Register() {
                                 className="form-control"
                             />
                         </div>
-                        <Button type="submit" className="btn btn-primary w-100" onClick={undefined}>
-                            Giriş Yap
+                        <Button type="submit" className="btn btn-primary w-100" disabled={isSubmitting}>
+                            {isSubmitting ? "Kayıt Olunuyor..." : "Kayıt Ol"}
                         </Button>
-                    </Form>
+                    </Form>)}
                 </Formik>
             </div>
         </div>

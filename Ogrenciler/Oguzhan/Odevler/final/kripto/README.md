@@ -40,6 +40,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 - yeni bir type yazarken react.fc ile yazmak doğrudan tanımdan daha güvenli bir yolmuş. 
 
+- formiki ayırıp 
+
 
 
 # Kripto Para Borsası
@@ -94,3 +96,5 @@ https://coinmarketcap.com/
 - Solid prensiplerine uygun olmalı.
 - Tasarım kurallarına uygun olmalı.
 - Proje, responsive tasarıma sahip olmalı.
+
+
