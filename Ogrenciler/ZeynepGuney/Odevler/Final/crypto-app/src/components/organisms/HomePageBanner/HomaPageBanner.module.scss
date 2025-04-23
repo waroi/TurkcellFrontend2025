@@ -1,0 +1,218 @@
+@mixin font-styles($font-size, $font-weight, $line-height: null) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+
+  @if $line-height !=null {
+    line-height: $line-height;
+  }
+}
+
+@mixin flex-container($direction: row, $align-items: center, $justify-content: flex-start, $gap: 0) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align-items;
+  justify-content: $justify-content;
+  gap: $gap;
+}
+
+@mixin padding-border-radius-box-shadow($padding: 0, $border-radius: 0, $box-shadow: none) {
+  padding: $padding;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+}
+
+.bannerSection {
+  padding: 4rem 1.5rem;
+  &.dark {
+    background-color: var(--dark2);
+  }
+  &.light {
+    background-color: var(--surface);
+  }
+}
+
+.container {
+  
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  @include flex-container(column, center, space-between, 2rem);
+
+  @media (min-width: 768px) {
+    @include flex-container(row, center, space-between);
+  }
+}
+
+.left,
+.right {
+  flex: 1;
+}
+
+.right {
+  display: flex;
+  justify-content: center;
+}
+
+.partners {
+  @include font-styles(24px 700, 32px);
+}
+
+.bannerImage {
+  width: 100%;
+  max-height: 24rem;
+  object-fit: contain;
+
+  @media (min-width: 768px) {
+    max-height: 32rem;
+  }
+}
+
+.title {
+  @include font-styles(2.25rem, 700, 3rem);
+  margin-bottom: 1rem;
+}
+
+.description {
+  @include font-styles(1.125rem, 400);
+  margin-bottom: 1.5rem;
+}
+
+
+.cryptoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 2rem;
+  border-radius: 24px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  &.light {
+    background-color: var(--white);
+  }
+
+  &.dark {
+    background-color: var(--dark2);
+  }
+}
+
+.buttonContainer {
+  @include flex-container(row, flex-start, flex-start, 8px);
+  margin-bottom: 16px;
+  margin-top: 16px;
+  width: 100%;
+
+  button {
+    @include font-styles(14px, 700, 16px);
+    padding: 8px 20px;
+    border-radius: 24px;
+    cursor: pointer;
+    line-height: 16px;
+    border: none;
+
+    &.activeButton {
+      background-color: var(--primary);
+      color: var(--white);
+    }
+
+    &.inactiveButton {
+      background: none;
+
+      &.light {
+        color: var(--on-surface);
+      }
+
+      &.dark {
+        color: var(--white);
+      }
+    }
+  }
+}
+
+.cardContainer {
+  display: flex;
+  gap: 22px;
+  border-top: 1px solid;
+  @include padding-border-radius-box-shadow(20px, 0, none);
+
+  &.light {
+    border-color: var(--line);
+  }
+
+  &.dark {
+    border-color: var(--on-surface);
+  }
+}
+
+.card {
+  @include padding-border-radius-box-shadow(32px 40px, 12px, 0 2px 4px rgba(0, 0, 0, 0.1));
+  margin-bottom: 32px;
+  width: 200px;
+  text-align: center;
+  gap: 8px;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.1); 
+}
+.card.dark:hover {
+  transform: translateY(-4px);
+  background: rgba(47, 50, 65, 0.5);
+}
+
+.header {
+  @include flex-container(row, flex-start, flex-start, 8px);
+  margin-bottom: 8px;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+.coinInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: left;
+  gap: 8px;
+
+  .coinName {
+    @include font-styles(14px, 700, 24px);
+  }
+
+  .coinSymbol {
+    @include font-styles(14px, 400);
+    color: var(--secondary);
+  }
+}
+
+.price {
+  @include font-styles(24px, 700, 32px);
+  margin: 8px 0;
+}
+
+.marketVolumeContainer {
+  @include flex-container(row, center, space-between, 14px);
+
+  .marketCap {
+    font-weight: 400;
+  }
+
+  .volumeChange {
+    @include font-styles(12px, 700, 16px);
+    padding: 2px 8px;
+    border-radius: 24px;
+    text-align: center;
+
+    &.negative {
+      background-color: var(--critical);
+      color: var(--white);
+    }
+
+    &.positive {
+      background-color: var(--success);
+      color: var(--white);
+    }
+  }
+}

@@ -10,7 +10,8 @@ export const createTrade = async (formData: FormData) => {
   const quantity = formData.get("quantity") as string;
   const paySymbol = formData.get("paySymbol") as string;
   const receiveSymbol = formData.get("receiveSymbol") as string;
-  const symbol = `${receiveSymbol}${paySymbol}`;
+
+  const symbol = `${paySymbol}${receiveSymbol}`;
 
   const timestamp = Date.now();
   const query = `symbol=${symbol}&side=${side}&type=MARKET&quantity=${quantity}&timestamp=${timestamp}`;
@@ -36,6 +37,7 @@ export const createTrade = async (formData: FormData) => {
 
   return res.json();
 };
+
 
 export const getTestnetBalance = async () => {
 

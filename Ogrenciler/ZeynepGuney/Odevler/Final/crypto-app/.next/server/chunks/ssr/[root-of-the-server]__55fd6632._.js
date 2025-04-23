@@ -2228,7 +2228,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$context$2f$ThemeConte
 ;
 ;
 ;
-const SecondaryButtons = ()=>{
+const SecondaryButtons = ({ buttons })=>{
     const { t } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$useTranslation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useTranslation"])();
     const [activeItem, setActiveItem] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("all");
     const { theme } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$context$2f$ThemeContext$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useTheme"])();
@@ -2236,52 +2236,27 @@ const SecondaryButtons = ()=>{
         className: `${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$atoms$2f$MarketButtons$2f$SecondaryButtons$2e$module$2e$scss$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].secondaryButtons} ${theme === 'dark' ? __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$atoms$2f$MarketButtons$2f$SecondaryButtons$2e$module$2e$scss$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].dark : ''}`,
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$atoms$2f$MarketButtons$2f$SecondaryButtons$2e$module$2e$scss$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].left,
-            children: [
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                    className: `${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$atoms$2f$MarketButtons$2f$SecondaryButtons$2e$module$2e$scss$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].menuItem} ${activeItem === "all" ? __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$atoms$2f$MarketButtons$2f$SecondaryButtons$2e$module$2e$scss$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].menuItemActive : ""} ${theme === 'dark' ? __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$atoms$2f$MarketButtons$2f$SecondaryButtons$2e$module$2e$scss$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].dark : ''}`,
-                    onClick: ()=>setActiveItem("all"),
-                    children: t("secondaryButtons.all")
-                }, void 0, false, {
+            children: buttons.map((btn)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                    className: `
+                      ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$atoms$2f$MarketButtons$2f$SecondaryButtons$2e$module$2e$scss$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].menuItem} 
+                      ${activeItem === btn.key ? __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$atoms$2f$MarketButtons$2f$SecondaryButtons$2e$module$2e$scss$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].menuItemActive : ""} 
+                      ${theme === "dark" ? __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$atoms$2f$MarketButtons$2f$SecondaryButtons$2e$module$2e$scss$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].dark : ""}
+                    `,
+                    onClick: ()=>setActiveItem(btn.key),
+                    children: btn.label
+                }, btn.key, false, {
                     fileName: "[project]/src/components/atoms/MarketButtons/SecondaryButtons.tsx",
-                    lineNumber: 16,
-                    columnNumber: 17
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                    className: `${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$atoms$2f$MarketButtons$2f$SecondaryButtons$2e$module$2e$scss$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].menuItem} ${activeItem === "perpetual" ? __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$atoms$2f$MarketButtons$2f$SecondaryButtons$2e$module$2e$scss$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].menuItemActive : ""}`,
-                    onClick: ()=>setActiveItem("perpetual"),
-                    children: t("secondaryButtons.perpetual")
-                }, void 0, false, {
-                    fileName: "[project]/src/components/atoms/MarketButtons/SecondaryButtons.tsx",
-                    lineNumber: 23,
-                    columnNumber: 17
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                    className: `${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$atoms$2f$MarketButtons$2f$SecondaryButtons$2e$module$2e$scss$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].menuItem} ${activeItem === "USDT" ? __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$atoms$2f$MarketButtons$2f$SecondaryButtons$2e$module$2e$scss$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].menuItemActive : ""}`,
-                    onClick: ()=>setActiveItem("USDT"),
-                    children: t("secondaryButtons.USDT")
-                }, void 0, false, {
-                    fileName: "[project]/src/components/atoms/MarketButtons/SecondaryButtons.tsx",
-                    lineNumber: 29,
-                    columnNumber: 17
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                    className: `${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$atoms$2f$MarketButtons$2f$SecondaryButtons$2e$module$2e$scss$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].menuItem} ${activeItem === "futures" ? __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$atoms$2f$MarketButtons$2f$SecondaryButtons$2e$module$2e$scss$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].menuItemActive : ""}`,
-                    onClick: ()=>setActiveItem("futures"),
-                    children: t("secondaryButtons.futures")
-                }, void 0, false, {
-                    fileName: "[project]/src/components/atoms/MarketButtons/SecondaryButtons.tsx",
-                    lineNumber: 35,
-                    columnNumber: 17
-                }, this)
-            ]
-        }, void 0, true, {
+                    lineNumber: 24,
+                    columnNumber: 21
+                }, this))
+        }, void 0, false, {
             fileName: "[project]/src/components/atoms/MarketButtons/SecondaryButtons.tsx",
-            lineNumber: 15,
+            lineNumber: 22,
             columnNumber: 13
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/components/atoms/MarketButtons/SecondaryButtons.tsx",
-        lineNumber: 14,
+        lineNumber: 21,
         columnNumber: 9
     }, this);
 };
@@ -2485,7 +2460,26 @@ const LoginPageContent = ({ children })=>{
                 lineNumber: 52,
                 columnNumber: 13
             }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$atoms$2f$MarketButtons$2f$SecondaryButtons$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$atoms$2f$MarketButtons$2f$SecondaryButtons$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                buttons: [
+                    {
+                        key: "all",
+                        label: t("secondaryButtons.all")
+                    },
+                    {
+                        key: "perpetual",
+                        label: t("secondaryButtons.perpetual")
+                    },
+                    {
+                        key: "USDT",
+                        label: t("secondaryButtons.USDT")
+                    },
+                    {
+                        key: "futures",
+                        label: t("secondaryButtons.futures")
+                    }
+                ]
+            }, void 0, false, {
                 fileName: "[project]/src/app/market/page.tsx",
                 lineNumber: 53,
                 columnNumber: 13
@@ -2502,7 +2496,7 @@ const LoginPageContent = ({ children })=>{
                 theme: theme
             }, void 0, false, {
                 fileName: "[project]/src/app/market/page.tsx",
-                lineNumber: 54,
+                lineNumber: 61,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$molecules$2f$MarketData$2f$MarketUpdateHeader$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -2511,7 +2505,7 @@ const LoginPageContent = ({ children })=>{
                 sortOrder: sortOrder
             }, void 0, false, {
                 fileName: "[project]/src/app/market/page.tsx",
-                lineNumber: 60,
+                lineNumber: 67,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$organisms$2f$MarketUpdate$2f$MarketUpdate$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -2535,24 +2529,24 @@ const LoginPageContent = ({ children })=>{
                 onSortChange: handleSortChange
             }, void 0, false, {
                 fileName: "[project]/src/app/market/page.tsx",
-                lineNumber: 65,
+                lineNumber: 72,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$molecules$2f$MarketPageSections$2f$LearnBanner$2f$Learn$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/src/app/market/page.tsx",
-                lineNumber: 72,
+                lineNumber: 79,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$atoms$2f$Footer$2f$Footer$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/src/app/market/page.tsx",
-                lineNumber: 73,
+                lineNumber: 80,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
                 children: children
             }, void 0, false, {
                 fileName: "[project]/src/app/market/page.tsx",
-                lineNumber: 74,
+                lineNumber: 81,
                 columnNumber: 13
             }, this)
         ]

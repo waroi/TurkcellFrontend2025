@@ -1,0 +1,15 @@
+html[data-theme='light'] {
+  --bg: #ffffff;
+  --text: #000000;
+}
+
+html[data-theme='dark'] {
+  --bg: #121212;
+  --text: #ffffff;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.3s, color 0.3s;
+}

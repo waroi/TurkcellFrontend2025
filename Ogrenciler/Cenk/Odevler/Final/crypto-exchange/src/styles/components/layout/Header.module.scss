@@ -161,6 +161,57 @@ html[data-theme="dark"] .mobileMenu {
   background-color: #1e1e1e;
 }
 
+.authLink {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 6px 12px;
+  color: var(--color-on-surface);
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: var(--color-primary);
+  }
+}
+
+.authBtn {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 6px 16px;
+  background-color: var(--color-primary);
+  color: white;
+  border-radius: 24px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: #2556e8;
+  }
+}
+
+.userEmail {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-on-surface);
+  margin-right: 8px;
+}
+
+.logoutBtn {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 24px;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+
+  &:hover {
+    background-color: #c0392b;
+  }
+}
+
 @media (max-width: 1024px) {
   .menuWrapper,
   .right {

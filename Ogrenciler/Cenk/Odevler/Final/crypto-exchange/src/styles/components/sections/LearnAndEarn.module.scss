@@ -1,0 +1,80 @@
+.learnSection {
+  padding: 64px 24px;
+  background-color: var(--color-surface);
+  text-align: center;
+
+  h2 {
+    font-size: 32px;
+    font-weight: 700;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    color: #666;
+    margin-top: 8px;
+    margin-bottom: 32px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 32px;
+  }
+
+  .card {
+    background-color: var(--color-surface-main);
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+    text-align: left;
+
+    h3 {
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    .label {
+      background-color: var(--color-primary);
+      color: white;
+      font-size: 10px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      display: inline-block;
+    }
+  }
+
+  .imageWrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 60%;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #ccc;
+  }
+
+  .img {
+    object-fit: cover;
+  }
+
+  .playBtn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border: none;
+    border-radius: 50%;
+    padding: 4px;
+    cursor: pointer;
+  }
+}

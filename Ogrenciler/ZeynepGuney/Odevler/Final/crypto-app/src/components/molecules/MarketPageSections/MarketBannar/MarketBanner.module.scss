@@ -1,0 +1,64 @@
+.marketBanner {
+    background-color: var(--bg-color);
+    padding: 4rem 2rem;
+    transition: background-color 0.3s ease;
+
+    &.dark {
+        background-color: var(--dark);
+    }
+
+    &.light {
+        background-color: var(--surface);
+
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        flex-wrap: wrap;
+    }
+
+    .textContent {
+        flex: 1;
+        min-width: 300px;
+
+        .title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        .description {
+            font-size: 1.2rem;
+            color: var(--secondary);
+
+            span {
+                font-weight: 600;
+                &.dark {
+                    color: var(--surface);
+                }
+            
+                &.light {
+                    color: var(--dark);
+            
+                }
+            }
+        }
+    }
+
+    .imageContent {
+        flex: 1;
+        min-width: 300px;
+        text-align: right;
+
+        .image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+        }
+    }
+}

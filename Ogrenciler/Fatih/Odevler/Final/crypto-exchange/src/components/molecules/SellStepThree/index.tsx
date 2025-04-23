@@ -8,6 +8,7 @@ import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
 import { setSellStepThreeData } from "@/store/slices/sellCryptoSlice";
 import { RootState } from "@/store/store";
+import styles from "./SellStepThree.module.css";
 
 interface SellStepThreeProps {
   onContinue: () => void;
@@ -48,9 +49,9 @@ const SellStepThree = ({ onContinue }: SellStepThreeProps) => {
 
   return (
     <form onSubmit={formik.handleSubmit}>
-      <div className="bg-light rounded-4 p-4 mb-4">
-        <h5 className="fw-bold mb-1">Confirm Information</h5>
-        <p className="text-muted">
+      <div className={`${styles.wrapper} rounded-4 p-4 mb-4`}>
+        <h5 className={`${styles.title} fw-bold mb-1`}>Confirm Information</h5>
+        <p className={styles.text}>
           You Are About To Receive {receiveAmount} {toCurrency.toUpperCase()}{" "}
           For Bitcloud Bank
         </p>
@@ -64,8 +65,8 @@ const SellStepThree = ({ onContinue }: SellStepThreeProps) => {
               alt="Wallet"
             />
             <div>
-              <small className="text-muted">Pay</small>
-              <div className="fw-semibold">
+              <small className={styles.text}>Pay</small>
+              <div className={styles.text}>
                 {payAmount} {fromCurrency?.toUpperCase()}
               </div>
             </div>
@@ -79,8 +80,8 @@ const SellStepThree = ({ onContinue }: SellStepThreeProps) => {
               alt="Wallet"
             />
             <div>
-              <small className="text-muted">Get</small>
-              <div className="fw-semibold">
+              <small className={styles.text}>Get</small>
+              <div className={styles.text}>
                 {receiveAmount} {toCurrency?.toUpperCase()}
               </div>
             </div>
@@ -94,15 +95,15 @@ const SellStepThree = ({ onContinue }: SellStepThreeProps) => {
               alt="Logo Symbol"
             />
             <div>
-              <div className="fw-muted">For</div>
-              <small className="fw-semibold">Rookie</small>
+              <div className={styles.text}>For</div>
+              <small className={styles.text}>Rookie</small>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="bg-light rounded-4 p-4">
-        <h5 className="fw-bold mb-4">Payment Details</h5>
+      <div className={`${styles.wrapper} rounded-4 p-4`}>
+        <h5 className={`${styles.title} fw-bold mb-4`}>Payment Details</h5>
 
         {[
           { name: "accountName", label: "Account name" },
@@ -112,7 +113,9 @@ const SellStepThree = ({ onContinue }: SellStepThreeProps) => {
           { name: "bankAddress", label: "Bank Address" },
         ].map((field) => (
           <div className="mb-3" key={field.name}>
-            <label className="form-label fw-medium">{field.label}</label>
+            <label className={`${styles.text} form-label fw-medium`}>
+              {field.label}
+            </label>
             <input
               type="text"
               name={field.name}
@@ -129,8 +132,10 @@ const SellStepThree = ({ onContinue }: SellStepThreeProps) => {
         ))}
 
         <div className="mb-4">
-          <label className="form-label fw-medium">Reference code</label>
-          <p className="text-muted small">
+          <label className={`${styles.text} form-label fw-medium`}>
+            Reference code
+          </label>
+          <p className={`${styles.text} small`}>
             You MUST include the Reference Code in your deposit in order to
             credit your account!
           </p>

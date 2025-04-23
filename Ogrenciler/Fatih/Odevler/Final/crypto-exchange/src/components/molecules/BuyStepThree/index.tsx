@@ -93,7 +93,7 @@ const BuyStepThree = () => {
     saveToFirestore();
   }, [user, dispatch]);
 
-  if (!isSubmitted) return <p>Processing your transaction...</p>;
+  if (!isSubmitted) return <p>Loading...</p>;
 
   return (
     <div>
@@ -109,9 +109,9 @@ const BuyStepThree = () => {
             alt="Success"
           />
         </h5>
-        <p>
+        <p className={styles.title}>
           You successfully bought{" "}
-          <span className="fw-bold">
+          <span className="fw-bold text-success">
             {receiveAmount} {toCurrency.toUpperCase()}
           </span>{" "}
           for
@@ -122,18 +122,20 @@ const BuyStepThree = () => {
 
         <div className={`${styles.subWrapper} border rounded-4 p-3 mt-3 w-100`}>
           <div className="d-flex justify-content-between">
-            <span className="text-muted">Status</span>
+            <span className={styles.text}>Status</span>
             <span className="text-success">Completed</span>
           </div>
           <div className="d-flex justify-content-between mt-2">
-            <span className="text-muted">Currency</span>
-            <span className="fw-semibold">{toCurrency.toUpperCase()}</span>
+            <span className={styles.text}>Currency</span>
+            <span className={`${styles.text} fw-semibold`}>
+              {toCurrency.toUpperCase()}
+            </span>
           </div>
         </div>
       </div>
 
       <div className={`${styles.wrapper} rounded-4 p-4 shadow-sm`}>
-        <h5 className="fw-bold mb-3">Payment Details</h5>
+        <h5 className={`${styles.title} fw-bold mb-3`}>Payment Details</h5>
 
         <DetailItem label="Account name" value={formData.accountName} />
         <DetailItem label="Account number" value={formData.accountNumber} />
@@ -152,8 +154,10 @@ const BuyStepThree = () => {
         </div>
 
         <div className="d-flex justify-content-between gap-2">
-          <Button variant="light">Trade!</Button>
-          <Link href="/wallet">
+          <Link href="buy-crypto" className="w-100">
+            <Button variant="light">Trade!</Button>
+          </Link>
+          <Link href="/wallet" className="w-100">
             <Button variant="primary">Wallet</Button>
           </Link>
         </div>
@@ -164,9 +168,9 @@ const BuyStepThree = () => {
 
 const DetailItem = ({ label, value }: { label: string; value: string }) => (
   <div className="mb-3 border-bottom">
-    <label className="text-muted small">{label}</label>
+    <label className={`${styles.text} small`}>{label}</label>
     <div className="d-flex justify-content-end">
-      <span>{value}</span>
+      <span className={styles.text}>{value}</span>
       <Image src="/buyCrypto/circle.svg" width={16} height={16} alt="Circle" />
     </div>
   </div>

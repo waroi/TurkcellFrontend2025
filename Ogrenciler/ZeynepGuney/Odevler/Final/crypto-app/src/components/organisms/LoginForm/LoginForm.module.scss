@@ -1,0 +1,210 @@
+@mixin buttonStyles($bg-color, $text-color, $border-radius, $width: 100%) {
+  padding: 0.75rem;
+  background-color: $bg-color;
+  color: $text-color;
+  border: none;
+  border-radius: $border-radius;
+  cursor: pointer;
+  width: $width;
+}
+
+@mixin inputStyles($bg-color, $text-color, $border-color) {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid $border-color;
+  background-color: $bg-color;
+  color: $text-color;
+}
+
+@mixin flexCenter($direction: row, $gap: 0) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+  gap: $gap;
+}
+
+.loginForm {
+  width: 800px;
+  margin: 100px auto;
+  padding: 2rem;
+}
+
+.toggleButtons {
+  @include flexCenter(row, 1rem);
+  margin-bottom: 1rem;
+
+  button {
+    background: none;
+    border: none;
+    padding: 8px 24px;
+    border-radius: 100px;
+    cursor: pointer;
+    color: var(--secondary);
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .active {
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+  }
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.label {
+  font-size: 0.95rem;
+  font-weight: 500;
+
+  &.light {
+    color: var(--secondary);
+  }
+
+  &.dark {
+    color: var(--secondary2);
+  }
+}
+
+.input {
+  @include inputStyles(var(--white), var(--black), #ccc);
+  margin-bottom: 1rem;
+
+  &.light {
+    background-color: var(--white);
+  }
+
+  &.dark {
+    background-color: var(--dark2);
+  }
+}
+
+.options {
+  @include flexCenter(row, 1rem);
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.loginButton {
+  @include buttonStyles(var(--primary), white, 100px);
+}
+
+.registerPrompt {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.forgetPassword {
+  color: var(--critical);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.formContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.leftSide {
+  flex: 1;
+}
+
+.titleWrapper {
+  h2,
+  h6 {
+    @include flexCenter(row, 0);
+  }
+}
+
+.qrSection {
+  width: 160px;
+  text-align: center;
+
+  .qrBox {
+    width: 100%;
+    height: 160px;
+    background: #e0e0e0;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-weight: 400;
+    margin-bottom: 0.25rem;
+  }
+
+  span {
+    font-size: 0.875rem;
+    color: var(--primary);
+  }
+}
+
+.Greencontainer {
+  max-width: 350px;
+  display: flex;
+  justify-content: center;
+  border-radius: 100px;
+  margin: 0 auto;
+  margin-bottom: 32px;
+
+  &.light {
+    background-color: #eef8f2;
+  }
+
+  &.dark {
+    background-color: #1b2520;
+  }
+}
+
+.link,
+.staticText {
+  @include flexCenter(row, 10px);
+  text-decoration: none;
+  color: inherit;
+  margin: 0;
+}
+
+.keyContainer {
+  position: relative;
+  @include flexCenter(row, 0);
+}
+
+.keyIcon {
+  z-index: 1;
+  width: 24px;
+  height: 24px;
+}
+
+.greenDot {
+  position: absolute;
+  bottom: -5px;
+  width: 36px;
+  height: 36px;
+  z-index: 0;
+  background-color: var(--success);
+  border-radius: 50%;
+}
+
+.urlText {
+  font-size: 14px;
+
+  &.light {
+    color: var(--on-surface);
+  }
+
+  &.dark {
+    color: var(--surface);
+  }
+}
+
+.greenLink {
+  color: var(--success);
+  text-decoration: none;
+}
