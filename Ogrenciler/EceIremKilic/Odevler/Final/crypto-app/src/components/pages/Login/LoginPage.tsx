@@ -8,7 +8,7 @@ import React, { useState } from "react";
 import { Col, Container, Image } from "react-bootstrap";
 import CreateAccount from "@/components/organisms/CreateAccount/CreateAccount";
 import Footer from "@/components/organisms/Footer/Footer";
-import { auth } from "../../../firebase_config";
+import { auth } from "../../../../firebase_config";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useRouter } from "next/navigation";
 

@@ -4,7 +4,7 @@ import * as Yup from "yup";
 import { useTranslations } from "next-intl";
 import React, { useState } from "react";
 import { Container, Form, Button } from "react-bootstrap";
-import { auth } from "../../../firebase_config";
+import { auth } from "../../../../firebase_config";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 
 const SignUpPage = () => {

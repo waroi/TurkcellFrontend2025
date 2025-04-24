@@ -10,7 +10,7 @@ import {
   Row,
   Table,
 } from "react-bootstrap";
-import "../../style/main.scss";
+import "@/style/main.scss";
 import { useCoinStore } from "@/store/useCoinStore";
 import ProtectedRoute from "@/components/ProtectedRoute";
 

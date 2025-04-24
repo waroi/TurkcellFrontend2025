@@ -1,5 +1,5 @@
 "use client";
-import SignUpPage from "@/pages/SignUp/SignupPage";
+import SignUpPage from "@/components/pages/SignUp/SignupPage";
 import React from "react";
 import "@/style/main.scss";
 import NavbarComponent from "@/components/organisms/Navbar/NavbarComponent";

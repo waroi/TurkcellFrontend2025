@@ -1,4 +1,4 @@
-import LoginPage from "@/pages/Login/LoginPage";
+import LoginPage from "@/components/pages/Login/LoginPage";
 import React from "react";
 import "@/style/main.scss";
 
