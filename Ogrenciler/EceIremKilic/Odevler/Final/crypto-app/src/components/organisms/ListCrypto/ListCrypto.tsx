@@ -1,7 +1,7 @@
 import React from "react";
-import ListTabs from "../molecules/ListTabs";
+import ListTabs from "../../molecules/ListTabs";
 import { Container } from "react-bootstrap";
-import ListCards from "../molecules/ListCards";
+import ListCards from "../../molecules/ListCards";
 
 const ListCrypto = () => {
   return (

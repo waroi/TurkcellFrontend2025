@@ -1,0 +1,36 @@
+.top-bar {
+  background-color: #f7f7f7;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  button {
+    &:hover,
+    &:active {
+      background-color: #3772ff;
+      color: white;
+    }
+  }
+}
+.mid-bar {
+  button {
+    &:hover {
+      border-bottom: 2px solid #3772ff;
+    }
+  }
+}
+.bottom-bar {
+  button {
+    &:hover {
+      background-color: #3772ff;
+      color: white;
+    }
+  }
+}
+.t-row2 {
+  height: 60px;
+  .trade-btn {
+    &:hover {
+      background-color: #3772ff;
+      color: white;
+    }
+  }
+}

@@ -13,12 +13,14 @@ const Tabs: string[] = [
 ];
 const ListTabs = () => {
   return (
-    <div className="d-flex">
+    <div className="d-flex list-tabs overflow-x-scroll">
       {Tabs.map((tab, index) => (
         <CustomButton
           variant="link"
           label={tab}
-          className="text-decoration-none text-black fw-semibold"
+          className={`text-decoration-none text-black fw-semibold rounded-pill px-4 ${
+            index === 0 ? "first-tab text-white" : ""
+          }`}
           key={index}
         />
       ))}

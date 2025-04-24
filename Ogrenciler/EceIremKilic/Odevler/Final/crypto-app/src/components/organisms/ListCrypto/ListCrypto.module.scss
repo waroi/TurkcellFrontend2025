@@ -1,0 +1,15 @@
+.cardCrypto {
+  transition: all ease-in-out 500ms;
+  &:hover {
+    box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.2);
+  }
+}
+.list-tabs {
+  .first-tab {
+    background-color: #3772ff;
+    transition: all ease-in-out 350ms;
+    &:hover {
+      background-color: #2155ce;
+    }
+  }
+}
