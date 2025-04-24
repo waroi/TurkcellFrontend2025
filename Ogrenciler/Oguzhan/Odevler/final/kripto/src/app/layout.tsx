@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "./globals.css";
 import Navbar from '../components/Navbar';
 import Footer from "@/components/Footer";
+import AuthProvider from "@/providers/authProvider";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -27,9 +28,11 @@ export default function RootLayout({
     <html lang="en" className={dmSans.variable} >
 
       <body >
-        <Navbar />
-        {children}
-        <Footer />
+        <AuthProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </AuthProvider>
       </body>
     </html>
   );

@@ -1,7 +1,7 @@
 import { useField } from "formik";
 
 // eslint-disable-next-line react/prop-types
-function CustomInput({ label, ...props }) {
+function FormikInput({ label, ...props }) {
     const [field, meta] = useField(props);
 
     return (
@@ -21,4 +21,4 @@ function CustomInput({ label, ...props }) {
     );
 }
 
-export default CustomInput;
+export default FormikInput;

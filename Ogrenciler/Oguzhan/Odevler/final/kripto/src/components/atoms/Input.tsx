@@ -9,6 +9,7 @@ interface InputProps {
 }
 
 export const Input: React.FC<InputProps> = ({
+    
     label = "",
     name,
     type = 'text',

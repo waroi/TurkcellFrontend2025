@@ -1,8 +1,8 @@
 "use client"
 
 import { Formik, Form, FormikHelpers } from "formik";
-import { registerSchema } from "../schemas";
-import CustomInput from "../components/CustomInput";
+import { registerSchema } from "@/lib/schemas";
+import CustomInput from "@/components/ui/FormikInput";
 import { Button } from "../../../components/atoms/Button";
 
 import { useAuthStore } from "@/store/authStore";
@@ -19,7 +19,7 @@ interface RegisterFormValues {
 
 export default function Register() {
     const { register } = useAuthStore();
-    const router = useRouter(); 
+    const router = useRouter();
 
     const onSubmit = async (
         values: RegisterFormValues,
