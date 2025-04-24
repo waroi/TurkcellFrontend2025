@@ -1,0 +1,38 @@
+.t-row {
+  height: 88px;
+  transition: all ease-in-out 350ms;
+  .favbtn {
+    &:focus,
+    &:active,
+    &:focus-visible {
+      border: none;
+    }
+  }
+  &:hover {
+    background-color: #3772ff10;
+    border-radius: 12px;
+  }
+}
+.s-icon {
+  border-right: none;
+}
+.searchbar {
+  outline: none;
+  border: 1px solid #d3d3d3;
+  border-left: none !important;
+  &:focus {
+    outline: none;
+    box-shadow: none !important;
+    border-color: #d3d3d3 !important;
+  }
+}
+.trade {
+  text-align: right;
+  button {
+    border-color: #d3d3d3 !important;
+    &:hover {
+      background-color: #3772ff;
+      color: white;
+    }
+  }
+}

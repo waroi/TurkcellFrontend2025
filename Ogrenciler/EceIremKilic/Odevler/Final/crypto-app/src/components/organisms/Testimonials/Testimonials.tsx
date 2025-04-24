@@ -1,7 +1,10 @@
+"use client";
+import { useTranslations } from "next-intl";
 import React from "react";
 import { Container, Image } from "react-bootstrap";
 
 const Testimonials = () => {
+  const t = useTranslations();
   return (
     <div>
       <Container>
@@ -9,15 +12,10 @@ const Testimonials = () => {
           <div className="col-lg-6 pe-5">
             <div className="pe-5">
               <h1 className="display-5 fw-bold pe-5 mb-3">
-                Our Customers Love What We Do
+                {t("testimonialSection.title")}
               </h1>
-              <h5 className="mb-3">
-                Transform Your Idea Into Reality With Finsweet
-              </h5>
-              <p className="pe-5 mb-3">
-                It Is A Long Established Fact That A Reader Will Be Distracted
-                By The Readable Content Of A Page When Looking At Its Layout.
-              </p>
+              <h5 className="mb-3">{t("testimonialSection.subtitle")}</h5>
+              <p className="pe-5 mb-3">{t("testimonialSection.description")}</p>
             </div>
             <div className="py-2">
               <div className="d-flex mb-4">
@@ -26,8 +24,8 @@ const Testimonials = () => {
                 <div className="rounded-circle bg-secondary p-4"></div>
               </div>
               <p className="fw-semibold">
-                <span className="text-primary fw-bold">30+</span> Customer
-                Reviews
+                <span className="text-primary fw-bold">30+</span>{" "}
+                {t("testimonialSection.reviewStats")}
               </p>
             </div>
           </div>
@@ -42,10 +40,7 @@ const Testimonials = () => {
                     </div>
                     <div className="py-4">
                       <h4 className="fw-semibold mb-5">
-                        “Great course I really enjoyed it and the course was way
-                        easy to learn with very good explanations of the code, I
-                        could easily understand and develop applications with
-                        the knowledge gathered during the course.”
+                        {t("testimonialSection.quote")}
                       </h4>
                       <div className="w-100">
                         <div className="d-flex justify-content-between mb-2">
@@ -58,7 +53,7 @@ const Testimonials = () => {
                                 Johnny Andro
                               </p>
                               <p className="text-secondary mb-0">
-                                Director, Company
+                                {t("testimonialSection.role")}
                               </p>
                             </div>
                           </div>

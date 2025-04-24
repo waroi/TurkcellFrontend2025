@@ -10,7 +10,7 @@ import UserAvatar from "../../atoms/UserAvatar";
 import { useTheme } from "@/contexts/ThemeContext";
 import { useTranslations, useLocale } from "next-intl";
 import Link from "next/link";
-import { locales } from "../../../i18n/request";
+import { locales } from "@/i18n/request";
 import { useRouter } from "next/navigation";
 type Locale = "en" | "tr";
 

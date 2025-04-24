@@ -2,7 +2,12 @@
 @import "../components/organisms/Footer/Footer.module.scss";
 @import "../components/organisms/CreateAccount/CreateAccount.module.scss";
 @import "../components/organisms/MarketBanner/MarketBanner.module.scss";
-@import "./theme";
+@import "../components/organisms/MarketUpdate/MarketUpdate.module.scss";
+@import "../components/organisms/ListCrypto/ListCrypto.module.scss";
+@import "../components/organisms/MarketListCrypto/MarketListCrypto.module.scss";
+@import "../components/molecules/MarketTable/MarketTable.module.scss";
+@import "../app/[locale]/market/Market.module.scss";
+@import "./theme.scss";
 @import "bootstrap/scss/bootstrap";
 
 body {
