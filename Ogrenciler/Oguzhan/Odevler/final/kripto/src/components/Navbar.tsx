@@ -32,13 +32,10 @@ export default function Navbar() {
                 </Link>
 
                 <ul className='d-flex gap-3 list-unstyled mb-0 d-none d-md-flex'>
-                    <li><Link href="/home">HomePage</Link></li>
-                    <li><Link href="/buycrypto">BuyCrypto</Link></li>
-                    <li><Link href="/market">Markets</Link></li>
-                    <li><Link href="/exchange">Exchange</Link></li>
-                    <li><Link href="/">Spot</Link></li>
-                    <li><Link href="/">BITUSDT</Link></li>
-                    <li><Link href="/watchlist">Watchlist</Link></li>
+                    <li><Link href="/">Home</Link></li>
+                    <li><Link href="/trade">BuyCrypto</Link></li>
+                    <li><Link href="/watchlist">Favorites</Link></li>
+                    <li><Link href="/portfolio">My Portfolio</Link></li>
                 </ul>
             </div>
 

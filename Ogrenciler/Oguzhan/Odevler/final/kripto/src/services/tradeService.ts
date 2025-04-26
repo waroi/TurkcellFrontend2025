@@ -1,23 +1,39 @@
 import { db } from "@/lib/firebase";
-import { doc, updateDoc, arrayUnion, arrayRemove, getDoc } from "firebase/firestore";
+import { doc, updateDoc, arrayUnion, getDoc, setDoc } from "firebase/firestore";
 
-interface Trade {
+export type Trade = {
   coinId: string;
   type: "BUY" | "SELL";
   amount: number;
   price: number;
   timestamp: number;
-}
-
-export const saveTrade = async (userId: string, trade: Trade) => {
-  const userRef = doc(db, "users", userId);
-  await updateDoc(userRef, {
-    portfolio: arrayUnion(trade),
-  });
 };
 
-export const getPortfolio = async (userId: string): Promise<Trade[]> => {
+
+export const saveTradeAndBalance = async (
+  userId: string,
+  trade: Trade,
+  newBalance: number
+) => {
+  const userRef = doc(db, "users", userId);
+  await setDoc(
+    userRef,
+    {
+      trades: arrayUnion(trade),
+      balance: newBalance,
+    },
+    { merge: true } 
+  );
+};
+
+
+export const getTradesAndBalance = async (
+  userId: string
+): Promise<{ trades: Trade[]; balance: number }> => {
   const userRef = doc(db, "users", userId);
   const docSnap = await getDoc(userRef);
-  return docSnap.data()?.portfolio || [];
+  return {
+    trades: docSnap.data()?.trades || [],
+    balance: docSnap.data()?.balance || 100000, 
+  };
 };
