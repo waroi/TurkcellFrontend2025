@@ -2,7 +2,7 @@
 
 import { Formik, Form, FormikHelpers } from "formik";
 import { loginSchema } from "@/lib/schemas";
-import CustomInput from "@/components/ui/FormikInput";
+import { FormikInput } from "@/components/atoms/FormikInput"
 import { Button } from "../../../components/atoms/Button";
 import { useAuthStore } from "@/store/authStore";
 import { useRouter } from "next/navigation";
@@ -55,7 +55,7 @@ export default function Login() {
         >
           {({ isSubmitting }) => (<Form>
             <div className="mb-3">
-              <CustomInput
+              <FormikInput
                 label="Email"
                 name="email"
                 type="email"
@@ -64,7 +64,7 @@ export default function Login() {
               />
             </div>
             <div className="mb-3">
-              <CustomInput
+              <FormikInput
                 label="Şifre"
                 name="password"
                 type="password"

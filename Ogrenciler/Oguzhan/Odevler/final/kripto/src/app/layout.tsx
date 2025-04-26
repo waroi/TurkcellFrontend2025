@@ -3,6 +3,7 @@ import { DM_Sans } from "next/font/google";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./globals.css";
+import '@fortawesome/fontawesome-svg-core/styles.css';
 import Navbar from '../components/Navbar';
 import Footer from "@/components/Footer";
 import AuthProvider from "@/providers/authProvider";

@@ -1,8 +1,6 @@
 import CoinCard from "@/components/coins/CoinCard";
 import { fetchTopCoins } from "@/lib/api";
-
 import Image from "next/image";
-
 import HomeImage from '../../public/Home.svg'
 import Frame from '../../public/Frame.svg'
 import { Button } from "@/components/atoms/Button";
@@ -34,15 +32,18 @@ export default async function HomePage() {
         </div>
       </section>
 
+      <section className="bg-body-tertiary">
+        <h2 className="mb-4">Popüler Kripto Paralar</h2>
+        <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+          {coins.map((coin: any) => (
+            <div key={coin.id} className="col">
+              <CoinCard coin={coin} />
+            </div>
+          ))}
+        </div>
 
-      <h2 className="mb-4">🚀 Popüler Kripto Paralar</h2>
-      <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-        {coins.map((coin: any) => (
-          <div key={coin.id} className="col">
-            <CoinCard coin={coin} />
-          </div>
-        ))}
-      </div>
+      </section>
+
     </main>
   );
 }
