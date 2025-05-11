@@ -1,19 +1,20 @@
+"use client";
+import SignUpPage from "@/components/pages/SignUp/SignupPage";
 import React from "react";
+import "@/style/main.scss";
 import NavbarComponent from "@/components/organisms/Navbar/NavbarComponent";
-import Footer from "@/components/organisms/Footer/Footer";
-import Faq from "@/components/organisms/FAQ/Faq";
 import CreateAccount from "@/components/organisms/CreateAccount/CreateAccount";
-import "../../style/main.scss";
+import Footer from "@/components/organisms/Footer/Footer";
 
-const FAQ = () => {
+const page = () => {
   return (
-    <div>
+    <>
       <NavbarComponent />
-      <Faq />
+      <SignUpPage />
       <CreateAccount />
       <Footer />
-    </div>
+    </>
   );
 };
 
-export default FAQ;
+export default page;
