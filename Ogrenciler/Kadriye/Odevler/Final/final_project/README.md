@@ -6,7 +6,7 @@
   - Proje 1920px için oluşturuldu.
   - Koyu ve açık tema özellikleri bulunuyor.
 
-- Fonsiyonel Özellikler
+- Fonksiyonel Özellikler
   - Kullanıcılar hesap oluşturabilir, giriş yapabilir ve şifrelerini güncelleyebilir.
   - Crypto birimleri üzerine filtreleme, sıralama ve arama yapılabilir.
   - Uygulamada ingilizce ve türkçe olmak üzere iki dil desteklemektedir.
