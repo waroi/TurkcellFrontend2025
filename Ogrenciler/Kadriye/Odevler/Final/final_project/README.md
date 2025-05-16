@@ -8,7 +8,7 @@
 
 - Fonsiyonel Özellikler
   - Kullanıcılar hesap oluşturabilir, giriş yapabilir ve şifrelerini güncelleyebilir.
-  - Cyrpto birimleri üzerine filtreleme, sıralama ve arama yapılabilir.
+  - Crypto birimleri üzerine filtreleme, sıralama ve arama yapılabilir.
   - Uygulamada ingilizce ve türkçe olmak üzere iki dil desteklemektedir.
 
 - Kullanılan Teknolojiler
