@@ -1,4 +1,4 @@
-# Cyrpto Para Uygulaması
+# Crypto Para Uygulaması
 
 ## Uygulama İçeriği
 - Tasarım Özellikleri
